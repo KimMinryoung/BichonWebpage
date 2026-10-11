@@ -63,7 +63,7 @@ function orderedPeopleGroupsMeta(standardized) {
             // lands on.
             personIds: people.map(person => person.id).join(' '),
             links: people
-                .map(person => ({ id: person.id, name: person.displayName || person.name })),
+                .map(person => ({ id: person.id, name: person.label || person.displayName || person.name })),
         };
     });
 }

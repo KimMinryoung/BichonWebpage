@@ -1,6 +1,7 @@
 const path = require('path');
 const { readSnapshot } = require('./read-snapshot');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
+const { personLabels } = require('./person-label');
 const { eventPeriodYears } = require('../../utils/event-period-search');
 
 // History events are served from an in-memory copy, mirroring people-store:
@@ -42,7 +43,7 @@ async function fetchEvents() {
         client.query(
             `SELECT ep.event_id, ep.person_id, ep.relation_kind, ep.relation_ko, ep.relation_en, ep.note_ko, ep.note_en,
                     to_jsonb(ep)->>'side' AS side,
-                    p.name_ko, p.name_en, p.cyrillic, p.years_label
+                    p.name_ko, p.name_en, p.name_qualifier_ko, p.name_qualifier_en, p.cyrillic, p.years_label
              FROM commulingo_history_event_people ep
              JOIN commulingo_people p ON p.id = ep.person_id
              ORDER BY ep.event_id, ep.sort_order, ep.person_id`
@@ -57,7 +58,7 @@ async function fetchEvents() {
             // The camp this person acted for, one of the event's sides
             // (migration 193); null for witnesses, historians, no side.
             side: row.side || null,
-            name: t(row.name_ko, row.name_en),
+            name: personLabels(row),
             cyrillic: row.cyrillic || '',
             years: row.years_label || '',
             relation: t(row.relation_ko, row.relation_en),

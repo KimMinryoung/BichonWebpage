@@ -14,7 +14,7 @@ const { t, localized, contentLocalized, badRequest, parseLifeYears, requireId, n
 const { withTransaction, writeRevision } = require('./admin-tx');
 const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
 const { personLifeProblems } = require('./person-life-years');
-const { assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, assertFamilyFirstParts, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate } = require('./people-admin-validation');
+const { assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, assertFamilyFirstParts, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate, normalizeNameQualifier } = require('./people-admin-validation');
 
 async function officeIdSet(client) {
     const { rows } = await client.query('SELECT id FROM commulingo_offices');
@@ -62,6 +62,7 @@ function rowToPerson(row) {
         name: t(row.name_ko, row.name_en),
         givenName: t(row.given_name_ko, row.given_name_en),
         familyName: t(row.family_name_ko, row.family_name_en),
+        nameQualifier: t(row.name_qualifier_ko, row.name_qualifier_en),
         epithet: t(row.epithet_ko, row.epithet_en),
         moment: t(row.moment_ko, row.moment_en),
         bio: t(row.bio_ko, row.bio_en),
@@ -80,6 +81,7 @@ async function listPeopleAdmin(options = {}) {
     const { rows } = await db.query(
         `SELECT id, group_id, initial, cyrillic, years_label, birth_year, death_year,
                 name_ko, name_en, given_name_ko, given_name_en, family_name_ko, family_name_en,
+                name_qualifier_ko, name_qualifier_en,
                 epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                 fate_kind, fate_label_ko, fate_label_en,
                 citizenship_code, citizenship_label_ko, citizenship_label_en,
@@ -107,6 +109,7 @@ async function getPersonAdmin(personId, options = {}) {
     const personResult = await client.query(
         `SELECT id, group_id, initial, cyrillic, years_label, birth_year, death_year,
                 name_ko, name_en, given_name_ko, given_name_en, family_name_ko, family_name_en,
+                name_qualifier_ko, name_qualifier_en,
                 epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                 fate_kind, fate_label_ko, fate_label_en,
                 citizenship_code, citizenship_label_ko, citizenship_label_en,
@@ -316,13 +319,16 @@ async function createPersonAdmin(rawPayload, options = {}) {
         assertPatronymicSeparate(partsEn, patronymicState.en, 'en');
         const nameKo = partsKo.full;
         const nameEn = partsEn.full;
+        const qualifier = normalizeNameQualifier(payload.nameQualifier === undefined ? null : payload.nameQualifier);
         assertIdKeepsLetters(id, nameEn);
         const fold = text => text.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
-        const { rows: candidates } = await client.query(`SELECT id, name_ko, name_en FROM commulingo_people
+        const { rows: candidates } = await client.query(`SELECT id, name_ko, name_en, name_qualifier_ko AS qualifier FROM commulingo_people
             UNION ALL SELECT person_id AS id, CASE WHEN lang='ko' THEN alias ELSE '' END,
-                CASE WHEN lang='en' THEN alias ELSE '' END FROM commulingo_person_aliases`);
-        const duplicate = candidates.find(row => (row.name_ko && fold(row.name_ko) === fold(nameKo))
-            || (row.name_en && fold(row.name_en) === fold(nameEn)));
+                CASE WHEN lang='en' THEN alias ELSE '' END, NULL FROM commulingo_person_aliases`);
+        // A namesake that already carries a different qualifier is a known
+        // distinct person (the second 오토 브라운); everything else is a suspect.
+        const duplicate = candidates.find(row => !(qualifier.ko && row.qualifier && row.qualifier !== qualifier.ko)
+            && ((row.name_ko && fold(row.name_ko) === fold(nameKo)) || (row.name_en && fold(row.name_en) === fold(nameEn))));
         if (duplicate && !(options.reviewed && payload.reviewFlags?.includes('identity_uncertain'))) {
             throw badRequest(`possible duplicate person ${duplicate.id}; compare identities before registering`);
         }
@@ -341,13 +347,13 @@ async function createPersonAdmin(rawPayload, options = {}) {
                  epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                  fate_kind, fate_label_ko, fate_label_en,
                  citizenship_code, citizenship_label_ko, citizenship_label_en,
-                 origin_code, origin_label_ko, origin_label_en, updated_at)
+                 origin_code, origin_label_ko, origin_label_en, name_qualifier_ko, name_qualifier_en, updated_at)
              VALUES
                 ($1, $2, $3, $4, $5, $6, $7, $8,
                  $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
                  $21, $22, $23,
                  $24, $25, $26,
-                 $27, $28, $29, NOW())`,
+                 $27, $28, $29, $30, $31, NOW())`,
             [
                 id,
                 groupId,
@@ -378,6 +384,8 @@ async function createPersonAdmin(rawPayload, options = {}) {
                 origin.code,
                 origin.ko,
                 origin.en,
+                qualifier.ko,
+                qualifier.en,
             ]
         );
         if (payload.linkExpressions !== undefined) {
@@ -523,6 +531,11 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             assertNoPatronymicForNameOrder(patronymicState, citizenship.code);
             assertPatronymicHasGiven(newPartsKo || storedParts('ko'), patronymicState.ko, 'ko');
             assertPatronymicHasGiven(newPartsEn || storedParts('en'), patronymicState.en, 'en');
+        }
+        if (payload.nameQualifier !== undefined) {
+            const qualifier = normalizeNameQualifier(payload.nameQualifier);
+            set('name_qualifier_ko', qualifier.ko);
+            set('name_qualifier_en', qualifier.en);
         }
         if (payload.linkExpressions !== undefined) set('link_expressions', JSON.stringify(payload.linkExpressions));
         if (payload.epithet !== undefined) {

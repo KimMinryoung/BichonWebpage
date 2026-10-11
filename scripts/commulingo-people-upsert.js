@@ -15,6 +15,8 @@
 // {
 //   "id": "voldemar-ulmer", "groupId": "stalin-era",
 //   "givenName": {"ko": "볼데마르", "en": "Voldemar"}, "familyName": {"ko": "울메르", "en": "Ulmer"},
+//   "nameQualifier": {"ko": "프로이센 총리", "en": "Prussian premier"},  // optional: only for a shared name,
+//                                                        // shown as 「오토 브라운 (프로이센 총리)」 in lists; no parentheses in names
 //   "cyrillic": "Вольдемар Ульмер",                      // native name WITHOUT the patronymic
 //   "patronymic": {"ko": "아우구스토비치", "en": "Avgustovich"}, "cyrillicPatronymic": "Августович",
 //   "years": "1896–1945",

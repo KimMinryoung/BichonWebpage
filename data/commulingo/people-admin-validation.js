@@ -146,6 +146,12 @@ function assertFamilyFirstParts(partsKo, partsEn, citizenshipCode) {
 // were a surname (수흐바타르 수흐바타르, 아트나푸 + 아바테). Monarchs keep the
 // regnal shape (하일레 셀라시에 + 1세).
 function assertSingleName(parts, lang, citizenshipCode) {
+    // name_ko/name_en are only the composition of the parts (personLabel adds
+    // the qualifier for lists), so nothing in brackets may ride along in them.
+    if (/[()（）]/.test(`${parts.given} ${parts.family} ${parts.full}`)) {
+        throw badRequest(`name.${lang} "${parts.full}" carries parentheses: the name parts hold the name only — `
+            + 'put a disambiguator in nameQualifier ({ko: "프로이센 총리", en: "Prussian premier"}) and other names in aliases');
+    }
     if (!isSingleNameNation(citizenshipCode) || !parts.given || isRegnalNumber(parts.family)) return;
     throw badRequest(`'${citizenshipCode}' names have no surname: put the name as people call it in `
         + `familyName.${lang} and leave givenName.${lang} empty ("${parts.given}" given) — `
@@ -187,6 +193,21 @@ function resolveNameParts(payload, lang, citizenshipCode) {
     }
     const full = collapseSpaces(localized(payload.name, lang));
     return { ...splitFullName(full, lang, citizenshipCode), full };
+}
+
+// The disambiguator of a shared name (migration 360): 「프로이센 총리」 for one
+// of the two 오토 브라운 cards. Both languages or neither, the text inside the
+// parentheses only, short enough for a list line. null clears it.
+function normalizeNameQualifier(value) {
+    if (value === null) return { ko: '', en: '' };
+    if (!value || typeof value !== 'object' || Array.isArray(value)) throw badRequest('nameQualifier must be {ko, en} or null');
+    const out = { ko: collapseSpaces(value.ko || ''), en: collapseSpaces(value.en || '') };
+    if (!out.ko !== !out.en) throw badRequest('nameQualifier needs both ko and en, or neither');
+    for (const [lang, max] of [['ko', 24], ['en', 50]]) {
+        if (/[()（）]/.test(out[lang])) throw badRequest(`nameQualifier.${lang} is the text inside the parentheses; leave the parentheses out`);
+        if ([...out[lang]].length > max) throw badRequest(`nameQualifier.${lang} exceeds ${max} characters`);
+    }
+    return out;
 }
 
 // The patronymic lives only in commulingo_person_patronymics; a name that
@@ -232,4 +253,4 @@ function assertIdKeepsLetters(id, nameEn) {
     }
 }
 
-module.exports = { foldSlug, assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, familyFirstPartsProblem, assertFamilyFirstParts, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate };
+module.exports = { normalizeNameQualifier, foldSlug, assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, familyFirstPartsProblem, assertFamilyFirstParts, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate };

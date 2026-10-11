@@ -3512,6 +3512,15 @@ a.commu-person-role-tag:hover {
     margin-top: 4px;
 }
 
+/* The disambiguator of a shared name (오토 브라운 → 프로이센 총리): plain text
+   under the heading, set apart from the italic native name below it. */
+.commu-person-detail-title .commu-person-qualifier {
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-style: normal;
+    font-weight: 600;
+}
+
 .commu-person-detail-other-names {
     border-top: 1px dashed var(--border);
     color: var(--text-muted);

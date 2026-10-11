@@ -10,7 +10,7 @@ var roleLine = [activity && activity.label, badge && badge.affiliationLabel].fil
     <a class="commu-people-row-link" href="/commulingo/people/<%= person.id %>">
         <span class="commu-people-row-icon" aria-hidden="true"><%- roleIconSvg(person.role ? person.role.icon : 'circle-help') %></span>
         <span class="commu-people-row-main">
-            <span class="commu-people-row-name"><strong><%= person.displayName || person.name %></strong><% if (person.cyrillic) { %> <span class="commu-people-row-native"><%= person.cyrillic %></span><% } %></span>
+            <span class="commu-people-row-name"><strong><%= person.label || person.displayName || person.name %></strong><% if (person.cyrillic) { %> <span class="commu-people-row-native"><%= person.cyrillic %></span><% } %></span>
             <% if (typeof searchAlias !== 'undefined' && searchAlias) { %><span class="commu-people-row-alias"><%= strings.commuLingoViews.personCard.matchedAlias %> <%= searchAlias %></span><% } %>
             <% if (person.epithet) { %><span class="commu-people-row-epithet"><%= person.epithet %></span><% } %>
         </span>

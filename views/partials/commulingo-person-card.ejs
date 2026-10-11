@@ -12,7 +12,7 @@ var medalTitle = person.role && person.role.label ? person.role.label : (strings
         <span class="commu-person-medal" title="<%= medalTitle %>" aria-hidden="true"><%- roleIconSvg(person.role ? person.role.icon : 'circle-help') %></span>
         <% } %>
         <div class="commu-person-idbox">
-            <h3><a href="<%= personHref %>" title="<%= person.displayName || person.name %>"><%= person.displayName || person.name %></a></h3>
+            <h3><a href="<%= personHref %>" title="<%= person.label || person.displayName || person.name %>"><%= person.label || person.displayName || person.name %></a></h3>
             <%# A Korean or Chinese native name repeats the Korean display name; skip it. %>
             <% if (String(person.cyrillic || '').replace(/\s/g, '') !== String(person.displayName || person.name || '').replace(/\s/g, '')) { %><span class="commu-person-cyr"><%= person.cyrillic %></span><% } %>
             <% if (typeof searchAlias !== 'undefined' && searchAlias) { %>

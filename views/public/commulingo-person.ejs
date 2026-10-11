@@ -38,6 +38,7 @@
                     <% if (medalHref) { %><a class="commu-person-role-tag" href="<%= medalHref %>" aria-hidden="true" tabindex="-1"><%= person.role.label %></a><% } else { %><span class="commu-person-role-tag"><%= person.role.label %></span><% } %>
                     <% } %>
                     <h1><%= person.displayName || person.name %></h1>
+                    <% if (person.qualifier) { %><span class="commu-person-qualifier"><%= person.qualifier %></span><% } %>
                     <% if (String(person.cyrillic || '').replace(/\s/g, '') !== String(person.displayName || person.name || '').replace(/\s/g, '')) { %><span><%= person.cyrillic %></span><% } %>
                 </div>
             </div>

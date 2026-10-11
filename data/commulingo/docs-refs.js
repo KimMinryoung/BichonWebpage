@@ -120,7 +120,7 @@ async function createDocRefResolver(lang) {
     // where a document belongs, and a patronymic per entry buys nothing.
     (standardized.people || []).forEach(person => {
         const names = person.names || {};
-        labels.people.set(person.id, names.short || person.displayName || localize(person.name, lang));
+        labels.people.set(person.id, names.shortLabel || person.label || person.displayName || localize(person.name, lang));
     });
 
     const resolver = function resolveDocRefs(doc) {

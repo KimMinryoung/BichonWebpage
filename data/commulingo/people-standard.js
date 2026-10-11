@@ -3,6 +3,7 @@ const { resolvePosition, collectionPosition, RED_LABELS, RED_COLLECTIONS } = req
 const { hasFlag, flagLabel } = require('./flag-icons');
 const { familyFirstJoiner } = require('./native-script');
 const { localize } = require('./localize');
+const { personLabel } = require('./person-label');
 const { parseLifeYears } = require('./person-life-years');
 
 const SCHEMA_VERSION = 'commulingo.people.v1';
@@ -235,6 +236,9 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles) {
         r: localize(entry.r, lang),
         role: localize(entry.r, lang),
     }));
+    // Strictly per language, like the parts: the other language's qualifier
+    // would label 오토 브라운 (Prussian premier).
+    const qualifier = ((raw.qualifier && raw.qualifier[lang]) || '').trim();
     const activities = displayActivities(raw.activities, lang, officeTitles);
     const primaryActivity = activities.find(a => a.primary);
     return {
@@ -249,6 +253,10 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles) {
             ru: composePersonName(raw.cyrillic, cyrillicPatronymic),
             display: fullName(lang),
             short: localize(raw.name, lang),
+            qualifier,
+            // Lists label by these; the page heading keeps display + qualifier apart.
+            label: personLabel(fullName(lang), qualifier),
+            shortLabel: personLabel(localize(raw.name, lang), qualifier),
             // The family name as its own part, read strictly per language. Prose
             // calls people by it (류시코프), and the last word of a display name
             // is not always it: 쿤 벨러 keeps the Hungarian order, and
@@ -265,6 +273,8 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles) {
         yearsLabel: years.label,
         name: fullName(lang),
         displayName: fullName(lang),
+        qualifier,
+        label: personLabel(fullName(lang), qualifier),
         cyrillic: composePersonName(raw.cyrillic, cyrillicPatronymic),
         epithet: localize(raw.epithet, lang),
         moment: localize(raw.moment, lang),
@@ -306,8 +316,8 @@ function normalizeOfficeRow(row, office, peopleById, lang) {
         years: localize(row.years, lang),
         body: localize(row.body, lang),
         role: localize(row.body, lang),
-        name: person ? person.names.short : localize(row.name, lang),
-        displayName: person ? person.names.display : localize(row.name, lang),
+        name: person ? person.names.shortLabel : localize(row.name, lang),
+        displayName: person ? person.names.label : localize(row.name, lang),
         note: localize(row.note, lang),
     };
 }
@@ -481,6 +491,7 @@ function validateCommuLingoPeople(data) {
 
 module.exports = {
     composeFromParts,
+    personLabel,
     SCHEMA_VERSION,
     OFFICE_DISPLAY_ORDER,
     ROLE_OFFICE_TITLES,

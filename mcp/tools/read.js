@@ -49,7 +49,7 @@ const tools = [
             if (affiliationIds.some(id => typeof id !== 'string')) throw Object.assign(new Error('affiliationIds must be strings'), { status: 400 });
             const db = require('../../config/database');
             const activity = functionId || affiliationIds.length;
-            const { rows } = await db.query(`SELECT p.id, p.group_id, p.name_ko, p.name_en, p.cyrillic, p.years_label, p.epithet_ko,
+            const { rows } = await db.query(`SELECT p.id, p.group_id, p.name_ko, p.name_en, p.name_qualifier_ko, p.name_qualifier_en, p.cyrillic, p.years_label, p.epithet_ko,
                     p.epithet_en, p.fate_kind, p.citizenship_code, p.origin_code, left(p.bio_ko, 200) AS bio_ko_excerpt
                 FROM commulingo_people p
                 WHERE ($1 = '' OR p.id ILIKE '%' || $1 || '%' OR p.name_ko ILIKE '%' || $1 || '%'

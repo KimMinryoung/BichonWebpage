@@ -117,7 +117,7 @@ function affiliationsFor(people, code, lang) {
             period: periodLabel(a.periods),
             href: `/commulingo/people?affiliation=${encodeURIComponent(a.id)}`,
             count: members.length,
-            members: members.slice(0, MEMBER_PREVIEW).map(person => ({ id: person.id, name: (person.names && person.names.short) || person.displayName || person.name })),
+            members: members.slice(0, MEMBER_PREVIEW).map(person => ({ id: person.id, name: (person.names && person.names.shortLabel) || person.label || person.displayName || person.name })),
             isChild,
         };
     };

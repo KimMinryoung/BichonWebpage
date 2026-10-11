@@ -29,7 +29,7 @@ function mergeNationalityPatch(before, patch, field) {
 
 function mergePersonPatch(before, payload) {
     const patch = { ...payload };
-    for (const field of ['givenName', 'familyName', 'epithet', 'moment', 'bio']) {
+    for (const field of ['givenName', 'familyName', 'nameQualifier', 'epithet', 'moment', 'bio']) {
         if (patch[field] !== undefined) patch[field] = mergeLocalizedPatch(before[field], patch[field], field);
     }
     if (patch.fate !== undefined && patch.fate !== null) {

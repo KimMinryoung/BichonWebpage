@@ -59,6 +59,7 @@ async function fetchRows() {
         client.query(
             `SELECT id, group_id, initial, cyrillic, years_label,
                     name_ko, name_en, given_name_ko, given_name_en, family_name_ko, family_name_en,
+                    name_qualifier_ko, name_qualifier_en,
                     epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                     fate_kind, fate_label_ko, fate_label_en,
                     citizenship_code, citizenship_label_ko, citizenship_label_en,
@@ -289,6 +290,7 @@ function rowsToPeopleData(rows) {
             name: t(row.name_ko, row.name_en),
             givenName: t(row.given_name_ko, row.given_name_en),
             familyName: t(row.family_name_ko, row.family_name_en),
+            qualifier: t(row.name_qualifier_ko, row.name_qualifier_en),
             years: row.years_label || '',
             epithet: t(row.epithet_ko, row.epithet_en),
             moment: t(row.moment_ko, row.moment_en),

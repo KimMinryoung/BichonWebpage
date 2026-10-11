@@ -52,6 +52,30 @@ Display composes `given + patronymic + family` (people-standard.js
 `composeFromParts`); migration `060_commulingo_person_name_parts.sql` did the
 backfill and repaired the five bad records found in the 2026-07-24 audit.
 
+### Name qualifier for shared names — 2026-10-11 (migration 360)
+
+Two cards may share one name (오토 브라운 ×2, 니콜라이 쿠즈네초프 ×3). The
+disambiguator lives in `name_qualifier_ko/en` (payload `nameQualifier: {ko, en}`,
+both languages or neither, text without the brackets; `null` clears). It used to
+be typed onto the end of `name_ko/en`, which the store dropped on the next name
+edit and the person page never showed.
+
+- `name_ko/en` are strictly the composition of the parts: the store rejects
+  brackets in any name part, the CHECK `commulingo_people_name_derived` rejects
+  them in the columns, and `audit-person-name-order` compares them exactly (and
+  requires every card of a shared name to carry its own qualifier). Other names
+  (birth name, nickname) go to aliases, never into brackets.
+- Display: `data/commulingo/person-label.js` `personLabel(name, qualifier)` is
+  the one labelling function. Lists (people cards and rows, event and term
+  people, rosters, office rows, document refs, map previews, site search,
+  page `<title>`) show 「오토 브라운 (프로이센 총리)」; the person page heading keeps
+  the bare name and prints the qualifier under it. Normalized people carry
+  `qualifier`, `label`, `names.label` and `names.shortLabel`.
+- The 2026-10-11 census: 14 stored names had a bracketed tail — 7
+  disambiguators moved to the qualifier, 7 other names were already aliases;
+  the 9 namesakes without one got a qualifier from their epithet (7 groups, 16
+  cards).
+
 ## Native-name script standard — added 2026-07-23
 
 `commulingo_people.cyrillic` is misnamed: it is the **name in the person's own

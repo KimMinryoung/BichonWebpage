@@ -71,8 +71,19 @@ async function run() {
         assert.deepEqual(person.epithet, { ko: '', en: '' });
         await update({ fate: null });
         assert.deepEqual((await get()).fate, { kind: '', label: { ko: '', en: '' } });
+        // The disambiguator has its own columns; names stay the bare composition.
+        await update({ nameQualifier: { ko: '시인', en: 'poet' } });
+        person = await get();
+        assert.deepEqual(person.nameQualifier, { ko: '시인', en: 'poet' });
+        assert.equal(person.name.ko, '이름 다른', 'the qualifier never rides in the stored name');
+        await update({ givenName: { ko: '새이름' } });
+        assert.deepEqual((await get()).nameQualifier, { ko: '시인', en: 'poet' }, 'a name edit keeps the qualifier');
+        await update({ nameQualifier: null });
+        assert.deepEqual((await get()).nameQualifier, { ko: '', en: '' });
         const beforeInvalid = await get();
-        for (const patch of [{ bio: [] }, { bio: { en: null } }, { givenName: { en: 1 } }, { aliases: null }]) {
+        for (const patch of [{ bio: [] }, { bio: { en: null } }, { givenName: { en: 1 } }, { aliases: null },
+            { nameQualifier: { ko: '시인' } }, { nameQualifier: { ko: '(시인)', en: 'poet' } },
+            { familyName: { ko: '나지 (시인)' } }, { name: { ko: '야노시 나지 (시인)' } }]) {
             await assert.rejects(update(patch), { status: 400 });
             assert.deepEqual(await get(), beforeInvalid);
         }

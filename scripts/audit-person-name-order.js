@@ -10,7 +10,8 @@
 // happened to the 28 Hungarians on 2026-09-01.
 //
 // Checks, per person:
-//   1. name_ko / name_en equal composeFromParts(given, family) whenever the row
+//   1. name_ko / name_en equal composeFromParts(given, family) exactly — they
+//      are derived values, qualifier and other names excluded — whenever the row
 //      carries parts (the patronymic is inserted at render time, so the stored
 //      string never holds it; rows with no parts at all are counted, not
 //      failed — the legacy full name is what the page shows for them).
@@ -28,6 +29,8 @@
 //      monarchs keep the regnal shape (하일레 셀라시에 + 1세).
 //   5. No patronymic on a family-first or no-surname name (호른 줄러 with János
 //      rendered 줄러 야노시 호른), nor on a row with no given name.
+//   6. Cards that share a stored name each carry a distinct name_qualifier
+//      (migration 360), the only thing that tells them apart in lists.
 //
 // Usage (inside the frontend container):
 //   node scripts/audit-person-name-order.js
@@ -56,7 +59,7 @@ function firstToken(text) {
 (async () => {
     try {
         const { rows } = await db.query(
-            `SELECT p.id, p.name_ko, p.name_en, p.cyrillic,
+            `SELECT p.id, p.name_ko, p.name_en, p.name_qualifier_ko, p.name_qualifier_en, p.cyrillic,
                     p.given_name_ko, p.given_name_en, p.family_name_ko, p.family_name_en,
                     p.citizenship_code, p.origin_code,
                     pa.patronymic_ko, pa.patronymic_en, pa.cyrillic_patronymic
@@ -80,10 +83,12 @@ function firstToken(text) {
                 // The stored name never carries the patronymic (it is inserted
                 // at render time from commulingo_person_patronymics), so the
                 // comparison composes given + family only.
-                // A trailing "(qualifier)" — "(spy)", "(Oppokov)" — is a
-                // disambiguator the parts never hold, so it is ignored here.
+                // Exact: name_ko/name_en are derived values the store writes
+                // from the parts. A disambiguator lives in name_qualifier_*
+                // (migration 360), other names in aliases — never in brackets
+                // here (the 2026-10-11 census found 14 such rows).
                 const composed = composeFromParts(given, '', family, lang, code);
-                if (composed !== stored.replace(/\s*\([^)]*\)\s*$/, '')) {
+                if (composed !== stored) {
                     problems.push(`${tag}: name_${lang} "${stored}" but parts compose to "${composed}"`
                         + ` (given "${given}", family "${family}")`);
                 }
@@ -145,6 +150,24 @@ function firstToken(text) {
                 if (familyEn && foldLatin(firstToken(native)) !== foldLatin(familyEn)) {
                     problems.push(`${tag}: native name "${native}" should lead with the family name`
                         + ` (family_name_en "${row.family_name_en}") — Hungarian and Vietnamese write family first`);
+                }
+            }
+        }
+
+        // 6. A shared name is told apart in lists only by name_qualifier_*:
+        //    every card of the name carries one, and no two are the same.
+        for (const lang of ['ko', 'en']) {
+            const byName = new Map();
+            for (const row of rows) {
+                const name = row[`name_${lang}`] || '';
+                if (name) byName.set(name, [...(byName.get(name) || []), row]);
+            }
+            for (const [name, group] of byName) {
+                if (group.length < 2) continue;
+                const qualifiers = group.map(row => row[`name_qualifier_${lang}`] || '');
+                if (qualifiers.some(q => !q) || new Set(qualifiers).size < group.length) {
+                    problems.push(`shared name_${lang} "${name}": ${group.map(row => `${row.id} "${row[`name_qualifier_${lang}`] || ''}"`).join(', ')}`
+                        + ' — each card needs its own name_qualifier');
                 }
             }
         }

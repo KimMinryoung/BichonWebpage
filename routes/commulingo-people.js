@@ -326,7 +326,7 @@ router.get('/people/:personId', async (req, res) => {
             courseChapters: await courseChaptersFor([`people:${person.id}`], lang),
             roleIconSvg,
             roleHubHref,
-            pageTitle: lang === 'en' ? `${person.displayName} — People` : `${person.displayName} — 인물 사전`,
+            pageTitle: lang === 'en' ? `${person.label || person.displayName} — People` : `${person.label || person.displayName} — 인물 사전`,
             pageDescription: person.bio || person.epithet,
             pagePath: `/commulingo/people/${person.id}`,
             jsonLd: commuLingoBreadcrumb(lang, [

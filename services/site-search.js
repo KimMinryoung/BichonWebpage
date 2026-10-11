@@ -130,7 +130,7 @@ async function people(lang, query) {
     const { standardized } = await loadStandardizedPeople(lang);
     const hits = searchPeople(standardized, query, sortPeopleChronologically);
     return [...new Set([...hits.name, ...hits.desc])].map(person => ({
-        title: person.displayName || person.name,
+        title: person.label || person.displayName || person.name,
         href: `/commulingo/people/${person.id}`,
         meta: [person.years, person.primaryActivity && person.primaryActivity.label].filter(Boolean).join(' · '),
         excerpt: person.epithet,
