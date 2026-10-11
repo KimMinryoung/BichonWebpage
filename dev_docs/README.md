@@ -6,6 +6,7 @@
 | --- | --- |
 | 웹서비스 코드·기능 설계 전체 개선 검토 | [2026-10-04 검토와 최종 반영 현황(보류 4건 포함)](codebase-functional-review-20261004.md) |
 | 사이트 디자인·레이아웃·공통 UI | [디자인 기준](design-system.md) |
+| 통합 검색·메뉴별 영어 지원 | [범위·일치 기준·영어 판정](site-search.md) |
 | 파업 게임 | [설계·규칙·구현·테스트 인수인계](strike-game-handoff.md) |
 | 노노그램 | [화면·입력·저장 구현 참고](nonogram.md) |
 | 배포·미리보기·데이터·인증 | [Frontend 운영 참고](frontend-operations.md) |

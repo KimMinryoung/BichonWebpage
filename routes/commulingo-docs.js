@@ -35,6 +35,8 @@ router.get('/', async (req, res) => {
             '/commulingo/docs?' + (kind ? `kind=${encodeURIComponent(kind)}&` : '') + 'page=', { mark: false });
         setShortPublicCache(res);
         res.render('public/commulingo-docs', {
+            // ?q= from the integrated search's "more" link starts the box searching.
+            searchValue: typeof req.query.q === 'string' ? req.query.q.trim().slice(0, 200) : '',
             docs,
             facets,
             kind,

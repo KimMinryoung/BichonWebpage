@@ -18,6 +18,10 @@
             </div>
         </header>
 
+        <form class="site-search-form home-search" action="/search" method="get" role="search">
+            <%- include('../partials/site-search-box', { value: '', placeholder: strings.search.placeholderSite }) %>
+        </form>
+
         <!-- Menu Cards -->
         <div class="home-cards">
             <a href="/chat" class="ui-card home-card home-card-full">

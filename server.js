@@ -108,6 +108,7 @@ app.use((req, res, next) => {
 // Routes
 app.get('/writer', requireWriterAdminSession, (req, res) => res.redirect('/api/proxy/writer'));
 app.use('/', require('./routes/public'));
+app.use(require('./routes/search').router);
 app.use('/auth', require('./routes/auth'));
 app.use('/admin/webauthn', requireAdminIp, require('./routes/webauthn'));
 app.get('/private', (req, res) => res.redirect('/reports'));

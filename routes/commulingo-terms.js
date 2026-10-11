@@ -72,6 +72,8 @@ router.get('/', async (req, res) => {
         const firstGroup = data.groups[0];
         setShortPublicCache(res);
         res.render('public/commulingo-terms', {
+            // ?q= from the integrated search's "more" link starts the box searching.
+            searchValue: typeof req.query.q === 'string' ? req.query.q.trim().slice(0, 200) : '',
             termCount: data.terms.length,
             groups: data.groups,
             firstGroupId: firstGroup ? firstGroup.id : '',

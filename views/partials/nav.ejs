@@ -5,6 +5,10 @@
 <div class="home-toolbar">
     <a href="/" class="toolbar-logo"><%= strings.siteName %></a>
     <div class="toolbar-right">
+        <% var _searchHref = ((typeof pagePath !== 'undefined' && pagePath) || '').indexOf('/commulingo') === 0 ? '/commulingo/search' : '/search'; %>
+        <a href="<%= _searchHref %>" class="toolbar-search-btn" aria-label="<%= strings.search.open %>" title="<%= strings.search.open %>">
+            <svg class="toolbar-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </a>
         <a href="<%= currentUser ? '/auth/account' : (isAuthenticated ? '/admin' : '/auth/login') %>" class="toolbar-account-btn"<% if (currentUser) { %> title="<%= strings.userAuth.accountMenu %>"<% } %>>
             <svg class="account-icon" xmlns="http://www.w3.org/2000/svg"
                  viewBox="0 0 24 24" fill="none" stroke="currentColor"

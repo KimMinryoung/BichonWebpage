@@ -1,0 +1,72 @@
+<%
+/* The integrated search page (routes/search.js): one view for both scopes.
+   CommuLingo's scope sits in its shell under the crumb bar; the site scope in
+   the plain container. The form is a plain GET so it works without script. */
+var s = strings.search;
+var en = lang === 'en';
+var inCommuLingo = scope === 'commulingo';
+var action = scopes[scope].path;
+var q = result.query;
+var scopeHref = function(key) { return scopes[key].path + (q ? '?q=' + encodeURIComponent(q) : ''); };
+%>
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head><%- include('../partials/head') %></head>
+<body class="<%= inCommuLingo ? 'commulingo-page' : 'search-page' %>">
+    <%- include('../partials/nav') %>
+    <main class="container site-search<%= inCommuLingo ? ' commulingo-shell commu-dict-shell' : '' %>" data-lang="<%= lang %>">
+        <% if (inCommuLingo) { %>
+        <%- include('../partials/commulingo-crumb', { trail: [{ label: s.title }], dictJump: true }) %>
+        <% } %>
+        <h1 class="visually-hidden"><%= s.title %></h1>
+        <nav class="ui-tabs site-search-scopes" aria-label="<%= s.scopeLabel %>">
+            <% [['all', s.siteScope], ['commulingo', s.commuLingoScope]].forEach(function(item) { %>
+            <a class="ui-tab<%= scope === item[0] ? ' is-active' : '' %>" href="<%= scopeHref(item[0]) %>"<% if (scope === item[0]) { %> aria-current="page"<% } %>><%= item[1] %></a>
+            <% }) %>
+        </nav>
+        <form class="site-search-form" action="<%= action %>" method="get" role="search">
+            <%- include('../partials/site-search-box', { value: q, placeholder: inCommuLingo ? s.placeholderCommuLingo : s.placeholderSite, autofocus: !q }) %>
+        </form>
+
+        <% if (!q) { %>
+        <p class="site-search-status"><%= s.prompt %></p>
+        <% } else { %>
+            <% if (result.failed.length) { %>
+            <p class="site-search-status" role="status"><%= s.failed.replace('{sections}', result.failed.map(function(key) { return s.sections[key]; }).join(', ')) %></p>
+            <% } %>
+            <% if (!result.sections.length) { %>
+            <p class="site-search-status" role="status"><%= s.empty.replace('{q}', q) %></p>
+            <% } %>
+            <% result.sections.forEach(function(section) { %>
+            <section class="site-search-group" aria-labelledby="search-<%= section.key %>">
+                <% var head = s.sections[section.key]; %>
+                <% if (section.moreHref) { %>
+                <a class="site-search-head" href="<%= section.moreHref %>">
+                    <h2 id="search-<%= section.key %>"><%= head %></h2>
+                    <span class="site-search-more"><%= s.more.replace('{n}', section.total) %></span>
+                </a>
+                <% } else { %>
+                <div class="site-search-head">
+                    <h2 id="search-<%= section.key %>"><%= head %></h2>
+                    <span class="site-search-count"><%= s.count.replace('{n}', section.total) %></span>
+                </div>
+                <% } %>
+                <ul class="site-search-list">
+                    <% section.items.forEach(function(item) {
+                        var meta = item.chapterNumber
+                            ? [item.meta, s.chapter.replace('{n}', item.chapterNumber)].join(' · ')
+                            : item.meta; %>
+                    <li><a class="site-search-row" href="<%= item.href %>">
+                        <strong class="site-search-title"><%= item.title %></strong>
+                        <% if (meta) { %><span class="site-search-meta"><%= meta %></span><% } %>
+                        <% if (item.excerpt) { %><span class="site-search-excerpt"><%= item.excerpt %></span><% } %>
+                    </a></li>
+                    <% }) %>
+                </ul>
+            </section>
+            <% }) %>
+        <% } %>
+    </main>
+    <%- include('../partials/footer') %>
+</body>
+</html>

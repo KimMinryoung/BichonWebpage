@@ -4,6 +4,7 @@ function siteStyleModules(pagePath = '/') {
     const path = pagePath.replace(/^\/en(?=\/|$)/, '').split('?')[0].replace(/\/$/, '') || '/';
     if (path === '/') return ['lists', 'home'];
     if (path === '/chat') return ['chat'];
+    if (path === '/search') return ['lists'];
     if (/^\/admin(?:\/|$)/.test(path)) return ['lists', 'prose', 'auth', 'admin'];
     // The account page lists passkeys in .posts-table, an admin-module rule.
     if (path === '/auth/account') return ['auth', 'admin'];

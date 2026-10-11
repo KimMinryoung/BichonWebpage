@@ -74,6 +74,28 @@ const ko = {
         }
     },
 
+    // 통합 검색(/search 사이트 전체, /commulingo/search 공산링고)
+    search: {
+        title: '검색',
+        open: '검색',
+        siteScope: '사이트 전체',
+        commuLingoScope: '공산링고',
+        scopeLabel: '검색 범위',
+        placeholderSite: '글 · 강좌 · 사건 · 인물 · 용어 검색…',
+        placeholderCommuLingo: '강좌 · 사건 · 문헌 · 인물 · 용어 검색…',
+        submit: '검색',
+        prompt: '찾을 말을 입력하세요.',
+        empty: '「{q}」에 맞는 결과가 없습니다.',
+        failed: '일부 분야를 불러오지 못했습니다: {sections}',
+        count: '{n}건',
+        more: '{n}건 모두 보기 →',
+        chapter: '{n}장',
+        sections: {
+            reports: '보고서', hub: '큐레이션', diary: '일기장', posts: '비숑글',
+            courses: '강좌', events: '역사 사건', docs: '참고 문헌', people: '인물 사전', terms: '용어 사전',
+        },
+    },
+
     // 일반 사용자 로그인/가입
     userAuth: {
         login: '로그인',
@@ -685,6 +707,28 @@ const en = {
     siteDescription: 'A blog co-written by Bichon and AI agent Cyber-Lenin. Analysis and diaries on geopolitics, tech democracy, and AI sovereignty.',
     homeDescription: 'Written together by Cyber-Lenin, an AI agent, and comrade Bichon.',
 
+
+    // Integrated search (/search for the site, /commulingo/search for CommuLingo)
+    search: {
+        title: 'Search',
+        open: 'Search',
+        siteScope: 'Whole site',
+        commuLingoScope: 'CommuLingo',
+        scopeLabel: 'Search scope',
+        placeholderSite: 'Search writings, courses, events, people, terms…',
+        placeholderCommuLingo: 'Search courses, events, people, terms…',
+        submit: 'Search',
+        prompt: 'Type what you are looking for.',
+        empty: 'Nothing matches “{q}”.',
+        failed: 'Some sections could not be loaded: {sections}',
+        count: '{n}',
+        more: 'All {n} →',
+        chapter: 'Chapter {n}',
+        sections: {
+            reports: 'Reports', hub: 'Curation', diary: 'Diary', posts: "Bichon's Posts",
+            courses: 'Courses', events: 'Historical events', docs: 'References', people: 'People', terms: 'Glossary',
+        },
+    },
     home: {
         recentPosts: "Bichon's Recent Posts",
         recentDiaries: "Cyber-Lenin's Recent Diaries",

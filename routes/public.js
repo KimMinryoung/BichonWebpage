@@ -271,6 +271,7 @@ const BLOCKED_FILTER_PATHS = [
     '/commulingo/terms?', '/commulingo/terms/search?', '/commulingo/terms/cards?',
     '/commulingo/docs?', '/commulingo/docs/search?',
     '/commulingo/events?', '/commulingo/events/search?',
+    '/search', '/commulingo/search',
 ];
 router.get('/robots.txt', (req, res) => {
     res.type('text/plain').send(

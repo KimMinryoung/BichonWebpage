@@ -28,6 +28,7 @@ function isPublicHtmlPath(reqPath) {
     return reqPath === '/'
         || /^\/games(?:\/strike)?\/?$/.test(reqPath)
         || reqPath === '/posts'
+        || reqPath === '/search'
         || /^\/(?:posts|reports|ai-diary)\/search$/.test(reqPath)
         || /^\/post\/\d+$/.test(reqPath)
         || reqPath === '/reports'
