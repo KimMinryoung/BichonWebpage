@@ -12,6 +12,7 @@
 // (host or `docker exec leninbot-frontend node /app/scripts/...`)
 
 const { db } = require('./lib/bootstrap');
+const { personName } = require('../data/commulingo/person-name');
 const { isUnresolvedGap } = require('../data/commulingo/person-activities');
 
 (async () => {
@@ -20,7 +21,7 @@ const { isUnresolvedGap } = require('../data/commulingo/person-activities');
     const onlyFunction = fnArg > 0 ? process.argv[fnArg + 1] : '';
     try {
         const { rows } = await db.query(
-            `SELECT id, name_ko, years_label, citizenship_code, COALESCE(activities, '[]'::jsonb) AS activities
+            `SELECT id, given_name_ko, family_name_ko, years_label, citizenship_code, COALESCE(activities, '[]'::jsonb) AS activities
              FROM commulingo_people ORDER BY id`
         );
         const byFunction = new Map();
@@ -29,7 +30,7 @@ const { isUnresolvedGap } = require('../data/commulingo/person-activities');
                 if (!all && !a.primary) continue;
                 if (!isUnresolvedGap(a) || (onlyFunction && a.functionId !== onlyFunction)) continue;
                 if (!byFunction.has(a.functionId)) byFunction.set(a.functionId, []);
-                byFunction.get(a.functionId).push(`${row.id}\t${row.name_ko}\t${row.years_label || ''}\t${row.citizenship_code || ''}${a.primary ? '' : '\t(secondary)'}`);
+                byFunction.get(a.functionId).push(`${row.id}\t${personName(row, 'ko')}\t${row.years_label || ''}\t${row.citizenship_code || ''}${a.primary ? '' : '\t(secondary)'}`);
             }
         }
         const total = [...byFunction.values()].reduce((n, list) => n + list.length, 0);

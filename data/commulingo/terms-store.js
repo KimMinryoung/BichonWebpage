@@ -1,7 +1,7 @@
 const path = require('path');
 const { readSnapshot } = require('./read-snapshot');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
-const { personLabels } = require('./person-label');
+const { personLabels, nameColumns } = require('./person-name');
 
 // Glossary terms served from an in-memory copy, mirroring people-store: the
 // hot path never awaits the DB. Serving (snapshot, background refresh,
@@ -36,7 +36,7 @@ async function fetchTerms() {
              ORDER BY term_id, lang, sort_order, alias`
         ),
         client.query(
-            `SELECT tp.term_id, tp.person_id, p.name_ko, p.name_en, p.name_qualifier_ko, p.name_qualifier_en
+            `SELECT tp.term_id, tp.person_id, ${nameColumns('p')}
              FROM commulingo_term_people tp
              JOIN commulingo_people p ON p.id = tp.person_id
              ORDER BY tp.term_id, tp.sort_order, tp.person_id`

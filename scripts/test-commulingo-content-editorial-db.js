@@ -22,7 +22,7 @@ const L = (ko, en) => ({ ko, en });
     try {
         await client.query('BEGIN');
         await client.query("INSERT INTO commulingo_people_groups (id, title_ko, title_en) VALUES ('ct-group', '시험', 'Test')");
-        await client.query("INSERT INTO commulingo_people (id, group_id, name_ko, name_en) VALUES ('ct-person', 'ct-group', '시험 인물', 'Test Person')");
+        await client.query("INSERT INTO commulingo_people (id, group_id, given_name_ko, family_name_ko, given_name_en, family_name_en) VALUES ('ct-person', 'ct-group', '시험', '인물', 'Test', 'Person')");
         await client.query(`INSERT INTO commulingo_history_events (id, title_ko, title_en, summary_ko, summary_en, body_ko, body_en)
             VALUES ('ct-event', '시험 사건', 'Test event', '요약', 'Summary', '## 배경\n\n원래 배경.\n\n## 결과\n\n원래 결과.', '## Background\n\nOld background.\n\n## Outcome\n\nOld outcome.'),
                    ('ct-skeleton', '뼈대', 'Skeleton', '', '', '', '')`);

@@ -17,6 +17,7 @@
 // (host or `docker exec leninbot-frontend node /app/scripts/...`)
 
 const { db } = require('./lib/bootstrap');
+const { personName } = require('../data/commulingo/person-name');
 const { affiliations, displayActivities } = require('../data/commulingo/person-activities');
 
 const POST_RELATIONS = new Set(['service', 'employment']);
@@ -24,7 +25,7 @@ const STATE_FUNCTIONS = new Set(['government', 'legislature', 'monarchy', 'milit
 const STATE_TITLE = /총리|장관|대통령|의원|인민위원|대사|판사|검찰|주지사|시장|Minister|President|Premier|Chancellor|Deputy|Ambassador|Judge|Governor|Mayor|Commissar/i;
 
 const unnamed = a => POST_RELATIONS.has(a.relation) && !a.title && !a.officeId;
-const line = (row, a) => `${row.id}\t${row.name_ko}\t${a.functionId}\t${a.affiliationId || '-'}\t${a.startYear ?? ''}–${a.endYear ?? ''}${a.primary ? '\t(primary)' : ''}`;
+const line = (row, a) => `${row.id}\t${personName(row, 'ko')}\t${a.functionId}\t${a.affiliationId || '-'}\t${a.startYear ?? ''}–${a.endYear ?? ''}${a.primary ? '\t(primary)' : ''}`;
 
 (async () => {
     const tierArg = process.argv.indexOf('--tier');
@@ -32,7 +33,7 @@ const line = (row, a) => `${row.id}\t${row.name_ko}\t${a.functionId}\t${a.affili
     const json = process.argv.includes('--json');
     try {
         const { rows } = await db.query(
-            `SELECT id, name_ko, COALESCE(activities, '[]'::jsonb) AS activities FROM commulingo_people ORDER BY id`
+            `SELECT id, given_name_ko, family_name_ko, citizenship_code, COALESCE(activities, '[]'::jsonb) AS activities FROM commulingo_people ORDER BY id`
         );
         const tiers = { 1: [], 2: [], 3: [], 4: [] }, review = [];
         for (const row of rows) {
@@ -61,7 +62,7 @@ const line = (row, a) => `${row.id}\t${row.name_ko}\t${a.functionId}\t${a.affili
             }
         }
         if (json) {
-            const out = list => list.map(({ row, a }) => ({ personId: row.id, name: row.name_ko, activity: a }));
+            const out = list => list.map(({ row, a }) => ({ personId: row.id, name: personName(row, 'ko'), activity: a }));
             console.log(JSON.stringify({ tiers: Object.fromEntries(Object.entries(tiers).map(([k, v]) => [k, out(v)])), review: out(review) }, null, 1));
             return;
         }

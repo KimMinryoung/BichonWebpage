@@ -12,12 +12,13 @@
 
 require('dotenv').config();
 const db = require('../config/database');
+const { personName } = require('../data/commulingo/person-name');
 const { checkNativeScript } = require('../data/commulingo/native-script');
 
 (async () => {
     try {
         const { rows } = await db.query(
-            `SELECT p.id, p.cyrillic, p.name_ko, p.name_en,
+            `SELECT p.id, p.cyrillic, p.given_name_ko, p.given_name_en, p.family_name_ko, p.family_name_en,
                     p.citizenship_code, p.origin_code,
                     pp.cyrillic_patronymic
              FROM commulingo_people p
@@ -36,7 +37,7 @@ const { checkNativeScript } = require('../data/commulingo/native-script');
             // who saw the column called `cyrillic` read it as "not applicable"
             // rather than "the name in this person's own script".
             if (!String(row.cyrillic || '').trim()) {
-                missing.push({ id: row.id, name: row.name_en || row.name_ko,
+                missing.push({ id: row.id, name: personName(row, 'en') || personName(row, 'ko'),
                     code: [row.citizenship_code, row.origin_code].filter(Boolean).join(' + ') });
             }
             for (const [field, value] of [
@@ -44,7 +45,7 @@ const { checkNativeScript } = require('../data/commulingo/native-script');
                 ['cyrillicPatronymic', row.cyrillic_patronymic],
             ]) {
                 const problem = checkNativeScript(value, { ...context, field });
-                if (problem) problems.push({ id: row.id, name: row.name_en || row.name_ko, ...problem, value });
+                if (problem) problems.push({ id: row.id, name: personName(row, 'en') || personName(row, 'ko'), ...problem, value });
             }
         }
 
@@ -52,7 +53,7 @@ const { checkNativeScript } = require('../data/commulingo/native-script');
             console.log(`${missing.length} person(s) with no native name at all:\n`);
             for (const row of missing) console.log(`  ${row.id} (${row.name}) — nationality '${row.code}'`);
             console.log('\nSet cyrillic to the person\'s name in their own orthography. For a Latin-script'
-                + ' nationality that is usually name_en verbatim, diacritics included.\n');
+                + ' nationality that is usually the English name verbatim, diacritics included.\n');
         }
 
         if (!problems.length && !missing.length) {

@@ -4,6 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { createHash } = require('node:crypto');
 const db = require('../../config/database');
+const { personName, nameColumns } = require('../../data/commulingo/person-name');
 const store = require('./store');
 const { bundleCandidates } = require('./bundles');
 
@@ -150,12 +151,19 @@ async function materials(config, limit = 10) {
               AND NULLIF(target_id,'') IS NULL AND NULLIF(resolved_id,'') IS NULL
             UNION ALL SELECT 'event:' || id, title_ko, concat_ws(E'\\n', summary_ko, outcome_ko, timeline::text), NULL
             FROM commulingo_history_events WHERE $2
-            UNION ALL SELECT 'person:' || id, name_ko, concat_ws(E'\\n', bio_ko, moment_ko), NULL FROM commulingo_people WHERE $2)
+            UNION ALL SELECT 'person:' || id, NULL, concat_ws(E'\\n', bio_ko, moment_ko), NULL FROM commulingo_people WHERE $2)
         SELECT m.*, md5(m.body) AS content_hash FROM materials m LEFT JOIN commulingo_pipeline_materials p USING(material_id)
         WHERE COALESCE(body,'')!='' AND (p.material_id IS NULL OR p.content_hash!=md5(m.body))
           AND NOT EXISTS (SELECT 1 FROM commulingo_pipeline_jobs j WHERE j.topic='discovery' AND j.status IN ${store.ACTIVE}
               AND j.payload->>'material_id'=m.material_id AND j.payload->>'content_hash'=md5(m.body))
         ORDER BY CASE WHEN material_id LIKE 'gap:%' THEN 0 ELSE 1 END, material_id LIMIT $1`, [limit, config.discovery]);
+    // A person's label is composed, never stored (migration 361).
+    const personIds = rows.filter(row => row.material_id.startsWith('person:')).map(row => row.material_id.slice(7));
+    if (personIds.length) {
+        const { rows: people } = await db.query(`SELECT id, ${nameColumns()} FROM commulingo_people WHERE id = ANY($1)`, [personIds]);
+        const names = new Map(people.map(row => [row.id, personName(row, 'ko')]));
+        for (const row of rows) if (row.material_id.startsWith('person:')) row.label = names.get(row.material_id.slice(7)) || row.label;
+    }
     return rows;
 }
 

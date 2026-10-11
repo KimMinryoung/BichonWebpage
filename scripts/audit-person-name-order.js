@@ -2,19 +2,15 @@
 // Audit the CommuLingo people dictionary for display names that disagree with
 // the name-order standard (FAMILY_FIRST in data/commulingo/native-script.js).
 //
-// The public page never prints name_ko/name_en: people-standard.js recomposes
-// the display name from given/family parts under the citizenship's rule. So a
-// stored name that was typed in the other order (name_ko '카다르 야노시', page
-// '야노시 카다르') is invisible in admin and wrong for readers, and a nation
-// missing from FAMILY_FIRST flips every one of its people at once. This is what
-// happened to the 28 Hungarians on 2026-09-01.
+// The full name is never stored (migration 361): data/commulingo/person-name.js
+// composes it from given/family parts under the citizenship's rule, so parts
+// filed in the wrong slot, or a nation missing from FAMILY_FIRST, show up
+// wrong for every reader at once. This is what happened to the 28 Hungarians
+// on 2026-09-01 (then as a stored name typed in the other order).
 //
 // Checks, per person:
-//   1. name_ko / name_en equal composeFromParts(given, family) exactly — they
-//      are derived values, qualifier and other names excluded — whenever the row
-//      carries parts (the patronymic is inserted at render time, so the stored
-//      string never holds it; rows with no parts at all are counted, not
-//      failed — the legacy full name is what the page shows for them).
+//   1. Every row carries name parts (the table's CHECK also requires a family
+//      name, so this only reports drift from a hand-written statement).
 //   2. No row is given-only: a single token or a mononym lives in family,
 //      never given (히로히토). A Korean/Chinese/Vietnamese name the Korean text
 //      fuses is still split (마오 + 쩌둥, like Mao + Zedong): both languages
@@ -39,7 +35,7 @@
 require('dotenv').config();
 const db = require('../config/database');
 const { familyFirstJoiner, isSingleNameNation, isRegnalNumber, scriptsFor, detectScripts } = require('../data/commulingo/native-script');
-const { composeFromParts } = require('../data/commulingo/people-standard');
+const { personName } = require('../data/commulingo/person-name');
 const { familyFirstPartsProblem } = require('../data/commulingo/people-admin-validation');
 
 const CJK = new Set(['han', 'kana', 'hangul']);
@@ -59,7 +55,7 @@ function firstToken(text) {
 (async () => {
     try {
         const { rows } = await db.query(
-            `SELECT p.id, p.name_ko, p.name_en, p.name_qualifier_ko, p.name_qualifier_en, p.cyrillic,
+            `SELECT p.id, p.name_qualifier_ko, p.name_qualifier_en, p.cyrillic,
                     p.given_name_ko, p.given_name_en, p.family_name_ko, p.family_name_en,
                     p.citizenship_code, p.origin_code,
                     pa.patronymic_ko, pa.patronymic_en, pa.cyrillic_patronymic
@@ -69,29 +65,15 @@ function firstToken(text) {
         );
 
         const problems = [];
-        let withoutParts = 0;
         for (const row of rows) {
             const code = row.citizenship_code || '';
-            const tag = `${row.id} (${row.name_en || row.name_ko}, '${code}')`;
+            const tag = `${row.id} (${personName(row, 'en') || personName(row, 'ko')}, '${code}')`;
             let anyParts = false;
             for (const lang of ['ko', 'en']) {
                 const given = (row[`given_name_${lang}`] || '').trim();
                 const family = (row[`family_name_${lang}`] || '').trim();
-                const stored = (row[`name_${lang}`] || '').trim();
                 if (!given && !family) continue;
                 anyParts = true;
-                // The stored name never carries the patronymic (it is inserted
-                // at render time from commulingo_person_patronymics), so the
-                // comparison composes given + family only.
-                // Exact: name_ko/name_en are derived values the store writes
-                // from the parts. A disambiguator lives in name_qualifier_*
-                // (migration 360), other names in aliases — never in brackets
-                // here (the 2026-10-11 census found 14 such rows).
-                const composed = composeFromParts(given, '', family, lang, code);
-                if (composed !== stored) {
-                    problems.push(`${tag}: name_${lang} "${stored}" but parts compose to "${composed}"`
-                        + ` (given "${given}", family "${family}")`);
-                }
                 // A lone token is a family name (or a mononym) by convention —
                 // splitFullName in the admin store files it there, and
                 // people-linkify offers the family part as the bare alias. A
@@ -108,7 +90,7 @@ function firstToken(text) {
                         + ' the name as people call it goes whole in family (체렌도르지, 멩기스투 하일레 마리암)');
                 }
             }
-            if (!anyParts) withoutParts += 1;
+            if (!anyParts) problems.push(`${row.id}: no name parts at all`);
             const partsProblem = anyParts && familyFirstPartsProblem(
                 { given: (row.given_name_ko || '').trim(), family: (row.family_name_ko || '').trim() },
                 { given: (row.given_name_en || '').trim(), family: (row.family_name_en || '').trim() },
@@ -159,7 +141,7 @@ function firstToken(text) {
         for (const lang of ['ko', 'en']) {
             const byName = new Map();
             for (const row of rows) {
-                const name = row[`name_${lang}`] || '';
+                const name = personName(row, lang);
                 if (name) byName.set(name, [...(byName.get(name) || []), row]);
             }
             for (const [name, group] of byName) {
@@ -173,14 +155,14 @@ function firstToken(text) {
         }
 
         if (!problems.length) {
-            console.log(`OK — ${rows.length} people checked, stored names match their parts under the name-order`
-                + ` standard (${withoutParts} legacy row(s) carry no parts).`);
+            console.log(`OK — ${rows.length} people checked: name parts follow the name-order standard`
+                + ' and every shared name carries its own qualifier.');
             process.exit(0);
         }
         console.log(`${problems.length} name-order problem(s):\n`);
         for (const line of problems) console.log(`  ${line}`);
-        console.log('\nFix the parts (or the citizenship code), then set name_ko/name_en to what the parts'
-            + ' compose to — the public page renders the composition, never the stored string.');
+        console.log('\nFix the parts (or the citizenship code) through the Admin store; the name every page'
+            + ' shows is composed from them.');
         process.exit(1);
     } catch (err) {
         console.error('Audit failed:', err.message);

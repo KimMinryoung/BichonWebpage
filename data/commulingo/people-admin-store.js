@@ -7,7 +7,8 @@ const { mergePersonPatch } = require('./people-patch');
 const { assertLinkExpressions } = require('./link-expressions');
 const { assertAliases, assertPersonHeadwords } = require('./headword-validation');
 const db = require('../../config/database');
-const { normalizeFateLabel, composeFromParts, composePersonName } = require('./people-standard');
+const { normalizeFateLabel } = require('./people-standard');
+const { composeFromParts, personName, personNames, nameMatchSql } = require('./person-name');
 const { assertPersonAliases } = require('./person-alias-rules');
 const { periodColumns, periodFromRow, formatBoth, PERIOD_COLUMNS, periodValues } = require('./career-period');
 const { t, localized, contentLocalized, badRequest, parseLifeYears, requireId, normalizeLimit, normalizeOffset } = require('./people-admin-fields');
@@ -59,7 +60,7 @@ function rowToPerson(row) {
         years: row.years_label || '',
         birthYear: row.birth_year,
         deathYear: row.death_year,
-        name: t(row.name_ko, row.name_en),
+        name: personNames(row),
         givenName: t(row.given_name_ko, row.given_name_en),
         familyName: t(row.family_name_ko, row.family_name_en),
         nameQualifier: t(row.name_qualifier_ko, row.name_qualifier_en),
@@ -80,7 +81,7 @@ async function listPeopleAdmin(options = {}) {
     const offset = normalizeOffset(options.offset);
     const { rows } = await db.query(
         `SELECT id, group_id, initial, cyrillic, years_label, birth_year, death_year,
-                name_ko, name_en, given_name_ko, given_name_en, family_name_ko, family_name_en,
+                given_name_ko, given_name_en, family_name_ko, family_name_en,
                 name_qualifier_ko, name_qualifier_en,
                 epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                 fate_kind, fate_label_ko, fate_label_en,
@@ -91,8 +92,7 @@ async function listPeopleAdmin(options = {}) {
          FROM commulingo_people
          WHERE ($1 = ''
                 OR id ILIKE '%' || $1 || '%'
-                OR name_ko ILIKE '%' || $1 || '%'
-                OR name_en ILIKE '%' || $1 || '%'
+                OR ${nameMatchSql('', '$1', 'contains')}
                 OR cyrillic ILIKE '%' || $1 || '%')
            AND ($2 = '' OR group_id = $2)
          ORDER BY sort_order, id
@@ -108,7 +108,7 @@ async function getPersonAdmin(personId, options = {}) {
     const client = options.client || db;
     const personResult = await client.query(
         `SELECT id, group_id, initial, cyrillic, years_label, birth_year, death_year,
-                name_ko, name_en, given_name_ko, given_name_en, family_name_ko, family_name_en,
+                given_name_ko, given_name_en, family_name_ko, family_name_en,
                 name_qualifier_ko, name_qualifier_en,
                 epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                 fate_kind, fate_label_ko, fate_label_en,
@@ -199,7 +199,7 @@ async function getPersonAdmin(personId, options = {}) {
 // writes so a rename and its aliases are checked together.
 async function ownNames(client, personId) {
     const { rows: [row] } = await client.query(
-        `SELECT p.name_ko, p.name_en, p.given_name_ko, p.given_name_en, p.family_name_ko, p.family_name_en, p.citizenship_code,
+        `SELECT p.given_name_ko, p.given_name_en, p.family_name_ko, p.family_name_en, p.citizenship_code,
                 t.patronymic_ko, t.patronymic_en
          FROM commulingo_people p LEFT JOIN commulingo_person_patronymics t ON t.person_id = p.id
          WHERE p.id = $1`, [personId]);
@@ -208,10 +208,8 @@ async function ownNames(client, personId) {
         const given = row[`given_name_${lang}`] || '';
         const family = row[`family_name_${lang}`] || '';
         const patronymic = row[`patronymic_${lang}`] || '';
-        const full = given || family
-            ? composeFromParts(given, patronymic, family, lang, row.citizenship_code || '')
-            : composePersonName(row[`name_${lang}`] || '', patronymic);
-        return [lang, { name: row[`name_${lang}`], family, full }];
+        const full = composeFromParts(given, patronymic, family, lang, row.citizenship_code || '');
+        return [lang, { name: personName(row, lang), family, full }];
     }));
 }
 
@@ -322,9 +320,13 @@ async function createPersonAdmin(rawPayload, options = {}) {
         const qualifier = normalizeNameQualifier(payload.nameQualifier === undefined ? null : payload.nameQualifier);
         assertIdKeepsLetters(id, nameEn);
         const fold = text => text.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
-        const { rows: candidates } = await client.query(`SELECT id, name_ko, name_en, name_qualifier_ko AS qualifier FROM commulingo_people
-            UNION ALL SELECT person_id AS id, CASE WHEN lang='ko' THEN alias ELSE '' END,
-                CASE WHEN lang='en' THEN alias ELSE '' END, NULL FROM commulingo_person_aliases`);
+        const { rows: people } = await client.query(`SELECT id, given_name_ko, given_name_en, family_name_ko, family_name_en,
+                citizenship_code, name_qualifier_ko FROM commulingo_people`);
+        const { rows: aliasRows } = await client.query('SELECT person_id, lang, alias FROM commulingo_person_aliases');
+        const candidates = [
+            ...people.map(row => ({ id: row.id, name_ko: personName(row, 'ko'), name_en: personName(row, 'en'), qualifier: row.name_qualifier_ko })),
+            ...aliasRows.map(row => ({ id: row.person_id, name_ko: row.lang === 'ko' ? row.alias : '', name_en: row.lang === 'en' ? row.alias : '', qualifier: null })),
+        ];
         // A namesake that already carries a different qualifier is a known
         // distinct person (the second 오토 브라운); everything else is a suspect.
         const duplicate = candidates.find(row => !(qualifier.ko && row.qualifier && row.qualifier !== qualifier.ko)
@@ -343,17 +345,17 @@ async function createPersonAdmin(rawPayload, options = {}) {
         await client.query(
             `INSERT INTO commulingo_people
                 (id, group_id, sort_order, initial, cyrillic, years_label, birth_year, death_year,
-                 name_ko, name_en, given_name_ko, given_name_en, family_name_ko, family_name_en,
+                 given_name_ko, given_name_en, family_name_ko, family_name_en,
                  epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                  fate_kind, fate_label_ko, fate_label_en,
                  citizenship_code, citizenship_label_ko, citizenship_label_en,
                  origin_code, origin_label_ko, origin_label_en, name_qualifier_ko, name_qualifier_en, updated_at)
              VALUES
                 ($1, $2, $3, $4, $5, $6, $7, $8,
-                 $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20,
-                 $21, $22, $23,
-                 $24, $25, $26,
-                 $27, $28, $29, $30, $31, NOW())`,
+                 $9, $10, $11, $12, $13, $14, $15, $16, $17, $18,
+                 $19, $20, $21,
+                 $22, $23, $24,
+                 $25, $26, $27, $28, $29, NOW())`,
             [
                 id,
                 groupId,
@@ -363,8 +365,6 @@ async function createPersonAdmin(rawPayload, options = {}) {
                 payload.years || '',
                 years.birthYear,
                 years.deathYear,
-                nameKo,
-                nameEn,
                 partsKo.given,
                 partsEn.given,
                 partsKo.family,
@@ -516,8 +516,6 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             assertSingleName(newPartsKo, 'ko', citizenship.code);
             assertSingleName(newPartsEn, 'en', citizenship.code);
             assertFamilyFirstParts(newPartsKo, newPartsEn, citizenship.code);
-            set('name_ko', newPartsKo.full);
-            set('name_en', newPartsEn.full);
             set('given_name_ko', newPartsKo.given);
             set('given_name_en', newPartsEn.given);
             set('family_name_ko', newPartsKo.family);

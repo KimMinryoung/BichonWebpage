@@ -1,3 +1,4 @@
+const { personNames } = require('./person-name');
 const db = require('../../config/database');
 const { periodFromRow, formatBoth, PERIOD_COLUMNS } = require('./career-period');
 const path = require('path');
@@ -58,7 +59,7 @@ async function fetchRows() {
         ),
         client.query(
             `SELECT id, group_id, initial, cyrillic, years_label,
-                    name_ko, name_en, given_name_ko, given_name_en, family_name_ko, family_name_en,
+                    given_name_ko, given_name_en, family_name_ko, family_name_en,
                     name_qualifier_ko, name_qualifier_en,
                     epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
                     fate_kind, fate_label_ko, fate_label_en,
@@ -287,7 +288,7 @@ function rowsToPeopleData(rows) {
             activities: row.activities || [],
             initial: row.initial || '',
             cyrillic: row.cyrillic || '',
-            name: t(row.name_ko, row.name_en),
+            name: personNames(row),
             givenName: t(row.given_name_ko, row.given_name_en),
             familyName: t(row.family_name_ko, row.family_name_en),
             qualifier: t(row.name_qualifier_ko, row.name_qualifier_en),

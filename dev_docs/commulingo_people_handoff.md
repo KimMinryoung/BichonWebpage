@@ -27,9 +27,14 @@ columns and converted every old label; 273 split the 100 multi-segment labels
 
 `commulingo_people` now stores names as parts: `given_name_ko/en`,
 `family_name_ko/en`, with the patronymic staying in
-`commulingo_person_patronymics`. `name_ko/en` remain as the DERIVED full name
-(using citizenship-based order, patronymic never embedded) and are recomputed
-when names or citizenship change — do not write them independently.
+`commulingo_person_patronymics`. The full name is NOT stored (migration 361,
+2026-10-11, dropped `name_ko/en`): `data/commulingo/person-name.js` is the one
+assembler (`composeFromParts`, `personName(row, lang)`, `personLabel` for the
+qualifier). SQL that must find a person by name uses `nameMatchSql` (parts in
+either order, spaces/case ignored); the MCP `people` dataset adds the composed
+`name_ko/name_en` to each row for mirrors (leninbot). The CHECK
+`commulingo_people_name_parts` requires a family name and keeps brackets out of
+the parts.
 
 Admin API (`POST/PATCH /commulingo/admin/api/people`):
 - Preferred payload: `givenName: {ko,en}`, `familyName: {ko,en}`,
@@ -60,12 +65,12 @@ both languages or neither, text without the brackets; `null` clears). It used to
 be typed onto the end of `name_ko/en`, which the store dropped on the next name
 edit and the person page never showed.
 
-- `name_ko/en` are strictly the composition of the parts: the store rejects
-  brackets in any name part, the CHECK `commulingo_people_name_derived` rejects
-  them in the columns, and `audit-person-name-order` compares them exactly (and
-  requires every card of a shared name to carry its own qualifier). Other names
-  (birth name, nickname) go to aliases, never into brackets.
-- Display: `data/commulingo/person-label.js` `personLabel(name, qualifier)` is
+- The name is only the composition of the parts: the store rejects brackets in
+  any name part, the CHECK `commulingo_people_name_parts` rejects them in the
+  columns, and `audit-person-name-order` requires every card of a shared name
+  to carry its own qualifier. Other names (birth name, nickname) go to aliases,
+  never into brackets.
+- Display: `data/commulingo/person-name.js` `personLabel(name, qualifier)` is
   the one labelling function. Lists (people cards and rows, event and term
   people, rosters, office rows, document refs, map previews, site search,
   page `<title>`) show 「오토 브라운 (프로이센 총리)」; the person page heading keeps

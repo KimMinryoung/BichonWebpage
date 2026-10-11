@@ -1,7 +1,7 @@
 const path = require('path');
 const { readSnapshot } = require('./read-snapshot');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
-const { personLabels } = require('./person-label');
+const { personLabels, nameColumns } = require('./person-name');
 const { eventPeriodYears } = require('../../utils/event-period-search');
 
 // History events are served from an in-memory copy, mirroring people-store:
@@ -43,7 +43,7 @@ async function fetchEvents() {
         client.query(
             `SELECT ep.event_id, ep.person_id, ep.relation_kind, ep.relation_ko, ep.relation_en, ep.note_ko, ep.note_en,
                     to_jsonb(ep)->>'side' AS side,
-                    p.name_ko, p.name_en, p.name_qualifier_ko, p.name_qualifier_en, p.cyrillic, p.years_label
+                    ${nameColumns('p')}, p.cyrillic, p.years_label
              FROM commulingo_history_event_people ep
              JOIN commulingo_people p ON p.id = ep.person_id
              ORDER BY ep.event_id, ep.sort_order, ep.person_id`

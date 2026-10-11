@@ -2,7 +2,7 @@ const db = require('../../config/database');
 const { spanParts, endText } = require('./politburo-store');
 const { loadCommuLingoPeople } = require('./people-store');
 const { localize } = require('./localize');
-const { personLabels } = require('./person-label');
+const { personLabels, nameColumns } = require('./person-name');
 
 // ── Label tables ─────────────────────────────────────────────────────────
 // Span/end labels live in politburo-store (the person-page box shares them);
@@ -48,7 +48,7 @@ async function personNames(data) {
         }
     }
     const { rows } = await db.query(
-        'SELECT id, name_ko, name_en, name_qualifier_ko, name_qualifier_en FROM commulingo_people WHERE id = ANY($1)',
+        `SELECT id, ${nameColumns()} FROM commulingo_people WHERE id = ANY($1)`,
         [[...ids]]
     );
     return new Map(rows.map(row => [row.id, personLabels(row)]));

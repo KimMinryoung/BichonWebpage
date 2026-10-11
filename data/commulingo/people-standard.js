@@ -1,9 +1,8 @@
 const { displayActivities, affiliations } = require('./person-activities');
 const { resolvePosition, collectionPosition, RED_LABELS, RED_COLLECTIONS } = require('./person-position');
 const { hasFlag, flagLabel } = require('./flag-icons');
-const { familyFirstJoiner } = require('./native-script');
 const { localize } = require('./localize');
-const { personLabel } = require('./person-label');
+const { composeFromParts, personLabel } = require('./person-name');
 const { parseLifeYears } = require('./person-life-years');
 
 const SCHEMA_VERSION = 'commulingo.people.v1';
@@ -103,18 +102,6 @@ function composePersonName(name, patronymic) {
     return [parts[0], patronymic, ...parts.slice(1)].join(' ');
 }
 
-// Preferred composition when structured name parts exist (given/family columns,
-// migration 060): the patronymic sits between given and family names, which
-// also places it correctly after multi-word given names where the legacy
-// insert-after-first-token compose cannot. Family-first nationalities
-// (korea/china/vietnam/japan — see native-script.js) lead with the family name
-// instead: 김+무정 → 김무정, Peng+Dehuai → Peng Dehuai; those names never
-// carry a patronymic, so a present patronymic keeps the Western shape.
-function composeFromParts(given, patronymic, family, lang, citizenshipCode) {
-    const joiner = familyFirstJoiner(citizenshipCode, lang);
-    if (joiner !== null && given && family && !patronymic) return `${family}${joiner}${given}`;
-    return [given, patronymic, family].filter(Boolean).join(' ');
-}
 
 // Fate labels carry the cause of death only — the death year already lives in
 // `years` / deathYear, so it must not be repeated here. Political-event years

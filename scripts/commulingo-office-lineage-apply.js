@@ -14,6 +14,7 @@
 // range, lineage[], tracks[], rows[]}).
 const fs = require('fs');
 const db = require('../config/database');
+const { personName, nameColumns } = require('../data/commulingo/person-name');
 const { withTransaction, writeRevision } = require('../data/commulingo/admin-tx');
 const offices = require('../data/commulingo/people-offices-store');
 
@@ -64,8 +65,8 @@ async function main() {
     const spec = JSON.parse(fs.readFileSync(file, 'utf8'));
     validate(spec);
     const ids = [...new Set(spec.rows.map(row => row.personId).filter(Boolean))];
-    const found = await db.query('SELECT id, name_ko FROM commulingo_people WHERE id = ANY($1)', [ids]);
-    const names = new Map(found.rows.map(row => [row.id, row.name_ko]));
+    const found = await db.query(`SELECT id, ${nameColumns()} FROM commulingo_people WHERE id = ANY($1)`, [ids]);
+    const names = new Map(found.rows.map(row => [row.id, personName(row, 'ko')]));
     const missing = ids.filter(id => !names.has(id));
     if (missing.length) throw new Error(`unknown personId: ${missing.join(', ')}`);
     const terms = (spec.lineage || []).map(node => node.termId).filter(Boolean);

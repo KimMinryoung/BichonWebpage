@@ -146,8 +146,8 @@ function assertFamilyFirstParts(partsKo, partsEn, citizenshipCode) {
 // were a surname (수흐바타르 수흐바타르, 아트나푸 + 아바테). Monarchs keep the
 // regnal shape (하일레 셀라시에 + 1세).
 function assertSingleName(parts, lang, citizenshipCode) {
-    // name_ko/name_en are only the composition of the parts (personLabel adds
-    // the qualifier for lists), so nothing in brackets may ride along in them.
+    // The name is only ever the composition of the parts (person-name.js; the
+    // qualifier has its own field), so nothing in brackets may ride along in them.
     if (/[()（）]/.test(`${parts.given} ${parts.family} ${parts.full}`)) {
         throw badRequest(`name.${lang} "${parts.full}" carries parentheses: the name parts hold the name only — `
             + 'put a disambiguator in nameQualifier ({ko: "프로이센 총리", en: "Prussian premier"}) and other names in aliases');

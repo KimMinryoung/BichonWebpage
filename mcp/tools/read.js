@@ -48,18 +48,19 @@ const tools = [
         async handler({ q = '', groupId = '', functionId = '', affiliationIds = [], limit, offset }) {
             if (affiliationIds.some(id => typeof id !== 'string')) throw Object.assign(new Error('affiliationIds must be strings'), { status: 400 });
             const db = require('../../config/database');
+            const { personName, nameColumns, nameMatchSql } = require('../../data/commulingo/person-name');
             const activity = functionId || affiliationIds.length;
-            const { rows } = await db.query(`SELECT p.id, p.group_id, p.name_ko, p.name_en, p.name_qualifier_ko, p.name_qualifier_en, p.cyrillic, p.years_label, p.epithet_ko,
+            const { rows } = await db.query(`SELECT p.id, p.group_id, ${nameColumns('p')}, p.cyrillic, p.years_label, p.epithet_ko,
                     p.epithet_en, p.fate_kind, p.citizenship_code, p.origin_code, left(p.bio_ko, 200) AS bio_ko_excerpt
                 FROM commulingo_people p
-                WHERE ($1 = '' OR p.id ILIKE '%' || $1 || '%' OR p.name_ko ILIKE '%' || $1 || '%'
-                       OR p.name_en ILIKE '%' || $1 || '%' OR p.cyrillic ILIKE '%' || $1 || '%')
+                WHERE ($1 = '' OR p.id ILIKE '%' || $1 || '%' OR ${nameMatchSql('p', '$1', 'contains')}
+                       OR p.cyrillic ILIKE '%' || $1 || '%')
                   AND ($2 = '' OR p.group_id = $2)
                   AND (NOT $3 OR EXISTS (SELECT 1 FROM jsonb_array_elements(COALESCE(p.activities, '[]'::jsonb)) a
                        WHERE ($4 = '' OR a->>'functionId' = $4) AND (cardinality($5::text[]) = 0 OR a->>'affiliationId' = ANY($5::text[]))))
                 ORDER BY p.sort_order, p.id LIMIT $6 OFFSET $7`,
             [q.trim(), groupId.trim(), !!activity, functionId, affiliationIds, limit, offset]);
-            return { offset, people: rows };
+            return { offset, people: rows.map(row => ({ ...row, name_ko: personName(row, 'ko'), name_en: personName(row, 'en') })) };
         },
     },
     {

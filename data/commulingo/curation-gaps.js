@@ -3,6 +3,7 @@
 // up by the enrichment pipeline planner). Ported from leninbot
 // commulingo/people.py _file_gaps/_already_covered, 2026-10-05.
 const db = require('../../config/database');
+const { nameMatchSql } = require('./person-name');
 const { listCommuLingoDocs } = require('./docs-store');
 
 const PAREN = /[（(][^）)]*[)）]/g;
@@ -48,7 +49,7 @@ function docIndex() {
 
 const ENTRY_SQL = {
     person: `SELECT p.id FROM commulingo_people p
-        WHERE replace(lower(p.name_ko), ' ', '') = replace(lower($1), ' ', '') OR replace(lower(p.name_en), ' ', '') = replace(lower($1), ' ', '')
+        WHERE ${nameMatchSql('p', '$1')}
         UNION SELECT a.person_id FROM commulingo_person_aliases a WHERE replace(lower(a.alias), ' ', '') = replace(lower($1), ' ', '') LIMIT 1`,
     term: `SELECT t.id FROM commulingo_terms t
         WHERE replace(lower(t.term_ko), ' ', '') = replace(lower($1), ' ', '') OR replace(lower(t.term_en), ' ', '') = replace(lower($1), ' ', '')

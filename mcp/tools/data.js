@@ -99,7 +99,7 @@ const tools = [
     },
     {
         name: 'dataset_rows',
-        description: `Raw rows of a published dataset, for mirrors (columns follow the table). Datasets: ${Object.keys(DATASETS).join(', ')}.`,
+        description: `Raw rows of a published dataset, for mirrors (columns follow the table; people rows also carry name_ko/name_en composed from the name parts, without patronymic or qualifier). Datasets: ${Object.keys(DATASETS).join(', ')}.`,
         inputSchema: object({
             dataset: str('Dataset name', { enum: Object.keys(DATASETS) }),
             limit: int('Max rows (default 2000)', 1, 5000, { default: 2000 }),
@@ -107,6 +107,12 @@ const tools = [
         }, ['dataset']),
         async handler({ dataset, limit, offset }) {
             const { rows } = await db().query(`SELECT * FROM (${DATASETS[dataset]}) d LIMIT $1 OFFSET $2`, [limit, offset]);
+            // The full name is not stored (migration 361); mirrors get it composed
+            // by the site's one assembler, under the columns they always read.
+            if (dataset === 'people') {
+                const { personName } = require('../../data/commulingo/person-name');
+                for (const row of rows) Object.assign(row, { name_ko: personName(row, 'ko'), name_en: personName(row, 'en') });
+            }
             return { dataset, offset, rows, done: rows.length < limit };
         },
     },

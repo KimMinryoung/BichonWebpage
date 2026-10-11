@@ -22,13 +22,14 @@ OUT = Path(__file__).parent / "glossary-db.json"
 SQL = r"""
 SELECT json_build_object(
  'people', (SELECT COALESCE(json_agg(json_build_object(
-    'id', p.id, 'cyr', p.cyrillic, 'ko', p.name_ko,
+    'id', p.id, 'cyr', p.cyrillic,
+    'given_name_ko', p.given_name_ko, 'family_name_ko', p.family_name_ko, 'citizenship_code', p.citizenship_code,
     'family_ko', p.family_name_ko,
     'pat_cyr', COALESCE(pt.cyrillic_patronymic, ''),
     'pat_ko', COALESCE(pt.patronymic_ko, '')) ORDER BY p.id), '[]'::json)
    FROM commulingo_people p
    LEFT JOIN commulingo_person_patronymics pt ON pt.person_id = p.id
-   WHERE p.cyrillic <> '' AND p.name_ko <> ''),
+   WHERE p.cyrillic <> '' AND p.family_name_ko <> ''),
  'terms', (SELECT COALESCE(json_agg(json_build_object(
     'id', t.id, 'ru', t.original, 'ko', t.term_ko) ORDER BY t.id), '[]'::json)
    FROM commulingo_terms t
@@ -55,6 +56,17 @@ def main():
          "-tA", "-c", SQL],
         check=True, capture_output=True, text=True).stdout.strip()
     db = json.loads(raw)
+    # The full name is not stored (frontend migration 361): compose it with the
+    # site's one assembler (data/commulingo/person-name.js).
+    root = Path(__file__).resolve().parents[2]
+    composed = subprocess.run(
+        ["node", "-e", "const {personName}=require(process.argv[1]);"
+         "const rows=JSON.parse(require('fs').readFileSync(0,'utf8'));"
+         "process.stdout.write(JSON.stringify(rows.map(r=>personName(r,'ko'))))",
+         str(root / "data/commulingo/person-name.js")],
+        input=json.dumps(db["people"]), capture_output=True, text=True, check=True).stdout
+    for p, name in zip(db["people"], json.loads(composed)):
+        p["ko"] = name
 
     people = []
     for p in db["people"]:
