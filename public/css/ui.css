@@ -409,10 +409,13 @@ svg {
     border: var(--border-width) solid var(--border);
 }
 
-.ui-crumb-trail { display: flex; align-items: center; flex: 1 1 auto; min-width: 0; margin: 0; padding: 0; list-style: none; }
-.ui-crumb-item { display: flex; align-items: center; flex: 0 0 auto; min-width: 0; }
+.ui-crumb-trail { display: flex; align-items: center; align-self: stretch; flex: 1 1 auto; min-width: 0; margin: 0; padding: 0; list-style: none; }
+.ui-crumb-item { display: flex; align-items: center; align-self: stretch; flex: 0 0 auto; min-width: 0; }
 .ui-crumb-item:last-child { flex: 1 1 auto; }
-.ui-crumb-link { display: flex; align-items: center; align-self: stretch; min-height: calc(var(--crumb-height) - 2 * var(--border-width)); gap: 5px; padding-inline: 6px; color: var(--text-secondary); font-size: 0.86rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.ui-crumb-link { display: flex; align-items: center; align-self: stretch; gap: 5px; padding-inline: 6px; color: var(--text-secondary); font-size: 0.86rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+/* The trail, its items and the links all stretch to the bar's inner height
+   rather than a fixed height minus the border: the document reader drops the
+   bar's border, and a fixed 32px link then sat 1px short of each edge. */
 /* A colour shift alone on these small words went unnoticed; the whole crumb
    fills with the primary green, the same pair of colours as .btn-primary. */
 .ui-crumb-link:hover { color: #fff; background: var(--btn-primary); text-decoration: none; }
