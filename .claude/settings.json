@@ -4,7 +4,10 @@
       "Bash(docker cp:*)",
       "Bash(docker exec:*)",
       "Bash(docker exec -i leninbot-frontend node /app/scripts/apply-history-terms.js:*)",
-      "Bash(docker exec -i leninbot-frontend node /app/scripts/review-commulingo-links.js:*)"
+      "Bash(docker exec -i leninbot-frontend node /app/scripts/review-commulingo-links.js:*)",
+      "Bash(sudo cp /home/grass/frontend/nginx/leninbot-frontend.conf /etc/nginx/sites-available/leninbot-frontend)",
+      "Bash(sudo nginx -t)",
+      "Bash(sudo systemctl reload nginx)"
     ]
   },
   "hooks": {
