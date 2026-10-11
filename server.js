@@ -18,11 +18,10 @@ const csrfProtection = require('./middleware/csrf');
 const { requireAdminIp, requireWriterAdminSession } = require('./middleware/auth');
 const { webauthnLimiter, signupLimiter } = require('./middleware/rate-limit');
 const { stripEnglishPrefix, redirectLanguageQuery, redirectEnglishCookie } = require('./middleware/language');
-const { chatLimiterGate, preloadFingerprints } = require('./middleware/chat-identity');
 const { viewLocals } = require('./middleware/view-locals');
 const { cachePolicy } = require('./middleware/cache-policy');
-const { sessionGate } = require('./config/session');
-const { a2aProxy, backendApiProxy } = require('./config/proxies');
+const { createSessionGate } = require('./config/session');
+const { mountChatProxy } = require('./config/chat-proxy');
 const { securityHeaders } = require('./config/security');
 const { staticAssets, releasedAssets } = require('./config/static-assets');
 const { isSessionFreeRequest } = require('./config/route-policy');
@@ -53,16 +52,12 @@ if (env.DEV_MODE) {
 app.use(cookieParser());
 app.use(redirectLanguageQuery);
 app.use(redirectEnglishCookie);
-app.use(sessionGate);
+app.use(createSessionGate(errorPage.serviceUnavailable));
 
-// Chat/writer proxy identity, the local chat-history endpoints, then the
-// proxies themselves — all before body parsers and CSRF.
-app.use('/api/proxy/writer', requireWriterAdminSession);
-app.use('/api/proxy', chatLimiterGate);
-app.use('/api/proxy', preloadFingerprints);
-app.use('/api/proxy', require('./routes/chat-history'));
-app.use(a2aProxy);
-app.use('/api/proxy', backendApiProxy);
+// Chat/writer/A2A proxies — all before body parsers and CSRF. nginx sends
+// these paths to the chat gateway (chat-gateway.js) so an app deploy does not
+// cut a streaming answer; this copy answers while the gateway restarts.
+mountChatProxy(app);
 
 app.use(compression({
     threshold: 1024,

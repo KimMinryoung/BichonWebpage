@@ -2,12 +2,15 @@
 # deploy — Frontend deploy script
 #
 # Usage:
-#   deploy [--restart]
+#   deploy [--restart] [--restart-chat]
 #       Pull latest code, extract it as a read-only code release, and replace
 #       the container. The image holds only Node and dependencies and is
 #       rebuilt only when Dockerfile/package*.json change. Skips when nothing
 #       the app reads changed (docs, host scripts) unless --restart is passed.
 #       A CSS-only change is faster with scripts/deploy-assets publish.
+#       The chat gateway container (chat-gateway.js) is replaced only when a
+#       file it loads changed (scripts/lib/chat-gateway-paths.js), it is not
+#       running, or --restart-chat is passed; it drains streaming answers first.
 
 set -euo pipefail
 
@@ -27,6 +30,12 @@ CONTAINER_NAME="leninbot-frontend"
 STANDBY_NAME="leninbot-frontend-standby"
 STANDBY_PORT=3002
 MCP_PORT=3100
+# The chat/writer/A2A streams run in their own container so an app deploy
+# never cuts an answer; nginx falls back to the app while it restarts.
+GATEWAY_NAME="leninbot-frontend-chat"
+GATEWAY_PORT=3003
+# chat-gateway.js lets answers in progress finish for up to this long.
+GATEWAY_DRAIN_S=300
 NGINX_SITE="/etc/nginx/sites-available/leninbot-frontend"
 IMAGE_NAME="leninbot-frontend"
 NETWORK="leninbot_default"
@@ -58,12 +67,15 @@ commulingo_version() {
 }
 
 FORCE_RESTART=0
+FORCE_CHAT=0
 for arg in "$@"; do
     case "$arg" in
         --restart|-r) FORCE_RESTART=1 ;;
+        --restart-chat) FORCE_CHAT=1 ;;
         --help|-h)
-            echo "Usage: deploy [--restart]"
-            echo "  --restart, -r   Rebuild and restart even when no new commits."
+            echo "Usage: deploy [--restart] [--restart-chat]"
+            echo "  --restart, -r    Rebuild and restart even when no new commits."
+            echo "  --restart-chat   Also replace the chat gateway (drains answers in progress)."
             exit 0
             ;;
         *)
@@ -83,6 +95,137 @@ APP_RELEASE_HOST_DIR="${APP_RELEASE_HOST_DIR:-$(dirname "$FRONTEND_DATA_DIR")/.a
 mkdir -p "$APP_RELEASE_HOST_DIR"
 exec 9>"$CSS_RELEASE_HOST_DIR/deploy.lock"
 flock -n 9 || { err "Another app/CSS deployment is running."; exit 1; }
+
+# Shared by the app and chat gateway steps; defined before any early exit.
+# Runtime image (dependencies only), tagged by the files that define it
+# (hashed after the pull, so a dependency change in it counts).
+ensure_runtime_image() {
+    DEPS_HASH="$(cat Dockerfile .dockerignore package.json package-lock.json | sha256sum | cut -c1-16)"
+    RUNTIME_IMAGE="$IMAGE_NAME:deps-$DEPS_HASH"
+    if docker image inspect "$RUNTIME_IMAGE" > /dev/null 2>&1; then
+        log "Dependencies unchanged; reusing image $RUNTIME_IMAGE."
+    else
+        log "Building runtime image $RUNTIME_IMAGE (Dockerfile or dependencies changed)..."
+        docker build -t "$RUNTIME_IMAGE" .
+    fi
+    # scripts/dev-preview runs the untagged name.
+    docker tag "$RUNTIME_IMAGE" "$IMAGE_NAME"
+}
+# Code release: the committed tree minus host-only directories and data/
+# (mounted). Extracted once per commit, then reused by restarts.
+ensure_code_release() {
+    APP_DIR="$APP_RELEASE_HOST_DIR/$LOCAL"
+    if [[ -d "$APP_DIR" ]]; then
+        log "Reusing code release $APP_DIR."
+        touch "$APP_DIR"
+        return 0
+    fi
+    log "Extracting code release $LOCAL..."
+    local excludes=(':(exclude)data') dir stage
+    for dir in $(node -p "require('./scripts/lib/runtime-paths').RELEASE_EXCLUDES.join(' ')"); do
+        excludes+=(":(exclude)$dir")
+    done
+    stage="$(mktemp -d "$APP_RELEASE_HOST_DIR/.staging-XXXXXX")"
+    chmod 755 "$stage"
+    if ! git archive "$LOCAL" -- . "${excludes[@]}" | tar -x -C "$stage"; then
+        rm -rf "$stage"
+        err "Could not extract code release $LOCAL."
+        exit 1
+    fi
+    # Mount points inside the read-only /app.
+    mkdir "$stage/data" "$stage/css-releases"
+    mv "$stage" "$APP_DIR"
+}
+# /ready answers 200 only when the container reaches Postgres; /health would
+# pass a process that renders empty lists. Redis is not required (the site
+# then runs anonymous-only with a sign-in outage notice) but is reported.
+wait_ready() {
+    local port="$1" elapsed=0 body=""
+    while (( elapsed < 45 )); do
+        if body="$(curl -sf --max-time 5 "http://localhost:${port}/ready" 2>/dev/null)"; then
+            # Postgres answers first; the Redis client connects a moment after
+            # boot, so give it a few seconds before calling it an outage.
+            local redis_wait=0
+            while [[ "$body" == *'"redis":false'* ]] && (( redis_wait < 10 )); do
+                sleep 1
+                redis_wait=$((redis_wait + 1))
+                body="$(curl -s --max-time 5 "http://localhost:${port}/ready" 2>/dev/null || true)"
+            done
+            if [[ "$body" == *'"redis":false'* ]]; then
+                warn "Port ${port}: Redis unreachable — sign-in is down, public pages are served anonymously."
+            fi
+            return 0
+        fi
+        sleep 1
+        elapsed=$((elapsed + 1))
+    done
+    body="$(curl -s --max-time 5 "http://localhost:${port}/ready" 2>/dev/null || true)"
+    err "Readiness on port ${port} never passed: ${body:-no response}"
+    return 1
+}
+
+# Chat gateway: why it must be replaced now, or nothing when it may keep
+# running its revision (no file it loads changed since).
+chat_gateway_reason() {
+    local deployed changed
+    if [[ "$(docker inspect -f '{{.State.Running}}' "$GATEWAY_NAME" 2>/dev/null)" != "true" ]]; then
+        echo "not running"; return
+    fi
+    (( FORCE_CHAT )) && { echo "--restart-chat"; return; }
+    deployed="$(docker inspect -f "{{ index .Config.Labels \"$REVISION_LABEL\" }}" "$GATEWAY_NAME" 2>/dev/null || true)"
+    [[ "$deployed" == "$LOCAL" ]] && return
+    # An unknown deployed revision (diff fails) counts as a change.
+    changed="$(node scripts/lib/chat-gateway-paths.js "$deployed" "$LOCAL" 2>/dev/null || echo '?')"
+    [[ -n "$changed" ]] && echo "changed: $(tr '\n' ' ' <<< "$changed")"
+    return 0
+}
+# Returns non-zero when the new gateway does not come up; chat then keeps
+# working through the app (nginx backup), so callers report rather than abort.
+deploy_chat_gateway() {
+    local reason code
+    reason="$(chat_gateway_reason)"
+    if [[ -z "$reason" ]]; then
+        log "Chat gateway unchanged; it keeps running (no file it loads changed)."
+        return 0
+    fi
+    log "Replacing the chat gateway ($reason)."
+    ensure_runtime_image
+    ensure_code_release
+    if docker inspect "$GATEWAY_NAME" > /dev/null 2>&1; then
+        # It stops accepting at once (nginx sends new requests to the app) and
+        # exits when the answers it is streaming end, or after the drain time.
+        log "Draining the chat gateway (answers in progress may take up to ${GATEWAY_DRAIN_S} s)..."
+        docker stop -t $((GATEWAY_DRAIN_S + 15)) "$GATEWAY_NAME" > /dev/null 2>&1 || true
+        docker rm "$GATEWAY_NAME" > /dev/null 2>&1 || true
+    fi
+    docker run -d \
+        --name "$GATEWAY_NAME" \
+        --user "$RUN_AS_UID_GID" \
+        --label "$REVISION_LABEL=$LOCAL" \
+        --add-host=host.docker.internal:host-gateway \
+        -p "127.0.0.1:${GATEWAY_PORT}:3000" \
+        -e "GIT_SHA=$LOCAL" \
+        -e "CHAT_GATEWAY_DRAIN_MS=$((GATEWAY_DRAIN_S * 1000))" \
+        --stop-timeout $((GATEWAY_DRAIN_S + 15)) \
+        --restart unless-stopped \
+        --env-file "$FRONTEND_DIR/.env" \
+        -v "$APP_DIR:/app:ro" \
+        "$RUNTIME_IMAGE" node chat-gateway.js > /dev/null || { err "Chat gateway could not start."; return 1; }
+    docker network connect "$NETWORK" "$GATEWAY_NAME" \
+        || { err "Could not connect $GATEWAY_NAME to the $NETWORK network."; return 1; }
+    wait_ready "$GATEWAY_PORT" || return 1
+    code="$(curl -s -o /dev/null -w '%{http_code}' --max-time 10 "http://localhost:${GATEWAY_PORT}/api/proxy/sessions")"
+    [[ "$code" == "200" ]] || { err "Chat gateway /api/proxy/sessions -> ${code}"; return 1; }
+    log "Chat gateway is ready on port ${GATEWAY_PORT}."
+}
+gateway_failed() {
+    err "Chat gateway failed; chat is served by the app (nginx backup). Logs: docker logs $GATEWAY_NAME"
+}
+# Used by the early exits, where the app itself needs no deploy.
+finish_with_chat_gateway() {
+    deploy_chat_gateway || { gateway_failed; exit 1; }
+    exit 0
+}
 
 # 1. Check source and deployed revisions
 git fetch origin
@@ -117,7 +260,7 @@ fi
 
 if [[ "$FORCE_RESTART" -eq 0 && "$LOCAL" == "$DEPLOYED" ]]; then
     log "Already deployed ($LOCAL). Use --restart to force."
-    exit 0
+    finish_with_chat_gateway
 fi
 
 if [[ "$FORCE_RESTART" -eq 0 && -n "$DEPLOYED" ]]; then
@@ -126,7 +269,7 @@ if [[ "$FORCE_RESTART" -eq 0 && -n "$DEPLOYED" ]]; then
     if [[ -z "$RUNTIME_CHANGES" ]]; then
         log "Only host-side files (docs, host scripts) changed since $DEPLOYED; the running app is unaffected."
         log "Nothing to deploy. Use --restart to deploy $LOCAL anyway."
-        exit 0
+        finish_with_chat_gateway
     fi
     if ! grep -qvE '^public/css/.+\.css$' <<< "$RUNTIME_CHANGES"; then
         warn "Only CSS changed: scripts/deploy-assets publish would skip the restart. Deploying fully."
@@ -153,41 +296,9 @@ fi
 # pointer: a failed app deploy does not change the old app's CSS selection.
 node scripts/css-release-cli.js prepare "$LOCAL"
 
-# 3. Runtime image (dependencies only), tagged by the files that define it.
-DEPS_HASH="$(cat Dockerfile .dockerignore package.json package-lock.json | sha256sum | cut -c1-16)"
-RUNTIME_IMAGE="$IMAGE_NAME:deps-$DEPS_HASH"
-if docker image inspect "$RUNTIME_IMAGE" > /dev/null 2>&1; then
-    log "Dependencies unchanged; reusing image $RUNTIME_IMAGE."
-else
-    log "Building runtime image $RUNTIME_IMAGE (Dockerfile or dependencies changed)..."
-    docker build -t "$RUNTIME_IMAGE" .
-fi
-# scripts/dev-preview runs the untagged name.
-docker tag "$RUNTIME_IMAGE" "$IMAGE_NAME"
-
-# Code release: the committed tree minus host-only directories and data/
-# (mounted). Extracted once per commit, then reused by restarts.
-APP_DIR="$APP_RELEASE_HOST_DIR/$LOCAL"
-if [[ -d "$APP_DIR" ]]; then
-    log "Reusing code release $APP_DIR."
-    touch "$APP_DIR"
-else
-    log "Extracting code release $LOCAL..."
-    EXCLUDES=(':(exclude)data')
-    for dir in $(node -p "require('./scripts/lib/runtime-paths').RELEASE_EXCLUDES.join(' ')"); do
-        EXCLUDES+=(":(exclude)$dir")
-    done
-    stage="$(mktemp -d "$APP_RELEASE_HOST_DIR/.staging-XXXXXX")"
-    chmod 755 "$stage"
-    if ! git archive "$LOCAL" -- . "${EXCLUDES[@]}" | tar -x -C "$stage"; then
-        rm -rf "$stage"
-        err "Could not extract code release $LOCAL."
-        exit 1
-    fi
-    # Mount points inside the read-only /app.
-    mkdir "$stage/data" "$stage/css-releases"
-    mv "$stage" "$APP_DIR"
-fi
+# 3. Runtime image and code release.
+ensure_runtime_image
+ensure_code_release
 
 # 4. Start the new image as a standby and check it before it serves anyone.
 run_container() {
@@ -222,33 +333,6 @@ run_container() {
         err "Could not connect $name to the $NETWORK network (Postgres/Redis unreachable)."
         return 1
     fi
-}
-# /ready answers 200 only when the container reaches Postgres; /health would
-# pass a process that renders empty lists. Redis is not required (the site
-# then runs anonymous-only with a sign-in outage notice) but is reported.
-wait_ready() {
-    local port="$1" elapsed=0 body=""
-    while (( elapsed < 45 )); do
-        if body="$(curl -sf --max-time 5 "http://localhost:${port}/ready" 2>/dev/null)"; then
-            # Postgres answers first; the Redis client connects a moment after
-            # boot, so give it a few seconds before calling it an outage.
-            local redis_wait=0
-            while [[ "$body" == *'"redis":false'* ]] && (( redis_wait < 10 )); do
-                sleep 1
-                redis_wait=$((redis_wait + 1))
-                body="$(curl -s --max-time 5 "http://localhost:${port}/ready" 2>/dev/null || true)"
-            done
-            if [[ "$body" == *'"redis":false'* ]]; then
-                warn "Port ${port}: Redis unreachable — sign-in is down, public pages are served anonymously."
-            fi
-            return 0
-        fi
-        sleep 1
-        elapsed=$((elapsed + 1))
-    done
-    body="$(curl -s --max-time 5 "http://localhost:${port}/ready" 2>/dev/null || true)"
-    err "Readiness on port ${port} never passed: ${body:-no response}"
-    return 1
 }
 remove_standby() {
     docker stop "$STANDBY_NAME" > /dev/null 2>&1 || true
@@ -335,16 +419,24 @@ done
 # 2026-10-02), so wait it out from the moment the primary answers.
 while (( SECONDS - primary_up < 12 )); do sleep 1; done
 remove_standby
+# The app is replaced; a failure after this point needs no standby recovery.
+swap_started=0
 
-# 7. Cleanup: keep the newest five code releases for quick restarts (the
-#    running one always), and drop runtime images of superseded dependency
+# 7. Chat gateway, after the new app is up to serve as its nginx backup while
+#    it drains. A failure is reported at the end; chat stays up meanwhile.
+GATEWAY_OK=1
+deploy_chat_gateway || GATEWAY_OK=0
+GATEWAY_REV="$(docker inspect -f "{{ index .Config.Labels \"$REVISION_LABEL\" }}" "$GATEWAY_NAME" 2>/dev/null || true)"
+
+# 8. Cleanup: keep the newest five code releases for quick restarts (the
+#    running ones always, the gateway's included), and drop runtime images of superseded dependency
 #    sets; an image a container still uses (e.g. dev-preview) refuses removal.
 rm -rf "$APP_RELEASE_HOST_DIR"/.staging-*
 kept=0
 while read -r rev; do
     [[ "$rev" =~ ^[0-9a-f]+$ && ${#rev} -eq 40 ]] || continue
     kept=$((kept + 1))
-    (( kept <= 5 )) || [[ "$rev" == "$LOCAL" ]] || rm -rf "${APP_RELEASE_HOST_DIR:?}/$rev"
+    (( kept <= 5 )) || [[ "$rev" == "$LOCAL" || "$rev" == "$GATEWAY_REV" ]] || rm -rf "${APP_RELEASE_HOST_DIR:?}/$rev"
 done < <(ls -1t "$APP_RELEASE_HOST_DIR")
 docker images "$IMAGE_NAME" --format '{{.Tag}}' | { command grep '^deps-' || true; } \
     | while read -r tag; do
@@ -374,4 +466,8 @@ warm "/sitemap.xml"
 warm "/css/site-core.css"
 warm "/js/common.js"
 
+if (( ! GATEWAY_OK )); then
+    gateway_failed
+    exit 1
+fi
 log "Deploy complete ($(git log --oneline -1))"
