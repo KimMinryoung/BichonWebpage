@@ -83,4 +83,17 @@ for (const [label, opts] of [
     ['cookie set', { setCookie: true }], ['degraded page', { degrade: true }],
     ['versioned data endpoint', { path: '/commulingo/catalog.json' }], ['admin', { path: '/admin' }],
 ]) assert.strictEqual(edgeHeader(opts), undefined, `no edge cache: ${label}`);
+
+// Only a page view stores the inferred language: a beacon from an English
+// browser must not set lang=en and flip the next page to /en/.
+const { viewLocals } = require('../middleware/view-locals');
+function langCookie(method) {
+    const cookies = [];
+    const req = { method, path: '/metrics/menu-view', cookies: {}, session: {}, headers: { 'accept-language': 'en-US,en;q=0.9' } };
+    const res = { locals: {}, send: () => {}, cookie: (name, value) => cookies.push(`${name}=${value}`) };
+    viewLocals(req, res, () => {});
+    return { lang: res.locals.lang, cookies };
+}
+assert.deepStrictEqual(langCookie('POST'), { lang: 'ko', cookies: [] });
+assert.deepStrictEqual(langCookie('GET').cookies, ['lang=en']);
 console.log('access boundaries ok');

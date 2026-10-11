@@ -68,7 +68,12 @@ function viewLocals(req, res, next) {
         res.locals.isAuthenticated = req.session.isAuthenticated || false;
         res.locals.adminUser = req.session.adminUser || null;
         res.locals.currentUser = req.session.user || null;
-        res.locals.lang = resolveLanguage(req, res);
+        // Only a page view may infer and store the language. A beacon or form
+        // post (the menu-view count, learning measurement, chat) storing it
+        // would flip the visitor's next page to English behind their back.
+        res.locals.lang = (req.method === 'GET' || req.method === 'HEAD')
+            ? resolveLanguage(req, res)
+            : (normalizeLanguage(req.cookies.lang) || 'ko');
     }
     res.locals.strings = allStrings[res.locals.lang];
     res.locals.withPersona = allStrings.withPersona;

@@ -83,6 +83,8 @@ router.get('/people', async (req, res) => {
                 ? 'People of revolutionary and socialist history, found by activity, affiliation, era and position.'
                 : '혁명과 사회주의 역사의 인물들을 활동·소속·시대·직위로 찾는 인물 사전.',
             pagePath: '/commulingo/people',
+            // Filter combinations are endless near-duplicates of the shelves.
+            robotsMeta: active ? 'noindex, follow' : undefined,
         });
     } catch (err) {
         console.error('commulingo people:', err);
