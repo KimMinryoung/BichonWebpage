@@ -986,6 +986,12 @@
                             }
                             streamedText += data.content;
                             scheduleRender();
+                        } else if (data.type === 'chunk_reset') {
+                            // The server starts a fresh generation (tool call,
+                            // retry or failover); drop the superseded text.
+                            // The next chunk opens a new bubble.
+                            streamedText = '';
+                            if (aiDiv) { aiDiv.remove(); aiDiv = null; }
                         } else if (data.type === 'answer') {
                             terminalEventReceived = true;
                             accumulatedLog = '';
