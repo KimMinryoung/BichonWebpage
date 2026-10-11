@@ -19,4 +19,6 @@
 
 영어 화면에서는 영어판이 있는 메뉴와 항목만 찾는다. 메뉴 단위 판정은 `config/menu-languages.js`(`services/menu-views.js`의 메뉴 키와 같은 키, `scripts/test-site-search.js`가 키 일치를 검사)이고, 항목 단위는 각 글의 번역 여부다. 2026-10-11 조사: 참고 문헌은 목록 제목·요약만 영어이고 본문이 한국어라 `none`, 게임도 `none`. 메뉴의 영어 지원이 바뀌면 이 파일을 고친다.
 
-같은 판정으로 영어 화면은 `none` 메뉴의 입구를 숨긴다(2026-10-11): 뷰 헬퍼 `menuShown(menu)`(`middleware/view-locals.js`)로 대문의 문헌 바로가기·게임 카드와 푸터 게임 아이콘을, `data/commulingo/dict-tabs.js`로 공산링고 사전 탭·크럼 바로가기의 문헌 탭을 뺀다. 본문 속 문헌 발췌·관련 자료 링크와 주소 직접 접근은 그대로 둔다.
+같은 판정으로 영어 화면은 `none` 메뉴의 입구를 숨긴다(2026-10-11): 뷰 헬퍼 `menuShown(menu)`(`middleware/view-locals.js`)로 대문의 문헌 바로가기·게임 카드와 푸터 게임 아이콘을, `data/commulingo/dict-tabs.js`로 공산링고 사전 탭·크럼 바로가기의 문헌 탭을 뺀다. 본문 속 문헌 발췌·관련 자료 링크는 그대로 둔다.
+
+`none` 메뉴에는 영어 주소가 없다(`isKoreanOnlyPath`): `/en/<경로>`는 한국어 경로로 302(`middleware/language.js`), 영어 페이지의 링크도 `/en/`을 붙이지 않으며(`utils/seo.js`), 영어 쿠키 방문자에게도 한국어로 그리고 언어 메뉴의 English를 「한국어만 제공」으로 비활성화한다. hreflang·사이트맵의 영어 대체 주소도 뺀다. 모두 `MENU_ENGLISH` 값에서 나오므로 메뉴를 `full`·`per-item`으로 바꾸면 이 처리가 함께 사라진다. 검사: `scripts/test-korean-only-menus.js`.

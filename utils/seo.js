@@ -1,5 +1,6 @@
 const SITE_ORIGIN = (process.env.SITE_ORIGIN || 'https://cyber-lenin.com').replace(/\/+$/, '');
 const SITE_HOST = new URL(SITE_ORIGIN).host;
+const { isKoreanOnlyPath } = require('../config/menu-languages');
 
 function absoluteUrl(pathname = '/') {
     const path = pathname.startsWith('/') ? pathname : `/${pathname}`;
@@ -172,7 +173,8 @@ const ENGLISH_LINK_EXCLUSIONS = [
 
 function shouldLocalizeHtmlHref(href) {
     if (!href || !href.startsWith('/') || href.startsWith('//')) return false;
-    return !ENGLISH_LINK_EXCLUSIONS.some(prefix => href === prefix || href.startsWith(`${prefix}/`) || href.startsWith(`${prefix}?`));
+    return !ENGLISH_LINK_EXCLUSIONS.some(prefix => href === prefix || href.startsWith(`${prefix}/`) || href.startsWith(`${prefix}?`))
+        && !isKoreanOnlyPath(href.split('#')[0]);
 }
 
 function localizeHtmlLinks(html, lang = 'ko') {

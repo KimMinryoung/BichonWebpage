@@ -7,6 +7,7 @@
 const seo = require('../utils/seo');
 const { normalizeLanguage, languageCookieOptions } = require('../utils/language');
 const { isLanguageSpecificPublicPath } = require('../config/route-policy');
+const { isKoreanOnlyPath } = require('../config/menu-languages');
 const { setNoStore } = require('../utils/http');
 
 // Strip the /en/ prefix only for public, language-specific content so
@@ -23,6 +24,8 @@ function stripEnglishPrefix(req, res, next) {
     if (!url.pathname.startsWith('/en/')) return next();
 
     const strippedPath = url.pathname.slice(3) || '/';
+    // Korean-only menus (config/menu-languages.js) have no English URL.
+    if (isKoreanOnlyPath(strippedPath)) return res.redirect(302, strippedPath + url.search);
     if (!isLanguageSpecificPublicPath(strippedPath)) return next();
     req.urlLanguage = 'en';
     req.url = strippedPath + url.search;
@@ -39,7 +42,7 @@ function redirectLanguageQuery(req, res, next) {
     const query = url.searchParams.toString();
     res.cookie('lang', requestedLang, languageCookieOptions(req));
     setNoStore(res);
-    res.redirect(303, seo.languagePath(req.path, requestedLang) + (query ? `?${query}` : ''));
+    res.redirect(303, seo.languagePath(req.path, isKoreanOnlyPath(req.path) ? 'ko' : requestedLang) + (query ? `?${query}` : ''));
 }
 
 // An /en/ URL sets the cookie; an English cookie on an unprefixed
@@ -54,7 +57,8 @@ function redirectEnglishCookie(req, res, next) {
     }
     if ((req.method !== 'GET' && req.method !== 'HEAD')
         || normalizeLanguage(req.cookies.lang) !== 'en'
-        || !isLanguageSpecificPublicPath(req.path)) return next();
+        || !isLanguageSpecificPublicPath(req.path)
+        || isKoreanOnlyPath(req.path)) return next();
 
     const url = new URL(req.originalUrl, 'http://localhost');
     setNoStore(res);

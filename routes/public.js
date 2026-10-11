@@ -19,6 +19,7 @@ const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-even
 const { loadCommuLingoDrills } = require('../data/commulingo/drills');
 const { countryCodes: commuLingoCountryCodes } = require('../data/commulingo/country-geography');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
+const { isKoreanOnlyPath } = require('../config/menu-languages');
 const { listGenealogyCharts } = require('../data/commulingo/genealogy-store');
 const { loadCommuLingoCatalog, commuLingoBookModifiedTimes } = require('../data/commulingo/shards');
 const { createEntryRoutes, localizedEntry: localizedRecord } = require('./entry-routes');
@@ -491,13 +492,13 @@ async function buildSitemapXml() {
         xml += url('/commulingo/terms', termsLastmod, '0.7', 'daily');
         xml += url('/commulingo/events', eventsLastmod, '0.7', 'weekly');
         xml += url('/commulingo/map', latestDate(peopleLastmod, eventsLastmod), '0.7', 'weekly');
-        xml += url('/commulingo/docs', docsLastmod, '0.7', 'weekly');
+        xml += url('/commulingo/docs', docsLastmod, '0.7', 'weekly', !isKoreanOnlyPath('/commulingo/docs'));
         xml += url('/commulingo/genealogy', chartsLastmod, '0.6', 'monthly');
         for (const person of commuPeople) xml += url(`/commulingo/people/${encodeURIComponent(person.id)}`, person.updatedAt, '0.6');
         for (const term of commuTerms) xml += url(`/commulingo/terms/${encodeURIComponent(term.id)}`, term.updatedAt, '0.6');
         for (const event of commuEvents) xml += url(`/commulingo/events/${encodeURIComponent(event.id)}`, event.updatedAt, '0.6');
         for (const code of commuLingoCountryCodes()) xml += url(`/commulingo/countries/${encodeURIComponent(code)}`, latestDate(peopleLastmod, eventsLastmod), '0.5', 'weekly');
-        for (const doc of commuDocs) xml += url(`/commulingo/docs/${encodeURIComponent(doc.id)}`, doc.modifiedAt || doc.addedAt, '0.6');
+        for (const doc of commuDocs) xml += url(`/commulingo/docs/${encodeURIComponent(doc.id)}`, doc.modifiedAt || doc.addedAt, '0.6', '', !isKoreanOnlyPath('/commulingo/docs'));
         for (const chart of commuCharts) xml += url(`/commulingo/genealogy/${encodeURIComponent(chart.id)}`, chart.modifiedAt, '0.5');
         for (const book of commuBooks) xml += url(`/commulingo/book/${encodeURIComponent(book.id)}`, book.modifiedAt, '0.6');
         // 드릴 덱은 사전에서 만들어지므로 lastmod는 사전의 최신 갱신일을 따른다.

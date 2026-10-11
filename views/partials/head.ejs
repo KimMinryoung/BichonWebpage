@@ -7,7 +7,8 @@
     : ((typeof pageTitle !== 'undefined' && pageTitle) ? pageTitle + ' | ' + strings.siteName : strings.siteName); %>
 <% const _desc = (typeof pageDescription !== 'undefined' && pageDescription) ? pageDescription : strings.siteDescription; %>
 <% const _urlLang = (typeof urlLanguage !== 'undefined' && urlLanguage === 'en') ? 'en' : 'ko'; %>
-<% const _hasEnglish = typeof hasEnglishVersion === 'undefined' ? true : Boolean(hasEnglishVersion); %>
+<% const _hasEnglish = (typeof koreanOnlyPage !== 'undefined' && koreanOnlyPage) ? false
+    : (typeof hasEnglishVersion === 'undefined' ? true : Boolean(hasEnglishVersion)); %>
 <% const _canonicalLang = _urlLang === 'en' && _hasEnglish ? 'en' : 'ko'; %>
 <% const _koUrl = siteOrigin + languageUrl(_path, 'ko'); %>
 <% const _enUrl = siteOrigin + languageUrl(_path, 'en'); %>

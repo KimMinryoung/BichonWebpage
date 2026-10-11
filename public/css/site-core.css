@@ -336,6 +336,18 @@ nav .nav-links a[aria-current="page"] {
     background-color: var(--bg-surface-hover);
     font-weight: 600;
 }
+.lang-menu-unavailable {
+    display: block;
+    padding: 8px 16px;
+    color: var(--text-muted);
+    white-space: nowrap;
+    font-size: 0.9rem;
+    cursor: default;
+}
+
+.lang-menu-unavailable small {
+    font-size: 0.78rem;
+}
 header {
     margin-bottom: 20px;
 }

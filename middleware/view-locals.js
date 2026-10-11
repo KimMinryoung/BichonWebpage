@@ -11,7 +11,7 @@ const { sanitizeBasic, sanitizePost } = require('../utils/sanitize');
 const { truncateHtml } = require('../utils/truncate-html');
 const { normalizeLanguage, resolveLanguage, resolvePublicLanguage } = require('../utils/language');
 const { ASSET_VERSION } = require('../config/env');
-const { menuHasEnglish } = require('../config/menu-languages');
+const { menuHasEnglish, isKoreanOnlyPath } = require('../config/menu-languages');
 const { cssReleases, cssReleaseEnabled } = require('../config/css-releases');
 const {
     isStaticAssetPath,
@@ -76,6 +76,9 @@ function viewLocals(req, res, next) {
             ? resolveLanguage(req, res)
             : (normalizeLanguage(req.cookies.lang) || 'ko');
     }
+    // A Korean-only menu's pages stay Korean even for an English visitor.
+    res.locals.koreanOnlyPage = isKoreanOnlyPath(req.path);
+    if (res.locals.koreanOnlyPage) res.locals.lang = 'ko';
     res.locals.strings = allStrings[res.locals.lang];
     // English pages leave out entrances to Korean-only menus (config/menu-languages.js).
     const englishView = res.locals.lang === 'en';

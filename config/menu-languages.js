@@ -15,6 +15,8 @@
 // curations 22/22; diary 532/533; posts 36/36; course lessons carry ko+en
 // questions. Reference documents have English titles and summaries in the list
 // but Korean bodies, and the games are Korean-only (noindex under /en/).
+const { menuForPath } = require('../services/menu-views');
+
 const MENU_ENGLISH = {
     home: 'full',
     chat: 'full',
@@ -39,4 +41,13 @@ function menuHasEnglish(menu) {
     return MENU_ENGLISH[menu] === 'full' || MENU_ENGLISH[menu] === 'per-item';
 }
 
-module.exports = { MENU_ENGLISH, menuHasEnglish };
+// A Korean-only menu has no /en/ URL: /en/<path> redirects to <path>
+// (middleware/language.js), English pages do not localize links into it
+// (utils/seo.js), and its pages render in Korean with English disabled in the
+// language menu. Takes an unprefixed path.
+function isKoreanOnlyPath(path) {
+    const hit = menuForPath(String(path || '').split('?')[0]);
+    return Boolean(hit) && !menuHasEnglish(hit.menu);
+}
+
+module.exports = { MENU_ENGLISH, menuHasEnglish, isKoreanOnlyPath };

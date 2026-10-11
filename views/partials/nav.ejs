@@ -50,7 +50,11 @@
             </button>
             <div class="lang-menu" id="langMenu" aria-label="<%= lang === 'en' ? 'Language' : '언어' %>">
                 <a href="<%= siteOrigin + languageSwitchUrl((typeof pagePath !== 'undefined' && pagePath) ? pagePath : '/', 'ko') %>" data-lang="ko" lang="ko" class="<%= lang === 'ko' ? 'active' : '' %>">한국어</a>
+                <% if (typeof koreanOnlyPage !== 'undefined' && koreanOnlyPage) { %>
+                <span class="lang-menu-unavailable" aria-disabled="true"><span lang="en">English</span> <small>한국어만 제공</small></span>
+                <% } else { %>
                 <a href="<%= siteOrigin + languageSwitchUrl((typeof pagePath !== 'undefined' && pagePath) ? pagePath : '/', 'en') %>" data-lang="en" lang="en" class="<%= lang === 'en' ? 'active' : '' %>">English</a>
+                <% } %>
             </div>
         </div>
     </div>
