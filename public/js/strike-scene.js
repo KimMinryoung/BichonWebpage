@@ -187,9 +187,10 @@
         legs.append(svg('rect', { x: -11, y: 8, width: 9, height: 30, rx: 4, fill: '#33405a' }), svg('rect', { x: 2, y: 8, width: 9, height: 30, rx: 4, fill: '#33405a' }),
             svg('ellipse', { cx: -7, cy: 38, rx: 7, ry: 3.5, fill: '#1d1b1a' }), svg('ellipse', { cx: 7, cy: 38, rx: 7, ry: 3.5, fill: '#1d1b1a' }));
         const sign = svg('g', { class: 'crew-sign' });
-        sign.append(svg('path', { d: 'M22 -40V-78', stroke: '#7a5a3a', 'stroke-width': 3.5, 'stroke-linecap': 'round' }),
-            svg('rect', { x: 2, y: -98, width: 40, height: 22, rx: 3, fill: cream, stroke: headband, 'stroke-width': 2.5 }),
-            svg('text', { x: 22, y: -82, 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 800, fill: headband }, '투쟁'));
+        // Kept below y = -86 so the placard clears the place name plate above the front row.
+        sign.append(svg('path', { d: 'M22 -40V-66', stroke: '#7a5a3a', 'stroke-width': 3.5, 'stroke-linecap': 'round' }),
+            svg('rect', { x: 2, y: -86, width: 40, height: 22, rx: 3, fill: cream, stroke: headband, 'stroke-width': 2.5 }),
+            svg('text', { x: 22, y: -70, 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 800, fill: headband }, '투쟁'));
         if (h.back) body.append(svg('path', { d: h.back, fill: h.color }));
         addProps(body, prop.back);
         body.append(legs,
@@ -327,11 +328,11 @@
         const g = window.StrikeGame, layer = root.querySelector('#strikeThreats'); layer.replaceChildren();
         const last = state.history[state.history.length - 1];
         const evening = state.phase === 'review' || moving;
-        const list = state.phase === 'planning' ? g.threats(state).map(move => ({ move })) : evening && last ? last.moves : [];
+        const list = state.phase === 'planning' ? g.intel(state) : evening && last ? last.moves : [];
         list.forEach((m, i) => {
             const info = g.moves[m.move], [tx, ty] = zoneCenter(info.target);
             const sx = road.x + i * road.step + (list.length === 1 ? road.step / 2 : 0), sy = road.y;
-            const token = svg('g', { class: 'strike-threat-token', 'data-threat': m.move });
+            const token = svg('g', { class: 'strike-threat-token', 'data-threat': m.hidden && state.phase === 'planning' ? 'hidden' : m.move });
             if (!evening) token.append(svg('path', { class: 'strike-threat-line', d: `M${sx} ${sy + 22}Q${(sx + tx) / 2} ${sy + 50} ${tx} ${ty}`, fill: 'none', stroke: '#c43c35', 'stroke-width': 4, 'stroke-dasharray': '10 8' }));
             // CSS owns the transform so the day animation can drive the chip to its target.
             const chip = svg('g', { class: 'strike-threat-chip' });
@@ -339,8 +340,11 @@
             chip.style.setProperty('--from', `translate(${sx}px, ${sy}px)`);
             chip.style.setProperty('--to', `translate(${tx}px, ${ty + 92}px)`);
             chip.append(svg('rect', { x: -62, y: -24, width: 124, height: 48, rx: 8, fill: '#2a2626', stroke: '#c43c35', 'stroke-width': 3 }));
-            const icon = threatIcon(m.move); icon.setAttribute('transform', 'translate(-36 0) scale(.8)'); chip.append(icon);
-            chip.append(svg('text', { x: 12, y: 7, 'text-anchor': 'middle', fill: '#fff3ce', 'font-size': 17, 'font-weight': 'bold' }, info.badge));
+            // A half-hidden move keeps its target but not its face until the day is played.
+            const veiled = m.hidden && state.phase === 'planning';
+            if (veiled) chip.append(svg('text', { x: -36, y: 10, 'text-anchor': 'middle', fill: '#fff3ce', 'font-size': 28, 'font-weight': 'bold' }, '?'));
+            else { const icon = threatIcon(m.move); icon.setAttribute('transform', 'translate(-36 0) scale(.8)'); chip.append(icon); }
+            chip.append(svg('text', { x: 12, y: 7, 'text-anchor': 'middle', fill: '#fff3ce', 'font-size': 17, 'font-weight': 'bold' }, veiled ? '미확인' : info.badge));
             token.append(chip);
             if (!(state.phase === 'review' && !moving)) layer.append(token);
         });
@@ -373,7 +377,7 @@
         Object.assign(stage, { state, selected, moving, onAssign, onSelect });
         const { root } = stage, enabled = state.phase === 'planning' && !moving;
         const fx = g.effects(state);
-        const lockout = (state.phase === 'planning' ? g.threats(state) : (state.history[state.history.length - 1] || { moves: [] }).moves.map(m => m.move)).includes('lockout');
+        const lockout = (state.phase === 'planning' ? g.intel(state).filter(t => !t.hidden).map(t => t.move) : (state.history[state.history.length - 1] || { moves: [] }).moves.map(m => m.move)).includes('lockout');
         root.classList.toggle('scene-moving', moving);
         root.classList.toggle('scene-locked', lockout && state.phase !== 'done');
         root.classList.toggle('scene-stopped', state.production === 0);
@@ -388,7 +392,7 @@
             const pk = areas.picket;
             worker.style.transform = stopped ? `translate(${pk.x + 28 + slot % 10 * 33}px, ${pk.y + 70 + Math.floor(slot / 10) * 26}px) scale(.85)` : `translate(${(34 + slot * 16) * band}px, ${168 * band}px) scale(${.55 * band})`;
         });
-        const targets = state.phase === 'planning' ? g.threats(state).map(m => g.moves[m]) : [];
+        const targets = state.phase === 'planning' ? g.intel(state).map(t => t.hidden ? { target: t.target, title: '미확인 수' } : g.moves[t.move]) : [];
         root.querySelectorAll('[data-map-job]').forEach(zone => {
             const job = zone.dataset.mapJob;
             const hit = targets.filter(t => t.target === job);

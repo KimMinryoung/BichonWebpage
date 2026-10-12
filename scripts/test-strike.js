@@ -8,13 +8,14 @@ const g = context.window.StrikeGame;
 const roundTrip = s => JSON.stringify(g.restore(JSON.stringify(s)));
 
 // A player who reads the morning threats, holds them with the fewest rested crews, then rotates.
+// A half-hidden move is covered against every move management could still be playing there.
 function reader(s) {
     s.crews.filter(c => !c.injured).forEach(c => { s = g.assign(s, c.id, 'rest'); });
     const pool = trait => s.crews.filter(c => !c.injured && c.job === 'rest' && c.fatigue < 60)
         .sort((a, b) => (b.trait === trait) - (a.trait === trait) || a.fatigue - b.fatigue);
     const fill = (job, done, trait) => { while (!done()) { const c = pool(trait)[0]; if (!c) return; s = g.assign(s, c.id, job); } };
     const target = { scabs: ['picket', 'vanguard'], thugs: ['picket', 'vanguard'], buyout: ['organize', 'orator'], smear: ['solidarity', 'publicist'], seizure: ['solidarity', 'treasurer'], lockout: ['organize', 'orator'] };
-    for (const move of g.threats(s)) fill(target[move][0], () => g.counter(s, move).ok, target[move][1]);
+    for (const t of g.intel(s)) for (const move of t.options) fill(target[move][0], () => g.counter(s, move).ok, target[move][1]);
     fill('picket', () => g.effects(s).counts.picket >= 2, 'vanguard');
     fill('organize', () => g.effects(s).counts.organize >= 1, 'orator');
     fill('solidarity', () => g.effects(s).counts.solidarity >= (s.fund < 60 ? 2 : 1), 'treasurer');
@@ -49,7 +50,10 @@ function campaign(mode, seed, scenario, bot, deep) {
     while (s.phase !== 'done') {
         s = bot(s);
         check(() => roundTrip(s), () => JSON.stringify(s), 'planning placement restores');
-        const morning = g.threats(s), fx = g.effects(s), before = JSON.stringify(s);
+        const morning = g.threats(s), fx = g.effects(s), before = JSON.stringify(s), known = g.intel(s);
+        assert.deepEqual(known.map(t => t.move), morning, 'intel describes the morning threats');
+        known.forEach(t => { assert.ok(t.options.includes(t.move), 'the real move is among the options'); assert.equal(t.hidden, t.options.length > 1); });
+        if (known[0]) assert.equal(known[0].hidden, false, 'the first move is always shown');
         const { state, record } = g.advance(s);
         assert.equal(JSON.stringify(s), before, 'advance does not mutate');
         check(() => JSON.stringify(g.advance(JSON.parse(before)).state), () => JSON.stringify(state), 'deterministic');
@@ -67,7 +71,10 @@ function campaign(mode, seed, scenario, bot, deep) {
             s = bargain(s);
             check(() => roundTrip(s), () => JSON.stringify(s), 'placed cards restore');
             const expected = g.preview(s);
+            const fundBefore = s.fund, spent = g.spending(s.table);
             s = g.propose(s);
+            assert.equal(s.fund, fundBefore - spent, 'placed fund cards are paid for');
+            assert.ok(s.fund >= 0);
             Object.entries(expected).forEach(([d, r]) => assert.equal(s.won[d], r.to));
             check(() => roundTrip(s), () => JSON.stringify(s), 'proposal restores');
             if (s.phase === 'done') break;
@@ -108,9 +115,40 @@ assert.throws(() => g.propose(s));
 assert.throws(() => g.next(s));
 s = g.next(g.advance(s).state);
 assert.equal(g.threats(s).length, 1);
+// Fund cards: one per 30 above a reserve of 20, at most three, paid only when placed.
+let rich = g.start('normal', 3);
+while (!rich.table) { rich = g.advance(rich).state; if (!rich.table) rich = g.next(rich); }
+const funded = rich;
+const fundCards = funded.table.hand.filter(c => c.kind === 'fund');
+assert.equal(fundCards.length, Math.max(0, Math.min(3, Math.floor((funded.fund - 20) / 30))));
+if (fundCards.length) {
+    const unused = g.propose(funded);
+    assert.equal(unused.fund, funded.fund, 'unplayed fund cards cost nothing');
+    const paid = g.propose(g.place(funded, fundCards[0].id, 'suit'));
+    assert.equal(paid.fund, funded.fund - g.fundCardCost);
+    assert.equal(paid.table.spent, g.fundCardCost);
+    assert.equal(g.cardValue(funded.table, fundCards[0], 'suit'), 4 + (g.tactics[funded.table.tactic].card === 'fund' ? g.tactics[funded.table.tactic].add : 0));
+}
 let late = g.start('normal', 5);
 while (late.day < 7) { late = g.advance(late).state; if (late.table) late = g.propose(late); if (late.phase === 'done') break; late = g.next(late); }
 if (late.phase === 'planning') assert.equal(g.threats(late).length, 2, 'two moves a day from day 7');
+// Some two-move mornings hide the second move, and the forecast then leaves its outcome out.
+let hiddenDays = 0;
+for (let seed = 0; seed < 40 && hiddenDays < 3; seed++) {
+    let h = g.start('hard', seed);
+    while (h.phase !== 'done' && h.day < 12) {
+        const known = g.intel(h);
+        if (known.some(t => t.hidden)) {
+            hiddenDays++;
+            const shown = known.filter(t => !t.hidden).map(t => t.move);
+            assert.equal(JSON.stringify(g.forecast(h).moves.map(m => m.move)), JSON.stringify(shown));
+            assert.equal(JSON.stringify(g.forecast(h)), JSON.stringify(g.advance(h, shown).record));
+            break;
+        }
+        h = g.advance(h).state; if (h.phase === 'done') break; if (h.table) h = g.propose(h); if (h.phase === 'done') break; h = g.next(h);
+    }
+}
+assert.ok(hiddenDays >= 3, 'hidden moves occur');
 const veteran = g.advance({ ...g.start(), crews: g.start().crews.map(c => ({ ...c, job: 'picket' })) }).state;
 assert.equal(veteran.crews[3].fatigue, 10 + Math.round(18 * .7), 'veteran tires 30% slower');
 assert.equal(veteran.crews[0].fatigue, 28);
@@ -153,8 +191,8 @@ assert.equal(g.won({ ...deal, scenario: 'rebuild', unity: 70 }), true);
 const played = g.next(g.advance(g.start('hard', 77, 'tight')).state);
 assert.equal(roundTrip(played), JSON.stringify(played));
 assert.equal(g.restore(JSON.stringify({ ...played, fund: 9999 })).fund, played.fund, 'stored resources are not trusted');
-for (const raw of ['null', '{}', 'broken', JSON.stringify({ ...played, day: 50 }), JSON.stringify({ ...played, version: 4 }), JSON.stringify({ ...played, scenario: 'unknown' }), JSON.stringify({ ...played, log: [['x']] }), JSON.stringify({ ...played, log: [['d', ['rest']]] })]) assert.equal(g.restore(raw), null);
+for (const raw of ['null', '{}', 'broken', JSON.stringify({ ...played, day: 50 }), JSON.stringify({ ...played, version: 5 }), JSON.stringify({ ...played, scenario: 'unknown' }), JSON.stringify({ ...played, log: [['x']] }), JSON.stringify({ ...played, log: [['d', ['rest']]] })]) assert.equal(g.restore(raw), null);
 assert.equal(g.start('normal', 1, 'tight').fund, 45);
 assert.equal(g.start('normal', 1, 'rebuild').production, 60);
 assert.throws(() => g.start('normal', 1, 'unknown'));
-console.log(`Strike v5: ${campaigns} campaigns (threat reader wins, threat-blind and single-activity play loses), telegraphed threats, bargaining, injuries, escalation and replayed saves passed.`);
+console.log(`Strike v6: ${campaigns} campaigns (threat reader wins, threat-blind and single-activity play loses), telegraphed threats, hidden second moves, paid fund cards, bargaining, injuries, escalation and replayed saves passed.`);

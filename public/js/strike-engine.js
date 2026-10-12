@@ -1,7 +1,7 @@
 /* Deterministic rules shared by the browser and simulation tests. */
 (function () {
     'use strict';
-    const VERSION = 5;
+    const VERSION = 6;
     const jobs = {
         picket: { title: '정문 피켓', short: '피켓', fatigue: 18, desc: '남은 생산을 늦추고 대체 인력·구사대를 막습니다. 피로가 크게 쌓입니다.' },
         organize: { title: '조직 천막', short: '조직', fatigue: 7, desc: '참여를 넓히고 회유에 흔들리는 동료를 붙잡습니다.' },
@@ -35,7 +35,7 @@
         unity: { title: '단결한 동료들', bonus: ['hours'], text: '참여율에서 나온 힘. 시간 단축에 +2' },
         opinion: { title: '시민의 지지', bonus: ['intensity', 'suit'], text: '여론에서 나온 힘. 강도·손배에 +2' },
         line: { title: '멈춘 생산라인', bonus: ['wage'], text: '최근 3일 멈춘 생산에서 나온 힘. 임금에 +2' },
-        fund: { title: '버틸 기금', bonus: [], text: '생활 기금에서 나온 힘' },
+        fund: { title: '투쟁 기금', bonus: ['suit'], text: '낼 때만 기금 25를 씀. 손배에 +2' },
         voice: { title: '대표 발언', bonus: [], text: '조직 숙련 3인 동료의 발언' }
     };
     const tactics = [
@@ -51,6 +51,8 @@
         rebuild: { title: '다시 모이는 동료들', description: '참여율 40%에서 시작합니다. 참여율을 70% 이상으로 회복한 채 세 요구를 따내세요.', fund: [80, 60], unity: 40 }
     };
     const sessions = [4, 8, 12];
+    // Below this resolve management asks for one extra session; each fund card placed costs the strike fund.
+    const callThreshold = 30, fundCardCost = 25;
     const clamp = n => Math.max(0, Math.min(100, n));
     const copy = s => JSON.parse(JSON.stringify(s));
     const fatigue = s => Math.round(s.crews.reduce((n, c) => n + c.fatigue, 0) / s.crews.length);
@@ -77,8 +79,7 @@
     }
     // Management chooses from the morning's state, so its moves are known while planning.
     // Later in the strike it makes two moves a day, so the crews must split their defence.
-    function threats(s) {
-        if (s.day === 1 || s.phase === 'done') return [];
+    function weightsFor(s) {
         const last = s.history[s.history.length - 1];
         const lastPicket = last ? last.jobs.filter(j => j === 'picket').length : 0;
         const weights = {
@@ -87,10 +88,14 @@
             buyout: 2 + (s.unity >= 55 ? 2 : 0),
             smear: 1 + (s.opinion >= 60 ? 3 : 0),
             seizure: 1 + (s.fund >= 60 ? 3 : 0),
-            lockout: s.day >= 9 && s.day <= 11 && s.resolve >= 30 && !s.history.some(r => r.moves.some(m => m.move === 'lockout')) ? 6 : 0
+            lockout: s.day >= 9 && s.day <= 11 && s.resolve >= callThreshold && !s.history.some(r => r.moves.some(m => m.move === 'lockout')) ? 6 : 0
         };
         if (last) last.moves.forEach(m => { weights[m.move] = 0; });
-        const picks = [];
+        return weights;
+    }
+    function threats(s) {
+        if (s.day === 1 || s.phase === 'done') return [];
+        const weights = weightsFor(s), picks = [];
         for (let i = 0; i < (s.day >= (s.mode === 'hard' ? 5 : 7) ? 2 : 1); i++) {
             const total = Object.values(weights).reduce((a, b) => a + b, 0);
             if (!total) break;
@@ -100,6 +105,20 @@
             if (move === 'lockout') weights.scabs = 0;
         }
         return picks;
+    }
+    // What the crews know in the morning. On two-move days the second move shows only its target
+    // place; options lists every move management could still be playing there.
+    function intel(s) {
+        const picks = threats(s);
+        return picks.map((move, i) => {
+            const target = moves[move].target;
+            if (i === 0) return { move, target, hidden: false, options: [move] };
+            const weights = weightsFor(s);
+            weights[picks[0]] = 0;
+            if (picks[0] === 'lockout') weights.scabs = 0;
+            const options = Object.keys(moves).filter(k => moves[k].target === target && weights[k] > 0);
+            return { move, target, hidden: options.length > 1, options };
+        });
     }
     // Outputs of the current placement, shown live while planning and applied by advance().
     function effects(s) {
@@ -137,7 +156,7 @@
         add('unity', unity, 2);
         add('opinion', s.opinion >= 80 ? 2 : s.opinion >= 60 ? 1 : 0, 2);
         add('line', stopped >= 90 ? 2 : stopped >= 70 ? 1 : 0, 2);
-        if (s.fund >= 50) add('fund', 1, s.fund >= 100 ? 3 : 2);
+        add('fund', Math.max(0, Math.min(3, Math.floor((s.fund - 20) / 30))), 2, { cost: fundCardCost });
         s.crews.filter(c => !c.injured && level(c, 'organize') >= 3).slice(0, 2).forEach(c => add('voice', 1, 3, { crew: c.id }));
         return cards.map((c, id) => ({ id, ...c }));
     }
@@ -169,10 +188,11 @@
     function openTable(n, extra) {
         n.table = { day: n.day, extra, resolve: n.resolve, tactic: hash(n.seed, n.day * 7 + 1) % tactics.length, hand: hand(n), placed: {}, result: null };
     }
-    function advance(s) {
+    // known replaces the morning's moves; forecast() passes only the revealed ones.
+    function advance(s, known) {
         if (s.phase !== 'planning') throw new Error('하루가 이미 진행되었습니다');
         const n = copy(s), fx = effects(s), deadline = sessions.includes(s.day);
-        const moves = threats(s).map(move => ({ move, ok: counter(s, move, fx).ok }));
+        const moves = (known || threats(s)).map(move => ({ move, ok: counter(s, move, fx).ok }));
         const lost = move => moves.some(m => m.move === move && !m.ok);
         const record = { day: s.day, moves, jobs: s.crews.map(c => c.job), injured: [], collapsed: [], levelUps: [] };
         const cost = 17 + (s.mode === 'hard' ? 3 : 0);
@@ -227,9 +247,12 @@
         n.phase = 'review';
         if (n.unity < 20 && s.unity < 20) { n.phase = 'done'; n.outcome = 'collapse'; }
         else if (sessions.includes(n.day)) openTable(n, false);
-        else if (!n.extraUsed && n.resolve < 30) { n.extraUsed = true; record.extra = true; openTable(n, true); }
+        else if (!n.extraUsed && n.resolve < callThreshold) { n.extraUsed = true; record.extra = true; openTable(n, true); }
         return { state: n, record };
     }
+    // The day as the crews can foresee it: a hidden move's outcome is left out.
+    function forecast(s) { return advance(s, intel(s).filter(t => !t.hidden).map(t => t.move)).record; }
+    const spending = t => t.hand.reduce((n, c) => n + (t.placed[c.id] && c.cost ? c.cost : 0), 0);
     function place(s, cardId, demand) {
         if (s.phase !== 'review' || !s.table || s.table.result || !s.table.hand[cardId] || (demand !== null && !Object.hasOwn(demands, demand))) throw new Error('카드를 낼 수 없습니다');
         const n = copy(s);
@@ -248,6 +271,7 @@
         if (s.phase !== 'review' || !s.table || s.table.result) throw new Error('지금은 제안할 수 없습니다');
         const n = copy(s), result = preview(s);
         n.table.result = Object.fromEntries(Object.entries(result).map(([d, r]) => [d, r.to - r.from]));
+        n.table.spent = spending(s.table); n.fund -= n.table.spent;
         Object.entries(result).forEach(([d, r]) => { n.won[d] = r.to; });
         n.log.push(['p', s.table.hand.map(c => s.table.placed[c.id] || null)]);
         if (n.day === 12) finish(n, 'final');
@@ -317,5 +341,5 @@
             return s;
         } catch (_) { return null; }
     }
-    window.StrikeGame = { VERSION, jobs, skills, roster, moves, demands, cardKinds, tactics, scenarios, sessions, bonuses, start, threats, effects, counter, assign, advance, place, preview, cardValue, resistance, propose, settle, next, objectives, won, grade, restore, level, fatigue, dealOf };
+    window.StrikeGame = { VERSION, callThreshold, fundCardCost, spending, intel, forecast, jobs, skills, roster, moves, demands, cardKinds, tactics, scenarios, sessions, bonuses, start, threats, effects, counter, assign, advance, place, preview, cardValue, resistance, propose, settle, next, objectives, won, grade, restore, level, fatigue, dealOf };
 })();

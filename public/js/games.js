@@ -6,7 +6,7 @@
     }
     try {
         const game = window.StrikeGame;
-        const saved = game.restore(localStorage.getItem('strike-game-v5-save'));
+        const saved = game.restore(localStorage.getItem('strike-game-v6-save'));
         if (saved && saved.phase !== 'done') {
             show('gamesStrikeResume', `${saved.day}일차 이어하기 →`);
             show('gamesStrikeProgress', game.scenarios[saved.scenario].title + ' · 이 브라우저에 저장됨');

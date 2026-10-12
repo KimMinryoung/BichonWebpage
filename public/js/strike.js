@@ -1,8 +1,8 @@
 (function () {
     'use strict';
     const g = window.StrikeGame, el = id => document.getElementById(id);
-    const saveKey = 'strike-game-v5-save';
-    const legacyKeys = ['strike-game-v4-save', 'strike-game-v3-save', 'strike-game-v2-save'];
+    const saveKey = 'strike-game-v6-save';
+    const legacyKeys = ['strike-game-v5-save', 'strike-game-v4-save', 'strike-game-v3-save', 'strike-game-v2-save'];
     let state, saved, selected = 0, moving = false, timer, sheetView = 'review', picked = null, unsaved = false;
     function node(tag, text, className) {
         const n = document.createElement(tag); if (text !== undefined && text !== '') n.textContent = text; if (className) n.className = className; return n;
@@ -10,7 +10,11 @@
     function button(text, fn, className) { const b = node('button', text, className); b.type = 'button'; b.addEventListener('click', fn); return b; }
     const signed = (v, unit = '') => (v > 0 ? '+' : v < 0 ? '−' : '±') + Math.abs(v) + unit;
     // Once saving fails, every later announcement keeps saying so.
-    function announce(text) { el('strikeAnnouncement').textContent = (text + (unsaved ? ' 이 브라우저에는 저장되지 않습니다. 현재 게임은 계속할 수 있습니다.' : '')).trim(); }
+    function announce(text) {
+        const box = el('strikeAnnouncement');
+        box.textContent = (text + (unsaved ? ' 이 브라우저에는 저장되지 않습니다. 현재 게임은 계속할 수 있습니다.' : '')).trim();
+        box.toggleAttribute('data-unsaved', unsaved);
+    }
     function save() {
         try { localStorage.setItem(saveKey, JSON.stringify(state)); }
         catch (_) { unsaved = true; announce(''); }
@@ -42,8 +46,12 @@
         const boss = node('div', '', 'strike-boss'); boss.dataset.meter = 'resolve';
         const head = node('div', '', 'strike-boss-head');
         head.append(node('span', '한빛자동차 경영진 · 사측 버티기'), node('strong', `${state.resolve} / ${startResolve}`));
-        const bar = node('div', '', 'strike-boss-track'); const fill = node('i'); fill.style.width = Math.min(100, state.resolve / startResolve * 100) + '%'; bar.append(fill);
-        boss.append(head, bar, node('small', '생산을 멈추고 사측의 수를 막으면 깎입니다. 낮을수록 교섭 저항이 약해집니다.'));
+        const bar = node('div', '', 'strike-boss-track'); const fill = node('i'); fill.style.width = Math.min(100, state.resolve / startResolve * 100) + '%';
+        // The point below which management asks for an extra session once.
+        const at = g.callThreshold / startResolve * 100 + '%', mark = node('b'); mark.style.left = at; bar.append(fill, mark);
+        const scale = node('div', '', 'strike-boss-scale'); scale.dataset.used = String(state.extraUsed);
+        const tick = node('span', `${g.callThreshold} · ${state.extraUsed ? '요청 교섭 열림' : '아래로 내리면 사측이 교섭 요청'}`); tick.style.left = at; scale.append(tick);
+        boss.append(head, bar, scale, node('small', '생산을 멈추고 사측의 수를 막으면 깎입니다. 낮을수록 교섭 저항이 약해집니다.'));
         el('strikeStats').replaceChildren(...stats, boss);
     }
     function calendar() {
@@ -80,11 +88,23 @@
             box.replaceChildren(kicker, title, node('p', '첫날은 배치를 익히는 날입니다. 내일 아침부터 사측이 수를 드러내면, 이 자리에서 막아 내는 조건과 지금 배치로 막을 수 있는지를 확인하세요.'));
             box.dataset.state = 'calm'; return;
         }
-        const items = review ? (last ? last.moves : []) : g.threats(state).map(move => ({ move, check: g.counter(state, move, fx) }));
-        const title = node('h2', items.map(m => g.moves[m.move].title).join(' + ') || '조용한 하루'); title.id = 'strikeThreatTitle'; title.tabIndex = -1;
+        const items = review ? (last ? last.moves : []) : g.intel(state).map(t => ({ ...t, checks: t.options.map(move => ({ move, check: g.counter(state, move, fx) })) }));
+        const hiddenTitle = m => g.jobs[m.target].title + ' 쪽 미확인 수';
+        const title = node('h2', items.map(m => m.hidden && !review ? hiddenTitle(m) : g.moves[m.move].title).join(' + ') || '조용한 하루'); title.id = 'strikeThreatTitle'; title.tabIndex = -1;
         const list = node('ul', '', 'strike-threat-list');
         items.forEach(m => {
             const info = g.moves[m.move], li = node('li');
+            // A half-hidden move: only the target is known, so every possible move is checked.
+            if (m.hidden && !review) {
+                li.append(node('strong', hiddenTitle(m)), node('p', `사측이 ${g.jobs[m.target].title} 쪽에서 움직입니다. ${m.options.map(k => g.moves[k].title).join(' 또는 ')} 중 하나입니다. 둘 다 막을 수 있게 배치하세요.`));
+                m.checks.forEach(({ move, check }) => {
+                    const unit = move === 'scabs' ? v => v.toFixed(1) : v => String(v);
+                    const status = node('p', '', 'strike-threat-status'); status.dataset.ok = String(check.ok);
+                    status.append(node('span', `${g.moves[move].title}일 때: ${g.moves[move].counter}`), node('b', `${check.ok ? '✓ 막을 수 있음' : '✗ 부족'} (${unit(check.have)}/${unit(check.need)})`));
+                    li.append(status);
+                });
+                list.append(li); return;
+            }
             if (items.length > 1) li.append(node('strong', info.title));
             li.append(node('p', review && !moving ? (m.ok ? info.win : info.lose) : info.text));
             const status = node('p', '', 'strike-threat-status');
@@ -92,19 +112,19 @@
                 status.textContent = moving ? '결과를 기다리는 중…' : m.ok ? '✓ 막아냄' : '✗ 뚫림';
                 status.dataset.ok = moving ? '' : String(m.ok);
             } else {
-                const unit = m.move === 'scabs' ? v => v.toFixed(1) : v => String(v);
-                status.dataset.ok = String(m.check.ok);
-                status.append(node('span', '막는 조건: ' + info.counter), node('b', m.check.ok ? `✓ 막을 수 있음 (${unit(m.check.have)}/${unit(m.check.need)})` : `✗ 부족 (${unit(m.check.have)}/${unit(m.check.need)})`));
+                const unit = m.move === 'scabs' ? v => v.toFixed(1) : v => String(v), check = m.checks[0].check;
+                status.dataset.ok = String(check.ok);
+                status.append(node('span', '막는 조건: ' + info.counter), node('b', check.ok ? `✓ 막을 수 있음 (${unit(check.have)}/${unit(check.need)})` : `✗ 부족 (${unit(check.have)}/${unit(check.need)})`));
             }
             li.append(status); list.append(li);
         });
-        box.dataset.state = review ? 'review' : items.every(m => m.check.ok) ? 'held' : 'open';
+        box.dataset.state = review ? 'review' : items.every(m => m.checks.every(c => c.check.ok)) ? 'held' : 'open';
         box.replaceChildren(kicker, title, list);
     }
     function forecast() {
         const box = el('strikeForecast');
         if (state.phase !== 'planning' || moving) { box.replaceChildren(); return; }
-        const r = g.advance(state).record;
+        const r = g.forecast(state), blind = g.intel(state).some(t => t.hidden);
         const items = [
             ['기금', signed(r.fund - state.fund)], ['참여율', signed(r.unity - state.unity, '%p')], ['여론', signed(r.opinion - state.opinion)], ['생산', r.production + '%'], ['사측 버티기', signed(r.resolve - state.resolve)]
         ];
@@ -114,7 +134,7 @@
         if (r.collapsed.length) warn.push(`쓰러짐 ${r.collapsed.length}명`);
         const list = node('dl', '', 'strike-forecast-list');
         items.forEach(([k, v]) => { const d = node('div'); d.append(node('dt', k), node('dd', v)); list.append(d); });
-        box.replaceChildren(node('p', '이 배치의 예상', 'strike-forecast-title'), list, ...(warn.length ? [node('p', '⚠ ' + warn.join(' · '), 'strike-forecast-warn')] : []));
+        box.replaceChildren(node('p', blind ? '이 배치의 예상 · 미확인 수 결과 제외' : '이 배치의 예상', 'strike-forecast-title'), list, ...(warn.length ? [node('p', '⚠ ' + warn.join(' · '), 'strike-forecast-warn')] : []));
     }
     function crews() {
         el('strikeCrews').replaceChildren(...state.crews.map(c => {
@@ -259,11 +279,13 @@
                 cards.append(b);
             });
             handBox.append(cards); body.append(handBox);
+            const spend = g.spending(t);
+            if (spend) handBox.append(node('p', `투쟁 기금 사용 −${spend} · 남는 기금 ${state.fund - spend}`, 'strike-hand-spend'));
             const actions = node('div', '', 'strike-sheet-actions');
             actions.append(button(state.day === 12 ? '마지막 제안 내놓기' : '이 카드로 제안하기', propose, 'strike-primary'));
             body.append(actions);
         } else {
-            const summary = Object.values(state.won).some(Boolean) ? '잠정 합의: ' + dealLine(g.dealOf(state.won)) : '아직 따낸 요구가 없습니다.';
+            const summary = (Object.values(state.won).some(Boolean) ? '잠정 합의: ' + dealLine(g.dealOf(state.won)) : '아직 따낸 요구가 없습니다.') + (t.spent ? ` · 투쟁 기금 −${t.spent}` : '');
             body.append(node('p', summary, 'strike-sheet-note'));
             const wouldWin = Object.values(state.won).some(Boolean) && g.won(g.settle(state));
             const nextSession = g.sessions.find(d => d > state.day);

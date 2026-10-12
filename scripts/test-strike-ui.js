@@ -59,19 +59,19 @@ async function main() {
         }
         // The reader strategy from test-strike.js, run in the page, returns the jobs to place.
         const planDay = target => target.evaluate(() => {
-            const g = window.StrikeGame; let s = JSON.parse(localStorage.getItem('strike-game-v5-save'));
+            const g = window.StrikeGame; let s = JSON.parse(localStorage.getItem('strike-game-v6-save'));
             s.crews.filter(c => !c.injured).forEach(c => { s = g.assign(s, c.id, 'rest'); });
             const pool = trait => s.crews.filter(c => !c.injured && c.job === 'rest' && c.fatigue < 60).sort((a, b) => (b.trait === trait) - (a.trait === trait) || a.fatigue - b.fatigue);
             const fill = (job, done, trait) => { while (!done()) { const c = pool(trait)[0]; if (!c) return; s = g.assign(s, c.id, job); } };
             const target = { scabs: ['picket', 'vanguard'], thugs: ['picket', 'vanguard'], buyout: ['organize', 'orator'], smear: ['solidarity', 'publicist'], seizure: ['solidarity', 'treasurer'], lockout: ['organize', 'orator'] };
-            for (const move of g.threats(s)) fill(target[move][0], () => g.counter(s, move).ok, target[move][1]);
+            for (const t of g.intel(s)) for (const move of t.options) fill(target[move][0], () => g.counter(s, move).ok, target[move][1]);
             fill('picket', () => g.effects(s).counts.picket >= 2, 'vanguard');
             fill('organize', () => g.effects(s).counts.organize >= 1, 'orator');
             fill('solidarity', () => g.effects(s).counts.solidarity >= (s.fund < 60 ? 2 : 1), 'treasurer');
             return s.crews.map(c => c.injured ? null : c.job);
         });
         const planTable = target => target.evaluate(() => {
-            const g = window.StrikeGame; let s = JSON.parse(localStorage.getItem('strike-game-v5-save'));
+            const g = window.StrikeGame; let s = JSON.parse(localStorage.getItem('strike-game-v6-save'));
             const used = new Set(), moves = [];
             for (const d of ['intensity', 'wage', 'hours', 'wage', 'hours', 'suit', 'wage', 'hours']) {
                 const pv = g.preview(s)[d];
@@ -145,7 +145,7 @@ async function main() {
         assert.equal(await page.locator('#strikeSheet .strike-day-metric').count(), 5);
         await page.locator('#strikeSheet .strike-primary').click();
         assert.equal(await page.locator('#strikeSheet').isVisible(), false);
-        const threat = await page.evaluate(() => window.StrikeGame.threats(JSON.parse(localStorage.getItem('strike-game-v5-save')))[0]);
+        const threat = await page.evaluate(() => window.StrikeGame.threats(JSON.parse(localStorage.getItem('strike-game-v6-save')))[0]);
         assert.equal(await page.locator(`.strike-threat-token[data-threat="${threat}"]`).count(), 1);
         const target = await page.evaluate(m => window.StrikeGame.moves[m].target, threat);
         assert.equal(await page.locator(`[data-map-job="${target}"].is-event-target`).count(), 1);
@@ -178,6 +178,7 @@ async function main() {
             await touch.touchscreen.tap(source.x, source.y); await touch.touchscreen.tap(dest.x, dest.y);
         }
         for (let id = 0; id < 6; id++) {
+            await touch.locator('[data-crew-sprite="' + id + '"]').scrollIntoViewIfNeeded();
             source = await personPoint(touch, id); await touch.touchscreen.tap(source.x, source.y);
             assert.equal(await touch.locator('[data-crew-sprite="' + id + '"]').getAttribute('aria-pressed'), 'true', 'six crews in one place stay touchable');
         }
@@ -191,7 +192,7 @@ async function main() {
                 if (g.threats(s)[0] !== 'thugs') continue;
                 s.crews.forEach(c => { s = g.assign(s, c.id, c.id === 1 ? 'picket' : 'rest'); });
                 s = g.next(g.advance(s).state);
-                localStorage.setItem('strike-game-v5-save', JSON.stringify(s)); return;
+                localStorage.setItem('strike-game-v6-save', JSON.stringify(s)); return;
             }
             throw new Error('No thug seed found');
         });
@@ -239,14 +240,14 @@ async function main() {
         await page.click('#strikeStart');
         await playCampaign(page, false);
         assert.equal(await page.locator('#strikeResult').isVisible(), true, 'a hard campaign reaches its end');
-        assert.ok(await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v5-save')).phase) === 'done');
+        assert.ok(await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v6-save')).phase) === 'done');
         // Animated progression is locked, skippable, and stored before playback finishes.
         await page.locator('#strikeResult button', { hasText: '같은 조건' }).click();
         await page.emulateMedia({ reducedMotion: 'no-preference' });
         await page.click('#strikeAdvance');
         assert.equal(await page.locator('#strikeSkip').isVisible(), true);
         assert.equal(await page.locator('[data-crew="0"]').isDisabled(), true);
-        assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v5-save')).phase), 'review', 'saved before the animation ends');
+        assert.equal(await page.evaluate(() => JSON.parse(localStorage.getItem('strike-game-v6-save')).phase), 'review', 'saved before the animation ends');
         await page.click('#strikeSkip');
         assert.equal(await page.locator('#strikeSheet').isVisible(), true);
         await page.emulateMedia({ reducedMotion: 'reduce' });
@@ -269,7 +270,7 @@ async function main() {
         await page.setViewportSize({ width: 1280, height: 1000 });
         await page.screenshot({ path: '/tmp/strike-desktop.png', fullPage: true });
         // Corrupted, legacy and disabled storage cannot prevent play.
-        await page.evaluate(() => { localStorage.setItem('strike-game-v5-save', '{bad'); localStorage.setItem('strike-game-v4-save', JSON.stringify({ version: 4 })); });
+        await page.evaluate(() => { localStorage.setItem('strike-game-v6-save', '{bad'); localStorage.setItem('strike-game-v4-save', JSON.stringify({ version: 4 })); });
         await page.goto(origin + '/games/strike/');
         assert.equal(await page.locator('#strikeContinue').isVisible(), false);
         assert.match(await page.locator('#strikeSaveNote').textContent(), /새 규칙/);
@@ -281,7 +282,7 @@ async function main() {
         assert.equal(await page.locator('#strikeSheet').isVisible(), true);
         assert.match(await page.locator('#strikeAnnouncement').textContent(), /저장/);
         assert.deepEqual(errors, []);
-        console.log('Strike v5 UI: drag/touch/keyboard placement, telegraphed threats, injuries, bargaining cards with reload, full campaigns, animation lock, responsive layouts and storage fallbacks passed.');
+        console.log('Strike v6 UI: drag/touch/keyboard placement, telegraphed threats, injuries, bargaining cards with reload, full campaigns, animation lock, responsive layouts and storage fallbacks passed.');
     } finally {
         if (browser) await browser.close();
         await new Promise(resolve => server.close(resolve));
