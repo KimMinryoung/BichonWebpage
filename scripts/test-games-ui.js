@@ -109,11 +109,8 @@ async function main() {
         await page.reload(); await page.click('#strikeContinue');
         assert.match(await page.locator('[data-crew="0"]').textContent(), /휴식처/);
         await page.goto(origin + '/games/'); await page.click('#gamesStrikeResume');
-        assert.equal(await page.locator('#strikePlay').isVisible(), true);
-        await page.evaluate(save => { localStorage.removeItem('strike-game-v4-save'); localStorage.setItem('strike-game-v3-save', JSON.stringify(save)); }, require('./fixtures/strike-v3-save.json'));
-        await page.goto(origin + '/games/strike/'); await page.click('#strikeContinue');
-        assert.match(await page.locator('#strikeDay').textContent(), /DAY 05/);
-        assert.ok(await page.evaluate(() => localStorage.getItem('strike-game-v3-save')), 'legacy original is preserved');
+        await page.waitForSelector('#strikePlay:not([hidden])');
+        assert.match(await page.locator('#strikeDay').textContent(), /다시 모이는 동료들 · 1일차/);
         await page.goto(origin + '/games/strike/');
         page.removeAllListeners('dialog'); page.once('dialog', d => d.dismiss());
         await page.click('#strikeStart'); assert.equal(await page.locator('#strikeSetup').isVisible(), true);

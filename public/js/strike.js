@@ -1,175 +1,367 @@
 (function () {
     'use strict';
     const g = window.StrikeGame, el = id => document.getElementById(id);
-    const saveKey = 'strike-game-v4-save';
-    let state, saved, selected = 0, moving = false, timer, bargaining = false;
+    const saveKey = 'strike-game-v5-save';
+    const legacyKeys = ['strike-game-v4-save', 'strike-game-v3-save', 'strike-game-v2-save'];
+    let state, saved, selected = 0, moving = false, timer, sheetView = 'review', picked = null, unsaved = false;
     function node(tag, text, className) {
-        const n = document.createElement(tag); if (text) n.textContent = text; if (className) n.className = className; return n;
+        const n = document.createElement(tag); if (text !== undefined && text !== '') n.textContent = text; if (className) n.className = className; return n;
     }
     function button(text, fn, className) { const b = node('button', text, className); b.type = 'button'; b.addEventListener('click', fn); return b; }
-    function readable(text) { return text.replace(/([.!?])\s+/g, '$1\n'); }
-    function announce(text) { el('strikeAnnouncement').textContent = readable(text); }
-    function select(id) { selected = id; render(); }
+    const signed = (v, unit = '') => (v > 0 ? '+' : v < 0 ? '−' : '±') + Math.abs(v) + unit;
+    // Once saving fails, every later announcement keeps saying so.
+    function announce(text) { el('strikeAnnouncement').textContent = (text + (unsaved ? ' 이 브라우저에는 저장되지 않습니다. 현재 게임은 계속할 수 있습니다.' : '')).trim(); }
     function save() {
         try { localStorage.setItem(saveKey, JSON.stringify(state)); }
-        catch (_) { announce('이 브라우저에서는 저장할 수 없습니다. 현재 게임은 계속할 수 있습니다.'); }
+        catch (_) { unsaved = true; announce(''); }
     }
     function load() {
-        el('strikeSaveNote').textContent = '한 판 10–15분 · 로그인 없이 · 배치와 하루 결과 자동 저장 · 이 브라우저에 저장';
+        el('strikeSaveNote').textContent = '한 판 15–20분 · 로그인 없이 · 이 브라우저에 자동 저장';
         try {
             saved = g.restore(localStorage.getItem(saveKey));
-            if (!saved) {
-                saved = g.restore(localStorage.getItem('strike-game-v3-save'));
-                if (saved) localStorage.setItem(saveKey, JSON.stringify(saved));
-            }
-            if (!saved && localStorage.getItem('strike-game-v2-save')) el('strikeSaveNote').textContent = '생산·참여 규칙이 개편되었습니다. 새 게임으로 시작해 주세요.';
-        }
-        catch (_) { el('strikeSaveNote').textContent = '저장을 사용할 수 없습니다. 이 화면에서 끝까지 플레이할 수 있습니다.'; }
+            if (!saved && legacyKeys.some(k => localStorage.getItem(k))) el('strikeSaveNote').textContent = '게임이 새 규칙으로 바뀌어 이전 판은 이어할 수 없습니다. 새 게임으로 시작해 주세요.';
+        } catch (_) { el('strikeSaveNote').textContent = '저장을 사용할 수 없습니다. 이 화면에서 끝까지 플레이할 수 있습니다.'; }
         el('strikeContinue').hidden = !saved || saved.phase === 'done';
         if (saved && saved.phase !== 'done') {
             el('strikeContinue').textContent = `${saved.day}일차 이어하기`;
-            el('strikeSaveNote').textContent = '이어하기는 저장된 게임을 계속합니다.\n새 게임 시작은 기존 진행을 지우고 1일차부터 시작합니다.';
+            el('strikeSaveNote').textContent = '이어하기는 저장된 게임을 계속합니다. 새 게임 시작은 기존 진행을 지우고 1일차부터 시작합니다.';
         }
     }
+    const previous = () => state.history[state.history.length - 2] || g.start(state.mode, state.seed, state.scenario);
     function meters() {
+        const startResolve = state.mode === 'hard' ? 115 : 100;
         el('strikeStats').replaceChildren(...[
-            ['생활 기금', state.fund, Math.min(100, state.fund), state.fund < 20 ? '생활 지원이 빠듯합니다' : '함께 버틸 생활비'],
-            ['파업 참여율', state.unity + '%', state.unity, state.unity < 20 ? '이틀 연속 낮으면 파업이 끝납니다' : '전체 노동자 중 작업을 멈춘 비율'],
-            ['현장 생산', state.production + '%', state.production, state.production <= 30 ? '라인이 거의 멈췄습니다' : '낮을수록 파업의 힘'],
-            ['밀린 출하', Math.ceil(state.backlog / 40) + '대분', state.backlog / 4, '쌓일수록 교섭 압박']
-        ].map(([title, value, width, caption]) => {
-            const n = node('div', '', 'strike-meter'); const bar = node('div', '', 'strike-meter-track'); const fill = node('i'); fill.style.width = width + '%'; bar.append(fill);
+            ['fund', '생활 기금', state.fund, Math.min(100, state.fund), `하루 생활 지원 ${17 + (state.mode === 'hard' ? 3 : 0)}`],
+            ['unity', '파업 참여율', state.unity + '%', state.unity, '65%부터 교섭 카드'],
+            ['opinion', '여론', state.opinion, state.opinion, '60부터 교섭 카드'],
+            ['resolve', '사측 버티기', state.resolve, Math.min(100, state.resolve / startResolve * 100), '낮을수록 교섭 저항이 약해짐']
+        ].map(([id, title, value, width, caption]) => {
+            const n = node('div', '', 'strike-meter'); n.dataset.meter = id;
+            const bar = node('div', '', 'strike-meter-track'); const fill = node('i'); fill.style.width = width + '%'; bar.append(fill);
             n.append(node('span', title), node('strong', String(value)), bar, node('small', caption)); return n;
         }));
     }
-    function assign(job) {
-        state = g.assign(state, selected, job); save();
-        announce(`${state.crews[selected].name} 조를 ${g.jobs[job].title}에 배치했습니다.`); render();
+    function calendar() {
+        el('strikeDay').textContent = `${state.mode === 'hard' ? '어려움' : '기본'} · ${g.scenarios[state.scenario].title} · ${state.day}일차`;
+        el('strikeCalendar').replaceChildren(...Array.from({ length: 12 }, (_, i) => {
+            const day = i + 1, d = node('li', String(day), day === state.day ? 'current' : day < state.day ? 'past' : '');
+            const session = g.sessions.includes(day) || state.history.some(r => r.day === day && r.extra);
+            if (session) { d.classList.add('session'); d.append(node('small', '교섭')); }
+            d.setAttribute('aria-label', `${day}일${session ? ', 교섭' : ''}${day === state.day ? ', 오늘' : ''}`);
+            if (day === state.day) d.setAttribute('aria-current', 'step');
+            return d;
+        }));
+    }
+    function dealLine(d) {
+        return [d.wage ? `임금 +${d.wage}%` : null, d.hours ? `주 ${40 - d.hours}시간` : null, !d.intensity ? '강도 유지' : null, d.suit ? '손배 철회' : null].filter(Boolean).join(' · ');
+    }
+    function objectives() {
+        const tentative = Object.values(state.won).some(Boolean) && state.phase !== 'done';
+        el('strikeObjectives').replaceChildren(
+            ...g.objectives(state).map(o => { const n = node('span', (o.met ? '✓ ' : '○ ') + o.text, 'strike-goal'); n.dataset.met = String(o.met); return n; }),
+            ...(tentative ? [node('span', '잠정 합의: ' + dealLine(g.dealOf(state.won)), 'strike-tentative')] : [])
+        );
+    }
+    // The morning's threats with a live check of whether the current placement holds them.
+    function threatPanel() {
+        const box = el('strikeThreat'), fx = g.effects(state);
+        box.hidden = state.phase === 'done';
+        if (box.hidden) return;
+        const last = state.history[state.history.length - 1];
+        const review = state.phase === 'review' || moving;
+        const kicker = node('p', review ? '오늘 사측이 둔 수' : '오늘 사측의 수', 'strike-threat-kicker');
+        if (state.phase === 'planning' && !g.threats(state).length) {
+            const title = node('h2', '사측은 아직 지켜보고 있습니다'); title.id = 'strikeThreatTitle'; title.tabIndex = -1;
+            box.replaceChildren(kicker, title, node('p', '첫날은 배치를 익히는 날입니다. 내일 아침부터 사측이 수를 드러내면, 이 자리에서 막아 내는 조건과 지금 배치로 막을 수 있는지를 확인하세요.'));
+            box.dataset.state = 'calm'; return;
+        }
+        const items = review ? (last ? last.moves : []) : g.threats(state).map(move => ({ move, check: g.counter(state, move, fx) }));
+        const title = node('h2', items.map(m => g.moves[m.move].title).join(' + ') || '조용한 하루'); title.id = 'strikeThreatTitle'; title.tabIndex = -1;
+        const list = node('ul', '', 'strike-threat-list');
+        items.forEach(m => {
+            const info = g.moves[m.move], li = node('li');
+            if (items.length > 1) li.append(node('strong', info.title));
+            li.append(node('p', review && !moving ? (m.ok ? info.win : info.lose) : info.text));
+            const status = node('p', '', 'strike-threat-status');
+            if (review) {
+                status.textContent = moving ? '결과를 기다리는 중…' : m.ok ? '✓ 막아냄' : '✗ 뚫림';
+                status.dataset.ok = moving ? '' : String(m.ok);
+            } else {
+                const unit = m.move === 'scabs' ? v => v.toFixed(1) : v => String(v);
+                status.dataset.ok = String(m.check.ok);
+                status.append(node('span', '막는 조건: ' + info.counter), node('b', m.check.ok ? `✓ 막을 수 있음 (${unit(m.check.have)}/${unit(m.check.need)})` : `✗ 부족 (${unit(m.check.have)}/${unit(m.check.need)})`));
+            }
+            li.append(status); list.append(li);
+        });
+        box.dataset.state = review ? 'review' : items.every(m => m.check.ok) ? 'held' : 'open';
+        box.replaceChildren(kicker, title, list);
+    }
+    function forecast() {
+        const box = el('strikeForecast');
+        if (state.phase !== 'planning' || moving) { box.replaceChildren(); return; }
+        const r = g.advance(state).record;
+        const items = [
+            ['기금', signed(r.fund - state.fund)], ['참여율', signed(r.unity - state.unity, '%p')], ['여론', signed(r.opinion - state.opinion)], ['생산', r.production + '%'], ['사측 버티기', signed(r.resolve - state.resolve)]
+        ];
+        const warn = [];
+        if (r.missing) warn.push(`생활 지원 ${r.missing} 부족`);
+        if (r.exhausted) warn.push(`과로 ${r.exhausted}명`);
+        if (r.collapsed.length) warn.push(`쓰러짐 ${r.collapsed.length}명`);
+        const list = node('dl', '', 'strike-forecast-list');
+        items.forEach(([k, v]) => { const d = node('div'); d.append(node('dt', k), node('dd', v)); list.append(d); });
+        box.replaceChildren(node('p', '이 배치의 예상', 'strike-forecast-title'), list, ...(warn.length ? [node('p', '⚠ ' + warn.join(' · '), 'strike-forecast-warn')] : []));
     }
     function crews() {
         el('strikeCrews').replaceChildren(...state.crews.map(c => {
-            const b = button('', () => { selected = c.id; render(); el('strikeCrews').querySelector('[data-crew="' + c.id + '"]').focus({ preventScroll: true }); }, 'strike-crew'); b.disabled = moving || state.phase !== 'planning'; b.dataset.crew = c.id; b.setAttribute('aria-pressed', String(selected === c.id));
-            const face = node('span', c.fatigue >= 75 ? '•︵•' : c.fatigue >= 45 ? '•_•' : '•ᴗ•', 'strike-avatar'); face.dataset.color = c.id; face.dataset.fatigue = c.fatigue >= 75 ? 'exhausted' : c.fatigue >= 45 ? 'tired' : 'fresh';
-            const copy = node('span', '', 'strike-crew-copy'); copy.append(node('strong', c.name + ' 조'), node('small', g.jobs[c.job].title));
-            const energy = node('span', '피로 ' + c.fatigue, 'strike-energy');
-            b.append(face, copy, energy); b.setAttribute('aria-label', `${c.name} 조, ${g.jobs[c.job].title}, 피로 ${c.fatigue}`); return b;
+            const b = button('', () => { selected = c.id; render(); el('strikeCrews').querySelector('[data-crew="' + c.id + '"]').focus({ preventScroll: true }); }, 'strike-crew');
+            b.disabled = moving || state.phase !== 'planning'; b.dataset.crew = c.id; b.setAttribute('aria-pressed', String(selected === c.id));
+            const face = node('span', c.injured ? '✚' : c.fatigue >= 75 ? '•︵•' : c.fatigue >= 45 ? '•_•' : '•ᴗ•', 'strike-avatar'); face.dataset.color = c.id;
+            face.dataset.fatigue = c.injured ? 'injured' : c.fatigue >= 75 ? 'exhausted' : c.fatigue >= 45 ? 'tired' : 'fresh';
+            const copy = node('span', '', 'strike-crew-copy');
+            const name = node('strong', c.name); name.append(node('em', g.roster[c.id].label));
+            copy.append(name, node('small', c.injured ? `부상 · ${c.injured}일 휴식` : g.jobs[c.job].title));
+            const skills = node('span', '', 'strike-skills');
+            g.skills.forEach(job => { const s = node('span', g.jobs[job].short + ' ' + '★'.repeat(g.level(c, job)) + '☆'.repeat(3 - g.level(c, job))); s.dataset.active = String(c.job === job); skills.append(s); });
+            copy.append(skills);
+            const energy = node('span', '', 'strike-energy'); const bar = node('i'); bar.style.width = c.fatigue + '%'; bar.dataset.level = c.fatigue >= 75 ? 'high' : c.fatigue >= 45 ? 'mid' : 'low';
+            energy.append(node('span', '피로 ' + c.fatigue), node('span', '', 'strike-energy-track'));
+            energy.lastChild.append(bar);
+            b.append(face, copy, energy);
+            b.setAttribute('aria-label', `${c.name}, ${g.roster[c.id].label}, ${c.injured ? '부상 ' + c.injured + '일 휴식' : g.jobs[c.job].title}, 피로 ${c.fatigue}, 숙련 ${g.skills.map(j => g.jobs[j].short + ' ' + g.level(c, j)).join(' ')}`);
+            return b;
+        }));
+        const c = state.crews[selected];
+        el('strikeCrewNote').textContent = `${c.name} · ${g.roster[c.id].label}: ${g.roster[c.id].note}`;
+    }
+    function history() {
+        el('strikeLog').replaceChildren(...state.history.slice().reverse().map(r => {
+            const row = node('tr'); const day = node('th', r.day + '일'); day.scope = 'row';
+            row.append(day, node('td', r.moves.length ? r.moves.map(m => g.moves[m.move].badge + (m.ok ? ' ✓' : ' ✗')).join(', ') : '—'));
+            [r.production + '%', String(r.fund), r.unity + '%', String(r.opinion), String(r.resolve)].forEach(v => row.append(node('td', v)));
+            return row;
         }));
     }
-    function dealText(d) { return `임금 +${d.wage}%\n주 ${40 - d.hours}시간\n작업 강도 ${d.intensity ? '+' + d.intensity + '%' : '유지'}`; }
-    function dayMetrics(record, previous) {
-        const grid = node('div', '', 'strike-day-metrics');
-        const signed = value => (value > 0 ? '+' : value < 0 ? '−' : '±') + Math.abs(value);
-        const paid = Math.min(record.cost, previous.fund + record.income);
-        const funding = `연대 모금 +${record.income}\n생활 지원 −${paid}` + (paid < record.cost ? `\n지원 부족 ${record.cost - paid}` : '');
-        const metrics = [
-            ['production', '공장 생산', record.production + '%', record.production - previous.production, '%p', '낮을수록 생산 중단의 힘', 'lower'],
-            ['backlog', '밀린 출하', Math.ceil(record.backlog / 40) + '대분', Math.ceil(record.backlog / 40) - Math.ceil(previous.backlog / 40), '대분', '쌓인 미납 물량이 교섭 압박으로', 'higher'],
-            ['fund', '생활 기금', String(record.fund), record.fund - previous.fund, '', funding, 'higher'],
-            ['unity', '파업 참여율', record.unity + '%', record.unity - previous.unity, '%p', '전체 노동자 중 작업을 멈춘 비율', 'higher']
-        ];
-        for (const [id, title, value, change, unit, detail, direction] of metrics) {
-            const card = node('div', '', 'strike-day-metric'); card.dataset.metric = id;
-            const delta = node('span', `${record.day === 1 ? '시작' : '전날'} 대비 ${signed(change)}${unit}`, 'strike-metric-change');
-            delta.dataset.trend = change === 0 ? 'steady' : (direction === 'lower' ? change < 0 : change > 0) ? 'improved' : 'declined';
-            delta.setAttribute('aria-label', delta.textContent);
-            card.append(node('span', title, 'strike-metric-title'), node('strong', value), delta, node('small', detail));
-            grid.append(card);
-        }
-        return grid;
+    // ---- Evening sheet: the day's report, then the bargaining table on session days.
+    function metricTile(title, value, change, unit, good) {
+        const card = node('div', '', 'strike-day-metric');
+        const delta = node('span', signed(change, unit), 'strike-metric-change');
+        delta.dataset.trend = change === 0 ? 'steady' : good(change) ? 'improved' : 'declined';
+        card.append(node('span', title, 'strike-metric-title'), node('strong', value), delta);
+        return card;
     }
-    function narrative(record) {
-        const messages = record.messages.filter((_, i) => i !== 1 && i !== 2);
-        if (record.event === '납품 마감일') messages.splice(1, 0, '납품 마감으로 생산 중단의 압박이 더 커졌습니다.');
-        return messages;
+    function reviewView(body) {
+        const r = state.history[state.history.length - 1], p = previous();
+        const title = node('h2', `${r.day}일차 저녁`); title.id = 'strikeSheetTitle'; title.tabIndex = -1;
+        body.append(node('p', state.phase === 'done' ? '파업이 끝났습니다' : '저녁의 파업위원회', 'games-kicker'), title);
+        if (r.moves.length) {
+            const outcomes = node('ul', '', 'strike-outcomes');
+            r.moves.forEach(m => {
+                const li = node('li'); li.dataset.ok = String(m.ok);
+                li.append(node('b', m.ok ? '막아냄' : '뚫림', 'strike-outcome-stamp'), node('strong', g.moves[m.move].title), node('span', m.ok ? g.moves[m.move].win : g.moves[m.move].lose));
+                outcomes.append(li);
+            });
+            body.append(outcomes);
+        }
+        const grid = node('div', '', 'strike-day-metrics');
+        grid.append(
+            metricTile('생산', r.production + '%', r.production - p.production, '%p', v => v < 0),
+            metricTile('생활 기금', String(r.fund), r.fund - p.fund, '', v => v > 0),
+            metricTile('파업 참여율', r.unity + '%', r.unity - p.unity, '%p', v => v > 0),
+            metricTile('여론', String(r.opinion), r.opinion - p.opinion, '', v => v > 0),
+            metricTile('사측 버티기', String(r.resolve), r.resolve - p.resolve, '', v => v < 0)
+        );
+        body.append(grid);
+        const news = [];
+        news.push(`연대 모금 +${r.income} · 생활 지원 −${Math.min(r.cost, p.fund + r.income)}${r.seized ? ` · 가압류 −${r.seized}` : ''}`);
+        if (r.missing) news.push(`생활 지원이 ${r.missing} 모자라 참여율이 ${r.shortagePenalty}%p 떨어졌습니다. 부족이 이어질수록 더 크게 떨어집니다.`);
+        r.levelUps.forEach(u => news.push(`★ ${state.crews[u.id].name}의 ${g.jobs[u.job].short} 숙련이 ${u.level}이 되었습니다.${u.job === 'organize' && u.level === 3 ? ' 교섭에서 대표 발언 카드를 냅니다.' : ''}`));
+        r.injured.forEach(id => news.push(`✚ ${state.crews[id].name}이(가) 구사대에 다쳐 이틀 동안 쉽니다.`));
+        r.collapsed.forEach(id => news.push(`✚ ${state.crews[id].name}이(가) 과로로 쓰러져 하루 쉽니다.`));
+        if (r.exhausted) news.push(`피로 75 이상인 동료 ${r.exhausted}명 때문에 참여율이 ${r.exhausted * 3}%p 더 떨어졌습니다.`);
+        if (r.drift > 2) news.push(`참여율이 높아 복귀 압박이 커졌습니다 (−${r.drift}%p).`);
+        if (state.unity < 20 && state.phase !== 'done') news.push('참여율이 20% 아래입니다. 내일도 회복하지 못하면 파업이 무너집니다.');
+        const list = node('ul', '', 'strike-news'); news.forEach(t => list.append(node('li', t))); body.append(list);
+        const actions = node('div', '', 'strike-sheet-actions');
+        if (state.phase === 'done') actions.append(button('결과 보기', closeSheet, 'strike-primary'));
+        else if (state.table) {
+            if (state.table.extra) body.append(node('p', '사측 버티기가 30 아래로 떨어지자 사측이 먼저 교섭을 요청했습니다.', 'strike-sheet-note'));
+            actions.append(button(state.table.result ? '교섭 결과 보기 →' : '교섭 테이블로 →', () => { sheetView = 'table'; openSheet(); }, 'strike-primary'));
+        } else actions.append(button(`${state.day + 1}일차 아침으로 →`, nextDay, 'strike-primary'));
+        body.append(actions);
+    }
+    function placeCard(id, demand) {
+        state = g.place(state, id, demand); picked = null; save(); openSheet(true);
+    }
+    function tableView(body) {
+        const t = state.table, pv = g.preview(state), tactic = g.tactics[t.tactic];
+        const done = Boolean(t.result);
+        const title = node('h2', `${t.day}일차 교섭`); title.id = 'strikeSheetTitle'; title.tabIndex = -1;
+        const factor = Math.round((.25 + Math.min(150, t.resolve) / 100) * 100);
+        body.append(node('p', t.extra ? '사측이 요청한 교섭' : t.day === 12 ? '마지막 교섭 · 결과가 최종 합의가 됩니다' : '정기 교섭', 'games-kicker'), title,
+            node('p', `사측 버티기 ${t.resolve} → 요구 저항 ${factor}%`, 'strike-table-resolve'));
+        const tac = node('div', '', 'strike-tactic'); tac.append(node('strong', '사측의 전술 · ' + tactic.title), node('span', tactic.text)); body.append(tac);
+        const rows = node('div', '', 'strike-demands-table');
+        Object.entries(g.demands).forEach(([key, d]) => {
+            const r = pv[key], row = node(done ? 'div' : 'button', '', 'strike-demand-row'); row.dataset.demand = key;
+            if (!done) {
+                row.type = 'button';
+                row.disabled = r.from >= d.tiers.length;
+                row.addEventListener('click', () => { if (picked !== null) placeCard(picked, key); });
+                row.setAttribute('aria-label', `${d.title}. 현재 ${r.points}점. ${picked !== null ? '선택한 카드를 여기에 냅니다.' : '카드를 먼저 고르세요.'}`);
+            }
+            const head = node('span', '', 'strike-demand-head'); head.append(node('strong', d.title));
+            const gained = done ? t.result[key] : r.to - r.from;
+            head.append(node('span', done ? (gained ? `+${gained}단계 따냄` : '') : r.points ? `${r.points}점${gained ? ` → ${gained}단계 확보` : ''}` : '', 'strike-demand-points'));
+            const tiers = node('span', '', 'strike-tiers');
+            d.tiers.forEach((tier, i) => {
+                const chip = node('span', tier.label, 'strike-tier');
+                const won = done ? i < state.won[key] : i < r.from;
+                const fresh = done ? i >= state.won[key] - t.result[key] && i < state.won[key] : i >= r.from && i < r.to;
+                chip.dataset.state = won && !(done && fresh) ? 'won' : fresh ? 'fresh' : 'open';
+                if (!done && i >= r.from) chip.append(node('small', `저항 ${g.resistance(state, key, i)}`));
+                tiers.append(chip);
+            });
+            row.append(head, tiers);
+            const placed = t.hand.filter(c => t.placed[c.id] === key);
+            if (placed.length) {
+                const chips = node('span', '', 'strike-placed');
+                placed.forEach(c => chips.append(node('span', `${g.cardKinds[c.kind].title} ${g.cardValue(t, c, key)}`, 'strike-placed-card')));
+                row.append(chips);
+            }
+            rows.append(row);
+        });
+        body.append(rows);
+        if (!done) {
+            const handBox = node('div', '', 'strike-hand');
+            handBox.append(node('p', t.hand.length ? '현장의 힘 · 카드를 고른 뒤 요구를 누르세요. 놓은 카드를 다시 누르면 거둡니다.' : '오늘은 내밀 카드가 없습니다. 참여율·여론·멈춘 생산을 끌어올려 다음 교섭을 준비하세요.', 'strike-hand-title'));
+            const cards = node('div', '', 'strike-cards');
+            t.hand.forEach(c => {
+                const kind = g.cardKinds[c.kind], where = t.placed[c.id];
+                const b = button('', () => {
+                    if (where) placeCard(c.id, null);
+                    else { picked = picked === c.id ? null : c.id; openSheet(true); }
+                }, 'strike-card');
+                b.dataset.kind = c.kind; b.setAttribute('aria-pressed', String(picked === c.id));
+                if (where) b.dataset.placed = where;
+                const name = c.kind === 'voice' ? `${kind.title} · ${state.crews[c.crew].name}` : kind.title;
+                b.append(node('strong', String(g.cardValue(t, c, null)), 'strike-card-value'), node('span', name, 'strike-card-name'), node('small', where ? `→ ${g.demands[where].title}` : kind.text));
+                b.setAttribute('aria-label', `${name}, 기본 ${g.cardValue(t, c, null)}점. ${kind.text}.${where ? ' ' + g.demands[where].title + '에 냄. 누르면 거둡니다.' : ''}`);
+                cards.append(b);
+            });
+            handBox.append(cards); body.append(handBox);
+            const actions = node('div', '', 'strike-sheet-actions');
+            actions.append(button(state.day === 12 ? '마지막 제안 내놓기' : '이 카드로 제안하기', propose, 'strike-primary'));
+            body.append(actions);
+        } else {
+            const summary = Object.values(state.won).some(Boolean) ? '잠정 합의: ' + dealLine(g.dealOf(state.won)) : '아직 따낸 요구가 없습니다.';
+            body.append(node('p', summary, 'strike-sheet-note'));
+            const wouldWin = Object.values(state.won).some(Boolean) && g.won(g.settle(state));
+            const nextSession = g.sessions.find(d => d > state.day);
+            const actions = node('div', '', 'strike-sheet-actions');
+            const settle = button('이 합의로 타결하기 · 파업 종료', settleDeal, wouldWin ? 'strike-primary' : '');
+            settle.disabled = !Object.values(state.won).some(Boolean);
+            actions.append(settle, button('파업 이어가기 →', nextDay, wouldWin ? '' : 'strike-primary'));
+            body.append(actions, node('p', (wouldWin ? '시나리오 목표를 모두 담은 합의안입니다. ' : '아직 목표를 다 담지 못했습니다. ') + `파업을 이어가면 다음 교섭은 ${nextSession}일 저녁입니다. 버티는 동안 사측의 수가 더 거세집니다.`, 'games-note'));
+        }
+    }
+    function openSheet(keepFocus) {
+        const sheet = el('strikeSheet'), body = el('strikeSheetBody');
+        const scroll = body.scrollTop;
+        body.replaceChildren();
+        if (sheetView === 'table' && state.table) tableView(body); else reviewView(body);
+        if (!sheet.open) { if (sheet.showModal) sheet.showModal(); else sheet.setAttribute('open', ''); }
+        if (keepFocus) {
+            body.scrollTop = scroll;
+            const target = picked !== null ? body.querySelector('.strike-card[aria-pressed="true"]') : null;
+            (target || body.querySelector('.strike-cards .strike-card') || el('strikeSheetTitle')).focus({ preventScroll: true });
+        } else el('strikeSheetTitle').focus();
+    }
+    function closeSheet() {
+        const sheet = el('strikeSheet');
+        if (sheet.open) { if (sheet.close) sheet.close(); else sheet.removeAttribute('open'); }
+        render();
+        (state.phase === 'done' ? el('strikeResultTitle') : el('strikeAdvance')).focus();
+    }
+    function propose() {
+        state = g.propose(state); save(); picked = null;
+        if (state.phase === 'done') { announce('마지막 교섭이 끝났습니다.'); closeSheet(); return; }
+        announce('사측이 제안에 답했습니다.');
+        openSheet();
+    }
+    function settleDeal() { state = g.settle(state); save(); closeSheet(); }
+    function nextDay() {
+        state = g.next(state); save(); sheetView = 'review'; picked = null;
+        const sheet = el('strikeSheet'); if (sheet.open) { if (sheet.close) sheet.close(); else sheet.removeAttribute('open'); }
+        render(); el('strikeThreatTitle') ? el('strikeThreatTitle').focus() : el('strikeAdvance').focus();
+        announce(`${state.day}일차 아침입니다. ${g.threats(state).map(m => g.moves[m].title).join(', ') || ''}`);
+    }
+    function result() {
+        const box = el('strikeResult'); box.hidden = state.phase !== 'done';
+        if (box.hidden) return;
+        const grade = g.grade(state);
+        const stars = node('p', '★'.repeat(grade.stars) + '☆'.repeat(3 - grade.stars), 'strike-stars'); stars.setAttribute('aria-label', `별 ${grade.stars}개`);
+        const title = node('h2', grade.title); title.id = 'strikeResultTitle'; title.tabIndex = -1;
+        const text = state.deal ? (state.outcome === 'final' ? '12일 마지막 교섭 결과로 합의했습니다: ' : '타결했습니다: ') + dealLine(state.deal) + (state.deal.intensity ? ' · 라인 속도 15% 인상' : '')
+            : state.outcome === 'collapse' ? '참여율이 이틀 연속 20% 아래로 떨어져 파업이 무너졌습니다. 잠정 합의도 사측이 거둬들였습니다.' : '12일 동안 따낸 요구 없이 파업을 마쳤습니다.';
+        const goals = node('ul', '', 'strike-result-goals');
+        g.objectives(state).forEach(o => { const li = node('li', (o.met && state.deal ? '✓ ' : '✗ ') + o.text); li.dataset.met = String(o.met && Boolean(state.deal)); goals.append(li); });
+        g.bonuses.forEach(b => { const met = b.met(state) && g.won(state); const li = node('li', (met ? '★ ' : '☆ ') + b.text, 'is-bonus'); li.dataset.met = String(met); goals.append(li); });
+        const held = state.history.reduce((n, r) => n + r.moves.filter(m => m.ok).length, 0), total = state.history.reduce((n, r) => n + r.moves.length, 0);
+        const stats = node('p', `${state.day}일 파업 · 사측의 수 ${total}번 중 ${held}번 막아냄 · 생활 지원 부족 ${state.history.filter(r => r.missing).length}일 · 마지막 참여율 ${state.unity}% · 사측 버티기 ${state.resolve}`, 'strike-result-stats');
+        const actions = node('div', '', 'strike-sheet-actions');
+        actions.append(button('같은 조건으로 다시 도전', () => { enter(g.start(state.mode, state.seed, state.scenario)); save(); }, 'strike-primary'), button('다른 시나리오 선택 →', () => { el('strikePlay').hidden = true; el('strikeSetup').hidden = false; load(); el('strikeStart').focus(); }));
+        box.replaceChildren(node('p', '우리가 함께 만든 결과', 'games-kicker'), stars, title, node('p', text, 'strike-result-text'), goals, stats, actions);
     }
     function render() {
         const done = state.phase === 'done', review = state.phase === 'review';
-        const cue = window.StrikeScene.eventCue(state);
-        el('strikeObjectives').replaceChildren(node('strong', g.scenarios[state.scenario].title), ...g.objectives(state).map(o => node('span', (o.met ? '✓ ' : '○ ') + o.text)));
         el('strikeGuide').hidden = state.day !== 1 || state.phase !== 'planning';
-        el('strikeDay').textContent = `${state.mode === 'hard' ? '어려움' : '기본'} / DAY ${String(state.day).padStart(2, '0')} OF 12`;
-        el('strikeEvent').textContent = done ? '파업을 돌아보며' : cue.title;
-        el('strikeFieldEvent').dataset.tone = cue.tone;
-        el('strikeEventPhase').textContent = done ? '파업 종료' : review ? '오늘 적용된 사건' : '오늘의 사건';
-        el('strikeEventBadge').textContent = done ? '결산' : cue.badge;
-        el('strikeEventText').textContent = done ? '아래 결산에서 합의와 남은 조직을 확인하세요.' : cue.text;
-        el('strikeCalendar').replaceChildren(...Array.from({ length: 12 }, (_, i) => {
-            const d = node('span', String(i + 1), i + 1 === state.day ? 'current' : i + 1 < state.day ? 'past' : '');
-            if ([4, 8, 12].includes(i + 1)) { d.classList.add('deadline'); d.title = '납품 마감'; }
-            if (i + 1 === state.day) d.setAttribute('aria-current', 'step'); return d;
-        }));
-        meters(); crews(); window.StrikeScene.render(el('strikeScene'), state, selected, moving, assign, select);
-        el('strikeSceneLabel').textContent = done ? '우리가 남긴 현장' : moving ? '현장에서 보내는 하루…' : review ? '하루가 끝난 현장' : '';
-        el('strikeSceneSummary').textContent = g.jobs[state.crews[selected].job].desc;
-        el('strikeAdvance').hidden = state.phase !== 'planning' || moving;
+        calendar(); meters(); objectives(); threatPanel(); forecast(); crews(); history(); result();
+        window.StrikeScene.render(el('strikeScene'), state, selected, moving, assign, select);
+        el('strikeSceneLabel').textContent = done ? '파업이 끝난 현장' : moving ? '현장에서 보내는 하루…' : review ? '하루가 끝난 현장' : '배치를 준비하는 아침';
+        el('strikeAdvance').hidden = done || moving;
+        el('strikeAdvance').textContent = review ? (state.table && !state.table.result ? '교섭 테이블 열기' : '저녁 결산 다시 보기') : '하루 보내기 →';
         el('strikeSkip').hidden = !moving;
-        el('strikeReview').hidden = !review || moving;
-        el('strikeResult').hidden = !done || moving;
-        el('strikeOffers').hidden = !bargaining;
-        if (review) {
-            const record = state.history[state.history.length - 1];
-            const previous = state.history[state.history.length - 2] || g.start(state.mode, state.seed, state.scenario);
-            el('strikeDayMetrics').replaceChildren(...dayMetrics(record, previous).children);
-            el('strikeDayReport').replaceChildren(...narrative(record).map(t => node('li', readable(t))));
-            el('strikeNext').textContent = state.day === 12 ? '합의 없이 파업 마무리하기' : '제안을 보류하고 다음 날로 →';
-            el('strikeBargain').textContent = bargaining ? '교섭안 접기' : state.day === 12 ? '마지막 교섭 · 제안 확인하기' : '사측 제안 살펴보기';
-            el('strikeOfferCards').replaceChildren(...state.offers.map((d, index) => {
-                const card = node('article', '', 'strike-offer');
-                card.append(node('h3', d.title), node('p', dealText(d)), node('p', `현재 조건\n임금 인상 없음 · 주 40시간 · 강도 유지`, 'games-note'), node('p', d.intensity ? '임금은 더 오르지만 같은 시간에 15% 더 강하게 일합니다.' : d.wage >= 8 && d.hours >= 2 ? '세 가지 요구를 모두 충족합니다.' : '작업 강도는 지키지만 아직 충족하지 못한 요구가 있습니다.'));
-                card.append(button('이 안으로 합의하기', () => { state = g.accept(state, index); bargaining = false; save(); render(); el('strikeResultTitle').focus(); }, 'strike-primary'));
-                return card;
-            }));
-        }
-        if (done) {
-            el('strikeResultTitle').textContent = g.won(state) ? '함께, 시나리오 목표를 달성했습니다' : state.deal ? '합의를 만들었습니다. 남은 요구도 있습니다' : '합의는 없었지만, 우리의 선택은 남았습니다';
-            el('strikeResultText').textContent = state.deal ? dealText(state.deal) : state.outcome === 'unity' ? '이틀 연속 참여가 20% 아래로 떨어져 현장을 유지하기 어려워졌습니다.' : '12일의 마지막 교섭을 합의 없이 마무리했습니다.';
-            el('strikeDeal').replaceChildren(node('strong', '파업 참여율 ' + state.unity + '%'), node('strong', '생활 기금 ' + state.fund), node('strong', '평균 피로 ' + g.fatigue(state)));
-            const shortageDays = state.history.filter(r => r.missing).length;
-            const exhaustedDays = state.history.filter(r => r.exhausted).length;
-            const best = state.history.reduce((a, b) => b.production < a.production ? b : a, state.history[0]);
-            el('strikeReflection').textContent = `생활 지원 부족 ${shortageDays}일 · 과로 발생 ${exhaustedDays}일. ${best ? best.day + '일차에 생산을 ' + best.production + '%까지 낮췄습니다. ' : ''}${state.deal && state.deal.intensity ? '임금과 함께 작업 부담도 늘었습니다. 다음에는 시간과 강도를 함께 지킬 힘을 모아 보세요.' : '생산을 멈추는 힘과 동료의 생활을 지키는 힘이 함께 필요했습니다. 다른 교대와 연대의 순서로 다시 도전해 보세요.'}`;
-        }
-        el('strikeLog').replaceChildren(...state.history.slice().reverse().map((r, i) => {
-            const previous = state.history[state.history.length - i - 2] || g.start(state.mode, state.seed, state.scenario);
-            const row = node('tr'); const day = node('th', r.day + '일'); day.scope = 'row';
-            row.append(day, node('td', r.event));
-            for (const [value, unit] of [[r.production - previous.production, '%p'], [Math.ceil(r.backlog / 40) - Math.ceil(previous.backlog / 40), '대분'], [r.fund - previous.fund, ''], [r.unity - previous.unity, '%p']]) {
-                row.append(node('td', (value > 0 ? '+' : value < 0 ? '−' : '±') + Math.abs(value) + unit));
-            }
-            return row;
-        }));
-        for (const id of ['strikeEventText', 'strikeReflection']) el(id).textContent = readable(el(id).textContent);
+        el('strikeCommand').hidden = done;
+    }
+    function select(id) { selected = id; render(); }
+    function assign(job) {
+        if (state.crews[selected].injured) { announce(`${state.crews[selected].name}은(는) 다쳐서 쉬어야 합니다.`); return; }
+        state = g.assign(state, selected, job); save();
+        announce(`${state.crews[selected].name}을(를) ${g.jobs[job].title}에 배치했습니다.`); render();
     }
     function finishAnimation() {
         clearTimeout(timer); moving = false; render();
-        announce(`${state.day}일차 결과가 준비되었습니다.\n저녁의 파업위원회에서 생산과 생활 지원을 확인하세요.`);
-        (state.phase === 'done' ? el('strikeResultTitle') : el('strikeReviewTitle')).focus();
+        announce(`${state.history[state.history.length - 1].day}일차 결과가 나왔습니다.`);
+        sheetView = 'review'; openSheet();
     }
-    function enter(s) { state = s; selected = 0; bargaining = state.day === 12 && state.phase === 'review'; el('strikeSetup').hidden = true; el('strikePlay').hidden = false; render(); el('strikeEvent').focus(); }
+    function enter(s) {
+        state = s; selected = state.crews.findIndex(c => !c.injured); picked = null; sheetView = 'review';
+        el('strikeSetup').hidden = true; el('strikePlay').hidden = false; render();
+        if (state.phase === 'review') openSheet(); else (el('strikeThreatTitle') || el('strikeAdvance')).focus();
+    }
     function setupScenario() {
         const config = g.scenarios[el('strikeScenario').value];
-        el('strikeScenarioDescription').textContent = config.description + ` 시작 기금 ${config.fund[el('strikeMode').value === 'hard' ? 1 : 0]} · 참여율 ${config.unity}%.`;
+        el('strikeScenarioDescription').textContent = config.description + ` 시작 기금 ${config.fund[el('strikeMode').value === 'hard' ? 1 : 0]} · 참여율 ${config.unity}%.` + (el('strikeMode').value === 'hard' ? ' 어려움: 생활비와 사측 버티기가 높고, 5일부터 하루 두 수를 둡니다.' : '');
     }
     el('strikeScenario').addEventListener('change', setupScenario);
     el('strikeMode').addEventListener('change', setupScenario);
     el('strikeGuideDismiss').addEventListener('click', () => { el('strikeGuide').open = false; });
-    el('strikeReplay').addEventListener('click', () => { enter(g.start(state.mode, state.seed, state.scenario)); save(); });
     el('strikeStart').addEventListener('click', () => {
         if (saved && saved.phase !== 'done' && !window.confirm('진행 중인 파업을 새 게임으로 바꿀까요?')) return;
         enter(g.start(el('strikeMode').value, Math.floor(Math.random() * 4294967296), el('strikeScenario').value)); save();
     });
-    setupScenario();
     el('strikeContinue').addEventListener('click', () => { if (saved) enter(saved); });
     el('strikeAdvance').addEventListener('click', () => {
-        if (moving || state.phase !== 'planning') return;
-        state = g.advance(state).state; bargaining = state.day === 12 && state.phase === 'review'; save();
+        if (moving) return;
+        if (state.phase === 'review') { sheetView = state.table && !state.table.result ? 'table' : 'review'; openSheet(); return; }
+        if (state.phase !== 'planning') return;
+        state = g.advance(state).state; save();
         moving = !window.matchMedia('(prefers-reduced-motion: reduce)').matches; render();
-        if (moving) { el('strikeSkip').focus(); timer = setTimeout(finishAnimation, 1800); } else finishAnimation();
+        if (moving) { el('strikeSkip').focus(); timer = setTimeout(finishAnimation, 2200); } else finishAnimation();
     });
     el('strikeSkip').addEventListener('click', finishAnimation);
-    el('strikeBargain').addEventListener('click', () => { bargaining = !bargaining; render(); });
-    el('strikeNext').addEventListener('click', () => { state = g.next(state); bargaining = false; save(); render(); (state.phase === 'done' ? el('strikeResultTitle') : el('strikeEvent')).focus(); });
-    el('strikeRestart').addEventListener('click', () => { el('strikePlay').hidden = true; el('strikeSetup').hidden = false; load(); el('strikeStart').focus(); });
+    el('strikeSheet').addEventListener('close', () => { if (!moving) render(); });
+    setupScenario();
     load();
     if (new URLSearchParams(location.search).get('resume') === '1' && saved && saved.phase !== 'done') enter(saved);
 })();

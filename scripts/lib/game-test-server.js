@@ -4,6 +4,7 @@ const strings = require('../../config/strings');
 const seo = require('../../utils/seo');
 const { iconPaths } = require('../../data/icons');
 const { stripEnglishPrefix } = require('../../middleware/language');
+const { menuHasEnglish } = require('../../config/menu-languages');
 
 async function createGameTestServer() {
     const app = express();
@@ -16,7 +17,8 @@ async function createGameTestServer() {
         Object.assign(res.locals, { lang, strings: strings[lang], siteOrigin: 'https://cyber-lenin.com',
             languageUrl: seo.languagePath, languageSwitchUrl: seo.languageSwitchPath,
             jsonLdScript: seo.jsonLdScript, iconPaths, assetVersion: 'test', currentUser: null,
-            isAuthenticated: false, urlLanguage: lang, pagePath: req.path });
+            isAuthenticated: false, urlLanguage: lang, pagePath: req.path,
+            menuShown: menu => lang !== 'en' || menuHasEnglish(menu) });
         const send = res.send.bind(res);
         res.send = body => send(lang === 'en' && typeof body === 'string' ? seo.localizeHtmlLinks(body, 'en') : body);
         next();

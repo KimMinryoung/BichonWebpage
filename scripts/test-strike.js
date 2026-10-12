@@ -5,127 +5,156 @@ const path = require('node:path');
 const context = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(__dirname, '../public/js/strike-engine.js'), 'utf8'), context);
 const g = context.window.StrikeGame;
-function deploy(s, strategy) {
-    const jobs = strategy === 'balanced' ? ['picket', 'picket', 'picket', 'organize', 'solidarity', 'rest'] :
-        strategy === 'pressure' ? (s.day % 3 ? ['picket', 'picket', 'picket', 'picket', 'solidarity', 'rest'] : ['organize', 'organize', 'solidarity', 'rest', 'rest', 'rest']) :
-            strategy === 'support' ? (s.day <= 3 ? ['organize', 'organize', 'picket', 'solidarity', 'solidarity', 'rest'] : ['picket', 'picket', 'picket', 'organize', 'solidarity', 'rest']) : Array(6).fill(strategy);
-    for (const [i, c] of s.crews.slice().sort((a, b) => a.fatigue - b.fatigue).entries()) s = g.assign(s, c.id, jobs[i]);
+const roundTrip = s => JSON.stringify(g.restore(JSON.stringify(s)));
+
+// A player who reads the morning threats, holds them with the fewest rested crews, then rotates.
+function reader(s) {
+    s.crews.filter(c => !c.injured).forEach(c => { s = g.assign(s, c.id, 'rest'); });
+    const pool = trait => s.crews.filter(c => !c.injured && c.job === 'rest' && c.fatigue < 60)
+        .sort((a, b) => (b.trait === trait) - (a.trait === trait) || a.fatigue - b.fatigue);
+    const fill = (job, done, trait) => { while (!done()) { const c = pool(trait)[0]; if (!c) return; s = g.assign(s, c.id, job); } };
+    const target = { scabs: ['picket', 'vanguard'], thugs: ['picket', 'vanguard'], buyout: ['organize', 'orator'], smear: ['solidarity', 'publicist'], seizure: ['solidarity', 'treasurer'], lockout: ['organize', 'orator'] };
+    for (const move of g.threats(s)) fill(target[move][0], () => g.counter(s, move).ok, target[move][1]);
+    fill('picket', () => g.effects(s).counts.picket >= 2, 'vanguard');
+    fill('organize', () => g.effects(s).counts.organize >= 1, 'orator');
+    fill('solidarity', () => g.effects(s).counts.solidarity >= (s.fund < 60 ? 2 : 1), 'treasurer');
     return s;
 }
-for (const mode of ['normal', 'hard']) {
-    for (const strategy of ['balanced', 'pressure', 'support', ...Object.keys(g.jobs)]) {
-        let wins = 0;
-        for (let seed = 0; seed < 32; seed++) {
-            let s = g.start(mode, seed), couldWin = false;
-            while (s.phase !== 'done') {
-                s = deploy(s, strategy);
-                const before = JSON.stringify(s);
-                const result = g.advance(s);
-                assert.equal(JSON.stringify(s), before); s = result.state;
-                assert.equal(JSON.stringify(g.restore(JSON.stringify(s))), JSON.stringify(s), 'saved day must reconstruct exactly');
-                assert.equal(JSON.stringify(g.advance(JSON.parse(before)).state), JSON.stringify(s), 'seed and decisions must reproduce result');
-                assert.equal(s.crews.length, 6);
-                assert.equal(s.production, g.production(s));
-                assert.ok(s.fund >= 0 && s.unity >= 0 && s.unity <= 100 && s.backlog >= 0 && s.backlog <= 400);
-                s.crews.forEach(c => assert.ok(c.fatigue >= 0 && c.fatigue <= 100));
-                assert.throws(() => g.advance(s));
-                if (s.phase === 'review') {
-                    couldWin ||= g.won(g.accept(s, 0));
-                    assert.throws(() => g.assign(s, 0, 'rest'));
-                    assert.throws(() => g.accept(s, -1));
-                    s = g.next(s);
-                }
-            }
-            wins += couldWin ? 1 : 0;
-            assert.ok(s.day <= 12);
+// Ignores management entirely: the old fatigue rotation.
+function rotate(s) {
+    const plan = ['picket', 'picket', 'picket', 'organize', 'solidarity', 'rest'];
+    s.crews.filter(c => !c.injured).sort((a, b) => a.fatigue - b.fatigue).forEach((c, i) => { s = g.assign(s, c.id, plan[i]); });
+    return s;
+}
+const single = job => s => { s.crews.filter(c => !c.injured).forEach(c => { s = g.assign(s, c.id, job); }); return s; };
+// Pushes the scenario demands first, each needing the next tier's full resistance.
+function bargain(s) {
+    const used = new Set();
+    for (const d of ['intensity', 'wage', 'hours', 'wage', 'hours', 'suit', 'wage', 'hours']) {
+        const pv = g.preview(s)[d];
+        if (pv.to >= g.demands[d].tiers.length) continue;
+        const need = g.resistance(s, d, pv.to) - pv.left;
+        const cards = s.table.hand.filter(c => !used.has(c.id)).sort((a, b) => g.cardValue(s.table, b, d) - g.cardValue(s.table, a, d));
+        let sum = 0; const pick = [];
+        for (const c of cards) { if (sum >= need) break; sum += g.cardValue(s.table, c, d); pick.push(c); }
+        if (sum < need) continue;
+        pick.forEach(c => { used.add(c.id); s = g.place(s, c.id, d); });
+    }
+    return s;
+}
+// Full save/determinism checks run on the reader's campaigns; the losing bots only check outcomes.
+function campaign(mode, seed, scenario, bot, deep) {
+    const check = deep ? (a, b, m) => assert.equal(a(), b(), m) : () => {};
+    let s = g.start(mode, seed, scenario);
+    while (s.phase !== 'done') {
+        s = bot(s);
+        check(() => roundTrip(s), () => JSON.stringify(s), 'planning placement restores');
+        const morning = g.threats(s), fx = g.effects(s), before = JSON.stringify(s);
+        const { state, record } = g.advance(s);
+        assert.equal(JSON.stringify(s), before, 'advance does not mutate');
+        check(() => JSON.stringify(g.advance(JSON.parse(before)).state), () => JSON.stringify(state), 'deterministic');
+        assert.equal(JSON.stringify(record.moves.map(m => m.move)), JSON.stringify(morning), 'the telegraphed threats are the ones played');
+        record.moves.forEach(m => assert.equal(m.ok, g.counter(s, m.move, fx).ok));
+        s = state;
+        assert.ok(s.fund >= 0 && s.unity >= 0 && s.unity <= 100 && s.opinion >= 0 && s.opinion <= 100 && s.resolve >= 0 && s.production >= 0 && s.production <= 100);
+        s.crews.forEach(c => assert.ok(c.fatigue >= 0 && c.fatigue <= 100 && c.injured >= 0));
+        check(() => roundTrip(s), () => JSON.stringify(s), 'evening restores');
+        assert.throws(() => g.advance(s));
+        if (s.phase === 'done') break;
+        if (s.table) {
+            assert.throws(() => g.next(s), 'a session must be answered first');
+            assert.throws(() => g.settle(s));
+            s = bargain(s);
+            check(() => roundTrip(s), () => JSON.stringify(s), 'placed cards restore');
+            const expected = g.preview(s);
+            s = g.propose(s);
+            Object.entries(expected).forEach(([d, r]) => assert.equal(s.won[d], r.to));
+            check(() => roundTrip(s), () => JSON.stringify(s), 'proposal restores');
+            if (s.phase === 'done') break;
+            if (Object.values(s.won).some(Boolean) && g.won(g.settle(s))) { s = g.settle(s); break; }
         }
-        if (strategy === 'organize') assert.ok(wins < 32, 'organization alone must not dominate');
-        else assert.equal(wins, ['balanced', 'pressure', 'support'].includes(strategy) ? 32 : 0, mode + ' ' + strategy);
+        s = g.next(s);
+        s.crews.filter(c => c.injured).forEach(c => { assert.equal(c.job, 'rest'); assert.throws(() => g.assign(s, c.id, 'picket')); });
+    }
+    assert.equal(roundTrip(s), JSON.stringify(s), 'finished game restores');
+    assert.ok(s.day <= 12);
+    return s;
+}
+const seeds = 16;
+const bots = { reader, rotate, picket: single('picket'), organize: single('organize'), solidarity: single('solidarity'), rest: single('rest') };
+let campaigns = 0;
+for (const scenario of Object.keys(g.scenarios)) for (const mode of ['normal', 'hard']) {
+    for (const [name, bot] of Object.entries(bots)) {
+        let wins = 0, lateWins = 0;
+        for (let seed = 0; seed < seeds; seed++) {
+            const s = campaign(mode, seed * 7919 + 13, scenario, bot, name === 'reader'); campaigns++;
+            if (g.won(s)) { wins++; if (s.day >= 8) lateWins++; }
+        }
+        const label = `${scenario}/${mode}/${name}: ${wins}/${seeds}`;
+        if (name === 'reader') {
+            assert.ok(wins >= (mode === 'normal' ? seeds - 1 : seeds * .6), label + ' — reading threats must win');
+            assert.ok(lateWins >= wins * .75, label + ' — wins should take most of the strike, not one session');
+        } else if (name === 'rotate') assert.ok(wins <= seeds * .1, label + ' — ignoring management must not win');
+        else assert.equal(wins, 0, label);
     }
 }
+
+// Rules details.
 let s = g.start();
-const original = JSON.stringify(s);
-g.assign(s, 0, 'rest'); g.advance(s);
-assert.equal(JSON.stringify(s), original, 'operations do not mutate input');
+assert.equal(g.threats(s).length, 0, 'day one is calm');
 assert.throws(() => g.assign(s, -1, 'rest'));
 assert.throws(() => g.assign(s, 0, 'invalid'));
-assert.throws(() => g.accept(s, 0));
+assert.throws(() => g.propose(s));
 assert.throws(() => g.next(s));
-s = g.advance({ ...s, fund: 0, crews: s.crews.map(c => ({ ...c, job: 'rest' })) }).state;
-assert.equal(s.phase, 'review', 'a funding shortage must allow recovery');
-assert.equal(s.shortage, 1);
-const recovered = g.advance(deploy(g.next(s), 'solidarity')).state;
-assert.equal(recovered.shortage, 0);
-const tired = g.advance({ ...g.start(), crews: g.start().crews.map(c => ({ ...c, fatigue: 80, job: 'rest' })) }).state;
-assert.equal(tired.crews[0].fatigue, 38);
-let final = g.start();
-while (final.day < 12) final = g.next(g.advance(deploy(final, 'balanced')).state);
-final = g.advance(deploy(final, 'balanced')).state;
-assert.equal(final.phase, 'review');
-const deal = g.accept(final, 0);
-assert.equal(deal.phase, 'done');
+s = g.next(g.advance(s).state);
+assert.equal(g.threats(s).length, 1);
+let late = g.start('normal', 5);
+while (late.day < 7) { late = g.advance(late).state; if (late.table) late = g.propose(late); if (late.phase === 'done') break; late = g.next(late); }
+if (late.phase === 'planning') assert.equal(g.threats(late).length, 2, 'two moves a day from day 7');
+const veteran = g.advance({ ...g.start(), crews: g.start().crews.map(c => ({ ...c, job: 'picket' })) }).state;
+assert.equal(veteran.crews[3].fatigue, 10 + Math.round(18 * .7), 'veteran tires 30% slower');
+assert.equal(veteran.crews[0].fatigue, 28);
+const rookie = g.advance(g.assign(g.start(), 5, 'organize')).state;
+assert.equal(rookie.crews[5].xp.organize, 2, 'rookie learns twice as fast');
+const fx = g.effects(g.start());
+assert.equal(g.counter({ ...g.start(), mode: 'normal' }, 'thugs', { ...fx, counts: { ...fx.counts, picket: 2 }, vanguard: true }).ok, true);
+assert.equal(g.counter({ ...g.start(), mode: 'normal' }, 'thugs', { ...fx, counts: { ...fx.counts, picket: 2 }, vanguard: false }).ok, false);
+// Shortages escalate and fatigue 100 collapses a crew for a day.
+let broke = { ...g.start(), fund: 0, crews: g.start().crews.map(c => ({ ...c, job: 'rest' })) };
+const first = g.advance(broke).state;
+assert.equal(first.history[0].shortagePenalty, 6);
+broke = g.next(first); broke.crews.forEach(c => { c.job = 'rest'; });
+assert.equal(g.advance(broke).state.history[1].shortagePenalty, 9);
+const worn = g.advance({ ...g.start(), crews: g.start().crews.map(c => ({ ...c, fatigue: 95, job: 'picket' })) }).state;
+assert.equal(worn.history[0].collapsed.length, 6);
+assert.ok(worn.crews.every(c => c.injured === 1));
+assert.ok(g.next(worn).crews.every(c => c.job === 'rest'));
+// Bargaining: the final session ends the game; settling needs a won item; the collapse voids the deal.
+let table = g.start('normal', 3);
+while (!table.table) { table = g.advance(table).state; if (!table.table) table = g.next(table); }
+assert.throws(() => g.place(table, 99, 'wage'));
+assert.throws(() => g.place(table, 0, 'nope'));
+const empty = g.propose(table);
+assert.throws(() => g.settle(empty), 'no items, no settlement');
+assert.equal(g.next(empty).day, 5);
+const collapsed = g.advance({ ...g.start(), unity: 10, history: [], crews: g.start().crews.map(c => ({ ...c, job: 'rest' })) }).state;
+assert.equal(collapsed.phase, 'done');
+assert.equal(collapsed.outcome, 'collapse');
+assert.equal(g.won({ ...collapsed, deal: g.dealOf({ wage: 2, hours: 2, intensity: 1, suit: 0 }) }), false);
+const deal = { ...g.start(), phase: 'done', outcome: 'agreement', deal: g.dealOf({ wage: 2, hours: 2, intensity: 1, suit: 0 }) };
 assert.ok(g.won(deal));
-assert.equal(g.next(final).outcome, 'deadline');
-for (const saved of [final, deal, g.next(final), g.start(), g.next(g.advance(g.start()).state)]) {
-    assert.equal(JSON.stringify(g.restore(JSON.stringify(saved))), JSON.stringify(saved));
-}
-for (const raw of ['null', '{}', 'broken', JSON.stringify({ ...g.start(), day: 50 }), JSON.stringify({ ...g.start(), crews: [] })]) assert.equal(g.restore(raw), null);
-const tampered = { ...final, fund: 999999, unity: 999 };
-assert.equal(g.restore(JSON.stringify(tampered)).fund, final.fund, 'stored resources are not trusted');
-
-const legacy = JSON.parse(JSON.stringify(final));
-legacy.history.forEach(r => { delete r.income; delete r.cost; });
-assert.equal(JSON.stringify(g.restore(JSON.stringify(legacy))), JSON.stringify(final), 'saved decisions regain structured funding data');
-
-assert.equal(g.crewCondition({ fatigue: 55, job: 'picket' }).strength, .5);
-assert.equal(g.crewCondition({ fatigue: 100, job: 'picket' }).strength, .25);
-assert.equal(g.crewCondition({ fatigue: 57, job: 'picket' }).unityPenalty, 3);
-assert.equal(g.crewCondition({ fatigue: 56, job: 'picket' }).unityPenalty, 0);
-assert.equal(g.crewCondition({ fatigue: 75, job: 'rest' }).nextFatigue, 33);
-assert.equal(g.crewCondition({ fatigue: 75, job: 'rest' }).unityPenalty, 0);
-
-console.log('Strike standard: 448 campaigns, three winning strategies, repetitive strategies, deterministic restore, resource bounds and final bargaining passed.');
-
-assert.equal(g.restore(JSON.stringify({ ...g.start(), version: 2 })), null);
-const idle = { ...g.start(), crews: g.start().crews.map(c => ({ ...c, job: 'rest' })) };
-assert.equal(g.production(idle), 42);
-assert.equal(g.production({ ...idle, unity: 0 }), 100);
-assert.equal(g.production({ ...idle, unity: 100 }), 0);
-assert.ok(g.production(g.start()) < g.production(idle));
-assert.ok(g.production({ ...g.start(), unity: 80 }) < g.production(g.start()));
-assert.ok(g.production({ ...g.start(), crews: g.start().crews.map(c => ({ ...c, fatigue: 100 })) }) > g.production(g.start()));
-
-// All challenge modes remain achievable across the same representative seeds.
-for (const scenario of Object.keys(g.scenarios)) for (const mode of ['normal', 'hard']) {
-    for (let seed = 0; seed < 32; seed++) {
-        let state = g.start(mode, seed, scenario), achieved = false;
-        while (state.phase !== 'done') {
-            state = g.advance(deploy(state, 'support')).state;
-            assert.equal(JSON.stringify(g.restore(JSON.stringify(state))), JSON.stringify(state));
-            if (state.phase === 'review') {
-                achieved ||= g.won(g.accept(state, 0));
-                state = g.next(state);
-            }
-        }
-        assert.ok(achieved, `${scenario}/${mode}/${seed} must have an achievable victory`);
-    }
-}
-assert.equal(g.start('normal', 1, 'tight').fund, 50);
-assert.equal(g.start('hard', 1, 'tight').fund, 40);
-assert.equal(g.start('normal', 1, 'rebuild').production, 60);
-assert.throws(() => g.start('normal', 1, 'unknown'));
-assert.equal(g.restore(JSON.stringify({ ...g.start(), scenario: 'unknown' })), null);
-const tightDeal = { ...deal, scenario: 'tight', history: [{ missing: 1 }] };
-assert.equal(g.won(tightDeal), false, 'one missed support day fails the extra objective');
+assert.equal(g.grade(deal).stars, 1);
+assert.equal(g.grade({ ...deal, deal: g.dealOf({ wage: 3, hours: 3, intensity: 1, suit: 1 }) }).stars, 3);
+assert.equal(g.won({ ...deal, deal: g.dealOf({ wage: 2, hours: 2, intensity: 0, suit: 1 }) }), false, 'intensity is required');
+assert.equal(g.won({ ...deal, scenario: 'tight', history: [{ missing: 1 }] }), false);
 assert.equal(g.won({ ...deal, scenario: 'rebuild', unity: 69 }), false);
 assert.equal(g.won({ ...deal, scenario: 'rebuild', unity: 70 }), true);
-// Freeze a real v3 replay fixture, rather than labeling v4 output as legacy.
-const v3 = require('./fixtures/strike-v3-save.json');
-const migrated = g.restore(JSON.stringify(v3));
-assert.equal(migrated.version, 4);
-assert.equal(migrated.scenario, 'standard');
-for (const key of ['day', 'phase', 'mode', 'seed', 'fund', 'unity', 'production', 'backlog', 'shortage', 'crews', 'offers', 'deal', 'outcome']) {
-    assert.equal(JSON.stringify(migrated[key]), JSON.stringify(v3[key]), 'v3 migration preserves ' + key);
-}
-assert.equal(JSON.stringify(g.restore(JSON.stringify(migrated))), JSON.stringify(migrated));
-console.log('Strike: 192 scenario campaigns, objective failures, planning saves, and real v3 migration passed.');
+// Saves: decisions are replayed, never trusted.
+const played = g.next(g.advance(g.start('hard', 77, 'tight')).state);
+assert.equal(roundTrip(played), JSON.stringify(played));
+assert.equal(g.restore(JSON.stringify({ ...played, fund: 9999 })).fund, played.fund, 'stored resources are not trusted');
+for (const raw of ['null', '{}', 'broken', JSON.stringify({ ...played, day: 50 }), JSON.stringify({ ...played, version: 4 }), JSON.stringify({ ...played, scenario: 'unknown' }), JSON.stringify({ ...played, log: [['x']] }), JSON.stringify({ ...played, log: [['d', ['rest']]] })]) assert.equal(g.restore(raw), null);
+assert.equal(g.start('normal', 1, 'tight').fund, 45);
+assert.equal(g.start('normal', 1, 'rebuild').production, 60);
+assert.throws(() => g.start('normal', 1, 'unknown'));
+console.log(`Strike v5: ${campaigns} campaigns (threat reader wins, threat-blind and single-activity play loses), telegraphed threats, bargaining, injuries, escalation and replayed saves passed.`);
