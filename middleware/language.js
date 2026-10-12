@@ -45,13 +45,14 @@ function redirectLanguageQuery(req, res, next) {
     res.redirect(303, seo.languagePath(req.path, isKoreanOnlyPath(req.path) ? 'ko' : requestedLang) + (query ? `?${query}` : ''));
 }
 
-// An /en/ URL sets the cookie; an English cookie on an unprefixed
+// An /en/ URL is English by itself and stores nothing: a response that sets
+// a cookie is never cached at the edge, so setting it for every visitor
+// without one (first visits, every crawler) kept /en/ pages out of the cache
+// (2026-10-12: 65% of /en/ HTML bypassed it). Only the language switch
+// (?lang=, above) stores the choice. An English cookie on an unprefixed
 // language-specific page redirects to its /en/ form.
 function redirectEnglishCookie(req, res, next) {
     if (req.urlLanguage === 'en') {
-        // Only when it changes: a response that sets a cookie is never
-        // cached at the edge, and every /en/ page used to set this one.
-        if (req.cookies.lang !== 'en') res.cookie('lang', 'en', languageCookieOptions(req));
         req.cookies.lang = 'en';
         return next();
     }
