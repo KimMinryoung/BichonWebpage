@@ -13,7 +13,6 @@ require('dotenv').config();
 const db = require('../config/database');
 const {
     findKoreaAnachronisms,
-    periodEndYear,
     DIVISION_YEAR,
 } = require('../data/commulingo/korean-terminology');
 
@@ -76,10 +75,10 @@ function exempt(ref, excerpt) {
         }
 
         const terms = await db.query(
-            `SELECT id, period_ko, definition_ko, body_ko FROM commulingo_terms ORDER BY id`
+            `SELECT id, COALESCE(end_year, start_year) AS end_year, definition_ko, body_ko FROM commulingo_terms ORDER BY id`
         );
         for (const row of terms.rows) {
-            const year = periodEndYear(row.period_ko);
+            const year = row.end_year;
             push(`term:${row.id}.definition`, row.definition_ko, year);
             push(`term:${row.id}.body`, row.body_ko, year);
         }

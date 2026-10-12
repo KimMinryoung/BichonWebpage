@@ -14,7 +14,7 @@ const evidence = field => ({field,claim:`Documented ${field}`,source,locator:'p.
     const request = {command:'submit',target:'term',action:'create',id,sources:[source],
         idempotencyKey:`test:${id}:create`,fields:{term:{ko:`검증 용어 ${id}`,en:`Test concept ${id}`},
             definition:{ko:'문헌으로 확인한 정의다.',en:'This is a documented definition.'},
-            period:{ko:'개념',en:'Concept'},category:'pipeline-test',
+            period:{label:{ko:'개념',en:'Concept'}},category:'pipeline-test',
             aliases:{ko:[`검증 ${id}`],en:[`Concept ${id}`]},
             evidence:[evidence('definition'),evidence('period')]}};
     const receipts = await Promise.all([execute(request),execute(request)]);

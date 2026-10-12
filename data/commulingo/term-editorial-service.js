@@ -7,13 +7,15 @@ const { assertExpectedRevision } = require('./people-edit-version');
 const contract = require('./term-editorial-contract.json');
 const { listEditorialNotes, saveEditorialNote } = require('./editorial-notes');
 const { carryLinkReviews } = require('./link-review-carry');
+const { periodColumns, periodOrNull, periodValues, PERIOD_COLUMNS } = require('./career-period');
 
 const columns = {
-    original: 'original', startYear: 'start_year', endYear: 'end_year',
-    category: 'category', region: 'region', parentId: 'parent_id', sortOrder: 'sort_order',
+    original: 'original', category: 'category', region: 'region', parentId: 'parent_id', sortOrder: 'sort_order',
 };
-const localized = { term: 'term', definition: 'definition', body: 'body', period: 'period' };
-const allowed = new Set([...Object.keys(columns), ...Object.keys(localized),
+// periodNote qualifies the period ("1917–1921 (전성기)"); the period itself is
+// the career-period shape, stored as columns (migration 364).
+const localized = { term: 'term', definition: 'definition', body: 'body', periodNote: 'period_note' };
+const allowed = new Set([...Object.keys(columns), ...Object.keys(localized), 'period',
     'id', 'sources', 'aliases', 'people', 'events', 'evidence', 'expectedRevision', 'carryLinkReviews']);
 
 async function readTermEditorial(id, options = {}) {
@@ -24,10 +26,8 @@ async function readTermEditorial(id, options = {}) {
     const raw = rows[0], result = { id, sources: raw.sources || [] };
     const state = { row: raw };
     for (const [field, column] of Object.entries(columns)) result[field] = raw[column];
-    for (const [field, prefix] of Object.entries(localized)) result[field] = {
-        ko: raw[`${prefix}_ko`] || (field === 'period' ? raw.period_label : '') || '',
-        en: raw[`${prefix}_en`] || (field === 'period' ? raw.period_label : '') || '',
-    };
+    for (const [field, prefix] of Object.entries(localized)) result[field] = { ko: raw[`${prefix}_ko`] || '', en: raw[`${prefix}_en`] || '' };
+    result.period = periodOrNull(raw);
     result.aliases = { ko: [], en: [] };
     state.aliases = (await client.query('SELECT * FROM commulingo_term_aliases WHERE term_id=$1 ORDER BY lang,alias', [id])).rows;
     for (const row of state.aliases) result.aliases[row.lang]?.push(row.alias);
@@ -60,14 +60,13 @@ function validateFields(fields, current, action, sources) {
             if ([...(merged[field]?.[lang] || '')].length > limits[index]) throw badRequest(`${field}.${lang} exceeds ${limits[index]}`);
         });
     }
-    for (const field of ['term','definition','period']) {
+    for (const field of ['term','definition']) {
         if (!merged[field]?.ko?.trim() || !merged[field]?.en?.trim()) throw badRequest(`${field} requires both languages`);
     }
-    for (const field of ['startYear','endYear','sortOrder']) {
-        if (merged[field] != null && !Number.isInteger(merged[field])) throw badRequest(`${field} must be integer or null`);
-    }
-    if (merged.startYear != null && merged.endYear != null && merged.endYear < merged.startYear) throw badRequest('endYear precedes startYear');
-    if (action==='create' && merged.startYear==null && /\b(1[5-9]\d{2}|20\d{2})\b/.test(`${merged.period.ko} ${merged.period.en}`)) throw badRequest('dated period requires startYear');
+    if (Boolean(merged.periodNote?.ko?.trim()) !== Boolean(merged.periodNote?.en?.trim())) throw badRequest('periodNote requires both languages or neither');
+    // The period is columns, never text: null for an undated term.
+    if (fields.period !== undefined && fields.period !== null) merged.periodColumns = periodColumns(fields.period, 'period');
+    if (merged.sortOrder != null && !Number.isInteger(merged.sortOrder)) throw badRequest('sortOrder must be integer or null');
     if (!merged.category || typeof merged.category !== 'string') throw badRequest('category required');
     if (merged.region != null && (typeof merged.region !== 'string' || !merged.region)) throw badRequest('region must be a region id or null');
     if (fields.id !== undefined && fields.id !== merged.id) throw badRequest('id mismatch');
@@ -118,8 +117,12 @@ async function save(client, id, fields, current, action, actor, sources) {
     const set = (column,v) => { params.push(v); sets.push(`${column}=$${params.length}`); };
     for (const [field,column] of Object.entries(columns)) if (Object.hasOwn(fields,field)) set(column,fields[field]);
     for (const [field,prefix] of Object.entries(localized)) if (Object.hasOwn(fields,field)) {
-        set(`${prefix}_ko`,value[field].ko); set(`${prefix}_en`,value[field].en);
-        if (field==='period') set('period_label',value[field].ko);
+        const empty = field === 'periodNote';
+        set(`${prefix}_ko`,(empty && !value[field].ko) ? null : value[field].ko); set(`${prefix}_en`,(empty && !value[field].en) ? null : value[field].en);
+    }
+    if (Object.hasOwn(fields,'period')) {
+        const vals = value.periodColumns ? periodValues(value.periodColumns) : PERIOD_COLUMNS.map(column => (column === 'ongoing' ? false : null));
+        PERIOD_COLUMNS.forEach((column, i) => set(column, vals[i]));
     }
     set('sources',JSON.stringify([...new Set([...(current?.sources || []),...sources])]));
     await client.query(`UPDATE commulingo_terms SET ${sets.join(',')},updated_at=now() WHERE id=$1`,params);

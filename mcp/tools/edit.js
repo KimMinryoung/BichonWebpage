@@ -48,7 +48,9 @@ const tools = [
         description: 'Direct editorial store call (as the Admin screens do). command submit: request {action: create|update|delete, id, fields '
             + '(updates need fields.expectedRevision from person_get/term_get), sources, confidence?, directApply?} — returns approved with the '
             + 'value, or pending (HTTP-202-like) when review is required. review: {suggestionId, approve, note}. enrichment: {id, topic, status, '
-            + 'reason, sources, expectedRevision}. note: {id, note, jobRef?}. Terms always stage as pending. History events and office rows '
+            + 'reason, sources, expectedRevision}. note: {id, note, jobRef?}. Terms always stage as pending; a term period is '
+            + '{start: [year, month?, day?], end?, startQual?, endQual?, ongoing?, label?: {ko, en}} (null when undated), with an optional '
+            + 'periodNote {ko, en} for a qualifying remark, and history_event timeline rows carry period in the same shape. History events and office rows '
             + '(history_event update; history_event_section create/update {heading, body, after?}; history_event_person create/update '
             + '{personId, relationKind, relation, note, side?, sortOrder?}; office_row create (id = office id; fields period, body = formal post title, personId or name, note, trackId from the office tracks) / update / delete (id = row id)) '
             + 'apply at once unless directApply is false; they support submit and review only.',

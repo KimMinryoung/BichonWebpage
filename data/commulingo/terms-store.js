@@ -2,7 +2,7 @@ const path = require('path');
 const { readSnapshot } = require('./read-snapshot');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
 const { personLabels, nameColumns } = require('./person-name');
-const { periodFromRow, formatPeriod } = require('./career-period');
+const { periodFromRow, periodOrNull, formatPeriod } = require('./career-period');
 
 // Glossary terms served from an in-memory copy, mirroring people-store: the
 // hot path never awaits the DB. Serving (snapshot, background refresh,
@@ -20,11 +20,20 @@ function normalizeHeadword(value) {
     return String(value || '').trim().toLowerCase().replace(/^the\s+/, '');
 }
 
+function termPeriodText(row) {
+    const period = periodOrNull(row);
+    const text = lang => {
+        const base = period ? formatPeriod(period, lang) : '';
+        const note = row[`period_note_${lang}`];
+        return note ? (base ? `${base} (${note})` : note) : base;
+    };
+    return t(text('ko'), text('en'));
+}
+
 async function fetchTerms() {
     const [terms, aliases, people, events, relations] = await readSnapshot(client => Promise.all([
         client.query(
-            `SELECT id, term_ko, term_en, original, period_label,
-                    period_ko, period_en, start_year, end_year, category, region,
+            `SELECT id, term_ko, term_en, original, start_year, start_month, start_day, end_year, end_month, end_day, start_qual, end_qual, ongoing, period_label_ko, period_label_en, period_note_ko, period_note_en, category, region,
                     definition_ko, definition_en, body_ko, body_en, sources,
                     parent_id, updated_at, to_jsonb(commulingo_terms)->'link_expressions' AS link_expressions,
                     COALESCE(to_jsonb(commulingo_terms)->'no_auto_link', '[]'::jsonb) AS no_auto_link
@@ -121,7 +130,7 @@ async function fetchTerms() {
         (childrenByTerm[row.parent_id] || (childrenByTerm[row.parent_id] = [])).push({
             id: row.id,
             term: t(row.term_ko, row.term_en),
-            period: t(row.period_ko || row.period_label, row.period_en || row.period_label),
+            period: termPeriodText(row),
             startYear: Number.isInteger(row.start_year) ? row.start_year : null,
         });
     });
@@ -135,10 +144,9 @@ async function fetchTerms() {
         id: row.id,
         term: t(row.term_ko, row.term_en),
         original: row.original || '',
-        // period_label is the frozen pre-071 column; rows added since then may
-        // still arrive with only period_ko/en, and rows added by hand may have
-        // only the legacy label, so either one can stand in for the other.
-        period: t(row.period_ko || row.period_label, row.period_en || row.period_label),
+        // Period columns (migration 364), formatted per language, with the
+        // note that qualifies them ("1917–1921 (전성기)").
+        period: termPeriodText(row),
         startYear: Number.isInteger(row.start_year) ? row.start_year : null,
         endYear: Number.isInteger(row.end_year) ? row.end_year : null,
         category: row.category || '',

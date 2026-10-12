@@ -36,7 +36,7 @@ const DATASETS = {
     events: `SELECT id, sort_order, start_year, start_month, start_day, end_year, end_month, end_day, title_ko, title_en, summary_ko, summary_en, outcome_ko, outcome_en, timeline, locations,
         to_jsonb(e)->'focus' AS focus, to_jsonb(e)->'sides' AS sides, updated_at FROM commulingo_history_events e ORDER BY sort_order, id`,
     event_people: 'SELECT * FROM commulingo_history_event_people ORDER BY event_id, sort_order, person_id',
-    terms: `SELECT id, term_ko, term_en, original, period_label, definition_ko, definition_en, category, region, parent_id, updated_at
+    terms: `SELECT id, term_ko, term_en, original, start_year, start_month, start_day, end_year, end_month, end_day, start_qual, end_qual, ongoing, period_label_ko, period_label_en, period_note_ko, period_note_en, definition_ko, definition_en, category, region, parent_id, updated_at
         FROM commulingo_terms ORDER BY sort_order, id`,
     term_aliases: 'SELECT term_id, lang, alias, sort_order FROM commulingo_term_aliases ORDER BY term_id, sort_order, alias',
     term_categories: 'SELECT * FROM commulingo_term_categories ORDER BY id',

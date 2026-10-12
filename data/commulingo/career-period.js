@@ -175,6 +175,12 @@ function canonicalPeriod(input, where = 'period') {
     return period;
 }
 
+// A period row with no date or label at all → null, else the input shape.
+function periodOrNull(row) {
+    const period = periodFromRow(row);
+    return period.start || period.end || period.ongoing || period.label || period.endQual ? period : null;
+}
+
 function formatBoth(period) {
     return { ko: formatPeriod(period, 'ko'), en: formatPeriod(period, 'en') };
 }
@@ -188,4 +194,4 @@ function periodValues(cols) {
         cols.startQual, cols.endQual, cols.ongoing, cols.labelKo, cols.labelEn];
 }
 
-module.exports = { QUALS, SHAPE, periodColumns, periodFromRow, canonicalPeriod, formatPeriod, formatBoth, PERIOD_COLUMNS, periodValues };
+module.exports = { QUALS, SHAPE, periodColumns, periodFromRow, periodOrNull, canonicalPeriod, formatPeriod, formatBoth, PERIOD_COLUMNS, periodValues };
