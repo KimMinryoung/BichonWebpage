@@ -8,13 +8,20 @@
 #   scripts/archive-work-r2 [--dry-run | --list | --get <key> [out]]
 #
 # Decrypting the credentials needs the system manager, hence sudo. Without a
-# terminal sudo does not prompt (-n); the hourly commulingo-work-archive.timer
-# uploads anything a failed run left behind.
+# terminal and without cached sudo (agent sessions) an upload is skipped with
+# exit 0: the hourly commulingo-work-archive.timer uploads the files, so there
+# is nothing to retry. --list and --get still fail loudly.
 set -euo pipefail
 cd "$(dirname "$0")/.."
 SUDO=()
 if [ "$(id -u)" -ne 0 ]; then
     if [ -t 0 ]; then SUDO=(sudo); else SUDO=(sudo -n); fi
+    if [ ! -t 0 ] && ! sudo -n true 2>/dev/null; then
+        case "${1:-}" in
+            --list|--get) echo "archive-work-r2: $1 needs sudo; run it from a terminal" >&2; exit 1 ;;
+            *) echo "archive-work-r2: no sudo here; skipped — the hourly commulingo-work-archive.timer uploads it"; exit 0 ;;
+        esac
+    fi
 fi
 CRED=/etc/credstore.encrypted
 exec "${SUDO[@]}" systemd-run --quiet --wait --pipe --collect \
