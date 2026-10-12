@@ -17,7 +17,9 @@ function createCssReleases(root, appRevision) {
     }
     function rewrite(html, manifest) {
         if (!manifest) return html;
-        return html.replace(/(["'])\/(?:assets\/[a-f0-9]{32}\/)?(css\/[\w./-]+\.css)(?:\?[^"']*)?\1/g,
+        // Fonts too: a font preload must name the URL the released CSS loads,
+        // or the browser downloads the same file twice.
+        return html.replace(/(["'])\/(?:assets\/[a-f0-9]{32}\/)?((?:css\/[\w./-]+\.css)|(?:fonts\/[\w./-]+\.woff2))(?:\?[^"']*)?\1/g,
             (match, quote, file) => manifest.files[file]
                 ? `${quote}/assets/${manifest.release}/${file}${quote}` : match);
     }

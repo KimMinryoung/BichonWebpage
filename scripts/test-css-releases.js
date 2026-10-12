@@ -28,10 +28,11 @@ try {
     assert.notEqual(first.release, second.release);
     atomicJson(pointer, second);
     assert.equal(runtime.snapshot().release, second.release);
-    const html = '<link href="/css/main.css?v=old"><link rel="preload" href="/css/import.css?v=old"><script src="/js/common.js?v=old"></script>';
+    const html = '<link href="/css/main.css?v=old"><link rel="preload" href="/css/import.css?v=old"><link rel="preload" href="/fonts/test.woff2" as="font"><script src="/js/common.js?v=old"></script>';
     const oldHtml = runtime.rewrite(html, captured);
     assert(oldHtml.includes(`/assets/${first.release}/css/main.css`));
     assert(runtime.rewrite(oldHtml, second).includes(`/assets/${second.release}/css/main.css`));
+    assert(oldHtml.includes(`/assets/${first.release}/fonts/test.woff2`));
     assert(oldHtml.includes('/js/common.js?v=old'));
     assert.equal(localizeHtmlLinks(oldHtml, 'en'), oldHtml);
     const css = fs.readFileSync(path.join(root, 'releases', first.release, 'public/css/main.css'), 'utf8');
