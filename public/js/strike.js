@@ -30,23 +30,28 @@
     const previous = () => state.history[state.history.length - 2] || g.start(state.mode, state.seed, state.scenario);
     function meters() {
         const startResolve = state.mode === 'hard' ? 115 : 100;
-        el('strikeStats').replaceChildren(...[
-            ['fund', '생활 기금', state.fund, Math.min(100, state.fund), `하루 생활 지원 ${17 + (state.mode === 'hard' ? 3 : 0)}`],
+        const stats = [
+            ['fund', '생활 기금', String(state.fund), Math.min(100, state.fund), `하루 지원 ${17 + (state.mode === 'hard' ? 3 : 0)}`],
             ['unity', '파업 참여율', state.unity + '%', state.unity, '65%부터 교섭 카드'],
-            ['opinion', '여론', state.opinion, state.opinion, '60부터 교섭 카드'],
-            ['resolve', '사측 버티기', state.resolve, Math.min(100, state.resolve / startResolve * 100), '낮을수록 교섭 저항이 약해짐']
+            ['opinion', '여론', String(state.opinion), state.opinion, '60부터 교섭 카드']
         ].map(([id, title, value, width, caption]) => {
             const n = node('div', '', 'strike-meter'); n.dataset.meter = id;
             const bar = node('div', '', 'strike-meter-track'); const fill = node('i'); fill.style.width = width + '%'; bar.append(fill);
-            n.append(node('span', title), node('strong', String(value)), bar, node('small', caption)); return n;
-        }));
+            n.append(node('span', title), node('strong', value), bar, node('small', caption)); return n;
+        });
+        const boss = node('div', '', 'strike-boss'); boss.dataset.meter = 'resolve';
+        const head = node('div', '', 'strike-boss-head');
+        head.append(node('span', '한빛자동차 경영진 · 사측 버티기'), node('strong', `${state.resolve} / ${startResolve}`));
+        const bar = node('div', '', 'strike-boss-track'); const fill = node('i'); fill.style.width = Math.min(100, state.resolve / startResolve * 100) + '%'; bar.append(fill);
+        boss.append(head, bar, node('small', '생산을 멈추고 사측의 수를 막으면 깎입니다. 낮을수록 교섭 저항이 약해집니다.'));
+        el('strikeStats').replaceChildren(...stats, boss);
     }
     function calendar() {
-        el('strikeDay').textContent = `${state.mode === 'hard' ? '어려움' : '기본'} · ${g.scenarios[state.scenario].title} · ${state.day}일차`;
+        el('strikeDay').replaceChildren(node('strong', `${state.day}일차`), node('span', ` / 12 · ${g.scenarios[state.scenario].title} · ${state.mode === 'hard' ? '어려움' : '기본'}`));
         el('strikeCalendar').replaceChildren(...Array.from({ length: 12 }, (_, i) => {
             const day = i + 1, d = node('li', String(day), day === state.day ? 'current' : day < state.day ? 'past' : '');
             const session = g.sessions.includes(day) || state.history.some(r => r.day === day && r.extra);
-            if (session) { d.classList.add('session'); d.append(node('small', '교섭')); }
+            if (session) { d.classList.add('session'); d.title = '교섭'; }
             d.setAttribute('aria-label', `${day}일${session ? ', 교섭' : ''}${day === state.day ? ', 오늘' : ''}`);
             if (day === state.day) d.setAttribute('aria-current', 'step');
             return d;
@@ -69,7 +74,7 @@
         if (box.hidden) return;
         const last = state.history[state.history.length - 1];
         const review = state.phase === 'review' || moving;
-        const kicker = node('p', review ? '오늘 사측이 둔 수' : '오늘 사측의 수', 'strike-threat-kicker');
+        const kicker = node('p', review ? '사측 통보 · 결과' : '사측 통보 · 오늘의 수', 'strike-threat-kicker');
         if (state.phase === 'planning' && !g.threats(state).length) {
             const title = node('h2', '사측은 아직 지켜보고 있습니다'); title.id = 'strikeThreatTitle'; title.tabIndex = -1;
             box.replaceChildren(kicker, title, node('p', '첫날은 배치를 익히는 날입니다. 내일 아침부터 사측이 수를 드러내면, 이 자리에서 막아 내는 조건과 지금 배치로 막을 수 있는지를 확인하세요.'));
@@ -115,13 +120,18 @@
         el('strikeCrews').replaceChildren(...state.crews.map(c => {
             const b = button('', () => { selected = c.id; render(); el('strikeCrews').querySelector('[data-crew="' + c.id + '"]').focus({ preventScroll: true }); }, 'strike-crew');
             b.disabled = moving || state.phase !== 'planning'; b.dataset.crew = c.id; b.setAttribute('aria-pressed', String(selected === c.id));
-            const face = node('span', c.injured ? '✚' : c.fatigue >= 75 ? '•︵•' : c.fatigue >= 45 ? '•_•' : '•ᴗ•', 'strike-avatar'); face.dataset.color = c.id;
+            const face = node('span', '', 'strike-avatar'); face.dataset.color = c.id;
             face.dataset.fatigue = c.injured ? 'injured' : c.fatigue >= 75 ? 'exhausted' : c.fatigue >= 45 ? 'tired' : 'fresh';
+            face.append(window.StrikeScene.portrait(c));
             const copy = node('span', '', 'strike-crew-copy');
             const name = node('strong', c.name); name.append(node('em', g.roster[c.id].label));
             copy.append(name, node('small', c.injured ? `부상 · ${c.injured}일 휴식` : g.jobs[c.job].title));
             const skills = node('span', '', 'strike-skills');
-            g.skills.forEach(job => { const s = node('span', g.jobs[job].short + ' ' + '★'.repeat(g.level(c, job)) + '☆'.repeat(3 - g.level(c, job))); s.dataset.active = String(c.job === job); skills.append(s); });
+            g.skills.forEach(job => {
+                const lv = g.level(c, job), sk = node('span', g.jobs[job].short); sk.dataset.active = String(c.job === job);
+                const dots = node('i'); for (let k = 0; k < 3; k++) dots.append(node('b', '', k < lv ? 'on' : ''));
+                sk.append(dots); skills.append(sk);
+            });
             copy.append(skills);
             const energy = node('span', '', 'strike-energy'); const bar = node('i'); bar.style.width = c.fatigue + '%'; bar.dataset.level = c.fatigue >= 75 ? 'high' : c.fatigue >= 45 ? 'mid' : 'low';
             energy.append(node('span', '피로 ' + c.fatigue), node('span', '', 'strike-energy-track'));
@@ -131,7 +141,7 @@
             return b;
         }));
         const c = state.crews[selected];
-        el('strikeCrewNote').textContent = `${c.name} · ${g.roster[c.id].label}: ${g.roster[c.id].note}`;
+        el('strikeCrewNote').replaceChildren(node('strong', `${c.name} · ${g.roster[c.id].label}`), document.createTextNode(' ' + g.roster[c.id].note));
     }
     function history() {
         el('strikeLog').replaceChildren(...state.history.slice().reverse().map(r => {

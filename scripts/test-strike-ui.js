@@ -45,6 +45,14 @@ async function main() {
                 const screen = p.matrixTransform(root.getScreenCTM()); return { x: screen.x, y: screen.y };
             }, { x, y });
         }
+        // Centre of a location tile; the map layout differs between phones and wide screens.
+        async function zonePoint(target, job) {
+            return target.locator(`[data-map-job="${job}"] .strike-place-ground`).evaluate(n => {
+                const b = n.getBBox(), root = n.ownerSVGElement, p = root.createSVGPoint();
+                p.x = b.x + b.width / 2; p.y = b.y + b.height * .75;
+                const screen = p.matrixTransform(root.getScreenCTM()); return { x: screen.x, y: screen.y };
+            });
+        }
         async function personPoint(target, id) {
             const person = target.locator('[data-crew-sprite="' + id + '"]');
             return mapPoint(target, Number(await person.getAttribute('data-x')), Number(await person.getAttribute('data-y')));
@@ -113,17 +121,17 @@ async function main() {
         assert.match(await page.locator('#strikeThreat').innerText(), /지켜보고/, 'day one explains the threat panel');
         assert.equal(await page.locator('#strikeForecast dd').count(), 5, 'live forecast');
         await page.locator('#strikeScene').scrollIntoViewIfNeeded();
-        let source = await personPoint(page, 0), dest = await mapPoint(page, 200, 185);
+        let source = await personPoint(page, 0), dest = await zonePoint(page, 'organize');
         await page.mouse.move(source.x, source.y); await page.mouse.down();
         await page.mouse.move(dest.x, dest.y, { steps: 8 });
         assert.equal(await page.locator('[data-map-job="organize"].is-drop-target').count(), 1);
         await page.mouse.up();
         assert.match(await page.locator('[data-crew="0"]').textContent(), /조직 천막/);
-        assert.match(await page.locator('[data-map-job="organize"] .strike-place-count').textContent(), /2조 · \+\d+%p/, 'zone shows its live output');
-        source = await personPoint(page, 0); dest = await mapPoint(page, 5, 145);
+        assert.match(await page.locator('[data-label-job="organize"] .strike-place-count').textContent(), /2조 · \+\d+%p/, 'zone shows its live output');
+        source = await personPoint(page, 0); dest = await mapPoint(page, 5, 5);
         await page.mouse.move(source.x, source.y); await page.mouse.down(); await page.mouse.move(dest.x, dest.y, { steps: 8 }); await page.mouse.up();
         assert.match(await page.locator('[data-crew="0"]').textContent(), /조직 천막/, 'outside drop keeps original assignment');
-        source = await personPoint(page, 0); dest = await mapPoint(page, 580, 535);
+        source = await personPoint(page, 0); dest = await zonePoint(page, 'rest');
         await page.mouse.move(source.x, source.y); await page.mouse.down(); await page.mouse.move(dest.x, dest.y, { steps: 8 });
         await page.keyboard.press('Escape'); await page.mouse.up();
         assert.match(await page.locator('[data-crew="0"]').textContent(), /조직 천막/, 'escape cancels drag');
@@ -149,24 +157,24 @@ async function main() {
         await touch.route('**/*', route => route.request().url().startsWith(origin) ? route.continue() : route.abort());
         await touch.goto(origin + '/games/strike/'); await touch.click('#strikeStart');
         await touch.locator('#strikeScene').evaluate(n => n.scrollIntoView({ block: 'center' }));
-        source = await personPoint(touch, 0); dest = await mapPoint(touch, 200, 185);
+        source = await personPoint(touch, 0); dest = await zonePoint(touch, 'organize');
         await touch.touchscreen.tap(source.x, source.y); await touch.touchscreen.tap(dest.x, dest.y);
         assert.match(await touch.locator('[data-crew="0"]').textContent(), /조직 천막/, 'tap crew then tap location');
         const cdp = await touchContext.newCDPSession(touch);
-        source = await personPoint(touch, 0); dest = await mapPoint(touch, 580, 535);
+        source = await personPoint(touch, 0); dest = await zonePoint(touch, 'rest');
         const scrollBefore = await touch.evaluate(() => window.scrollY);
         await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ ...source, id: 1 }] });
         await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ ...dest, id: 1 }] });
         await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] });
         assert.match(await touch.locator('[data-crew="0"]').textContent(), /휴식처/, 'touch drag');
         assert.equal(await touch.evaluate(() => window.scrollY), scrollBefore, 'drag does not scroll page');
-        source = await personPoint(touch, 0); dest = await mapPoint(touch, 200, 185);
+        source = await personPoint(touch, 0); dest = await zonePoint(touch, 'organize');
         await cdp.send('Input.dispatchTouchEvent', { type: 'touchStart', touchPoints: [{ ...source, id: 2 }] });
         await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ ...dest, id: 2 }] });
         await cdp.send('Input.dispatchTouchEvent', { type: 'touchCancel', touchPoints: [] });
         assert.match(await touch.locator('[data-crew="0"]').textContent(), /휴식처/, 'cancelled touch restores position');
         for (let id = 0; id < 6; id++) {
-            source = await personPoint(touch, id); dest = await mapPoint(touch, 580, 535);
+            source = await personPoint(touch, id); dest = await zonePoint(touch, 'rest');
             await touch.touchscreen.tap(source.x, source.y); await touch.touchscreen.tap(dest.x, dest.y);
         }
         for (let id = 0; id < 6; id++) {
@@ -191,7 +199,7 @@ async function main() {
         await touch.locator('#strikeScene').evaluate(n => n.scrollIntoView({ block: 'center' }));
         assert.equal(await touch.locator('[data-crew-sprite="1"].is-injured').count(), 1);
         assert.match(await touch.locator('[data-crew="1"]').textContent(), /부상/);
-        source = await personPoint(touch, 1); dest = await mapPoint(touch, 600, 185);
+        source = await personPoint(touch, 1); dest = await zonePoint(touch, 'picket');
         await touch.touchscreen.tap(source.x, source.y); await touch.touchscreen.tap(dest.x, dest.y);
         assert.match(await touch.locator('[data-crew="1"]').textContent(), /부상/, 'an injured crew cannot be moved');
         await touch.screenshot({ path: '/tmp/strike-touch-injured.png', fullPage: true });

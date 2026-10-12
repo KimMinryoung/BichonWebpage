@@ -110,7 +110,7 @@ async function main() {
         assert.match(await page.locator('[data-crew="0"]').textContent(), /휴식처/);
         await page.goto(origin + '/games/'); await page.click('#gamesStrikeResume');
         await page.waitForSelector('#strikePlay:not([hidden])');
-        assert.match(await page.locator('#strikeDay').textContent(), /다시 모이는 동료들 · 1일차/);
+        assert.match(await page.locator('#strikeDay').textContent(), /1일차.*다시 모이는 동료들/);
         await page.goto(origin + '/games/strike/');
         page.removeAllListeners('dialog'); page.once('dialog', d => d.dismiss());
         await page.click('#strikeStart'); assert.equal(await page.locator('#strikeSetup').isVisible(), true);
