@@ -27,7 +27,9 @@
 // and cutting nothing), simplify (degrees,
 // default 0.08), focus (extra points
 // the map frame must include), sides [{ id, label, tone }], note, sources,
-// traced (the event's .traced.json), phases [{ date, label, <side>: items }].
+// traced (the event's .traced.json), phases [{ date, label, <side>: items,
+// spots?: { side: [circle or [lat, lng], ...] } }]: spots mark holdings too
+// small to see (a city, a lagoon) with a disc of fixed size.
 // Items: 'traced' | { traced: date, side?, file? } | [[lat, lng], ...] |
 // { circle: [lat, lng, r] } | { corridor: [[lat, lng], ...], width } |
 // { area: item, minus: [items] } | { units: [ADM0 codes] } (whole Natural
@@ -36,7 +38,7 @@
 //
 //   { eventId, base, focus?, region: [ring, ...], sides: [{ id, label, tone }], note, sources,
 //     phases: [{ date: 'YYYY.MM', label, traced, areas: { side: [ring, ...] },
-//                overlays?: { side: [ring, ...] } }] }
+//                overlays?: { side: [ring, ...] }, spots?: { side: [[lng, lat], ...] } }] }
 // where a ring is a flat [lng, lat, ...] outline rounded to 0.01°. The
 // region is drawn once in the base side's colour (whatever no other side
 // holds); each phase's other sides are even-odd paths on top and never
@@ -296,12 +298,36 @@ function bakeEvent(spec, ne) {
             const rings = flatten(within(unionOf(phase[side], side, phase, traced), region));
             if (rings.length) { overlays[side] = rings; used.add(side); }
         }
+        // Spots: a side's holding too small to see at the map's scale (a
+        // city, a lagoon), which the renderer marks with a disc of fixed
+        // size over its own area. Items are circles or [lat, lng] points.
+        const spots = {};
+        for (const [side, items] of Object.entries(phase.spots || {})) {
+            if (!spec.sides.some(s => s.id === side)) {
+                throw new Error(`${spec.eventId} ${phase.date}: spot side ${side} is not in the legend`);
+            }
+            spots[side] = items.map(item => {
+                const [lat, lng] = item.circle || item;
+                if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+                    throw new Error(`${spec.eventId} ${phase.date}: a spot is a circle or [lat, lng]`);
+                }
+                return [lng, lat];
+            });
+        }
         return {
             date: phase.date, label: phase.label, traced: Boolean(phase.traced), areas,
             ...(Object.keys(overlays).length ? { overlays } : {}),
+            ...(Object.keys(spots).length ? { spots } : {}),
         };
     });
     used.add(spec.base);
+    // The page links each source by its label; a bare URL string would
+    // print as an empty link.
+    for (const src of spec.sources || []) {
+        if (!src || typeof src.label !== 'string' || !src.label || !/^https?:\/\//.test(src.url || '')) {
+            throw new Error(`${spec.eventId}: a source needs { label, url }: ${JSON.stringify(src)}`);
+        }
+    }
     return {
         eventId: spec.eventId,
         base: spec.base,

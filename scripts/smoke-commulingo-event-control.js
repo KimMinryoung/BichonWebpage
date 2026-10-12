@@ -32,6 +32,9 @@ for (const id of bakedIds) {
     assert(baked.region.length > 0, `${id} has a region`);
     const dates = baked.phases.map(p => p.date);
     assert.deepEqual([...dates].sort(), dates, `${id} phases are in date order`);
+    for (const src of baked.sources || []) {
+        assert(src && src.label && /^https?:\/\//.test(src.url), `${id} source has a label and url`);
+    }
     const sideIds = new Set(baked.sides.map(s => s.id));
     assert(sideIds.has(baked.base), `${id} base is a legend side`);
     for (const side of baked.sides) {
@@ -67,8 +70,9 @@ const label = { ko: '베이핑', en: 'Beiping' };
 const locations = [{ lat: 39.9, lng: 116.4, label }, { lat: 25.03, lng: 121.57, label }, { lat: 41.8, lng: 123.43, label }];
 const { svg } = renderEventMapSvg(locations, 'ko', '국공내전', [], control);
 assert(!svg.includes('NaN'));
-assert.equal((svg.match(/class="emap-phase[^"]*" data-phase=/g) || []).length, control.phases.length);
-assert.equal((svg.match(/class="emap-phase is-current"/g) || []).length, 1, 'only the first phase shows without JS');
+assert.equal((svg.match(/class="emap-phase[^"]*" data-phase=/g) || []).length, control.phases.length
+    + (svg.match(/<g class="emap-control">.*?<\/g><\/g>/)?.[0].match(/data-phase=/g) || []).length, 'one layer per phase, plus spot layers');
+assert.deepEqual([...new Set(svg.match(/class="emap-phase is-current" data-phase="\d+"/g))], ['class="emap-phase is-current" data-phase="0"'], 'only the first phase shows without JS');
 assert.match(svg, /<path id="emap-land-chinese-civil-war-1945-1949" class="emap-land"/);
 assert.match(svg, /<clipPath id="emap-land-clip-chinese-civil-war-1945-1949"><use href="#emap-land-chinese-civil-war-1945-1949"\/>/);
 assert.match(svg, /<use href="#emap-ctl-chinese-civil-war-1945-1949-0-ccp" class="emap-ctl-knock"\/><use href="#emap-ctl-chinese-civil-war-1945-1949-0-ccp" class="emap-ctl is-red is-drawn"\/>/);

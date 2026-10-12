@@ -328,7 +328,11 @@ function controlRingsPath(rings, frame, project) {
 }
 
 // The areas are built once, as <defs>, and drawn by layer(clipId) under
-// the land clip.
+// the land clip. A phase's spots (a holdout city, the lagoon of Venice:
+// areas a few pixels across, mostly water or under their marker once
+// clipped) are drawn again as discs of fixed size, above the water.
+const SPOT_RADIUS = 12;  // map units: clears the marker dot and its ring
+
 function renderControlLayer(control, bounds, project, idBase) {
     // Sides are coloured by tone (blue, red, amber, purple, gray, green,
     // black), not by
@@ -348,8 +352,11 @@ function renderControlLayer(control, bounds, project, idBase) {
     // Overlay sides (risings behind a front) are hatched over whoever holds
     // the ground, without knocking it out: one stripe pattern per tone.
     const hatches = new Set();
+    const spots = [];
     control.phases.forEach((phase, i) => {
-        uses.push(`<g class="emap-phase${i === 0 ? ' is-current' : ''}" data-phase="${i}">`);
+        const open = `<g class="emap-phase${i === 0 ? ' is-current' : ''}" data-phase="${i}">`;
+        uses.push(open);
+        const phaseSpots = [];
         for (const [side, rings] of Object.entries(phase.areas || {})) {
             const d = controlRingsPath(rings, bounds, project);
             if (!d) continue;
@@ -365,7 +372,16 @@ function renderControlLayer(control, bounds, project, idBase) {
             defs.push(`<path id="${id}" fill-rule="evenodd" d="${d}"/>`);
             uses.push(`<use href="#${id}" class="emap-ctl-hatch is-${tone(side)}" fill="url(#${idBase}-hatch-${tone(side)})"/>`);
         }
+        for (const [side, points] of Object.entries(phase.spots || {})) {
+            for (const [lon, lat] of points) {
+                const lng = lon < bounds.x0 ? lon + 360 : lon;  // a frame across the antimeridian
+                if (lng < bounds.x0 || lng > bounds.x1 || lat < bounds.y0 || lat > bounds.y1) continue;
+                const [x, y] = project(lng, lat);
+                phaseSpots.push(`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${SPOT_RADIUS}" class="emap-ctl is-${tone(side)} is-drawn is-spot"/>`);
+            }
+        }
         uses.push('</g>');
+        if (phaseSpots.length) spots.push(open, ...phaseSpots, '</g>');
     });
     for (const t of hatches) {
         defs.push(`<pattern id="${idBase}-hatch-${t}" patternUnits="userSpaceOnUse" width="5" height="5" patternTransform="rotate(45)">`
@@ -374,6 +390,7 @@ function renderControlLayer(control, bounds, project, idBase) {
     return {
         defs: `<defs>${defs.join('')}</defs>`,
         layer: clipId => `<g class="emap-control" clip-path="url(#${clipId})">${uses.join('')}</g>`,
+        spots: spots.length ? `<g class="emap-control">${spots.join('')}</g>` : '',
     };
 }
 
@@ -670,6 +687,7 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
     }
     parts.push(`<rect class="emap-sea" x="0" y="0" width="${frame.width}" height="${frame.height}"${surround ? ' shape-rendering="crispEdges"' : ''}/>`);
     const land = landPath(level, frame, project);
+    let spots = '';
     if (control) {
         // The land doubles as the control layer's clip; clip-rule matters
         // only there. One map per page, so the event id makes the id unique.
@@ -679,10 +697,11 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
         parts.push(`<path id="emap-land-${id}" class="emap-land" fill-rule="evenodd" clip-rule="evenodd" d="${land}"/>`);
         parts.push(`<defs><clipPath id="${clipId}"><use href="#emap-land-${id}"/></clipPath></defs>`);
         parts.push(ctl.defs, ctl.layer(clipId));
+        spots = ctl.spots;
     } else {
         parts.push(`<path class="emap-land" fill-rule="evenodd" d="${land}"/>`);
     }
-    parts.push(waterLayers(level, frame, project));
+    parts.push(waterLayers(level, frame, project), spots);
 
     // Faint graticule so scale reads at a glance.
     const step = graticuleStep(frame.lonSpan);

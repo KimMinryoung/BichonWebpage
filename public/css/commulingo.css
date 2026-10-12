@@ -3905,6 +3905,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .emap-ctl.is-green { fill: var(--emap-green); stroke: var(--emap-green); }
 .emap-ctl.is-black { fill: var(--emap-black); stroke: var(--emap-black); }
 .emap-ctl.is-black.is-drawn { fill-opacity: .4; }
+.emap-ctl.is-spot { fill-opacity: .45; stroke-width: 2; stroke-opacity: 1; }
 /* Overlays (risings behind a front): stripes and a dashed edge over the
    holder's colour. */
 .emap-ctl-hatch { stroke-width: 1; stroke-dasharray: 3 2; stroke-linejoin: round; }
