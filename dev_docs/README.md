@@ -63,6 +63,7 @@
 | CommuLingo 세계지도·국가 허브·사건 지도 세력 범위 | [지도·국가·사건 연결](commulingo-world-map.md) |
 | SEO 인덱싱·크롤 관측 | [계획과 2026-09-27 관측](seo-indexing-plan.md) |
 | 모바일 첫 방문·시스템 글꼴·공개 모델 캐시 | [구현과 검증](page-speed.md) |
+| 한국(KT) 방문자 지연·정적 파일 CDN | [2026-10-12 진단과 Bunny/CloudFront 도입 계획](static-cdn-kt-plan-20261012.md) |
 | 사이트 최적화 | [기존 계획](site-optimization-plan.md) |
 
 계획 문서의 완료 여부와 과거 수치는 현재 코드로 재확인한다. 새로운 주제는 별도 문서로 추가하고 이 색인에 링크한다. 완료된 작업 이력을 AGENTS.md/CLAUDE.md에 누적하지 않는다.
