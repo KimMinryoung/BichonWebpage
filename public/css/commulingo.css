@@ -4154,6 +4154,11 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-event-timeline-list li > span { color: var(--text-muted); font-weight: 700; font-size: var(--text-sm, .875rem); font-variant-numeric: tabular-nums; }
 /* The date stays on the badge's line; a range breaks only after its dash. */
 .commu-tl-date > span { white-space: nowrap; }
+/* Badge in its own column, so a wrapped range and the flags line up under
+   the date; lists with any badge keep the column on unnumbered rows too. */
+.commu-event-timeline-list li > span { display: grid; grid-template-columns: auto 1fr; align-content: start; align-items: start; }
+.commu-event-timeline-list:has(.commu-tl-geo-badge) li > span { grid-template-columns: 1.75rem 1fr; }
+.commu-tl-date, .commu-tl-flags { grid-column: 2; }
 /* Country tags: flags on their own line under the date, and the chip row
    above the list that filters it (commulingo-event-timeline.js). */
 .commu-tl-flags { display: flex; flex-wrap: wrap; gap: .25rem; margin-top: .35rem; }
