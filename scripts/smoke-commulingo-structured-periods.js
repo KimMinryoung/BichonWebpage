@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const { periodColumns, periodFromRow, formatPeriod, PERIOD_COLUMNS, periodValues } = require('../data/commulingo/career-period');
+const { periodColumns, periodFromRow, canonicalPeriod, formatPeriod, PERIOD_COLUMNS, periodValues } = require('../data/commulingo/career-period');
 
 // Career/office periods are columns; the label is formatted, never parsed.
 const shown = [
@@ -7,6 +7,8 @@ const shown = [
     [{ start: [1918, 7], end: [1918, 9] }, '1918.07–09', '1918.07–09'],
     [{ start: [1918, 9], end: [1919, 7] }, '1918.09–1919.07', '1918.09–1919.07'],
     [{ start: [1965, 3, 18], end: [1965, 3, 19] }, '1965.03.18–19', '1965.03.18–19'],
+    [{ start: [1945, 8, 28], end: [1945, 10, 10] }, '1945.08.28–10.10', '1945.08.28–10.10'],
+    [{ start: [1914, 10, 29], end: [1914, 11] }, '1914.10.29–11', '1914.10.29–11'],
     [{ start: [1938, 10, 25] }, '1938.10.25', '1938.10.25'],
     [{ start: [1920], startQual: 'decade', end: [1930], endQual: 'decade' }, '1920년대–1930년대', '1920s–1930s'],
     [{ start: [1920], startQual: 'late' }, '1920년대 후반', 'late 1920s'],
@@ -34,4 +36,7 @@ for (const bad of ['1917–1918', null, {}, { start: 1917 }, { start: [1917, 13]
     { start: [1917], label: { ko: '1917' } }, { start: [1917], extra: 1 }]) {
     assert.throws(() => periodColumns(bad), { status: 400 }, JSON.stringify(bad));
 }
+// Inline periods (timeline rows) keep only the fields that are set.
+assert.deepEqual(canonicalPeriod({ start: [1848, 3, 4], end: null, ongoing: false }), { start: [1848, 3, 4] });
+assert.throws(() => canonicalPeriod('1848.03.04'), { status: 400 });
 console.log('structured periods format both languages and reject strings, bad dates and contradictions');

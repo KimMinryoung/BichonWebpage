@@ -70,7 +70,9 @@ const L = (ko, en) => ({ ko, en });
         await refuse({ target: 'history_event', action: 'update', id: 'ct-skeleton', fields: { summary: L('요약', 'Summary') } }, /skeleton/);
         await refuse({ target: 'history_event', action: 'update', id: 'ct-none', fields: {} }, /not found/);
         await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { question: '문자열' } }, /must be an object/);
-        await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [{ date: '1917', title: L('가', '') , body: L('나', 'B') }] } }, /needs ko and en/);
+        await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [{ period: { start: [1917] }, title: L('가', '') , body: L('나', 'B') }] } }, /needs ko and en/);
+        await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [{ date: '1917', title: L('가', 'A'), body: L('나', 'B') }] } }, /must be \{period/);
+        await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [{ period: '1917.03', title: L('가', 'A'), body: L('나', 'B') }] } }, /is a string/);
 
         // Body sections: insert after an anchor in both languages, rewrite, refusals.
         await submit({ target: 'history_event_section', action: 'create', id: 'ct-event',

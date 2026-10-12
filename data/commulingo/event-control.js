@@ -36,6 +36,14 @@ function phaseIndexForDate(phases, date) {
     return found;
 }
 
+// The phase in force at a timeline row's period (career-period shape): its
+// start, or its end when it has none.
+function phaseIndexForPeriod(phases, period) {
+    const [year, month, day] = (period && (period.start || period.end)) || [];
+    if (!year) return null;
+    return phaseIndexForDate(phases, [year, month, day].filter(Boolean).join('.'));
+}
+
 // Captions and legend for the page, in the reader's language.
 function presentEventControl(control, lang) {
     if (!control) return null;
@@ -49,4 +57,4 @@ function presentEventControl(control, lang) {
     };
 }
 
-module.exports = { loadEventControl, phaseIndexForDate, presentEventControl, monthOf };
+module.exports = { loadEventControl, phaseIndexForDate, phaseIndexForPeriod, presentEventControl, monthOf };

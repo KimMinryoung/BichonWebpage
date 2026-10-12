@@ -1,7 +1,7 @@
 // Territorial-control layer: phase lookup by timeline date, the baked
 // Chinese Civil War phases, and the SVG layer the event map draws from them.
 const assert = require('node:assert/strict');
-const { loadEventControl, phaseIndexForDate, presentEventControl } = require('../data/commulingo/event-control');
+const { loadEventControl, phaseIndexForDate, phaseIndexForPeriod, presentEventControl } = require('../data/commulingo/event-control');
 const { renderEventMapSvg } = require('../data/commulingo/event-map-svg');
 
 const phases = [{ date: '1945.08' }, { date: '1946.01' }, { date: '1948.09' }, { date: '1949.10' }];
@@ -17,6 +17,9 @@ assert.equal(phaseIndexForDate(days, '1942.11.19'), 0, 'a day before the second 
 assert.equal(phaseIndexForDate(days, '1942.11.23'), 1);
 assert.equal(phaseIndexForDate(days, '1942.12'), 1);
 assert.equal(phaseIndexForDate(days, '1943.01'), 1, 'a bare month is its first day');
+assert.equal(phaseIndexForPeriod(days, { start: [1942, 11, 23], end: [1942, 12, 2] }), 1, 'a row counts from its start');
+assert.equal(phaseIndexForPeriod(days, { start: [1943, 1, 10] }), 2);
+assert.equal(phaseIndexForPeriod(days, { label: { ko: '?', en: '?' } }), null);
 
 assert.equal(loadEventControl('no-such-event'), null);
 assert.equal(loadEventControl('../etc/passwd'), null);

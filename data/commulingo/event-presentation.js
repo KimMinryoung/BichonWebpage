@@ -5,7 +5,8 @@ const { getReportsForEvent } = require('../../services/report-mentions');
 const { getLinkIndexes, createLinker } = require('./linkify');
 const { createPersonPageResolver, pagePeriod } = require('./person-page-links');
 const { renderEventMapSvg, timelineGeos, numberedGeos, isCityScale } = require('./event-map-svg');
-const { loadEventControl, phaseIndexForDate, presentEventControl } = require('./event-control');
+const { loadEventControl, phaseIndexForPeriod, presentEventControl } = require('./event-control');
+const { formatPeriod } = require('./career-period');
 const { eventRelationsFor } = require('./event-relations');
 const { decode: decodeEntities } = require('./html-fragments');
 const { timelineCountries, countryFilter, flagsHtml, splitSectionCountries } = require('./event-countries');
@@ -148,7 +149,8 @@ function presentEvent(raw, lang) {
         body: localize(raw.body, lang),
         outcome: localize(raw.outcome, lang),
         timeline: (raw.timeline || []).map(item => ({
-            date: item.date || '', title: localize(item.title, lang), body: localize(item.body, lang),
+            date: formatPeriod(item.period, lang), period: item.period,
+            title: localize(item.title, lang), body: localize(item.body, lang),
             // Country tags (event-countries.js): flags beside the date, and
             // the chip row when the timeline spans more than one country.
             countries: timelineCountries(item.country),
@@ -226,7 +228,7 @@ async function buildEventPanel(eventId, lang) {
             ...item,
             ...(geoNums.has(i) ? { geoNum: geoNums.get(i) } : {}),
             ...(places.has(i) ? { place: places.get(i) } : {}),
-            ...(control ? { controlPhase: phaseIndexForDate(control.phases, item.date) } : {}),
+            ...(control ? { controlPhase: phaseIndexForPeriod(control.phases, item.period) } : {}),
             flagsHtml: flagsHtml(item.countries, lang, { linked: true }),
         }));
         event.hasCountryFilter = event.countryFilter.length > 0;

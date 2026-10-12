@@ -14,7 +14,6 @@ const db = require('../config/database');
 const {
     findKoreaAnachronisms,
     periodEndYear,
-    latestYear,
     DIVISION_YEAR,
 } = require('../data/commulingo/korean-terminology');
 
@@ -47,7 +46,8 @@ function exempt(ref, excerpt) {
             push(`event:${row.id}.outcome`, row.outcome_ko, year);
             push(`event:${row.id}.body`, row.body_ko, year);
             (row.timeline || []).forEach((item, i) => {
-                const dated = latestYear(item && item.date) || year;
+                const point = item && item.period && (item.period.end || item.period.start);
+                const dated = (point && point[0]) || year;
                 push(`event:${row.id}.timeline[${i}]`, item && item.body && item.body.ko, dated);
             });
         }

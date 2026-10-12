@@ -20,9 +20,9 @@ console.log('French timeline map: all 44 numbered geometries fit without mobile 
 // City-scale events: every site inside one city draws no numbers, only the
 // city; one site outside the city brings the numbered map back.
 const moscow = [{ lat: 55.75, lng: 37.62, kind: 'main', label: { ko: '모스크바', en: 'Moscow' } }];
-const site = (lat, lng, en) => ({ date: '1953', title: { ko: en, en }, body: { ko: '', en: '' },
+const site = (lat, lng, en) => ({ period: { start: [1953] }, title: { ko: en, en }, body: { ko: '', en: '' },
     geo: { kind: 'point', lat, lng, label: { ko: en, en } } });
-const city = [site(55.76, 37.63, 'Lubyanka'), site(55.75, 37.62, 'Kremlin'), { date: '1953', title: { ko: 'x', en: 'x' }, body: { ko: '', en: '' } }];
+const city = [site(55.76, 37.63, 'Lubyanka'), site(55.75, 37.62, 'Kremlin'), { period: { start: [1953] }, title: { ko: 'x', en: 'x' }, body: { ko: '', en: '' } }];
 assert(isCityScale(moscow, city));
 assert.equal(numberedGeos(moscow, city).length, 0);
 const citySvg = renderEventMapSvg(moscow, 'ko', 'city', city, null).svg;

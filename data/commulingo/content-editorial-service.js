@@ -8,6 +8,7 @@
 const { withTransaction, writeRevision } = require('./admin-tx');
 const { badRequest, requireId } = require('./people-admin-fields');
 const offices = require('./people-offices-store');
+const { canonicalPeriod } = require('./career-period');
 
 const TARGETS = ['history_event', 'history_event_section', 'history_event_person', 'office_row'];
 const RELATION_KINDS = ['leader', 'executor', 'participant', 'opponent', 'target', 'witness', 'historian'];
@@ -117,12 +118,12 @@ async function validateEvent(client, id, fields) {
     if (fields.timeline !== undefined && fields.timeline !== null) {
         if (!Array.isArray(fields.timeline) || !fields.timeline.length) throw badRequest('timeline must be a non-empty list');
         fields.timeline.forEach((item, i) => {
-            if (!isLocalized(item) || Object.keys(item).some(key => !['date', 'title', 'body'].includes(key))) {
-                throw badRequest(`timeline[${i}] must be {date, title {ko,en}, body {ko,en}}`);
+            if (!isLocalized(item) || Object.keys(item).some(key => !['period', 'title', 'body'].includes(key))) {
+                throw badRequest(`timeline[${i}] must be {period, title {ko,en}, body {ko,en}}`);
             }
-            if (!String(item.date || '').trim()) throw badRequest(`timeline[${i}].date is required`);
-            // Dates are written 1848.03.04; the map's phase lookup reads only that form.
-            if (/^\d{4}-\d/.test(item.date)) throw badRequest(`timeline[${i}].date: write YYYY.MM.DD, not ${item.date}`);
+            // The row's date in the career-entry period shape ([year, month, day]);
+            // the page formats it, and the map's phases match on it.
+            item.period = canonicalPeriod(item.period, `timeline[${i}].period`);
             for (const key of ['title', 'body']) if (!hasBoth(item[key])) throw badRequest(`timeline[${i}].${key} needs ko and en`);
         });
     }

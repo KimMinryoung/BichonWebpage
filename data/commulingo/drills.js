@@ -6,6 +6,7 @@ const { loadCommuLingoPeople } = require('./people-store');
 const { loadCommuLingoHistoryEvents } = require('./history-events-store');
 const { loadTermCategories } = require('./term-categories');
 const { parseLifeYears } = require('./people-standard');
+const { formatBoth } = require('./career-period');
 
 // 훈련장 문제 은행. 사전 스토어(용어·인물·사건)를 읽어 4지선다 덱과 연표 게임
 // 풀을 만든다. 파일을 쓰지 않고 스냅숏 참조에 메모이즈하므로, 사전이 갱신되면
@@ -504,8 +505,8 @@ function buildTimelineDecks(events) {
 
     const episodePool = events.map(event => {
         const entries = (event.timeline || [])
-            .filter(entry => entry.date && loc(entry.title).ko && loc(entry.title).en)
-            .map(entry => ({ title: loc(entry.title), date: String(entry.date) }));
+            .filter(entry => entry.period && loc(entry.title).ko && loc(entry.title).en)
+            .map(entry => ({ title: loc(entry.title), date: formatBoth(entry.period) }));
         if (entries.length < TIMELINE_ROUND_SIZE + 1) return null;
         return {
             eventId: event.id,

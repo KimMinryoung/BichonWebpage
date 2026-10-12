@@ -227,7 +227,7 @@
             .sort(function(a, b) { return a - b; });
         var items = indexes.map(function(entryIndex, position) {
             var entry = source.entries[entryIndex];
-            return { label: text(entry.title), reveal: entry.date, sortKey: position };
+            return { label: text(entry.title), reveal: text(entry.date), sortKey: position };
         });
         return { heading: text(source.title) + ' (' + source.period + ')', items: items };
     }

@@ -133,7 +133,8 @@ function formatPoint(p, q, lang) {
 }
 
 // Columns → display string. Same year/month ends are shortened the way the
-// hand-written labels were: 1918.07–09, 1965.03.18–19; years stay full.
+// hand-written labels were: 1918.07–09, 1965.03.18–19, 1945.08.28–10.10;
+// years stay full.
 function formatPeriod(period, lang = 'ko') {
     if (!period) return '';
     if (period.label) return (lang === 'en' ? period.label.en : period.label.ko) || period.label.ko || period.label.en || '';
@@ -151,11 +152,27 @@ function formatPeriod(period, lang = 'ko') {
     let e = formatPoint(end, eq, lang);
     if (!sq && !eq && start.month && end.month && start.year === end.year) {
         if (start.month === end.month && start.day && end.day) e = start.day === end.day ? '' : pad(end.day);
-        else if (!start.day && !end.day) e = start.month === end.month ? '' : pad(end.month);
+        else if (start.month === end.month && !start.day && !end.day) e = '';
+        else e = pad(end.month) + (end.day ? '.' + pad(end.day) : '');
     } else if (!sq && !eq && !start.month && !end.month && start.year === end.year) {
         e = '';
     }
     return e ? `${s}–${e}` : s;
+}
+
+// Validated input → the same shape, normalized (absent fields dropped): how
+// a period is stored inline, as on history-event timeline rows.
+function canonicalPeriod(input, where = 'period') {
+    const c = periodColumns(input, where);
+    const period = periodFromRow({
+        start_year: c.startYear, start_month: c.startMonth, start_day: c.startDay,
+        end_year: c.endYear, end_month: c.endMonth, end_day: c.endDay,
+        start_qual: c.startQual, end_qual: c.endQual, ongoing: c.ongoing,
+        period_label_ko: c.labelKo, period_label_en: c.labelEn,
+    });
+    if (!period.start) delete period.start;
+    if (!period.end) delete period.end;
+    return period;
 }
 
 function formatBoth(period) {
@@ -171,4 +188,4 @@ function periodValues(cols) {
         cols.startQual, cols.endQual, cols.ongoing, cols.labelKo, cols.labelEn];
 }
 
-module.exports = { QUALS, SHAPE, periodColumns, periodFromRow, formatPeriod, formatBoth, PERIOD_COLUMNS, periodValues };
+module.exports = { QUALS, SHAPE, periodColumns, periodFromRow, canonicalPeriod, formatPeriod, formatBoth, PERIOD_COLUMNS, periodValues };

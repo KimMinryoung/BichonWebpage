@@ -40,13 +40,15 @@ function checkGeo(g, at) {
     }
 }
 
+const { formatPeriod } = require(path.join(root, 'data/commulingo/career-period'));
+
 function patched(timeline, event) {
     const next = JSON.parse(JSON.stringify(timeline));
     for (const a of event.add) {
         const at = `${event.id}[${a.index}]`;
         const row = next[a.index];
         assert(row, `${at}: no such row`);
-        assert.equal(row.date, a.date, `${at}: date changed`);
+        assert.equal(formatPeriod(row.period, 'ko'), a.date, `${at}: date changed`);
         assert.equal(row.title && row.title.en, a.title_en, `${at}: title changed`);
         assert.equal(row.geo, undefined, `${at}: already has geo`);
         checkGeo(a.geo, at);
