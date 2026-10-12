@@ -1,7 +1,7 @@
 // A snapshot owns its normalized index. A refreshed snapshot automatically
 // drops the previous index; query strings never accumulate in a result cache.
 const indexes = new WeakMap();
-const { eventPeriodYears, parseEventPeriodQuery } = require('./event-period-search');
+const { parseEventPeriodQuery } = require('./event-period-search');
 const text = values => values.filter(Boolean).join(' ');
 const fields = {
     terms: item => {
@@ -19,8 +19,7 @@ function searchDictionary(items, kind, query = '', category = '', accepts = () =
     if (!index) {
         index = items.map(item => {
             const values = fields[kind](item);
-            const years = kind === 'events' ? (Number.isInteger(item.startYear) && Number.isInteger(item.endYear)
-                ? item : eventPeriodYears(item.period)) : {};
+            const years = kind === 'events' ? item : {};
             return { item, startYear: years.startYear, endYear: years.endYear,
                 category: values.category, title: (values.title || '').toLocaleLowerCase(), text: (values.text || '').toLocaleLowerCase() };
         });

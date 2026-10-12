@@ -85,7 +85,7 @@ function spliceSection(body, heading, sectionBody, after, action) {
 
 async function eventRow(client, id, lock = false) {
     const { rows } = await client.query(
-        `SELECT id, period_label, title_ko, title_en, question_ko, question_en, summary_ko, summary_en,
+        `SELECT id, start_year, start_month, start_day, end_year, end_month, end_day, title_ko, title_en, question_ko, question_en, summary_ko, summary_en,
                 outcome_ko, outcome_en, body_ko, body_en, timeline, sources, to_jsonb(e)->'sides' AS sides
          FROM commulingo_history_events e WHERE id = $1${lock ? ' FOR UPDATE' : ''}`, [id]);
     return rows[0] || null;

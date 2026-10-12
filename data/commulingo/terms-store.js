@@ -2,6 +2,7 @@ const path = require('path');
 const { readSnapshot } = require('./read-snapshot');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
 const { personLabels, nameColumns } = require('./person-name');
+const { periodFromRow, formatPeriod } = require('./career-period');
 
 // Glossary terms served from an in-memory copy, mirroring people-store: the
 // hot path never awaits the DB. Serving (snapshot, background refresh,
@@ -43,7 +44,7 @@ async function fetchTerms() {
         ),
         client.query(
             `SELECT te.term_id, te.event_id, te.same_subject,
-                    e.period_label, e.title_ko, e.title_en
+                    e.start_year, e.start_month, e.start_day, e.end_year, e.end_month, e.end_day, e.title_ko, e.title_en
              FROM commulingo_term_events te
              JOIN commulingo_history_events e ON e.id = te.event_id
              ORDER BY te.term_id, te.sort_order, te.event_id`
@@ -84,7 +85,7 @@ async function fetchTerms() {
     events.rows.forEach(row => {
         const entry = {
             id: row.event_id,
-            period: row.period_label || '',
+            period: formatPeriod(periodFromRow(row)),
             title: t(row.title_ko, row.title_en),
         };
         (eventsByTerm[row.term_id] || (eventsByTerm[row.term_id] = [])).push(entry);

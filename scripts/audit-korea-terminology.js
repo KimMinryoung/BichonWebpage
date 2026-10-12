@@ -35,12 +35,12 @@ function exempt(ref, excerpt) {
         const push = (ref, text, year) => { if (text) sources.push({ ref, text, year }); };
 
         const events = await db.query(
-            `SELECT id, period_label, summary_ko, outcome_ko, body_ko, timeline
+            `SELECT id, COALESCE(end_year, start_year) AS end_year, summary_ko, outcome_ko, body_ko, timeline
                FROM commulingo_history_events ORDER BY id`
         );
         const eventYear = new Map();
         for (const row of events.rows) {
-            const year = periodEndYear(row.period_label);
+            const year = row.end_year;
             eventYear.set(row.id, year);
             push(`event:${row.id}.summary`, row.summary_ko, year);
             push(`event:${row.id}.outcome`, row.outcome_ko, year);

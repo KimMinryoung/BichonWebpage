@@ -23,6 +23,20 @@ columns and converted every old label; 273 split the 100 multi-segment labels
 ("1937/1957", "1919–1924, 1927–1929") into one row per segment; the old
 `period_label` column went in 272. Only 9 rows keep an override label.
 
+## Event dates use the same period shape — 2026-10-12
+
+History events follow the career format. The card period is
+`start_year/month/day` and `end_year/month/day` on `commulingo_history_events`
+(migration 362 converted `period_label`, 363 dropped it and the parser that
+generated the years); the store formats it with `formatPeriod` and gives
+`startYear`/`endYear` for year search. Event periods are plain ranges with no
+qualifier or label, so the string is the same in both languages. Timeline rows
+carry `period` (`{start: [y, m?, d?], end?, …}`), and event-map phases a
+`date: [y, m?, d?]` point (specs in `scripts/content/event-control/`, baked
+documents `event-control/<id>`); `event-control.js` matches rows to phases
+with `phaseIndexForPeriod`. A `.traced.json` file still keys its phases by the
+formatted date ('1945.08').
+
 ## Structured name parts — added 2026-07-24
 
 `commulingo_people` now stores names as parts: `given_name_ko/en`,

@@ -27,17 +27,18 @@
 // and cutting nothing), simplify (degrees,
 // default 0.08), focus (extra points
 // the map frame must include), sides [{ id, label, tone }], note, sources,
-// traced (the event's .traced.json), phases [{ date, label, <side>: items,
+// traced (the event's .traced.json), phases [{ date: [year, month?, day?]
+// (the career-period point), label, <side>: items,
 // spots?: { side: [circle or [lat, lng], ...] } }]: spots mark holdings too
 // small to see (a city, a lagoon) with a disc of fixed size.
-// Items: 'traced' | { traced: date, side?, file? } | [[lat, lng], ...] |
+// Items: 'traced' | { traced: [year, month?, day?], side?, file? } | [[lat, lng], ...] |
 // { circle: [lat, lng, r] } | { corridor: [[lat, lng], ...], width } |
 // { area: item, minus: [items] } | { units: [ADM0 codes] } (whole Natural
 // Earth units) | { provinces: [names], country: ADM0 } (Natural Earth
 // admin-1 by `name`: modern provinces standing in for historical ones).
 //
 //   { eventId, base, focus?, region: [ring, ...], sides: [{ id, label, tone }], note, sources,
-//     phases: [{ date: 'YYYY.MM', label, traced, areas: { side: [ring, ...] },
+//     phases: [{ date: [year, month?, day?], label, traced, areas: { side: [ring, ...] },
 //                overlays?: { side: [ring, ...] }, spots?: { side: [[lng, lat], ...] } }] }
 // where a ring is a flat [lng, lat, ...] outline rounded to 0.01°. The
 // region is drawn once in the base side's colour (whatever no other side
@@ -47,6 +48,7 @@
 const fs = require('fs');
 const path = require('path');
 const pc = require('polygon-clipping');
+const { canonicalPeriod, formatPeriod } = require('../data/commulingo/career-period');
 
 // polygon-clipping 0.15 can recurse without end (RingOut.enclosingRing) on
 // nearly coincident vertices, which the traced grid rings and the Natural
@@ -209,13 +211,17 @@ function featureGeometry(features, names, key, what) {
 let unitsFile = null;
 
 const readTraced = file => JSON.parse(fs.readFileSync(path.join(CONTENT_DIR, file), 'utf8'));
+// A .traced.json file keys its phases by the formatted date ('1945.08').
+const tracedKey = point => formatPeriod({ start: point });
+// A phase date is [year, month?, day?], the career-period point.
+const phaseName = (spec, phase) => `${spec.eventId} ${Array.isArray(phase.date) ? phase.date.join('.') : phase.date}`;
 
 function resolveItem(item, side, phase, traced) {
-    if (item === 'traced') return tracedGeometry((traced.phases[phase.date] || {})[side]);
-    // { traced: date, side?, file? }: another phase, side or event's tracing.
+    if (item === 'traced') return tracedGeometry((traced.phases[tracedKey(phase.date)] || {})[side]);
+    // { traced: [year, month?, day?], side?, file? }: another phase, side or event's tracing.
     if (item && item.traced) {
         const source = item.file ? readTraced(item.file) : traced;
-        return tracedGeometry((source.phases[item.traced] || {})[item.side || 'ccp']);
+        return tracedGeometry((source.phases[tracedKey(item.traced)] || {})[item.side || 'ccp']);
     }
     // { area: item, minus: [items] }: an area with others cut out of it.
     if (item && item.area) {
@@ -230,7 +236,7 @@ function resolveItem(item, side, phase, traced) {
     if (item && item.circle) return circlePolygon(item.circle);
     if (item && item.corridor) return corridorPolygon(item.corridor, item.width);
     if (Array.isArray(item) && Array.isArray(item[0])) return [[toRing(item)]];
-    throw new Error(`${phase.date} ${side}: unknown area item ${JSON.stringify(item).slice(0, 80)}`);
+    throw new Error(`${[].concat(phase.date).join('.')} ${side}: unknown area item ${JSON.stringify(item).slice(0, 80)}`);
 }
 
 function unionOf(items, side, phase, traced) {
@@ -282,6 +288,8 @@ function bakeEvent(spec, ne) {
         .filter(id => id !== spec.base && !layered.has(id));
     const carved = new Set(spec.carve || drawn);
     const phases = spec.phases.map(phase => {
+        const period = canonicalPeriod({ start: phase.date }, `${phaseName(spec, phase)} date`);
+        if (Object.keys(period).length !== 1) throw new Error(`${phaseName(spec, phase)}: a phase date is one [year, month?, day?]`);
         const pockets = unionOf(phase[spec.base], spec.base, phase, traced);
         const taken = [];
         const areas = {};
@@ -304,12 +312,12 @@ function bakeEvent(spec, ne) {
         const spots = {};
         for (const [side, items] of Object.entries(phase.spots || {})) {
             if (!spec.sides.some(s => s.id === side)) {
-                throw new Error(`${spec.eventId} ${phase.date}: spot side ${side} is not in the legend`);
+                throw new Error(`${phaseName(spec, phase)}: spot side ${side} is not in the legend`);
             }
             spots[side] = items.map(item => {
                 const [lat, lng] = item.circle || item;
                 if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
-                    throw new Error(`${spec.eventId} ${phase.date}: a spot is a circle or [lat, lng]`);
+                    throw new Error(`${phaseName(spec, phase)}: a spot is a circle or [lat, lng]`);
                 }
                 return [lng, lat];
             });

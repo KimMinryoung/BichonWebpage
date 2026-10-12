@@ -1,25 +1,23 @@
 // Territorial-control layer: phase lookup by timeline date, the baked
 // Chinese Civil War phases, and the SVG layer the event map draws from them.
 const assert = require('node:assert/strict');
-const { loadEventControl, phaseIndexForDate, phaseIndexForPeriod, presentEventControl } = require('../data/commulingo/event-control');
+const { loadEventControl, dayOf, phaseIndexForPoint, phaseIndexForPeriod, presentEventControl } = require('../data/commulingo/event-control');
 const { renderEventMapSvg } = require('../data/commulingo/event-map-svg');
 
-const phases = [{ date: '1945.08' }, { date: '1946.01' }, { date: '1948.09' }, { date: '1949.10' }];
-assert.equal(phaseIndexForDate(phases, '1945.08.28–10.10'), 0);
-assert.equal(phaseIndexForDate(phases, '1944.05'), 0, 'rows before the first phase show the first');
-assert.equal(phaseIndexForDate(phases, '1946.05'), 1);
-assert.equal(phaseIndexForDate(phases, '1948.11–1949.01'), 2, 'a range counts from its start');
-assert.equal(phaseIndexForDate(phases, '1949.10.01'), 3);
-assert.equal(phaseIndexForDate(phases, '1950'), 3);
-assert.equal(phaseIndexForDate(phases, '연대 미상'), null);
-const days = [{ date: '1942.11' }, { date: '1942.11.23' }, { date: '1943.01.10' }];
-assert.equal(phaseIndexForDate(days, '1942.11.19'), 0, 'a day before the second phase');
-assert.equal(phaseIndexForDate(days, '1942.11.23'), 1);
-assert.equal(phaseIndexForDate(days, '1942.12'), 1);
-assert.equal(phaseIndexForDate(days, '1943.01'), 1, 'a bare month is its first day');
+const phases = [{ date: [1945, 8] }, { date: [1946, 1] }, { date: [1948, 9] }, { date: [1949, 10] }];
+assert.equal(phaseIndexForPoint(phases, [1945, 8, 28]), 0);
+assert.equal(phaseIndexForPoint(phases, [1944, 5]), 0, 'dates before the first phase show the first');
+assert.equal(phaseIndexForPoint(phases, [1946, 5]), 1);
+assert.equal(phaseIndexForPeriod(phases, { start: [1948, 11], end: [1949, 1] }), 2, 'a range counts from its start');
+assert.equal(phaseIndexForPoint(phases, [1949, 10, 1]), 3);
+assert.equal(phaseIndexForPoint(phases, [1950]), 3);
+assert.equal(phaseIndexForPeriod(phases, { label: { ko: '미상', en: 'unknown' } }), null);
+const days = [{ date: [1942, 11] }, { date: [1942, 11, 23] }, { date: [1943, 1, 10] }];
+assert.equal(phaseIndexForPoint(days, [1942, 11, 19]), 0, 'a day before the second phase');
+assert.equal(phaseIndexForPoint(days, [1942, 11, 23]), 1);
+assert.equal(phaseIndexForPoint(days, [1942, 12]), 1);
+assert.equal(phaseIndexForPoint(days, [1943, 1]), 1, 'a bare month is its first day');
 assert.equal(phaseIndexForPeriod(days, { start: [1942, 11, 23], end: [1942, 12, 2] }), 1, 'a row counts from its start');
-assert.equal(phaseIndexForPeriod(days, { start: [1943, 1, 10] }), 2);
-assert.equal(phaseIndexForPeriod(days, { label: { ko: '?', en: '?' } }), null);
 
 assert.equal(loadEventControl('no-such-event'), null);
 assert.equal(loadEventControl('../etc/passwd'), null);
@@ -33,8 +31,9 @@ for (const id of bakedIds) {
     const baked = loadEventControl(id);
     assert(baked && baked.eventId === id, `${id} loads`);
     assert(baked.region.length > 0, `${id} has a region`);
-    const dates = baked.phases.map(p => p.date);
-    assert.deepEqual([...dates].sort(), dates, `${id} phases are in date order`);
+    assert(baked.phases.every(p => Array.isArray(p.date) && p.date.every(Number.isInteger)), `${id} phase dates are [year, month?, day?]`);
+    const days = baked.phases.map(p => dayOf(p.date));
+    assert.deepEqual([...days].sort((a, b) => a - b), days, `${id} phases are in date order`);
     for (const src of baked.sources || []) {
         assert(src && src.label && /^https?:\/\//.test(src.url), `${id} source has a label and url`);
     }
@@ -67,6 +66,7 @@ for (const phase of control.phases) assert(phase.areas.ccp && phase.areas.ccp.le
 
 const presented = presentEventControl(control, 'en');
 assert.equal(presented.phases[0].label, 'Japan surrenders');
+assert.equal(presented.phases[0].date, '1945.08', 'phase dates are formatted for the caption');
 assert(presented.note.includes('approximate'));
 
 const label = { ko: '베이핑', en: 'Beiping' };

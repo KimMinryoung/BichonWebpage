@@ -2,7 +2,7 @@ const path = require('path');
 const { readSnapshot } = require('./read-snapshot');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
 const { personLabels, nameColumns } = require('./person-name');
-const { eventPeriodYears } = require('../../utils/event-period-search');
+const { periodFromRow, formatPeriod } = require('./career-period');
 
 // History events are served from an in-memory copy, mirroring people-store:
 // the hot path never awaits the DB. Serving (snapshot, background refresh,
@@ -27,14 +27,13 @@ function t(ko, en) {
 async function fetchEvents() {
     const [events, people] = await readSnapshot(client => Promise.all([
         client.query(
-            `SELECT id, period_label, title_ko, title_en, question_ko, question_en,
+            `SELECT id, start_year, start_month, start_day, end_year, end_month, end_day,
+                    title_ko, title_en, question_ko, question_en,
                     summary_ko, summary_en, body_ko, body_en, outcome_ko, outcome_en,
                     timeline, sources, locations, no_auto_link, updated_at,
                     to_jsonb(commulingo_history_events)->'countries' AS countries,
                     to_jsonb(commulingo_history_events)->'relations' AS relations,
                     to_jsonb(commulingo_history_events)->'link_expressions' AS link_expressions,
-                    to_jsonb(commulingo_history_events)->'start_year' AS start_year,
-                    to_jsonb(commulingo_history_events)->'end_year' AS end_year,
                     to_jsonb(commulingo_history_events)->'sides' AS sides
              FROM commulingo_history_events
              WHERE COALESCE(summary_ko, '') <> ''
@@ -68,9 +67,12 @@ async function fetchEvents() {
     return events.rows.map(row => ({
         id: row.id,
         linkExpressions: row.link_expressions || [],
-        period: row.period_label || '',
-        ...(Number.isInteger(row.start_year) && Number.isInteger(row.end_year)
-            ? { startYear: row.start_year, endYear: row.end_year } : eventPeriodYears(row.period_label || '')),
+        // Year/month/day columns (migration 362), formatted the way career
+        // periods are; event periods carry no qualifier or label, so the
+        // string is the same in both languages.
+        period: formatPeriod(periodFromRow(row)),
+        startYear: row.start_year ?? null,
+        endYear: row.end_year ?? row.start_year ?? null,
         title: t(row.title_ko, row.title_en),
         question: t(row.question_ko, row.question_en),
         summary: t(row.summary_ko, row.summary_en),
