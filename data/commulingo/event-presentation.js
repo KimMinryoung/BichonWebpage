@@ -7,6 +7,7 @@ const { createPersonPageResolver, pagePeriod } = require('./person-page-links');
 const { renderEventMapSvg, timelineGeos, numberedGeos, isCityScale } = require('./event-map-svg');
 const { loadEventControl, phaseIndexForPeriod, presentEventControl } = require('./event-control');
 const { formatPeriod } = require('./career-period');
+const { dataDocumentsRef } = require('./data-documents');
 const { eventRelationsFor } = require('./event-relations');
 const { decode: decodeEntities } = require('./html-fragments');
 const { timelineCountries, countryFilter, flagsHtml, splitSectionCountries } = require('./event-countries');
@@ -164,11 +165,12 @@ function presentEvent(raw, lang) {
 
 // Pure half of the event panel (presented event with linkified prose +
 // prev/next neighbors): a function of the events snapshot, the terms snapshot
-// (same-subject exclusion) and the link indexes, so it renders once per data
+// (same-subject exclusion), the data documents (map phases) and the link
+// indexes, so it renders once per data
 // refresh per language — mirroring personBodyMemo in commulingo.js. Related
 // terms/docs/genealogies/reports refresh on their own cadences and stay
 // per-request.
-const eventPanelMemo = new WeakMap(); // indexes -> { eventsRef, termsRef, byId: Map }
+const eventPanelMemo = new WeakMap(); // indexes -> { eventsRef, termsRef, docsRef, byId: Map }
 
 // Everything the event half of a page needs. Exported so the glossary route can
 // render this panel beside its own when the two entries are the same subject:
@@ -178,9 +180,11 @@ async function buildEventPanel(eventId, lang) {
     const events = await loadCommuLingoHistoryEvents();
     const terms = await loadCommuLingoTerms();
     const indexes = await getLinkIndexes(lang);
+    // The map's control phases are data documents (event-control/<id>).
+    const docs = dataDocumentsRef();
     let memo = eventPanelMemo.get(indexes);
-    if (!memo || memo.eventsRef !== events || memo.termsRef !== terms) {
-        memo = { eventsRef: events, termsRef: terms, byId: new Map() };
+    if (!memo || memo.eventsRef !== events || memo.termsRef !== terms || memo.docsRef !== docs) {
+        memo = { eventsRef: events, termsRef: terms, docsRef: docs, byId: new Map() };
         eventPanelMemo.set(indexes, memo);
     }
     let pure = memo.byId.get(eventId);

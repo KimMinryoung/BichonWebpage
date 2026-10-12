@@ -239,6 +239,9 @@ async function restoreDataDocumentRevision(key, revision, { actor, note } = {}) 
 }
 
 module.exports = {
+    // The installed document map: a new object only when a document changed,
+    // so render memos can key on it.
+    dataDocumentsRef: documents,
     getDataDocument, listDataDocuments, loadDataDocuments: store.load, refreshDataDocuments: () => store.refresh(),
     validateDataDocument, writeDataDocuments, readDataDocumentRows, listDataDocumentRevisions, restoreDataDocumentRevision,
 };
