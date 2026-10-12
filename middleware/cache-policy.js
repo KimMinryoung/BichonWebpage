@@ -11,6 +11,11 @@
 // requests are eligible). The header is dropped from anything that must not
 // be shared or kept: a status other than 200/404, a response setting a
 // cookie, the login-outage notice, and degraded pages (utils/http setNoStore).
+// For a day after the minute an expired copy is served at once while the edge
+// refetches it in the background: a quiet edge far from the Helsinki origin
+// (Korean visitors land on SEA) otherwise pays a ~3 s origin round trip on
+// almost every navigation. Old CSS releases are kept, so stale pages still
+// find their stylesheets.
 const path = require('path');
 const {
     isCacheablePublicTextPath,
@@ -20,7 +25,7 @@ const {
     setDynamicLanguageCacheHeaders,
 } = require('../config/route-policy');
 
-const EDGE_HTML_CACHE = 'public, max-age=60, stale-while-revalidate=300';
+const EDGE_HTML_CACHE = 'public, max-age=60, stale-while-revalidate=86400';
 const EDGE_HEADER = 'Cloudflare-CDN-Cache-Control';
 
 function allowEdgeCache(res) {

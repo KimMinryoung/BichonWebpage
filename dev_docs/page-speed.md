@@ -11,7 +11,7 @@
 - 사전·레지스트리 스냅숏은 1분마다 `pg_stat_user_tables` 쓰기 수만 확인하고, 바뀌었거나 1시간이 지났을 때만 전체를 읽는다(링크 검토 1만 행·인물 26MB 해시 생략). 보고서 렌더 캐시 파일(약 28MB)은 내용이 바뀐 때만 다시 쓴다.
 - 요약 정제와 자르기는 공개 캐시 생성 때, 강좌 요약·인물 정렬·활동별 인원수는 스냅숏 참조가 바뀔 때 계산한다.
 
-- 비로그인 공개 HTML은 Cloudflare 엣지에 1분 캐시한다. 서버가 `Cloudflare-CDN-Cache-Control: public, max-age=60, stale-while-revalidate=300`을 붙이고(`middleware/cache-policy.js`), 대시보드 Cache Rule 「Cache public HTML」이 대상 경로를 정한다. 운영 조건과 확인 방법은 [운영 참고](frontend-operations.md)에 있다. 로그인 사용자의 HTML은 이름·CSRF 토큰이 들어 있어 원본에서 받는다. 같은 날 세션 쿠키 전체 우회 규칙을 지워 로그인 사용자도 CSS·JS를 엣지에서 받는다.
+- 비로그인 공개 HTML은 Cloudflare 엣지에 1분 캐시한다. 서버가 `Cloudflare-CDN-Cache-Control: public, max-age=60, stale-while-revalidate=86400`을 붙이고(`middleware/cache-policy.js`), 대시보드 Cache Rule 「Cache public HTML」이 대상 경로를 정한다. 운영 조건과 확인 방법은 [운영 참고](frontend-operations.md)에 있다. 로그인 사용자의 HTML은 이름·CSRF 토큰이 들어 있어 원본에서 받는다. 같은 날 세션 쿠키 전체 우회 규칙을 지워 로그인 사용자도 CSS·JS를 엣지에서 받는다.
 - 글·일기·연구 문서 본문은 Redis 캐시 없이 Postgres를 직접 읽는다(한 건 약 1ms, Redis는 약 0.25ms). 근거와 경위는 [Redis 설계 검토](redis-design-review-20261004.md)에 있다.
 
 공통 사이트 CSS는 `style.css` 원본에서 `node scripts/build-site-css.js`로 생성한다. `site-core.css`는 모든 페이지에서, 나머지 `site-*.css`는 해당 경로에서만 `ui.css` 전에 읽는다. CommuLingo 첫 화면은 사전 검색·인물 카드·기관 목록 규칙을 받지 않는다. 구버전 HTML용 원본 파일은 유지한다.

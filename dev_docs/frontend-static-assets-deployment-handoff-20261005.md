@@ -17,7 +17,7 @@
 | `config/static-assets.js` | Express가 `public/`을 제공한다. 운영 CSS/JS는 `max-age=31536000, immutable`. 개발은 no-store. 노노그램 HTML·퍼즐 JSON 등 예외가 있다. |
 | `config/env.js` | `ASSET_VERSION`은 환경변수 → `GIT_SHA` → 부팅 시각 순서로 프로세스 시작 때 결정된다. |
 | `middleware/view-locals.js`, `views/partials/head.ejs` | 템플릿에 `assetVersion`을 전달하고 CSS URL에 `?v=...`를 붙인다. 다른 템플릿·스크립트의 에셋 참조도 조사해야 한다. |
-| `middleware/cache-policy.js` | 공개 HTML의 엣지 정책은 `max-age=60, stale-while-revalidate=300`. 새 HTML 참조가 모든 방문자에게 즉시 전달된다고 가정하면 안 된다. |
+| `middleware/cache-policy.js` | 공개 HTML의 엣지 정책은 `max-age=60, stale-while-revalidate=86400`(2026-10-12부터). 새 HTML 참조가 모든 방문자에게 즉시 전달된다고 가정하면 안 된다. |
 | `nginx/leninbot-frontend.conf` | 저장소 설정은 Express upstream으로 프록시하며 별도 정적 파일 배포 경로가 없다. 실제 `/etc/nginx` 설정과 일치하는지는 구현 때 확인한다. |
 | `scripts/dev-preview` | `public/`, `views/` 등을 바인드 마운트하므로 개발 CSS 수정마다 이미지 빌드할 필요가 없다. 운영 구조와는 다르다. 사용 후 끈다. |
 
