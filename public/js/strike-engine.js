@@ -11,7 +11,7 @@
     const skills = ['picket', 'organize', 'solidarity'];
     const roster = [
         { name: '민서', trait: 'vanguard', label: '선봉', note: '피켓 숙련 2로 시작합니다. 구사대에 맞서도 다치지 않고, 정문에 있으면 두 조만으로 구사대를 막습니다.', xp: { picket: 6 } },
-        { name: '준호', trait: 'orator', label: '웅변가', note: '조직 숙련 2로 시작합니다. 조직 숙련이 3이 되면 교섭에서 대표 발언 카드를 냅니다.', xp: { organize: 6 } },
+        { name: '지혜', trait: 'orator', label: '웅변가', note: '조직 숙련 2로 시작합니다. 조직 숙련이 3이 되면 교섭에서 대표 발언 카드를 냅니다.', xp: { organize: 6 } },
         { name: '수진', trait: 'treasurer', label: '살림꾼', note: '연대 숙련 2로 시작합니다. 모금을 이끌어 가압류에서 기금을 지킵니다.', xp: { solidarity: 6 } },
         { name: '태호', trait: 'veteran', label: '베테랑', note: '피로가 30% 덜 쌓입니다. 피켓·조직 숙련 1로 시작합니다.', xp: { picket: 3, organize: 3 } },
         { name: '은별', trait: 'publicist', label: '홍보', note: '연대 부스에 있으면 여론이 4 더 오르고, 혼자서도 언론 공세를 막습니다.', xp: { solidarity: 3 } },

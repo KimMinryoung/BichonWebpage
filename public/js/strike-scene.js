@@ -126,7 +126,7 @@
     // Six distinct haircuts, drawn around a head centred at (0, -40).
     const hair = [
         { front: 'M-17 -40Q-18 -60 0 -59Q18 -60 17 -40L15 -34Q13 -47 0 -48Q-13 -47 -15 -34Z', color: '#2b2220' },
-        { front: 'M-16 -43Q-15 -59 2 -58Q17 -57 16 -44Q8 -51 -4 -49Q-10 -48 -16 -43Z', color: '#1f1a18' },
+        { front: 'M-17 -36Q-20 -61 1 -60Q20 -60 17 -36L15 -42Q12 -50 2 -51Q-5 -45 -14 -45Z', back: 'M-18 -46Q-24 -16 -18 -4H18Q24 -16 18 -46Z', color: '#4a2c22' },
         { front: 'M-17 -41Q-18 -60 0 -59Q18 -60 17 -41Q12 -48 0 -49Q-12 -48 -17 -41Z', back: 'M14 -50Q30 -46 24 -24Q22 -34 14 -40Z', color: '#4a3226' },
         { front: 'M-16 -43Q-15 -58 0 -58Q15 -58 16 -43Q8 -48 0 -48Q-8 -48 -16 -43Z', color: '#8f8b86' },
         { front: 'M-17 -40Q-18 -61 0 -60Q18 -61 17 -40Q10 -50 -2 -49Q-12 -48 -17 -40Z', back: 'M-18 -44Q-21 -18 -13 -14H13Q21 -18 18 -44Z', color: '#3b2a24' },
@@ -144,7 +144,7 @@
             chest: [['path', { d: 'M-15 -16Q-15 -24 -8 -24H-4L0 -15L4 -24H8Q15 -24 15 -16V12H-15Z', fill: '#f07f2b' }], ['rect', { x: -15, y: -5, width: 30, height: 4, fill: '#fff1a8' }], ['path', { d: 'M-4 -24L0 -15L4 -24', stroke: '#c9483c', 'stroke-width': 3, fill: 'none' }]]
         },
         orator: {
-            chest: [['path', { d: 'M0 -22L-3.5 -13L0 -2L3.5 -13Z', fill: headband }], ['path', { d: 'M-6 -24L0 -18L6 -24', stroke: '#fff', 'stroke-width': 3, fill: 'none' }]],
+            chest: [['path', { d: 'M-1 -22L-10 -24Q-12 -16 -4 -15Z', fill: cream, stroke: '#d8c49b', 'stroke-width': 1 }], ['path', { d: 'M1 -22L10 -24Q12 -16 4 -15Z', fill: cream, stroke: '#d8c49b', 'stroke-width': 1 }], ['path', { d: 'M0 -20L-5 -23V-16ZM0 -20L5 -23V-16Z', fill: '#2f4f6a' }], ['circle', { cx: 0, cy: -20, r: 1.6, fill: '#2f4f6a' }]],
             head: [['circle', { cx: -6, cy: -37, r: 5, fill: '#ffffff40', stroke: ink, 'stroke-width': 1.8 }], ['circle', { cx: 6, cy: -37, r: 5, fill: '#ffffff40', stroke: ink, 'stroke-width': 1.8 }], ['path', { d: 'M-1 -37H1M-11 -38L-16 -40M11 -38L16 -40', stroke: ink, 'stroke-width': 1.8 }]],
             hand: [['path', { d: 'M-16 2L-36 -10V22Z', fill: cream, stroke: ink, 'stroke-width': 2, 'stroke-linejoin': 'round' }], ['ellipse', { cx: -36, cy: 6, rx: 4, ry: 16, fill: '#e7d6b4', stroke: ink, 'stroke-width': 2 }], ['rect', { x: -22, y: 8, width: 5, height: 10, rx: 2, fill: ink }]]
         },
