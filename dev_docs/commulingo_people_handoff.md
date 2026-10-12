@@ -37,6 +37,15 @@ documents `event-control/<id>`); `event-control.js` matches rows to phases
 with `phaseIndexForPeriod`. A `.traced.json` file still keys its phases by the
 formatted date ('1945.08').
 
+Glossary terms too (migrations 364–365): `commulingo_terms` has the full
+career column set (`start_*`, `end_*`, `start_qual`/`end_qual`, `ongoing`,
+override `period_label_ko/en`) plus `period_note_ko/en`, a remark shown after
+the period ("1917–1921 (전성기)"); `period_label`, `period_ko` and `period_en`
+are gone. `start_year`/`end_year` are the period's own years, no longer
+separate sort years. Term writes take `period` in the career shape (null when
+undated; "개념"-style text only as `label`) and `periodNote` {ko, en};
+`startYear`/`endYear` are no longer fields.
+
 ## Structured name parts — added 2026-07-24
 
 `commulingo_people` now stores names as parts: `given_name_ko/en`,
