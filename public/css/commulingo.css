@@ -4151,10 +4151,12 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 
 .commu-event-timeline-list { list-style: none; padding: 0; margin: 0; }
 .commu-event-timeline-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--border, #555); }
-.commu-event-timeline-list li > span { color: var(--text-muted); font-weight: 700; }
-/* Country tags: flags under the date, and the chip row above the list that
-   filters it (commulingo-event-timeline.js). */
-.commu-tl-flags { display: inline-flex; flex-wrap: wrap; gap: .25rem; margin-left: .45rem; vertical-align: -1px; }
+.commu-event-timeline-list li > span { color: var(--text-muted); font-weight: 700; font-size: var(--text-sm, .875rem); font-variant-numeric: tabular-nums; }
+/* The date stays on the badge's line; a range breaks only after its dash. */
+.commu-tl-date > span { white-space: nowrap; }
+/* Country tags: flags on their own line under the date, and the chip row
+   above the list that filters it (commulingo-event-timeline.js). */
+.commu-tl-flags { display: flex; flex-wrap: wrap; gap: .25rem; margin-top: .35rem; }
 .commu-tl-flags .commu-flag { height: 13px; width: auto; }
 .commu-tl-filter { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .8rem; }
 .commu-tl-chip {

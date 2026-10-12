@@ -121,6 +121,8 @@ async function validateEvent(client, id, fields) {
                 throw badRequest(`timeline[${i}] must be {date, title {ko,en}, body {ko,en}}`);
             }
             if (!String(item.date || '').trim()) throw badRequest(`timeline[${i}].date is required`);
+            // Dates are written 1848.03.04; the map's phase lookup reads only that form.
+            if (/^\d{4}-\d/.test(item.date)) throw badRequest(`timeline[${i}].date: write YYYY.MM.DD, not ${item.date}`);
             for (const key of ['title', 'body']) if (!hasBoth(item[key])) throw badRequest(`timeline[${i}].${key} needs ko and en`);
         });
     }
