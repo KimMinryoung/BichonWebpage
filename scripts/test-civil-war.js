@@ -55,6 +55,22 @@ for (const t of D.turns) {
     for (const id of t.cards) assert.ok(D.cards[id], `${t.id}: ${id}`);
 }
 
+// Every front a season asks divisions for must answer to them: from the
+// historical line, an empty front and a crowded one end differently.
+for (const [t, turn] of D.turns.entries()) {
+    for (const [id, threat] of Object.entries(turn.threats)) {
+        const s = G.start();
+        s.turn = t;
+        s.lines[id] = t ? D.fronts[id].history[t - 1] : D.startLines[id];
+        s.plan.choice = null;
+        const outcomes = new Set([0, 20].map(strength => {
+            const margin = strength - threat.pressure;
+            return G.outcomeOf(s, id, margin).change + '/' + G.outcomeOf(s, id, margin).overflow;
+        }));
+        assert.ok(outcomes.size > 1, `${turn.id} ${id}: divisions change nothing`);
+    }
+}
+
 // Played as history played it, the war follows history to Perekop.
 const hist = campaign(historical);
 assert.equal(hist.phase, 'battle');

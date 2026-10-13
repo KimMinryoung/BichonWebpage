@@ -261,8 +261,6 @@
             threats: {
                 east: { pressure: 7, foes: ['komuch', 'kolchak'], text: '카잔의 백군은 지쳤다. 지금 몰아치면 볼가를 되찾을 수 있다.', who: ['알렉산드르 콜차크', 'alexander-kolchak'] },
                 volga: { pressure: 5, foes: ['don'], text: '돈군이 차리친을 포위하려 한다. 식량 전권을 가지고 온 스탈린이 지휘까지 쥐었다.', who: ['표트르 크라스노프', 'pyotr-krasnov'] },
-                northwest: { pressure: 1, foes: ['central'], text: '독일군이 물러난 자리로 나아갈 수 있다.' },
-                west: { pressure: 1, foes: ['central'], text: '독일군이 벨라루스에서 철수한다. 민스크가 비어 간다.' },
             },
             cards: ['train', 'requisition', 'kombedy', 'cheka'],
             choice: {

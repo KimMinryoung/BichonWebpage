@@ -58,13 +58,6 @@
 
     function enterTurn(s) {
         const t = turnData(s);
-        // A front the season does not fight on keeps its line, except where
-        // the war arrives there for the first time: it starts where history had it.
-        for (const id of activeFronts(s)) {
-            if (s.lines[id] === 0 && DATA.startLines[id] === 0 && s.turn > 0 && !s.records.some(r => r.fronts[id])) {
-                s.lines[id] = DATA.fronts[id].history[s.turn - 1];
-            }
-        }
         // The season's draft and what changed it, for the army panel.
         const sources = [];
         const add = (label, n) => { if (n) sources.push({ label, n }); };
@@ -299,6 +292,15 @@
             fronts[id] = Object.assign({}, f, { before: before[id], after: s.lines[id], history: DATA.fronts[id].history[s.turn] });
         }
 
+        // Fronts not fought this season move as history did: the Germans'
+        // withdrawal, Wrangel's landing in Northern Tavria, a front closing.
+        for (const id of DATA.frontOrder) {
+            if (fronts[id]) continue;
+            const front = DATA.fronts[id];
+            const was = s.turn ? front.history[s.turn - 1] : DATA.startLines[id];
+            s.lines[id] = clamp(s.lines[id] + front.history[s.turn] - was, 0, front.cities.length);
+        }
+
         // The march on Warsaw that fell short: the rout before the Vistula.
         if (s.plan.choice === 'warsaw' && fronts.west && fronts.west.after < 3) {
             s.deserted += 3;
@@ -437,7 +439,7 @@
 
     const api = {
         DATA, VERSION, start, act, restore, serialize, forecast, activeFronts, turnData,
-        free, allocated, threatsOf, cardDivisions, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
+        free, allocated, threatsOf, cardDivisions, outcomeOf, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.CivilWarGame = api;
