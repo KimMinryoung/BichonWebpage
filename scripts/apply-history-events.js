@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 // New history-event batch (scripts/content/<batch>.json). Default: read-only preflight.
-// APP_ROOT=/app DB_HOST=leninbot-pg node runner.js spec.json --production
+// docker exec -i leninbot-frontend node /app/scripts/apply-history-events.js - --production < spec.json
+// (`-` reads the spec from stdin; DB_HOST is leninbot-pg inside the container)
 // Add --apply --backup=/tmp/unique-before.json to publish. People cards go first
 // through scripts/commulingo-people-upsert; this script never edits people.
 const fs = require('fs');
@@ -9,7 +10,10 @@ const assert = require('assert/strict');
 const crypto = require('crypto');
 const root = process.env.APP_ROOT || path.resolve(__dirname, '..');
 const { FLAG_NAMES } = require(path.join(root, 'data/commulingo/flag-icons'));
-const columns = ['title_ko', 'title_en', 'period_label', 'sort_order', 'question_ko', 'question_en',
+const { canonicalPeriod } = require(path.join(root, 'data/commulingo/career-period'));
+// The period is year/month/day columns (migrations 362/363), as in career entries.
+const periodColumns = ['start_year', 'start_month', 'start_day', 'end_year', 'end_month', 'end_day'];
+const columns = ['title_ko', 'title_en', ...periodColumns, 'sort_order', 'question_ko', 'question_en',
     'summary_ko', 'summary_en', 'outcome_ko', 'outcome_en', 'body_ko', 'body_en',
     'timeline', 'sources', 'locations', 'countries', 'relations', 'no_auto_link', 'link_expressions', 'focus', 'sides'];
 const jsonColumns = new Set(['timeline', 'sources', 'locations', 'countries', 'relations', 'no_auto_link', 'link_expressions', 'focus', 'sides']);
@@ -33,6 +37,9 @@ function validate(spec) {
         assert(Object.keys(e.fields).every(c => columns.includes(c)), 'unknown event field');
         const f = e.fields;
         assert(Number.isInteger(f.sort_order));
+        const period = canonicalPeriod({ start: [f.start_year, f.start_month, f.start_day].filter(v => v != null),
+            ...(f.end_year != null ? { end: [f.end_year, f.end_month, f.end_day].filter(v => v != null) } : {}) }, `${e.id}.period`);
+        assert(period.start, `${e.id}: period needs a start year`);
         assert(f.countries.length && new Set(f.countries).size === f.countries.length);
         f.countries.forEach(code => assert(FLAG_NAMES[code], `unknown country: ${code}`));
         assert.equal(f.locations.filter(m => m.kind === 'main').length, 1);
@@ -70,7 +77,8 @@ function validate(spec) {
         }
         assert(f.timeline.length >= 12);
         for (const p of f.timeline) {
-            assert(/^\d{4}/.test(p.date) && p.title.ko && p.title.en && p.body.ko && p.body.en);
+            assert(p.period?.start && equal(canonicalPeriod(p.period, `${e.id}.timeline`), p.period), `${e.id}: timeline period must be canonical {start:[y,m?,d?], end?}`);
+            assert(p.title.ko && p.title.en && p.body.ko && p.body.en);
             assert(p.country.length && p.country.every(code => f.countries.includes(code)));
         }
         assert.equal(new Set(e.people.map(p => p.person_id)).size, e.people.length);
@@ -137,7 +145,7 @@ async function main() {
     assert((production && process.env.DB_HOST === 'leninbot-pg') || (!production && isolated), 'explicit production or isolated destination required');
     const apply = args.includes('--apply'), backup = args.find(a => a.startsWith('--backup='))?.slice(9);
     assert(!production || !apply || backup, 'production apply requires a unique backup path');
-    const spec = JSON.parse(fs.readFileSync(files[0], 'utf8'));
+    const spec = JSON.parse(fs.readFileSync(files[0] === '-' ? 0 : files[0], 'utf8'));
     validate(spec);
     const db = require(path.join(root, 'config/database'));
     try { console.log(JSON.stringify(await applyBatch(db, spec, { apply, backup }), null, 2)); }
