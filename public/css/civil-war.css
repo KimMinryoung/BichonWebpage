@@ -120,7 +120,7 @@
 /* The game's layer */
 /* A front card under the pointer: its front blinks, the others dim. */
 .cw-map-frame.is-spotlight [data-front]:not(.is-lit) { opacity: .22; }
-.cw-map-frame.is-spotlight [data-front].is-lit { animation: cw-blink .8s ease-in-out infinite alternate; }
+.cw-map-frame.is-spotlight [data-front].is-lit { animation: cw-blink .8s ease-in-out 6 alternate; }
 @keyframes cw-blink { from { opacity: 1; } to { opacity: .3; } }
 @media (prefers-reduced-motion: reduce) { .cw-map-frame.is-spotlight [data-front].is-lit { animation: none; } }
 .cw-chain { fill: none; stroke: color-mix(in srgb, var(--text-secondary) 35%, transparent); stroke-width: 1; stroke-dasharray: 3 3; }

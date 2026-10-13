@@ -380,8 +380,10 @@
         return g;
     }
 
-    // A front card under the pointer or focus makes its front blink on the
-    // map (chain, cities, attackers, divisions) and dims the rest.
+    // A front card under the mouse or keyboard focus makes its front blink on
+    // the map (chain, cities, attackers, divisions) and dims the rest. Taps
+    // do not: a touch leaves no pointerleave on the card render() replaces,
+    // and a blink left running over the history layer stalled phones.
     function spotlight(id) {
         lit = id;
         mapEl.classList.toggle('is-spotlight', Boolean(id));
@@ -394,9 +396,9 @@
     }
 
     function bindSpotlight(card, id) {
-        card.addEventListener('mouseenter', () => spotlight(id));
-        card.addEventListener('mouseleave', () => spotlight(null));
-        card.addEventListener('focusin', () => spotlight(id));
+        card.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') spotlight(id); });
+        card.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') spotlight(null); });
+        card.addEventListener('focusin', e => { if (e.target.matches(':focus-visible')) spotlight(id); });
         card.addEventListener('focusout', e => { if (!card.contains(e.relatedTarget)) spotlight(null); });
     }
 
