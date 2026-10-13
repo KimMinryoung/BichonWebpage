@@ -65,11 +65,17 @@
                 s.lines[id] = DATA.fronts[id].history[s.turn - 1];
             }
         }
-        let divisions = t.mobilize + Math.round((s.workers - 60) / 10) - s.deserted;
-        if (s.petrogradFell) divisions -= 2;
-        divisions -= s.revolt;
+        // The season's draft and what changed it, for the army panel.
+        const sources = [];
+        const add = (label, n) => { if (n) sources.push({ label, n }); };
+        add(`노동자 지지 ${s.workers}`, Math.round((s.workers - 60) / 10));
+        add('굶주린 병사의 탈영', -s.deserted);
+        add('페트로그라드 상실', s.petrogradFell ? -2 : 0);
+        add('농민 봉기로 후방에 묶임', -s.revolt);
+        let divisions = t.mobilize + sources.reduce((a, x) => a + x.n, 0);
+        if (divisions < 2) { add('최소 동원', 2 - divisions); divisions = 2; }
         s.plan = {
-            divisions: Math.max(2, divisions), command: COMMAND, commissars: t.commissars,
+            divisions, command: COMMAND, commissars: t.commissars, sources,
             alloc: {}, commissar: {}, cards: [], choice: null,
         };
         for (const id of activeFronts(s)) { s.plan.alloc[id] = 0; s.plan.commissar[id] = false; }

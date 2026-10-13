@@ -126,6 +126,44 @@
         },
     };
 
+    // What the Red Army's divisions were made of, season by season. A
+    // turn's army[] lists [troop id, count]; the counts add up to its
+    // mobilize (the game's unit, not the historical division count).
+    const troops = {
+        latvian: {
+            name: '라트비아 소총사단', link: T('red-army'),
+            note: '옛 제국군의 라트비아 소총병 연대들로 1918년 4월 만든 사단. 내전 초기 붉은 군대에서 가장 믿을 만한 부대였다.',
+        },
+        baltic: {
+            name: '라트비아·에스토니아 소총사단', link: T('red-army'),
+            note: '1919년 10월 오룔 반격의 충격군. 의용군의 정예 사단들을 측면에서 쳤다.',
+        },
+        guards: {
+            name: '노동자 분견대·적위대', link: T('red-guards'),
+            note: '10월 혁명을 치른 공장 노동자의 무장대. 열의는 높았지만 훈련이 모자랐다.',
+        },
+        volunteers: {
+            name: '의용병 연대', link: T('red-army'),
+            note: '1월 창설 법령에 따라 지원한 병사들의 연대. 봄까지 20만 명 안팎이 등록했다.',
+        },
+        internationalists: {
+            name: '국제주의자 부대',
+            note: '러시아에 잡혀 있던 헝가리·독일·오스트리아 전쟁 포로 가운데 혁명에 가담한 이들의 부대.',
+        },
+        flotilla: {
+            name: '볼가 소함대', link: P('fyodor-raskolnikov'),
+            note: '라스콜니코프가 이끈 강 함대. 1918년 9월 카잔 탈환에 함께했다.',
+        },
+        conscripts: {
+            name: '징집 소총사단', link: T('political-commissar'),
+            note: '1918년 6월 볼가·우랄에서 시작한 징집으로 만든 사단. 구 장교가 지휘하고 정치위원이 감시했다.',
+        },
+        cavalry: {
+            name: '붉은 기병', link: P('semyon-budyonny'),
+            note: '돈의 부됸니가 키운 기병. 1919년 기병군단, 그해 11월 제1기병군이 된다.',
+        },
+    };
+
     const frontOrder = ['northwest', 'north', 'west', 'southwest', 'south', 'crimea', 'volga', 'east'];
     const moscow = ['모스크바', 55.76, 37.62];
     // Lines at the start, June 1918. Ukraine and the Baltic are under German
@@ -188,7 +226,7 @@
     const turns = [
         {
             id: 'czech', date: '1918년 6–8월', end: [1918, 8], title: '체코 군단의 반란',
-            mobilize: 6, commissars: 1, phase: 1,
+            mobilize: 6, commissars: 1, army: [['latvian', 1], ['guards', 2], ['volunteers', 2], ['internationalists', 1]], phase: 1,
             brief: [
                 '1918년 5월 25일, 시베리아 횡단철도를 따라 블라디보스토크로 가던 체코슬로바키아 군단 약 4만 명이 무장해제 명령을 거부했다. 6월 초까지 펜자에서 크라스노야르스크까지 철도 연선의 소비에트 권력이 무너졌고, 6월 8일 사마라에 사회혁명당 계열의 코무치 정부가 섰다.',
                 '붉은 군대는 1월에 창설 법령이 나왔을 뿐, 전투 부대라 부를 만한 것은 라트비아 소총병과 노동자 분견대 몇몇이었다. 남쪽에서는 크라스노프의 돈군이 볼가의 요충 차리친으로 향하고, 북쪽 바다에는 영국 함대가 와 있다.',
@@ -215,7 +253,7 @@
         },
         {
             id: 'volga', date: '1918년 9–12월', end: [1918, 12], title: '스비야시스크에서 차리친까지',
-            mobilize: 9, commissars: 2, phase: 1,
+            mobilize: 9, commissars: 2, army: [['conscripts', 5], ['latvian', 1], ['guards', 1], ['internationalists', 1], ['flotilla', 1]], phase: 1,
             brief: [
                 '트로츠키는 장갑열차로 카잔 건너편 스비야시스크에 사령부를 차리고, 도망친 연대의 지휘관과 정치위원을 총살하며 제5군을 다시 세웠다. 8월 30일 레닌이 저격당했고, 인민위원회는 「적색 테러」를 선포했다.',
                 '11월 독일이 항복해 우크라이나와 발트에서 물러나기 시작한다. 같은 달 옴스크에서는 콜차크 제독이 쿠데타로 「최고 통치자」가 되었다. 크라스노프는 차리친을 다시 노린다.',
@@ -243,7 +281,7 @@
         },
         {
             id: 'kolchak', date: '1919년 1–4월', end: [1919, 4], title: '콜차크의 춘계 공세',
-            mobilize: 13, commissars: 2, phase: 2,
+            mobilize: 13, commissars: 2, army: [['conscripts', 10], ['latvian', 1], ['cavalry', 1], ['internationalists', 1]], phase: 2,
             brief: [
                 '3월, 영국이 대 준 소총으로 무장한 콜차크군이 우랄을 넘었다. 한진의 서부군이 3월 13일 우파를 점령하고 볼가 100킬로미터 앞까지 밀려온다.',
                 '돈에서는 3월 베셴스카야의 카자크가 붉은 군대 후방에서 봉기했다. 남쪽의 데니킨은 쿠반과 북캅카스를 손에 넣고 북쪽을 바라본다.',
@@ -270,7 +308,7 @@
         },
         {
             id: 'directive', date: '1919년 5–7월', end: [1919, 7], title: '「모스크바 지령」',
-            mobilize: 15, commissars: 3, phase: 2,
+            mobilize: 15, commissars: 3, army: [['conscripts', 12], ['latvian', 1], ['cavalry', 2]], phase: 2,
             brief: [
                 '동부에서는 반격이 시작되었다. 하지만 남쪽이 무너지고 있다. 돈 봉기가 붉은 군대를 묶은 사이 데니킨이 6월 25일 하리코프, 30일 차리친을 차지했고, 7월 3일 차리친에서 모스크바로의 세 갈래 진격을 명령했다.',
                 '5월에는 유데니치의 북서군이 에스토니아에서 페트로그라드로 첫 공세를 시작했다. 이 공세의 길목인 얌부르크가 넘어갔다.',
@@ -298,7 +336,7 @@
         },
         {
             id: 'orel', date: '1919년 8–10월', end: [1919, 10], title: '위기의 정점: 오룔과 페트로그라드',
-            mobilize: 16, commissars: 3, phase: 3,
+            mobilize: 16, commissars: 3, army: [['conscripts', 12], ['baltic', 2], ['cavalry', 2]], phase: 3,
             brief: [
                 '8월 마몬토프의 기병이 남부전선의 후방을 휩쓸었다. 8월 31일 백군은 키예프에 들어갔고, 9월 20일 쿠르스크가 떨어졌다. 의용군의 정예 사단들이 오룔과 툴라, 그리고 모스크바를 향한다.',
                 '10월, 유데니치가 다시 페트로그라드로 온다. 서쪽에서는 폴란드군이 8월에 민스크를 차지했다. 데니킨의 후방 우크라이나에서는 마흐노의 반란군이 9월 페레고노프카에서 백군을 깨고 보급선을 끊고 있다.',
@@ -326,7 +364,7 @@
         },
         {
             id: 'counter', date: '1919년 11월–1920년 3월', end: [1920, 3], title: '남쪽으로의 반격',
-            mobilize: 18, commissars: 3, phase: 4,
+            mobilize: 18, commissars: 3, army: [['conscripts', 14], ['baltic', 1], ['cavalry', 3]], phase: 4,
             brief: [
                 '11월 14일 옴스크가 함락되었다. 콜차크군은 시베리아 횡단철도를 따라 2천 킬로미터를 물러나는 「대시베리아 빙상 행군」에 들어갔다. 남쪽의 데니킨군은 오룔에서 꺾여 돈으로 물러난다.',
                 '1920년 2월, 트로츠키가 우랄에서 돌아와 중앙위원회에 곡물 징발을 세금으로 바꾸자고 제안한다. 마을마다 징발대에 맞선 봉기가 늘고 있다.',
@@ -354,7 +392,7 @@
         },
         {
             id: 'poland', date: '1920년 4–8월', end: [1920, 8], title: '바르샤바로?',
-            mobilize: 19, commissars: 3, phase: 5,
+            mobilize: 19, commissars: 3, army: [['conscripts', 15], ['latvian', 1], ['cavalry', 3]], phase: 5,
             brief: [
                 '4월 25일 피우수트스키의 폴란드군이 페틀류라의 우크라이나군과 함께 공세를 시작해 5월 7일 키예프에 들어갔다. 붉은 군대는 6월 12일 키예프를 되찾고, 투하쳅스키의 서부전선이 7월 민스크를 지나 서쪽으로 내달린다.',
                 '6월, 데니킨에게서 지휘권을 넘겨받은 브란겔이 크림에서 나와 북타브리아를 차지했다. 7월 11일 영국 외무장관 커즌이 휴전과 「커즌선」을 제안한다.',
@@ -381,7 +419,7 @@
         },
         {
             id: 'perekop', date: '1920년 9–11월', end: [1920, 11], title: '페레코프',
-            mobilize: 18, commissars: 3, phase: 6, battle: true,
+            mobilize: 18, commissars: 3, army: [['conscripts', 14], ['latvian', 1], ['cavalry', 3]], phase: 6, battle: true,
             brief: [
                 '10월 폴란드와 휴전하자 붉은 군대는 남쪽으로 돌아섰다. 프룬제의 남부전선이 10월 말 북타브리아의 브란겔군을 크림으로 몰아넣는다.',
                 '크림으로 가는 길은 폭 8킬로미터의 페레코프 지협, 그 위를 가로막은 높이 10미터의 「터키 방벽」뿐이다. 동쪽은 얕은 석호 시바시다.',
@@ -470,7 +508,7 @@
         links: [['크론시타트 반란', E('kronstadt-1921')], ['안토노프 봉기', T('antonovshchina')], ['신경제정책', T('nep')]],
     };
 
-    const data = { factions, fronts, frontOrder, moscow, startLines, cards, turns, battle, epilogue };
+    const data = { factions, troops, fronts, frontOrder, moscow, startLines, cards, turns, battle, epilogue };
     if (typeof module === 'object' && module.exports) module.exports = data;
     else root.CivilWarData = data;
 })(typeof window !== 'undefined' ? window : globalThis);

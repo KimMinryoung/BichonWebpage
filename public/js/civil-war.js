@@ -157,7 +157,7 @@
         const items = [];
         if (s.phase === 'plan') {
             items.push(...stat('사단', `${G.free(s)} / ${plan.divisions}`, '보낼 사단 / 전체', G.free(s) > 0));
-            items.push(...stat('지휘력', String(plan.command), '카드에 쓴다'));
+            items.push(...stat('지휘력', String(plan.command), s.cohesion < 30 ? '당 분열로 시기마다 2. 남기면 사라짐' : '시기마다 3으로 다시 채움. 남기면 사라짐'));
             items.push(...stat('정치위원', `${plan.commissars - G.commissarsUsed(s)} / ${plan.commissars}`, '남음 / 전체'));
             items.push(...stat('곡물', String(s.grain), `이번 시기 +${supply.income}, 필요 ${supply.need}`, supply.ratio < 1));
         } else {
@@ -167,6 +167,33 @@
         items.push(...stat('노동자 지지', String(s.workers), '동원에 영향', s.workers < 40));
         items.push(...stat('당 결속', String(s.cohesion), s.cohesion < 30 ? '분열' : '', s.cohesion < 30));
         $('cwStats').replaceChildren(...items);
+        $('cwArmy').hidden = s.phase !== 'plan';
+        if (s.phase === 'plan') renderArmy();
+    }
+
+    // Where this season's divisions came from: the troops of the period,
+    // then what the war, the cards and the fork added or took.
+    function renderArmy() {
+        const t = G.turnData(s);
+        const changes = s.plan.sources.slice();
+        for (const c of s.plan.cards) {
+            const n = G.cardDivisions(s, D.cards[c.id]);
+            if (n) changes.push({ label: D.cards[c.id].title, n });
+        }
+        const opt = s.plan.choice && t.choice.options.find(o => o.id === s.plan.choice);
+        if (opt && opt.divisions) changes.push({ label: opt.label, n: opt.divisions });
+        $('cwArmy').replaceChildren(...[
+            el('h3', {}, `붉은 군대 · 이번 시기 사단 ${s.plan.divisions}개`),
+            el('ul', { class: 'cw-troops' }, ...t.army.map(([id, n]) => {
+                const troop = D.troops[id];
+                return el('li', {},
+                    el('span', { class: 'cw-troop-pips', 'aria-hidden': 'true' }, ...Array.from({ length: n }, () => el('i'))),
+                    el('strong', {}, troop.link ? el('a', Object.assign({ href: troop.link }, NEW_TAB), troop.name) : troop.name),
+                    el('span', { class: 'cw-sr' }, ` ${n}개`),
+                    el('small', {}, troop.note));
+            })),
+            changes.length ? el('ul', { class: 'cw-troop-changes' }, ...changes.map(c => el('li', { class: c.n < 0 ? 'is-minus' : 'is-plus' }, `${c.label} ${signed(c.n)}`))) : null,
+        ].filter(Boolean));
     }
 
     function renderBrief() {

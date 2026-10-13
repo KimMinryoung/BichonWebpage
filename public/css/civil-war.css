@@ -47,6 +47,21 @@
 .cw-stats .is-warn strong { color: var(--clr-red); }
 .cw-stats .is-warn small { color: var(--clr-red); font-weight: 700; }
 
+/* The army panel: the season's troops as pips, then the changes */
+.cw-army { border-top: 1px solid var(--border); padding-top: 12px; }
+.cw-army h3 { font-size: .95rem; margin-bottom: 8px; }
+.cw-troops { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px 16px; }
+.cw-troops li { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
+.cw-troops strong { font-size: .9rem; }
+.cw-troops strong a { color: inherit; }
+.cw-troops small { grid-column: 1 / -1; font-size: .78rem; color: var(--text-secondary); line-height: var(--leading-normal); }
+.cw-troop-pips { display: inline-flex; flex-wrap: wrap; gap: 2px; max-width: 120px; }
+.cw-troop-pips i { width: 9px; height: 9px; background: var(--cw-red); }
+.cw-troop-changes { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 6px; font-size: .8rem; font-weight: 700; }
+.cw-troop-changes li { border: 1px solid var(--border); padding: 3px 8px; }
+.cw-troop-changes .is-plus { border-color: var(--btn-primary, #2da44e); }
+.cw-troop-changes .is-minus { border-color: var(--clr-red); color: var(--clr-red); }
+
 /* Briefing: the text-first heart of each season */
 .cw-brief { border-left: 4px solid var(--cw-red); padding: 4px var(--content-inset); margin-bottom: 18px; max-width: 46rem; }
 .cw-brief p { margin: 0 0 10px; }
