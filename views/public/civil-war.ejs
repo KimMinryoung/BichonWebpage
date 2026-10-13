@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-  <%- include('../partials/head', { pageTitle: '붉은 전선 1918–1920', pageDescription: '러시아 내전의 여덟 시기를 소비에트 정권의 자리에서 결정하고, 페레코프와 시바시에서 마지막 전투를 지휘하는 역사 전략 게임', pagePath: '/games/civil-war/', hasEnglishVersion: false }) %>
+  <%- include('../partials/head', { pageTitle: '붉은 전선 1918–1920', pageDescription: '러시아 내전의 여덟 시기를 소비에트 정권의 자리에서 결정하고, 페레코프·시바시·촌가르에서 마지막 전투를 지휘하는 역사 전략 게임', pagePath: '/games/civil-war/', hasEnglishVersion: false }) %>
   <link rel="stylesheet" href="/css/games.css?v=<%= assetVersion %>">
   <link rel="stylesheet" href="/css/civil-war.css?v=<%= assetVersion %>">
 </head>
@@ -20,7 +20,7 @@
           <li><strong>정세를 읽는다</strong><span>1918년 여름 체코 군단의 반란부터 1920년 가을 페레코프까지, 여덟 시기의 실제 정세가 브리핑으로 옵니다.</span></li>
           <li><strong>결단한다</strong><span>군사전문가, 식량 할당제, 우랄 너머의 추격, 바르샤바. 시기마다 지도부가 실제로 부딪친 갈림길에서 고릅니다. 고른 뒤에는 역사가 무엇을 택했는지 보여 줍니다.</span></li>
           <li><strong>사단을 보낸다</strong><span>내선의 이점: 시기마다 모든 사단을 다시 나눠 보낼 수 있습니다. 조언자 카드로 장갑열차를 보내고 곡물을 거두되, 징발은 농촌을 등 돌리게 합니다.</span></li>
-          <li><strong>페레코프를 넘는다</strong><span>마지막 시기에는 칸 단위 전술 전투로 터키 방벽과 시바시를 직접 지휘합니다.</span></li>
+          <li><strong>페레코프를 넘는다</strong><span>마지막 시기에는 칸 단위 전술 전투로 터키 방벽·시바시·촌가르를 직접 지휘합니다.</span></li>
         </ol>
         <div><button id="cwStart" type="button" class="cw-primary">새 게임 시작</button> <button id="cwContinue" type="button" hidden>저장된 게임 이어하기</button></div>
         <p class="games-note" id="cwSaveNote">한 판 30–40분 · 로그인 없이 · 이 브라우저에 자동 저장</p>
@@ -66,7 +66,7 @@
       <p><strong>지휘력.</strong> 시기마다 3으로 다시 채워지고, 쓰지 않은 지휘력은 다음 시기로 넘어가지 않습니다. 당 결속이 30 아래면 2입니다.</p>
       <p><strong>지지와 결속.</strong> 노동자 지지는 동원되는 사단 수를 바꿉니다. 농민 지지가 35 아래로 떨어지면 녹색군 봉기가 일어나 다음 시기 사단 2개, 20 아래면 5개가 후방에 묶입니다. 봉기가 있을 때 체카의 후방 단속 카드를 쓰면 묶인 사단의 절반이 바로 돌아옵니다.</p>
       <p><strong>평가.</strong> 페레코프 돌파, 시기별 전선 위치의 합이 역사 이상, 농민 지지 40 이상으로 종전. 세 가지로 별을 받습니다.</p>
-      <p><strong>전투.</strong> 부대를 누르면 갈 수 있는 칸과 칠 수 있는 적이 표시됩니다. 부대마다 한 턴에 한 번 움직이고 한 번 공격합니다. 공격한 뒤에는 움직일 수 없습니다. 키보드로는 Tab으로 부대와 칸을 옮겨 다니고 Enter로 고릅니다.</p>
+      <p><strong>전투.</strong> 페레코프의 터키 방벽, 시바시 여울, 촌가르 해협 가운데 어디로든 크림에 들어갈 수 있습니다. 부대를 누르면 갈 수 있는 칸과 칠 수 있는 적이 표시됩니다. 부대마다 한 턴에 한 번 움직이고 한 번 공격합니다. 공격한 뒤에는 움직일 수 없지만, 공격 전이라면 이동을 취소할 수 있습니다. 포병은 진지를 칠 때마다 그 방어를 깎습니다. 백군 예비대는 하나뿐이라 한 구역에 묶이면 다른 구역이 비게 됩니다. 키보드로는 Tab으로 부대와 칸을 옮겨 다니고 Enter로 고릅니다.</p>
     </details>
     <section class="cw-reading"><h2>전장에서 다시, 읽기로</h2><div class="ui-link-group"><a class="btn" href="/commulingo/events/civil-war" target="_blank" rel="noopener">러시아 내전 ↗</a><a class="btn" href="/commulingo/events/soviet-polish-war" target="_blank" rel="noopener">소비에트-폴란드 전쟁 ↗</a><a class="btn" href="/commulingo/terms/war-communism" target="_blank" rel="noopener">전시 공산주의 ↗</a></div></section>
   </main>

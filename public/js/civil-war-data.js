@@ -442,62 +442,88 @@
         },
     ];
 
-    // The decisive battle: Perekop and the Sivash, 7–11 November 1920.
-    // Grid rows run north (Red mainland) to south (Crimea). Terrain:
+    // The decisive battle: Perekop, the Sivash and Chongar, 7–12 November
+    // 1920. Grid rows run north (Red mainland) to south (Crimea). Terrain:
     // . steppe, ~ Sivash shallows (fordable while the west wind holds),
-    // # deep water, W the Turkish Wall, Y the Yushun lines, t town.
+    // # deep water, W the Turkish Wall, Y the Yushun lines, C the Chongar
+    // positions, b the burnt Chongar bridge, t town.
     const battle = {
-        title: '페레코프-시바시 작전', date: '1920년 11월 7–11일',
+        title: '페레코프-촌가르 작전', date: '1920년 11월 7–12일',
         map: [
-            '..........',
-            '..........',
-            '#...~~~~~~',
-            '#WWW~~~~~~',
-            '#...~~~~~~',
-            '#t..~~..~~',
-            '#...~...~~',
-            '#.......~~',
-            '#YYYYYY~~~',
-            '#..t......',
+            '#............',
+            '#............',
+            '#...~~~~~~...',
+            '#WWW~~~~~~...',
+            '#...~~~~~~~..',
+            '#t..~~...~~..',
+            '#...~....~#bb',
+            '#.........CCC',
+            '#YYYYYYYY....',
+            '#..t.........',
+            '#.........t..',
+            '#............',
         ],
-        goal: [9, 3],
+        goals: [{ at: [9, 3], name: '유순 역' }, { at: [10, 10], name: '잔코이' }],
+        towns: [['아르먄스크', 5, 1]],
+        places: [['터키 방벽', 3, 0.1], ['시바시', 3, 6], ['리톱스키 반도', 6, 5], ['유순 방어선', 8, 0.1], ['북타브리아', 0, 4], ['촌가르 반도', 2, 9.6], ['촌가르 해협', 6, 9.2], ['크림', 11, 6]],
         windTurns: 4,
-        turnLimit: 10,
-        // Red ground here (the Litovsky peninsula) turns the Wall's flank.
-        flank: { minRow: 5, minCol: 5 },
+        turnLimit: 12,
+        // A Red unit on dry ground south of a line, within its columns and
+        // rows (the outlined area on the board), turns it; its garrison
+        // makes for the fallback tile.
+        lines: {
+            wall: { name: '터키 방벽', row: 3, until: 7, cols: [1, 8], label: [7, 4.1], fallback: [7, 2] },
+            chongar: { name: '촌가르 방어선', row: 7, until: 11, cols: [9, 12], label: [11, 9.1], fallback: [9, 11] },
+        },
+        // The White reserve answers Red units past a sector's alarm row.
+        sectors: {
+            perekop: { name: '페레코프', cols: [0, 8], alarm: 4 },
+            chongar: { name: '촌가르', cols: [9, 12], alarm: 6 },
+        },
         terrain: {
             '.': { name: '초원', cost: 1, def: 0 },
-            '~': { name: '시바시 여울', cost: 1, def: -1, ford: true },
+            '~': { name: '시바시 여울', cost: 2, def: -1, ford: true },
             '#': { name: '깊은 물', cost: 99, def: 0 },
-            W: { name: '터키 방벽', cost: 3, def: 3 },
-            Y: { name: '유순 방어선', cost: 2, def: 2 },
+            W: { name: '터키 방벽', cost: 3, def: 3, fort: 'wall' },
+            Y: { name: '유순 방어선', cost: 2, def: 2, fort: 'yushun' },
+            C: { name: '촌가르 방어선', cost: 2, def: 2, fort: 'chongar' },
+            b: { name: '촌가르 해협', cost: 2, def: 0 },
             t: { name: '마을', cost: 1, def: 1 },
         },
         units: [
-            { id: 'r51a', tag: '51', side: 'red', name: '제51사단', sub: '블류헤르', kind: 'inf', at: [1, 1], hp: 10, atk: 5, def: 3, mv: 3, person: 'vasily-blyukher' },
-            { id: 'r51b', tag: '51돌격', side: 'red', name: '제51사단 돌격여단', sub: '블류헤르', kind: 'inf', at: [1, 2], hp: 10, atk: 5, def: 3, mv: 3 },
-            { id: 'r51g', tag: '51포병', side: 'red', name: '제51사단 포병', kind: 'art', at: [0, 2], hp: 7, atk: 4, def: 1, mv: 2, range: 2 },
-            { id: 'rcz', tag: '증원', side: 'red', name: '증원 사단', sub: '서부에서 온', kind: 'inf', at: [0, 3], hp: 10, atk: 4, def: 3, mv: 3, flag: 'curzon' },
+            { id: 'r51a', tag: '51', side: 'red', name: '제51사단', sub: '블류헤르', kind: 'inf', at: [0, 1], hp: 10, atk: 5, def: 3, mv: 3, person: ['바실리 블류헤르', 'vasily-blyukher'] },
+            { id: 'r51b', tag: '51돌격', side: 'red', name: '제51사단 돌격여단', sub: '블류헤르', kind: 'inf', at: [0, 3], hp: 10, atk: 5, def: 3, mv: 3 },
+            { id: 'r51g', tag: '51포병', side: 'red', name: '제51사단 포병', kind: 'art', at: [1, 2], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
+            { id: 'r6g', tag: '중포', side: 'red', name: '제6군 중포병', kind: 'art', at: [1, 1], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
+            { id: 'rcz', tag: '증원', side: 'red', name: '증원 사단', sub: '서부에서 온', kind: 'inf', at: [0, 2], hp: 10, atk: 4, def: 3, mv: 3, flag: 'curzon' },
             { id: 'r15', tag: '15', side: 'red', name: '제15사단', sub: '시바시 도하', kind: 'inf', at: [1, 5], hp: 10, atk: 4, def: 3, mv: 3 },
-            { id: 'rmk', tag: '마흐노', side: 'red', name: '마흐노 부대', sub: '카레트니크', kind: 'cav', at: [1, 6], hp: 8, atk: 5, def: 2, mv: 5, flag: 'makhno' },
+            { id: 'rmk', tag: '마흐노', side: 'red', name: '마흐노 부대', sub: '카레트니크', kind: 'cav', at: [1, 6], hp: 8, atk: 5, def: 2, mv: 5, flag: 'makhno', person: ['네스토르 마흐노', 'nestor-makhno'] },
             { id: 'r52', tag: '52', side: 'red', name: '제52사단', sub: '시바시 도하', kind: 'inf', at: [1, 7], hp: 10, atk: 4, def: 3, mv: 3 },
-            { id: 'w1', tag: '드로즈', side: 'white', name: '드로즈돕스키 사단', sub: '방벽 수비', kind: 'inf', at: [3, 1], hp: 10, atk: 4, def: 3, mv: 3, role: 'wall' },
-            { id: 'w2', tag: '드로즈', side: 'white', name: '드로즈돕스키 사단', sub: '방벽 수비', kind: 'inf', at: [3, 2], hp: 10, atk: 4, def: 3, mv: 3, role: 'wall' },
-            { id: 'w2b', tag: '수비대', side: 'white', name: '방벽 수비대', kind: 'inf', at: [3, 3], hp: 8, atk: 3, def: 3, mv: 3, role: 'wall' },
-            { id: 'wg', tag: '포대', side: 'white', name: '방벽 포대', kind: 'art', at: [4, 2], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'wall' },
-            { id: 'w3', tag: '쿠반', side: 'white', name: '쿠반 여단', sub: '리톱스키 반도', kind: 'inf', at: [5, 6], hp: 8, atk: 3, def: 2, mv: 3, role: 'hold' },
-            { id: 'w4', tag: '바르보', side: 'white', name: '바르보비치 기병군단', sub: '반격 예비', kind: 'cav', at: [7, 3], hp: 10, atk: 6, def: 2, mv: 5, role: 'strike' },
+            { id: 'r1c', tag: '1기병', side: 'red', name: '제1기병군', sub: '부됸니', kind: 'cav', at: [0, 8], hp: 12, atk: 6, def: 2, mv: 5, person: ['세묜 부됸니', 'semyon-budyonny'] },
+            { id: 'r30', tag: '30', side: 'red', name: '제30사단', sub: '제4군', kind: 'inf', at: [1, 11], hp: 10, atk: 4, def: 3, mv: 3 },
+            { id: 'r30b', tag: '30여단', side: 'red', name: '제30사단 여단', sub: '제4군', kind: 'inf', at: [1, 12], hp: 10, atk: 4, def: 3, mv: 3 },
+            { id: 'r4g', tag: '4군포', side: 'red', name: '제4군 포병', kind: 'art', at: [0, 11], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
+            { id: 'w1', tag: '드로즈', side: 'white', name: '드로즈돕스키 사단', sub: '방벽 수비', kind: 'inf', at: [3, 1], hp: 10, atk: 4, def: 3, mv: 3, role: 'wall', line: 'wall' },
+            { id: 'w2', tag: '드로즈', side: 'white', name: '드로즈돕스키 사단', sub: '방벽 수비', kind: 'inf', at: [3, 2], hp: 10, atk: 4, def: 3, mv: 3, role: 'wall', line: 'wall' },
+            { id: 'w2b', tag: '수비대', side: 'white', name: '방벽 수비대', kind: 'inf', at: [3, 3], hp: 8, atk: 3, def: 3, mv: 3, role: 'wall', line: 'wall' },
+            { id: 'wg', tag: '포대', side: 'white', name: '방벽 포대', kind: 'art', at: [4, 2], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'wall', line: 'wall' },
+            { id: 'w3', tag: '쿠반', side: 'white', name: '쿠반 여단', sub: '리톱스키 반도', kind: 'inf', at: [5, 7], hp: 8, atk: 3, def: 2, mv: 3, role: 'hold' },
+            { id: 'w4', tag: '바르보', side: 'white', name: '바르보비치 기병군단', sub: '예비', kind: 'cav', at: [9, 6], hp: 10, atk: 6, def: 2, mv: 5, role: 'strike' },
             { id: 'w5', tag: '코르닐', side: 'white', name: '코르닐로프 사단', sub: '유순 방어선', kind: 'inf', at: [8, 2], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
             { id: 'w6', tag: '마르코', side: 'white', name: '마르코프 사단', sub: '유순 방어선', kind: 'inf', at: [8, 5], hp: 9, atk: 4, def: 3, mv: 3, role: 'hold' },
+            { id: 'wc1', tag: '촌가르', side: 'white', name: '촌가르 수비대', sub: '다리 어귀', kind: 'inf', at: [7, 11], hp: 8, atk: 4, def: 3, mv: 3, role: 'wall', line: 'chongar' },
+            { id: 'wc2', tag: '촌가르', side: 'white', name: '촌가르 수비대', sub: '동쪽 진지', kind: 'inf', at: [7, 12], hp: 8, atk: 3, def: 3, mv: 3, role: 'wall', line: 'chongar' },
+            { id: 'wcg', tag: '포대', side: 'white', name: '촌가르 포대', kind: 'art', at: [8, 11], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'wall', line: 'chongar' },
         ],
         brief: [
-            '정면의 제51사단은 터키 방벽을 친다. 방벽 위의 적은 방어 +3이라 정면으로는 쉽게 넘지 못한다.',
-            '제15·52사단은 서풍이 시바시의 물을 밀어낸 사이 얕은 여울을 건너 리톱스키 반도로 간다. 여울 위에서는 방어 −1이다. 4턴이 지나면 바람이 바뀌어 물이 다시 차오른다. 그 뒤로는 여울에 들어갈 수 없고, 여울에 남은 부대는 턴마다 피해를 입는다.',
+            '크림으로 들어가는 길은 셋이다. 서쪽 페레코프 지협의 터키 방벽(방어 +3), 그 동쪽 시바시의 얕은 여울, 동쪽 끝의 촌가르 해협이다. 유순 역이나 잔코이에 붉은 군대 부대를 세우면 크림으로 가는 길이 열린다. 12턴이 주어진다.',
+            '포병은 진지(방벽·유순·촌가르) 위의 적을 칠 때마다 그 진지의 방어를 1씩 깎는다. 포격을 거듭하면 정면으로도 방벽을 넘을 수 있지만 시간이 든다. 첫 칸은 비용이 이동력보다 커도 들어갈 수 있어서, 포병도 한 턴에 방벽 한 칸씩 넘는다.',
+            '시바시 여울은 이동 비용 2, 방어 −1이다. 4턴이 지나면 바람이 바뀌어 물이 다시 차오른다. 그 뒤로는 여울에 들어갈 수 없고, 여울에 남은 부대는 턴마다 피해를 입는다.',
+            '방어선 뒤의 노란 점선 지역에 붉은 부대가 서면 그 방어선은 우회된다. 수비대의 진지 방어는 +1로 줄고, 수비대는 물러날 길을 찾는다.',
+            '백군 예비대인 바르보비치 기병군단은 하나뿐이다. 붉은 군대가 가장 깊이 들어온 구역으로 달려가고, 그 구역의 위협이 사라질 때까지 다른 곳으로 가지 않는다. 한쪽에서 먼저 압박해 예비대를 끌어낸 뒤 다른 쪽을 칠 수 있다.',
             '적과 맞닿은 칸에 들어가면 그 턴의 이동은 끝난다. 한 적을 여럿이 둘러싸고 치면 둘러싼 부대마다 피해가 1씩 늘어난다.',
-            '붉은 군대가 리톱스키 반도(방벽 남동쪽, 시바시 안의 땅)에 발을 디디면 방벽 수비대는 퇴로가 끊길까 봐 방벽을 버리고 유순으로 물러난다.',
-            '10턴 안에 유순 역(맨 아래 마을)에 붉은 군대 부대를 세우면 크림으로 가는 길이 열린다.',
         ],
-        history: '11월 8일 새벽 제51사단의 방벽 정면 공격은 철조망과 기관총 앞에서 막혔다. 같은 날 밤 제15·52사단과 마흐노 부대가 현지 주민의 안내로 시바시를 건너 리톱스키 반도에 올랐고, 바르보비치 기병의 반격을 버텼다. 퇴로를 위협받은 백군은 9일 새벽 방벽을 버렸다. 11일 유순 방어선이 뚫렸다.',
+        history: '11월 8일 새벽 제51사단의 방벽 정면 공격은 철조망과 기관총 앞에서 막혔다. 같은 날 밤 제15·52사단과 마흐노 부대가 현지 주민의 안내로 시바시를 건너 리톱스키 반도에 올랐고, 바르보비치 기병의 반격을 버텼다. 퇴로를 위협받은 백군은 9일 새벽 방벽을 버렸다. 11일 유순 방어선이 뚫렸고, 같은 날 밤 제4군의 제30사단이 촌가르 진지를 돌파했다. 붉은 기병이 그 뒤를 따라 크림으로 들어갔다.',
     };
 
     const epilogue = {

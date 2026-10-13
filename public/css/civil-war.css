@@ -261,9 +261,9 @@
 .cw-battle-brief { margin-bottom: 14px; }
 .cw-battle-brief summary { cursor: pointer; font-weight: 700; min-height: 44px; display: flex; align-items: center; }
 .cw-battle-brief p { margin: 0 0 8px; max-width: 46rem; }
-.cw-battle-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(260px, 1fr); gap: 18px; align-items: start; }
+.cw-battle-layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr); gap: 18px; align-items: start; }
 .cw-grid-wrap { min-width: 0; }
-.cw-grid { display: block; width: 100%; max-width: 560px; height: auto; font-family: inherit; }
+.cw-grid { display: block; width: 100%; max-width: 680px; height: auto; font-family: inherit; }
 .cw-tile { stroke: color-mix(in srgb, var(--border) 35%, transparent); stroke-width: 1; }
 .cw-tile.t-steppe { fill: color-mix(in srgb, #c8b77a 30%, var(--bg-surface)); }
 .cw-tile.t-town { fill: color-mix(in srgb, #9d8a62 55%, var(--bg-surface)); }
@@ -272,11 +272,14 @@
 .cw-tile.t-deep { fill: color-mix(in srgb, #1f4f8a 75%, var(--bg-surface)); }
 .cw-tile.t-wall { fill: color-mix(in srgb, #b4652a 70%, var(--bg-surface)); }
 .cw-tile.t-yushun { fill: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
+.cw-tile.t-chongar { fill: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
+.cw-tile.t-strait { fill: color-mix(in srgb, #3f6f95 55%, var(--bg-surface)); }
 .cw-tile.is-goal { stroke: var(--clr-red); stroke-width: 3; }
 .cw-mark-wall, .cw-mark-trench, .cw-mark-water { fill: none; pointer-events: none; }
 .cw-mark-wall { stroke: color-mix(in srgb, #3a1e0a 70%, var(--text-primary)); stroke-width: 2; }
 .cw-mark-trench { stroke: color-mix(in srgb, var(--text-primary) 55%, transparent); stroke-width: 1.6; }
 .cw-mark-water { stroke: #ffffff; stroke-opacity: .35; stroke-width: 1.2; }
+.cw-wear { font-size: 8px; font-weight: 800; fill: var(--clr-red); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 2px; pointer-events: none; }
 .cw-tile-label { font-size: 9px; font-weight: 700; fill: var(--text-primary); pointer-events: none; }
 .cw-flank-zone { fill: none; stroke: #d9a514; stroke-width: 2.5; stroke-dasharray: 7 4; pointer-events: none; }
 .cw-danger { fill: var(--emap-blue); fill-opacity: .28; stroke: var(--emap-blue); stroke-width: 1.5; pointer-events: none; }
@@ -291,6 +294,7 @@
 .cw-terrain-key .k-ford { background: color-mix(in srgb, #5f93b8 45%, var(--bg-surface)); }
 .cw-terrain-key .k-wall { background: color-mix(in srgb, #b4652a 70%, var(--bg-surface)); }
 .cw-terrain-key .k-yushun { background: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
+.cw-terrain-key .k-strait { background: color-mix(in srgb, #3f6f95 55%, var(--bg-surface)); }
 .cw-terrain-key .k-town { background: color-mix(in srgb, #9d8a62 55%, var(--bg-surface)); }
 .cw-terrain-key .k-move { background: color-mix(in srgb, #f2d64b 30%, transparent); border: 2px dashed #f2d64b; }
 .cw-terrain-key .k-flank { border: 2px dashed #d9a514; }
@@ -367,6 +371,9 @@
     .cw-calendar small { display: none; }
     .cw-command { position: sticky; bottom: 0; background: var(--bg-canvas); border-top: 1px solid var(--border); padding-block: 8px; margin-inline: calc(-1 * var(--content-inset) * 0); z-index: 2; }
     .cw-command .cw-primary { flex: 1 1 100%; margin: 0; }
+    /* The board keeps a readable cell and scrolls sideways instead. */
+    .cw-grid-scroll { overflow-x: auto; }
+    .cw-grid { min-width: 540px; }
     /* The battle's orders stay under the thumb below the grid. */
     .cw-battle-actions { position: sticky; bottom: 0; background: var(--bg-surface); border-top: 1px solid var(--border); padding-block: 8px; z-index: 2; }
     .cw-battle-actions .cw-primary { margin-left: auto; }

@@ -182,28 +182,54 @@ assert.equal(G.restore('{'), null);
 
 // ── Battle ──
 
-// A plain soldier's battle: every unit heads for its destination and hits
-// the best target it can reach. sivash: the crossing divisions make for the
-// Litovsky peninsula first; wallOnly: nobody leaves the isthmus.
-function fight(flags, mode) {
+// A plain soldier's battle: each group follows its route, waypoint by
+// waypoint, and every unit hits the best target it can reach; guns favour
+// targets whose fortification they wear. A null route holds and shoots.
+function fight(routes, flags = { makhno: true }) {
     const b = B.start(D.battle, flags);
-    const goal = { r: D.battle.goal[0], c: D.battle.goal[1] };
-    const crossing = ['r15', 'r52', 'rmk'];
+    const rows = D.battle.map.length, cols = D.battle.map[0].length;
+    const goals = D.battle.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
+    // Path cost to a tile, ignoring units.
+    const costTo = dest => {
+        const d = Array.from({ length: rows }, () => Array(cols).fill(Infinity));
+        d[dest.r][dest.c] = 0;
+        const queue = [[dest.r, dest.c]];
+        while (queue.length) {
+            queue.sort((x, y) => d[x[0]][x[1]] - d[y[0]][y[1]]);
+            const [r, c] = queue.shift();
+            for (const [dr, dc] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
+                const nr = r + dr, nc = c + dc;
+                if (nr < 0 || nc < 0 || nr >= rows || nc >= cols) continue;
+                const t = B.terrain(b, nr, nc);
+                if (t.cost >= 99 || (t.ford && !B.fordOpen(b))) continue;
+                const nd = d[r][c] + B.terrain(b, r, c).cost;
+                if (nd < d[nr][nc]) { d[nr][nc] = nd; queue.push([nr, nc]); }
+            }
+        }
+        return d;
+    };
+    const value = x => x.p.dmg - x.p.counter + (x.p.wears ? 2 : 0) + (x.p.dmg >= x.t.hp ? 4 : 0);
+    const wp = {};
     while (!b.result) {
         for (const u of b.units.filter(x => x.side === 'red' && x.hp > 0)) {
-            if (b.result) break;
+            if (b.result || u.hp <= 0) continue;
+            const route = Object.entries(routes).find(([ids]) => ids.split(',').includes(u.id));
+            let dest = null;
+            if (route && route[1]) {
+                const path = route[1];
+                wp[u.id] = wp[u.id] || 0;
+                while (wp[u.id] < path.length - 1 && Math.abs(u.r - path[wp[u.id]].r) + Math.abs(u.c - path[wp[u.id]].c) <= 1) wp[u.id]++;
+                dest = path[wp[u.id]];
+            }
             const reach = B.reachable(b, u);
-            const onGoal = reach.find(t => t.r === goal.r && t.c === goal.c);
-            if (onGoal) { assert.ok(B.act(b, 'move', u.id, goal.r, goal.c)); break; }
-            let dest = goal;
-            if (mode === 'sivash' && crossing.includes(u.id) && !b.flanked) dest = { r: 6, c: 6 };
-            const allowed = mode === 'wallOnly' ? reach.filter(t => t.c <= 3) : reach;
-            const best = () => B.targets(b, u).map(t => ({ t, p: B.preview(b, u, t) })).sort((a, z) => (z.p.dmg - z.p.counter) - (a.p.dmg - a.p.counter))[0];
+            const goal = dest && goals.find(g => reach.some(t => t.r === g.r && t.c === g.c));
+            if (goal) { assert.ok(B.act(b, 'move', u.id, goal.r, goal.c)); break; }
+            const best = () => B.targets(b, u).map(t => ({ t, p: B.preview(b, u, t) })).sort((x, y) => value(y) - value(x))[0];
             let target = best();
-            if (!target || (b.flanked && target.p.dmg < 3)) {
-                const here = Math.abs(u.r - dest.r) + Math.abs(u.c - dest.c);
-                const step = allowed.map(t => ({ t, d: Math.abs(t.r - dest.r) + Math.abs(t.c - dest.c) })).sort((a, z) => a.d - z.d)[0];
-                if (step && step.d < here) B.act(b, 'move', u.id, step.t.r, step.t.c);
+            if (dest && !(target && (u.kind === 'art' || target.p.dmg - target.p.counter >= 1))) {
+                const d = costTo(dest);
+                const step = reach.map(t => ({ t, d: d[t.r][t.c] })).sort((x, y) => x.d - y.d || x.t.cost - y.t.cost)[0];
+                if (step && step.d < d[u.r][u.c]) B.act(b, 'move', u.id, step.t.r, step.t.c);
                 target = best();
             }
             if (target && !b.result) B.act(b, 'attack', u.id, target.t.id);
@@ -213,13 +239,52 @@ function fight(flags, mode) {
     return b;
 }
 
-const crossed = fight({ makhno: true }, 'sivash');
-assert.equal(crossed.result, 'won', 'the Sivash crossing turns the Wall');
-assert.ok(crossed.flanked);
-assert.ok(crossed.turn <= D.battle.turnLimit);
-assert.equal(fight({ makhno: true }, 'wallOnly').result, 'lost', 'the Wall alone does not fall in time');
+{
+    const [yushun, dzhankoy] = D.battle.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
+    const WEST = 'r51a,r51b,r51g,r6g,rcz', CENTRE = 'r15,r52,rmk', EAST = 'r30,r30b,r4g', RESERVE = 'r1c';
+    const wall = [{ r: 2, c: 2 }, { r: 4, c: 2 }, yushun];
+    const sivash = [{ r: 5, c: 6 }, { r: 7, c: 5 }, yushun];
+    const chongar = [{ r: 5, c: 11 }, { r: 6, c: 11 }, { r: 8, c: 10 }, dzhankoy];
+    // Every road in can be taken: the Wall under the guns, the Sivash, and
+    // Chongar with the cavalry behind it; using several is quickest.
+    const ways = {
+        wall: { [WEST]: wall, [RESERVE]: wall },
+        sivash: { [CENTRE]: sivash, [RESERVE]: sivash },
+        chongar: { [EAST]: chongar, [RESERVE]: chongar },
+        all: { [WEST]: wall, [CENTRE]: sivash, [EAST]: chongar, [RESERVE]: sivash },
+    };
+    const turns = {};
+    for (const [name, routes] of Object.entries(ways)) {
+        const b = fight(routes);
+        assert.equal(b.result, 'won', `the ${name} road leads in`);
+        turns[name] = b.turn;
+    }
+    assert.ok(turns.all < Math.min(turns.wall, turns.chongar), 'pressing everywhere is quicker than one road');
+    assert.ok(fight({ [WEST]: wall, [RESERVE]: wall }).turned.wall, 'the Wall falls to a frontal assault under the guns');
+    assert.equal(fight({ [EAST]: chongar }).result, 'lost', 'the 4th Army alone does not force Chongar against the reserve');
+    assert.equal(fight({}).result, 'lost', 'guns alone do not take Crimea');
+    // A push at Chongar draws the reserve, and the Sivash crossing goes
+    // quicker for it.
+    const alone = fight({ [CENTRE]: sivash });
+    const drawn = fight({ [CENTRE]: sivash, [EAST]: chongar });
+    assert.equal(drawn.result, 'won');
+    assert.ok(drawn.turn < alone.turn);
+}
 assert.equal(B.start(D.battle, {}).units.some(u => u.id === 'rmk'), false, 'no Makhnovists without the Starobilsk agreement');
 assert.equal(B.start(D.battle, { curzon: true }).units.some(u => u.id === 'rcz'), true);
+
+// Guns wear a fortification: each shell on a held Wall tile takes 1 off it.
+{
+    const b = B.start(D.battle, {});
+    const w1 = B.byId(b, 'w1');
+    const before = B.defenseOf(b, w1);
+    assert.ok(B.act(b, 'attack', 'r6g', 'w1'));
+    assert.equal(B.defenseOf(b, w1), before - 1);
+    // and any unit takes one step, however dear: the guns onto the Wall.
+    const g = B.byId(b, 'r51g');
+    g.r = 2; g.c = 3; b.units.find(u => u.id === 'w2b').hp = 0;
+    assert.ok(B.reachable(b, g).some(t => t.r === 3 && t.c === 3), 'a gun can step onto the Wall');
+}
 
 // The ford closes when the wind turns.
 const tide = B.start(D.battle, {});
@@ -238,27 +303,35 @@ const again = G.restore(G.serialize(war));
 assert.equal(again.battle.turn, 2);
 assert.deepEqual(again.battle.units.map(u => [u.id, u.r, u.c, u.hp]), war.battle.units.map(u => [u.id, u.r, u.c, u.hp]));
 assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red orders');
+// Orders from an older battlefield restart the battle, not the campaign.
+{
+    const old = JSON.parse(G.serialize(hist));
+    old.log.push(['b:move', 'r51a', 9, 9]);
+    const back = G.restore(JSON.stringify(old));
+    assert.equal(back.phase, 'battle');
+    assert.equal(back.battle.turn, 1);
+}
 
-// A move is taken back until the unit acts, and the Wall's flank with it.
+// A move is taken back until the unit acts, and the line it turned with it.
 {
     const b = B.start(D.battle, {});
     const u = B.byId(b, 'r15');
     u.r = 4; u.c = 7;
-    assert.ok(B.act(b, 'move', 'r15', 5, 7));
-    assert.ok(b.flanked);
+    assert.ok(B.act(b, 'move', 'r15', 5, 8));
+    assert.ok(b.turned.wall);
     assert.ok(B.act(b, 'undo', 'r15'));
-    assert.deepEqual([u.r, u.c, u.moved, b.flanked], [4, 7, false, false]);
+    assert.deepEqual([u.r, u.c, u.moved, b.turned.wall], [4, 7, false, false]);
     assert.equal(B.act(b, 'undo', 'r15'), false, 'one move, one undo');
-    assert.ok(B.act(b, 'move', 'r15', 5, 7));
+    assert.ok(B.act(b, 'move', 'r15', 5, 8));
     assert.ok(B.act(b, 'attack', 'r15', 'w3'));
     assert.equal(B.act(b, 'undo', 'r15'), false, 'no undo after a blow');
-    // The reserve cavalry reaches past its neighbours once Reds are south
-    // of the Wall; the Yushun holders strike only next to them.
-    const reach = u2 => B.menace(b, B.byId(b, u2)).length;
+    // The reserve reaches past its neighbours once Reds are south of the
+    // Wall; the Yushun holders strike only next to them.
+    const reach = id => B.menace(b, B.byId(b, id)).length;
+    assert.equal(B.reserveSector(b), 'perekop');
     assert.ok(reach('w4') > 4);
     assert.equal(reach('w5'), 4);
 }
-
 
 // The card's bar: every strength from 0 up, in steps of 0.1, falls in the
 // band whose result the settlement gives it, and neighbouring bands differ.

@@ -1,33 +1,43 @@
 /* global module */
-/* The tactical battle of 「붉은 전선」: Perekop and the Sivash on a square
-   grid, Red moving first each turn, the Whites answering by fixed rules.
-   Deterministic and DOM-free like the campaign engine; the campaign logs
-   each order as 'b:<name>' and restore replays them.
+/* The tactical battle of 「붉은 전선」: Perekop, the Sivash and Chongar on a
+   square grid, Red moving first each turn, the Whites answering by fixed
+   rules. Deterministic and DOM-free like the campaign engine; the campaign
+   logs each order as 'b:<name>' and restore replays them.
 
    Orders (red side): move(unit, row, col), undo(unit) takes a move back
-   before the unit acts, attack(unit, target), wait(unit), end(). */
+   before the unit acts, attack(unit, target), wait(unit), end().
+
+   There is more than one way in. Guns wear a fortification down; a Red
+   unit behind a line turns it and its holders lose the ground; the one
+   White reserve rides to the sector in most danger and stays there while
+   the danger lasts, so a threat in one sector draws it from another. */
 (function (root) {
     'use strict';
 
     const SURROUND_CAP = 2;
     const WATER_DAMAGE = 3;
+    const TURNED_BONUS = 1;
     const DIRS = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 
     function start(def, flags) {
         const units = def.units
             .filter(u => !u.flag || (flags && flags[u.flag]))
             .map(u => ({
-                id: u.id, tag: u.tag || u.name, side: u.side, name: u.name, sub: u.sub || '', kind: u.kind, role: u.role || null,
+                id: u.id, tag: u.tag || u.name, side: u.side, name: u.name, sub: u.sub || '', kind: u.kind,
+                role: u.role || null, line: u.line || null,
                 person: u.person || null, r: u.at[0], c: u.at[1], hp: u.hp, maxHp: u.hp,
                 atk: u.atk, def: u.def, mv: u.mv, range: u.range || 1,
-                moved: false, acted: false,
+                moved: false, acted: false, prev: null,
             }));
+        const turned = {};
+        for (const id of Object.keys(def.lines)) turned[id] = false;
         return {
-            def, turn: 1, units, result: null, flanked: false, struck: false,
+            def, turn: 1, units, result: null, turned, wear: {}, reserve: null,
             events: [], report: [],
         };
     }
 
+    const key = (r, c) => r * 100 + c;
     const tileAt = (b, r, c) => (b.def.map[r] || '')[c];
     const inside = (b, r, c) => r >= 0 && c >= 0 && r < b.def.map.length && c < b.def.map[0].length;
     const alive = b => b.units.filter(u => u.hp > 0);
@@ -50,13 +60,26 @@
         return t.cost;
     }
 
-    // Fortification counts while its holders are not outflanked; the Wall's
-    // garrison loses it once Reds stand on the Litovsky peninsula.
+    // The ground behind a line: dry land south of it, within its columns and
+    // short of the next line.
+    function behind(b, id, r, c) {
+        const l = b.def.lines[id];
+        const t = terrain(b, r, c);
+        return r > l.row && r <= l.until && c >= l.cols[0] && c <= l.cols[1] && !t.ford && t.cost < 99 && !t.fort;
+    }
+
+    // The ground a tile gives its holder: a fortification less the wear of
+    // the guns, and no more than a trench once its line is turned.
+    function groundOf(b, r, c) {
+        const t = terrain(b, r, c);
+        if (!t.fort) return t.def;
+        let bonus = Math.max(0, t.def - (b.wear[key(r, c)] || 0));
+        if (b.turned[t.fort]) bonus = Math.min(bonus, TURNED_BONUS);
+        return bonus;
+    }
+
     function defenseOf(b, u) {
-        const t = terrain(b, u.r, u.c);
-        let bonus = t.def;
-        if (tileAt(b, u.r, u.c) === 'W' && b.flanked) bonus = 1;
-        return u.def + bonus;
+        return u.def + groundOf(b, u.r, u.c);
     }
 
     function enemiesAdjacent(b, u, r, c) {
@@ -64,9 +87,9 @@
     }
 
     // Tiles a unit can reach this turn: Dijkstra over entry costs; units
-    // block; entering a tile next to an enemy ends the move (zone of control).
+    // block; entering a tile next to an enemy ends the move (zone of control);
+    // one tile is always in reach whatever it costs.
     function reachable(b, u) {
-        const key = (r, c) => r * 100 + c;
         const best = new Map([[key(u.r, u.c), 0]]);
         const queue = [{ r: u.r, c: u.c, cost: 0 }];
         const out = [];
@@ -78,8 +101,11 @@
             if (stop) continue;
             for (const [dr, dc] of DIRS) {
                 const r = cur.r + dr, c = cur.c + dc;
-                const cost = cur.cost + enterCost(b, r, c);
-                if (cost > u.mv) continue;
+                const step = enterCost(b, r, c);
+                const cost = cur.cost + step;
+                // A first step always goes in, however dear the ground: the
+                // guns (move 2) cross the Wall (cost 3) in a turn of their own.
+                if (cost > u.mv && !(cur.cost === 0 && step < Infinity)) continue;
                 const other = unitAt(b, r, c);
                 if (other && other.side !== u.side) continue;
                 if (cost < (best.get(key(r, c)) ?? Infinity)) {
@@ -111,36 +137,46 @@
         return Math.max(1, Math.round(power + surround(b, a, d) - defenseOf(b, d)));
     }
 
-    // Damage the attack would deal and the counter it would draw.
+    // Damage the attack would deal, the counter it would draw, and whether
+    // its shells wear the target's fortification.
     function preview(b, a, d) {
         const dmg = Math.min(d.hp, hit(b, a, d));
         const counters = d.hp > dmg && dist(a, d) === 1 && d.kind !== 'art';
-        return { dmg, counter: counters ? Math.min(a.hp, Math.floor(hit(b, d, a) / 2)) : 0 };
+        const t = terrain(b, d.r, d.c);
+        return {
+            dmg,
+            counter: counters ? Math.min(a.hp, Math.floor(hit(b, d, a) / 2)) : 0,
+            wears: a.kind === 'art' && Boolean(t.fort) && groundOf(b, d.r, d.c) > 0,
+        };
     }
 
     function strike(b, a, d) {
-        const { dmg, counter } = preview(b, a, d);
+        const { dmg, counter, wears } = preview(b, a, d);
         d.hp -= dmg;
         if (counter) a.hp -= counter;
         b.events.push({ type: 'attack', from: a.id, to: d.id, dmg, counter });
+        if (wears) {
+            const k = key(d.r, d.c);
+            b.wear[k] = (b.wear[k] || 0) + 1;
+            b.events.push({ type: 'wear', r: d.r, c: d.c });
+        }
         if (d.hp <= 0) b.events.push({ type: 'fall', id: d.id });
         if (a.hp <= 0) b.events.push({ type: 'fall', id: a.id });
     }
 
-    function updateFlank(b) {
-        if (b.flanked) return;
-        const f = b.def.flank;
-        if (alive(b).some(u => u.side === 'red' && u.r >= f.minRow && u.c >= f.minCol && !terrain(b, u.r, u.c).ford)) {
-            b.flanked = true;
-            b.events.push({ type: 'flank' });
+    function updateTurned(b) {
+        for (const id of Object.keys(b.def.lines)) {
+            if (b.turned[id]) continue;
+            if (alive(b).some(u => u.side === 'red' && behind(b, id, u.r, u.c))) {
+                b.turned[id] = true;
+                b.events.push({ type: 'turned', line: id });
+            }
         }
     }
 
     function checkResult(b) {
         if (b.result) return;
-        const [gr, gc] = b.def.goal;
-        const onGoal = unitAt(b, gr, gc);
-        if (onGoal && onGoal.side === 'red') b.result = 'won';
+        if (b.def.goals.some(g => { const u = unitAt(b, g.at[0], g.at[1]); return u && u.side === 'red'; })) b.result = 'won';
         else if (!alive(b).some(u => u.side === 'red')) b.result = 'lost';
         else if (!alive(b).some(u => u.side === 'white')) b.result = 'won';
     }
@@ -152,21 +188,23 @@
         if (b.result || !u || u.side !== 'red' || u.moved || u.acted) return false;
         if (!reachable(b, u).some(t => t.r === r && t.c === c)) return false;
         b.events = [];
-        u.prev = { r: u.r, c: u.c, flanked: b.flanked };
+        u.prev = { r: u.r, c: u.c, turned: Object.assign({}, b.turned) };
         u.r = r; u.c = c; u.moved = true;
-        updateFlank(b);
+        updateTurned(b);
         checkResult(b);
         return true;
     }
 
-    // A move not yet followed by an attack or a halt can be taken back; the
-    // Wall's flank turns again only if another Red unit still holds it.
+    // A move not yet followed by an attack or a halt can be taken back; a
+    // line it turned turns again only if another Red unit still stands
+    // behind it.
     function undo(b, id) {
         const u = byId(b, id);
         if (b.result || !u || u.side !== 'red' || !u.prev || u.acted) return false;
         b.events = [];
         u.r = u.prev.r; u.c = u.prev.c; u.moved = false;
-        if (!u.prev.flanked) { b.flanked = false; updateFlank(b); }
+        for (const line of Object.keys(b.turned)) if (!u.prev.turned[line]) b.turned[line] = false;
+        updateTurned(b);
         u.prev = null;
         return true;
     }
@@ -192,10 +230,31 @@
 
     // ── The White turn ──
 
+    // How hard each sector is pressed: every Red unit past the sector's
+    // alarm row counts its depth beyond it.
+    function dangers(b) {
+        const out = {};
+        for (const [id, s] of Object.entries(b.def.sectors)) {
+            out[id] = alive(b).filter(u => u.side === 'red' && u.c >= s.cols[0] && u.c <= s.cols[1] && u.r >= s.alarm)
+                .reduce((sum, u) => sum + u.r - s.alarm + 1, 0);
+        }
+        return out;
+    }
+
+    // The reserve keeps to the sector it rode to while that sector is
+    // pressed; otherwise it takes the one pressed hardest.
+    function reserveSector(b) {
+        const d = dangers(b);
+        if (b.reserve && d[b.reserve] > 0) return b.reserve;
+        let best = null;
+        for (const [id, v] of Object.entries(d)) if (v > 0 && (!best || v > d[best])) best = id;
+        return best;
+    }
+
     // Whether a White unit leaves its post this turn, by its role.
     function marching(b, u) {
-        if (u.role === 'wall') return b.flanked;
-        if (u.role === 'strike') return b.struck || b.flanked || alive(b).some(o => o.side === 'red' && o.r >= 4);
+        if (u.role === 'wall') return b.turned[u.line];
+        if (u.role === 'strike') return Boolean(reserveSector(b));
         return false;
     }
 
@@ -208,7 +267,7 @@
             for (let r = p.r - u.range; r <= p.r + u.range; r++) {
                 for (let c = p.c - u.range; c <= p.c + u.range; c++) {
                     const d = Math.abs(r - p.r) + Math.abs(c - p.c);
-                    if (d >= 1 && d <= u.range && inside(b, r, c) && terrain(b, r, c).cost < 99) out.set(r * 100 + c, { r, c });
+                    if (d >= 1 && d <= u.range && inside(b, r, c) && terrain(b, r, c).cost < 99) out.set(key(r, c), { r, c });
                 }
             }
         }
@@ -225,10 +284,17 @@
         return best && best.t;
     }
 
-    function stepToward(b, u, goal, avoidContact) {
-        const options = reachable(b, u).filter(t => !avoidContact || !enemiesAdjacent(b, u, t.r, t.c));
+    function march(b, u, to) {
+        b.events.push({ type: 'move', id: u.id, from: [u.r, u.c], to: [to.r, to.c] });
+        u.r = to.r; u.c = to.c;
+    }
+
+    // White units march on dry ground only: the Sivash is the Reds' road.
+    const dryReach = (b, u) => reachable(b, u).filter(t => !terrain(b, t.r, t.c).ford);
+
+    function stepToward(b, u, goal) {
         let best = null;
-        for (const t of options) {
+        for (const t of dryReach(b, u)) {
             const d = Math.abs(t.r - goal.r) + Math.abs(t.c - goal.c);
             if (!best || d < best.d || (d === best.d && t.cost < best.cost)) best = { t, d, cost: t.cost };
         }
@@ -236,35 +302,36 @@
         if (best && best.d < here) march(b, u, best.t);
     }
 
-    function march(b, u, to) {
-        b.events.push({ type: 'move', id: u.id, from: [u.r, u.c], to: [to.r, to.c] });
-        u.r = to.r; u.c = to.c;
-    }
-
     function whiteTurn(b) {
-        const reds = () => alive(b).filter(u => u.side === 'red');
-        if (!b.struck && (b.flanked || reds().some(u => u.r >= 4))) b.struck = true;
+        const sector = reserveSector(b);
+        if (sector !== b.reserve) {
+            b.reserve = sector;
+            if (sector) b.events.push({ type: 'reserve', sector });
+        }
         for (const u of alive(b).filter(o => o.side === 'white')) {
             if (u.hp <= 0 || b.result) continue;
-            if (u.role === 'wall' && b.flanked) {
-                // The garrison falls back on the Yushun lines.
-                if (!targets(b, u).length || u.hp < u.maxHp / 2) stepToward(b, u, { r: 7, c: 2 }, false);
-            } else if (u.role === 'strike' && b.struck) {
-                // The cavalry rides at the weakest Red unit south of the Wall,
-                // the bridgehead it was held back to throw into the Sivash.
-                const prey = reds().filter(r => r.r >= 4).sort((a, z) => a.hp - z.hp || a.r - z.r)[0];
-                if (prey && !targets(b, u).length) {
-                    const spots = reachable(b, u).filter(t => Math.abs(t.r - prey.r) + Math.abs(t.c - prey.c) === 1);
-                    if (spots.length) march(b, u, spots[0]); else stepToward(b, u, prey, false);
+            if (u.role === 'wall' && b.turned[u.line]) {
+                // The garrison of a turned line falls back on the next one.
+                const [r, c] = b.def.lines[u.line].fallback;
+                if (!targets(b, u).length || u.hp < u.maxHp / 2) stepToward(b, u, { r, c });
+            } else if (u.role === 'strike' && sector && !targets(b, u).length) {
+                // The reserve rides at the weakest Red unit pressing its
+                // sector.
+                const s = b.def.sectors[sector];
+                const prey = alive(b).filter(o => o.side === 'red' && o.c >= s.cols[0] && o.c <= s.cols[1] && o.r >= s.alarm)
+                    .sort((a, z) => a.hp - z.hp || z.r - a.r || a.c - z.c)[0];
+                if (prey) {
+                    const spots = dryReach(b, u).filter(t => Math.abs(t.r - prey.r) + Math.abs(t.c - prey.c) === 1);
+                    if (spots.length) march(b, u, spots[0]); else stepToward(b, u, prey);
                 }
             }
             const t = bestTarget(b, u);
             if (t) strike(b, u, t);
         }
         // Water: once the wind turns, the Sivash floods back.
-        if (b.turn >= b.def.windTurns) {
+        if (b.turn > b.def.windTurns) {
             for (const u of alive(b)) {
-                if (terrain(b, u.r, u.c).ford && b.turn > b.def.windTurns) {
+                if (terrain(b, u.r, u.c).ford) {
                     u.hp -= Math.min(u.hp, WATER_DAMAGE);
                     b.events.push({ type: 'water', id: u.id, dmg: WATER_DAMAGE });
                     if (u.hp <= 0) b.events.push({ type: 'fall', id: u.id });
@@ -292,7 +359,10 @@
         return fn ? fn(b, ...args) : false;
     }
 
-    const api = { start, act, reachable, targets, preview, menace, marching, terrain, tileAt, unitAt, byId, defenseOf, fordOpen };
+    const api = {
+        start, act, reachable, targets, preview, menace, marching, dangers, reserveSector, behind,
+        terrain, groundOf, tileAt, unitAt, byId, defenseOf, fordOpen,
+    };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.CivilWarBattle = api;
 })(typeof window !== 'undefined' ? window : globalThis);

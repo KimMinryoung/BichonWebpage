@@ -453,7 +453,12 @@
             if (!saved || saved.version !== VERSION || !Array.isArray(saved.log)) return null;
             const s = start();
             for (const entry of saved.log) {
-                if (!Array.isArray(entry) || !act(s, ...entry)) return null;
+                if (!Array.isArray(entry)) return null;
+                if (act(s, ...entry)) continue;
+                // Battle orders from an older battlefield stop the replay at
+                // the battle's start; the campaign before it stands.
+                if (typeof entry[0] === 'string' && entry[0].startsWith('b:') && s.phase === 'battle') break;
+                return null;
             }
             return s;
         } catch (_) {
