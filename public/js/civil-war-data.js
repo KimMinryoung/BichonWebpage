@@ -155,9 +155,9 @@
             link: ['빈농위원회', T('kombedy-committees-of-the-poor')],
         },
         cheka: {
-            title: '체카의 후방 단속', advisor: ['펠릭스 제르진스키', 'dzerzhinsky'], cost: 1, quell: true, peasants: -3, cohesion: -3,
+            title: '체카의 후방 단속', advisor: ['펠릭스 제르진스키', 'dzerzhinsky'], cost: 1, needs: 'revolt', peasants: -3, cohesion: -3,
             turns: [1, 2, 3, 4, 5, 6],
-            text: '후방의 봉기와 음모를 비상위원회가 진압한다. 녹색군 봉기에 묶일 사단을 풀어 주지만 공포는 지지를 깎는다.',
+            text: '후방의 농민 봉기를 비상위원회가 진압한다. 봉기에 묶인 사단의 절반이 바로 전선으로 돌아오지만, 공포는 지지를 깎는다.',
             link: ['적색 테러', T('red-terror')],
         },
         amnesty: {
@@ -167,7 +167,7 @@
         },
         propaganda: {
             title: '간섭군 병사에게 선전', advisor: ['블라디미르 레닌', 'lenin'], cost: 1, calm: ['north', 'south'], calmBy: 2,
-            turns: [1, 2],
+            turns: [2, 3],
             text: '외국어 전단과 신문을 간섭군 병영에 들여보낸다. 1919년 4월 오데사 앞바다에서 프랑스 수병들이 반란을 일으켰고, 프랑스는 남부에서 병력을 거두었다.',
         },
         partyWeek: {
@@ -226,7 +226,7 @@
                 northwest: { pressure: 1, foes: ['central'], text: '독일군이 물러난 자리로 나아갈 수 있다.' },
                 west: { pressure: 1, foes: ['central'], text: '독일군이 벨라루스에서 철수한다. 민스크가 비어 간다.' },
             },
-            cards: ['train', 'requisition', 'kombedy', 'cheka', 'propaganda'],
+            cards: ['train', 'requisition', 'kombedy', 'cheka'],
             choice: {
                 title: '곡물을 어떻게 거둘 것인가', who: ['블라디미르 레닌', 'lenin'],
                 text: '도시는 굶고 군대는 빵이 모자란다. 곡물 독점과 고정가로는 농민이 곡물을 내놓지 않는다. 나라가 필요한 곡물 총량을 정해 현마다 할당하고, 무장 분견대로 거두어야 하는가?',
@@ -281,7 +281,7 @@
                 volga: { pressure: 5, foes: ['denikin'], text: '브란겔의 캅카스군이 차리친을 공격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
                 northwest: { pressure: 4, foes: ['yudenich'], text: '유데니치의 북서군이 얌부르크로 온다.', who: ['니콜라이 유데니치', 'nikolai-yudenich'] },
             },
-            cards: ['train', 'requisition', 'cheka', 'amnesty'],
+            cards: ['train', 'requisition', 'cheka', 'amnesty', 'propaganda'],
             choice: {
                 title: '우랄 너머로, 아니면 남쪽으로', who: ['세르게이 카메네프', 'sergey-kamenev'],
                 text: '총사령관 바치에티스와 트로츠키는 우랄에서 멈추고 동부의 사단을 위기의 남부로 돌리자고 한다. 동부전선 사령관 카메네프는 지금 멈추면 콜차크가 겨울 동안 다시 일어선다며 끝까지 추격하자고 한다.',

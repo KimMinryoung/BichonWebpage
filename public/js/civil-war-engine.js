@@ -117,14 +117,21 @@
         if (s.plan.command < card.cost) return false;
         if (card.target === 'front' && !(target in s.plan.alloc)) return false;
         if (card.divisions < 0 && free(s) < -card.divisions) return false;
+        if (card.needs === 'revolt' && !s.revolt) return false;
         return true;
+    }
+
+    // Divisions a card adds to this season's pool when played: its own, or
+    // for the Cheka half of those the risings tie down.
+    function cardDivisions(s, card) {
+        return card.needs === 'revolt' ? Math.ceil(s.revolt / 2) : (card.divisions || 0);
     }
 
     function playCard(s, id, target) {
         if (!canPlay(s, id, target)) return false;
         const card = DATA.cards[id];
         s.plan.command -= card.cost;
-        if (card.divisions) s.plan.divisions += card.divisions;
+        s.plan.divisions += cardDivisions(s, card);
         s.plan.cards.push({ id, target: card.target === 'front' ? target : null });
         return true;
     }
@@ -136,10 +143,11 @@
         const card = DATA.cards[id];
         // Taking back recruits the player has already sent to a front would
         // leave the allocation over the pool.
-        if (card.divisions > 0 && free(s) < card.divisions) return false;
+        const added = cardDivisions(s, card);
+        if (added > 0 && free(s) < added) return false;
         s.plan.cards.splice(i, 1);
         s.plan.command += card.cost;
-        if (card.divisions) s.plan.divisions -= card.divisions;
+        s.plan.divisions -= added;
         return true;
     }
 
@@ -191,10 +199,12 @@
             if (t.id === 'orel' && id === 'northwest' && choice === 'hold') { strength += 4; parts.push('페트로그라드 사수 +4'); }
             if (t.id === 'orel' && id === 'northwest' && choice === 'yield') { pressure += 6; pressureParts.push('병력을 남쪽으로 뺌 +6'); }
             if (t.id === 'orel' && id === 'south' && choice === 'yield') { strength += 4; parts.push('북서에서 온 병력 +4'); }
-            if (flags.calm && (id === 'north' || id === 'south') && flags.calm >= s.turn) pressure = Math.max(0, pressure - 2);
-            for (const c of s.plan.cards) {
-                const card = DATA.cards[c.id];
-                if (card.calm && card.calm.includes(id)) pressure = Math.max(0, pressure - card.calmBy);
+            // Propaganda among the interventionists: this season and the next.
+            const calmed = s.plan.cards.some(c => DATA.cards[c.id].calm) || (flags.calm && flags.calm === s.turn);
+            if (calmed && (id === 'north' || id === 'south') && pressure > 0) {
+                const by = Math.min(pressure, DATA.cards.propaganda.calmBy);
+                pressure -= by;
+                pressureParts.push(`간섭군 병사에게 선전 −${by}`);
             }
             const margin = strength - pressure;
             const result = outcomeOf(s, id, margin);
@@ -294,12 +304,10 @@
         // Stats from cards, the choice and the season's policy.
         const flagsNow = Object.assign({}, s.flags, choiceFlags(s));
         let dp = 0, dw = 0, dc = 0;
-        let quelled = false;
         for (const c of s.plan.cards) {
             const card = DATA.cards[c.id];
             dp += card.peasants || 0; dw += card.workers || 0; dc += card.cohesion || 0;
             if (card.flag) s.flags[card.flag] = true;
-            if (card.quell) quelled = true;
             if (card.calm) s.flags.calm = s.turn + 1;
         }
         dc += opt.cohesion || 0;
@@ -327,7 +335,6 @@
         // The countryside answers requisition with risings (green armies).
         s.revolt = 0;
         if (s.peasants < 35) s.revolt = s.peasants < 20 ? 5 : 2;
-        if (s.revolt && quelled) s.revolt = Math.ceil(s.revolt / 2);
         if (s.revolt) notes.push(`농민 봉기가 번진다. 다음 시기 사단 ${s.revolt}개가 후방에 묶인다.`);
         if (s.cohesion < 30) notes.push('당이 분열하고 있다. 결속이 무너지면 지휘력이 준다.');
 
@@ -424,7 +431,7 @@
 
     const api = {
         DATA, VERSION, start, act, restore, serialize, forecast, activeFronts, turnData,
-        free, allocated, threatsOf, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
+        free, allocated, threatsOf, cardDivisions, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.CivilWarGame = api;

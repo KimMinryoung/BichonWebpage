@@ -18,8 +18,8 @@ function plan(s, { requisition = false } = {}) {
     const fronts = G.activeFronts(s).sort((a, b) => PRIORITY.indexOf(a) - PRIORITY.indexOf(b));
     const heaviest = fronts.slice().sort((a, b) => threats[b].pressure - threats[a].pressure)[0];
     if (t.cards.includes('train')) assert.ok(G.act(s, 'play', 'train', heaviest));
+    if (requisition) assert.ok(G.act(s, 'play', 'requisition'));
     for (const id of ['amnesty', 'partyWeek', 'cavalry', 'propaganda']) if (t.cards.includes(id)) G.act(s, 'play', id);
-    if (requisition) G.act(s, 'play', 'requisition');
     fronts.slice(0, s.plan.commissars).forEach(f => assert.ok(G.act(s, 'commissar', f, true)));
     while (G.free(s) > 0) {
         const fc = G.forecast(s).fronts;
@@ -78,6 +78,37 @@ const harsh = campaign(historical, { requisition: true });
 assert.ok(harsh.peasants < 20, 'requisition every season drives the peasants to revolt');
 assert.ok(harsh.records.some(r => r.notes.some(n => n.includes('농민 봉기'))));
 
+// The Cheka is for a rising: idle without one, half the tied divisions back with one.
+const quiet = G.start();
+G.act(quiet, 'next');
+assert.equal(G.canPlay(quiet, 'cheka'), false);
+const risen = G.restore(G.serialize(harsh));
+const rising = G.start();
+for (const entry of risen.log) {
+    if (rising.revolt && rising.phase === 'plan' && G.turnData(rising).cards.includes('cheka')) break;
+    G.act(rising, ...entry);
+}
+assert.ok(rising.revolt > 0, 'requisition every season raises the countryside before Perekop');
+const pool = rising.plan.divisions;
+const command = rising.plan.command;
+assert.ok(command >= 1);
+{
+    assert.ok(G.act(rising, 'play', 'cheka'));
+    assert.equal(rising.plan.divisions, pool + Math.ceil(rising.revolt / 2));
+    assert.ok(G.act(rising, 'unplay', 'cheka'));
+    assert.equal(rising.plan.divisions, pool);
+}
+
+// Propaganda shows on the pressure it lowers, this season and the next.
+const calm = G.start();
+for (let i = 0; i < 2; i++) { G.act(calm, 'choose', historical(G.turnData(calm))); plan(calm); G.act(calm, 'settle'); G.act(calm, 'next'); }
+assert.equal(G.turnData(calm).id, 'kolchak');
+assert.deepEqual(G.forecast(calm).fronts.south.pressureParts, []);
+assert.ok(G.act(calm, 'play', 'propaganda'));
+assert.deepEqual(G.forecast(calm).fronts.south.pressureParts, ['간섭군 병사에게 선전 −2']);
+G.act(calm, 'choose', 'flank'); plan(calm); G.act(calm, 'settle'); G.act(calm, 'next');
+assert.deepEqual(G.forecast(calm).fronts.south.pressureParts, ['간섭군 병사에게 선전 −2'], 'and the season after');
+
 // A thin southern front left empty loses Tula, and the war.
 const lost = G.start();
 for (let i = 0; i < 2; i++) {
@@ -87,7 +118,6 @@ for (let i = 0; i < 2; i++) {
     G.act(lost, 'next');
 }
 lost.lines.south = 1;
-delete lost.flags.calm;  // last season's propaganda would soften the south
 G.act(lost, 'choose', historical(G.turnData(lost)));
 const north = G.activeFronts(lost).find(f => f !== 'south');
 assert.ok(G.act(lost, 'alloc', north, lost.plan.divisions));

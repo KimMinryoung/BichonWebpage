@@ -425,7 +425,7 @@
         if (card.peasants) out.push(`농민 ${signed(card.peasants)}`);
         if (card.workers) out.push(`노동자 ${signed(card.workers)}`);
         if (card.cohesion) out.push(`결속 ${signed(card.cohesion)}`);
-        if (card.quell) out.push('농민 봉기에 묶이는 사단 절반');
+        if (card.needs === 'revolt') out.push(s.revolt ? `봉기에 묶인 사단 ${G.cardDivisions(s, card)}개 복귀` : '봉기에 묶인 사단의 절반 복귀');
         if (card.calm) out.push(`북부·남부 압력 −${card.calmBy}(이번과 다음 시기)`);
         return out.join(' · ');
     }
@@ -453,7 +453,9 @@
                 el('h4', {}, card.title), el('p', { class: 'cw-advisor' }, person(card.advisor)),
                 el('p', {}, card.text), card.note ? el('p', { class: 'cw-note' }, card.note) : null,
                 card.link ? el('p', { class: 'cw-note' }, link(card.link)) : null,
-                el('p', { class: 'cw-effect' }, effectText(card)), control));
+                el('p', { class: 'cw-effect' }, effectText(card)),
+                !played && card.needs === 'revolt' && !s.revolt ? el('p', { class: 'cw-note' }, '지금은 후방에 봉기가 없어 쓸 수 없다. 농민 지지가 35 아래로 떨어지면 봉기가 일어난다.') : null,
+                control));
         }
         $('cwCards').replaceChildren(...items, grid);
     }
