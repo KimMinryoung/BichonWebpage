@@ -12,7 +12,11 @@
         ? require('./civil-war-battle.js') : root.CivilWarBattle;
 
     const VERSION = 1;
-    const COMMAND = 3;
+    // Command each season follows the party's cohesion: a united party
+    // gives orders that are carried out, a split one argues them away.
+    const COMMAND_TIERS = [[70, 4], [40, 3], [20, 2], [0, 1]];
+    const commandOf = cohesion => COMMAND_TIERS.find(([min]) => cohesion >= min)[1];
+    const SPLIT = 30;               // below it, one commissar fewer
     const STEP = 3;                 // margin per city beyond history's
     const COMMISSAR = 1.5;          // a commissar's strength on his front
     const SLACK = 1;                // a shortfall under this still holds
@@ -26,7 +30,7 @@
             version: VERSION, turn: 0, phase: 'plan',
             peasants: 60, workers: 60, cohesion: 60, grain: 6,
             flags: {}, lines: Object.assign({}, DATA.startLines),
-            petrogradFell: false, deserted: 0, revolt: 0, momentum: {},
+            petrogradFell: false, deserted: 0, revolt: 0, momentum: {}, used: {},
             records: [], log: [], battle: null, outcome: null,
         };
         enterTurn(s);
@@ -68,7 +72,7 @@
         let divisions = t.mobilize + sources.reduce((a, x) => a + x.n, 0);
         if (divisions < 2) { add('최소 동원', 2 - divisions); divisions = 2; }
         s.plan = {
-            divisions, command: COMMAND, commissars: t.commissars, sources,
+            divisions, command: commandOf(s.cohesion), commissars: Math.max(0, t.commissars - (s.cohesion < SPLIT ? 1 : 0)), sources,
             alloc: {}, commissar: {}, cards: [], choice: null,
         };
         for (const id of activeFronts(s)) { s.plan.alloc[id] = 0; s.plan.commissar[id] = false; }
@@ -107,6 +111,13 @@
         if (!card || !turnData(s).cards.includes(id)) return false;
         if (card.flag && s.flags[card.flag]) return false;
         return true;
+    }
+
+    // A card's toll on cohesion; an amnesty costs more each time it is
+    // proclaimed, as deserters learn that desertion goes unpunished.
+    function cardCohesion(s, card, id) {
+        const base = card.cohesion || 0;
+        return card.escalates ? base * ((s.used[id] || 0) + 1) : base;
     }
 
     function canPlay(s, id, target) {
@@ -300,6 +311,7 @@
         const fc = forecast(s);
         const opt = t.choice.options.find(o => o.id === s.plan.choice);
         const before = Object.assign({}, s.lines);
+        const cohesionBefore = s.cohesion;
         const notes = [];
 
         // Grain: the season's income, then the army eats.
@@ -338,7 +350,8 @@
         let dp = 0, dw = 0, dc = 0;
         for (const c of s.plan.cards) {
             const card = DATA.cards[c.id];
-            dp += card.peasants || 0; dw += card.workers || 0; dc += card.cohesion || 0;
+            dp += card.peasants || 0; dw += card.workers || 0; dc += cardCohesion(s, card, c.id);
+            s.used[c.id] = (s.used[c.id] || 0) + 1;
             if (card.flag) s.flags[card.flag] = true;
             if (card.calm) s.flags.calm = s.turn + 1;
         }
@@ -351,6 +364,10 @@
             if (f.after > f.before) dw += 2;
             if (f.after < f.before) dw -= 2;
         }
+        // Defeat is argued over in the party; victory quiets it.
+        const versus = Object.values(fronts).reduce((a, f) => a + f.after - f.history, 0);
+        if (versus < 0) { dc -= 3; notes.push('역사보다 밀린 책임을 두고 당 안에서 논쟁이 벌어졌다. 당 결속 −3.'); }
+        if (versus > 0) dc += 2;
         s.peasants = clamp(s.peasants + dp, 0, 100);
         s.cohesion = clamp(s.cohesion + dc, 0, 100);
 
@@ -368,7 +385,9 @@
         s.revolt = 0;
         if (s.peasants < 35) s.revolt = s.peasants < 20 ? 5 : 2;
         if (s.revolt) notes.push(`농민 봉기가 번진다. 다음 시기 사단 ${s.revolt}개가 후방에 묶인다.`);
-        if (s.cohesion < 30) notes.push('당이 분열하고 있다. 결속이 무너지면 지휘력이 준다.');
+        const nextCommand = commandOf(s.cohesion);
+        if (nextCommand !== commandOf(cohesionBefore)) notes.push(`당 결속 ${s.cohesion}: 다음 시기 지휘력은 ${nextCommand}이다.`);
+        if (s.cohesion < SPLIT) notes.push('당이 분열하고 있다. 다음 시기 정치위원이 하나 준다.');
 
         const record = {
             turn: s.turn, choice: s.plan.choice, history: t.choice.history, fronts,
@@ -393,7 +412,6 @@
         if (s.phase !== 'review') return false;
         s.turn += 1;
         enterTurn(s);
-        if (s.cohesion < 30) s.plan.command = COMMAND - 1;
         return true;
     }
 
@@ -452,13 +470,16 @@
             const saved = typeof text === 'string' ? JSON.parse(text) : text;
             if (!saved || saved.version !== VERSION || !Array.isArray(saved.log)) return null;
             const s = start();
-            for (const entry of saved.log) {
+            let season = 0;     // log entries up to the latest season begun
+            for (const [i, entry] of saved.log.entries()) {
                 if (!Array.isArray(entry)) return null;
-                if (act(s, ...entry)) continue;
+                if (act(s, ...entry)) { if (entry[0] === 'next') season = i + 1; continue; }
                 // Battle orders from an older battlefield stop the replay at
                 // the battle's start; the campaign before it stands.
                 if (typeof entry[0] === 'string' && entry[0].startsWith('b:') && s.phase === 'battle') break;
-                return null;
+                // A plan the rules no longer allow (a save from before a rule
+                // change) is planned again from the start of its season.
+                return season ? restore({ version: VERSION, log: saved.log.slice(0, season) }) : null;
             }
             return s;
         } catch (_) {
@@ -468,7 +489,7 @@
 
     const api = {
         DATA, VERSION, MOMENTUM, start, act, restore, serialize, forecast, activeFronts, turnData,
-        free, allocated, threatsOf, cardDivisions, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
+        free, allocated, threatsOf, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.CivilWarGame = api;

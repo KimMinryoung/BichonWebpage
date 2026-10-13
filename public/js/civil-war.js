@@ -179,7 +179,7 @@
         const items = [];
         if (s.phase === 'plan') {
             items.push(...stat('사단', `${G.free(s)} / ${plan.divisions}`, '보낼 사단 / 전체', G.free(s) > 0));
-            items.push(...stat('지휘력', String(plan.command), s.cohesion < 30 ? '당 분열로 시기마다 2. 남기면 사라짐' : '시기마다 3으로 다시 채움. 남기면 사라짐'));
+            items.push(...stat('지휘력', String(plan.command), `당 결속 ${s.cohesion}에 따라 시기마다 다시 채움. 남기면 사라짐`, plan.command < 3));
             items.push(...stat('정치위원', `${plan.commissars - G.commissarsUsed(s)} / ${plan.commissars}`, '남음 / 전체'));
             items.push(...stat('곡물', String(s.grain), `이번 시기 +${supply.income}, 필요 ${supply.need}`, supply.ratio < 1));
         } else {
@@ -187,7 +187,7 @@
         }
         items.push(...stat('농민 지지', String(s.peasants), s.peasants < 35 ? '봉기 위험' : '', s.peasants < 35));
         items.push(...stat('노동자 지지', String(s.workers), '동원에 영향', s.workers < 40));
-        items.push(...stat('당 결속', String(s.cohesion), s.cohesion < 30 ? '분열' : '', s.cohesion < 30));
+        items.push(...stat('당 결속', String(s.cohesion), cohesionNote(s.cohesion), s.cohesion < 40));
         $('cwStats').replaceChildren(...items);
         const planning = s.phase === 'plan';
         crumb.classList.toggle('has-status', planning);
@@ -596,14 +596,21 @@
                 el('span', {}, `${result(b)} (${versus(b)})`)))));
     }
 
-    function effectText(card) {
+    // What the party's cohesion buys: command 4 from 70, 3 from 40, 2 from
+    // 20, else 1; one commissar fewer under 30.
+    function cohesionNote(c) {
+        const next = c >= 70 ? '' : c >= 40 ? ' · 70이면 4' : ` · ${c >= 20 ? 40 : 20}이면 ${G.commandOf(c) + 1}`;
+        return `지휘력 ${G.commandOf(c)}${next}` + (c < 30 ? ' · 분열: 정치위원 −1' : '');
+    }
+
+    function effectText(card, id) {
         const out = [];
         if (card.bonus) out.push(`고른 전선 전투력 +${card.bonus}`);
         if (card.divisions) out.push(`사단 ${signed(card.divisions)}`);
         if (card.grain) out.push(`곡물 +${card.grain}`);
         if (card.peasants) out.push(`농민 ${signed(card.peasants)}`);
         if (card.workers) out.push(`노동자 ${signed(card.workers)}`);
-        if (card.cohesion) out.push(`결속 ${signed(card.cohesion)}`);
+        if (card.cohesion) out.push(`결속 ${signed(G.cardCohesion(s, card, id))}` + (card.escalates ? ' (쓸 때마다 커짐)' : ''));
         if (card.needs === 'revolt') out.push(s.revolt ? `봉기에 묶인 사단 ${G.cardDivisions(s, card)}개 복귀` : '봉기에 묶인 사단의 절반 복귀');
         if (card.calm) out.push(`북부·남부 압력 −${card.calmBy}(이번과 다음 시기)`);
         return out.join(' · ');
@@ -631,7 +638,7 @@
                 el('h4', {}, card.title), el('p', { class: 'cw-advisor' }, person(card.advisor)),
                 el('p', {}, card.text), card.note ? el('p', { class: 'cw-note' }, card.note) : null,
                 card.link ? el('p', { class: 'cw-note' }, link(card.link)) : null,
-                el('p', { class: 'cw-effect' }, effectText(card)),
+                el('p', { class: 'cw-effect' }, effectText(card, id)),
                 !played && card.needs === 'revolt' && !s.revolt ? el('p', { class: 'cw-note' }, '지금은 후방에 봉기가 없어 쓸 수 없다. 농민 지지가 35 아래로 떨어지면 봉기가 일어난다.') : null,
                 control));
         }

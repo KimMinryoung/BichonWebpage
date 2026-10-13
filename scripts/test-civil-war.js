@@ -19,7 +19,12 @@ function plan(s, { requisition = false } = {}) {
     const heaviest = fronts.slice().sort((a, b) => threats[b].pressure - threats[a].pressure)[0];
     if (t.cards.includes('train')) assert.ok(G.act(s, 'play', 'train', heaviest));
     if (requisition) assert.ok(G.act(s, 'play', 'requisition'));
-    for (const id of ['amnesty', 'partyWeek', 'cavalry', 'propaganda']) if (t.cards.includes(id)) G.act(s, 'play', id);
+    // An amnesty only while the party can bear it (command stays at 3).
+    for (const id of ['amnesty', 'partyWeek', 'cavalry', 'propaganda']) {
+        if (!t.cards.includes(id)) continue;
+        if (s.cohesion + G.cardCohesion(s, D.cards[id], id) < 40) continue;
+        G.act(s, 'play', id);
+    }
     fronts.slice(0, s.plan.commissars).forEach(f => assert.ok(G.act(s, 'commissar', f, true)));
     while (G.free(s) > 0) {
         const fc = G.forecast(s).fronts;
@@ -179,6 +184,38 @@ const bad = JSON.parse(G.serialize(hist));
 bad.log.splice(3, 0, ['alloc', 'east', 99]);
 assert.equal(G.restore(JSON.stringify(bad)), null);
 assert.equal(G.restore('{'), null);
+// A plan that no longer fits the rules is planned again from its season.
+{
+    const late = JSON.parse(G.serialize(hist));
+    const third = late.log.findIndex((e, i) => e[0] === 'next' && late.log.slice(0, i).filter(x => x[0] === 'next').length === 2);
+    late.log.splice(third + 2, 0, ['alloc', 'east', 99]);
+    const back = G.restore(JSON.stringify(late));
+    assert.equal(back.turn, 3);
+    assert.equal(back.phase, 'plan');
+    assert.equal(G.allocated(back), 0);
+}
+
+// Cohesion: an amnesty every season it is offered splits the party, and
+// command and commissars shrink with it.
+{
+    const s = G.start();
+    let lowest = 3;
+    while (s.phase === 'plan') {
+        const t = G.turnData(s);
+        assert.ok(G.act(s, 'choose', t.choice.history));
+        lowest = Math.min(lowest, s.plan.command);
+        if (t.cards.includes('amnesty')) assert.ok(G.act(s, 'play', 'amnesty'));
+        const fronts = G.activeFronts(s);
+        let i = 0;
+        while (G.free(s) > 0) { const f = fronts[i++ % fronts.length]; G.act(s, 'alloc', f, s.plan.alloc[f] + 1); }
+        assert.ok(G.act(s, 'settle'));
+        if (s.phase === 'review') assert.ok(G.act(s, 'next'));
+    }
+    assert.ok(s.cohesion < 30, `amnesties wear the party down (${s.cohesion})`);
+    assert.ok(lowest < 3, 'a divided party commands less');
+    assert.equal(G.commandOf(70), 4);
+    assert.equal(G.commandOf(39), 2);
+}
 
 // ── Battle ──
 
