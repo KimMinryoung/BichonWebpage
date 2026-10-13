@@ -202,11 +202,12 @@ const tools = [
         }, ['kind', 'label']),
         async handler({ kind, id, label }) {
             const db = require('../../config/database');
-            const [table, aliases, foreign, column] = kind === 'person'
-                ? ['commulingo_people', 'commulingo_person_aliases', 'person_id', 'name']
-                : ['commulingo_terms', 'commulingo_term_aliases', 'term_id', 'term'];
+            const { nameMatchSql } = require('../../data/commulingo/person-name');
+            const [table, aliases, foreign, nameMatch] = kind === 'person'
+                ? ['commulingo_people', 'commulingo_person_aliases', 'person_id', nameMatchSql('', '$2')]
+                : ['commulingo_terms', 'commulingo_term_aliases', 'term_id', 'lower(term_ko)=lower($2) OR lower(term_en)=lower($2)'];
             const existing = (await db.query(`SELECT id FROM ${table}
-                    WHERE id=$1 OR lower(${column}_ko)=lower($2) OR lower(${column}_en)=lower($2)
+                    WHERE id=$1 OR ${nameMatch}
                     UNION SELECT ${foreign} FROM ${aliases} WHERE lower(alias)=lower($2) LIMIT 1`, [id || '', label])).rows[0];
             const event = (await db.query(`SELECT id FROM commulingo_history_events
                     WHERE lower(title_ko)=lower($1) OR ($1<>'' AND lower(title_en)=lower($1)) LIMIT 1`, [label])).rows[0];
