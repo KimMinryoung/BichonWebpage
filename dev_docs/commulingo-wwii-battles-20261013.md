@@ -23,8 +23,9 @@
 5. 링크 승인 30건 `scripts/reviews/commulingo-links-20261013-wwii-battles.json`(자동 27·검색 전용 3).
 6. 데이터 SQL `scripts/migrations/data/wwii-battles-20261013-links-collections.sql`: 맨 성 차단(ko 지로·로슈포르·킹, en Rochefort·King: audit-link-fires로 지로카스트라·앙리 로슈포르·국왕 칭호 오연결 확인), 입장 모음 7명(독일 장군 4·나구모·야마구치·다를랑 → counterrevolution), 역방향 related.
 
+소유자 확인 뒤 `wwii-battles-20261013-collections-confirmed.sql`로 존 케언크로스 → marxism-leninism, 파울 하우서 → fascist(counterrevolution과 함께, 제프 디트리히 선례)를 더했다.
+
 ## 남은 일
 
-- 입장 모음 보류(소유자 확인 대기): 존 케언크로스(marxism-leninism 제안), 파울 하우서의 fascist 추가(제프 디트리히 선례).
 - 카드 없는 인물: 쿠르스크 뢰슬러·라도·크노벨스도르프·라우스, 미드웨이 핼시·레이턴·겐다·구사카·곤도, 북아프리카 메세·아르님·쥐앵·모스헤드·고트·오마르 무크타르.
 - 「켐프」는 `frederick-kempe`와 한국어 성이 같다. 쿠르스크 페이지는 나열 인물로 해소되지만 다른 페이지의 맨 「켐프」는 어느 쪽에도 걸리지 않을 수 있다.
