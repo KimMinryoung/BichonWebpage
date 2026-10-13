@@ -45,12 +45,16 @@
         return node;
     }
 
+    // Reference links open beside the game, so reading one never ends a
+    // season in progress.
+    const NEW_TAB = { target: '_blank', rel: 'noopener' };
+
     function link([label, href]) {
-        return el('a', { href }, label);
+        return el('a', Object.assign({ href }, NEW_TAB), label);
     }
 
     function person(who) {
-        return who ? el('a', { href: '/commulingo/people/' + who[1], class: 'cw-person' }, who[0]) : null;
+        return who ? el('a', Object.assign({ href: '/commulingo/people/' + who[1], class: 'cw-person' }, NEW_TAB), who[0]) : null;
     }
 
     function announce(text) {
@@ -473,7 +477,7 @@
         return el('div', {},
             el('h3', {}, u.name, u.sub ? el('small', {}, ` ${u.sub}`) : null),
             el('p', {}, `병력 ${u.hp}/${u.maxHp} · 공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} (${t.name}) · 이동 ${u.mv}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
-            u.person ? el('p', {}, '지휘: ', el('a', { href: '/commulingo/people/' + u.person }, '바실리 블류헤르')) : null,
+            u.person ? el('p', {}, '지휘: ', el('a', Object.assign({ href: '/commulingo/people/' + u.person }, NEW_TAB), '바실리 블류헤르')) : null,
             u.side === 'red' ? el('p', { class: 'cw-note' }, u.acted ? '이번 턴의 행동을 마쳤다.' : u.moved ? '이동했다. 공격하거나 대기할 수 있다.' : '이동하거나 공격할 수 있다.') : null);
     }
 
