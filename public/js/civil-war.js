@@ -88,7 +88,6 @@
     const LABEL_AT = { 가치나: [8, 14, 'start'], 얌부르크: [-8, 4, 'end'], 페트로그라드: [8, -2, 'start'] };
 
     const signed = n => (n > 0 ? '+' : n < 0 ? '−' : '±') + Math.abs(n);
-    const cityName = (id, i) => D.fronts[id].cities[i][0];
 
     // "카잔·심비르스크" for the held cities, or a note that none are.
     function heldText(id, line) {
@@ -96,12 +95,6 @@
         return cities.length ? cities.join('·') : '없음';
     }
 
-    function lineText(id, line) {
-        const max = D.fronts[id].cities.length;
-        if (line === 0) return `${cityName(id, 0)}까지 잃음`;
-        if (line === max) return `${cityName(id, max - 1)}까지 모두 확보`;
-        return `${cityName(id, line - 1)}까지 확보`;
-    }
 
     // ── Setup ──
 
@@ -323,9 +316,16 @@
         const kind = foes.length ? D.factions[foes[0]].kind : 'white';
         const name = foes.map(f => D.factions[f].short).join('·');
         const d = result ? result.after - result.history : 0;
-        const numbers = forecast ? `${D.fronts[id].short} ${forecast.strength}/${forecast.pressure}` : `${D.fronts[id].short} ${d ? `역사 ${signed(d)}` : '역사대로'}`;
+        // While planning the row under the name counts the pressure in the
+        // attacker's marks, one per point; after the season it says how the
+        // front did against history.
+        const numbers = forecast ? null : `${D.fronts[id].short} ${d ? `역사 ${signed(d)}` : '역사대로'}`;
+        const marks = forecast ? forecast.pressure : 0;
+        const MARK = 6.5, PER_ROW = 10;
+        const markRows = Math.max(1, Math.ceil(marks / PER_ROW));
+        const rowH = forecast ? markRows * MARK + 4 : 16;
         const flags = foes.filter(f => D.factions[f].flag);
-        const w = Math.max(textWidth(name, 11) + flags.length * 16 + 12, textWidth(numbers, 10.5) + 10);
+        const w = Math.max(textWidth(name, 11) + flags.length * 16 + 12, forecast ? Math.min(marks, PER_ROW) * MARK + 8 : textWidth(numbers, 10.5) + 10);
         // Candidate spots round the anchor, outward first; the one covering
         // the least of the city dots, labels and earlier markers wins.
         const overlap = (a, b) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0)) * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0));
@@ -335,8 +335,8 @@
             const ux = dx * Math.cos(a) - dy * Math.sin(a), uy = dx * Math.sin(a) + dy * Math.cos(a);
             for (const dist of [36, 52, 72]) {
                 const x = Math.min(W - w / 2 - 2, Math.max(w / 2 + 2, anchor.x + ux * dist));
-                const y = Math.min(H - 26, Math.max(12, anchor.y + uy * dist));
-                const box = { x0: x - w / 2 - 3, x1: x + w / 2 + 3, y0: y - 12, y1: y + 26 };
+                const y = Math.min(H - 10 - rowH, Math.max(12, anchor.y + uy * dist));
+                const box = { x0: x - w / 2 - 3, x1: x + w / 2 + 3, y0: y - 12, y1: y + 10 + rowH };
                 const cost = avoid.reduce((c, o) => c + overlap(box, o), 0) * 4 + Math.abs(turn) * 1.5 + dist;
                 if (!best || cost < best.cost) best = { x, y, box, cost };
             }
@@ -352,7 +352,7 @@
         if (tl > 30) {
             // Leave the marker's box (a ray from its centre to its edge), stop short of the city.
             const sx = Math.abs(tx / tl) > 1e-6 ? (w / 2 + 2) / Math.abs(tx / tl) : Infinity;
-            const sy = (ty > 0 ? 26 : 12) / Math.max(1e-6, Math.abs(ty / tl));
+            const sy = (ty > 0 ? 8 + rowH : 12) / Math.max(1e-6, Math.abs(ty / tl));
             const from = Math.min(sx, sy);
             const to = Math.max(from + 6, Math.min(tl - 9, from + 40));
             g.append(svg('line', { x1: x + tx / tl * from, y1: y + ty / tl * from, x2: x + tx / tl * to, y2: y + ty / tl * to, class: 'cw-foe-arrow', 'marker-end': 'url(#cwArrowHead)' }));
@@ -366,8 +366,14 @@
             fx += 16;
         }
         g.append(svg('text', { x: fx, y: y + 3.5, class: 'cw-foe-text' }, name));
-        g.append(svg('rect', { x: x - w / 2, y: y + 8, width: w, height: 16, class: 'cw-foe-numbers' }));
-        g.append(svg('text', { x, y: y + 20, 'text-anchor': 'middle', class: 'cw-foe-numbers-text' }, numbers));
+        g.append(svg('rect', { x: x - w / 2, y: y + 8, width: w, height: rowH, class: forecast ? 'cw-foe-marks' : 'cw-foe-numbers' }));
+        if (numbers) g.append(svg('text', { x, y: y + 20, 'text-anchor': 'middle', class: 'cw-foe-numbers-text' }, numbers));
+        const across = Math.min(marks, PER_ROW) * MARK;
+        for (let i = 0; i < marks; i++) {
+            const mx = x - across / 2 + (i % PER_ROW) * MARK + 0.75, my = y + 10 + Math.floor(i / PER_ROW) * MARK;
+            g.append(svg('rect', { x: mx, y: my, width: MARK - 1.5, height: MARK - 1.5, class: 'cw-foe-mark k-' + kind }));
+        }
+        if (forecast) g.setAttribute('aria-label', g.getAttribute('aria-label').replace('. 카드로', `, 압력 ${marks}, 전투력 ${forecast.strength}. 카드로`));
         const go = () => { const card = document.getElementById('cwFront-' + id); if (card) { card.scrollIntoView({ block: 'nearest' }); card.focus(); } };
         g.addEventListener('click', go);
         g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
@@ -382,11 +388,13 @@
         const at = line > 0 ? pts[line - 1] : points.moscow;
         const n = s.plan.alloc[id];
         const commissar = s.plan.commissar[id];
+        const train = s.plan.cards.some(c => c.target === id);
+        const extra = (commissar ? 1 : 0) + (train ? 2 : 0);
         const g = svg('g', { class: 'cw-pips', 'aria-hidden': 'true' });
-        if (!n && !commissar) return g;
+        if (!n && !extra) return g;
         const perRow = 8, size = 6, gap = 2;
-        const cols = Math.min(perRow, n + (commissar ? 1 : 0));
-        const rows = Math.ceil((n + (commissar ? 1 : 0)) / perRow);
+        const cols = Math.min(perRow, n + extra);
+        const rows = Math.ceil((n + extra) / perRow);
         const w = cols * (size + gap), h = rows * (size + gap);
         let dx = at.x - marker.x, dy = at.y - marker.y;
         const len = Math.hypot(dx, dy) || 1;
@@ -404,13 +412,31 @@
             }
         }
         avoid.push(best.box);
-        for (let i = 0; i < n + (commissar ? 1 : 0); i++) {
-            const x = best.box.x0 + (i % perRow) * (size + gap);
-            const y = best.box.y0 + Math.floor(i / perRow) * (size + gap);
-            if (i < n) g.append(svg('rect', { x, y, width: size, height: size, class: 'cw-pip' }));
-            else g.append(svg('path', { d: star(x + size / 2, y + size / 2, 5, 2.2), class: 'cw-pip-star' }));
-        }
+        const slot = i => [best.box.x0 + (i % perRow) * (size + gap), best.box.y0 + Math.floor(i / perRow) * (size + gap)];
+        for (let i = 0; i < n; i++) { const [x, y] = slot(i); g.append(svg('rect', { x, y, width: size, height: size, class: 'cw-pip' })); }
+        if (commissar) { const [x, y] = slot(n); g.append(svg('path', { d: star(x + size / 2, y + size / 2, 5, 2.2), class: 'cw-pip-star' })); }
+        if (train) { const [x, y] = slot(n + (commissar ? 1 : 0)); g.append(trainGlyph(x, y - 1, 14)); }
         return g;
+    }
+
+    // Trotsky's train: a small locomotive, w wide, top-left at (x, y).
+    function trainGlyph(x, y, w) {
+        const k = w / 14;
+        const g = svg('g', { class: 'cw-train', transform: `translate(${x} ${y}) scale(${k})` });
+        g.append(svg('path', { d: 'M1 3h3V1h2v2h5v3h2v3H1z' }), svg('circle', { cx: 3.5, cy: 10, r: 1.6 }), svg('circle', { cx: 9.5, cy: 10, r: 1.6 }));
+        return g;
+    }
+
+    function trainIcon() {
+        const node = svg('svg', { viewBox: '0 0 14 12', class: 'cw-mk-train', 'aria-hidden': 'true' });
+        node.append(trainGlyph(0, 0, 14));
+        return node;
+    }
+
+    function starIcon() {
+        const node = svg('svg', { viewBox: '0 0 12 12', class: 'cw-mk-star', 'aria-hidden': 'true' });
+        node.append(svg('path', { d: star(6, 6.4, 5.8, 2.5) }));
+        return node;
     }
 
     // A front card under the mouse or keyboard focus makes its front blink on
@@ -464,9 +490,9 @@
             el('span', {}, el('i', { class: 'cw-key-held' }), '붉은 군대'), el('span', {}, el('i', { class: 'cw-key-lost k-white' }), '백군'),
             el('span', {}, el('i', { class: 'cw-key-lost k-interv' }), '간섭군'), el('span', {}, el('i', { class: 'cw-key-lost k-central' }), '독일·오스트리아'),
             el('span', {}, el('i', { class: 'cw-key-lost k-national' }), '폴란드·우크라이나'),
-            el('span', {}, el('i', { class: 'cw-key-badge' }), '공격해 오는 세력 · 전투력/압력'),
+            el('span', {}, el('i', { class: 'cw-key-badge' }), '공격해 오는 세력 · 아래 칸 하나가 압력 1'),
             el('span', {}, el('i', { class: 'cw-key-ring' }), '점선 고리: 이번 시기에 잃거나 되찾을 도시(예상)'),
-            el('span', {}, el('i', { class: 'cw-key-pip' }), '보낸 사단 · ★ 정치위원'),
+            el('span', {}, el('i', { class: 'cw-key-pip' }), '보낸 사단 · ', starIcon(), ' 정치위원 · ', trainIcon(), ' 장갑열차'),
         ]));
     }
 
@@ -590,12 +616,31 @@
                 el('small', {}, String(b.from)))),
             el('span', { class: 'cw-meter-now', style: `left:${at(f.strength)}` }));
         return el('div', { class: 'cw-meter' },
-            el('div', { class: 'cw-meter-top' }, el('strong', {}, `전투력 ${f.strength}`), el('span', {}, `압력 ${f.pressure}`)),
+            forces(id, f, turn),
             bar,
             el('div', { class: 'cw-stake-head' },
                 el('span', { class: 'cw-stake-verdict ' + current.tone }, `${now}: ${versus(current.after)}`),
                 current.overflow ? el('span', { class: 'cw-stake-momentum' }, `다음 싸움 압력 +${current.overflow * G.MOMENTUM}`) : null),
             stakeRow(id, line, current.after, bands, hist, turn, now));
+    }
+
+    // The two sides in marks: one red square per division sent, the
+    // commissar's star and Trotsky's train, against one mark in the
+    // attacker's colour per point of pressure. The numbers follow.
+    function forces(id, f, turn) {
+        const n = f.divisions || 0;
+        const planning = s.phase === 'plan' && turn === s.turn;
+        const commissar = planning ? s.plan.commissar[id] : f.parts.some(p => p.startsWith('정치위원'));
+        const train = planning ? s.plan.cards.some(c => c.target === id) : f.parts.some(p => p.includes('장갑열차'));
+        const kind = holderOf(id, turn).kind;
+        return el('div', { class: 'cw-forces' },
+            el('div', { class: 'cw-force is-red' },
+                el('span', { class: 'cw-mks', 'aria-hidden': 'true' }, ...Array.from({ length: n }, () => el('i', { class: 'cw-mk is-red' })), commissar ? starIcon() : null, train ? trainIcon() : null),
+                el('strong', {}, `전투력 ${f.strength}`),
+                el('span', { class: 'cw-sr' }, ` 사단 ${n}개${commissar ? ', 정치위원' : ''}${train ? ', 장갑열차' : ''}`)),
+            el('div', { class: 'cw-force is-foe' },
+                el('span', {}, `압력 ${f.pressure}`),
+                el('span', { class: 'cw-mks', 'aria-hidden': 'true' }, ...Array.from({ length: f.pressure }, () => el('i', { class: 'cw-mk k-' + kind })))));
     }
 
     // The cities this season can move, inner to outer, drawn as on the map:

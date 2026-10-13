@@ -501,3 +501,28 @@
 .cw-stake-hist { min-width: 0 !important; padding: 0 !important; align-self: stretch; }
 .cw-stake-hist::after { content: ''; position: absolute; top: 0; bottom: 14px; left: 50%; border-left: 1.5px dashed var(--text-primary); }
 .cw-stake-hist span { margin-top: auto; font-size: .64rem; font-weight: 800; color: var(--text-primary); background: var(--bg-surface); padding: 0 2px; position: relative; z-index: 1; }
+
+/* Forces in marks: Red squares, star and train against the attacker's marks */
+.cw-forces { display: flex; justify-content: space-between; align-items: flex-end; gap: 4px 12px; font-size: .8rem; font-variant-numeric: tabular-nums; }
+.cw-force { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; min-width: 0; }
+.cw-force.is-foe { justify-content: flex-end; text-align: right; color: var(--text-secondary); }
+.cw-force strong { font-size: .84rem; }
+.cw-mks { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 2px; max-width: 150px; }
+.cw-force.is-foe .cw-mks { justify-content: flex-end; }
+.cw-mk { display: inline-block; width: 8px; height: 8px; box-sizing: border-box; }
+.cw-mk.is-red { background: var(--cw-red); }
+.cw-mk.k-white { background: var(--cw-white); border: 1px solid var(--cw-ink); }
+.cw-mk.k-interv { background: var(--emap-blue); }
+.cw-mk.k-central { background: var(--emap-amber); }
+.cw-mk.k-national { background: var(--emap-gray); }
+.cw-mk-star { width: 12px; height: 12px; fill: #f2d64b; }
+.cw-mk-train { width: 16px; height: 13px; }
+.cw-train { fill: #f2d64b; stroke: #1d1d1b; stroke-width: .7; }
+.cw-foe-mark { stroke: var(--bg-surface); stroke-width: .6; }
+.cw-foe-mark.k-white { fill: var(--cw-white); }
+.cw-foe-mark.k-interv { fill: var(--emap-blue); }
+.cw-foe-mark.k-central { fill: var(--emap-amber); }
+.cw-foe-mark.k-national { fill: var(--emap-gray); }
+.cw-foe-marks { fill: #1d1d1b; stroke: var(--cw-ink); stroke-width: 1; }
+.cw-foe-marker.is-short .cw-foe-marks { fill: var(--clr-red); }
+.cw-map-legend .cw-mk-star, .cw-map-legend .cw-mk-train { vertical-align: middle; }
