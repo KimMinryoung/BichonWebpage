@@ -268,41 +268,69 @@
 .cw-tile.t-steppe { fill: color-mix(in srgb, #c8b77a 30%, var(--bg-surface)); }
 .cw-tile.t-town { fill: color-mix(in srgb, #9d8a62 55%, var(--bg-surface)); }
 .cw-tile.t-ford { fill: color-mix(in srgb, #5f93b8 45%, var(--bg-surface)); }
-.cw-tile.t-ford.is-flooded { fill: color-mix(in srgb, #2f6fb8 55%, var(--bg-surface)); }
-.cw-tile.t-deep { fill: color-mix(in srgb, #2f6fb8 65%, var(--bg-surface)); }
-.cw-tile.t-wall { fill: color-mix(in srgb, #8a5a2b 75%, var(--bg-surface)); }
-.cw-tile.t-yushun { fill: color-mix(in srgb, #7a6a4c 60%, var(--bg-surface)); }
+.cw-tile.t-ford.is-flooded { fill: color-mix(in srgb, #2f6fb8 60%, var(--bg-surface)); }
+.cw-tile.t-deep { fill: color-mix(in srgb, #1f4f8a 75%, var(--bg-surface)); }
+.cw-tile.t-wall { fill: color-mix(in srgb, #b4652a 70%, var(--bg-surface)); }
+.cw-tile.t-yushun { fill: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
 .cw-tile.is-goal { stroke: var(--clr-red); stroke-width: 3; }
-.cw-fortline { stroke: color-mix(in srgb, var(--text-primary) 60%, transparent); stroke-width: 2; stroke-dasharray: 4 3; }
+.cw-mark-wall, .cw-mark-trench, .cw-mark-water { fill: none; pointer-events: none; }
+.cw-mark-wall { stroke: color-mix(in srgb, #3a1e0a 70%, var(--text-primary)); stroke-width: 2; }
+.cw-mark-trench { stroke: color-mix(in srgb, var(--text-primary) 55%, transparent); stroke-width: 1.6; }
+.cw-mark-water { stroke: #ffffff; stroke-opacity: .35; stroke-width: 1.2; }
 .cw-tile-label { font-size: 9px; font-weight: 700; fill: var(--text-primary); pointer-events: none; }
+.cw-flank-zone { fill: none; stroke: #d9a514; stroke-width: 2.5; stroke-dasharray: 7 4; pointer-events: none; }
+.cw-danger { fill: var(--emap-blue); fill-opacity: .28; stroke: var(--emap-blue); stroke-width: 1.5; pointer-events: none; }
 .cw-hit { fill: #f2d64b; fill-opacity: .22; stroke: #f2d64b; stroke-width: 2; stroke-dasharray: 4 3; cursor: pointer; }
 .cw-hit:hover { fill-opacity: .45; }
 .cw-place { font-size: 10px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
+.cw-place.is-flank { fill: #b8930f; }
 .cw-terrain-key { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .78rem; color: var(--text-secondary); margin: 8px 0 0; }
 .cw-terrain-key span { display: inline-flex; align-items: center; gap: 5px; }
 .cw-terrain-key i { width: 14px; height: 14px; border: 1px solid var(--border); }
 .cw-terrain-key .k-steppe { background: color-mix(in srgb, #c8b77a 30%, var(--bg-surface)); }
 .cw-terrain-key .k-ford { background: color-mix(in srgb, #5f93b8 45%, var(--bg-surface)); }
-.cw-terrain-key .k-wall { background: color-mix(in srgb, #8a5a2b 75%, var(--bg-surface)); }
-.cw-terrain-key .k-yushun { background: color-mix(in srgb, #7a6a4c 60%, var(--bg-surface)); }
+.cw-terrain-key .k-wall { background: color-mix(in srgb, #b4652a 70%, var(--bg-surface)); }
+.cw-terrain-key .k-yushun { background: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
 .cw-terrain-key .k-town { background: color-mix(in srgb, #9d8a62 55%, var(--bg-surface)); }
 .cw-terrain-key .k-move { background: color-mix(in srgb, #f2d64b 30%, transparent); border: 2px dashed #f2d64b; }
+.cw-terrain-key .k-flank { border: 2px dashed #d9a514; }
+.cw-terrain-key .k-danger { background: color-mix(in srgb, #2f6fb8 35%, transparent); border-color: var(--emap-blue); }
 .cw-hit:focus-visible { outline: none; stroke: var(--text-primary); stroke-width: 3; }
 .cw-unit { cursor: pointer; }
 .cw-unit > rect:first-child { stroke-width: 2; }
 .cw-unit.is-red > rect:first-child { fill: var(--cw-red); stroke: #fff; }
 .cw-unit.is-white > rect:first-child { fill: #f4f1e8; stroke: var(--emap-blue); }
-.cw-unit-glyph { font-size: 15px; font-weight: 800; pointer-events: none; }
-.cw-unit.is-red .cw-unit-glyph, .cw-unit.is-red .cw-unit-hp { fill: #fff; }
-.cw-unit.is-white .cw-unit-glyph, .cw-unit.is-white .cw-unit-hp { fill: #1d2a44; }
-.cw-unit-hp { font-size: 9px; font-weight: 700; pointer-events: none; }
+.cw-unit-tag { font-size: 10px; font-weight: 800; letter-spacing: -.03em; pointer-events: none; }
+.cw-unit-hp { font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; pointer-events: none; }
+.cw-unit .cw-sym { fill: none; stroke-width: 1.4; pointer-events: none; }
+.cw-unit .cw-sym-dot { pointer-events: none; }
+.cw-unit.is-red .cw-unit-tag, .cw-unit.is-red .cw-unit-hp, .cw-unit.is-red .cw-sym-dot { fill: #fff; }
+.cw-unit.is-red .cw-sym { stroke: #fff; }
+.cw-unit.is-white .cw-unit-tag, .cw-unit.is-white .cw-unit-hp, .cw-unit.is-white .cw-sym-dot { fill: #1d2a44; }
+.cw-unit.is-white .cw-sym { stroke: #1d2a44; }
+.cw-hp-track { fill: #00000040; pointer-events: none; }
 .cw-hp { fill: #f2d64b; pointer-events: none; }
 .cw-unit.is-white .cw-hp { fill: var(--emap-blue); }
-.cw-unit.is-done { opacity: .55; }
+.cw-unit.is-done { opacity: .5; }
 .cw-unit.is-selected > rect:first-child { stroke: #f2d64b; stroke-width: 4; }
 .cw-unit.is-target > rect:first-child { stroke: var(--clr-red); stroke-width: 4; stroke-dasharray: 5 3; }
 .cw-unit:focus-visible { outline: none; }
 .cw-unit:focus-visible > rect:first-child { stroke: var(--text-primary); stroke-width: 4; }
+.cw-badge { pointer-events: none; }
+.cw-badge text { font-size: 10px; font-weight: 800; fill: #fff; }
+.cw-badge.is-preview rect, .cw-badge.is-red rect { fill: var(--cw-red); stroke: #fff; stroke-width: 1; }
+.cw-ground { pointer-events: none; }
+.cw-ground.is-cover { fill: #7a3f14; }
+.cw-ground.is-exposed { fill: #1f4f8a; }
+.cw-ground-text { font-size: 9px; font-weight: 800; fill: #fff; pointer-events: none; }
+.cw-badge.is-white rect { fill: var(--emap-blue); stroke: #fff; stroke-width: 1; }
+.cw-arrows { pointer-events: none; }
+.cw-blow { stroke-width: 3; fill: none; }
+.cw-blow.is-white { stroke: var(--emap-blue); }
+.cw-blow.is-red { stroke: var(--cw-red); }
+.cw-head.is-white { fill: var(--emap-blue); }
+.cw-head.is-red { fill: var(--cw-red); }
+.cw-trail { stroke: var(--emap-blue); stroke-width: 2; stroke-dasharray: 3 3; fill: none; }
 .cw-battle-side { display: grid; gap: 12px; min-width: 0; }
 .cw-battle-status { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; font-size: .9rem; }
 .cw-battle-status li:first-child { font-weight: 800; font-size: 1.05rem; }
@@ -311,6 +339,7 @@
 .cw-unit-info small { color: var(--text-secondary); font-weight: 400; }
 .cw-unit-info p { margin: 4px 0 0; font-size: .88rem; line-height: var(--leading-normal); }
 .cw-battle-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.cw-battle-events .games-kicker { margin: 0 0 4px; }
 .cw-battle-log { margin: 0; padding-left: 20px; font-size: .85rem; color: var(--text-secondary); line-height: var(--leading-normal); }
 
 /* Outcome */
@@ -338,6 +367,9 @@
     .cw-calendar small { display: none; }
     .cw-command { position: sticky; bottom: 0; background: var(--bg-canvas); border-top: 1px solid var(--border); padding-block: 8px; margin-inline: calc(-1 * var(--content-inset) * 0); z-index: 2; }
     .cw-command .cw-primary { flex: 1 1 100%; margin: 0; }
+    /* The battle's orders stay under the thumb below the grid. */
+    .cw-battle-actions { position: sticky; bottom: 0; background: var(--bg-surface); border-top: 1px solid var(--border); padding-block: 8px; z-index: 2; }
+    .cw-battle-actions .cw-primary { margin-left: auto; }
 }
 @media (prefers-reduced-motion: no-preference) {
     .cw-option, .cw-front { transition: background-color .15s ease, border-color .15s ease; }

@@ -239,6 +239,26 @@ assert.equal(again.battle.turn, 2);
 assert.deepEqual(again.battle.units.map(u => [u.id, u.r, u.c, u.hp]), war.battle.units.map(u => [u.id, u.r, u.c, u.hp]));
 assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red orders');
 
+// A move is taken back until the unit acts, and the Wall's flank with it.
+{
+    const b = B.start(D.battle, {});
+    const u = B.byId(b, 'r15');
+    u.r = 4; u.c = 7;
+    assert.ok(B.act(b, 'move', 'r15', 5, 7));
+    assert.ok(b.flanked);
+    assert.ok(B.act(b, 'undo', 'r15'));
+    assert.deepEqual([u.r, u.c, u.moved, b.flanked], [4, 7, false, false]);
+    assert.equal(B.act(b, 'undo', 'r15'), false, 'one move, one undo');
+    assert.ok(B.act(b, 'move', 'r15', 5, 7));
+    assert.ok(B.act(b, 'attack', 'r15', 'w3'));
+    assert.equal(B.act(b, 'undo', 'r15'), false, 'no undo after a blow');
+    // The reserve cavalry reaches past its neighbours once Reds are south
+    // of the Wall; the Yushun holders strike only next to them.
+    const reach = u2 => B.menace(b, B.byId(b, u2)).length;
+    assert.ok(reach('w4') > 4);
+    assert.equal(reach('w5'), 4);
+}
+
 
 // The card's bar: every strength from 0 up, in steps of 0.1, falls in the
 // band whose result the settlement gives it, and neighbouring bands differ.

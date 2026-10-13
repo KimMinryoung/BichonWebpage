@@ -4,8 +4,8 @@
    Deterministic and DOM-free like the campaign engine; the campaign logs
    each order as 'b:<name>' and restore replays them.
 
-   Orders (red side): move(unit, row, col), attack(unit, target),
-   wait(unit), end(). */
+   Orders (red side): move(unit, row, col), undo(unit) takes a move back
+   before the unit acts, attack(unit, target), wait(unit), end(). */
 (function (root) {
     'use strict';
 
@@ -17,7 +17,7 @@
         const units = def.units
             .filter(u => !u.flag || (flags && flags[u.flag]))
             .map(u => ({
-                id: u.id, side: u.side, name: u.name, sub: u.sub || '', kind: u.kind, role: u.role || null,
+                id: u.id, tag: u.tag || u.name, side: u.side, name: u.name, sub: u.sub || '', kind: u.kind, role: u.role || null,
                 person: u.person || null, r: u.at[0], c: u.at[1], hp: u.hp, maxHp: u.hp,
                 atk: u.atk, def: u.def, mv: u.mv, range: u.range || 1,
                 moved: false, acted: false,
@@ -152,9 +152,22 @@
         if (b.result || !u || u.side !== 'red' || u.moved || u.acted) return false;
         if (!reachable(b, u).some(t => t.r === r && t.c === c)) return false;
         b.events = [];
+        u.prev = { r: u.r, c: u.c, flanked: b.flanked };
         u.r = r; u.c = c; u.moved = true;
         updateFlank(b);
         checkResult(b);
+        return true;
+    }
+
+    // A move not yet followed by an attack or a halt can be taken back; the
+    // Wall's flank turns again only if another Red unit still holds it.
+    function undo(b, id) {
+        const u = byId(b, id);
+        if (b.result || !u || u.side !== 'red' || !u.prev || u.acted) return false;
+        b.events = [];
+        u.r = u.prev.r; u.c = u.prev.c; u.moved = false;
+        if (!u.prev.flanked) { b.flanked = false; updateFlank(b); }
+        u.prev = null;
         return true;
     }
 
@@ -165,7 +178,7 @@
         if (!targets(b, u).includes(t)) return false;
         b.events = [];
         strike(b, u, t);
-        u.acted = true; u.moved = true;
+        u.acted = true; u.moved = true; u.prev = null;
         checkResult(b);
         return true;
     }
@@ -173,11 +186,34 @@
     function wait(b, id) {
         const u = byId(b, id);
         if (b.result || !u || u.side !== 'red' || u.acted) return false;
-        u.acted = true; u.moved = true;
+        u.acted = true; u.moved = true; u.prev = null;
         return true;
     }
 
     // ── The White turn ──
+
+    // Whether a White unit leaves its post this turn, by its role.
+    function marching(b, u) {
+        if (u.role === 'wall') return b.flanked;
+        if (u.role === 'strike') return b.struck || b.flanked || alive(b).some(o => o.side === 'red' && o.r >= 4);
+        return false;
+    }
+
+    // Tiles a White unit could strike in its next turn: from where it
+    // stands, or from anywhere it may march to.
+    function menace(b, u) {
+        const from = [{ r: u.r, c: u.c }].concat(marching(b, u) ? reachable(b, u) : []);
+        const out = new Map();
+        for (const p of from) {
+            for (let r = p.r - u.range; r <= p.r + u.range; r++) {
+                for (let c = p.c - u.range; c <= p.c + u.range; c++) {
+                    const d = Math.abs(r - p.r) + Math.abs(c - p.c);
+                    if (d >= 1 && d <= u.range && inside(b, r, c) && terrain(b, r, c).cost < 99) out.set(r * 100 + c, { r, c });
+                }
+            }
+        }
+        return [...out.values()];
+    }
 
     function bestTarget(b, u) {
         let best = null;
@@ -197,7 +233,12 @@
             if (!best || d < best.d || (d === best.d && t.cost < best.cost)) best = { t, d, cost: t.cost };
         }
         const here = Math.abs(u.r - goal.r) + Math.abs(u.c - goal.c);
-        if (best && best.d < here) { u.r = best.t.r; u.c = best.t.c; }
+        if (best && best.d < here) march(b, u, best.t);
+    }
+
+    function march(b, u, to) {
+        b.events.push({ type: 'move', id: u.id, from: [u.r, u.c], to: [to.r, to.c] });
+        u.r = to.r; u.c = to.c;
     }
 
     function whiteTurn(b) {
@@ -214,7 +255,7 @@
                 const prey = reds().filter(r => r.r >= 4).sort((a, z) => a.hp - z.hp || a.r - z.r)[0];
                 if (prey && !targets(b, u).length) {
                     const spots = reachable(b, u).filter(t => Math.abs(t.r - prey.r) + Math.abs(t.c - prey.c) === 1);
-                    if (spots.length) { u.r = spots[0].r; u.c = spots[0].c; } else stepToward(b, u, prey, false);
+                    if (spots.length) march(b, u, spots[0]); else stepToward(b, u, prey, false);
                 }
             }
             const t = bestTarget(b, u);
@@ -241,17 +282,17 @@
         b.turn += 1;
         if (b.turn === b.def.windTurns + 1) b.events.push({ type: 'tide' });
         if (b.turn > b.def.turnLimit) { b.result = 'lost'; return true; }
-        for (const u of b.units) { u.moved = false; u.acted = false; }
+        for (const u of b.units) { u.moved = false; u.acted = false; u.prev = null; }
         return true;
     }
 
-    const ORDERS = { move, attack, wait, end };
+    const ORDERS = { move, undo, attack, wait, end };
     function act(b, name, ...args) {
         const fn = ORDERS[name];
         return fn ? fn(b, ...args) : false;
     }
 
-    const api = { start, act, reachable, targets, preview, terrain, tileAt, unitAt, byId, defenseOf, fordOpen };
+    const api = { start, act, reachable, targets, preview, menace, marching, terrain, tileAt, unitAt, byId, defenseOf, fordOpen };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.CivilWarBattle = api;
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -16,6 +16,7 @@
     let reviewSeen = false;         // the review before the battle was read
     let historyMap = false;         // the map shows history's control layer
     let selected = null;            // battle: the selected Red unit id
+    let inspected = null;           // battle: the White unit whose reach is shown
     let lit = null;                 // the front whose card the pointer or focus is on
     const mapEl = $('cwMap');
     const points = JSON.parse(mapEl.dataset.points);
@@ -108,6 +109,7 @@
         s = state;
         reviewSeen = Boolean(seen);
         selected = null;
+        inspected = null;
         $('cwSetup').hidden = true;
         $('cwPlay').hidden = false;
         render();
@@ -696,8 +698,73 @@
 
     const CELL = 48;
     // Place names on the battle grid: [text, row, col] of the label's cell.
-    const PLACES = [['터키 방벽', 3, 0.1], ['시바시', 2, 7], ['리톱스키 반도', 6, 5], ['유순 방어선', 8, 0.1], ['북타브리아', 0, 5], ['크림', 9, 6]];
+    const PLACES = [['터키 방벽', 3, 0.1], ['시바시', 4, 7], ['리톱스키 반도', 6, 5], ['유순 방어선', 8, 0.1], ['북타브리아', 0, 5], ['크림', 9, 6]];
+    const TILE_CLASS = { '.': 'steppe', '~': 'ford', '#': 'deep', W: 'wall', Y: 'yushun', t: 'town' };
+    const ROLE_NOTE = {
+        wall: '방벽을 지킨다. 방벽이 우회되면 공격할 상대가 없거나 병력이 절반 아래일 때 유순으로 물러난다.',
+        hold: '자리를 지키며 닿는 붉은 부대를 친다.',
+        strike: '붉은 군대가 방벽 남쪽으로 내려오거나 방벽이 우회되면 방벽 남쪽에서 가장 약한 붉은 부대를 덮친다.',
+    };
+    const center = (r, c) => [c * CELL + CELL / 2, r * CELL + CELL / 2];
 
+    // Terrain marks drawn over a tile's fill: the Wall's battlements, the
+    // Yushun trench, ripples on the Sivash (dense once it floods).
+    function tileMarks(ch, r, c, flooded) {
+        const x = c * CELL, y = r * CELL;
+        if (ch === 'W') return svg('path', { d: `M${x} ${y + 30}h6v-8h6v8h6v-8h6v8h6v-8h6v8h6`, class: 'cw-mark-wall' });
+        if (ch === 'Y') return svg('path', { d: `M${x} ${y + 30}l6 -6l6 6l6 -6l6 6l6 -6l6 6l6 -6l6 6`, class: 'cw-mark-trench' });
+        if (ch === '~') {
+            const rows = flooded ? [12, 24, 36] : [18, 34];
+            return svg('path', { d: rows.map(dy => `M${x + 8} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), class: 'cw-mark-water' });
+        }
+        return null;
+    }
+
+    // The outline of the tiles that turn the Wall's flank, while it holds.
+    function flankOutline(b) {
+        const f = b.def.flank;
+        const isFlank = (r, c) => r >= f.minRow && c >= f.minCol && r < b.def.map.length && c < b.def.map[0].length
+            && !B.terrain(b, r, c).ford && B.terrain(b, r, c).cost < 99;
+        let d = '';
+        for (let r = 0; r < b.def.map.length; r++) {
+            for (let c = 0; c < b.def.map[0].length; c++) {
+                if (!isFlank(r, c)) continue;
+                const x = c * CELL, y = r * CELL;
+                if (!isFlank(r - 1, c)) d += `M${x} ${y}h${CELL}`;
+                if (!isFlank(r + 1, c)) d += `M${x} ${y + CELL}h${CELL}`;
+                if (!isFlank(r, c - 1)) d += `M${x} ${y}v${CELL}`;
+                if (!isFlank(r, c + 1)) d += `M${x + CELL} ${y}v${CELL}`;
+            }
+        }
+        return d ? svg('path', { d, class: 'cw-flank-zone' }) : null;
+    }
+
+    function badge(x, y, text, cls) {
+        const w = text.length * 6.5 + 8;
+        const g = svg('g', { class: 'cw-badge ' + cls });
+        g.append(svg('rect', { x: x - w, y, width: w, height: 15, rx: 2 }), svg('text', { x: x - w / 2, y: y + 11, 'text-anchor': 'middle' }, text));
+        return g;
+    }
+
+    // The last turn's blows and marches as arrows on the board.
+    function eventArrows(b) {
+        const g = svg('g', { class: 'cw-arrows', 'aria-hidden': 'true' });
+        for (const e of b.events) {
+            if (e.type === 'move') {
+                const [x1, y1] = center(...e.from), [x2, y2] = center(...e.to);
+                g.append(svg('path', { d: `M${x1} ${y1}L${x2} ${y2}`, class: 'cw-trail' }));
+            } else if (e.type === 'attack') {
+                const a = b.units.find(u => u.id === e.from), d = b.units.find(u => u.id === e.to);
+                if (!a || !d) continue;
+                const [x1, y1] = center(a.r, a.c), [x2, y2] = center(d.r, d.c);
+                const len = Math.hypot(x2 - x1, y2 - y1) || 1;
+                const k = 14 / len;
+                g.append(svg('path', { d: `M${x1 + (x2 - x1) * k} ${y1 + (y2 - y1) * k}L${x2 - (x2 - x1) * k} ${y2 - (y2 - y1) * k}`, class: `cw-blow is-${a.side}`, 'marker-end': `url(#cwHead-${a.side})` }));
+                g.append(badge((x1 + x2) / 2 + 17, (y1 + y2) / 2 - 8, `−${e.dmg}`, 'is-' + a.side));
+            }
+        }
+        return g;
+    }
 
     function renderBattle() {
         const b = s.battle;
@@ -706,79 +773,126 @@
         const rows = def.map.length, cols = def.map[0].length;
         const board = svg('svg', { viewBox: `0 0 ${cols * CELL} ${rows * CELL}`, class: 'cw-grid', role: 'group', 'aria-label': '페레코프 전장' });
         const unit = selected && B.byId(b, selected);
+        const foe = !unit && inspected && B.byId(b, inspected);
         const moves = unit && !unit.moved && !unit.acted ? B.reachable(b, unit) : [];
         const targets = unit && !unit.acted ? B.targets(b, unit) : [];
+        const danger = foe ? B.menace(b, foe) : [];
+        const defs = svg('defs');
+        for (const side of ['red', 'white']) {
+            const m = svg('marker', { id: 'cwHead-' + side, viewBox: '0 0 10 10', refX: '8', refY: '5', markerWidth: '5', markerHeight: '5', orient: 'auto-start-reverse' });
+            m.append(svg('path', { d: 'M0 0L10 5L0 10z', class: 'cw-head is-' + side }));
+            defs.append(m);
+        }
+        board.append(defs);
+        const deselect = () => { if (selected || inspected) { selected = null; inspected = null; renderBattle(); } };
         for (let r = 0; r < rows; r++) {
             for (let c = 0; c < cols; c++) {
                 const ch = def.map[r][c];
-                const t = B.terrain(b, r, c);
-                const cls = ['cw-tile', 't-' + ({ '.': 'steppe', '~': 'ford', '#': 'deep', W: 'wall', Y: 'yushun', t: 'town' }[ch])];
-                if (ch === '~' && !B.fordOpen(b)) cls.push('is-flooded');
+                const flooded = ch === '~' && !B.fordOpen(b);
+                const cls = ['cw-tile', 't-' + TILE_CLASS[ch]];
+                if (flooded) cls.push('is-flooded');
                 if (r === def.goal[0] && c === def.goal[1]) cls.push('is-goal');
-                const move = moves.find(m => m.r === r && m.c === c);
-                const rect = svg('rect', { x: c * CELL, y: r * CELL, width: CELL, height: CELL, class: cls.join(' ') });
-                board.append(rect);
-                if (ch === 'W' || ch === 'Y') board.append(svg('path', { d: `M${c * CELL} ${r * CELL + CELL / 2}h${CELL}`, class: 'cw-fortline' }));
-                if (r === def.goal[0] && c === def.goal[1]) board.append(svg('text', { x: c * CELL + CELL / 2, y: r * CELL + 14, 'text-anchor': 'middle', class: 'cw-tile-label' }, '유순'));
-                if (ch === 't' && !(r === def.goal[0] && c === def.goal[1])) board.append(svg('text', { x: c * CELL + CELL / 2, y: r * CELL + 14, 'text-anchor': 'middle', class: 'cw-tile-label' }, '아르먄스크'));
-                if (move) {
-                    const hit = svg('rect', { x: c * CELL + 3, y: r * CELL + 3, width: CELL - 6, height: CELL - 6, class: 'cw-hit', tabindex: '0', role: 'button', 'aria-label': `${t.name} ${r + 1}행 ${c + 1}열로 이동` });
-                    const go = () => { if (act('b:move', unit.id, r, c)) { afterBattleAct(`${unit.name} 이동`); } };
-                    hit.addEventListener('click', go);
-                    hit.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
-                    board.append(hit);
-                }
+                const tile = svg('rect', { x: c * CELL, y: r * CELL, width: CELL, height: CELL, class: cls.join(' ') });
+                tile.addEventListener('click', deselect);
+                board.append(tile);
+                const mark = tileMarks(ch, r, c, flooded);
+                if (mark) board.append(mark);
+                if (ch === 't') board.append(svg('text', { x: c * CELL + CELL / 2, y: r * CELL + 14, 'text-anchor': 'middle', class: 'cw-tile-label' }, r === def.goal[0] && c === def.goal[1] ? '유순 역' : '아르먄스크'));
+                if (danger.some(m => m.r === r && m.c === c)) board.append(svg('rect', { x: c * CELL + 2, y: r * CELL + 2, width: CELL - 4, height: CELL - 4, class: 'cw-danger' }));
             }
         }
+        if (!b.flanked) board.append(flankOutline(b));
         for (const [text, r, c] of PLACES) board.append(svg('text', { x: c * CELL + 4, y: r * CELL + 12, class: 'cw-place' }, text));
+        if (!b.flanked) board.append(svg('text', { x: def.flank.minCol * CELL + 4, y: (def.flank.minRow + 2) * CELL + 12, class: 'cw-place is-flank' }, '우회 목표'));
+        for (const m of moves) {
+            const t = B.terrain(b, m.r, m.c);
+            const hit = svg('rect', { x: m.c * CELL + 3, y: m.r * CELL + 3, width: CELL - 6, height: CELL - 6, class: 'cw-hit', tabindex: '0', role: 'button', 'aria-label': `${t.name} ${m.r + 1}행 ${m.c + 1}열로 이동` });
+            const go = () => { if (act('b:move', unit.id, m.r, m.c)) afterBattleAct(`${unit.name} 이동`); };
+            hit.addEventListener('click', go);
+            hit.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+            board.append(hit);
+        }
         for (const u of b.units.filter(x => x.hp > 0)) {
             const x = u.c * CELL, y = u.r * CELL;
             const isTarget = targets.includes(u);
+            const p = isTarget ? B.preview(b, unit, u) : null;
             const done = u.side === 'red' && u.acted;
             const g = svg('g', {
-                class: `cw-unit is-${u.side} k-${u.kind}${u.id === selected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done ? ' is-done' : ''}`,
-                tabindex: (u.side === 'red' && !u.acted) || isTarget ? '0' : '-1', role: 'button',
-                'aria-label': `${u.side === 'red' ? '붉은 군대' : '백군'} ${u.name}, 병력 ${u.hp}/${u.maxHp}` + (isTarget ? `, 공격 시 피해 ${B.preview(b, unit, u).dmg}` : ''),
+                class: `cw-unit is-${u.side} k-${u.kind}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done ? ' is-done' : ''}`,
+                tabindex: '0', role: 'button',
+                'aria-label': `${u.side === 'red' ? '붉은 군대' : '백군'} ${u.name}, 병력 ${u.hp}/${u.maxHp}, 방어 ${B.defenseOf(b, u)}` + (p ? `, 공격 시 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ''}` : '') + (done ? ', 행동 마침' : ''),
             });
-            g.append(svg('rect', { x: x + 4, y: y + 4, width: CELL - 8, height: CELL - 8, rx: 3 }));
-            g.append(svg('text', { x: x + CELL / 2, y: y + 22, 'text-anchor': 'middle', class: 'cw-unit-glyph' }, { inf: '보', cav: '기', art: '포' }[u.kind]));
-            g.append(svg('rect', { x: x + 7, y: y + CELL - 13, width: (CELL - 14) * u.hp / u.maxHp, height: 5, class: 'cw-hp' }));
-            g.append(svg('text', { x: x + CELL / 2, y: y + 35, 'text-anchor': 'middle', class: 'cw-unit-hp' }, String(u.hp)));
+            g.append(svg('rect', { x: x + 3, y: y + 3, width: CELL - 6, height: CELL - 6, rx: 3 }));
+            g.append(svg('text', { x: x + CELL / 2, y: y + 15, 'text-anchor': 'middle', class: 'cw-unit-tag' }, u.tag));
+            // The unit symbol: a box crossed for infantry, slashed for
+            // cavalry, dotted for guns.
+            const sx = x + 8, sy = y + 19;
+            g.append(svg('rect', { x: sx, y: sy, width: 17, height: 11, class: 'cw-sym' }));
+            if (u.kind === 'inf') g.append(svg('path', { d: `M${sx} ${sy}l17 11M${sx} ${sy + 11}l17 -11`, class: 'cw-sym' }));
+            else if (u.kind === 'cav') g.append(svg('path', { d: `M${sx} ${sy + 11}l17 -11`, class: 'cw-sym' }));
+            else g.append(svg('circle', { cx: sx + 8.5, cy: sy + 5.5, r: 2.6, class: 'cw-sym-dot' }));
+            g.append(svg('text', { x: x + 38, y: y + 29, 'text-anchor': 'middle', class: 'cw-unit-hp' }, String(u.hp)));
+            // Ground that shields or exposes the unit, as a chip before its
+            // strength bar (the Wall's +3 drops to +1 once it is turned).
+            const ground = B.defenseOf(b, u) - u.def;
+            const barX = x + (ground ? 22 : 7), barW = x + CELL - 7 - barX;
+            if (ground) {
+                g.append(svg('rect', { x: x + 6, y: y + 32, width: 14, height: 11, rx: 2, class: 'cw-ground ' + (ground > 0 ? 'is-cover' : 'is-exposed') }));
+                g.append(svg('text', { x: x + 13, y: y + 41, 'text-anchor': 'middle', class: 'cw-ground-text' }, (ground > 0 ? '+' : '−') + Math.abs(ground)));
+            }
+            g.append(svg('rect', { x: barX, y: y + 35, width: barW, height: 5, class: 'cw-hp-track' }));
+            g.append(svg('rect', { x: barX, y: y + 35, width: barW * u.hp / u.maxHp, height: 5, class: 'cw-hp' }));
+            if (p) g.append(badge(x + CELL + 2, y - 17, p.dmg >= u.hp ? '격파' : `−${p.dmg}` + (p.counter ? ` ↩${p.counter}` : ''), 'is-preview'));
             const pick = () => {
                 if (isTarget) {
-                    const p = B.preview(b, unit, u);
                     if (act('b:attack', unit.id, u.id)) afterBattleAct(`${unit.name}이(가) ${u.name}을(를) 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : ''));
                 } else if (u.side === 'red') {
                     selected = selected === u.id ? null : u.id;
+                    inspected = null;
                     renderBattle();
                     focusSelected();
                 } else {
-                    showUnit(u);
+                    selected = null;
+                    inspected = inspected === u.id ? null : u.id;
+                    renderBattle();
+                    focusSelected();
                 }
             };
             g.addEventListener('click', pick);
             g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
             board.append(g);
         }
+        board.append(eventArrows(b));
+        board.addEventListener('keydown', e => { if (e.key === 'Escape') deselect(); });
+        // A Red order leaves only its blow, falls and the flank in the
+        // events; anything else came from the White turn.
+        const whiteMoved = b.events.some(e => e.type === 'attack' ? b.units.find(u => u.id === e.from).side === 'white' : e.type !== 'fall' && e.type !== 'flank');
+        const reds = b.units.filter(u => u.side === 'red' && u.hp > 0);
+        const ready = reds.filter(u => !u.acted).length;
         const status = [
             `${b.turn} / ${def.turnLimit} 턴`,
+            `행동할 수 있는 부대 ${ready} / ${reds.length}`,
             B.fordOpen(b) ? `시바시 여울 열림 (${def.windTurns - b.turn + 1}턴 남음)` : '바람이 바뀌어 시바시에 물이 찼다',
-            b.flanked ? '방벽 우회: 수비대가 방어 이점을 잃었다' : '방벽은 아직 굳건하다',
+            b.flanked ? '방벽 우회: 수비대가 방어 이점을 잃었다' : '방벽은 아직 굳건하다. 우회 목표에 부대를 세우면 수비대가 흔들린다',
         ];
+        const hint = foe ? null : el('p', {}, '붉은 부대를 누르면 갈 수 있는 칸(노란 점선)과 칠 수 있는 적(예상 피해 표시)이 나옵니다. 백군 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 나옵니다.');
         box.replaceChildren(
             el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             el('details', { class: 'cw-battle-brief', open: b.turn === 1 && !s.log.some(e => e[0].startsWith('b:')) }, el('summary', {}, '작전 지시'), ...def.brief.map(p => el('p', {}, p))),
             el('div', { class: 'cw-battle-layout' },
                 el('div', { class: 'cw-grid-wrap' }, board, el('p', { class: 'cw-terrain-key' },
-                    ...[['steppe', '초원'], ['ford', '시바시 여울 (방어 −1)'], ['wall', '터키 방벽 (방어 +3)'], ['yushun', '유순 방어선 (방어 +2)'], ['town', '마을 (방어 +1)'], ['move', '갈 수 있는 칸']]
+                    ...[['steppe', '초원'], ['ford', '시바시 여울 (방어 −1)'], ['wall', '터키 방벽 (방어 +3, 이동 3)'], ['yushun', '유순 방어선 (방어 +2, 이동 2)'], ['town', '마을 (방어 +1)'], ['move', '갈 수 있는 칸'], ['flank', '우회 목표'], ['danger', '백군이 칠 수 있는 칸']]
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('ul', { class: 'cw-battle-status' }, ...status.map(t => el('li', {}, t))),
-                    el('div', { id: 'cwUnitInfo', class: 'cw-unit-info' }, unit ? unitInfo(unit) : el('p', {}, '붉은 부대를 누르면 갈 수 있는 칸(밝은 칸)과 칠 수 있는 적(빨간 테두리)이 표시됩니다.')),
+                    el('div', { id: 'cwUnitInfo', class: 'cw-unit-info' }, unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint),
                     el('div', { class: 'cw-battle-actions' },
+                        unit && unit.prev && !unit.acted ? el('button', { type: 'button', 'data-key': 'undo', onclick: () => { if (act('b:undo', unit.id)) afterBattleAct(`${unit.name} 이동 취소`); } }, '이동 취소') : null,
                         unit && !unit.acted ? el('button', { type: 'button', onclick: () => { act('b:wait', unit.id); selected = null; renderBattle(); } }, '이 부대 대기') : null,
                         el('button', { type: 'button', class: 'cw-primary', onclick: endTurn }, '턴 종료 →')),
-                    el('ol', { class: 'cw-battle-log', 'aria-label': '지난 턴의 전투' }, ...eventLines(b).map(t => el('li', {}, t))))));
+                    b.events.length ? el('div', { class: 'cw-battle-events' },
+                        el('p', { class: 'games-kicker' }, whiteMoved ? '지난 백군의 차례' : '방금 일어난 일'),
+                        el('ol', { class: 'cw-battle-log' }, ...eventLines(b).map(t => el('li', {}, t)))) : null)));
     }
 
     function unitInfo(u) {
@@ -788,12 +902,8 @@
             el('h3', {}, u.name, u.sub ? el('small', {}, ` ${u.sub}`) : null),
             el('p', {}, `병력 ${u.hp}/${u.maxHp} · 공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} (${t.name}) · 이동 ${u.mv}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
             u.person ? el('p', {}, '지휘: ', el('a', Object.assign({ href: '/commulingo/people/' + u.person }, NEW_TAB), '바실리 블류헤르')) : null,
-            u.side === 'red' ? el('p', { class: 'cw-note' }, u.acted ? '이번 턴의 행동을 마쳤다.' : u.moved ? '이동했다. 공격하거나 대기할 수 있다.' : '이동하거나 공격할 수 있다.') : null);
-    }
-
-    function showUnit(u) {
-        const box = $('cwUnitInfo');
-        if (box) box.replaceChildren(unitInfo(u));
+            u.side === 'red' ? el('p', { class: 'cw-note' }, u.acted ? '이번 턴의 행동을 마쳤다.' : u.moved ? '이동했다. 공격하거나 대기할 수 있고, 이동을 취소할 수도 있다.' : '이동하거나 공격할 수 있다.') : null,
+            u.side === 'white' && ROLE_NOTE[u.role] ? el('p', { class: 'cw-note' }, ROLE_NOTE[u.role] + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '')) : null);
     }
 
     function focusSelected() {
@@ -805,6 +915,7 @@
         const name = id => (b.units.find(u => u.id === id) || {}).name;
         return b.events.map(e => {
             if (e.type === 'attack') return `${name(e.from)} → ${name(e.to)}: 피해 ${e.dmg}${e.counter ? `, 반격 ${e.counter}` : ''}`;
+            if (e.type === 'move') return `${name(e.id)}이(가) 움직였다.`;
             if (e.type === 'fall') return `${name(e.id)}이(가) 무너졌다.`;
             if (e.type === 'water') return `${name(e.id)}: 차오르는 물에 피해 ${e.dmg}`;
             if (e.type === 'flank') return '리톱스키 반도에 붉은 군대가 올랐다. 방벽 수비대가 퇴로를 걱정한다.';
@@ -826,6 +937,7 @@
     function endTurn() {
         if (!act('b:end')) return;
         selected = null;
+        inspected = null;
         if (s.phase === 'done') { render(); $('cwOutcome').scrollIntoView({ block: 'start' }); announce(s.outcome.title); return; }
         renderBattle();
         announce(`${s.battle.turn}턴. ` + eventLines(s.battle).join(' '));
