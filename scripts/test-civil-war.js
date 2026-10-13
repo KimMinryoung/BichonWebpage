@@ -239,4 +239,35 @@ assert.equal(again.battle.turn, 2);
 assert.deepEqual(again.battle.units.map(u => [u.id, u.r, u.c, u.hp]), war.battle.units.map(u => [u.id, u.r, u.c, u.hp]));
 assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red orders');
 
-console.log('civil-war: campaign, policies, save and battle checks passed');
+
+// The card's bar: every strength from 0 up, in steps of 0.1, falls in the
+// band whose result the settlement gives it, and neighbouring bands differ.
+{
+    const s = G.start();
+    for (let t = 0; t < D.turns.length; t++) {
+        for (const id of Object.keys(D.fronts)) {
+            for (const line of [0, 1, 2, D.fronts[id].cities.length]) {
+                if (line > D.fronts[id].cities.length) continue;
+                for (const pressure of [0, 1, 4, 9, 15]) {
+                    for (const choice of [null, 'warsaw']) {
+                        const bands = G.outcomeBands(id, line, t, pressure, choice);
+                        assert.equal(bands[0].from, 0);
+                        assert.equal(bands[bands.length - 1].to, null);
+                        for (let i = 1; i < bands.length; i++) {
+                            assert.equal(bands[i - 1].to, bands[i].from);
+                            assert.ok(bands[i - 1].change !== bands[i].change || bands[i - 1].overflow !== bands[i].overflow);
+                        }
+                        for (let x = 0; x <= pressure + 12; x = Math.round((x + 0.1) * 10) / 10) {
+                            s.lines[id] = line; s.turn = t; s.plan.choice = choice;
+                            const r = G.outcomeOf(s, id, x - pressure);
+                            const b = bands.find(b => x >= b.from && (b.to === null || x < b.to));
+                            assert.deepEqual([b.change, b.overflow], [r.change, r.overflow], `${id} t${t} line ${line} p${pressure} x${x}`);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+console.log('civil-war: campaign, policies, save, battle and bar checks passed');

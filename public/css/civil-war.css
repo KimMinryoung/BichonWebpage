@@ -184,24 +184,25 @@
 .cw-stepper output { display: grid; place-items: center; min-width: 86px; border-block: 1px solid var(--border); font-variant-numeric: tabular-nums; font-weight: 700; }
 .games-shell .cw-toggle { padding: 8px 12px; font-size: .85rem; }
 .games-shell .cw-toggle[aria-pressed="true"] { border-color: var(--cw-red); color: var(--text-primary); font-weight: 700; }
-.cw-forecast strong { font-variant-numeric: tabular-nums; }
-.cw-front.is-short .cw-forecast strong { color: var(--clr-red); }
-.cw-meter { display: grid; gap: 4px; margin: 2px 0 30px; }
-.cw-meter-top { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: .9rem; font-variant-numeric: tabular-nums; }
-.cw-meter-minus { font-size: .72rem; font-weight: 700; color: var(--clr-red); }
-.cw-meter-bar { position: relative; height: 14px; border: 1px solid var(--border); background: var(--bg-canvas); }
-.cw-meter-fill { position: absolute; inset: 0 auto 0 0; background: var(--text-secondary); transition: width .2s ease; }
-.cw-meter-fill.is-short { background: var(--clr-red); }
-.cw-meter-fill.is-ahead { background: var(--btn-primary, #2da44e); }
-.cw-meter-tick { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--text-primary); }
-.cw-meter-tick.is-minus { background: var(--clr-red); }
-.cw-meter-tick.is-plus { background: var(--btn-primary, #2da44e); }
-.cw-meter-marks { position: relative; height: 0; font-size: .72rem; line-height: var(--leading-snug); }
-.cw-meter-marks span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; font-weight: 700; text-align: center; }
-.cw-meter-marks span.is-start { transform: none; text-align: left; }
-.cw-meter-marks span.is-plus { color: var(--btn-primary, #2da44e); }
-.cw-meter-marks small { display: block; font-weight: 400; color: var(--text-secondary); }
-@media (prefers-reduced-motion: reduce) { .cw-meter-fill { transition: none; } }
+.cw-meter { display: grid; gap: 4px; margin: 2px 0 10px; }
+.cw-meter-top { display: flex; justify-content: space-between; gap: 8px; font-size: .9rem; font-variant-numeric: tabular-nums; }
+.cw-meter-top span { color: var(--text-secondary); }
+/* Bands coloured by their result against history; the black line is the strength. */
+.cw-meter-bar { position: relative; height: 16px; margin-bottom: 16px; border: 1px solid var(--border); background: var(--bg-canvas); }
+.cw-meter-band { position: absolute; top: 0; bottom: 0; }
+.cw-meter-band.is-behind { background: color-mix(in srgb, var(--clr-red) 30%, transparent); }
+.cw-meter-band.is-even { background: color-mix(in srgb, var(--text-secondary) 18%, transparent); }
+.cw-meter-band.is-ahead { background: color-mix(in srgb, var(--btn-primary, #2da44e) 35%, transparent); }
+.cw-meter-tick { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--border); }
+.cw-meter-tick small { position: absolute; top: 100%; left: 0; transform: translateX(-50%); padding-top: 1px; font-size: .7rem; font-variant-numeric: tabular-nums; color: var(--text-secondary); }
+.cw-meter-now { position: absolute; top: -4px; bottom: -4px; width: 3px; margin-left: -1.5px; background: var(--text-primary); transition: left .2s ease; }
+.cw-meter-bands { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: .8rem; font-variant-numeric: tabular-nums; }
+.cw-meter-bands li { display: grid; grid-template-columns: 9.5em 1fr; gap: 8px; padding: 2px 6px; border-left: 3px solid transparent; color: var(--text-secondary); }
+.cw-meter-bands li.is-behind { border-left-color: var(--clr-red); }
+.cw-meter-bands li.is-ahead { border-left-color: var(--btn-primary, #2da44e); }
+.cw-meter-bands li.is-even { border-left-color: var(--text-secondary); }
+.cw-meter-bands li.is-now { color: var(--text-primary); font-weight: 700; background: color-mix(in srgb, var(--text-primary) 8%, transparent); }
+@media (prefers-reduced-motion: reduce) { .cw-meter-now { transition: none; } }
 .cw-foes { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 6px; }
 .cw-foes-label { font-size: .75rem; font-weight: 700; color: var(--text-secondary); padding-top: 5px; }
 .cw-foe { flex: 1 1 100%; border: 1px solid var(--border); background: var(--bg-canvas); }
@@ -216,9 +217,7 @@
 .cw-foe-dot { width: 12px; height: 12px; flex: 0 0 auto; border-radius: 50%; border: 1.5px solid var(--cw-ink); background: var(--cw-white); }
 .cw-foe.is-national .cw-foe-dot { background: var(--emap-gray); }
 .cw-foe.is-interv .cw-foe-dot { background: var(--emap-blue); }
-.cw-momentum { color: var(--clr-red); font-weight: 700; }
 .cw-parts { color: var(--text-secondary); font-size: .8rem !important; }
-.cw-verdict { font-weight: 700; }
 .cw-warn { border-left: 4px solid var(--clr-red); padding: 8px 12px; margin: 0; background: var(--bg-surface); font-size: .9rem; }
 
 /* Advisor cards */

@@ -221,21 +221,45 @@
     // last are the overflow: the enemy's momentum, carried into the front's
     // next fight as MOMENTUM pressure each.
     function outcomeOf(s, id, margin) {
-        const line = s.lines[id];
+        return outcomeAt(id, s.lines[id], s.turn, margin, s.plan.choice);
+    }
+
+    function outcomeAt(id, line, turn, margin, choice) {
         const front = DATA.fronts[id];
         const max = front.cities.length;
-        const was = s.turn ? front.history[s.turn - 1] : DATA.startLines[id];
-        const historical = front.history[s.turn] - was;
+        const was = turn ? front.history[turn - 1] : DATA.startLines[id];
+        const historical = front.history[turn] - was;
         const bonus = margin >= 0 ? Math.min(1, Math.floor(margin / STEP)) : -Math.ceil((-margin - SLACK) / STEP);
         const raw = line + historical + bonus;
         const overflow = bonus < 0 ? Math.min(-bonus, Math.max(0, -raw)) : 0;
         // Warsaw is the third city of the western front. Only the march on
         // Warsaw reaches it, and only with WARSAW to spare.
         if (id === 'west') {
-            if (s.plan.choice === 'warsaw' && margin >= WARSAW) return { change: max - line, overflow: 0 };
+            if (choice === 'warsaw' && margin >= WARSAW) return { change: max - line, overflow: 0 };
             return { change: clamp(raw, 0, max - 1) - line, overflow };
         }
         return { change: clamp(raw, 0, max) - line, overflow };
+    }
+
+    // Every strength at which a front's result changes, from 0 up: bands of
+    // { from, to (null for the top), change, overflow }, where a strength in
+    // [from, to) gives that result. Built from outcomeAt at the margins
+    // where its bonus steps (−SLACK − STEP·k, 0, STEP, WARSAW), so the
+    // card's bar cannot disagree with the settlement.
+    function outcomeBands(id, line, turn, pressure, choice) {
+        const cuts = [STEP, WARSAW, -SLACK];
+        for (let m = -SLACK - STEP; m > -pressure; m -= STEP) cuts.push(m);
+        const from = [...new Set(cuts.map(m => pressure + m).filter(v => v > 0))].sort((a, b) => a - b);
+        from.unshift(0);
+        const bands = [];
+        for (let i = 0; i < from.length; i++) {
+            const r = outcomeAt(id, line, turn, from[i] - pressure, choice);
+            const last = bands[bands.length - 1];
+            if (last && last.change === r.change && last.overflow === r.overflow) continue;
+            if (last) last.to = from[i];
+            bands.push({ from: from[i], to: null, change: r.change, overflow: r.overflow });
+        }
+        return bands;
     }
 
     function supplyOf(s) {
@@ -438,8 +462,8 @@
     }
 
     const api = {
-        DATA, VERSION, start, act, restore, serialize, forecast, activeFronts, turnData,
-        free, allocated, threatsOf, cardDivisions, outcomeOf, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
+        DATA, VERSION, MOMENTUM, start, act, restore, serialize, forecast, activeFronts, turnData,
+        free, allocated, threatsOf, cardDivisions, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.CivilWarGame = api;
