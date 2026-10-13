@@ -22,6 +22,12 @@
     const SLACK = 1;                // a shortfall under this still holds
     const MOMENTUM = 2;             // next season's pressure per city lost beyond the last
     const WARSAW = 8;               // the western front's margin that takes Warsaw
+    const FED = 0.5;                // a starving division's share of its strength
+    const HUNGER = 0.75;            // supply under this sets soldiers deserting
+    const DESERT = 6;               // divisions lost next season at no supply at all
+    // Grain each season under a policy: the tax in kind leaves the peasants
+    // most of what the requisition took, and the army eats less for it.
+    const GRAIN = { razverstka: 7, market: 1, tax: -10 };
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
 
@@ -188,7 +194,7 @@
         for (const id of activeFronts(s)) {
             const threat = threats[id];
             const d = s.plan.alloc[id];
-            let strength = d * q * (0.5 + 0.5 * supply.ratio);
+            let strength = d * q * (FED + (1 - FED) * supply.ratio);
             const parts = [];
             if (s.plan.commissar[id]) { strength += COMMISSAR; parts.push('정치위원 +1.5'); }
             for (const c of s.plan.cards) {
@@ -287,9 +293,7 @@
         const flags = Object.assign({}, s.flags);
         if (withPlan) Object.assign(flags, choiceFlags(s));
         let g = 3 + Math.floor(s.peasants / 15);
-        if (flags.razverstka) g += 7;
-        if (flags.market) g += 2;
-        if (flags.tax) g -= 4;
+        for (const [flag, n] of Object.entries(GRAIN)) if (flags[flag]) g += n;
         if (withPlan) {
             for (const c of s.plan.cards) g += DATA.cards[c.id].grain || 0;
         }
@@ -316,8 +320,8 @@
 
         // Grain: the season's income, then the army eats.
         s.grain = Math.max(0, fc.supply.have - fc.supply.need);
-        if (fc.supply.ratio < 0.75) notes.push('곡물이 모자라 병사들이 굶었다. 다음 시기 탈영으로 사단이 준다.');
-        s.deserted = fc.supply.ratio < 0.75 ? Math.ceil((1 - fc.supply.ratio) * 6) : 0;
+        if (fc.supply.ratio < HUNGER) notes.push('곡물이 모자라 병사들이 굶었다. 다음 시기 탈영으로 사단이 준다.');
+        s.deserted = fc.supply.ratio < HUNGER ? Math.ceil((1 - fc.supply.ratio) * DESERT) : 0;
 
         // Lines move.
         const fronts = {};

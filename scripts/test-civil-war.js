@@ -94,6 +94,17 @@ assert.ok(alt.records.some(r => r.supply.ratio < 0.75), 'buying grain at fixed p
 assert.ok(sumDiff(alt) < 0);
 assert.ok(alt.peasants > hist.peasants);
 
+// The peasants' policies are a trade, not a free star: easing the
+// requisition (the market in 1918, the tax in kind in 1920) keeps the
+// countryside above 40 but costs the lines what history held.
+for (const id of ['market', 'tax']) {
+    const eased = campaign(t => (t.choice.options.some(o => o.id === id) ? id : t.choice.history));
+    assert.equal(eased.phase, 'battle', id);
+    assert.ok(eased.peasants >= 40, `${id} keeps the countryside (${eased.peasants})`);
+    assert.ok(sumDiff(eased) < 0, `${id} costs cities (${sumDiff(eased)})`);
+}
+assert.ok(hist.peasants < 40, 'history\'s road ends with the countryside below 40');
+
 // Requisitioning every season feeds the army and raises the countryside.
 const harsh = campaign(historical, { requisition: true });
 assert.ok(harsh.peasants < 20, 'requisition every season drives the peasants to revolt');
