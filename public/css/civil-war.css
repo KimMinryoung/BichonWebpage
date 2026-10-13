@@ -370,7 +370,6 @@
     .cw-intro-art { min-height: 200px; }
     .cw-calendar small { display: none; }
     .cw-command { position: sticky; bottom: 0; background: var(--bg-canvas); border-top: 1px solid var(--border); padding-block: 8px; margin-inline: calc(-1 * var(--content-inset) * 0); z-index: 2; }
-    .cw-command .cw-primary { flex: 1 1 100%; margin: 0; }
     /* The board keeps a readable cell and scrolls sideways instead. */
     .cw-grid-scroll { overflow-x: auto; }
     .cw-grid { min-width: 540px; }
@@ -397,4 +396,94 @@
     .cw-shell .games-crumb.has-status .games-crumb-item:last-child { display: none; }
     .cw-crumb-status { gap: 10px; font-size: .76rem; }
     .cw-crumb-status div { gap: 3px; }
+}
+
+/* Density while playing: the page heading gives way to the crumb bar,
+   the HUD runs in two short rows, explanations fold. */
+.cw-shell.is-playing .cw-heading { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; margin: 0; padding: 0; border: 0; }
+.cw-shell.is-playing .cw-hud { gap: 8px; padding: 10px var(--content-inset); margin: 10px 0 12px; }
+.cw-shell.is-playing .cw-season { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: end; column-gap: 16px; }
+.cw-shell.is-playing .cw-season .games-kicker { grid-column: 1; margin: 0; }
+.cw-shell.is-playing .cw-season h2 { grid-column: 1; font-size: 1.15rem; margin: 0; }
+.cw-shell.is-playing .cw-calendar { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
+.cw-shell.is-playing .cw-calendar li { padding-top: 3px; border-top-width: 3px; font-size: .7rem; }
+.cw-shell.is-playing .cw-stats { grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 4px 10px; }
+.cw-shell.is-playing .cw-stats strong { font-size: 1.05rem; }
+.cw-shell.is-playing .cw-stats > div { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 6px; }
+.cw-shell.is-playing .cw-stats dd { margin: 0; display: contents; }
+.cw-shell.is-playing .cw-stats small { flex-basis: 100%; }
+.cw-shell.is-playing .cw-stats small { font-size: .7rem; line-height: 1.3; }
+.cw-army { padding-top: 6px; }
+.cw-army summary { cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; min-height: 32px; font-size: .85rem; }
+.cw-army summary strong { font-size: .9rem; }
+.cw-army-line { color: var(--text-secondary); font-size: .8rem; }
+.cw-army-change { font-size: .75rem; font-weight: 700; border: 1px solid var(--border); padding: 1px 6px; }
+.cw-army-change.is-plus { border-color: var(--btn-primary, #2da44e); }
+.cw-army-change.is-minus { border-color: var(--clr-red); color: var(--clr-red); }
+.cw-army details[open] .cw-troops { margin-top: 8px; }
+.cw-shell.is-playing .cw-brief { margin-bottom: 12px; padding-block: 0; }
+.cw-shell.is-playing .cw-brief p { font-size: .95rem; line-height: 1.6; margin-bottom: 6px; }
+.cw-shell.is-playing .cw-board { gap: 12px; margin-bottom: 12px; }
+
+/* Front cards: one header row, a row of folded foes, one row of controls */
+.cw-fronts { gap: 8px; }
+.cw-front { padding: 8px 10px; gap: 5px; align-content: start; }
+.cw-front header { justify-content: flex-start; align-items: center; gap: 4px 8px; margin: 0; }
+.cw-front header > span { font-size: .75rem; margin-left: auto; color: var(--text-secondary); }
+.cw-front header .cw-foes { display: contents; }
+.cw-front .cw-threat { font-size: .84rem; color: var(--text-secondary); }
+.cw-foes { gap: 4px; }
+.cw-foe { flex: 0 1 auto; }
+.cw-foe[open] { flex-basis: 100%; }
+.cw-foe summary { min-height: 28px; padding: 2px 8px; font-size: .8rem; gap: 6px; }
+.cw-foe summary small { font-size: .68rem; background: var(--clr-red); color: #fff; padding: 0 4px; }
+.cw-front-controls { gap: 4px; }
+.games-shell .cw-stepper button { min-width: 36px; min-height: 36px; padding: 4px 0; }
+.games-shell .cw-stepper .cw-fill { padding: 4px 8px; margin-left: 4px; }
+.cw-stepper output { min-width: 58px; font-size: .9rem; }
+.games-shell .cw-front .cw-toggle { padding: 4px 9px; min-height: 36px; font-size: .8rem; }
+.cw-meter { gap: 2px; margin: 2px 0 2px; }
+.cw-meter-top { font-size: .84rem; }
+.cw-meter-bar { height: 12px; margin-bottom: 14px; }
+.cw-meter-bands { font-size: .76rem; gap: 1px; }
+.cw-meter-bands li { grid-template-columns: 8.5em 1fr; padding: 1px 6px; }
+.cw-meter-more summary { cursor: pointer; font-size: .74rem; color: var(--text-secondary); padding: 2px 6px; }
+.cw-parts { font-size: .74rem !important; }
+
+/* Advisor cards: title, effect and button; the story folds */
+.cw-shell.is-playing .cw-cards, .cw-shell.is-playing .cw-choice { padding: 10px var(--content-inset); margin-bottom: 12px; }
+.cw-cards h3 { margin-bottom: 8px; }
+.cw-card-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 6px; }
+.cw-card { padding: 8px 10px; gap: 4px; }
+.cw-card h4 { font-size: .9rem; }
+.cw-card h4 small { font-weight: 400; font-size: .74rem; color: var(--text-secondary); }
+.cw-card .cw-effect { margin-top: 0 !important; font-size: .8rem; }
+.cw-card-more summary { cursor: pointer; font-size: .74rem; color: var(--text-secondary); }
+.cw-card-more p { font-size: .8rem; margin-top: 4px; }
+.games-shell .cw-card button { padding: 5px 8px; font-size: .8rem; margin-top: auto; }
+
+/* The dilemma */
+.cw-choice h3 { font-size: 1.05rem; margin: 2px 0 4px; }
+.cw-choice > p { font-size: .9rem; margin: 0; }
+.cw-options { gap: 6px; margin-top: 8px; }
+.games-shell .cw-option { padding: 8px 10px; gap: 3px; font-size: .88rem; }
+.games-shell .cw-option[aria-pressed="true"] { padding: 7px 9px; }
+.cw-option small { font-size: .74rem; }
+
+/* The season's order stays at the bottom of the screen while planning. */
+.cw-command { position: sticky; bottom: 0; z-index: 3; background: var(--bg-canvas); border-top: 1px solid var(--border); padding-block: 6px; margin-bottom: 12px; }
+@media (max-width: 560px) {
+    .cw-shell.is-playing .cw-season { grid-template-columns: minmax(0, 1fr); }
+    .cw-shell.is-playing .cw-calendar { grid-column: 1; grid-row: auto; margin-top: 4px; }
+    .cw-shell.is-playing .cw-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+.cw-map-key summary { cursor: pointer; padding: 6px 12px; font-size: .78rem; color: var(--text-secondary); }
+.cw-map-key[open] summary { padding-bottom: 0; }
+.cw-command { flex-wrap: nowrap; }
+.cw-command p { font-size: .82rem; min-width: 0; }
+.games-shell .cw-command .cw-primary { flex: 0 0 auto; padding-block: 8px; }
+@media (max-width: 560px) {
+    .cw-shell.is-playing .cw-stats > div:not(.is-warn) small { display: none; }
+    .cw-stepper output { min-width: 50px; }
+    .cw-command { justify-content: space-between; }
 }

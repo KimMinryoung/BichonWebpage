@@ -112,6 +112,9 @@
         inspected = null;
         $('cwSetup').hidden = true;
         $('cwPlay').hidden = false;
+        document.querySelector('.cw-shell').classList.add('is-playing');
+        // On a phone the map's key starts folded.
+        if (window.matchMedia('(max-width: 720px)').matches) $('cwMapKey').open = false;
         render();
         $('cwPlay').scrollIntoView({ block: 'start' });
     }
@@ -179,7 +182,7 @@
         const items = [];
         if (s.phase === 'plan') {
             items.push(...stat('사단', `${G.free(s)} / ${plan.divisions}`, '보낼 사단 / 전체', G.free(s) > 0));
-            items.push(...stat('지휘력', String(plan.command), `당 결속 ${s.cohesion}에 따라 시기마다 다시 채움. 남기면 사라짐`, plan.command < 3));
+            items.push(...stat('지휘력', String(plan.command), `결속 ${s.cohesion} 기준 · 남기면 사라짐`, plan.command < 3));
             items.push(...stat('정치위원', `${plan.commissars - G.commissarsUsed(s)} / ${plan.commissars}`, '남음 / 전체'));
             items.push(...stat('곡물', String(s.grain), `이번 시기 +${supply.income}, 필요 ${supply.need}`, supply.ratio < 1));
         } else {
@@ -212,8 +215,11 @@
         }
         const opt = s.plan.choice && t.choice.options.find(o => o.id === s.plan.choice);
         if (opt && opt.divisions) changes.push({ label: opt.label, n: opt.divisions });
-        $('cwArmy').replaceChildren(...[
-            el('h3', {}, `붉은 군대 · 이번 시기 사단 ${s.plan.divisions}개`),
+        const open = $('cwArmy').querySelector('details');
+        $('cwArmy').replaceChildren(el('details', { open: open && open.open },
+            el('summary', {}, el('strong', {}, `붉은 군대 · 사단 ${s.plan.divisions}개`),
+                el('span', { class: 'cw-army-line' }, t.army.map(([id, n]) => `${D.troops[id].name} ${n}`).join(' · ')),
+                ...changes.map(c => el('span', { class: 'cw-army-change ' + (c.n < 0 ? 'is-minus' : 'is-plus') }, `${c.label} ${signed(c.n)}`))),
             el('ul', { class: 'cw-troops' }, ...t.army.map(([id, n]) => {
                 const troop = D.troops[id];
                 return el('li', {},
@@ -221,9 +227,7 @@
                     el('strong', {}, troop.link ? el('a', Object.assign({ href: troop.link }, NEW_TAB), troop.name) : troop.name),
                     el('span', { class: 'cw-sr' }, ` ${n}개`),
                     el('small', {}, troop.note));
-            })),
-            changes.length ? el('ul', { class: 'cw-troop-changes' }, ...changes.map(c => el('li', { class: c.n < 0 ? 'is-minus' : 'is-plus' }, `${c.label} ${signed(c.n)}`))) : null,
-        ].filter(Boolean));
+            }))));
     }
 
     function renderBrief() {
@@ -481,14 +485,12 @@
             const n = s.plan.alloc[id];
             const stepper = el('div', { class: 'cw-stepper', role: 'group', 'aria-label': `${D.fronts[id].name} 사단` },
                 el('button', { type: 'button', 'data-key': `less-${id}`, 'aria-label': `${D.fronts[id].short}에서 사단 하나 빼기`, disabled: n === 0, onclick: () => { act('alloc', id, n - 1); render(); } }, '−'),
-                el('output', { 'aria-live': 'polite' }, `${n}개 사단`),
+                el('output', { 'aria-live': 'polite', 'aria-label': `${n}개 사단` }, `${n}사단`),
                 el('button', { type: 'button', 'data-key': `more-${id}`, 'aria-label': `${D.fronts[id].short}에 사단 하나 보내기`, disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + 1); render(); } }, '+'),
-                el('button', { type: 'button', 'data-key': `fill-${id}`, class: 'cw-fill', disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + G.free(s)); render(); } }, '남은 사단 모두'));
+                el('button', { type: 'button', 'data-key': `fill-${id}`, class: 'cw-fill', 'aria-label': '남은 사단 모두 보내기', disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + G.free(s)); render(); } }, '모두'));
             const card = el('article', { class: 'cw-front' + (after < hist ? ' is-short' : ''), id: 'cwFront-' + id, tabindex: '-1' },
-                el('header', {}, el('h4', {}, D.fronts[id].name)),
-                foeList(threat.foes),
-                el('p', {}, threat.text, ' ', person(threat.who)),
-                el('p', { class: 'cw-front-line' }, `지금 보유: ${heldText(id, line)}`),
+                el('header', {}, el('h4', {}, D.fronts[id].name), foeList(threat.foes), el('span', {}, `보유: ${heldText(id, line)}`)),
+                el('p', { class: 'cw-threat' }, threat.text, ' ', person(threat.who)),
                 el('div', { class: 'cw-front-controls' }, stepper, commissarToggle(id), ...frontCards(id)),
                 meter(id, f, line, s.turn, s.plan.choice, '예상'),
                 f.pressureParts.length ? el('p', { class: 'cw-parts' }, `압력: ${threat.pressure} 기본 · ${f.pressureParts.join(' · ')}`) : null,
@@ -510,7 +512,7 @@
             type: 'button', class: 'cw-toggle', 'data-key': `commissar-${id}`, 'aria-pressed': String(on),
             disabled: !on && none && !from,
             onclick: () => { if (from) act('commissar', from, false); act('commissar', id, !on); render(); },
-        }, on ? '정치위원 파견됨 ✓' : from ? `정치위원 이리로 (${D.fronts[from].short}에서)` : '정치위원 보내기');
+        }, on ? '★ 정치위원 ✓' : from ? `★ 정치위원 이리로 (${D.fronts[from].short}에서)` : '★ 정치위원');
     }
 
     // Cards aimed at a front (Trotsky's train) are sent from the front's own
@@ -521,9 +523,9 @@
             const played = s.plan.cards.find(c => c.id === cid);
             const here = played && played.target === id;
             const name = card.title.replace(/^.*의 /, '');
-            const label = here ? `${name} 투입됨 ✓ (전투력 +${card.bonus})`
+            const label = here ? `${name} +${card.bonus} ✓`
                 : played ? `${name} 이리로 (${D.fronts[played.target].short}에서)`
-                : `${name} 보내기 (지휘력 ${card.cost})`;
+                : `${name} +${card.bonus}`;
             return el('button', {
                 type: 'button', class: 'cw-toggle', 'data-key': `${cid}-${id}`, 'aria-pressed': String(Boolean(here)),
                 disabled: !played && !G.canPlay(s, cid, id),
@@ -544,15 +546,15 @@
         return node;
     }
 
-    // Factions met before this season start folded; a new one opens, so
-    // the reader learns who it is the first time it appears.
+    // Factions start folded; one met for the first time is marked so the
+    // reader opens it.
     function foeList(ids) {
         const seen = new Set();
         for (let t = 0; t < s.turn; t++) for (const th of Object.values(D.turns[t].threats)) (th.foes || []).forEach(f => seen.add(f));
-        return el('div', { class: 'cw-foes' }, el('span', { class: 'cw-foes-label' }, '상대'), ...(ids || []).map(fid => {
+        return el('div', { class: 'cw-foes' }, ...(ids || []).map(fid => {
             const f = D.factions[fid];
-            return el('details', { class: 'cw-foe is-' + f.kind, open: !seen.has(fid) },
-                el('summary', {}, f.flag ? flag(f.flag) : el('i', { class: 'cw-foe-dot' }), f.name, seen.has(fid) ? null : el('small', {}, ' 처음 만남')),
+            return el('details', { class: 'cw-foe is-' + f.kind },
+                el('summary', {}, f.flag ? flag(f.flag) : el('i', { class: 'cw-foe-dot' }), f.name, seen.has(fid) ? null : el('small', {}, '처음')),
                 el('p', {}, f.note, f.link ? ' ' : null, f.link ? el('a', Object.assign({ href: f.link }, NEW_TAB), '더 읽기 ↗') : null));
         }));
     }
@@ -591,9 +593,20 @@
         return el('div', { class: 'cw-meter' },
             el('div', { class: 'cw-meter-top' }, el('strong', {}, `전투력 ${f.strength}`), el('span', {}, `압력 ${f.pressure}`)),
             bar,
-            el('ol', { class: 'cw-meter-bands' }, ...bands.slice().reverse().map(b => el('li', { class: b.tone + (b === current ? ' is-now' : '') },
+            ...bandRows(bands, current, b => el('li', { class: b.tone + (b === current ? ' is-now' : '') },
                 el('span', { class: 'cw-band-range' }, b === current ? `${now} · ${range(b)}` : range(b)),
-                el('span', {}, `${result(b)} (${versus(b)})`)))));
+                el('span', {}, `${result(b)} (${versus(b)})`))));
+    }
+
+    // The forecast band and the one above it stay in view; the rest fold.
+    function bandRows(bands, current, row) {
+        const i = bands.indexOf(current);
+        const shown = bands.slice(i, i + 2).reverse();
+        const rest = bands.filter(b => !shown.includes(b)).reverse();
+        return [
+            el('ol', { class: 'cw-meter-bands' }, ...shown.map(row)),
+            rest.length ? el('details', { class: 'cw-meter-more' }, el('summary', {}, `다른 구간 ${rest.length}개`), el('ol', { class: 'cw-meter-bands' }, ...rest.map(row))) : null,
+        ];
     }
 
     // What the party's cohesion buys: command 4 from 70, 3 from 40, 2 from
@@ -630,16 +643,17 @@
                     played.target ? `${D.fronts[played.target].short}에 보냄 · 취소` : '사용함 · 취소');
             } else if (card.target === 'front') {
                 control = el('button', { type: 'button', onclick: () => { const box = $('cwFronts'); box.scrollIntoView({ block: 'start' }); const first = box.querySelector(`[data-key^="${id}-"]`); if (first) first.focus({ preventScroll: true }); } },
-                    '전선 카드에서 보낼 곳 고르기 ↑');
+                    '전선 카드에서 보내기 ↑');
             } else {
-                control = el('button', { type: 'button', 'data-key': `play-${id}`, disabled: !G.canPlay(s, id), onclick: () => { act('play', id); render(); } }, `쓰기 (지휘력 ${card.cost})`);
+                const idle = card.needs === 'revolt' && !s.revolt;
+                control = el('button', { type: 'button', 'data-key': `play-${id}`, disabled: !G.canPlay(s, id), title: idle ? '농민 지지가 35 아래로 떨어져 봉기가 일어나야 쓸 수 있다' : null, onclick: () => { act('play', id); render(); } }, idle ? '봉기가 없어 못 씀' : `쓰기 (지휘력 ${card.cost})`);
             }
             grid.append(el('article', { class: 'cw-card' + (played ? ' is-played' : '') },
-                el('h4', {}, card.title), el('p', { class: 'cw-advisor' }, person(card.advisor)),
-                el('p', {}, card.text), card.note ? el('p', { class: 'cw-note' }, card.note) : null,
-                card.link ? el('p', { class: 'cw-note' }, link(card.link)) : null,
+                el('h4', {}, card.title, ' ', el('small', { class: 'cw-advisor' }, person(card.advisor))),
                 el('p', { class: 'cw-effect' }, effectText(card, id)),
-                !played && card.needs === 'revolt' && !s.revolt ? el('p', { class: 'cw-note' }, '지금은 후방에 봉기가 없어 쓸 수 없다. 농민 지지가 35 아래로 떨어지면 봉기가 일어난다.') : null,
+                el('details', { class: 'cw-card-more' }, el('summary', {}, '설명'),
+                    el('p', {}, card.text), card.note ? el('p', { class: 'cw-note' }, card.note) : null,
+                    card.link ? el('p', { class: 'cw-note' }, link(card.link)) : null),
                 control));
         }
         $('cwCards').replaceChildren(...items, grid);
