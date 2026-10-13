@@ -25,6 +25,7 @@
     <meta name="str-delete-confirm-user" content="<%= strings.chat.deleteConfirmUser %>">
     <meta name="str-delete-confirm-assistant" content="<%= strings.chat.deleteConfirmAssistant %>">
     <meta name="str-delete-error" content="<%= strings.chat.deleteError %>">
+    <meta name="str-input-limit" content="<%= strings.chat.inputLimit %>">
 </head>
 <body>
     <script src="/js/chat-viewport.js?v=<%= assetVersion %>"></script>
@@ -77,9 +78,11 @@
                 </div>
             </div>
 
+            <div class="chat-input-count" id="chatInputCount" aria-live="polite" hidden></div>
             <form class="chat-input-row" id="chatForm">
                 <textarea
                     id="chatInput"
+                    maxlength="8000"
                     placeholder="<%= strings.chat.placeholder %>"
                     aria-label="<%= strings.chat.inputLabel %>"
                     title="<%= strings.chat.inputHint %>"

@@ -20,13 +20,19 @@
         deleteLabel: metaContent('str-delete-label', '삭제'),
         deleteConfirmUser: metaContent('str-delete-confirm-user', '이 질문을 삭제할까요?'),
         deleteConfirmAssistant: metaContent('str-delete-confirm-assistant', '이 응답을 삭제할까요?'),
-        deleteError: metaContent('str-delete-error', '메시지를 삭제하지 못했습니다.')
+        deleteError: metaContent('str-delete-error', '메시지를 삭제하지 못했습니다.'),
+        inputLimit: metaContent('str-input-limit', '{max}자까지만 보낼 수 있습니다.')
     };
 
     var chatBox = document.getElementById('chatBox');
     var chatForm = document.getElementById('chatForm');
     var chatInput = document.getElementById('chatInput');
     var chatSend = document.getElementById('chatSend');
+    var chatInputCount = document.getElementById('chatInputCount');
+    // The API rejects longer messages (422); the textarea's maxlength stops
+    // typing and truncates pastes at the same limit.
+    var INPUT_MAX = 8000;
+    var INPUT_COUNT_FROM = 5000;
     var feedbackBar = document.getElementById('chatFeedbackBar');
     var feedbackToggle = document.getElementById('feedbackToggle');
     var feedbackTone = document.getElementById('feedbackTone');
@@ -239,6 +245,7 @@
             if (draft) {
                 chatInput.value = draft;
                 resizeChatInput();
+                updateInputCount();
             }
         });
         errDiv.appendChild(btn);
@@ -334,6 +341,20 @@
         var nextHeight = Math.max(minHeight, Math.min(chatInput.scrollHeight, maxHeight));
         chatInput.style.height = nextHeight + 'px';
         chatInput.style.overflowY = chatInput.scrollHeight > maxHeight ? 'auto' : 'hidden';
+    }
+
+    function updateInputCount() {
+        if (!chatInputCount) return;
+        var length = chatInput.value.length;
+        if (length < INPUT_COUNT_FROM) {
+            chatInputCount.hidden = true;
+            return;
+        }
+        var atLimit = length >= INPUT_MAX;
+        chatInputCount.hidden = false;
+        chatInputCount.classList.toggle('at-limit', atLimit);
+        chatInputCount.textContent = length.toLocaleString() + ' / ' + INPUT_MAX.toLocaleString()
+            + (atLimit ? ' · ' + STRINGS.inputLimit.replace('{max}', INPUT_MAX.toLocaleString()) : '');
     }
 
     function formatRelative(iso) {
@@ -822,7 +843,7 @@
 
     async function sendChat(message, options) {
         options = options || {};
-        message = (message || '').trim();
+        message = (message || '').trim().slice(0, INPUT_MAX);
         if (!message || busy) return;
 
         var userDiv = null;
@@ -830,6 +851,7 @@
         if (options.regenerateFromId) clearFeedbackTarget();
         chatInput.value = '';
         resizeChatInput();
+        updateInputCount();
         hiddenDuringRequest = false;
         streamDied = false;
         recovering = false;
@@ -1065,7 +1087,10 @@
         sendChat(chatInput.value);
     });
 
-    chatInput.addEventListener('input', resizeChatInput);
+    chatInput.addEventListener('input', function () {
+        resizeChatInput();
+        updateInputCount();
+    });
     (window.visualViewport || window).addEventListener('resize', resizeChatInput);
     chatInput.addEventListener('keydown', function (event) {
         if (event.key !== 'Enter') return;
