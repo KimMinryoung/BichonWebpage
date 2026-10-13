@@ -2429,7 +2429,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "브리소의 개전론은 국내 문제를 밖에서 풀 수 있다는 주장이었습니다. 그는 파벌과 음모, 귀족의 오만, 환율과 신용의 하락을 부채질하는 횃불이 코블렌츠의 망명귀족 근거지에서 온다고 보고 \"코블렌츠를 파괴하라\"고 했습니다. 궁정이 갑자기 전쟁을 원하는 것이 수상하다는 의심에는, 장교들에게는 천 개의 눈이 붙어 있어 그들의 배신이 위험하지 않고, 전쟁이 집행부를 최후의 시험에 부칠 것이라고 답했습니다. 대국이 개입하리라는 두려움도 그는 재정난을 들어 물리쳤습니다. 전면전을 원한 것도, 궁정 처벌을 먼저 요구한 것도 아니었습니다.",
+                "ko": "브리소의 개전론은 국내 문제를 밖에서 풀 수 있다는 주장이었습니다. 그는 파벌과 음모, 귀족의 오만, 환율과 신용의 하락을 부채질하는 횃불이 코블렌츠의 망명귀족 근거지에서 온다고 보고 “코블렌츠를 파괴하라”고 했습니다. 궁정이 갑자기 전쟁을 원하는 것이 수상하다는 의심에는, 장교들에게는 천 개의 눈이 붙어 있어 그들의 배신이 위험하지 않고, 전쟁이 집행부를 최후의 시험에 부칠 것이라고 답했습니다. 대국이 개입하리라는 두려움도 그는 재정난을 들어 물리쳤습니다. 전면전을 원한 것도, 궁정 처벌을 먼저 요구한 것도 아니었습니다.",
                 "en": "Brissot's case for war held that problems at home could be solved abroad. He traced the torch that lit faction, plots, noble arrogance and the fall of exchange and credit to the émigré base at Coblenz, and called for Coblenz to be destroyed. To the suspicion that the court's sudden wish for war was suspect, he replied that officers had a thousand eyes on them and could not betray dangerously, and that war would put the executive to its final test. He also dismissed fears of great-power intervention by pointing to their finances. He did not seek a general war, nor did he demand that the court be punished first."
               },
               "source": {
@@ -2446,7 +2446,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "로베스피에르가 \"무장한 선교사를 좋아하는 사람은 아무도 없다\"고 말했을 때 겨냥한 기대는 무엇이었을까요?",
+                "ko": "로베스피에르가 “무장한 선교사를 좋아하는 사람은 아무도 없다”고 말했을 때 겨냥한 기대는 무엇이었을까요?",
                 "en": "When Robespierre said that \"nobody loves armed missionaries\", which expectation was he attacking?"
               },
               "choices": {

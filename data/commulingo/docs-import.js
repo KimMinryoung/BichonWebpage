@@ -9,6 +9,7 @@ const { assertHeadword, assertAliases, assertStringList } = require('./headword-
 const { docRefId } = require('./docs-store');
 const { sanitizeDocHtml } = require('./doc-sanitize');
 const { writeDocs, readDocRow } = require('./docs-db');
+const { normalizeKoreanFields } = require('./korean-quotes');
 
 function badRequest(message) {
     const err = new Error(message);
@@ -128,6 +129,7 @@ function canonicalEntry(entry) {
         }
     }
     if (entry.editorialNotes !== undefined) out.editorialNotes = langPair(entry.editorialNotes);
+    normalizeKoreanFields(out, ['title', 'description', 'summary', 'editorialNotes']);
     for (const lang of ['ko', 'en']) assertHeadword(out.title[lang], `title.${lang}`, { allowEmpty: lang === 'en' });
     if (entry.linkExpressions !== undefined) {
         assertLinkExpressions(entry.linkExpressions);

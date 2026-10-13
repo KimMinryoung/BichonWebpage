@@ -1,4 +1,5 @@
 const { normalizeSovietKoreanText } = require('./korean-terminology');
+const { normalizeKoreanQuotes } = require('./korean-quotes');
 const { parseLifeYears: parsePersonLifeYears } = require('./person-life-years');
 
 // Small field helpers shared by the CommuLingo admin stores: bilingual
@@ -16,7 +17,7 @@ function localized(value, lang) {
 
 function contentLocalized(value, lang) {
     const text = localized(value, lang);
-    return lang === 'ko' ? normalizeSovietKoreanText(text) : text;
+    return lang === 'ko' ? normalizeKoreanQuotes(normalizeSovietKoreanText(text)) : text;
 }
 
 function badRequest(message) {

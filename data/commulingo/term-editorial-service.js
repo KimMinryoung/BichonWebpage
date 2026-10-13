@@ -8,6 +8,7 @@ const contract = require('./term-editorial-contract.json');
 const { listEditorialNotes, saveEditorialNote } = require('./editorial-notes');
 const { carryLinkReviews } = require('./link-review-carry');
 const { periodColumns, periodOrNull, periodValues, PERIOD_COLUMNS } = require('./career-period');
+const { normalizeKoreanQuotes } = require('./korean-quotes');
 
 const columns = {
     original: 'original', category: 'category', region: 'region', parentId: 'parent_id', sortOrder: 'sort_order',
@@ -53,6 +54,8 @@ function validateFields(fields, current, action, sources) {
                 || Object.keys(value).some(k => !['ko','en'].includes(k) || typeof value[k] !== 'string')) throw badRequest(`${field} must contain ko/en text`);
             // [P12] is a pipeline passage id, not a citation readers can follow (migration 290).
             for (const lang of Object.keys(value)) if (/\[P\d+/.test(value[lang])) throw badRequest(`${field}.${lang} contains source markers like [P12]; remove them`);
+            // Korean prose quotes follow the NIKL rules (korean-quotes.js); the headword is not prose.
+            if (field !== 'term' && typeof value.ko === 'string') value.ko = normalizeKoreanQuotes(value.ko);
             merged[field] = { ...(current?.[field] || {}), ...value };
         }
         const limits = contract.limits[field];

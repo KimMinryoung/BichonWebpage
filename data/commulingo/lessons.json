@@ -306,7 +306,7 @@
                   "type": "multiple_choice",
                   "points": 2,
                   "prompt": {
-                    "ko": "마르크스가 『자본』을 거대한 공장이나 임금계약이 아니라 '상품'에서 시작하는 이유는 무엇인가?",
+                    "ko": "마르크스가 『자본』을 거대한 공장이나 임금계약이 아니라 ‘상품’에서 시작하는 이유는 무엇인가?",
                     "en": "Why does Marx begin Capital with the commodity rather than with the factory or the wage contract?"
                   },
                   "choices": {
@@ -349,7 +349,7 @@
                       "en": "Capital I, Ch. 1 §1 Use-Value and Value"
                     },
                     "quote": {
-                      "ko": "자본주의적 생산양식이 지배하는 사회의 부는 '상품들의 거대한 집합'으로 나타나며, 그 단위는 하나의 상품이다 … 따라서 우리의 연구는 상품의 분석에서 시작해야 한다",
+                      "ko": "자본주의적 생산양식이 지배하는 사회의 부는 ‘상품들의 거대한 집합’으로 나타나며, 그 단위는 하나의 상품이다 … 따라서 우리의 연구는 상품의 분석에서 시작해야 한다",
                       "en": "The wealth of those societies in which the capitalist mode of production prevails, presents itself as “an immense accumulation of commodities,” its unit being a single commodity. … Our investigation must therefore begin with the analysis of a commodity."
                     }
                   }
@@ -475,7 +475,7 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "'사람들이 빵을 원하니까 빵에 가치가 있다'는 설명은 어디에서 사용가치와 가치를 뒤섞는가?",
+                    "ko": "‘사람들이 빵을 원하니까 빵에 가치가 있다’는 설명은 어디에서 사용가치와 가치를 뒤섞는가?",
                     "en": "Where does the claim 'bread has value because people want it' confuse use-value with value?"
                   },
                   "choices": {
@@ -2911,7 +2911,7 @@
                       "en": "Capital I, Ch. 5 Contradictions in the General Formula of Capital"
                     },
                     "quote": {
-                      "ko": "사용가치의 측면에서는 구매자와 판매자 둘 다 무언가를 얻을 수도 있지만, 교환가치의 측면에서는 그렇지 않다. 오히려 '동등함이 있는 곳에는 이득이 있을 수 없다'고 말해야 한다.",
+                      "ko": "사용가치의 측면에서는 구매자와 판매자 둘 다 무언가를 얻을 수도 있지만, 교환가치의 측면에서는 그렇지 않다. 오히려 ‘동등함이 있는 곳에는 이득이 있을 수 없다’고 말해야 한다.",
                       "en": "If therefore, as regards the use-values exchanged, both buyer and seller may possibly gain something, this is not the case as regards the exchange-values. Here we must rather say, “Where equality exists there can be no gain.”"
                     }
                   }
@@ -2964,7 +2964,7 @@
                       "en": "Capital I, Ch. 5 Contradictions in the General Formula of Capital"
                     },
                     "quote": {
-                      "ko": "B에게 가치의 손실인 것이 A에게는 잉여가치이며, 한쪽에게 '마이너스'인 것이 다른 쪽에게는 '플러스'이다. … 한 나라의 자본가계급 전체는 결코 자기 자신을 속여 이득을 볼 수 없다.",
+                      "ko": "B에게 가치의 손실인 것이 A에게는 잉여가치이며, 한쪽에게 ‘마이너스’인 것이 다른 쪽에게는 ‘플러스’이다. … 한 나라의 자본가계급 전체는 결코 자기 자신을 속여 이득을 볼 수 없다.",
                       "en": "What is a loss of value to B is surplus-value to A; what is “minus” to one is “plus” to the other. … The capitalist class, as a whole, in any country, cannot over-reach themselves."
                     }
                   }
@@ -25317,7 +25317,7 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "냉장 보관은 식품이 썩지 않도록 사용가치를 보존하는 비용일 수 있다. 검색광고비는 사용가치를 보존하지 않고 판매 실현을 둘러싼 경쟁비용에 가깝다. 같은 '판매 전 비용'이라도 자본의 재생산에서 맡는 기능이 다르다.",
+                    "ko": "냉장 보관은 식품이 썩지 않도록 사용가치를 보존하는 비용일 수 있다. 검색광고비는 사용가치를 보존하지 않고 판매 실현을 둘러싼 경쟁비용에 가깝다. 같은 ‘판매 전 비용’이라도 자본의 재생산에서 맡는 기능이 다르다.",
                     "en": "Cold storage may preserve the use-value of food by keeping it from spoiling. Search advertising does not preserve use-value; it is closer to a competitive cost of realizing sale. The fact that both occur before sale does not give them the same function in reproduction."
                   }
                 },
@@ -25702,7 +25702,7 @@
                   },
                   "answer": 0,
                   "explanation": {
-                    "ko": "원문의 예처럼 t가 18개월이면 n = 12/18이므로 한 해에는 3분의 2회만 회전한다. 긴 회전시간은 자본가가 더 오래 선대해야 하는 기간을 뜻하며, 단순히 '한 해에 한 번'으로 처리할 수 없다.",
+                    "ko": "원문의 예처럼 t가 18개월이면 n = 12/18이므로 한 해에는 3분의 2회만 회전한다. 긴 회전시간은 자본가가 더 오래 선대해야 하는 기간을 뜻하며, 단순히 ‘한 해에 한 번’으로 처리할 수 없다.",
                     "en": "As in Marx's example, if t is 18 months then n = 12/18, so the capital completes only two-thirds of a turnover in one year. A long turnover time means a longer period of advance and cannot simply be counted as one annual turnover."
                   }
                 },
@@ -26028,7 +26028,7 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "고정자본에서 '고정'되어 있는 것은 정확히 무엇인가?",
+                    "ko": "고정자본에서 ‘고정’되어 있는 것은 정확히 무엇인가?",
                     "en": "In fixed capital, what exactly is 'fixed'?"
                   },
                   "choices": {
@@ -28971,7 +28971,7 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "필요 선대자본을 '1년 총비용'으로만 계산하면 무엇이 빠지는가?",
+                    "ko": "필요 선대자본을 ‘1년 총비용’으로만 계산하면 무엇이 빠지는가?",
                     "en": "What is missing if the required advance is calculated only from total yearly cost?"
                   },
                   "choices": {
@@ -29400,7 +29400,7 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "빠른 회전이 '노동자를 덜 착취한다'는 뜻이 아닌 이유는 무엇인가?",
+                    "ko": "빠른 회전이 ‘노동자를 덜 착취한다’는 뜻이 아닌 이유는 무엇인가?",
                     "en": "Why does faster turnover not mean that workers are less exploited?"
                   },
                   "choices": {
@@ -29829,7 +29829,7 @@
                   "type": "multiple_choice",
                   "points": 3,
                   "prompt": {
-                    "ko": "기업에 현금 이윤은 있지만 기계 공급망과 숙련노동이 부족해 증설하지 못한다. '이윤=즉시 축적'이라는 설명은 무엇을 놓치는가?",
+                    "ko": "기업에 현금 이윤은 있지만 기계 공급망과 숙련노동이 부족해 증설하지 못한다. ‘이윤=즉시 축적’이라는 설명은 무엇을 놓치는가?",
                     "en": "A firm has cash profit but cannot expand because machinery supply chains and skilled labour are lacking. What is missed by the claim 'profit equals immediate accumulation'?"
                   },
                   "choices": {

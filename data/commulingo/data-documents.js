@@ -17,6 +17,7 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../../config/database');
 const { createRegistrySnapshotStore } = require('./snapshot-store');
+const { normalizeKoreanTree } = require('./korean-quotes');
 
 const SNAPSHOT_PATH = process.env.COMMULINGO_DATA_DOCUMENTS_SNAPSHOT || path.join(__dirname, 'data-documents-snapshot.json');
 const SEED_PATH = path.join(__dirname, '..', '..', 'scripts', 'fixtures', 'commulingo-data-documents-seed.json');
@@ -175,7 +176,8 @@ async function writeDataDocuments(changes, { actor, note, client } = {}) {
         const written = [];
         for (const item of changes.upserts || []) {
             validateDataDocument(item.key, item.content);
-            const text = JSON.stringify(item.content);
+            // Korean labels follow the NIKL quote rules (korean-quotes.js).
+            const text = JSON.stringify(normalizeKoreanTree(item.content));
             const current = (await c.query(
                 'SELECT key, content::text AS content_text, revision, updated_at, updated_by FROM commulingo_data_documents WHERE key = $1 FOR UPDATE',
                 [item.key])).rows[0];

@@ -8,6 +8,7 @@
 // audit here, covering import, metadata edits, body replacement and restore.
 const crypto = require('crypto');
 const db = require('../../config/database');
+const { normalizeKoreanQuotesHtml } = require('./korean-quotes');
 
 const ID = /^[a-z0-9-]+$/;
 const sha256 = text => crypto.createHash('sha256').update(text, 'utf8').digest('hex');
@@ -73,7 +74,8 @@ async function writeDocs(changes, { actor, note, client } = {}) {
         for (const item of upserts) {
             if (!item || typeof item.id !== 'string' || !ID.test(item.id)) throw badRequest('doc id must be lowercase letters, digits, hyphens');
             const entry = storedEntry(item.entry);
-            const body = item.body;
+            // Korean documents follow the NIKL quote rules (korean-quotes.js).
+            const body = typeof item.body === 'string' && (entry.docLang || 'ko') === 'ko' ? normalizeKoreanQuotesHtml(item.body) : item.body;
             if (body !== undefined && (typeof body !== 'string' || !body.trim())) throw badRequest(`${item.id}: body must be non-empty html`);
             const current = (await c.query('SELECT * FROM commulingo_docs WHERE id = $1 FOR UPDATE', [item.id])).rows[0];
             if (item.expectedRevision !== undefined && (current ? current.revision : 0) !== item.expectedRevision) {

@@ -9,6 +9,7 @@ const { withTransaction, writeRevision } = require('./admin-tx');
 const { badRequest, requireId } = require('./people-admin-fields');
 const offices = require('./people-offices-store');
 const { canonicalPeriod } = require('./career-period');
+const { normalizeKoreanQuotes } = require('./korean-quotes');
 
 const TARGETS = ['history_event', 'history_event_section', 'history_event_person', 'office_row'];
 const RELATION_KINDS = ['leader', 'executor', 'participant', 'opponent', 'target', 'witness', 'historian'];
@@ -27,6 +28,8 @@ const ACTIONS = {
 const LOCALIZED_EVENT_KEYS = ['question', 'summary', 'outcome'];
 const SIDE_ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const HEADING_LINE = /^## +(.+?)[ \t]*$/gm;
+// Korean prose quotes follow the NIKL rules (korean-quotes.js) whoever writes.
+const koQuotes = value => (isLocalized(value) && typeof value.ko === 'string' ? { ...value, ko: normalizeKoreanQuotes(value.ko) } : value);
 
 function notFound(message) {
     return Object.assign(badRequest(message), { status: 404 });
@@ -176,6 +179,9 @@ async function validateEventPerson(client, id, fields) {
 }
 
 async function applyEvent(client, id, fields, actor) {
+    fields = { ...fields };
+    for (const key of LOCALIZED_EVENT_KEYS) fields[key] = koQuotes(fields[key]);
+    if (Array.isArray(fields.timeline)) fields.timeline = fields.timeline.map(item => ({ ...item, title: koQuotes(item.title), body: koQuotes(item.body) }));
     const before = snapshot(await eventRow(client, id));
     const sets = [], values = [];
     for (const key of LOCALIZED_EVENT_KEYS) {
@@ -199,6 +205,7 @@ async function applyEvent(client, id, fields, actor) {
 }
 
 async function applySection(client, id, action, fields, actor) {
+    fields = { ...fields, heading: koQuotes(fields.heading), body: koQuotes(fields.body) };
     const row = await eventRow(client, id);
     const after = fields.after || {};
     const body = lang => spliceSection(row[`body_${lang}`], fields.heading[lang], fields.body[lang], after[lang], action);
@@ -209,6 +216,7 @@ async function applySection(client, id, action, fields, actor) {
 }
 
 async function applyEventPerson(client, id, fields, actor) {
+    fields = { ...fields, relation: koQuotes(fields.relation), note: koQuotes(fields.note) };
     const personId = String(fields.personId).trim();
     const { rows } = await client.query(
         `SELECT event_id, person_id, sort_order, relation_kind, relation_ko, relation_en, note_ko, note_en, side

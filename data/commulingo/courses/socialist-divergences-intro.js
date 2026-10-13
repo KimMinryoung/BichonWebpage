@@ -43,7 +43,7 @@ module.exports = {
         "en": "About 12 minutes · Read the systems of Saint-Simon, Fourier and Owen, Owen's address to factory managers, the critique in Chapter III of the Communist Manifesto and Engels' 1890 preface, and the preamble to the IWMA General Rules, comparing whom each treats as the agent of change."
       },
       "learningFocus": {
-        "ko": "오언의 공장 경영자 대상 글을 노동자 자치의 선언으로 읽거나, 『공산당 선언』의 '공상적'을 생시몽·푸리에·오언의 성과 전부를 부정한 판정으로 읽기 쉽습니다. 선언은 창시자들이 여러 점에서 혁명적이었고 그 저작이 노동자 계몽에 값진 자료였다고 인정했으며, 반동적 종파라고 비판한 대상은 제자들이었습니다. '공상적'은 당사자의 자기 설명이 아니라 마르크스·엥겔스의 평가입니다.",
+        "ko": "오언의 공장 경영자 대상 글을 노동자 자치의 선언으로 읽거나, 『공산당 선언』의 ‘공상적’을 생시몽·푸리에·오언의 성과 전부를 부정한 판정으로 읽기 쉽습니다. 선언은 창시자들이 여러 점에서 혁명적이었고 그 저작이 노동자 계몽에 값진 자료였다고 인정했으며, 반동적 종파라고 비판한 대상은 제자들이었습니다. ‘공상적’은 당사자의 자기 설명이 아니라 마르크스·엥겔스의 평가입니다.",
         "en": "It is easy to read Owen's address to factory managers as a manifesto of workers' self-government, or to take the Manifesto's word 'utopian' as a verdict dismissing everything Saint-Simon, Fourier and Owen achieved. The Manifesto granted that the founders were revolutionary in many respects and that their writings were valuable for enlightening workers; the 'reactionary sects' it attacked were their disciples. 'Utopian' is Marx and Engels' assessment, not the founders' own self-description."
       },
       "conceptBrief": {
@@ -270,7 +270,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "오언은 공장 감독자들에게 여러분처럼 나도 금전적 이익을 위한 제조업자라고 말문을 엽니다. 튼튼하고 깨끗하게 관리한 기계가 더 나은 결과를 내듯, 훨씬 정교한 '생명 기계'인 노동자에게 넉넉한 음식과 교육, 친절한 대우를 베풀면 들인 자본의 50퍼센트, 많게는 100퍼센트를 돌려준다는 것입니다. 노동자는 이 글에서 개선의 대상이지 행동의 주체가 아닙니다. 오언이 뒷날 협동조합 운동과 이어지더라도 이 1816년판 서문은 소유 이전을 요구하지 않고, 경영자의 계몽된 이해관계에 호소합니다.",
+                "ko": "오언은 공장 감독자들에게 여러분처럼 나도 금전적 이익을 위한 제조업자라고 말문을 엽니다. 튼튼하고 깨끗하게 관리한 기계가 더 나은 결과를 내듯, 훨씬 정교한 ‘생명 기계’인 노동자에게 넉넉한 음식과 교육, 친절한 대우를 베풀면 들인 자본의 50퍼센트, 많게는 100퍼센트를 돌려준다는 것입니다. 노동자는 이 글에서 개선의 대상이지 행동의 주체가 아닙니다. 오언이 뒷날 협동조합 운동과 이어지더라도 이 1816년판 서문은 소유 이전을 요구하지 않고, 경영자의 계몽된 이해관계에 호소합니다.",
                 "en": "Owen opens by telling superintendents that he, like them, is a manufacturer for pecuniary profit. Just as sound, clean, well-kept machinery gives better results, the far finer 'vital machines' of the workforce, given ample food, instruction and kind treatment, will repay 50 and often 100 per cent of the capital laid out. Workers here are the object of improvement, not its agents. Whatever Owen's later links to cooperation, this 1816 preface asks for no transfer of ownership; it appeals to the enlightened self-interest of managers."
               },
               "source": {
@@ -316,7 +316,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "선언에 따르면 이 체계들은 프롤레타리아트와 부르주아지의 투쟁이 아직 덜 발전한 시기에 나왔습니다. 창시자들은 계급 대립을 보았지만 프롤레타리아트를 가장 고통받는 계급으로만 여겼고, 역사적 행동 대신 자기들이 고안한 처방을 내세웠습니다. 그래서 가장 좋은 처지의 사람까지 포함한 사회 전체, 주로 지배계급에 호소하고, 정치·혁명 활동을 배격하며 본보기 실험을 택했다는 것입니다. 오언이 공장 경영자와 입법자에게 호소한 방식이 바로 이 비판의 대상입니다. 다만 선언은 이 문헌의 비판적 요소를 높이 평가했으므로, '공상적'을 쓸모없다는 판정으로 읽으면 틀립니다.",
+                "ko": "선언에 따르면 이 체계들은 프롤레타리아트와 부르주아지의 투쟁이 아직 덜 발전한 시기에 나왔습니다. 창시자들은 계급 대립을 보았지만 프롤레타리아트를 가장 고통받는 계급으로만 여겼고, 역사적 행동 대신 자기들이 고안한 처방을 내세웠습니다. 그래서 가장 좋은 처지의 사람까지 포함한 사회 전체, 주로 지배계급에 호소하고, 정치·혁명 활동을 배격하며 본보기 실험을 택했다는 것입니다. 오언이 공장 경영자와 입법자에게 호소한 방식이 바로 이 비판의 대상입니다. 다만 선언은 이 문헌의 비판적 요소를 높이 평가했으므로, ‘공상적’을 쓸모없다는 판정으로 읽으면 틀립니다.",
                 "en": "According to the Manifesto these systems arose while the struggle between proletariat and bourgeoisie was still undeveloped. Their founders saw class antagonism but regarded the proletariat only as the most suffering class, and put their own invented prescriptions in place of historical action. So they appealed to society as a whole, even its best-placed members, chiefly the ruling class, rejected political and revolutionary action, and chose exemplary experiments. Owen's appeal to managers and legislators is exactly what this criticises. Yet the Manifesto valued the critical element in these writings, so reading 'utopian' as 'worthless' is a mistake."
               },
               "source": {
@@ -362,7 +362,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "선언 제3장은 공상적 체계를 한꺼번에 버리지 않습니다. 이 저작들은 현존 사회의 모든 기초를 공격했으므로 노동자를 계몽하는 가장 값진 자료가 되었다고 인정합니다. 도시와 농촌의 대립 폐지, 가족·사적 영리·임금노동의 폐지, 국가를 단순한 생산 관리 기구로 바꾸는 일 같은 명제도 그대로 적어 둡니다. 그러나 이 명제들은 이제 막 드러나기 시작한 계급 대립이 사라지리라는 것을 막연하게 표현했을 뿐이어서 공상적이라고 합니다. 무엇을 바라는지는 보였지만, 어떤 계급의 어떤 운동이 그것을 이룰지는 보지 못했다는 뜻입니다. 현존 사회를 유지하면서 투쟁과 위험만 없애려 한다는 비판은 같은 장의 '부르주아 사회주의' 절에 속하므로, 두 조류를 섞으면 선언이 공상적 사회주의에 준 인정까지 놓치게 됩니다.",
+                "ko": "선언 제3장은 공상적 체계를 한꺼번에 버리지 않습니다. 이 저작들은 현존 사회의 모든 기초를 공격했으므로 노동자를 계몽하는 가장 값진 자료가 되었다고 인정합니다. 도시와 농촌의 대립 폐지, 가족·사적 영리·임금노동의 폐지, 국가를 단순한 생산 관리 기구로 바꾸는 일 같은 명제도 그대로 적어 둡니다. 그러나 이 명제들은 이제 막 드러나기 시작한 계급 대립이 사라지리라는 것을 막연하게 표현했을 뿐이어서 공상적이라고 합니다. 무엇을 바라는지는 보였지만, 어떤 계급의 어떤 운동이 그것을 이룰지는 보지 못했다는 뜻입니다. 현존 사회를 유지하면서 투쟁과 위험만 없애려 한다는 비판은 같은 장의 ‘부르주아 사회주의’ 절에 속하므로, 두 조류를 섞으면 선언이 공상적 사회주의에 준 인정까지 놓치게 됩니다.",
                 "en": "Chapter III does not throw the utopian systems away wholesale. Because these writings attacked every principle of existing society, it says, they supplied the most valuable material for enlightening workers. It even lists their proposals: abolishing the distinction between town and country, the family, private gain and wage labour, and turning the state into a mere superintendence of production. But these proposals only vaguely express the disappearance of class antagonisms that were just beginning to emerge, so they remain utopian: the founders saw what they wanted but not which class, through which movement, would achieve it. The charge of keeping existing society while removing only its struggles and dangers belongs to the section on bourgeois socialism; mixing the two currents erases the credit the Manifesto gave the utopians."
               },
               "source": {
@@ -408,7 +408,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "선언은 공상적 사회주의의 의의가 역사가 발전할수록 줄어든다고 봅니다. 계급투쟁이 뚜렷한 형태를 띨수록 그것을 뛰어넘으려는 환상적 태도는 실천적 의의와 이론적 정당성을 잃습니다. 그래서 창시자들은 여러 점에서 혁명적이었지만, 그 제자들은 프롤레타리아트가 발전하는데도 스승의 낡은 견해를 고집하는 반동적 종파가 된다는 것입니다. 제자들은 푸리에의 팔랑스테르, 오언의 국내 이민지, 카베의 소이카리아 같은 실험을 꿈꾸고, 그 비용을 부르주아의 박애에 기댑니다. 노동자의 정치 운동은 자기 복음을 믿지 않는 탓이라 여겨 반대했으므로, 영국 오언주의자는 차티스트에, 프랑스 푸리에주의자는 공화국과 사회 개혁을 내건 파리 신문 『개혁』(1843~1850)의 추종자들에 반대했습니다. 여기서 '개혁주의자'는 뒷날의 개량주의 논쟁과 다른, 1840년대 파리 공화파를 가리킵니다.",
+                "ko": "선언은 공상적 사회주의의 의의가 역사가 발전할수록 줄어든다고 봅니다. 계급투쟁이 뚜렷한 형태를 띨수록 그것을 뛰어넘으려는 환상적 태도는 실천적 의의와 이론적 정당성을 잃습니다. 그래서 창시자들은 여러 점에서 혁명적이었지만, 그 제자들은 프롤레타리아트가 발전하는데도 스승의 낡은 견해를 고집하는 반동적 종파가 된다는 것입니다. 제자들은 푸리에의 팔랑스테르, 오언의 국내 이민지, 카베의 소이카리아 같은 실험을 꿈꾸고, 그 비용을 부르주아의 박애에 기댑니다. 노동자의 정치 운동은 자기 복음을 믿지 않는 탓이라 여겨 반대했으므로, 영국 오언주의자는 차티스트에, 프랑스 푸리에주의자는 공화국과 사회 개혁을 내건 파리 신문 『개혁』(1843~1850)의 추종자들에 반대했습니다. 여기서 ‘개혁주의자’는 뒷날의 개량주의 논쟁과 다른, 1840년대 파리 공화파를 가리킵니다.",
                 "en": "The Manifesto holds that the significance of utopian socialism shrinks as history develops: the more definite the class struggle becomes, the more the fantastic attempt to stand above it loses practical value and theoretical justification. So the founders were revolutionary in many respects, while their disciples became reactionary sects, holding to their masters' old views against the proletariat's development. They dreamed of Fourier's phalansteries, Owen's home colonies and Cabet's little Icarias, and relied on bourgeois philanthropy to pay for them. Because they saw workers' political action as mere unbelief in their gospel, English Owenites opposed the Chartists and French Fourierists opposed the followers of the Paris paper La Réforme (1843-1850), which stood for a republic and social reform. 'Réformistes' here means those 1840s Paris republicans, not the later reformism debate."
               },
               "source": {
@@ -471,7 +471,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "엥겔스는 『공산당 선언』 1890년 독일어판 서문에서, 1847년에 이 선언을 '사회주의' 선언이라고 부를 수 없었던 까닭을 무엇이라고 설명했을까요?",
+                "ko": "엥겔스는 『공산당 선언』 1890년 독일어판 서문에서, 1847년에 이 선언을 ‘사회주의’ 선언이라고 부를 수 없었던 까닭을 무엇이라고 설명했을까요?",
                 "en": "In the preface to the 1890 German edition of the Communist Manifesto, how did Engels explain why in 1847 it could not have been called a 'Socialist' Manifesto?"
               },
               "choices": {
@@ -500,7 +500,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "엥겔스에 따르면 1847년에 '사회주의자'로 불린 사람은 두 부류였습니다. 이미 작은 종파로 쪼그라든 오언주의자·푸리에주의자 같은 공상적 체계의 신봉자, 그리고 자본과 이윤은 건드리지 않은 채 온갖 미봉책으로 사회의 병을 고치려던 '사회 의사들'입니다. 둘 다 노동 운동 밖에 서서 교양 있는 계급의 지지를 구했습니다. 반면 단순한 정치 변혁으로는 부족하다고 본 노동자들은 스스로를 공산주의자라 불렀고, 카베의 이카리아 공산주의와 바이틀링의 공산주의가 그 예였습니다. 노동자의 해방은 노동자 계급 자신의 사업이어야 한다는 입장에서는 이름을 고를 여지가 없었다는 것입니다. 이는 국제노동자협회 규약 전문의 첫 구절과 같은 생각입니다. 이름의 차이를 오늘날의 국가 소유 대 협동조합 구분으로 읽으면 엥겔스가 댄 기준, 곧 어느 계급의 운동인가를 놓칩니다.",
+                "ko": "엥겔스에 따르면 1847년에 ‘사회주의자’로 불린 사람은 두 부류였습니다. 이미 작은 종파로 쪼그라든 오언주의자·푸리에주의자 같은 공상적 체계의 신봉자, 그리고 자본과 이윤은 건드리지 않은 채 온갖 미봉책으로 사회의 병을 고치려던 ‘사회 의사들’입니다. 둘 다 노동 운동 밖에 서서 교양 있는 계급의 지지를 구했습니다. 반면 단순한 정치 변혁으로는 부족하다고 본 노동자들은 스스로를 공산주의자라 불렀고, 카베의 이카리아 공산주의와 바이틀링의 공산주의가 그 예였습니다. 노동자의 해방은 노동자 계급 자신의 사업이어야 한다는 입장에서는 이름을 고를 여지가 없었다는 것입니다. 이는 국제노동자협회 규약 전문의 첫 구절과 같은 생각입니다. 이름의 차이를 오늘날의 국가 소유 대 협동조합 구분으로 읽으면 엥겔스가 댄 기준, 곧 어느 계급의 운동인가를 놓칩니다.",
                 "en": "According to Engels, two kinds of people were called socialists in 1847: adherents of utopian systems such as the Owenites and Fourierists, already reduced to dwindling sects, and the 'social quacks' who would cure social ills with all manner of patchwork while leaving capital and profit untouched. Both stood outside the labour movement and looked to the educated classes. Workers who felt that mere political change was not enough called themselves communists; Cabet's Icarian communism and Weitling's were examples. For people who held that the emancipation of the workers must be the act of the working class itself, there was no choice about the name, the same idea that opens the IWMA preamble. Reading the two names as today's state ownership versus cooperatives misses Engels' actual criterion: which class the movement belonged to."
               },
               "source": {
@@ -526,11 +526,11 @@ module.exports = {
       },
       "sourceUrl": "/commulingo/docs/bakunin-statism-anarchy-excerpts-1873",
       "summary": {
-        "ko": "약 12분 · 헤이그 대회 뒤 바쿠닌이 『국가성과 아나키』(1873)에서 던진 '노동자 국가는 누구를 지배하는가'라는 물음과 학자 통치 비판, 마르크스가 1874~1875년 독서 노트에 적은 반박을 대목별로 나란히 읽습니다.",
+        "ko": "약 12분 · 헤이그 대회 뒤 바쿠닌이 『국가성과 아나키』(1873)에서 던진 ‘노동자 국가는 누구를 지배하는가’라는 물음과 학자 통치 비판, 마르크스가 1874~1875년 독서 노트에 적은 반박을 대목별로 나란히 읽습니다.",
         "en": "About 12 minutes · Read, passage by passage, the question Bakunin raised after the Hague Congress in Statism and Anarchy (1873), 'whom will a workers' state rule?', his charge of rule by savants, and the replies Marx wrote in his 1874-1875 reading notes."
       },
       "learningFocus": {
-        "ko": "바쿠닌이 '국가의 적'을 자처했다고 해서 어떤 조직도 필요 없다고 본 것으로 읽거나, 마르크스의 노트를 '인민 국가' 옹호론이나 학식 있는 지도자의 통치 옹호로 읽기 쉽습니다. 마르크스는 인민 국가 구호를 어리석다고 했고, 강제 수단이 끝나는 조건을 대표들의 판단이 아니라 계급의 경제적 기초가 사라지는 데서 찾았습니다. 마르크스 노트의 따옴표 안 문장은 바쿠닌의 발췌입니다.",
+        "ko": "바쿠닌이 ‘국가의 적’을 자처했다고 해서 어떤 조직도 필요 없다고 본 것으로 읽거나, 마르크스의 노트를 ‘인민 국가’ 옹호론이나 학식 있는 지도자의 통치 옹호로 읽기 쉽습니다. 마르크스는 인민 국가 구호를 어리석다고 했고, 강제 수단이 끝나는 조건을 대표들의 판단이 아니라 계급의 경제적 기초가 사라지는 데서 찾았습니다. 마르크스 노트의 따옴표 안 문장은 바쿠닌의 발췌입니다.",
         "en": "It is easy to read Bakunin's self-description as an 'enemy of the state' as a rejection of all organisation, or to read Marx's notes as a defence of the 'people's state' or of rule by learned leaders. Marx called the people's-state slogan nonsense, and tied the end of coercion not to the judgement of representatives but to the disappearance of the economic basis of class. Quoted sentences in Marx's notes are extracts from Bakunin."
       },
       "conceptBrief": {
@@ -722,7 +722,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "바쿠닌은 『국가성과 아나키』에서 '인민이 선출한 소수의 대표를 통한 인민의 통치'를 왜 거부했을까요?",
+                "ko": "바쿠닌은 『국가성과 아나키』에서 ‘인민이 선출한 소수의 대표를 통한 인민의 통치’를 왜 거부했을까요?",
                 "en": "Why did Bakunin, in Statism and Anarchy, reject 'government of the people through a small number of representatives elected by the people'?"
               },
               "choices": {
@@ -751,14 +751,14 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "바쿠닌의 논리는 이렇습니다. 4천만 명이 모두 정부 구성원이 될 수 없으니 '인민의 통치'는 결국 선출된 소수의 통치입니다. 그 소수가 예전의 노동자라 해도 통치자나 인민 대표가 되는 순간 노동자이기를 그치고, 국가의 높은 곳에서 인민을 내려다보며 자기 야심을 대표한다는 것입니다. 그래서 인민 국가라는 이름은 오히려 소수의 전제를 가리는 거짓이 된다고 봅니다. 바쿠닌을 '조직 반대론자'로 읽으면 틀립니다. 그가 거부한 것은 위에서 명령하는 국가였고, 대안으로 노동자 결사와 공동체가 아래로부터 위로 자유롭게 연합하는 조직을 내세웠습니다.",
+                "ko": "바쿠닌의 논리는 이렇습니다. 4천만 명이 모두 정부 구성원이 될 수 없으니 ‘인민의 통치’는 결국 선출된 소수의 통치입니다. 그 소수가 예전의 노동자라 해도 통치자나 인민 대표가 되는 순간 노동자이기를 그치고, 국가의 높은 곳에서 인민을 내려다보며 자기 야심을 대표한다는 것입니다. 그래서 인민 국가라는 이름은 오히려 소수의 전제를 가리는 거짓이 된다고 봅니다. 바쿠닌을 ‘조직 반대론자’로 읽으면 틀립니다. 그가 거부한 것은 위에서 명령하는 국가였고, 대안으로 노동자 결사와 공동체가 아래로부터 위로 자유롭게 연합하는 조직을 내세웠습니다.",
                 "en": "Bakunin's reasoning runs like this. Forty million people cannot all be members of the government, so 'government by the people' means government by an elected minority. Even if they were workers yesterday, they cease to be workers the moment they become rulers or representatives, and from the heights of the state they represent their own ambitions. The name 'people's state' thus becomes a lie that hides minority despotism. Reading Bakunin as opposed to organisation is wrong: he rejected a state commanding from above, and proposed instead a free union of workers' associations and communes built from below upward."
               },
               "source": {
                 "kind": "reference",
                 "href": "/commulingo/docs/bakunin-statism-anarchy-excerpts-1873",
                 "label": {
-                  "ko": "바쿠닌, 『국가성과 아나키』의 '인민 국가' 비판 (1873)",
+                  "ko": "바쿠닌, 『국가성과 아나키』의 ‘인민 국가’ 비판 (1873)",
                   "en": "Bakunin, Statism and Anarchy, critique of the 'people's state' (1873)"
                 }
               }
@@ -768,7 +768,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "바쿠닌은 라살레파와 마르크스주의자들이 즐겨 쓰는 '학식 있는 사회주의자', '과학적 사회주의'라는 말에서 인민 국가가 실제로 무엇이 되리라고 끌어냈을까요?",
+                "ko": "바쿠닌은 라살레파와 마르크스주의자들이 즐겨 쓰는 ‘학식 있는 사회주의자’, ‘과학적 사회주의’라는 말에서 인민 국가가 실제로 무엇이 되리라고 끌어냈을까요?",
                 "en": "From the phrases 'learned socialists' and 'scientific socialism', so often used by Lassalleans and Marxists, what did Bakunin conclude the people's state would really become?"
               },
               "choices": {
@@ -797,14 +797,14 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "바쿠닌은 선출된 소수의 통치라는 비판에 한 겹을 더합니다. 마르크스주의자들은 그 소수가 열렬하고 학식 있는 사회주의자일 것이라고 하겠지만, 바로 '학식 있는 사회주의자', '과학적 사회주의'라는 말이 문제라는 것입니다. 학식을 통치의 자격으로 삼으면 인민 국가는 학자들로 이루어진 새롭고 극히 적은 귀족이 학식 없는 대중을 다스리는 체제가 되고, 인민은 통치의 걱정에서 '해방'되어 통치받는 무리가 된다고 비꼽니다. 이 독재가 인민을 교육해 통치를 불필요하게 만드는 일시적 수단이라는 설명에는, 해방하려고 먼저 예속시킨다는 모순이라고 답합니다. 그렇다고 바쿠닌이 학문을 거부한 것은 아닙니다. 그는 학문이 미래의 형태가 아니라 현존 사회 비판에서 나오는 부정적 조건, 곧 집단적 소유와 아나키만 규정할 수 있다고 보았고, 그래서 학문의 지시로 위에서 조직하는 일 자체를 거부했습니다.",
+                "ko": "바쿠닌은 선출된 소수의 통치라는 비판에 한 겹을 더합니다. 마르크스주의자들은 그 소수가 열렬하고 학식 있는 사회주의자일 것이라고 하겠지만, 바로 ‘학식 있는 사회주의자’, ‘과학적 사회주의’라는 말이 문제라는 것입니다. 학식을 통치의 자격으로 삼으면 인민 국가는 학자들로 이루어진 새롭고 극히 적은 귀족이 학식 없는 대중을 다스리는 체제가 되고, 인민은 통치의 걱정에서 ‘해방’되어 통치받는 무리가 된다고 비꼽니다. 이 독재가 인민을 교육해 통치를 불필요하게 만드는 일시적 수단이라는 설명에는, 해방하려고 먼저 예속시킨다는 모순이라고 답합니다. 그렇다고 바쿠닌이 학문을 거부한 것은 아닙니다. 그는 학문이 미래의 형태가 아니라 현존 사회 비판에서 나오는 부정적 조건, 곧 집단적 소유와 아나키만 규정할 수 있다고 보았고, 그래서 학문의 지시로 위에서 조직하는 일 자체를 거부했습니다.",
                 "en": "Bakunin adds a layer to his critique of rule by an elected minority. The Marxists will say that minority will be ardent, learned socialists, but the phrases 'learned socialists' and 'scientific socialism' are exactly the problem. If learning becomes the title to govern, the people's state becomes the rule of a new, tiny aristocracy of savants over unlearned masses, and the people are 'freed' from the cares of government only to become a governed herd. To the claim that this dictatorship is a temporary means of educating people until government is unnecessary, he answers that it enslaves the people in order to free them. Bakunin did not reject science: he held that it can define only negative conditions drawn from criticism of existing society, collective property and anarchy, not the forms of the future, and so he rejected organising society from above on its instructions."
               },
               "source": {
                 "kind": "reference",
                 "href": "/commulingo/docs/bakunin-statism-anarchy-excerpts-1873",
                 "label": {
-                  "ko": "바쿠닌, 『국가성과 아나키』의 '학식 있는 사회주의자'와 '일시적 독재' 비판 (1873)",
+                  "ko": "바쿠닌, 『국가성과 아나키』의 ‘학식 있는 사회주의자’와 ‘일시적 독재’ 비판 (1873)",
                   "en": "Bakunin, Statism and Anarchy, on 'learned socialists' and the 'temporary dictatorship' (1873)"
                 }
               }
@@ -814,7 +814,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "바쿠닌이 '프롤레타리아트 전체가 정부의 수뇌에 서는가, 4천만 독일인이 모두 정부 구성원이 되는가'라고 묻자, 마르크스는 노트에서 무엇을 근거로 반박했을까요?",
+                "ko": "바쿠닌이 ‘프롤레타리아트 전체가 정부의 수뇌에 서는가, 4천만 독일인이 모두 정부 구성원이 되는가’라고 묻자, 마르크스는 노트에서 무엇을 근거로 반박했을까요?",
                 "en": "When Bakunin asked whether the whole proletariat would head the government and all forty million Germans be members of it, on what grounds did Marx object in his notes?"
               },
               "choices": {
@@ -843,14 +843,14 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "마르크스는 바쿠닌의 물음이 대표와 분업을 곧 지배로 여긴다고 보고 반문합니다. 노동조합에서 조합 전체가 집행위원회를 이루는가, 바쿠닌식 '아래로부터 위로'의 조직에서도 모두가 '위'에 있는가라는 것입니다. 이어 선거는 가장 작은 러시아 공동체에도 있는 형식이고, 그 성격은 유권자들의 경제적 연관에 달려 있다고 적습니다. 기능이 정치적이기를 그치면 정부 기능은 없고, 일반 기능의 분배는 지배를 낳지 않는 사무가 된다는 것입니다. 공장주가 시의원이 된다고 자본가이기를 그치지 않는다는 비유도 같은 뜻입니다. 계급을 정하는 것은 직책이 아니라 경제적 위치라는 주장입니다.",
+                "ko": "마르크스는 바쿠닌의 물음이 대표와 분업을 곧 지배로 여긴다고 보고 반문합니다. 노동조합에서 조합 전체가 집행위원회를 이루는가, 바쿠닌식 ‘아래로부터 위로’의 조직에서도 모두가 ‘위’에 있는가라는 것입니다. 이어 선거는 가장 작은 러시아 공동체에도 있는 형식이고, 그 성격은 유권자들의 경제적 연관에 달려 있다고 적습니다. 기능이 정치적이기를 그치면 정부 기능은 없고, 일반 기능의 분배는 지배를 낳지 않는 사무가 된다는 것입니다. 공장주가 시의원이 된다고 자본가이기를 그치지 않는다는 비유도 같은 뜻입니다. 계급을 정하는 것은 직책이 아니라 경제적 위치라는 주장입니다.",
                 "en": "Marx reads Bakunin's question as treating delegation and division of labour as domination in themselves, and retorts: does a whole trade union form its executive committee? In Bakunin's own organisation 'from below upward', is everyone 'on top'? He adds that elections are a form found even in the smallest Russian commune, and their character depends on the voters' economic ties. Once functions cease to be political there are no governmental functions, and distributing general functions is business that gives no domination. His remark that a manufacturer does not stop being a capitalist by becoming a town councillor makes the same point: class is set by economic position, not by office."
               },
               "source": {
                 "kind": "reference",
                 "href": "/commulingo/docs/marx-bakunin-notes-1874-1875",
                 "label": {
-                  "ko": "마르크스, 바쿠닌의 『국가성과 아나키』 독서 노트 중 '4천만 독일인' 대목 (1874~1875)",
+                  "ko": "마르크스, 바쿠닌의 『국가성과 아나키』 독서 노트 중 ‘4천만 독일인’ 대목 (1874~1875)",
                   "en": "Marx, notes on Bakunin's Statism and Anarchy, the 'forty million Germans' passage (1874 to 1875)"
                 }
               }
@@ -860,7 +860,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "바쿠닌은 '지배계급이 된 프롤레타리아트는 누구를 지배하는가'라고 물었습니다. 마르크스는 노트에서 그 지배가 왜 필요하고 언제 끝난다고 답했을까요?",
+                "ko": "바쿠닌은 ‘지배계급이 된 프롤레타리아트는 누구를 지배하는가’라고 물었습니다. 마르크스는 노트에서 그 지배가 왜 필요하고 언제 끝난다고 답했을까요?",
                 "en": "Bakunin asked whom a proletariat become ruling class would rule. According to Marx's notes, why is that rule needed and when does it end?"
               },
               "choices": {
@@ -889,14 +889,14 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "마르크스는 '지배계급으로 조직된 프롤레타리아트'를 이렇게 풉니다. 자본가 계급과 사회의 낡은 조직이 아직 남아 있는 동안, 노동자는 개별적으로 싸우는 대신 일반적 강제 수단을 쓸 만큼의 조직을 갖춰야 한다는 것입니다. 그러나 그 수단은 임금노동이라는 계급의 경제적 조건을 바꾸는 데 쓰이므로, 조건이 사라지면 노동자의 계급적 성격도 사라지고 지배도 끝납니다. 두 번째 보기는 바쿠닌이 상대편 주장으로 요약한 '교육 독재'론이라 헷갈리기 쉽지만, 마르크스의 근거는 대표들의 판단이 아니라 경제적 조건의 변화입니다. 농민에 대해서도 그는 지배가 아니라 처지 개선으로 집단 소유에 이르게 하라고 적었습니다.",
+                "ko": "마르크스는 ‘지배계급으로 조직된 프롤레타리아트’를 이렇게 풉니다. 자본가 계급과 사회의 낡은 조직이 아직 남아 있는 동안, 노동자는 개별적으로 싸우는 대신 일반적 강제 수단을 쓸 만큼의 조직을 갖춰야 한다는 것입니다. 그러나 그 수단은 임금노동이라는 계급의 경제적 조건을 바꾸는 데 쓰이므로, 조건이 사라지면 노동자의 계급적 성격도 사라지고 지배도 끝납니다. 두 번째 보기는 바쿠닌이 상대편 주장으로 요약한 ‘교육 독재’론이라 헷갈리기 쉽지만, 마르크스의 근거는 대표들의 판단이 아니라 경제적 조건의 변화입니다. 농민에 대해서도 그는 지배가 아니라 처지 개선으로 집단 소유에 이르게 하라고 적었습니다.",
                 "en": "Marx glosses 'the proletariat organised as ruling class' this way: while the capitalist class and the old organisation of society remain, workers must stop fighting individually and organise enough to use general means of coercion. But those means serve to transform the economic conditions of wage labour, so when those conditions go, the workers' class character goes too, and with it their rule. The second option is tempting because it is Bakunin's summary of the Marxists' 'educational dictatorship', but Marx's ground is a change in economic conditions, not a judgement by representatives. On the peasants, too, he wrote of improving their condition so they reach collective property, not of ruling them."
               },
               "source": {
                 "kind": "reference",
                 "href": "/commulingo/docs/marx-bakunin-notes-1874-1875",
                 "label": {
-                  "ko": "마르크스, 바쿠닌의 『국가성과 아나키』 독서 노트 중 '지배계급으로 조직된 프롤레타리아트' 대목 (1874~1875)",
+                  "ko": "마르크스, 바쿠닌의 『국가성과 아나키』 독서 노트 중 ‘지배계급으로 조직된 프롤레타리아트’ 대목 (1874~1875)",
                   "en": "Marx, notes on Bakunin's Statism and Anarchy, 'the proletariat organised as ruling class' (1874 to 1875)"
                 }
               }
@@ -906,7 +906,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "바쿠닌이 '승리한 독일 프롤레타리아트 아래 슬라브인과 농민이 예속되리라'고 하자, 마르크스는 노트에서 급진적 사회혁명이 어떤 조건에 묶여 있다고 반박했을까요?",
+                "ko": "바쿠닌이 ‘승리한 독일 프롤레타리아트 아래 슬라브인과 농민이 예속되리라’고 하자, 마르크스는 노트에서 급진적 사회혁명이 어떤 조건에 묶여 있다고 반박했을까요?",
                 "en": "When Bakunin argued that Slavs and peasants would be enslaved under a victorious German proletariat, to what conditions did Marx's notes say a radical social revolution was bound?"
               },
               "choices": {
@@ -935,7 +935,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "바쿠닌의 물음은 프롤레타리아트가 지배계급이 되면 문화 수준이 낮다는 농민, 민족적으로는 슬라브인이 새 예속에 놓이리라는 것이었습니다. 마르크스는 이것을 '학생 같은' 발상이라 부르며 질문의 전제를 문제 삼습니다. 급진적 사회혁명은 경제 발전의 일정한 역사적 조건에 묶여 있고, 자본주의 생산과 함께 산업 프롤레타리아트가 인민 대중 속에서 상당한 지위를 차지한 곳에서만 가능하다는 것입니다. 그런 곳에서도 농민이 다수인 서유럽 대륙에서는 농민이 노동자 혁명을 좌절시키거나, 노동자 권력이 농민의 처지를 곧바로 개선해 그들이 스스로 집단 소유로 옮겨 가게 해야 합니다. 그러니 노동의 지배가 농촌 노동의 억압을 포함한다는 그림은 성립하지 않는다고 봅니다. 마르크스가 보기에 바쿠닌은 모든 경제 형태에 노동자의 예속이 있으니 어디서나 똑같이 급진적 혁명이 가능하다고 믿었고, 그래서 그의 사회혁명의 기초는 경제적 조건이 아니라 의지였습니다.",
+                "ko": "바쿠닌의 물음은 프롤레타리아트가 지배계급이 되면 문화 수준이 낮다는 농민, 민족적으로는 슬라브인이 새 예속에 놓이리라는 것이었습니다. 마르크스는 이것을 ‘학생 같은’ 발상이라 부르며 질문의 전제를 문제 삼습니다. 급진적 사회혁명은 경제 발전의 일정한 역사적 조건에 묶여 있고, 자본주의 생산과 함께 산업 프롤레타리아트가 인민 대중 속에서 상당한 지위를 차지한 곳에서만 가능하다는 것입니다. 그런 곳에서도 농민이 다수인 서유럽 대륙에서는 농민이 노동자 혁명을 좌절시키거나, 노동자 권력이 농민의 처지를 곧바로 개선해 그들이 스스로 집단 소유로 옮겨 가게 해야 합니다. 그러니 노동의 지배가 농촌 노동의 억압을 포함한다는 그림은 성립하지 않는다고 봅니다. 마르크스가 보기에 바쿠닌은 모든 경제 형태에 노동자의 예속이 있으니 어디서나 똑같이 급진적 혁명이 가능하다고 믿었고, 그래서 그의 사회혁명의 기초는 경제적 조건이 아니라 의지였습니다.",
                 "en": "Bakunin's question was whether, once the proletariat ruled, the supposedly backward peasants and, nationally, the Slavs would fall into a new bondage. Marx calls this schoolboy nonsense and attacks its premise. A radical social revolution is bound to definite historical conditions of economic development; it is possible only where, with capitalist production, an industrial proletariat holds a significant place among the mass of the people. Even there, on the Western European continent where peasants are numerous, either they will block a workers' revolution or workers' power must improve their condition at once so that they move toward collective property themselves. So the picture of labour's rule including the oppression of rural labour does not hold. As Marx saw it, Bakunin believed that since every economic form enslaves the worker, radical revolution is equally possible everywhere; his social revolution therefore rested on will, not on economic conditions."
               },
               "source": {
@@ -952,7 +952,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "바쿠닌이 공격한 '인민 국가'와 '과학적 사회주의'라는 말을 마르크스는 노트에서 어떻게 다뤘을까요?",
+                "ko": "바쿠닌이 공격한 ‘인민 국가’와 ‘과학적 사회주의’라는 말을 마르크스는 노트에서 어떻게 다뤘을까요?",
                 "en": "How did Marx's notes deal with the phrases 'people's state' and 'scientific socialism' that Bakunin attacked?"
               },
               "choices": {
@@ -981,14 +981,14 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "마르크스의 노트를 '인민 국가' 옹호론으로 읽으면 틀립니다. 그는 리프크네히트식으로 인민 국가에 집착하는 것은 어리석다고 적습니다. 그 말에서 건질 뜻은, 낡은 사회를 뒤엎는 투쟁 동안 프롤레타리아트가 아직 낡은 사회의 기반 위에서 그 정치 형식을 빌려 움직이며 해방 뒤에는 사라질 해방 수단을 쓴다는 것뿐이라는 것입니다. '과학적 사회주의'에 대해서는, 인민 자신이 만들어 낸 사회 운동의 인식에 학문을 한정하는 대신 새 공상을 인민에게 덧씌우는 공상적 사회주의에 맞선다는 뜻으로만 썼다고 답하고, 학자의 통치라는 그림에는 '망상'이라고 적습니다. 두 사람 모두 국가를 계급 지배의 기관으로 보는 데서 출발했지만, 바쿠닌은 과도기의 강제를 곧 새 지배로 보았고, 마르크스는 그 수단이 계급의 경제적 기반과 함께 사라진다고 보았습니다. 여기서 갈린 것은 국가 폐지라는 목표가 아니라 그 경로였습니다.",
+                "ko": "마르크스의 노트를 ‘인민 국가’ 옹호론으로 읽으면 틀립니다. 그는 리프크네히트식으로 인민 국가에 집착하는 것은 어리석다고 적습니다. 그 말에서 건질 뜻은, 낡은 사회를 뒤엎는 투쟁 동안 프롤레타리아트가 아직 낡은 사회의 기반 위에서 그 정치 형식을 빌려 움직이며 해방 뒤에는 사라질 해방 수단을 쓴다는 것뿐이라는 것입니다. ‘과학적 사회주의’에 대해서는, 인민 자신이 만들어 낸 사회 운동의 인식에 학문을 한정하는 대신 새 공상을 인민에게 덧씌우는 공상적 사회주의에 맞선다는 뜻으로만 썼다고 답하고, 학자의 통치라는 그림에는 ‘망상’이라고 적습니다. 두 사람 모두 국가를 계급 지배의 기관으로 보는 데서 출발했지만, 바쿠닌은 과도기의 강제를 곧 새 지배로 보았고, 마르크스는 그 수단이 계급의 경제적 기반과 함께 사라진다고 보았습니다. 여기서 갈린 것은 국가 폐지라는 목표가 아니라 그 경로였습니다.",
                 "en": "Reading Marx's notes as a defence of the 'people's state' is a mistake. He writes that Liebknecht-style fixation on the people's state is nonsense. All the phrase can mean is that during the struggle to overturn the old society the proletariat still acts on that society's basis, moves within its political forms, and uses means of liberation that disappear after liberation. As for 'scientific socialism', he answers that it was used only against utopian socialism, which foists new fantasies on the people instead of confining science to knowledge of the social movement the people themselves create; the picture of rule by savants he marks as a delusion. Both men started from the state as an organ of class rule, but Bakunin saw transitional coercion as a new domination, while Marx held that the means disappear with the economic basis of class. What divided them was the route, not the aim of abolishing the state."
               },
               "source": {
                 "kind": "reference",
                 "href": "/commulingo/docs/marx-bakunin-notes-1874-1875",
                 "label": {
-                  "ko": "마르크스, 바쿠닌의 『국가성과 아나키』 독서 노트 중 '과학적 사회주의'와 '인민 국가' 대목 (1874~1875)",
+                  "ko": "마르크스, 바쿠닌의 『국가성과 아나키』 독서 노트 중 ‘과학적 사회주의’와 ‘인민 국가’ 대목 (1874~1875)",
                   "en": "Marx, reading notes on Bakunin's Statism and Anarchy, the passages on 'scientific socialism' and the 'people's state' (1874-1875)"
                 }
               }
@@ -1486,11 +1486,11 @@ module.exports = {
       },
       "sourceUrl": "/commulingo/docs/erfurt-program-1891",
       "summary": {
-        "ko": "약 12분 · 1891년 독일 사회민주당 에르푸르트 강령을 조문 단위로 읽습니다. 원칙 부분의 진단과 목표, 경제 투쟁이 왜 정치 투쟁이 되는지, 누가 사회 전환을 이룰 수 있는지, 국제적 연대의 근거, 그리고 '우선' 요구 15개 항의 성격을 확인합니다.",
+        "ko": "약 12분 · 1891년 독일 사회민주당 에르푸르트 강령을 조문 단위로 읽습니다. 원칙 부분의 진단과 목표, 경제 투쟁이 왜 정치 투쟁이 되는지, 누가 사회 전환을 이룰 수 있는지, 국제적 연대의 근거, 그리고 ‘우선’ 요구 15개 항의 성격을 확인합니다.",
         "en": "About 12 minutes · Read the 1891 Erfurt Programme of the German Social Democratic Party clause by clause: the diagnosis and goal of the principles, why economic struggle becomes political, who can accomplish the transformation, the grounds of international solidarity, and the character of the fifteen 'first of all' demands."
       },
       "learningFocus": {
-        "ko": "요구 부분의 보통선거·민병·8시간 노동일을 사회주의 목표를 대신한 개혁 목록으로, 또는 사회주의 이후에 시행할 제도 설계로 읽기 쉽습니다. '종교는 사적인 일'을 종교 금지로 읽는 것도 흔한 오독입니다. 강령이 원칙과 '우선' 요구를 어떤 논리로 묶었는지 조문으로 확인하세요. 1891년의 독일 사회민주당을 오늘날 같은 이름의 정당과 겹쳐 읽지 않습니다.",
+        "ko": "요구 부분의 보통선거·민병·8시간 노동일을 사회주의 목표를 대신한 개혁 목록으로, 또는 사회주의 이후에 시행할 제도 설계로 읽기 쉽습니다. ‘종교는 사적인 일’을 종교 금지로 읽는 것도 흔한 오독입니다. 강령이 원칙과 ‘우선’ 요구를 어떤 논리로 묶었는지 조문으로 확인하세요. 1891년의 독일 사회민주당을 오늘날 같은 이름의 정당과 겹쳐 읽지 않습니다.",
         "en": "It is easy to read the demands for universal suffrage, a militia and an eight-hour day as a reform list replacing the socialist goal, or as a blueprint for after socialism. Reading 'religion is a private matter' as a ban on religion is another common mistake. Check in the clauses how the programme ties its principles to the 'first of all' demands. The German SPD of 1891 should not be conflated with today's party of that name."
       },
       "conceptBrief": {
@@ -1864,7 +1864,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "에르푸르트 강령은 사회적 소유를 목표로 내걸면서 보통선거·민병·무상 교육·8시간 노동일 등을 '우선' 요구했습니다. 이 요구들은 어떤 성격이었을까요?",
+                "ko": "에르푸르트 강령은 사회적 소유를 목표로 내걸면서 보통선거·민병·무상 교육·8시간 노동일 등을 ‘우선’ 요구했습니다. 이 요구들은 어떤 성격이었을까요?",
                 "en": "While aiming at social ownership, the Erfurt Programme demanded 'first of all' universal suffrage, a militia, free education and the eight-hour day. What kind of demands were these?"
               },
               "choices": {
@@ -1893,7 +1893,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "요구 부분의 대상은 분명히 현존 국가입니다. '제국 시민'의 선거권, 제국·주·지방의 자치, 제국 노동부와 노동국, 제국 정부의 노동자 보험 인수가 그 예입니다. 그러면서도 요구 부분은 원칙에서 '출발하여' 요구한다고 밝힙니다. 선거권과 결사의 자유는 원칙 부분이 말한 정치적 권리를 넓히고, 민병과 인민 대표 기관의 전쟁 결정은 군사 문제를 인민의 결정 아래 두려 하며, 8시간 노동일과 아동 노동 금지는 지금의 노동자를 보호합니다. 목표를 버린 것도, 사회주의 이후의 설계도도 아닙니다. 다만 이 두 부분이 실제로 어떻게 이어지는지를 두고 1890년대 말 당 안에서 큰 논쟁이 벌어졌습니다.",
+                "ko": "요구 부분의 대상은 분명히 현존 국가입니다. ‘제국 시민’의 선거권, 제국·주·지방의 자치, 제국 노동부와 노동국, 제국 정부의 노동자 보험 인수가 그 예입니다. 그러면서도 요구 부분은 원칙에서 ‘출발하여’ 요구한다고 밝힙니다. 선거권과 결사의 자유는 원칙 부분이 말한 정치적 권리를 넓히고, 민병과 인민 대표 기관의 전쟁 결정은 군사 문제를 인민의 결정 아래 두려 하며, 8시간 노동일과 아동 노동 금지는 지금의 노동자를 보호합니다. 목표를 버린 것도, 사회주의 이후의 설계도도 아닙니다. 다만 이 두 부분이 실제로 어떻게 이어지는지를 두고 1890년대 말 당 안에서 큰 논쟁이 벌어졌습니다.",
                 "en": "The demands plainly address the existing state: suffrage for 'citizens of the Reich', self-government in Reich, state and municipality, a Reich labour department and bureaus, the Reich government taking over workers' insurance. Yet they say they 'proceed from these principles'. Suffrage and freedom of association widen the political rights the principles call for; a militia and decisions on war by the people's assembly put military questions under popular decision; the eight-hour day and the ban on child labour protect today's workers. This is neither abandoning the goal nor a blueprint for after socialism. How exactly the two parts connect, however, became a major dispute within the party in the late 1890s."
               },
               "source": {
@@ -1910,7 +1910,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "에르푸르트 강령의 '종교는 사적인 일'이라는 요구는 국가와 교회의 관계를 어떻게 바꾸자는 것이었을까요?",
+                "ko": "에르푸르트 강령의 ‘종교는 사적인 일’이라는 요구는 국가와 교회의 관계를 어떻게 바꾸자는 것이었을까요?",
                 "en": "How did the Erfurt Programme's demand that religion be declared a private matter propose to change the relation between state and church?"
               },
               "choices": {
@@ -1939,7 +1939,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "요구 6항은 '종교는 사적인 일'이라는 선언을 요구합니다. 그 뜻은 곧바로 이어지는 문장에 있습니다. 교회와 종교의 목적을 위한 공금 지출을 모두 폐지하고, 교회와 종교 공동체를 자기 일을 완전히 자율적으로 처리하는 사적 결사로 본다는 것입니다. 7항의 학교 세속화와 공립 민중학교의 무상 교육이 이것을 교육 쪽에서 보완합니다. 그러니 이 요구는 국가와 교회를 떼어 놓자는 것이지, 신앙을 금지하거나 당이 종교를 단속하겠다는 약속이 아닙니다. 국가가 여러 교회를 똑같이 지원하는 방식과도 다릅니다. 바로 앞 4항이 표현·결사·집회의 자유를 제한하는 법률의 폐지를 요구한다는 점을 함께 보면, 종교 문제도 시민적 자유와 국가 중립이라는 틀 안에 놓여 있다는 것이 드러납니다. 원칙 부분이 밝힌 대로 당은 계급·성·인종 등 어떤 형태의 억압에도 맞선다고 했습니다.",
+                "ko": "요구 6항은 ‘종교는 사적인 일’이라는 선언을 요구합니다. 그 뜻은 곧바로 이어지는 문장에 있습니다. 교회와 종교의 목적을 위한 공금 지출을 모두 폐지하고, 교회와 종교 공동체를 자기 일을 완전히 자율적으로 처리하는 사적 결사로 본다는 것입니다. 7항의 학교 세속화와 공립 민중학교의 무상 교육이 이것을 교육 쪽에서 보완합니다. 그러니 이 요구는 국가와 교회를 떼어 놓자는 것이지, 신앙을 금지하거나 당이 종교를 단속하겠다는 약속이 아닙니다. 국가가 여러 교회를 똑같이 지원하는 방식과도 다릅니다. 바로 앞 4항이 표현·결사·집회의 자유를 제한하는 법률의 폐지를 요구한다는 점을 함께 보면, 종교 문제도 시민적 자유와 국가 중립이라는 틀 안에 놓여 있다는 것이 드러납니다. 원칙 부분이 밝힌 대로 당은 계급·성·인종 등 어떤 형태의 억압에도 맞선다고 했습니다.",
                 "en": "Demand 6 calls for declaring religion a private matter. The meaning follows at once: all public spending for church and religious purposes is abolished, and churches and religious communities are treated as private associations running their own affairs with complete autonomy. Demand 7, secular schools and free public elementary education, complements this on the side of schooling. So the demand separates state and church; it is not a pledge to forbid belief or for the party to police religion, nor a scheme for the state to fund all churches equally. Read together with demand 4 just before it, which abolishes laws restricting expression, association and assembly, the religious question sits within a frame of civil liberty and state neutrality. As the principles put it, the party opposes every kind of oppression, whether of a class, sex or race."
               },
               "source": {
@@ -1969,7 +1969,7 @@ module.exports = {
         "en": "About 12 minutes · Read Bernstein's 1898 letter to the party congress and The Preconditions of Socialism (1899) alongside Luxemburg's Social Reform or Revolution, and see where they differed on the outlook for capitalism, on democracy, and on how reform relates to social transformation."
       },
       "learningFocus": {
-        "ko": "베른슈타인을 '가난한 사람에게 조금 양보하자'는 주장으로, 룩셈부르크를 개혁 투쟁에 반대하거나 곧 닥칠 붕괴를 기다린 사람으로 읽기 쉽습니다. 둘 다 선거권·노동조합·민주적 제도를 중시했고, 룩셈부르크의 쟁점은 적응론이 옳다면 사회주의가 필연이 아니라 바람이 된다는 데 있었습니다. 여기서 '사회민주주의'는 당시 사회주의 노동운동의 이름입니다.",
+        "ko": "베른슈타인을 ‘가난한 사람에게 조금 양보하자’는 주장으로, 룩셈부르크를 개혁 투쟁에 반대하거나 곧 닥칠 붕괴를 기다린 사람으로 읽기 쉽습니다. 둘 다 선거권·노동조합·민주적 제도를 중시했고, 룩셈부르크의 쟁점은 적응론이 옳다면 사회주의가 필연이 아니라 바람이 된다는 데 있었습니다. 여기서 ‘사회민주주의’는 당시 사회주의 노동운동의 이름입니다.",
         "en": "It is easy to read Bernstein as merely urging small concessions to the poor, and Luxemburg as opposing reform struggles or waiting for an imminent collapse. Both valued the franchise, trade unions and democratic institutions; Luxemburg's point was that if the adaptation theory were right, socialism would become a wish rather than a necessity. 'Social democracy' here is the name of the socialist labour movement of the time."
       },
       "conceptBrief": {
@@ -2207,7 +2207,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "베른슈타인은 \"최종 목표는 나에게 아무것도 아니며 운동이 전부다\"라는 자기 문장을 『사회주의의 전제와 사회민주주의의 과제』(1899) 서문에서 어떻게 해명했을까요?",
+                "ko": "베른슈타인은 “최종 목표는 나에게 아무것도 아니며 운동이 전부다”라는 자기 문장을 『사회주의의 전제와 사회민주주의의 과제』(1899) 서문에서 어떻게 해명했을까요?",
                 "en": "How did Bernstein, in the preface to The Preconditions of Socialism (1899), explain his own sentence that the final goal is nothing to him and the movement everything?"
               },
               "choices": {
@@ -2236,7 +2236,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "이 문장은 당시 사회주의 목표를 버리자는 말로 널리 읽혔고, 룩셈부르크도 그렇게 비판했습니다. 베른슈타인은 서문에서 이렇게 해명합니다. 그는 머지않은 붕괴에 기대 전술을 짜는 데 반대했고, 민족의 발전에서 중요한 시기는 건너뛸 수 없다고 보았기에 노동자의 정치적 권리, 지방 자치체 활동, 경제적 조직화라는 당면 과제에 가장 큰 가치를 둔다는 것입니다. 미래상을 끝까지 읽을 수 없으니 최종 형태의 세부에는 매달리지 않겠다는 뜻이라고 했습니다. 그래서 '운동이 전부'는 목표 폐기 선언이라기보다 전술의 기준을 파국 전망에서 지속적 전진으로 옮기자는 주장입니다.",
+                "ko": "이 문장은 당시 사회주의 목표를 버리자는 말로 널리 읽혔고, 룩셈부르크도 그렇게 비판했습니다. 베른슈타인은 서문에서 이렇게 해명합니다. 그는 머지않은 붕괴에 기대 전술을 짜는 데 반대했고, 민족의 발전에서 중요한 시기는 건너뛸 수 없다고 보았기에 노동자의 정치적 권리, 지방 자치체 활동, 경제적 조직화라는 당면 과제에 가장 큰 가치를 둔다는 것입니다. 미래상을 끝까지 읽을 수 없으니 최종 형태의 세부에는 매달리지 않겠다는 뜻이라고 했습니다. 그래서 ‘운동이 전부’는 목표 폐기 선언이라기보다 전술의 기준을 파국 전망에서 지속적 전진으로 옮기자는 주장입니다.",
                 "en": "The sentence was widely read as abandoning the socialist goal, and Luxemburg attacked it on that basis. In his preface Bernstein explains: he opposed building tactics on an imminent collapse, and since important periods in a nation's development cannot be skipped, he put the greatest value on the immediate tasks of workers' political rights, municipal activity and economic organisation. No picture of the future could be read to the end, so he would not fix on the details of the final form. 'The movement is everything' is thus less a renunciation of the goal than a claim that tactics should be guided by steady advance instead of a prospect of catastrophe."
               },
               "source": {
@@ -2282,7 +2282,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "베른슈타인에게 민주주의는 노동계급이 자본을 부수는 데 잠시 쓰는 도구가 아닙니다. 그는 민주주의가 수단이자 목적이며, 사회주의를 쟁취하는 수단이자 실현하는 형태라고 썼습니다. 민주주의는 원칙적으로 계급 지배의 폐지이지만 계급 자체가 사실상 사라진 것은 아니므로, 개혁은 계속 필요합니다. 보통선거권은 그 소유자를 잠재적으로 공동체의 참여자로 만들고, 결국 실제 참여로 이어진다고 봤습니다. 이 때문에 그는 당이 실천에서 이미 의회 활동과 인민 입법 위에 서 있으면서 '프롤레타리아 독재'라는 문구를 고집하는 것을 의문시했습니다. 그를 단순한 양보론자로 읽으면 민주주의를 사회주의의 형태로까지 본 이 논지를 놓칩니다.",
+                "ko": "베른슈타인에게 민주주의는 노동계급이 자본을 부수는 데 잠시 쓰는 도구가 아닙니다. 그는 민주주의가 수단이자 목적이며, 사회주의를 쟁취하는 수단이자 실현하는 형태라고 썼습니다. 민주주의는 원칙적으로 계급 지배의 폐지이지만 계급 자체가 사실상 사라진 것은 아니므로, 개혁은 계속 필요합니다. 보통선거권은 그 소유자를 잠재적으로 공동체의 참여자로 만들고, 결국 실제 참여로 이어진다고 봤습니다. 이 때문에 그는 당이 실천에서 이미 의회 활동과 인민 입법 위에 서 있으면서 ‘프롤레타리아 독재’라는 문구를 고집하는 것을 의문시했습니다. 그를 단순한 양보론자로 읽으면 민주주의를 사회주의의 형태로까지 본 이 논지를 놓칩니다.",
                 "en": "For Bernstein democracy is not a tool the working class uses briefly to smash capital. He wrote that democracy is means and end at once, the means of winning socialism and the form of its realisation. It is in principle the abolition of class rule, but classes have not actually vanished, so reform remains necessary. Universal suffrage makes its holders potential participants in the community, and that potential participation turns into actual participation. Hence he questioned why a party already standing in practice on parliamentary work and popular legislation should cling to the phrase 'dictatorship of the proletariat'. Reading him as a mere advocate of concessions misses his claim that democracy is the very form of socialism."
               },
               "source": {
@@ -2299,7 +2299,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "룩셈부르크는 베른슈타인이 신용·기업가 조직·교통의 발달을 자본주의의 '적응 수단'이라 부른 데 대해 어떤 양자택일을 들이댔을까요?",
+                "ko": "룩셈부르크는 베른슈타인이 신용·기업가 조직·교통의 발달을 자본주의의 ‘적응 수단’이라 부른 데 대해 어떤 양자택일을 들이댔을까요?",
                 "en": "What either-or did Luxemburg put to Bernstein's claim that credit, employers' organisations and improved transport were capitalism's 'means of adaptation'?"
               },
               "choices": {
@@ -2328,7 +2328,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "베른슈타인에 따르면 자본주의는 신용 제도, 기업가 조직, 교통·통신의 발달로 전반적 공황을 피하고, 생산 부문의 분화와 중간층의 끈질긴 생명력, 노동조합 투쟁에 따른 노동자 처지 향상으로 적응력을 보입니다. 그래서 전반적 붕괴는 갈수록 일어날 것 같지 않다는 것입니다. 룩셈부르크는 먼저 사실을 다툽니다. 신용은 한 자본가에게 남의 자본을 쓰게 하고 모든 관계를 최대한 탄력적으로 만들어 공황을 오히려 촉진하고, 카르텔도 결국 무정부성과 국가 간 관세 대립을 키운다는 것입니다. 이어 논리를 다툽니다. 적응 수단이 정말 자본주의의 모순을 지양해 붕괴를 막는다면, 사회주의는 자본주의 발전에서 나오는 객관적 필연이 아니라 '순수 인식'에 기댄 관념론적 목표가 됩니다. 반대로 사회주의가 유토피아가 아니라면 적응론이 틀린 것입니다. 베른슈타인이 경제 전망의 문제로 다룬 것을 룩셈부르크는 사회주의의 근거 자체의 문제로 바꿔 놓았습니다.",
+                "ko": "베른슈타인에 따르면 자본주의는 신용 제도, 기업가 조직, 교통·통신의 발달로 전반적 공황을 피하고, 생산 부문의 분화와 중간층의 끈질긴 생명력, 노동조합 투쟁에 따른 노동자 처지 향상으로 적응력을 보입니다. 그래서 전반적 붕괴는 갈수록 일어날 것 같지 않다는 것입니다. 룩셈부르크는 먼저 사실을 다툽니다. 신용은 한 자본가에게 남의 자본을 쓰게 하고 모든 관계를 최대한 탄력적으로 만들어 공황을 오히려 촉진하고, 카르텔도 결국 무정부성과 국가 간 관세 대립을 키운다는 것입니다. 이어 논리를 다툽니다. 적응 수단이 정말 자본주의의 모순을 지양해 붕괴를 막는다면, 사회주의는 자본주의 발전에서 나오는 객관적 필연이 아니라 ‘순수 인식’에 기댄 관념론적 목표가 됩니다. 반대로 사회주의가 유토피아가 아니라면 적응론이 틀린 것입니다. 베른슈타인이 경제 전망의 문제로 다룬 것을 룩셈부르크는 사회주의의 근거 자체의 문제로 바꿔 놓았습니다.",
                 "en": "According to Bernstein, capitalism avoids general crises through credit, employers' organisations and better transport and communications, and shows its adaptability in the growing differentiation of production, the tenacity of the middle strata and the rise in workers' conditions through trade-union struggle, so a general collapse becomes ever less likely. Luxemburg first contests the facts: credit lets one capitalist dispose of others' capital and makes every relation as elastic as possible, hastening crises, and cartels in the end increase anarchy and tariff conflict between states. Then she contests the logic. If the means of adaptation really overcome capitalism's contradictions and prevent collapse, socialism is no longer an objective necessity arising from capitalist development but an idealist aim resting on 'pure knowledge'. If socialism is not a utopia, the adaptation theory must be false. What Bernstein treated as a question of economic outlook, Luxemburg turned into a question about the very grounds of socialism."
               },
               "source": {
@@ -2391,7 +2391,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "국가가 경제생활에 개입하는 영역이 넓어지는 현상을 두고, 룩셈부르크는 그녀가 요약한 베른슈타인의 전망, 곧 '국가가 사회로 발전한다'는 명제에 무엇을 맞세웠을까요?",
+                "ko": "국가가 경제생활에 개입하는 영역이 넓어지는 현상을 두고, 룩셈부르크는 그녀가 요약한 베른슈타인의 전망, 곧 ‘국가가 사회로 발전한다’는 명제에 무엇을 맞세웠을까요?",
                 "en": "Faced with the widening of state intervention in economic life, what did Luxemburg set against the view she attributed to Bernstein, that the state was developing into society?"
               },
               "choices": {
@@ -3901,7 +3901,7 @@ module.exports = {
         "en": "About 12 minutes · Read clause by clause the causes of war and the anti-war duties set out in the 1907 Stuttgart resolution and the country-by-country tasks and warning to governments in the 1912 Basel Manifesto, then set them beside the 1914 war-credit votes in the German Reichstag and Liebknecht's protest."
       },
       "learningFocus": {
-        "ko": "결의가 '전쟁이 나면 총파업'이라는 단일 행동을 정했다고 읽거나, 반전 결의가 곧 각 당의 실제 행동이었다고 읽기 쉽습니다. 바젤 선언의 차르 체제 비판을 1914년 독일의 '차르 체제에 맞선 전쟁' 구호의 근거로 읽는 것, 리프크네히트의 반대를 병사 지원까지 거부한 것으로 읽는 것도 오독입니다. 결의의 문구와 1914년의 표결을 나눠 확인하세요.",
+        "ko": "결의가 ‘전쟁이 나면 총파업’이라는 단일 행동을 정했다고 읽거나, 반전 결의가 곧 각 당의 실제 행동이었다고 읽기 쉽습니다. 바젤 선언의 차르 체제 비판을 1914년 독일의 ‘차르 체제에 맞선 전쟁’ 구호의 근거로 읽는 것, 리프크네히트의 반대를 병사 지원까지 거부한 것으로 읽는 것도 오독입니다. 결의의 문구와 1914년의 표결을 나눠 확인하세요.",
         "en": "It is easy to read the resolutions as prescribing a single action, a general strike when war breaks out, or to treat anti-war resolutions as what the parties actually did. Reading the Basel Manifesto's attack on tsarism as grounds for Germany's 1914 'war against tsarism', or Liebknecht's opposition as refusing aid to soldiers, are also misreadings. Keep the wording of the resolutions apart from the 1914 votes."
       },
       "conceptBrief": {
@@ -4206,7 +4206,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "바젤 선언은 나라마다 과제를 나눴습니다. 발칸의 사회주의자는 민주적 연방을 요구하고, 오스트리아-헝가리의 사회민주당은 세르비아 공격에 맞서며, 러시아·핀란드·폴란드 노동자는 차르 체제에 맞선 혁명 투쟁을 이어 가라는 식입니다. 가장 중요한 과제는 독일·프랑스·영국 노동계급에게 돌아갔습니다. 자국 정부가 오스트리아-헝가리와 러시아 어느 쪽도 돕지 않고 발칸에 개입하지 않으며 절대 중립을 지키게 하라는 것입니다. 두 번째 보기가 솔깃한 이유는 선언이 차르 체제를 반동의 희망으로 규정했기 때문입니다. 그러나 선언은 그 싸움을 러시아 제국 안 노동자에게 맡겼습니다. 1914년 독일 정부와 다수파가 내세운 '차르 체제에 맞선 전쟁'은 이 선언에서 끌어낼 수 없습니다.",
+                "ko": "바젤 선언은 나라마다 과제를 나눴습니다. 발칸의 사회주의자는 민주적 연방을 요구하고, 오스트리아-헝가리의 사회민주당은 세르비아 공격에 맞서며, 러시아·핀란드·폴란드 노동자는 차르 체제에 맞선 혁명 투쟁을 이어 가라는 식입니다. 가장 중요한 과제는 독일·프랑스·영국 노동계급에게 돌아갔습니다. 자국 정부가 오스트리아-헝가리와 러시아 어느 쪽도 돕지 않고 발칸에 개입하지 않으며 절대 중립을 지키게 하라는 것입니다. 두 번째 보기가 솔깃한 이유는 선언이 차르 체제를 반동의 희망으로 규정했기 때문입니다. 그러나 선언은 그 싸움을 러시아 제국 안 노동자에게 맡겼습니다. 1914년 독일 정부와 다수파가 내세운 ‘차르 체제에 맞선 전쟁’은 이 선언에서 끌어낼 수 없습니다.",
                 "en": "The Basel Manifesto assigned tasks by country: Balkan socialists were to demand a democratic federation, Austro-Hungarian Social Democrats to resist an attack on Serbia, workers in Russia, Finland and Poland to renew the revolutionary struggle against tsarism. The most important task fell to the workers of Germany, France and Britain: to make their governments aid neither Austria-Hungary nor Russia, stay out of the Balkans, and keep absolute neutrality. The second option is tempting because the Manifesto did call tsarism the hope of reaction, but it left that fight to workers inside the Russian Empire. The 'war against tsarism' invoked in Germany in 1914 cannot be derived from this text."
               },
               "source": {
@@ -4269,7 +4269,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "리프크네히트는 전쟁공채 반대 성명에서 독일의 '차르 체제에 맞서'라는 구호를 어떻게 비판했을까요?",
+                "ko": "리프크네히트는 전쟁공채 반대 성명에서 독일의 ‘차르 체제에 맞서’라는 구호를 어떻게 비판했을까요?",
                 "en": "How did Liebknecht's protest against the war credits criticise the German watchword 'against tsarism'?"
               },
               "choices": {
@@ -4298,14 +4298,14 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "1912년 바젤 선언은 차르 체제를 유럽 모든 반동 세력의 희망이자 그 인민들의 민주주의에 가장 무서운 적으로 규정하고, 그 타도를 인터내셔널 전체의 중요한 과제로 꼽았습니다. 그러나 그 싸움은 러시아·핀란드·폴란드 프롤레타리아트의 혁명 투쟁에 기대했고, 독일·프랑스·영국 노동자에게는 자국 정부의 절대 중립을 요구하게 했습니다. 1914년 독일에서는 '차르 체제에 맞서'가 전쟁 지지의 구호가 되었습니다. 리프크네히트는 이 구호를 영국·프랑스의 '군국주의에 맞서'와 나란히 놓습니다. 양쪽 모두 인민들의 가장 고귀한 본능과 혁명적 전통과 희망을 끌어내 인민들 사이의 증오를 불러일으키는 수단이 되었다는 것입니다. 그리고 차르 체제의 공범이자 오늘날까지 정치적 후진성의 표본인 독일은 인민 해방자가 될 소명이 없고, 러시아 인민의 해방도 독일 인민의 해방도 그들 자신의 일이어야 한다고 못 박습니다. 반동 체제를 비판하는 것과 그 비판을 자국 정부의 전쟁에 빌려주는 것은 다른 일이라는 것이 그의 논지였습니다.",
+                "ko": "1912년 바젤 선언은 차르 체제를 유럽 모든 반동 세력의 희망이자 그 인민들의 민주주의에 가장 무서운 적으로 규정하고, 그 타도를 인터내셔널 전체의 중요한 과제로 꼽았습니다. 그러나 그 싸움은 러시아·핀란드·폴란드 프롤레타리아트의 혁명 투쟁에 기대했고, 독일·프랑스·영국 노동자에게는 자국 정부의 절대 중립을 요구하게 했습니다. 1914년 독일에서는 ‘차르 체제에 맞서’가 전쟁 지지의 구호가 되었습니다. 리프크네히트는 이 구호를 영국·프랑스의 ‘군국주의에 맞서’와 나란히 놓습니다. 양쪽 모두 인민들의 가장 고귀한 본능과 혁명적 전통과 희망을 끌어내 인민들 사이의 증오를 불러일으키는 수단이 되었다는 것입니다. 그리고 차르 체제의 공범이자 오늘날까지 정치적 후진성의 표본인 독일은 인민 해방자가 될 소명이 없고, 러시아 인민의 해방도 독일 인민의 해방도 그들 자신의 일이어야 한다고 못 박습니다. 반동 체제를 비판하는 것과 그 비판을 자국 정부의 전쟁에 빌려주는 것은 다른 일이라는 것이 그의 논지였습니다.",
                 "en": "The 1912 Basel Manifesto called tsarism the hope of all Europe's reactionary powers and the most terrible enemy of the democracy of the peoples it ruled, and made its overthrow an important task of the whole International. But it looked to the revolutionary struggle of the proletariat of Russia, Finland and Poland for that fight, while German, French and British workers were to demand their governments' absolute neutrality. In Germany in 1914, 'against tsarism' became a watchword for supporting the war. Liebknecht sets it beside the British and French 'against militarism': both had become means of calling on the peoples' noblest instincts, revolutionary traditions and hopes in order to stir up hatred between them. And Germany, tsarism's accomplice and to this day the model of political backwardness, had no calling to be a liberator; the liberation of the Russian and the German people alike had to be their own work. Criticising a reactionary regime is one thing; lending that criticism to one's own government's war is another, and that was his point."
               },
               "source": {
                 "kind": "reference",
                 "href": "/commulingo/docs/liebknecht-war-credits-statement-1914",
                 "label": {
-                  "ko": "리프크네히트, 전쟁공채 반대 성명의 '차르 체제에 맞서' 비판 (1914년 12월 2일)",
+                  "ko": "리프크네히트, 전쟁공채 반대 성명의 ‘차르 체제에 맞서’ 비판 (1914년 12월 2일)",
                   "en": "Liebknecht, protest against the war credits, on 'against tsarism' (2 December 1914)"
                 }
               }
@@ -4595,7 +4595,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "레닌의 출발점은 자본주의 민주주의가 형식상 완전해 보여도 선거권 조건, 집회 장소, 신문 소유 같은 '사소한' 제한이 쌓여 빈민을 정치에서 밀어내므로 결국 부자를 위한 민주주의라는 진단입니다. 과도기에는 이것이 뒤집힙니다. 민주주의는 처음으로 빈민과 인민 다수를 위한 것이 되지만, 착취자에게는 자유가 제한되고 저항은 진압됩니다. 레닌은 이 국가가 이미 본래 의미의 국가가 아니며, 소수를 억누르는 일은 무장한 대중의 단순한 조직으로도 된다고 보았습니다. 그러므로 레닌을 민주주의 부정론자로 읽는 것도, 모두에게 같은 자유를 약속했다고 읽는 것도 틀립니다. 이 글은 10월 혁명 전의 이론적 구상이어서 뒤의 실제 정책을 그대로 보여 주지는 않습니다.",
+                "ko": "레닌의 출발점은 자본주의 민주주의가 형식상 완전해 보여도 선거권 조건, 집회 장소, 신문 소유 같은 ‘사소한’ 제한이 쌓여 빈민을 정치에서 밀어내므로 결국 부자를 위한 민주주의라는 진단입니다. 과도기에는 이것이 뒤집힙니다. 민주주의는 처음으로 빈민과 인민 다수를 위한 것이 되지만, 착취자에게는 자유가 제한되고 저항은 진압됩니다. 레닌은 이 국가가 이미 본래 의미의 국가가 아니며, 소수를 억누르는 일은 무장한 대중의 단순한 조직으로도 된다고 보았습니다. 그러므로 레닌을 민주주의 부정론자로 읽는 것도, 모두에게 같은 자유를 약속했다고 읽는 것도 틀립니다. 이 글은 10월 혁명 전의 이론적 구상이어서 뒤의 실제 정책을 그대로 보여 주지는 않습니다.",
                 "en": "Lenin starts from the diagnosis that capitalist democracy, however complete in form, piles up 'petty' restrictions on the franchise, meeting places and press ownership that push the poor out of politics, and so remains democracy for the rich. The transition reverses this: democracy becomes for the first time democracy for the poor and the majority, while the exploiters' freedom is restricted and their resistance suppressed. Lenin saw this as no longer a state in the proper sense, since suppressing a minority could be done by a simple organisation of the armed people. So it is wrong both to read Lenin as rejecting democracy and to read him as promising equal freedom to all. This was a theoretical sketch written before October and does not show the later policies as such."
               },
               "source": {
@@ -4612,7 +4612,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "룩셈부르크는 볼셰비키가 내건 '농민에 의한 즉각적인 토지 점유와 분할'이라는 구호를 어떻게 평가했을까요?",
+                "ko": "룩셈부르크는 볼셰비키가 내건 ‘농민에 의한 즉각적인 토지 점유와 분할’이라는 구호를 어떻게 평가했을까요?",
                 "en": "How did Luxemburg assess the Bolshevik slogan of immediate seizure and division of the land by the peasants?"
               },
               "choices": {
@@ -4641,7 +4641,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "룩셈부르크는 이 구호의 정치적 효과를 먼저 인정합니다. 농민이 토지를 직접 장악하고 나누게 한 것은 대지주 소유를 분쇄하고 농민을 곧바로 혁명 정부에 묶는 가장 짧고 명쾌한 공식이었다는 것입니다. 그러나 그녀가 보기에 농업의 사회주의적 개조에는 두 전제가 필요합니다. 기술적으로 가장 앞선 대토지 소유의 국유화, 그리고 농업과 공업의 분리를 없애는 통일된 조직입니다. '가서 토지를 차지하라'는 구호는 그 반대로 작용해, 대규모 경영을 원시적 소경영으로 쪼개고 사회적 소유가 아니라 새 사유재산을 만들었다는 것입니다. 농민 위원회가 있든 없든 마을의 실질적 권력을 쥔 부유한 농민과 고리대금업자가 주요 수혜자가 되어 농촌의 계급 대립은 오히려 깊어졌다고 봅니다. 공업과 은행의 국유화를 말하면서 토지만은 분권화와 사유재산에 맡긴 모순도 지적했습니다. 혁명을 지키는 정치 전술과 사회주의적 경제 개조를 구별한 비판입니다.",
+                "ko": "룩셈부르크는 이 구호의 정치적 효과를 먼저 인정합니다. 농민이 토지를 직접 장악하고 나누게 한 것은 대지주 소유를 분쇄하고 농민을 곧바로 혁명 정부에 묶는 가장 짧고 명쾌한 공식이었다는 것입니다. 그러나 그녀가 보기에 농업의 사회주의적 개조에는 두 전제가 필요합니다. 기술적으로 가장 앞선 대토지 소유의 국유화, 그리고 농업과 공업의 분리를 없애는 통일된 조직입니다. ‘가서 토지를 차지하라’는 구호는 그 반대로 작용해, 대규모 경영을 원시적 소경영으로 쪼개고 사회적 소유가 아니라 새 사유재산을 만들었다는 것입니다. 농민 위원회가 있든 없든 마을의 실질적 권력을 쥔 부유한 농민과 고리대금업자가 주요 수혜자가 되어 농촌의 계급 대립은 오히려 깊어졌다고 봅니다. 공업과 은행의 국유화를 말하면서 토지만은 분권화와 사유재산에 맡긴 모순도 지적했습니다. 혁명을 지키는 정치 전술과 사회주의적 경제 개조를 구별한 비판입니다.",
                 "en": "Luxemburg first grants the slogan's political effect: letting the peasants seize and divide the land themselves was the shortest, clearest formula for smashing large landownership and binding the peasants at once to the revolutionary government. But socialist transformation of agriculture, in her view, has two preconditions: nationalisation of large estates, the most technically advanced form, and a unified organisation that ends the separation of agriculture and industry. 'Go and take the land' worked the other way, breaking large-scale farming into primitive small holdings and creating new private property rather than social property. Committees or no committees, the rich peasants and usurers who held real power in the villages became the main beneficiaries, deepening class antagonism in the countryside. She also pointed to the contradiction of centralising and nationalising industry and banks while leaving the land to decentralisation and private property. The critique separates a political tactic for securing the revolution from the socialist reorganisation of the economy."
               },
               "source": {
@@ -4687,7 +4687,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "룩셈부르크의 논거는 사회주의가 혁명당 주머니 속의 완성된 처방이 아니라는 데서 출발합니다. 강령에는 방향을 가리키는 몇 개의 이정표만 있고, 수천 가지 구체적 조치는 대중의 경험 속에서 찾아야 합니다. 그러려면 공적 통제와 자유로운 논쟁이 필요합니다. 보통선거, 언론·집회의 자유, 의견 투쟁이 사라지면 소비에트 내부의 삶도 시들고, 관료 집단과 소수 지도자만 남아 계급의 독재가 아니라 한 줌 정치인의 독재가 된다는 것입니다. 제헌의회에 대해서도 그녀는 옛 의회 복원이 아니라 새 선거를 주장했습니다. 여백 메모의 '자유는 다르게 생각하는 사람의 자유'는 이 경고를 한 문장으로 줄인 것입니다.",
+                "ko": "룩셈부르크의 논거는 사회주의가 혁명당 주머니 속의 완성된 처방이 아니라는 데서 출발합니다. 강령에는 방향을 가리키는 몇 개의 이정표만 있고, 수천 가지 구체적 조치는 대중의 경험 속에서 찾아야 합니다. 그러려면 공적 통제와 자유로운 논쟁이 필요합니다. 보통선거, 언론·집회의 자유, 의견 투쟁이 사라지면 소비에트 내부의 삶도 시들고, 관료 집단과 소수 지도자만 남아 계급의 독재가 아니라 한 줌 정치인의 독재가 된다는 것입니다. 제헌의회에 대해서도 그녀는 옛 의회 복원이 아니라 새 선거를 주장했습니다. 여백 메모의 ‘자유는 다르게 생각하는 사람의 자유’는 이 경고를 한 문장으로 줄인 것입니다.",
                 "en": "Luxemburg's argument starts from the point that socialism is not a finished prescription in the revolutionary party's pocket. The programme offers only a few signposts, and the thousands of concrete measures must be found through the masses' experience, which requires public control and free debate. Without general elections, free press and assembly and a struggle of opinion, life inside the soviets withers too, leaving the bureaucracy and a few leaders: a dictatorship not of the class but of a handful of politicians. On the Constituent Assembly she likewise called for new elections, not restoring the old body. Her marginal note, 'freedom is always the freedom of the one who thinks differently', compresses this warning into one sentence."
               },
               "source": {
@@ -4779,7 +4779,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "룩셈부르크에게 문제는 '독재냐 민주주의냐'라는 양자택일 자체였습니다. 카우츠키는 러시아의 미성숙을 들어 사회주의 변혁을 미루고 부르주아 민주주의를 택했고, 레닌과 트로츠키는 민주주의에 대립하는 독재를 택해 결국 한 줌 무리의 독재에 이르렀다고 봅니다. 그녀의 답은 셋째 길입니다. 권력을 잡은 프롤레타리아트는 사회주의적 조치에 단호히 착수해야 하므로 독재가 필요하지만, 그 독재는 민주주의를 폐지하는 것이 아니라 가장 넓은 공개성과 대중의 적극적 참여, 무제한의 민주주의 속에서 계급이 행사하는 것이어야 합니다. 그러니 그녀를 혁명 반대자로도, 카우츠키 지지자로도 읽을 수 없습니다. 다른 두 보기는 그녀가 카우츠키에게만 돌린 비판입니다.",
+                "ko": "룩셈부르크에게 문제는 ‘독재냐 민주주의냐’라는 양자택일 자체였습니다. 카우츠키는 러시아의 미성숙을 들어 사회주의 변혁을 미루고 부르주아 민주주의를 택했고, 레닌과 트로츠키는 민주주의에 대립하는 독재를 택해 결국 한 줌 무리의 독재에 이르렀다고 봅니다. 그녀의 답은 셋째 길입니다. 권력을 잡은 프롤레타리아트는 사회주의적 조치에 단호히 착수해야 하므로 독재가 필요하지만, 그 독재는 민주주의를 폐지하는 것이 아니라 가장 넓은 공개성과 대중의 적극적 참여, 무제한의 민주주의 속에서 계급이 행사하는 것이어야 합니다. 그러니 그녀를 혁명 반대자로도, 카우츠키 지지자로도 읽을 수 없습니다. 다른 두 보기는 그녀가 카우츠키에게만 돌린 비판입니다.",
                 "en": "For Luxemburg the problem was the either-or of 'dictatorship or democracy' itself. Kautsky, citing Russia's immaturity, postponed socialist transformation and chose bourgeois democracy; Lenin and Trotsky chose dictatorship against democracy and so ended with the dictatorship of a handful. Her answer is a third course. A proletariat in power must set about socialist measures resolutely, so dictatorship is needed, but it must not abolish democracy: it is exercised by the class in the widest publicity, with the masses' active participation, in unlimited democracy. She can therefore be read neither as an opponent of revolution nor as Kautsky's ally. The other two options are criticisms she directed at Kautsky alone."
               },
               "source": {

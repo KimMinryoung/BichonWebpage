@@ -11,6 +11,7 @@ const crypto = require('crypto');
 const root = process.env.APP_ROOT || path.resolve(__dirname, '..');
 const { FLAG_NAMES } = require(path.join(root, 'data/commulingo/flag-icons'));
 const { canonicalPeriod } = require(path.join(root, 'data/commulingo/career-period'));
+const { normalizeKoreanQuotes, normalizeKoreanTree } = require(path.join(root, 'data/commulingo/korean-quotes'));
 // The period is year/month/day columns (migrations 362/363), as in career entries.
 const periodColumns = ['start_year', 'start_month', 'start_day', 'end_year', 'end_month', 'end_day'];
 const columns = ['title_ko', 'title_en', ...periodColumns, 'sort_order', 'question_ko', 'question_en',
@@ -93,6 +94,13 @@ function validate(spec) {
 }
 async function applyBatch(db, spec, { apply = false, backup } = {}) {
     validate(spec);
+    // This script writes with raw SQL, so it applies the Korean quote rules
+    // (korean-quotes.js) the editorial services apply to every other write.
+    for (const e of spec.events) {
+        for (const c of ['question_ko', 'summary_ko', 'outcome_ko', 'body_ko']) if (typeof e.fields[c] === 'string') e.fields[c] = normalizeKoreanQuotes(e.fields[c]);
+        for (const c of ['timeline', 'focus', 'sides']) if (e.fields[c]) e.fields[c] = normalizeKoreanTree(e.fields[c]);
+        for (const p of e.people) for (const c of ['relation_ko', 'note_ko']) if (typeof p[c] === 'string') p[c] = normalizeKoreanQuotes(p[c]);
+    }
     const client = await db.connect();
     const report = [], before = { batch: spec.id, specSha256: crypto.createHash('sha256').update(canonical(spec)).digest('hex'), events: [], people: [] };
     try {
