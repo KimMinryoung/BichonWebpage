@@ -16,6 +16,7 @@
     let reviewSeen = false;         // the review before the battle was read
     let historyMap = false;         // the map shows history's control layer
     let selected = null;            // battle: the selected Red unit id
+    let lit = null;                 // the front whose card the pointer or focus is on
     const mapEl = $('cwMap');
     const points = JSON.parse(mapEl.dataset.points);
     const phases = JSON.parse(mapEl.dataset.phases || '[]');
@@ -230,23 +231,25 @@
             const pathOf = list => list.map(p => `${p.x},${p.y}`).join(' ');
             const steady = Math.min(line, after);
             const moving = Math.max(line, after);
-            layer.append(svg('polyline', { points: pathOf(chain), class: 'cw-chain' }));
+            const front = svg('g', { 'data-front': id });
+            layer.append(front);
+            front.append(svg('polyline', { points: pathOf(chain), class: 'cw-chain' }));
             if (isActive) {
-                layer.append(svg('polyline', { points: pathOf(chain.slice(0, steady + 1)), class: 'cw-chain is-active' }));
-                if (moving > steady) layer.append(svg('polyline', { points: pathOf(chain.slice(steady, moving + 1)), class: 'cw-chain is-active is-moving' }));
+                front.append(svg('polyline', { points: pathOf(chain.slice(0, steady + 1)), class: 'cw-chain is-active' }));
+                if (moving > steady) front.append(svg('polyline', { points: pathOf(chain.slice(steady, moving + 1)), class: 'cw-chain is-active is-moving' }));
             }
             const foeKind = isActive ? holderOf(id, turn).kind : null;
             pts.forEach((p, i) => {
                 const held = i < line;
                 const r = isActive ? 5.5 : 4.5;
-                layer.append(svg('circle', { cx: p.x, cy: p.y, r, class: 'cw-city ' + (held ? 'is-held' : 'is-lost k-' + holderOf(id, turn).kind) }));
+                front.append(svg('circle', { cx: p.x, cy: p.y, r, class: 'cw-city ' + (held ? 'is-held' : 'is-lost k-' + holderOf(id, turn).kind) }));
                 if (held !== (i < after)) {
-                    layer.append(svg('circle', { cx: p.x, cy: p.y, r: r + 4, class: 'cw-ring-under' }));
-                    layer.append(svg('circle', { cx: p.x, cy: p.y, r: r + 4, class: 'cw-ring ' + (held ? 'k-' + foeKind : 'is-red') }));
+                    front.append(svg('circle', { cx: p.x, cy: p.y, r: r + 4, class: 'cw-ring-under' }));
+                    front.append(svg('circle', { cx: p.x, cy: p.y, r: r + 4, class: 'cw-ring ' + (held ? 'k-' + foeKind : 'is-red') }));
                 }
                 const [dx, dy, anchor] = LABEL_AT[p.name] || [8, 4, 'start'];
                 const label = svg('text', { x: p.x + dx, y: p.y + dy, 'text-anchor': anchor, class: 'cw-city-label' + (isActive ? ' is-active' : '') }, p.name);
-                layer.append(label);
+                front.append(label);
                 const w = textWidth(p.name, 11);
                 const x0 = anchor === 'end' ? p.x + dx - w : p.x + dx;
                 avoid.push({ x0: p.x - 10, x1: p.x + 10, y0: p.y - 10, y1: p.y + 10 }, { x0, x1: x0 + w, y0: p.y + dy - 10, y1: p.y + dy + 3 });
@@ -258,10 +261,16 @@
         avoid.push({ x0: m.x - 10, x1: m.x + 11 + textWidth(m.name, 13), y0: m.y - 10, y1: m.y + 6 });
         for (const id of active) {
             const marker = foeMarker(id, points.fronts[id], s.lines[id], fc && fc[id], results && results[id], avoid);
+            marker.g.setAttribute('data-front', id);
             layer.append(marker.g);
-            if (s.plan && s.plan.alloc[id] !== undefined) layer.append(troopPips(id, marker, avoid));
+            if (s.plan && s.plan.alloc[id] !== undefined) {
+                const pips = troopPips(id, marker, avoid);
+                pips.setAttribute('data-front', id);
+                layer.append(pips);
+            }
         }
         root.append(layer);
+        spotlight(lit);
         renderControlPhase();
     }
 
@@ -371,6 +380,26 @@
         return g;
     }
 
+    // A front card under the pointer or focus makes its front blink on the
+    // map (chain, cities, attackers, divisions) and dims the rest.
+    function spotlight(id) {
+        lit = id;
+        mapEl.classList.toggle('is-spotlight', Boolean(id));
+        mapEl.querySelectorAll('[data-front]').forEach(g => g.classList.toggle('is-lit', g.dataset.front === id));
+    }
+
+    function withSpotlight(id, card) {
+        bindSpotlight(card, id);
+        return card;
+    }
+
+    function bindSpotlight(card, id) {
+        card.addEventListener('mouseenter', () => spotlight(id));
+        card.addEventListener('mouseleave', () => spotlight(null));
+        card.addEventListener('focusin', () => spotlight(id));
+        card.addEventListener('focusout', e => { if (!card.contains(e.relatedTarget)) spotlight(null); });
+    }
+
     function star(cx, cy, R, r) {
         const pts = [];
         for (let i = 0; i < 10; i++) {
@@ -431,7 +460,7 @@
                 onclick: () => { act('commissar', id, !comm); render(); },
             }, comm ? '정치위원 파견됨 ✓' : '정치위원 보내기');
             const verdict = after === hist ? '역사와 같음' : after > hist ? `역사보다 도시 ${after - hist}개 앞섬` : `역사보다 도시 ${hist - after}개 뒤처짐`;
-            items.push(el('article', { class: 'cw-front' + (f.margin < -1 ? ' is-short' : ''), id: 'cwFront-' + id, tabindex: '-1' },
+            const card = el('article', { class: 'cw-front' + (f.margin < -1 ? ' is-short' : ''), id: 'cwFront-' + id, tabindex: '-1' },
                 el('header', {}, el('h4', {}, D.fronts[id].name)),
                 foeList(threat.foes),
                 el('p', {}, threat.text, ' ', person(threat.who)),
@@ -441,7 +470,9 @@
                 f.pressureParts.length ? el('p', { class: 'cw-parts' }, `압력: ${threat.pressure} 기본 · ${f.pressureParts.join(' · ')}`) : null,
                 el('p', { class: 'cw-forecast' }, el('strong', {}, `예상: ${lineText(id, after)}`), el('span', {}, ` (${verdict})`),
                     f.momentum ? el('span', { class: 'cw-momentum' }, ` · 적의 기세: 다음 싸움 압력 +${f.momentum}`) : null),
-                f.parts.length ? el('p', { class: 'cw-parts' }, f.parts.join(' · ')) : null));
+                f.parts.length ? el('p', { class: 'cw-parts' }, f.parts.join(' · ')) : null);
+            bindSpotlight(card, id);
+            items.push(card);
         }
         if (fc.supply.ratio < 1) items.push(el('p', { class: 'cw-warn' }, `곡물이 모자랍니다: 필요 ${fc.supply.need}, 가진 것 ${fc.supply.have}. 모든 전선의 전투력이 ${Math.round((1 - (0.5 + 0.5 * fc.supply.ratio)) * 100)}% 줄어듭니다.`));
         box.replaceChildren(...items);
@@ -574,12 +605,12 @@
         const r = s.records[s.records.length - 1];
         return Object.entries(r.fronts).map(([id, f]) => {
             const d = f.after - f.history;
-            return el('article', { class: 'cw-front is-result' + (d < 0 ? ' is-short' : d > 0 ? ' is-ahead' : '') },
+            return withSpotlight(id, el('article', { class: 'cw-front is-result' + (d < 0 ? ' is-short' : d > 0 ? ' is-ahead' : '') },
                 el('header', {}, el('h4', {}, D.fronts[id].name)),
                 meter(id, f, f.before),
                 el('p', {}, `당신: ${lineText(id, f.after)}`),
                 el('p', {}, `역사: ${lineText(id, f.history)}`),
-                el('p', { class: 'cw-verdict' }, d === 0 ? '역사와 같음' : d > 0 ? `역사보다 도시 ${d}개 앞섬` : `역사보다 도시 ${-d}개 뒤처짐`));
+                el('p', { class: 'cw-verdict' }, d === 0 ? '역사와 같음' : d > 0 ? `역사보다 도시 ${d}개 앞섬` : `역사보다 도시 ${-d}개 뒤처짐`)));
         });
     }
 

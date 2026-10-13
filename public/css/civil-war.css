@@ -118,6 +118,11 @@
 .cw-map-frame .emap-hatch-line.is-black { stroke: var(--emap-black); }
 
 /* The game's layer */
+/* A front card under the pointer: its front blinks, the others dim. */
+.cw-map-frame.is-spotlight [data-front]:not(.is-lit) { opacity: .22; }
+.cw-map-frame.is-spotlight [data-front].is-lit { animation: cw-blink .8s ease-in-out infinite alternate; }
+@keyframes cw-blink { from { opacity: 1; } to { opacity: .3; } }
+@media (prefers-reduced-motion: reduce) { .cw-map-frame.is-spotlight [data-front].is-lit { animation: none; } }
 .cw-chain { fill: none; stroke: color-mix(in srgb, var(--text-secondary) 35%, transparent); stroke-width: 1; stroke-dasharray: 3 3; }
 .cw-chain.is-active { stroke: color-mix(in srgb, var(--cw-red) 70%, transparent); stroke-width: 1.6; stroke-dasharray: none; }
 .cw-chain.is-moving { stroke-dasharray: 4 3; }
@@ -163,6 +168,7 @@
 .cw-fronts { display: grid; gap: 10px; min-width: 0; }
 .cw-fronts h3 { font-size: 1.05rem; padding: 0 2px; }
 .cw-front { border: 1px solid var(--border); background: var(--bg-surface); padding: 12px 14px; display: grid; gap: 6px; }
+.cw-front:hover, .cw-front:focus-within { border-color: var(--text-secondary); }
 .cw-front:focus-visible { outline: 3px solid var(--text-primary); outline-offset: 2px; }
 .cw-front.is-short { border-left: 4px solid var(--clr-red); }
 .cw-front.is-ahead { border-left: 4px solid var(--btn-primary, #2da44e); }
@@ -319,6 +325,11 @@
 .cw-reading { padding: 0 var(--content-inset); }
 .cw-reading h2 { font-size: 1.1rem; margin-bottom: 10px; }
 
+/* Beside the fronts' cards the map stays in view, so the card under the
+   pointer can light its front however far down it is. */
+@media (min-width: 901px) {
+    .cw-map-panel { position: sticky; top: calc(var(--bar-height, 56px) + 12px); }
+}
 @media (max-width: 900px) {
     .cw-board, .cw-battle-layout { grid-template-columns: minmax(0, 1fr); }
 }
