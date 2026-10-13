@@ -71,7 +71,7 @@
 .cw-map-legend i.k-interv { background: var(--emap-blue); }
 .cw-map-legend i.k-central { background: var(--emap-amber); }
 .cw-map-legend i.k-national { background: var(--emap-gray); }
-.cw-map-legend i.cw-key-badge { width: 22px; background: var(--text-primary); }
+.cw-map-legend i.cw-key-badge { width: 22px; background: var(--cw-white); border: 1px solid var(--cw-ink); }
 .cw-map-tools { padding: 0 12px 12px; }
 
 /* Basemap (event-map-svg.js classes) */
@@ -114,12 +114,23 @@
 .cw-city-label.is-active { fill: var(--text-primary); font-weight: 700; }
 .cw-city-label.is-capital { font-size: 13px; font-weight: 800; fill: var(--text-primary); }
 .cw-moscow { fill: var(--clr-red); stroke: var(--bg-surface); stroke-width: 1.5; }
-.cw-badge { cursor: pointer; }
-.cw-badge rect { fill: var(--text-primary); }
-.cw-badge text { fill: var(--bg-surface); font-size: 11px; font-weight: 700; }
-.cw-badge.is-short rect { fill: var(--clr-red); }
-.cw-badge.is-short text { fill: #fff; }
-.cw-badge:focus-visible { outline: 3px solid var(--text-primary); outline-offset: 2px; }
+.cw-foe-marker { cursor: pointer; }
+.cw-foe-marker:focus-visible { outline: none; }
+.cw-foe-marker:focus-visible .cw-foe-name { stroke: var(--text-primary); stroke-width: 3; }
+.cw-foe-name { stroke: var(--cw-ink); stroke-width: 1; }
+.cw-foe-marker.k-white .cw-foe-name { fill: var(--cw-white); }
+.cw-foe-marker.k-interv .cw-foe-name { fill: var(--emap-blue); }
+.cw-foe-marker.k-central .cw-foe-name { fill: var(--emap-amber); }
+.cw-foe-marker.k-national .cw-foe-name { fill: var(--emap-gray); }
+.cw-foe-text { font-size: 11px; font-weight: 800; fill: #1d1d1b; }
+.cw-foe-marker.k-interv .cw-foe-text { fill: #fff; }
+.cw-foe-flagrim { fill: none; stroke: #1d1d1b; stroke-width: .6; }
+.cw-foe-numbers { fill: var(--text-primary); }
+.cw-foe-numbers-text { font-size: 10.5px; font-weight: 700; fill: var(--bg-surface); }
+.cw-foe-marker.is-short .cw-foe-numbers { fill: var(--clr-red); }
+.cw-foe-marker.is-short .cw-foe-numbers-text { fill: #fff; }
+.cw-foe-arrow { stroke: var(--text-primary); stroke-width: 2.2; }
+.cw-foe-arrowhead { fill: var(--text-primary); }
 
 /* Fronts */
 .cw-fronts { display: grid; gap: 10px; min-width: 0; }

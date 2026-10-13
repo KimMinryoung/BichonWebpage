@@ -72,6 +72,9 @@
         return ok;
     }
 
+    // Rough width of a label: Hangul at full size, Latin and digits at ~0.6.
+    const textWidth = (t, size) => Array.from(t).reduce((w, ch) => w + (ch.charCodeAt(0) > 0x2e80 ? size : size * 0.6), 0);
+
     // Labels moved off a crowded neighbour (the cities round Petrograd).
     const LABEL_AT = { 가치나: [8, 14, 'start'], 얌부르크: [-8, 4, 'end'], 페트로그라드: [8, -2, 'start'] };
 
@@ -178,10 +181,16 @@
         let layer = root.querySelector('#cwOverlay');
         if (layer) layer.remove();
         layer = svg('g', { id: 'cwOverlay' });
+        const defs = svg('defs');
+        const head = svg('marker', { id: 'cwArrowHead', viewBox: '0 0 10 10', refX: '8', refY: '5', markerWidth: '6', markerHeight: '6', orient: 'auto-start-reverse' });
+        head.append(svg('path', { d: 'M0 0L10 5L0 10Z', class: 'cw-foe-arrowhead' }));
+        defs.append(head);
+        layer.append(defs);
         const fc = s.phase === 'plan' ? G.forecast(s).fronts : null;
         const results = s.phase === 'plan' ? null : s.records[s.records.length - 1].fronts;
         const active = fc ? G.activeFronts(s) : Object.keys(results);
         const turn = fc ? s.turn : s.records[s.records.length - 1].turn;
+        const avoid = [];   // boxes the attackers' markers keep clear of
         for (const id of D.frontOrder) {
             const pts = points.fronts[id];
             const line = s.lines[id];
@@ -194,25 +203,85 @@
                 const [dx, dy, anchor] = LABEL_AT[p.name] || [8, 4, 'start'];
                 const label = svg('text', { x: p.x + dx, y: p.y + dy, 'text-anchor': anchor, class: 'cw-city-label' + (isActive ? ' is-active' : '') }, p.name);
                 layer.append(label);
+                const w = textWidth(p.name, 11);
+                const x0 = anchor === 'end' ? p.x + dx - w : p.x + dx;
+                avoid.push({ x0: p.x - 6, x1: p.x + 6, y0: p.y - 6, y1: p.y + 6 }, { x0, x1: x0 + w, y0: p.y + dy - 10, y1: p.y + dy + 3 });
             });
-            if (isActive) {
-                const at = pts[Math.min(line, pts.length - 1)];
-                const d = results ? results[id].after - results[id].history : 0;
-                const text = fc ? `${fc[id].strength}/${fc[id].pressure}` : d ? `역사 ${signed(d)}` : '역사대로';
-                const g = svg('g', { class: 'cw-badge' + ((fc ? fc[id].margin < -1 : d < 0) ? ' is-short' : ''), tabindex: '0', role: 'button', 'aria-label': `${D.fronts[id].name}로 이동` });
-                g.append(svg('rect', { x: at.x - 36, y: at.y - 30, width: 72, height: 18, rx: 2 }));
-                g.append(svg('text', { x: at.x, y: at.y - 17, 'text-anchor': 'middle' }, `${D.fronts[id].short} ${text}`));
-                const go = () => { const card = document.getElementById('cwFront-' + id); if (card) { card.scrollIntoView({ block: 'nearest' }); card.focus(); } };
-                g.addEventListener('click', go);
-                g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
-                layer.append(g);
-            }
         }
         const m = points.moscow;
         layer.append(svg('path', { d: star(m.x, m.y, 9, 4), class: 'cw-moscow' }));
         layer.append(svg('text', { x: m.x + 11, y: m.y + 4, class: 'cw-city-label is-capital' }, m.name));
+        avoid.push({ x0: m.x - 10, x1: m.x + 11 + textWidth(m.name, 13), y0: m.y - 10, y1: m.y + 6 });
+        for (const id of active) layer.append(foeMarker(id, points.fronts[id], s.lines[id], fc && fc[id], results && results[id], avoid));
         root.append(layer);
         renderControlPhase();
+    }
+
+    // The attackers on the map: flags and names beside the first city they
+    // hold, or beyond the outermost city when they hold none yet, with an
+    // arrow at the city they are taking; the strength / pressure row below.
+    function foeMarker(id, pts, line, forecast, result, avoid) {
+        const root = mapEl.querySelector('svg');
+        const [, , W, H] = root.getAttribute('viewBox').split(' ').map(Number);
+        const n = pts.length;
+        const anchor = line < n ? pts[line] : pts[n - 1];
+        const prev = line < n ? (line > 0 ? pts[line - 1] : points.moscow) : (n > 1 ? pts[n - 2] : points.moscow);
+        let dx = anchor.x - prev.x, dy = anchor.y - prev.y;
+        const len = Math.hypot(dx, dy) || 1;
+        dx /= len; dy /= len;
+        const foes = (G.threatsOf(s)[id] || {}).foes || [];
+        const kind = foes.length ? D.factions[foes[0]].kind : 'white';
+        const name = foes.map(f => D.factions[f].short).join('·');
+        const d = result ? result.after - result.history : 0;
+        const numbers = forecast ? `${D.fronts[id].short} ${forecast.strength}/${forecast.pressure}` : `${D.fronts[id].short} ${d ? `역사 ${signed(d)}` : '역사대로'}`;
+        const flags = foes.filter(f => D.factions[f].flag);
+        const w = Math.max(textWidth(name, 11) + flags.length * 16 + 12, textWidth(numbers, 10.5) + 10);
+        // Candidate spots round the anchor, outward first; the one covering
+        // the least of the city dots, labels and earlier markers wins.
+        const overlap = (a, b) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0)) * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0));
+        let best = null;
+        for (const turn of [0, 35, -35, 70, -70, 110, -110, 180]) {
+            const a = turn * Math.PI / 180;
+            const ux = dx * Math.cos(a) - dy * Math.sin(a), uy = dx * Math.sin(a) + dy * Math.cos(a);
+            for (const dist of [36, 52, 72]) {
+                const x = Math.min(W - w / 2 - 2, Math.max(w / 2 + 2, anchor.x + ux * dist));
+                const y = Math.min(H - 26, Math.max(12, anchor.y + uy * dist));
+                const box = { x0: x - w / 2 - 3, x1: x + w / 2 + 3, y0: y - 12, y1: y + 26 };
+                const cost = avoid.reduce((c, o) => c + overlap(box, o), 0) * 4 + Math.abs(turn) * 1.5 + dist;
+                if (!best || cost < best.cost) best = { x, y, box, cost };
+            }
+        }
+        const { x, y } = best;
+        avoid.push(best.box);
+        const short = forecast ? forecast.margin < -1 : d < 0;
+        const g = svg('g', { class: `cw-foe-marker k-${kind}${short ? ' is-short' : ''}`, tabindex: '0', role: 'button', 'aria-label': `${D.fronts[id].name}: ${foes.map(f => D.factions[f].name).join(', ')}. 카드로 이동` });
+        // The arrow at the city under attack: the last one held, or Moscow.
+        const target = line > 0 ? pts[Math.min(line, n) - 1] : points.moscow;
+        const tx = target.x - x, ty = target.y - y;
+        const tl = Math.hypot(tx, ty);
+        if (tl > 30) {
+            // Leave the marker's box (a ray from its centre to its edge), stop short of the city.
+            const sx = Math.abs(tx / tl) > 1e-6 ? (w / 2 + 2) / Math.abs(tx / tl) : Infinity;
+            const sy = (ty > 0 ? 26 : 12) / Math.max(1e-6, Math.abs(ty / tl));
+            const from = Math.min(sx, sy);
+            const to = Math.max(from + 6, Math.min(tl - 9, from + 40));
+            g.append(svg('line', { x1: x + tx / tl * from, y1: y + ty / tl * from, x2: x + tx / tl * to, y2: y + ty / tl * to, class: 'cw-foe-arrow', 'marker-end': 'url(#cwArrowHead)' }));
+        }
+        g.append(svg('rect', { x: x - w / 2, y: y - 10, width: w, height: 18, class: 'cw-foe-name' }));
+        let fx = x - w / 2 + 6;
+        for (const f of flags) {
+            const stripes = D.factions[f].flag;
+            stripes.forEach((color, i) => g.append(svg('rect', { x: fx, y: y - 5 + i * 10 / stripes.length, width: 13, height: 10 / stripes.length, fill: color })));
+            g.append(svg('rect', { x: fx, y: y - 5, width: 13, height: 10, class: 'cw-foe-flagrim' }));
+            fx += 16;
+        }
+        g.append(svg('text', { x: fx, y: y + 3.5, class: 'cw-foe-text' }, name));
+        g.append(svg('rect', { x: x - w / 2, y: y + 8, width: w, height: 16, class: 'cw-foe-numbers' }));
+        g.append(svg('text', { x, y: y + 20, 'text-anchor': 'middle', class: 'cw-foe-numbers-text' }, numbers));
+        const go = () => { const card = document.getElementById('cwFront-' + id); if (card) { card.scrollIntoView({ block: 'nearest' }); card.focus(); } };
+        g.addEventListener('click', go);
+        g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+        return g;
     }
 
     function star(cx, cy, R, r) {
@@ -244,7 +313,7 @@
             el('span', {}, el('i', { class: 'cw-key-held' }), '붉은 군대'), el('span', {}, el('i', { class: 'cw-key-lost k-white' }), '백군'),
             el('span', {}, el('i', { class: 'cw-key-lost k-interv' }), '간섭군'), el('span', {}, el('i', { class: 'cw-key-lost k-central' }), '독일·오스트리아'),
             el('span', {}, el('i', { class: 'cw-key-lost k-national' }), '폴란드·우크라이나'),
-            el('span', {}, el('i', { class: 'cw-key-badge' }), '전투력/압력'),
+            el('span', {}, el('i', { class: 'cw-key-badge' }), '공격해 오는 세력 · 전투력/압력'),
         ]));
     }
 

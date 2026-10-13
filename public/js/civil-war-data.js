@@ -77,51 +77,51 @@
     const TRICOLOR = ['#ffffff', '#0039a6', '#d52b1e'];
     const factions = {
         czech: {
-            name: '체코슬로바키아 군단', kind: 'white', flag: ['#ffffff', '#d7141a'], link: T('czechoslovak-legion'),
+            name: '체코슬로바키아 군단', short: '체코 군단', kind: 'white', flag: ['#ffffff', '#d7141a'], link: T('czechoslovak-legion'),
             note: '오스트리아군에서 넘어온 체코·슬로바키아 포로로 만든 군단. 프랑스 전선으로 가려고 시베리아 횡단철도를 타고 있었다. 1918–1920년 체코슬로바키아 국기는 폴란드처럼 흰색·빨간색 두 줄이었고, 1920년 3월 파란 삼각형이 더해졌다.',
         },
         komuch: {
-            name: '코무치 인민군', kind: 'white',
+            name: '코무치 인민군', short: '코무치', kind: 'white',
             note: '사마라에 선 사회혁명당 계열 제헌의회 의원 위원회(코무치)의 군대. 9월 옴스크의 디렉토리로 합쳐졌다가 11월 콜차크의 쿠데타로 밀려났다.',
         },
         kolchak: {
-            name: '콜차크 정부군', kind: 'white', flag: TRICOLOR, link: P('alexander-kolchak'),
+            name: '콜차크 정부군', short: '콜차크', kind: 'white', flag: TRICOLOR, link: P('alexander-kolchak'),
             note: '옴스크의 「최고 통치자」 콜차크 제독의 군대. 영국이 소총과 군복을 댔다. 백군은 제정 러시아의 흰색·파란색·빨간색 삼색기를 썼다.',
         },
         don: {
-            name: '돈 카자크군', kind: 'white', flag: ['#0033a0', '#ffd500', '#d52b1e'], link: P('pyotr-krasnov'),
+            name: '돈 카자크군', short: '돈 카자크', kind: 'white', flag: ['#0033a0', '#ffd500', '#d52b1e'], link: P('pyotr-krasnov'),
             note: '아타만 크라스노프가 이끈 돈 카자크의 군대. 1918년에는 우크라이나를 점령한 독일의 지원을 받았다. 깃발은 돈 공화국의 파란색·노란색·빨간색.',
         },
         denikin: {
-            name: '남러시아군(데니킨)', kind: 'white', flag: TRICOLOR, link: P('anton-denikin'),
+            name: '남러시아군(데니킨)', short: '데니킨', kind: 'white', flag: TRICOLOR, link: P('anton-denikin'),
             note: '코르닐로프가 세운 의용군에 돈·쿠반 카자크군을 묶은 데니킨의 군대. 1919년 여름 「모스크바 지령」으로 북진했다.',
         },
         yudenich: {
-            name: '북서군(유데니치)', kind: 'white', flag: TRICOLOR, link: P('nikolai-yudenich'),
+            name: '북서군(유데니치)', short: '유데니치', kind: 'white', flag: TRICOLOR, link: P('nikolai-yudenich'),
             note: '에스토니아를 발판으로 페트로그라드를 노린 유데니치 장군의 백군.',
         },
         allies: {
-            name: '연합국 간섭군', kind: 'interv',
+            name: '연합국 간섭군', short: '간섭군', kind: 'interv',
             note: '영국을 중심으로 프랑스·미국 병력이 무르만스크와 아르한겔스크에 상륙해 북부 정부를 세웠다. 영국군은 1919년 가을 철수했다.',
         },
         north: {
-            name: '북부 정부군', kind: 'white', flag: TRICOLOR, link: P('yevgeny-miller'),
+            name: '북부 정부군', short: '북부 정부', kind: 'white', flag: TRICOLOR, link: P('yevgeny-miller'),
             note: '영국군이 떠난 뒤 밀러 장군이 이끈 아르한겔스크의 백군.',
         },
         central: {
-            name: '독일·오스트리아군', kind: 'central', flag: ['#000000', '#ffffff', '#dd0000'], link: E('brest-litovsk'),
+            name: '독일·오스트리아군', short: '독일·오스트리아', kind: 'central', flag: ['#000000', '#ffffff', '#dd0000'], link: E('brest-litovsk'),
             note: '브레스트 강화로 우크라이나·벨라루스·발트를 점령한 동맹국 군대. 1918년 11월 독일이 항복한 뒤 물러났다. 깃발은 독일 제국의 검은색·흰색·빨간색.',
         },
         poland: {
-            name: '폴란드군', kind: 'national', flag: ['#ffffff', '#dc143c'], link: P('jozef-pilsudski'),
+            name: '폴란드군', short: '폴란드', kind: 'national', flag: ['#ffffff', '#dc143c'], link: P('jozef-pilsudski'),
             note: '1918년 독립을 되찾은 폴란드의 군대. 피우수트스키가 이끌었다.',
         },
         unr: {
-            name: '우크라이나 인민공화국군', kind: 'national', link: P('symon-petliura'),
+            name: '우크라이나 인민공화국군', short: '우크라이나', kind: 'national', link: P('symon-petliura'),
             note: '페틀류라가 이끈 디렉토리 정부의 군대. 1920년 폴란드와 동맹해 키예프로 들어왔다.',
         },
         wrangel: {
-            name: '러시아군(브란겔)', kind: 'white', flag: TRICOLOR, link: P('pyotr-wrangel'),
+            name: '러시아군(브란겔)', short: '브란겔', kind: 'white', flag: TRICOLOR, link: P('pyotr-wrangel'),
             note: '노보로시스크 철수 뒤 데니킨에게서 지휘권을 넘겨받은 브란겔이 크림에서 다시 세운 백군.',
         },
     };
