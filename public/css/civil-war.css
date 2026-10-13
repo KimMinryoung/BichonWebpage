@@ -60,7 +60,10 @@
 .cw-troops strong a { color: inherit; }
 .cw-troops small { grid-column: 1 / -1; font-size: .78rem; color: var(--text-secondary); line-height: var(--leading-normal); }
 .cw-troop-pips { display: inline-flex; flex-wrap: wrap; gap: 2px; max-width: 120px; }
-.cw-troop-pips i { width: 9px; height: 9px; background: var(--cw-red); }
+.cw-troop-pips { gap: 3px; }
+/* A division here is the army's infantry sign (a crossed box), not the
+   red unit that counts strength on the fronts. */
+.cw-troop-pips i { width: 13px; height: 9px; box-sizing: border-box; border: 1.5px solid var(--cw-red); background: linear-gradient(to top right, transparent calc(50% - .8px), var(--cw-red) calc(50% - .8px) calc(50% + .8px), transparent calc(50% + .8px)), linear-gradient(to bottom right, transparent calc(50% - .8px), var(--cw-red) calc(50% - .8px) calc(50% + .8px), transparent calc(50% + .8px)); }
 .cw-troop-changes { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 6px; font-size: .8rem; font-weight: 700; }
 .cw-troop-changes li { border: 1px solid var(--border); padding: 3px 8px; }
 .cw-troop-changes .is-plus { border-color: var(--btn-primary, #2da44e); }
@@ -197,11 +200,10 @@
 .cw-meter-band.is-behind { background: color-mix(in srgb, var(--clr-red) 30%, transparent); }
 .cw-meter-band.is-even { background: color-mix(in srgb, var(--text-secondary) 18%, transparent); }
 .cw-meter-band.is-ahead { background: color-mix(in srgb, var(--btn-primary, #2da44e) 35%, transparent); }
-.cw-meter-fill { position: absolute; top: 0; bottom: 0; left: 0; background: var(--cw-red); transition: width .2s ease; }
 .cw-meter-tick { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--border); }
 .cw-meter-tick small { position: absolute; top: 100%; left: 0; transform: translateX(-50%); padding-top: 1px; font-size: .7rem; font-variant-numeric: tabular-nums; color: var(--text-secondary); }
 .cw-meter-now { position: absolute; top: -4px; bottom: -4px; width: 3px; margin-left: -1.5px; background: var(--text-primary); transition: left .2s ease; }
-@media (prefers-reduced-motion: reduce) { .cw-meter-now, .cw-meter-fill { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .cw-meter-now, .cw-seg { transition: none; } }
 .cw-foes { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 6px; }
 .cw-foes-label { font-size: .75rem; font-weight: 700; color: var(--text-secondary); padding-top: 5px; }
 .cw-foe { flex: 1 1 100%; border: 1px solid var(--border); background: var(--bg-canvas); }
@@ -506,19 +508,6 @@
 .cw-stake-hist::after { content: ''; position: absolute; top: 0; bottom: 14px; left: 50%; border-left: 1.5px dashed var(--text-primary); }
 .cw-stake-hist span { margin-top: auto; font-size: .64rem; font-weight: 800; color: var(--text-primary); background: var(--bg-surface); padding: 0 2px; position: relative; z-index: 1; }
 
-/* Forces in marks: Red squares, star and train against the attacker's marks */
-.cw-forces { display: flex; justify-content: space-between; align-items: flex-end; gap: 4px 12px; font-size: .8rem; font-variant-numeric: tabular-nums; }
-.cw-force { display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; min-width: 0; }
-.cw-force.is-foe { justify-content: flex-end; text-align: right; color: var(--text-secondary); }
-.cw-force strong { font-size: .84rem; }
-.cw-mks { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 2px; max-width: 150px; }
-.cw-force.is-foe .cw-mks { justify-content: flex-end; }
-.cw-mk { display: inline-block; width: 10px; height: 10px; box-sizing: border-box; }
-.cw-mk.is-red { background: var(--cw-red); }
-.cw-mk.k-white { background: var(--cw-white); border: 1px solid var(--cw-ink); }
-.cw-mk.k-interv { background: var(--emap-blue); }
-.cw-mk.k-central { background: var(--emap-amber); }
-.cw-mk.k-national { background: var(--emap-gray); }
 .cw-mk-star { width: 17px; height: 17px; fill: var(--cw-gold); stroke: var(--cw-gold-rim); stroke-width: .8; }
 .cw-mk-train { width: 22px; height: 18px; }
 .cw-train { fill: var(--cw-gold); stroke: var(--cw-gold-rim); stroke-width: .9; }
@@ -530,3 +519,25 @@
 .cw-foe-marks { fill: #1d1d1b; stroke: var(--cw-ink); stroke-width: 1; }
 .cw-foe-marker.is-short .cw-foe-marks { fill: var(--clr-red); }
 .cw-map-legend .cw-mk-star, .cw-map-legend .cw-mk-train { vertical-align: middle; }
+
+/* Strength and pressure on one scale: the bar is built of the strength's
+   blocks, the attacker's units stand over it. */
+.cw-meter-top { display: flex; justify-content: space-between; }
+.cw-foe-row { position: relative; height: 11px; margin-bottom: 2px; }
+.cw-unit-mark { position: absolute; top: 0; bottom: 0; box-sizing: border-box; border: 1px solid var(--bg-surface); }
+.cw-unit-mark.k-white { background: var(--cw-white); border-color: var(--cw-ink); }
+.cw-unit-mark.k-interv { background: var(--emap-blue); }
+.cw-unit-mark.k-central { background: var(--emap-amber); }
+.cw-unit-mark.k-national { background: var(--emap-gray); }
+.cw-unit-mark.is-momentum { background-image: repeating-linear-gradient(-45deg, transparent 0 2px, var(--clr-red) 2px 3.5px); }
+.cw-meter-bar { height: 18px; }
+.cw-seg { position: absolute; top: 0; bottom: 0; box-sizing: border-box; display: grid; place-items: center; overflow: hidden; transition: left .2s ease, width .2s ease; }
+.cw-seg.is-div { background: var(--cw-red); border-right: 1.5px solid var(--bg-surface); }
+.cw-seg.is-commissar, .cw-seg.is-train { background: color-mix(in srgb, var(--cw-red) 70%, #000); border-right: 1.5px solid var(--bg-surface); }
+.cw-seg.is-other { background: repeating-linear-gradient(-45deg, var(--cw-red) 0 4px, color-mix(in srgb, var(--cw-red) 70%, #000) 4px 8px); border-right: 1.5px solid var(--bg-surface); }
+.cw-seg small { font-size: .62rem; font-weight: 800; color: #fff; }
+.cw-seg.is-minus { background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--text-secondary) 55%, transparent) 0 3px, transparent 3px 6px); }
+.cw-seg.is-minus small { color: var(--text-primary); }
+.cw-seg .cw-mk-star { width: 14px; height: 14px; }
+.cw-seg .cw-mk-train { width: 18px; height: 15px; }
+.cw-pip.is-empty { fill: none; stroke: var(--clr-red); stroke-width: .8; }

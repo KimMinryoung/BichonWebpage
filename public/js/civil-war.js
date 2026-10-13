@@ -380,13 +380,17 @@
         return { g, x, y };
     }
 
-    // The divisions sent to a front, as red squares by its last held city,
-    // facing the attackers' marker; a star for the commissar.
+    // The strength sent to a front, by its last held city facing the
+    // attackers' marker: red units, a star for the commissar, the train.
     function troopPips(id, marker, avoid) {
         const pts = points.fronts[id];
         const line = s.lines[id];
         const at = line > 0 ? pts[line - 1] : points.moscow;
-        const n = s.plan.alloc[id];
+        // The divisions' strength in units like the attacker's marks (the
+        // last one filled to its fraction), then the star and the train.
+        const f = G.forecast(s).fronts[id];
+        const units = s.plan.alloc[id] * f.perDivision;
+        const n = Math.ceil(units - 1e-9);
         const commissar = s.plan.commissar[id];
         const train = s.plan.cards.some(c => c.target === id);
         const extra = (commissar ? 2 : 0) + (train ? 3 : 0);
@@ -413,7 +417,12 @@
         }
         avoid.push(best.box);
         const slot = i => [best.box.x0 + (i % perRow) * (size + gap), best.box.y0 + Math.floor(i / perRow) * (size + gap)];
-        for (let i = 0; i < n; i++) { const [x, y] = slot(i); g.append(svg('rect', { x, y, width: size, height: size, class: 'cw-pip' })); }
+        for (let i = 0; i < n; i++) {
+            const [x, y] = slot(i);
+            const part = Math.min(1, units - i);
+            if (part < 1) g.append(svg('rect', { x, y, width: size, height: size, class: 'cw-pip is-empty' }));
+            g.append(svg('rect', { x, y, width: size * part, height: size, class: 'cw-pip' }));
+        }
         if (commissar) { const [x, y] = slot(n); g.append(svg('path', { d: star(x + size / 2 + 1, y + size / 2, 7.5, 3.2), class: 'cw-pip-star' })); }
         if (train) { const [x, y] = slot(n + (commissar ? 2 : 0)); g.append(trainGlyph(x + 2, y - 4, 19)); }
         return g;
@@ -492,7 +501,7 @@
             el('span', {}, el('i', { class: 'cw-key-lost k-national' }), '폴란드·우크라이나'),
             el('span', {}, el('i', { class: 'cw-key-badge' }), '공격해 오는 세력 · 아래 칸 하나가 압력 1'),
             el('span', {}, el('i', { class: 'cw-key-ring' }), '점선 고리: 이번 시기에 잃거나 되찾을 도시(예상)'),
-            el('span', {}, el('i', { class: 'cw-key-pip' }), '보낸 사단 · ', starIcon(), ' 정치위원 · ', trainIcon(), ' 장갑열차'),
+            el('span', {}, el('i', { class: 'cw-key-pip' }), '전투력 1 · ', starIcon(), ' 정치위원 1.5 · ', trainIcon(), ' 장갑열차 3'),
         ]));
     }
 
@@ -606,17 +615,29 @@
         });
         const current = bands.find(b => f.strength >= b.from && (b.to === null || f.strength < b.to));
         const last = bands[bands.length - 1];
-        const top = Math.max(last.from + 3, f.strength) * 1.1;
-        const at = v => `${Math.min(100, Math.max(0, v / top * 100)).toFixed(1)}%`;
+        const top = Math.max(last.from + 3, f.strength, f.pressure + 1) * 1.1;
+        const pct = v => Math.min(100, Math.max(0, v / top * 100));
+        const at = v => `${pct(v).toFixed(2)}%`;
+        const span = (from, to) => `left:${at(from)};width:${(pct(to) - pct(from)).toFixed(2)}%`;
         const versus = after => after === hist ? '역사대로' : after > hist ? `역사보다 ${after - hist}개 앞섬` : `역사보다 ${hist - after}개 뒤처짐`;
+        const kind = holderOf(id, turn).kind;
+        // The pressure in the attacker's marks, one unit each on the bar's
+        // scale; the enemy's momentum hatched.
+        const momentum = Math.min(f.pressure, f.momentumIn || 0);
+        const foeRow = el('div', { class: 'cw-foe-row', 'aria-hidden': 'true' },
+            ...Array.from({ length: f.pressure }, (_, i) => el('i', { class: `cw-unit-mark k-${kind}${i >= f.pressure - momentum ? ' is-momentum' : ''}`, style: span(i, i + 1) })));
         const bar = el('div', { class: 'cw-meter-bar', 'aria-hidden': 'true' },
-            ...bands.map(b => el('span', { class: `cw-meter-band ${b.tone}`, style: `left:${at(b.from)};width:calc(${at(b.to === null ? top : b.to)} - ${at(b.from)})` })),
-            el('span', { class: 'cw-meter-fill', style: `width:${at(f.strength)}` }),
+            ...bands.map(b => el('span', { class: `cw-meter-band ${b.tone}`, style: span(b.from, b.to === null ? top : b.to) })),
+            ...strengthSegments(f, span),
             ...bands.slice(1).map(b => el('i', { class: 'cw-meter-tick', style: `left:${at(b.from)}` },
                 el('small', {}, String(b.from)))),
-            el('span', { class: 'cw-meter-now', style: `left:${at(f.strength)}` }));
+            el('span', { class: 'cw-meter-now', style: `left:${at(Math.max(0, f.strength))}` }));
         return el('div', { class: 'cw-meter' },
-            forces(id, f, turn),
+            el('div', { class: 'cw-meter-top' },
+                el('strong', {}, `전투력 ${f.strength}`),
+                el('span', {}, `압력 ${f.pressure}`),
+                el('span', { class: 'cw-sr' }, `. 사단 ${f.divisions || 0}개, 사단당 ${f.perDivision || 0}${(f.bonuses || []).map(b => `, ${b.label} ${signed(b.v)}`).join('')}`)),
+            foeRow,
             bar,
             el('div', { class: 'cw-stake-head' },
                 el('span', { class: 'cw-stake-verdict ' + current.tone }, `${now}: ${versus(current.after)}`),
@@ -624,23 +645,28 @@
             stakeRow(id, line, current.after, bands, hist, turn, now));
     }
 
-    // The two sides in marks: one red square per division sent, the
-    // commissar's star and Trotsky's train, against one mark in the
-    // attacker's colour per point of pressure. The numbers follow.
-    function forces(id, f, turn) {
-        const n = f.divisions || 0;
-        const planning = s.phase === 'plan' && turn === s.turn;
-        const commissar = planning ? s.plan.commissar[id] : f.parts.some(p => p.startsWith('정치위원'));
-        const train = planning ? s.plan.cards.some(c => c.target === id) : f.parts.some(p => p.includes('장갑열차'));
-        const kind = holderOf(id, turn).kind;
-        return el('div', { class: 'cw-forces' },
-            el('div', { class: 'cw-force is-red' },
-                el('span', { class: 'cw-mks', 'aria-hidden': 'true' }, ...Array.from({ length: n }, () => el('i', { class: 'cw-mk is-red' })), commissar ? starIcon() : null, train ? trainIcon() : null),
-                el('strong', {}, `전투력 ${f.strength}`),
-                el('span', { class: 'cw-sr' }, ` 사단 ${n}개${commissar ? ', 정치위원' : ''}${train ? ', 장갑열차' : ''}`)),
-            el('div', { class: 'cw-force is-foe' },
-                el('span', {}, `압력 ${f.pressure}`),
-                el('span', { class: 'cw-mks', 'aria-hidden': 'true' }, ...Array.from({ length: f.pressure }, () => el('i', { class: 'cw-mk k-' + kind })))));
+    // The strength as blocks on the bar's scale, so its length is the
+    // strength: a block per division as wide as its share (quality, less
+    // hunger), the commissar's 1.5 with his star, the train's 3 with the
+    // locomotive, other help with its number. What takes strength away
+    // greys out the end of the row.
+    function strengthSegments(f, span) {
+        const out = [];
+        const per = f.perDivision || 0;
+        let x = 0;
+        for (let i = 0; i < (f.divisions || 0); i++) {
+            out.push(el('span', { class: 'cw-seg is-div', style: span(x, x + per) }));
+            x += per;
+        }
+        const bonuses = f.bonuses || [];
+        for (const b of bonuses.filter(b => b.v > 0)) {
+            const icon = b.kind === 'commissar' ? starIcon() : b.kind === 'train' ? trainIcon() : el('small', {}, `+${b.v}`);
+            out.push(el('span', { class: `cw-seg is-${b.kind === 'commissar' || b.kind === 'train' ? b.kind : 'other'}`, style: span(x, x + b.v), title: `${b.label} +${b.v}` }, icon));
+            x += b.v;
+        }
+        const minus = bonuses.filter(b => b.v < 0).reduce((a, b) => a - b.v, 0);
+        if (minus) out.push(el('span', { class: 'cw-seg is-minus', style: span(Math.max(0, x - minus), x) }, el('small', {}, `−${minus}`)));
+        return out;
     }
 
     // The cities this season can move, inner to outer, drawn as on the map:

@@ -194,27 +194,36 @@
         for (const id of activeFronts(s)) {
             const threat = threats[id];
             const d = s.plan.alloc[id];
-            let strength = d * q * (FED + (1 - FED) * supply.ratio);
-            const parts = [];
-            if (s.plan.commissar[id]) { strength += COMMISSAR; parts.push('정치위원 +1.5'); }
+            // A division's share: its quality, less what hunger takes.
+            const perDivision = q * (FED + (1 - FED) * supply.ratio);
+            let strength = d * perDivision;
+            // What else adds to (or takes from) the strength, as words and
+            // as { kind, label, v } for the card's marks.
+            const parts = [], bonuses = [];
+            const add = (kind, label, v) => {
+                strength += v;
+                bonuses.push({ kind, label, v });
+                parts.push(`${label} ${v < 0 ? '−' : '+'}${Math.abs(v)}`);
+            };
+            if (s.plan.commissar[id]) add('commissar', '정치위원', COMMISSAR);
             for (const c of s.plan.cards) {
                 const card = DATA.cards[c.id];
-                if (card.bonus && c.target === id) { strength += card.bonus; parts.push(`${card.title} +${card.bonus}`); }
+                if (card.bonus && c.target === id) add(c.id, card.title, card.bonus);
             }
-            if (flags.cavalry && ['south', 'crimea', 'southwest'].includes(id)) { strength += 4; parts.push('제1기병군 +4'); }
+            if (flags.cavalry && ['south', 'crimea', 'southwest'].includes(id)) add('other', '제1기병군', 4);
             let pressure = threat.pressure;
             const pressureParts = [];
             if (s.momentum[id]) { pressure += s.momentum[id]; pressureParts.push(`적의 기세 +${s.momentum[id]}`); }
             // Season-specific consequences of this and earlier choices.
             if (t.id === 'kolchak' && id === 'east') {
-                if (choice === 'flank') { strength -= 3; parts.push('측면 반격 준비 −3'); }
-                if (choice === 'front') { strength += 3; parts.push('정면 증원 +3'); }
+                if (choice === 'flank') add('other', '측면 반격 준비', -3);
+                if (choice === 'front') add('other', '정면 증원', 3);
             }
-            if (t.id === 'directive' && id === 'east' && flags.flank) { strength += 7; parts.push('프룬제의 측면 반격 +7'); }
-            if (flags.turned && t.id === 'orel' && id === 'south') { strength += 5; parts.push('동부에서 온 사단 +5'); }
-            if (t.id === 'orel' && id === 'northwest' && choice === 'hold') { strength += 4; parts.push('페트로그라드 사수 +4'); }
+            if (t.id === 'directive' && id === 'east' && flags.flank) add('other', '프룬제의 측면 반격', 7);
+            if (flags.turned && t.id === 'orel' && id === 'south') add('other', '동부에서 온 사단', 5);
+            if (t.id === 'orel' && id === 'northwest' && choice === 'hold') add('other', '페트로그라드 사수', 4);
             if (t.id === 'orel' && id === 'northwest' && choice === 'yield') { pressure += 6; pressureParts.push('병력을 남쪽으로 뺌 +6'); }
-            if (t.id === 'orel' && id === 'south' && choice === 'yield') { strength += 4; parts.push('북서에서 온 병력 +4'); }
+            if (t.id === 'orel' && id === 'south' && choice === 'yield') add('other', '북서에서 온 병력', 4);
             // Propaganda among the interventionists: this season and the next.
             const calmed = s.plan.cards.some(c => DATA.cards[c.id].calm) || (flags.calm && flags.calm === s.turn);
             if (calmed && (id === 'north' || id === 'south') && pressure > 0) {
@@ -225,7 +234,8 @@
             const margin = strength - pressure;
             const result = outcomeOf(s, id, margin);
             out[id] = {
-                divisions: d, strength: round1(strength), pressure, margin: round1(margin), parts, pressureParts,
+                divisions: d, perDivision: Math.round(perDivision * 1000) / 1000, bonuses, momentumIn: s.momentum[id] || 0,
+                strength: round1(strength), pressure, margin: round1(margin), parts, pressureParts,
                 change: result.change, momentum: result.overflow * MOMENTUM,
             };
         }
