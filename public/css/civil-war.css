@@ -82,6 +82,8 @@
 .cw-map-legend i.is-black { background: color-mix(in srgb, var(--emap-black) 40%, transparent); border-color: var(--emap-black); }
 .cw-map-legend i.cw-key-held { width: 10px; border-radius: 50%; background: var(--clr-red); border-color: var(--clr-red); }
 .cw-map-legend i.cw-key-lost { width: 10px; border-radius: 50%; border: 1.5px solid var(--cw-ink); }
+.cw-map-legend i.cw-key-ring { width: 12px; height: 12px; border-radius: 50%; border: 2px dashed var(--clr-red); background: transparent; }
+.cw-map-legend i.cw-key-pip { width: 8px; height: 8px; background: var(--clr-red); }
 .cw-map-legend i.k-white { background: var(--cw-white); }
 .cw-map-legend i.k-interv { background: var(--emap-blue); }
 .cw-map-legend i.k-central { background: var(--emap-amber); }
@@ -118,6 +120,16 @@
 /* The game's layer */
 .cw-chain { fill: none; stroke: color-mix(in srgb, var(--text-secondary) 35%, transparent); stroke-width: 1; stroke-dasharray: 3 3; }
 .cw-chain.is-active { stroke: color-mix(in srgb, var(--cw-red) 70%, transparent); stroke-width: 1.6; stroke-dasharray: none; }
+.cw-chain.is-moving { stroke-dasharray: 4 3; }
+.cw-ring-under { fill: none; stroke: var(--cw-ink); stroke-width: 3.6; }
+.cw-ring { fill: none; stroke-width: 2; stroke-dasharray: 3 2; }
+.cw-ring.is-red { stroke: var(--clr-red); }
+.cw-ring.k-white { stroke: var(--cw-white); }
+.cw-ring.k-interv { stroke: var(--emap-blue); }
+.cw-ring.k-central { stroke: var(--emap-amber); }
+.cw-ring.k-national { stroke: var(--emap-gray); }
+.cw-pip { fill: var(--clr-red); stroke: var(--bg-surface); stroke-width: .8; }
+.cw-pip-star { fill: #f2d64b; stroke: var(--bg-surface); stroke-width: .6; }
 .cw-city { stroke-width: 2; }
 .cw-city.is-held { fill: var(--clr-red); stroke: var(--bg-surface); }
 .cw-city.is-lost { stroke: var(--cw-ink); stroke-width: 1.5; }

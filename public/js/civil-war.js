@@ -222,24 +222,45 @@
             const pts = points.fronts[id];
             const line = s.lines[id];
             const isActive = active.includes(id);
-            const path = [points.moscow, ...pts].map(p => `${p.x},${p.y}`).join(' ');
-            layer.append(svg('polyline', { points: path, class: 'cw-chain' + (isActive ? ' is-active' : '') }));
+            // The forecast line while planning: cities to lose or retake get
+            // a dashed ring in the colour they will turn, and the chain runs
+            // solid to the line both now and after, dashed over the change.
+            const after = fc && fc[id] ? line + fc[id].change : line;
+            const chain = [points.moscow, ...pts];
+            const pathOf = list => list.map(p => `${p.x},${p.y}`).join(' ');
+            const steady = Math.min(line, after);
+            const moving = Math.max(line, after);
+            layer.append(svg('polyline', { points: pathOf(chain), class: 'cw-chain' }));
+            if (isActive) {
+                layer.append(svg('polyline', { points: pathOf(chain.slice(0, steady + 1)), class: 'cw-chain is-active' }));
+                if (moving > steady) layer.append(svg('polyline', { points: pathOf(chain.slice(steady, moving + 1)), class: 'cw-chain is-active is-moving' }));
+            }
+            const foeKind = isActive ? holderOf(id, turn).kind : null;
             pts.forEach((p, i) => {
                 const held = i < line;
-                layer.append(svg('circle', { cx: p.x, cy: p.y, r: isActive ? 5.5 : 4.5, class: 'cw-city ' + (held ? 'is-held' : 'is-lost k-' + holderOf(id, turn).kind) }));
+                const r = isActive ? 5.5 : 4.5;
+                layer.append(svg('circle', { cx: p.x, cy: p.y, r, class: 'cw-city ' + (held ? 'is-held' : 'is-lost k-' + holderOf(id, turn).kind) }));
+                if (held !== (i < after)) {
+                    layer.append(svg('circle', { cx: p.x, cy: p.y, r: r + 4, class: 'cw-ring-under' }));
+                    layer.append(svg('circle', { cx: p.x, cy: p.y, r: r + 4, class: 'cw-ring ' + (held ? 'k-' + foeKind : 'is-red') }));
+                }
                 const [dx, dy, anchor] = LABEL_AT[p.name] || [8, 4, 'start'];
                 const label = svg('text', { x: p.x + dx, y: p.y + dy, 'text-anchor': anchor, class: 'cw-city-label' + (isActive ? ' is-active' : '') }, p.name);
                 layer.append(label);
                 const w = textWidth(p.name, 11);
                 const x0 = anchor === 'end' ? p.x + dx - w : p.x + dx;
-                avoid.push({ x0: p.x - 6, x1: p.x + 6, y0: p.y - 6, y1: p.y + 6 }, { x0, x1: x0 + w, y0: p.y + dy - 10, y1: p.y + dy + 3 });
+                avoid.push({ x0: p.x - 10, x1: p.x + 10, y0: p.y - 10, y1: p.y + 10 }, { x0, x1: x0 + w, y0: p.y + dy - 10, y1: p.y + dy + 3 });
             });
         }
         const m = points.moscow;
         layer.append(svg('path', { d: star(m.x, m.y, 9, 4), class: 'cw-moscow' }));
         layer.append(svg('text', { x: m.x + 11, y: m.y + 4, class: 'cw-city-label is-capital' }, m.name));
         avoid.push({ x0: m.x - 10, x1: m.x + 11 + textWidth(m.name, 13), y0: m.y - 10, y1: m.y + 6 });
-        for (const id of active) layer.append(foeMarker(id, points.fronts[id], s.lines[id], fc && fc[id], results && results[id], avoid));
+        for (const id of active) {
+            const marker = foeMarker(id, points.fronts[id], s.lines[id], fc && fc[id], results && results[id], avoid);
+            layer.append(marker.g);
+            if (s.plan && s.plan.alloc[id] !== undefined) layer.append(troopPips(id, marker, avoid));
+        }
         root.append(layer);
         renderControlPhase();
     }
@@ -308,6 +329,45 @@
         const go = () => { const card = document.getElementById('cwFront-' + id); if (card) { card.scrollIntoView({ block: 'nearest' }); card.focus(); } };
         g.addEventListener('click', go);
         g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+        return { g, x, y };
+    }
+
+    // The divisions sent to a front, as red squares by its last held city,
+    // facing the attackers' marker; a star for the commissar.
+    function troopPips(id, marker, avoid) {
+        const pts = points.fronts[id];
+        const line = s.lines[id];
+        const at = line > 0 ? pts[line - 1] : points.moscow;
+        const n = s.plan.alloc[id];
+        const commissar = s.plan.commissar[id];
+        const g = svg('g', { class: 'cw-pips', 'aria-hidden': 'true' });
+        if (!n && !commissar) return g;
+        const perRow = 8, size = 6, gap = 2;
+        const cols = Math.min(perRow, n + (commissar ? 1 : 0));
+        const rows = Math.ceil((n + (commissar ? 1 : 0)) / perRow);
+        const w = cols * (size + gap), h = rows * (size + gap);
+        let dx = at.x - marker.x, dy = at.y - marker.y;
+        const len = Math.hypot(dx, dy) || 1;
+        dx /= len; dy /= len;
+        const overlap = (a, b) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0)) * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0));
+        let best = null;
+        for (const turn of [0, 40, -40, 80, -80]) {
+            const a = turn * Math.PI / 180;
+            const ux = dx * Math.cos(a) - dy * Math.sin(a), uy = dx * Math.sin(a) + dy * Math.cos(a);
+            for (const dist of [14, 22, 32]) {
+                const cx = at.x + ux * (dist + w / 2), cy = at.y + uy * (dist + h / 2);
+                const box = { x0: cx - w / 2, x1: cx + w / 2, y0: cy - h / 2, y1: cy + h / 2 };
+                const cost = avoid.reduce((c, o) => c + overlap(box, o), 0) * 4 + Math.abs(turn) + dist;
+                if (!best || cost < best.cost) best = { box, cost };
+            }
+        }
+        avoid.push(best.box);
+        for (let i = 0; i < n + (commissar ? 1 : 0); i++) {
+            const x = best.box.x0 + (i % perRow) * (size + gap);
+            const y = best.box.y0 + Math.floor(i / perRow) * (size + gap);
+            if (i < n) g.append(svg('rect', { x, y, width: size, height: size, class: 'cw-pip' }));
+            else g.append(svg('path', { d: star(x + size / 2, y + size / 2, 5, 2.2), class: 'cw-pip-star' }));
+        }
         return g;
     }
 
@@ -341,6 +401,8 @@
             el('span', {}, el('i', { class: 'cw-key-lost k-interv' }), '간섭군'), el('span', {}, el('i', { class: 'cw-key-lost k-central' }), '독일·오스트리아'),
             el('span', {}, el('i', { class: 'cw-key-lost k-national' }), '폴란드·우크라이나'),
             el('span', {}, el('i', { class: 'cw-key-badge' }), '공격해 오는 세력 · 전투력/압력'),
+            el('span', {}, el('i', { class: 'cw-key-ring' }), '점선 고리: 이번 시기에 잃거나 되찾을 도시(예상)'),
+            el('span', {}, el('i', { class: 'cw-key-pip' }), '보낸 사단 · ★ 정치위원'),
         ]));
     }
 
