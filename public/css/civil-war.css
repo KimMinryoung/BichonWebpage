@@ -3,6 +3,8 @@
    the event map's (commulingo.css .emap-*), which this page does not load. */
 .cw-shell {
     --cw-red: #a21e2a;
+    /* The Whites: white with a dark rim, so they read on both themes. */
+    --cw-white: #ffffff; --cw-ink: #4a4a46;
     --emap-blue: #2f6fb8; --emap-red: var(--clr-red); --emap-amber: #c7861c;
     --emap-purple: #7b5aa6; --emap-gray: #8d8d86; --emap-green: #3f8a4a; --emap-black: var(--text-primary);
 }
@@ -59,12 +61,16 @@
 .cw-map-legend span { display: inline-flex; align-items: center; gap: 6px; }
 .cw-map-legend i { display: inline-block; width: 14px; height: 10px; border: 1px solid var(--border); }
 .cw-map-legend i.is-red { background: color-mix(in srgb, var(--emap-red) 34%, transparent); border-color: var(--emap-red); }
-.cw-map-legend i.is-blue { background: color-mix(in srgb, var(--emap-blue) 30%, transparent); border-color: var(--emap-blue); }
+.cw-map-legend i.is-blue { background: var(--cw-white); border: 1px dashed var(--cw-ink); }
 .cw-map-legend i.is-amber { background: color-mix(in srgb, var(--emap-amber) 34%, transparent); border-color: var(--emap-amber); }
 .cw-map-legend i.is-gray { background: color-mix(in srgb, var(--emap-gray) 34%, transparent); border-color: var(--emap-gray); }
 .cw-map-legend i.is-black { background: color-mix(in srgb, var(--emap-black) 40%, transparent); border-color: var(--emap-black); }
 .cw-map-legend i.cw-key-held { width: 10px; border-radius: 50%; background: var(--clr-red); border-color: var(--clr-red); }
-.cw-map-legend i.cw-key-lost { width: 10px; border-radius: 50%; background: var(--bg-surface); border: 2px solid var(--emap-blue); }
+.cw-map-legend i.cw-key-lost { width: 10px; border-radius: 50%; border: 1.5px solid var(--cw-ink); }
+.cw-map-legend i.k-white { background: var(--cw-white); }
+.cw-map-legend i.k-interv { background: var(--emap-blue); }
+.cw-map-legend i.k-central { background: var(--emap-amber); }
+.cw-map-legend i.k-national { background: var(--emap-gray); }
 .cw-map-legend i.cw-key-badge { width: 22px; background: var(--text-primary); }
 .cw-map-tools { padding: 0 12px 12px; }
 
@@ -82,7 +88,8 @@
 .cw-map-frame .emap-ctl { stroke: none; fill-opacity: .32; }
 .cw-map-frame .emap-ctl-knock { fill: color-mix(in srgb, var(--border) 13%, var(--bg-surface)); stroke: none; }
 .cw-map-frame .emap-ctl.is-drawn { stroke-width: .8; stroke-opacity: .7; stroke-linejoin: round; }
-.cw-map-frame .emap-ctl.is-blue { fill: var(--emap-blue); stroke: var(--emap-blue); }
+/* The Whites in white (the event map draws them blue). */
+.cw-map-frame .emap-ctl.is-blue { fill: var(--cw-white); stroke: var(--cw-ink); fill-opacity: .55; stroke-dasharray: 3 2; }
 .cw-map-frame .emap-ctl.is-red { fill: var(--emap-red); stroke: var(--emap-red); }
 .cw-map-frame .emap-ctl.is-amber { fill: var(--emap-amber); stroke: var(--emap-amber); }
 .cw-map-frame .emap-ctl.is-gray { fill: var(--emap-gray); stroke: var(--emap-gray); }
@@ -98,7 +105,11 @@
 .cw-chain.is-active { stroke: color-mix(in srgb, var(--cw-red) 70%, transparent); stroke-width: 1.6; stroke-dasharray: none; }
 .cw-city { stroke-width: 2; }
 .cw-city.is-held { fill: var(--clr-red); stroke: var(--bg-surface); }
-.cw-city.is-lost { fill: var(--bg-surface); stroke: var(--emap-blue); }
+.cw-city.is-lost { stroke: var(--cw-ink); stroke-width: 1.5; }
+.cw-city.k-white { fill: var(--cw-white); }
+.cw-city.k-interv { fill: var(--emap-blue); }
+.cw-city.k-central { fill: var(--emap-amber); }
+.cw-city.k-national { fill: var(--emap-gray); }
 .cw-city-label { font-size: 11px; fill: var(--text-secondary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
 .cw-city-label.is-active { fill: var(--text-primary); font-weight: 700; }
 .cw-city-label.is-capital { font-size: 13px; font-weight: 800; fill: var(--text-primary); }
@@ -132,12 +143,14 @@
 .cw-forecast strong { font-variant-numeric: tabular-nums; }
 .cw-front.is-short .cw-forecast strong { color: var(--clr-red); }
 .cw-meter { display: grid; gap: 4px; margin: 2px 0 30px; }
-.cw-meter-value { font-size: .9rem; font-variant-numeric: tabular-nums; }
+.cw-meter-top { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: .9rem; font-variant-numeric: tabular-nums; }
+.cw-meter-minus { font-size: .72rem; font-weight: 700; color: var(--clr-red); }
 .cw-meter-bar { position: relative; height: 14px; border: 1px solid var(--border); background: var(--bg-canvas); }
 .cw-meter-fill { position: absolute; inset: 0 auto 0 0; background: var(--text-secondary); transition: width .2s ease; }
 .cw-meter-fill.is-short { background: var(--clr-red); }
 .cw-meter-fill.is-ahead { background: var(--btn-primary, #2da44e); }
 .cw-meter-tick { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--text-primary); }
+.cw-meter-tick.is-minus { background: var(--clr-red); }
 .cw-meter-tick.is-plus { background: var(--btn-primary, #2da44e); }
 .cw-meter-marks { position: relative; height: 0; font-size: .72rem; line-height: var(--leading-snug); }
 .cw-meter-marks span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; font-weight: 700; text-align: center; }
@@ -145,6 +158,21 @@
 .cw-meter-marks span.is-plus { color: var(--btn-primary, #2da44e); }
 .cw-meter-marks small { display: block; font-weight: 400; color: var(--text-secondary); }
 @media (prefers-reduced-motion: reduce) { .cw-meter-fill { transition: none; } }
+.cw-foes { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 6px; }
+.cw-foes-label { font-size: .75rem; font-weight: 700; color: var(--text-secondary); padding-top: 5px; }
+.cw-foe { flex: 1 1 100%; border: 1px solid var(--border); background: var(--bg-canvas); }
+.cw-foe summary { cursor: pointer; display: flex; align-items: center; gap: 7px; min-height: 32px; padding: 3px 8px; font-size: .86rem; font-weight: 700; }
+.cw-foe summary small { color: var(--clr-red); font-weight: 700; }
+.cw-foe p { margin: 0; padding: 0 8px 8px; font-size: .82rem !important; color: var(--text-secondary); }
+.cw-foe.is-white { border-left: 4px solid var(--cw-white); }
+.cw-foe.is-interv { border-left: 4px solid var(--emap-blue); }
+.cw-foe.is-central { border-left: 4px solid var(--emap-amber); }
+.cw-foe.is-national { border-left: 4px solid var(--emap-gray); }
+.cw-flag { width: 18px; height: 12px; flex: 0 0 auto; outline: 1px solid color-mix(in srgb, var(--text-secondary) 50%, transparent); }
+.cw-foe-dot { width: 12px; height: 12px; flex: 0 0 auto; border-radius: 50%; border: 1.5px solid var(--cw-ink); background: var(--cw-white); }
+.cw-foe.is-national .cw-foe-dot { background: var(--emap-gray); }
+.cw-foe.is-interv .cw-foe-dot { background: var(--emap-blue); }
+.cw-momentum { color: var(--clr-red); font-weight: 700; }
 .cw-parts { color: var(--text-secondary); font-size: .8rem !important; }
 .cw-verdict { font-weight: 700; }
 .cw-warn { border-left: 4px solid var(--clr-red); padding: 8px 12px; margin: 0; background: var(--bg-surface); font-size: .9rem; }

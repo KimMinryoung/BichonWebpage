@@ -7,7 +7,9 @@
    Moscow) outward; a front's line is how many of them the Reds hold, and
    history[] is that number at the end of each season. A threat's pressure
    is the strength the Reds needed to do as well as they did in history:
-   meeting it repeats the season's historical change of line. */
+   meeting it repeats the season's historical change of line. holders[] names
+   who held a front's lost cities in each season (a faction id below); a
+   threat's foes[] names who attacks. */
 (function (root) {
     'use strict';
 
@@ -17,48 +19,113 @@
 
     const fronts = {
         east: {
-            name: '동부전선', short: '동부', enemy: '체코 군단·코무치·콜차크',
+            name: '동부전선', short: '동부',
             cities: [['카잔', 55.79, 49.12], ['심비르스크', 54.31, 48.40], ['사마라', 53.20, 50.15], ['우파', 54.74, 55.97], ['예카테린부르크', 56.84, 60.61]],
             history: [0, 4, 3, 5, 5, 5, 5, 5],
+            holders: ['czech', 'komuch', 'kolchak', 'kolchak', 'kolchak', 'kolchak', 'kolchak', 'kolchak'],
         },
         volga: {
-            name: '차리친 방면', short: '차리친', enemy: '돈 카자크군·캅카스군',
+            name: '차리친 방면', short: '차리친',
             cities: [['사라토프', 51.53, 46.03], ['차리친', 48.71, 44.51]],
             history: [2, 2, 2, 1, 1, 2, 2, 2],
+            holders: ['don', 'don', 'don', 'denikin', 'denikin', 'denikin', 'denikin', 'denikin'],
         },
         south: {
-            name: '남부전선', short: '남부', enemy: '의용군·남러시아군',
+            name: '남부전선', short: '남부',
             cities: [['툴라', 54.19, 37.62], ['오룔', 52.97, 36.07], ['쿠르스크', 51.73, 36.19], ['하리코프', 49.99, 36.23], ['로스토프', 47.24, 39.71], ['예카테리노다르', 45.04, 38.98]],
             history: [3, 3, 4, 3, 2, 6, 6, 6],
+            holders: ['central', 'central', 'denikin', 'denikin', 'denikin', 'denikin', 'wrangel', 'wrangel'],
             capital: true,
         },
         northwest: {
-            name: '북서전선', short: '북서', enemy: '북서군(유데니치)',
+            name: '북서전선', short: '북서',
             cities: [['페트로그라드', 59.94, 30.31], ['가치나', 59.57, 30.13], ['얌부르크', 59.37, 28.61]],
             history: [3, 3, 3, 2, 1, 3, 3, 3],
+            holders: ['central', 'yudenich', 'yudenich', 'yudenich', 'yudenich', 'yudenich', 'yudenich', 'yudenich'],
             petrograd: true,
         },
         north: {
-            name: '북부전선', short: '북부', enemy: '연합군·북부 정부',
+            name: '북부전선', short: '북부',
             cities: [['볼로그다', 59.22, 39.89], ['아르한겔스크', 64.54, 40.54]],
             history: [1, 1, 1, 1, 1, 2, 2, 2],
+            holders: ['allies', 'allies', 'allies', 'allies', 'allies', 'north', 'north', 'north'],
         },
         west: {
-            name: '서부전선', short: '서부', enemy: '폴란드군',
+            name: '서부전선', short: '서부',
             cities: [['스몰렌스크', 54.78, 32.05], ['민스크', 53.90, 27.57], ['바르샤바', 52.23, 21.01]],
             history: [1, 2, 2, 2, 1, 1, 2, 2],
+            holders: ['central', 'central', 'poland', 'poland', 'poland', 'poland', 'poland', 'poland'],
         },
         southwest: {
-            name: '남서전선', short: '남서', enemy: '폴란드군·우크라이나 인민공화국군',
+            name: '남서전선', short: '남서',
             cities: [['키예프', 50.45, 30.52], ['리비우', 49.84, 24.03]],
             history: [0, 0, 1, 1, 0, 1, 1, 1],
+            holders: ['central', 'unr', 'poland', 'poland', 'denikin', 'poland', 'poland', 'poland'],
         },
         crimea: {
-            name: '크림 방면', short: '크림', enemy: '러시아군(브란겔)',
+            name: '크림 방면', short: '크림',
             cities: [['알렉산드롭스크', 47.84, 35.14], ['멜리토폴', 46.85, 35.37], ['페레코프', 46.16, 33.69]],
             history: [0, 0, 0, 0, 0, 2, 1, 3],
+            holders: ['central', 'denikin', 'denikin', 'denikin', 'denikin', 'wrangel', 'wrangel', 'wrangel'],
         },
     };
+
+    // Who the Reds fought. kind colours the map: white (the White movement
+    // and its allies), interv (foreign intervention), central (Germany and
+    // Austria), national (the new states). flag: horizontal stripes, top
+    // first, as flown in these years.
+    const TRICOLOR = ['#ffffff', '#0039a6', '#d52b1e'];
+    const factions = {
+        czech: {
+            name: '체코슬로바키아 군단', kind: 'white', flag: ['#ffffff', '#d7141a'], link: T('czechoslovak-legion'),
+            note: '오스트리아군에서 넘어온 체코·슬로바키아 포로로 만든 군단. 프랑스 전선으로 가려고 시베리아 횡단철도를 타고 있었다. 1918–1920년 체코슬로바키아 국기는 폴란드처럼 흰색·빨간색 두 줄이었고, 1920년 3월 파란 삼각형이 더해졌다.',
+        },
+        komuch: {
+            name: '코무치 인민군', kind: 'white',
+            note: '사마라에 선 사회혁명당 계열 제헌의회 의원 위원회(코무치)의 군대. 9월 옴스크의 디렉토리로 합쳐졌다가 11월 콜차크의 쿠데타로 밀려났다.',
+        },
+        kolchak: {
+            name: '콜차크 정부군', kind: 'white', flag: TRICOLOR, link: P('alexander-kolchak'),
+            note: '옴스크의 「최고 통치자」 콜차크 제독의 군대. 영국이 소총과 군복을 댔다. 백군은 제정 러시아의 흰색·파란색·빨간색 삼색기를 썼다.',
+        },
+        don: {
+            name: '돈 카자크군', kind: 'white', flag: ['#0033a0', '#ffd500', '#d52b1e'], link: P('pyotr-krasnov'),
+            note: '아타만 크라스노프가 이끈 돈 카자크의 군대. 1918년에는 우크라이나를 점령한 독일의 지원을 받았다. 깃발은 돈 공화국의 파란색·노란색·빨간색.',
+        },
+        denikin: {
+            name: '남러시아군(데니킨)', kind: 'white', flag: TRICOLOR, link: P('anton-denikin'),
+            note: '코르닐로프가 세운 의용군에 돈·쿠반 카자크군을 묶은 데니킨의 군대. 1919년 여름 「모스크바 지령」으로 북진했다.',
+        },
+        yudenich: {
+            name: '북서군(유데니치)', kind: 'white', flag: TRICOLOR, link: P('nikolai-yudenich'),
+            note: '에스토니아를 발판으로 페트로그라드를 노린 유데니치 장군의 백군.',
+        },
+        allies: {
+            name: '연합국 간섭군', kind: 'interv',
+            note: '영국을 중심으로 프랑스·미국 병력이 무르만스크와 아르한겔스크에 상륙해 북부 정부를 세웠다. 영국군은 1919년 가을 철수했다.',
+        },
+        north: {
+            name: '북부 정부군', kind: 'white', flag: TRICOLOR, link: P('yevgeny-miller'),
+            note: '영국군이 떠난 뒤 밀러 장군이 이끈 아르한겔스크의 백군.',
+        },
+        central: {
+            name: '독일·오스트리아군', kind: 'central', flag: ['#000000', '#ffffff', '#dd0000'], link: E('brest-litovsk'),
+            note: '브레스트 강화로 우크라이나·벨라루스·발트를 점령한 동맹국 군대. 1918년 11월 독일이 항복한 뒤 물러났다. 깃발은 독일 제국의 검은색·흰색·빨간색.',
+        },
+        poland: {
+            name: '폴란드군', kind: 'national', flag: ['#ffffff', '#dc143c'], link: P('jozef-pilsudski'),
+            note: '1918년 독립을 되찾은 폴란드의 군대. 피우수트스키가 이끌었다.',
+        },
+        unr: {
+            name: '우크라이나 인민공화국군', kind: 'national', link: P('symon-petliura'),
+            note: '페틀류라가 이끈 디렉토리 정부의 군대. 1920년 폴란드와 동맹해 키예프로 들어왔다.',
+        },
+        wrangel: {
+            name: '러시아군(브란겔)', kind: 'white', flag: TRICOLOR, link: P('pyotr-wrangel'),
+            note: '노보로시스크 철수 뒤 데니킨에게서 지휘권을 넘겨받은 브란겔이 크림에서 다시 세운 백군.',
+        },
+    };
+
     const frontOrder = ['northwest', 'north', 'west', 'southwest', 'south', 'crimea', 'volga', 'east'];
     const moscow = ['모스크바', 55.76, 37.62];
     // Lines at the start, June 1918. Ukraine and the Baltic are under German
@@ -127,9 +194,9 @@
                 '붉은 군대는 1월에 창설 법령이 나왔을 뿐, 전투 부대라 부를 만한 것은 라트비아 소총병과 노동자 분견대 몇몇이었다. 남쪽에서는 크라스노프의 돈군이 볼가의 요충 차리친으로 향하고, 북쪽 바다에는 영국 함대가 와 있다.',
             ],
             threats: {
-                east: { pressure: 6, text: '군단과 코무치 인민군이 볼가를 거슬러 오른다. 카펠의 부대는 카잔의 금 보유고를 노린다.', who: ['블라디미르 카펠', 'vladimir-kappel'] },
-                volga: { pressure: 2, text: '크라스노프의 돈군이 차리친을 처음으로 공격한다.', who: ['표트르 크라스노프', 'pyotr-krasnov'] },
-                north: { pressure: 1, text: '연합군 함대가 아르한겔스크 앞바다에 나타났다.' },
+                east: { pressure: 6, foes: ['czech', 'komuch'], text: '군단과 코무치 인민군이 볼가를 거슬러 오른다. 카펠의 부대는 카잔의 금 보유고를 노린다.', who: ['블라디미르 카펠', 'vladimir-kappel'] },
+                volga: { pressure: 2, foes: ['don'], text: '크라스노프의 돈군이 차리친을 처음으로 공격한다.', who: ['표트르 크라스노프', 'pyotr-krasnov'] },
+                north: { pressure: 1, foes: ['allies'], text: '연합군 함대가 아르한겔스크 앞바다에 나타났다.' },
             },
             cards: ['train', 'requisition', 'kombedy'],
             choice: {
@@ -154,10 +221,10 @@
                 '11월 독일이 항복해 우크라이나와 발트에서 물러나기 시작한다. 같은 달 옴스크에서는 콜차크 제독이 쿠데타로 「최고 통치자」가 되었다. 크라스노프는 차리친을 다시 노린다.',
             ],
             threats: {
-                east: { pressure: 7, text: '카잔의 백군은 지쳤다. 지금 몰아치면 볼가를 되찾을 수 있다.', who: ['알렉산드르 콜차크', 'alexander-kolchak'] },
-                volga: { pressure: 5, text: '돈군이 차리친을 포위하려 한다. 식량 전권을 가지고 온 스탈린이 지휘까지 쥐었다.', who: ['표트르 크라스노프', 'pyotr-krasnov'] },
-                northwest: { pressure: 1, text: '독일군이 물러난 자리로 나아갈 수 있다.' },
-                west: { pressure: 1, text: '독일군이 벨라루스에서 철수한다. 민스크가 비어 간다.' },
+                east: { pressure: 7, foes: ['komuch', 'kolchak'], text: '카잔의 백군은 지쳤다. 지금 몰아치면 볼가를 되찾을 수 있다.', who: ['알렉산드르 콜차크', 'alexander-kolchak'] },
+                volga: { pressure: 5, foes: ['don'], text: '돈군이 차리친을 포위하려 한다. 식량 전권을 가지고 온 스탈린이 지휘까지 쥐었다.', who: ['표트르 크라스노프', 'pyotr-krasnov'] },
+                northwest: { pressure: 1, foes: ['central'], text: '독일군이 물러난 자리로 나아갈 수 있다.' },
+                west: { pressure: 1, foes: ['central'], text: '독일군이 벨라루스에서 철수한다. 민스크가 비어 간다.' },
             },
             cards: ['train', 'requisition', 'kombedy', 'cheka', 'propaganda'],
             choice: {
@@ -182,9 +249,9 @@
                 '돈에서는 3월 베셴스카야의 카자크가 붉은 군대 후방에서 봉기했다. 남쪽의 데니킨은 쿠반과 북캅카스를 손에 넣고 북쪽을 바라본다.',
             ],
             threats: {
-                east: { pressure: 10, text: '콜차크의 서부군이 볼가로 진격한다. 사마라와 카잔이 위험하다.', who: ['알렉산드르 콜차크', 'alexander-kolchak'] },
-                south: { pressure: 6, text: '돈 카자크의 봉기가 남부전선의 후방을 흔든다.', who: ['안톤 데니킨', 'anton-denikin'] },
-                volga: { pressure: 4, text: '차리친 앞의 돈군은 아직 물러서지 않았다.' },
+                east: { pressure: 10, foes: ['kolchak'], text: '콜차크의 서부군이 볼가로 진격한다. 사마라와 카잔이 위험하다.', who: ['알렉산드르 콜차크', 'alexander-kolchak'] },
+                south: { pressure: 6, foes: ['don', 'denikin'], text: '돈 카자크의 봉기가 남부전선의 후방을 흔든다.', who: ['안톤 데니킨', 'anton-denikin'] },
+                volga: { pressure: 4, foes: ['don'], text: '차리친 앞의 돈군은 아직 물러서지 않았다.' },
             },
             cards: ['train', 'requisition', 'cheka', 'propaganda', 'amnesty'],
             choice: {
@@ -209,10 +276,10 @@
                 '5월에는 유데니치의 북서군이 에스토니아에서 페트로그라드로 첫 공세를 시작했다. 이 공세의 길목인 얌부르크가 넘어갔다.',
             ],
             threats: {
-                east: { pressure: 5, text: '콜차크군이 우랄로 물러난다. 추격할 때다.' },
-                south: { pressure: 9, text: '데니킨의 의용군이 하리코프로 쳐들어온다.', who: ['안톤 데니킨', 'anton-denikin'] },
-                volga: { pressure: 5, text: '브란겔의 캅카스군이 차리친을 공격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
-                northwest: { pressure: 4, text: '유데니치의 북서군이 얌부르크로 온다.', who: ['니콜라이 유데니치', 'nikolai-yudenich'] },
+                east: { pressure: 5, foes: ['kolchak'], text: '콜차크군이 우랄로 물러난다. 추격할 때다.' },
+                south: { pressure: 9, foes: ['denikin'], text: '데니킨의 의용군이 하리코프로 쳐들어온다.', who: ['안톤 데니킨', 'anton-denikin'] },
+                volga: { pressure: 5, foes: ['denikin'], text: '브란겔의 캅카스군이 차리친을 공격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
+                northwest: { pressure: 4, foes: ['yudenich'], text: '유데니치의 북서군이 얌부르크로 온다.', who: ['니콜라이 유데니치', 'nikolai-yudenich'] },
             },
             cards: ['train', 'requisition', 'cheka', 'amnesty'],
             choice: {
@@ -237,10 +304,10 @@
                 '10월, 유데니치가 다시 페트로그라드로 온다. 서쪽에서는 폴란드군이 8월에 민스크를 차지했다. 데니킨의 후방 우크라이나에서는 마흐노의 반란군이 9월 페레고노프카에서 백군을 깨고 보급선을 끊고 있다.',
             ],
             threats: {
-                south: { pressure: 14, text: '쿠테포프의 제1군단이 오룔로 진격한다. 오룔 다음은 툴라, 툴라 다음은 모스크바다.', who: ['안톤 데니킨', 'anton-denikin'] },
-                northwest: { pressure: 6, text: '유데니치의 북서군이 가치나를 지나 풀코보 고지로 온다.', who: ['니콜라이 유데니치', 'nikolai-yudenich'] },
-                volga: { pressure: 3, text: '차리친의 캅카스군은 볼가를 따라 북상하려 한다.' },
-                west: { pressure: 3, text: '폴란드군이 민스크로 진격한다.', who: ['유제프 피우수트스키', 'jozef-pilsudski'] },
+                south: { pressure: 14, foes: ['denikin'], text: '쿠테포프의 제1군단이 오룔로 진격한다. 오룔 다음은 툴라, 툴라 다음은 모스크바다.', who: ['안톤 데니킨', 'anton-denikin'] },
+                northwest: { pressure: 6, foes: ['yudenich'], text: '유데니치의 북서군이 가치나를 지나 풀코보 고지로 온다.', who: ['니콜라이 유데니치', 'nikolai-yudenich'] },
+                volga: { pressure: 3, foes: ['denikin'], text: '차리친의 캅카스군은 볼가를 따라 북상하려 한다.' },
+                west: { pressure: 3, foes: ['poland'], text: '폴란드군이 민스크로 진격한다.', who: ['유제프 피우수트스키', 'jozef-pilsudski'] },
             },
             cards: ['train', 'requisition', 'cheka', 'amnesty', 'partyWeek'],
             choice: {
@@ -265,10 +332,10 @@
                 '1920년 2월, 트로츠키가 우랄에서 돌아와 중앙위원회에 곡물 징발을 세금으로 바꾸자고 제안한다. 마을마다 징발대에 맞선 봉기가 늘고 있다.',
             ],
             threats: {
-                south: { pressure: 13, text: '데니킨군이 하리코프와 로스토프를 지나 쿠반으로 물러난다. 다시 버티지 못하게 몰아쳐야 한다.' },
-                volga: { pressure: 3, text: '차리친의 캅카스군이 고립되었다.' },
-                northwest: { pressure: 3, text: '유데니치군이 에스토니아 국경으로 밀려났다.' },
-                north: { pressure: 3, text: '영국군이 떠난 아르한겔스크의 북부 정부가 흔들린다.' },
+                south: { pressure: 13, foes: ['denikin'], text: '데니킨군이 하리코프와 로스토프를 지나 쿠반으로 물러난다. 다시 버티지 못하게 몰아쳐야 한다.' },
+                volga: { pressure: 3, foes: ['denikin'], text: '차리친의 캅카스군이 고립되었다.' },
+                northwest: { pressure: 3, foes: ['yudenich'], text: '유데니치군이 에스토니아 국경으로 밀려났다.' },
+                north: { pressure: 3, foes: ['north'], text: '영국군이 떠난 아르한겔스크의 북부 정부가 흔들린다.' },
             },
             cards: ['train', 'requisition', 'cheka', 'amnesty', 'cavalry'],
             choice: {
@@ -293,9 +360,9 @@
                 '6월, 데니킨에게서 지휘권을 넘겨받은 브란겔이 크림에서 나와 북타브리아를 차지했다. 7월 11일 영국 외무장관 커즌이 휴전과 「커즌선」을 제안한다.',
             ],
             threats: {
-                west: { pressure: 10, text: '폴란드군이 벨라루스에서 물러난다.', who: ['유제프 피우수트스키', 'jozef-pilsudski'] },
-                southwest: { pressure: 8, text: '키예프를 차지한 폴란드군을 몰아내야 한다.' },
-                crimea: { pressure: 8, text: '브란겔의 러시아군이 크림에서 나와 북타브리아로 진격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
+                west: { pressure: 10, foes: ['poland'], text: '폴란드군이 벨라루스에서 물러난다.', who: ['유제프 피우수트스키', 'jozef-pilsudski'] },
+                southwest: { pressure: 8, foes: ['poland', 'unr'], text: '키예프를 차지한 폴란드군을 몰아내야 한다.' },
+                crimea: { pressure: 8, foes: ['wrangel'], text: '브란겔의 러시아군이 크림에서 나와 북타브리아로 진격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
             },
             cards: ['train', 'requisition', 'cheka', 'amnesty'],
             choice: {
@@ -320,7 +387,7 @@
                 '크림으로 가는 길은 폭 8킬로미터의 페레코프 지협, 그 위를 가로막은 높이 10미터의 「터키 방벽」뿐이다. 동쪽은 얕은 석호 시바시다.',
             ],
             threats: {
-                crimea: { pressure: 12, text: '브란겔군이 북타브리아에서 크림의 방어선으로 물러난다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
+                crimea: { pressure: 12, foes: ['wrangel'], text: '브란겔군이 북타브리아에서 크림의 방어선으로 물러난다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
             },
             cards: ['train', 'requisition', 'cheka'],
             choice: {
@@ -403,7 +470,7 @@
         links: [['크론시타트 반란', E('kronstadt-1921')], ['안토노프 봉기', T('antonovshchina')], ['신경제정책', T('nep')]],
     };
 
-    const data = { fronts, frontOrder, moscow, startLines, cards, turns, battle, epilogue };
+    const data = { factions, fronts, frontOrder, moscow, startLines, cards, turns, battle, epilogue };
     if (typeof module === 'object' && module.exports) module.exports = data;
     else root.CivilWarData = data;
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -95,6 +95,24 @@ assert.ok(G.act(lost, 'settle'));
 assert.equal(lost.phase, 'done');
 assert.equal(lost.outcome.kind, 'moscow');
 
+// A front with no city left to lose carries the shortfall forward: the
+// summer of 1918 left the east empty means a harder autumn there.
+const empty = G.start();
+G.act(empty, 'choose', 'experts');
+assert.ok(G.act(empty, 'alloc', 'volga', empty.plan.divisions));
+const eastForecast = G.forecast(empty).fronts.east;
+assert.equal(eastForecast.change, -5);
+assert.equal(eastForecast.momentum, 4, '6 short: two cities beyond Kazan, +2 each');
+assert.ok(G.act(empty, 'settle'));
+assert.ok(G.act(empty, 'next'));
+const autumn = G.forecast(empty).fronts.east;
+assert.equal(autumn.pressure, D.turns[1].threats.east.pressure + 4);
+assert.deepEqual(autumn.pressureParts, ['적의 기세 +4']);
+G.act(empty, 'alloc', 'east', empty.plan.divisions);
+G.act(empty, 'choose', 'razverstka');
+G.act(empty, 'settle');
+assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries into');
+
 // Orders are checked: no settling before the fork, no overspending.
 const s0 = G.start();
 assert.equal(G.act(s0, 'settle'), false);

@@ -181,6 +181,7 @@
         const fc = s.phase === 'plan' ? G.forecast(s).fronts : null;
         const results = s.phase === 'plan' ? null : s.records[s.records.length - 1].fronts;
         const active = fc ? G.activeFronts(s) : Object.keys(results);
+        const turn = fc ? s.turn : s.records[s.records.length - 1].turn;
         for (const id of D.frontOrder) {
             const pts = points.fronts[id];
             const line = s.lines[id];
@@ -189,7 +190,7 @@
             layer.append(svg('polyline', { points: path, class: 'cw-chain' + (isActive ? ' is-active' : '') }));
             pts.forEach((p, i) => {
                 const held = i < line;
-                layer.append(svg('circle', { cx: p.x, cy: p.y, r: isActive ? 5.5 : 4.5, class: 'cw-city ' + (held ? 'is-held' : 'is-lost') }));
+                layer.append(svg('circle', { cx: p.x, cy: p.y, r: isActive ? 5.5 : 4.5, class: 'cw-city ' + (held ? 'is-held' : 'is-lost k-' + holderOf(id, turn).kind) }));
                 const [dx, dy, anchor] = LABEL_AT[p.name] || [8, 4, 'start'];
                 const label = svg('text', { x: p.x + dx, y: p.y + dy, 'text-anchor': anchor, class: 'cw-city-label' + (isActive ? ' is-active' : '') }, p.name);
                 layer.append(label);
@@ -234,13 +235,15 @@
         const phase = phases[index];
         $('cwHistoryToggle').setAttribute('aria-pressed', String(historyMap));
         $('cwHistoryToggle').textContent = historyMap ? '역사의 세력 범위 숨기기' : '역사의 세력 범위 보기';
-        $('cwMapCaption').textContent = historyMap && phase ? `역사: ${phase.date} ${phase.label}` : '붉은 점: 붉은 군대가 쥔 도시';
+        $('cwMapCaption').textContent = historyMap && phase ? `역사: ${phase.date} ${phase.label}` : '점의 색: 그 도시를 쥔 세력';
         $('cwMapLegend').replaceChildren(...(historyMap ? [
-            el('span', {}, el('i', { class: 'is-red' }), '적군'), el('span', {}, el('i', { class: 'is-blue' }), '백군·간섭군'),
+            el('span', {}, el('i', { class: 'is-red' }), '붉은 군대'), el('span', {}, el('i', { class: 'is-blue' }), '백군·간섭군'),
             el('span', {}, el('i', { class: 'is-amber' }), '독일·오스트리아'), el('span', {}, el('i', { class: 'is-gray' }), '독립국·인접국'),
             el('span', {}, el('i', { class: 'is-black' }), '마흐노'),
         ] : [
-            el('span', {}, el('i', { class: 'cw-key-held' }), '보유'), el('span', {}, el('i', { class: 'cw-key-lost' }), '적 점령'),
+            el('span', {}, el('i', { class: 'cw-key-held' }), '붉은 군대'), el('span', {}, el('i', { class: 'cw-key-lost k-white' }), '백군'),
+            el('span', {}, el('i', { class: 'cw-key-lost k-interv' }), '간섭군'), el('span', {}, el('i', { class: 'cw-key-lost k-central' }), '독일·오스트리아'),
+            el('span', {}, el('i', { class: 'cw-key-lost k-national' }), '폴란드·우크라이나'),
             el('span', {}, el('i', { class: 'cw-key-badge' }), '전투력/압력'),
         ]));
     }
@@ -271,16 +274,47 @@
             }, comm ? '정치위원 파견됨 ✓' : '정치위원 보내기');
             const verdict = after === hist ? '역사와 같음' : after > hist ? `역사보다 도시 ${after - hist}개 앞섬` : `역사보다 도시 ${hist - after}개 뒤처짐`;
             items.push(el('article', { class: 'cw-front' + (f.margin < -1 ? ' is-short' : ''), id: 'cwFront-' + id, tabindex: '-1' },
-                el('header', {}, el('h4', {}, D.fronts[id].name), el('span', {}, D.fronts[id].enemy)),
+                el('header', {}, el('h4', {}, D.fronts[id].name)),
+                foeList(threat.foes),
                 el('p', {}, threat.text, ' ', person(threat.who)),
                 el('p', { class: 'cw-front-line' }, `지금 보유: ${heldText(id, line)}`),
                 el('div', { class: 'cw-front-controls' }, stepper, commissar),
                 meter(id, f, line),
-                el('p', { class: 'cw-forecast' }, el('strong', {}, `예상: ${lineText(id, after)}`), el('span', {}, ` (${verdict})`)),
+                f.pressureParts.length ? el('p', { class: 'cw-parts' }, `압력: ${threat.pressure} 기본 · ${f.pressureParts.join(' · ')}`) : null,
+                el('p', { class: 'cw-forecast' }, el('strong', {}, `예상: ${lineText(id, after)}`), el('span', {}, ` (${verdict})`),
+                    f.momentum ? el('span', { class: 'cw-momentum' }, ` · 적의 기세: 다음 싸움 압력 +${f.momentum}`) : null),
                 f.parts.length ? el('p', { class: 'cw-parts' }, f.parts.join(' · ')) : null));
         }
         if (fc.supply.ratio < 1) items.push(el('p', { class: 'cw-warn' }, `곡물이 모자랍니다: 필요 ${fc.supply.need}, 가진 것 ${fc.supply.have}. 모든 전선의 전투력이 ${Math.round((1 - (0.5 + 0.5 * fc.supply.ratio)) * 100)}% 줄어듭니다.`));
         box.replaceChildren(...items);
+    }
+
+    function flag(stripes) {
+        const h = 12 / stripes.length;
+        const node = svg('svg', { viewBox: '0 0 18 12', class: 'cw-flag', 'aria-hidden': 'true' });
+        stripes.forEach((color, i) => node.append(svg('rect', { x: 0, y: i * h, width: 18, height: h, fill: color })));
+        return node;
+    }
+
+    // Factions met before this season start folded; a new one opens, so
+    // the reader learns who it is the first time it appears.
+    function foeList(ids) {
+        const seen = new Set();
+        for (let t = 0; t < s.turn; t++) for (const th of Object.values(D.turns[t].threats)) (th.foes || []).forEach(f => seen.add(f));
+        return el('div', { class: 'cw-foes' }, el('span', { class: 'cw-foes-label' }, '상대'), ...(ids || []).map(fid => {
+            const f = D.factions[fid];
+            return el('details', { class: 'cw-foe is-' + f.kind, open: !seen.has(fid) },
+                el('summary', {}, f.flag ? flag(f.flag) : el('i', { class: 'cw-foe-dot' }), f.name, seen.has(fid) ? null : el('small', {}, ' 처음 만남')),
+                el('p', {}, f.note, f.link ? ' ' : null, f.link ? el('a', Object.assign({ href: f.link }, NEW_TAB), '더 읽기 ↗') : null));
+        }));
+    }
+
+    // Who holds a front's lost cities: this season's attacker, or the
+    // front's holder of record when it is quiet.
+    function holderOf(id, turn) {
+        const threat = turn === s.turn ? G.threatsOf(s)[id] : D.turns[turn].threats[id];
+        const fid = threat && threat.foes ? threat.foes[0] : D.fronts[id].holders[turn];
+        return D.factions[fid];
     }
 
     // The strength bar against its two thresholds: the pressure, where the
@@ -300,11 +334,14 @@
         const tone = f.margin < -1 ? ' is-short' : f.margin >= 3 && better > historical ? ' is-ahead' : '';
         const bar = el('div', { class: 'cw-meter-bar' },
             el('span', { class: 'cw-meter-fill' + tone, style: `width:${at(f.strength)}` }),
+            f.pressure > 1 ? el('i', { class: 'cw-meter-tick is-minus', style: `left:${at(f.pressure - 1)}` }) : null,
             el('i', { class: 'cw-meter-tick', style: `left:${at(f.pressure)}` }),
             el('i', { class: 'cw-meter-tick is-plus', style: `left:${at(f.pressure + 3)}` }));
-        const label = `전투력 ${f.strength}. 압력 ${f.pressure}이면 역사대로 ${lineText(id, historical)}, ${f.pressure + 3}이면 ${better > historical ? lineText(id, better) : '더 얻을 도시 없음'}.`;
+        const worse = historical > 0 ? `도시 −1 · ${lineText(id, historical - 1)}` : '기세 +2 · 다음 싸움 압력 +2';
+        const label = `전투력 ${f.strength}. ${Math.max(0, f.pressure - 1)} 미만이면 ${worse}. 압력 ${f.pressure}이면 역사대로 ${lineText(id, historical)}, ${f.pressure + 3}이면 ${better > historical ? lineText(id, better) : '더 얻을 도시 없음'}.`;
         return el('div', { class: 'cw-meter', role: 'img', 'aria-label': label },
-            el('p', { class: 'cw-meter-value' }, el('strong', {}, `전투력 ${f.strength}`)),
+            el('div', { class: 'cw-meter-top' }, el('strong', {}, `전투력 ${f.strength}`),
+                f.pressure > 1 ? el('span', { class: 'cw-meter-minus' }, `${f.pressure - 1} 미만: ${worse}`) : null),
             bar,
             el('div', { class: 'cw-meter-marks' },
                 el('span', { class: f.pressure / top < 0.15 ? 'is-start' : null, style: `left:${at(f.pressure)}` }, `${f.pressure} 역사대로`, el('small', {}, lineText(id, historical))),
@@ -456,7 +493,7 @@
             const g = svg('g', {
                 class: `cw-unit is-${u.side} k-${u.kind}${u.id === selected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done ? ' is-done' : ''}`,
                 tabindex: (u.side === 'red' && !u.acted) || isTarget ? '0' : '-1', role: 'button',
-                'aria-label': `${u.side === 'red' ? '적군' : '백군'} ${u.name}, 병력 ${u.hp}/${u.maxHp}` + (isTarget ? `, 공격 시 피해 ${B.preview(b, unit, u).dmg}` : ''),
+                'aria-label': `${u.side === 'red' ? '붉은 군대' : '백군'} ${u.name}, 병력 ${u.hp}/${u.maxHp}` + (isTarget ? `, 공격 시 피해 ${B.preview(b, unit, u).dmg}` : ''),
             });
             g.append(svg('rect', { x: x + 4, y: y + 4, width: CELL - 8, height: CELL - 8, rx: 3 }));
             g.append(svg('text', { x: x + CELL / 2, y: y + 22, 'text-anchor': 'middle', class: 'cw-unit-glyph' }, { inf: '보', cav: '기', art: '포' }[u.kind]));

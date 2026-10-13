@@ -16,6 +16,7 @@
     const STEP = 3;                 // margin per city beyond history's
     const COMMISSAR = 1.5;          // a commissar's strength on his front
     const SLACK = 1;                // a shortfall under this still holds
+    const MOMENTUM = 2;             // next season's pressure per city lost beyond the last
     const WARSAW = 8;               // the western front's margin that takes Warsaw
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
@@ -25,7 +26,7 @@
             version: VERSION, turn: 0, phase: 'plan',
             peasants: 60, workers: 60, cohesion: 60, grain: 6,
             flags: {}, lines: Object.assign({}, DATA.startLines),
-            petrogradFell: false, deserted: 0, revolt: 0,
+            petrogradFell: false, deserted: 0, revolt: 0, momentum: {},
             records: [], log: [], battle: null, outcome: null,
         };
         enterTurn(s);
@@ -41,7 +42,7 @@
         const t = turnData(s);
         const threats = Object.assign({}, t.threats);
         if (s.flags.turned && REGROUP[t.id] && !threats.east) {
-            threats.east = { pressure: REGROUP[t.id], text: '우랄에서 멈춘 사이 콜차크군이 다시 일어서 동쪽에서 밀려온다.', who: ['알렉산드르 콜차크', 'alexander-kolchak'] };
+            threats.east = { pressure: REGROUP[t.id], foes: ['kolchak'], text: '우랄에서 멈춘 사이 콜차크군이 다시 일어서 동쪽에서 밀려온다.', who: ['알렉산드르 콜차크', 'alexander-kolchak'] };
         }
         return threats;
     }
@@ -178,6 +179,8 @@
             }
             if (flags.cavalry && ['south', 'crimea', 'southwest'].includes(id)) { strength += 4; parts.push('제1기병군 +4'); }
             let pressure = threat.pressure;
+            const pressureParts = [];
+            if (s.momentum[id]) { pressure += s.momentum[id]; pressureParts.push(`적의 기세 +${s.momentum[id]}`); }
             // Season-specific consequences of this and earlier choices.
             if (t.id === 'kolchak' && id === 'east') {
                 if (choice === 'flank') { strength -= 3; parts.push('측면 반격 준비 −3'); }
@@ -186,7 +189,7 @@
             if (t.id === 'directive' && id === 'east' && flags.flank) { strength += 7; parts.push('프룬제의 측면 반격 +7'); }
             if (flags.turned && t.id === 'orel' && id === 'south') { strength += 5; parts.push('동부에서 온 사단 +5'); }
             if (t.id === 'orel' && id === 'northwest' && choice === 'hold') { strength += 4; parts.push('페트로그라드 사수 +4'); }
-            if (t.id === 'orel' && id === 'northwest' && choice === 'yield') { pressure += 6; }
+            if (t.id === 'orel' && id === 'northwest' && choice === 'yield') { pressure += 6; pressureParts.push('병력을 남쪽으로 뺌 +6'); }
             if (t.id === 'orel' && id === 'south' && choice === 'yield') { strength += 4; parts.push('북서에서 온 병력 +4'); }
             if (flags.calm && (id === 'north' || id === 'south') && flags.calm >= s.turn) pressure = Math.max(0, pressure - 2);
             for (const c of s.plan.cards) {
@@ -194,28 +197,36 @@
                 if (card.calm && card.calm.includes(id)) pressure = Math.max(0, pressure - card.calmBy);
             }
             const margin = strength - pressure;
-            out[id] = { divisions: d, strength: round1(strength), pressure, margin: round1(margin), parts, change: changeOf(s, id, margin) };
+            const result = outcomeOf(s, id, margin);
+            out[id] = {
+                divisions: d, strength: round1(strength), pressure, margin: round1(margin), parts, pressureParts,
+                change: result.change, momentum: result.overflow * MOMENTUM,
+            };
         }
         return { fronts: out, supply };
     }
 
     // A front moves as it did in history this season when the strength meets
     // the pressure; every STEP above it gains one more city (one at most),
-    // every STEP short (beyond SLACK) loses one more.
-    function changeOf(s, id, margin) {
+    // every STEP short (beyond SLACK) loses one more. Cities lost beyond the
+    // last are the overflow: the enemy's momentum, carried into the front's
+    // next fight as MOMENTUM pressure each.
+    function outcomeOf(s, id, margin) {
         const line = s.lines[id];
         const front = DATA.fronts[id];
         const max = front.cities.length;
         const was = s.turn ? front.history[s.turn - 1] : DATA.startLines[id];
         const historical = front.history[s.turn] - was;
         const bonus = margin >= 0 ? Math.min(1, Math.floor(margin / STEP)) : -Math.ceil((-margin - SLACK) / STEP);
+        const raw = line + historical + bonus;
+        const overflow = bonus < 0 ? Math.min(-bonus, Math.max(0, -raw)) : 0;
         // Warsaw is the third city of the western front. Only the march on
         // Warsaw reaches it, and only with WARSAW to spare.
         if (id === 'west') {
-            if (s.plan.choice === 'warsaw' && margin >= WARSAW) return max - line;
-            return clamp(line + historical + bonus, 0, max - 1) - line;
+            if (s.plan.choice === 'warsaw' && margin >= WARSAW) return { change: max - line, overflow: 0 };
+            return { change: clamp(raw, 0, max - 1) - line, overflow };
         }
-        return clamp(line + historical + bonus, 0, max) - line;
+        return { change: clamp(raw, 0, max) - line, overflow };
     }
 
     function supplyOf(s) {
@@ -267,6 +278,8 @@
         const fronts = {};
         for (const [id, f] of Object.entries(fc.fronts)) {
             s.lines[id] += f.change;
+            s.momentum[id] = f.momentum;
+            if (f.momentum) notes.push(`${DATA.fronts[id].name}: 더 잃을 도시가 없는데도 막지 못해, 적이 기세를 몰아 온다. 이 전선의 다음 싸움에서 압력 +${f.momentum}.`);
             fronts[id] = Object.assign({}, f, { before: before[id], after: s.lines[id], history: DATA.fronts[id].history[s.turn] });
         }
 
