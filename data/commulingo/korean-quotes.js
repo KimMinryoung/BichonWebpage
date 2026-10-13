@@ -117,12 +117,15 @@ function convert(s, html) {
     return { text, leftovers };
 }
 
-const normalizeKoreanQuotes = text => convert(text, false).text;
-const normalizeKoreanQuotesHtml = html => convert(html, true).text;
+// Twice: a single quote right after a straight double quote ("'수감자'…")
+// only reads as opening once that double quote has become “.
+const settle = (s, html) => convert(convert(s, html).text, html);
+const normalizeKoreanQuotes = text => settle(text, false).text;
+const normalizeKoreanQuotesHtml = html => settle(html, true).text;
 
 // Straight quotes a person still has to resolve, with a little context.
 function straightQuoteLeftovers(s, { html = false, context = 24 } = {}) {
-    const { text, leftovers } = convert(s, html);
+    const { text, leftovers } = settle(s, html);
     return leftovers.map(i => text.slice(Math.max(0, i - context), i + context + 1).replace(/\s+/g, ' '));
 }
 
