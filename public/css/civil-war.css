@@ -193,6 +193,7 @@
 .cw-meter-band.is-behind { background: color-mix(in srgb, var(--clr-red) 30%, transparent); }
 .cw-meter-band.is-even { background: color-mix(in srgb, var(--text-secondary) 18%, transparent); }
 .cw-meter-band.is-ahead { background: color-mix(in srgb, var(--btn-primary, #2da44e) 35%, transparent); }
+.cw-meter-fill { position: absolute; top: 0; bottom: 0; left: 0; background: var(--cw-red); transition: width .2s ease; }
 .cw-meter-tick { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--border); }
 .cw-meter-tick small { position: absolute; top: 100%; left: 0; transform: translateX(-50%); padding-top: 1px; font-size: .7rem; font-variant-numeric: tabular-nums; color: var(--text-secondary); }
 .cw-meter-now { position: absolute; top: -4px; bottom: -4px; width: 3px; margin-left: -1.5px; background: var(--text-primary); transition: left .2s ease; }
@@ -202,7 +203,7 @@
 .cw-meter-bands li.is-ahead { border-left-color: var(--btn-primary, #2da44e); }
 .cw-meter-bands li.is-even { border-left-color: var(--text-secondary); }
 .cw-meter-bands li.is-now { color: var(--text-primary); font-weight: 700; background: color-mix(in srgb, var(--text-primary) 8%, transparent); }
-@media (prefers-reduced-motion: reduce) { .cw-meter-now { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .cw-meter-now, .cw-meter-fill { transition: none; } }
 .cw-foes { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 6px; }
 .cw-foes-label { font-size: .75rem; font-weight: 700; color: var(--text-secondary); padding-top: 5px; }
 .cw-foe { flex: 1 1 100%; border: 1px solid var(--border); background: var(--bg-canvas); }
@@ -487,3 +488,7 @@
     .cw-stepper output { min-width: 50px; }
     .cw-command { justify-content: space-between; }
 }
+
+/* A card in play: red rim and a red wash, not just its button's words. */
+.cw-card.is-played { border: 2px solid var(--cw-red); padding: 7px 9px; background: color-mix(in srgb, var(--cw-red) 22%, var(--bg-canvas)); }
+.games-shell .cw-toggle[aria-pressed="true"] { background: color-mix(in srgb, var(--cw-red) 22%, var(--bg-canvas)); }

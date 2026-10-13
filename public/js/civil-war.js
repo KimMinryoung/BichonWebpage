@@ -587,6 +587,7 @@
         const versus = b => b.after === hist ? '역사대로' : b.after > hist ? `역사보다 도시 ${b.after - hist}개 앞섬` : `역사보다 도시 ${hist - b.after}개 뒤처짐`;
         const bar = el('div', { class: 'cw-meter-bar', 'aria-hidden': 'true' },
             ...bands.map(b => el('span', { class: `cw-meter-band ${b.tone}`, style: `left:${at(b.from)};width:calc(${at(b.to === null ? top : b.to)} - ${at(b.from)})` })),
+            el('span', { class: 'cw-meter-fill', style: `width:${at(f.strength)}` }),
             ...bands.slice(1).map(b => el('i', { class: 'cw-meter-tick', style: `left:${at(b.from)}` },
                 el('small', {}, String(b.from)))),
             el('span', { class: 'cw-meter-now', style: `left:${at(f.strength)}` }));
