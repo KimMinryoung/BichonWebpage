@@ -389,7 +389,7 @@
         const n = s.plan.alloc[id];
         const commissar = s.plan.commissar[id];
         const train = s.plan.cards.some(c => c.target === id);
-        const extra = (commissar ? 1 : 0) + (train ? 2 : 0);
+        const extra = (commissar ? 2 : 0) + (train ? 3 : 0);
         const g = svg('g', { class: 'cw-pips', 'aria-hidden': 'true' });
         if (!n && !extra) return g;
         const perRow = 8, size = 6, gap = 2;
@@ -414,8 +414,8 @@
         avoid.push(best.box);
         const slot = i => [best.box.x0 + (i % perRow) * (size + gap), best.box.y0 + Math.floor(i / perRow) * (size + gap)];
         for (let i = 0; i < n; i++) { const [x, y] = slot(i); g.append(svg('rect', { x, y, width: size, height: size, class: 'cw-pip' })); }
-        if (commissar) { const [x, y] = slot(n); g.append(svg('path', { d: star(x + size / 2, y + size / 2, 5, 2.2), class: 'cw-pip-star' })); }
-        if (train) { const [x, y] = slot(n + (commissar ? 1 : 0)); g.append(trainGlyph(x, y - 1, 14)); }
+        if (commissar) { const [x, y] = slot(n); g.append(svg('path', { d: star(x + size / 2 + 1, y + size / 2, 7.5, 3.2), class: 'cw-pip-star' })); }
+        if (train) { const [x, y] = slot(n + (commissar ? 2 : 0)); g.append(trainGlyph(x + 2, y - 4, 19)); }
         return g;
     }
 

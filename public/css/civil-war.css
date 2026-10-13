@@ -5,9 +5,13 @@
     --cw-red: #a21e2a;
     /* The Whites: white with a dark rim, so they read on both themes. */
     --cw-white: #ffffff; --cw-ink: #4a4a46;
+    /* Commissar's star and Trotsky's train: gold with a dark rim, which
+       holds on the light theme's cream as well as on the dark. */
+    --cw-gold: #f2d64b; --cw-gold-rim: #1d1d1b;
     --emap-blue: #2f6fb8; --emap-red: var(--clr-red); --emap-amber: #c7861c;
     --emap-purple: #7b5aa6; --emap-gray: #8d8d86; --emap-green: #3f8a4a; --emap-black: var(--text-primary);
 }
+[data-theme="light"] .cw-shell { --cw-gold: #e8b10c; --cw-gold-rim: #3a2a00; }
 .cw-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .cw-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin: 18px 0 20px; border-bottom: 2px solid var(--border); padding: 0 var(--content-inset) 16px; }
 .cw-heading h1 { font-size: clamp(1.35rem, 3.3vw, 2.3rem); letter-spacing: -.045em; margin: 8px 0; }
@@ -134,7 +138,7 @@
 .cw-ring.k-central { stroke: var(--emap-amber); }
 .cw-ring.k-national { stroke: var(--emap-gray); }
 .cw-pip { fill: var(--clr-red); stroke: var(--bg-surface); stroke-width: .8; }
-.cw-pip-star { fill: #f2d64b; stroke: var(--bg-surface); stroke-width: .6; }
+.cw-pip-star { fill: var(--cw-gold); stroke: var(--cw-gold-rim); stroke-width: .9; }
 .cw-city { stroke-width: 2; }
 .cw-city.is-held { fill: var(--clr-red); stroke: var(--bg-surface); }
 .cw-city.is-lost { stroke: var(--cw-ink); stroke-width: 1.5; }
@@ -509,15 +513,15 @@
 .cw-force strong { font-size: .84rem; }
 .cw-mks { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 2px; max-width: 150px; }
 .cw-force.is-foe .cw-mks { justify-content: flex-end; }
-.cw-mk { display: inline-block; width: 8px; height: 8px; box-sizing: border-box; }
+.cw-mk { display: inline-block; width: 10px; height: 10px; box-sizing: border-box; }
 .cw-mk.is-red { background: var(--cw-red); }
 .cw-mk.k-white { background: var(--cw-white); border: 1px solid var(--cw-ink); }
 .cw-mk.k-interv { background: var(--emap-blue); }
 .cw-mk.k-central { background: var(--emap-amber); }
 .cw-mk.k-national { background: var(--emap-gray); }
-.cw-mk-star { width: 12px; height: 12px; fill: #f2d64b; }
-.cw-mk-train { width: 16px; height: 13px; }
-.cw-train { fill: #f2d64b; stroke: #1d1d1b; stroke-width: .7; }
+.cw-mk-star { width: 17px; height: 17px; fill: var(--cw-gold); stroke: var(--cw-gold-rim); stroke-width: .8; }
+.cw-mk-train { width: 22px; height: 18px; }
+.cw-train { fill: var(--cw-gold); stroke: var(--cw-gold-rim); stroke-width: .9; }
 .cw-foe-mark { stroke: var(--bg-surface); stroke-width: .6; }
 .cw-foe-mark.k-white { fill: var(--cw-white); }
 .cw-foe-mark.k-interv { fill: var(--emap-blue); }
