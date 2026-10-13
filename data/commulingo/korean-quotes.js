@@ -12,7 +12,7 @@
 // else ('80년대, a stray mark) is left straight for a person to look at, and
 // the audit reports it.
 
-const OPEN_BEFORE = /[\s\u200B\uFEFF([{「『《〈“‘—–\-·/,:;*]/u;
+const OPEN_BEFORE = /[\s\u200B\uFEFF([{「『《〈“‘—–\-·/:;*]/u;
 const LATIN_OR_DIGIT = /[A-Za-z0-9À-ɏ]/;
 const MARKS = { '"': ['“', '”'], "'": ['‘', '’'] };
 const SKIP_ELEMENTS = new Set(['code', 'pre', 'script', 'style', 'kbd', 'samp']);

@@ -26,4 +26,6 @@ assert.equal(q("'연합'([출처](https://en.wikipedia.org/wiki/Peasants'_Union)
 assert.equal(q('둡체크를 \\"부르주아 민족주의자\\"라고'), '둡체크를 “부르주아 민족주의자”라고');
 // Idempotent: the inner pair settles once the outer double quote is curly.
 assert.equal(q(`코간이 물었다. "'수감자'는 모욕적이고 '라게르니크'는 무미건조합니다."`), '코간이 물었다. “‘수감자’는 모욕적이고 ‘라게르니크’는 무미건조합니다.”');
+// A comma before a quote closes it ("인적 원리는," 바우어는 말한다).
+assert.equal(q('"인적 원리는," 바우어는 말한다. "주민이 나뉜다."'), '“인적 원리는,” 바우어는 말한다. “주민이 나뉜다.”');
 console.log('korean quotes ok');
