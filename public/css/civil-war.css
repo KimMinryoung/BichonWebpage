@@ -342,3 +342,20 @@
 @media (prefers-reduced-motion: no-preference) {
     .cw-option, .cw-front { transition: background-color .15s ease, border-color .15s ease; }
 }
+
+/* The crumb bar pins while a season is planned and carries what is left:
+   divisions to send, command, commissars, the grain over what the sent
+   divisions eat. The jump to the other game gives up its place. */
+.cw-shell .games-crumb.has-status { position: sticky; top: 0; z-index: 50; flex-wrap: nowrap; }
+.cw-shell .games-crumb.has-status .games-crumb-jump { display: none; }
+.cw-crumb-status { display: none; margin: 0 0 0 auto; gap: 14px; font-size: .8rem; white-space: nowrap; }
+.games-crumb.has-status .cw-crumb-status { display: flex; }
+.cw-crumb-status div { display: flex; align-items: baseline; gap: 5px; }
+.cw-crumb-status dt { color: var(--text-secondary); }
+.cw-crumb-status dd { margin: 0; font-weight: 800; font-variant-numeric: tabular-nums; }
+.cw-crumb-status .is-warn dd { color: var(--clr-red); }
+@media (max-width: 560px) {
+    .cw-shell .games-crumb.has-status .games-crumb-item:last-child { display: none; }
+    .cw-crumb-status { gap: 10px; font-size: .76rem; }
+    .cw-crumb-status div { gap: 3px; }
+}

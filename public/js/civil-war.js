@@ -20,6 +20,13 @@
     const mapEl = $('cwMap');
     const points = JSON.parse(mapEl.dataset.points);
     const phases = JSON.parse(mapEl.dataset.phases || '[]');
+    // The resources left this season ride in the page's crumb bar, which
+    // pins to the top while a season is being planned.
+    const crumb = document.querySelector('.games-crumb');
+    const crumbStatus = document.createElement('dl');
+    crumbStatus.className = 'cw-crumb-status';
+    crumbStatus.setAttribute('aria-label', '이번 시기에 남은 자원');
+    crumb.insertBefore(crumbStatus, crumb.querySelector('.games-crumb-jump'));
 
     // ── Helpers ──
 
@@ -126,7 +133,19 @@
 
     // ── Render ──
 
+    // Every control carries a data-key; render() rebuilds the controls, so
+    // the one in focus gets it back (or its card, when it went disabled).
     function render() {
+        const active = document.activeElement;
+        const key = active && active.dataset ? active.dataset.key : null;
+        draw();
+        if (!key) return;
+        const again = document.querySelector(`[data-key="${key}"]`);
+        if (again && !again.disabled) again.focus({ preventScroll: true });
+        else if (again) (again.closest('[tabindex]') || again.closest('article') || document.body).focus({ preventScroll: true });
+    }
+
+    function draw() {
         renderHud();
         const inBattle = s.phase === 'battle' && reviewSeen;
         $('cwCampaign').hidden = inBattle || s.phase === 'done';
@@ -168,6 +187,14 @@
         items.push(...stat('노동자 지지', String(s.workers), '동원에 영향', s.workers < 40));
         items.push(...stat('당 결속', String(s.cohesion), s.cohesion < 30 ? '분열' : '', s.cohesion < 30));
         $('cwStats').replaceChildren(...items);
+        const planning = s.phase === 'plan';
+        crumb.classList.toggle('has-status', planning);
+        crumbStatus.replaceChildren(...(planning ? [
+            ['남은 사단', `${G.free(s)}/${plan.divisions}`, G.free(s) > 0],
+            ['지휘력', String(plan.command), false],
+            ['정치위원', String(plan.commissars - G.commissarsUsed(s)), false],
+            ['곡물 여유', signed(supply.have - supply.need), supply.ratio < 1],
+        ].map(([label, value, warn]) => el('div', { class: warn ? 'is-warn' : '' }, el('dt', {}, label), el('dd', {}, value))) : []));
         $('cwArmy').hidden = s.phase !== 'plan';
         if (s.phase === 'plan') renderArmy();
     }
@@ -451,22 +478,16 @@
             const hist = D.fronts[id].history[s.turn];
             const n = s.plan.alloc[id];
             const stepper = el('div', { class: 'cw-stepper', role: 'group', 'aria-label': `${D.fronts[id].name} 사단` },
-                el('button', { type: 'button', 'aria-label': `${D.fronts[id].short}에서 사단 하나 빼기`, disabled: n === 0, onclick: () => { act('alloc', id, n - 1); render(); } }, '−'),
+                el('button', { type: 'button', 'data-key': `less-${id}`, 'aria-label': `${D.fronts[id].short}에서 사단 하나 빼기`, disabled: n === 0, onclick: () => { act('alloc', id, n - 1); render(); } }, '−'),
                 el('output', { 'aria-live': 'polite' }, `${n}개 사단`),
-                el('button', { type: 'button', 'aria-label': `${D.fronts[id].short}에 사단 하나 보내기`, disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + 1); render(); } }, '+'),
-                el('button', { type: 'button', class: 'cw-fill', disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + G.free(s)); render(); } }, '남은 사단 모두'));
-            const comm = s.plan.commissar[id];
-            const commissar = el('button', {
-                type: 'button', class: 'cw-toggle', 'aria-pressed': String(comm),
-                disabled: !comm && G.commissarsUsed(s) >= s.plan.commissars,
-                onclick: () => { act('commissar', id, !comm); render(); },
-            }, comm ? '정치위원 파견됨 ✓' : '정치위원 보내기');
+                el('button', { type: 'button', 'data-key': `more-${id}`, 'aria-label': `${D.fronts[id].short}에 사단 하나 보내기`, disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + 1); render(); } }, '+'),
+                el('button', { type: 'button', 'data-key': `fill-${id}`, class: 'cw-fill', disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + G.free(s)); render(); } }, '남은 사단 모두'));
             const card = el('article', { class: 'cw-front' + (after < hist ? ' is-short' : ''), id: 'cwFront-' + id, tabindex: '-1' },
                 el('header', {}, el('h4', {}, D.fronts[id].name)),
                 foeList(threat.foes),
                 el('p', {}, threat.text, ' ', person(threat.who)),
                 el('p', { class: 'cw-front-line' }, `지금 보유: ${heldText(id, line)}`),
-                el('div', { class: 'cw-front-controls' }, stepper, commissar),
+                el('div', { class: 'cw-front-controls' }, stepper, commissarToggle(id), ...frontCards(id)),
                 meter(id, f, line, s.turn, s.plan.choice, '예상'),
                 f.pressureParts.length ? el('p', { class: 'cw-parts' }, `압력: ${threat.pressure} 기본 · ${f.pressureParts.join(' · ')}`) : null,
                 f.parts.length ? el('p', { class: 'cw-parts' }, f.parts.join(' · ')) : null);
@@ -475,6 +496,43 @@
         }
         if (fc.supply.ratio < 1) items.push(el('p', { class: 'cw-warn' }, `곡물이 모자랍니다: 필요 ${fc.supply.need}, 가진 것 ${fc.supply.have}. 모든 전선의 전투력이 ${Math.round((1 - (0.5 + 0.5 * fc.supply.ratio)) * 100)}% 줄어듭니다.`));
         box.replaceChildren(...items);
+    }
+
+    // The commissar on this front. With a single commissar already sent
+    // elsewhere, the button moves him here instead of going dead.
+    function commissarToggle(id) {
+        const on = s.plan.commissar[id];
+        const none = G.commissarsUsed(s) >= s.plan.commissars;
+        const from = !on && none && s.plan.commissars === 1 ? Object.keys(s.plan.commissar).find(f => s.plan.commissar[f]) : null;
+        return el('button', {
+            type: 'button', class: 'cw-toggle', 'data-key': `commissar-${id}`, 'aria-pressed': String(on),
+            disabled: !on && none && !from,
+            onclick: () => { if (from) act('commissar', from, false); act('commissar', id, !on); render(); },
+        }, on ? '정치위원 파견됨 ✓' : from ? `정치위원 이리로 (${D.fronts[from].short}에서)` : '정치위원 보내기');
+    }
+
+    // Cards aimed at a front (Trotsky's train) are sent from the front's own
+    // card: pressing it on another front moves the card there.
+    function frontCards(id) {
+        return G.turnData(s).cards.filter(cid => D.cards[cid].target === 'front' && G.cardOffered(s, cid)).map(cid => {
+            const card = D.cards[cid];
+            const played = s.plan.cards.find(c => c.id === cid);
+            const here = played && played.target === id;
+            const name = card.title.replace(/^.*의 /, '');
+            const label = here ? `${name} 투입됨 ✓ (전투력 +${card.bonus})`
+                : played ? `${name} 이리로 (${D.fronts[played.target].short}에서)`
+                : `${name} 보내기 (지휘력 ${card.cost})`;
+            return el('button', {
+                type: 'button', class: 'cw-toggle', 'data-key': `${cid}-${id}`, 'aria-pressed': String(Boolean(here)),
+                disabled: !played && !G.canPlay(s, cid, id),
+                title: !played && s.plan.command < card.cost ? '지휘력이 모자랍니다' : null,
+                onclick: () => {
+                    if (played) act('unplay', cid);
+                    if (!here) act('play', cid, id);
+                    render();
+                },
+            }, label);
+        });
     }
 
     function flag(stripes) {
@@ -559,14 +617,13 @@
             const played = s.plan.cards.find(c => c.id === id);
             let control;
             if (played) {
-                control = el('button', { type: 'button', onclick: () => { if (!act('unplay', id)) announce('이미 전선에 보낸 사단이 있어 되돌릴 수 없습니다. 먼저 사단을 빼세요.'); render(); } },
+                control = el('button', { type: 'button', 'data-key': `unplay-${id}`, onclick: () => { if (!act('unplay', id)) announce('이미 전선에 보낸 사단이 있어 되돌릴 수 없습니다. 먼저 사단을 빼세요.'); render(); } },
                     played.target ? `${D.fronts[played.target].short}에 보냄 · 취소` : '사용함 · 취소');
             } else if (card.target === 'front') {
-                const select = el('select', { 'aria-label': `${card.title}을 보낼 전선` }, ...G.activeFronts(s).map(f => el('option', { value: f }, D.fronts[f].name)));
-                control = el('div', { class: 'cw-card-target' }, select,
-                    el('button', { type: 'button', disabled: !G.canPlay(s, id, select.value), onclick: () => { act('play', id, select.value); render(); } }, `쓰기 (지휘력 ${card.cost})`));
+                control = el('button', { type: 'button', onclick: () => { const box = $('cwFronts'); box.scrollIntoView({ block: 'start' }); const first = box.querySelector(`[data-key^="${id}-"]`); if (first) first.focus({ preventScroll: true }); } },
+                    '전선 카드에서 보낼 곳 고르기 ↑');
             } else {
-                control = el('button', { type: 'button', disabled: !G.canPlay(s, id), onclick: () => { act('play', id); render(); } }, `쓰기 (지휘력 ${card.cost})`);
+                control = el('button', { type: 'button', 'data-key': `play-${id}`, disabled: !G.canPlay(s, id), onclick: () => { act('play', id); render(); } }, `쓰기 (지휘력 ${card.cost})`);
             }
             grid.append(el('article', { class: 'cw-card' + (played ? ' is-played' : '') },
                 el('h4', {}, card.title), el('p', { class: 'cw-advisor' }, person(card.advisor)),
@@ -586,7 +643,7 @@
             el('h3', { id: 'cwChoiceTitle' }, c.title),
             el('p', {}, c.text, ' ', person(c.who)),
             el('div', { class: 'cw-options', role: 'group', 'aria-label': c.title }, ...c.options.map(o => el('button', {
-                type: 'button', class: 'cw-option', 'aria-pressed': String(s.plan.choice === o.id),
+                type: 'button', class: 'cw-option', 'data-key': `choice-${o.id}`, 'aria-pressed': String(s.plan.choice === o.id),
                 onclick: () => { if (!act('choose', o.id)) announce('이미 보낸 사단이 너무 많습니다. 먼저 사단을 빼세요.'); render(); },
             }, el('strong', {}, o.label), el('span', {}, o.effect), el('small', {}, `지지: ${o.voices}`)))));
     }
