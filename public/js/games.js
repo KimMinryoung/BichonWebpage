@@ -11,6 +11,12 @@
             show('gamesStrikeResume', `${saved.day}일차 이어하기 →`);
             show('gamesStrikeProgress', game.scenarios[saved.scenario].title + ' · 이 브라우저에 저장됨');
         }
+        const war = window.CivilWarGame.restore(localStorage.getItem('civil-war-v1-save'));
+        if (war && war.phase !== 'done') {
+            const turn = window.CivilWarGame.DATA.turns[war.turn];
+            show('gamesCivilWarResume', `${war.turn + 1}/8 시기 이어하기 →`);
+            show('gamesCivilWarProgress', `${turn.date} ${turn.title} · 이 브라우저에 저장됨`);
+        }
         const progress = JSON.parse(localStorage.getItem('nonogram-progress-v2') || '{}');
         if (progress && typeof progress === 'object' && !Array.isArray(progress)) {
             const entries = Object.values(progress).filter(p => p && Array.isArray(p.cells));

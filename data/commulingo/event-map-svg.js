@@ -821,4 +821,49 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
     return { svg: parts.join('\n'), width: frame.width, height: frame.height };
 }
 
-module.exports = { renderEventMapSvg, timelineGeos, numberedGeos, isCityScale };
+// A fixed regional frame with the event's control phases and no markers,
+// for a page that draws its own layer on top (the civil-war game). box is
+// { west, east, south, north } in degrees; the result carries the
+// projection so the caller can place its own points.
+function renderRegionMapSvg(box, control, label) {
+    const lonSpan = box.east - box.west;
+    const latSpan = box.north - box.south;
+    const kx = Math.cos((box.north + box.south) / 2 * Math.PI / 180);
+    const frame = {
+        x0: box.west, x1: box.east, y0: box.south, y1: box.north, lonSpan, latSpan, kx,
+        width: WIDTH, height: Math.round(WIDTH * latSpan / (lonSpan * kx)), lonShifted: false,
+    };
+    const project = (lng, lat) => [
+        (lng - frame.x0) / frame.lonSpan * frame.width,
+        (frame.y1 - lat) / frame.latSpan * frame.height,
+    ];
+    const level = lonSpan > LOW_RES_LON_SPAN ? 'low' : 'high';
+    const id = String(control && control.eventId || 'region').replace(/[^a-z0-9-]/gi, '');
+    const parts = [`<svg xmlns="http://www.w3.org/2000/svg" class="emap-svg" viewBox="0 0 ${frame.width} ${frame.height}" role="img" aria-label="${esc(label)}">`];
+    parts.push(`<rect class="emap-sea" x="0" y="0" width="${frame.width}" height="${frame.height}"/>`);
+    const land = landPath(level, frame, project);
+    if (control) {
+        const clipId = `emap-land-clip-${id}`;
+        const ctl = renderControlLayer(control, frame, project, `emap-ctl-${id}`);
+        parts.push(`<path id="emap-land-${id}" class="emap-land" fill-rule="evenodd" clip-rule="evenodd" d="${land}"/>`);
+        parts.push(`<defs><clipPath id="${clipId}"><use href="#emap-land-${id}"/></clipPath></defs>`);
+        parts.push(ctl.defs, ctl.layer(clipId), ctl.spots);
+    } else {
+        parts.push(`<path class="emap-land" fill-rule="evenodd" d="${land}"/>`);
+    }
+    parts.push(waterLayers(level, frame, project));
+    const step = graticuleStep(lonSpan);
+    for (let lon = Math.ceil(frame.x0 / step) * step; lon <= frame.x1; lon += step) {
+        const [x] = project(lon, 0);
+        parts.push(`<line class="emap-grid" x1="${x.toFixed(1)}" y1="0" x2="${x.toFixed(1)}" y2="${frame.height}"/>`);
+    }
+    for (let lat = Math.ceil(frame.y0 / step) * step; lat <= frame.y1; lat += step) {
+        const [, y] = project(0, lat);
+        parts.push(`<line class="emap-grid" x1="0" y1="${y.toFixed(1)}" x2="${frame.width}" y2="${y.toFixed(1)}"/>`);
+    }
+    parts.push(`<rect class="emap-border" x="0.5" y="0.5" width="${frame.width - 1}" height="${frame.height - 1}"/>`);
+    parts.push('</svg>');
+    return { svg: parts.join('\n'), width: frame.width, height: frame.height, project: (lat, lng) => project(lng, lat) };
+}
+
+module.exports = { renderEventMapSvg, renderRegionMapSvg, timelineGeos, numberedGeos, isCityScale };

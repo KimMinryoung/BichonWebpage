@@ -39,8 +39,11 @@ router.get('/nonogram/index.html', (req, res) => {
     res.redirect(301, nonogramCanonical(req));
 });
 
-// Public games do not need database queries.
-for (const [path, view] of [['/games/', 'games'], ['/games/strike/', 'strike']]) {
+// Public games do not need database queries. The civil-war game draws its
+// map from the event-control document cached in memory.
+const { civilWarMap } = require('../services/civil-war-map');
+const gameLocals = { '/games/civil-war/': () => ({ civilWarMap: civilWarMap() }) };
+for (const [path, view] of [['/games/', 'games'], ['/games/strike/', 'strike'], ['/games/civil-war/', 'civil-war']]) {
     router.get(path, (req, res) => {
         setNoStore(res);
         if (!req.path.endsWith('/')) {
@@ -50,7 +53,7 @@ for (const [path, view] of [['/games/', 'games'], ['/games/strike/', 'strike']])
             req.session.csrfToken = req.session.csrfToken || crypto.randomBytes(32).toString('hex');
             res.locals.csrfToken = req.session.csrfToken;
         }
-        res.render('public/' + view, { pagePath: path, hasEnglishVersion: false, canonicalUrl: res.locals.siteOrigin + path });
+        res.render('public/' + view, Object.assign({ pagePath: path, hasEnglishVersion: false, canonicalUrl: res.locals.siteOrigin + path }, gameLocals[path] ? gameLocals[path]() : {}));
     });
 }
 

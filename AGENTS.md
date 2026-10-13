@@ -39,6 +39,7 @@ Then verify `/`, `/posts`, `/reports`, `/hub`, and `/ai-diary` show content agai
 - Stack: Node.js/Express, EJS, PostgreSQL. Public site: cyber-lenin.com.
 - Read only the task-relevant document from [dev_docs/README.md](dev_docs/README.md); do not load every handoff or old project memory.
 - Strike game: [design and implementation](dev_docs/strike-game-handoff.md).
+- Civil-war game: [design and implementation](dev_docs/civil-war-game.md).
 - Deploy, preview, data/cache, auth: [operations reference](dev_docs/frontend-operations.md).
 - CommuLingo people must go through the Admin store/upsert tool; do not bypass validation with direct INSERTs. Host-mounted data changes affect production immediately.
 - UI changes must follow the [site design standard](dev_docs/design-system.md): reuse shared tokens/components and align full-width page shells with the site menu.

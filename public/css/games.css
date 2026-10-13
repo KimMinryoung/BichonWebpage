@@ -94,6 +94,8 @@
 .strike-preview { background: #791c27; }
 .strike-preview img { height: 100px; width: 112px; object-fit: contain; }
 .puzzle-preview { background: #214d2e; }
+.civil-war-preview { background: #a21e2a; background-image: repeating-linear-gradient(-45deg, transparent, transparent 18px, #00000012 18px, #00000012 36px); }
+.civil-war-preview strong { font-size: 1.6rem; letter-spacing: -.03em; }
 .mini-puzzle { display: grid; grid-template-columns: repeat(5, 16px); gap: 2px; padding: 5px; border: 1px solid #faf2da; }
 .mini-puzzle i { width: 16px; height: 16px; background: #faf2da; }
 .mini-puzzle .ink { background: #111c16; }
@@ -111,6 +113,7 @@
   .games-home .game-preview { min-height: 78px; grid-template-columns: 70px minmax(0, 1fr); align-items: center; padding: 8px 14px; gap: 14px; font-size: .8rem; }
   .games-home .game-preview > span { justify-self: start; text-align: left; }
   .games-home .strike-preview img { height: 62px; width: 70px; }
+  .games-home .civil-war-preview strong { font-size: 1rem; }
   .games-home .mini-puzzle { grid-template-columns: repeat(5, 9px); gap: 1px; padding: 3px; }
   .games-home .mini-puzzle i { width: 9px; height: 9px; }
   .games-home .game-card-copy { padding: 14px 18px; }

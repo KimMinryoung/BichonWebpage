@@ -53,6 +53,7 @@ run check-ui        node scripts/check-ui.js
 run test-seo        node scripts/test-seo.js
 run evidence-count  node scripts/test-commulingo-evidence-count.js
 run test-strike     node scripts/test-strike.js
+run test-civil-war  node scripts/test-civil-war.js
 run test-nonogram   node scripts/test-nonogram.js
 run test-error-page node scripts/test-error-page.js
 run test-visitor-hash node scripts/test-visitor-hash.js

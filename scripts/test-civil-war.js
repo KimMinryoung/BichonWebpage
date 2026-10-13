@@ -1,0 +1,178 @@
+#!/usr/bin/env node
+// Rules of 「붉은 전선 1918–1920」 (public/js/civil-war-*.js): a campaign
+// played as history played it ends where history did, the save replays,
+// policy shortcuts cost what they should, and Perekop falls to the Sivash
+// crossing but not to the Wall alone.
+const assert = require('node:assert/strict');
+const G = require('../public/js/civil-war-engine.js');
+const B = require('../public/js/civil-war-battle.js');
+const D = G.DATA;
+
+const PRIORITY = ['south', 'northwest', 'east', 'volga', 'crimea', 'west', 'southwest', 'north'];
+
+// A competent plan: the train to the heaviest front, commissars by
+// priority, then each division to the front furthest short of its pressure.
+function plan(s, { requisition = false } = {}) {
+    const t = G.turnData(s);
+    const threats = G.threatsOf(s);
+    const fronts = G.activeFronts(s).sort((a, b) => PRIORITY.indexOf(a) - PRIORITY.indexOf(b));
+    const heaviest = fronts.slice().sort((a, b) => threats[b].pressure - threats[a].pressure)[0];
+    if (t.cards.includes('train')) assert.ok(G.act(s, 'play', 'train', heaviest));
+    for (const id of ['amnesty', 'partyWeek', 'cavalry', 'propaganda']) if (t.cards.includes(id)) G.act(s, 'play', id);
+    if (requisition) G.act(s, 'play', 'requisition');
+    fronts.slice(0, s.plan.commissars).forEach(f => assert.ok(G.act(s, 'commissar', f, true)));
+    while (G.free(s) > 0) {
+        const fc = G.forecast(s).fronts;
+        const f = fronts.slice().sort((a, b) => fc[a].margin - fc[b].margin)[0];
+        assert.ok(G.act(s, 'alloc', f, s.plan.alloc[f] + 1));
+    }
+}
+
+function campaign(pick, options) {
+    const s = G.start();
+    while (s.phase === 'plan') {
+        assert.ok(G.act(s, 'choose', pick(G.turnData(s))));
+        plan(s, options);
+        assert.ok(G.act(s, 'settle'));
+        if (s.phase === 'review') assert.ok(G.act(s, 'next'));
+    }
+    return s;
+}
+
+const historical = t => t.choice.history;
+const other = t => t.choice.options.find(o => o.id !== t.choice.history).id;
+const sumDiff = s => s.records.reduce((sum, r) => sum + Object.values(r.fronts).reduce((a, f) => a + f.after - f.history, 0), 0);
+
+// Data: every front's history fits its city chain; every season names a
+// historical option that exists.
+for (const [id, front] of Object.entries(D.fronts)) {
+    assert.equal(front.history.length, D.turns.length, id);
+    for (const line of front.history) assert.ok(line >= 0 && line <= front.cities.length, id);
+}
+for (const t of D.turns) {
+    assert.ok(t.choice.options.some(o => o.id === t.choice.history), t.id);
+    for (const id of Object.keys(t.threats)) assert.ok(D.fronts[id], `${t.id}: ${id}`);
+    for (const id of t.cards) assert.ok(D.cards[id], `${t.id}: ${id}`);
+}
+
+// Played as history played it, the war follows history to Perekop.
+const hist = campaign(historical);
+assert.equal(hist.phase, 'battle');
+assert.equal(hist.records.length, D.turns.length);
+assert.equal(sumDiff(hist), 0, 'the historical campaign matches history city for city');
+for (const r of hist.records) {
+    for (const [id, f] of Object.entries(r.fronts)) assert.equal(f.after, f.history, `${D.turns[r.turn].id} ${id}`);
+}
+assert.ok(hist.peasants < 60, 'requisition costs the countryside');
+
+// The other road at every fork still reaches Perekop, but the market
+// policy starves the army: grain runs short and the lines fall behind.
+const alt = campaign(other);
+assert.equal(alt.phase, 'battle');
+assert.ok(alt.records.some(r => r.supply.ratio < 0.75), 'buying grain at fixed prices leaves the army hungry');
+assert.ok(sumDiff(alt) < 0);
+assert.ok(alt.peasants > hist.peasants);
+
+// Requisitioning every season feeds the army and raises the countryside.
+const harsh = campaign(historical, { requisition: true });
+assert.ok(harsh.peasants < 20, 'requisition every season drives the peasants to revolt');
+assert.ok(harsh.records.some(r => r.notes.some(n => n.includes('농민 봉기'))));
+
+// A thin southern front left empty loses Tula, and the war.
+const lost = G.start();
+for (let i = 0; i < 2; i++) {
+    G.act(lost, 'choose', historical(G.turnData(lost)));
+    plan(lost);
+    G.act(lost, 'settle');
+    G.act(lost, 'next');
+}
+lost.lines.south = 1;
+delete lost.flags.calm;  // last season's propaganda would soften the south
+G.act(lost, 'choose', historical(G.turnData(lost)));
+const north = G.activeFronts(lost).find(f => f !== 'south');
+assert.ok(G.act(lost, 'alloc', north, lost.plan.divisions));
+assert.ok(G.act(lost, 'settle'));
+assert.equal(lost.phase, 'done');
+assert.equal(lost.outcome.kind, 'moscow');
+
+// Orders are checked: no settling before the fork, no overspending.
+const s0 = G.start();
+assert.equal(G.act(s0, 'settle'), false);
+assert.equal(G.act(s0, 'alloc', 'east', 99), false);
+assert.equal(G.act(s0, 'alloc', 'west', 1), false, 'a front not fought this season takes no divisions');
+assert.equal(G.act(s0, 'play', 'cavalry'), false, 'a card is offered only in its season');
+assert.ok(G.act(s0, 'play', 'train', 'east'));
+assert.equal(G.act(s0, 'play', 'train', 'volga'), false, 'one train');
+assert.ok(G.act(s0, 'unplay', 'train'));
+assert.equal(s0.plan.command, 3);
+
+// Save and restore replay the same war; a tampered log is refused.
+const replay = G.restore(G.serialize(hist));
+assert.deepEqual(replay.lines, hist.lines);
+assert.equal(replay.peasants, hist.peasants);
+assert.equal(replay.phase, 'battle');
+const bad = JSON.parse(G.serialize(hist));
+bad.log.splice(3, 0, ['alloc', 'east', 99]);
+assert.equal(G.restore(JSON.stringify(bad)), null);
+assert.equal(G.restore('{'), null);
+
+// ── Battle ──
+
+// A plain soldier's battle: every unit heads for its destination and hits
+// the best target it can reach. sivash: the crossing divisions make for the
+// Litovsky peninsula first; wallOnly: nobody leaves the isthmus.
+function fight(flags, mode) {
+    const b = B.start(D.battle, flags);
+    const goal = { r: D.battle.goal[0], c: D.battle.goal[1] };
+    const crossing = ['r15', 'r52', 'rmk'];
+    while (!b.result) {
+        for (const u of b.units.filter(x => x.side === 'red' && x.hp > 0)) {
+            if (b.result) break;
+            const reach = B.reachable(b, u);
+            const onGoal = reach.find(t => t.r === goal.r && t.c === goal.c);
+            if (onGoal) { assert.ok(B.act(b, 'move', u.id, goal.r, goal.c)); break; }
+            let dest = goal;
+            if (mode === 'sivash' && crossing.includes(u.id) && !b.flanked) dest = { r: 6, c: 6 };
+            const allowed = mode === 'wallOnly' ? reach.filter(t => t.c <= 3) : reach;
+            const best = () => B.targets(b, u).map(t => ({ t, p: B.preview(b, u, t) })).sort((a, z) => (z.p.dmg - z.p.counter) - (a.p.dmg - a.p.counter))[0];
+            let target = best();
+            if (!target || (b.flanked && target.p.dmg < 3)) {
+                const here = Math.abs(u.r - dest.r) + Math.abs(u.c - dest.c);
+                const step = allowed.map(t => ({ t, d: Math.abs(t.r - dest.r) + Math.abs(t.c - dest.c) })).sort((a, z) => a.d - z.d)[0];
+                if (step && step.d < here) B.act(b, 'move', u.id, step.t.r, step.t.c);
+                target = best();
+            }
+            if (target && !b.result) B.act(b, 'attack', u.id, target.t.id);
+        }
+        if (!b.result) B.act(b, 'end');
+    }
+    return b;
+}
+
+const crossed = fight({ makhno: true }, 'sivash');
+assert.equal(crossed.result, 'won', 'the Sivash crossing turns the Wall');
+assert.ok(crossed.flanked);
+assert.ok(crossed.turn <= D.battle.turnLimit);
+assert.equal(fight({ makhno: true }, 'wallOnly').result, 'lost', 'the Wall alone does not fall in time');
+assert.equal(B.start(D.battle, {}).units.some(u => u.id === 'rmk'), false, 'no Makhnovists without the Starobilsk agreement');
+assert.equal(B.start(D.battle, { curzon: true }).units.some(u => u.id === 'rcz'), true);
+
+// The ford closes when the wind turns.
+const tide = B.start(D.battle, {});
+for (let i = 0; i < D.battle.windTurns; i++) B.act(tide, 'end');
+assert.equal(B.fordOpen(tide), false);
+const r15 = B.byId(tide, 'r15');
+assert.ok(!B.reachable(tide, r15).some(t => B.terrain(tide, t.r, t.c).ford), 'no wading into the flooded Sivash');
+
+// Battle orders replay through the campaign save.
+const war = G.restore(G.serialize(hist));
+const r52 = B.byId(war.battle, 'r52');
+const step = B.reachable(war.battle, r52)[0];
+assert.ok(G.act(war, 'b:move', 'r52', step.r, step.c));
+assert.ok(G.act(war, 'b:end'));
+const again = G.restore(G.serialize(war));
+assert.equal(again.battle.turn, 2);
+assert.deepEqual(again.battle.units.map(u => [u.id, u.r, u.c, u.hp]), war.battle.units.map(u => [u.id, u.r, u.c, u.hp]));
+assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red orders');
+
+console.log('civil-war: campaign, policies, save and battle checks passed');

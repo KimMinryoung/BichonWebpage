@@ -10,7 +10,7 @@ const { dictTabs } = require('../data/commulingo/dict-tabs');
 
 assert.strictEqual(MENU_ENGLISH.games, 'none');
 assert.strictEqual(MENU_ENGLISH['commulingo.docs'], 'none');
-for (const path of ['/games/', '/games/strike/', '/nonogram/', '/commulingo/docs', '/commulingo/docs/manifesto?p=2']) {
+for (const path of ['/games/', '/games/strike/', '/games/civil-war/', '/nonogram/', '/commulingo/docs', '/commulingo/docs/manifesto?p=2']) {
     assert.ok(isKoreanOnlyPath(path), path);
 }
 for (const path of ['/', '/commulingo', '/commulingo/people/stalin', '/reports', '/search']) {
