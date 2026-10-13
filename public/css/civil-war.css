@@ -197,12 +197,6 @@
 .cw-meter-tick { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--border); }
 .cw-meter-tick small { position: absolute; top: 100%; left: 0; transform: translateX(-50%); padding-top: 1px; font-size: .7rem; font-variant-numeric: tabular-nums; color: var(--text-secondary); }
 .cw-meter-now { position: absolute; top: -4px; bottom: -4px; width: 3px; margin-left: -1.5px; background: var(--text-primary); transition: left .2s ease; }
-.cw-meter-bands { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: .8rem; font-variant-numeric: tabular-nums; }
-.cw-meter-bands li { display: grid; grid-template-columns: 9.5em 1fr; gap: 8px; padding: 2px 6px; border-left: 3px solid transparent; color: var(--text-secondary); }
-.cw-meter-bands li.is-behind { border-left-color: var(--clr-red); }
-.cw-meter-bands li.is-ahead { border-left-color: var(--btn-primary, #2da44e); }
-.cw-meter-bands li.is-even { border-left-color: var(--text-secondary); }
-.cw-meter-bands li.is-now { color: var(--text-primary); font-weight: 700; background: color-mix(in srgb, var(--text-primary) 8%, transparent); }
 @media (prefers-reduced-motion: reduce) { .cw-meter-now, .cw-meter-fill { transition: none; } }
 .cw-foes { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 6px; }
 .cw-foes-label { font-size: .75rem; font-weight: 700; color: var(--text-secondary); padding-top: 5px; }
@@ -446,9 +440,6 @@
 .cw-meter { gap: 2px; margin: 2px 0 2px; }
 .cw-meter-top { font-size: .84rem; }
 .cw-meter-bar { height: 12px; margin-bottom: 14px; }
-.cw-meter-bands { font-size: .76rem; gap: 1px; }
-.cw-meter-bands li { grid-template-columns: 8.5em 1fr; padding: 1px 6px; }
-.cw-meter-more summary { cursor: pointer; font-size: .74rem; color: var(--text-secondary); padding: 2px 6px; }
 .cw-parts { font-size: .74rem !important; }
 
 /* Advisor cards: title, effect and button; the story folds */
@@ -492,3 +483,21 @@
 /* A card in play: red rim and a red wash, not just its button's words. */
 .cw-card.is-played { border: 2px solid var(--cw-red); padding: 7px 9px; background: color-mix(in srgb, var(--cw-red) 22%, var(--bg-canvas)); }
 .games-shell .cw-toggle[aria-pressed="true"] { background: color-mix(in srgb, var(--cw-red) 22%, var(--bg-canvas)); }
+
+/* The cities at stake: a chain of map dots, inner to outer. */
+.cw-stake-head { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: .8rem; }
+.cw-stake-verdict { font-weight: 800; padding-left: 6px; border-left: 3px solid var(--text-secondary); }
+.cw-stake-verdict.is-behind { border-color: var(--clr-red); color: var(--clr-red); }
+.cw-stake-verdict.is-ahead { border-color: var(--btn-primary, #2da44e); }
+.cw-stake-momentum { color: var(--clr-red); font-weight: 700; }
+.cw-stake { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-wrap: wrap; align-items: flex-start; row-gap: 4px; }
+.cw-stake li { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 58px; flex: 0 1 auto; padding: 0 4px; font-size: .72rem; color: var(--text-secondary); text-align: center; line-height: 1.2; }
+.cw-stake li.is-changing { color: var(--text-primary); font-weight: 700; }
+/* the chain between dots */
+.cw-stake li:not(.cw-stake-hist)::before { content: ''; position: absolute; top: 12px; left: 0; right: 0; height: 1.6px; background: color-mix(in srgb, var(--cw-red) 60%, transparent); z-index: 0; }
+.cw-stake li:first-child::before { left: 50%; }
+.cw-stake li:last-child::before { right: 50%; }
+.cw-stake-dot { width: 24px; height: 24px; position: relative; z-index: 1; }
+.cw-stake-hist { min-width: 0 !important; padding: 0 !important; align-self: stretch; }
+.cw-stake-hist::after { content: ''; position: absolute; top: 0; bottom: 14px; left: 50%; border-left: 1.5px dashed var(--text-primary); }
+.cw-stake-hist span { margin-top: auto; font-size: .64rem; font-weight: 800; color: var(--text-primary); background: var(--bg-surface); padding: 0 2px; position: relative; z-index: 1; }

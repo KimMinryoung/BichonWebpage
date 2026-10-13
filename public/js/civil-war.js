@@ -582,9 +582,7 @@
         const last = bands[bands.length - 1];
         const top = Math.max(last.from + 3, f.strength) * 1.1;
         const at = v => `${Math.min(100, Math.max(0, v / top * 100)).toFixed(1)}%`;
-        const range = b => b.to === null ? `${b.from} 이상` : b.from === 0 ? `${b.to} 미만` : `${b.from}~${b.to} 미만`;
-        const result = b => lineText(id, b.after) + (b.overflow ? ` · 다음 싸움 압력 +${b.overflow * G.MOMENTUM}` : '');
-        const versus = b => b.after === hist ? '역사대로' : b.after > hist ? `역사보다 도시 ${b.after - hist}개 앞섬` : `역사보다 도시 ${hist - b.after}개 뒤처짐`;
+        const versus = after => after === hist ? '역사대로' : after > hist ? `역사보다 ${after - hist}개 앞섬` : `역사보다 ${hist - after}개 뒤처짐`;
         const bar = el('div', { class: 'cw-meter-bar', 'aria-hidden': 'true' },
             ...bands.map(b => el('span', { class: `cw-meter-band ${b.tone}`, style: `left:${at(b.from)};width:calc(${at(b.to === null ? top : b.to)} - ${at(b.from)})` })),
             el('span', { class: 'cw-meter-fill', style: `width:${at(f.strength)}` }),
@@ -594,20 +592,38 @@
         return el('div', { class: 'cw-meter' },
             el('div', { class: 'cw-meter-top' }, el('strong', {}, `전투력 ${f.strength}`), el('span', {}, `압력 ${f.pressure}`)),
             bar,
-            ...bandRows(bands, current, b => el('li', { class: b.tone + (b === current ? ' is-now' : '') },
-                el('span', { class: 'cw-band-range' }, b === current ? `${now} · ${range(b)}` : range(b)),
-                el('span', {}, `${result(b)} (${versus(b)})`))));
+            el('div', { class: 'cw-stake-head' },
+                el('span', { class: 'cw-stake-verdict ' + current.tone }, `${now}: ${versus(current.after)}`),
+                current.overflow ? el('span', { class: 'cw-stake-momentum' }, `다음 싸움 압력 +${current.overflow * G.MOMENTUM}`) : null),
+            stakeRow(id, line, current.after, bands, hist, turn, now));
     }
 
-    // The forecast band and the one above it stay in view; the rest fold.
-    function bandRows(bands, current, row) {
-        const i = bands.indexOf(current);
-        const shown = bands.slice(i, i + 2).reverse();
-        const rest = bands.filter(b => !shown.includes(b)).reverse();
-        return [
-            el('ol', { class: 'cw-meter-bands' }, ...shown.map(row)),
-            rest.length ? el('details', { class: 'cw-meter-more' }, el('summary', {}, `다른 구간 ${rest.length}개`), el('ol', { class: 'cw-meter-bands' }, ...rest.map(row))) : null,
-        ];
+    // The cities this season can move, inner to outer, drawn as on the map:
+    // held red, lost in the holder's colour, and a dashed ring in the
+    // colour of whoever the plan (or the result) hands each changing city.
+    // A tick marks where history's line fell.
+    function stakeRow(id, line, after, bands, hist, turn, now) {
+        const cities = D.fronts[id].cities;
+        const ends = bands.map(b => b.after).concat(line, hist);
+        let lo = Math.min(...ends), hi = Math.max(...ends);
+        lo = Math.max(0, lo - 1);
+        hi = Math.min(cities.length, Math.max(hi, lo + 2));
+        const foe = holderOf(id, turn).kind;
+        const items = [];
+        for (let i = lo; i < hi; i++) {
+            if (i === hist) items.push(el('li', { class: 'cw-stake-hist', 'aria-hidden': 'true' }, el('span', {}, '역사')));
+            const held = i < line, will = i < after;
+            const dot = svg('svg', { viewBox: '0 0 24 24', class: 'cw-stake-dot', 'aria-hidden': 'true' });
+            dot.append(svg('circle', { cx: 12, cy: 12, r: 5.5, class: 'cw-city ' + (held ? 'is-held' : 'is-lost k-' + foe) }));
+            if (held !== will) {
+                dot.append(svg('circle', { cx: 12, cy: 12, r: 9.5, class: 'cw-ring-under' }));
+                dot.append(svg('circle', { cx: 12, cy: 12, r: 9.5, class: 'cw-ring ' + (will ? 'is-red' : 'k-' + foe) }));
+            }
+            const fate = held === will ? (held ? '붉은 군대가 지킴' : '적이 지킴') : (will ? '붉은 군대가 되찾음' : '적에게 넘어감');
+            items.push(el('li', { class: held !== will ? 'is-changing' : '' }, dot, el('span', {}, cities[i][0]), el('span', { class: 'cw-sr' }, ` ${now}: ${fate}`)));
+        }
+        if (hist === hi && hi <= cities.length) items.push(el('li', { class: 'cw-stake-hist', 'aria-hidden': 'true' }, el('span', {}, '역사')));
+        return el('ol', { class: 'cw-stake', 'aria-label': `${D.fronts[id].short}에 걸린 도시` }, ...items);
     }
 
     // What the party's cohesion buys: command 4 from 70, 3 from 40, 2 from
@@ -687,8 +703,7 @@
             const d = f.after - f.history;
             return withSpotlight(id, el('article', { class: 'cw-front is-result' + (d < 0 ? ' is-short' : d > 0 ? ' is-ahead' : '') },
                 el('header', {}, el('h4', {}, D.fronts[id].name)),
-                meter(id, f, f.before, r.turn, r.choice, '결과'),
-                el('p', {}, `역사: ${lineText(id, f.history)}`)));
+                meter(id, f, f.before, r.turn, r.choice, '결과')));
         });
     }
 
