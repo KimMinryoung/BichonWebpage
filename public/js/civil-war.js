@@ -275,13 +275,40 @@
                 el('p', {}, threat.text, ' ', person(threat.who)),
                 el('p', { class: 'cw-front-line' }, `지금 보유: ${heldText(id, line)}`),
                 el('div', { class: 'cw-front-controls' }, stepper, commissar),
-                el('p', { class: 'cw-forecast' },
-                    el('strong', {}, `전투력 ${f.strength} / 압력 ${f.pressure}`),
-                    el('span', {}, ` → 예상: ${lineText(id, after)} (${verdict})`)),
+                meter(id, f, line),
+                el('p', { class: 'cw-forecast' }, el('strong', {}, `예상: ${lineText(id, after)}`), el('span', {}, ` (${verdict})`)),
                 f.parts.length ? el('p', { class: 'cw-parts' }, f.parts.join(' · ')) : null));
         }
         if (fc.supply.ratio < 1) items.push(el('p', { class: 'cw-warn' }, `곡물이 모자랍니다: 필요 ${fc.supply.need}, 가진 것 ${fc.supply.have}. 모든 전선의 전투력이 ${Math.round((1 - (0.5 + 0.5 * fc.supply.ratio)) * 100)}% 줄어듭니다.`));
         box.replaceChildren(...items);
+    }
+
+    // The strength bar against its two thresholds: the pressure, where the
+    // front moves as it did in history, and pressure + 3, where it keeps one
+    // city more (the most a season can gain). Below pressure − 1 it falls
+    // behind history.
+    function meter(id, f, line) {
+        const front = D.fronts[id];
+        const max = front.cities.length;
+        const t = s.records.length && s.phase !== 'plan' ? s.records[s.records.length - 1].turn : s.turn;
+        const was = t ? front.history[t - 1] : D.startLines[id];
+        const ceiling = id === 'west' ? max - 1 : max;
+        const historical = Math.max(0, Math.min(max, line + front.history[t] - was));
+        const better = Math.min(ceiling, historical + 1);
+        const top = Math.max(f.pressure + 3, f.strength, 1) * 1.15;
+        const at = v => `${Math.min(100, Math.max(0, v / top * 100)).toFixed(1)}%`;
+        const tone = f.margin < -1 ? ' is-short' : f.margin >= 3 && better > historical ? ' is-ahead' : '';
+        const bar = el('div', { class: 'cw-meter-bar' },
+            el('span', { class: 'cw-meter-fill' + tone, style: `width:${at(f.strength)}` }),
+            el('i', { class: 'cw-meter-tick', style: `left:${at(f.pressure)}` }),
+            el('i', { class: 'cw-meter-tick is-plus', style: `left:${at(f.pressure + 3)}` }));
+        const label = `전투력 ${f.strength}. 압력 ${f.pressure}이면 역사대로 ${lineText(id, historical)}, ${f.pressure + 3}이면 ${better > historical ? lineText(id, better) : '더 얻을 도시 없음'}.`;
+        return el('div', { class: 'cw-meter', role: 'img', 'aria-label': label },
+            el('p', { class: 'cw-meter-value' }, el('strong', {}, `전투력 ${f.strength}`)),
+            bar,
+            el('div', { class: 'cw-meter-marks' },
+                el('span', { class: f.pressure / top < 0.15 ? 'is-start' : null, style: `left:${at(f.pressure)}` }, `${f.pressure} 역사대로`, el('small', {}, lineText(id, historical))),
+                el('span', { class: 'is-plus', style: `left:${at(f.pressure + 3)}` }, `${f.pressure + 3} 도시 +1`, el('small', {}, better > historical ? lineText(id, better) : '더 얻을 도시 없음'))));
     }
 
     function effectText(card) {
@@ -351,7 +378,8 @@
         return Object.entries(r.fronts).map(([id, f]) => {
             const d = f.after - f.history;
             return el('article', { class: 'cw-front is-result' + (d < 0 ? ' is-short' : d > 0 ? ' is-ahead' : '') },
-                el('header', {}, el('h4', {}, D.fronts[id].name), el('span', {}, `전투력 ${f.strength} / 압력 ${f.pressure}`)),
+                el('header', {}, el('h4', {}, D.fronts[id].name)),
+                meter(id, f, f.before),
                 el('p', {}, `당신: ${lineText(id, f.after)}`),
                 el('p', {}, `역사: ${lineText(id, f.history)}`),
                 el('p', { class: 'cw-verdict' }, d === 0 ? '역사와 같음' : d > 0 ? `역사보다 도시 ${d}개 앞섬` : `역사보다 도시 ${-d}개 뒤처짐`));

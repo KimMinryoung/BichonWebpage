@@ -131,6 +131,20 @@
 .games-shell .cw-toggle[aria-pressed="true"] { border-color: var(--cw-red); color: var(--text-primary); font-weight: 700; }
 .cw-forecast strong { font-variant-numeric: tabular-nums; }
 .cw-front.is-short .cw-forecast strong { color: var(--clr-red); }
+.cw-meter { display: grid; gap: 4px; margin: 2px 0 30px; }
+.cw-meter-value { font-size: .9rem; font-variant-numeric: tabular-nums; }
+.cw-meter-bar { position: relative; height: 14px; border: 1px solid var(--border); background: var(--bg-canvas); }
+.cw-meter-fill { position: absolute; inset: 0 auto 0 0; background: var(--text-secondary); transition: width .2s ease; }
+.cw-meter-fill.is-short { background: var(--clr-red); }
+.cw-meter-fill.is-ahead { background: var(--btn-primary, #2da44e); }
+.cw-meter-tick { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--text-primary); }
+.cw-meter-tick.is-plus { background: var(--btn-primary, #2da44e); }
+.cw-meter-marks { position: relative; height: 0; font-size: .72rem; line-height: var(--leading-snug); }
+.cw-meter-marks span { position: absolute; top: 0; transform: translateX(-50%); white-space: nowrap; font-weight: 700; text-align: center; }
+.cw-meter-marks span.is-start { transform: none; text-align: left; }
+.cw-meter-marks span.is-plus { color: var(--btn-primary, #2da44e); }
+.cw-meter-marks small { display: block; font-weight: 400; color: var(--text-secondary); }
+@media (prefers-reduced-motion: reduce) { .cw-meter-fill { transition: none; } }
 .cw-parts { color: var(--text-secondary); font-size: .8rem !important; }
 .cw-verdict { font-weight: 700; }
 .cw-warn { border-left: 4px solid var(--clr-red); padding: 8px 12px; margin: 0; background: var(--bg-surface); font-size: .9rem; }
