@@ -27,7 +27,10 @@ function install(rows) {
     KINDS.forEach(kind => { next[kind] = { ko: [], en: [] }; });
     rows.forEach(row => {
         const kind = next[row.kind || 'phrase'];
-        if (kind && kind[row.lang] && row.phrase) kind[row.lang].push(row.phrase);
+        if (!kind || !kind[row.lang] || !row.phrase) return;
+        // English never-link aliases are matched lowercased (neverLinkAliases), so a
+        // capitalized row ('King') would silently never match.
+        kind[row.lang].push(row.kind === 'alias' && row.lang === 'en' ? row.phrase.toLowerCase() : row.phrase);
     });
     return next;
 }

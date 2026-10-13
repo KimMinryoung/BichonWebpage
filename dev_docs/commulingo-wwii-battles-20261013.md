@@ -25,7 +25,16 @@
 
 소유자 확인 뒤 `wwii-battles-20261013-collections-confirmed.sql`로 존 케언크로스 → marxism-leninism, 파울 하우서 → fascist(counterrevolution과 함께, 제프 디트리히 선례)를 더했다.
 
+## 추가 인물 15명 (같은 날 후속)
+
+`people-extra-{kursk,midway,north-africa}.js`(카드·`collections`·`links`) → `../wwii-battles-20261013-extra-{people,links}.json` → `scripts/commulingo-people-upsert`, `apply-event-person-links.js -`(14행).
+
+- 쿠르스크: 루돌프 뢰슬러, 러도 샨도르(marxism-leninism; 영문 위키 항목은 Alexander Radó), 오토 폰 크노벨스도르프, 에르하르트 라우스(counterrevolution).
+- 미드웨이: 윌리엄 홀시(본문 기존 표기를 따름), 에드윈 T. 레이턴, 겐다 미노루, 구사카 류노스케, 곤도 노부타케(일본 셋 counterrevolution). 겐다는 사건 본문에 이름이 없어 연결하지 않았다.
+- 북아프리카: 조반니 메세, 한스위르겐 폰 아르님(counterrevolution), 알퐁스 쥐앵, 레슬리 모스헤드, 윌리엄 고트, 우마르 무크타르(national-liberation).
+- 쿠르스크 본문 「라도 산도르」를 「러도 샨도르」로 고침(history_event_section update).
+- 데이터 SQL `wwii-battles-20261013-extra-people.sql`·`-extra-blocks-en.sql`: 맨 성 차단(ko 레이턴·곤도·라우스·러도, en Kondō·Radó), 구 차단(고트식·쥐앵 36·Juin 36·메세레르·Nun danket alle Gott), 입장 모음 9명, 북아프리카 `no_auto_link`에서 고트 해제(윌리엄 고트가 나열 인물이라 공유 성 해소로 그에게 간다; 영국 본토 항공전은 존 고트가 나열 인물).
+
 ## 남은 일
 
-- 카드 없는 인물: 쿠르스크 뢰슬러·라도·크노벨스도르프·라우스, 미드웨이 핼시·레이턴·겐다·구사카·곤도, 북아프리카 메세·아르님·쥐앵·모스헤드·고트·오마르 무크타르.
 - 「켐프」는 `frederick-kempe`와 한국어 성이 같다. 쿠르스크 페이지는 나열 인물로 해소되지만 다른 페이지의 맨 「켐프」는 어느 쪽에도 걸리지 않을 수 있다.
