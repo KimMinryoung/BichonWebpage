@@ -31,6 +31,9 @@
     // Battle: when each fall event was first drawn, so the unit's breaking
     // plays once however often the board is redrawn.
     const fallAt = new WeakMap();
+    // A battle just ended stays on its board, its last blows and falls
+    // playing, until a press moves on (battleOver, leaveBattle).
+    let battleEnded = false;
     const FALL_MS = 1300;
     const stillMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const mapEl = $('cwMap');
@@ -116,6 +119,7 @@
     function startGame(state, seen) {
         s = state;
         reviewSeen = Boolean(seen);
+        battleEnded = false;
         selected = null;
         inspected = null;
         $('cwSetup').hidden = true;
@@ -162,12 +166,12 @@
         renderHud();
         // The final battle opens after the season's review; one fought
         // before the settlement opens straight away.
-        const inBattle = s.phase === 'battle' && (reviewSeen || !s.battle.def.final);
+        const inBattle = battleEnded || s.phase === 'battle' && (reviewSeen || !s.battle.def.final);
         $('cwCampaign').hidden = inBattle || s.phase === 'done';
         $('cwBattle').hidden = !inBattle;
-        $('cwOutcome').hidden = s.phase !== 'done';
-        if (s.phase === 'done') return renderOutcome();
+        $('cwOutcome').hidden = s.phase !== 'done' || inBattle;
         if (inBattle) return renderBattle();
+        if (s.phase === 'done') return renderOutcome();
         const planning = s.phase === 'plan';
         if (planning) unveiling = false;
         $('cwCampaign').classList.toggle('is-unveiling', unveiling);
@@ -1063,7 +1067,7 @@
         const def = b.def;
         const box = $('cwBattle');
         const rows = def.map.length, cols = def.map[0].length;
-        const board = svg('svg', { viewBox: `0 0 ${cols * CELL} ${rows * CELL}`, class: 'cw-grid', role: 'group', 'aria-label': def.board });
+        const board = svg('svg', { viewBox: `0 0 ${cols * CELL} ${rows * CELL}`, class: 'cw-grid' + (battleEnded ? ' is-over' : ''), role: 'group', 'aria-label': def.board });
         const unit = selected && B.byId(b, selected);
         const foe = !unit && inspected && B.byId(b, inspected);
         const moves = unit && !unit.moved && !unit.acted ? B.reachable(b, unit) : [];
@@ -1145,6 +1149,7 @@
             g.append(svg('rect', { x: barX, y: y + 35, width: barW * u.hp / u.maxHp, height: 5, class: 'cw-hp' }));
             if (p) g.append(badge(x + CELL + 2, y - 17, (p.dmg >= u.hp ? '격파' : `−${p.dmg}` + (p.counter ? ` ↩${p.counter}` : '')) + (p.wears ? ' 포격' : ''), 'is-preview'));
             const pick = () => {
+                if (battleEnded) return;
                 if (isTarget) {
                     if (act('b:attack', unit.id, u.id)) afterBattleAct(`${unit.name}이(가) ${u.name}을(를) 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : ''));
                 } else if (u.side === 'red') {
@@ -1193,7 +1198,7 @@
                 el('aside', { class: 'cw-battle-side' },
                     el('ul', { class: 'cw-battle-status' }, ...status.filter(Boolean).map(t => el('li', {}, t))),
                     el('div', { id: 'cwUnitInfo', class: 'cw-unit-info' }, unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint),
-                    el('div', { class: 'cw-battle-actions' },
+                    battleEnded ? battleClose(b) : el('div', { class: 'cw-battle-actions' },
                         unit && unit.prev && !unit.acted ? el('button', { type: 'button', 'data-key': 'undo', onclick: () => { if (act('b:undo', unit.id)) afterBattleAct(`${unit.name} 이동 취소`); } }, '이동 취소') : null,
                         unit && !unit.acted ? el('button', { type: 'button', onclick: () => { act('b:wait', unit.id); selected = null; renderBattle(); } }, '이 부대 대기') : null,
                         el('button', { type: 'button', class: 'cw-primary', onclick: endTurn }, '턴 종료 →')),
@@ -1250,11 +1255,34 @@
         if (s.phase === 'battle') return false;
         selected = null;
         inspected = null;
+        battleEnded = true;
         render();
-        if (s.phase === 'done') { $('cwOutcome').scrollIntoView({ block: 'start' }); announce(s.outcome.title); return true; }
-        unveil();
-        announce(`${s.battle.def.title}: ${s.battle.result === 'won' ? '이겼다' : '졌다'}. ${G.turnData(s).date} 전선의 움직임`);
+        announce(`${s.battle.def.title}: ${s.battle.result === 'won' ? '이겼다' : '졌다'}. ` + eventLines(s.battle).join(' '));
         return true;
+    }
+
+    // The ended battle's closing row: how it went, and once the last
+    // falls have played, the way on.
+    function battleClose(b) {
+        const falls = b.events.filter(e => e.type === 'fall');
+        const left = stillMotion() ? 0 : Math.max(0, ...falls.map(e => FALL_MS - (performance.now() - (fallAt.get(e) || performance.now()))));
+        if (left > 0) window.setTimeout(() => { if (battleEnded) renderBattle(); }, left + 30);
+        const final = s.phase === 'done';
+        return el('div', { class: 'cw-battle-actions cw-battle-close' },
+            el('p', {}, el('strong', {}, b.result === 'won' ? `${b.turn}턴에 이겼다` : '이기지 못했다')),
+            left > 0 ? null : el('button', { type: 'button', class: 'cw-primary', 'data-key': 'leave', onclick: leaveBattle }, final ? '결과 보기 →' : '전선의 움직임 →'));
+    }
+
+    function leaveBattle() {
+        battleEnded = false;
+        if (s.phase === 'done') {
+            render();
+            $('cwOutcome').scrollIntoView({ block: 'start' });
+            announce(s.outcome.title);
+            return;
+        }
+        unveil();
+        announce(`${G.turnData(s).date} 전선의 움직임`);
     }
 
     function endTurn() {
