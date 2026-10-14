@@ -755,10 +755,12 @@
         const none = G.commissarsUsed(s) >= s.plan.commissars;
         const from = !on && none && s.plan.commissars === 1 ? Object.keys(s.plan.commissar).find(f => s.plan.commissar[f]) : null;
         return el('button', {
-            type: 'button', class: 'cw-toggle', 'data-key': `commissar-${id}`, 'aria-pressed': String(on),
+            type: 'button', class: 'cw-toggle' + (from ? ' is-elsewhere' : ''), 'data-key': `commissar-${id}`, 'aria-pressed': String(on),
             disabled: !on && none && !from,
+            title: from ? `${D.fronts[from].short}에서 이리로` : null,
+            'aria-label': from ? `정치위원, ${D.fronts[from].short}에서 이리로` : null,
             onclick: () => { if (from) act('commissar', from, false); act('commissar', id, !on); render(); },
-        }, on ? '★ 정치위원 ✓' : from ? `★ 정치위원 이리로 (${D.fronts[from].short}에서)` : '★ 정치위원');
+        }, '★ 정치위원');
     }
 
     // Cards aimed at a front (Trotsky's train) are sent from the front's own
@@ -769,19 +771,18 @@
             const played = s.plan.cards.find(c => c.id === cid);
             const here = played && played.target === id;
             const name = card.title.replace(/^.*의 /, '');
-            const label = here ? `${name} +${card.bonus} ✓`
-                : played ? `${name} 이리로 (${D.fronts[played.target].short}에서)`
-                : `${name} +${card.bonus}`;
+            const away = played && !here ? D.fronts[played.target].short : null;
             return el('button', {
-                type: 'button', class: 'cw-toggle', 'data-key': `${cid}-${id}`, 'aria-pressed': String(Boolean(here)),
+                type: 'button', class: 'cw-toggle' + (away ? ' is-elsewhere' : ''), 'data-key': `${cid}-${id}`, 'aria-pressed': String(Boolean(here)),
                 disabled: !played && !G.canPlay(s, cid, id),
-                title: !played && s.plan.command < card.cost ? '지휘력이 모자랍니다' : null,
+                title: away ? `${away}에서 이리로` : !played && s.plan.command < card.cost ? '지휘력이 모자랍니다' : null,
+                'aria-label': away ? `${name} +${card.bonus}, ${away}에서 이리로` : null,
                 onclick: () => {
                     if (played) act('unplay', cid);
                     if (!here) act('play', cid, id);
                     render();
                 },
-            }, label);
+            }, `${name} +${card.bonus}`);
         });
     }
 

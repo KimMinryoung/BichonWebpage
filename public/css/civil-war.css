@@ -275,7 +275,9 @@
 .games-shell .cw-stepper .cw-fill { min-width: 0; padding: 8px 10px; font-size: .8rem; font-weight: 600; margin-left: 6px; }
 .cw-stepper output { display: grid; place-items: center; min-width: 86px; border-block: 1px solid var(--border); font-variant-numeric: tabular-nums; font-weight: 700; }
 .games-shell .cw-toggle { padding: 8px 12px; font-size: .85rem; }
-.games-shell .cw-toggle[aria-pressed="true"] { border-color: var(--cw-red); color: var(--text-primary); font-weight: 700; }
+.games-shell .cw-toggle[aria-pressed="true"] { border-color: var(--cw-red); color: var(--text-primary); }
+/* In use on another front: pressing it moves it here. */
+.games-shell .cw-toggle.is-elsewhere { border-style: dashed; color: var(--text-secondary); }
 .cw-meter { display: grid; gap: 4px; margin: 2px 0 10px; }
 .cw-meter-top { display: flex; justify-content: space-between; gap: 8px; font-size: .9rem; font-variant-numeric: tabular-nums; }
 .cw-meter-top span { color: var(--text-secondary); }
