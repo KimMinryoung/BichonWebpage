@@ -773,7 +773,25 @@
 .cw-front-tabs { display: flex; flex-wrap: wrap; gap: 6px; }
 .games-shell .cw-front-tab { display: inline-flex; align-items: baseline; gap: 6px; min-height: 44px; padding: 6px 10px; font-size: .84rem; font-variant-numeric: tabular-nums; }
 .cw-front-tab span { color: var(--text-secondary); font-size: .78rem; }
-.cw-front-tab .cw-front-tab-diff.is-short { color: var(--clr-red); font-weight: 700; }
-.cw-front-tab .cw-front-tab-diff.is-ahead { color: var(--btn-primary, #2da44e); font-weight: 700; }
+.games-shell .cw-front-tab.is-short { border-left: 4px solid var(--clr-red); }
+.games-shell .cw-front-tab.is-short span { color: var(--clr-red); font-weight: 700; }
+.games-shell .cw-front-tab.is-ahead { border-left: 4px solid var(--btn-primary, #2da44e); }
+.games-shell .cw-front-tab.is-ahead span { color: var(--btn-primary, #2da44e); font-weight: 700; }
 .games-shell .cw-front-tab[aria-pressed="true"] { border-color: var(--cw-red); background: color-mix(in srgb, var(--cw-red) 14%, transparent); }
 .cw-map-frame.has-pick:not(.is-spotlight) [data-front]:not(.is-picked) { opacity: .5; }
+/* Narrow screens: the map pins under the crumb bar while the fronts scroll
+   beneath it, so the open card and its front are in sight together. The
+   panel lets its parts join the board, which runs through the cards. */
+@media (max-width: 900px) {
+    .cw-campaign:not(.is-unveiling) .cw-map-panel { display: contents; }
+    .cw-campaign:not(.is-unveiling) .cw-map-heading,
+    .cw-campaign:not(.is-unveiling) .cw-map-key,
+    .cw-campaign:not(.is-unveiling) .cw-map-tools { background: var(--bg-surface); border-inline: 1px solid var(--border); }
+    .cw-campaign:not(.is-unveiling) .cw-map-tools { border-bottom: 1px solid var(--border); padding-top: 4px; }
+    .cw-campaign:not(.is-unveiling) .cw-board { gap: 0; }
+    .cw-campaign:not(.is-unveiling) .cw-fronts { margin-top: 12px; }
+    .cw-campaign:not(.is-unveiling) .cw-map-frame { position: sticky; top: 34px; z-index: 4; background: var(--bg-surface); border: 1px solid var(--border); border-top: 0; }
+    .cw-campaign:not(.is-unveiling) .cw-map-frame svg { max-height: 45svh; }
+    .cw-front-tabs { flex-wrap: nowrap; overflow-x: auto; }
+    .games-shell .cw-front-tab { flex: 0 0 auto; gap: 4px; padding: 6px 8px; font-size: .8rem; }
+}

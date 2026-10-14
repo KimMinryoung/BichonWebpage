@@ -487,7 +487,7 @@
         const go = () => {
             if (s.phase === 'plan' && picked !== id) { picked = id; render(); }
             const card = document.getElementById('cwFront-' + id);
-            if (card) { card.scrollIntoView({ block: 'nearest' }); card.focus({ preventScroll: true }); }
+            if (card) { revealCard(card); card.focus({ preventScroll: true }); }
         };
         g.addEventListener('click', go);
         g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
@@ -572,6 +572,15 @@
         mapEl.querySelectorAll('[data-front]').forEach(g => g.classList.toggle('is-lit', g.dataset.front === id));
     }
 
+    // On a narrow screen the map pins to the top and the card scrolls under
+    // it: bring the row of fronts above the card to just below the map.
+    function revealCard(card) {
+        if (getComputedStyle(mapEl).position !== 'sticky') return card.scrollIntoView({ block: 'nearest' });
+        const below = mapEl.getBoundingClientRect().bottom + 8;
+        const top = (card.previousElementSibling || card).getBoundingClientRect().top;
+        if (Math.abs(top - below) > 4) window.scrollBy({ top: top - below });
+    }
+
     // The front whose card is open stays marked on the map, without a
     // blink: the rest only fade a little.
     function markPicked() {
@@ -641,10 +650,10 @@
         items.push(el('div', { class: 'cw-front-tabs', role: 'group', 'aria-label': '전선 고르기' }, ...active.map(id => {
             const d = s.lines[id] + fc.fronts[id].change - D.fronts[id].history[s.turn];
             return el('button', {
-                type: 'button', class: 'cw-front-tab', 'data-key': `pick-${id}`, 'aria-pressed': String(id === picked), 'aria-controls': 'cwFront-' + id,
+                type: 'button', class: 'cw-front-tab' + (d < 0 ? ' is-short' : d > 0 ? ' is-ahead' : ''), 'data-key': `pick-${id}`, 'aria-pressed': String(id === picked), 'aria-controls': 'cwFront-' + id,
                 onclick: () => { picked = id; render(); },
-            }, el('strong', {}, D.fronts[id].short), el('span', {}, `${s.plan.alloc[id]}사단`),
-            el('span', { class: 'cw-front-tab-diff' + (d < 0 ? ' is-short' : d > 0 ? ' is-ahead' : '') }, d ? `역사 ${signed(d)}` : '역사대로'));
+                'aria-label': `${D.fronts[id].name} ${s.plan.alloc[id]}사단` + (d ? `, 예상 역사보다 도시 ${Math.abs(d)}개 ${d < 0 ? '뒤처짐' : '앞섬'}` : ''),
+            }, el('strong', {}, D.fronts[id].short), el('span', {}, `${s.plan.alloc[id]}사단`));
         })));
         for (const id of active) {
             if (id !== picked) continue;
