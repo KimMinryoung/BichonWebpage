@@ -174,7 +174,6 @@
         const planning = s.phase === 'plan';
         if (planning) unveiling = false;
         $('cwCampaign').classList.toggle('is-unveiling', unveiling);
-        $('cwCampaign').classList.toggle('is-planning', planning);
         renderBrief();
         renderMap();
         renderFronts(planning);
@@ -387,13 +386,13 @@
 
     const unite = (a, b) => ({ x0: Math.min(a.x0, b.x0), x1: Math.max(a.x1, b.x1), y0: Math.min(a.y0, b.y0), y1: Math.max(a.y1, b.y1) });
 
-    // A narrow screen draws the map too small to read whole. Each season's
-    // plan opens on the fronts that fight, as large as fits (and never smaller
+    // A narrow screen draws the map too small to read whole. Each season
+    // (its plan, its result) opens on the fronts that fight, as large as fits (and never smaller
     // than readable, never larger than twice that); the rest is a swipe
     // away inside the frame. Panning by hand is kept until the next season.
     function fitMap() {
         const root = mapEl.querySelector('svg');
-        if (!NARROW.matches || s.phase !== 'plan') { root.style.width = overlayRoot().style.width = ''; mapEl.style.height = ''; fitKey = null; return; }
+        if (!NARROW.matches) { root.style.width = overlayRoot().style.width = ''; mapEl.style.height = ''; fitKey = null; return; }
         const fw = mapEl.clientWidth;
         const key = `${motion.key}:${fw}`;
         if (!fw || key === fitKey || !Object.keys(frontBoxes).length) return;
