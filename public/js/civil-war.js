@@ -806,16 +806,18 @@
     }
 
     // What the attackers' traits do to this front under the plan: the rule,
-    // and whether it bites (걸림), is blunted (막음) or, for one that helps
-    // the Reds, works (통함).
+    // and what it does to the pressure: added (red), blunted (struck out)
+    // or, for one that helps the Reds, taken off (green).
     function traitRow(traits) {
         const shown = (traits || []).filter(tr => tr.rule);
         if (!shown.length) return null;
         return el('ul', { class: 'cw-traits' }, ...shown.map(tr => {
-            const state = !tr.counted ? null : tr.on ? (tr.by > 0 ? ['is-bites', '걸림'] : ['is-works', '통함']) : (tr.by > 0 ? ['is-blunted', '막음'] : null);
-            return el('li', { class: state ? state[0] : 'is-idle' },
-                el('strong', {}, `${tr.short} · ${tr.name}`), ' ', tr.rule,
-                state ? el('b', {}, state[1]) : null);
+            const state = !tr.counted ? null : tr.on ? (tr.by > 0 ? 'is-bites' : 'is-works') : (tr.by > 0 ? 'is-blunted' : null);
+            const mark = state === 'is-blunted'
+                ? el('b', { 'aria-label': `압력 ${signed(tr.by)} 막음` }, el('s', {}, signed(tr.by)))
+                : state ? el('b', {}, `압력 ${signed(tr.by)}`) : null;
+            return el('li', { class: state || 'is-idle' },
+                el('strong', {}, `${tr.short} · ${tr.name}`), ' ', tr.rule, mark);
         }));
     }
 

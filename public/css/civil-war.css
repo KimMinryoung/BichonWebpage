@@ -606,7 +606,7 @@
 .cw-traits { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: .76rem; color: var(--text-secondary); }
 .cw-traits li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; padding: 2px 6px; border-left: 3px solid var(--border); }
 .cw-traits strong { color: var(--text-primary); }
-.cw-traits b { margin-left: auto; font-size: .7rem; padding: 0 5px; border: 1px solid currentColor; }
+.cw-traits b { margin-left: auto; font-size: .7rem; padding: 0 5px; border: 1px solid currentColor; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .cw-traits .is-bites { border-left-color: var(--clr-red); }
 .cw-traits .is-bites b { color: #fff; background: var(--clr-red); border-color: var(--clr-red); }
 .cw-traits .is-blunted b { color: var(--text-secondary); }
