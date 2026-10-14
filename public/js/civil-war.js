@@ -1522,7 +1522,7 @@
                 // Shelling wears a fortification's defence. A unit standing
                 // there shows what is left on its chip; an empty one says it.
                 const worn = B.terrain(b, r, c).fort && b.wear[r * 100 + c];
-                if (worn && !B.unitAt(b, r, c)) board.append(svg('text', { x: c * CELL + CELL - 3, y: r * CELL + CELL - 5, 'text-anchor': 'end', class: 'cw-wear' }, `포격 방어 −${worn}`));
+                if (worn && !B.unitAt(b, r, c)) board.append(svg('text', { x: c * CELL + CELL - 3, y: r * CELL + CELL - 5, 'text-anchor': 'end', class: 'cw-wear' }, fortText(b, r, c)));
                 if (danger.some(m => m.r === r && m.c === c)) board.append(svg('rect', { x: c * CELL + 2, y: r * CELL + 2, width: CELL - 4, height: CELL - 4, class: 'cw-danger' }));
             }
         }
@@ -1649,6 +1649,14 @@
                         el('ol', { class: 'cw-battle-log' }, ...eventLines(b).map(t => el('li', {}, t)))) : null)));
     }
 
+    // A fortification's defence as it was and as it is: 「진지 +2→0」.
+    // more: shells still to land (an attack's preview).
+    function fortText(b, r, c, more = 0) {
+        const t = B.terrain(b, r, c);
+        const now = B.groundOf(b, r, c);
+        return `진지 +${t.def}→${Math.max(0, now - more)}`;
+    }
+
     function unitInfo(u) {
         const b = s.battle;
         const t = B.terrain(b, u.r, u.c);
@@ -1656,7 +1664,8 @@
         // shelling or a turned line took from a fortification.
         const ground = B.groundOf(b, u.r, u.c);
         const worn = t.fort ? b.wear[u.r * 100 + u.c] || 0 : 0;
-        const parts = [`부대 ${u.def}`, ground || t.fort ? `${t.name} ${signed(ground)}` : null, worn ? `포격으로 진지 −${worn}` : null, t.fort && b.turned[t.fort] ? '우회되어 진지 +1까지' : null].filter(Boolean);
+        const why = [worn ? `포격 ${worn}번` : null, t.fort && b.turned[t.fort] ? '우회됨' : null].filter(Boolean);
+        const parts = [`부대 ${u.def}`, t.fort && ground !== t.def ? `${t.name} ${fortText(b, u.r, u.c)}(${why.join(', ')})` : ground ? `${t.name} ${signed(ground)}` : null].filter(Boolean);
         // A Red unit ready to strike lists who it can hit and what it would do.
         const targets = u.side === 'red' && !u.acted && !battleEnded ? B.targets(b, u) : [];
         return el('div', {},
@@ -1667,7 +1676,7 @@
                 const p = B.preview(b, u, d);
                 return el('li', {}, el('button', { type: 'button', onclick: () => { if (act('b:attack', u.id, d.id)) afterBattleAct(`${u.name}이(가) ${d.name}을(를) 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : '')); } },
                     el('strong', {}, `${d.name} 공격`),
-                    el('span', {}, `병력 ${d.hp}/${d.maxHp} · 방어 ${B.defenseOf(b, d)} → 피해 ${p.dmg}${p.dmg >= d.hp ? ' (격파)' : ''}${p.counter ? ` · 반격 ${p.counter}` : ''}${p.wears ? ' · 진지 방어 −1' : ''}`)));
+                    el('span', {}, `병력 ${d.hp}/${d.maxHp} · 방어 ${B.defenseOf(b, d)} → 피해 ${p.dmg}${p.dmg >= d.hp ? ' (격파)' : ''}${p.counter ? ` · 반격 ${p.counter}` : ''}${p.wears ? ` · ${fortText(b, d.r, d.c, 1)}` : ''}`)));
             })) : null,
             u.person ? el('p', {}, '지휘: ', person(u.person)) : null,
             u.commissar ? el('p', { class: 'cw-note' }, '정치위원이 함께한다 (방어 +1).') : null,
