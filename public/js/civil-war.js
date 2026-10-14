@@ -912,10 +912,12 @@
 
     function renderCommand() {
         const notes = [];
-        if (!s.plan.choice) notes.push('갈림길을 고르세요');
+        notes.push(s.plan.choice ? '준비가 끝났습니다' : '갈림길을 고르세요');
         const kept = G.free(s);
-        if (kept > 0) notes.push(`사단 ${kept}개 예비 (곡물 ${Math.ceil(kept / 2)} 먹음)`);
-        $('cwCommandNote').textContent = notes.length ? notes.join(' · ') : '준비가 끝났습니다.';
+        const need = G.forecast(s).supply.need;
+        const saved = kept - Math.ceil(kept / 2);
+        notes.push(`이 시기 곡물 소비 ${need}` + (saved > 0 ? ` (예비 사단 ${kept}개는 반만 먹어 ${saved} 절약)` : ''));
+        $('cwCommandNote').textContent = notes.join(' · ');
         $('cwSettle').disabled = !G.canSettle(s);
         const battle = G.battleOf(s);
         $('cwSettle').textContent = battle ? battle.settle : '이 시기를 보낸다 →';
