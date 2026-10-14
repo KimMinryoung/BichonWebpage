@@ -682,7 +682,8 @@
 
     function renderFronts(planning) {
         const box = $('cwFronts');
-        const items = [el('h3', { id: 'cwFrontsTitle' }, planning ? '이번 시기의 전선' : '전선의 결과')];
+        // While planning the row of fronts says it all; the heading stays for screen readers.
+        const items = [el('h3', { id: 'cwFrontsTitle', class: planning ? 'visually-hidden' : null }, planning ? '이번 시기의 전선' : '전선의 결과')];
         if (!planning) { box.replaceChildren(...items, ...reviewFronts()); return; }
         const fc = G.forecast(s);
         const threats = G.threatsOf(s);

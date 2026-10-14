@@ -775,7 +775,7 @@
 /* One front card at a time (civil-war.js renderFronts): the row of fronts
    picks it, as do the attackers' markers on the map. */
 .cw-front-tabs { display: flex; flex-wrap: wrap; gap: 6px; }
-.games-shell .cw-front-tab { display: inline-flex; align-items: baseline; gap: 6px; min-height: 44px; padding: 6px 10px; font-size: .84rem; font-variant-numeric: tabular-nums; }
+.games-shell .cw-front-tab { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 4px 10px; line-height: 1.2; font-size: .84rem; font-variant-numeric: tabular-nums; }
 .cw-front-tab span { color: var(--text-secondary); font-size: .78rem; }
 .games-shell .cw-front-tab.is-short { border-left: 4px solid var(--clr-red); }
 .games-shell .cw-front-tab.is-short span { color: var(--clr-red); font-weight: 700; }
@@ -800,5 +800,5 @@
     .cw-map-frame::-webkit-scrollbar { display: none; }
     .cw-map-frame svg { max-width: none; }
     .cw-front-tabs { flex-wrap: nowrap; overflow-x: auto; }
-    .games-shell .cw-front-tab { flex: 0 0 auto; gap: 4px; padding: 6px 8px; font-size: .8rem; }
+    .games-shell .cw-front-tab { flex: 0 0 auto; gap: 4px; padding: 4px 8px; font-size: .8rem; }
 }
