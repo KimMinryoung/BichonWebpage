@@ -174,10 +174,19 @@
 .cw-foe-flagrim { fill: none; stroke: #1d1d1b; stroke-width: .6; }
 .cw-foe-numbers { fill: var(--text-primary); }
 .cw-foe-numbers-text { font-size: 10.5px; font-weight: 700; fill: var(--bg-surface); }
-.cw-foe-marker.is-short .cw-foe-numbers { fill: var(--clr-red); }
-.cw-foe-marker.is-short .cw-foe-numbers-text { fill: #fff; }
-.cw-foe-arrow { stroke: var(--text-primary); stroke-width: 2.2; }
-.cw-foe-arrowhead { fill: var(--text-primary); }
+.cw-foe-arrow { stroke-width: 2.2; }
+.cw-foe-arrow-under { stroke: var(--cw-ink); stroke-width: 4; stroke-linecap: round; }
+.cw-foe-arrowhead { stroke: var(--cw-ink); stroke-width: .9; stroke-linejoin: round; }
+.cw-foe-stop { stroke-width: 3; stroke-linecap: round; }
+/* The attacker's arrow in its colour (red is the Red Army's). */
+.cw-foe-marker.k-white :is(.cw-foe-arrow, .cw-foe-stop) { stroke: var(--cw-white); }
+.cw-foe-marker.k-white .cw-foe-arrowhead { fill: var(--cw-white); }
+.cw-foe-marker.k-interv :is(.cw-foe-arrow, .cw-foe-stop) { stroke: var(--emap-blue); }
+.cw-foe-marker.k-interv .cw-foe-arrowhead { fill: var(--emap-blue); }
+.cw-foe-marker.k-central :is(.cw-foe-arrow, .cw-foe-stop) { stroke: var(--emap-amber); }
+.cw-foe-marker.k-central .cw-foe-arrowhead { fill: var(--emap-amber); }
+.cw-foe-marker.k-national :is(.cw-foe-arrow, .cw-foe-stop) { stroke: var(--emap-gray); }
+.cw-foe-marker.k-national .cw-foe-arrowhead { fill: var(--emap-gray); }
 
 /* The map's entrance (civil-war.js renderMap): when a season opens the
    attackers come on in their own manner (m-*: infantry in step, cavalry at
@@ -199,8 +208,8 @@
 .cw-foe-body { transform-origin: 50% 100%; }
 .cw-foe-mark, .cw-city.is-flipped { transform-origin: center; }
 .cw-foe-marker.is-beaten .cw-foe-body { rotate: -4deg; scale: .97 .8; fill-opacity: .75; stroke-opacity: .75; }
-.cw-foe-marker.is-beaten .cw-foe-arrow, .cw-foe-marker.is-beaten .cw-foe-arrowhead { opacity: .35; }
-.cw-foe-marker.is-surging .cw-foe-arrow { stroke: var(--clr-red); stroke-width: 3; }
+.cw-foe-marker.is-surging .cw-foe-arrow { stroke-width: 3.2; }
+.cw-foe-marker.is-surging .cw-foe-arrow-under { stroke-width: 5; }
 @media (prefers-reduced-motion: no-preference) {
     #cwOverlay.is-plan:is(.is-entering, .is-waiting) .cw-foe-body {
         animation: cw-march 1s steps(5, end) both;
@@ -209,7 +218,7 @@
     #cwOverlay.is-plan:is(.is-entering, .is-waiting) .m-charge .cw-foe-body { animation: cw-charge .75s cubic-bezier(.2, .7, .3, 1) both; animation-delay: calc(var(--order) * 220ms - var(--since, 0ms)); }
     #cwOverlay.is-plan:is(.is-entering, .is-waiting) .m-rail .cw-foe-body { animation: cw-rail 1.1s cubic-bezier(.45, 0, .2, 1) both; animation-delay: calc(var(--order) * 220ms - var(--since, 0ms)); }
     #cwOverlay.is-plan:is(.is-entering, .is-waiting) .m-sail .cw-foe-body { animation: cw-sail 1.3s ease-out both; animation-delay: calc(var(--order) * 220ms - var(--since, 0ms)); }
-    #cwOverlay.is-plan:is(.is-entering, .is-waiting) .cw-foe-arrow {
+    #cwOverlay.is-plan:is(.is-entering, .is-waiting) :is(.cw-foe-arrow, .cw-foe-arrow-under) {
         stroke-dasharray: 60; animation: cw-draw .45s ease-out both;
         animation-delay: calc(var(--order) * 220ms + 900ms - var(--since, 0ms));
     }
@@ -269,8 +278,8 @@
 .cw-front { border: 1px solid var(--border); background: var(--bg-surface); padding: 12px 14px; display: grid; gap: 6px; }
 .cw-front:hover, .cw-front:focus-within { border-color: var(--text-secondary); }
 .cw-front:focus-visible { outline: 3px solid var(--text-primary); outline-offset: 2px; }
-.cw-front.is-short { border-left: 4px solid var(--clr-red); }
-.cw-front.is-ahead { border-left: 4px solid var(--btn-primary, #2da44e); }
+/* A front against history (civil-war.js trendMark): ▼ behind, ▲ ahead. */
+.cw-trend { margin-left: 5px; font-size: .78em; color: var(--text-primary); }
 .cw-front header { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; flex-wrap: wrap; }
 .cw-front header h4 { font-size: 1rem; }
 .cw-front header span { font-size: .78rem; color: var(--text-secondary); }
@@ -699,13 +708,14 @@
 .cw-foe-mark.k-central { fill: var(--emap-amber); }
 .cw-foe-mark.k-national { fill: var(--emap-gray); }
 .cw-foe-marks { fill: #1d1d1b; stroke: var(--cw-ink); stroke-width: 1; }
-.cw-foe-marker.is-short .cw-foe-marks { fill: var(--clr-red); }
+.cw-foe-trend { font-size: 10px; fill: #fff; }
 .cw-map-legend .cw-mk-star, .cw-map-legend .cw-mk-train { vertical-align: middle; }
 
 /* Strength and pressure on one scale: the bar is built of the strength's
    blocks, the attacker's units stand over it. */
 .cw-meter-top { display: flex; justify-content: space-between; }
 .cw-foe-row { position: relative; height: 11px; margin-bottom: 2px; }
+.cw-foe-count { position: absolute; top: 50%; transform: translateY(-50%); font-size: .75rem; line-height: 1; white-space: nowrap; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
 .cw-unit-mark { position: absolute; top: 0; bottom: 0; box-sizing: border-box; border: 1px solid var(--bg-surface); }
 .cw-unit-mark.k-white { background: var(--cw-white); border-color: var(--cw-ink); }
 .cw-unit-mark.k-interv { background: var(--emap-blue); }
@@ -784,10 +794,8 @@
 .cw-front-tabs { display: flex; flex-wrap: wrap; gap: 6px; }
 .games-shell .cw-front-tab { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 4px 10px; line-height: 1.2; font-size: .84rem; font-variant-numeric: tabular-nums; }
 .cw-front-tab span { color: var(--text-secondary); font-size: .78rem; }
-.games-shell .cw-front-tab.is-short { border-left: 4px solid var(--clr-red); }
-.games-shell .cw-front-tab.is-short span { color: var(--clr-red); font-weight: 700; }
-.games-shell .cw-front-tab.is-ahead { border-left: 4px solid var(--btn-primary, #2da44e); }
-.games-shell .cw-front-tab.is-ahead span { color: var(--btn-primary, #2da44e); font-weight: 700; }
+
+.cw-front-tab .cw-trend { margin-left: 0; }
 .games-shell .cw-front-tab[aria-pressed="true"] { border-color: var(--cw-red); background: color-mix(in srgb, var(--cw-red) 14%, transparent); }
 .cw-map-frame.has-pick:not(.is-spotlight) [data-front]:not(.is-picked) { opacity: .5; }
 /* Narrow screens: the map pins under the crumb bar while the fronts scroll

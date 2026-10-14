@@ -111,6 +111,9 @@
     const LABEL_AT = { 가치나: [8, 14, 'start'], 얌부르크: [-8, 4, 'end'], 페트로그라드: [8, -2, 'start'] };
 
     const signed = n => (n > 0 ? '+' : n < 0 ? '−' : '±') + Math.abs(n);
+    // A front against history: ▼ behind, ▲ ahead, nothing when even. Red
+    // stays the Red Army's colour alone.
+    const trendMark = d => d ? el('span', { class: 'cw-trend', title: `역사보다 도시 ${Math.abs(d)}개 ${d < 0 ? '뒤처짐' : '앞섬'}` }, d < 0 ? '▼' : '▲') : null;
 
 
     // ── Setup ──
@@ -517,17 +520,20 @@
         const foes = (G.threatsOf(s)[id] || {}).foes || [];
         const kind = foes.length ? D.factions[foes[0]].kind : 'white';
         const name = foes.map(f => D.factions[f].short).join('·');
-        const d = result ? result.after - result.history : 0;
+        // Against history: while planning the forecast, after the season the
+        // result. ▼ behind, ▲ ahead; red stays the Red Army's alone.
+        const d = forecast ? s.lines[id] + forecast.change - D.fronts[id].history[s.turn] : result ? result.after - result.history : 0;
+        const trend = d < 0 ? '▼' : d > 0 ? '▲' : '';
         // While planning the row under the name counts the pressure in the
         // attacker's marks, one per point; after the season it says how the
         // front did against history.
-        const numbers = forecast ? null : `${D.fronts[id].short} ${d ? `역사 ${signed(d)}` : '역사대로'}`;
+        const numbers = forecast ? null : [trend, D.fronts[id].short, d ? signed(d) : ''].filter(Boolean).join(' ');
         const marks = forecast ? forecast.pressure : 0;
-        const MARK = 6.5, PER_ROW = 10;
+        const MARK = 6.5, PER_ROW = 10, TREND = trend && forecast ? 13 : 0;
         const markRows = Math.max(1, Math.ceil(marks / PER_ROW));
         const rowH = forecast ? markRows * MARK + 4 : 16;
         const flags = foes.filter(f => D.factions[f].flag);
-        const w = Math.max(textWidth(name, 11) + flags.length * 16 + 12, forecast ? Math.min(marks, PER_ROW) * MARK + 8 : textWidth(numbers, 10.5) + 10);
+        const w = Math.max(textWidth(name, 11) + flags.length * 16 + 12, forecast ? Math.min(marks, PER_ROW) * MARK + 8 + TREND : textWidth(numbers, 10.5) + 10);
         // Candidate spots round the anchor, outward first; the one covering
         // the least of the city dots, labels and earlier markers wins.
         const overlap = (a, b) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0)) * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0));
@@ -545,13 +551,12 @@
         }
         const { x, y } = best;
         avoid.push(best.box);
-        const short = forecast ? s.lines[id] + forecast.change < D.fronts[id].history[s.turn] : d < 0;
         // How the season went for the attacker: beaten back (the Reds took
         // a city, or held with strength to spare) or surging on (it took one).
         const fate = !result ? '' : result.after < result.before ? ' is-surging'
             : result.after > result.before || result.margin >= 0 ? ' is-beaten' : '';
         const lead = foes.length && D.factions[foes[0]].trait;
-        const g = svg('g', { class: `cw-foe-marker k-${kind}${short ? ' is-short' : ''}${fate} m-${(lead && lead.motion) || 'march'}`, tabindex: '0', role: 'button', 'aria-label': `${D.fronts[id].name}: ${foes.map(f => D.factions[f].name).join(', ')}. 카드로 이동` });
+        const g = svg('g', { class: `cw-foe-marker k-${kind}${fate} m-${(lead && lead.motion) || 'march'}`, tabindex: '0', role: 'button', 'aria-label': `${D.fronts[id].name}: ${foes.map(f => D.factions[f].name).join(', ')}. 카드로 이동` });
         // The arrow at the city under attack: the last one held, or Moscow.
         const target = line > 0 ? pts[Math.min(line, n) - 1] : points.moscow;
         const tx = target.x - x, ty = target.y - y;
@@ -568,14 +573,25 @@
             const sx = Math.abs(tx / tl) > 1e-6 ? (w / 2 + 2) / Math.abs(tx / tl) : Infinity;
             const sy = (ty > 0 ? 8 + rowH : 12) / Math.max(1e-6, Math.abs(ty / tl));
             const from = Math.min(sx, sy);
-            const to = Math.max(from + 6, Math.min(tl - 9, from + 40));
+            // The arrow is the attacker's, in its colour. After the season
+            // its shape tells the result: a surge reaches on, thicker, toward the city,
+            // the beaten stop short against a bar.
+            const beaten = fate === ' is-beaten', surging = fate === ' is-surging';
+            const to = beaten ? Math.min(from + 14, tl - 12) : surging ? Math.max(from + 6, Math.min(tl - 8, from + 64)) : Math.max(from + 6, Math.min(tl - 9, from + 40));
             const ux = tx / tl, uy = ty / tl;
             const ex = x + ux * to, ey = y + uy * to;
-            body.append(svg('line', { x1: x + ux * from, y1: y + uy * from, x2: ex, y2: ey, class: 'cw-foe-arrow' }));
-            // The head is a shape of the marker's own, not an svg <marker>,
-            // so it fades in and out with the body.
-            const px = ex + ux * 2.6, py = ey + uy * 2.6, bx = px - ux * 13, by = py - uy * 13;
-            body.append(svg('path', { d: `M${px.toFixed(1)} ${py.toFixed(1)}L${(bx - uy * 6.5).toFixed(1)} ${(by + ux * 6.5).toFixed(1)}L${(bx + uy * 6.5).toFixed(1)} ${(by - ux * 6.5).toFixed(1)}Z`, class: 'cw-foe-arrowhead' }));
+            const shaft = { x1: x + ux * from, y1: y + uy * from, x2: ex, y2: ey };
+            body.append(svg('line', Object.assign({ class: 'cw-foe-arrow-under' }, shaft)));
+            body.append(svg('line', Object.assign({ class: 'cw-foe-arrow' }, shaft)));
+            const p = (px, py) => `${px.toFixed(1)} ${py.toFixed(1)}`;
+            if (beaten) {
+                body.append(svg('path', { d: `M${p(ex - uy * 7, ey + ux * 7)}L${p(ex + uy * 7, ey - ux * 7)}`, class: 'cw-foe-stop' }));
+            } else {
+                // The head is a shape of the marker's own, not an svg
+                // <marker>, so it fades in and out with the body.
+                const px = ex + ux * 2.6, py = ey + uy * 2.6, bx = px - ux * 13, by = py - uy * 13;
+                body.append(svg('path', { d: `M${p(px, py)}L${p(bx - uy * 6.5, by + ux * 6.5)}L${p(bx + uy * 6.5, by - ux * 6.5)}Z`, class: 'cw-foe-arrowhead' }));
+            }
         }
         body.append(svg('rect', { x: x - w / 2, y: y - 10, width: w, height: 18, class: 'cw-foe-name' }));
         let fx = x - w / 2 + 6;
@@ -589,8 +605,9 @@
         body.append(svg('rect', { x: x - w / 2, y: y + 8, width: w, height: rowH, class: forecast ? 'cw-foe-marks' : 'cw-foe-numbers' }));
         if (numbers) body.append(svg('text', { x, y: y + 20, 'text-anchor': 'middle', class: 'cw-foe-numbers-text' }, numbers));
         const across = Math.min(marks, PER_ROW) * MARK;
+        if (TREND) body.append(svg('text', { x: x - w / 2 + 7, y: y + 8 + rowH / 2 + 3.5, 'text-anchor': 'middle', class: 'cw-foe-trend' }, trend));
         for (let i = 0; i < marks; i++) {
-            const mx = x - across / 2 + (i % PER_ROW) * MARK + 0.75, my = y + 10 + Math.floor(i / PER_ROW) * MARK;
+            const mx = x + TREND / 2 - across / 2 + (i % PER_ROW) * MARK + 0.75, my = y + 10 + Math.floor(i / PER_ROW) * MARK;
             body.append(svg('rect', { x: mx, y: my, width: MARK - 1.5, height: MARK - 1.5, class: 'cw-foe-mark k-' + kind, style: `--m:${i}` }));
         }
         if (forecast) g.setAttribute('aria-label', g.getAttribute('aria-label').replace('. 카드로', `, 압력 ${marks}, 전투력 ${forecast.strength}. 카드로`));
@@ -761,10 +778,10 @@
         items.push(el('div', { class: 'cw-front-tabs', role: 'group', 'aria-label': '전선 고르기' }, ...active.map(id => {
             const d = s.lines[id] + fc.fronts[id].change - D.fronts[id].history[s.turn];
             return el('button', {
-                type: 'button', class: 'cw-front-tab' + (d < 0 ? ' is-short' : d > 0 ? ' is-ahead' : ''), 'data-key': `pick-${id}`, 'aria-pressed': String(id === picked), 'aria-controls': 'cwFront-' + id,
+                type: 'button', class: 'cw-front-tab', 'data-key': `pick-${id}`, 'aria-pressed': String(id === picked), 'aria-controls': 'cwFront-' + id,
                 onclick: () => { picked = id; render(); showFront(id); },
                 'aria-label': `${D.fronts[id].name} ${s.plan.alloc[id]}사단` + (d ? `, 예상 역사보다 도시 ${Math.abs(d)}개 ${d < 0 ? '뒤처짐' : '앞섬'}` : ''),
-            }, el('strong', {}, D.fronts[id].short), el('span', {}, `${s.plan.alloc[id]}사단`));
+            }, el('strong', {}, D.fronts[id].short), el('span', {}, `${s.plan.alloc[id]}사단`), trendMark(d));
         })));
         for (const id of active) {
             if (id !== picked) continue;
@@ -779,8 +796,8 @@
                 el('output', { 'aria-live': 'polite', 'aria-label': `${n}개 사단` }, `${n}사단`),
                 el('button', { type: 'button', 'data-key': `more-${id}`, 'aria-label': `${D.fronts[id].short}에 사단 하나 보내기`, disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + 1); render(); } }, '+'),
                 el('button', { type: 'button', 'data-key': `fill-${id}`, class: 'cw-fill', 'aria-label': '남은 사단 모두 보내기', disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + G.free(s)); render(); } }, '모두'));
-            const card = el('article', { class: 'cw-front' + (after < hist ? ' is-short' : ''), id: 'cwFront-' + id, tabindex: '-1' },
-                el('header', {}, el('h4', {}, D.fronts[id].name), foeList(threat.foes)),
+            const card = el('article', { class: 'cw-front', id: 'cwFront-' + id, tabindex: '-1' },
+                el('header', {}, el('h4', {}, D.fronts[id].name, trendMark(after - hist)), foeList(threat.foes)),
                 el('p', { class: 'cw-threat' }, threat.text, ' ', person(threat.who)),
                 traitRow(f.traits),
                 el('div', { class: 'cw-front-controls' }, stepper, commissarToggle(id), ...frontCards(id)),
@@ -909,7 +926,8 @@
         });
         const current = bands.find(b => f.strength >= b.from && (b.to === null || f.strength < b.to));
         const last = bands[bands.length - 1];
-        const top = Math.max(last.from + 3, f.strength, f.pressure + (f.pursuitIn || 0) + 1) * 1.1;
+        // Room after the pressure's marks for its count.
+        const top = Math.max(Math.max(last.from + 3, f.strength, f.pressure + (f.pursuitIn || 0) + 1) * 1.1, (f.pressure + (f.pursuitIn || 0)) / 0.8);
         const pct = v => Math.min(100, Math.max(0, v / top * 100));
         const at = v => `${pct(v).toFixed(2)}%`;
         const span = (from, to) => `left:${at(from)};width:${(pct(to) - pct(from)).toFixed(2)}%`;
@@ -922,7 +940,8 @@
         const pursued = f.pursuitIn || 0;
         const foeRow = el('div', { class: 'cw-foe-row', 'aria-hidden': 'true' },
             ...Array.from({ length: f.pressure }, (_, i) => el('i', { class: `cw-unit-mark k-${kind}${i >= f.pressure - momentum ? ' is-momentum' : ''}`, style: span(i, i + 1) })),
-            ...Array.from({ length: pursued }, (_, i) => el('i', { class: 'cw-unit-mark is-pursued', style: span(f.pressure + i, f.pressure + i + 1) })));
+            ...Array.from({ length: pursued }, (_, i) => el('i', { class: 'cw-unit-mark is-pursued', style: span(f.pressure + i, f.pressure + i + 1) })),
+            el('span', { class: 'cw-foe-count', style: `left:calc(${at(f.pressure + pursued)} + 5px)` }, `압력 ${f.pressure}`));
         const bar = el('div', { class: 'cw-meter-bar', 'aria-hidden': 'true' },
             ...bands.map(b => el('span', { class: `cw-meter-band ${b.tone}`, style: span(b.from, b.to === null ? top : b.to) })),
             ...strengthSegments(f, span),
@@ -932,8 +951,7 @@
         return el('div', { class: 'cw-meter' },
             el('div', { class: 'cw-meter-top' },
                 el('strong', {}, `전투력 ${f.strength}`),
-                el('span', {}, `압력 ${f.pressure}`),
-                el('span', { class: 'cw-sr' }, `. 사단 ${f.divisions || 0}개, 사단당 ${f.perDivision || 0}${(f.bonuses || []).map(b => `, ${b.label} ${signed(b.v)}`).join('')}`)),
+                el('span', { class: 'cw-sr' }, `, 압력 ${f.pressure}. 사단 ${f.divisions || 0}개, 사단당 ${f.perDivision || 0}${(f.bonuses || []).map(b => `, ${b.label} ${signed(b.v)}`).join('')}`)),
             foeRow,
             bar,
             el('div', { class: 'cw-stake-head' },
@@ -1087,8 +1105,8 @@
         const r = s.records[s.records.length - 1];
         return Object.entries(r.fronts).map(([id, f]) => {
             const d = f.after - f.history;
-            return withSpotlight(id, el('article', { class: 'cw-front is-result' + (d < 0 ? ' is-short' : d > 0 ? ' is-ahead' : '') },
-                el('header', {}, el('h4', {}, D.fronts[id].name)),
+            return withSpotlight(id, el('article', { class: 'cw-front is-result' },
+                el('header', {}, el('h4', {}, D.fronts[id].name, trendMark(d))),
                 meter(id, f, f.before, r.turn, r.choice, '결과')));
         });
     }
@@ -1509,8 +1527,8 @@
                         el('i', { class: tone, style: d < 0 ? `right:50%;width:${width}` : `left:50%;width:${d ? width : '2px'}` })),
                     el('span', { class: 'cw-season-value ' + tone }, d ? `${signed(d)} 도시` : '역사대로')),
                 el('div', { class: 'cw-season-fronts' }, ...Object.entries(r.fronts).map(([id, f]) =>
-                    el('article', { class: 'cw-front is-result' + (f.after < f.history ? ' is-short' : f.after > f.history ? ' is-ahead' : '') },
-                        el('header', {}, el('h4', {}, D.fronts[id].name)),
+                    el('article', { class: 'cw-front is-result' },
+                        el('header', {}, el('h4', {}, D.fronts[id].name, trendMark(f.after - f.history))),
                         meter(id, f, f.before, r.turn, r.choice, '결과'))))));
         }));
         const forks = el('table', { class: 'cw-forks' },
