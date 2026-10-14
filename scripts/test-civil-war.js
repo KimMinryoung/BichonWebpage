@@ -33,12 +33,30 @@ function plan(s, { requisition = false } = {}) {
     }
 }
 
+// Kazan as history took it: the 5th Army over the bridge, the flotilla
+// under the wharves, the 2nd Army down the Arsk road, the guns at the
+// bridge and Sviyazhsk held.
+const KREMLIN = { r: 2, c: 7 };
+const KAZAN = {
+    'k5l,k5c,ksl,kcp': [{ r: 4, c: 2 }, { r: 3, c: 2 }, { r: 2, c: 5 }, KREMLIN],
+    kfl: [{ r: 4, c: 7 }],
+    k2a: [{ r: 1, c: 9 }, KREMLIN],
+    k5g: [{ r: 5, c: 2 }],
+};
+
+// Sends the season, fighting Kazan on the way when it comes.
+function send(s) {
+    if (!G.act(s, 'settle')) return false;
+    if (s.phase === 'battle' && !s.battle.def.final) drive(s.battle, KAZAN, (name, ...args) => G.act(s, 'b:' + name, ...args));
+    return true;
+}
+
 function campaign(pick, options) {
     const s = G.start();
     while (s.phase === 'plan') {
         assert.ok(G.act(s, 'choose', pick(G.turnData(s))));
         plan(s, options);
-        assert.ok(G.act(s, 'settle'));
+        assert.ok(send(s));
         if (s.phase === 'review') assert.ok(G.act(s, 'next'));
     }
     return s;
@@ -133,12 +151,12 @@ assert.ok(command >= 1);
 
 // Propaganda shows on the pressure it lowers, this season and the next.
 const calm = G.start();
-for (let i = 0; i < 2; i++) { G.act(calm, 'choose', historical(G.turnData(calm))); plan(calm); G.act(calm, 'settle'); G.act(calm, 'next'); }
+for (let i = 0; i < 2; i++) { G.act(calm, 'choose', historical(G.turnData(calm))); plan(calm); send(calm); G.act(calm, 'next'); }
 assert.equal(G.turnData(calm).id, 'kolchak');
 assert.deepEqual(G.forecast(calm).fronts.south.pressureParts, []);
 assert.ok(G.act(calm, 'play', 'propaganda'));
 assert.deepEqual(G.forecast(calm).fronts.south.pressureParts, ['간섭군 병사에게 선전 −2']);
-G.act(calm, 'choose', 'flank'); plan(calm); G.act(calm, 'settle'); G.act(calm, 'next');
+G.act(calm, 'choose', 'flank'); plan(calm); send(calm); G.act(calm, 'next');
 assert.deepEqual(G.forecast(calm).fronts.south.pressureParts, ['간섭군 병사에게 선전 −2'], 'and the season after');
 
 // A thin southern front left empty loses Tula, and the war.
@@ -146,14 +164,14 @@ const lost = G.start();
 for (let i = 0; i < 2; i++) {
     G.act(lost, 'choose', historical(G.turnData(lost)));
     plan(lost);
-    G.act(lost, 'settle');
+    send(lost);
     G.act(lost, 'next');
 }
 lost.lines.south = 1;
 G.act(lost, 'choose', historical(G.turnData(lost)));
 const north = G.activeFronts(lost).find(f => f !== 'south');
 assert.ok(G.act(lost, 'alloc', north, lost.plan.divisions));
-assert.ok(G.act(lost, 'settle'));
+assert.ok(send(lost));
 assert.equal(lost.phase, 'done');
 assert.equal(lost.outcome.kind, 'moscow');
 
@@ -165,14 +183,14 @@ assert.ok(G.act(empty, 'alloc', 'volga', empty.plan.divisions));
 const eastForecast = G.forecast(empty).fronts.east;
 assert.equal(eastForecast.change, -5);
 assert.equal(eastForecast.momentum, 4, '6 short: two cities beyond Kazan, +2 each');
-assert.ok(G.act(empty, 'settle'));
+assert.ok(send(empty));
 assert.ok(G.act(empty, 'next'));
 const autumn = G.forecast(empty).fronts.east;
 assert.equal(autumn.pressure, D.turns[1].threats.east.pressure + 4);
 assert.deepEqual(autumn.pressureParts, ['적의 기세 +4']);
 G.act(empty, 'alloc', 'east', empty.plan.divisions);
 G.act(empty, 'choose', 'razverstka');
-G.act(empty, 'settle');
+send(empty);
 assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries into');
 
 // Strength to spare chases the beaten enemy: each STEP beyond the city
@@ -186,11 +204,11 @@ assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries 
     const volga = G.forecast(s).fronts.volga;
     assert.ok(volga.margin >= 6, `volga margin ${volga.margin}`);
     assert.equal(volga.pursuit, G.PURSUIT * (Math.min(2, Math.floor(volga.margin / 3) - 1)));
-    G.act(s, 'settle'); G.act(s, 'next');
+    send(s); G.act(s, 'next');
     const autumn = G.forecast(s).fronts.volga;
     assert.equal(autumn.pressure, D.turns[1].threats.volga.pressure - volga.pursuit);
     assert.deepEqual(autumn.pressureParts, [`추격 −${volga.pursuit}`]);
-    G.act(s, 'choose', 'razverstka'); G.act(s, 'settle');
+    G.act(s, 'choose', 'razverstka'); send(s);
     assert.equal(s.pursuit.volga, 0, 'pursuit is spent in the fight it eases');
 }
 
@@ -203,7 +221,7 @@ assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries 
     assert.equal(fc.supply.need, 2 + Math.ceil((s.plan.divisions - 2) / 2));
     assert.ok(G.canSettle(s), 'a season may be sent with divisions kept back');
     const grain = fc.supply.have - fc.supply.need;
-    G.act(s, 'settle');
+    send(s);
     assert.equal(s.grain, grain, 'what the reserve did not eat is kept');
 }
 
@@ -255,7 +273,7 @@ assert.equal(G.restore('{'), null);
         const fronts = G.activeFronts(s);
         let i = 0;
         while (G.free(s) > 0) { const f = fronts[i++ % fronts.length]; G.act(s, 'alloc', f, s.plan.alloc[f] + 1); }
-        assert.ok(G.act(s, 'settle'));
+        assert.ok(send(s));
         if (s.phase === 'review') assert.ok(G.act(s, 'next'));
     }
     assert.ok(s.cohesion < 30, `amnesties wear the party down (${s.cohesion})`);
@@ -269,12 +287,13 @@ assert.equal(G.restore('{'), null);
 // A plain soldier's battle: each group follows its route, waypoint by
 // waypoint, and every unit hits the best target it can reach; guns favour
 // targets whose fortification they wear. A null route holds and shoots.
-function fight(routes, flags = { makhno: true }, muster) {
-    const b = B.start(D.battles.perekop, flags, muster);
-    const rows = D.battles.perekop.map.length, cols = D.battles.perekop.map[0].length;
-    const goals = D.battles.perekop.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
-    // Path cost to a tile, ignoring units.
-    const costTo = dest => {
+// drive() gives the orders through order(name, ...args): straight to the
+// board, or through the campaign's log.
+function drive(b, routes, order) {
+    const rows = b.def.map.length, cols = b.def.map[0].length;
+    const goals = b.def.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
+    // A unit's path cost to a tile, ignoring units.
+    const costTo = (dest, u) => {
         const d = Array.from({ length: rows }, () => Array(cols).fill(Infinity));
         d[dest.r][dest.c] = 0;
         const queue = [[dest.r, dest.c]];
@@ -284,9 +303,8 @@ function fight(routes, flags = { makhno: true }, muster) {
             for (const [dr, dc] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
                 const nr = r + dr, nc = c + dc;
                 if (nr < 0 || nc < 0 || nr >= rows || nc >= cols) continue;
-                const t = B.terrain(b, nr, nc);
-                if (t.cost >= 99 || (t.ford && !B.fordOpen(b))) continue;
-                const nd = d[r][c] + B.terrain(b, r, c).cost;
+                if (B.enterCost(b, u, nr, nc) === Infinity) continue;
+                const nd = d[r][c] + Math.min(B.enterCost(b, u, r, c), 9);
                 if (nd < d[nr][nc]) { d[nr][nc] = nd; queue.push([nr, nc]); }
             }
         }
@@ -307,20 +325,25 @@ function fight(routes, flags = { makhno: true }, muster) {
             }
             const reach = B.reachable(b, u);
             const goal = dest && goals.find(g => reach.some(t => t.r === g.r && t.c === g.c));
-            if (goal) { assert.ok(B.act(b, 'move', u.id, goal.r, goal.c)); break; }
+            if (goal) { assert.ok(order('move', u.id, goal.r, goal.c)); break; }
             const best = () => B.targets(b, u).map(t => ({ t, p: B.preview(b, u, t) })).sort((x, y) => value(y) - value(x))[0];
             let target = best();
             if (dest && !(target && (u.kind === 'art' || target.p.dmg - target.p.counter >= 1))) {
-                const d = costTo(dest);
+                const d = costTo(dest, u);
                 const step = reach.map(t => ({ t, d: d[t.r][t.c] })).sort((x, y) => x.d - y.d || x.t.cost - y.t.cost)[0];
-                if (step && step.d < d[u.r][u.c]) B.act(b, 'move', u.id, step.t.r, step.t.c);
+                if (step && step.d < d[u.r][u.c]) order('move', u.id, step.t.r, step.t.c);
                 target = best();
             }
-            if (target && !b.result) B.act(b, 'attack', u.id, target.t.id);
+            if (target && !b.result) order('attack', u.id, target.t.id);
         }
-        if (!b.result) B.act(b, 'end');
+        if (!b.result) order('end');
     }
     return b;
+}
+
+function fight(routes, flags = { makhno: true }, muster, def = D.battles.perekop) {
+    const b = B.start(def, flags, muster);
+    return drive(b, routes, (name, ...args) => B.act(b, name, ...args));
 }
 
 {
@@ -381,6 +404,54 @@ function fight(routes, flags = { makhno: true }, muster) {
     assert.equal(B.start(D.battles.perekop, {}, muster(6)).units.some(u => u.id === 'rtr'), false);
 }
 assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), false, 'no Makhnovists without the Starobilsk agreement');
+
+// Kazan: the flotilla and the Arsk road take it; the more the plan sends
+// east the sooner; Sviyazhsk left empty falls to Kappel's raid.
+{
+    const K = D.battles.kazan;
+    const muster = (margin, cards = ['train']) => ({ margin, fed: 1, commissar: true, cards });
+    const turns = m => { const b = fight(KAZAN, {}, muster(m), K); assert.equal(b.result, 'won', `margin ${m}`); return b.turn; };
+    assert.ok(turns(-2) >= turns(0), 'a muster short of the pressure is no quicker');
+    assert.ok(turns(3) <= K.reward.quick, 'beating the pressure by a STEP takes Kazan quickly');
+    assert.ok(turns(0) > K.reward.quick, 'meeting it takes Kazan as history did');
+    const { kfl, ...noBoat } = KAZAN;
+    assert.equal(fight(noBoat, {}, muster(0), K).result, 'lost', 'the flotilla is needed');
+    assert.ok(kfl);
+    const empty = fight({ 'k5l,k5c,ksl,kcp,k5g': KAZAN['k5l,k5c,ksl,kcp'], kfl: KAZAN.kfl, k2a: KAZAN.k2a }, {}, muster(6, []), K);
+    assert.equal(empty.result, 'lost', 'Sviyazhsk left empty');
+    assert.ok(B.unitAt(empty, ...K.protect.at).id === 'wkp', 'Kappel stands in Sviyazhsk');
+    // A boat keeps to the river and passes under the bridge.
+    const b = B.start(K, {});
+    const boat = B.byId(b, 'kfl');
+    assert.ok(B.reachable(b, boat).every(t => B.terrain(b, t.r, t.c).water || B.terrain(b, t.r, t.c).span));
+    assert.ok(B.reachable(b, boat).some(t => t.r === 4 && t.c === 2), 'under the bridge');
+    assert.ok(!B.reachable(b, B.byId(b, 'k5l')).some(t => B.terrain(b, t.r, t.c).water), 'no wading the Volga');
+}
+
+// The campaign fights Kazan when the autumn of 1918 is sent, and its
+// result joins the east's strength before the settlement.
+{
+    const s = G.start();
+    G.act(s, 'choose', 'experts'); plan(s); G.act(s, 'settle'); G.act(s, 'next');
+    G.act(s, 'choose', 'razverstka'); plan(s);
+    assert.ok(G.musterOf(s).units.find(u => u.id === 'k2a'));
+    assert.ok(G.act(s, 'settle'));
+    assert.equal(s.phase, 'battle');
+    assert.equal(s.battle.def.id, 'kazan');
+    assert.equal(G.act(s, 'alloc', 'east', 0), false, 'the plan is frozen while Kazan is fought');
+    const saved = G.serialize(s);
+    // Lost: every Red unit waits until the turns run out.
+    const lost = G.restore(saved);
+    while (lost.phase === 'battle') assert.ok(G.act(lost, 'b:end'));
+    assert.equal(lost.phase, 'review');
+    assert.equal(lost.battles.kazan.result, 'lost');
+    const east = lost.records[1].fronts.east;
+    assert.ok(east.parts.includes(`카잔 탈환 실패 ${'−'}6`), east.parts.join());
+    // A save in the middle of the battle comes back to it.
+    const mid = G.restore(saved);
+    assert.equal(mid.phase, 'battle');
+    assert.equal(mid.battle.def.id, 'kazan');
+}
 assert.equal(B.start(D.battles.perekop, { curzon: true }).units.some(u => u.id === 'rcz'), true);
 
 // Guns wear a fortification: each shell on a held Wall tile takes 1 off it.

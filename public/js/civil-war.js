@@ -145,7 +145,9 @@
 
     function draw() {
         renderHud();
-        const inBattle = s.phase === 'battle' && reviewSeen;
+        // The final battle opens after the season's review; one fought
+        // before the settlement opens straight away.
+        const inBattle = s.phase === 'battle' && (reviewSeen || !s.battle.def.final);
         $('cwCampaign').hidden = inBattle || s.phase === 'done';
         $('cwBattle').hidden = !inBattle;
         $('cwOutcome').hidden = s.phase !== 'done';
@@ -548,6 +550,9 @@
         const notes = [];
         if (m.muster.fed < 1) notes.push(`굶주려 병력 ×${m.muster.fed}`);
         if (lead) notes.push(`정치위원: ${lead.name} 방어 +1`);
+        // A battle before the settlement moves this front's strength: the
+        // bar above assumes it goes as history did.
+        if (!m.def.final) notes.push(`예상은 역사처럼 이길 때 · ${m.def.reward.quick}턴 안에 이기면 전투력 +${m.def.reward.quickBy}, 지면 ${signed(m.def.reward.lostBy)}`);
         return el('div', { class: 'cw-muster' },
             el('p', {}, el('strong', {}, `${m.def.title} 편성`), notes.length ? ` · ${notes.join(' · ')}` : null),
             el('ul', {}, ...m.units.map(u => el('li', { class: u.joins ? 'is-in' : 'is-out' },
@@ -802,6 +807,20 @@
         });
     }
 
+    // A battle fought before this season's settlement: how it went, what it
+    // did to its front, and history's.
+    function foughtBattle() {
+        const def = G.battleOf(s);
+        const r = def && !def.final && s.battles[def.id];
+        if (!r) return null;
+        const v = G.battleResult(s, def.front);
+        const result = r.result === 'won' ? `${r.turns}턴에 이겼다` : '이기지 못했다';
+        return el('div', { class: 'cw-history' },
+            el('p', { class: 'games-kicker' }, def.title),
+            el('p', {}, el('strong', {}, result), ` · ${D.fronts[def.front].name} 전투력 `, v ? signed(v.v) : '그대로'),
+            el('p', {}, def.history));
+    }
+
     function renderReview() {
         const t = G.turnData(s);
         const r = s.records[s.records.length - 1];
@@ -815,6 +834,7 @@
         $('cwReview').replaceChildren(...[
             el('h3', { id: 'cwReviewTitle' }, `${t.date}의 결산`),
             r.notes.length ? el('ul', { class: 'cw-notes' }, ...r.notes.map(n => el('li', {}, n))) : null,
+            foughtBattle(),
             el('div', { class: 'cw-history' },
                 el('p', { class: 'games-kicker' }, '역사에서는'),
                 el('h4', {}, c.title),
@@ -833,6 +853,7 @@
         wall: () => `${b.def.lines[u.line].name}을 지킨다. 방어선이 우회되면 공격할 상대가 없거나 병력이 절반 아래일 때 물러난다.`,
         hold: () => '자리를 지키며 닿는 붉은 부대를 친다.',
         strike: () => b.def.strikeNote,
+        raid: () => b.def.raidNote,
     }[u.role] || (() => ''))();
     const center = (r, c) => [c * CELL + CELL / 2, r * CELL + CELL / 2];
 
@@ -841,9 +862,11 @@
     // (dense once it floods).
     function tileMarks(cls, r, c, flooded) {
         const x = c * CELL, y = r * CELL;
-        if (cls === 'wall') return svg('path', { d: `M${x} ${y + 30}h6v-8h6v8h6v-8h6v8h6v-8h6v8h6`, class: 'cw-mark-wall' });
+        if (cls === 'wall' || cls === 'kremlin') return svg('path', { d: `M${x} ${y + 30}h6v-8h6v8h6v-8h6v8h6v-8h6v8h6`, class: 'cw-mark-wall' });
         if (cls === 'yushun' || cls === 'chongar') return svg('path', { d: `M${x} ${y + 30}l6 -6l6 6l6 -6l6 6l6 -6l6 6l6 -6l6 6`, class: 'cw-mark-trench' });
-        if (cls === 'strait') return svg('path', { d: `M${x + 6} ${y + 8}v32M${x + 42} ${y + 8}v32M${x + 6} ${y + 16}h36M${x + 6} ${y + 32}h36`, class: 'cw-mark-trench' });
+        if (cls === 'strait' || cls === 'bridge') return svg('path', { d: `M${x + 6} ${y + 8}v32M${x + 42} ${y + 8}v32M${x + 6} ${y + 16}h36M${x + 6} ${y + 32}h36`, class: 'cw-mark-trench' });
+        if (cls === 'forest') return svg('path', { d: [[12, 30], [30, 22], [22, 40]].map(([dx, dy]) => `M${x + dx - 5} ${y + dy}l5 -9l5 9z`).join(''), class: 'cw-mark-wood' });
+        if (cls === 'river') return svg('path', { d: [16, 32].map(dy => `M${x + 4} ${y + dy}q5 -4 10 0t10 0t10 0t10 0`).join(''), class: 'cw-mark-water' });
         if (cls === 'ford') {
             const rows = flooded ? [12, 24, 36] : [18, 34];
             return svg('path', { d: rows.map(dy => `M${x + 8} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), class: 'cw-mark-water' });
@@ -967,6 +990,7 @@
             const sx = x + 8, sy = y + 19;
             g.append(svg('rect', { x: sx, y: sy, width: 17, height: 11, class: 'cw-sym' }));
             if (u.kind === 'inf') g.append(svg('path', { d: `M${sx} ${sy}l17 11M${sx} ${sy + 11}l17 -11`, class: 'cw-sym' }));
+            else if (u.naval) g.append(svg('path', { d: `M${sx + 1} ${sy + 5}h15l-3 5h-9z`, class: 'cw-sym' }));
             else if (u.kind === 'cav') g.append(svg('path', { d: `M${sx} ${sy + 11}l17 -11`, class: 'cw-sym' }));
             else g.append(svg('circle', { cx: sx + 8.5, cy: sy + 5.5, r: 2.6, class: 'cw-sym-dot' }));
             g.append(svg('text', { x: x + 38, y: y + 29, 'text-anchor': 'middle', class: 'cw-unit-hp' }, String(u.hp)));
@@ -1012,7 +1036,8 @@
             `행동할 수 있는 부대 ${ready} / ${reds.length}`,
             def.windTurns ? (B.fordOpen(b) ? `${def.ford} 여울 열림 (${def.windTurns - b.turn + 1}턴 남음)` : `바람이 바뀌어 ${def.ford}에 물이 찼다`) : null,
             ...Object.entries(def.lines).map(([id, l]) => b.turned[id] ? `${l.name} 우회됨: 수비대의 진지 방어가 +1로 줄었다` : `${l.name}: 노란 점선 안에 부대를 세우면 우회된다`),
-            b.reserve ? `백군 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶여 있다` : '백군 예비대는 아직 움직이지 않았다',
+            !Object.keys(def.sectors).length ? null : b.reserve ? `백군 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶여 있다` : '백군 예비대는 아직 움직이지 않았다',
+            def.protect ? `${def.protect.name}: 백군이 들어서면 진다${B.unitAt(b, ...def.protect.at) ? '' : ' · 지금 비어 있다'}` : null,
         ];
         const hint = foe ? null : el('p', {}, '붉은 부대를 누르면 갈 수 있는 칸(노란 점선)과 칠 수 있는 적(예상 피해 표시)이 나옵니다. 포병은 진지 위의 적을 칠 때마다 그 진지의 방어를 1 깎습니다. 백군 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 나옵니다.');
         box.replaceChildren(
@@ -1020,7 +1045,7 @@
             el('details', { class: 'cw-battle-brief', open: b.turn === 1 && !s.log.some(e => e[0].startsWith('b:')) }, el('summary', {}, '작전 지시'), ...def.brief.map(p => el('p', {}, p))),
             el('div', { class: 'cw-battle-layout' },
                 el('div', { class: 'cw-grid-wrap' }, el('div', { class: 'cw-grid-scroll' }, board), el('p', { class: 'cw-terrain-key' },
-                    ...def.legend.concat([['move', '갈 수 있는 칸'], ['flank', '우회 지역'], ['danger', '백군이 칠 수 있는 칸']])
+                    ...def.legend.concat([['move', '갈 수 있는 칸'], Object.keys(def.lines).length ? ['flank', '우회 지역'] : null, ['danger', '백군이 칠 수 있는 칸']].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('ul', { class: 'cw-battle-status' }, ...status.filter(Boolean).map(t => el('li', {}, t))),
@@ -1041,6 +1066,7 @@
             el('h3', {}, u.name, u.sub ? el('small', {}, ` ${u.sub}`) : null),
             el('p', {}, `병력 ${u.hp}/${u.maxHp} · 공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} (${t.name}) · 이동 ${u.mv}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
             u.person ? el('p', {}, '지휘: ', person(u.person)) : null,
+            u.commissar ? el('p', { class: 'cw-note' }, '정치위원이 함께한다 (방어 +1).') : null,
             u.side === 'red' ? el('p', { class: 'cw-note' }, u.acted ? '이번 턴의 행동을 마쳤다.' : u.moved ? '이동했다. 공격하거나 대기할 수 있고, 이동을 취소할 수도 있다.' : '이동하거나 공격할 수 있다.') : null,
             u.side === 'white' && u.role ? el('p', { class: 'cw-note' }, roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '')) : null);
     }
@@ -1069,17 +1095,32 @@
         const b = s.battle;
         const u = selected && B.byId(b, selected);
         if (!u || u.acted) selected = null;
-        if (s.phase === 'done') { render(); $('cwOutcome').scrollIntoView({ block: 'start' }); announce(s.outcome.title); return; }
+        if (battleOver()) return;
         renderBattle();
         focusSelected();
         announce(text + b.events.filter(e => e.type === 'turned').map(e => `. ${b.def.lines[e.line].name}이 우회되었다.`).join(''));
+    }
+
+    // A battle just ended: the war's outcome, or the season it was fought
+    // in, settled.
+    function battleOver() {
+        if (s.phase === 'battle') return false;
+        selected = null;
+        inspected = null;
+        render();
+        if (s.phase === 'done') { $('cwOutcome').scrollIntoView({ block: 'start' }); announce(s.outcome.title); return true; }
+        historyMap = true;
+        render();
+        $('cwReview').scrollIntoView({ block: 'start' });
+        announce(`${s.battle.def.title}: ${s.battle.result === 'won' ? '이겼다' : '졌다'}. ${G.turnData(s).date}의 결산`);
+        return true;
     }
 
     function endTurn() {
         if (!act('b:end')) return;
         selected = null;
         inspected = null;
-        if (s.phase === 'done') { render(); $('cwOutcome').scrollIntoView({ block: 'start' }); announce(s.outcome.title); return; }
+        if (battleOver()) return;
         renderBattle();
         announce(`${s.battle.turn}턴. ` + eventLines(s.battle).join(' '));
     }
@@ -1104,6 +1145,12 @@
     $('cwSettle').addEventListener('click', () => {
         const t = G.turnData(s);
         if (!act('settle')) return;
+        if (s.phase === 'battle' && !s.battle.def.final) {
+            render();
+            $('cwBattle').scrollIntoView({ block: 'start' });
+            announce(s.battle.def.title);
+            return;
+        }
         historyMap = true;
         render();
         $('cwReview').scrollIntoView({ block: 'start' });

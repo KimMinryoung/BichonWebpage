@@ -253,7 +253,7 @@
         },
         {
             id: 'volga', date: '1918년 9–12월', end: [1918, 12], title: '스비야시스크에서 차리친까지',
-            mobilize: 9, commissars: 2, army: [['conscripts', 5], ['latvian', 1], ['guards', 1], ['internationalists', 1], ['flotilla', 1]], phase: 1,
+            mobilize: 9, commissars: 2, army: [['conscripts', 5], ['latvian', 1], ['guards', 1], ['internationalists', 1], ['flotilla', 1]], phase: 1, battle: 'kazan',
             brief: [
                 '트로츠키는 장갑열차로 카잔 건너편 스비야시스크에 사령부를 차리고, 도망친 연대의 지휘관과 정치위원을 총살하며 제5군을 다시 세웠다. 8월 30일 레닌이 저격당했고, 인민위원회는 「적색 테러」를 선포했다.',
                 '11월 독일이 항복해 우크라이나와 발트에서 물러나기 시작한다. 같은 달 옴스크에서는 콜차크 제독이 쿠데타로 「최고 통치자」가 되었다. 크라스노프는 차리친을 다시 노린다.',
@@ -545,7 +545,76 @@
         links: [['크론시타트 반란', E('kronstadt-1921')], ['안토노프 봉기', T('antonovshchina')], ['신경제정책', T('nep')]],
     };
 
-    const battles = { perekop };
+    // Kazan, late August to 10 September 1918: Trotsky's train at
+    // Sviyazhsk, the Volga flotilla on the river, the Whites holding the
+    // city and Kappel's raiders loose on the right bank. Rows run north
+    // (Kazan) to south (Sviyazhsk's bank). Terrain: . field, f wood,
+    // ~ the Volga, B the Sviyazhsk railway bridge, S Sviyazhsk, K the city,
+    // k the kremlin, P the wharves.
+    const kazan = {
+        id: 'kazan', front: 'east', final: false,
+        title: '카잔 탈환', date: '1918년 8월 말–9월 10일',
+        settle: '카잔으로 →', board: '카잔 전장',
+        strikeNote: '',
+        raidNote: '카펠의 기동대. 볼가 오른쪽 둑을 따라 스비야시스크로 달려간다. 붉은 부대 곁에서 멈추지 않고 지나치며, 더 다가갈 수 없을 때만 막아선 부대를 친다. 스비야시스크에 백군이 들어서면 진다.',
+        legend: [['steppe', '들판'], ['forest', '숲 (방어 +1, 이동 2)'], ['river', '볼가강 (소함대만)'], ['bridge', '스비야시스크 철교'], ['town', '스비야시스크 (방어 +1)'], ['city', '카잔 시가 (방어 +1)'], ['kremlin', '카잔 크렘린 (방어 +2, 이동 2)'], ['docks', '부두']],
+        // The season's eastern strength takes the battle's result: as
+        // history went when Kazan is taken, a city further when it falls
+        // within quick turns, two cities fewer when it is not.
+        reward: { quick: 5, quickBy: 3, lostBy: -6 },
+        map: [
+            'ff..........',
+            'f.....KKK...',
+            '......KkK...',
+            '......PPP...',
+            '~~B~~~~~~~~~',
+            '.S..........',
+            '.....ff.....',
+            '............',
+        ],
+        goals: [{ at: [2, 7], name: '크렘린' }],
+        protect: { at: [5, 1], name: '스비야시스크' },
+        towns: [['스비야시스크', 5, 1]],
+        places: [['카잔', 0, 6.2], ['볼가강', 4, 4], ['철교', 4, 2.05], ['부두', 3, 9], ['아르스크 길', 0, 9.6], ['오른쪽 둑', 7, 6]],
+        turnLimit: 8,
+        lines: {},
+        sectors: {},
+        terrain: {
+            '.': { name: '들판', cost: 1, def: 0, cls: 'steppe' },
+            f: { name: '숲', cost: 2, def: 1, cls: 'forest' },
+            '~': { name: '볼가강', cost: 99, def: 0, water: true, cls: 'river' },
+            B: { name: '스비야시스크 철교', cost: 1, def: 0, span: true, cls: 'bridge' },
+            S: { name: '스비야시스크', cost: 1, def: 1, cls: 'town' },
+            K: { name: '카잔 시가', cost: 1, def: 1, cls: 'city' },
+            k: { name: '카잔 크렘린', cost: 2, def: 2, fort: 'kremlin', cls: 'kremlin' },
+            P: { name: '부두', cost: 1, def: 0, cls: 'docks' },
+        },
+        units: [
+            { id: 'k5l', tag: '라트비아', side: 'red', name: '라트비아 소총연대', sub: '제5군', kind: 'inf', at: [5, 3], hp: 10, atk: 5, def: 3, mv: 3, lead: true },
+            { id: 'k5c', tag: '5군', side: 'red', name: '제5군 소총연대', sub: '징집병', kind: 'inf', at: [6, 2], hp: 10, atk: 4, def: 3, mv: 3 },
+            { id: 'k5g', tag: '5군포', side: 'red', name: '제5군 포병', kind: 'art', at: [6, 1], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
+            { id: 'kfl', tag: '소함대', side: 'red', name: '볼가 소함대', sub: '라스콜니코프', kind: 'art', naval: true, at: [4, 3], hp: 8, atk: 4, def: 2, mv: 4, range: 2, person: ['표도르 라스콜니코프', 'fyodor-raskolnikov'] },
+            { id: 'ksl', tag: '수병', side: 'red', name: '발트함대 수병 분견대', sub: '모스크바에서 온', kind: 'inf', at: [7, 3], hp: 9, atk: 5, def: 2, mv: 3, need: 0 },
+            { id: 'k2a', tag: '2군', side: 'red', name: '제2군 소총사단', sub: '아르스크 방면', kind: 'inf', at: [1, 11], hp: 10, atk: 5, def: 3, mv: 3, need: 3 },
+            { id: 'kcp', tag: '당원', side: 'red', name: '공산당원·사관생도 분견대', sub: '모스크바에서 온', kind: 'inf', at: [7, 1], hp: 8, atk: 4, def: 3, mv: 3, need: 6 },
+            { id: 'ktr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', at: [5, 1], hp: 6, atk: 4, def: 2, mv: 2, range: 2, card: 'train', person: ['레프 트로츠키', 'trotsky'] },
+            { id: 'wk1', tag: '인민군', side: 'white', name: '코무치 인민군', sub: '크렘린 수비', kind: 'inf', at: [2, 7], hp: 8, atk: 4, def: 2, mv: 3, role: 'hold' },
+            { id: 'wk2', tag: '체코', side: 'white', name: '체코슬로바키아 군단', sub: '철교 북쪽', kind: 'inf', at: [3, 2], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
+            { id: 'wk3', tag: '인민군', side: 'white', name: '코무치 인민군', sub: '시가 동쪽', kind: 'inf', at: [2, 8], hp: 6, atk: 3, def: 2, mv: 3, role: 'hold' },
+            { id: 'wk4', tag: '포대', side: 'white', name: '부두 포대', kind: 'art', at: [3, 7], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'hold' },
+            { id: 'wkp', tag: '카펠', side: 'white', name: '카펠 부대', sub: '기동대', kind: 'cav', at: [7, 10], hp: 10, atk: 6, def: 2, mv: 4, role: 'raid', person: ['블라디미르 카펠', 'vladimir-kappel'] },
+        ],
+        brief: [
+            '8월 7일 카펠의 부대가 카잔과 금 보유고를 빼앗았다. 트로츠키는 장갑열차로 카잔 서쪽 스비야시스크에 사령부를 차렸다. 볼가를 건너는 철교가 이곳에 있다.',
+            '크렘린에 붉은 군대 부대를 세우면 카잔을 되찾는다. 8턴이 주어진다. 5턴 안에 되찾으면 동부전선이 한 도시 더 나아가고, 되찾지 못하면 이 시기 동부전선의 전투력이 6 준다.',
+            '라스콜니코프의 볼가 소함대는 강 위로만 다니며 사거리 2로 부두와 강가를 친다. 크렘린의 방어도 소함대와 포병의 포격으로 깎인다.',
+            '카펠의 기동대가 오른쪽 둑을 따라 스비야시스크로 온다. 기동대는 붉은 부대 곁을 멈추지 않고 지나친다. 스비야시스크에 백군이 들어서면 지므로, 그 칸에 부대 하나를 남겨 두어야 한다.',
+            '적과 맞닿은 칸에 들어가면 그 턴의 이동은 끝난다. 한 적을 여럿이 둘러싸고 치면 둘러싼 부대마다 피해가 1씩 늘어난다.',
+        ],
+        history: '8월 말 카펠의 기습이 스비야시스크 코앞까지 닿았지만 사령부는 버텼다. 트로츠키는 모스크바에서 공산당원과 사관생도, 발트함대 수병을 끌어와 부대를 채웠고, 라스콜니코프의 볼가 소함대가 카잔의 백군 함정을 쳤다. 9월 10일 제5군과 볼가 소함대가 카잔을 되찾았다.',
+    };
+
+    const battles = { kazan, perekop };
     const data = { factions, troops, fronts, frontOrder, moscow, startLines, cards, turns, battles, epilogue };
     if (typeof module === 'object' && module.exports) module.exports = data;
     else root.CivilWarData = data;

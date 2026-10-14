@@ -284,8 +284,16 @@
 .cw-tile.t-yushun { fill: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
 .cw-tile.t-chongar { fill: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
 .cw-tile.t-strait { fill: color-mix(in srgb, #3f6f95 55%, var(--bg-surface)); }
+/* Kazan: the Volga, the bridge over it, the wood, the city round its kremlin, the wharves. */
+.cw-tile.t-river { fill: color-mix(in srgb, #2f6fb8 60%, var(--bg-surface)); }
+.cw-tile.t-bridge { fill: color-mix(in srgb, #3f6f95 55%, var(--bg-surface)); }
+.cw-tile.t-forest { fill: color-mix(in srgb, #4f7a3a 50%, var(--bg-surface)); }
+.cw-tile.t-city { fill: color-mix(in srgb, #9d8a62 70%, var(--bg-surface)); }
+.cw-tile.t-kremlin { fill: color-mix(in srgb, #b4652a 70%, var(--bg-surface)); }
+.cw-tile.t-docks { fill: color-mix(in srgb, #7d8a96 55%, var(--bg-surface)); }
 .cw-tile.is-goal { stroke: var(--clr-red); stroke-width: 3; }
-.cw-mark-wall, .cw-mark-trench, .cw-mark-water { fill: none; pointer-events: none; }
+.cw-mark-wall, .cw-mark-trench, .cw-mark-water, .cw-mark-wood { fill: none; pointer-events: none; }
+.cw-mark-wood { stroke: color-mix(in srgb, #1d3a12 70%, var(--text-primary)); stroke-width: 1.4; }
 .cw-mark-wall { stroke: color-mix(in srgb, #3a1e0a 70%, var(--text-primary)); stroke-width: 2; }
 .cw-mark-trench { stroke: color-mix(in srgb, var(--text-primary) 55%, transparent); stroke-width: 1.6; }
 .cw-mark-water { stroke: #ffffff; stroke-opacity: .35; stroke-width: 1.2; }
@@ -306,6 +314,12 @@
 .cw-terrain-key .k-yushun { background: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
 .cw-terrain-key .k-strait { background: color-mix(in srgb, #3f6f95 55%, var(--bg-surface)); }
 .cw-terrain-key .k-town { background: color-mix(in srgb, #9d8a62 55%, var(--bg-surface)); }
+.cw-terrain-key .k-river { background: color-mix(in srgb, #2f6fb8 60%, var(--bg-surface)); }
+.cw-terrain-key .k-bridge { background: color-mix(in srgb, #3f6f95 55%, var(--bg-surface)); }
+.cw-terrain-key .k-forest { background: color-mix(in srgb, #4f7a3a 50%, var(--bg-surface)); }
+.cw-terrain-key .k-city { background: color-mix(in srgb, #9d8a62 70%, var(--bg-surface)); }
+.cw-terrain-key .k-kremlin { background: color-mix(in srgb, #b4652a 70%, var(--bg-surface)); }
+.cw-terrain-key .k-docks { background: color-mix(in srgb, #7d8a96 55%, var(--bg-surface)); }
 .cw-terrain-key .k-move { background: color-mix(in srgb, #f2d64b 30%, transparent); border: 2px dashed #f2d64b; }
 .cw-terrain-key .k-flank { border: 2px dashed #d9a514; }
 .cw-terrain-key .k-danger { background: color-mix(in srgb, #2f6fb8 35%, transparent); border-color: var(--emap-blue); }

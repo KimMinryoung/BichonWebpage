@@ -10,7 +10,13 @@
    There is more than one way in. Guns wear a fortification down; a Red
    unit behind a line turns it and its holders lose the ground; the one
    White reserve rides to the sector in most danger and stays there while
-   the danger lasts, so a threat in one sector draws it from another. */
+   the danger lasts, so a threat in one sector draws it from another.
+
+   A river (terrain water) is closed to the armies and open to the boats
+   (units with naval), which also pass under a bridge (span). A board may name a post the Reds must hold
+   (protect): a White unit standing on it ends the battle lost, and a White
+   raider (role raid) makes for it by the shortest dry road, riding past
+   Red units instead of halting beside them. */
 (function (root) {
     'use strict';
 
@@ -47,12 +53,12 @@
                     id: u.id, tag: u.tag || u.name, side: u.side, name: u.name, sub: u.sub || '', kind: u.kind,
                     role: u.role || null, line: u.line || null,
                     person: u.person || null, r: u.at[0], c: u.at[1], hp, maxHp: u.hp,
-                    atk: u.atk, def: u.def + (lead ? 1 : 0), mv: u.mv, range: u.range || 1, commissar: Boolean(lead),
+                    atk: u.atk, def: u.def + (lead ? 1 : 0), mv: u.mv, range: u.range || 1, commissar: Boolean(lead), naval: Boolean(u.naval),
                     moved: false, acted: false, prev: null,
                 };
             });
         const turned = {};
-        for (const id of Object.keys(def.lines)) turned[id] = false;
+        for (const id of Object.keys(def.lines || {})) turned[id] = false;
         return {
             def, turn: 1, units, result: null, turned, wear: {}, reserve: null,
             events: [], report: [],
@@ -66,17 +72,19 @@
     const unitAt = (b, r, c) => b.units.find(u => u.hp > 0 && u.r === r && u.c === c) || null;
     const byId = (b, id) => b.units.find(u => u.id === id && u.hp > 0) || null;
     const dist = (a, b) => Math.abs(a.r - b.r) + Math.abs(a.c - b.c);
-    const fordOpen = b => b.turn <= b.def.windTurns;
+    const fordOpen = b => Boolean(b.def.windTurns) && b.turn <= b.def.windTurns;
 
     function terrain(b, r, c) {
         return b.def.terrain[tileAt(b, r, c)] || b.def.terrain['.'];
     }
 
-    // A tile's cost to enter, or Infinity: deep water always, the Sivash
-    // once the wind has turned.
-    function enterCost(b, r, c) {
+    // A tile's cost for a unit to enter, or Infinity: deep water always, a
+    // river to all but boats (and land to boats), the Sivash once the wind
+    // has turned.
+    function enterCost(b, u, r, c) {
         if (!inside(b, r, c)) return Infinity;
         const t = terrain(b, r, c);
+        if (u && u.naval) return t.water || t.span ? 1 : Infinity;
         if (t.cost >= 99) return Infinity;
         if (t.ford && !fordOpen(b)) return Infinity;
         return t.cost;
@@ -119,11 +127,12 @@
             queue.sort((a, z) => a.cost - z.cost);
             const cur = queue.shift();
             if (cur.cost > (best.get(key(cur.r, cur.c)) ?? Infinity)) continue;
-            const stop = (cur.r !== u.r || cur.c !== u.c) && enemiesAdjacent(b, u, cur.r, cur.c);
+            // Raiders ride past the enemy; everyone else halts beside him.
+            const stop = u.role !== 'raid' && (cur.r !== u.r || cur.c !== u.c) && enemiesAdjacent(b, u, cur.r, cur.c);
             if (stop) continue;
             for (const [dr, dc] of DIRS) {
                 const r = cur.r + dr, c = cur.c + dc;
-                const step = enterCost(b, r, c);
+                const step = enterCost(b, u, r, c);
                 const cost = cur.cost + step;
                 // A first step always goes in, however dear the ground: the
                 // guns (move 2) cross the Wall (cost 3) in a turn of their own.
@@ -187,7 +196,7 @@
     }
 
     function updateTurned(b) {
-        for (const id of Object.keys(b.def.lines)) {
+        for (const id of Object.keys(b.def.lines || {})) {
             if (b.turned[id]) continue;
             if (alive(b).some(u => u.side === 'red' && behind(b, id, u.r, u.c))) {
                 b.turned[id] = true;
@@ -198,7 +207,9 @@
 
     function checkResult(b) {
         if (b.result) return;
-        if (b.def.goals.some(g => { const u = unitAt(b, g.at[0], g.at[1]); return u && u.side === 'red'; })) b.result = 'won';
+        const post = b.def.protect && unitAt(b, b.def.protect.at[0], b.def.protect.at[1]);
+        if (post && post.side === 'white') b.result = 'lost';
+        else if (b.def.goals.some(g => { const u = unitAt(b, g.at[0], g.at[1]); return u && u.side === 'red'; })) b.result = 'won';
         else if (!alive(b).some(u => u.side === 'red')) b.result = 'lost';
         else if (!alive(b).some(u => u.side === 'white')) b.result = 'won';
     }
@@ -256,7 +267,7 @@
     // alarm row counts its depth beyond it.
     function dangers(b) {
         const out = {};
-        for (const [id, s] of Object.entries(b.def.sectors)) {
+        for (const [id, s] of Object.entries(b.def.sectors || {})) {
             out[id] = alive(b).filter(u => u.side === 'red' && u.c >= s.cols[0] && u.c <= s.cols[1] && u.r >= s.alarm)
                 .reduce((sum, u) => sum + u.r - s.alarm + 1, 0);
         }
@@ -277,7 +288,7 @@
     function marching(b, u) {
         if (u.role === 'wall') return b.turned[u.line];
         if (u.role === 'strike') return Boolean(reserveSector(b));
-        return false;
+        return u.role === 'raid';
     }
 
     // Tiles a White unit could strike in its next turn: from where it
@@ -336,6 +347,13 @@
                 // The garrison of a turned line falls back on the next one.
                 const [r, c] = b.def.lines[u.line].fallback;
                 if (!targets(b, u).length || u.hp < u.maxHp / 2) stepToward(b, u, { r, c });
+            } else if (u.role === 'raid' && b.def.protect) {
+                // The raider rides for the post; it strikes what stands in
+                // its way only when it cannot get closer.
+                const [r, c] = b.def.protect.at;
+                stepToward(b, u, { r, c });
+                checkResult(b);
+                if (b.result) return;
             } else if (u.role === 'strike' && sector && !targets(b, u).length) {
                 // The reserve rides at the weakest Red unit pressing its
                 // sector.
@@ -351,7 +369,7 @@
             if (t) strike(b, u, t);
         }
         // Water: once the wind turns, the Sivash floods back.
-        if (b.turn > b.def.windTurns) {
+        if (b.def.windTurns && b.turn > b.def.windTurns) {
             for (const u of alive(b)) {
                 if (terrain(b, u.r, u.c).ford) {
                     u.hp -= Math.min(u.hp, WATER_DAMAGE);
@@ -369,7 +387,7 @@
         checkResult(b);
         if (b.result) return true;
         b.turn += 1;
-        if (b.turn === b.def.windTurns + 1) b.events.push({ type: 'tide' });
+        if (b.def.windTurns && b.turn === b.def.windTurns + 1) b.events.push({ type: 'tide' });
         if (b.turn > b.def.turnLimit) { b.result = 'lost'; return true; }
         for (const u of b.units) { u.moved = false; u.acted = false; u.prev = null; }
         return true;
@@ -382,7 +400,7 @@
     }
 
     const api = {
-        start, joins, act, reachable, targets, preview, menace, marching, dangers, reserveSector, behind,
+        start, joins, act, reachable, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, unitAt, byId, defenseOf, fordOpen,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;

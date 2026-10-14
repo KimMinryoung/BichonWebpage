@@ -224,6 +224,9 @@
                 if (choice === 'front') add('other', '정면 증원', 3);
             }
             if (t.id === 'directive' && id === 'east' && flags.flank) add('other', '프룬제의 측면 반격', 7);
+            // A battle fought this season on this front.
+            const battle = battleResult(s, id);
+            if (battle) add('battle', battle.label, battle.v);
             if (flags.turned && t.id === 'orel' && id === 'south') add('other', '동부에서 온 사단', 5);
             if (t.id === 'orel' && id === 'northwest' && choice === 'hold') add('other', '페트로그라드 사수', 4);
             if (t.id === 'orel' && id === 'northwest' && choice === 'yield') { pressure += 6; pressureParts.push('병력을 남쪽으로 뺌 +6'); }
@@ -328,11 +331,31 @@
         return s.phase === 'plan' && Boolean(s.plan.choice);
     }
 
+    // The result of a battle fought this season, before the settlement, on
+    // the front, as a strength: nothing when it went as history did.
+    function battleResult(s, id) {
+        const def = battleOf(s);
+        const r = def && !def.final && def.front === id && s.battles[def.id];
+        if (!r) return null;
+        const { quick, quickBy, lostBy } = def.reward;
+        if (r.result !== 'won') return { label: `${def.title} 실패`, v: lostBy };
+        return r.turns <= quick ? { label: `${def.title} (${quick}턴 안)`, v: quickBy } : null;
+    }
+
+    // Sending a season with a battle on one of its fronts fights it first
+    // (the plan, frozen, musters it); its end settles the season.
     function settle(s) {
         if (!canSettle(s)) return false;
         const t = turnData(s);
+        const def = battleOf(s);
+        if (def && !def.final && !s.battles[def.id]) {
+            const m = musterOf(s);
+            s.phase = 'battle';
+            s.battle = Battle.start(def, Object.assign({}, s.flags, choiceFlags(s)), m ? m.muster : null);
+            return true;
+        }
         const fc = forecast(s);
-        const muster = t.battle ? musterOf(s, fc).muster : null;
+        const muster = def && def.final ? musterOf(s, fc).muster : null;
         const opt = t.choice.options.find(o => o.id === s.plan.choice);
         const before = Object.assign({}, s.lines);
         const cohesionBefore = s.cohesion;
@@ -425,9 +448,9 @@
         if (s.lines.south === 0) {
             s.outcome = { kind: 'moscow', title: '툴라가 떨어졌다', text: '백군이 툴라의 무기 공장을 지나 모스크바로 향한다. 혁명 정부는 무너졌다.' };
             s.phase = 'done';
-        } else if (t.battle) {
+        } else if (def && def.final) {
             s.phase = 'battle';
-            s.battle = Battle.start(DATA.battles[t.battle], s.flags, muster);
+            s.battle = Battle.start(def, s.flags, muster);
         } else {
             s.phase = 'review';
         }
@@ -472,6 +495,10 @@
         if (s.phase !== 'battle' || !s.battle || !s.battle.result) return false;
         const won = s.battle.result === 'won';
         s.battles[s.battle.def.id] = { result: s.battle.result, turns: s.battle.turn, turned: Object.keys(s.battle.turned).filter(id => s.battle.turned[id]) };
+        if (!s.battle.def.final) {
+            s.phase = 'plan';
+            return settle(s);
+        }
         s.phase = 'done';
         s.outcome = score(s, won);
         return true;
@@ -543,7 +570,7 @@
 
     const api = {
         DATA, VERSION, MOMENTUM, PURSUIT, start, act, restore, serialize, forecast, activeFronts, turnData,
-        free, allocated, threatsOf, battleOf, musterOf, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
+        free, allocated, threatsOf, battleOf, musterOf, battleResult, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.CivilWarGame = api;
