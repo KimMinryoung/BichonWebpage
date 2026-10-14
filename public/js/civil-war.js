@@ -916,7 +916,7 @@
         const kept = G.free(s);
         const need = G.forecast(s).supply.need;
         const saved = kept - Math.ceil(kept / 2);
-        notes.push(`이 시기 곡물 소비 ${need}` + (saved > 0 ? ` (예비 사단 ${kept}개는 반만 먹어 ${saved} 절약)` : ''));
+        notes.push(`곡물 소비 ${need}` + (saved > 0 ? ` (예비 −${saved})` : ''));
         $('cwCommandNote').textContent = notes.join(' · ');
         $('cwSettle').disabled = !G.canSettle(s);
         const battle = G.battleOf(s);
