@@ -787,7 +787,7 @@
                 now === '예상' ? null : el('span', { class: 'cw-stake-verdict ' + current.tone }, `${now}: ${versus(current.after)}`),
                 current.overflow ? el('span', { class: 'cw-stake-momentum' }, `다음 싸움 압력 +${current.overflow * G.MOMENTUM}`) : null,
                 current.pursuit ? el('span', { class: 'cw-stake-pursuit' }, `추격: 다음 싸움 압력 −${current.pursuit * G.PURSUIT}`) : null),
-            stakeRow(id, line, current.after, bands, hist, turn, now));
+            stakeRow(id, line, current.after, hist, turn, now));
     }
 
     // The strength as blocks on the bar's scale, so its length is the
@@ -814,19 +814,15 @@
         return out;
     }
 
-    // The cities this season can move, inner to outer, drawn as on the map:
+    // Every city of the front, inner to outer, drawn as on the map:
     // held red, lost in the holder's colour, and a dashed ring in the
     // colour of whoever the plan (or the result) hands each changing city.
     // A tick marks where history's line fell.
-    function stakeRow(id, line, after, bands, hist, turn, now) {
+    function stakeRow(id, line, after, hist, turn, now) {
         const cities = D.fronts[id].cities;
-        const ends = bands.map(b => b.after).concat(line, hist);
-        let lo = Math.min(...ends), hi = Math.max(...ends);
-        lo = Math.max(0, lo - 1);
-        hi = Math.min(cities.length, Math.max(hi, lo + 2));
         const foe = holderOf(id, turn).kind;
         const items = [];
-        for (let i = lo; i < hi; i++) {
+        for (let i = 0; i < cities.length; i++) {
             if (i === hist) items.push(el('li', { class: 'cw-stake-hist', 'aria-hidden': 'true' }, el('span', {}, '역사')));
             const held = i < line, will = i < after;
             const dot = svg('svg', { viewBox: '0 0 24 24', class: 'cw-stake-dot', 'aria-hidden': 'true' });
@@ -838,7 +834,7 @@
             const fate = held === will ? (held ? '붉은 군대가 지킴' : '적이 지킴') : (will ? '붉은 군대가 되찾음' : '적에게 넘어감');
             items.push(el('li', { class: held !== will ? 'is-changing' : '' }, dot, el('span', {}, cities[i][0]), el('span', { class: 'cw-sr' }, ` ${now}: ${fate}`)));
         }
-        if (hist === hi && hi <= cities.length) items.push(el('li', { class: 'cw-stake-hist', 'aria-hidden': 'true' }, el('span', {}, '역사')));
+        if (hist === cities.length) items.push(el('li', { class: 'cw-stake-hist', 'aria-hidden': 'true' }, el('span', {}, '역사')));
         return el('ol', { class: 'cw-stake', 'aria-label': `${D.fronts[id].short}에 걸린 도시` }, ...items);
     }
 
