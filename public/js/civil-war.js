@@ -620,8 +620,7 @@
         mapEl.querySelectorAll('.emap-phase').forEach(g => g.classList.toggle('is-current', Number(g.dataset.phase) === index));
         const phase = phases[index];
         $('cwHistoryToggle').setAttribute('aria-pressed', String(historyMap));
-        $('cwHistoryToggle').textContent = historyMap ? '역사의 세력 범위 숨기기' : '역사의 세력 범위 보기';
-        $('cwMapCaption').textContent = historyMap && phase ? `역사: ${phase.date} ${phase.label}` : '점의 색: 그 도시를 쥔 세력';
+        $('cwMapCaption').textContent = historyMap && phase ? `${phase.date} ${phase.label}` : '';
         $('cwMapLegend').replaceChildren(...(historyMap ? [
             el('span', {}, el('i', { class: 'is-red' }), '붉은 군대'), el('span', {}, el('i', { class: 'is-blue' }), '백군·간섭군'),
             el('span', {}, el('i', { class: 'is-amber' }), '독일·오스트리아'), el('span', {}, el('i', { class: 'is-gray' }), '독립국·인접국'),

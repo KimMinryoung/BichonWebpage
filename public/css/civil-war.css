@@ -77,7 +77,7 @@
 /* Board: map and fronts */
 .cw-board { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, 1fr); gap: 18px; align-items: start; margin-bottom: 18px; }
 .cw-map-panel { border: 1px solid var(--border); background: var(--bg-surface); min-width: 0; }
-.cw-map-heading { display: flex; justify-content: space-between; gap: 10px; padding: 8px 12px; border-bottom: 1px solid var(--border); font-size: .82rem; color: var(--text-secondary); }
+.cw-map-heading { display: flex; align-items: center; gap: 4px 10px; padding: 6px 8px 6px 12px; border-bottom: 1px solid var(--border); font-size: .82rem; color: var(--text-secondary); }
 .cw-map-heading span:first-child { font-weight: 700; color: var(--text-primary); }
 .cw-map-frame svg { display: block; width: 100%; height: auto; font-family: inherit; }
 .cw-map-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 8px 12px; font-size: .78rem; color: var(--text-secondary); }
@@ -97,7 +97,9 @@
 .cw-map-legend i.k-central { background: var(--emap-amber); }
 .cw-map-legend i.k-national { background: var(--emap-gray); }
 .cw-map-legend i.cw-key-badge { width: 22px; background: var(--cw-white); border: 1px solid var(--cw-ink); }
-.cw-map-tools { padding: 0 12px 12px; }
+.cw-map-heading #cwMapCaption { flex: 1 1 0; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.games-shell .cw-history-toggle { min-height: 36px; margin-left: auto; padding: 4px 10px; font-size: .8rem; }
+.games-shell .cw-history-toggle[aria-pressed="true"] { border-color: var(--cw-red); color: var(--text-primary); font-weight: 700; }
 
 /* Basemap (event-map-svg.js classes) */
 .cw-map-frame .emap-sea { fill: var(--bg-surface); }
@@ -717,7 +719,7 @@
 
 /* A season just sent: the map alone, its result playing, then the button
    to the review (civil-war.js renderUnveil). */
-.cw-campaign.is-unveiling :is(.cw-brief, .cw-fronts, .cw-map-key, .cw-map-tools) { display: none; }
+.cw-campaign.is-unveiling :is(.cw-brief, .cw-fronts, .cw-map-key, .cw-history-toggle) { display: none; }
 .cw-campaign.is-unveiling .cw-board { grid-template-columns: minmax(0, 1fr); margin-bottom: 0; }
 .cw-campaign.is-unveiling .cw-map-panel { width: 100%; max-width: min(900px, calc((100vh - 190px) * 1.15)); margin-inline: auto; position: static; }
 .cw-unveil { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 16px; min-height: 56px; padding: 8px 0 12px; }
@@ -785,9 +787,7 @@
 @media (max-width: 900px) {
     .cw-campaign:not(.is-unveiling) .cw-map-panel { display: contents; }
     .cw-campaign:not(.is-unveiling) .cw-map-heading,
-    .cw-campaign:not(.is-unveiling) .cw-map-key,
-    .cw-campaign:not(.is-unveiling) .cw-map-tools { background: var(--bg-surface); border-inline: 1px solid var(--border); }
-    .cw-campaign:not(.is-unveiling) .cw-map-tools { border-bottom: 1px solid var(--border); padding-top: 4px; }
+    .cw-campaign:not(.is-unveiling) .cw-map-key { background: var(--bg-surface); border: 1px solid var(--border); border-top: 0; }
     .cw-campaign:not(.is-unveiling) .cw-board { gap: 0; }
     .cw-campaign:not(.is-unveiling) .cw-fronts { margin-top: 12px; }
     .cw-campaign:not(.is-unveiling) .cw-map-frame { position: sticky; top: 34px; z-index: 4; background: var(--bg-surface); border: 1px solid var(--border); border-top: 0; }
