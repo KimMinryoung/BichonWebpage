@@ -633,17 +633,20 @@
         });
         const current = bands.find(b => f.strength >= b.from && (b.to === null || f.strength < b.to));
         const last = bands[bands.length - 1];
-        const top = Math.max(last.from + 3, f.strength, f.pressure + 1) * 1.1;
+        const top = Math.max(last.from + 3, f.strength, f.pressure + (f.pursuitIn || 0) + 1) * 1.1;
         const pct = v => Math.min(100, Math.max(0, v / top * 100));
         const at = v => `${pct(v).toFixed(2)}%`;
         const span = (from, to) => `left:${at(from)};width:${(pct(to) - pct(from)).toFixed(2)}%`;
         const versus = after => after === hist ? '역사대로' : after > hist ? `역사보다 ${after - hist}개 앞섬` : `역사보다 ${hist - after}개 뒤처짐`;
         const kind = holderOf(id, turn).kind;
         // The pressure in the attacker's marks, one unit each on the bar's
-        // scale; the enemy's momentum hatched.
+        // scale; the enemy's momentum hatched, and the pressure the pursuit
+        // took off left as empty marks after it.
         const momentum = Math.min(f.pressure, f.momentumIn || 0);
+        const pursued = f.pursuitIn || 0;
         const foeRow = el('div', { class: 'cw-foe-row', 'aria-hidden': 'true' },
-            ...Array.from({ length: f.pressure }, (_, i) => el('i', { class: `cw-unit-mark k-${kind}${i >= f.pressure - momentum ? ' is-momentum' : ''}`, style: span(i, i + 1) })));
+            ...Array.from({ length: f.pressure }, (_, i) => el('i', { class: `cw-unit-mark k-${kind}${i >= f.pressure - momentum ? ' is-momentum' : ''}`, style: span(i, i + 1) })),
+            ...Array.from({ length: pursued }, (_, i) => el('i', { class: 'cw-unit-mark is-pursued', style: span(f.pressure + i, f.pressure + i + 1) })));
         const bar = el('div', { class: 'cw-meter-bar', 'aria-hidden': 'true' },
             ...bands.map(b => el('span', { class: `cw-meter-band ${b.tone}`, style: span(b.from, b.to === null ? top : b.to) })),
             ...strengthSegments(f, span),
@@ -659,7 +662,8 @@
             bar,
             el('div', { class: 'cw-stake-head' },
                 el('span', { class: 'cw-stake-verdict ' + current.tone }, `${now}: ${versus(current.after)}`),
-                current.overflow ? el('span', { class: 'cw-stake-momentum' }, `다음 싸움 압력 +${current.overflow * G.MOMENTUM}`) : null),
+                current.overflow ? el('span', { class: 'cw-stake-momentum' }, `다음 싸움 압력 +${current.overflow * G.MOMENTUM}`) : null,
+                current.pursuit ? el('span', { class: 'cw-stake-pursuit' }, `추격: 다음 싸움 압력 −${current.pursuit * G.PURSUIT}`) : null),
             stakeRow(id, line, current.after, bands, hist, turn, now));
     }
 
@@ -778,10 +782,11 @@
     }
 
     function renderCommand() {
-        const missing = [];
-        if (!s.plan.choice) missing.push('갈림길을 고르세요');
-        if (G.free(s) > 0) missing.push(`사단 ${G.free(s)}개를 더 보내세요`);
-        $('cwCommandNote').textContent = missing.length ? missing.join(' · ') : '준비가 끝났습니다.';
+        const notes = [];
+        if (!s.plan.choice) notes.push('갈림길을 고르세요');
+        const kept = G.free(s);
+        if (kept > 0) notes.push(`사단 ${kept}개 예비 (곡물 ${Math.ceil(kept / 2)} 먹음)`);
+        $('cwCommandNote').textContent = notes.length ? notes.join(' · ') : '준비가 끝났습니다.';
         $('cwSettle').disabled = !G.canSettle(s);
         const battle = G.battleOf(s);
         $('cwSettle').textContent = battle ? battle.settle : '이 시기를 보낸다 →';

@@ -175,6 +175,38 @@ G.act(empty, 'choose', 'razverstka');
 G.act(empty, 'settle');
 assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries into');
 
+// Strength to spare chases the beaten enemy: each STEP beyond the city
+// gained takes PURSUIT off the front's next fight, and it is spent there.
+{
+    const s = G.start();
+    G.act(s, 'choose', 'experts');
+    assert.ok(G.act(s, 'alloc', 'volga', s.plan.divisions));
+    G.act(s, 'play', 'train', 'volga');
+    G.act(s, 'commissar', 'volga', true);
+    const volga = G.forecast(s).fronts.volga;
+    assert.ok(volga.margin >= 6, `volga margin ${volga.margin}`);
+    assert.equal(volga.pursuit, G.PURSUIT * (Math.min(2, Math.floor(volga.margin / 3) - 1)));
+    G.act(s, 'settle'); G.act(s, 'next');
+    const autumn = G.forecast(s).fronts.volga;
+    assert.equal(autumn.pressure, D.turns[1].threats.volga.pressure - volga.pursuit);
+    assert.deepEqual(autumn.pressureParts, [`추격 −${volga.pursuit}`]);
+    G.act(s, 'choose', 'razverstka'); G.act(s, 'settle');
+    assert.equal(s.pursuit.volga, 0, 'pursuit is spent in the fight it eases');
+}
+
+// Divisions kept in reserve eat half rations and fight nowhere.
+{
+    const s = G.start();
+    G.act(s, 'choose', 'experts');
+    G.act(s, 'alloc', 'volga', 2);
+    const fc = G.forecast(s);
+    assert.equal(fc.supply.need, 2 + Math.ceil((s.plan.divisions - 2) / 2));
+    assert.ok(G.canSettle(s), 'a season may be sent with divisions kept back');
+    const grain = fc.supply.have - fc.supply.need;
+    G.act(s, 'settle');
+    assert.equal(s.grain, grain, 'what the reserve did not eat is kept');
+}
+
 // Orders are checked: no settling before the fork, no overspending.
 const s0 = G.start();
 assert.equal(G.act(s0, 'settle'), false);
@@ -426,13 +458,13 @@ assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red o
                         assert.equal(bands[bands.length - 1].to, null);
                         for (let i = 1; i < bands.length; i++) {
                             assert.equal(bands[i - 1].to, bands[i].from);
-                            assert.ok(bands[i - 1].change !== bands[i].change || bands[i - 1].overflow !== bands[i].overflow);
+                            assert.ok(bands[i - 1].change !== bands[i].change || bands[i - 1].overflow !== bands[i].overflow || bands[i - 1].pursuit !== bands[i].pursuit);
                         }
                         for (let x = 0; x <= pressure + 12; x = Math.round((x + 0.1) * 10) / 10) {
                             s.lines[id] = line; s.turn = t; s.plan.choice = choice;
                             const r = G.outcomeOf(s, id, x - pressure);
                             const b = bands.find(b => x >= b.from && (b.to === null || x < b.to));
-                            assert.deepEqual([b.change, b.overflow], [r.change, r.overflow], `${id} t${t} line ${line} p${pressure} x${x}`);
+                            assert.deepEqual([b.change, b.overflow, b.pursuit], [r.change, r.overflow, r.pursuit], `${id} t${t} line ${line} p${pressure} x${x}`);
                         }
                     }
                 }

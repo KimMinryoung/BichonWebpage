@@ -505,6 +505,7 @@
 .cw-stake-verdict.is-behind { border-color: var(--clr-red); color: var(--clr-red); }
 .cw-stake-verdict.is-ahead { border-color: var(--btn-primary, #2da44e); }
 .cw-stake-momentum { color: var(--clr-red); font-weight: 700; }
+.cw-stake-pursuit { color: var(--btn-primary, #2da44e); font-weight: 700; }
 .cw-stake { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-wrap: wrap; align-items: flex-start; row-gap: 4px; }
 .cw-stake li { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 58px; flex: 0 1 auto; padding: 0 4px; font-size: .72rem; color: var(--text-secondary); text-align: center; line-height: 1.2; }
 .cw-stake li.is-changing { color: var(--text-primary); font-weight: 700; }
@@ -539,6 +540,8 @@
 .cw-unit-mark.k-central { background: var(--emap-amber); }
 .cw-unit-mark.k-national { background: var(--emap-gray); }
 .cw-unit-mark.is-momentum { background-image: repeating-linear-gradient(-45deg, transparent 0 2px, var(--clr-red) 2px 3.5px); }
+/* Pressure the pursuit took off: an empty mark, outlined in the ahead colour. */
+.cw-unit-mark.is-pursued { background: transparent; border: 1px dashed var(--btn-primary, #2da44e); }
 .cw-meter-bar { height: 18px; }
 .cw-seg { position: absolute; top: 0; bottom: 0; box-sizing: border-box; display: grid; place-items: center; overflow: hidden; transition: left .2s ease, width .2s ease; }
 .cw-seg.is-div { background: var(--cw-red); border-right: 1.5px solid var(--bg-surface); }

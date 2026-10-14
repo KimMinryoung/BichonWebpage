@@ -21,6 +21,8 @@
     const COMMISSAR = 1.5;          // a commissar's strength on his front
     const SLACK = 1;                // a shortfall under this still holds
     const MOMENTUM = 2;             // next season's pressure per city lost beyond the last
+    const PURSUIT = 2;              // next fight's pressure taken off per STEP beyond the city gained
+    const CHASE = 2;                // STEPs of pursuit at most
     const WARSAW = 8;               // the western front's margin that takes Warsaw
     const FED = 0.5;                // a starving division's share of its strength
     const HUNGER = 0.75;            // supply under this sets soldiers deserting
@@ -36,7 +38,7 @@
             version: VERSION, turn: 0, phase: 'plan',
             peasants: 60, workers: 60, cohesion: 60, grain: 6,
             flags: {}, lines: Object.assign({}, DATA.startLines),
-            petrogradFell: false, deserted: 0, revolt: 0, momentum: {}, used: {},
+            petrogradFell: false, deserted: 0, revolt: 0, momentum: {}, pursuit: {}, used: {},
             records: [], log: [], battle: null, battles: {}, outcome: null,
         };
         enterTurn(s);
@@ -214,6 +216,8 @@
             let pressure = threat.pressure;
             const pressureParts = [];
             if (s.momentum[id]) { pressure += s.momentum[id]; pressureParts.push(`적의 기세 +${s.momentum[id]}`); }
+            const pursuitIn = Math.min(pressure, s.pursuit[id] || 0);
+            if (pursuitIn) { pressure -= pursuitIn; pressureParts.push(`추격 −${pursuitIn}`); }
             // Season-specific consequences of this and earlier choices.
             if (t.id === 'kolchak' && id === 'east') {
                 if (choice === 'flank') add('other', '측면 반격 준비', -3);
@@ -234,9 +238,9 @@
             const margin = strength - pressure;
             const result = outcomeOf(s, id, margin);
             out[id] = {
-                divisions: d, perDivision: Math.round(perDivision * 1000) / 1000, bonuses, momentumIn: s.momentum[id] || 0,
+                divisions: d, perDivision: Math.round(perDivision * 1000) / 1000, bonuses, momentumIn: s.momentum[id] || 0, pursuitIn,
                 strength: round1(strength), pressure, margin: round1(margin), parts, pressureParts,
-                change: result.change, momentum: result.overflow * MOMENTUM,
+                change: result.change, momentum: result.overflow * MOMENTUM, pursuit: result.pursuit * PURSUIT,
             };
         }
         return { fronts: out, supply };
@@ -246,7 +250,9 @@
     // the pressure; every STEP above it gains one more city (one at most),
     // every STEP short (beyond SLACK) loses one more. Cities lost beyond the
     // last are the overflow: the enemy's momentum, carried into the front's
-    // next fight as MOMENTUM pressure each.
+    // next fight as MOMENTUM pressure each. Every STEP beyond the one that
+    // gains the city is pursuit (CHASE at most): the beaten enemy chased,
+    // PURSUIT pressure off the front's next fight each.
     function outcomeOf(s, id, margin) {
         return outcomeAt(id, s.lines[id], s.turn, margin, s.plan.choice);
     }
@@ -259,22 +265,24 @@
         const bonus = margin >= 0 ? Math.min(1, Math.floor(margin / STEP)) : -Math.ceil((-margin - SLACK) / STEP);
         const raw = line + historical + bonus;
         const overflow = bonus < 0 ? Math.min(-bonus, Math.max(0, -raw)) : 0;
+        const pursuit = clamp(Math.floor(margin / STEP) - 1, 0, CHASE);
         // Warsaw is the third city of the western front. Only the march on
         // Warsaw reaches it, and only with WARSAW to spare.
         if (id === 'west') {
-            if (choice === 'warsaw' && margin >= WARSAW) return { change: max - line, overflow: 0 };
-            return { change: clamp(raw, 0, max - 1) - line, overflow };
+            if (choice === 'warsaw' && margin >= WARSAW) return { change: max - line, overflow: 0, pursuit };
+            return { change: clamp(raw, 0, max - 1) - line, overflow, pursuit };
         }
-        return { change: clamp(raw, 0, max) - line, overflow };
+        return { change: clamp(raw, 0, max) - line, overflow, pursuit };
     }
 
     // Every strength at which a front's result changes, from 0 up: bands of
-    // { from, to (null for the top), change, overflow }, where a strength in
-    // [from, to) gives that result. Built from outcomeAt at the margins
-    // where its bonus steps (−SLACK − STEP·k, 0, STEP, WARSAW), so the
-    // card's bar cannot disagree with the settlement.
+    // { from, to (null for the top), change, overflow, pursuit }, where a
+    // strength in [from, to) gives that result. Built from outcomeAt at the
+    // margins where its bonus steps (−SLACK − STEP·k, 0, STEP·k, WARSAW),
+    // so the card's bar cannot disagree with the settlement.
     function outcomeBands(id, line, turn, pressure, choice) {
-        const cuts = [STEP, WARSAW, -SLACK];
+        const cuts = [WARSAW, -SLACK];
+        for (let k = 1; k <= CHASE + 1; k++) cuts.push(STEP * k);
         for (let m = -SLACK - STEP; m > -pressure; m -= STEP) cuts.push(m);
         const from = [...new Set(cuts.map(m => pressure + m).filter(v => v > 0))].sort((a, b) => a - b);
         from.unshift(0);
@@ -282,15 +290,16 @@
         for (let i = 0; i < from.length; i++) {
             const r = outcomeAt(id, line, turn, from[i] - pressure, choice);
             const last = bands[bands.length - 1];
-            if (last && last.change === r.change && last.overflow === r.overflow) continue;
+            if (last && last.change === r.change && last.overflow === r.overflow && last.pursuit === r.pursuit) continue;
             if (last) last.to = from[i];
-            bands.push({ from: from[i], to: null, change: r.change, overflow: r.overflow });
+            bands.push({ from: from[i], to: null, change: r.change, overflow: r.overflow, pursuit: r.pursuit });
         }
         return bands;
     }
 
+    // Divisions kept back in reserve eat half rations.
     function supplyOf(s) {
-        const need = allocated(s);
+        const need = allocated(s) + Math.ceil(free(s) / 2);
         const income = grainIncome(s, true);
         const have = s.grain + income;
         return { need, have, ratio: need ? clamp(have / need, 0, 1) : 1, income };
@@ -316,7 +325,7 @@
     }
 
     function canSettle(s) {
-        return s.phase === 'plan' && Boolean(s.plan.choice) && free(s) === 0;
+        return s.phase === 'plan' && Boolean(s.plan.choice);
     }
 
     function settle(s) {
@@ -339,7 +348,9 @@
         for (const [id, f] of Object.entries(fc.fronts)) {
             s.lines[id] += f.change;
             s.momentum[id] = f.momentum;
+            s.pursuit[id] = f.pursuit;
             if (f.momentum) notes.push(`${DATA.fronts[id].name}: 더 잃을 도시가 없는데도 막지 못해, 적이 기세를 몰아 온다. 이 전선의 다음 싸움에서 압력 +${f.momentum}.`);
+            if (f.pursuit) notes.push(`${DATA.fronts[id].name}: 무너진 적을 쫓는다. 이 전선의 다음 싸움에서 압력 −${f.pursuit}.`);
             fronts[id] = Object.assign({}, f, { before: before[id], after: s.lines[id], history: DATA.fronts[id].history[s.turn] });
         }
 
@@ -531,7 +542,7 @@
     }
 
     const api = {
-        DATA, VERSION, MOMENTUM, start, act, restore, serialize, forecast, activeFronts, turnData,
+        DATA, VERSION, MOMENTUM, PURSUIT, start, act, restore, serialize, forecast, activeFronts, turnData,
         free, allocated, threatsOf, battleOf, musterOf, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
