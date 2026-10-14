@@ -1138,8 +1138,91 @@
                 el('p', {}, s.peasants >= 40 ? D.epilogue.highPeasants : D.epilogue.lowPeasants),
                 el('p', { class: 'cw-links' }, ...D.epilogue.links.map(link))));
         }
+        items.push(...retrospect());
         items.push(el('button', { type: 'button', class: 'cw-primary', onclick: () => { try { localStorage.removeItem(KEY); } catch (_) { /* ignore */ } startGame(G.start()); save(); } }, '새 게임 시작'));
         $('cwOutcome').replaceChildren(...items);
+    }
+
+    // The war looked back on: each season's lines against history (opening
+    // on its fronts), the forks taken and left, the battles, and how the
+    // countryside, the workers and the party held up.
+    function retrospect() {
+        if (!s.records.length) return [];
+        const vs = r => Object.values(r.fronts).reduce((a, f) => a + f.after - f.history, 0);
+        const most = Math.max(1, ...s.records.map(r => Math.abs(vs(r))));
+        const seasons = el('ol', { class: 'cw-seasons' }, ...s.records.map(r => {
+            const t = D.turns[r.turn];
+            const d = vs(r);
+            const tone = d < 0 ? 'is-behind' : d > 0 ? 'is-ahead' : 'is-even';
+            const width = `${(Math.abs(d) / most * 50).toFixed(1)}%`;
+            return el('li', {}, el('details', {},
+                el('summary', {},
+                    el('span', { class: 'cw-season-name' }, t.date, el('small', {}, t.title)),
+                    el('span', { class: 'cw-season-bar', 'aria-hidden': 'true' },
+                        el('i', { class: tone, style: d < 0 ? `right:50%;width:${width}` : `left:50%;width:${d ? width : '2px'}` })),
+                    el('span', { class: 'cw-season-value ' + tone }, d ? `${signed(d)} 도시` : '역사대로')),
+                el('div', { class: 'cw-season-fronts' }, ...Object.entries(r.fronts).map(([id, f]) =>
+                    el('article', { class: 'cw-front is-result' + (f.after < f.history ? ' is-short' : f.after > f.history ? ' is-ahead' : '') },
+                        el('header', {}, el('h4', {}, D.fronts[id].name)),
+                        meter(id, f, f.before, r.turn, r.choice, '결과'))))));
+        }));
+        const forks = el('table', { class: 'cw-forks' },
+            el('thead', {}, el('tr', {}, el('th', { scope: 'col' }, '시기'), el('th', { scope: 'col' }, '갈림길'), el('th', { scope: 'col' }, '당신의 선택'), el('th', { scope: 'col' }, '역사의 선택'))),
+            el('tbody', {}, ...s.records.map(r => {
+                const c = D.turns[r.turn].choice;
+                const mine = c.options.find(o => o.id === r.choice);
+                const theirs = c.options.find(o => o.id === c.history);
+                const same = mine === theirs;
+                return el('tr', { class: same ? 'is-same' : '' },
+                    el('td', { 'data-label': '시기' }, D.turns[r.turn].date),
+                    el('th', { scope: 'row', 'data-label': '갈림길' }, c.title, el('span', { class: 'cw-links' }, ...c.links.map(link))),
+                    el('td', { 'data-label': '당신의 선택' }, el('strong', {}, mine.label), el('small', {}, mine.effect)),
+                    el('td', { 'data-label': '역사의 선택' }, same ? el('span', { class: 'cw-same' }, '같음') : el('strong', {}, theirs.label), same ? null : el('small', {}, theirs.effect)));
+            })));
+        const battles = Object.values(D.battles).filter(def => s.battles[def.id]).map(def => {
+            const r = s.battles[def.id];
+            const turned = r.turned.map(id => def.lines[id].name);
+            return el('li', {}, el('strong', {}, def.title), ' · ', r.result === 'won' ? `${r.turns}턴에 이겼다` : '이기지 못했다',
+                turned.length ? ` · 우회한 방어선: ${turned.join(', ')}` : '');
+        });
+        const support = [['peasants', '농민 지지', 40], ['workers', '노동자 지지', null], ['cohesion', '당 결속', 30]]
+            .map(([key, label, mark]) => supportChart(label, [60].concat(s.records.map(r => r.stats[key])), mark));
+        return [
+            el('h3', { class: 'cw-retro-title' }, '시기마다 역사와 비교'),
+            el('p', { class: 'cw-note' }, '싸운 전선의 위치를 합해 역사와 견줍니다. 시기를 누르면 전선별 결과가 펼쳐집니다.'),
+            seasons,
+            el('h3', { class: 'cw-retro-title' }, '갈림길'),
+            el('div', { class: 'cw-forks-wrap' }, forks),
+            battles.length ? el('h3', { class: 'cw-retro-title' }, '전투') : null,
+            battles.length ? el('ul', { class: 'cw-battle-results' }, ...battles) : null,
+            el('h3', { class: 'cw-retro-title' }, '지지의 흐름'),
+            el('div', { class: 'cw-support' }, ...support),
+        ].filter(Boolean);
+    }
+
+    // One value across the seasons (0–100, the start first) as a line, with
+    // a dashed mark at the threshold that matters, and every point named for
+    // the pointer and the screen reader.
+    function supportChart(label, values, mark) {
+        const W = 240, H = 92, L = 22, R = 8, T = 8, Bm = 18;
+        const x = i => L + i * (W - L - R) / (values.length - 1);
+        const y = v => T + (100 - v) / 100 * (H - T - Bm);
+        const node = svg('svg', { viewBox: `0 0 ${W} ${H}`, class: 'cw-spark', role: 'img', 'aria-label': `${label}: ${values.join(', ')}` });
+        for (const v of [0, 50, 100]) {
+            node.append(svg('line', { x1: L, x2: W - R, y1: y(v), y2: y(v), class: 'cw-spark-grid' }));
+            node.append(svg('text', { x: L - 4, y: y(v) + 3, 'text-anchor': 'end', class: 'cw-spark-axis' }, String(v)));
+        }
+        if (mark !== null) node.append(svg('line', { x1: L, x2: W - R, y1: y(mark), y2: y(mark), class: 'cw-spark-mark' }));
+        node.append(svg('polyline', { points: values.map((v, i) => `${x(i)},${y(v)}`).join(' '), class: 'cw-spark-line' }));
+        values.forEach((v, i) => {
+            const dot = svg('circle', { cx: x(i), cy: y(v), r: 3.5, class: 'cw-spark-dot' + (mark !== null && v < mark ? ' is-low' : '') });
+            dot.append(svg('title', {}, `${i ? D.turns[i - 1].date + ' 뒤' : '시작'}: ${v}`));
+            node.append(dot);
+        });
+        node.append(svg('text', { x: L, y: H - 4, class: 'cw-spark-axis' }, '1918'));
+        node.append(svg('text', { x: W - R, y: H - 4, 'text-anchor': 'end', class: 'cw-spark-axis' }, D.turns[values.length - 2].date.slice(0, 5)));
+        const last = values[values.length - 1];
+        return el('figure', {}, el('figcaption', {}, label, ' ', el('strong', {}, String(last)), mark !== null ? el('small', {}, ` · 기준 ${mark}`) : null), node);
     }
 
     $('cwSettle').addEventListener('click', () => {

@@ -374,6 +374,54 @@
 .cw-outcome h2 { font-size: clamp(1.4rem, 3.5vw, 2rem); margin: 6px 0 10px; }
 .cw-stars { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 6px; font-size: 1.05rem; color: var(--text-secondary); }
 .cw-stars .is-got { color: var(--text-primary); font-weight: 700; }
+/* The war looked back on. */
+.cw-retro-title { font-size: 1.05rem; margin: 22px 0 6px; }
+.cw-seasons { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 2px; }
+.cw-seasons summary { cursor: pointer; display: grid; grid-template-columns: minmax(8rem, 13rem) 1fr 5.5rem; gap: 10px; align-items: center; min-height: 40px; padding: 4px 6px; }
+.cw-seasons summary:hover { background: var(--bg-canvas); }
+.cw-season-name { display: grid; font-size: .86rem; font-weight: 700; }
+.cw-season-name small { font-weight: 400; color: var(--text-secondary); font-size: .76rem; }
+.cw-season-bar { position: relative; height: 14px; border-left: 0; background: linear-gradient(to right, transparent calc(50% - .5px), var(--border) calc(50% - .5px) calc(50% + .5px), transparent calc(50% + .5px)); }
+.cw-season-bar i { position: absolute; top: 1px; bottom: 1px; border-radius: 3px; }
+.cw-season-bar i.is-behind { background: var(--clr-red); }
+.cw-season-bar i.is-ahead { background: var(--btn-primary, #2da44e); }
+.cw-season-bar i.is-even { background: var(--text-secondary); margin-left: -1px; }
+.cw-season-value { font-size: .84rem; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; color: var(--text-secondary); }
+.cw-season-value.is-behind { color: var(--clr-red); }
+.cw-season-value.is-ahead { color: var(--text-primary); }
+.cw-season-fronts { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px; padding: 6px 0 12px; }
+.cw-forks-wrap { overflow-x: auto; }
+.cw-forks { width: 100%; border-collapse: collapse; font-size: .86rem; }
+.cw-forks th, .cw-forks td { text-align: left; vertical-align: top; padding: 8px 8px 8px 0; border-bottom: 1px solid var(--border); }
+.cw-forks thead th { font-size: .76rem; color: var(--text-secondary); }
+.cw-forks tbody th { font-weight: 700; }
+.cw-forks td strong, .cw-forks td small, .cw-forks tbody th .cw-links { display: block; }
+.cw-forks td small { color: var(--text-secondary); font-size: .76rem; margin-top: 2px; }
+.cw-forks tbody th .cw-links { font-weight: 400; font-size: .76rem; margin-top: 2px; }
+.cw-forks tbody th .cw-links a { margin-right: 8px; }
+.cw-forks tr:not(.is-same) td:nth-child(3) strong { color: var(--clr-red); }
+.cw-same { color: var(--text-secondary); }
+.cw-battle-results { margin: 6px 0 0; padding-left: 1.2rem; font-size: .9rem; display: grid; gap: 4px; }
+.cw-support { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-bottom: 18px; }
+.cw-support figure { margin: 0; }
+.cw-support figcaption { font-size: .86rem; }
+.cw-support figcaption small { color: var(--text-secondary); }
+.cw-spark { width: 100%; max-width: 300px; height: auto; display: block; }
+.cw-spark-grid { stroke: var(--border); stroke-width: 1; }
+.cw-spark-mark { stroke: var(--text-secondary); stroke-width: 1; stroke-dasharray: 3 3; }
+.cw-spark-axis { fill: var(--text-secondary); font-size: 9px; }
+.cw-spark-line { fill: none; stroke: var(--text-primary); stroke-width: 2; stroke-linejoin: round; }
+.cw-spark-dot { fill: var(--text-primary); stroke: var(--bg-surface); stroke-width: 2; }
+.cw-spark-dot.is-low { fill: var(--clr-red); }
+@media (max-width: 720px) {
+    .cw-seasons summary { grid-template-columns: 1fr 4.5rem; }
+    .cw-season-bar { grid-column: 1 / -1; grid-row: 2; }
+    .cw-forks thead { display: none; }
+    .cw-forks, .cw-forks tbody, .cw-forks tr, .cw-forks th, .cw-forks td { display: block; }
+    .cw-forks tr { padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .cw-forks th, .cw-forks td { border: 0; padding: 2px 0; }
+    .cw-forks td::before { content: attr(data-label); display: block; font-size: .72rem; color: var(--text-secondary); }
+}
 
 .cw-rules { border: 1px solid var(--border); padding: 0 var(--content-inset); margin: 18px 0; }
 .cw-rules summary { cursor: pointer; font-weight: 700; min-height: 44px; display: flex; align-items: center; }
