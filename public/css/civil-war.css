@@ -177,7 +177,7 @@
 .cw-foe-arrow { stroke-width: 2.2; }
 .cw-foe-arrow-under { stroke: var(--cw-ink); stroke-width: 4; stroke-linecap: round; }
 .cw-foe-arrowhead { stroke: var(--cw-ink); stroke-width: .9; stroke-linejoin: round; }
-.cw-foe-stop { stroke-width: 3; stroke-linecap: round; }
+.cw-foe-stop { stroke-width: 4; stroke-linecap: round; paint-order: stroke; }
 /* The attacker's arrow in its colour (red is the Red Army's). */
 .cw-foe-marker.k-white :is(.cw-foe-arrow, .cw-foe-stop) { stroke: var(--cw-white); }
 .cw-foe-marker.k-white .cw-foe-arrowhead { fill: var(--cw-white); }

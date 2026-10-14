@@ -577,7 +577,7 @@
             // its shape tells the result: a surge reaches on, thicker, toward the city,
             // the beaten stop short against a bar.
             const beaten = fate === ' is-beaten', surging = fate === ' is-surging';
-            const to = beaten ? Math.min(from + 14, tl - 12) : surging ? Math.max(from + 6, Math.min(tl - 8, from + 64)) : Math.max(from + 6, Math.min(tl - 9, from + 40));
+            const to = beaten ? Math.max(from + 12, Math.min(from + 24, tl - 14)) : surging ? Math.max(from + 6, Math.min(tl - 8, from + 64)) : Math.max(from + 6, Math.min(tl - 9, from + 40));
             const ux = tx / tl, uy = ty / tl;
             const ex = x + ux * to, ey = y + uy * to;
             const shaft = { x1: x + ux * from, y1: y + uy * from, x2: ex, y2: ey };
@@ -585,7 +585,7 @@
             body.append(svg('line', Object.assign({ class: 'cw-foe-arrow' }, shaft)));
             const p = (px, py) => `${px.toFixed(1)} ${py.toFixed(1)}`;
             if (beaten) {
-                body.append(svg('path', { d: `M${p(ex - uy * 7, ey + ux * 7)}L${p(ex + uy * 7, ey - ux * 7)}`, class: 'cw-foe-stop' }));
+                body.append(svg('path', { d: `M${p(ex - uy * 10, ey + ux * 10)}L${p(ex + uy * 10, ey - ux * 10)}`, class: 'cw-foe-stop' }));
             } else {
                 // The head is a shape of the marker's own, not an svg
                 // <marker>, so it fades in and out with the body.
