@@ -37,6 +37,7 @@ const {
     escapeHtml,
     mapLinkableText,
     buildPersonLinkIndex,
+    buildAliasPattern,
 } = require('./people-linkify');
 const { buildEventLinkIndex } = require('./event-linkify');
 const { buildTermLinkIndex } = require('./term-linkify');
@@ -271,6 +272,13 @@ function topicStrings(topic) {
 // `seen` lets several linkers share one first-mention set: a reference
 // document links an entry once across all its sections and pages.
 //
+// `pageTerms` ([{text, termId}]) links words to a glossary entry in this
+// reading unit only: bare 백군 means the Russian Whites on the civil-war
+// events and the Finnish Whites on the Finland event, so the corpus keeps it
+// search-only and each event that means one of them says so (migration 366).
+// It runs right after the term pass, so a longer phrase the glossary already
+// links (러시아 백군) is linked first and the bare word inside it is skipped.
+//
 // `personPage` is the person resolver (person-page-links.js), set per page on
 // the dictionary pages and by the surface on reports and diaries: it may
 // refuse a surname the page's years rule out, or settle a shared surname on
@@ -289,6 +297,8 @@ function createLinker(indexes, options = {}) {
     const passes = surface.kinds
         .map(kind => ({ kind, spec: KIND_SPECS[kind], index: indexes && indexes[kind] }))
         .filter(pass => pass.index);
+    const pagePass = pageTermPass(indexes, options.pageTerms);
+    if (pagePass) passes.splice(passes.findIndex(pass => pass.kind === 'term') + 1, 0, pagePass);
 
     function replacerFor({ kind, spec, index }, context, extraContext) {
         const contextText = extraContext || context.text;
@@ -387,6 +397,23 @@ function createLinker(indexes, options = {}) {
         found,
         links,
     };
+}
+
+// The pass for a reading unit's own word→term mappings: the same replacer as
+// the term pass, over an index of just those words.
+function pageTermPass(indexes, pageTerms) {
+    const terms = indexes && indexes.term;
+    if (!terms || !Array.isArray(pageTerms) || !pageTerms.length) return null;
+    const byAlias = Object.create(null);
+    const tokens = [];
+    for (const { text, termId } of pageTerms) {
+        const entry = terms.byId[termId];
+        if (!entry || !text || Object.hasOwn(byAlias, text)) continue;
+        byAlias[text] = entry;
+        tokens.push(text);
+    }
+    if (!tokens.length) return null;
+    return { kind: 'term', spec: KIND_SPECS.term, index: { pattern: buildAliasPattern(tokens, [], terms.en), byAlias, en: terms.en } };
 }
 
 // Cards share one seen-set per person, so a name used in the epithet and again

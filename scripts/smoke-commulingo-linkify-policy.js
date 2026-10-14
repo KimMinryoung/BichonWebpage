@@ -86,6 +86,8 @@ const terms = [
     // A headword too homonymous to link bare (term-headword row) — only the
     // longer alias reaches it.
     { id: 'jeonse', term: { ko: '전세', en: 'Jeonse' }, aliases: { ko: ['전세제도'], en: [] } },
+    // Bare 백군 is not an alias: it is the Finnish Whites on another page.
+    { id: 'white-movement', term: { ko: '백군 (러시아 내전)', en: 'White movement' }, aliases: { ko: ['러시아 백군'], en: [] } },
 ];
 
 const events = [
@@ -262,6 +264,15 @@ const linkCardText = createCardTextLinker(ko);
 assert.doesNotMatch(linkCardText('스탈린의 비서였다', 'stalin'), /commu-person-link/);
 assert.match(linkCardText('스탈린의 비서였다', 'molotov'), /commu-person-link/);
 assert.doesNotMatch(linkCardText('스탈린과 다시 만났다', 'molotov'), /commu-person-link/);
+
+// pageTerms — an event's own word→term mappings (migration 366): the bare
+// word links on that page only, after the glossary's longer phrase.
+const pageTerms = [{ text: '백군', termId: 'white-movement' }, { text: '없는말', termId: 'no-such-term' }];
+assert.doesNotMatch(createLinker(ko, { surface: 'event' }).plain('백군이 왔다'), /commu-term-link/);
+assert.match(createLinker(ko, { surface: 'event', pageTerms }).plain('백군이 왔다'), /href="\/commulingo\/terms\/white-movement"[^>]*>백군<\/a>/);
+const longFirst = createLinker(ko, { surface: 'event', pageTerms }).plain('러시아 백군과 백군');
+assert.match(longFirst, />러시아 백군<\/a>과 백군$/, 'the glossary phrase links first and the bare word is a later mention');
+assert.doesNotMatch(createLinker(ko, { surface: 'event', pageTerms }).plain('없는말'), /<a /, 'a mapping to a missing term is ignored');
 
 // An unknown surface is a mistake, not a silent default.
 assert.throws(() => createLinker(ko, { surface: 'whatever' }), /unknown surface/);

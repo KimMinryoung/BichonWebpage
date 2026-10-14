@@ -30,8 +30,16 @@
 - 미로노프: 10월 5일 발라쇼프 재판 사형 선고, 8일 전러시아 중앙집행위원회 사면, 1921년 4월 2일 부티르카 감옥 마당에서 보초에게 피살(경위 불명). 제2기병군은 페레코프 축(유슌)으로 크림에 들어갔다.
 - 그리고리예프: 5월 8일 「우니베르살」, 봉기가 베사라비아 쪽 헝가리 지원 원정을 막았다.
 
+## 후속 (같은 날, 사용자 지시)
+
+- 사건 `civil-war` 본문: 「북서군은 12월 5일 공식 해산되었다」 → 무장 해제된 병사들의 에스토니아 억류와 1920년 1월 22일 유데니치의 해산 명령(en 대응 문장도). 「유순 방어선」 → 「유슌 방어선」(본문·연표). 정본 `scripts/content/civil-war-game-20261014/event-fixes.js`(북서군 절은 편집 서비스, 「1920년」 절은 ### 하위 제목이 있어 절 편집기가 거부하므로 행 잠금 아래 문자열 치환).
+- 사건 단위 용어 링크(마이그레이션 366 `commulingo_history_events.term_links`, 코드: `history-events-store.js` termLinks → `event-presentation.js` → `linkify.js` pageTerms). 그 사건 페이지에서만 표현을 용어로 잇는다. 전역 용어 패스 바로 뒤에 돌아서 「러시아 백군」처럼 용어 사전이 이미 링크하는 긴 구절이 먼저 걸린다. 데이터 `scripts/migrations/data/civil-war-game-20261014-event-term-links.sql`:
+  - 맨 「백군」 → `white-movement`: 내전의 하위 사건 13편과 `civil-war`(핀란드 사건 제외).
+  - 맨 「의용군」·Volunteer Army → `volunteer-army-white`: `civil-war`, 자캅카스, 베사라비아(발트 사건은 핀란드 의용군·서러시아 의용군이 있어 제외).
+  - 맨 「북서군」·Northwestern Army → `north-western-army-white`: `civil-war`, 발트 독립전쟁.
+  - 「빙상 행군」·Ice March → `ice-march-1918`: `civil-war`(1918년 쿠반 원정을 가리킴. 시베리아 후퇴는 「대시베리아 빙상 행군」으로 먼저 링크된다).
+- 검사: `scripts/smoke-commulingo-linkify-policy.js`에 pageTerms 단언.
+
 ## 남은 확인거리
 
-- 사건 `civil-war` 본문의 「12월 5일 공식 해산」(북서군): 위키백과 en·ru는 1920년 1월 22일 유데니치 명령. 본문 수정은 사용자 결정 대기.
-- 사건 본문의 맨 「의용군」·「북서군」·「백군」은 일반어라 자동 링크되지 않는다. 사건 단위 link_expressions로 이을지 검토.
 - 트로츠키의 열차 주행거리(12만 1천 km·10만 5천 km·20만 km)와 인원(407·231), 남러시아군 병력(15만·27만), 크라스나야 고르카 처형(약 90·약 600)은 용어 본문에 모두 적었다.

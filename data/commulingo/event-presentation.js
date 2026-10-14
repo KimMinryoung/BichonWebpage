@@ -207,6 +207,7 @@ async function buildEventPanel(eventId, lang) {
             surface: 'event',
             exclude: { event: eventId, term: paired ? paired.id : '' },
             blockStrings: events[index].noAutoLink,
+            pageTerms: (events[index].termLinks || []).filter(link => link.lang === lang),
             personPage: createPersonPageResolver({
                 period: pagePeriod(events[index].startYear, events[index].endYear),
                 related: events[index].people.map(person => person.id),

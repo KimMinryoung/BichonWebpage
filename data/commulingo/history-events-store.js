@@ -24,6 +24,16 @@ function t(ko, en) {
     return { ko: ko || '', en: en || '' };
 }
 
+// [{lang, text, termId}] kept only when well formed; the reason stays in the
+// row for whoever edits it.
+function termLinksOf(value) {
+    if (!Array.isArray(value)) return [];
+    return value.filter(link => link && ['ko', 'en'].includes(link.lang)
+        && typeof link.text === 'string' && link.text.trim().length >= 2
+        && typeof link.termId === 'string' && /^[a-z0-9-]+$/.test(link.termId))
+        .map(link => ({ lang: link.lang, text: link.text.trim(), termId: link.termId }));
+}
+
 async function fetchEvents() {
     const [events, people] = await readSnapshot(client => Promise.all([
         client.query(
@@ -34,7 +44,8 @@ async function fetchEvents() {
                     to_jsonb(commulingo_history_events)->'countries' AS countries,
                     to_jsonb(commulingo_history_events)->'relations' AS relations,
                     to_jsonb(commulingo_history_events)->'link_expressions' AS link_expressions,
-                    to_jsonb(commulingo_history_events)->'sides' AS sides
+                    to_jsonb(commulingo_history_events)->'sides' AS sides,
+                    to_jsonb(commulingo_history_events)->'term_links' AS term_links
              FROM commulingo_history_events
              WHERE COALESCE(summary_ko, '') <> ''
              ORDER BY sort_order, id`
@@ -90,6 +101,10 @@ async function fetchEvents() {
         // words whose dictionary sense is right elsewhere but wrong here
         // (임시정부 on a French event is the GPRF, not the Russian one).
         noAutoLink: Array.isArray(row.no_auto_link) ? row.no_auto_link : [],
+        // Words this event's prose links to a glossary entry though the
+        // corpus at large leaves them unlinked (migration 366): bare 백군 is
+        // the Russian Whites here and the Finnish Whites elsewhere.
+        termLinks: termLinksOf(row.term_links),
         relations: row.relations && typeof row.relations === 'object' && !Array.isArray(row.relations) ? row.relations : {},
         // Named camps for events with no single focus (migration 193); the
         // page groups people by side, then by relation kind.
