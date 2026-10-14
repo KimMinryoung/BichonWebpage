@@ -318,6 +318,7 @@
         const turn = fc ? s.turn : s.records[s.records.length - 1].turn;
         const key = `${turn}:${fc ? 'plan' : 'review'}`;
         if (motion.key !== key) motion = { key, at: mapSeen() || !('IntersectionObserver' in window) ? performance.now() : null };
+        if (motion.at === null) awaitMap();
         layer.classList.add(fc ? 'is-plan' : 'is-review');
         const since = motion.at === null ? 0 : performance.now() - motion.at;
         if (motion.at === null || since < MOTION_MS) {
@@ -493,6 +494,21 @@
         const r = mapEl.getBoundingClientRect();
         const shown = Math.min(r.bottom, window.innerHeight) - Math.max(r.top, 0);
         return r.height > 0 && shown >= r.height * 0.3;
+    }
+
+    // A waiting entrance also checks for itself. The observer below only
+    // reports a change: a map already in view when the season was sent
+    // (pinned while planning) and back in view after the re-layout never
+    // crossed its threshold, and the motion waited for good.
+    let mapWait = 0;
+    function awaitMap() {
+        window.clearTimeout(mapWait);
+        mapWait = window.setTimeout(() => {
+            if (motion.at !== null || !s || $('cwCampaign').hidden) return;
+            if (!mapSeen()) return awaitMap();
+            motion.at = performance.now();
+            renderMap();
+        }, 200);
     }
 
     // An entrance waiting off screen starts when the map scrolls into view.
