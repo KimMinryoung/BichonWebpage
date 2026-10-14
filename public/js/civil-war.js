@@ -107,12 +107,6 @@
 
     const signed = n => (n > 0 ? '+' : n < 0 ? '−' : '±') + Math.abs(n);
 
-    // "카잔·심비르스크" for the held cities, or a note that none are.
-    function heldText(id, line) {
-        const cities = D.fronts[id].cities.slice(0, line).map(c => c[0]);
-        return cities.length ? cities.join('·') : '없음';
-    }
-
 
     // ── Setup ──
 
@@ -636,7 +630,7 @@
                 el('button', { type: 'button', 'data-key': `more-${id}`, 'aria-label': `${D.fronts[id].short}에 사단 하나 보내기`, disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + 1); render(); } }, '+'),
                 el('button', { type: 'button', 'data-key': `fill-${id}`, class: 'cw-fill', 'aria-label': '남은 사단 모두 보내기', disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + G.free(s)); render(); } }, '모두'));
             const card = el('article', { class: 'cw-front' + (after < hist ? ' is-short' : ''), id: 'cwFront-' + id, tabindex: '-1' },
-                el('header', {}, el('h4', {}, D.fronts[id].name), foeList(threat.foes), el('span', {}, `보유: ${heldText(id, line)}`)),
+                el('header', {}, el('h4', {}, D.fronts[id].name), foeList(threat.foes)),
                 el('p', { class: 'cw-threat' }, threat.text, ' ', person(threat.who)),
                 traitRow(f.traits),
                 el('div', { class: 'cw-front-controls' }, stepper, commissarToggle(id), ...frontCards(id)),
@@ -790,7 +784,7 @@
             foeRow,
             bar,
             el('div', { class: 'cw-stake-head' },
-                el('span', { class: 'cw-stake-verdict ' + current.tone }, `${now}: ${versus(current.after)}`),
+                now === '예상' ? null : el('span', { class: 'cw-stake-verdict ' + current.tone }, `${now}: ${versus(current.after)}`),
                 current.overflow ? el('span', { class: 'cw-stake-momentum' }, `다음 싸움 압력 +${current.overflow * G.MOMENTUM}`) : null,
                 current.pursuit ? el('span', { class: 'cw-stake-pursuit' }, `추격: 다음 싸움 압력 −${current.pursuit * G.PURSUIT}`) : null),
             stakeRow(id, line, current.after, bands, hist, turn, now));
@@ -911,13 +905,9 @@
     }
 
     function renderCommand() {
-        const notes = [];
-        notes.push(s.plan.choice ? '준비가 끝났습니다' : '갈림길을 고르세요');
         const kept = G.free(s);
-        const need = G.forecast(s).supply.need;
         const saved = kept - Math.ceil(kept / 2);
-        notes.push(`곡물 소비 ${need}` + (saved > 0 ? ` (예비 −${saved})` : ''));
-        $('cwCommandNote').textContent = notes.join(' · ');
+        $('cwCommandNote').textContent = `곡물 소비 ${G.forecast(s).supply.need}` + (saved > 0 ? ` (예비 −${saved})` : '');
         $('cwSettle').disabled = !G.canSettle(s);
         const battle = G.battleOf(s);
         $('cwSettle').textContent = battle ? battle.settle : '이 시기를 보낸다 →';

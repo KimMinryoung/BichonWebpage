@@ -17,6 +17,7 @@
 .cw-heading h1 { font-size: clamp(1.35rem, 3.3vw, 2.3rem); letter-spacing: -.045em; margin: 8px 0; }
 .games-shell .cw-primary { background: var(--cw-red); color: #fff; border-color: var(--cw-red); font-weight: 700; }
 .games-shell .cw-primary:hover:enabled { filter: brightness(1.08); }
+.games-shell .cw-primary:disabled { background: var(--cw-ink); border-color: var(--cw-ink); color: #b5b5ad; opacity: 1; }
 .cw-shell h2, .cw-shell h3, .cw-shell h4 { margin: 0; }
 .cw-shell p { line-height: var(--leading-relaxed); }
 
