@@ -394,33 +394,114 @@
 
     function voiceBubble(v, spot, scale, fresh) {
         const f = v.by && D.factions[v.by];
-        const side = f ? 'k-' + f.kind : 'is-red';
-        const face = v.who ? A.portrait(v.who[1]) : A.shield(v.by, f);
         const width = Math.min(310, mapEl.clientWidth - 24);
-        const full = overlayRoot().getBoundingClientRect().width;
-        const ax = spot.x * scale, ay = spot.y * scale;
-        const left = Math.min(Math.max(ax, width / 2 + 6), full - width / 2 - 6);
-        const below = ay < (NARROW.matches ? mapEl.scrollTop : 0) + 150;
-        const next = () => {
-            voice.i++;
-            voice.until = null;
-            renderVoice();
-        };
-        const box = el('div', {
+        return bubble({
+            v, fresh, width, name: speakerName(v), sub: v.who && f ? f.short : null,
+            face: v.who ? A.portrait(v.who[1]) : A.shield(v.by, f), side: f ? 'k-' + f.kind : 'is-red',
+            ax: spot.x * scale, ay: spot.y * scale, view: mapEl,
+            below: spot.y * scale < (NARROW.matches ? mapEl.scrollTop : 0) + 150,
+            count: `${voice.i + 1}/${voice.list.length}`,
+            next: () => { voice.i++; voice.until = null; renderVoice(); },
+            skip: () => { voice.i = voice.list.length; renderVoice(); },
+        });
+    }
+
+    // A speech bubble, its tail at (ax, ay), kept inside what its scroll
+    // box shows (view: the box, scrolled sideways on a narrow screen).
+    function bubble({ v, name, sub, face, side, ax, ay, view, width, below, fresh, count, next, skip }) {
+        const lo = view.scrollLeft + width / 2 + 6, hi = view.scrollLeft + view.clientWidth - width / 2 - 6;
+        const left = Math.min(Math.max(ax, lo), Math.max(lo, hi));
+        const tail = Math.min(Math.max(ax - left + width / 2, 14), width - 14);
+        return el('div', {
             class: `cw-voice ${side}${below ? ' is-below' : ''}${fresh ? ' is-new' : ''}`,
-            style: `left:${left.toFixed(1)}px;top:${ay.toFixed(1)}px;width:${width}px;--tail:${(ax - left + width / 2).toFixed(1)}px`,
-            role: 'button', tabindex: '0', 'aria-label': `${speakerName(v)}: ${v.text}. 다음 대사`,
+            style: `left:${left.toFixed(1)}px;top:${ay.toFixed(1)}px;width:${width}px;--tail:${tail.toFixed(1)}px`,
+            role: 'button', tabindex: '0', 'aria-label': `${name}: ${v.text}. 다음 대사`,
             onclick: e => { if (!e.target.closest('a, button')) next(); },
             onkeydown: e => { if ((e.key === 'Enter' || e.key === ' ') && e.target === e.currentTarget) { e.preventDefault(); next(); } },
         },
         picture(face),
         el('div', { class: 'cw-voice-body' },
-            el('p', { class: 'cw-voice-who' }, el('strong', {}, speakerName(v)), v.who && f ? el('span', {}, f.short) : null),
+            el('p', { class: 'cw-voice-who' }, el('strong', {}, name), sub ? el('span', {}, sub) : null),
             el('p', { class: 'cw-voice-text' }, v.text),
             el('p', {}, sourceOf(v))),
-        el('span', { class: 'cw-voice-count', 'aria-hidden': 'true' }, `${voice.i + 1}/${voice.list.length}`),
-        el('button', { type: 'button', class: 'cw-voice-close', 'aria-label': '대사 건너뛰기', onclick: () => { voice.i = voice.list.length; renderVoice(); } }, '×'));
-        return box;
+        el('span', { class: 'cw-voice-count', 'aria-hidden': 'true' }, count),
+        el('button', { type: 'button', class: 'cw-voice-close', 'aria-label': '대사 건너뛰기', onclick: skip }, '×'));
+    }
+
+    // ── Battle voices ──
+    // On the board the units speak: when the battle opens and when its
+    // moments come (a line turned, the objective emptied, the wind turned,
+    // the reserve sent in, a late turn). Each line plays once a battle,
+    // over its speaker (the first of v.unit still standing; a line whose
+    // speakers have all fallen or never came is dropped).
+    let bVoice = { b: null, played: new Set(), queue: [], i: 0, until: null, timer: 0 };
+
+    function battleMoment(b, when) {
+        const def = b.def;
+        if (when === 'start') return true;
+        if (when === 'goal') return def.goals.some(g => { const u = B.unitAt(b, ...g.at); return !u || u.side !== 'white'; });
+        if (when === 'flood') return Boolean(def.windTurns) && !B.fordOpen(b);
+        if (when === 'reserve') return Boolean(b.reserve);
+        if (when.startsWith('turned:')) return Boolean(b.turned[when.slice(7)]);
+        if (when.startsWith('turn:')) return b.turn >= Number(when.slice(5));
+        return false;
+    }
+
+    const speakerOf = (b, v) => [].concat(v.unit).map(id => B.byId(b, id)).find(u => u && u.hp > 0);
+
+    function battleVoiceName(b, v) {
+        const u = speakerOf(b, v);
+        return { name: v.who ? v.who[0] : u.name, sub: v.who ? u.name : null };
+    }
+
+    function renderBattleVoice() {
+        const b = s.battle;
+        window.clearTimeout(bVoice.timer);
+        if (bVoice.b !== b) bVoice = { b, played: new Set(), queue: [], i: 0, until: null, timer: 0 };
+        (b.def.voices || []).forEach((v, k) => {
+            if (bVoice.played.has(k) || !battleMoment(b, v.when)) return;
+            bVoice.played.add(k);
+            if (speakerOf(b, v)) bVoice.queue.push(v);
+        });
+        const wrap = document.querySelector('#cwBattle .cw-grid-scroll');
+        if (!wrap) return;
+        let layer = wrap.querySelector('.cw-voices');
+        if (!layer) { layer = el('div', { class: 'cw-voices' }); wrap.append(layer); }
+        const now = performance.now();
+        while (bVoice.until !== null && now >= bVoice.until && bVoice.i < bVoice.queue.length) { bVoice.i++; bVoice.until = null; }
+        // Drop a queued line whose speaker fell before it was said.
+        while (bVoice.i < bVoice.queue.length && !speakerOf(b, bVoice.queue[bVoice.i])) bVoice.i++;
+        if (bVoice.i >= bVoice.queue.length) return layer.replaceChildren();
+        const v = bVoice.queue[bVoice.i];
+        const u = speakerOf(b, v);
+        const board = wrap.querySelector('.cw-grid');
+        const scale = board.getBoundingClientRect().width / (b.def.map[0].length * CELL);
+        const ax = (u.c * CELL + CELL / 2) * scale, ay = (u.r * CELL + 3) * scale;
+        const fresh = bVoice.until === null;
+        const { name, sub } = battleVoiceName(b, v);
+        const f = v.by && D.factions[v.by];
+        if (fresh) {
+            bVoice.until = now + holdOf(v);
+            announce(`${name}: ${v.text}`);
+            // A board wider than the screen slides its speaker into view.
+            if (ax < wrap.scrollLeft + 40 || ax > wrap.scrollLeft + wrap.clientWidth - 40) wrap.scrollTo({ left: ax - wrap.clientWidth / 2 });
+        }
+        const width = Math.min(300, wrap.clientWidth - 24);
+        const node = bubble({
+            v, fresh, width, name, sub,
+            face: v.who ? A.portrait(v.who[1]) : v.face ? A.portrait(v.face) : A.shield(v.by, f),
+            side: f ? 'k-' + f.kind : 'is-red', ax, ay, view: wrap, below: false,
+            count: `${bVoice.i + 1}/${bVoice.queue.length}`,
+            next: () => { bVoice.i++; bVoice.until = null; renderBattleVoice(); },
+            skip: () => { bVoice.i = bVoice.queue.length; renderBattleVoice(); },
+        });
+        layer.replaceChildren(node);
+        // No room above the speaker: hang below it instead.
+        if (ay - node.offsetHeight - 16 < 0) {
+            node.classList.add('is-below');
+            node.style.top = `${((u.r + 1) * CELL - 3) * scale}px`;
+        }
+        bVoice.timer = window.setTimeout(renderBattleVoice, bVoice.until - now + 20);
     }
 
     // On a narrow screen the speaker slides into the map's view.
@@ -1378,7 +1459,8 @@
             add(`M${x} ${y + 42}h48M${x + 12} ${y + 36}v6M${x + 30} ${y + 36}v6M${x + 6} ${y + 42}v6M${x + 22} ${y + 42}v6M${x + 40} ${y + 42}v6`, 'cw-mark-brick');
         } else if (cls === 'yushun' || cls === 'chongar') {
             add(`M${x} ${y + 30}l6 -6l6 6l6 -6l6 6l6 -6l6 6l6 -6l6 6`, 'cw-mark-trench');
-            add(`M${x + 2} ${y + 14}h44` + [6, 16, 26, 36, 44].map(dx => `M${x + dx - 2} ${y + 12}l4 4M${x + dx + 2} ${y + 12}l-4 4`).join(''), 'cw-mark-wire');
+            // Coiled wire in front of the trench.
+            add([5, 11, 17, 23, 29, 35, 41].map(dx => `M${x + dx - 3} ${y + 13}a3 3 0 1 0 6 0a3 3 0 1 0 -6 0`).join(''), 'cw-mark-wire');
         } else if (cls === 'strait' || cls === 'bridge') {
             add(`M${x + 6} ${y + 8}v32M${x + 42} ${y + 8}v32`, 'cw-mark-truss');
             add(`M${x + 6} ${y + 16}h36M${x + 6} ${y + 32}h36M${x + 6} ${y + 32}l9 -16l9 16l9 -16l9 16`, 'cw-mark-truss');
@@ -1388,7 +1470,6 @@
         } else if (cls === 'ford') {
             const rows = flooded ? [10, 20, 30, 40] : [16, 32];
             add(rows.map(dy => `M${x + 6} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), 'cw-mark-water');
-            if (!flooded) add(`M${x + 12} ${y + 24}h3M${x + 30} ${y + 40}h4M${x + 34} ${y + 8}h3`, 'cw-mark-shoal');
         }
         return g.childNodes.length ? g : null;
     }
@@ -1517,8 +1598,9 @@
                 board.append(tile);
                 const mark = tileMarks(ground.cls, r, c, flooded);
                 if (mark) board.append(mark);
+                // A town's name on top; the objective's at the foot, clear of its flag.
                 const town = goal ? goal.name : (def.towns.find(t => t[1] === r && t[2] === c) || [])[0];
-                if (town) board.append(svg('text', { x: c * CELL + CELL / 2, y: r * CELL + 14, 'text-anchor': 'middle', class: 'cw-tile-label' }, town));
+                if (town) board.append(svg('text', { x: c * CELL + CELL / 2, y: r * CELL + (goal ? CELL - 5 : 14), 'text-anchor': 'middle', class: 'cw-tile-label' + (goal ? ' is-goal' : '') }, town));
                 // Shelling wears a fortification's defence. A unit standing
                 // there shows what is left on its chip; an empty one says it.
                 const worn = B.terrain(b, r, c).fort && b.wear[r * 100 + c];
@@ -1603,7 +1685,7 @@
         // The objective: a red flag on its corner, above any unit holding it.
         for (const goal of def.goals) {
             const x = goal.at[1] * CELL, y = goal.at[0] * CELL;
-            board.append(svg('path', { d: `M${x + 36} ${y + 20}v-18M${x + 36} ${y + 2}h10l-3 3.5 3 3.5h-10`, class: 'cw-goal-flag', 'aria-hidden': 'true' }));
+            board.append(svg('path', { d: `M${x + 34} ${y + 24}v-22M${x + 34} ${y + 2}h12l-3.5 4.5 3.5 4.5h-12`, class: 'cw-goal-flag', 'aria-hidden': 'true' }));
         }
         board.append(eventArrows(b));
         board.addEventListener('keydown', e => { if (e.key === 'Escape') deselect(); });
@@ -1647,6 +1729,7 @@
                     b.events.length ? el('div', { class: 'cw-battle-events' },
                         el('p', { class: 'games-kicker' }, whiteMoved ? '지난 백군의 차례' : '방금 일어난 일'),
                         el('ol', { class: 'cw-battle-log' }, ...eventLines(b).map(t => el('li', {}, t)))) : null)));
+        renderBattleVoice();
     }
 
     // A fortification's defence as it was and as it is: 「진지 +2→0」.

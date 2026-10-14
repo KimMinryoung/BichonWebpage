@@ -25,6 +25,11 @@
         'filipp-mironov': { side: 'red', cap: 'papakha', moustache: true, beard: 'short' },
         'sergey-kamenev': { side: 'red', cap: 'peaked', moustache: 'great' },
         tukhachevsky: { side: 'red', cap: 'budenovka' },
+        'vitaly-primakov': { side: 'red', cap: 'papakha' },
+        'fyodor-raskolnikov': { side: 'red', cap: 'naval' },
+        'vladimir-azin': { side: 'red', cap: 'budenovka', moustache: true },
+        // A soldier who speaks for his unit.
+        'red-soldier': { side: 'red', cap: 'budenovka', moustache: true },
         'vasily-chapayev': { side: 'red', cap: 'papakha', moustache: 'great' },
         'vasily-blyukher': { side: 'red', cap: 'budenovka' },
         'maria-spiridonova': { side: 'black', hair: 'bun', glasses: 'pince' },

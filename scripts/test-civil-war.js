@@ -736,6 +736,22 @@ assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red o
         for (const x of [t.choice, t.incident]) if (x && x.who) drawn.add(x.who[1]);
     }
     for (const c of Object.values(D.cards)) drawn.add(c.advisor[1]);
+    // The battles' voices: real speakers on the board, known moments.
+    for (const [id, def] of Object.entries(D.battles)) {
+        assert.ok(def.voices && def.voices.some(v => v.when === 'start'), `${id}: opening voices`);
+        const units = new Set(def.units.map(u => u.id));
+        for (const u of def.units) if (u.person) drawn.add(u.person[1]);
+        for (const v of def.voices) {
+            assert.ok([].concat(v.unit).every(u => units.has(u)), `${id}: speaker of ${v.text}`);
+            assert.ok(/^(start|goal|flood|reserve|turn:\d+|turned:\w+)$/.test(v.when), `${id}: when ${v.when}`);
+            if (v.when.startsWith('turned:')) assert.ok(def.lines[v.when.slice(7)], `${id}: line ${v.when}`);
+            assert.ok(v.who || v.by || v.face, `${id}: a picture for ${v.text}`);
+            if (v.by) assert.ok(D.factions[v.by], `${id}: faction ${v.by}`);
+            if (v.src) assert.ok(/^https:\/\//.test(v.src[1]), `${id}: source of ${v.text}`);
+            if (v.who) drawn.add(v.who[1]);
+            if (v.face) drawn.add(v.face);
+        }
+    }
     for (const id of drawn) assert.ok(A.people[id], `portrait for ${id}`);
     for (const [id, f] of Object.entries(D.factions)) {
         assert.ok(f.cries && f.cries.beaten && f.cries.surging, `cries of ${id}`);
