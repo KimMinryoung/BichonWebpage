@@ -251,6 +251,20 @@ const bad = JSON.parse(G.serialize(hist));
 bad.log.splice(3, 0, ['alloc', 'east', 99]);
 assert.equal(G.restore(JSON.stringify(bad)), null);
 assert.equal(G.restore('{'), null);
+// A save from before Kazan was a battle goes on as though it was taken as
+// history took it, and keeps going that way after it is saved again.
+{
+    const log = JSON.parse(G.serialize(hist)).log;
+    // Kazan's orders run from the first battle order to the next season.
+    const from = log.findIndex(e => e[0].startsWith('b:'));
+    const to = log.findIndex((e, i) => i > from && e[0] === 'next');
+    const back = G.restore({ version: G.VERSION, log: log.slice(0, from).concat(log.slice(to)) });
+    assert.equal(back.turn, hist.turn, 'the old save keeps its place');
+    assert.deepEqual(back.lines, hist.lines);
+    assert.equal(back.battles.kazan.assumed, true);
+    assert.equal(G.restore(G.serialize(back)).turn, hist.turn);
+    assert.ok(back.log.some(e => e[0] === 'assume'));
+}
 // A plan that no longer fits the rules is planned again from its season.
 {
     const late = JSON.parse(G.serialize(hist));

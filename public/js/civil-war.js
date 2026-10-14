@@ -814,7 +814,7 @@
         const r = def && !def.final && s.battles[def.id];
         if (!r) return null;
         const v = G.battleResult(s, def.front);
-        const result = r.result === 'won' ? `${r.turns}턴에 이겼다` : '이기지 못했다';
+        const result = r.assumed ? '역사대로 이겼다 (전투가 생기기 전의 저장)' : r.result === 'won' ? `${r.turns}턴에 이겼다` : '이기지 못했다';
         return el('div', { class: 'cw-history' },
             el('p', { class: 'games-kicker' }, def.title),
             el('p', {}, el('strong', {}, result), ` · ${D.fronts[def.front].name} 전투력 `, v ? signed(v.v) : '그대로'),
@@ -1182,7 +1182,7 @@
         const battles = Object.values(D.battles).filter(def => s.battles[def.id]).map(def => {
             const r = s.battles[def.id];
             const turned = r.turned.map(id => def.lines[id].name);
-            return el('li', {}, el('strong', {}, def.title), ' · ', r.result === 'won' ? `${r.turns}턴에 이겼다` : '이기지 못했다',
+            return el('li', {}, el('strong', {}, def.title), ' · ', r.assumed ? '역사대로 이겼다 (전투가 생기기 전의 저장)' : r.result === 'won' ? `${r.turns}턴에 이겼다` : '이기지 못했다',
                 turned.length ? ` · 우회한 방어선: ${turned.join(', ')}` : '');
         });
         const support = [['peasants', '농민 지지', 40], ['workers', '노동자 지지', null], ['cohesion', '당 결속', 30]]

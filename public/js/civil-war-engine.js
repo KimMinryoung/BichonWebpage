@@ -339,7 +339,7 @@
         if (!r) return null;
         const { quick, quickBy, lostBy } = def.reward;
         if (r.result !== 'won') return { label: `${def.title} 실패`, v: lostBy };
-        return r.turns <= quick ? { label: `${def.title} (${quick}턴 안)`, v: quickBy } : null;
+        return r.turns !== null && r.turns <= quick ? { label: `${def.title} (${quick}턴 안)`, v: quickBy } : null;
     }
 
     // Sending a season with a battle on one of its fronts fights it first
@@ -527,7 +527,18 @@
 
     // ── Save and restore: replay the log on a new game ──
 
-    const ACTIONS = { alloc: setAlloc, commissar: setCommissar, play: playCard, unplay: unplayCard, choose, settle, next };
+    // A save from before a battle was added goes on from the season after
+    // it as though the battle went as history did. The log keeps it as an
+    // 'assume', so the save replays the same way afterwards.
+    function assumeBattle(s) {
+        const b = s.battle;
+        if (s.phase !== 'battle' || !b || b.def.final || b.turn !== 1 || b.units.some(u => u.moved || u.acted)) return false;
+        s.battles[b.def.id] = { result: 'won', turns: null, turned: [], assumed: true };
+        s.phase = 'plan';
+        return settle(s);
+    }
+
+    const ACTIONS = { alloc: setAlloc, commissar: setCommissar, play: playCard, unplay: unplayCard, choose, settle, next, assume: assumeBattle };
 
     function act(s, name, ...args) {
         const fn = name.startsWith('b:') ? null : ACTIONS[name];
@@ -555,6 +566,10 @@
             for (const [i, entry] of saved.log.entries()) {
                 if (!Array.isArray(entry)) return null;
                 if (act(s, ...entry)) { if (entry[0] === 'next') season = i + 1; continue; }
+                // A campaign order where a new battle now opens: the save is
+                // older than the battle, which goes as history did.
+                if (s.phase === 'battle' && !s.battle.def.final && typeof entry[0] === 'string' && !entry[0].startsWith('b:')
+                    && act(s, 'assume') && act(s, ...entry)) { if (entry[0] === 'next') season = i + 1; continue; }
                 // Battle orders from an older battlefield stop the replay at
                 // the battle's start; the campaign before it stands.
                 if (typeof entry[0] === 'string' && entry[0].startsWith('b:') && s.phase === 'battle') break;
