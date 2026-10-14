@@ -6,6 +6,7 @@
 const assert = require('node:assert/strict');
 const G = require('../public/js/civil-war-engine.js');
 const B = require('../public/js/civil-war-battle.js');
+const A = require('../public/js/civil-war-art.js');
 const D = G.DATA;
 
 const PRIORITY = ['south', 'northwest', 'east', 'volga', 'crimea', 'west', 'southwest', 'north'];
@@ -714,4 +715,33 @@ assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red o
     }
 }
 
-console.log('civil-war: campaign, policies, save, battle and bar checks passed');
+// Voices: every speaker exists and speaks from where the season fights
+// (an attacker from its own front, a Red at Moscow or at a front in play);
+// a quoted line names its source; every attacker cries when beaten and
+// when surging; everyone drawn (voices, advisors, dilemmas, incidents,
+// threats) has a portrait and every faction a shield.
+{
+    const drawn = new Set();
+    for (const t of D.turns) {
+        assert.ok(t.voices && t.voices.length >= 2, `${t.id}: voices`);
+        for (const v of t.voices) {
+            assert.ok(v.text && v.text.length <= 120, `${t.id}: ${v.text}`);
+            assert.ok(v.at === 'moscow' || t.threats[v.at], `${t.id}: ${v.at} does not fight`);
+            if (v.by) assert.ok(t.threats[v.at].foes.includes(v.by), `${t.id}: ${v.by} does not attack ${v.at}`);
+            else assert.ok(v.who, `${t.id}: a Red voice names who`);
+            if (v.src) assert.ok(v.src[0] && /^https:\/\//.test(v.src[1]), `${t.id}: source of ${v.text}`);
+            if (v.who) drawn.add(v.who[1]);
+        }
+        for (const th of Object.values(t.threats)) if (th.who) drawn.add(th.who[1]);
+        for (const x of [t.choice, t.incident]) if (x && x.who) drawn.add(x.who[1]);
+    }
+    for (const c of Object.values(D.cards)) drawn.add(c.advisor[1]);
+    for (const id of drawn) assert.ok(A.people[id], `portrait for ${id}`);
+    for (const [id, f] of Object.entries(D.factions)) {
+        assert.ok(f.cries && f.cries.beaten && f.cries.surging, `cries of ${id}`);
+        assert.match(A.shield(id, f), /^<svg class="cw-face"/);
+    }
+    for (const id of Object.keys(A.people)) assert.match(A.portrait(id, id), /role="img"/);
+}
+
+console.log('civil-war: campaign, policies, save, battle, bar and voice checks passed');

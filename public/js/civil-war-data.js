@@ -16,6 +16,11 @@
     const P = id => '/commulingo/people/' + id;
     const T = id => '/commulingo/terms/' + id;
     const E = id => '/commulingo/events/' + id;
+    // Where a voice's words were found: Russian Wikipedia and Wikisource,
+    // Trotsky's military writings on marxists.org (Russian).
+    const RU = page => 'https://ru.wikipedia.org/wiki/' + page;
+    const WS = page => 'https://ru.wikisource.org/wiki/' + page;
+    const TR = n => `https://www.marxists.org/russkij/trotsky/works/trotl${n}.html`;
 
     const fronts = {
         east: {
@@ -85,61 +90,73 @@
             name: '체코슬로바키아 군단', short: '체코 군단', kind: 'white', flag: ['#ffffff', '#d7141a'], link: T('czechoslovak-legion'),
             note: '오스트리아군에서 넘어온 체코·슬로바키아 포로로 만든 군단. 프랑스 전선으로 가려고 시베리아 횡단철도를 타고 있었다. 1918–1920년 체코슬로바키아 국기는 폴란드처럼 흰색·빨간색 두 줄이었고, 1920년 3월 파란 삼각형이 더해졌다.',
             trait: { name: '철도 위의 군단', motion: 'rail', when: 'train', is: false, by: 2, rule: '장갑열차가 이 전선에 없으면 압력 +2', text: '군단은 열차를 집 삼아 시베리아 횡단철도를 따라 싸웠다. 철도를 쥔 쪽이 볼가를 쥐었다. 장갑열차로 철도를 되찾아야 한다.' },
+            cries: { beaten: '열차로 물러난다. 블라디보스토크는 멀다.', surging: '철도는 우리 것이다!' },
         },
         komuch: {
             name: '코무치 인민군', short: '코무치', kind: 'white', link: T('komuch'),
             note: '사마라에 선 사회혁명당 계열 제헌의회 의원 위원회(코무치)의 군대. 9월 옴스크의 디렉토리로 합쳐졌다가 11월 콜차크의 쿠데타로 밀려났다.',
             trait: { name: '제헌의회의 깃발', motion: 'march', when: 'workers', below: 55, by: 2, rule: '노동자 지지가 55 아래면 압력 +2', text: '사회혁명당의 코무치는 「모든 권력을 제헌의회로」를 내걸었다. 1918년 8월 이젭스크·봇킨스크의 무기 공장 노동자가 소비에트에 맞서 일어나 인민군에 합류했다. 노동자가 등을 돌리면 그들이 코무치 편에 선다.' },
+            cries: { beaten: '사마라를 버린다. 옴스크로!', surging: '볼가는 제헌의회의 것이다!' },
         },
         kolchak: {
             name: '콜차크 정부군', short: '콜차크', kind: 'white', flag: TRICOLOR, link: P('alexander-kolchak'),
             note: '옴스크의 「최고 통치자」 콜차크 제독의 군대. 영국이 소총과 군복을 댔다. 백군은 제정 러시아의 흰색·파란색·빨간색 삼색기를 썼다.',
             trait: { name: '시베리아의 파르티잔', motion: 'march', when: 'peasants', below: 45, by: 2, rule: '농민 지지가 45 아래면 압력 +2', text: '콜차크 정부의 징병과 징발에 시베리아 농민이 들고일어나, 철도 뒤에서 파르티잔이 백군을 흔들었다. 붉은 군대의 징발이 그만큼 가혹해지면 농민은 어느 편도 들지 않는다.' },
+            cries: { beaten: '우랄 너머로 물러난다.', surging: '볼가가 눈앞이다!' },
         },
         don: {
             name: '돈 카자크군', short: '돈 카자크', kind: 'white', flag: ['#0033a0', '#ffd500', '#d52b1e'], link: T('don-republic'),
             note: '아타만 크라스노프가 이끈 돈 카자크의 군대. 1918년에는 우크라이나를 점령한 독일의 지원을 받았다. 깃발은 돈 공화국의 파란색·노란색·빨간색.',
             trait: { name: '카자크 기병의 습격', motion: 'charge', when: 'reserve', at: 2, by: -2, rule: '예비 사단을 2개 이상 남기면 압력 −2', text: '카자크 기병은 전선의 틈을 뚫고 후방의 철도와 창고를 휘저었다. 1919년 8월 마몬토프의 기병군단은 탐보프까지 들어왔다. 뒤에 남긴 예비 사단이 습격을 막는다.' },
+            cries: { beaten: '돈으로 돌아간다. 카자크의 땅을 지켜라.', surging: '후방의 철도를 휘저어라!' },
         },
         denikin: {
             name: '남러시아군(데니킨)', short: '데니킨', kind: 'white', flag: TRICOLOR, link: T('armed-forces-of-south-russia'),
             note: '코르닐로프가 세운 의용군에 돈·쿠반 카자크군을 묶은 데니킨의 군대. 1919년 여름 「모스크바 지령」으로 북진했다.',
             trait: { name: '장교 연대', motion: 'charge', when: 'commissar', is: false, by: 2, rule: '정치위원이 없는 전선이면 압력 +2', text: '코르닐로프·마르코프·드로즈돕스키 연대는 장교로만 채운 의용군의 정예였다. 정치위원 없이 맞선 징집 사단은 그 앞에서 흩어졌다.' },
+            cries: { beaten: '장교 연대가 꺾였다.', surging: '모스크바로!' },
         },
         yudenich: {
             name: '북서군(유데니치)', short: '유데니치', kind: 'white', flag: TRICOLOR, link: T('north-western-army-white'),
             note: '에스토니아를 발판으로 페트로그라드를 노린 유데니치 장군의 백군.',
             trait: { name: '페트로그라드 기습', motion: 'charge', when: 'workers', below: 50, by: 2, rule: '노동자 지지가 50 아래면 압력 +2', text: '유데니치는 영국이 준 전차 여섯 대를 앞세워 풀코보 고지까지 왔다. 도시를 지킨 것은 거리에 바리케이드를 쌓은 페트로그라드 노동자였다.' },
+            cries: { beaten: '에스토니아로 물러난다.', surging: '페트로그라드가 보인다!' },
         },
         allies: {
             name: '연합국 간섭군', short: '간섭군', kind: 'interv',
             note: '영국을 중심으로 프랑스·미국 병력이 무르만스크와 아르한겔스크에 상륙해 북부 정부를 세웠다. 영국군은 1919년 가을 철수했다.',
             trait: { name: '지친 원정군', motion: 'sail', when: 'commissar', is: true, by: -1, rule: '정치위원이 있으면 압력 −1', text: '세계대전을 마친 영국·미국·프랑스 병사들은 남의 나라 내전에 머물 생각이 없었다. 볼셰비키의 외국어 전단이 병영에 돌았고, 1919년 봄 반란과 명령 거부가 잇따랐다.' },
+            cries: { beaten: '병사들은 집에 가고 싶어 한다.', surging: '드비나강을 거슬러 오른다.' },
         },
         north: {
             name: '북부 정부군', short: '북부 정부', kind: 'white', flag: TRICOLOR, link: T('northern-region-government'),
             note: '영국군이 떠난 뒤 밀러 장군이 이끈 아르한겔스크의 백군.',
             trait: { name: '버려진 정부', motion: 'march', when: 'commissar', is: true, by: -2, rule: '정치위원이 있으면 압력 −2', text: '영국군이 떠나자 북부 정부군 병사들이 장교를 버리고 붉은 군대로 넘어왔다. 1920년 2월 밀러는 배로 달아났다.' },
+            cries: { beaten: '배로 떠난다.', surging: '아르한겔스크는 아직 우리 것이다.' },
         },
         central: {
             name: '독일·오스트리아군', short: '독일·오스트리아', kind: 'central', flag: ['#000000', '#ffffff', '#dd0000'], link: E('brest-litovsk'),
             note: '브레스트 강화로 우크라이나·벨라루스·발트를 점령한 동맹국 군대. 1918년 11월 독일이 항복한 뒤 물러났다. 깃발은 독일 제국의 검은색·흰색·빨간색.',
             trait: { name: '점령군', motion: 'march', text: '브레스트 강화로 얻은 땅을 지키는 군대. 1918년 11월 독일이 항복하자 싸우지 않고 물러난다.' },
+            cries: { beaten: '휴전이다. 집으로 간다.', surging: '점령지를 지킨다.' },
         },
         poland: {
             name: '폴란드군', short: '폴란드', kind: 'national', flag: ['#ffffff', '#dc143c'], link: P('jozef-pilsudski'),
             note: '1918년 독립을 되찾은 폴란드의 군대. 피우수트스키가 이끌었다.',
             trait: { name: '조국을 지키는 군대', motion: 'march', rule: '바르샤바는 여유 8이 있어야 들어간다', text: '침공군으로 키예프까지 왔던 폴란드군도 비스와강 앞에서는 나라를 지키는 군대였다. 폴란드 노동자는 붉은 군대를 해방군으로 맞지 않았다.' },
+            cries: { beaten: '부크강 뒤로 물러난다.', surging: '동쪽으로 밀어붙여라!' },
         },
         unr: {
             name: '우크라이나 인민공화국군', short: '우크라이나', kind: 'national', link: P('symon-petliura'),
             note: '페틀류라가 이끈 디렉토리 정부의 군대. 1920년 폴란드와 동맹해 키예프로 들어왔다.',
             trait: { name: '아타만의 농민군', motion: 'charge', when: 'peasants', below: 40, by: 1, rule: '농민 지지가 40 아래면 압력 +1', text: '디렉토리의 병력은 저마다 아타만을 따르는 농민 무리였다. 징발에 지친 우크라이나 마을이 그들을 먹이고 숨겼다.' },
+            cries: { beaten: '아타만들이 흩어진다.', surging: '키예프는 우크라이나의 것이다!' },
         },
         wrangel: {
             name: '러시아군(브란겔)', short: '브란겔', kind: 'white', flag: TRICOLOR, link: P('pyotr-wrangel'),
             note: '노보로시스크 철수 뒤 데니킨에게서 지휘권을 넘겨받은 브란겔이 크림에서 다시 세운 백군.',
             trait: { name: '브란겔의 토지법', motion: 'rail', when: 'peasants', below: 40, by: 2, rule: '농민 지지가 40 아래면 압력 +2', text: '브란겔은 1920년 5월 지주의 땅 일부를 농민에게 넘기는 토지법을 내고 질서 있는 정부를 꾸몄다. 붉은 군대의 징발에 지친 북타브리아 농민 일부가 그에게 기대를 걸었다.' },
+            cries: { beaten: '방벽 뒤로, 크림으로!', surging: '북타브리아의 곡식은 우리 것이다.' },
         },
     };
 
@@ -255,6 +272,12 @@
                 '1918년 5월 25일, 시베리아 횡단철도를 따라 블라디보스토크로 가던 체코슬로바키아 군단 약 4만 명이 무장해제 명령을 거부했다. 6월 초까지 펜자에서 크라스노야르스크까지 철도 연선의 소비에트 권력이 무너졌고, 6월 8일 사마라에 사회혁명당 계열의 코무치 정부가 섰다.',
                 '붉은 군대는 1월에 창설 법령이 나왔을 뿐, 전투 부대라 부를 만한 것은 라트비아 소총병과 노동자 분견대 몇몇이었다. 남쪽에서는 크라스노프의 돈군이 볼가의 요충 차리친으로 향하고, 북쪽 바다에는 영국 함대가 와 있다.',
             ],
+            voices: [
+                { who: ['레프 트로츠키', 'trotsky'], at: 'moscow', text: '철도 연선의 모든 소비에트는 무거운 책임을 지고 체코슬로바키아인을 무장해제하라. 무기를 든 채 철도에서 발견되는 체코슬로바키아인은 누구든 그 자리에서 총살하라.', src: ['트로츠키의 전보, 1918년 5월 25일', RU('Восстание_Чехословацкого_корпуса')] },
+                { by: 'czech', at: 'east', text: '어디서도 소비에트에 무기를 내주지 마라. 먼저 싸움을 걸지는 말되, 공격받으면 맞서라.', src: ['군단 임시집행위원회의 명령, 1918년 5월', RU('Восстание_Чехословацкого_корпуса')] },
+                { by: 'komuch', at: 'east', text: '사마라에서 선포한다. 볼셰비키 권력은 끝났다. 모든 권력을 제헌의회로!' },
+                { by: 'allies', at: 'north', text: '연합국이 보낸 군수품을 독일에 넘길 수는 없다. 아르한겔스크에 상륙한다.' },
+            ],
             threats: {
                 east: { pressure: 6, foes: ['czech', 'komuch'], text: '군단과 코무치 인민군이 볼가를 거슬러 오른다. 카펠의 부대는 카잔의 금 보유고를 노린다.', who: ['블라디미르 카펠', 'vladimir-kappel'] },
                 volga: { pressure: 2, foes: ['don'], text: '크라스노프의 돈군이 차리친을 처음으로 공격한다.', who: ['표트르 크라스노프', 'pyotr-krasnov'] },
@@ -293,6 +316,12 @@
                 '트로츠키는 장갑열차로 카잔 건너편 스비야시스크에 사령부를 차리고, 도망친 연대의 지휘관과 정치위원을 총살하며 제5군을 다시 세웠다. 8월 30일 레닌이 저격당했고, 인민위원회는 「적색 테러」를 선포했다.',
                 '11월 독일이 항복해 우크라이나와 발트에서 물러나기 시작한다. 같은 달 옴스크에서는 콜차크 제독이 쿠데타로 「최고 통치자」가 되었다. 크라스노프는 차리친을 다시 노린다.',
             ],
+            voices: [
+                { who: ['레프 트로츠키', 'trotsky'], at: 'east', text: '카잔은 반드시 되찾아야 한다!', src: ['트로츠키의 명령 「카잔은 반드시 되찾아야 한다!」, 1918년 8월 24일', TR(710)] },
+                { by: 'komuch', at: 'east', text: '제정의 금 보유고가 우리 손에 있다. 카잔은 내주지 않는다.' },
+                { by: 'don', who: ['표트르 크라스노프', 'pyotr-krasnov'], at: 'volga', text: '이번에는 차리친을 에워싸 굶긴다. 볼가를 끊으면 모스크바도 굶는다.' },
+                { by: 'kolchak', who: ['알렉산드르 콜차크', 'alexander-kolchak'], at: 'east', text: '옴스크의 디렉토리는 끝났다. 이제 최고 통치자가 명령한다.' },
+            ],
             threats: {
                 east: { pressure: 7, foes: ['komuch', 'kolchak'], text: '카잔의 백군은 지쳤다. 지금 몰아치면 볼가를 되찾을 수 있다.', who: ['알렉산드르 콜차크', 'alexander-kolchak'] },
                 volga: { pressure: 5, foes: ['don'], text: '돈군이 차리친을 포위하려 한다. 식량 전권을 가지고 온 스탈린이 지휘까지 쥐었다.', who: ['표트르 크라스노프', 'pyotr-krasnov'] },
@@ -318,6 +347,12 @@
             brief: [
                 '3월, 영국이 대 준 소총으로 무장한 콜차크군이 우랄을 넘었다. 한진의 서부군이 3월 13일 우파를 점령하고 볼가 100킬로미터 앞까지 밀려온다.',
                 '돈에서는 3월 베셴스카야의 카자크가 붉은 군대 후방에서 봉기했다. 남쪽의 데니킨은 쿠반과 북캅카스를 손에 넣고 북쪽을 바라본다.',
+            ],
+            voices: [
+                { by: 'kolchak', who: ['알렉산드르 콜차크', 'alexander-kolchak'], at: 'east', text: '우랄을 넘었다. 볼가에서 데니킨과 손잡고 모스크바로 간다.' },
+                { who: ['블라디미르 레닌', 'lenin'], at: 'moscow', text: '동부전선에서 콜차크가 거둔 승리는 소비에트 공화국에 몹시 무서운 위험을 낳고 있다.', src: ['레닌, 「동부전선의 정세에 관한 러시아 공산당 중앙위원회 테제」, 1919년 4월 11일', WS('Тезисы_ЦК_РКП(б)_в_связи_с_положением_Восточного_фронта_(Ленин)')] },
+                { by: 'don', at: 'south', text: '뵤셴스카야가 일어섰다! 붉은 군대의 뒤를 끊어라.' },
+                { who: ['미하일 프룬제', 'frunze'], at: 'east', text: '적의 진격로가 너무 길게 늘어졌다. 정면이 아니라 옆구리를 친다.' },
             ],
             threats: {
                 east: { pressure: 10, foes: ['kolchak'], text: '한진의 서부군이 볼가로 진격한다. 사마라와 카잔이 위험하다.', who: ['미하일 한진', 'mikhail-hanzhin'] },
@@ -356,6 +391,12 @@
             brief: [
                 '동부에서는 반격이 시작되었다. 하지만 남쪽이 무너지고 있다. 돈 봉기가 붉은 군대를 묶은 사이 데니킨이 6월 25일 하리코프, 30일 차리친을 차지했고, 7월 3일 차리친에서 모스크바로의 세 갈래 진격을 명령했다.',
                 '5월에는 유데니치의 북서군이 에스토니아에서 페트로그라드로 첫 공세를 시작했다. 이 공세의 길목인 얌부르크가 넘어갔다.',
+            ],
+            voices: [
+                { by: 'denikin', who: ['안톤 데니킨', 'anton-denikin'], at: 'south', text: '러시아의 심장 모스크바를 차지하는 것을 최종 목표로 삼아 명령한다.', src: ['데니킨의 「모스크바 지령」, 1919년 7월 3일', RU('Московская_директива')] },
+                { who: ['블라디미르 레닌', 'lenin'], at: 'moscow', text: '사회주의 혁명의 가장 위급한 순간 가운데 하나, 아마도 바로 가장 위급한 순간이 왔다.', src: ['레닌, 「모두 데니킨과의 싸움으로!」, 1919년 7월 9일', WS('Все_на_борьбу_с_Деникиным!_(Ленин)')] },
+                { by: 'yudenich', at: 'northwest', text: '에스토니아에서 페트로그라드까지는 한 걸음이다.' },
+                { by: 'kolchak', at: 'east', text: '우랄 너머로 물러난다. 시베리아에서 다시 일어설 것이다.' },
             ],
             threats: {
                 east: { pressure: 5, foes: ['kolchak'], text: '콜차크군이 우랄로 물러난다. 추격할 때다.' },
@@ -396,6 +437,12 @@
                 '8월 마몬토프의 기병이 남부전선의 후방을 휩쓸었다. 8월 31일 백군은 키예프에 들어갔고, 9월 20일 쿠르스크가 떨어졌다. 의용군의 정예 사단들이 오룔과 툴라, 그리고 모스크바를 향한다.',
                 '10월, 유데니치가 다시 페트로그라드로 온다. 서쪽에서는 폴란드군이 8월에 민스크를 차지했다. 데니킨의 후방 우크라이나에서는 마흐노의 반란군이 9월 페레고노프카에서 백군을 깨고 보급선을 끊고 있다.',
             ],
+            voices: [
+                { by: 'denikin', who: ['알렉산드르 쿠테포프', 'alexander-kutepov'], at: 'south', text: '오룔 다음은 툴라, 툴라 다음은 모스크바다!' },
+                { by: 'yudenich', at: 'northwest', text: '풀코보 고지에서 이삭 대성당의 금빛 지붕이 보인다!' },
+                { who: ['레프 트로츠키', 'trotsky'], at: 'northwest', text: '페트로그라드는 얌부르크도 루가도 아니다. 이 거대한 도시를 뚫고 들어온 백군은 돌로 된 미로에 갇힌다.', src: ['트로츠키, 「페트로그라드는 안에서 지킨다」, 1919년 10월 16일', TR(760)] },
+                { by: 'poland', who: ['유제프 피우수트스키', 'jozef-pilsudski'], at: 'west', text: '민스크는 우리가 쥐었다. 데니킨이 모스크바에 가든 말든 서두를 것 없다.' },
+            ],
             threats: {
                 south: { pressure: 14, foes: ['denikin'], text: '쿠테포프의 제1군단이 오룔로 진격한다. 오룔 다음은 툴라, 툴라 다음은 모스크바다.', who: ['알렉산드르 쿠테포프', 'alexander-kutepov'] },
                 northwest: { pressure: 6, foes: ['yudenich'], text: '유데니치의 북서군이 가치나를 지나 풀코보 고지로 온다.', who: ['니콜라이 유데니치', 'nikolai-yudenich'] },
@@ -435,6 +482,11 @@
                 '11월 14일 옴스크가 함락되었다. 콜차크군은 시베리아 횡단철도를 따라 2천 킬로미터를 물러나는 「대시베리아 빙상 행군」에 들어갔다. 남쪽의 데니킨군은 오룔에서 꺾여 돈으로 물러난다.',
                 '1920년 2월, 트로츠키가 우랄에서 돌아와 중앙위원회에 곡물 징발을 세금으로 바꾸자고 제안한다. 마을마다 징발대에 맞선 봉기가 늘고 있다.',
             ],
+            voices: [
+                { who: ['세묜 부됸니', 'semyon-budyonny'], at: 'south', text: '기병에는 기병으로 맞선다. 제1기병군, 로스토프로!' },
+                { by: 'denikin', at: 'south', text: '돈강 뒤에서 버틴다. 카자크의 땅을 내줄 수는 없다.' },
+                { by: 'north', at: 'north', text: '영국군은 떠났다. 병사들이 장교를 버리고 넘어간다.' },
+            ],
             threats: {
                 south: { pressure: 13, foes: ['denikin'], text: '데니킨군이 하리코프와 로스토프를 지나 쿠반으로 물러난다. 다시 버티지 못하게 몰아쳐야 한다.' },
                 volga: { pressure: 3, foes: ['denikin'], text: '차리친의 캅카스군이 고립되었다.' },
@@ -463,6 +515,11 @@
                 '4월 25일 피우수트스키의 폴란드군이 페틀류라의 우크라이나군과 함께 공세를 시작해 5월 7일 키예프에 들어갔다. 붉은 군대는 6월 12일 키예프를 되찾고, 투하쳅스키의 서부전선이 7월 민스크를 지나 서쪽으로 내달린다.',
                 '6월, 데니킨에게서 지휘권을 넘겨받은 브란겔이 크림에서 나와 북타브리아를 차지했다. 7월 11일 영국 외무장관 커즌이 휴전과 「커즌선」을 제안한다.',
             ],
+            voices: [
+                { by: 'poland', who: ['유제프 피우수트스키', 'jozef-pilsudski'], at: 'west', text: '키예프에 들어왔다. 이제 우크라이나가 러시아와 우리 사이의 방패가 된다.' },
+                { by: 'wrangel', who: ['표트르 브란겔', 'pyotr-wrangel'], at: 'crimea', text: '크림에서 나간다. 땅은 그 땅을 가는 농민에게.' },
+                { who: ['레프 트로츠키', 'trotsky'], at: 'west', text: '영웅들이여, 바르샤바로!', src: ['트로츠키의 명령 「영웅들이여, 바르샤바로!」, 1920년 8월 14일', TR(798)] },
+            ],
             threats: {
                 west: { pressure: 10, foes: ['poland'], text: '폴란드군이 벨라루스에서 물러난다.', who: ['유제프 피우수트스키', 'jozef-pilsudski'] },
                 southwest: { pressure: 8, foes: ['poland', 'unr'], text: '키예프를 차지한 폴란드군을 몰아내야 한다.' },
@@ -489,6 +546,11 @@
             brief: [
                 '10월 폴란드와 휴전하자 붉은 군대는 남쪽으로 돌아섰다. 프룬제의 남부전선이 10월 말 북타브리아의 브란겔군을 크림으로 몰아넣는다.',
                 '크림으로 가는 길은 폭 8킬로미터의 페레코프 지협, 그 위를 가로막은 높이 10미터의 「터키 방벽」뿐이다. 동쪽은 얕은 석호 시바시다.',
+            ],
+            voices: [
+                { who: ['레프 트로츠키', 'trotsky'], at: 'moscow', text: '다섯 개 군이 사방에서 집게를 조인다. 적은 이미 지협에서 끊겼다.', src: ['트로츠키, 「남부전선의 결정적인 날들」, 1920년 11월 2일', TR(819)] },
+                { by: 'wrangel', who: ['표트르 브란겔', 'pyotr-wrangel'], at: 'crimea', text: '터키 방벽은 높이 10미터다. 크림에는 들어오지 못한다.' },
+                { who: ['미하일 프룬제', 'frunze'], at: 'crimea', text: '더 버텨 봐야 쓸데없는 피만 흘릴 뿐이다. 저항을 멈추고 육군과 해군의 모든 병력과 함께 항복하라.', src: ['프룬제가 브란겔에게 보낸 무전, 1920년 11월 11일', 'https://aif.ru/society/history/molchanie-barona-pochemu-vrangel-vinovat-v-krasnom-terrore-v-krymu'] },
             ],
             threats: {
                 crimea: { pressure: 12, foes: ['wrangel'], text: '브란겔군이 북타브리아에서 크림의 방어선으로 물러난다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },

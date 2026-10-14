@@ -7,6 +7,7 @@
 
     const G = window.CivilWarGame;
     const B = window.CivilWarBattle;
+    const A = window.CivilWarArt;
     const D = G.DATA;
     const KEY = 'civil-war-v1-save';
     const SVG_NS = 'http://www.w3.org/2000/svg';
@@ -33,13 +34,14 @@
     // review comes after a press once it has played (unveilTimer polls).
     let unveiling = false;
     let unveilTimer = null;
-    // Battle: when each fall event was first drawn, so the unit's breaking
-    // plays once however often the board is redrawn.
+    // Battle: when each fall or attack event was first drawn, so a unit's
+    // breaking or lunge plays once however often the board is redrawn.
     const fallAt = new WeakMap();
     // A battle just ended stays on its board, its last blows and falls
     // playing, until a press moves on (battleOver, leaveBattle).
     let battleEnded = false;
     const FALL_MS = 1300;
+    const LUNGE_MS = 600;
     const stillMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const mapEl = $('cwMap');
     const points = JSON.parse(mapEl.dataset.points);
@@ -72,7 +74,7 @@
 
     function svg(tag, attrs, text) {
         const node = document.createElementNS(SVG_NS, tag);
-        for (const [k, v] of Object.entries(attrs || {})) node.setAttribute(k, v);
+        for (const [k, v] of Object.entries(attrs || {})) if (v !== null && v !== undefined) node.setAttribute(k, v);
         if (text !== undefined) node.textContent = text;
         return node;
     }
@@ -86,7 +88,14 @@
     }
 
     function person(who) {
-        return who ? el('a', Object.assign({ href: '/commulingo/people/' + who[1], class: 'cw-person' }, NEW_TAB), who[0]) : null;
+        return who ? el('a', Object.assign({ href: '/commulingo/people/' + who[1], class: 'cw-person' }, NEW_TAB), picture(A.portrait(who[1])), who[0]) : null;
+    }
+
+    // An svg string from civil-war-art.js as a node.
+    function picture(markup) {
+        const t = document.createElement('template');
+        t.innerHTML = markup;
+        return t.content.firstChild;
     }
 
     function announce(text) {
@@ -287,7 +296,140 @@
 
     function renderBrief() {
         const t = G.turnData(s);
-        $('cwBrief').replaceChildren(...t.brief.map(p => el('p', {}, p)));
+        const voices = s.phase === 'plan' ? t.voices || [] : [];
+        const open = $('cwBrief').querySelector('.cw-voice-log');
+        $('cwBrief').replaceChildren(...t.brief.map(p => el('p', {}, p)), voices.length ? el('details', { class: 'cw-voice-log', open: open && open.open },
+            el('summary', {}, '이 시기의 목소리'),
+            el('ul', {}, ...voices.map(v => el('li', {}, el('strong', {}, speakerName(v)), ' 「', v.text, '」 ', sourceOf(v))))) : null);
+        voiceReplay.hidden = !voices.length;
+    }
+
+    // ── Voices ──
+    // A season opens with its people and factions speaking on the map, one
+    // bubble at a time over the speaker (an attacker's marker, a Red at
+    // Moscow or at the front's last city); its result, with each beaten or
+    // surging attacker's cry. They play once per season and phase after the
+    // map's entrance has begun; a tap moves on, ✕ ends them, 「대사」 plays
+    // them again. Words without a source are marked 각색. Not saved: only
+    // decisions go in the log. The bubbles are html over the map, not svg,
+    // so Korean wraps and the svg animation rule is untouched.
+    let voice = { key: null, list: [], i: 0, until: null, timer: 0 };
+    let markers = {};               // map: this render's attacker markers by front
+    const voiceReplay = el('button', { type: 'button', class: 'cw-history-toggle cw-voice-replay', hidden: true, onclick: () => {
+        voice.i = 0;
+        voice.until = null;
+        voice.list = voicesOf();
+        renderVoice();
+    } }, '대사');
+    $('cwHistoryToggle').before(voiceReplay);
+
+    function speakerName(v) {
+        return v.who ? v.who[0] : v.by ? D.factions[v.by].short : '';
+    }
+
+    function sourceOf(v) {
+        return v.src ? el('small', { class: 'cw-voice-src' }, link(v.src)) : el('small', { class: 'cw-voice-src is-made' }, '각색');
+    }
+
+    function voicesOf() {
+        if (s.phase === 'plan') return G.turnData(s).voices || [];
+        const rec = s.records[s.records.length - 1];
+        const threats = G.threatsOf(s);
+        return Object.entries(rec.fronts).map(([id, r]) => {
+            const fate = fateOf(r);
+            const by = ((threats[id] || {}).foes || [])[0];
+            return fate && by && D.factions[by].cries ? { by, at: id, text: D.factions[by].cries[fate] } : null;
+        }).filter(Boolean);
+    }
+
+    // Where a voice speaks from, in map units.
+    function voiceSpot(v) {
+        const m = v.by && markers[v.at];
+        if (m) return { x: m.x, y: m.box.y0 };
+        const pts = points.fronts[v.at];
+        if (!pts) return { x: points.moscow.x, y: points.moscow.y - 8 };
+        const line = s.lines[v.at];
+        const p = line > 0 ? pts[line - 1] : points.moscow;
+        return { x: p.x, y: p.y - 7 };
+    }
+
+    // How long a line stays up: long enough to read.
+    const holdOf = v => Math.min(7500, Math.max(3000, 1600 + v.text.length * 75));
+
+    function renderVoice() {
+        window.clearTimeout(voice.timer);
+        let layer = mapEl.querySelector('.cw-voices');
+        if (!layer) {
+            layer = el('div', { class: 'cw-voices' });
+            mapEl.append(layer);
+        }
+        if (voice.key !== motion.key) voice = { key: motion.key, list: voicesOf(), i: 0, until: null, timer: 0 };
+        const review = s.phase !== 'plan';
+        if (!voice.list.length || motion.at === null || review && !unveiling) return layer.replaceChildren();
+        // After the attackers have come in; a result after its fronts moved.
+        const lead = review ? (voice.list.length - 1) * 300 + 1400 : 1500;
+        const now = performance.now();
+        if (voice.until === null && now - motion.at < lead) {
+            layer.replaceChildren();
+            voice.timer = window.setTimeout(renderVoice, lead - (now - motion.at) + 20);
+            return;
+        }
+        while (voice.until !== null && now >= voice.until && voice.i < voice.list.length) { voice.i++; voice.until = null; }
+        if (voice.i >= voice.list.length) return layer.replaceChildren();
+        const v = voice.list[voice.i];
+        const fresh = voice.until === null;
+        const spot = voiceSpot(v);
+        const scale = overlayRoot().getBoundingClientRect().width / Number(overlayRoot().getAttribute('viewBox').split(' ')[2]);
+        if (fresh) {
+            voice.until = now + holdOf(v);
+            announce(`${speakerName(v)}: ${v.text}`);
+            showSpot(spot.x * scale, spot.y * scale);
+        }
+        const bubble = voiceBubble(v, spot, scale, fresh);
+        layer.replaceChildren(bubble);
+        // Too tall to fit above the speaker in view: it hangs below.
+        if (!bubble.classList.contains('is-below') && spot.y * scale - bubble.offsetHeight - 16 < (NARROW.matches ? mapEl.scrollTop : 0)) bubble.classList.add('is-below');
+        voice.timer = window.setTimeout(renderVoice, voice.until - now + 20);
+    }
+
+    function voiceBubble(v, spot, scale, fresh) {
+        const f = v.by && D.factions[v.by];
+        const side = f ? 'k-' + f.kind : 'is-red';
+        const face = v.who ? A.portrait(v.who[1]) : A.shield(v.by, f);
+        const width = Math.min(310, mapEl.clientWidth - 24);
+        const full = overlayRoot().getBoundingClientRect().width;
+        const ax = spot.x * scale, ay = spot.y * scale;
+        const left = Math.min(Math.max(ax, width / 2 + 6), full - width / 2 - 6);
+        const below = ay < (NARROW.matches ? mapEl.scrollTop : 0) + 150;
+        const next = () => {
+            voice.i++;
+            voice.until = null;
+            renderVoice();
+        };
+        const box = el('div', {
+            class: `cw-voice ${side}${below ? ' is-below' : ''}${fresh ? ' is-new' : ''}`,
+            style: `left:${left.toFixed(1)}px;top:${ay.toFixed(1)}px;width:${width}px;--tail:${(ax - left + width / 2).toFixed(1)}px`,
+            role: 'button', tabindex: '0', 'aria-label': `${speakerName(v)}: ${v.text}. 다음 대사`,
+            onclick: e => { if (!e.target.closest('a, button')) next(); },
+            onkeydown: e => { if ((e.key === 'Enter' || e.key === ' ') && e.target === e.currentTarget) { e.preventDefault(); next(); } },
+        },
+        picture(face),
+        el('div', { class: 'cw-voice-body' },
+            el('p', { class: 'cw-voice-who' }, el('strong', {}, speakerName(v)), v.who && f ? el('span', {}, f.short) : null),
+            el('p', { class: 'cw-voice-text' }, v.text),
+            el('p', {}, sourceOf(v))),
+        el('span', { class: 'cw-voice-count', 'aria-hidden': 'true' }, `${voice.i + 1}/${voice.list.length}`),
+        el('button', { type: 'button', class: 'cw-voice-close', 'aria-label': '대사 건너뛰기', onclick: () => { voice.i = voice.list.length; renderVoice(); } }, '×'));
+        return box;
+    }
+
+    // On a narrow screen the speaker slides into the map's view.
+    function showSpot(x, y) {
+        if (!NARROW.matches) return;
+        const { scrollLeft: l, scrollTop: t, clientWidth: w, clientHeight: h } = mapEl;
+        // The bubble goes above the speaker: leave it the upper part of the view.
+        if (x >= l + 40 && x <= l + w - 40 && y >= t + h * 0.55 && y <= t + h - 20) return;
+        mapEl.scrollTo({ left: x - w / 2, top: y - h * 0.72, behavior: 'auto' });
     }
 
     // The game's layer sits in its own svg over the basemap's, on its own
@@ -327,6 +469,7 @@
         }
         const avoid = [];   // boxes the attackers' markers keep clear of
         frontBoxes = {};
+        markers = {};
         for (const id of D.frontOrder) {
             const pts = points.fronts[id];
             const line = s.lines[id];
@@ -343,6 +486,9 @@
             layer.append(front);
             front.append(svg('polyline', { points: pathOf(chain), class: 'cw-chain' }));
             if (isActive) {
+                // The held stretch drawn as railway, sleepers under the rail:
+                // the war ran along the lines.
+                if (steady > 0) front.append(svg('polyline', { points: pathOf(chain.slice(0, steady + 1)), class: 'cw-rail' }));
                 front.append(svg('polyline', { points: pathOf(chain.slice(0, steady + 1)), class: 'cw-chain is-active' }));
                 if (moving > steady) front.append(svg('polyline', { points: pathOf(chain.slice(steady, moving + 1)), class: 'cw-chain is-active is-moving' }));
             }
@@ -366,12 +512,14 @@
             });
         }
         const m = points.moscow;
-        layer.append(svg('path', { d: star(m.x, m.y, 9, 4), class: 'cw-moscow' }));
+        layer.append(svg('circle', { cx: m.x, cy: m.y, r: 13, class: 'cw-moscow-ring' }));
+        layer.append(svg('path', { d: star(m.x, m.y, 10, 4.2), class: 'cw-moscow' }));
         layer.append(svg('text', { x: m.x + 11, y: m.y + 4, class: 'cw-city-label is-capital' }, m.name));
         avoid.push({ x0: m.x - 10, x1: m.x + 11 + textWidth(m.name, 13), y0: m.y - 10, y1: m.y + 6 });
         for (const [i, id] of active.entries()) {
             const marker = foeMarker(id, points.fronts[id], s.lines[id], fc && fc[id], results && results[id], avoid);
             frontBoxes[id] = [marker.box, ...points.fronts[id].map(p => ({ x0: p.x - 12, x1: p.x + 60, y0: p.y - 12, y1: p.y + 12 }))].reduce(unite);
+            markers[id] = marker;
             marker.g.setAttribute('data-front', id);
             marker.g.style.setProperty('--order', i);
             layer.append(marker.g);
@@ -386,6 +534,13 @@
         spotlight(lit);
         renderControlPhase();
         fitMap();
+        renderVoice();
+    }
+
+    // How the season went for the attacker: beaten back (the Reds took
+    // a city, or held with strength to spare) or surging on (it took one).
+    function fateOf(result) {
+        return result.after < result.before ? 'surging' : result.after > result.before || result.margin >= 0 ? 'beaten' : null;
     }
 
     const unite = (a, b) => ({ x0: Math.min(a.x0, b.x0), x1: Math.max(a.x1, b.x1), y0: Math.min(a.y0, b.y0), y1: Math.max(a.y1, b.y1) });
@@ -567,10 +722,7 @@
         }
         const { x, y } = best;
         avoid.push(best.box);
-        // How the season went for the attacker: beaten back (the Reds took
-        // a city, or held with strength to spare) or surging on (it took one).
-        const fate = !result ? '' : result.after < result.before ? ' is-surging'
-            : result.after > result.before || result.margin >= 0 ? ' is-beaten' : '';
+        const fate = result && fateOf(result) ? ' is-' + fateOf(result) : '';
         const lead = foes.length && D.factions[foes[0]].trait;
         const g = svg('g', { class: `cw-foe-marker k-${kind}${fate} m-${(lead && lead.motion) || 'march'}`, tabindex: '0', role: 'button', 'aria-label': `${D.fronts[id].name}: ${foes.map(f => D.factions[f].name).join(', ')}. 카드로 이동` });
         // The arrow at the city under attack: the last one held, or Moscow.
@@ -605,16 +757,18 @@
             } else {
                 // The head is a shape of the marker's own, not an svg
                 // <marker>, so it fades in and out with the body.
-                const px = ex + ux * 2.6, py = ey + uy * 2.6, bx = px - ux * 13, by = py - uy * 13;
-                body.append(svg('path', { d: `M${p(px, py)}L${p(bx - uy * 6.5, by + ux * 6.5)}L${p(bx + uy * 6.5, by - ux * 6.5)}Z`, class: 'cw-foe-arrowhead' }));
+                const px = ex + ux * 4, py = ey + uy * 4, bx = px - ux * 15, by = py - uy * 15;
+                body.append(svg('path', { d: `M${p(px, py)}L${p(bx - uy * 8, by + ux * 8)}L${p(bx - ux * -3, by - uy * -3)}L${p(bx + uy * 8, by - ux * 8)}Z`, class: 'cw-foe-arrowhead' }));
             }
         }
+        // A poster's hard shadow under the name and its row.
+        body.append(svg('rect', { x: x - w / 2 + 2.5, y: y - 7.5, width: w, height: 18 + rowH, class: 'cw-foe-shadow' }));
         body.append(svg('rect', { x: x - w / 2, y: y - 10, width: w, height: 18, class: 'cw-foe-name' }));
         let fx = x - w / 2 + 6;
         for (const f of flags) {
-            const stripes = D.factions[f].flag;
-            stripes.forEach((color, i) => body.append(svg('rect', { x: fx, y: y - 5 + i * 10 / stripes.length, width: 13, height: 10 / stripes.length, fill: color })));
-            body.append(svg('rect', { x: fx, y: y - 5, width: 13, height: 10, class: 'cw-foe-flagrim' }));
+            const shield = picture(A.shield(f, D.factions[f]));
+            for (const [k, v] of Object.entries({ x: fx - 1, y: y - 9, width: 15, height: 15 })) shield.setAttribute(k, v);
+            body.append(shield);
             fx += 16;
         }
         body.append(svg('text', { x: fx, y: y + 3.5, class: 'cw-foe-text' }, name));
@@ -1196,18 +1350,75 @@
     // Terrain marks drawn over a tile's fill, by the terrain's look: the
     // Wall's battlements, a trench, a bridge's frame, ripples on a ford
     // (dense once it floods).
+    // Each tile's drawing: grass on the steppe, firs in the wood, roofs in
+    // town, the Kremlin's tower, battlements, trenches with wire, waves,
+    // the bridge's truss. Small variations by position keep a field of
+    // the same ground from reading as wallpaper.
     function tileMarks(cls, r, c, flooded) {
         const x = c * CELL, y = r * CELL;
-        if (cls === 'wall' || cls === 'kremlin') return svg('path', { d: `M${x} ${y + 30}h6v-8h6v8h6v-8h6v8h6v-8h6v8h6`, class: 'cw-mark-wall' });
-        if (cls === 'yushun' || cls === 'chongar') return svg('path', { d: `M${x} ${y + 30}l6 -6l6 6l6 -6l6 6l6 -6l6 6l6 -6l6 6`, class: 'cw-mark-trench' });
-        if (cls === 'strait' || cls === 'bridge') return svg('path', { d: `M${x + 6} ${y + 8}v32M${x + 42} ${y + 8}v32M${x + 6} ${y + 16}h36M${x + 6} ${y + 32}h36`, class: 'cw-mark-trench' });
-        if (cls === 'forest') return svg('path', { d: [[12, 30], [30, 22], [22, 40]].map(([dx, dy]) => `M${x + dx - 5} ${y + dy}l5 -9l5 9z`).join(''), class: 'cw-mark-wood' });
-        if (cls === 'river') return svg('path', { d: [16, 32].map(dy => `M${x + 4} ${y + dy}q5 -4 10 0t10 0t10 0t10 0`).join(''), class: 'cw-mark-water' });
-        if (cls === 'ford') {
-            const rows = flooded ? [12, 24, 36] : [18, 34];
-            return svg('path', { d: rows.map(dy => `M${x + 8} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), class: 'cw-mark-water' });
+        const h = (r * 7 + c * 13) % 5;
+        const g = svg('g', { class: 'cw-marks', 'aria-hidden': 'true' });
+        const add = (d, k) => g.append(svg('path', { d, class: k }));
+        if (cls === 'steppe') {
+            const spots = [[10, 14], [30, 10], [20, 30], [38, 34], [8, 40]].filter((_, i) => (i + h) % 5 < 3);
+            add(spots.map(([dx, dy]) => `M${x + dx - 3} ${y + dy}l1.5 -4M${x + dx} ${y + dy}v-5M${x + dx + 3} ${y + dy}l-1.5 -4`).join(''), 'cw-mark-grass');
+        } else if (cls === 'forest') {
+            const firs = [[12, 22], [32, 18], [22, 38], [38, 40]].slice(0, 3 + (h % 2));
+            add(firs.map(([dx, dy]) => `M${x + dx} ${y + dy - 14}l6 9h-3l5 7h-16l5 -7h-3z`).join(''), 'cw-mark-fir');
+            add(firs.map(([dx, dy]) => `M${x + dx} ${y + dy + 2}v3`).join(''), 'cw-mark-trunk');
+        } else if (cls === 'town' || cls === 'city' || cls === 'docks') {
+            const houses = cls === 'city' ? [[6, 26], [20, 22], [32, 28], [12, 38]] : cls === 'docks' ? [[8, 20]] : [[8, 30], [26, 24]];
+            add(houses.map(([dx, dy]) => `M${x + dx} ${y + dy}h10v-7l-5 -5l-5 5z`).join(''), 'cw-mark-house');
+            if (cls === 'docks') add(`M${x + 24} ${y + 40}h20M${x + 24} ${y + 34}h20M${x + 28} ${y + 30}v14M${x + 40} ${y + 30}v14M${x + 34} ${y + 10}v18M${x + 34} ${y + 10}l9 4`, 'cw-mark-pier');
+        } else if (cls === 'kremlin') {
+            add(`M${x} ${y + 34}h6v-6h6v6h6v-6h6v6h6v-6h6v6h6v14h-48z`, 'cw-mark-fort');
+            add(`M${x + 20} ${y + 28}v-12h8v12zM${x + 24} ${y + 6}c4 3 5 6 4 10h-8c-1 -4 0 -7 4 -10z`, 'cw-mark-fort');
+        } else if (cls === 'wall') {
+            add(`M${x} ${y + 36}h6v-8h6v8h6v-8h6v8h6v-8h6v8h6v12h-48z`, 'cw-mark-fort');
+            add(`M${x} ${y + 42}h48M${x + 12} ${y + 36}v6M${x + 30} ${y + 36}v6M${x + 6} ${y + 42}v6M${x + 22} ${y + 42}v6M${x + 40} ${y + 42}v6`, 'cw-mark-brick');
+        } else if (cls === 'yushun' || cls === 'chongar') {
+            add(`M${x} ${y + 30}l6 -6l6 6l6 -6l6 6l6 -6l6 6l6 -6l6 6`, 'cw-mark-trench');
+            add(`M${x + 2} ${y + 14}h44` + [6, 16, 26, 36, 44].map(dx => `M${x + dx - 2} ${y + 12}l4 4M${x + dx + 2} ${y + 12}l-4 4`).join(''), 'cw-mark-wire');
+        } else if (cls === 'strait' || cls === 'bridge') {
+            add(`M${x + 6} ${y + 8}v32M${x + 42} ${y + 8}v32`, 'cw-mark-truss');
+            add(`M${x + 6} ${y + 16}h36M${x + 6} ${y + 32}h36M${x + 6} ${y + 32}l9 -16l9 16l9 -16l9 16`, 'cw-mark-truss');
+            if (cls === 'strait') add(`M${x + 4} ${y + 44}q5 -4 10 0t10 0t10 0t10 0`, 'cw-mark-water');
+        } else if (cls === 'river' || cls === 'deep') {
+            add([12, 26, 40].map((dy, i) => `M${x + 2 + ((h + i) % 3) * 3} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), 'cw-mark-water');
+        } else if (cls === 'ford') {
+            const rows = flooded ? [10, 20, 30, 40] : [16, 32];
+            add(rows.map(dy => `M${x + 6} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), 'cw-mark-water');
+            if (!flooded) add(`M${x + 12} ${y + 24}h3M${x + 30} ${y + 40}h4M${x + 34} ${y + 8}h3`, 'cw-mark-shoal');
         }
-        return null;
+        return g.childNodes.length ? g : null;
+    }
+
+    // A unit's picture in a 22×13 box at (x, y): a rifleman, a rider, a
+    // gun, a boat or the armoured train.
+    function unitPicture(u, x, y) {
+        const g = svg('g', { class: 'cw-pic', 'aria-hidden': 'true' });
+        if (u.card === 'train') {
+            g.append(trainGlyph(x + 3, y - 1, 17));
+            return g;
+        }
+        const add = (d, k) => g.append(svg('path', { d, class: k }));
+        if (u.naval) {
+            add(`M${x + 1} ${y + 8}h20l-3 5h-14z`, 'cw-pic-fill');
+            add(`M${x + 10} ${y + 8}v-8M${x + 10} ${y + 1}l6 4h-6M${x + 4} ${y + 6}h4`, 'cw-pic-line');
+        } else if (u.kind === 'cav') {
+            add(`M${x + 2} ${y + 7}c2 -3 6 -3 10 -2l4 -3 2 1-1 3c2 1 3 3 3 5h-2l-1 -2-1 4h-2v-4h-7l-1 4h-2v-4c-2 0-3-1-2-2z`, 'cw-pic-fill');
+            add(`M${x + 10} ${y + 4}v-4M${x + 8} ${y}h5M${x + 12} ${y}l6 -1`, 'cw-pic-line');
+        } else if (u.kind === 'art') {
+            add(`M${x + 4} ${y + 8}l15 -7`, 'cw-pic-barrel');
+            add(`M${x + 1} ${y + 12}l7 -4`, 'cw-pic-line');
+            g.append(svg('circle', { cx: x + 8, cy: y + 9, r: 3.6, class: 'cw-pic-wheel' }));
+        } else {
+            g.append(svg('circle', { cx: x + 8, cy: y + 2, r: 2, class: 'cw-pic-fill' }));
+            add(`M${x + 8} ${y + 4}v5M${x + 8} ${y + 9}l-3 4M${x + 8} ${y + 9}l3 4M${x + 5} ${y + 6}h7M${x + 3} ${y + 12}l14 -12`, 'cw-pic-line');
+            g.append(svg('circle', { cx: x + 17, cy: y + 7, r: 2, class: 'cw-pic-fill' }));
+            add(`M${x + 17} ${y + 9}v4M${x + 14} ${y + 13}h6M${x + 20} ${y + 12}l1 -12`, 'cw-pic-line');
+        }
+        return g;
     }
 
     // The outline of the ground that turns a line, while it holds.
@@ -1333,22 +1544,25 @@
             const isTarget = targets.includes(u);
             const p = isTarget ? B.preview(b, unit, u) : null;
             const done = u.side === 'red' && u.acted;
+            // A unit that has just struck lunges once at its target.
+            const blow = b.events.find(e => e.type === 'attack' && e.from === u.id);
+            const foeHit = blow && b.units.find(x => x.id === blow.to);
+            if (blow && !fallAt.has(blow)) fallAt.set(blow, performance.now());
+            const lunge = foeHit && performance.now() - fallAt.get(blow) < LUNGE_MS;
             const g = svg('g', {
-                class: `cw-unit is-${u.side} k-${u.kind}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done ? ' is-done' : ''}`,
+                class: `cw-unit is-${u.side} k-${u.kind}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done ? ' is-done' : ''}${lunge ? ' is-lunging' : ''}`,
                 tabindex: '0', role: 'button',
+                style: lunge ? `--lx:${Math.sign(foeHit.c - u.c) * 9}px;--ly:${Math.sign(foeHit.r - u.r) * 9}px;--since:${Math.round(performance.now() - fallAt.get(blow))}ms` : null,
                 'aria-label': `${u.side === 'red' ? '붉은 군대' : '백군'} ${u.name}, 병력 ${u.hp}/${u.maxHp}, 방어 ${B.defenseOf(b, u)}` + (p ? `, 공격 시 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ''}${p.wears ? ', 진지 방어 1 감소' : ''}` : '') + (done ? ', 행동 마침' : ''),
             });
+            // A counter on the board: its hard shadow, the side's colour,
+            // a darker band for the name, then what it is and its strength.
+            board.append(svg('rect', { x: x + 5.5, y: y + 5.5, width: CELL - 6, height: CELL - 6, rx: 3, class: 'cw-unit-shadow', 'aria-hidden': 'true' }));
             g.append(svg('rect', { x: x + 3, y: y + 3, width: CELL - 6, height: CELL - 6, rx: 3 }));
-            g.append(svg('text', { x: x + CELL / 2, y: y + 15, 'text-anchor': 'middle', class: 'cw-unit-tag' }, u.tag));
-            // The unit symbol: a box crossed for infantry, slashed for
-            // cavalry, dotted for guns.
-            const sx = x + 8, sy = y + 19;
-            g.append(svg('rect', { x: sx, y: sy, width: 17, height: 11, class: 'cw-sym' }));
-            if (u.kind === 'inf') g.append(svg('path', { d: `M${sx} ${sy}l17 11M${sx} ${sy + 11}l17 -11`, class: 'cw-sym' }));
-            else if (u.naval) g.append(svg('path', { d: `M${sx + 1} ${sy + 5}h15l-3 5h-9z`, class: 'cw-sym' }));
-            else if (u.kind === 'cav') g.append(svg('path', { d: `M${sx} ${sy + 11}l17 -11`, class: 'cw-sym' }));
-            else g.append(svg('circle', { cx: sx + 8.5, cy: sy + 5.5, r: 2.6, class: 'cw-sym-dot' }));
-            g.append(svg('text', { x: x + 38, y: y + 29, 'text-anchor': 'middle', class: 'cw-unit-hp' }, String(u.hp)));
+            g.append(svg('path', { d: `M${x + 3} ${y + 18}v-12a3 3 0 0 1 3 -3h36a3 3 0 0 1 3 3v12z`, class: 'cw-unit-band' }));
+            g.append(svg('text', { x: x + CELL / 2, y: y + 14.5, 'text-anchor': 'middle', class: 'cw-unit-tag' }, u.tag));
+            g.append(unitPicture(u, x + 6, y + 19));
+            g.append(svg('text', { x: x + 38, y: y + 30, 'text-anchor': 'middle', class: 'cw-unit-hp' }, String(u.hp)));
             // Ground that shields or exposes the unit, as a chip before its
             // strength bar (the Wall's +3 drops to +1 once it is turned).
             const ground = B.defenseOf(b, u) - u.def;
