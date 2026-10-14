@@ -82,6 +82,9 @@
 .cw-map-frame svg { display: block; width: 100%; height: auto; font-family: inherit; }
 .cw-map-frame { position: relative; }
 .cw-map-frame svg.cw-map-over { position: absolute; top: 0; left: 0; will-change: transform; }
+/* civil-war.js drawBasemap: the basemap as a CPU-drawn bitmap over its hidden svg. */
+.cw-map-frame .cw-map-bitmap { position: absolute; top: 0; left: 0; max-width: none; pointer-events: none; }
+.cw-map-frame.has-bitmap svg.emap-svg { visibility: hidden; }
 .cw-map-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 8px 12px; font-size: .78rem; color: var(--text-secondary); }
 .cw-map-legend span { display: inline-flex; align-items: center; gap: 6px; }
 .cw-map-legend i { display: inline-block; width: 14px; height: 10px; border: 1px solid var(--border); }
