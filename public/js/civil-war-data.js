@@ -417,7 +417,7 @@
         },
         {
             id: 'perekop', date: '1920년 9–11월', end: [1920, 11], title: '페레코프',
-            mobilize: 18, commissars: 3, army: [['conscripts', 14], ['latvian', 1], ['cavalry', 3]], phase: 6, battle: true,
+            mobilize: 18, commissars: 3, army: [['conscripts', 14], ['latvian', 1], ['cavalry', 3]], phase: 6, battle: 'perekop',
             brief: [
                 '10월 폴란드와 휴전하자 붉은 군대는 남쪽으로 돌아섰다. 프룬제의 남부전선이 10월 말 북타브리아의 브란겔군을 크림으로 몰아넣는다.',
                 '크림으로 가는 길은 폭 8킬로미터의 페레코프 지협, 그 위를 가로막은 높이 10미터의 「터키 방벽」뿐이다. 동쪽은 얕은 석호 시바시다.',
@@ -442,13 +442,25 @@
         },
     ];
 
+    // Tactical battles, by id; a season's battle names one. A battle
+    // fought on a front (front) takes its Red order of battle from the
+    // season's plan there. final: the battle ends the war; otherwise it is
+    // fought when the season is sent and its result joins the front's
+    // strength before the settlement. cls is a terrain's look on the board;
+    // legend lists the board's key.
+
     // The decisive battle: Perekop, the Sivash and Chongar, 7–12 November
     // 1920. Grid rows run north (Red mainland) to south (Crimea). Terrain:
     // . steppe, ~ Sivash shallows (fordable while the west wind holds),
     // # deep water, W the Turkish Wall, Y the Yushun lines, C the Chongar
     // positions, b the burnt Chongar bridge, t town.
-    const battle = {
+    const perekop = {
+        id: 'perekop', front: 'crimea', final: true,
         title: '페레코프-촌가르 작전', date: '1920년 11월 7–12일',
+        settle: '페레코프로 →', open: '페레코프 전투 지휘하기 →', board: '페레코프 전장',
+        ford: '시바시', reserveName: '바르보비치 기병군단',
+        strikeNote: '백군의 예비대. 붉은 군대가 가장 깊이 들어온 구역(페레코프: 방벽 남쪽, 촌가르: 해협)으로 달려가 그 구역의 가장 약한 붉은 부대를 덮친다. 그 구역의 위협이 사라질 때까지 다른 구역으로 가지 않는다.',
+        legend: [['steppe', '초원'], ['ford', '시바시 여울 (방어 −1, 이동 2)'], ['wall', '터키 방벽 (방어 +3, 이동 3)'], ['yushun', '유순·촌가르 방어선 (방어 +2, 이동 2)'], ['strait', '촌가르 해협 (이동 2)'], ['town', '마을 (방어 +1)']],
         map: [
             '#............',
             '#............',
@@ -481,14 +493,14 @@
             chongar: { name: '촌가르', cols: [9, 12], alarm: 6 },
         },
         terrain: {
-            '.': { name: '초원', cost: 1, def: 0 },
-            '~': { name: '시바시 여울', cost: 2, def: -1, ford: true },
-            '#': { name: '깊은 물', cost: 99, def: 0 },
-            W: { name: '터키 방벽', cost: 3, def: 3, fort: 'wall' },
-            Y: { name: '유순 방어선', cost: 2, def: 2, fort: 'yushun' },
-            C: { name: '촌가르 방어선', cost: 2, def: 2, fort: 'chongar' },
-            b: { name: '촌가르 해협', cost: 2, def: 0 },
-            t: { name: '마을', cost: 1, def: 1 },
+            '.': { name: '초원', cost: 1, def: 0, cls: 'steppe' },
+            '~': { name: '시바시 여울', cost: 2, def: -1, ford: true, cls: 'ford' },
+            '#': { name: '깊은 물', cost: 99, def: 0, cls: 'deep' },
+            W: { name: '터키 방벽', cost: 3, def: 3, fort: 'wall', cls: 'wall' },
+            Y: { name: '유순 방어선', cost: 2, def: 2, fort: 'yushun', cls: 'yushun' },
+            C: { name: '촌가르 방어선', cost: 2, def: 2, fort: 'chongar', cls: 'chongar' },
+            b: { name: '촌가르 해협', cost: 2, def: 0, cls: 'strait' },
+            t: { name: '마을', cost: 1, def: 1, cls: 'town' },
         },
         units: [
             { id: 'r51a', tag: '51', side: 'red', name: '제51사단', sub: '블류헤르', kind: 'inf', at: [0, 1], hp: 10, atk: 5, def: 3, mv: 3, person: ['바실리 블류헤르', 'vasily-blyukher'] },
@@ -532,7 +544,8 @@
         links: [['크론시타트 반란', E('kronstadt-1921')], ['안토노프 봉기', T('antonovshchina')], ['신경제정책', T('nep')]],
     };
 
-    const data = { factions, troops, fronts, frontOrder, moscow, startLines, cards, turns, battle, epilogue };
+    const battles = { perekop };
+    const data = { factions, troops, fronts, frontOrder, moscow, startLines, cards, turns, battles, epilogue };
     if (typeof module === 'object' && module.exports) module.exports = data;
     else root.CivilWarData = data;
 })(typeof window !== 'undefined' ? window : globalThis);

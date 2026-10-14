@@ -234,9 +234,9 @@ assert.equal(G.restore('{'), null);
 // waypoint, and every unit hits the best target it can reach; guns favour
 // targets whose fortification they wear. A null route holds and shoots.
 function fight(routes, flags = { makhno: true }) {
-    const b = B.start(D.battle, flags);
-    const rows = D.battle.map.length, cols = D.battle.map[0].length;
-    const goals = D.battle.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
+    const b = B.start(D.battles.perekop, flags);
+    const rows = D.battles.perekop.map.length, cols = D.battles.perekop.map[0].length;
+    const goals = D.battles.perekop.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
     // Path cost to a tile, ignoring units.
     const costTo = dest => {
         const d = Array.from({ length: rows }, () => Array(cols).fill(Infinity));
@@ -288,7 +288,7 @@ function fight(routes, flags = { makhno: true }) {
 }
 
 {
-    const [yushun, dzhankoy] = D.battle.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
+    const [yushun, dzhankoy] = D.battles.perekop.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
     const WEST = 'r51a,r51b,r51g,r6g,rcz', CENTRE = 'r15,r52,rmk', EAST = 'r30,r30b,r4g', RESERVE = 'r1c';
     const wall = [{ r: 2, c: 2 }, { r: 4, c: 2 }, yushun];
     const sivash = [{ r: 5, c: 6 }, { r: 7, c: 5 }, yushun];
@@ -318,12 +318,12 @@ function fight(routes, flags = { makhno: true }) {
     assert.equal(drawn.result, 'won');
     assert.ok(drawn.turn < alone.turn);
 }
-assert.equal(B.start(D.battle, {}).units.some(u => u.id === 'rmk'), false, 'no Makhnovists without the Starobilsk agreement');
-assert.equal(B.start(D.battle, { curzon: true }).units.some(u => u.id === 'rcz'), true);
+assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), false, 'no Makhnovists without the Starobilsk agreement');
+assert.equal(B.start(D.battles.perekop, { curzon: true }).units.some(u => u.id === 'rcz'), true);
 
 // Guns wear a fortification: each shell on a held Wall tile takes 1 off it.
 {
-    const b = B.start(D.battle, {});
+    const b = B.start(D.battles.perekop, {});
     const w1 = B.byId(b, 'w1');
     const before = B.defenseOf(b, w1);
     assert.ok(B.act(b, 'attack', 'r6g', 'w1'));
@@ -335,8 +335,8 @@ assert.equal(B.start(D.battle, { curzon: true }).units.some(u => u.id === 'rcz')
 }
 
 // The ford closes when the wind turns.
-const tide = B.start(D.battle, {});
-for (let i = 0; i < D.battle.windTurns; i++) B.act(tide, 'end');
+const tide = B.start(D.battles.perekop, {});
+for (let i = 0; i < D.battles.perekop.windTurns; i++) B.act(tide, 'end');
 assert.equal(B.fordOpen(tide), false);
 const r15 = B.byId(tide, 'r15');
 assert.ok(!B.reachable(tide, r15).some(t => B.terrain(tide, t.r, t.c).ford), 'no wading into the flooded Sivash');
@@ -362,7 +362,7 @@ assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red o
 
 // A move is taken back until the unit acts, and the line it turned with it.
 {
-    const b = B.start(D.battle, {});
+    const b = B.start(D.battles.perekop, {});
     const u = B.byId(b, 'r15');
     u.r = 4; u.c = 7;
     assert.ok(B.act(b, 'move', 'r15', 5, 8));

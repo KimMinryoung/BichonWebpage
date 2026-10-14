@@ -765,7 +765,8 @@
         if (G.free(s) > 0) missing.push(`사단 ${G.free(s)}개를 더 보내세요`);
         $('cwCommandNote').textContent = missing.length ? missing.join(' · ') : '준비가 끝났습니다.';
         $('cwSettle').disabled = !G.canSettle(s);
-        $('cwSettle').textContent = G.turnData(s).battle ? '페레코프로 →' : '이 시기를 보낸다 →';
+        const battle = G.battleOf(s);
+        $('cwSettle').textContent = battle ? battle.settle : '이 시기를 보낸다 →';
     }
 
     function reviewFronts() {
@@ -786,7 +787,7 @@
         const theirs = c.options.find(o => o.id === c.history);
         const same = r.choice === c.history;
         const next = s.phase === 'battle'
-            ? el('button', { type: 'button', class: 'cw-primary', onclick: () => { reviewSeen = true; historyMap = false; render(); $('cwBattle').scrollIntoView({ block: 'start' }); } }, '페레코프 전투 지휘하기 →')
+            ? el('button', { type: 'button', class: 'cw-primary', onclick: () => { reviewSeen = true; historyMap = false; render(); $('cwBattle').scrollIntoView({ block: 'start' }); } }, s.battle.def.open)
             : el('button', { type: 'button', class: 'cw-primary', onclick: () => { act('next'); historyMap = false; render(); $('cwPlay').scrollIntoView({ block: 'start' }); announce(`${G.turnData(s).date} ${G.turnData(s).title}`); } }, '다음 시기로 →');
         $('cwReview').replaceChildren(...[
             el('h3', { id: 'cwReviewTitle' }, `${t.date}의 결산`),
@@ -805,22 +806,22 @@
     // ── Battle ──
 
     const CELL = 48;
-    const TILE_CLASS = { '.': 'steppe', '~': 'ford', '#': 'deep', W: 'wall', Y: 'yushun', C: 'chongar', b: 'strait', t: 'town' };
     const roleNote = (b, u) => ({
         wall: () => `${b.def.lines[u.line].name}을 지킨다. 방어선이 우회되면 공격할 상대가 없거나 병력이 절반 아래일 때 물러난다.`,
         hold: () => '자리를 지키며 닿는 붉은 부대를 친다.',
-        strike: () => '백군의 예비대. 붉은 군대가 가장 깊이 들어온 구역(페레코프: 방벽 남쪽, 촌가르: 해협)으로 달려가 그 구역의 가장 약한 붉은 부대를 덮친다. 그 구역의 위협이 사라질 때까지 다른 구역으로 가지 않는다.',
+        strike: () => b.def.strikeNote,
     }[u.role] || (() => ''))();
     const center = (r, c) => [c * CELL + CELL / 2, r * CELL + CELL / 2];
 
-    // Terrain marks drawn over a tile's fill: the Wall's battlements, the
-    // Yushun trench, ripples on the Sivash (dense once it floods).
-    function tileMarks(ch, r, c, flooded) {
+    // Terrain marks drawn over a tile's fill, by the terrain's look: the
+    // Wall's battlements, a trench, a bridge's frame, ripples on a ford
+    // (dense once it floods).
+    function tileMarks(cls, r, c, flooded) {
         const x = c * CELL, y = r * CELL;
-        if (ch === 'W') return svg('path', { d: `M${x} ${y + 30}h6v-8h6v8h6v-8h6v8h6v-8h6v8h6`, class: 'cw-mark-wall' });
-        if (ch === 'Y' || ch === 'C') return svg('path', { d: `M${x} ${y + 30}l6 -6l6 6l6 -6l6 6l6 -6l6 6l6 -6l6 6`, class: 'cw-mark-trench' });
-        if (ch === 'b') return svg('path', { d: `M${x + 6} ${y + 8}v32M${x + 42} ${y + 8}v32M${x + 6} ${y + 16}h36M${x + 6} ${y + 32}h36`, class: 'cw-mark-trench' });
-        if (ch === '~') {
+        if (cls === 'wall') return svg('path', { d: `M${x} ${y + 30}h6v-8h6v8h6v-8h6v8h6v-8h6v8h6`, class: 'cw-mark-wall' });
+        if (cls === 'yushun' || cls === 'chongar') return svg('path', { d: `M${x} ${y + 30}l6 -6l6 6l6 -6l6 6l6 -6l6 6l6 -6l6 6`, class: 'cw-mark-trench' });
+        if (cls === 'strait') return svg('path', { d: `M${x + 6} ${y + 8}v32M${x + 42} ${y + 8}v32M${x + 6} ${y + 16}h36M${x + 6} ${y + 32}h36`, class: 'cw-mark-trench' });
+        if (cls === 'ford') {
             const rows = flooded ? [12, 24, 36] : [18, 34];
             return svg('path', { d: rows.map(dy => `M${x + 8} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), class: 'cw-mark-water' });
         }
@@ -877,7 +878,7 @@
         const def = b.def;
         const box = $('cwBattle');
         const rows = def.map.length, cols = def.map[0].length;
-        const board = svg('svg', { viewBox: `0 0 ${cols * CELL} ${rows * CELL}`, class: 'cw-grid', role: 'group', 'aria-label': '페레코프 전장' });
+        const board = svg('svg', { viewBox: `0 0 ${cols * CELL} ${rows * CELL}`, class: 'cw-grid', role: 'group', 'aria-label': def.board });
         const unit = selected && B.byId(b, selected);
         const foe = !unit && inspected && B.byId(b, inspected);
         const moves = unit && !unit.moved && !unit.acted ? B.reachable(b, unit) : [];
@@ -893,16 +894,16 @@
         const deselect = () => { if (selected || inspected) { selected = null; inspected = null; renderBattle(); } };
         for (let r = 0; r < rows; r++) {
             for (let c = 0; c < cols; c++) {
-                const ch = def.map[r][c];
-                const flooded = ch === '~' && !B.fordOpen(b);
-                const cls = ['cw-tile', 't-' + TILE_CLASS[ch]];
+                const ground = B.terrain(b, r, c);
+                const flooded = Boolean(ground.ford) && !B.fordOpen(b);
+                const cls = ['cw-tile', 't-' + ground.cls];
                 if (flooded) cls.push('is-flooded');
                 const goal = def.goals.find(g => g.at[0] === r && g.at[1] === c);
                 if (goal) cls.push('is-goal');
                 const tile = svg('rect', { x: c * CELL, y: r * CELL, width: CELL, height: CELL, class: cls.join(' ') });
                 tile.addEventListener('click', deselect);
                 board.append(tile);
-                const mark = tileMarks(ch, r, c, flooded);
+                const mark = tileMarks(ground.cls, r, c, flooded);
                 if (mark) board.append(mark);
                 const town = goal ? goal.name : (def.towns.find(t => t[1] === r && t[2] === c) || [])[0];
                 if (town) board.append(svg('text', { x: c * CELL + CELL / 2, y: r * CELL + 14, 'text-anchor': 'middle', class: 'cw-tile-label' }, town));
@@ -986,7 +987,7 @@
         const status = [
             `${b.turn} / ${def.turnLimit} 턴`,
             `행동할 수 있는 부대 ${ready} / ${reds.length}`,
-            B.fordOpen(b) ? `시바시 여울 열림 (${def.windTurns - b.turn + 1}턴 남음)` : '바람이 바뀌어 시바시에 물이 찼다',
+            def.windTurns ? (B.fordOpen(b) ? `${def.ford} 여울 열림 (${def.windTurns - b.turn + 1}턴 남음)` : `바람이 바뀌어 ${def.ford}에 물이 찼다`) : null,
             ...Object.entries(def.lines).map(([id, l]) => b.turned[id] ? `${l.name} 우회됨: 수비대의 진지 방어가 +1로 줄었다` : `${l.name}: 노란 점선 안에 부대를 세우면 우회된다`),
             b.reserve ? `백군 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶여 있다` : '백군 예비대는 아직 움직이지 않았다',
         ];
@@ -996,10 +997,10 @@
             el('details', { class: 'cw-battle-brief', open: b.turn === 1 && !s.log.some(e => e[0].startsWith('b:')) }, el('summary', {}, '작전 지시'), ...def.brief.map(p => el('p', {}, p))),
             el('div', { class: 'cw-battle-layout' },
                 el('div', { class: 'cw-grid-wrap' }, el('div', { class: 'cw-grid-scroll' }, board), el('p', { class: 'cw-terrain-key' },
-                    ...[['steppe', '초원'], ['ford', '시바시 여울 (방어 −1, 이동 2)'], ['wall', '터키 방벽 (방어 +3, 이동 3)'], ['yushun', '유순·촌가르 방어선 (방어 +2, 이동 2)'], ['strait', '촌가르 해협 (이동 2)'], ['town', '마을 (방어 +1)'], ['move', '갈 수 있는 칸'], ['flank', '우회 지역'], ['danger', '백군이 칠 수 있는 칸']]
+                    ...def.legend.concat([['move', '갈 수 있는 칸'], ['flank', '우회 지역'], ['danger', '백군이 칠 수 있는 칸']])
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
-                    el('ul', { class: 'cw-battle-status' }, ...status.map(t => el('li', {}, t))),
+                    el('ul', { class: 'cw-battle-status' }, ...status.filter(Boolean).map(t => el('li', {}, t))),
                     el('div', { id: 'cwUnitInfo', class: 'cw-unit-info' }, unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint),
                     el('div', { class: 'cw-battle-actions' },
                         unit && unit.prev && !unit.acted ? el('button', { type: 'button', 'data-key': 'undo', onclick: () => { if (act('b:undo', unit.id)) afterBattleAct(`${unit.name} 이동 취소`); } }, '이동 취소') : null,
@@ -1035,8 +1036,8 @@
             if (e.type === 'water') return `${name(e.id)}: 차오르는 물에 피해 ${e.dmg}`;
             if (e.type === 'turned') return `${b.def.lines[e.line].name}이 우회되었다. 수비대가 퇴로를 걱정한다.`;
             if (e.type === 'wear') return `포격으로 ${B.terrain(b, e.r, e.c).name}의 방어가 깎였다.`;
-            if (e.type === 'reserve') return `바르보비치 기병군단이 ${b.def.sectors[e.sector].name} 쪽으로 향한다.`;
-            if (e.type === 'tide') return '바람이 바뀌었다. 시바시에 물이 다시 차오른다.';
+            if (e.type === 'reserve') return `${b.def.reserveName}이 ${b.def.sectors[e.sector].name} 쪽으로 향한다.`;
+            if (e.type === 'tide') return `바람이 바뀌었다. ${b.def.ford}에 물이 다시 차오른다.`;
             return '';
         }).filter(Boolean);
     }
@@ -1068,7 +1069,7 @@
         if (o.stars) {
             items.push(el('ul', { class: 'cw-stars' }, ...o.stars.map(st => el('li', { class: st.got ? 'is-got' : '' }, (st.got ? '★ ' : '☆ ') + st.label))));
             items.push(el('p', {}, `시기별 전선 위치의 합: 역사 대비 ${signed(o.diff)} 도시`));
-            if (o.kind === 'won' || o.kind === 'stalled') items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, '역사에서는'), el('p', {}, D.battle.history)));
+            if (o.kind === 'won' || o.kind === 'stalled') items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, '역사에서는'), el('p', {}, s.battle.def.history)));
             items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, '그리고 1921년'),
                 el('p', {}, s.peasants >= 40 ? D.epilogue.highPeasants : D.epilogue.lowPeasants),
                 el('p', { class: 'cw-links' }, ...D.epilogue.links.map(link))));

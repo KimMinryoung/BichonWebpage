@@ -37,7 +37,7 @@
             peasants: 60, workers: 60, cohesion: 60, grain: 6,
             flags: {}, lines: Object.assign({}, DATA.startLines),
             petrogradFell: false, deserted: 0, revolt: 0, momentum: {}, used: {},
-            records: [], log: [], battle: null, outcome: null,
+            records: [], log: [], battle: null, battles: {}, outcome: null,
         };
         enterTurn(s);
         return s;
@@ -415,7 +415,7 @@
             s.phase = 'done';
         } else if (t.battle) {
             s.phase = 'battle';
-            s.battle = Battle.start(DATA.battle, s.flags);
+            s.battle = Battle.start(DATA.battles[t.battle], s.flags);
         } else {
             s.phase = 'review';
         }
@@ -429,9 +429,16 @@
         return true;
     }
 
+    // The season's battle, if it has one.
+    function battleOf(s) {
+        const id = turnData(s).battle;
+        return id ? DATA.battles[id] : null;
+    }
+
     function finishBattle(s) {
         if (s.phase !== 'battle' || !s.battle || !s.battle.result) return false;
         const won = s.battle.result === 'won';
+        s.battles[s.battle.def.id] = { result: s.battle.result, turns: s.battle.turn, turned: Object.keys(s.battle.turned).filter(id => s.battle.turned[id]) };
         s.phase = 'done';
         s.outcome = score(s, won);
         return true;
@@ -503,7 +510,7 @@
 
     const api = {
         DATA, VERSION, MOMENTUM, start, act, restore, serialize, forecast, activeFronts, turnData,
-        free, allocated, threatsOf, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
+        free, allocated, threatsOf, battleOf, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.CivilWarGame = api;
