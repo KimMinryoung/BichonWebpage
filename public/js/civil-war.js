@@ -18,6 +18,12 @@
     let selected = null;            // battle: the selected Red unit id
     let inspected = null;           // battle: the White unit whose reach is shown
     let lit = null;                 // the front whose card the pointer or focus is on
+    // The map's entrance: the attackers march in when a season opens, and
+    // in its review the beaten are trampled and the winners surge on. It
+    // plays once per season and phase, from when the map is first seen;
+    // a re-render inside it carries on where it was (--since).
+    const MOTION_MS = 3200;
+    let motion = { key: null, at: null };
     const mapEl = $('cwMap');
     const points = JSON.parse(mapEl.dataset.points);
     const phases = JSON.parse(mapEl.dataset.phases || '[]');
@@ -246,6 +252,14 @@
         const results = s.phase === 'plan' ? null : s.records[s.records.length - 1].fronts;
         const active = fc ? G.activeFronts(s) : Object.keys(results);
         const turn = fc ? s.turn : s.records[s.records.length - 1].turn;
+        const key = `${turn}:${fc ? 'plan' : 'review'}`;
+        if (motion.key !== key) motion = { key, at: mapSeen() || !('IntersectionObserver' in window) ? performance.now() : null };
+        layer.classList.add(fc ? 'is-plan' : 'is-review');
+        const since = motion.at === null ? 0 : performance.now() - motion.at;
+        if (motion.at === null || since < MOTION_MS) {
+            layer.classList.add(motion.at === null ? 'is-waiting' : 'is-entering');
+            layer.style.setProperty('--since', `${Math.round(since)}ms`);
+        }
         const avoid = [];   // boxes the attackers' markers keep clear of
         for (const id of D.frontOrder) {
             const pts = points.fronts[id];
@@ -270,7 +284,9 @@
             pts.forEach((p, i) => {
                 const held = i < line;
                 const r = isActive ? 5.5 : 4.5;
-                front.append(svg('circle', { cx: p.x, cy: p.y, r, class: 'cw-city ' + (held ? 'is-held' : 'is-lost k-' + holderOf(id, turn).kind) }));
+                // In the review a city that changed hands pops in its new colour.
+                const flipped = results && results[id] && (i < results[id].before) !== held;
+                front.append(svg('circle', { cx: p.x, cy: p.y, r, class: 'cw-city ' + (held ? 'is-held' : 'is-lost k-' + holderOf(id, turn).kind) + (flipped ? ' is-flipped' : '') }));
                 if (held !== (i < after)) {
                     front.append(svg('circle', { cx: p.x, cy: p.y, r: r + 4, class: 'cw-ring-under' }));
                     front.append(svg('circle', { cx: p.x, cy: p.y, r: r + 4, class: 'cw-ring ' + (held ? 'k-' + foeKind : 'is-red') }));
@@ -287,9 +303,10 @@
         layer.append(svg('path', { d: star(m.x, m.y, 9, 4), class: 'cw-moscow' }));
         layer.append(svg('text', { x: m.x + 11, y: m.y + 4, class: 'cw-city-label is-capital' }, m.name));
         avoid.push({ x0: m.x - 10, x1: m.x + 11 + textWidth(m.name, 13), y0: m.y - 10, y1: m.y + 6 });
-        for (const id of active) {
+        for (const [i, id] of active.entries()) {
             const marker = foeMarker(id, points.fronts[id], s.lines[id], fc && fc[id], results && results[id], avoid);
             marker.g.setAttribute('data-front', id);
+            marker.g.style.setProperty('--order', i);
             layer.append(marker.g);
             if (s.plan && s.plan.alloc[id] !== undefined) {
                 const pips = troopPips(id, marker, avoid);
@@ -300,6 +317,23 @@
         root.append(layer);
         spotlight(lit);
         renderControlPhase();
+    }
+
+    // The map is in sight: a third of it on screen.
+    function mapSeen() {
+        const r = mapEl.getBoundingClientRect();
+        const shown = Math.min(r.bottom, window.innerHeight) - Math.max(r.top, 0);
+        return r.height > 0 && shown >= r.height * 0.3;
+    }
+
+    // An entrance waiting off screen starts when the map scrolls into view.
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(entries => {
+            if (!entries.some(e => e.isIntersecting) || !motion.key || motion.at !== null) return;
+            if (!s || !['plan', 'review'].includes(s.phase) && !(s.phase === 'battle' && !reviewSeen)) return;
+            motion.at = performance.now();
+            renderMap();
+        }, { threshold: 0.3 }).observe(mapEl);
     }
 
     // The attackers on the map: flags and names beside the first city they
@@ -346,34 +380,59 @@
         const { x, y } = best;
         avoid.push(best.box);
         const short = forecast ? s.lines[id] + forecast.change < D.fronts[id].history[s.turn] : d < 0;
-        const g = svg('g', { class: `cw-foe-marker k-${kind}${short ? ' is-short' : ''}`, tabindex: '0', role: 'button', 'aria-label': `${D.fronts[id].name}: ${foes.map(f => D.factions[f].name).join(', ')}. 카드로 이동` });
+        // How the season went for the attacker: beaten back (the Reds took
+        // a city, or held with strength to spare) or surging on (it took one).
+        const fate = !result ? '' : result.after < result.before ? ' is-surging'
+            : result.after > result.before || result.margin >= 0 ? ' is-beaten' : '';
+        const lead = foes.length && D.factions[foes[0]].trait;
+        const g = svg('g', { class: `cw-foe-marker k-${kind}${short ? ' is-short' : ''}${fate} m-${(lead && lead.motion) || 'march'}`, tabindex: '0', role: 'button', 'aria-label': `${D.fronts[id].name}: ${foes.map(f => D.factions[f].name).join(', ')}. 카드로 이동` });
         // The arrow at the city under attack: the last one held, or Moscow.
         const target = line > 0 ? pts[Math.min(line, n) - 1] : points.moscow;
         const tx = target.x - x, ty = target.y - y;
         const tl = Math.hypot(tx, ty);
+        // They march in from beyond, away from that city; a surge lunges at it.
+        g.style.setProperty('--ox', `${(-tx / (tl || 1) * 48).toFixed(1)}px`);
+        g.style.setProperty('--oy', `${(-ty / (tl || 1) * 48).toFixed(1)}px`);
+        g.style.setProperty('--lx', `${(tx / (tl || 1) * 9).toFixed(1)}px`);
+        g.style.setProperty('--ly', `${(ty / (tl || 1) * 9).toFixed(1)}px`);
+        const body = svg('g', { class: 'cw-foe-body' });
+        g.append(body);
         if (tl > 30) {
             // Leave the marker's box (a ray from its centre to its edge), stop short of the city.
             const sx = Math.abs(tx / tl) > 1e-6 ? (w / 2 + 2) / Math.abs(tx / tl) : Infinity;
             const sy = (ty > 0 ? 8 + rowH : 12) / Math.max(1e-6, Math.abs(ty / tl));
             const from = Math.min(sx, sy);
             const to = Math.max(from + 6, Math.min(tl - 9, from + 40));
-            g.append(svg('line', { x1: x + tx / tl * from, y1: y + ty / tl * from, x2: x + tx / tl * to, y2: y + ty / tl * to, class: 'cw-foe-arrow', 'marker-end': 'url(#cwArrowHead)' }));
+            body.append(svg('line', { x1: x + tx / tl * from, y1: y + ty / tl * from, x2: x + tx / tl * to, y2: y + ty / tl * to, class: 'cw-foe-arrow', 'marker-end': 'url(#cwArrowHead)' }));
         }
-        g.append(svg('rect', { x: x - w / 2, y: y - 10, width: w, height: 18, class: 'cw-foe-name' }));
+        body.append(svg('rect', { x: x - w / 2, y: y - 10, width: w, height: 18, class: 'cw-foe-name' }));
         let fx = x - w / 2 + 6;
         for (const f of flags) {
             const stripes = D.factions[f].flag;
-            stripes.forEach((color, i) => g.append(svg('rect', { x: fx, y: y - 5 + i * 10 / stripes.length, width: 13, height: 10 / stripes.length, fill: color })));
-            g.append(svg('rect', { x: fx, y: y - 5, width: 13, height: 10, class: 'cw-foe-flagrim' }));
+            stripes.forEach((color, i) => body.append(svg('rect', { x: fx, y: y - 5 + i * 10 / stripes.length, width: 13, height: 10 / stripes.length, fill: color })));
+            body.append(svg('rect', { x: fx, y: y - 5, width: 13, height: 10, class: 'cw-foe-flagrim' }));
             fx += 16;
         }
-        g.append(svg('text', { x: fx, y: y + 3.5, class: 'cw-foe-text' }, name));
-        g.append(svg('rect', { x: x - w / 2, y: y + 8, width: w, height: rowH, class: forecast ? 'cw-foe-marks' : 'cw-foe-numbers' }));
-        if (numbers) g.append(svg('text', { x, y: y + 20, 'text-anchor': 'middle', class: 'cw-foe-numbers-text' }, numbers));
+        body.append(svg('text', { x: fx, y: y + 3.5, class: 'cw-foe-text' }, name));
+        body.append(svg('rect', { x: x - w / 2, y: y + 8, width: w, height: rowH, class: forecast ? 'cw-foe-marks' : 'cw-foe-numbers' }));
+        if (numbers) body.append(svg('text', { x, y: y + 20, 'text-anchor': 'middle', class: 'cw-foe-numbers-text' }, numbers));
         const across = Math.min(marks, PER_ROW) * MARK;
         for (let i = 0; i < marks; i++) {
             const mx = x - across / 2 + (i % PER_ROW) * MARK + 0.75, my = y + 10 + Math.floor(i / PER_ROW) * MARK;
-            g.append(svg('rect', { x: mx, y: my, width: MARK - 1.5, height: MARK - 1.5, class: 'cw-foe-mark k-' + kind }));
+            body.append(svg('rect', { x: mx, y: my, width: MARK - 1.5, height: MARK - 1.5, class: 'cw-foe-mark k-' + kind, style: `--m:${i}` }));
+        }
+        // Trampled: the Red side's tread across the marker, from its own city.
+        if (fate === ' is-beaten') {
+            const tread = svg('g', { class: 'cw-tread', 'aria-hidden': 'true' });
+            const ux = -tx / (tl || 1), uy = -ty / (tl || 1);
+            const deg = Math.atan2(uy, ux) * 180 / Math.PI;
+            [-1, 0, 1].forEach((k, i) => {
+                const px = x + ux * k * 10 - uy * (i % 2 ? 5 : -5), py = y + 7 + uy * k * 10 + ux * (i % 2 ? 5 : -5);
+                const at = svg('g', { transform: `translate(${px.toFixed(1)} ${py.toFixed(1)}) rotate(${deg.toFixed(0)})` });
+                at.append(svg('path', { d: 'M-5 -4L2 0L-5 4M0 -4L7 0L0 4', style: `--t:${i}` }));
+                tread.append(at);
+            });
+            g.append(tread);
         }
         if (forecast) g.setAttribute('aria-label', g.getAttribute('aria-label').replace('. 카드로', `, 압력 ${marks}, 전투력 ${forecast.strength}. 카드로`));
         const go = () => { const card = document.getElementById('cwFront-' + id); if (card) { card.scrollIntoView({ block: 'nearest' }); card.focus(); } };
@@ -528,6 +587,7 @@
             const card = el('article', { class: 'cw-front' + (after < hist ? ' is-short' : ''), id: 'cwFront-' + id, tabindex: '-1' },
                 el('header', {}, el('h4', {}, D.fronts[id].name), foeList(threat.foes), el('span', {}, `보유: ${heldText(id, line)}`)),
                 el('p', { class: 'cw-threat' }, threat.text, ' ', person(threat.who)),
+                traitRow(f.traits),
                 el('div', { class: 'cw-front-controls' }, stepper, commissarToggle(id), ...frontCards(id)),
                 meter(id, f, line, s.turn, s.plan.choice, '예상'),
                 musterRow(id),
@@ -604,16 +664,29 @@
         return node;
     }
 
-    // Factions start folded; one met for the first time is marked so the
-    // reader opens it.
+    // Factions start folded, each with the name of its trait; opened, who
+    // they were and what the trait was.
     function foeList(ids) {
-        const seen = new Set();
-        for (let t = 0; t < s.turn; t++) for (const th of Object.values(D.turns[t].threats)) (th.foes || []).forEach(f => seen.add(f));
         return el('div', { class: 'cw-foes' }, ...(ids || []).map(fid => {
             const f = D.factions[fid];
             return el('details', { class: 'cw-foe is-' + f.kind },
-                el('summary', {}, f.flag ? flag(f.flag) : el('i', { class: 'cw-foe-dot' }), f.name, seen.has(fid) ? null : el('small', {}, '처음')),
-                el('p', {}, f.note, f.link ? ' ' : null, f.link ? el('a', Object.assign({ href: f.link }, NEW_TAB), '더 읽기 ↗') : null));
+                el('summary', {}, f.flag ? flag(f.flag) : el('i', { class: 'cw-foe-dot' }), f.name, f.trait ? el('small', {}, f.trait.name) : null),
+                el('p', {}, f.note, f.link ? ' ' : null, f.link ? el('a', Object.assign({ href: f.link }, NEW_TAB), '더 읽기 ↗') : null),
+                f.trait ? el('p', { class: 'cw-foe-trait' }, el('strong', {}, f.trait.name), ' ', f.trait.text) : null);
+        }));
+    }
+
+    // What the attackers' traits do to this front under the plan: the rule,
+    // and whether it bites (걸림), is blunted (막음) or, for one that helps
+    // the Reds, works (통함).
+    function traitRow(traits) {
+        const shown = (traits || []).filter(tr => tr.rule);
+        if (!shown.length) return null;
+        return el('ul', { class: 'cw-traits' }, ...shown.map(tr => {
+            const state = !tr.counted ? null : tr.on ? (tr.by > 0 ? ['is-bites', '걸림'] : ['is-works', '통함']) : (tr.by > 0 ? ['is-blunted', '막음'] : null);
+            return el('li', { class: state ? state[0] : 'is-idle' },
+                el('strong', {}, `${tr.short} · ${tr.name}`), ' ', tr.rule,
+                state ? el('b', {}, state[1]) : null);
         }));
     }
 

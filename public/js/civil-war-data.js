@@ -73,56 +73,73 @@
     // Who the Reds fought. kind colours the map: white (the White movement
     // and its allies), interv (foreign intervention), central (Germany and
     // Austria), national (the new states). flag: horizontal stripes, top
-    // first, as flown in these years.
+    // first, as flown in these years. trait: what made each of them who
+    // they were, and the lever the Reds had against it: on a front this
+    // faction attacks, the pressure moves by `by` when `when` holds (the
+    // train or a commissar on the front is / is not there, `at` reserve
+    // divisions kept back, workers or peasants `below` a level). motion:
+    // how its marker comes onto the map.
     const TRICOLOR = ['#ffffff', '#0039a6', '#d52b1e'];
     const factions = {
         czech: {
             name: '체코슬로바키아 군단', short: '체코 군단', kind: 'white', flag: ['#ffffff', '#d7141a'], link: T('czechoslovak-legion'),
             note: '오스트리아군에서 넘어온 체코·슬로바키아 포로로 만든 군단. 프랑스 전선으로 가려고 시베리아 횡단철도를 타고 있었다. 1918–1920년 체코슬로바키아 국기는 폴란드처럼 흰색·빨간색 두 줄이었고, 1920년 3월 파란 삼각형이 더해졌다.',
+            trait: { name: '철도 위의 군단', motion: 'rail', when: 'train', is: false, by: 2, rule: '장갑열차가 이 전선에 없으면 압력 +2', text: '군단은 열차를 집 삼아 시베리아 횡단철도를 따라 싸웠다. 철도를 쥔 쪽이 볼가를 쥐었다. 장갑열차로 철도를 되찾아야 한다.' },
         },
         komuch: {
             name: '코무치 인민군', short: '코무치', kind: 'white',
             note: '사마라에 선 사회혁명당 계열 제헌의회 의원 위원회(코무치)의 군대. 9월 옴스크의 디렉토리로 합쳐졌다가 11월 콜차크의 쿠데타로 밀려났다.',
+            trait: { name: '제헌의회의 깃발', motion: 'march', when: 'workers', below: 55, by: 2, rule: '노동자 지지가 55 아래면 압력 +2', text: '사회혁명당의 코무치는 「모든 권력을 제헌의회로」를 내걸었다. 1918년 8월 이젭스크·봇킨스크의 무기 공장 노동자가 소비에트에 맞서 일어나 인민군에 합류했다. 노동자가 등을 돌리면 그들이 코무치 편에 선다.' },
         },
         kolchak: {
             name: '콜차크 정부군', short: '콜차크', kind: 'white', flag: TRICOLOR, link: P('alexander-kolchak'),
             note: '옴스크의 「최고 통치자」 콜차크 제독의 군대. 영국이 소총과 군복을 댔다. 백군은 제정 러시아의 흰색·파란색·빨간색 삼색기를 썼다.',
+            trait: { name: '시베리아의 파르티잔', motion: 'march', when: 'peasants', below: 45, by: 2, rule: '농민 지지가 45 아래면 압력 +2', text: '콜차크 정부의 징병과 징발에 시베리아 농민이 들고일어나, 철도 뒤에서 파르티잔이 백군을 흔들었다. 붉은 군대의 징발이 그만큼 가혹해지면 농민은 어느 편도 들지 않는다.' },
         },
         don: {
             name: '돈 카자크군', short: '돈 카자크', kind: 'white', flag: ['#0033a0', '#ffd500', '#d52b1e'], link: P('pyotr-krasnov'),
             note: '아타만 크라스노프가 이끈 돈 카자크의 군대. 1918년에는 우크라이나를 점령한 독일의 지원을 받았다. 깃발은 돈 공화국의 파란색·노란색·빨간색.',
+            trait: { name: '카자크 기병의 습격', motion: 'charge', when: 'reserve', at: 2, by: -2, rule: '예비 사단을 2개 이상 남기면 압력 −2', text: '카자크 기병은 전선의 틈을 뚫고 후방의 철도와 창고를 휘저었다. 1919년 8월 마몬토프의 기병군단은 탐보프까지 들어왔다. 뒤에 남긴 예비 사단이 습격을 막는다.' },
         },
         denikin: {
             name: '남러시아군(데니킨)', short: '데니킨', kind: 'white', flag: TRICOLOR, link: P('anton-denikin'),
             note: '코르닐로프가 세운 의용군에 돈·쿠반 카자크군을 묶은 데니킨의 군대. 1919년 여름 「모스크바 지령」으로 북진했다.',
+            trait: { name: '장교 연대', motion: 'charge', when: 'commissar', is: false, by: 2, rule: '정치위원이 없는 전선이면 압력 +2', text: '코르닐로프·마르코프·드로즈돕스키 연대는 장교로만 채운 의용군의 정예였다. 정치위원 없이 맞선 징집 사단은 그 앞에서 흩어졌다.' },
         },
         yudenich: {
             name: '북서군(유데니치)', short: '유데니치', kind: 'white', flag: TRICOLOR, link: P('nikolai-yudenich'),
             note: '에스토니아를 발판으로 페트로그라드를 노린 유데니치 장군의 백군.',
+            trait: { name: '페트로그라드 기습', motion: 'charge', when: 'workers', below: 50, by: 2, rule: '노동자 지지가 50 아래면 압력 +2', text: '유데니치는 영국이 준 전차 여섯 대를 앞세워 풀코보 고지까지 왔다. 도시를 지킨 것은 거리에 바리케이드를 쌓은 페트로그라드 노동자였다.' },
         },
         allies: {
             name: '연합국 간섭군', short: '간섭군', kind: 'interv',
             note: '영국을 중심으로 프랑스·미국 병력이 무르만스크와 아르한겔스크에 상륙해 북부 정부를 세웠다. 영국군은 1919년 가을 철수했다.',
+            trait: { name: '지친 원정군', motion: 'sail', when: 'commissar', is: true, by: -1, rule: '정치위원이 있으면 압력 −1', text: '세계대전을 마친 영국·미국·프랑스 병사들은 남의 나라 내전에 머물 생각이 없었다. 볼셰비키의 외국어 전단이 병영에 돌았고, 1919년 봄 반란과 명령 거부가 잇따랐다.' },
         },
         north: {
             name: '북부 정부군', short: '북부 정부', kind: 'white', flag: TRICOLOR, link: P('yevgeny-miller'),
             note: '영국군이 떠난 뒤 밀러 장군이 이끈 아르한겔스크의 백군.',
+            trait: { name: '버려진 정부', motion: 'march', when: 'commissar', is: true, by: -2, rule: '정치위원이 있으면 압력 −2', text: '영국군이 떠나자 북부 정부군 병사들이 장교를 버리고 붉은 군대로 넘어왔다. 1920년 2월 밀러는 배로 달아났다.' },
         },
         central: {
             name: '독일·오스트리아군', short: '독일·오스트리아', kind: 'central', flag: ['#000000', '#ffffff', '#dd0000'], link: E('brest-litovsk'),
             note: '브레스트 강화로 우크라이나·벨라루스·발트를 점령한 동맹국 군대. 1918년 11월 독일이 항복한 뒤 물러났다. 깃발은 독일 제국의 검은색·흰색·빨간색.',
+            trait: { name: '점령군', motion: 'march', text: '브레스트 강화로 얻은 땅을 지키는 군대. 1918년 11월 독일이 항복하자 싸우지 않고 물러난다.' },
         },
         poland: {
             name: '폴란드군', short: '폴란드', kind: 'national', flag: ['#ffffff', '#dc143c'], link: P('jozef-pilsudski'),
             note: '1918년 독립을 되찾은 폴란드의 군대. 피우수트스키가 이끌었다.',
+            trait: { name: '조국을 지키는 군대', motion: 'march', rule: '바르샤바는 여유 8이 있어야 들어간다', text: '침공군으로 키예프까지 왔던 폴란드군도 비스와강 앞에서는 나라를 지키는 군대였다. 폴란드 노동자는 붉은 군대를 해방군으로 맞지 않았다.' },
         },
         unr: {
             name: '우크라이나 인민공화국군', short: '우크라이나', kind: 'national', link: P('symon-petliura'),
             note: '페틀류라가 이끈 디렉토리 정부의 군대. 1920년 폴란드와 동맹해 키예프로 들어왔다.',
+            trait: { name: '아타만의 농민군', motion: 'charge', when: 'peasants', below: 40, by: 1, rule: '농민 지지가 40 아래면 압력 +1', text: '디렉토리의 병력은 저마다 아타만을 따르는 농민 무리였다. 징발에 지친 우크라이나 마을이 그들을 먹이고 숨겼다.' },
         },
         wrangel: {
             name: '러시아군(브란겔)', short: '브란겔', kind: 'white', flag: TRICOLOR, link: P('pyotr-wrangel'),
             note: '노보로시스크 철수 뒤 데니킨에게서 지휘권을 넘겨받은 브란겔이 크림에서 다시 세운 백군.',
+            trait: { name: '브란겔의 토지법', motion: 'rail', when: 'peasants', below: 40, by: 2, rule: '농민 지지가 40 아래면 압력 +2', text: '브란겔은 1920년 5월 지주의 땅 일부를 농민에게 넘기는 토지법을 내고 질서 있는 정부를 꾸몄다. 붉은 군대의 징발에 지친 북타브리아 농민 일부가 그에게 기대를 걸었다.' },
         },
     };
 
@@ -314,7 +331,7 @@
             threats: {
                 east: { pressure: 5, foes: ['kolchak'], text: '콜차크군이 우랄로 물러난다. 추격할 때다.' },
                 south: { pressure: 9, foes: ['denikin'], text: '데니킨의 의용군이 하리코프로 쳐들어온다.', who: ['안톤 데니킨', 'anton-denikin'] },
-                volga: { pressure: 5, foes: ['denikin'], text: '브란겔의 캅카스군이 차리친을 공격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
+                volga: { pressure: 3, foes: ['denikin'], text: '브란겔의 캅카스군이 차리친을 공격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
                 northwest: { pressure: 4, foes: ['yudenich'], text: '유데니치의 북서군이 얌부르크로 온다.', who: ['니콜라이 유데니치', 'nikolai-yudenich'] },
             },
             cards: ['train', 'requisition', 'cheka', 'amnesty', 'propaganda'],

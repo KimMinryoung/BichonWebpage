@@ -53,9 +53,11 @@ function send(s) {
 
 function campaign(pick, options) {
     const s = G.start();
+    const traitsMet = s.traitsMet = [];  // the attackers' traits in force when each season was sent
     while (s.phase === 'plan') {
         assert.ok(G.act(s, 'choose', pick(G.turnData(s))));
         plan(s, options);
+        for (const [id, f] of Object.entries(G.forecast(s).fronts)) for (const tr of f.traits) if (tr.on) traitsMet.push(`${G.turnData(s).id} ${id} ${tr.foe}`);
         assert.ok(send(s));
         if (s.phase === 'review') assert.ok(G.act(s, 'next'));
     }
@@ -105,6 +107,33 @@ for (const r of hist.records) {
     for (const [id, f] of Object.entries(r.fronts)) assert.equal(f.after, f.history, `${D.turns[r.turn].id} ${id}`);
 }
 assert.ok(hist.peasants < 60, 'requisition costs the countryside');
+// History's plan meets the attackers' traits but one: Tsaritsyn in the
+// summer of 1919 had no commissar to spare against Wrangel's officers, and
+// that front's pressure counts them.
+assert.deepEqual(hist.traitsMet, ['directive volga denikin']);
+
+// Traits: each faction's own, with the lever against it.
+for (const [id, f] of Object.entries(D.factions)) {
+    assert.ok(f.trait && f.trait.name && f.trait.text, `${id} has a trait`);
+    if (f.trait.when) assert.ok(f.trait.rule && f.trait.by, `${id}: a counted trait says its rule`);
+}
+for (const t of D.turns) for (const th of Object.values(t.threats)) for (const foe of th.foes) assert.ok(D.factions[foe], `${t.id}: ${foe}`);
+{
+    // Denikin's officer regiments: a front without a commissar takes +2.
+    const s = G.start();
+    for (let i = 0; i < 3; i++) { G.act(s, 'choose', historical(G.turnData(s))); plan(s); send(s); G.act(s, 'next'); }
+    assert.equal(G.turnData(s).id, 'directive');
+    const bare = G.forecast(s).fronts.volga.pressure;
+    G.act(s, 'commissar', 'volga', true);
+    assert.equal(G.forecast(s).fronts.volga.pressure, bare - 2, 'a commissar steadies the line before the officers');
+    // The Don raid: two divisions kept back take 2 off a Cossack front.
+    const raid = G.start();
+    G.act(raid, 'alloc', 'volga', raid.plan.divisions);
+    const open = G.forecast(raid).fronts.volga.pressure;
+    G.act(raid, 'alloc', 'volga', raid.plan.divisions - 2);
+    assert.equal(G.forecast(raid).fronts.volga.pressure, open - 2, 'a reserve meets the Cossack raid');
+    assert.ok(G.forecast(raid).fronts.volga.pressureParts.includes('돈 카자크: 카자크 기병의 습격 −2'));
+}
 
 // The other road at every fork still reaches Perekop, but the market
 // policy starves the army: grain runs short and the lines fall behind.
@@ -152,14 +181,16 @@ assert.ok(command >= 1);
 }
 
 // Propaganda shows on the pressure it lowers, this season and the next.
+// (An empty plan also wakes the southern attackers' traits; set them aside.)
+const calmed = f => f.pressureParts.filter(p => !G.traitsOn(calm, 'south', G.threatsOf(calm).south).some(tr => p.startsWith(tr.short + ':')));
 const calm = G.start();
 for (let i = 0; i < 2; i++) { G.act(calm, 'choose', historical(G.turnData(calm))); plan(calm); send(calm); G.act(calm, 'next'); }
 assert.equal(G.turnData(calm).id, 'kolchak');
-assert.deepEqual(G.forecast(calm).fronts.south.pressureParts, []);
+assert.deepEqual(calmed(G.forecast(calm).fronts.south), []);
 assert.ok(G.act(calm, 'play', 'propaganda'));
-assert.deepEqual(G.forecast(calm).fronts.south.pressureParts, ['간섭군 병사에게 선전 −2']);
+assert.deepEqual(calmed(G.forecast(calm).fronts.south), ['간섭군 병사에게 선전 −2']);
 G.act(calm, 'choose', 'flank'); plan(calm); send(calm); G.act(calm, 'next');
-assert.deepEqual(G.forecast(calm).fronts.south.pressureParts, ['간섭군 병사에게 선전 −2'], 'and the season after');
+assert.deepEqual(calmed(G.forecast(calm).fronts.south), ['간섭군 병사에게 선전 −2'], 'and the season after');
 
 // A thin southern front left empty loses Tula, and the war.
 const lost = G.start();
@@ -184,12 +215,13 @@ G.act(empty, 'choose', 'experts');
 assert.ok(G.act(empty, 'alloc', 'volga', empty.plan.divisions));
 const eastForecast = G.forecast(empty).fronts.east;
 assert.equal(eastForecast.change, -5);
-assert.equal(eastForecast.momentum, 4, '6 short: two cities beyond Kazan, +2 each');
+assert.deepEqual(eastForecast.pressureParts, ['체코 군단: 철도 위의 군단 +2'], 'no train against the legion on its railway');
+assert.equal(eastForecast.momentum, 6, '8 short: three cities beyond Kazan, +2 each');
 assert.ok(send(empty));
 assert.ok(G.act(empty, 'next'));
 const autumn = G.forecast(empty).fronts.east;
-assert.equal(autumn.pressure, D.turns[1].threats.east.pressure + 4);
-assert.deepEqual(autumn.pressureParts, ['적의 기세 +4']);
+assert.equal(autumn.pressure, D.turns[1].threats.east.pressure + 6);
+assert.deepEqual(autumn.pressureParts, ['적의 기세 +6']);
 G.act(empty, 'alloc', 'east', empty.plan.divisions);
 G.act(empty, 'choose', 'razverstka');
 send(empty);
@@ -207,9 +239,11 @@ assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries 
     assert.ok(volga.margin >= 6, `volga margin ${volga.margin}`);
     assert.equal(volga.pursuit, G.PURSUIT * (Math.min(2, Math.floor(volga.margin / 3) - 1)));
     send(s); G.act(s, 'next');
+    G.act(s, 'alloc', 'volga', s.plan.divisions);    // no reserve against the Cossack raid
     const autumn = G.forecast(s).fronts.volga;
     assert.equal(autumn.pressure, D.turns[1].threats.volga.pressure - volga.pursuit);
     assert.deepEqual(autumn.pressureParts, [`추격 −${volga.pursuit}`]);
+    G.act(s, 'alloc', 'volga', 0);
     G.act(s, 'choose', 'razverstka'); send(s);
     assert.equal(s.pursuit.volga, 0, 'pursuit is spent in the fight it eases');
 }
@@ -287,6 +321,7 @@ assert.equal(G.restore('{'), null);
         lowest = Math.min(lowest, s.plan.command);
         if (t.cards.includes('amnesty')) assert.ok(G.act(s, 'play', 'amnesty'));
         const fronts = G.activeFronts(s);
+        fronts.slice(0, s.plan.commissars).forEach(f => G.act(s, 'commissar', f, true));
         let i = 0;
         while (G.free(s) > 0) { const f = fronts[i++ % fronts.length]; G.act(s, 'alloc', f, s.plan.alloc[f] + 1); }
         assert.ok(send(s));

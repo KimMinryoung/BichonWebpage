@@ -231,6 +231,12 @@
             if (t.id === 'orel' && id === 'northwest' && choice === 'hold') add('other', '페트로그라드 사수', 4);
             if (t.id === 'orel' && id === 'northwest' && choice === 'yield') { pressure += 6; pressureParts.push('병력을 남쪽으로 뺌 +6'); }
             if (t.id === 'orel' && id === 'south' && choice === 'yield') add('other', '북서에서 온 병력', 4);
+            // The attackers' traits: what each brings, and what blunts it.
+            const traits = traitsOn(s, id, threat);
+            for (const tr of traits.filter(x => x.on)) {
+                pressure += tr.by;
+                pressureParts.push(`${tr.short}: ${tr.name} ${signed(tr.by)}`);
+            }
             // Propaganda among the interventionists: this season and the next.
             const calmed = s.plan.cards.some(c => DATA.cards[c.id].calm) || (flags.calm && flags.calm === s.turn);
             if (calmed && (id === 'north' || id === 'south') && pressure > 0) {
@@ -242,12 +248,33 @@
             const result = outcomeOf(s, id, margin);
             out[id] = {
                 divisions: d, perDivision: Math.round(perDivision * 1000) / 1000, bonuses, momentumIn: s.momentum[id] || 0, pursuitIn,
-                strength: round1(strength), pressure, margin: round1(margin), parts, pressureParts,
+                strength: round1(strength), pressure, margin: round1(margin), parts, pressureParts, traits,
                 change: result.change, momentum: result.overflow * MOMENTUM, pursuit: result.pursuit * PURSUIT,
             };
         }
         return { fronts: out, supply };
     }
+
+    // The traits of a front's attackers under the plan: each with whether
+    // its condition holds (on) and the pressure it moves. A trait without
+    // a condition (the occupiers, Poland's Warsaw) is told, not counted.
+    function traitsOn(s, id, threat) {
+        const held = {
+            train: () => s.plan.cards.some(c => c.id === 'train' && c.target === id),
+            commissar: () => Boolean(s.plan.commissar[id]),
+            reserve: tr => free(s) >= tr.at,
+            workers: tr => s.workers < tr.below,
+            peasants: tr => s.peasants < tr.below,
+        };
+        return (threat.foes || []).filter(f => DATA.factions[f].trait).map(f => {
+            const tr = DATA.factions[f].trait;
+            const test = tr.when && held[tr.when];
+            const on = Boolean(test) && ('is' in tr ? test(tr) === tr.is : test(tr));
+            return { foe: f, short: DATA.factions[f].short, name: tr.name, rule: tr.rule || null, by: tr.by || 0, counted: Boolean(test), on };
+        });
+    }
+
+    const signed = n => (n < 0 ? '−' : '+') + Math.abs(n);
 
     // A front moves as it did in history this season when the strength meets
     // the pressure; every STEP above it gains one more city (one at most),
@@ -585,7 +612,7 @@
 
     const api = {
         DATA, VERSION, MOMENTUM, PURSUIT, start, act, restore, serialize, forecast, activeFronts, turnData,
-        free, allocated, threatsOf, battleOf, musterOf, battleResult, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
+        free, allocated, threatsOf, traitsOn, battleOf, musterOf, battleResult, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.CivilWarGame = api;
