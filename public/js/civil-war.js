@@ -24,6 +24,15 @@
     // a re-render inside it carries on where it was (--since).
     const MOTION_MS = 3200;
     let motion = { key: null, at: null };
+    // A season just sent opens on the map alone, its result playing; the
+    // review comes after a press once it has played (unveilTimer polls).
+    let unveiling = false;
+    let unveilTimer = null;
+    // Battle: when each fall event was first drawn, so the unit's breaking
+    // plays once however often the board is redrawn.
+    const fallAt = new WeakMap();
+    const FALL_MS = 1300;
+    const stillMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const mapEl = $('cwMap');
     const points = JSON.parse(mapEl.dataset.points);
     const phases = JSON.parse(mapEl.dataset.phases || '[]');
@@ -160,12 +169,50 @@
         if (s.phase === 'done') return renderOutcome();
         if (inBattle) return renderBattle();
         const planning = s.phase === 'plan';
+        if (planning) unveiling = false;
+        $('cwCampaign').classList.toggle('is-unveiling', unveiling);
         renderBrief();
         renderMap();
         renderFronts(planning);
         for (const id of ['cwCards', 'cwChoice', 'cwCommand']) $(id).hidden = !planning;
-        $('cwReview').hidden = planning;
+        $('cwReview').hidden = planning || unveiling;
+        renderUnveil();
         if (planning) { renderCards(); renderChoice(); renderCommand(); } else renderReview();
+    }
+
+    // The season's result on the map alone: the attackers trampled or
+    // surging, the cities changing hands. Its button to the review shows
+    // once that has played.
+    function renderUnveil() {
+        const bar = $('cwUnveil');
+        window.clearTimeout(unveilTimer);
+        bar.hidden = !unveiling;
+        if (!unveiling) return;
+        const fronts = Object.keys(s.records[s.records.length - 1].fronts).length;
+        const wait = stillMotion() ? 0 : (fronts - 1) * 300 + 1900;
+        const ready = motion.at !== null && performance.now() - motion.at >= wait;
+        const t = D.turns[s.records[s.records.length - 1].turn];
+        bar.replaceChildren(
+            el('p', {}, el('strong', {}, `${t.date} 전선의 움직임`), ready ? null : el('span', {}, ' · 전선이 움직이는 중…')),
+            ...(ready ? [el('button', { type: 'button', class: 'cw-primary', 'data-key': 'unveil', onclick: openReview }, '결산 보기 →')] : []));
+        if (!ready) unveilTimer = window.setTimeout(renderUnveil, motion.at === null ? 250 : wait - (performance.now() - motion.at) + 30);
+        else if (document.activeElement === document.body || !document.activeElement) bar.querySelector('button').focus({ preventScroll: true });
+    }
+
+    function openReview() {
+        unveiling = false;
+        historyMap = true;
+        render();
+        $('cwReview').scrollIntoView({ block: 'start' });
+        announce(`${D.turns[s.records[s.records.length - 1].turn].date}의 결산`);
+    }
+
+    // After a season is settled: the map alone first, scrolled into view.
+    function unveil() {
+        unveiling = true;
+        historyMap = false;
+        render();
+        $('cwUnveil').scrollIntoView({ block: 'end' });
     }
 
     function renderHud() {
@@ -992,6 +1039,25 @@
         return g;
     }
 
+    // A unit destroyed by the last order or the last White turn: its box
+    // flashes, is slashed across, buckles and falls apart, leaving a burnt
+    // cross on its tile until the next order. The breaking plays once.
+    function wreck(u, e) {
+        const x = u.c * CELL, y = u.r * CELL;
+        if (!fallAt.has(e)) fallAt.set(e, performance.now());
+        const since = performance.now() - fallAt.get(e);
+        const g = svg('g', { class: `cw-wreck is-${u.side}${since < FALL_MS ? ' is-falling' : ''}`, 'aria-hidden': 'true', style: `--since:${Math.round(since)}ms` });
+        g.append(svg('path', { d: `M${x + 14} ${y + 14}l20 20M${x + 34} ${y + 14}l-20 20`, class: 'cw-wreck-scar' }));
+        const body = svg('g', { class: 'cw-wreck-body' });
+        body.append(svg('rect', { x: x + 3, y: y + 3, width: CELL - 6, height: CELL - 6, rx: 3 }));
+        body.append(svg('text', { x: x + CELL / 2, y: y + 15, 'text-anchor': 'middle', class: 'cw-unit-tag' }, u.tag));
+        g.append(body);
+        g.append(svg('path', { d: `M${x + 6} ${y + 40}L${x + 42} ${y + 8}`, class: 'cw-wreck-slash' }));
+        g.append(svg('path', { d: `M${x + 6} ${y + 26}L${x + 30} ${y + 4}`, class: 'cw-wreck-slash is-second' }));
+        g.append(svg('text', { x: x + CELL / 2, y: y + 4, 'text-anchor': 'middle', class: 'cw-wreck-word' }, '격파'));
+        return g;
+    }
+
     function renderBattle() {
         const b = s.battle;
         const def = b.def;
@@ -1097,6 +1163,10 @@
             g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
             board.append(g);
         }
+        for (const e of b.events.filter(x => x.type === 'fall')) {
+            const u = b.units.find(x => x.id === e.id);
+            if (u) board.append(wreck(u, e));
+        }
         board.append(eventArrows(b));
         board.addEventListener('keydown', e => { if (e.key === 'Escape') deselect(); });
         // A Red order leaves only its blow, falls and the flank in the
@@ -1182,10 +1252,8 @@
         inspected = null;
         render();
         if (s.phase === 'done') { $('cwOutcome').scrollIntoView({ block: 'start' }); announce(s.outcome.title); return true; }
-        historyMap = true;
-        render();
-        $('cwReview').scrollIntoView({ block: 'start' });
-        announce(`${s.battle.def.title}: ${s.battle.result === 'won' ? '이겼다' : '졌다'}. ${G.turnData(s).date}의 결산`);
+        unveil();
+        announce(`${s.battle.def.title}: ${s.battle.result === 'won' ? '이겼다' : '졌다'}. ${G.turnData(s).date} 전선의 움직임`);
         return true;
     }
 
@@ -1307,10 +1375,14 @@
             announce(s.battle.def.title);
             return;
         }
-        historyMap = true;
-        render();
-        $('cwReview').scrollIntoView({ block: 'start' });
-        announce(s.phase === 'done' ? s.outcome.title : `${t.date}의 결산`);
+        if (s.phase === 'done') {
+            render();
+            $('cwOutcome').scrollIntoView({ block: 'start' });
+            announce(s.outcome.title);
+            return;
+        }
+        unveil();
+        announce(`${t.date} 전선의 움직임`);
     });
     $('cwHistoryToggle').addEventListener('click', () => { historyMap = !historyMap; renderControlPhase(); });
 

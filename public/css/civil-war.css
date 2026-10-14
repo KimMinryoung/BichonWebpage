@@ -710,3 +710,51 @@
 .cw-seg .cw-mk-star { width: 14px; height: 14px; }
 .cw-seg .cw-mk-train { width: 18px; height: 15px; }
 .cw-pip.is-empty { fill: none; stroke: var(--clr-red); stroke-width: .8; }
+
+/* A season just sent: the map alone, its result playing, then the button
+   to the review (civil-war.js renderUnveil). */
+.cw-campaign.is-unveiling :is(.cw-brief, .cw-fronts, .cw-map-key, .cw-map-tools) { display: none; }
+.cw-campaign.is-unveiling .cw-board { grid-template-columns: minmax(0, 1fr); margin-bottom: 0; }
+.cw-campaign.is-unveiling .cw-map-panel { width: 100%; max-width: min(900px, calc((100vh - 190px) * 1.15)); margin-inline: auto; position: static; }
+.cw-unveil { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 16px; min-height: 56px; padding: 8px 0 12px; }
+.cw-unveil p { margin: 0; font-size: .92rem; }
+.cw-unveil p span { color: var(--text-secondary); }
+@media (max-width: 720px) {
+    .cw-unveil { position: sticky; bottom: 0; background: var(--bg-canvas); border-top: 1px solid var(--border); z-index: 2; }
+}
+
+/* Battle: a unit destroyed (civil-war.js wreck). The broken box plays
+   once; what stays is the burnt cross on its tile. */
+.cw-wreck { pointer-events: none; }
+.cw-wreck-scar { stroke: color-mix(in srgb, var(--cw-ink) 75%, transparent); stroke-width: 3; stroke-linecap: round; opacity: .7; }
+.cw-wreck-body, .cw-wreck-slash, .cw-wreck-word { opacity: 0; }
+.cw-wreck-body { transform-box: fill-box; transform-origin: 50% 100%; }
+.cw-wreck.is-red .cw-wreck-body rect { fill: var(--cw-red); stroke: #fff; stroke-width: 2; }
+.cw-wreck.is-white .cw-wreck-body rect { fill: #f4f1e8; stroke: var(--emap-blue); stroke-width: 2; }
+.cw-wreck.is-red .cw-wreck-body text { fill: #fff; }
+.cw-wreck.is-white .cw-wreck-body text { fill: #1d2a44; }
+.cw-wreck-slash { fill: none; stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 52; }
+.cw-wreck.is-white .cw-wreck-slash { stroke: var(--clr-red); }
+.cw-wreck.is-red .cw-wreck-slash { stroke: var(--emap-blue); }
+.cw-wreck-word { font-size: 12px; font-weight: 900; paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; }
+.cw-wreck.is-white .cw-wreck-word { fill: var(--clr-red); }
+.cw-wreck.is-red .cw-wreck-word { fill: var(--emap-blue); }
+@media (prefers-reduced-motion: no-preference) {
+    .cw-wreck.is-falling .cw-wreck-scar { animation: cw-scar 1.3s ease-out both; animation-delay: calc(0ms - var(--since)); }
+    .cw-wreck.is-falling .cw-wreck-body { animation: cw-break 1.3s ease-in both; animation-delay: calc(0ms - var(--since)); }
+    .cw-wreck.is-falling .cw-wreck-slash { animation: cw-slash 1.3s ease-out both; animation-delay: calc(0ms - var(--since)); }
+    .cw-wreck.is-falling .cw-wreck-slash.is-second { animation-delay: calc(90ms - var(--since)); }
+    .cw-wreck.is-falling .cw-wreck-word { animation: cw-word 1.3s ease-out both; animation-delay: calc(0ms - var(--since)); }
+}
+@keyframes cw-break {
+    from { opacity: 1; transform: none; filter: none; }
+    8% { transform: translateX(-3px); filter: brightness(2.2); }
+    16% { transform: translateX(3px); filter: brightness(1.6); }
+    24% { transform: translateX(-2px); filter: none; }
+    45% { opacity: 1; transform: rotate(-3deg); }
+    70% { opacity: .8; transform: rotate(8deg) scale(.9, .55) translateY(4px); }
+    to { opacity: 0; transform: rotate(14deg) scale(.7, .2) translateY(10px); }
+}
+@keyframes cw-slash { from, 18% { opacity: 0; stroke-dashoffset: 52; } 22% { opacity: 1; } 40% { stroke-dashoffset: 0; opacity: 1; } 70% { opacity: 1; } to { opacity: 0; stroke-dashoffset: 0; } }
+@keyframes cw-word { from, 20% { opacity: 0; transform: none; } 35% { opacity: 1; } 80% { opacity: 1; } to { opacity: 0; transform: translateY(-10px); } }
+@keyframes cw-scar { from, 55% { opacity: 0; } to { opacity: .7; } }
