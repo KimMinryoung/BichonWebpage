@@ -17,6 +17,8 @@ function plan(s, { requisition = false } = {}) {
     const threats = G.threatsOf(s);
     const fronts = G.activeFronts(s).sort((a, b) => PRIORITY.indexOf(a) - PRIORITY.indexOf(b));
     const heaviest = fronts.slice().sort((a, b) => threats[b].pressure - threats[a].pressure)[0];
+    // The season's incident, unless answered already: as history answered.
+    if (t.incident && !s.plan.response) assert.ok(G.act(s, 'respond', t.incident.history));
     if (t.cards.includes('train')) assert.ok(G.act(s, 'play', 'train', heaviest));
     if (requisition) assert.ok(G.act(s, 'play', 'requisition'));
     // An amnesty only while the party can bear it (command stays at 3).
@@ -44,18 +46,33 @@ const KAZAN = {
     k5g: [{ r: 5, c: 2 }],
 };
 
-// Sends the season, fighting Kazan on the way when it comes.
+// Orel as history took it: the 13th Army holds Mtsensk and presses from
+// the north, the shock group swings round by Kromy's road to cut the city
+// off, then everyone goes in.
+const OREL_STATION = { r: 4, c: 6 };
+const OREL = {
+    'ol1,oes': [{ r: 5, c: 2 }, { r: 6, c: 4 }, { r: 5, c: 6 }, OREL_STATION],
+    opr: [{ r: 7, c: 3 }, { r: 6, c: 8 }, OREL_STATION],
+    'o13a,otw,opv': [{ r: 2, c: 6 }, OREL_STATION],
+    'o13g': [{ r: 2, c: 7 }],
+    otr: [{ r: 2, c: 5 }],
+    o13b: null,
+};
+const ROUTES = { kazan: KAZAN, orel: OREL };
+
+// Sends the season, fighting the season's battle on the way when it comes.
 function send(s) {
     if (!G.act(s, 'settle')) return false;
-    if (s.phase === 'battle' && !s.battle.def.final) drive(s.battle, KAZAN, (name, ...args) => G.act(s, 'b:' + name, ...args));
+    if (s.phase === 'battle' && !s.battle.def.final) drive(s.battle, ROUTES[s.battle.def.id], (name, ...args) => G.act(s, 'b:' + name, ...args));
     return true;
 }
 
-function campaign(pick, options) {
+function campaign(pick, options, answer = t => t.incident.history) {
     const s = G.start();
     const traitsMet = s.traitsMet = [];  // the attackers' traits in force when each season was sent
     while (s.phase === 'plan') {
         assert.ok(G.act(s, 'choose', pick(G.turnData(s))));
+        if (G.turnData(s).incident) assert.ok(G.act(s, 'respond', answer(G.turnData(s))));
         plan(s, options);
         for (const [id, f] of Object.entries(G.forecast(s).fronts)) for (const tr of f.traits) if (tr.on) traitsMet.push(`${G.turnData(s).id} ${id} ${tr.foe}`);
         assert.ok(send(s));
@@ -64,6 +81,8 @@ function campaign(pick, options) {
     return s;
 }
 
+// Answers the season's incident as history did, if it has one unanswered.
+const answer = s => { const inc = G.turnData(s).incident; if (inc && !s.plan.response) assert.ok(G.act(s, 'respond', inc.history)); };
 const historical = t => t.choice.history;
 const other = t => t.choice.options.find(o => o.id !== t.choice.history).id;
 const sumDiff = s => s.records.reduce((sum, r) => sum + Object.values(r.fronts).reduce((a, f) => a + f.after - f.history, 0), 0);
@@ -202,6 +221,7 @@ for (let i = 0; i < 2; i++) {
 }
 lost.lines.south = 1;
 G.act(lost, 'choose', historical(G.turnData(lost)));
+answer(lost);
 const north = G.activeFronts(lost).find(f => f !== 'south');
 assert.ok(G.act(lost, 'alloc', north, lost.plan.divisions));
 assert.ok(send(lost));
@@ -212,6 +232,7 @@ assert.equal(lost.outcome.kind, 'moscow');
 // summer of 1918 left the east empty means a harder autumn there.
 const empty = G.start();
 G.act(empty, 'choose', 'experts');
+answer(empty);
 assert.ok(G.act(empty, 'alloc', 'volga', empty.plan.divisions));
 const eastForecast = G.forecast(empty).fronts.east;
 assert.equal(eastForecast.change, -5);
@@ -232,6 +253,7 @@ assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries 
 {
     const s = G.start();
     G.act(s, 'choose', 'experts');
+    answer(s);
     assert.ok(G.act(s, 'alloc', 'volga', s.plan.divisions));
     G.act(s, 'play', 'train', 'volga');
     G.act(s, 'commissar', 'volga', true);
@@ -252,6 +274,7 @@ assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries 
 {
     const s = G.start();
     G.act(s, 'choose', 'experts');
+    answer(s);
     G.act(s, 'alloc', 'volga', 2);
     const fc = G.forecast(s);
     assert.equal(fc.supply.need, 2 + Math.ceil((s.plan.divisions - 2) / 2));
@@ -318,6 +341,7 @@ assert.equal(G.restore('{'), null);
     while (s.phase === 'plan') {
         const t = G.turnData(s);
         assert.ok(G.act(s, 'choose', t.choice.history));
+        answer(s);
         lowest = Math.min(lowest, s.plan.command);
         if (t.cards.includes('amnesty')) assert.ok(G.act(s, 'play', 'amnesty'));
         const fronts = G.activeFronts(s);
@@ -477,6 +501,101 @@ assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), fal
     assert.ok(B.reachable(b, boat).every(t => B.terrain(b, t.r, t.c).water || B.terrain(b, t.r, t.c).span));
     assert.ok(B.reachable(b, boat).some(t => t.r === 4 && t.c === 2), 'under the bridge');
     assert.ok(!B.reachable(b, B.byId(b, 'k5l')).some(t => B.terrain(b, t.r, t.c).water), 'no wading the Volga');
+}
+
+// Orel: the shock group's swing round Kromy's road cuts the city off;
+// a STEP beyond the pressure retakes it quickly, history's plan as history
+// did; Mtsensk left empty falls to the Kornilov shock regiment.
+{
+    const O = D.battles.orel;
+    const muster = (margin, cards = ['train']) => ({ margin, fed: 1, commissar: true, cards });
+    const turns = m => { const b = fight(OREL, {}, muster(m), O); assert.equal(b.result, 'won', `Orel margin ${m}`); return b.turn; };
+    assert.ok(turns(-1) >= turns(2), 'a muster short of the pressure is no quicker');
+    assert.ok(turns(3) <= O.reward.quick, 'beating the pressure by a STEP retakes Orel quickly');
+    assert.ok(turns(2) > O.reward.quick, "history's margin retakes it as history did");
+    assert.ok(fight(OREL, {}, muster(2), O).turned.orel, 'the shock group cuts the road to Kursk');
+    const left = fight(Object.assign({}, OREL, { o13b: [{ r: 2, c: 8 }, OREL_STATION] }), {}, muster(2), O);
+    assert.equal(left.result, 'lost', 'Mtsensk left empty');
+    assert.equal(B.unitAt(left, ...O.protect.at).id, 'wok');
+    const thin = B.start(O, {}, muster(0, []));
+    assert.equal(thin.units.some(u => u.id === 'opv' || u.id === 'otw' || u.id === 'otr'), false, 'a thin muster leaves Pavlov, the Tula workers and the train behind');
+    // Orel's guns and the trench once the line is cut.
+    const b = B.start(O, {});
+    const wo2 = B.byId(b, 'wo2');
+    assert.equal(B.groundOf(b, wo2.r, wo2.c), 3);
+    b.units.find(u => u.id === 'opr').r = 6; b.units.find(u => u.id === 'opr').c = 8;
+    assert.ok(B.act(b, 'move', 'ol1', 3, 2));
+    assert.ok(b.turned.orel);
+    assert.equal(B.groundOf(b, wo2.r, wo2.c), 1);
+}
+
+// Incidents: each season's answer is required to send it, costs what it
+// says, and history's answer replays from a save older than the incident.
+{
+    const s = G.start();
+    G.act(s, 'choose', 'experts');
+    assert.equal(G.canSettle(s), false, 'the Left SR rising wants an answer');
+    assert.ok(G.act(s, 'play', 'kombedy'));
+    assert.equal(G.act(s, 'respond', 'coalition'), false, 'the coalition will not have the kombedy in play');
+    assert.ok(G.act(s, 'unplay', 'kombedy'));
+    assert.ok(G.act(s, 'respond', 'coalition'));
+    assert.equal(G.cardOffered(s, 'kombedy'), false, 'the coalition partner bars the committees of the poor');
+    // Against the same plan with history's answer: the countryside and the
+    // party move by the difference of the two answers.
+    const purge = G.start();
+    G.act(purge, 'choose', 'experts'); G.act(purge, 'respond', 'purge');
+    for (const x of [s, purge]) G.act(x, 'alloc', 'east', x.plan.divisions);
+    assert.ok(send(s)); assert.ok(send(purge));
+    assert.equal(s.peasants - purge.peasants, 5);
+    assert.equal(s.cohesion - purge.cohesion, -3);
+    G.act(s, 'next');
+    assert.equal(G.cardOffered(s, 'kombedy'), false, 'and keeps them barred in the autumn');
+}
+{
+    // Decossackization suspended: the southern front's pressure eases.
+    const s = G.start();
+    for (let i = 0; i < 2; i++) { G.act(s, 'choose', historical(G.turnData(s))); plan(s); send(s); G.act(s, 'next'); }
+    assert.equal(G.turnData(s).id, 'kolchak');
+    G.act(s, 'choose', 'flank');
+    G.act(s, 'respond', 'enforce');
+    const enforced = G.forecast(s).fronts.south.pressure;
+    G.act(s, 'respond', 'suspend');
+    assert.equal(G.forecast(s).fronts.south.pressure, enforced - 3);
+    assert.ok(G.forecast(s).fronts.south.pressureParts.includes('탈카자크화 지령 −3'));
+}
+{
+    // A save from before the incidents replays with history's answers.
+    const log = JSON.parse(G.serialize(hist)).log.filter(e => e[0] !== 'respond');
+    const back = G.restore({ version: G.VERSION, log });
+    assert.equal(back.turn, hist.turn);
+    assert.deepEqual(back.lines, hist.lines);
+    assert.equal(back.peasants, hist.peasants);
+}
+{
+    // Mironov: pardoned in 1919, his 2nd Cavalry Army is offered for
+    // Crimea alone in 1920 and joins at Perekop; executed, never.
+    const pardoned = campaign(historical);
+    assert.ok(pardoned.flags.mironov);
+    const executed = campaign(historical, {}, t => (t.incident.id === 'mironov' ? 'execute' : t.incident.history));
+    assert.equal(executed.flags.mironov, undefined);
+    const at = (answerMironov) => {
+        const s = G.start();
+        while (G.turnData(s).id !== 'perekop') {
+            G.act(s, 'choose', historical(G.turnData(s)));
+            const inc = G.turnData(s).incident;
+            if (inc) G.act(s, 'respond', inc.id === 'mironov' ? answerMironov : inc.history);
+            plan(s); send(s); G.act(s, 'next');
+        }
+        return s;
+    };
+    const p = at('pardon');
+    assert.ok(G.cardOffered(p, 'mironov'));
+    assert.equal(G.canPlay(p, 'mironov', 'crimea'), true);
+    G.act(p, 'choose', 'makhno');
+    assert.ok(G.act(p, 'alloc', 'crimea', p.plan.divisions));
+    assert.ok(G.act(p, 'play', 'mironov', 'crimea'));
+    assert.ok(G.musterOf(p).units.find(u => u.id === 'r2c').joins, 'the 2nd Cavalry Army rides to Perekop');
+    assert.equal(G.cardOffered(at('execute'), 'mironov'), false);
 }
 
 // The campaign fights Kazan when the autumn of 1918 is sent, and its

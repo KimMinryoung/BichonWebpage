@@ -81,7 +81,7 @@
         if (divisions < 2) { add('최소 동원', 2 - divisions); divisions = 2; }
         s.plan = {
             divisions, command: commandOf(s.cohesion), commissars: Math.max(0, t.commissars - (s.cohesion < SPLIT ? 1 : 0)), sources,
-            alloc: {}, commissar: {}, cards: [], choice: null,
+            alloc: {}, commissar: {}, cards: [], choice: null, response: null,
         };
         for (const id of activeFronts(s)) { s.plan.alloc[id] = 0; s.plan.commissar[id] = false; }
         s.phase = 'plan';
@@ -118,7 +118,24 @@
         const card = DATA.cards[id];
         if (!card || !turnData(s).cards.includes(id)) return false;
         if (card.flag && s.flags[card.flag]) return false;
+        if (card.requires && !s.flags[card.requires]) return false;
+        if (barred(s, id)) return false;
         return true;
+    }
+
+    // A card an incident's answer rules out: for the rest of the war once
+    // the season is sent, and already while that answer is chosen.
+    function barred(s, id) {
+        if (s.flags['bar:' + id]) return true;
+        const r = responseOf(s);
+        return Boolean(r && r.bars && r.bars.includes(id));
+    }
+
+    // The season's incident and the answer chosen to it, if any.
+    function incidentOf(s) { return turnData(s).incident || null; }
+    function responseOf(s) {
+        const inc = incidentOf(s);
+        return inc && s.plan && s.plan.response ? inc.options.find(o => o.id === s.plan.response) : null;
     }
 
     // A card's toll on cohesion; an amnesty costs more each time it is
@@ -134,6 +151,7 @@
         if (s.plan.cards.some(c => c.id === id)) return false;
         if (s.plan.command < card.cost) return false;
         if (card.target === 'front' && !(target in s.plan.alloc)) return false;
+        if (card.fronts && !card.fronts.includes(target)) return false;
         if (card.divisions < 0 && free(s) < -card.divisions) return false;
         if (card.needs === 'revolt' && !s.revolt) return false;
         return true;
@@ -178,6 +196,23 @@
         if (s.plan.divisions + delta < allocated(s)) return false;
         s.plan.divisions += delta;
         s.plan.choice = optionId;
+        return true;
+    }
+
+    // An incident of the season is answered like the fork: its divisions
+    // join or leave the pool, and an answer that rules out a card in play
+    // waits until the card is taken back.
+    function respond(s, optionId) {
+        const inc = incidentOf(s);
+        if (s.phase !== 'plan' || !inc) return false;
+        const opt = inc.options.find(o => o.id === optionId);
+        if (!opt) return false;
+        if ((opt.bars || []).some(id => s.plan.cards.some(c => c.id === id))) return false;
+        const prev = responseOf(s);
+        const delta = (prev ? -(prev.divisions || 0) : 0) + (opt.divisions || 0);
+        if (s.plan.divisions + delta < allocated(s)) return false;
+        s.plan.divisions += delta;
+        s.plan.response = optionId;
         return true;
     }
 
@@ -231,6 +266,12 @@
             if (t.id === 'orel' && id === 'northwest' && choice === 'hold') add('other', '페트로그라드 사수', 4);
             if (t.id === 'orel' && id === 'northwest' && choice === 'yield') { pressure += 6; pressureParts.push('병력을 남쪽으로 뺌 +6'); }
             if (t.id === 'orel' && id === 'south' && choice === 'yield') add('other', '북서에서 온 병력', 4);
+            // The season's incident, as answered.
+            const answer = responseOf(s);
+            if (answer && answer.pressure && answer.pressure[id]) {
+                pressure += answer.pressure[id];
+                pressureParts.push(`${incidentOf(s).title} ${signed(answer.pressure[id])}`);
+            }
             // The attackers' traits: what each brings, and what blunts it.
             const traits = traitsOn(s, id, threat);
             for (const tr of traits.filter(x => x.on)) {
@@ -355,7 +396,7 @@
     }
 
     function canSettle(s) {
-        return s.phase === 'plan' && Boolean(s.plan.choice);
+        return s.phase === 'plan' && Boolean(s.plan.choice) && (!incidentOf(s) || Boolean(s.plan.response));
     }
 
     // The result of a battle fought this season, before the settlement, on
@@ -433,6 +474,12 @@
         }
         dc += opt.cohesion || 0;
         if (opt.flag) s.flags[opt.flag] = true;
+        const answer = responseOf(s);
+        if (answer) {
+            dp += answer.peasants || 0; dw += answer.workers || 0; dc += answer.cohesion || 0;
+            if (answer.flag) s.flags[answer.flag] = true;
+            for (const id of answer.bars || []) s.flags['bar:' + id] = true;
+        }
         if (flagsNow.razverstka && !flagsNow.tax) dp -= 3;
         if (flagsNow.market) dp += 2;
         if (flagsNow.tax) dp += 8;
@@ -466,7 +513,7 @@
         if (s.cohesion < SPLIT) notes.push('당이 분열하고 있다. 다음 시기 정치위원이 하나 준다.');
 
         const record = {
-            turn: s.turn, choice: s.plan.choice, history: t.choice.history, fronts,
+            turn: s.turn, choice: s.plan.choice, history: t.choice.history, response: s.plan.response, fronts,
             cards: s.plan.cards.map(c => c.id), supply: fc.supply, notes,
             stats: { peasants: s.peasants, workers: s.workers, cohesion: s.cohesion, grain: s.grain },
         };
@@ -548,7 +595,7 @@
             title: won ? '크림으로 가는 길이 열렸다' : '브란겔이 겨울을 넘긴다',
             text: won
                 ? '유럽 러시아의 백군 저항은 끝났다.'
-                : '페레코프를 넘지 못했다. 역사에서는 11월 11일 유순 방어선이 뚫렸고, 브란겔은 크림을 떠났다.',
+                : '페레코프를 넘지 못했다. 역사에서는 11월 11일 유슌 방어선이 뚫렸고, 브란겔은 크림을 떠났다.',
         };
     }
 
@@ -565,7 +612,7 @@
         return settle(s);
     }
 
-    const ACTIONS = { alloc: setAlloc, commissar: setCommissar, play: playCard, unplay: unplayCard, choose, settle, next, assume: assumeBattle };
+    const ACTIONS = { alloc: setAlloc, commissar: setCommissar, play: playCard, unplay: unplayCard, choose, respond, settle, next, assume: assumeBattle };
 
     function act(s, name, ...args) {
         const fn = name.startsWith('b:') ? null : ACTIONS[name];
@@ -597,6 +644,9 @@
                 // older than the battle, which goes as history did.
                 if (s.phase === 'battle' && !s.battle.def.final && typeof entry[0] === 'string' && !entry[0].startsWith('b:')
                     && act(s, 'assume') && act(s, ...entry)) { if (entry[0] === 'next') season = i + 1; continue; }
+                // A season sent before it had an incident: history's answer.
+                if (entry[0] === 'settle' && s.phase === 'plan' && incidentOf(s) && !s.plan.response
+                    && act(s, 'respond', incidentOf(s).history) && act(s, ...entry)) continue;
                 // Battle orders from an older battlefield stop the replay at
                 // the battle's start; the campaign before it stands.
                 if (typeof entry[0] === 'string' && entry[0].startsWith('b:') && s.phase === 'battle') break;
@@ -612,7 +662,7 @@
 
     const api = {
         DATA, VERSION, MOMENTUM, PURSUIT, start, act, restore, serialize, forecast, activeFronts, turnData,
-        free, allocated, threatsOf, traitsOn, battleOf, musterOf, battleResult, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
+        free, allocated, threatsOf, traitsOn, battleOf, incidentOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.CivilWarGame = api;

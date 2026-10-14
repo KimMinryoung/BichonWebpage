@@ -173,9 +173,10 @@
         renderMap();
         renderFronts(planning);
         for (const id of ['cwCards', 'cwChoice', 'cwCommand']) $(id).hidden = !planning;
+        $('cwIncident').hidden = !planning || !G.incidentOf(s);
         $('cwReview').hidden = planning || unveiling;
         renderUnveil();
-        if (planning) { renderCards(); renderChoice(); renderCommand(); } else renderReview();
+        if (planning) { renderCards(); renderIncident(); renderChoice(); renderCommand(); } else renderReview();
     }
 
     // The season's result on the map alone: the attackers trampled or
@@ -681,7 +682,7 @@
     // Cards aimed at a front (Trotsky's train) are sent from the front's own
     // card: pressing it on another front moves the card there.
     function frontCards(id) {
-        return G.turnData(s).cards.filter(cid => D.cards[cid].target === 'front' && G.cardOffered(s, cid)).map(cid => {
+        return G.turnData(s).cards.filter(cid => D.cards[cid].target === 'front' && G.cardOffered(s, cid) && (!D.cards[cid].fronts || D.cards[cid].fronts.includes(id))).map(cid => {
             const card = D.cards[cid];
             const played = s.plan.cards.find(c => c.id === cid);
             const here = played && played.target === id;
@@ -900,11 +901,32 @@
             }, el('strong', {}, o.label), el('span', {}, o.effect), el('small', {}, `지지: ${o.voices}`)))));
     }
 
+    // The season's incident: what happened, and the answers to it.
+    function renderIncident() {
+        const inc = G.incidentOf(s);
+        if (!inc) return;
+        $('cwIncident').replaceChildren(
+            el('p', { class: 'games-kicker' }, '돌발 사건 · 대응을 하나 고릅니다'),
+            el('h3', { id: 'cwIncidentTitle' }, inc.title),
+            el('p', {}, inc.text, ' ', person(inc.who)),
+            el('div', { class: 'cw-options', role: 'group', 'aria-label': inc.title }, ...inc.options.map(o => el('button', {
+                type: 'button', class: 'cw-option', 'data-key': `respond-${o.id}`, 'aria-pressed': String(s.plan.response === o.id),
+                onclick: () => {
+                    if (!act('respond', o.id)) {
+                        const card = (o.bars || []).map(id => D.cards[id]).find(Boolean);
+                        announce(card && s.plan.cards.some(c => o.bars.includes(c.id)) ? `먼저 「${card.title}」 카드를 거두세요.` : '이미 보낸 사단이 너무 많습니다. 먼저 사단을 빼세요.');
+                    }
+                    render();
+                },
+            }, el('strong', {}, o.label), el('span', {}, o.effect), el('small', {}, `지지: ${o.voices}`)))));
+    }
+
     function renderCommand() {
         const kept = G.free(s);
         const saved = kept - Math.ceil(kept / 2);
         $('cwCommandNote').textContent = `곡물 소비 ${G.forecast(s).supply.need}` + (saved > 0 ? ` (예비 −${saved})` : '');
         $('cwSettle').disabled = !G.canSettle(s);
+        $('cwSettle').title = !s.plan.choice ? '갈림길을 먼저 고르세요' : G.canSettle(s) ? '' : '돌발 사건의 대응을 먼저 고르세요';
         const battle = G.battleOf(s);
         $('cwSettle').textContent = battle ? battle.settle : '이 시기를 보낸다 →';
     }
@@ -947,6 +969,7 @@
             el('h3', { id: 'cwReviewTitle' }, `${t.date}의 결산`),
             r.notes.length ? el('ul', { class: 'cw-notes' }, ...r.notes.map(n => el('li', {}, n))) : null,
             foughtBattle(),
+            incidentHistory(t, r),
             el('div', { class: 'cw-history' },
                 el('p', { class: 'games-kicker' }, '역사에서는'),
                 el('h4', {}, c.title),
@@ -956,6 +979,21 @@
                 el('p', {}, t.after),
                 el('p', { class: 'cw-links' }, ...t.links.map(link))),
             next].filter(Boolean));
+    }
+
+    // The season's incident in the review: the answer given, history's, and
+    // what came of it.
+    function incidentHistory(t, r) {
+        const inc = t.incident;
+        if (!inc || !r.response) return null;
+        const mine = inc.options.find(o => o.id === r.response);
+        const theirs = inc.options.find(o => o.id === inc.history);
+        return el('div', { class: 'cw-history' },
+            el('p', { class: 'games-kicker' }, '돌발 사건'),
+            el('h4', {}, inc.title),
+            el('p', {}, el('strong', {}, `당신: ${mine.label}`), ' · ', el('strong', {}, `역사: ${theirs.label}`), mine === theirs ? ' (같은 대응)' : ''),
+            el('p', {}, inc.after),
+            el('p', { class: 'cw-links' }, ...inc.links.map(link)));
     }
 
     // ── Battle ──
@@ -1325,16 +1363,20 @@
         }));
         const forks = el('table', { class: 'cw-forks' },
             el('thead', {}, el('tr', {}, el('th', { scope: 'col' }, '시기'), el('th', { scope: 'col' }, '갈림길'), el('th', { scope: 'col' }, '당신의 선택'), el('th', { scope: 'col' }, '역사의 선택'))),
-            el('tbody', {}, ...s.records.map(r => {
-                const c = D.turns[r.turn].choice;
-                const mine = c.options.find(o => o.id === r.choice);
-                const theirs = c.options.find(o => o.id === c.history);
-                const same = mine === theirs;
-                return el('tr', { class: same ? 'is-same' : '' },
-                    el('td', { 'data-label': '시기' }, D.turns[r.turn].date),
-                    el('th', { scope: 'row', 'data-label': '갈림길' }, c.title, el('span', { class: 'cw-links' }, ...c.links.map(link))),
-                    el('td', { 'data-label': '당신의 선택' }, el('strong', {}, mine.label), el('small', {}, mine.effect)),
-                    el('td', { 'data-label': '역사의 선택' }, same ? el('span', { class: 'cw-same' }, '같음') : el('strong', {}, theirs.label), same ? null : el('small', {}, theirs.effect)));
+            el('tbody', {}, ...s.records.flatMap(r => {
+                // The season's fork, then its incident if it had one.
+                const inc = D.turns[r.turn].incident;
+                const forks = [[D.turns[r.turn].choice, r.choice]].concat(inc && r.response ? [[inc, r.response]] : []);
+                return forks.map(([c, picked]) => {
+                    const mine = c.options.find(o => o.id === picked);
+                    const theirs = c.options.find(o => o.id === c.history);
+                    const same = mine === theirs;
+                    return el('tr', { class: (same ? 'is-same' : '') + (c === inc ? ' is-incident' : '') },
+                        el('td', { 'data-label': '시기' }, D.turns[r.turn].date),
+                        el('th', { scope: 'row', 'data-label': c === inc ? '돌발 사건' : '갈림길' }, c === inc ? el('small', { class: 'cw-fork-kind' }, '돌발 사건') : null, c.title, el('span', { class: 'cw-links' }, ...c.links.map(link))),
+                        el('td', { 'data-label': '당신의 선택' }, el('strong', {}, mine.label), el('small', {}, mine.effect)),
+                        el('td', { 'data-label': '역사의 선택' }, same ? el('span', { class: 'cw-same' }, '같음') : el('strong', {}, theirs.label), same ? null : el('small', {}, theirs.effect)));
+                });
             })));
         const battles = Object.values(D.battles).filter(def => s.battles[def.id]).map(def => {
             const r = s.battles[def.id];
@@ -1348,7 +1390,7 @@
             el('h3', { class: 'cw-retro-title' }, '시기마다 역사와 비교'),
             el('p', { class: 'cw-note' }, '싸운 전선의 위치를 합해 역사와 견줍니다. 시기를 누르면 전선별 결과가 펼쳐집니다.'),
             seasons,
-            el('h3', { class: 'cw-retro-title' }, '갈림길'),
+            el('h3', { class: 'cw-retro-title' }, '갈림길과 돌발 사건'),
             el('div', { class: 'cw-forks-wrap' }, forks),
             battles.length ? el('h3', { class: 'cw-retro-title' }, '전투') : null,
             battles.length ? el('ul', { class: 'cw-battle-results' }, ...battles) : null,

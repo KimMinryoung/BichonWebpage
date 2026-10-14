@@ -87,7 +87,7 @@
             trait: { name: '철도 위의 군단', motion: 'rail', when: 'train', is: false, by: 2, rule: '장갑열차가 이 전선에 없으면 압력 +2', text: '군단은 열차를 집 삼아 시베리아 횡단철도를 따라 싸웠다. 철도를 쥔 쪽이 볼가를 쥐었다. 장갑열차로 철도를 되찾아야 한다.' },
         },
         komuch: {
-            name: '코무치 인민군', short: '코무치', kind: 'white',
+            name: '코무치 인민군', short: '코무치', kind: 'white', link: T('komuch'),
             note: '사마라에 선 사회혁명당 계열 제헌의회 의원 위원회(코무치)의 군대. 9월 옴스크의 디렉토리로 합쳐졌다가 11월 콜차크의 쿠데타로 밀려났다.',
             trait: { name: '제헌의회의 깃발', motion: 'march', when: 'workers', below: 55, by: 2, rule: '노동자 지지가 55 아래면 압력 +2', text: '사회혁명당의 코무치는 「모든 권력을 제헌의회로」를 내걸었다. 1918년 8월 이젭스크·봇킨스크의 무기 공장 노동자가 소비에트에 맞서 일어나 인민군에 합류했다. 노동자가 등을 돌리면 그들이 코무치 편에 선다.' },
         },
@@ -97,17 +97,17 @@
             trait: { name: '시베리아의 파르티잔', motion: 'march', when: 'peasants', below: 45, by: 2, rule: '농민 지지가 45 아래면 압력 +2', text: '콜차크 정부의 징병과 징발에 시베리아 농민이 들고일어나, 철도 뒤에서 파르티잔이 백군을 흔들었다. 붉은 군대의 징발이 그만큼 가혹해지면 농민은 어느 편도 들지 않는다.' },
         },
         don: {
-            name: '돈 카자크군', short: '돈 카자크', kind: 'white', flag: ['#0033a0', '#ffd500', '#d52b1e'], link: P('pyotr-krasnov'),
+            name: '돈 카자크군', short: '돈 카자크', kind: 'white', flag: ['#0033a0', '#ffd500', '#d52b1e'], link: T('don-republic'),
             note: '아타만 크라스노프가 이끈 돈 카자크의 군대. 1918년에는 우크라이나를 점령한 독일의 지원을 받았다. 깃발은 돈 공화국의 파란색·노란색·빨간색.',
             trait: { name: '카자크 기병의 습격', motion: 'charge', when: 'reserve', at: 2, by: -2, rule: '예비 사단을 2개 이상 남기면 압력 −2', text: '카자크 기병은 전선의 틈을 뚫고 후방의 철도와 창고를 휘저었다. 1919년 8월 마몬토프의 기병군단은 탐보프까지 들어왔다. 뒤에 남긴 예비 사단이 습격을 막는다.' },
         },
         denikin: {
-            name: '남러시아군(데니킨)', short: '데니킨', kind: 'white', flag: TRICOLOR, link: P('anton-denikin'),
+            name: '남러시아군(데니킨)', short: '데니킨', kind: 'white', flag: TRICOLOR, link: T('armed-forces-of-south-russia'),
             note: '코르닐로프가 세운 의용군에 돈·쿠반 카자크군을 묶은 데니킨의 군대. 1919년 여름 「모스크바 지령」으로 북진했다.',
             trait: { name: '장교 연대', motion: 'charge', when: 'commissar', is: false, by: 2, rule: '정치위원이 없는 전선이면 압력 +2', text: '코르닐로프·마르코프·드로즈돕스키 연대는 장교로만 채운 의용군의 정예였다. 정치위원 없이 맞선 징집 사단은 그 앞에서 흩어졌다.' },
         },
         yudenich: {
-            name: '북서군(유데니치)', short: '유데니치', kind: 'white', flag: TRICOLOR, link: P('nikolai-yudenich'),
+            name: '북서군(유데니치)', short: '유데니치', kind: 'white', flag: TRICOLOR, link: T('north-western-army-white'),
             note: '에스토니아를 발판으로 페트로그라드를 노린 유데니치 장군의 백군.',
             trait: { name: '페트로그라드 기습', motion: 'charge', when: 'workers', below: 50, by: 2, rule: '노동자 지지가 50 아래면 압력 +2', text: '유데니치는 영국이 준 전차 여섯 대를 앞세워 풀코보 고지까지 왔다. 도시를 지킨 것은 거리에 바리케이드를 쌓은 페트로그라드 노동자였다.' },
         },
@@ -117,7 +117,7 @@
             trait: { name: '지친 원정군', motion: 'sail', when: 'commissar', is: true, by: -1, rule: '정치위원이 있으면 압력 −1', text: '세계대전을 마친 영국·미국·프랑스 병사들은 남의 나라 내전에 머물 생각이 없었다. 볼셰비키의 외국어 전단이 병영에 돌았고, 1919년 봄 반란과 명령 거부가 잇따랐다.' },
         },
         north: {
-            name: '북부 정부군', short: '북부 정부', kind: 'white', flag: TRICOLOR, link: P('yevgeny-miller'),
+            name: '북부 정부군', short: '북부 정부', kind: 'white', flag: TRICOLOR, link: T('northern-region-government'),
             note: '영국군이 떠난 뒤 밀러 장군이 이끈 아르한겔스크의 백군.',
             trait: { name: '버려진 정부', motion: 'march', when: 'commissar', is: true, by: -2, rule: '정치위원이 있으면 압력 −2', text: '영국군이 떠나자 북부 정부군 병사들이 장교를 버리고 붉은 군대로 넘어왔다. 1920년 2월 밀러는 배로 달아났다.' },
         },
@@ -152,8 +152,8 @@
             note: '옛 제국군의 라트비아 소총병 연대들로 1918년 4월 만든 사단. 내전 초기 붉은 군대에서 가장 믿을 만한 부대였다.',
         },
         baltic: {
-            name: '라트비아·에스토니아 소총사단', link: T('red-army'),
-            note: '1919년 10월 오룔 반격의 충격군. 의용군의 정예 사단들을 측면에서 쳤다.',
+            name: '라트비아·에스토니아 소총사단', link: T('orel-kromy-operation'),
+            note: '1919년 10월 오룔 반격의 주력. 라트비아 소총사단이 충격군의 중심이 되어 의용군의 측면을 쳤고, 뒤이어 투입된 에스토니아 소총사단이 10월 20일 오룔에 들어갔다.',
         },
         guards: {
             name: '노동자 분견대·적위대', link: T('red-guards'),
@@ -176,7 +176,7 @@
             note: '1918년 6월 볼가·우랄에서 시작한 징집으로 만든 사단. 구 장교가 지휘하고 정치위원이 감시했다.',
         },
         cavalry: {
-            name: '붉은 기병', link: P('semyon-budyonny'),
+            name: '붉은 기병', link: T('first-cavalry-army'),
             note: '돈의 부됸니가 키운 기병. 1919년 기병군단, 그해 11월 제1기병군이 된다.',
         },
     };
@@ -196,6 +196,7 @@
             turns: [0, 1, 2, 3, 4, 5, 6],
             text: '전쟁인민위원의 열차가 위기의 전선으로 달려간다. 인쇄소·전신국·예비 무기와 함께 도망친 부대를 다시 세운다.',
             note: '트로츠키는 내전 동안 이 열차로 10만 킬로미터 넘게 전선을 돌았다.',
+            link: ['트로츠키의 열차', T('trotsky-train')],
         },
         requisition: {
             title: '식량 징발대 파견', advisor: ['블라디미르 레닌', 'lenin'], cost: 1, grain: 5, peasants: -4,
@@ -236,6 +237,12 @@
             text: '부됸니의 기병군단을 군으로 키운다. 보병 두 개 사단 몫을 떼어 주면, 이후 남부·크림·남서 전선에서 늘 +4의 타격력을 낸다.',
             note: '1919년 11월 창설. 백군 기병의 기동에 처음으로 같은 무기로 맞섰다.',
         },
+        mironov: {
+            title: '미로노프의 제2기병군', advisor: ['필리프 미로노프', 'filipp-mironov'], cost: 1, target: 'front', fronts: ['crimea'], requires: 'mironov', bonus: 3,
+            turns: [6],
+            text: '사면받은 미로노프가 이끄는 제2기병군. 10월 북타브리아에서 브란겔의 기병을 깨뜨렸다. 크림 방면에만 보낼 수 있고, 보내면 페레코프 전투에 합류한다.',
+            note: '1919년 미로노프를 사면했을 때만 나온다.',
+        },
     };
 
     // One season each. threats: the active fronts and what the enemy brings.
@@ -254,6 +261,17 @@
                 north: { pressure: 1, foes: ['allies'], text: '연합군 함대가 아르한겔스크 앞바다에 나타났다.' },
             },
             cards: ['train', 'requisition', 'kombedy'],
+            incident: {
+                id: 'leftsr', title: '좌파 사회혁명당의 봉기', who: ['마리야 스피리도노바', 'maria-spiridonova'],
+                text: '7월 6일 좌파 사회혁명당원 블륨킨이 독일 대사 미르바흐를 암살하고, 당 지도부가 모스크바에서 봉기했다. 브레스트 강화와 마을의 식량 징발에 맞선 봉기였다. 10일에는 동부전선 사령관 무라비요프가 심비르스크에서 독일과의 전쟁 재개를 외치며 반기를 들었다. 소비에트 정권의 마지막 연정 상대를 어떻게 할 것인가?',
+                options: [
+                    { id: 'purge', label: '봉기를 진압하고 좌파 사회혁명당을 소비에트에서 몰아낸다', peasants: -2, effect: '농민 지지 −2. 농민의 당을 잃는다', voices: '레닌, 스베르들로프' },
+                    { id: 'coalition', label: '주모자만 처벌하고 농민 대표와의 연정을 살린다', cohesion: -3, peasants: 3, bars: ['kombedy'], effect: '농민 지지 +3, 당 결속 −3. 연정 상대가 반대하는 빈농위원회 카드를 1918년 내내 쓸 수 없다', voices: '좌파 사회혁명당 안의 온건파' },
+                ],
+                history: 'purge',
+                after: '라트비아 소총병이 이틀 만에 봉기를 진압했고, 무라비요프는 11일 심비르스크에서 체포되던 중 사살되었다. 좌파 사회혁명당은 소비에트에서 쫓겨났고, 소비에트 정권은 볼셰비키 한 당의 정부가 되었다.',
+                links: [['좌파 사회혁명당 봉기', T('left-sr-uprising-1918')], ['미하일 무라비요프', P('mikhail-muravyov')]],
+            },
             choice: {
                 title: '누가 군대를 지휘하는가', who: ['레프 트로츠키', 'trotsky'],
                 text: '3월에 전쟁인민위원이 된 트로츠키가 제안한다. 차르 군대의 장교 수만 명을 「군사전문가」로 다시 부르고, 명령마다 정치위원이 함께 서명하게 하자. 많은 볼셰비키는 반대한다. 혁명을 짓밟은 장교에게 혁명의 군대를 맡기느냐고.',
@@ -266,7 +284,7 @@
                 links: [['군사 반대파', T('military-opposition')], ['정치위원', T('political-commissar')]],
             },
             after: '8월 7일 카펠의 부대가 카잔과 제정의 금 보유고를 빼앗았다. 사마라·심비르스크·우파·예카테린부르크가 이미 넘어갔고, 8월 2일 연합군이 아르한겔스크에 상륙했다. 차리친은 크라스노프의 첫 공격을 막아 냈다.',
-            links: [['체코슬로바키아 군단', T('czechoslovak-legion')], ['러시아 내전', E('civil-war')]],
+            links: [['체코슬로바키아 군단', T('czechoslovak-legion')], ['코무치', T('komuch')], ['얼음 행군', T('ice-march-1918')], ['러시아 내전', E('civil-war')]],
         },
         {
             id: 'volga', date: '1918년 9–12월', end: [1918, 12], title: '스비야시스크에서 차리친까지',
@@ -292,7 +310,7 @@
                 links: [['식량 할당제', T('prodrazvyorstka')], ['전시 공산주의', T('war-communism')]],
             },
             after: '9월 10일 카잔, 12일 심비르스크, 10월 7일 사마라를 되찾았다. 붉은 군대의 첫 승리였다. 12월 31일에는 우파도 탈환했다. 차리친은 세 차례 공격을 모두 버텼고, 독일군이 떠난 자리로 붉은 군대가 들어가 1919년 1월 초 리가와 빌뉴스, 하리코프에 이르렀다.',
-            links: [['적색 테러', T('red-terror')], ['야코프 스베르들로프', P('sverdlov')]],
+            links: [['카잔 작전', T('kazan-operation-1918')], ['차리친 방어', T('defence-of-tsaritsyn')], ['공화국 혁명군사평의회', T('revvoensovet')], ['적색 테러', T('red-terror')]],
         },
         {
             id: 'kolchak', date: '1919년 1–4월', end: [1919, 4], title: '콜차크의 춘계 공세',
@@ -302,11 +320,22 @@
                 '돈에서는 3월 베셴스카야의 카자크가 붉은 군대 후방에서 봉기했다. 남쪽의 데니킨은 쿠반과 북캅카스를 손에 넣고 북쪽을 바라본다.',
             ],
             threats: {
-                east: { pressure: 10, foes: ['kolchak'], text: '콜차크의 서부군이 볼가로 진격한다. 사마라와 카잔이 위험하다.', who: ['알렉산드르 콜차크', 'alexander-kolchak'] },
+                east: { pressure: 10, foes: ['kolchak'], text: '한진의 서부군이 볼가로 진격한다. 사마라와 카잔이 위험하다.', who: ['미하일 한진', 'mikhail-hanzhin'] },
                 south: { pressure: 6, foes: ['don', 'denikin'], text: '돈 카자크의 봉기가 남부전선의 후방을 흔든다.', who: ['안톤 데니킨', 'anton-denikin'] },
                 volga: { pressure: 4, foes: ['don'], text: '차리친 앞의 돈군은 아직 물러서지 않았다.' },
             },
             cards: ['train', 'requisition', 'cheka', 'propaganda', 'amnesty'],
+            incident: {
+                id: 'decossack', title: '탈카자크화 지령', who: ['야코프 스베르들로프', 'sverdlov'],
+                text: '1월 24일 당 중앙위원회 조직국이 돈과 쿠반의 부유한 카자크와 백군에 가담한 카자크를 가차 없이 없애라는 비밀 지령을 내렸다. 붉은 군대가 들어간 돈 북부에서 혁명재판소의 처형이 시작되었다. 붉은 카자크 지휘관 미로노프 같은 이들은 이 지령이 중립을 지키던 카자크까지 백군 편으로 몰아낸다고 경고한다.',
+                options: [
+                    { id: 'enforce', label: '지령대로 집행한다', effect: '역사대로. 3월 돈 북부의 봉기가 남부전선을 흔든다', voices: '조직국, 남부전선 혁명군사회의의 다수' },
+                    { id: 'suspend', label: '지령을 거두고 중립 카자크를 끌어들인다', cohesion: -3, pressure: { south: -3 }, effect: '이번 시기 남부 압력 −3(봉기가 작아진다), 당 결속 −3', voices: '미로노프, 소콜니코프' },
+                ],
+                history: 'enforce',
+                after: '3월 11일 뵤셴스카야 스타니차에서 봉기가 일어나 붉은 군대의 후방을 끊었다. 중앙위원회는 3월 16일 지령을 멈췄지만, 봉기한 카자크는 6월 데니킨군과 합류할 때까지 버텼고 남부전선이 무너지는 길을 열었다.',
+                links: [['탈카자크화', T('decossackization')], ['뵤셴스카야 봉기', T('vyoshenskaya-uprising')]],
+            },
             choice: {
                 title: '콜차크의 늘어진 측면', who: ['미하일 프룬제', 'frunze'],
                 text: '남부집단군을 맡은 프룬제가 말한다. 콜차크의 진격로는 너무 길게 늘어졌다. 지금 정면에 병력을 쏟지 말고 부줄루크 남쪽에 모아 두었다가, 4월 말 그 측면을 찌르자. 그동안 정면은 더 밀릴 것이다.',
@@ -335,6 +364,17 @@
                 northwest: { pressure: 4, foes: ['yudenich'], text: '유데니치의 북서군이 얌부르크로 온다.', who: ['니콜라이 유데니치', 'nikolai-yudenich'] },
             },
             cards: ['train', 'requisition', 'cheka', 'amnesty', 'propaganda'],
+            incident: {
+                id: 'hungary', title: '헝가리로 갈 것인가', who: ['니키포르 그리고리예프', 'nykyfor-hryhoriv'],
+                text: '3월 21일 헝가리에 평의회 공화국이 섰다. 붉은 군대 우크라이나 전선은 베사라비아로 나아가 헝가리 평의회 공화국을 도우려 했다. 그런데 이 원정에 나설 아타만 그리고리예프의 사단이 5월 초 미콜라이우와 예카테리노슬라프 사이를 차지하고, 8일 「우니베르살」을 내 소비에트 정권에 반기를 들었다.',
+                options: [
+                    { id: 'crush', label: '원정을 미루고 그리고리예프부터 진압한다', effect: '역사대로', voices: '우크라이나 전선 사령부' },
+                    { id: 'hungary', label: '봉기는 남은 병력에 맡기고 헝가리로 간다', divisions: -2, workers: 3, cohesion: 2, pressure: { south: 2 }, effect: '이번 시기 사단 −2, 남부 압력 +2(그리고리예프 봉기), 노동자 지지 +3, 당 결속 +2', voices: '헝가리 평의회 공화국의 구원 요청' },
+                ],
+                history: 'crush',
+                after: '그리고리예프의 봉기는 5월 말 진압되었고, 그는 7월 마흐노의 부대에 살해되었다. 그러나 봉기로 우크라이나 전선이 무너져 데니킨군에게 돈바스를 내주었고, 베사라비아로 가는 원정은 끝내 떠나지 못했다. 헝가리 평의회 공화국은 8월 1일 무너졌다.',
+                links: [['니키포르 그리고리예프', P('nykyfor-hryhoriv')], ['헝가리 평의회 공화국', E('hungarian-soviet-republic-1919')]],
+            },
             choice: {
                 title: '우랄 너머로, 아니면 남쪽으로', who: ['세르게이 카메네프', 'sergey-kamenev'],
                 text: '총사령관 바치에티스와 트로츠키는 우랄에서 멈추고 동부의 사단을 위기의 남부로 돌리자고 한다. 동부전선 사령관 카메네프는 지금 멈추면 콜차크가 겨울 동안 다시 일어선다며 끝까지 추격하자고 한다.',
@@ -347,22 +387,33 @@
                 links: [['세르게이 카메네프', P('sergey-kamenev')], ['유쿰스 바치에티스', P('ioakim-vatsetis')]],
             },
             after: '6월 9일 우파, 7월 14일 예카테린부르크를 되찾았다. 남쪽에서는 하리코프와 차리친이 넘어갔고, 북서에서는 유데니치가 얌부르크를 차지했다.',
-            links: [['안톤 데니킨', P('anton-denikin')], ['니콜라이 유데니치', P('nikolai-yudenich')]],
+            links: [['모스크바 지령', T('moscow-directive')], ['크라스나야 고르카 반란', T('krasnaya-gorka-mutiny')], ['안톤 데니킨', P('anton-denikin')], ['니콜라이 유데니치', P('nikolai-yudenich')]],
         },
         {
             id: 'orel', date: '1919년 8–10월', end: [1919, 10], title: '위기의 정점: 오룔과 페트로그라드',
-            mobilize: 16, commissars: 3, army: [['conscripts', 12], ['baltic', 2], ['cavalry', 2]], phase: 3,
+            mobilize: 16, commissars: 3, army: [['conscripts', 12], ['baltic', 2], ['cavalry', 2]], phase: 3, battle: 'orel',
             brief: [
                 '8월 마몬토프의 기병이 남부전선의 후방을 휩쓸었다. 8월 31일 백군은 키예프에 들어갔고, 9월 20일 쿠르스크가 떨어졌다. 의용군의 정예 사단들이 오룔과 툴라, 그리고 모스크바를 향한다.',
                 '10월, 유데니치가 다시 페트로그라드로 온다. 서쪽에서는 폴란드군이 8월에 민스크를 차지했다. 데니킨의 후방 우크라이나에서는 마흐노의 반란군이 9월 페레고노프카에서 백군을 깨고 보급선을 끊고 있다.',
             ],
             threats: {
-                south: { pressure: 14, foes: ['denikin'], text: '쿠테포프의 제1군단이 오룔로 진격한다. 오룔 다음은 툴라, 툴라 다음은 모스크바다.', who: ['안톤 데니킨', 'anton-denikin'] },
+                south: { pressure: 14, foes: ['denikin'], text: '쿠테포프의 제1군단이 오룔로 진격한다. 오룔 다음은 툴라, 툴라 다음은 모스크바다.', who: ['알렉산드르 쿠테포프', 'alexander-kutepov'] },
                 northwest: { pressure: 6, foes: ['yudenich'], text: '유데니치의 북서군이 가치나를 지나 풀코보 고지로 온다.', who: ['니콜라이 유데니치', 'nikolai-yudenich'] },
                 volga: { pressure: 3, foes: ['denikin'], text: '차리친의 캅카스군은 볼가를 따라 북상하려 한다.' },
                 west: { pressure: 3, foes: ['poland'], text: '폴란드군이 민스크로 진격한다.', who: ['유제프 피우수트스키', 'jozef-pilsudski'] },
             },
             cards: ['train', 'requisition', 'cheka', 'amnesty', 'partyWeek'],
+            incident: {
+                id: 'mironov', title: '미로노프의 무단 출정', who: ['필리프 미로노프', 'filipp-mironov'],
+                text: '8월 말 사란스크에서 돈 카자크 군단을 꾸리던 미로노프가 명령 없이 부대를 이끌고 데니킨과 싸우러 나섰다. 그는 데니킨과 함께 공산당 위원들의 전횡에도 맞서겠다고 선언했다. 9월 부됸니의 기병에게 붙잡힌 그는 10월 5일 발라쇼프의 재판에서 사형을 선고받았다.',
+                options: [
+                    { id: 'pardon', label: '사면하고 다시 쓴다', flag: 'mironov', effect: '1920년 가을 「미로노프의 제2기병군」 카드를 쓸 수 있다', voices: '트로츠키, 전러시아 중앙집행위원회' },
+                    { id: 'execute', label: '본보기로 처형한다', cohesion: 3, effect: '당 결속 +3. 붉은 카자크 지휘관을 잃는다', voices: '군사재판의 판결' },
+                ],
+                history: 'pardon',
+                after: '트로츠키가 처형을 멈추었고, 10월 8일 전러시아 중앙집행위원회가 그를 사면했다. 미로노프는 1920년 입당해 그해 가을 제2기병군을 이끌고 브란겔군 기병을 꺾었다. 그러나 1921년 2월 다시 체포되었고, 4월 2일 부티르카 감옥 마당에서 보초에게 사살되었다. 경위는 밝혀지지 않았다. 1960년 복권되었다.',
+                links: [['필리프 미로노프', P('filipp-mironov')], ['붉은 군대 제1기병군', T('first-cavalry-army')]],
+            },
             choice: {
                 title: '페트로그라드를 내줄 것인가', who: ['레프 트로츠키', 'trotsky'],
                 text: '10월 중순, 남쪽과 북서쪽이 동시에 무너진다. 모스크바를 지키려면 페트로그라드를 내주고 그 병력을 남쪽으로 돌려야 한다는 의견이 나왔다. 트로츠키는 혁명의 도시를 거리마다 지키겠다며 직접 가겠다고 한다.',
@@ -375,7 +426,7 @@
                 links: [['제7군', T('seventh-army-red-army')], ['레프 트로츠키', P('trotsky')]],
             },
             after: '10월 13일 오룔이 떨어졌다가 20일 되찾아졌다. 부됸니의 기병이 보로네시에서 백군 기병을 깨뜨렸다. 10월 20일 유데니치는 페트로그라드 외곽 풀코보 고지에 닿았지만 더 나아가지 못했다.',
-            links: [['마흐노 운동', T('makhnovshchina')], ['세묜 부됸니', P('semyon-budyonny')]],
+            links: [['오룔-크로미 작전', T('orel-kromy-operation')], ['마몬토프 습격', T('mamontov-raid')], ['마흐노 운동', T('makhnovshchina')], ['세묜 부됸니', P('semyon-budyonny')]],
         },
         {
             id: 'counter', date: '1919년 11월–1920년 3월', end: [1920, 3], title: '남쪽으로의 반격',
@@ -403,7 +454,7 @@
                 links: [['신경제정책', T('nep')], ['안토노프 봉기', T('antonovshchina')]],
             },
             after: '1920년 1월 3일 차리친, 8일 로스토프를 되찾았다. 2월 21일 아르한겔스크, 3월 17일 예카테리노다르에 들어갔고, 3월 27일 데니킨군은 노보로시스크에서 배를 타고 크림으로 철수했다. 2월 7일 콜차크는 이르쿠츠크에서 총살되었다.',
-            links: [['알렉산드르 콜차크', P('alexander-kolchak')], ['제1기병군의 부됸니', P('semyon-budyonny')]],
+            links: [['대시베리아 빙상 행군', T('great-siberian-ice-march')], ['노보로시스크 철수', T('novorossiysk-evacuation-1920')], ['붉은 군대 제1기병군', T('first-cavalry-army')], ['알렉산드르 콜차크', P('alexander-kolchak')]],
         },
         {
             id: 'poland', date: '1920년 4–8월', end: [1920, 8], title: '바르샤바로?',
@@ -427,7 +478,7 @@
                 ],
                 history: 'warsaw',
                 after: '붉은 군대는 8월 바르샤바 앞까지 갔지만, 8월 16일 피우수트스키의 반격에 측면이 무너졌다. 폴란드 노동자는 일어서지 않았다. 남서전선은 리비우에 매달려 서부전선을 돕지 못했다. 10월 휴전과 1921년 리가 조약으로 벨라루스와 우크라이나 서부가 폴란드에 넘어갔다.',
-                links: [['커즌선', T('curzon-line')], ['소비에트-폴란드 전쟁', E('soviet-polish-war')]],
+                links: [['커즌선', T('curzon-line')], ['바르샤바 전투 (1920)', T('battle-of-warsaw-1920')], ['소비에트-폴란드 전쟁', E('soviet-polish-war')]],
             },
             after: '6월 12일 키예프를 되찾고 7월 11일 민스크에 들어갔지만, 8월 바르샤바 전투에서 졌다. 남쪽에서는 브란겔이 크림에서 나와 멜리토폴과 북타브리아를 차지했다.',
             links: [['미하일 투하쳅스키', P('tukhachevsky')], ['유제프 피우수트스키', P('jozef-pilsudski')]],
@@ -442,7 +493,7 @@
             threats: {
                 crimea: { pressure: 12, foes: ['wrangel'], text: '브란겔군이 북타브리아에서 크림의 방어선으로 물러난다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
             },
-            cards: ['train', 'requisition', 'cheka'],
+            cards: ['train', 'mironov', 'requisition', 'cheka'],
             choice: {
                 title: '마흐노와 손을 잡을 것인가', who: ['네스토르 마흐노', 'nestor-makhno'],
                 text: '브란겔이 우크라이나 남부로 올라오자 마흐노의 반란군이 다시 협정을 제안한다. 1919년 여름 붉은 군대는 마흐노를 무법자로 선포했었다. 아나키스트를 다시 믿어도 되는가?',
@@ -452,10 +503,10 @@
                 ],
                 history: 'makhno',
                 after: '10월 스타로빌스크에서 협정이 맺어졌고, 카레트니크의 마흐노 부대가 페레코프 작전에 참가해 시바시를 건넜다. 크림이 해방되자 붉은 군대는 11월 26일 마흐노 운동을 공격했고, 카레트니크는 체포되어 총살되었다.',
-                links: [['네스토르 마흐노', P('nestor-makhno')], ['마흐노 운동', T('makhnovshchina')]],
+                links: [['스타로빌스크 협정', T('starobilsk-agreement')], ['세묜 카레트니크', P('semyon-karetnik')], ['네스토르 마흐노', P('nestor-makhno')]],
             },
-            after: '11월 8일 밤 프룬제의 부대가 시바시를 건너 브란겔의 페레코프 방어선을 우회했고, 11일 유순 방어선이 뚫렸다. 브란겔은 11월 13일부터 16일까지 126척의 배에 군인과 민간인 14만 5천 명을 태워 콘스탄티노폴리스로 떠났다.',
-            links: [['미하일 프룬제', P('frunze')], ['표트르 브란겔', P('pyotr-wrangel')]],
+            after: '11월 8일 밤 프룬제의 부대가 시바시를 건너 브란겔의 페레코프 방어선을 우회했고, 11일 유슌 방어선이 뚫렸다. 브란겔은 11월 13일부터 16일까지 126척의 배에 군인과 민간인 14만 5천 명을 태워 콘스탄티노폴리스로 떠났다.',
+            links: [['페레코프-촌가르 작전', T('perekop-chongar-operation')], ['미하일 프룬제', P('frunze')], ['표트르 브란겔', P('pyotr-wrangel')]],
         },
     ];
 
@@ -477,7 +528,7 @@
         settle: '페레코프로 →', open: '페레코프 전투 지휘하기 →', board: '페레코프 전장',
         ford: '시바시', reserveName: '바르보비치 기병군단',
         strikeNote: '백군의 예비대. 붉은 군대가 가장 깊이 들어온 구역(페레코프: 방벽 남쪽, 촌가르: 해협)으로 달려가 그 구역의 가장 약한 붉은 부대를 덮친다. 그 구역의 위협이 사라질 때까지 다른 구역으로 가지 않는다.',
-        legend: [['steppe', '초원'], ['ford', '시바시 여울 (방어 −1, 이동 2)'], ['wall', '터키 방벽 (방어 +3, 이동 3)'], ['yushun', '유순·촌가르 방어선 (방어 +2, 이동 2)'], ['strait', '촌가르 해협 (이동 2)'], ['town', '마을 (방어 +1)']],
+        legend: [['steppe', '초원'], ['ford', '시바시 여울 (방어 −1, 이동 2)'], ['wall', '터키 방벽 (방어 +3, 이동 3)'], ['yushun', '유슌·촌가르 방어선 (방어 +2, 이동 2)'], ['strait', '촌가르 해협 (이동 2)'], ['town', '마을 (방어 +1)']],
         map: [
             '#............',
             '#............',
@@ -492,9 +543,9 @@
             '#.........t..',
             '#............',
         ],
-        goals: [{ at: [9, 3], name: '유순 역' }, { at: [10, 10], name: '잔코이' }],
+        goals: [{ at: [9, 3], name: '유슌 역' }, { at: [10, 10], name: '잔코이' }],
         towns: [['아르먄스크', 5, 1]],
-        places: [['터키 방벽', 3, 0.1], ['시바시', 3, 6], ['리톱스키 반도', 6, 5], ['유순 방어선', 8, 0.1], ['북타브리아', 0, 4], ['촌가르 반도', 2, 9.6], ['촌가르 해협', 6, 9.2], ['크림', 11, 6]],
+        places: [['터키 방벽', 3, 0.1], ['시바시', 3, 6], ['리톱스키 반도', 6, 5], ['유슌 방어선', 8, 0.1], ['북타브리아', 0, 4], ['촌가르 반도', 2, 9.6], ['촌가르 해협', 6, 9.2], ['크림', 11, 6]],
         windTurns: 4,
         turnLimit: 12,
         // A Red unit on dry ground south of a line, within its columns and
@@ -514,7 +565,7 @@
             '~': { name: '시바시 여울', cost: 2, def: -1, ford: true, cls: 'ford' },
             '#': { name: '깊은 물', cost: 99, def: 0, cls: 'deep' },
             W: { name: '터키 방벽', cost: 3, def: 3, fort: 'wall', cls: 'wall' },
-            Y: { name: '유순 방어선', cost: 2, def: 2, fort: 'yushun', cls: 'yushun' },
+            Y: { name: '유슌 방어선', cost: 2, def: 2, fort: 'yushun', cls: 'yushun' },
             C: { name: '촌가르 방어선', cost: 2, def: 2, fort: 'chongar', cls: 'chongar' },
             b: { name: '촌가르 해협', cost: 2, def: 0, cls: 'strait' },
             t: { name: '마을', cost: 1, def: 1, cls: 'town' },
@@ -526,9 +577,10 @@
             { id: 'r6g', tag: '중포', side: 'red', name: '제6군 중포병', kind: 'art', at: [1, 1], hp: 7, atk: 5, def: 1, mv: 2, range: 2, need: 3 },
             { id: 'rcz', tag: '증원', side: 'red', name: '증원 사단', sub: '서부에서 온', kind: 'inf', at: [0, 2], hp: 10, atk: 4, def: 3, mv: 3, flag: 'curzon' },
             { id: 'r15', tag: '15', side: 'red', name: '제15사단', sub: '시바시 도하', kind: 'inf', at: [1, 5], hp: 10, atk: 4, def: 3, mv: 3, lead: true },
-            { id: 'rmk', tag: '마흐노', side: 'red', name: '마흐노 부대', sub: '카레트니크', kind: 'cav', at: [1, 6], hp: 8, atk: 5, def: 2, mv: 5, flag: 'makhno', person: ['네스토르 마흐노', 'nestor-makhno'] },
+            { id: 'rmk', tag: '마흐노', side: 'red', name: '마흐노 부대', sub: '카레트니크', kind: 'cav', at: [1, 6], hp: 8, atk: 5, def: 2, mv: 5, flag: 'makhno', person: ['세묜 카레트니크', 'semyon-karetnik'] },
             { id: 'r52', tag: '52', side: 'red', name: '제52사단', sub: '시바시 도하', kind: 'inf', at: [1, 7], hp: 10, atk: 4, def: 3, mv: 3 },
             { id: 'r1c', tag: '1기병', side: 'red', name: '제1기병군', sub: '부됸니', kind: 'cav', at: [0, 8], hp: 12, atk: 6, def: 2, mv: 5, need: 0, person: ['세묜 부됸니', 'semyon-budyonny'] },
+            { id: 'r2c', tag: '2기병', side: 'red', name: '제2기병군', sub: '미로노프', kind: 'cav', at: [0, 9], hp: 10, atk: 5, def: 2, mv: 5, card: 'mironov', person: ['필리프 미로노프', 'filipp-mironov'] },
             { id: 'r30', tag: '30', side: 'red', name: '제30사단', sub: '제4군', kind: 'inf', at: [1, 11], hp: 10, atk: 4, def: 3, mv: 3 },
             { id: 'r30b', tag: '30여단', side: 'red', name: '제30사단 여단', sub: '제4군', kind: 'inf', at: [1, 12], hp: 10, atk: 4, def: 3, mv: 3, need: 3 },
             { id: 'rtr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', at: [0, 10], hp: 6, atk: 4, def: 2, mv: 2, range: 2, card: 'train' },
@@ -538,22 +590,22 @@
             { id: 'w2b', tag: '수비대', side: 'white', name: '방벽 수비대', kind: 'inf', at: [3, 3], hp: 8, atk: 3, def: 3, mv: 3, role: 'wall', line: 'wall' },
             { id: 'wg', tag: '포대', side: 'white', name: '방벽 포대', kind: 'art', at: [4, 2], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'wall', line: 'wall' },
             { id: 'w3', tag: '쿠반', side: 'white', name: '쿠반 여단', sub: '리톱스키 반도', kind: 'inf', at: [5, 7], hp: 8, atk: 3, def: 2, mv: 3, role: 'hold' },
-            { id: 'w4', tag: '바르보', side: 'white', name: '바르보비치 기병군단', sub: '예비', kind: 'cav', at: [9, 6], hp: 10, atk: 6, def: 2, mv: 5, role: 'strike' },
-            { id: 'w5', tag: '코르닐', side: 'white', name: '코르닐로프 사단', sub: '유순 방어선', kind: 'inf', at: [8, 2], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
-            { id: 'w6', tag: '마르코', side: 'white', name: '마르코프 사단', sub: '유순 방어선', kind: 'inf', at: [8, 5], hp: 9, atk: 4, def: 3, mv: 3, role: 'hold' },
+            { id: 'w4', tag: '바르보', side: 'white', name: '바르보비치 기병군단', sub: '예비', kind: 'cav', at: [9, 6], hp: 10, atk: 6, def: 2, mv: 5, role: 'strike', person: ['이반 바르보비치', 'ivan-barbovich'] },
+            { id: 'w5', tag: '코르닐', side: 'white', name: '코르닐로프 사단', sub: '유슌 방어선', kind: 'inf', at: [8, 2], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
+            { id: 'w6', tag: '마르코', side: 'white', name: '마르코프 사단', sub: '유슌 방어선', kind: 'inf', at: [8, 5], hp: 9, atk: 4, def: 3, mv: 3, role: 'hold' },
             { id: 'wc1', tag: '촌가르', side: 'white', name: '촌가르 수비대', sub: '다리 어귀', kind: 'inf', at: [7, 11], hp: 8, atk: 4, def: 3, mv: 3, role: 'wall', line: 'chongar' },
             { id: 'wc2', tag: '촌가르', side: 'white', name: '촌가르 수비대', sub: '동쪽 진지', kind: 'inf', at: [7, 12], hp: 8, atk: 3, def: 3, mv: 3, role: 'wall', line: 'chongar' },
             { id: 'wcg', tag: '포대', side: 'white', name: '촌가르 포대', kind: 'art', at: [8, 11], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'wall', line: 'chongar' },
         ],
         brief: [
-            '크림으로 들어가는 길은 셋이다. 서쪽 페레코프 지협의 터키 방벽(방어 +3), 그 동쪽 시바시의 얕은 여울, 동쪽 끝의 촌가르 해협이다. 유순 역이나 잔코이에 붉은 군대 부대를 세우면 크림으로 가는 길이 열린다. 12턴이 주어진다.',
-            '포병은 진지(방벽·유순·촌가르) 위의 적을 칠 때마다 그 진지의 방어를 1씩 깎는다. 포격을 거듭하면 정면으로도 방벽을 넘을 수 있지만 시간이 든다. 첫 칸은 비용이 이동력보다 커도 들어갈 수 있어서, 포병도 한 턴에 방벽 한 칸씩 넘는다.',
+            '크림으로 들어가는 길은 셋이다. 서쪽 페레코프 지협의 터키 방벽(방어 +3), 그 동쪽 시바시의 얕은 여울, 동쪽 끝의 촌가르 해협이다. 유슌 역이나 잔코이에 붉은 군대 부대를 세우면 크림으로 가는 길이 열린다. 12턴이 주어진다.',
+            '포병은 진지(방벽·유슌·촌가르) 위의 적을 칠 때마다 그 진지의 방어를 1씩 깎는다. 포격을 거듭하면 정면으로도 방벽을 넘을 수 있지만 시간이 든다. 첫 칸은 비용이 이동력보다 커도 들어갈 수 있어서, 포병도 한 턴에 방벽 한 칸씩 넘는다.',
             '시바시 여울은 이동 비용 2, 방어 −1이다. 4턴이 지나면 바람이 바뀌어 물이 다시 차오른다. 그 뒤로는 여울에 들어갈 수 없고, 여울에 남은 부대는 턴마다 피해를 입는다.',
             '방어선 뒤의 노란 점선 지역에 붉은 부대가 서면 그 방어선은 우회된다. 수비대의 진지 방어는 +1로 줄고, 수비대는 물러날 길을 찾는다.',
             '백군 예비대인 바르보비치 기병군단은 하나뿐이다. 붉은 군대가 가장 깊이 들어온 구역으로 달려가고, 그 구역의 위협이 사라질 때까지 다른 곳으로 가지 않는다. 한쪽에서 먼저 압박해 예비대를 끌어낸 뒤 다른 쪽을 칠 수 있다.',
             '적과 맞닿은 칸에 들어가면 그 턴의 이동은 끝난다. 한 적을 여럿이 둘러싸고 치면 둘러싼 부대마다 피해가 1씩 늘어난다.',
         ],
-        history: '11월 8일 새벽 제51사단의 방벽 정면 공격은 철조망과 기관총 앞에서 막혔다. 같은 날 밤 제15·52사단과 마흐노 부대가 현지 주민의 안내로 시바시를 건너 리톱스키 반도에 올랐고, 바르보비치 기병의 반격을 버텼다. 퇴로를 위협받은 백군은 9일 새벽 방벽을 버렸다. 11일 유순 방어선이 뚫렸고, 같은 날 밤 제4군의 제30사단이 촌가르 진지를 돌파했다. 붉은 기병이 그 뒤를 따라 크림으로 들어갔다.',
+        history: '11월 8일 새벽 제51사단의 방벽 정면 공격은 철조망과 기관총 앞에서 막혔다. 같은 날 밤 제15·52사단과 마흐노 부대가 현지 주민의 안내로 시바시를 건너 리톱스키 반도에 올랐고, 바르보비치 기병의 반격을 버텼다. 퇴로를 위협받은 백군은 9일 새벽 방벽을 버렸다. 11일 유슌 방어선이 뚫렸고, 같은 날 밤 제4군의 제30사단이 촌가르 진지를 돌파했다. 붉은 기병이 그 뒤를 따라 크림으로 들어갔다.',
     };
 
     const epilogue = {
@@ -612,7 +664,7 @@
             { id: 'k5g', tag: '5군포', side: 'red', name: '제5군 포병', kind: 'art', at: [6, 1], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
             { id: 'kfl', tag: '소함대', side: 'red', name: '볼가 소함대', sub: '라스콜니코프', kind: 'art', naval: true, at: [4, 3], hp: 8, atk: 4, def: 2, mv: 4, range: 2, person: ['표도르 라스콜니코프', 'fyodor-raskolnikov'] },
             { id: 'ksl', tag: '수병', side: 'red', name: '발트함대 수병 분견대', sub: '모스크바에서 온', kind: 'inf', at: [7, 3], hp: 9, atk: 5, def: 2, mv: 3, need: 0 },
-            { id: 'k2a', tag: '2군', side: 'red', name: '제2군 소총사단', sub: '아르스크 방면', kind: 'inf', at: [1, 11], hp: 10, atk: 5, def: 3, mv: 3, need: 3 },
+            { id: 'k2a', tag: '2군', side: 'red', name: '제2군 소총사단', sub: '아진', kind: 'inf', at: [1, 11], hp: 10, atk: 5, def: 3, mv: 3, need: 3, person: ['블라디미르 아진', 'vladimir-azin'] },
             { id: 'kcp', tag: '당원', side: 'red', name: '공산당원·사관생도 분견대', sub: '모스크바에서 온', kind: 'inf', at: [7, 1], hp: 8, atk: 4, def: 3, mv: 3, need: 6 },
             { id: 'ktr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', at: [5, 1], hp: 6, atk: 4, def: 2, mv: 2, range: 2, card: 'train', person: ['레프 트로츠키', 'trotsky'] },
             { id: 'wk1', tag: '인민군', side: 'white', name: '코무치 인민군', sub: '크렘린 수비', kind: 'inf', at: [2, 7], hp: 8, atk: 4, def: 2, mv: 3, role: 'hold' },
@@ -631,7 +683,78 @@
         history: '8월 말 카펠의 기습이 스비야시스크 코앞까지 닿았지만 사령부는 버텼다. 트로츠키는 모스크바에서 공산당원과 사관생도, 발트함대 수병을 끌어와 부대를 채웠고, 라스콜니코프의 볼가 소함대가 카잔의 백군 함정을 쳤다. 9월 10일 제5군과 볼가 소함대가 카잔을 되찾았다.',
     };
 
-    const battles = { kazan, perekop };
+    // Orel, 11–20 October 1919: Kutepov's corps has taken Orel and its
+    // Kornilov shock regiment rides for Mtsensk on the road to Tula, while
+    // the Latvian and Estonian shock group gathers west of the city against
+    // its flank. Rows run north (Mtsensk, the 13th Army) to south (Kromy).
+    // Terrain: . field, f wood, O the city of Orel (held as a position),
+    // K Kromy, M Mtsensk.
+    const orel = {
+        id: 'orel', front: 'south', final: false,
+        title: '오룔 반격', date: '1919년 10월 11–20일',
+        settle: '오룔로 →', board: '오룔 전장',
+        strikeNote: '',
+        raidNote: '코르닐로프 충격연대. 툴라로 가는 길목 므첸스크로 달려간다. 붉은 부대 곁에서 멈추지 않고 지나치며, 더 다가갈 수 없을 때만 막아선 부대를 친다. 므첸스크에 백군이 들어서면 진다.',
+        legend: [['steppe', '들판'], ['forest', '숲 (방어 +1, 이동 2)'], ['city', '오룔 시가 (방어 +3, 포격으로 깎임)'], ['town', '크로미·므첸스크 (방어 +1)']],
+        reward: { quick: 6, quickBy: 3, lostBy: -6 },
+        map: [
+            'ff......f.M.',
+            'f..........f',
+            'f....f......',
+            '.....OOO....',
+            'ff...OOO..f.',
+            'f...........',
+            '.K....ff....',
+            'ff..........',
+            '...f......ff',
+        ],
+        goals: [{ at: [4, 6], name: '오룔 역' }],
+        protect: { at: [0, 10], name: '므첸스크' },
+        towns: [['므첸스크', 0, 10], ['크로미', 6, 1]],
+        places: [['툴라 방면', 0, 4.5], ['오룔', 2.4, 6.2], ['크로미', 7, 0.2], ['쿠르스크 방면', 8, 5]],
+        turnLimit: 8,
+        // A Red unit south-east of the city cuts the road to Kursk behind
+        // it, and the garrison's position falls to a trench; the garrison
+        // holds on regardless (role hold), as the Kornilov division did.
+        lines: {
+            orel: { name: '오룔 수비', row: 4, until: 8, cols: [5, 9], label: [7, 5.1], fallback: [8, 6] },
+        },
+        sectors: {},
+        terrain: {
+            '.': { name: '들판', cost: 1, def: 0, cls: 'steppe' },
+            f: { name: '숲', cost: 2, def: 1, cls: 'forest' },
+            O: { name: '오룔 시가', cost: 1, def: 3, fort: 'orel', cls: 'city' },
+            K: { name: '크로미', cost: 1, def: 1, cls: 'town' },
+            M: { name: '므첸스크', cost: 1, def: 1, cls: 'town' },
+        },
+        units: [
+            { id: 'ol1', tag: '라트비아', side: 'red', name: '라트비아 소총사단', sub: '충격군', kind: 'inf', at: [3, 1], hp: 10, atk: 5, def: 3, mv: 3, lead: true },
+            { id: 'oes', tag: '파블로프', side: 'red', name: '파블로프 소총여단', sub: '충격군', kind: 'inf', at: [5, 1], hp: 9, atk: 5, def: 3, mv: 3 },
+            { id: 'opr', tag: '붉은카자크', side: 'red', name: '붉은 카자크 여단', sub: '프리마코프', kind: 'cav', at: [2, 2], hp: 8, atk: 5, def: 2, mv: 5, person: ['비탈리 프리마코프', 'vitaly-primakov'] },
+            { id: 'o13a', tag: '9사단', side: 'red', name: '제9소총사단', sub: '제13군', kind: 'inf', at: [1, 6], hp: 10, atk: 4, def: 3, mv: 3 },
+            { id: 'o13b', tag: '13군', side: 'red', name: '제13군 소총사단', sub: '므첸스크 수비', kind: 'inf', at: [0, 10], hp: 9, atk: 4, def: 3, mv: 3 },
+            { id: 'o13g', tag: '13군포', side: 'red', name: '제13군 포병', kind: 'art', at: [1, 7], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
+            { id: 'opv', tag: '에스토니아', side: 'red', name: '에스토니아 소총사단', sub: '17일 투입', kind: 'inf', at: [2, 5], hp: 9, atk: 4, def: 3, mv: 3, need: 3 },
+            { id: 'otw', tag: '툴라', side: 'red', name: '툴라 노동자 연대', sub: '당 주간의 입당자', kind: 'inf', at: [0, 7], hp: 8, atk: 4, def: 3, mv: 3, need: 6 },
+            { id: 'otr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', at: [2, 4], hp: 6, atk: 4, def: 2, mv: 2, range: 2, card: 'train', person: ['레프 트로츠키', 'trotsky'] },
+            { id: 'wo1', tag: '코르닐', side: 'white', name: '코르닐로프 연대', sub: '오룔 수비', kind: 'inf', at: [3, 6], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
+            { id: 'wo2', tag: '코르닐', side: 'white', name: '코르닐로프 연대', sub: '오룔 역', kind: 'inf', at: [4, 6], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
+            { id: 'wob', tag: '포대', side: 'white', name: '오룔 포대', kind: 'art', at: [4, 7], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'hold' },
+            { id: 'wok', tag: '충격', side: 'white', name: '코르닐로프 충격연대', sub: '므첸스크로', kind: 'inf', at: [3, 9], hp: 9, atk: 5, def: 2, mv: 4, role: 'raid' },
+            { id: 'wd1', tag: '드로즈', side: 'white', name: '드로즈돕스키 연대', sub: '크로미 길', kind: 'inf', at: [5, 3], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
+            { id: 'wd2', tag: '드로즈', side: 'white', name: '드로즈돕스키 연대', sub: '크로미', kind: 'inf', at: [6, 1], hp: 8, atk: 4, def: 3, mv: 3, role: 'hold' },
+        ],
+        brief: [
+            '10월 13일 쿠테포프의 제1군단이 오룔을 차지했다. 코르닐로프 충격연대가 툴라로 가는 길목 므첸스크로 향한다. 그 서쪽에는 라트비아 소총사단과 파블로프 소총여단, 프리마코프의 붉은 카자크로 꾸린 충격군이 모였다. 북쪽에서는 제13군이 므첸스크 앞을 막고, 새로 온 에스토니아 소총사단이 뒤를 받친다.',
+            '오룔 역에 붉은 군대 부대를 세우면 오룔을 되찾는다. 8턴이 주어진다. 6턴 안에 되찾으면 남부전선이 한 도시 더 나아가고, 되찾지 못하면 이 시기 남부전선의 전투력이 6 준다.',
+            '오룔 시가는 진지다(방어 +3). 포병의 포격으로 깎이고, 붉은 부대가 오룔 남동쪽의 노란 점선 지역에 서면 쿠르스크로 가는 퇴로가 끊겨 +1로 줄어든다. 정면으로 치기 전에 크로미 길로 돌아가 퇴로를 끊는 것이 충격군의 일이다.',
+            '코르닐로프 충격연대가 므첸스크로 온다. 충격연대는 붉은 부대 곁을 멈추지 않고 지나친다. 므첸스크에 백군이 들어서면 지므로, 그 칸에 부대 하나를 남겨 두어야 한다.',
+            '적과 맞닿은 칸에 들어가면 그 턴의 이동은 끝난다. 한 적을 여럿이 둘러싸고 치면 둘러싼 부대마다 피해가 1씩 늘어난다.',
+        ],
+        history: '10월 11일 충격군이 오룔 서쪽에서 의용군의 측면을 쳐 15일 크로미에서 드로즈돕스키 연대들을 밀어냈다. 제13군이 므첸스크 앞에서 코르닐로프 연대들을 붙잡는 사이 충격군이 남쪽에서 퇴로를 위협했고, 코르닐로프 연대들은 19일 밤 오룔을 버렸다. 20일 에스토니아 소총사단과 제9소총사단이 오룔에 들어갔다. 크로미는 23일 백군에게 다시 넘어갔다가 26일 라트비아 소총병이 되찾았다. 의용군의 정예 연대들은 다시는 모스크바를 향하지 못했다.',
+    };
+
+    const battles = { kazan, orel, perekop };
     const data = { factions, troops, fronts, frontOrder, moscow, startLines, cards, turns, battles, epilogue };
     if (typeof module === 'object' && module.exports) module.exports = data;
     else root.CivilWarData = data;

@@ -328,8 +328,10 @@
 .games-shell .cw-card button, .games-shell .cw-card select { padding: 8px 10px; font-size: .85rem; }
 .cw-card-target select { flex: 1 1 120px; }
 
-/* Dilemma */
+/* Dilemma, and the season's incident (a darker rim: something that
+   happened, not a policy) */
 .cw-choice { border-left: 4px solid var(--cw-red); }
+.cw-incident { border-left-color: var(--cw-ink); }
 .cw-choice h3 { font-size: 1.25rem; margin: 6px 0 8px; }
 .cw-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-top: 12px; }
 .games-shell .cw-option { text-align: left; display: grid; gap: 6px; padding: 14px; }
@@ -484,6 +486,7 @@
 .cw-forks tbody th .cw-links a { margin-right: 8px; }
 .cw-forks tr:not(.is-same) td:nth-child(3) strong { color: var(--clr-red); }
 .cw-same { color: var(--text-secondary); }
+.cw-forks .cw-fork-kind { display: block; font-weight: 400; font-size: .72rem; color: var(--text-secondary); }
 .cw-battle-results { margin: 6px 0 0; padding-left: 1.2rem; font-size: .9rem; display: grid; gap: 4px; }
 .cw-support { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-bottom: 18px; }
 .cw-support figure { margin: 0; }
