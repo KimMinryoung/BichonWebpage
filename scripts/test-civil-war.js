@@ -99,6 +99,8 @@ const hist = campaign(historical);
 assert.equal(hist.phase, 'battle');
 assert.equal(hist.records.length, D.turns.length);
 assert.equal(sumDiff(hist), 0, 'the historical campaign matches history city for city');
+assert.equal(hist.battles.kazan.result, 'won', "history's plan takes Kazan");
+assert.ok(hist.battles.kazan.turns > D.battles.kazan.reward.quick, 'as history did, not sooner');
 for (const r of hist.records) {
     for (const [id, f] of Object.entries(r.fronts)) assert.equal(f.after, f.history, `${D.turns[r.turn].id} ${id}`);
 }
