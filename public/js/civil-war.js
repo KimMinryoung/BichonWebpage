@@ -310,11 +310,6 @@
         let layer = root.querySelector('#cwOverlay');
         if (layer) layer.remove();
         layer = svg('g', { id: 'cwOverlay' });
-        const defs = svg('defs');
-        const head = svg('marker', { id: 'cwArrowHead', viewBox: '0 0 10 10', refX: '8', refY: '5', markerWidth: '6', markerHeight: '6', orient: 'auto-start-reverse' });
-        head.append(svg('path', { d: 'M0 0L10 5L0 10Z', class: 'cw-foe-arrowhead' }));
-        defs.append(head);
-        layer.append(defs);
         const fc = s.phase === 'plan' ? G.forecast(s).fronts : null;
         const results = s.phase === 'plan' ? null : s.records[s.records.length - 1].fronts;
         const active = fc ? G.activeFronts(s) : Object.keys(results);
@@ -513,7 +508,13 @@
             const sy = (ty > 0 ? 8 + rowH : 12) / Math.max(1e-6, Math.abs(ty / tl));
             const from = Math.min(sx, sy);
             const to = Math.max(from + 6, Math.min(tl - 9, from + 40));
-            body.append(svg('line', { x1: x + tx / tl * from, y1: y + ty / tl * from, x2: x + tx / tl * to, y2: y + ty / tl * to, class: 'cw-foe-arrow', 'marker-end': 'url(#cwArrowHead)' }));
+            const ux = tx / tl, uy = ty / tl;
+            const ex = x + ux * to, ey = y + uy * to;
+            body.append(svg('line', { x1: x + ux * from, y1: y + uy * from, x2: ex, y2: ey, class: 'cw-foe-arrow' }));
+            // The head is a shape of the marker's own, not an svg <marker>,
+            // so it fades in and out with the body.
+            const px = ex + ux * 2.6, py = ey + uy * 2.6, bx = px - ux * 13, by = py - uy * 13;
+            body.append(svg('path', { d: `M${px.toFixed(1)} ${py.toFixed(1)}L${(bx - uy * 6.5).toFixed(1)} ${(by + ux * 6.5).toFixed(1)}L${(bx + uy * 6.5).toFixed(1)} ${(by - ux * 6.5).toFixed(1)}Z`, class: 'cw-foe-arrowhead' }));
         }
         body.append(svg('rect', { x: x - w / 2, y: y - 10, width: w, height: 18, class: 'cw-foe-name' }));
         let fx = x - w / 2 + 6;
@@ -530,19 +531,6 @@
         for (let i = 0; i < marks; i++) {
             const mx = x - across / 2 + (i % PER_ROW) * MARK + 0.75, my = y + 10 + Math.floor(i / PER_ROW) * MARK;
             body.append(svg('rect', { x: mx, y: my, width: MARK - 1.5, height: MARK - 1.5, class: 'cw-foe-mark k-' + kind, style: `--m:${i}` }));
-        }
-        // Trampled: the Red side's tread across the marker, from its own city.
-        if (fate === ' is-beaten') {
-            const tread = svg('g', { class: 'cw-tread', 'aria-hidden': 'true' });
-            const ux = -tx / (tl || 1), uy = -ty / (tl || 1);
-            const deg = Math.atan2(uy, ux) * 180 / Math.PI;
-            [-1, 0, 1].forEach((k, i) => {
-                const px = x + ux * k * 10 - uy * (i % 2 ? 5 : -5), py = y + 7 + uy * k * 10 + ux * (i % 2 ? 5 : -5);
-                const at = svg('g', { transform: `translate(${px.toFixed(1)} ${py.toFixed(1)}) rotate(${deg.toFixed(0)})` });
-                at.append(svg('path', { d: 'M-5 -4L2 0L-5 4M0 -4L7 0L0 4', style: `--t:${i}` }));
-                tread.append(at);
-            });
-            g.append(tread);
         }
         if (forecast) g.setAttribute('aria-label', g.getAttribute('aria-label').replace('. 카드로', `, 압력 ${marks}, 전투력 ${forecast.strength}. 카드로`));
         const go = () => {
