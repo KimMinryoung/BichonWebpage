@@ -174,6 +174,7 @@
         const planning = s.phase === 'plan';
         if (planning) unveiling = false;
         $('cwCampaign').classList.toggle('is-unveiling', unveiling);
+        $('cwCampaign').classList.toggle('is-planning', planning);
         renderBrief();
         renderMap();
         renderFronts(planning);
@@ -287,10 +288,25 @@
         $('cwBrief').replaceChildren(...t.brief.map(p => el('p', {}, p)));
     }
 
+    // The game's layer sits in its own svg over the basemap's, on its own
+    // compositing layer: redrawing it or playing its motion then never
+    // repaints the coastline, rivers and history's areas. Painting them
+    // with every frame of the season's motion tore the enlarged phone map
+    // into stale tiles.
+    let overSvg = null;
+    function overlayRoot() {
+        if (overSvg) return overSvg;
+        overSvg = document.createElementNS(SVG_NS, 'svg');
+        overSvg.setAttribute('viewBox', mapEl.querySelector('svg').getAttribute('viewBox'));
+        overSvg.setAttribute('class', 'cw-map-over');
+        mapEl.append(overSvg);
+        return overSvg;
+    }
+
     // The game's layer over the basemap: front chains from Moscow, cities
     // held (filled red) or lost (hollow), the contested city's badge.
     function renderMap() {
-        const root = mapEl.querySelector('svg');
+        const root = overlayRoot();
         let layer = root.querySelector('#cwOverlay');
         if (layer) layer.remove();
         layer = svg('g', { id: 'cwOverlay' });
@@ -376,13 +392,13 @@
 
     const unite = (a, b) => ({ x0: Math.min(a.x0, b.x0), x1: Math.max(a.x1, b.x1), y0: Math.min(a.y0, b.y0), y1: Math.max(a.y1, b.y1) });
 
-    // A narrow screen draws the map too small to read whole. Each season it
-    // opens on the fronts that fight, as large as fits (and never smaller
+    // A narrow screen draws the map too small to read whole. Each season's
+    // plan opens on the fronts that fight, as large as fits (and never smaller
     // than readable, never larger than twice that); the rest is a swipe
     // away inside the frame. Panning by hand is kept until the next season.
     function fitMap() {
         const root = mapEl.querySelector('svg');
-        if (!NARROW.matches) { root.style.width = ''; mapEl.style.height = ''; fitKey = null; return; }
+        if (!NARROW.matches || s.phase !== 'plan') { root.style.width = overlayRoot().style.width = ''; mapEl.style.height = ''; fitKey = null; return; }
         const fw = mapEl.clientWidth;
         const key = `${motion.key}:${fw}`;
         if (!fw || key === fitKey || !Object.keys(frontBoxes).length) return;
@@ -395,7 +411,7 @@
         const PAD = 12;
         const fit = Math.min(fw / (all.x1 - all.x0 + 2 * PAD), fh / (all.y1 - all.y0 + 2 * PAD));
         const scale = Math.min(Math.max(fit, fw / W, 0.85), 1.7);
-        root.style.width = `${Math.round(W * scale)}px`;
+        root.style.width = overlayRoot().style.width = `${Math.round(W * scale)}px`;
         // Cut short of all of them: open on the picked front.
         const box = scale > fit && frontBoxes[picked] ? frontBoxes[picked] : all;
         mapEl.scrollTo({ left: (box.x0 + box.x1) / 2 * scale - fw / 2, top: (box.y0 + box.y1) / 2 * scale - fh / 2 });

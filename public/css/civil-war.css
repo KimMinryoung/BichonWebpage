@@ -80,6 +80,8 @@
 .cw-map-heading { display: flex; align-items: center; gap: 4px 10px; padding: 6px 8px 6px 12px; border-bottom: 1px solid var(--border); font-size: .82rem; color: var(--text-secondary); }
 .cw-map-heading span:first-child { font-weight: 700; color: var(--text-primary); }
 .cw-map-frame svg { display: block; width: 100%; height: auto; font-family: inherit; }
+.cw-map-frame { position: relative; }
+.cw-map-frame svg.cw-map-over { position: absolute; top: 0; left: 0; will-change: transform; }
 .cw-map-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 8px 12px; font-size: .78rem; color: var(--text-secondary); }
 .cw-map-legend span { display: inline-flex; align-items: center; gap: 6px; }
 .cw-map-legend i { display: inline-block; width: 14px; height: 10px; border: 1px solid var(--border); }
@@ -785,20 +787,20 @@
 .cw-map-frame.has-pick:not(.is-spotlight) [data-front]:not(.is-picked) { opacity: .5; }
 /* Narrow screens: the map pins under the crumb bar while the fronts scroll
    beneath it, so the open card and its front are in sight together. The
-   panel lets its parts join the board, which runs through the cards. */
+   panel lets its parts join the board, which runs through the cards.
+   Only while planning: the season's result and review keep the plain,
+   whole map, as phones tore the pinned, scrolled map into tiles there. */
 @media (max-width: 900px) {
-    .cw-campaign:not(.is-unveiling) .cw-map-panel { display: contents; }
-    .cw-campaign:not(.is-unveiling) .cw-map-heading { background: var(--bg-surface); border: 1px solid var(--border); }
-    .cw-campaign:not(.is-unveiling) .cw-map-key { background: var(--bg-surface); border: 1px solid var(--border); border-top: 0; }
-    .cw-campaign:not(.is-unveiling) .cw-board { gap: 0; }
-    .cw-campaign:not(.is-unveiling) .cw-fronts { margin-top: 12px; }
-    .cw-campaign:not(.is-unveiling) .cw-map-frame { position: sticky; top: 34px; z-index: 4; background: var(--bg-surface); border: 1px solid var(--border); border-top: 0; }
+    .cw-campaign.is-planning .cw-map-panel { display: contents; }
+    .cw-campaign.is-planning .cw-map-heading { background: var(--bg-surface); border: 1px solid var(--border); }
+    .cw-campaign.is-planning .cw-map-key { background: var(--bg-surface); border: 1px solid var(--border); border-top: 0; }
+    .cw-campaign.is-planning .cw-board { gap: 0; }
+    .cw-campaign.is-planning .cw-fronts { margin-top: 12px; }
+    .cw-campaign.is-planning .cw-map-frame { position: sticky; top: 34px; z-index: 4; background: var(--bg-surface); border: 1px solid var(--border); border-top: 0; }
     /* civil-war.js fitMap sets the frame's height and the map's width. */
-    /* Outside planning the crumb bar does not pin, so neither gap. */
-    .cw-shell:not(:has(.games-crumb.has-status)) .cw-campaign:not(.is-unveiling) .cw-map-frame { top: 0; }
-    .cw-map-frame { overflow: auto; overscroll-behavior: contain; scrollbar-width: none; }
+    .cw-campaign.is-planning .cw-map-frame { overflow: auto; overscroll-behavior: contain; scrollbar-width: none; }
     .cw-map-frame::-webkit-scrollbar { display: none; }
-    .cw-map-frame svg { max-width: none; }
+    .cw-campaign.is-planning .cw-map-frame svg { max-width: none; }
     .cw-front-tabs { flex-wrap: nowrap; overflow-x: auto; }
     .games-shell .cw-front-tab { flex: 0 0 auto; gap: 4px; padding: 4px 8px; font-size: .8rem; }
 }
