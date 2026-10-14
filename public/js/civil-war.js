@@ -1519,8 +1519,10 @@
                 if (mark) board.append(mark);
                 const town = goal ? goal.name : (def.towns.find(t => t[1] === r && t[2] === c) || [])[0];
                 if (town) board.append(svg('text', { x: c * CELL + CELL / 2, y: r * CELL + 14, 'text-anchor': 'middle', class: 'cw-tile-label' }, town));
+                // Shelling wears a fortification's defence. A unit standing
+                // there shows what is left on its chip; an empty one says it.
                 const worn = B.terrain(b, r, c).fort && b.wear[r * 100 + c];
-                if (worn) board.append(svg('text', { x: c * CELL + CELL - 3, y: r * CELL + 12, 'text-anchor': 'end', class: 'cw-wear' }, '포격 ' + '×'.repeat(Math.min(worn, 3))));
+                if (worn && !B.unitAt(b, r, c)) board.append(svg('text', { x: c * CELL + CELL - 3, y: r * CELL + CELL - 5, 'text-anchor': 'end', class: 'cw-wear' }, `포격 방어 −${worn}`));
                 if (danger.some(m => m.r === r && m.c === c)) board.append(svg('rect', { x: c * CELL + 2, y: r * CELL + 2, width: CELL - 4, height: CELL - 4, class: 'cw-danger' }));
             }
         }
@@ -1598,6 +1600,11 @@
             const u = b.units.find(x => x.id === e.id);
             if (u) board.append(wreck(u, e));
         }
+        // The objective: a red flag on its corner, above any unit holding it.
+        for (const goal of def.goals) {
+            const x = goal.at[1] * CELL, y = goal.at[0] * CELL;
+            board.append(svg('path', { d: `M${x + 36} ${y + 20}v-18M${x + 36} ${y + 2}h10l-3 3.5 3 3.5h-10`, class: 'cw-goal-flag', 'aria-hidden': 'true' }));
+        }
         board.append(eventArrows(b));
         board.addEventListener('keydown', e => { if (e.key === 'Escape') deselect(); });
         // A Red order leaves only its blow, falls and the flank in the
@@ -1605,8 +1612,16 @@
         const whiteMoved = b.events.some(e => e.type === 'attack' ? b.units.find(u => u.id === e.from).side === 'white' : !['fall', 'turned', 'wear'].includes(e.type));
         const reds = b.units.filter(u => u.side === 'red' && u.hp > 0);
         const ready = reds.filter(u => !u.acted).length;
+        // What winning takes, and what stands in the way now.
+        const goalLines = def.goals.map(g => {
+            const holder = B.unitAt(b, ...g.at);
+            return holder && holder.side === 'white'
+                ? `목표 ${g.name}(붉은 깃발): ${holder.name}(병력 ${holder.hp}/${holder.maxHp})이 지킨다. 쓰러뜨리거나 몰아낸 뒤 붉은 부대를 들여보내면 이긴다`
+                : `목표 ${g.name}(붉은 깃발): 백군이 없다. 붉은 부대를 들여보내면 이긴다`;
+        });
         const status = [
             `${b.turn} / ${def.turnLimit} 턴`,
+            ...goalLines,
             `행동할 수 있는 부대 ${ready} / ${reds.length}`,
             def.windTurns ? (B.fordOpen(b) ? `${def.ford} 여울 열림 (${def.windTurns - b.turn + 1}턴 남음)` : `바람이 바뀌어 ${def.ford}에 물이 찼다`) : null,
             ...Object.entries(def.lines).map(([id, l]) => b.turned[id] ? `${l.name} 우회됨: 수비대의 진지 방어가 +1로 줄었다` : `${l.name}: 노란 점선 안에 부대를 세우면 우회된다`),
@@ -1614,6 +1629,7 @@
             def.protect ? `${def.protect.name}: 백군이 들어서면 진다${B.unitAt(b, ...def.protect.at) ? '' : ' · 지금 비어 있다'}` : null,
         ];
         const hint = foe ? null : el('p', {}, '붉은 부대를 누르면 갈 수 있는 칸(노란 점선)과 칠 수 있는 적(예상 피해 표시)이 나옵니다. 포병은 진지 위의 적을 칠 때마다 그 진지의 방어를 1 깎습니다. 백군 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 나옵니다.');
+        const goalAt = def.goals.length;
         box.replaceChildren(
             el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             el('details', { class: 'cw-battle-brief', open: b.turn === 1 && !s.log.some(e => e[0].startsWith('b:')) }, el('summary', {}, '작전 지시'), ...def.brief.map(p => el('p', {}, p))),
@@ -1622,7 +1638,7 @@
                     ...def.legend.concat([['move', '갈 수 있는 칸'], Object.keys(def.lines).length ? ['flank', '우회 지역'] : null, ['danger', '백군이 칠 수 있는 칸']].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
-                    el('ul', { class: 'cw-battle-status' }, ...status.filter(Boolean).map(t => el('li', {}, t))),
+                    el('ul', { class: 'cw-battle-status' }, ...status.filter(Boolean).map((t, i) => el('li', { class: i > 0 && i <= goalAt ? 'is-goal' : null }, t))),
                     el('div', { id: 'cwUnitInfo', class: 'cw-unit-info' }, unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint),
                     battleEnded ? battleClose(b) : el('div', { class: 'cw-battle-actions' },
                         unit && unit.prev && !unit.acted ? el('button', { type: 'button', 'data-key': 'undo', onclick: () => { if (act('b:undo', unit.id)) afterBattleAct(`${unit.name} 이동 취소`); } }, '이동 취소') : null,
@@ -1636,9 +1652,23 @@
     function unitInfo(u) {
         const b = s.battle;
         const t = B.terrain(b, u.r, u.c);
+        // The defence spelled out: the unit's own, the ground's, and what
+        // shelling or a turned line took from a fortification.
+        const ground = B.groundOf(b, u.r, u.c);
+        const worn = t.fort ? b.wear[u.r * 100 + u.c] || 0 : 0;
+        const parts = [`부대 ${u.def}`, ground || t.fort ? `${t.name} ${signed(ground)}` : null, worn ? `포격으로 진지 −${worn}` : null, t.fort && b.turned[t.fort] ? '우회되어 진지 +1까지' : null].filter(Boolean);
+        // A Red unit ready to strike lists who it can hit and what it would do.
+        const targets = u.side === 'red' && !u.acted && !battleEnded ? B.targets(b, u) : [];
         return el('div', {},
             el('h3', {}, u.name, u.sub ? el('small', {}, ` ${u.sub}`) : null),
-            el('p', {}, `병력 ${u.hp}/${u.maxHp} · 공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} (${t.name}) · 이동 ${u.mv}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
+            el('p', { class: 'cw-info-hp' }, el('strong', {}, `병력 ${u.hp}/${u.maxHp}`), el('span', { class: 'cw-info-bar is-' + u.side, style: `--hp:${(100 * u.hp / u.maxHp).toFixed(0)}%`, 'aria-hidden': 'true' })),
+            el('p', {}, `공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} (${parts.join(', ')}) · 이동 ${u.mv}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
+            targets.length ? el('ul', { class: 'cw-info-targets', 'aria-label': '칠 수 있는 적' }, ...targets.map(d => {
+                const p = B.preview(b, u, d);
+                return el('li', {}, el('button', { type: 'button', onclick: () => { if (act('b:attack', u.id, d.id)) afterBattleAct(`${u.name}이(가) ${d.name}을(를) 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : '')); } },
+                    el('strong', {}, `${d.name} 공격`),
+                    el('span', {}, `병력 ${d.hp}/${d.maxHp} · 방어 ${B.defenseOf(b, d)} → 피해 ${p.dmg}${p.dmg >= d.hp ? ' (격파)' : ''}${p.counter ? ` · 반격 ${p.counter}` : ''}${p.wears ? ' · 진지 방어 −1' : ''}`)));
+            })) : null,
             u.person ? el('p', {}, '지휘: ', person(u.person)) : null,
             u.commissar ? el('p', { class: 'cw-note' }, '정치위원이 함께한다 (방어 +1).') : null,
             u.side === 'red' ? el('p', { class: 'cw-note' }, u.acted ? '이번 턴의 행동을 마쳤다.' : u.moved ? '이동했다. 공격하거나 대기할 수 있고, 이동을 취소할 수도 있다.' : '이동하거나 공격할 수 있다.') : null,

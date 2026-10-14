@@ -504,6 +504,15 @@
 .cw-unit-info h3 { font-size: 1rem; }
 .cw-unit-info small { color: var(--text-secondary); font-weight: 400; }
 .cw-unit-info p { margin: 4px 0 0; font-size: .88rem; line-height: var(--leading-normal); }
+.cw-info-hp { display: flex; align-items: center; gap: 8px; }
+.cw-info-bar { flex: 1 1 auto; max-width: 160px; height: 7px; background: linear-gradient(90deg, var(--bar) var(--hp), color-mix(in srgb, var(--text-primary) 15%, transparent) var(--hp)); }
+.cw-info-bar.is-red { --bar: #f2d64b; }
+.cw-info-bar.is-white { --bar: var(--emap-blue); }
+.cw-info-targets { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
+.games-shell .cw-info-targets button { display: grid; gap: 2px; width: 100%; text-align: left; padding: 6px 10px; font-size: .84rem; }
+.cw-info-targets button span { color: var(--text-secondary); font-size: .8rem; }
+.cw-battle-status li.is-goal { border-left: 3px solid var(--clr-red); padding-left: 8px; font-weight: 700; }
+.cw-goal-flag { fill: var(--clr-red); stroke: #1d1d1b; stroke-width: 1; stroke-linejoin: round; pointer-events: none; }
 .cw-battle-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .cw-battle-events .games-kicker { margin: 0 0 4px; }
 .cw-battle-log { margin: 0; padding-left: 20px; font-size: .85rem; color: var(--text-secondary); line-height: var(--leading-normal); }
