@@ -577,6 +577,13 @@
 }
 @media (max-width: 900px) {
     .cw-board, .cw-battle-layout { grid-template-columns: minmax(0, 1fr); }
+    /* The picked unit's details sit right under the board, not below the
+       status list: the board and what was tapped share one screen. */
+    .cw-battle-layout { gap: 10px; }
+    .cw-grid-wrap, .cw-battle-side { display: contents; }
+    .cw-grid-scroll { order: -2; }
+    .cw-unit-info { order: -1; }
+    .cw-terrain-key { margin: 0; }
 }
 @media (max-width: 720px) {
     .cw-intro { grid-template-columns: 1fr; }
