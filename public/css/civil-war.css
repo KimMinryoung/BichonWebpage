@@ -219,6 +219,15 @@
 .cw-foe.is-national .cw-foe-dot { background: var(--emap-gray); }
 .cw-foe.is-interv .cw-foe-dot { background: var(--emap-blue); }
 .cw-parts { color: var(--text-secondary); font-size: .8rem !important; }
+/* The battle's order of battle from the plan: units that join solid, units that wait dashed. */
+.cw-muster { display: grid; gap: 4px; margin-bottom: 8px; }
+.cw-muster p { font-size: .82rem !important; color: var(--text-secondary); }
+.cw-muster p strong { color: var(--text-primary); }
+.cw-muster ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+.cw-muster li { display: inline-flex; align-items: baseline; gap: 5px; padding: 3px 7px; font-size: .78rem; border: 1px solid var(--border); }
+.cw-muster li.is-in { border-color: var(--cw-red); background: color-mix(in srgb, var(--cw-red) 14%, transparent); font-weight: 700; }
+.cw-muster li.is-out { border-style: dashed; color: var(--text-secondary); }
+.cw-muster li small { font-size: .72rem; }
 .cw-warn { border-left: 4px solid var(--clr-red); padding: 8px 12px; margin: 0; background: var(--bg-surface); font-size: .9rem; }
 
 /* Advisor cards */

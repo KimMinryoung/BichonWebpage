@@ -528,6 +528,7 @@
                 el('p', { class: 'cw-threat' }, threat.text, ' ', person(threat.who)),
                 el('div', { class: 'cw-front-controls' }, stepper, commissarToggle(id), ...frontCards(id)),
                 meter(id, f, line, s.turn, s.plan.choice, '예상'),
+                musterRow(id),
                 f.pressureParts.length ? el('p', { class: 'cw-parts' }, `압력: ${threat.pressure} 기본 · ${f.pressureParts.join(' · ')}`) : null,
                 f.parts.length ? el('p', { class: 'cw-parts' }, f.parts.join(' · ')) : null);
             bindSpotlight(card, id);
@@ -535,6 +536,23 @@
         }
         if (fc.supply.ratio < 1) items.push(el('p', { class: 'cw-warn' }, `곡물이 모자랍니다: 필요 ${fc.supply.need}, 가진 것 ${fc.supply.have}. 모든 전선의 전투력이 ${Math.round((1 - (0.5 + 0.5 * fc.supply.ratio)) * 100)}% 줄어듭니다.`));
         box.replaceChildren(...items);
+    }
+
+    // The Red units the plan on this front brings to the season's battle:
+    // those that join, and for each that waits, the strength it waits for
+    // or the card that brings it.
+    function musterRow(id) {
+        const m = G.musterOf(s);
+        if (!m || m.def.front !== id) return null;
+        const lead = m.muster.commissar ? m.units.find(u => m.def.units.find(d => d.id === u.id).lead) : null;
+        const notes = [];
+        if (m.muster.fed < 1) notes.push(`굶주려 병력 ×${m.muster.fed}`);
+        if (lead) notes.push(`정치위원: ${lead.name} 방어 +1`);
+        return el('div', { class: 'cw-muster' },
+            el('p', {}, el('strong', {}, `${m.def.title} 편성`), notes.length ? ` · ${notes.join(' · ')}` : null),
+            el('ul', {}, ...m.units.map(u => el('li', { class: u.joins ? 'is-in' : 'is-out' },
+                el('span', {}, u.name),
+                u.joins ? null : el('small', {}, u.card ? `${D.cards[u.card].title.replace(/^.*의 /, '')}을 보내면` : `전투력 ${u.at}부터`)))));
     }
 
     // The commissar on this front. With a single commissar already sent

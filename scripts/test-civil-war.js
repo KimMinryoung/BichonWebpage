@@ -191,6 +191,10 @@ const replay = G.restore(G.serialize(hist));
 assert.deepEqual(replay.lines, hist.lines);
 assert.equal(replay.peasants, hist.peasants);
 assert.equal(replay.phase, 'battle');
+// History's plan for Crimea, with the train sent there, brings every unit
+// it may to Perekop.
+assert.deepEqual(hist.battle.units.filter(u => u.side === 'red').map(u => u.id).sort(),
+    D.battles.perekop.units.filter(u => u.side === 'red' && !u.flag && !u.card).map(u => u.id).concat('rmk', 'rtr').sort());
 const bad = JSON.parse(G.serialize(hist));
 bad.log.splice(3, 0, ['alloc', 'east', 99]);
 assert.equal(G.restore(JSON.stringify(bad)), null);
@@ -233,8 +237,8 @@ assert.equal(G.restore('{'), null);
 // A plain soldier's battle: each group follows its route, waypoint by
 // waypoint, and every unit hits the best target it can reach; guns favour
 // targets whose fortification they wear. A null route holds and shoots.
-function fight(routes, flags = { makhno: true }) {
-    const b = B.start(D.battles.perekop, flags);
+function fight(routes, flags = { makhno: true }, muster) {
+    const b = B.start(D.battles.perekop, flags, muster);
     const rows = D.battles.perekop.map.length, cols = D.battles.perekop.map[0].length;
     const goals = D.battles.perekop.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
     // Path cost to a tile, ignoring units.
@@ -317,6 +321,32 @@ function fight(routes, flags = { makhno: true }) {
     const drawn = fight({ [CENTRE]: sivash, [EAST]: chongar });
     assert.equal(drawn.result, 'won');
     assert.ok(drawn.turn < alone.turn);
+}
+// The plan on the Crimean front musters the Red units: the Sivash road
+// stays open to the thinnest muster, every unit more makes the war
+// shorter or no longer, and hunger thins the ranks.
+{
+    const [yushun, dzhankoy] = D.battles.perekop.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
+    const all = { 'r51a,r51b,r51g,r6g,rcz,rtr': [{ r: 2, c: 2 }, { r: 4, c: 2 }, yushun], 'r15,r52,rmk,r1c': [{ r: 5, c: 6 }, { r: 7, c: 5 }, yushun], 'r30,r30b,r4g': [{ r: 5, c: 11 }, { r: 6, c: 11 }, { r: 8, c: 10 }, dzhankoy] };
+    const muster = (margin, more = {}) => Object.assign({ margin, fed: 1, commissar: false, cards: [] }, more);
+    const thin = fight({ 'r15,r52,rmk': [{ r: 5, c: 6 }, { r: 7, c: 5 }, yushun] }, { makhno: true }, muster(-1));
+    assert.equal(thin.result, 'won', 'the Sivash crossing needs no more than the thinnest muster');
+    assert.equal(thin.units.some(u => u.id === 'r1c'), false, 'the cavalry waits for the pressure to be met');
+    let last = Infinity;
+    for (const m of [-1, 0, 3, 6]) {
+        const b = fight(all, { makhno: true }, muster(m));
+        assert.equal(b.result, 'won', `margin ${m}`);
+        assert.ok(b.turn <= last, `margin ${m}: no slower than a thinner muster`);
+        last = b.turn;
+    }
+    assert.equal(fight({ 'r51a,r51b,r51g,r6g': all['r51a,r51b,r51g,r6g,rcz,rtr'] }, {}, muster(3)).result, 'lost', 'the Wall wants the whole western group');
+    const hungry = B.start(D.battles.perekop, {}, muster(6, { fed: 0.8 }));
+    assert.equal(B.byId(hungry, 'r15').hp, 8, 'a hungry division brings fewer men');
+    assert.equal(B.byId(hungry, 'w1').hp, 10, 'the Whites are not fed by the Red plan');
+    const led = B.start(D.battles.perekop, {}, muster(6, { commissar: true, cards: ['train'] }));
+    assert.equal(B.byId(led, 'r15').def, 4, 'the commissar steadies the Sivash division');
+    assert.ok(B.byId(led, 'rtr'), 'the train runs where it was sent');
+    assert.equal(B.start(D.battles.perekop, {}, muster(6)).units.some(u => u.id === 'rtr'), false);
 }
 assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), false, 'no Makhnovists without the Starobilsk agreement');
 assert.equal(B.start(D.battles.perekop, { curzon: true }).units.some(u => u.id === 'rcz'), true);

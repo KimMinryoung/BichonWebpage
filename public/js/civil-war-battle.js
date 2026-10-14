@@ -19,16 +19,38 @@
     const TURNED_BONUS = 1;
     const DIRS = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 
-    function start(def, flags) {
+    // Whether a unit takes the field. A flag comes from a choice made in
+    // the campaign; need and card from the season's plan on the battle's
+    // front (muster): a unit with need joins when the front's strength
+    // beats the pressure by that much, one with card when that card was
+    // sent there. Without a muster (tests of the board alone) every unit
+    // whose flag holds takes the field.
+    function joins(u, flags, muster) {
+        if (u.flag && !(flags && flags[u.flag])) return false;
+        if (!muster || u.side !== 'red') return true;
+        if (u.card) return muster.cards.includes(u.card);
+        return !(u.need > muster.margin);
+    }
+
+    // muster: { margin, fed, commissar, cards } from the campaign's plan;
+    // fed is the share of strength hunger leaves a division, and it is
+    // the share of their men the Red units bring; a commissar steadies the
+    // units marked lead (defence +1).
+    function start(def, flags, muster) {
         const units = def.units
-            .filter(u => !u.flag || (flags && flags[u.flag]))
-            .map(u => ({
-                id: u.id, tag: u.tag || u.name, side: u.side, name: u.name, sub: u.sub || '', kind: u.kind,
-                role: u.role || null, line: u.line || null,
-                person: u.person || null, r: u.at[0], c: u.at[1], hp: u.hp, maxHp: u.hp,
-                atk: u.atk, def: u.def, mv: u.mv, range: u.range || 1,
-                moved: false, acted: false, prev: null,
-            }));
+            .filter(u => joins(u, flags, muster))
+            .map(u => {
+                const red = u.side === 'red' && muster;
+                const hp = red ? Math.max(1, Math.round(u.hp * muster.fed)) : u.hp;
+                const lead = red && muster.commissar && u.lead;
+                return {
+                    id: u.id, tag: u.tag || u.name, side: u.side, name: u.name, sub: u.sub || '', kind: u.kind,
+                    role: u.role || null, line: u.line || null,
+                    person: u.person || null, r: u.at[0], c: u.at[1], hp, maxHp: u.hp,
+                    atk: u.atk, def: u.def + (lead ? 1 : 0), mv: u.mv, range: u.range || 1, commissar: Boolean(lead),
+                    moved: false, acted: false, prev: null,
+                };
+            });
         const turned = {};
         for (const id of Object.keys(def.lines)) turned[id] = false;
         return {
@@ -360,7 +382,7 @@
     }
 
     const api = {
-        start, act, reachable, targets, preview, menace, marching, dangers, reserveSector, behind,
+        start, joins, act, reachable, targets, preview, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, unitAt, byId, defenseOf, fordOpen,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;

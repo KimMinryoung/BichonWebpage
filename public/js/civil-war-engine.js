@@ -323,6 +323,7 @@
         if (!canSettle(s)) return false;
         const t = turnData(s);
         const fc = forecast(s);
+        const muster = t.battle ? musterOf(s, fc).muster : null;
         const opt = t.choice.options.find(o => o.id === s.plan.choice);
         const before = Object.assign({}, s.lines);
         const cohesionBefore = s.cohesion;
@@ -415,7 +416,7 @@
             s.phase = 'done';
         } else if (t.battle) {
             s.phase = 'battle';
-            s.battle = Battle.start(DATA.battles[t.battle], s.flags);
+            s.battle = Battle.start(DATA.battles[t.battle], s.flags, muster);
         } else {
             s.phase = 'review';
         }
@@ -427,6 +428,27 @@
         s.turn += 1;
         enterTurn(s);
         return true;
+    }
+
+    // The season's battle, if it has one, and the Red units the plan on its
+    // front brings to it: each unit with whether it joins and, for one held
+    // back by need, the strength it waits for.
+    function musterOf(s, fc) {
+        const def = battleOf(s);
+        if (!def || !def.front) return null;
+        const f = (fc || forecast(s)).fronts[def.front];
+        if (!f) return null;
+        const supply = (fc || forecast(s)).supply;
+        const muster = {
+            margin: f.margin, fed: round1(FED + (1 - FED) * supply.ratio), commissar: Boolean(s.plan.commissar[def.front]),
+            cards: s.plan.cards.filter(c => c.target === def.front).map(c => c.id),
+        };
+        const units = def.units.filter(u => u.side === 'red' && (!u.flag || s.flags[u.flag] || choiceFlags(s)[u.flag])).map(u => ({
+            id: u.id, name: u.name, tag: u.tag, kind: u.kind, need: u.need, card: u.card || null,
+            joins: Battle.joins(u, Object.assign({}, s.flags, choiceFlags(s)), muster),
+            at: u.need === undefined ? null : round1(f.pressure + u.need),
+        }));
+        return { def, muster, units, strength: f.strength };
     }
 
     // The season's battle, if it has one.
@@ -510,7 +532,7 @@
 
     const api = {
         DATA, VERSION, MOMENTUM, start, act, restore, serialize, forecast, activeFronts, turnData,
-        free, allocated, threatsOf, battleOf, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
+        free, allocated, threatsOf, battleOf, musterOf, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.CivilWarGame = api;
