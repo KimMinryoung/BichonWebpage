@@ -18,6 +18,8 @@
     let selected = null;            // battle: the selected Red unit id
     let inspected = null;           // battle: the White unit whose reach is shown
     let lit = null;                 // the front whose card the pointer or focus is on
+    let picked = null;              // plan: the front whose card is open
+    let pickedTurn = null;          // the season it was picked in
     // The map's entrance: the attackers march in when a season opens, and
     // in its review the beaten are trampled and the winners surge on. It
     // plays once per season and phase, from when the map is first seen;
@@ -361,6 +363,7 @@
             }
         }
         root.append(layer);
+        markPicked();
         spotlight(lit);
         renderControlPhase();
     }
@@ -481,7 +484,11 @@
             g.append(tread);
         }
         if (forecast) g.setAttribute('aria-label', g.getAttribute('aria-label').replace('. 카드로', `, 압력 ${marks}, 전투력 ${forecast.strength}. 카드로`));
-        const go = () => { const card = document.getElementById('cwFront-' + id); if (card) { card.scrollIntoView({ block: 'nearest' }); card.focus(); } };
+        const go = () => {
+            if (s.phase === 'plan' && picked !== id) { picked = id; render(); }
+            const card = document.getElementById('cwFront-' + id);
+            if (card) { card.scrollIntoView({ block: 'nearest' }); card.focus({ preventScroll: true }); }
+        };
         g.addEventListener('click', go);
         g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
         return { g, x, y };
@@ -565,6 +572,14 @@
         mapEl.querySelectorAll('[data-front]').forEach(g => g.classList.toggle('is-lit', g.dataset.front === id));
     }
 
+    // The front whose card is open stays marked on the map, without a
+    // blink: the rest only fade a little.
+    function markPicked() {
+        const id = s.phase === 'plan' ? picked : null;
+        mapEl.classList.toggle('has-pick', Boolean(id));
+        mapEl.querySelectorAll('[data-front]').forEach(g => g.classList.toggle('is-picked', g.dataset.front === id));
+    }
+
     function withSpotlight(id, card) {
         bindSpotlight(card, id);
         return card;
@@ -618,7 +633,21 @@
         if (!planning) { box.replaceChildren(...items, ...reviewFronts()); return; }
         const fc = G.forecast(s);
         const threats = G.threatsOf(s);
-        for (const id of G.activeFronts(s)) {
+        const active = G.activeFronts(s);
+        // One card at a time, picked on the map or in the row of fronts
+        // under it; a season opens on its heaviest pressure.
+        if (pickedTurn !== s.turn || !active.includes(picked)) picked = active.reduce((a, b) => fc.fronts[b].pressure > fc.fronts[a].pressure ? b : a, active[0]);
+        pickedTurn = s.turn;
+        items.push(el('div', { class: 'cw-front-tabs', role: 'group', 'aria-label': '전선 고르기' }, ...active.map(id => {
+            const d = s.lines[id] + fc.fronts[id].change - D.fronts[id].history[s.turn];
+            return el('button', {
+                type: 'button', class: 'cw-front-tab', 'data-key': `pick-${id}`, 'aria-pressed': String(id === picked), 'aria-controls': 'cwFront-' + id,
+                onclick: () => { picked = id; render(); },
+            }, el('strong', {}, D.fronts[id].short), el('span', {}, `${s.plan.alloc[id]}사단`),
+            el('span', { class: 'cw-front-tab-diff' + (d < 0 ? ' is-short' : d > 0 ? ' is-ahead' : '') }, d ? `역사 ${signed(d)}` : '역사대로'));
+        })));
+        for (const id of active) {
+            if (id !== picked) continue;
             const f = fc.fronts[id];
             const threat = threats[id];
             const line = s.lines[id];
