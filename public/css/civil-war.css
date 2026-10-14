@@ -49,8 +49,9 @@
 .cw-stats strong { font-size: 1.35rem; font-variant-numeric: tabular-nums; }
 .cw-stats small { display: block; font-size: .75rem; color: var(--text-secondary); }
 .cw-stats > div { min-width: 0; }
-.cw-stats .is-warn strong { color: var(--clr-red); }
-.cw-stats .is-warn small { color: var(--clr-red); font-weight: 700; }
+/* Red is the Red Army's; what needs attention is drawn inverted instead. */
+.cw-stats .is-warn strong { color: var(--bg-surface); background: var(--text-primary); padding: 0 5px; }
+.cw-stats .is-warn small { color: var(--text-primary); font-weight: 700; }
 
 /* The army panel: the season's troops as pips, then the changes */
 .cw-army { border-top: 1px solid var(--border); padding-top: 12px; }
@@ -68,7 +69,7 @@
 .cw-troop-changes { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 6px; font-size: .8rem; font-weight: 700; }
 .cw-troop-changes li { border: 1px solid var(--border); padding: 3px 8px; }
 .cw-troop-changes .is-plus { border-color: var(--btn-primary, #2da44e); }
-.cw-troop-changes .is-minus { border-color: var(--clr-red); color: var(--clr-red); }
+.cw-troop-changes .is-minus { border-style: dashed; border-color: var(--text-primary); }
 
 /* Briefing: the text-first heart of each season */
 .cw-brief { border-left: 4px solid var(--cw-red); padding: 4px var(--content-inset); margin-bottom: 18px; max-width: 46rem; }
@@ -300,7 +301,7 @@
 /* Bands coloured by their result against history; the black line is the strength. */
 .cw-meter-bar { position: relative; height: 16px; margin-bottom: 16px; border: 1px solid var(--border); background: var(--bg-canvas); }
 .cw-meter-band { position: absolute; top: 0; bottom: 0; }
-.cw-meter-band.is-behind { background: color-mix(in srgb, var(--clr-red) 30%, transparent); }
+.cw-meter-band.is-behind { background: repeating-linear-gradient(-45deg, color-mix(in srgb, var(--text-primary) 28%, transparent) 0 3px, transparent 3px 6px); }
 .cw-meter-band.is-even { background: color-mix(in srgb, var(--text-secondary) 18%, transparent); }
 .cw-meter-band.is-ahead { background: color-mix(in srgb, var(--btn-primary, #2da44e) 35%, transparent); }
 .cw-meter-tick { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--border); }
@@ -311,7 +312,7 @@
 .cw-foes-label { font-size: .75rem; font-weight: 700; color: var(--text-secondary); padding-top: 5px; }
 .cw-foe { flex: 1 1 100%; border: 1px solid var(--border); background: var(--bg-canvas); }
 .cw-foe summary { cursor: pointer; display: flex; align-items: center; gap: 7px; min-height: 32px; padding: 3px 8px; font-size: .86rem; font-weight: 700; }
-.cw-foe summary small { color: var(--clr-red); font-weight: 700; }
+.cw-foe summary small { color: var(--text-secondary); font-weight: 700; }
 .cw-foe p { margin: 0; padding: 0 8px 8px; font-size: .82rem !important; color: var(--text-secondary); }
 .cw-foe.is-white { border-left: 4px solid var(--cw-white); }
 .cw-foe.is-interv { border-left: 4px solid var(--emap-blue); }
@@ -331,7 +332,7 @@
 .cw-muster li.is-in { border-color: var(--cw-red); background: color-mix(in srgb, var(--cw-red) 14%, transparent); font-weight: 700; }
 .cw-muster li.is-out { border-style: dashed; color: var(--text-secondary); }
 .cw-muster li small { font-size: .72rem; }
-.cw-warn { border-left: 4px solid var(--clr-red); padding: 8px 12px; margin: 0; background: var(--bg-surface); font-size: .9rem; }
+.cw-warn { border-left: 4px solid var(--text-primary); padding: 8px 12px; margin: 0; background: var(--bg-surface); font-size: .9rem; }
 
 /* Advisor cards */
 .cw-cards, .cw-choice, .cw-review, .cw-outcome { border: 1px solid var(--border); background: var(--bg-surface); padding: 16px var(--content-inset); margin-bottom: 18px; }
@@ -402,7 +403,7 @@
 .cw-mark-wall { stroke: color-mix(in srgb, #3a1e0a 70%, var(--text-primary)); stroke-width: 2; }
 .cw-mark-trench { stroke: color-mix(in srgb, var(--text-primary) 55%, transparent); stroke-width: 1.6; }
 .cw-mark-water { stroke: #ffffff; stroke-opacity: .35; stroke-width: 1.2; }
-.cw-wear { font-size: 8px; font-weight: 800; fill: var(--clr-red); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 2px; pointer-events: none; }
+.cw-wear { font-size: 8px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 2px; pointer-events: none; }
 .cw-tile-label { font-size: 9px; font-weight: 700; fill: var(--text-primary); pointer-events: none; }
 .cw-flank-zone { fill: none; stroke: #d9a514; stroke-width: 2.5; stroke-dasharray: 7 4; pointer-events: none; }
 .cw-danger { fill: var(--emap-blue); fill-opacity: .28; stroke: var(--emap-blue); stroke-width: 1.5; pointer-events: none; }
@@ -488,11 +489,13 @@
 .cw-season-name small { font-weight: 400; color: var(--text-secondary); font-size: .76rem; }
 .cw-season-bar { position: relative; height: 14px; border-left: 0; background: linear-gradient(to right, transparent calc(50% - .5px), var(--border) calc(50% - .5px) calc(50% + .5px), transparent calc(50% + .5px)); }
 .cw-season-bar i { position: absolute; top: 1px; bottom: 1px; border-radius: 3px; }
-.cw-season-bar i.is-behind { background: var(--clr-red); }
+.cw-season-bar i.is-behind { background: repeating-linear-gradient(-45deg, color-mix(in srgb, var(--text-primary) 28%, transparent) 0 3px, transparent 3px 6px); box-shadow: inset 0 0 0 1px var(--text-secondary); }
 .cw-season-bar i.is-ahead { background: var(--btn-primary, #2da44e); }
 .cw-season-bar i.is-even { background: var(--text-secondary); margin-left: -1px; }
 .cw-season-value { font-size: .84rem; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; color: var(--text-secondary); }
-.cw-season-value.is-behind { color: var(--clr-red); }
+.cw-season-value.is-behind { color: var(--text-primary); }
+.cw-season-value.is-behind::before { content: '▼ '; }
+.cw-season-value.is-ahead::before { content: '▲ '; }
 .cw-season-value.is-ahead { color: var(--text-primary); }
 .cw-season-fronts { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px; padding: 6px 0 12px; }
 .cw-forks-wrap { overflow-x: auto; }
@@ -504,7 +507,7 @@
 .cw-forks td small { color: var(--text-secondary); font-size: .76rem; margin-top: 2px; }
 .cw-forks tbody th .cw-links { font-weight: 400; font-size: .76rem; margin-top: 2px; }
 .cw-forks tbody th .cw-links a { margin-right: 8px; }
-.cw-forks tr:not(.is-same) td:nth-child(3) strong { color: var(--clr-red); }
+.cw-forks tr:not(.is-same) td:nth-child(3) strong { text-decoration: underline; text-underline-offset: 3px; }
 .cw-same { color: var(--text-secondary); }
 .cw-forks .cw-fork-kind { display: block; font-weight: 400; font-size: .72rem; color: var(--text-secondary); }
 .cw-battle-results { margin: 6px 0 0; padding-left: 1.2rem; font-size: .9rem; display: grid; gap: 4px; }
@@ -518,7 +521,7 @@
 .cw-spark-axis { fill: var(--text-secondary); font-size: 9px; }
 .cw-spark-line { fill: none; stroke: var(--text-primary); stroke-width: 2; stroke-linejoin: round; }
 .cw-spark-dot { fill: var(--text-primary); stroke: var(--bg-surface); stroke-width: 2; }
-.cw-spark-dot.is-low { fill: var(--clr-red); }
+.cw-spark-dot.is-low { fill: var(--bg-surface); stroke: var(--text-primary); }
 @media (max-width: 720px) {
     .cw-seasons summary { grid-template-columns: 1fr 4.5rem; }
     .cw-season-bar { grid-column: 1 / -1; grid-row: 2; }
@@ -569,7 +572,7 @@
 .cw-crumb-status div { display: flex; align-items: baseline; gap: 5px; }
 .cw-crumb-status dt { color: var(--text-secondary); }
 .cw-crumb-status dd { margin: 0; font-weight: 800; font-variant-numeric: tabular-nums; }
-.cw-crumb-status .is-warn dd { color: var(--clr-red); }
+.cw-crumb-status .is-warn dd { color: var(--bg-surface); background: var(--text-primary); padding: 0 4px; }
 @media (max-width: 560px) {
     .cw-shell .games-crumb.has-status .games-crumb-item:last-child { display: none; }
     .cw-crumb-status { gap: 10px; font-size: .76rem; }
@@ -597,7 +600,7 @@
 .cw-army-line { color: var(--text-secondary); font-size: .8rem; }
 .cw-army-change { font-size: .75rem; font-weight: 700; border: 1px solid var(--border); padding: 1px 6px; }
 .cw-army-change.is-plus { border-color: var(--btn-primary, #2da44e); }
-.cw-army-change.is-minus { border-color: var(--clr-red); color: var(--clr-red); }
+.cw-army-change.is-minus { border-style: dashed; border-color: var(--text-primary); }
 .cw-army details[open] .cw-troops { margin-top: 8px; }
 .cw-shell.is-playing .cw-brief { margin-bottom: 12px; padding-block: 0; }
 .cw-shell.is-playing .cw-brief p { font-size: .95rem; line-height: 1.6; margin-bottom: 6px; }
@@ -623,8 +626,8 @@
 .cw-traits li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; padding: 2px 6px; border-left: 3px solid var(--border); }
 .cw-traits strong { color: var(--text-primary); }
 .cw-traits b { margin-left: auto; font-size: .7rem; padding: 0 5px; border: 1px solid currentColor; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.cw-traits .is-bites { border-left-color: var(--clr-red); }
-.cw-traits .is-bites b { color: #fff; background: var(--clr-red); border-color: var(--clr-red); }
+.cw-traits .is-bites { border-left-color: var(--text-primary); }
+.cw-traits .is-bites b { color: var(--bg-surface); background: var(--text-primary); border-color: var(--text-primary); }
 .cw-traits .is-blunted b { color: var(--text-secondary); }
 .cw-traits .is-works { border-left-color: var(--btn-primary, #2da44e); }
 .cw-traits .is-works b { color: var(--btn-primary, #2da44e); }
@@ -683,9 +686,13 @@
 /* The cities at stake: a chain of map dots, inner to outer. */
 .cw-stake-head { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: .8rem; }
 .cw-stake-verdict { font-weight: 800; padding-left: 6px; border-left: 3px solid var(--text-secondary); }
-.cw-stake-verdict.is-behind { border-color: var(--clr-red); color: var(--clr-red); }
+.cw-stake-verdict.is-behind { border-color: var(--text-primary); }
+.cw-stake-verdict.is-behind::before { content: '▼ '; }
+.cw-stake-verdict.is-ahead::before { content: '▲ '; }
 .cw-stake-verdict.is-ahead { border-color: var(--btn-primary, #2da44e); }
-.cw-stake-momentum { color: var(--clr-red); font-weight: 700; }
+.cw-stake-momentum { color: var(--text-primary); font-weight: 700; }
+/* the momentum's hatched mark, as on the pressure row */
+.cw-stake-momentum::before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 4px; vertical-align: -1px; border: 1px solid var(--cw-ink); background: var(--cw-white) repeating-linear-gradient(-45deg, transparent 0 2px, var(--cw-ink) 2px 3.5px); }
 .cw-stake-pursuit { color: var(--btn-primary, #2da44e); font-weight: 700; }
 .cw-stake { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-wrap: nowrap; align-items: flex-start; row-gap: 4px; }
 .cw-stake li { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 0; flex: 1 1 0; max-width: 92px; padding: 0 2px; overflow-wrap: anywhere; font-size: .72rem; color: var(--text-secondary); text-align: center; line-height: 1.2; }
@@ -721,7 +728,7 @@
 .cw-unit-mark.k-interv { background: var(--emap-blue); }
 .cw-unit-mark.k-central { background: var(--emap-amber); }
 .cw-unit-mark.k-national { background: var(--emap-gray); }
-.cw-unit-mark.is-momentum { background-image: repeating-linear-gradient(-45deg, transparent 0 2px, var(--clr-red) 2px 3.5px); }
+.cw-unit-mark.is-momentum { background-image: repeating-linear-gradient(-45deg, transparent 0 2px, var(--cw-ink) 2px 3.5px); }
 /* Pressure the pursuit took off: an empty mark, outlined in the ahead colour. */
 .cw-unit-mark.is-pursued { background: transparent; border: 1px dashed var(--btn-primary, #2da44e); }
 .cw-meter-bar { height: 18px; }
