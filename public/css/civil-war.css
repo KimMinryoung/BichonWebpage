@@ -786,12 +786,17 @@
    panel lets its parts join the board, which runs through the cards. */
 @media (max-width: 900px) {
     .cw-campaign:not(.is-unveiling) .cw-map-panel { display: contents; }
-    .cw-campaign:not(.is-unveiling) .cw-map-heading,
+    .cw-campaign:not(.is-unveiling) .cw-map-heading { background: var(--bg-surface); border: 1px solid var(--border); }
     .cw-campaign:not(.is-unveiling) .cw-map-key { background: var(--bg-surface); border: 1px solid var(--border); border-top: 0; }
     .cw-campaign:not(.is-unveiling) .cw-board { gap: 0; }
     .cw-campaign:not(.is-unveiling) .cw-fronts { margin-top: 12px; }
     .cw-campaign:not(.is-unveiling) .cw-map-frame { position: sticky; top: 34px; z-index: 4; background: var(--bg-surface); border: 1px solid var(--border); border-top: 0; }
-    .cw-campaign:not(.is-unveiling) .cw-map-frame svg { max-height: 45svh; }
+    /* civil-war.js fitMap sets the frame's height and the map's width. */
+    /* Outside planning the crumb bar does not pin, so neither gap. */
+    .cw-shell:not(:has(.games-crumb.has-status)) .cw-campaign:not(.is-unveiling) .cw-map-frame { top: 0; }
+    .cw-map-frame { overflow: auto; overscroll-behavior: contain; scrollbar-width: none; }
+    .cw-map-frame::-webkit-scrollbar { display: none; }
+    .cw-map-frame svg { max-width: none; }
     .cw-front-tabs { flex-wrap: nowrap; overflow-x: auto; }
     .games-shell .cw-front-tab { flex: 0 0 auto; gap: 4px; padding: 6px 8px; font-size: .8rem; }
 }

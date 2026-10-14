@@ -20,6 +20,9 @@
     let lit = null;                 // the front whose card the pointer or focus is on
     let picked = null;              // plan: the front whose card is open
     let pickedTurn = null;          // the season it was picked in
+    let frontBoxes = {};            // map: each active front's extent, in map units
+    let fitKey = null;              // the season and width the map was last fitted for
+    const NARROW = window.matchMedia('(max-width: 900px)');
     // The map's entrance: the attackers march in when a season opens, and
     // in its review the beaten are trampled and the winners surge on. It
     // plays once per season and phase, from when the map is first seen;
@@ -309,6 +312,7 @@
             layer.style.setProperty('--since', `${Math.round(since)}ms`);
         }
         const avoid = [];   // boxes the attackers' markers keep clear of
+        frontBoxes = {};
         for (const id of D.frontOrder) {
             const pts = points.fronts[id];
             const line = s.lines[id];
@@ -353,6 +357,7 @@
         avoid.push({ x0: m.x - 10, x1: m.x + 11 + textWidth(m.name, 13), y0: m.y - 10, y1: m.y + 6 });
         for (const [i, id] of active.entries()) {
             const marker = foeMarker(id, points.fronts[id], s.lines[id], fc && fc[id], results && results[id], avoid);
+            frontBoxes[id] = [marker.box, ...points.fronts[id].map(p => ({ x0: p.x - 12, x1: p.x + 60, y0: p.y - 12, y1: p.y + 12 }))].reduce(unite);
             marker.g.setAttribute('data-front', id);
             marker.g.style.setProperty('--order', i);
             layer.append(marker.g);
@@ -366,7 +371,47 @@
         markPicked();
         spotlight(lit);
         renderControlPhase();
+        fitMap();
     }
+
+    const unite = (a, b) => ({ x0: Math.min(a.x0, b.x0), x1: Math.max(a.x1, b.x1), y0: Math.min(a.y0, b.y0), y1: Math.max(a.y1, b.y1) });
+
+    // A narrow screen draws the map too small to read whole. Each season it
+    // opens on the fronts that fight, as large as fits (and never smaller
+    // than readable, never larger than twice that); the rest is a swipe
+    // away inside the frame. Panning by hand is kept until the next season.
+    function fitMap() {
+        const root = mapEl.querySelector('svg');
+        if (!NARROW.matches) { root.style.width = ''; mapEl.style.height = ''; fitKey = null; return; }
+        const fw = mapEl.clientWidth;
+        const key = `${motion.key}:${fw}`;
+        if (!fw || key === fitKey || !Object.keys(frontBoxes).length) return;
+        fitKey = key;
+        const [, , W, H] = root.getAttribute('viewBox').split(' ').map(Number);
+        const fh = Math.round(Math.min(fw * H / W, window.innerHeight * 0.45));
+        mapEl.style.height = fh + 'px';
+        const m = points.moscow;
+        const all = Object.values(frontBoxes).reduce(unite, { x0: m.x - 12, x1: m.x + 70, y0: m.y - 12, y1: m.y + 12 });
+        const PAD = 12;
+        const fit = Math.min(fw / (all.x1 - all.x0 + 2 * PAD), fh / (all.y1 - all.y0 + 2 * PAD));
+        const scale = Math.min(Math.max(fit, fw / W, 0.85), 1.7);
+        root.style.width = `${Math.round(W * scale)}px`;
+        // Cut short of all of them: open on the picked front.
+        const box = scale > fit && frontBoxes[picked] ? frontBoxes[picked] : all;
+        mapEl.scrollTo({ left: (box.x0 + box.x1) / 2 * scale - fw / 2, top: (box.y0 + box.y1) / 2 * scale - fh / 2 });
+    }
+
+    // A front picked off the map's view slides into it.
+    function showFront(id) {
+        const box = frontBoxes[id];
+        if (!NARROW.matches || !box) return;
+        const root = mapEl.querySelector('svg');
+        const scale = root.getBoundingClientRect().width / Number(root.getAttribute('viewBox').split(' ')[2]);
+        const { scrollLeft: l, scrollTop: t, clientWidth: w, clientHeight: h } = mapEl;
+        if (box.x0 * scale >= l && box.x1 * scale <= l + w && box.y0 * scale >= t && box.y1 * scale <= t + h) return;
+        mapEl.scrollTo({ left: (box.x0 + box.x1) / 2 * scale - w / 2, top: (box.y0 + box.y1) / 2 * scale - h / 2, behavior: stillMotion() ? 'auto' : 'smooth' });
+    }
+    window.addEventListener('resize', () => { if (s && !$('cwCampaign').hidden) fitMap(); });
 
     // The map is in sight: a third of it on screen.
     function mapSeen() {
@@ -491,7 +536,7 @@
         };
         g.addEventListener('click', go);
         g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
-        return { g, x, y };
+        return { g, x, y, box: best.box };
     }
 
     // The strength sent to a front, by its last held city facing the
@@ -650,7 +695,7 @@
             const d = s.lines[id] + fc.fronts[id].change - D.fronts[id].history[s.turn];
             return el('button', {
                 type: 'button', class: 'cw-front-tab' + (d < 0 ? ' is-short' : d > 0 ? ' is-ahead' : ''), 'data-key': `pick-${id}`, 'aria-pressed': String(id === picked), 'aria-controls': 'cwFront-' + id,
-                onclick: () => { picked = id; render(); },
+                onclick: () => { picked = id; render(); showFront(id); },
                 'aria-label': `${D.fronts[id].name} ${s.plan.alloc[id]}사단` + (d ? `, 예상 역사보다 도시 ${Math.abs(d)}개 ${d < 0 ? '뒤처짐' : '앞섬'}` : ''),
             }, el('strong', {}, D.fronts[id].short), el('span', {}, `${s.plan.alloc[id]}사단`));
         })));
