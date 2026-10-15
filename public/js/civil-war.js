@@ -1076,16 +1076,23 @@
             else { back -= len; p = q; i--; }
         }
         const g = svg('g', { class: 'cw-train-on-rail', 'aria-hidden': 'true' });
-        g.append(svg('rect', { x: p.x - 12, y: p.y - 9, width: 24, height: 17, rx: 3, class: 'cw-train-plate' }));
-        g.append(trainGlyph(p.x - 10, p.y - 8, 20));
-        return { g, route: route.slice(0, i).concat([p]), box: { x0: p.x - 14, x1: p.x + 14, y0: p.y - 11, y1: p.y + 10 } };
+        // Wheels on the rail.
+        g.append(trainGlyph(p.x - 12, p.y - 16, 24));
+        return { g, route: route.slice(0, i).concat([p]), box: { x0: p.x - 13, x1: p.x + 13, y0: p.y - 15, y1: p.y + 5 } };
     }
 
     // Trotsky's train: a small locomotive, w wide, top-left at (x, y).
     function trainGlyph(x, y, w) {
         const k = w / 14;
         const g = svg('g', { class: 'cw-train', transform: `translate(${x} ${y}) scale(${k})` });
-        g.append(svg('path', { d: 'M1 3h3V1h2v2h5v3h2v3H1z' }), svg('circle', { cx: 3.5, cy: 10, r: 1.6 }), svg('circle', { cx: 9.5, cy: 10, r: 1.6 }));
+        // An armoured locomotive: a tall cab, the plated boiler with a gun
+        // turret and a sloped prow, the frame on three wheels; the cab
+        // carries a red star.
+        g.append(
+            svg('path', { d: 'M1 2.2h4.2V9H1z M5.2 4.4h6.4l1.9 2.4V9H5.2z M7 4.4V2.9h3.2v1.5z M10.2 3.4h2.6', class: 'cw-train-body' }),
+            svg('path', { d: 'M.4 9h13.4v1.1H.4z', class: 'cw-train-frame' }),
+            svg('circle', { cx: 3, cy: 10.7, r: 1.2, class: 'cw-train-wheel' }), svg('circle', { cx: 6.9, cy: 10.7, r: 1.2, class: 'cw-train-wheel' }), svg('circle', { cx: 10.8, cy: 10.7, r: 1.2, class: 'cw-train-wheel' }),
+            svg('path', { d: star(3.1, 5.4, 1.6, .7), class: 'cw-train-star' }));
         return g;
     }
 

@@ -5,13 +5,14 @@
     --cw-red: #a21e2a;
     /* The Whites: white with a dark rim, so they read on both themes. */
     --cw-white: #ffffff; --cw-ink: #4a4a46;
-    /* Trotsky's train: gold with a dark rim, which holds on the light
-       theme's cream as well as on the dark. The commissar's star is red. */
+    /* The commissar's star is red. Trotsky's train is armour plate, olive
+       steel with a pale rim on the dark map (a dark one on the light). */
     --cw-gold: #f2d64b; --cw-gold-rim: #1d1d1b; --cw-star: #e0252f;
+    --cw-steel: #5b6b45; --cw-steel-rim: #e4dfcc;
     --emap-blue: #2f6fb8; --emap-red: var(--clr-red); --emap-amber: #c7861c;
     --emap-purple: #7b5aa6; --emap-gray: #8d8d86; --emap-green: #3f8a4a; --emap-black: var(--text-primary);
 }
-[data-theme="light"] .cw-shell { --cw-gold: #e8b10c; --cw-gold-rim: #3a2a00; }
+[data-theme="light"] .cw-shell { --cw-gold: #e8b10c; --cw-gold-rim: #3a2a00; --cw-steel-rim: #23261d; }
 .cw-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .cw-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin: 18px 0 20px; border-bottom: 2px solid var(--border); padding: 0 var(--content-inset) 16px; }
 .cw-heading h1 { font-size: clamp(1.35rem, 3.3vw, 2.3rem); letter-spacing: -.045em; margin: 8px 0; }
@@ -473,7 +474,6 @@
 .cw-unit.is-red :is(.cw-pic-line, .cw-pic-barrel, .cw-pic-wheel) { stroke: #fff; }
 .cw-unit.is-white .cw-unit-tag, .cw-unit.is-white .cw-unit-hp, .cw-unit.is-white .cw-pic-fill { fill: #1d2a44; }
 .cw-unit.is-white :is(.cw-pic-line, .cw-pic-barrel, .cw-pic-wheel) { stroke: #1d2a44; }
-.cw-unit .cw-train { fill: var(--cw-gold); stroke: var(--cw-gold-rim); stroke-width: .6; }
 /* A unit that has just struck lunges at its target once (translate only,
    per the svg animation rule above). */
 @media (prefers-reduced-motion: no-preference) {
@@ -762,7 +762,11 @@
 
 .cw-mk-star { width: 17px; height: 17px; fill: var(--cw-star); stroke: var(--cw-gold-rim); stroke-width: .8; }
 .cw-mk-train { width: 22px; height: 18px; }
-.cw-train { fill: var(--cw-gold); stroke: var(--cw-gold-rim); stroke-width: .9; }
+.cw-train { stroke-linejoin: round; }
+.cw-train-body { fill: var(--cw-steel); stroke: var(--cw-steel-rim); stroke-width: .45; }
+.cw-train-frame { fill: var(--cw-steel-rim); }
+.cw-train-wheel { fill: #2a2d24; stroke: var(--cw-steel-rim); stroke-width: .5; }
+.cw-train-star { fill: var(--cw-star); stroke: none; }
 .cw-foe-mark { stroke: var(--bg-surface); stroke-width: .6; }
 .cw-foe-mark.k-white { fill: var(--cw-white); }
 .cw-foe-mark.k-interv { fill: var(--emap-blue); }
@@ -975,8 +979,7 @@
     .games-shell .cw-todo-item { padding: 3px 6px; font-size: .72rem; }
 }
 
-/* The battle board's railway, and Trotsky's train on the map's. */
+/* The battle board's railway. */
 .cw-track-ties { fill: none; stroke: color-mix(in srgb, var(--text-primary) 55%, transparent); stroke-width: 9; stroke-dasharray: 1.6 5.5; }
 .cw-track-rail { fill: none; stroke: color-mix(in srgb, var(--text-primary) 70%, transparent); stroke-width: 2; }
 .cw-terrain-key .k-track { border: 0; background: linear-gradient(transparent 6px, color-mix(in srgb, var(--text-primary) 70%, transparent) 6px 8px, transparent 8px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--text-primary) 55%, transparent) 0 1.5px, transparent 1.5px 5px); }
-.cw-train-plate { fill: var(--bg-surface); stroke: var(--cw-red); stroke-width: 1.5; }
