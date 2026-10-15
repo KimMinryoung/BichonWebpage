@@ -421,6 +421,11 @@
 .cw-tile.t-city { fill: color-mix(in srgb, #9d8a62 70%, var(--bg-surface)); }
 .cw-tile.t-kremlin { fill: color-mix(in srgb, #b4652a 70%, var(--bg-surface)); }
 .cw-tile.t-docks { fill: color-mix(in srgb, #7d8a96 55%, var(--bg-surface)); }
+/* Ufa: the Belaya's crossing by boat and raft, the sappers' pontoon, the
+   blown railway bridge, the east bank's trenches. */
+.cw-tile.t-crossing { fill: color-mix(in srgb, #5f93b8 50%, var(--bg-surface)); }
+.cw-tile.t-pontoon, .cw-tile.t-blown { fill: color-mix(in srgb, #2f6fb8 60%, var(--bg-surface)); }
+.cw-tile.t-trench { fill: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
 .cw-tile.is-goal { stroke: var(--clr-red); stroke-width: 3; }
 /* Tile drawings (civil-war.js tileMarks). */
 .cw-marks { pointer-events: none; }
@@ -460,6 +465,9 @@
 .cw-terrain-key .k-city { background: color-mix(in srgb, #9d8a62 70%, var(--bg-surface)); }
 .cw-terrain-key .k-kremlin { background: color-mix(in srgb, #b4652a 70%, var(--bg-surface)); }
 .cw-terrain-key .k-docks { background: color-mix(in srgb, #7d8a96 55%, var(--bg-surface)); }
+.cw-terrain-key .k-crossing { background: color-mix(in srgb, #5f93b8 50%, var(--bg-surface)); }
+.cw-terrain-key :is(.k-pontoon, .k-blown) { background: color-mix(in srgb, #2f6fb8 60%, var(--bg-surface)); }
+.cw-terrain-key .k-trench { background: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
 .cw-terrain-key .k-move { background: color-mix(in srgb, #f2d64b 30%, transparent); border: 2px dashed #f2d64b; }
 .cw-terrain-key .k-flank { border: 2px dashed #d9a514; }
 .cw-terrain-key .k-danger { background: color-mix(in srgb, #2f6fb8 35%, transparent); border-color: var(--emap-blue); }

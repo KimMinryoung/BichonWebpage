@@ -400,7 +400,7 @@
         },
         {
             id: 'directive', date: '1919년 5–7월', end: [1919, 7], title: '「모스크바 지령」',
-            mobilize: 15, commissars: 3, army: [['conscripts', 12], ['latvian', 1], ['cavalry', 2]], phase: 2,
+            mobilize: 15, commissars: 3, army: [['conscripts', 12], ['latvian', 1], ['cavalry', 2]], phase: 2, battle: 'ufa',
             brief: [
                 '동부에서는 반격이 시작되었다. 하지만 남쪽이 무너지고 있다. 돈 봉기가 붉은 군대를 묶은 사이 데니킨이 6월 25일 하리코프, 30일 차리친을 차지했고, 7월 3일 차리친에서 모스크바로의 세 갈래 진격을 명령했다.',
                 '5월에는 유데니치의 북서군이 에스토니아에서 페트로그라드로 첫 공세를 시작했다. 이 공세의 길목인 얌부르크가 넘어갔다.',
@@ -902,6 +902,111 @@
         history: '10월 11일 충격군이 오룔 서쪽에서 의용군의 측면을 쳐 15일 크로미에서 드로즈돕스키 연대들을 밀어냈다. 제13군이 므첸스크 앞에서 코르닐로프 연대들을 붙잡는 사이 충격군이 남쪽에서 퇴로를 위협했고, 코르닐로프 연대들은 19일 밤 오룔을 버렸다. 20일 에스토니아 소총사단과 제9소총사단이 오룔에 들어갔다. 크로미는 23일 백군에게 다시 넘어갔다가 26일 라트비아 소총병이 되찾았다. 의용군의 정예 연대들은 다시는 모스크바를 향하지 못했다.',
     };
 
+    // Ufa, 7–9 June 1919: Frunze's Turkestan Army at the Belaya. Chapayev's
+    // 25th Division crosses by night at Krasny Yar, north of the city and
+    // clear of its works, in boats, on rafts and in two steamers and a barge
+    // the cavalry had taken; White planes catch Frunze and Chapayev on the
+    // bridgehead on the 8th; the Whites counterattack it on the 9th, and
+    // that evening the division is in Ufa. Rows run north (Krasny Yar) to
+    // south; the Reds hold the west bank. Terrain: . field, f wood, ~ the
+    // Belaya, x the Krasny Yar crossing (boats and rafts), p the sappers'
+    // pontoon bridge, b the blown
+    // railway bridge, T the east bank's trenches, t a village, U the city.
+    const ufa = {
+        id: 'ufa', front: 'east', final: false,
+        title: '우파 도하', date: '1919년 6월 7–9일',
+        settle: '우파로 →', board: '우파 전장',
+        strikeNote: '',
+        raidNote: '9일의 반격대. 4턴 전에는 자리를 지키며 닿는 붉은 부대만 치고, 4턴부터 크라스니야르로 곧장 온다. 붉은 부대 곁에서 멈추지 않고 지나치며, 더 다가갈 수 없을 때만 막아선 부대를 친다. 크라스니야르에 백군이 들어서면 진다.',
+        legend: [['steppe', '들판'], ['forest', '숲 (방어 +1, 이동 2)'], ['river', '벨라야강'], ['crossing', '크라스니야르 나루 (방어 −1, 이동 3)'], ['pontoon', '부교 (방어 −1, 이동 2)'], ['blown', '폭파된 철교'], ['trench', '강변 진지 (방어 +2, 포격으로 깎임)'], ['town', '마을 (방어 +1)'], ['city', '우파 시가 (방어 +1)']],
+        reward: { quick: 6, quickBy: 3, lostBy: -6 },
+        map: [
+            'f...x.....f.',
+            '..f.xt....f.',
+            '....p.......',
+            '.f..~..f....',
+            '....~T......',
+            '....~T..UUU.',
+            '....bT..UUU.',
+            '.f..~T..UUU.',
+            '....~...f...',
+        ],
+        // The planes over the bridgehead on 8 June (the end of the second White turn).
+        air: { turn: 2, units: ['u25', 'u73'], dmg: 3 },
+        voices: [
+            { when: 'start', unit: 'u25', who: ['바실리 차파예프', 'vasily-chapayev'], text: '우파 정면은 놈들이 파 놓은 참호투성이다. 우리는 북쪽 크라스니야르에서 밤에 건넌다.' },
+            { when: 'start', unit: 'u73', who: ['이반 쿠탸코프', 'ivan-kutyakov'], text: '기병이 빼앗아 온 기선 두 척과 바지선이 있다. 여단의 선두는 배로 간다.' },
+            { when: 'start', unit: ['wf1', 'wf2'], by: 'kolchak', text: '철교는 날려 버렸다. 벨라야를 건너는 놈은 강물에 묻힌다.' },
+            { when: 'air', unit: 'u25', who: ['미하일 프룬제', 'frunze'], text: '폭탄이 바로 옆에 떨어졌다. 괜찮다, 교두보를 넓혀라!' },
+            { when: 'air', unit: 'u25', who: ['바실리 차파예프', 'vasily-chapayev'], text: '머리에 총알이 박혔다. 붕대만 감아라. 지휘는 내가 한다.' },
+            { when: 'turn:4', unit: ['wstu', 'w8b'], by: 'kolchak', text: '대열을 지켜라. 북소리에 맞춰, 앞으로!' },
+            { when: 'turn:4', unit: ['u220', 'u217', 'u25'], face: 'red-soldier', text: '줄을 맞춰 걸어온다…. 기관총, 가까이 올 때까지 쏘지 마라.' },
+            { when: 'feat:steamers', unit: 'u73', who: ['이반 쿠탸코프', 'ivan-kutyakov'], text: '기선에 올라라! 불빛은 모두 끄고 건너편으로!' },
+            { when: 'feat:volley', unit: 'u220', face: 'red-soldier', text: '지금이다, 쏴라!' },
+            { when: 'goal', unit: ['u217', 'u220', 'u73', 'u25', 'u31'], face: 'red-soldier', text: '우파 역이 비었다! 들어가라!' },
+            { when: 'surrender', unit: ['u217', 'u220', 'u73', 'u31'], face: 'red-soldier', text: '총을 내려놓았다! 쏘지 마라, 이제 우리 편이다.' },
+        ],
+        goals: [{ at: [6, 9], name: '우파 역' }],
+        // The Samara–Zlatoust line comes to the blown bridge on the west bank.
+        rails: [[6, 0], [6, 1], [6, 2], [6, 3]],
+        protect: { at: [1, 5], name: '크라스니야르' },
+        towns: [['크라스니야르', 1, 5]],
+        places: [['벨라야강', 8, 3.75], ['나루', 0, 4.05], ['부교', 2, 4.05], ['철교', 6, 3.2], ['우파', 4, 8.2], ['사마라 방면', 8, 0.1], ['첼랴빈스크 방면', 8, 9.4]],
+        turnLimit: 8,
+        lines: {},
+        sectors: {},
+        terrain: {
+            '.': { name: '들판', cost: 1, def: 0, cls: 'steppe' },
+            f: { name: '숲', cost: 2, def: 1, cls: 'forest' },
+            '~': { name: '벨라야강', cost: 99, def: 0, water: true, cls: 'river' },
+            x: { name: '크라스니야르 나루', cost: 3, def: -1, cls: 'crossing' },
+            p: { name: '부교', cost: 2, def: -1, cls: 'pontoon' },
+            b: { name: '폭파된 철교', cost: 99, def: 0, cls: 'blown' },
+            T: { name: '강변 진지', cost: 2, def: 2, fort: 'belaya', cls: 'trench' },
+            t: { name: '크라스니야르', cost: 1, def: 1, cls: 'town' },
+            U: { name: '우파 시가', cost: 1, def: 1, cls: 'city' },
+        },
+        units: [
+            { id: 'u73', tag: '73여단', side: 'red', name: '제73여단', sub: '쿠탸코프', kind: 'inf', at: [2, 2], hp: 10, atk: 5, def: 3, mv: 3, person: ['이반 쿠탸코프', 'ivan-kutyakov'],
+                feat: {
+                    id: 'steamers', name: '기선 두 척', kind: 'ferry', mv: 2,
+                    text: '이번 턴 이동 +2, 벨라야강 위를 한 칸에 이동 1로 건너 건너편 땅에 내린다. 움직이기 전에 쓴다.',
+                    history: '6월 2–3일 붉은 기병이 기선 두 척과 바지선을 빼앗았다. 7일 밤 이 배들이 쿠탸코프의 제73여단 선두를 크라스니야르로 실어 날랐고, 공병은 보병을 위해 부교를 놓았다.',
+                } },
+            { id: 'u217', tag: '217', side: 'red', name: '제217연대', sub: '제25사단', kind: 'inf', at: [1, 1], hp: 10, atk: 4, def: 3, mv: 3 },
+            { id: 'u220', tag: '220', side: 'red', name: '제220연대', sub: '제25사단', kind: 'inf', at: [0, 2], hp: 10, atk: 5, def: 3, mv: 3, need: 0,
+                feat: {
+                    id: 'volley', name: '기관총 일제 사격', kind: 'strike', plus: 3,
+                    text: '기관총이 대열이 가까이 올 때까지 기다렸다가 한꺼번에 쏜다. 이번 공격 피해 +3, 반격 없음.',
+                    history: '9일 백군 제4·8사단과 시베리아 카자크가 교두보를 되치러 왔다. 제220연대 정치위원 카푸스탼스키는 병사들이 「사자처럼 싸웠다」고 적었다.',
+                } },
+            { id: 'u25', tag: '차파예프', side: 'red', name: '제25사단 기병대대', sub: '차파예프', kind: 'cav', at: [3, 0], hp: 8, atk: 5, def: 2, mv: 5, lead: true, person: ['바실리 차파예프', 'vasily-chapayev'] },
+            { id: 'u25g', tag: '25포병', side: 'red', name: '제25사단 포병', kind: 'art', at: [3, 2], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
+            { id: 'u31', tag: '31', side: 'red', name: '제31사단', sub: '8일 왼쪽으로 옮김', kind: 'inf', at: [2, 1], hp: 10, atk: 4, def: 3, mv: 3, need: 6 },
+            { id: 'u24', tag: '24', side: 'red', name: '제24사단', sub: '철교 정면', kind: 'inf', at: [7, 2], hp: 10, atk: 4, def: 3, mv: 3, need: 3 },
+            { id: 'utr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', rail: true, at: [6, 1], hp: 6, atk: 4, def: 2, mv: 2, range: 2, card: 'train' },
+            { id: 'wpost', tag: '경계', side: 'white', name: '경계 부대', sub: '크라스니야르', kind: 'inf', at: [1, 6], hp: 5, atk: 3, def: 2, mv: 3, role: 'hold' },
+            { id: 'wf1', tag: '4사단', side: 'white', name: '제4사단', sub: '강변 진지', kind: 'inf', at: [5, 5], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
+            { id: 'wf2', tag: '4사단', side: 'white', name: '제4사단', sub: '강변 진지', kind: 'inf', at: [7, 5], hp: 9, atk: 4, def: 3, mv: 3, role: 'hold' },
+            { id: 'wbat', tag: '포대', side: 'white', name: '우파 포대', kind: 'art', at: [5, 8], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'hold' },
+            { id: 'wcity', tag: '8사단', side: 'white', name: '제8사단', sub: '우파 역', kind: 'inf', at: [6, 9], hp: 9, atk: 4, def: 3, mv: 3, role: 'hold' },
+            { id: 'wstu', tag: '의용', side: 'white', name: '교도대 의용 중대', sub: '검은 교복', kind: 'inf', at: [4, 9], hp: 6, atk: 3, def: 1, mv: 3, role: 'raid', wake: 4 },
+            { id: 'w8b', tag: '8사단', side: 'white', name: '제8사단 연대', sub: '반격', kind: 'inf', at: [3, 10], hp: 9, atk: 3, def: 2, mv: 3, role: 'raid', wake: 4 },
+            { id: 'wcos', tag: '카자크', side: 'white', name: '시베리아 카자크', sub: '반격', kind: 'cav', at: [0, 11], hp: 8, atk: 4, def: 2, mv: 4, role: 'raid', wake: 4 },
+        ],
+        summary: '우파 역에 서면 승리 · 8턴 · 크라스니야르를 비우지 말 것 · 4턴에 백군이 반격한다',
+        brief: [
+            '6월 9일 아침까지 벨라야강을 건너 우파를 되찾아야 한다. 우파 정면은 철교가 폭파되었고 건너편 강변에 진지(방어 +2)가 늘어서 있다. 차파예프의 제25사단은 그 북쪽 크라스니야르 나루에서 배와 뗏목으로(이동 3), 그 남쪽은 공병이 놓은 부교로(이동 2) 건넌다. 물 위에서는 방어 −1이다.',
+            '우파 역에 붉은 군대 부대를 세우면 이긴다. 8턴이 주어진다. 6턴 안에 되찾으면 동부전선이 한 도시 더 나아가고, 되찾지 못하면 이 시기 동부전선의 전투력이 6 준다.',
+            '2턴이 끝날 때 백군 비행기가 교두보를 덮쳐 차파예프의 기병대대와 제73여단이 피해를 입는다(쓰러지지는 않는다).',
+            '4턴부터 백군 반격대(교도대 의용 중대, 제8사단 연대, 시베리아 카자크)가 크라스니야르로 곧장 온다. 크라스니야르에 백군이 들어서면 지므로, 건넌 뒤에도 그 칸을 지켜야 한다.',
+            '적과 맞닿은 칸에 들어가면 그 턴의 이동은 끝난다. 한 적을 여럿이 둘러싸고 치면 둘러싼 부대마다 피해가 1씩 늘어난다.',
+            '결정적 한 수(★): 제73여단의 「기선 두 척」은 한 번, 그 턴 이동 +2에 강 위를 건너 건너편에 내린다. 제220연대의 「기관총 일제 사격」은 피해 +3에 반격이 없다.',
+            '이미 병력이 절반 아래로 꺾인 백군 부대를 붉은 부대 셋이 둘러싼 채 치면, 그 부대는 총을 내려놓고 붉은 군대로 넘어온다(투항). 포로는 다음 시기 사단이 된다.',
+        ],
+        history: '6월 7일 밤 제25사단의 제73여단 선두가 빼앗은 기선으로 크라스니야르에서 벨라야를 건넜고, 제217·220연대가 강가 마을들을 차지했다. 8일 교두보에 건너간 프룬제는 비행기의 폭탄에 타박상을 입었고, 차파예프는 기관총탄에 머리를 맞고도 지휘를 놓지 않았다. 9일 백군 제4·8사단과 시베리아 카자크의 반격을 물리친 제25사단이 그날 저녁 우파에 들어갔다. 영화 「차파예프」(1934)의 「심리 공격」, 곧 장교 연대가 줄 맞춰 걸어오는 장면은 여기서 나왔다고 하지만, 카펠의 부대는 그때 우파 북쪽에 있었고 동부전선에는 검은 제복의 장교 연대가 없었다. 검은 교복을 입은 실업학교 학생 의용 중대가 이 반격에서 150명쯤 쓰러진 것이 전설의 바탕으로 꼽힌다.',
+    };
+
     // The main railway lines of 1918 on the map, as [lat, lng] stations
     // and junctions along them (approximate). The war was fought along
     // them: the Czech legion strung out on the Penza–Samara–Chelyabinsk
@@ -929,7 +1034,7 @@
         { id: 'southwest', name: '남서 철도', pts: [[50.45, 30.52], [50.08, 29.92], [49.72, 28.83], [49.89, 28.60], [50.18, 27.06], [50.51, 26.25], [50.08, 25.15], [49.91, 24.62], [49.84, 24.03]] },
     ];
 
-    const battles = { kazan, orel, perekop };
+    const battles = { kazan, ufa, orel, perekop };
     const data = { factions, troops, fronts, frontOrder, moscow, railways, startLines, cards, turns, battles, epilogue };
     if (typeof module === 'object' && module.exports) module.exports = data;
     else root.CivilWarData = data;

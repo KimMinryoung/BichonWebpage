@@ -32,6 +32,7 @@
         'red-soldier': { side: 'red', cap: 'budenovka', moustache: true },
         'vasily-chapayev': { side: 'red', cap: 'papakha', moustache: 'great' },
         'vasily-blyukher': { side: 'red', cap: 'budenovka' },
+        'ivan-kutyakov': { side: 'red', cap: 'peaked' },
         'maria-spiridonova': { side: 'black', hair: 'bun', glasses: 'pince' },
         'nestor-makhno': { side: 'black', hair: 'long', cap: 'papakha' },
         'semyon-karetnik': { side: 'black', hair: 'swept', moustache: true },

@@ -499,6 +499,7 @@
         if (when.startsWith('turn:')) return b.turn >= Number(when.slice(5));
         if (when.startsWith('feat:')) return Boolean(b.feats && b.feats[when.slice(5)]);
         if (when === 'surrender') return b.captured > 0;
+        if (when === 'air') return Boolean(b.def.air) && b.turn > b.def.air.turn;
         return false;
     }
 
@@ -513,12 +514,13 @@
         const b = s.battle;
         window.clearTimeout(bVoice.timer);
         if (bVoice.b !== b) bVoice = { b, played: new Set(), queue: [], i: 0, until: null, timer: 0 };
+        let urgent = bVoice.i;
         (b.def.voices || []).forEach((v, k) => {
             if (bVoice.played.has(k) || !battleMoment(b, v.when)) return;
             bVoice.played.add(k);
             if (!speakerOf(b, v)) return;
-            // A feat or a surrender speaks at once, ahead of lines still waiting.
-            if (v.when === 'surrender' || v.when.startsWith('feat:')) { bVoice.queue.splice(bVoice.i, 0, v); bVoice.until = null; } else bVoice.queue.push(v);
+            // A feat, a surrender or the planes speak at once, ahead of lines still waiting.
+            if (v.when === 'surrender' || v.when === 'air' || v.when.startsWith('feat:')) { bVoice.queue.splice(urgent++, 0, v); bVoice.until = null; } else bVoice.queue.push(v);
         });
         const wrap = document.querySelector('#cwBattle .cw-grid-scroll');
         if (!wrap) return;
@@ -1739,7 +1741,7 @@
         } else if (cls === 'wall') {
             add(`M${x} ${y + 36}h6v-8h6v8h6v-8h6v8h6v-8h6v8h6v12h-48z`, 'cw-mark-fort');
             add(`M${x} ${y + 42}h48M${x + 12} ${y + 36}v6M${x + 30} ${y + 36}v6M${x + 6} ${y + 42}v6M${x + 22} ${y + 42}v6M${x + 40} ${y + 42}v6`, 'cw-mark-brick');
-        } else if (cls === 'yushun' || cls === 'chongar') {
+        } else if (cls === 'yushun' || cls === 'chongar' || cls === 'trench') {
             add(`M${x} ${y + 30}l6 -6l6 6l6 -6l6 6l6 -6l6 6l6 -6l6 6`, 'cw-mark-trench');
             // Coiled wire in front of the trench.
             add([5, 11, 17, 23, 29, 35, 41].map(dx => `M${x + dx - 3} ${y + 13}a3 3 0 1 0 6 0a3 3 0 1 0 -6 0`).join(''), 'cw-mark-wire');
@@ -1749,6 +1751,18 @@
             if (cls === 'strait') add(`M${x + 4} ${y + 44}q5 -4 10 0t10 0t10 0t10 0`, 'cw-mark-water');
         } else if (cls === 'river' || cls === 'deep') {
             add([12, 26, 40].map((dy, i) => `M${x + 2 + ((h + i) % 3) * 3} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), 'cw-mark-water');
+        } else if (cls === 'crossing') {
+            // Boats and a raft at the Krasny Yar crossing.
+            add(`M${x + 2} ${y + 40}q5 -4 10 0t10 0t10 0t10 0`, 'cw-mark-water');
+            add(`M${x + 6} ${y + 16}h14l-3 5h-8zM${x + 26} ${y + 28}h14l-3 5h-8z`, 'cw-mark-pier');
+            add(`M${x + 8} ${y + 34}h18M${x + 8} ${y + 37}h18`, 'cw-mark-pier');
+        } else if (cls === 'pontoon') {
+            add([12, 40].map(dy => `M${x + 2} ${y + dy}q5 -4 10 0t10 0t10 0t10 0`).join(''), 'cw-mark-water');
+            add(`M${x} ${y + 20}h48M${x} ${y + 28}h48M${x + 8} ${y + 20}v8M${x + 20} ${y + 20}v8M${x + 32} ${y + 20}v8M${x + 44} ${y + 20}v8`, 'cw-mark-truss');
+        } else if (cls === 'blown') {
+            // The bridge's two ends and the gap the charges blew between them.
+            add([12, 40].map(dy => `M${x + 2} ${y + dy}q5 -4 10 0t10 0t10 0t10 0`).join(''), 'cw-mark-water');
+            add(`M${x} ${y + 18}h14l4 10M${x} ${y + 30}h12M${x + 48} ${y + 18}h-14l-4 10M${x + 48} ${y + 30}h-12M${x + 4} ${y + 18}l6 12M${x + 44} ${y + 18}l-6 12`, 'cw-mark-truss');
         } else if (cls === 'ford') {
             const rows = flooded ? [10, 20, 30, 40] : [16, 32];
             add(rows.map(dy => `M${x + 6} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), 'cw-mark-water');
@@ -2198,6 +2212,7 @@
             if (e.type === 'tide') return `바람이 바뀌었다. ${b.def.ford}에 물이 다시 차오른다.`;
             if (e.type === 'feat') return `결정적 한 수: ${name(e.id)}의 「${b.units.find(u => u.id === e.id).feat.name}」.`;
             if (e.type === 'surrender') return `${name(e.id)}이(가) 총을 내려놓고 붉은 군대로 넘어왔다.`;
+            if (e.type === 'air') return `백군 비행기가 ${name(e.id)}을(를) 덮쳤다: 피해 ${e.dmg}`;
             if (e.type === 'raised') return `${name(e.id)}이(가) 열차에서 내려 총을 들었다.`;
             return '';
         }).filter(Boolean);

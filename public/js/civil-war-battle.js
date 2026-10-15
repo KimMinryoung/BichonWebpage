@@ -17,7 +17,9 @@
    train (rail) keeps to the board's railway (def.rails). A board may name a post the Reds must hold
    (protect): a White unit standing on it ends the battle lost, and a White
    raider (role raid) makes for it by the shortest dry road, riding past
-   Red units instead of halting beside them.
+   Red units instead of halting beside them. A White unit with wake
+   stays put until that turn (a counterattack's hour), and a board's air
+   raid (air) strikes chosen Red units at the end of one White turn.
 
    Under rules 3 (heroics) a battle has its decisive moments. A Red unit
    may carry a feat, used once a battle (feat(unit, target?)): a blow
@@ -25,7 +27,9 @@
    fortification once it has been struck often enough, a muster that
    raises a new unit beside it, a ride that carries it past the enemy
    with extra move this turn. A skirmisher (Makhno's machine-gun carts)
-   may still move after it strikes. And a White unit beaten below half
+   may still move after it strikes. A ferry (the steamers at the Belaya)
+   carries a unit over the river this turn, landing it on the far bank.
+   And a White unit beaten below half
    its men, with three Red units beside it, lays down its arms and joins
    the Reds (surrender). */
 (function (root) {
@@ -65,7 +69,7 @@
                 const lead = red && muster.commissar && u.lead;
                 return {
                     id: u.id, tag: u.tag || u.name, side: u.side, name: u.name, sub: u.sub || '', kind: u.kind,
-                    role: u.role || null, line: u.line || null,
+                    role: u.role || null, line: u.line || null, wake: u.wake || 0,
                     person: u.person || null, r: u.at[0], c: u.at[1], hp, maxHp: u.hp,
                     atk: u.atk, def: u.def + (lead ? 1 : 0), mv: u.mv, range: u.range || 1, commissar: Boolean(lead), naval: Boolean(u.naval), rail: Boolean(u.rail),
                     feat: heroics && u.feat ? u.feat : null, skirmish: heroics && Boolean(u.skirmish),
@@ -104,6 +108,7 @@
         const t = terrain(b, r, c);
         if (u && u.naval) return t.water || t.span ? 1 : Infinity;
         if (u && u.rail) return onRail(b, r, c) ? 1 : Infinity;
+        if (u && u.ferrying && t.water) return 1;
         if (t.cost >= 99) return Infinity;
         if (t.ford && !fordOpen(b)) return Infinity;
         return t.cost;
@@ -168,6 +173,8 @@
             const r = Math.floor(k / 100), c = k % 100;
             if (r === u.r && c === u.c) continue;
             if (unitAt(b, r, c)) continue;
+            // A ferried unit lands; it does not stop on the river.
+            if (u.ferrying && terrain(b, r, c).water) continue;
             out.push({ r, c, cost });
         }
         return out;
@@ -307,7 +314,7 @@
 
     // ── Feats: a unit's decisive moment, once a battle ──
 
-    const FEAT_KINDS = ['strike', 'assault', 'muster', 'ride'];
+    const FEAT_KINDS = ['strike', 'assault', 'muster', 'ride', 'ferry'];
 
     // The blow a feat strikes with, for preview and strike.
     function featMod(u) {
@@ -333,7 +340,7 @@
         if (!f || !FEAT_KINDS.includes(f.kind)) return 'none';
         if (b.feats[f.id]) return 'used';
         if (b.result || u.side !== 'red' || u.acted) return 'acted';
-        if (f.kind === 'ride' && u.moved) return 'moved';
+        if ((f.kind === 'ride' || f.kind === 'ferry') && u.moved) return 'moved';
         if (f.kind === 'muster' && !musterSpot(b, u)) return 'crowded';
         if (f.kind === 'assault' && b.fortBlows < (f.after || 0)) return 'early';
         if ((f.kind === 'strike' || f.kind === 'assault') && !featTargets(b, u).length) return 'no-target';
@@ -375,6 +382,12 @@
             });
             b.events.push({ type: 'feat', id: u.id, feat: f.id }, { type: 'raised', id: n.id });
             u.acted = true; u.moved = true; u.prev = null;
+        } else if (f.kind === 'ferry') {
+            b.events = [];
+            b.feats[f.id] = true;
+            u.ferrying = true;
+            u.mv += f.mv || 0;
+            b.events.push({ type: 'feat', id: u.id, feat: f.id });
         } else {
             b.events = [];
             b.feats[f.id] = true;
@@ -419,6 +432,7 @@
 
     // Whether a White unit leaves its post this turn, by its role.
     function marching(b, u) {
+        if (u.wake && b.turn < u.wake) return false;
         if (u.role === 'wall') return b.turned[u.line];
         if (u.role === 'strike') return Boolean(reserveSector(b));
         return u.role === 'raid';
@@ -476,6 +490,12 @@
         }
         for (const u of alive(b).filter(o => o.side === 'white')) {
             if (u.hp <= 0 || b.result) continue;
+            // Before its hour a counterattack only strikes what comes near.
+            if (u.wake && b.turn < u.wake) {
+                const t = bestTarget(b, u);
+                if (t) strike(b, u, t);
+                continue;
+            }
             if (u.role === 'wall' && b.turned[u.line]) {
                 // The garrison of a turned line falls back on the next one.
                 const [r, c] = b.def.lines[u.line].fallback;
@@ -501,6 +521,18 @@
             const t = bestTarget(b, u);
             if (t) strike(b, u, t);
         }
+        // The air raid: the planes find their targets at the end of one White turn.
+        const air = b.def.air;
+        if (air && b.turn === air.turn) {
+            for (const id of air.units) {
+                const u = byId(b, id);
+                if (!u || u.side !== 'red') continue;
+                const dmg = Math.min(u.hp - 1, air.dmg);
+                if (dmg <= 0) continue;
+                u.hp -= dmg;
+                b.events.push({ type: 'air', id: u.id, dmg });
+            }
+        }
         // Water: once the wind turns, the Sivash floods back.
         if (b.def.windTurns && b.turn > b.def.windTurns) {
             for (const u of alive(b)) {
@@ -525,7 +557,7 @@
         for (const u of b.units) {
             u.moved = false; u.acted = false; u.prev = null; u.struck = false;
             // A ride lasts the turn it was made.
-            if (u.riding) { u.riding = false; u.mv -= u.feat.mv || 0; }
+            if (u.riding || u.ferrying) { u.riding = false; u.ferrying = false; u.mv -= u.feat.mv || 0; }
         }
         return true;
     }

@@ -62,7 +62,21 @@ const OREL = {
     otr: [{ r: 2, c: 5 }],
     o13b: null,
 };
-const ROUTES = { kazan: KAZAN, orel: OREL };
+// Ufa as history took it: the 25th Division crosses at Krasny Yar, the
+// 217th over the pontoon holds the bridgehead, the rest go down the east bank into the
+// city (the 31st round its east, where it cut the railway); the guns
+// shell across the river, the 24th stays at the bridge.
+const UFA_STATION = { r: 6, c: 9 };
+const UFA = {
+    u217: [{ r: 2, c: 3 }, { r: 2, c: 4 }, { r: 1, c: 5 }],
+    u73: [{ r: 1, c: 3 }, { r: 1, c: 4 }, { r: 2, c: 5 }, { r: 4, c: 7 }, { r: 5, c: 8 }, UFA_STATION],
+    u31: [{ r: 2, c: 3 }, { r: 2, c: 4 }, { r: 2, c: 5 }, { r: 3, c: 9 }, { r: 5, c: 11 }, { r: 6, c: 10 }, UFA_STATION],
+    'u220,u25': [{ r: 0, c: 3 }, { r: 0, c: 4 }, { r: 0, c: 5 }, { r: 2, c: 6 }, { r: 4, c: 7 }, { r: 5, c: 8 }, UFA_STATION],
+    u25g: [{ r: 3, c: 3 }],
+    u24: null,
+    utr: null,
+};
+const ROUTES = { kazan: KAZAN, ufa: UFA, orel: OREL };
 
 // Sends the season, fighting the season's battle on the way when it comes.
 function send(s) {
@@ -449,7 +463,7 @@ assert.equal(G.restore('{'), null);
 // targets whose fortification they wear. A null route holds and shoots.
 // drive() gives the orders through order(name, ...args): straight to the
 // board, or through the campaign's log.
-function drive(b, routes, order) {
+function drive(b, routes, order, { feats = false } = {}) {
     const rows = b.def.map.length, cols = b.def.map[0].length;
     const goals = b.def.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
     // A unit's path cost to a tile, ignoring units.
@@ -494,7 +508,9 @@ function drive(b, routes, order) {
                 if (step && step.d < d[u.r][u.c]) order('move', u.id, step.t.r, step.t.c);
                 target = best();
             }
-            if (target && !b.result) order('attack', u.id, target.t.id);
+            // With feats, a blow that a feat strikes harder goes as the feat.
+            if (feats && target && !b.result && !B.featBlock(b, u) && B.featTargets(b, u).includes(target.t)) order('feat', u.id, target.t.id);
+            else if (target && !b.result) order('attack', u.id, target.t.id);
         }
         if (!b.result) order('end');
     }
@@ -799,6 +815,58 @@ assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red o
     }
 }
 
+// Ufa: the crossing at Krasny Yar. History's plan (margin 3.5) takes the
+// city as history did; short of the pressure the 220th stays behind and
+// the bridgehead fails; strength to spare is no slower. Krasny Yar left
+// empty falls to the counterattack, which waits for its hour (turn 4);
+// the planes wound but do not kill; the steamers land the 73rd on the far
+// bank, and with the feats a quick march takes Ufa within the quick turns.
+{
+    const U = D.battles.ufa;
+    const muster = (margin, cards = []) => ({ margin, fed: 1, commissar: true, cards });
+    const turns = m => { const b = fight(UFA, {}, muster(m), U); return b.result === 'won' ? b.turn : Infinity; };
+    assert.ok(Number.isFinite(turns(3.5)) && turns(3.5) > U.reward.quick, "history's margin takes Ufa as history did");
+    assert.equal(turns(-1), Infinity, 'short of the pressure the bridgehead fails');
+    assert.ok(turns(6.5) <= turns(3.5), 'strength to spare is no slower');
+    const bare = fight({ 'u73,u220,u25,u31,u217': UFA['u220,u25'], u25g: UFA.u25g, u24: null, utr: null }, {}, muster(3.5), U);
+    assert.equal(bare.result, 'lost', 'Krasny Yar left empty');
+    assert.equal(B.unitAt(bare, ...U.protect.at).side, 'white');
+    const b = B.start(U, {}, muster(3.5));
+    assert.equal(B.marching(b, B.byId(b, 'wcos')), false, 'the counterattack waits');
+    const before = B.byId(b, 'u25').hp;
+    assert.ok(B.act(b, 'end') && B.act(b, 'end'));
+    assert.ok(b.events.some(e => e.type === 'air' && e.id === 'u25'));
+    assert.equal(B.byId(b, 'u25').hp, before - U.air.dmg);
+    assert.ok(B.act(b, 'end'));
+    assert.ok(B.marching(b, B.byId(b, 'wcos')), 'on turn 4 it marches');
+    const worn = B.start(U, {}, muster(3.5));
+    B.byId(worn, 'u25').hp = 2;
+    B.act(worn, 'end'); B.act(worn, 'end');
+    assert.equal(B.byId(worn, 'u25').hp, 1, 'the planes do not kill');
+    // The steamers: over the river, onto the far bank, never onto the water.
+    const f = B.start(U, {}, muster(3.5));
+    const boats = B.byId(f, 'u73');
+    assert.ok(!B.reachable(f, boats).some(t => t.c >= 5), 'no crossing without the boats this turn');
+    assert.ok(B.act(f, 'feat', 'u73'));
+    const reach = B.reachable(f, boats);
+    assert.ok(reach.some(t => t.r === 3 && t.c === 5));
+    assert.ok(!reach.some(t => B.terrain(f, t.r, t.c).water));
+    assert.ok(B.act(f, 'move', 'u73', 3, 5) && B.act(f, 'end'));
+    assert.equal(boats.mv, 3);
+    assert.ok(!B.reachable(f, boats).some(t => B.terrain(f, t.r, t.c).water));
+    // A quick march with the feats at history's margin.
+    const quick = B.start(U, {}, muster(3.5));
+    assert.ok(B.act(quick, 'feat', 'u73'));
+    drive(quick, {
+        u217: [{ r: 0, c: 3 }, { r: 0, c: 4 }, { r: 1, c: 5 }],
+        u73: [{ r: 3, c: 5 }, { r: 4, c: 7 }, UFA_STATION],
+        'u220,u25': [{ r: 2, c: 3 }, { r: 2, c: 4 }, { r: 2, c: 5 }, { r: 4, c: 8 }, { r: 7, c: 9 }, UFA_STATION],
+        u25g: [{ r: 3, c: 3 }], u24: null, utr: null,
+    }, (n, ...a) => B.act(quick, n, ...a), { feats: true });
+    assert.equal(quick.result, 'won');
+    assert.ok(quick.turn <= U.reward.quick, `a quick crossing takes Ufa within ${U.reward.quick} turns (${quick.turn})`);
+}
+
 // Rules 3, heroics. Feats: a unit's decisive moment, once a battle.
 {
     const K = D.battles.kazan, O = D.battles.orel, P = D.battles.perekop;
@@ -953,7 +1021,7 @@ assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red o
         for (const u of def.units) if (u.person) drawn.add(u.person[1]);
         for (const v of def.voices) {
             assert.ok([].concat(v.unit).every(u => units.has(u)), `${id}: speaker of ${v.text}`);
-            assert.ok(/^(start|goal|flood|reserve|surrender|turn:\d+|turned:\w+|feat:[\w-]+)$/.test(v.when), `${id}: when ${v.when}`);
+            assert.ok(/^(start|goal|flood|reserve|surrender|air|turn:\d+|turned:\w+|feat:[\w-]+)$/.test(v.when), `${id}: when ${v.when}`);
             if (v.when.startsWith('feat:')) assert.ok(feats.has(v.when.slice(5)), `${id}: feat ${v.when}`);
             if (v.when.startsWith('turned:')) assert.ok(def.lines[v.when.slice(7)], `${id}: line ${v.when}`);
             assert.ok(v.who || v.by || v.face, `${id}: a picture for ${v.text}`);
