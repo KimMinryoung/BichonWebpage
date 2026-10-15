@@ -83,7 +83,8 @@
     // faction attacks, the pressure moves by `by` when `when` holds (the
     // train or a commissar on the front is / is not there, `at` reserve
     // divisions kept back, workers or peasants `below` a level). motion:
-    // how its marker comes onto the map.
+    // how its marker comes onto the map. spoils: what it leaves behind when
+    // it breaks before a front with strength to spare (rules 3).
     const TRICOLOR = ['#ffffff', '#0039a6', '#d52b1e'];
     const factions = {
         czech: {
@@ -91,42 +92,50 @@
             note: '오스트리아군에서 넘어온 체코·슬로바키아 포로로 만든 군단. 프랑스 전선으로 가려고 시베리아 횡단철도를 타고 있었다. 1918–1920년 체코슬로바키아 국기는 폴란드처럼 흰색·빨간색 두 줄이었고, 1920년 3월 파란 삼각형이 더해졌다.',
             trait: { name: '철도 위의 군단', motion: 'rail', when: 'train', is: false, by: 2, rule: '장갑열차가 이 전선에 없으면 압력 +2', text: '군단은 열차를 집 삼아 시베리아 횡단철도를 따라 싸웠다. 철도를 쥔 쪽이 볼가를 쥐었다. 장갑열차로 철도를 되찾아야 한다.' },
             cries: { beaten: '열차로 물러난다. 블라디보스토크는 멀다.', surging: '철도는 우리 것이다!' },
+            spoils: '영국군이 남기고 간 창고',
+            spoils: '철도 위의 보급 열차',
         },
         komuch: {
             name: '코무치 인민군', short: '코무치', kind: 'white', link: T('komuch'),
             note: '사마라에 선 사회혁명당 계열 제헌의회 의원 위원회(코무치)의 군대. 9월 옴스크의 디렉토리로 합쳐졌다가 11월 콜차크의 쿠데타로 밀려났다.',
             trait: { name: '제헌의회의 깃발', motion: 'march', when: 'workers', below: 55, by: 2, rule: '노동자 지지가 55 아래면 압력 +2', text: '사회혁명당의 코무치는 「모든 권력을 제헌의회로」를 내걸었다. 1918년 8월 이젭스크·봇킨스크의 무기 공장 노동자가 소비에트에 맞서 일어나 인민군에 합류했다. 노동자가 등을 돌리면 그들이 코무치 편에 선다.' },
             cries: { beaten: '사마라를 버린다. 옴스크로!', surging: '볼가는 제헌의회의 것이다!' },
+            spoils: '카잔과 사마라의 탄약 창고',
         },
         kolchak: {
             name: '콜차크 정부군', short: '콜차크', kind: 'white', flag: TRICOLOR, link: P('alexander-kolchak'),
             note: '옴스크의 「최고 통치자」 콜차크 제독의 군대. 영국이 소총과 군복을 댔다. 백군은 제정 러시아의 흰색·파란색·빨간색 삼색기를 썼다.',
             trait: { name: '시베리아의 파르티잔', motion: 'march', when: 'peasants', below: 45, by: 2, rule: '농민 지지가 45 아래면 압력 +2', text: '콜차크 정부의 징병과 징발에 시베리아 농민이 들고일어나, 철도 뒤에서 파르티잔이 백군을 흔들었다. 붉은 군대의 징발이 그만큼 가혹해지면 농민은 어느 편도 들지 않는다.' },
             cries: { beaten: '우랄 너머로 물러난다.', surging: '볼가가 눈앞이다!' },
+            spoils: '영국제 소총과 군복을 실은 열차',
         },
         don: {
             name: '돈 카자크군', short: '돈 카자크', kind: 'white', flag: ['#0033a0', '#ffd500', '#d52b1e'], link: T('don-republic'),
             note: '아타만 크라스노프가 이끈 돈 카자크의 군대. 1918년에는 우크라이나를 점령한 독일의 지원을 받았다. 깃발은 돈 공화국의 파란색·노란색·빨간색.',
             trait: { name: '카자크 기병의 습격', motion: 'charge', when: 'reserve', at: 2, by: -2, rule: '예비 사단을 2개 이상 남기면 압력 −2', text: '카자크 기병은 전선의 틈을 뚫고 후방의 철도와 창고를 휘저었다. 1919년 8월 마몬토프의 기병군단은 탐보프까지 들어왔다. 뒤에 남긴 예비 사단이 습격을 막는다.' },
             cries: { beaten: '돈으로 돌아간다. 카자크의 땅을 지켜라.', surging: '후방의 철도를 휘저어라!' },
+            spoils: '말과 안장',
         },
         denikin: {
             name: '남러시아군(데니킨)', short: '데니킨', kind: 'white', flag: TRICOLOR, link: T('armed-forces-of-south-russia'),
             note: '코르닐로프가 세운 의용군에 돈·쿠반 카자크군을 묶은 데니킨의 군대. 1919년 여름 「모스크바 지령」으로 북진했다.',
             trait: { name: '장교 연대', motion: 'charge', when: 'commissar', is: false, by: 2, rule: '정치위원이 없는 전선이면 압력 +2', text: '코르닐로프·마르코프·드로즈돕스키 연대는 장교로만 채운 의용군의 정예였다. 정치위원 없이 맞선 징집 사단은 그 앞에서 흩어졌다.' },
             cries: { beaten: '장교 연대가 꺾였다.', surging: '모스크바로!' },
+            spoils: '영국이 보낸 탄약과 군복',
         },
         yudenich: {
             name: '북서군(유데니치)', short: '유데니치', kind: 'white', flag: TRICOLOR, link: T('north-western-army-white'),
             note: '에스토니아를 발판으로 페트로그라드를 노린 유데니치 장군의 백군.',
             trait: { name: '페트로그라드 기습', motion: 'charge', when: 'workers', below: 50, by: 2, rule: '노동자 지지가 50 아래면 압력 +2', text: '유데니치는 영국이 준 전차 여섯 대를 앞세워 풀코보 고지까지 왔다. 도시를 지킨 것은 거리에 바리케이드를 쌓은 페트로그라드 노동자였다.' },
             cries: { beaten: '에스토니아로 물러난다.', surging: '페트로그라드가 보인다!' },
+            spoils: '탄약 수레와 군량',
         },
         allies: {
             name: '연합국 간섭군', short: '간섭군', kind: 'interv',
             note: '영국을 중심으로 프랑스·미국 병력이 무르만스크와 아르한겔스크에 상륙해 북부 정부를 세웠다. 영국군은 1919년 가을 철수했다.',
             trait: { name: '지친 원정군', motion: 'sail', when: 'commissar', is: true, by: -1, rule: '정치위원이 있으면 압력 −1', text: '세계대전을 마친 영국·미국·프랑스 병사들은 남의 나라 내전에 머물 생각이 없었다. 볼셰비키의 외국어 전단이 병영에 돌았고, 1919년 봄 반란과 명령 거부가 잇따랐다.' },
             cries: { beaten: '병사들은 집에 가고 싶어 한다.', surging: '드비나강을 거슬러 오른다.' },
+            spoils: '아르한겔스크의 군수 창고',
         },
         north: {
             name: '북부 정부군', short: '북부 정부', kind: 'white', flag: TRICOLOR, link: T('northern-region-government'),
@@ -139,24 +148,28 @@
             note: '브레스트 강화로 우크라이나·벨라루스·발트를 점령한 동맹국 군대. 1918년 11월 독일이 항복한 뒤 물러났다. 깃발은 독일 제국의 검은색·흰색·빨간색.',
             trait: { name: '점령군', motion: 'march', text: '브레스트 강화로 얻은 땅을 지키는 군대. 1918년 11월 독일이 항복하자 싸우지 않고 물러난다.' },
             cries: { beaten: '휴전이다. 집으로 간다.', surging: '점령지를 지킨다.' },
+            spoils: '점령지의 창고',
         },
         poland: {
             name: '폴란드군', short: '폴란드', kind: 'national', flag: ['#ffffff', '#dc143c'], link: P('jozef-pilsudski'),
             note: '1918년 독립을 되찾은 폴란드의 군대. 피우수트스키가 이끌었다.',
             trait: { name: '조국을 지키는 군대', motion: 'march', rule: '바르샤바는 여유 8이 있어야 들어간다', text: '침공군으로 키예프까지 왔던 폴란드군도 비스와강 앞에서는 나라를 지키는 군대였다. 폴란드 노동자는 붉은 군대를 해방군으로 맞지 않았다.' },
             cries: { beaten: '부크강 뒤로 물러난다.', surging: '동쪽으로 밀어붙여라!' },
+            spoils: '탄약 수레와 군량',
         },
         unr: {
             name: '우크라이나 인민공화국군', short: '우크라이나', kind: 'national', link: P('symon-petliura'),
             note: '페틀류라가 이끈 디렉토리 정부의 군대. 1920년 폴란드와 동맹해 키예프로 들어왔다.',
             trait: { name: '아타만의 농민군', motion: 'charge', when: 'peasants', below: 40, by: 1, rule: '농민 지지가 40 아래면 압력 +1', text: '디렉토리의 병력은 저마다 아타만을 따르는 농민 무리였다. 징발에 지친 우크라이나 마을이 그들을 먹이고 숨겼다.' },
             cries: { beaten: '아타만들이 흩어진다.', surging: '키예프는 우크라이나의 것이다!' },
+            spoils: '탄약과 말',
         },
         wrangel: {
             name: '러시아군(브란겔)', short: '브란겔', kind: 'white', flag: TRICOLOR, link: P('pyotr-wrangel'),
             note: '노보로시스크 철수 뒤 데니킨에게서 지휘권을 넘겨받은 브란겔이 크림에서 다시 세운 백군.',
             trait: { name: '브란겔의 토지법', motion: 'rail', when: 'peasants', below: 40, by: 2, rule: '농민 지지가 40 아래면 압력 +2', text: '브란겔은 1920년 5월 지주의 땅 일부를 농민에게 넘기는 토지법을 내고 질서 있는 정부를 꾸몄다. 붉은 군대의 징발에 지친 북타브리아 농민 일부가 그에게 기대를 걸었다.' },
             cries: { beaten: '방벽 뒤로, 크림으로!', surging: '북타브리아의 곡식은 우리 것이다.' },
+            spoils: '영국제 전차와 탄약',
         },
     };
 
@@ -584,6 +597,16 @@
     // . steppe, ~ Sivash shallows (fordable while the west wind holds),
     // # deep water, W the Turkish Wall, Y the Yushun lines, C the Chongar
     // positions, b the burnt Chongar bridge, t town.
+    // Feats (rules 3): a unit's decisive moment, once a battle. kind
+    // strike (plus damage, no counter), assault (on a fortification only,
+    // its ground ignored, after `after` Red blows on fortifications),
+    // muster (a new unit beside it), ride (move +mv this turn, past the
+    // enemy). Units sharing a feat share its one use.
+    const THIRD_ASSAULT = {
+        id: 'third-assault', name: '세 번째 돌격', kind: 'assault', after: 2, plus: 2,
+        text: '진지 위의 적을 붉은 부대가 두 번 친 뒤에 쓸 수 있다. 이번 공격은 진지 방어를 무시하고 피해 +2.',
+        history: '11월 8일 제51사단은 터키 방벽을 두 번 들이쳤다가 철조망과 기관총 앞에서 물러났다. 9일 새벽 세 번째 돌격에 방벽 위로 올라섰다.',
+    };
     const perekop = {
         id: 'perekop', front: 'crimea', final: true,
         title: '페레코프-촌가르 작전', date: '1920년 11월 7–12일',
@@ -619,6 +642,8 @@
             { when: 'turned:wall', unit: ['w1', 'w2', 'w2b', 'w5'], by: 'wrangel', text: '뒤로 돌아 들어왔다! 방벽을 버리고 유슌으로 물러나라!' },
             { when: 'turned:chongar', unit: ['wc1', 'wc2', 'wcg'], by: 'wrangel', text: '촌가르가 뚫렸다. 잔코이로 가는 길이 열린다!' },
             { when: 'turn:10', unit: ['r1c', 'r15', 'r51a', 'r30'], face: 'red-soldier', text: '겨울이 오기 전에 크림에 들어간다. 서둘러라!' },
+            { when: 'feat:third-assault', unit: ['r51a', 'r51b'], who: ['바실리 블류헤르', 'vasily-blyukher'], text: '세 번째다. 이번에는 방벽을 넘는다! 앞으로!' },
+            { when: 'surrender', unit: ['r15', 'r52', 'r51a', 'r30', 'r1c'], face: 'red-soldier', text: '총을 내려놓았다! 쏘지 마라, 이제 우리 편이다.' },
         ],
         goals: [{ at: [9, 3], name: '유슌 역' }, { at: [10, 10], name: '잔코이' }],
         // The Salkovo–Dzhankoy railway over the Chongar strait: the train's road.
@@ -650,13 +675,13 @@
             t: { name: '마을', cost: 1, def: 1, cls: 'town' },
         },
         units: [
-            { id: 'r51a', tag: '51', side: 'red', name: '제51사단', sub: '블류헤르', kind: 'inf', at: [0, 1], hp: 10, atk: 5, def: 3, mv: 3, person: ['바실리 블류헤르', 'vasily-blyukher'] },
-            { id: 'r51b', tag: '51돌격', side: 'red', name: '제51사단 돌격여단', sub: '블류헤르', kind: 'inf', at: [0, 3], hp: 10, atk: 5, def: 3, mv: 3, need: 5 },
+            { id: 'r51a', tag: '51', side: 'red', name: '제51사단', sub: '블류헤르', kind: 'inf', at: [0, 1], hp: 10, atk: 5, def: 3, mv: 3, person: ['바실리 블류헤르', 'vasily-blyukher'], feat: THIRD_ASSAULT },
+            { id: 'r51b', tag: '51돌격', side: 'red', name: '제51사단 돌격여단', sub: '블류헤르', kind: 'inf', at: [0, 3], hp: 10, atk: 5, def: 3, mv: 3, need: 5, feat: THIRD_ASSAULT },
             { id: 'r51g', tag: '51포병', side: 'red', name: '제51사단 포병', kind: 'art', at: [1, 2], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
             { id: 'r6g', tag: '중포', side: 'red', name: '제6군 중포병', kind: 'art', at: [1, 1], hp: 7, atk: 5, def: 1, mv: 2, range: 2, need: 3 },
             { id: 'rcz', tag: '증원', side: 'red', name: '증원 사단', sub: '서부에서 온', kind: 'inf', at: [0, 2], hp: 10, atk: 4, def: 3, mv: 3, flag: 'curzon' },
             { id: 'r15', tag: '15', side: 'red', name: '제15사단', sub: '시바시 도하', kind: 'inf', at: [1, 5], hp: 10, atk: 4, def: 3, mv: 3, lead: true },
-            { id: 'rmk', tag: '마흐노', side: 'red', name: '마흐노 부대', sub: '카레트니크', kind: 'cav', at: [1, 6], hp: 8, atk: 5, def: 2, mv: 5, flag: 'makhno', person: ['세묜 카레트니크', 'semyon-karetnik'] },
+            { id: 'rmk', tag: '마흐노', side: 'red', name: '마흐노 부대', sub: '카레트니크', kind: 'cav', at: [1, 6], hp: 8, atk: 5, def: 2, mv: 5, flag: 'makhno', person: ['세묜 카레트니크', 'semyon-karetnik'], skirmish: true },
             { id: 'r52', tag: '52', side: 'red', name: '제52사단', sub: '시바시 도하', kind: 'inf', at: [1, 7], hp: 10, atk: 4, def: 3, mv: 3 },
             { id: 'r1c', tag: '1기병', side: 'red', name: '제1기병군', sub: '부됸니', kind: 'cav', at: [0, 8], hp: 12, atk: 6, def: 2, mv: 5, need: 0, person: ['세묜 부됸니', 'semyon-budyonny'] },
             { id: 'r2c', tag: '2기병', side: 'red', name: '제2기병군', sub: '미로노프', kind: 'cav', at: [0, 9], hp: 10, atk: 5, def: 2, mv: 5, card: 'mironov', person: ['필리프 미로노프', 'filipp-mironov'] },
@@ -684,6 +709,8 @@
             '방어선 뒤의 노란 점선 지역에 붉은 부대가 서면 그 방어선은 우회된다. 수비대의 진지 방어는 +1로 줄고, 수비대는 물러날 길을 찾는다.',
             '백군 예비대인 바르보비치 기병군단은 하나뿐이다. 붉은 군대가 가장 깊이 들어온 구역으로 달려가고, 그 구역의 위협이 사라질 때까지 다른 곳으로 가지 않는다. 한쪽에서 먼저 압박해 예비대를 끌어낸 뒤 다른 쪽을 칠 수 있다.',
             '적과 맞닿은 칸에 들어가면 그 턴의 이동은 끝난다. 한 적을 여럿이 둘러싸고 치면 둘러싼 부대마다 피해가 1씩 늘어난다.',
+            '결정적 한 수(★): 제51사단의 「세 번째 돌격」은 진지 위의 적을 두 번 친 뒤 한 번, 진지 방어를 무시하고 친다. 마흐노 부대의 기관총 수레(타찬카)는 치고 나서도 움직일 수 있다(아직 움직이지 않았으면).',
+            '이미 병력이 절반 아래로 꺾인 백군 부대를 붉은 부대 셋이 둘러싼 채 치면, 그 부대는 총을 내려놓고 붉은 군대로 넘어온다(투항). 포로는 다음 시기 사단이 된다.',
         ],
         history: '11월 8일 새벽 제51사단의 방벽 정면 공격은 철조망과 기관총 앞에서 막혔다. 같은 날 밤 제15·52사단과 마흐노 부대가 현지 주민의 안내로 시바시를 건너 리톱스키 반도에 올랐고, 바르보비치 기병의 반격을 버텼다. 퇴로를 위협받은 백군은 9일 새벽 방벽을 버렸다. 11일 유슌 방어선이 뚫렸고, 같은 날 밤 제4군의 제30사단이 촌가르 진지를 돌파했다. 붉은 기병이 그 뒤를 따라 크림으로 들어갔다.',
     };
@@ -728,6 +755,9 @@
             { when: 'start', unit: 'wk2', by: 'czech', text: '철교 북쪽은 군단이 지킨다. 건너오는 놈은 다리 위에서 쓰러진다.' },
             { when: 'goal', unit: ['k5l', 'k2a', 'k5c', 'ksl'], face: 'red-soldier', text: '크렘린이 비었다! 들어가라!' },
             { when: 'turn:6', unit: ['wk1', 'wk3', 'wk2'], by: 'komuch', text: '버텨라, 사마라에서 원군이 온다!' },
+            { when: 'feat:night-raid', unit: 'kfl', who: ['표도르 라스콜니코프', 'fyodor-raskolnikov'], text: '불을 끄고 부두로 들어간다. 포대와 바지선부터 태워라!' },
+            { when: 'feat:all-arms', unit: ['ktc', 'ktr'], who: ['레프 트로츠키', 'trotsky'], text: '서기도 취사병도 총을 들어라! 스비야시스크는 내주지 않는다.' },
+            { when: 'surrender', unit: ['k5l', 'k5c', 'ksl', 'k2a'], face: 'red-soldier', text: '인민군 병사들이 손을 든다! 쏘지 마라, 이제 우리 편이다.' },
         ],
         goals: [{ at: [2, 7], name: '크렘린' }],
         // The Moscow–Kazan line: Sviyazhsk, its bridge over the Volga, Kazan.
@@ -752,11 +782,18 @@
             { id: 'k5l', tag: '라트비아', side: 'red', name: '라트비아 소총연대', sub: '제5군', kind: 'inf', at: [5, 3], hp: 10, atk: 5, def: 3, mv: 3, lead: true },
             { id: 'k5c', tag: '5군', side: 'red', name: '제5군 소총연대', sub: '징집병', kind: 'inf', at: [6, 2], hp: 10, atk: 4, def: 3, mv: 3 },
             { id: 'k5g', tag: '5군포', side: 'red', name: '제5군 포병', kind: 'art', at: [6, 1], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
-            { id: 'kfl', tag: '소함대', side: 'red', name: '볼가 소함대', sub: '라스콜니코프', kind: 'art', naval: true, at: [4, 3], hp: 8, atk: 4, def: 2, mv: 4, range: 2, person: ['표도르 라스콜니코프', 'fyodor-raskolnikov'] },
+            { id: 'kfl', tag: '소함대', side: 'red', name: '볼가 소함대', sub: '라스콜니코프', kind: 'art', naval: true, at: [4, 3], hp: 8, atk: 4, def: 2, mv: 4, range: 2, person: ['표도르 라스콜니코프', 'fyodor-raskolnikov'],
+                feat: { id: 'night-raid', name: '야간 기습', kind: 'strike', plus: 3, text: '불을 끈 배들이 어둠을 타고 부두 밑까지 들어가 쏜다. 이번 공격 피해 +3, 반격 없음.', history: '8월 30일 밤 라스콜니코프의 수뢰정과 무장 기선이 트로츠키를 태우고 카잔 부두로 들어가 백군 포대와 함정·바지선을 불태우고 빠져나왔다.' } },
             { id: 'ksl', tag: '수병', side: 'red', name: '발트함대 수병 분견대', sub: '모스크바에서 온', kind: 'inf', at: [7, 3], hp: 9, atk: 5, def: 2, mv: 3, need: 0 },
             { id: 'k2a', tag: '2군', side: 'red', name: '제2군 소총사단', sub: '아진', kind: 'inf', at: [1, 11], hp: 10, atk: 5, def: 3, mv: 3, need: 3, person: ['블라디미르 아진', 'vladimir-azin'] },
             { id: 'kcp', tag: '당원', side: 'red', name: '공산당원·사관생도 분견대', sub: '모스크바에서 온', kind: 'inf', at: [7, 1], hp: 8, atk: 4, def: 3, mv: 3, need: 6 },
-            { id: 'ktr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', rail: true, at: [5, 1], hp: 6, atk: 4, def: 2, mv: 2, range: 2, card: 'train', person: ['레프 트로츠키', 'trotsky'] },
+            { id: 'ktr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', rail: true, at: [5, 1], hp: 6, atk: 4, def: 2, mv: 2, range: 2, card: 'train', person: ['레프 트로츠키', 'trotsky'],
+                feat: {
+                    id: 'all-arms', name: '모두 총을 들어라', kind: 'muster',
+                    unit: { id: 'ktc', tag: '승무원', name: '열차 승무원 분견대', sub: '트로츠키의 열차', kind: 'inf', hp: 6, atk: 4, def: 3, mv: 3 },
+                    text: '열차의 승무원과 서기, 전신수, 취사병까지 총을 들고 내린다. 열차 곁에 분견대 하나가 생긴다(이번 턴은 행동하지 않음).',
+                    history: '8월 28일 카펠과 사빈코프의 기습대가 스비야시스크 바로 앞 튜를레마 역까지 들어왔다. 트로츠키는 열차의 승무원과 참모, 사령부의 모든 사람을 무장시켜 내보냈고, 기습대는 물러났다.',
+                } },
             { id: 'wk1', tag: '인민군', side: 'white', name: '코무치 인민군', sub: '크렘린 수비', kind: 'inf', at: [2, 7], hp: 8, atk: 4, def: 2, mv: 3, role: 'hold' },
             { id: 'wk2', tag: '체코', side: 'white', name: '체코슬로바키아 군단', sub: '철교 북쪽', kind: 'inf', at: [3, 2], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
             { id: 'wk3', tag: '인민군', side: 'white', name: '코무치 인민군', sub: '시가 동쪽', kind: 'inf', at: [2, 8], hp: 6, atk: 3, def: 2, mv: 3, role: 'hold' },
@@ -770,6 +807,8 @@
             '라스콜니코프의 볼가 소함대는 강 위로만 다니며 사거리 2로 부두와 강가를 친다. 크렘린의 방어도 소함대와 포병의 포격으로 깎인다.',
             '카펠의 기동대가 오른쪽 둑을 따라 스비야시스크로 온다. 기동대는 붉은 부대 곁을 멈추지 않고 지나친다. 스비야시스크에 백군이 들어서면 지므로, 그 칸에 부대 하나를 남겨 두어야 한다.',
             '적과 맞닿은 칸에 들어가면 그 턴의 이동은 끝난다. 한 적을 여럿이 둘러싸고 치면 둘러싼 부대마다 피해가 1씩 늘어난다.',
+            '결정적 한 수(★): 전투마다 한 번씩 쓴다. 소함대의 「야간 기습」은 피해 +3에 반격이 없다. 장갑열차의 「모두 총을 들어라」는 열차 곁에 승무원 분견대를 세운다.',
+            '이미 병력이 절반 아래로 꺾인 백군 부대를 붉은 부대 셋이 둘러싼 채 치면, 그 부대는 총을 내려놓고 붉은 군대로 넘어온다(투항). 포로는 다음 시기 사단이 된다.',
         ],
         history: '8월 말 카펠의 기습이 스비야시스크 코앞까지 닿았지만 사령부는 버텼다. 트로츠키는 모스크바에서 공산당원과 사관생도, 발트함대 수병을 끌어와 부대를 채웠고, 라스콜니코프의 볼가 소함대가 카잔의 백군 함정을 쳤다. 9월 10일 제5군과 볼가 소함대가 카잔을 되찾았다.',
     };
@@ -806,6 +845,8 @@
             { when: 'start', unit: 'wok', by: 'denikin', text: '므첸스크로 달린다. 놈들의 뒤를 칠 것이다.' },
             { when: 'turned:orel', unit: ['wo1', 'wo2', 'wob', 'wd1'], by: 'denikin', text: '퇴로가 끊긴다! 쿠르스크 길을 지켜라!' },
             { when: 'goal', unit: ['ol1', 'opv', 'o13a', 'oes'], face: 'red-soldier', text: '오룔 역이 비었다! 역으로!' },
+            { when: 'feat:deep-raid', unit: 'opr', who: ['비탈리 프리마코프', 'vitaly-primakov'], text: '멈추지 마라! 놈들의 짐마차와 포대를 친다!' },
+            { when: 'surrender', unit: ['ol1', 'oes', 'o13a', 'opv'], face: 'red-soldier', text: '총을 내려놓았다! 쏘지 마라, 이제 우리 편이다.' },
         ],
         goals: [{ at: [4, 6], name: '오룔 역' }],
         // The Moscow–Kursk line from Mtsensk through Orel station south,
@@ -833,7 +874,8 @@
         units: [
             { id: 'ol1', tag: '라트비아', side: 'red', name: '라트비아 소총사단', sub: '충격군', kind: 'inf', at: [3, 1], hp: 10, atk: 5, def: 3, mv: 3, lead: true },
             { id: 'oes', tag: '파블로프', side: 'red', name: '파블로프 소총여단', sub: '충격군', kind: 'inf', at: [5, 1], hp: 9, atk: 5, def: 3, mv: 3 },
-            { id: 'opr', tag: '붉은카자크', side: 'red', name: '붉은 카자크 여단', sub: '프리마코프', kind: 'cav', at: [2, 2], hp: 8, atk: 5, def: 2, mv: 5, person: ['비탈리 프리마코프', 'vitaly-primakov'] },
+            { id: 'opr', tag: '붉은카자크', side: 'red', name: '붉은 카자크 여단', sub: '프리마코프', kind: 'cav', at: [2, 2], hp: 8, atk: 5, def: 2, mv: 5, person: ['비탈리 프리마코프', 'vitaly-primakov'],
+                feat: { id: 'deep-raid', name: '후방 습격', kind: 'ride', mv: 3, text: '이번 턴 이동 +3, 적 곁에서 멈추지 않고 지나간다. 움직이기 전에 쓴다. 다 달린 뒤 칠 수 있다.', history: '프리마코프의 붉은 카자크는 백군 전선의 틈으로 빠져나가 뒤쪽의 철도와 짐마차, 포대를 휘저었다. 오룔-크로미 작전 동안 의용군의 퇴로를 끊는 일을 맡았다.' } },
             { id: 'o13a', tag: '9사단', side: 'red', name: '제9소총사단', sub: '제13군', kind: 'inf', at: [1, 6], hp: 10, atk: 4, def: 3, mv: 3 },
             { id: 'o13b', tag: '13군', side: 'red', name: '제13군 소총사단', sub: '므첸스크 수비', kind: 'inf', at: [0, 10], hp: 9, atk: 4, def: 3, mv: 3 },
             { id: 'o13g', tag: '13군포', side: 'red', name: '제13군 포병', kind: 'art', at: [1, 7], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
@@ -854,6 +896,8 @@
             '오룔 시가는 진지다(방어 +3). 포병의 포격으로 깎이고, 붉은 부대가 오룔 남동쪽의 노란 점선 지역에 서면 쿠르스크로 가는 퇴로가 끊겨 +1로 줄어든다. 정면으로 치기 전에 크로미 길로 돌아가 퇴로를 끊는 것이 충격군의 일이다.',
             '코르닐로프 충격연대가 므첸스크로 온다. 충격연대는 붉은 부대 곁을 멈추지 않고 지나친다. 므첸스크에 백군이 들어서면 지므로, 그 칸에 부대 하나를 남겨 두어야 한다.',
             '적과 맞닿은 칸에 들어가면 그 턴의 이동은 끝난다. 한 적을 여럿이 둘러싸고 치면 둘러싼 부대마다 피해가 1씩 늘어난다.',
+            '결정적 한 수(★): 붉은 카자크의 「후방 습격」은 전투에서 한 번, 그 턴 이동 +3에 적 곁을 멈추지 않고 지나간다.',
+            '이미 병력이 절반 아래로 꺾인 백군 부대를 붉은 부대 셋이 둘러싼 채 치면, 그 부대는 총을 내려놓고 붉은 군대로 넘어온다(투항). 포로는 다음 시기 사단이 된다.',
         ],
         history: '10월 11일 충격군이 오룔 서쪽에서 의용군의 측면을 쳐 15일 크로미에서 드로즈돕스키 연대들을 밀어냈다. 제13군이 므첸스크 앞에서 코르닐로프 연대들을 붙잡는 사이 충격군이 남쪽에서 퇴로를 위협했고, 코르닐로프 연대들은 19일 밤 오룔을 버렸다. 20일 에스토니아 소총사단과 제9소총사단이 오룔에 들어갔다. 크로미는 23일 백군에게 다시 넘어갔다가 26일 라트비아 소총병이 되찾았다. 의용군의 정예 연대들은 다시는 모스크바를 향하지 못했다.',
     };

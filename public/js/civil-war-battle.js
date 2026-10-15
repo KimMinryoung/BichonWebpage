@@ -17,11 +17,22 @@
    train (rail) keeps to the board's railway (def.rails). A board may name a post the Reds must hold
    (protect): a White unit standing on it ends the battle lost, and a White
    raider (role raid) makes for it by the shortest dry road, riding past
-   Red units instead of halting beside them. */
+   Red units instead of halting beside them.
+
+   Under rules 3 (heroics) a battle has its decisive moments. A Red unit
+   may carry a feat, used once a battle (feat(unit, target?)): a blow
+   (strike) with extra damage and no counter, an assault that ignores a
+   fortification once it has been struck often enough, a muster that
+   raises a new unit beside it, a ride that carries it past the enemy
+   with extra move this turn. A skirmisher (Makhno's machine-gun carts)
+   may still move after it strikes. And a White unit beaten below half
+   its men, with three Red units beside it, lays down its arms and joins
+   the Reds (surrender). */
 (function (root) {
     'use strict';
 
     const SURROUND_CAP = 2;
+    const YIELD_RING = 3;           // Red units beside a broken White unit that make it surrender
     const WATER_DAMAGE = 3;
     const TURNED_BONUS = 1;
     const DIRS = [[-1, 0], [1, 0], [0, -1], [0, 1]];
@@ -42,8 +53,10 @@
     // muster: { margin, fed, commissar, cards } from the campaign's plan;
     // fed is the share of strength hunger leaves a division, and it is
     // the share of their men the Red units bring; a commissar steadies the
-    // units marked lead (defence +1).
-    function start(def, flags, muster) {
+    // units marked lead (defence +1). opts.rules under 3 (a save from
+    // before) fights without feats and surrenders.
+    function start(def, flags, muster, opts) {
+        const heroics = !(opts && opts.rules < 3);
         const units = def.units
             .filter(u => joins(u, flags, muster))
             .map(u => {
@@ -55,6 +68,7 @@
                     role: u.role || null, line: u.line || null,
                     person: u.person || null, r: u.at[0], c: u.at[1], hp, maxHp: u.hp,
                     atk: u.atk, def: u.def + (lead ? 1 : 0), mv: u.mv, range: u.range || 1, commissar: Boolean(lead), naval: Boolean(u.naval), rail: Boolean(u.rail),
+                    feat: heroics && u.feat ? u.feat : null, skirmish: heroics && Boolean(u.skirmish),
                     moved: false, acted: false, prev: null,
                 };
             });
@@ -62,6 +76,7 @@
         for (const id of Object.keys(def.lines || {})) turned[id] = false;
         return {
             def, turn: 1, units, result: null, turned, wear: {}, reserve: null,
+            heroics, feats: {}, fortBlows: 0, captured: 0,
             events: [], report: [],
         };
     }
@@ -132,7 +147,7 @@
             const cur = queue.shift();
             if (cur.cost > (best.get(key(cur.r, cur.c)) ?? Infinity)) continue;
             // Raiders ride past the enemy; everyone else halts beside him.
-            const stop = u.role !== 'raid' && (cur.r !== u.r || cur.c !== u.c) && enemiesAdjacent(b, u, cur.r, cur.c);
+            const stop = u.role !== 'raid' && !u.riding && (cur.r !== u.r || cur.c !== u.c) && enemiesAdjacent(b, u, cur.r, cur.c);
             if (stop) continue;
             for (const [dr, dc] of DIRS) {
                 const r = cur.r + dr, c = cur.c + dc;
@@ -167,29 +182,42 @@
         return Math.min(SURROUND_CAP, n);
     }
 
-    function hit(b, a, d) {
+    // mod, a feat's blow: plus damage, noGround (the fortification
+    // ignored), noCounter.
+    function hit(b, a, d, mod) {
         const power = a.atk * (0.6 + 0.4 * a.hp / a.maxHp);
-        return Math.max(1, Math.round(power + surround(b, a, d) - defenseOf(b, d)));
+        const guard = mod && mod.noGround ? d.def : defenseOf(b, d);
+        return Math.max(1, Math.round(power + surround(b, a, d) - guard + ((mod && mod.plus) || 0)));
     }
 
-    // Damage the attack would deal, the counter it would draw, and whether
-    // its shells wear the target's fortification.
-    function preview(b, a, d) {
-        const dmg = Math.min(d.hp, hit(b, a, d));
-        const counters = d.hp > dmg && dist(a, d) === 1 && d.kind !== 'art';
+    // Whether a White unit left with hp men would lay down its arms: below
+    // half its strength with three Red units beside it.
+    function yields(b, d, hp) {
+        if (!b.heroics || d.side !== 'white' || hp <= 0 || hp * 2 >= d.maxHp) return false;
+        return alive(b).filter(o => o.side === 'red' && dist(o, d) === 1).length >= YIELD_RING;
+    }
+
+    // Damage the attack would deal, the counter it would draw, whether its
+    // shells wear the target's fortification, and whether the target
+    // surrenders (and so does not strike back).
+    function preview(b, a, d, mod) {
+        const dmg = Math.min(d.hp, hit(b, a, d, mod));
+        const surrender = a.side === 'red' && yields(b, d, d.hp - dmg);
+        const counters = d.hp > dmg && dist(a, d) === 1 && d.kind !== 'art' && !surrender && !(mod && mod.noCounter);
         const t = terrain(b, d.r, d.c);
         return {
-            dmg,
+            dmg, surrender,
             counter: counters ? Math.min(a.hp, Math.floor(hit(b, d, a) / 2)) : 0,
             wears: a.kind === 'art' && Boolean(t.fort) && groundOf(b, d.r, d.c) > 0,
         };
     }
 
-    function strike(b, a, d) {
-        const { dmg, counter, wears } = preview(b, a, d);
+    function strike(b, a, d, mod) {
+        const { dmg, counter, wears, surrender } = preview(b, a, d, mod);
+        if (a.side === 'red' && terrain(b, d.r, d.c).fort) b.fortBlows += 1;
         d.hp -= dmg;
         if (counter) a.hp -= counter;
-        b.events.push({ type: 'attack', from: a.id, to: d.id, dmg, counter });
+        b.events.push({ type: 'attack', from: a.id, to: d.id, dmg, counter, feat: mod ? mod.id : null });
         if (wears) {
             const k = key(d.r, d.c);
             b.wear[k] = (b.wear[k] || 0) + 1;
@@ -197,6 +225,13 @@
         }
         if (d.hp <= 0) b.events.push({ type: 'fall', id: d.id });
         if (a.hp <= 0) b.events.push({ type: 'fall', id: a.id });
+        if (surrender) {
+            // The broken unit comes over, done for this turn.
+            d.side = 'red'; d.role = null; d.line = null; d.yielded = true;
+            d.moved = true; d.acted = true; d.prev = null;
+            b.captured += 1;
+            b.events.push({ type: 'surrender', id: d.id });
+        }
     }
 
     function updateTurned(b) {
@@ -220,9 +255,13 @@
 
     // ── Red orders ──
 
+    // Whether a Red unit may still move: not yet this turn, and not after
+    // acting unless it is a skirmisher that has only struck.
+    const canMove = u => u.side === 'red' && !u.moved && (!u.acted || (u.skirmish && u.struck));
+
     function move(b, id, r, c) {
         const u = byId(b, id);
-        if (b.result || !u || u.side !== 'red' || u.moved || u.acted) return false;
+        if (b.result || !u || !canMove(u)) return false;
         if (!reachable(b, u).some(t => t.r === r && t.c === c)) return false;
         b.events = [];
         u.prev = { r: u.r, c: u.c, turned: Object.assign({}, b.turned) };
@@ -253,7 +292,97 @@
         if (!targets(b, u).includes(t)) return false;
         b.events = [];
         strike(b, u, t);
-        u.acted = true; u.moved = true; u.prev = null;
+        settleBlow(u);
+        checkResult(b);
+        return true;
+    }
+
+    // After a blow the unit is done, but a skirmisher that had not moved
+    // yet may still ride off.
+    function settleBlow(u) {
+        u.acted = true; u.prev = null;
+        if (u.skirmish && !u.moved) u.struck = true;
+        else u.moved = true;
+    }
+
+    // ── Feats: a unit's decisive moment, once a battle ──
+
+    const FEAT_KINDS = ['strike', 'assault', 'muster', 'ride'];
+
+    // The blow a feat strikes with, for preview and strike.
+    function featMod(u) {
+        const f = u.feat;
+        if (!f || (f.kind !== 'strike' && f.kind !== 'assault')) return null;
+        return { id: f.id, plus: f.plus || 0, noCounter: f.kind === 'strike', noGround: f.kind === 'assault' };
+    }
+
+    // Where a muster's new unit stands: the first free dry tile beside.
+    function musterSpot(b, u) {
+        const fresh = { side: 'red' };
+        for (const [dr, dc] of DIRS) {
+            const r = u.r + dr, c = u.c + dc;
+            const t = inside(b, r, c) && terrain(b, r, c);
+            if (t && enterCost(b, fresh, r, c) < Infinity && !t.ford && !unitAt(b, r, c)) return { r, c };
+        }
+        return null;
+    }
+
+    // Why a unit's feat cannot be used now, or null when it can.
+    function featBlock(b, u) {
+        const f = u && u.feat;
+        if (!f || !FEAT_KINDS.includes(f.kind)) return 'none';
+        if (b.feats[f.id]) return 'used';
+        if (b.result || u.side !== 'red' || u.acted) return 'acted';
+        if (f.kind === 'ride' && u.moved) return 'moved';
+        if (f.kind === 'muster' && !musterSpot(b, u)) return 'crowded';
+        if (f.kind === 'assault' && b.fortBlows < (f.after || 0)) return 'early';
+        if ((f.kind === 'strike' || f.kind === 'assault') && !featTargets(b, u).length) return 'no-target';
+        return null;
+    }
+
+    // Whom a strike or an assault can hit: an assault only a unit on a
+    // fortification.
+    function featTargets(b, u) {
+        const f = u.feat;
+        if (!f) return [];
+        if (f.kind === 'strike') return targets(b, u);
+        if (f.kind === 'assault') return targets(b, u).filter(t => terrain(b, t.r, t.c).fort);
+        return [];
+    }
+
+    function feat(b, id, targetId) {
+        const u = byId(b, id);
+        if (!u || featBlock(b, u)) return false;
+        const f = u.feat;
+        if (f.kind === 'strike' || f.kind === 'assault') {
+            const t = byId(b, targetId);
+            if (!t || !featTargets(b, u).includes(t)) return false;
+            b.events = [];
+            b.feats[f.id] = true;
+            b.events.push({ type: 'feat', id: u.id, feat: f.id });
+            strike(b, u, t, featMod(u));
+            settleBlow(u);
+        } else if (f.kind === 'muster') {
+            const spot = musterSpot(b, u);
+            b.events = [];
+            b.feats[f.id] = true;
+            const n = f.unit;
+            b.units.push({
+                id: n.id, tag: n.tag, side: 'red', name: n.name, sub: n.sub || '', kind: n.kind, role: null, line: null,
+                person: null, r: spot.r, c: spot.c, hp: n.hp, maxHp: n.hp, atk: n.atk, def: n.def, mv: n.mv, range: n.range || 1,
+                commissar: false, naval: false, rail: false, feat: null, skirmish: false, raised: true,
+                moved: true, acted: true, prev: null,
+            });
+            b.events.push({ type: 'feat', id: u.id, feat: f.id }, { type: 'raised', id: n.id });
+            u.acted = true; u.moved = true; u.prev = null;
+        } else {
+            b.events = [];
+            b.feats[f.id] = true;
+            u.riding = true;
+            u.mv += f.mv || 0;
+            b.events.push({ type: 'feat', id: u.id, feat: f.id });
+        }
+        updateTurned(b);
         checkResult(b);
         return true;
     }
@@ -393,11 +522,15 @@
         b.turn += 1;
         if (b.def.windTurns && b.turn === b.def.windTurns + 1) b.events.push({ type: 'tide' });
         if (b.turn > b.def.turnLimit) { b.result = 'lost'; return true; }
-        for (const u of b.units) { u.moved = false; u.acted = false; u.prev = null; }
+        for (const u of b.units) {
+            u.moved = false; u.acted = false; u.prev = null; u.struck = false;
+            // A ride lasts the turn it was made.
+            if (u.riding) { u.riding = false; u.mv -= u.feat.mv || 0; }
+        }
         return true;
     }
 
-    const ORDERS = { move, undo, attack, wait, end };
+    const ORDERS = { move, undo, attack, wait, end, feat };
     function act(b, name, ...args) {
         const fn = ORDERS[name];
         return fn ? fn(b, ...args) : false;
@@ -406,6 +539,7 @@
     const api = {
         start, joins, act, reachable, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, unitAt, byId, defenseOf, fordOpen, onRail,
+        canMove, featBlock, featTargets, featMod, yields, YIELD_RING,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.CivilWarBattle = api;

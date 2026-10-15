@@ -497,6 +497,8 @@
         if (when === 'reserve') return Boolean(b.reserve);
         if (when.startsWith('turned:')) return Boolean(b.turned[when.slice(7)]);
         if (when.startsWith('turn:')) return b.turn >= Number(when.slice(5));
+        if (when.startsWith('feat:')) return Boolean(b.feats && b.feats[when.slice(5)]);
+        if (when === 'surrender') return b.captured > 0;
         return false;
     }
 
@@ -514,7 +516,9 @@
         (b.def.voices || []).forEach((v, k) => {
             if (bVoice.played.has(k) || !battleMoment(b, v.when)) return;
             bVoice.played.add(k);
-            if (speakerOf(b, v)) bVoice.queue.push(v);
+            if (!speakerOf(b, v)) return;
+            // A feat or a surrender speaks at once, ahead of lines still waiting.
+            if (v.when === 'surrender' || v.when.startsWith('feat:')) { bVoice.queue.splice(bVoice.i, 0, v); bVoice.until = null; } else bVoice.queue.push(v);
         });
         const wrap = document.querySelector('#cwBattle .cw-grid-scroll');
         if (!wrap) return;
@@ -1018,6 +1022,16 @@
             body.append(svg('rect', { x: mx, y: my, width: MARK - 1.5, height: MARK - 1.5, class: 'cw-foe-mark k-' + kind, style: `--m:${i}` }));
         }
         if (forecast) g.setAttribute('aria-label', g.getAttribute('aria-label').replace('. 카드로', `, 압력 ${marks}, 전투력 ${forecast.strength}. 카드로`));
+        // The enemy broke here: what he left behind, tagged under his marker.
+        const spoil = result && !forecast && s.records.length && (s.records[s.records.length - 1].spoils || []).some(x => x.front === id);
+        if (spoil) {
+            const tag = svg('g', { class: 'cw-spoils-tag' });
+            tag.append(svg('rect', { x: x - 20, y: y + 10 + rowH, width: 40, height: 15, rx: 2 }));
+            tag.append(svg('text', { x, y: y + 21.5 + rowH, 'text-anchor': 'middle' }, '노획'));
+            g.append(tag);
+            g.setAttribute('aria-label', g.getAttribute('aria-label').replace('. 카드로', ', 노획. 카드로'));
+            best.box.y1 += 18;
+        }
         const go = () => {
             if (s.phase === 'plan' && picked !== id) { picked = id; render(); }
             const card = document.getElementById('cwFront-' + id);
@@ -1617,8 +1631,30 @@
         const result = r.assumed ? '역사대로 이겼다 (전투가 생기기 전의 저장)' : r.result === 'won' ? `${r.turns}턴에 이겼다` : '이기지 못했다';
         return el('div', { class: 'cw-history' },
             el('p', { class: 'games-kicker' }, def.title),
-            el('p', {}, el('strong', {}, result), ` · ${D.fronts[def.front].name} 전투력 `, v ? signed(v.v) : '그대로'),
+            el('p', {}, el('strong', {}, result), ` · ${D.fronts[def.front].name} 전투력 `, v ? signed(v.v) : '그대로', battleFeats(def, r)),
             el('p', {}, def.history));
+    }
+
+    // The feats used and the units that surrendered in a fought battle.
+    function battleFeats(def, r) {
+        const names = (r.feats || []).map(id => (def.units.find(u => u.feat && u.feat.id === id) || {}).feat).filter(Boolean).map(f => `★ ${f.name}`);
+        return [names.length ? ` · ${names.join(', ')}` : '', r.captured ? ` · 투항 ${r.captured}` : ''].join('');
+    }
+
+    // What the broken enemy left behind this season, and the prisoners
+    // who join the next season's draft.
+    function spoilsOf(r) {
+        if (!r.spoils || !r.spoils.length) return null;
+        const items = r.spoils.map(x => {
+            if (x.battle) return el('li', {}, el('strong', {}, D.battles[x.battle].title), ` · 백군 ${x.captured}개 부대가 총을 내려놓았다`);
+            const f = x.foe && D.factions[x.foe];
+            return el('li', {}, f ? picture(A.shield(x.foe, f)) : null, el('strong', {}, D.fronts[x.front].name),
+                ` · 무너진 ${f ? f.short + '의 ' : '적의 '}${x.what || '탄약과 곡물'} · 곡물 +${x.grain}`);
+        });
+        return el('div', { class: 'cw-history cw-spoils' },
+            el('p', { class: 'games-kicker' }, '노획'),
+            el('ul', {}, ...items),
+            s.captured ? el('p', {}, el('strong', {}, `포로 편입: 다음 시기 사단 +${s.captured}`)) : null);
     }
 
     function renderReview() {
@@ -1634,6 +1670,7 @@
         $('cwReview').replaceChildren(...[
             el('h3', { id: 'cwReviewTitle' }, `${t.date}의 결산`),
             r.notes.length ? el('ul', { class: 'cw-notes' }, ...r.notes.map(n => el('li', {}, n))) : null,
+            spoilsOf(r),
             foughtBattle(),
             incidentHistory(t, r),
             el('div', { class: 'cw-history' },
@@ -1819,7 +1856,7 @@
         const board = svg('svg', { viewBox: `0 0 ${cols * CELL} ${rows * CELL}`, class: 'cw-grid' + (battleEnded ? ' is-over' : ''), role: 'group', 'aria-label': def.board });
         const unit = selected && B.byId(b, selected);
         const foe = !unit && inspected && B.byId(b, inspected);
-        const moves = unit && !unit.moved && !unit.acted ? B.reachable(b, unit) : [];
+        const moves = unit && B.canMove(unit) ? B.reachable(b, unit) : [];
         const targets = unit && !unit.acted ? B.targets(b, unit) : [];
         // One White unit's reach when it is picked; every one's with 「백군 위협」.
         const danger = foe ? B.menace(b, foe) : menaceAll ? b.units.filter(u => u.side === 'white' && u.hp > 0).flatMap(u => B.menace(b, u)) : [];
@@ -1881,10 +1918,10 @@
             if (blow && !fallAt.has(blow)) fallAt.set(blow, performance.now());
             const lunge = foeHit && performance.now() - fallAt.get(blow) < LUNGE_MS;
             const g = svg('g', {
-                class: `cw-unit is-${u.side} k-${u.kind}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done ? ' is-done' : ''}${lunge ? ' is-lunging' : ''}`,
+                class: `cw-unit is-${u.side} k-${u.kind}${u.yielded ? ' is-yielded' : ''}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done && !B.canMove(u) ? ' is-done' : ''}${lunge ? ' is-lunging' : ''}`,
                 tabindex: '0', role: 'button',
                 style: lunge ? `--lx:${Math.sign(foeHit.c - u.c) * 9}px;--ly:${Math.sign(foeHit.r - u.r) * 9}px;--since:${Math.round(performance.now() - fallAt.get(blow))}ms` : null,
-                'aria-label': `${u.side === 'red' ? '붉은 군대' : '백군'} ${u.name}, 병력 ${u.hp}/${u.maxHp}, 방어 ${B.defenseOf(b, u)}` + (p ? `, 공격 시 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ''}${p.wears ? ', 진지 방어 1 감소' : ''}` : '') + (done ? ', 행동 마침' : ''),
+                'aria-label': `${u.side === 'red' ? '붉은 군대' : '백군'} ${u.name}${u.yielded ? '(투항해 넘어옴)' : ''}, 병력 ${u.hp}/${u.maxHp}, 방어 ${B.defenseOf(b, u)}` + (p ? `, 공격 시 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ''}${p.wears ? ', 진지 방어 1 감소' : ''}${p.surrender ? ', 투항시킴' : ''}` : '') + (featLeft(b, u) ? `, 결정적 한 수 ${u.feat.name}` : '') + (done ? ', 행동 마침' : ''),
             });
             // A counter on the board: its hard shadow, the side's colour,
             // a darker band for the name, then what it is and its strength.
@@ -1904,7 +1941,9 @@
             }
             g.append(svg('rect', { x: barX, y: y + 35, width: barW, height: 5, class: 'cw-hp-track' }));
             g.append(svg('rect', { x: barX, y: y + 35, width: barW * u.hp / u.maxHp, height: 5, class: 'cw-hp' }));
-            if (p) g.append(badge(x + CELL + 2, y - 17, (p.dmg >= u.hp ? '격파' : `−${p.dmg}` + (p.counter ? ` ↩${p.counter}` : '')) + (p.wears ? ' 포격' : ''), 'is-preview'));
+            // A feat still to use: a gold star on the corner, bright when it can be used now.
+            if (featLeft(b, u)) g.append(svg('path', { d: star(x + CELL - 8, y + 8, 7, 3), class: 'cw-feat-star' + (B.featBlock(b, u) ? ' is-waiting' : '') }));
+            if (p) g.append(badge(x + CELL + 2, y - 17, (p.dmg >= u.hp ? '격파' : p.surrender ? '투항' : `−${p.dmg}` + (p.counter ? ` ↩${p.counter}` : '')) + (p.wears ? ' 포격' : ''), 'is-preview'));
             const pick = () => {
                 if (battleEnded) return;
                 if (isTarget) {
@@ -1937,9 +1976,10 @@
         }
         board.append(eventArrows(b));
         board.addEventListener('keydown', e => { if (e.key === 'Escape') deselect(); });
+        const moment = momentBanner(b);
         // A Red order leaves only its blow, falls and the flank in the
         // events; anything else came from the White turn.
-        const whiteMoved = b.events.some(e => e.type === 'attack' ? b.units.find(u => u.id === e.from).side === 'white' : !['fall', 'turned', 'wear'].includes(e.type));
+        const whiteMoved = b.events.some(e => e.type === 'attack' ? b.units.find(u => u.id === e.from).side === 'white' : !['fall', 'turned', 'wear', 'feat', 'surrender', 'raised'].includes(e.type));
         const reds = b.units.filter(u => u.side === 'red' && u.hp > 0);
         const ready = reds.filter(u => !u.acted).length;
         // What winning takes, and what stands in the way now.
@@ -1963,7 +2003,7 @@
             el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             el('details', { class: 'cw-battle-brief' }, el('summary', {}, '작전 지시', el('span', {}, ` · ${def.summary}`)), ...def.brief.map(p => el('p', {}, p))),
             el('div', { class: 'cw-battle-layout' },
-                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll' }, board), el('p', { class: 'cw-terrain-key' },
+                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll' }, board, moment), el('p', { class: 'cw-terrain-key' },
                     ...def.legend.concat([def.rails ? ['track', '철도 (장갑열차는 철길로만)'] : null, ['move', '갈 수 있는 칸'], Object.keys(def.lines).length ? ['flank', '우회 지역'] : null, ['danger', '백군이 칠 수 있는 칸']].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
@@ -1980,6 +2020,7 @@
                         el('p', { class: 'games-kicker' }, whiteMoved ? '지난 백군의 차례' : '방금 일어난 일'),
                         el('ol', { class: 'cw-battle-log' }, ...eventLines(b).map(t => el('li', {}, t)))) : null)));
         renderBattleVoice();
+        placeMoment();
     }
 
     // The Red units in a row over the board: who still has to act (full)
@@ -1988,9 +2029,49 @@
         return el('div', { class: 'cw-roster', role: 'group', 'aria-label': `붉은 부대, 행동할 수 있는 부대 ${reds.filter(u => !u.acted).length} / ${reds.length}` },
             ...reds.map(u => el('button', {
                 type: 'button', class: 'cw-roster-unit' + (u.acted ? ' is-done' : ''), 'data-key': `roster-${u.id}`, 'aria-pressed': String(u.id === selected),
-                'aria-label': `${u.name}, 병력 ${u.hp}/${u.maxHp}` + (u.acted ? ', 행동 마침' : ''),
+                'aria-label': `${u.name}, 병력 ${u.hp}/${u.maxHp}` + (featLeft(s.battle, u) ? `, 결정적 한 수 ${u.feat.name}` : '') + (u.acted ? ', 행동 마침' : ''),
                 onclick: () => { selected = u.id; inspected = null; endArmed = false; renderBattle(); focusSelected(); },
-            }, u.tag, el('small', {}, String(u.hp)))));
+            }, featLeft(s.battle, u) ? el('span', { class: 'cw-roster-feat', 'aria-hidden': 'true' }, '★') : null, u.tag, el('small', {}, String(u.hp)))));
+    }
+
+    // Whether a unit still carries a feat unused this battle.
+    const featLeft = (b, u) => Boolean(u.feat && b.heroics && !b.feats[u.feat.id]);
+
+    // A feat or a surrender just now: a banner across the board's top,
+    // once (fallAt keeps when its event was first drawn).
+    const MOMENT_MS = 2400;
+    function momentBanner(b) {
+        const e = b.events.find(x => x.type === 'feat' || x.type === 'surrender');
+        if (!e || stillMotion()) return null;
+        if (!fallAt.has(e)) fallAt.set(e, performance.now());
+        const since = performance.now() - fallAt.get(e);
+        if (since >= MOMENT_MS) return null;
+        const u = b.units.find(x => x.id === e.id);
+        const [title, sub] = e.type === 'feat'
+            ? [`★ ${u.feat.name}`, u.name]
+            : ['투항', `${u.name}이(가) 총을 내려놓고 넘어왔다`];
+        // A row over the board's visible part, beside the unit (placeMoment), the banner at its middle.
+        return el('div', { class: 'cw-moment-row', 'aria-hidden': 'true', 'data-r': String(u.r), 'data-fresh': since < 200 ? '1' : null },
+            el('div', { class: 'cw-moment' + (e.type === 'surrender' ? ' is-surrender' : ''), style: `--since:${Math.round(since)}ms` },
+                el('strong', {}, title), el('span', {}, sub)));
+    }
+
+    // A board wider than the screen scrolls: the banner keeps to what shows.
+    function placeMoment() {
+        const wrap = document.querySelector('#cwBattle .cw-grid-scroll');
+        const row = wrap && wrap.querySelector('.cw-moment-row');
+        if (!row) return;
+        row.style.left = `${wrap.scrollLeft}px`;
+        row.style.width = `${wrap.clientWidth}px`;
+        const board = wrap.querySelector('.cw-grid');
+        const scale = board.getBoundingClientRect().width / (s.battle.def.map[0].length * CELL);
+        const r = Number(row.dataset.r);
+        // Below the unit, as the speaker's bubble goes above it; above it on the bottom rows.
+        const below = (r + 1) * CELL * scale + 6;
+        row.style.top = `${below + row.offsetHeight <= board.getBoundingClientRect().height ? below : Math.max(4, r * CELL * scale - row.offsetHeight - 6)}px`;
+        // The order came from below the board on a phone: bring the banner into view.
+        const box = row.getBoundingClientRect();
+        if (row.dataset.fresh && (box.top < 60 || box.bottom > window.innerHeight)) row.scrollIntoView({ block: 'center' });
     }
 
     // Picks the next Red unit that has yet to act, after the selected one.
@@ -2058,12 +2139,45 @@
                 const p = B.preview(b, u, d);
                 return el('li', {}, el('button', { type: 'button', onclick: () => { if (act('b:attack', u.id, d.id)) afterBattleAct(`${u.name}이(가) ${d.name}을(를) 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : '')); } },
                     el('strong', {}, `${d.name} 공격`),
-                    el('span', {}, `병력 ${d.hp}/${d.maxHp} · 방어 ${B.defenseOf(b, d)} → 피해 ${p.dmg}${p.dmg >= d.hp ? ' (격파)' : ''}${p.counter ? ` · 반격 ${p.counter}` : ''}${p.wears ? ` · ${fortText(b, d.r, d.c, 1)}` : ''}`)));
+                    el('span', {}, `병력 ${d.hp}/${d.maxHp} · 방어 ${B.defenseOf(b, d)} → 피해 ${p.dmg}${p.dmg >= d.hp ? ' (격파)' : p.surrender ? ' (투항)' : ''}${p.counter ? ` · 반격 ${p.counter}` : ''}${p.wears ? ` · ${fortText(b, d.r, d.c, 1)}` : ''}`)));
             })) : null,
+            featInfo(b, u),
+            u.skirmish ? el('p', { class: 'cw-note' }, '타찬카(기관총 수레): 움직이기 전에 치면, 친 뒤에도 움직일 수 있다.') : null,
+            u.yielded ? el('p', { class: 'cw-note' }, '투항해 붉은 군대로 넘어온 부대다.') : null,
             u.person ? el('p', {}, '지휘: ', person(u.person)) : null,
             u.commissar ? el('p', { class: 'cw-note' }, '정치위원이 함께한다 (방어 +1).') : null,
-            u.side === 'red' ? el('p', { class: 'cw-note' }, u.acted ? '이번 턴의 행동을 마쳤다.' : u.moved ? '이동했다. 공격하거나 대기할 수 있고, 이동을 취소할 수도 있다.' : '이동하거나 공격할 수 있다.') : null,
+            u.side === 'red' ? el('p', { class: 'cw-note' }, u.acted ? (B.canMove(u) ? '쳤다. 아직 움직일 수 있다.' : '이번 턴의 행동을 마쳤다.') : u.moved ? '이동했다. 공격하거나 대기할 수 있고, 이동을 취소할 수도 있다.' : '이동하거나 공격할 수 있다.') : null,
             u.side === 'white' && u.role ? el('p', { class: 'cw-note' }, roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '')) : null);
+    }
+
+    // A unit's feat: what it does, and its button (or whom it can strike),
+    // or why it waits.
+    const FEAT_WAIT = {
+        used: '이 전투에서 이미 썼다.', acted: '이번 턴의 행동을 마쳐 다음 턴에 쓸 수 있다.', moved: '움직이기 전에 써야 한다. 다음 턴에 쓸 수 있다.',
+        crowded: '곁에 빈 칸이 없다.', 'no-target': '닿는 적이 없다.',
+    };
+    function featInfo(b, u) {
+        if (!featLeft(b, u) && !(u.feat && b.heroics)) return null;
+        const f = u.feat;
+        const why = B.featBlock(b, u);
+        const wait = why === 'early' ? `진지 위의 적을 붉은 부대가 두 번 쳐야 쓸 수 있다 (${b.fortBlows}/${f.after}).` : FEAT_WAIT[why];
+        let use = null;
+        if (!why && !battleEnded) {
+            if (f.kind === 'strike' || f.kind === 'assault') {
+                use = el('ul', { class: 'cw-info-targets', 'aria-label': `${f.name}으로 칠 적` }, ...B.featTargets(b, u).map(d => {
+                    const p = B.preview(b, u, d, B.featMod(u));
+                    return el('li', {}, el('button', { type: 'button', class: 'is-feat', onclick: () => { if (act('b:feat', u.id, d.id)) afterBattleAct(`${u.name}의 ${f.name}: ${d.name}에 피해 ${p.dmg}`); } },
+                        el('strong', {}, `★ ${f.name}: ${d.name}`),
+                        el('span', {}, `피해 ${p.dmg}${p.dmg >= d.hp ? ' (격파)' : p.surrender ? ' (투항)' : ''}${p.counter ? ` · 반격 ${p.counter}` : ' · 반격 없음'}`)));
+                }));
+            } else {
+                use = el('button', { type: 'button', class: 'cw-feat-use', 'data-key': 'feat', onclick: () => { if (act('b:feat', u.id)) afterBattleAct(`${u.name}의 ${f.name}`); } }, `★ ${f.name}`);
+            }
+        }
+        return el('div', { class: 'cw-feat' + (b.feats[f.id] ? ' is-used' : '') },
+            el('p', {}, el('strong', {}, `결정적 한 수 · ${f.name}`), ` ${f.text}`),
+            use || (wait ? el('p', { class: 'cw-note' }, wait) : null),
+            f.history ? el('details', {}, el('summary', {}, '역사에서는'), el('p', {}, f.history)) : null);
     }
 
     function focusSelected() {
@@ -2082,6 +2196,9 @@
             if (e.type === 'wear') return `포격으로 ${B.terrain(b, e.r, e.c).name}의 방어가 깎였다.`;
             if (e.type === 'reserve') return `${b.def.reserveName}이 ${b.def.sectors[e.sector].name} 쪽으로 향한다.`;
             if (e.type === 'tide') return `바람이 바뀌었다. ${b.def.ford}에 물이 다시 차오른다.`;
+            if (e.type === 'feat') return `결정적 한 수: ${name(e.id)}의 「${b.units.find(u => u.id === e.id).feat.name}」.`;
+            if (e.type === 'surrender') return `${name(e.id)}이(가) 총을 내려놓고 붉은 군대로 넘어왔다.`;
+            if (e.type === 'raised') return `${name(e.id)}이(가) 열차에서 내려 총을 들었다.`;
             return '';
         }).filter(Boolean);
     }
@@ -2090,9 +2207,10 @@
         const b = s.battle;
         const u = selected && B.byId(b, selected);
         endArmed = false;
-        if (!u || u.acted || u.hp <= 0) selected = null;
+        if (!u || (u.acted && !B.canMove(u)) || u.hp <= 0) selected = null;
         if (battleOver()) return;
-        const said = text + b.events.filter(e => e.type === 'turned').map(e => `. ${b.def.lines[e.line].name}이 우회되었다.`).join('');
+        const said = text + b.events.filter(e => e.type === 'turned').map(e => `. ${b.def.lines[e.line].name}이 우회되었다.`).join('')
+            + b.events.filter(e => e.type === 'surrender').map(e => `. ${b.units.find(x => x.id === e.id).name}이(가) 투항했다.`).join('');
         // A unit done for the turn hands over to the next one still to act.
         if (!selected && nextUnit()) { announce(said); return; }
         renderBattle();
@@ -2211,7 +2329,7 @@
             const r = s.battles[def.id];
             const turned = r.turned.map(id => def.lines[id].name);
             return el('li', {}, el('strong', {}, def.title), ' · ', r.assumed ? '역사대로 이겼다 (전투가 생기기 전의 저장)' : r.result === 'won' ? `${r.turns}턴에 이겼다` : '이기지 못했다',
-                turned.length ? ` · 우회한 방어선: ${turned.join(', ')}` : '');
+                turned.length ? ` · 우회한 방어선: ${turned.join(', ')}` : '', battleFeats(def, r));
         });
         const support = [['peasants', '농민 지지', 40], ['workers', '노동자 지지', null], ['cohesion', '당 결속', 30]]
             .map(([key, label, mark]) => supportChart(label, [60].concat(s.records.map(r => r.stats[key])), mark));

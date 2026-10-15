@@ -33,8 +33,14 @@
     // Rules 2: divisions moved from one front to another spend half the
     // season on the railways through Moscow and bring half their share.
     // Divisions newly raised or held back in reserve arrive whole.
-    const RULES = 2;
+    // Rules 3: the battles' feats and surrenders, and the spoils of a
+    // front where the enemy broke (strength to spare for a pursuit) or of a
+    // battle where Whites surrendered: grain at once, and the prisoners
+    // join the next season's draft.
+    const RULES = 3;
     const TRANSFER = 0.5;
+    const SPOILS_GRAIN = 2;         // grain taken per front the enemy broke on
+    const SPOILS_MAX = 2;           // divisions of prisoners a season at most
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
 
@@ -45,7 +51,7 @@
             version: VERSION, rules, turn: 0, phase: 'plan', lastAlloc: {},
             peasants: 60, workers: 60, cohesion: 60, grain: 6,
             flags: {}, lines: Object.assign({}, DATA.startLines),
-            petrogradFell: false, deserted: 0, revolt: 0, momentum: {}, pursuit: {}, used: {},
+            petrogradFell: false, deserted: 0, revolt: 0, captured: 0, momentum: {}, pursuit: {}, used: {},
             records: [], log: [], battle: null, battles: {}, outcome: null,
         };
         enterTurn(s);
@@ -84,6 +90,7 @@
         add('굶주린 병사의 탈영', -s.deserted);
         add('페트로그라드 상실', s.petrogradFell ? -2 : 0);
         add('농민 봉기로 후방에 묶임', -s.revolt);
+        add('포로 편입', s.captured);
         let divisions = t.mobilize + sources.reduce((a, x) => a + x.n, 0);
         if (divisions < 2) { add('최소 동원', 2 - divisions); divisions = 2; }
         s.plan = {
@@ -486,7 +493,7 @@
         if (def && !def.final && !s.battles[def.id]) {
             const m = musterOf(s);
             s.phase = 'battle';
-            s.battle = Battle.start(def, Object.assign({}, s.flags, choiceFlags(s)), m ? m.muster : null);
+            s.battle = Battle.start(def, Object.assign({}, s.flags, choiceFlags(s)), m ? m.muster : null, { rules: s.rules });
             return true;
         }
         const fc = forecast(s);
@@ -528,6 +535,21 @@
         } else if (fronts.west && fronts.west.after === 3) {
             notes.push('바르샤바에 붉은 군대가 들어갔다. 역사와 다른 길이다. 폴란드 노동자가 일어설지는 아무도 모른다.');
         }
+
+        // Spoils: where the enemy broke, what he left behind; the prisoners
+        // of a battle's surrenders. Grain now, the men next season.
+        const spoils = [];
+        if (s.rules >= 3) {
+            for (const [id, f] of Object.entries(fronts)) {
+                if (!f.pursuit) continue;
+                const foe = (threatsOf(s)[id].foes || [])[0] || null;
+                spoils.push({ front: id, foe, what: foe ? DATA.factions[foe].spoils : null, grain: SPOILS_GRAIN, divisions: 1 });
+            }
+            const fought = def && !def.final && s.battles[def.id];
+            if (fought && fought.captured) spoils.push({ battle: def.id, captured: fought.captured, grain: 0, divisions: 1 });
+        }
+        s.captured = Math.min(SPOILS_MAX, spoils.reduce((a, x) => a + x.divisions, 0));
+        s.grain += spoils.reduce((a, x) => a + x.grain, 0);
 
         // Stats from cards, the choice and the season's policy.
         const flagsNow = Object.assign({}, s.flags, choiceFlags(s));
@@ -582,7 +604,7 @@
         s.lastAlloc = Object.assign({}, s.plan.alloc);
         const record = {
             turn: s.turn, choice: s.plan.choice, history: t.choice.history, response: s.plan.response, fronts,
-            cards: s.plan.cards.map(c => c.id), supply: fc.supply, notes,
+            cards: s.plan.cards.map(c => c.id), supply: fc.supply, notes, spoils,
             stats: { peasants: s.peasants, workers: s.workers, cohesion: s.cohesion, grain: s.grain },
         };
         s.records.push(record);
@@ -592,7 +614,7 @@
             s.phase = 'done';
         } else if (def && def.final) {
             s.phase = 'battle';
-            s.battle = Battle.start(def, s.flags, muster);
+            s.battle = Battle.start(def, s.flags, muster, { rules: s.rules });
         } else {
             s.phase = 'review';
         }
@@ -636,7 +658,10 @@
     function finishBattle(s) {
         if (s.phase !== 'battle' || !s.battle || !s.battle.result) return false;
         const won = s.battle.result === 'won';
-        s.battles[s.battle.def.id] = { result: s.battle.result, turns: s.battle.turn, turned: Object.keys(s.battle.turned).filter(id => s.battle.turned[id]) };
+        s.battles[s.battle.def.id] = {
+            result: s.battle.result, turns: s.battle.turn, turned: Object.keys(s.battle.turned).filter(id => s.battle.turned[id]),
+            captured: s.battle.captured || 0, feats: Object.keys(s.battle.feats || {}),
+        };
         if (!s.battle.def.final) {
             s.phase = 'plan';
             return settle(s);
@@ -730,7 +755,7 @@
     }
 
     const api = {
-        DATA, VERSION, RULES, TRANSFER, MOMENTUM, PURSUIT, start, act, restore, serialize, forecast, activeFronts, turnData,
+        DATA, VERSION, RULES, TRANSFER, MOMENTUM, PURSUIT, SPOILS_GRAIN, SPOILS_MAX, start, act, restore, serialize, forecast, activeFronts, turnData,
         free, allocated, threatsOf, traitsOn, battleOf, incidentOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;

@@ -799,6 +799,131 @@ assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red o
     }
 }
 
+// Rules 3, heroics. Feats: a unit's decisive moment, once a battle.
+{
+    const K = D.battles.kazan, O = D.battles.orel, P = D.battles.perekop;
+    // The flotilla's night raid: three more, no counter, once.
+    const k = B.start(K, {});
+    const boat = B.byId(k, 'kfl');
+    boat.r = 4; boat.c = 7;
+    const battery = B.byId(k, 'wk4');
+    const plain = B.preview(k, boat, battery);
+    const raid = B.preview(k, boat, battery, B.featMod(boat));
+    assert.equal(raid.dmg, Math.min(battery.hp, plain.dmg + 3));
+    assert.equal(raid.counter, 0);
+    assert.ok(B.act(k, 'feat', 'kfl', 'wk4'));
+    assert.ok(k.feats['night-raid'] && boat.acted);
+    assert.equal(B.featBlock(k, boat), 'used');
+    assert.equal(B.act(k, 'feat', 'kfl', 'wk4'), false, 'once a battle');
+    // Trotsky's train arms its crew: a new unit beside it, done this turn.
+    const train = B.byId(k, 'ktr');
+    assert.ok(B.act(k, 'feat', 'ktr'));
+    const crew = B.byId(k, 'ktc');
+    assert.ok(crew && crew.side === 'red' && crew.acted && Math.abs(crew.r - train.r) + Math.abs(crew.c - train.c) === 1);
+    assert.ok(!B.terrain(k, crew.r, crew.c).water);
+    assert.ok(B.act(k, 'end') && !B.byId(k, 'ktc').acted, 'the crew acts from the next turn');
+    // A save from before rules 3 fights without them.
+    const old = B.start(K, {}, null, { rules: 2 });
+    assert.equal(B.featBlock(old, B.byId(old, 'kfl')), 'none');
+    assert.equal(B.act(old, 'feat', 'ktr'), false);
+    // The Red Cossacks' raid: three more moves this turn, past the enemy,
+    // before they move; gone at the turn's end.
+    const o = B.start(O, {});
+    const cossacks = B.byId(o, 'opr');
+    const before = B.reachable(o, cossacks).length;
+    assert.ok(B.act(o, 'feat', 'opr'));
+    assert.ok(B.reachable(o, cossacks).length > before);
+    assert.equal(cossacks.mv, 8);
+    assert.ok(B.act(o, 'end'));
+    assert.equal(cossacks.mv, 5);
+    assert.ok(!cossacks.riding);
+    const moved = B.start(O, {});
+    assert.ok(B.act(moved, 'move', 'opr', 2, 3));
+    assert.equal(B.featBlock(moved, B.byId(moved, 'opr')), 'moved');
+    // The third assault: after two Red blows on a fortification, the Wall's
+    // ground counts for nothing.
+    const p = B.start(P, {}, { margin: 6, fed: 1, commissar: false, cards: [] });
+    const r51 = B.byId(p, 'r51a');
+    r51.r = 2; r51.c = 1;
+    assert.equal(B.featBlock(p, r51), 'early');
+    p.fortBlows = 2;
+    assert.equal(B.featBlock(p, r51), null);
+    const wall = B.byId(p, 'w1');
+    // Plain, the Wall's +3 leaves a blow of 1; the assault strikes 5 − 3 + 2.
+    assert.equal(B.preview(p, r51, wall).dmg, 1);
+    assert.equal(B.preview(p, r51, wall, B.featMod(r51)).dmg, 4);
+    assert.ok(B.act(p, 'feat', 'r51a', 'w1'));
+    assert.equal(B.featBlock(p, B.byId(p, 'r51b')), 'used', 'the brigade shares the one assault');
+    // Makhno's carts strike and still ride off; a unit that moved first
+    // does not.
+    const m = B.start(P, { makhno: true });
+    const carts = B.byId(m, 'rmk');
+    carts.r = 4; carts.c = 6;
+    const kuban = B.byId(m, 'w3');
+    kuban.r = 5; kuban.c = 6;
+    assert.ok(B.act(m, 'attack', 'rmk', 'w3'));
+    assert.ok(carts.acted && B.canMove(carts));
+    assert.ok(B.act(m, 'move', 'rmk', 3, 5) || B.act(m, 'move', 'rmk', ...[B.reachable(m, carts)[0]].map(t => [t.r, t.c])[0]));
+    assert.equal(B.canMove(carts), false);
+    // Surrender: a White unit broken below half its men with three Red
+    // units beside it comes over, and the battle counts it.
+    const y = B.start(P, {}, { margin: 6, fed: 1, commissar: false, cards: [] });
+    const foe = B.byId(y, 'w5');
+    foe.hp = 5;
+    const ring = ['r15', 'r52', 'r30'].map(id => B.byId(y, id));
+    [[7, 2], [8, 1], [8, 3]].forEach(([r, c], i) => { ring[i].r = r; ring[i].c = c; });
+    const view = B.preview(y, ring[0], foe);
+    assert.ok(view.surrender && view.counter === 0);
+    assert.ok(B.act(y, 'attack', 'r15', 'w5'));
+    assert.equal(foe.side, 'red');
+    assert.ok(foe.acted && foe.yielded);
+    assert.equal(y.captured, 1);
+    assert.ok(y.events.some(e => e.type === 'surrender' && e.id === 'w5'));
+    // Two beside it are not enough; nor a unit still above half.
+    const two = B.start(P, {});
+    const w6 = B.byId(two, 'w6');
+    w6.hp = 4;
+    B.byId(two, 'r15').r = 7; B.byId(two, 'r15').c = 5;
+    B.byId(two, 'r52').r = 8; B.byId(two, 'r52').c = 4;
+    assert.equal(B.preview(two, B.byId(two, 'r15'), w6).surrender, false);
+    assert.equal(B.yields(two, w6, 9), false);
+}
+
+// Spoils: a front where the enemy broke (strength to spare for a pursuit)
+// gives up grain at once and prisoners for the next season's draft; none
+// under the rules of an older save.
+{
+    const crush = rules => {
+        const s = G.start(rules);
+        answer(s);
+        assert.ok(G.act(s, 'choose', G.turnData(s).choice.history));
+        clear(s);
+        const fronts = G.activeFronts(s);
+        const light = fronts.slice().sort((a, b) => G.threatsOf(s)[a].pressure - G.threatsOf(s)[b].pressure)[0];
+        assert.ok(G.act(s, 'alloc', light, s.plan.divisions));
+        assert.ok(G.act(s, 'commissar', light, true));
+        assert.ok(G.act(s, 'play', 'train', light));
+        assert.ok(G.forecast(s).fronts[light].pursuit > 0, 'the whole army on the lightest front breaks it');
+        const grain = G.forecast(s).supply;
+        assert.ok(G.act(s, 'settle'));
+        return { s, light, grain };
+    };
+    const { s, light, grain } = crush();
+    const r = s.records[0];
+    assert.equal(r.spoils.length, 1);
+    assert.equal(r.spoils[0].front, light);
+    assert.ok(r.spoils[0].what);
+    assert.equal(s.grain, Math.max(0, grain.have - grain.need) + G.SPOILS_GRAIN);
+    assert.equal(s.captured, 1);
+    assert.ok(G.act(s, 'next'));
+    assert.ok(s.plan.sources.some(x => x.label === '포로 편입' && x.n === 1));
+    const old = crush(2).s;
+    assert.equal(old.records[0].spoils.length, 0);
+    assert.equal(old.captured, 0);
+    // Saved and restored, the spoils come again.
+    assert.equal(G.restore(G.serialize(s)).captured, 1);
+}
+
 // Voices: every speaker exists and speaks from where the season fights
 // (an attacker from its own front, a Red at Moscow or at a front in play);
 // a quoted line names its source; every attacker cries when beaten and
@@ -823,11 +948,13 @@ assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red o
     // The battles' voices: real speakers on the board, known moments.
     for (const [id, def] of Object.entries(D.battles)) {
         assert.ok(def.voices && def.voices.some(v => v.when === 'start'), `${id}: opening voices`);
-        const units = new Set(def.units.map(u => u.id));
+        const units = new Set(def.units.map(u => u.id).concat(def.units.filter(u => u.feat && u.feat.unit).map(u => u.feat.unit.id)));
+        const feats = new Set(def.units.filter(u => u.feat).map(u => u.feat.id));
         for (const u of def.units) if (u.person) drawn.add(u.person[1]);
         for (const v of def.voices) {
             assert.ok([].concat(v.unit).every(u => units.has(u)), `${id}: speaker of ${v.text}`);
-            assert.ok(/^(start|goal|flood|reserve|turn:\d+|turned:\w+)$/.test(v.when), `${id}: when ${v.when}`);
+            assert.ok(/^(start|goal|flood|reserve|surrender|turn:\d+|turned:\w+|feat:[\w-]+)$/.test(v.when), `${id}: when ${v.when}`);
+            if (v.when.startsWith('feat:')) assert.ok(feats.has(v.when.slice(5)), `${id}: feat ${v.when}`);
             if (v.when.startsWith('turned:')) assert.ok(def.lines[v.when.slice(7)], `${id}: line ${v.when}`);
             assert.ok(v.who || v.by || v.face, `${id}: a picture for ${v.text}`);
             if (v.by) assert.ok(D.factions[v.by], `${id}: faction ${v.by}`);

@@ -217,7 +217,13 @@
 #cwOverlay.is-waiting * { animation-play-state: paused !important; }
 .cw-foe-body, .cw-foe-mark, .cw-city.is-flipped { transform-box: fill-box; }
 .cw-foe-body { transform-origin: 50% 100%; }
-.cw-foe-mark, .cw-city.is-flipped { transform-origin: center; }
+.cw-foe-mark, .cw-city.is-flipped, .cw-spoils-tag { transform-origin: center; }
+.cw-spoils-tag { transform-box: fill-box; }
+/* The enemy broke: what he left behind, gold under his marker. */
+.cw-spoils-tag rect { fill: var(--cw-gold); stroke: var(--cw-gold-rim); stroke-width: 1; }
+.cw-spoils-tag text { font-size: 10px; font-weight: 800; fill: #1d1d1b; }
+.cw-spoils ul { list-style: none; padding: 0; margin: 4px 0; display: grid; gap: 4px; }
+.cw-spoils .cw-face { width: 18px; height: 18px; vertical-align: -4px; margin-right: 5px; }
 .cw-foe-marker.is-beaten .cw-foe-body { rotate: -4deg; scale: .97 .8; fill-opacity: .75; stroke-opacity: .75; }
 .cw-foe-marker.is-surging .cw-foe-arrow { stroke-width: 5.2; }
 .cw-foe-marker.is-surging .cw-foe-arrow-under { stroke-width: 7.8; }
@@ -245,6 +251,10 @@
     #cwOverlay.is-review:is(.is-entering, .is-waiting) .is-surging .cw-foe-body {
         animation: cw-surge 1.2s ease-in-out both;
         animation-delay: calc(var(--order) * 300ms + 400ms - var(--since, 0ms));
+    }
+    #cwOverlay.is-review:is(.is-entering, .is-waiting) .cw-spoils-tag {
+        animation: cw-pop .4s ease-out both;
+        animation-delay: calc(var(--order) * 300ms + 1500ms - var(--since, 0ms));
     }
     #cwOverlay.is-review:is(.is-entering, .is-waiting) .cw-city.is-flipped {
         animation: cw-flip .6s cubic-bezier(.3, 1.6, .5, 1) both;
@@ -517,6 +527,42 @@
 .cw-info-targets { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
 .games-shell .cw-info-targets button { display: grid; gap: 2px; width: 100%; text-align: left; padding: 6px 10px; font-size: .84rem; }
 .cw-info-targets button span { color: var(--text-secondary); font-size: .8rem; }
+/* Feats (civil-war.js featInfo): a unit's decisive moment, once a battle.
+   Gold marks it: the star on the counter (faint while it waits), the
+   roster chip's star, the buttons that use it. */
+.cw-feat-star { fill: var(--cw-gold); stroke: var(--cw-gold-rim); stroke-width: 1; pointer-events: none; }
+.cw-feat-star.is-waiting { fill-opacity: .4; stroke-opacity: .5; }
+.cw-roster-feat { color: var(--cw-gold); font-weight: 800; }
+.cw-feat { margin-top: 8px; padding-top: 6px; border-top: 1px dashed var(--border); }
+.cw-feat.is-used { color: var(--text-secondary); }
+.cw-feat details { margin-top: 4px; font-size: .84rem; }
+.cw-feat summary { cursor: pointer; color: var(--text-secondary); }
+.games-shell .cw-feat-use, .games-shell .cw-info-targets button.is-feat { margin-top: 6px; border-color: var(--cw-gold-rim); background: color-mix(in srgb, var(--cw-gold) 30%, transparent); font-weight: 700; }
+/* A unit that surrendered keeps the pale band of the side it left. */
+.cw-unit.is-yielded .cw-unit-band { fill: #d9d3c2; }
+.cw-unit.is-yielded .cw-unit-tag { fill: #1d2a44; }
+/* The banner of a feat or a surrender across the board's top. An html
+   element, so its fade is the html layer's; it plays once (--since). */
+.cw-moment-row { position: absolute; top: 10px; left: 0; width: 100%; z-index: 3; display: flex; justify-content: center; pointer-events: none; }
+.cw-moment {
+    max-width: calc(100% - 24px);
+    display: grid; gap: 2px; justify-items: center; padding: 8px 18px; pointer-events: none;
+    background: var(--cw-red); color: #fff; border: 2px solid var(--cw-gold); box-shadow: 4px 4px 0 rgba(0, 0, 0, .45);
+    opacity: 0;
+}
+.cw-moment strong { font-size: 1.35rem; letter-spacing: -.03em; }
+.cw-moment span { font-size: .85rem; }
+.cw-moment.is-surrender { background: #f4f1e8; color: #1d2a44; border-color: var(--cw-red); }
+@media (prefers-reduced-motion: no-preference) {
+    .cw-moment { animation: cw-moment 2.4s ease-out both; animation-delay: calc(0ms - var(--since, 0ms)); }
+}
+@keyframes cw-moment {
+    from { opacity: 0; scale: 1.7; }
+    10% { opacity: 1; scale: .96; }
+    16% { scale: 1; }
+    78% { opacity: 1; }
+    to { opacity: 0; scale: 1; }
+}
 .cw-battle-status li.is-goal { border-left: 3px solid var(--clr-red); padding-left: 8px; font-weight: 700; }
 .cw-goal-flag { fill: var(--clr-red); stroke: #1d1d1b; stroke-width: 1; stroke-linejoin: round; pointer-events: none; }
 .cw-battle-actions { display: flex; flex-wrap: wrap; gap: 8px; }
