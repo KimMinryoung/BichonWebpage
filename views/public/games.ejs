@@ -26,12 +26,7 @@
   </main>
   <%- include('../partials/footer') %>
   <script src="/js/strike-engine.js?v=<%= assetVersion %>"></script>
-  <script src="/js/civil-war-data.js?v=<%= assetVersion %>"></script>
-  <script src="/js/war/cond.js?v=<%= assetVersion %>"></script>
-  <script src="/js/war/battle.js?v=<%= assetVersion %>"></script>
-  <script src="/js/war/engine.js?v=<%= assetVersion %>"></script>
-  <script src="/js/civil-war-battle.js?v=<%= assetVersion %>"></script>
-  <script src="/js/civil-war-engine.js?v=<%= assetVersion %>"></script>
+  <%- include('war/scripts', { id: 'civil-war' }) %>
   <script src="/js/games.js?v=<%= assetVersion %>"></script>
 </body>
 </html>

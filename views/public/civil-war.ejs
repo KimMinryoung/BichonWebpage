@@ -3,7 +3,7 @@
 <head>
   <%- include('../partials/head', { pageTitle: '붉은 전선 1918–1920', pageDescription: '러시아 내전의 여덟 시기를 소비에트 정권의 자리에서 결정하고, 카잔 탈환, 오룔 반격, 페레코프·시바시·촌가르의 마지막 전투를 지휘하는 역사 전략 게임', pagePath: '/games/civil-war/', hasEnglishVersion: false }) %>
   <link rel="stylesheet" href="/css/games.css?v=<%= assetVersion %>">
-  <link rel="stylesheet" href="/css/civil-war.css?v=<%= assetVersion %>">
+  <link rel="stylesheet" href="/css/war.css?v=<%= assetVersion %>">
 </head>
 <body>
   <%- include('../partials/nav') %>
@@ -29,35 +29,7 @@
       <div class="cw-intro-art" aria-hidden="true"><span class="cw-intro-star">★</span><strong>1918–1920</strong><p>여덟 번의 시기<br>여덟 개의 전선<br>세 번의 전투</p></div>
     </section>
 
-    <div id="cwPlay" hidden>
-      <div class="cw-hud">
-        <div class="cw-season"><p id="cwDate" class="games-kicker"></p><h2 id="cwTitle"></h2><ol id="cwCalendar" class="cw-calendar" aria-label="여덟 시기"></ol></div>
-        <dl id="cwStats" class="cw-stats" aria-label="공화국의 상황"></dl>
-        <section id="cwArmy" class="cw-army" aria-label="붉은 군대의 구성" hidden></section>
-      </div>
-
-      <section id="cwCampaign" class="cw-campaign">
-        <div id="cwBrief" class="cw-brief"></div>
-        <div class="cw-board">
-          <section class="cw-map-panel" aria-label="작전 지도">
-            <div class="cw-map-heading"><span>작전 지도</span><span id="cwMapCaption"></span><button type="button" id="cwHistoryToggle" class="cw-history-toggle" aria-pressed="false">역사의 세력 범위</button></div>
-            <div class="cw-map-frame" id="cwMap" data-points="<%= JSON.stringify(civilWarMap.points) %>" data-phases="<%= JSON.stringify(civilWarMap.phases) %>"><%- civilWarMap.svg %></div>
-            <details class="cw-map-key" id="cwMapKey" open><summary>범례</summary><div id="cwMapLegend" class="cw-map-legend"></div></details>
-          </section>
-          <section id="cwFronts" class="cw-fronts" aria-labelledby="cwFrontsTitle"></section>
-        </div>
-        <div id="cwUnveil" class="cw-unveil" hidden></div>
-        <section id="cwCards" class="cw-cards" aria-labelledby="cwCardsTitle"></section>
-        <section id="cwIncident" class="cw-choice cw-incident" aria-labelledby="cwIncidentTitle" hidden></section>
-        <section id="cwChoice" class="cw-choice" aria-labelledby="cwChoiceTitle"></section>
-        <div class="cw-command" id="cwCommand"><div id="cwTodo" class="cw-todo" aria-label="이 시기에 할 일"></div><p id="cwCommandNote" aria-live="polite"></p><button type="button" id="cwSettle" class="cw-primary">이 시기를 보낸다 →</button></div>
-        <section id="cwReview" class="cw-review" hidden aria-labelledby="cwReviewTitle"></section>
-      </section>
-
-      <section id="cwBattle" class="cw-battle" hidden aria-labelledby="cwBattleTitle"></section>
-      <section id="cwOutcome" class="cw-outcome" hidden aria-labelledby="cwOutcomeTitle"></section>
-    </div>
-    <p id="cwAnnouncement" class="cw-sr" role="status" aria-live="polite"></p>
+    <%- include('war/play', { war }) %>
 
     <details class="cw-rules"><summary>게임 규칙</summary>
       <p><strong>시기.</strong> 1918년 6월부터 1920년 11월까지 여덟 시기입니다. 시기마다 갈림길 하나를 고르고, 받은 사단을 전선에 나눠 보낸 뒤 시기를 넘깁니다. 사단은 지난 시기의 자리에서 시작합니다. 다른 전선으로 옮긴 사단은 철도 위에서 시기의 절반을 보내 그 시기 힘이 절반이고, 새로 동원한 사단과 예비로 남겨 둔 사단은 어디로 보내든 온전합니다. 보내지 않은 사단은 예비로 남아 곡물을 절반만 먹고, 남은 곡물은 다음 시기로 넘어갑니다. 이번 시기에 싸우지 않는 전선은 역사대로 움직입니다(예: 독일군이 물러난 민스크에 들어감).</p>
@@ -76,13 +48,6 @@
     <section class="cw-reading"><h2>전장에서 다시, 읽기로</h2><div class="ui-link-group"><a class="btn" href="/commulingo/events/civil-war" target="_blank" rel="noopener">러시아 내전 ↗</a><a class="btn" href="/commulingo/events/soviet-polish-war" target="_blank" rel="noopener">소비에트-폴란드 전쟁 ↗</a><a class="btn" href="/commulingo/terms/war-communism" target="_blank" rel="noopener">전시 공산주의 ↗</a></div></section>
   </main>
   <%- include('../partials/footer') %>
-  <script src="/js/civil-war-data.js?v=<%= assetVersion %>"></script>
-  <script src="/js/civil-war-art.js?v=<%= assetVersion %>"></script>
-  <script src="/js/war/cond.js?v=<%= assetVersion %>"></script>
-  <script src="/js/war/battle.js?v=<%= assetVersion %>"></script>
-  <script src="/js/war/engine.js?v=<%= assetVersion %>"></script>
-  <script src="/js/civil-war-battle.js?v=<%= assetVersion %>"></script>
-  <script src="/js/civil-war-engine.js?v=<%= assetVersion %>"></script>
-  <script src="/js/civil-war.js?v=<%= assetVersion %>"></script>
+  <%- include('war/scripts', { id: war.id, ui: true }) %>
 </body>
 </html>

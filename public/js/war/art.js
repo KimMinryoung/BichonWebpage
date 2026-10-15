@@ -1,10 +1,15 @@
 /* global module */
-/* Pictures of 「붉은 전선 1918–1920」: poster-style portraits of the people
-   who speak or advise, and the factions' shields. Drawn, not photographs:
-   a head in paper tone on a disc of the speaker's side, with the few marks
-   that made each of them recognisable on a poster (Trotsky's glasses and
-   goatee, Wrangel's papakha, Kolchak's naval cap). Returns svg strings, so
-   the screen can set them as markup and Node can test them. */
+/* Pictures of the war games: poster-style portraits of the people who
+   speak or advise, and the factions' shields. Drawn, not photographs: a
+   head in paper tone on a disc of the speaker's side, with the few marks
+   that made each of them recognisable on a poster (glasses, a goatee, a
+   papakha, a naval cap). Returns svg strings, so the screen can set them as
+   markup and Node can test them.
+
+   WarArt.create(scenario) draws a scenario's people (scenario.portraits:
+   id → { side, hair, face, glasses, beard, moustache, cap }, the values
+   below) and factions (scenario.factions[id]: flag stripes or kind, and
+   sign, one of SIGNS; the White cross when none). */
 (function (root) {
     'use strict';
 
@@ -13,47 +18,10 @@
     const RED = '#a21e2a';
     const SIDE = { red: RED, white: '#e8e4da', interv: '#2f6fb8', central: '#c7861c', national: '#8d8d86', black: '#2b2b28' };
 
-    // Each person: their headgear, hair, face and what they are drawn
-    // with. side colours the disc behind them.
-    const people = {
-        trotsky: { side: 'red', hair: 'shock', glasses: 'round', beard: 'goatee', moustache: true },
-        lenin: { side: 'red', hair: 'bald', beard: 'short', moustache: true, cap: 'worker' },
-        sverdlov: { side: 'red', hair: 'shock', glasses: 'pince', beard: 'goatee', moustache: true },
-        dzerzhinsky: { side: 'red', hair: 'swept', beard: 'goatee', moustache: true },
-        frunze: { side: 'red', cap: 'budenovka', beard: 'short', moustache: true },
-        'semyon-budyonny': { side: 'red', cap: 'budenovka', moustache: 'great' },
-        'filipp-mironov': { side: 'red', cap: 'papakha', moustache: true, beard: 'short' },
-        'sergey-kamenev': { side: 'red', cap: 'peaked', moustache: 'great' },
-        tukhachevsky: { side: 'red', cap: 'budenovka' },
-        'vitaly-primakov': { side: 'red', cap: 'papakha' },
-        'fyodor-raskolnikov': { side: 'red', cap: 'naval' },
-        'vladimir-azin': { side: 'red', cap: 'budenovka', moustache: true },
-        // A soldier who speaks for his unit.
-        'red-soldier': { side: 'red', cap: 'budenovka', moustache: true },
-        'vasily-chapayev': { side: 'red', cap: 'papakha', moustache: 'great' },
-        'vasily-blyukher': { side: 'red', cap: 'budenovka' },
-        'ivan-kutyakov': { side: 'red', cap: 'peaked' },
-        'maria-spiridonova': { side: 'black', hair: 'bun', glasses: 'pince' },
-        'nestor-makhno': { side: 'black', hair: 'long', cap: 'papakha' },
-        'semyon-karetnik': { side: 'black', hair: 'swept', moustache: true },
-        'nykyfor-hryhoriv': { side: 'national', cap: 'papakha', moustache: 'great' },
-        'symon-petliura': { side: 'national', cap: 'peaked' },
-        'jozef-pilsudski': { side: 'national', cap: 'maciejowka', moustache: 'great' },
-        'alexander-kolchak': { side: 'white', cap: 'naval' },
-        'anton-denikin': { side: 'white', cap: 'peaked', beard: 'pointed', moustache: true },
-        'pyotr-wrangel': { side: 'white', cap: 'papakha', face: 'long' },
-        'nikolai-yudenich': { side: 'white', cap: 'peaked', moustache: 'great' },
-        'alexander-kutepov': { side: 'white', cap: 'peaked', beard: 'full', moustache: true },
-        'pyotr-krasnov': { side: 'white', cap: 'papakha', moustache: true },
-        'vladimir-kappel': { side: 'white', cap: 'peaked', moustache: true },
-        'mikhail-hanzhin': { side: 'white', cap: 'peaked', moustache: true },
-        'ivan-barbovich': { side: 'white', cap: 'papakha', moustache: true },
-    };
-
     const esc = text => String(text).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
     // A head on a 40×40 disc. Paper face and collar, ink features.
-    function portrait(id, label) {
+    function portrait(people, id, label) {
         const p = people[id] || { side: 'red' };
         const disc = SIDE[p.side] || RED;
         const long = p.face === 'long';
@@ -95,16 +63,16 @@
     }
 
     // A faction's shield: its flag's stripes (or its side's colour), and an
-    // ink sign of what it was: the Czech legion's rails, the interventionists'
-    // anchor, the White cross, the Polish eagle, the Ukrainian trident.
-    const signs = {
-        czech: `<g fill="none" stroke="${INK}" stroke-width="1.4"><path d="M13 30l4-16M27 30l-4-16"/><path d="M14 26h12M15 21.5h10M16 17h8"/></g>`,
-        allies: `<g fill="none" stroke="${INK}" stroke-width="1.6" stroke-linecap="round"><circle cx="20" cy="13" r="2"/><path d="M20 15v15M15.5 18h9M13 24c1 4 4 6 7 6s6-2 7-6"/></g>`,
-        central: `<path d="M17.5 12h5v5.5h5.5v5h-5.5v5.5h-5v-5.5h-5.5v-5h5.5z" fill="${INK}"/>`,
-        poland: `<path d="M20 12c-2 0-3 1.5-3 3l-4-2 1.5 4-3 1 4 2-1 5 4.5-2 1 5 1-5 4.5 2-1-5 4-2-3-1 1.5-4-4 2c0-1.5-1-3-3-3z" fill="${INK}"/>`,
-        unr: `<path d="M20 11v18M14 13v9c0 3 2.5 5 6 5s6-2 6-5v-9M17 18v5M23 18v5" fill="none" stroke="${INK}" stroke-width="1.6"/>`,
-        komuch: `<g fill="none" stroke="${INK}" stroke-width="1.4"><path d="M13 14h14v14h-14z"/><path d="M16 18h8M16 21.5h8M16 25h5"/></g>`,
-        don: `<g fill="none" stroke="${INK}" stroke-width="1.6" stroke-linecap="round"><path d="M13 29l14-16M27 29l-14-16"/><path d="M12 25l3 3M28 25l-3 3"/></g>`,
+    // ink sign of what it was: a legion's rails, the interventionists'
+    // anchor, the White cross, an eagle, a trident.
+    const SIGNS = {
+        rails: `<g fill="none" stroke="${INK}" stroke-width="1.4"><path d="M13 30l4-16M27 30l-4-16"/><path d="M14 26h12M15 21.5h10M16 17h8"/></g>`,
+        anchor: `<g fill="none" stroke="${INK}" stroke-width="1.6" stroke-linecap="round"><circle cx="20" cy="13" r="2"/><path d="M20 15v15M15.5 18h9M13 24c1 4 4 6 7 6s6-2 7-6"/></g>`,
+        'iron-cross': `<path d="M17.5 12h5v5.5h5.5v5h-5.5v5.5h-5v-5.5h-5.5v-5h5.5z" fill="${INK}"/>`,
+        eagle: `<path d="M20 12c-2 0-3 1.5-3 3l-4-2 1.5 4-3 1 4 2-1 5 4.5-2 1 5 1-5 4.5 2-1-5 4-2-3-1 1.5-4-4 2c0-1.5-1-3-3-3z" fill="${INK}"/>`,
+        trident: `<path d="M20 11v18M14 13v9c0 3 2.5 5 6 5s6-2 6-5v-9M17 18v5M23 18v5" fill="none" stroke="${INK}" stroke-width="1.6"/>`,
+        charter: `<g fill="none" stroke="${INK}" stroke-width="1.4"><path d="M13 14h14v14h-14z"/><path d="M16 18h8M16 21.5h8M16 25h5"/></g>`,
+        sabres: `<g fill="none" stroke="${INK}" stroke-width="1.6" stroke-linecap="round"><path d="M13 29l14-16M27 29l-14-16"/><path d="M12 25l3 3M28 25l-3 3"/></g>`,
     };
     const cross = `<path d="M18.5 12h3v6.5h6.5v3h-6.5v8.5h-3v-8.5h-6.5v-3h6.5z" fill="${INK}"/>`;
 
@@ -120,7 +88,7 @@
         out.push(`<path d="${SH}" fill="none" stroke="${INK}" stroke-width="1.6"/>`);
         // The sign sits on a paper patch so it reads on any stripe.
         out.push(`<circle cx="20" cy="20.5" r="9.5" fill="${PAPER}" stroke="${INK}" stroke-width=".8"/>`);
-        out.push(`<g transform="translate(20 20.5) scale(.62) translate(-20 -21)">${signs[id] || cross}</g>`);
+        out.push(`<g transform="translate(20 20.5) scale(.62) translate(-20 -21)">${SIGNS[faction.sign] || cross}</g>`);
         return svgOf(out.join(''), label);
     }
 
@@ -129,7 +97,12 @@
         return `<svg class="cw-face" viewBox="0 0 40 40" ${a11y}>${body}</svg>`;
     }
 
-    const Art = { people, portrait, shield };
+    function create(scenario) {
+        const people = scenario.portraits || {};
+        return { people, portrait: (id, label) => portrait(people, id, label), shield };
+    }
+
+    const Art = { create, SIGNS, SIDE };
     if (typeof module !== 'undefined' && module.exports) module.exports = Art;
-    else root.CivilWarArt = Art;
+    else root.WarArt = Art;
 }(typeof window !== 'undefined' ? window : globalThis));

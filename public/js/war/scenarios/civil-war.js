@@ -104,6 +104,7 @@
     const factions = {
         czech: {
             name: '체코슬로바키아 군단', short: '체코 군단', kind: 'white', flag: ['#ffffff', '#d7141a'], link: T('czechoslovak-legion'),
+            sign: 'rails',
             note: '오스트리아군에서 넘어온 체코·슬로바키아 포로로 만든 군단. 프랑스 전선으로 가려고 시베리아 횡단철도를 타고 있었다. 1918–1920년 체코슬로바키아 국기는 폴란드처럼 흰색·빨간색 두 줄이었고, 1920년 3월 파란 삼각형이 더해졌다.',
             trait: { name: '철도 위의 군단', motion: 'rail', when: { not: { card: 'train' } }, by: 2, rule: '장갑열차가 이 전선에 없으면 압력 +2', text: '군단은 열차를 집 삼아 시베리아 횡단철도를 따라 싸웠다. 철도를 쥔 쪽이 볼가를 쥐었다. 장갑열차로 철도를 되찾아야 한다.' },
             cries: { beaten: '열차로 물러난다. 블라디보스토크는 멀다.', surging: '철도는 우리 것이다!' },
@@ -112,6 +113,7 @@
         },
         komuch: {
             name: '코무치 인민군', short: '코무치', kind: 'white', link: T('komuch'),
+            sign: 'charter',
             note: '사마라에 선 사회혁명당 계열 제헌의회 의원 위원회(코무치)의 군대. 9월 옴스크의 디렉토리로 합쳐졌다가 11월 콜차크의 쿠데타로 밀려났다.',
             trait: { name: '제헌의회의 깃발', motion: 'march', when: { stat: ['workers', '<', 55] }, by: 2, rule: '노동자 지지가 55 아래면 압력 +2', text: '사회혁명당의 코무치는 「모든 권력을 제헌의회로」를 내걸었다. 1918년 8월 이젭스크·봇킨스크의 무기 공장 노동자가 소비에트에 맞서 일어나 인민군에 합류했다. 노동자가 등을 돌리면 그들이 코무치 편에 선다.' },
             cries: { beaten: '사마라를 버린다. 옴스크로!', surging: '볼가는 제헌의회의 것이다!' },
@@ -126,6 +128,7 @@
         },
         don: {
             name: '돈 카자크군', short: '돈 카자크', kind: 'white', flag: ['#0033a0', '#ffd500', '#d52b1e'], link: T('don-republic'),
+            sign: 'sabres',
             note: '아타만 크라스노프가 이끈 돈 카자크의 군대. 1918년에는 우크라이나를 점령한 독일의 지원을 받았다. 깃발은 돈 공화국의 파란색·노란색·빨간색.',
             trait: { name: '카자크 기병의 습격', motion: 'charge', when: { reserve: ['>=', 2] }, by: -2, rule: '예비 사단을 2개 이상 남기면 압력 −2', text: '카자크 기병은 전선의 틈을 뚫고 후방의 철도와 창고를 휘저었다. 1919년 8월 마몬토프의 기병군단은 탐보프까지 들어왔다. 뒤에 남긴 예비 사단이 습격을 막는다.' },
             cries: { beaten: '돈으로 돌아간다. 카자크의 땅을 지켜라.', surging: '후방의 철도를 휘저어라!' },
@@ -147,6 +150,7 @@
         },
         allies: {
             name: '연합국 간섭군', short: '간섭군', kind: 'interv',
+            sign: 'anchor',
             note: '영국을 중심으로 프랑스·미국 병력이 무르만스크와 아르한겔스크에 상륙해 북부 정부를 세웠다. 영국군은 1919년 가을 철수했다.',
             trait: { name: '지친 원정군', motion: 'sail', when: { leader: true }, by: -1, rule: '정치위원이 있으면 압력 −1', text: '세계대전을 마친 영국·미국·프랑스 병사들은 남의 나라 내전에 머물 생각이 없었다. 볼셰비키의 외국어 전단이 병영에 돌았고, 1919년 봄 반란과 명령 거부가 잇따랐다.' },
             cries: { beaten: '병사들은 집에 가고 싶어 한다.', surging: '드비나강을 거슬러 오른다.' },
@@ -160,6 +164,7 @@
         },
         central: {
             name: '독일·오스트리아군', short: '독일·오스트리아', kind: 'central', flag: ['#000000', '#ffffff', '#dd0000'], link: E('brest-litovsk'),
+            sign: 'iron-cross',
             note: '브레스트 강화로 우크라이나·벨라루스·발트를 점령한 동맹국 군대. 1918년 11월 독일이 항복한 뒤 물러났다. 깃발은 독일 제국의 검은색·흰색·빨간색.',
             trait: { name: '점령군', motion: 'march', text: '브레스트 강화로 얻은 땅을 지키는 군대. 1918년 11월 독일이 항복하자 싸우지 않고 물러난다.' },
             cries: { beaten: '휴전이다. 집으로 간다.', surging: '점령지를 지킨다.' },
@@ -167,6 +172,7 @@
         },
         poland: {
             name: '폴란드군', short: '폴란드', kind: 'national', flag: ['#ffffff', '#dc143c'], link: P('jozef-pilsudski'),
+            sign: 'eagle',
             note: '1918년 독립을 되찾은 폴란드의 군대. 피우수트스키가 이끌었다.',
             trait: { name: '조국을 지키는 군대', motion: 'march', rule: '바르샤바는 여유 8이 있어야 들어간다', text: '침공군으로 키예프까지 왔던 폴란드군도 비스와강 앞에서는 나라를 지키는 군대였다. 폴란드 노동자는 붉은 군대를 해방군으로 맞지 않았다.' },
             cries: { beaten: '부크강 뒤로 물러난다.', surging: '동쪽으로 밀어붙여라!' },
@@ -174,6 +180,7 @@
         },
         unr: {
             name: '우크라이나 인민공화국군', short: '우크라이나', kind: 'national', link: P('symon-petliura'),
+            sign: 'trident',
             note: '페틀류라가 이끈 디렉토리 정부의 군대. 1920년 폴란드와 동맹해 키예프로 들어왔다.',
             trait: { name: '아타만의 농민군', motion: 'charge', when: { stat: ['peasants', '<', 40] }, by: 1, rule: '농민 지지가 40 아래면 압력 +1', text: '디렉토리의 병력은 저마다 아타만을 따르는 농민 무리였다. 징발에 지친 우크라이나 마을이 그들을 먹이고 숨겼다.' },
             cries: { beaten: '아타만들이 흩어진다.', surging: '키예프는 우크라이나의 것이다!' },
@@ -237,7 +244,7 @@
     // settlement. turns: indices in which the card is offered.
     const cards = {
         train: {
-            title: '트로츠키의 장갑열차', advisor: ['레프 트로츠키', 'trotsky'], cost: 1, target: 'front', bonus: 3,
+            title: '트로츠키의 장갑열차', short: '장갑열차', onRail: true, advisor: ['레프 트로츠키', 'trotsky'], cost: 1, target: 'front', bonus: 3,
             turns: [0, 1, 2, 3, 4, 5, 6],
             text: '전쟁인민위원의 열차가 위기의 전선으로 달려간다. 인쇄소·전신국·예비 무기와 함께 도망친 부대를 다시 세운다.',
             note: '트로츠키는 내전 동안 이 열차로 10만 킬로미터 넘게 전선을 돌았다.',
@@ -256,7 +263,7 @@
             link: ['빈농위원회', T('kombedy-committees-of-the-poor')],
         },
         cheka: {
-            title: '체카의 후방 단속', advisor: ['펠릭스 제르진스키', 'dzerzhinsky'], cost: 1, needs: 'unrest', peasants: -3, cohesion: -3,
+            title: '체카의 후방 단속', advisor: ['펠릭스 제르진스키', 'dzerzhinsky'], cost: 1, needs: 'unrest', idle: '농민 지지가 35 아래로 떨어져 봉기가 일어나야 쓸 수 있다', peasants: -3, cohesion: -3,
             turns: [1, 2, 3, 4, 5, 6],
             text: '후방의 농민 봉기를 비상위원회가 진압한다. 봉기에 묶인 사단의 절반이 바로 전선으로 돌아오지만, 공포는 지지를 깎는다.',
             link: ['적색 테러', T('red-terror')],
@@ -283,7 +290,7 @@
             note: '1919년 11월 창설. 백군 기병의 기동에 처음으로 같은 무기로 맞섰다.',
         },
         mironov: {
-            title: '미로노프의 제2기병군', advisor: ['필리프 미로노프', 'filipp-mironov'], cost: 1, target: 'front', fronts: ['crimea'], requires: 'mironov', bonus: 3,
+            title: '미로노프의 제2기병군', short: '제2기병군', advisor: ['필리프 미로노프', 'filipp-mironov'], cost: 1, target: 'front', fronts: ['crimea'], requires: 'mironov', bonus: 3,
             turns: [6],
             text: '사면받은 미로노프가 이끄는 제2기병군. 10월 북타브리아에서 브란겔의 기병을 깨뜨렸다. 크림 방면에만 보낼 수 있고, 보내면 페레코프 전투에 합류한다.',
             note: '1919년 미로노프를 사면했을 때만 나온다.',
@@ -732,9 +739,13 @@
         history: '11월 8일 새벽 제51사단의 방벽 정면 공격은 철조망과 기관총 앞에서 막혔다. 같은 날 밤 제15·52사단과 마흐노 부대가 현지 주민의 안내로 시바시를 건너 리톱스키 반도에 올랐고, 바르보비치 기병의 반격을 버텼다. 퇴로를 위협받은 백군은 9일 새벽 방벽을 버렸다. 11일 유슌 방어선이 뚫렸고, 같은 날 밤 제4군의 제30사단이 촌가르 진지를 돌파했다. 붉은 기병이 그 뒤를 따라 크림으로 들어갔다.',
     };
 
+    // The war's afterword: the first text whose condition holds.
     const epilogue = {
-        lowPeasants: '1921년 봄, 내전에서 이긴 소비에트 정권 앞에 새 전선이 열렸다. 탐보프의 안토노프 봉기와 시베리아·우크라이나의 농민 반란, 그리고 3월 크론시타트 수병의 봉기. 제10차 당대회는 징발을 현물세로 바꾸는 신경제정책을 채택했다.',
-        highPeasants: '징발의 부담을 덜어 둔 덕에 농촌의 원한은 역사보다 얕다. 실제 역사에서는 1921년 탐보프의 안토노프 봉기와 크론시타트 반란이 일어난 뒤에야 징발이 현물세로 바뀌었다.',
+        title: '그리고 1921년',
+        texts: [
+            { when: { stat: ['peasants', '>=', 40] }, text: '징발의 부담을 덜어 둔 덕에 농촌의 원한은 역사보다 얕다. 실제 역사에서는 1921년 탐보프의 안토노프 봉기와 크론시타트 반란이 일어난 뒤에야 징발이 현물세로 바뀌었다.' },
+            { text: '1921년 봄, 내전에서 이긴 소비에트 정권 앞에 새 전선이 열렸다. 탐보프의 안토노프 봉기와 시베리아·우크라이나의 농민 반란, 그리고 3월 크론시타트 수병의 봉기. 제10차 당대회는 징발을 현물세로 바꾸는 신경제정책을 채택했다.' },
+        ],
         links: [['크론시타트 반란', E('kronstadt-1921')], ['안토노프 봉기', T('antonovshchina')], ['신경제정책', T('nep')]],
     };
 
@@ -1053,6 +1064,74 @@
 
     const battles = { kazan, ufa, orel, perekop };
 
+    // The portraits (war/art.js): each person's headgear, hair, face and
+    // what they are drawn with. side colours the disc behind them.
+    const portraits = {
+        trotsky: { side: 'red', hair: 'shock', glasses: 'round', beard: 'goatee', moustache: true },
+        lenin: { side: 'red', hair: 'bald', beard: 'short', moustache: true, cap: 'worker' },
+        sverdlov: { side: 'red', hair: 'shock', glasses: 'pince', beard: 'goatee', moustache: true },
+        dzerzhinsky: { side: 'red', hair: 'swept', beard: 'goatee', moustache: true },
+        frunze: { side: 'red', cap: 'budenovka', beard: 'short', moustache: true },
+        'semyon-budyonny': { side: 'red', cap: 'budenovka', moustache: 'great' },
+        'filipp-mironov': { side: 'red', cap: 'papakha', moustache: true, beard: 'short' },
+        'sergey-kamenev': { side: 'red', cap: 'peaked', moustache: 'great' },
+        tukhachevsky: { side: 'red', cap: 'budenovka' },
+        'vitaly-primakov': { side: 'red', cap: 'papakha' },
+        'fyodor-raskolnikov': { side: 'red', cap: 'naval' },
+        'vladimir-azin': { side: 'red', cap: 'budenovka', moustache: true },
+        // A soldier who speaks for his unit.
+        'red-soldier': { side: 'red', cap: 'budenovka', moustache: true },
+        'vasily-chapayev': { side: 'red', cap: 'papakha', moustache: 'great' },
+        'vasily-blyukher': { side: 'red', cap: 'budenovka' },
+        'ivan-kutyakov': { side: 'red', cap: 'peaked' },
+        'maria-spiridonova': { side: 'black', hair: 'bun', glasses: 'pince' },
+        'nestor-makhno': { side: 'black', hair: 'long', cap: 'papakha' },
+        'semyon-karetnik': { side: 'black', hair: 'swept', moustache: true },
+        'nykyfor-hryhoriv': { side: 'national', cap: 'papakha', moustache: 'great' },
+        'symon-petliura': { side: 'national', cap: 'peaked' },
+        'jozef-pilsudski': { side: 'national', cap: 'maciejowka', moustache: 'great' },
+        'alexander-kolchak': { side: 'white', cap: 'naval' },
+        'anton-denikin': { side: 'white', cap: 'peaked', beard: 'pointed', moustache: true },
+        'pyotr-wrangel': { side: 'white', cap: 'papakha', face: 'long' },
+        'nikolai-yudenich': { side: 'white', cap: 'peaked', moustache: 'great' },
+        'alexander-kutepov': { side: 'white', cap: 'peaked', beard: 'full', moustache: true },
+        'pyotr-krasnov': { side: 'white', cap: 'papakha', moustache: true },
+        'vladimir-kappel': { side: 'white', cap: 'peaked', moustache: true },
+        'mikhail-hanzhin': { side: 'white', cap: 'peaked', moustache: true },
+        'ivan-barbovich': { side: 'white', cap: 'papakha', moustache: true },
+    };
+
+
+    // The strategic map (services/war-map.js): its frame, the event-control
+    // document whose phases colour history's control, the hub every front
+    // runs out from (voices may speak at it: at 'moscow'), the railways,
+    // and nudges for city names that would collide (dx, dy, anchor).
+    const map = {
+        box: { west: 19, east: 66, south: 42, north: 66 }, control: 'civil-war', title: '러시아 내전 작전 지도',
+        hub: moscow, hubId: 'moscow', railways,
+        labelAt: { 가치나: [8, 14, 'start'], 얌부르크: [-8, 4, 'end'], 페트로그라드: [8, -2, 'start'] },
+        // The map key: the game layer's colours (holders by faction kind),
+        // and history's control layer.
+        legend: [['cw-key-held', '붉은 군대'], ['cw-key-lost k-white', '백군'], ['cw-key-lost k-interv', '간섭군'], ['cw-key-lost k-central', '독일·오스트리아'], ['cw-key-lost k-national', '폴란드·우크라이나']],
+        historyLegend: [['is-red', '붉은 군대'], ['is-blue', '백군·간섭군'], ['is-amber', '독일·오스트리아'], ['is-gray', '독립국·인접국'], ['is-black', '마흐노']],
+    };
+
+    // The screen's words for this war's things (war/ui/game.js), and the
+    // stats the HUD shows: warn below a value, a chart line in the
+    // retrospect, command when the stat sets the command points.
+    const ui = {
+        aria: { calendar: '여덟 시기', stats: '공화국의 상황', army: '붉은 군대의 구성' },
+        player: '붉은 군대', playerUnits: '붉은 부대', enemy: '백군', enemyAll: '백군·간섭군',
+        unit: '사단', leader: '정치위원', food: '곡물', unrest: '봉기',
+        hud: [
+            { stat: 'peasants', label: '농민 지지', warnBelow: 35, warnNote: '봉기 위험', chart: 40 },
+            { stat: 'workers', label: '노동자 지지', note: '동원에 영향', warnBelow: 40, chart: null },
+            { stat: 'cohesion', label: '당 결속', warnBelow: 40, command: true, chart: 30, split: '분열: 정치위원 −1' },
+        ],
+        cardStats: { peasants: '농민', workers: '노동자', cohesion: '결속' },
+        save: 'civil-war-v1-save',
+    };
+
     // ── The campaign's rules (war/engine.js; schema in dev_docs/war-engine.md) ──
 
     // The engine's words that name this war's things.
@@ -1156,9 +1235,10 @@
         stalled: { title: '브란겔이 겨울을 넘긴다', text: '페레코프를 넘지 못했다. 역사에서는 11월 11일 유슌 방어선이 뚫렸고, 브란겔은 크림을 떠났다.' },
     };
     const data = {
-        id: 'civil-war', saveVersion: 1, factions, troops, fronts, frontOrder, moscow, railways, startLines, cards, turns, battles, epilogue,
+        id: 'civil-war', title: '붉은 전선 1918–1920', saveVersion: 1, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
+        map, ui, portraits,
         texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring,
     };
     if (typeof module === 'object' && module.exports) module.exports = data;
-    else root.CivilWarData = data;
+    else (root.WarScenarios = root.WarScenarios || {})[data.id] = data;
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -12,8 +12,8 @@ const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const fs = require('node:fs');
 const path = require('node:path');
-const G = require('../public/js/civil-war-engine.js');
-const D = G.DATA;
+const D = require('../public/js/war/scenarios/civil-war.js');
+const G = require('../public/js/war/engine.js').create(D);
 
 const FIXTURE = path.join(__dirname, 'fixtures', 'civil-war-golden.json');
 
@@ -147,7 +147,7 @@ function randomPlan(s, rand) {
 // A battle played by orders picked at random among those allowed, with a
 // bias to moving towards the goals and to striking.
 function randomBattle(s, rand, maxOrders = 400) {
-    const B = require('../public/js/civil-war-battle.js');
+    const B = require('../public/js/war/battle.js');
     let orders = 0;
     while (s.phase === 'battle' && s.battle && !s.battle.result && orders++ < maxOrders) {
         const b = s.battle;
@@ -199,7 +199,7 @@ const ROUTES = {
 };
 
 function drive(s, feats) {
-    const B = require('../public/js/civil-war-battle.js');
+    const B = require('../public/js/war/battle.js');
     const b = s.battle;
     const order = (name, ...args) => G.act(s, 'b:' + name, ...args);
     const routes = ROUTES[b.def.id];

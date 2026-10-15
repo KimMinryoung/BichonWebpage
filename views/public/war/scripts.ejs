@@ -1,0 +1,14 @@
+<%# The war engine and a scenario, in load order. Locals: id (the scenario);
+    ui true for the play screen (the art and the screen itself). %>
+  <script src="/js/war/scenarios/<%= id %>.js?v=<%= assetVersion %>"></script>
+  <script src="/js/war/cond.js?v=<%= assetVersion %>"></script>
+  <script src="/js/war/battle.js?v=<%= assetVersion %>"></script>
+  <script src="/js/war/engine.js?v=<%= assetVersion %>"></script>
+<% if (locals.ui) { %>
+  <script src="/js/war/art.js?v=<%= assetVersion %>"></script>
+  <script src="/js/war/ui/dom.js?v=<%= assetVersion %>"></script>
+  <script src="/js/war/ui/glyphs.js?v=<%= assetVersion %>"></script>
+  <script src="/js/war/ui/rail.js?v=<%= assetVersion %>"></script>
+  <script src="/js/war/ui/basemap.js?v=<%= assetVersion %>"></script>
+  <script src="/js/war/ui/game.js?v=<%= assetVersion %>"></script>
+<% } %>

@@ -1,0 +1,134 @@
+/* Drawings of the war games' screen (war/ui/game.js): the star, the
+   armoured train, the battle board's terrain marks and the units'
+   pictures. CELL is a board tile's size. */
+(function (root) {
+    'use strict';
+
+    const { svg } = root.WarDom;
+    const CELL = 48;
+
+    function star(cx, cy, R, r) {
+        const pts = [];
+        for (let i = 0; i < 10; i++) {
+            const a = -Math.PI / 2 + i * Math.PI / 5;
+            const rad = i % 2 ? r : R;
+            pts.push(`${(cx + rad * Math.cos(a)).toFixed(1)} ${(cy + rad * Math.sin(a)).toFixed(1)}`);
+        }
+        return 'M' + pts.join('L') + 'Z';
+    }
+
+    // Trotsky's train: a small locomotive, w wide, top-left at (x, y).
+    function trainGlyph(x, y, w) {
+        const k = w / 14;
+        const g = svg('g', { class: 'cw-train', transform: `translate(${x} ${y}) scale(${k})` });
+        // An armoured locomotive: a tall cab, the plated boiler with a gun
+        // turret and a sloped prow, the frame on three wheels; the cab
+        // carries a red star.
+        g.append(
+            svg('path', { d: 'M1 2.2h4.2V9H1z M5.2 4.4h6.4l1.9 2.4V9H5.2z M7 4.4V2.9h3.2v1.5z M10.2 3.4h2.6', class: 'cw-train-body' }),
+            svg('path', { d: 'M.4 9h13.4v1.1H.4z', class: 'cw-train-frame' }),
+            svg('circle', { cx: 3, cy: 10.7, r: 1.2, class: 'cw-train-wheel' }), svg('circle', { cx: 6.9, cy: 10.7, r: 1.2, class: 'cw-train-wheel' }), svg('circle', { cx: 10.8, cy: 10.7, r: 1.2, class: 'cw-train-wheel' }),
+            svg('path', { d: star(3.1, 5.4, 1.6, .7), class: 'cw-train-star' }));
+        return g;
+    }
+
+    function trainIcon() {
+        const node = svg('svg', { viewBox: '0 0 14 12', class: 'cw-mk-train', 'aria-hidden': 'true' });
+        node.append(trainGlyph(0, 0, 14));
+        return node;
+    }
+
+    function starIcon() {
+        const node = svg('svg', { viewBox: '0 0 12 12', class: 'cw-mk-star', 'aria-hidden': 'true' });
+        node.append(svg('path', { d: star(6, 6.4, 5.8, 2.5) }));
+        return node;
+    }
+
+    // Terrain marks drawn over a tile's fill, by the terrain's look: the
+    // Wall's battlements, a trench, a bridge's frame, ripples on a ford
+    // (dense once it floods).
+    // Each tile's drawing: grass on the steppe, firs in the wood, roofs in
+    // town, the Kremlin's tower, battlements, trenches with wire, waves,
+    // the bridge's truss. Small variations by position keep a field of
+    // the same ground from reading as wallpaper.
+    function tileMarks(cls, r, c, flooded) {
+        const x = c * CELL, y = r * CELL;
+        const h = (r * 7 + c * 13) % 5;
+        const g = svg('g', { class: 'cw-marks', 'aria-hidden': 'true' });
+        const add = (d, k) => g.append(svg('path', { d, class: k }));
+        if (cls === 'steppe') {
+            const spots = [[10, 14], [30, 10], [20, 30], [38, 34], [8, 40]].filter((_, i) => (i + h) % 5 < 3);
+            add(spots.map(([dx, dy]) => `M${x + dx - 3} ${y + dy}l1.5 -4M${x + dx} ${y + dy}v-5M${x + dx + 3} ${y + dy}l-1.5 -4`).join(''), 'cw-mark-grass');
+        } else if (cls === 'forest') {
+            const firs = [[12, 22], [32, 18], [22, 38], [38, 40]].slice(0, 3 + (h % 2));
+            add(firs.map(([dx, dy]) => `M${x + dx} ${y + dy - 14}l6 9h-3l5 7h-16l5 -7h-3z`).join(''), 'cw-mark-fir');
+            add(firs.map(([dx, dy]) => `M${x + dx} ${y + dy + 2}v3`).join(''), 'cw-mark-trunk');
+        } else if (cls === 'town' || cls === 'city' || cls === 'docks') {
+            const houses = cls === 'city' ? [[6, 26], [20, 22], [32, 28], [12, 38]] : cls === 'docks' ? [[8, 20]] : [[8, 30], [26, 24]];
+            add(houses.map(([dx, dy]) => `M${x + dx} ${y + dy}h10v-7l-5 -5l-5 5z`).join(''), 'cw-mark-house');
+            if (cls === 'docks') add(`M${x + 24} ${y + 40}h20M${x + 24} ${y + 34}h20M${x + 28} ${y + 30}v14M${x + 40} ${y + 30}v14M${x + 34} ${y + 10}v18M${x + 34} ${y + 10}l9 4`, 'cw-mark-pier');
+        } else if (cls === 'kremlin') {
+            add(`M${x} ${y + 34}h6v-6h6v6h6v-6h6v6h6v-6h6v6h6v14h-48z`, 'cw-mark-fort');
+            add(`M${x + 20} ${y + 28}v-12h8v12zM${x + 24} ${y + 6}c4 3 5 6 4 10h-8c-1 -4 0 -7 4 -10z`, 'cw-mark-fort');
+        } else if (cls === 'wall') {
+            add(`M${x} ${y + 36}h6v-8h6v8h6v-8h6v8h6v-8h6v8h6v12h-48z`, 'cw-mark-fort');
+            add(`M${x} ${y + 42}h48M${x + 12} ${y + 36}v6M${x + 30} ${y + 36}v6M${x + 6} ${y + 42}v6M${x + 22} ${y + 42}v6M${x + 40} ${y + 42}v6`, 'cw-mark-brick');
+        } else if (cls === 'yushun' || cls === 'chongar' || cls === 'trench') {
+            add(`M${x} ${y + 30}l6 -6l6 6l6 -6l6 6l6 -6l6 6l6 -6l6 6`, 'cw-mark-trench');
+            // Coiled wire in front of the trench.
+            add([5, 11, 17, 23, 29, 35, 41].map(dx => `M${x + dx - 3} ${y + 13}a3 3 0 1 0 6 0a3 3 0 1 0 -6 0`).join(''), 'cw-mark-wire');
+        } else if (cls === 'strait' || cls === 'bridge') {
+            add(`M${x + 6} ${y + 8}v32M${x + 42} ${y + 8}v32`, 'cw-mark-truss');
+            add(`M${x + 6} ${y + 16}h36M${x + 6} ${y + 32}h36M${x + 6} ${y + 32}l9 -16l9 16l9 -16l9 16`, 'cw-mark-truss');
+            if (cls === 'strait') add(`M${x + 4} ${y + 44}q5 -4 10 0t10 0t10 0t10 0`, 'cw-mark-water');
+        } else if (cls === 'river' || cls === 'deep') {
+            add([12, 26, 40].map((dy, i) => `M${x + 2 + ((h + i) % 3) * 3} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), 'cw-mark-water');
+        } else if (cls === 'crossing') {
+            // Boats and a raft at the Krasny Yar crossing.
+            add(`M${x + 2} ${y + 40}q5 -4 10 0t10 0t10 0t10 0`, 'cw-mark-water');
+            add(`M${x + 6} ${y + 16}h14l-3 5h-8zM${x + 26} ${y + 28}h14l-3 5h-8z`, 'cw-mark-pier');
+            add(`M${x + 8} ${y + 34}h18M${x + 8} ${y + 37}h18`, 'cw-mark-pier');
+        } else if (cls === 'pontoon') {
+            add([12, 40].map(dy => `M${x + 2} ${y + dy}q5 -4 10 0t10 0t10 0t10 0`).join(''), 'cw-mark-water');
+            add(`M${x} ${y + 20}h48M${x} ${y + 28}h48M${x + 8} ${y + 20}v8M${x + 20} ${y + 20}v8M${x + 32} ${y + 20}v8M${x + 44} ${y + 20}v8`, 'cw-mark-truss');
+        } else if (cls === 'blown') {
+            // The bridge's two ends and the gap the charges blew between them.
+            add([12, 40].map(dy => `M${x + 2} ${y + dy}q5 -4 10 0t10 0t10 0t10 0`).join(''), 'cw-mark-water');
+            add(`M${x} ${y + 18}h14l4 10M${x} ${y + 30}h12M${x + 48} ${y + 18}h-14l-4 10M${x + 48} ${y + 30}h-12M${x + 4} ${y + 18}l6 12M${x + 44} ${y + 18}l-6 12`, 'cw-mark-truss');
+        } else if (cls === 'ford') {
+            const rows = flooded ? [10, 20, 30, 40] : [16, 32];
+            add(rows.map(dy => `M${x + 6} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), 'cw-mark-water');
+        }
+        return g.childNodes.length ? g : null;
+    }
+
+    // A unit's picture in a 22×13 box at (x, y): a rifleman, a rider, a
+    // gun, a boat or the armoured train.
+    function unitPicture(u, x, y) {
+        const g = svg('g', { class: 'cw-pic', 'aria-hidden': 'true' });
+        if (u.rail) {
+            g.append(trainGlyph(x + 3, y - 1, 17));
+            return g;
+        }
+        const add = (d, k) => g.append(svg('path', { d, class: k }));
+        if (u.naval) {
+            add(`M${x + 1} ${y + 8}h20l-3 5h-14z`, 'cw-pic-fill');
+            add(`M${x + 10} ${y + 8}v-8M${x + 10} ${y + 1}l6 4h-6M${x + 4} ${y + 6}h4`, 'cw-pic-line');
+        } else if (u.kind === 'cav') {
+            add(`M${x + 2} ${y + 7}c2 -3 6 -3 10 -2l4 -3 2 1-1 3c2 1 3 3 3 5h-2l-1 -2-1 4h-2v-4h-7l-1 4h-2v-4c-2 0-3-1-2-2z`, 'cw-pic-fill');
+            add(`M${x + 10} ${y + 4}v-4M${x + 8} ${y}h5M${x + 12} ${y}l6 -1`, 'cw-pic-line');
+        } else if (u.kind === 'art') {
+            add(`M${x + 4} ${y + 8}l15 -7`, 'cw-pic-barrel');
+            add(`M${x + 1} ${y + 12}l7 -4`, 'cw-pic-line');
+            g.append(svg('circle', { cx: x + 8, cy: y + 9, r: 3.6, class: 'cw-pic-wheel' }));
+        } else {
+            g.append(svg('circle', { cx: x + 8, cy: y + 2, r: 2, class: 'cw-pic-fill' }));
+            add(`M${x + 8} ${y + 4}v5M${x + 8} ${y + 9}l-3 4M${x + 8} ${y + 9}l3 4M${x + 5} ${y + 6}h7M${x + 3} ${y + 12}l14 -12`, 'cw-pic-line');
+            g.append(svg('circle', { cx: x + 17, cy: y + 7, r: 2, class: 'cw-pic-fill' }));
+            add(`M${x + 17} ${y + 9}v4M${x + 14} ${y + 13}h6M${x + 20} ${y + 12}l1 -12`, 'cw-pic-line');
+        }
+        return g;
+    }
+
+    root.WarGlyphs = { CELL, star, trainGlyph, trainIcon, starIcon, tileMarks, unitPicture };
+})(window);

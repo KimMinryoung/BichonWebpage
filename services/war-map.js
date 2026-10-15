@@ -1,30 +1,36 @@
-// The strategic map of the civil-war game (/games/civil-war/): the
-// coastline-only event basemap with the Russian Civil War's control phases
-// (event-control/civil-war), framed on European Russia, plus the screen
-// position of every city the game draws on it. Built once per control
-// document; the game's own layer is drawn by public/js/civil-war.js.
+// The strategic map of a war game (/games/<scenario>/): the coastline-only
+// event basemap with the war's control phases (the scenario's
+// map.control event-control document), framed on map.box, plus the
+// screen position of the hub, every front's cities and the railways the
+// game draws on it. Built once per scenario and control document; the
+// game's own layer is drawn by public/js/war/ui/game.js.
 const { renderRegionMapSvg } = require('../data/commulingo/event-map-svg');
 const { loadEventControl, presentEventControl } = require('../data/commulingo/event-control');
-const DATA = require('../public/js/civil-war-data');
 
-const BOX = { west: 19, east: 66, south: 42, north: 66 };
-let cached = null;
+const SCENARIOS = {
+    'civil-war': require('../public/js/war/scenarios/civil-war'),
+};
+const cached = new Map();
 
-function civilWarMap() {
-    const control = loadEventControl('civil-war');
-    if (cached && cached.control === control) return cached.map;
-    const region = renderRegionMapSvg(BOX, control, '러시아 내전 작전 지도');
+function warMap(id) {
+    const scenario = SCENARIOS[id];
+    if (!scenario) throw new Error(`unknown war scenario ${id}`);
+    const { box, control: controlId, title, hub, railways = [] } = scenario.map;
+    const control = loadEventControl(controlId);
+    const hit = cached.get(id);
+    if (hit && hit.control === control) return hit.map;
+    const region = renderRegionMapSvg(box, control, title);
     const at = ([name, lat, lng]) => {
         const [x, y] = region.project(lat, lng);
         return { name, x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 };
     };
-    const points = { moscow: at(DATA.moscow), fronts: {}, railways: [], lines: [] };
-    for (const [id, front] of Object.entries(DATA.fronts)) points.fronts[id] = front.cities.map(at);
+    const points = { hub: at(hub), fronts: {}, railways: [], lines: [] };
+    for (const [fid, front] of Object.entries(scenario.fronts)) points.fronts[fid] = front.cities.map(at);
     // The railways go into the basemap (drawn once as the bitmap, over
     // history's control areas, under the game layer). Their names and
     // their lines (for routing the fronts along them) go with the points.
     const xy = ([lat, lng]) => region.project(lat, lng).map(v => Math.round(v * 10) / 10);
-    const rails = DATA.railways.map(r => {
+    const rails = railways.map(r => {
         points.lines.push(r.pts.map(xy));
         const pts = r.pts.map(p => xy(p).join(',')).join(' ');
         if (r.label) points.railways.push({ id: r.id, name: r.name, at: xy(r.label) });
@@ -37,8 +43,8 @@ function civilWarMap() {
         svg, width: region.width, height: region.height, points,
         phases: presented ? presented.phases : [], sides: presented ? presented.sides : [],
     };
-    cached = { control, map };
+    cached.set(id, { control, map });
     return map;
 }
 
-module.exports = { civilWarMap };
+module.exports = { warMap, SCENARIOS };

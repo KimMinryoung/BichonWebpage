@@ -39,10 +39,11 @@ router.get('/nonogram/index.html', (req, res) => {
     res.redirect(301, nonogramCanonical(req));
 });
 
-// Public games do not need database queries. The civil-war game draws its
-// map from the event-control document cached in memory.
-const { civilWarMap } = require('../services/civil-war-map');
-const gameLocals = { '/games/civil-war/': () => ({ civilWarMap: civilWarMap() }) };
+// Public games do not need database queries. A war game draws its map
+// from the event-control document cached in memory.
+const { warMap, SCENARIOS } = require('../services/war-map');
+const warLocals = id => () => ({ war: { id, map: warMap(id), scenario: SCENARIOS[id] } });
+const gameLocals = { '/games/civil-war/': warLocals('civil-war') };
 for (const [path, view] of [['/games/', 'games'], ['/games/strike/', 'strike'], ['/games/civil-war/', 'civil-war']]) {
     router.get(path, (req, res) => {
         setNoStore(res);

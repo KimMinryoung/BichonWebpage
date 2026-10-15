@@ -1,13 +1,13 @@
 #!/usr/bin/env node
-// Rules of 「붉은 전선 1918–1920」 (public/js/civil-war-*.js): a campaign
+// Rules of 「붉은 전선 1918–1920」 (public/js/war/ on scenarios/civil-war.js): a campaign
 // played as history played it ends where history did, the save replays,
 // policy shortcuts cost what they should, and Perekop falls to the Sivash
 // crossing but not to the Wall alone.
 const assert = require('node:assert/strict');
-const G = require('../public/js/civil-war-engine.js');
-const B = require('../public/js/civil-war-battle.js');
-const A = require('../public/js/civil-war-art.js');
-const D = G.DATA;
+const D = require('../public/js/war/scenarios/civil-war.js');
+const G = require('../public/js/war/engine.js').create(D);
+const B = require('../public/js/war/battle.js');
+const A = require('../public/js/war/art.js').create(D);
 
 const PRIORITY = ['south', 'northwest', 'east', 'volga', 'crimea', 'west', 'southwest', 'north'];
 
@@ -123,15 +123,15 @@ for (const t of D.turns) {
 // network at a shared station point (a junction typed twice the same).
 {
     const key = ([lat, lng]) => `${lat},${lng}`;
-    const reached = new Set([key(D.moscow.slice(1))]);
+    const reached = new Set([key(D.map.hub.slice(1))]);
     let grew = true;
     while (grew) {
         grew = false;
-        for (const r of D.railways) {
+        for (const r of D.map.railways) {
             if (r.pts.some(p => reached.has(key(p))) && !r.pts.every(p => reached.has(key(p)))) { r.pts.forEach(p => reached.add(key(p))); grew = true; }
         }
     }
-    for (const r of D.railways) {
+    for (const r of D.map.railways) {
         assert.ok(r.pts.length >= 2 && r.pts.every(([lat, lng]) => lat >= 42 && lat <= 66 && lng >= 19 && lng <= 66), r.id);
         assert.ok(r.pts.every(p => reached.has(key(p))), `${r.id} joins the network`);
     }
