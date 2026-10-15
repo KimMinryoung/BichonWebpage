@@ -652,7 +652,7 @@
             '#.........t..',
             '#............',
         ],
-        // The board's voices (civil-war.js renderBattleVoice): when says
+        // The board's voices (war/ui/game.js renderBattleVoice): when says
         // the moment (start, goal emptied, turned:<line>, flood, reserve,
         // turn:N); unit, the speakers in order of preference; by / who /
         // face, the picture. src as for a season's voices; without it 각색.

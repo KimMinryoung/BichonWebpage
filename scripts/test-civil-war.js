@@ -8,6 +8,7 @@ const D = require('../public/js/war/scenarios/civil-war.js');
 const G = require('../public/js/war/engine.js').create(D);
 const B = require('../public/js/war/battle.js');
 const A = require('../public/js/war/art.js').create(D);
+const { checkScenario } = require('./lib/war-scenario-check');
 
 const PRIORITY = ['south', 'northwest', 'east', 'volga', 'crimea', 'west', 'southwest', 'north'];
 
@@ -107,35 +108,10 @@ const other = t => t.choice.options.find(o => o.id !== t.choice.history).id;
 const clear = s => G.activeFronts(s).forEach(f => assert.ok(G.act(s, 'alloc', f, 0)));
 const sumDiff = s => s.records.reduce((sum, r) => sum + Object.values(r.fronts).reduce((a, f) => a + f.after - f.history, 0), 0);
 
-// Data: every front's history fits its city chain; every season names a
-// historical option that exists.
-for (const [id, front] of Object.entries(D.fronts)) {
-    assert.equal(front.history.length, D.turns.length, id);
-    for (const line of front.history) assert.ok(line >= 0 && line <= front.cities.length, id);
-}
-for (const t of D.turns) {
-    assert.ok(t.choice.options.some(o => o.id === t.choice.history), t.id);
-    for (const id of Object.keys(t.threats)) assert.ok(D.fronts[id], `${t.id}: ${id}`);
-    for (const id of t.cards) assert.ok(D.cards[id], `${t.id}: ${id}`);
-}
-
-// The railways: every line within the map's frame and joined to Moscow's
-// network at a shared station point (a junction typed twice the same).
-{
-    const key = ([lat, lng]) => `${lat},${lng}`;
-    const reached = new Set([key(D.map.hub.slice(1))]);
-    let grew = true;
-    while (grew) {
-        grew = false;
-        for (const r of D.map.railways) {
-            if (r.pts.some(p => reached.has(key(p))) && !r.pts.every(p => reached.has(key(p)))) { r.pts.forEach(p => reached.add(key(p))); grew = true; }
-        }
-    }
-    for (const r of D.map.railways) {
-        assert.ok(r.pts.length >= 2 && r.pts.every(([lat, lng]) => lat >= 42 && lat <= 66 && lng >= 19 && lng <= 66), r.id);
-        assert.ok(r.pts.every(p => reached.has(key(p))), `${r.id} joins the network`);
-    }
-}
+// The scenario's data: every id it names exists, every season fits the
+// fronts, every railway joins Moscow's network, every speaker has a
+// portrait and every board can be fought on (scripts/lib/war-scenario-check.js).
+assert.deepEqual(checkScenario(D), []);
 
 // An armoured train starts on its board's railway and never leaves it.
 for (const def of Object.values(D.battles)) {
@@ -992,51 +968,14 @@ assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red o
     assert.equal(G.restore(G.serialize(s)).captured, 1);
 }
 
-// Voices: every speaker exists and speaks from where the season fights
-// (an attacker from its own front, a Red at Moscow or at a front in play);
-// a quoted line names its source; every attacker cries when beaten and
-// when surging; everyone drawn (voices, advisors, dilemmas, incidents,
-// threats) has a portrait and every faction a shield.
-{
-    const drawn = new Set();
-    for (const t of D.turns) {
-        assert.ok(t.voices && t.voices.length >= 2, `${t.id}: voices`);
-        for (const v of t.voices) {
-            assert.ok(v.text && v.text.length <= 120, `${t.id}: ${v.text}`);
-            assert.ok(v.at === 'moscow' || t.threats[v.at], `${t.id}: ${v.at} does not fight`);
-            if (v.by) assert.ok(t.threats[v.at].foes.includes(v.by), `${t.id}: ${v.by} does not attack ${v.at}`);
-            else assert.ok(v.who, `${t.id}: a Red voice names who`);
-            if (v.src) assert.ok(v.src[0] && /^https:\/\//.test(v.src[1]), `${t.id}: source of ${v.text}`);
-            if (v.who) drawn.add(v.who[1]);
-        }
-        for (const th of Object.values(t.threats)) if (th.who) drawn.add(th.who[1]);
-        for (const x of [t.choice, t.incident]) if (x && x.who) drawn.add(x.who[1]);
-    }
-    for (const c of Object.values(D.cards)) drawn.add(c.advisor[1]);
-    // The battles' voices: real speakers on the board, known moments.
-    for (const [id, def] of Object.entries(D.battles)) {
-        assert.ok(def.voices && def.voices.some(v => v.when === 'start'), `${id}: opening voices`);
-        const units = new Set(def.units.map(u => u.id).concat(def.units.filter(u => u.feat && u.feat.unit).map(u => u.feat.unit.id)));
-        const feats = new Set(def.units.filter(u => u.feat).map(u => u.feat.id));
-        for (const u of def.units) if (u.person) drawn.add(u.person[1]);
-        for (const v of def.voices) {
-            assert.ok([].concat(v.unit).every(u => units.has(u)), `${id}: speaker of ${v.text}`);
-            assert.ok(/^(start|goal|flood|reserve|surrender|air|turn:\d+|turned:\w+|feat:[\w-]+)$/.test(v.when), `${id}: when ${v.when}`);
-            if (v.when.startsWith('feat:')) assert.ok(feats.has(v.when.slice(5)), `${id}: feat ${v.when}`);
-            if (v.when.startsWith('turned:')) assert.ok(def.lines[v.when.slice(7)], `${id}: line ${v.when}`);
-            assert.ok(v.who || v.by || v.face, `${id}: a picture for ${v.text}`);
-            if (v.by) assert.ok(D.factions[v.by], `${id}: faction ${v.by}`);
-            if (v.src) assert.ok(/^https:\/\//.test(v.src[1]), `${id}: source of ${v.text}`);
-            if (v.who) drawn.add(v.who[1]);
-            if (v.face) drawn.add(v.face);
-        }
-    }
-    for (const id of drawn) assert.ok(A.people[id], `portrait for ${id}`);
-    for (const [id, f] of Object.entries(D.factions)) {
-        assert.ok(f.cries && f.cries.beaten && f.cries.surging, `cries of ${id}`);
-        assert.match(A.shield(id, f), /^<svg class="cw-face"/);
-    }
-    for (const id of Object.keys(A.people)) assert.match(A.portrait(id, id), /role="img"/);
+// Voices: every season has a few, short enough for a bubble; every board
+// opens with one (where they speak from and who is drawn is the scenario
+// check's).
+for (const t of D.turns) {
+    assert.ok(t.voices && t.voices.length >= 2, `${t.id}: voices`);
+    for (const v of t.voices) assert.ok(v.text && v.text.length <= 120, `${t.id}: ${v.text}`);
 }
+for (const [id, def] of Object.entries(D.battles)) assert.ok(def.voices && def.voices.some(v => v.when === 'start'), `${id}: opening voices`);
+for (const id of Object.keys(A.people)) assert.match(A.portrait(id, id), /role="img"/);
 
 console.log('civil-war: campaign, policies, save, battle, bar and voice checks passed');

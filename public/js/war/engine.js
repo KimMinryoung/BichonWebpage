@@ -7,7 +7,7 @@
 
    WarEngine.create(scenario) gives a game for one scenario (its data and
    rules; schema in dev_docs/war-engine.md, the first one is
-   public/js/civil-war-data.js). Works in the browser (window.WarEngine)
+   public/js/war/scenarios/civil-war.js). Works in the browser (window.WarEngine)
    and in Node (scripts/test-*.js).
 
    Rules generations (s.rules, kept in the save so an old save replays as

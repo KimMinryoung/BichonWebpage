@@ -9,6 +9,7 @@
 | 통합 검색·메뉴별 영어 지원 | [범위·일치 기준·영어 판정](site-search.md) |
 | 파업 게임 | [설계·규칙·구현·테스트 인수인계](strike-game-handoff.md) |
 | 러시아 내전 게임 「붉은 전선」 | [설계·규칙·전투·밸런스 기준](civil-war-game.md) |
+| 전쟁 게임 공통 엔진·새 전쟁 시나리오 | [모듈·시나리오 스키마·조건 언어·저장 세대·골든 마스터](war-engine.md) |
 | 노노그램 | [화면·입력·저장 구현 참고](nonogram.md) |
 | 배포·미리보기·데이터·인증 | [Frontend 운영 참고](frontend-operations.md) |
 | CSS 독립 배포 구조 개선 | [2026-10-05 인수인계·설계 초안](frontend-static-assets-deployment-handoff-20261005.md) |

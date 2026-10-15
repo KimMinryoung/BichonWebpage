@@ -38,7 +38,7 @@
         return el('a', Object.assign({ href }, NEW_TAB), label);
     }
 
-    // An svg string from civil-war-art.js as a node.
+    // An svg string from war/art.js as a node.
     function picture(markup) {
         const t = document.createElement('template');
         t.innerHTML = markup;
