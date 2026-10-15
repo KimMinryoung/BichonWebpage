@@ -679,8 +679,12 @@
                 pips.setAttribute('data-front', id);
                 layer.append(pips);
                 const line = s.lines[id];
-                // The divisions and the train run out from Moscow by rail.
-                if (fc && pips.childNodes.length && line > 0) glide(`pips:${id}`, pips, routeOf([points.moscow, ...points.fronts[id].slice(0, line)]), i * 220 + 500, gliding);
+                // The divisions and the train run out from Moscow by rail,
+                // each unit on its own: one sent later runs out by itself.
+                if (fc && line > 0) {
+                    const route = routeOf([points.moscow, ...points.fronts[id].slice(0, line)]);
+                    pips.querySelectorAll('[data-unit]').forEach((u, k) => glide(`${u.dataset.unit}:${id}`, u, route, i * 220 + 500 + k * 45, gliding));
+                }
                 if (trains[id]) {
                     trains[id].g.setAttribute('data-front', id);
                     layer.append(trains[id].g);
@@ -1045,14 +1049,17 @@
         }
         avoid.push(best.box);
         const slot = i => [best.box.x0 + (i % perRow) * (size + gap), best.box.y0 + Math.floor(i / perRow) * (size + gap)];
+        // Each unit in its own group, named for its glide (renderMap).
+        const unit = name => g.appendChild(svg('g', { 'data-unit': name }));
         for (let i = 0; i < n; i++) {
             const [x, y] = slot(i);
             const part = Math.min(1, units - i);
-            if (part < 1) g.append(svg('rect', { x, y, width: size, height: size, class: 'cw-pip is-empty' }));
-            g.append(svg('rect', { x, y, width: size * part, height: size, class: 'cw-pip' }));
+            const u = unit(`pip${i}`);
+            if (part < 1) u.append(svg('rect', { x, y, width: size, height: size, class: 'cw-pip is-empty' }));
+            u.append(svg('rect', { x, y, width: size * part, height: size, class: 'cw-pip' }));
         }
-        if (commissar) { const [x, y] = slot(n); g.append(svg('path', { d: star(x + size / 2 + 1, y + size / 2, 7.5, 3.2), class: 'cw-pip-star' })); }
-        if (train) { const [x, y] = slot(n + (commissar ? 2 : 0)); g.append(trainGlyph(x + 2, y - 4, 19)); }
+        if (commissar) { const [x, y] = slot(n); unit('star').append(svg('path', { d: star(x + size / 2 + 1, y + size / 2, 7.5, 3.2), class: 'cw-pip-star' })); }
+        if (train) { const [x, y] = slot(n + (commissar ? 2 : 0)); unit('card').append(trainGlyph(x + 2, y - 4, 19)); }
         return g;
     }
 
