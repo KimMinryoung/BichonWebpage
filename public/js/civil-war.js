@@ -1068,7 +1068,7 @@
     function trainOnRail(id) {
         const line = s.lines[id];
         const route = routeOf([points.moscow, ...points.fronts[id].slice(0, line)]);
-        let back = 16, i = route.length - 1, p = route[i];
+        let back = 24, i = route.length - 1, p = route[i];
         while (i > 0 && back > 0) {
             const q = route[i - 1];
             const len = Math.hypot(p.x - q.x, p.y - q.y);
