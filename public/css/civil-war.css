@@ -913,10 +913,11 @@
 .cw-voice-text::before { content: '「'; }
 .cw-voice-text::after { content: '」'; }
 .cw-voice-src { font-size: .72rem; }
-.cw-voice-body > p:last-child { margin-top: 3px; }
 .cw-voice-src a { color: var(--text-secondary); }
 .cw-voice-src.is-made { padding: 0 4px; border: 1px solid var(--border); color: var(--text-secondary); }
-.cw-voice-count { position: absolute; right: 8px; bottom: 5px; font-size: .68rem; color: var(--text-secondary); }
+.cw-voice-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 3px; }
+.games-shell .cw-voice-next { flex: 0 0 auto; min-height: 28px; padding: 2px 9px; font-size: .74rem; font-variant-numeric: tabular-nums; }
+.cw-voice-next span { color: var(--text-secondary); }
 .games-shell .cw-voice-close { position: absolute; top: 2px; right: 2px; min-height: 0; width: 26px; height: 26px; padding: 0; border: 0; background: none; color: var(--text-secondary); font-size: 1.1rem; line-height: 1; }
 .cw-voice:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; }
 @media (prefers-reduced-motion: no-preference) {

@@ -425,8 +425,10 @@
         el('div', { class: 'cw-voice-body' },
             el('p', { class: 'cw-voice-who' }, el('strong', {}, name), sub ? el('span', {}, sub) : null),
             el('p', { class: 'cw-voice-text' }, v.text),
-            el('p', {}, sourceOf(v))),
-        el('span', { class: 'cw-voice-count', 'aria-hidden': 'true' }, count),
+            // The source, then the way on without waiting for the line's time.
+            el('div', { class: 'cw-voice-foot' }, el('p', {}, sourceOf(v)),
+                el('button', { type: 'button', class: 'cw-voice-next', 'aria-label': `다음 대사 (${count})`, onclick: next },
+                    el('span', { 'aria-hidden': 'true' }, count), count.split('/')[0] === count.split('/')[1] ? ' 닫기' : ' 다음 ›'))),
         el('button', { type: 'button', class: 'cw-voice-close', 'aria-label': '대사 건너뛰기', onclick: skip }, '×'));
     }
 
