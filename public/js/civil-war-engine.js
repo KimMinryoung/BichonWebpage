@@ -30,12 +30,19 @@
     // Grain each season under a policy: the tax in kind leaves the peasants
     // most of what the requisition took, and the army eats less for it.
     const GRAIN = { razverstka: 7, market: 1, tax: -10 };
+    // Rules 2: divisions moved from one front to another spend half the
+    // season on the railways through Moscow and bring half their share.
+    // Divisions newly raised or held back in reserve arrive whole.
+    const RULES = 2;
+    const TRANSFER = 0.5;
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
 
-    function start() {
+    // rules: 1 for a save from before the railway rule (no transfer cost,
+    // no plan carried over), so its logged orders replay as they were.
+    function start(rules = RULES) {
         const s = {
-            version: VERSION, turn: 0, phase: 'plan',
+            version: VERSION, rules, turn: 0, phase: 'plan', lastAlloc: {},
             peasants: 60, workers: 60, cohesion: 60, grain: 6,
             flags: {}, lines: Object.assign({}, DATA.startLines),
             petrogradFell: false, deserted: 0, revolt: 0, momentum: {}, pursuit: {}, used: {},
@@ -84,7 +91,54 @@
             alloc: {}, commissar: {}, cards: [], choice: null, response: null,
         };
         for (const id of activeFronts(s)) { s.plan.alloc[id] = 0; s.plan.commissar[id] = false; }
+        // The divisions stay where they fought last season unless moved:
+        // the plan opens with last season's placements on the fronts still
+        // fighting, trimmed from the largest when the army shrank.
+        if (s.rules >= 2) {
+            for (const id of activeFronts(s)) s.plan.alloc[id] = s.lastAlloc[id] || 0;
+            trim(s, divisions);
+        }
         s.phase = 'plan';
+    }
+
+    // Under rules 2 the plan opens full, so a pool that shrinks (a choice,
+    // an answer or a card that takes divisions) takes them back from the
+    // largest placement first instead of refusing. False when it cannot.
+    function trim(s, pool) {
+        if (allocated(s) <= pool) return true;
+        if (s.rules < 2 || pool < 0) return false;
+        while (allocated(s) > pool) {
+            const top = Object.keys(s.plan.alloc).sort((a, b) => s.plan.alloc[b] - s.plan.alloc[a])[0];
+            s.plan.alloc[top] -= 1;
+        }
+        return true;
+    }
+
+    // Where each front's divisions come from under the plan: kept there
+    // from last season (stay), newly raised or out of reserve (fresh), or
+    // moved by rail from another front (moved). Fresh divisions go first to
+    // the front furthest short (by the margin a moved division would leave),
+    // so the player never loses by the order they were placed in.
+    function transfersOf(s, margins) {
+        const ids = activeFronts(s);
+        const out = {};
+        for (const id of ids) {
+            const d = s.plan.alloc[id];
+            const stay = s.rules >= 2 ? Math.min(d, s.lastAlloc[id] || 0) : d;
+            out[id] = { stay, fresh: 0, moved: d - stay };
+        }
+        if (s.rules < 2) return out;
+        const held = Object.values(s.lastAlloc).reduce((a, b) => a + b, 0);
+        let fresh = Math.max(0, s.plan.divisions - held);
+        while (fresh > 0) {
+            const open = ids.filter(id => out[id].moved > 0);
+            if (!open.length) break;
+            open.sort((a, b) => (margins[a] - out[a].moved) - (margins[b] - out[b].moved) || ids.indexOf(a) - ids.indexOf(b));
+            out[open[0]].moved -= 1;
+            out[open[0]].fresh += 1;
+            fresh -= 1;
+        }
+        return out;
     }
 
     function allocated(s) {
@@ -152,7 +206,7 @@
         if (s.plan.command < card.cost) return false;
         if (card.target === 'front' && !(target in s.plan.alloc)) return false;
         if (card.fronts && !card.fronts.includes(target)) return false;
-        if (card.divisions < 0 && free(s) < -card.divisions) return false;
+        if (card.divisions < 0 && (s.rules < 2 ? free(s) : s.plan.divisions) < -card.divisions) return false;
         if (card.needs === 'revolt' && !s.revolt) return false;
         return true;
     }
@@ -168,6 +222,7 @@
         const card = DATA.cards[id];
         s.plan.command -= card.cost;
         s.plan.divisions += cardDivisions(s, card);
+        trim(s, s.plan.divisions);
         s.plan.cards.push({ id, target: card.target === 'front' ? target : null });
         return true;
     }
@@ -180,7 +235,7 @@
         // Taking back recruits the player has already sent to a front would
         // leave the allocation over the pool.
         const added = cardDivisions(s, card);
-        if (added > 0 && free(s) < added) return false;
+        if (added > 0 && !trim(s, s.plan.divisions - added)) return false;
         s.plan.cards.splice(i, 1);
         s.plan.command += card.cost;
         s.plan.divisions -= added;
@@ -193,7 +248,7 @@
         if (!opt) return false;
         const prev = s.plan.choice && turnData(s).choice.options.find(o => o.id === s.plan.choice);
         const delta = (prev ? -(prev.divisions || 0) : 0) + (opt.divisions || 0);
-        if (s.plan.divisions + delta < allocated(s)) return false;
+        if (!trim(s, s.plan.divisions + delta)) return false;
         s.plan.divisions += delta;
         s.plan.choice = optionId;
         return true;
@@ -210,7 +265,7 @@
         if ((opt.bars || []).some(id => s.plan.cards.some(c => c.id === id))) return false;
         const prev = responseOf(s);
         const delta = (prev ? -(prev.divisions || 0) : 0) + (opt.divisions || 0);
-        if (s.plan.divisions + delta < allocated(s)) return false;
+        if (!trim(s, s.plan.divisions + delta)) return false;
         s.plan.divisions += delta;
         s.plan.response = optionId;
         return true;
@@ -221,18 +276,28 @@
     // The strength each active front would bring, and the pressure against
     // it, under the current plan. Shared by the forecast and the settlement.
     function forecast(s) {
+        const supply = supplyOf(s);
+        // A division's share: its quality, less what hunger takes.
+        const perDivision = quality(s) * (FED + (1 - FED) * supply.ratio);
+        // Fresh divisions go where they matter most, judged on the margin
+        // before the railway's cost.
+        const before = forecastWith(s, null, perDivision);
+        const transfers = transfersOf(s, Object.fromEntries(Object.entries(before).map(([id, f]) => [id, f.margin])));
+        return { fronts: forecastWith(s, transfers, perDivision), supply };
+    }
+
+    // transfers: where each front's divisions come from (transfersOf), or
+    // null to count every division whole.
+    function forecastWith(s, transfers, perDivision) {
         const t = turnData(s);
         const threats = threatsOf(s);
         const choice = s.plan.choice;
         const flags = Object.assign({}, s.flags);
-        const supply = supplyOf(s);
-        const q = quality(s);
         const out = {};
         for (const id of activeFronts(s)) {
             const threat = threats[id];
             const d = s.plan.alloc[id];
-            // A division's share: its quality, less what hunger takes.
-            const perDivision = q * (FED + (1 - FED) * supply.ratio);
+            const tr0 = transfers ? transfers[id] : { stay: d, fresh: 0, moved: 0 };
             let strength = d * perDivision;
             // What else adds to (or takes from) the strength, as words and
             // as { kind, label, v } for the card's marks.
@@ -242,6 +307,8 @@
                 bonuses.push({ kind, label, v });
                 parts.push(`${label} ${v < 0 ? '−' : '+'}${Math.abs(v)}`);
             };
+            // Divisions moved by rail from another front bring half their share.
+            if (tr0.moved) add('rail', `철도로 옮겨 온 사단 ${tr0.moved}`, -round1(tr0.moved * perDivision * (1 - TRANSFER)));
             if (s.plan.commissar[id]) add('commissar', '정치위원', COMMISSAR);
             for (const c of s.plan.cards) {
                 const card = DATA.cards[c.id];
@@ -288,12 +355,12 @@
             const margin = strength - pressure;
             const result = outcomeOf(s, id, margin);
             out[id] = {
-                divisions: d, perDivision: Math.round(perDivision * 1000) / 1000, bonuses, momentumIn: s.momentum[id] || 0, pursuitIn,
+                divisions: d, stay: tr0.stay, fresh: tr0.fresh, moved: tr0.moved, perDivision: Math.round(perDivision * 1000) / 1000, bonuses, momentumIn: s.momentum[id] || 0, pursuitIn,
                 strength: round1(strength), pressure, margin: round1(margin), parts, pressureParts, traits,
                 change: result.change, momentum: result.overflow * MOMENTUM, pursuit: result.pursuit * PURSUIT,
             };
         }
-        return { fronts: out, supply };
+        return out;
     }
 
     // The traits of a front's attackers under the plan: each with whether
@@ -512,6 +579,7 @@
         if (nextCommand !== commandOf(cohesionBefore)) notes.push(`당 결속 ${s.cohesion}: 다음 시기 지휘력은 ${nextCommand}이다.`);
         if (s.cohesion < SPLIT) notes.push('당이 분열하고 있다. 다음 시기 정치위원이 하나 준다.');
 
+        s.lastAlloc = Object.assign({}, s.plan.alloc);
         const record = {
             turn: s.turn, choice: s.plan.choice, history: t.choice.history, response: s.plan.response, fronts,
             cards: s.plan.cards.map(c => c.id), supply: fc.supply, notes,
@@ -628,14 +696,15 @@
     }
 
     function serialize(s) {
-        return JSON.stringify({ version: VERSION, log: s.log });
+        return JSON.stringify({ version: VERSION, rules: s.rules, log: s.log });
     }
 
     function restore(text) {
         try {
             const saved = typeof text === 'string' ? JSON.parse(text) : text;
             if (!saved || saved.version !== VERSION || !Array.isArray(saved.log)) return null;
-            const s = start();
+            const rules = saved.rules || 1;
+            const s = start(rules);
             let season = 0;     // log entries up to the latest season begun
             for (const [i, entry] of saved.log.entries()) {
                 if (!Array.isArray(entry)) return null;
@@ -652,7 +721,7 @@
                 if (typeof entry[0] === 'string' && entry[0].startsWith('b:') && s.phase === 'battle') break;
                 // A plan the rules no longer allow (a save from before a rule
                 // change) is planned again from the start of its season.
-                return season ? restore({ version: VERSION, log: saved.log.slice(0, season) }) : null;
+                return season ? restore({ version: VERSION, rules, log: saved.log.slice(0, season) }) : null;
             }
             return s;
         } catch (_) {
@@ -661,7 +730,7 @@
     }
 
     const api = {
-        DATA, VERSION, MOMENTUM, PURSUIT, start, act, restore, serialize, forecast, activeFronts, turnData,
+        DATA, VERSION, RULES, TRANSFER, MOMENTUM, PURSUIT, start, act, restore, serialize, forecast, activeFronts, turnData,
         free, allocated, threatsOf, traitsOn, battleOf, incidentOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardCohesion, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, grainIncome,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;

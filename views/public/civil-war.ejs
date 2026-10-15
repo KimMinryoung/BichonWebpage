@@ -19,7 +19,7 @@
         <ol class="cw-steps">
           <li><strong>정세를 읽는다</strong><span>1918년 여름 체코 군단의 반란부터 1920년 가을 페레코프까지, 여덟 시기의 실제 정세가 브리핑으로 옵니다.</span></li>
           <li><strong>결단한다</strong><span>군사전문가, 식량 할당제, 우랄 너머의 추격, 바르샤바. 시기마다 지도부가 실제로 부딪친 갈림길에서 고릅니다. 고른 뒤에는 역사가 무엇을 택했는지 보여 줍니다.</span></li>
-          <li><strong>사단을 보낸다</strong><span>내선의 이점: 시기마다 모든 사단을 다시 나눠 보낼 수 있습니다. 조언자 카드로 장갑열차를 보내고 곡물을 거두되, 징발은 농촌을 등 돌리게 합니다.</span></li>
+          <li><strong>사단을 보낸다</strong><span>내선의 이점: 모스크바를 거치는 철도로 사단을 어느 전선으로든 옮길 수 있지만, 옮긴 사단은 그 시기 힘이 절반입니다. 조언자 카드로 장갑열차를 보내고 곡물을 거두되, 징발은 농촌을 등 돌리게 합니다.</span></li>
           <li><strong>카잔, 오룔, 페레코프</strong><span>1918년 가을의 카잔 탈환, 1919년 가을의 오룔 반격, 마지막 시기의 페레코프는 칸 단위 전술 전투로 직접 지휘합니다. 그 전선에 보낸 사단·정치위원·장갑열차가 전투에 나오는 부대가 됩니다.</span></li>
         </ol>
         <div><button id="cwStart" type="button" class="cw-primary">새 게임 시작</button> <button id="cwContinue" type="button" hidden>저장된 게임 이어하기</button></div>
@@ -50,7 +50,7 @@
         <section id="cwCards" class="cw-cards" aria-labelledby="cwCardsTitle"></section>
         <section id="cwIncident" class="cw-choice cw-incident" aria-labelledby="cwIncidentTitle" hidden></section>
         <section id="cwChoice" class="cw-choice" aria-labelledby="cwChoiceTitle"></section>
-        <div class="cw-command" id="cwCommand"><p id="cwCommandNote" aria-live="polite"></p><button type="button" id="cwSettle" class="cw-primary">이 시기를 보낸다 →</button></div>
+        <div class="cw-command" id="cwCommand"><div id="cwTodo" class="cw-todo" aria-label="이 시기에 할 일"></div><p id="cwCommandNote" aria-live="polite"></p><button type="button" id="cwSettle" class="cw-primary">이 시기를 보낸다 →</button></div>
         <section id="cwReview" class="cw-review" hidden aria-labelledby="cwReviewTitle"></section>
       </section>
 
@@ -60,7 +60,7 @@
     <p id="cwAnnouncement" class="cw-sr" role="status" aria-live="polite"></p>
 
     <details class="cw-rules"><summary>게임 규칙</summary>
-      <p><strong>시기.</strong> 1918년 6월부터 1920년 11월까지 여덟 시기입니다. 시기마다 갈림길 하나를 고르고, 받은 사단을 전선에 나눠 보낸 뒤 시기를 넘깁니다. 보내지 않은 사단은 예비로 남아 곡물을 절반만 먹고, 남은 곡물은 다음 시기로 넘어갑니다. 이번 시기에 싸우지 않는 전선은 역사대로 움직입니다(예: 독일군이 물러난 민스크에 들어감).</p>
+      <p><strong>시기.</strong> 1918년 6월부터 1920년 11월까지 여덟 시기입니다. 시기마다 갈림길 하나를 고르고, 받은 사단을 전선에 나눠 보낸 뒤 시기를 넘깁니다. 사단은 지난 시기의 자리에서 시작합니다. 다른 전선으로 옮긴 사단은 철도 위에서 시기의 절반을 보내 그 시기 힘이 절반이고, 새로 동원한 사단과 예비로 남겨 둔 사단은 어디로 보내든 온전합니다. 보내지 않은 사단은 예비로 남아 곡물을 절반만 먹고, 남은 곡물은 다음 시기로 넘어갑니다. 이번 시기에 싸우지 않는 전선은 역사대로 움직입니다(예: 독일군이 물러난 민스크에 들어감).</p>
       <p><strong>전선.</strong> 전선마다 모스크바에서 가까운 도시부터 바깥쪽으로 도시가 늘어서 있고, 붉은 군대가 안쪽부터 몇 개를 쥐고 있는지가 그 전선의 위치입니다. 남부전선의 툴라를 잃으면 모스크바가 무너지고 게임이 끝납니다. 페트로그라드를 잃으면 노동자 지지와 당 결속이 크게 떨어집니다.</p>
       <p><strong>압력과 전투력.</strong> 압력은 그 시기에 붉은 군대가 역사에서 해낸 만큼 해내는 데 필요한 전투력입니다. 전투력이 압력과 같으면 전선은 역사와 같이 움직입니다. 압력을 3 넘을 때마다 도시 하나를 더 지키거나 되찾고(한 시기에 한 개까지), 1을 넘게 모자라면 3 모자랄 때마다 하나를 더 잃습니다. 더 잃을 도시가 없으면 그만큼 적이 기세를 몰아, 그 전선의 다음 싸움 압력이 도시 하나당 2씩 오릅니다. 거꾸로 도시 하나를 더 얻고도 3이 남을 때마다(두 번까지) 무너진 적을 쫓아, 그 전선의 다음 싸움 압력이 2씩 줄어듭니다. 전선 카드의 막대가 전투력이고, 빨간 기준선 아래는 역사보다 나쁜 결과, 검은 기준선이 압력(역사대로), 녹색 기준선이 압력 + 3(도시 하나 더)입니다. 전선마다 상대 세력과 깃발, 그 세력의 특성을 보여 줍니다. 특성은 조건에 따라 압력을 올리거나 내립니다(예: 체코 군단은 장갑열차가 없으면 +2, 데니킨의 장교 연대는 정치위원이 없으면 +2, 돈 카자크의 습격은 예비 사단 2개를 남기면 −2). 전투력은 사단 × 질 × 보급에 정치위원(+1.5)과 카드의 보너스를 더한 값입니다. 질은 0.8이고, 군사전문가를 기용하면 그 다음 시기부터 1.05입니다.</p>
       <p><strong>곡물과 보급.</strong> 사단 하나가 한 시기에 곡물 1을 먹습니다. 곡물 수입은 3에 농민 지지 15마다 1을 더하고, 정책과 카드가 바꿉니다. 모자라면 전투력이 줄고(보급이 0이면 절반), 3/4 아래면 다음 시기 탈영으로 사단이 줍니다.</p>

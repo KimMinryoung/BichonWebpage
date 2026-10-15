@@ -930,3 +930,37 @@
 .cw-voice-log .cw-voice-src { margin-left: 4px; }
 .games-shell .cw-voice-replay { margin-left: auto; }
 .games-shell .cw-voice-replay + .cw-history-toggle { margin-left: 0; }
+
+/* What the season still wants, as chips before the send button: an open
+   one inverted, a done one plain with its check. */
+.cw-todo { display: flex; gap: 4px; flex: 0 1 auto; min-width: 0; overflow-x: auto; scrollbar-width: none; margin-right: auto; }
+.games-shell .cw-todo-item { flex: 0 0 auto; min-height: 30px; padding: 3px 9px; font-size: .78rem; font-variant-numeric: tabular-nums; background: var(--text-primary); color: var(--bg-canvas); border-color: var(--text-primary); }
+.games-shell .cw-todo-item.is-done { background: transparent; color: var(--text-secondary); border-color: var(--border); }
+@media (max-width: 560px) { .cw-command p { display: none; } }
+
+/* Where a front's divisions come from; the ones moved by rail inverted. */
+.cw-rail-row { margin: 4px 0 0; font-size: .78rem; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.cw-rail-row strong { color: var(--text-primary); }
+.cw-seg.is-div.is-moved { background: repeating-linear-gradient(-45deg, var(--cw-red) 0 3px, color-mix(in srgb, var(--cw-red) 35%, var(--bg-surface)) 3px 6px); }
+.games-shell .cw-next-step { min-height: 26px; padding: 2px 8px; font-size: .76rem; }
+.cw-stake-spare { color: var(--text-secondary); }
+
+/* The battle: its one-line orders, the Red units over the board, and the
+   turn's end armed by a first press. */
+.cw-battle-brief summary span { font-weight: 400; color: var(--text-secondary); }
+.cw-roster { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding-bottom: 6px; }
+.games-shell .cw-roster-unit { flex: 0 0 auto; display: inline-flex; gap: 4px; align-items: baseline; min-height: 30px; padding: 3px 8px; font-size: .78rem; }
+.cw-roster-unit small { font-variant-numeric: tabular-nums; color: var(--text-secondary); }
+.games-shell .cw-roster-unit.is-done { border-style: dashed; color: var(--text-secondary); }
+.games-shell .cw-roster-unit[aria-pressed="true"] { border-color: var(--cw-red); background: color-mix(in srgb, var(--cw-red) 18%, transparent); }
+.games-shell .cw-primary.is-armed { background: var(--text-primary); color: var(--bg-canvas); border-color: var(--text-primary); }
+.cw-battle-brief summary { display: block; padding-block: 10px; }
+@media (max-width: 900px) {
+    /* The roster stays right over the board when the wrap is unboxed. */
+    .cw-roster { order: -3; }
+}
+@media (max-width: 560px) {
+    /* Only what is still to do takes room in the narrow command bar. */
+    .cw-todo-item.is-done { display: none; }
+    .games-shell .cw-battle-actions button { padding: 6px 10px; font-size: .82rem; min-height: 36px; }
+}

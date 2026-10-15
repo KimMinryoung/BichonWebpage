@@ -29,6 +29,9 @@ function plan(s, { requisition = false } = {}) {
         G.act(s, 'play', id);
     }
     fronts.slice(0, s.plan.commissars).forEach(f => assert.ok(G.act(s, 'commissar', f, true)));
+    // The plan opens with last season's placements; this bot lays the
+    // whole army out again and pays the railway for what it moves.
+    fronts.forEach(f => assert.ok(G.act(s, 'alloc', f, 0)));
     while (G.free(s) > 0) {
         const fc = G.forecast(s).fronts;
         const f = fronts.slice().sort((a, b) => fc[a].margin - fc[b].margin)[0];
@@ -86,6 +89,8 @@ function campaign(pick, options, answer = t => t.incident.history) {
 const answer = s => { const inc = G.turnData(s).incident; if (inc && !s.plan.response) assert.ok(G.act(s, 'respond', inc.history)); };
 const historical = t => t.choice.history;
 const other = t => t.choice.options.find(o => o.id !== t.choice.history).id;
+// Empties a plan that opened with last season's placements.
+const clear = s => G.activeFronts(s).forEach(f => assert.ok(G.act(s, 'alloc', f, 0)));
 const sumDiff = s => s.records.reduce((sum, r) => sum + Object.values(r.fronts).reduce((a, f) => a + f.after - f.history, 0), 0);
 
 // Data: every front's history fits its city chain; every season names a
@@ -175,8 +180,10 @@ for (const id of ['market', 'tax']) {
 assert.ok(hist.peasants < 40, 'history\'s road ends with the countryside below 40');
 
 // Requisitioning every season feeds the army and raises the countryside.
+// The risings tie down divisions; with the railway's cost on the ones
+// moved, this bot loses Tula in the autumn of 1919.
 const harsh = campaign(historical, { requisition: true });
-assert.ok(harsh.peasants < 20, 'requisition every season drives the peasants to revolt');
+assert.ok(harsh.peasants < 30, 'requisition every season drives the peasants to revolt');
 assert.ok(harsh.records.some(r => r.notes.some(n => n.includes('농민 봉기'))));
 
 // The Cheka is for a rising: idle without one, half the tied divisions back with one.
@@ -224,6 +231,7 @@ lost.lines.south = 1;
 G.act(lost, 'choose', historical(G.turnData(lost)));
 answer(lost);
 const north = G.activeFronts(lost).find(f => f !== 'south');
+clear(lost);
 assert.ok(G.act(lost, 'alloc', north, lost.plan.divisions));
 assert.ok(send(lost));
 assert.equal(lost.phase, 'done');
@@ -244,7 +252,8 @@ assert.ok(G.act(empty, 'next'));
 const autumn = G.forecast(empty).fronts.east;
 assert.equal(autumn.pressure, D.turns[1].threats.east.pressure + 6);
 assert.deepEqual(autumn.pressureParts, ['적의 기세 +6']);
-G.act(empty, 'alloc', 'east', empty.plan.divisions);
+clear(empty);
+assert.ok(G.act(empty, 'alloc', 'east', empty.plan.divisions));
 G.act(empty, 'choose', 'razverstka');
 send(empty);
 assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries into');
@@ -285,6 +294,51 @@ assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries 
     assert.equal(s.grain, grain, 'what the reserve did not eat is kept');
 }
 
+// The railway: a plan opens with last season's placements; a division
+// kept on its front is whole, one newly raised or out of reserve is whole,
+// one moved from another front brings TRANSFER of its share.
+{
+    const s = G.start();
+    assert.equal(s.rules, G.RULES);
+    G.act(s, 'choose', 'experts'); answer(s);
+    assert.ok(G.act(s, 'alloc', 'volga', 2));
+    assert.ok(G.act(s, 'alloc', 'east', 2));     // two kept back in Moscow
+    const kept = s.plan.divisions - 4;
+    send(s); G.act(s, 'next');
+    assert.deepEqual(s.plan.alloc, { volga: 2, east: 2 }, 'last season\'s placements carry over');
+    const fresh = s.plan.divisions - 4;
+    assert.ok(fresh >= kept, 'the reserve is fresh this season');
+    clear(s);
+    assert.ok(G.act(s, 'alloc', 'east', s.plan.divisions));
+    const east = G.forecast(s).fronts.east;
+    assert.deepEqual([east.stay, east.fresh, east.moved], [2, fresh, 2], 'only the two from the Volga ride the rails');
+    const rail = east.bonuses.find(x => x.kind === 'rail');
+    assert.equal(rail.v, -Math.round(2 * east.perDivision * (1 - G.TRANSFER) * 10) / 10);
+    // Fresh divisions go to the front furthest short, whatever the order.
+    G.act(s, 'alloc', 'east', 2); G.act(s, 'alloc', 'volga', s.plan.divisions - 2);
+    assert.equal(G.forecast(s).fronts.volga.moved, 0, 'the Volga needs no train while fresh divisions cover it');
+}
+// A pool that shrinks takes its divisions back from the fullest front
+// instead of refusing the answer.
+{
+    const s = G.start();
+    while (G.turnData(s).id !== 'directive') { G.act(s, 'choose', historical(G.turnData(s))); answer(s); plan(s); send(s); G.act(s, 'next'); }
+    G.act(s, 'choose', historical(G.turnData(s)));
+    while (G.free(s) > 0) G.act(s, 'alloc', 'south', s.plan.alloc.south + 1);
+    const pool = s.plan.divisions;
+    assert.ok(G.act(s, 'respond', 'hungary'));
+    assert.equal(s.plan.divisions, pool - 2);
+    assert.equal(G.allocated(s), pool - 2);
+}
+// A save from before the railway rule replays under the old rules.
+{
+    const old = G.restore({ version: G.VERSION, log: JSON.parse(G.serialize(hist)).log });
+    assert.equal(old.rules, 1);
+    assert.ok(old.records.length >= 2);
+    for (const r of old.records) for (const f of Object.values(r.fronts)) assert.equal(f.moved, 0);
+    assert.equal(G.restore(G.serialize(old)).rules, 1, 'and stays under them');
+}
+
 // Orders are checked: no settling before the fork, no overspending.
 const s0 = G.start();
 assert.equal(G.act(s0, 'settle'), false);
@@ -316,7 +370,7 @@ assert.equal(G.restore('{'), null);
     // Kazan's orders run from the first battle order to the next season.
     const from = log.findIndex(e => e[0].startsWith('b:'));
     const to = log.findIndex((e, i) => i > from && e[0] === 'next');
-    const back = G.restore({ version: G.VERSION, log: log.slice(0, from).concat(log.slice(to)) });
+    const back = G.restore({ version: G.VERSION, rules: G.RULES, log: log.slice(0, from).concat(log.slice(to)) });
     assert.equal(back.turn, hist.turn, 'the old save keeps its place');
     assert.deepEqual(back.lines, hist.lines);
     assert.equal(back.battles.kazan.assumed, true);
@@ -331,7 +385,7 @@ assert.equal(G.restore('{'), null);
     const back = G.restore(JSON.stringify(late));
     assert.equal(back.turn, 3);
     assert.equal(back.phase, 'plan');
-    assert.equal(G.allocated(back), 0);
+    assert.equal(back.log[back.log.length - 1][0], 'next', 'no order of that season kept');
 }
 
 // Cohesion: an amnesty every season it is offered splits the party, and
@@ -347,6 +401,7 @@ assert.equal(G.restore('{'), null);
         if (t.cards.includes('amnesty')) assert.ok(G.act(s, 'play', 'amnesty'));
         const fronts = G.activeFronts(s);
         fronts.slice(0, s.plan.commissars).forEach(f => G.act(s, 'commissar', f, true));
+        clear(s);
         let i = 0;
         while (G.free(s) > 0) { const f = fronts[i++ % fronts.length]; G.act(s, 'alloc', f, s.plan.alloc[f] + 1); }
         assert.ok(send(s));
@@ -567,7 +622,7 @@ assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), fal
 {
     // A save from before the incidents replays with history's answers.
     const log = JSON.parse(G.serialize(hist)).log.filter(e => e[0] !== 'respond');
-    const back = G.restore({ version: G.VERSION, log });
+    const back = G.restore({ version: G.VERSION, rules: G.RULES, log });
     assert.equal(back.turn, hist.turn);
     assert.deepEqual(back.lines, hist.lines);
     assert.equal(back.peasants, hist.peasants);
