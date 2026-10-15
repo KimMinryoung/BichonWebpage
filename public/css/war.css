@@ -450,6 +450,12 @@
 .cw-wear { font-size: 8px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 2px; pointer-events: none; }
 .cw-tile-label { font-size: 9px; font-weight: 700; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 2.5px; stroke-linejoin: round; pointer-events: none; }
 .cw-tile-label.is-goal { fill: var(--clr-red); font-weight: 800; }
+/* The post to hold (civil-war.js postMark): a dashed frame, solid blue when an enemy can march in. */
+.cw-post { pointer-events: none; }
+.cw-post-frame { fill: none; stroke: var(--text-primary); stroke-width: 2.5; stroke-dasharray: 6 3; }
+.cw-post.is-open .cw-post-frame { stroke: var(--emap-blue); stroke-width: 3.5; stroke-dasharray: none; }
+.cw-post-name { font-size: 9px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
+.cw-terrain-key .k-post { border: 2px dashed var(--text-primary); }
 .cw-flank-zone { fill: none; stroke: #d9a514; stroke-width: 2.5; stroke-dasharray: 7 4; pointer-events: none; }
 .cw-danger { fill: var(--emap-blue); fill-opacity: .28; stroke: var(--emap-blue); stroke-width: 1.5; pointer-events: none; }
 .cw-hit { fill: #f2d64b; fill-opacity: .22; stroke: #f2d64b; stroke-width: 2; stroke-dasharray: 4 3; cursor: pointer; }

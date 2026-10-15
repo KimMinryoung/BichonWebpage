@@ -1647,6 +1647,21 @@
         return g;
     }
 
+    // The post the player must hold (def.protect): a dashed frame over
+    // whatever stands there and its name at its foot, so a unit on it hides
+    // neither. Left empty with an enemy able to march in next turn, the
+    // frame turns to the alarm's blue.
+    function postMark(b) {
+        const g = svg('g', { class: 'cw-post', 'aria-hidden': 'true' });
+        if (!b.def.protect) return g;
+        const [r, c] = b.def.protect.at;
+        const open = !B.unitAt(b, r, c) && b.units.some(u => B.isEnemy(b, u) && u.hp > 0 && B.marching(b, u) && B.reachable(b, u).some(t => t.r === r && t.c === c));
+        if (open) g.classList.add('is-open');
+        g.append(svg('rect', { x: c * CELL + 1, y: r * CELL + 1, width: CELL - 2, height: CELL - 2, class: 'cw-post-frame' }));
+        g.append(svg('text', { x: c * CELL + CELL / 2, y: (r + 1) * CELL + 4, 'text-anchor': 'middle', class: 'cw-post-name' }, b.def.protect.name));
+        return g;
+    }
+
     // A unit destroyed by the last order or the last White turn: its box
     // flashes, is slashed across, buckles and falls apart, leaving a burnt
     // cross on its tile until the next order. The breaking plays once.
@@ -1700,7 +1715,8 @@
                 const mark = tileMarks(ground.cls, r, c, flooded);
                 if (mark) board.append(mark);
                 // A town's name on top; the objective's at the foot, clear of its flag.
-                const town = goal ? goal.name : (def.towns.find(t => t[1] === r && t[2] === c) || [])[0];
+                const post = def.protect && def.protect.at[0] === r && def.protect.at[1] === c;
+                const town = goal ? goal.name : post ? null : (def.towns.find(t => t[1] === r && t[2] === c) || [])[0];
                 if (town) board.append(svg('text', { x: c * CELL + CELL / 2, y: r * CELL + (goal ? CELL - 5 : 14), 'text-anchor': 'middle', class: 'cw-tile-label' + (goal ? ' is-goal' : '') }, town));
                 // Shelling wears a fortification's defence. A unit standing
                 // there shows what is left on its chip; an empty one says it.
@@ -1792,6 +1808,7 @@
             const x = goal.at[1] * CELL, y = goal.at[0] * CELL;
             board.append(svg('path', { d: `M${x + 34} ${y + 24}v-22M${x + 34} ${y + 2}h12l-3.5 4.5 3.5 4.5h-12`, class: 'cw-goal-flag', 'aria-hidden': 'true' }));
         }
+        board.append(postMark(b));
         board.append(eventArrows(b));
         const moment = momentBanner(b);
         // A Red order leaves only its blow, falls and the flank in the
@@ -1821,7 +1838,7 @@
             el('details', { class: 'cw-battle-brief' }, el('summary', {}, '작전 지시', el('span', {}, ` · ${def.summary}`)), ...def.brief.map(p => el('p', {}, p))),
             el('div', { class: 'cw-battle-layout' },
                 el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll' }, board, moment), el('p', { class: 'cw-terrain-key' },
-                    ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], Object.keys(def.lines).length ? ['flank', '우회 지역'] : null, ['danger', `${josa(U.enemy, '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
+                    ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(U.enemy, '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 지역'] : null, ['danger', `${josa(U.enemy, '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('ul', { class: 'cw-battle-status' }, ...status.filter(Boolean).map((t, i) => el('li', { class: i > 0 && i <= goalAt ? 'is-goal' : null }, t))),
