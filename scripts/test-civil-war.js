@@ -731,6 +731,26 @@ const again = G.restore(G.serialize(war));
 assert.equal(again.battle.turn, 2);
 assert.deepEqual(again.battle.units.map(u => [u.id, u.r, u.c, u.hp]), war.battle.units.map(u => [u.id, u.r, u.c, u.hp]));
 assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red orders');
+// Orders of the turn under way are taken back one by one, a screen's halt
+// with its move, and never past the turn's start.
+{
+    const t = G.restore(G.serialize(war));
+    const start = t.battle.units.map(u => [u.id, u.r, u.c, u.hp, u.acted]);
+    assert.equal(G.canTakeBack(t), false, 'nothing to take back at the turn start');
+    const u = B.byId(t.battle, 'r52');
+    const to = B.reachable(t.battle, u).find(m => m.r !== u.r || m.c !== u.c);
+    assert.ok(G.act(t, 'b:move', 'r52', to.r, to.c));
+    assert.ok(G.act(t, 'b:wait', 'r52', 'auto'));
+    const other = t.battle.units.find(x => B.isPlayer(t.battle, x) && x.id !== 'r52' && !x.acted);
+    assert.ok(G.act(t, 'b:wait', other.id));
+    let back = G.takeBack(t);
+    assert.deepEqual(back.order, ['b:wait', other.id]);
+    assert.equal(B.byId(back.state.battle, other.id).acted, false);
+    back = G.takeBack(back.state);
+    assert.equal(back.order[0], 'b:move', 'the halt goes with its move');
+    assert.deepEqual(back.state.battle.units.map(x => [x.id, x.r, x.c, x.hp, x.acted]), start);
+    assert.equal(G.takeBack(back.state), null);
+}
 // Orders from an older battlefield restart the battle, not the campaign.
 {
     const old = JSON.parse(G.serialize(hist));

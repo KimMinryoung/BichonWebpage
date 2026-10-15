@@ -811,8 +811,28 @@
             }
         }
 
+        // ── Taking back battle orders: the log without its last order, replayed ──
+
+        // An order of the turn under way: a battle order since the turn began.
+        function canTakeBack(s) {
+            const last = s.log[s.log.length - 1];
+            return s.phase === 'battle' && Boolean(last) && last[0].startsWith('b:') && last[0] !== 'b:end';
+        }
+
+        // The state before the last order, back as far as the turn's start; a
+        // halt the screen gave on its own (['b:wait', id, 'auto']) goes with
+        // the move before it. Returns { state, order } or null.
+        function takeBack(s) {
+            if (!canTakeBack(s)) return null;
+            const log = s.log.slice();
+            let order = log.pop();
+            if (order[0] === 'b:wait' && order[2] === 'auto' && log.length && log[log.length - 1][0] === 'b:move') order = log.pop();
+            const state = restore({ version: D.saveVersion, rules: s.rules, log });
+            return state ? { state, order } : null;
+        }
+
         return {
-            DATA: D, VERSION: D.saveVersion, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
+            DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
             start, act, restore, serialize, forecast, activeFronts, turnData, when,
             free, allocated, threatsOf, traitsOn, battleOf, incidentOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
         };

@@ -23,6 +23,7 @@
     let reviewSeen = false;         // the review before the battle was read
     let historyMap = false;         // the map shows history's control layer
     let selected = null;            // battle: the selected Red unit id
+    let handedOn = null;            // battle: the unit picked for the player after an order
     let inspected = null;           // battle: the White unit whose reach is shown
     let menaceAll = false;          // battle: every White unit's reach shown at once
     let endArmed = false;           // battle: 「턴 종료」 pressed once with units still to act
@@ -1661,7 +1662,7 @@
         for (const m of moves) {
             const t = B.terrain(b, m.r, m.c);
             const hit = svg('rect', { x: m.c * CELL + 3, y: m.r * CELL + 3, width: CELL - 6, height: CELL - 6, class: 'cw-hit', tabindex: '0', role: 'button', 'aria-label': `${t.name} ${m.r + 1}행 ${m.c + 1}열로 이동` });
-            const go = () => { if (act('b:move', unit.id, m.r, m.c)) afterBattleAct(`${unit.name} 이동`); };
+            const go = () => { if (act('b:move', unit.id, m.r, m.c)) afterBattleAct(`${unit.name} 이동` + (autoHalt(unit) ? ', 칠 적이 없어 대기' : '')); };
             hit.addEventListener('click', go);
             hit.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
             board.append(hit);
@@ -1734,7 +1735,6 @@
             board.append(svg('path', { d: `M${x + 34} ${y + 24}v-22M${x + 34} ${y + 2}h12l-3.5 4.5 3.5 4.5h-12`, class: 'cw-goal-flag', 'aria-hidden': 'true' }));
         }
         board.append(eventArrows(b));
-        board.addEventListener('keydown', e => { if (e.key === 'Escape') deselect(); });
         const moment = momentBanner(b);
         // A Red order leaves only its blow, falls and the flank in the
         // events; anything else came from the White turn.
@@ -1756,7 +1756,7 @@
             !Object.keys(def.sectors).length ? null : b.reserve ? `${U.enemy} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶여 있다` : `${U.enemy} 예비대는 아직 움직이지 않았다`,
             def.protect ? `${def.protect.name}: ${josa(U.enemy, '이', '가')} 들어서면 진다${B.unitAt(b, ...def.protect.at) ? '' : ' · 지금 비어 있다'}` : null,
         ];
-        const hint = foe ? null : el('p', {}, `${josa(U.playerUnits, '을', '를')} 누르면 갈 수 있는 칸(노란 점선)과 칠 수 있는 적(예상 피해 표시)이 나옵니다. 포병은 진지 위의 적을 칠 때마다 그 진지의 방어를 1 깎습니다. ${U.enemy} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 나옵니다.`);
+        const hint = foe ? null : el('p', {}, `${josa(U.playerUnits, '을', '를')} 누르면 갈 수 있는 칸(노란 점선)과 칠 수 있는 적(예상 피해 표시)이 나옵니다. 포병은 진지 위의 적을 칠 때마다 그 진지의 방어를 1 깎습니다. ${U.enemy} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 나옵니다. 우클릭·Esc·「취소」는 이번 턴의 명령을 하나씩 되돌립니다.`);
         const goalAt = def.goals.length;
         box.replaceChildren(
             el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
@@ -1769,7 +1769,7 @@
                     el('ul', { class: 'cw-battle-status' }, ...status.filter(Boolean).map((t, i) => el('li', { class: i > 0 && i <= goalAt ? 'is-goal' : null }, t))),
                     el('div', { id: 'cwUnitInfo', class: 'cw-unit-info' }, unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint),
                     battleEnded ? battleClose(b) : el('div', { class: 'cw-battle-actions' },
-                        unit && unit.prev && !unit.acted ? el('button', { type: 'button', 'data-key': 'undo', onclick: () => { if (act('b:undo', unit.id)) afterBattleAct(`${unit.name} 이동 취소`); } }, '이동 취소') : null,
+                        G.canTakeBack(s) ? el('button', { type: 'button', 'data-key': 'undo', title: 'Esc · 우클릭', onclick: takeBackOrder }, '취소') : null,
                         unit && !unit.acted ? el('button', { type: 'button', 'data-key': 'wait', onclick: () => { if (act('b:wait', unit.id)) afterBattleAct(`${unit.name} 대기`); } }, '이 부대 대기') : null,
                         ready && !(unit && !unit.acted && ready === 1) ? el('button', { type: 'button', 'data-key': 'next-unit', title: 'N', onclick: nextUnit }, '다음 부대') : null,
                         el('button', { type: 'button', 'data-key': 'menace', class: 'cw-toggle', 'aria-pressed': String(menaceAll), onclick: () => { menaceAll = !menaceAll; renderBattle(); } }, `${U.enemy} 위협`),
@@ -1905,7 +1905,7 @@
             u.yielded ? el('p', { class: 'cw-note' }, `투항해 ${josa(U.player, '으로', '로')} 넘어온 부대다.`) : null,
             u.person ? el('p', {}, '지휘: ', person(u.person)) : null,
             u.commissar ? el('p', { class: 'cw-note' }, `${josa(U.leader, '이', '가')} 함께한다 (방어 +1).`) : null,
-            B.isPlayer(b, u) ? el('p', { class: 'cw-note' }, u.acted ? (B.canMove(b, u) ? '쳤다. 아직 움직일 수 있다.' : '이번 턴의 행동을 마쳤다.') : u.moved ? '이동했다. 공격하거나 대기할 수 있고, 이동을 취소할 수도 있다.' : '이동하거나 공격할 수 있다.') : null,
+            B.isPlayer(b, u) ? el('p', { class: 'cw-note' }, u.acted ? (B.canMove(b, u) ? '쳤다. 아직 움직일 수 있다.' : '이번 턴의 행동을 마쳤다.') : u.moved ? '이동했다. 공격하거나 대기할 수 있다.' : '이동하거나 공격할 수 있다.') : null,
             B.isEnemy(b, u) && u.role ? el('p', { class: 'cw-note' }, roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '')) : null);
     }
 
@@ -1972,7 +1972,7 @@
         const said = text + b.events.filter(e => e.type === 'turned').map(e => `. ${b.def.lines[e.line].name}이 우회되었다.`).join('')
             + b.events.filter(e => e.type === 'surrender').map(e => `. ${b.units.find(x => x.id === e.id).name}이(가) 투항했다.`).join('');
         // A unit done for the turn hands over to the next one still to act.
-        if (!selected && nextUnit()) { announce(said); return; }
+        if (!selected && nextUnit()) { handedOn = selected; announce(said); return; }
         renderBattle();
         focusSelected();
         announce(said);
@@ -2012,6 +2012,47 @@
         }
         unveil();
         announce(`${G.turnData(s).date} 전선의 움직임`);
+    }
+
+    // A unit that has moved with no one in reach and no feat to use halts
+    // at once; taking back its move takes the halt back with it.
+    function autoHalt(u) {
+        const b = s.battle;
+        if (s.phase !== 'battle' || !u || u.hp <= 0 || u.acted || !u.moved || B.targets(b, u).length) return false;
+        if (featLeft(b, u) && !B.featBlock(b, u)) return false;
+        return act('b:wait', u.id, 'auto');
+    }
+
+    // The order cancelled: the last one this turn, back to the turn's start.
+    // The state is the log replayed, so the events left on it are old: they
+    // show without playing again. The unit whose order it was is picked.
+    function takeBackOrder() {
+        const back = G.takeBack(s);
+        if (!back) return false;
+        const prior = bVoice;
+        s = back.state;
+        save();
+        for (const e of s.battle.events) fallAt.set(e, -1e9);
+        if (prior.b) bVoice = Object.assign({}, prior, { b: s.battle });
+        const u = B.byId(s.battle, back.order[1]);
+        selected = u && B.isPlayer(s.battle, u) && u.hp > 0 && (!u.acted || B.canMove(s.battle, u)) ? u.id : null;
+        inspected = null;
+        endArmed = false;
+        renderBattle();
+        focusSelected();
+        announce(`${u ? u.name + '의 ' : ''}${ORDER_WORDS[back.order[0]] || '명령'} 취소`);
+        return true;
+    }
+    const ORDER_WORDS = { 'b:move': '이동', 'b:attack': '공격', 'b:wait': '대기', 'b:feat': '결정적 한 수', 'b:undo': '이동 취소' };
+
+    // Right click or Esc: a unit the player picked that has not just acted
+    // is let go; otherwise (one handed on after an order, or none) the last
+    // order is taken back.
+    function cancel() {
+        const last = s.log[s.log.length - 1];
+        const own = selected && ((last && last[1] === selected) || selected === handedOn);
+        if ((selected || inspected) && !own) { selected = null; inspected = null; endArmed = false; renderBattle(); return; }
+        takeBackOrder();
     }
 
     // With units still to act the first press only arms the button.
@@ -2131,12 +2172,21 @@
         return el('figure', {}, el('figcaption', {}, label, ' ', el('strong', {}, String(last)), mark !== null ? el('small', {}, ` · 기준 ${mark}`) : null), node);
     }
 
-    // Battle keys: N picks the next unit to act, E ends the turn.
+    // Battle keys: N picks the next unit to act, E ends the turn, Esc lets
+    // the picked unit go or takes the last order back.
     document.addEventListener('keydown', e => {
         if (!s || s.phase !== 'battle' || battleEnded || $('cwBattle').hidden || e.altKey || e.ctrlKey || e.metaKey) return;
         if (e.target.closest && e.target.closest('input, textarea, select, summary')) return;
-        if (e.code === 'KeyN') { e.preventDefault(); nextUnit(); }
+        if (e.key === 'Escape') { e.preventDefault(); cancel(); }
+        else if (e.code === 'KeyN') { e.preventDefault(); nextUnit(); }
         else if (e.code === 'KeyE') { e.preventDefault(); endTurn(); }
+    });
+
+    // A right click on the board (or a speech bubble over it) cancels as Esc does.
+    $('cwBattle').addEventListener('contextmenu', e => {
+        if (!s || s.phase !== 'battle' || battleEnded || !e.target.closest('.cw-grid-scroll')) return;
+        e.preventDefault();
+        cancel();
     });
 
     $('cwSettle').addEventListener('click', () => {
