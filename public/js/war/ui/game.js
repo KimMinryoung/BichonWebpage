@@ -85,8 +85,11 @@
     function act(name, ...args) {
         const ok = G.act(s, name, ...args);
         if (ok) save();
+        if (ok && PLAN_ORDERS.includes(name)) brief.read = true;
         return ok;
     }
+    // Orders on the fronts: the first of a season folds its brief on a phone.
+    const PLAN_ORDERS = ['alloc', 'commissar', 'play', 'unplay'];
 
 
 
@@ -274,14 +277,30 @@
             }))));
     }
 
+    // On a phone the season's story stands open until the player first acts
+    // on a front, then folds (the board kept where it was on the screen);
+    // opened again, it stays open for the season.
+    let brief = { turn: null, read: false, open: null };
     function renderBrief() {
         const t = G.turnData(s);
         const voices = s.phase === 'plan' ? t.voices || [] : [];
         const open = $('cwBrief').querySelector('.cw-voice-log');
-        $('cwBrief').replaceChildren(...t.brief.map(p => el('p', {}, p)), voices.length ? el('details', { class: 'cw-voice-log', open: open && open.open },
+        if (brief.turn !== s.turn) brief = { turn: s.turn, read: false, open: null };
+        const story = t.brief.map(p => el('p', {}, p));
+        let body = story;
+        if (NARROW.matches && s.phase === 'plan') {
+            const fold = el('details', { class: 'cw-brief-fold', open: brief.open === null ? !brief.read : brief.open }, el('summary', {}, '이 시기의 상황'), ...story);
+            fold.addEventListener('toggle', () => { if (fold.open !== !brief.read || brief.open !== null) brief.open = fold.open; });
+            body = [fold];
+        }
+        const anchor = $('cwFronts').getBoundingClientRect().top;
+        const above = $('cwBrief').getBoundingClientRect().top < 0;
+        $('cwBrief').replaceChildren(...body, voices.length ? el('details', { class: 'cw-voice-log', open: open && open.open },
             el('summary', {}, '이 시기의 목소리'),
             el('ul', {}, ...voices.map(v => el('li', {}, el('strong', {}, speakerName(v)), ' 「', v.text, '」 ', sourceOf(v))))) : null);
         voiceReplay.hidden = !voices.length;
+        const moved = $('cwFronts').getBoundingClientRect().top - anchor;
+        if (moved && above) window.scrollBy({ top: moved, behavior: 'instant' });
     }
 
     // ── Voices ──
@@ -727,7 +746,7 @@
         if (!fw || key === fitKey || !Object.keys(frontBoxes).length) return;
         fitKey = key;
         const [, , W, H] = root.getAttribute('viewBox').split(' ').map(Number);
-        const fh = Math.round(Math.min(fw * H / W, window.innerHeight * 0.45));
+        const fh = Math.round(Math.min(fw * H / W, window.innerHeight * 0.36));
         mapEl.style.height = fh + 'px';
         const m = points.hub;
         const all = Object.values(frontBoxes).reduce(unite, { x0: m.x - 12, x1: m.x + 70, y0: m.y - 12, y1: m.y + 12 });
@@ -1086,23 +1105,61 @@
             const stepper = el('div', { class: 'cw-stepper', role: 'group', 'aria-label': `${D.fronts[id].name} ${U.unit}` },
                 el('button', { type: 'button', 'data-key': `less-${id}`, 'aria-label': `${D.fronts[id].short}에서 ${U.unit} 하나 빼기`, disabled: n === 0, onclick: () => { act('alloc', id, n - 1); render(); } }, '−'),
                 el('output', { 'aria-live': 'polite', 'aria-label': `${n}개 ${U.unit}` }, `${n}${U.unit}`),
-                el('button', { type: 'button', 'data-key': `more-${id}`, 'aria-label': `${D.fronts[id].short}에 ${U.unit} 하나 보내기`, disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + 1); render(); } }, '+'),
-                el('button', { type: 'button', 'data-key': `fill-${id}`, class: 'cw-fill', 'aria-label': `남은 ${U.unit} 모두 보내기`, disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + G.free(s)); render(); } }, '모두'));
+                el('button', { type: 'button', 'data-key': `more-${id}`, 'aria-label': `${D.fronts[id].short}에 ${U.unit} 하나 보내기`, disabled: G.free(s) === 0, onclick: () => { act('alloc', id, n + 1); render(); } }, '+'));
+            // What the player does here first, then what it gives, then the
+            // enemy (folded on a phone, its pressure summed on the fold).
             const card = el('article', { class: 'cw-front', id: 'cwFront-' + id, tabindex: '-1' },
-                el('header', {}, el('h4', {}, D.fronts[id].name, trendMark(after - hist)), foeList(threat.foes)),
-                el('p', { class: 'cw-threat' }, threat.text, ' ', person(threat.who)),
-                traitRow(f.traits),
-                el('div', { class: 'cw-front-controls' }, stepper, commissarToggle(id), ...frontCards(id)),
+                el('header', {}, el('h4', {}, D.fronts[id].name, trendMark(after - hist))),
+                el('div', { class: 'cw-front-controls' }, stepper, ...stepButtons(id, nextStep(id, f)), commissarToggle(id), ...frontCards(id)),
                 railRow(f),
-                meter(id, f, line, s.turn, s.plan.choice, '예상', nextStep(id, f)),
+                meter(id, f, line, s.turn, s.plan.choice, '예상'),
                 musterRow(id),
-                f.pressureParts.length ? el('p', { class: 'cw-parts' }, `압력: ${threat.pressure} 기본 · ${f.pressureParts.join(' · ')}`) : null,
-                f.parts.length ? el('p', { class: 'cw-parts' }, f.parts.join(' · ')) : null);
+                foeFold(id, f, threat));
             bindSpotlight(card, id);
             items.push(card);
         }
         if (fc.supply.ratio < 1) items.push(el('p', { class: 'cw-warn' }, `${josa(U.food, '이', '가')} 모자랍니다: 필요 ${fc.supply.need}, 가진 것 ${fc.supply.have}. 모든 전선의 전투력이 ${Math.round((1 - (FED + (1 - FED) * fc.supply.ratio)) * 100)}% 줄어듭니다.`));
         box.replaceChildren(...items);
+    }
+
+    // The steps to the next result and back: as many divisions as the next
+    // better result takes (or how many more it would need than are free),
+    // and as many as can go without a worse one.
+    function stepButtons(id, step) {
+        const n = s.plan.alloc[id];
+        const out = [];
+        if (step.more && step.more <= G.free(s)) out.push(el('button', {
+            type: 'button', class: 'cw-step is-more', 'data-key': `step-${id}`,
+            'aria-label': `다음 결과까지 ${U.unit} ${step.more}개 더 보내기`,
+            onclick: () => { act('alloc', id, n + step.more); render(); },
+        }, `+${step.more} 다음 결과`));
+        else if (step.more) out.push(el('span', { class: 'cw-step is-short' }, `다음 결과까지 ${step.more}${U.unit} 더 필요`));
+        if (step.spare) out.push(el('button', {
+            type: 'button', class: 'cw-step is-spare', 'data-key': `spare-${id}`,
+            'aria-label': `결과는 그대로, ${U.unit} ${step.spare}개 빼기`,
+            onclick: () => { act('alloc', id, n - step.spare); render(); },
+        }, `−${step.spare} 그대로`));
+        return out;
+    }
+
+    // The enemy on a front: who comes, what they want, their traits and
+    // where the numbers come from. Folded on a phone, with the factions and
+    // what their traits add to the pressure on the fold; open on a wide
+    // screen. Kept as the player left it from one render to the next.
+    let foeOpen = null;
+    function foeFold(id, f, threat) {
+        const open = foeOpen === null ? !NARROW.matches : foeOpen;
+        const by = (f.traits || []).filter(tr => tr.rule && tr.counted && tr.on).reduce((a, tr) => a + tr.by, 0);
+        const names = (threat.foes || []).map(fid => D.factions[fid].short || D.factions[fid].name).join('·');
+        const fold = el('details', { class: 'cw-foe-fold', open },
+            el('summary', {}, el('strong', {}, '적 정보'), names ? ` · ${names}` : null, by ? el('b', { class: by > 0 ? 'is-bites' : 'is-works' }, `특성 압력 ${signed(by)}`) : null),
+            foeList(threat.foes),
+            el('p', { class: 'cw-threat' }, threat.text, ' ', person(threat.who)),
+            traitRow(f.traits),
+            f.pressureParts.length ? el('p', { class: 'cw-parts' }, `압력: ${threat.pressure} 기본 · ${f.pressureParts.join(' · ')}`) : null,
+            f.parts.length ? el('p', { class: 'cw-parts' }, f.parts.join(' · ')) : null);
+        fold.addEventListener('toggle', () => { foeOpen = fold.open; });
+        return fold;
     }
 
     // Where the front's divisions come from: kept there from last season,
@@ -1116,16 +1173,21 @@
 
     // The fewest more divisions that give this front a better result, and
     // how many it could spare without a worse one: tried on the plan
-    // itself (supply and the railway count), then put back.
+    // itself (supply and the railway count), then put back. A result is
+    // the cities, then the enemy's momentum and the pursuit it leaves for
+    // the next fight (a band of the meter).
     function nextStep(id, f) {
         const n = s.plan.alloc[id];
-        const tryAt = k => { s.plan.alloc[id] = k; const r = G.forecast(s).fronts[id].change; s.plan.alloc[id] = n; return r; };
+        const rank = r => [r.change, -(r.momentum || 0), r.pursuit || 0];
+        const cmp = (a, b) => a[0] - b[0] || a[1] - b[1] || a[2] - b[2];
+        const tryAt = k => { s.plan.alloc[id] = k; const r = rank(G.forecast(s).fronts[id]); s.plan.alloc[id] = n; return r; };
+        const now = rank(f);
         // Looked for past the free divisions too: the card then says how
         // many it would take from other fronts.
         let more = null;
-        for (let k = 1; k <= s.plan.divisions; k++) if (tryAt(n + k) > f.change) { more = k; break; }
+        for (let k = 1; k <= s.plan.divisions; k++) if (cmp(tryAt(n + k), now) > 0) { more = k; break; }
         let spare = 0;
-        while (spare < n && tryAt(n - spare - 1) === f.change) spare++;
+        while (spare < n && cmp(tryAt(n - spare - 1), now) === 0) spare++;
         return { more, spare };
     }
 
@@ -1235,7 +1297,7 @@
     // below it. A band's colour says only how it compares with history:
     // red behind, green ahead, plain as history went. The band the strength
     // falls in is the forecast (or, in the review, the result).
-    function meter(id, f, line, turn, choice, now, step) {
+    function meter(id, f, line, turn, choice, now) {
         const hist = D.fronts[id].history[turn];
         const bands = G.outcomeBands(id, line, turn, f.pressure, choice).map(b => {
             const after = line + b.change;
@@ -1279,12 +1341,7 @@
                 now === '예상' ? null : el('span', { class: 'cw-stake-verdict ' + current.tone }, `${now}: ${versus(current.after)}`),
                 current.overflow ? el('span', { class: 'cw-stake-momentum' }, `다음 싸움 압력 +${current.overflow * G.MOMENTUM}`) : null,
                 current.pursuit ? el('span', { class: 'cw-stake-pursuit' }, `추격: 다음 싸움 압력 −${current.pursuit * G.PURSUIT}`) : null,
-                step && step.more && step.more <= G.free(s) ? el('button', {
-                    type: 'button', class: 'cw-next-step', 'data-key': `step-${id}`,
-                    onclick: () => { act('alloc', id, s.plan.alloc[id] + step.more); render(); },
-                }, `다음 결과까지 +${step.more}${U.unit}`) : null,
-                step && step.more && step.more > G.free(s) ? el('span', { class: 'cw-stake-spare' }, `다음 결과까지 ${step.more}${U.unit} 더 필요`) : null,
-                step && step.spare ? el('span', { class: 'cw-stake-spare' }, `${step.spare}${josa(U.unit, '은', '는')} 빼도 결과 같음`) : null),
+),
             stakeRow(id, line, current.after, hist, turn, now));
     }
 

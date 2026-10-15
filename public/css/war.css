@@ -309,7 +309,6 @@
 .cw-front-controls { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .cw-stepper { display: inline-flex; align-items: stretch; }
 .games-shell .cw-stepper button { min-width: 44px; padding: 8px 0; font-weight: 800; }
-.games-shell .cw-stepper .cw-fill { min-width: 0; padding: 8px 10px; font-size: .8rem; font-weight: 600; margin-left: 6px; }
 .cw-stepper output { display: grid; place-items: center; min-width: 86px; border-block: 1px solid var(--border); font-variant-numeric: tabular-nums; font-weight: 700; }
 .games-shell .cw-toggle { padding: 8px 12px; font-size: .85rem; }
 .games-shell .cw-toggle[aria-pressed="true"] { border-color: var(--cw-red); color: var(--text-primary); }
@@ -726,7 +725,6 @@
 .cw-front { padding: 8px 10px; gap: 5px; align-content: start; }
 .cw-front header { justify-content: flex-start; align-items: center; gap: 4px 8px; margin: 0; }
 .cw-front header > span { font-size: .75rem; margin-left: auto; color: var(--text-secondary); }
-.cw-front header .cw-foes { display: contents; }
 .cw-front .cw-threat { font-size: .84rem; color: var(--text-secondary); }
 .cw-foes { gap: 4px; }
 .cw-foe { flex: 0 1 auto; }
@@ -748,7 +746,6 @@
 .cw-traits .is-works b { color: var(--btn-primary, #2da44e); }
 .cw-front-controls { gap: 4px; }
 .games-shell .cw-stepper button { min-width: 36px; min-height: 36px; padding: 4px 0; }
-.games-shell .cw-stepper .cw-fill { padding: 4px 8px; margin-left: 4px; }
 .cw-stepper output { min-width: 58px; font-size: .9rem; }
 .games-shell .cw-front .cw-toggle { padding: 4px 9px; min-height: 36px; font-size: .8rem; }
 .cw-meter { gap: 2px; margin: 2px 0 2px; }
@@ -1013,8 +1010,25 @@
 .cw-rail-row { margin: 4px 0 0; font-size: .78rem; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
 .cw-rail-row strong { color: var(--text-primary); }
 .cw-seg.is-div.is-moved { background: repeating-linear-gradient(-45deg, var(--cw-red) 0 3px, color-mix(in srgb, var(--cw-red) 35%, var(--bg-surface)) 3px 6px); }
-.games-shell .cw-next-step { min-height: 26px; padding: 2px 8px; font-size: .76rem; }
-.cw-stake-spare { color: var(--text-secondary); }
+/* The steps beside the stepper: to the next result, and back without
+   losing it; the divisions short of the next result as plain words. */
+.games-shell .cw-front .cw-step { min-height: 36px; padding: 4px 9px; font-size: .8rem; font-variant-numeric: tabular-nums; }
+.games-shell .cw-front .cw-step.is-more { border-color: var(--text-primary); font-weight: 700; }
+.cw-step.is-short { font-size: .76rem; color: var(--text-secondary); }
+/* The enemy, folded under the meter: who and what their traits add. */
+.cw-foe-fold { display: grid; gap: 5px; border-top: 1px solid var(--border); padding-top: 4px; }
+.cw-foe-fold > summary { display: flex; align-items: center; gap: 6px; min-height: 30px; cursor: pointer; font-size: .82rem; color: var(--text-secondary); }
+.cw-foe-fold > summary strong { color: var(--text-primary); }
+.cw-foe-fold > summary b { margin-left: auto; font-size: .72rem; padding: 0 5px; border: 1px solid currentColor; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cw-foe-fold > summary b.is-bites { color: var(--bg-surface); background: var(--text-primary); border-color: var(--text-primary); }
+.cw-foe-fold > summary b.is-works { color: var(--btn-primary, #2da44e); }
+.cw-foe-fold[open] > summary b { display: none; }
+.cw-foe-fold > summary::before, .cw-brief-fold > summary::before { content: '▸'; font-size: 1em; color: var(--text-secondary); margin-right: 2px; }
+.cw-foe-fold[open] > summary::before, .cw-brief-fold[open] > summary::before { content: '▾'; }
+.cw-foe-fold > summary::-webkit-details-marker, .cw-brief-fold > summary::-webkit-details-marker { display: none; }
+/* The season's story folded on a phone (civil-war.js renderBrief). */
+.cw-brief-fold > summary { cursor: pointer; font-weight: 700; font-size: .9rem; min-height: 30px; display: flex; align-items: center; }
+.cw-brief-fold[open] > summary { margin-bottom: 4px; }
 
 /* The battle: its one-line orders, the Red units over the board, and the
    turn's end armed by a first press. */
