@@ -456,6 +456,7 @@
 .cw-post.is-open .cw-post-frame { stroke: var(--emap-blue); stroke-width: 3.5; stroke-dasharray: none; }
 .cw-post-name { font-size: 9px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
 .cw-terrain-key .k-post { border: 2px dashed var(--text-primary); }
+.cw-post-alarm { flex-basis: 100%; margin: 0; padding: 6px 10px; border: 2px solid var(--emap-blue); background: color-mix(in srgb, var(--emap-blue) 22%, var(--bg-surface)); font-weight: 800; font-size: .88rem; }
 .cw-flank-zone { fill: none; stroke: #d9a514; stroke-width: 2.5; stroke-dasharray: 7 4; pointer-events: none; }
 .cw-danger { fill: var(--emap-blue); fill-opacity: .28; stroke: var(--emap-blue); stroke-width: 1.5; pointer-events: none; }
 .cw-hit { fill: #f2d64b; fill-opacity: .22; stroke: #f2d64b; stroke-width: 2; stroke-dasharray: 4 3; cursor: pointer; }

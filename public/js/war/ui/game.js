@@ -1651,12 +1651,18 @@
     // whatever stands there and its name at its foot, so a unit on it hides
     // neither. Left empty with an enemy able to march in next turn, the
     // frame turns to the alarm's blue.
+    // The post left empty with an enemy able to march in next turn.
+    function postOpen(b) {
+        if (!b.def.protect || b.result) return false;
+        const [r, c] = b.def.protect.at;
+        return !B.unitAt(b, r, c) && b.units.some(u => B.isEnemy(b, u) && u.hp > 0 && B.marching(b, u) && B.reachable(b, u).some(t => t.r === r && t.c === c));
+    }
+
     function postMark(b) {
         const g = svg('g', { class: 'cw-post', 'aria-hidden': 'true' });
         if (!b.def.protect) return g;
         const [r, c] = b.def.protect.at;
-        const open = !B.unitAt(b, r, c) && b.units.some(u => B.isEnemy(b, u) && u.hp > 0 && B.marching(b, u) && B.reachable(b, u).some(t => t.r === r && t.c === c));
-        if (open) g.classList.add('is-open');
+        if (postOpen(b)) g.classList.add('is-open');
         g.append(svg('rect', { x: c * CELL + 1, y: r * CELL + 1, width: CELL - 2, height: CELL - 2, class: 'cw-post-frame' }));
         g.append(svg('text', { x: c * CELL + CELL / 2, y: (r + 1) * CELL + 4, 'text-anchor': 'middle', class: 'cw-post-name' }, b.def.protect.name));
         return g;
@@ -1844,12 +1850,13 @@
                     el('ul', { class: 'cw-battle-status' }, ...status.filter(Boolean).map((t, i) => el('li', { class: i > 0 && i <= goalAt ? 'is-goal' : null }, t))),
                     el('div', { id: 'cwUnitInfo', class: 'cw-unit-info' }, unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint),
                     battleEnded ? battleClose(b) : el('div', { class: 'cw-battle-actions' },
+                        postOpen(b) ? el('p', { class: 'cw-post-alarm' }, `${josa(def.protect.name, '이', '가')} 비었다. ${josa(U.enemy, '이', '가')} 다음 턴에 들어오면 이 전투에서 진다.`) : null,
                         G.canTakeBack(s) ? el('button', { type: 'button', 'data-key': 'undo', title: 'Esc · 우클릭', onclick: takeBackOrder }, '취소') : null,
                         unit && !unit.acted ? el('button', { type: 'button', 'data-key': 'wait', onclick: () => { if (act('b:wait', unit.id)) afterBattleAct(`${unit.name} 대기`); } }, '이 부대 대기') : null,
                         ready && !(unit && !unit.acted && ready === 1) ? el('button', { type: 'button', 'data-key': 'next-unit', title: 'N', onclick: nextUnit }, '다음 부대') : null,
                         el('button', { type: 'button', 'data-key': 'menace', class: 'cw-toggle', 'aria-pressed': String(menaceAll), onclick: () => { menaceAll = !menaceAll; renderBattle(); } }, `${U.enemy} 위협`),
                         el('button', { type: 'button', class: 'cw-primary' + (endArmed ? ' is-armed' : ''), 'data-key': 'end', title: 'E', onclick: endTurn },
-                            endArmed ? '한 번 더 누르면 턴 종료' : ready ? `턴 종료 (${ready}부대 남음)` : '턴 종료 →')),
+                            endArmed ? (postOpen(b) ? `${josa(def.protect.name, "을", "를")} 비운 채 턴 종료` : '한 번 더 누르면 턴 종료') : ready ? `턴 종료 (${ready}부대 남음)` : '턴 종료 →')),
                     b.events.length ? el('div', { class: 'cw-battle-events' },
                         el('p', { class: 'games-kicker' }, whiteMoved ? `지난 ${U.enemy}의 차례` : '방금 일어난 일'),
                         el('ol', { class: 'cw-battle-log' }, ...eventLines(b).map(t => el('li', {}, t)))) : null)));
@@ -2130,10 +2137,17 @@
         takeBackOrder();
     }
 
-    // With units still to act the first press only arms the button.
+    // With units still to act, or the post left open, the first press only
+    // arms the button.
     function endTurn() {
         const ready = s.battle.units.some(u => B.isPlayer(s.battle, u) && u.hp > 0 && !u.acted);
-        if (ready && !endArmed) { endArmed = true; renderBattle(); announce('행동하지 않은 부대가 남았다. 한 번 더 누르면 턴을 끝낸다.'); return; }
+        const open = postOpen(s.battle);
+        if ((ready || open) && !endArmed) {
+            endArmed = true;
+            renderBattle();
+            announce(open ? `${josa(s.battle.def.protect.name, '이', '가')} 비었다. ${josa(U.enemy, '이', '가')} 들어오면 진다. 한 번 더 누르면 턴을 끝낸다.` : '행동하지 않은 부대가 남았다. 한 번 더 누르면 턴을 끝낸다.');
+            return;
+        }
         endArmed = false;
         if (!act('b:end')) return;
         selected = null;
