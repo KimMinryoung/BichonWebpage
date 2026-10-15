@@ -656,6 +656,15 @@
         layer.append(svg('path', { d: star(m.x, m.y, 10, 4.2), class: 'cw-moscow' }));
         layer.append(svg('text', { x: m.x + 11, y: m.y + 4, class: 'cw-city-label is-capital' }, m.name));
         avoid.push({ x0: m.x - 10, x1: m.x + 11 + textWidth(m.name, 13), y0: m.y - 10, y1: m.y + 6 });
+        // Trotsky's train sits on the railway where it must: the markers and
+        // the strength icons keep clear of it.
+        const trains = {};
+        for (const id of active) {
+            if (!s.plan || s.plan.alloc[id] === undefined || !s.plan.cards.some(c => c.id === 'train' && c.target === id)) continue;
+            trains[id] = trainOnRail(id);
+            avoid.push(trains[id].box);
+        }
+        const gliding = new Set();
         for (const [i, id] of active.entries()) {
             const marker = foeMarker(id, points.fronts[id], s.lines[id], fc && fc[id], results && results[id], avoid);
             frontBoxes[id] = [marker.box, ...points.fronts[id].map(p => ({ x0: p.x - 12, x1: p.x + 60, y0: p.y - 12, y1: p.y + 12 }))].reduce(unite);
@@ -663,20 +672,84 @@
             marker.g.setAttribute('data-front', id);
             marker.g.style.setProperty('--order', i);
             layer.append(marker.g);
+            // The legion and Wrangel come down their railway from beyond.
+            if (fc && marker.g.classList.contains('m-rail')) glide(`foe:${id}`, marker.g.querySelector('.cw-foe-body'), foeRoute(id), i * 220, gliding);
             if (s.plan && s.plan.alloc[id] !== undefined) {
                 const pips = troopPips(id, marker, avoid);
                 pips.setAttribute('data-front', id);
                 layer.append(pips);
-                const loco = s.plan.cards.some(c => c.id === 'train' && c.target === id) ? trainOnRail(id) : null;
-                if (loco) { loco.setAttribute('data-front', id); layer.append(loco); }
+                const line = s.lines[id];
+                // The divisions and the train run out from Moscow by rail.
+                if (fc && pips.childNodes.length && line > 0) glide(`pips:${id}`, pips, routeOf([points.moscow, ...points.fronts[id].slice(0, line)]), i * 220 + 500, gliding);
+                if (trains[id]) {
+                    trains[id].g.setAttribute('data-front', id);
+                    layer.append(trains[id].g);
+                    if (fc) glide(`train:${id}`, trains[id].g, trains[id].route, i * 220 + 650, gliding);
+                }
             }
         }
+        for (const name of Object.keys(glides.start)) if (!gliding.has(name)) delete glides.start[name];
         root.append(layer);
         markPicked();
         spotlight(lit);
         renderControlPhase();
         fitMap();
         renderVoice();
+    }
+
+    // Units sliding along a railway, quick and smooth (Web Animations, as
+    // the keyframes follow each route): a translate from each point of the
+    // route to its end, so the unit, wherever it is drawn beside the line,
+    // runs parallel to it at an even speed. Those on the map as the season
+    // opens go in turn with the entrance (paused like it while the map is
+    // out of view); one added later (the train sent, a front's first
+    // division) sets off at once. Each start is kept, so a redraw mid-way
+    // carries on.
+    const glides = { key: null, start: {} };
+    function glide(name, node, route, delay, seen) {
+        seen.add(name);
+        if (stillMotion() || route.length < 2) return;
+        if (glides.key !== motion.key) glides.key = motion.key, glides.start = {};
+        const end = route[route.length - 1];
+        const at = [0];
+        for (let i = 1; i < route.length; i++) at.push(at[i - 1] + Math.hypot(route[i].x - route[i - 1].x, route[i].y - route[i - 1].y));
+        const total = at[at.length - 1];
+        if (total < 4) return;
+        const duration = Math.min(1100, 450 + total * 0.9);
+        const now = performance.now();
+        const entering = motion.at === null || now - motion.at < MOTION_MS;
+        if (glides.start[name] === undefined && motion.at !== null) glides.start[name] = entering ? Math.max(now, motion.at + delay) : now;
+        const start = glides.start[name];
+        if (start !== undefined && now - start >= duration) return;
+        const frames = route.map((p, i) => ({
+            offset: at[i] / total,
+            translate: `${(p.x - end.x).toFixed(1)}px ${(p.y - end.y).toFixed(1)}px`,
+            fillOpacity: i ? 1 : 0,
+            strokeOpacity: i ? 1 : 0,
+        }));
+        const anim = node.animate(frames, { duration, delay: start === undefined ? delay : start - now, easing: 'cubic-bezier(.25, .1, .2, 1)', fill: 'backwards' });
+        if (start === undefined) anim.pause();
+    }
+
+    // The way the attackers on a rail front come: down the railway from
+    // the far end of their front to the first city they hold, led in
+    // from beyond along the last stretch so the run is never too short.
+    function foeRoute(id) {
+        const pts = points.fronts[id];
+        const line = s.lines[id];
+        const n = pts.length;
+        const far = pts.slice(Math.min(line, n - 1)).reverse();
+        const route = far.length > 1 ? routeOf(far) : [far[0]];
+        let total = 0;
+        for (let i = 1; i < route.length; i++) total += Math.hypot(route[i].x - route[i - 1].x, route[i].y - route[i - 1].y);
+        if (total < 110) {
+            const a = route[0];
+            const b = route.length > 1 ? route[1] : (n > 1 ? pts[n - 2] : points.moscow);
+            const len = Math.hypot(a.x - b.x, a.y - b.y) || 1;
+            const lead = 110 - total;
+            route.unshift({ x: a.x + (a.x - b.x) / len * lead, y: a.y + (a.y - b.y) / len * lead });
+        }
+        return route;
     }
 
     // How the season went for the attacker: beaten back (the Reds took
@@ -998,7 +1071,7 @@
         const g = svg('g', { class: 'cw-train-on-rail', 'aria-hidden': 'true' });
         g.append(svg('rect', { x: p.x - 12, y: p.y - 9, width: 24, height: 17, rx: 3, class: 'cw-train-plate' }));
         g.append(trainGlyph(p.x - 10, p.y - 8, 20));
-        return g;
+        return { g, route: route.slice(0, i).concat([p]), box: { x0: p.x - 14, x1: p.x + 14, y0: p.y - 11, y1: p.y + 10 } };
     }
 
     // Trotsky's train: a small locomotive, w wide, top-left at (x, y).
