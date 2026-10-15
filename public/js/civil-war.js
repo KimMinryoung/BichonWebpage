@@ -297,15 +297,15 @@
         const items = [];
         if (s.phase === 'plan') {
             items.push(...stat('사단', `${G.free(s)} / ${plan.divisions}`, '보낼 사단 / 전체', G.free(s) > 0));
-            items.push(...stat('지휘력', String(plan.command), `결속 ${s.cohesion} 기준 · 남기면 사라짐`, plan.command < 3));
+            items.push(...stat('지휘력', String(plan.command), `결속 ${s.stats.cohesion} 기준 · 남기면 사라짐`, plan.command < 3));
             items.push(...stat('정치위원', `${plan.commissars - G.commissarsUsed(s)} / ${plan.commissars}`, '남음 / 전체'));
-            items.push(...stat('곡물', String(s.grain), `이번 시기 +${supply.income}, 필요 ${supply.need}`, supply.ratio < 1));
+            items.push(...stat('곡물', String(s.food), `이번 시기 +${supply.income}, 필요 ${supply.need}`, supply.ratio < 1));
         } else {
-            items.push(...stat('곡물', String(s.grain), '남은 비축'));
+            items.push(...stat('곡물', String(s.food), '남은 비축'));
         }
-        items.push(...stat('농민 지지', String(s.peasants), s.peasants < 35 ? '봉기 위험' : '', s.peasants < 35));
-        items.push(...stat('노동자 지지', String(s.workers), '동원에 영향', s.workers < 40));
-        items.push(...stat('당 결속', String(s.cohesion), cohesionNote(s.cohesion), s.cohesion < 40));
+        items.push(...stat('농민 지지', String(s.stats.peasants), s.stats.peasants < 35 ? '봉기 위험' : '', s.stats.peasants < 35));
+        items.push(...stat('노동자 지지', String(s.stats.workers), '동원에 영향', s.stats.workers < 40));
+        items.push(...stat('당 결속', String(s.stats.cohesion), cohesionNote(s.stats.cohesion), s.stats.cohesion < 40));
         $('cwStats').replaceChildren(...items);
         const planning = s.phase === 'plan';
         crumb.classList.toggle('has-status', planning);
@@ -1522,12 +1522,12 @@
         const out = [];
         if (card.bonus) out.push(`고른 전선 전투력 +${card.bonus}`);
         if (card.divisions) out.push(`사단 ${signed(card.divisions)}`);
-        if (card.grain) out.push(`곡물 +${card.grain}`);
+        if (card.food) out.push(`곡물 +${card.food}`);
         if (card.peasants) out.push(`농민 ${signed(card.peasants)}`);
         if (card.workers) out.push(`노동자 ${signed(card.workers)}`);
-        if (card.cohesion) out.push(`결속 ${signed(G.cardCohesion(s, card, id))}` + (card.escalates ? ' (쓸 때마다 커짐)' : ''));
-        if (card.needs === 'revolt') out.push(s.revolt ? `봉기에 묶인 사단 ${G.cardDivisions(s, card)}개 복귀` : '봉기에 묶인 사단의 절반 복귀');
-        if (card.calm) out.push(`북부·남부 압력 −${card.calmBy}(이번과 다음 시기)`);
+        if (card.cohesion) out.push(`결속 ${signed(G.cardStat(s, card, id, 'cohesion'))}` + (card.escalates ? ' (쓸 때마다 커짐)' : ''));
+        if (card.needs === 'unrest') out.push(s.unrest ? `봉기에 묶인 사단 ${G.cardDivisions(s, card)}개 복귀` : '봉기에 묶인 사단의 절반 복귀');
+        if (card.calm) out.push(`${card.calm.fronts.map(id => D.fronts[id].short).join('·')} 압력 −${card.calm.by}(이번과 다음 시기)`);
         return out.join(' · ');
     }
 
@@ -1547,7 +1547,7 @@
                 control = el('button', { type: 'button', onclick: () => { const box = $('cwFronts'); box.scrollIntoView({ block: 'start' }); const first = box.querySelector(`[data-key^="${id}-"]`); if (first) first.focus({ preventScroll: true }); } },
                     '전선 카드에서 보내기 ↑');
             } else {
-                const idle = card.needs === 'revolt' && !s.revolt;
+                const idle = card.needs === 'unrest' && !s.unrest;
                 control = el('button', { type: 'button', 'data-key': `play-${id}`, disabled: !G.canPlay(s, id), title: idle ? '농민 지지가 35 아래로 떨어져 봉기가 일어나야 쓸 수 있다' : null, onclick: () => { act('play', id); render(); } }, idle ? '봉기가 없어 못 씀' : `쓰기 (지휘력 ${card.cost})`);
             }
             grid.append(el('article', { class: 'cw-card' + (played ? ' is-played' : '') },
@@ -1651,7 +1651,7 @@
             if (x.battle) return el('li', {}, el('strong', {}, D.battles[x.battle].title), ` · 백군 ${x.captured}개 부대가 총을 내려놓았다`);
             const f = x.foe && D.factions[x.foe];
             return el('li', {}, f ? picture(A.shield(x.foe, f)) : null, el('strong', {}, D.fronts[x.front].name),
-                ` · 무너진 ${f ? f.short + '의 ' : '적의 '}${x.what || '탄약과 곡물'} · 곡물 +${x.grain}`);
+                ` · 무너진 ${f ? f.short + '의 ' : '적의 '}${x.what || '탄약과 곡물'} · 곡물 +${x.food}`);
         });
         return el('div', { class: 'cw-history cw-spoils' },
             el('p', { class: 'games-kicker' }, '노획'),
@@ -2292,7 +2292,7 @@
             items.push(el('p', {}, `시기별 전선 위치의 합: 역사 대비 ${signed(o.diff)} 도시`));
             if (o.kind === 'won' || o.kind === 'stalled') items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, '역사에서는'), el('p', {}, s.battle.def.history)));
             items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, '그리고 1921년'),
-                el('p', {}, s.peasants >= 40 ? D.epilogue.highPeasants : D.epilogue.lowPeasants),
+                el('p', {}, s.stats.peasants >= 40 ? D.epilogue.highPeasants : D.epilogue.lowPeasants),
                 el('p', { class: 'cw-links' }, ...D.epilogue.links.map(link))));
         }
         items.push(...retrospect());

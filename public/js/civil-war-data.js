@@ -1,7 +1,8 @@
 /* global module */
 /* Scenario of 「붉은 전선 1918–1920」: the eight seasons of the Russian Civil
    War from the Czech revolt to Perekop, played from the Soviet side.
-   Content only; rules live in civil-war-engine.js. Dates, names and the
+   The war's content and its rules as data (the end of this file); the
+   engine that runs them is war/engine.js. Dates, names and the
    "역사에서는" notes follow the CommuLingo event /commulingo/events/civil-war
    and its timeline. Fronts are city chains from the inner city (nearest
    Moscow) outward; a front's line is how many of them the Reds hold, and
@@ -40,14 +41,20 @@
             cities: [['툴라', 54.19, 37.62], ['오룔', 52.97, 36.07], ['쿠르스크', 51.73, 36.19], ['하리코프', 49.99, 36.23], ['로스토프', 47.24, 39.71], ['예카테리노다르', 45.04, 38.98]],
             history: [3, 3, 4, 3, 2, 6, 6, 6],
             holders: ['central', 'central', 'denikin', 'denikin', 'denikin', 'denikin', 'wrangel', 'wrangel'],
-            capital: true,
+            // Tula's arms works lost: the road to Moscow is open.
+            defeat: { at: 0, outcome: { kind: 'moscow', title: '툴라가 떨어졌다', text: '백군이 툴라의 무기 공장을 지나 모스크바로 향한다. 혁명 정부는 무너졌다.' } },
         },
         northwest: {
             name: '북서전선', short: '북서',
             cities: [['페트로그라드', 59.94, 30.31], ['가치나', 59.57, 30.13], ['얌부르크', 59.37, 28.61]],
             history: [3, 3, 3, 2, 1, 3, 3, 3],
             holders: ['central', 'yudenich', 'yudenich', 'yudenich', 'yudenich', 'yudenich', 'yudenich', 'yudenich'],
-            petrograd: true,
+            // Petrograd lost: the workers shaken, the party too; it can be
+            // taken back. Its draft is lost while it is (mobilize).
+            onLost: {
+                at: 0, effects: { workers: -15, cohesion: -10 },
+                note: '페트로그라드가 함락되었다. 혁명의 도시를 잃은 노동자들이 흔들린다.', regained: '페트로그라드를 되찾았다.',
+            },
         },
         north: {
             name: '북부전선', short: '북부',
@@ -60,6 +67,14 @@
             cities: [['스몰렌스크', 54.78, 32.05], ['민스크', 53.90, 27.57], ['바르샤바', 52.23, 21.01]],
             history: [1, 2, 2, 2, 1, 1, 2, 2],
             holders: ['central', 'central', 'poland', 'poland', 'poland', 'poland', 'poland', 'poland'],
+            // Warsaw, the third city, is out of reach but for the march on
+            // Warsaw with WARSAW (8) to spare; the march that falls short
+            // is routed before the Vistula.
+            cap: {
+                reach: 2, unlock: { choice: 'warsaw', margin: 8 },
+                failed: { deserted: 3, note: '바르샤바 앞에서 측면이 무너졌다. 포로와 동프로이센으로 넘어간 병력으로 다음 시기 사단 3개를 잃는다.' },
+                reached: { note: '바르샤바에 붉은 군대가 들어갔다. 역사와 다른 길이다. 폴란드 노동자가 일어설지는 아무도 모른다.' },
+            },
         },
         southwest: {
             name: '남서전선', short: '남서',
@@ -90,7 +105,7 @@
         czech: {
             name: '체코슬로바키아 군단', short: '체코 군단', kind: 'white', flag: ['#ffffff', '#d7141a'], link: T('czechoslovak-legion'),
             note: '오스트리아군에서 넘어온 체코·슬로바키아 포로로 만든 군단. 프랑스 전선으로 가려고 시베리아 횡단철도를 타고 있었다. 1918–1920년 체코슬로바키아 국기는 폴란드처럼 흰색·빨간색 두 줄이었고, 1920년 3월 파란 삼각형이 더해졌다.',
-            trait: { name: '철도 위의 군단', motion: 'rail', when: 'train', is: false, by: 2, rule: '장갑열차가 이 전선에 없으면 압력 +2', text: '군단은 열차를 집 삼아 시베리아 횡단철도를 따라 싸웠다. 철도를 쥔 쪽이 볼가를 쥐었다. 장갑열차로 철도를 되찾아야 한다.' },
+            trait: { name: '철도 위의 군단', motion: 'rail', when: { not: { card: 'train' } }, by: 2, rule: '장갑열차가 이 전선에 없으면 압력 +2', text: '군단은 열차를 집 삼아 시베리아 횡단철도를 따라 싸웠다. 철도를 쥔 쪽이 볼가를 쥐었다. 장갑열차로 철도를 되찾아야 한다.' },
             cries: { beaten: '열차로 물러난다. 블라디보스토크는 멀다.', surging: '철도는 우리 것이다!' },
             spoils: '영국군이 남기고 간 창고',
             spoils: '철도 위의 보급 열차',
@@ -98,49 +113,49 @@
         komuch: {
             name: '코무치 인민군', short: '코무치', kind: 'white', link: T('komuch'),
             note: '사마라에 선 사회혁명당 계열 제헌의회 의원 위원회(코무치)의 군대. 9월 옴스크의 디렉토리로 합쳐졌다가 11월 콜차크의 쿠데타로 밀려났다.',
-            trait: { name: '제헌의회의 깃발', motion: 'march', when: 'workers', below: 55, by: 2, rule: '노동자 지지가 55 아래면 압력 +2', text: '사회혁명당의 코무치는 「모든 권력을 제헌의회로」를 내걸었다. 1918년 8월 이젭스크·봇킨스크의 무기 공장 노동자가 소비에트에 맞서 일어나 인민군에 합류했다. 노동자가 등을 돌리면 그들이 코무치 편에 선다.' },
+            trait: { name: '제헌의회의 깃발', motion: 'march', when: { stat: ['workers', '<', 55] }, by: 2, rule: '노동자 지지가 55 아래면 압력 +2', text: '사회혁명당의 코무치는 「모든 권력을 제헌의회로」를 내걸었다. 1918년 8월 이젭스크·봇킨스크의 무기 공장 노동자가 소비에트에 맞서 일어나 인민군에 합류했다. 노동자가 등을 돌리면 그들이 코무치 편에 선다.' },
             cries: { beaten: '사마라를 버린다. 옴스크로!', surging: '볼가는 제헌의회의 것이다!' },
             spoils: '카잔과 사마라의 탄약 창고',
         },
         kolchak: {
             name: '콜차크 정부군', short: '콜차크', kind: 'white', flag: TRICOLOR, link: P('alexander-kolchak'),
             note: '옴스크의 「최고 통치자」 콜차크 제독의 군대. 영국이 소총과 군복을 댔다. 백군은 제정 러시아의 흰색·파란색·빨간색 삼색기를 썼다.',
-            trait: { name: '시베리아의 파르티잔', motion: 'march', when: 'peasants', below: 45, by: 2, rule: '농민 지지가 45 아래면 압력 +2', text: '콜차크 정부의 징병과 징발에 시베리아 농민이 들고일어나, 철도 뒤에서 파르티잔이 백군을 흔들었다. 붉은 군대의 징발이 그만큼 가혹해지면 농민은 어느 편도 들지 않는다.' },
+            trait: { name: '시베리아의 파르티잔', motion: 'march', when: { stat: ['peasants', '<', 45] }, by: 2, rule: '농민 지지가 45 아래면 압력 +2', text: '콜차크 정부의 징병과 징발에 시베리아 농민이 들고일어나, 철도 뒤에서 파르티잔이 백군을 흔들었다. 붉은 군대의 징발이 그만큼 가혹해지면 농민은 어느 편도 들지 않는다.' },
             cries: { beaten: '우랄 너머로 물러난다.', surging: '볼가가 눈앞이다!' },
             spoils: '영국제 소총과 군복을 실은 열차',
         },
         don: {
             name: '돈 카자크군', short: '돈 카자크', kind: 'white', flag: ['#0033a0', '#ffd500', '#d52b1e'], link: T('don-republic'),
             note: '아타만 크라스노프가 이끈 돈 카자크의 군대. 1918년에는 우크라이나를 점령한 독일의 지원을 받았다. 깃발은 돈 공화국의 파란색·노란색·빨간색.',
-            trait: { name: '카자크 기병의 습격', motion: 'charge', when: 'reserve', at: 2, by: -2, rule: '예비 사단을 2개 이상 남기면 압력 −2', text: '카자크 기병은 전선의 틈을 뚫고 후방의 철도와 창고를 휘저었다. 1919년 8월 마몬토프의 기병군단은 탐보프까지 들어왔다. 뒤에 남긴 예비 사단이 습격을 막는다.' },
+            trait: { name: '카자크 기병의 습격', motion: 'charge', when: { reserve: ['>=', 2] }, by: -2, rule: '예비 사단을 2개 이상 남기면 압력 −2', text: '카자크 기병은 전선의 틈을 뚫고 후방의 철도와 창고를 휘저었다. 1919년 8월 마몬토프의 기병군단은 탐보프까지 들어왔다. 뒤에 남긴 예비 사단이 습격을 막는다.' },
             cries: { beaten: '돈으로 돌아간다. 카자크의 땅을 지켜라.', surging: '후방의 철도를 휘저어라!' },
             spoils: '말과 안장',
         },
         denikin: {
             name: '남러시아군(데니킨)', short: '데니킨', kind: 'white', flag: TRICOLOR, link: T('armed-forces-of-south-russia'),
             note: '코르닐로프가 세운 의용군에 돈·쿠반 카자크군을 묶은 데니킨의 군대. 1919년 여름 「모스크바 지령」으로 북진했다.',
-            trait: { name: '장교 연대', motion: 'charge', when: 'commissar', is: false, by: 2, rule: '정치위원이 없는 전선이면 압력 +2', text: '코르닐로프·마르코프·드로즈돕스키 연대는 장교로만 채운 의용군의 정예였다. 정치위원 없이 맞선 징집 사단은 그 앞에서 흩어졌다.' },
+            trait: { name: '장교 연대', motion: 'charge', when: { leader: false }, by: 2, rule: '정치위원이 없는 전선이면 압력 +2', text: '코르닐로프·마르코프·드로즈돕스키 연대는 장교로만 채운 의용군의 정예였다. 정치위원 없이 맞선 징집 사단은 그 앞에서 흩어졌다.' },
             cries: { beaten: '장교 연대가 꺾였다.', surging: '모스크바로!' },
             spoils: '영국이 보낸 탄약과 군복',
         },
         yudenich: {
             name: '북서군(유데니치)', short: '유데니치', kind: 'white', flag: TRICOLOR, link: T('north-western-army-white'),
             note: '에스토니아를 발판으로 페트로그라드를 노린 유데니치 장군의 백군.',
-            trait: { name: '페트로그라드 기습', motion: 'charge', when: 'workers', below: 50, by: 2, rule: '노동자 지지가 50 아래면 압력 +2', text: '유데니치는 영국이 준 전차 여섯 대를 앞세워 풀코보 고지까지 왔다. 도시를 지킨 것은 거리에 바리케이드를 쌓은 페트로그라드 노동자였다.' },
+            trait: { name: '페트로그라드 기습', motion: 'charge', when: { stat: ['workers', '<', 50] }, by: 2, rule: '노동자 지지가 50 아래면 압력 +2', text: '유데니치는 영국이 준 전차 여섯 대를 앞세워 풀코보 고지까지 왔다. 도시를 지킨 것은 거리에 바리케이드를 쌓은 페트로그라드 노동자였다.' },
             cries: { beaten: '에스토니아로 물러난다.', surging: '페트로그라드가 보인다!' },
             spoils: '탄약 수레와 군량',
         },
         allies: {
             name: '연합국 간섭군', short: '간섭군', kind: 'interv',
             note: '영국을 중심으로 프랑스·미국 병력이 무르만스크와 아르한겔스크에 상륙해 북부 정부를 세웠다. 영국군은 1919년 가을 철수했다.',
-            trait: { name: '지친 원정군', motion: 'sail', when: 'commissar', is: true, by: -1, rule: '정치위원이 있으면 압력 −1', text: '세계대전을 마친 영국·미국·프랑스 병사들은 남의 나라 내전에 머물 생각이 없었다. 볼셰비키의 외국어 전단이 병영에 돌았고, 1919년 봄 반란과 명령 거부가 잇따랐다.' },
+            trait: { name: '지친 원정군', motion: 'sail', when: { leader: true }, by: -1, rule: '정치위원이 있으면 압력 −1', text: '세계대전을 마친 영국·미국·프랑스 병사들은 남의 나라 내전에 머물 생각이 없었다. 볼셰비키의 외국어 전단이 병영에 돌았고, 1919년 봄 반란과 명령 거부가 잇따랐다.' },
             cries: { beaten: '병사들은 집에 가고 싶어 한다.', surging: '드비나강을 거슬러 오른다.' },
             spoils: '아르한겔스크의 군수 창고',
         },
         north: {
             name: '북부 정부군', short: '북부 정부', kind: 'white', flag: TRICOLOR, link: T('northern-region-government'),
             note: '영국군이 떠난 뒤 밀러 장군이 이끈 아르한겔스크의 백군.',
-            trait: { name: '버려진 정부', motion: 'march', when: 'commissar', is: true, by: -2, rule: '정치위원이 있으면 압력 −2', text: '영국군이 떠나자 북부 정부군 병사들이 장교를 버리고 붉은 군대로 넘어왔다. 1920년 2월 밀러는 배로 달아났다.' },
+            trait: { name: '버려진 정부', motion: 'march', when: { leader: true }, by: -2, rule: '정치위원이 있으면 압력 −2', text: '영국군이 떠나자 북부 정부군 병사들이 장교를 버리고 붉은 군대로 넘어왔다. 1920년 2월 밀러는 배로 달아났다.' },
             cries: { beaten: '배로 떠난다.', surging: '아르한겔스크는 아직 우리 것이다.' },
         },
         central: {
@@ -160,14 +175,14 @@
         unr: {
             name: '우크라이나 인민공화국군', short: '우크라이나', kind: 'national', link: P('symon-petliura'),
             note: '페틀류라가 이끈 디렉토리 정부의 군대. 1920년 폴란드와 동맹해 키예프로 들어왔다.',
-            trait: { name: '아타만의 농민군', motion: 'charge', when: 'peasants', below: 40, by: 1, rule: '농민 지지가 40 아래면 압력 +1', text: '디렉토리의 병력은 저마다 아타만을 따르는 농민 무리였다. 징발에 지친 우크라이나 마을이 그들을 먹이고 숨겼다.' },
+            trait: { name: '아타만의 농민군', motion: 'charge', when: { stat: ['peasants', '<', 40] }, by: 1, rule: '농민 지지가 40 아래면 압력 +1', text: '디렉토리의 병력은 저마다 아타만을 따르는 농민 무리였다. 징발에 지친 우크라이나 마을이 그들을 먹이고 숨겼다.' },
             cries: { beaten: '아타만들이 흩어진다.', surging: '키예프는 우크라이나의 것이다!' },
             spoils: '탄약과 말',
         },
         wrangel: {
             name: '러시아군(브란겔)', short: '브란겔', kind: 'white', flag: TRICOLOR, link: P('pyotr-wrangel'),
             note: '노보로시스크 철수 뒤 데니킨에게서 지휘권을 넘겨받은 브란겔이 크림에서 다시 세운 백군.',
-            trait: { name: '브란겔의 토지법', motion: 'rail', when: 'peasants', below: 40, by: 2, rule: '농민 지지가 40 아래면 압력 +2', text: '브란겔은 1920년 5월 지주의 땅 일부를 농민에게 넘기는 토지법을 내고 질서 있는 정부를 꾸몄다. 붉은 군대의 징발에 지친 북타브리아 농민 일부가 그에게 기대를 걸었다.' },
+            trait: { name: '브란겔의 토지법', motion: 'rail', when: { stat: ['peasants', '<', 40] }, by: 2, rule: '농민 지지가 40 아래면 압력 +2', text: '브란겔은 1920년 5월 지주의 땅 일부를 농민에게 넘기는 토지법을 내고 질서 있는 정부를 꾸몄다. 붉은 군대의 징발에 지친 북타브리아 농민 일부가 그에게 기대를 걸었다.' },
             cries: { beaten: '방벽 뒤로, 크림으로!', surging: '북타브리아의 곡식은 우리 것이다.' },
             spoils: '영국제 전차와 탄약',
         },
@@ -229,19 +244,19 @@
             link: ['트로츠키의 열차', T('trotsky-train')],
         },
         requisition: {
-            title: '식량 징발대 파견', advisor: ['블라디미르 레닌', 'lenin'], cost: 1, grain: 5, peasants: -4,
+            title: '식량 징발대 파견', advisor: ['블라디미르 레닌', 'lenin'], cost: 1, food: 5, peasants: -4,
             turns: [0, 1, 2, 3, 4, 5, 6],
             text: '무장한 노동자 분견대를 곡창 지대로 보내 「잉여」 곡물을 거둔다. 도시와 군대는 먹지만 마을은 등을 돌린다.',
             link: ['식량 독재', T('food-dictatorship')],
         },
         kombedy: {
-            title: '빈농위원회', advisor: ['야코프 스베르들로프', 'sverdlov'], cost: 1, grain: 3, peasants: -4, workers: 3,
+            title: '빈농위원회', advisor: ['야코프 스베르들로프', 'sverdlov'], cost: 1, food: 3, peasants: -4, workers: 3,
             turns: [0, 1],
             text: '마을의 빈농을 조직해 부농의 곡물을 찾아내게 한다. 1918년 12월 마을 소비에트로 흡수되기까지 여름과 가을 동안만 쓸 수 있다.',
             link: ['빈농위원회', T('kombedy-committees-of-the-poor')],
         },
         cheka: {
-            title: '체카의 후방 단속', advisor: ['펠릭스 제르진스키', 'dzerzhinsky'], cost: 1, needs: 'revolt', peasants: -3, cohesion: -3,
+            title: '체카의 후방 단속', advisor: ['펠릭스 제르진스키', 'dzerzhinsky'], cost: 1, needs: 'unrest', peasants: -3, cohesion: -3,
             turns: [1, 2, 3, 4, 5, 6],
             text: '후방의 농민 봉기를 비상위원회가 진압한다. 봉기에 묶인 사단의 절반이 바로 전선으로 돌아오지만, 공포는 지지를 깎는다.',
             link: ['적색 테러', T('red-terror')],
@@ -252,7 +267,7 @@
             text: '정해진 기간 안에 돌아온 탈영병은 처벌하지 않고 부대로 돌려보낸다. 1919년 한 해 동안 탈영병 수십만 명이 이렇게 돌아왔다.',
         },
         propaganda: {
-            title: '간섭군 병사에게 선전', advisor: ['블라디미르 레닌', 'lenin'], cost: 1, calm: ['north', 'south'], calmBy: 2,
+            title: '간섭군 병사에게 선전', advisor: ['블라디미르 레닌', 'lenin'], cost: 1, calm: { fronts: ['north', 'south'], by: 2 },
             turns: [2, 3],
             text: '외국어 전단과 신문을 간섭군 병영에 들여보낸다. 1919년 4월 오데사 앞바다에서 프랑스 수병들이 반란을 일으켰고, 프랑스는 남부에서 병력을 거두었다.',
         },
@@ -1037,7 +1052,113 @@
     ];
 
     const battles = { kazan, ufa, orel, perekop };
-    const data = { factions, troops, fronts, frontOrder, moscow, railways, startLines, cards, turns, battles, epilogue };
+
+    // ── The campaign's rules (war/engine.js; schema in dev_docs/war-engine.md) ──
+
+    // The engine's words that name this war's things.
+    const texts = {
+        leader: '정치위원',
+        moved: '철도로 옮겨 온 사단 {n}',
+        momentumPart: '적의 기세 +{n}',
+        pursuitPart: '추격 −{n}',
+        battleLost: '{title} 실패',
+        battleQuick: '{title} ({quick}턴 안)',
+        hunger: '곡물이 모자라 병사들이 굶었다. 다음 시기 탈영으로 사단이 준다.',
+        momentumNote: '{front}: 더 잃을 도시가 없는데도 막지 못해, 적이 기세를 몰아 온다. 이 전선의 다음 싸움에서 압력 +{n}.',
+        pursuitNote: '{front}: 무너진 적을 쫓는다. 이 전선의 다음 싸움에서 압력 −{n}.',
+    };
+
+    // Stats of the republic (0–100), and grain. Grain each season: 3, one
+    // more per 15 peasant trust, what the policy chosen changes (the tax in
+    // kind leaves the peasants most of what the requisition took), cards.
+    // A sent division eats 1, one in reserve half. Under HUNGER (0.75)
+    // supplied, soldiers desert next season (ceil((1 − supply) × 6)); a
+    // division's share of strength falls to FED (0.5) when starving.
+    const economy = {
+        stats: { peasants: { start: 60 }, workers: { start: 60 }, cohesion: { start: 60 } },
+        food: { start: 6, base: 3, per: ['peasants', 15], fed: 0.5, hunger: 0.75, desert: 6, reserveEats: 0.5 },
+        policies: [
+            { flag: 'razverstka', food: 7, each: { peasants: -3 }, unless: 'tax' },
+            { flag: 'market', food: 1, each: { peasants: 2 } },
+            { flag: 'tax', food: -10, each: { peasants: 8 } },
+        ],
+        // Peasants and cohesion land before Petrograd's fall, workers after
+        // (its −15 joins the season's changes).
+        settleOrder: ['peasants', 'cohesion', 'cities', 'workers'],
+    };
+
+    // Command each season follows the party's cohesion: a united party
+    // gives orders that are carried out, a split one argues them away.
+    const command = { stat: 'cohesion', tiers: [[70, 4], [40, 3], [20, 2], [0, 1]], note: '당 결속 {value}: 다음 시기 지휘력은 {n}이다.' };
+    // A commissar's strength on his front; below cohesion 30 one fewer.
+    const leaders = {
+        strength: 1.5,
+        fewer: [{ when: { stat: ['cohesion', '<', 30] }, n: 1, note: '당이 분열하고 있다. 다음 시기 정치위원이 하나 준다.' }],
+    };
+    // A division's quality: the military specialists make it better.
+    const quality = { base: 0.8, mods: [{ when: { flag: 'experts', turnMin: 1 }, add: 0.25 }] };
+
+    // The season's draft: the season's mobilize, then these.
+    const mobilize = {
+        min: 2, minLabel: '최소 동원',
+        sources: [
+            { stat: 'workers', base: 60, per: 10, label: '노동자 지지 {value}' },
+            { from: 'deserted', label: '굶주린 병사의 탈영' },
+            { fallen: 'northwest', n: -2, label: '페트로그라드 상실' },
+            { from: 'unrest', label: '농민 봉기로 후방에 묶임' },
+            { from: 'captured', label: '포로 편입' },
+        ],
+    };
+    // The countryside answers requisition with risings (green armies).
+    const unrest = {
+        levels: [{ when: { stat: ['peasants', '<', 20] }, n: 5 }, { when: { stat: ['peasants', '<', 35] }, n: 2 }],
+        note: '농민 봉기가 번진다. 다음 시기 사단 {n}개가 후방에 묶인다.',
+    };
+    // A front's result against history's: STEP of margin per city, SLACK
+    // short still holds, MOMENTUM pressure per city lost beyond the last,
+    // PURSUIT pressure off per STEP beyond the city gained (CHASE at most),
+    // TRANSFER the share a division moved by rail brings (rules 2).
+    const outcome = { step: 3, slack: 1, momentum: 2, pursuit: 2, chase: 2, transfer: 0.5 };
+    // Spoils (rules 3): grain per front the enemy broke on; prisoners, at
+    // most MAX divisions a season.
+    const spoils = { food: 2, max: 2 };
+    // Each front gained or lost moves the workers; the season's fronts
+    // behind history split the party, ahead of it unite it.
+    const frontMoves = { gained: { workers: 2 }, lost: { workers: -2 } };
+    const verdict = { behind: { cohesion: -3, note: '역사보다 밀린 책임을 두고 당 안에서 논쟁이 벌어졌다. 당 결속 −3.' }, ahead: { cohesion: 2 } };
+
+    // What choices and seasons add to a front, in the order the card lists
+    // them; afterBattle ones come after the season's battle.
+    const modifiers = [
+        { fronts: ['south', 'crimea', 'southwest'], when: { flag: 'cavalry' }, strength: 4, label: '제1기병군' },
+        { front: 'east', when: { turn: 'kolchak', choice: 'flank' }, strength: -3, label: '측면 반격 준비' },
+        { front: 'east', when: { turn: 'kolchak', choice: 'front' }, strength: 3, label: '정면 증원' },
+        { front: 'east', when: { turn: 'directive', flag: 'flank' }, strength: 7, label: '프룬제의 측면 반격' },
+        { front: 'south', when: { turn: 'orel', flag: 'turned' }, strength: 5, label: '동부에서 온 사단', afterBattle: true },
+        { front: 'northwest', when: { turn: 'orel', choice: 'hold' }, strength: 4, label: '페트로그라드 사수', afterBattle: true },
+        { front: 'northwest', when: { turn: 'orel', choice: 'yield' }, pressure: 6, label: '병력을 남쪽으로 뺌', afterBattle: true },
+        { front: 'south', when: { turn: 'orel', choice: 'yield' }, strength: 4, label: '북서에서 온 병력', afterBattle: true },
+    ];
+    // Kolchak regrouping beyond the Urals for two seasons when the pursuit
+    // stopped there.
+    const extraThreats = [
+        { when: { flag: 'turned' }, front: 'east', pressure: { orel: 7, counter: 4 }, foes: ['kolchak'], text: '우랄에서 멈춘 사이 콜차크군이 다시 일어서 동쪽에서 밀려온다.', who: ['알렉산드르 콜차크', 'alexander-kolchak'] },
+    ];
+    // Stars after Perekop: the battle won; the lines at least as far as
+    // history, season by season; the countryside not driven to revolt.
+    const scoring = {
+        stars: [
+            { id: 'perekop', label: '페레코프 돌파', when: { won: true } },
+            { id: 'history', label: '전선 합계가 역사 이상', when: { historyDiff: ['>=', 0] } },
+            { id: 'peasants', label: '농민 지지 40 이상으로 종전', when: { stat: ['peasants', '>=', 40] } },
+        ],
+        won: { title: '크림으로 가는 길이 열렸다', text: '유럽 러시아의 백군 저항은 끝났다.' },
+        stalled: { title: '브란겔이 겨울을 넘긴다', text: '페레코프를 넘지 못했다. 역사에서는 11월 11일 유슌 방어선이 뚫렸고, 브란겔은 크림을 떠났다.' },
+    };
+    const data = {
+        id: 'civil-war', saveVersion: 1, factions, troops, fronts, frontOrder, moscow, railways, startLines, cards, turns, battles, epilogue,
+        texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring,
+    };
     if (typeof module === 'object' && module.exports) module.exports = data;
     else root.CivilWarData = data;
 })(typeof window !== 'undefined' ? window : globalThis);

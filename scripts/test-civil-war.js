@@ -25,7 +25,7 @@ function plan(s, { requisition = false } = {}) {
     // An amnesty only while the party can bear it (command stays at 3).
     for (const id of ['amnesty', 'partyWeek', 'cavalry', 'propaganda']) {
         if (!t.cards.includes(id)) continue;
-        if (s.cohesion + G.cardCohesion(s, D.cards[id], id) < 40) continue;
+        if (s.stats.cohesion + G.cardStat(s, D.cards[id], id, 'cohesion') < 40) continue;
         G.act(s, 'play', id);
     }
     fronts.slice(0, s.plan.commissars).forEach(f => assert.ok(G.act(s, 'commissar', f, true)));
@@ -174,7 +174,7 @@ assert.ok(hist.battles.kazan.turns > D.battles.kazan.reward.quick, 'as history d
 for (const r of hist.records) {
     for (const [id, f] of Object.entries(r.fronts)) assert.equal(f.after, f.history, `${D.turns[r.turn].id} ${id}`);
 }
-assert.ok(hist.peasants < 60, 'requisition costs the countryside');
+assert.ok(hist.stats.peasants < 60, 'requisition costs the countryside');
 // History's plan meets the attackers' traits but one: Tsaritsyn in the
 // summer of 1919 had no commissar to spare against Wrangel's officers, and
 // that front's pressure counts them.
@@ -209,7 +209,7 @@ const alt = campaign(other);
 assert.equal(alt.phase, 'battle');
 assert.ok(alt.records.some(r => r.supply.ratio < 0.75), 'buying grain at fixed prices leaves the army hungry');
 assert.ok(sumDiff(alt) < 0);
-assert.ok(alt.peasants > hist.peasants);
+assert.ok(alt.stats.peasants > hist.stats.peasants);
 
 // The peasants' policies are a trade, not a free star: easing the
 // requisition (the market in 1918, the tax in kind in 1920) keeps the
@@ -217,16 +217,16 @@ assert.ok(alt.peasants > hist.peasants);
 for (const id of ['market', 'tax']) {
     const eased = campaign(t => (t.choice.options.some(o => o.id === id) ? id : t.choice.history));
     assert.equal(eased.phase, 'battle', id);
-    assert.ok(eased.peasants >= 40, `${id} keeps the countryside (${eased.peasants})`);
+    assert.ok(eased.stats.peasants >= 40, `${id} keeps the countryside (${eased.stats.peasants})`);
     assert.ok(sumDiff(eased) < 0, `${id} costs cities (${sumDiff(eased)})`);
 }
-assert.ok(hist.peasants < 40, 'history\'s road ends with the countryside below 40');
+assert.ok(hist.stats.peasants < 40, 'history\'s road ends with the countryside below 40');
 
 // Requisitioning every season feeds the army and raises the countryside.
 // The risings tie down divisions; with the railway's cost on the ones
 // moved, this bot loses Tula in the autumn of 1919.
 const harsh = campaign(historical, { requisition: true });
-assert.ok(harsh.peasants < 30, 'requisition every season drives the peasants to revolt');
+assert.ok(harsh.stats.peasants < 30, 'requisition every season drives the peasants to revolt');
 assert.ok(harsh.records.some(r => r.notes.some(n => n.includes('농민 봉기'))));
 
 // The Cheka is for a rising: idle without one, half the tied divisions back with one.
@@ -236,16 +236,16 @@ assert.equal(G.canPlay(quiet, 'cheka'), false);
 const risen = G.restore(G.serialize(harsh));
 const rising = G.start();
 for (const entry of risen.log) {
-    if (rising.revolt && rising.phase === 'plan' && G.turnData(rising).cards.includes('cheka')) break;
+    if (rising.unrest && rising.phase === 'plan' && G.turnData(rising).cards.includes('cheka')) break;
     G.act(rising, ...entry);
 }
-assert.ok(rising.revolt > 0, 'requisition every season raises the countryside before Perekop');
+assert.ok(rising.unrest > 0, 'requisition every season raises the countryside before Perekop');
 const pool = rising.plan.divisions;
 const command = rising.plan.command;
 assert.ok(command >= 1);
 {
     assert.ok(G.act(rising, 'play', 'cheka'));
-    assert.equal(rising.plan.divisions, pool + Math.ceil(rising.revolt / 2));
+    assert.equal(rising.plan.divisions, pool + Math.ceil(rising.unrest / 2));
     assert.ok(G.act(rising, 'unplay', 'cheka'));
     assert.equal(rising.plan.divisions, pool);
 }
@@ -334,7 +334,7 @@ assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries 
     assert.ok(G.canSettle(s), 'a season may be sent with divisions kept back');
     const grain = fc.supply.have - fc.supply.need;
     send(s);
-    assert.equal(s.grain, grain, 'what the reserve did not eat is kept');
+    assert.equal(s.food, grain, 'what the reserve did not eat is kept');
 }
 
 // The railway: a plan opens with last season's placements; a division
@@ -396,7 +396,7 @@ assert.equal(s0.plan.command, 3);
 // Save and restore replay the same war; a tampered log is refused.
 const replay = G.restore(G.serialize(hist));
 assert.deepEqual(replay.lines, hist.lines);
-assert.equal(replay.peasants, hist.peasants);
+assert.equal(replay.stats.peasants, hist.stats.peasants);
 assert.equal(replay.phase, 'battle');
 // History's plan for Crimea, with the train sent there, brings every unit
 // it may to Perekop.
@@ -450,7 +450,7 @@ assert.equal(G.restore('{'), null);
         assert.ok(send(s));
         if (s.phase === 'review') assert.ok(G.act(s, 'next'));
     }
-    assert.ok(s.cohesion < 30, `amnesties wear the party down (${s.cohesion})`);
+    assert.ok(s.stats.cohesion < 30, `amnesties wear the party down (${s.stats.cohesion})`);
     assert.ok(lowest < 3, 'a divided party commands less');
     assert.equal(G.commandOf(70), 4);
     assert.equal(G.commandOf(39), 2);
@@ -647,8 +647,8 @@ assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), fal
     G.act(purge, 'choose', 'experts'); G.act(purge, 'respond', 'purge');
     for (const x of [s, purge]) G.act(x, 'alloc', 'east', x.plan.divisions);
     assert.ok(send(s)); assert.ok(send(purge));
-    assert.equal(s.peasants - purge.peasants, 5);
-    assert.equal(s.cohesion - purge.cohesion, -3);
+    assert.equal(s.stats.peasants - purge.stats.peasants, 5);
+    assert.equal(s.stats.cohesion - purge.stats.cohesion, -3);
     G.act(s, 'next');
     assert.equal(G.cardOffered(s, 'kombedy'), false, 'and keeps them barred in the autumn');
 }
@@ -670,7 +670,7 @@ assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), fal
     const back = G.restore({ version: G.VERSION, rules: G.RULES, log });
     assert.equal(back.turn, hist.turn);
     assert.deepEqual(back.lines, hist.lines);
-    assert.equal(back.peasants, hist.peasants);
+    assert.equal(back.stats.peasants, hist.stats.peasants);
 }
 {
     // Mironov: pardoned in 1919, his 2nd Cavalry Army is offered for
@@ -981,7 +981,7 @@ assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red o
     assert.equal(r.spoils.length, 1);
     assert.equal(r.spoils[0].front, light);
     assert.ok(r.spoils[0].what);
-    assert.equal(s.grain, Math.max(0, grain.have - grain.need) + G.SPOILS_GRAIN);
+    assert.equal(s.food, Math.max(0, grain.have - grain.need) + G.SPOILS_FOOD);
     assert.equal(s.captured, 1);
     assert.ok(G.act(s, 'next'));
     assert.ok(s.plan.sources.some(x => x.label === '포로 편입' && x.n === 1));

@@ -26,7 +26,24 @@ function sortKeys(v) {
     return r3(v);
 }
 
-function stats(s) { return { peasants: s.peasants, workers: s.workers, cohesion: s.cohesion, grain: s.grain }; }
+function stats(s) { return { peasants: s.stats.peasants, workers: s.stats.workers, cohesion: s.stats.cohesion, grain: s.food }; }
+
+// The engine's generic names, back in the names the recording was made
+// with (the only renames allowed between them).
+const asGrain = ({ food, ...rest }) => Object.assign(rest, { grain: food });
+function oldFlags(flags) {
+    const out = {};
+    for (const [k, v] of Object.entries(flags)) out[k === 'calm:propaganda' ? 'calm' : k] = v;
+    return out;
+}
+function oldRecord(r) {
+    return Object.assign({}, r, { stats: asGrain(r.stats), spoils: r.spoils.map(asGrain) });
+}
+function oldOutcome(o) {
+    if (!o || !o.stats) return o;
+    const { stats: st, ...rest } = o;
+    return Object.assign(rest, { peasants: st.peasants });
+}
 
 function battleView(b) {
     if (!b) return null;
@@ -42,10 +59,10 @@ function battleView(b) {
 
 function view(s) {
     const out = {
-        turn: s.turn, phase: s.phase, rules: s.rules, lines: s.lines, stats: stats(s), flags: s.flags,
-        momentum: s.momentum, pursuit: s.pursuit, captured: s.captured, deserted: s.deserted, revolt: s.revolt,
-        petrogradFell: s.petrogradFell, used: s.used, lastAlloc: s.lastAlloc,
-        records: s.records, battles: s.battles, outcome: s.outcome, battle: battleView(s.battle),
+        turn: s.turn, phase: s.phase, rules: s.rules, lines: s.lines, stats: stats(s), flags: oldFlags(s.flags),
+        momentum: s.momentum, pursuit: s.pursuit, captured: s.captured, deserted: s.deserted, revolt: s.unrest,
+        petrogradFell: Boolean(s.fallen.northwest), used: s.used, lastAlloc: s.lastAlloc,
+        records: s.records.map(oldRecord), battles: s.battles, outcome: oldOutcome(s.outcome), battle: battleView(s.battle),
     };
     if (s.phase === 'plan') {
         const p = s.plan;
