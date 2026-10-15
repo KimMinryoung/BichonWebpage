@@ -1870,7 +1870,7 @@
         const board = svg('svg', { viewBox: `0 0 ${cols * CELL} ${rows * CELL}`, class: 'cw-grid' + (battleEnded ? ' is-over' : ''), role: 'group', 'aria-label': def.board });
         const unit = selected && B.byId(b, selected);
         const foe = !unit && inspected && B.byId(b, inspected);
-        const moves = unit && B.canMove(unit) ? B.reachable(b, unit) : [];
+        const moves = unit && B.canMove(b, unit) ? B.reachable(b, unit) : [];
         const targets = unit && !unit.acted ? B.targets(b, unit) : [];
         // One White unit's reach when it is picked; every one's with 「백군 위협」.
         const danger = foe ? B.menace(b, foe) : menaceAll ? b.units.filter(u => u.side === 'white' && u.hp > 0).flatMap(u => B.menace(b, u)) : [];
@@ -1932,7 +1932,7 @@
             if (blow && !fallAt.has(blow)) fallAt.set(blow, performance.now());
             const lunge = foeHit && performance.now() - fallAt.get(blow) < LUNGE_MS;
             const g = svg('g', {
-                class: `cw-unit is-${u.side} k-${u.kind}${u.yielded ? ' is-yielded' : ''}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done && !B.canMove(u) ? ' is-done' : ''}${lunge ? ' is-lunging' : ''}`,
+                class: `cw-unit is-${u.side} k-${u.kind}${u.yielded ? ' is-yielded' : ''}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done && !B.canMove(b, u) ? ' is-done' : ''}${lunge ? ' is-lunging' : ''}`,
                 tabindex: '0', role: 'button',
                 style: lunge ? `--lx:${Math.sign(foeHit.c - u.c) * 9}px;--ly:${Math.sign(foeHit.r - u.r) * 9}px;--since:${Math.round(performance.now() - fallAt.get(blow))}ms` : null,
                 'aria-label': `${u.side === 'red' ? '붉은 군대' : '백군'} ${u.name}${u.yielded ? '(투항해 넘어옴)' : ''}, 병력 ${u.hp}/${u.maxHp}, 방어 ${B.defenseOf(b, u)}` + (p ? `, 공격 시 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ''}${p.wears ? ', 진지 방어 1 감소' : ''}${p.surrender ? ', 투항시킴' : ''}` : '') + (featLeft(b, u) ? `, 결정적 한 수 ${u.feat.name}` : '') + (done ? ', 행동 마침' : ''),
@@ -2160,7 +2160,7 @@
             u.yielded ? el('p', { class: 'cw-note' }, '투항해 붉은 군대로 넘어온 부대다.') : null,
             u.person ? el('p', {}, '지휘: ', person(u.person)) : null,
             u.commissar ? el('p', { class: 'cw-note' }, '정치위원이 함께한다 (방어 +1).') : null,
-            u.side === 'red' ? el('p', { class: 'cw-note' }, u.acted ? (B.canMove(u) ? '쳤다. 아직 움직일 수 있다.' : '이번 턴의 행동을 마쳤다.') : u.moved ? '이동했다. 공격하거나 대기할 수 있고, 이동을 취소할 수도 있다.' : '이동하거나 공격할 수 있다.') : null,
+            u.side === 'red' ? el('p', { class: 'cw-note' }, u.acted ? (B.canMove(b, u) ? '쳤다. 아직 움직일 수 있다.' : '이번 턴의 행동을 마쳤다.') : u.moved ? '이동했다. 공격하거나 대기할 수 있고, 이동을 취소할 수도 있다.' : '이동하거나 공격할 수 있다.') : null,
             u.side === 'white' && u.role ? el('p', { class: 'cw-note' }, roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '')) : null);
     }
 
@@ -2222,7 +2222,7 @@
         const b = s.battle;
         const u = selected && B.byId(b, selected);
         endArmed = false;
-        if (!u || (u.acted && !B.canMove(u)) || u.hp <= 0) selected = null;
+        if (!u || (u.acted && !B.canMove(b, u)) || u.hp <= 0) selected = null;
         if (battleOver()) return;
         const said = text + b.events.filter(e => e.type === 'turned').map(e => `. ${b.def.lines[e.line].name}이 우회되었다.`).join('')
             + b.events.filter(e => e.type === 'surrender').map(e => `. ${b.units.find(x => x.id === e.id).name}이(가) 투항했다.`).join('');

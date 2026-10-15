@@ -930,9 +930,9 @@ assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red o
     const kuban = B.byId(m, 'w3');
     kuban.r = 5; kuban.c = 6;
     assert.ok(B.act(m, 'attack', 'rmk', 'w3'));
-    assert.ok(carts.acted && B.canMove(carts));
+    assert.ok(carts.acted && B.canMove(m, carts));
     assert.ok(B.act(m, 'move', 'rmk', 3, 5) || B.act(m, 'move', 'rmk', ...[B.reachable(m, carts)[0]].map(t => [t.r, t.c])[0]));
-    assert.equal(B.canMove(carts), false);
+    assert.equal(B.canMove(m, carts), false);
     // Surrender: a White unit broken below half its men with three Red
     // units beside it comes over, and the battle counts it.
     const y = B.start(P, {}, { margin: 6, fed: 1, commissar: false, cards: [] });

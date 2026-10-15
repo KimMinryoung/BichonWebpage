@@ -602,13 +602,15 @@
     // its ground ignored, after `after` Red blows on fortifications),
     // muster (a new unit beside it), ride (move +mv this turn, past the
     // enemy). Units sharing a feat share its one use.
+    // The battles' two sides (war/battle.js): the units' side ids.
+    const SIDES = { player: 'red', enemy: 'white' };
     const THIRD_ASSAULT = {
         id: 'third-assault', name: '세 번째 돌격', kind: 'assault', after: 2, plus: 2,
         text: '진지 위의 적을 붉은 부대가 두 번 친 뒤에 쓸 수 있다. 이번 공격은 진지 방어를 무시하고 피해 +2.',
         history: '11월 8일 제51사단은 터키 방벽을 두 번 들이쳤다가 철조망과 기관총 앞에서 물러났다. 9일 새벽 세 번째 돌격에 방벽 위로 올라섰다.',
     };
     const perekop = {
-        id: 'perekop', front: 'crimea', final: true,
+        id: 'perekop', sides: SIDES, front: 'crimea', final: true,
         title: '페레코프-촌가르 작전', date: '1920년 11월 7–12일',
         settle: '페레코프로 →', open: '페레코프 전투 지휘하기 →', board: '페레코프 전장',
         ford: '시바시', reserveName: '바르보비치 기병군단',
@@ -652,17 +654,17 @@
         places: [['터키 방벽', 3, 0.1], ['시바시', 3, 6], ['리톱스키 반도', 6, 5], ['유슌 방어선', 8, 0.1], ['북타브리아', 0, 4], ['촌가르 반도', 2, 9.6], ['촌가르 해협', 6, 9.2], ['크림', 11, 6]],
         windTurns: 4,
         turnLimit: 12,
-        // A Red unit on dry ground south of a line, within its columns and
-        // rows (the outlined area on the board), turns it; its garrison
-        // makes for the fallback tile.
+        // A Red unit on dry ground in a line's rear (the outlined area on
+        // the board) turns it; its garrison makes for the fallback tile.
         lines: {
-            wall: { name: '터키 방벽', row: 3, until: 7, cols: [1, 8], label: [7, 4.1], fallback: [7, 2] },
-            chongar: { name: '촌가르 방어선', row: 7, until: 11, cols: [9, 12], label: [11, 9.1], fallback: [9, 11] },
+            wall: { name: '터키 방벽', rear: { rows: [4, 7], cols: [1, 8] }, label: [7, 4.1], fallback: [7, 2] },
+            chongar: { name: '촌가르 방어선', rear: { rows: [8, 11], cols: [9, 12] }, label: [11, 9.1], fallback: [9, 11] },
         },
-        // The White reserve answers Red units past a sector's alarm row.
+        // The White reserve answers Red units past a sector's alarm row
+        // (coming south, rows growing).
         sectors: {
-            perekop: { name: '페레코프', cols: [0, 8], alarm: 4 },
-            chongar: { name: '촌가르', cols: [9, 12], alarm: 6 },
+            perekop: { name: '페레코프', cols: [0, 8], alarm: { axis: 'r', at: 4, dir: 1 } },
+            chongar: { name: '촌가르', cols: [9, 12], alarm: { axis: 'r', at: 6, dir: 1 } },
         },
         terrain: {
             '.': { name: '초원', cost: 1, def: 0, cls: 'steppe' },
@@ -728,7 +730,7 @@
     // ~ the Volga, B the Sviyazhsk railway bridge, S Sviyazhsk, K the city,
     // k the kremlin, P the wharves.
     const kazan = {
-        id: 'kazan', front: 'east', final: false,
+        id: 'kazan', sides: SIDES, front: 'east', final: false,
         title: '카잔 탈환', date: '1918년 8월 말–9월 10일',
         settle: '카잔으로 →', board: '카잔 전장',
         strikeNote: '',
@@ -820,7 +822,7 @@
     // Terrain: . field, f wood, O the city of Orel (held as a position),
     // K Kromy, M Mtsensk.
     const orel = {
-        id: 'orel', front: 'south', final: false,
+        id: 'orel', sides: SIDES, front: 'south', final: false,
         title: '오룔 반격', date: '1919년 10월 11–20일',
         settle: '오룔로 →', board: '오룔 전장',
         strikeNote: '',
@@ -861,7 +863,7 @@
         // it, and the garrison's position falls to a trench; the garrison
         // holds on regardless (role hold), as the Kornilov division did.
         lines: {
-            orel: { name: '오룔 수비', row: 4, until: 8, cols: [5, 9], label: [7, 5.1], fallback: [8, 6] },
+            orel: { name: '오룔 수비', rear: { rows: [5, 8], cols: [5, 9] }, label: [7, 5.1], fallback: [8, 6] },
         },
         sectors: {},
         terrain: {
@@ -913,7 +915,7 @@
     // pontoon bridge, b the blown
     // railway bridge, T the east bank's trenches, t a village, U the city.
     const ufa = {
-        id: 'ufa', front: 'east', final: false,
+        id: 'ufa', sides: SIDES, front: 'east', final: false,
         title: '우파 도하', date: '1919년 6월 7–9일',
         settle: '우파로 →', board: '우파 전장',
         strikeNote: '',

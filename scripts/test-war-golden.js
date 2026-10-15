@@ -145,7 +145,7 @@ function randomBattle(s, rand, maxOrders = 400) {
             const ts = B.targets(b, u);
             if (ts.length) G.act(s, 'b:attack', u.id, ts[Math.floor(rand() * ts.length)].id);
             else G.act(s, 'b:wait', u.id);
-        } else if (k < 0.92 && B.canMove(u)) {
+        } else if (k < 0.92 && B.canMove(s.battle, u)) {
             const reach = B.reachable(b, u);
             if (!reach.length) { G.act(s, 'b:wait', u.id); continue; }
             const goal = b.def.goals[0].at;
