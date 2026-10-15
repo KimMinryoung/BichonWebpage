@@ -123,6 +123,17 @@ for (const t of D.turns) {
     }
 }
 
+// An armoured train starts on its board's railway and never leaves it.
+for (const def of Object.values(D.battles)) {
+    const train = def.units.find(u => u.rail);
+    if (!train) continue;
+    const b = B.start(def, {}, null);
+    const u = b.units.find(x => x.id === train.id);
+    assert.ok(B.onRail(b, u.r, u.c), `${def.id}: the train starts on the line`);
+    assert.ok(B.reachable(b, u).every(t => B.onRail(b, t.r, t.c)), `${def.id}: the train keeps to the line`);
+    assert.ok(B.reachable(b, u).length > 0, `${def.id}: the line runs somewhere`);
+}
+
 // Every front a season asks divisions for must answer to them: from the
 // historical line, an empty front and a crowded one end differently.
 for (const [t, turn] of D.turns.entries()) {
@@ -531,7 +542,7 @@ function fight(routes, flags = { makhno: true }, muster, def = D.battles.perekop
 // shorter or no longer, and hunger thins the ranks.
 {
     const [yushun, dzhankoy] = D.battles.perekop.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
-    const all = { 'r51a,r51b,r51g,r6g,rcz,rtr': [{ r: 2, c: 2 }, { r: 4, c: 2 }, yushun], 'r15,r52,rmk,r1c': [{ r: 5, c: 6 }, { r: 7, c: 5 }, yushun], 'r30,r30b,r4g': [{ r: 5, c: 11 }, { r: 6, c: 11 }, { r: 8, c: 10 }, dzhankoy] };
+    const all = { 'r51a,r51b,r51g,r6g,rcz': [{ r: 2, c: 2 }, { r: 4, c: 2 }, yushun], 'r15,r52,rmk,r1c': [{ r: 5, c: 6 }, { r: 7, c: 5 }, yushun], 'r30,r30b,r4g': [{ r: 5, c: 11 }, { r: 6, c: 11 }, { r: 8, c: 10 }, dzhankoy], rtr: [{ r: 6, c: 11 }, { r: 9, c: 11 }, { r: 10, c: 10 }] };
     const muster = (margin, more = {}) => Object.assign({ margin, fed: 1, commissar: false, cards: [] }, more);
     const thin = fight({ 'r15,r52,rmk': [{ r: 5, c: 6 }, { r: 7, c: 5 }, yushun] }, { makhno: true }, muster(-1));
     assert.equal(thin.result, 'won', 'the Sivash crossing needs no more than the thinnest muster');
@@ -543,7 +554,7 @@ function fight(routes, flags = { makhno: true }, muster, def = D.battles.perekop
         assert.ok(b.turn <= last, `margin ${m}: no slower than a thinner muster`);
         last = b.turn;
     }
-    assert.equal(fight({ 'r51a,r51b,r51g,r6g': all['r51a,r51b,r51g,r6g,rcz,rtr'] }, {}, muster(3)).result, 'lost', 'the Wall wants the whole western group');
+    assert.equal(fight({ 'r51a,r51b,r51g,r6g': all['r51a,r51b,r51g,r6g,rcz'] }, {}, muster(3)).result, 'lost', 'the Wall wants the whole western group');
     const hungry = B.start(D.battles.perekop, {}, muster(6, { fed: 0.8 }));
     assert.equal(B.byId(hungry, 'r15').hp, 8, 'a hungry division brings fewer men');
     assert.equal(B.byId(hungry, 'w1').hp, 10, 'the Whites are not fed by the Red plan');

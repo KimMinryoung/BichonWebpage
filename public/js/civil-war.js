@@ -667,6 +667,8 @@
                 const pips = troopPips(id, marker, avoid);
                 pips.setAttribute('data-front', id);
                 layer.append(pips);
+                const loco = s.plan.cards.some(c => c.id === 'train' && c.target === id) ? trainOnRail(id) : null;
+                if (loco) { loco.setAttribute('data-front', id); layer.append(loco); }
             }
         }
         root.append(layer);
@@ -943,7 +945,9 @@
         const units = s.plan.alloc[id] * f.perDivision;
         const n = Math.ceil(units - 1e-9);
         const commissar = s.plan.commissar[id];
-        const train = s.plan.cards.some(c => c.target === id);
+        // Trotsky's train runs on the railway (trainOnRail); another card
+        // sent here (Mironov's army) shows with the pips.
+        const train = s.plan.cards.some(c => c.target === id && c.id !== 'train');
         const extra = (commissar ? 2 : 0) + (train ? 3 : 0);
         const g = svg('g', { class: 'cw-pips', 'aria-hidden': 'true' });
         if (!n && !extra) return g;
@@ -976,6 +980,24 @@
         }
         if (commissar) { const [x, y] = slot(n); g.append(svg('path', { d: star(x + size / 2 + 1, y + size / 2, 7.5, 3.2), class: 'cw-pip-star' })); }
         if (train) { const [x, y] = slot(n + (commissar ? 2 : 0)); g.append(trainGlyph(x + 2, y - 4, 19)); }
+        return g;
+    }
+
+    // Trotsky's train on the railway that leads to the front's last held
+    // city, a little short of the city so the city's dot stays clear.
+    function trainOnRail(id) {
+        const line = s.lines[id];
+        const route = routeOf([points.moscow, ...points.fronts[id].slice(0, line)]);
+        let back = 16, i = route.length - 1, p = route[i];
+        while (i > 0 && back > 0) {
+            const q = route[i - 1];
+            const len = Math.hypot(p.x - q.x, p.y - q.y);
+            if (len >= back) { p = { x: p.x + (q.x - p.x) * back / len, y: p.y + (q.y - p.y) * back / len }; back = 0; }
+            else { back -= len; p = q; i--; }
+        }
+        const g = svg('g', { class: 'cw-train-on-rail', 'aria-hidden': 'true' });
+        g.append(svg('rect', { x: p.x - 12, y: p.y - 9, width: 24, height: 17, rx: 3, class: 'cw-train-plate' }));
+        g.append(trainGlyph(p.x - 10, p.y - 8, 20));
         return g;
     }
 
@@ -1727,6 +1749,7 @@
                 if (danger.some(m => m.r === r && m.c === c)) board.append(svg('rect', { x: c * CELL + 2, y: r * CELL + 2, width: CELL - 4, height: CELL - 4, class: 'cw-danger' }));
             }
         }
+        board.append(trackOf(def));
         const open = Object.keys(def.lines).filter(id => !b.turned[id]);
         for (const id of open) board.append(rearOutline(b, id));
         for (const [text, r, c] of def.places) board.append(svg('text', { x: c * CELL + 4, y: r * CELL + 12, class: 'cw-place' }, text));
@@ -1836,7 +1859,7 @@
             el('details', { class: 'cw-battle-brief' }, el('summary', {}, '작전 지시', el('span', {}, ` · ${def.summary}`)), ...def.brief.map(p => el('p', {}, p))),
             el('div', { class: 'cw-battle-layout' },
                 el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll' }, board), el('p', { class: 'cw-terrain-key' },
-                    ...def.legend.concat([['move', '갈 수 있는 칸'], Object.keys(def.lines).length ? ['flank', '우회 지역'] : null, ['danger', '백군이 칠 수 있는 칸']].filter(Boolean))
+                    ...def.legend.concat([def.rails ? ['track', '철도 (장갑열차는 철길로만)'] : null, ['move', '갈 수 있는 칸'], Object.keys(def.lines).length ? ['flank', '우회 지역'] : null, ['danger', '백군이 칠 수 있는 칸']].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('ul', { class: 'cw-battle-status' }, ...status.filter(Boolean).map((t, i) => el('li', { class: i > 0 && i <= goalAt ? 'is-goal' : null }, t))),
@@ -1879,6 +1902,30 @@
         return true;
     }
 
+    // The board's railway: from each rail tile's centre to each rail
+    // neighbour, and off the board from a line's end on its edge; a bed
+    // line under sleepers.
+    function trackOf(def) {
+        const g = svg('g', { class: 'cw-track', 'aria-hidden': 'true' });
+        const rails = def.rails || [];
+        const on = (r, c) => rails.some(([rr, cc]) => rr === r && cc === c);
+        const rows = def.map.length, cols = def.map[0].length;
+        const d = [];
+        for (const [r, c] of rails) {
+            const x = c * CELL + CELL / 2, y = r * CELL + CELL / 2;
+            const near = [[-1, 0], [1, 0], [0, -1], [0, 1]].filter(([dr, dc]) => on(r + dr, c + dc));
+            for (const [dr, dc] of near) d.push(`M${x} ${y}l${dc * CELL / 2} ${dr * CELL / 2}`);
+            if (near.length === 1) {
+                const [dr, dc] = [-near[0][0], -near[0][1]];
+                const out = r + dr < 0 || r + dr >= rows || c + dc < 0 || c + dc >= cols;
+                if (out) d.push(`M${x} ${y}l${dc * CELL / 2} ${dr * CELL / 2}`);
+            }
+        }
+        const path = d.join('');
+        g.append(svg('path', { d: path, class: 'cw-track-ties' }), svg('path', { d: path, class: 'cw-track-rail' }));
+        return g;
+    }
+
     // A fortification's defence as it was and as it is: 「진지 +2→0」.
     // more: shells still to land (an attack's preview).
     function fortText(b, r, c, more = 0) {
@@ -1901,7 +1948,7 @@
         return el('div', {},
             el('h3', {}, u.name, u.sub ? el('small', {}, ` ${u.sub}`) : null),
             el('p', { class: 'cw-info-hp' }, el('strong', {}, `병력 ${u.hp}/${u.maxHp}`), el('span', { class: 'cw-info-bar is-' + u.side, style: `--hp:${(100 * u.hp / u.maxHp).toFixed(0)}%`, 'aria-hidden': 'true' })),
-            el('p', {}, `공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} (${parts.join(', ')}) · 이동 ${u.mv}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
+            el('p', {}, `공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} (${parts.join(', ')}) · 이동 ${u.mv}${u.rail ? ' (철길로만)' : ''}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
             targets.length ? el('ul', { class: 'cw-info-targets', 'aria-label': '칠 수 있는 적' }, ...targets.map(d => {
                 const p = B.preview(b, u, d);
                 return el('li', {}, el('button', { type: 'button', onclick: () => { if (act('b:attack', u.id, d.id)) afterBattleAct(`${u.name}이(가) ${d.name}을(를) 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : '')); } },

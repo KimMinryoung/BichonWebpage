@@ -13,7 +13,8 @@
    the danger lasts, so a threat in one sector draws it from another.
 
    A river (terrain water) is closed to the armies and open to the boats
-   (units with naval), which also pass under a bridge (span). A board may name a post the Reds must hold
+   (units with naval), which also pass under a bridge (span). An armoured
+   train (rail) keeps to the board's railway (def.rails). A board may name a post the Reds must hold
    (protect): a White unit standing on it ends the battle lost, and a White
    raider (role raid) makes for it by the shortest dry road, riding past
    Red units instead of halting beside them. */
@@ -53,7 +54,7 @@
                     id: u.id, tag: u.tag || u.name, side: u.side, name: u.name, sub: u.sub || '', kind: u.kind,
                     role: u.role || null, line: u.line || null,
                     person: u.person || null, r: u.at[0], c: u.at[1], hp, maxHp: u.hp,
-                    atk: u.atk, def: u.def + (lead ? 1 : 0), mv: u.mv, range: u.range || 1, commissar: Boolean(lead), naval: Boolean(u.naval),
+                    atk: u.atk, def: u.def + (lead ? 1 : 0), mv: u.mv, range: u.range || 1, commissar: Boolean(lead), naval: Boolean(u.naval), rail: Boolean(u.rail),
                     moved: false, acted: false, prev: null,
                 };
             });
@@ -74,6 +75,8 @@
     const dist = (a, b) => Math.abs(a.r - b.r) + Math.abs(a.c - b.c);
     const fordOpen = b => Boolean(b.def.windTurns) && b.turn <= b.def.windTurns;
 
+    const onRail = (b, r, c) => (b.def.rails || []).some(([rr, cc]) => rr === r && cc === c);
+
     function terrain(b, r, c) {
         return b.def.terrain[tileAt(b, r, c)] || b.def.terrain['.'];
     }
@@ -85,6 +88,7 @@
         if (!inside(b, r, c)) return Infinity;
         const t = terrain(b, r, c);
         if (u && u.naval) return t.water || t.span ? 1 : Infinity;
+        if (u && u.rail) return onRail(b, r, c) ? 1 : Infinity;
         if (t.cost >= 99) return Infinity;
         if (t.ford && !fordOpen(b)) return Infinity;
         return t.cost;
@@ -401,7 +405,7 @@
 
     const api = {
         start, joins, act, reachable, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
-        terrain, groundOf, tileAt, unitAt, byId, defenseOf, fordOpen,
+        terrain, groundOf, tileAt, unitAt, byId, defenseOf, fordOpen, onRail,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.CivilWarBattle = api;

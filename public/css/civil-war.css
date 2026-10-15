@@ -974,3 +974,9 @@
     .cw-todo { gap: 3px; }
     .games-shell .cw-todo-item { padding: 3px 6px; font-size: .72rem; }
 }
+
+/* The battle board's railway, and Trotsky's train on the map's. */
+.cw-track-ties { fill: none; stroke: color-mix(in srgb, var(--text-primary) 55%, transparent); stroke-width: 9; stroke-dasharray: 1.6 5.5; }
+.cw-track-rail { fill: none; stroke: color-mix(in srgb, var(--text-primary) 70%, transparent); stroke-width: 2; }
+.cw-terrain-key .k-track { border: 0; background: linear-gradient(transparent 6px, color-mix(in srgb, var(--text-primary) 70%, transparent) 6px 8px, transparent 8px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--text-primary) 55%, transparent) 0 1.5px, transparent 1.5px 5px); }
+.cw-train-plate { fill: var(--bg-surface); stroke: var(--cw-red); stroke-width: 1.5; }
