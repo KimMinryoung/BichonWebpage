@@ -1164,13 +1164,11 @@
         return fold;
     }
 
-    // Where the front's divisions come from: kept there from last season,
-    // newly raised or out of reserve, or moved by rail at half strength.
+    // Divisions moved by rail from another front bring half their strength:
+    // said only when there are some (kept or fresh ones count whole).
     function railRow(f) {
-        if (s.rules < 2 || !f.divisions) return null;
-        const parts = [f.stay ? `그대로 ${f.stay}` : null, f.fresh ? `새로·예비에서 ${f.fresh}` : null].filter(Boolean);
-        return el('p', { class: 'cw-rail-row' + (f.moved ? ' is-moved' : '') }, parts.join(' · '),
-            f.moved ? el('strong', {}, `${parts.length ? ' · ' : ''}다른 전선에서 철도로 ${f.moved} (힘 절반)`) : null);
+        if (s.rules < 2 || !f.moved) return null;
+        return el('p', { class: 'cw-rail-row is-moved' }, el('strong', {}, `철도로 옮겨 온 ${f.moved}${josa(U.unit, '은', '는')} 힘 절반`));
     }
 
     // The fewest more divisions that give this front a better result, and
@@ -1225,7 +1223,7 @@
             title: from ? `${D.fronts[from].short}에서 이리로` : null,
             'aria-label': from ? `${U.leader}, ${D.fronts[from].short}에서 이리로` : null,
             onclick: () => { if (from) act('commissar', from, false); act('commissar', id, !on); render(); },
-        }, `★ ${U.leader}`);
+        }, U.leader);
     }
 
     // Cards aimed at a front (Trotsky's train) are sent from the front's own
@@ -1241,13 +1239,13 @@
                 type: 'button', class: 'cw-toggle' + (away ? ' is-elsewhere' : ''), 'data-key': `${cid}-${id}`, 'aria-pressed': String(Boolean(here)),
                 disabled: !played && !G.canPlay(s, cid, id),
                 title: away ? `${away}에서 이리로` : !played && s.plan.command < card.cost ? '지휘력이 모자랍니다' : null,
-                'aria-label': away ? `${name} +${card.bonus}, ${away}에서 이리로` : null,
+                'aria-label': `${name}, 전투력 +${card.bonus}` + (away ? `, ${away}에서 이리로` : ''),
                 onclick: () => {
                     if (played) act('unplay', cid);
                     if (!here) act('play', cid, id);
                     render();
                 },
-            }, `${name} +${card.bonus}`);
+            }, name);
         });
     }
 
