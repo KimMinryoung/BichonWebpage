@@ -68,7 +68,8 @@
 
 
     function person(who) {
-        return who ? el('a', Object.assign({ href: '/commulingo/people/' + who[1], class: 'cw-person' }, NEW_TAB), picture(A.portrait(who[1])), who[0]) : null;
+        const side = who && (D.portraits[who[1]] || {}).side;
+        return who ? el('a', Object.assign({ href: '/commulingo/people/' + who[1], class: 'cw-person' + (side ? ' is-' + side : '') }, NEW_TAB), picture(A.portrait(who[1])), who[0]) : null;
     }
 
 

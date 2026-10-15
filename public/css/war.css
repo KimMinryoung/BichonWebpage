@@ -363,9 +363,16 @@
 .cw-card h4 { font-size: .98rem; }
 .cw-card p { margin: 0; font-size: .86rem; line-height: var(--leading-normal); }
 .cw-advisor { font-size: .8rem !important; }
-/* A person's name with their drawn portrait (civil-war-art.js). */
-.cw-person { display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; }
+/* A person's name with their drawn portrait (art.js) on a chip of their
+   side's colour (the portrait's disc), the same in light and dark. */
+.cw-person { display: inline-flex; align-items: center; gap: 5px; vertical-align: middle; padding: 1px 7px 1px 2px; border: 1px solid #1d1d1b; border-radius: 3px; background: var(--cw-chip, #a21e2a); color: var(--cw-chip-ink, #fff); font-weight: 700; text-decoration: none; }
+.cw-person:hover { color: var(--cw-chip-ink, #fff); text-decoration: underline; }
 .cw-person .cw-face { width: 1.6em; height: 1.6em; flex: none; }
+.cw-person.is-white { --cw-chip: #e8e4da; --cw-chip-ink: #1d1d1b; }
+.cw-person.is-national { --cw-chip: #8d8d86; --cw-chip-ink: #1d1d1b; }
+.cw-person.is-black { --cw-chip: #2b2b28; --cw-chip-ink: #f1e6cf; border-color: #8d8d86; }
+.cw-person.is-interv { --cw-chip: #2f6fb8; --cw-chip-ink: #fff; }
+.cw-person.is-central { --cw-chip: #c7861c; --cw-chip-ink: #1d1d1b; }
 .cw-note { color: var(--text-secondary); font-size: .8rem !important; }
 .cw-effect { font-weight: 700; margin-top: auto !important; }
 .cw-card-target { display: flex; flex-wrap: wrap; gap: 6px; }
