@@ -131,6 +131,11 @@
             $('cwContinue').textContent = `이어하기: ${D.turns[saved.turn].date} ${D.turns[saved.turn].title}`;
             // A battle already under way skips the review that opened it.
             $('cwContinue').onclick = () => startGame(saved, saved.phase === 'battle' && saved.log.some(e => e[0].startsWith('b:')));
+        } else if (saved && G.canRetryBattle(saved)) {
+            // A war lost in a battle: that battle again.
+            $('cwContinue').hidden = false;
+            $('cwContinue').textContent = `${saved.battle.def.title} 처음부터 다시`;
+            $('cwContinue').onclick = retryBattle.bind(null, saved);
         }
         $('cwStart').onclick = () => {
             if (saved && saved.phase !== 'done' && !window.confirm('저장된 게임을 지우고 새로 시작할까요?')) return;
@@ -562,6 +567,21 @@
             layer.append(svg('text', { x, y, 'text-anchor': 'middle', class: 'cw-railway-label' }, r.name));
             const w = textWidth(r.name, 9.5);
             avoid.push({ x0: x - w / 2, x1: x + w / 2, y0: y - 9, y1: y + 2 });
+        }
+        // Places the words name that no front runs through: regions and
+        // rivers in faint italics, towns with a small dot, and places off
+        // the map at its edge with an arrow their way.
+        for (const p of points.places || []) {
+            if (p.kind === 'town') layer.append(svg('circle', { cx: p.x, cy: p.y, r: 2, class: 'cw-place-dot' }));
+            const side = p.kind === 'town' && !p.pos;
+            layer.append(svg('text', { x: side ? p.x + 4 : p.x, y: p.pos === 'below' ? p.y + 11 : p.pos === 'above' ? p.y - 5 : side ? p.y + 3 : p.y, 'text-anchor': side ? 'start' : 'middle', class: `cw-map-place is-${p.kind}` }, p.name));
+        }
+        const ARROW = { east: '→', west: '←', north: '↑', south: '↓' };
+        for (const p of points.beyond || []) {
+            const anchor = p.side === 'east' ? 'end' : p.side === 'west' ? 'start' : 'middle';
+            const x = p.x + (p.side === 'east' ? -4 : p.side === 'west' ? 4 : 0);
+            const y = p.y + (p.side === 'south' ? -5 : p.side === 'north' ? 12 : 3);
+            layer.append(svg('text', { x, y, 'text-anchor': anchor, class: 'cw-map-place is-beyond' }, p.side === 'west' || p.side === 'north' ? `${ARROW[p.side]} ${p.name}` : `${p.name} ${ARROW[p.side]}`));
         }
         for (const id of D.frontOrder) {
             const pts = points.fronts[id];
@@ -2159,6 +2179,16 @@
 
     // ── Outcome ──
 
+    // The lost battle fought again from its first turn (the save cut back).
+    function retryBattle(from) {
+        const state = G.retryBattle(from);
+        if (!state) return;
+        startGame(state, true);
+        save();
+        $('cwBattle').scrollIntoView({ block: 'start' });
+        announce(`${state.battle.def.title}: 처음부터 다시`);
+    }
+
     function renderOutcome() {
         const o = s.outcome;
         const items = [el('p', { class: 'games-kicker' }, o.stars ? '종전' : '패배'), el('h2', { id: 'cwOutcomeTitle' }, o.title), el('p', {}, o.text)];
@@ -2171,7 +2201,8 @@
                 el('p', { class: 'cw-links' }, ...D.epilogue.links.map(link))));
         }
         items.push(...retrospect());
-        items.push(el('button', { type: 'button', class: 'cw-primary', onclick: () => { try { localStorage.removeItem(KEY); } catch (_) { /* ignore */ } startGame(G.start()); save(); } }, '새 게임 시작'));
+        if (G.canRetryBattle(s)) items.push(el('button', { type: 'button', class: 'cw-primary', 'data-key': 'retry', onclick: () => retryBattle(s) }, `${s.battle.def.title} 처음부터 다시`));
+        items.push(el('button', { type: 'button', class: G.canRetryBattle(s) ? '' : 'cw-primary', onclick: () => { try { localStorage.removeItem(KEY); } catch (_) { /* ignore */ } startGame(G.start()); save(); } }, '새 게임 시작'));
         $('cwOutcome').replaceChildren(...items);
     }
 

@@ -1110,6 +1110,20 @@
         box: { west: 19, east: 66, south: 42, north: 66 }, control: 'civil-war', title: '러시아 내전 작전 지도',
         hub: moscow, hubId: 'moscow', railways,
         labelAt: { 가치나: [8, 14, 'start'], 얌부르크: [-8, 4, 'end'], 페트로그라드: [8, -2, 'start'] },
+        // Places the briefs and voices name that are not front cities:
+        // regions, rivers and towns ([이름, 위도, 경도, kind, 'below' or 'above'
+        // for a town named under or over its dot]); and
+        // places beyond the frame, named at its edge in their direction.
+        places: [
+            ['볼가강', 53.6, 47.2, 'river'], ['돈강', 49.2, 41.6, 'river'], ['비스와강', 52.6, 21.6, 'river'],
+            ['우랄', 60.6, 58.6, 'region'], ['시베리아', 60.2, 64.0, 'region'], ['크림', 45.3, 34.2, 'region'],
+            ['쿠반', 45.5, 37.6, 'region'], ['캅카스', 44.5, 45.3, 'region'], ['우크라이나', 48.9, 32.6, 'region'],
+            ['베사라비아', 47.2, 28.6, 'region'], ['에스토니아', 58.6, 24.2, 'region'], ['라트비아', 56.9, 24.9, 'region'],
+            ['첼랴빈스크', 55.16, 61.4, 'town', 'above'], ['이젭스크', 56.85, 53.2, 'town'], ['펜자', 53.2, 45.0, 'town'],
+            ['탐보프', 52.73, 41.45, 'town', 'below'], ['보로네시', 51.67, 39.2, 'town', 'below'], ['오데사', 46.48, 30.73, 'town'],
+            ['노보로시스크', 44.72, 37.77, 'town', 'below'], ['페름', 58.01, 56.25, 'town'],
+        ],
+        beyond: [['옴스크', 54.98, 73.37], ['블라디보스토크', 43.12, 131.9], ['이르쿠츠크', 52.29, 104.3], ['무르만스크', 68.97, 33.08]],
         // The map key: the game layer's colours (holders by faction kind),
         // and history's control layer.
         legend: [['cw-key-held', '붉은 군대'], ['cw-key-lost k-white', '백군'], ['cw-key-lost k-interv', '간섭군'], ['cw-key-lost k-central', '독일·오스트리아'], ['cw-key-lost k-national', '폴란드·우크라이나']],

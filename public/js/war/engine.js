@@ -831,8 +831,23 @@
             return state ? { state, order } : null;
         }
 
+        // A war ended by a lost battle can fight that battle again: the log
+        // cut back to the order that opened it (its orders are the last ones).
+        function canRetryBattle(s) {
+            const last = s.log[s.log.length - 1];
+            return s.phase === 'done' && Boolean(s.battle) && s.battle.result === 'lost' && Boolean(last) && last[0].startsWith('b:');
+        }
+
+        function retryBattle(s) {
+            if (!canRetryBattle(s)) return null;
+            let j = s.log.length - 1;
+            while (j >= 0 && s.log[j][0].startsWith('b:')) j--;
+            const state = restore({ version: D.saveVersion, rules: s.rules, log: s.log.slice(0, j + 1) });
+            return state && state.phase === 'battle' ? state : null;
+        }
+
         return {
-            DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
+            DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, canRetryBattle, retryBattle, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
             start, act, restore, serialize, forecast, activeFronts, turnData, when,
             free, allocated, threatsOf, traitsOn, battleOf, incidentOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
         };

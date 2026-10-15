@@ -36,6 +36,17 @@ function warMap(id) {
         if (r.label) points.railways.push({ id: r.id, name: r.name, at: xy(r.label) });
         return `<polyline class="cw-railway-bed" points="${pts}"/><polyline class="cw-railway" points="${pts}"/>`;
     });
+    // Named places that are not front cities, and those beyond the frame
+    // pinned to its edge where the line from the middle leaves it.
+    points.places = (scenario.map.places || []).map(([name, lat, lng, kind, pos]) => Object.assign(at([name, lat, lng]), { kind, pos: pos || null }));
+    const mid = [region.width / 2, region.height / 2];
+    points.beyond = (scenario.map.beyond || []).map(([name, lat, lng]) => {
+        const [x, y] = region.project(lat, lng);
+        const dx = x - mid[0], dy = y - mid[1];
+        const k = Math.min(Math.abs(mid[0] / (dx || 1e-9)), Math.abs(mid[1] / (dy || 1e-9)));
+        const side = Math.abs(dx) * mid[1] >= Math.abs(dy) * mid[0] ? (dx > 0 ? 'east' : 'west') : (dy > 0 ? 'south' : 'north');
+        return { name, side, x: Math.round((mid[0] + dx * k) * 10) / 10, y: Math.round((mid[1] + dy * k) * 10) / 10 };
+    });
     const end = region.svg.lastIndexOf('</svg>');
     const svg = `${region.svg.slice(0, end)}<g class="cw-railways" aria-hidden="true">${rails.join('')}</g>\n${region.svg.slice(end)}`;
     const presented = presentEventControl(control, 'ko');

@@ -998,4 +998,29 @@ for (const t of D.turns) {
 for (const [id, def] of Object.entries(D.battles)) assert.ok(def.voices && def.voices.some(v => v.when === 'start'), `${id}: opening voices`);
 for (const id of Object.keys(A.people)) assert.match(A.portrait(id, id), /role="img"/);
 
+// A war lost in a battle (Mtsensk left to the Kornilov regiment, Tula falls)
+// fights that battle again from its first turn; a battle lost mid-war or a
+// war that goes on offers nothing.
+{
+    const s = G.start();
+    for (let guard = 0; guard < 40 && !(s.phase === 'battle' && s.battle.def.id === 'orel'); guard++) {
+        if (s.phase === 'plan') { if (!s.plan.choice) G.act(s, 'choose', G.turnData(s).choice.history); plan(s); G.act(s, 'settle'); }
+        else if (s.phase === 'battle') G.act(s, 'assume');
+        else if (s.phase === 'review') G.act(s, 'next');
+    }
+    assert.equal(s.battle.def.id, 'orel');
+    assert.equal(G.canRetryBattle(s), false);
+    const atStart = G.serialize(s);
+    const post = B.byId(s.battle, 'o13b');
+    const off = B.reachable(s.battle, post).find(m => m.r !== post.r || m.c !== post.c);
+    assert.ok(G.act(s, 'b:move', 'o13b', off.r, off.c));
+    assert.ok(G.act(s, 'b:end'));
+    assert.equal(s.phase, 'done');
+    assert.ok(G.canRetryBattle(s));
+    const again = G.retryBattle(G.restore(G.serialize(s)));
+    assert.equal(again.phase, 'battle');
+    assert.equal(again.battle.turn, 1);
+    assert.equal(G.serialize(again), atStart);
+}
+
 console.log('civil-war: campaign, policies, save, battle, bar and voice checks passed');
