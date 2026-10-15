@@ -964,3 +964,7 @@
     .cw-todo-item.is-done { display: none; }
     .games-shell .cw-battle-actions button { padding: 6px 10px; font-size: .82rem; min-height: 36px; }
 }
+@media (max-width: 560px) {
+    .cw-todo { gap: 3px; }
+    .games-shell .cw-todo-item { padding: 3px 6px; font-size: .72rem; }
+}
