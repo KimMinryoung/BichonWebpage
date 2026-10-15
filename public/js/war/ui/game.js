@@ -1110,7 +1110,7 @@
             // enemy (folded on a phone, its pressure summed on the fold).
             const card = el('article', { class: 'cw-front', id: 'cwFront-' + id, tabindex: '-1' },
                 el('header', {}, el('h4', {}, D.fronts[id].name, trendMark(after - hist))),
-                el('div', { class: 'cw-front-controls' }, stepper, ...stepButtons(id, nextStep(id, f)), commissarToggle(id), ...frontCards(id)),
+                el('div', { class: 'cw-front-controls' }, stepper, commissarToggle(id), ...frontCards(id), ...stepButtons(id, nextStep(id, f))),
                 railRow(f),
                 meter(id, f, line, s.turn, s.plan.choice, '예상'),
                 musterRow(id),
@@ -1122,9 +1122,11 @@
         box.replaceChildren(...items);
     }
 
-    // The steps to the next result and back: as many divisions as the next
-    // better result takes (or how many more it would need than are free),
-    // and as many as can go without a worse one.
+    // The steps to the next result and back, after the front's own buttons
+    // (on a phone they wrap to a row of their own and the buttons keep
+    // theirs): as many divisions as the next better result takes (or how
+    // many more it would need than are free), and as many as can go
+    // without a worse one.
     function stepButtons(id, step) {
         const n = s.plan.alloc[id];
         const out = [];
@@ -1133,7 +1135,7 @@
             'aria-label': `다음 결과까지 ${U.unit} ${step.more}개 더 보내기`,
             onclick: () => { act('alloc', id, n + step.more); render(); },
         }, `+${step.more} 다음 결과`));
-        else if (step.more) out.push(el('span', { class: 'cw-step is-short' }, `다음 결과까지 ${step.more}${U.unit} 더 필요`));
+        else if (step.more) out.push(el('span', { class: 'cw-step is-short', 'aria-label': `다음 결과까지 ${U.unit} ${step.more}개 더 필요` }, `다음 결과 +${step.more} 필요`));
         if (step.spare) out.push(el('button', {
             type: 'button', class: 'cw-step is-spare', 'data-key': `spare-${id}`,
             'aria-label': `결과는 그대로, ${U.unit} ${step.spare}개 빼기`,
@@ -1143,12 +1145,12 @@
     }
 
     // The enemy on a front: who comes, what they want, their traits and
-    // where the numbers come from. Folded on a phone, with the factions and
-    // what their traits add to the pressure on the fold; open on a wide
-    // screen. Kept as the player left it from one render to the next.
-    let foeOpen = null;
+    // where the numbers come from. Open to start; folded, the factions and
+    // what their traits add to the pressure stay on the fold. Kept as the
+    // player left it from one render to the next.
+    let foeOpen = true;
     function foeFold(id, f, threat) {
-        const open = foeOpen === null ? !NARROW.matches : foeOpen;
+        const open = foeOpen;
         const by = (f.traits || []).filter(tr => tr.rule && tr.counted && tr.on).reduce((a, tr) => a + tr.by, 0);
         const names = (threat.foes || []).map(fid => D.factions[fid].short || D.factions[fid].name).join('·');
         const fold = el('details', { class: 'cw-foe-fold', open },
