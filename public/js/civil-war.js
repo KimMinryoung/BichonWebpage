@@ -683,7 +683,10 @@
                 // each unit on its own: one sent later runs out by itself.
                 if (fc && line > 0) {
                     const route = routeOf([points.moscow, ...points.fronts[id].slice(0, line)]);
-                    pips.querySelectorAll('[data-unit]').forEach((u, k) => glide(`${u.dataset.unit}:${id}`, u, route, i * 220 + 500 + k * 45, gliding));
+                    pips.querySelectorAll('[data-unit]').forEach((u, k) => {
+                        const name = `${u.dataset.unit}:${id}`;
+                        shift(name, u, glide(name, u, route, i * 220 + 500 + k * 45, gliding));
+                    });
                 }
                 if (trains[id]) {
                     trains[id].g.setAttribute('data-front', id);
@@ -692,7 +695,7 @@
                 }
             }
         }
-        for (const name of Object.keys(glides.start)) if (!gliding.has(name)) delete glides.start[name];
+        for (const kept of [glides.start, glides.pos, glides.shift]) for (const name of Object.keys(kept)) if (!gliding.has(name)) delete kept[name];
         root.append(layer);
         markPicked();
         spotlight(lit);
@@ -709,22 +712,22 @@
     // out of view); one added later (the train sent, a front's first
     // division) sets off at once. Each start is kept, so a redraw mid-way
     // carries on.
-    const glides = { key: null, start: {} };
+    const glides = { key: null, start: {}, pos: {}, shift: {} };
     function glide(name, node, route, delay, seen) {
         seen.add(name);
-        if (stillMotion() || route.length < 2) return;
-        if (glides.key !== motion.key) glides.key = motion.key, glides.start = {};
+        if (glides.key !== motion.key) Object.assign(glides, { key: motion.key, start: {}, pos: {}, shift: {} });
+        if (stillMotion() || route.length < 2) return false;
         const end = route[route.length - 1];
         const at = [0];
         for (let i = 1; i < route.length; i++) at.push(at[i - 1] + Math.hypot(route[i].x - route[i - 1].x, route[i].y - route[i - 1].y));
         const total = at[at.length - 1];
-        if (total < 4) return;
+        if (total < 4) return false;
         const duration = Math.min(1100, 450 + total * 0.9);
         const now = performance.now();
         const entering = motion.at === null || now - motion.at < MOTION_MS;
         if (glides.start[name] === undefined && motion.at !== null) glides.start[name] = entering ? Math.max(now, motion.at + delay) : now;
         const start = glides.start[name];
-        if (start !== undefined && now - start >= duration) return;
+        if (start !== undefined && now - start >= duration) return false;
         const frames = route.map((p, i) => ({
             offset: at[i] / total,
             translate: `${(p.x - end.x).toFixed(1)}px ${(p.y - end.y).toFixed(1)}px`,
@@ -733,6 +736,21 @@
         }));
         const anim = node.animate(frames, { duration, delay: start === undefined ? delay : start - now, easing: 'cubic-bezier(.25, .1, .2, 1)', fill: 'backwards' });
         if (start === undefined) anim.pause();
+        return true;
+    }
+
+    // A unit already on the map whose slot moved (the row regrown by a
+    // division or the commissar sent) slides over to it on its own.
+    function shift(name, node, running) {
+        const x = Number(node.dataset.x), y = Number(node.dataset.y);
+        const was = glides.pos[name];
+        glides.pos[name] = { x, y };
+        if (running || stillMotion()) { delete glides.shift[name]; return; }
+        const now = performance.now();
+        if (was && (was.x !== x || was.y !== y)) glides.shift[name] = { dx: was.x - x, dy: was.y - y, at: now };
+        const sh = glides.shift[name];
+        if (!sh || now - sh.at >= 300) return;
+        node.animate([{ translate: `${sh.dx.toFixed(1)}px ${sh.dy.toFixed(1)}px` }, { translate: '0px 0px' }], { duration: 300, delay: sh.at - now, easing: 'cubic-bezier(.25, .1, .2, 1)', fill: 'backwards' });
     }
 
     // The way the attackers on a rail front come: down the railway from
@@ -1050,16 +1068,16 @@
         avoid.push(best.box);
         const slot = i => [best.box.x0 + (i % perRow) * (size + gap), best.box.y0 + Math.floor(i / perRow) * (size + gap)];
         // Each unit in its own group, named for its glide (renderMap).
-        const unit = name => g.appendChild(svg('g', { 'data-unit': name }));
+        const unit = (name, [x, y]) => g.appendChild(svg('g', { 'data-unit': name, 'data-x': x.toFixed(1), 'data-y': y.toFixed(1) }));
         for (let i = 0; i < n; i++) {
             const [x, y] = slot(i);
             const part = Math.min(1, units - i);
-            const u = unit(`pip${i}`);
+            const u = unit(`pip${i}`, [x, y]);
             if (part < 1) u.append(svg('rect', { x, y, width: size, height: size, class: 'cw-pip is-empty' }));
             u.append(svg('rect', { x, y, width: size * part, height: size, class: 'cw-pip' }));
         }
-        if (commissar) { const [x, y] = slot(n); unit('star').append(svg('path', { d: star(x + size / 2 + 1, y + size / 2, 7.5, 3.2), class: 'cw-pip-star' })); }
-        if (train) { const [x, y] = slot(n + (commissar ? 2 : 0)); unit('card').append(trainGlyph(x + 2, y - 4, 19)); }
+        if (commissar) { const [x, y] = slot(n); unit('star', [x, y]).append(svg('path', { d: star(x + size / 2 + 1, y + size / 2, 7.5, 3.2), class: 'cw-pip-star' })); }
+        if (train) { const [x, y] = slot(n + (commissar ? 2 : 0)); unit('card', [x, y]).append(trainGlyph(x + 2, y - 4, 19)); }
         return g;
     }
 
