@@ -105,6 +105,24 @@ for (const t of D.turns) {
     for (const id of t.cards) assert.ok(D.cards[id], `${t.id}: ${id}`);
 }
 
+// The railways: every line within the map's frame and joined to Moscow's
+// network at a shared station point (a junction typed twice the same).
+{
+    const key = ([lat, lng]) => `${lat},${lng}`;
+    const reached = new Set([key(D.moscow.slice(1))]);
+    let grew = true;
+    while (grew) {
+        grew = false;
+        for (const r of D.railways) {
+            if (r.pts.some(p => reached.has(key(p))) && !r.pts.every(p => reached.has(key(p)))) { r.pts.forEach(p => reached.add(key(p))); grew = true; }
+        }
+    }
+    for (const r of D.railways) {
+        assert.ok(r.pts.length >= 2 && r.pts.every(([lat, lng]) => lat >= 42 && lat <= 66 && lng >= 19 && lng <= 66), r.id);
+        assert.ok(r.pts.every(p => reached.has(key(p))), `${r.id} joins the network`);
+    }
+}
+
 // Every front a season asks divisions for must answer to them: from the
 // historical line, an empty front and a crowded one end differently.
 for (const [t, turn] of D.turns.entries()) {

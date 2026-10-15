@@ -18,11 +18,23 @@ function civilWarMap() {
         const [x, y] = region.project(lat, lng);
         return { name, x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10 };
     };
-    const points = { moscow: at(DATA.moscow), fronts: {} };
+    const points = { moscow: at(DATA.moscow), fronts: {}, railways: [], lines: [] };
     for (const [id, front] of Object.entries(DATA.fronts)) points.fronts[id] = front.cities.map(at);
+    // The railways go into the basemap (drawn once as the bitmap, over
+    // history's control areas, under the game layer). Their names and
+    // their lines (for routing the fronts along them) go with the points.
+    const xy = ([lat, lng]) => region.project(lat, lng).map(v => Math.round(v * 10) / 10);
+    const rails = DATA.railways.map(r => {
+        points.lines.push(r.pts.map(xy));
+        const pts = r.pts.map(p => xy(p).join(',')).join(' ');
+        if (r.label) points.railways.push({ id: r.id, name: r.name, at: xy(r.label) });
+        return `<polyline class="cw-railway-bed" points="${pts}"/><polyline class="cw-railway" points="${pts}"/>`;
+    });
+    const end = region.svg.lastIndexOf('</svg>');
+    const svg = `${region.svg.slice(0, end)}<g class="cw-railways" aria-hidden="true">${rails.join('')}</g>\n${region.svg.slice(end)}`;
     const presented = presentEventControl(control, 'ko');
     const map = {
-        svg: region.svg, width: region.width, height: region.height, points,
+        svg, width: region.width, height: region.height, points,
         phases: presented ? presented.phases : [], sides: presented ? presented.sides : [],
     };
     cached = { control, map };

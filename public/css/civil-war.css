@@ -143,7 +143,12 @@
 @media (prefers-reduced-motion: reduce) { .cw-map-frame.is-spotlight [data-front].is-lit { animation: none; } }
 .cw-chain { fill: none; stroke: color-mix(in srgb, var(--text-secondary) 35%, transparent); stroke-width: 1; stroke-dasharray: 3 3; }
 .cw-chain.is-active { stroke: var(--cw-red); stroke-width: 2; stroke-dasharray: none; }
-.cw-rail { fill: none; stroke: color-mix(in srgb, var(--cw-red) 80%, transparent); stroke-width: 7; stroke-dasharray: 1.4 4.2; }
+.cw-rail { fill: none; stroke: color-mix(in srgb, var(--cw-red) 80%, transparent); stroke-width: 6; stroke-dasharray: 1.4 4.2; stroke-linejoin: round; }
+.cw-chain { stroke-linejoin: round; }
+/* The railways of 1918: a rail with its sleepers, in ink on the land. */
+.cw-map-frame .cw-railway-bed { fill: none; stroke: color-mix(in srgb, var(--text-primary) 55%, var(--cw-land)); stroke-width: 1.3; stroke-linejoin: round; }
+.cw-map-frame .cw-railway { fill: none; stroke: color-mix(in srgb, var(--text-primary) 55%, var(--cw-land)); stroke-width: 4.5; stroke-dasharray: 1 5; stroke-linejoin: round; }
+.cw-railway-label { font-size: 9.5px; font-style: italic; fill: var(--text-secondary); paint-order: stroke; stroke: var(--cw-land); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
 .cw-chain.is-moving { stroke-dasharray: 4 3; }
 .cw-ring-under { fill: none; stroke: var(--cw-ink); stroke-width: 3.6; }
 .cw-ring { fill: none; stroke-width: 2; stroke-dasharray: 3 2; }
