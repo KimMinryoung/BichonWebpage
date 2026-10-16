@@ -54,11 +54,69 @@ async function supersede(client, row, op, actor, note, keepBody) {
             row.body_updated_at, row.updated_at, row.updated_by, op, actor, note || null]);
 }
 
+async function supersedeOriginal(client, row, op, actor, note) {
+    await client.query(
+        `INSERT INTO commulingo_doc_original_revisions
+            (doc_id, revision, lang, body, body_sha256, public, rights, source, updated_at, updated_by,
+             superseded_op, superseded_by, note)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)`,
+        [row.doc_id, row.revision, row.lang, row.body, row.body_sha256, row.public, row.rights, row.source,
+            row.updated_at, row.updated_by, op, actor, note || null]);
+}
+
+// An original (migration 368): { docId, lang, body, public, rights, source, expectedRevision? }.
+// The body is stored as given (callers sanitize it, as for translations).
+async function writeOriginal(c, item, actor, note) {
+    if (!item || typeof item.docId !== 'string' || !ID.test(item.docId)) throw badRequest('original: doc id must be lowercase letters, digits, hyphens');
+    const { docId } = item;
+    if (typeof item.lang !== 'string' || !/^[a-z]{2,3}$/.test(item.lang)) throw badRequest(`${docId}: original lang must be a 2-3 letter code`);
+    if (typeof item.body !== 'string' || !item.body.trim()) throw badRequest(`${docId}: original body must be non-empty html`);
+    const isPublic = item.public === true;
+    const rights = typeof item.rights === 'string' ? item.rights.trim() : '';
+    const source = typeof item.source === 'string' ? item.source.trim() : '';
+    if (isPublic && !rights) throw badRequest(`${docId}: a public original needs rights (why it may be published)`);
+    const current = (await c.query('SELECT * FROM commulingo_doc_originals WHERE doc_id = $1 FOR UPDATE', [docId])).rows[0];
+    if (item.expectedRevision !== undefined && (current ? current.revision : 0) !== item.expectedRevision) {
+        throw badRequest(`${docId}: original expected revision ${item.expectedRevision}, found ${current ? current.revision : 'none'}`, 409);
+    }
+    const bodySha = sha256(item.body);
+    if (!current) {
+        const revision = (await c.query(
+            'SELECT COALESCE(MAX(revision), 0) + 1 AS n FROM commulingo_doc_original_revisions WHERE doc_id = $1', [docId])).rows[0].n;
+        await c.query(
+            `INSERT INTO commulingo_doc_originals (doc_id, lang, body, body_sha256, public, rights, source, revision, updated_by, created_by)
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $9)`,
+            [docId, item.lang, item.body, bodySha, isPublic, rights, source, revision, actor]);
+        return { id: docId, revision, op: 'insert' };
+    }
+    if (current.body_sha256 === bodySha && current.lang === item.lang && current.public === isPublic
+        && current.rights === rights && current.source === source) {
+        return { id: docId, revision: current.revision, op: 'unchanged' };
+    }
+    await supersedeOriginal(c, current, 'update', actor, note);
+    await c.query(
+        `UPDATE commulingo_doc_originals
+            SET lang = $2, body = $3, body_sha256 = $4, public = $5, rights = $6, source = $7,
+                revision = revision + 1, updated_at = NOW(), updated_by = $8
+          WHERE doc_id = $1`,
+        [docId, item.lang, item.body, bodySha, isPublic, rights, source, actor]);
+    return { id: docId, revision: current.revision + 1, op: 'update' };
+}
+
+async function removeOriginal(c, docId, actor, note) {
+    const current = (await c.query('SELECT * FROM commulingo_doc_originals WHERE doc_id = $1 FOR UPDATE', [docId])).rows[0];
+    if (!current) return false;
+    await supersedeOriginal(c, current, 'delete', actor, note);
+    await c.query('DELETE FROM commulingo_doc_originals WHERE doc_id = $1', [docId]);
+    return true;
+}
+
 // changes: {
 //   upserts: [{ id, entry, body?, expectedRevision?, sortOrder? }]  body omitted = keep;
 //            a new document needs a body
 //   deletes: [id]
 //   redirects: { set: { fromId: { id, anchor, note? } }, remove: [fromId] }
+//   originals: { set: [{ docId, lang, body, public, rights, source, expectedRevision? }], remove: [docId] }
 // }
 // Runs in the caller's transaction when `client` is given, else in its own.
 // Returns { written: [{ id, revision, op }], deleted: [id] }.
@@ -125,6 +183,7 @@ async function writeDocs(changes, { actor, note, client } = {}) {
             const current = (await c.query('SELECT * FROM commulingo_docs WHERE id = $1 FOR UPDATE', [id])).rows[0];
             if (!current) throw badRequest(`doc "${id}" not found`, 404);
             await supersede(c, current, 'delete', actor, note, true);
+            await removeOriginal(c, id, actor, note); // would go with the row (ON DELETE CASCADE) unrecorded
             await c.query('DELETE FROM commulingo_docs WHERE id = $1', [id]);
             deleted.push(id);
         }
@@ -137,7 +196,12 @@ async function writeDocs(changes, { actor, note, client } = {}) {
         for (const fromId of redirects.remove || []) {
             await c.query('DELETE FROM commulingo_doc_redirects WHERE from_id = $1', [fromId]);
         }
-        return { written, deleted, linkAudits };
+        const originals = [];
+        for (const item of changes.originals?.set || []) originals.push(await writeOriginal(c, item, actor, note));
+        for (const docId of changes.originals?.remove || []) {
+            if (await removeOriginal(c, docId, actor, note)) originals.push({ id: docId, op: 'delete' });
+        }
+        return { written, deleted, linkAudits, originals };
     });
     // Same-process readers see the write at once; other processes within a
     // refresh cycle (docs-store, 60 s).
@@ -157,6 +221,12 @@ async function readAllDocRows({ client = db, withBody = true } = {}) {
     const docs = (await client.query(`SELECT ${cols} FROM commulingo_docs ORDER BY sort_order, id`)).rows;
     const redirects = (await client.query('SELECT * FROM commulingo_doc_redirects ORDER BY from_id')).rows;
     return { docs, redirects };
+}
+
+// Every stored original, public or not (export and the admin side only;
+// the reader goes through docs-store.js, which reads public ones alone).
+async function readAllOriginalRows({ client = db } = {}) {
+    return (await client.query('SELECT * FROM commulingo_doc_originals ORDER BY doc_id')).rows;
 }
 
 async function listDocRevisions(id, { client = db } = {}) {
@@ -182,4 +252,4 @@ async function restoreDocRevision(id, revision, { actor, note } = {}) {
         { actor, note: note || `restore revision ${revision}` });
 }
 
-module.exports = { writeDocs, readDocRow, readAllDocRows, listDocRevisions, restoreDocRevision, storedEntry, sha256 };
+module.exports = { writeDocs, readDocRow, readAllDocRows, readAllOriginalRows, listDocRevisions, restoreDocRevision, storedEntry, sha256 };

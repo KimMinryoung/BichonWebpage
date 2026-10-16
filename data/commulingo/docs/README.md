@@ -59,6 +59,23 @@
 끝내거나 규정한 문서 하나만 싣는다. `scripts/smoke-commulingo-doc-excerpts.js`가
 선언된 발췌가 모두 실제 제목을 가리키는지 확인한다.
 
+## 원문 (2026-10-16, 마이그레이션 368)
+
+번역 문헌은 번역 저본인 원문을 `commulingo_doc_originals`에 함께 둔다(문헌 하나에 원문 하나,
+`lang`·`body`·`public`·`rights`·`source`, 이전 판은 `commulingo_doc_original_revisions`).
+원문은 번역 대조용으로 늘 저장하되, **공개는 저작권이 끝났거나(PD) 공문서·자유 라이선스처럼
+게시 근거가 있는 것만** 한다. `public: true`는 `rights`(게시 근거 한 줄, 예: 「저자 1940년 사망,
+퍼블릭 도메인」)가 없으면 DB가 거부한다. 저작권이 살아 있는 책(현대 연구서·전기)의 원문은
+`public: false`로만 저장한다.
+
+- 공개된 원문만 서버 스냅숏에 들어가고 `/commulingo/docs/<id>/original`로 서빙된다. 리더 컨트롤
+  바 오른쪽 「원문」/「번역」 칸이 둘을 오간다. 비공개 원문은 서버가 읽지 않는다.
+- 원문의 제목 id는 번역과 맞춘다(모음집이면 각 글 h1의 id를 같게) — 같은 자리를 가리키게 하려는 것.
+- 편집: `scripts/commulingo-docs export <dir> <id>`가 원문이 있으면 `<id>.original.html`과
+  `originals.json`(`lang`·`public`·`rights`·`source`)을 함께 쓴다. 새 원문은 `originals.json`에
+  항목을 더하고 파일을 두면 된다. `put`이 바뀐 원문만 쓰고(리비전 확인), export 때 있던 원문의
+  항목을 지우면 원문도 지운다.
+
 문서 추가/수정은 **배포·커밋 없이** DB 쓰기만으로 1분 안에 반영된다.
 (라우트/뷰/CSS 변경은 `scripts/deploy` 필요.)
 

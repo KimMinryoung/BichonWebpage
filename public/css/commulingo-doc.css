@@ -1040,3 +1040,22 @@
     display: none;
   }
 }
+
+/* 번역 ↔ 원문 전환(공개된 원문이 있는 문헌만). 바의 맨 오른쪽 칸으로, 목차·검색
+   칸과 같은 높이·칸막이·글꼴을 쓴다. */
+.doc-version-switch {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  padding: 0 1rem;
+  border-left: 1px solid var(--border);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.doc-version-switch:hover {
+  color: var(--link);
+}

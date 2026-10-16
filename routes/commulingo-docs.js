@@ -2,7 +2,7 @@ const { dictionarySearchRoute } = require('../utils/dictionary-search-route');
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
-const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect, getCommuLingoDocContent } = require('../data/commulingo/docs-store');
+const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect, getCommuLingoDocContent, getCommuLingoDocOriginalContent } = require('../data/commulingo/docs-store');
 const { createDocRefResolver } = require('../data/commulingo/docs-refs');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { courseChaptersForDoc } = require('../data/commulingo/book-page');
@@ -68,6 +68,108 @@ router.get('/:docId/search', (req, res) => {
     }
 });
 
+// One reader page: the translation, or its published original (original = { lang }).
+async function renderDoc(req, res, raw, original) {
+    const lang = res.locals.lang;
+    const docId = raw.id;
+    const doc = presentDoc(raw, lang, await createDocRefResolver(lang));
+    // The original-language page (original = { lang }) reads like the
+    // translation, through the same reader, without the glossary links that
+    // belong to the translation's language.
+    const content = original ? getCommuLingoDocOriginalContent(raw) : getCommuLingoDocContent(raw);
+    const docLang = original ? original.lang : (raw.docLang || 'ko');
+    const pagePath = `/commulingo/docs/${docId}` + (original ? '/original' : '');
+    const linkHtml = (scope, html) => original ? html : linkDocHtml(getCommuLingoDocContent(raw), raw, lang, scope, html);
+    const titleSuffix = original ? (lang === 'en' ? ' (original)' : ' (원문)') : '';
+    // The other version's address, for the reader's 「원문」/「번역」 switch.
+    const switchTo = original ? { href: `/commulingo/docs/${docId}`, original: false }
+        : raw.original ? { href: `/commulingo/docs/${docId}/original`, original: true, lang: raw.original.lang } : null;
+    const jsonLd = commuLingoBreadcrumb(lang, [
+        { name: lang === 'en' ? 'Reference Library' : '참고 문헌', href: '/commulingo/docs' },
+        { name: doc.title, href: pagePath },
+    ], res.locals.urlLanguage);
+    // The charts that carry this document as a node, so the reader can walk
+    // back out to where the text sits in the story. The forward direction
+    // (a chart node pointing at a document) is a `doc` ref in the chart JSON.
+    doc.genealogies = genealogyLinksFor('doc', docId, lang);
+    // Course chapters that read this document.
+    doc.courses = courseChaptersForDoc(docId, lang);
+    const { html, toc, paged } = content;
+    setShortPublicCache(res);
+
+    // Long documents read page by page along the TOC (docs-store decides);
+    // short ones keep the single-scroll reader.
+    if (paged) {
+        const total = paged.pages.length;
+        let current = Number.parseInt(req.query.p, 10);
+        if (!Number.isFinite(current) || current < 1) current = 1;
+        if (current > total) current = total;
+        const page = paged.pages[current - 1];
+        // The title block is left alone: a document should not carry a
+        // glossary link inside its own heading.
+        return res.render('public/commulingo-doc', {
+            doc,
+            bodyTopHtml: paged.titleHtml,
+            bodyRestHtml: await linkHtml('p' + current, page.html),
+            toc: nestToc(toc),
+            pagination: {
+                current,
+                total,
+                prevHeading: current > 1 ? paged.pages[current - 2].heading : '',
+                nextHeading: current < total ? paged.pages[current].heading : '',
+            },
+            idToPage: paged.idToPage,
+            pagePath,
+            docLang,
+            switchTo,
+            pageTitle: (current > 1 ? `${doc.title} (${current}/${total})` : doc.title) + titleSuffix,
+            pageDescription: doc.description,
+            jsonLd,
+        });
+    }
+
+    // The TOC slots in right after the title h1, so split the body there.
+    const cut = html.indexOf('</h1>');
+    const bodyTopHtml = cut === -1 ? '' : html.slice(0, cut + '</h1>'.length);
+    const bodyRestHtml = cut === -1 ? html : html.slice(cut + '</h1>'.length);
+    res.render('public/commulingo-doc', {
+        doc,
+        bodyTopHtml,
+        bodyRestHtml: await linkHtml('body', bodyRestHtml),
+        toc: nestToc(toc),
+        pagination: null,
+        idToPage: null,
+        pagePath,
+        docLang,
+        switchTo,
+        pageTitle: doc.title + titleSuffix,
+        pageDescription: doc.description,
+        jsonLd,
+    });
+}
+
+// The original-language text of a translated document, when it is published
+// (commulingo_doc_originals.public; docs-store never loads the others).
+router.get('/:docId/original', async (req, res) => {
+    try {
+        const lang = res.locals.lang;
+        const raw = getCommuLingoDoc(typeof req.params.docId === 'string' ? req.params.docId.trim() : '');
+        if (!raw || !raw.original) return errorPage.notFound(res, {
+            message: lang === 'en' ? 'Original text not found.' : '원문을 찾을 수 없습니다.',
+            backHref: raw ? `/commulingo/docs/${raw.id}` : '/commulingo/docs',
+            backLabel: lang === 'en' ? 'Reference Library' : '참고 문헌',
+        });
+        await renderDoc(req, res, raw, { lang: raw.original.lang });
+    } catch (err) {
+        console.error('commulingo doc original:', err);
+        errorPage.serverError(res, {
+            message: res.locals.lang === 'en' ? 'Failed to load document.' : '문서를 불러올 수 없습니다.',
+            backHref: '/commulingo/docs',
+            backLabel: res.locals.lang === 'en' ? 'Reference Library' : '참고 문헌',
+        });
+    }
+});
+
 router.get('/:docId', async (req, res) => {
     try {
         const lang = res.locals.lang;
@@ -91,72 +193,7 @@ router.get('/:docId', async (req, res) => {
             message: lang === 'en' ? 'Document not found.' : '문서를 찾을 수 없습니다.',
             backHref: '/commulingo/docs', backLabel: lang === 'en' ? 'Reference Library' : '참고 문헌',
         });
-        const doc = presentDoc(raw, lang, await createDocRefResolver(lang));
-        const pagePath = `/commulingo/docs/${docId}`;
-        const jsonLd = commuLingoBreadcrumb(lang, [
-            { name: lang === 'en' ? 'Reference Library' : '참고 문헌', href: '/commulingo/docs' },
-            { name: doc.title, href: pagePath },
-        ], res.locals.urlLanguage);
-        // The charts that carry this document as a node, so the reader can walk
-        // back out to where the text sits in the story. The forward direction
-        // (a chart node pointing at a document) is a `doc` ref in the chart JSON.
-        doc.genealogies = genealogyLinksFor('doc', docId, lang);
-        // Course chapters that read this document.
-        doc.courses = courseChaptersForDoc(docId, lang);
-        const { html, toc, paged } = getCommuLingoDocContent(raw);
-        setShortPublicCache(res);
-
-        // Long documents read page by page along the TOC (docs-store decides);
-        // short ones keep the single-scroll reader.
-        if (paged) {
-            const total = paged.pages.length;
-            let current = Number.parseInt(req.query.p, 10);
-            if (!Number.isFinite(current) || current < 1) current = 1;
-            if (current > total) current = total;
-            const page = paged.pages[current - 1];
-            // The title block is left alone: a document should not carry a
-            // glossary link inside its own heading.
-            return res.render('public/commulingo-doc', {
-                doc,
-                bodyTopHtml: paged.titleHtml,
-                bodyRestHtml: await linkDocHtml(
-                    getCommuLingoDocContent(raw), raw, lang, 'p' + current, page.html,
-                ),
-                toc: nestToc(toc),
-                pagination: {
-                    current,
-                    total,
-                    prevHeading: current > 1 ? paged.pages[current - 2].heading : '',
-                    nextHeading: current < total ? paged.pages[current].heading : '',
-                },
-                idToPage: paged.idToPage,
-                pagePath,
-                docLang: raw.docLang || 'ko',
-                pageTitle: current > 1 ? `${doc.title} (${current}/${total})` : doc.title,
-                pageDescription: doc.description,
-                jsonLd,
-            });
-        }
-
-        // The TOC slots in right after the title h1, so split the body there.
-        const cut = html.indexOf('</h1>');
-        const bodyTopHtml = cut === -1 ? '' : html.slice(0, cut + '</h1>'.length);
-        const bodyRestHtml = cut === -1 ? html : html.slice(cut + '</h1>'.length);
-        res.render('public/commulingo-doc', {
-            doc,
-            bodyTopHtml,
-            bodyRestHtml: await linkDocHtml(
-                getCommuLingoDocContent(raw), raw, lang, 'body', bodyRestHtml,
-            ),
-            toc: nestToc(toc),
-            pagination: null,
-            idToPage: null,
-            pagePath,
-            docLang: raw.docLang || 'ko',
-            pageTitle: doc.title,
-            pageDescription: doc.description,
-            jsonLd,
-        });
+        await renderDoc(req, res, raw, null);
     } catch (err) {
         console.error('commulingo doc detail:', err);
         errorPage.serverError(res, {

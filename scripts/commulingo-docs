@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 # commulingo-docs — edit CommuLingo reference documents, which live in the
 # database (commulingo_docs), as files. export writes a directory shaped like
-# the old data/commulingo/docs/ (manifest.json + <id>.html); edit it with any
+# the old data/commulingo/docs/ (manifest.json + <id>.html, and for a document
+# with a stored original <id>.original.html plus its line in originals.json:
+# lang, public, rights, source); edit it with any
 # tool, then put sends back only what changed. Each document is guarded by the
 # revision it was exported at, so an edit made meanwhile (admin screen, another
 # job) is refused rather than overwritten. Every write keeps the replaced
@@ -39,6 +41,15 @@ for doc in bundle["docs"]:
     with open(os.path.join(d, doc["id"] + ".html"), "w", encoding="utf-8") as f:
         f.write(doc["body"])
     docs.append({"id": doc["id"], "file": doc["id"] + ".html", **doc["entry"]})
+originals = {}
+for doc_id, original in (bundle.get("originals") or {}).items():
+    name = doc_id + ".original.html"
+    with open(os.path.join(d, name), "w", encoding="utf-8") as f:
+        f.write(original["body"])
+    originals[doc_id] = {"file": name, "lang": original["lang"], "public": original["public"],
+                         "rights": original["rights"], "source": original["source"]}
+with open(os.path.join(d, "originals.json"), "w", encoding="utf-8") as f:
+    json.dump(originals, f, ensure_ascii=False, indent=2); f.write("\n")
 manifest = {"docs": docs}
 if bundle.get("redirects") is not None:
     manifest["redirects"] = bundle["redirects"]
@@ -46,7 +57,8 @@ with open(os.path.join(d, "manifest.json"), "w", encoding="utf-8") as f:
     json.dump(manifest, f, ensure_ascii=False, indent=2); f.write("\n")
 meta = {"full": bundle.get("full", False), "ids": sys.argv[3:],
         "revisions": {doc["id"]: doc["revision"] for doc in bundle["docs"]},
-        "sortOrders": {doc["id"]: doc["sortOrder"] for doc in bundle["docs"]}}
+        "sortOrders": {doc["id"]: doc["sortOrder"] for doc in bundle["docs"]},
+        "originalRevisions": {k: v["revision"] for k, v in (bundle.get("originals") or {}).items()}}
 with open(os.path.join(d, ".export.json"), "w", encoding="utf-8") as f:
     json.dump(meta, f, indent=1); f.write("\n")
 print(f"exported {len(docs)} document(s) to {d}", file=sys.stderr)
@@ -72,6 +84,18 @@ for entry in manifest["docs"]:
     if doc_id in meta["sortOrders"]: doc["sortOrder"] = meta["sortOrders"][doc_id]
     docs.append(doc)
 bundle = {"docs": docs, "full": meta.get("full", False)}
+originals_path = os.path.join(d, "originals.json")
+if os.path.exists(originals_path):
+    revs = meta.get("originalRevisions", {})
+    bundle["originals"] = {}
+    for doc_id, original in json.load(open(originals_path, encoding="utf-8")).items():
+        original = dict(original)
+        name = original.pop("file", None) or doc_id + ".original.html"
+        with open(os.path.join(d, os.path.basename(name)), encoding="utf-8") as f:
+            original["body"] = f.read()
+        if doc_id in revs: original["revision"] = revs[doc_id]
+        bundle["originals"][doc_id] = original
+    bundle["exportedOriginals"] = list(revs)
 if "redirects" in manifest: bundle["redirects"] = manifest["redirects"]
 json.dump(bundle, sys.stdout, ensure_ascii=False)
 ' "$dir" | run put "$@"

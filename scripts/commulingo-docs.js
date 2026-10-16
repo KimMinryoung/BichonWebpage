@@ -10,7 +10,11 @@
 //   history <id>                         superseded revisions, newest first
 //   restore <id> <revision> [--actor who]
 //
-// Bundle: { docs: [{ id, revision, sortOrder, entry, body }], redirects: { from: { id, anchor } } }
+// Bundle: { docs: [{ id, revision, sortOrder, entry, body }], redirects: { from: { id, anchor } },
+//           originals: { <doc id>: { lang, public, rights, source, revision, body } } }
+// Originals (migration 368) ride along: put writes the changed ones (guarded by
+// their exported revision) and removes those that were exported but are no
+// longer in the bundle.
 // put writes only documents whose entry or body differ (an edited body is
 // sanitized like an import), each guarded by the
 // revision it was exported at (a document changed since then is refused). A
@@ -20,7 +24,7 @@
 console.log = console.info = console.error;
 require('./lib/bootstrap');
 const fs = require('fs');
-const { readAllDocRows, writeDocs, listDocRevisions, restoreDocRevision, storedEntry, sha256 } = require('../data/commulingo/docs-db');
+const { readAllDocRows, readAllOriginalRows, writeDocs, listDocRevisions, restoreDocRevision, storedEntry, sha256 } = require('../data/commulingo/docs-db');
 const { canonicalEntry } = require('../data/commulingo/docs-import');
 const { sanitizeDocHtml } = require('../data/commulingo/doc-sanitize');
 
@@ -34,7 +38,13 @@ async function exportDocs(ids) {
     const wanted = ids.length ? new Set(ids) : null;
     const missing = ids.filter(id => !docs.some(row => row.id === id));
     if (missing.length) throw new Error(`no such document(s): ${missing.join(', ')}`);
+    const originals = {};
+    for (const row of await readAllOriginalRows()) {
+        if (wanted && !wanted.has(row.doc_id)) continue;
+        originals[row.doc_id] = { lang: row.lang, public: row.public, rights: row.rights, source: row.source, revision: row.revision, body: row.body };
+    }
     return {
+        originals,
         docs: docs.filter(row => !wanted || wanted.has(row.id)).map(row => ({
             id: row.id, revision: row.revision, sortOrder: row.sort_order, entry: row.entry, body: row.body,
         })),
@@ -72,6 +82,30 @@ async function put(bundle, args) {
             expectedRevision: row ? row.revision : 0,
         });
     }
+    const originals = { set: [], remove: [] };
+    if (bundle.originals) {
+        const stored = new Map((await readAllOriginalRows()).map(row => [row.doc_id, row]));
+        for (const [docId, original] of Object.entries(bundle.originals)) {
+            const row = stored.get(docId);
+            if (row && Number.isInteger(original.revision) && original.revision !== row.revision) {
+                problems.push(`${docId}: original changed in the database since export (exported r${original.revision}, now r${row.revision}); re-export it`);
+                continue;
+            }
+            if (typeof original.body !== 'string' || !original.body.trim()) {
+                problems.push(`${docId}: empty original body`);
+                continue;
+            }
+            const bodyChanged = !row || sha256(original.body) !== row.body_sha256;
+            const body = bodyChanged ? sanitizeDocHtml(original.body) : row.body;
+            if (row && !bodyChanged && row.lang === original.lang && row.public === (original.public === true)
+                && row.rights === (original.rights || '').trim() && row.source === (original.source || '').trim()) continue;
+            originals.set.push({ docId, lang: original.lang, body, public: original.public === true,
+                rights: original.rights, source: original.source, expectedRevision: row ? row.revision : 0 });
+        }
+        for (const docId of bundle.exportedOriginals || []) {
+            if (!Object.hasOwn(bundle.originals, docId) && stored.has(docId)) originals.remove.push(docId);
+        }
+    }
     if (problems.length) throw new Error(`refused, nothing written:\n  ${problems.join('\n  ')}`);
 
     let deletes = [];
@@ -96,13 +130,13 @@ async function put(bundle, args) {
         const client = await db.connect();
         try {
             await client.query('BEGIN');
-            return { dryRun: true, ...(await writeDocs({ upserts, deletes, redirects }, { actor, note, client })) };
+            return { dryRun: true, ...(await writeDocs({ upserts, deletes, redirects, originals }, { actor, note, client })) };
         } finally {
             await client.query('ROLLBACK').catch(() => {});
             client.release();
         }
     }
-    return writeDocs({ upserts, deletes, redirects }, { actor, note });
+    return writeDocs({ upserts, deletes, redirects, originals }, { actor, note });
 }
 
 async function main() {
@@ -126,6 +160,9 @@ async function main() {
         const changed = result.written.filter(w => w.op !== 'unchanged');
         for (const w of changed) console.log(`${result.dryRun ? 'would ' : ''}${w.op} ${w.id} → r${w.revision}`);
         for (const id of result.deleted) console.log(`${result.dryRun ? 'would ' : ''}delete ${id}`);
+        for (const o of (result.originals || []).filter(o => o.op !== 'unchanged')) {
+            console.log(`${result.dryRun ? 'would ' : ''}${o.op} original ${o.id}${o.revision ? ` → r${o.revision}` : ''}`);
+        }
         console.log(`${result.dryRun ? 'dry run: ' : ''}${changed.length} written, ${result.written.length - changed.length} unchanged, ${result.deleted.length} deleted`);
     } else if (command === 'put-body' && args[0]) {
         const { readDocRow } = require('../data/commulingo/docs-db');

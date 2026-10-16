@@ -116,6 +116,8 @@ var tocHref = function(id) {
     본다. 패널은 서버(/search)가 모든 페이지를 뒤진 결과를 페이지별로 보여 주고,
     고른 곳으로 가면 public/js/commulingo-doc-search.js가 본문(.doc-body)의 일치를
     표시한다. 짧은 문헌도 같은 패널을 쓴다. %>
+<% var readingOriginal = switchTo && !switchTo.original; %>
+<% if (!readingOriginal) { %>
 <div class="doc-search" data-doc-search
      data-endpoint="<%= languageUrl('/commulingo/docs/' + doc.id + '/search', urlLanguage === 'en' ? 'en' : 'ko') %>"
      data-page="<%= pagination ? pagination.current : 1 %>"
@@ -134,6 +136,12 @@ var tocHref = function(id) {
 </div>
 </details>
 </div>
+<% } %>
+<%# 번역과 원문 사이를 오가는 칸. 원문이 공개된 문헌에만 있다(commulingo_doc_originals).
+    원문 쪽에는 검색 칸이 없다 — 검색은 번역 본문을 뒤진다. %>
+<% if (switchTo) { %>
+<a class="doc-version-switch" href="<%= languageUrl(switchTo.href, urlLanguage === 'en' ? 'en' : 'ko') %>" lang="<%= lang %>"><%= switchTo.original ? strings.commuLingoViews.doc.original : strings.commuLingoViews.doc.translation %></a>
+<% } %>
 </div>
 <%- bodyTopHtml %>
 <%# 이 문헌이 어느 사전 항목에 속하는지 알리는 한 줄. 제목 바로 아래 산문으로

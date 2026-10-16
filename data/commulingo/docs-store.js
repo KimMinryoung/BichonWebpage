@@ -96,8 +96,11 @@ function documentModifiedAt(doc, bodyUpdatedAt) {
 }
 
 // Snapshot rows: { kind: 'doc', id, sort_order, entry, body_sha256,
-// body_updated_at, revision } and { kind: 'redirect', from_id, to_id, anchor }.
+// body_updated_at, revision }, { kind: 'redirect', from_id, to_id, anchor }
+// and { kind: 'original', doc_id, lang, body_sha256 } for each public original.
 function install(rows) {
+    const originals = new Map(rows.filter(row => row.kind === 'original' && SHA.test(row.body_sha256 || ''))
+        .map(row => [row.doc_id, { lang: row.lang, bodySha256: row.body_sha256 }]));
     const docs = rows.filter(row => row.kind === 'doc' && typeof row.id === 'string' && SHA.test(row.body_sha256 || ''))
         .sort((a, b) => a.sort_order - b.sort_order)
         .map(row => ({
@@ -106,6 +109,7 @@ function install(rows) {
             bodySha256: row.body_sha256,
             revision: row.revision,
             modifiedAt: documentModifiedAt(row.entry, row.body_updated_at),
+            original: originals.get(row.id) || null,
         }));
     const redirects = {};
     rows.filter(row => row.kind === 'redirect').forEach(row => {
@@ -129,15 +133,25 @@ async function fetchRows() {
     const docs = (await db.query(
         'SELECT id, sort_order, entry, body_sha256, body_updated_at, revision FROM commulingo_docs ORDER BY sort_order, id')).rows;
     const redirects = (await db.query('SELECT from_id, to_id, anchor FROM commulingo_doc_redirects ORDER BY from_id')).rows;
+    // Only published originals ever reach the server's snapshot and cache.
+    const originals = (await db.query(
+        'SELECT doc_id, lang, body_sha256 FROM commulingo_doc_originals WHERE public ORDER BY doc_id')).rows;
     const missing = docs.filter(row => !fs.existsSync(bodyPath(row.body_sha256))).map(row => row.body_sha256);
     if (missing.length) {
         const bodies = (await db.query('SELECT body_sha256, body FROM commulingo_docs WHERE body_sha256 = ANY($1)', [missing])).rows;
         bodies.forEach(row => writeBodyFile(row.body_sha256, row.body));
     }
-    pruneBodyCache(new Set(docs.map(row => row.body_sha256)));
+    const missingOriginals = originals.filter(row => !fs.existsSync(bodyPath(row.body_sha256))).map(row => row.body_sha256);
+    if (missingOriginals.length) {
+        const bodies = (await db.query(
+            'SELECT body_sha256, body FROM commulingo_doc_originals WHERE public AND body_sha256 = ANY($1)', [missingOriginals])).rows;
+        bodies.forEach(row => writeBodyFile(row.body_sha256, row.body));
+    }
+    pruneBodyCache(new Set([...docs, ...originals].map(row => row.body_sha256)));
     return [
         ...docs.map(row => ({ kind: 'doc', ...row, body_updated_at: row.body_updated_at && new Date(row.body_updated_at).toISOString() })),
         ...redirects.map(row => ({ kind: 'redirect', ...row })),
+        ...originals.map(row => ({ kind: 'original', ...row })),
     ];
 }
 
@@ -161,7 +175,7 @@ const store = createRegistrySnapshotStore({
     snapshotPath: SNAPSHOT_PATH,
     fetchRows,
     install,
-    signatureTables: ['commulingo_docs', 'commulingo_doc_redirects'],
+    signatureTables: ['commulingo_docs', 'commulingo_doc_redirects', 'commulingo_doc_originals'],
     validateSnapshot: rows => Array.isArray(rows) && rows.some(row => row.kind === 'doc'),
 });
 
@@ -303,6 +317,13 @@ function getCommuLingoDocContent(doc) {
     return entry;
 }
 
+// The published original of a translated document (null when there is none
+// or it is not public), read and paginated like the translation.
+function getCommuLingoDocOriginalContent(doc) {
+    if (!doc.original) return null;
+    return getCommuLingoDocContent({ id: doc.id, bodySha256: doc.original.bodySha256, tocExclude: doc.tocExclude });
+}
+
 // Excerpts: a manifest entry may lend one of its pieces to a dictionary entry,
 // which then prints that piece in a reader box on its own page —
 //   "excerpts": { "terms": { "<term id>": "<heading id>" } }
@@ -368,6 +389,6 @@ function getCommuLingoDocContents(doc) {
 module.exports = {
     loadCommuLingoDocs: store.load, refreshCommuLingoDocs: () => store.refresh(),
     listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect,
-    listCommuLingoDocsFor, getCommuLingoDocContent, docRefId,
+    listCommuLingoDocsFor, getCommuLingoDocContent, getCommuLingoDocOriginalContent, docRefId,
     listCommuLingoDocExcerptsFor, getCommuLingoDocSection, getCommuLingoDocContents,
 };

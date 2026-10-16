@@ -399,6 +399,8 @@ const ko = {
             previous: '이전',
             next: '다음',
             source: '원전',
+            original: '원문',
+            translation: '번역',
             historicalFigure: '실존 인물',
             // Read by public/js/commulingo-doc-search.js; {n}, {total}, {pages}, {page} are filled there.
             searchUi: {
@@ -1086,6 +1088,8 @@ const en = {
             previous: 'Previous',
             next: 'Next',
             source: 'Source',
+            original: 'Original',
+            translation: 'Translation',
             historicalFigure: 'Historical figure',
             searchUi: {
                 label: 'Search',
