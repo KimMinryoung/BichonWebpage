@@ -8,21 +8,20 @@
 <body>
   <%- include('../partials/nav') %>
   <main class="ui-page-shell games-shell cw-shell">
-    <%- include('../partials/games-crumb', { current: '붉은 전선 1918–1920', sibling: { label: '파업기금이 바닥나기 전에', href: '/games/strike/' } }) %>
+    <%- include('../partials/games-crumb', { current: '붉은 전선 1918–1920' }) %>
     <header class="cw-heading"><div><p class="games-kicker">역사 전략 / 러시아 내전</p><h1>붉은 전선 1918–1920</h1></div></header>
     <noscript><p>플레이하려면 브라우저에서 JavaScript를 켜 주세요.</p></noscript>
 
     <section id="cwSetup" class="cw-intro">
       <div class="cw-intro-copy">
-        <p class="games-kicker">당신은 공화국 혁명군사회의입니다</p>
         <h2>사방에서 조여 오는 전선,<br>쥐고 있는 것은 철도와 시간.</h2>
         <ol class="cw-steps">
-          <li><strong>정세를 읽는다</strong><span>1918년 여름 체코 군단의 반란부터 1920년 가을 페레코프까지, 여덟 시기의 실제 정세가 브리핑으로 옵니다.</span></li>
-          <li><strong>결단한다</strong><span>군사전문가, 식량 할당제, 우랄 너머의 추격, 바르샤바. 시기마다 지도부가 실제로 부딪친 갈림길에서 고릅니다. 고른 뒤에는 역사가 무엇을 택했는지 보여 줍니다.</span></li>
-          <li><strong>사단을 보낸다</strong><span>내선의 이점: 모스크바를 거치는 철도로 사단을 어느 전선으로든 옮길 수 있지만, 옮긴 사단은 그 시기 힘이 절반입니다. 조언자 카드로 장갑열차를 보내고 곡물을 거두되, 징발은 농촌을 등 돌리게 합니다.</span></li>
-          <li><strong>카잔, 우파, 오룔, 페레코프</strong><span>1918년 가을의 카잔 탈환, 1919년 여름의 우파 도하, 가을의 오룔 반격, 마지막 시기의 페레코프는 칸 단위 전술 전투로 직접 지휘합니다. 바르샤바로 진격하면 바르샤바 전투도 치릅니다. 그 전선에 보낸 사단·정치위원·장갑열차가 전투에 나오는 부대가 됩니다.</span></li>
+          <li><strong>정세를 읽는다</strong><span>1918년 여름부터 1920년 가을까지, 여덟 시기의 실제 정세가 브리핑으로 옵니다.</span></li>
+          <li><strong>결단한다</strong><span>지도부가 실제로 부딪친 갈림길을 고르고, 역사의 선택과 비교합니다.</span></li>
+          <li><strong>사단을 보낸다</strong><span>사단을 전선에 나눠 보내고, 카드로 장갑열차와 곡물을 챙깁니다.</span></li>
+          <li><strong>카잔, 우파, 오룔, 페레코프</strong><span>결정적인 전투는 칸 단위 전술 전투로 직접 지휘합니다.</span></li>
         </ol>
-        <div><button id="cwStart" type="button" class="cw-primary">새 게임 시작</button> <button id="cwContinue" type="button" hidden>저장된 게임 이어하기</button></div>
+        <div class="cw-setup-actions"><button id="cwContinue" type="button" class="cw-primary" hidden>저장된 게임 이어하기</button><button id="cwStart" type="button" class="cw-primary">새 게임 시작</button></div>
         <p class="games-note" id="cwSaveNote">한 판 30–40분 · 로그인 없이 · 이 브라우저에 자동 저장</p>
         <p class="games-note">역사 서술은 커뮤링고 사건 문서 <a href="/commulingo/events/civil-war" target="_blank" rel="noopener">「러시아 내전」</a>을 따릅니다. 수치는 게임을 위한 근사치입니다.</p>
       </div>

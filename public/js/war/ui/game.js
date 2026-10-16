@@ -60,7 +60,7 @@
     const crumbStatus = document.createElement('dl');
     crumbStatus.className = 'cw-crumb-status';
     crumbStatus.setAttribute('aria-label', '이번 시기에 남은 자원');
-    crumb.insertBefore(crumbStatus, crumb.querySelector('.games-crumb-jump'));
+    crumb.appendChild(crumbStatus);
 
     // ── Helpers ──
 
@@ -143,6 +143,8 @@
             $('cwContinue').textContent = `${saved.battle.def.title} 처음부터 다시`;
             $('cwContinue').onclick = retryBattle.bind(null, saved);
         }
+        // With a save to go back to, continuing is the main action.
+        if (!$('cwContinue').hidden) $('cwStart').classList.remove('cw-primary');
         $('cwStart').onclick = () => {
             if (saved && saved.phase !== 'done' && !window.confirm('저장된 게임을 지우고 새로 시작할까요?')) return;
             startGame(G.start());

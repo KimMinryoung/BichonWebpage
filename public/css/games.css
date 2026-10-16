@@ -26,8 +26,6 @@
    play, not a long read that needs the way out pinned. */
 .games-crumb { --games-crumb-gutter: 10px; padding-inline: var(--games-crumb-gutter); }
 .games-crumb-icon { width: 15px; height: 15px; flex: 0 0 auto; }
-.games-crumb-jump { display: flex; align-items: center; gap: 5px; align-self: stretch; flex: 0 0 auto; margin-right: calc(-1 * var(--games-crumb-gutter)); padding: 0 12px; border-left: 1px solid var(--border); color: var(--text-secondary); font-size: .82rem; font-weight: 700; text-decoration: none; white-space: nowrap; transition: background-color .15s ease; }
-.games-crumb-jump:hover { background: var(--bg-surface-hover); color: var(--text-primary); text-decoration: none; }
 @media (max-width: 560px) { .games-crumb { --games-crumb-gutter: 8px; } .games-crumb-home span { display: none; } }
 .strike-hero { border-bottom: 4px solid #a21e2a; }
 .strike-panel { border: 1px solid var(--border); background: var(--bg-surface); padding: 24px; margin-bottom: 20px; min-width: 0; }

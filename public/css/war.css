@@ -29,6 +29,8 @@
 .cw-intro { display: grid; grid-template-columns: 1.4fr 1fr; border: 1px solid var(--border); background: var(--bg-surface); }
 .cw-intro-copy { padding: var(--space-6) var(--content-inset); }
 .cw-intro-copy h2 { font-size: clamp(1.3rem, 3vw, 1.9rem); line-height: var(--leading-tight); margin: 10px 0 22px; }
+.cw-setup-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.cw-setup-actions [hidden] { display: none; }
 .cw-steps { list-style: none; counter-reset: step; padding: 0; margin: 0 0 18px; display: grid; gap: 14px; }
 .cw-steps li { counter-increment: step; display: grid; grid-template-columns: 30px 1fr; column-gap: 12px; line-height: var(--leading-normal); }
 .cw-steps li::before { content: counter(step); grid-row: span 2; display: grid; place-items: center; width: 30px; height: 30px; background: var(--cw-red); color: #fff; font-weight: 800; }
@@ -747,7 +749,6 @@
    divisions to send, command, commissars, the grain over what the sent
    divisions eat. The jump to the other game gives up its place. */
 .cw-shell .games-crumb.has-status { position: sticky; top: 0; z-index: 50; flex-wrap: nowrap; }
-.cw-shell .games-crumb.has-status .games-crumb-jump { display: none; }
 .cw-crumb-status { display: none; margin: 0 0 0 auto; gap: 14px; font-size: .8rem; white-space: nowrap; }
 .games-crumb.has-status .cw-crumb-status { display: flex; }
 .cw-crumb-status div { display: flex; align-items: baseline; gap: 5px; }
