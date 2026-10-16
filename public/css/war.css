@@ -140,11 +140,9 @@
 .cw-map-frame .emap-hatch-line.is-black { stroke: var(--emap-black); }
 
 /* The game's layer */
-/* A front card under the pointer: its front blinks, the others dim. */
+/* A front card under the pointer: the other fronts dim (the map zooms to
+   the picked front, so the front itself no longer blinks). */
 .cw-map-frame.is-spotlight [data-front]:not(.is-lit) { opacity: .22; }
-.cw-map-frame.is-spotlight [data-front].is-lit { animation: cw-blink .8s ease-in-out 6 alternate; }
-@keyframes cw-blink { from { fill-opacity: 1; stroke-opacity: 1; } to { fill-opacity: 0.3; stroke-opacity: 0.3; } }
-@media (prefers-reduced-motion: reduce) { .cw-map-frame.is-spotlight [data-front].is-lit { animation: none; } }
 .cw-chain { fill: none; stroke: color-mix(in srgb, var(--text-secondary) 35%, transparent); stroke-width: 1; stroke-dasharray: 3 3; }
 .cw-chain.is-active { stroke: var(--cw-red); stroke-width: 2; stroke-dasharray: none; }
 .cw-rail { fill: none; stroke: color-mix(in srgb, var(--cw-red) 80%, transparent); stroke-width: 6; stroke-dasharray: 1.4 4.2; stroke-linejoin: round; }
@@ -215,8 +213,7 @@
    trampled flat and the winners lunge at their city.
    Delays count from when the map came into view (--since), so a re-render
    mid-way carries on; is-waiting holds the first frame until then. */
-/* Motion on svg elements (here, the front blink and the battle board's
-   falls) moves only translate / rotate / scale and fill- / stroke-opacity,
+/* Motion on svg elements (here, the battle board's falls) moves only translate / rotate / scale and fill- / stroke-opacity,
    never transform or opacity. Chrome hands transform and opacity
    animations on svg elements to the compositor: each moving element and
    every label drawn over it became its own GPU layer (21 for one season's
