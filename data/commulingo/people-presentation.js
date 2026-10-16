@@ -7,6 +7,7 @@ const { flagImg } = require('./flag-icons');
 const { personFlagHref } = require('./nationality-filter');
 const { sortPeopleChronologically, localizedPersonSections } = require('./people-view');
 const { loadCommuLingoHistoryEvents } = require('./history-events-store');
+const { getCommuLingoDoc } = require('./docs-store');
 const { createPersonPageResolver, lifeOf, namedPeople, pagePeriod } = require('./person-page-links');
 
 // The people a person page is likely to name by surname alone: everyone listed
@@ -105,7 +106,14 @@ async function personBody(personId, person, loaded, lang) {
     let body = personPages.get(personId);
     if (!body) {
         const rawSections = (loaded.data.sections || {})[personId] || [];
-        const sections = localizedPersonSections(rawSections, lang);
+        // In English a section that sends the reader to a reference document
+        // English cannot open (no published original) is left out: such a
+        // section is a pointer to the Korean text (yezhov: Pavlyukov's biography).
+        const sections = localizedPersonSections(rawSections, lang).filter(section => lang !== 'en'
+            || ![...section.bodyHtml.matchAll(/\/commulingo\/docs\/([a-z0-9-]+)/g)].some(m => {
+                const doc = getCommuLingoDoc(m[1]);
+                return doc && !doc.original;
+            }));
         // One linker and seen-set for the whole page; exclude the person itself.
         const life = lifeOf(person);
         const shared = await coParticipants(person.id);
