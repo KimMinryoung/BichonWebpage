@@ -183,7 +183,7 @@ var extraEditorialNotes = (doc.editorialNotes || '').split(/(?<!No\.)(?<=[.!?])\
 <% if (extraEditorialNotes && !readingOriginal && (!pagination || pagination.current === 1)) { %>
 <aside class="doc-editorial">
     <details>
-        <summary><%= en ? 'Editorial notes — translation and editing' : '엮은이 주 — 번역·편집 정보' %></summary>
+        <summary><%= en ? 'Translation and editing' : '번역·편집 정보' %></summary>
         <p><%= extraEditorialNotes %></p>
     </details>
 </aside>
