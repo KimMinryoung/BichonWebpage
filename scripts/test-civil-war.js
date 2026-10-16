@@ -996,6 +996,8 @@ for (const t of D.turns) {
     for (const v of t.voices) assert.ok(v.text && v.text.length <= 120, `${t.id}: ${v.text}`);
 }
 for (const [id, def] of Object.entries(D.battles)) assert.ok(def.voices && def.voices.some(v => v.when === 'start'), `${id}: opening voices`);
+// Every dilemma and incident is argued out by at least two speakers.
+for (const t of D.turns) for (const x of [t.choice, t.incident].filter(Boolean)) assert.ok(x.talk && x.talk.length >= 2, `${t.id}: ${x.title} debate`);
 for (const id of Object.keys(A.people)) assert.match(A.portrait(id, id), /role="img"/);
 
 // A war lost in a battle (Mtsensk left to the Kornilov regiment, Tula falls)

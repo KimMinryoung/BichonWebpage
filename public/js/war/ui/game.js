@@ -1487,7 +1487,7 @@
             el('div', { class: 'cw-options', role: 'group', 'aria-label': c.title }, ...c.options.map(o => el('button', {
                 type: 'button', class: 'cw-option', 'data-key': `choice-${o.id}`, 'aria-pressed': String(s.plan.choice === o.id),
                 onclick: () => { if (!act('choose', o.id)) announce(tooMany()); render(); },
-            }, el('strong', {}, o.label), el('span', {}, o.effect), el('small', {}, `지지: ${o.voices}`)))));
+            }, el('strong', {}, o.label), el('span', {}, o.effect)))));
     }
 
     // The season's incident: what happened, and the answers to it.
@@ -1507,7 +1507,7 @@
                     }
                     render();
                 },
-            }, el('strong', {}, o.label), el('span', {}, o.effect), el('small', {}, `지지: ${o.voices}`)))));
+            }, el('strong', {}, o.label), el('span', {}, o.effect)))));
     }
 
     function renderCommand() {

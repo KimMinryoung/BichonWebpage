@@ -113,6 +113,11 @@ function checkScenario(D) {
         }
         if (t.battle) need(D.battles[t.battle], `${at}: battle ${t.battle}`);
         for (const x of [t.choice, t.incident]) if (x && x.who) drawn.add(x.who[1]);
+        // A dilemma's debate: each line names a person (drawn) or a group.
+        for (const x of [t.choice, t.incident]) for (const v of (x && x.talk) || []) {
+            need(v.text && (v.who || v.as), `${t.id}: a debate line needs a speaker and words`);
+            if (v.who) drawn.add(v.who[1]);
+        }
         for (const v of t.voices || []) {
             need(v.at === D.map.hubId || t.threats[v.at], `${at}: voice at ${v.at} does not fight`);
             if (v.by) need(t.threats[v.at] && t.threats[v.at].foes.includes(v.by), `${at}: ${v.by} does not attack ${v.at}`);
