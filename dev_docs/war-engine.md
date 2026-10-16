@@ -49,6 +49,7 @@
 | `reserve: [op, n]` | 예비로 남긴 사단 수 |
 | `stat: ['name', op, n]` | 스탯 비교 |
 | `won: true`, `historyDiff: [op, n]` | 평가에서만: 마지막 전투 승리, 시기별 위치 합의 역사 대비 |
+| `rules: [op, n]` | 저장의 규칙 세대. 새 세대에서만 바뀌는 데이터(규칙 5의 정비 비용 등)를 옛 저장과 갈라 둔다 |
 | `not`, `all`, `any` | 조합 |
 
 op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사기가 미리 잡는다.
@@ -97,17 +98,18 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 | --- | --- |
 | `economy.stats` | `{ name: { start, min=0, max=100 } }` |
 | `economy.food` | `start`, 수입 `base` + floor(`per[0]` 스탯 / `per[1]`), `fed`(굶은 사단의 몫), `hunger`(이 보급 아래면 탈영), `desert`, `reserveEats`(예비 사단이 먹는 몫) |
-| `economy.policies[]` | `{ flag, food, each: { stat: n }, unless }` — 플래그가 서 있는 동안 시기마다. `unless` 플래그가 있으면 `each`만 빠진다 |
+| `economy.policies[]` | `{ flag, food, each: { stat: n }, unless, when }` — 플래그가 서 있는 동안 시기마다. `unless` 플래그가 있으면 `each`만 빠진다. `when`(조건)은 `each`에만 걸린다(곡물 `food`는 늘) |
+| `economy.upkeep[]` | `{ when, each: { stat: n }, note }` — 시기를 보낼 때마다, 보내던 때의 스탯으로 판정. `note`는 결산 문구 |
 | `economy.settleOrder` | 스탯이 떨어지는 순서와 `'cities'`(함락 효과) 자리. 이미 떨어진 스탯에는 함락 효과가 따로 붙고(따로 clamp), 아직이면 합쳐진다. 없으면 스탯 순서 뒤 `cities` |
 | `command` | `{ stat, tiers: [[최소, 지휘력]…], note }` |
 | `leaders` | `{ strength, fewer: [{ when, n, note }] }` |
 | `quality` | `{ base, mods: [{ when, add }] }` — 사단의 질 |
-| `mobilize` | `{ min, minLabel, sources: [...] }` — `{ stat, base, per, label('{value}') }`, `{ from: 'deserted'|'unrest'|'captured', label }`, `{ fallen: front, n, label }` |
+| `mobilize` | `{ min, minLabel, sources: [...] }` — `{ stat, base, per, label('{value}') }`, `{ from: 'deserted'|'unrest'|'captured', label }`, `{ fallen: front, n, label }`. 어느 것이든 `when`이 서야 센다 |
 | `unrest` | `{ levels: [{ when, n }], note }` — 첫 번째로 성립하는 단계 |
 | `outcome` | `step`, `slack`, `momentum`, `pursuit`, `chase`, `transfer` ([civil-war-game.md](civil-war-game.md) 3절의 식) |
 | `spoils` | `{ food, max }` |
-| `frontMoves` | `{ gained: { stat: n }, lost: {...} }` — 전선마다 |
-| `verdict` | `{ behind: { stat: n, note }, ahead: {...} }` — 싸운 전선 합이 역사보다 뒤/앞 |
+| `frontMoves` | `{ gained: { stat: n }, lost: {...}, net }` — 전선마다. `net: { when, gained, lost }`의 조건이 서면 그 시기 싸운 전선의 득실 합의 부호로 한 번만 |
+| `verdict` | `{ behind: { stat: n, note }, ahead: {..., when} }` — 싸운 전선 합이 역사보다 뒤/앞. `when`이 있으면 그 조건에서만 |
 | `modifiers[]` | `{ front | fronts, when, strength | pressure, label, afterBattle }` — 목록 순서대로, `afterBattle`이면 그 시기 전투 결과 다음에 |
 | `extraThreats[]` | `{ when, front, pressure: { turnId: n }, foes, text, who }` — 그 시기 조용한 전선에 위협을 더함 |
 | `scoring` | `{ stars: [{ id, label, when }], won: { title, text }, stalled: {...} }` |
@@ -118,7 +120,8 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 ### 4.7 지도 `map`과 화면 `ui`
 
-- `map`: `box: { west, east, south, north }`, `control`(세력 범위 문서 id), `title`, `hub: [이름, 위도, 경도]`, `hubId`(대사 `at`에 쓰는 이름), `railways: [{ id, name, pts: [[위도, 경도]…], label }]`(분기점은 같은 좌표로 적어 한 망이 되게; 검사기가 허브와 이어지는지 본다), `labelAt: { 도시: [dx, dy, anchor] }`, `places: [[이름, 위도, 경도, kind, pos]]`(전선 도시가 아니지만 글에 나오는 곳. kind는 `region`·`river`·`town`, town의 pos는 `below`·`above`로 이름을 점 아래·위에), `beyond: [[이름, 위도, 경도]]`(지도 밖의 곳. 가운데서 그쪽으로 그은 선이 틀을 나가는 자리에 「옴스크 →」처럼), `legend`, `historyLegend`(`[클래스, 글]`).
+- `map`: `box: { west, east, south, north }`, `control`(세력 범위 문서 id), `title`, `hub: [이름, 위도, 경도]`, `hubId`(대사 `at`에 쓰는 이름), `railways: [{ id, name, pts: [[위도, 경도]…], label }]`(분기점은 같은 좌표로 적어 한 망이 되게; 검사기가 허브와 이어지는지 본다), `labelAt: { 도시: [dx, dy, anchor] }`, `places: [[이름, 위도, 경도, kind, pos]]`(전선 도시가 아니지만 글에 나오는 곳. kind는 `region`·`river`·`town`, town의 pos는 `below`·`above`로 이름을 점 아래·위에), `beyond: [[이름, 위도, 경도]]`(지도 밖의 곳. 가운데서 그쪽으로 그은 선이 틀을 나가는 자리에 「옴스크 →」처럼), `legend`, `historyLegend`(`[클래스, 글]`), `operations`(아래).
+- `map.operations[id] = { title, who: [이름, 인물 id], turn, phase: 'plan'|'review', flag?, card?, steps: [{ date, text, draw: [...] }] }` — 지도 위에서 단계별로 보여 주는 결정적 작전. 그 시기·단계에, `flag`가 서 있거나(앞 시기 선택의 결과) `card`를 보냈을 때 그 시기의 대사보다 먼저 한 단계씩 재생된다. `draw`는 `{ side: 'red'|세력 kind, style: 'strike'|'beaten'|'next', path: [[위도, 경도]…], name }`(화살표: 진격·꺾인 진격·남은 일), `{ gather: [위도, 경도], name }`(병력이 모인 곳), `{ clash: [위도, 경도], name }`(맞부딪친 곳). 서버(`war-map.js`)가 화면 좌표와 단계별 상자(그때까지 그린 것)를 `points.operations`로 넘긴다. 검사기가 시기·카드·플래그·초상·좌표를 본다.
 - `ui`: `player`, `playerUnits`, `enemy`, `enemyAll`, `unit`, `leader`, `food`, `unrest`(화면의 말), `hud: [{ stat, label, warnBelow, warnNote, note, chart, command, split }]`(스탯 줄과 회고 그래프, `command`인 스탯 하나가 지휘력 안내), `cardStats: { stat: 짧은 이름 }`, `aria`, `save`(localStorage 키).
 - 조사는 `josa(word, '이', '가')`로 붙인다(받침 판정). 시나리오 말 뒤에 조사를 박아 쓰지 않는다.
 - `portraits[인물 id] = { side, hair, face, glasses, beard, moustache, cap }`(art.js의 값). 화면에 나오는 모든 인물(조언자·갈림길·위협·대사·부대 `person`·전투 대사 `face`)은 초상이 있어야 한다.
@@ -133,7 +136,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 ## 5. 저장과 규칙 세대
 
-저장은 `{ version: saveVersion, rules, log }`이고 `restore`가 로그를 재생한다. `rules`는 엔진 규칙의 세대다: 1 기본, 2 철도 수송 비용과 지난 배치 유지, 3 전투의 한 수·투항과 노획, 4 지도자(정치위원)는 사단이 있는 전선에만, 마지막 사단과 함께 돌아옴. 새 시나리오는 최신 세대로 시작한다(`WarEngine.RULES`). 규칙이 결과를 바꾸는 변경은 세대를 올리고 옛 세대 분기를 남겨, 옛 저장이 두던 대로 재생되게 한다. 재생이 막히면 그 시기 처음으로 돌아간다.
+저장은 `{ version: saveVersion, rules, log }`이고 `restore`가 로그를 재생한다. `rules`는 엔진 규칙의 세대다: 1 기본, 2 철도 수송 비용과 지난 배치 유지, 3 전투의 한 수·투항과 노획, 4 지도자(정치위원)는 사단이 있는 전선에만, 마지막 사단과 함께 돌아옴, 5 시기마다의 정비 비용(`economy.upkeep`), 전선 득실의 스탯 효과는 시기마다 한 번(`frontMoves.net`), 전투에서 철도 부대의 `railMv`, 그 밖에 데이터의 `rules` 조건. 새 시나리오는 최신 세대로 시작한다(`WarEngine.RULES`). 규칙이 결과를 바꾸는 변경은 세대를 올리고 옛 세대 분기를 남겨, 옛 저장이 두던 대로 재생되게 한다. 재생이 막히면 그 시기 처음으로 돌아간다.
 
 ## 6. 골든 마스터
 

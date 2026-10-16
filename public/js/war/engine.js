@@ -15,7 +15,9 @@
    bring half their share and the plan opens with last season's placements;
    3 the battles' feats and surrenders, and the spoils of a broken enemy;
    4 a leader goes only to a front with divisions, and is recalled when
-   its last division leaves. */
+   its last division leaves; 5 the season's upkeep (the cities' hunger,
+   the party's quarrels), a front's gains move the stats once a season
+   by the net, and the data's other `rules` conditions (cond.js). */
 (function (root) {
     'use strict';
 
@@ -23,7 +25,7 @@
     const Battle = node ? require('./battle.js') : root.WarBattle;
     const Cond = node ? require('./cond.js') : root.WarCond;
 
-    const RULES = 4;
+    const RULES = 5;
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
     const signed = n => (n < 0 ? '−' : '+') + Math.abs(n);
@@ -99,6 +101,7 @@
             const sources = [];
             const add = (label, n) => { if (n) sources.push({ label, n }); };
             for (const src of D.mobilize.sources) {
+                if (!when(s, src.when)) continue;
                 if (src.stat) {
                     const value = s.stats[src.stat];
                     add(fmt(src.label, { value }), Math.round((value - src.base) / src.per));
@@ -626,17 +629,27 @@
                 for (const id of answer.bars || []) s.flags['bar:' + id] = true;
             }
             for (const p of ECON.policies || []) {
-                if (flagsNow[p.flag] && !(p.unless && flagsNow[p.unless])) addStats(delta, p.each || {});
+                if (flagsNow[p.flag] && !(p.unless && flagsNow[p.unless]) && when(s, p.when)) addStats(delta, p.each || {});
             }
-            // Each front that gained or lost cities moves its stats.
-            for (const f of Object.values(fronts)) {
-                if (f.after > f.before) addStats(delta, D.frontMoves.gained);
-                if (f.after < f.before) addStats(delta, D.frontMoves.lost);
+            // What every season costs, as the stats stood when it was sent.
+            for (const u of ECON.upkeep || []) {
+                if (!when(s, u.when)) continue;
+                addStats(delta, u.each);
+                if (u.note) notes.push(u.note);
+            }
+            // Each front that gained or lost cities moves its stats; or, when
+            // `net` holds, the season's fronts together move them once.
+            const moved = Object.values(fronts).map(f => Math.sign(f.after - f.before));
+            const net = D.frontMoves.net && when(s, D.frontMoves.net.when) ? D.frontMoves.net : null;
+            const moves = net || D.frontMoves;
+            for (const m of net ? [Math.sign(moved.reduce((a, m) => a + m, 0))] : moved) {
+                if (m > 0) addStats(delta, moves.gained);
+                if (m < 0) addStats(delta, moves.lost);
             }
             // Behind history, the war is argued over; ahead, it quiets.
             const versus = Object.values(fronts).reduce((a, f) => a + f.after - f.history, 0);
             if (versus < 0) { addStats(delta, D.verdict.behind); if (D.verdict.behind.note) notes.push(D.verdict.behind.note); }
-            if (versus > 0) addStats(delta, D.verdict.ahead);
+            if (versus > 0 && when(s, D.verdict.ahead.when)) addStats(delta, D.verdict.ahead);
 
             // The changes land in SETTLE_ORDER; a city's fall applies its
             // effects to stats already landed directly, and to the rest

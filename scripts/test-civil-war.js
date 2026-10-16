@@ -115,6 +115,25 @@ const sumDiff = s => s.records.reduce((sum, r) => sum + Object.values(r.fronts).
 // portrait and every board can be fought on (scripts/lib/war-scenario-check.js).
 assert.deepEqual(checkScenario(D), []);
 
+// Rules 5: the workers drift down along history's road (the cities'
+// hunger, a gain paying once a season), ending under where they began;
+// being ahead of history no longer unites the party. A rules-4 save keeps
+// the old ways: its workers end higher than the same war under rules 5.
+{
+    const s5 = campaign(historical);
+    assert.ok(s5.stats.workers <= 50, `workers drift down (${s5.stats.workers})`);
+    const s4 = G.restore(JSON.stringify({ version: G.VERSION, rules: 4, log: s5.log }));
+    assert.ok(s4 && s4.stats.workers > s5.stats.workers, 'rules 4 replays without the upkeep');
+}
+
+// The train runs fast along its line from rules 5, at its old pace before.
+for (const def of Object.values(D.battles)) {
+    const u = def.units.find(x => x.rail);
+    if (!u) continue;
+    assert.equal(B.start(def, {}, null, { rules: 5 }).units.find(x => x.id === u.id).mv, u.railMv);
+    assert.equal(B.start(def, {}, null, { rules: 4 }).units.find(x => x.id === u.id).mv, u.mv);
+}
+
 // An armoured train starts on its board's railway and never leaves it.
 for (const def of Object.values(D.battles)) {
     const train = def.units.find(u => u.rail);

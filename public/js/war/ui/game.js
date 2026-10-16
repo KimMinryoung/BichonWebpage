@@ -287,7 +287,7 @@
     let brief = { turn: null, read: false, open: null };
     function renderBrief() {
         const t = G.turnData(s);
-        const voices = s.phase === 'plan' ? t.voices || [] : [];
+        const voices = s.phase === 'plan' ? operationsNow().concat(t.voices || []) : [];
         const open = $('cwBrief').querySelector('.cw-voice-log');
         if (brief.turn !== s.turn) brief = { turn: s.turn, read: false, open: null };
         const story = t.brief.map(p => el('p', {}, p));
@@ -327,26 +327,113 @@
     $('cwHistoryToggle').before(voiceReplay);
 
     function speakerName(v) {
+        if (v.op) return D.map.operations[v.op].title;
         return v.who ? v.who[0] : v.by ? D.factions[v.by].short : '';
     }
 
     function sourceOf(v) {
+        if (v.op) return el('small', { class: 'cw-voice-src' }, v.date);
         return v.src ? el('small', { class: 'cw-voice-src' }, link(v.src)) : el('small', { class: 'cw-voice-src is-made' }, '각색');
     }
 
     function voicesOf() {
-        if (s.phase === 'plan') return G.turnData(s).voices || [];
+        if (s.phase === 'plan') return operationsNow().concat(G.turnData(s).voices || []);
         const rec = s.records[s.records.length - 1];
         const threats = G.threatsOf(s);
-        return Object.entries(rec.fronts).map(([id, r]) => {
+        return operationsNow().concat(Object.entries(rec.fronts).map(([id, r]) => {
             const fate = fateOf(r);
             const by = ((threats[id] || {}).foes || [])[0];
             return fate && by && D.factions[by].cries ? { by, at: id, text: D.factions[by].cries[fate] } : null;
-        }).filter(Boolean);
+        }).filter(Boolean));
+    }
+
+    // ── Operations ──
+    // A turning point of the war told on the map before the season's
+    // other voices: step by step, each bubble drawing its arrows (the
+    // scenario's map.operations, projected by the server). It plays in
+    // its season and phase when the choice that made it was taken (flag)
+    // or its card was sent; the arrows go when the next voice is not
+    // the operation's.
+    function operationsNow() {
+        const plan = s.phase === 'plan';
+        const rec = s.records[s.records.length - 1];
+        const turn = D.turns[plan ? s.turn : rec.turn].id;
+        return Object.entries(D.map.operations || {}).filter(([, op]) =>
+            op.turn === turn && op.phase === (plan ? 'plan' : 'review')
+            && (!op.flag || s.flags[op.flag])
+            && (!op.card || (plan ? s.plan.cards.some(c => c.id === op.card) : rec.cards.includes(op.card))))
+            .flatMap(([id, op]) => op.steps.map((step, i) => ({ op: id, step: i, who: op.who, date: step.date, text: step.text })));
+    }
+
+    // px: one screen pixel in map units at the operation's zoom.
+    function arrowHead(a, b, cls, px) {
+        const len = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+        const ux = (b.x - a.x) / len, uy = (b.y - a.y) / len;
+        const p = (x, y) => `${x.toFixed(2)},${y.toFixed(2)}`;
+        const h = 15 * px, w = 12 * px;
+        const bx = b.x - ux * h, by = b.y - uy * h;
+        return svg('path', { d: `M${p(b.x + ux * 5 * px, b.y + uy * 5 * px)}L${p(bx - uy * w, by + ux * w)}L${p(bx + ux * 3 * px, by + uy * 3 * px)}L${p(bx + uy * w, by - ux * w)}Z`, class: cls });
+    }
+
+    // The operation's drawing up to step i; the new step's parts draw in
+    // (fresh), the earlier ones stay, fainter.
+    function renderOperation(v, fresh) {
+        const root = overlayRoot();
+        const old = root.querySelector('#cwOp');
+        const key = v && v.op ? `${v.op}:${v.step}` : null;
+        zoomOperation(key ? v.op : null);
+        if (old && (old.dataset.key !== key || fresh)) old.remove();
+        if (!key || (old && old.isConnected)) return;
+        const g = svg('g', { id: 'cwOp', 'data-key': key, 'aria-hidden': 'true' });
+        const steps = points.operations[v.op];
+        const animate = fresh && !stillMotion();
+        const px = 1 / (Number(mapEl.style.getPropertyValue('--opk')) || root.getBoundingClientRect().width / Number(root.getAttribute('viewBox').split(' ')[2]) || 1);
+        steps.slice(0, v.step + 1).forEach((step, i) => {
+            const now = i === v.step;
+            const part = svg('g', { class: `cw-op-step${now ? ' is-now' : ' is-past'}${now && animate ? ' is-drawing' : ''}` });
+            // A later step that beats an arrow of an earlier one redraws it broken.
+            const beaten = steps.slice(i + 1, v.step + 1).some(n => n.draw.some(d => d.style === 'beaten'));
+            step.draw.forEach((d, k) => {
+                if (!now && d.path && d.style !== 'beaten' && d.side !== 'red' && beaten) return;
+                const item = svg('g', { class: 'cw-op-item', style: `--k:${k}` });
+                if (d.path) {
+                    const pts = d.path.map(q => `${q.x},${q.y}`).join(' ');
+                    let len = 0;
+                    for (let j = 1; j < d.path.length; j++) len += Math.hypot(d.path[j].x - d.path[j - 1].x, d.path[j].y - d.path[j - 1].y);
+                    const kind = d.side === 'red' ? 'is-red' : 'k-' + d.side;
+                    item.setAttribute('class', `cw-op-item cw-op-arrow ${kind} is-${d.style}`);
+                    item.style.setProperty('--len', len.toFixed(1));
+                    item.append(svg('polyline', { points: pts, class: 'cw-op-under' }), svg('polyline', { points: pts, class: 'cw-op-line' }));
+                    const [a, b] = d.path.slice(-2);
+                    if (d.style === 'beaten') {
+                        const m = d.path[d.path.length - 1];
+                        const c = 8 * px;
+                        item.append(svg('path', { d: `M${m.x - c},${m.y - c}L${m.x + c},${m.y + c}M${m.x + c},${m.y - c}L${m.x - c},${m.y + c}`, class: 'cw-op-cross' }));
+                    } else item.append(arrowHead(a, b, 'cw-op-head', px));
+                    if (d.name && now) {
+                        const left = b.x < a.x;
+                        item.append(svg('text', { x: b.x + (left ? -14 : 14) * px, y: b.y + (b.y < a.y ? -10 : 18) * px, 'text-anchor': left ? 'end' : 'start', class: 'cw-op-name' }, d.name));
+                    }
+                } else if (d.gather) {
+                    item.setAttribute('class', 'cw-op-item cw-op-gather');
+                    item.append(svg('circle', { cx: d.gather.x, cy: d.gather.y, r: 16 * px, class: 'cw-op-ring' }), svg('circle', { cx: d.gather.x, cy: d.gather.y, r: 6 * px, class: 'cw-op-dot' }));
+                    if (now) item.append(svg('text', { x: d.gather.x + 22 * px, y: d.gather.y + 6 * px, class: 'cw-op-name' }, d.name));
+                } else if (d.clash) {
+                    const { x, y } = d.clash;
+                    item.setAttribute('class', 'cw-op-item cw-op-clash');
+                    item.append(svg('path', { d: star(x, y, 20 * px, 9 * px), class: 'cw-op-burst' }));
+                    if (now && d.name) item.append(svg('text', { x: x - 24 * px, y: y + 6 * px, 'text-anchor': 'end', class: 'cw-op-name' }, d.name));
+                }
+                part.append(item);
+            });
+            g.append(part);
+        });
+        root.append(g);
     }
 
     // Where a voice speaks from, in map units.
     function voiceSpot(v) {
+        if (v.op) { const b = points.operations[v.op][v.step].box; return { x: (b.x0 + b.x1) / 2, y: b.y1, box: b }; }
         const m = v.by && markers[v.at];
         if (m) return { x: m.x, y: m.box.y0 };
         const pts = points.fronts[v.at];
@@ -368,30 +455,32 @@
         }
         if (voice.key !== motion.key) voice = { key: motion.key, list: voicesOf(), i: 0, until: null, timer: 0 };
         const review = s.phase !== 'plan';
-        if (!voice.list.length || motion.at === null || review && !unveiling) return layer.replaceChildren();
+        if (!voice.list.length || motion.at === null || review && !unveiling) { renderOperation(null); return layer.replaceChildren(); }
         // After the attackers have come in; a result after its fronts moved.
         const lead = review ? (voice.list.length - 1) * 300 + 1400 : 1500;
         const now = performance.now();
         if (voice.until === null && now - motion.at < lead) {
             layer.replaceChildren();
+            renderOperation(null);
             voice.timer = window.setTimeout(renderVoice, lead - (now - motion.at) + 20);
             return;
         }
         while (voice.until !== null && now >= voice.until && voice.i < voice.list.length) { voice.i++; voice.until = null; }
-        if (voice.i >= voice.list.length) return layer.replaceChildren();
+        if (voice.i >= voice.list.length) { renderOperation(null); return layer.replaceChildren(); }
         const v = voice.list[voice.i];
         const fresh = voice.until === null;
         const spot = voiceSpot(v);
+        renderOperation(v, fresh);
         const scale = overlayRoot().getBoundingClientRect().width / Number(overlayRoot().getAttribute('viewBox').split(' ')[2]);
         if (fresh) {
             voice.until = now + holdOf(v);
             announce(`${speakerName(v)}: ${v.text}`);
-            showSpot(spot.x * scale, spot.y * scale);
+            if (!spot.box) showSpot(spot.x * scale, spot.y * scale);
         }
         const bubble = voiceBubble(v, spot, scale, fresh);
         layer.replaceChildren(bubble);
         // Too tall to fit above the speaker in view: it hangs below.
-        if (!bubble.classList.contains('is-below') && spot.y * scale - bubble.offsetHeight - 16 < (NARROW.matches ? mapEl.scrollTop : 0)) bubble.classList.add('is-below');
+        if (!spot.box && !bubble.classList.contains('is-below') && spot.y * scale - bubble.offsetHeight - 16 < (NARROW.matches ? mapEl.scrollTop : 0)) bubble.classList.add('is-below');
         voice.timer = window.setTimeout(renderVoice, voice.until - now + 20);
     }
 
@@ -399,10 +488,10 @@
         const f = v.by && D.factions[v.by];
         const width = Math.min(310, mapEl.clientWidth - 24);
         return bubble({
-            v, fresh, width, name: speakerName(v), sub: v.who && f ? f.short : null,
-            face: v.who ? A.portrait(v.who[1]) : A.shield(v.by, f), side: f ? 'k-' + f.kind : 'is-red',
+            v, fresh, width, name: speakerName(v), sub: v.op ? v.who[0] : v.who && f ? f.short : null,
+            face: v.who ? A.portrait(v.who[1]) : A.shield(v.by, f), side: f ? 'k-' + f.kind : v.op ? 'is-red is-op' : 'is-red',
             ax: spot.x * scale, ay: spot.y * scale, view: mapEl,
-            below: spot.y * scale < (NARROW.matches ? mapEl.scrollTop : 0) + 150,
+            below: Boolean(spot.box) || spot.y * scale < (NARROW.matches ? mapEl.scrollTop : 0) + 150,
             count: `${voice.i + 1}/${voice.list.length}`,
             next: () => { voice.i++; voice.until = null; renderVoice(); },
             skip: () => { voice.i = voice.list.length; renderVoice(); },
@@ -516,6 +605,41 @@
     }
 
     // On a narrow screen the speaker slides into the map's view.
+    // While an operation is told the map closes in on it (wide screens
+    // too, inside the frame's height): its whole drawing in the upper half
+    // of the view, its bubble under it. After, the map goes back.
+    let opZoom = null;
+    function zoomOperation(id) {
+        if (opZoom === id) return;
+        const root = mapEl.querySelector('svg');
+        opZoom = id;
+        if (!id) {
+            mapEl.classList.remove('is-op-zoom');
+            mapEl.style.removeProperty('--opk');
+            if (!NARROW.matches) { root.style.width = overlayRoot().style.width = ''; mapEl.style.height = ''; }
+            fitKey = null;
+            fitMap();
+            paintBasemap();
+            return;
+        }
+        const steps = points.operations[id];
+        const b = steps[steps.length - 1].box;
+        const W = Number(root.getAttribute('viewBox').split(' ')[2]);
+        const fw = mapEl.clientWidth, fh = mapEl.clientHeight;
+        if (!fw || !fh) return;
+        mapEl.style.height = `${fh}px`;
+        mapEl.classList.add('is-op-zoom');
+        const was = root.getBoundingClientRect().width / W;
+        // A phone's frame is short: the drawing takes its top third.
+        const [tall, top] = NARROW.matches ? [0.3, 0.03] : [0.45, 0.15];
+        const k = Math.min(Math.max(NARROW.matches ? fw / W : was, Math.min(fw * 0.7 / (b.x1 - b.x0), fh * tall / (b.y1 - b.y0))), was * 4);
+        root.style.width = overlayRoot().style.width = `${Math.round(W * k)}px`;
+        // Words and arrows keep their size on screen however close it goes.
+        mapEl.style.setProperty('--opk', k.toFixed(3));
+        paintBasemap();
+        mapEl.scrollTo({ left: (b.x0 + b.x1) / 2 * k - fw / 2, top: b.y0 * k - fh * top, behavior: 'auto' });
+    }
+
     function showSpot(x, y) {
         if (!NARROW.matches) return;
         const { scrollLeft: l, scrollTop: t, clientWidth: w, clientHeight: h } = mapEl;
@@ -667,7 +791,7 @@
             }
         }
         for (const kept of [glides.start, glides.pos, glides.shift]) for (const name of Object.keys(kept)) if (!gliding.has(name)) delete kept[name];
-        root.append(layer);
+        root.insertBefore(layer, root.querySelector('#cwOp'));
         markPicked();
         spotlight(lit);
         renderControlPhase();
@@ -758,6 +882,7 @@
     // than readable, never larger than twice that); the rest is a swipe
     // away inside the frame. Panning by hand is kept until the next season.
     function fitMap() {
+        if (opZoom) return;
         const root = mapEl.querySelector('svg');
         if (!NARROW.matches) { root.style.width = overlayRoot().style.width = ''; mapEl.style.height = ''; fitKey = null; return; }
         const fw = mapEl.clientWidth;

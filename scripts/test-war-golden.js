@@ -37,7 +37,10 @@ function oldFlags(flags) {
     return out;
 }
 // A trait's pressure part dropped its name (2026-10-16): the old label.
+// Yudenich's threshold read 50 until rules 5 (2026-10-16): the old rule.
+const oldRule = tr => (tr.rule === '노동자 지지가 45 아래면 압력 +2' ? Object.assign({}, tr, { rule: '노동자 지지가 50 아래면 압력 +2' }) : tr);
 function oldParts(f) {
+    if (f && f.traits) f.traits = f.traits.map(oldRule);
     if (!f || !f.pressureParts || !f.traits) return f;
     f.pressureParts = f.pressureParts.map(p => {
         const tr = f.traits.find(x => x.on && p === `${x.short} ${(x.by < 0 ? '−' : '+') + Math.abs(x.by)}`);

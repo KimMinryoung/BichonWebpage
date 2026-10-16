@@ -39,6 +39,18 @@ function warMap(id) {
     // Named places that are not front cities, and those beyond the frame
     // pinned to its edge where the line from the middle leaves it.
     points.places = (scenario.map.places || []).map(([name, lat, lng, kind, pos]) => Object.assign(at([name, lat, lng]), { kind, pos: pos || null }));
+    // The operations' arrows, rings and clashes, and each step's box: what
+    // is drawn so far, which its bubble hangs under, clear of the arrows.
+    const pt = ([lat, lng]) => { const [x, y] = xy([lat, lng]); return { x, y }; };
+    points.operations = Object.fromEntries(Object.entries(scenario.map.operations || {}).map(([oid, op]) => {
+        const seen = [];
+        return [oid, op.steps.map(step => {
+            const draw = step.draw.map(d => Object.assign({}, d, d.path ? { path: d.path.map(pt) } : {}, d.gather ? { gather: pt(d.gather) } : {}, d.clash ? { clash: pt(d.clash) } : {}));
+            for (const d of draw) seen.push(...(d.path || [d.gather || d.clash]));
+            const box = { x0: Math.min(...seen.map(p => p.x)) - 12, x1: Math.max(...seen.map(p => p.x)) + 12, y0: Math.min(...seen.map(p => p.y)) - 12, y1: Math.max(...seen.map(p => p.y)) + 16 };
+            return { draw, box };
+        })];
+    }));
     const mid = [region.width / 2, region.height / 2];
     points.beyond = (scenario.map.beyond || []).map(([name, lat, lng]) => {
         const [x, y] = region.project(lat, lng);

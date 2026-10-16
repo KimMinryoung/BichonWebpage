@@ -53,6 +53,8 @@ function checkScenario(D) {
     }
     for (const l of D.unrest.levels) cond(l.when, 'unrest');
     for (const k of ['gained', 'lost']) for (const s of Object.keys(D.frontMoves[k])) need(stats.includes(s), `frontMoves.${k}: ${s}`);
+    for (const k of ['gained', 'lost']) for (const s of Object.keys((D.frontMoves.net || {})[k] || {})) need(stats.includes(s), `frontMoves.net.${k}: ${s}`);
+    for (const u of D.economy.upkeep || []) for (const k of Object.keys(u.each || {})) need(stats.includes(k), `upkeep: stat ${k}`);
     for (const m of D.modifiers || []) {
         cond(m.when, `modifier ${m.label}`);
         for (const f of m.fronts || [m.front]) need(fronts[f], `modifier ${m.label}: front ${f}`);
@@ -142,6 +144,28 @@ function checkScenario(D) {
         for (const r of railways) {
             need(r.pts.length >= 2 && r.pts.every(([lat, lng]) => lat >= box.south && lat <= box.north && lng >= box.west && lng <= box.east), `railway ${r.id}: inside the map`);
             need(r.pts.every(p => reached.has(key(p))), `railway ${r.id}: joins the hub's network`);
+        }
+        // Operations: a season and phase that exist, a choice's flag or a
+        // card that can set them off, a speaker with a portrait, and
+        // every point inside the map.
+        const inside = ([lat, lng]) => lat >= box.south && lat <= box.north && lng >= box.west && lng <= box.east;
+        for (const [id, op] of Object.entries(D.map.operations || {})) {
+            const at = `operation ${id}`;
+            const turn = D.turns.find(t => t.id === op.turn);
+            need(turn, `${at}: no season ${op.turn}`);
+            need(['plan', 'review'].includes(op.phase), `${at}: phase ${op.phase}`);
+            if (op.card) need(cards[op.card] && turn && turn.cards.includes(op.card), `${at}: card ${op.card} not in its season`);
+            if (op.flag) need(D.turns.some(t => [t.choice, t.incident].filter(Boolean).some(c => c.options.some(o => o.flag === op.flag))), `${at}: no choice sets ${op.flag}`);
+            need(D.portraits[op.who[1]], `${at}: no portrait for ${op.who[1]}`);
+            need(op.steps.length > 0, `${at}: no steps`);
+            for (const [i, step] of op.steps.entries()) {
+                need(step.date && step.text && step.draw.length, `${at} step ${i}: date, text and drawing`);
+                for (const d of step.draw) {
+                    const pts = d.path || [d.gather || d.clash].filter(Boolean);
+                    need(pts.length && pts.every(inside), `${at} step ${i}: a mark outside the map`);
+                    if (d.path) need(d.path.length >= 2 && ['strike', 'beaten', 'next'].includes(d.style) && (d.side === 'red' || ['white', 'interv'].includes(d.side)), `${at} step ${i}: arrow ${JSON.stringify(d.style)}`);
+                }
+            }
         }
         for (const [id, f] of Object.entries(fronts)) {
             for (const [name, lat, lng] of f.cities) need(lat >= box.south && lat <= box.north && lng >= box.west && lng <= box.east, `front ${id}: ${name} inside the map`);

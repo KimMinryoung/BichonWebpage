@@ -16,7 +16,8 @@
    The ground: terrain by map letter (cost, def, and the flags water, span,
    ford, fort). A river (water) is closed to the armies and open to boats
    (units with naval), which also pass under a bridge (span). An armoured
-   train (rail) keeps to the board's railway (def.rails). A ford is the
+   train (rail) keeps to the board's railway (def.rails), fast along it
+   (railMv from rules 5). A ford is the
    player's road only and closes once the wind turns (def.windTurns), its
    water hurting whoever is still on it. Guns (a unit kind that wears, by
    default 'art') wear a fortification down and draw no counter.
@@ -72,9 +73,11 @@
     // fed is the share of strength hunger leaves a division, and it is
     // the share of their men the player's units bring; a leader (the
     // commissar) steadies the units marked lead (defence +1). opts.rules
-    // under 3 (a save from before) fights without feats and surrenders.
+    // under 3 (a save from before) fights without feats and surrenders;
+    // under 5 a train keeps its old pace (mv, not railMv).
     function start(def, flags, muster, opts) {
         const heroics = !(opts && opts.rules < 3);
+        const express = !(opts && opts.rules < 5);
         const sides = sidesOf(def);
         const units = def.units
             .filter(u => joins(u, flags, muster, def))
@@ -87,7 +90,7 @@
                     id: u.id, tag: u.tag || u.name, side: u.side, name: u.name, sub: u.sub || '', kind: u.kind,
                     role: u.role || null, line: u.line || null, wake: u.wake || 0,
                     person: u.person || null, r: u.at[0], c: u.at[1], hp, maxHp: u.hp,
-                    atk: u.atk, def: u.def + (lead ? 1 : 0), mv: u.mv, range: u.range || 1, commissar: Boolean(lead), naval: Boolean(u.naval), rail: Boolean(u.rail),
+                    atk: u.atk, def: u.def + (lead ? 1 : 0), mv: express && u.railMv ? u.railMv : u.mv, range: u.range || 1, commissar: Boolean(lead), naval: Boolean(u.naval), rail: Boolean(u.rail),
                     counter: u.counter === undefined ? kind.counter : u.counter, wears: u.wears === undefined ? kind.wears : u.wears,
                     feat: heroics && u.feat ? u.feat : null, skirmish: heroics && Boolean(u.skirmish),
                     moved: false, acted: false, prev: null,

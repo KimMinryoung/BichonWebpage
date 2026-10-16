@@ -144,7 +144,7 @@
         yudenich: {
             name: '북서군(유데니치)', short: '유데니치', kind: 'white', flag: TRICOLOR, link: T('north-western-army-white'),
             note: '에스토니아를 발판으로 페트로그라드를 노린 유데니치 장군의 백군.',
-            trait: { name: '페트로그라드 기습', motion: 'charge', when: { stat: ['workers', '<', 50] }, by: 2, rule: '노동자 지지가 50 아래면 압력 +2', text: '유데니치는 영국이 준 전차 여섯 대를 앞세워 풀코보 고지까지 왔다. 도시를 지킨 것은 거리에 바리케이드를 쌓은 페트로그라드 노동자였다.' },
+            trait: { name: '페트로그라드 기습', motion: 'charge', when: { any: [{ rules: ['<', 5], stat: ['workers', '<', 50] }, { rules: ['>=', 5], stat: ['workers', '<', 45] }] }, by: 2, rule: '노동자 지지가 45 아래면 압력 +2', text: '유데니치는 영국이 준 전차 여섯 대를 앞세워 풀코보 고지까지 왔다. 도시를 지킨 것은 거리에 바리케이드를 쌓은 페트로그라드 노동자였다.' },
             cries: { beaten: '에스토니아로 물러난다.', surging: '페트로그라드가 보인다!' },
             spoils: '탄약 수레와 군량',
         },
@@ -381,7 +381,7 @@
                 ],
                 options: [
                     { id: 'razverstka', label: '식량 할당제를 도입한다', flag: 'razverstka', effect: '매 시기 곡물 +7, 농민 지지 −3' },
-                    { id: 'market', label: '고정가 수매와 교환을 늘린다', flag: 'market', effect: '매 시기 곡물 +1, 농민 지지 +2' },
+                    { id: 'market', label: '고정가 수매와 교환을 늘린다', flag: 'market', effect: '매 시기 곡물 +1, 농민 지지 +2, 노동자 지지 −2(배급이 줄어 도시가 굶는다)' },
                 ],
                 history: 'razverstka',
                 after: '1919년 1월 식량 할당제가 도입되었다. 군대와 도시는 빵을 얻었지만, 할당량을 채우려는 징발은 마을의 씨앗 곡물까지 가져갔다. 이 체제가 「전시 공산주의」의 핵심이었다.',
@@ -770,7 +770,7 @@
             { id: 'r2c', tag: '2기병', side: 'red', name: '제2기병군', sub: '미로노프', kind: 'cav', at: [0, 9], hp: 10, atk: 5, def: 2, mv: 5, card: 'mironov', person: ['필리프 미로노프', 'filipp-mironov'] },
             { id: 'r30', tag: '30', side: 'red', name: '제30사단', sub: '제4군', kind: 'inf', at: [1, 11], hp: 10, atk: 4, def: 3, mv: 3 },
             { id: 'r30b', tag: '30여단', side: 'red', name: '제30사단 여단', sub: '제4군', kind: 'inf', at: [1, 12], hp: 10, atk: 4, def: 3, mv: 3, need: 3 },
-            { id: 'rtr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', rail: true, at: [0, 10], hp: 6, atk: 4, def: 2, mv: 2, range: 2, card: 'train' },
+            { id: 'rtr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', rail: true, at: [0, 10], hp: 6, atk: 4, def: 2, mv: 2, railMv: 6, range: 2, card: 'train' },
             { id: 'r4g', tag: '4군포', side: 'red', name: '제4군 포병', kind: 'art', at: [0, 11], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
             { id: 'w1', tag: '드로즈', side: 'white', name: '드로즈돕스키 사단', sub: '방벽 수비', kind: 'inf', at: [3, 1], hp: 10, atk: 4, def: 3, mv: 3, role: 'wall', line: 'wall' },
             { id: 'w2', tag: '드로즈', side: 'white', name: '드로즈돕스키 사단', sub: '방벽 수비', kind: 'inf', at: [3, 2], hp: 10, atk: 4, def: 3, mv: 3, role: 'wall', line: 'wall' },
@@ -874,7 +874,7 @@
             { id: 'ksl', tag: '수병', side: 'red', name: '발트함대 수병 분견대', sub: '모스크바에서 온', kind: 'inf', at: [7, 3], hp: 9, atk: 5, def: 2, mv: 3, need: 0 },
             { id: 'k2a', tag: '2군', side: 'red', name: '제2군 소총사단', sub: '아진', kind: 'inf', at: [1, 11], hp: 10, atk: 5, def: 3, mv: 3, need: 3, person: ['블라디미르 아진', 'vladimir-azin'] },
             { id: 'kcp', tag: '당원', side: 'red', name: '공산당원·사관생도 분견대', sub: '모스크바에서 온', kind: 'inf', at: [7, 1], hp: 8, atk: 4, def: 3, mv: 3, need: 6 },
-            { id: 'ktr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', rail: true, at: [5, 1], hp: 6, atk: 4, def: 2, mv: 2, range: 2, card: 'train', person: ['레프 트로츠키', 'trotsky'],
+            { id: 'ktr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', rail: true, at: [5, 1], hp: 6, atk: 4, def: 2, mv: 2, railMv: 6, range: 2, card: 'train', person: ['레프 트로츠키', 'trotsky'],
                 feat: {
                     id: 'all-arms', name: '모두 총을 들어라', kind: 'muster',
                     unit: { id: 'ktc', tag: '승무원', name: '열차 승무원 분견대', sub: '트로츠키의 열차', kind: 'inf', hp: 6, atk: 4, def: 3, mv: 3 },
@@ -968,7 +968,7 @@
             { id: 'o13g', tag: '13군포', side: 'red', name: '제13군 포병', kind: 'art', at: [1, 7], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
             { id: 'opv', tag: '에스토니아', side: 'red', name: '에스토니아 소총사단', sub: '17일 투입', kind: 'inf', at: [2, 5], hp: 9, atk: 4, def: 3, mv: 3, need: 3 },
             { id: 'otw', tag: '툴라', side: 'red', name: '툴라 노동자 연대', sub: '당 주간의 입당자', kind: 'inf', at: [0, 7], hp: 8, atk: 4, def: 3, mv: 3, need: 6 },
-            { id: 'otr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', rail: true, at: [2, 4], hp: 6, atk: 4, def: 2, mv: 2, range: 2, card: 'train', person: ['레프 트로츠키', 'trotsky'] },
+            { id: 'otr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', rail: true, at: [2, 4], hp: 6, atk: 4, def: 2, mv: 2, railMv: 6, range: 2, card: 'train', person: ['레프 트로츠키', 'trotsky'] },
             { id: 'wo1', tag: '코르닐', side: 'white', name: '코르닐로프 연대', sub: '오룔 수비', kind: 'inf', at: [3, 6], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
             { id: 'wo2', tag: '코르닐', side: 'white', name: '코르닐로프 연대', sub: '오룔 역', kind: 'inf', at: [4, 6], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
             { id: 'wob', tag: '포대', side: 'white', name: '오룔 포대', kind: 'art', at: [4, 7], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'hold' },
@@ -1071,7 +1071,7 @@
             { id: 'u25g', tag: '25포병', side: 'red', name: '제25사단 포병', kind: 'art', at: [3, 2], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
             { id: 'u31', tag: '31', side: 'red', name: '제31사단', sub: '8일 왼쪽으로 옮김', kind: 'inf', at: [2, 1], hp: 10, atk: 4, def: 3, mv: 3, need: 6 },
             { id: 'u24', tag: '24', side: 'red', name: '제24사단', sub: '철교 정면', kind: 'inf', at: [7, 2], hp: 10, atk: 4, def: 3, mv: 3, need: 3 },
-            { id: 'utr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', rail: true, at: [6, 1], hp: 6, atk: 4, def: 2, mv: 2, range: 2, card: 'train' },
+            { id: 'utr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', rail: true, at: [6, 1], hp: 6, atk: 4, def: 2, mv: 2, railMv: 6, range: 2, card: 'train' },
             { id: 'wpost', tag: '경계', side: 'white', name: '경계 부대', sub: '크라스니야르', kind: 'inf', at: [1, 6], hp: 5, atk: 3, def: 2, mv: 3, role: 'hold' },
             { id: 'wf1', tag: '4사단', side: 'white', name: '제4사단', sub: '강변 진지', kind: 'inf', at: [5, 5], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
             { id: 'wf2', tag: '4사단', side: 'white', name: '제4사단', sub: '강변 진지', kind: 'inf', at: [7, 5], hp: 9, atk: 4, def: 3, mv: 3, role: 'hold' },
@@ -1187,6 +1187,66 @@
             ['탐보프', 52.73, 41.45, 'town', 'below'], ['보로네시', 51.67, 39.2, 'town', 'below'], ['오데사', 46.48, 30.73, 'town'],
             ['노보로시스크', 44.72, 37.77, 'town', 'below'], ['페름', 58.01, 56.25, 'town'],
         ],
+        // Operations told on the map (war/ui/game.js): when one plays (a
+        // season's turn and phase, the flag a choice set or the card sent),
+        // its steps go first among the season's voices, each drawing its
+        // arrows ([위도, 경도] paths) as its words show. side: 'red' or a
+        // faction kind; style: 'strike' (the move told), 'beaten' (a move
+        // broken), 'next' (what is left to do, dashed); gather: a ring where
+        // forces stand ready; clash: where they met. The bubble points at
+        // the step's last arrowhead.
+        operations: {
+            frunze: {
+                title: '프룬제의 측면 반격', who: ['미하일 프룬제', 'frunze'], turn: 'directive', phase: 'plan', flag: 'flank',
+                steps: [
+                    {
+                        date: '1919년 3–4월', text: '콜차크의 서부군이 우파에서 볼가 쪽으로 깊이 들어왔다. 4월 10일 부구루슬란이 넘어갔다. 진격로는 길게 늘어졌고, 남쪽 옆구리는 비었다.',
+                        draw: [{ side: 'white', style: 'strike', path: [[54.74, 55.97], [54.10, 54.12], [53.65, 52.43], [53.40, 51.30]], name: '콜차크 서부군' }],
+                    },
+                    {
+                        date: '1919년 4월', text: '프룬제는 정면을 메우지 않고 남부집단군의 타격 부대를 부줄루크 둘레에 모았다. 차파예프의 제25사단이 그 선봉이다.',
+                        draw: [{ gather: [52.79, 52.26], name: '부줄루크' }],
+                    },
+                    {
+                        date: '1919년 4월 28일–5월 17일', text: '4월 28일 타격 부대가 북쪽으로 콜차크군의 옆구리를 찔렀다. 5월 4일 부구루슬란, 13일 부굴마, 17일 벨레베이. 늘어진 서부군은 끊길까 봐 우랄 쪽으로 물러났다.',
+                        draw: [
+                            { side: 'white', style: 'beaten', path: [[54.74, 55.97], [54.10, 54.12], [53.65, 52.43], [53.40, 51.30]] },
+                            { side: 'red', style: 'strike', path: [[52.79, 52.26], [53.65, 52.43], [54.54, 52.79]], name: '부굴마' },
+                            { side: 'red', style: 'strike', path: [[53.40, 52.55], [53.85, 53.40], [54.10, 54.12]], name: '벨레베이' },
+                            { clash: [53.65, 52.43], name: '부구루슬란' },
+                        ],
+                    },
+                    {
+                        date: '1919년 6월', text: '남은 것은 벨라야강 건너의 우파다. 이번 시기에 그 강을 건넌다.',
+                        draw: [{ side: 'red', style: 'next', path: [[54.10, 54.12], [54.45, 55.20], [54.74, 55.97]], name: '벨라야강 도하' }],
+                    },
+                ],
+            },
+            mironov: {
+                title: '미로노프의 제2기병군', who: ['필리프 미로노프', 'filipp-mironov'], turn: 'perekop', phase: 'review', card: 'mironov',
+                steps: [
+                    {
+                        date: '1920년 10월 초', text: '브란겔이 알렉산드롭스크와 니코폴 사이에서 드니프로강을 건너 서쪽으로 나왔다. 바비예프와 바르보비치의 기병군단이 카호프카의 붉은 교두보를 등 뒤에서 노린다.',
+                        draw: [
+                            { side: 'white', style: 'strike', path: [[47.80, 35.05], [47.62, 34.55], [47.66, 33.95]], name: '바르보비치 기병군단' },
+                            { gather: [46.82, 33.48], name: '카호프카 교두보' },
+                        ],
+                    },
+                    {
+                        date: '1920년 10월 중순', text: '사면받은 미로노프의 제2기병군이 니코폴 서쪽에서 백군 기병을 맞받아쳤다. 바비예프가 쓰러졌고, 바르보비치의 군단은 드니프로강 너머로 쫓겨났다.',
+                        draw: [
+                            { side: 'red', style: 'strike', path: [[48.15, 33.75], [47.85, 33.90], [47.68, 34.02]], name: '제2기병군' },
+                            { clash: [47.66, 33.98], name: '니코폴 서쪽' },
+                            { side: 'white', style: 'beaten', path: [[47.66, 33.95], [47.62, 34.55], [47.80, 35.05]] },
+                        ],
+                    },
+                    {
+                        date: '1920년 10월 말', text: '붉은 군대가 북타브리아로 밀고 들어가자 제2기병군도 드니프로강을 건너 남쪽으로 브란겔군을 쫓았다. 브란겔은 크림으로 물러났다. 남은 것은 페레코프다.',
+                        draw: [{ side: 'red', style: 'strike', path: [[47.57, 34.39], [47.05, 34.45], [46.55, 34.10]], name: '북타브리아' }],
+                    },
+                ],
+            },
+        },
         beyond: [['옴스크', 54.98, 73.37], ['블라디보스토크', 43.12, 131.9], ['이르쿠츠크', 52.29, 104.3], ['무르만스크', 68.97, 33.08]],
         // The map key: the game layer's colours (holders by faction kind),
         // and history's control layer.
@@ -1225,6 +1285,8 @@
         pursuitNote: '{front}: 무너진 적을 쫓는다. 이 전선의 다음 싸움에서 압력 −{n}.',
     };
 
+    const WORKERS_UPKEEP = 2;
+    const UPKEEP_NOTE = `굶주림과 멈춘 공장, 전선으로 떠난 노동자로 도시가 비어 간다. 노동자 지지 −${WORKERS_UPKEEP}.`;
     // Stats of the republic (0–100), and grain. Grain each season: 3, one
     // more per 15 peasant trust, what the policy chosen changes (the tax in
     // kind leaves the peasants most of what the requisition took), cards.
@@ -1237,11 +1299,22 @@
         policies: [
             { flag: 'razverstka', food: 7, each: { peasants: -3 }, unless: 'tax' },
             { flag: 'market', food: 1, each: { peasants: 2 } },
+            // Rules 5: grain bought on the market does not reach the city
+            // rations; the bagmen do.
+            { flag: 'market', when: { rules: ['>=', 5] }, each: { workers: -2 } },
             { flag: 'tax', food: -10, each: { peasants: 8 } },
         ],
         // Peasants and cohesion land before Petrograd's fall, workers after
         // (its −15 joins the season's changes).
         settleOrder: ['peasants', 'cohesion', 'cities', 'workers'],
+        // Rules 5: what every season costs. The war empties the cities
+        // (hunger, idle factories, the best workers gone to the front); a
+        // working class that turns away splits the party (the oppositions
+        // of 1919–1920).
+        upkeep: [
+            { when: { rules: ['>=', 5] }, each: { workers: -WORKERS_UPKEEP }, note: UPKEEP_NOTE },
+            { when: { rules: ['>=', 5], stat: ['workers', '<', 45] }, each: { cohesion: -3 }, note: '노동자 지지가 45 아래다. 공장에서 등을 돌린 노동자를 두고 당 안에 반대파가 선다. 당 결속 −3.' },
+        ],
     };
 
     // Command each season follows the party's cohesion: a united party
@@ -1281,8 +1354,11 @@
     const spoils = { food: 2, max: 2 };
     // Each front gained or lost moves the workers; the season's fronts
     // behind history split the party, ahead of it unite it.
-    const frontMoves = { gained: { workers: 2 }, lost: { workers: -2 } };
-    const verdict = { behind: { cohesion: -3, note: '역사보다 밀린 책임을 두고 당 안에서 논쟁이 벌어졌다. 당 결속 −3.' }, ahead: { cohesion: 2 } };
+    // From rules 5 once a season by the net, and a gain less than a loss:
+    // victories do not feed the cities. Being ahead no longer unites the
+    // party.
+    const frontMoves = { gained: { workers: 2 }, lost: { workers: -2 }, net: { when: { rules: ['>=', 5] }, gained: { workers: 1 }, lost: { workers: -2 } } };
+    const verdict = { behind: { cohesion: -3, note: '역사보다 밀린 책임을 두고 당 안에서 논쟁이 벌어졌다. 당 결속 −3.' }, ahead: { cohesion: 2, when: { rules: ['<', 5] } } };
 
     // What choices and seasons add to a front, in the order the card lists
     // them; afterBattle ones come after the season's battle.
