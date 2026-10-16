@@ -140,7 +140,7 @@ var tocHref = function(id) {
 <%# 번역과 원문 사이를 오가는 칸. 원문이 공개된 문헌에만 있다(commulingo_doc_originals).
     원문 쪽에는 검색 칸이 없다 — 검색은 번역 본문을 뒤진다. %>
 <% if (switchTo) { %>
-<a class="doc-version-switch" href="<%= languageUrl(switchTo.href, urlLanguage === 'en' ? 'en' : 'ko') %>" lang="<%= lang %>"><%= switchTo.original ? strings.commuLingoViews.doc.original : strings.commuLingoViews.doc.translation %></a>
+<a class="doc-version-switch" href="<%= languageUrl(switchTo.href, urlLanguage === 'en' ? 'en' : 'ko') %>" lang="<%= lang %>" data-anchors="<%= JSON.stringify(switchTo.anchors) %>"><%= switchTo.original ? strings.commuLingoViews.doc.original : strings.commuLingoViews.doc.translation %></a>
 <% } %>
 </div>
 <%- bodyTopHtml %>
@@ -328,6 +328,41 @@ var extraEditorialNotes = (doc.editorialNotes || '').split(/(?<!No\.)(?<=[.!?])\
     <button type="button" data-find="next" aria-label="<%= strings.commuLingoViews.doc.searchUi.next %>">↓</button>
     <button type="button" data-find="close" aria-label="<%= strings.commuLingoViews.doc.searchUi.close %>">✕</button>
 </div>
+<% if (switchTo) { %>
+<script>
+// 번역↔원문 전환은 지금 읽고 있는 섹션으로 간다: 화면 위쪽을 이미 지난 제목
+// 가운데 마지막 것(없으면 이 페이지의 첫 제목)이 반대쪽 버전에도 있으면 그
+// 페이지·앵커로 보낸다. 두 버전은 같은 섹션에 같은 id를 단다.
+(function () {
+    var link = document.querySelector('.doc-version-switch');
+    if (!link) return;
+    var anchors = {};
+    try { anchors = JSON.parse(link.getAttribute('data-anchors') || '{}'); } catch (e) {}
+    link.addEventListener('click', function () {
+        var bar = document.querySelector('.doc-toc');
+        var line = (bar ? bar.getBoundingClientRect().bottom : 0) + 8;
+        var heads = Array.prototype.filter.call(
+            document.querySelectorAll('.book h1[id], .book h2[id], .book h3[id]'),
+            function (h) { return anchors[h.id]; });
+        if (!heads.length) return;
+        var current = null;
+        heads.forEach(function (h) { if (h.getBoundingClientRect().top <= line) current = h; });
+        // Above the first section of page 1 the reader is at the document's
+        // head: the other version's top is the right place. Further pages
+        // open on their first section.
+        if (!current) {
+            if (!/[?&]p=([2-9]|\d\d)/.test(window.location.search)) {
+                link.href = link.href.split(/[?#]/)[0];
+                return;
+            }
+            current = heads[0];
+        }
+        var page = anchors[current.id];
+        link.href = link.href.split(/[?#]/)[0] + (page > 1 ? '?p=' + page : '') + '#' + current.id;
+    });
+})();
+</script>
+<% } %>
 <script src="/js/commulingo-doc-search.js?v=<%= assetVersion %>" defer></script>
 <%# 테마 토글(#themeToggle) 핸들러는 common.js에 있다. 이 리더는 partials/head를
     쓰지 않고 자체 head를 갖는 탓에 스크립트를 하나도 싣지 않아, nav 파셜이

@@ -317,6 +317,24 @@ function getCommuLingoDocContent(doc) {
     return entry;
 }
 
+// Headings a reader can be sent to from the other version (translation <->
+// original): every h1-h3 that carries an id of its own, mapped to the page it
+// sits on (1 on a single-scroll document). Generated ids (sec-N) are left out:
+// they count headings, so the same number names different sections in the two
+// versions. Kept on the cached content object.
+function getCommuLingoDocAnchorPages(content) {
+    if (content.anchorPages) return content.anchorPages;
+    const pages = content.paged ? content.paged.pages.map(page => page.html) : [content.html];
+    const out = {};
+    pages.forEach((html, i) => {
+        for (const m of html.matchAll(/<h[1-3][^>]*\bid="([^"]+)"/g)) {
+            if (!/^sec-\d+$/.test(m[1]) && !out[m[1]]) out[m[1]] = i + 1;
+        }
+    });
+    content.anchorPages = out;
+    return out;
+}
+
 // The published original of a translated document (null when there is none
 // or it is not public), read and paginated like the translation.
 function getCommuLingoDocOriginalContent(doc) {
@@ -389,6 +407,6 @@ function getCommuLingoDocContents(doc) {
 module.exports = {
     loadCommuLingoDocs: store.load, refreshCommuLingoDocs: () => store.refresh(),
     listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect,
-    listCommuLingoDocsFor, getCommuLingoDocContent, getCommuLingoDocOriginalContent, docRefId,
+    listCommuLingoDocsFor, getCommuLingoDocContent, getCommuLingoDocOriginalContent, getCommuLingoDocAnchorPages, docRefId,
     listCommuLingoDocExcerptsFor, getCommuLingoDocSection, getCommuLingoDocContents,
 };

@@ -2,7 +2,7 @@ const { dictionarySearchRoute } = require('../utils/dictionary-search-route');
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
-const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect, getCommuLingoDocContent, getCommuLingoDocOriginalContent } = require('../data/commulingo/docs-store');
+const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect, getCommuLingoDocContent, getCommuLingoDocOriginalContent, getCommuLingoDocAnchorPages } = require('../data/commulingo/docs-store');
 const { createDocRefResolver } = require('../data/commulingo/docs-refs');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { courseChaptersForDoc } = require('../data/commulingo/book-page');
@@ -82,8 +82,13 @@ async function renderDoc(req, res, raw, original) {
     const linkHtml = (scope, html) => original ? html : linkDocHtml(getCommuLingoDocContent(raw), raw, lang, scope, html);
     const titleSuffix = original ? (lang === 'en' ? ' (original)' : ' (원문)') : '';
     // The other version's address, for the reader's 「원문」/「번역」 switch.
+    // anchors: the other version's section headings and their pages, so the
+    // switch can land on the section being read (see the reader's script).
     const switchTo = original ? { href: `/commulingo/docs/${docId}`, original: false }
         : raw.original ? { href: `/commulingo/docs/${docId}/original`, original: true, lang: raw.original.lang } : null;
+    if (switchTo) {
+        switchTo.anchors = getCommuLingoDocAnchorPages(original ? getCommuLingoDocContent(raw) : getCommuLingoDocOriginalContent(raw));
+    }
     const jsonLd = commuLingoBreadcrumb(lang, [
         { name: lang === 'en' ? 'Reference Library' : '참고 문헌', href: '/commulingo/docs' },
         { name: doc.title, href: pagePath },
