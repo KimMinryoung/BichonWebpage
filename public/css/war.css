@@ -9,6 +9,9 @@
        steel with a pale rim on the dark map (a dark one on the light). */
     --cw-gold: #f2d64b; --cw-gold-rim: #1d1d1b; --cw-star: #e0252f;
     --cw-steel: #5b6b45; --cw-steel-rim: #e4dfcc;
+    /* What eases a front (a trait that helps, a pursuit): cream on green,
+       which reads on both themes where green text alone does not. */
+    --cw-good: #2f7d43; --cw-good-ink: #faf2da;
     --emap-blue: #2f6fb8; --emap-red: var(--clr-red); --emap-amber: #c7861c;
     --emap-purple: #7b5aa6; --emap-gray: #8d8d86; --emap-green: #3f8a4a; --emap-black: var(--text-primary);
 }
@@ -762,8 +765,8 @@
 .cw-trait.is-bites { border-left-color: var(--text-primary); }
 .cw-trait.is-bites b { color: var(--bg-surface); background: var(--text-primary); border-color: var(--text-primary); }
 .cw-trait.is-blunted b { color: var(--text-secondary); }
-.cw-trait.is-works { border-left-color: var(--btn-primary, #2da44e); }
-.cw-trait.is-works b { color: var(--btn-primary, #2da44e); }
+.cw-trait.is-works { border-left-color: var(--cw-good); }
+.cw-trait.is-works b { color: var(--cw-good-ink); background: var(--cw-good); border-color: var(--cw-good); }
 .cw-front-controls { gap: 4px; }
 .games-shell .cw-stepper button { min-width: 36px; min-height: 36px; padding: 4px 0; }
 .cw-stepper output { min-width: 58px; font-size: .9rem; }
@@ -822,10 +825,6 @@
 .cw-stake-verdict.is-behind::before { content: '▼ '; }
 .cw-stake-verdict.is-ahead::before { content: '▲ '; }
 .cw-stake-verdict.is-ahead { border-color: var(--btn-primary, #2da44e); }
-.cw-stake-momentum { color: var(--text-primary); font-weight: 700; }
-/* the momentum's hatched mark, as on the pressure row */
-.cw-stake-momentum::before { content: ''; display: inline-block; width: 9px; height: 9px; margin-right: 4px; vertical-align: -1px; border: 1px solid var(--cw-ink); background: var(--cw-white) repeating-linear-gradient(-45deg, transparent 0 2px, var(--cw-ink) 2px 3.5px); }
-.cw-stake-pursuit { color: var(--btn-primary, #2da44e); font-weight: 700; }
 .cw-stake { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-wrap: nowrap; align-items: flex-start; row-gap: 4px; }
 .cw-stake li { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 0; flex: 1 1 0; max-width: 92px; padding: 0 2px; overflow-wrap: anywhere; font-size: .72rem; color: var(--text-secondary); text-align: center; line-height: 1.2; }
 .cw-stake li.is-changing { color: var(--text-primary); font-weight: 700; }
@@ -857,16 +856,19 @@
 /* Strength and pressure on one scale: the bar is built of the strength's
    blocks, the attacker's units stand over it. */
 .cw-meter-top { display: flex; justify-content: space-between; }
-.cw-foe-row { position: relative; height: 11px; margin-bottom: 2px; }
-.cw-foe-count { position: absolute; top: 50%; transform: translateY(-50%); font-size: .75rem; line-height: 1; white-space: nowrap; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
-.cw-unit-mark { position: absolute; top: 0; bottom: 0; box-sizing: border-box; border: 1px solid var(--bg-surface); }
+.cw-foe-row { position: relative; min-height: 11px; margin-bottom: 2px; }
+.cw-foe-count { display: flex; flex-wrap: wrap; align-items: baseline; gap: 1px 5px; font-size: .75rem; line-height: 11px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.cw-next { font-weight: 700; padding: 0 4px; line-height: 1.25; }
+.cw-next.is-momentum { color: var(--bg-surface); background: var(--text-primary); }
+.cw-next.is-pursuit { color: var(--cw-good-ink); background: var(--cw-good); }
+.cw-unit-mark { position: absolute; top: 0; height: 11px; box-sizing: border-box; border: 1px solid var(--bg-surface); }
 .cw-unit-mark.k-white { background: var(--cw-white); border-color: var(--cw-ink); }
 .cw-unit-mark.k-interv { background: var(--emap-blue); }
 .cw-unit-mark.k-central { background: var(--emap-amber); }
 .cw-unit-mark.k-national { background: var(--emap-gray); }
 .cw-unit-mark.is-momentum { background-image: repeating-linear-gradient(-45deg, transparent 0 2px, var(--cw-ink) 2px 3.5px); }
 /* Pressure the pursuit took off: an empty mark, outlined in the ahead colour. */
-.cw-unit-mark.is-pursued { background: transparent; border: 1px dashed var(--btn-primary, #2da44e); }
+.cw-unit-mark.is-pursued { background: transparent; border: 1px dashed var(--cw-good); }
 .cw-meter-bar { height: 18px; }
 .cw-seg { position: absolute; top: 0; bottom: 0; box-sizing: border-box; display: grid; place-items: center; overflow: hidden; transition: left .2s ease, width .2s ease; }
 .cw-seg.is-div { background: var(--cw-red); border-right: 1.5px solid var(--bg-surface); }
@@ -1034,14 +1036,15 @@
    losing it; the divisions short of the next result as plain words. */
 .games-shell .cw-front .cw-step { min-height: 36px; padding: 4px 9px; font-size: .8rem; font-variant-numeric: tabular-nums; }
 .games-shell .cw-front .cw-step.is-more { border-color: var(--text-primary); font-weight: 700; }
-.cw-step.is-short { font-size: .76rem; color: var(--text-secondary); }
+.cw-meter-strength { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
+.cw-meter-top .cw-step-short { font-size: .76rem; color: var(--text-secondary); }
 /* The enemy, folded under the meter: who and what their traits add. */
 .cw-foe-fold { display: grid; gap: 5px; border-top: 1px solid var(--border); padding-top: 4px; }
 .cw-foe-fold > summary { display: flex; align-items: center; gap: 6px; min-height: 30px; cursor: pointer; font-size: .82rem; color: var(--text-secondary); }
 .cw-foe-fold > summary strong { color: var(--text-primary); }
 .cw-foe-fold > summary b { margin-left: auto; font-size: .72rem; padding: 0 5px; border: 1px solid currentColor; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .cw-foe-fold > summary b.is-bites { color: var(--bg-surface); background: var(--text-primary); border-color: var(--text-primary); }
-.cw-foe-fold > summary b.is-works { color: var(--btn-primary, #2da44e); }
+.cw-foe-fold > summary b.is-works { color: var(--cw-good-ink); background: var(--cw-good); border-color: var(--cw-good); }
 .cw-foe-fold[open] > summary b { display: none; }
 .cw-foe-fold > summary::before, .cw-brief-fold > summary::before { content: '▸'; font-size: 1em; color: var(--text-secondary); margin-right: 2px; }
 .cw-foe-fold[open] > summary::before, .cw-brief-fold[open] > summary::before { content: '▾'; }

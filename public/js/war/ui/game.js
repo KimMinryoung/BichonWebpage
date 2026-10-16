@@ -1122,6 +1122,7 @@
             const after = line + f.change;
             const hist = D.fronts[id].history[s.turn];
             const n = s.plan.alloc[id];
+            const step = nextStep(id, f);
             const stepper = el('div', { class: 'cw-stepper', role: 'group', 'aria-label': `${D.fronts[id].name} ${U.unit}` },
                 el('button', { type: 'button', 'data-key': `less-${id}`, 'aria-label': `${D.fronts[id].short}에서 ${U.unit} 하나 빼기`, disabled: n === 0, onclick: () => { act('alloc', id, n - 1); render(); } }, '−'),
                 el('output', { 'aria-live': 'polite', 'aria-label': `${n}개 ${U.unit}` }, `${n}${U.unit}`),
@@ -1130,9 +1131,9 @@
             // enemy (folded on a phone, its pressure summed on the fold).
             const card = el('article', { class: 'cw-front', id: 'cwFront-' + id, tabindex: '-1' },
                 el('header', {}, el('h4', {}, D.fronts[id].name, trendMark(after - hist))),
-                el('div', { class: 'cw-front-controls' }, stepper, commissarToggle(id), ...frontCards(id), ...stepButtons(id, nextStep(id, f))),
+                el('div', { class: 'cw-front-controls' }, stepper, commissarToggle(id), ...frontCards(id), ...stepButtons(id, step)),
                 railRow(f),
-                meter(id, f, line, s.turn, s.plan.choice, '예상'),
+                meter(id, f, line, s.turn, s.plan.choice, '예상', shortNote(step)),
                 musterRow(id),
                 foeFold(id, f, threat));
             bindSpotlight(card, id);
@@ -1144,9 +1145,9 @@
 
     // The steps to the next result and back, after the front's own buttons
     // (on a phone they wrap to a row of their own and the buttons keep
-    // theirs): as many divisions as the next better result takes (or how
-    // many more it would need than are free), and as many as can go
-    // without a worse one.
+    // theirs): as many divisions as the next better result takes, and as
+    // many as can go without a worse one. When the next result needs more
+    // than are free, the meter says so beside the strength (shortNote).
     function stepButtons(id, step) {
         const n = s.plan.alloc[id];
         const out = [];
@@ -1155,13 +1156,17 @@
             'aria-label': `다음 결과까지 ${U.unit} ${step.more}개 더 보내기`,
             onclick: () => { act('alloc', id, n + step.more); render(); },
         }, `+${step.more} 다음 결과`));
-        else if (step.more) out.push(el('span', { class: 'cw-step is-short', 'aria-label': `다음 결과까지 ${U.unit} ${step.more}개 더 필요` }, `다음 결과 +${step.more} 필요`));
         if (step.spare) out.push(el('button', {
             type: 'button', class: 'cw-step is-spare', 'data-key': `spare-${id}`,
             'aria-label': `결과는 그대로, ${U.unit} ${step.spare}개 빼기`,
             onclick: () => { act('alloc', id, n - step.spare); render(); },
         }, `−${step.spare} 그대로`));
         return out;
+    }
+
+    function shortNote(step) {
+        return step.more && step.more > G.free(s)
+            ? el('span', { class: 'cw-step-short', 'aria-label': `다음 결과까지 ${U.unit} ${step.more}개 더 필요` }, `다음 결과 +${step.more} 필요`) : null;
     }
 
     // The enemy on a front: who comes, what they want, their traits and
@@ -1314,7 +1319,7 @@
     // below it. A band's colour says only how it compares with history:
     // red behind, green ahead, plain as history went. The band the strength
     // falls in is the forecast (or, in the review, the result).
-    function meter(id, f, line, turn, choice, now) {
+    function meter(id, f, line, turn, choice, now, note) {
         const hist = D.fronts[id].history[turn];
         const bands = G.outcomeBands(id, line, turn, f.pressure, choice).map(b => {
             const after = line + b.change;
@@ -1337,7 +1342,12 @@
         const foeRow = el('div', { class: 'cw-foe-row', 'aria-hidden': 'true' },
             ...Array.from({ length: f.pressure }, (_, i) => el('i', { class: `cw-unit-mark k-${kind}${i >= f.pressure - momentum ? ' is-momentum' : ''}`, style: span(i, i + 1) })),
             ...Array.from({ length: pursued }, (_, i) => el('i', { class: 'cw-unit-mark is-pursued', style: span(f.pressure + i, f.pressure + i + 1) })),
-            el('span', { class: 'cw-foe-count', style: `left:calc(${at(f.pressure + pursued)} + 5px)` }, `압력 ${f.pressure}`));
+            // The enemy's pressure, and what this result leaves on the front's
+            // next fight: the momentum of an enemy that broke through, or the
+            // pursuit of one that broke.
+            el('span', { class: 'cw-foe-count', style: `margin-left:calc(${at(f.pressure + pursued)} + 5px)` }, `적군 압력 ${f.pressure}`,
+                current.overflow ? el('span', { class: 'cw-next is-momentum' }, `(적의 기세: 다음 시기 압력 +${current.overflow * G.MOMENTUM})`) : null,
+                current.pursuit ? el('span', { class: 'cw-next is-pursuit' }, `(추격: 다음 시기 압력 −${current.pursuit * G.PURSUIT})`) : null));
         const bar = el('div', { class: 'cw-meter-bar', 'aria-hidden': 'true' },
             ...bands.map(b => el('span', { class: `cw-meter-band ${b.tone}`, style: span(b.from, b.to === null ? top : b.to) })),
             ...strengthSegments(f, span),
@@ -1350,14 +1360,12 @@
             el('span', { class: 'cw-meter-now', style: `left:${at(Math.max(0, f.strength))}` }));
         return el('div', { class: 'cw-meter' },
             el('div', { class: 'cw-meter-top' },
-                el('strong', {}, `전투력 ${f.strength}`),
+                el('span', { class: 'cw-meter-strength' }, el('strong', {}, `전투력 ${f.strength}`), note || null),
                 el('span', { class: 'cw-sr' }, `, 압력 ${f.pressure}. ${U.unit} ${f.divisions || 0}개, ${U.unit}당 ${f.perDivision || 0}${(f.bonuses || []).map(b => `, ${b.label} ${signed(b.v)}`).join('')}`)),
             foeRow,
             bar,
             el('div', { class: 'cw-stake-head' },
                 now === '예상' ? null : el('span', { class: 'cw-stake-verdict ' + current.tone }, `${now}: ${versus(current.after)}`),
-                current.overflow ? el('span', { class: 'cw-stake-momentum' }, `다음 싸움 압력 +${current.overflow * G.MOMENTUM}`) : null,
-                current.pursuit ? el('span', { class: 'cw-stake-pursuit' }, `추격: 다음 싸움 압력 −${current.pursuit * G.PURSUIT}`) : null,
 ),
             stakeRow(id, line, current.after, hist, turn, now));
     }
