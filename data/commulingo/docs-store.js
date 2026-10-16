@@ -30,6 +30,7 @@ const BODY_CACHE_MAX = 40;
 function annotateHeadings(rawHtml, excludePatterns) {
     const excludes = (excludePatterns || []).map(pattern => new RegExp(pattern));
     const toc = [];
+    const generated = new Set(); // ids given here, not written in the stored body
     let counter = 0;
     let seenTitle = false;
     const html = rawHtml.replace(/<h([12])([^>]*)>([\s\S]*?)<\/h\1>/g, (match, level, attrs, inner) => {
@@ -39,6 +40,7 @@ function annotateHeadings(rawHtml, excludePatterns) {
         }
         const existing = attrs.match(/\bid="([^"]+)"/);
         const id = existing ? existing[1] : `sec-${++counter}`;
+        if (!existing) generated.add(id);
         const text = inner.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
         if (!excludes.some(re => re.test(text))) {
             toc.push({ level: Number(level), id, text });
@@ -46,7 +48,7 @@ function annotateHeadings(rawHtml, excludePatterns) {
         if (existing) return match;
         return `<h${level} id="${id}"${attrs}>${inner}</h${level}>`;
     });
-    return { html, toc };
+    return { html, toc, generated };
 }
 
 // Reading order is the date the original was written, and it is computed from
@@ -310,8 +312,8 @@ function getCommuLingoDocContent(doc) {
         unavailable.status = 503;
         throw unavailable;
     }
-    const { html, toc } = annotateHeadings(raw, doc.tocExclude);
-    const entry = { html, toc, paged: paginateBody(html) };
+    const { html, toc, generated } = annotateHeadings(raw, doc.tocExclude);
+    const entry = { html, toc, generated, paged: paginateBody(html) };
     while (bodyCache.size >= BODY_CACHE_MAX) bodyCache.delete(bodyCache.keys().next().value);
     bodyCache.set(sha, entry);
     return entry;
@@ -319,16 +321,18 @@ function getCommuLingoDocContent(doc) {
 
 // Headings a reader can be sent to from the other version (translation <->
 // original): every h1-h3 that carries an id of its own, mapped to the page it
-// sits on (1 on a single-scroll document). Generated ids (sec-N) are left out:
-// they count headings, so the same number names different sections in the two
-// versions. Kept on the cached content object.
+// sits on (1 on a single-scroll document). Ids the reader generated for
+// headings without one (sec-N, annotateHeadings) are left out: they count
+// headings, so the same number names different sections in the two versions.
+// An id written into the document is kept even when it reads sec-N.
+// Kept on the cached content object.
 function getCommuLingoDocAnchorPages(content) {
     if (content.anchorPages) return content.anchorPages;
     const pages = content.paged ? content.paged.pages.map(page => page.html) : [content.html];
     const out = {};
     pages.forEach((html, i) => {
         for (const m of html.matchAll(/<h[1-3][^>]*\bid="([^"]+)"/g)) {
-            if (!/^sec-\d+$/.test(m[1]) && !out[m[1]]) out[m[1]] = i + 1;
+            if (!content.generated.has(m[1]) && !out[m[1]]) out[m[1]] = i + 1;
         }
     });
     content.anchorPages = out;
