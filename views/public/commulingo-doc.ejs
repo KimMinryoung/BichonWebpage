@@ -139,7 +139,7 @@ var tocHref = function(id) {
 <%# 번역과 원문 사이를 오가는 칸. 원문이 공개된 문헌에만 있다(commulingo_doc_originals).
     원문 쪽에는 검색 칸이 없다 — 검색은 번역 본문을 뒤진다. %>
 <% if (switchTo) { %>
-<a class="doc-version-switch" href="<%= switchTo.korean ? switchTo.href : languageUrl(switchTo.href, urlLanguage === 'en' ? 'en' : 'ko') %>" lang="<%= lang %>" data-anchors="<%= JSON.stringify(switchTo.anchors) %>"><%= switchTo.korean ? strings.commuLingoViews.doc.koreanTranslation : switchTo.original ? strings.commuLingoViews.doc.original : strings.commuLingoViews.doc.translation %></a>
+<a class="doc-version-switch" href="<%= languageUrl(switchTo.href, urlLanguage === 'en' ? 'en' : 'ko') %>" lang="<%= lang %>" data-anchors="<%= JSON.stringify(switchTo.anchors) %>"><%= switchTo.original ? strings.commuLingoViews.doc.original : strings.commuLingoViews.doc.translation %></a>
 <% } %>
 </div>
 <%- bodyTopHtml %>
@@ -359,7 +359,6 @@ var extraEditorialNotes = (doc.editorialNotes || '').split(/(?<!No\.)(?<=[.!?])\
             }
             current = heads[0];
         }
-        // Other query parameters (the English page's ?lang=ko) stay.
         var target = new URL(link.href);
         var page = anchors[current.id];
         if (page > 1) target.searchParams.set('p', page); else target.searchParams.delete('p');

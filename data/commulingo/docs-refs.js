@@ -24,9 +24,13 @@ const KINDS = ['people', 'terms', 'events'];
 // Reference documents (참고 문헌) linked to one entry via the docs manifest,
 // in the shape the entry pages render. Failure only costs the section, never
 // the page. Was previously copied into the person, term, and event routes.
+// English pages name only the documents with a published original: that is
+// their English page (routes/commulingo-docs.js); the rest are Korean text.
+const readableIn = (doc, lang) => lang !== 'en' || Boolean(doc.original);
+
 function relatedDocsFor(kind, id, lang) {
     try {
-        return listCommuLingoDocsFor(kind, id).map(doc => ({
+        return listCommuLingoDocsFor(kind, id).filter(doc => readableIn(doc, lang)).map(doc => ({
             id: doc.id,
             title: localize(doc.title, lang),
             kind: localize(doc.kind, lang),
@@ -39,9 +43,14 @@ function relatedDocsFor(kind, id, lang) {
 
 // Pieces of reference documents printed on an entry page (docs-store.js,
 // `excerpts`). The text is the document's own language, whatever the page's.
+// An English page prints the piece from the published original (same heading
+// ids as the translation); a document without one lends nothing in English.
 function docExcerptsFor(kind, id, lang) {
     try {
-        return listCommuLingoDocExcerptsFor(kind, id).map(({ doc, anchor }) => {
+        return listCommuLingoDocExcerptsFor(kind, id).filter(({ doc }) => readableIn(doc, lang)).map(({ doc: raw, anchor }) => {
+            const doc = lang === 'en'
+                ? { ...raw, bodySha256: raw.original.bodySha256, docLang: raw.original.lang }
+                : raw;
             if (anchor === 'toc') {
                 const contents = getCommuLingoDocContents(doc);
                 if (!contents) {
@@ -81,6 +90,11 @@ function presentSitePathSource(text, lang) {
     const note = text.slice(path.length).replace(/^[)\s]*[—–-]?\s*/, '').trim();
     const docMatch = path.match(/^\/commulingo\/docs\/([a-z0-9-]+)\/?(?:[#?]|$)/);
     const doc = docMatch ? getCommuLingoDoc(docMatch[1]) : null;
+    // A document English has no page for is cited by name, unlinked.
+    if (doc && !readableIn(doc, lang)) {
+        const label = localize(doc.title, lang);
+        return { url: null, label, note, internal: false, raw: label };
+    }
     return {
         url: path,
         label: doc ? localize(doc.title, lang) : path,

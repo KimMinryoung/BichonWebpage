@@ -238,7 +238,8 @@ async function getLinkIndexes(lang) {
         entry = memo.byLang[safeLang] = {
             lang: safeLang,
             standardized,
-            doc: buildDocLinkIndex(docs, { lang: safeLang, reviews }),
+            // English text links only documents with a published original.
+            doc: buildDocLinkIndex(safeLang === 'en' ? docs.filter(doc => doc.original) : docs, { lang: safeLang, reviews }),
             event: buildEventLinkIndex(events, { lang: safeLang, reviews }),
             ...(() => {
                 const topic = buildTopicLinkIndex(standardized, { lang: safeLang });
