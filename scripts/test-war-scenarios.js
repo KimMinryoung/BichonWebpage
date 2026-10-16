@@ -47,8 +47,10 @@ function plan(s) {
     if (t.incident) assert.ok(G.act(s, 'respond', t.incident.history));
     const fronts = G.activeFronts(s);
     assert.ok(G.act(s, 'play', 'wagon', fronts[0]));
-    assert.ok(G.act(s, 'commissar', fronts[0], true));
     fronts.forEach(f => G.act(s, 'alloc', f, 0));
+    // A leader goes with a division (rules 4).
+    assert.ok(G.act(s, 'alloc', fronts[0], 1));
+    assert.ok(G.act(s, 'commissar', fronts[0], true));
     while (G.free(s) > 0) {
         const fc = G.forecast(s).fronts;
         const f = fronts.slice().sort((a, b) => fc[a].margin - fc[b].margin)[0];

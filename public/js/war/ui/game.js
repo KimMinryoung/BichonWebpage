@@ -23,7 +23,6 @@
     let reviewSeen = false;         // the review before the battle was read
     let historyMap = false;         // the map shows history's control layer
     let selected = null;            // battle: the selected Red unit id
-    let handedOn = null;            // battle: the unit picked for the player after an order
     let inspected = null;           // battle: the White unit whose reach is shown
     let menaceAll = false;          // battle: every White unit's reach shown at once
     let endArmed = false;           // battle: 「턴 종료」 pressed once with units still to act
@@ -1123,6 +1122,7 @@
             const hist = D.fronts[id].history[s.turn];
             const n = s.plan.alloc[id];
             const step = nextStep(id, f);
+            const hint = el('span', { class: 'cw-front-hint', 'aria-hidden': 'true' });
             const stepper = el('div', { class: 'cw-stepper', role: 'group', 'aria-label': `${D.fronts[id].name} ${U.unit}` },
                 el('button', { type: 'button', 'data-key': `less-${id}`, 'aria-label': `${D.fronts[id].short}에서 ${U.unit} 하나 빼기`, disabled: n === 0, onclick: () => { act('alloc', id, n - 1); render(); } }, '−'),
                 el('output', { 'aria-live': 'polite', 'aria-label': `${n}개 ${U.unit}` }, `${n}${U.unit}`),
@@ -1130,13 +1130,14 @@
             // What the player does here first, then what it gives, then the
             // enemy (folded on a phone, its pressure summed on the fold).
             const card = el('article', { class: 'cw-front', id: 'cwFront-' + id, tabindex: '-1' },
-                el('header', {}, el('h4', {}, D.fronts[id].name, trendMark(after - hist))),
+                el('header', {}, el('h4', {}, D.fronts[id].name, trendMark(after - hist)), hint),
                 el('div', { class: 'cw-front-controls' }, stepper, commissarToggle(id), ...frontCards(id), ...stepButtons(id, step)),
                 railRow(f),
                 meter(id, f, line, s.turn, s.plan.choice, '예상', shortNote(step)),
                 musterRow(id),
                 foeFold(id, f, threat));
             bindSpotlight(card, id);
+            bindHints(card, hint);
             items.push(card);
         }
         if (fc.supply.ratio < 1) items.push(el('p', { class: 'cw-warn' }, `${josa(U.food, '이', '가')} 모자랍니다: 필요 ${fc.supply.need}, 가진 것 ${fc.supply.have}. 모든 전선의 전투력이 ${Math.round((1 - (FED + (1 - FED) * fc.supply.ratio)) * 100)}% 줄어듭니다.`));
@@ -1246,17 +1247,39 @@
 
     // The commissar on this front. With a single commissar already sent
     // elsewhere, the button moves him here instead of going dead.
+    // A leader goes with divisions (rules 4), and only while one is left or,
+    // with a single leader, moves here from where he is. A button that cannot
+    // be pressed says why in the front's name row (hint), not in a tooltip
+    // under the pointer.
     function commissarToggle(id) {
         const on = s.plan.commissar[id];
         const none = G.commissarsUsed(s) >= s.plan.commissars;
-        const from = !on && none && s.plan.commissars === 1 ? Object.keys(s.plan.commissar).find(f => s.plan.commissar[f]) : null;
+        const empty = !on && s.rules >= 4 && !s.plan.alloc[id];
+        const from = !on && !empty && none && s.plan.commissars === 1 ? Object.keys(s.plan.commissar).find(f => s.plan.commissar[f]) : null;
+        const why = empty ? `${josa(U.unit, '을', '를')} 먼저 보내야 ${josa(U.leader, '을', '를')} 붙일 수 있다`
+            : !on && none && !from ? `${U.leader} ${s.plan.commissars}명을 모두 보냈다. 다른 전선에서 먼저 빼야 한다` : null;
         return el('button', {
             type: 'button', class: 'cw-toggle' + (from ? ' is-elsewhere' : ''), 'data-key': `commissar-${id}`, 'aria-pressed': String(on),
-            disabled: !on && none && !from,
-            title: from ? `${D.fronts[from].short}에서 이리로` : null,
-            'aria-label': from ? `${U.leader}, ${D.fronts[from].short}에서 이리로` : null,
-            onclick: () => { if (from) act('commissar', from, false); act('commissar', id, !on); render(); },
+            'aria-disabled': why ? 'true' : null,
+            'data-hint': why || (from ? `${D.fronts[from].short}에서 이리로` : null),
+            'aria-label': from ? `${U.leader}, ${D.fronts[from].short}에서 이리로` : why ? `${U.leader}: ${why}` : null,
+            onclick: () => {
+                if (why) { announce(why); return; }
+                if (from) act('commissar', from, false);
+                act('commissar', id, !on);
+                render();
+            },
         }, U.leader);
+    }
+
+    // The front's name row shows the hint of the button under the pointer
+    // or in focus.
+    function bindHints(card, hint) {
+        const show = e => { const b = e.target.closest && e.target.closest('[data-hint]'); hint.textContent = b ? b.dataset.hint : ''; };
+        card.addEventListener('pointerover', show);
+        card.addEventListener('focusin', show);
+        card.addEventListener('pointerleave', () => { hint.textContent = ''; });
+        card.addEventListener('focusout', e => { if (!card.contains(e.relatedTarget)) hint.textContent = ''; });
     }
 
     // Cards aimed at a front (Trotsky's train) are sent from the front's own
@@ -1268,12 +1291,14 @@
             const here = played && played.target === id;
             const name = card.title.replace(/^.*의 /, '');
             const away = played && !here ? D.fronts[played.target].short : null;
+            const blocked = !played && !G.canPlay(s, cid, id);
             return el('button', {
                 type: 'button', class: 'cw-toggle' + (away ? ' is-elsewhere' : ''), 'data-key': `${cid}-${id}`, 'aria-pressed': String(Boolean(here)),
-                disabled: !played && !G.canPlay(s, cid, id),
-                title: away ? `${away}에서 이리로` : !played && s.plan.command < card.cost ? '지휘력이 모자랍니다' : null,
+                'aria-disabled': blocked ? 'true' : null,
+                'data-hint': away ? `${away}에서 이리로` : blocked && s.plan.command < card.cost ? '지휘력이 모자랍니다' : null,
                 'aria-label': `${name}, 전투력 +${card.bonus}` + (away ? `, ${away}에서 이리로` : ''),
                 onclick: () => {
+                    if (blocked) { if (s.plan.command < card.cost) announce('지휘력이 모자랍니다'); return; }
                     if (played) act('unplay', cid);
                     if (!here) act('play', cid, id);
                     render();
@@ -1360,19 +1385,19 @@
         const bar = el('div', { class: 'cw-meter-bar', 'aria-hidden': 'true' },
             ...bands.map(b => el('span', { class: `cw-meter-band ${b.tone}`, style: span(b.from, b.to === null ? top : b.to) })),
             ...strengthSegments(f, span),
-            // Each band's start, labelled by what it gives against history.
-            // Each band's start, labelled by what it gives against history
-            // where that changes (the momentum and pursuit bands between
-            // keep their tick without a word).
-            ...bands.slice(1).map((b, i) => el('i', { class: 'cw-meter-tick', style: `left:${at(b.from)}`, title: `전투력 ${b.from}부터 ${versus(b.after)}` },
-                b.after === bands[i].after ? null : el('small', {}, b.after === hist ? '역사' : (b.after > hist ? '▲' : '▼') + Math.abs(b.after - hist)))),
             el('span', { class: 'cw-meter-now', style: `left:${at(Math.max(0, f.strength))}` }));
+        // Each band's start, labelled by what it gives against history where
+        // that changes (the momentum and pursuit bands between keep their
+        // tick without a word): across both bars, the words under them.
+        const ticks = bands.slice(1).map((b, i) => el('i', { class: 'cw-meter-tick', style: `left:${at(b.from)}`, title: `전투력 ${b.from}부터 ${versus(b.after)}` },
+            b.after === bands[i].after ? null : el('small', {}, b.after === hist ? '역사' : (b.after > hist ? '▲' : '▼') + Math.abs(b.after - hist))));
         return el('div', { class: 'cw-meter' },
             el('div', { class: 'cw-meter-top' },
                 el('span', { class: 'cw-meter-strength' }, el('strong', {}, `전투력 ${f.strength}`), note || null),
                 el('span', { class: 'cw-sr' }, `, 압력 ${f.pressure}. ${U.unit} ${f.divisions || 0}개, ${U.unit}당 ${f.perDivision || 0}${(f.bonuses || []).map(b => `, ${b.label} ${signed(b.v)}`).join('')}`)),
-            foeRow,
-            bar,
+            // The strength right under its number, the enemy's pressure under
+            // it as thick, on one scale: the two to compare.
+            el('div', { class: 'cw-meter-scale' }, bar, foeRow, ...ticks),
             el('div', { class: 'cw-stake-head' },
                 now === '예상' ? null : el('span', { class: 'cw-stake-verdict ' + current.tone }, `${now}: ${versus(current.after)}`),
 ),
@@ -2094,8 +2119,6 @@
         if (battleOver()) return;
         const said = text + b.events.filter(e => e.type === 'turned').map(e => `. ${b.def.lines[e.line].name}이 우회되었다.`).join('')
             + b.events.filter(e => e.type === 'surrender').map(e => `. ${b.units.find(x => x.id === e.id).name}이(가) 투항했다.`).join('');
-        // A unit done for the turn hands over to the next one still to act.
-        if (!selected && nextUnit()) { handedOn = selected; announce(said); return; }
         renderBattle();
         focusSelected();
         announce(said);
@@ -2169,11 +2192,10 @@
     const ORDER_WORDS = { 'b:move': '이동', 'b:attack': '공격', 'b:wait': '대기', 'b:feat': '결정적 한 수', 'b:undo': '이동 취소' };
 
     // Right click or Esc: a unit the player picked that has not just acted
-    // is let go; otherwise (one handed on after an order, or none) the last
-    // order is taken back.
+    // is let go; otherwise (none picked) the last order is taken back.
     function cancel() {
         const last = s.log[s.log.length - 1];
-        const own = selected && ((last && last[1] === selected) || selected === handedOn);
+        const own = selected && last && last[1] === selected;
         if ((selected || inspected) && !own) { selected = null; inspected = null; endArmed = false; renderBattle(); return; }
         takeBackOrder();
     }

@@ -13,7 +13,9 @@
    Rules generations (s.rules, kept in the save so an old save replays as
    it was played): 1 the base; 2 divisions moved by rail between fronts
    bring half their share and the plan opens with last season's placements;
-   3 the battles' feats and surrenders, and the spoils of a broken enemy. */
+   3 the battles' feats and surrenders, and the spoils of a broken enemy;
+   4 a leader goes only to a front with divisions, and is recalled when
+   its last division leaves. */
 (function (root) {
     'use strict';
 
@@ -21,7 +23,7 @@
     const Battle = node ? require('./battle.js') : root.WarBattle;
     const Cond = node ? require('./cond.js') : root.WarCond;
 
-    const RULES = 3;
+    const RULES = 4;
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
     const signed = n => (n < 0 ? '−' : '+') + Math.abs(n);
@@ -145,6 +147,7 @@
             while (allocated(s) > pool) {
                 const top = Object.keys(s.plan.alloc).sort((a, b) => s.plan.alloc[b] - s.plan.alloc[a])[0];
                 s.plan.alloc[top] -= 1;
+                recall(s, top);
             }
             return true;
         }
@@ -193,12 +196,20 @@
             const others = allocated(s) - s.plan.alloc[front];
             if (others + n > s.plan.divisions) return false;
             s.plan.alloc[front] = n;
+            recall(s, front);
             return true;
+        }
+
+        // Under rules 4 a leader serves with divisions: a front left with
+        // none sends its leader back to the pool.
+        function recall(s, front) {
+            if (s.rules >= 4 && !s.plan.alloc[front]) s.plan.commissar[front] = false;
         }
 
         function setCommissar(s, front, on) {
             if (s.phase !== 'plan' || !(front in s.plan.commissar)) return false;
             if (on && !s.plan.commissar[front] && commissarsUsed(s) >= s.plan.commissars) return false;
+            if (on && s.rules >= 4 && !s.plan.alloc[front]) return false;
             s.plan.commissar[front] = Boolean(on);
             return true;
         }

@@ -29,10 +29,12 @@ function plan(s, { requisition = false } = {}) {
         if (s.stats.cohesion + G.cardStat(s, D.cards[id], id, 'cohesion') < 40) continue;
         G.act(s, 'play', id);
     }
-    fronts.slice(0, s.plan.commissars).forEach(f => assert.ok(G.act(s, 'commissar', f, true)));
     // The plan opens with last season's placements; this bot lays the
     // whole army out again and pays the railway for what it moves.
     fronts.forEach(f => assert.ok(G.act(s, 'alloc', f, 0)));
+    // Leaders go with divisions (rules 4): a division first to each front
+    // a leader goes to.
+    fronts.slice(0, s.plan.commissars).forEach(f => { if (G.free(s) > 0) assert.ok(G.act(s, 'alloc', f, 1)); assert.ok(G.act(s, 'commissar', f, true)); });
     while (G.free(s) > 0) {
         const fc = G.forecast(s).fronts;
         const f = fronts.slice().sort((a, b) => fc[a].margin - fc[b].margin)[0];
@@ -138,6 +140,22 @@ for (const [t, turn] of D.turns.entries()) {
         }));
         assert.ok(outcomes.size > 1, `${turn.id} ${id}: divisions change nothing`);
     }
+}
+
+// Rules 4: a leader goes only to a front with divisions, and comes back
+// when its last division leaves; an older save keeps the lone leader.
+{
+    const s = G.start();
+    clear(s);
+    const [a, b] = G.activeFronts(s);
+    assert.equal(G.act(s, 'commissar', a, true), false, 'no leader on an empty front');
+    assert.ok(G.act(s, 'alloc', a, 1));
+    assert.ok(G.act(s, 'commissar', a, true));
+    assert.ok(G.act(s, 'alloc', a, 0));
+    assert.equal(s.plan.commissar[a], false, 'the last division takes its leader along');
+    const old = G.start(3);
+    clear(old);
+    assert.ok(G.act(old, 'commissar', b, true), 'rules 3 still send a leader alone');
 }
 
 // Played as history played it, the war follows history to Perekop.
@@ -419,10 +437,10 @@ assert.equal(G.restore('{'), null);
         lowest = Math.min(lowest, s.plan.command);
         if (t.cards.includes('amnesty')) assert.ok(G.act(s, 'play', 'amnesty'));
         const fronts = G.activeFronts(s);
-        fronts.slice(0, s.plan.commissars).forEach(f => G.act(s, 'commissar', f, true));
         clear(s);
         let i = 0;
         while (G.free(s) > 0) { const f = fronts[i++ % fronts.length]; G.act(s, 'alloc', f, s.plan.alloc[f] + 1); }
+        fronts.slice(0, s.plan.commissars).forEach(f => G.act(s, 'commissar', f, true));
         assert.ok(send(s));
         if (s.phase === 'review') assert.ok(G.act(s, 'next'));
     }
