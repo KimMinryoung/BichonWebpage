@@ -76,7 +76,7 @@
   항목을 더하고 파일을 두면 된다. `put`이 바뀐 원문만 쓰고(리비전 확인), export 때 있던 원문의
   항목을 지우면 원문도 지운다.
 
-- 영어판(2026-10-16): 공개 원문이 있는 문헌만 영어 목록·검색·사이트맵에 나오고, `/en/commulingo/docs/<id>`가 곧 그 원문이다(한국어 번역으로 가는 버튼 없음). 원문의 해제는 `<aside class="doc-editorial" lang="ko">`(라벨 「해제」)와 `lang="en"`(라벨 「Introduction」) 두 벌을 두고, manifest의 `summary.en`·`description.en`은 번역이 아니라 원문 기준으로 쓴다. 영어 사건·인물·용어 페이지는 원문 없는 문헌을 링크하지 않는다(docs-refs.js·linkify.js).
+- 영어판(2026-10-16): 공개 원문이 있는 문헌만 영어 목록·검색·사이트맵에 나오고, `/en/commulingo/docs/<id>`가 곧 그 원문이다(한국어 번역으로 가는 버튼 없음). 원문의 해제는 `<aside class="doc-editorial" lang="ko">`(라벨 「해제」)와 `lang="en"`(라벨 「Introduction」) 두 벌을 두고(첫 문장에는 무엇의 원문인지만 쓰고, 출전·전사·교정 설명은 같은 상자 안 `details.doc-edition`의 「원문·편집 정보」/「Source and editing」에 접어 둔다), manifest의 `summary.en`·`description.en`은 번역이 아니라 원문 기준으로 쓴다. 영어 사건·인물·용어 페이지는 원문 없는 문헌을 링크하지 않는다(docs-refs.js·linkify.js).
 - 섹션 연결: 원문의 제목 id가 번역과 같으면 「원문/번역」 버튼이 읽던 섹션으로 간다. 리더가 자동으로 붙인 id만 제외된다.
 - 게시 판단: 공문서, 사후 70년이 지난 저자의 글은 공개. 소유자 결정으로 스탈린 저작·「9평」·「46인 선언」도 공개. 생존·1956년 이후 사망 저자의 글은 공개하지 않는다.
 
