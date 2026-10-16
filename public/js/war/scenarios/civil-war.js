@@ -415,7 +415,7 @@
                 talk: [
                     { who: ['야코프 스베르들로프', 'sverdlov'], text: '카자크 상층은 반혁명의 기둥이다. 지령대로 가차 없이 집행하라.' },
                     { who: ['필리프 미로노프', 'filipp-mironov'], text: '이 지령은 중립을 지키던 카자크까지 백군 편으로 몰아낸다. 돈 전체가 들고일어날 것이다.' },
-                    { as: '그리고리 소콜니코프', text: '마을마다 총살하면 남부전선의 후방이 불탄다. 중립 카자크를 우리 편으로 끌어들여야 한다.' },
+                    { who: ['그리고리 소콜니코프', 'sokolnikov'], text: '마을마다 총살하면 남부전선의 후방이 불탄다. 중립 카자크를 우리 편으로 끌어들여야 한다.' },
                 ],
                 options: [
                     { id: 'enforce', label: '지령대로 집행한다', effect: '역사대로. 3월 돈 북부의 봉기가 남부전선을 흔든다', voices: '조직국, 남부전선 혁명군사회의의 다수' },
@@ -484,7 +484,7 @@
                 title: '우랄 너머로, 아니면 남쪽으로', who: ['세르게이 카메네프', 'sergey-kamenev'],
                 text: '콜차크군이 우랄로 물러나는 동안, 남쪽에서는 데니킨의 의용군이 하리코프로 쳐들어온다.',
                 talk: [
-                    { as: '요아킴 바치에티스', text: '우랄에서 멈추고 동부의 사단을 남쪽으로 돌려야 한다. 지금 더 급한 것은 데니킨이다.' },
+                    { who: ['유쿰스 바치에티스', 'ioakim-vatsetis'], text: '우랄에서 멈추고 동부의 사단을 남쪽으로 돌려야 한다. 지금 더 급한 것은 데니킨이다.' },
                     { who: ['레프 트로츠키', 'trotsky'], text: '총사령관의 말이 옳다. 남부전선이 무너지면 모스크바가 위험하다.' },
                     { who: ['세르게이 카메네프', 'sergey-kamenev'], text: '지금 멈추면 콜차크는 겨울 동안 다시 일어선다. 끝까지 추격하자.' },
                     { who: ['블라디미르 레닌', 'lenin'], text: '겨울이 오기 전에 우랄을 되찾지 못하면 혁명은 끝장이다.' },
@@ -1133,6 +1133,8 @@
         stalin: { side: 'red', hair: 'swept', moustache: 'great' },
         radek: { side: 'red', hair: 'shock', glasses: 'round', beard: 'full' },
         'bela-kun': { side: 'red', hair: 'swept', moustache: true },
+        'ioakim-vatsetis': { side: 'red', cap: 'peaked', moustache: true },
+        sokolnikov: { side: 'red', hair: 'swept', moustache: true, beard: 'short' },
         frunze: { side: 'red', cap: 'budenovka', beard: 'short', moustache: true },
         'semyon-budyonny': { side: 'red', cap: 'budenovka', moustache: 'great' },
         'filipp-mironov': { side: 'red', cap: 'papakha', moustache: true, beard: 'short' },
