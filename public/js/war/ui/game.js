@@ -1512,10 +1512,10 @@
             onclick: () => { const box = $(target); if (box) { box.scrollIntoView({ block: 'start', behavior: stillMotion() ? 'auto' : 'smooth' }); } },
         }, done ? '✓ ' : '', label);
         $('cwTodo').replaceChildren(
-            todo(Boolean(s.plan.choice), '갈림길', 'cwChoice'),
             G.incidentOf(s) ? todo(Boolean(s.plan.response), '돌발 사건', 'cwIncident') : '',
+            todo(Boolean(s.plan.choice), '갈림길', 'cwChoice'),
             todo(kept === 0, `${U.unit} ${G.allocated(s)}/${s.plan.divisions}`, 'cwFronts'));
-        const missing = [!s.plan.choice ? '갈림길' : null, G.incidentOf(s) && !s.plan.response ? '돌발 사건' : null].filter(Boolean);
+        const missing = [G.incidentOf(s) && !s.plan.response ? '돌발 사건' : null, !s.plan.choice ? '갈림길' : null].filter(Boolean);
         $('cwCommandNote').textContent = missing.length ? `${missing.join('과 ')}을 골라야 보낼 수 있다`
             : `${U.food} 소비 ${G.forecast(s).supply.need}` + (saved > 0 ? ` (예비 −${saved})` : '');
         $('cwSettle').disabled = !G.canSettle(s);
