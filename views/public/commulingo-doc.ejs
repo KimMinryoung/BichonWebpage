@@ -179,16 +179,28 @@ var normalizeEditorial = function(text) {
 editorialText = normalizeEditorial((editorialText || []).join(' '));
 var extraEditorialNotes = (doc.editorialNotes || '').split(/(?<!No\.)(?<=[.!?])\s+/)
     .filter(function(sentence) { return sentence && !editorialText.includes(normalizeEditorial(sentence)); }).join(' ');
+var showEditorialNotes = extraEditorialNotes && !readingOriginal && (!pagination || pagination.current === 1);
+// The opening 해제 box carries its own folded 번역·편집 정보; the notes join it
+// there instead of opening a second box.
+var restHtml = bodyRestHtml || '';
+var editionAt = restHtml.search(/<details class="doc-edition"><summary>[^<]*<\/summary>/);
+var firstHeading = restHtml.search(/<h[12][\s>]/);
+if (showEditorialNotes && editionAt !== -1 && (firstHeading === -1 || editionAt < firstHeading)) {
+    var summaryEnd = restHtml.indexOf('</summary>', editionAt) + '</summary>'.length;
+    var escaped = extraEditorialNotes.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    restHtml = restHtml.slice(0, summaryEnd) + '<p>' + escaped + '</p>' + restHtml.slice(summaryEnd);
+    showEditorialNotes = false;
+}
 %>
-<% if (extraEditorialNotes && !readingOriginal && (!pagination || pagination.current === 1)) { %>
+<% if (showEditorialNotes) { %>
 <aside class="doc-editorial">
-    <details>
+    <details class="doc-edition">
         <summary><%= en ? 'Translation and editing' : '번역·편집 정보' %></summary>
         <p><%= extraEditorialNotes %></p>
     </details>
 </aside>
 <% } %>
-<%- bodyRestHtml %></div>
+<%- restHtml %></div>
 <% if (pagination) { %>
 <nav class="doc-pager" aria-label="<%= strings.commuLingoViews.doc.pages %>">
     <%
