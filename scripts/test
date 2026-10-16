@@ -55,6 +55,7 @@ run evidence-count  node scripts/test-commulingo-evidence-count.js
 run test-strike     node scripts/test-strike.js
 run test-civil-war  node scripts/test-civil-war.js
 run test-war-golden node scripts/test-war-golden.js
+run test-war-plays  node scripts/test-war-plays.js
 run test-war-scenarios node scripts/test-war-scenarios.js
 run test-nonogram   node scripts/test-nonogram.js
 run test-error-page node scripts/test-error-page.js

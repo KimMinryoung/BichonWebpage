@@ -17,6 +17,7 @@
 | [war/scenarios/*.js](../public/js/war/scenarios/) | 시나리오. 브라우저에서는 `window.WarScenarios[id]`에 스스로 등록, Node에서는 `module.exports` |
 | [war/ui/game.js](../public/js/war/ui/game.js) | 화면 전체(상태를 쥔 컨트롤러). `#cwPlay[data-scenario]`가 고른 시나리오를 띄운다 |
 | [war/ui/dom.js](../public/js/war/ui/dom.js), [glyphs.js](../public/js/war/ui/glyphs.js), [rail.js](../public/js/war/ui/rail.js), [basemap.js](../public/js/war/ui/basemap.js) | 상태 없는 화면 부품: 요소·조사(`josa`), 별·열차·지형·병종 그림, 철도망 경로, 바탕 지도 비트맵 |
+| [war/ui/report.js](../public/js/war/ui/report.js), [routes/war-plays.js](../routes/war-plays.js), [services/war-plays.js](../services/war-plays.js) | 플레이 로그 수집(6절) |
 | [war.css](../public/css/war.css) | 화면. 클래스 접두어는 `cw-` 그대로 |
 | [services/war-map.js](../services/war-map.js) | 서버 지도. `SCENARIOS` 등록표가 곧 공개 시나리오 목록이다. `warMap(id)` |
 | [views/public/war/play.ejs](../views/public/war/play.ejs), [scripts.ejs](../views/public/war/scripts.ejs) | 플레이 골격, 스크립트 순서(시나리오 → cond → battle → engine → art → ui/*) |
@@ -138,11 +139,19 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 저장은 `{ version: saveVersion, rules, log }`이고 `restore`가 로그를 재생한다. `rules`는 엔진 규칙의 세대다: 1 기본, 2 철도 수송 비용과 지난 배치 유지, 3 전투의 한 수·투항과 노획, 4 지도자(정치위원)는 사단이 있는 전선에만, 마지막 사단과 함께 돌아옴, 5 시기마다의 정비 비용(`economy.upkeep`), 전선 득실의 스탯 효과는 시기마다 한 번(`frontMoves.net`), 전투에서 철도 부대의 `railMv`, 그 밖에 데이터의 `rules` 조건. 새 시나리오는 최신 세대로 시작한다(`WarEngine.RULES`). 규칙이 결과를 바꾸는 변경은 세대를 올리고 옛 세대 분기를 남겨, 옛 저장이 두던 대로 재생되게 한다. 재생이 막히면 그 시기 처음으로 돌아간다.
 
-## 6. 골든 마스터
+## 6. 플레이 로그 수집
+
+실제 플레이로 규칙을 고치려고, 브라우저가 게임의 결정 로그를 서버로 보낸다(2026-10-16).
+
+- **보내는 쪽** [war/ui/report.js](../public/js/war/ui/report.js): 게임 하나가 run(UUID, 저장 옆 `<save 키>-play`에 둔다)이고, 패배 뒤 전투를 다시 하면 attempt가 하나 는다. 저장할 때마다(`save()`) 전쟁이 움직였으면(결산 수·단계·전투 턴·끝난 전투 수가 바뀜) 저장 전체(`{ version, rules, log }`)를 `POST /games/plays`로 보낸다. 페이지를 떠날 때 그 뒤의 결정이 있으면 `keepalive`로 한 번 더. 실패는 버리고 게임은 그대로 간다. 엔딩(`phase: 'done'`, 승리·툴라 함락 모두)만 2·5·15·30·60초 뒤 다시 보내고, 그래도 안 되면 `pending`으로 남겨 다음 방문 때 또 보낸다. 요청에는 `X-War-Play: 1`과 `seq`(보낼 때마다 +1)를 단다.
+- **받는 쪽** [routes/war-plays.js](../routes/war-plays.js)·[services/war-plays.js](../services/war-plays.js): CSRF 관문 앞에 붙은 익명 쓰기(학습 측정과 같은 JSON·헤더·Origin 검사, IP당 분당 60). 운영 호스트가 아니거나 봇 UA, `MEASUREMENT_EXCLUDED_IPS`(이 서버)면 저장하지 않고 204. 로그를 서버의 엔진으로 재생해 `turn`·`phase`·`ended`·`outcome`(`won`·`stalled`·`moscow`)·`stars`·`stats`(스탯·곡물·전선 위치)를 정한다. 재생이 안 되는 로그는 400. 같은 run·attempt는 `seq`가 더 클 때만 덮어쓴다. 운영자 세션의 판은 `operator`로 표시해 남긴다. IP·쿠키·방문자 id는 저장하지 않는다.
+- **표** `war_game_plays`(migration 367): `(run_id, attempt)` 하나에 마지막 로그. `decisions > replayed`이면 재생이 중간에 멈춘 로그다. 읽기: `scripts/query-db "SELECT run_id, attempt, rules, turn, phase, outcome, stars, decisions, narrow, operator, updated_at FROM war_game_plays ORDER BY updated_at DESC LIMIT 20"`. 한 판을 다시 보려면 `log`를 꺼내 `G.restore({ version, rules, log })`로 재생한다.
+
+## 7. 골든 마스터
 
 `scripts/test-war-golden.js`는 엔진을 떼어 내기 전의 「붉은 전선」으로 기록한 전쟁 74판(역사·반대·징발·분산·동전·무작위 봇, 규칙 1–3, 모든 갈림길·전투)과 옛 저장 8개를 명령 하나마다 재생해, 규칙이 정하는 모든 것(예상·결산·전투 상태)의 해시를 비교한다. 엔진·전투·시나리오의 리팩터링은 이 해시를 하나도 바꾸지 않아야 한다. 규칙을 일부러 바꿨으면 `node scripts/test-war-golden.js --write`로 다시 기록하고 커밋 메시지에 그 사실을 적는다. 상태 모양만 바꿨으면 기록은 그대로 두고 테스트의 `view`에서 옛 이름으로 옮긴다(지금의 `food→grain`, `stats.*`, `unrest→revolt`, `fallen→petrogradFell`).
 
-## 7. 남은 한계
+## 8. 남은 한계
 
 - 화면 문구는 한국어뿐이다(시나리오의 말만 바뀐다).
 - 지도는 커뮤링고 사건 지도 바탕(해안선·강)과 세력 범위 문서에 기대므로, 새 전쟁에도 그 문서가 있어야 역사 층이 나온다.

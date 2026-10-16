@@ -77,8 +77,15 @@
         window.setTimeout(() => { $('cwAnnouncement').textContent = text; }, 30);
     }
 
+    // The play log goes to the server as the war moves on (war/ui/report.js).
+    const report = window.WarReport.create(D.id, KEY);
+    try { report.resume(localStorage.getItem(KEY)); } catch (_) { /* nothing kept */ }
+    window.addEventListener('pagehide', () => { if (s) report.leave(s, G.serialize(s)); });
+
     function save() {
-        try { localStorage.setItem(KEY, G.serialize(s)); } catch (_) { /* play continues unsaved */ }
+        const text = G.serialize(s);
+        try { localStorage.setItem(KEY, text); } catch (_) { /* play continues unsaved */ }
+        report.track(s, text);
     }
 
     function act(name, ...args) {
@@ -139,6 +146,7 @@
         $('cwStart').onclick = () => {
             if (saved && saved.phase !== 'done' && !window.confirm('저장된 게임을 지우고 새로 시작할까요?')) return;
             startGame(G.start());
+            report.begin();
             save();
         };
         if (new URLSearchParams(location.search).get('resume') === '1' && saved && saved.phase !== 'done') $('cwContinue').click();
@@ -2352,6 +2360,7 @@
         const state = G.retryBattle(from);
         if (!state) return;
         startGame(state, true);
+        report.retried();
         save();
         $('cwBattle').scrollIntoView({ block: 'start' });
         announce(`${state.battle.def.title}: 처음부터 다시`);
@@ -2370,7 +2379,7 @@
         }
         items.push(...retrospect());
         if (G.canRetryBattle(s)) items.push(el('button', { type: 'button', class: 'cw-primary', 'data-key': 'retry', onclick: () => retryBattle(s) }, `${s.battle.def.title} 처음부터 다시`));
-        items.push(el('button', { type: 'button', class: G.canRetryBattle(s) ? '' : 'cw-primary', onclick: () => { try { localStorage.removeItem(KEY); } catch (_) { /* ignore */ } startGame(G.start()); save(); } }, '새 게임 시작'));
+        items.push(el('button', { type: 'button', class: G.canRetryBattle(s) ? '' : 'cw-primary', onclick: () => { try { localStorage.removeItem(KEY); } catch (_) { /* ignore */ } startGame(G.start()); report.begin(); save(); } }, '새 게임 시작'));
         $('cwOutcome').replaceChildren(...items);
     }
 

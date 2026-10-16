@@ -51,4 +51,4 @@ function normalize(body) {
         correct: body.event === 'answered' ? body.correct : null };
 }
 
-module.exports = { excluded, sameOrigin, normalize };
+module.exports = { excluded, sameOrigin, normalize, clientIp, excludedIp, BOT };
