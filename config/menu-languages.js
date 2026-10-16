@@ -13,8 +13,10 @@
 // Surveyed 2026-10-11 against production (/en/ pages and the DB):
 // reports 175/175 translated but static pages (/p, filed under reports) 3/14;
 // curations 22/22; diary 532/533; posts 36/36; course lessons carry ko+en
-// questions. Reference documents have English titles and summaries in the list
-// but Korean bodies, and the games are Korean-only (noindex under /en/).
+// questions. Reference documents: since 2026-10-16 a document whose original-
+// language text is published (commulingo_doc_originals) is offered in English
+// as that original, with English title, summary and editor's note; the English
+// list shows those only. The games are Korean-only (noindex under /en/).
 const { menuForPath } = require('../services/menu-views');
 
 const MENU_ENGLISH = {
@@ -28,7 +30,7 @@ const MENU_ENGLISH = {
     'commulingo.map': 'full',
     'commulingo.terms': 'full',
     'commulingo.genealogy': 'full',
-    'commulingo.docs': 'none',
+    'commulingo.docs': 'per-item',
     reports: 'per-item',
     hub: 'per-item',
     diary: 'per-item',

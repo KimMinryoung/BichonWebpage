@@ -498,7 +498,8 @@ async function buildSitemapXml() {
         for (const term of commuTerms) xml += url(`/commulingo/terms/${encodeURIComponent(term.id)}`, term.updatedAt, '0.6');
         for (const event of commuEvents) xml += url(`/commulingo/events/${encodeURIComponent(event.id)}`, event.updatedAt, '0.6');
         for (const code of commuLingoCountryCodes()) xml += url(`/commulingo/countries/${encodeURIComponent(code)}`, latestDate(peopleLastmod, eventsLastmod), '0.5', 'weekly');
-        for (const doc of commuDocs) xml += url(`/commulingo/docs/${encodeURIComponent(doc.id)}`, doc.modifiedAt || doc.addedAt, '0.6', '', !isKoreanOnlyPath('/commulingo/docs'));
+        // A document has an English page when its original is published.
+        for (const doc of commuDocs) xml += url(`/commulingo/docs/${encodeURIComponent(doc.id)}`, doc.modifiedAt || doc.addedAt, '0.6', '', Boolean(doc.original));
         for (const chart of commuCharts) xml += url(`/commulingo/genealogy/${encodeURIComponent(chart.id)}`, chart.modifiedAt, '0.5');
         for (const book of commuBooks) xml += url(`/commulingo/book/${encodeURIComponent(book.id)}`, book.modifiedAt, '0.6');
         // 드릴 덱은 사전에서 만들어지므로 lastmod는 사전의 최신 갱신일을 따른다.

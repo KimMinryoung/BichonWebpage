@@ -11,13 +11,33 @@ const { searchDocContent } = require('../data/commulingo/doc-search');
 
 const router = express.Router();
 
+// The English library lists the documents whose original is published: an
+// English reader gets the original-language text, never the Korean
+// translation. One filtered array per manifest, so the list memo holds.
+const withOriginal = new WeakMap();
+function docsForLanguage(lang) {
+    const all = listCommuLingoDocs();
+    if (lang !== 'en') return all;
+    if (!withOriginal.has(all)) withOriginal.set(all, all.filter(doc => doc.original));
+    return withOriginal.get(all);
+}
+
+// An original carries its editor's note once per site language
+// (<aside class="doc-editorial" lang="ko|en">); a note without lang is Korean.
+function editorialForLanguage(html, lang) {
+    return html.replace(/<aside\b[^>]*class="doc-editorial"[^>]*>[\s\S]*?<\/aside>\s*/g, aside => {
+        const noteLang = (aside.match(/^<aside\b[^>]*\blang="([a-z]+)"/) || [])[1] || 'ko';
+        return noteLang === lang ? aside : '';
+    });
+}
+
 const { linkDocHtml, nestToc, presentDoc, presentedDocList } = require('../data/commulingo/doc-presentation');
 
 router.get('/search', dictionarySearchRoute({
     kind: 'docs', view: 'partials/commulingo-docs-cards', target: '#commu-doc-list',
     load: async (req, lang) => {
         const resolveDocRefs = await createDocRefResolver(lang);
-        return { items: presentedDocList(listCommuLingoDocs(), lang, resolveDocRefs).docs };
+        return { items: presentedDocList(docsForLanguage(lang), lang, resolveDocRefs).docs };
     },
 }));
 
@@ -25,7 +45,7 @@ router.get('/', async (req, res) => {
     try {
         const lang = res.locals.lang;
         const resolveDocRefs = await createDocRefResolver(lang);
-        const presented = presentedDocList(listCommuLingoDocs(), lang, resolveDocRefs);
+        const presented = presentedDocList(docsForLanguage(lang), lang, resolveDocRefs);
         const docs = presented.docs;
         const facets = presented.facets;
         const requestedKind = typeof req.query.kind === 'string' ? req.query.kind.trim() : '';
@@ -69,7 +89,11 @@ router.get('/:docId/search', (req, res) => {
 });
 
 // One reader page: the translation, or its published original (original = { lang }).
+// In English the original is the document's page (/en/commulingo/docs/<id>);
+// a document without a published original still opens there in Korean, kept
+// out of search and with no English alternate.
 async function renderDoc(req, res, raw, original) {
+    const english = res.locals.lang === 'en';
     const lang = res.locals.lang;
     const docId = raw.id;
     const doc = presentDoc(raw, lang, await createDocRefResolver(lang));
@@ -78,14 +102,20 @@ async function renderDoc(req, res, raw, original) {
     // belong to the translation's language.
     const content = original ? getCommuLingoDocOriginalContent(raw) : getCommuLingoDocContent(raw);
     const docLang = original ? original.lang : (raw.docLang || 'ko');
-    const pagePath = `/commulingo/docs/${docId}` + (original ? '/original' : '');
-    const linkHtml = (scope, html) => original ? html : linkDocHtml(getCommuLingoDocContent(raw), raw, lang, scope, html);
-    const titleSuffix = original ? (lang === 'en' ? ' (original)' : ' (원문)') : '';
+    const pagePath = `/commulingo/docs/${docId}` + (original && !english ? '/original' : '');
+    const linkHtml = (scope, html) => original ? editorialForLanguage(html, english ? 'en' : 'ko')
+        : linkDocHtml(getCommuLingoDocContent(raw), raw, lang, scope, html);
+    // hreflang: the Korean side of a document is its translation, the English
+    // side its original; the Korean reader's /original page has no English twin.
+    const alternates = { ko: true, en: Boolean(raw.original) && !(original && !english) };
+    const titleSuffix = original && !english ? ' (원문)' : '';
     // The other version's address, for the reader's 「원문」/「번역」 switch.
     // anchors: the other version's section headings and their pages, so the
     // switch can land on the section being read (see the reader's script).
-    const switchTo = original ? { href: `/commulingo/docs/${docId}`, original: false }
-        : raw.original ? { href: `/commulingo/docs/${docId}/original`, original: true, lang: raw.original.lang } : null;
+    // In English the switch leads to the Korean translation, on the Korean site.
+    const switchTo = original && english ? { href: `/commulingo/docs/${docId}`, original: false, korean: true }
+        : original ? { href: `/commulingo/docs/${docId}`, original: false }
+        : raw.original && !english ? { href: `/commulingo/docs/${docId}/original`, original: true, lang: raw.original.lang } : null;
     if (switchTo) {
         switchTo.anchors = getCommuLingoDocAnchorPages(original ? getCommuLingoDocContent(raw) : getCommuLingoDocOriginalContent(raw));
     }
@@ -127,6 +157,9 @@ async function renderDoc(req, res, raw, original) {
             pagePath,
             docLang,
             switchTo,
+            alternates,
+            readingOriginal: Boolean(original),
+            noindex: english && !original,
             pageTitle: (current > 1 ? `${doc.title} (${current}/${total})` : doc.title) + titleSuffix,
             pageDescription: doc.description,
             jsonLd,
@@ -147,6 +180,9 @@ async function renderDoc(req, res, raw, original) {
         pagePath,
         docLang,
         switchTo,
+        alternates,
+        readingOriginal: Boolean(original),
+        noindex: english && !original,
         pageTitle: doc.title + titleSuffix,
         pageDescription: doc.description,
         jsonLd,
@@ -164,6 +200,8 @@ router.get('/:docId/original', async (req, res) => {
             backHref: raw ? `/commulingo/docs/${raw.id}` : '/commulingo/docs',
             backLabel: lang === 'en' ? 'Reference Library' : '참고 문헌',
         });
+        // English has no separate original page: the document's page is it.
+        if (req.urlLanguage === 'en') return res.redirect(301, `/en/commulingo/docs/${raw.id}`);
         await renderDoc(req, res, raw, { lang: raw.original.lang });
     } catch (err) {
         console.error('commulingo doc original:', err);
@@ -198,7 +236,7 @@ router.get('/:docId', async (req, res) => {
             message: lang === 'en' ? 'Document not found.' : '문서를 찾을 수 없습니다.',
             backHref: '/commulingo/docs', backLabel: lang === 'en' ? 'Reference Library' : '참고 문헌',
         });
-        await renderDoc(req, res, raw, null);
+        await renderDoc(req, res, raw, lang === 'en' && raw.original ? { lang: raw.original.lang } : null);
     } catch (err) {
         console.error('commulingo doc detail:', err);
         errorPage.serverError(res, {

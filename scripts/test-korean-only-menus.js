@@ -9,11 +9,12 @@ const { stripEnglishPrefix } = require('../middleware/language');
 const { dictTabs } = require('../data/commulingo/dict-tabs');
 
 assert.strictEqual(MENU_ENGLISH.games, 'none');
-assert.strictEqual(MENU_ENGLISH['commulingo.docs'], 'none');
-for (const path of ['/games/', '/games/strike/', '/games/civil-war/', '/nonogram/', '/commulingo/docs', '/commulingo/docs/manifesto?p=2']) {
+for (const path of ['/games/', '/games/strike/', '/games/civil-war/', '/nonogram/']) {
     assert.ok(isKoreanOnlyPath(path), path);
 }
-for (const path of ['/', '/commulingo', '/commulingo/people/stalin', '/reports', '/search']) {
+// Reference documents left 'none' on 2026-10-16: a published original is their English page.
+assert.strictEqual(MENU_ENGLISH['commulingo.docs'], 'per-item');
+for (const path of ['/', '/commulingo', '/commulingo/people/stalin', '/reports', '/search', '/commulingo/docs', '/commulingo/docs/manifesto?p=2']) {
     assert.ok(!isKoreanOnlyPath(path), path);
 }
 
@@ -26,14 +27,13 @@ function strip(url) {
 }
 assert.deepStrictEqual(strip('/en/games/'), { status: 302, location: '/games/' });
 assert.deepStrictEqual(strip('/en/nonogram/?n=3'), { status: 302, location: '/nonogram/?n=3' });
-assert.deepStrictEqual(strip('/en/commulingo/docs/manifesto'), { status: 302, location: '/commulingo/docs/manifesto' });
 assert.deepStrictEqual(strip('/en/reports'), { next: '/reports' });
 
 assert.strictEqual(
-    localizeHtmlLinks('<a href="/commulingo/docs/x#s">d</a><a href="/games/">g</a><a href="/commulingo/terms/y">t</a>', 'en'),
-    '<a href="/commulingo/docs/x#s">d</a><a href="/games/">g</a><a href="/en/commulingo/terms/y">t</a>');
+    localizeHtmlLinks('<a href="/games/">g</a><a href="/commulingo/terms/y">t</a>', 'en'),
+    '<a href="/games/">g</a><a href="/en/commulingo/terms/y">t</a>');
 
-assert.ok(!dictTabs(true).some(tab => tab.key === 'docs'));
+assert.ok(dictTabs(true).some(tab => tab.key === 'docs'));
 assert.ok(dictTabs(false).some(tab => tab.key === 'docs'));
 
 console.log('korean-only menus ok');

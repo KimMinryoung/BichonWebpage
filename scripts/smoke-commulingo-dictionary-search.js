@@ -69,8 +69,8 @@ async function request(query, lang = 'ko', route = handler) {
     assert.equal(first.code, 200);
     assert.equal(first.body.total, 60);
     assert.equal((first.body.html.match(/class="commu-event-card"/g) || []).length, 24);
-    // The reference library is Korean-only (config/menu-languages.js), so English keeps its Korean URL.
-    assert(first.body.html.includes('href="/commulingo/docs/doc-0"'));
+    // The reference library has English pages (per-item, config/menu-languages.js).
+    assert(first.body.html.includes('href="/en/commulingo/docs/doc-0"'));
     assert(first.body.pager.includes('q=Title'));
     assert(!first.body.html.includes('data-search'));
     const second = await request({ q: 'Title', page: '2' });

@@ -10,9 +10,9 @@
 <% const enUrl = siteOrigin + languageUrl(pagePath, 'en'); %>
 <% const canonicalUrl = seoUrlLang === 'en' ? enUrl : koUrl; %>
 <link rel="canonical" href="<%= canonicalUrl %>">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="<%= noindex ? 'noindex, follow' : 'index, follow' %>">
 <link rel="alternate" hreflang="ko" href="<%= koUrl %>">
-<link rel="alternate" hreflang="en" href="<%= enUrl %>">
+<% if (alternates.en) { %><link rel="alternate" hreflang="en" href="<%= enUrl %>"><% } %>
 <link rel="alternate" hreflang="x-default" href="<%= koUrl %>">
 <link rel="alternate" type="application/rss+xml" title="Cyber-Lenin RSS Feed" href="<%= languageUrl('/rss.xml', seoUrlLang) %>">
 <link rel="alternate" type="application/atom+xml" title="Cyber-Lenin Atom Feed" href="<%= languageUrl('/atom.xml', seoUrlLang) %>">
@@ -116,7 +116,6 @@ var tocHref = function(id) {
     본다. 패널은 서버(/search)가 모든 페이지를 뒤진 결과를 페이지별로 보여 주고,
     고른 곳으로 가면 public/js/commulingo-doc-search.js가 본문(.doc-body)의 일치를
     표시한다. 짧은 문헌도 같은 패널을 쓴다. %>
-<% var readingOriginal = switchTo && !switchTo.original; %>
 <% if (!readingOriginal) { %>
 <div class="doc-search" data-doc-search
      data-endpoint="<%= languageUrl('/commulingo/docs/' + doc.id + '/search', urlLanguage === 'en' ? 'en' : 'ko') %>"
@@ -140,7 +139,7 @@ var tocHref = function(id) {
 <%# 번역과 원문 사이를 오가는 칸. 원문이 공개된 문헌에만 있다(commulingo_doc_originals).
     원문 쪽에는 검색 칸이 없다 — 검색은 번역 본문을 뒤진다. %>
 <% if (switchTo) { %>
-<a class="doc-version-switch" href="<%= languageUrl(switchTo.href, urlLanguage === 'en' ? 'en' : 'ko') %>" lang="<%= lang %>" data-anchors="<%= JSON.stringify(switchTo.anchors) %>"><%= switchTo.original ? strings.commuLingoViews.doc.original : strings.commuLingoViews.doc.translation %></a>
+<a class="doc-version-switch" href="<%= switchTo.korean ? switchTo.href : languageUrl(switchTo.href, urlLanguage === 'en' ? 'en' : 'ko') %>" lang="<%= lang %>" data-anchors="<%= JSON.stringify(switchTo.anchors) %>"><%= switchTo.korean ? strings.commuLingoViews.doc.koreanTranslation : switchTo.original ? strings.commuLingoViews.doc.original : strings.commuLingoViews.doc.translation %></a>
 <% } %>
 </div>
 <%- bodyTopHtml %>
@@ -181,7 +180,7 @@ editorialText = normalizeEditorial((editorialText || []).join(' '));
 var extraEditorialNotes = (doc.editorialNotes || '').split(/(?<!No\.)(?<=[.!?])\s+/)
     .filter(function(sentence) { return sentence && !editorialText.includes(normalizeEditorial(sentence)); }).join(' ');
 %>
-<% if (extraEditorialNotes && (!pagination || pagination.current === 1)) { %>
+<% if (extraEditorialNotes && !readingOriginal && (!pagination || pagination.current === 1)) { %>
 <aside class="doc-editorial">
     <details>
         <summary><%= en ? 'Editorial notes — translation and editing' : '엮은이 주 — 번역·편집 정보' %></summary>

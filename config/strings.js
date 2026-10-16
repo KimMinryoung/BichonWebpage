@@ -401,6 +401,7 @@ const ko = {
             source: '원전',
             original: '원문',
             translation: '번역',
+            koreanTranslation: '한국어 번역',
             historicalFigure: '실존 인물',
             // Read by public/js/commulingo-doc-search.js; {n}, {total}, {pages}, {page} are filled there.
             searchUi: {
@@ -1090,6 +1091,7 @@ const en = {
             source: 'Source',
             original: 'Original',
             translation: 'Translation',
+            koreanTranslation: 'Korean translation',
             historicalFigure: 'Historical figure',
             searchUi: {
                 label: 'Search',

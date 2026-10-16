@@ -14,8 +14,7 @@ assert.ok(Object.values(MENU_ENGLISH).every(value => ['full', 'per-item', 'none'
 const keys = (scope, lang) => sectionsFor(scope, lang).map(section => section.key);
 assert.deepStrictEqual(keys('all', 'ko'), ['reports', 'hub', 'diary', 'posts', 'courses', 'events', 'docs', 'people', 'terms']);
 assert.deepStrictEqual(keys('commulingo', 'ko'), ['courses', 'events', 'docs', 'people', 'terms']);
-// The reference documents are Korean-only.
-assert.deepStrictEqual(keys('commulingo', 'en'), ['courses', 'events', 'people', 'terms']);
-assert.ok(!keys('all', 'en').includes('docs'));
+// Reference documents are per-item in English (those with a published original).
+assert.deepStrictEqual(keys('commulingo', 'en'), ['courses', 'events', 'docs', 'people', 'terms']);
 for (const section of sectionsFor('all', 'ko')) assert.ok(section.menu in MENU_ENGLISH, `${section.key} names a menu`);
 console.log('site search ok');

@@ -120,7 +120,9 @@ async function events(lang, query) {
 }
 
 async function docs(lang, query) {
-    const list = presentedDocList(listCommuLingoDocs(), lang, await createDocRefResolver(lang)).docs;
+    // In English only documents with a published original have a page to offer.
+    const all = presentedDocList(listCommuLingoDocs(), lang, await createDocRefResolver(lang)).docs;
+    const list = lang === 'en' ? all.filter(doc => doc.original) : all;
     return searchDictionary(list, 'docs', query).map(doc => ({
         title: doc.title, href: `/commulingo/docs/${doc.id}`, meta: doc.kind, excerpt: doc.summary,
     }));
