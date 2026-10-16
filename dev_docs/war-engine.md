@@ -87,7 +87,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 `id`, `date`, `end: [년, 월]`, `title`, `mobilize`(기본 동원), `commissars`, `army: [[troop id, n]…]`(합이 `mobilize`), `brief[]`, `voices[]`, `threats`, `cards[]`, `choice`, `incident`(선택), `battle`(선택, `battles`의 id), `after`, `links`.
 - `threats[front] = { pressure, foes[], text, who }` — 이 시기에 싸우는 전선. 압력은 "역사만큼 해내는 데 필요한 전투력"이다.
-- `choice = { title, text, who, options: [{ id, label, effect, voices, flag, divisions, 스탯: n }], history, after, links }`
+- `choice = { title, text, who, talk, options: [{ id, label, effect, voices, flag, divisions, 스탯: n }], history, after, links }`. `text`는 발단 서술, `talk: [{ who: [이름, 인물 id] | as: '이름', text }]`는 그 아래 차례로 말하는 논쟁(각색한 대사, 출처 없음). `talk`이 없으면 `text` 뒤에 `who` 칩 하나만 나온다.
 - `incident`는 같은 꼴에 선택지가 `pressure: { front: n }`, `bars: [card]`를 더 가진다.
 - `voices[] = { by | who, at, text, src }` — `at`은 싸우는 전선이나 `map.hubId`. `by`(세력)는 그 전선을 치는 세력이어야 한다. `src: [출처, https 주소]`가 없으면 「각색」.
 

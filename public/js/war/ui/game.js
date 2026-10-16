@@ -1471,12 +1471,19 @@
         $('cwCards').replaceChildren(...items, grid);
     }
 
+    // How a dilemma came about, then the people who argue over it.
+    function setting(c) {
+        if (!c.talk) return [el('p', {}, c.text, ' ', person(c.who))];
+        return [el('p', {}, c.text), el('ul', { class: 'cw-talk' }, ...c.talk.map(v => el('li', {},
+            v.who ? person(v.who) : el('strong', { class: 'cw-talk-as' }, v.as), el('q', {}, v.text))))];
+    }
+
     function renderChoice() {
         const c = G.turnData(s).choice;
         $('cwChoice').replaceChildren(
             el('p', { class: 'games-kicker' }, '이 시기의 갈림길 · 반드시 하나를 고릅니다'),
             el('h3', { id: 'cwChoiceTitle' }, c.title),
-            el('p', {}, c.text, ' ', person(c.who)),
+            ...setting(c),
             el('div', { class: 'cw-options', role: 'group', 'aria-label': c.title }, ...c.options.map(o => el('button', {
                 type: 'button', class: 'cw-option', 'data-key': `choice-${o.id}`, 'aria-pressed': String(s.plan.choice === o.id),
                 onclick: () => { if (!act('choose', o.id)) announce(tooMany()); render(); },
@@ -1490,7 +1497,7 @@
         $('cwIncident').replaceChildren(
             el('p', { class: 'games-kicker' }, '돌발 사건 · 대응을 하나 고릅니다'),
             el('h3', { id: 'cwIncidentTitle' }, inc.title),
-            el('p', {}, inc.text, ' ', person(inc.who)),
+            ...setting(inc),
             el('div', { class: 'cw-options', role: 'group', 'aria-label': inc.title }, ...inc.options.map(o => el('button', {
                 type: 'button', class: 'cw-option', 'data-key': `respond-${o.id}`, 'aria-pressed': String(s.plan.response === o.id),
                 onclick: () => {
