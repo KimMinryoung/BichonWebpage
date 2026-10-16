@@ -6,7 +6,7 @@ const browserGlobals = {
     fetch: 'readonly', FormData: 'readonly', URL: 'readonly', URLSearchParams: 'readonly',
     localStorage: 'readonly', sessionStorage: 'readonly', history: 'readonly',
     setTimeout: 'readonly', clearTimeout: 'readonly', setInterval: 'readonly', clearInterval: 'readonly',
-    requestAnimationFrame: 'readonly', cancelAnimationFrame: 'readonly', innerWidth: 'readonly', innerHeight: 'readonly',
+    requestAnimationFrame: 'readonly', cancelAnimationFrame: 'readonly',
     IntersectionObserver: 'readonly', MutationObserver: 'readonly', ResizeObserver: 'readonly',
     AbortController: 'readonly', AbortSignal: 'readonly', TextDecoder: 'readonly', TextEncoder: 'readonly',
     Node: 'readonly', NodeFilter: 'readonly', Element: 'readonly', HTMLElement: 'readonly', Event: 'readonly', CustomEvent: 'readonly',
@@ -28,7 +28,9 @@ const rules = {
     'no-unused-vars': ['warn', { args: 'none', caughtErrors: 'none' }],
 };
 module.exports = [
-    { ignores: ['node_modules/**', 'public/fonts/**', 'public/puzzles/**', 'data/commulingo/docs/**', 'docs/**', 'temp_dev/**', 'tools/**'] },
+    { ignores: ['node_modules/**', 'public/fonts/**', 'public/puzzles/**', 'data/commulingo/docs/**', 'docs/**', 'temp_dev/**', 'tools/**',
+        // Gitignored work dirs (one-off data and browser-check scripts), not site code.
+        'scripts/content/**', 'scripts/reviews/**', 'scripts/migrations/data/**'] },
     {
         files: ['public/js/**/*.js'],
         languageOptions: { ecmaVersion: 2020, sourceType: 'script', globals: browserGlobals },
@@ -41,8 +43,7 @@ module.exports = [
     },
     {
         // Playwright crawler: page.evaluate() callbacks run in the browser.
-        // Work scripts in scripts/content/ (gitignored) are often Playwright checks too.
-        files: ['scripts/audit-overflow.js', 'scripts/content/**/*.js'],
+        files: ['scripts/audit-overflow.js'],
         languageOptions: { ecmaVersion: 2022, sourceType: 'commonjs', globals: { ...nodeGlobals, ...browserGlobals } },
         rules,
     },
