@@ -351,13 +351,20 @@ var extraEditorialNotes = (doc.editorialNotes || '').split(/(?<!No\.)(?<=[.!?])\
         // open on their first section.
         if (!current) {
             if (!/[?&]p=([2-9]|\d\d)/.test(window.location.search)) {
-                link.href = link.href.split(/[?#]/)[0];
+                var top = new URL(link.href);
+                top.searchParams.delete('p');
+                top.hash = '';
+                link.href = top.href;
                 return;
             }
             current = heads[0];
         }
+        // Other query parameters (the English page's ?lang=ko) stay.
+        var target = new URL(link.href);
         var page = anchors[current.id];
-        link.href = link.href.split(/[?#]/)[0] + (page > 1 ? '?p=' + page : '') + '#' + current.id;
+        if (page > 1) target.searchParams.set('p', page); else target.searchParams.delete('p');
+        target.hash = current.id;
+        link.href = target.href;
     });
 })();
 </script>

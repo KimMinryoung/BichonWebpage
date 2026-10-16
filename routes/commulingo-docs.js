@@ -112,8 +112,10 @@ async function renderDoc(req, res, raw, original) {
     // The other version's address, for the reader's 「원문」/「번역」 switch.
     // anchors: the other version's section headings and their pages, so the
     // switch can land on the section being read (see the reader's script).
-    // In English the switch leads to the Korean translation, on the Korean site.
-    const switchTo = original && english ? { href: `/commulingo/docs/${docId}`, original: false, korean: true }
+    // In English the switch leads to the Korean translation, on the Korean site:
+    // ?lang=ko switches the reader's language (middleware/language.js), as the
+    // English page's links are otherwise localized back to /en/.
+    const switchTo = original && english ? { href: `/commulingo/docs/${docId}?lang=ko`, original: false, korean: true }
         : original ? { href: `/commulingo/docs/${docId}`, original: false }
         : raw.original && !english ? { href: `/commulingo/docs/${docId}/original`, original: true, lang: raw.original.lang } : null;
     if (switchTo) {
