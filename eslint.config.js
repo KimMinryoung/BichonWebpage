@@ -6,7 +6,7 @@ const browserGlobals = {
     fetch: 'readonly', FormData: 'readonly', URL: 'readonly', URLSearchParams: 'readonly',
     localStorage: 'readonly', sessionStorage: 'readonly', history: 'readonly',
     setTimeout: 'readonly', clearTimeout: 'readonly', setInterval: 'readonly', clearInterval: 'readonly',
-    requestAnimationFrame: 'readonly', cancelAnimationFrame: 'readonly',
+    requestAnimationFrame: 'readonly', cancelAnimationFrame: 'readonly', innerWidth: 'readonly', innerHeight: 'readonly',
     IntersectionObserver: 'readonly', MutationObserver: 'readonly', ResizeObserver: 'readonly',
     AbortController: 'readonly', AbortSignal: 'readonly', TextDecoder: 'readonly', TextEncoder: 'readonly',
     Node: 'readonly', NodeFilter: 'readonly', Element: 'readonly', HTMLElement: 'readonly', Event: 'readonly', CustomEvent: 'readonly',
@@ -41,7 +41,8 @@ module.exports = [
     },
     {
         // Playwright crawler: page.evaluate() callbacks run in the browser.
-        files: ['scripts/audit-overflow.js'],
+        // Work scripts in scripts/content/ (gitignored) are often Playwright checks too.
+        files: ['scripts/audit-overflow.js', 'scripts/content/**/*.js'],
         languageOptions: { ecmaVersion: 2022, sourceType: 'commonjs', globals: { ...nodeGlobals, ...browserGlobals } },
         rules,
     },
