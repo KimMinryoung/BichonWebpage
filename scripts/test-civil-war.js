@@ -176,7 +176,7 @@ for (const t of D.turns) for (const th of Object.values(t.threats)) for (const f
     const open = G.forecast(raid).fronts.volga.pressure;
     G.act(raid, 'alloc', 'volga', raid.plan.divisions - 2);
     assert.equal(G.forecast(raid).fronts.volga.pressure, open - 2, 'a reserve meets the Cossack raid');
-    assert.ok(G.forecast(raid).fronts.volga.pressureParts.includes('돈 카자크: 카자크 기병의 습격 −2'));
+    assert.ok(G.forecast(raid).fronts.volga.pressureParts.includes('돈 카자크 −2'));
 }
 
 // The other road at every fork still reaches Perekop, but the market
@@ -228,7 +228,7 @@ assert.ok(command >= 1);
 
 // Propaganda shows on the pressure it lowers, this season and the next.
 // (An empty plan also wakes the southern attackers' traits; set them aside.)
-const calmed = f => f.pressureParts.filter(p => !G.traitsOn(calm, 'south', G.threatsOf(calm).south).some(tr => p.startsWith(tr.short + ':')));
+const calmed = f => f.pressureParts.filter(p => !G.traitsOn(calm, 'south', G.threatsOf(calm).south).some(tr => p.startsWith(tr.short + ' ')));
 const calm = G.start();
 for (let i = 0; i < 2; i++) { G.act(calm, 'choose', historical(G.turnData(calm))); plan(calm); send(calm); G.act(calm, 'next'); }
 assert.equal(G.turnData(calm).id, 'kolchak');
@@ -264,7 +264,7 @@ answer(empty);
 assert.ok(G.act(empty, 'alloc', 'volga', empty.plan.divisions));
 const eastForecast = G.forecast(empty).fronts.east;
 assert.equal(eastForecast.change, -5);
-assert.deepEqual(eastForecast.pressureParts, ['체코 군단: 철도 위의 군단 +2'], 'no train against the legion on its railway');
+assert.deepEqual(eastForecast.pressureParts, ['체코 군단 +2'], 'no train against the legion on its railway');
 assert.equal(eastForecast.momentum, 6, '8 short: three cities beyond Kazan, +2 each');
 assert.ok(send(empty));
 assert.ok(G.act(empty, 'next'));

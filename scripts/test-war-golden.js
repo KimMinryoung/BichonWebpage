@@ -36,8 +36,18 @@ function oldFlags(flags) {
     for (const [k, v] of Object.entries(flags)) out[k === 'calm:propaganda' ? 'calm' : k] = v;
     return out;
 }
+// A trait's pressure part dropped its name (2026-10-16): the old label.
+function oldParts(f) {
+    if (!f || !f.pressureParts || !f.traits) return f;
+    f.pressureParts = f.pressureParts.map(p => {
+        const tr = f.traits.find(x => x.on && p === `${x.short} ${(x.by < 0 ? '−' : '+') + Math.abs(x.by)}`);
+        return tr ? `${tr.short}: ${tr.name} ${p.slice(tr.short.length + 1)}` : p;
+    });
+    return f;
+}
 function oldRecord(r) {
-    return Object.assign({}, r, { stats: asGrain(r.stats), spoils: r.spoils.map(asGrain) });
+    const fronts = r.fronts && Object.fromEntries(Object.entries(r.fronts).map(([id, f]) => [id, oldParts(Object.assign({}, f))]));
+    return Object.assign({}, r, { stats: asGrain(r.stats), spoils: r.spoils.map(asGrain) }, fronts ? { fronts } : {});
 }
 function oldOutcome(o) {
     if (!o || !o.stats) return o;
@@ -68,6 +78,7 @@ function view(s) {
         const p = s.plan;
         out.plan = { divisions: p.divisions, command: p.command, commissars: p.commissars, sources: p.sources, alloc: p.alloc, commissar: p.commissar, cards: p.cards, choice: p.choice, response: p.response };
         const fc = G.forecast(s);
+        for (const f of Object.values(fc.fronts)) oldParts(f);
         out.forecast = fc;
         out.bands = Object.fromEntries(Object.entries(fc.fronts).map(([id, f]) => [id, G.outcomeBands(id, s.lines[id], s.turn, f.pressure, s.plan.choice)]));
         const m = G.musterOf(s, fc);

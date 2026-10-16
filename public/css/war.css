@@ -754,15 +754,16 @@
 .cw-foe .cw-foe-trait { color: var(--text-primary); }
 /* The attackers' traits on this front: a bitten rule in red, a blunted one
    plain, one that helps the Reds in green. */
-.cw-traits { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: .76rem; color: var(--text-secondary); }
-.cw-traits li { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; padding: 2px 6px; border-left: 3px solid var(--border); }
-.cw-traits strong { color: var(--text-primary); }
-.cw-traits b { margin-left: auto; font-size: .7rem; padding: 0 5px; border: 1px solid currentColor; white-space: nowrap; font-variant-numeric: tabular-nums; }
-.cw-traits .is-bites { border-left-color: var(--text-primary); }
-.cw-traits .is-bites b { color: var(--bg-surface); background: var(--text-primary); border-color: var(--text-primary); }
-.cw-traits .is-blunted b { color: var(--text-secondary); }
-.cw-traits .is-works { border-left-color: var(--btn-primary, #2da44e); }
-.cw-traits .is-works b { color: var(--btn-primary, #2da44e); }
+.cw-foe-entry { flex: 1 1 100%; display: grid; gap: 2px; }
+.cw-foe-entry .cw-foe { justify-self: start; }
+.cw-foe-entry .cw-foe[open] { justify-self: stretch; }
+.cw-trait { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; margin: 0; padding: 2px 6px; border-left: 3px solid var(--border); font-size: .76rem !important; color: var(--text-secondary); }
+.cw-trait b { margin-left: auto; font-size: .7rem; padding: 0 5px; border: 1px solid currentColor; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cw-trait.is-bites { border-left-color: var(--text-primary); }
+.cw-trait.is-bites b { color: var(--bg-surface); background: var(--text-primary); border-color: var(--text-primary); }
+.cw-trait.is-blunted b { color: var(--text-secondary); }
+.cw-trait.is-works { border-left-color: var(--btn-primary, #2da44e); }
+.cw-trait.is-works b { color: var(--btn-primary, #2da44e); }
 .cw-front-controls { gap: 4px; }
 .games-shell .cw-stepper button { min-width: 36px; min-height: 36px; padding: 4px 0; }
 .cw-stepper output { min-width: 58px; font-size: .9rem; }

@@ -1175,10 +1175,9 @@
         const names = (threat.foes || []).map(fid => D.factions[fid].short || D.factions[fid].name).join('·');
         const fold = el('details', { class: 'cw-foe-fold', open },
             el('summary', {}, el('strong', {}, '적 정보'), names ? ` · ${names}` : null, by ? el('b', { class: by > 0 ? 'is-bites' : 'is-works' }, `특성 압력 ${signed(by)}`) : null),
-            foeList(threat.foes),
+            foeList(threat.foes, f.traits),
             el('p', { class: 'cw-threat' }, threat.text, ' ', person(threat.who)),
-            traitRow(f.traits),
-            f.pressureParts.length ? el('p', { class: 'cw-parts' }, `압력: ${threat.pressure} 기본 · ${f.pressureParts.join(' · ')}`) : null,
+            f.pressureParts.length ? el('p', { class: 'cw-parts' }, `압력: ${f.pressure} = (기본 ${threat.pressure}) + ${f.pressureParts.map(x => `(${x})`).join(' + ')}`) : null,
             f.parts.length ? el('p', { class: 'cw-parts' }, f.parts.join(' · ')) : null);
         fold.addEventListener('toggle', () => { foeOpen = fold.open; });
         return fold;
@@ -1277,31 +1276,29 @@
     }
 
     // Factions start folded, each with the name of its trait; opened, who
-    // they were and what the trait was.
-    function foeList(ids) {
+    // they were and what the trait was. Under each, what its trait does to
+    // this front under the plan: the rule, and what it does to the pressure:
+    // added (red), blunted (struck out) or, for one that helps the Reds,
+    // taken off (green).
+    function foeList(ids, traits) {
         return el('div', { class: 'cw-foes' }, ...(ids || []).map(fid => {
             const f = D.factions[fid];
-            return el('details', { class: 'cw-foe is-' + f.kind },
-                el('summary', {}, f.flag ? flag(f.flag) : el('i', { class: 'cw-foe-dot' }), f.name, f.trait ? el('small', {}, f.trait.name) : null),
-                el('p', {}, f.note, f.link ? ' ' : null, f.link ? el('a', Object.assign({ href: f.link }, NEW_TAB), '더 읽기 ↗') : null),
-                f.trait ? el('p', { class: 'cw-foe-trait' }, el('strong', {}, f.trait.name), ' ', f.trait.text) : null);
+            const tr = (traits || []).find(t => t.foe === fid && t.rule);
+            return el('div', { class: 'cw-foe-entry' },
+                el('details', { class: 'cw-foe is-' + f.kind },
+                    el('summary', {}, f.flag ? flag(f.flag) : el('i', { class: 'cw-foe-dot' }), f.name, f.trait ? el('small', {}, f.trait.name) : null),
+                    el('p', {}, f.note, f.link ? ' ' : null, f.link ? el('a', Object.assign({ href: f.link }, NEW_TAB), '더 읽기 ↗') : null),
+                    f.trait ? el('p', { class: 'cw-foe-trait' }, el('strong', {}, f.trait.name), ' ', f.trait.text) : null),
+                tr ? traitRule(tr) : null);
         }));
     }
 
-    // What the attackers' traits do to this front under the plan: the rule,
-    // and what it does to the pressure: added (red), blunted (struck out)
-    // or, for one that helps the Reds, taken off (green).
-    function traitRow(traits) {
-        const shown = (traits || []).filter(tr => tr.rule);
-        if (!shown.length) return null;
-        return el('ul', { class: 'cw-traits' }, ...shown.map(tr => {
-            const state = !tr.counted ? null : tr.on ? (tr.by > 0 ? 'is-bites' : 'is-works') : (tr.by > 0 ? 'is-blunted' : null);
-            const mark = state === 'is-blunted'
-                ? el('b', { 'aria-label': `압력 ${signed(tr.by)} 막음` }, el('s', {}, signed(tr.by)))
-                : state ? el('b', {}, `압력 ${signed(tr.by)}`) : null;
-            return el('li', { class: state || 'is-idle' },
-                el('strong', {}, `${tr.short} · ${tr.name}`), ' ', tr.rule, mark);
-        }));
+    function traitRule(tr) {
+        const state = !tr.counted ? null : tr.on ? (tr.by > 0 ? 'is-bites' : 'is-works') : (tr.by > 0 ? 'is-blunted' : null);
+        const mark = state === 'is-blunted'
+            ? el('b', { 'aria-label': `압력 ${signed(tr.by)} 막음` }, el('s', {}, signed(tr.by)))
+            : state ? el('b', {}, `압력 ${signed(tr.by)}`) : null;
+        return el('p', { class: 'cw-trait ' + (state || 'is-idle') }, tr.rule, mark);
     }
 
     // Who holds a front's lost cities: this season's attacker, or the

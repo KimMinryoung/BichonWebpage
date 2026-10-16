@@ -389,7 +389,7 @@
                 const traits = traitsOn(s, id, threat);
                 for (const tr of traits.filter(x => x.on)) {
                     pressure += tr.by;
-                    pressureParts.push(`${tr.short}: ${tr.name} ${signed(tr.by)}`);
+                    pressureParts.push(`${tr.short} ${signed(tr.by)}`);
                 }
                 // A calm on the front: this season and the next.
                 for (const cid of calmCards(s)) {
