@@ -68,12 +68,21 @@
             history: [1, 2, 2, 2, 1, 1, 2, 2],
             holders: ['central', 'central', 'poland', 'poland', 'poland', 'poland', 'poland', 'poland'],
             // Warsaw, the third city, is out of reach but for the march on
-            // Warsaw with WARSAW (8) to spare; the march that falls short
-            // is routed before the Vistula.
+            // Warsaw: before rules 6 with WARSAW (8) to spare, from rules 6
+            // by winning the battle of Warsaw it brings. The march that falls
+            // short is routed before the Vistula; the one that takes Warsaw
+            // ends the Polish war (warsawTaken: the next season's divisions,
+            // Crimea's pressure, a division at Perekop, the epilogue).
             cap: {
-                reach: 2, unlock: { choice: 'warsaw', margin: 8 },
+                reach: 2, unlock: { choice: 'warsaw', margin: 8 }, battle: { id: 'warsaw', when: { rules: ['>=', 6] } },
                 failed: { deserted: 3, note: '바르샤바 앞에서 측면이 무너졌다. 포로와 동프로이센으로 넘어간 병력으로 다음 시기 사단 3개를 잃는다.' },
-                reached: { note: '바르샤바에 붉은 군대가 들어갔다. 역사와 다른 길이다. 폴란드 노동자가 일어설지는 아무도 모른다.' },
+                reached: {
+                    note: '바르샤바에 붉은 군대가 들어갔다. 역사와 다른 길이다. 폴란드 노동자가 일어설지는 아무도 모른다.',
+                    reward: {
+                        when: { rules: ['>=', 6] }, flag: 'warsawTaken', workers: 8, cohesion: 5,
+                        note: '폴란드가 강화를 청한다. 유럽 혁명이 눈앞에 온 듯 공장과 당이 들끓는다. 노동자 지지 +8, 당 결속 +5. 다음 시기 서부전선 사단 4개가 남쪽으로 돌아오고, 브란겔은 고립된다.',
+                    },
+                },
             },
         },
         southwest: {
@@ -174,7 +183,7 @@
             name: '폴란드군', short: '폴란드', kind: 'national', flag: ['#ffffff', '#dc143c'], link: P('jozef-pilsudski'),
             sign: 'eagle',
             note: '1918년 독립을 되찾은 폴란드의 군대. 피우수트스키가 이끌었다.',
-            trait: { name: '조국을 지키는 군대', motion: 'march', rule: '바르샤바는 여유 8이 있어야 들어간다', text: '침공군으로 키예프까지 왔던 폴란드군도 비스와강 앞에서는 나라를 지키는 군대였다. 폴란드 노동자는 붉은 군대를 해방군으로 맞지 않았다.' },
+            trait: { name: '조국을 지키는 군대', motion: 'march', rule: '바르샤바는 바르샤바 전투에서 이겨야 들어간다', text: '침공군으로 키예프까지 왔던 폴란드군도 비스와강 앞에서는 나라를 지키는 군대였다. 폴란드 노동자는 붉은 군대를 해방군으로 맞지 않았다.' },
             cries: { beaten: '부크강 뒤로 물러난다.', surging: '동쪽으로 밀어붙여라!' },
             spoils: '탄약 수레와 군량',
         },
@@ -294,6 +303,16 @@
             turns: [6],
             text: '사면받은 미로노프가 이끄는 제2기병군. 10월 북타브리아에서 브란겔의 기병을 깨뜨렸다. 크림 방면에만 보낼 수 있고, 보내면 페레코프 전투에 합류한다.',
             note: '1919년 미로노프를 사면했을 때만 나온다.',
+        },
+        // Rules 6: the 1st Cavalry Army turned from Lviv to the Vistula, as
+        // the commander-in-chief ordered and the South-Western Front did not.
+        konarmia: {
+            title: '부됸니의 제1기병군', short: '제1기병군', advisor: ['세르게이 카메네프', 'sergey-kamenev'], cost: 1, target: 'front', fronts: ['west'], requires: 'cavalry', bonus: 4,
+            when: { rules: ['>=', 6] }, turns: [6],
+            effect: '남서·크림의 제1기병군 +4가 빠진다 · 바르샤바 전투에 합류',
+            text: '리비우를 치던 제1기병군을 북쪽으로 돌려 서부전선에 붙인다. 바르샤바 남쪽의 빈 옆구리를 막을 수 있는 것은 이 기병뿐이다. 대신 남서전선과 크림에서는 기병의 타격력이 빠진다.',
+            note: '8월 중순 총사령관 카메네프가 제1기병군을 서부전선으로 넘기라고 명령했지만, 남서전선 혁명군사위원 스탈린은 그 명령에 서명하지 않았다. 기병군은 8월 20일 무렵까지 리비우에 매달려 있었다. 제1기병군을 창설했을 때만 나온다.',
+            link: ['붉은 군대 제1기병군', T('first-cavalry-army')],
         },
     };
 
@@ -593,7 +612,7 @@
         },
         {
             id: 'poland', date: '1920년 4–8월', end: [1920, 8], title: '바르샤바로?',
-            mobilize: 19, commissars: 3, army: [['conscripts', 15], ['latvian', 1], ['cavalry', 3]], phase: 5,
+            mobilize: 19, commissars: 3, army: [['conscripts', 15], ['latvian', 1], ['cavalry', 3]], phase: 5, battle: 'warsaw',
             brief: [
                 '4월 25일 피우수트스키의 폴란드군이 페틀류라의 우크라이나군과 함께 공세를 시작해 5월 7일 키예프에 들어갔다. 붉은 군대는 6월 12일 키예프를 되찾고, 투하쳅스키의 서부전선이 7월 민스크를 지나 서쪽으로 내달린다.',
                 '6월, 데니킨에게서 지휘권을 넘겨받은 브란겔이 크림에서 나와 북타브리아를 차지했다. 7월 11일 영국 외무장관 커즌이 휴전과 「커즌선」을 제안한다.',
@@ -608,7 +627,7 @@
                 southwest: { pressure: 8, foes: ['poland', 'unr'], text: '키예프를 차지한 폴란드군을 몰아내야 한다.' },
                 crimea: { pressure: 8, foes: ['wrangel'], text: '브란겔의 러시아군이 크림에서 나와 북타브리아로 진격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
             },
-            cards: ['train', 'requisition', 'cheka', 'amnesty'],
+            cards: ['train', 'konarmia', 'requisition', 'cheka', 'amnesty'],
             choice: {
                 title: '커즌선을 넘을 것인가', who: ['미하일 투하쳅스키', 'tukhachevsky'],
                 text: '7월, 폴란드군을 쫓던 붉은 군대가 영국 외무장관 커즌이 제안한 민족 경계선에 다다랐다.',
@@ -619,7 +638,7 @@
                     { who: ['이오시프 스탈린', 'stalin'], text: '남서전선은 바르샤바가 아니라 리비우로 간다.' },
                 ],
                 options: [
-                    { id: 'warsaw', label: '바르샤바로 진격한다', flag: 'warsaw', effect: '바르샤바를 칠 수 있다. 실패하면 서부전선이 무너진다' },
+                    { id: 'warsaw', label: '바르샤바로 진격한다', flag: 'warsaw', effect: '바르샤바 전투를 치른다. 이기면 바르샤바를 얻고 큰 보상, 지면 다음 시기 사단 −3' },
                     { id: 'curzon', label: '커즌선에서 멈추고 강화한다', flag: 'curzon', effect: '서부를 지키고, 남은 사단으로 크림을 친다(페레코프 전투에 증원 1개 사단)' },
                 ],
                 history: 'warsaw',
@@ -763,6 +782,7 @@
             { id: 'r51g', tag: '51포병', side: 'red', name: '제51사단 포병', kind: 'art', at: [1, 2], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
             { id: 'r6g', tag: '중포', side: 'red', name: '제6군 중포병', kind: 'art', at: [1, 1], hp: 7, atk: 5, def: 1, mv: 2, range: 2, need: 3 },
             { id: 'rcz', tag: '증원', side: 'red', name: '증원 사단', sub: '서부에서 온', kind: 'inf', at: [0, 2], hp: 10, atk: 4, def: 3, mv: 3, flag: 'curzon' },
+            { id: 'rwz', tag: '서부', side: 'red', name: '서부전선 사단', sub: '바르샤바에서 온', kind: 'inf', at: [0, 4], hp: 10, atk: 5, def: 3, mv: 3, flag: 'warsawTaken' },
             { id: 'r15', tag: '15', side: 'red', name: '제15사단', sub: '시바시 도하', kind: 'inf', at: [1, 5], hp: 10, atk: 4, def: 3, mv: 3, lead: true },
             { id: 'rmk', tag: '마흐노', side: 'red', name: '마흐노 부대', sub: '카레트니크', kind: 'cav', at: [1, 6], hp: 8, atk: 5, def: 2, mv: 5, flag: 'makhno', person: ['세묜 카레트니크', 'semyon-karetnik'], skirmish: true },
             { id: 'r52', tag: '52', side: 'red', name: '제52사단', sub: '시바시 도하', kind: 'inf', at: [1, 7], hp: 10, atk: 4, def: 3, mv: 3 },
@@ -802,6 +822,7 @@
     const epilogue = {
         title: '그리고 1921년',
         texts: [
+            { when: { flag: 'warsawTaken' }, text: '바르샤바를 차지한 붉은 군대 앞에서 폴란드는 강화를 청했다. 그러나 폴란드 노동자가 혁명에 나설지, 독일로 가는 길이 정말 열릴지는 총검이 정할 수 없는 일이었다. 실제 역사에서는 8월 16일 비스와강의 반격으로 서부전선이 무너졌고, 1921년 리가 조약으로 벨라루스와 우크라이나 서부가 폴란드에 넘어갔다.' },
             { when: { stat: ['peasants', '>=', 40] }, text: '징발의 부담을 덜어 둔 덕에 농촌의 원한은 역사보다 얕다. 실제 역사에서는 1921년 탐보프의 안토노프 봉기와 크론시타트 반란이 일어난 뒤에야 징발이 현물세로 바뀌었다.' },
             { text: '1921년 봄, 내전에서 이긴 소비에트 정권 앞에 새 전선이 열렸다. 탐보프의 안토노프 봉기와 시베리아·우크라이나의 농민 반란, 그리고 3월 크론시타트 수병의 봉기. 제10차 당대회는 징발을 현물세로 바꾸는 신경제정책을 채택했다.' },
         ],
@@ -1094,6 +1115,112 @@
         history: '6월 7일 밤 제25사단의 제73여단 선두가 빼앗은 기선으로 크라스니야르에서 벨라야를 건넜고, 제217·220연대가 강가 마을들을 차지했다. 8일 교두보에 건너간 프룬제는 비행기의 폭탄에 타박상을 입었고, 차파예프는 기관총탄에 머리를 맞고도 지휘를 놓지 않았다. 9일 백군 제4·8사단과 시베리아 카자크의 반격을 물리친 제25사단이 그날 저녁 우파에 들어갔다. 영화 「차파예프」(1934)의 「심리 공격」, 곧 장교 연대가 줄 맞춰 걸어오는 장면은 여기서 나왔다고 하지만, 카펠의 부대는 그때 우파 북쪽에 있었고 동부전선에는 검은 제복의 장교 연대가 없었다. 검은 교복을 입은 실업학교 학생 의용 중대가 이 반격에서 150명쯤 쓰러진 것이 전설의 바탕으로 꼽힌다.',
     };
 
+    // Warsaw, 13–17 August 1920 (rules 6, the march on Warsaw): the 16th
+    // Army takes Radzymin and strikes at the Praga bridgehead across the
+    // Vistula from the city, while south of the woods and marshes the thin
+    // Mozyr Group holds the Western Front's flank alone and Piłsudski
+    // gathers a strike group on the Wieprz. Rows run north (Modlin, the
+    // Wkra) to south (the Wieprz); the Vistula runs down the west, Warsaw
+    // beyond it. Terrain: . field, f wood, ~ the Vistula, B the bridge,
+    // W Warsaw, P the Praga bridgehead, R Radzymin, m woods and marshes,
+    // G Garwolin.
+    // Narrow by design: only the 1st Cavalry Army (the konarmia card) can
+    // reach Garwolin before the strike group wakes, so without it the flank
+    // falls at the end of turn 2; and the bridge wants every division the
+    // front can bring (need) by turn 5.
+    const warsaw = {
+        id: 'warsaw', sides: SIDES, front: 'west', final: false,
+        when: { rules: ['>=', 6], choice: 'warsaw' },
+        title: '바르샤바 전투', date: '1920년 8월 13–17일',
+        settle: '바르샤바로 →', board: '바르샤바 전장', enemyName: '폴란드군',
+        strikeNote: '',
+        pushNote: '피우수트스키의 타격 집단. 2턴이 끝날 때까지 자리를 지키며 닿는 붉은 부대만 치고, 그 뒤 가르볼린으로 곧장 온다. 붉은 부대 곁에서는 멈춰 싸운다. 가르볼린에 폴란드군이 들어서면 진다.',
+        stakes: '이기면 바르샤바와 큰 보상 · 지면 역사처럼 무너지고 다음 시기 사단 −3',
+        outcome: { won: '바르샤바에 들어갔다', lost: '역사처럼 비스와강 앞에서 무너졌다' },
+        legend: [['steppe', '들판'], ['forest', '숲 (방어 +1, 이동 2) · 늪과 숲 (방어 +1, 이동 3)'], ['river', '비스와강'], ['bridge', '바르샤바 다리'], ['trench', '프라가 교두보 (방어 +1, 포격으로 깎임)'], ['town', '라지민·가르볼린 (방어 +1)'], ['city', '바르샤바 (방어 +1)']],
+        map: [
+            '.f~.....f....',
+            '..~..........',
+            'W.~..R.......',
+            'WW~P.........',
+            'WWBP.........',
+            'WW~P.........',
+            '..~mmmmmmmmmm',
+            '..~mmmmmmmmmm',
+            '..~..........',
+            '..~..G.......',
+            '..~..........',
+        ],
+        voices: [
+            { when: 'start', unit: 'r27', face: 'red-soldier', text: '라지민만 넘으면 프라가다. 그 다리 건너가 바르샤바다.' },
+            { when: 'start', unit: ['wp2', 'wp1'], by: 'poland', text: '프라가 다리는 내주지 않는다. 바르샤바 노동자도 의용대로 나왔다.' },
+            { when: 'start', unit: 'r57', face: 'red-soldier', text: '모지르 집단이 이 넓은 남쪽을 혼자 맡았다. 뒤에도 옆에도 아무도 없다.' },
+            { when: 'start', unit: 'r1c', who: ['세묜 부됸니', 'semyon-budyonny'], text: '리비우를 두고 북쪽으로 왔다. 가르볼린 길은 기병군이 막는다.' },
+            { when: 'turn:3', unit: ['wl1', 'wl3', 'wcv'], who: ['유제프 피우수트스키', 'jozef-pilsudski'], by: 'poland', text: '비에프시강에서 북쪽으로! 놈들의 등 뒤로 들어간다.' },
+            { when: 'turn:5', unit: ['r27', 'r21', 'r2', 'r10'], face: 'red-soldier', text: '오늘 다리를 건너지 못하면 끝이다. 앞으로!' },
+            { when: 'feat:konarmia-charge', unit: 'r1c', who: ['세묜 부됸니', 'semyon-budyonny'], text: '사브르를 뽑아라! 기병군, 돌격!' },
+            { when: 'goal', unit: ['r27', 'r21', 'r2', 'r10', 'r8'], face: 'red-soldier', text: '다리 너머가 비었다! 바르샤바로!' },
+            { when: 'surrender', unit: ['r27', 'r21', 'r2', 'r10', 'r1c'], face: 'red-soldier', text: '폴란드 병사들이 총을 내려놓는다. 쏘지 마라.' },
+        ],
+        goals: [{ at: [4, 1], name: '바르샤바' }],
+        // The Warsaw–Brest railway from Praga station east.
+        rails: [[4, 4], [4, 5], [4, 6], [4, 7], [4, 8], [4, 9], [4, 10], [4, 11], [4, 12]],
+        protect: { at: [9, 5], name: '가르볼린' },
+        towns: [['라지민', 2, 5], ['가르볼린', 9, 5]],
+        places: [['브크라강 방면', 0, 9.4], ['비스와강', 8, 2.05], ['바르샤바', 1.4, 0.1], ['프라가', 2.4, 3.05], ['늪과 숲', 6, 7], ['브레스트 방면', 3, 10.5], ['비에프시강', 10, 9.4]],
+        turnLimit: 5,
+        lines: {},
+        sectors: {},
+        terrain: {
+            '.': { name: '들판', cost: 1, def: 0, cls: 'steppe' },
+            f: { name: '숲', cost: 2, def: 1, cls: 'forest' },
+            '~': { name: '비스와강', cost: 99, def: 0, water: true, cls: 'river' },
+            B: { name: '바르샤바 다리', cost: 1, def: 0, cls: 'bridge' },
+            W: { name: '바르샤바', cost: 1, def: 1, cls: 'city' },
+            P: { name: '프라가 교두보', cost: 1, def: 1, fort: 'praga', cls: 'trench' },
+            R: { name: '라지민', cost: 1, def: 1, cls: 'town' },
+            m: { name: '늪과 숲', cost: 3, def: 1, cls: 'forest' },
+            G: { name: '가르볼린', cost: 1, def: 1, cls: 'town' },
+        },
+        units: [
+            { id: 'r27', tag: '27', side: 'red', name: '제27사단', sub: '제16군', kind: 'inf', at: [2, 6], hp: 10, atk: 5, def: 3, mv: 3, lead: true },
+            { id: 'r21', tag: '21', side: 'red', name: '제21사단', sub: '제3군', kind: 'inf', at: [3, 7], hp: 10, atk: 4, def: 3, mv: 3, need: 0 },
+            { id: 'r2', tag: '2', side: 'red', name: '제2사단', sub: '제16군', kind: 'inf', at: [4, 6], hp: 10, atk: 4, def: 3, mv: 3, need: 0 },
+            { id: 'r10', tag: '10', side: 'red', name: '제10사단', sub: '제16군', kind: 'inf', at: [5, 7], hp: 10, atk: 4, def: 3, mv: 3, need: 0 },
+            { id: 'r16g', tag: '16군포', side: 'red', name: '제16군 포병', kind: 'art', at: [4, 7], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
+            { id: 'rhg', tag: '중포', side: 'red', name: '서부전선 중포병', kind: 'art', at: [5, 8], hp: 7, atk: 5, def: 1, mv: 2, range: 2, need: 3 },
+            { id: 'r8', tag: '8', side: 'red', name: '제8사단', sub: '제16군', kind: 'inf', at: [3, 8], hp: 10, atk: 4, def: 3, mv: 3, need: 6 },
+            { id: 'rtr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', rail: true, at: [4, 8], hp: 6, atk: 4, def: 2, mv: 2, railMv: 6, range: 2, card: 'train' },
+            { id: 'r57', tag: '모지르', side: 'red', name: '모지르 집단', sub: '제57사단', kind: 'inf', at: [9, 5], hp: 4, atk: 3, def: 2, mv: 3 },
+            { id: 'r1c', tag: '1기병', side: 'red', name: '제1기병군', sub: '부됸니', kind: 'cav', at: [8, 12], hp: 16, atk: 7, def: 3, mv: 5, card: 'konarmia', person: ['세묜 부됸니', 'semyon-budyonny'],
+                feat: {
+                    id: 'konarmia-charge', name: '기병군의 돌격', kind: 'strike', plus: 3,
+                    text: '기병 사단들이 한꺼번에 들이친다. 이번 공격 피해 +3, 반격 없음.',
+                    history: '1920년 6월 5일 제1기병군은 사모호로독 근처에서 폴란드 전선을 뚫고 키예프의 폴란드군 뒤로 들어갔다. 끊길 것을 두려워한 폴란드군은 곧 키예프를 버렸다.',
+                } },
+            { id: 'wrz', tag: '11사단', side: 'white', name: '제11보병사단', sub: '라지민', kind: 'inf', at: [2, 5], hp: 8, atk: 4, def: 2, mv: 3, role: 'hold' },
+            { id: 'wp1', tag: '1군', side: 'white', name: '제1군', sub: '프라가 교두보', kind: 'inf', at: [3, 3], hp: 9, atk: 4, def: 2, mv: 3, role: 'hold' },
+            { id: 'wp2', tag: '1군', side: 'white', name: '제1군', sub: '다리 어귀', kind: 'inf', at: [4, 3], hp: 10, atk: 4, def: 2, mv: 3, role: 'hold' },
+            { id: 'wwa', tag: '의용대', side: 'white', name: '바르샤바 의용대', sub: '노동자·학생', kind: 'inf', at: [4, 1], hp: 10, atk: 3, def: 1, mv: 3, role: 'hold' },
+            { id: 'wart', tag: '포대', side: 'white', name: '바르샤바 포대', kind: 'art', at: [3, 1], hp: 6, atk: 3, def: 1, mv: 2, range: 2, role: 'hold' },
+            { id: 'w5', tag: '5군', side: 'white', name: '제5군', sub: '시코르스키', kind: 'inf', at: [0, 6], hp: 10, atk: 5, def: 3, mv: 3, role: 'hold' },
+            { id: 'wl1', tag: '레기온1', side: 'white', name: '레기온 제1보병사단', sub: '타격 집단', kind: 'inf', at: [10, 3], hp: 10, atk: 5, def: 3, mv: 3, role: 'push', wake: 2 },
+            { id: 'wl3', tag: '레기온3', side: 'white', name: '레기온 제3보병사단', sub: '타격 집단', kind: 'inf', at: [10, 7], hp: 8, atk: 4, def: 3, mv: 3, role: 'push', wake: 2 },
+            { id: 'wcv', tag: '기병', side: 'white', name: '기병여단', sub: '타격 집단', kind: 'cav', at: [10, 4], hp: 8, atk: 5, def: 2, mv: 5, role: 'push', wake: 2 },
+        ],
+        summary: '바르샤바에 서면 승리 · 5턴 · 2턴 끝에 폴란드 타격 집단이 깨어난다 · 가르볼린을 비우지 말 것',
+        brief: [
+            '8월 13일, 투하쳅스키의 서부전선이 비스와강에 다다랐다. 제16군은 라지민을 거쳐 바르샤바의 동쪽 교두보 프라가를 친다. 다리를 건너 바르샤바에 붉은 군대 부대를 세우면 이긴다. 5턴이 주어진다.',
+            '서부전선의 남쪽 옆구리는 비어 있다. 늪과 숲 너머 가르볼린을 지키는 것은 약한 모지르 집단뿐이다. 2턴이 끝날 때 피우수트스키가 비에프시강에 모은 타격 집단이 깨어나 가르볼린으로 온다. 가르볼린에 폴란드군이 들어서면 진다.',
+            '늪과 숲(이동 3)이 보병을 묶어, 서부전선의 보병은 3턴에야 가르볼린에 닿는다. 그 전에 옆구리를 막을 수 있는 것은 남쪽에서 올라오는 부됸니의 제1기병군뿐이다(「부됸니의 제1기병군」 카드를 서부전선에 보냈을 때).',
+            '프라가 교두보(방어 +1)는 포격으로 깎인다. 바르샤바로 가는 다리는 한 칸뿐이라, 다리 어귀의 수비대를 꺾어야 건널 수 있다. 서부전선에 보낸 전투력이 모자라면 다리까지 갈 부대가 나오지 않는다.',
+            '적과 맞닿은 칸에 들어가면 그 턴의 이동은 끝난다. 한 적을 여럿이 둘러싸고 치면 둘러싼 부대마다 피해가 1씩 늘어난다.',
+            '결정적 한 수(★): 제1기병군의 「기병군의 돌격」은 전투에서 한 번, 피해 +3에 반격이 없다.',
+            '이미 병력이 절반 아래로 꺾인 폴란드군 부대를 붉은 부대 셋이 둘러싼 채 치면, 그 부대는 총을 내려놓고 붉은 군대로 넘어온다(투항). 포로는 다음 시기 사단이 된다.',
+        ],
+        history: '8월 13일 붉은 군대 제21·27사단이 라지민을 차지해 프라가 교두보 코앞까지 갔다. 14일 시코르스키의 제5군이 북쪽 브크라강에서 반격했고, 15일 폴란드군이 라지민을 되찾았다. 16일 피우수트스키가 비에프시강에 모은 타격 집단이 북쪽으로 치고 올라가 모지르 집단을 뚫고 서부전선의 등 뒤로 들어갔다. 제1기병군은 리비우에 매달려 있었다. 투하쳅스키의 군대는 동프로이센과 벨라루스 쪽으로 무너졌고, 폴란드는 이 승리를 「비스와강의 기적」이라 불렀다.',
+    };
+
     // The main railway lines of 1918 on the map, as [lat, lng] stations
     // and junctions along them (approximate). The war was fought along
     // them: the Czech legion strung out on the Penza–Samara–Chelyabinsk
@@ -1121,7 +1248,7 @@
         { id: 'southwest', name: '남서 철도', pts: [[50.45, 30.52], [50.08, 29.92], [49.72, 28.83], [49.89, 28.60], [50.18, 27.06], [50.51, 26.25], [50.08, 25.15], [49.91, 24.62], [49.84, 24.03]] },
     ];
 
-    const battles = { kazan, ufa, orel, perekop };
+    const battles = { kazan, ufa, orel, warsaw, perekop };
 
     // The portraits (war/art.js): each person's headgear, hair, face and
     // what they are drawn with. side colours the disc behind them.
@@ -1337,6 +1464,7 @@
             { fallen: 'northwest', n: -2, label: '페트로그라드 상실' },
             { from: 'unrest', label: '농민 봉기로 후방에 묶임' },
             { from: 'captured', label: '포로 편입' },
+            { when: { flag: 'warsawTaken', turn: 'perekop' }, n: 4, label: '폴란드와 강화하고 돌아온 서부전선' },
         ],
     };
     // The countryside answers requisition with risings (green armies).
@@ -1363,7 +1491,8 @@
     // What choices and seasons add to a front, in the order the card lists
     // them; afterBattle ones come after the season's battle.
     const modifiers = [
-        { fronts: ['south', 'crimea', 'southwest'], when: { flag: 'cavalry' }, strength: 4, label: '제1기병군' },
+        // Rules 6: sent to the Vistula (the konarmia card), it is not here.
+        { fronts: ['south', 'crimea', 'southwest'], when: { flag: 'cavalry', not: { played: 'konarmia' } }, strength: 4, label: '제1기병군' },
         { front: 'east', when: { turn: 'kolchak', choice: 'flank' }, strength: -3, label: '측면 반격 준비' },
         { front: 'east', when: { turn: 'kolchak', choice: 'front' }, strength: 3, label: '정면 증원' },
         { front: 'east', when: { turn: 'directive', flag: 'flank' }, strength: 7, label: '프룬제의 측면 반격' },
@@ -1371,6 +1500,8 @@
         { front: 'northwest', when: { turn: 'orel', choice: 'hold' }, strength: 4, label: '페트로그라드 사수', afterBattle: true },
         { front: 'northwest', when: { turn: 'orel', choice: 'yield' }, pressure: 6, label: '병력을 남쪽으로 뺌', afterBattle: true },
         { front: 'south', when: { turn: 'orel', choice: 'yield' }, strength: 4, label: '북서에서 온 병력', afterBattle: true },
+        // Rules 6: with Warsaw taken, France's help to Wrangel dries up.
+        { front: 'crimea', when: { flag: 'warsawTaken' }, pressure: -3, label: '바르샤바 함락: 고립된 브란겔' },
     ];
     // Kolchak regrouping beyond the Urals for two seasons when the pursuit
     // stopped there.

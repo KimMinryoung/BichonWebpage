@@ -37,8 +37,14 @@ function oldFlags(flags) {
     return out;
 }
 // A trait's pressure part dropped its name (2026-10-16): the old label.
-// Yudenich's threshold read 50 until rules 5 (2026-10-16): the old rule.
-const oldRule = tr => (tr.rule === '노동자 지지가 45 아래면 압력 +2' ? Object.assign({}, tr, { rule: '노동자 지지가 50 아래면 압력 +2' }) : tr);
+// Yudenich's threshold read 50 until rules 5 (2026-10-16), Poland's rule
+// named Warsaw's margin until rules 6 brought the battle of Warsaw
+// (2026-10-16): the old rules.
+const OLD_RULES = {
+    '노동자 지지가 45 아래면 압력 +2': '노동자 지지가 50 아래면 압력 +2',
+    '바르샤바는 바르샤바 전투에서 이겨야 들어간다': '바르샤바는 여유 8이 있어야 들어간다',
+};
+const oldRule = tr => (OLD_RULES[tr.rule] ? Object.assign({}, tr, { rule: OLD_RULES[tr.rule] }) : tr);
 function oldParts(f) {
     if (f && f.traits) f.traits = f.traits.map(oldRule);
     if (!f || !f.pressureParts || !f.traits) return f;

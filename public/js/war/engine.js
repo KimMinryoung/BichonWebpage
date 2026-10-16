@@ -17,7 +17,9 @@
    4 a leader goes only to a front with divisions, and is recalled when
    its last division leaves; 5 the season's upkeep (the cities' hunger,
    the party's quarrels), a front's gains move the stats once a season
-   by the net, and the data's other `rules` conditions (cond.js). */
+   by the net, and the data's other `rules` conditions (cond.js); 6 a
+   front's last cities (cap) open only to the battle its choice brings,
+   and taking them pays the cap's reward. */
 (function (root) {
     'use strict';
 
@@ -25,7 +27,7 @@
     const Battle = node ? require('./battle.js') : root.WarBattle;
     const Cond = node ? require('./cond.js') : root.WarCond;
 
-    const RULES = 5;
+    const RULES = 6;
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
     const signed = n => (n < 0 ? '−' : '+') + Math.abs(n);
@@ -109,6 +111,7 @@
                 else if (src.from === 'deserted') add(src.label, -s.deserted);
                 else if (src.from === 'unrest') add(src.label, -s.unrest);
                 else if (src.from === 'captured') add(src.label, s.captured);
+                else if (Number.isInteger(src.n)) add(src.label, src.n);
                 else throw new Error(`unknown mobilize source ${JSON.stringify(src)}`);
             }
             return sources;
@@ -222,6 +225,7 @@
             if (!card || !turnData(s).cards.includes(id)) return false;
             if (card.flag && s.flags[card.flag]) return false;
             if (card.requires && !s.flags[card.requires]) return false;
+            if (card.when && !when(s, card.when)) return false;
             if (barred(s, id)) return false;
             return true;
         }
@@ -444,10 +448,21 @@
         // gains the city is pursuit (CHASE at most): the beaten enemy chased,
         // PURSUIT pressure off the front's next fight each.
         function outcomeOf(s, id, margin) {
-            return outcomeAt(id, s.lines[id], s.turn, margin, s.plan.choice);
+            return outcomeAt(id, s.lines[id], s.turn, margin, s.plan.choice, capBattle(s, id));
         }
 
-        function outcomeAt(id, line, turn, margin, choice) {
+        // How a front's last cities (cap) open in season turn: undefined while
+        // the choice's margin opens them (before rules 6, or a cap without a
+        // battle), else whether that season's battle opening them was won.
+        function capBattle(s, id, turn = s.turn) {
+            const cap = D.fronts[id].cap;
+            if (!cap || !cap.battle || !when(s, cap.battle.when)) return undefined;
+            const r = D.turns[turn].battle === cap.battle.id && s.battles[cap.battle.id];
+            return Boolean(r && r.result === 'won');
+        }
+
+        // won: capBattle's answer for the front.
+        function outcomeAt(id, line, turn, margin, choice, won) {
             const front = D.fronts[id];
             const max = front.cities.length;
             const was = turn ? front.history[turn - 1] : D.startLines[id];
@@ -457,10 +472,12 @@
             const overflow = bonus < 0 ? Math.min(-bonus, Math.max(0, -raw)) : 0;
             const pursuit = clamp(Math.floor(margin / O.step) - 1, 0, O.chase);
             // A front's last cities may be out of reach (cap.reach): only the
-            // choice that unlocks them reaches them, and only with its margin.
+            // choice that unlocks them reaches them, with its margin or, from
+            // rules 6, by winning its battle.
             const cap = front.cap;
             if (cap) {
-                if (choice === cap.unlock.choice && margin >= cap.unlock.margin) return { change: max - line, overflow: 0, pursuit };
+                const open = won === undefined ? choice === cap.unlock.choice && margin >= cap.unlock.margin : won;
+                if (open) return { change: max - line, overflow: 0, pursuit };
                 return { change: clamp(raw, 0, cap.reach) - line, overflow, pursuit };
             }
             return { change: clamp(raw, 0, max) - line, overflow, pursuit };
@@ -470,18 +487,18 @@
         // { from, to (null for the top), change, overflow, pursuit }, where a
         // strength in [from, to) gives that result. Built from outcomeAt at the
         // margins where its bonus steps (−SLACK − STEP·k, 0, STEP·k, a cap's
-        // unlocking margin), so the card's bar cannot disagree with the
-        // settlement.
+        // unlocking margin while a margin opens it), so the card's bar cannot
+        // disagree with the settlement. won as for outcomeAt.
         const capMargins = [...new Set(Object.values(D.fronts).filter(f => f.cap).map(f => f.cap.unlock.margin))];
-        function outcomeBands(id, line, turn, pressure, choice) {
-            const cuts = capMargins.concat(-O.slack);
+        function outcomeBands(id, line, turn, pressure, choice, won) {
+            const cuts = (won === undefined ? capMargins : []).concat(-O.slack);
             for (let k = 1; k <= O.chase + 1; k++) cuts.push(O.step * k);
             for (let m = -O.slack - O.step; m > -pressure; m -= O.step) cuts.push(m);
             const from = [...new Set(cuts.map(m => pressure + m).filter(v => v > 0))].sort((a, b) => a - b);
             from.unshift(0);
             const bands = [];
             for (let i = 0; i < from.length; i++) {
-                const r = outcomeAt(id, line, turn, from[i] - pressure, choice);
+                const r = outcomeAt(id, line, turn, from[i] - pressure, choice, won);
                 const last = bands[bands.length - 1];
                 if (last && last.change === r.change && last.overflow === r.overflow && last.pursuit === r.pursuit) continue;
                 if (last) last.to = from[i];
@@ -522,10 +539,11 @@
         }
 
         // The result of a battle fought this season, before the settlement, on
-        // the front, as a strength: nothing when it went as history did.
+        // the front, as a strength: nothing when it went as history did, or
+        // for a battle without a reward (one that opens a front's cap).
         function battleResult(s, id) {
             const def = battleOf(s);
-            const r = def && !def.final && def.front === id && s.battles[def.id];
+            const r = def && !def.final && def.front === id && def.reward && s.battles[def.id];
             if (!r) return null;
             const { quick, quickBy, lostBy } = def.reward;
             if (r.result !== 'won') return { label: fmt(X.battleLost, { title: def.title }), v: lostBy };
@@ -582,7 +600,10 @@
             }
 
             // A front's cap: the unlocking choice that fell short of the last
-            // cities costs divisions; reaching them is told.
+            // cities costs divisions; reaching them is told, and where its
+            // reward's condition holds (rules 6) pays it: a flag now, stats
+            // with the season's.
+            const capGains = [];
             for (const id of D.frontOrder) {
                 const cap = D.fronts[id].cap;
                 if (!cap || !fronts[id]) continue;
@@ -592,6 +613,12 @@
                     notes.push(cap.failed.note);
                 } else if (fronts[id].after === max) {
                     notes.push(cap.reached.note);
+                    const reward = cap.reached.reward;
+                    if (reward && when(s, reward.when)) {
+                        if (reward.flag) s.flags[reward.flag] = true;
+                        capGains.push(reward);
+                        notes.push(reward.note);
+                    }
                 }
             }
 
@@ -613,6 +640,7 @@
             // Stats from cards, the choice, the answer and the season's policies.
             const flagsNow = Object.assign({}, s.flags, choiceFlags(s));
             const delta = Object.fromEntries(STATS.map(k => [k, 0]));
+            for (const g of capGains) addStats(delta, g);
             for (const c of s.plan.cards) {
                 const card = D.cards[c.id];
                 addStats(delta, card, k => cardStat(s, card, c.id, k));
@@ -738,10 +766,12 @@
             return { def, muster, units, strength: f.strength };
         }
 
-        // The season's battle, if it has one.
+        // The season's battle, if it has one: a battle with a condition
+        // (when) is fought only while it holds (the choice that brings it).
         function battleOf(s) {
             const id = turnData(s).battle;
-            return id ? D.battles[id] : null;
+            const def = id ? D.battles[id] : null;
+            return def && (!def.when || when(s, def.when)) ? def : null;
         }
 
         function finishBattle(s) {
@@ -873,7 +903,7 @@
         return {
             DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, canRetryBattle, retryBattle, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
             start, act, restore, serialize, forecast, activeFronts, turnData, when,
-            free, allocated, threatsOf, traitsOn, battleOf, incidentOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, outcomeOf, outcomeBands, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
+            free, allocated, threatsOf, traitsOn, battleOf, incidentOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, outcomeOf, outcomeBands, capBattle, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
         };
     }
 

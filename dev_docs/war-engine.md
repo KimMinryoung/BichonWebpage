@@ -1,6 +1,6 @@
 # 전쟁 게임 엔진 `public/js/war/` — 시나리오 작성 기준
 
-갱신: 2026-10-15 (「붉은 전선」에서 공통 엔진을 떼어 냄)
+갱신: 2026-10-16 (규칙 6: 전투로 여는 `cap`과 그 보상, 조건 있는 전투·카드, 적 역할 `push`) / 2026-10-15 (「붉은 전선」에서 공통 엔진을 떼어 냄)
 
 「붉은 전선 1918–1920」의 규칙·전투·화면을 시나리오와 떼어 놓은 공통 엔진이다. 다른 시대의 전쟁은 **시나리오 파일 하나**(+ 지도의 세력 범위 문서, 라우트 한 줄)로 더한다. 편집 GUI는 없다. 이 문서는 시나리오를 쓰는 사람(미래의 Claude)을 위한 레퍼런스다. 「붉은 전선」 고유의 설계·밸런스는 [civil-war-game.md](civil-war-game.md).
 
@@ -46,6 +46,7 @@
 | `choice: 'id'` | 이번 시기 갈림길에서 고른 선택지 |
 | `turn: 'id'` 또는 `['a','b']`, `turnMin: n` | 시기 id, 시기 번호(0부터) 이상 |
 | `card: 'id'` | 그 카드를 이 전선에 보냄(ctx.front) |
+| `played: 'id'` | 그 카드를 이번 시기에 씀(어느 전선이든) |
 | `leader: true/false` | 이 전선에 지휘관(정치위원)이 있음/없음 |
 | `reserve: [op, n]` | 예비로 남긴 사단 수 |
 | `stat: ['name', op, n]` | 스탯 비교 |
@@ -70,7 +71,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 선택 필드:
 - `defeat: { at, outcome: { kind, title, text } }` — 위치가 `at` 이하가 되면 그 자리에서 진다(툴라).
 - `onLost: { at, effects: { stat: n }, note, regained }` — 함락(위치 `at` 이하)되면 효과(4.6의 `settleOrder` 참고)와 문구, 되찾으면 `regained`. `mobilize.sources`의 `{ fallen: id, n }`이 함락 동안 동원을 깎는다(페트로그라드).
-- `cap: { reach, unlock: { choice, margin }, failed: { deserted, note }, reached: { note } }` — 평소에는 `reach`번째 도시까지만, 그 갈림길을 고르고 여유 `margin` 이상이면 끝까지(바르샤바). 골랐는데 못 닿으면 다음 시기 탈영 `deserted`.
+- `cap: { reach, unlock: { choice, margin }, battle: { id, when }, failed: { deserted, note }, reached: { note, reward } }` — 평소에는 `reach`번째 도시까지만, 그 갈림길을 고르고 여유 `margin` 이상이면 끝까지(바르샤바). `battle`의 조건(`when`)이 서면 여유 대신 그 시기의 그 전투(이 전선의 `reward` 없는 시기 전투)를 이겨야 끝까지 간다(엔진 `capBattle(s, front, turn)`). 골랐는데 못 닿으면 다음 시기 탈영 `deserted`. 닿으면 `note`, 그리고 `reward: { when, flag, 스탯: n, note }`의 조건이 서면 플래그를 세우고 스탯을 그 시기 변화에 더한다.
 
 ### 4.3 세력 `factions[id]`
 
@@ -83,6 +84,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 - 스탯 이름을 키로(`peasants: -4`), `food`, `divisions`(이번 시기 풀), `escalates: true`(쓸 때마다 스탯 효과 배수)
 - `flag`(쓴 뒤 세움, 이미 섰으면 다시 안 나옴), `requires`(그 플래그가 있어야 나옴)
 - `needs: 'unrest'`(봉기가 있어야 쓸 수 있고, 묶인 사단 절반이 돌아옴), `idle`(못 쓸 때 안내)
+- `when`(조건이 설 때만 나옴, 예: 규칙 6), `effect`(효과 줄에 덧붙이는 글)
 - `calm: { fronts, by }`(이번과 다음 시기 그 전선들 압력 −by, 문구는 카드 제목)
 
 ### 4.5 시기 `turns[t]`
@@ -105,7 +107,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 | `command` | `{ stat, tiers: [[최소, 지휘력]…], note }` |
 | `leaders` | `{ strength, fewer: [{ when, n, note }] }` |
 | `quality` | `{ base, mods: [{ when, add }] }` — 사단의 질 |
-| `mobilize` | `{ min, minLabel, sources: [...] }` — `{ stat, base, per, label('{value}') }`, `{ from: 'deserted'|'unrest'|'captured', label }`, `{ fallen: front, n, label }`. 어느 것이든 `when`이 서야 센다 |
+| `mobilize` | `{ min, minLabel, sources: [...] }` — `{ stat, base, per, label('{value}') }`, `{ from: 'deserted'|'unrest'|'captured', label }`, `{ fallen: front, n, label }`, `{ when, n, label }`(조건이 서는 시기에 n). 어느 것이든 `when`이 서야 센다 |
 | `unrest` | `{ levels: [{ when, n }], note }` — 첫 번째로 성립하는 단계 |
 | `outcome` | `step`, `slack`, `momentum`, `pursuit`, `chase`, `transfer` ([civil-war-game.md](civil-war-game.md) 3절의 식) |
 | `spoils` | `{ food, max }` |
@@ -129,15 +131,15 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 ### 4.8 전투 `battles[id]`
 
-`id`, `sides: { player, enemy }`(부대 `side` 값; 화면은 player를 빨간 클래스 `is-red`, enemy를 `is-white`로 칠한다), `front`(그 전선의 계획이 부대를 정함), `final`(마지막 전투면 정산 뒤에 치르고 끝나면 평가), `reward: { quick, quickBy, lostBy }`(시기 전투), `title`, `date`, `settle`·`open`·`board`(버튼·제목 문구), `map: ['문자열'…]`, `terrain[문자] = { name, cost(99=못 감), def, water, span, ford, fort, cls }`, `legend`, `goals: [{ at: [행, 열], name }]`, `protect`, `rails`, `towns`, `places`, `lines[id] = { name, rear: { rows, cols }, label, fallback }`, `sectors[id] = { name, rows?, cols?, alarm: { axis: 'r'|'c', at, dir } }`, `windTurns`(여울이 닫히는 턴), `air: { turn, units, dmg }`, `turnLimit`, `units`, `voices`, `summary`, `brief`, `history`, `strikeNote`·`raidNote`·`ford`·`reserveName`(화면 문구), `kinds`(병종 성질 덧붙이기).
+`id`, `sides: { player, enemy }`(부대 `side` 값; 화면은 player를 빨간 클래스 `is-red`, enemy를 `is-white`로 칠한다), `front`(그 전선의 계획이 부대를 정함), `final`(마지막 전투면 정산 뒤에 치르고 끝나면 평가), `when`(조건이 설 때만 그 시기에 열림), `reward: { quick, quickBy, lostBy }`(시기 전투. 없으면 전선의 `cap.battle`이고 `stakes`(편성 줄의 글)·`outcome: { won, lost }`(결산의 글)가 있어야 한다), `enemyName`(전투 화면에서 적을 부르는 이름, 없으면 `ui.enemy`), `title`, `date`, `settle`·`open`·`board`(버튼·제목 문구), `map: ['문자열'…]`, `terrain[문자] = { name, cost(99=못 감), def, water, span, ford, fort, cls }`, `legend`, `goals: [{ at: [행, 열], name }]`, `protect`, `rails`, `towns`, `places`, `lines[id] = { name, rear: { rows, cols }, label, fallback }`, `sectors[id] = { name, rows?, cols?, alarm: { axis: 'r'|'c', at, dir } }`, `windTurns`(여울이 닫히는 턴), `air: { turn, units, dmg }`, `turnLimit`, `units`, `voices`, `summary`, `brief`, `history`, `strikeNote`·`raidNote`·`pushNote`·`ford`·`reserveName`(화면 문구), `kinds`(병종 성질 덧붙이기).
 
-부대: `id`, `tag`, `side`, `name`, `sub`, `kind`(`inf`·`cav`·`art`… `art`는 반격 없음·진지 마모, `KINDS`), `at`, `hp`, `atk`, `def`, `mv`, `range`, `naval`, `rail`(철길로만, 그림은 열차), `role`(적: `hold`·`wall`·`raid`·`strike`, `ROLES`), `line`, `wake`, `lead`(지휘관이 오면 방어 +1), `need`(여유가 이만큼이면 출전), `card`(그 카드를 보내면 출전), `flag`, `person`, `feat`(`FEATS`: `strike`·`assault`·`muster`·`ride`·`ferry`), `skirmish`, `counter`·`wears`(병종 성질을 부대가 직접).
+부대: `id`, `tag`, `side`, `name`, `sub`, `kind`(`inf`·`cav`·`art`… `art`는 반격 없음·진지 마모, `KINDS`), `at`, `hp`, `atk`, `def`, `mv`, `range`, `naval`, `rail`(철길로만, 그림은 열차), `role`(적: `hold`·`wall`·`raid`·`strike`·`push`, `ROLES`. `push`는 지킬 거점으로 가되 습격과 달리 상대 부대 곁에서 멈춘다), `line`, `wake`, `lead`(지휘관이 오면 방어 +1), `need`(여유가 이만큼이면 출전), `card`(그 카드를 보내면 출전), `flag`, `person`, `feat`(`FEATS`: `strike`·`assault`·`muster`·`ride`·`ferry`), `skirmish`, `counter`·`wears`(병종 성질을 부대가 직접).
 
 새 행동이 필요하면 `ROLES`에 `{ marches(b, u), act(b, u, turn) }`, 새 한 수는 `FEATS`에 `{ blow | use, targets, beforeMove, block }`을 더한다. 대사 `when`: `start`·`goal`·`flood`·`reserve`·`surrender`·`air`·`turn:N`·`turned:<line>`·`feat:<id>`.
 
 ## 5. 저장과 규칙 세대
 
-저장은 `{ version: saveVersion, rules, log }`이고 `restore`가 로그를 재생한다. `rules`는 엔진 규칙의 세대다: 1 기본, 2 철도 수송 비용과 지난 배치 유지, 3 전투의 한 수·투항과 노획, 4 지도자(정치위원)는 사단이 있는 전선에만, 마지막 사단과 함께 돌아옴, 5 시기마다의 정비 비용(`economy.upkeep`), 전선 득실의 스탯 효과는 시기마다 한 번(`frontMoves.net`), 전투에서 철도 부대의 `railMv`, 그 밖에 데이터의 `rules` 조건. 새 시나리오는 최신 세대로 시작한다(`WarEngine.RULES`). 규칙이 결과를 바꾸는 변경은 세대를 올리고 옛 세대 분기를 남겨, 옛 저장이 두던 대로 재생되게 한다. 재생이 막히면 그 시기 처음으로 돌아간다.
+저장은 `{ version: saveVersion, rules, log }`이고 `restore`가 로그를 재생한다. `rules`는 엔진 규칙의 세대다: 1 기본, 2 철도 수송 비용과 지난 배치 유지, 3 전투의 한 수·투항과 노획, 4 지도자(정치위원)는 사단이 있는 전선에만, 마지막 사단과 함께 돌아옴, 5 시기마다의 정비 비용(`economy.upkeep`), 전선 득실의 스탯 효과는 시기마다 한 번(`frontMoves.net`), 전투에서 철도 부대의 `railMv`, 그 밖에 데이터의 `rules` 조건, 6 전선의 `cap`은 그 전투로만 열리고 보상(`reached.reward`)을 줌(바르샤바 전투와 제1기병군 카드도 데이터의 `rules` 조건). 새 시나리오는 최신 세대로 시작한다(`WarEngine.RULES`). 규칙이 결과를 바꾸는 변경은 세대를 올리고 옛 세대 분기를 남겨, 옛 저장이 두던 대로 재생되게 한다. 재생이 막히면 그 시기 처음으로 돌아간다.
 
 ## 6. 플레이 로그 수집
 

@@ -79,7 +79,28 @@ const UFA = {
     u24: null,
     utr: null,
 };
-const ROUTES = { kazan: KAZAN, ufa: UFA, orel: OREL };
+// Warsaw as history fought it: everything at the Praga bridgehead and
+// nothing to spare for the flank (the 1st Cavalry Army stayed at Lviv).
+const WARSAW_CITY = { r: 4, c: 1 };
+const WARSAW = {
+    'r27,r21,r2,r10,r8': [{ r: 4, c: 4 }, { r: 4, c: 3 }, { r: 4, c: 2 }, WARSAW_CITY],
+    'r16g,rhg,rtr': [{ r: 4, c: 5 }],
+    r57: null,
+};
+// A way to take it: Radzymin pinned by the 21st and the 27th, the guns and
+// the train on the bridgehead, the 10th by the south of Praga over the
+// bridge, the heavy guns in behind it; the 1st Cavalry Army rides to
+// Garwolin and the Mozyr Group stands beside it. Wins on turn 4.
+const WARSAW_WIN = [
+    ['move', 'r1c', 9, 8], ['move', 'r21', 3, 5], ['attack', 'r21', 'wrz'], ['attack', 'r27', 'wrz'], ['move', 'r57', 8, 5],
+    ['move', 'rhg', 5, 6], ['move', 'r10', 4, 5], ['move', 'r16g', 5, 7], ['move', 'rtr', 4, 4], ['attack', 'rtr', 'wp1'], ['end'],
+    ['move', 'r1c', 9, 5], ['attack', 'r21', 'wrz'], ['move', 'r27', 3, 4], ['attack', 'r27', 'wp1'], ['move', 'rhg', 5, 4], ['attack', 'rhg', 'wp2'],
+    ['move', 'r10', 5, 3], ['attack', 'r10', 'wp2'], ['move', 'r16g', 6, 7], ['attack', 'rtr', 'wp1'], ['end'],
+    ['attack', 'r1c', 'wcv'], ['move', 'r21', 2, 3], ['attack', 'r21', 'wp1'], ['move', 'r27', 3, 3], ['attack', 'r27', 'wp2'], ['move', 'rhg', 4, 3],
+    ['attack', 'rhg', 'wwa'], ['move', 'r10', 4, 2], ['attack', 'r10', 'wwa'], ['move', 'r16g', 7, 7], ['move', 'rtr', 4, 5], ['end'],
+    ['attack', 'r1c', 'wcv'], ['move', 'r21', 3, 4], ['attack', 'rhg', 'wwa'], ['move', 'r10', 4, 1],
+];
+const ROUTES = { kazan: KAZAN, ufa: UFA, orel: OREL, warsaw: WARSAW };
 
 // Sends the season, fighting the season's battle on the way when it comes.
 function send(s) {
@@ -643,6 +664,160 @@ assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), fal
     assert.equal(B.groundOf(b, wo2.r, wo2.c), 1);
 }
 
+// Warsaw (rules 6): narrow by design. Garwolin lies past the woods and
+// marshes, where no Red unit but the 1st Cavalry Army can stand by the
+// end of turn 2, when the strike group wakes; without the cavalry the
+// flank falls that turn whatever the Reds do. With it, and the divisions a
+// front beating its pressure brings, the bridge can be taken; short of the
+// pressure they stay behind and no strategy takes it.
+{
+    const W = D.battles.warsaw;
+    const muster = (margin, cards = ['train', 'konarmia'], more = {}) => Object.assign({ margin, fed: 1, commissar: true, cards }, more);
+    const [pr, pc] = W.protect.at;
+    const near = (r, c) => Math.abs(r - pr) + Math.abs(c - pc) <= 1;
+    // Where a unit alone on the board can stand within n turns.
+    const within = (id, n) => {
+        const b = B.start(W, {}, muster(10));
+        const u = B.byId(b, id);
+        b.units = [u];
+        const seen = new Map([[`${u.r},${u.c}`, [u.r, u.c]]]);
+        for (let t = 0; t < n; t++) {
+            for (const [r, c] of [...seen.values()]) {
+                u.r = r; u.c = c;
+                for (const x of B.reachable(b, u)) seen.set(`${x.r},${x.c}`, [x.r, x.c]);
+            }
+        }
+        return [...seen.values()];
+    };
+    for (const u of W.units.filter(x => x.side === 'red' && x.id !== 'r1c' && x.id !== 'r57')) {
+        assert.ok(!within(u.id, 2).some(([r, c]) => near(r, c)), `${u.id} cannot reach Garwolin by turn 2`);
+    }
+    assert.ok(within('r1c', 2).some(([r, c]) => r === pr && c === pc), 'the 1st Cavalry Army reaches Garwolin by turn 2');
+    // Without it the flank falls at the end of turn 2, however the Reds go.
+    const SOUTH = [{ r: 8, c: 5 }, { r: pr, c: pc }];
+    for (const routes of [WARSAW, { 'r27,r21,r2,r10,r8,r16g,rhg,rtr': SOUTH, r57: null }, { r57: [{ r: 8, c: 5 }] }]) {
+        const b = fight(routes, {}, muster(10, ['train']), W);
+        assert.equal(b.result, 'lost');
+        assert.equal(b.turn, 2, 'Garwolin falls at the end of turn 2');
+    }
+    // With it, a way in: the order of battle of a front beating its
+    // pressure by a STEP takes Warsaw on turn 4.
+    for (const m of [3, 6]) {
+        const b = B.start(W, {}, muster(m));
+        for (const order of WARSAW_WIN) assert.ok(B.act(b, ...order), `margin ${m}: ${order}`);
+        assert.equal(b.result, 'won', `margin ${m}`);
+        assert.equal(b.turn, 4);
+    }
+    // Hunger thins it past winning.
+    const hungry = B.start(W, {}, muster(3, undefined, { fed: 0.8 }));
+    for (const order of WARSAW_WIN) if (!B.act(hungry, ...order)) break;
+    assert.notEqual(hungry.result, 'won', 'a hungry front does not take the bridge this way');
+    // Short of the pressure the 21st, 2nd and 10th stay behind (the heavy
+    // guns from 3, the 8th from 6), and no strategy takes Warsaw.
+    const thin = B.start(W, {}, muster(-1));
+    assert.deepEqual(['r21', 'r2', 'r10', 'rhg', 'r8'].filter(id => B.byId(thin, id)), []);
+    const rand = (seed => () => { seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; })(11);
+    const CITY = [{ r: 4, c: 3 }, { r: 4, c: 2 }, WARSAW_CITY];
+    const PLANS = [[{ r: 2, c: 3 }, { r: 3, c: 4 }, ...CITY], [{ r: 4, c: 4 }, ...CITY], [{ r: 5, c: 5 }, { r: 5, c: 4 }, ...CITY], [{ r: 8, c: 5 }], null];
+    for (const [m, cards] of [[-1, ['train', 'konarmia']], [10, ['train']]]) {
+        for (let i = 0; i < 150; i++) {
+            const routes = {};
+            for (const u of W.units.filter(x => x.side === 'red')) routes[u.id] = u.id === 'r1c' ? [{ r: pr, c: pc }] : PLANS[Math.floor(rand() * PLANS.length)];
+            const b = B.start(W, {}, muster(m, cards));
+            drive(b, routes, (name, ...args) => B.act(b, name, ...args), { feats: rand() < 0.5 });
+            assert.notEqual(b.result, 'won', `margin ${m} ${cards}: ${JSON.stringify(routes)}`);
+        }
+    }
+    // The strike group waits for its hour, then marches on Garwolin and
+    // halts beside the Red units in its road.
+    const b = B.start(W, {}, muster(10));
+    assert.equal(B.marching(b, B.byId(b, 'wl1')), false);
+    b.turn = 2;
+    assert.equal(B.marching(b, B.byId(b, 'wl1')), true);
+    const wl1 = B.byId(b, 'wl1');
+    Object.assign(B.byId(b, 'r57'), { r: 9, c: 3 });
+    assert.ok(!B.reachable(b, wl1).some(t => t.r < 9), 'halted beside the Mozyr Group');
+}
+
+// The march on Warsaw in the campaign (rules 6): the battle comes with the
+// march alone; the 1st Cavalry Army leaves the south-west and Crimea for
+// it; Warsaw taken pays at once and in the last season; lost, it costs
+// three divisions as history did. A rules-5 save keeps Warsaw's margin.
+{
+    const toPoland = rules => {
+        const s = G.start(rules);
+        while (G.turnData(s).id !== 'poland') {
+            assert.ok(G.act(s, 'choose', historical(G.turnData(s))));
+            plan(s);
+            assert.ok(send(s));
+            assert.ok(G.act(s, 'next'));
+        }
+        return s;
+    };
+    const old = toPoland(5);
+    assert.equal(G.cardOffered(old, 'konarmia'), false, 'no turning the cavalry north under rules 5');
+    assert.ok(G.act(old, 'choose', 'warsaw'));
+    assert.equal(G.battleOf(old), null, 'nor a battle of Warsaw');
+    assert.equal(G.capBattle(old, 'west'), undefined);
+
+    const march = (win) => {
+        const s = toPoland();
+        assert.ok(s.flags.cavalry);
+        assert.ok(G.act(s, 'choose', 'curzon'));
+        assert.equal(G.battleOf(s), null, 'no battle on the Curzon line');
+        assert.ok(G.act(s, 'choose', 'warsaw'));
+        assert.equal(G.battleOf(s).id, 'warsaw');
+        const fc0 = G.forecast(s).fronts;
+        assert.ok(fc0.southwest.parts.includes('제1기병군 +4') && fc0.crimea.parts.includes('제1기병군 +4'));
+        assert.ok(G.act(s, 'play', 'train', 'west'));
+        assert.ok(G.act(s, 'play', 'konarmia', 'west'));
+        const fc1 = G.forecast(s).fronts;
+        assert.ok(!fc1.southwest.parts.includes('제1기병군 +4') && !fc1.crimea.parts.includes('제1기병군 +4'), 'the cavalry leaves the south');
+        assert.ok(fc1.west.parts.includes('부됸니의 제1기병군 +4'));
+        // Six divisions west, fed, the rest kept back.
+        for (const f of G.activeFronts(s)) assert.ok(G.act(s, 'alloc', f, 0));
+        assert.ok(G.act(s, 'alloc', 'west', 6));
+        assert.ok(G.act(s, 'commissar', 'west', true));
+        const m = G.musterOf(s);
+        assert.equal(m.muster.fed, 1);
+        assert.ok(m.muster.margin >= 3 && m.muster.margin < 6, `margin ${m.muster.margin}`);
+        assert.ok(m.units.find(u => u.id === 'r1c').joins, 'the 1st Cavalry Army joins');
+        assert.ok(G.act(s, 'settle'));
+        assert.equal(s.phase, 'battle');
+        if (win) for (const order of WARSAW_WIN) assert.ok(G.act(s, 'b:' + order[0], ...order.slice(1)));
+        else while (s.phase === 'battle') assert.ok(G.act(s, 'b:end'));
+        assert.equal(s.phase, 'review');
+        return s;
+    };
+    const won = march(true), lost = march(false);
+    assert.equal(won.lines.west, 3, 'Warsaw taken');
+    assert.equal(lost.lines.west, D.fronts.west.history[6], 'routed before the Vistula as history');
+    assert.ok(won.flags.warsawTaken && !lost.flags.warsawTaken);
+    assert.equal(won.deserted, 0);
+    assert.equal(lost.deserted, D.fronts.west.cap.failed.deserted);
+    const reward = D.fronts.west.cap.reached.reward;
+    assert.ok(won.records[won.records.length - 1].notes.includes(reward.note));
+    assert.ok(won.stats.workers - lost.stats.workers >= reward.workers, 'the workers take heart');
+    assert.ok(won.stats.cohesion - lost.stats.cohesion >= reward.cohesion);
+    assert.equal(G.battleResult(won, 'west'), null, 'the battle moves no strength: it opens Warsaw');
+    // The save replays to the same war.
+    const back = G.restore(G.serialize(won));
+    assert.deepEqual(back.lines, won.lines);
+    assert.deepEqual(back.stats, won.stats);
+    // The last season: the western divisions come south, Wrangel stands
+    // alone, and a western division joins at Perekop.
+    for (const s of [won, lost]) assert.ok(G.act(s, 'next'));
+    const draft = s => s.plan.sources.find(x => x.label === '폴란드와 강화하고 돌아온 서부전선');
+    assert.equal(draft(won).n, 4);
+    assert.equal(draft(lost), undefined);
+    assert.ok(won.plan.divisions - lost.plan.divisions >= 4 + lost.deserted);
+    assert.ok(G.forecast(won).fronts.crimea.pressureParts.includes('바르샤바 함락: 고립된 브란겔 −3'));
+    assert.ok(!G.forecast(lost).fronts.crimea.pressureParts.some(p => p.startsWith('바르샤바 함락')));
+    assert.ok(G.musterOf(won).units.find(u => u.id === 'rwz'), 'a western division at Perekop');
+    assert.equal(G.musterOf(lost).units.find(u => u.id === 'rwz'), undefined);
+    assert.ok(G.when(won, D.epilogue.texts[0].when) && !G.when(lost, D.epilogue.texts[0].when), "Warsaw's afterword");
+}
+
 // Incidents: each season's answer is required to send it, costs what it
 // says, and history's answer replays from a save older than the incident.
 {
@@ -819,16 +994,18 @@ assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red o
 }
 
 // The card's bar: every strength from 0 up, in steps of 0.1, falls in the
-// band whose result the settlement gives it, and neighbouring bands differ.
-{
-    const s = G.start();
+// band whose result the settlement gives it, and neighbouring bands differ:
+// Warsaw opened by its margin (rules 5) or by its battle, won or not (rules 6).
+for (const [rules, warsaw] of [[5, null], [6, null], [6, 'won']]) {
+    const s = G.start(rules);
+    if (warsaw) s.battles.warsaw = { result: warsaw };
     for (let t = 0; t < D.turns.length; t++) {
         for (const id of Object.keys(D.fronts)) {
             for (const line of [0, 1, 2, D.fronts[id].cities.length]) {
                 if (line > D.fronts[id].cities.length) continue;
                 for (const pressure of [0, 1, 4, 9, 15]) {
                     for (const choice of [null, 'warsaw']) {
-                        const bands = G.outcomeBands(id, line, t, pressure, choice);
+                        const bands = G.outcomeBands(id, line, t, pressure, choice, G.capBattle(s, id));
                         assert.equal(bands[0].from, 0);
                         assert.equal(bands[bands.length - 1].to, null);
                         for (let i = 1; i < bands.length; i++) {
@@ -839,7 +1016,7 @@ assert.equal(G.act(war, 'b:move', 'w1', 4, 1), false, 'White units take no Red o
                             s.lines[id] = line; s.turn = t; s.plan.choice = choice;
                             const r = G.outcomeOf(s, id, x - pressure);
                             const b = bands.find(b => x >= b.from && (b.to === null || x < b.to));
-                            assert.deepEqual([b.change, b.overflow, b.pursuit], [r.change, r.overflow, r.pursuit], `${id} t${t} line ${line} p${pressure} x${x}`);
+                            assert.deepEqual([b.change, b.overflow, b.pursuit], [r.change, r.overflow, r.pursuit], `rules ${rules} ${id} t${t} line ${line} p${pressure} x${x}`);
                         }
                     }
                 }

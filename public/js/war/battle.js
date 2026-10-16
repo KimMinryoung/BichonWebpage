@@ -28,7 +28,9 @@
    hardest (sectors[id].alarm, a row or column and the way the player comes)
    and stays there while the danger lasts. A board may name a post the
    player must hold (protect): an enemy unit standing on it ends the battle
-   lost, and an enemy raider (role raid) makes for it. A unit with wake
+   lost, and an enemy raider (role raid) makes for it, riding past the
+   player's units; a strike group (role push) makes for it on foot,
+   halted by every player unit it meets. A unit with wake
    stays put until that turn, and a board's air raid (air) strikes chosen
    player units at the end of one enemy turn.
 
@@ -495,6 +497,19 @@
         // A raider rides for the post; it strikes what stands in its way
         // only when it cannot get closer.
         raid: {
+            marches: () => true,
+            act(b, u) {
+                if (!b.def.protect) return;
+                const [r, c] = b.def.protect.at;
+                stepToward(b, u, { r, c });
+                checkResult(b);
+                if (b.result) return 'end';
+            },
+        },
+        // A strike group marches on the post like a raider, but on foot:
+        // it halts beside the player's units (zone of control) and strikes
+        // them, so a screen in its road holds it up.
+        push: {
             marches: () => true,
             act(b, u) {
                 if (!b.def.protect) return;

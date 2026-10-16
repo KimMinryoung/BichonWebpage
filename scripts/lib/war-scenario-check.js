@@ -27,7 +27,7 @@ function checkScenario(D) {
             if (k === 'not') cond(v, where);
             if (k === 'all' || k === 'any') v.forEach(x => cond(x, where));
             if (k === 'turn') [].concat(v).forEach(t => need(turnIds.has(t), `${where}: no season ${t}`));
-            if (k === 'card') need(cards[v], `${where}: no card ${v}`);
+            if (k === 'card' || k === 'played') need(cards[v], `${where}: no card ${v}`);
             if (k === 'stat') need(stats.includes(v[0]) && Cond.OPS[v[1]], `${where}: stat condition ${JSON.stringify(v)}`);
             if (k === 'reserve' || k === 'historyDiff') need(Cond.OPS[v[0]], `${where}: comparison ${JSON.stringify(v)}`);
         }
@@ -47,9 +47,11 @@ function checkScenario(D) {
     for (const f of D.leaders.fewer || []) cond(f.when, 'leaders.fewer');
     for (const m of D.quality.mods || []) cond(m.when, 'quality.mods');
     for (const src of D.mobilize.sources) {
+        cond(src.when, `mobilize: ${src.label}`);
         if (src.stat) need(stats.includes(src.stat), `mobilize: stat ${src.stat}`);
         else if (src.fallen) need(fronts[src.fallen] && fronts[src.fallen].onLost, `mobilize: ${src.fallen} cannot fall`);
-        else need(['deserted', 'unrest', 'captured'].includes(src.from), `mobilize: source ${JSON.stringify(src)}`);
+        else if (src.from) need(['deserted', 'unrest', 'captured'].includes(src.from), `mobilize: source ${JSON.stringify(src)}`);
+        else need(Number.isInteger(src.n) && src.when, `mobilize: source ${JSON.stringify(src)}`);
     }
     for (const l of D.unrest.levels) cond(l.when, 'unrest');
     for (const k of ['gained', 'lost']) for (const s of Object.keys(D.frontMoves[k])) need(stats.includes(s), `frontMoves.${k}: ${s}`);
@@ -78,7 +80,20 @@ function checkScenario(D) {
         need(f.holders.length === D.turns.length, `front ${id}: holders has ${f.holders.length} seasons`);
         for (const line of f.history.concat(D.startLines[id])) need(line >= 0 && line <= f.cities.length, `front ${id}: line ${line}`);
         for (const h of f.holders) need(factions[h], `front ${id}: holder ${h}`);
-        if (f.cap) need(f.cap.reach < f.cities.length && f.cap.failed && f.cap.reached, `front ${id}: cap`);
+        if (f.cap) {
+            need(f.cap.reach < f.cities.length && f.cap.failed && f.cap.reached, `front ${id}: cap`);
+            // A cap opened by a battle: a battle on this front, brought by the cap's choice.
+            if (f.cap.battle) {
+                const def = (D.battles || {})[f.cap.battle.id];
+                need(def && def.front === id && !def.final && !def.reward, `front ${id}: cap battle ${f.cap.battle.id}`);
+                cond(f.cap.battle.when, `front ${id}: cap battle`);
+            }
+            const reward = f.cap.reached && f.cap.reached.reward;
+            if (reward) {
+                cond(reward.when, `front ${id}: cap reward`);
+                need(reward.note, `front ${id}: cap reward note`);
+            }
+        }
     }
 
     // ── Factions and cards ──
@@ -94,6 +109,7 @@ function checkScenario(D) {
         for (const f of c.fronts || []) need(fronts[f], `card ${id}: front ${f}`);
         if (c.calm) for (const f of c.calm.fronts) need(fronts[f], `card ${id}: calm front ${f}`);
         if (c.needs) need(c.needs === 'unrest', `card ${id}: needs ${c.needs}`);
+        cond(c.when, `card ${id}`);
     }
 
     // ── Seasons ──
@@ -178,7 +194,11 @@ function checkScenario(D) {
         need(def.id === id, `${at}: id`);
         need(def.sides && def.sides.player && def.sides.enemy, `${at}: sides`);
         need(def.front === undefined || fronts[def.front], `${at}: front ${def.front}`);
-        need(def.final || def.reward, `${at}: a season's battle has a reward`);
+        // A season's battle moves its front's strength (reward), or opens
+        // its front's last cities (a cap's battle) and says what it decides.
+        const opens = Object.values(fronts).some(f => f.cap && f.cap.battle && f.cap.battle.id === id);
+        need(def.final || def.reward || (opens && def.stakes && def.outcome), `${at}: a season's battle has a reward`);
+        cond(def.when, at);
         const rows = def.map.length, cols = def.map[0].length;
         need(def.map.every(r => r.length === cols), `${at}: map rows of one length`);
         for (const row of def.map) for (const ch of row) need(def.terrain[ch], `${at}: terrain ${ch}`);

@@ -11,6 +11,7 @@
      turn: 'id' | ['a','b'] this season is (one of) these
      turnMin: n             the season's index is at least n
      card: 'id'             card id is sent to this front (ctx.front)
+     played: 'id'           card id is played this season, wherever it went
      leader: true | false   a leader (commissar) is / is not on this front
      reserve: [op, n]       divisions held back in reserve compare to n
      stat: ['name', op, n]  a stat compares to n
@@ -42,6 +43,7 @@
         turn: (s, v, ctx) => [].concat(v).includes(ctx.turnId),
         turnMin: (s, v) => s.turn >= v,
         card: (s, v, ctx) => Boolean(s.plan) && s.plan.cards.some(c => c.id === v && c.target === ctx.front),
+        played: (s, v) => Boolean(s.plan) && s.plan.cards.some(c => c.id === v),
         leader: (s, v, ctx) => Boolean(s.plan && s.plan.commissar[ctx.front]) === v,
         reserve: (s, [op, n], ctx) => compare(ctx.free, op, n),
         stat: (s, [name, op, n]) => compare(s.stats[name], op, n),

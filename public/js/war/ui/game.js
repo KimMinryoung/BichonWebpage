@@ -307,9 +307,10 @@
         }
         const anchor = $('cwFronts').getBoundingClientRect().top;
         const above = $('cwBrief').getBoundingClientRect().top < 0;
-        $('cwBrief').replaceChildren(...body, voices.length ? el('details', { class: 'cw-voice-log', open: open && open.open },
+        // replaceChildren writes a null as the text "null".
+        $('cwBrief').replaceChildren(...body, ...(voices.length ? [el('details', { class: 'cw-voice-log', open: open && open.open },
             el('summary', {}, '이 시기의 목소리'),
-            el('ul', {}, ...voices.map(v => el('li', {}, el('strong', {}, speakerName(v)), ' 「', v.text, '」 ', sourceOf(v))))) : null);
+            el('ul', {}, ...voices.map(v => el('li', {}, el('strong', {}, speakerName(v)), ' 「', v.text, '」 ', sourceOf(v)))))] : []));
         voiceReplay.hidden = !voices.length;
         const moved = $('cwFronts').getBoundingClientRect().top - anchor;
         if (moved && above) window.scrollBy({ top: moved, behavior: 'instant' });
@@ -1370,7 +1371,7 @@
         if (lead) notes.push(`${U.leader}: ${lead.name} 방어 +1`);
         // A battle before the settlement moves this front's strength: the
         // bar above assumes it goes as history did.
-        if (!m.def.final) notes.push(`예상은 역사처럼 이길 때 · ${m.def.reward.quick}턴 안에 이기면 전투력 +${m.def.reward.quickBy}, 지면 ${signed(m.def.reward.lostBy)}`);
+        if (!m.def.final) notes.push(m.def.reward ? `예상은 역사처럼 이길 때 · ${m.def.reward.quick}턴 안에 이기면 전투력 +${m.def.reward.quickBy}, 지면 ${signed(m.def.reward.lostBy)}` : m.def.stakes);
         return el('div', { class: 'cw-muster' },
             el('p', {}, el('strong', {}, `${m.def.title} 편성`), notes.length ? ` · ${notes.join(' · ')}` : null),
             el('ul', {}, ...m.units.map(u => el('li', { class: u.joins ? 'is-in' : 'is-out' },
@@ -1488,7 +1489,7 @@
     // falls in is the forecast (or, in the review, the result).
     function meter(id, f, line, turn, choice, now, note) {
         const hist = D.fronts[id].history[turn];
-        const bands = G.outcomeBands(id, line, turn, f.pressure, choice).map(b => {
+        const bands = G.outcomeBands(id, line, turn, f.pressure, choice, G.capBattle(s, id, turn)).map(b => {
             const after = line + b.change;
             return Object.assign(b, { after, tone: after < hist ? 'is-behind' : after > hist ? 'is-ahead' : 'is-even' });
         });
@@ -1610,6 +1611,7 @@
         }
         if (card.needs === 'unrest') out.push(s.unrest ? `${U.unrest}에 묶인 ${U.unit} ${G.cardDivisions(s, card)}개 복귀` : `${U.unrest}에 묶인 ${U.unit}의 절반 복귀`);
         if (card.calm) out.push(`${card.calm.fronts.map(id => D.fronts[id].short).join('·')} 압력 −${card.calm.by}(이번과 다음 시기)`);
+        if (card.effect) out.push(card.effect);
         return out.join(' · ');
     }
 
@@ -1720,9 +1722,12 @@
         if (!r) return null;
         const v = G.battleResult(s, def.front);
         const result = r.assumed ? '역사대로 이겼다 (전투가 생기기 전의 저장)' : r.result === 'won' ? `${r.turns}턴에 이겼다` : '이기지 못했다';
+        // A battle with a reward moves its front's strength; one that opens
+        // a front's last cities says what it decided.
+        const effect = def.reward ? [` · ${D.fronts[def.front].name} 전투력 `, v ? signed(v.v) : '그대로'] : [` · ${def.outcome[r.result === 'won' ? 'won' : 'lost']}`];
         return el('div', { class: 'cw-history' },
             el('p', { class: 'games-kicker' }, def.title),
-            el('p', {}, el('strong', {}, result), ` · ${D.fronts[def.front].name} 전투력 `, v ? signed(v.v) : '그대로', battleFeats(def, r)),
+            el('p', {}, el('strong', {}, result), ...effect, battleFeats(def, r)),
             el('p', {}, def.history));
     }
 
@@ -1737,7 +1742,7 @@
     function spoilsOf(r) {
         if (!r.spoils || !r.spoils.length) return null;
         const items = r.spoils.map(x => {
-            if (x.battle) return el('li', {}, el('strong', {}, D.battles[x.battle].title), ` · ${U.enemy} ${x.captured}개 부대가 총을 내려놓았다`);
+            if (x.battle) return el('li', {}, el('strong', {}, D.battles[x.battle].title), ` · ${D.battles[x.battle].enemyName || U.enemy} ${x.captured}개 부대가 총을 내려놓았다`);
             const f = x.foe && D.factions[x.foe];
             return el('li', {}, f ? picture(A.shield(x.foe, f)) : null, el('strong', {}, D.fronts[x.front].name),
                 ` · 무너진 ${f ? f.short + '의 ' : '적의 '}${x.what || `탄약과 ${U.food}`} · ${U.food} +${x.food}`);
@@ -1792,11 +1797,14 @@
 
     // ── Battle ──
 
+    // The battle's enemy by name (the Polish army at Warsaw), else the war's.
+    const foeName = () => (s.battle && s.battle.def.enemyName) || U.enemy;
     const roleNote = (b, u) => ({
         wall: () => `${b.def.lines[u.line].name}을 지킨다. 방어선이 우회되면 공격할 상대가 없거나 병력이 절반 아래일 때 물러난다.`,
         hold: () => `자리를 지키며 닿는 ${josa(U.playerUnits, '을', '를')} 친다.`,
         strike: () => b.def.strikeNote,
         raid: () => b.def.raidNote,
+        push: () => b.def.pushNote,
     }[u.role] || (() => ''))();
     const center = (r, c) => [c * CELL + CELL / 2, r * CELL + CELL / 2];
 
@@ -1960,7 +1968,7 @@
                 class: `cw-unit is-${sideOf(b, u)} k-${u.kind}${u.yielded ? ' is-yielded' : ''}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done && !B.canMove(b, u) ? ' is-done' : ''}${lunge ? ' is-lunging' : ''}`,
                 tabindex: '0', role: 'button',
                 style: lunge ? `--lx:${Math.sign(foeHit.c - u.c) * 9}px;--ly:${Math.sign(foeHit.r - u.r) * 9}px;--since:${Math.round(performance.now() - fallAt.get(blow))}ms` : null,
-                'aria-label': `${B.isPlayer(b, u) ? U.player : U.enemy} ${u.name}${u.yielded ? '(투항해 넘어옴)' : ''}, 병력 ${u.hp}/${u.maxHp}, 방어 ${B.defenseOf(b, u)}` + (p ? `, 공격 시 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ''}${p.wears ? ', 진지 방어 1 감소' : ''}${p.surrender ? ', 투항시킴' : ''}` : '') + (featLeft(b, u) ? `, 결정적 한 수 ${u.feat.name}` : '') + (done ? ', 행동 마침' : ''),
+                'aria-label': `${B.isPlayer(b, u) ? U.player : foeName()} ${u.name}${u.yielded ? '(투항해 넘어옴)' : ''}, 병력 ${u.hp}/${u.maxHp}, 방어 ${B.defenseOf(b, u)}` + (p ? `, 공격 시 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ''}${p.wears ? ', 진지 방어 1 감소' : ''}${p.surrender ? ', 투항시킴' : ''}` : '') + (featLeft(b, u) ? `, 결정적 한 수 ${u.feat.name}` : '') + (done ? ', 행동 마침' : ''),
             });
             // A counter on the board: its hard shadow, the side's colour,
             // a darker band for the name, then what it is and its strength.
@@ -2026,38 +2034,38 @@
             const holder = B.unitAt(b, ...g.at);
             return holder && B.isEnemy(b, holder)
                 ? `목표 ${g.name}(붉은 깃발): ${holder.name}(병력 ${holder.hp}/${holder.maxHp})이 지킨다. 쓰러뜨리거나 몰아낸 뒤 ${josa(U.playerUnits, '을', '를')} 들여보내면 이긴다`
-                : `목표 ${g.name}(붉은 깃발): ${josa(U.enemy, '이', '가')} 없다. ${josa(U.playerUnits, '을', '를')} 들여보내면 이긴다`;
+                : `목표 ${g.name}(붉은 깃발): ${josa(foeName(), '이', '가')} 없다. ${josa(U.playerUnits, '을', '를')} 들여보내면 이긴다`;
         });
         const status = [
             `${b.turn} / ${def.turnLimit} 턴`,
             ...goalLines,
             def.windTurns ? (B.fordOpen(b) ? `${def.ford} 여울 열림 (${def.windTurns - b.turn + 1}턴 남음)` : `바람이 바뀌어 ${def.ford}에 물이 찼다`) : null,
             ...Object.entries(def.lines).map(([id, l]) => b.turned[id] ? `${l.name} 우회됨: 수비대의 진지 방어가 +1로 줄었다` : `${l.name}: 노란 점선 안에 부대를 세우면 우회된다`),
-            !Object.keys(def.sectors).length ? null : b.reserve ? `${U.enemy} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶여 있다` : `${U.enemy} 예비대는 아직 움직이지 않았다`,
-            def.protect ? `${def.protect.name}: ${josa(U.enemy, '이', '가')} 들어서면 진다${B.unitAt(b, ...def.protect.at) ? '' : ' · 지금 비어 있다'}` : null,
+            !Object.keys(def.sectors).length ? null : b.reserve ? `${foeName()} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶여 있다` : `${foeName()} 예비대는 아직 움직이지 않았다`,
+            def.protect ? `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 진다${B.unitAt(b, ...def.protect.at) ? '' : ' · 지금 비어 있다'}` : null,
         ];
-        const hint = foe ? null : el('p', {}, `${josa(U.playerUnits, '을', '를')} 누르면 갈 수 있는 칸(노란 점선)과 칠 수 있는 적(예상 피해 표시)이 나옵니다. 포병은 진지 위의 적을 칠 때마다 그 진지의 방어를 1 깎습니다. ${U.enemy} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 나옵니다. 우클릭·Esc·「취소」는 이번 턴의 명령을 하나씩 되돌립니다.`);
+        const hint = foe ? null : el('p', {}, `${josa(U.playerUnits, '을', '를')} 누르면 갈 수 있는 칸(노란 점선)과 칠 수 있는 적(예상 피해 표시)이 나옵니다. 포병은 진지 위의 적을 칠 때마다 그 진지의 방어를 1 깎습니다. ${foeName()} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 나옵니다. 우클릭·Esc·「취소」는 이번 턴의 명령을 하나씩 되돌립니다.`);
         const goalAt = def.goals.length;
         box.replaceChildren(
             el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             el('details', { class: 'cw-battle-brief' }, el('summary', {}, '작전 지시', el('span', {}, ` · ${def.summary}`)), ...def.brief.map(p => el('p', {}, p))),
             el('div', { class: 'cw-battle-layout' },
                 el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll' }, board, moment), el('p', { class: 'cw-terrain-key' },
-                    ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(U.enemy, '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 지역'] : null, ['danger', `${josa(U.enemy, '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
+                    ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 지역'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('ul', { class: 'cw-battle-status' }, ...status.filter(Boolean).map((t, i) => el('li', { class: i > 0 && i <= goalAt ? 'is-goal' : null }, t))),
                     el('div', { id: 'cwUnitInfo', class: 'cw-unit-info' }, unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint),
                     battleEnded ? battleClose(b) : el('div', { class: 'cw-battle-actions' },
-                        postOpen(b) ? el('p', { class: 'cw-post-alarm' }, `${josa(def.protect.name, '이', '가')} 비었다. ${josa(U.enemy, '이', '가')} 다음 턴에 들어오면 이 전투에서 진다.`) : null,
+                        postOpen(b) ? el('p', { class: 'cw-post-alarm' }, `${josa(def.protect.name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 다음 턴에 들어오면 이 전투에서 진다.`) : null,
                         G.canTakeBack(s) ? el('button', { type: 'button', 'data-key': 'undo', title: 'Esc · 우클릭', onclick: takeBackOrder }, '취소') : null,
                         unit && !unit.acted ? el('button', { type: 'button', 'data-key': 'wait', onclick: () => { if (act('b:wait', unit.id)) afterBattleAct(`${unit.name} 대기`); } }, '이 부대 대기') : null,
                         ready && !(unit && !unit.acted && ready === 1) ? el('button', { type: 'button', 'data-key': 'next-unit', title: 'N', onclick: nextUnit }, '다음 부대') : null,
-                        el('button', { type: 'button', 'data-key': 'menace', class: 'cw-toggle', 'aria-pressed': String(menaceAll), onclick: () => { menaceAll = !menaceAll; renderBattle(); } }, `${U.enemy} 위협`),
+                        el('button', { type: 'button', 'data-key': 'menace', class: 'cw-toggle', 'aria-pressed': String(menaceAll), onclick: () => { menaceAll = !menaceAll; renderBattle(); } }, `${foeName()} 위협`),
                         el('button', { type: 'button', class: 'cw-primary' + (endArmed ? ' is-armed' : ''), 'data-key': 'end', title: 'E', onclick: endTurn },
                             endArmed ? (postOpen(b) ? `${josa(def.protect.name, "을", "를")} 비운 채 턴 종료` : '한 번 더 누르면 턴 종료') : ready ? `턴 종료 (${ready}부대 남음)` : '턴 종료 →')),
                     b.events.length ? el('div', { class: 'cw-battle-events' },
-                        el('p', { class: 'games-kicker' }, whiteMoved ? `지난 ${U.enemy}의 차례` : '방금 일어난 일'),
+                        el('p', { class: 'games-kicker' }, whiteMoved ? `지난 ${foeName()}의 차례` : '방금 일어난 일'),
                         el('ol', { class: 'cw-battle-log' }, ...eventLines(b).map(t => el('li', {}, t)))) : null)));
         renderBattleVoice();
         placeMoment();
@@ -2238,7 +2246,7 @@
             if (e.type === 'tide') return `바람이 바뀌었다. ${b.def.ford}에 물이 다시 차오른다.`;
             if (e.type === 'feat') return `결정적 한 수: ${name(e.id)}의 「${b.units.find(u => u.id === e.id).feat.name}」.`;
             if (e.type === 'surrender') return `${name(e.id)}이(가) 총을 내려놓고 ${josa(U.player, '으로', '로')} 넘어왔다.`;
-            if (e.type === 'air') return `${U.enemy} 비행기가 ${name(e.id)}을(를) 덮쳤다: 피해 ${e.dmg}`;
+            if (e.type === 'air') return `${foeName()} 비행기가 ${name(e.id)}을(를) 덮쳤다: 피해 ${e.dmg}`;
             if (e.type === 'raised') return `${name(e.id)}이(가) 열차에서 내려 총을 들었다.`;
             return '';
         }).filter(Boolean);
@@ -2341,7 +2349,7 @@
         if ((ready || open) && !endArmed) {
             endArmed = true;
             renderBattle();
-            announce(open ? `${josa(s.battle.def.protect.name, '이', '가')} 비었다. ${josa(U.enemy, '이', '가')} 들어오면 진다. 한 번 더 누르면 턴을 끝낸다.` : '행동하지 않은 부대가 남았다. 한 번 더 누르면 턴을 끝낸다.');
+            announce(open ? `${josa(s.battle.def.protect.name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 들어오면 진다. 한 번 더 누르면 턴을 끝낸다.` : '행동하지 않은 부대가 남았다. 한 번 더 누르면 턴을 끝낸다.');
             return;
         }
         endArmed = false;
