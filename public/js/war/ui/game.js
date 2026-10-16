@@ -1183,9 +1183,18 @@
             foeList(threat.foes, f.traits),
             el('p', { class: 'cw-threat' }, threat.text, ' ', person(threat.who)),
             f.pressureParts.length ? el('p', { class: 'cw-parts' }, `압력: ${f.pressure} = (기본 ${threat.pressure}) + ${f.pressureParts.map(x => `(${x})`).join(' + ')}`) : null,
-            f.parts.length ? el('p', { class: 'cw-parts' }, f.parts.join(' · ')) : null);
+            strengthSum(f));
         fold.addEventListener('toggle', () => { foeOpen = fold.open; });
         return fold;
+    }
+
+    // The strength as a sum, like the pressure: the divisions at their
+    // share, then each bonus (or loss) in the order the forecast adds them.
+    function strengthSum(f) {
+        const terms = [];
+        if (f.divisions) terms.push(`${f.divisions} × (${U.unit}당 ${+f.perDivision.toFixed(2)})`);
+        for (const b of f.bonuses || []) terms.push(`(${b.label} ${signed(b.v)})`);
+        return terms.length ? el('p', { class: 'cw-parts' }, `전투력: ${f.strength} = ${terms.join(' + ')}`) : null;
     }
 
     // Divisions moved by rail from another front bring half their strength:
