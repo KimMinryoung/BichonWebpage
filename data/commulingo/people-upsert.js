@@ -21,7 +21,7 @@ async function upsertPeople(people, { dryRun = false, changedBy }) {
             const fields = existing ? { expectedRevision: existing.revision, ...payload } : payload;
             const result = await submitPersonEdit({ target: 'person', action: existing ? 'update' : 'create',
                 id: payload.id, fields, sources: payload.sources }, { client, changedBy });
-            const row = { id: payload.id, status: result.status, suggestionId: result.suggestionId, sections: [] };
+            const row = { id: payload.id, status: result.status, suggestionId: result.suggestionId, docHolds: result.docHolds || [], sections: [] };
             results.push(row);
             if (result.status === 'pending' && sections?.length) {
                 throw Object.assign(new Error(`${payload.id}: review the person edit before adding its sections`), { status: 400 });

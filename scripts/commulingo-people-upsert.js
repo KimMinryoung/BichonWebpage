@@ -69,6 +69,10 @@ function readSpec(arg) {
         for (const row of results) {
             console.log(`${row.status} ${row.id} (edit ${row.suggestionId})`);
             for (const section of row.sections) console.log(`  ${section.status} section ${section.slug}`);
+            for (const hold of row.docHolds) {
+                console.log(`  WARNING doc ${hold.docId} marks 「${hold.text}」 (${hold.lang}) as nobody: "${hold.reason}" — `
+                    + `if this is the same person, set personId and add the id to the doc's people (scripts/commulingo-docs)`);
+            }
         }
         console.log(dryRun ? `dry run: ${people.length} person(s) validated, nothing written`
             : `committed ${people.length} person(s); the site picks it up on the next people-store refresh (~60s)`);

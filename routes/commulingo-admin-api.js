@@ -83,7 +83,7 @@ function personWrite(target, action) {
             fields, sources: fields.sources }, { changedBy: changedBy(req) });
         if (result.status === 'pending') return res.status(202).json(result);
         res.status(action === 'create' ? 201 : 200).json(target === 'person' && action !== 'delete'
-            ? { person: result.value } : target === 'person_section' && action !== 'delete'
+            ? { person: result.value, ...(result.docHolds?.length ? { docHolds: result.docHolds } : {}) } : target === 'person_section' && action !== 'delete'
                 ? { section: result.value } : result.value);
     });
 }

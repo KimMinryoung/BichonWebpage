@@ -6,6 +6,7 @@ const { listPersonSectionsAdmin, upsertPersonSectionAdmin, deletePersonSectionAd
 const { sourcesFor, reviewReasons } = require('./person-editorial-policy');
 const { assertExpectedRevision } = require('./people-edit-version');
 const { listEditorialNotes, saveEditorialNote } = require('./editorial-notes');
+const { docHoldsForPerson } = require('./doc-person-holds');
 
 async function readPersonEditorial(id, options = {}) {
     if (!options.client) return readSnapshot(client => readPersonEditorial(id, { client }));
@@ -50,9 +51,11 @@ async function submitPersonEdit(request, options = {}) {
             else value = await deletePersonAdmin(id, writeOptions);
         } else if (action === 'delete') value = await deletePersonSectionAdmin(id, fields.slug, writeOptions);
         else value = await upsertPersonSectionAdmin(id, fields.slug, fields, writeOptions);
+        // A new card may be the person a reference document marked unregistered.
+        const docHolds = target === 'person' && action === 'create' ? await docHoldsForPerson(client, value) : [];
         if (pending || request.dryRun) await client.query('ROLLBACK TO SAVEPOINT editorial_validation');
         await client.query('RELEASE SAVEPOINT editorial_validation');
-        if (request.dryRun) return { status: 'validated', wouldStage: pending, reasons };
+        if (request.dryRun) return { status: 'validated', wouldStage: pending, reasons, docHolds };
         const status = pending ? 'pending' : 'approved';
         let suggestionId = options.suggestionId;
         if (!suggestionId) {
@@ -66,7 +69,7 @@ async function submitPersonEdit(request, options = {}) {
             await client.query(`UPDATE commulingo_agent_suggestions SET status='approved', reviewer=$2,
                 review_note=$3, reviewed_at=NOW() WHERE id=$1`, [suggestionId, actor, options.note || 'reviewed through shared store']);
         }
-        return { status, suggestionId, reasons, ...(pending ? {} : { value }) };
+        return { status, suggestionId, reasons, docHolds, ...(pending ? {} : { value }) };
     });
 }
 
