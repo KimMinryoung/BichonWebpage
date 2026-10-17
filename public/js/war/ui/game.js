@@ -1939,7 +1939,8 @@
         const [r, c] = b.def.protect.at;
         if (postOpen(b)) g.classList.add('is-open');
         g.append(svg('rect', { x: c * CELL + 1, y: r * CELL + 1, width: CELL - 2, height: CELL - 2, class: 'cw-post-frame' }));
-        g.append(svg('text', { x: c * CELL + CELL / 2, y: (r + 1) * CELL + 4, 'text-anchor': 'middle', class: 'cw-post-name' }, b.def.protect.name));
+        // Its name hangs below the frame, unless a unit there would wear it.
+        if (!B.unitAt(b, r, c) && !B.unitAt(b, r + 1, c)) g.append(svg('text', { x: c * CELL + CELL / 2, y: (r + 1) * CELL + 4, 'text-anchor': 'middle', class: 'cw-post-name' }, b.def.protect.name));
         return g;
     }
 
@@ -1991,6 +1992,8 @@
         }
         board.append(defs);
         const deselect = () => { if (selected || inspected) { selected = null; inspected = null; renderBattle(); } };
+        // A tile's name gives way to a unit standing there.
+        const held = (r, c) => Boolean(B.unitAt(b, r, c));
         for (let r = 0; r < rows; r++) {
             for (let c = 0; c < cols; c++) {
                 const ground = B.terrain(b, r, c);
@@ -2007,7 +2010,7 @@
                 // A town's name on top; the objective's at the foot, clear of its flag.
                 const post = def.protect && def.protect.at[0] === r && def.protect.at[1] === c;
                 const town = goal ? goal.name : post ? null : (def.towns.find(t => t[1] === r && t[2] === c) || [])[0];
-                if (town) board.append(svg('text', { x: c * CELL + CELL / 2, y: r * CELL + (goal ? CELL - 5 : 14), 'text-anchor': 'middle', class: 'cw-tile-label' + (goal ? ' is-goal' : '') }, town));
+                if (town && !held(r, c)) board.append(svg('text', { x: c * CELL + CELL / 2, y: r * CELL + (goal ? CELL - 5 : 14), 'text-anchor': 'middle', class: 'cw-tile-label' + (goal ? ' is-goal' : '') }, town));
                 // Shelling wears a fortification's defence. A unit standing
                 // there shows what is left on its chip; an empty one says it.
                 const worn = B.terrain(b, r, c).fort && b.wear[r * 100 + c];
@@ -2018,10 +2021,10 @@
         board.append(trackOf(def));
         const open = Object.keys(def.lines).filter(id => !b.turned[id]);
         for (const id of open) board.append(rearOutline(b, id));
-        for (const [text, r, c] of def.places) board.append(svg('text', { x: c * CELL + 4, y: r * CELL + 12, class: 'cw-place' }, text));
+        for (const [text, r, c] of def.places.filter(([, r, c]) => !held(r, c))) board.append(svg('text', { x: c * CELL + 4, y: r * CELL + 12, class: 'cw-place' }, text));
         for (const id of open) {
             const [r, c] = def.lines[id].label;
-            board.append(svg('text', { x: c * CELL + 4, y: r * CELL + CELL - 6, class: 'cw-place is-flank' }, def.lines[id].name + ' 우회'));
+            if (!held(r, c)) board.append(svg('text', { x: c * CELL + 4, y: r * CELL + CELL - 6, class: 'cw-place is-flank' }, def.lines[id].name + ' 우회'));
         }
         for (const m of moves) {
             const t = B.terrain(b, m.r, m.c);
@@ -2064,7 +2067,8 @@
             // A counter on the board: a flat square of the side's colour,
             // its name, what it is and its strength.
             g.append(svg('rect', { x: x + 4, y: y + 4, width: CELL - 8, height: CELL - 8 }));
-            g.append(svg('text', { x: x + CELL / 2, y: y + 14.5, 'text-anchor': 'middle', class: 'cw-unit-tag' }, u.tag));
+            // A long name is squeezed to the counter's width.
+            g.append(svg('text', Object.assign({ x: x + CELL / 2, y: y + 14.5, 'text-anchor': 'middle', class: 'cw-unit-tag' }, u.tag.length > 4 ? { textLength: CELL - 12, lengthAdjust: 'spacingAndGlyphs' } : {}), u.tag));
             g.append(unitPicture(u, x + 6, y + 19));
             // Its strength, and beside it what a foretold blow would take.
             const hpEl = svg('text', { x: x + 38, y: y + 30, 'text-anchor': 'middle', class: 'cw-unit-hp', 'data-cx': x + 38, 'data-rx': x + CELL - 4 });
@@ -2087,10 +2091,10 @@
                 g.append(rect);
                 counterBar = { rect, x: barX, w: barW, hp: u.hp, max: u.maxHp, text: hpEl };
             }
-            // A feat still to use: a gold star on the corner, bright when it can be used now.
-            if (featLeft(b, u)) g.append(svg('path', { d: star(x + CELL - 8, y + 8, 7, 3), class: 'cw-feat-star' + (B.featBlock(b, u) ? ' is-waiting' : '') }));
             // The unit picked, or one a blow can reach: brackets on the tile's corners.
             if (u.id === selected || u.id === inspected || isTarget) g.append(svg('path', { d: corners(x, y), class: 'cw-unit-pick' }));
+            // A feat still to use: a gold star on the corner, bright when it can be used now.
+            if (featLeft(b, u)) g.append(svg('path', { d: star(x + CELL - 4, y + 4, 6, 2.5), class: 'cw-feat-star' + (B.featBlock(b, u) ? ' is-waiting' : '') }));
             // What the number cannot say: a surrender, a fortification worn.
             const note = p && [p.surrender ? '투항' : null, p.wears ? '포격' : null].filter(Boolean).join(' ');
             if (note) g.append(badge(x + CELL + 2, y - 17, note, 'is-preview'));
@@ -2129,7 +2133,9 @@
         // The objective: a red flag on its corner, above any unit holding it.
         for (const goal of def.goals) {
             const x = goal.at[1] * CELL, y = goal.at[0] * CELL;
-            board.append(svg('path', { d: `M${x + 34} ${y + 24}v-22M${x + 34} ${y + 2}h12l-3.5 4.5 3.5 4.5h-12`, class: 'cw-goal-flag', 'aria-hidden': 'true' }));
+            // With a unit on it, a small flag in the gutter, clear of its name.
+            const d = held(goal.at[0], goal.at[1]) ? `M${x + 46} ${y + 14}V${y - 3}h9l-2.5 3.5 2.5 3.5h-9` : `M${x + 34} ${y + 24}v-22M${x + 34} ${y + 2}h12l-3.5 4.5 3.5 4.5h-12`;
+            board.append(svg('path', { d, class: 'cw-goal-flag', 'aria-hidden': 'true' }));
         }
         board.append(postMark(b));
         board.append(eventArrows(b));

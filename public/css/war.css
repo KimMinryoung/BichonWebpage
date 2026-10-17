@@ -475,7 +475,7 @@
 .cw-battle-layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr); gap: 18px; align-items: start; }
 .cw-grid-wrap { min-width: 0; }
 .cw-grid-scroll { position: relative; }
-.cw-grid { display: block; width: 100%; max-width: 680px; height: auto; font-family: inherit; outline: 2px solid color-mix(in srgb, var(--text-primary) 65%, transparent); outline-offset: -1px; }
+.cw-grid { display: block; width: 100%; max-width: 680px; height: auto; overflow: visible; font-family: inherit; outline: 2px solid color-mix(in srgb, var(--text-primary) 65%, transparent); outline-offset: -1px; }
 .cw-tile { stroke: color-mix(in srgb, var(--border) 35%, transparent); stroke-width: 1; }
 .cw-tile.t-steppe { fill: color-mix(in srgb, #c8b77a 30%, var(--bg-surface)); }
 .cw-tile.t-town { fill: color-mix(in srgb, #9d8a62 55%, var(--bg-surface)); }
@@ -530,8 +530,8 @@
 .cw-post-alarm { flex-basis: 100%; margin: 0; padding: 6px 10px; border: 2px solid var(--emap-blue); background: color-mix(in srgb, var(--emap-blue) 22%, var(--bg-surface)); font-weight: 800; font-size: .88rem; }
 .cw-flank-zone { fill: none; stroke: var(--text-primary); stroke-opacity: .55; stroke-width: 1.5; stroke-dasharray: 6 4; pointer-events: none; }
 .cw-danger { fill: var(--emap-blue); fill-opacity: .28; stroke: var(--emap-blue); stroke-width: 1.5; pointer-events: none; }
-.cw-hit { fill: var(--text-primary); fill-opacity: .16; stroke: var(--text-primary); stroke-opacity: .45; stroke-width: 1; cursor: pointer; }
-.cw-hit:hover { fill-opacity: .32; }
+.cw-hit { fill: var(--text-primary); fill-opacity: .26; stroke: var(--text-primary); stroke-opacity: .65; stroke-width: 1; cursor: pointer; }
+.cw-hit:hover { fill-opacity: .4; }
 .cw-place { font-size: 10px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
 .cw-place.is-flank { fill: var(--text-secondary); }
 .cw-terrain-key { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .78rem; color: var(--text-secondary); margin: 8px 0 0; }
@@ -554,7 +554,7 @@
 .cw-terrain-key .k-trench { background: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
 .cw-terrain-key .k-ravine { background: color-mix(in srgb, #7a5a2e 50%, var(--bg-surface)); }
 .cw-terrain-key .k-works { background: color-mix(in srgb, #7d7466 60%, var(--bg-surface)); }
-.cw-terrain-key .k-move { background: color-mix(in srgb, var(--text-primary) 16%, transparent); border: 1px solid color-mix(in srgb, var(--text-primary) 45%, transparent); }
+.cw-terrain-key .k-move { background: color-mix(in srgb, var(--text-primary) 26%, transparent); border: 1px solid color-mix(in srgb, var(--text-primary) 65%, transparent); }
 .cw-terrain-key .k-flank { border: 1.5px dashed color-mix(in srgb, var(--text-primary) 55%, transparent); }
 .cw-terrain-key .k-danger { background: color-mix(in srgb, #2f6fb8 35%, transparent); border-color: var(--emap-blue); }
 .cw-hit:focus-visible { outline: none; stroke: var(--text-primary); stroke-width: 3; }
@@ -581,7 +581,7 @@
 }
 @keyframes cw-lunge { 0%, 100% { translate: 0 0; } 35% { translate: var(--lx) var(--ly); } }
 .cw-hp-track { fill: #00000040; pointer-events: none; }
-.cw-hp { fill: #f2d64b; pointer-events: none; }
+.cw-hp { fill: #f4f1e8; pointer-events: none; }
 .cw-unit.is-white .cw-hp { fill: var(--emap-blue); }
 /* The strength a foretold blow takes: the target's in red, the attacker's
    (the counter, while a target is pointed at) in orange, apart from the
@@ -629,7 +629,7 @@
 .cw-unit-info p { margin: 4px 0 0; font-size: .88rem; line-height: var(--leading-normal); }
 .cw-info-hp { display: flex; align-items: center; gap: 8px; }
 .cw-info-bar { flex: 1 1 auto; max-width: 160px; height: 7px; background: linear-gradient(90deg, var(--bar) var(--hp), color-mix(in srgb, var(--text-primary) 15%, transparent) var(--hp)); }
-.cw-info-bar.is-red { --bar: #f2d64b; }
+.cw-info-bar.is-red { --bar: var(--text-primary); }
 .cw-info-bar.is-white { --bar: var(--emap-blue); }
 .cw-info-targets { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
 .games-shell .cw-info-targets button { display: grid; gap: 2px; width: 100%; text-align: left; padding: 6px 10px; font-size: .84rem; }
