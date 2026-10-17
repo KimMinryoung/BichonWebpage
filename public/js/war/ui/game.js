@@ -1983,6 +1983,16 @@
             hit.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
             board.append(hit);
         }
+        // The blow foretold on the strength bars: what a target would lose
+        // shows on its own bar; what the attacker would lose to the counter
+        // shows on the attacker's while a target is pointed at.
+        let counterBar = null;
+        const showCounter = p => {
+            if (!counterBar) return;
+            const lost = p ? Math.min(counterBar.hp, p.counter) : 0;
+            counterBar.rect.setAttribute('x', counterBar.x + counterBar.w * (counterBar.hp - lost) / counterBar.max);
+            counterBar.rect.setAttribute('width', counterBar.w * lost / counterBar.max);
+        };
         for (const u of b.units.filter(x => x.hp > 0)) {
             const x = u.c * CELL, y = u.r * CELL;
             const isTarget = targets.includes(u);
@@ -2016,7 +2026,14 @@
                 g.append(svg('text', { x: x + 13, y: y + 41, 'text-anchor': 'middle', class: 'cw-ground-text' }, (ground > 0 ? '+' : '−') + Math.abs(ground)));
             }
             g.append(svg('rect', { x: barX, y: y + 35, width: barW, height: 5, class: 'cw-hp-track' }));
-            g.append(svg('rect', { x: barX, y: y + 35, width: barW * u.hp / u.maxHp, height: 5, class: 'cw-hp' }));
+            const lost = p ? Math.min(u.hp, p.dmg) : 0;
+            g.append(svg('rect', { x: barX, y: y + 35, width: barW * (u.hp - lost) / u.maxHp, height: 5, class: 'cw-hp' }));
+            if (lost) g.append(svg('rect', { x: barX + barW * (u.hp - lost) / u.maxHp, y: y + 35, width: barW * lost / u.maxHp, height: 5, class: 'cw-hp-loss' }));
+            if (unit && u.id === unit.id && targets.length) {
+                const rect = svg('rect', { x: barX + barW * u.hp / u.maxHp, y: y + 35, width: 0, height: 5, class: 'cw-hp-loss is-counter' });
+                g.append(rect);
+                counterBar = { rect, x: barX, w: barW, hp: u.hp, max: u.maxHp };
+            }
             // A feat still to use: a gold star on the corner, bright when it can be used now.
             if (featLeft(b, u)) g.append(svg('path', { d: star(x + CELL - 8, y + 8, 7, 3), class: 'cw-feat-star' + (B.featBlock(b, u) ? ' is-waiting' : '') }));
             if (p) g.append(badge(x + CELL + 2, y - 17, (p.dmg >= u.hp ? '격파' : p.surrender ? '투항' : `−${p.dmg}` + (p.counter ? ` ↩${p.counter}` : '')) + (p.wears ? ' 포격' : ''), 'is-preview'));
@@ -2039,6 +2056,10 @@
             };
             g.addEventListener('click', pick);
             g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
+            if (p) {
+                for (const on of ['pointerenter', 'focus']) g.addEventListener(on, () => showCounter(p));
+                for (const off of ['pointerleave', 'blur']) g.addEventListener(off, () => showCounter(null));
+            }
             board.append(g);
         }
         for (const e of b.events.filter(x => x.type === 'fall')) {
@@ -2205,13 +2226,15 @@
         const ground = B.groundOf(b, u.r, u.c);
         const worn = t.fort ? b.wear[u.r * 100 + u.c] || 0 : 0;
         const why = [worn ? `포격 ${worn}번` : null, t.fort && b.turned[t.fort] ? '우회됨' : null].filter(Boolean);
-        const parts = [`부대 ${u.def}`, t.fort && ground !== t.def ? `${t.name} ${fortText(b, u.r, u.c)}(${why.join(', ')})` : ground ? `${t.name} ${signed(ground)}` : null].filter(Boolean);
+        // The leader's +1 is in u.def (Battle.start): named apart from the base.
+        const lead = u.commissar ? 1 : 0;
+        const parts = [`기본 ${u.def - lead}`, lead ? `${U.leader} +${lead}` : null, t.fort && ground !== t.def ? `${t.name} ${fortText(b, u.r, u.c)}(${why.join(', ')})` : ground ? `${t.name} ${signed(ground)}` : null].filter(Boolean);
         // A Red unit ready to strike lists who it can hit and what it would do.
         const targets = B.isPlayer(b, u) && !u.acted && !battleEnded ? B.targets(b, u) : [];
         return el('div', {},
             el('h3', {}, u.name, u.sub ? el('small', {}, ` ${u.sub}`) : null),
             el('p', { class: 'cw-info-hp' }, el('strong', {}, `병력 ${u.hp}/${u.maxHp}`), el('span', { class: 'cw-info-bar is-' + sideOf(b, u), style: `--hp:${(100 * u.hp / u.maxHp).toFixed(0)}%`, 'aria-hidden': 'true' })),
-            el('p', {}, `공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} (${parts.join(', ')}) · 이동 ${u.mv}${u.rail ? ' (철길로만)' : ''}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
+            el('p', {}, `공격 ${u.atk} · 방어 ${B.defenseOf(b, u)}${parts.length > 1 ? ` (${parts.join(', ')})` : ''} · 이동 ${u.mv}${u.rail ? ' (철길로만)' : ''}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
             targets.length ? el('ul', { class: 'cw-info-targets', 'aria-label': '칠 수 있는 적' }, ...targets.map(d => {
                 const p = B.preview(b, u, d);
                 return el('li', {}, el('button', { type: 'button', onclick: () => { if (act('b:attack', u.id, d.id)) afterBattleAct(`${u.name}이(가) ${d.name}을(를) 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : '')); } },
@@ -2222,7 +2245,6 @@
             u.skirmish ? el('p', { class: 'cw-note' }, '타찬카(기관총 수레): 움직이기 전에 치면, 친 뒤에도 움직일 수 있다.') : null,
             u.yielded ? el('p', { class: 'cw-note' }, `투항해 ${josa(U.player, '으로', '로')} 넘어온 부대다.`) : null,
             u.person ? el('p', {}, '지휘: ', person(u.person)) : null,
-            u.commissar ? el('p', { class: 'cw-note' }, `${josa(U.leader, '이', '가')} 함께한다 (방어 +1).`) : null,
             B.isPlayer(b, u) ? el('p', { class: 'cw-note' }, u.acted ? (B.canMove(b, u) ? '쳤다. 아직 움직일 수 있다.' : '이번 턴의 행동을 마쳤다.') : u.moved ? '이동했다. 공격하거나 대기할 수 있다.' : '이동하거나 공격할 수 있다.') : null,
             B.isEnemy(b, u) && u.role ? el('p', { class: 'cw-note' }, roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '')) : null);
     }
@@ -2254,7 +2276,8 @@
             }, d.tag, el('small', {}, p.dmg >= d.hp ? '격파' : p.surrender ? '투항' : `−${p.dmg}`))];
         }).flat()] : [];
         return el('div', { class: 'cw-feat' + (b.feats[f.id] ? ' is-used' : '') },
-            el('p', {}, el('strong', {}, '결정적 한 수 · '), name, ` ${f.text}`, ...aims),
+            el('p', { class: 'cw-feat-head' }, el('strong', {}, '결정적 한 수'), name),
+            el('p', {}, f.text, ...aims),
             !ready && wait ? el('p', { class: 'cw-note' }, wait) : null,
             f.history ? el('details', {}, el('summary', {}, '역사에서는'), el('p', {}, f.history)) : null);
     }
