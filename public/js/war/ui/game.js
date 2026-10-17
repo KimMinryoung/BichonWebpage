@@ -226,6 +226,13 @@
         $('cwUnveil').scrollIntoView({ block: 'end' });
     }
 
+    // A season's start as 1918.09 (the century hides on narrow screens).
+    function seasonStart(date) {
+        const m = date.match(/(\d{2})(\d{2})년 (\d{1,2})/);
+        if (!m) return el('span', {}, date.replace(/년 .*/, ''));
+        return el('span', {}, el('i', { class: 'cw-cal-century' }, m[1]), `${m[2]}.${m[3].padStart(2, '0')}`);
+    }
+
     function renderHud() {
         const t = G.turnData(s);
         // The war's own calendar (a newer one splits a season of an older save).
@@ -233,10 +240,11 @@
         $('cwDate').textContent = `${days.indexOf(s.turn) + 1}/${days.length} 시기 · ${t.date}`;
         $('cwTitle').textContent = t.title;
         const cal = $('cwCalendar');
+        cal.style.setProperty('--cw-seasons', days.length);
         cal.replaceChildren(...days.map(i => [D.turns[i], i]).map(([turn, i]) => el('li', {
             class: i < s.turn ? 'is-past' : i === s.turn ? 'is-current' : '',
             'aria-current': i === s.turn ? 'step' : null, title: `${turn.date} ${turn.title}`,
-        }, el('span', {}, turn.date.replace(/년 .*/, '')), el('small', {}, turn.title))));
+        }, seasonStart(turn.date), el('small', {}, turn.title))));
         const plan = s.plan;
         const supply = s.phase === 'plan' ? G.forecast(s).supply : null;
         const stat = (label, value, note, warn) => [el('div', { class: warn ? 'is-warn' : '' }, el('dt', {}, label), el('dd', {}, el('strong', {}, value), note ? el('small', {}, note) : null))];

@@ -43,7 +43,8 @@
 /* HUD */
 .cw-hud { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; border: 1px solid var(--border); background: var(--bg-surface); padding: 16px var(--content-inset); margin-bottom: 18px; }
 .cw-season h2 { font-size: clamp(1.25rem, 3vw, 1.7rem); margin: 4px 0 12px; }
-.cw-calendar { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 4px; }
+.cw-calendar { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(var(--cw-seasons, 8), minmax(0, 1fr)); gap: 4px; }
+.cw-calendar .cw-cal-century { font-style: normal; }
 .cw-calendar li { border-top: 4px solid var(--border); padding-top: 6px; font-size: .75rem; color: var(--text-secondary); min-width: 0; }
 .cw-calendar li span { display: block; font-weight: 700; font-variant-numeric: tabular-nums; }
 .cw-calendar small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -741,6 +742,7 @@
     .cw-intro { grid-template-columns: 1fr; }
     .cw-intro-art { min-height: 200px; }
     .cw-calendar small { display: none; }
+    .cw-calendar .cw-cal-century { display: none; }
     .cw-command { position: sticky; bottom: 0; background: var(--bg-canvas); border-top: 1px solid var(--border); padding-block: 8px; margin-inline: calc(-1 * var(--content-inset) * 0); z-index: 2; }
     /* The board keeps a readable cell and scrolls sideways instead. */
     .cw-grid-scroll { overflow-x: auto; }
