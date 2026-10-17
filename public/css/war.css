@@ -598,8 +598,19 @@
 .cw-unit:focus-visible { outline: none; }
 .cw-unit:focus-visible > rect:first-child { stroke: var(--text-primary); stroke-width: 4; }
 .cw-badge { pointer-events: none; }
+.cw-grid-scroll { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
 .cw-badge text { font-size: 10px; font-weight: 800; fill: #fff; }
 .cw-badge.is-preview rect, .cw-badge.is-red rect { fill: var(--cw-red); stroke: #fff; stroke-width: 1; }
+/* A foretold loss beside a unit's strength: red on the target, orange on
+   the attacker; outlined so it reads over the unit's picture. */
+.cw-unit .cw-hp-delta { font-size: 10px; paint-order: stroke; stroke-width: 3px; stroke-linejoin: round; }
+/* The number and its loss lie over the picture's edge: a halo of the
+   counter's own colour keeps them clear of it. */
+.cw-unit .cw-unit-hp { paint-order: stroke; stroke-width: 3px; stroke-linejoin: round; }
+.cw-unit.is-red .cw-unit-hp { stroke: var(--cw-red); }
+.cw-unit.is-white .cw-unit-hp { stroke: #f4f1e8; }
+.cw-unit .cw-hp-delta.is-loss { fill: var(--cw-red); stroke: #fff; }
+.cw-unit .cw-hp-delta.is-counter { fill: #ff8a3d; stroke: #1d1606; }
 .cw-ground { pointer-events: none; }
 .cw-ground.is-cover { fill: #7a3f14; }
 .cw-ground.is-exposed { fill: #1f4f8a; }

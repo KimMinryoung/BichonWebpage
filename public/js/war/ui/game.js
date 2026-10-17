@@ -1856,8 +1856,20 @@
         return svg('path', { d, class: 'cw-flank-zone' });
     }
 
+    // A unit's strength as its number, with what a blow would take beside
+    // it (cls: is-loss for the target, is-counter for the attacker).
+    // The number sits centred at data-cx; with a loss beside it the pair
+    // ends at data-rx, inside the counter's right edge.
+    function hpText(node, hp, lost, cls) {
+        node.replaceChildren(String(hp));
+        node.setAttribute('text-anchor', lost ? 'end' : 'middle');
+        node.setAttribute('x', lost ? node.dataset.rx : node.dataset.cx);
+        if (lost) node.append(svg('tspan', { class: 'cw-hp-delta ' + cls, dx: 1 }, `−${lost}`));
+    }
+
     function badge(x, y, text, cls) {
-        const w = text.length * 6.5 + 8;
+        // Hangul is about half as wide again as the digits and signs.
+        const w = [...text].reduce((a, ch) => a + (/[가-힣]/.test(ch) ? 10.5 : 6.5), 8);
         const g = svg('g', { class: 'cw-badge ' + cls });
         g.append(svg('rect', { x: x - w, y, width: w, height: 15, rx: 2 }), svg('text', { x: x - w / 2, y: y + 11, 'text-anchor': 'middle' }, text));
         return g;
@@ -1986,12 +1998,16 @@
         // The blow foretold on the strength bars: what a target would lose
         // shows on its own bar; what the attacker would lose to the counter
         // shows on the attacker's while a target is pointed at.
+        // The counter shows on the attacker the same way, in orange, while a
+        // target is pointed at; on a phone while the finger rests on it (the
+        // blow goes when it lifts there, and sliding off cancels).
         let counterBar = null;
         const showCounter = p => {
             if (!counterBar) return;
             const lost = p ? Math.min(counterBar.hp, p.counter) : 0;
             counterBar.rect.setAttribute('x', counterBar.x + counterBar.w * (counterBar.hp - lost) / counterBar.max);
             counterBar.rect.setAttribute('width', counterBar.w * lost / counterBar.max);
+            hpText(counterBar.text, counterBar.hp, lost, 'is-counter');
         };
         for (const u of b.units.filter(x => x.hp > 0)) {
             const x = u.c * CELL, y = u.r * CELL;
@@ -2016,7 +2032,10 @@
             g.append(svg('path', { d: `M${x + 3} ${y + 18}v-12a3 3 0 0 1 3 -3h36a3 3 0 0 1 3 3v12z`, class: 'cw-unit-band' }));
             g.append(svg('text', { x: x + CELL / 2, y: y + 14.5, 'text-anchor': 'middle', class: 'cw-unit-tag' }, u.tag));
             g.append(unitPicture(u, x + 6, y + 19));
-            g.append(svg('text', { x: x + 38, y: y + 30, 'text-anchor': 'middle', class: 'cw-unit-hp' }, String(u.hp)));
+            // Its strength, and beside it what a foretold blow would take.
+            const hpEl = svg('text', { x: x + 38, y: y + 30, 'text-anchor': 'middle', class: 'cw-unit-hp', 'data-cx': x + 38, 'data-rx': x + CELL - 4 });
+            hpText(hpEl, u.hp, p ? Math.min(u.hp, p.dmg) : 0, 'is-loss');
+            g.append(hpEl);
             // Ground that shields or exposes the unit, as a chip before its
             // strength bar (the Wall's +3 drops to +1 once it is turned).
             const ground = B.defenseOf(b, u) - u.def;
@@ -2032,11 +2051,13 @@
             if (unit && u.id === unit.id && targets.length) {
                 const rect = svg('rect', { x: barX + barW * u.hp / u.maxHp, y: y + 35, width: 0, height: 5, class: 'cw-hp-loss is-counter' });
                 g.append(rect);
-                counterBar = { rect, x: barX, w: barW, hp: u.hp, max: u.maxHp };
+                counterBar = { rect, x: barX, w: barW, hp: u.hp, max: u.maxHp, text: hpEl };
             }
             // A feat still to use: a gold star on the corner, bright when it can be used now.
             if (featLeft(b, u)) g.append(svg('path', { d: star(x + CELL - 8, y + 8, 7, 3), class: 'cw-feat-star' + (B.featBlock(b, u) ? ' is-waiting' : '') }));
-            if (p) g.append(badge(x + CELL + 2, y - 17, (p.dmg >= u.hp ? '격파' : p.surrender ? '투항' : `−${p.dmg}` + (p.counter ? ` ↩${p.counter}` : '')) + (p.wears ? ' 포격' : ''), 'is-preview'));
+            // What the number cannot say: a surrender, a fortification worn.
+            const note = p && [p.surrender ? '투항' : null, p.wears ? '포격' : null].filter(Boolean).join(' ');
+            if (note) g.append(badge(x + CELL + 2, y - 17, note, 'is-preview'));
             const pick = () => {
                 if (battleEnded) return;
                 if (isTarget) {
@@ -2057,8 +2078,8 @@
             g.addEventListener('click', pick);
             g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
             if (p) {
-                for (const on of ['pointerenter', 'focus']) g.addEventListener(on, () => showCounter(p));
-                for (const off of ['pointerleave', 'blur']) g.addEventListener(off, () => showCounter(null));
+                for (const on of ['pointerenter', 'pointerdown', 'focus']) g.addEventListener(on, () => showCounter(p));
+                for (const off of ['pointerleave', 'pointercancel', 'blur']) g.addEventListener(off, () => showCounter(null));
             }
             board.append(g);
         }
@@ -2542,10 +2563,14 @@
     });
 
     // A right click on the board (or a speech bubble over it) cancels as Esc does.
+    // A finger held on a target to read the blow is not a right click: a
+    // long press on a phone sends one, and it must not take an order back.
+    let lastPointer = 'mouse';
+    $('cwBattle').addEventListener('pointerdown', e => { lastPointer = e.pointerType; }, true);
     $('cwBattle').addEventListener('contextmenu', e => {
         if (!s || s.phase !== 'battle' || battleEnded || !e.target.closest('.cw-grid-scroll')) return;
         e.preventDefault();
-        cancel();
+        if (lastPointer !== 'touch') cancel();
     });
 
     $('cwSettle').addEventListener('click', () => {
