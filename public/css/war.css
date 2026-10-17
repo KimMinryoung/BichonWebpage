@@ -44,12 +44,14 @@
 .cw-hud { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; border: 1px solid var(--border); background: var(--bg-surface); padding: 16px var(--content-inset); margin-bottom: 18px; }
 .cw-season h2 { font-size: clamp(1.25rem, 3vw, 1.7rem); margin: 4px 0 12px; }
 .cw-calendar { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(var(--cw-seasons, 8), minmax(0, 1fr)); gap: 4px; }
-.cw-calendar .cw-cal-century { font-style: normal; }
-.cw-calendar li { border-top: 4px solid var(--border); padding-top: 6px; font-size: .75rem; color: var(--text-secondary); min-width: 0; }
+.cw-calendar li { font-size: .75rem; color: var(--text-secondary); min-width: 0; }
+.cw-calendar .cw-cal-year { display: block; font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--text-primary); }
+.cw-calendar .cw-cal-bar { display: block; height: 4px; margin: 2px 0 4px; background: var(--border); }
 .cw-calendar li span { display: block; font-weight: 700; font-variant-numeric: tabular-nums; }
 .cw-calendar small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.cw-calendar .is-past { border-color: color-mix(in srgb, var(--cw-red) 45%, var(--border)); }
-.cw-calendar .is-current { border-color: var(--cw-red); color: var(--text-primary); }
+.cw-calendar .is-past .cw-cal-bar { background: color-mix(in srgb, var(--cw-red) 45%, var(--border)); }
+.cw-calendar .is-current .cw-cal-bar { background: var(--cw-red); }
+.cw-calendar .is-current { color: var(--text-primary); }
 .cw-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; margin: 0; }
 .cw-stats dt { font-size: .78rem; color: var(--text-secondary); }
 .cw-stats dd { margin: 2px 0 0; }
@@ -742,7 +744,6 @@
     .cw-intro { grid-template-columns: 1fr; }
     .cw-intro-art { min-height: 200px; }
     .cw-calendar small { display: none; }
-    .cw-calendar .cw-cal-century { display: none; }
     .cw-command { position: sticky; bottom: 0; background: var(--bg-canvas); border-top: 1px solid var(--border); padding-block: 8px; margin-inline: calc(-1 * var(--content-inset) * 0); z-index: 2; }
     /* The board keeps a readable cell and scrolls sideways instead. */
     .cw-grid-scroll { overflow-x: auto; }
@@ -779,7 +780,8 @@
 .cw-shell.is-playing .cw-season .games-kicker { grid-column: 1; margin: 0; }
 .cw-shell.is-playing .cw-season h2 { grid-column: 1; font-size: 1.15rem; margin: 0; }
 .cw-shell.is-playing .cw-calendar { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
-.cw-shell.is-playing .cw-calendar li { padding-top: 3px; border-top-width: 3px; font-size: .7rem; }
+.cw-shell.is-playing .cw-calendar li { font-size: .7rem; }
+.cw-shell.is-playing .cw-calendar .cw-cal-bar { height: 3px; margin: 1px 0 3px; }
 .cw-shell.is-playing .cw-stats { grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 4px 10px; }
 .cw-shell.is-playing .cw-stats strong { font-size: 1.05rem; }
 .cw-shell.is-playing .cw-stats > div { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 6px; }

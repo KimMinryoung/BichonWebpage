@@ -226,11 +226,10 @@
         $('cwUnveil').scrollIntoView({ block: 'end' });
     }
 
-    // A season's start as 1918.09 (the century hides on narrow screens).
+    // A season's start, [year, month], read from its date (1918년 9–12월).
     function seasonStart(date) {
-        const m = date.match(/(\d{2})(\d{2})년 (\d{1,2})/);
-        if (!m) return el('span', {}, date.replace(/년 .*/, ''));
-        return el('span', {}, el('i', { class: 'cw-cal-century' }, m[1]), `${m[2]}.${m[3].padStart(2, '0')}`);
+        const m = date.match(/(\d{4})년 (\d{1,2})/);
+        return m ? [m[1], m[2]] : [date.replace(/년 .*/, ''), ''];
     }
 
     function renderHud() {
@@ -241,10 +240,16 @@
         $('cwTitle').textContent = t.title;
         const cal = $('cwCalendar');
         cal.style.setProperty('--cw-seasons', days.length);
-        cal.replaceChildren(...days.map(i => [D.turns[i], i]).map(([turn, i]) => el('li', {
-            class: i < s.turn ? 'is-past' : i === s.turn ? 'is-current' : '',
-            'aria-current': i === s.turn ? 'step' : null, title: `${turn.date} ${turn.title}`,
-        }, seasonStart(turn.date), el('small', {}, turn.title))));
+        // The year above the bar of its first season, the month below every bar.
+        cal.replaceChildren(...days.map(i => [D.turns[i], i]).map(([turn, i], k, all) => {
+            const [year, month] = seasonStart(turn.date);
+            const newYear = !k || seasonStart(all[k - 1][0].date)[0] !== year;
+            return el('li', {
+                class: i < s.turn ? 'is-past' : i === s.turn ? 'is-current' : '',
+                'aria-current': i === s.turn ? 'step' : null, title: `${turn.date} ${turn.title}`,
+            }, el('b', { class: 'cw-cal-year', 'aria-hidden': newYear ? null : 'true' }, newYear ? year : '\u00a0'), el('i', { class: 'cw-cal-bar' }),
+            el('span', {}, month ? `${month}월` : ''), el('small', {}, turn.title));
+        }));
         const plan = s.plan;
         const supply = s.phase === 'plan' ? G.forecast(s).supply : null;
         const stat = (label, value, note, warn) => [el('div', { class: warn ? 'is-warn' : '' }, el('dt', {}, label), el('dd', {}, el('strong', {}, value), note ? el('small', {}, note) : null))];
