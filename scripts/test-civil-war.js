@@ -19,8 +19,8 @@ function plan(s, { requisition = false } = {}) {
     const threats = G.threatsOf(s);
     const fronts = G.activeFronts(s).sort((a, b) => PRIORITY.indexOf(a) - PRIORITY.indexOf(b));
     const heaviest = fronts.slice().sort((a, b) => threats[b].pressure - threats[a].pressure)[0];
-    // The season's incident, unless answered already: as history answered.
-    if (t.incident && !s.plan.response) assert.ok(G.act(s, 'respond', t.incident.history));
+    // The season's incidents, unless answered already: as history answered.
+    for (const inc of G.incidentsOf(s)) if (!G.responseOf(s, inc)) assert.ok(G.act(s, 'respond', inc.history));
     if (t.cards.includes('train')) assert.ok(G.act(s, 'play', 'train', heaviest));
     if (requisition) assert.ok(G.act(s, 'play', 'requisition'));
     // An amnesty only while the party can bear it (command stays at 3).
@@ -100,7 +100,16 @@ const WARSAW_WIN = [
     ['attack', 'rhg', 'wwa'], ['move', 'r10', 4, 2], ['attack', 'r10', 'wwa'], ['move', 'r16g', 7, 7], ['move', 'rtr', 4, 5], ['end'],
     ['attack', 'r1c', 'wcv'], ['move', 'r21', 3, 4], ['attack', 'rhg', 'wwa'], ['move', 'r10', 4, 1],
 ];
-const ROUTES = { kazan: KAZAN, ufa: UFA, orel: OREL, warsaw: WARSAW };
+// Tsaritsyn as history held it: the station, the city and the defence
+// belt stay manned and the guns and trains fire from the ring railway;
+// Zhloba's Steel Division comes up from the south-west through Tundutovo
+// to Sarepta.
+const SAREPTA = { r: 8, c: 9 };
+const TSARITSYN = {
+    tzh: [{ r: 9, c: 5 }, { r: 9, c: 7 }, { r: 8, c: 8 }, SAREPTA],
+    'tkh,tvr,tkp,tku,tar,tfl,tdm,twk,tlr': null,
+};
+const ROUTES = { kazan: KAZAN, tsaritsyn: TSARITSYN, ufa: UFA, orel: OREL, warsaw: WARSAW };
 
 // Sends the season, fighting the season's battle on the way when it comes.
 function send(s) {
@@ -109,12 +118,12 @@ function send(s) {
     return true;
 }
 
-function campaign(pick, options, answer = t => t.incident.history) {
-    const s = G.start();
+function campaign(pick, options, answer = inc => inc.history, rules) {
+    const s = G.start(rules);
     const traitsMet = s.traitsMet = [];  // the attackers' traits in force when each season was sent
     while (s.phase === 'plan') {
         assert.ok(G.act(s, 'choose', pick(G.turnData(s))));
-        if (G.turnData(s).incident) assert.ok(G.act(s, 'respond', answer(G.turnData(s))));
+        for (const inc of G.incidentsOf(s)) assert.ok(G.act(s, 'respond', answer(inc)));
         plan(s, options);
         for (const [id, f] of Object.entries(G.forecast(s).fronts)) for (const tr of f.traits) if (tr.on) traitsMet.push(`${G.turnData(s).id} ${id} ${tr.foe}`);
         assert.ok(send(s));
@@ -123,12 +132,21 @@ function campaign(pick, options, answer = t => t.incident.history) {
     return s;
 }
 
-// Answers the season's incident as history did, if it has one unanswered.
-const answer = s => { const inc = G.turnData(s).incident; if (inc && !s.plan.response) assert.ok(G.act(s, 'respond', inc.history)); };
+// Answers the season's incidents as history did, those still unanswered.
+const answer = s => { for (const inc of G.incidentsOf(s)) if (!G.responseOf(s, inc)) assert.ok(G.act(s, 'respond', inc.history)); };
 const historical = t => t.choice.history;
 const other = t => t.choice.options.find(o => o.id !== t.choice.history).id;
 // Empties a plan that opened with last season's placements.
 const clear = s => G.activeFronts(s).forEach(f => assert.ok(G.act(s, 'alloc', f, 0)));
+// Plays the seasons as history did until the named one opens.
+function until(s, id) {
+    while (G.turnData(s).id !== id) {
+        assert.ok(G.act(s, 'choose', historical(G.turnData(s))));
+        plan(s);
+        assert.ok(send(s));
+        assert.ok(G.act(s, 'next'));
+    }
+}
 const sumDiff = s => s.records.reduce((sum, r) => sum + Object.values(r.fronts).reduce((a, f) => a + f.after - f.history, 0), 0);
 
 // The scenario's data: every id it names exists, every season fits the
@@ -172,7 +190,7 @@ for (const [t, turn] of D.turns.entries()) {
     for (const [id, threat] of Object.entries(turn.threats)) {
         const s = G.start();
         s.turn = t;
-        s.lines[id] = t ? D.fronts[id].history[t - 1] : D.startLines[id];
+        s.lines[id] = G.prevOf(t) < 0 ? D.startLines[id] : D.fronts[id].history[G.prevOf(t)];
         s.plan.choice = null;
         const outcomes = new Set([0, 20].map(strength => {
             const margin = strength - threat.pressure;
@@ -201,7 +219,7 @@ for (const [t, turn] of D.turns.entries()) {
 // Played as history played it, the war follows history to Perekop.
 const hist = campaign(historical);
 assert.equal(hist.phase, 'battle');
-assert.equal(hist.records.length, D.turns.length);
+assert.equal(hist.records.length, G.calendar(hist).length);
 assert.equal(sumDiff(hist), 0, 'the historical campaign matches history city for city');
 assert.equal(hist.battles.kazan.result, 'won', "history's plan takes Kazan");
 assert.ok(hist.battles.kazan.turns > D.battles.kazan.reward.quick, 'as history did, not sooner');
@@ -223,8 +241,7 @@ for (const t of D.turns) for (const th of Object.values(t.threats)) for (const f
 {
     // Denikin's officer regiments: a front without a commissar takes +2.
     const s = G.start();
-    for (let i = 0; i < 3; i++) { G.act(s, 'choose', historical(G.turnData(s))); plan(s); send(s); G.act(s, 'next'); }
-    assert.equal(G.turnData(s).id, 'directive');
+    until(s, 'directive');
     const bare = G.forecast(s).fronts.volga.pressure;
     G.act(s, 'commissar', 'volga', true);
     assert.equal(G.forecast(s).fronts.volga.pressure, bare - 2, 'a commissar steadies the line before the officers');
@@ -288,8 +305,7 @@ assert.ok(command >= 1);
 // (An empty plan also wakes the southern attackers' traits; set them aside.)
 const calmed = f => f.pressureParts.filter(p => !G.traitsOn(calm, 'south', G.threatsOf(calm).south).some(tr => p.startsWith(tr.short + ' ')));
 const calm = G.start();
-for (let i = 0; i < 2; i++) { G.act(calm, 'choose', historical(G.turnData(calm))); plan(calm); send(calm); G.act(calm, 'next'); }
-assert.equal(G.turnData(calm).id, 'kolchak');
+until(calm, 'kolchak');
 assert.deepEqual(calmed(G.forecast(calm).fronts.south), []);
 assert.ok(G.act(calm, 'play', 'propaganda'));
 assert.deepEqual(calmed(G.forecast(calm).fronts.south), ['간섭군 병사에게 선전 −2']);
@@ -298,12 +314,7 @@ assert.deepEqual(calmed(G.forecast(calm).fronts.south), ['간섭군 병사에게
 
 // A thin southern front left empty loses Tula, and the war.
 const lost = G.start();
-for (let i = 0; i < 2; i++) {
-    G.act(lost, 'choose', historical(G.turnData(lost)));
-    plan(lost);
-    send(lost);
-    G.act(lost, 'next');
-}
+until(lost, 'kolchak');
 lost.lines.south = 1;
 G.act(lost, 'choose', historical(G.turnData(lost)));
 answer(lost);
@@ -327,13 +338,18 @@ assert.equal(eastForecast.momentum, 6, '8 short: three cities beyond Kazan, +2 e
 assert.ok(send(empty));
 assert.ok(G.act(empty, 'next'));
 const autumn = G.forecast(empty).fronts.east;
-assert.equal(autumn.pressure, D.turns[1].threats.east.pressure + 6);
-assert.deepEqual(autumn.pressureParts, ['적의 기세 +6']);
+assert.equal(autumn.pressure, G.turnData(empty).threats.east.pressure + 6 + 2);
+assert.deepEqual(autumn.pressureParts, ['적의 기세 +6', '체코 군단 +2']);
 clear(empty);
 assert.ok(G.act(empty, 'alloc', 'east', empty.plan.divisions));
-G.act(empty, 'choose', 'razverstka');
+assert.ok(G.act(empty, 'play', 'train', 'east'));
+assert.ok(G.act(empty, 'commissar', 'east', true));
+G.act(empty, 'choose', historical(G.turnData(empty)));
+// A fight that takes no city back still leaves no more than its own shortfall.
+const carried = G.forecast(empty).fronts.east;
 send(empty);
-assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries into');
+assert.ok(carried.pressureParts.includes('적의 기세 +6'));
+assert.ok(empty.momentum.east < 6, `momentum is spent in the fight it carries into (${empty.momentum.east})`);
 
 // Strength to spare chases the beaten enemy: each STEP beyond the city
 // gained takes PURSUIT off the front's next fight, and it is spent there.
@@ -350,10 +366,11 @@ assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries 
     send(s); G.act(s, 'next');
     G.act(s, 'alloc', 'volga', s.plan.divisions);    // no reserve against the Cossack raid
     const autumn = G.forecast(s).fronts.volga;
-    assert.equal(autumn.pressure, D.turns[1].threats.volga.pressure - volga.pursuit);
-    assert.deepEqual(autumn.pressureParts, [`추격 −${volga.pursuit}`]);
+    const eased = Math.min(G.turnData(s).threats.volga.pressure, volga.pursuit);
+    assert.equal(autumn.pressure, G.turnData(s).threats.volga.pressure - eased);
+    assert.deepEqual(autumn.pressureParts, [`추격 −${eased}`]);
     G.act(s, 'alloc', 'volga', 0);
-    G.act(s, 'choose', 'razverstka'); send(s);
+    G.act(s, 'choose', historical(G.turnData(s))); send(s);
     assert.equal(s.pursuit.volga, 0, 'pursuit is spent in the fight it eases');
 }
 
@@ -409,7 +426,8 @@ assert.equal(empty.momentum.east, 0, 'momentum is spent in the fight it carries 
 }
 // A save from before the railway rule replays under the old rules.
 {
-    const old = G.restore({ version: G.VERSION, log: JSON.parse(G.serialize(hist)).log });
+    // History's war as a rules-6 save played it, on the older calendar.
+    const old = G.restore({ version: G.VERSION, log: JSON.parse(G.serialize(campaign(historical, {}, undefined, 6))).log });
     assert.equal(old.rules, 1);
     assert.ok(old.records.length >= 2);
     for (const r of old.records) for (const f of Object.values(r.fronts)) assert.equal(f.moved, 0);
@@ -460,7 +478,7 @@ assert.equal(G.restore('{'), null);
     const third = late.log.findIndex((e, i) => e[0] === 'next' && late.log.slice(0, i).filter(x => x[0] === 'next').length === 2);
     late.log.splice(third + 2, 0, ['alloc', 'east', 99]);
     const back = G.restore(JSON.stringify(late));
-    assert.equal(back.turn, 3);
+    assert.equal(back.turn, G.calendar(back)[3]);
     assert.equal(back.phase, 'plan');
     assert.equal(back.log[back.log.length - 1][0], 'next', 'no order of that season kept');
 }
@@ -791,7 +809,7 @@ assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), fal
     };
     const won = march(true), lost = march(false);
     assert.equal(won.lines.west, 3, 'Warsaw taken');
-    assert.equal(lost.lines.west, D.fronts.west.history[6], 'routed before the Vistula as history');
+    assert.equal(lost.lines.west, D.fronts.west.history[lost.turn], 'routed before the Vistula as history');
     assert.ok(won.flags.warsawTaken && !lost.flags.warsawTaken);
     assert.equal(won.deserted, 0);
     assert.equal(lost.deserted, D.fronts.west.cap.failed.deserted);
@@ -843,8 +861,7 @@ assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), fal
 {
     // Decossackization suspended: the southern front's pressure eases.
     const s = G.start();
-    for (let i = 0; i < 2; i++) { G.act(s, 'choose', historical(G.turnData(s))); plan(s); send(s); G.act(s, 'next'); }
-    assert.equal(G.turnData(s).id, 'kolchak');
+    until(s, 'kolchak');
     G.act(s, 'choose', 'flank');
     G.act(s, 'respond', 'enforce');
     const enforced = G.forecast(s).fronts.south.pressure;
@@ -865,14 +882,13 @@ assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), fal
     // Crimea alone in 1920 and joins at Perekop; executed, never.
     const pardoned = campaign(historical);
     assert.ok(pardoned.flags.mironov);
-    const executed = campaign(historical, {}, t => (t.incident.id === 'mironov' ? 'execute' : t.incident.history));
+    const executed = campaign(historical, {}, inc => (inc.id === 'mironov' ? 'execute' : inc.history));
     assert.equal(executed.flags.mironov, undefined);
     const at = (answerMironov) => {
         const s = G.start();
         while (G.turnData(s).id !== 'perekop') {
             G.act(s, 'choose', historical(G.turnData(s)));
-            const inc = G.turnData(s).incident;
-            if (inc) G.act(s, 'respond', inc.id === 'mironov' ? answerMironov : inc.history);
+            for (const inc of G.incidentsOf(s)) G.act(s, 'respond', inc.id === 'mironov' ? answerMironov : inc.history);
             plan(s); send(s); G.act(s, 'next');
         }
         return s;
@@ -887,12 +903,12 @@ assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), fal
     assert.equal(G.cardOffered(at('execute'), 'mironov'), false);
 }
 
-// The campaign fights Kazan when the autumn of 1918 is sent, and its
+// The campaign fights Kazan when September 1918 is sent, and its
 // result joins the east's strength before the settlement.
 {
     const s = G.start();
-    G.act(s, 'choose', 'experts'); plan(s); G.act(s, 'settle'); G.act(s, 'next');
-    G.act(s, 'choose', 'razverstka'); plan(s);
+    until(s, 'kazan');
+    G.act(s, 'choose', 'terror'); plan(s);
     assert.ok(G.musterOf(s).units.find(u => u.id === 'k2a'));
     assert.ok(G.act(s, 'settle'));
     assert.equal(s.phase, 'battle');
@@ -1202,6 +1218,94 @@ for (const [rules, warsaw] of [[5, null], [6, null], [6, 'won']]) {
     assert.equal(G.restore(G.serialize(s)).captured, 1);
 }
 
+// Rules 7: the autumn of 1918 splits into Kazan (September) and
+// Tsaritsyn (October–December); an older save keeps the one season, and
+// the incidents rules 7 brings stay out of it.
+{
+    const ids = s => G.calendar(s).map(i => D.turns[i].id);
+    assert.deepEqual(ids(G.start()).slice(0, 4), ['czech', 'kazan', 'tsaritsyn', 'kolchak']);
+    assert.deepEqual(ids(G.start(6)).slice(0, 3), ['czech', 'volga', 'kolchak']);
+    for (const id of Object.keys(D.fronts)) {
+        const [volga, split] = ['volga', 'tsaritsyn'].map(t => D.fronts[id].history[D.turns.findIndex(x => x.id === t)]);
+        assert.equal(volga, split, `${id}: the split season ends where the whole one did`);
+    }
+    const kolchak = D.turns.findIndex(t => t.id === 'kolchak');
+    const at = rules => { const s = G.start(rules); s.turn = kolchak; return G.incidentsOf(s).map(x => x.id); };
+    assert.deepEqual(at(6), ['decossack']);
+    assert.deepEqual(at(7), ['decossack', 'congress8']);
+    assert.equal(hist.battles.tsaritsyn.result, 'won', "history's plan holds Tsaritsyn");
+    assert.ok(hist.battles.tsaritsyn.turns > D.battles.tsaritsyn.reward.quick, 'as history did, not sooner');
+}
+
+// Tsaritsyn, a board to be held: the station left to its garrison falls;
+// Zhloba coming up behind the Don Army as history had it wins with the
+// plan's strength met, not without it; turning Dumenko's cavalry south as
+// well retakes Sarepta in time for the quick win.
+{
+    const def = D.battles.tsaritsyn;
+    const muster = margin => ({ margin, fed: 1, commissar: true, cards: [] });
+    const play = (routes, margin, feats) => {
+        const b = B.start(def, {}, muster(margin), { rules: 7 });
+        return drive(b, routes, (name, ...args) => B.act(b, name, ...args), { feats });
+    };
+    const still = { 'tkh,tvr,tkp,tku,tar,tfl,tdm,twk,tlr,tzh': null };
+    for (const m of [0, 3, 6]) assert.equal(play(still, m).result, 'lost', `the city does not hold itself (margin ${m})`);
+    for (const m of [0, 1.5, 3]) {
+        const b = play(TSARITSYN, m);
+        assert.equal(b.result, 'won', `history's way holds at margin ${m}`);
+        assert.ok(b.turn > def.reward.quick, `not sooner than history (margin ${m}, turn ${b.turn})`);
+    }
+    assert.equal(play(TSARITSYN, -1).result, 'lost', 'short of the pressure the city falls');
+    const south = Object.assign({}, { tzh: [{ r: 8, c: 6 }, { r: 8, c: 8 }, SAREPTA], tfl: [{ r: 8, c: 10 }], tdm: [{ r: 6, c: 9 }, { r: 7, c: 9 }, SAREPTA], 'tkh,tvr,tkp,tku,tar,twk,tlr': null });
+    const quick = play(south, 3, true);
+    assert.equal(quick.result, 'won');
+    assert.ok(quick.turn <= def.reward.quick, `Sarepta retaken quickly (${quick.turn})`);
+    // Kept to the last turn without the goal, the board is won as held.
+    const quiet = Object.assign({}, def, { units: def.units.filter(u => u.side === 'red' || u.role === 'hold') });
+    const b = B.start(quiet, {}, muster(0), { rules: 7 });
+    while (!b.result) assert.ok(B.act(b, 'end'));
+    assert.deepEqual([b.result, b.held, b.turn], ['won', true, def.turnLimit]);
+}
+
+// The Tsaritsyn group backed against the front's commander: the city
+// eases this season, the southern front pays the next.
+{
+    const s = G.start();
+    until(s, 'tsaritsyn');
+    G.act(s, 'choose', historical(G.turnData(s)));
+    assert.ok(G.act(s, 'respond', 'recall'));
+    const recalled = G.forecast(s).fronts.volga.pressure;
+    assert.ok(G.act(s, 'respond', 'tsaritsyn'));
+    assert.equal(G.forecast(s).fronts.volga.pressure, recalled - 2);
+    plan(s); assert.ok(send(s)); assert.ok(G.act(s, 'next'));
+    assert.ok(s.flags.tsaritsynGroup);
+    assert.ok(G.forecast(s).fronts.south.pressureParts.includes('남부전선의 지휘 혼란 +3'));
+}
+// The military opposition's theses: specialists as advisers from the
+// next season, and the divisions are worse for it.
+{
+    const s = G.start();
+    until(s, 'kolchak');
+    G.act(s, 'choose', historical(G.turnData(s)));
+    assert.ok(G.act(s, 'respond', 'opposition'));
+    const q = G.quality(s);
+    plan(s); assert.ok(send(s)); assert.ok(G.act(s, 'next'));
+    assert.equal(Math.round((q - G.quality(s)) * 100), 15);
+}
+// The southern axis kept on the Don steppe: the south carries it.
+{
+    const s = G.start();
+    until(s, 'orel');
+    G.act(s, 'choose', historical(G.turnData(s)));
+    assert.ok(G.act(s, 'respond', 'shift'));
+    const shifted = G.forecast(s).fronts;
+    assert.ok(G.act(s, 'respond', 'don'));
+    const kept = G.forecast(s).fronts;
+    assert.equal(kept.south.pressure, shifted.south.pressure + 3);
+    assert.equal(kept.volga.pressure, shifted.volga.pressure - 2);
+    assert.ok(kept.south.pressureParts.includes('남부전선의 주공은 어디로 +3'));
+}
+
 // Voices: every season has a few, short enough for a bubble; every board
 // opens with one (where they speak from and who is drawn is the scenario
 // check's).
@@ -1211,7 +1315,7 @@ for (const t of D.turns) {
 }
 for (const [id, def] of Object.entries(D.battles)) assert.ok(def.voices && def.voices.some(v => v.when === 'start'), `${id}: opening voices`);
 // Every dilemma and incident is argued out by at least two speakers.
-for (const t of D.turns) for (const x of [t.choice, t.incident].filter(Boolean)) assert.ok(x.talk && x.talk.length >= 2, `${t.id}: ${x.title} debate`);
+for (const t of D.turns) for (const x of [t.choice].concat(t.incident || [])) assert.ok(x.talk && x.talk.length >= 2, `${t.id}: ${x.title} debate`);
 for (const id of Object.keys(A.people)) assert.match(A.portrait(id, id), /role="img"/);
 
 // A war lost in a battle (Mtsensk left to the Kornilov regiment, Tula falls)

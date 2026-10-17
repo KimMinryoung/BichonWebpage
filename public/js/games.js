@@ -15,7 +15,8 @@
         const war = window.WarEngine.create(civilWar).restore(localStorage.getItem(civilWar.ui.save));
         if (war && war.phase !== 'done') {
             const turn = civilWar.turns[war.turn];
-            show('gamesCivilWarResume', `${war.turn + 1}/${civilWar.turns.length} 시기 이어하기 →`);
+            const days = window.WarEngine.create(civilWar).calendar(war);
+            show('gamesCivilWarResume', `${days.indexOf(war.turn) + 1}/${days.length} 시기 이어하기 →`);
             show('gamesCivilWarProgress', `${turn.date} ${turn.title} · 이 브라우저에 저장됨`);
         }
         const progress = JSON.parse(localStorage.getItem('nonogram-progress-v2') || '{}');

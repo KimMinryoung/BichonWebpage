@@ -185,7 +185,7 @@
         renderMap();
         renderFronts(planning);
         for (const id of ['cwCards', 'cwChoice', 'cwCommand']) $(id).hidden = !planning;
-        $('cwIncident').hidden = !planning || !G.incidentOf(s);
+        $('cwIncident').hidden = !planning || !G.incidentsOf(s).length;
         $('cwReview').hidden = planning || unveiling;
         renderUnveil();
         if (planning) { renderCards(); renderIncident(); renderChoice(); renderCommand(); } else renderReview();
@@ -228,10 +228,12 @@
 
     function renderHud() {
         const t = G.turnData(s);
-        $('cwDate').textContent = `${s.turn + 1}/${D.turns.length} 시기 · ${t.date}`;
+        // The war's own calendar (a newer one splits a season of an older save).
+        const days = G.calendar(s);
+        $('cwDate').textContent = `${days.indexOf(s.turn) + 1}/${days.length} 시기 · ${t.date}`;
         $('cwTitle').textContent = t.title;
         const cal = $('cwCalendar');
-        cal.replaceChildren(...D.turns.map((turn, i) => el('li', {
+        cal.replaceChildren(...days.map(i => [D.turns[i], i]).map(([turn, i]) => el('li', {
             class: i < s.turn ? 'is-past' : i === s.turn ? 'is-current' : '',
             'aria-current': i === s.turn ? 'step' : null, title: `${turn.date} ${turn.title}`,
         }, el('span', {}, turn.date.replace(/년 .*/, '')), el('small', {}, turn.title))));
@@ -1201,7 +1203,8 @@
     // season opens, in the review the one it ends on.
     function renderControlPhase() {
         const t = G.turnData(s);
-        const index = s.phase === 'plan' ? (s.turn ? D.turns[s.turn - 1].phase : 0) : t.phase;
+        const before = G.prevOf(s.turn);
+        const index = s.phase === 'plan' ? (before < 0 ? 0 : D.turns[before].phase) : t.phase;
         mapEl.classList.toggle('is-history', historyMap);
         paintBasemap();
         mapEl.querySelectorAll('.emap-phase').forEach(g => g.classList.toggle('is-current', Number(g.dataset.phase) === index));
@@ -1666,16 +1669,17 @@
             }, el('strong', {}, o.label), el('span', {}, o.effect)))));
     }
 
-    // The season's incident: what happened, and the answers to it.
+    // The season's incidents: what happened, and the answers to each; a
+    // season with two counts them in the kicker.
     function renderIncident() {
-        const inc = G.incidentOf(s);
-        if (!inc) return;
-        $('cwIncident').replaceChildren(
-            el('p', { class: 'games-kicker' }, '돌발 사건 · 대응을 하나 고릅니다'),
-            el('h3', { id: 'cwIncidentTitle' }, inc.title),
+        const list = G.incidentsOf(s);
+        if (!list.length) return;
+        $('cwIncident').replaceChildren(...list.flatMap((inc, i) => [
+            el('p', { class: 'games-kicker' + (i ? ' cw-incident-next' : '') }, `돌발 사건${list.length > 1 ? ` ${i + 1}/${list.length}` : ''} · 대응을 하나 고릅니다`),
+            el('h3', { id: i ? null : 'cwIncidentTitle' }, inc.title),
             ...setting(inc),
             el('div', { class: 'cw-options', role: 'group', 'aria-label': inc.title }, ...inc.options.map(o => el('button', {
-                type: 'button', class: 'cw-option', 'data-key': `respond-${o.id}`, 'aria-pressed': String(s.plan.response === o.id),
+                type: 'button', class: 'cw-option', 'data-key': `respond-${o.id}`, 'aria-pressed': String(s.plan.responses[inc.id] === o.id),
                 onclick: () => {
                     if (!act('respond', o.id)) {
                         const card = (o.bars || []).map(id => D.cards[id]).find(Boolean);
@@ -1683,7 +1687,7 @@
                     }
                     render();
                 },
-            }, el('strong', {}, o.label), el('span', {}, o.effect)))));
+            }, el('strong', {}, o.label), el('span', {}, o.effect))))]));
     }
 
     function renderCommand() {
@@ -1695,10 +1699,10 @@
             onclick: () => { const box = $(target); if (box) { box.scrollIntoView({ block: 'start', behavior: stillMotion() ? 'auto' : 'smooth' }); } },
         }, done ? '✓ ' : '', label);
         $('cwTodo').replaceChildren(
-            G.incidentOf(s) ? todo(Boolean(s.plan.response), '돌발 사건', 'cwIncident') : '',
+            G.incidentsOf(s).length ? todo(G.incidentsOf(s).every(inc => G.responseOf(s, inc)), '돌발 사건', 'cwIncident') : '',
             todo(Boolean(s.plan.choice), '갈림길', 'cwChoice'),
             todo(kept === 0, `${U.unit} ${G.allocated(s)}/${s.plan.divisions}`, 'cwFronts'));
-        const missing = [G.incidentOf(s) && !s.plan.response ? '돌발 사건' : null, !s.plan.choice ? '갈림길' : null].filter(Boolean);
+        const missing = [G.incidentsOf(s).some(inc => !G.responseOf(s, inc)) ? '돌발 사건' : null, !s.plan.choice ? '갈림길' : null].filter(Boolean);
         $('cwCommandNote').textContent = missing.length ? `${missing.join('과 ')}을 골라야 보낼 수 있다`
             : `${U.food} 소비 ${G.forecast(s).supply.need}` + (saved > 0 ? ` (예비 −${saved})` : '');
         $('cwSettle').disabled = !G.canSettle(s);
@@ -1723,7 +1727,7 @@
         const r = def && !def.final && s.battles[def.id];
         if (!r) return null;
         const v = G.battleResult(s, def.front);
-        const result = r.assumed ? '역사대로 이겼다 (전투가 생기기 전의 저장)' : r.result === 'won' ? `${r.turns}턴에 이겼다` : '이기지 못했다';
+        const result = foughtText(r);
         // A battle with a reward moves its front's strength; one that opens
         // a front's last cities says what it decided.
         const effect = def.reward ? [` · ${D.fronts[def.front].name} 전투력 `, v ? signed(v.v) : '그대로'] : [` · ${def.outcome[r.result === 'won' ? 'won' : 'lost']}`];
@@ -1731,6 +1735,13 @@
             el('p', { class: 'games-kicker' }, def.title),
             el('p', {}, el('strong', {}, result), ...effect, battleFeats(def, r)),
             el('p', {}, def.history));
+    }
+
+    // How a fought battle went: won in n turns, held to the end, lost.
+    function foughtText(r) {
+        if (r.assumed) return '역사대로 이겼다 (전투가 생기기 전의 저장)';
+        if (r.result !== 'won') return '이기지 못했다';
+        return r.held ? `${r.turns}턴을 버텼다` : `${r.turns}턴에 이겼다`;
     }
 
     // The feats used and the units that surrendered in a fought battle.
@@ -1770,7 +1781,7 @@
             r.notes.length ? el('ul', { class: 'cw-notes' }, ...r.notes.map(n => el('li', {}, n))) : null,
             spoilsOf(r),
             foughtBattle(),
-            incidentHistory(t, r),
+            ...incidentHistory(t, r),
             el('div', { class: 'cw-history' },
                 el('p', { class: 'games-kicker' }, '역사에서는'),
                 el('h4', {}, c.title),
@@ -1785,17 +1796,20 @@
     // The season's incident in the review: the answer given, history's, and
     // what came of it.
     function incidentHistory(t, r) {
-        const inc = t.incident;
-        if (!inc || !r.response) return null;
-        const mine = inc.options.find(o => o.id === r.response);
-        const theirs = inc.options.find(o => o.id === inc.history);
-        return el('div', { class: 'cw-history' },
-            el('p', { class: 'games-kicker' }, '돌발 사건'),
-            el('h4', {}, inc.title),
-            el('p', {}, el('strong', {}, `당신: ${mine.label}`), ' · ', el('strong', {}, `역사: ${theirs.label}`), mine === theirs ? ' (같은 대응)' : ''),
-            el('p', {}, inc.after),
-            el('p', { class: 'cw-links' }, ...inc.links.map(link)));
+        return answeredIn(t, r).map(([inc, picked]) => {
+            const mine = inc.options.find(o => o.id === picked);
+            const theirs = inc.options.find(o => o.id === inc.history);
+            return el('div', { class: 'cw-history' },
+                el('p', { class: 'games-kicker' }, '돌발 사건'),
+                el('h4', {}, inc.title),
+                el('p', {}, el('strong', {}, `당신: ${mine.label}`), ' · ', el('strong', {}, `역사: ${theirs.label}`), mine === theirs ? ' (같은 대응)' : ''),
+                el('p', {}, inc.after),
+                el('p', { class: 'cw-links' }, ...inc.links.map(link)));
+        });
     }
+
+    // A season's incidents as answered in its record: [incident, option id].
+    const answeredIn = (t, r) => [].concat(t.incident || []).filter(inc => r.responses && r.responses[inc.id]).map(inc => [inc, r.responses[inc.id]]);
 
     // ── Battle ──
 
@@ -2044,7 +2058,7 @@
             def.windTurns ? (B.fordOpen(b) ? `${def.ford} 여울 열림 (${def.windTurns - b.turn + 1}턴 남음)` : `바람이 바뀌어 ${def.ford}에 물이 찼다`) : null,
             ...Object.entries(def.lines).map(([id, l]) => b.turned[id] ? `${l.name} 우회됨: 수비대의 진지 방어가 +1로 줄었다` : `${l.name}: 노란 점선 안에 부대를 세우면 우회된다`),
             !Object.keys(def.sectors).length ? null : b.reserve ? `${foeName()} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶여 있다` : `${foeName()} 예비대는 아직 움직이지 않았다`,
-            def.protect ? `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 진다${B.unitAt(b, ...def.protect.at) ? '' : ' · 지금 비어 있다'}` : null,
+            def.protect ? `${def.protect.name}: ${def.outlast ? `${def.turnLimit}턴이 끝날 때까지 지키면 이긴다 · ` : ''}${josa(foeName(), '이', '가')} 들어서면 진다${B.unitAt(b, ...def.protect.at) ? '' : ' · 지금 비어 있다'}` : null,
         ];
         const hint = foe ? null : el('p', {}, `${josa(U.playerUnits, '을', '를')} 누르면 갈 수 있는 칸(노란 점선)과 칠 수 있는 적(예상 피해 표시)이 나옵니다. 포병은 진지 위의 적을 칠 때마다 그 진지의 방어를 1 깎습니다. ${foeName()} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 나옵니다. 우클릭·Esc·「취소」는 이번 턴의 명령을 하나씩 되돌립니다.`);
         const goalAt = def.goals.length;
@@ -2287,7 +2301,7 @@
         if (left > 0) window.setTimeout(() => { if (battleEnded) renderBattle(); }, left + 30);
         const final = s.phase === 'done';
         return el('div', { class: 'cw-battle-actions cw-battle-close' },
-            el('p', {}, el('strong', {}, b.result === 'won' ? `${b.turn}턴에 이겼다` : '이기지 못했다')),
+            el('p', {}, el('strong', {}, foughtText({ result: b.result, turns: b.turn, held: b.held }))),
             left > 0 ? null : el('button', { type: 'button', class: 'cw-primary', 'data-key': 'leave', onclick: leaveBattle }, final ? '결과 보기 →' : '전선의 움직임 →'));
     }
 
@@ -2420,15 +2434,15 @@
             el('thead', {}, el('tr', {}, el('th', { scope: 'col' }, '시기'), el('th', { scope: 'col' }, '갈림길'), el('th', { scope: 'col' }, '당신의 선택'), el('th', { scope: 'col' }, '역사의 선택'))),
             el('tbody', {}, ...s.records.flatMap(r => {
                 // The season's fork, then its incident if it had one.
-                const inc = D.turns[r.turn].incident;
-                const forks = [[D.turns[r.turn].choice, r.choice]].concat(inc && r.response ? [[inc, r.response]] : []);
+                const incs = answeredIn(D.turns[r.turn], r);
+                const forks = [[D.turns[r.turn].choice, r.choice]].concat(incs);
                 return forks.map(([c, picked]) => {
                     const mine = c.options.find(o => o.id === picked);
                     const theirs = c.options.find(o => o.id === c.history);
                     const same = mine === theirs;
-                    return el('tr', { class: (same ? 'is-same' : '') + (c === inc ? ' is-incident' : '') },
+                    return el('tr', { class: (same ? 'is-same' : '') + (c !== D.turns[r.turn].choice ? ' is-incident' : '') },
                         el('td', { 'data-label': '시기' }, D.turns[r.turn].date),
-                        el('th', { scope: 'row', 'data-label': c === inc ? '돌발 사건' : '갈림길' }, c === inc ? el('small', { class: 'cw-fork-kind' }, '돌발 사건') : null, c.title, el('span', { class: 'cw-links' }, ...c.links.map(link))),
+                        el('th', { scope: 'row', 'data-label': c !== D.turns[r.turn].choice ? '돌발 사건' : '갈림길' }, c !== D.turns[r.turn].choice ? el('small', { class: 'cw-fork-kind' }, '돌발 사건') : null, c.title, el('span', { class: 'cw-links' }, ...c.links.map(link))),
                         el('td', { 'data-label': '당신의 선택' }, el('strong', {}, mine.label), el('small', {}, mine.effect)),
                         el('td', { 'data-label': '역사의 선택' }, same ? el('span', { class: 'cw-same' }, '같음') : el('strong', {}, theirs.label), same ? null : el('small', {}, theirs.effect)));
                 });
@@ -2436,7 +2450,7 @@
         const battles = Object.values(D.battles).filter(def => s.battles[def.id]).map(def => {
             const r = s.battles[def.id];
             const turned = r.turned.map(id => def.lines[id].name);
-            return el('li', {}, el('strong', {}, def.title), ' · ', r.assumed ? '역사대로 이겼다 (전투가 생기기 전의 저장)' : r.result === 'won' ? `${r.turns}턴에 이겼다` : '이기지 못했다',
+            return el('li', {}, el('strong', {}, def.title), ' · ', foughtText(r),
                 turned.length ? ` · 우회한 방어선: ${turned.join(', ')}` : '', battleFeats(def, r));
         });
         const support = U.hud
@@ -2470,11 +2484,11 @@
         node.append(svg('polyline', { points: values.map((v, i) => `${x(i)},${y(v)}`).join(' '), class: 'cw-spark-line' }));
         values.forEach((v, i) => {
             const dot = svg('circle', { cx: x(i), cy: y(v), r: 3.5, class: 'cw-spark-dot' + (mark !== null && v < mark ? ' is-low' : '') });
-            dot.append(svg('title', {}, `${i ? D.turns[i - 1].date + ' 뒤' : '시작'}: ${v}`));
+            dot.append(svg('title', {}, `${i ? D.turns[s.records[i - 1].turn].date + ' 뒤' : '시작'}: ${v}`));
             node.append(dot);
         });
         node.append(svg('text', { x: L, y: H - 4, class: 'cw-spark-axis' }, '1918'));
-        node.append(svg('text', { x: W - R, y: H - 4, 'text-anchor': 'end', class: 'cw-spark-axis' }, D.turns[values.length - 2].date.slice(0, 5)));
+        node.append(svg('text', { x: W - R, y: H - 4, 'text-anchor': 'end', class: 'cw-spark-axis' }, D.turns[s.records[values.length - 2].turn].date.slice(0, 5)));
         const last = values[values.length - 1];
         return el('figure', {}, el('figcaption', {}, label, ' ', el('strong', {}, String(last)), mark !== null ? el('small', {}, ` · 기준 ${mark}`) : null), node);
     }

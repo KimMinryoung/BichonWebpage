@@ -1,6 +1,6 @@
 # 전쟁 게임 엔진 `public/js/war/` — 시나리오 작성 기준
 
-갱신: 2026-10-16 (규칙 6: 전투로 여는 `cap`과 그 보상, 조건 있는 전투·카드, 적 역할 `push`) / 2026-10-15 (「붉은 전선」에서 공통 엔진을 떼어 냄)
+갱신: 2026-10-17 (규칙 7: 규칙 세대마다의 달력(시기의 `when`), 한 시기의 사건 목록과 사건의 `when`, 지키는 전투 `outlast`) / 2026-10-16 (규칙 6: 전투로 여는 `cap`과 그 보상, 조건 있는 전투·카드, 적 역할 `push`) / 2026-10-15 (「붉은 전선」에서 공통 엔진을 떼어 냄)
 
 「붉은 전선 1918–1920」의 규칙·전투·화면을 시나리오와 떼어 놓은 공통 엔진이다. 다른 시대의 전쟁은 **시나리오 파일 하나**(+ 지도의 세력 범위 문서, 라우트 한 줄)로 더한다. 편집 GUI는 없다. 이 문서는 시나리오를 쓰는 사람(미래의 Claude)을 위한 레퍼런스다. 「붉은 전선」 고유의 설계·밸런스는 [civil-war-game.md](civil-war-game.md).
 
@@ -89,10 +89,11 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 ### 4.5 시기 `turns[t]`
 
-`id`, `date`, `end: [년, 월]`, `title`, `mobilize`(기본 동원), `commissars`, `army: [[troop id, n]…]`(합이 `mobilize`), `brief[]`, `voices[]`, `threats`, `cards[]`, `choice`, `incident`(선택), `battle`(선택, `battles`의 id), `after`, `links`.
+`id`, `date`, `end: [년, 월]`, `title`, `when`(선택, 규칙 세대 조건만: 그 세대의 달력에 드는 시기), `mobilize`(기본 동원), `commissars`, `army: [[troop id, n]…]`(합이 `mobilize`), `brief[]`, `voices[]`, `threats`, `cards[]`, `choice`, `incident`(선택), `battle`(선택, `battles`의 id), `after`, `links`.
 - `threats[front] = { pressure, foes[], text, who }` — 이 시기에 싸우는 전선. 압력은 "역사만큼 해내는 데 필요한 전투력"이다.
 - `choice = { title, text, who, talk, options: [{ id, label, effect, flag, divisions, 스탯: n }], history, after, links }`. `text`는 발단 서술, `talk: [{ who: [이름, 인물 id] | as: '이름', text }]`는 그 아래 차례로 말하는 논쟁(각색한 대사, 출처 없음). `talk`이 없으면 `text` 뒤에 `who` 칩 하나만 나온다.
-- `incident`는 같은 꼴에 선택지가 `pressure: { front: n }`, `bars: [card]`를 더 가진다.
+- `incident`는 같은 꼴에 선택지가 `pressure: { front: n }`, `bars: [card]`를 더 가진다. 사건 하나이거나 목록이고, 사건마다 `when`(조건)을 둘 수 있다. 대응 id는 그 시기의 모든 사건에서 겹치지 않아야 한다(검사기). 계획의 대응은 `plan.responses[사건 id]`, 엔진 `incidentsOf(s)`·`responseOf(s, 사건)`.
+- **달력.** 시기 목록은 모든 규칙 세대의 시기를 담는다. `when`이 서는 시기만 그 판의 달력(`calendar(s)`)이고, `s.turn`은 목록의 번호다. 「직전 시기」(역사의 변화, 계획 시작 때의 세력 범위)는 목록에서 앞에 있으면서 `end`가 더 이른 시기(`prevOf`)다. 한 시기를 둘로 나눌 때는 옛 시기 뒤에 두 시기를 넣고 옛 시기에 `when: { rules: ['<', n] }`, 새 시기에 `>= n`을 단다. 나뉜 뒤쪽 시기와 옛 시기는 같은 `end`와 같은 `history` 값을 가져야 한다.
 - `voices[] = { by | who, at, text, src }` — `at`은 싸우는 전선이나 `map.hubId`. `by`(세력)는 그 전선을 치는 세력이어야 한다. `src: [출처, https 주소]`가 없으면 「각색」.
 
 ### 4.6 규칙 절
@@ -131,7 +132,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 ### 4.8 전투 `battles[id]`
 
-`id`, `sides: { player, enemy }`(부대 `side` 값; 화면은 player를 빨간 클래스 `is-red`, enemy를 `is-white`로 칠한다), `front`(그 전선의 계획이 부대를 정함), `final`(마지막 전투면 정산 뒤에 치르고 끝나면 평가), `when`(조건이 설 때만 그 시기에 열림), `reward: { quick, quickBy, lostBy }`(시기 전투. 없으면 전선의 `cap.battle`이고 `stakes`(편성 줄의 글)·`outcome: { won, lost }`(결산의 글)가 있어야 한다), `enemyName`(전투 화면에서 적을 부르는 이름, 없으면 `ui.enemy`), `title`, `date`, `settle`·`open`·`board`(버튼·제목 문구), `map: ['문자열'…]`, `terrain[문자] = { name, cost(99=못 감), def, water, span, ford, fort, cls }`, `legend`, `goals: [{ at: [행, 열], name }]`, `protect`, `rails`, `towns`, `places`, `lines[id] = { name, rear: { rows, cols }, label, fallback }`, `sectors[id] = { name, rows?, cols?, alarm: { axis: 'r'|'c', at, dir } }`, `windTurns`(여울이 닫히는 턴), `air: { turn, units, dmg }`, `turnLimit`, `units`, `voices`, `summary`, `brief`, `history`, `strikeNote`·`raidNote`·`pushNote`·`ford`·`reserveName`(화면 문구), `kinds`(병종 성질 덧붙이기).
+`id`, `sides: { player, enemy }`(부대 `side` 값; 화면은 player를 빨간 클래스 `is-red`, enemy를 `is-white`로 칠한다), `front`(그 전선의 계획이 부대를 정함), `final`(마지막 전투면 정산 뒤에 치르고 끝나면 평가), `outlast`(지키는 판: `protect`를 `turnLimit` 턴 끝까지 지키면 이김 `b.held`, 그 전에 `goals`에 서면 일찍 이김), `when`(조건이 설 때만 그 시기에 열림), `reward: { quick, quickBy, lostBy }`(시기 전투. 없으면 전선의 `cap.battle`이고 `stakes`(편성 줄의 글)·`outcome: { won, lost }`(결산의 글)가 있어야 한다), `enemyName`(전투 화면에서 적을 부르는 이름, 없으면 `ui.enemy`), `title`, `date`, `settle`·`open`·`board`(버튼·제목 문구), `map: ['문자열'…]`, `terrain[문자] = { name, cost(99=못 감), def, water, span, ford, fort, cls }`, `legend`, `goals: [{ at: [행, 열], name }]`, `protect`, `rails`, `towns`, `places`, `lines[id] = { name, rear: { rows, cols }, label, fallback }`, `sectors[id] = { name, rows?, cols?, alarm: { axis: 'r'|'c', at, dir } }`, `windTurns`(여울이 닫히는 턴), `air: { turn, units, dmg }`, `turnLimit`, `units`, `voices`, `summary`, `brief`, `history`, `strikeNote`·`raidNote`·`pushNote`·`ford`·`reserveName`(화면 문구), `kinds`(병종 성질 덧붙이기).
 
 부대: `id`, `tag`, `side`, `name`, `sub`, `kind`(`inf`·`cav`·`art`… `art`는 반격 없음·진지 마모, `KINDS`), `at`, `hp`, `atk`, `def`, `mv`, `range`, `naval`, `rail`(철길로만, 그림은 열차), `role`(적: `hold`·`wall`·`raid`·`strike`·`push`, `ROLES`. `push`는 지킬 거점으로 가되 습격과 달리 상대 부대 곁에서 멈춘다), `line`, `wake`, `lead`(지휘관이 오면 방어 +1), `need`(여유가 이만큼이면 출전), `card`(그 카드를 보내면 출전), `flag`, `person`, `feat`(`FEATS`: `strike`·`assault`·`muster`·`ride`·`ferry`), `skirmish`, `counter`·`wears`(병종 성질을 부대가 직접).
 
@@ -139,7 +140,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 ## 5. 저장과 규칙 세대
 
-저장은 `{ version: saveVersion, rules, log }`이고 `restore`가 로그를 재생한다. `rules`는 엔진 규칙의 세대다: 1 기본, 2 철도 수송 비용과 지난 배치 유지, 3 전투의 한 수·투항과 노획, 4 지도자(정치위원)는 사단이 있는 전선에만, 마지막 사단과 함께 돌아옴, 5 시기마다의 정비 비용(`economy.upkeep`), 전선 득실의 스탯 효과는 시기마다 한 번(`frontMoves.net`), 전투에서 철도 부대의 `railMv`, 그 밖에 데이터의 `rules` 조건, 6 전선의 `cap`은 그 전투로만 열리고 보상(`reached.reward`)을 줌(바르샤바 전투와 제1기병군 카드도 데이터의 `rules` 조건). 새 시나리오는 최신 세대로 시작한다(`WarEngine.RULES`). 규칙이 결과를 바꾸는 변경은 세대를 올리고 옛 세대 분기를 남겨, 옛 저장이 두던 대로 재생되게 한다. 재생이 막히면 그 시기 처음으로 돌아간다.
+저장은 `{ version: saveVersion, rules, log }`이고 `restore`가 로그를 재생한다. `rules`는 엔진 규칙의 세대다: 1 기본, 2 철도 수송 비용과 지난 배치 유지, 3 전투의 한 수·투항과 노획, 4 지도자(정치위원)는 사단이 있는 전선에만, 마지막 사단과 함께 돌아옴, 5 시기마다의 정비 비용(`economy.upkeep`), 전선 득실의 스탯 효과는 시기마다 한 번(`frontMoves.net`), 전투에서 철도 부대의 `railMv`, 그 밖에 데이터의 `rules` 조건, 6 전선의 `cap`은 그 전투로만 열리고 보상(`reached.reward`)을 줌(바르샤바 전투와 제1기병군 카드도 데이터의 `rules` 조건), 7 데이터의 `rules` 조건이 고르는 달력·사건(「붉은 전선」: 1918년 가을을 둘로 나누고 차리친 전투와 사건 셋). 새 시나리오는 최신 세대로 시작한다(`WarEngine.RULES`). 규칙이 결과를 바꾸는 변경은 세대를 올리고 옛 세대 분기를 남겨, 옛 저장이 두던 대로 재생되게 한다. 재생이 막히면 그 시기 처음으로 돌아간다.
 
 ## 6. 플레이 로그 수집
 
@@ -151,11 +152,11 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 ## 7. 골든 마스터
 
-`scripts/test-war-golden.js`는 엔진을 떼어 내기 전의 「붉은 전선」으로 기록한 전쟁 74판(역사·반대·징발·분산·동전·무작위 봇, 규칙 1–3, 모든 갈림길·전투)과 옛 저장 8개를 명령 하나마다 재생해, 규칙이 정하는 모든 것(예상·결산·전투 상태)의 해시를 비교한다. 엔진·전투·시나리오의 리팩터링은 이 해시를 하나도 바꾸지 않아야 한다. 규칙을 일부러 바꿨으면 `node scripts/test-war-golden.js --write`로 다시 기록하고 커밋 메시지에 그 사실을 적는다. 상태 모양만 바꿨으면 기록은 그대로 두고 테스트의 `view`에서 옛 이름으로 옮긴다(지금의 `food→grain`, `stats.*`, `unrest→revolt`, `fallen→petrogradFell`).
+`scripts/test-war-golden.js`는 엔진을 떼어 내기 전의 「붉은 전선」으로 기록한 전쟁 74판(역사·반대·징발·분산·동전·무작위 봇, 규칙 1–3, 모든 갈림길·전투)과 옛 저장 8개를 명령 하나마다 재생해, 규칙이 정하는 모든 것(예상·결산·전투 상태)의 해시를 비교한다. 엔진·전투·시나리오의 리팩터링은 이 해시를 하나도 바꾸지 않아야 한다. 규칙을 일부러 바꿨으면 `node scripts/test-war-golden.js --write`로 다시 기록하고 커밋 메시지에 그 사실을 적는다. 상태 모양만 바꿨으면 기록은 그대로 두고 테스트의 `view`에서 옛 이름으로 옮긴다(지금의 `food→grain`, `stats.*`, `unrest→revolt`, `fallen→petrogradFell`, `responses→response`, 시기 번호는 옛 달력의 몇 번째인지).
 
 ## 8. 남은 한계
 
 - 화면 문구는 한국어뿐이다(시나리오의 말만 바뀐다).
 - 지도는 커뮤링고 사건 지도 바탕(해안선·강)과 세력 범위 문서에 기대므로, 새 전쟁에도 그 문서가 있어야 역사 층이 나온다.
-- 한 시기에 전투는 하나다(`turn.battle`). 전략 단위 이름은 엔진 안에서 `divisions`·`commissar`로 남아 있다.
+- 한 시기에 전투는 하나다(`turn.battle`). 두 전투가 한 시기에 겹치면 시기를 나눈다(달력, 4.5). 전략 단위 이름은 엔진 안에서 `divisions`·`commissar`로 남아 있다.
 - 지도 등장 방식·세력 색(`kind`)·전투 진영 색은 CSS가 정한 몇 가지다.

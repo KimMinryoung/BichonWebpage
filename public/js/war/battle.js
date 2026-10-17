@@ -30,7 +30,9 @@
    player must hold (protect): an enemy unit standing on it ends the battle
    lost, and an enemy raider (role raid) makes for it, riding past the
    player's units; a strike group (role push) makes for it on foot,
-   halted by every player unit it meets. A unit with wake
+   halted by every player unit it meets. A board to be held (outlast)
+   is won by keeping the post through its last turn, and sooner by
+   taking its goal. A unit with wake
    stays put until that turn, and a board's air raid (air) strikes chosen
    player units at the end of one enemy turn.
 
@@ -637,6 +639,8 @@
         enemyTurn(b);
         checkResult(b);
         if (b.result) return true;
+        // A board to be held (outlast): the post kept through the last turn wins.
+        if (b.def.outlast && b.turn >= b.def.turnLimit) { b.result = 'won'; b.held = true; return true; }
         b.turn += 1;
         if (b.def.windTurns && b.turn === b.def.windTurns + 1) b.events.push({ type: 'tide' });
         if (b.turn > b.def.turnLimit) { b.result = 'lost'; return true; }

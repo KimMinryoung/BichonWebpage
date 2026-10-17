@@ -438,6 +438,7 @@
    happened, not a policy) */
 .cw-choice { border-left: 4px solid var(--cw-red); }
 .cw-incident { border-left-color: var(--cw-ink); }
+.cw-incident .cw-incident-next { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
 .cw-choice h3 { font-size: 1.25rem; margin: 6px 0 8px; }
 .cw-talk { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
 .cw-talk li { display: grid; grid-template-columns: minmax(0, max-content) 1fr; gap: 10px; align-items: start; font-size: .92rem; line-height: var(--leading-normal); }
@@ -494,6 +495,8 @@
 .cw-tile.t-crossing { fill: color-mix(in srgb, #5f93b8 50%, var(--bg-surface)); }
 .cw-tile.t-pontoon, .cw-tile.t-blown { fill: color-mix(in srgb, #2f6fb8 60%, var(--bg-surface)); }
 .cw-tile.t-trench { fill: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
+.cw-tile.t-ravine { fill: color-mix(in srgb, #7a5a2e 50%, var(--bg-surface)); }
+.cw-tile.t-works { fill: color-mix(in srgb, #7d7466 60%, var(--bg-surface)); }
 .cw-tile.is-goal { stroke: var(--clr-red); stroke-width: 3; }
 /* Tile drawings (civil-war.js tileMarks). */
 .cw-marks { pointer-events: none; }
@@ -509,6 +512,9 @@
 .cw-marks .cw-mark-wire { stroke: color-mix(in srgb, var(--text-primary) 55%, transparent); stroke-width: .8; }
 .cw-marks .cw-mark-truss { stroke: #2a2a26; stroke-width: 2; }
 .cw-marks .cw-mark-water { stroke: #ffffff; stroke-opacity: .45; stroke-width: 1.3; }
+.cw-marks .cw-mark-gully { stroke: #2e2210; stroke-opacity: .85; stroke-width: 3.2; fill: none; }
+.cw-marks .cw-mark-bank { stroke: #2e2210; stroke-opacity: .7; stroke-width: 1.2; }
+.cw-marks .cw-mark-smoke { stroke: color-mix(in srgb, var(--text-primary) 45%, transparent); stroke-width: 1.4; fill: none; }
 .cw-wear { font-size: 8px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 2px; pointer-events: none; }
 .cw-tile-label { font-size: 9px; font-weight: 700; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 2.5px; stroke-linejoin: round; pointer-events: none; }
 .cw-tile-label.is-goal { fill: var(--clr-red); font-weight: 800; }
@@ -543,6 +549,8 @@
 .cw-terrain-key .k-crossing { background: color-mix(in srgb, #5f93b8 50%, var(--bg-surface)); }
 .cw-terrain-key :is(.k-pontoon, .k-blown) { background: color-mix(in srgb, #2f6fb8 60%, var(--bg-surface)); }
 .cw-terrain-key .k-trench { background: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
+.cw-terrain-key .k-ravine { background: color-mix(in srgb, #7a5a2e 50%, var(--bg-surface)); }
+.cw-terrain-key .k-works { background: color-mix(in srgb, #7d7466 60%, var(--bg-surface)); }
 .cw-terrain-key .k-move { background: color-mix(in srgb, #f2d64b 30%, transparent); border: 2px dashed #f2d64b; }
 .cw-terrain-key .k-flank { border: 2px dashed #d9a514; }
 .cw-terrain-key .k-danger { background: color-mix(in srgb, #2f6fb8 35%, transparent); border-color: var(--emap-blue); }

@@ -1,7 +1,7 @@
 /* global module, require */
 /* The campaign engine of the war games: seasons on a strategic map, fronts
    as chains of cities, divisions, leaders and cards sent against each
-   front's pressure, a fork and an incident each season, the war compared
+   front's pressure, a fork and incidents each season, the war compared
    with history's. Deterministic, no DOM: the same decisions always give
    the same war, so a save is the decision log and restore() replays it.
 
@@ -19,7 +19,8 @@
    the party's quarrels), a front's gains move the stats once a season
    by the net, and the data's other `rules` conditions (cond.js); 6 a
    front's last cities (cap) open only to the battle its choice brings,
-   and taking them pays the cap's reward. */
+   and taking them pays the cap's reward; 7 the data's content marked
+   rules 7 (a season's second incident, a battle in the first season). */
 (function (root) {
     'use strict';
 
@@ -27,7 +28,7 @@
     const Battle = node ? require('./battle.js') : root.WarBattle;
     const Cond = node ? require('./cond.js') : root.WarCond;
 
-    const RULES = 6;
+    const RULES = 7;
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
     const signed = n => (n < 0 ? '−' : '+') + Math.abs(n);
@@ -61,11 +62,32 @@
                 fallen: {}, deserted: 0, unrest: 0, captured: 0, momentum: {}, pursuit: {}, used: {},
                 records: [], log: [], battle: null, battles: {}, outcome: null,
             };
+            s.turn = calendar(s)[0];
             enterTurn(s);
             return s;
         }
 
         function turnData(s) { return D.turns[s.turn]; }
+
+        // The seasons a war plays: those whose condition (when, the rules
+        // generation) holds; a newer calendar may split an older season in
+        // two, so s.turn is the season's index in D.turns, not its count.
+        const calendars = {};
+        function calendar(s) {
+            const key = s.rules;
+            if (!calendars[key]) calendars[key] = D.turns.map((t, i) => i).filter(i => !D.turns[i].when || Cond.holds(s, D.turns[i].when, {}));
+            return calendars[key];
+        }
+        const nextTurn = s => calendar(s).find(i => i > s.turn);
+        // The season before, on history's clock: the latest one listed
+        // earlier that ended before this one did (a split season's halves
+        // and the older whole share their end), -1 for the first.
+        const endOf = t => t.end[0] * 12 + t.end[1];
+        function prevOf(turn) {
+            for (let j = turn - 1; j >= 0; j--) if (endOf(D.turns[j]) < endOf(D.turns[turn])) return j;
+            return -1;
+        }
+        const historyBefore = (id, turn) => (prevOf(turn) < 0 ? D.startLines[id] : D.fronts[id].history[prevOf(turn)]);
 
         // A condition (war/cond.js) asked of the war now.
         function when(s, cond, ctx) {
@@ -131,7 +153,7 @@
             s.plan = null;
             s.plan = {
                 divisions, command: commandOf(s.stats[D.command.stat]), commissars: leadersOf(s, t), sources,
-                alloc: {}, commissar: {}, cards: [], choice: null, response: null,
+                alloc: {}, commissar: {}, cards: [], choice: null, responses: {},
             };
             for (const id of activeFronts(s)) { s.plan.alloc[id] = 0; s.plan.commissar[id] = false; }
             // The divisions stay where they fought last season unless moved:
@@ -234,16 +256,20 @@
         // the season is sent, and already while that answer is chosen.
         function barred(s, id) {
             if (s.flags['bar:' + id]) return true;
-            const r = responseOf(s);
-            return Boolean(r && r.bars && r.bars.includes(id));
+            return responsesOf(s).some(r => r.bars && r.bars.includes(id));
         }
 
-        // The season's incident and the answer chosen to it, if any.
-        function incidentOf(s) { return turnData(s).incident || null; }
-        function responseOf(s) {
-            const inc = incidentOf(s);
-            return inc && s.plan && s.plan.response ? inc.options.find(o => o.id === s.plan.response) : null;
+        // The season's incidents (one, or a list; one with a condition, when,
+        // only while it holds) and the answer chosen to each, if any.
+        function incidentsOf(s) {
+            return [].concat(turnData(s).incident || []).filter(inc => !inc.when || when(s, inc.when));
         }
+        function responseOf(s, inc) {
+            const id = s.plan && s.plan.responses[inc.id];
+            return id ? inc.options.find(o => o.id === id) : null;
+        }
+        function responsesOf(s) { return incidentsOf(s).map(inc => responseOf(s, inc)).filter(Boolean); }
+        const answered = s => incidentsOf(s).every(inc => Boolean(responseOf(s, inc)));
 
         // A card's effect on a stat; one that escalates costs more each time
         // it is played (an amnesty, as deserters learn that desertion goes
@@ -313,16 +339,16 @@
         // join or leave the pool, and an answer that rules out a card in play
         // waits until the card is taken back.
         function respond(s, optionId) {
-            const inc = incidentOf(s);
-            if (s.phase !== 'plan' || !inc) return false;
+            if (s.phase !== 'plan') return false;
+            const inc = incidentsOf(s).find(x => x.options.some(o => o.id === optionId));
+            if (!inc) return false;
             const opt = inc.options.find(o => o.id === optionId);
-            if (!opt) return false;
             if ((opt.bars || []).some(id => s.plan.cards.some(c => c.id === id))) return false;
-            const prev = responseOf(s);
+            const prev = responseOf(s, inc);
             const delta = (prev ? -(prev.divisions || 0) : 0) + (opt.divisions || 0);
             if (!trim(s, s.plan.divisions + delta)) return false;
             s.plan.divisions += delta;
-            s.plan.response = optionId;
+            s.plan.responses[inc.id] = optionId;
             return true;
         }
 
@@ -397,11 +423,12 @@
                 const battle = battleResult(s, id);
                 if (battle) add('battle', battle.label, battle.v);
                 modify(true);
-                // The season's incident, as answered.
-                const answer = responseOf(s);
-                if (answer && answer.pressure && answer.pressure[id]) {
+                // The season's incidents, as answered.
+                for (const inc of incidentsOf(s)) {
+                    const answer = responseOf(s, inc);
+                    if (!answer || !answer.pressure || !answer.pressure[id]) continue;
                     pressure += answer.pressure[id];
-                    pressureParts.push(`${incidentOf(s).title} ${signed(answer.pressure[id])}`);
+                    pressureParts.push(`${inc.title} ${signed(answer.pressure[id])}`);
                 }
                 // The attackers' traits: what each brings, and what blunts it.
                 const traits = traitsOn(s, id, threat);
@@ -465,8 +492,7 @@
         function outcomeAt(id, line, turn, margin, choice, won) {
             const front = D.fronts[id];
             const max = front.cities.length;
-            const was = turn ? front.history[turn - 1] : D.startLines[id];
-            const historical = front.history[turn] - was;
+            const historical = front.history[turn] - historyBefore(id, turn);
             const bonus = margin >= 0 ? Math.min(1, Math.floor(margin / O.step)) : -Math.ceil((-margin - O.slack) / O.step);
             const raw = line + historical + bonus;
             const overflow = bonus < 0 ? Math.min(-bonus, Math.max(0, -raw)) : 0;
@@ -535,7 +561,7 @@
         }
 
         function canSettle(s) {
-            return s.phase === 'plan' && Boolean(s.plan.choice) && (!incidentOf(s) || Boolean(s.plan.response));
+            return s.phase === 'plan' && Boolean(s.plan.choice) && answered(s);
         }
 
         // The result of a battle fought this season, before the settlement, on
@@ -595,8 +621,7 @@
             for (const id of D.frontOrder) {
                 if (fronts[id]) continue;
                 const front = D.fronts[id];
-                const was = s.turn ? front.history[s.turn - 1] : D.startLines[id];
-                s.lines[id] = clamp(s.lines[id] + front.history[s.turn] - was, 0, front.cities.length);
+                s.lines[id] = clamp(s.lines[id] + front.history[s.turn] - historyBefore(id, s.turn), 0, front.cities.length);
             }
 
             // A front's cap: the unlocking choice that fell short of the last
@@ -646,12 +671,11 @@
                 addStats(delta, card, k => cardStat(s, card, c.id, k));
                 s.used[c.id] = (s.used[c.id] || 0) + 1;
                 if (card.flag) s.flags[card.flag] = true;
-                if (card.calm) s.flags['calm:' + c.id] = s.turn + 1;
+                if (card.calm) s.flags['calm:' + c.id] = nextTurn(s);
             }
             addStats(delta, opt);
             if (opt.flag) s.flags[opt.flag] = true;
-            const answer = responseOf(s);
-            if (answer) {
+            for (const answer of responsesOf(s)) {
                 addStats(delta, answer);
                 if (answer.flag) s.flags[answer.flag] = true;
                 for (const id of answer.bars || []) s.flags['bar:' + id] = true;
@@ -718,7 +742,7 @@
 
             s.lastAlloc = Object.assign({}, s.plan.alloc);
             const record = {
-                turn: s.turn, choice: s.plan.choice, history: t.choice.history, response: s.plan.response, fronts,
+                turn: s.turn, choice: s.plan.choice, history: t.choice.history, responses: Object.assign({}, s.plan.responses), fronts,
                 cards: s.plan.cards.map(c => c.id), supply: fc.supply, notes, spoils,
                 stats: Object.assign({}, s.stats, { food: s.food }),
             };
@@ -738,8 +762,8 @@
         }
 
         function next(s) {
-            if (s.phase !== 'review') return false;
-            s.turn += 1;
+            if (s.phase !== 'review' || nextTurn(s) === undefined) return false;
+            s.turn = nextTurn(s);
             enterTurn(s);
             return true;
         }
@@ -781,6 +805,7 @@
                 result: s.battle.result, turns: s.battle.turn, turned: Object.keys(s.battle.turned).filter(id => s.battle.turned[id]),
                 captured: s.battle.captured || 0, feats: Object.keys(s.battle.feats || {}),
             };
+            if (s.battle.held) s.battles[s.battle.def.id].held = true;
             if (!s.battle.def.final) {
                 s.phase = 'plan';
                 return settle(s);
@@ -849,9 +874,10 @@
                     // older than the battle, which goes as history did.
                     if (s.phase === 'battle' && !s.battle.def.final && typeof entry[0] === 'string' && !entry[0].startsWith('b:')
                         && act(s, 'assume') && act(s, ...entry)) { if (entry[0] === 'next') season = i + 1; continue; }
-                    // A season sent before it had an incident: history's answer.
-                    if (entry[0] === 'settle' && s.phase === 'plan' && incidentOf(s) && !s.plan.response
-                        && act(s, 'respond', incidentOf(s).history) && act(s, ...entry)) continue;
+                    // A season sent before it had its incidents: history's answers.
+                    const unanswered = s.phase === 'plan' ? incidentsOf(s).filter(inc => !responseOf(s, inc)) : [];
+                    if (entry[0] === 'settle' && unanswered.length
+                        && unanswered.every(inc => act(s, 'respond', inc.history)) && act(s, ...entry)) continue;
                     // Battle orders from an older battlefield stop the replay at
                     // the battle's start; the campaign before it stands.
                     if (typeof entry[0] === 'string' && entry[0].startsWith('b:') && s.phase === 'battle') break;
@@ -901,9 +927,9 @@
         }
 
         return {
-            DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, canRetryBattle, retryBattle, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
+            calendar, prevOf, DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, canRetryBattle, retryBattle, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
             start, act, restore, serialize, forecast, activeFronts, turnData, when,
-            free, allocated, threatsOf, traitsOn, battleOf, incidentOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, outcomeOf, outcomeBands, capBattle, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
+            free, allocated, threatsOf, traitsOn, battleOf, incidentsOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, outcomeOf, outcomeBands, capBattle, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
         };
     }
 

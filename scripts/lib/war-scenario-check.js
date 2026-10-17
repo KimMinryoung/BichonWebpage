@@ -118,7 +118,15 @@ function checkScenario(D) {
     for (const [i, t] of D.turns.entries()) {
         const at = `season ${t.id || i}`;
         need(t.choice && t.choice.options.some(o => o.id === t.choice.history), `${at}: the fork's history`);
-        if (t.incident) need(t.incident.options.some(o => o.id === t.incident.history), `${at}: the incident's history`);
+        // A season's incidents: one or a list, ids and answers unique within it.
+        const incidents = [].concat(t.incident || []);
+        const answers = incidents.flatMap(inc => inc.options.map(o => o.id));
+        need(new Set(answers).size === answers.length, `${at}: incident answers share an id`);
+        need(new Set(incidents.map(inc => inc.id)).size === incidents.length, `${at}: incidents share an id`);
+        for (const inc of incidents) {
+            need(inc.options.some(o => o.id === inc.history), `${at}: the incident ${inc.id}'s history`);
+            cond(inc.when, `${at}: incident ${inc.id}`);
+        }
         for (const [fid, th] of Object.entries(t.threats)) {
             need(fronts[fid], `${at}: threat on ${fid}`);
             for (const f of th.foes || []) need(factions[f], `${at}: foe ${f}`);
@@ -130,9 +138,9 @@ function checkScenario(D) {
             need(t.army.reduce((a, [, n]) => a + n, 0) === t.mobilize, `${at}: army adds up to mobilize`);
         }
         if (t.battle) need(D.battles[t.battle], `${at}: battle ${t.battle}`);
-        for (const x of [t.choice, t.incident]) if (x && x.who) drawn.add(x.who[1]);
+        for (const x of [t.choice, ...incidents]) if (x && x.who) drawn.add(x.who[1]);
         // A dilemma's debate: each line names a person (drawn) or a group.
-        for (const x of [t.choice, t.incident]) for (const v of (x && x.talk) || []) {
+        for (const x of [t.choice, ...incidents]) for (const v of (x && x.talk) || []) {
             need(v.text && (v.who || v.as), `${t.id}: a debate line needs a speaker and words`);
             if (v.who) drawn.add(v.who[1]);
         }
@@ -171,7 +179,7 @@ function checkScenario(D) {
             need(turn, `${at}: no season ${op.turn}`);
             need(['plan', 'review'].includes(op.phase), `${at}: phase ${op.phase}`);
             if (op.card) need(cards[op.card] && turn && turn.cards.includes(op.card), `${at}: card ${op.card} not in its season`);
-            if (op.flag) need(D.turns.some(t => [t.choice, t.incident].filter(Boolean).some(c => c.options.some(o => o.flag === op.flag))), `${at}: no choice sets ${op.flag}`);
+            if (op.flag) need(D.turns.some(t => [t.choice].concat(t.incident || []).some(c => c.options.some(o => o.flag === op.flag))), `${at}: no choice sets ${op.flag}`);
             need(D.portraits[op.who[1]], `${at}: no portrait for ${op.who[1]}`);
             need(op.steps.length > 0, `${at}: no steps`);
             for (const [i, step] of op.steps.entries()) {

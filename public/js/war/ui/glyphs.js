@@ -95,6 +95,15 @@
             // The bridge's two ends and the gap the charges blew between them.
             add([12, 40].map(dy => `M${x + 2} ${y + dy}q5 -4 10 0t10 0t10 0t10 0`).join(''), 'cw-mark-water');
             add(`M${x} ${y + 18}h14l4 10M${x} ${y + 30}h12M${x + 48} ${y + 18}h-14l-4 10M${x + 48} ${y + 30}h-12M${x + 4} ${y + 18}l6 12M${x + 44} ${y + 18}l-6 12`, 'cw-mark-truss');
+        } else if (cls === 'ravine') {
+            // A balka: a gully winding through the steppe, its banks hatched.
+            const k = h % 2 ? 1 : -1;
+            add(`M${x + 2} ${y + 14 + k * 4}q12 ${10 * k} 22 6t22 12`, 'cw-mark-gully');
+            add([8, 18, 28, 38].map(dx => `M${x + dx} ${y + 14 + k * 4 + dx / 4}l2 5`).join(''), 'cw-mark-bank');
+        } else if (cls === 'works') {
+            // The gun works: sheds with saw-tooth roofs and a smoking stack.
+            add(`M${x + 4} ${y + 40}v-10l7 -6v6l7 -6v6l7 -6v16zM${x + 30} ${y + 40}v-28h6v28z`, 'cw-mark-house');
+            add(`M${x + 33} ${y + 10}q4 -5 0 -8`, 'cw-mark-smoke');
         } else if (cls === 'ford') {
             const rows = flooded ? [10, 20, 30, 40] : [16, 32];
             add(rows.map(dy => `M${x + 6} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), 'cw-mark-water');

@@ -31,9 +31,13 @@ function stats(s) { return { peasants: s.stats.peasants, workers: s.stats.worker
 // The engine's generic names, back in the names the recording was made
 // with (the only renames allowed between them).
 const asGrain = ({ food, ...rest }) => Object.assign(rest, { grain: food });
+// Seasons are indices into the scenario's list, which since 2026-10-17
+// also holds the newer calendar's split seasons: the old count.
+const OLD_CALENDAR = G.calendar(G.start(1));
+const oldTurn = t => OLD_CALENDAR.indexOf(t);
 function oldFlags(flags) {
     const out = {};
-    for (const [k, v] of Object.entries(flags)) out[k === 'calm:propaganda' ? 'calm' : k] = v;
+    for (const [k, v] of Object.entries(flags)) out[k === 'calm:propaganda' ? 'calm' : k] = k === 'calm:propaganda' ? oldTurn(v) : v;
     return out;
 }
 // A trait's pressure part dropped its name (2026-10-16): the old label.
@@ -54,7 +58,12 @@ function oldParts(f) {
     });
     return f;
 }
+// A season's answers became a map by incident (2026-10-17, a season may
+// have two): the one answer it had.
+const oldResponse = responses => Object.values(responses || {})[0] || null;
 function oldRecord(r) {
+    const { responses, ...rest } = r;
+    r = Object.assign(rest, { response: oldResponse(responses), turn: oldTurn(rest.turn) });
     const fronts = r.fronts && Object.fromEntries(Object.entries(r.fronts).map(([id, f]) => [id, oldParts(Object.assign({}, f))]));
     return Object.assign({}, r, { stats: asGrain(r.stats), spoils: r.spoils.map(asGrain) }, fronts ? { fronts } : {});
 }
@@ -78,14 +87,14 @@ function battleView(b) {
 
 function view(s) {
     const out = {
-        turn: s.turn, phase: s.phase, rules: s.rules, lines: s.lines, stats: stats(s), flags: oldFlags(s.flags),
+        turn: oldTurn(s.turn), phase: s.phase, rules: s.rules, lines: s.lines, stats: stats(s), flags: oldFlags(s.flags),
         momentum: s.momentum, pursuit: s.pursuit, captured: s.captured, deserted: s.deserted, revolt: s.unrest,
         petrogradFell: Boolean(s.fallen.northwest), used: s.used, lastAlloc: s.lastAlloc,
         records: s.records.map(oldRecord), battles: s.battles, outcome: oldOutcome(s.outcome), battle: battleView(s.battle),
     };
     if (s.phase === 'plan') {
         const p = s.plan;
-        out.plan = { divisions: p.divisions, command: p.command, commissars: p.commissars, sources: p.sources, alloc: p.alloc, commissar: p.commissar, cards: p.cards, choice: p.choice, response: p.response };
+        out.plan = { divisions: p.divisions, command: p.command, commissars: p.commissars, sources: p.sources, alloc: p.alloc, commissar: p.commissar, cards: p.cards, choice: p.choice, response: oldResponse(p.responses) };
         const fc = G.forecast(s);
         for (const f of Object.values(fc.fronts)) oldParts(f);
         out.forecast = fc;
@@ -119,7 +128,7 @@ function rng(seed) {
 function planBot(s, pick, { requisition = false, spread = false } = {}) {
     const t = G.turnData(s);
     G.act(s, 'choose', pick(t.choice));
-    if (t.incident) G.act(s, 'respond', pick(t.incident));
+    for (const inc of G.incidentsOf(s)) G.act(s, 'respond', pick(inc));
     const fronts = G.activeFronts(s);
     const threats = G.threatsOf(s);
     const heaviest = fronts.slice().sort((a, b) => threats[b].pressure - threats[a].pressure)[0];
@@ -154,14 +163,14 @@ function randomPlan(s, rand) {
     for (let i = 0; i < n; i++) {
         const k = rand();
         if (k < 0.12) G.act(s, 'choose', pickOf(t.choice.options).id);
-        else if (k < 0.2 && t.incident) G.act(s, 'respond', pickOf(t.incident.options).id);
+        else if (k < 0.2 && G.incidentsOf(s).length) G.act(s, 'respond', pickOf(G.incidentsOf(s).flatMap(inc => inc.options)).id);
         else if (k < 0.35) G.act(s, 'play', pickOf(cards), pickOf(fronts.concat('crimea')));
         else if (k < 0.42) G.act(s, 'unplay', pickOf(cards));
         else if (k < 0.52) G.act(s, 'commissar', pickOf(fronts), rand() < 0.7);
         else G.act(s, 'alloc', pickOf(fronts), Math.floor(rand() * 6));
     }
     if (!s.plan.choice) G.act(s, 'choose', pickOf(t.choice.options).id);
-    if (t.incident && !s.plan.response) G.act(s, 'respond', pickOf(t.incident.options).id);
+    for (const inc of G.incidentsOf(s)) if (!G.responseOf(s, inc)) G.act(s, 'respond', pickOf(inc.options).id);
 }
 
 // A battle played by orders picked at random among those allowed, with a
@@ -288,8 +297,7 @@ function playWar({ rules, seed, bot }) {
             if (!G.act(s, 'settle')) {
                 // An answer that bars a card in play: take the cards back.
                 for (const c of s.plan.cards.slice()) G.act(s, 'unplay', c.id);
-                const inc = G.turnData(s).incident;
-                if (inc) G.act(s, 'respond', inc.history);
+                for (const inc of G.incidentsOf(s)) G.act(s, 'respond', inc.history);
                 if (!G.act(s, 'settle')) break;
             }
         } else if (s.phase === 'battle') {

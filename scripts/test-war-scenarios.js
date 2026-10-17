@@ -44,7 +44,7 @@ const G = Engine.create(M);
 function plan(s) {
     const t = G.turnData(s);
     assert.ok(G.act(s, 'choose', t.choice.history));
-    if (t.incident) assert.ok(G.act(s, 'respond', t.incident.history));
+    for (const inc of G.incidentsOf(s)) assert.ok(G.act(s, 'respond', inc.history));
     const fronts = G.activeFronts(s);
     assert.ok(G.act(s, 'play', 'wagon', fronts[0]));
     fronts.forEach(f => G.act(s, 'alloc', f, 0));

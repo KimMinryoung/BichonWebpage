@@ -11,7 +11,7 @@ const { requiresSessionStore } = require('../config/route-policy');
 
 const s = G.start();
 G.act(s, 'choose', G.turnData(s).choice.history);
-G.act(s, 'respond', G.turnData(s).incident.history);
+for (const inc of G.incidentsOf(s)) G.act(s, 'respond', inc.history);
 G.act(s, 'alloc', 'east', 3);
 G.act(s, 'settle');
 const body = { runId: crypto.randomUUID(), attempt: 0, seq: 1, scenario: 'civil-war', save: JSON.parse(G.serialize(s)), narrow: true };
@@ -44,7 +44,7 @@ while (lost.phase !== 'done') {
     if (lost.phase === 'battle') { assert.ok(G.act(lost, 'b:end')); continue; }
     const t = G.turnData(lost);
     if (!lost.plan.choice) G.act(lost, 'choose', t.choice.history);
-    if (t.incident && !lost.plan.response) G.act(lost, 'respond', t.incident.history);
+    for (const inc of G.incidentsOf(lost)) if (!G.responseOf(lost, inc)) G.act(lost, 'respond', inc.history);
     G.activeFronts(lost).forEach(f => G.act(lost, 'alloc', f, 0));
     if (!G.act(lost, 'settle')) break;
 }
