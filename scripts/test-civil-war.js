@@ -1256,6 +1256,16 @@ for (const [rules, warsaw] of [[5, null], [6, null], [6, 'won']]) {
         assert.ok(b.turn > def.reward.quick, `not sooner than history (margin ${m}, turn ${b.turn})`);
     }
     assert.equal(play(TSARITSYN, -1).result, 'lost', 'short of the pressure the city falls');
+    // Voroshilov's Luhansk workers take up arms beside the 10th Army: the
+    // same way holds a little short of the pressure, and is no quicker.
+    for (const [m, result] of [[-1, 'won'], [0.7, 'won']]) {
+        const b = B.start(def, {}, muster(m), { rules: 7 });
+        assert.ok(B.act(b, 'feat', 'tvr'));
+        assert.ok(b.units.some(u => u.id === 'tlw' && u.side === 'red'), 'the workers stand beside the 10th Army');
+        drive(b, TSARITSYN, (name, ...args) => B.act(b, name, ...args));
+        assert.equal(b.result, result, `margin ${m} with the Luhansk workers`);
+        assert.ok(b.turn > def.reward.quick, `not sooner than history (margin ${m}, turn ${b.turn})`);
+    }
     const south = Object.assign({}, { tzh: [{ r: 8, c: 6 }, { r: 8, c: 8 }, SAREPTA], tfl: [{ r: 8, c: 10 }], tdm: [{ r: 6, c: 9 }, { r: 7, c: 9 }, SAREPTA], 'tkh,tvr,tkp,tku,tar,twk,tlr': null });
     const quick = play(south, 3, true);
     assert.equal(quick.result, 'won');
