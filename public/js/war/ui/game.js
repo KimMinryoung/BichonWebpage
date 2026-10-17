@@ -50,6 +50,10 @@
     let battleEnded = false;
     const FALL_MS = 1300;
     const LUNGE_MS = 600;
+    // The player's own blow stays drawn this long, then the board is drawn
+    // again without it; the White turn's blows stay until the next order.
+    const BLOW_MS = 1500;
+    let blowTimer = null;
     const stillMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const mapEl = $('cwMap');
     const points = JSON.parse(mapEl.dataset.points);
@@ -1885,11 +1889,18 @@
             } else if (e.type === 'attack') {
                 const a = b.units.find(u => u.id === e.from), d = b.units.find(u => u.id === e.to);
                 if (!a || !d) continue;
+                if (B.isPlayer(b, a)) {
+                    if (!fallAt.has(e)) fallAt.set(e, performance.now());
+                    const left = BLOW_MS - (performance.now() - fallAt.get(e));
+                    if (left <= 0) continue;
+                    clearTimeout(blowTimer);
+                    blowTimer = setTimeout(() => { if (s && s.phase === 'battle' && s.battle === b) renderBattle(); }, left + 20);
+                }
                 const [x1, y1] = center(a.r, a.c), [x2, y2] = center(d.r, d.c);
                 const len = Math.hypot(x2 - x1, y2 - y1) || 1;
                 const k = 14 / len;
                 g.append(svg('path', { d: `M${x1 + (x2 - x1) * k} ${y1 + (y2 - y1) * k}L${x2 - (x2 - x1) * k} ${y2 - (y2 - y1) * k}`, class: `cw-blow is-${sideOf(b, a)}`, 'marker-end': `url(#cwHead-${sideOf(b, a)})` }));
-                g.append(badge((x1 + x2) / 2 + 17, (y1 + y2) / 2 - 8, `−${e.dmg}`, 'is-' + sideOf(b, a)));
+                g.append(badge((x1 + x2) / 2 + 17, (y1 + y2) / 2 - 8, d.hp <= 0 ? '격파' : `−${e.dmg}`, 'is-' + sideOf(b, a)));
             }
         }
         return g;
