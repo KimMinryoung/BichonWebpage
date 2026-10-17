@@ -24,6 +24,7 @@
     let historyMap = false;         // the map shows history's control layer
     let selected = null;            // battle: the selected Red unit id
     let inspected = null;           // battle: the White unit whose reach is shown
+    let featArmed = null;           // battle: the unit whose aimed feat is switched on (screen state; spent only when it strikes)
     let menaceAll = false;          // battle: every White unit's reach shown at once
     let endArmed = false;           // battle: 「턴 종료」 pressed once with units still to act
     let lit = null;                 // the front whose card the pointer or focus is on
@@ -1954,8 +1955,13 @@
         const board = svg('svg', { viewBox: `0 0 ${cols * CELL} ${rows * CELL}`, class: 'cw-grid' + (battleEnded ? ' is-over' : ''), role: 'group', 'aria-label': def.board });
         const unit = selected && B.byId(b, selected);
         const foe = !unit && inspected && B.byId(b, inspected);
-        const moves = unit && B.canMove(b, unit) ? B.reachable(b, unit) : [];
-        const targets = unit && !unit.acted ? B.targets(b, unit) : [];
+        // An aimed feat switched on: the board offers its targets and its
+        // blow, and no moves; switching it off or picking another unit
+        // costs nothing.
+        if (featArmed && (!unit || featArmed !== unit.id || B.featBlock(b, unit))) featArmed = null;
+        const armed = Boolean(featArmed);
+        const moves = unit && !armed && B.canMove(b, unit) ? B.reachable(b, unit) : [];
+        const targets = armed ? B.featTargets(b, unit) : unit && !unit.acted ? B.targets(b, unit) : [];
         // One White unit's reach when it is picked; every one's with 「백군 위협」.
         const danger = foe ? B.menace(b, foe) : menaceAll ? b.units.filter(u => B.isEnemy(b, u) && u.hp > 0).flatMap(u => B.menace(b, u)) : [];
         const defs = svg('defs');
@@ -2023,7 +2029,7 @@
         for (const u of b.units.filter(x => x.hp > 0)) {
             const x = u.c * CELL, y = u.r * CELL;
             const isTarget = targets.includes(u);
-            const p = isTarget ? B.preview(b, unit, u) : null;
+            const p = isTarget ? B.preview(b, unit, u, armed ? B.featMod(unit) : undefined) : null;
             const done = B.isPlayer(b, u) && u.acted;
             // A unit that has just struck lunges once at its target.
             const blow = b.events.find(e => e.type === 'attack' && e.from === u.id);
@@ -2071,7 +2077,10 @@
             if (note) g.append(badge(x + CELL + 2, y - 17, note, 'is-preview'));
             const pick = () => {
                 if (battleEnded) return;
-                if (isTarget) {
+                if (isTarget && armed) {
+                    featArmed = null;
+                    if (act('b:feat', unit.id, u.id)) afterBattleAct(`${unit.name}의 ${unit.feat.name}: ${u.name}에 피해 ${p.dmg}`);
+                } else if (isTarget) {
                     if (act('b:attack', unit.id, u.id)) afterBattleAct(`${unit.name}이(가) ${u.name}을(를) 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : ''));
                 } else if (B.isPlayer(b, u)) {
                     selected = selected === u.id ? null : u.id;
@@ -2262,7 +2271,8 @@
         const lead = u.commissar ? 1 : 0;
         const parts = [`기본 ${u.def - lead}`, lead ? `${U.leader} +${lead}` : null, t.fort && ground !== t.def ? `${t.name} ${fortText(b, u.r, u.c)}(${why.join(', ')})` : ground ? `${t.name} ${signed(ground)}` : null].filter(Boolean);
         // A Red unit ready to strike lists who it can hit and what it would do.
-        const targets = B.isPlayer(b, u) && !u.acted && !battleEnded ? B.targets(b, u) : [];
+        // With its aimed feat switched on, the plain blows step aside.
+        const targets = B.isPlayer(b, u) && !u.acted && !battleEnded && featArmed !== u.id ? B.targets(b, u) : [];
         return el('div', {},
             el('h3', {}, u.name, u.sub ? el('small', {}, ` ${u.sub}`) : null),
             el('p', { class: 'cw-info-hp' }, el('strong', {}, `병력 ${u.hp}/${u.maxHp}`), el('span', { class: 'cw-info-bar is-' + sideOf(b, u), style: `--hp:${(100 * u.hp / u.maxHp).toFixed(0)}%`, 'aria-hidden': 'true' })),
@@ -2296,17 +2306,16 @@
         // the sentence, each a chip with the blow it would strike.
         const ready = !why && !battleEnded;
         const aimed = f.kind === 'strike' || f.kind === 'assault';
-        const name = ready && !aimed
-            ? el('button', { type: 'button', class: 'cw-feat-pill', 'data-key': 'feat', onclick: () => { if (act('b:feat', u.id)) afterBattleAct(`${u.name}의 ${f.name}`); } }, `★ ${f.name}`)
-            : el('span', { class: 'cw-feat-pill' + (ready ? ' is-aimed' : '') }, `★ ${f.name}`);
-        const aims = ready && aimed ? [' 치기:', ...B.featTargets(b, u).map(d => {
-            const p = B.preview(b, u, d, B.featMod(u));
-            return [' ', el('button', {
-                type: 'button', class: 'cw-feat-target', 'data-key': `feat-${d.id}`,
-                'aria-label': `${f.name}으로 ${d.name}을 친다, 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ', 반격 없음'}`,
-                onclick: () => { if (act('b:feat', u.id, d.id)) afterBattleAct(`${u.name}의 ${f.name}: ${d.name}에 피해 ${p.dmg}`); },
-            }, d.tag, el('small', {}, p.dmg >= d.hp ? '격파' : p.surrender ? '투항' : `−${p.dmg}`))];
-        }).flat()] : [];
+        // An aimed feat (a blow) is switched on and off; while on, its
+        // targets are picked on the board. Any other is used at a press.
+        const on = featArmed === u.id;
+        const name = !ready ? el('span', { class: 'cw-feat-pill' }, `★ ${f.name}`)
+            : aimed ? el('button', {
+                type: 'button', class: 'cw-feat-pill' + (on ? ' is-on' : ''), 'data-key': 'feat', 'aria-pressed': String(on),
+                onclick: () => { featArmed = on ? null : u.id; renderBattle(); announce(on ? `${f.name} 끔` : `${f.name} 켬: 판에서 칠 적을 고른다`); },
+            }, `★ ${f.name}`, el('small', { class: 'cw-feat-state' }, on ? '켜짐' : '꺼짐'))
+                : el('button', { type: 'button', class: 'cw-feat-pill', 'data-key': 'feat', onclick: () => { if (act('b:feat', u.id)) afterBattleAct(`${u.name}의 ${f.name}`); } }, `★ ${f.name}`);
+        const aims = ready && aimed ? [on ? el('strong', {}, ' 판에서 칠 적을 고른다.') : ' 켜면 판에서 칠 적을 고른다. 쓰지 않고 끄면 소진되지 않는다.'] : [];
         return el('div', { class: 'cw-feat' + (b.feats[f.id] ? ' is-used' : '') },
             el('p', { class: 'cw-feat-head' }, el('strong', {}, '결정적 한 수'), name),
             el('p', {}, f.text, ...aims),

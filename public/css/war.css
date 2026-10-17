@@ -649,17 +649,17 @@
 .cw-feat summary { cursor: pointer; color: var(--text-secondary); }
 .cw-feat > p { line-height: 1.75; margin: 0 0 4px; }
 .cw-feat-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px !important; }
-/* A feat's name is its button, inline in its sentence; a strike's targets
-   follow the sentence as chips. Not usable now: the name as a dashed tag. */
+/* A feat's name is its button; an aimed one (a blow) is a switch whose
+   targets are picked on the board. Not usable now: the name as a dashed tag. */
 .games-shell .cw-feat-pill { display: inline-flex; align-items: center; min-height: 28px; padding: 0 10px; margin: 0 2px; font: inherit; font-weight: 700; border: 1px solid var(--cw-gold-rim); border-radius: 4px; background: var(--cw-gold); color: #1d1606; vertical-align: baseline; }
 /* A usable feat and its targets are raised keys that press down. */
-.games-shell button.cw-feat-pill, .games-shell .cw-feat-target { box-shadow: 0 3px 0 color-mix(in srgb, var(--cw-gold) 45%, #000); cursor: pointer; transition: transform .06s, box-shadow .06s; }
-.games-shell button.cw-feat-pill:hover, .games-shell .cw-feat-target:hover { filter: brightness(1.08); }
-.games-shell button.cw-feat-pill:active, .games-shell .cw-feat-target:active { transform: translateY(2px); box-shadow: 0 1px 0 color-mix(in srgb, var(--cw-gold) 45%, #000); }
+.games-shell button.cw-feat-pill { box-shadow: 0 3px 0 color-mix(in srgb, var(--cw-gold) 45%, #000); cursor: pointer; transition: transform .06s, box-shadow .06s; }
+.games-shell button.cw-feat-pill:hover { filter: brightness(1.08); }
+/* An aimed feat switched on stays pressed in, dark with a gold ring. */
+.games-shell button.cw-feat-pill.is-on { transform: translateY(2px); box-shadow: 0 0 0 2px var(--cw-gold); background: #1d1606; color: var(--cw-gold); border-color: var(--cw-gold); }
+.cw-feat-state { margin-left: 8px; padding-left: 8px; border-left: 1px solid currentColor; font-size: .82em; font-weight: 700; }
+.games-shell button.cw-feat-pill:active { transform: translateY(2px); box-shadow: 0 1px 0 color-mix(in srgb, var(--cw-gold) 45%, #000); }
 .games-shell span.cw-feat-pill { border-style: dashed; background: transparent; color: var(--text-secondary); }
-.games-shell span.cw-feat-pill.is-aimed { border-style: solid; color: var(--text-primary); }
-.games-shell .cw-feat-target { display: inline-flex; align-items: center; gap: 5px; min-height: 28px; padding: 0 9px; margin: 2px 4px 5px 0; font: inherit; font-size: .88em; font-weight: 700; border: 1px solid var(--cw-gold-rim); border-radius: 4px; background: var(--cw-gold); color: #1d1606; }
-.games-shell .cw-feat-target small { font-size: .92em; font-weight: 700; color: inherit; }
 /* A unit that surrendered keeps the pale band of the side it left. */
 .cw-unit.is-yielded .cw-unit-band { fill: #d9d3c2; }
 .cw-unit.is-yielded .cw-unit-tag { fill: #1d2a44; }
