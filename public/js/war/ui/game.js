@@ -2238,22 +2238,24 @@
         const f = u.feat;
         const why = B.featBlock(b, u);
         const wait = why === 'early' ? `진지 위의 적을 ${josa(U.playerUnits, '이', '가')} 두 번 쳐야 쓸 수 있다 (${b.fortBlows}/${f.after}).` : FEAT_WAIT[why];
-        let use = null;
-        if (!why && !battleEnded) {
-            if (f.kind === 'strike' || f.kind === 'assault') {
-                use = el('ul', { class: 'cw-info-targets', 'aria-label': `${f.name}으로 칠 적` }, ...B.featTargets(b, u).map(d => {
-                    const p = B.preview(b, u, d, B.featMod(u));
-                    return el('li', {}, el('button', { type: 'button', class: 'is-feat', onclick: () => { if (act('b:feat', u.id, d.id)) afterBattleAct(`${u.name}의 ${f.name}: ${d.name}에 피해 ${p.dmg}`); } },
-                        el('strong', {}, `★ ${f.name}: ${d.name}`),
-                        el('span', {}, `피해 ${p.dmg}${p.dmg >= d.hp ? ' (격파)' : p.surrender ? ' (투항)' : ''}${p.counter ? ` · 반격 ${p.counter}` : ' · 반격 없음'}`)));
-                }));
-            } else {
-                use = el('button', { type: 'button', class: 'cw-feat-use', 'data-key': 'feat', onclick: () => { if (act('b:feat', u.id)) afterBattleAct(`${u.name}의 ${f.name}`); } }, `★ ${f.name}`);
-            }
-        }
+        // The name is the button, inline; a strike names its targets after
+        // the sentence, each a chip with the blow it would strike.
+        const ready = !why && !battleEnded;
+        const aimed = f.kind === 'strike' || f.kind === 'assault';
+        const name = ready && !aimed
+            ? el('button', { type: 'button', class: 'cw-feat-pill', 'data-key': 'feat', onclick: () => { if (act('b:feat', u.id)) afterBattleAct(`${u.name}의 ${f.name}`); } }, `★ ${f.name}`)
+            : el('span', { class: 'cw-feat-pill' + (ready ? ' is-aimed' : '') }, `★ ${f.name}`);
+        const aims = ready && aimed ? [' 치기:', ...B.featTargets(b, u).map(d => {
+            const p = B.preview(b, u, d, B.featMod(u));
+            return [' ', el('button', {
+                type: 'button', class: 'cw-feat-target', 'data-key': `feat-${d.id}`,
+                'aria-label': `${f.name}으로 ${d.name}을 친다, 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ', 반격 없음'}`,
+                onclick: () => { if (act('b:feat', u.id, d.id)) afterBattleAct(`${u.name}의 ${f.name}: ${d.name}에 피해 ${p.dmg}`); },
+            }, d.tag, el('small', {}, p.dmg >= d.hp ? '격파' : p.surrender ? '투항' : `−${p.dmg}`))];
+        }).flat()] : [];
         return el('div', { class: 'cw-feat' + (b.feats[f.id] ? ' is-used' : '') },
-            el('p', {}, el('strong', {}, `결정적 한 수 · ${f.name}`), ` ${f.text}`),
-            use || (wait ? el('p', { class: 'cw-note' }, wait) : null),
+            el('p', {}, el('strong', {}, '결정적 한 수 · '), name, ` ${f.text}`, ...aims),
+            !ready && wait ? el('p', { class: 'cw-note' }, wait) : null,
             f.history ? el('details', {}, el('summary', {}, '역사에서는'), el('p', {}, f.history)) : null);
     }
 

@@ -631,7 +631,14 @@
 .cw-feat.is-used { color: var(--text-secondary); }
 .cw-feat details { margin-top: 4px; font-size: .84rem; }
 .cw-feat summary { cursor: pointer; color: var(--text-secondary); }
-.games-shell .cw-feat-use, .games-shell .cw-info-targets button.is-feat { margin-top: 6px; border-color: var(--cw-gold-rim); background: color-mix(in srgb, var(--cw-gold) 30%, transparent); font-weight: 700; }
+.cw-feat > p { line-height: 1.75; }
+/* A feat's name is its button, inline in its sentence; a strike's targets
+   follow the sentence as chips. Not usable now: the name as a dashed tag. */
+.games-shell .cw-feat-pill { display: inline-flex; align-items: center; min-height: 28px; padding: 0 9px; margin: 0 2px; font: inherit; font-weight: 700; border: 1px solid var(--cw-gold-rim); background: color-mix(in srgb, var(--cw-gold) 30%, transparent); color: var(--text-primary); vertical-align: baseline; }
+.games-shell span.cw-feat-pill { border-style: dashed; background: transparent; color: var(--text-secondary); }
+.games-shell span.cw-feat-pill.is-aimed { border-style: solid; color: var(--text-primary); }
+.games-shell .cw-feat-target { display: inline-flex; align-items: baseline; gap: 5px; min-height: 28px; padding: 0 8px; margin: 2px 4px 2px 0; font: inherit; font-size: .88em; border: 1px solid var(--cw-gold-rim); background: color-mix(in srgb, var(--cw-gold) 18%, transparent); color: var(--text-primary); }
+.cw-feat-target small { color: var(--text-secondary); font-size: .92em; }
 /* A unit that surrendered keeps the pale band of the side it left. */
 .cw-unit.is-yielded .cw-unit-band { fill: #d9d3c2; }
 .cw-unit.is-yielded .cw-unit-tag { fill: #1d2a44; }
@@ -1106,9 +1113,12 @@
 .cw-foe-fold > summary b.is-bites { color: var(--bg-surface); background: var(--text-primary); border-color: var(--text-primary); }
 .cw-foe-fold > summary b.is-works { color: var(--cw-good-ink); background: var(--cw-good); border-color: var(--cw-good); }
 .cw-foe-fold[open] > summary b { display: none; }
-.cw-foe-fold > summary::before, .cw-brief-fold > summary::before { content: '▸'; font-size: 1em; color: var(--text-secondary); margin-right: 2px; }
-.cw-foe-fold[open] > summary::before, .cw-brief-fold[open] > summary::before { content: '▾'; }
-.cw-foe-fold > summary::-webkit-details-marker, .cw-brief-fold > summary::-webkit-details-marker { display: none; }
+.cw-foe-fold > summary::before, .cw-brief-fold > summary::before, .cw-battle-brief > summary::before, .cw-rules > summary::before { content: '▸'; font-size: 1em; color: var(--text-secondary); margin-right: 6px; }
+.cw-foe-fold[open] > summary::before, .cw-brief-fold[open] > summary::before, .cw-battle-brief[open] > summary::before, .cw-rules[open] > summary::before { content: '▾'; }
+.cw-foe-fold > summary::-webkit-details-marker, .cw-brief-fold > summary::-webkit-details-marker, .cw-battle-brief > summary::-webkit-details-marker, .cw-rules > summary::-webkit-details-marker { display: none; }
+.cw-battle-brief > summary::before, .cw-rules > summary::before { content: '▶'; color: var(--text-primary); font-size: .75em; margin-right: 8px; }
+.cw-battle-brief[open] > summary::before, .cw-rules[open] > summary::before { content: '▼'; }
+.cw-battle-brief > summary:hover, .cw-rules > summary:hover { text-decoration: underline; text-underline-offset: 3px; }
 /* The season's story folded on a phone (civil-war.js renderBrief). */
 .cw-brief-fold > summary { cursor: pointer; font-weight: 700; font-size: .9rem; min-height: 30px; display: flex; align-items: center; }
 .cw-brief-fold[open] > summary { margin-bottom: 4px; }
