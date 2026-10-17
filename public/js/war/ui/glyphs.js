@@ -111,9 +111,37 @@
         return g.childNodes.length ? g : null;
     }
 
-    // A unit's picture in a 22×13 box at (x, y): a rifleman, a rider, a
-    // gun, a boat or the armoured train.
-    function unitPicture(u, x, y) {
+    // Headgear over a head at the origin (radius 2.7): the side's own
+    // (the Red Army's pointed budenovka, the peaked cap against it) or the
+    // unit's look (data: look) — a sailor's ribboned cap, a worker's cap, a
+    // Cossack's papakha.
+    const CAPS = {
+        budenovka: ['M-3 -.5C-3 -3.4-1.5 -5.8 0 -8.4C1.5 -5.8 3 -3.4 3 -.5Z'],
+        peaked: ['M-4.8 -2.3Q0 -5.8 4.8 -2.3L3.3 -.9H-3.3Z', 'M-2.6 -.9H2.6L1.8 .2H-1.8Z'],
+        sailor: ['M-4 -1.5Q0 -3.6 4 -1.5V-.5H-4Z', null, 'M3 -.8L5 3.8M3 -.8L3.8 4.2'],
+        worker: ['M-2.8 -.9Q-2.7 -4.3 .4 -4.3Q3 -4.1 3 -.9Z', 'M1 -1.1H4.8L4 -.2H1Z'],
+        papakha: ['M-3 -.6V-5.6Q0 -6.6 3 -5.6V-.6Z'],
+    };
+    const LOOK_CAP = { sailor: 'sailor', worker: 'worker', cossack: 'papakha', officer: 'peaked' };
+    function capOf(u, side) {
+        return LOOK_CAP[u.look] || (side === 'red' ? 'budenovka' : 'peaked');
+    }
+    function cap(name, cx, cy, k) {
+        const g = svg('g', { transform: `translate(${cx} ${cy}) scale(${k})` });
+        const [crown, brim, ribbons] = CAPS[name];
+        g.append(svg('path', { d: crown, class: 'cw-pic-cap' }));
+        if (brim) g.append(svg('path', { d: brim, class: 'cw-pic-cap' }));
+        if (ribbons) g.append(svg('path', { d: ribbons, class: 'cw-pic-line' }));
+        return g;
+    }
+
+    const HORSE = 'c2 -3 6 -3 10 -2l4 -3 2 1-1 3c2 1 3 3 3 5h-2l-1 -2-1 4h-2v-4h-7l-1 4h-2v-4c-2 0-3-1-2-2z';
+
+    // A unit's picture in a 22×13 box at (x, y), its headgear rising a
+    // little above: a soldier with his rifle, a rider, Makhno's machine-gun
+    // cart, a gun, a boat or the armoured train. side ('red' or 'white')
+    // chooses the headgear a unit without a look wears.
+    function unitPicture(u, x, y, side) {
         const g = svg('g', { class: 'cw-pic', 'aria-hidden': 'true' });
         if (u.rail) {
             g.append(trainGlyph(x + 3, y - 1, 17));
@@ -123,18 +151,32 @@
         if (u.naval) {
             add(`M${x + 1} ${y + 8}h20l-3 5h-14z`, 'cw-pic-fill');
             add(`M${x + 10} ${y + 8}v-8M${x + 10} ${y + 1}l6 4h-6M${x + 4} ${y + 6}h4`, 'cw-pic-line');
+        } else if (u.look === 'tachanka') {
+            // The cart with its gun pointing back, the horse in front.
+            add(`M${x + 1} ${y + 6.4}h9.4v3h-9.4zM${x + 3} ${y + 6.4}v-3.6h2.6v3.6z`, 'cw-pic-fill');
+            add(`M${x + 3} ${y + 4.2}h-3.4M${x + 10.4} ${y + 8}h2.4`, 'cw-pic-line');
+            g.append(svg('circle', { cx: x + 3.2, cy: y + 11.2, r: 2, class: 'cw-pic-wheel' }), svg('circle', { cx: x + 8.4, cy: y + 11.2, r: 2, class: 'cw-pic-wheel' }));
+            const horse = svg('g', { transform: `translate(${x + 10} ${y + .8}) scale(.6)` });
+            horse.append(svg('path', { d: `M1 7${HORSE}`, class: 'cw-pic-fill' }));
+            g.append(horse);
         } else if (u.kind === 'cav') {
-            add(`M${x + 2} ${y + 7}c2 -3 6 -3 10 -2l4 -3 2 1-1 3c2 1 3 3 3 5h-2l-1 -2-1 4h-2v-4h-7l-1 4h-2v-4c-2 0-3-1-2-2z`, 'cw-pic-fill');
-            add(`M${x + 10} ${y + 4}v-4M${x + 8} ${y}h5M${x + 12} ${y}l6 -1`, 'cw-pic-line');
+            add(`M${x + 2} ${y + 8}${HORSE}`, 'cw-pic-fill');
+            // The rider: body, sabre, head and headgear.
+            add(`M${x + 10} ${y + 5.4}v-3M${x + 11.4} ${y + 3.6}l6 -2.6`, 'cw-pic-line');
+            g.append(svg('circle', { cx: x + 10, cy: y + 1, r: 1.8, class: 'cw-pic-fill' }));
+            g.append(cap(capOf(u, side), x + 10, y + 1, .7));
         } else if (u.kind === 'art') {
             add(`M${x + 4} ${y + 8}l15 -7`, 'cw-pic-barrel');
             add(`M${x + 1} ${y + 12}l7 -4`, 'cw-pic-line');
             g.append(svg('circle', { cx: x + 8, cy: y + 9, r: 3.6, class: 'cw-pic-wheel' }));
         } else {
-            g.append(svg('circle', { cx: x + 8, cy: y + 2, r: 2, class: 'cw-pic-fill' }));
-            add(`M${x + 8} ${y + 4}v5M${x + 8} ${y + 9}l-3 4M${x + 8} ${y + 9}l3 4M${x + 5} ${y + 6}h7M${x + 3} ${y + 12}l14 -12`, 'cw-pic-line');
-            g.append(svg('circle', { cx: x + 17, cy: y + 7, r: 2, class: 'cw-pic-fill' }));
-            add(`M${x + 17} ${y + 9}v4M${x + 14} ${y + 13}h6M${x + 20} ${y + 12}l1 -12`, 'cw-pic-line');
+            // A soldier to the chest, his rifle and bayonet on his shoulder;
+            // an officer's gold shoulder boards.
+            add(`M${x + 15} ${y + 13}l5 -12.4M${x + 20} ${y + .6}l.9 -2.6`, 'cw-pic-line');
+            add(`M${x + 1.6} ${y + 13}q.4 -4.6 6.4 -5q6 .4 6.4 5z`, 'cw-pic-fill');
+            if (u.look === 'officer') add(`M${x + 2.6} ${y + 9.6}l4.2 -1.4.6 1.6 -4.2 1.4zM${x + 13.4} ${y + 9.6}l-4.2 -1.4-.6 1.6 4.2 1.4z`, 'cw-pic-gold');
+            g.append(svg('circle', { cx: x + 8, cy: y + 4.6, r: 3, class: 'cw-pic-fill' }));
+            g.append(cap(capOf(u, side), x + 8, y + 4.6, 1.1));
         }
         return g;
     }

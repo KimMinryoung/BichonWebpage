@@ -128,7 +128,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 - `map.operations[id] = { title, who: [이름, 인물 id], turn, phase: 'plan'|'review', flag?, card?, steps: [{ date, text, draw: [...] }] }` — 지도 위에서 단계별로 보여 주는 결정적 작전. 그 시기·단계에, `flag`가 서 있거나(앞 시기 선택의 결과) `card`를 보냈을 때 그 시기의 대사보다 먼저 한 단계씩 재생된다. `draw`는 `{ side: 'red'|세력 kind, style: 'strike'|'beaten'|'next', path: [[위도, 경도]…], name }`(화살표: 진격·꺾인 진격·남은 일), `{ gather: [위도, 경도], name }`(병력이 모인 곳), `{ clash: [위도, 경도], name }`(맞부딪친 곳). 서버(`war-map.js`)가 화면 좌표와 단계별 상자(그때까지 그린 것)를 `points.operations`로 넘긴다. 검사기가 시기·카드·플래그·초상·좌표를 본다.
 - `ui`: `player`, `playerUnits`, `enemy`, `enemyAll`, `unit`, `leader`, `food`, `unrest`(화면의 말), `hud: [{ stat, label, warnBelow, warnNote, note, chart, command, split }]`(스탯 줄과 회고 그래프, `command`인 스탯 하나가 지휘력 안내), `cardStats: { stat: 짧은 이름 }`, `aria`, `save`(localStorage 키).
 - 조사는 `josa(word, '이', '가')`로 붙인다(받침 판정). 시나리오 말 뒤에 조사를 박아 쓰지 않는다.
-- `portraits[인물 id] = { side, hair, face, glasses, beard, moustache, cap }`(art.js의 값). 화면에 나오는 모든 인물(조언자·갈림길·위협·대사·부대 `person`·전투 대사 `face`)은 초상이 있어야 한다.
+- `portraits[인물 id] = { side, hair, face, brows, glasses, beard, moustache, grey, cap, dress }`(art.js `FEATURES`의 값, 진영 색을 빼고도 서로 달라야 함). 전투 부대의 `look`(`sailor`·`worker`·`cossack`·`officer`·`tachanka`)은 war/ui/glyphs.js가 그리는 그림을 고른다. 화면에 나오는 모든 인물(조언자·갈림길·위협·대사·부대 `person`·전투 대사 `face`)은 초상이 있어야 한다.
 
 ### 4.8 전투 `battles[id]`
 

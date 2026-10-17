@@ -574,6 +574,12 @@
 .cw-unit.is-red :is(.cw-pic-line, .cw-pic-barrel, .cw-pic-wheel) { stroke: #fff; }
 .cw-unit.is-white .cw-unit-tag, .cw-unit.is-white .cw-unit-hp, .cw-unit.is-white .cw-pic-fill { fill: #1d2a44; }
 .cw-unit.is-white :is(.cw-pic-line, .cw-pic-barrel, .cw-pic-wheel) { stroke: #1d2a44; }
+/* Headgear: the figure's ink, rimmed in the counter's colour so it parts
+   from the head; an officer's shoulder boards in gold. */
+.cw-pic .cw-pic-cap { stroke-width: .7; stroke-linejoin: round; }
+.cw-unit.is-red .cw-pic-cap { fill: #fff; stroke: var(--cw-red); }
+.cw-unit.is-white .cw-pic-cap { fill: #1d2a44; stroke: #f4f1e8; }
+.cw-pic .cw-pic-gold { fill: #c9a227; stroke: #1d2a44; stroke-width: .4; }
 /* A unit that has just struck lunges at its target once (translate only,
    per the svg animation rule above). */
 @media (prefers-reduced-motion: no-preference) {
@@ -658,8 +664,6 @@
 .games-shell button.cw-feat-pill:active { transform: translateY(2px); box-shadow: 0 1px 0 color-mix(in srgb, var(--cw-gold) 45%, #000); }
 .games-shell span.cw-feat-pill { border-style: dashed; background: transparent; color: var(--text-secondary); }
 /* A unit that surrendered keeps the pale band of the side it left. */
-.cw-unit.is-yielded .cw-unit-band { fill: #d9d3c2; }
-.cw-unit.is-yielded .cw-unit-tag { fill: #1d2a44; }
 /* The banner of a feat or a surrender across the board's top. An html
    element, so its fade is the html layer's; it plays once (--since). */
 .cw-moment-row { position: absolute; top: 10px; left: 0; width: 100%; z-index: 3; display: flex; justify-content: center; pointer-events: none; }

@@ -2069,7 +2069,7 @@
             g.append(svg('rect', { x: x + 4, y: y + 4, width: CELL - 8, height: CELL - 8 }));
             // A long name is squeezed to the counter's width.
             g.append(svg('text', Object.assign({ x: x + CELL / 2, y: y + 14.5, 'text-anchor': 'middle', class: 'cw-unit-tag' }, u.tag.length > 4 ? { textLength: CELL - 12, lengthAdjust: 'spacingAndGlyphs' } : {}), u.tag));
-            g.append(unitPicture(u, x + 6, y + 19));
+            g.append(unitPicture(u, x + 6, y + 19, B.isPlayer(b, u) && !u.yielded ? 'red' : 'white'));
             // Its strength, and beside it what a foretold blow would take.
             const hpEl = svg('text', { x: x + 38, y: y + 30, 'text-anchor': 'middle', class: 'cw-unit-hp', 'data-cx': x + 38, 'data-rx': x + CELL - 4 });
             hpText(hpEl, u.hp, p ? Math.min(u.hp, p.dmg) : 0, 'is-loss');
