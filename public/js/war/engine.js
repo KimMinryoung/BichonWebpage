@@ -926,8 +926,47 @@
             return state && state.phase === 'battle' ? state : null;
         }
 
+        // ── Rehearsal: one battle on its own, for trying its board ──
+
+        // A war played as history chose up to the start of the named battle:
+        // history's choices and answers, each plan's free divisions to the
+        // front furthest short, every battle before it assumed won as
+        // history went. Null when the battle is not reached.
+        function rehearse(id, rules = RULES) {
+            const s = start(rules);
+            for (let guard = 0; guard < 4 * D.turns.length; guard++) {
+                if (s.phase === 'battle') {
+                    if (s.battle.def.id === id) return s;
+                    if (!act(s, 'assume')) return null;
+                } else if (s.phase === 'review') {
+                    if (!act(s, 'next')) return null;
+                } else if (s.phase === 'plan') {
+                    act(s, 'choose', turnData(s).choice.history);
+                    for (const inc of incidentsOf(s)) if (!responseOf(s, inc)) act(s, 'respond', inc.history);
+                    // The train to the heaviest front, the cards the party can
+                    // bear, the leaders with a division each to the heaviest
+                    // fronts, the rest by need.
+                    const threats = threatsOf(s);
+                    const fronts = activeFronts(s).sort((a, b) => threats[b].pressure - threats[a].pressure);
+                    for (const c of turnData(s).cards) {
+                        if (c === 'train') act(s, 'play', c, fronts[0]);
+                        else if (c !== 'requisition' && s.stats.cohesion + cardStat(s, D.cards[c], c, 'cohesion') >= 40) act(s, 'play', c);
+                    }
+                    fronts.forEach(f => act(s, 'alloc', f, 0));
+                    fronts.slice(0, s.plan.commissars).forEach(f => { if (free(s) > 0) act(s, 'alloc', f, 1); act(s, 'commissar', f, true); });
+                    while (free(s) > 0) {
+                        const fc = forecast(s).fronts;
+                        const f = fronts.slice().sort((a, b) => fc[a].margin - fc[b].margin)[0];
+                        if (!act(s, 'alloc', f, s.plan.alloc[f] + 1)) break;
+                    }
+                    if (!act(s, 'settle')) return null;
+                } else return null;
+            }
+            return null;
+        }
+
         return {
-            calendar, prevOf, DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, canRetryBattle, retryBattle, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
+            calendar, prevOf, DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, canRetryBattle, retryBattle, rehearse, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
             start, act, restore, serialize, forecast, activeFronts, turnData, when,
             free, allocated, threatsOf, traitsOn, battleOf, incidentsOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, outcomeOf, outcomeBands, capBattle, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
         };

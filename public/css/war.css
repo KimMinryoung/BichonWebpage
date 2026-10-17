@@ -423,7 +423,7 @@
 .cw-advisor { font-size: .8rem !important; }
 /* A person's name with their drawn portrait (art.js) on a chip of their
    side's colour (the portrait's disc), the same in light and dark. */
-.cw-person { display: inline-flex; align-items: center; gap: 5px; vertical-align: middle; padding: 1px 7px 1px 2px; border: 1px solid #1d1d1b; border-radius: 3px; background: var(--cw-chip, #a21e2a); color: var(--cw-chip-ink, #fff); font-weight: 700; text-decoration: none; }
+.cw-person { display: inline-flex; align-items: center; gap: 5px; vertical-align: middle; padding: 1px 7px 1px 2px; border: 1px solid #1d1d1b; background: var(--cw-chip, #a21e2a); color: var(--cw-chip-ink, #fff); font-weight: 700; text-decoration: none; }
 .cw-person:hover { color: var(--cw-chip-ink, #fff); text-decoration: underline; }
 .cw-person .cw-face { width: 1.6em; height: 1.6em; flex: none; }
 .cw-person.is-white { --cw-chip: #e8e4da; --cw-chip-ink: #1d1d1b; }
@@ -446,7 +446,7 @@
 .cw-talk { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
 .cw-talk li { display: grid; grid-template-columns: minmax(0, max-content) 1fr; gap: 10px; align-items: start; font-size: .92rem; line-height: var(--leading-normal); }
 .cw-talk .cw-person { justify-self: start; }
-.cw-talk-as { padding: 2px 7px; border: 1px solid var(--border); border-radius: 3px; font-size: .86rem; color: var(--text-secondary); }
+.cw-talk-as { padding: 2px 7px; border: 1px solid var(--border); font-size: .86rem; color: var(--text-secondary); }
 .cw-talk q { quotes: '「' '」'; padding-top: 1px; }
 @media (max-width: 600px) { .cw-talk li { grid-template-columns: 1fr; gap: 3px; } }
 .cw-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-top: 12px; }
@@ -528,12 +528,12 @@
 .cw-post-name { font-size: 9px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
 .cw-terrain-key .k-post { border: 2px dashed var(--text-primary); }
 .cw-post-alarm { flex-basis: 100%; margin: 0; padding: 6px 10px; border: 2px solid var(--emap-blue); background: color-mix(in srgb, var(--emap-blue) 22%, var(--bg-surface)); font-weight: 800; font-size: .88rem; }
-.cw-flank-zone { fill: none; stroke: #d9a514; stroke-width: 2.5; stroke-dasharray: 7 4; pointer-events: none; }
+.cw-flank-zone { fill: none; stroke: var(--text-primary); stroke-opacity: .55; stroke-width: 1.5; stroke-dasharray: 6 4; pointer-events: none; }
 .cw-danger { fill: var(--emap-blue); fill-opacity: .28; stroke: var(--emap-blue); stroke-width: 1.5; pointer-events: none; }
-.cw-hit { fill: #f2d64b; fill-opacity: .22; stroke: #f2d64b; stroke-width: 2; stroke-dasharray: 4 3; cursor: pointer; }
-.cw-hit:hover { fill-opacity: .45; }
+.cw-hit { fill: var(--text-primary); fill-opacity: .16; stroke: var(--text-primary); stroke-opacity: .45; stroke-width: 1; cursor: pointer; }
+.cw-hit:hover { fill-opacity: .32; }
 .cw-place { font-size: 10px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
-.cw-place.is-flank { fill: #b8930f; }
+.cw-place.is-flank { fill: var(--text-secondary); }
 .cw-terrain-key { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .78rem; color: var(--text-secondary); margin: 8px 0 0; }
 .cw-terrain-key span { display: inline-flex; align-items: center; gap: 5px; }
 .cw-terrain-key i { width: 14px; height: 14px; border: 1px solid var(--border); }
@@ -554,20 +554,16 @@
 .cw-terrain-key .k-trench { background: color-mix(in srgb, #8c7b55 60%, var(--bg-surface)); }
 .cw-terrain-key .k-ravine { background: color-mix(in srgb, #7a5a2e 50%, var(--bg-surface)); }
 .cw-terrain-key .k-works { background: color-mix(in srgb, #7d7466 60%, var(--bg-surface)); }
-.cw-terrain-key .k-move { background: color-mix(in srgb, #f2d64b 30%, transparent); border: 2px dashed #f2d64b; }
-.cw-terrain-key .k-flank { border: 2px dashed #d9a514; }
+.cw-terrain-key .k-move { background: color-mix(in srgb, var(--text-primary) 16%, transparent); border: 1px solid color-mix(in srgb, var(--text-primary) 45%, transparent); }
+.cw-terrain-key .k-flank { border: 1.5px dashed color-mix(in srgb, var(--text-primary) 55%, transparent); }
 .cw-terrain-key .k-danger { background: color-mix(in srgb, #2f6fb8 35%, transparent); border-color: var(--emap-blue); }
 .cw-hit:focus-visible { outline: none; stroke: var(--text-primary); stroke-width: 3; }
 .cw-unit { cursor: pointer; }
-.cw-unit > rect:first-child { stroke-width: 2; }
-.cw-unit.is-red > rect:first-child { fill: var(--cw-red); stroke: #fff; }
+.cw-unit > rect:first-child { stroke-width: 1.5; }
+.cw-unit.is-red > rect:first-child { fill: var(--cw-red); stroke: #4a0b12; }
 .cw-unit.is-white > rect:first-child { fill: #f4f1e8; stroke: var(--emap-blue); }
 .cw-unit-tag { font-size: 10px; font-weight: 800; letter-spacing: -.03em; pointer-events: none; }
 .cw-unit-hp { font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; pointer-events: none; }
-.cw-unit-shadow { fill: #000; fill-opacity: .4; pointer-events: none; }
-.cw-unit-band { pointer-events: none; }
-.cw-unit.is-red .cw-unit-band { fill: #6e1018; }
-.cw-unit.is-white .cw-unit-band { fill: #d9d3c2; }
 /* The unit's picture (civil-war.js unitPicture) in its side's ink. */
 .cw-pic { pointer-events: none; }
 .cw-pic path, .cw-pic circle { stroke-linecap: round; stroke-linejoin: round; }
@@ -593,10 +589,11 @@
 .cw-hp-loss { fill: var(--cw-red); pointer-events: none; }
 .cw-hp-loss.is-counter { fill: #ff8a3d; }
 .cw-unit.is-done { opacity: .5; }
-.cw-unit.is-selected > rect:first-child { stroke: #f2d64b; stroke-width: 4; }
-.cw-unit.is-target > rect:first-child { stroke: var(--clr-red); stroke-width: 4; stroke-dasharray: 5 3; }
-.cw-unit:focus-visible { outline: none; }
-.cw-unit:focus-visible > rect:first-child { stroke: var(--text-primary); stroke-width: 4; }
+/* The unit picked: corner brackets in the page's ink; a target in red. */
+.cw-unit-pick { fill: none; stroke: var(--text-primary); stroke-width: 3; stroke-linecap: square; pointer-events: none; }
+.cw-unit.is-target .cw-unit-pick { stroke: var(--clr-red); }
+.cw-unit:focus, .cw-unit:focus-visible { outline: none; }
+.cw-unit:focus-visible > rect:first-child { stroke: var(--text-primary); stroke-width: 2.5; }
 .cw-badge { pointer-events: none; }
 .cw-grid-scroll { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
 .cw-badge text { font-size: 10px; font-weight: 800; fill: #fff; }
@@ -651,7 +648,7 @@
 .cw-feat-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px !important; }
 /* A feat's name is its button; an aimed one (a blow) is a switch whose
    targets are picked on the board. Not usable now: the name as a dashed tag. */
-.games-shell .cw-feat-pill { display: inline-flex; align-items: center; min-height: 28px; padding: 0 10px; margin: 0 2px; font: inherit; font-weight: 700; border: 1px solid var(--cw-gold-rim); border-radius: 4px; background: var(--cw-gold); color: #1d1606; vertical-align: baseline; }
+.games-shell .cw-feat-pill { display: inline-flex; align-items: center; min-height: 28px; padding: 0 10px; margin: 0 2px; font: inherit; font-weight: 700; border: 1px solid var(--cw-gold-rim); background: var(--cw-gold); color: #1d1606; vertical-align: baseline; }
 /* A usable feat and its targets are raised keys that press down. */
 .games-shell button.cw-feat-pill { box-shadow: 0 3px 0 color-mix(in srgb, var(--cw-gold) 45%, #000); cursor: pointer; transition: transform .06s, box-shadow .06s; }
 .games-shell button.cw-feat-pill:hover { filter: brightness(1.08); }
@@ -703,7 +700,7 @@
 .cw-season-name { display: grid; font-size: .86rem; font-weight: 700; }
 .cw-season-name small { font-weight: 400; color: var(--text-secondary); font-size: .76rem; }
 .cw-season-bar { position: relative; height: 14px; border-left: 0; background: linear-gradient(to right, transparent calc(50% - .5px), var(--border) calc(50% - .5px) calc(50% + .5px), transparent calc(50% + .5px)); }
-.cw-season-bar i { position: absolute; top: 1px; bottom: 1px; border-radius: 3px; }
+.cw-season-bar i { position: absolute; top: 1px; bottom: 1px; }
 .cw-season-bar i.is-behind { background: repeating-linear-gradient(-45deg, color-mix(in srgb, var(--text-primary) 28%, transparent) 0 3px, transparent 3px 6px); box-shadow: inset 0 0 0 1px var(--text-secondary); }
 .cw-season-bar i.is-ahead { background: var(--btn-primary, #2da44e); }
 .cw-season-bar i.is-even { background: var(--text-secondary); margin-left: -1px; }

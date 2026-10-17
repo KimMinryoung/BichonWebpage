@@ -82,12 +82,17 @@
         window.setTimeout(() => { $('cwAnnouncement').textContent = text; }, 30);
     }
 
+    // A developer's rehearsal of one battle (?battle=<id>, engine rehearse):
+    // the war before it played as history chose, nothing saved or reported.
+    const practice = new URLSearchParams(location.search).has('battle');
+
     // The play log goes to the server as the war moves on (war/ui/report.js).
-    const report = window.WarReport.create(D.id, KEY);
-    try { report.resume(localStorage.getItem(KEY)); } catch (_) { /* nothing kept */ }
+    const report = practice ? { begin() {}, track() {}, leave() {}, retried() {} } : window.WarReport.create(D.id, KEY);
+    if (!practice) try { report.resume(localStorage.getItem(KEY)); } catch (_) { /* nothing kept */ }
     window.addEventListener('pagehide', () => { if (s) report.leave(s, G.serialize(s)); });
 
     function save() {
+        if (practice) return;
         const text = G.serialize(s);
         try { localStorage.setItem(KEY, text); } catch (_) { /* play continues unsaved */ }
         report.track(s, text);
@@ -135,6 +140,7 @@
     }
 
     function initSetup() {
+        if (practice) return initPractice();
         let saved = null;
         try { saved = G.restore(localStorage.getItem(KEY)); } catch (_) { saved = null; }
         if (saved && saved.phase !== 'done') {
@@ -157,6 +163,15 @@
             save();
         };
         if (new URLSearchParams(location.search).get('resume') === '1' && saved && saved.phase !== 'done') $('cwContinue').click();
+    }
+
+    // ?battle=<id> opens that battle at once; ?battle alone lists them.
+    function initPractice() {
+        const id = new URLSearchParams(location.search).get('battle');
+        const state = D.battles[id] ? G.rehearse(id) : null;
+        if (state) return startGame(state, true);
+        $('cwSetup').querySelector('.cw-setup-actions').replaceChildren(...Object.values(D.battles).map(b =>
+            el('button', { type: 'button', onclick: () => { location.search = '?battle=' + b.id; } }, `${b.title} 연습`)));
     }
 
     // ── Render ──
@@ -1089,7 +1104,7 @@
         const spoil = result && !forecast && s.records.length && (s.records[s.records.length - 1].spoils || []).some(x => x.front === id);
         if (spoil) {
             const tag = svg('g', { class: 'cw-spoils-tag' });
-            tag.append(svg('rect', { x: x - 20, y: y + 10 + rowH, width: 40, height: 15, rx: 2 }));
+            tag.append(svg('rect', { x: x - 20, y: y + 10 + rowH, width: 40, height: 15 }));
             tag.append(svg('text', { x, y: y + 21.5 + rowH, 'text-anchor': 'middle' }, '노획'));
             g.append(tag);
             g.setAttribute('aria-label', g.getAttribute('aria-label').replace('. 카드로', ', 노획. 카드로'));
@@ -1876,7 +1891,7 @@
         // Hangul is about half as wide again as the digits and signs.
         const w = [...text].reduce((a, ch) => a + (/[가-힣]/.test(ch) ? 10.5 : 6.5), 8);
         const g = svg('g', { class: 'cw-badge ' + cls });
-        g.append(svg('rect', { x: x - w, y, width: w, height: 15, rx: 2 }), svg('text', { x: x - w / 2, y: y + 11, 'text-anchor': 'middle' }, text));
+        g.append(svg('rect', { x: x - w, y, width: w, height: 15 }), svg('text', { x: x - w / 2, y: y + 11, 'text-anchor': 'middle' }, text));
         return g;
     }
 
@@ -1931,6 +1946,10 @@
     // A unit destroyed by the last order or the last White turn: its box
     // flashes, is slashed across, buckles and falls apart, leaving a burnt
     // cross on its tile until the next order. The breaking plays once.
+    // Four corner brackets just inside a tile.
+    const corners = (x, y, k = 9) => [[1, 1, 1, 1], [CELL - 1, 1, -1, 1], [1, CELL - 1, 1, -1], [CELL - 1, CELL - 1, -1, -1]]
+        .map(([cx, cy, dx, dy]) => `M${x + cx} ${y + cy + dy * k}V${y + cy}H${x + cx + dx * k}`).join('');
+
     function wreck(u, e) {
         const x = u.c * CELL, y = u.r * CELL;
         if (!fallAt.has(e)) fallAt.set(e, performance.now());
@@ -1938,7 +1957,7 @@
         const g = svg('g', { class: `cw-wreck is-${sideOf(s.battle, u)}${since < FALL_MS ? ' is-falling' : ''}`, 'aria-hidden': 'true', style: `--since:${Math.round(since)}ms` });
         g.append(svg('path', { d: `M${x + 14} ${y + 14}l20 20M${x + 34} ${y + 14}l-20 20`, class: 'cw-wreck-scar' }));
         const body = svg('g', { class: 'cw-wreck-body' });
-        body.append(svg('rect', { x: x + 3, y: y + 3, width: CELL - 6, height: CELL - 6, rx: 3 }));
+        body.append(svg('rect', { x: x + 4, y: y + 4, width: CELL - 8, height: CELL - 8 }));
         body.append(svg('text', { x: x + CELL / 2, y: y + 15, 'text-anchor': 'middle', class: 'cw-unit-tag' }, u.tag));
         g.append(body);
         g.append(svg('path', { d: `M${x + 6} ${y + 40}L${x + 42} ${y + 8}`, class: 'cw-wreck-slash' }));
@@ -2042,11 +2061,9 @@
                 style: lunge ? `--lx:${Math.sign(foeHit.c - u.c) * 9}px;--ly:${Math.sign(foeHit.r - u.r) * 9}px;--since:${Math.round(performance.now() - fallAt.get(blow))}ms` : null,
                 'aria-label': `${B.isPlayer(b, u) ? U.player : foeName()} ${u.name}${u.yielded ? '(투항해 넘어옴)' : ''}, 병력 ${u.hp}/${u.maxHp}, 방어 ${B.defenseOf(b, u)}` + (p ? `, 공격 시 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ''}${p.wears ? ', 진지 방어 1 감소' : ''}${p.surrender ? ', 투항시킴' : ''}` : '') + (featLeft(b, u) ? `, 결정적 한 수 ${u.feat.name}` : '') + (done ? ', 행동 마침' : ''),
             });
-            // A counter on the board: its hard shadow, the side's colour,
-            // a darker band for the name, then what it is and its strength.
-            board.append(svg('rect', { x: x + 5.5, y: y + 5.5, width: CELL - 6, height: CELL - 6, rx: 3, class: 'cw-unit-shadow', 'aria-hidden': 'true' }));
-            g.append(svg('rect', { x: x + 3, y: y + 3, width: CELL - 6, height: CELL - 6, rx: 3 }));
-            g.append(svg('path', { d: `M${x + 3} ${y + 18}v-12a3 3 0 0 1 3 -3h36a3 3 0 0 1 3 3v12z`, class: 'cw-unit-band' }));
+            // A counter on the board: a flat square of the side's colour,
+            // its name, what it is and its strength.
+            g.append(svg('rect', { x: x + 4, y: y + 4, width: CELL - 8, height: CELL - 8 }));
             g.append(svg('text', { x: x + CELL / 2, y: y + 14.5, 'text-anchor': 'middle', class: 'cw-unit-tag' }, u.tag));
             g.append(unitPicture(u, x + 6, y + 19));
             // Its strength, and beside it what a foretold blow would take.
@@ -2058,7 +2075,7 @@
             const ground = B.defenseOf(b, u) - u.def;
             const barX = x + (ground ? 22 : 7), barW = x + CELL - 7 - barX;
             if (ground) {
-                g.append(svg('rect', { x: x + 6, y: y + 32, width: 14, height: 11, rx: 2, class: 'cw-ground ' + (ground > 0 ? 'is-cover' : 'is-exposed') }));
+                g.append(svg('rect', { x: x + 6, y: y + 32, width: 14, height: 11, class: 'cw-ground ' + (ground > 0 ? 'is-cover' : 'is-exposed') }));
                 g.append(svg('text', { x: x + 13, y: y + 41, 'text-anchor': 'middle', class: 'cw-ground-text' }, (ground > 0 ? '+' : '−') + Math.abs(ground)));
             }
             g.append(svg('rect', { x: barX, y: y + 35, width: barW, height: 5, class: 'cw-hp-track' }));
@@ -2072,6 +2089,8 @@
             }
             // A feat still to use: a gold star on the corner, bright when it can be used now.
             if (featLeft(b, u)) g.append(svg('path', { d: star(x + CELL - 8, y + 8, 7, 3), class: 'cw-feat-star' + (B.featBlock(b, u) ? ' is-waiting' : '') }));
+            // The unit picked, or one a blow can reach: brackets on the tile's corners.
+            if (u.id === selected || u.id === inspected || isTarget) g.append(svg('path', { d: corners(x, y), class: 'cw-unit-pick' }));
             // What the number cannot say: a surrender, a fortification worn.
             const note = p && [p.surrender ? '투항' : null, p.wears ? '포격' : null].filter(Boolean).join(' ');
             if (note) g.append(badge(x + CELL + 2, y - 17, note, 'is-preview'));
@@ -2131,11 +2150,11 @@
             `${b.turn} / ${def.turnLimit} 턴`,
             ...goalLines,
             def.windTurns ? (B.fordOpen(b) ? `${def.ford} 여울 열림 (${def.windTurns - b.turn + 1}턴 남음)` : `바람이 바뀌어 ${def.ford}에 물이 찼다`) : null,
-            ...Object.entries(def.lines).map(([id, l]) => b.turned[id] ? `${l.name} 우회됨: 수비대의 진지 방어가 +1로 줄었다` : `${l.name}: 노란 점선 안에 부대를 세우면 우회된다`),
+            ...Object.entries(def.lines).map(([id, l]) => b.turned[id] ? `${l.name} 우회됨: 수비대의 진지 방어가 +1로 줄었다` : `${l.name}: 점선 안에 부대를 세우면 우회된다`),
             !Object.keys(def.sectors).length ? null : b.reserve ? `${foeName()} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶여 있다` : `${foeName()} 예비대는 아직 움직이지 않았다`,
             def.protect ? `${def.protect.name}: ${def.outlast ? `${def.turnLimit}턴이 끝날 때까지 지키면 이긴다 · ` : ''}${josa(foeName(), '이', '가')} 들어서면 진다${B.unitAt(b, ...def.protect.at) ? '' : ' · 지금 비어 있다'}` : null,
         ];
-        const hint = foe ? null : el('p', {}, `${josa(U.playerUnits, '을', '를')} 누르면 갈 수 있는 칸(노란 점선)과 칠 수 있는 적(예상 피해 표시)이 나옵니다. 포병은 진지 위의 적을 칠 때마다 그 진지의 방어를 1 깎습니다. ${foeName()} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 나옵니다. 우클릭·Esc·「취소」는 이번 턴의 명령을 하나씩 되돌립니다.`);
+        const hint = foe ? null : el('p', {}, `${josa(U.playerUnits, '을', '를')} 누르면 갈 수 있는 칸(밝은 칸)과 칠 수 있는 적(예상 피해 표시)이 나옵니다. 포병은 진지 위의 적을 칠 때마다 그 진지의 방어를 1 깎습니다. ${foeName()} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 나옵니다. 우클릭·Esc·「취소」는 이번 턴의 명령을 하나씩 되돌립니다.`);
         const goalAt = def.goals.length;
         box.replaceChildren(
             el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
@@ -2482,7 +2501,7 @@
         }
         items.push(...retrospect());
         if (G.canRetryBattle(s)) items.push(el('button', { type: 'button', class: 'cw-primary', 'data-key': 'retry', onclick: () => retryBattle(s) }, `${s.battle.def.title} 처음부터 다시`));
-        items.push(el('button', { type: 'button', class: G.canRetryBattle(s) ? '' : 'cw-primary', onclick: () => { try { localStorage.removeItem(KEY); } catch (_) { /* ignore */ } startGame(G.start()); report.begin(); save(); } }, '새 게임 시작'));
+        items.push(el('button', { type: 'button', class: G.canRetryBattle(s) ? '' : 'cw-primary', onclick: () => { if (!practice) try { localStorage.removeItem(KEY); } catch (_) { /* ignore */ } startGame(G.start()); report.begin(); save(); } }, '새 게임 시작'));
         $('cwOutcome').replaceChildren(...items);
     }
 

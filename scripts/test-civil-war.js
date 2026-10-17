@@ -1353,4 +1353,12 @@ for (const id of Object.keys(A.people)) assert.match(A.portrait(id, id), /role="
     assert.equal(G.serialize(again), atStart);
 }
 
+// A developer's rehearsal (?battle=<id>) reaches every battle at its first
+// turn, and its log replays to the same place.
+for (const id of Object.keys(D.battles)) {
+    const s = G.rehearse(id);
+    assert.ok(s && s.phase === 'battle' && s.battle.def.id === id && s.battle.turn === 1, `rehearse ${id}`);
+    assert.equal(G.restore(G.serialize(s)).battle.def.id, id);
+}
+
 console.log('civil-war: campaign, policies, save, battle, bar and voice checks passed');

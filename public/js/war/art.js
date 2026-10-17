@@ -20,13 +20,13 @@
 
     const esc = text => String(text).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
 
-    // A head on a 40×40 disc. Paper face and collar, ink features.
+    // A head on a 40×40 square. Paper face and collar, ink features.
     function portrait(people, id, label) {
         const p = people[id] || { side: 'red' };
         const disc = SIDE[p.side] || RED;
         const long = p.face === 'long';
         const out = [];
-        out.push(`<circle cx="20" cy="20" r="20" fill="${disc}"/>`);
+        out.push(`<rect width="40" height="40" fill="${disc}"/>`);
         // Shoulders and collar.
         out.push(`<path d="M5 40c1-8 7-11 15-11s14 3 15 11z" fill="${INK}"/>`);
         out.push(`<path d="M15 29l5 6 5-6" fill="none" stroke="${PAPER}" stroke-width="1.6"/>`);
