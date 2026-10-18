@@ -1581,7 +1581,7 @@
             // The enemy's pressure, and what this result leaves on the front's
             // next fight: the momentum of an enemy that broke through, or the
             // pursuit of one that broke.
-            el('span', { class: 'cw-foe-count', style: `margin-left:calc(${at(f.pressure + pursued)} + 5px)` }, `적군 압력 ${f.pressure}`,
+            el('span', { class: 'cw-foe-count', style: `margin-left:calc(${at(f.pressure + pursued)} + 5px)` }, `압력 ${f.pressure}`,
                 current.overflow ? el('span', { class: 'cw-next is-momentum' }, `(적의 기세: 다음 시기 압력 +${current.overflow * G.MOMENTUM})`) : null,
                 current.pursuit ? el('span', { class: 'cw-next is-pursuit' }, `(추격: 다음 시기 압력 −${current.pursuit * G.PURSUIT})`) : null));
         const bar = el('div', { class: 'cw-meter-bar', 'aria-hidden': 'true' },
