@@ -1192,6 +1192,20 @@
     .cw-voice.is-new { animation: cw-voice-in .32s cubic-bezier(.2, 1.4, .4, 1) both; }
 }
 @keyframes cw-voice-in { from { scale: .6; opacity: 0; } to { scale: 1; opacity: 1; } }
+/* On a phone the map's frame is short (36vh): the bubble keeps small so the
+   place it speaks of still shows. A smaller face and type, the source on one
+   line, cut short (its link and full name stay on it). */
+@media (max-width: 900px) {
+    .cw-voice { grid-template-columns: 30px minmax(0, 1fr); gap: 0 8px; padding: 6px 26px 6px 6px; font-size: .8rem; line-height: 1.36; }
+    .cw-voice > .cw-face { width: 30px; height: 30px; }
+    .cw-voice p { line-height: 1.36; }
+    .cw-voice-who { font-size: .72rem; }
+    .cw-voice-who strong { font-size: .78rem; }
+    .cw-voice-foot { margin-top: 2px; }
+    .cw-voice-foot > p { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+    .cw-voice-src { font-size: .68rem; }
+    .games-shell .cw-voice-next { min-height: 24px; padding: 1px 8px; font-size: .7rem; }
+}
 .cw-voice-log { margin: 0 0 10px; font-size: .9rem; }
 .cw-voice-log summary { cursor: pointer; color: var(--text-secondary); }
 .cw-voice-log ul { margin: 8px 0 0; padding-left: 18px; }

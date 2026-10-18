@@ -555,7 +555,8 @@
 
     function voiceBubble(v, spot, scale, fresh, below) {
         const f = v.by && D.factions[v.by];
-        const width = Math.min(310, mapEl.clientWidth - 24);
+        // On a phone wider, so the line takes fewer rows of the short frame.
+        const width = NARROW.matches ? Math.min(360, mapEl.clientWidth - 16) : Math.min(310, mapEl.clientWidth - 24);
         return bubble({
             v, fresh, width, name: speakerName(v), sub: v.op ? v.who[0] : v.who && f ? f.short : null,
             face: v.who ? A.portrait(v.who[1]) : A.shield(v.by, f), side: f ? 'k-' + f.kind : v.op ? 'is-red is-op' : 'is-red',
@@ -585,7 +586,7 @@
             el('p', { class: 'cw-voice-who' }, el('strong', {}, name), sub ? el('span', {}, sub) : null),
             el('p', { class: 'cw-voice-text' }, v.text),
             // The source, then the way on without waiting for the line's time.
-            el('div', { class: 'cw-voice-foot' }, el('p', {}, sourceOf(v)),
+            el('div', { class: 'cw-voice-foot' }, el('p', { title: v.src ? v.src[0] : null }, sourceOf(v)),
                 el('button', { type: 'button', class: 'cw-voice-next', 'aria-label': `다음 대사 (${count})`, onclick: next },
                     el('span', { 'aria-hidden': 'true' }, count), count.split('/')[0] === count.split('/')[1] ? ' 닫기' : ' 다음 ›'))),
         el('button', { type: 'button', class: 'cw-voice-close', 'aria-label': '대사 건너뛰기', onclick: skip }, '×'));
