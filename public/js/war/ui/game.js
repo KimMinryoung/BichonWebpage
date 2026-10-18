@@ -822,6 +822,7 @@
             const moving = Math.max(line, after);
             const front = svg('g', { 'data-front': id });
             layer.append(front);
+            if (isActive) front.append(frontTitle(id, pts));
             front.append(svg('polyline', { points: pathOf(chain), class: 'cw-chain' }));
             if (isActive) {
                 // The held stretch along the railway it was held by.
@@ -1054,6 +1055,29 @@
     // The attackers on the map: flags and names beside the first city they
     // hold, or beyond the outermost city when they hold none yet, with an
     // arrow at the city they are taking; the strength / pressure row below.
+    // A fighting front's name in a poster's big letters under its chain:
+    // laid along the line from its first city to its last when that runs
+    // flat enough to read, else level beside it, away from Moscow.
+    function frontTitle(id, pts) {
+        const a = pts.length > 1 ? pts[0] : points.hub, b = pts[pts.length - 1];
+        const name = D.fronts[id].name;
+        let deg = Math.atan2(b.y - a.y, b.x - a.x) * 180 / Math.PI;
+        if (deg > 90) deg -= 180;
+        if (deg <= -90) deg += 180;
+        const mx = (a.x + b.x) / 2, my = (a.y + b.y) / 2;
+        let x, y, turn = '';
+        if (Math.abs(deg) <= 40) {
+            const r = deg * Math.PI / 180;
+            x = mx + Math.sin(r) * 20;
+            y = my - Math.cos(r) * 20;
+            turn = `rotate(${deg.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})`;
+        } else {
+            x = mx + (mx < points.hub.x ? -1 : 1) * (textWidth(name, 21) / 2 + 26);
+            y = my + 7;
+        }
+        return svg('text', Object.assign({ x: x.toFixed(1), y: y.toFixed(1), 'text-anchor': 'middle', class: 'cw-front-title', 'aria-hidden': 'true' }, turn ? { transform: turn } : {}), name);
+    }
+
     function foeMarker(id, pts, line, forecast, result, avoid) {
         const root = mapEl.querySelector('svg');
         const [, , W, H] = root.getAttribute('viewBox').split(' ').map(Number);
@@ -1117,25 +1141,20 @@
             const sx = Math.abs(tx / tl) > 1e-6 ? (w / 2 + 2) / Math.abs(tx / tl) : Infinity;
             const sy = (ty > 0 ? 8 + rowH : 12) / Math.max(1e-6, Math.abs(ty / tl));
             const from = Math.min(sx, sy);
-            // The arrow is the attacker's, in its colour. After the season
-            // its shape tells the result: a surge reaches on, thicker, toward the city,
+            // The wedge is the attacker's, in its colour. After the season
+            // its shape tells the result: a surge reaches on, broader, toward the city,
             // the beaten stop short against a bar.
             const beaten = fate === ' is-beaten', surging = fate === ' is-surging';
             const to = beaten ? Math.max(from + 12, Math.min(from + 24, tl - 14)) : surging ? Math.max(from + 6, Math.min(tl - 8, from + 64)) : Math.max(from + 6, Math.min(tl - 9, from + 40));
             const ux = tx / tl, uy = ty / tl;
             const ex = x + ux * to, ey = y + uy * to;
-            const shaft = { x1: x + ux * from, y1: y + uy * from, x2: ex, y2: ey };
-            body.append(svg('line', Object.assign({ class: 'cw-foe-arrow-under' }, shaft)));
-            body.append(svg('line', Object.assign({ class: 'cw-foe-arrow' }, shaft)));
             const p = (px, py) => `${px.toFixed(1)} ${py.toFixed(1)}`;
-            if (beaten) {
-                body.append(svg('path', { d: `M${p(ex - uy * 10, ey + ux * 10)}L${p(ex + uy * 10, ey - ux * 10)}`, class: 'cw-foe-stop' }));
-            } else {
-                // The head is a shape of the marker's own, not an svg
-                // <marker>, so it fades in and out with the body.
-                const px = ex + ux * 4, py = ey + uy * 4, bx = px - ux * 15, by = py - uy * 15;
-                body.append(svg('path', { d: `M${p(px, py)}L${p(bx - uy * 8, by + ux * 8)}L${p(bx - ux * -3, by - uy * -3)}L${p(bx + uy * 8, by - ux * 8)}Z`, class: 'cw-foe-arrowhead' }));
-            }
+            // A wedge, broad where it leaves the marker: a surge's broader
+            // and longer, the beaten's blunt against a bar.
+            const half = surging ? 12 : 9, tip = beaten ? 3 : 0;
+            const bx = x + ux * from, by = y + uy * from, px = ex + ux * (beaten ? 0 : 6), py = ey + uy * (beaten ? 0 : 6);
+            body.append(svg('path', { d: `M${p(bx - uy * half, by + ux * half)}L${p(px - uy * tip, py + ux * tip)}L${p(px + uy * tip, py - ux * tip)}L${p(bx + uy * half, by - ux * half)}Z`, class: 'cw-foe-wedge' }));
+            if (beaten) body.append(svg('path', { d: `M${p(ex - uy * 10, ey + ux * 10)}L${p(ex + uy * 10, ey - ux * 10)}`, class: 'cw-foe-stop' }));
         }
         // A poster's hard shadow under the name and its row.
         body.append(svg('rect', { x: x - w / 2 + 2.5, y: y - 7.5, width: w, height: 18 + rowH, class: 'cw-foe-shadow' }));
