@@ -1451,3 +1451,22 @@
 .cw-map-legend :is(.cw-key-num, .cw-key-card) { padding: 0 4px; font-family: var(--font-display); font-size: .72rem; font-variant-numeric: tabular-nums; color: #faf2da; }
 .cw-map-legend .cw-key-num { background: var(--cw-red); border: 1px solid #14110d; }
 .cw-map-legend .cw-key-card { background: #14110d; }
+/* A cavalry army on the map: an ink horse in a cream rim, a red rider,
+   his sabre in ink (cream on the dark map); in the strength bar, cream. */
+.cw-cavalry path, .cw-cavalry circle { stroke-linecap: round; stroke-linejoin: round; }
+.cw-cavalry .cw-cav-horse { fill: #14110d; stroke: #faf2da; stroke-width: .6; }
+.cw-cavalry .cw-cav-rider-under { fill: none; stroke: #14110d; stroke-width: 3.8; }
+.cw-cavalry .cw-cav-rider { fill: none; stroke: var(--cw-red); stroke-width: 2.2; }
+[data-theme="dark"] .cw-cavalry .cw-cav-rider-under { stroke: #faf2da; }
+.cw-cavalry .cw-cav-head { fill: var(--cw-red); stroke: #14110d; stroke-width: .7; }
+[data-theme="dark"] .cw-cavalry :is(.cw-cav-head, .cw-pic-cap) { stroke: #faf2da; }
+.cw-cavalry .cw-cav-sabre { fill: none; stroke: #14110d; stroke-width: 1.2; }
+[data-theme="dark"] .cw-cavalry .cw-cav-sabre { stroke: #faf2da; }
+.cw-cavalry .cw-pic-cap { fill: var(--cw-red); stroke: #14110d; stroke-width: .6; }
+.cw-mk-cav { width: 20px; height: 14px; }
+.cw-seg .cw-mk-cav :is(.cw-cav-horse, .cw-cav-head, .cw-pic-cap) { fill: #faf2da; stroke: none; }
+.cw-seg .cw-mk-cav :is(.cw-cav-rider, .cw-cav-sabre) { stroke: #faf2da; }
+.cw-seg .cw-mk-cav .cw-cav-rider-under { stroke: none; }
+/* The attacker's pressure in figures, on an ink tab like the Red strength's red one. */
+.cw-foe-tab { fill: #14110d; stroke: #14110d; stroke-width: 1; }
+.cw-foe-tab-num { font-family: var(--font-display); font-size: 11.5px; font-weight: 800; fill: #faf2da; font-variant-numeric: tabular-nums; }

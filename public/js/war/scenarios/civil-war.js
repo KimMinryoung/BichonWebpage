@@ -320,7 +320,7 @@
             note: '1919년 11월 창설. 백군 기병의 기동에 처음으로 같은 무기로 맞섰다.',
         },
         mironov: {
-            title: '미로노프의 제2기병군', short: '제2기병군', advisor: ['필리프 미로노프', 'filipp-mironov'], cost: 1, target: 'front', fronts: ['crimea'], requires: 'mironov', bonus: 3,
+            title: '미로노프의 제2기병군', short: '제2기병군', advisor: ['필리프 미로노프', 'filipp-mironov'], cost: 1, target: 'front', glyph: 'cavalry', fronts: ['crimea'], requires: 'mironov', bonus: 3,
             turns: [9],
             text: '사면받은 미로노프가 이끄는 제2기병군. 10월 북타브리아에서 브란겔의 기병을 깨뜨렸다. 크림 방면에만 보낼 수 있고, 보내면 페레코프 전투에 합류한다.',
             note: '1919년 미로노프를 사면했을 때만 나온다.',
@@ -330,7 +330,7 @@
         // Rules 10: it is one army, on one front a season (no command): the
         // +4 it gave the south, Crimea and the south-west at once is gone.
         konarmia: {
-            title: '부됸니의 제1기병군', short: '제1기병군', advisor: ['세르게이 카메네프', 'sergey-kamenev'], cost: 0, target: 'front', fronts: ['south', 'southwest', 'crimea', 'west'], requires: 'cavalry', bonus: 4,
+            title: '부됸니의 제1기병군', short: '제1기병군', advisor: ['세르게이 카메네프', 'sergey-kamenev'], cost: 0, target: 'front', fronts: ['south', 'southwest', 'crimea', 'west'], requires: 'cavalry', bonus: 4, glyph: 'cavalry',
             when: { rules: ['>=', 6] }, turns: [8, 9], historyAt: { poland: 'southwest', perekop: 'crimea' },
             effect: '서부로 보내면 바르샤바 전투에 합류',
             text: '제1기병군은 한 시기에 한 전선에서만 싸운다. 리비우를 치던 기병군을 북쪽으로 돌려 서부전선에 붙이면 바르샤바 남쪽의 빈 옆구리를 막을 수 있다. 그만큼 남서전선과 크림에서는 기병이 빠진다.',

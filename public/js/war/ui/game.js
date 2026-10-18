@@ -15,7 +15,7 @@
     const U = D.ui;
     const KEY = U.save;
     const { el, svg, link, picture, signed, josa, textWidth, NEW_TAB } = window.WarDom;
-    const { CELL, star, trainGlyph, trainIcon, starIcon, tileMarks, unitPicture } = window.WarGlyphs;
+    const { CELL, star, trainGlyph, trainIcon, starIcon, cavalryGlyph, cavalryIcon, tileMarks, unitPicture } = window.WarGlyphs;
     const FED = D.economy.food.fed;      // a starving division's share of its strength
     const $ = id => document.getElementById(id);
 
@@ -242,8 +242,9 @@
         const moved = ready && r.ledger ? U.hud.map(h => [U.cardStats[h.stat], r.stats[h.stat] - r.ledger.from[h.stat]]) : [];
         bar.replaceChildren(
             el('p', {}, el('strong', {}, `${t.date} 전선의 움직임`), ready ? null : el('span', {}, ' · 전선이 움직이는 중…')),
-            moved.length ? el('ul', { class: 'cw-ledger-causes cw-unveil-stats', 'aria-label': '수치 변화' },
-                ...moved.map(([label, n]) => el('li', { class: n > 0 ? 'is-plus' : n < 0 ? 'is-minus' : '' }, label, el('b', {}, signed(n))))) : null,
+            // replaceChildren writes a null as the text "null".
+            ...(moved.length ? [el('ul', { class: 'cw-ledger-causes cw-unveil-stats', 'aria-label': '수치 변화' },
+                ...moved.map(([label, n]) => el('li', { class: n > 0 ? 'is-plus' : n < 0 ? 'is-minus' : '' }, label, el('b', {}, signed(n)))))] : []),
             ...(ready ? [el('button', { type: 'button', class: 'cw-primary', 'data-key': 'unveil', onclick: openReview }, '결산 보기 →')] : []));
         if (!ready) unveilTimer = window.setTimeout(renderUnveil, motion.at === null ? 250 : wait - (performance.now() - motion.at) + 30);
         else if (document.activeElement === document.body || !document.activeElement) bar.querySelector('button').focus({ preventScroll: true });
@@ -856,11 +857,18 @@
         avoid.push({ x0: m.x - 10, x1: m.x + 11 + textWidth(m.name, 13), y0: m.y - 10, y1: m.y + 6 });
         // A card that runs on rails (Trotsky's train) sits on the railway
         // where it must: the markers and the strength icons keep clear of it.
-        const trains = {};
+        // A cavalry army sent there rides in behind it on the same line.
+        const trains = {}, horse = {};
+        const sent = (id, test) => s.plan && s.plan.alloc[id] !== undefined && s.plan.cards.some(c => c.target === id && test(D.cards[c.id]));
         for (const id of active) {
-            if (!s.plan || s.plan.alloc[id] === undefined || !s.plan.cards.some(c => D.cards[c.id].onRail && c.target === id)) continue;
-            trains[id] = trainOnRail(id);
-            avoid.push(trains[id].box);
+            if (sent(id, card => card.onRail)) {
+                trains[id] = trainOnRail(id);
+                avoid.push(trains[id].box);
+            }
+            if (sent(id, card => card.glyph === 'cavalry')) {
+                horse[id] = trainOnRail(id, trains[id] ? 54 : 24, 'cavalry');
+                avoid.push(horse[id].box);
+            }
         }
         const gliding = new Set();
         for (const [i, id] of active.entries()) {
@@ -890,6 +898,11 @@
                     trains[id].g.setAttribute('data-front', id);
                     layer.append(trains[id].g);
                     if (fc) glide(`train:${id}`, trains[id].g, trains[id].route, i * 220 + 650, gliding);
+                }
+                if (horse[id]) {
+                    horse[id].g.setAttribute('data-front', id);
+                    layer.append(horse[id].g);
+                    if (fc) glide(`cavalry:${id}`, horse[id].g, horse[id].route, i * 220 + 750, gliding);
                 }
             }
         }
@@ -1103,7 +1116,10 @@
         const markRows = Math.max(1, Math.ceil(marks / PER_ROW));
         const rowH = forecast ? markRows * MARK + 4 : 16;
         const flags = foes.filter(f => D.factions[f].flag);
-        const w = Math.max(textWidth(name, 11) + flags.length * 16 + 12, forecast ? Math.min(marks, PER_ROW) * MARK + 8 + TREND : textWidth(numbers, 10.5) + 10);
+        // While planning the pressure in figures on a tab at the left, as the
+        // Red strength's box has its own.
+        const TAB = forecast ? 26 : 0;
+        const w = TAB + Math.max(textWidth(name, 11) + flags.length * 16 + 12, forecast ? Math.min(marks, PER_ROW) * MARK + 8 + TREND : textWidth(numbers, 10.5) + 10);
         // Candidate spots round the anchor, outward first; the one covering
         // the least of the city dots, labels and earlier markers wins.
         const overlap = (a, b) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0)) * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0));
@@ -1158,8 +1174,12 @@
         }
         // A poster's hard shadow under the name and its row.
         body.append(svg('rect', { x: x - w / 2 + 2.5, y: y - 7.5, width: w, height: 18 + rowH, class: 'cw-foe-shadow' }));
-        body.append(svg('rect', { x: x - w / 2, y: y - 10, width: w, height: 18, class: 'cw-foe-name' }));
-        let fx = x - w / 2 + 6;
+        body.append(svg('rect', { x: x - w / 2 + TAB, y: y - 10, width: w - TAB, height: 18, class: 'cw-foe-name' }));
+        if (TAB) {
+            body.append(svg('rect', { x: x - w / 2, y: y - 10, width: TAB, height: 18 + rowH, class: 'cw-foe-tab' }));
+            body.append(svg('text', { x: x - w / 2 + TAB / 2, y: y - 1 + rowH / 2 + 4, 'text-anchor': 'middle', class: 'cw-foe-tab-num' }, String(marks)));
+        }
+        let fx = x - w / 2 + TAB + 6;
         for (const f of flags) {
             const shield = picture(A.shield(f, D.factions[f]));
             for (const [k, v] of Object.entries({ x: fx - 1, y: y - 9, width: 15, height: 15 })) shield.setAttribute(k, v);
@@ -1167,12 +1187,12 @@
             fx += 16;
         }
         body.append(svg('text', { x: fx, y: y + 3.5, class: 'cw-foe-text' }, name));
-        body.append(svg('rect', { x: x - w / 2, y: y + 8, width: w, height: rowH, class: forecast ? 'cw-foe-marks' : 'cw-foe-numbers' }));
+        body.append(svg('rect', { x: x - w / 2 + TAB, y: y + 8, width: w - TAB, height: rowH, class: forecast ? 'cw-foe-marks' : 'cw-foe-numbers' }));
         if (numbers) body.append(svg('text', { x, y: y + 20, 'text-anchor': 'middle', class: 'cw-foe-numbers-text' }, numbers));
         const across = Math.min(marks, PER_ROW) * MARK;
-        if (TREND) body.append(svg('text', { x: x - w / 2 + 7, y: y + 8 + rowH / 2 + 3.5, 'text-anchor': 'middle', class: 'cw-foe-trend' }, trend));
+        if (TREND) body.append(svg('text', { x: x - w / 2 + TAB + 7, y: y + 8 + rowH / 2 + 3.5, 'text-anchor': 'middle', class: 'cw-foe-trend' }, trend));
         for (let i = 0; i < marks; i++) {
-            const mx = x + TREND / 2 - across / 2 + (i % PER_ROW) * MARK + 0.75, my = y + 10 + Math.floor(i / PER_ROW) * MARK;
+            const mx = x + TAB / 2 + TREND / 2 - across / 2 + (i % PER_ROW) * MARK + 0.75, my = y + 10 + Math.floor(i / PER_ROW) * MARK;
             body.append(svg('rect', { x: mx, y: my, width: MARK - 1.5, height: MARK - 1.5, class: 'cw-foe-mark k-' + kind, style: `--m:${i}` }));
         }
         if (forecast) g.setAttribute('aria-label', g.getAttribute('aria-label').replace('. 카드로', `, 압력 ${marks}, 전투력 ${forecast.strength}. 카드로`));
@@ -1276,10 +1296,12 @@
 
     // Trotsky's train on the railway that leads to the front's last held
     // city, a little short of the city so the city's dot stays clear.
-    function trainOnRail(id) {
+    // A cavalry army (glyph 'cavalry') stands the same way, further back
+    // when the train is there.
+    function trainOnRail(id, back = 24, glyph = 'train') {
         const line = s.lines[id];
         const route = routeOf([points.hub, ...points.fronts[id].slice(0, line)]);
-        let back = 24, i = route.length - 1, p = route[i];
+        let i = route.length - 1, p = route[i];
         while (i > 0 && back > 0) {
             const q = route[i - 1];
             const len = Math.hypot(p.x - q.x, p.y - q.y);
@@ -1287,9 +1309,10 @@
             else { back -= len; p = q; i--; }
         }
         const g = svg('g', { class: 'cw-train-on-rail', 'aria-hidden': 'true' });
-        // Wheels on the rail.
-        g.append(trainGlyph(p.x - 12, p.y - 16, 24));
-        return { g, route: route.slice(0, i).concat([p]), box: { x0: p.x - 13, x1: p.x + 13, y0: p.y - 15, y1: p.y + 5 } };
+        // Wheels (or hooves) on the rail.
+        if (glyph === 'cavalry') g.append(cavalryGlyph(p.x - 15, p.y - 20.5, 30));
+        else g.append(trainGlyph(p.x - 12, p.y - 16, 24));
+        return { g, route: route.slice(0, i).concat([p]), box: { x0: p.x - 15, x1: p.x + 15, y0: p.y - 20, y1: p.y + 5 } };
     }
 
 
@@ -1699,8 +1722,9 @@
         const bonuses = f.bonuses || [];
         for (const b of bonuses.filter(b => b.v > 0)) {
             const rail = Boolean(D.cards[b.kind] && D.cards[b.kind].onRail);
-            const icon = b.kind === 'commissar' ? starIcon() : rail ? trainIcon() : el('small', {}, `+${b.v}`);
-            out.push(el('span', { class: `cw-seg is-${b.kind === 'commissar' ? 'commissar' : rail ? 'train' : 'other'}`, style: span(x, x + b.v), title: `${b.label} +${b.v}` }, icon));
+            const cav = Boolean(D.cards[b.kind] && D.cards[b.kind].glyph === 'cavalry');
+            const icon = b.kind === 'commissar' ? starIcon() : rail ? trainIcon() : cav ? cavalryIcon() : el('small', {}, `+${b.v}`);
+            out.push(el('span', { class: `cw-seg is-${b.kind === 'commissar' ? 'commissar' : rail || cav ? 'train' : 'other'}`, style: span(x, x + b.v), title: `${b.label} +${b.v}` }, icon));
             x += b.v;
         }
         const minus = bonuses.filter(b => b.v < 0 && b.kind !== 'rail').reduce((a, b) => a - b.v, 0);

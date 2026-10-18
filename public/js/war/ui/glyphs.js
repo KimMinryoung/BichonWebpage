@@ -137,6 +137,28 @@
 
     const HORSE = 'c2 -3 6 -3 10 -2l4 -3 2 1-1 3c2 1 3 3 3 5h-2l-1 -2-1 4h-2v-4h-7l-1 4h-2v-4c-2 0-3-1-2-2z';
 
+    // A cavalry army on the map (the 1st, Mironov's 2nd): a horse and its
+    // rider in a budenovka, sabre up, in a 22×15 box whose top-left is
+    // (x, y), w wide.
+    function cavalryGlyph(x, y, w) {
+        const k = w / 22;
+        const g = svg('g', { class: 'cw-cavalry', transform: `translate(${x} ${y + 3 * k}) scale(${k})` });
+        g.append(
+            svg('path', { d: `M2 8${HORSE}`, class: 'cw-cav-horse' }),
+            svg('path', { d: 'M10 5.4v-3', class: 'cw-cav-rider-under' }),
+            svg('path', { d: 'M10 5.4v-3', class: 'cw-cav-rider' }),
+            svg('path', { d: 'M11.4 3.6l6 -2.6', class: 'cw-cav-sabre' }),
+            svg('circle', { cx: 10, cy: 1, r: 1.8, class: 'cw-cav-head' }),
+            cap('budenovka', 10, 1, .7));
+        return g;
+    }
+
+    function cavalryIcon() {
+        const node = svg('svg', { viewBox: '0 0 22 15', class: 'cw-mk-cav', 'aria-hidden': 'true' });
+        node.append(cavalryGlyph(0, 0, 22));
+        return node;
+    }
+
     // A unit's picture in a 22×13 box at (x, y), its headgear rising a
     // little above: a soldier with his rifle, a rider, Makhno's machine-gun
     // cart, a gun, a boat or the armoured train. side ('red' or 'white')
@@ -181,5 +203,5 @@
         return g;
     }
 
-    root.WarGlyphs = { CELL, star, trainGlyph, trainIcon, starIcon, tileMarks, unitPicture };
+    root.WarGlyphs = { CELL, star, trainGlyph, trainIcon, starIcon, cavalryGlyph, cavalryIcon, tileMarks, unitPicture };
 })(window);
