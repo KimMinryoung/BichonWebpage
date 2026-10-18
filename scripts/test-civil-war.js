@@ -1361,4 +1361,26 @@ for (const id of Object.keys(D.battles)) {
     assert.equal(G.restore(G.serialize(s)).battle.def.id, id);
 }
 
+// The quota relief (2026-10-18): offered only while the requisition stands
+// and before the tax in kind; it spends grain for the peasants' trust.
+{
+    const seasonOf = (pick, id) => {
+        const s = G.start();
+        while (G.turnData(s).id !== id) {
+            if (s.phase === 'battle') assert.ok(G.act(s, 'assume'));
+            else if (s.phase === 'review') assert.ok(G.act(s, 'next'));
+            else { assert.ok(G.act(s, 'choose', pick(G.turnData(s))), `${id}: choose in ${G.turnData(s).id} (${s.phase})`); answer(s); plan(s); assert.ok(G.act(s, 'settle')); }
+        }
+        return s;
+    };
+    const s = seasonOf(historical, 'directive');
+    assert.ok(G.cardOffered(s, 'relief'), 'offered under the requisition');
+    const have = G.forecast(s).supply.have;
+    assert.ok(G.act(s, 'play', 'relief'));
+    assert.equal(G.forecast(s).supply.have, have - 6, 'it costs grain');
+    assert.ok(!G.cardOffered(seasonOf(t => t.choice.options.some(o => o.id === 'market') ? 'market' : historical(t), 'directive'), 'relief'), 'not with the market');
+    const taxed = seasonOf(t => t.choice.options.some(o => o.id === 'tax') ? 'tax' : historical(t), 'poland');
+    assert.ok(!G.cardOffered(taxed, 'relief'), 'not after the tax in kind');
+}
+
 console.log('civil-war: campaign, policies, save, battle, bar and voice checks passed');

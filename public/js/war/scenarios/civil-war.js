@@ -292,6 +292,15 @@
             turns: [4, 5],
             text: '외국어 전단과 신문을 간섭군 병영에 들여보낸다. 1919년 4월 오데사 앞바다에서 프랑스 수병들이 반란을 일으켰고, 프랑스는 남부에서 병력을 거두었다.',
         },
+        // Grain spent on the villages: while the requisition stands, the
+        // only way the peasants' trust rises before the tax in kind.
+        relief: {
+            title: '할당량 감면', advisor: ['미하일 칼리닌', 'kalinin'], cost: 1, food: -6, peasants: 4,
+            when: { flag: 'razverstka', noFlag: 'tax' },
+            turns: [5, 6, 7, 8],
+            text: '전러시아 중앙집행위원회 의장 칼리닌이 선전열차를 타고 마을을 돌며 농민의 청원을 듣는다. 흉작과 전투로 짓밟힌 군의 할당량을 깎아 주면 곡물은 덜 걷히지만 마을은 숨을 돌린다.',
+            link: ['식량 할당제', T('prodrazvyorstka')],
+        },
         partyWeek: {
             title: '당 주간', advisor: ['블라디미르 레닌', 'lenin'], cost: 1, divisions: 3, workers: 4, cohesion: 3,
             turns: [6],
@@ -597,7 +606,7 @@
                 volga: { pressure: 3, foes: ['denikin'], text: '브란겔의 캅카스군이 차리친을 공격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
                 northwest: { pressure: 4, foes: ['yudenich'], text: '유데니치의 북서군이 얌부르크로 온다.', who: ['니콜라이 유데니치', 'nikolai-yudenich'] },
             },
-            cards: ['train', 'requisition', 'cheka', 'amnesty', 'propaganda'],
+            cards: ['train', 'requisition', 'relief', 'cheka', 'amnesty', 'propaganda'],
             incident: {
                 id: 'hungary', title: '헝가리로 갈 것인가', who: ['니키포르 흐리호리우', 'nykyfor-hryhoriv'],
                 text: '3월 21일 헝가리에 평의회 공화국이 섰다. 붉은 군대 우크라이나 전선은 베사라비아로 나아가 헝가리를 도우려 했다. 그런데 이 원정에 나설 아타만 흐리호리우의 사단이 5월 초 미콜라이우와 예카테리노슬라프 사이를 차지하고, 8일 「우니베르살」을 내 소비에트 정권에 반기를 들었다.',
@@ -654,7 +663,7 @@
                 volga: { pressure: 3, foes: ['denikin'], text: '차리친의 캅카스군은 볼가를 따라 북상하려 한다.' },
                 west: { pressure: 3, foes: ['poland'], text: '폴란드군이 민스크로 진격한다.', who: ['유제프 피우수트스키', 'jozef-pilsudski'] },
             },
-            cards: ['train', 'requisition', 'cheka', 'amnesty', 'partyWeek'],
+            cards: ['train', 'requisition', 'relief', 'cheka', 'amnesty', 'partyWeek'],
             incident: [{
                 id: 'mironov', title: '미로노프의 무단 출정', who: ['필리프 미로노프', 'filipp-mironov'],
                 text: '8월 말 사란스크에서 돈 카자크 군단을 꾸리던 미로노프가 명령 없이 부대를 이끌고 데니킨과 싸우러 나섰다. 9월 부됸니의 기병에게 붙잡힌 그는 10월 5일 발라쇼프의 재판에서 사형을 선고받았다.',
@@ -723,7 +732,7 @@
                 northwest: { pressure: 3, foes: ['yudenich'], text: '유데니치군이 에스토니아 국경으로 밀려났다.' },
                 north: { pressure: 3, foes: ['north'], text: '영국군이 떠난 아르한겔스크의 북부 정부가 흔들린다.' },
             },
-            cards: ['train', 'requisition', 'cheka', 'amnesty', 'cavalry'],
+            cards: ['train', 'requisition', 'relief', 'cheka', 'amnesty', 'cavalry'],
             choice: {
                 title: '징발 대신 세금을?', who: ['레프 트로츠키', 'trotsky'],
                 text: '곡물 할당제가 2년째다. 농민은 거둬 갈 몫만큼 씨를 덜 뿌리고, 우랄을 돌아본 트로츠키가 중앙위원회에 다른 길을 내놓았다.',
@@ -759,7 +768,7 @@
                 southwest: { pressure: 8, foes: ['poland', 'unr'], text: '키예프를 차지한 폴란드군을 몰아내야 한다.' },
                 crimea: { pressure: 8, foes: ['wrangel'], text: '브란겔의 러시아군이 크림에서 나와 북타브리아로 진격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
             },
-            cards: ['train', 'konarmia', 'requisition', 'cheka', 'amnesty'],
+            cards: ['train', 'konarmia', 'requisition', 'relief', 'cheka', 'amnesty'],
             choice: {
                 title: '커즌선을 넘을 것인가', who: ['미하일 투하쳅스키', 'tukhachevsky'],
                 text: '7월, 폴란드군을 쫓던 붉은 군대가 영국 외무장관 커즌이 제안한 민족 경계선에 다다랐다.',
@@ -795,7 +804,7 @@
             threats: {
                 crimea: { pressure: 12, foes: ['wrangel'], text: '브란겔군이 북타브리아에서 크림의 방어선으로 물러난다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
             },
-            cards: ['train', 'mironov', 'requisition', 'cheka'],
+            cards: ['train', 'mironov', 'requisition', 'relief', 'cheka'],
             choice: {
                 title: '마흐노와 손을 잡을 것인가', who: ['네스토르 마흐노', 'nestor-makhno'],
                 text: '브란겔이 우크라이나 남부로 올라오자 마흐노의 반란군이 다시 협정을 제안했다. 1919년 여름 붉은 군대는 마흐노를 무법자로 선포했었다.',
@@ -1501,6 +1510,7 @@
         trotsky: { side: 'red', hair: 'shock', glasses: 'round', beard: 'goatee', moustache: true, dress: 'greatcoat' },
         lenin: { side: 'red', hair: 'bald', beard: 'short', moustache: true, cap: 'worker', dress: 'suit' },
         sverdlov: { side: 'red', hair: 'shock', glasses: 'pince', beard: 'goatee', moustache: true, dress: 'leather' },
+        kalinin: { side: 'red', cap: 'worker', glasses: 'round', beard: 'pointed', moustache: true, dress: 'shirt' },
         dzerzhinsky: { side: 'red', hair: 'swept', face: 'long', beard: 'goatee', moustache: true, dress: 'tunic' },
         stalin: { side: 'red', hair: 'swept', moustache: 'great', dress: 'tunic' },
         radek: { side: 'red', hair: 'shock', glasses: 'round', beard: 'full', dress: 'suit' },

@@ -1682,7 +1682,7 @@
         const out = [];
         if (card.bonus) out.push(`고른 전선 전투력 +${card.bonus}`);
         if (card.divisions) out.push(`${U.unit} ${signed(card.divisions)}`);
-        if (card.food) out.push(`${U.food} +${card.food}`);
+        if (card.food) out.push(`${U.food} ${signed(card.food)}`);
         for (const [k, label] of Object.entries(U.cardStats)) {
             if (card[k]) out.push(`${label} ${signed(G.cardStat(s, card, id, k))}` + (card.escalates ? ' (쓸 때마다 커짐)' : ''));
         }
