@@ -90,7 +90,7 @@
 /* Board: map and fronts */
 .cw-board { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, 1fr); gap: 18px; align-items: start; margin-bottom: 18px; }
 .cw-map-panel { border: 1px solid var(--border); background: var(--bg-surface); min-width: 0; }
-.cw-map-heading { display: flex; align-items: center; gap: 4px 10px; padding: 6px 8px 6px 12px; border-bottom: 1px solid var(--border); font-size: .82rem; color: var(--text-secondary); }
+.cw-map-heading { display: flex; align-items: center; gap: 4px 8px; padding: 2px 3px 2px 12px; border-bottom: 1px solid var(--border); font-size: .82rem; color: var(--text-secondary); }
 .cw-map-heading span:first-child { font-weight: 700; color: var(--text-primary); }
 .cw-map-frame > svg { display: block; width: 100%; height: auto; font-family: inherit; }
 .cw-map-frame { position: relative; }
@@ -116,7 +116,7 @@
 .cw-map-legend i.k-national { background: var(--emap-gray); }
 .cw-map-legend i.cw-key-badge { width: 22px; background: var(--cw-white); border: 1px solid var(--cw-ink); }
 .cw-map-heading #cwMapCaption { flex: 1 1 0; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-.games-shell .cw-history-toggle { min-height: 36px; margin-left: auto; padding: 4px 10px; font-size: .8rem; }
+.games-shell .cw-history-toggle { min-height: 26px; margin-left: auto; padding: 1px 8px; font-size: .78rem; }
 .games-shell .cw-history-toggle[aria-pressed="true"] { border-color: var(--cw-red); color: var(--text-primary); font-weight: 700; }
 
 /* Basemap (event-map-svg.js classes) */

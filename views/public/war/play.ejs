@@ -14,7 +14,7 @@
         <section id="cwChoice" class="cw-choice" aria-labelledby="cwChoiceTitle"></section>
         <div class="cw-board">
           <section class="cw-map-panel" aria-label="작전 지도">
-            <div class="cw-map-heading"><span>작전 지도</span><span id="cwMapCaption"></span><button type="button" id="cwHistoryToggle" class="cw-history-toggle" aria-pressed="false">역사의 세력 범위</button></div>
+            <div class="cw-map-heading"><span>작전 지도</span><span id="cwMapCaption"></span><button type="button" id="cwHistoryToggle" class="cw-history-toggle" aria-pressed="false">역사대로의 세력 범위</button></div>
             <div class="cw-map-frame" id="cwMap" data-points="<%= JSON.stringify(war.map.points) %>" data-phases="<%= JSON.stringify(war.map.phases) %>"><%- war.map.svg %></div>
             <details class="cw-map-key" id="cwMapKey" open><summary>범례</summary><div id="cwMapLegend" class="cw-map-legend"></div></details>
           </section>

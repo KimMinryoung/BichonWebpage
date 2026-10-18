@@ -379,7 +379,7 @@
     // bubble at a time over the speaker (an attacker's marker, a Red at
     // Moscow or at the front's last city); its result, with each beaten or
     // surging attacker's cry. They play once per season and phase after the
-    // map's entrance has begun; a tap moves on, ✕ ends them, 「대사」 plays
+    // map's entrance has begun; a tap moves on, ✕ ends them, 「대사 다시」 plays
     // them again. Words without a source are marked 각색. Not saved: only
     // decisions go in the log. The bubbles are html over the map, not svg,
     // so Korean wraps and the svg animation rule is untouched.
@@ -390,7 +390,7 @@
         voice.until = null;
         voice.list = voicesOf();
         renderVoice();
-    } }, '대사');
+    } }, '대사 다시');
     $('cwHistoryToggle').before(voiceReplay);
 
     function speakerName(v) {
