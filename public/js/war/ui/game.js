@@ -286,13 +286,15 @@
         }));
         const plan = s.plan;
         const supply = s.phase === 'plan' ? G.forecast(s).supply : null;
-        const stat = (label, value, note, warn) => [el('div', { class: warn ? 'is-warn' : '' }, el('dt', {}, label), el('dd', {}, el('strong', {}, value), note ? el('small', {}, note) : null))];
+        // While planning, what the pinned crumb bar also carries is marked
+        // is-crumb: a phone shows it there only.
+        const stat = (label, value, note, warn, crumbed) => [el('div', { class: [warn ? 'is-warn' : '', crumbed ? 'is-crumb' : ''].join(' ').trim() }, el('dt', {}, label), el('dd', {}, el('strong', {}, value), note ? el('small', {}, note) : null))];
         const items = [];
         if (s.phase === 'plan') {
-            items.push(...stat(U.unit, `${G.free(s)} / ${plan.divisions}`, `보낼 ${U.unit} / 전체`, G.free(s) > 0));
-            items.push(...stat('지휘력', String(plan.command), `${U.cardStats[D.command.stat]} ${s.stats[D.command.stat]} 기준 · 남기면 사라짐`, plan.command < 3));
-            items.push(...stat(U.leader, `${plan.commissars - G.commissarsUsed(s)} / ${plan.commissars}`, '남음 / 전체'));
-            items.push(...stat(U.food, String(s.food), `이번 시기 +${supply.income}, 필요 ${supply.need}`, supply.ratio < 1));
+            items.push(...stat(U.unit, `${G.free(s)} / ${plan.divisions}`, `보낼 ${U.unit} / 전체`, G.free(s) > 0, true));
+            items.push(...stat('지휘력', String(plan.command), `${U.cardStats[D.command.stat]} ${s.stats[D.command.stat]} 기준 · 남기면 사라짐`, plan.command < 3, true));
+            items.push(...stat(U.leader, `${plan.commissars - G.commissarsUsed(s)} / ${plan.commissars}`, '남음 / 전체', false, true));
+            items.push(...stat(U.food, String(s.food), `이번 시기 +${supply.income}, 필요 ${supply.need}`, supply.ratio < 1, true));
         } else {
             items.push(...stat(U.food, String(s.food), '남은 비축'));
         }
