@@ -62,7 +62,8 @@ function oldParts(f) {
 // have two): the one answer it had.
 const oldResponse = responses => Object.values(responses || {})[0] || null;
 function oldRecord(r) {
-    const { responses, ...rest } = r;
+    // The ledger (2026-10-18) only accounts for the stats already recorded.
+    const { responses, ledger, ...rest } = r;
     r = Object.assign(rest, { response: oldResponse(responses), turn: oldTurn(rest.turn) });
     const fronts = r.fronts && Object.fromEntries(Object.entries(r.fronts).map(([id, f]) => [id, oldParts(Object.assign({}, f))]));
     return Object.assign({}, r, { stats: asGrain(r.stats), spoils: r.spoils.map(asGrain) }, fronts ? { fronts } : {});

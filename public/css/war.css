@@ -12,6 +12,9 @@
     /* What eases a front (a trait that helps, a pursuit): cream on green,
        which reads on both themes where green text alone does not. */
     --cw-good: #2f7d43; --cw-good-ink: #faf2da;
+    /* A loss of the Red side's own (a stat falling, a counter's blow):
+       orange, since red is the Red Army's colour. */
+    --cw-loss: #d4691c;
     --emap-blue: #2f6fb8; --emap-red: var(--clr-red); --emap-amber: #c7861c;
     --emap-purple: #7b5aa6; --emap-gray: #8d8d86; --emap-green: #3f8a4a; --emap-black: var(--text-primary);
 }
@@ -464,6 +467,63 @@
 .cw-notes li { line-height: var(--leading-normal); margin-bottom: 4px; }
 .cw-history { border-top: 1px solid var(--border); padding-top: 12px; margin: 12px 0; }
 .cw-history h4 { font-size: 1.05rem; margin: 4px 0 8px; }
+/* The season's account: a gauge per stat, its causes as chips, then what
+   the next season gets. A rise is green, a fall orange. */
+.cw-ledger { display: grid; gap: 14px; margin: 0 0 14px; padding: 12px 14px 14px; border: 1px solid var(--border); background: color-mix(in srgb, var(--text-primary) 3%, var(--bg-surface)); }
+.cw-ledger .games-kicker { margin: 0; }
+.cw-ledger-row { display: grid; gap: 6px; }
+.cw-ledger-head { display: flex; align-items: baseline; gap: 10px; margin: 0; }
+.cw-ledger-head strong { font-size: 1rem; }
+.cw-ledger-value { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.cw-ledger-value b { color: var(--text-primary); font-size: 1.15rem; }
+.cw-ledger-delta { margin-left: auto; min-width: 3.2em; padding: 1px 8px; text-align: center; font-weight: 800; font-size: 1.05rem; font-variant-numeric: tabular-nums; color: var(--text-secondary); border: 1px solid var(--border); }
+.cw-ledger-row.is-up .cw-ledger-delta { background: var(--cw-good); border-color: var(--cw-good); color: var(--cw-good-ink); }
+.cw-ledger-row.is-down .cw-ledger-delta { background: var(--cw-loss); border-color: var(--cw-loss); color: #fff; }
+/* The gauge: what stayed, what changed, and the lines below which
+   something gives, a line's words above it when it is crossed or holds now,
+   below it when it is the next one down. */
+.cw-gauge { position: relative; height: 14px; margin: 18px 0 18px; background: color-mix(in srgb, var(--text-primary) 10%, transparent); }
+.cw-gauge-keep { position: absolute; inset: 0 auto 0 0; background: color-mix(in srgb, var(--text-primary) 55%, transparent); }
+.cw-gauge-change { position: absolute; top: 0; bottom: 0; }
+.is-up .cw-gauge-change { background: var(--cw-good); transform-origin: left; }
+.is-down .cw-gauge-change { background: repeating-linear-gradient(-45deg, var(--cw-loss) 0 3px, transparent 3px 6px); outline: 1px solid var(--cw-loss); outline-offset: -1px; }
+.is-down .cw-gauge-change::after { content: ''; position: absolute; inset: 0; background: var(--cw-loss); transform-origin: left; scale: 0 1; }
+.cw-gauge-mark { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--text-primary); opacity: .45; }
+.cw-gauge-mark span { position: absolute; left: 50%; translate: -50% 0; white-space: nowrap; font-size: .72rem; font-weight: 700; font-style: normal; line-height: 1; }
+.cw-gauge-mark:is(.is-fell, .is-rose, .is-in-force, .is-ahead) { opacity: 1; }
+.cw-gauge-mark:is(.is-fell, .is-rose, .is-in-force) span { bottom: calc(100% + 3px); }
+.cw-gauge-mark.is-ahead { background: var(--text-secondary); }
+.cw-gauge-mark.is-ahead span { top: calc(100% + 3px); color: var(--text-secondary); font-weight: 600; }
+.cw-gauge-mark.is-fell { background: var(--cw-loss); width: 3px; }
+.cw-gauge-mark.is-fell span { color: #fff; background: var(--cw-loss); padding: 2px 5px; }
+.cw-gauge-mark.is-rose { background: var(--cw-good); width: 3px; }
+.cw-gauge-mark.is-rose span { color: var(--cw-good-ink); background: var(--cw-good); padding: 2px 5px; }
+.cw-gauge-mark.is-in-force span { color: var(--cw-loss); }
+/* A label near an end keeps inside the gauge. */
+.cw-gauge-mark.is-near-start span { left: 0; translate: 0 0; }
+.cw-gauge-mark.is-near-end span { left: auto; right: 0; translate: 0 0; }
+.cw-ledger-causes { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; }
+.cw-ledger-causes li { display: inline-flex; align-items: baseline; gap: 6px; padding: 3px 8px; font-size: .82rem; border: 1px solid var(--border); background: var(--bg-surface); }
+.cw-ledger-causes li b { font-variant-numeric: tabular-nums; }
+.cw-ledger-causes li.is-plus { border-color: var(--cw-good); }
+.cw-ledger-causes li.is-plus b { color: var(--cw-good); }
+.cw-ledger-causes li.is-minus { border-color: var(--cw-loss); }
+.cw-ledger-causes li.is-minus b { color: var(--cw-loss); }
+.cw-ledger-next .cw-ledger-causes li.is-plus { background: var(--cw-good); color: var(--cw-good-ink); }
+.cw-ledger-next .cw-ledger-causes li.is-minus { background: var(--cw-loss); color: #fff; }
+.cw-ledger-next { display: grid; gap: 6px; border-top: 1px dashed var(--border); padding-top: 10px; }
+/* Fresh, the rows come in one after another (--k), each gauge moving
+   from where the stat stood, then the lines it crossed pop. */
+@media (prefers-reduced-motion: no-preference) {
+    .cw-ledger.is-fresh .cw-ledger-row { animation: cw-ledger-in .35s ease-out both; animation-delay: calc(var(--k) * .3s); }
+    .cw-ledger.is-fresh .is-up .cw-gauge-change { animation: cw-gauge-grow .8s ease-out both; animation-delay: calc(var(--k) * .3s + .3s); }
+    .cw-ledger.is-fresh .is-down .cw-gauge-change::after { animation: cw-gauge-drain .9s ease-in both; animation-delay: calc(var(--k) * .3s + .3s); }
+    .cw-ledger.is-fresh .cw-gauge-mark:is(.is-fell, .is-rose) span { animation: cw-mark-pop .4s ease-out both; animation-delay: calc(var(--k) * .3s + 1.1s); }
+}
+@keyframes cw-ledger-in { from { opacity: 0; translate: 0 6px; } to { opacity: 1; translate: 0 0; } }
+@keyframes cw-gauge-grow { from { scale: 0 1; } to { scale: 1 1; } }
+@keyframes cw-gauge-drain { from { scale: 1 1; } to { scale: 0 1; } }
+@keyframes cw-mark-pop { from { opacity: 0; scale: .6; } 70% { opacity: 1; scale: 1.12; } to { opacity: 1; scale: 1; } }
 .cw-links { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .9rem; }
 
 /* Battle */
@@ -686,6 +746,36 @@
     78% { opacity: 1; }
     to { opacity: 0; scale: 1; }
 }
+/* An ended battle's verdict, stamped over the middle of the board once the
+   last falls have played; it stays until the press that moves on. Won:
+   red and gold, the objective bursting and the Red units leaping; lost:
+   the enemy's blue. */
+.cw-verdict-row { position: absolute; top: 40%; left: 0; width: 100%; z-index: 3; display: flex; justify-content: center; pointer-events: none; }
+.cw-verdict {
+    display: grid; justify-items: center; gap: 2px; padding: 10px 30px 12px; max-width: calc(100% - 24px);
+    background: var(--cw-red); color: #fff; border: 3px solid var(--cw-gold); box-shadow: 6px 6px 0 rgba(0, 0, 0, .5);
+    rotate: -3deg;
+}
+.cw-verdict strong { font-size: clamp(2rem, 6vw, 3rem); font-weight: 900; letter-spacing: .12em; line-height: 1.05; color: var(--cw-gold); text-shadow: 2px 2px 0 rgba(0, 0, 0, .45); }
+.cw-verdict span { font-size: .9rem; font-weight: 700; }
+.cw-verdict .cw-verdict-title { font-size: .75rem; letter-spacing: .08em; opacity: .85; }
+.cw-verdict.is-lost { background: #1d2a44; border-color: var(--emap-blue); rotate: 0deg; }
+.cw-verdict.is-lost strong { color: #f4f1e8; }
+.cw-burst-rays { fill: none; stroke: var(--cw-gold); stroke-width: 4; stroke-linecap: square; }
+.cw-burst-ring { fill: none; stroke: var(--cw-gold); stroke-width: 3; }
+.cw-burst { transform-box: fill-box; transform-origin: 50% 50%; pointer-events: none; }
+@media (prefers-reduced-motion: no-preference) {
+    .cw-verdict { animation: cw-verdict .7s cubic-bezier(.2, 1.4, .4, 1) both; animation-delay: calc(0ms - var(--since, 0ms)); }
+    .cw-verdict.is-lost { animation-name: cw-verdict-lost; animation-duration: .9s; animation-timing-function: ease-out; }
+    .cw-burst { animation: cw-burst 1.4s ease-out both; animation-delay: calc(0ms - var(--since, 0ms)); }
+    .cw-burst-rays { animation: cw-rays 1.2s ease-in-out 3 both; animation-delay: calc(400ms - var(--since, 0ms)); }
+    .cw-unit.is-cheering { animation: cw-cheer .5s ease-out 2 both; animation-delay: calc(0ms - var(--since, 0ms)); }
+}
+@keyframes cw-verdict { from { opacity: 0; scale: 2.6; rotate: -12deg; } 60% { opacity: 1; scale: .94; rotate: -2deg; } to { opacity: 1; scale: 1; rotate: -3deg; } }
+@keyframes cw-verdict-lost { from { opacity: 0; translate: 0 -14px; } to { opacity: 1; translate: 0 0; } }
+@keyframes cw-burst { from { scale: 0; } 45% { scale: 1.25; } to { scale: 1; } }
+@keyframes cw-rays { 0%, 100% { stroke-opacity: 1; } 50% { stroke-opacity: .25; } }
+@keyframes cw-cheer { 0%, 100% { translate: 0 0; } 40% { translate: 0 -7px; } }
 .cw-battle-status li.is-goal { border-left: 3px solid var(--clr-red); padding-left: 8px; font-weight: 700; }
 .cw-goal-flag { fill: var(--clr-red); stroke: #1d1d1b; stroke-width: 1; stroke-linejoin: round; pointer-events: none; }
 .cw-battle-actions { display: flex; flex-wrap: wrap; gap: 8px; }

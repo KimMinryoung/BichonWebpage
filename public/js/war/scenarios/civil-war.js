@@ -57,7 +57,7 @@
             // Petrograd lost: the workers shaken, the party too; it can be
             // taken back. Its draft is lost while it is (mobilize).
             onLost: {
-                at: 0, effects: { workers: -15, cohesion: -10 },
+                at: 0, label: '페트로그라드 함락', effects: { workers: -15, cohesion: -10 },
                 note: '페트로그라드가 함락되었다. 혁명의 도시를 잃은 노동자들이 흔들린다.', regained: '페트로그라드를 되찾았다.',
             },
         },
@@ -84,7 +84,7 @@
                 reached: {
                     note: '바르샤바에 붉은 군대가 들어갔다. 역사와 다른 길이다. 폴란드 노동자가 일어설지는 아무도 모른다.',
                     reward: {
-                        when: { rules: ['>=', 6] }, flag: 'warsawTaken', workers: 8, cohesion: 5,
+                        when: { rules: ['>=', 6] }, label: '바르샤바 입성', flag: 'warsawTaken', workers: 8, cohesion: 5,
                         note: '폴란드가 강화를 청한다. 유럽 혁명이 눈앞에 온 듯 공장과 당이 들끓는다. 노동자 지지 +8, 당 결속 +5. 다음 시기 서부전선 사단 4개가 남쪽으로 돌아오고, 브란겔은 고립된다.',
                     },
                 },
@@ -1675,12 +1675,12 @@
         stats: { peasants: { start: 60 }, workers: { start: 60 }, cohesion: { start: 60 } },
         food: { start: 6, base: 3, per: ['peasants', 15], fed: 0.5, hunger: 0.75, desert: 6, reserveEats: 0.5 },
         policies: [
-            { flag: 'razverstka', food: 7, each: { peasants: -3 }, unless: 'tax' },
-            { flag: 'market', food: 1, each: { peasants: 2 } },
+            { flag: 'razverstka', label: '식량 할당제', food: 7, each: { peasants: -3 }, unless: 'tax' },
+            { flag: 'market', label: '시장 수매', food: 1, each: { peasants: 2 } },
             // Rules 5: grain bought on the market does not reach the city
             // rations; the bagmen do.
-            { flag: 'market', when: { rules: ['>=', 5] }, each: { workers: -2 } },
-            { flag: 'tax', food: -10, each: { peasants: 8 } },
+            { flag: 'market', label: '시장 수매', when: { rules: ['>=', 5] }, each: { workers: -2 } },
+            { flag: 'tax', label: '현물세', food: -10, each: { peasants: 8 } },
         ],
         // Peasants and cohesion land before Petrograd's fall, workers after
         // (its −15 joins the season's changes).
@@ -1690,8 +1690,8 @@
         // working class that turns away splits the party (the oppositions
         // of 1919–1920).
         upkeep: [
-            { when: { rules: ['>=', 5] }, each: { workers: -WORKERS_UPKEEP }, note: UPKEEP_NOTE },
-            { when: { rules: ['>=', 5], stat: ['workers', '<', 45] }, each: { cohesion: -3 }, note: '노동자 지지가 45 아래다. 공장에서 등을 돌린 노동자를 두고 당 안에 반대파가 선다. 당 결속 −3.' },
+            { when: { rules: ['>=', 5] }, label: '전쟁의 부담', each: { workers: -WORKERS_UPKEEP }, note: UPKEEP_NOTE },
+            { when: { rules: ['>=', 5], stat: ['workers', '<', 45] }, label: '노동자 반대파', each: { cohesion: -3 }, note: '노동자 지지가 45 아래다. 공장에서 등을 돌린 노동자를 두고 당 안에 반대파가 선다. 당 결속 −3.' },
         ],
     };
 
@@ -1737,8 +1737,8 @@
     // From rules 5 once a season by the net, and a gain less than a loss:
     // victories do not feed the cities. Being ahead no longer unites the
     // party.
-    const frontMoves = { gained: { workers: 2 }, lost: { workers: -2 }, net: { when: { rules: ['>=', 5] }, gained: { workers: 1 }, lost: { workers: -2 } } };
-    const verdict = { behind: { cohesion: -3, note: '역사보다 밀린 책임을 두고 당 안에서 논쟁이 벌어졌다. 당 결속 −3.' }, ahead: { cohesion: 2, when: { rules: ['<', 5] } } };
+    const frontMoves = { gained: { workers: 2, label: '전선 진격' }, lost: { workers: -2, label: '전선 후퇴' }, net: { when: { rules: ['>=', 5] }, gained: { workers: 1, label: '전선 진격' }, lost: { workers: -2, label: '전선 후퇴' } } };
+    const verdict = { behind: { cohesion: -3, label: '역사보다 뒤처짐', note: '역사보다 밀린 책임을 두고 당 안에서 논쟁이 벌어졌다. 당 결속 −3.' }, ahead: { cohesion: 2, label: '역사보다 앞섬', when: { rules: ['<', 5] } } };
 
     // What choices and seasons add to a front, in the order the card lists
     // them; afterBattle ones come after the season's battle.

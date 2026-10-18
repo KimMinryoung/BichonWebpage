@@ -49,6 +49,9 @@
     // A battle just ended stays on its board, its last blows and falls
     // playing, until a press moves on (battleOver, leaveBattle).
     let battleEnded = false;
+    // When the ended battle's verdict first showed on its board, so the
+    // stamp plays once however often the board is redrawn.
+    let verdictAt = null;
     const FALL_MS = 1300;
     const LUNGE_MS = 600;
     // The player's own blow stays drawn this long, then the board is drawn
@@ -1811,6 +1814,7 @@
             : el('button', { type: 'button', class: 'cw-primary', onclick: () => { act('next'); historyMap = false; render(); $('cwPlay').scrollIntoView({ block: 'start' }); announce(`${G.turnData(s).date} ${G.turnData(s).title}`); } }, '다음 시기로 →');
         $('cwReview').replaceChildren(...[
             el('h3', { id: 'cwReviewTitle' }, `${t.date}의 결산`),
+            ledgerOf(r),
             r.notes.length ? el('ul', { class: 'cw-notes' }, ...r.notes.map(n => el('li', {}, n))) : null,
             spoilsOf(r),
             foughtBattle(),
@@ -1824,6 +1828,66 @@
                 el('p', {}, t.after),
                 el('p', { class: 'cw-links' }, ...t.links.map(link))),
             next].filter(Boolean));
+    }
+
+    // The season's account: each stat from where it stood to where it is,
+    // on a gauge with the lines that matter, what moved it, and what the
+    // next season gets of it. Its gauges move the first time it shows.
+    function ledgerOf(r) {
+        if (!r.ledger) return null;
+        const fresh = !ledgerSeen.has(r) && !stillMotion();
+        ledgerSeen.add(r);
+        const rows = U.hud.map((h, k) => {
+            const a = r.ledger.from[h.stat], b = r.stats[h.stat], diff = b - a;
+            const [lo, hi] = [D.economy.stats[h.stat].min ?? 0, D.economy.stats[h.stat].max ?? 100];
+            const pct = v => `${(100 * (v - lo)) / (hi - lo)}%`;
+            const marks = statMarks(h.stat);
+            const crossed = marks.filter(([v]) => (a >= v) !== (b >= v));
+            const inForce = crossed.length ? null : marks.slice().reverse().find(([v]) => b < v);
+            const ahead = marks.find(([v]) => v <= b && !crossed.some(m => m[0] === v));
+            const edge = v => (v - lo) / (hi - lo) < 0.12 ? ' is-near-start' : (v - lo) / (hi - lo) > 0.88 ? ' is-near-end' : '';
+            const mark = ([v, label], cls) => el('i', { class: 'cw-gauge-mark ' + cls + edge(v), style: `left:${pct(v)}` }, el('span', {}, cls === 'is-rose' ? `${v} 회복` : `${v} 아래 ${label}`));
+            const causes = r.ledger.items.filter(x => x.d[h.stat]);
+            return el('div', { class: 'cw-ledger-row' + (diff > 0 ? ' is-up' : diff < 0 ? ' is-down' : ''), style: `--k:${k}` },
+                el('p', { class: 'cw-ledger-head' }, el('strong', {}, h.label),
+                    el('span', { class: 'cw-ledger-value' }, `${a} → `, el('b', {}, String(b))),
+                    el('span', { class: 'cw-ledger-delta' }, signed(diff))),
+                el('div', { class: 'cw-gauge', role: 'img', 'aria-label': `${h.label} ${a}에서 ${b}로` + crossed.map(([v, l]) => `, ${v} ${b < v ? '아래로' : '위로'}: ${l}`).join('') },
+                    el('i', { class: 'cw-gauge-keep', style: `width:${pct(Math.min(a, b))}` }),
+                    diff ? el('i', { class: 'cw-gauge-change', style: `left:${pct(Math.min(a, b))};width:${pct(lo + Math.abs(diff))}` }) : null,
+                    ...crossed.map(m => mark(m, b < m[0] ? 'is-fell' : 'is-rose')),
+                    inForce ? mark(inForce, 'is-in-force') : null,
+                    ahead ? mark(ahead, 'is-ahead') : null,
+                    ...marks.filter(m => !crossed.includes(m) && m !== inForce && m !== ahead).map(([v]) => el('i', { class: 'cw-gauge-mark', style: `left:${pct(v)}` }))),
+                causes.length ? el('ul', { class: 'cw-ledger-causes' }, ...causes.map(x => el('li', { class: x.d[h.stat] > 0 ? 'is-plus' : 'is-minus' }, x.label, el('b', {}, signed(x.d[h.stat]))))) : null);
+        });
+        return el('div', { class: 'cw-ledger' + (fresh ? ' is-fresh' : '') }, el('p', { class: 'games-kicker' }, U.aria.stats), ...rows, nextSeason(r));
+    }
+    const ledgerSeen = new WeakSet();
+
+    // The lines on a stat's gauge below which something gives: the risings,
+    // the commissars, an upkeep, the command's tiers. [value, what], highest first.
+    function statMarks(stat) {
+        const below = w => w && w.stat && w.stat[0] === stat && w.stat[1] === '<' ? w.stat[2] : null;
+        const marks = [];
+        for (const l of D.unrest.levels) if (below(l.when) !== null) marks.push([below(l.when), `봉기 ${U.unit} −${l.n}`]);
+        for (const f of D.leaders.fewer || []) if (below(f.when) !== null) marks.push([below(f.when), `${U.leader} −${f.n}`]);
+        for (const u of D.economy.upkeep || []) if (below(u.when) !== null && u.label) marks.push([below(u.when), u.label]);
+        if (D.command.stat === stat) D.command.tiers.forEach(([v], i, all) => { if (v > 0 && all[i + 1]) marks.push([v, `지휘력 ${all[i + 1][1]}`]); });
+        return marks.sort((x, y) => y[0] - x[0]);
+    }
+
+    // What the next season's draft and command get of this one.
+    function nextSeason(r) {
+        const stat = D.command.stat;
+        const was = G.commandOf(r.ledger.from[stat]), now = G.commandOf(r.stats[stat]);
+        const chip = (text, n) => el('li', { class: n > 0 ? 'is-plus' : n < 0 ? 'is-minus' : '' }, text);
+        const items = [
+            chip(was === now ? `지휘력 ${now}` : `지휘력 ${was} → ${now}`, now - was),
+            ...G.mobilizeSources(s).map(x => chip(`${x.label} · ${U.unit} ${signed(x.n)}`, x.n)),
+            ...(D.leaders.fewer || []).filter(f => G.when(s, f.when)).map(f => chip(`${U.leader} −${f.n}`, -f.n)),
+        ];
+        return el('div', { class: 'cw-ledger-next' }, el('p', { class: 'games-kicker' }, '다음 시기'), el('ul', { class: 'cw-ledger-causes' }, ...items));
     }
 
     // The season's incident in the review: the answer given, history's, and
@@ -2048,8 +2112,13 @@
             counterBar.rect.setAttribute('width', counterBar.w * lost / counterBar.max);
             hpText(counterBar.text, counterBar.hp, lost, 'is-counter');
         };
+        // The verdict in: a won battle's Red units leap, one after another.
+        const verdict = verdictBanner(b);
+        const cheer = verdict && b.result === 'won' && !stillMotion() ? Math.round(performance.now() - verdictAt) : null;
+        let cheered = 0;
         for (const u of b.units.filter(x => x.hp > 0)) {
             const x = u.c * CELL, y = u.r * CELL;
+            const leap = cheer !== null && B.isPlayer(b, u) ? cheered++ : null;
             const isTarget = targets.includes(u);
             const p = isTarget ? B.preview(b, unit, u, armed ? B.featMod(unit) : undefined) : null;
             const done = B.isPlayer(b, u) && u.acted;
@@ -2059,9 +2128,10 @@
             if (blow && !fallAt.has(blow)) fallAt.set(blow, performance.now());
             const lunge = foeHit && performance.now() - fallAt.get(blow) < LUNGE_MS;
             const g = svg('g', {
-                class: `cw-unit is-${sideOf(b, u)} k-${u.kind}${u.yielded ? ' is-yielded' : ''}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done && !B.canMove(b, u) ? ' is-done' : ''}${lunge ? ' is-lunging' : ''}`,
+                class: `cw-unit is-${sideOf(b, u)} k-${u.kind}${u.yielded ? ' is-yielded' : ''}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done && !B.canMove(b, u) ? ' is-done' : ''}${lunge ? ' is-lunging' : ''}${leap !== null ? ' is-cheering' : ''}`,
                 tabindex: '0', role: 'button',
-                style: lunge ? `--lx:${Math.sign(foeHit.c - u.c) * 9}px;--ly:${Math.sign(foeHit.r - u.r) * 9}px;--since:${Math.round(performance.now() - fallAt.get(blow))}ms` : null,
+                style: lunge ? `--lx:${Math.sign(foeHit.c - u.c) * 9}px;--ly:${Math.sign(foeHit.r - u.r) * 9}px;--since:${Math.round(performance.now() - fallAt.get(blow))}ms`
+                    : leap !== null ? `--since:${cheer - 300 - leap * 90}ms` : null,
                 'aria-label': `${B.isPlayer(b, u) ? U.player : foeName()} ${u.name}${u.yielded ? '(투항해 넘어옴)' : ''}, 병력 ${u.hp}/${u.maxHp}, 방어 ${B.defenseOf(b, u)}` + (p ? `, 공격 시 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ''}${p.wears ? ', 진지 방어 1 감소' : ''}${p.surrender ? ', 투항시킴' : ''}` : '') + (featLeft(b, u) ? `, 결정적 한 수 ${u.feat.name}` : '') + (done ? ', 행동 마침' : ''),
             });
             // A counter on the board: a flat square of the side's colour,
@@ -2139,6 +2209,7 @@
         }
         board.append(postMark(b));
         board.append(eventArrows(b));
+        if (verdict && b.result === 'won') board.append(victoryBursts(b));
         const moment = momentBanner(b);
         // A Red order leaves only its blow, falls and the flank in the
         // events; anything else came from the White turn.
@@ -2166,7 +2237,7 @@
             el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             el('details', { class: 'cw-battle-brief' }, el('summary', {}, '작전 지시', el('span', {}, ` · ${def.summary}`)), ...def.brief.map(p => el('p', {}, p))),
             el('div', { class: 'cw-battle-layout' },
-                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll' }, board, moment), el('p', { class: 'cw-terrain-key' },
+                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll' }, board, moment, verdict), el('p', { class: 'cw-terrain-key' },
                     ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 지역'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
@@ -2185,6 +2256,50 @@
                         el('ol', { class: 'cw-battle-log' }, ...eventLines(b).map(t => el('li', {}, t)))) : null)));
         renderBattleVoice();
         placeMoment();
+        placeVerdict();
+    }
+
+    // The ended battle's verdict stamped across its board once the last
+    // falls have played: won in red and gold, lost in the enemy's blue.
+    // It stays until the press that moves on.
+    function verdictBanner(b) {
+        if (!battleEnded || closeLeft(b) > 0) return null;
+        if (verdictAt === null) verdictAt = performance.now();
+        const won = b.result === 'won';
+        return el('div', { class: 'cw-verdict-row', 'aria-hidden': 'true' },
+            el('div', { class: 'cw-verdict ' + (won ? 'is-won' : 'is-lost'), style: `--since:${Math.round(performance.now() - verdictAt)}ms` },
+                el('span', { class: 'cw-verdict-title' }, b.def.title),
+                el('strong', {}, won ? '승리' : '패배'),
+                el('span', {}, foughtText({ result: b.result, turns: b.turn, held: b.held }))));
+    }
+
+    // A won battle's objective (or the post held) bursts in red and gold.
+    function victoryBursts(b) {
+        const g = svg('g', { class: 'cw-bursts', 'aria-hidden': 'true', style: `--since:${Math.round(performance.now() - verdictAt)}ms` });
+        const at = b.def.goals.length ? b.def.goals.map(x => x.at) : b.def.protect ? [b.def.protect.at] : [];
+        for (const [r, c] of at) {
+            const [cx, cy] = center(r, c);
+            const burst = svg('g', { class: 'cw-burst' });
+            const rays = Array.from({ length: 12 }, (_, i) => {
+                const a = i * Math.PI / 6, r1 = i % 2 ? 30 : 26, r2 = i % 2 ? 40 : 48;
+                return `M${cx + Math.cos(a) * r1} ${cy + Math.sin(a) * r1}L${cx + Math.cos(a) * r2} ${cy + Math.sin(a) * r2}`;
+            }).join('');
+            burst.append(svg('path', { d: rays, class: 'cw-burst-rays' }));
+            burst.append(svg('rect', { x: cx - CELL / 2 + 1, y: cy - CELL / 2 + 1, width: CELL - 2, height: CELL - 2, class: 'cw-burst-ring' }));
+            g.append(burst);
+        }
+        return g;
+    }
+
+    // The verdict keeps to the middle of what shows of the board.
+    function placeVerdict() {
+        const wrap = document.querySelector('#cwBattle .cw-grid-scroll');
+        const row = wrap && wrap.querySelector('.cw-verdict-row');
+        if (!row) return;
+        row.style.left = `${wrap.scrollLeft}px`;
+        row.style.width = `${wrap.clientWidth}px`;
+        const h = wrap.querySelector('.cw-grid').getBoundingClientRect().height;
+        row.style.top = `${Math.max(4, (h - row.offsetHeight) / 2)}px`;
     }
 
     // The Red units in a row over the board: who still has to act (full)
@@ -2392,6 +2507,7 @@
         selected = null;
         inspected = null;
         battleEnded = true;
+        verdictAt = null;
         render();
         announce(`${s.battle.def.title}: ${s.battle.result === 'won' ? '이겼다' : '졌다'}. ` + eventLines(s.battle).join(' '));
         return true;
@@ -2399,9 +2515,14 @@
 
     // The ended battle's closing row: how it went, and once the last
     // falls have played, the way on.
-    function battleClose(b) {
+    // How long the ended battle's last falls have still to play.
+    function closeLeft(b) {
         const falls = b.events.filter(e => e.type === 'fall');
-        const left = stillMotion() ? 0 : Math.max(0, ...falls.map(e => FALL_MS - (performance.now() - (fallAt.get(e) || performance.now()))));
+        return stillMotion() ? 0 : Math.max(0, ...falls.map(e => FALL_MS - (performance.now() - (fallAt.get(e) || performance.now()))));
+    }
+
+    function battleClose(b) {
+        const left = closeLeft(b);
         if (left > 0) window.setTimeout(() => { if (battleEnded) renderBattle(); }, left + 30);
         const final = s.phase === 'done';
         return el('div', { class: 'cw-battle-actions cw-battle-close' },

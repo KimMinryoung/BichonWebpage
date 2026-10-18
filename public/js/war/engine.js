@@ -578,8 +578,12 @@
 
         // Adds an option's or a card's stat effects (its keys named after
         // stats) to the season's changes.
-        function addStats(delta, obj, of = k => obj[k] || 0) {
-            for (const k of STATS) delta[k] += of(k);
+        // With a ledger, the change is also kept there under its label, for
+        // the review's account of the season.
+        function addStats(delta, obj, of = k => obj[k] || 0, ledger, label) {
+            const d = {};
+            for (const k of STATS) { delta[k] += of(k); if (of(k)) d[k] = of(k); }
+            if (ledger && Object.keys(d).length) ledger.push({ label: label || obj.label || '', d });
         }
 
         // Sending a season with a battle on one of its fronts fights it first
@@ -599,6 +603,7 @@
             const opt = t.choice.options.find(o => o.id === s.plan.choice);
             const before = Object.assign({}, s.lines);
             const commandBefore = s.stats[D.command.stat];
+            const statsBefore = Object.assign({}, s.stats);
             const notes = [];
 
             // Food: the season's income, then the army eats.
@@ -665,28 +670,31 @@
             // Stats from cards, the choice, the answer and the season's policies.
             const flagsNow = Object.assign({}, s.flags, choiceFlags(s));
             const delta = Object.fromEntries(STATS.map(k => [k, 0]));
-            for (const g of capGains) addStats(delta, g);
+            const ledger = [];
+            for (const g of capGains) addStats(delta, g, undefined, ledger);
             for (const c of s.plan.cards) {
                 const card = D.cards[c.id];
-                addStats(delta, card, k => cardStat(s, card, c.id, k));
+                addStats(delta, card, k => cardStat(s, card, c.id, k), ledger, card.title);
                 s.used[c.id] = (s.used[c.id] || 0) + 1;
                 if (card.flag) s.flags[card.flag] = true;
                 if (card.calm) s.flags['calm:' + c.id] = nextTurn(s);
             }
-            addStats(delta, opt);
+            addStats(delta, opt, undefined, ledger, t.choice.title);
             if (opt.flag) s.flags[opt.flag] = true;
-            for (const answer of responsesOf(s)) {
-                addStats(delta, answer);
+            for (const inc of incidentsOf(s)) {
+                const answer = responseOf(s, inc);
+                if (!answer) continue;
+                addStats(delta, answer, undefined, ledger, inc.title);
                 if (answer.flag) s.flags[answer.flag] = true;
                 for (const id of answer.bars || []) s.flags['bar:' + id] = true;
             }
             for (const p of ECON.policies || []) {
-                if (flagsNow[p.flag] && !(p.unless && flagsNow[p.unless]) && when(s, p.when)) addStats(delta, p.each || {});
+                if (flagsNow[p.flag] && !(p.unless && flagsNow[p.unless]) && when(s, p.when)) addStats(delta, p.each || {}, undefined, ledger, p.label);
             }
             // What every season costs, as the stats stood when it was sent.
             for (const u of ECON.upkeep || []) {
                 if (!when(s, u.when)) continue;
-                addStats(delta, u.each);
+                addStats(delta, u.each, undefined, ledger, u.label);
                 if (u.note) notes.push(u.note);
             }
             // Each front that gained or lost cities moves its stats; or, when
@@ -695,13 +703,13 @@
             const net = D.frontMoves.net && when(s, D.frontMoves.net.when) ? D.frontMoves.net : null;
             const moves = net || D.frontMoves;
             for (const m of net ? [Math.sign(moved.reduce((a, m) => a + m, 0))] : moved) {
-                if (m > 0) addStats(delta, moves.gained);
-                if (m < 0) addStats(delta, moves.lost);
+                if (m > 0) addStats(delta, moves.gained, undefined, ledger);
+                if (m < 0) addStats(delta, moves.lost, undefined, ledger);
             }
             // Behind history, the war is argued over; ahead, it quiets.
             const versus = Object.values(fronts).reduce((a, f) => a + f.after - f.history, 0);
-            if (versus < 0) { addStats(delta, D.verdict.behind); if (D.verdict.behind.note) notes.push(D.verdict.behind.note); }
-            if (versus > 0 && when(s, D.verdict.ahead.when)) addStats(delta, D.verdict.ahead);
+            if (versus < 0) { addStats(delta, D.verdict.behind, undefined, ledger); if (D.verdict.behind.note) notes.push(D.verdict.behind.note); }
+            if (versus > 0 && when(s, D.verdict.ahead.when)) addStats(delta, D.verdict.ahead, undefined, ledger);
 
             // The changes land in SETTLE_ORDER; a city's fall applies its
             // effects to stats already landed directly, and to the rest
@@ -719,6 +727,7 @@
                     if (!lost) continue;
                     if (s.lines[id] <= lost.at && !s.fallen[id]) {
                         s.fallen[id] = true;
+                        if (lost.effects) ledger.push({ label: lost.label || '', d: Object.assign({}, lost.effects) });
                         for (const [k, v] of Object.entries(lost.effects || {})) {
                             if (landed.has(k)) { const [lo, hi] = statRange(k); s.stats[k] = clamp(s.stats[k] + v, lo, hi); } else delta[k] += v;
                         }
@@ -745,6 +754,8 @@
                 turn: s.turn, choice: s.plan.choice, history: t.choice.history, responses: Object.assign({}, s.plan.responses), fronts,
                 cards: s.plan.cards.map(c => c.id), supply: fc.supply, notes, spoils,
                 stats: Object.assign({}, s.stats, { food: s.food }),
+                // What moved each stat this season, from where it stood.
+                ledger: { from: statsBefore, items: ledger },
             };
             s.records.push(record);
 
@@ -968,7 +979,7 @@
         return {
             calendar, prevOf, DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, canRetryBattle, retryBattle, rehearse, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
             start, act, restore, serialize, forecast, activeFronts, turnData, when,
-            free, allocated, threatsOf, traitsOn, battleOf, incidentsOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, outcomeOf, outcomeBands, capBattle, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
+            free, allocated, threatsOf, traitsOn, battleOf, incidentsOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, mobilizeSources, outcomeOf, outcomeBands, capBattle, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
         };
     }
 

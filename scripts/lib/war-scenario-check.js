@@ -54,8 +54,8 @@ function checkScenario(D) {
         else need(Number.isInteger(src.n) && src.when, `mobilize: source ${JSON.stringify(src)}`);
     }
     for (const l of D.unrest.levels) cond(l.when, 'unrest');
-    for (const k of ['gained', 'lost']) for (const s of Object.keys(D.frontMoves[k])) need(stats.includes(s), `frontMoves.${k}: ${s}`);
-    for (const k of ['gained', 'lost']) for (const s of Object.keys((D.frontMoves.net || {})[k] || {})) need(stats.includes(s), `frontMoves.net.${k}: ${s}`);
+    for (const k of ['gained', 'lost']) for (const s of Object.keys(D.frontMoves[k])) need(s === 'label' || stats.includes(s), `frontMoves.${k}: ${s}`);
+    for (const k of ['gained', 'lost']) for (const s of Object.keys((D.frontMoves.net || {})[k] || {})) need(s === 'label' || stats.includes(s), `frontMoves.net.${k}: ${s}`);
     for (const u of D.economy.upkeep || []) for (const k of Object.keys(u.each || {})) need(stats.includes(k), `upkeep: stat ${k}`);
     for (const m of D.modifiers || []) {
         cond(m.when, `modifier ${m.label}`);
