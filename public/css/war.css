@@ -919,6 +919,7 @@
 .cw-army { padding-top: 6px; }
 .cw-army summary { cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; min-height: 32px; font-size: .85rem; }
 .cw-army summary strong { font-size: .9rem; }
+.cw-army details > summary::before { margin-right: -4px; color: var(--text-primary); }
 .cw-army-line { color: var(--text-secondary); font-size: .8rem; }
 .cw-army-change { font-size: .75rem; font-weight: 700; border: 1px solid var(--border); padding: 1px 6px; }
 .cw-army-change.is-plus { border-color: var(--btn-primary, #2da44e); }
@@ -1233,7 +1234,6 @@
     .games-shell .cw-voice-next { min-height: 24px; padding: 1px 8px; font-size: .7rem; }
 }
 .cw-voice-log { margin: 0 0 10px; font-size: .9rem; }
-.cw-voice-log summary { cursor: pointer; color: var(--text-secondary); }
 .cw-voice-log ul { margin: 8px 0 0; padding-left: 18px; }
 .cw-voice-log li { margin-bottom: 6px; line-height: var(--leading-normal); }
 .cw-voice-log .cw-voice-src { margin-left: 4px; }
@@ -1273,15 +1273,19 @@
 .cw-foe-fold > summary b.is-bites { color: var(--bg-surface); background: var(--text-primary); border-color: var(--text-primary); }
 .cw-foe-fold > summary b.is-works { color: var(--cw-good-ink); background: var(--cw-good); border-color: var(--cw-good); }
 .cw-foe-fold[open] > summary b { display: none; }
-.cw-foe-fold > summary::before, .cw-brief-fold > summary::before, .cw-battle-brief > summary::before, .cw-rules > summary::before { content: '▸'; font-size: 1em; color: var(--text-secondary); margin-right: 6px; }
-.cw-foe-fold[open] > summary::before, .cw-brief-fold[open] > summary::before, .cw-battle-brief[open] > summary::before, .cw-rules[open] > summary::before { content: '▾'; }
-.cw-foe-fold > summary::-webkit-details-marker, .cw-brief-fold > summary::-webkit-details-marker, .cw-battle-brief > summary::-webkit-details-marker, .cw-rules > summary::-webkit-details-marker { display: none; }
+.cw-foe-fold > summary::before, .cw-brief-fold > summary::before, .cw-voice-log > summary::before, .cw-army details > summary::before, .cw-battle-brief > summary::before, .cw-rules > summary::before { content: '▸'; font-size: 1em; color: var(--text-secondary); margin-right: 6px; }
+.cw-foe-fold[open] > summary::before, .cw-brief-fold[open] > summary::before, .cw-voice-log[open] > summary::before, .cw-army details[open] > summary::before, .cw-battle-brief[open] > summary::before, .cw-rules[open] > summary::before { content: '▾'; }
+.cw-foe-fold > summary::-webkit-details-marker, .cw-brief-fold > summary::-webkit-details-marker, .cw-voice-log > summary::-webkit-details-marker, .cw-army details > summary::-webkit-details-marker, .cw-battle-brief > summary::-webkit-details-marker, .cw-rules > summary::-webkit-details-marker { display: none; }
+.cw-foe-fold > summary, .cw-brief-fold > summary, .cw-voice-log > summary, .cw-army details > summary { list-style: none; }
 .cw-battle-brief > summary::before, .cw-rules > summary::before { content: '▶'; color: var(--text-primary); font-size: .75em; margin-right: 8px; }
 .cw-battle-brief[open] > summary::before, .cw-rules[open] > summary::before { content: '▼'; }
 .cw-battle-brief > summary:hover, .cw-rules > summary:hover { text-decoration: underline; text-underline-offset: 3px; }
 /* The season's story folded on a phone (civil-war.js renderBrief). */
-.cw-brief-fold > summary { cursor: pointer; font-weight: 700; font-size: .9rem; min-height: 30px; display: flex; align-items: center; }
+/* The season's story and its voices fold alike, side by side. */
+.cw-brief-fold > summary, .cw-voice-log > summary { cursor: pointer; font-weight: 700; font-size: .9rem; min-height: 30px; display: flex; align-items: center; }
 .cw-brief-fold[open] > summary { margin-bottom: 4px; }
+.cw-brief-fold > summary::before, .cw-voice-log > summary::before { color: var(--text-primary); }
+.cw-brief-fold > summary:hover, .cw-voice-log > summary:hover, .cw-army details > summary:hover strong { text-decoration: underline; text-underline-offset: 3px; }
 
 /* The battle: its one-line orders, the Red units over the board, and the
    turn's end armed by a first press. */
