@@ -109,6 +109,17 @@ const TSARITSYN_QUICK = [
     ['move', 'tkp', 8, 7], ['attack', 'tkp', 'was'], ['move', 'wd1', 6, 7], ['attack', 'wd1', 'wbk'], ['attack', 'tar', 'wbk'], ['move', 'tlr', 7, 8], ['attack', 'tlr', 'wtr'], ['attack', 'tfl', 'wsp'], ['wait', 'tvr'], ['wait', 'tkh'], ['wait', 'tzh'], ['wait', 'wmm'], ['wait', 'wd2'], ['wait', 'tlw'], ['end'],
     ['move', 'tfl', 8, 10], ['attack', 'tfl', 'wsp'], ['move', 'wd1', 8, 8], ['attack', 'wd1', 'wsp'], ['attack', 'wtr', 'wsp'], ['attack', 'tar', 'wsp'],
 ];
+// Perekop broken into with every army (scripts/war-balance.js, the strong
+// player at margin 6 with the train and the Makhnovists).
+const PEREKOP_WIN = [
+    ['move', 'rtr', 5, 11], ['attack', 'rtr', 'wc1'], ['move', 'r6g', 2, 2], ['attack', 'r6g', 'wg'], ['move', 'rmk', 2, 3], ['attack', 'rmk', 'w2b'], ['move', 'r51a', 2, 1], ['feat', 'r51a', 'w1'], ['move', 'r51g', 1, 3], ['attack', 'r51g', 'w2b'], ['move', 'r52', 1, 4], ['wait', 'r52'], ['move', 'r1c', 3, 8], ['wait', 'r1c'], ['move', 'r30', 4, 11], ['wait', 'r30'], ['move', 'r30b', 4, 12], ['wait', 'r30b'], ['move', 'r4g', 2, 11], ['wait', 'r4g'], ['move', 'r15', 2, 4], ['wait', 'r15'], ['move', 'r51b', 1, 2], ['wait', 'r51b'], ['end'],
+    ['move', 'r1c', 5, 8], ['attack', 'r1c', 'w3'], ['attack', 'r6g', 'w2'], ['move', 'rtr', 6, 11], ['attack', 'rtr', 'wcg'], ['move', 'r15', 3, 4], ['attack', 'r15', 'w2b'], ['attack', 'r51g', 'w2b'], ['move', 'r30b', 6, 12], ['attack', 'r30b', 'wc2'], ['attack', 'rmk', 'w2b'], ['move', 'r51a', 2, 2], ['attack', 'r51a', 'w2'], ['move', 'r51b', 2, 1], ['attack', 'r51b', 'w1'], ['move', 'r30', 5, 11], ['wait', 'r30'], ['move', 'r4g', 4, 11], ['wait', 'r4g'], ['move', 'r52', 2, 4], ['wait', 'r52'], ['end'],
+    ['move', 'r1c', 7, 9], ['attack', 'r1c', 'w4'], ['move', 'r15', 4, 3], ['attack', 'r15', 'wg'], ['move', 'rmk', 3, 3], ['attack', 'rmk', 'w2'], ['move', 'r51a', 2, 3], ['wait', 'r51a'], ['move', 'r51g', 2, 2], ['attack', 'r51g', 'wg'], ['move', 'r30', 5, 10], ['wait', 'r30'], ['move', 'r4g', 5, 11], ['attack', 'r4g', 'wc1'], ['attack', 'rtr', 'wcg'], ['attack', 'r51b', 'w1'], ['attack', 'r30b', 'wc2'], ['move', 'r52', 3, 4], ['wait', 'r52'], ['end'],
+    ['move', 'r1c', 8, 10], ['attack', 'r1c', 'wcg'], ['move', 'rmk', 4, 2], ['attack', 'rmk', 'w2'], ['move', 'r51a', 3, 3], ['attack', 'r51a', 'w2'], ['move', 'r15', 4, 1], ['attack', 'r15', 'w1'], ['move', 'r30b', 6, 11], ['attack', 'r30b', 'wc1'], ['attack', 'r4g', 'wc1'], ['move', 'r30', 5, 8], ['attack', 'r30', 'w3'], ['move', 'r52', 4, 3], ['wait', 'r52'], ['move', 'r51g', 2, 3], ['wait', 'r51g'], ['move', 'r51b', 2, 2], ['wait', 'r51b'], ['end'],
+    ['move', 'rmk', 6, 2], ['attack', 'rmk', 'w2b'], ['move', 'r15', 7, 1], ['attack', 'r15', 'w2b'], ['move', 'r30b', 7, 11], ['attack', 'r30b', 'wc1'], ['move', 'r4g', 6, 11], ['attack', 'r4g', 'wc1'], ['move', 'r1c', 10, 9], ['attack', 'r1c', 'wdz'], ['move', 'r51a', 6, 3], ['attack', 'r51a', 'w4'], ['attack', 'r30', 'w3'], ['move', 'r51g', 3, 3], ['wait', 'r51g'], ['move', 'w1', 6, 1], ['wait', 'w1'], ['move', 'w2', 5, 3], ['wait', 'w2'], ['move', 'r51b', 3, 2], ['wait', 'r51b'], ['wait', 'r52'], ['end'],
+    ['move', 'w2', 7, 2], ['attack', 'w2', 'w5'], ['move', 'r51g', 5, 3], ['attack', 'r51g', 'w4'], ['attack', 'r51a', 'w4'], ['move', 'w1', 8, 1], ['attack', 'w1', 'w5'], ['move', 'rmk', 8, 3], ['attack', 'rmk', 'w5'], ['move', 'r1c', 9, 10], ['attack', 'r1c', 'wdz'], ['move', 'r30b', 8, 11], ['attack', 'r30b', 'wc2'], ['move', 'r4g', 7, 11], ['attack', 'r4g', 'wc2'], ['move', 'r51b', 6, 2], ['wait', 'r51b'], ['move', 'r52', 7, 3], ['wait', 'r52'], ['move', 'r30', 7, 9], ['wait', 'r30'], ['wait', 'r15'], ['end'],
+    ['move', 'rmk', 9, 3],
+];
 // Ufa as history took it: the 25th Division crosses at Krasny Yar, the
 // 217th over the pontoon holds the bridgehead, the rest go down the east bank into the
 // city (the 31st round its east, where it cut the railway); the guns
@@ -700,58 +711,28 @@ function fight(routes, flags = { makhno: true }, muster, def = D.battles.perekop
     return drive(b, routes, (name, ...args) => B.act(b, name, ...args));
 }
 
+// Perekop (rules 9: Dzhankoy garrisoned, the Yushun line closed to the
+// Chongar works, the Whites half as strong again, 9 turns). A muster like
+// history's road's breaks in (the strong balance bot's orders); one army
+// alone, or the guns, do not; the plan's muster, hunger, the commissar and
+// the train shape the Red units.
 {
     const [yushun, dzhankoy] = D.battles.perekop.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
-    const WEST = 'r51a,r51b,r51g,r6g,rcz', CENTRE = 'r15,r52,rmk', EAST = 'r30,r30b,r4g', RESERVE = 'r1c';
     const wall = [{ r: 2, c: 2 }, { r: 4, c: 2 }, yushun];
-    const sivash = [{ r: 5, c: 6 }, { r: 7, c: 5 }, yushun];
     const chongar = [{ r: 5, c: 11 }, { r: 6, c: 11 }, { r: 8, c: 10 }, dzhankoy];
-    // Every road in can be taken: the Wall under the guns, the Sivash, and
-    // Chongar with the cavalry behind it; using several is quickest.
-    const ways = {
-        wall: { [WEST]: wall, [RESERVE]: wall },
-        sivash: { [CENTRE]: sivash, [RESERVE]: sivash },
-        chongar: { [EAST]: chongar, [RESERVE]: chongar },
-        all: { [WEST]: wall, [CENTRE]: sivash, [EAST]: chongar, [RESERVE]: sivash },
-    };
-    const turns = {};
-    for (const [name, routes] of Object.entries(ways)) {
-        const b = fight(routes);
-        assert.equal(b.result, 'won', `the ${name} road leads in`);
-        turns[name] = b.turn;
-    }
-    assert.ok(turns.all < Math.min(turns.wall, turns.chongar), 'pressing everywhere is quicker than one road');
-    assert.ok(fight({ [WEST]: wall, [RESERVE]: wall }).turned.wall, 'the Wall falls to a frontal assault under the guns');
-    assert.equal(fight({ [EAST]: chongar }).result, 'lost', 'the 4th Army alone does not force Chongar against the reserve');
-    assert.equal(fight({}).result, 'lost', 'guns alone do not take Crimea');
-    // A push at Chongar draws the reserve, and the Sivash crossing goes
-    // quicker for it.
-    const alone = fight({ [CENTRE]: sivash });
-    const drawn = fight({ [CENTRE]: sivash, [EAST]: chongar });
-    assert.equal(drawn.result, 'won');
-    assert.ok(drawn.turn < alone.turn);
-}
-// The plan on the Crimean front musters the Red units: the Sivash road
-// stays open to the thinnest muster, every unit more makes the war
-// shorter or no longer, and hunger thins the ranks.
-{
-    const [yushun, dzhankoy] = D.battles.perekop.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
-    const all = { 'r51a,r51b,r51g,r6g,rcz': [{ r: 2, c: 2 }, { r: 4, c: 2 }, yushun], 'r15,r52,rmk,r1c': [{ r: 5, c: 6 }, { r: 7, c: 5 }, yushun], 'r30,r30b,r4g': [{ r: 5, c: 11 }, { r: 6, c: 11 }, { r: 8, c: 10 }, dzhankoy], rtr: [{ r: 6, c: 11 }, { r: 9, c: 11 }, { r: 10, c: 10 }] };
     const muster = (margin, more = {}) => Object.assign({ margin, fed: 1, commissar: false, cards: [] }, more);
-    const thin = fight({ 'r15,r52,rmk': [{ r: 5, c: 6 }, { r: 7, c: 5 }, yushun] }, { makhno: true }, muster(-1));
-    assert.equal(thin.result, 'won', 'the Sivash crossing needs no more than the thinnest muster');
+    const won = B.start(D.battles.perekop, { makhno: true }, muster(6, { commissar: true, cards: ['train'] }));
+    for (const o of PEREKOP_WIN) if (won.result || !B.act(won, ...o)) break;
+    assert.equal(won.result, 'won', 'the Red Army breaks into Crimea');
+    assert.ok(won.turn <= D.battles.perekop.turnLimit);
+    assert.equal(fight({ 'r30,r30b,r4g': chongar }).result, 'lost', 'the 4th Army alone does not force Chongar against the reserve');
+    assert.equal(fight({}).result, 'lost', 'guns alone do not take Crimea');
+    assert.equal(fight({ 'r51a,r51b,r51g,r6g': wall }, {}, muster(3)).result, 'lost', 'the Wall wants more than the western group');
+    const thin = B.start(D.battles.perekop, { makhno: true }, muster(-1));
     assert.equal(thin.units.some(u => u.id === 'r1c'), false, 'the cavalry waits for the pressure to be met');
-    let last = Infinity;
-    for (const m of [-1, 0, 3, 6]) {
-        const b = fight(all, { makhno: true }, muster(m));
-        assert.equal(b.result, 'won', `margin ${m}`);
-        assert.ok(b.turn <= last, `margin ${m}: no slower than a thinner muster`);
-        last = b.turn;
-    }
-    assert.equal(fight({ 'r51a,r51b,r51g,r6g': all['r51a,r51b,r51g,r6g,rcz'] }, {}, muster(3)).result, 'lost', 'the Wall wants the whole western group');
     const hungry = B.start(D.battles.perekop, {}, muster(6, { fed: 0.8 }));
     assert.equal(B.byId(hungry, 'r15').hp, 8, 'a hungry division brings fewer men');
-    assert.equal(B.byId(hungry, 'w1').hp, 10, 'the Whites are not fed by the Red plan');
+    assert.equal(B.byId(hungry, 'w1').hp, D.battles.perekop.units.find(u => u.id === 'w1').hp, 'the Whites are not fed by the Red plan');
     const led = B.start(D.battles.perekop, {}, muster(6, { commissar: true, cards: ['train'] }));
     assert.equal(B.byId(led, 'r15').def, 4, 'the commissar steadies the Sivash division');
     assert.ok(B.byId(led, 'rtr'), 'the train runs where it was sent');
