@@ -1682,7 +1682,12 @@
                 dot.append(svg('circle', { cx: 12, cy: 12, r: 9.5, class: 'cw-ring ' + (will ? 'is-red' : 'k-' + foe) }));
             }
             const fate = held === will ? (held ? `${josa(U.player, '이', '가')} 지킴` : '적이 지킴') : (will ? `${josa(U.player, '이', '가')} 되찾음` : '적에게 넘어감');
-            items.push(el('li', { class: held !== will ? 'is-changing' : '' }, dot, el('span', {}, cities[i][0]), el('span', { class: 'cw-sr' }, ` ${now}: ${fate}`)));
+            // A city whose taking pays this season: what it gives, filled
+            // once the plan takes it.
+            const prize = s.phase === 'plan' && i === (G.prizeOf(s, id) || {}).at - 1 ? G.prizeOf(s, id) : null;
+            const gift = prize && [prize.food ? `${U.food} +${prize.food}` : null, prize.divisions ? `${U.unit} +${prize.divisions}` : null].filter(Boolean);
+            items.push(el('li', { class: held !== will ? 'is-changing' : '' }, dot, el('span', {}, cities[i][0]), el('span', { class: 'cw-sr' }, ` ${now}: ${fate}`),
+                gift ? el('span', { class: 'cw-stake-prize' + (will ? ' is-won' : ''), title: prize.what }, ...gift.map(g => el('span', {}, g))) : null));
         }
         if (hist === cities.length) items.push(el('li', { class: 'cw-stake-hist', 'aria-hidden': 'true' }, el('span', {}, '역사')));
         return el('ol', { class: 'cw-stake', 'aria-label': `${D.fronts[id].short}에 걸린 도시` }, ...items);
@@ -1871,6 +1876,10 @@
         if (!r.spoils || !r.spoils.length) return null;
         const items = r.spoils.map(x => {
             if (x.battle) return el('li', {}, el('strong', {}, D.battles[x.battle].title), ` · ${D.battles[x.battle].enemyName || U.enemy} ${x.captured}개 부대가 총을 내려놓았다`);
+            if (x.prize) {
+                const city = D.fronts[x.front].cities[D.fronts[x.front].prize.at - 1][0];
+                return el('li', {}, el('strong', {}, `${city} 탈환`), ` · ${x.what}` + (x.food ? ` · ${U.food} +${x.food}` : ''));
+            }
             const f = x.foe && D.factions[x.foe];
             return el('li', {}, f ? picture(A.shield(x.foe, f)) : null, el('strong', {}, D.fronts[x.front].name),
                 ` · 무너진 ${f ? foeAs(x.foe, x.front).short + '의 ' : '적의 '}${x.what || `탄약과 ${U.food}`} · ${U.food} +${x.food}`);

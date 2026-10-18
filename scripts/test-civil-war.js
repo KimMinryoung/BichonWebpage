@@ -233,6 +233,14 @@ assert.ok(hist.stats.peasants < 60, 'requisition costs the countryside');
 // pardoned draws the Cossacks away, the First Cavalry Army cuts off the
 // Caucasian Army.
 assert.deepEqual(hist.traitsMet, ['counter south denikin', 'counter volga denikin']);
+// Arkhangelsk taken in the winter of 1920 pays once (rules 8): the stores
+// and the Northern Army's men.
+{
+    const winter = hist.records.find(r => D.turns[r.turn].id === 'counter');
+    const prize = winter.spoils.find(x => x.prize);
+    assert.ok(prize && prize.front === 'north' && prize.food === 3 && prize.divisions === 1, 'Arkhangelsk pays');
+    assert.ok(hist.flags['prize:north']);
+}
 // Denikin's army fights each front with its commander's trait from rules 8;
 // a rules-7 save keeps the officers' regiments everywhere.
 {

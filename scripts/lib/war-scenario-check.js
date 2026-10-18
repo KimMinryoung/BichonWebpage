@@ -57,6 +57,12 @@ function checkScenario(D) {
     for (const k of ['gained', 'lost']) for (const s of Object.keys(D.frontMoves[k])) need(s === 'label' || stats.includes(s), `frontMoves.${k}: ${s}`);
     for (const k of ['gained', 'lost']) for (const s of Object.keys((D.frontMoves.net || {})[k] || {})) need(s === 'label' || stats.includes(s), `frontMoves.net.${k}: ${s}`);
     for (const u of D.economy.upkeep || []) for (const k of Object.keys(u.each || {})) need(stats.includes(k), `upkeep: stat ${k}`);
+    for (const [id, f] of Object.entries(D.fronts)) {
+        if (!f.prize) continue;
+        need(Number.isInteger(f.prize.at) && f.prize.at >= 1 && f.prize.at <= f.cities.length, `front ${id}: prize at a city`);
+        need(f.prize.what && (f.prize.food || f.prize.divisions), `front ${id}: prize says what it gives`);
+        cond(f.prize.when, `front ${id}: prize`);
+    }
     for (const m of D.modifiers || []) {
         cond(m.when, `modifier ${m.label}`);
         for (const f of m.fronts || [m.front]) need(fronts[f], `modifier ${m.label}: front ${f}`);

@@ -66,6 +66,9 @@
             cities: [['볼로그다', 59.22, 39.89], ['아르한겔스크', 64.54, 40.54]],
             history: [1, 1, 1, 1, 1, 1, 1, 2, 2, 2],
             holders: ['allies', 'allies', 'allies', 'allies', 'allies', 'allies', 'allies', 'north', 'north', 'north'],
+            // Arkhangelsk retaken in the winter of 1920 (rules 8): the stores
+            // the British left, and the Northern Army's soldiers who came over.
+            prize: { at: 2, when: { rules: ['>=', 8], turn: 'counter' }, food: 3, divisions: 1, what: '영국군이 두고 간 군수 창고와 넘어온 북부 정부군 병사' },
         },
         west: {
             name: '서부전선', short: '서부',

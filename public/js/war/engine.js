@@ -590,6 +590,15 @@
             return r.turns !== null && r.turns <= quick ? { label: fmt(X.battleQuick, { title: def.title, quick }), v: quickBy } : null;
         }
 
+        // A front's prize still to win this season: a city whose taking pays
+        // (rules 8, `prize: { at, when, food, divisions, what }`, at the line
+        // that holds it).
+        function prizeOf(s, id) {
+            const prize = D.fronts[id].prize;
+            if (!prize || s.flags['prize:' + id] || s.lines[id] >= prize.at || !when(s, prize.when)) return null;
+            return prize;
+        }
+
         // Adds an option's or a card's stat effects (its keys named after
         // stats) to the season's changes.
         // With a ledger, the change is also kept there under its label, for
@@ -677,6 +686,14 @@
                 }
                 const fought = def && !def.final && s.battles[def.id];
                 if (fought && fought.captured) spoils.push({ battle: def.id, captured: fought.captured, food: 0, divisions: 1 });
+                // A city with a prize (rules 8), taken this season: its stores
+                // now, the men who come over next season. Once a war.
+                for (const [id, f] of Object.entries(fronts)) {
+                    const prize = D.fronts[id].prize;
+                    if (!prize || s.flags['prize:' + id] || f.before >= prize.at || f.after < prize.at || !when(s, prize.when)) continue;
+                    s.flags['prize:' + id] = true;
+                    spoils.push({ front: id, prize: true, what: prize.what, food: prize.food || 0, divisions: prize.divisions || 0 });
+                }
             }
             s.captured = Math.min(D.spoils.max, spoils.reduce((a, x) => a + x.divisions, 0));
             s.food += spoils.reduce((a, x) => a + x.food, 0);
@@ -993,7 +1010,7 @@
         return {
             calendar, prevOf, DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, canRetryBattle, retryBattle, rehearse, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
             start, act, restore, serialize, forecast, activeFronts, turnData, when,
-            free, allocated, threatsOf, traitsOn, traitOf, battleOf, incidentsOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, mobilizeSources, outcomeOf, outcomeBands, capBattle, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
+            free, allocated, threatsOf, traitsOn, traitOf, prizeOf, battleOf, incidentsOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, mobilizeSources, outcomeOf, outcomeBands, capBattle, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
         };
     }
 
