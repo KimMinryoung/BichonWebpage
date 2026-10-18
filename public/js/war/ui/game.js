@@ -638,7 +638,8 @@
 
     function battleVoiceName(b, v) {
         const u = speakerOf(b, v);
-        return { name: v.who ? v.who[0] : u.name, sub: v.who ? u.name : null };
+        // A voice from elsewhere (`via`: a radio from the front's staff) speaks over a unit it is not with.
+        return { name: v.who ? v.who[0] : u.name, sub: v.via || (v.who ? u.name : null) };
     }
 
     function renderBattleVoice() {

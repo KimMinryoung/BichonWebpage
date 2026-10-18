@@ -1409,6 +1409,8 @@
             '..~..........',
         ],
         voices: [
+            // Tukhachevsky led the Western Front from Minsk, some 500 km away; the Mozyr Group could not even tell his staff of the Polish blow.
+            { when: 'start', unit: 'r27', who: ['미하일 투하쳅스키', 'tukhachevsky'], via: '민스크의 서부전선 사령부에서 온 무전', text: '제16군은 바르샤바를 쳐라. 남쪽 측면은 모지르 집단이 맡는다. 비스와강까지 멈추지 마라.' },
             { when: 'start', unit: 'r27', face: 'red-soldier', text: '라지민만 넘으면 프라가다. 그 다리 건너가 바르샤바다.' },
             { when: 'start', unit: ['wp2', 'wp1'], by: 'poland', text: '프라가 다리는 내주지 않는다. 바르샤바 노동자도 의용대로 나왔다.' },
             { when: 'start', unit: 'r57', face: 'red-soldier', text: '모지르 집단이 이 넓은 남쪽을 혼자 맡았다. 뒤에도 옆에도 아무도 없다.' },
