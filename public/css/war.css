@@ -1039,7 +1039,6 @@
 .cw-foe-mark.k-central { fill: var(--emap-amber); }
 .cw-foe-mark.k-national { fill: var(--emap-gray); }
 .cw-foe-marks { fill: #1d1d1b; stroke: var(--cw-ink); stroke-width: 1; }
-.cw-foe-trend { font-size: 10px; fill: #fff; }
 .cw-map-legend .cw-mk-star, .cw-map-legend .cw-mk-train { vertical-align: middle; }
 
 /* Strength and pressure on one scale: the bar is built of the strength's

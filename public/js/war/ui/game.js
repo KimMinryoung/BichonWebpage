@@ -1103,23 +1103,24 @@
         const foes = (G.threatsOf(s)[id] || {}).foes || [];
         const kind = foes.length ? D.factions[foes[0]].kind : 'white';
         const name = foes.map(f => foeAs(f, id).short).join('·');
-        // Against history: while planning the forecast, after the season the
-        // result. ▼ behind, ▲ ahead; red stays the Red Army's alone.
-        const d = forecast ? s.lines[id] + forecast.change - D.fronts[id].history[s.turn] : result ? result.after - result.history : 0;
+        // After the season, the result against history: ▼ behind, ▲ ahead
+        // (red stays the Red Army's alone). While planning the marker shows
+        // no such mark: the fronts' row and the front's card carry it.
+        const d = !forecast && result ? result.after - result.history : 0;
         const trend = d < 0 ? '▼' : d > 0 ? '▲' : '';
         // While planning the row under the name counts the pressure in the
         // attacker's marks, one per point; after the season it says how the
         // front did against history.
         const numbers = forecast ? null : [trend, D.fronts[id].short, d ? signed(d) : ''].filter(Boolean).join(' ');
         const marks = forecast ? forecast.pressure : 0;
-        const MARK = 6.5, PER_ROW = 10, TREND = trend && forecast ? 13 : 0;
+        const MARK = 6.5, PER_ROW = 10;
         const markRows = Math.max(1, Math.ceil(marks / PER_ROW));
         const rowH = forecast ? markRows * MARK + 4 : 16;
         const flags = foes.filter(f => D.factions[f].flag);
         // While planning the pressure in figures on a tab at the left, as the
         // Red strength's box has its own.
         const TAB = forecast ? 26 : 0;
-        const w = TAB + Math.max(textWidth(name, 11) + flags.length * 16 + 12, forecast ? Math.min(marks, PER_ROW) * MARK + 8 + TREND : textWidth(numbers, 10.5) + 10);
+        const w = TAB + Math.max(textWidth(name, 11) + flags.length * 16 + 12, forecast ? Math.min(marks, PER_ROW) * MARK + 8 : textWidth(numbers, 10.5) + 10);
         // Candidate spots round the anchor, outward first; the one covering
         // the least of the city dots, labels and earlier markers wins.
         const overlap = (a, b) => Math.max(0, Math.min(a.x1, b.x1) - Math.max(a.x0, b.x0)) * Math.max(0, Math.min(a.y1, b.y1) - Math.max(a.y0, b.y0));
@@ -1190,9 +1191,8 @@
         body.append(svg('rect', { x: x - w / 2 + TAB, y: y + 8, width: w - TAB, height: rowH, class: forecast ? 'cw-foe-marks' : 'cw-foe-numbers' }));
         if (numbers) body.append(svg('text', { x, y: y + 20, 'text-anchor': 'middle', class: 'cw-foe-numbers-text' }, numbers));
         const across = Math.min(marks, PER_ROW) * MARK;
-        if (TREND) body.append(svg('text', { x: x - w / 2 + TAB + 7, y: y + 8 + rowH / 2 + 3.5, 'text-anchor': 'middle', class: 'cw-foe-trend' }, trend));
         for (let i = 0; i < marks; i++) {
-            const mx = x + TAB / 2 + TREND / 2 - across / 2 + (i % PER_ROW) * MARK + 0.75, my = y + 10 + Math.floor(i / PER_ROW) * MARK;
+            const mx = x + TAB / 2 - across / 2 + (i % PER_ROW) * MARK + 0.75, my = y + 10 + Math.floor(i / PER_ROW) * MARK;
             body.append(svg('rect', { x: mx, y: my, width: MARK - 1.5, height: MARK - 1.5, class: 'cw-foe-mark k-' + kind, style: `--m:${i}` }));
         }
         if (forecast) g.setAttribute('aria-label', g.getAttribute('aria-label').replace('. 카드로', `, 압력 ${marks}, 전투력 ${forecast.strength}. 카드로`));
