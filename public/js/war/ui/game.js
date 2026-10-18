@@ -1885,7 +1885,7 @@
         const marks = [];
         for (const l of D.unrest.levels) if (below(l.when) !== null) marks.push([below(l.when), `봉기 ${U.unit} −${l.n}`]);
         for (const f of D.leaders.fewer || []) if (below(f.when) !== null) marks.push([below(f.when), `${U.leader} −${f.n}`]);
-        for (const u of D.economy.upkeep || []) if (below(u.when) !== null && u.label) marks.push([below(u.when), u.label]);
+        for (const u of D.economy.upkeep || []) if (below(u.when) !== null && u.label) marks.push([below(u.when), `${u.label} · 시기당 ${Object.entries(u.each || {}).map(([k, v]) => `${U.cardStats[k]} ${signed(v)}`).join(', ')}`]);
         if (D.command.stat === stat) D.command.tiers.forEach(([v], i, all) => { if (v > 0 && all[i + 1]) marks.push([v, `지휘력 ${all[i + 1][1]}`]); });
         return marks.sort((x, y) => y[0] - x[0]);
     }
