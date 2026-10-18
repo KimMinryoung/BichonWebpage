@@ -1,6 +1,6 @@
 # 전쟁 게임 엔진 `public/js/war/` — 시나리오 작성 기준
 
-갱신: 2026-10-18 (규칙 9: 비례 전진과 위치 압력 / 규칙 8: 위협의 `traits`·`as`, 조건 `alloc`) / 2026-10-17 (규칙 7: 규칙 세대마다의 달력(시기의 `when`), 한 시기의 사건 목록과 사건의 `when`, 지키는 전투 `outlast`) / 2026-10-16 (규칙 6: 전투로 여는 `cap`과 그 보상, 조건 있는 전투·카드, 적 역할 `push`) / 2026-10-15 (「붉은 전선」에서 공통 엔진을 떼어 냄)
+갱신: 2026-10-18 (전투 밸런스 측정 도구 / 규칙 9: 비례 전진과 위치 압력 / 규칙 8: 위협의 `traits`·`as`, 조건 `alloc`) / 2026-10-17 (규칙 7: 규칙 세대마다의 달력(시기의 `when`), 한 시기의 사건 목록과 사건의 `when`, 지키는 전투 `outlast`) / 2026-10-16 (규칙 6: 전투로 여는 `cap`과 그 보상, 조건 있는 전투·카드, 적 역할 `push`) / 2026-10-15 (「붉은 전선」에서 공통 엔진을 떼어 냄)
 
 「붉은 전선 1918–1920」의 규칙·전투·화면을 시나리오와 떼어 놓은 공통 엔진이다. 다른 시대의 전쟁은 **시나리오 파일 하나**(+ 지도의 세력 범위 문서, 라우트 한 줄)로 더한다. 편집 GUI는 없다. 이 문서는 시나리오를 쓰는 사람(미래의 Claude)을 위한 레퍼런스다. 「붉은 전선」 고유의 설계·밸런스는 [civil-war-game.md](civil-war-game.md).
 
@@ -152,6 +152,15 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 - **보내는 쪽** [war/ui/report.js](../public/js/war/ui/report.js): 게임 하나가 run(UUID, 저장 옆 `<save 키>-play`에 둔다)이고, 패배 뒤 전투를 다시 하면 attempt가 하나 는다. 저장할 때마다(`save()`) 전쟁이 움직였으면(결산 수·단계·전투 턴·끝난 전투 수가 바뀜) 저장 전체(`{ version, rules, log }`)를 `POST /games/plays`로 보낸다. 페이지를 떠날 때 그 뒤의 결정이 있으면 `keepalive`로 한 번 더. 실패는 버리고 게임은 그대로 간다. 엔딩(`phase: 'done'`, 승리·툴라 함락 모두)만 2·5·15·30·60초 뒤 다시 보내고, 그래도 안 되면 `pending`으로 남겨 다음 방문 때 또 보낸다. 요청에는 `X-War-Play: 1`과 `seq`(보낼 때마다 +1)를 단다.
 - **받는 쪽** [routes/war-plays.js](../routes/war-plays.js)·[services/war-plays.js](../services/war-plays.js): CSRF 관문 앞에 붙은 익명 쓰기(학습 측정과 같은 JSON·헤더·Origin 검사, IP당 분당 60). 운영 호스트가 아니거나 봇 UA, `MEASUREMENT_EXCLUDED_IPS`(이 서버)면 저장하지 않고 204. 로그를 서버의 엔진으로 재생해 `turn`·`phase`·`ended`·`outcome`(`won`·`stalled`·`moscow`)·`stars`·`stats`(스탯·곡물·전선 위치)를 정한다. 재생이 안 되는 로그는 400. 같은 run·attempt는 `seq`가 더 클 때만 덮어쓴다. 운영자 세션의 판은 `operator`로 표시해 남긴다. IP·쿠키·방문자 id는 저장하지 않는다.
 - **표** `war_game_plays`(migration 367): `(run_id, attempt)` 하나에 마지막 로그. `decisions > replayed`이면 재생이 중간에 멈춘 로그다. 읽기: `scripts/query-db "SELECT run_id, attempt, rules, turn, phase, outcome, stars, decisions, narrow, operator, updated_at FROM war_game_plays ORDER BY updated_at DESC LIMIT 20"`. 한 판을 다시 보려면 `log`를 꺼내 `G.restore({ version, rules, log })`로 재생한다.
+
+## 6.5 전투 밸런스 측정 (`scripts/war-balance.js`, 2026-10-18)
+
+전투의 난이도를 재는 손 측정 도구다(테스트가 아니다). 전투마다 역사의 길(엔진 `rehearse`)의 깃발과 여유로 편성하고(식량 1, 정치위원, 카드 있음·없음), 두 플레이어로 둔다.
+
+- **강한 봇:** 한 턴의 명령을 빔 탐색(기본 폭 32)으로 짜고, 가장 좋은 완성된 턴 8개에 엔진의 적 차례를 돌려, 6개 판을 다음 턴으로 넘긴다. 평가는 목표까지 부대들의 길(턴 단위, 강은 비싼 칸), 남은 턴, 양쪽 병력, 쓰러뜨린 적, 우회한 방어선, 지킬 거점(깨어날 반격대까지 엔진의 `reachable`·`menace`로)이다. 증명된 최선은 아니고 「적어도 이만큼은 쉽다」의 기준이다.
+- **보통 봇:** 같은 명령을 부대마다 욕심껏(다섯 번에 한 번은 상위 셋 중 아무거나), 적의 응수를 보지 않고 둔다. 기본 20판.
+- 여유는 합류하는 부대(`need`)를 통해서만 판을 바꾸므로, 기본은 역사의 길 여유 하나이고 `--margins`로 더 준 여유도 같은 부대 구성이면 한 번만 둔다. 조합마다 작업 스레드(코어 − 1)에서 돌린다. 전체 약 5분.
+- 쓰는 법: `node scripts/war-balance.js [전투…] [--margins=…] [--runs=…] [--width=…] [--keep=…] [--jobs=…] [--trace]`(`--trace`는 강한 봇의 턴별 최선 판).
 
 ## 7. 골든 마스터
 
