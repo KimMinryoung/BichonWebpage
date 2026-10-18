@@ -13,6 +13,7 @@
      card: 'id'             card id is sent to this front (ctx.front)
      played: 'id'           card id is played this season, wherever it went
      leader: true | false   a leader (commissar) is / is not on this front
+     alloc: [op, n]         divisions sent to this front compare to n
      reserve: [op, n]       divisions held back in reserve compare to n
      stat: ['name', op, n]  a stat compares to n
      won: true | false      the war's final battle was won (scoring)
@@ -45,6 +46,7 @@
         card: (s, v, ctx) => Boolean(s.plan) && s.plan.cards.some(c => c.id === v && c.target === ctx.front),
         played: (s, v) => Boolean(s.plan) && s.plan.cards.some(c => c.id === v),
         leader: (s, v, ctx) => Boolean(s.plan && s.plan.commissar[ctx.front]) === v,
+        alloc: (s, [op, n], ctx) => compare(s.plan ? s.plan.alloc[ctx.front] || 0 : 0, op, n),
         reserve: (s, [op, n], ctx) => compare(ctx.free, op, n),
         stat: (s, [name, op, n]) => compare(s.stats[name], op, n),
         won: (s, v, ctx) => Boolean(ctx.won) === v,

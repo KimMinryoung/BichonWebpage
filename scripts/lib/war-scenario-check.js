@@ -129,6 +129,13 @@ function checkScenario(D) {
         }
         for (const [fid, th] of Object.entries(t.threats)) {
             need(fronts[fid], `${at}: threat on ${fid}`);
+            // A threat's own name and trait for one of its attackers (rules 8).
+            for (const f of Object.keys(th.as || {})) need((th.foes || []).includes(f), `${at}: ${fid} names ${f}, which does not attack`);
+            for (const [f, tr] of Object.entries(th.traits || {})) {
+                need((th.foes || []).includes(f), `${at}: ${fid} trait for ${f}, which does not attack`);
+                need(tr.name && tr.text && tr.motion, `${at}: ${fid} trait for ${f} needs a name, words and a motion`);
+                cond(tr.when, `${at}: ${fid} trait for ${f}`);
+            }
             for (const f of th.foes || []) need(factions[f], `${at}: foe ${f}`);
             if (th.who) drawn.add(th.who[1]);
         }

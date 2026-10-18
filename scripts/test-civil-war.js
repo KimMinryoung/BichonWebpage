@@ -227,10 +227,29 @@ for (const r of hist.records) {
     for (const [id, f] of Object.entries(r.fronts)) assert.equal(f.after, f.history, `${D.turns[r.turn].id} ${id}`);
 }
 assert.ok(hist.stats.peasants < 60, 'requisition costs the countryside');
-// History's plan meets the attackers' traits but one: Tsaritsyn in the
-// summer of 1919 had no commissar to spare against Wrangel's officers, and
-// that front's pressure counts them.
-assert.deepEqual(hist.traitsMet, ['directive volga denikin']);
+// History's plan meets none of the attackers' traits against it (rules 8:
+// Wrangel's storm of Tsaritsyn needs a front held by fewer than two
+// divisions); in the winter of 1919 the two that help it hold: Mironov
+// pardoned draws the Cossacks away, the First Cavalry Army cuts off the
+// Caucasian Army.
+assert.deepEqual(hist.traitsMet, ['counter south denikin', 'counter volga denikin']);
+// Denikin's army fights each front with its commander's trait from rules 8;
+// a rules-7 save keeps the officers' regiments everywhere.
+{
+    const traitAt = (rules, turn, front) => {
+        const s = G.start(rules);
+        while (G.turnData(s).id !== turn) {
+            if (s.phase === 'battle') assert.ok(G.act(s, 'assume'));
+            else if (s.phase === 'review') assert.ok(G.act(s, 'next'));
+            else { assert.ok(G.act(s, 'choose', historical(G.turnData(s)))); answer(s); plan(s); assert.ok(G.act(s, 'settle')); }
+        }
+        return G.forecast(s).fronts[front].traits.find(t => t.foe === 'denikin');
+    };
+    assert.equal(traitAt(8, 'directive', 'volga').name, '차리친 강습');
+    assert.equal(traitAt(8, 'directive', 'south').name, '모스크바 지령');
+    assert.equal(traitAt(8, 'orel', 'south').name, D.factions.denikin.trait.name, "Kutepov's corps keeps the officers' regiments");
+    assert.equal(traitAt(7, 'directive', 'volga').name, D.factions.denikin.trait.name);
+}
 
 // Traits: each faction's own, with the lever against it.
 for (const [id, f] of Object.entries(D.factions)) {
@@ -239,12 +258,21 @@ for (const [id, f] of Object.entries(D.factions)) {
 }
 for (const t of D.turns) for (const th of Object.values(t.threats)) for (const foe of th.foes) assert.ok(D.factions[foe], `${t.id}: ${foe}`);
 {
-    // Denikin's officer regiments: a front without a commissar takes +2.
-    const s = G.start();
+    // Denikin's officer regiments (at Tsaritsyn before rules 8): a front
+    // without a commissar takes +2.
+    const s = G.start(7);
     until(s, 'directive');
     const bare = G.forecast(s).fronts.volga.pressure;
     G.act(s, 'commissar', 'volga', true);
     assert.equal(G.forecast(s).fronts.volga.pressure, bare - 2, 'a commissar steadies the line before the officers');
+    // Wrangel's storm (rules 8): Tsaritsyn held by fewer than two divisions takes +2.
+    const w = G.start();
+    until(w, 'directive');
+    G.act(w, 'alloc', 'volga', 2);
+    const held = G.forecast(w).fronts.volga.pressure;
+    G.act(w, 'alloc', 'volga', 1);
+    assert.equal(G.forecast(w).fronts.volga.pressure, held + 2, 'a thin Tsaritsyn falls to the storm');
+    assert.ok(G.forecast(w).fronts.volga.pressureParts.includes('데니킨군(브란겔) +2'));
     // The Don raid: two divisions kept back take 2 off a Cossack front.
     const raid = G.start();
     G.act(raid, 'alloc', 'volga', raid.plan.divisions);

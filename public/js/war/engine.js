@@ -20,7 +20,9 @@
    by the net, and the data's other `rules` conditions (cond.js); 6 a
    front's last cities (cap) open only to the battle its choice brings,
    and taking them pays the cap's reward; 7 the data's content marked
-   rules 7 (a season's second incident, a battle in the first season). */
+   rules 7 (a season's second incident, a battle in the first season); 8 a
+   threat's own trait for one of its attackers (`traits`: the same army
+   under another commander), and its `as` in the trait's name. */
 (function (root) {
     'use strict';
 
@@ -28,7 +30,7 @@
     const Battle = node ? require('./battle.js') : root.WarBattle;
     const Cond = node ? require('./cond.js') : root.WarCond;
 
-    const RULES = 7;
+    const RULES = 8;
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
     const signed = n => (n < 0 ? '−' : '+') + Math.abs(n);
@@ -458,12 +460,24 @@
         // The traits of a front's attackers under the plan: each with whether
         // its condition (when) holds (on) and the pressure it moves. A trait
         // without a condition (an occupier, Poland's Warsaw) is told, not
-        // counted.
+        // counted. From rules 8 a threat may give one attacker its own trait
+        // there (`traits`: the army under that front's commander), named as
+        // the threat's `as` names it (「데니킨군(브란겔)」).
+        function traitOf(s, f, threat) {
+            const own = s.rules >= 8 && threat.traits && threat.traits[f];
+            return own || D.factions[f].trait;
+        }
+
+        function foeShort(f, threat) {
+            const tag = threat.as && threat.as[f];
+            return tag ? `${D.factions[f].army || D.factions[f].short}(${tag})` : D.factions[f].short;
+        }
+
         function traitsOn(s, id, threat) {
-            return (threat.foes || []).filter(f => D.factions[f].trait).map(f => {
-                const tr = D.factions[f].trait;
+            return (threat.foes || []).filter(f => traitOf(s, f, threat)).map(f => {
+                const tr = traitOf(s, f, threat);
                 const on = Boolean(tr.when) && when(s, tr.when, { front: id });
-                return { foe: f, short: D.factions[f].short, name: tr.name, rule: tr.rule || null, by: tr.by || 0, counted: Boolean(tr.when), on };
+                return { foe: f, short: s.rules >= 8 ? foeShort(f, threat) : D.factions[f].short, name: tr.name, rule: tr.rule || null, by: tr.by || 0, counted: Boolean(tr.when), on };
             });
         }
 
@@ -979,7 +993,7 @@
         return {
             calendar, prevOf, DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, canRetryBattle, retryBattle, rehearse, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
             start, act, restore, serialize, forecast, activeFronts, turnData, when,
-            free, allocated, threatsOf, traitsOn, battleOf, incidentsOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, mobilizeSources, outcomeOf, outcomeBands, capBattle, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
+            free, allocated, threatsOf, traitsOn, traitOf, battleOf, incidentsOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, mobilizeSources, outcomeOf, outcomeBands, capBattle, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
         };
     }
 

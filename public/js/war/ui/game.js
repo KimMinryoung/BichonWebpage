@@ -1097,7 +1097,8 @@
         const { x, y } = best;
         avoid.push(best.box);
         const fate = result && fateOf(result) ? ' is-' + fateOf(result) : '';
-        const lead = foes.length && D.factions[foes[0]].trait;
+        // The lead attacker's trait on this front sets how its marker comes in.
+        const lead = foes.length && G.traitOf(s, foes[0], G.threatsOf(s)[id]);
         const g = svg('g', { class: `cw-foe-marker k-${kind}${fate} m-${(lead && lead.motion) || 'march'}`, tabindex: '0', role: 'button', 'aria-label': `${D.fronts[id].name}: ${foes.map(f => foeAs(f, id).name).join(', ')}. 카드로 이동` });
         // The arrow at the city under attack: the last one held, or Moscow.
         const target = line > 0 ? pts[Math.min(line, n) - 1] : points.hub;
@@ -1551,11 +1552,13 @@
         return el('div', { class: 'cw-foes' }, ...(ids || []).map(fid => {
             const f = D.factions[fid];
             const tr = (traits || []).find(t => t.foe === fid && t.rule);
+            // The trait it fights with on this front (rules 8 may give it its own there).
+            const own = G.traitOf(s, fid, G.threatsOf(s)[front] || {});
             return el('div', { class: 'cw-foe-entry' },
                 el('details', { class: 'cw-foe is-' + f.kind },
-                    el('summary', {}, f.flag ? flag(f.flag) : el('i', { class: 'cw-foe-dot' }), foeAs(fid, front).name, f.trait ? el('small', {}, f.trait.name) : null),
+                    el('summary', {}, f.flag ? flag(f.flag) : el('i', { class: 'cw-foe-dot' }), foeAs(fid, front).name, own ? el('small', {}, own.name) : null),
                     el('p', {}, f.note, f.link ? ' ' : null, f.link ? el('a', Object.assign({ href: f.link }, NEW_TAB), '더 읽기 ↗') : null),
-                    f.trait ? el('p', { class: 'cw-foe-trait' }, el('strong', {}, f.trait.name), ' ', f.trait.text) : null),
+                    own ? el('p', { class: 'cw-foe-trait' }, el('strong', {}, own.name), ' ', own.text) : null),
                 tr ? traitRule(tr) : null);
         }));
     }
