@@ -149,10 +149,9 @@
             spoils: '말과 안장',
         },
         denikin: {
-            // A season's threat names the army and its commander on each
-            // front (`as`): the Volunteer Army towards Moscow, the Caucasian
-            // Army at Tsaritsyn.
-            name: '남러시아군(데니킨)', short: '데니킨', kind: 'white', flag: TRICOLOR, link: T('armed-forces-of-south-russia'),
+            // On two fronts at once in 1919: a season's threat adds who led
+            // it there, or which army (`as`), to 「데니킨군」 (`army`).
+            name: '남러시아군(데니킨)', short: '데니킨', army: '데니킨군', kind: 'white', flag: TRICOLOR, link: T('armed-forces-of-south-russia'),
             note: '코르닐로프가 세운 의용군에 돈·쿠반 카자크군을 묶은 데니킨의 군대. 1919년 여름 「모스크바 지령」으로 북진했다.',
             trait: { name: '장교 연대', motion: 'charge', when: { leader: false }, by: 2, rule: '정치위원이 없는 전선이면 압력 +2', text: '코르닐로프·마르코프·드로즈돕스키 연대는 장교로만 채운 의용군의 정예였다. 정치위원 없이 맞선 징집 사단은 그 앞에서 흩어졌다.' },
             cries: { beaten: '장교 연대가 꺾였다.', surging: '모스크바로!' },
@@ -605,8 +604,8 @@
             ],
             threats: {
                 east: { pressure: 5, foes: ['kolchak'], text: '콜차크군이 우랄로 물러난다. 추격할 때다.' },
-                south: { pressure: 9, foes: ['denikin'], as: { denikin: { name: '의용군(마이-마옙스키)', short: '마이-마옙스키' } }, text: '데니킨의 의용군이 하리코프로 쳐들어온다.', who: ['안톤 데니킨', 'anton-denikin'] },
-                volga: { pressure: 3, foes: ['denikin'], as: { denikin: { name: '캅카스군(브란겔)', short: '브란겔' } }, text: '브란겔의 캅카스군이 차리친을 공격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
+                south: { pressure: 9, foes: ['denikin'], text: '데니킨의 의용군이 하리코프로 쳐들어온다.', who: ['안톤 데니킨', 'anton-denikin'] },
+                volga: { pressure: 3, foes: ['denikin'], as: { denikin: '브란겔' }, text: '브란겔의 캅카스군이 차리친을 공격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
                 northwest: { pressure: 4, foes: ['yudenich'], text: '유데니치의 북서군이 얌부르크로 온다.', who: ['니콜라이 유데니치', 'nikolai-yudenich'] },
             },
             cards: ['train', 'requisition', 'relief', 'cheka', 'amnesty', 'propaganda'],
@@ -661,9 +660,9 @@
                 { who: ['이오시프 스탈린', 'stalin'], at: 'south', text: '실제로 이미 폐기된 옛 계획을 시간을 잃지 말고 지금 바꿔, 보로네시에서 하리코프와 돈바스를 거쳐 로스토프로 가는 주공 계획으로 대신해야 한다.', src: ['스탈린이 레닌에게 보낸 편지, 「1919년 10월 15일」 날짜', ST('letter_southern_front')] },
             ],
             threats: {
-                south: { pressure: 14, foes: ['denikin'], as: { denikin: { name: '의용군(마이-마옙스키)', short: '마이-마옙스키' } }, text: '쿠테포프의 제1군단이 오룔로 진격한다. 오룔 다음은 툴라, 툴라 다음은 모스크바다.', who: ['알렉산드르 쿠테포프', 'alexander-kutepov'] },
+                south: { pressure: 14, foes: ['denikin'], as: { denikin: '쿠테포프' }, text: '쿠테포프의 제1군단이 오룔로 진격한다. 오룔 다음은 툴라, 툴라 다음은 모스크바다.', who: ['알렉산드르 쿠테포프', 'alexander-kutepov'] },
                 northwest: { pressure: 6, foes: ['yudenich'], text: '유데니치의 북서군이 가치나를 지나 풀코보 고지로 온다.', who: ['니콜라이 유데니치', 'nikolai-yudenich'] },
-                volga: { pressure: 3, foes: ['denikin'], as: { denikin: { name: '캅카스군(브란겔)', short: '브란겔' } }, text: '차리친의 캅카스군은 볼가를 따라 북상하려 한다.' },
+                volga: { pressure: 3, foes: ['denikin'], as: { denikin: '브란겔' }, text: '브란겔의 캅카스군은 볼가를 따라 북상하려 한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
                 west: { pressure: 3, foes: ['poland'], text: '폴란드군이 민스크로 진격한다.', who: ['유제프 피우수트스키', 'jozef-pilsudski'] },
             },
             cards: ['train', 'requisition', 'relief', 'cheka', 'amnesty', 'partyWeek'],
@@ -730,8 +729,8 @@
                 { by: 'north', at: 'north', text: '영국군은 떠났다. 병사들이 장교를 버리고 넘어간다.' },
             ],
             threats: {
-                south: { pressure: 13, foes: ['denikin'], as: { denikin: { name: '의용군(쿠테포프)', short: '쿠테포프' } }, text: '데니킨군이 하리코프와 로스토프를 지나 쿠반으로 물러난다. 다시 버티지 못하게 몰아쳐야 한다.' },
-                volga: { pressure: 3, foes: ['denikin'], as: { denikin: { name: '캅카스군(포크롭스키)', short: '포크롭스키' } }, text: '차리친의 캅카스군이 고립되었다.' },
+                south: { pressure: 13, foes: ['denikin'], text: '데니킨군이 하리코프와 로스토프를 지나 쿠반으로 물러난다. 다시 버티지 못하게 몰아쳐야 한다.' },
+                volga: { pressure: 3, foes: ['denikin'], as: { denikin: '캅카스군' }, text: '차리친의 캅카스군이 고립되었다.' },
                 northwest: { pressure: 3, foes: ['yudenich'], text: '유데니치군이 에스토니아 국경으로 밀려났다.' },
                 north: { pressure: 3, foes: ['north'], text: '영국군이 떠난 아르한겔스크의 북부 정부가 흔들린다.' },
             },

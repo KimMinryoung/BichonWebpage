@@ -398,12 +398,16 @@
         return v.who ? v.who[0] : v.by ? foeAs(v.by, v.at).short : '';
     }
 
-    // A faction as it is named on one front this season: a threat's `as`
-    // names the army and its commander there (Denikin's Volunteer Army and
-    // Caucasian Army fought on two fronts at once).
+    // A faction as it is named on one front this season. A threat's `as`
+    // adds who led it there, or which of its armies (Denikin's fought on two
+    // fronts at once): 「데니킨군(쿠테포프)」 on the map, 「남러시아군(데니킨) ·
+    // 쿠테포프」 in full. `side` is what a speaker of it belongs to.
     function foeAs(fid, front) {
+        const f = D.factions[fid];
         const threat = front && (G.threatsOf(s) || {})[front];
-        return Object.assign({ name: D.factions[fid].name, short: D.factions[fid].short }, threat && threat.as && threat.as[fid]);
+        const tag = threat && threat.as && threat.as[fid];
+        const side = f.army || f.short;
+        return tag ? { name: `${f.name} · ${tag}`, short: `${side}(${tag})`, side } : { name: f.name, short: f.short, side };
     }
 
     function sourceOf(v) {
@@ -573,7 +577,8 @@
         // On a phone wider, so the line takes fewer rows of the short frame.
         const width = NARROW.matches ? Math.min(360, mapEl.clientWidth - 16) : Math.min(310, mapEl.clientWidth - 24);
         return bubble({
-            v, fresh, width, name: speakerName(v), sub: v.op ? v.who[0] : v.who && f ? foeAs(v.by, v.at).short : null,
+            v, fresh, width, name: speakerName(v),
+            sub: v.op ? v.who[0] : v.who && f ? foeAs(v.by, v.at).side : null,
             face: v.who ? A.portrait(v.who[1]) : A.shield(v.by, f), side: f ? 'k-' + f.kind : v.op ? 'is-red is-op' : 'is-red',
             ax: spot.x * scale, ay: spot.y * scale, view: mapEl,
             below: Boolean(spot.box) || (below ?? spot.y * scale < (NARROW.matches ? mapEl.scrollTop : 0) + 150),
@@ -789,7 +794,11 @@
         for (const p of points.places || []) {
             if (p.kind === 'town') layer.append(svg('circle', { cx: p.x, cy: p.y, r: 2, class: 'cw-place-dot' }));
             const side = p.kind === 'town' && !p.pos;
-            layer.append(svg('text', { x: side ? p.x + 4 : p.x, y: p.pos === 'below' ? p.y + 11 : p.pos === 'above' ? p.y - 5 : side ? p.y + 3 : p.y, 'text-anchor': side ? 'start' : 'middle', class: `cw-map-place is-${p.kind}` }, p.name));
+            const x = side ? p.x + 4 : p.x, y = p.pos === 'below' ? p.y + 11 : p.pos === 'above' ? p.y - 5 : side ? p.y + 3 : p.y;
+            layer.append(svg('text', { x, y, 'text-anchor': side ? 'start' : 'middle', class: `cw-map-place is-${p.kind}` }, p.name));
+            // The markers keep clear of a region's name too (the Donbas under the Southern Front's).
+            const w = textWidth(p.name, 12);
+            avoid.push({ x0: side ? x : x - w / 2, x1: side ? x + w : x + w / 2, y0: y - 11, y1: y + 3 });
         }
         const ARROW = { east: '→', west: '←', north: '↑', south: '↓' };
         for (const p of points.beyond || []) {
