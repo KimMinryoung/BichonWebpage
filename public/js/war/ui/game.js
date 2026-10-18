@@ -1197,29 +1197,38 @@
     }
 
     // The strength sent to a front, by its last held city facing the
-    // attackers' marker: red units, a star for the commissar, the train.
+    // attackers' marker, in a box like theirs: the strength in figures on
+    // a red tab, then what makes it: the divisions as red units (the last
+    // filled to its fraction), the commissar's star, each card sent here as
+    // an ink chip with its bonus (the train's as well as the one it draws
+    // on the railway). Shown whenever the front has strength.
     function troopPips(id, marker, avoid) {
         const pts = points.fronts[id];
         const line = s.lines[id];
         const at = line > 0 ? pts[line - 1] : points.hub;
-        // The divisions' strength in units like the attacker's marks (the
-        // last one filled to its fraction), then the star and the train.
         const f = G.forecast(s).fronts[id];
         const units = s.plan.alloc[id] * f.perDivision;
         const n = Math.ceil(units - 1e-9);
         const commissar = s.plan.commissar[id];
-        // A card on rails runs on the railway (trainOnRail); another card
-        // sent here (Mironov's army) shows with the pips.
-        const train = s.plan.cards.some(c => c.target === id && !D.cards[c.id].onRail);
-        const extra = (commissar ? 2 : 0) + (train ? 3 : 0);
+        const cards = s.plan.cards.filter(c => c.target === id && D.cards[c.id].bonus).map(c => `+${D.cards[c.id].bonus}`);
         const g = svg('g', { class: 'cw-pips', 'aria-hidden': 'true' });
-        if (!n && !extra) return g;
-        // A box like the attacker's: the strength in figures on a red tab,
-        // the units in a row beside it, an ink rim and a poster's shadow.
-        const perRow = 8, size = 9, gap = 2, pad = 3, TAB = 26;
-        const cols = Math.min(perRow, n + extra);
-        const rows = Math.ceil((n + extra) / perRow);
-        const w = TAB + pad * 2 + cols * (size + gap) - gap, h = Math.max(17, pad * 2 + rows * (size + gap) - gap);
+        if (!(f.strength > 0)) return g;
+        const size = 9, gap = 2, pad = 4, TAB = 28, ROW = 8 * (size + gap) - gap;
+        // The items in reading order, laid in rows of at most ROW.
+        const items = [
+            ...Array.from({ length: n }, (_, i) => ({ kind: 'pip', w: size, i })),
+            ...(commissar ? [{ kind: 'star', w: size + 2 }] : []),
+            ...cards.map((text, k) => ({ kind: 'card', w: textWidth(text, 9.5) + 6, text, k })),
+        ];
+        let x = 0, row = 0, widest = 0;
+        for (const it of items) {
+            if (x && x + it.w > ROW) { row++; x = 0; }
+            it.x = x; it.row = row;
+            x += it.w + gap;
+            widest = Math.max(widest, x - gap);
+        }
+        const rows = items.length ? row + 1 : 0;
+        const w = TAB + (items.length ? pad * 2 + widest : 0), h = Math.max(19, pad * 2 + rows * (size + gap) - gap);
         let dx = at.x - marker.x, dy = at.y - marker.y;
         const len = Math.hypot(dx, dy) || 1;
         dx /= len; dy /= len;
@@ -1241,18 +1250,27 @@
         g.append(svg('rect', { x: x0, y: y0, width: w, height: h, class: 'cw-pips-box' }));
         g.append(svg('rect', { x: x0, y: y0, width: TAB, height: h, class: 'cw-pips-tab' }));
         g.append(svg('text', { x: x0 + TAB / 2, y: y0 + h / 2 + 4, 'text-anchor': 'middle', class: 'cw-pips-num' }, String(+f.strength.toFixed(1))));
-        const slot = i => [x0 + TAB + pad + (i % perRow) * (size + gap), y0 + pad + Math.floor(i / perRow) * (size + gap)];
+        // The rows sit in the middle of the box's height.
+        const top = y0 + (h - (rows * (size + gap) - gap)) / 2;
         // Each unit in its own group, named for its glide (renderMap).
-        const unit = (name, [x, y]) => g.appendChild(svg('g', { 'data-unit': name, 'data-x': x.toFixed(1), 'data-y': y.toFixed(1) }));
-        for (let i = 0; i < n; i++) {
-            const [x, y] = slot(i);
-            const part = Math.min(1, units - i);
-            const u = unit(`pip${i}`, [x, y]);
-            if (part < 1) u.append(svg('rect', { x, y, width: size, height: size, class: 'cw-pip is-empty' }));
-            u.append(svg('rect', { x, y, width: size * part, height: size, class: 'cw-pip' }));
+        const unit = (name, ux, uy) => g.appendChild(svg('g', { 'data-unit': name, 'data-x': ux.toFixed(1), 'data-y': uy.toFixed(1) }));
+        for (const it of items) {
+            const ix = x0 + TAB + pad + it.x, iy = top + it.row * (size + gap);
+            if (it.kind === 'pip') {
+                const part = Math.min(1, units - it.i);
+                const u = unit(`pip${it.i}`, ix, iy);
+                if (part < 1) u.append(svg('rect', { x: ix, y: iy, width: size, height: size, class: 'cw-pip is-empty' }));
+                u.append(svg('rect', { x: ix, y: iy, width: size * part, height: size, class: 'cw-pip' }));
+            } else if (it.kind === 'star') {
+                // A star a unit high: its points from the top of the row to its foot.
+                const R = size / 1.81;
+                unit('star', ix, iy).append(svg('path', { d: star(ix + it.w / 2, iy + R, R, R * .42), class: 'cw-pip-star' }));
+            } else {
+                const u = unit(`card${it.k}`, ix, iy);
+                u.append(svg('rect', { x: ix, y: iy - 1, width: it.w, height: size + 2, class: 'cw-pip-card' }));
+                u.append(svg('text', { x: ix + it.w / 2, y: iy + size - 1, 'text-anchor': 'middle', class: 'cw-pip-card-text' }, it.text));
+            }
         }
-        if (commissar) { const [x, y] = slot(n); unit('star', [x, y]).append(svg('path', { d: star(x + size, y + size / 2, 8.5, 3.6), class: 'cw-pip-star' })); }
-        if (train) { const [x, y] = slot(n + (commissar ? 2 : 0)); unit('card', [x, y]).append(trainGlyph(x + 3, y - 4, 24)); }
         return g;
     }
 
@@ -1334,7 +1352,7 @@
             ...D.map.legend.map(key),
             key(['cw-key-badge', '공격해 오는 세력 · 아래 칸 하나가 압력 1']),
             key(['cw-key-ring', '점선 고리: 이번 시기에 잃거나 되찾을 도시(예상)']),
-            el('span', {}, el('i', { class: 'cw-key-pip' }), '전투력 1 · ', starIcon(), ` ${U.leader} ${D.leaders.strength}`, ...railCards.flatMap(c => [' · ', trainIcon(), ` ${c.short || c.title} ${c.bonus}`])),
+            el('span', {}, el('b', { class: 'cw-key-num' }, '3.5'), '전투력 · ', el('i', { class: 'cw-key-pip' }), '전투력 1 · ', starIcon(), ` ${U.leader} ${D.leaders.strength} · `, el('b', { class: 'cw-key-card' }, `+${railCards[0] ? railCards[0].bonus : 3}`), '카드'),
         ]));
     }
 
