@@ -1219,6 +1219,14 @@
 .cw-todo { display: flex; gap: 4px; flex: 0 1 auto; min-width: 0; overflow-x: auto; scrollbar-width: none; margin-right: auto; }
 .games-shell .cw-todo-item { flex: 0 0 auto; min-height: 30px; padding: 3px 9px; font-size: .78rem; font-variant-numeric: tabular-nums; background: var(--text-primary); color: var(--bg-canvas); border-color: var(--text-primary); }
 .games-shell .cw-todo-item.is-done { background: transparent; color: var(--text-secondary); border-color: var(--border); }
+.games-shell .cw-todo-item.is-next { background: var(--cw-red); border-color: var(--cw-red); color: #fff; }
+/* The first season's next step in words, over the row. */
+.cw-command.has-guide { flex-wrap: wrap; row-gap: 6px; }
+.games-shell .cw-guide {
+    flex: 1 0 100%; display: flex; align-items: baseline; gap: 8px; min-height: 0; padding: 4px 0; text-align: left;
+    background: none; border: 0; color: var(--text-primary); font-size: .85rem; font-weight: 700; line-height: 1.35;
+}
+.cw-guide span { flex: 0 0 auto; padding: 1px 6px; background: var(--cw-red); color: #fff; font-size: .72rem; letter-spacing: .04em; }
 @media (max-width: 560px) { .cw-command p { display: none; } }
 
 /* Where a front's divisions come from; the ones moved by rail inverted. */

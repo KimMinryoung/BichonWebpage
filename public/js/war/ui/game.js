@@ -1237,7 +1237,8 @@
     // it: bring the row of fronts above the card to just below the map.
     function revealCard(card) {
         if (getComputedStyle(mapEl).position !== 'sticky') return card.scrollIntoView({ block: 'nearest' });
-        const below = mapEl.getBoundingClientRect().bottom + 8;
+        // Where the map's foot will be once pinned (it may not be yet).
+        const below = parseFloat(getComputedStyle(mapEl).top) + mapEl.offsetHeight + 8;
         const top = (card.previousElementSibling || card).getBoundingClientRect().top;
         if (Math.abs(top - below) > 4) window.scrollBy({ top: top - below });
     }
@@ -1758,14 +1759,34 @@
         const kept = G.free(s);
         const saved = kept - Math.ceil(kept * D.economy.food.reserveEats);
         // What the season still wants, each a jump to where it is done.
-        const todo = (done, label, target) => el('button', {
-            type: 'button', class: 'cw-todo-item' + (done ? ' is-done' : ''),
-            onclick: () => { const box = $(target); if (box) { box.scrollIntoView({ block: 'start', behavior: stillMotion() ? 'auto' : 'smooth' }); } },
-        }, done ? '✓ ' : '', label);
-        $('cwTodo').replaceChildren(
-            G.incidentsOf(s).length ? todo(G.incidentsOf(s).every(inc => G.responseOf(s, inc)), '돌발 사건', 'cwIncident') : '',
-            todo(Boolean(s.plan.choice), '갈림길', 'cwChoice'),
-            todo(kept === 0, `${U.unit} ${G.allocated(s)}/${s.plan.divisions}`, 'cwFronts'));
+        // The fronts: their row just under the map pinned on a phone, the open card below it.
+        const go = target => {
+            const card = target === 'cwFronts' && $(target).querySelector('article.cw-front');
+            if (card) return revealCard(card);
+            const box = $(target);
+            if (box) box.scrollIntoView({ block: 'start', behavior: stillMotion() ? 'auto' : 'smooth' });
+        };
+        // In the page's order: the fronts, the incident, the fork. The
+        // first left undone is marked as the next.
+        const steps = [
+            { done: kept === 0, label: `${U.unit} ${G.allocated(s)}/${s.plan.divisions}`, target: 'cwFronts', guide: `전선 카드의 + 버튼으로 ${josa(U.unit, '을', '를')} 보낸다 (${G.allocated(s)}/${s.plan.divisions})` },
+            G.incidentsOf(s).length ? { done: G.incidentsOf(s).every(inc => G.responseOf(s, inc)), label: '돌발 사건', target: 'cwIncident', guide: '돌발 사건에 어떻게 대응할지 고른다' } : null,
+            { done: Boolean(s.plan.choice), label: '갈림길', target: 'cwChoice', guide: '이 시기의 갈림길에서 길을 고른다' },
+        ].filter(Boolean);
+        const next = steps.find(x => !x.done);
+        $('cwTodo').replaceChildren(...steps.map(x => el('button', {
+            type: 'button', class: 'cw-todo-item' + (x.done ? ' is-done' : x === next ? ' is-next' : ''), onclick: () => go(x.target),
+        }, x.done ? '✓ ' : '', x.label)));
+        // The first season says the next step in words, and where it is done.
+        const first = G.calendar(s).indexOf(s.turn) === 0;
+        let guide = $('cwCommand').querySelector('.cw-guide');
+        if (first && !guide) $('cwCommand').prepend(guide = el('button', { type: 'button', class: 'cw-guide' }));
+        if (!first && guide) guide.remove();
+        $('cwCommand').classList.toggle('has-guide', first);
+        if (first) {
+            guide.replaceChildren(el('span', {}, '다음 할 일'), next ? next.guide : `준비가 끝났다. 「${(G.battleOf(s) ? G.battleOf(s).settle : '이 시기를 보낸다').replace(/\s*→$/, '')}」를 누른다`);
+            guide.onclick = () => next ? go(next.target) : $('cwSettle').focus();
+        }
         const missing = [G.incidentsOf(s).some(inc => !G.responseOf(s, inc)) ? '돌발 사건' : null, !s.plan.choice ? '갈림길' : null].filter(Boolean);
         $('cwCommandNote').textContent = missing.length ? `${missing.join('과 ')}을 골라야 보낼 수 있다`
             : `${U.food} 소비 ${G.forecast(s).supply.need}` + (saved > 0 ? ` (예비 −${saved})` : '');
