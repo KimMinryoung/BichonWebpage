@@ -120,6 +120,15 @@ const PEREKOP_WIN = [
     ['move', 'w2', 7, 2], ['attack', 'w2', 'w5'], ['move', 'r51g', 5, 3], ['attack', 'r51g', 'w4'], ['attack', 'r51a', 'w4'], ['move', 'w1', 8, 1], ['attack', 'w1', 'w5'], ['move', 'rmk', 8, 3], ['attack', 'rmk', 'w5'], ['move', 'r1c', 9, 10], ['attack', 'r1c', 'wdz'], ['move', 'r30b', 8, 11], ['attack', 'r30b', 'wc2'], ['move', 'r4g', 7, 11], ['attack', 'r4g', 'wc2'], ['move', 'r51b', 6, 2], ['wait', 'r51b'], ['move', 'r52', 7, 3], ['wait', 'r52'], ['move', 'r30', 7, 9], ['wait', 'r30'], ['wait', 'r15'], ['end'],
     ['move', 'rmk', 9, 3],
 ];
+// Kazan beaten by a STEP (rules 9: the Komuch and the Legion a third as
+// strong again; scripts/war-balance.js, the strong player at margin 3 with
+// the train): the Kremlin falls on the 4th turn.
+const KAZAN_QUICK = [
+    ['move', 'k2a', 1, 8], ['attack', 'k2a', 'wk3'], ['move', 'kfl', 4, 7], ['feat', 'kfl', 'wk1'], ['move', 'k5l', 4, 2], ['attack', 'k5l', 'wk2'], ['move', 'k5g', 5, 2], ['attack', 'k5g', 'wk2'], ['move', 'ksl', 5, 3], ['wait', 'ksl'], ['feat', 'ktr'], ['wait', 'k5c'], ['end'],
+    ['move', 'k2a', 1, 7], ['attack', 'k2a', 'wk1'], ['attack', 'kfl', 'wk1'], ['attack', 'k5g', 'wk2'], ['attack', 'k5l', 'wk2'], ['move', 'ksl', 5, 6], ['wait', 'ksl'], ['move', 'ktc', 5, 3], ['wait', 'ktc'], ['wait', 'k5c'], ['wait', 'ktr'], ['end'],
+    ['attack', 'k2a', 'wk1'], ['attack', 'k5g', 'wk2'], ['move', 'k5l', 2, 3], ['wait', 'k5l'], ['move', 'ksl', 6, 7], ['attack', 'ksl', 'wkp'], ['move', 'ktc', 5, 6], ['attack', 'ktc', 'wkp'], ['move', 'k5c', 3, 2], ['wait', 'k5c'], ['wait', 'ktr'], ['end'],
+    ['move', 'k2a', 2, 7],
+];
 // Ufa as history took it: the 25th Division crosses at Krasny Yar, the
 // 217th over the pontoon holds the bridgehead, the rest go down the east bank into the
 // city (the 31st round its east, where it cut the railway); the guns
@@ -745,12 +754,17 @@ assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), fal
     const muster = (margin, cards = ['train']) => ({ margin, fed: 1, commissar: true, cards });
     const turns = m => { const b = fight(KAZAN, {}, muster(m), K); assert.equal(b.result, 'won', `margin ${m}`); return b.turn; };
     assert.ok(turns(-2) >= turns(0), 'a muster short of the pressure is no quicker');
-    assert.ok(turns(3) <= K.reward.quick, 'beating the pressure by a STEP takes Kazan quickly');
+    const quick = B.start(K, {}, muster(3));
+    for (const o of KAZAN_QUICK) if (quick.result || !B.act(quick, ...o)) break;
+    assert.ok(quick.result === 'won' && quick.turn <= K.reward.quick, `beating the pressure by a STEP takes Kazan quickly (${quick.turn})`);
     assert.ok(turns(0) > K.reward.quick, 'meeting it takes Kazan as history did');
     const { kfl, ...noBoat } = KAZAN;
     assert.equal(fight(noBoat, {}, muster(0), K).result, 'lost', 'the flotilla is needed');
     assert.ok(kfl);
-    const empty = fight({ 'k5l,k5c,ksl,kcp,k5g': KAZAN['k5l,k5c,ksl,kcp'], kfl: KAZAN.kfl, k2a: KAZAN.k2a }, {}, muster(6, []), K);
+    // Sviyazhsk and the west bank left empty (only the 2nd Army on the Arsk
+    // road): Kappel's raid rides in.
+    const empty = B.start(Object.assign({}, K, { units: K.units.filter(u => u.side !== 'red' || u.id === 'k2a') }), {}, muster(6, []));
+    while (!empty.result) assert.ok(B.act(empty, 'end'));
     assert.equal(empty.result, 'lost', 'Sviyazhsk left empty');
     assert.ok(B.unitAt(empty, ...K.protect.at).id === 'wkp', 'Kappel stands in Sviyazhsk');
     // A boat keeps to the river and passes under the bridge.
