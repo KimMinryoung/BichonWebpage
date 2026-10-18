@@ -63,10 +63,19 @@ const rand = () => { seed = (seed * 16807) % 2147483647; return (seed - 1) / 214
 // original as it was (the definition and the units' fixed data are shared).
 function clone(b) {
     return Object.assign({}, b, {
+        orders: b.orders ? b.orders.slice() : [],
         units: b.units.map(u => Object.assign({}, u, { prev: u.prev && Object.assign({}, u.prev, { turned: Object.assign({}, u.prev.turned) }) })),
         turned: Object.assign({}, b.turned), wear: Object.assign({}, b.wear), feats: Object.assign({}, b.feats),
         events: [], report: [],
     });
+}
+
+// An order given on a board, kept in its record (b.orders) when it goes
+// through, so a won battle can be replayed order by order.
+function play(b, ...order) {
+    const ok = B.act(b, ...order);
+    if (ok) (b.orders = b.orders || []).push(order);
+    return ok;
 }
 
 const reds = b => b.units.filter(u => u.hp > 0 && B.isPlayer(b, u));
@@ -163,13 +172,13 @@ function options(b, u, wide) {
         const v = B.byId(bb, id);
         if (!v || bb.result) { out.push(bb); return; }
         let any = false;
-        for (const t of B.targets(bb, v)) { const x = clone(bb); if (B.act(x, 'attack', id, t.id)) { out.push(x); any = true; } }
+        for (const t of B.targets(bb, v)) { const x = clone(bb); if (play(x, 'attack', id, t.id)) { out.push(x); any = true; } }
         if (!B.featBlock(bb, v)) {
             const kind = B.FEATS[v.feat.kind];
-            if (kind.blow) for (const t of B.featTargets(bb, v)) { const x = clone(bb); if (B.act(x, 'feat', id, t.id)) { out.push(x); any = true; } }
-            else if (!kind.beforeMove) { const x = clone(bb); if (B.act(x, 'feat', id)) { out.push(x); any = true; } }
+            if (kind.blow) for (const t of B.featTargets(bb, v)) { const x = clone(bb); if (play(x, 'feat', id, t.id)) { out.push(x); any = true; } }
+            else if (!kind.beforeMove) { const x = clone(bb); if (play(x, 'feat', id)) { out.push(x); any = true; } }
         }
-        const x = clone(bb); B.act(x, 'wait', id); out.push(x);
+        const x = clone(bb); play(x, 'wait', id); out.push(x);
         return any;
     };
     const moves = bb => {
@@ -188,13 +197,13 @@ function options(b, u, wide) {
         after(clone(bb), u.id);
         for (const { t } of ranked) {
             const x = clone(bb);
-            if (B.act(x, 'move', u.id, t.r, t.c)) after(x, u.id);
+            if (play(x, 'move', u.id, t.r, t.c)) after(x, u.id);
         }
     };
     moves(b);
     if (!B.featBlock(b, u) && B.FEATS[u.feat.kind].beforeMove) {
         const x = clone(b);
-        if (B.act(x, 'feat', u.id)) moves(x);
+        if (play(x, 'feat', u.id)) moves(x);
     }
     return out;
 }
@@ -220,14 +229,14 @@ function strongTurn(b) {
             .filter(({ x }) => { const k = x.b.units.map(u => `${u.id}${u.r},${u.c},${u.hp}`).join('|') + x.left.join(); if (seen.has(k)) return false; seen.add(k); return true; })
             .slice(0, WIDTH).map(p => p.x);
     }
-    return beam.slice(0, ENDS).map(x => { const nb = x.b.result ? x.b : (() => { const c = clone(x.b); B.act(c, 'end'); return c; })(); return nb; });
+    return beam.slice(0, ENDS).map(x => { const nb = x.b.result ? x.b : (() => { const c = clone(x.b); play(c, 'end'); return c; })(); return nb; });
 }
 
 function strongBattle(start) {
     let beam = [start];
     for (let guard = 0; guard < 40; guard++) {
         const won = beam.find(b => b.result === 'won');
-        if (won) return { result: 'won', turns: won.turn, held: Boolean(won.held) };
+        if (won) return { result: 'won', turns: won.turn, held: Boolean(won.held), orders: won.orders };
         beam = beam.filter(b => !b.result);
         if (!beam.length) return { result: 'lost' };
         const next = beam.flatMap(strongTurn);
@@ -255,9 +264,9 @@ function ordinaryBattle(start) {
             const pick = rand() < 0.2 ? ranked[Math.min(ranked.length - 1, Math.floor(rand() * 3))] : ranked[0];
             b = pick.x;
         }
-        if (!b.result) B.act(b, 'end');
+        if (!b.result) play(b, 'end');
     }
-    return { result: b.result || 'lost', turns: b.turn, held: Boolean(b.held) };
+    return { result: b.result || 'lost', turns: b.turn, held: Boolean(b.held), orders: b.orders };
 }
 
 // ── Musters ──
@@ -297,9 +306,12 @@ function measure({ id, margin, cards, flags }) {
 
 const pct = (n, of) => `${Math.round(100 * n / of)}%`;
 
+// Required as a module (an experiment of one's own), the players alone.
+module.exports = { strongBattle, ordinaryBattle, clone, score, historyOf, reseed: n => { seed = n; } };
+
 if (!isMainThread) {
     parentPort.on('message', job => parentPort.postMessage({ key: job.key, line: measure(job) }));
-} else {
+} else if (require.main === module) {
     // ── Report ──
     const heads = [], jobs = [];
     for (const id of battles) {

@@ -65,6 +65,27 @@ const OREL = {
     otr: [{ r: 2, c: 5 }],
     o13b: null,
 };
+// Orel as history's road takes it under rules 9's ring round the station
+// (scripts/war-balance.js, the ordinary player, seed 1, at that road's
+// muster): the Red Cossacks ride round to the south, the Latvians and
+// Pavlov's brigade wear down the west, the 13th Army the north; the
+// station falls on the 6th turn, after the quick reward's 4 as in history.
+const OREL_HISTORY = [
+    ['feat', 'opr'], ['move', 'opr', 5, 6], ['attack', 'opr', 'wo2'], ['wait', 'o13b'], ['move', 'o13a', 2, 7], ['attack', 'o13a', 'wob'], ['move', 'otr', 3, 5], ['attack', 'otr', 'wob'], ['attack', 'oes', 'wd2'], ['move', 'ol1', 4, 3], ['attack', 'ol1', 'wd1'], ['move', 'o13g', 2, 6], ['attack', 'o13g', 'wob'], ['end'],
+    ['move', 'ol1', 4, 4], ['attack', 'ol1', 'wo3'], ['move', 'oes', 5, 2], ['attack', 'oes', 'wd1'], ['attack', 'opr', 'wo2'], ['attack', 'o13b', 'wok'], ['attack', 'otr', 'wo2'], ['move', 'o13a', 3, 7], ['attack', 'o13a', 'wo1'], ['attack', 'o13g', 'wo2'], ['end'],
+    ['move', 'ol1', 5, 4], ['attack', 'ol1', 'wd1'], ['attack', 'otr', 'wo2'], ['move', 'oes', 4, 3], ['attack', 'oes', 'wd1'], ['attack', 'opr', 'wo2'], ['attack', 'o13a', 'wo4'], ['attack', 'o13b', 'wok'], ['attack', 'o13g', 'wo2'], ['end'],
+    ['move', 'oes', 4, 4], ['attack', 'oes', 'wo3'], ['attack', 'o13g', 'wo2'], ['move', 'ol1', 5, 5], ['attack', 'ol1', 'wo3'], ['attack', 'o13a', 'wo1'], ['attack', 'o13b', 'wok'], ['attack', 'opr', 'wo2'], ['end'],
+    ['attack', 'ol1', 'wo3'], ['attack', 'o13b', 'wok'], ['attack', 'oes', 'wo3'], ['attack', 'opr', 'wo2'], ['attack', 'o13a', 'wo1'], ['end'],
+    ['move', 'opr', 4, 6],
+];
+// Orel beaten by a STEP (scripts/war-balance.js, the strong player at
+// margin 3 with the train): the Estonians come in on the west, and the
+// station falls on the 3rd turn.
+const OREL_QUICK = [
+    ['feat', 'opr'], ['move', 'opr', 5, 6], ['attack', 'opr', 'wo2'], ['move', 'o13a', 2, 7], ['attack', 'o13a', 'wob'], ['attack', 'o13g', 'wob'], ['move', 'otr', 3, 5], ['attack', 'otr', 'wo2'], ['move', 'ol1', 4, 3], ['attack', 'ol1', 'wd1'], ['move', 'oes', 5, 2], ['attack', 'oes', 'wd1'], ['move', 'opv', 4, 4], ['attack', 'opv', 'wo3'], ['wait', 'o13b'], ['end'],
+    ['move', 'opv', 5, 4], ['attack', 'opv', 'wd1'], ['move', 'oes', 4, 4], ['attack', 'oes', 'wo3'], ['move', 'ol1', 5, 5], ['attack', 'ol1', 'wo3'], ['move', 'o13g', 2, 6], ['attack', 'o13g', 'wo2'], ['attack', 'otr', 'wo2'], ['attack', 'opr', 'wo2'], ['move', 'o13a', 1, 9], ['attack', 'o13a', 'wok'], ['attack', 'o13b', 'wok'], ['end'],
+    ['attack', 'opr', 'wo2'], ['move', 'ol1', 4, 6],
+];
 // Ufa as history took it: the 25th Division crosses at Krasny Yar, the
 // 217th over the pontoon holds the bridgehead, the rest go down the east bank into the
 // city (the 31st round its east, where it cut the railway); the guns
@@ -111,10 +132,34 @@ const TSARITSYN = {
 };
 const ROUTES = { kazan: KAZAN, tsaritsyn: TSARITSYN, ufa: UFA, orel: OREL, warsaw: WARSAW };
 
+// Battles given order by order on history's road. Another muster, where
+// those orders do not win the same way, is fought by the
+// ordinary player of scripts/war-balance.js (the first of its seeds to win,
+// else the last tried): a route alone no longer takes Orel's ringed station.
+const ORDERS = { orel: OREL_HISTORY };
+const Balance = require('./war-balance.js');
+
+function playOut(s) {
+    let best = null;
+    for (let seed = 1; seed <= 12 && !(best && best.result === 'won'); seed++) {
+        Balance.reseed(seed);
+        best = Balance.ordinaryBattle(s.battle);
+    }
+    for (const order of best.orders) if (s.phase !== 'battle' || !G.act(s, 'b:' + order[0], ...order.slice(1))) break;
+}
+
 // Sends the season, fighting the season's battle on the way when it comes.
 function send(s) {
     if (!G.act(s, 'settle')) return false;
-    if (s.phase === 'battle' && !s.battle.def.final) drive(s.battle, ROUTES[s.battle.def.id], (name, ...args) => G.act(s, 'b:' + name, ...args));
+    if (s.phase === 'battle' && !s.battle.def.final) {
+        // History's orders where they win the same board, tried on a copy first.
+        const orders = ORDERS[s.battle.def.id];
+        const trial = orders && Balance.clone(s.battle);
+        if (orders && orders.every(order => B.act(trial, ...order)) && trial.result === 'won') {
+            for (const order of orders) G.act(s, 'b:' + order[0], ...order.slice(1));
+        } else if (orders) playOut(s);
+        if (s.phase === 'battle') drive(s.battle, ROUTES[s.battle.def.id], (name, ...args) => G.act(s, 'b:' + name, ...args));
+    }
     return true;
 }
 
@@ -223,6 +268,8 @@ assert.equal(hist.records.length, G.calendar(hist).length);
 assert.equal(sumDiff(hist), 0, 'the historical campaign matches history city for city');
 assert.equal(hist.battles.kazan.result, 'won', "history's plan takes Kazan");
 assert.ok(hist.battles.kazan.turns > D.battles.kazan.reward.quick, 'as history did, not sooner');
+assert.equal(hist.battles.orel.result, 'won', "history's road retakes Orel");
+assert.ok(hist.battles.orel.turns > D.battles.orel.reward.quick, 'as history did, not sooner');
 for (const r of hist.records) {
     for (const [id, f] of Object.entries(r.fronts)) assert.equal(f.after, f.history, `${D.turns[r.turn].id} ${id}`);
 }
@@ -712,18 +759,22 @@ assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), fal
     assert.ok(!B.reachable(b, B.byId(b, 'k5l')).some(t => B.terrain(b, t.r, t.c).water), 'no wading the Volga');
 }
 
-// Orel: the shock group's swing round Kromy's road cuts the city off;
-// a STEP beyond the pressure retakes it quickly, history's plan as history
-// did; Mtsensk left empty falls to the Kornilov shock regiment.
+// Orel (rules 9: the station ringed by the Kornilov regiments): beating the
+// pressure by a STEP retakes it within the quick reward, a muster short of
+// it does not, history's road retakes it later (the campaign above), and
+// Mtsensk left empty falls to the Kornilov shock regiment.
 {
     const O = D.battles.orel;
     const muster = (margin, cards = ['train']) => ({ margin, fed: 1, commissar: true, cards });
-    const turns = m => { const b = fight(OREL, {}, muster(m), O); assert.equal(b.result, 'won', `Orel margin ${m}`); return b.turn; };
-    assert.ok(turns(-1) >= turns(2), 'a muster short of the pressure is no quicker');
-    assert.ok(turns(3) <= O.reward.quick, 'beating the pressure by a STEP retakes Orel quickly');
-    assert.ok(turns(2) > O.reward.quick, "history's margin retakes it as history did");
-    assert.ok(fight(OREL, {}, muster(2), O).turned.orel, 'the shock group cuts the road to Kursk');
-    const left = fight(Object.assign({}, OREL, { o13b: [{ r: 2, c: 8 }, OREL_STATION] }), {}, muster(2), O);
+    const by = (orders, m) => { const b = B.start(O, {}, muster(m)); for (const o of orders) if (b.result || !B.act(b, ...o)) break; return b; };
+    const quick = by(OREL_QUICK, 3);
+    assert.equal(quick.result, 'won');
+    assert.ok(quick.turn <= O.reward.quick, `a STEP beyond the pressure retakes Orel quickly (${quick.turn})`);
+    assert.ok(quick.turned.orel, 'the Red Cossacks cut the road to Kursk');
+    assert.notEqual(by(OREL_QUICK, -1).result, 'won', 'without the Estonians that does not');
+    const left = B.start(O, {}, muster(2));
+    assert.ok(B.act(left, 'move', 'o13b', 1, 10) || B.act(left, 'move', 'o13b', 0, 9) || B.act(left, 'move', 'o13b', 1, 9));
+    B.act(left, 'end');
     assert.equal(left.result, 'lost', 'Mtsensk left empty');
     assert.equal(B.unitAt(left, ...O.protect.at).id, 'wok');
     const thin = B.start(O, {}, muster(0, []));

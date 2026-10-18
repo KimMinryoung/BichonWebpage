@@ -1194,7 +1194,7 @@
         strikeNote: '',
         raidNote: '코르닐로프 충격연대. 툴라로 가는 길목 므첸스크로 달려간다. 붉은 부대 곁에서 멈추지 않고 지나치며, 더 다가갈 수 없을 때만 막아선 부대를 친다. 므첸스크에 백군이 들어서면 진다.',
         legend: [['steppe', '들판'], ['forest', '숲 (방어 +1, 이동 2)'], ['city', '오룔 시가 (방어 +3, 포격으로 깎임)'], ['town', '크로미·므첸스크 (방어 +1)']],
-        reward: { quick: 6, quickBy: 3, lostBy: -6 },
+        reward: { quick: 4, quickBy: 3, lostBy: -6 },
         map: [
             'ff......f.M.',
             'f..........f',
@@ -1224,7 +1224,7 @@
         protect: { at: [0, 10], name: '므첸스크' },
         towns: [['므첸스크', 0, 10], ['크로미', 6, 1]],
         places: [['툴라 방면', 0, 4.5], ['오룔', 2.4, 6.2], ['크로미', 7, 0.2], ['쿠르스크 방면', 8, 5]],
-        turnLimit: 8,
+        turnLimit: 6,
         // A Red unit south-east of the city cuts the road to Kursk behind
         // it, and the garrison's position falls to a trench; the garrison
         // holds on regardless (role hold), as the Kornilov division did.
@@ -1252,15 +1252,18 @@
             { id: 'otr', tag: '열차', side: 'red', name: '장갑열차', sub: '트로츠키의 열차', kind: 'art', rail: true, at: [2, 4], hp: 6, atk: 4, def: 2, mv: 2, railMv: 6, range: 2, card: 'train', person: ['레프 트로츠키', 'trotsky'] },
             { id: 'wo1', tag: '코르닐', look: 'officer', side: 'white', name: '코르닐로프 연대', sub: '오룔 수비', kind: 'inf', at: [3, 6], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
             { id: 'wo2', tag: '코르닐', look: 'officer', side: 'white', name: '코르닐로프 연대', sub: '오룔 역', kind: 'inf', at: [4, 6], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
-            { id: 'wob', tag: '포대', side: 'white', name: '오룔 포대', kind: 'art', at: [4, 7], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'hold' },
+            // The station is ringed: the third regiment west of it (rules 9 balance).
+            { id: 'wo3', tag: '코르닐', look: 'officer', side: 'white', name: '코르닐로프 연대', sub: '오룔 서쪽', kind: 'inf', at: [4, 5], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
+            { id: 'wo4', tag: '코르닐', look: 'officer', side: 'white', name: '코르닐로프 연대', sub: '오룔 동쪽', kind: 'inf', at: [4, 7], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
+            { id: 'wob', tag: '포대', side: 'white', name: '오룔 포대', kind: 'art', at: [3, 7], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'hold' },
             { id: 'wok', tag: '충격', look: 'officer', side: 'white', name: '코르닐로프 충격연대', sub: '므첸스크로', kind: 'inf', at: [3, 9], hp: 9, atk: 5, def: 2, mv: 4, role: 'raid' },
             { id: 'wd1', tag: '드로즈', look: 'officer', side: 'white', name: '드로즈돕스키 연대', sub: '크로미 길', kind: 'inf', at: [5, 3], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
             { id: 'wd2', tag: '드로즈', look: 'officer', side: 'white', name: '드로즈돕스키 연대', sub: '크로미', kind: 'inf', at: [6, 1], hp: 8, atk: 4, def: 3, mv: 3, role: 'hold' },
         ],
-        summary: '오룔 역에 서면 승리 · 8턴 · 남동쪽으로 돌면 진지가 약해진다 · 므첸스크를 비우지 말 것',
+        summary: '오룔 역에 서면 승리 · 6턴 · 남동쪽으로 돌면 진지가 약해진다 · 므첸스크를 비우지 말 것',
         brief: [
             '10월 13일 쿠테포프의 제1군단이 오룔을 차지했다. 코르닐로프 충격연대가 툴라로 가는 길목 므첸스크로 향한다. 그 서쪽에는 라트비아 소총사단과 파블로프 소총여단, 프리마코프의 붉은 카자크로 꾸린 충격군이 모였다. 북쪽에서는 제13군이 므첸스크 앞을 막고, 새로 온 에스토니아 소총사단이 뒤를 받친다.',
-            '오룔 역에 붉은 군대 부대를 세우면 오룔을 되찾는다. 8턴이 주어진다. 6턴 안에 되찾으면 남부전선이 한 도시 더 나아가고, 되찾지 못하면 이 시기 남부전선의 전투력이 6 준다.',
+            '오룔 역에 붉은 군대 부대를 세우면 오룔을 되찾는다. 6턴이 주어진다. 4턴 안에 되찾으면 남부전선이 한 도시 더 나아가고, 되찾지 못하면 이 시기 남부전선의 전투력이 6 준다.',
             '오룔 시가는 진지다(방어 +3). 포병의 포격으로 깎이고, 붉은 부대가 오룔 남동쪽의 점선 지역에 서면 쿠르스크로 가는 퇴로가 끊겨 +1로 줄어든다. 정면으로 치기 전에 크로미 길로 돌아가 퇴로를 끊는 것이 충격군의 일이다.',
             '코르닐로프 충격연대가 므첸스크로 온다. 충격연대는 붉은 부대 곁을 멈추지 않고 지나친다. 므첸스크에 백군이 들어서면 지므로, 그 칸에 부대 하나를 남겨 두어야 한다.',
             '적과 맞닿은 칸에 들어가면 그 턴의 이동은 끝난다. 한 적을 여럿이 둘러싸고 치면 둘러싼 부대마다 피해가 1씩 늘어난다.',
