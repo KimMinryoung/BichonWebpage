@@ -1078,6 +1078,16 @@
 .cw-unveil { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 16px; min-height: 56px; padding: 8px 0 12px; }
 .cw-unveil p { margin: 0; font-size: .92rem; }
 .cw-unveil p span { color: var(--text-secondary); }
+/* The season's stat changes, filled like the review's next-season chips. */
+.cw-unveil-stats li { font-weight: 700; }
+.cw-unveil-stats li.is-plus { background: var(--cw-good); color: var(--cw-good-ink); }
+.cw-unveil-stats li.is-minus { background: var(--cw-loss); color: #fff; }
+.cw-unveil-stats li:is(.is-plus, .is-minus) b { color: inherit; }
+@media (prefers-reduced-motion: no-preference) {
+    .cw-unveil-stats li { animation: cw-mark-pop .4s ease-out both; }
+    .cw-unveil-stats li:nth-child(2) { animation-delay: .12s; }
+    .cw-unveil-stats li:nth-child(3) { animation-delay: .24s; }
+}
 @media (max-width: 720px) {
     .cw-unveil { position: sticky; bottom: 0; background: var(--bg-canvas); border-top: 1px solid var(--border); z-index: 2; }
 }

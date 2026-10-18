@@ -237,8 +237,13 @@
         const wait = stillMotion() ? 0 : (fronts - 1) * 300 + 1900;
         const ready = motion.at !== null && performance.now() - motion.at >= wait;
         const t = D.turns[s.records[s.records.length - 1].turn];
+        // Once the fronts have moved, the stats' changes as chips before the review.
+        const r = s.records[s.records.length - 1];
+        const moved = ready && r.ledger ? U.hud.map(h => [U.cardStats[h.stat], r.stats[h.stat] - r.ledger.from[h.stat]]) : [];
         bar.replaceChildren(
             el('p', {}, el('strong', {}, `${t.date} 전선의 움직임`), ready ? null : el('span', {}, ' · 전선이 움직이는 중…')),
+            moved.length ? el('ul', { class: 'cw-ledger-causes cw-unveil-stats', 'aria-label': '수치 변화' },
+                ...moved.map(([label, n]) => el('li', { class: n > 0 ? 'is-plus' : n < 0 ? 'is-minus' : '' }, label, el('b', {}, signed(n))))) : null,
             ...(ready ? [el('button', { type: 'button', class: 'cw-primary', 'data-key': 'unveil', onclick: openReview }, '결산 보기 →')] : []));
         if (!ready) unveilTimer = window.setTimeout(renderUnveil, motion.at === null ? 250 : wait - (performance.now() - motion.at) + 30);
         else if (document.activeElement === document.body || !document.activeElement) bar.querySelector('button').focus({ preventScroll: true });
