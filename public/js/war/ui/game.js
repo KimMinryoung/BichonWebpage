@@ -1815,7 +1815,7 @@
         $('cwReview').replaceChildren(...[
             el('h3', { id: 'cwReviewTitle' }, `${t.date}의 결산`),
             ledgerOf(r),
-            r.notes.length ? el('ul', { class: 'cw-notes' }, ...r.notes.map(n => el('li', {}, n))) : null,
+            ...(notes => notes.length ? [el('ul', { class: 'cw-notes' }, ...notes.map(n => el('li', {}, n)))] : [])(r.ledger ? r.notes.filter(n => !inLedger(r).has(n)) : r.notes),
             spoilsOf(r),
             foughtBattle(),
             ...incidentHistory(t, r),
@@ -1864,6 +1864,19 @@
         return el('div', { class: 'cw-ledger' + (fresh ? ' is-fresh' : '') }, el('p', { class: 'games-kicker' }, U.aria.stats), ...rows, nextSeason(r));
     }
     const ledgerSeen = new WeakSet();
+
+    // The season's notes the ledger already tells: the upkeeps, the verdict,
+    // the command, the risings and the commissars.
+    function inLedger(r) {
+        const fmt = window.WarEngine.fmt;
+        const stat = D.command.stat;
+        return new Set([
+            ...(D.economy.upkeep || []).map(u => u.note), D.verdict.behind.note,
+            fmt(D.command.note, { value: r.stats[stat], n: G.commandOf(r.stats[stat]) }),
+            ...D.unrest.levels.map(l => fmt(D.unrest.note, { n: l.n })),
+            ...(D.leaders.fewer || []).map(f => f.note),
+        ].filter(Boolean));
+    }
 
     // The lines on a stat's gauge below which something gives: the risings,
     // the commissars, an upkeep, the command's tiers. [value, what], highest first.
