@@ -1214,10 +1214,12 @@
         const extra = (commissar ? 2 : 0) + (train ? 3 : 0);
         const g = svg('g', { class: 'cw-pips', 'aria-hidden': 'true' });
         if (!n && !extra) return g;
-        const perRow = 8, size = 6, gap = 2;
+        // A box like the attacker's: the strength in figures on a red tab,
+        // the units in a row beside it, an ink rim and a poster's shadow.
+        const perRow = 8, size = 9, gap = 2, pad = 3, TAB = 26;
         const cols = Math.min(perRow, n + extra);
         const rows = Math.ceil((n + extra) / perRow);
-        const w = cols * (size + gap), h = rows * (size + gap);
+        const w = TAB + pad * 2 + cols * (size + gap) - gap, h = Math.max(17, pad * 2 + rows * (size + gap) - gap);
         let dx = at.x - marker.x, dy = at.y - marker.y;
         const len = Math.hypot(dx, dy) || 1;
         dx /= len; dy /= len;
@@ -1234,7 +1236,12 @@
             }
         }
         avoid.push(best.box);
-        const slot = i => [best.box.x0 + (i % perRow) * (size + gap), best.box.y0 + Math.floor(i / perRow) * (size + gap)];
+        const { x0, y0 } = best.box;
+        g.append(svg('rect', { x: x0 + 2.5, y: y0 + 2.5, width: w, height: h, class: 'cw-pips-shadow' }));
+        g.append(svg('rect', { x: x0, y: y0, width: w, height: h, class: 'cw-pips-box' }));
+        g.append(svg('rect', { x: x0, y: y0, width: TAB, height: h, class: 'cw-pips-tab' }));
+        g.append(svg('text', { x: x0 + TAB / 2, y: y0 + h / 2 + 4, 'text-anchor': 'middle', class: 'cw-pips-num' }, String(+f.strength.toFixed(1))));
+        const slot = i => [x0 + TAB + pad + (i % perRow) * (size + gap), y0 + pad + Math.floor(i / perRow) * (size + gap)];
         // Each unit in its own group, named for its glide (renderMap).
         const unit = (name, [x, y]) => g.appendChild(svg('g', { 'data-unit': name, 'data-x': x.toFixed(1), 'data-y': y.toFixed(1) }));
         for (let i = 0; i < n; i++) {
@@ -1244,8 +1251,8 @@
             if (part < 1) u.append(svg('rect', { x, y, width: size, height: size, class: 'cw-pip is-empty' }));
             u.append(svg('rect', { x, y, width: size * part, height: size, class: 'cw-pip' }));
         }
-        if (commissar) { const [x, y] = slot(n); unit('star', [x, y]).append(svg('path', { d: star(x + size / 2 + 1, y + size / 2, 7.5, 3.2), class: 'cw-pip-star' })); }
-        if (train) { const [x, y] = slot(n + (commissar ? 2 : 0)); unit('card', [x, y]).append(trainGlyph(x + 2, y - 4, 19)); }
+        if (commissar) { const [x, y] = slot(n); unit('star', [x, y]).append(svg('path', { d: star(x + size, y + size / 2, 8.5, 3.6), class: 'cw-pip-star' })); }
+        if (train) { const [x, y] = slot(n + (commissar ? 2 : 0)); unit('card', [x, y]).append(trainGlyph(x + 3, y - 4, 24)); }
         return g;
     }
 

@@ -26,7 +26,8 @@
    follows history's advance in full only on a fight not lost, a lost one
    in the share its strength makes of the pressure (no free advance), and its distance from history's line
    moves the next fight's pressure once it is STANDING_FROM cities or more
-   (STANDING per city, ±STANDING_MAX). */
+   (STANDING per city, ±STANDING_MAX); 10 the 1st Cavalry Army is one
+   army, sent with its card to one front a season, not +4 on three. */
 (function (root) {
     'use strict';
 
@@ -34,7 +35,7 @@
     const Battle = node ? require('./battle.js') : root.WarBattle;
     const Cond = node ? require('./cond.js') : root.WarCond;
 
-    const RULES = 9;
+    const RULES = 10;
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
     const signed = n => (n < 0 ? '−' : '+') + Math.abs(n);
@@ -106,6 +107,12 @@
         function threatsOf(s) {
             const t = turnData(s);
             const threats = Object.assign({}, t.threats);
+            // A threat's `rules` holds what a later generation changed in it
+            // ({ 10: { pressure: 4 } }); the latest one the save has wins.
+            for (const [id, th] of Object.entries(threats)) {
+                const gen = Object.keys(th.rules || {}).map(Number).filter(n => (s.rules || 1) >= n).sort((a, b) => b - a)[0];
+                if (gen) threats[id] = Object.assign({}, th, th.rules[gen]);
+            }
             for (const x of D.extraThreats || []) {
                 if (x.pressure[t.id] && !threats[x.front] && when(s, x.when)) {
                     threats[x.front] = { pressure: x.pressure[t.id], foes: x.foes, text: x.text, who: x.who };
@@ -1015,13 +1022,15 @@
                 } else if (s.phase === 'plan') {
                     act(s, 'choose', turnData(s).choice.history);
                     for (const inc of incidentsOf(s)) if (!responseOf(s, inc)) act(s, 'respond', inc.history);
-                    // The train to the heaviest front, the cards the party can
+                    // The train to the heaviest front, a card history sent
+                    // somewhere (historyAt) there, the cards the party can
                     // bear, the leaders with a division each to the heaviest
                     // fronts, the rest by need.
                     const threats = threatsOf(s);
                     const fronts = activeFronts(s).sort((a, b) => threats[b].pressure - threats[a].pressure);
                     for (const c of turnData(s).cards) {
                         if (c === 'train') act(s, 'play', c, fronts[0]);
+                        else if (D.cards[c].historyAt) { if (D.cards[c].historyAt[turnData(s).id]) act(s, 'play', c, D.cards[c].historyAt[turnData(s).id]); }
                         else if (c !== 'requisition' && s.stats.cohesion + cardStat(s, D.cards[c], c, 'cohesion') >= 40) act(s, 'play', c);
                     }
                     fronts.forEach(f => act(s, 'alloc', f, 0));

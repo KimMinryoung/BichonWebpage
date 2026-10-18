@@ -23,6 +23,10 @@ function plan(s, { requisition = false } = {}) {
     for (const inc of G.incidentsOf(s)) if (!G.responseOf(s, inc)) assert.ok(G.act(s, 'respond', inc.history));
     if (t.cards.includes('train')) assert.ok(G.act(s, 'play', 'train', heaviest));
     if (requisition) assert.ok(G.act(s, 'play', 'requisition'));
+    // The 1st Cavalry Army where history had it (rules 10): the
+    // South-Western Front in 1920's summer, then Crimea.
+    const cavalryAt = D.cards.konarmia.historyAt[t.id];
+    if (s.rules >= 10 && cavalryAt && G.canPlay(s, 'konarmia', cavalryAt)) assert.ok(G.act(s, 'play', 'konarmia', cavalryAt));
     // An amnesty only while the party can bear it (command stays at 3).
     for (const id of ['amnesty', 'partyWeek', 'cavalry', 'propaganda']) {
         if (!t.cards.includes(id)) continue;
@@ -895,6 +899,15 @@ assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), fal
         }
         return s;
     };
+    // Rules 9 and before: +4 on the south-west and Crimea at once, until
+    // the card sends it west.
+    const nine = toPoland(9);
+    const fc9 = G.forecast(nine).fronts;
+    assert.ok(fc9.southwest.parts.includes('제1기병군 +4') && fc9.crimea.parts.includes('제1기병군 +4'));
+    assert.equal(G.threatsOf(nine).crimea.pressure, 8, 'rules 9 keep Crimea at 8');
+    assert.ok(G.act(nine, 'play', 'konarmia', 'west'));
+    const fc9b = G.forecast(nine).fronts;
+    assert.ok(!fc9b.southwest.parts.includes('제1기병군 +4') && !fc9b.crimea.parts.includes('제1기병군 +4'), 'the cavalry leaves the south');
     const old = toPoland(5);
     assert.equal(G.cardOffered(old, 'konarmia'), false, 'no turning the cavalry north under rules 5');
     assert.ok(G.act(old, 'choose', 'warsaw'));
@@ -909,11 +922,13 @@ assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), fal
         assert.ok(G.act(s, 'choose', 'warsaw'));
         assert.equal(G.battleOf(s).id, 'warsaw');
         const fc0 = G.forecast(s).fronts;
-        assert.ok(fc0.southwest.parts.includes('제1기병군 +4') && fc0.crimea.parts.includes('제1기병군 +4'));
+        assert.ok(!fc0.southwest.parts.includes('제1기병군 +4') && !fc0.crimea.parts.includes('제1기병군 +4'), 'rules 10: the cavalry is nowhere until sent');
         assert.ok(G.act(s, 'play', 'train', 'west'));
+        const command = s.plan.command;
         assert.ok(G.act(s, 'play', 'konarmia', 'west'));
+        assert.equal(s.plan.command, command, 'sending the cavalry costs no command');
+        assert.equal(G.canPlay(s, 'konarmia', 'crimea'), false, 'one army, one front');
         const fc1 = G.forecast(s).fronts;
-        assert.ok(!fc1.southwest.parts.includes('제1기병군 +4') && !fc1.crimea.parts.includes('제1기병군 +4'), 'the cavalry leaves the south');
         assert.ok(fc1.west.parts.includes('부됸니의 제1기병군 +4'));
         // Six divisions west, fed, the rest kept back.
         for (const f of G.activeFronts(s)) assert.ok(G.act(s, 'alloc', f, 0));

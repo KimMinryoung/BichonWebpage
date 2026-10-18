@@ -314,7 +314,7 @@
             text: '위기의 가을, 당이 입당 문을 활짝 열고 공산주의자를 대거 전선으로 보낸다. 1919년 가을의 당 주간에 20만 명 넘게 입당했다.',
         },
         cavalry: {
-            title: '제1기병군 창설', advisor: ['세묜 부됸니', 'semyon-budyonny'], cost: 1, flag: 'cavalry', divisions: -2, effect: '이후 남부·크림·남서 전투력 +4',
+            title: '제1기병군 창설', advisor: ['세묜 부됸니', 'semyon-budyonny'], cost: 1, flag: 'cavalry', divisions: -2, effect: '다음 시기부터 「부됸니의 제1기병군」을 한 전선에 보냄',
             turns: [7],
             text: '부됸니의 기병군단을 군으로 키운다. 보병 두 개 사단 몫을 떼어 주면, 이후 남부·크림·남서 전선에서 늘 +4의 타격력을 낸다.',
             note: '1919년 11월 창설. 백군 기병의 기동에 처음으로 같은 무기로 맞섰다.',
@@ -327,11 +327,13 @@
         },
         // Rules 6: the 1st Cavalry Army turned from Lviv to the Vistula, as
         // the commander-in-chief ordered and the South-Western Front did not.
+        // Rules 10: it is one army, on one front a season (no command): the
+        // +4 it gave the south, Crimea and the south-west at once is gone.
         konarmia: {
-            title: '부됸니의 제1기병군', short: '제1기병군', advisor: ['세르게이 카메네프', 'sergey-kamenev'], cost: 1, target: 'front', fronts: ['west'], requires: 'cavalry', bonus: 4,
-            when: { rules: ['>=', 6] }, turns: [8],
-            effect: '바르샤바 전투에 합류 · 남서·크림 전투력 −4',
-            text: '리비우를 치던 제1기병군을 북쪽으로 돌려 서부전선에 붙인다. 바르샤바 남쪽의 빈 옆구리를 막을 수 있는 것은 이 기병뿐이다. 대신 남서전선과 크림에서는 기병의 타격력이 빠진다.',
+            title: '부됸니의 제1기병군', short: '제1기병군', advisor: ['세르게이 카메네프', 'sergey-kamenev'], cost: 0, target: 'front', fronts: ['south', 'southwest', 'crimea', 'west'], requires: 'cavalry', bonus: 4,
+            when: { rules: ['>=', 6] }, turns: [8, 9], historyAt: { poland: 'southwest', perekop: 'crimea' },
+            effect: '서부로 보내면 바르샤바 전투에 합류',
+            text: '제1기병군은 한 시기에 한 전선에서만 싸운다. 리비우를 치던 기병군을 북쪽으로 돌려 서부전선에 붙이면 바르샤바 남쪽의 빈 옆구리를 막을 수 있다. 그만큼 남서전선과 크림에서는 기병이 빠진다.',
             note: '8월 중순 총사령관 카메네프가 제1기병군을 서부전선으로 넘기라고 명령했지만, 남서전선 혁명군사위원 스탈린은 그 명령에 서명하지 않았다. 기병군은 8월 20일 무렵까지 리비우에 매달려 있었다. 제1기병군을 창설했을 때만 나온다.',
             link: ['붉은 군대 제1기병군', T('first-cavalry-army')],
         },
@@ -773,7 +775,9 @@
             threats: {
                 west: { pressure: 10, foes: ['poland'], text: '폴란드군이 벨라루스에서 물러난다.', who: ['유제프 피우수트스키', 'jozef-pilsudski'] },
                 southwest: { pressure: 8, foes: ['poland', 'unr'], text: '키예프를 차지한 폴란드군을 몰아내야 한다.' },
-                crimea: { pressure: 8, foes: ['wrangel'], text: '브란겔의 러시아군이 크림에서 나와 북타브리아로 진격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
+                // Rules 10: the 1st Cavalry Army was on the South-Western Front
+                // this summer, so Crimea's pressure no longer counts its +4.
+                crimea: { pressure: 8, rules: { 10: { pressure: 4 } }, foes: ['wrangel'], text: '브란겔의 러시아군이 크림에서 나와 북타브리아로 진격한다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
             },
             cards: ['train', 'konarmia', 'requisition', 'relief', 'cheka', 'amnesty'],
             choice: {
@@ -811,7 +815,7 @@
             threats: {
                 crimea: { pressure: 12, foes: ['wrangel'], text: '브란겔군이 북타브리아에서 크림의 방어선으로 물러난다.', who: ['표트르 브란겔', 'pyotr-wrangel'] },
             },
-            cards: ['train', 'mironov', 'requisition', 'relief', 'cheka'],
+            cards: ['train', 'konarmia', 'mironov', 'requisition', 'relief', 'cheka'],
             choice: {
                 title: '마흐노와 손을 잡을 것인가', who: ['네스토르 마흐노', 'nestor-makhno'],
                 text: '브란겔이 우크라이나 남부로 올라오자 마흐노의 반란군이 다시 협정을 제안했다. 1919년 여름 붉은 군대는 마흐노를 무법자로 선포했었다.',
@@ -1773,7 +1777,7 @@
     // them; afterBattle ones come after the season's battle.
     const modifiers = [
         // Rules 6: sent to the Vistula (the konarmia card), it is not here.
-        { fronts: ['south', 'crimea', 'southwest'], when: { flag: 'cavalry', not: { played: 'konarmia' } }, strength: 4, label: '제1기병군' },
+        { fronts: ['south', 'crimea', 'southwest'], when: { flag: 'cavalry', rules: ['<', 10], not: { played: 'konarmia' } }, strength: 4, label: '제1기병군' },
         { front: 'east', when: { turn: 'kolchak', choice: 'flank' }, strength: -3, label: '측면 반격 준비' },
         { front: 'south', when: { turn: 'kolchak', flag: 'tsaritsynGroup' }, pressure: 3, label: '남부전선의 지휘 혼란' },
         { front: 'east', when: { turn: 'kolchak', choice: 'front' }, strength: 3, label: '정면 증원' },

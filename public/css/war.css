@@ -1431,3 +1431,11 @@
 .games-shell .cw-map-heading .cw-history-toggle { background: transparent; color: var(--bg-canvas); border-color: color-mix(in srgb, var(--bg-canvas) 60%, transparent); }
 .games-shell .cw-map-heading .cw-history-toggle[aria-pressed="true"] { background: var(--cw-red); border-color: var(--cw-red); color: var(--cw-paper-ink); }
 .cw-map-legend span { padding: 2px 7px; border: 1px solid color-mix(in srgb, var(--text-primary) 45%, transparent); background: var(--bg-canvas); color: var(--text-primary); }
+/* The Red strength on the map, boxed like the attacker's marker. */
+.cw-pips-box { fill: #faf2da; stroke: #14110d; stroke-width: 1.5; }
+.cw-pips-shadow { fill: #14110d; }
+[data-theme="dark"] .cw-pips-shadow { fill: var(--cw-red); }
+.cw-pips-tab { fill: var(--cw-red); stroke: #14110d; stroke-width: 1.5; }
+.cw-pips-num { font-family: var(--font-display); font-size: 11.5px; font-weight: 800; fill: #faf2da; font-variant-numeric: tabular-nums; }
+.cw-pips .cw-pip { fill: var(--cw-red); stroke: #14110d; stroke-width: .8; }
+.cw-pips .cw-pip.is-empty { fill: none; stroke: var(--cw-red); stroke-width: 1; }
