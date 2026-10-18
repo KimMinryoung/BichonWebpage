@@ -348,6 +348,26 @@ assert.deepEqual(calmed(G.forecast(calm).fronts.south), ['간섭군 병사에게
 G.act(calm, 'choose', 'flank'); plan(calm); send(calm); G.act(calm, 'next');
 assert.deepEqual(calmed(G.forecast(calm).fronts.south), ['간섭군 병사에게 선전 −2'], 'and the season after');
 
+// Rules 9. A fight lost in a season of history's advance takes only the
+// share of it the strength makes of the pressure (Denikin's collapse in the
+// winter of 1920 is +4 in the south), never more than before; and a front
+// two cities or more off history's line meets that much more (or less)
+// pressure, one city off none.
+{
+    const winter = rules => { const s = G.start(rules); until(s, 'counter'); return s; };
+    const s9 = winter(9), s8 = winter(8);
+    for (const s of [s9, s8]) { clear(s); G.act(s, 'alloc', 'south', 4); }
+    const f9 = G.forecast(s9).fronts.south, f8 = G.forecast(s8).fronts.south;
+    assert.ok(f9.margin < -1, `a lost fight (${f9.margin})`);
+    assert.ok(f9.change < f8.change, `no free advance on it (${f9.change} < ${f8.change})`);
+    assert.ok(f9.change > 0, 'but a share of it');
+    const off = (rules, by) => { const s = winter(rules); s.lines.south -= by; clear(s); return G.forecast(s).fronts.south; };
+    assert.deepEqual(off(9, 1).pressureParts.filter(p => p.startsWith('역사보다')), [], 'one city behind is a slip');
+    assert.ok(off(9, 2).pressureParts.includes('역사보다 밀린 전선 +2'), 'two behind, a different war');
+    assert.equal(off(9, 3).pressure - off(9, 0).pressure, 3);
+    assert.equal(off(8, 3).pressure, off(8, 0).pressure, 'rules 8 does not count it');
+}
+
 // A thin southern front left empty loses Tula, and the war.
 const lost = G.start();
 until(lost, 'kolchak');

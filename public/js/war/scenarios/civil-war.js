@@ -1675,6 +1675,8 @@
         moved: '철도로 옮겨 온 사단 {n}',
         momentumPart: '적의 기세 +{n}',
         pursuitPart: '추격 −{n}',
+        behindPart: '역사보다 밀린 전선 +{n}',
+        aheadPart: '역사보다 앞선 전선 −{n}',
         battleLost: '{title} 실패',
         battleQuick: '{title} ({quick}턴 안)',
         hunger: '곡물이 모자라 병사들이 굶었다. 다음 시기 탈영으로 사단이 준다.',
@@ -1747,7 +1749,10 @@
     // short still holds, MOMENTUM pressure per city lost beyond the last,
     // PURSUIT pressure off per STEP beyond the city gained (CHASE at most),
     // TRANSFER the share a division moved by rail brings (rules 2).
-    const outcome = { step: 3, slack: 1, momentum: 2, pursuit: 2, chase: 2, transfer: 0.5 };
+    // STANDING (rules 9): pressure per city the front stands behind history
+    // (or off per city ahead), once STANDING_FROM or more, STANDING_MAX at
+    // most either way: one city off is a slip, two a different war.
+    const outcome = { step: 3, slack: 1, momentum: 2, pursuit: 2, chase: 2, transfer: 0.5, standing: 1, standingFrom: 2, standingMax: 3 };
     // Spoils (rules 3): grain per front the enemy broke on; prisoners, at
     // most MAX divisions a season.
     const spoils = { food: 2, max: 2 };

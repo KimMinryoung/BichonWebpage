@@ -1587,7 +1587,7 @@
     // falls in is the forecast (or, in the review, the result).
     function meter(id, f, line, turn, choice, now, note) {
         const hist = D.fronts[id].history[turn];
-        const bands = G.outcomeBands(id, line, turn, f.pressure, choice, G.capBattle(s, id, turn)).map(b => {
+        const bands = G.outcomeBands(id, line, turn, f.pressure, choice, G.capBattle(s, id, turn), s.rules).map(b => {
             const after = line + b.change;
             return Object.assign(b, { after, tone: after < hist ? 'is-behind' : after > hist ? 'is-ahead' : 'is-even' });
         });

@@ -39,6 +39,7 @@ function checkScenario(D) {
     }
     if (problems.length) return problems;
     for (const k of ['leader', 'moved', 'momentumPart', 'pursuitPart', 'battleLost', 'battleQuick', 'hunger', 'momentumNote', 'pursuitNote']) need(typeof D.texts[k] === 'string', `texts.${k}`);
+    if (D.outcome.standing) for (const k of ['behindPart', 'aheadPart']) need(typeof D.texts[k] === 'string', `texts.${k} (outcome.standing)`);
     need(D.economy.food && D.economy.food.per && stats.includes(D.economy.food.per[0]), 'economy.food.per names a stat');
     for (const p of D.economy.policies || []) for (const k of Object.keys(p.each || {})) need(stats.includes(k), `policy ${p.flag}: stat ${k}`);
     for (const k of D.economy.settleOrder || []) need(k === 'cities' || stats.includes(k), `settleOrder: ${k}`);

@@ -22,7 +22,11 @@
    and taking them pays the cap's reward; 7 the data's content marked
    rules 7 (a season's second incident, a battle in the first season); 8 a
    threat's own trait for one of its attackers (`traits`: the same army
-   under another commander), and its `as` in the trait's name. */
+   under another commander), and its `as` in the trait's name; 9 a front
+   follows history's advance in full only on a fight not lost, a lost one
+   in the share its strength makes of the pressure (no free advance), and its distance from history's line
+   moves the next fight's pressure once it is STANDING_FROM cities or more
+   (STANDING per city, ±STANDING_MAX). */
 (function (root) {
     'use strict';
 
@@ -30,7 +34,7 @@
     const Battle = node ? require('./battle.js') : root.WarBattle;
     const Cond = node ? require('./cond.js') : root.WarCond;
 
-    const RULES = 8;
+    const RULES = 9;
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
     const signed = n => (n < 0 ? '−' : '+') + Math.abs(n);
@@ -413,6 +417,10 @@
                 if (s.momentum[id]) { pressure += s.momentum[id]; pressureParts.push(fmt(X.momentumPart, { n: s.momentum[id] })); }
                 const pursuitIn = Math.min(pressure, s.pursuit[id] || 0);
                 if (pursuitIn) { pressure -= pursuitIn; pressureParts.push(fmt(X.pursuitPart, { n: pursuitIn })); }
+                // Rules 9: an enemy who holds more than he did in history is
+                // that much stronger here, one held back that much weaker.
+                const standing = standingOf(s, id);
+                if (standing) { pressure = Math.max(0, pressure + standing); pressureParts.push(fmt(standing > 0 ? X.behindPart : X.aheadPart, { n: Math.abs(standing) })); }
                 const modify = late => {
                     for (const m of D.modifiers || []) {
                         if (Boolean(m.afterBattle) !== late || !(m.fronts || [m.front]).includes(id) || !when(s, m.when, { front: id })) continue;
@@ -447,7 +455,7 @@
                     pressureParts.push(`${D.cards[cid].title} −${by}`);
                 }
                 const margin = strength - pressure;
-                const result = outcomeOf(s, id, margin);
+                const result = outcomeOf(s, id, margin, pressure);
                 out[id] = {
                     divisions: d, stay: tr0.stay, fresh: tr0.fresh, moved: tr0.moved, perDivision: Math.round(perDivision * 1000) / 1000, bonuses, momentumIn: s.momentum[id] || 0, pursuitIn,
                     strength: round1(strength), pressure, margin: round1(margin), parts, pressureParts, traits,
@@ -488,8 +496,18 @@
         // next fight as MOMENTUM pressure each. Every STEP beyond the one that
         // gains the city is pursuit (CHASE at most): the beaten enemy chased,
         // PURSUIT pressure off the front's next fight each.
-        function outcomeOf(s, id, margin) {
-            return outcomeAt(id, s.lines[id], s.turn, margin, s.plan.choice, capBattle(s, id));
+        function outcomeOf(s, id, margin, pressure) {
+            return outcomeAt(id, s.lines[id], s.turn, margin, s.plan.choice, capBattle(s, id), s.rules, pressure);
+        }
+
+        // Rules 9: the pressure a front's distance from history's line adds
+        // (behind) or takes off (ahead) this season.
+        function standingOf(s, id) {
+            if (s.rules < 9 || !O.standing) return 0;
+            // Only a front well off history's line (STANDING_FROM cities or more).
+            const off = s.lines[id] - historyBefore(id, s.turn);
+            if (Math.abs(off) < (O.standingFrom || 1)) return 0;
+            return clamp(-off * O.standing, -O.standingMax, O.standingMax);
         }
 
         // How a front's last cities (cap) open in season turn: undefined while
@@ -503,11 +521,19 @@
         }
 
         // won: capBattle's answer for the front.
-        function outcomeAt(id, line, turn, margin, choice, won) {
+        // rules: the save's generation (the older ways without it). From 9 a
+        // fight lost (a margin below −SLACK, short of the band that holds
+        // history) in a season of history's advance takes at most the share
+        // of it the strength makes of the pressure, and loses as before when
+        // that is worse: no free advance, no cliff, and an empty front still
+        // falls back. pressure: the fight's.
+        function outcomeAt(id, line, turn, margin, choice, won, rules, pressure) {
             const front = D.fronts[id];
             const max = front.cities.length;
             const historical = front.history[turn] - historyBefore(id, turn);
-            const bonus = margin >= 0 ? Math.min(1, Math.floor(margin / O.step)) : -Math.ceil((-margin - O.slack) / O.step);
+            const short = rules >= 9 && historical > 0 && margin < -O.slack && pressure > 0;
+            const usual = margin >= 0 ? Math.min(1, Math.floor(margin / O.step)) : -Math.ceil((-margin - O.slack) / O.step);
+            const bonus = short ? Math.min(usual, Math.floor(historical * clamp((pressure + margin) / pressure, 0, 1) + 1e-9) - historical) : usual;
             const raw = line + historical + bonus;
             const overflow = bonus < 0 ? Math.min(-bonus, Math.max(0, -raw)) : 0;
             const pursuit = clamp(Math.floor(margin / O.step) - 1, 0, O.chase);
@@ -530,15 +556,19 @@
         // unlocking margin while a margin opens it), so the card's bar cannot
         // disagree with the settlement. won as for outcomeAt.
         const capMargins = [...new Set(Object.values(D.fronts).filter(f => f.cap).map(f => f.cap.unlock.margin))];
-        function outcomeBands(id, line, turn, pressure, choice, won) {
+        function outcomeBands(id, line, turn, pressure, choice, won, rules) {
             const cuts = (won === undefined ? capMargins : []).concat(-O.slack);
             for (let k = 1; k <= O.chase + 1; k++) cuts.push(O.step * k);
             for (let m = -O.slack - O.step; m > -pressure; m -= O.step) cuts.push(m);
+            // Rules 9: a lost fight's share of history's advance steps where
+            // the strength makes each whole city of it.
+            const advance = D.fronts[id].history[turn] - historyBefore(id, turn);
+            if (rules >= 9 && advance > 1) for (let k = 1; k < advance; k++) cuts.push(pressure * k / advance - pressure);
             const from = [...new Set(cuts.map(m => pressure + m).filter(v => v > 0))].sort((a, b) => a - b);
             from.unshift(0);
             const bands = [];
             for (let i = 0; i < from.length; i++) {
-                const r = outcomeAt(id, line, turn, from[i] - pressure, choice, won);
+                const r = outcomeAt(id, line, turn, from[i] - pressure, choice, won, rules, pressure);
                 const last = bands[bands.length - 1];
                 if (last && last.change === r.change && last.overflow === r.overflow && last.pursuit === r.pursuit) continue;
                 if (last) last.to = from[i];
