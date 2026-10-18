@@ -296,7 +296,7 @@
         const stat = (label, value, note, warn, crumbed) => [el('div', { class: [warn ? 'is-warn' : '', crumbed ? 'is-crumb' : ''].join(' ').trim() }, el('dt', {}, label), el('dd', {}, el('strong', {}, value), note ? el('small', {}, note) : null))];
         const items = [];
         if (s.phase === 'plan') {
-            items.push(...stat(U.unit, `${G.free(s)} / ${plan.divisions}`, `보낼 ${U.unit} / 전체`, G.free(s) > 0, true));
+            items.push(...stat(U.unit, `${G.free(s)} / ${plan.divisions}`, `보낼 ${U.unit} / 전체`, false, true));
             items.push(...stat('지휘력', String(plan.command), `${U.cardStats[D.command.stat]} ${s.stats[D.command.stat]} 기준 · 남기면 사라짐`, plan.command < 3, true));
             items.push(...stat(U.leader, `${plan.commissars - G.commissarsUsed(s)} / ${plan.commissars}`, '남음 / 전체', false, true));
             items.push(...stat(U.food, String(s.food), `이번 시기 +${supply.income}, 필요 ${supply.need}`, supply.ratio < 1, true));
@@ -312,7 +312,7 @@
         const planning = s.phase === 'plan';
         crumb.classList.toggle('has-status', planning);
         crumbStatus.replaceChildren(...(planning ? [
-            [`남은 ${U.unit}`, `${G.free(s)}/${plan.divisions}`, G.free(s) > 0],
+            [`남은 ${U.unit}`, `${G.free(s)}/${plan.divisions}`, false],
             ['지휘력', String(plan.command), false],
             [U.leader, String(plan.commissars - G.commissarsUsed(s)), false],
             [`${U.food} 여유`, signed(supply.have - supply.need), supply.ratio < 1],
@@ -1774,9 +1774,10 @@
             if (box) box.scrollIntoView({ block: 'start', behavior: stillMotion() ? 'auto' : 'smooth' });
         };
         // In the page's order: the fronts, the incident, the fork. The
-        // first left undone is marked as the next.
+        // first left undone is marked as the next. The fronts are done once
+        // any division is sent: those kept back are a reserve that eats half.
         const steps = [
-            { done: kept === 0, label: `${U.unit} ${G.allocated(s)}/${s.plan.divisions}`, target: 'cwFronts', guide: `전선 카드의 + 버튼으로 ${josa(U.unit, '을', '를')} 보낸다 (${G.allocated(s)}/${s.plan.divisions})` },
+            { done: G.allocated(s) > 0, label: `${U.unit} ${G.allocated(s)}/${s.plan.divisions}`, target: 'cwFronts', guide: `필요한 전선에만 ${josa(U.unit, '을', '를')} 보낸다 (남기면 예비)` },
             G.incidentsOf(s).length ? { done: G.incidentsOf(s).every(inc => G.responseOf(s, inc)), label: '돌발 사건', target: 'cwIncident', guide: '돌발 사건에 어떻게 대응할지 고른다' } : null,
             { done: Boolean(s.plan.choice), label: '갈림길', target: 'cwChoice', guide: '이 시기의 갈림길에서 길을 고른다' },
         ].filter(Boolean);
