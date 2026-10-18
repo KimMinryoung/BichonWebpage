@@ -395,7 +395,15 @@
 
     function speakerName(v) {
         if (v.op) return D.map.operations[v.op].title;
-        return v.who ? v.who[0] : v.by ? D.factions[v.by].short : '';
+        return v.who ? v.who[0] : v.by ? foeAs(v.by, v.at).short : '';
+    }
+
+    // A faction as it is named on one front this season: a threat's `as`
+    // names the army and its commander there (Denikin's Volunteer Army and
+    // Caucasian Army fought on two fronts at once).
+    function foeAs(fid, front) {
+        const threat = front && (G.threatsOf(s) || {})[front];
+        return Object.assign({ name: D.factions[fid].name, short: D.factions[fid].short }, threat && threat.as && threat.as[fid]);
     }
 
     function sourceOf(v) {
@@ -565,7 +573,7 @@
         // On a phone wider, so the line takes fewer rows of the short frame.
         const width = NARROW.matches ? Math.min(360, mapEl.clientWidth - 16) : Math.min(310, mapEl.clientWidth - 24);
         return bubble({
-            v, fresh, width, name: speakerName(v), sub: v.op ? v.who[0] : v.who && f ? f.short : null,
+            v, fresh, width, name: speakerName(v), sub: v.op ? v.who[0] : v.who && f ? foeAs(v.by, v.at).short : null,
             face: v.who ? A.portrait(v.who[1]) : A.shield(v.by, f), side: f ? 'k-' + f.kind : v.op ? 'is-red is-op' : 'is-red',
             ax: spot.x * scale, ay: spot.y * scale, view: mapEl,
             below: Boolean(spot.box) || (below ?? spot.y * scale < (NARROW.matches ? mapEl.scrollTop : 0) + 150),
@@ -1047,7 +1055,7 @@
         dx /= len; dy /= len;
         const foes = (G.threatsOf(s)[id] || {}).foes || [];
         const kind = foes.length ? D.factions[foes[0]].kind : 'white';
-        const name = foes.map(f => D.factions[f].short).join('·');
+        const name = foes.map(f => foeAs(f, id).short).join('·');
         // Against history: while planning the forecast, after the season the
         // result. ▼ behind, ▲ ahead; red stays the Red Army's alone.
         const d = forecast ? s.lines[id] + forecast.change - D.fronts[id].history[s.turn] : result ? result.after - result.history : 0;
@@ -1081,7 +1089,7 @@
         avoid.push(best.box);
         const fate = result && fateOf(result) ? ' is-' + fateOf(result) : '';
         const lead = foes.length && D.factions[foes[0]].trait;
-        const g = svg('g', { class: `cw-foe-marker k-${kind}${fate} m-${(lead && lead.motion) || 'march'}`, tabindex: '0', role: 'button', 'aria-label': `${D.fronts[id].name}: ${foes.map(f => D.factions[f].name).join(', ')}. 카드로 이동` });
+        const g = svg('g', { class: `cw-foe-marker k-${kind}${fate} m-${(lead && lead.motion) || 'march'}`, tabindex: '0', role: 'button', 'aria-label': `${D.fronts[id].name}: ${foes.map(f => foeAs(f, id).name).join(', ')}. 카드로 이동` });
         // The arrow at the city under attack: the last one held, or Moscow.
         const target = line > 0 ? pts[Math.min(line, n) - 1] : points.hub;
         const tx = target.x - x, ty = target.y - y;
@@ -1389,10 +1397,10 @@
     function foeFold(id, f, threat) {
         const open = foeOpen;
         const by = (f.traits || []).filter(tr => tr.rule && tr.counted && tr.on).reduce((a, tr) => a + tr.by, 0);
-        const names = (threat.foes || []).map(fid => D.factions[fid].short || D.factions[fid].name).join('·');
+        const names = (threat.foes || []).map(fid => foeAs(fid, id).short || foeAs(fid, id).name).join('·');
         const fold = el('details', { class: 'cw-foe-fold', open },
             el('summary', {}, el('strong', {}, '적 정보'), names ? ` · ${names}` : null, by ? el('b', { class: by > 0 ? 'is-bites' : 'is-works' }, `특성 압력 ${signed(by)}`) : null),
-            foeList(threat.foes, f.traits),
+            foeList(threat.foes, f.traits, id),
             el('p', { class: 'cw-threat' }, threat.text, ' ', person(threat.who)),
             f.pressureParts.length ? el('p', { class: 'cw-parts' }, `압력: ${f.pressure} = (기본 ${threat.pressure}) + ${f.pressureParts.map(x => `(${x})`).join(' + ')}`) : null,
             strengthSum(f));
@@ -1530,13 +1538,13 @@
     // this front under the plan: the rule, and what it does to the pressure:
     // added (red), blunted (struck out) or, for one that helps the Reds,
     // taken off (green).
-    function foeList(ids, traits) {
+    function foeList(ids, traits, front) {
         return el('div', { class: 'cw-foes' }, ...(ids || []).map(fid => {
             const f = D.factions[fid];
             const tr = (traits || []).find(t => t.foe === fid && t.rule);
             return el('div', { class: 'cw-foe-entry' },
                 el('details', { class: 'cw-foe is-' + f.kind },
-                    el('summary', {}, f.flag ? flag(f.flag) : el('i', { class: 'cw-foe-dot' }), f.name, f.trait ? el('small', {}, f.trait.name) : null),
+                    el('summary', {}, f.flag ? flag(f.flag) : el('i', { class: 'cw-foe-dot' }), foeAs(fid, front).name, f.trait ? el('small', {}, f.trait.name) : null),
                     el('p', {}, f.note, f.link ? ' ' : null, f.link ? el('a', Object.assign({ href: f.link }, NEW_TAB), '더 읽기 ↗') : null),
                     f.trait ? el('p', { class: 'cw-foe-trait' }, el('strong', {}, f.trait.name), ' ', f.trait.text) : null),
                 tr ? traitRule(tr) : null);
@@ -1852,7 +1860,7 @@
             if (x.battle) return el('li', {}, el('strong', {}, D.battles[x.battle].title), ` · ${D.battles[x.battle].enemyName || U.enemy} ${x.captured}개 부대가 총을 내려놓았다`);
             const f = x.foe && D.factions[x.foe];
             return el('li', {}, f ? picture(A.shield(x.foe, f)) : null, el('strong', {}, D.fronts[x.front].name),
-                ` · 무너진 ${f ? f.short + '의 ' : '적의 '}${x.what || `탄약과 ${U.food}`} · ${U.food} +${x.food}`);
+                ` · 무너진 ${f ? foeAs(x.foe, x.front).short + '의 ' : '적의 '}${x.what || `탄약과 ${U.food}`} · ${U.food} +${x.food}`);
         });
         return el('div', { class: 'cw-history cw-spoils' },
             el('p', { class: 'games-kicker' }, '노획'),
