@@ -140,6 +140,17 @@
         if (window.matchMedia('(max-width: 720px)').matches) $('cwMapKey').open = false;
         render();
         $('cwPlay').scrollIntoView({ block: 'start' });
+        holdMotion();
+    }
+
+    // The season's motion started with the map in view before the page
+    // scrolled to the season's top; scrolled out of view, it waits for
+    // the map (the attackers' entrance, then the voices).
+    function holdMotion() {
+        if (motion.at === null || performance.now() - motion.at > 500 || mapSeen()) return;
+        motion.at = null;
+        renderMap();
+        awaitMap();
     }
 
     function initSetup() {
@@ -524,23 +535,32 @@
         if (fresh) {
             voice.until = now + holdOf(v);
             announce(`${speakerName(v)}: ${v.text}`);
-            if (!spot.box) showSpot(spot.x * scale, spot.y * scale);
         }
-        const bubble = voiceBubble(v, spot, scale, fresh);
+        let bubble = voiceBubble(v, spot, scale, fresh);
         layer.replaceChildren(bubble);
-        // Too tall to fit above the speaker in view: it hangs below.
-        if (!spot.box && !bubble.classList.contains('is-below') && spot.y * scale - bubble.offsetHeight - 16 < (NARROW.matches ? mapEl.scrollTop : 0)) bubble.classList.add('is-below');
+        if (!spot.box && NARROW.matches) {
+            // On a phone, measured: a new line slides the map so the speaker
+            // and the whole bubble show; it hangs above the speaker where it
+            // fits in view, else below (drawn again at the new scroll).
+            const need = bubble.offsetHeight + 18;
+            const moved = fresh && showSpot(spot.x * scale, spot.y * scale, need);
+            const below = spot.y * scale - need < mapEl.scrollTop;
+            if (moved || below !== bubble.classList.contains('is-below')) {
+                bubble = voiceBubble(v, spot, scale, fresh, below);
+                layer.replaceChildren(bubble);
+            }
+        } else if (!spot.box && !bubble.classList.contains('is-below') && spot.y * scale - bubble.offsetHeight - 16 < 0) bubble.classList.add('is-below');
         voice.timer = window.setTimeout(renderVoice, voice.until - now + 20);
     }
 
-    function voiceBubble(v, spot, scale, fresh) {
+    function voiceBubble(v, spot, scale, fresh, below) {
         const f = v.by && D.factions[v.by];
         const width = Math.min(310, mapEl.clientWidth - 24);
         return bubble({
             v, fresh, width, name: speakerName(v), sub: v.op ? v.who[0] : v.who && f ? f.short : null,
             face: v.who ? A.portrait(v.who[1]) : A.shield(v.by, f), side: f ? 'k-' + f.kind : v.op ? 'is-red is-op' : 'is-red',
             ax: spot.x * scale, ay: spot.y * scale, view: mapEl,
-            below: Boolean(spot.box) || spot.y * scale < (NARROW.matches ? mapEl.scrollTop : 0) + 150,
+            below: Boolean(spot.box) || (below ?? spot.y * scale < (NARROW.matches ? mapEl.scrollTop : 0) + 150),
             count: `${voice.i + 1}/${voice.list.length}`,
             next: () => { voice.i++; voice.until = null; renderVoice(); },
             skip: () => { voice.i = voice.list.length; renderVoice(); },
@@ -689,12 +709,19 @@
         mapEl.scrollTo({ left: (b.x0 + b.x1) / 2 * k - fw / 2, top: b.y0 * k - fh * top, behavior: 'auto' });
     }
 
-    function showSpot(x, y) {
-        if (!NARROW.matches) return;
+    // On a phone the map's short frame slides to a speaker at (x, y) so
+    // its bubble (need: its height with the tail) fits above it, or, too
+    // tall for that, below it. True when it moved.
+    function showSpot(x, y, need) {
+        if (!NARROW.matches) return false;
         const { scrollLeft: l, scrollTop: t, clientWidth: w, clientHeight: h } = mapEl;
-        // The bubble goes above the speaker: leave it the upper part of the view.
-        if (x >= l + 40 && x <= l + w - 40 && y >= t + h * 0.55 && y <= t + h - 20) return;
-        mapEl.scrollTo({ left: x - w / 2, top: y - h * 0.72, behavior: 'auto' });
+        const across = x >= l + 40 && x <= l + w - 40 ? l : x - w / 2;
+        const above = need + 20 <= h;
+        const fits = above ? y - need >= t && y <= t + h - 20 : y >= t + 10 && y + need <= t + h;
+        const down = fits ? t : above ? y - need - 6 : y - 14;
+        if (across === l && down === t) return false;
+        mapEl.scrollTo({ left: across, top: down, behavior: 'auto' });
+        return mapEl.scrollLeft !== l || mapEl.scrollTop !== t;
     }
 
     // The game's layer sits in its own svg over the basemap's, on its own
@@ -1811,7 +1838,7 @@
         const same = r.choice === c.history;
         const next = s.phase === 'battle'
             ? el('button', { type: 'button', class: 'cw-primary', onclick: () => { reviewSeen = true; historyMap = false; render(); $('cwBattle').scrollIntoView({ block: 'start' }); } }, s.battle.def.open)
-            : el('button', { type: 'button', class: 'cw-primary', onclick: () => { act('next'); historyMap = false; render(); $('cwPlay').scrollIntoView({ block: 'start' }); announce(`${G.turnData(s).date} ${G.turnData(s).title}`); } }, '다음 시기로 →');
+            : el('button', { type: 'button', class: 'cw-primary', onclick: () => { act('next'); historyMap = false; render(); $('cwPlay').scrollIntoView({ block: 'start' }); holdMotion(); announce(`${G.turnData(s).date} ${G.turnData(s).title}`); } }, '다음 시기로 →');
         $('cwReview').replaceChildren(...[
             el('h3', { id: 'cwReviewTitle' }, `${t.date}의 결산`),
             ledgerOf(r),
