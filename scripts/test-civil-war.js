@@ -86,6 +86,29 @@ const OREL_QUICK = [
     ['move', 'opv', 5, 4], ['attack', 'opv', 'wd1'], ['move', 'oes', 4, 4], ['attack', 'oes', 'wo3'], ['move', 'ol1', 5, 5], ['attack', 'ol1', 'wo3'], ['move', 'o13g', 2, 6], ['attack', 'o13g', 'wo2'], ['attack', 'otr', 'wo2'], ['attack', 'opr', 'wo2'], ['move', 'o13a', 1, 9], ['attack', 'o13a', 'wok'], ['attack', 'o13b', 'wok'], ['end'],
     ['attack', 'opr', 'wo2'], ['move', 'ol1', 4, 6],
 ];
+// Tsaritsyn as history's road holds it under rules 9's stronger Don army
+// (scripts/war-balance.js, the ordinary player, seed 2, at that road's
+// muster): the station, the city and the belt stay manned, Zhloba goes by
+// Tundutovo, and the eighth turn ends with the station held.
+const TSARITSYN_HISTORY = [
+    ['move', 'tar', 6, 9], ['attack', 'tar', 'wtr'], ['move', 'tkp', 5, 8], ['attack', 'tkp', 'wbk'], ['feat', 'tzh'], ['move', 'tzh', 9, 6], ['attack', 'tzh', 'was'], ['move', 'tkh', 3, 9], ['wait', 'tkh'], ['move', 'tku', 5, 7], ['feat', 'tku', 'wbk'], ['move', 'tfl', 6, 10], ['attack', 'tfl', 'wbk'], ['move', 'tvr', 4, 9], ['feat', 'tvr'], ['end'],
+    ['attack', 'tku', 'wbk'], ['move', 'tlw', 6, 9], ['attack', 'tlw', 'wbk'], ['attack', 'tkp', 'wbk'], ['attack', 'tzh', 'was'], ['wait', 'tkh'], ['wait', 'tvr'], ['attack', 'tfl', 'wtr'], ['end'],
+    ['move', 'tkp', 4, 7], ['attack', 'tkp', 'wmm'], ['wait', 'tvr'], ['move', 'tkh', 5, 8], ['wait', 'tkh'], ['attack', 'tku', 'wmm'], ['attack', 'tfl', 'wtr'], ['attack', 'tlw', 'wtr'], ['attack', 'tzh', 'was'], ['end'],
+    ['move', 'tku', 4, 8], ['attack', 'tku', 'wd1'], ['move', 'tvr', 3, 9], ['attack', 'tvr', 'wmm'], ['move', 'tkh', 4, 9], ['wait', 'tkh'], ['attack', 'tkp', 'wd2'], ['move', 'tfl', 3, 10], ['attack', 'tfl', 'wmm'], ['attack', 'tlw', 'wtr'], ['attack', 'tzh', 'was'], ['end'],
+    ['move', 'tkh', 4, 8], ['attack', 'tkh', 'wd2'], ['move', 'tfl', 4, 10], ['feat', 'tfl'], ['attack', 'tvr', 'wmm'], ['attack', 'tlw', 'wtr'], ['attack', 'tzh', 'was'], ['end'],
+    ['move', 'tlw', 4, 8], ['attack', 'tlw', 'wmm'], ['attack', 'tzh', 'was'], ['wait', 'tlr'], ['attack', 'tvr', 'wmm'], ['move', 'tfl', 7, 10], ['attack', 'tfl', 'wsp'], ['end'],
+    ['move', 'tlr', 4, 8], ['wait', 'tlr'], ['move', 'tfl', 8, 10], ['attack', 'tfl', 'wtr'], ['move', 'tzh', 8, 7], ['attack', 'tzh', 'was'], ['attack', 'tvr', 'wmm'], ['end'],
+    ['attack', 'tzh', 'was'], ['move', 'tvr', 4, 9], ['wait', 'tvr'], ['end'],
+];
+// Tsaritsyn beaten by a STEP (scripts/war-balance.js, the strong player at
+// margin 3, Dumenko's cavalry with it): Sarepta retaken on the 5th turn.
+const TSARITSYN_QUICK = [
+    ['move', 'tvr', 3, 6], ['feat', 'tvr'], ['move', 'tku', 4, 5], ['feat', 'tku', 'wd2'], ['move', 'tfl', 2, 10], ['feat', 'tfl'], ['feat', 'tzh'], ['move', 'tzh', 5, 4], ['attack', 'tzh', 'wda'], ['move', 'tar', 4, 6], ['attack', 'tar', 'wd2'], ['move', 'tdm', 2, 5], ['attack', 'tdm', 'wd2'], ['move', 'tkp', 5, 6], ['attack', 'tkp', 'wd1'], ['wait', 'tkh'], ['end'],
+    ['move', 'tdm', 4, 5], ['attack', 'tdm', 'wda'], ['attack', 'tzh', 'wda'], ['attack', 'tar', 'wd1'], ['move', 'tvr', 2, 4], ['attack', 'tvr', 'wmm'], ['move', 'tkp', 6, 5], ['attack', 'tkp', 'wd1'], ['move', 'wd2', 5, 6], ['attack', 'wd2', 'wd1'], ['move', 'tfl', 6, 10], ['attack', 'tfl', 'wbk'], ['move', 'tlw', 3, 5], ['attack', 'tlw', 'wmm'], ['wait', 'tkh'], ['move', 'tlr', 5, 9], ['wait', 'tlr'], ['end'],
+    ['move', 'wd2', 4, 5], ['attack', 'wd2', 'wd1'], ['attack', 'tzh', 'wmm'], ['move', 'tvr', 3, 4], ['attack', 'tvr', 'wmm'], ['move', 'tfl', 7, 10], ['attack', 'tfl', 'wtr'], ['move', 'tar', 6, 9], ['attack', 'tar', 'wtr'], ['move', 'tkp', 6, 7], ['attack', 'tkp', 'wbk'], ['move', 'tlr', 5, 8], ['attack', 'tlr', 'wbk'], ['wait', 'tkh'], ['wait', 'tlw'], ['end'],
+    ['move', 'tkp', 8, 7], ['attack', 'tkp', 'was'], ['move', 'wd1', 6, 7], ['attack', 'wd1', 'wbk'], ['attack', 'tar', 'wbk'], ['move', 'tlr', 7, 8], ['attack', 'tlr', 'wtr'], ['attack', 'tfl', 'wsp'], ['wait', 'tvr'], ['wait', 'tkh'], ['wait', 'tzh'], ['wait', 'wmm'], ['wait', 'wd2'], ['wait', 'tlw'], ['end'],
+    ['move', 'tfl', 8, 10], ['attack', 'tfl', 'wsp'], ['move', 'wd1', 8, 8], ['attack', 'wd1', 'wsp'], ['attack', 'wtr', 'wsp'], ['attack', 'tar', 'wsp'],
+];
 // Ufa as history took it: the 25th Division crosses at Krasny Yar, the
 // 217th over the pontoon holds the bridgehead, the rest go down the east bank into the
 // city (the 31st round its east, where it cut the railway); the guns
@@ -136,7 +159,7 @@ const ROUTES = { kazan: KAZAN, tsaritsyn: TSARITSYN, ufa: UFA, orel: OREL, warsa
 // those orders do not win the same way, is fought by the
 // ordinary player of scripts/war-balance.js (the first of its seeds to win,
 // else the last tried): a route alone no longer takes Orel's ringed station.
-const ORDERS = { orel: OREL_HISTORY };
+const ORDERS = { orel: OREL_HISTORY, tsaritsyn: TSARITSYN_HISTORY };
 const Balance = require('./war-balance.js');
 
 function playOut(s) {
@@ -1344,10 +1367,11 @@ for (const [rules, warsaw] of [[5, null], [6, null], [6, 'won']]) {
     assert.ok(hist.battles.tsaritsyn.turns > D.battles.tsaritsyn.reward.quick, 'as history did, not sooner');
 }
 
-// Tsaritsyn, a board to be held: the station left to its garrison falls;
-// Zhloba coming up behind the Don Army as history had it wins with the
-// plan's strength met, not without it; turning Dumenko's cavalry south as
-// well retakes Sarepta in time for the quick win.
+// Tsaritsyn, a board to be held (rules 9: the Don Army half as strong
+// again, a point harder in attack and defence): the station left to its
+// garrison falls; history's road holds it to the last turn (the campaign
+// above); beating the pressure by a STEP retakes Sarepta in time for the
+// quick win.
 {
     const def = D.battles.tsaritsyn;
     const muster = margin => ({ margin, fed: 1, commissar: true, cards: [] });
@@ -1357,26 +1381,10 @@ for (const [rules, warsaw] of [[5, null], [6, null], [6, 'won']]) {
     };
     const still = { 'tkh,tvr,tkp,tku,tar,tfl,tdm,twk,tlr,tzh': null };
     for (const m of [0, 3, 6]) assert.equal(play(still, m).result, 'lost', `the city does not hold itself (margin ${m})`);
-    for (const m of [0, 1.5, 3]) {
-        const b = play(TSARITSYN, m);
-        assert.equal(b.result, 'won', `history's way holds at margin ${m}`);
-        assert.ok(b.turn > def.reward.quick, `not sooner than history (margin ${m}, turn ${b.turn})`);
-    }
-    assert.equal(play(TSARITSYN, -1).result, 'lost', 'short of the pressure the city falls');
-    // Voroshilov's Luhansk workers take up arms beside the 10th Army: the
-    // same way holds a little short of the pressure, and is no quicker.
-    for (const [m, result] of [[-1, 'won'], [0.7, 'won']]) {
-        const b = B.start(def, {}, muster(m), { rules: 7 });
-        assert.ok(B.act(b, 'feat', 'tvr'));
-        assert.ok(b.units.some(u => u.id === 'tlw' && u.side === 'red'), 'the workers stand beside the 10th Army');
-        drive(b, TSARITSYN, (name, ...args) => B.act(b, name, ...args));
-        assert.equal(b.result, result, `margin ${m} with the Luhansk workers`);
-        assert.ok(b.turn > def.reward.quick, `not sooner than history (margin ${m}, turn ${b.turn})`);
-    }
-    const south = Object.assign({}, { tzh: [{ r: 8, c: 6 }, { r: 8, c: 8 }, SAREPTA], tfl: [{ r: 8, c: 10 }], tdm: [{ r: 6, c: 9 }, { r: 7, c: 9 }, SAREPTA], 'tkh,tvr,tkp,tku,tar,twk,tlr': null });
-    const quick = play(south, 3, true);
+    const quick = B.start(def, {}, muster(3));
+    for (const o of TSARITSYN_QUICK) if (quick.result || !B.act(quick, ...o)) break;
     assert.equal(quick.result, 'won');
-    assert.ok(quick.turn <= def.reward.quick, `Sarepta retaken quickly (${quick.turn})`);
+    assert.ok(!quick.held && quick.turn <= def.reward.quick, `Sarepta retaken quickly (${quick.turn})`);
     // Kept to the last turn without the goal, the board is won as held.
     const quiet = Object.assign({}, def, { units: def.units.filter(u => u.side === 'red' || u.role === 'hold') });
     const b = B.start(quiet, {}, muster(0), { rules: 7 });
