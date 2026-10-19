@@ -21,9 +21,9 @@
 - 인물 카드: `juliet-mitchell`·`lise-vogel`(서구 마르크스주의 모음), `judith-butler`, `simone-de-beauvoir`, `shulamith-firestone`, `heidi-hartmann`, `nancy-fraser` 신규(작업물 `scripts/content/gender-theory-20261019/`). 버틀러는 영어 they, 한국어는 대명사 없이 쓴다. 표기는 리즈 보걸·하이디 하트먼(용어 「사회적 재생산 이론」·「재생산 노동」의 옛 표기 보겔·하트만도 고침).
 - 문항 출처 허용 호스트에 `newleftreview.org`를 더했다(`scripts/lib/commulingo-checks.js`).
 
-## 다음 후보
+## 사전 용어 (2026-10-19)
 
-용어(섹스/젠더 체계, 억압 가설, 수행성 등)는 새로 만들 때 링크 검토 파일을 같은 작업에서 적용한다.
+13개를 `scripts/apply-history-terms.js`로 등록하고 표제어·별칭 74개를 `scripts/reviews/commulingo-links-20261019-gender-terms.json`으로 자동 연결 승인했다(작업물 `scripts/content/gender-terms-20261019/`). 섹스/젠더 체계, 젠더 수행성, 이성애 매트릭스(젠더 수행성의 하위), 억압 가설, 생명 권력, 성 경제학, 과잉 억압, 억압적 탈승화, 이중체계론, 가족 임금, 성 계급, 재분배와 인정, 가사노동 임금 운동. 일반명사 단독 별칭(인정·무시·가부장제·생명정치)은 넣지 않았다. 표기는 마리아로사 달라 코스타, 헤르베르트 마르쿠제(「프로이트-마르크스주의」의 허버트도 고침), 라이무트 라이헤.
 
 ## 등록 때 겪은 일
 
