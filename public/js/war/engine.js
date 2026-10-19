@@ -27,7 +27,9 @@
    in the share its strength makes of the pressure (no free advance), and its distance from history's line
    moves the next fight's pressure once it is STANDING_FROM cities or more
    (STANDING per city, ±STANDING_MAX); 10 the 1st Cavalry Army is one
-   army, sent with its card to one front a season, not +4 on three. */
+   army, sent with its card to one front a season, not +4 on three; 11 the
+   data's content marked rules 11 (a battle in the opening season, one
+   history lost: its reward pays a win, wonBy). */
 (function (root) {
     'use strict';
 
@@ -35,7 +37,7 @@
     const Battle = node ? require('./battle.js') : root.WarBattle;
     const Cond = node ? require('./cond.js') : root.WarCond;
 
-    const RULES = 10;
+    const RULES = 11;
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
     const signed = n => (n < 0 ? '−' : '+') + Math.abs(n);
@@ -617,12 +619,16 @@
 
         // The result of a battle fought this season, before the settlement, on
         // the front, as a strength: nothing when it went as history did, or
-        // for a battle without a reward (one that opens a front's cap).
+        // for a battle without a reward (one that opens a front's cap). A
+        // battle history won pays a quick win (quickBy) and costs a loss
+        // (lostBy); one history lost (wonBy) pays a win, and its loss is
+        // history's.
         function battleResult(s, id) {
             const def = battleOf(s);
             const r = def && !def.final && def.front === id && def.reward && s.battles[def.id];
             if (!r) return null;
-            const { quick, quickBy, lostBy } = def.reward;
+            const { quick, quickBy, lostBy, wonBy } = def.reward;
+            if (wonBy) return r.result === 'won' && !r.assumed ? { label: fmt(X.battleWon, { title: def.title }), v: wonBy } : null;
             if (r.result !== 'won') return { label: fmt(X.battleLost, { title: def.title }), v: lostBy };
             return r.turns !== null && r.turns <= quick ? { label: fmt(X.battleQuick, { title: def.title, quick }), v: quickBy } : null;
         }
@@ -958,8 +964,11 @@
                     if (entry[0] === 'settle' && unanswered.length
                         && unanswered.every(inc => act(s, 'respond', inc.history)) && act(s, ...entry)) continue;
                     // Battle orders from an older battlefield stop the replay at
-                    // the battle's start; the campaign before it stands.
+                    // the battle's start; the campaign before it stands. Those
+                    // of a battle these rules do not have (a newer save replayed
+                    // under older rules) are passed over.
                     if (typeof entry[0] === 'string' && entry[0].startsWith('b:') && s.phase === 'battle') break;
+                    if (typeof entry[0] === 'string' && entry[0].startsWith('b:')) continue;
                     // A plan the rules no longer allow (a save from before a rule
                     // change) is planned again from the start of its season.
                     return season ? restore({ version: D.saveVersion, rules, log: saved.log.slice(0, season) }) : null;

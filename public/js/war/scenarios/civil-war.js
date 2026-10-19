@@ -362,6 +362,8 @@
                 north: { pressure: 1, foes: ['allies'], text: '연합군 함대가 아르한겔스크 앞바다에 나타났다.' },
             },
             cards: ['train', 'requisition', 'kombedy'],
+            // Rules 11: Tukhachevsky's August attack on Simbirsk.
+            battle: 'simbirsk',
             incident: {
                 id: 'leftsr', title: '좌파 사회혁명당의 봉기', who: ['마리야 스피리도노바', 'maria-spiridonova'],
                 text: '7월 6일 좌파 사회혁명당원 블륨킨이 독일 대사 미르바흐를 암살하고, 당 지도부가 모스크바에서 봉기했다. 10일에는 동부전선 사령관 무라비요프가 심비르스크에서 독일과의 전쟁 재개를 외치며 반기를 들었다.',
@@ -983,6 +985,133 @@
         links: [['크론시타트 반란', E('kronstadt-1921')], ['안토노프 봉기', T('antonovshchina')], ['신경제정책', T('nep')]],
     };
 
+    // Simbirsk, 14–17 August 1918 (rules 11): Tukhachevsky's 1st Army
+    // tries to take back the city Kappel took on 22 July, and Kappel,
+    // back by steamer from Kazan, breaks its left flank; the army falls
+    // back on Inza. History lost it, so only a win moves the front. Its
+    // lesson is September's: the August attacks went in one by one and
+    // were beaten one by one, and Kappel's brigade hunts the unit left
+    // alone (role hunt, flank). Rows run north to south; the Reds come
+    // from the west along the Inza railway, the Sviyaga runs before the
+    // city and the Volga behind it. Terrain: . field, f wood, v a village,
+    // T the Okhotnichya trenches, s the Sviyaga, B its railway bridge,
+    // C the city, H the Venets heights, R the station, P the north wharf,
+    // ~ the Volga.
+    const simbirsk = {
+        id: 'simbirsk', sides: SIDES, front: 'east', final: false,
+        when: { rules: ['>=', 11] },
+        title: '심비르스크 공격', date: '1918년 8월 14–17일',
+        settle: '심비르스크로 →', board: '심비르스크 전장', enemyName: '인민군',
+        strikeNote: '',
+        huntNote: '홀로 떨어진 붉은 부대를 노린다. 곁에 다른 붉은 부대가 가장 적은 부대(같으면 가까운 부대)로 가고, 닿으면 그 부대를 친다. 붉은 부대 곁에서는 멈춘다. 카펠 여단은 2턴이 끝날 때 배에서 내린다.',
+        legend: [['steppe', '들판'], ['forest', '숲 (방어 +1, 이동 2)'], ['town', '마을 (방어 +1)'], ['trench', '오호트니치야 진지 (방어 +2)'], ['stream', '스뱌가강 (방어 −1, 이동 3)'], ['bridge', '스뱌가 철교'], ['heights', '베네츠 언덕 (방어 +2, 이동 2)'], ['city', '심비르스크 시가 (방어 +1)'], ['docks', '북쪽 부두'], ['river', '볼가강']],
+        // A battle history lost: as history when it is lost, the eastern
+        // strength +3 when Simbirsk is taken.
+        reward: { wonBy: 3 },
+        stakes: '역사에서는 막혔다 · 이기면 동부전선 전투력 +3, 지면 역사대로',
+        map: [
+            'f.....s..PP~',
+            '...f..s.CC.~',
+            '..v...s.CCH~',
+            '.f....s.CCH~',
+            '...v.fs.CCH~',
+            'f.....s.R..~',
+            '..vT..B..f.~',
+            '.....fs....~',
+            'f.....s..f.~',
+        ],
+        voices: [
+            { when: 'start', unit: 'sgai', who: ['가이크 브지시캰', 'hayk-bzhishkyan'], text: '사단 전체가 심비르스크로 가자고 들끓는다. 사기가 높다. 공격을 허락해 달라.' },
+            { when: 'start', unit: 'shq', who: ['미하일 투하쳅스키', 'tukhachevsky'], text: '카펠은 카잔에 있다. 그가 돌아오기 전에 심비르스크를 쳐라.' },
+            { when: 'start', unit: 'wgeo', by: 'komuch', text: '나팔을 불어라. 쏘지 말고, 대열을 지켜 그대로 걸어간다.' },
+            { when: 'turn:2', unit: ['wkp', 'wkc'], who: ['블라디미르 카펠', 'vladimir-kappel'], by: 'komuch', text: '배에서 내려라. 저놈들은 흩어져 있다. 떨어진 놈부터 하나씩 친다.' },
+            { when: 'feat:order', unit: 'shq', who: ['미하일 투하쳅스키', 'tukhachevsky'], text: '흩어져 치지 마라! 모든 대대와 포를 한 곳에 모아라.' },
+            { when: 'feat:sabres', unit: 'ssmb', face: 'red-soldier', text: '보병이 없다. 포수들, 칼을 뽑아라!' },
+            { when: 'feat:volunteers', unit: ['svol', 'sgai'], face: 'red-soldier', text: '센길레이 시멘트 공장에서 왔다. 우리에게도 총을 다오!' },
+            { when: 'goal', unit: ['sgai', 's2r', 'slat', 'sinz', 'spen', 'svol'], face: 'red-soldier', text: '역을 차지했다! 심비르스크다!' },
+            { when: 'surrender', unit: ['sgai', 's2r', 'slat', 'sinz', 'spen'], face: 'red-soldier', text: '인민군 병사들이 손을 든다! 쏘지 마라, 이제 우리 편이다.' },
+        ],
+        goals: [{ at: [5, 8], name: '심비르스크 역' }],
+        // The Inza line: Okhotnichya, the Sviyaga bridge, the city's station.
+        rails: [[6, 0], [6, 1], [6, 2], [6, 3], [6, 4], [6, 5], [6, 6], [6, 7], [5, 7], [5, 8]],
+        towns: [['테튜시스코예', 2, 2], ['오트라다', 4, 3], ['오호트니치야', 6, 2]],
+        places: [['인자 방면', 7.4, 0.6], ['스뱌가강', 8, 6.05], ['볼가강', 8, 11], ['심비르스크', 0.9, 8.5], ['베네츠', 2.1, 10]],
+        turnLimit: 7,
+        lines: {},
+        sectors: {},
+        terrain: {
+            '.': { name: '들판', cost: 1, def: 0, cls: 'steppe' },
+            f: { name: '숲', cost: 2, def: 1, cls: 'forest' },
+            v: { name: '마을', cost: 1, def: 1, cls: 'town' },
+            T: { name: '오호트니치야 진지', cost: 2, def: 2, fort: 'okhotnichya', cls: 'trench' },
+            s: { name: '스뱌가강', cost: 3, def: -1, cls: 'stream' },
+            B: { name: '스뱌가 철교', cost: 1, def: 0, cls: 'bridge' },
+            C: { name: '심비르스크 시가', cost: 1, def: 1, cls: 'city' },
+            H: { name: '베네츠 언덕', cost: 2, def: 2, fort: 'venets', cls: 'heights' },
+            R: { name: '심비르스크 역', cost: 1, def: 1, cls: 'town' },
+            P: { name: '북쪽 부두', cost: 1, def: 0, cls: 'docks' },
+            '~': { name: '볼가강', cost: 99, def: 0, water: true, cls: 'river' },
+        },
+        units: [
+            // Tukhachevsky's field headquarters: no fighting unit, his
+            // order is its worth.
+            { id: 'shq', tag: '사령부', side: 'red', name: '제1군 야전 사령부', sub: '투하쳅스키', kind: 'inf', at: [5, 0], hp: 6, atk: 2, def: 2, mv: 3, person: ['미하일 투하쳅스키', 'tukhachevsky'],
+                feat: {
+                    id: 'order', name: '집중 명령', kind: 'order', plus: 2,
+                    text: '이번 턴, 다른 붉은 부대가 곁에 붙어 있는 적을 치는 공격은 모두 피해 +2. 사령부는 이번 턴 다른 행동을 하지 않는다.',
+                    history: '8월의 공격은 연대마다 따로 들어가 백군에게 하나씩 막혔다. 9월 6–7일 파이가르마 군사회의에서 투하쳅스키는 심비르스크 사단에 소총연대 다섯과 기병대대를 더해 공격 구역에서 두 배의 수적 우위를 만들었고, 9월 12일 도시를 되찾았다.',
+                } },
+            // Gai's Simbirsk division: volunteers from the Volga towns,
+            // eager and green (attack 5, defence 2).
+            { id: 'sgai', tag: '심비르스크', side: 'red', name: '심비르스크 사단', sub: '가이', kind: 'inf', at: [3, 0], hp: 11, atk: 5, def: 2, mv: 3, lead: true, person: ['가이크 브지시캰', 'hayk-bzhishkyan'],
+                feat: {
+                    id: 'volunteers', name: '센길레이의 의용병', kind: 'muster',
+                    unit: { id: 'svol', tag: '의용병', look: 'worker', name: '센길레이 노동자 분견대', sub: '시멘트 공장과 직물 공장', kind: 'inf', hp: 6, atk: 4, def: 2, mv: 3 },
+                    text: '가는 길에 합류한 노동자들이 총을 든다. 사단 곁에 분견대 하나가 생긴다(이번 턴은 행동하지 않음).',
+                    history: '7월 22일 심비르스크가 떨어진 뒤 포위된 가이의 부대는 볼가를 따라 약 100베르스타를 뚫고 나왔다. 그 길에 센길레이 시멘트 공장 노동자, 예카테리놉카 직물 공장 직공, 실롭카·크리우시 부두의 선원, 타실라의 벌목꾼이 합류했고, 26일 마이나역에 닿은 부대는 이튿날 심비르스크 사단이 되었다.',
+                } },
+            { id: 's2r', tag: '2연대', side: 'red', name: '제2심비르스크 연대', sub: '심비르스크 사단', kind: 'inf', at: [2, 0], hp: 10, atk: 5, def: 2, mv: 3 },
+            // The Smolensk battery beat off the St George battalion with
+            // its sabres on 8 August: a gun that stands to.
+            { id: 'ssmb', tag: '스몰렌스크', side: 'red', name: '스몰렌스크 포대', sub: '심비르스크 사단', kind: 'art', at: [2, 1], hp: 7, atk: 5, def: 1, mv: 2, range: 2,
+                feat: {
+                    id: 'sabres', name: '칼을 뽑아라', kind: 'brace', def: 2,
+                    text: '포수들이 칼을 뽑고 포 곁을 지킨다. 다음 붉은 군대 차례까지 방어 +2, 붙어서 치는 적에게 반격한다(이번 턴은 행동하지 않음).',
+                    history: '8월 8일 밤 게오르기 대대가 테튜시스코예 근처에서 심비르스크 사단의 왼쪽 측면을 덮쳤다. 엄호 보병 없이 남은 스몰렌스크 포대의 포수들이 칼로 공격을 물리치고 기관총 네 정을 빼앗았다(흐룰료프, 『체코슬로바키아 반란과 그 진압』, 1940).',
+                } },
+            { id: 'slat', tag: '라트비아', side: 'red', name: '라트비아·국제주의 분견대', sub: '제1군', kind: 'inf', at: [4, 1], hp: 9, atk: 5, def: 3, mv: 3 },
+            { id: 'slen', tag: '열차', side: 'red', name: '「레닌」 장갑열차', sub: '제1민스크 혁명 장갑열차', kind: 'art', rail: true, at: [6, 1], hp: 7, atk: 4, def: 2, mv: 2, railMv: 6, range: 2 },
+            { id: 'sinz', tag: '인자', side: 'red', name: '인자 사단 연대', sub: '남쪽에서', kind: 'inf', at: [8, 1], hp: 10, atk: 4, def: 3, mv: 3, need: 0 },
+            { id: 'spen', tag: '펜자', side: 'red', name: '펜자 사단 연대', sub: '남쪽에서', kind: 'inf', at: [8, 3], hp: 10, atk: 4, def: 3, mv: 3, need: 3 },
+            // The People's Army: the St George battalion of officers that
+            // marched in close order, the Holy Cup volunteers with their
+            // banners, the posts at Otrada and Okhotnichya, the Czech
+            // battalion at the station, the city's garrison and its guns.
+            { id: 'wgeo', tag: '장교', look: 'officer', side: 'white', name: '게오르기 장교 대대', sub: '심리 공격', kind: 'inf', at: [2, 4], hp: 10, atk: 6, def: 2, mv: 3, role: 'hunt' },
+            { id: 'wcup', tag: '성배', side: 'white', name: '「성배」 의용 중대', sub: '깃발과 사제', kind: 'inf', at: [1, 4], hp: 5, atk: 3, def: 1, mv: 3, role: 'hunt' },
+            { id: 'wotr', tag: '인민군', side: 'white', name: '인민군 중대', sub: '오트라다', kind: 'inf', at: [4, 3], hp: 8, atk: 4, def: 2, mv: 3, role: 'hold' },
+            { id: 'wokh', tag: '인민군', side: 'white', name: '인민군 대대', sub: '오호트니치야 진지', kind: 'inf', at: [6, 3], hp: 9, atk: 4, def: 2, mv: 3, role: 'hold' },
+            { id: 'wcz', tag: '체코', side: 'white', name: '체코슬로바키아 대대', sub: '심비르스크 역', kind: 'inf', at: [5, 8], hp: 12, atk: 4, def: 3, mv: 3, role: 'hold' },
+            { id: 'wgar', tag: '수비대', side: 'white', name: '인민군 수비대', sub: '시가', kind: 'inf', at: [4, 8], hp: 8, atk: 3, def: 2, mv: 3, role: 'hold' },
+            { id: 'wbat', tag: '포대', side: 'white', name: '베네츠 포대', kind: 'art', at: [3, 10], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'hold' },
+            // Kappel's brigade, back from Kazan by steamer on the 14th: it
+            // hunts the unit left alone and strikes it 2 harder.
+            { id: 'wkp', tag: '카펠', side: 'white', name: '카펠 여단', sub: '특수 목적 소총여단', kind: 'inf', at: [0, 9], hp: 14, atk: 6, def: 3, mv: 4, role: 'hunt', wake: 2, flank: 2, person: ['블라디미르 카펠', 'vladimir-kappel'] },
+            { id: 'wkc', tag: '기병', side: 'white', name: '카펠 여단 기병 중대', sub: '특수 목적 소총여단', kind: 'cav', at: [0, 10], hp: 8, atk: 5, def: 2, mv: 5, role: 'hunt', wake: 2, flank: 2 },
+        ],
+        summary: '심비르스크 역에 서면 승리 · 7턴 · 2턴 끝에 카펠이 돌아와 혼자 떨어진 부대를 노린다',
+        brief: [
+            '7월 22일 카펠의 부대가 심비르스크를 빼앗았다. 투하쳅스키의 제1군은 인자 철도를 따라 서쪽에서 도시로 다가간다. 카펠이 카잔에 가 있는 지금 쳐야 한다.',
+            '심비르스크 역에 붉은 군대 부대를 세우면 이긴다. 7턴이 주어진다. 역사에서는 막혔으므로, 지면 역사대로이고 이기면 이 시기 동부전선의 전투력이 3 오른다.',
+            '역 앞에는 스뱌가강이 흐른다. 건너는 데 이동 3이 들고 강 위에서는 방어 −1이다. 철도가 지나는 스뱌가 철교로는 쉽게 건넌다. 철교 앞 오호트니치야에는 인민군 진지(방어 +2)가 있다.',
+            '게오르기 장교 대대와 「성배」 의용 중대는 처음부터, 2턴이 끝날 때부터는 카잔에서 배로 돌아온 카펠 여단이 홀로 떨어진 붉은 부대를 노린다. 카펠 여단은 곁에 다른 붉은 부대가 없는 부대를 피해 +2로 친다. 부대를 둘씩 붙여 움직여라.',
+            '적과 맞닿은 칸에 들어가면 그 턴의 이동은 끝난다. 한 적을 여럿이 둘러싸고 치면 둘러싼 부대마다 피해가 1씩 늘어난다.',
+            '결정적 한 수(★): 사령부의 「집중 명령」은 그 턴 둘러싸고 치는 공격마다 피해 +2. 스몰렌스크 포대의 「칼을 뽑아라」는 다음 차례까지 방어 +2에 반격. 심비르스크 사단의 「센길레이의 의용병」은 곁에 노동자 분견대를 세운다.',
+            '이미 병력이 절반 아래로 꺾인 백군 부대를 붉은 부대 셋이 둘러싼 채 치면, 그 부대는 총을 내려놓고 붉은 군대로 넘어온다(투항). 포로는 다음 시기 사단이 된다.',
+        ],
+        history: '가이의 심비르스크 사단이 서둘러 공격에 나섰지만 연대마다 따로 들어가 백군에게 쉽게 막혔다. 8일과 10일 테튜시스코예에서는 게오르기 장교 대대가 대열을 지어 쏘지 않고 걸어오는 공격을 해 왔고, 붉은 군대는 이를 사격으로 물리쳤다. 14일 카펠이 카잔에서 배로 돌아와 포그레비–오트라다에서 사단의 왼쪽 측면을 쳤다. 17일 투하쳅스키는 물러나 사령부를 서쪽으로 약 80베르스타 떨어진 인자로 옮겼다. 그래도 카펠은 카잔 전선에서 병력을 빼야 했고, 9월 사단은 다시 공격해 12일 심비르스크를 되찾았다.',
+    };
+
     // Kazan, late August to 10 September 1918: Trotsky's train at
     // Sviyazhsk, the Volga flotilla on the river, the Whites holding the
     // city and Kappel's raiders loose on the right bank. Rows run north
@@ -1519,7 +1648,7 @@
         { id: 'southwest', name: '남서 철도', pts: [[50.45, 30.52], [50.08, 29.92], [49.72, 28.83], [49.89, 28.60], [50.18, 27.06], [50.51, 26.25], [50.08, 25.15], [49.91, 24.62], [49.84, 24.03]] },
     ];
 
-    const battles = { kazan, tsaritsyn, ufa, orel, warsaw, perekop };
+    const battles = { simbirsk, kazan, tsaritsyn, ufa, orel, warsaw, perekop };
 
     // The portraits (war/art.js): each person's headgear, hair, face, what
     // they wore and what they are drawn with. side colours the square behind
@@ -1540,6 +1669,7 @@
         'filipp-mironov': { side: 'red', cap: 'papakha', moustache: true, beard: 'short', grey: true, dress: 'tunic' },
         'sergey-kamenev': { side: 'red', cap: 'peaked', moustache: 'great', dress: 'greatcoat' },
         tukhachevsky: { side: 'red', cap: 'budenovka', dress: 'tunic' },
+        'hayk-bzhishkyan': { side: 'red', cap: 'peaked', face: 'square', moustache: true, dress: 'leather' },
         'vitaly-primakov': { side: 'red', cap: 'papakha', dress: 'cherkeska' },
         'fyodor-raskolnikov': { side: 'red', cap: 'naval', dress: 'naval' },
         'vladimir-azin': { side: 'red', cap: 'budenovka', face: 'long', brows: 'heavy', moustache: true, dress: 'tunic' },
@@ -1688,6 +1818,7 @@
         aheadPart: '역사보다 앞선 전선 −{n}',
         battleLost: '{title} 실패',
         battleQuick: '{title} ({quick}턴 안)',
+        battleWon: '{title} 성공',
         hunger: '곡물이 모자라 병사들이 굶었다. 다음 시기 탈영으로 사단이 준다.',
         momentumNote: '{front}: 더 잃을 도시가 없는데도 막지 못해, 적이 기세를 몰아 온다. 이 전선의 다음 싸움에서 압력 +{n}.',
         pursuitNote: '{front}: 무너진 적을 쫓는다. 이 전선의 다음 싸움에서 압력 −{n}.',

@@ -175,7 +175,15 @@ const TSARITSYN = {
     tzh: [{ r: 9, c: 5 }, { r: 9, c: 7 }, { r: 8, c: 8 }, SAREPTA],
     'tkh,tvr,tkp,tku,tar,tfl,tdm,twk,tlr': null,
 };
-const ROUTES = { kazan: KAZAN, tsaritsyn: TSARITSYN, ufa: UFA, orel: OREL, warsaw: WARSAW };
+// Simbirsk as history lost it in August: every regiment straight for the
+// station on its own, the guns and the train shooting from where they
+// stand; Kappel's brigade, back from Kazan, takes them one by one.
+const SIMBIRSK_STATION = { r: 5, c: 8 };
+const SIMBIRSK = {
+    'sgai,s2r,slat,sinz,spen,svol': [{ r: 6, c: 6 }, SIMBIRSK_STATION],
+    'ssmb,slen,shq': null,
+};
+const ROUTES = { simbirsk: SIMBIRSK, kazan: KAZAN, tsaritsyn: TSARITSYN, ufa: UFA, orel: OREL, warsaw: WARSAW };
 
 // Battles given order by order on history's road. Another muster, where
 // those orders do not win the same way, is fought by the
@@ -610,8 +618,10 @@ assert.equal(G.restore('{'), null);
 // history took it, and keeps going that way after it is saved again.
 {
     const log = JSON.parse(G.serialize(hist)).log;
-    // Kazan's orders run from the first battle order to the next season.
-    const from = log.findIndex(e => e[0].startsWith('b:'));
+    // Kazan's orders run from the first battle order after the opening
+    // season (Simbirsk's, rules 11) to the next season.
+    const opened = log.findIndex(e => e[0] === 'next');
+    const from = log.findIndex((e, i) => i > opened && e[0].startsWith('b:'));
     const to = log.findIndex((e, i) => i > from && e[0] === 'next');
     const back = G.restore({ version: G.VERSION, rules: G.RULES, log: log.slice(0, from).concat(log.slice(to)) });
     assert.equal(back.turn, hist.turn, 'the old save keeps its place');
@@ -750,6 +760,89 @@ function fight(routes, flags = { makhno: true }, muster, def = D.battles.perekop
     assert.equal(B.start(D.battles.perekop, {}, muster(6)).units.some(u => u.id === 'rtr'), false);
 }
 assert.equal(B.start(D.battles.perekop, {}).units.some(u => u.id === 'rmk'), false, 'no Makhnovists without the Starobilsk agreement');
+
+// Simbirsk (rules 11): a way to take it at history's margin, the strong
+// balance bot's orders with the train and the commissar: the order of the
+// day on the first turn, the Okhotnichya battalion broken and come over,
+// the battery stood to against Kappel's riders. Wins on turn 5.
+const SIMBIRSK_WIN = [
+    ['move', 'shq', 5, 3], ['feat', 'shq'], ['move', 'slat', 6, 2], ['attack', 'slat', 'wokh'], ['move', 'sinz', 7, 3], ['attack', 'sinz', 'wokh'], ['move', 'slen', 6, 7], ['attack', 'slen', 'wcz'], ['move', 'sgai', 4, 2], ['attack', 'sgai', 'wotr'], ['move', 'ssmb', 3, 2], ['attack', 'ssmb', 'wotr'], ['move', 's2r', 4, 1], ['wait', 's2r'], ['end'],
+    ['move', 'ssmb', 3, 4], ['attack', 'ssmb', 'wgeo'], ['move', 'slat', 4, 3], ['attack', 'slat', 'wcup'], ['move', 's2r', 4, 4], ['attack', 's2r', 'wgeo'], ['move', 'sinz', 6, 4], ['attack', 'sinz', 'wgeo'], ['move', 'slen', 5, 7], ['attack', 'slen', 'wcz'], ['move', 'sgai', 5, 4], ['feat', 'sgai'], ['move', 'wokh', 6, 6], ['wait', 'wokh'], ['move', 'shq', 6, 5], ['wait', 'shq'], ['end'],
+    ['move', 'wokh', 6, 8], ['attack', 'wokh', 'wcz'], ['move', 'shq', 6, 8], ['attack', 'shq', 'wcz'], ['attack', 'slen', 'wcz'], ['move', 'sgai', 6, 6], ['wait', 'sgai'], ['move', 's2r', 6, 5], ['wait', 's2r'], ['move', 'sinz', 6, 7], ['wait', 'sinz'], ['move', 'slat', 6, 4], ['wait', 'slat'], ['move', 'svol', 5, 6], ['wait', 'svol'], ['move', 'ssmb', 3, 5], ['feat', 'ssmb'], ['end'],
+    ['move', 's2r', 6, 8], ['attack', 's2r', 'wcz'], ['attack', 'ssmb', 'wkc'], ['move', 'svol', 4, 6], ['attack', 'svol', 'wkc'], ['attack', 'slen', 'wcz'], ['move', 'sinz', 7, 8], ['wait', 'sinz'], ['move', 'slat', 6, 7], ['wait', 'slat'], ['move', 'sgai', 5, 6], ['wait', 'sgai'], ['end'],
+    ['move', 's2r', 5, 9], ['wait', 's2r'], ['move', 'sgai', 6, 8], ['attack', 'sgai', 'wcz'],
+];
+
+// Simbirsk: history's piecemeal attack loses at history's margin and a
+// concentrated one wins; Kappel's brigade hunts the unit standing alone
+// and strikes it 2 harder; the order of the day adds 2 to the blows at a
+// target another Red unit stands beside; the battery stood to keeps its
+// guns; only a win moves the front, and only under rules 11.
+{
+    const S = D.battles.simbirsk;
+    const muster = (margin, cards = ['train']) => ({ margin, fed: 1, commissar: true, cards });
+    assert.equal(fight(SIMBIRSK, {}, muster(0.1), S).result, 'lost', 'regiment by regiment, the August attack is beaten');
+    const won = B.start(S, {}, muster(0.1));
+    for (const o of SIMBIRSK_WIN) if (won.result || !B.act(won, ...o)) break;
+    assert.equal(won.result, 'won', 'the attack concentrated takes the station');
+    assert.equal(won.turn, 5);
+    assert.equal(B.start(S, {}, muster(-1)).units.some(u => u.id === 'sinz'), false, 'the Inza regiment waits for the pressure');
+    assert.equal(B.start(S, {}, muster(0.1)).units.some(u => u.id === 'spen'), false);
+    assert.ok(B.start(S, {}, muster(3)).units.some(u => u.id === 'spen'));
+
+    // The hunter: the unit with no friend beside it, nearest first.
+    const b = B.start(S, {}, muster(3));
+    const kappel = B.byId(b, 'wkp');
+    assert.equal(B.preyOf(b, kappel).id, 'slat', 'Kappel goes for the Latvians, alone and nearest');
+    const lat = B.byId(b, 'slat');
+    Object.assign(kappel, { r: 4, c: 2 });
+    const lone = B.preview(b, kappel, lat).dmg;
+    Object.assign(B.byId(b, 'sgai'), { r: 3, c: 1 });
+    assert.equal(B.alone(b, lat), false);
+    assert.equal(B.preview(b, kappel, lat).dmg, lone - 2, 'a friend beside takes the flank blow away');
+    assert.equal(B.preyOf(b, kappel).id !== 'slat', true, 'and the hunter turns to another');
+
+    // The order of the day: ringed blows this turn only.
+    const o = B.start(S, {}, muster(3));
+    const otr = B.byId(o, 'wotr');
+    Object.assign(B.byId(o, 'slat'), { r: 4, c: 2 });
+    Object.assign(B.byId(o, 'sgai'), { r: 3, c: 3 });
+    const plain = B.preview(o, B.byId(o, 'slat'), otr).dmg;
+    assert.ok(B.act(o, 'feat', 'shq'));
+    assert.equal(B.preview(o, B.byId(o, 'slat'), otr).dmg, Math.min(otr.hp, plain + 2));
+    Object.assign(B.byId(o, 'sgai'), { r: 2, c: 0 });
+    assert.equal(B.preview(o, B.byId(o, 'slat'), otr).dmg, Math.min(otr.hp, plain - 1), 'no ring, no bonus (and no surround)');
+    assert.ok(B.act(o, 'end'));
+    Object.assign(B.byId(o, 'sgai'), { r: 3, c: 3 });
+    const kept = o.order;
+    const later = B.preview(o, B.byId(o, 'slat'), otr).dmg;
+    o.order = null;
+    assert.equal(later, B.preview(o, B.byId(o, 'slat'), otr).dmg, 'the order lasts its turn');
+    o.order = kept;
+
+    // The battery stood to: defence +2 and a counter until the next turn.
+    const g = B.start(S, {}, muster(3));
+    assert.ok(B.act(g, 'feat', 'ssmb'));
+    const gun = B.byId(g, 'ssmb');
+    assert.equal(gun.def, 3);
+    assert.equal(gun.counter, true);
+    assert.ok(B.act(g, 'end'));
+    assert.equal(B.byId(g, 'ssmb').def, 1);
+    assert.equal(B.byId(g, 'ssmb').counter, false);
+
+    // The campaign: a win pays the east +3, a loss is history's; an
+    // older save's opening season has no battle.
+    const s = G.rehearse('simbirsk');
+    assert.equal(s.phase, 'battle');
+    assert.equal(G.battleOf(s).id, 'simbirsk');
+    s.battles.simbirsk = { result: 'won', turns: 6 };
+    assert.equal(G.battleResult(s, 'east').v, 3);
+    s.battles.simbirsk = { result: 'lost', turns: 7 };
+    assert.equal(G.battleResult(s, 'east'), null);
+    s.battles.simbirsk = { result: 'won', turns: null, assumed: true };
+    assert.equal(G.battleResult(s, 'east'), null, 'an assumed battle goes as history did');
+    assert.equal(G.battleOf(G.start(10)), null);
+}
 
 // Kazan: the flotilla and the Arsk road take it; the more the plan sends
 // east the sooner; Sviyazhsk left empty falls to Kappel's raid.
@@ -1338,6 +1431,8 @@ for (const [rules, warsaw] of [[5, null], [6, null], [6, 'won']]) {
         assert.ok(G.forecast(s).fronts[light].pursuit > 0, 'the whole army on the lightest front breaks it');
         const grain = G.forecast(s).supply;
         assert.ok(G.act(s, 'settle'));
+        // Simbirsk (rules 11) let go as history lost it.
+        while (s.phase === 'battle') assert.ok(G.act(s, 'b:end'));
         return { s, light, grain };
     };
     const { s, light, grain } = crush();

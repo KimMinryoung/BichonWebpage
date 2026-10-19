@@ -220,6 +220,8 @@ function checkScenario(D) {
         // its front's last cities (a cap's battle) and says what it decides.
         const opens = Object.values(fronts).some(f => f.cap && f.cap.battle && f.cap.battle.id === id);
         need(def.final || def.reward || (opens && def.stakes && def.outcome), `${at}: a season's battle has a reward`);
+        // A battle history lost pays only a win, and says so (stakes).
+        if (def.reward && def.reward.wonBy) need(typeof D.texts.battleWon === 'string' && def.stakes, `${at}: a won battle's words (texts.battleWon, stakes)`);
         cond(def.when, at);
         const rows = def.map.length, cols = def.map[0].length;
         need(def.map.every(r => r.length === cols), `${at}: map rows of one length`);

@@ -34,11 +34,13 @@
    is won by keeping the post through its last turn, and sooner by
    taking its goal. A unit with wake
    stays put until that turn, and a board's air raid (air) strikes chosen
-   player units at the end of one enemy turn.
+   player units at the end of one enemy turn. A hunter (role hunt) goes
+   for the player's unit standing most alone, and a flanker (flank: n)
+   strikes a unit with no friend beside it n harder.
 
    Under rules 3 (heroics) a battle has its decisive moments: a player unit
    may carry a feat, used once a battle (FEATS: strike, assault, muster,
-   ride, ferry); a skirmisher may still move after it strikes; and an enemy
+   ride, ferry, order, brace); a skirmisher may still move after it strikes; and an enemy
    unit beaten below half its men, with three player units beside it, lays
    down its arms and joins the player (surrender). */
 (function (root) {
@@ -94,7 +96,7 @@
                     id: u.id, tag: u.tag || u.name, side: u.side, name: u.name, sub: u.sub || '', kind: u.kind,
                     role: u.role || null, line: u.line || null, wake: u.wake || 0,
                     person: u.person || null, look: u.look || null, r: u.at[0], c: u.at[1], hp, maxHp: u.hp,
-                    atk: u.atk, def: u.def + (lead ? 1 : 0), mv: express && u.railMv ? u.railMv : u.mv, range: u.range || 1, commissar: Boolean(lead), naval: Boolean(u.naval), rail: Boolean(u.rail),
+                    atk: u.atk, def: u.def + (lead ? 1 : 0), mv: express && u.railMv ? u.railMv : u.mv, range: u.range || 1, commissar: Boolean(lead), naval: Boolean(u.naval), rail: Boolean(u.rail), flank: u.flank || 0,
                     counter: u.counter === undefined ? kind.counter : u.counter, wears: u.wears === undefined ? kind.wears : u.wears,
                     feat: heroics && u.feat ? u.feat : null, skirmish: heroics && Boolean(u.skirmish),
                     moved: false, acted: false, prev: null,
@@ -104,7 +106,7 @@
         for (const id of Object.keys(def.lines || {})) turned[id] = false;
         return {
             def, sides, turn: 1, units, result: null, turned, wear: {}, reserve: null,
-            heroics, feats: {}, fortBlows: 0, captured: 0,
+            heroics, feats: {}, fortBlows: 0, captured: 0, order: null,
             events: [], report: [],
         };
     }
@@ -215,12 +217,20 @@
         return Math.min(SURROUND_CAP, n);
     }
 
+    // Whether a unit stands with no friend beside it.
+    const alone = (b, u) => !alive(b).some(o => o !== u && o.side === u.side && dist(o, u) === 1);
+
     // mod, a feat's blow: plus damage, noGround (the fortification
-    // ignored), noCounter.
+    // ignored), noCounter. A flanker strikes a unit standing alone harder;
+    // the order of the day (b.order, a feat) makes the blows of its side
+    // this turn harder where another of its units is beside the target.
     function hit(b, a, d, mod) {
         const power = a.atk * (0.6 + 0.4 * a.hp / a.maxHp);
         const guard = mod && mod.noGround ? d.def : defenseOf(b, d);
-        return Math.max(1, Math.round(power + surround(b, a, d) - guard + ((mod && mod.plus) || 0)));
+        const ring = surround(b, a, d);
+        const flank = a.flank && alone(b, d) ? a.flank : 0;
+        const order = b.order && b.order.turn === b.turn && b.order.side === a.side && ring > 0 ? b.order.plus : 0;
+        return Math.max(1, Math.round(power + ring - guard + flank + order + ((mod && mod.plus) || 0)));
     }
 
     // Whether an enemy unit left with hp men would lay down its arms: below
@@ -388,6 +398,25 @@
         },
         ride: { beforeMove: true, use: boost('riding') },
         ferry: { beforeMove: true, use: boost('ferrying') },
+        // The order of the day: this turn every blow of the side at a target
+        // another of its units stands beside strikes feat.plus harder. The
+        // unit giving it does nothing else this turn.
+        order: {
+            use(b, u, f) {
+                b.order = { turn: b.turn, side: u.side, plus: f.plus || 0 };
+                u.acted = true; u.moved = true; u.prev = null;
+            },
+        },
+        // The unit stands to: until its side's next turn its defence rises
+        // by feat.def and it strikes back when struck in melee (guns too).
+        brace: {
+            use(b, u, f) {
+                u.braced = { def: f.def || 0, counter: u.counter };
+                u.def += f.def || 0;
+                u.counter = true;
+                u.acted = true; u.moved = true; u.prev = null;
+            },
+        },
     };
 
     // The blow a feat strikes with, for preview and strike.
@@ -521,6 +550,17 @@
                 if (b.result) return 'end';
             },
         },
+        // A hunter marches on the player's unit standing most alone, halting
+        // beside the player's units like a strike group, and strikes it once
+        // in reach (enemyTurn).
+        hunt: {
+            marches: () => true,
+            act(b, u) {
+                const prey = preyOf(b, u);
+                u.prey = prey ? prey.id : null;
+                if (prey && !targets(b, u).includes(prey)) stepToward(b, u, prey);
+            },
+        },
         // The reserve rides at the weakest player unit pressing its sector.
         strike: {
             marches: b => Boolean(reserveSector(b)),
@@ -537,6 +577,16 @@
             },
         },
     };
+
+    // The player's unit a hunter goes for: the fewest friends beside it,
+    // then the nearest, then the weakest.
+    function preyOf(b, u) {
+        const friends = o => alive(b).filter(x => x !== o && x.side === o.side && dist(x, o) === 1).length;
+        return alive(b).filter(o => isPlayer(b, o))
+            .map(o => ({ o, f: friends(o), d: dist(u, o) }))
+            .sort((x, z) => x.f - z.f || x.d - z.d || x.o.hp - z.o.hp || (x.o.id < z.o.id ? -1 : 1))
+            .map(x => x.o)[0] || null;
+    }
 
     // Whether an enemy unit leaves its post this turn, by its role.
     function marching(b, u) {
@@ -606,7 +656,9 @@
             }
             const role = ROLES[u.role];
             if (role && role.act && role.act(b, u, turn) === 'end') return;
-            const t = bestTarget(b, u);
+            // A hunter strikes its prey when it can reach it.
+            const prey = u.prey && byId(b, u.prey);
+            const t = prey && isPlayer(b, prey) && targets(b, u).includes(prey) ? prey : bestTarget(b, u);
             if (t) strike(b, u, t);
         }
         // The air raid: the planes find their targets at the end of one enemy turn.
@@ -646,8 +698,10 @@
         if (b.turn > b.def.turnLimit) { b.result = 'lost'; return true; }
         for (const u of b.units) {
             u.moved = false; u.acted = false; u.prev = null; u.struck = false;
-            // A ride lasts the turn it was made.
+            // A ride lasts the turn it was made; a unit stood to, through
+            // the enemy's turn.
             if (u.riding || u.ferrying) { u.riding = false; u.ferrying = false; u.mv -= u.feat.mv || 0; }
+            if (u.braced) { u.def -= u.braced.def; u.counter = u.braced.counter; u.braced = null; }
         }
         return true;
     }
@@ -660,7 +714,7 @@
 
     const api = {
         start, joins, act, reachable, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
-        terrain, groundOf, tileAt, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy,
+        terrain, groundOf, tileAt, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
         canMove, featBlock, featTargets, featMod, yields, YIELD_RING, FEATS, ROLES, KINDS,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;

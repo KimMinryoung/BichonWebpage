@@ -1533,8 +1533,9 @@
         if (m.muster.fed < 1) notes.push(`굶주려 병력 ×${m.muster.fed}`);
         if (lead) notes.push(`${U.leader}: ${lead.name} 방어 +1`);
         // A battle before the settlement moves this front's strength: the
-        // bar above assumes it goes as history did.
-        if (!m.def.final) notes.push(m.def.reward ? `예상은 역사처럼 이길 때 · ${m.def.reward.quick}턴 안에 이기면 전투력 +${m.def.reward.quickBy}, 지면 ${signed(m.def.reward.lostBy)}` : m.def.stakes);
+        // bar above assumes it goes as history did (its own words, stakes,
+        // where history lost it or it opens a front's last cities).
+        if (!m.def.final) notes.push(m.def.stakes || `예상은 역사처럼 이길 때 · ${m.def.reward.quick}턴 안에 이기면 전투력 +${m.def.reward.quickBy}, 지면 ${signed(m.def.reward.lostBy)}`);
         return el('div', { class: 'cw-muster' },
             el('p', {}, el('strong', {}, `${m.def.title} 편성`), notes.length ? ` · ${notes.join(' · ')}` : null),
             el('ul', {}, ...m.units.map(u => el('li', { class: u.joins ? 'is-in' : 'is-out' },
@@ -2087,6 +2088,7 @@
         strike: () => b.def.strikeNote,
         raid: () => b.def.raidNote,
         push: () => b.def.pushNote,
+        hunt: () => b.def.huntNote,
     }[u.role] || (() => ''))();
     const center = (r, c) => [c * CELL + CELL / 2, r * CELL + CELL / 2];
 
@@ -2594,6 +2596,7 @@
             })) : null,
             featInfo(b, u),
             u.skirmish ? el('p', { class: 'cw-note' }, '타찬카(기관총 수레): 움직이기 전에 치면, 친 뒤에도 움직일 수 있다.') : null,
+            u.flank ? el('p', { class: 'cw-note' }, `측면 타격: 곁에 같은 편 부대가 없는 부대를 칠 때 피해 +${u.flank}.`) : null,
             u.yielded ? el('p', { class: 'cw-note' }, `투항해 ${josa(U.player, '으로', '로')} 넘어온 부대다.`) : null,
             u.person ? el('p', {}, '지휘: ', person(u.person)) : null,
             B.isPlayer(b, u) ? el('p', { class: 'cw-note' }, u.acted ? (B.canMove(b, u) ? '쳤다. 아직 움직일 수 있다.' : '이번 턴의 행동을 마쳤다.') : u.moved ? '이동했다. 공격하거나 대기할 수 있다.' : '이동하거나 공격할 수 있다.') : null,

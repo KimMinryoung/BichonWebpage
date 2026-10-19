@@ -104,6 +104,15 @@
             // The gun works: sheds with saw-tooth roofs and a smoking stack.
             add(`M${x + 4} ${y + 40}v-10l7 -6v6l7 -6v6l7 -6v16zM${x + 30} ${y + 40}v-28h6v28z`, 'cw-mark-house');
             add(`M${x + 33} ${y + 10}q4 -5 0 -8`, 'cw-mark-smoke');
+        } else if (cls === 'stream') {
+            // A small river to wade: a winding channel between reeds.
+            add(`M${x + 24 + (h % 2 ? 4 : -4)} ${y}q-10 12 0 24t0 24`, 'cw-mark-channel');
+            add(`M${x + 8} ${y + 14}v-7M${x + 11} ${y + 15}l2 -6M${x + 38} ${y + 38}v-7M${x + 41} ${y + 39}l2 -6`, 'cw-mark-reed');
+        } else if (cls === 'heights') {
+            // The Venets: the crown of the bank, hatched where it falls to the Volga.
+            add(`M${x + 2} ${y + 34}q10 -18 22 -20t22 16`, 'cw-mark-ridge');
+            add([30, 36, 42].map(dx => `M${x + dx} ${y + 20 + (dx - 30) / 2}l4 6`).join(''), 'cw-mark-bank');
+            add(`M${x + 14} ${y + 26}h8v-6l-4 -4l-4 4z`, 'cw-mark-house');
         } else if (cls === 'ford') {
             const rows = flooded ? [10, 20, 30, 40] : [16, 32];
             add(rows.map(dy => `M${x + 6} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), 'cw-mark-water');
