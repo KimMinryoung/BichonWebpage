@@ -604,7 +604,7 @@
     color: var(--text-secondary);
     display: grid;
     gap: 6px;
-    line-height: var(--leading-snug);
+    line-height: var(--leading-relaxed);
     margin-bottom: 16px;
     padding: 12px 14px;
     animation: commu-feedback-rise 260ms ease;
@@ -661,7 +661,7 @@
     color: var(--text-primary);
     display: block;
     font-size: 0.92rem;
-    line-height: var(--leading-snug);
+    line-height: var(--leading-relaxed);
     padding: 10px 12px;
 }
 
