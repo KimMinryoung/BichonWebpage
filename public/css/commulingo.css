@@ -87,6 +87,15 @@
     line-height: var(--leading-normal);
 }
 
+/* The book description is reading prose: justified like the site's other long
+   text (design-system.md), word-break: normal so Korean breaks between
+   characters and the stretched gaps stay tight. */
+.commulingo-hero--book > div > p {
+    text-align: justify;
+    word-break: normal;
+    hyphens: auto;
+}
+
 .commulingo-total {
     flex: 0 0 auto;
     width: 78px;
@@ -991,6 +1000,25 @@
         min-height: 0;
         padding: 0;
         width: auto;
+    }
+
+    /* A side column for the progress would take its width from every line of
+       the description; on a phone it sits on the title line instead. */
+    .commulingo-hero--book {
+        position: relative;
+    }
+
+    .commulingo-hero--book > .commulingo-total {
+        position: absolute;
+        top: 12px;
+        right: 18px;
+        display: flex;
+        align-items: baseline;
+        gap: 4px;
+    }
+
+    .commulingo-hero--book h1 {
+        padding-right: 76px;
     }
     .commu-volume-grid,
     .commu-choices,

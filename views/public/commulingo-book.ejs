@@ -43,7 +43,7 @@
         <% var commulingoClientBook = Object.assign({}, lessons.collections[0]); delete commulingoClientBook.factionGuide; %>
         <script id="commulingo-data" type="application/json"><%- JSON.stringify({ version: lessons.version, collections: [commulingoClientBook] }).replace(/</g, '\\u003c') %></script>
 
-        <header class="box commulingo-hero">
+        <header class="box commulingo-hero commulingo-hero--book">
             <div>
                 <h1><%= bookTitle %></h1>
                 <p><%= bookDescription %></p>
