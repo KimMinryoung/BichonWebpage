@@ -4,9 +4,10 @@ const path = require('node:path');
 const vm = require('node:vm');
 const { getLatestCourseMetadata } = require('../data/commulingo/course-metadata');
 
-assert.equal(getLatestCourseMetadata().id, 'french-revolution-intro');
-assert.equal(getLatestCourseMetadata().releasedAt, '2026-09-13');
-assert.equal(getLatestCourseMetadata().title.ko, '프랑스 혁명사');
+// The newest course comes from the course files' own editorial.authoredAt.
+assert.equal(getLatestCourseMetadata().id, 'sex-gender-theory-intro');
+assert.equal(getLatestCourseMetadata().releasedAt, '2026-10-19');
+assert.equal(getLatestCourseMetadata().title.ko, '마르크스주의와 성 이론');
 
 function loadService(rows, people = [{
     id: 'person', name: { ko: '인물', en: 'Person' }, epithet: { ko: '소개' },
