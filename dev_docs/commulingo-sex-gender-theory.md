@@ -18,7 +18,7 @@
 
 - 문항 근거는 marxists.org의 해당 장(허용 목록 안). 원문은 원어로 대조했다: 엥겔스·베벨·체트킨 독일어(MEW 21, 1879·1913 스캔, MIA deutsch), 레닌 러시아어(ПСС 49), 콜론타이 러시아어(MIA russkij), 보부아르 프랑스어(archive.org OCR 전사본, 판·쪽 미특정), 미첼 영어(1966 NLR 재인쇄본). 콜론타이 「테제」는 러시아어 원문을 찾지 못해 개념 설명에만 쓰고 문항 근거로 쓰지 않았다.
 - 보부아르·미첼은 저작권이 살아 있어 의역만 하고 긴 인용을 넣지 않는다. 같은 이유로 현대 이론가의 원문은 참고 문헌으로 게재하지 않는다.
-- 인물 카드: `juliet-mitchell`·`lise-vogel`(서구 마르크스주의 모음), `judith-butler`, `simone-de-beauvoir`, `shulamith-firestone`, `heidi-hartmann`, `nancy-fraser` 신규(작업물 `scripts/content/gender-theory-20261019/`). 버틀러는 영어 they, 한국어는 대명사 없이 쓴다. 표기는 리즈 보걸·하이디 하트먼(용어 「사회적 재생산 이론」·「재생산 노동」의 옛 표기 보겔·하트만도 고침).
+- 인물 카드: `juliet-mitchell`·`lise-vogel`(서구 마르크스주의 모음), `judith-butler`, `simone-de-beauvoir`, `shulamith-firestone`, `heidi-hartmann`, `nancy-fraser`, `gayle-rubin`(용어 「섹스/젠더 체계」의 관련 인물) 신규(작업물 `scripts/content/gender-theory-20261019/`). 버틀러는 영어 they, 한국어는 대명사 없이 쓴다. 표기는 리즈 보걸·하이디 하트먼(용어 「사회적 재생산 이론」·「재생산 노동」의 옛 표기 보겔·하트만도 고침).
 - 문항 출처 허용 호스트에 `newleftreview.org`를 더했다(`scripts/lib/commulingo-checks.js`).
 
 ## 사전 용어 (2026-10-19)
