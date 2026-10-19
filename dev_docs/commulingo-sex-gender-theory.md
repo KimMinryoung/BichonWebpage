@@ -28,3 +28,10 @@
 ## 등록 때 겪은 일
 
 `shards.js`의 `PUBLIC_CHAPTER_LIMITS`는 실행 중인 서버가 모듈 캐시로 들고 있다. 그래서 새 강좌 파일을 넣자마자 서버가 옛 한도(0)로 샤드를 다시 만들고, 그 manifest의 `sourceMtimeMs`가 맞아서 재시작 뒤에도 새 강좌가 빠진 채로 남았다. 한도를 바꾼 경우에는 배포(재시작) 뒤 호스트에서 `node scripts/build-commulingo-shards.js`를 한 번 더 돌린다.
+
+## 참고 문헌 (2026-10-19)
+
+강좌 원전 가운데 저작권이 끝난 것 두 편을 러시아어 원문과 함께 참고 문헌으로 올렸다(작업물 `scripts/content/kollontai-winged-eros-20261019/`, `scripts/content/soviet-family-law-docs-20261019/`, 링크 승인 `scripts/reviews/commulingo-links-20261019-family-laws-and-kollontai.json`).
+
+- `kollontai-winged-eros-1923`: 콜론타이 「날개 달린 에로스에게 길을!」 전문. 저본은 위키문헌 전사본(MIA 러시아어판과 같은 계통)이고 잡지 지면 대조는 못 했다. 명백한 오식(«народа»→«рода», «нравами»→«правами» 등)은 번역·편집 정보에 적고 바로잡았다.
+- `soviet-family-sex-laws-1918-1955`: 1918·1926년 가족법전 전문, 1920년 낙태 합법화, 1933~1934년 남색죄 결정 세 건, 1936년 낙태 금지, 1955년 금지 폐지. 1917년 12월 이혼·시민혼 법령은 이미 `october-decrees-1917`에 있어 넣지 않았다. 용어 「소련 남색죄」의 「러시아 공화국 형법 제154a조」 별칭은 문헌 우선 규칙에 따라 검색 전용으로 돌리고 문헌 `#article-154a-1934`로 잇는다. 사건 「소련의 낙태 합법화·금지와 남색죄 재범죄화」에는 1920년 결정이 발췌로 실린다.
