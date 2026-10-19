@@ -49,7 +49,7 @@
         review: document.getElementById('commuReviewBtn'),
         reviewNote: document.getElementById('commuReviewNote'),
         guide: document.getElementById('faction-guide'),
-        dictionary: document.getElementById('commuBookDictionary')
+        chapterDictionaries: document.querySelectorAll('.commu-chapter-dictionary')
     };
 
     els.back.addEventListener('click', function() {
@@ -256,6 +256,7 @@
                         id: lesson.id,
                         collectionId: collection.id,
                         collectionTitle: text(collection.title),
+                        chapterId: chapter.id,
                         chapterNumber: chapter.chapterNumber,
                         chapterTitle: text(chapter.title),
                         partNumber: chapter.partNumber,
@@ -276,6 +277,7 @@
                         id: chapter.id + '-locked',
                         collectionId: collection.id,
                         collectionTitle: text(collection.title),
+                        chapterId: chapter.id,
                         chapterNumber: chapter.chapterNumber,
                         chapterTitle: text(chapter.title),
                         partNumber: chapter.partNumber,
@@ -608,9 +610,7 @@
     }
 
     function setBookContextHidden(hidden) {
-        [els.guide, els.dictionary].forEach(function(node) {
-            if (node) node.classList.toggle('is-hidden', hidden);
-        });
+        if (els.guide) els.guide.classList.toggle('is-hidden', hidden);
     }
 
     function scrollToQuiz() {
@@ -892,6 +892,9 @@
                 || escapeHtml(active.lesson.focus || introFallback(active.lesson));
         }
         renderDiagram(active.lesson);
+        Array.prototype.forEach.call(els.chapterDictionaries, function(node) {
+            node.classList.toggle('is-hidden', node.getAttribute('data-chapter-id') !== active.lesson.chapterId);
+        });
         els.next.disabled = false;
         els.next.textContent = lang === 'en' ? 'Start questions' : '문제 풀기';
     }

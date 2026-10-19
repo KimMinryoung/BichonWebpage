@@ -24,7 +24,7 @@ router.get('/book/:collectionId', async (req, res) => {
         if (!collection && MERGED_BOOKS[collectionId]) return res.redirect(301, `/commulingo/book/${MERGED_BOOKS[collectionId]}`);
         if (!collection) return res.redirect('/commulingo');
 
-        // Linked chapters, dictionary chips, and the decision-link payload are
+        // Linked chapters, chapter dictionary chips, and the decision-link payload are
         // pure functions of (collection, link indexes, lang); the chip list
         // alone walks every lesson shard (~104 files, ~225ms measured for
         // capital-vol3), so rebuild only when those references change and
@@ -37,7 +37,7 @@ router.get('/book/:collectionId', async (req, res) => {
             console.error('commulingo book linkify:', err);
             pageData = {
                 linked: collection,
-                dictionaryEntries: { people: [], terms: [], events: [], docs: [] },
+                chapterDictionary: {},
                 decisionLinks: { blocked: [], people: [] },
             };
         }
@@ -45,7 +45,7 @@ router.get('/book/:collectionId', async (req, res) => {
         const bookTitle = localize(collection.title, res.locals.lang);
         res.render('public/commulingo-book', {
             lessons: { version: catalog.version, collections: [pageData.linked] },
-            dictionaryEntries: pageData.dictionaryEntries,
+            chapterDictionary: pageData.chapterDictionary,
             decisionLinks: pageData.decisionLinks,
             bookFormat: collection.format || 'quiz',
             bookTitle,

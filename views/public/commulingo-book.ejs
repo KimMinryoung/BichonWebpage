@@ -143,33 +143,6 @@
         </section>
         <% } %>
 
-        <%# Dictionary entries this book's prose actually names, read off the links
-            the linkifier found in its lessons. The chapter list is titles and
-            one-line summaries, so without this the page gives no sign that the
-            people and glossary entries behind it exist. %>
-        <%# Every chip opens in a new tab for the same reason the links inside the
-            lessons do: leaving the book loses the reader's place in it. %>
-        <% var dict = (typeof dictionaryEntries !== 'undefined' && dictionaryEntries) || { people: [], terms: [], events: [] }; %>
-        <% var dictGroups = [
-               { items: dict.terms || [], base: '/commulingo/terms/', label: lang === 'en' ? 'Terms' : '용어' },
-               { items: dict.people || [], base: '/commulingo/people/', label: lang === 'en' ? 'People' : '인물' },
-               { items: dict.events || [], base: '/commulingo/events/', label: lang === 'en' ? 'Historical events' : '역사 사건' },
-               { items: dict.docs || [], base: '/commulingo/docs/', label: lang === 'en' ? 'Reference texts' : '참고 문헌' }
-           ].filter(function(group) { return group.items.length; }); %>
-        <% if (dictGroups.length) { %>
-        <section class="box commu-book-dictionary" id="commuBookDictionary" aria-labelledby="book-dictionary">
-            <h2 id="book-dictionary"><%= lang === 'en' ? 'Dictionary entries in this book' : '이 책이 다루는 사전 항목' %></h2>
-            <% dictGroups.forEach(function(group) { %>
-            <h3><%= group.label %></h3>
-            <div class="commu-term-chips">
-                <% group.items.forEach(function(entry) { %>
-                <a class="commu-term-chip" target="_blank" rel="noopener" href="<%= group.base %><%= encodeURIComponent(entry.id) %>"><%= factionText(entry.label) %></a>
-                <% }) %>
-            </div>
-            <% }) %>
-        </section>
-        <% } %>
-
         <section class="commulingo-lessons" id="commuLessonList" aria-label="<%= bookTitle %>"></section>
 
         <section class="commu-quiz is-hidden" id="commuQuiz" aria-live="polite">
@@ -188,6 +161,31 @@
                     <p class="commu-intro-summary" id="commuIntroSummary"></p>
                     <p class="commu-intro-focus" id="commuIntroFocus"></p>
                     <div class="commu-diagram" id="commuDiagram" aria-label="Concept diagram"></div>
+                    <%# Dictionary entries this chapter's prose names, read off the
+                        links the linkifier found in its lessons; commulingo.js
+                        shows the block of the chapter being opened. Every chip
+                        opens in a new tab: leaving loses the reader's place. %>
+                    <% var chapterDict = (typeof chapterDictionary !== 'undefined' && chapterDictionary) || {}; %>
+                    <% Object.keys(chapterDict).forEach(function(chapterId) { %>
+                    <% var dict = chapterDict[chapterId]; %>
+                    <% var dictGroups = [
+                           { items: dict.terms || [], base: '/commulingo/terms/', label: lang === 'en' ? 'Terms' : '용어' },
+                           { items: dict.people || [], base: '/commulingo/people/', label: lang === 'en' ? 'People' : '인물' },
+                           { items: dict.events || [], base: '/commulingo/events/', label: lang === 'en' ? 'Historical events' : '역사 사건' },
+                           { items: dict.docs || [], base: '/commulingo/docs/', label: lang === 'en' ? 'Reference texts' : '참고 문헌' }
+                       ].filter(function(group) { return group.items.length; }); %>
+                    <section class="commu-chapter-dictionary is-hidden" data-chapter-id="<%= chapterId %>" aria-label="<%= lang === 'en' ? 'Dictionary entries in this chapter' : '이 장의 사전 항목' %>">
+                        <h3><%= lang === 'en' ? 'Dictionary entries in this chapter' : '이 장의 사전 항목' %></h3>
+                        <% dictGroups.forEach(function(group) { %>
+                        <h4><%= group.label %></h4>
+                        <div class="commu-term-chips">
+                            <% group.items.forEach(function(entry) { %>
+                            <a class="commu-term-chip" target="_blank" rel="noopener" href="<%= group.base %><%= encodeURIComponent(entry.id) %>"><%= entry.label %></a>
+                            <% }) %>
+                        </div>
+                        <% }) %>
+                    </section>
+                    <% }) %>
                 </section>
                 <p class="commu-question-focus is-hidden" id="commuFocus"></p>
                 <h2 id="commuPrompt"></h2>

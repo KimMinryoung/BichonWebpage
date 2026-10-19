@@ -4706,14 +4706,24 @@ a.commu-dict-chip:hover { text-decoration: none; }
 /* The dictionary entries a book's lessons name, listed under its hero. Two
    chip rows under one heading, so the h3 labels sit tighter than a section
    heading would. */
-.commu-book-dictionary { margin-bottom: 1.5rem; }
-.commu-book-dictionary h3 {
-    margin: 1rem 0 .5rem;
-    font-size: .9rem;
-    font-weight: 600;
-    opacity: .75;
+/* The chapter's dictionary entries close its concept brief, divided off like
+   the brief's own sections. */
+.commu-chapter-dictionary {
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+    padding-top: 12px;
 }
-.commu-book-dictionary h3:first-of-type { margin-top: .75rem; }
+.commu-chapter-dictionary h3 {
+    color: var(--link);
+    font-size: 0.94rem;
+    margin: 0;
+}
+.commu-chapter-dictionary h4 {
+    margin: .75rem 0 .5rem;
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
 
 /* A four-layer map for a book whose political labels otherwise look like one
    flat party list. Explicit left-to-right axes and headings carry meaning; card

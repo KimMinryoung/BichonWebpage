@@ -253,14 +253,6 @@
     .commu-dict-tab span[data-short] { font-size: 0; }
     .commu-dict-tab span[data-short]::after { content: attr(data-short); font-size: .85rem; }
 }
-.commu-book-dictionary { margin-bottom: 1.5rem; }
-.commu-book-dictionary h3 {
-    margin: 1rem 0 .5rem;
-    font-size: .9rem;
-    font-weight: 600;
-    opacity: .75;
-}
-.commu-book-dictionary h3:first-of-type { margin-top: .75rem; }
 
 .commu-drill-promo {
     align-items: center;

@@ -1754,14 +1754,6 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-term-chip { display: inline-block; padding: .3rem .8rem; border: 1px solid var(--border, #555); border-radius: 0; color: inherit; text-decoration: none; font-size: .95rem; }
 .commu-term-chip:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
 .commu-term-chip.is-child { font-size: .88rem; opacity: .85; border-style: dashed; }
-.commu-book-dictionary { margin-bottom: 1.5rem; }
-.commu-book-dictionary h3 {
-    margin: 1rem 0 .5rem;
-    font-size: .9rem;
-    font-weight: 600;
-    opacity: .75;
-}
-.commu-book-dictionary h3:first-of-type { margin-top: .75rem; }
 
 .commu-drill-promo {
     align-items: center;

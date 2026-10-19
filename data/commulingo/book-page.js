@@ -66,9 +66,9 @@ async function bookPageData(collection, langRaw) {
             focusHtml: linkLocalized(linkers, chapter.learningFocus),
         })),
     };
-    const dictionaryEntries = await bookDictionaryEntries(collection, lang);
+    const chapterDictionary = await chapterDictionaryEntries(collection, lang);
 
-    const entry = { collectionRef: collection, linked, dictionaryEntries, decisionLinks };
+    const entry = { collectionRef: collection, linked, chapterDictionary, decisionLinks };
     generation.set(key, entry);
     return entry;
 }
@@ -95,26 +95,28 @@ function linkLocalized(linkers, value) {
     return out;
 }
 
-// Which dictionary entries a book actually talks about, read off what the
-// linker found rather than curated by hand — a chapter list of one-line
-// summaries shows almost none of them, so the book page would otherwise give no
-// sign that the entries exist. Walks every lesson shard of the collection, so
-// it only runs from bookPageData's memo miss, not per request.
+// Which dictionary entries each chapter actually talks about, read off what the
+// linker found rather than curated by hand. The lesson screen shows a chapter's
+// entries under its concept brief; one list for the whole book ran to dozens
+// of chips that had little to do with any one chapter. Walks every lesson
+// shard of the collection, so it only runs from bookPageData's memo miss, not
+// per request.
 //
 // A chip carries the entry's headword, not whichever alias the prose happened to
 // use: prose saying 맬서스 인구론 or 감소되지 않은 노동수익 lists 맬서스주의 and
 // 노동전수익권, the names those entries are filed under. The index entries carry
 // exactly those labels, so no second lookup table is needed.
-async function bookDictionaryEntries(collection, lang) {
+async function chapterDictionaryEntries(collection, lang) {
     const indexes = await getLinkIndexes(lang);
-    const found = { people: new Map(), terms: new Map(), events: new Map(), docs: new Map() };
     const LABELS = {
         people: entry => entry.displayName || localize(entry.name, lang),
         terms: entry => entry.label,
         events: entry => entry.title,
         docs: entry => entry.label,
     };
+    const byChapter = {};
     for (const chapter of collection.chapters || []) {
+        const found = { people: new Map(), terms: new Map(), events: new Map(), docs: new Map() };
         for (const passage of chapterPassages(chapter, lang)) {
             const linked = passageEntries(indexes, collection, passage);
             Object.keys(found).forEach(kind => {
@@ -124,13 +126,15 @@ async function bookDictionaryEntries(collection, lang) {
                 });
             });
         }
+        if (!Object.values(found).some(map => map.size)) continue;
+        byChapter[chapter.id] = {
+            people: [...found.people.values()],
+            terms: [...found.terms.values()],
+            events: [...found.events.values()],
+            docs: [...found.docs.values()],
+        };
     }
-    return {
-        people: [...found.people.values()],
-        terms: [...found.terms.values()],
-        events: [...found.events.values()],
-        docs: [...found.docs.values()],
-    };
+    return byChapter;
 }
 
 // The prose of one chapter a reader meets: summary, focus, and each lesson
@@ -169,7 +173,7 @@ function passageEntries(indexes, collection, passage) {
     return link.found;
 }
 
-// The reverse of bookDictionaryEntries, per chapter: which course chapters a
+// The reverse of chapterDictionaryEntries: which course chapters a
 // dictionary entry is linked from, so its detail page can send a reader into
 // the lesson (/commulingo/book/<book>#lesson=<first lesson>). Chapters where
 // the entry is linked from more passages come first.
