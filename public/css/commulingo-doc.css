@@ -131,6 +131,20 @@
   font-weight: 600;
 }
 
+/* Tariff schedules carry sentence-long goods descriptions and notes; those
+   cells wrap instead of stretching the table to one line per row. */
+.book .tariff-table {
+  min-width: 0;
+}
+
+.book .tariff-table td {
+  white-space: normal;
+}
+
+.book .tariff-table .tariff-item {
+  min-width: 14em;
+}
+
 /* Dictionary links in the document body. These are the classes linkify.js
    emits; a fragment that links a name by hand writes no class, so the route
    (routes/commulingo-docs.js) stamps the same class on those before render —
