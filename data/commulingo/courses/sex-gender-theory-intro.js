@@ -13,18 +13,19 @@ module.exports = {
     "en": "Marxism and Theories of Sex and Gender"
   },
   "badge": {
-    "ko": "짧은 학습 · 3편",
-    "en": "3 short lessons"
+    "ko": "짧은 학습 · 7편",
+    "en": "7 short lessons"
   },
   "description": {
-    "ko": "엥겔스와 베벨에서 콜론타이와 레닌, 보부아르와 줄리엣 미첼까지, 여성 억압의 기원과 성·사랑의 정치, 경제 변화와 여성 해방의 관계를 두고 사회주의자와 그 비판자들이 어디서 갈렸는지 당사자의 저작으로 비교합니다. 각 편은 개념 설명과 6문항, 오답 해설로 구성됩니다.",
-    "en": "From Engels and Bebel to Kollontai and Lenin, and from Beauvoir to Juliet Mitchell, compare where socialists and their critics divided over the origin of women's oppression, the politics of sex and love, and how economic change relates to women's liberation, using the participants' own writings. Each lesson has a concept brief, six questions, and feedback."
+    "ko": "엥겔스와 베벨에서 콜론타이와 레닌, 보부아르와 미첼, 파이어스톤, 하트먼과 보걸, 라이히·마르쿠제와 푸코, 버틀러와 프레이저까지, 여성 억압의 기원, 성과 사랑의 정치, 경제 변화와 여성 해방, 생물학과 역사, 자본주의와 가부장제, 성 해방과 권력, 성적 억압의 물질성을 두고 사회주의자와 그 비판자들이 어디서 갈렸는지 당사자의 저작으로 비교합니다. 각 편은 개념 설명과 6문항, 오답 해설로 구성됩니다.",
+    "en": "From Engels and Bebel, Kollontai and Lenin, Beauvoir and Mitchell, through Firestone, Hartmann and Vogel, Reich, Marcuse and Foucault, to Butler and Fraser, compare where socialists and their critics divided over the origin of women's oppression, the politics of sex and love, economic change and women's liberation, biology and history, capitalism and patriarchy, sexual liberation and power, and the materiality of sexual oppression, using the participants' own writings. Each lesson has a concept brief, six questions, and feedback."
   },
   "editorial": {
     "authoredAt": "2026-10-19",
-    "revision": 1,
+    "revision": 2,
     "interpretation": "Comparisons of the specified writings, not whole-career classifications",
-    "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios."
+    "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios.",
+    "revisedAt": "2026-10-19"
   },
   "chapters": [
     {
@@ -1433,6 +1434,1922 @@ module.exports = {
                 "label": {
                   "ko": "미첼, 「여성: 가장 긴 혁명」의 네 구조 설명과 결론 (1971년 수정판)",
                   "en": "Mitchell, 'Women: The Longest Revolution', the four structures and the conclusion (1971 revised version)"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sex-gender-theory-intro-ch04",
+      "volumeNumber": 15,
+      "chapterNumber": 4,
+      "title": {
+        "ko": "여성 억압의 뿌리는 생물학인가, 역사인가?",
+        "en": "Does women's oppression stem from biology or from history?"
+      },
+      "sourceUrl": "https://www.marxists.org/subject/women/authors/firestone-shulamith/dialectic-sex.htm",
+      "summary": {
+        "ko": "약 12분 · 슐라미스 파이어스톤의 『성의 변증법』(1970) 제1장과, 그 책을 비판한 줄리엣 미첼의 「여성: 가장 긴 혁명」 1971년판을 나란히 읽고, 두 사람이 ‘유물론’이라는 같은 말로 억압의 물질적 토대를 어디서 달리 찾았는지 확인합니다.",
+        "en": "About 12 minutes · Read the first chapter of Shulamith Firestone's The Dialectic of Sex (1970) alongside the 1971 version of Juliet Mitchell's 'Women: The Longest Revolution', which criticises it, and see where the two, both calling themselves materialists, located the material basis of women's oppression."
+      },
+      "learningFocus": {
+        "ko": "파이어스톤을 마르크스주의를 내던진 사람으로, 미첼을 생물학을 부정한 사람으로 읽기 쉽습니다. 파이어스톤은 마르크스·엥겔스의 분석 방법을 빌려 역사적 유물론을 ‘넓히자’고 했고, 미첼은 생물학적 차이를 인정하되 그것이 어떤 사회 구조 안에서 작동하는지를 물었습니다. 쟁점은 생물학이 중요한가가 아니라, 재생산하는 몸을 역사 밖의 토대로 둘지 역사 속에서 짜인 구조로 볼지였습니다. ‘급진 페미니즘’은 파이어스톤 스스로 쓴 이름입니다.",
+        "en": "It is easy to read Firestone as someone who threw out Marxism, and Mitchell as someone who denied biology. Firestone borrowed Marx and Engels's method of analysis and proposed to 'enlarge' historical materialism; Mitchell granted the biological difference but asked how it operates within particular social structures. The question was not whether biology matters but whether the reproducing body is a base standing outside history or a structure organised within it. 'Radical feminism' is Firestone's own name for her position."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "배경: 같은 운동 안의 두 갈래",
+            "items": [
+              "슐라미스 파이어스톤은 1970년 『성의 변증법: 페미니스트 혁명을 위하여』를 냈습니다. 제1장 「성의 변증법」은 마르크스와 엥겔스가 여성에 대해 내린 개별 견해가 아니라 그들의 분석 방법을 빌려, 경제 계급보다 깊은 ‘성 계급’의 역사를 설명하겠다고 선언합니다. 그녀는 자기 입장을 ‘급진 페미니즘’이라 불렀습니다.",
+              "줄리엣 미첼은 1966년 《뉴레프트리뷰》에 실은 「여성: 가장 긴 혁명」을 1971년 『여성의 처지(Woman's Estate)』에 넣으며 고쳐 썼고, 새로 붙인 첫머리에서 급진 페미니즘을 다룹니다. 1969년 워싱턴 집회에서 뉴욕 단체를 대표한 파이어스톤이 남성 특권의 폐지를 포함하지 않는 혁명에는 더 참여하지 않겠다고 선언한 일을 엘런 윌리스의 회고로 소개하고, 『성의 변증법』을 그 이론의 가장 완전한 전개라 부릅니다.",
+              "둘 다 스스로 유물론자였습니다. 갈린 곳은 억압의 ‘물질적 토대’가 무엇이냐, 곧 재생산하는 몸의 생물학이냐, 특정한 사회에서 역사적으로 짜인 구조냐였습니다."
+            ]
+          },
+          {
+            "title": "파이어스톤: 성 자체에 기초한 유물론적 역사관",
+            "items": [
+              "엥겔스의 역사적 유물론 정의는 엄격히 경제적이어서, 역사적 변증법 밑에 깔린 성적 기층을 경제라는 필터로만 보고 그 자체로 평가하지 못했다고 비판합니다. 최초의 분업이 남녀 사이에 있었다는 엥겔스의 지적도 경제 구조와 겹치는 곳에서만 나온 흩어진 인식이라는 것입니다. 상대성 이론이 뉴턴 물리학을 폐기하지 않고 그 둘레에 원을 그었듯, 역사적 유물론을 넓혀 ‘성 자체에 기초한 유물론적 역사관’을 세우자고 합니다.",
+              "보부아르가 ‘타자’를 근본 범주로 내세운 것은 과녁을 지나친 것이라며, 그 이원성 자체가 성 분할, 곧 생식에서 나왔다고 보자고 합니다. 차이 자체가 아니라 차이의 재생산 기능이 계급 체계를 낳았고, 생물학적 가족은 본래 불평등한 권력 분배라는 것입니다.",
+              "근거로 네 가지를 듭니다. 피임 이전의 여성은 생리·출산·수유 때문에 생존을 남성에게 의존했고, 인간의 아기는 오래 무력하며, 어머니와 아이의 상호의존이 모든 사회와 심리를 빚었고, 생식상의 차이가 최초의 분업과 카스트의 원형이 되었다는 것입니다. 인류학이 든 예외들은 인간 본성의 유연성을 보여 줄 뿐이라고 합니다.",
+              "그러나 자연에서 나왔다는 것이 정당화는 아니며, 인류는 자연을 넘어서기 시작했다고 합니다. 생물학적 기반이 사라져도 해방은 보장되지 않고 피임 같은 신기술은 오히려 착취를 강화할 수 있으므로, 여성이 재생산의 통제권을 (일시적으로) 장악해야 한다는 것입니다. 목표는 남성 특권이 아니라 성 구별 자체를 없애 생식기의 차이가 문화적으로 무의미해지는 것, 인공 재생산이라는 선택지, 사이버네틱스에 의한 노동 자체의 폐지, 생물학적 가족의 폭정 타파입니다.",
+              "프로이트에 대해서는 그의 문화적 편견이 통찰을 무효로 만들지 않는다며, 마르크스·엥겔스의 역사적 유물론과 프로이트의 내면 이해를 결합하겠다고 합니다. 프로이트는 눈앞의 사회 맥락에서 심리의 역학을 옳게 봤지만, 그 맥락의 기본 구조가 인류 전체에 공통이라 절대적 조건처럼 보였고, 그래서 죽음 충동 같은 선험적 구성물을 세웠다는 것입니다. 인공 재생산, 아동기, 프로이트주의를 다루는 뒷 장들은 MIA에 실려 있지 않습니다."
+            ]
+          },
+          {
+            "title": "미첼: 유물론이지만 역사적이지도 변증법적이지도 않다",
+            "items": [
+              "미첼은 『성의 변증법』이 여성과 아이가 함께 겪는 억압, 모든 문화에 스민 가족 관계의 기본 패턴, 억압의 심리학 같은 적절한 통찰을 주고, 임신과 ‘사랑에 빠짐’을 둘러싼 신비화를 벗겨 낸 점을 인정합니다. 프로이트의 발견을 중요하게 본 것도 옳다고 합니다.",
+              "그러나 성 분할을 계급 분석에 넣는 것이 유물론적이기는 해도 역사적이지도 변증법적이지도 않다고 봅니다. 미래의 기술 혁명이 남성/여성의 이원성을 단순한 전체로 조화시킨다는 구상은 변증법 이전의 이원론으로 돌아가는 것이고, 성 이원론이 최초의 억압이라는 말은 참이더라도 일반적인 진리, ‘단순한 유물론’일 뿐이라는 것입니다. 주인과 하인이 늘 있었어도 봉건 영주와 농민, 자본가와 노동자처럼 그것이 특정 사회에서 어떻게 작동하는지 알아야 극복할 수 있다고 합니다. 그녀의 결론은 파이어스톤이 “밑으로는 유물론, 위로는 관념론”이라는 것입니다.",
+              "같은 글에서 미첼은 모성이라는 생물학적 기능이 시간을 넘어선 사실로 보여 마르크스주의의 역사 분석을 벗어나는 듯하지만, 재생산이 역사가 아닌 생물학의 일부라는 생각은 환상이라고 씁니다. 피임은 재생산 양식을 바꿀 수 있는 세계사적 혁신이지만, 기술은 전체 구조에 매개되며 파이어스톤의 ‘생태학적’ 혁명은 사회 세력과 기술의 관계를 무시한다고 지적합니다."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "파이어스톤, 『성의 변증법』(1970) 제1장 「성의 변증법」. MIA에는 1979년 영국 위민스프레스판의 제1장만 실려 있습니다. 영어 원문을 읽고 옮겼습니다.",
+              "미첼, 「여성: 가장 긴 혁명」 1971년판(『여성의 처지』, 펭귄, 75~122쪽): 첫머리의 「페미니즘」 절과 「생산」, 「재생산」 절. 파이어스톤 비판은 1966년 《뉴레프트리뷰》 원판에는 없고 이 수정판에만 있습니다."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "Background: two currents in one movement",
+            "items": [
+              "Shulamith Firestone published The Dialectic of Sex: The Case for Feminist Revolution in 1970. Its first chapter, 'The Dialectic of Sex', announces that it will borrow not Marx and Engels's particular opinions about women but their method of analysis, to explain the history of a 'sex class' deeper than economic class. She called her position 'radical feminism'.",
+              "Juliet Mitchell reworked her 1966 New Left Review essay 'Women: The Longest Revolution' for her 1971 book Woman's Estate, and its new opening deals with radical feminism. Through Ellen Willis's account she recalls a 1969 rally in Washington where Firestone, speaking for the New York group, announced that women would no longer take part in a revolution that did not include the abolition of male privilege; she calls The Dialectic of Sex the fullest development of that theory to date.",
+              "Both called themselves materialists. Where they parted was over what the 'material basis' of oppression is: the biology of the reproducing body, or structures organised historically within particular societies."
+            ]
+          },
+          {
+            "title": "Firestone: a materialist view of history based on sex itself",
+            "items": [
+              "Engels's definition of historical materialism, she argues, is strictly economic: he could see the sexual substratum of the historical dialectic only through an economic filter and could not evaluate it in its own right. His remark that the first division of labour was between man and woman was a scattered recognition, made only where it overlapped his economic construct. Just as relativity did not invalidate Newtonian physics but drew a circle around it, historical materialism should be enlarged into 'a materialist view of history based on sex itself'.",
+              "Beauvoir, she says, overshot her mark by positing Otherness as a fundamental category; it is simpler to suppose that this dualism sprang from the sexual division itself, from procreation. Not the difference as such but the reproductive functions of the difference produced a class system, and the biological family is an inherently unequal distribution of power.",
+              "She gives four grounds: before birth control women depended on men for survival because of menstruation, childbirth and nursing; human infants stay helpless for a long time; the mother/child interdependency has shaped every society and psychology; and the reproductive difference led to the first division of labour and furnished the paradigm of caste. The anthropological exceptions, she says, prove only the flexibility of human nature.",
+              "Yet natural origin is no justification, and humanity has begun to transcend nature. Removing the biological basis will not by itself free women, and new technology such as fertility control may be used to reinforce exploitation, so women must (temporarily) seize control of reproduction. The goal is the elimination not of male privilege but of the sex distinction itself, so that genital differences no longer matter culturally; the option of artificial reproduction; the end of labour itself through cybernetics; and the breaking of the tyranny of the biological family.",
+              "On Freud, she holds that his cultural bias does not invalidate his perceptions, and proposes to join the historical materialism of Marx and Engels with Freud's understanding of inner life. Freud saw psychological dynamics correctly in their immediate social context, but because that context's basic structure was common to all humanity it looked like an absolute condition, which led him to a priori constructs such as the death wish. The later chapters on artificial reproduction, childhood and Freudianism are not on the MIA."
+            ]
+          },
+          {
+            "title": "Mitchell: materialist, but neither historical nor dialectical",
+            "items": [
+              "Mitchell grants that The Dialectic of Sex yields pertinent insights, such as the shared oppression of women and children, a fundamental pattern of family relationships running through all cultures, and the psychology of oppression, and that its attack on the mystifications around pregnancy and 'being in love' is salutary. Firestone is also right, she says, to find Freud's discoveries so important.",
+              "But enlarging class analysis to include the division of the sexes, though materialist, is neither historical nor dialectical. The idea that a future technological revolution will harmonise the male/female duality into a simple whole returns to the dualism that preceded dialectical materialism, and the claim that sex dualism was the first oppression, even if true, is a general truth, 'simplistic materialism'. There have always been masters and servants, but whether they are feudal lords and peasants or capitalists and workers is what we must know to overcome them. Her verdict: Firestone's is 'materialism below, idealist above'.",
+              "In the same essay Mitchell writes that maternity, as a universal, atemporal biological fact, seems to escape Marxist historical analysis, but that the view of reproduction as part of biology rather than history is an illusion. Contraception is an innovation of world-historic importance that could transform the mode of reproduction, yet technology is mediated by the total structure, and Firestone's 'ecological' revolution ignores the relationship between social forces and technology."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "Firestone, The Dialectic of Sex (1970), chapter 1 'The Dialectic of Sex'. The MIA reproduces only this first chapter, from the 1979 Women's Press edition. Read in the English original.",
+              "Mitchell, 'Women: The Longest Revolution', 1971 version (Woman's Estate, Penguin, pp. 75-122): the opening section 'Feminism' and the sections on production and reproduction. The critique of Firestone appears only in this revised version, not in the 1966 New Left Review original."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "역사적 유물론의 확장",
+            "text": "파이어스톤은 경제 분석을 더 큰 틀 안에 두는 ‘성 자체에 기초한 유물론적 역사관’을 제안했습니다."
+          },
+          {
+            "title": "재생산과 생물학적 가족",
+            "text": "파이어스톤은 차이의 재생산 기능과 생물학적 가족을 성 계급의 물질적 토대로 봤습니다."
+          },
+          {
+            "title": "밑으로는 유물론, 위로는 관념론",
+            "text": "미첼은 파이어스톤의 이론이 유물론적이지만 역사적이지도 변증법적이지도 않다고 비판했습니다."
+          },
+          {
+            "title": "구조에 매개된 기술",
+            "text": "미첼은 재생산을 역사 밖의 생물학으로 보는 것은 환상이고 기술은 전체 구조에 매개된다고 했습니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "Enlarging historical materialism",
+            "text": "Firestone proposed a materialist view of history based on sex itself, with economic analysis as a smaller sphere within it."
+          },
+          {
+            "title": "Reproduction and the biological family",
+            "text": "Firestone took the reproductive functions of the difference and the biological family as the material basis of sex class."
+          },
+          {
+            "title": "Materialism below, idealist above",
+            "text": "Mitchell held that Firestone's theory was materialist but neither historical nor dialectical."
+          },
+          {
+            "title": "Technology mediated by structure",
+            "text": "Mitchell called the view of reproduction as biology outside history an illusion, and held that technology is mediated by the total structure."
+          }
+        ]
+      },
+      "diagram": {
+        "kind": "contrast",
+        "ko": {
+          "title": "억압의 물질적 토대",
+          "left": {
+            "heading": "파이어스톤, 『성의 변증법』 (1970)",
+            "rows": [
+              "엥겔스 평가: 성을 경제라는 필터로만 봄",
+              "물질적 토대: 차이의 재생산 기능과 생물학적 가족",
+              "보부아르 비판: ‘타자’ 대신 생식에서 이원성이 나옴",
+              "기술: 인공 재생산·사이버네틱스가 생물학적 기반을 끝냄",
+              "목표: 재생산 통제권 장악, 성 구별 자체의 제거"
+            ]
+          },
+          "right": {
+            "heading": "미첼, 「여성: 가장 긴 혁명」 (1971년판)",
+            "rows": [
+              "파이어스톤 평가: 유물론이지만 역사적·변증법적이지 않음",
+              "물질적 토대: 특정 사회에서 짜인 여러 구조",
+              "재생산: 역사 밖의 생물학으로 보는 것은 환상",
+              "기술: 전체 구조와 사회 세력에 매개됨",
+              "프로이트: 마르크스주의가 받아들여야 할 새 발견"
+            ]
+          }
+        },
+        "en": {
+          "title": "The material basis of oppression",
+          "left": {
+            "heading": "Firestone, The Dialectic of Sex (1970)",
+            "rows": [
+              "On Engels: saw sex only through an economic filter",
+              "Material basis: the reproductive functions of difference, the biological family",
+              "Against Beauvoir: dualism springs from procreation, not Otherness",
+              "Technology: artificial reproduction and cybernetics end the biological base",
+              "Goal: seize control of reproduction, abolish the sex distinction itself"
+            ]
+          },
+          "right": {
+            "heading": "Mitchell, 'Women: The Longest Revolution' (1971 version)",
+            "rows": [
+              "On Firestone: materialist, but neither historical nor dialectical",
+              "Material basis: several structures organised in particular societies",
+              "Reproduction: seeing it as biology outside history is an illusion",
+              "Technology: mediated by the total structure and social forces",
+              "Freud: a new discovery Marxism must take in"
+            ]
+          }
+        }
+      },
+      "lessons": [
+        {
+          "id": "sex-gender-theory-intro-ch04-basic",
+          "level": "basic",
+          "title": {
+            "ko": "파이어스톤과 미첼: 생물학이냐 역사냐",
+            "en": "Firestone and Mitchell: biology or history?"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "파이어스톤은 『성의 변증법』 제1장에서 마르크스와 엥겔스의 역사적 유물론을 어떻게 다루자고 했을까요?",
+                "en": "In the first chapter of The Dialectic of Sex, what did Firestone propose to do with Marx and Engels's historical materialism?"
+              },
+              "choices": {
+                "ko": [
+                  "그들의 결론이 아니라 분석 방법을 빌려, 상대성 이론이 뉴턴 물리학을 감싸듯 경제 분석을 품는 ‘성 자체에 기초한 유물론적 역사관’으로 넓히자고 했습니다.",
+                  "남성의 편견이 배어 있는 이론이므로 변증법적·유물론적 방법까지 함께 버리고, 여성의 경험에서 새 이론을 처음부터 세우자고 했습니다.",
+                  "여성 억압도 결국 생산수단과 재생산 수단의 소유로 설명되므로, 엥겔스의 경제적 정의를 고치지 말고 그대로 여성 문제에 적용하자고 했습니다."
+                ],
+                "en": [
+                  "Borrow their method rather than their conclusions and enlarge it, as relativity encircled Newtonian physics, into a materialist view of history based on sex itself.",
+                  "Since the theory is steeped in male bias, discard the dialectical and materialist method along with it and build a new theory from women's experience alone.",
+                  "Since women's oppression too comes down to ownership of the means of production and reproduction, apply Engels's economic definition to it unchanged."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "그녀는 마르크스와 엥겔스에게서 여성에 대한 견해가 아니라 분석 방법을 배울 수 있다고 하고, 역사적 유물론을 넓혀 경제적 설명을 더 작은 영역으로 품자고 합니다.",
+                  "그녀는 마르크스의 편견을 지적하면서도 사회주의자들의 통찰을 버리지 않았고 오히려 그 분석을 넓힌다고 썼습니다. 방법은 받아들이는 쪽입니다.",
+                  "반대입니다. 그녀는 생산수단은 물론 재생산 수단의 소유로 거슬러 올라가는 경제적 진단도 모든 것을 설명하지 못한다고 썼습니다."
+                ],
+                "en": [
+                  "She says one can learn from Marx and Engels not their opinions about women but their analytic method, and proposes to enlarge historical materialism so that the economic account becomes a smaller sphere within it.",
+                  "She points to Marx's bias, but writes that radical feminism has not thrown out the socialists' insights and instead enlarges their analysis. She keeps the method.",
+                  "The reverse: she writes that an economic diagnosis traced to ownership of the means of production, even of the means of reproduction, does not explain everything."
+                ]
+              },
+              "explanation": {
+                "ko": "파이어스톤은 마르크스와 엥겔스가 변증법적이면서 유물론적인 분석 방법을 처음 세웠다고 높이 평가합니다. 그러나 엥겔스가 『공상에서 과학으로』에서 내린 역사적 유물론의 정의는 엄격히 경제적이어서, 성을 경제라는 필터로만 보고 그 자체로 평가하지 못했다는 것입니다. 그래서 상대성 이론이 뉴턴 물리학을 폐기하지 않고 그 둘레에 원을 그은 것처럼 역사적 유물론을 넓히자고 하고, 경제 밑의 현실을 심리성적인 것으로 보는 관념론과도 다른 ‘제3의 길’로 성 자체에 기초한 유물론적 역사관을 제안합니다. 장 끝에서 그녀는 엥겔스의 정의를 직접 고쳐, 역사의 궁극 원인을 생식을 위한 두 생물학적 계급으로의 분할, 곧 ‘성의 변증법’에서 찾습니다.",
+                "en": "Firestone credits Marx and Engels with the first method of analysis that was both dialectical and materialist. But Engels's definition of historical materialism in Socialism: Utopian and Scientific is strictly economic, so he saw sex only through an economic filter and could not evaluate it in its own right. She therefore proposes to enlarge historical materialism, as relativity drew a circle around Newtonian physics without invalidating it, and offers a 'third alternative', distinct from the view that reality beneath economics is psychosexual: a materialist view of history based on sex itself. At the end of the chapter she rewrites Engels's definition so that the ultimate cause of history lies in the dialectic of sex, the division of society into two biological classes for procreative reproduction."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/subject/women/authors/firestone-shulamith/dialectic-sex.htm",
+                "label": {
+                  "ko": "파이어스톤, 『성의 변증법』 제1장 「성의 변증법」 (1970)",
+                  "en": "Firestone, The Dialectic of Sex, ch. 1 'The Dialectic of Sex' (1970)"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "파이어스톤은 『성의 변증법』 제1장에서 성 계급이 무엇에서 비롯했다고 봤을까요?",
+                "en": "In the first chapter of The Dialectic of Sex, where did Firestone say sex class came from?"
+              },
+              "choices": {
+                "ko": [
+                  "남녀의 차이 그 자체가 아니라 그 차이의 재생산 기능에서 비롯했고, 생식의 단위인 생물학적 가족은 본래 불평등한 권력 분배라고 봤습니다.",
+                  "인간 의식에 원초적으로 있는 ‘타자’ 범주가 여성에게 덧씌워진 데서 비롯했고, 생물학적 사정은 그 범주를 거들었을 뿐이라고 봤습니다.",
+                  "사유재산을 아들에게 물려주려고 일부일처제가 생긴 데서 비롯했으므로, 생식의 차이는 억압의 원인과 관계가 없다고 봤습니다."
+                ],
+                "en": [
+                  "Not from the difference between the sexes as such but from its reproductive functions; the biological family, the unit of reproduction, is an inherently unequal distribution of power.",
+                  "From the original category of the Other in human consciousness being imposed on women, with biological circumstances merely assisting that category.",
+                  "From monogamy arising so that private property could pass to sons, so the reproductive difference has nothing to do with the cause of oppression."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "그녀는 보부아르의 말처럼 차이 자체가 계급 체계를 필연으로 만들지는 않지만, 차이의 재생산 기능은 그렇게 했다고 씁니다. 생물학적 가족을 불평등한 권력 분배라 부릅니다.",
+                  "이것은 그녀가 비판한 보부아르의 설명에 가깝습니다. 파이어스톤은 ‘타자’ 같은 선험적 범주를 세울 필요 없이 이원성이 성 분할 자체에서 나왔다고 보자고 합니다.",
+                  "그녀는 엥겔스의 경제적 설명이 성 계급을 경제와 겹치는 곳에서만 인정했다고 비판합니다. 생식상의 차이가 최초의 분업으로 이어졌다는 것이 그녀의 주장입니다."
+                ],
+                "en": [
+                  "She writes that, as Beauvoir points out, the difference itself did not necessitate a class system, but the reproductive functions of the difference did. She calls the biological family an inherently unequal power distribution.",
+                  "That is close to Beauvoir's account, which she criticises. Firestone asks why posit an a priori category like Otherness when the dualism may have sprung from the sexual division itself.",
+                  "She criticises Engels's economic account for recognising sex class only where it overlapped economics. Her claim is that the reproductive difference led directly to the first division of labour."
+                ]
+              },
+              "explanation": {
+                "ko": "파이어스톤은 경제 계급과 달리 성 계급은 생물학적 현실에서 직접 생겨났다고 봅니다. 차이 자체가 한 집단의 다른 집단 지배를 필연으로 만들지는 않았지만, 그 차이의 재생산 기능이 그렇게 했다는 것입니다. 그녀가 말하는 생물학적 가족은 어떤 사회 조직에서든 남성·여성·아기로 이루어지는 기본 재생산 단위이며, 네 가지 사실로 특징지어집니다. 피임 이전 여성이 생리·출산·수유 때문에 생존을 남성에게 의존했다는 것, 인간의 아기가 오래 무력하다는 것, 모자 상호의존이 모든 사회와 심리를 빚었다는 것, 생식상의 차이가 최초의 분업과 카스트의 원형이 되었다는 것입니다. 권력 욕구도 에로스와 타나토스의 갈등이 아니라 이 불균형에 따른 심리성적 형성에서 나온다고 봅니다.",
+                "en": "Firestone holds that, unlike economic class, sex class sprang directly from a biological reality. The difference itself did not necessitate the domination of one group by another, but its reproductive functions did. The biological family, the basic reproductive unit of male, female and infant in whatever form of social organisation, is marked by four facts: before birth control women depended on men for survival because of menstruation, childbirth and nursing; human infants stay helpless for a long time; mother/child interdependency has shaped every society and psychology; and the reproductive difference led to the first division of labour and furnished the paradigm of caste. Even the need for power, she says, arises from psychosexual formation according to this imbalance, not from a conflict of Eros and Thanatos."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/subject/women/authors/firestone-shulamith/dialectic-sex.htm",
+                "label": {
+                  "ko": "파이어스톤, 『성의 변증법』 제1장 「성의 변증법」 (1970)",
+                  "en": "Firestone, The Dialectic of Sex, ch. 1 'The Dialectic of Sex' (1970)"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "파이어스톤은 『성의 변증법』 제1장에서 페미니스트 혁명이 무엇을 이루어야 한다고 했을까요?",
+                "en": "In the first chapter of The Dialectic of Sex, what did Firestone say a feminist revolution must achieve?"
+              },
+              "choices": {
+                "ko": [
+                  "신기술이 저절로 해방을 보장하지 않으므로 여성이 재생산의 통제권을 장악하고, 남성 특권만이 아니라 성 구별 자체가 문화적으로 무의미해지게 해야 한다고 했습니다.",
+                  "생물학적 조건은 바꿀 수 없으므로 여성을 노동력에 완전히 통합하고 법적 평등을 이루는 개혁으로 성 계급을 해소해야 한다고 했습니다.",
+                  "기술이 생물학적 기반을 없애면 성 계급은 저절로 사라지므로, 여성은 정치적 반란보다 과학의 발전을 기다리면 된다고 했습니다."
+                ],
+                "en": [
+                  "Since new technology does not guarantee liberation by itself, women must seize control of reproduction, and not just male privilege but the sex distinction itself must cease to matter culturally.",
+                  "Since biological conditions cannot be changed, sex class should be dissolved by reforms that fully integrate women into the labour force and secure legal equality.",
+                  "Since sex class will vanish once technology removes its biological basis, women need only wait for scientific progress rather than revolt."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "그녀는 프롤레타리아가 생산수단을 장악하듯 여성이 재생산의 통제권을 장악해야 하며, 최종 목표는 남성 특권이 아니라 성 구별 자체의 제거라고 씁니다.",
+                  "장 첫머리에서 그녀는 성 계급을 몇 가지 개혁이나 여성의 노동력 완전 통합으로 풀 수 있는 피상적 불평등으로 보는 시각을 물립니다. 근본적 생물학적 조건을 바꾸자는 것입니다.",
+                  "그녀는 생물학적 기반이 사라져도 해방이 보장되지 않고, 피임 같은 신기술이 오히려 착취를 강화하는 데 쓰일 수 있다고 경고합니다. 그래서 반란이 필요하다고 합니다."
+                ],
+                "en": [
+                  "She writes that, as the proletariat must seize the means of production, women must seize control of reproduction, and that the end goal is the elimination not of male privilege but of the sex distinction itself.",
+                  "At the opening of the chapter she rejects treating sex class as a superficial inequality solvable by a few reforms or the full integration of women into the labour force. Her aim is to change a fundamental biological condition.",
+                  "She warns that sweeping away the biological basis does not guarantee women's freedom, and that new technology such as fertility control may be used to reinforce exploitation. That is why revolt is needed."
+                ]
+              },
+              "explanation": {
+                "ko": "파이어스톤은 성 계급이 생물학적 조건에서 비롯했더라도 그 기반이 사라지면 여성과 아이가 저절로 해방된다는 보장은 없다고 봅니다. 남성은 생물학적 조건에서 벗어날 수 있게 되어도 지배를 내려놓을 이유가 없기 때문입니다. 그래서 경제 계급의 폐지에 하층 계급의 반란과 생산수단의 장악이 필요하듯, 성 계급의 폐지에는 여성의 반란과 재생산 통제권의 장악이 필요하다고 합니다. 여기에는 자기 몸에 대한 소유권의 회복뿐 아니라 인간 생식과 출산·양육의 사회 제도에 대한 (일시적) 통제가 들어갑니다. 그 끝에서는 생식기의 차이가 문화적으로 무의미해지고, 인공 재생산이 선택지가 되며, 사이버네틱스로 노동 자체가 사라지고, 생물학적 가족의 폭정이 깨진다고 합니다.",
+                "en": "Firestone holds that even if sex class originated in biological conditions, sweeping away that basis does not guarantee that women and children will be freed, since men have little reason to give up their tyranny. So, just as eliminating economic classes requires the revolt of the underclass and its seizure of the means of production, eliminating sexual classes requires the revolt of women and their seizure of control of reproduction. This means not only restoring to women ownership of their own bodies but their (temporary) control of human fertility and of the social institutions of child-bearing and child-rearing. At the end, genital differences would no longer matter culturally, artificial reproduction would be an option, cybernetics would end labour itself, and the tyranny of the biological family would be broken."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/subject/women/authors/firestone-shulamith/dialectic-sex.htm",
+                "label": {
+                  "ko": "파이어스톤, 『성의 변증법』 제1장 「성의 변증법」 (1970)",
+                  "en": "Firestone, The Dialectic of Sex, ch. 1 'The Dialectic of Sex' (1970)"
+                }
+              }
+            },
+            {
+              "id": "q4",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "파이어스톤은 『성의 변증법』 제1장에서 프로이트를 앞으로 어떻게 다루겠다고 했을까요?",
+                "en": "In the first chapter of The Dialectic of Sex, how did Firestone say she would treat Freud?"
+              },
+              "choices": {
+                "ko": [
+                  "문화적 편견이 그의 통찰을 무효로 만들지 않는다며 마르크스·엥겔스와 결합하되, 인류 공통의 가족 구조를 절대 조건으로 여겨 죽음 충동 같은 선험적 구성물을 세웠다고 비판했습니다.",
+                  "프로이트의 이론은 여성 차별을 정당화하는 부르주아 이데올로기일 뿐이므로, 페미니스트의 분석에서는 그의 발견까지 모두 빼야 한다고 했습니다.",
+                  "권력 욕구가 삶과 죽음, 에로스와 타나토스 사이의 환원할 수 없는 갈등에서 나온다는 프로이트의 설명을 성 계급 이론의 토대로 삼겠다고 했습니다."
+                ],
+                "en": [
+                  "His cultural bias does not invalidate his insights, so she would join him with Marx and Engels, while faulting him for taking a family structure common to humanity as absolute and positing the death wish.",
+                  "Freud's theory is merely bourgeois ideology justifying discrimination against women, so feminist analysis must drop his discoveries along with everything else.",
+                  "She would build her theory of sex class on Freud's account of the need for power as an irreducible conflict of Life against Death, Eros against Thanatos."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "그녀는 프로이트가 사회주의 이론가들보다 더 값진 통찰을 줬다고까지 하면서, 그가 보편적 구조를 절대 조건으로 착각해 죽음 충동 같은 구성물을 내세웠다고 봅니다.",
+                  "그녀는 오히려 치료법의 실패 때문에 사회·정치에 민감한 사람들이 그의 가장 깊은 발견까지 거부하게 되었다고 아쉬워합니다.",
+                  "반대입니다. 그녀는 권력 욕구가 그런 갈등이 아니라 생물학적 가족의 불균형에 따른 개인의 심리성적 형성에서 나온다고 하며, 프로이트가 과녁을 지나쳤다고 씁니다."
+                ],
+                "en": [
+                  "She even says Freud had insights of greater value than the socialist theorists for a new dialectical materialism based on sex, while holding that he mistook a universal structure for an absolute condition.",
+                  "On the contrary, she regrets that the failure of his therapy led people of social and political sensibility to reject his most profound discoveries as well.",
+                  "The reverse: she says the need for power arises from each person's psychosexual formation according to the imbalance of the biological family, and that Freud overshot his mark in positing such a conflict."
+                ]
+              },
+              "explanation": {
+                "ko": "파이어스톤은 이후 장들에서 생물학적 가족, 특히 핵가족을 유지·강화하는 문화 제도와 그 결과인 권력의 심리학을 다루면서, 이를 프로이트주의에 대한 페미니스트적 분석과 결합하겠다고 예고합니다. 마르크스와 엥겔스처럼 프로이트의 문화적 편견도 그의 지각을 통째로 무효로 만들지 않으며, 성에 기초한 새 변증법적 유물론을 세우는 데에는 오히려 사회주의자들보다 값진 통찰을 줬다는 것입니다. 다만 프로이트는 눈앞의 사회 맥락에서 심리 역학을 옳게 봤지만, 그 맥락의 기본 구조가 인류 전체에 공통이라 의문을 품을 수 없는 실존 조건처럼 보였고, 그래서 죽음 충동 같은 선험적 구성물을 세워 인간의 병을 고칠 수 없는 것으로 만들었다고 비판합니다.",
+                "en": "Firestone announces that her later chapters will examine the cultural institutions that maintain and reinforce the biological family, especially the nuclear family, and its result, the psychology of power, and will integrate this with a feminist analysis of Freudianism. Freud's cultural bias, like that of Marx and Engels, does not invalidate his perceptions entirely; for a new dialectical materialism based on sex his insights are of even greater value than the socialists'. But while Freud observed the dynamics of psychology correctly in their immediate social context, the basic structure of that context was common to all humanity and so looked like an unquestionable existential condition. This forced him to posit a priori constructs like the death wish and made humanity's sicknesses seem incurable."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/subject/women/authors/firestone-shulamith/dialectic-sex.htm",
+                "label": {
+                  "ko": "파이어스톤, 『성의 변증법』 제1장 「성의 변증법」 (1970)",
+                  "en": "Firestone, The Dialectic of Sex, ch. 1 'The Dialectic of Sex' (1970)"
+                }
+              }
+            },
+            {
+              "id": "q5",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "미첼은 「여성: 가장 긴 혁명」 1971년판(『여성의 처지』 수록)에서 파이어스톤의 『성의 변증법』을 어떻게 비판했을까요?",
+                "en": "In the 1971 version of 'Women: The Longest Revolution' (in Woman's Estate), how did Mitchell criticise Firestone's The Dialectic of Sex?"
+              },
+              "choices": {
+                "ko": [
+                  "성 분할을 계급 분석에 넣는 것은 유물론적이지만 역사적이지도 변증법적이지도 않아, 변증법 이전의 이원론과 일반론에 그치는 ‘단순한 유물론’으로 돌아간다고 했습니다.",
+                  "생식에 따르는 생물학적 차이를 지나치게 가볍게 다루어, 물질적 조건을 무시한 채 의식과 문화만으로 억압을 설명하는 관념론에 빠졌다고 했습니다.",
+                  "프로이트처럼 과학적 근거가 없는 심리 이론을 끌어들여, 마르크스주의 계급 분석의 과학성을 흐리고 억압을 개인 심리로 돌렸다고 했습니다."
+                ],
+                "en": [
+                  "Enlarging class analysis to include the sexual division is materialist but neither historical nor dialectical, a return to pre-dialectical dualism and to general, 'simplistic materialism'.",
+                  "She took the biological differences of reproduction too lightly and fell into an idealism explaining oppression by consciousness and culture alone, ignoring material conditions.",
+                  "She brought in psychological theories without scientific basis, such as Freud's, blurring the science of Marxist class analysis and reducing oppression to individual psychology."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "미첼은 이것이 유물론적이기는 해도 역사적이지도 변증법적이지도 않다고 쓰고, 성 이원론이 최초의 억압이라는 말은 참이어도 일반적·비특정적 진리일 뿐이라고 합니다.",
+                  "반대입니다. 미첼은 파이어스톤이 유물론자로서 객관적인 생리적 성차에 충분한 무게를 준다고 씁니다. ‘관념론’이라는 비판은 기술로 단순한 전체가 온다는 상층의 구상을 겨눕니다.",
+                  "미첼은 마르크스주의가 프로이트의 발견 같은 새 과학을 받아들이도록 발전하지 못했고, 파이어스톤이 그것을 중요하게 본 것은 옳다고 썼습니다."
+                ],
+                "en": [
+                  "Mitchell writes that this is materialist but neither historical nor dialectical, and that the claim that sex dualism was the first oppression, even if true, is only a general, non-specific truth.",
+                  "The reverse: Mitchell writes that as a materialist Firestone gives full weight to the objective physiological differences. The charge of idealism targets the upper level, the vision of technology delivering a simple whole.",
+                  "Mitchell wrote that Marxism has not developed enough to take in new scientific discoveries such as Freud's, which Firestone rightly finds so important."
+                ]
+              },
+              "explanation": {
+                "ko": "미첼은 『성의 변증법』을 급진 페미니즘 이론의 가장 완전한 전개라 부르고, 여성과 아이가 함께 겪는 억압이나 억압의 심리학 같은 통찰을 인정합니다. 그러나 기본 전제는 받아들이지 않습니다. 변증법적 유물론은 모든 요소가 서로 모순 속에 있는 복합적 구조를 상정하는데, 미래의 기술·생태 혁명이 남성/여성의 이원성을 초월해 조화시킨다는 구상은 그런 변증법적 계기가 아니라 이원론으로의 복귀라는 것입니다. 역사적이지도 않다고 합니다. 주인과 하인이 늘 있었더라도 봉건 영주와 농민인지 자본가와 노동자인지가 중요하듯, 성이 특정 사회에서 어떻게 작동하는지 알아야 극복할 수 있다는 것입니다. 그래서 파이어스톤이 이원론적 토대와 일원론적 해결로 돌아가 “밑으로는 유물론, 위로는 관념론”이 되었다고 결론짓습니다.",
+                "en": "Mitchell calls The Dialectic of Sex the fullest development of radical feminist theory to date and grants insights such as the shared oppression of women and children and the psychology of oppression. But she rejects the basic premise. Dialectical materialism posits a complex structure in which all elements are in contradiction; the vision of a future technological-ecological revolution transcending and harmonising the male/female duality is not a dialectical moment but a return to dualism. Nor is it historical: there have always been masters and servants, but it matters whether they are feudal lords and peasants or capitalists and workers, and only knowing how sex operates in a specific society lets us overcome it. So she concludes that Firestone returns to a dualistic base and a monistic solution: 'materialism below, idealist above'."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/subject/women/authors/mitchell-juliet/longest-revolution.htm",
+                "label": {
+                  "ko": "미첼, 「여성: 가장 긴 혁명」, 『여성의 처지』 수록 1971년판, 「페미니즘」 절",
+                  "en": "Mitchell, 'Women: The Longest Revolution', 1971 version in Woman's Estate, section 'Feminism'"
+                }
+              }
+            },
+            {
+              "id": "q6",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "미첼은 「여성: 가장 긴 혁명」 1971년판에서 재생산의 생물학과 기술이 여성 해방과 어떤 관계에 있다고 봤을까요?",
+                "en": "In the 1971 version of 'Women: The Longest Revolution', how did Mitchell see the biology of reproduction and technology as bearing on women's liberation?"
+              },
+              "choices": {
+                "ko": [
+                  "재생산을 역사 밖의 생물학으로 보는 것은 환상이고 피임으로 그 양식이 바뀔 수 있지만, 기술은 전체 구조에 매개되므로 그것만으로 해방이 오지는 않는다고 했습니다.",
+                  "모성은 시간을 넘어선 생물학적 사실이므로, 가족의 존속과 여성의 사회적 종속도 넘어설 수 없는 생물학적·역사적 사실로 따라온다고 했습니다.",
+                  "자동화와 인공 재생산이 성 사이의 신체적 차이를 아예 없애면, 그 기술 변화가 결정적이고 질적인 여성 해방을 가져온다고 했습니다."
+                ],
+                "en": [
+                  "Seeing reproduction as biology outside history is an illusion and contraception could change its mode, but technology is mediated by the total structure and cannot liberate women by itself.",
+                  "Maternity is an atemporal biological fact, so the family's persistence and women's social subordination follow as an insurmountable bio-historical fact.",
+                  "Once automation and artificial reproduction abolish the physical differences between the sexes, that technical change will bring a decisive, qualitative liberation."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "미첼은 재생산이 생물학의 일부로 보이는 것은 환상이라 하고 피임을 세계사적 혁신이라 부르면서도, 기술은 전체 구조에 매개되며 사회 세력과 기술의 관계가 중요하다고 씁니다.",
+                  "이것은 미첼이 비판하려고 정리한 논리입니다. 모성에서 가족, 생산과 공적 생활로부터의 배제, 성 불평등으로 이어지는 인과의 사슬을 받아들이면 종속이 필연처럼 보인다는 것입니다.",
+                  "미첼은 자동화가 성차를 없애리라던 보부아르의 기대가 역사가 뒷받침하지 않는 독립적 역할을 기술에 준다고 비판하고, 파이어스톤의 ‘생태학적’ 혁명도 같은 점을 놓친다고 봅니다."
+                ],
+                "en": [
+                  "Mitchell calls the view of reproduction as part of biology an illusion and contraception an innovation of world-historic importance, yet writes that technology is mediated by the total structure and its relation to social forces is what counts.",
+                  "This is the line of argument Mitchell sets out in order to criticise it: once the chain maternity, family, absence from production and public life, sexual inequality is accepted, subordination looks inevitable.",
+                  "Mitchell faults Beauvoir's hope that automation would abolish the physical differential for giving technique an independent role history does not justify, and says Firestone's 'ecological' revolution misses the same point."
+                ]
+              },
+              "explanation": {
+                "ko": "미첼은 모성이라는 생물학적 기능이 시간을 넘어선 보편적 사실로 보여 마르크스주의의 역사 분석을 벗어나는 듯했고, 거기서 가족의 항구성과 여성 종속이 피할 수 없는 사실로 도출되어 왔다고 지적합니다. 그러나 재생산이 역사가 아닌 생물학의 일부라는 생각은 환상이라고 합니다. 재생산 양식이 생산양식에 따라 변하지 않은 것은 그것이 지금까지 통제할 수 없는 자연적 성격으로 규정되어 왔기 때문이고, 피임은 그 양식을 바꿀 수 있는 세계사적 혁신이라는 것입니다. 동시에 그녀는 산업 노동과 자동화가 해방의 전제 조건을 약속할 뿐 그 이상은 아니라고 봅니다. 기술은 전체 구조에 매개되며, 자본주의에서는 자동화가 오히려 여성을 생산에서 밀어낼 수도 있다는 것입니다. 파이어스톤의 ‘생태학적’ 혁명은 바로 이 사회 세력과 기술의 관계를 무시한다고 비판합니다.",
+                "en": "Mitchell notes that maternity, as a universal, atemporal biological fact, has seemed to escape Marxist historical analysis, and that the permanence of the family and women's subordination have been made to follow from it as inevitable. But the idea that reproduction is part of biology rather than history is an illusion. The mode of reproduction has not varied with the mode of production because it has so far been defined by its uncontrollable, natural character; contraception is an innovation of world-historic importance that could transform it. At the same time, industrial labour and automation promise only the preconditions of liberation, no more. Technology is mediated by the total structure, and under capitalism automation could even expel women from production. Firestone's 'ecological' revolution, she says, ignores exactly this relationship between social forces and technology."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/subject/women/authors/mitchell-juliet/longest-revolution.htm",
+                "label": {
+                  "ko": "미첼, 「여성: 가장 긴 혁명」, 『여성의 처지』 수록 1971년판, 「생산」·「재생산」 절",
+                  "en": "Mitchell, 'Women: The Longest Revolution', 1971 version in Woman's Estate, sections on production and reproduction"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sex-gender-theory-intro-ch05",
+      "volumeNumber": 15,
+      "chapterNumber": 5,
+      "title": {
+        "ko": "자본주의와 가부장제는 두 체계인가, 하나인가?",
+        "en": "Are capitalism and patriarchy two systems or one?"
+      },
+      "sourceUrl": "https://www.marxists.org/espanol/tematica/mujer/autores/hartmann/88.pdf",
+      "summary": {
+        "ko": "약 12분 · 하이디 하트먼의 「마르크스주의와 페미니즘의 불행한 결혼」(1979)과 리즈 보걸의 『마르크스주의와 여성 억압: 단일 이론을 향하여』(1983)를 나란히 읽고, 가부장제를 자본주의와 나란한 별도의 체계로 볼지, 노동력 재생산이라는 하나의 틀 안에서 설명할지를 두고 두 사람이 어디서 갈렸는지 확인합니다.",
+        "en": "About 12 minutes · Read Heidi Hartmann's 'The Unhappy Marriage of Marxism and Feminism' (1979) alongside Lise Vogel's Marxism and the Oppression of Women: Toward a Unitary Theory (1983), and see where they divided over whether patriarchy is a separate system alongside capitalism or can be explained within a single framework of the reproduction of labour-power."
+      },
+      "learningFocus": {
+        "ko": "하트먼을 마르크스주의를 버리자는 사람으로, 보걸을 여성 억압을 계급 문제로 환원한 사람으로 읽기 쉽습니다. 하트먼은 역사적 유물론의 방법을 쓰자고 했고, 문제 삼은 것은 ‘누가 어느 자리를 채우는지’ 말하지 못하는 범주였습니다. 보걸은 가부장제를 덧붙이는 대신 노동력의 유지와 세대 교체를 분석해 마르크스주의 자체를 발전시키려 했고, 평등권 결여라는 정치적 차원도 따로 다뤘습니다. 「이중체계론」이라는 이름은 하트먼 자신이 아니라 비판자들이 붙인 것입니다.",
+        "en": "It is easy to read Hartmann as abandoning Marxism and Vogel as reducing women's oppression to class. Hartmann wanted to use the method of historical materialism; her target was categories that cannot say who fills which place. Vogel, instead of adding patriarchy, set out to develop Marxism itself by analysing the maintenance and generational replacement of labour-power, and she treated the political dimension of women's lack of equal rights separately. The name 'dual-systems theory' was given by critics, not by Hartmann herself."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "배경: 「불행한 결혼」과 그 응답",
+            "items": [
+              "하이디 하트먼의 「마르크스주의와 페미니즘의 불행한 결혼: 더 진보적인 결합을 향하여」는 1979년 영국 《캐피털 앤드 클래스》 제8호에 실렸습니다. 논문 첫 주석에 따르면 1975년과 1977년의 초고는 에이미 브리지스와 함께 썼습니다.",
+              "제목의 비유는 영국 보통법의 부부 일체 원칙에서 왔습니다. 마르크스주의와 페미니즘은 하나이고 그 하나는 마르크스주의라는 것이며, 더 건강한 결혼이 아니면 이혼이 필요하다고 썼습니다.",
+              "1981년 리디아 사전트가 엮은 『여성과 혁명』은 이 논문과 여러 응답을 함께 실었고, 리즈 보걸의 「마르크스주의와 페미니즘: 불행한 결혼, 시험 별거, 아니면 다른 무엇?」도 그중 하나입니다. 보걸은 이 글의 일부를 1983년 『마르크스주의와 여성 억압: 단일 이론을 향하여』에 다시 썼습니다.",
+              "「이중체계론」이라는 이름은 보걸이 아이리스 영(1980)에게서 받아 쓴 것입니다. 하트먼 자신은 우리 사회가 자본주의적 방식과 가부장적 방식 양쪽으로 조직되어 있다고 쓰고, 둘의 관계를 ‘동반자 관계’라고 불렀습니다."
+            ]
+          },
+          {
+            "title": "하트먼: 성맹의 범주, 남성들 사이의 관계",
+            "items": [
+              "마르크스주의는 계급, 산업예비군, 임금 노동자 같은 범주로 자본이 만들어 내는 ‘빈자리’를 설명하지만, 어떤 사람이 어느 자리를 채우는지, 왜 여성이 남성에게 종속되는지는 말해 주지 못한다고 봅니다. 마르크스주의 범주는 자본 자체처럼 성맹이라는 것입니다. 다만 역사적 유물론의 방법은 페미니즘의 질문에 써야 한다고 했습니다.",
+              "가부장제를 물질적 토대를 지닌 남성들 사이의 사회적 관계의 집합으로 정의합니다. 이 관계는 위계적이지만 남성들 사이에 상호 의존과 연대를 만들어 여성을 지배할 수 있게 합니다. 물질적 토대는 남성이 여성의 노동력을 통제하는 데 있고, 그 통제는 생활 임금을 주는 일자리 같은 생산 자원에서 여성을 배제하고 여성의 섹슈얼리티를 제한해 유지된다고 했습니다.",
+              "엥겔스가 말한 두 번째 생산, 곧 인간 자신의 생산을 게일 루빈의 ‘성/젠더 체계’로 읽고, 사물의 생산과 사람의 생산을 함께 보아야 사회 전체를 이해할 수 있다고 했습니다. 순수한 자본주의도 순수한 가부장제도 없지만 둘 사이에 필연적 연관은 없어서, 자본주의에서 사회주의로 넘어가도 가부장제로 남을 수 있다고 봅니다.",
+              "19세기 남성 노동자는 남녀 동일 임금 대신 아내의 가사 서비스를 지킬 수 있는 ‘가족 임금’을 요구했고, 이것이 여성 노동력을 둘러싼 가부장적 이해와 자본주의적 이해의 갈등을 푸는 해결책이 되었다고 봅니다. 그래서 여성은 혁명 뒤의 해방을 남성에게 맡기지 말고 자기 조직과 권력 기반을 가져야 한다고 결론지었습니다."
+            ]
+          },
+          {
+            "title": "보걸: 이중체계 관점 비판",
+            "items": [
+              "보걸은 사회주의 전통 안에 두 관점이 엉켜 있다고 봅니다. 이중체계 관점은 성별 분업과 남성 우위라는 자율적 체계에서 여성 억압을 끌어내고, 사회적 재생산 관점은 사회적 재생산 전체 안에서 여성이 차지하는 다른 위치에서 끌어냅니다.",
+              "이중체계 관점은 성별 분업, 여성 억압, 가족을 주어진 것으로 놓고 계급을 바깥 변수로 다룹니다. 그래서 계급 투쟁과 성 투쟁이라는 두 동력이 역사를 움직인다는 함의를 지니면서도 둘의 관계를 규정하지 못하고, 마르크스주의의 생산 분석은 손대지 않은 채 젠더 이론을 덧붙일 뿐이라고 비판합니다.",
+              "엥겔스의 『가족, 사유재산, 국가의 기원』도 이 관점에 크게 기댄다고 봅니다. 가족에 별도의 장을 두고 성별 분업을 생물학적 소여로 다루며, 서문의 두 가지 생산이 이 이원성을 드러낸다는 것입니다. 반면 공적 생산 참여와 가사의 공공 산업화 주장에는 사회적 재생산 관점이 들어 있다고 봅니다.",
+              "서문에서 보걸은 여성 해방의 이론적 길잡이는 사회주의 페미니즘의 종합을 새로 짓는 데서가 아니라 마르크스주의 이론을 되살리는 데서 나온다고 밝힙니다."
+            ]
+          },
+          {
+            "title": "보걸: 노동력 재생산에 뿌리를 둔 단일 이론",
+            "items": [
+              "착취 사회는 잉여 노동을 수행할 직접 생산자 계급을 끊임없이 유지하고 교체해야 하며, 보통 세대 교체가 그 대부분을 맡기 때문에 여성의 출산 능력이 결정적 의미를 가집니다. 보걸은 성별 분업 그 자체가 아니라 출산기에 남성이 여성에게 생활 수단을 제공하는 일이 계급 사회 여성 종속의 물질적 토대라고 봅니다.",
+              "억압의 근거는 계급마다 다릅니다. 피지배 계급 여성의 억압은 직접 생산자를 유지하고 갱신하는 과정에서, 재산 소유 계급 여성의 억압은 재산의 유지와 상속에서 나온다고 했습니다.",
+              "자본주의에서 필요 노동은 둘로 나뉩니다. 임금 노동 안에서 잉여 노동과 묶여 있는 사회적 구성 요소와, 자본주의적 생산 영역 밖에서 수행되는 가사적 구성 요소, 곧 가사 노동입니다. 가사 노동은 자본에게 없어서는 안 될 조건이자 노동력의 공급을 제한하는 장애물이어서, 자본은 이를 줄이려 하지만 완전히 사회화하지는 못한다고 봅니다.",
+              "자본주의 사회 여성 억압의 특수성은 가사 노동과 평등권에 대한 이중적 위치에 있다고 했습니다. 가사 노동은 노동계급 여성이 맡지만 평등권의 결여는 원칙적으로 모든 여성에게 해당하므로, 계급을 가로지르는 여성 운동의 근거도 설명된다는 것입니다."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "하트먼, 「마르크스주의와 페미니즘의 불행한 결혼: 더 진보적인 결합을 향하여」(《캐피털 앤드 클래스》 제8호, 1979): 서론, 제1부 「마르크스주의와 여성 문제」, 제2부의 가부장제 정의, 제3부 「가부장제와 자본의 동반자 관계」, 제4부 「더 진보적인 결합을 향하여」. 영어 원문으로 대조했고, 링크는 marxists.org 스페인어 자료실의 스페인어 번역본(Papers de la Fundació 88)입니다.",
+              "보걸, 『마르크스주의와 여성 억압: 단일 이론을 향하여』(1983, 2013년 재판): 서문, 제2장 「10년의 논쟁」, 제9장 「이중의 유산」, 제10장 「노동력의 재생산」, 제11장 「가사 노동을 넘어서」. 2013년판 영어 원문으로 대조했고, 링크는 marxists.org 중국어 자료실의 중국어 번역본(2009)입니다."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "Background: 'The Unhappy Marriage' and its replies",
+            "items": [
+              "Heidi Hartmann's 'The Unhappy Marriage of Marxism and Feminism: Towards a More Progressive Union' appeared in the British journal Capital & Class, no. 8, in 1979. Its first note says earlier drafts of 1975 and 1977 were coauthored with Amy Bridges.",
+              "The title's image comes from the English common-law doctrine that husband and wife are one: marxism and feminism are one, and that one is marxism. Either a healthier marriage or a divorce was needed, she wrote.",
+              "Lydia Sargent's 1981 collection Women and Revolution printed the essay with a range of replies, among them Lise Vogel's 'Marxism and Feminism: Unhappy Marriage, Trial Separation or Something Else?'. Vogel reworked portions of it in her 1983 book Marxism and the Oppression of Women: Toward a Unitary Theory.",
+              "Vogel took the label 'dual-systems theory' from Iris Young (1980). Hartmann herself wrote that our society is organised both in capitalist and in patriarchal ways, and called their relation a 'partnership'."
+            ]
+          },
+          {
+            "title": "Hartmann: sex-blind categories, relations between men",
+            "items": [
+              "Marxism's categories, class, reserve army of labour, wage-labourer, explain the 'empty places' capital creates, but not which people fill which places, or why women are subordinate to men. Marxist categories, like capital itself, are sex-blind. The method of historical materialism, however, should be put to the service of feminist questions.",
+              "She defines patriarchy as a set of social relations between men which have a material base and which, though hierarchical, create interdependence and solidarity among men that enable them to dominate women. The material base is men's control over women's labour power, maintained by excluding women from essential productive resources, such as jobs paying living wages, and by restricting women's sexuality.",
+              "She reads Engels's second kind of production, the production of human beings themselves, through Gayle Rubin's 'sex/gender system', and holds that society can only be understood by looking at the production of both things and people. Neither pure capitalism nor pure patriarchy exists, yet there is no necessary connection between them: a society could pass from capitalism to socialism and remain patriarchal.",
+              "Nineteenth-century male workers, instead of fighting for equal wages for men and women, sought a 'family wage' that kept their wives' services at home; this resolved the conflict between patriarchal and capitalist interests over women's labour power. Hence women should not trust men to liberate them after the revolution, but must have their own organisations and power base."
+            ]
+          },
+          {
+            "title": "Vogel: against the dual-systems perspective",
+            "items": [
+              "Vogel finds two views tangled in the socialist tradition. The dual-systems perspective derives women's oppression from an autonomous system of sex-divisions of labour and male supremacy; the social-reproduction perspective roots it in women's differential location within social reproduction as a whole.",
+              "The dual-systems perspective takes sex-divisions of labour, women's oppression and the family as givens and treats class as an external variable. It implies that two motors, class struggle and sex struggle, drive history, yet leaves their relation unspecified, and it leaves Marxist analysis of production untouched, merely grafting on a theory of gender.",
+              "Engels's Origin of the Family, Private Property and the State, she argues, relies heavily on this perspective: it assigns the family a separate chapter, treats the sex-division of labour as a biological given, and the preface's twofold production makes the duality explicit. The social-reproduction perspective is implicit in his calls for public production and for turning domestic work into a public industry.",
+              "In her preface Vogel states that the revival of Marxist theory, not the construction of some socialist-feminist synthesis, offers the best chance of theoretical guidance for women's liberation."
+            ]
+          },
+          {
+            "title": "Vogel: a unitary theory rooted in the reproduction of labour-power",
+            "items": [
+              "An exploitative society must constantly maintain and replace a class of direct producers who perform surplus-labour, and generational replacement usually supplies most of them, so women's capacity to bear children becomes critical. Not the sex-division of labour in itself, but men's provision of means of subsistence to women during the child-bearing period forms the material basis of women's subordination in class society.",
+              "The roots differ by class: in subordinate classes, oppression flows from women's part in maintaining and renewing direct producers; in propertied classes, from their role in the maintenance and inheritance of property.",
+              "Under capitalism necessary labour splits in two: a social component bound up with surplus-labour in wage work, and a domestic component, domestic labour, performed outside capitalist production. Domestic labour is both an essential condition for capital and an obstacle that limits the availability of labour-power, so capital tends to reduce it but cannot fully socialise it.",
+              "The specific character of women's oppression in capitalist society lies in their dual position with respect to domestic labour and equal rights. Working-class women perform the domestic labour, but the lack of equality applies in principle to all women, which also explains the basis for women's movements that cross class lines."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "Hartmann, 'The Unhappy Marriage of Marxism and Feminism: Towards a More Progressive Union', Capital & Class 8 (1979): introduction, part I 'Marxism and the Woman Question', the definition of patriarchy in part II, part III 'The Partnership of Patriarchy and Capital', and part IV 'Towards a More Progressive Union'. Checked against the English original; the link is the Spanish translation (Papers de la Fundació 88) in the marxists.org Spanish archive.",
+              "Vogel, Marxism and the Oppression of Women: Toward a Unitary Theory (1983; 2013 reissue): preface, chapter 2 'A Decade of Debate', chapter 9 'A Dual Legacy', chapter 10 'The Reproduction of Labour-Power' and chapter 11 'Beyond Domestic Labour'. Checked against the 2013 English edition; the links are the Chinese translation (2009) in the marxists.org Chinese archive."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "성맹의 범주",
+            "text": "하트먼은 마르크스주의 범주가 빈자리를 설명할 뿐 누가 그 자리를 채우는지는 말하지 못한다고 봤습니다."
+          },
+          {
+            "title": "남성들 사이의 관계",
+            "text": "하트먼에게 가부장제는 여성 노동력의 통제를 물질적 토대로 삼는 남성들 사이의 위계와 연대였습니다."
+          },
+          {
+            "title": "이중체계 비판",
+            "text": "보걸은 두 체계를 나란히 놓는 관점이 둘의 관계를 규정하지 못하고 마르크스주의를 그대로 둔다고 비판했습니다."
+          },
+          {
+            "title": "필요 노동의 두 구성 요소",
+            "text": "보걸은 가사 노동을 자본주의적 생산 밖에서 수행되는 필요 노동의 가사적 구성 요소로 규정했습니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "Sex-blind categories",
+            "text": "Hartmann held that Marxist categories explain empty places but cannot say who fills them."
+          },
+          {
+            "title": "Relations between men",
+            "text": "For Hartmann, patriarchy was hierarchy and solidarity among men, materially based on control of women's labour power."
+          },
+          {
+            "title": "Against dual systems",
+            "text": "Vogel argued that setting two systems side by side leaves their relation unspecified and leaves Marxism unchanged."
+          },
+          {
+            "title": "Two components of necessary labour",
+            "text": "Vogel defined domestic labour as the domestic component of necessary labour, performed outside capitalist production."
+          }
+        ]
+      },
+      "diagram": {
+        "kind": "contrast",
+        "ko": {
+          "title": "가부장제와 자본주의를 설명하는 두 방식",
+          "left": {
+            "heading": "하트먼, 「불행한 결혼」(1979)",
+            "rows": [
+              "마르크스주의 범주: 누가 어느 자리를 채우는지 말하지 못하는 성맹",
+              "가부장제: 물질적 토대를 지닌 남성들 사이의 관계",
+              "물질적 토대: 남성의 여성 노동력 통제",
+              "자본과의 관계: 가족 임금으로 다져진 동반자 관계",
+              "정치적 결론: 여성의 독자 조직과 동맹"
+            ]
+          },
+          "right": {
+            "heading": "보걸, 『마르크스주의와 여성 억압』(1983)",
+            "rows": [
+              "마르크스주의 범주: 노동력 재생산 분석으로 발전시킬 대상",
+              "이중체계 관점: 두 체계의 관계를 규정하지 못함",
+              "물질적 토대: 출산기의 생활 수단 제공, 성별 분업 자체는 아님",
+              "자본주의의 특수성: 가사 노동과 평등권에 대한 이중적 위치",
+              "정치적 결론: 평등권 투쟁과 사회주의를 지향하는 여성 운동"
+            ]
+          }
+        },
+        "en": {
+          "title": "Two ways of explaining patriarchy and capitalism",
+          "left": {
+            "heading": "Hartmann, 'The Unhappy Marriage' (1979)",
+            "rows": [
+              "Marxist categories: sex-blind, cannot say who fills which place",
+              "Patriarchy: relations between men with a material base",
+              "Material base: men's control over women's labour power",
+              "Relation to capital: a partnership cemented by the family wage",
+              "Political conclusion: women's own organisations and alliance"
+            ]
+          },
+          "right": {
+            "heading": "Vogel, Marxism and the Oppression of Women (1983)",
+            "rows": [
+              "Marxist categories: to be developed through the reproduction of labour-power",
+              "Dual-systems perspective: leaves the two systems' relation unspecified",
+              "Material basis: provision of subsistence during child-bearing, not the division of labour itself",
+              "Capitalist specificity: dual position on domestic labour and equal rights",
+              "Political conclusion: equal-rights struggles and a socialist-oriented women's movement"
+            ]
+          }
+        }
+      },
+      "lessons": [
+        {
+          "id": "sex-gender-theory-intro-ch05-basic",
+          "level": "basic",
+          "title": {
+            "ko": "자본주의와 가부장제는 두 체계인가, 하나인가?",
+            "en": "Are capitalism and patriarchy two systems or one?"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "하이디 하트먼은 「마르크스주의와 페미니즘의 불행한 결혼」(1979)에서 마르크스주의 범주가 “성맹”이라고 할 때 무엇을 뜻했을까요?",
+                "en": "In 'The Unhappy Marriage of Marxism and Feminism' (1979), what did Heidi Hartmann mean by calling Marxist categories 'sex-blind'?"
+              },
+              "choices": {
+                "ko": [
+                  "계급이나 산업예비군 같은 범주는 자본이 만드는 빈자리를 설명할 뿐, 어떤 사람이 어느 자리를 채우는지, 왜 여성이 남성에게 종속되는지는 말해 주지 못한다는 뜻이었습니다.",
+                  "마르크스와 엥겔스가 여성 문제를 한 번도 다루지 않았으므로, 마르크스주의 전통에서 여성 억압에 관한 논의는 아무것도 찾을 수 없다는 뜻이었습니다.",
+                  "역사적 유물론이라는 방법 자체가 남성 중심적이어서, 페미니즘은 마르크스주의의 방법을 버리고 심리 분석에서 새로 출발해야 한다는 뜻이었습니다."
+                ],
+                "en": [
+                  "Categories such as class and the reserve army explain the empty places capital creates, but not which people fill which places, or why women are subordinate to men.",
+                  "Marx and Engels never discussed women at all, so nothing on women's oppression can be found anywhere in the Marxist tradition.",
+                  "The method of historical materialism is itself male-centred, so feminism must drop Marxist method and start afresh from psychoanalysis."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "하트먼은 마르크스의 이론이 ‘빈자리’의 발전을 다루는 이론이며, 자본이 그 자리를 채울 개인에게 무관심하듯 범주도 누가 채우는지 알려 주지 않는다고 썼습니다.",
+                  "하트먼은 제1부에서 엥겔스, 자레츠키, 달라 코스타의 여성 문제 분석을 차례로 검토합니다. 문제는 논의가 없다는 것이 아니라 여성과 남성의 관계를 놓친다는 것이었습니다.",
+                  "반대입니다. 하트먼은 역사적 유물론의 방법을 페미니즘의 질문에 쓰자고 했고, 급진 페미니즘은 오히려 역사에 눈멀고 충분히 유물론적이지 않다고 비판했습니다."
+                ],
+                "en": [
+                  "Hartmann wrote that Marx's theory is a theory of the development of 'empty places'; just as capital is indifferent to who fills them, the categories give no clue who will.",
+                  "In part I Hartmann examines in turn the analyses of Engels, Zaretsky and Dalla Costa. The problem was not absence of discussion but that it missed the relations between women and men.",
+                  "The reverse: Hartmann wanted to put the method of historical materialism to the service of feminist questions, and criticised radical feminism for being blind to history and insufficiently materialist."
+                ]
+              },
+              "explanation": {
+                "ko": "하트먼은 마르크스주의가 여성 문제를 다룰 때 여성과 경제 체계의 관계를 물었을 뿐, 여성과 남성의 관계라는 페미니즘의 질문은 앞의 답에서 저절로 풀린다고 여겼다고 봅니다. 마르크스주의는 축적 과정, 직업 구조, 지배 이데올로기를 설명하는 강력한 이론이지만, 그 범주인 계급, 산업예비군, 임금 노동자는 특정한 사람이 특정한 자리를 채우는 이유를 설명하지 못합니다. 마르크스주의 범주는 자본 자체처럼 성맹이라는 말이 여기서 나옵니다. 그렇다고 마르크스주의를 버리자는 것은 아니었습니다. 하트먼은 역사적 유물론의 방법과 가부장제를 사회적·역사적 구조로 밝힌 페미니즘 분석을 둘 다 써야 서구 자본주의 사회와 그 안의 여성 처지를 이해할 수 있다고 했습니다.",
+                "en": "Hartmann argues that Marxist analyses of the woman question asked about women's relation to the economic system, assuming that the feminist question, the relation of women to men, would be answered along the way. Marxism is a powerful theory of accumulation, occupational structure and dominant ideology, but its categories, class, reserve army of labour, wage-labourer, do not explain why particular people fill particular places. Hence: Marxist categories, like capital itself, are sex-blind. This was not a call to drop Marxism. Hartmann held that both Marxist historical and materialist method and feminist analysis, especially the identification of patriarchy as a social and historical structure, are needed to understand western capitalist societies and women's predicament within them."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/espanol/tematica/mujer/autores/hartmann/88.pdf",
+                "label": {
+                  "ko": "하트먼, 「마르크스주의와 페미니즘의 불행한 결혼」(1979) 서론과 제1부 (스페인어 번역)",
+                  "en": "Hartmann, 'The Unhappy Marriage of Marxism and Feminism' (1979), introduction and part I (Spanish translation)"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "하트먼은 「마르크스주의와 페미니즘의 불행한 결혼」에서 가부장제와 그 물질적 토대를 어떻게 정의했을까요?",
+                "en": "How did Hartmann, in 'The Unhappy Marriage of Marxism and Feminism', define patriarchy and its material base?"
+              },
+              "choices": {
+                "ko": [
+                  "위계적이면서도 남성들 사이에 연대를 만들어 여성을 지배하게 하는 남성들 사이의 사회적 관계로, 토대는 남성의 여성 노동력 통제에 있다고 했습니다.",
+                  "가족 안의 양육으로 아이들에게 새겨지는 심리적·이데올로기적 구조로, 의식과 무의식의 변화 없이는 사라지지 않는다고 했습니다.",
+                  "여성이 아이를 낳는다는 생물학적 사실에서 생긴 지배로, 출산이라는 재생산 노동 자체가 가부장제의 토대라고 했습니다."
+                ],
+                "en": [
+                  "Social relations between men that, though hierarchical, create solidarity among them to dominate women, based on men's control over women's labour power.",
+                  "A psychological and ideological structure instilled in children through family upbringing, which cannot vanish without changes in consciousness.",
+                  "Domination arising from the biological fact that women bear children, so that the reproductive work of childbirth itself is patriarchy's base."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "하트먼은 이 통제가 생활 임금을 주는 일자리 같은 생산 자원에서 여성을 배제하고 여성의 섹슈얼리티를 제한하는 방식으로 유지된다고 썼습니다.",
+                  "하트먼은 유물론적 분석이 가부장제를 심리적 구조만이 아니라 사회적·경제적 구조로 보여 준다고 했고, 미첼이 가부장제에 물질적 토대를 주지 않았다고 비판했습니다.",
+                  "하트먼은 물질적 토대가 가족 안의 양육에만 있지 않고 남성이 여성 노동을 통제하게 하는 모든 사회 구조에 있다고 했습니다. 재생산에만 초점을 두는 데 반대한 것입니다."
+                ],
+                "en": [
+                  "Hartmann wrote that this control is maintained by excluding women from essential productive resources, such as jobs paying living wages, and by restricting women's sexuality.",
+                  "Hartmann said materialist analysis shows patriarchy is not simply a psychic but also a social and economic structure, and faulted Mitchell for giving patriarchy no material base.",
+                  "Hartmann said the material base rests not solely on child-rearing in the family but on all social structures that let men control women's labour; she objected to focusing only on reproduction."
+                ]
+              },
+              "explanation": {
+                "ko": "하트먼의 정의에서 가부장제는 먼저 남성들 사이의 관계입니다. 계급, 인종, 민족에 따라 남성들은 위계의 서로 다른 자리에 있지만, 적어도 일부 여성을 통제할 수 있다는 점으로 매수되어 여성 지배라는 공통 관계 속에서 서로에게 의존합니다. 그 물질적 토대는 남성의 여성 노동력 통제이며, 남성은 개인적 서비스를 받고 가사와 양육을 하지 않으며 성적 접근권과 권력감을 누리는 방식으로 이 통제를 행사한다고 했습니다. 이성애 결혼, 여성의 양육과 가사, 노동시장이 강제하는 경제적 의존, 국가, 그리고 클럽·노동조합·교회·군대처럼 남성들 사이의 관계에 기초한 제도가 그 요소로 꼽힙니다. 이렇게 정의해야 가부장제를 자본주의와 나란히 역사적으로 분석할 수 있다는 것이 하트먼의 주장이었습니다.",
+                "en": "In Hartmann's definition patriarchy is first of all a relation among men. Men of different classes, races and ethnic groups occupy different places in its hierarchy, but all are bought off by being able to control at least some women, and they depend on one another to maintain that domination. Its material base is men's control over women's labour power, exercised in receiving personal service, not having to do housework or rear children, access to women's bodies, and feeling and being powerful. Its crucial elements include heterosexual marriage, female child-rearing and housework, women's economic dependence enforced by the labour market, the state, and institutions based on relations among men such as clubs, unions, churches and armies. Defined this way, she argued, patriarchy could be analysed historically alongside capitalism."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/espanol/tematica/mujer/autores/hartmann/88.pdf",
+                "label": {
+                  "ko": "하트먼, 「마르크스주의와 페미니즘의 불행한 결혼」 제2부 「가부장제의 정의를 향하여」 (스페인어 번역)",
+                  "en": "Hartmann, 'The Unhappy Marriage of Marxism and Feminism', part II, 'Towards a Definition of Patriarchy' (Spanish translation)"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "하트먼은 「마르크스주의와 페미니즘의 불행한 결혼」 제3부에서 19세기 말 이후의 ‘가족 임금’을 무엇으로 해석했을까요?",
+                "en": "In part III of 'The Unhappy Marriage of Marxism and Feminism', how did Hartmann interpret the 'family wage' that took hold from the late nineteenth century?"
+              },
+              "choices": {
+                "ko": [
+                  "여성 노동력을 두고 벌어진 가부장적 이해와 자본주의적 이해의 갈등을 푼 해결책으로, 남성 노동자가 동일 임금 대신 아내의 가사 서비스를 지키려 요구한 것이었다고 봤습니다.",
+                  "자본가가 남성 노동자들의 반대를 꺾고 일방적으로 도입한 제도로, 노동계급 가족을 해체하려는 자본의 의도가 그대로 드러난 것이라고 봤습니다.",
+                  "자본주의가 모든 사람을 임금 노동자로 만들면서 곧 사라질 봉건 가부장제의 잔재로, 여성 고용이 늘면 저절로 없어질 것이라고 봤습니다."
+                ],
+                "en": [
+                  "A resolution of the conflict between patriarchal and capitalist interests over women's labour power, which male workers sought instead of equal pay to keep their wives' services at home.",
+                  "A system capitalists imposed over male workers' opposition, plainly revealing capital's intention to break up the working-class family.",
+                  "A feudal patriarchal remnant soon to vanish as capitalism proletarianised everyone, bound to disappear by itself as women's employment grew."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "하트먼은 이 거래가 남성 노동자뿐 아니라 더 건강한 노동자와 교육받은 아이를 원한 자본가에게도 맞았다고 보고, 가족 임금이 가부장제와 자본의 동반자 관계를 굳혔다고 썼습니다.",
+                  "하트먼이 든 사료는 반대 방향입니다. 1846년 《10시간 노동 옹호》와 남성 노동조합들은 여성을 배제하고 남편이 가족을 부양할 수 있는 임금을 요구했습니다.",
+                  "하트먼은 가부장제가 자본주의 앞에서 시들 것이라는 19세기 마르크스주의자들의 예측이 맞지 않았다고 했고, 가족 체계가 해체되고 있다는 증거도 약하다고 봤습니다."
+                ],
+                "en": [
+                  "Hartmann held that the bargain suited not only male workers but also capitalists who wanted healthier workers and educated children, and that the family wage cemented the partnership between patriarchy and capital.",
+                  "Hartmann's evidence points the other way: the Ten Hours' Advocate in 1846 and male unions sought to exclude women and demanded wages that let husbands support their families.",
+                  "Hartmann said the nineteenth-century Marxist prediction that patriarchy would wither under capitalism had not come true, and that evidence for the family system's disintegration was weak."
+                ]
+              },
+              "explanation": {
+                "ko": "하트먼은 산업혁명기에 여성과 아이가 남성과 따로 임금을 벌면서 가족 안의 권위 관계가 흔들리고 모두의 임금이 낮아졌다고 봅니다. 남성 노동자는 여성 노동자를 조직하는 대신 노동조합 보호를 남성에게만 주고, 여성과 아동을 위한 보호 입법을 요구했으며, 자기 임금만으로 가족을 부양할 수 있는 임금을 요구했습니다. 가부장적 관계가 노동계급을 나누어 한쪽인 남성을 다른 쪽인 여성의 희생으로 매수할 수 있게 했다는 것입니다. 가족 임금은 여성의 낮은 임금과 직종 분리를 통해 여성의 경제적 의존을 확보하고, 여성이 집에서 남성에게 직접 이로운 가사와 양육을 맡게 했습니다. 하트먼은 자본주의가 가부장제에 적응한 사례로 가족 임금을, 가부장제가 자본에 적응한 사례로 아이 양육권의 변화를 듭니다.",
+                "en": "Hartmann argues that during industrialisation women and children earning wages separately from men both undermined authority relations in the family and kept everyone's wages low. Rather than organise women workers, male workers reserved union protection for men, argued for protective laws for women and children, and demanded wages sufficient to support their families alone. Patriarchal relations divided the working class, allowing one part, men, to be bought off at the expense of the other, women. The family wage secured women's economic dependence through lower pay and job segregation, and left them doing housework and childcare that benefit men directly. Hartmann cites the family wage as capitalism adjusting to patriarchy, and the shift in child custody toward mothers as patriarchy adjusting to capital."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/espanol/tematica/mujer/autores/hartmann/88.pdf",
+                "label": {
+                  "ko": "하트먼, 「마르크스주의와 페미니즘의 불행한 결혼」 제3부 「가부장제와 자본의 동반자 관계」 (스페인어 번역)",
+                  "en": "Hartmann, 'The Unhappy Marriage of Marxism and Feminism', part III, 'The Partnership of Patriarchy and Capital' (Spanish translation)"
+                }
+              }
+            },
+            {
+              "id": "q4",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "리즈 보걸은 『마르크스주의와 여성 억압』(1983) 제9장 「이중의 유산」에서 엥겔스의 『가족, 사유재산, 국가의 기원』이 이중체계 관점에 기댄다고 했습니다. 그 근거로 든 것은 무엇일까요?",
+                "en": "In chapter 9, 'A Dual Legacy', of Marxism and the Oppression of Women (1983), Lise Vogel said Engels's Origin of the Family relies on the dual-systems perspective. What did she point to?"
+              },
+              "choices": {
+                "ko": [
+                  "가족에 별도의 장을 두고 성별 분업을 생물학적 소여로 다루며, 서문의 두 가지 생산이 이원성을 드러내고, 재산 없는 가구의 여성 종속은 설명하지 못한다는 점을 들었습니다.",
+                  "엥겔스가 가족과 여성을 전혀 다루지 않고 계급 투쟁만으로 역사를 설명했기 때문에, 여성 억압이 계급과 무관한 별도의 체계로 남게 되었다는 점을 들었습니다.",
+                  "엥겔스가 여성 억압을 자본 축적의 법칙에서 직접 끌어냈기 때문에, 가족과 성별 분업이 자본과 나란한 두 번째 체계처럼 보이게 되었다는 점을 들었습니다."
+                ],
+                "en": [
+                  "It gives the family a separate chapter, treats the sex-division of labour as a biological given, its preface's twofold production makes the duality explicit, and it cannot explain women's subordination in propertyless households.",
+                  "Engels ignored the family and women entirely and explained history by class struggle alone, leaving women's oppression as a separate system unrelated to class.",
+                  "Engels derived women's oppression directly from the laws of capital accumulation, which made the family and sex-division of labour look like a second system alongside capital."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "보걸은 『기원』에서 성 갈등과 계급 갈등이 역사적으로 평행할 뿐 이론적 관계가 자율성으로 남는다고 보고, 서문의 ‘인간 자신의 생산’이 별도의 기제를 넌지시 암시한다고 썼습니다.",
+                  "엥겔스는 가족에 책의 한 장을 따로 할애했고, 보걸은 바로 그 구성이 가족을 거의 자율적인 범주로 다룰 수 있다는 함의를 준다고 지적했습니다.",
+                  "『기원』은 자본 축적이 아니라 사유재산과 상속, 일부일처제의 역사에서 여성 억압을 설명합니다. 보걸이 『자본』에 더 가깝다고 본 것은 사회적 재생산 관점이었습니다."
+                ],
+                "en": [
+                  "Vogel held that in the Origin sex- and class-conflict remain historically parallel, their theoretical relation one of autonomy, and that the preface's 'production of human beings themselves' hints obliquely at a distinct mechanism.",
+                  "Engels devoted a separate chapter of the book to the family, and Vogel pointed to that very arrangement as implying the family could be considered virtually autonomously.",
+                  "The Origin explains women's oppression through private property, inheritance and monogamy, not capital accumulation. It was the social-reproduction perspective that Vogel saw as closer to Capital."
+                ]
+              },
+              "explanation": {
+                "ko": "보걸은 사회주의 전통에 두 관점이 공개되지 않은 채 엉켜 있다고 봅니다. 이중체계 관점은 성별 분업, 여성 억압, 가족을 경험적으로 주어진 것으로 놓고 계급과 생산양식은 바깥 변수로 다루므로, 계급 투쟁과 성 투쟁이라는 두 동력이 역사를 움직인다는 함의를 갖습니다. 사회적 재생산 관점은 착취 사회가 직접 생산자 계급을 끊임없이 갱신해야 한다는 이론적 전제에서 출발합니다. 보걸은 『기원』이 가족을 사회의 경제 단위이자 분자로 그리면서도 가족이 사회적 재생산에서 어떻게 기능하는지는 규정하지 않는다고 비판합니다. 그러나 엥겔스가 공적 생산 참여를 프롤레타리아 여성 해방의 길로 보고 가사를 공공 산업으로 바꾸자고 한 대목에는 사회적 재생산 관점이 들어 있다고 인정합니다. 엥겔스의 두 가지 생산을 하트먼은 가부장제 분석의 근거로 받아들였고, 보걸은 이원성의 출처로 읽은 셈입니다.",
+                "en": "Vogel sees two unacknowledged views tangled in the socialist tradition. The dual-systems perspective takes sex-divisions of labour, women's oppression and the family as empirical givens and treats class and mode of production as external variables, implying that two motors, class struggle and sex struggle, drive history. The social-reproduction perspective starts from the theoretical premise that an exploitative society must constantly renew a class of direct producers. Vogel criticises the Origin for depicting the family as the economic unit and molecule of society while never specifying how it functions within social reproduction. Yet she grants that the social-reproduction perspective is present where Engels sees participation in public production as the path to proletarian women's emancipation and calls for converting domestic work into a public industry. Where Hartmann took Engels's twofold production as grounds for analysing patriarchy, Vogel read it as a source of the duality."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/chinese/reference-books/lise-vogel-1983/09.htm",
+                "label": {
+                  "ko": "보걸, 『마르크스주의와 여성 억압』 제9장 「이중의 유산」 (중국어 번역)",
+                  "en": "Vogel, Marxism and the Oppression of Women, chapter 9, 'A Dual Legacy' (Chinese translation)"
+                }
+              }
+            },
+            {
+              "id": "q5",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "보걸은 『마르크스주의와 여성 억압』 제10장 「노동력의 재생산」에서 계급 사회 여성 종속의 물질적 토대를 무엇이라고 했을까요?",
+                "en": "In chapter 10, 'The Reproduction of Labour-Power', of Marxism and the Oppression of Women, what did Vogel name as the material basis of women's subordination in class society?"
+              },
+              "choices": {
+                "ko": [
+                  "성별 분업 그 자체가 아니라, 출산기에 남성이 여성에게 생활 수단을 제공하는 일이 물질적 토대이며, 그 억압의 근거는 계급마다 다르다고 했습니다.",
+                  "모든 사회에 있는 성별 분업 그 자체가 물질적 토대이며, 분업이 있는 한 어느 계급에서나 같은 방식으로 여성 억압이 생긴다고 했습니다.",
+                  "계급을 가로질러 여성 노동력을 통제하는 남성들 사이의 연대가 물질적 토대이며, 이 연대는 계급 투쟁과 무관하게 움직인다고 했습니다."
+                ],
+                "en": [
+                  "Not the sex-division of labour itself, but men's provision of means of subsistence to women during child-bearing, with the grounds of oppression differing by class.",
+                  "The sex-division of labour itself, found in every society, so that wherever there is such a division women are oppressed the same way in every class.",
+                  "Solidarity among men across classes in controlling women's labour power, a solidarity that operates independently of class struggle."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "보걸은 출산이 잉여 노동 전유를 방해하면서도 세대 교체에 꼭 필요하다는 지배 계급의 모순을 풀어 가는 계급 투쟁 속에서 피지배 계급 여성의 억압이 형성된다고 썼습니다.",
+                  "보걸은 분업은 가장 평등한 수렵채집 사회에도 있으며, 임신과 수유기의 역할 차이가 그 자체로 억압의 원천이 되는 것은 아니라고 분명히 했습니다.",
+                  "남성들 사이의 연대를 토대로 놓는 것은 하트먼의 정의에 가깝습니다. 보걸은 지배 계급이 피착취 계급 안의 남성 우위를 장려한다며 이를 계급 관계 안에 놓았습니다."
+                ],
+                "en": [
+                  "Vogel wrote that the oppression of women in the exploited class develops through the class struggle over the ruling class's contradiction: child-bearing interferes with surplus appropriation yet is needed for generational replacement.",
+                  "Vogel stated that divisions of labour exist even in the most egalitarian hunting and gathering society, and that differing roles in pregnancy and lactation do not in themselves constitute a source of oppression.",
+                  "Making solidarity among men the base is closer to Hartmann's definition. Vogel placed it within class relations, saying the ruling class encourages male supremacy within the exploited class."
+                ]
+              },
+              "explanation": {
+                "ko": "보걸의 출발점은 노동력의 재생산입니다. 착취 사회에는 잉여 노동을 수행할 직접 생산자가 늘 있어야 하고, 노동자는 낡고 죽으므로 유지되고 교체되어야 합니다. 교체는 이민이나 노예화로도 가능하지만 보통 세대 교체가 대부분을 맡고, 여기서 처음으로 젠더가 문제가 됩니다. 출산기에는 여성의 노동 능력이 줄어 필요 노동이 늘고 잉여 노동이 줄지만, 지배 계급은 장기적으로 다음 세대 노동자가 필요합니다. 역사적으로 이 모순은 아버지나 친족 남성이 출산기 여성의 생계를 맡는 가족 형태로 풀렸고, 남성 우위는 그 배치를 정당화하는 방식으로 굳어졌다고 봅니다. 재산 소유 계급에서는 상속인의 부계 확인이 문제였습니다. 보걸은 여성 억압이 이론에서 연역되는 것이 아니라 이런 틀로 분석할 역사적 현상이라고 강조합니다.",
+                "en": "Vogel starts from the reproduction of labour-power. An exploitative society needs a constant supply of direct producers to perform surplus-labour, and since workers wear out and die, they must be maintained and replaced. Replacement can come through immigration or enslavement, but generational replacement usually supplies most of it, and only here does gender enter. During child-bearing a woman's capacity to work declines, so necessary labour rises and surplus-labour falls, yet the ruling class needs a future generation of workers. Historically this contradiction was resolved through family forms in which the father or male kin provided for the child-bearing woman, and male supremacy hardened as the legitimation of that arrangement. In propertied classes the issue was securing the paternity of heirs. Vogel stresses that women's oppression is a historical phenomenon analysed with this framework, not deduced from theory."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/chinese/reference-books/lise-vogel-1983/10.htm",
+                "label": {
+                  "ko": "보걸, 『마르크스주의와 여성 억압』 제10장 「노동력의 재생산」 (중국어 번역)",
+                  "en": "Vogel, Marxism and the Oppression of Women, chapter 10, 'The Reproduction of Labour-Power' (Chinese translation)"
+                }
+              }
+            },
+            {
+              "id": "q6",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "보걸은 『마르크스주의와 여성 억압』 제11장 「가사 노동을 넘어서」에서 자본주의 사회 여성 억압의 특수성을 여성의 어떤 이중적 위치로 규정했을까요?",
+                "en": "In chapter 11, 'Beyond Domestic Labour', of Marxism and the Oppression of Women, by what dual position of women did Vogel define the specific character of their oppression in capitalist society?"
+              },
+              "choices": {
+                "ko": [
+                  "가사 노동과 평등권에 대한 이중적 위치로, 가사 노동은 노동계급 여성이 맡지만 평등권 결여는 모든 여성에게 해당한다고 했습니다.",
+                  "가사 노동자이자 임금 노동자라는 이중적 위치로, 두 역할의 모순이 자본주의 아래 여성 억압의 고유한 동력을 만든다고 했습니다.",
+                  "자본주의와 가부장제라는 두 체계 각각에 속한 위치로, 여성은 계급으로서 한 번, 성으로서 또 한 번 억압된다고 했습니다."
+                ],
+                "en": [
+                  "A dual position with respect to domestic labour and equal rights: working-class women do the domestic labour, but the lack of equality applies to all women.",
+                  "A dual position as domestic workers and wage-labourers, the contradiction between the two roles generating the dynamic of their oppression.",
+                  "A position in each of two systems, capitalism and patriarchy, so that women are oppressed once as a class and again as a sex."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "보걸은 이 틀이 임금 노동 속 여성의 처지와 함께, 폭넓은 여성 해방 운동이 사회주의 투쟁의 필수 요소가 될 수 있는 이유를 분석하게 해 준다고 썼습니다.",
+                  "보걸이 비판한 쿨슨·마가스·웨인라이트와 가디너의 정식입니다. 보걸은 이 주장이 경제 현상에만 머물러 노동계급 밖 여성의 억압을 설명하지 못하는 경제주의라고 했습니다.",
+                  "두 체계를 나란히 놓는 것은 보걸이 비판한 이중체계 관점입니다. 보걸은 여성 억압을 사회적 재생산 전체 안의 위치와 평등권 문제로 설명하려 했습니다."
+                ],
+                "en": [
+                  "Vogel wrote that this framework allows both an understanding of women's position in wage-labour and an analysis of how a broad women's liberation movement may be an essential part of the fight for socialism.",
+                  "This is the formulation of Coulson, Magas and Wainwright and of Gardiner, which Vogel criticised as economistic: it stays with economic phenomena and cannot account for the oppression of women outside the working class.",
+                  "Setting two systems side by side is the dual-systems perspective Vogel criticised. She sought to explain women's oppression through their place in social reproduction as a whole and through equal rights."
+                ]
+              },
+              "explanation": {
+                "ko": "보걸은 자본주의에서 필요 노동이 두 구성 요소로 나뉜다고 봅니다. 사회적 구성 요소는 임금 노동 안에서 잉여 노동과 묶여 있고, 가사적 구성 요소인 가사 노동은 자본주의적 생산 영역 밖에서 수행됩니다. 노동력이 재생산되려면 둘 다 필요하며, 이 부담은 여성에게 불균형하게 지워집니다. 그러나 여성의 처지는 가사 노동만으로 정해지지 않습니다. 자본주의는 노동력의 자유로운 판매를 위해 인격의 평등을 약속하지만 여성에게는 이를 온전히 주지 않고, 여성은 다른 집단처럼 평등권을 위해 싸웁니다. 가사 노동은 노동계급 여성의 일이지만 평등권 결여는 원칙적으로 모든 여성에게 해당하므로, 계급을 가로지르는 여성 운동이 생길 근거가 됩니다. 보걸은 레닌을 따라 민주적 권리를 위한 투쟁이 자본주의의 경제적·사회적 불평등을 드러내 그 너머를 가리킬 수 있다고 봤습니다.",
+                "en": "Vogel holds that under capitalism necessary labour divides into two components. The social component is bound up with surplus-labour in wage work; the domestic component, domestic labour, is performed outside capitalist production. Both are needed for labour-power to be reproduced, and the burden falls disproportionately on women. But women's position is not set by domestic labour alone. Capitalism promises equality of persons, rooted in the free sale of labour-power, yet withholds it from women, who like other groups fight for equal rights. Domestic labour falls to working-class women, but the lack of equality applies in principle to all women, which gives a basis for women's movements that cross class lines. Following Lenin, Vogel argued that the struggle for democratic rights can expose capitalism's economic and social inequality and point beyond it."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/chinese/reference-books/lise-vogel-1983/11.htm",
+                "label": {
+                  "ko": "보걸, 『마르크스주의와 여성 억압』 제11장 「가사 노동을 넘어서」 (중국어 번역)",
+                  "en": "Vogel, Marxism and the Oppression of Women, chapter 11, 'Beyond Domestic Labour' (Chinese translation)"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sex-gender-theory-intro-ch06",
+      "volumeNumber": 15,
+      "chapterNumber": 6,
+      "title": {
+        "ko": "성 해방은 권력에 맞서는가?",
+        "en": "Does sexual liberation oppose power?"
+      },
+      "sourceUrl": "https://www.marxists.org/reference/archive/marcuse/works/eros-civilisation/index.htm",
+      "summary": {
+        "ko": "약 12분 · 빌헬름 라이히의 『파시즘의 대중심리』(1933)와 헤르베르트 마르쿠제의 『에로스와 문명』(1955) 서론·제1장·후기, 1966년 「정치적 서문」을 나란히 읽고, 성 억압과 계급 지배의 관계를 두 사람이 어디서 달리 보았는지 확인합니다. 미셸 푸코가 『성의 역사』 제1권 『앎의 의지』(1976)에서 이 ‘억압 가설’ 전체에 던진 반론도 함께 살펴봅니다.",
+        "en": "About 12 minutes · Read Wilhelm Reich's The Mass Psychology of Fascism (1933) alongside the introduction, first chapter and epilogue of Herbert Marcuse's Eros and Civilization (1955) and its 1966 Political Preface, and see where the two differed on how sexual repression relates to class rule. Then look at the objection Michel Foucault raised against this whole 'repressive hypothesis' in The History of Sexuality, volume 1, The Will to Knowledge (1976)."
+      },
+      "learningFocus": {
+        "ko": "라이히와 마르쿠제를 ‘성을 풀어 주면 혁명이 온다’는 한 목소리로 읽기 쉽습니다. 라이히는 성 억압을 권위주의 가족이 순종적 성격을 만들어 내는 장치로 분석했고, 마르쿠제는 그 통찰을 높이 사면서도 억압을 구별하지 않고 성의 방출만 해방으로 본 점을 비판했습니다. 1966년의 마르쿠제는 성적 자유가 늘어난 사회에서도 지배가 리비도를 관리한다고 썼습니다. 푸코는 한 걸음 더 나아가 억압을 고발하는 담론 자체가 권력의 그물 안에 있다고 봤습니다. ‘프로이트-마르크스주의’는 후대의 분류 이름입니다.",
+        "en": "It is easy to read Reich and Marcuse as one voice saying 'free sex and revolution follows'. Reich analysed sexual repression as the means by which the authoritarian family produces a submissive character; Marcuse valued that insight but criticised Reich for leaving repression undifferentiated and treating the mere release of sexuality as freedom. In 1966 Marcuse wrote that domination manages libido even in a society with more sexual liberty. Foucault went further, arguing that the discourse denouncing repression itself belongs to the network of power. 'Freudo-Marxism' is a later label."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "배경: 정신분석과 마르크스주의를 잇는 시도",
+            "items": [
+              "빈의 정신분석가 빌헬름 라이히는 오스트리아 공산당을 거쳐 1930년 독일 공산당에 들어갔고, 1929년 「변증법적 유물론과 정신분석」을 발표했으며, 베를린에서 프롤레타리아 성 정치 운동(Sex-Pol)을 조직했습니다. 1933년 공산당에서 제명되었고, 이어 국제정신분석학회에서도 밀려났습니다.",
+              "『파시즘의 대중심리』(1933)는 경제적으로 같은 처지의 대중이 왜 파시즘을 지지했는가를 묻습니다. 1936년의 『문화 투쟁 속의 성』은 뒤에 『성 혁명』이라는 이름으로 다시 나왔습니다.",
+              "프랑크푸르트 사회연구소 출신의 헤르베르트 마르쿠제는 1955년 『에로스와 문명』에서 프로이트 이론 안에서 비억압적 문명의 가능성을 찾으려 했습니다."
+            ]
+          },
+          {
+            "title": "라이히: 권위주의 가족과 성 경제학",
+            "items": [
+              "라이히는 1933년 초판에서 성 억압이 문화 그 자체의 전제조건이 아니라 비교적 늦게, 생산수단의 사유재산과 계급 분열이 시작되면서 형성되었다고 봅니다. 그래서 문제는 문화의 문제가 아니라 사회 질서의 문제라고 했습니다. 1946년 증보판은 이 대목을 ‘권위주의적 가부장제’로 고쳐 써서 마르크스주의 어휘를 덜어 냈습니다.",
+              "사회경제 구조와 성 구조의 결합과 그 재생산은 생애 첫 4~5년, 가족 안에서 이루어지고, 교회는 그 기능을 이어 갈 뿐이라고 했습니다. 계급국가에게 가족은 그 구조와 이데올로기를 만드는 공장이 된다는 것입니다(1946년판은 ‘권위주의 국가’).",
+              "아이의 성기 성욕을 도덕적으로 금지하면 아이는 겁 많고 순종적이 되고, 반항하는 힘과 비판 능력이 마비되어 권위주의 질서에 적응한 신민이 된다고 했습니다. 이 분석을 그는 마르크스의 사회학과 프로이트의 심리학에 기댄 ‘사회적 성 경제학’이라 불렀습니다."
+            ]
+          },
+          {
+            "title": "마르쿠제: 역사적 억압과 비억압적 문명",
+            "items": [
+              "마르쿠제는 문명이 본능의 영구적 예속 위에 서 있다는 프로이트의 명제를 받아들이되, 억압은 역사적 현상이며 자연이 아니라 인간이 부과한 것이라고 읽습니다. 결핍과 생존 투쟁을 ‘영원한’ 것으로 본 프로이트의 생각은 억압의 오래된 합리화라고 했습니다.",
+              "제2장에서는 문명 유지에 필요한 ‘기본 억압’과 사회적 지배가 덧붙이는 ‘과잉 억압’을 나누고, 현실 원칙의 지금 역사적 형태를 ‘업적 원칙’이라 부릅니다. 이 장은 MIA에 실려 있지 않습니다.",
+              "후기에서 그는 라이히의 초기 저작을 프로이트에 담긴 비판적 사회 이론을 발전시킨 가장 진지한 시도로 꼽으면서도, 억압적 승화와 비억압적 승화를 구별하지 않아 성의 방출이 곧 해방처럼 되었다고 비판합니다.",
+              "1966년 「정치적 서문」에서는 풍요한 사회가 신민의 성적·공격적 에너지를 충족시키고 상품을 리비도의 대상으로 만든다고 씁니다. 성적 자유가 늘었다는 사실이 과잉 억압 논의를 무효로 만들지 않는다는 것입니다. 이 진단은 1964년 『일차원적 인간』의 ‘억압적 탈승화’로 이어집니다."
+            ]
+          },
+          {
+            "title": "푸코의 반론: 억압 가설을 의심하다",
+            "items": [
+              "미셸 푸코는 『앎의 의지』 제1부 「우리 빅토리아인들」에서 17세기 이후 성이 억압되어 왔다는 통념을 ‘억압 가설’이라 부르고 세 가지를 의심합니다. 성 억압이 역사적 사실인가, 권력은 본질적으로 금지와 검열의 형태로 작동하는가, 억압을 비판하는 담론은 억압과 단절했는가 아니면 같은 역사적 그물에 속하는가입니다. 그는 같은 대목에서 프로이트의 순응주의와 함께 “라이히의 큰 격정 아래 숨은 소심함”을 고발하는 흔한 논조를 예로 듭니다.",
+              "제2부 「억압 가설」에서는 16세기 말 이후 성의 ‘담론화’가 제한되기는커녕 점점 더 부추겨졌고, 권력과 쾌락은 서로를 없애지 않고 맞물려 증식했다고 봅니다. 제4부에서는 권력 관계가 금지만 하는 상부구조가 아니라 직접 생산하는 역할을 한다고 하고, “권력이 있는 곳에 저항이 있다”고 쓰면서도 권력 바깥의 ‘거대한 거부’의 자리는 없다고 합니다.",
+              "제4부 끝 「시기 구분」에서 푸코는 양차 대전 사이 “라이히를 중심으로” 성 억압에 대한 역사적·정치적 비판이 형성되었고 그 가치와 실제 효과가 컸다고 인정합니다. 그러나 라이히가 붙인 정치적 조건이 하나도 실현되지 않은 채 성 행동이 크게 바뀐 사실은, 그 ‘반억압 투쟁’이 성 장치 안의 전술적 이동이었음을 보여 준다고 했습니다.",
+              "제5부에서 그는 “성에 예라고 말하면 권력에 아니라고 말하는 것”이라 믿지 말라고 하고, 성 장치에 맞서는 반격의 거점은 ‘성-욕망’이 아니라 ‘몸과 쾌락’이어야 한다는 문장으로 결론을 맺습니다. 이 책은 문항 근거로 쓸 수 있는 공개 판본이 없어 여기서만 소개합니다."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "라이히, 『파시즘의 대중심리』: 제1장 4절 「성 억압의 사회적 기능」. 1933년 독일어 초판(코펜하겐 성정치 출판사, archive.org 스캔 44~52쪽)에서 확인했고, 링크는 MIA 스페인어 서가의 1946년 증보 제3판 번역(로베르토 베인 옮김)입니다. 두 판은 성 억압의 기원과 노동자 여성의 예에서 표현이 다릅니다.",
+              "마르쿠제, 『에로스와 문명』(1955, 1966년 비컨판): 「정치적 서문」(1966), 서론, 제1장 「정신분석의 숨은 경향」, 후기 「신프로이트 수정주의 비판」. 영어 원저입니다. 기본 억압·과잉 억압·업적 원칙을 정의한 제2장은 MIA에 없습니다.",
+              "푸코, 『성의 역사』 제1권 『앎의 의지』(갈리마르, 1976): 제1부 12, 18쪽, 제2부 66~67쪽, 제4부 125~126쪽과 172~173쪽, 제5부 208쪽. 프랑스어 원문에서 옮겼습니다."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "Background: joining psychoanalysis and Marxism",
+            "items": [
+              "The Viennese psychoanalyst Wilhelm Reich moved from the Austrian Communist Party to the German one in 1930, published 'Dialectical Materialism and Psychoanalysis' in 1929, and organised a proletarian sexual-politics movement (Sex-Pol) in Berlin. He was expelled from the Communist Party in 1933 and then pushed out of the International Psychoanalytical Association.",
+              "The Mass Psychology of Fascism (1933) asks why masses in the same economic position supported fascism. His Sexuality in the Cultural Struggle (1936) was later reissued as The Sexual Revolution.",
+              "Herbert Marcuse, from the Frankfurt Institute for Social Research, sought in Eros and Civilization (1955) the possibility of a non-repressive civilization within Freud's own theory."
+            ]
+          },
+          {
+            "title": "Reich: the authoritarian family and sex-economy",
+            "items": [
+              "In the 1933 first edition Reich held that sexual repression is not a precondition of culture as such; it took shape relatively late, with private property in the means of production and the beginning of class division. The problem, he said, is therefore one of the social order, not of culture. The enlarged 1946 edition rewrote this as 'authoritarian patriarchy', thinning out the Marxist vocabulary.",
+              "The meshing of socio-economic and sexual structure, and its reproduction, takes place in the first four or five years of life and in the family; the Church only continues that function. For the class state ('the authoritarian state' in 1946), the family becomes the factory of its structure and ideology.",
+              "Moral inhibition of the small child's genital sexuality makes the child fearful, shy and obedient, paralyses rebellious forces and the capacity for criticism, and produces a subject adapted to the authoritarian order. He called this analysis 'social sex-economy', resting on Marx's sociology and Freud's psychology."
+            ]
+          },
+          {
+            "title": "Marcuse: historical repression and a non-repressive civilization",
+            "items": [
+              "Marcuse accepts Freud's proposition that civilization rests on the permanent subjugation of the instincts, but reads repression as a historical phenomenon, imposed not by nature but by man. Freud's view of scarcity and the struggle for existence as 'eternal' is, he says, the oldest rationalization of repression.",
+              "In chapter 2 he distinguishes 'basic repression', needed to sustain civilization, from 'surplus-repression' added by social domination, and calls the present historical form of the reality principle the 'performance principle'. That chapter is not on the MIA.",
+              "In the epilogue he names Reich's early writings the most serious attempt to develop the critical social theory implicit in Freud, but criticises Reich for making no distinction between repressive and non-repressive sublimation, so that freedom appears as a mere release of sexuality.",
+              "In the 1966 Political Preface he writes that the affluent society satisfies the sexual and aggressive energy of its subjects and turns merchandise into objects of the libido; more sexual liberty does not make talk of surplus repression meaningless. The diagnosis leads into the 'repressive desublimation' of One-Dimensional Man (1964)."
+            ]
+          },
+          {
+            "title": "Foucault's objection: doubting the repressive hypothesis",
+            "items": [
+              "In part 1 of The Will to Knowledge, 'We Other Victorians', Michel Foucault calls the received view that sex has been repressed since the seventeenth century the 'repressive hypothesis' and raises three doubts: is the repression of sex a historical fact; does power work essentially through prohibition and censorship; and has the discourse criticising repression broken with it, or does it belong to the same historical network? In the same passage he cites, as a familiar line, the denunciation of Freud's conformism and of 'so much timidity beneath Reich's great outbursts'.",
+              "In part 2, 'The Repressive Hypothesis', he argues that since the late sixteenth century the 'putting into discourse' of sex was not restricted but increasingly incited, and that power and pleasure do not cancel each other but interlock and multiply. In part 4 he says relations of power are not a superstructure that merely prohibits but play a directly productive role, and writes that 'where there is power, there is resistance', while denying any single place of 'great Refusal' outside power.",
+              "At the end of part 4, 'Periodization', Foucault grants that between the wars a historico-political critique of sexual repression formed 'around Reich', and that its value and real effects were considerable. But the fact that sexual behaviour changed so much without any of the political conditions Reich attached being realised shows, he says, that this 'anti-repressive' struggle was a tactical shift within the deployment of sexuality.",
+              "In part 5 he warns against believing that saying yes to sex means saying no to power, and concludes that the rallying point for the counter-attack against the deployment of sexuality ought to be not sex-desire but bodies and pleasures. No open edition of the book is available to cite for the questions, so it is presented here only."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "Reich, The Mass Psychology of Fascism: chapter 1, section 4, 'The Social Function of Sexual Repression'. Checked in the 1933 German first edition (Verlag für Sexualpolitik, Copenhagen; archive.org scan, pp. 44-52); the link is the MIA Spanish translation (by Roberto Bein) of the enlarged third edition of 1946. The two editions word the origin of repression and the working-woman example differently.",
+              "Marcuse, Eros and Civilization (1955; Beacon edition 1966): Political Preface (1966), introduction, chapter 1 'The Hidden Trend in Psychoanalysis', and the epilogue 'Critique of Neo-Freudian Revisionism'. The book was written in English. Chapter 2, which defines basic repression, surplus-repression and the performance principle, is not on the MIA.",
+              "Foucault, The History of Sexuality, vol. 1, La volonté de savoir (Gallimard, 1976): part 1 pp. 12 and 18, part 2 pp. 66-67, part 4 pp. 125-126 and 172-173, part 5 p. 208. Translated from the French original."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "가족이라는 공장",
+            "text": "라이히는 가족이 어린 시절의 성 억압으로 순종적 성격을 만들어 계급 지배를 떠받친다고 봤습니다."
+          },
+          {
+            "title": "역사적 억압",
+            "text": "마르쿠제는 억압을 자연의 필연이 아니라 지배가 부과한 역사적 현상으로 읽었습니다."
+          },
+          {
+            "title": "방출과 해방의 차이",
+            "text": "마르쿠제는 성의 방출만으로 해방을 그린 라이히를 비판하고, 성적 자유 속의 지배를 지적했습니다."
+          },
+          {
+            "title": "억압 가설 비판",
+            "text": "푸코는 억압을 고발하는 담론 자체가 성 장치 안에서 움직인다고 봤습니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "The family as factory",
+            "text": "Reich held that the family produces a submissive character through sexual repression in early childhood, propping up class rule."
+          },
+          {
+            "title": "Historical repression",
+            "text": "Marcuse read repression as a historical phenomenon imposed by domination, not a necessity of nature."
+          },
+          {
+            "title": "Release is not liberation",
+            "text": "Marcuse criticised Reich for picturing freedom as mere release of sexuality, and pointed to domination within sexual liberty."
+          },
+          {
+            "title": "Against the repressive hypothesis",
+            "text": "Foucault argued that the discourse denouncing repression itself moves within the deployment of sexuality."
+          }
+        ]
+      },
+      "diagram": {
+        "kind": "contrast",
+        "ko": {
+          "title": "성 억압과 지배를 보는 두 방식",
+          "left": {
+            "heading": "라이히, 『파시즘의 대중심리』(1933)",
+            "rows": [
+              "성 억압의 기원: 생산수단의 사유재산과 계급 분열",
+              "재생산 장소: 생애 첫 4~5년의 가족",
+              "억압의 효과: 겁 많고 순종적인 신민의 성격",
+              "정치적 의미: 성적 금제가 자기 처지의 자각을 막음",
+              "프로이트와의 관계: 문화 철학은 거부하고 발견은 옹호"
+            ]
+          },
+          "right": {
+            "heading": "마르쿠제, 『에로스와 문명』",
+            "rows": [
+              "성 억압의 기원: 자연이 아니라 인간이 부과한 역사적 현상",
+              "프로이트 독해: 그의 이론에서 비억압적 문명의 근거를 찾음",
+              "승화: 억압적 승화와 비억압적 승화를 구별",
+              "라이히 평가: 초기 통찰은 높이 사되 성 방출을 만병통치약으로 봤다고 비판",
+              "1966년 진단: 성적 자유가 늘어도 지배는 리비도를 관리함"
+            ]
+          }
+        },
+        "en": {
+          "title": "Two ways of seeing sexual repression and domination",
+          "left": {
+            "heading": "Reich, The Mass Psychology of Fascism (1933)",
+            "rows": [
+              "Origin of sexual repression: private property and class division",
+              "Where it is reproduced: the family, first four or five years",
+              "Effect: a fearful, submissive subject",
+              "Political meaning: sexual inhibition blocks awareness of one's situation",
+              "Relation to Freud: rejects his philosophy of culture, defends his discoveries"
+            ]
+          },
+          "right": {
+            "heading": "Marcuse, Eros and Civilization",
+            "rows": [
+              "Origin of repression: historical, imposed by man rather than nature",
+              "Reading Freud: finds grounds for a non-repressive civilization in his theory",
+              "Sublimation: distinguishes repressive from non-repressive",
+              "On Reich: values the early insights, faults sexual release as panacea",
+              "1966 diagnosis: domination manages libido even amid more sexual liberty"
+            ]
+          }
+        }
+      },
+      "lessons": [
+        {
+          "id": "sex-gender-theory-intro-ch06-basic",
+          "level": "basic",
+          "title": {
+            "ko": "라이히와 마르쿠제: 성 해방은 곧 해방인가",
+            "en": "Reich and Marcuse: is sexual liberation liberation as such?"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "라이히는 『파시즘의 대중심리』 1933년 초판의 「성 억압의 사회적 기능」에서 성 억압이 어디서 시작되어 어디서 재생산된다고 봤을까요?",
+                "en": "In 'The Social Function of Sexual Repression' in the 1933 first edition of The Mass Psychology of Fascism, where did Reich say sexual repression began, and where is it reproduced?"
+              },
+              "choices": {
+                "ko": [
+                  "생산수단의 사유재산과 계급 분열이 시작되며 생겼고, 생애 첫 몇 해의 가족에서 재생산되어 가족이 계급국가의 구조와 이데올로기를 만드는 공장이 된다고 봤습니다.",
+                  "성 억압은 어떤 문화든 성립하기 위한 전제조건이므로 문화의 시작과 함께 생겼고, 가족은 그 보편적 요구를 아이에게 전달하는 통로일 뿐이라고 봤습니다.",
+                  "성을 부정하는 종교에서 처음 생겼고, 교회가 그 근원지이며 가족은 교회의 가르침을 뒤따라 실천하는 부차적 기관에 지나지 않는다고 봤습니다."
+                ],
+                "en": [
+                  "It arose with private property in the means of production and the start of class division, and is reproduced in the family in the first years of life, which becomes the class state's factory of structure and ideology.",
+                  "Sexual repression is a precondition for any culture to exist, so it arose with culture itself, and the family is merely the channel that passes this universal demand on to the child.",
+                  "It first arose in sex-denying religion; the Church is its source, and the family is only a secondary institution that follows and applies the Church's teaching."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "1933년판은 성 억압이 문화 발전의 처음부터가 아니라 비교적 늦게, 생산수단의 사유재산과 계급 분열의 시작과 함께 형성되었다고 씁니다. 1946년 증보판은 이 자리를 ‘권위주의적 가부장제’로 고쳤습니다.",
+                  "라이히가 거부한 프로이트 문화 철학의 답입니다. 그는 문화 활동 그 자체가 아니라 그 현재 형태가 억압을 요구하며, 문제는 문화가 아니라 사회라고 했습니다.",
+                  "라이히에게 교회는 가족이 맡은 기능을 이어 갈 뿐입니다. 성을 부정하는 종교는 성 억압이 감수성을 바꾼 뒤에 생긴 것으로 그려집니다."
+                ],
+                "en": [
+                  "The 1933 edition says sexual repression did not arise at the start of cultural development but relatively late, with private property in the means of production and the beginning of class division. The enlarged 1946 edition replaced this with 'authoritarian patriarchy'.",
+                  "This is the answer of Freud's philosophy of culture, which Reich rejected: it is not cultural activity as such but its present forms that demand repression, so the problem is social, not cultural.",
+                  "For Reich the Church only perpetuates the family's function; sex-denying religion appears after repression has altered human sensibility."
+                ]
+              },
+              "explanation": {
+                "ko": "라이히는 교회는 내세의 구원을, 프로이트 문화 철학은 ‘문화’를 성 억압의 이유로 든다고 정리한 뒤, 아이의 자위나 청소년의 성관계가 주유소 건설이나 비행기 제조와 무슨 상관이냐고 되묻습니다. 1933년판에서 성 억압은 문화의 전제조건이 아니라 생산수단의 사유재산과 계급 분열이 시작되며 형성되었고, 그때부터 모든 사람의 성적 이해가 소수의 경제적 이윤에 봉사하게 되었으며 일부일처 결혼과 부권 가족이 그것을 굳혔습니다. 이 결합이 재생산되는 곳은 생애 첫 4~5년의 가족이며, 교회는 그 기능을 이어 갈 뿐입니다. 그래서 계급국가는 가족에 큰 이해관계를 갖고, 가족은 그 구조와 이데올로기의 공장이 됩니다. 링크한 판의 저본인 1946년 증보판은 같은 대목을 ‘권위주의적 가부장제’와 ‘권위주의 국가’로 고쳐 썼습니다.",
+                "en": "Reich sets out the usual reasons given for sexual repression: the Church says salvation in the hereafter, Freud's philosophy of culture says 'culture'. He then asks what children's masturbation or adolescents' intercourse has to do with building petrol stations or making aircraft. In the 1933 edition sexual repression is not a precondition of culture; it formed with private property in the means of production and the beginning of class division, when the sexual interests of all began to serve the economic profit of a minority, a fact fixed in monogamous marriage and the patriarchal family. This meshing is reproduced in the first four or five years of life in the family, and the Church merely perpetuates that function. Hence the class state's great interest in the family, which becomes its factory of structure and ideology. The enlarged 1946 edition behind the linked translation rewrote the passage as 'authoritarian patriarchy' and 'the authoritarian state'."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/espanol/reich/psicologia-de-masas-del-fascismo.pdf",
+                "label": {
+                  "ko": "라이히, 『파시즘의 대중심리』 제1장 4절 「성 억압의 사회적 기능」 (1933년 초판; 링크는 1946년 증보판의 스페인어 번역)",
+                  "en": "Reich, The Mass Psychology of Fascism, ch. 1, sec. 4 'The Social Function of Sexual Repression' (1933 first edition; the link is a Spanish translation of the enlarged 1946 edition)"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "라이히는 『파시즘의 대중심리』 1933년 초판에서, 공산주의자 노동자 여성과 똑같이 굶주리면서도 중앙당에, 뒤에는 나치당에 투표하는 그리스도교도 노동자 여성을 어떻게 설명했을까요?",
+                "en": "In the 1933 first edition of The Mass Psychology of Fascism, how did Reich explain the Christian working woman who goes as hungry as a communist one yet votes for the Centre Party and later the Nazis?"
+              },
+              "choices": {
+                "ko": [
+                  "성을 금하는 도덕적 금제가 그녀가 자기 사회적 처지를 자각하지 못하게 막고, 교회와 ‘성 볼셰비즘’에 대한 두려움에 그녀를 묶어 둔다고 설명했습니다.",
+                  "경제적 궁핍이 아직 충분히 깊지 않아서이므로, 가난이 더 심해지고 성적 곤궁까지 겹치면 그녀도 자연스럽게 자기 처지를 깨닫게 된다고 설명했습니다.",
+                  "그녀는 사실 공산주의자 노동자 여성보다 형편이 나아서 지킬 재산이 있었고, 그 경제적 이해가 그녀를 보수 정당 쪽으로 이끌었다고 설명했습니다."
+                ],
+                "en": [
+                  "Moral anti-sexual inhibition stops her from becoming aware of her social situation and binds her to the Church and to fear of 'sexual Bolshevism'.",
+                  "Her economic hardship was not yet deep enough; if poverty worsened and sexual misery were added to it, she would naturally come to understand her situation.",
+                  "She was in fact better off than the communist working woman and had property to defend, and that economic interest drew her towards the conservative parties."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "라이히는 계급의식을 지닌 여성과 그리스도교도 여성의 성 이데올로기 차이를 보면 성 구조가 결정적임을 알게 된다며, 성을 금하는 도덕적 금제가 처지의 자각을 막는다고 씁니다.",
+                  "라이히가 ‘기계론적 사고의 속류 마르크스주의자’의 가정으로 소개하고 반박하는 견해입니다. 그 가정대로라면 청년과 여성 대중이 가장 혁명적이어야 했다는 것입니다.",
+                  "라이히는 그녀가 공산주의자 노동자 여성만큼 굶주리고 같은 경제적 처지에 있다고 전제합니다. 설명의 열쇠는 경제적 이해가 아니라 성 구조입니다."
+                ],
+                "en": [
+                  "Reich says the actual difference in sexual ideology between the class-conscious and the Christian woman shows the decisive importance of sexual structure: moral inhibition blocks awareness of her situation.",
+                  "Reich presents this as the assumption of the 'vulgar Marxist' with his mechanistic thinking, and rejects it: on that assumption young people and women should have been the most revolutionary.",
+                  "Reich assumes she goes as hungry as the communist woman and is in the same economic situation; the key is sexual structure, not economic interest."
+                ]
+              },
+              "explanation": {
+                "ko": "라이히는 경제학만으로 설명되지 않는 지점을 이 예로 보여 줍니다. 평범한 그리스도교도 노동자 여성은 공산주의자 여성만큼 굶주리고 같은 경제적 처지에 있지만 중앙당에, 뒤에는 나치당에 투표합니다. 기계론적인 속류 마르크스주의자는 경제적 곤궁에 성적 곤궁이 겹치면 처지의 자각이 더 날카로워질 것이라 가정하지만, 그렇다면 청년과 여성 대중이 남성보다 훨씬 계급의식이 높아야 했을 것입니다. 라이히는 두 여성의 실제 차이를 성 이데올로기에서 찾습니다. 성을 금하는 도덕적 금제가 그녀가 자기 사회적 처지를 자각하지 못하게 막고, 그녀를 교회에, 또 ‘성 볼셰비즘’에 대한 두려움에 묶어 둔다는 것입니다. 그래서 가족이 사적 경제 사회의 가장 중요한 이데올로기 재생산 장소라고 했습니다. 1946년 증보판은 두 여성을 ‘보수적’, ‘진보적’ 여성으로 바꿔 썼습니다.",
+                "en": "Reich uses this example to show what economics alone cannot explain. The average Christian working woman goes as hungry as a communist one and is in the same economic situation, yet she votes for the Centre Party and later for the Nazis. The mechanistic vulgar Marxist assumes that awareness of one's situation must be sharpest when sexual misery is added to economic misery; but then the masses of young people and women should have been far more class-conscious than men. Reich locates the real difference between the two women in sexual ideology. Moral anti-sexual inhibition keeps the Christian woman from becoming conscious of her social situation and binds her to the Church as firmly as it makes her fear 'sexual Bolshevism'. That is why the family is the most important site of ideological reproduction of the private-economy social system. The enlarged 1946 edition recast the two women as 'conservative' and 'liberal'."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/espanol/reich/psicologia-de-masas-del-fascismo.pdf",
+                "label": {
+                  "ko": "라이히, 『파시즘의 대중심리』 제1장 4절 「성 억압의 사회적 기능」 (1933년 초판; 링크는 1946년 증보판의 스페인어 번역)",
+                  "en": "Reich, The Mass Psychology of Fascism, ch. 1, sec. 4 'The Social Function of Sexual Repression' (1933 first edition; the link is a Spanish translation of the enlarged 1946 edition)"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "마르쿠제는 『에로스와 문명』 서론에서 프로이트가 문명과 억압을 동일시한 것을 어떻게 다루겠다고 했을까요?",
+                "en": "In the introduction to Eros and Civilization, how did Marcuse say he would deal with Freud's identification of civilization with repression?"
+              },
+              "choices": {
+                "ko": [
+                  "프로이트 자신의 이론이 그 동일시를 거부할 근거를 주며, 억압적 문명의 성취 자체가 억압을 점차 없앨 전제조건을 만든다고 했습니다.",
+                  "프로이트의 본능 이론은 생물학주의라서 버려야 하고, 무의식 대신 문화적·대인관계적 요인을 중심에 두어야 억압을 넘어설 수 있다고 했습니다.",
+                  "프로이트의 동일시는 옳으므로 비억압적 문명은 불가능하며, 남은 과제는 개인이 억압을 덜 고통스럽게 견디도록 돕는 일이라고 했습니다."
+                ],
+                "en": [
+                  "Freud's own theory gives reasons to reject that identification, and the achievements of repressive civilization themselves create preconditions for the gradual abolition of repression.",
+                  "Freud's instinct theory is biologism and should be dropped; only by putting cultural and interpersonal factors in place of the unconscious can repression be overcome.",
+                  "Freud's identification is correct, so a non-repressive civilization is impossible, and the remaining task is to help individuals bear repression with less suffering."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "서론은 비억압적 문명 논의의 두 근거로, 프로이트의 이론 구상이 그 자신의 부정을 반박한다는 점과 억압적 문명의 성취가 억압 폐지의 전제조건을 만든다는 점을 듭니다.",
+                  "마르쿠제가 반대한 신프로이트 수정주의의 방향입니다. 그는 프로이트의 ‘생물학주의’가 깊이를 지닌 사회 이론이며, 수정주의자들이 그 뿌리를 잘라 냈다고 비판합니다.",
+                  "마르쿠제는 억압이 문명의 본질이라면 문명의 대가를 묻는 프로이트의 질문이 무의미해진다며, 비억압적 문명을 공상이 아닌 현실적 근거 위에서 논하겠다고 했습니다."
+                ],
+                "en": [
+                  "The introduction gives two grounds: Freud's theoretical conception itself seems to refute his denial of a non-repressive civilization, and repressive civilization's achievements create preconditions for abolishing repression.",
+                  "That is the direction of the Neo-Freudian revisionists, whom Marcuse opposed: Freud's 'biologism', he says, is social theory in a depth dimension that the revisionists flattened out.",
+                  "Marcuse says that if repression belonged to the essence of civilization, Freud's question about its price would be meaningless; he proposes to discuss a non-repressive civilization on realistic grounds, not as utopia."
+                ]
+              },
+              "explanation": {
+                "ko": "마르쿠제는 문명이 인간 본능의 영구적 예속 위에 서 있다는 프로이트의 명제에서 출발합니다. 그런데 기술이 발달한 문명에서 생산력이 커지는 만큼 부자유도 커지고, 강제수용소와 원자폭탄은 야만으로의 퇴행이 아니라 현대 과학·기술·지배의 성취가 억압 없이 실행된 결과라고 봅니다. 억압이 불필요해질수록 더 완강하게 유지되는 것일 수 있다는 것입니다. 그래서 자유와 억압, 지배와 진보의 결합이 문명의 원리인지, 인간 존재의 특정한 역사적 조직에서 나온 것인지를 다시 묻습니다. 그는 프로이트 자신의 이론 구상과 억압적 문명이 이룬 성취라는 두 가지 구체적 근거에서 비억압적 문명을 논하겠다고 하고, 프로이트의 메타심리학을 버린 신프로이트 수정주의에 반대한다고 밝힙니다.",
+                "en": "Marcuse starts from Freud's proposition that civilization rests on the permanent subjugation of the human instincts. Yet in technically advanced civilization intensified progress seems bound up with intensified unfreedom; concentration camps and atom bombs are not a relapse into barbarism but the unrepressed implementation of modern science, technology and domination. Repressiveness may be maintained the more vigorously the more unnecessary it becomes. So he asks again whether the union of freedom and repression, domination and progress, is the principle of civilization or the result of a specific historical organization of human existence. He proposes to discuss a non-repressive civilization on two concrete grounds, Freud's own theoretical conception and the achievements of repressive civilization, and declares his opposition to the Neo-Freudian revisionists who discarded Freud's metapsychology."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/reference/archive/marcuse/works/eros-civilisation/introduction.htm",
+                "label": {
+                  "ko": "마르쿠제, 『에로스와 문명』 서론 (1955)",
+                  "en": "Marcuse, Eros and Civilization, introduction (1955)"
+                }
+              }
+            },
+            {
+              "id": "q4",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "마르쿠제는 『에로스와 문명』 제1장 「정신분석의 숨은 경향」에서 결핍과 생존 투쟁 때문에 본능 억압이 필요하다는 프로이트의 논거를 어떻게 평가했을까요?",
+                "en": "In chapter 1 of Eros and Civilization, 'The Hidden Trend in Psychoanalysis', how did Marcuse assess Freud's argument that scarcity and the struggle for existence make instinctual repression necessary?"
+              },
+              "choices": {
+                "ko": [
+                  "생존 투쟁을 ‘영원한’ 것으로 보는 문명만큼 오래된 억압의 합리화라고 봤고, 억압은 자연이 아니라 인간이 부과한 역사적 현상이라고 했습니다.",
+                  "결핍은 인간 본성에 새겨진 생물학적 사실이므로, 억압은 어느 사회에서나 같은 정도로 필요하고 지배의 형태와는 상관이 없다고 했습니다.",
+                  "프로이트의 논거는 순전히 경제적인 것이라 정신분석과는 무관하며, 억압을 이해하려면 본능 이론을 버리고 경제학만 보면 된다고 했습니다."
+                ],
+                "en": [
+                  "Treating the struggle for existence as 'eternal' is a rationalization of repression as old as civilization; repression is a historical phenomenon imposed not by nature but by man.",
+                  "Scarcity is a biological fact inscribed in human nature, so repression is needed to the same degree in every society and has nothing to do with the form of domination.",
+                  "Freud's argument is purely economic and so unrelated to psychoanalysis; to understand repression one need only drop instinct theory and look at economics."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "제1장은 이 구상이 문명만큼 오래되었고 억압의 가장 효과적인 합리화였으며, 프로이트의 이론도 상당 부분 거기에 가담한다고 씁니다.",
+                  "마르쿠제는 억압이 역사적 현상이며 본능을 억압적 통제에 복종시키는 것은 자연이 아니라 인간이라고 씁니다. 지배의 역사와 떼어 놓지 않습니다.",
+                  "마르쿠제는 본능 이론을 버리지 않습니다. 그는 프로이트의 개인 심리학이 본질적으로 사회 심리학이라며, 바로 그 본능 이론에서 숨은 경향을 찾습니다."
+                ],
+                "en": [
+                  "Chapter 1 says this conception is as old as civilization and has always been the most effective rationalization for repression, and that Freud's theory partakes of it to a considerable extent.",
+                  "Marcuse writes that repression is a historical phenomenon and that the subjugation of the instincts to repressive controls is imposed not by nature but by man; he ties it to the history of domination.",
+                  "Marcuse does not drop instinct theory: Freud's individual psychology is in its essence social psychology, and the hidden trend is found in that very theory."
+                ]
+              },
+              "explanation": {
+                "ko": "제1장은 쾌락 원칙이 현실 원칙으로 바뀌는 과정을 프로이트를 따라 설명합니다. 즉각적 만족은 지연된 만족으로, 놀이는 노동으로 바뀌고, 이 전환은 원시 유목 집단의 아버지와 어린 시절의 부모·교육자를 통해 강제됩니다. 마르쿠제는 여기서 억압이 역사적 현상이며, 본능을 억압적 통제에 복종시키는 것은 자연이 아니라 인간이라고 강조합니다. 바깥의 억압은 안의 억압으로 뒷받침되어, 부자유한 개인은 주인과 그 명령을 자기 정신 안으로 받아들입니다. 프로이트는 사회가 본능 구조를 바꾸는 동기를 ‘경제적’이라 하고 생존 투쟁을 영원한 것으로 봤는데, 마르쿠제는 이것을 문명만큼 오래된 억압의 합리화라고 부릅니다. 비억압적 문명이 불가능하다는 생각은 프로이트 이론의 초석이지만, 그 이론 안에 이 합리화를 깨뜨리는 요소가 있다는 것이 그가 말하는 숨은 경향입니다.",
+                "en": "Chapter 1 follows Freud through the transformation of the pleasure principle into the reality principle: immediate satisfaction becomes delayed satisfaction, play becomes toil, and the change is enforced by the primal father and, in childhood, by parents and educators. Marcuse stresses that repression is a historical phenomenon: the subjugation of the instincts to repressive controls is imposed not by nature but by man. Repression from without is supported by repression from within, as the unfree individual introjects his masters and their commands. Freud called society's motive for modifying the instinctual structure 'economic' and treated the struggle for existence as eternal; Marcuse calls this a rationalization of repression as old as civilization. The notion that a non-repressive civilization is impossible is a cornerstone of Freud's theory, yet the theory contains elements that break through this rationalization, and that is the hidden trend he means."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/reference/archive/marcuse/works/eros-civilisation/ch01.htm",
+                "label": {
+                  "ko": "마르쿠제, 『에로스와 문명』 제1장 「정신분석의 숨은 경향」 (1955)",
+                  "en": "Marcuse, Eros and Civilization, ch. 1 'The Hidden Trend in Psychoanalysis' (1955)"
+                }
+              }
+            },
+            {
+              "id": "q5",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "마르쿠제는 『에로스와 문명』 후기 「신프로이트 수정주의 비판」에서 라이히를 어떻게 평가했을까요?",
+                "en": "In the epilogue to Eros and Civilization, 'Critique of Neo-Freudian Revisionism', how did Marcuse assess Reich?"
+              },
+              "choices": {
+                "ko": [
+                  "성 억압과 지배·착취가 서로를 강화한다는 점을 밝힌 초기 저작을 높이 샀지만, 억압을 구별하지 않아 성 해방 그 자체를 만병통치약으로 만들었다고 비판했습니다.",
+                  "프로이트의 죽음 본능 가설과 후기 메타심리학을 충실히 이어받아, 성 본능과 파괴 충동의 결합까지 분석한 가장 완성된 이론이라고 평가했습니다.",
+                  "정신분석을 사회와 무관한 개인 치료 기술로 좁히고 지배의 문제를 외면했다는 점에서, 신프로이트 수정주의의 우파를 대표한다고 비판했습니다."
+                ],
+                "en": [
+                  "He valued the early writings for showing that sexual repression and domination and exploitation reinforce each other, but criticised Reich for leaving repression undifferentiated and making sexual liberation per se a panacea.",
+                  "He judged Reich the most complete theorist, faithfully carrying on Freud's death-instinct hypothesis and late metapsychology and analysing the fusion of sexual and destructive impulses.",
+                  "He criticised Reich as the right wing of revisionism for narrowing psychoanalysis to an individual therapeutic technique unrelated to society and ignoring domination."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "후기는 라이히의 초기 저작을 프로이트에 담긴 비판적 사회 이론을 발전시킨 가장 진지한 시도로 꼽고, 이어서 그 한계를 짚습니다.",
+                  "반대입니다. 마르쿠제는 라이히가 죽음 본능 가설과 후기 메타심리학의 깊이 차원 전체를 거부했고, 성 본능과 파괴 충동의 결합을 소홀히 했다고 씁니다.",
+                  "후기에서 정신분석의 ‘우파’로 지목된 것은 융의 심리학이고, 중도는 문화·대인관계 학파입니다. 라이히는 사회 이론을 시도한 쪽으로 그려집니다."
+                ],
+                "en": [
+                  "The epilogue calls Reich's earlier writings the most serious attempt to develop the critical social theory implicit in Freud, then points to their limits.",
+                  "It is the reverse: Marcuse says Reich rejected the death instinct and the whole depth dimension of Freud's late metapsychology, and neglected the fusion of sex instincts with destructive impulses.",
+                  "In the epilogue the 'right wing' of psychoanalysis is Jung's psychology and the 'center' the cultural and interpersonal schools; Reich is the one who attempted a social theory."
+                ]
+              },
+              "explanation": {
+                "ko": "후기는 정신분석이 20세기 전반의 사회 변화에 따라 기능을 바꾸었다고 진단하며, 수정주의를 좌·우·중도로 나눠 봅니다. 마르쿠제는 프로이트에 담긴 비판적 사회 이론을 발전시킨 가장 진지한 시도가 라이히의 초기 저작, 특히 『성 도덕의 침입』이었다고 씁니다. 라이히는 성 억압이 지배와 착취의 이해관계로 강제되고, 그 이해관계가 다시 성 억압으로 강화·재생산되는 정도를 강조했다는 것입니다. 그러나 라이히의 성 억압 개념은 구별 없이 뭉뚱그려져 있고, 성 본능의 역사적 동학과 파괴 충동과의 결합을 소홀히 했다고 비판합니다. 그 결과 성 해방 그 자체가 개인과 사회의 병을 고치는 만병통치약이 되었고, 억압적 승화와 비억압적 승화를 본질적으로 구별하지 않아 자유의 진보가 성의 방출처럼 보이게 되었다는 것입니다.",
+                "en": "The epilogue argues that psychoanalysis changed its function with the social changes of the early twentieth century, and sorts the revisions into left, right and centre. Marcuse writes that the most serious attempt to develop the critical social theory implicit in Freud was made in Reich's earlier writings, especially Der Einbruch der Sexualmoral. Reich emphasised the extent to which sexual repression is enforced by the interests of domination and exploitation, and the extent to which those interests are reinforced and reproduced by sexual repression. But his notion of sexual repression remains undifferentiated, Marcuse says; he neglects the historical dynamic of the sex instincts and their fusion with destructive impulses. Consequently sexual liberation per se becomes for Reich a panacea for individual and social ills; no essential distinction is made between repressive and non-repressive sublimation, and progress in freedom appears as a mere release of sexuality."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/reference/archive/marcuse/works/eros-civilisation/epilogue.htm",
+                "label": {
+                  "ko": "마르쿠제, 『에로스와 문명』 후기 「신프로이트 수정주의 비판」 (1955)",
+                  "en": "Marcuse, Eros and Civilization, epilogue 'Critique of Neo-Freudian Revisionism' (1955)"
+                }
+              }
+            },
+            {
+              "id": "q6",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "마르쿠제는 『에로스와 문명』의 1966년 「정치적 서문」에서, 남녀가 어느 때보다 많은 성적 자유를 누리는 풍요한 사회를 어떻게 진단했을까요?",
+                "en": "In the 1966 Political Preface to Eros and Civilization, how did Marcuse diagnose the affluent society in which men and women enjoy more sexual liberty than ever before?"
+              },
+              "choices": {
+                "ko": [
+                  "지배자들이 신민의 성적·공격적 에너지를 충족시키고 상품을 리비도의 대상으로 만들어, 본능 욕구의 관리가 체제 재생산의 요소가 되었다고 진단했습니다.",
+                  "성적 자유가 늘었으니 과잉 억압은 대체로 극복되었고, 남은 과제는 그 자유를 아직 누리지 못한 소수에게 넓히는 일뿐이라고 진단했습니다.",
+                  "성적 자유의 확대는 지배와 무관한 사생활의 변화일 뿐이므로, 해방의 문제는 성과 떼어 경제 투쟁으로만 다루어야 한다고 진단했습니다."
+                ],
+                "en": [
+                  "The rulers satisfy the sexual and aggressive energy of their subjects and make merchandise into objects of the libido, so that managing instinctual needs has become a factor in reproducing the system.",
+                  "Since sexual liberty has grown, surplus repression has largely been overcome, and what remains is only to extend that liberty to the minority who do not yet enjoy it.",
+                  "The growth of sexual liberty is merely a change in private life unrelated to domination, so liberation must be treated apart from sex, as an economic struggle only."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "서문은 본능 욕구의 과학적 관리가 오래전에 체제 재생산의 핵심 요소가 되었고, 사야 할 상품이 리비도의 대상이 된다고 씁니다.",
+                  "서문은 그런 말이 그럴듯해 보인다고 인정한 뒤 곧바로 “그러나 진실은 이 자유와 만족이 지구를 지옥으로 바꾸고 있다는 것”이라고 반박합니다.",
+                  "서문은 성과 정치를 떼어 놓지 않습니다. 에로스와 정치의 접점을 묻고, 생명을 위한 투쟁, 에로스를 위한 투쟁이 곧 정치적 투쟁이라는 문장으로 끝맺습니다."
+                ],
+                "en": [
+                  "The preface says scientific management of instinctual needs has long since become a vital factor in reproducing the system, and merchandise that has to be bought is made into objects of the libido.",
+                  "The preface grants that this seems to make sense, then at once replies: 'But the truth is that this freedom and satisfaction are transforming the earth into hell.'",
+                  "The preface does not separate sex from politics: it asks about a juncture of the erotic and political dimensions and ends by saying that the fight for Eros is the political fight."
+                ]
+              },
+              "explanation": {
+                "ko": "1966년 마르쿠제는 『에로스와 문명』의 낙관이 지배를 정당화하던 근거가 낡았다는 가정에 기대고 있었으며, 그 근거가 더 효율적인 사회 통제로 강화된 사실을 소홀히 했다고 스스로 돌아봅니다. 풍요한 사회의 지배자는 상품을 공급하고 신민의 성적·공격적 에너지를 충족시키며, 본능 욕구의 과학적 관리가 체제 재생산의 핵심 요소가 되었다는 것입니다. 사야 할 상품은 리비도의 대상이 되고, 싸워야 할 적은 무의식 깊은 곳의 공격성을 만족시키도록 부풀려집니다. 그래서 어느 때보다 많은 성적 자유를 누리는 사람들에게 과잉 억압을 말하는 것은 무의미해 보이지만, 그는 이 자유와 만족이 지구를 지옥으로 바꾸고 있다고 반박합니다. 해방은 억압적 풍요로부터의 해방을 전제한다는 것이고, 이 진단은 『일차원적 인간』(1964)과 이어집니다.",
+                "en": "In 1966 Marcuse looked back on the optimism of Eros and Civilization: it assumed that the rationale for accepting domination no longer prevailed, and neglected the fact that this rationale had been strengthened by more efficient forms of social control. The rulers of the affluent society deliver the goods and satisfy the sexual and aggressive energy of their subjects; scientific management of instinctual needs has become a vital factor in reproducing the system. Merchandise that must be bought is made into objects of the libido, and the national Enemy is inflated so as to satisfy aggressiveness in the depth of the unconscious. So it seems to make no sense to talk about surplus repression when men and women enjoy more sexual liberty than ever, yet he replies that this freedom and satisfaction are transforming the earth into hell. Liberation presupposes liberation from repressive affluence, a diagnosis tied to One-Dimensional Man (1964)."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.marxists.org/reference/archive/marcuse/works/eros-civilisation/preface.htm",
+                "label": {
+                  "ko": "마르쿠제, 『에로스와 문명』 「정치적 서문」 (1966)",
+                  "en": "Marcuse, Eros and Civilization, Political Preface (1966)"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sex-gender-theory-intro-ch07",
+      "volumeNumber": 15,
+      "chapterNumber": 7,
+      "title": {
+        "ko": "성적 억압은 ‘단지 문화적인’ 문제인가?",
+        "en": "Is sexual oppression 'merely cultural'?"
+      },
+      "sourceUrl": "https://newleftreview.org/issues/i227/articles/judith-butler-merely-cultural",
+      "summary": {
+        "ko": "약 12분 · 주디스 버틀러의 「단지 문화적인」(《소셜 텍스트》 1997, 《뉴레프트리뷰》 1998)과 낸시 프레이저의 답글 「이성애주의, 무시, 자본주의: 주디스 버틀러에 대한 답변」을 나란히 읽고, 동성애 억압이 정치경제의 문제인지 지위 질서의 문제인지, 그리고 그 구분이 무엇을 위한 것인지를 두 사람이 어디서 달리 보았는지 확인합니다.",
+        "en": "About 12 minutes · Read Judith Butler's 'Merely Cultural' (Social Text 1997, New Left Review 1998) alongside Nancy Fraser's reply, 'Heterosexism, Misrecognition and Capitalism: A Response to Judith Butler', and see where the two differed on whether the oppression of gays and lesbians belongs to political economy or to the status order, and on what that distinction is for."
+      },
+      "learningFocus": {
+        "ko": "버틀러를 경제 문제를 외면하고 문화만 말한 사람으로, 프레이저를 동성애 억압을 부차적이라고 본 사람으로 읽기 쉽습니다. 실제로는 거꾸로에 가깝습니다. 버틀러는 엥겔스의 ‘두 가지 생산’과 사회주의 페미니즘을 끌어와 성의 규제가 생산양식 자체에 속한다고 주장했고, 프레이저는 무시도 잘못된 분배만큼 근본적이고 물질적인 부정의라고 하면서도 그 뿌리를 자본주의의 경제 구조가 아니라 지위 질서에서 찾았습니다. 쟁점은 억압이 얼마나 심각한가가 아니라, 현대 자본주의에서 경제와 친족·성이 어떻게 맞물리는가였습니다.",
+        "en": "It is easy to read Butler as someone who turned away from economics to talk only about culture, and Fraser as someone who thought the oppression of gays and lesbians secondary. The truth is closer to the reverse. Butler drew on Engels's 'two kinds of production' and on socialist feminism to argue that the regulation of sexuality belongs to the mode of production itself; Fraser held that misrecognition is as fundamental and as material an injustice as maldistribution, yet located its roots in the status order rather than in the economic structure of capitalism. The question was not how serious the oppression is, but how economy, kinship and sexuality are bound together in contemporary capitalism."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "배경: 학술대회 강연에서 시작된 논쟁",
+            "items": [
+              "버틀러의 「단지 문화적인」은 1996년 12월 매사추세츠주 애머스트에서 열린 학술대회 ‘리싱킹 마르크시즘’의 전체 강연을 고친 글입니다. 1997년 《소셜 텍스트》 52·53호에 프레이저의 답글과 함께 실렸고, 1998년 《뉴레프트리뷰》 227호와 228호에 차례로 다시 실렸습니다.",
+              "버틀러는 두 갈래 주장을 다루겠다고 밝힙니다. 하나는 마르크스주의 연구와 활동이 문화 연구로 축소되었다는 마르크스주의 쪽의 반발이고, 다른 하나는 새로운 사회운동을 문화의 영역으로 밀어 넣어 ‘단지’ 문화적인 일에 매달린다고 깎아내리고, 분파적이고 정체성에 갇힌 특수주의로 해석하는 경향입니다.",
+              "버틀러는 이런 견해를 가진 사람들의 이름을 들지 않겠다고 하고, 친근한 논쟁을 이어 온 동료 프레이저만 예외로 실명을 거론합니다. 프레이저의 1997년 책 『중단된 정의(Justice Interruptus)』와 1995년 《뉴레프트리뷰》 논문 「재분배에서 인정으로?」가 표적입니다."
+            ]
+          },
+          {
+            "title": "버틀러: 성의 규제는 생산양식에 속한다",
+            "items": [
+              "물질과 문화를 안정적으로 나누는 구분은 알튀세르가 토대·상부구조 모델을 밀어낸 뒤의 성과와 레이먼드 윌리엄스·스튜어트 홀·스피박의 문화유물론을 무시하는 ‘이론적 시대착오’라고 비판합니다.",
+              "버틀러는 마르크스의 『독일 이데올로기』와 엥겔스의 『가족, 사유재산, 국가의 기원』 서문을 인용합니다. 1편에서 본 ‘직접적 생활의 생산과 재생산은 두 가지’라는 대목을, 한때 사회주의 페미니즘 연구에서 가장 널리 인용된 문장이었을 것이라고 소개합니다.",
+              "1970~80년대 사회주의 페미니즘은 가족을 생산양식의 일부로 보았을 뿐 아니라, 젠더의 생산 자체가 이성애 규범적 가족을 재생산하는 규범에 따른 ‘인간 자신의 생산’임을 보이려 했다고 정리합니다. 게일 루빈 등의 작업에서는 젠더의 규범적 재생산이 이성애와 가족의 재생산에 필수적이라는 전제가 섰다는 것입니다. 그래서 성의 규제는 정치경제의 작동에 고유한 생산양식에 체계적으로 묶여 있었다고 봅니다.",
+              "프레이저에게는, 성을 둘러싼 투쟁이 무급 노동이나 착취와 직접 연결될 때만 정치경제의 중심이 되는 것이 아니라, ‘경제’의 영역을 재화의 재생산과 사람의 사회적 재생산으로 넓혀야 이해된다고 반박합니다. 경제는 재생산과 묶여 있어 이성애의 재생산과 반드시 연결되며, 비이성애적 성의 억압은 그 규범성의 작동에 필수적이라는 것입니다.",
+              "레비스트로스의 ‘여성의 교환’과 모스의 ‘증여’ 분석은 교환이 문화적이면서 경제적이어서 그 구분 자체를 불안정하게 만든다는 점을 보여 준다고 봅니다. 물음은 성 정치가 문화와 경제 어느 쪽에 속하느냐가 아니라, 성적 교환의 실천이 두 영역의 구분을 어떻게 흐트러뜨리느냐라는 것입니다."
+            ]
+          },
+          {
+            "title": "프레이저: 무시는 지위의 손상이다",
+            "items": [
+              "프레이저는 버틀러가 1970년대 마르크스주의와 사회주의 페미니즘의 값진 면을 되살리려는 데 전적으로 공감한다고 먼저 밝힙니다. 그러고는 이름 없는 ‘신보수주의 마르크스주의자’ 비판과 자기 책을 묶은 것이 독자에게 오해를 줄 수 있다고 항의합니다.",
+              "분배의 부정의와 인정의 부정의는 똑같이 일차적이고 심각하며 실재하는 두 가지 해악이라고 합니다. 무시(misrecognition)는 남의 의식적 태도나 생각 속에서 낮게 평가되는 것이 아니라, 법·사회복지·의료·대중문화 등에 제도화된 해석과 평가의 양식 때문에 사회생활에 동등한 참여자로 참여하지 못하는 것입니다. 무시는 심리 상태가 아니라 제도화된 사회관계이고, 본질적으로 지위의 손상이며, 분석적으로 잘못된 분배와 구별되고 개념적으로 그것으로 환원되지 않습니다.",
+              "버틀러가 드는 해고·복지 혜택 박탈·상속과 세금상의 불이익 같은 물질적 피해는 오히려 무시의 전형적 사례라고 봅니다. 이성애를 규범으로, 동성애를 일탈로 구성하는 제도화된 양식이 뿌리이므로, 인정의 관계를 바꾸면 그 잘못된 분배도 사라진다는 것입니다.",
+              "버틀러는 준(準)베버적인 지위·계급 이원론을 정통 마르크스주의의 경제주의 일원론으로 착각했다고 합니다. ‘단지 문화적인’이라는 말이야말로 자기 틀이 밀어내려는 토대·상부구조 모델을 전제한다는 것입니다."
+            ]
+          },
+          {
+            "title": "프레이저: 현대 자본주의의 ‘틈’",
+            "items": [
+              "성의 규제가 ‘정의상’ 경제 구조에 속한다는 논변은 역사에 무심하다고 비판합니다. 자본주의는 친족과 정치적 권위에서 상대적으로 떨어져 나온 특화된 경제 관계를 만들었고, 그래서 성의 규제와 잉여가치 축적의 연결은 친족이 경제를 짜던 자본주의 이전 사회보다 훨씬 느슨하다는 것입니다. 20세기 후기 자본주의에서는 엘리 자레츠키가 말한 ‘개인 생활’의 등장으로 그 연결이 더 약해졌다고 봅니다.",
+              "자본주의가 강제적 이성애를 ‘필요로 한다’는 기능주의 논변도 경험적으로 믿기 어렵다고 합니다. 동성애자 권리의 주된 반대자는 다국적 기업이 아니라 이윤이 아니라 지위에 집착하는 종교적·문화적 보수주의자이고, 몇몇 기업은 동성 동반자 혜택을 도입하기도 했다는 것입니다. 이 피해를 바로잡으려고 자본주의를 무너뜨릴 필요는 없지만, 지위 질서는 바꿔야 한다고 결론짓습니다.",
+              "모스와 레비스트로스는 친족이 노동·분배·권위·위신을 모두 짜던 사회를 분석했으므로, 그들의 작업은 경제·문화 구분을 ‘불안정하게’ 만들었다기보다 그 구분을 역사화했다고 읽어야 한다고 반박합니다. 이 구분은 존재론적 구분이 아니라 사회이론의 구분이며, 그런 분화를 실제로 가진 자본주의 사회에 적용할 수 있다는 것입니다. 1편의 엥겔스 서문도 혈연 유대가 지배하던 사회에서 국가가 들어선 사회로의 이행을 말했다는 점과 겹쳐 읽을 수 있습니다."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "버틀러, 「단지 문화적인」(《뉴레프트리뷰》 I/227, 1998년 1~2월, 33~44쪽; 《소셜 텍스트》 52·53호, 1997 재수록): 서두, 「정통의 통일」, 「퀴어 정치와 문화의 폄하」, 「물질적 배제」, 「성적 생산양식」, 「문화적 선물과 물질적 선물」. 영어 원문(NLR판 PDF)으로 확인했습니다.",
+              "프레이저, 「이성애주의, 무시, 자본주의: 주디스 버틀러에 대한 답변」(《뉴레프트리뷰》 I/228, 1998년 3~4월; 《소셜 텍스트》 52·53호, 1997, 279~289쪽). 앞부분(규범적 구분과 무시의 정의)은 NLR 웹판 영어 원문으로, 나머지(세 논변 반박, 정의적·기능주의적 논변, 모스·레비스트로스 해석)는 《이데이아스》(2017)에 실린 포르투갈어 번역과 영어 원문 인용으로 확인했습니다."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "Background: a debate that began as a conference lecture",
+            "items": [
+              "Butler's 'Merely Cultural' is a revised version of a plenary lecture given at the Rethinking Marxism conference in Amherst, Massachusetts, in December 1996. It appeared in Social Text 52/53 (1997) together with Fraser's reply, and both were reprinted in New Left Review 227 and 228 in 1998.",
+              "Butler sets out to examine two kinds of claims: a Marxist objection to the reduction of Marxist scholarship and activism to the study of culture, and the tendency to relegate new social movements to the sphere of the cultural, dismiss them as preoccupied with the 'merely' cultural, and construe them as factionalizing, identitarian and particularistic.",
+              "Butler declines to name those who hold these views, making a single exception for Fraser, a colleague with whom they have a history of friendly argument. The targets are Fraser's 1997 book Justice Interruptus and her 1995 NLR essay 'From Redistribution to Recognition?'."
+            ]
+          },
+          {
+            "title": "Butler: the regulation of sexuality belongs to the mode of production",
+            "items": [
+              "A stable distinction between material and cultural life is a 'theoretical anachronism' that discounts what came after Althusser's displacement of the base-superstructure model, and the cultural materialism of Raymond Williams, Stuart Hall and Spivak.",
+              "Butler cites Marx's German Ideology and the preface to Engels's Origin of the Family, Private Property and the State. The passage on the twofold production and reproduction of immediate life, seen in lesson 1, is introduced as perhaps, for a time, the most widely cited quotation in socialist-feminist scholarship.",
+              "Socialist feminists of the 1970s and 1980s sought not only to identify the family as part of the mode of production, but to show that the very production of gender was part of the 'production of human beings themselves', according to norms that reproduced the heterosexually normative family. In the work of Gayle Rubin and others, the normative reproduction of gender was presumed essential to the reproduction of heterosexuality and the family. So the regulation of sexuality was systematically tied to the mode of production.",
+              "Against Fraser, struggles over sexuality are central to political economy not only insofar as they can be tied to unpaid and exploited labour, but because they require expanding the 'economic' sphere to include the social reproduction of persons as well as of goods. The economic, tied to the reproductive, is necessarily linked to the reproduction of heterosexuality, and the suppression of non-heterosexual sexualities is essential to that normativity.",
+              "Lévi-Strauss's exchange of women and Mauss's gift show that exchange is cultural and economic at once, which makes the distinction unstable. The question is not whether sexual politics belongs to the cultural or the economic, but how the practices of sexual exchange confound the distinction."
+            ]
+          },
+          {
+            "title": "Fraser: misrecognition as status injury",
+            "items": [
+              "Fraser begins by wholeheartedly sharing Butler's aim of retrieving the valuable aspects of Marxism and 1970s socialist feminism, then objects that framing her book alongside unnamed 'neoconservative Marxists' could mislead readers.",
+              "Injustices of distribution and of recognition are two equally primary, serious and real kinds of harm. To be misrecognized is not to be thought ill of in others' conscious attitudes, but to be prevented from participating as a peer in social life by institutionalized patterns of interpretation and evaluation, in law, social welfare, medicine or popular culture. Misrecognition is an institutionalized social relation, not a psychological state: in essence a status injury, analytically distinct from and conceptually irreducible to maldistribution.",
+              "The material harms Butler lists, such as dismissal, denial of family-based benefits and disadvantages in tax and inheritance law, are paradigm cases of misrecognition. Their root is an institutionalized pattern that constructs heterosexuality as normative and homosexuality as deviant; change the relations of recognition and the maldistribution would disappear.",
+              "Butler mistook a quasi-Weberian dualism of status and class for an orthodox Marxian economistic monism. It is the phrase 'merely cultural' that presupposes the base-superstructure model her framework seeks to displace."
+            ]
+          },
+          {
+            "title": "Fraser: the 'gaps' in contemporary capitalism",
+            "items": [
+              "The argument that sexual regulation belongs to the economic structure 'by definition' is indifferent to history. Capitalism created specialized economic relations relatively decoupled from kinship and political authority, so the link between sexual regulation and the accumulation of surplus value is far weaker than in pre-capitalist societies where kinship organized economic relations; in twentieth-century late capitalism it was attenuated further by the rise of what Eli Zaretsky called 'personal life'.",
+              "The functionalist claim that capitalism 'needs' compulsory heterosexuality is empirically implausible. The main opponents of gay rights are religious and cultural conservatives obsessed with status, not profit, and some corporations have introduced domestic-partner benefits. We need not overthrow capitalism to remedy these disadvantages, but we must transform the status order.",
+              "Mauss and Lévi-Strauss analysed societies in which kinship organized labour, distribution, authority and prestige, so their work is better read as historicizing the economic/cultural distinction than as destabilizing it. The distinction is social-theoretical, not ontological, and applies to capitalist societies that actually contain those differentiations. It can be read alongside Engels's preface from lesson 1, which also traces a passage from societies dominated by ties of kinship to societies under the state."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "Butler, 'Merely Cultural' (New Left Review I/227, January-February 1998, pp. 33-44; first in Social Text 52/53, 1997): opening, 'Orthodox Unity', 'Queer Politics and the Disparagement of the Cultural', 'Material Exclusion', 'The Mode of Sexual Production', 'Cultural and Material Gifts'. Checked against the English original (the NLR PDF).",
+              "Fraser, 'Heterosexism, Misrecognition and Capitalism: A Response to Judith Butler' (New Left Review I/228, March-April 1998; Social Text 52/53, 1997, pp. 279-89). The opening (the normative distinction and the definition of misrecognition) was checked in the English original on the NLR site; the rest (the reply to the three arguments, the definitional and functionalist arguments, the reading of Mauss and Lévi-Strauss) against the Portuguese translation in Idéias (2017) and quotations from the English original."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "‘단지 문화적인’이라는 낙인",
+            "text": "버틀러는 새로운 사회운동, 특히 퀴어 정치를 문화의 영역으로 밀어내는 구분 자체를 문제 삼았습니다."
+          },
+          {
+            "title": "성적 생산양식",
+            "text": "버틀러는 엥겔스의 ‘두 가지 생산’을 이어 받아 이성애 규범의 재생산을 생산양식의 일부로 봤습니다."
+          },
+          {
+            "title": "지위의 손상으로서의 무시",
+            "text": "프레이저는 무시를 제도화된 지위 질서가 동등한 참여를 막는 물질적 부정의로 정의했습니다."
+          },
+          {
+            "title": "경제와 친족 사이의 틈",
+            "text": "프레이저는 현대 자본주의가 경제 관계를 친족에서 떼어 냈기에 이성애주의를 필요로 하지 않는다고 봤습니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "The label 'merely cultural'",
+            "text": "Butler questioned the very distinction that relegates new social movements, and queer politics above all, to the cultural."
+          },
+          {
+            "title": "A mode of sexual production",
+            "text": "Building on Engels's two kinds of production, Butler treated the reproduction of heterosexual norms as part of the mode of production."
+          },
+          {
+            "title": "Misrecognition as status injury",
+            "text": "Fraser defined misrecognition as a material injustice in which an institutionalized status order blocks participation as a peer."
+          },
+          {
+            "title": "Gaps between economy and kinship",
+            "text": "Fraser held that contemporary capitalism, having decoupled economic relations from kinship, does not require heterosexism."
+          }
+        ]
+      },
+      "diagram": {
+        "kind": "contrast",
+        "ko": {
+          "title": "동성애 억압은 어디에 뿌리를 두는가",
+          "left": {
+            "heading": "버틀러, 「단지 문화적인」 (1997)",
+            "rows": [
+              "출발점: 엥겔스의 두 가지 생산, 사회주의 페미니즘",
+              "경제의 범위: 재화와 사람의 사회적 재생산을 모두 포함",
+              "이성애 규범: 생산양식의 작동에 필수적",
+              "물질과 문화의 구분: 불안정한 이론적 시대착오",
+              "퀴어 투쟁: 정치경제의 성적 질서를 위협"
+            ]
+          },
+          "right": {
+            "heading": "프레이저, 「이성애주의, 무시, 자본주의」 (1997)",
+            "rows": [
+              "출발점: 분배와 인정의 규범적 구분",
+              "경제의 범위: 자본주의에 고유한 특화된 경제 관계",
+              "이성애 규범: 경제 구조가 아니라 지위 질서에 뿌리",
+              "경제와 문화의 구분: 역사화된 사회이론의 구분",
+              "퀴어 투쟁: 자본주의를 위협하지 않아도 정당한 요구"
+            ]
+          }
+        },
+        "en": {
+          "title": "Where is the oppression of gays and lesbians rooted?",
+          "left": {
+            "heading": "Butler, 'Merely Cultural' (1997)",
+            "rows": [
+              "Starting point: Engels's two kinds of production, socialist feminism",
+              "Scope of the economic: social reproduction of goods and of persons",
+              "Heterosexual norms: essential to the working of the mode of production",
+              "Material/cultural distinction: an unstable theoretical anachronism",
+              "Queer struggles: a threat to the sexual order of political economy"
+            ]
+          },
+          "right": {
+            "heading": "Fraser, 'Heterosexism, Misrecognition and Capitalism' (1997)",
+            "rows": [
+              "Starting point: the normative distinction of distribution and recognition",
+              "Scope of the economic: the specialized economic relations of capitalism",
+              "Heterosexual norms: rooted in the status order, not the economic structure",
+              "Economic/cultural distinction: a historicized social-theoretical one",
+              "Queer struggles: just claims even without threatening capitalism"
+            ]
+          }
+        }
+      },
+      "lessons": [
+        {
+          "id": "sex-gender-theory-intro-ch07-basic",
+          "level": "basic",
+          "title": {
+            "ko": "버틀러와 프레이저: 단지 문화적인가",
+            "en": "Butler and Fraser: merely cultural?"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "버틀러는 「단지 문화적인」 첫머리에서 어떤 두 갈래 주장을 검토하겠다고 밝혔을까요?",
+                "en": "At the opening of 'Merely Cultural', which two kinds of claims does Butler propose to examine?"
+              },
+              "choices": {
+                "ko": [
+                  "마르크스주의 연구와 활동이 문화 연구로 축소되었다는 마르크스주의 쪽의 반발, 그리고 새로운 사회운동을 ‘단지’ 문화적이고 분파적인 정체성 정치로 깎아내리는 경향입니다.",
+                  "포스트구조주의가 이미 마르크스주의를 대체했다는 주장, 그리고 계급 분석은 낡았으니 정체성 정치로 좌파를 다시 묶어야 한다는 주장입니다.",
+                  "프레이저와 하버마스를 실명으로 지목해, 두 사람이 계급 정치를 버리고 문화 연구로 돌아섰다는 주장을 낱낱이 반박하겠다고 했습니다."
+                ],
+                "en": [
+                  "A Marxist objection to the reduction of Marxist scholarship and activism to cultural studies, and the tendency to dismiss new social movements as 'merely' cultural, factionalizing identity politics.",
+                  "The claim that poststructuralism has already replaced Marxism, and the claim that class analysis is outdated so the Left must be reunited through identity politics.",
+                  "Claims, attributed by name to Fraser and Habermas, that the two had abandoned class politics for cultural studies, which Butler would refute point by point."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "맞습니다. 버틀러는 이 두 주장을 검토하고, 그 바탕에 물질과 문화의 안정적 구분이라는 전제가 있다고 지적합니다.",
+                  "반대 방향입니다. 버틀러가 검토한 것은 문화적 좌파와 새로운 사회운동을 비판하는 쪽의 주장이고, 포스트구조주의가 마르크스주의를 가로막았다는 전제도 그 비판 쪽의 것입니다.",
+                  "버틀러는 이런 견해를 가진 사람들의 이름을 들지 않겠다고 했고, 동료 프레이저만 유일하게 실명으로 다룬다고 밝혔습니다. 하버마스는 보편성을 내세우는 사례로 잠깐 언급될 뿐입니다."
+                ],
+                "en": [
+                  "Butler examines these two claims and points out that both presume a stable distinction between material and cultural life.",
+                  "The reverse. The claims Butler examines are those of critics of the cultural Left and new social movements; the presumption that poststructuralism has thwarted Marxism belongs to those critics.",
+                  "Butler says they will not name those who hold these views, making Fraser the only person named. Habermas appears only briefly, as an example of restoring the universal by fiat."
+                ]
+              },
+              "explanation": {
+                "ko": "버틀러는 두 갈래 주장을 검토하겠다고 합니다. 하나는 마르크스주의 연구와 활동이 문화 연구로 축소되었다는 마르크스주의 쪽의 반발이고, 다른 하나는 새로운 사회운동을 문화의 영역으로 밀어 넣어 ‘단지’ 문화적인 일에 매달린다고 깎아내리고, 분파적이고 정체성에 갇힌 특수주의로 해석하는 경향입니다. 버틀러는 누가 무슨 말을 했는가를 따지는 사소한 정치로 흐르지 않으려고 이름을 들지 않겠다고 하며, 1996년 소칼의 날조 논문 사건을 이런 분위기의 한 사례로 듭니다. 이어서 새로운 사회운동이 ‘단지 문화적’이라는 비난은 물질적 삶과 문화적 삶의 구분이 안정적이라고 전제하는데, 그 전제는 알튀세르 이후의 마르크스주의와 문화유물론을 무시하는 이론적 시대착오라고 비판합니다.",
+                "en": "Butler proposes to consider two kinds of claims: an explicitly Marxist objection to the reduction of Marxist scholarship and activism to the study of culture, and the tendency to relegate new social movements to the sphere of the cultural, dismiss them as preoccupied with the 'merely' cultural, and construe that politics as factionalizing, identitarian and particularistic. Butler declines to name those who hold the views, so as not to slip into the pettier politics of who said what, and cites the Sokal hoax of 1996 as an instance of the mood. The charge that new social movements are 'merely cultural', Butler argues, presumes a stable distinction between material and cultural life, and that presumption is a theoretical anachronism that discounts Marxist theory since Althusser and cultural materialism."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://newleftreview.org/issues/i227/articles/judith-butler-merely-cultural",
+                "label": {
+                  "ko": "버틀러, 「단지 문화적인」 서두와 「정통의 통일」 (《뉴레프트리뷰》 I/227, 1998)",
+                  "en": "Butler, 'Merely Cultural', opening and 'Orthodox Unity' (NLR I/227, 1998)"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "버틀러는 「단지 문화적인」에서 엥겔스의 『가족, 사유재산, 국가의 기원』 서문에 나오는 ‘두 가지 생산’ 대목을 어떻게 썼을까요?",
+                "en": "How does Butler use the passage on the 'twofold' production in the preface to Engels's Origin of the Family, Private Property and the State in 'Merely Cultural'?"
+              },
+              "choices": {
+                "ko": [
+                  "사회주의 페미니즘이 가족을 생산양식의 일부로 보고 젠더의 생산을 ‘인간 자신의 생산’으로 이해하게 한 출발점으로 삼아, 성의 규제가 생산양식에 묶여 있다는 근거로 썼습니다.",
+                  "번식을 자연의 일로 본 생물학주의의 사례로 들어, 퀴어 이론이 엥겔스의 유물론과 그 서문을 함께 버려야 하는 이유로 썼습니다.",
+                  "생활 수단의 생산과 인간의 생산을 나눈 대목으로 읽어, 성은 경제와 분리된 상부구조의 문제라는 프레이저의 구분을 뒷받침하는 근거로 썼습니다."
+                ],
+                "en": [
+                  "As the starting point that let socialist feminists see the family as part of the mode of production and gender as part of the 'production of human beings themselves', grounding the claim that sexual regulation is tied to the mode of production.",
+                  "As an example of biologism that treats propagation as natural, giving queer theory a reason to discard Engels's materialism along with the preface.",
+                  "As a passage that separates the production of the means of existence from the production of people, supporting Fraser's distinction of sexuality as a superstructural matter apart from the economy."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "맞습니다. 버틀러는 이 대목을 한때 사회주의 페미니즘 연구에서 가장 널리 인용된 문장이었을 것이라고 소개하고, 그 전통을 프레이저에게 맞서는 근거로 씁니다.",
+                  "버틀러는 마르크스가 번식을 자연적 관계와 사회적 관계 사이에서 오락가락한다고 짚지만, 엥겔스의 대목을 버리지 않고 오히려 유물론의 기획을 되살리는 근거로 씁니다.",
+                  "반대입니다. 버틀러는 이 대목으로 성의 규제가 정치경제의 바깥이 아니라 생산양식 안에 있다고 주장하며, 프레이저의 구분을 비판합니다."
+                ],
+                "en": [
+                  "Butler introduces the passage as perhaps, for a time, the most widely cited quotation in socialist-feminist scholarship, and turns that tradition against Fraser.",
+                  "Butler notes that Marx vacillates between treating procreation as a natural and a social relation, but does not discard Engels's passage; it serves to revive the materialist project.",
+                  "The reverse. Butler uses the passage to argue that sexual regulation lies inside the mode of production, not outside political economy, and so to criticize Fraser's distinction."
+                ]
+              },
+              "explanation": {
+                "ko": "버틀러는 성의 사회적 규제를 비판하고 바꾸려는 운동이 왜 정치경제의 작동에 중심적이지 않다고 여겨지느냐고 묻습니다. 그리고 그것이 유물론 기획의 중심이라는 점은 1970~80년대 사회주의 페미니스트들과 마르크스주의·정신분석의 결합을 꾀한 사람들이 날카롭게 지적했고, 생산양식이 사회적 결합 형태를 포함해야 한다고 본 마르크스와 엥겔스에게서 이미 시작되었다고 씁니다. 엥겔스 서문의 ‘직접적 생활의 생산과 재생산은 두 가지’라는 대목이 그 근거입니다. 버틀러에 따르면 그 시기 페미니즘은 가족을 생산양식의 일부로 보았을 뿐 아니라, 젠더의 생산 자체가 이성애 규범적 가족을 재생산하는 규범에 따른 ‘인간 자신의 생산’임을 보이려 했습니다. 엥겔스 자신은 이 구분으로 혈연이 지배하는 사회에서 국가로 가는 과정을 설명했는데, 버틀러도 각주에서 이 이어지는 서술을 짚고 푸코의 ‘결연 장치’와 ‘섹슈얼리티 장치’ 논의와 견줍니다.",
+                "en": "Butler asks why a movement to criticize and transform the social regulation of sexuality should not be understood as central to the functioning of political economy. That this is central to the materialist project, Butler writes, was the trenchant point of socialist feminists and of those seeking to join Marxism and psychoanalysis in the 1970s and 1980s, and it was inaugurated by Marx and Engels's insistence that the 'mode of production' include forms of social association. Engels's preface, with its twofold production and reproduction of immediate life, is the warrant. Feminists of that period, Butler says, sought not only to identify the family as part of the mode of production but to show that the very production of gender was part of the 'production of human beings themselves', according to norms that reproduced the heterosexually normative family. Engels himself used the distinction to explain the passage from kinship-dominated societies to the state, a continuation Butler notes in a footnote and compares with Foucault's 'system of alliance' and 'sexuality'."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://newleftreview.org/issues/i227/articles/judith-butler-merely-cultural",
+                "label": {
+                  "ko": "버틀러, 「단지 문화적인」 「퀴어 정치와 문화의 폄하」 (《뉴레프트리뷰》 I/227, 1998)",
+                  "en": "Butler, 'Merely Cultural', 'Queer Politics and the Disparagement of the Cultural' (NLR I/227, 1998)"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "버틀러는 「단지 문화적인」에서 프레이저의 『중단된 정의』가 동성애 억압을 다룬 방식의 무엇을 비판했을까요?",
+                "en": "In 'Merely Cultural', what does Butler criticize in the way Fraser's Justice Interruptus treats the oppression of gays and lesbians?"
+              },
+              "choices": {
+                "ko": [
+                  "동성애자가 분업에서 고유한 자리가 없고 착취 계급이 아니라는 이유로 그 투쟁을 문화의 끝에 둔 점을 비판하고, 경제를 사람의 사회적 재생산까지 넓혀야 한다고 했습니다.",
+                  "프레이저가 동성애 운동을 지지하지 않고 동성애 혐오를 정의의 문제로 보지 않는다고 비판하며, 퀴어 운동이 좌파와 갈라서야 한다고 했습니다.",
+                  "동성애자도 임금 노동에서 따로 착취당하는 계급이라는 사실을 보여 주면 충분하다고 하며, 무급 노동과 연결되는 투쟁만 정치경제에 속한다고 했습니다."
+                ],
+                "en": [
+                  "That Fraser placed their struggles at the cultural end because homosexuals hold no distinctive place in the division of labour and are not an exploited class; Butler argues the economic must extend to the social reproduction of persons.",
+                  "That Fraser does not support gay and lesbian movements or treat homophobia as a matter of justice; Butler concludes that queer movements should part ways with the Left.",
+                  "That it suffices to show gay people form a separately exploited class in wage labour; Butler holds that only struggles tied to unpaid labour belong to political economy."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "맞습니다. 버틀러는 성을 둘러싼 투쟁이 무급 노동이나 착취와 직접 연결될 때만 정치경제의 중심이 되는 것이 아니라고 반박합니다.",
+                  "버틀러는 프레이저가 이런 운동이 사회 정의와 깊이 관련된다고 주장하고 동성애 혐오에 반대한다는 점을 분명히 인정합니다. 그 지지의 함의를 충분히 밀고 나가지 않았다는 것이 비판입니다.",
+                  "반대입니다. 버틀러는 성 투쟁이 무급·착취 노동과 직접 연결될 때만 정치경제의 중심이 되는 것은 아니라며 ‘경제’의 영역 자체를 넓히자고 합니다."
+                ],
+                "en": [
+                  "Butler argues that struggles over sexuality are central to political economy not only insofar as they can be tied directly to unpaid and exploited labour.",
+                  "Butler expressly grants that Fraser insists these movements have everything to do with social justice and opposes homophobia. The criticism is that Fraser does not pursue the implications of that support radically enough.",
+                  "The reverse. Butler argues that sexual struggles do not become central to political economy only when tied to unpaid or exploited labour, and calls for expanding the 'economic' sphere itself."
+                ]
+              },
+              "explanation": {
+                "ko": "버틀러에 따르면 프레이저는 정치경제와 문화를 잇는 스펙트럼을 세우고 레즈비언·게이 투쟁을 문화의 끝에 둡니다. 동성애자는 분업에서 고유한 자리를 차지하지 않고 계급 구조 전체에 퍼져 있으며 착취 계급을 이루지 않으므로, 그들이 겪는 부정의는 전형적으로 인정의 문제라는 것입니다. 버틀러는 이것이 성의 영역을 바꾸려는 투쟁을 물질적 억압이 아닌 문화적 인정의 문제로 만든다고 비판합니다. 그리고 정치경제를 재분배로 정의하더라도, 동성 커플이 세법·재산법상 경제 단위인 국가 공인 가족에서 배제되고, 연인의 응급 의료 결정이나 재산 상속에서 밀려나며, 이윤 중심 의료 체계가 HIV·에이즈 감염인에게 다른 부담을 지우는 일이 어떻게 정치경제와 무관하냐고 묻습니다. 프레이저가 젠더를 정치경제의 구조 원리로 인정하는 근거가 무급 재생산 노동뿐이라는 점도 짚으며, 재생산의 영역이 성의 규제로 어떻게 경계 지어지는지를 묻지 않았다고 비판합니다.",
+                "en": "According to Butler, Fraser posits a spectrum spanning political economy and culture and places lesbian and gay struggles at its cultural end: homosexuals occupy no distinctive position in the division of labour, are distributed throughout the class structure and do not constitute an exploited class, so the injustice they suffer is quintessentially a matter of recognition. Butler objects that this turns their struggles into a matter of cultural recognition rather than material oppression. Even if political economy is defined by redistribution, as Fraser does, Butler asks how one could miss the economic weight of excluding lesbians and gays from the state-sanctioned family, an economic unit in tax and property law, of denying them emergency medical decisions or a dead lover's property, or of the burdens profit-driven health care imposes on people with HIV and AIDS. Butler also notes that Fraser grounds gender's place in political economy only in unpaid reproductive work, and never asks how the sphere of reproduction is itself circumscribed by sexual regulation."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://newleftreview.org/issues/i227/articles/judith-butler-merely-cultural",
+                "label": {
+                  "ko": "버틀러, 「단지 문화적인」 「물질적 배제」·「성적 생산양식」 (《뉴레프트리뷰》 I/227, 1998)",
+                  "en": "Butler, 'Merely Cultural', 'Material Exclusion' and 'The Mode of Sexual Production' (NLR I/227, 1998)"
+                }
+              }
+            },
+            {
+              "id": "q4",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "프레이저는 「이성애주의, 무시, 자본주의」에서 무시(misrecognition)를 어떻게 정의하고, 왜 그것이 ‘단지 문화적인’ 문제가 아니라고 했을까요?",
+                "en": "In 'Heterosexism, Misrecognition and Capitalism', how does Fraser define misrecognition, and why does she deny that it is 'merely cultural'?"
+              },
+              "choices": {
+                "ko": [
+                  "법·복지·의료 등에 제도화된 해석과 평가의 양식 때문에 사회생활에 동등한 참여자로 참여하지 못하게 되는 지위의 손상으로 정의하고, 잘못된 분배만큼 실재하는 해악이라고 했습니다.",
+                  "다른 사람들의 의식적 태도나 편견 속에서 낮게 평가받는 심리적 상처로 정의하고, 그래서 경제적 착취보다는 덜 물질적이지만 무시해서는 안 될 문제라고 했습니다.",
+                  "계급적 박탈이 문화에 비친 반영으로 정의하고, 동성애자의 요구는 계급 박탈의 요구로 바꾸어 말할 때 비로소 정의의 요구로 인정받는다고 했습니다."
+                ],
+                "en": [
+                  "As a status injury: being prevented from participating as a peer in social life by patterns of interpretation and evaluation institutionalized in law, welfare or medicine, a harm as real as maldistribution.",
+                  "As a psychological wound of being thought ill of in others' conscious attitudes and prejudices, which is therefore less material than economic exploitation but still not to be ignored.",
+                  "As the cultural reflection of class deprivation, so that gay and lesbian claims count as claims of justice only once they are restated as claims of class deprivation."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "맞습니다. 프레이저에게 무시는 심리 상태가 아니라 제도화된 사회관계이며, 분석적으로 잘못된 분배와 구별되지만 똑같이 일차적인 부정의입니다.",
+                  "프레이저는 무시가 남의 의식적 태도나 생각 속에서 깔보이는 것이 아니라고 명시하고, 무시의 해악도 잘못된 분배만큼 물질적이라고 합니다.",
+                  "반대입니다. 프레이저는 이성애주의 반대자들이 지위 손상의 요구를 계급 박탈의 요구로 번역하느라 애쓸 필요가 없다고 했고, 토대·상부구조 모델을 거부합니다."
+                ],
+                "en": [
+                  "For Fraser misrecognition is an institutionalized social relation, not a psychological state, analytically distinct from maldistribution yet an equally primary injustice.",
+                  "Fraser states that misrecognition is not simply being thought ill of in others' conscious attitudes or beliefs, and holds that its harms are as material as those of maldistribution.",
+                  "The reverse. Fraser says opponents of heterosexism need not translate claims of status injury into claims of class deprivation, and she rejects the base-superstructure model."
+                ]
+              },
+              "explanation": {
+                "ko": "프레이저는 자기 틀의 중심이 분배의 부정의와 인정의 부정의를 나누는 규범적 구분이라고 하면서, 이것은 인정을 ‘단지 문화적인’ 것으로 깎아내리려는 것이 아니라 어떤 정당한 사회 질서도 없애야 할, 똑같이 일차적이고 심각하며 실재하는 두 가지 해악을 개념화하려는 것이라고 밝힙니다. 무시당한다는 것은 자원을 공정하게 나눠 받지 못해서가 아니라, 법·사회복지·의료·대중문화에 제도화된 해석과 평가의 양식 때문에 온전한 사회적 동반자의 지위를 거부당하는 것입니다. 무시는 본질적으로 지위의 손상이며, 잘못된 분배와 함께 나타날 수 있지만 분석적으로 구별되고 개념적으로 환원되지 않습니다. 둘이 서로 바뀌는지는 사회 구성체에 달려 있어서, 지위가 곧 분배 원리인 자본주의 이전·국가 이전 사회에서는 무시가 곧 잘못된 분배이지만, 자본주의에서는 지위와 계급이 갈라질 수 있습니다. 그래서 무시는 잘못된 분배를 동반하든 않든 근본적인 부정의이며, 이성애주의에 맞선 투쟁은 자본주의를 위협한다는 것을 보이지 않아도 정당하다고 합니다.",
+                "en": "Fraser says the centre of her framework is a normative distinction between injustices of distribution and of recognition; far from derogating recognition as 'merely cultural', it conceptualizes two equally primary, serious and real kinds of harm that any morally defensible social order must eradicate. To be misrecognized is to be denied the status of a full partner in social interaction, not through an unfair share of resources but through institutionalized patterns of interpretation and evaluation in law, social welfare, medicine or popular culture. Misrecognition is in essence a status injury, analytically distinct from and conceptually irreducible to maldistribution, though it may accompany it. Whether one converts into the other depends on the social formation: in pre-capitalist, pre-state societies, where status is the principle of distribution, misrecognition entails maldistribution, but in capitalist societies status and class can diverge. Misrecognition is therefore a fundamental injustice with or without maldistribution, and struggles against heterosexism need not show they threaten capitalism to prove they are just."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://newleftreview.org/issues/i228/articles/nancy-fraser-heterosexism-misrecognition-and-capitalism-a-response-to-judith-butler",
+                "label": {
+                  "ko": "프레이저, 「이성애주의, 무시, 자본주의: 주디스 버틀러에 대한 답변」 서두 (《뉴레프트리뷰》 I/228, 1998)",
+                  "en": "Fraser, 'Heterosexism, Misrecognition and Capitalism: A Response to Judith Butler', opening (NLR I/228, 1998)"
+                }
+              }
+            },
+            {
+              "id": "q5",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "프레이저는 「이성애주의, 무시, 자본주의」에서 현대 자본주의와 이성애주의의 관계를 어떻게 봤을까요?",
+                "en": "In 'Heterosexism, Misrecognition and Capitalism', how does Fraser see the relation between contemporary capitalism and heterosexism?"
+              },
+              "choices": {
+                "ko": [
+                  "자본주의가 경제 관계를 친족에서 떼어 내면서 성의 규제와 잉여가치 축적의 연결이 느슨해졌고, 경험적으로 이성애주의를 필요로 하지 않으므로 바꿔야 할 것은 지위 질서라고 봤습니다.",
+                  "강제적 이성애가 노동력 재생산과 잉여가치 확대에 필수적이므로, 동성애자 투쟁은 그 자체로 자본주의 체제의 존립을 위협한다고 봤습니다.",
+                  "후기 자본주의가 이미 이성애주의를 거의 없앴으므로, 남은 차별은 일부 사람들의 낡은 편견일 뿐 따로 바로잡을 제도적 부정의는 아니라고 봤습니다."
+                ],
+                "en": [
+                  "Capitalism decoupled economic relations from kinship, loosening the link between sexual regulation and surplus-value accumulation; empirically it does not require heterosexism, so what must change is the status order.",
+                  "Compulsory heterosexuality is essential to reproducing labour power and expanding surplus value, so gay and lesbian struggles in themselves threaten the survival of the capitalist system.",
+                  "Late capitalism has already all but abolished heterosexism, so the remaining discrimination is merely some people's outdated prejudice rather than an institutional injustice to be redressed."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "맞습니다. 프레이저는 이 피해를 바로잡으려고 자본주의를 무너뜨릴 필요는 없지만, 다른 이유로는 그래야 할 수도 있고, 지위 질서와 인정의 관계는 반드시 바꿔야 한다고 합니다.",
+                  "프레이저가 반박한 버틀러의 기능주의 논변입니다. 프레이저는 동성애자 투쟁이 현실의 자본주의를 위협한다는 주장이 경험적으로 매우 믿기 어렵다고 합니다.",
+                  "프레이저는 동성애자가 해고·복지 혜택 박탈·세금과 상속의 불이익 같은 물질적 피해를 겪는다고 인정하고, 그것을 제도화된 무시로서 바로잡아야 한다고 합니다."
+                ],
+                "en": [
+                  "Fraser says we need not overthrow capitalism to remedy these disadvantages, though we may need to for other reasons, but we must transform the status order and the relations of recognition.",
+                  "This is Butler's functionalist argument, which Fraser rebuts: she finds it highly implausible empirically that gay and lesbian struggles threaten actually existing capitalism.",
+                  "Fraser grants that gays and lesbians suffer material harms such as dismissal, loss of family-based benefits and tax and inheritance disadvantages, and treats them as institutionalized misrecognition to be redressed."
+                ]
+              },
+              "explanation": {
+                "ko": "프레이저는 버틀러의 둘째 논변을 정의적 판본과 기능주의 판본으로 나눠 반박합니다. 성의 규제가 정의상 경제 구조에 속한다는 판본은 역사에 무심해서, 자본주의가 친족과 정치적 권위에서 상대적으로 떨어져 나온 특화된 경제 관계를 만든다는 고유성을 지워 버린다고 합니다. 자본주의에서 성의 규제와 잉여가치 축적의 연결은 친족이 경제를 짜던 사회보다 훨씬 느슨하고, 20세기 후기 자본주의에서는 엘리 자레츠키가 말한 ‘개인 생활’의 등장으로 더 약해졌다는 것입니다. 자본주의가 강제적 이성애를 필요로 한다는 기능주의 판본에 대해서는, 동성애자가 경제에 쓸모 있는 하층 노동자로 여겨지기보다 존재 자체가 혐오의 대상으로 여겨지고, 주된 반대자도 기업이 아니라 지위에 집착하는 종교적·문화적 보수주의자라고 답합니다. 그래서 현대 자본주의는 이성애주의를 필요로 하지 않는 것으로 보이고, 동성애자의 경제적 불이익은 자본주의 구조가 아니라 인정의 관계 속 이성애주의의 효과로 이해하는 편이 낫다고 결론짓습니다.",
+                "en": "Fraser splits Butler's second argument into a definitional and a functionalist version. The claim that sexual regulation belongs to the economic structure by definition is indifferent to history and erases what is specific to capitalism: an order of specialized economic relations relatively decoupled from kinship and political authority. In capitalist society the link between sexual regulation and the accumulation of surplus value is far weaker than where kinship organizes the economy, and in twentieth-century late capitalism it was attenuated further by the rise of what Eli Zaretsky called 'personal life'. Against the functionalist version, she answers that gays and lesbians are seen less as a useful underclass of workers than as a group whose very existence is an abomination, and that their main opponents are not corporations but religious and cultural conservatives obsessed with status. Empirically, then, contemporary capitalism seems not to require heterosexism, and gays' economic disadvantages are better understood as effects of heterosexism in the relations of recognition than as rooted in the structure of capitalism."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://newleftreview.org/issues/i228/articles/nancy-fraser-heterosexism-misrecognition-and-capitalism-a-response-to-judith-butler",
+                "label": {
+                  "ko": "프레이저, 「이성애주의, 무시, 자본주의: 주디스 버틀러에 대한 답변」 (《뉴레프트리뷰》 I/228, 1998)",
+                  "en": "Fraser, 'Heterosexism, Misrecognition and Capitalism: A Response to Judith Butler' (NLR I/228, 1998)"
+                }
+              }
+            },
+            {
+              "id": "q6",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "버틀러가 모스와 레비스트로스를 들어 물질과 문화의 구분이 불안정하다고 하자, 프레이저는 「이성애주의, 무시, 자본주의」에서 어떻게 답했을까요?",
+                "en": "When Butler invoked Mauss and Lévi-Strauss to call the material/cultural distinction unstable, how did Fraser answer in 'Heterosexism, Misrecognition and Capitalism'?"
+              },
+              "choices": {
+                "ko": [
+                  "버틀러가 경제적인 것과 물질적인 것을 뒤섞었다고 하고, 두 인류학자는 친족이 모든 관계를 짜던 사회를 분석해 경제·문화 구분을 역사화했으며 그 구분은 자본주의 분석에 쓸모 있다고 했습니다.",
+                  "인류학의 증거가 구분의 불안정성을 보여 준다는 점을 받아들이고, 분배와 인정의 구분을 버린 채 경제와 문화를 하나로 묶는 새로운 단일 틀로 옮겨 가겠다고 했습니다.",
+                  "자본주의 이전 사회에 관한 인류학은 현대 사회와 무관하다고 하고, 경제·문화 구분은 그런 사회에 적용할 수 없으니 비교 자체를 그만둬야 한다고 했습니다."
+                ],
+                "en": [
+                  "That Butler conflates the economic with the material; the two anthropologists analysed societies organized throughout by kinship and so historicized the economic/cultural distinction, which remains useful for analysing capitalism.",
+                  "That the anthropological evidence does show the distinction to be unstable, so she would drop the distinction of distribution and recognition for a new single framework fusing economy and culture.",
+                  "That anthropology of pre-capitalist societies is irrelevant to modern society, and since the economic/cultural distinction cannot be applied to such societies the comparison should be abandoned."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "맞습니다. 프레이저에게 논쟁의 진짜 쟁점은 존재론적인 물질·문화 구분이 아니라 사회이론적인 경제·문화 구분이고, 역사화는 그 구분을 더 정확히 쓰게 해 준다고 합니다.",
+                  "프레이저는 구분을 지키겠다고 분명히 밝힙니다. 역사화는 구분을 쓸모없게 만드는 것이 아니라 더 정확하게 쓰게 해 준다는 것이 그녀의 답입니다.",
+                  "반대입니다. 프레이저는 그런 분화가 없는 사회에도 이 구분을 적용해 우리 사회와 어떻게 다른지 보여 줄 수 있다고 하며, 인류학이 자본주의의 역사적 특수성을 드러낸다고 봅니다."
+                ],
+                "en": [
+                  "For Fraser the real bone of contention is not an ontological material/cultural distinction but the social-theoretical economic/cultural one, and historicizing it lets us use it more precisely.",
+                  "Fraser explicitly defends the distinction. Her answer is that historicizing a distinction does not render it useless but allows a more precise use of it.",
+                  "The reverse. Fraser says the distinction can be applied to societies lacking these differentiations to show how they differ from ours, and that anthropology reveals the historical specificity of capitalism."
+                ]
+              },
+              "explanation": {
+                "ko": "버틀러는 레비스트로스의 ‘여성의 교환’과 모스의 ‘증여’ 분석이 교환을 문화적이면서 경제적인 것으로 보여 주어 그 구분을 불안정하게 만든다고 했고, 물음은 성 정치가 어느 쪽에 속하느냐가 아니라 성적 교환이 두 영역의 구분을 어떻게 흐트러뜨리느냐라고 했습니다. 프레이저는 먼저 버틀러가 ‘경제적인 것’과 ‘물질적인 것’을 뒤섞었다고 지적합니다. 무시의 부정의도 물질적이므로 자기 규범적 구분은 물질과 문화라는 존재론적 차이에 기대지 않으며, 그것이 대응하는 것은 자본주의 사회의 경제·문화 구분, 곧 사회이론의 구분이라는 것입니다. 이어 모스와 레비스트로스가 다룬 것은 친족이 혼인과 성관계뿐 아니라 노동, 재화의 분배, 권위, 위신의 위계까지 짜던 사회이므로, 그들의 작업은 구분을 ‘불안정하게’ 만든 것이 아니라 역사화한 것으로 읽는 편이 낫다고 답합니다. 버틀러의 논변은 자본주의 이전 사회의 특징을 자본주의에 부당하게 넓히고, 역사화를 무의미화와 혼동했다는 것입니다.",
+                "en": "Butler argued that Lévi-Strauss's exchange of women and Mauss's gift show exchange to be cultural and economic at once, making the distinction unstable; the question, Butler wrote, is not which sphere sexual politics belongs to but how sexual exchange confounds the distinction between the two. Fraser first objects that Butler conflates 'the economic' with 'the material'. Since injustices of misrecognition are also material, her normative distinction rests on no ontological difference between the material and the cultural; what it correlates with is the economic/cultural distinction in capitalist society, a social-theoretical rather than an ontological one. Mauss and Lévi-Strauss, she continues, studied societies in which kinship organized not only marriage and sexual relations but the labour process, the distribution of goods, authority and hierarchies of prestige, so their work is better read as historicizing the distinction than as destabilizing it. Butler's argument, she concludes, illegitimately extends a feature of pre-capitalist societies to capitalism and mistakes historicizing a distinction for rendering it useless."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://newleftreview.org/issues/i228/articles/nancy-fraser-heterosexism-misrecognition-and-capitalism-a-response-to-judith-butler",
+                "label": {
+                  "ko": "프레이저, 「이성애주의, 무시, 자본주의: 주디스 버틀러에 대한 답변」 (《뉴레프트리뷰》 I/228, 1998)",
+                  "en": "Fraser, 'Heterosexism, Misrecognition and Capitalism: A Response to Judith Butler' (NLR I/228, 1998)"
                 }
               }
             }
