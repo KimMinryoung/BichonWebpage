@@ -369,7 +369,7 @@
     background: var(--bg-surface);
     border-left: 4px solid var(--accent);
     margin-bottom: 18px;
-    padding: 16px 42px 16px 16px;
+    padding: 16px;
 }
 
 .commu-intro h2 {
@@ -386,6 +386,18 @@
 
 .commu-intro-focus {
     color: var(--text-primary);
+}
+
+/* The concept brief is reading prose: justified like the site's other long
+   text (design-system.md), word-break: normal so Korean breaks between
+   characters and the stretched gaps stay tight. Contrast bullets are short
+   labels and stay ragged. */
+.commu-intro-summary,
+.commu-intro-focus,
+.commu-brief-section li {
+    text-align: justify;
+    word-break: normal;
+    hyphens: auto;
 }
 
 .commu-diagram {
