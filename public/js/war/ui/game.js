@@ -1769,7 +1769,8 @@
             const after = line + b.change;
             return Object.assign(b, { after, tone: after < hist ? 'is-behind' : after > hist ? 'is-ahead' : 'is-even' });
         });
-        const current = bands.find(b => f.strength >= b.from && (b.to === null || f.strength < b.to));
+        // A strength below nothing (a loss on a front sent no division) falls in the first band.
+        const current = bands.find(b => f.strength >= b.from && (b.to === null || f.strength < b.to)) || bands[0];
         const last = bands[bands.length - 1];
         // Room after the pressure's marks for its count.
         const top = Math.max(Math.max(last.from + 3, f.strength, f.pressure + (f.pursuitIn || 0) + 1) * 1.1, (f.pressure + (f.pursuitIn || 0)) / 0.8);
@@ -2047,7 +2048,7 @@
     // The feats used and the units that surrendered in a fought battle.
     function battleFeats(def, r) {
         const names = (r.feats || []).map(id => (def.units.find(u => u.feat && u.feat.id === id) || {}).feat).filter(Boolean).map(f => `★ ${f.name}`);
-        return [names.length ? ` · ${names.join(', ')}` : '', r.captured ? ` · 투항 ${r.captured}` : ''].join('');
+        return [names.length ? ` · ${names.join(', ')}` : '', r.captured ? ` · 투항한 적 ${r.captured}부대` : ''].join('');
     }
 
     // What the broken enemy left behind this season, and the prisoners
@@ -2457,7 +2458,7 @@
                     featArmed = null;
                     if (act('b:feat', unit.id, u.id)) afterBattleAct(`${unit.name}의 ${unit.feat.name}: ${u.name}에 피해 ${p.dmg}`);
                 } else if (isTarget) {
-                    if (act('b:attack', unit.id, u.id)) afterBattleAct(`${unit.name}이(가) ${u.name}을(를) 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : ''));
+                    if (act('b:attack', unit.id, u.id)) afterBattleAct(`${josa(unit.name, '이', '가')} ${josa(u.name, '을', '를')} 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : ''));
                 } else if (B.isPlayer(b, u)) {
                     selected = selected === u.id ? null : u.id;
                     inspected = null;
@@ -2616,7 +2617,7 @@
         const u = b.units.find(x => x.id === e.id);
         const [title, sub] = e.type === 'feat'
             ? [`★ ${u.feat.name}`, u.name]
-            : ['투항', `${u.name}이(가) 총을 내려놓고 넘어왔다`];
+            : ['투항', `${josa(u.name, '이', '가')} 총을 내려놓고 넘어왔다`];
         // A row over the board's visible part, beside the unit (placeMoment), the banner at its middle.
         return el('div', { class: 'cw-moment-row', 'aria-hidden': 'true', 'data-r': String(u.r), 'data-fresh': since < 200 ? '1' : null },
             el('div', { class: 'cw-moment' + (e.type === 'surrender' ? ' is-surrender' : ''), style: `--since:${Math.round(since)}ms` },
@@ -2707,7 +2708,7 @@
             el('p', {}, `공격 ${u.atk} · 방어 ${B.defenseOf(b, u)}${parts.length > 1 ? ` (${parts.join(', ')})` : ''} · 이동 ${u.mv}${u.rail ? ' (철길로만)' : ''}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
             targets.length ? el('ul', { class: 'cw-info-targets', 'aria-label': '칠 수 있는 적' }, ...targets.map(d => {
                 const p = B.preview(b, u, d);
-                return el('li', {}, el('button', { type: 'button', onclick: () => { if (act('b:attack', u.id, d.id)) afterBattleAct(`${u.name}이(가) ${d.name}을(를) 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : '')); } },
+                return el('li', {}, el('button', { type: 'button', onclick: () => { if (act('b:attack', u.id, d.id)) afterBattleAct(`${josa(u.name, '이', '가')} ${josa(d.name, '을', '를')} 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : '')); } },
                     el('strong', {}, `${d.name} 공격`),
                     el('span', {}, `병력 ${d.hp}/${d.maxHp} · 방어 ${B.defenseOf(b, d)} → 피해 ${p.dmg}${p.dmg >= d.hp ? ' (격파)' : p.surrender ? ' (투항)' : ''}${p.counter ? ` · 반격 ${p.counter}` : ''}${p.wears ? ` · ${fortText(b, d.r, d.c, 1)}` : ''}`)));
             })) : null,
@@ -2761,17 +2762,17 @@
         const name = id => (b.units.find(u => u.id === id) || {}).name;
         return b.events.map(e => {
             if (e.type === 'attack') return `${name(e.from)} → ${name(e.to)}: 피해 ${e.dmg}${e.counter ? `, 반격 ${e.counter}` : ''}`;
-            if (e.type === 'move') return `${name(e.id)}이(가) 움직였다.`;
-            if (e.type === 'fall') return `${name(e.id)}이(가) 무너졌다.`;
+            if (e.type === 'move') return `${josa(name(e.id), '이', '가')} 움직였다.`;
+            if (e.type === 'fall') return `${josa(name(e.id), '이', '가')} 무너졌다.`;
             if (e.type === 'water') return `${name(e.id)}: 차오르는 물에 피해 ${e.dmg}`;
             if (e.type === 'turned') return `${b.def.lines[e.line].name}이 우회되었다. 수비대가 퇴로를 걱정한다.`;
             if (e.type === 'wear') return `포격으로 ${B.terrain(b, e.r, e.c).name}의 방어가 깎였다.`;
             if (e.type === 'reserve') return `${b.def.reserveName}이 ${b.def.sectors[e.sector].name} 쪽으로 향한다.`;
             if (e.type === 'tide') return `바람이 바뀌었다. ${b.def.ford}에 물이 다시 차오른다.`;
             if (e.type === 'feat') return `결정적 한 수: ${name(e.id)}의 「${b.units.find(u => u.id === e.id).feat.name}」.`;
-            if (e.type === 'surrender') return `${name(e.id)}이(가) 총을 내려놓고 ${josa(U.player, '으로', '로')} 넘어왔다.`;
-            if (e.type === 'air') return `${foeName()} 비행기가 ${name(e.id)}을(를) 덮쳤다: 피해 ${e.dmg}`;
-            if (e.type === 'raised') return `${name(e.id)}이(가) 열차에서 내려 총을 들었다.`;
+            if (e.type === 'surrender') return `${josa(name(e.id), '이', '가')} 총을 내려놓고 ${josa(U.player, '으로', '로')} 넘어왔다.`;
+            if (e.type === 'air') return `${foeName()} 비행기가 ${josa(name(e.id), '을', '를')} 덮쳤다: 피해 ${e.dmg}`;
+            if (e.type === 'raised') return `${josa(name(e.id), '이', '가')} 열차에서 내려 총을 들었다.`;
             return '';
         }).filter(Boolean);
     }
@@ -2783,7 +2784,7 @@
         if (!u || (u.acted && !B.canMove(b, u)) || u.hp <= 0) selected = null;
         if (battleOver()) return;
         const said = text + b.events.filter(e => e.type === 'turned').map(e => `. ${b.def.lines[e.line].name}이 우회되었다.`).join('')
-            + b.events.filter(e => e.type === 'surrender').map(e => `. ${b.units.find(x => x.id === e.id).name}이(가) 투항했다.`).join('');
+            + b.events.filter(e => e.type === 'surrender').map(e => `. ${josa(b.units.find(x => x.id === e.id).name, '이', '가')} 투항했다.`).join('');
         renderBattle();
         focusSelected();
         announce(said);
@@ -2906,13 +2907,14 @@
 
     function renderOutcome() {
         const o = s.outcome;
-        const items = [el('p', { class: 'games-kicker' }, o.stars ? '종전' : '패배'), el('h2', { id: 'cwOutcomeTitle' }, o.title), el('p', {}, o.text)];
+        const endGlossed = new Set();
+        const items = [el('p', { class: 'games-kicker' }, o.kind === 'won' ? '종전' : o.stars ? '크림을 넘지 못함' : '패배'), el('h2', { id: 'cwOutcomeTitle' }, o.title), el('p', {}, o.text)];
         if (o.stars) {
             items.push(el('ul', { class: 'cw-stars' }, ...o.stars.map(st => el('li', { class: st.got ? 'is-got' : '' }, (st.got ? '★ ' : '☆ ') + st.label))));
             items.push(el('p', {}, `시기마다 쥔 도시를 모두 더하면 역사보다 ${signed(o.diff)}`));
-            if (o.kind === 'won' || o.kind === 'stalled') items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, '역사에서는'), el('p', {}, s.battle.def.history)));
+            if (o.kind === 'won' || o.kind === 'stalled') items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, '역사에서는'), el('p', {}, ...glossed(s.battle.def.history, endGlossed))));
             items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, D.epilogue.title),
-                el('p', {}, D.epilogue.texts.find(x => G.when(s, x.when)).text),
+                el('p', {}, ...glossed(D.epilogue.texts.find(x => G.when(s, x.when)).text, endGlossed)),
                 el('p', { class: 'cw-links' }, ...D.epilogue.links.map(link))));
         }
         items.push(...retrospect());
@@ -2968,10 +2970,10 @@
                 turned.length ? ` · 우회한 방어선: ${turned.join(', ')}` : '', battleFeats(def, r));
         });
         const support = U.hud
-            .map(h => supportChart(h.label, [D.economy.stats[h.stat].start].concat(s.records.map(r => r.stats[h.stat])), h.chart));
+            .map(h => supportChart(h.label, [D.economy.stats[h.stat].start].concat(s.records.map(r => r.stats[h.stat])), h.chart, h.chartNote));
         return [
             el('h3', { class: 'cw-retro-title' }, '시기마다 역사와 비교'),
-            el('p', { class: 'cw-note' }, '싸운 전선의 위치를 합해 역사와 견줍니다. 시기를 누르면 전선별 결과가 펼쳐집니다.'),
+            el('p', { class: 'cw-note' }, '시기마다 쥔 도시 수를 역사와 견줍니다. 시기를 누르면 전선별 결과가 펼쳐집니다.'),
             seasons,
             el('h3', { class: 'cw-retro-title' }, '갈림길과 돌발 사건'),
             el('div', { class: 'cw-forks-wrap' }, forks),
@@ -2985,7 +2987,7 @@
     // One value across the seasons (0–100, the start first) as a line, with
     // a dashed mark at the threshold that matters, and every point named for
     // the pointer and the screen reader.
-    function supportChart(label, values, mark) {
+    function supportChart(label, values, mark, note) {
         const W = 240, H = 92, L = 22, R = 8, T = 8, Bm = 18;
         const x = i => L + i * (W - L - R) / (values.length - 1);
         const y = v => T + (100 - v) / 100 * (H - T - Bm);
@@ -3004,7 +3006,7 @@
         node.append(svg('text', { x: L, y: H - 4, class: 'cw-spark-axis' }, '1918'));
         node.append(svg('text', { x: W - R, y: H - 4, 'text-anchor': 'end', class: 'cw-spark-axis' }, D.turns[s.records[values.length - 2].turn].date.slice(0, 5)));
         const last = values[values.length - 1];
-        return el('figure', {}, el('figcaption', {}, label, ' ', el('strong', {}, String(last)), mark !== null ? el('small', {}, ` · 기준 ${mark}`) : null), node);
+        return el('figure', {}, el('figcaption', {}, label, ' ', el('strong', {}, String(last)), mark !== null ? el('small', {}, ` · ${note || `기준 ${mark}`}`) : null), node);
     }
 
     // Battle keys: N picks the next unit to act, E ends the turn, Esc lets

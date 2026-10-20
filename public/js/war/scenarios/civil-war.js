@@ -1873,9 +1873,9 @@
         player: '붉은 군대', playerUnits: '붉은 부대', enemy: '백군', enemyAll: '백군·간섭군',
         unit: '사단', leader: '정치위원', food: '곡물', unrest: '봉기',
         hud: [
-            { stat: 'peasants', label: '농민 지지', warnBelow: 35, warnNote: '봉기 위험', chart: 40 },
+            { stat: 'peasants', label: '농민 지지', warnBelow: 35, warnNote: '봉기 위험', chart: 40, chartNote: '40 이상이면 별' },
             { stat: 'workers', label: '노동자 지지', note: '동원에 영향', warnBelow: 40, chart: null },
-            { stat: 'cohesion', label: '당 결속', warnBelow: 40, command: true, chart: 30, split: '분열: 정치위원 −1' },
+            { stat: 'cohesion', label: '당 결속', warnBelow: 40, command: true, chart: 30, chartNote: '30 아래면 분열', split: '분열: 정치위원 −1' },
         ],
         cardStats: { peasants: '농민', workers: '노동자', cohesion: '결속' },
         // The game's two numbers in plain words (war/ui/game.js).

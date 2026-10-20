@@ -52,8 +52,12 @@
 
     // A Korean particle after a word from the scenario: a for a final
     // consonant (사단이, 곡물이), b without one (장갑열차를, 봉기가).
+    // Closing quotes and brackets are read past (「강철 사단」이), digits as
+    // read aloud (제1군이, 제2군이 → 군; 2호가).
     const josa = (word, a, b) => {
-        const code = word.charCodeAt(word.length - 1) - 0xac00;
+        const last = word.replace(/[」』)\]"'’”\s]+$/, '').slice(-1);
+        if (/\d/.test(last)) return word + ('013678'.includes(last) ? a : b);
+        const code = last.charCodeAt(0) - 0xac00;
         return word + (code >= 0 && code < 11172 && code % 28 ? a : b);
     };
 
