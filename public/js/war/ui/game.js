@@ -104,6 +104,7 @@
     const glossary = (D.glossary || []).slice().sort((a, b) => b.term.length - a.term.length);
     const glossRe = glossary.length ? new RegExp(glossary.map(g => g.term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'), 'g') : null;
     const glossOpen = new Set();
+    let reviewGlossed = new Set();   // the review's terms already glossed
     function glossed(text, seen) {
         if (!glossRe || typeof text !== 'string') return [text];
         const out = [];
@@ -406,7 +407,7 @@
         const items = [];
         if (s.phase === 'plan') {
             items.push(...stat(U.unit, `${G.free(s)} / ${plan.divisions}`, `보낼 ${U.unit} / 전체`, false, true));
-            items.push(...stat('지휘력', String(plan.command), `${U.cardStats[D.command.stat]} ${s.stats[D.command.stat]} 기준 · 남기면 사라짐`, plan.command < 3, true));
+            items.push(...stat('지휘력', String(plan.command), `${U.cardStats[D.command.stat]} ${s.stats[D.command.stat]}에 따름 · 다음 시기로 안 넘어감`, plan.command < 3, true));
             items.push(...stat(U.leader, `${plan.commissars - G.commissarsUsed(s)} / ${plan.commissars}`, '남음 / 전체', false, true));
             items.push(...stat(U.food, String(s.food), `이번 시기 +${supply.income}, 필요 ${supply.need}`, supply.ratio < 1, true));
         } else {
@@ -445,7 +446,7 @@
         $('cwArmy').replaceChildren(el('details', { open: open && open.open },
             el('summary', {}, el('strong', {}, `${U.player} · ${U.unit} ${s.plan.divisions}개`),
                 el('span', { class: 'cw-army-line' }, t.army.map(([id, n]) => `${D.troops[id].name} ${n}`).join(' · ')),
-                ...changes.map(c => el('span', { class: 'cw-army-change ' + (c.n < 0 ? 'is-minus' : 'is-plus') }, `${c.label} ${signed(c.n)}`))),
+                ...changes.map(c => el('span', { class: 'cw-army-change ' + (c.n < 0 ? 'is-minus' : 'is-plus') }, `${c.label}: ${U.unit} ${signed(c.n)}`))),
             el('ul', { class: 'cw-troops' }, ...t.army.map(([id, n]) => {
                 const troop = D.troops[id];
                 return el('li', {},
@@ -2029,11 +2030,11 @@
         const result = foughtText(r);
         // A battle with a reward moves its front's strength; one that opens
         // a front's last cities says what it decided.
-        const effect = def.reward ? [` · ${D.fronts[def.front].name} ${W.strength} `, v ? signed(v.v) : '그대로'] : [` · ${def.outcome[r.result === 'won' ? 'won' : 'lost']}`];
+        const effect = def.reward ? [` · ${D.fronts[def.front].name} ${W.strength} `, v ? signed(v.v) : r.result === 'won' && def.reward.quick ? `그대로(${def.reward.quick}턴 안에 이겨야 +${def.reward.quickBy})` : '그대로'] : [` · ${def.outcome[r.result === 'won' ? 'won' : 'lost']}`];
         return el('div', { class: 'cw-history' },
             el('p', { class: 'games-kicker' }, def.title),
             el('p', {}, el('strong', {}, result), ...effect, battleFeats(def, r)),
-            el('p', {}, def.history));
+            el('p', {}, ...glossed(def.history, reviewGlossed)));
     }
 
     // How a fought battle went: won in n turns, held to the end, lost.
@@ -2079,6 +2080,7 @@
         const next = s.phase === 'battle'
             ? el('button', { type: 'button', class: 'cw-primary', onclick: () => { reviewSeen = true; historyMap = false; render(); $('cwBattle').scrollIntoView({ block: 'start' }); } }, s.battle.def.open)
             : el('button', { type: 'button', class: 'cw-primary', onclick: () => { act('next'); historyMap = false; render(); $('cwPlay').scrollIntoView({ block: 'start' }); holdMotion(); announce(`${G.turnData(s).date} ${G.turnData(s).title}`); } }, '다음 시기로 →');
+        reviewGlossed = new Set();
         $('cwReview').replaceChildren(...[
             el('h3', { id: 'cwReviewTitle' }, `${t.date}의 결산`),
             ledgerOf(r),
@@ -2090,9 +2092,9 @@
                 el('p', { class: 'games-kicker' }, '역사에서는'),
                 el('h4', {}, c.title),
                 el('p', {}, el('strong', {}, `당신: ${mine.label}`), ' · ', el('strong', {}, `역사: ${theirs.label}`), same ? ' (같은 선택)' : ''),
-                el('p', {}, c.after),
+                el('p', {}, ...glossed(c.after, reviewGlossed)),
                 el('p', { class: 'cw-links' }, ...c.links.map(link)),
-                el('p', {}, t.after),
+                el('p', {}, ...glossed(t.after, reviewGlossed)),
                 el('p', { class: 'cw-links' }, ...t.links.map(link))),
             next].filter(Boolean));
     }
@@ -2113,7 +2115,7 @@
             const inForce = crossed.length ? null : marks.slice().reverse().find(([v]) => b < v);
             const ahead = marks.find(([v]) => v <= b && !crossed.some(m => m[0] === v));
             const edge = v => (v - lo) / (hi - lo) < 0.12 ? ' is-near-start' : (v - lo) / (hi - lo) > 0.88 ? ' is-near-end' : '';
-            const mark = ([v, label], cls) => el('i', { class: 'cw-gauge-mark ' + cls + edge(v), style: `left:${pct(v)}` }, el('span', {}, cls === 'is-rose' ? `${v} 회복` : `${v} 아래 ${label}`));
+            const mark = ([v, label], cls) => el('i', { class: 'cw-gauge-mark ' + cls + edge(v), style: `left:${pct(v)}` }, el('span', {}, cls === 'is-rose' ? `${v} 회복` : cls === 'is-fell' ? `${v} 아래로 떨어짐: ${label}` : cls === 'is-in-force' ? `${v} 아래라 ${label}` : `${v} 아래로 떨어지면 ${label}`));
             const causes = r.ledger.items.filter(x => x.d[h.stat]);
             return el('div', { class: 'cw-ledger-row' + (diff > 0 ? ' is-up' : diff < 0 ? ' is-down' : ''), style: `--k:${k}` },
                 el('p', { class: 'cw-ledger-head' }, el('strong', {}, h.label),
@@ -2150,9 +2152,9 @@
     function statMarks(stat) {
         const below = w => w && w.stat && w.stat[0] === stat && w.stat[1] === '<' ? w.stat[2] : null;
         const marks = [];
-        for (const l of D.unrest.levels) if (below(l.when) !== null) marks.push([below(l.when), `봉기 ${U.unit} −${l.n}`]);
+        for (const l of D.unrest.levels) if (below(l.when) !== null) marks.push([below(l.when), `봉기로 ${U.unit} ${l.n}개 묶임`]);
         for (const f of D.leaders.fewer || []) if (below(f.when) !== null) marks.push([below(f.when), `${U.leader} −${f.n}`]);
-        for (const u of D.economy.upkeep || []) if (below(u.when) !== null && u.label) marks.push([below(u.when), `${u.label} · 시기당 ${Object.entries(u.each || {}).map(([k, v]) => `${U.cardStats[k]} ${signed(v)}`).join(', ')}`]);
+        for (const u of D.economy.upkeep || []) if (below(u.when) !== null && u.label) marks.push([below(u.when), `${u.label}, 시기마다 ${Object.entries(u.each || {}).map(([k, v]) => `${U.cardStats[k]} ${signed(v)}`).join(', ')}`]);
         if (D.command.stat === stat) D.command.tiers.forEach(([v], i, all) => { if (v > 0 && all[i + 1]) marks.push([v, `지휘력 ${all[i + 1][1]}`]); });
         return marks.sort((x, y) => y[0] - x[0]);
     }
@@ -2180,7 +2182,7 @@
                 el('p', { class: 'games-kicker' }, '돌발 사건'),
                 el('h4', {}, inc.title),
                 el('p', {}, el('strong', {}, `당신: ${mine.label}`), ' · ', el('strong', {}, `역사: ${theirs.label}`), mine === theirs ? ' (같은 대응)' : ''),
-                el('p', {}, inc.after),
+                el('p', {}, ...glossed(inc.after, reviewGlossed)),
                 el('p', { class: 'cw-links' }, ...inc.links.map(link)));
         });
     }
@@ -2501,14 +2503,14 @@
         const goalLines = def.goals.map(g => {
             const holder = B.unitAt(b, ...g.at);
             return holder && B.isEnemy(b, holder)
-                ? `목표 ${g.name}(붉은 깃발): ${holder.name}(병력 ${holder.hp}/${holder.maxHp})이 지킨다. 쓰러뜨리거나 몰아낸 뒤 ${josa(U.playerUnits, '을', '를')} 들여보내면 이긴다`
+                ? `목표 ${g.name}(붉은 깃발): ${holder.name}(병력 ${holder.hp}/${holder.maxHp})${josa(holder.name, '이', '가').slice(holder.name.length)} 지킨다. 쓰러뜨리거나 몰아낸 뒤 ${josa(U.playerUnits, '을', '를')} 들여보내면 이긴다`
                 : `목표 ${g.name}(붉은 깃발): ${josa(foeName(), '이', '가')} 없다. ${josa(U.playerUnits, '을', '를')} 들여보내면 이긴다`;
         });
         const status = [
             `${b.turn} / ${def.turnLimit} 턴`,
             ...goalLines,
             def.windTurns ? (B.fordOpen(b) ? `${def.ford} 여울 열림 (${def.windTurns - b.turn + 1}턴 남음)` : `바람이 바뀌어 ${def.ford}에 물이 찼다`) : null,
-            ...Object.entries(def.lines).map(([id, l]) => b.turned[id] ? `${l.name} 우회됨: 수비대의 진지 방어가 +1로 줄었다` : `${l.name}: 점선 안에 부대를 세우면 우회된다`),
+            ...Object.entries(def.lines).map(([id, l]) => b.turned[id] ? `${l.name} 우회됨: 뒤가 끊긴 수비대의 진지 방어가 +1로 줄었다` : `${l.name}: 점선 구역에 부대를 세우면 뒤가 끊겨 수비대의 진지 방어가 약해진다`),
             !Object.keys(def.sectors).length ? null : b.reserve ? `${foeName()} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶여 있다` : `${foeName()} 예비대는 아직 움직이지 않았다`,
             def.protect ? `${def.protect.name}: ${def.outlast ? `${def.turnLimit}턴이 끝날 때까지 지키면 이긴다 · ` : ''}${josa(foeName(), '이', '가')} 들어서면 진다${B.unitAt(b, ...def.protect.at) ? '' : ' · 지금 비어 있다'}` : null,
         ];
@@ -2524,7 +2526,7 @@
             el('details', { class: 'cw-battle-brief' }, el('summary', {}, '작전 지시', el('span', {}, ` · ${def.summary}`)), ...def.brief.map(p => el('p', {}, p))),
             el('div', { class: 'cw-battle-layout' },
                 el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll' }, board, moment, verdict), el('p', { class: 'cw-terrain-key' },
-                    ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 지역'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
+                    ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('ul', { class: 'cw-battle-status' }, ...status.filter(Boolean).map((t, i) => el('li', { class: i > 0 && i <= goalAt ? 'is-goal' : null }, t))),
@@ -2907,7 +2909,7 @@
         const items = [el('p', { class: 'games-kicker' }, o.stars ? '종전' : '패배'), el('h2', { id: 'cwOutcomeTitle' }, o.title), el('p', {}, o.text)];
         if (o.stars) {
             items.push(el('ul', { class: 'cw-stars' }, ...o.stars.map(st => el('li', { class: st.got ? 'is-got' : '' }, (st.got ? '★ ' : '☆ ') + st.label))));
-            items.push(el('p', {}, `시기별 전선 위치의 합: 역사 대비 ${signed(o.diff)} 도시`));
+            items.push(el('p', {}, `시기마다 쥔 도시를 모두 더하면 역사보다 ${signed(o.diff)}`));
             if (o.kind === 'won' || o.kind === 'stalled') items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, '역사에서는'), el('p', {}, s.battle.def.history)));
             items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, D.epilogue.title),
                 el('p', {}, D.epilogue.texts.find(x => G.when(s, x.when)).text),

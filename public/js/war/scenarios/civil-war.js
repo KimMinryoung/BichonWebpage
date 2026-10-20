@@ -2007,7 +2007,7 @@
     const scoring = {
         stars: [
             { id: 'perekop', label: '페레코프 돌파', when: { won: true } },
-            { id: 'history', label: '전선 합계가 역사 이상', when: { historyDiff: ['>=', 0] } },
+            { id: 'history', label: '쥔 도시 합계가 역사 이상', when: { historyDiff: ['>=', 0] } },
             { id: 'peasants', label: '농민 지지 40 이상으로 종전', when: { stat: ['peasants', '>=', 40] } },
         ],
         won: { title: '크림으로 가는 길이 열렸다', text: '유럽 러시아의 백군 저항은 끝났다.' },
