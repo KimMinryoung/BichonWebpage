@@ -279,6 +279,24 @@ function checkScenario(D) {
         need(!looks.has(look), `portrait ${id} drawn like ${looks.get(look)}`);
         looks.set(look, id);
     }
+    // Speakers' titles (roles): every person who speaks in a season has
+    // one, a plain title or [season id, title] pairs in season order.
+    if (D.roles) {
+        const order = D.turns.map(t => t.id);
+        for (const [id, r] of Object.entries(D.roles)) {
+            const ok = typeof r === 'string' ? r.length > 0 : Array.isArray(r) && r.length > 0 && r.every(([turn, title], i) => order.includes(turn) && title && (!i || order.indexOf(turn) > order.indexOf(r[i - 1][0])));
+            need(ok, `roles: ${id}`);
+        }
+        const speakers = new Set();
+        for (const t of D.turns) {
+            for (const v of t.voices || []) if (v.who && !v.op) speakers.add(v.who[1]);
+            for (const c of [t.choice].concat(t.incident || [])) for (const v of (c && c.talk) || []) if (v.who) speakers.add(v.who[1]);
+        }
+        for (const id of speakers) need(D.roles[id], `roles: no title for speaker ${id}`);
+    }
+    // The glossary: a term, a line on it, and a link inside the site or none.
+    for (const g of D.glossary || []) need(g.term && g.gloss && (g.href === null || g.href === undefined || /^\/commulingo\//.test(g.href)), `glossary: ${g.term}`);
+    need(new Set((D.glossary || []).map(g => g.term)).size === (D.glossary || []).length, 'glossary: a term twice');
     for (const h of D.ui.hud) need(stats.includes(h.stat), `ui.hud: stat ${h.stat}`);
     need(D.ui.hud.filter(h => h.command).length === 1, 'ui.hud: one stat sets command');
     for (const k of Object.keys(D.ui.cardStats)) need(stats.includes(k), `ui.cardStats: ${k}`);

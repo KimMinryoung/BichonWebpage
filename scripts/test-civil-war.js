@@ -12,6 +12,10 @@ const { checkScenario } = require('./lib/war-scenario-check');
 
 const PRIORITY = ['south', 'northwest', 'east', 'volga', 'crimea', 'west', 'southwest', 'north'];
 
+// The player reads the plain words (ui.words), never the rules' own.
+assert.deepEqual(JSON.stringify(D).match(/압력|전투력/g), null, 'player text says 적의 힘·우리 힘');
+assert.ok(D.ui.words && D.ui.words.strength && D.ui.words.pressure);
+
 // A competent plan: the train to the heaviest front, commissars by
 // priority, then each division to the front furthest short of its pressure.
 function plan(s, { requisition = false } = {}) {

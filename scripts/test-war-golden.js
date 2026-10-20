@@ -45,7 +45,7 @@ function oldFlags(flags) {
 // named Warsaw's margin until rules 6 brought the battle of Warsaw
 // (2026-10-16): the old rules.
 const OLD_RULES = {
-    '노동자 지지가 45 아래면 압력 +2': '노동자 지지가 50 아래면 압력 +2',
+    '노동자 지지가 45 아래면 적의 힘 +2': '노동자 지지가 50 아래면 압력 +2',
     '바르샤바는 바르샤바 전투에서 이겨야 들어간다': '바르샤바는 여유 8이 있어야 들어간다',
 };
 const oldRule = tr => (OLD_RULES[tr.rule] ? Object.assign({}, tr, { rule: OLD_RULES[tr.rule] }) : tr);
@@ -109,7 +109,15 @@ function view(s) {
     return sortKeys(out);
 }
 
-const hash = v => crypto.createHash('sha1').update(JSON.stringify(v)).digest('hex').slice(0, 16);
+// The player's words were made plain (2026-10-20): 압력·전투력 read
+// 적의 힘·우리 힘, and threat texts were rewritten. The recording's
+// wording, put back before hashing (words only, no rule moved).
+const OLD_WORDS = Object.entries(require('./fixtures/civil-war-golden-words.json')).map(([now, then]) => [JSON.stringify(now), JSON.stringify(then)]);
+function oldWords(text) {
+    for (const [now, then] of OLD_WORDS) text = text.split(now).join(then);
+    return text.replace(/적의 힘/g, '압력').replace(/우리 힘/g, '전투력');
+}
+const hash = v => crypto.createHash('sha1').update(oldWords(JSON.stringify(v))).digest('hex').slice(0, 16);
 
 // ── Recording: bots that play many different wars ──
 

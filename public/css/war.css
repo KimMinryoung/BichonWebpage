@@ -1243,7 +1243,7 @@
 .cw-voice-log li { margin-bottom: 6px; line-height: var(--leading-normal); }
 .cw-voice-log .cw-voice-src { margin-left: 4px; }
 .games-shell .cw-voice-replay { margin-left: auto; }
-.games-shell .cw-voice-replay + .cw-history-toggle { margin-left: 0; }
+.games-shell .cw-history-toggle:not([hidden]) ~ .cw-history-toggle { margin-left: 0; }
 
 /* What the season still wants, as chips before the send button: an open
    one inverted, a done one plain with its check. */
@@ -1261,6 +1261,28 @@
 }
 .cw-guide span { flex: 0 0 auto; padding: 1px 6px; background: var(--cw-red); color: #fff; font-size: .72rem; letter-spacing: .04em; }
 @media (max-width: 560px) { .cw-command p { display: none; } }
+
+/* The first game's guide: a note over the part of the screen it is about. */
+.cw-coach { margin: 0 0 12px; padding: 10px 14px; border: 2px solid var(--cw-red); border-left-width: 6px; background: var(--bg-surface); font-size: .92rem; line-height: var(--leading-normal); }
+.cw-front .cw-coach { margin: 8px 0; }
+.cw-coach p { margin: 0; }
+.cw-coach .cw-coach-step { margin-bottom: 4px; color: var(--cw-red); font-size: .76rem; font-weight: 800; letter-spacing: .04em; }
+.cw-coach-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.games-shell .cw-coach-actions button { min-height: 30px; padding: 2px 12px; font-size: .84rem; }
+
+/* A term of the story: pressed, its line unfolds after it. */
+.games-shell .cw-term { display: inline; min-height: 0; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline dotted; text-underline-offset: 3px; cursor: help; }
+.games-shell .cw-term[aria-expanded="true"] { text-decoration-style: solid; }
+.cw-gloss { margin: 0 4px; padding: 0 6px; border-left: 3px solid var(--cw-red); background: var(--bg-surface); font-size: .88em; color: var(--text-secondary); }
+.cw-gloss a { white-space: nowrap; }
+
+/* A speaker and what they were at the time. */
+.cw-speaker { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px; justify-self: start; }
+.cw-speaker small { font-size: .74rem; color: var(--text-secondary); white-space: nowrap; }
+.cw-voice-log small { color: var(--text-secondary); }
+
+/* How to play a battle turn, in order. */
+.cw-battle-howto { margin: 0; padding-left: 1.3em; display: grid; gap: 4px; font-size: .88rem; line-height: var(--leading-normal); }
 
 /* Where a front's divisions come from; the ones moved by rail inverted. */
 .cw-rail-row { margin: 4px 0 0; font-size: .78rem; color: var(--text-secondary); font-variant-numeric: tabular-nums; }

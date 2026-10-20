@@ -13,6 +13,8 @@
     const B = window.WarBattle;
     const A = window.WarArt.create(D);
     const U = D.ui;
+    // The plain words for the bar's two numbers and a division's share (ui.words).
+    const W = Object.assign({ strength: '전투력', pressure: '압력', perDivision: `${U.unit}당` }, U.words);
     const KEY = U.save;
     const { el, svg, link, picture, signed, josa, textWidth, NEW_TAB } = window.WarDom;
     const { CELL, star, trainGlyph, trainIcon, starIcon, cavalryGlyph, cavalryIcon, tileMarks, unitPicture } = window.WarGlyphs;
@@ -80,6 +82,54 @@
     }
 
 
+    // What a speaker was at this season (scenario roles: a title, or
+    // [turn id, title] pairs from the season it holds).
+    function roleOf(id) {
+        const r = (D.roles || {})[id];
+        if (!r || typeof r === 'string') return r || null;
+        const at = s ? s.turn : 0;
+        let out = null;
+        for (const [turn, title] of r) if (D.turns.findIndex(t => t.id === turn) <= at) out = title;
+        return out;
+    }
+
+    function speaker(who) {
+        const role = roleOf(who[1]);
+        return el('span', { class: 'cw-speaker' }, person(who), role ? el('small', {}, role) : null);
+    }
+
+    // The scenario's glossary on a story's words: the first time a term
+    // shows in one block it is a button that unfolds a line on it (a
+    // title alone never shows on a phone). Longest terms match first.
+    const glossary = (D.glossary || []).slice().sort((a, b) => b.term.length - a.term.length);
+    const glossRe = glossary.length ? new RegExp(glossary.map(g => g.term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|'), 'g') : null;
+    const glossOpen = new Set();
+    function glossed(text, seen) {
+        if (!glossRe || typeof text !== 'string') return [text];
+        const out = [];
+        let last = 0;
+        for (const m of text.matchAll(glossRe)) {
+            const g = glossary.find(x => x.term === m[0]);
+            if (seen.has(g.term)) continue;
+            seen.add(g.term);
+            out.push(text.slice(last, m.index));
+            const open = glossOpen.has(g.term);
+            const note = el('span', { class: 'cw-gloss', hidden: !open }, g.gloss, g.href ? ' ' : null, g.href ? el('a', Object.assign({ href: g.href }, NEW_TAB), '더 읽기 ↗') : null);
+            out.push(el('button', {
+                type: 'button', class: 'cw-term', 'aria-expanded': String(open),
+                onclick: e => {
+                    const on = note.hidden;
+                    note.hidden = !on;
+                    e.currentTarget.setAttribute('aria-expanded', String(on));
+                    if (on) glossOpen.add(g.term); else glossOpen.delete(g.term);
+                },
+            }, m[0]), note);
+            last = m.index + m[0].length;
+        }
+        out.push(text.slice(last));
+        return out;
+    }
+
     function announce(text) {
         $('cwAnnouncement').textContent = '';
         window.setTimeout(() => { $('cwAnnouncement').textContent = text; }, 30);
@@ -122,7 +172,7 @@
     const sideOf = (b, u) => (B.isPlayer(b, u) ? 'red' : 'white');
     // A front against history: ▼ behind, ▲ ahead, nothing when even. Red
     // stays the Red Army's colour alone.
-    const trendMark = d => d ? el('span', { class: 'cw-trend', title: `역사보다 도시 ${Math.abs(d)}개 ${d < 0 ? '뒤처짐' : '앞섬'}` }, d < 0 ? '▼' : '▲') : null;
+    const trendMark = d => d ? el('span', { class: 'cw-trend', title: `역사보다 도시 ${Math.abs(d)}개 ${d < 0 ? '뒤처짐' : '앞섬'}` }, (d < 0 ? '▼' : '▲') + Math.abs(d)) : null;
 
 
     // ── Setup ──
@@ -223,6 +273,64 @@
         $('cwReview').hidden = planning || unveiling;
         renderUnveil();
         if (planning) { renderCards(); renderIncident(); renderChoice(); renderCommand(); } else renderReview();
+        renderCoach(planning);
+    }
+
+    // ── The first game's guide ──
+    // A newcomer's first season is walked through one step at a time, each
+    // a note over the part of the screen it is about, moving on as the
+    // player does what it says (the to-do chips' own tests) or presses
+    // 「알겠다」. It shows until the first season is sent, starts only for a
+    // browser with no save of this war, and 「처음 안내」 on the map brings
+    // it back. Kept in the browser, not the save: replays never see it.
+    const COACH_KEY = KEY + '-coach';
+    const coach = { on: false, ack: new Set() };
+    try { coach.on = !practice && !localStorage.getItem(COACH_KEY) && !localStorage.getItem(KEY); } catch (_) { coach.on = false; }
+    function coachDone() {
+        coach.on = false;
+        try { localStorage.setItem(COACH_KEY, 'done'); } catch (_) { /* shown again next time */ }
+    }
+    const coachToggle = el('button', { type: 'button', class: 'cw-history-toggle', hidden: true, onclick: () => {
+        coach.on = true;
+        coach.ack.clear();
+        render();
+        const box = $('cwCoach');
+        if (box) box.scrollIntoView({ block: 'center', behavior: stillMotion() ? 'auto' : 'smooth' });
+    } }, '처음 안내');
+    $('cwHistoryToggle').before(coachToggle);
+
+    function coachSteps() {
+        const battle = G.battleOf(s);
+        const settle = (battle ? battle.settle : '이 시기를 보낸다').replace(/\s*→$/, '');
+        const decided = G.incidentsOf(s).every(inc => G.responseOf(s, inc)) && Boolean(s.plan.choice);
+        const front = $('cwFronts').querySelector('article.cw-front');
+        return [
+            { id: 'stats', ack: true, at: $('cwBrief'), text: `위 수치가 공화국의 형편입니다. 농민·노동자 지지와 당 결속이 무너지면 나라가 버티지 못하고, ${U.unit}·지휘력·${U.food}은 이번 시기에 쓸 몫입니다. 아래 상황부터 읽으세요.` },
+            { id: 'decide', done: decided, at: G.incidentsOf(s).length && !G.incidentsOf(s).every(inc => G.responseOf(s, inc)) ? $('cwIncident') : $('cwChoice'), text: '지도부가 실제로 부딪친 문제입니다. 누가 무엇을 주장했는지 읽고 하나를 고르세요. 버튼 아래 줄이 그 길의 득실이고, 시기가 끝나면 역사의 선택과 견줍니다. 밑줄 친 말을 누르면 풀이가 나옵니다.' },
+            { id: 'fronts', done: G.allocated(s) > 0, at: front, inside: true, text: `−·+로 ${josa(U.unit, '을', '를')} 보냅니다. 막대가 ${W.strength}, 그 아래 칸이 ${W.pressure}입니다. ${josa(W.strength, '이', '가')} ${W.pressure}에 닿으면 역사대로, 넘을수록 도시를 더 지키고, 모자라면 잃습니다. 위의 전선 버튼으로 다른 전선을 엽니다.` },
+            { id: 'cards', ack: true, done: s.plan.cards.length > 0, at: $('cwCards'), text: '지휘력으로 조언자의 카드를 씁니다. 남은 지휘력은 다음 시기로 넘어가지 않습니다.' },
+            { id: 'send', at: $('cwCommand'), text: battle ? `준비가 끝나면 「${settle}」를 누르세요. 이번 시기에는 ${josa(battle.title, '을', '를')} 직접 지휘합니다.` : `준비가 끝나면 「${settle}」를 누르세요. 지도에서 결과를 보고 역사와 견줍니다.` },
+        ];
+    }
+
+    function renderCoach(planning) {
+        const old = $('cwCoach');
+        if (old) old.remove();
+        coachToggle.hidden = !planning || coach.on;
+        if (!coach.on) return;
+        if (!planning) return coachDone();
+        const steps = coachSteps();
+        const i = steps.findIndex(x => !(x.done || x.ack && coach.ack.has(x.id)));
+        const step = steps[i];
+        if (!step || !step.at) return;
+        const box = el('aside', { id: 'cwCoach', class: 'cw-coach', 'aria-label': '처음 안내' },
+            el('p', { class: 'cw-coach-step' }, `처음 안내 ${i + 1}/${steps.length}`),
+            el('p', {}, step.text),
+            el('div', { class: 'cw-coach-actions' },
+                step.ack && !step.done ? el('button', { type: 'button', class: 'cw-primary', onclick: () => { coach.ack.add(step.id); render(); } }, '알겠다') : null,
+                el('button', { type: 'button', onclick: () => { coachDone(); render(); } }, '안내 끄기')));
+        if (step.inside) step.at.querySelector('header').after(box);
+        else step.at.before(box);
     }
 
     // The season's result on the map alone: the attackers trampled or
@@ -316,7 +424,7 @@
             [`남은 ${U.unit}`, `${G.free(s)}/${plan.divisions}`, false],
             ['지휘력', String(plan.command), false],
             [U.leader, String(plan.commissars - G.commissarsUsed(s)), false],
-            [`${U.food} 여유`, signed(supply.have - supply.need), supply.ratio < 1],
+            [U.food, supply.have >= supply.need ? `${supply.have - supply.need} 남음` : `${supply.need - supply.have} 모자람`, supply.ratio < 1],
         ].map(([label, value, warn]) => el('div', { class: warn ? 'is-warn' : '' }, el('dt', {}, label), el('dd', {}, value))) : []));
         $('cwArmy').hidden = s.phase !== 'plan';
         if (s.phase === 'plan') renderArmy();
@@ -357,7 +465,8 @@
         const voices = s.phase === 'plan' ? operationsNow().concat(t.voices || []) : [];
         const open = $('cwBrief').querySelector('.cw-voice-log');
         if (brief.turn !== s.turn) brief = { turn: s.turn, read: false, open: null };
-        const story = t.brief.map(p => el('p', {}, p));
+        const seen = new Set();
+        const story = t.brief.map(p => el('p', {}, ...glossed(p, seen)));
         let body = story;
         if (NARROW.matches && s.phase === 'plan') {
             const fold = el('details', { class: 'cw-brief-fold', open: brief.open === null ? !brief.read : brief.open }, el('summary', {}, '이 시기의 상황'), ...story);
@@ -369,7 +478,7 @@
         // replaceChildren writes a null as the text "null".
         $('cwBrief').replaceChildren(...body, ...(voices.length ? [el('details', { class: 'cw-voice-log', open: open && open.open },
             el('summary', {}, '이 시기의 목소리'),
-            el('ul', {}, ...voices.map(v => el('li', {}, el('strong', {}, speakerName(v)), ' 「', v.text, '」 ', sourceOf(v)))))] : []));
+            el('ul', {}, ...voices.map(v => el('li', {}, el('strong', {}, speakerName(v)), v.who && !v.op && roleOf(v.who[1]) ? el('small', {}, ` ${roleOf(v.who[1])}`) : null, ' 「', v.text, '」 ', sourceOf(v)))))] : []));
         voiceReplay.hidden = !voices.length;
         const moved = $('cwFronts').getBoundingClientRect().top - anchor;
         if (moved && above) window.scrollBy({ top: moved, behavior: 'instant' });
@@ -579,7 +688,7 @@
         const width = NARROW.matches ? Math.min(360, mapEl.clientWidth - 16) : Math.min(310, mapEl.clientWidth - 24);
         return bubble({
             v, fresh, width, name: speakerName(v),
-            sub: v.op ? v.who[0] : v.who && f ? foeAs(v.by, v.at).side : null,
+            sub: v.op ? v.who[0] : v.who ? [f ? foeAs(v.by, v.at).side : null, roleOf(v.who[1])].filter(Boolean).join(' · ') || null : null,
             face: v.who ? A.portrait(v.who[1]) : A.shield(v.by, f), side: f ? 'k-' + f.kind : v.op ? 'is-red is-op' : 'is-red',
             ax: spot.x * scale, ay: spot.y * scale, view: mapEl,
             below: Boolean(spot.box) || (below ?? spot.y * scale < (NARROW.matches ? mapEl.scrollTop : 0) + 150),
@@ -1195,7 +1304,7 @@
             const mx = x + TAB / 2 - across / 2 + (i % PER_ROW) * MARK + 0.75, my = y + 10 + Math.floor(i / PER_ROW) * MARK;
             body.append(svg('rect', { x: mx, y: my, width: MARK - 1.5, height: MARK - 1.5, class: 'cw-foe-mark k-' + kind, style: `--m:${i}` }));
         }
-        if (forecast) g.setAttribute('aria-label', g.getAttribute('aria-label').replace('. 카드로', `, 압력 ${marks}, 전투력 ${forecast.strength}. 카드로`));
+        if (forecast) g.setAttribute('aria-label', g.getAttribute('aria-label').replace('. 카드로', `, ${W.pressure} ${marks}, ${W.strength} ${forecast.strength}. 카드로`));
         // The enemy broke here: what he left behind, tagged under his marker.
         const spoil = result && !forecast && s.records.length && (s.records[s.records.length - 1].spoils || []).some(x => x.front === id);
         if (spoil) {
@@ -1373,9 +1482,9 @@
         const railCards = Object.values(D.cards).filter(c => c.onRail);
         $('cwMapLegend').replaceChildren(...(historyMap ? D.map.historyLegend.map(key) : [
             ...D.map.legend.map(key),
-            key(['cw-key-badge', '공격해 오는 세력 · 아래 칸 하나가 압력 1']),
+            key(['cw-key-badge', `공격해 오는 세력 · 칸 하나 = ${W.pressure} 1`]),
             key(['cw-key-ring', '점선 고리: 이번 시기에 잃거나 되찾을 도시(예상)']),
-            el('span', {}, el('b', { class: 'cw-key-num' }, '3.5'), '전투력 · ', el('i', { class: 'cw-key-pip' }), '전투력 1 · ', starIcon(), ` ${U.leader} ${D.leaders.strength} · `, el('b', { class: 'cw-key-card' }, `+${railCards[0] ? railCards[0].bonus : 3}`), '카드'),
+            el('span', {}, el('b', { class: 'cw-key-num' }, '3.5'), `${W.strength} · `, el('i', { class: 'cw-key-pip' }), `${W.strength} 1 · `, starIcon(), ` ${U.leader} ${D.leaders.strength} · `, el('b', { class: 'cw-key-card' }, `+${railCards[0] ? railCards[0].bonus : 3}`), '카드'),
         ]));
     }
 
@@ -1437,7 +1546,7 @@
             bindHints(card, hint);
             items.push(card);
         }
-        if (fc.supply.ratio < 1) items.push(el('p', { class: 'cw-warn' }, `${josa(U.food, '이', '가')} 모자랍니다: 필요 ${fc.supply.need}, 가진 것 ${fc.supply.have}. 모든 전선의 전투력이 ${Math.round((1 - (FED + (1 - FED) * fc.supply.ratio)) * 100)}% 줄어듭니다.`));
+        if (fc.supply.ratio < 1) items.push(el('p', { class: 'cw-warn' }, `${josa(U.food, '이', '가')} 모자랍니다: 필요 ${fc.supply.need}, 가진 것 ${fc.supply.have}. 모든 전선의 ${josa(W.strength, '이', '가')} ${Math.round((1 - (FED + (1 - FED) * fc.supply.ratio)) * 100)}% 줄어듭니다.`));
         box.replaceChildren(...items);
     }
 
@@ -1451,20 +1560,20 @@
         const out = [];
         if (step.more && step.more <= G.free(s)) out.push(el('button', {
             type: 'button', class: 'cw-step is-more', 'data-key': `step-${id}`,
-            'aria-label': `다음 결과까지 ${U.unit} ${step.more}개 더 보내기`,
+            'aria-label': `${U.unit} ${step.more}개 더 보내 다음 결과로`,
             onclick: () => { act('alloc', id, n + step.more); render(); },
-        }, `+${step.more} 다음 결과`));
+        }, `${U.unit} +${step.more} → 더 나은 결과`));
         if (step.spare) out.push(el('button', {
             type: 'button', class: 'cw-step is-spare', 'data-key': `spare-${id}`,
             'aria-label': `결과는 그대로, ${U.unit} ${step.spare}개 빼기`,
             onclick: () => { act('alloc', id, n - step.spare); render(); },
-        }, `−${step.spare} 그대로`));
+        }, `${U.unit} −${step.spare} → 결과 그대로`));
         return out;
     }
 
     function shortNote(step) {
         return step.more && step.more > G.free(s)
-            ? el('span', { class: 'cw-step-short', 'aria-label': `다음 결과까지 ${U.unit} ${step.more}개 더 필요` }, `다음 결과 +${step.more} 필요`) : null;
+            ? el('span', { class: 'cw-step-short', 'aria-label': `다음 결과까지 ${U.unit} ${step.more}개 더 필요` }, `더 나은 결과까지 ${U.unit} ${step.more}개 모자람`) : null;
     }
 
     // The enemy on a front: who comes, what they want, their traits and
@@ -1477,10 +1586,10 @@
         const by = (f.traits || []).filter(tr => tr.rule && tr.counted && tr.on).reduce((a, tr) => a + tr.by, 0);
         const names = (threat.foes || []).map(fid => foeAs(fid, id).short || foeAs(fid, id).name).join('·');
         const fold = el('details', { class: 'cw-foe-fold', open },
-            el('summary', {}, el('strong', {}, '적 정보'), names ? ` · ${names}` : null, by ? el('b', { class: by > 0 ? 'is-bites' : 'is-works' }, `특성 압력 ${signed(by)}`) : null),
+            el('summary', {}, el('strong', {}, '적 정보'), names ? ` · ${names}` : null, by ? el('b', { class: by > 0 ? 'is-bites' : 'is-works' }, `특성 ${W.pressure} ${signed(by)}`) : null),
             foeList(threat.foes, f.traits, id),
-            el('p', { class: 'cw-threat' }, threat.text, ' ', person(threat.who)),
-            f.pressureParts.length ? el('p', { class: 'cw-parts' }, `압력: ${f.pressure} = (기본 ${threat.pressure}) + ${f.pressureParts.map(x => `(${x})`).join(' + ')}`) : null,
+            el('p', { class: 'cw-threat' }, ...glossed(threat.text, new Set()), ' ', person(threat.who)),
+            f.pressureParts.length ? el('p', { class: 'cw-parts' }, `${W.pressure} ${f.pressure} = 기본 ${threat.pressure} + ${f.pressureParts.join(' + ')}`) : null,
             strengthSum(f));
         fold.addEventListener('toggle', () => { foeOpen = fold.open; });
         return fold;
@@ -1490,9 +1599,9 @@
     // share, then each bonus (or loss) in the order the forecast adds them.
     function strengthSum(f) {
         const terms = [];
-        if (f.divisions) terms.push(`${f.divisions} × (${U.unit}당 ${+f.perDivision.toFixed(2)})`);
-        for (const b of f.bonuses || []) terms.push(`(${b.label} ${signed(b.v)})`);
-        return terms.length ? el('p', { class: 'cw-parts' }, `전투력: ${f.strength} = ${terms.join(' + ')}`) : null;
+        if (f.divisions) terms.push(`${U.unit} ${f.divisions}개 × ${W.perDivision} ${+f.perDivision.toFixed(2)}`);
+        for (const b of f.bonuses || []) terms.push(`${b.label} ${signed(b.v)}`);
+        return terms.length ? el('p', { class: 'cw-parts' }, `${W.strength} ${f.strength} = ${terms.join(' + ')}`) : null;
     }
 
     // Divisions moved by rail from another front bring half their strength:
@@ -1535,12 +1644,12 @@
         // A battle before the settlement moves this front's strength: the
         // bar above assumes it goes as history did (its own words, stakes,
         // where history lost it or it opens a front's last cities).
-        if (!m.def.final) notes.push(m.def.stakes || `예상은 역사처럼 이길 때 · ${m.def.reward.quick}턴 안에 이기면 전투력 +${m.def.reward.quickBy}, 지면 ${signed(m.def.reward.lostBy)}`);
+        if (!m.def.final) notes.push(m.def.stakes || `예상은 역사처럼 이길 때 · ${m.def.reward.quick}턴 안에 이기면 ${W.strength} +${m.def.reward.quickBy}, 지면 ${signed(m.def.reward.lostBy)}`);
         return el('div', { class: 'cw-muster' },
             el('p', {}, el('strong', {}, `${m.def.title} 편성`), notes.length ? ` · ${notes.join(' · ')}` : null),
             el('ul', {}, ...m.units.map(u => el('li', { class: u.joins ? 'is-in' : 'is-out' },
                 el('span', {}, u.name),
-                u.joins ? null : el('small', {}, u.card ? `${josa(D.cards[u.card].short || D.cards[u.card].title, '을', '를')} 보내면` : `전투력 ${u.at}부터`)))));
+                u.joins ? null : el('small', {}, u.card ? `${josa(D.cards[u.card].short || D.cards[u.card].title, '을', '를')} 보내면` : `${W.strength} ${u.at}부터`)))));
     }
 
     // The commissar on this front. With a single commissar already sent
@@ -1594,7 +1703,7 @@
                 type: 'button', class: 'cw-toggle' + (away ? ' is-elsewhere' : ''), 'data-key': `${cid}-${id}`, 'aria-pressed': String(Boolean(here)),
                 'aria-disabled': blocked ? 'true' : null,
                 'data-hint': away ? `${away}에서 이리로` : blocked && s.plan.command < card.cost ? '지휘력이 모자랍니다' : null,
-                'aria-label': `${name}, 전투력 +${card.bonus}` + (away ? `, ${away}에서 이리로` : ''),
+                'aria-label': `${name}, ${W.strength} +${card.bonus}` + (away ? `, ${away}에서 이리로` : ''),
                 onclick: () => {
                     if (blocked) { if (s.plan.command < card.cost) announce('지휘력이 모자랍니다'); return; }
                     if (played) act('unplay', cid);
@@ -1635,8 +1744,8 @@
     function traitRule(tr) {
         const state = !tr.counted ? null : tr.on ? (tr.by > 0 ? 'is-bites' : 'is-works') : (tr.by > 0 ? 'is-blunted' : null);
         const mark = state === 'is-blunted'
-            ? el('b', { 'aria-label': `압력 ${signed(tr.by)} 막음` }, el('s', {}, signed(tr.by)))
-            : state ? el('b', {}, `압력 ${signed(tr.by)}`) : null;
+            ? el('b', { 'aria-label': `${W.pressure} ${signed(tr.by)} 막음` }, el('s', {}, signed(tr.by)))
+            : state ? el('b', {}, `${W.pressure} ${signed(tr.by)}`) : null;
         return el('p', { class: 'cw-trait ' + (state || 'is-idle') }, tr.rule, mark);
     }
 
@@ -1679,9 +1788,9 @@
             // The enemy's pressure, and what this result leaves on the front's
             // next fight: the momentum of an enemy that broke through, or the
             // pursuit of one that broke.
-            el('span', { class: 'cw-foe-count', style: `margin-left:calc(${at(f.pressure + pursued)} + 5px)` }, `압력 ${f.pressure}`,
-                current.overflow ? el('span', { class: 'cw-next is-momentum' }, `(적의 기세: 다음 시기 압력 +${current.overflow * G.MOMENTUM})`) : null,
-                current.pursuit ? el('span', { class: 'cw-next is-pursuit' }, `(추격: 다음 시기 압력 −${current.pursuit * G.PURSUIT})`) : null));
+            el('span', { class: 'cw-foe-count', style: `margin-left:calc(${at(f.pressure + pursued)} + 5px)` }, `${W.pressure} ${f.pressure}`,
+                current.overflow ? el('span', { class: 'cw-next is-momentum' }, `(막지 못한 적의 기세: 다음 시기 ${W.pressure} +${current.overflow * G.MOMENTUM})`) : null,
+                current.pursuit ? el('span', { class: 'cw-next is-pursuit' }, `(무너진 적을 추격: 다음 시기 ${W.pressure} −${current.pursuit * G.PURSUIT})`) : null));
         const bar = el('div', { class: 'cw-meter-bar', 'aria-hidden': 'true' },
             ...bands.map(b => el('span', { class: `cw-meter-band ${b.tone}`, style: span(b.from, b.to === null ? top : b.to) })),
             ...strengthSegments(f, span),
@@ -1689,12 +1798,12 @@
         // Each band's start, labelled by what it gives against history where
         // that changes (the momentum and pursuit bands between keep their
         // tick without a word): across both bars, the words under them.
-        const ticks = bands.slice(1).map((b, i) => el('i', { class: 'cw-meter-tick', style: `left:${at(b.from)}`, title: `전투력 ${b.from}부터 ${versus(b.after)}` },
+        const ticks = bands.slice(1).map((b, i) => el('i', { class: 'cw-meter-tick', style: `left:${at(b.from)}`, title: `${W.strength} ${b.from}부터 ${versus(b.after)}` },
             b.after === bands[i].after ? null : el('small', {}, b.after === hist ? '역사' : (b.after > hist ? '▲' : '▼') + Math.abs(b.after - hist))));
         return el('div', { class: 'cw-meter' },
             el('div', { class: 'cw-meter-top' },
-                el('span', { class: 'cw-meter-strength' }, el('strong', {}, `전투력 ${f.strength}`), note || null),
-                el('span', { class: 'cw-sr' }, `, 압력 ${f.pressure}. ${U.unit} ${f.divisions || 0}개, ${U.unit}당 ${f.perDivision || 0}${(f.bonuses || []).map(b => `, ${b.label} ${signed(b.v)}`).join('')}`)),
+                el('span', { class: 'cw-meter-strength' }, el('strong', {}, `${W.strength} ${f.strength}`), note || null),
+                el('span', { class: 'cw-sr' }, `, ${W.pressure} ${f.pressure}. ${U.unit} ${f.divisions || 0}개, ${W.perDivision} ${f.perDivision || 0}${(f.bonuses || []).map(b => `, ${b.label} ${signed(b.v)}`).join('')}`)),
             // The strength right under its number, the enemy's pressure under
             // it as thick, on one scale: the two to compare.
             el('div', { class: 'cw-meter-scale' }, bar, foeRow, ...ticks),
@@ -1775,14 +1884,14 @@
 
     function effectText(card, id) {
         const out = [];
-        if (card.bonus) out.push(`고른 전선 전투력 +${card.bonus}`);
+        if (card.bonus) out.push(`고른 전선 ${W.strength} +${card.bonus}`);
         if (card.divisions) out.push(`${U.unit} ${signed(card.divisions)}`);
         if (card.food) out.push(`${U.food} ${signed(card.food)}`);
         for (const [k, label] of Object.entries(U.cardStats)) {
             if (card[k]) out.push(`${label} ${signed(G.cardStat(s, card, id, k))}` + (card.escalates ? ' (쓸 때마다 커짐)' : ''));
         }
         if (card.needs === 'unrest') out.push(s.unrest ? `${U.unrest}에 묶인 ${U.unit} ${G.cardDivisions(s, card)}개 복귀` : `${U.unrest}에 묶인 ${U.unit}의 절반 복귀`);
-        if (card.calm) out.push(`${card.calm.fronts.map(id => D.fronts[id].short).join('·')} 압력 −${card.calm.by}(이번과 다음 시기)`);
+        if (card.calm) out.push(`${card.calm.fronts.map(id => D.fronts[id].short).join('·')} ${W.pressure} −${card.calm.by}(이번과 다음 시기)`);
         if (card.effect) out.push(card.effect);
         return out.join(' · ');
     }
@@ -1819,9 +1928,10 @@
 
     // How a dilemma came about, then the people who argue over it.
     function setting(c) {
-        if (!c.talk) return [el('p', {}, c.text, ' ', person(c.who))];
-        return [el('p', {}, c.text), el('ul', { class: 'cw-talk' }, ...c.talk.map(v => el('li', {},
-            v.who ? person(v.who) : el('strong', { class: 'cw-talk-as' }, v.as), el('q', {}, v.text))))];
+        const text = glossed(c.text, new Set());
+        if (!c.talk) return [el('p', {}, ...text, ' ', person(c.who))];
+        return [el('p', {}, ...text), el('ul', { class: 'cw-talk' }, ...c.talk.map(v => el('li', {},
+            v.who ? speaker(v.who) : el('strong', { class: 'cw-talk-as' }, v.as), el('q', {}, v.text))))];
     }
 
     function renderChoice() {
@@ -1919,7 +2029,7 @@
         const result = foughtText(r);
         // A battle with a reward moves its front's strength; one that opens
         // a front's last cities says what it decided.
-        const effect = def.reward ? [` · ${D.fronts[def.front].name} 전투력 `, v ? signed(v.v) : '그대로'] : [` · ${def.outcome[r.result === 'won' ? 'won' : 'lost']}`];
+        const effect = def.reward ? [` · ${D.fronts[def.front].name} ${W.strength} `, v ? signed(v.v) : '그대로'] : [` · ${def.outcome[r.result === 'won' ? 'won' : 'lost']}`];
         return el('div', { class: 'cw-history' },
             el('p', { class: 'games-kicker' }, def.title),
             el('p', {}, el('strong', {}, result), ...effect, battleFeats(def, r)),
@@ -2402,7 +2512,12 @@
             !Object.keys(def.sectors).length ? null : b.reserve ? `${foeName()} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶여 있다` : `${foeName()} 예비대는 아직 움직이지 않았다`,
             def.protect ? `${def.protect.name}: ${def.outlast ? `${def.turnLimit}턴이 끝날 때까지 지키면 이긴다 · ` : ''}${josa(foeName(), '이', '가')} 들어서면 진다${B.unitAt(b, ...def.protect.at) ? '' : ' · 지금 비어 있다'}` : null,
         ];
-        const hint = foe ? null : el('p', {}, `${josa(U.playerUnits, '을', '를')} 누르면 갈 수 있는 칸(밝은 칸)과 칠 수 있는 적(예상 피해 표시)이 나옵니다. 포병은 진지 위의 적을 칠 때마다 그 진지의 방어를 1 깎습니다. ${foeName()} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 나옵니다. 우클릭·Esc·「취소」는 이번 턴의 명령을 하나씩 되돌립니다.`);
+        // How to play a turn, in the order it is done.
+        const hint = foe ? null : el('ol', { class: 'cw-battle-howto' },
+            el('li', {}, `${josa(U.playerUnits, '을', '를')} 누르면 갈 수 있는 밝은 칸과 칠 수 있는 적이 보입니다.`),
+            el('li', {}, '칸을 눌러 옮기고, 적을 눌러 칩니다. 부대마다 한 턴에 한 번씩입니다.'),
+            el('li', {}, '모두 움직였으면 「턴 종료」. 「취소」(Esc)는 이번 턴의 명령을 하나씩 되돌립니다.'),
+            el('li', {}, `${foeName()} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 보입니다. 포병은 진지 위의 적을 칠 때마다 방어를 1 깎습니다.`));
         const goalAt = def.goals.length;
         box.replaceChildren(
             el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
