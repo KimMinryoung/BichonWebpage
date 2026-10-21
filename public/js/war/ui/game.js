@@ -753,6 +753,13 @@
         return { name: v.who ? v.who[0] : u.name, sub: v.via || (v.who ? u.name : null) };
     }
 
+    // The board scrolled sideways: the bubble is placed again inside the view.
+    let voiceFrame = 0;
+    function keepVoiceInView() {
+        if (voiceFrame) return;
+        voiceFrame = window.requestAnimationFrame(() => { voiceFrame = 0; if (s && s.battle) renderBattleVoice(); });
+    }
+
     function renderBattleVoice() {
         const b = s.battle;
         window.clearTimeout(bVoice.timer);
@@ -2508,7 +2515,7 @@
                 : `목표 ${g.name}(붉은 깃발): ${josa(foeName(), '이', '가')} 없다. ${josa(U.playerUnits, '을', '를')} 들여보내면 이긴다`;
         });
         const status = [
-            `${b.turn} / ${def.turnLimit} 턴`,
+            `${Math.min(b.turn, def.turnLimit)} / ${def.turnLimit} 턴`,
             ...goalLines,
             def.windTurns ? (B.fordOpen(b) ? `${def.ford} 여울 열림 (${def.windTurns - b.turn + 1}턴 남음)` : `바람이 바뀌어 ${def.ford}에 물이 찼다`) : null,
             ...Object.entries(def.lines).map(([id, l]) => b.turned[id] ? `${l.name} 우회됨: 뒤가 끊긴 수비대의 진지 방어가 +1로 줄었다` : `${l.name}: 점선 구역에 부대를 세우면 뒤가 끊겨 수비대의 진지 방어가 약해진다`),
@@ -2516,7 +2523,7 @@
             def.protect ? `${def.protect.name}: ${def.outlast ? `${def.turnLimit}턴이 끝날 때까지 지키면 이긴다 · ` : ''}${josa(foeName(), '이', '가')} 들어서면 진다${B.unitAt(b, ...def.protect.at) ? '' : ' · 지금 비어 있다'}` : null,
         ];
         // How to play a turn, in the order it is done.
-        const hint = foe ? null : el('ol', { class: 'cw-battle-howto' },
+        const hint = foe || battleEnded ? null : el('ol', { class: 'cw-battle-howto' },
             el('li', {}, `${josa(U.playerUnits, '을', '를')} 누르면 갈 수 있는 밝은 칸과 칠 수 있는 적이 보입니다.`),
             el('li', {}, '칸을 눌러 옮기고, 적을 눌러 칩니다. 부대마다 한 턴에 한 번씩입니다.'),
             el('li', {}, '모두 움직였으면 「턴 종료」. 「취소」(Esc)는 이번 턴의 명령을 하나씩 되돌립니다.'),
@@ -2526,12 +2533,12 @@
             el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             el('details', { class: 'cw-battle-brief' }, el('summary', {}, '작전 지시', el('span', {}, ` · ${def.summary}`)), ...def.brief.map(p => el('p', {}, p))),
             el('div', { class: 'cw-battle-layout' },
-                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll' }, board, moment, verdict), el('p', { class: 'cw-terrain-key' },
+                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', onscroll: keepVoiceInView }, board, moment, verdict), el('p', { class: 'cw-terrain-key' },
                     ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('ul', { class: 'cw-battle-status' }, ...status.filter(Boolean).map((t, i) => el('li', { class: i > 0 && i <= goalAt ? 'is-goal' : null }, t))),
-                    el('div', { id: 'cwUnitInfo', class: 'cw-unit-info' }, unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint),
+                    unit || foe || hint ? el('div', { id: 'cwUnitInfo', class: 'cw-unit-info' }, unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint) : null,
                     battleEnded ? battleClose(b) : el('div', { class: 'cw-battle-actions' },
                         postOpen(b) ? el('p', { class: 'cw-post-alarm' }, `${josa(def.protect.name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 다음 턴에 들어오면 이 전투에서 진다.`) : null,
                         G.canTakeBack(s) ? el('button', { type: 'button', 'data-key': 'undo', title: 'Esc · 우클릭', onclick: takeBackOrder }, '취소') : null,
@@ -2816,8 +2823,18 @@
         if (left > 0) window.setTimeout(() => { if (battleEnded) renderBattle(); }, left + 30);
         const final = s.phase === 'done';
         return el('div', { class: 'cw-battle-actions cw-battle-close' },
-            el('p', {}, el('strong', {}, foughtText({ result: b.result, turns: b.turn, held: b.held }))),
+            el('p', {}, el('strong', {}, foughtText({ result: b.result, turns: b.turn, held: b.held })), b.result === 'won' ? null : ` · ${lostWhy(b)}`),
             left > 0 ? null : el('button', { type: 'button', class: 'cw-primary', 'data-key': 'leave', onclick: leaveBattle }, final ? '결과 보기 →' : '전선의 움직임 →'));
+    }
+
+    // Why a battle was lost: its post taken, its units gone, or its time run out.
+    function lostWhy(b) {
+        const def = b.def;
+        const post = def.protect && B.unitAt(b, ...def.protect.at);
+        if (post && B.isEnemy(b, post)) return `${josa(foeName(), '이', '가')} ${def.protect.name}에 들어섰다`;
+        if (!b.units.some(u => u.hp > 0 && B.isPlayer(b, u))) return `${josa(U.playerUnits, '이', '가')} 모두 무너졌다`;
+        const names = def.goals.map(g => g.name);
+        return `${def.turnLimit}턴 안에 ${names.slice(0, -1).map(n => josa(n, '이나', '나') + ' ').join('')}${names[names.length - 1]}에 서지 못했다`;
     }
 
     function leaveBattle() {
