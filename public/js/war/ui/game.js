@@ -2541,6 +2541,11 @@
             el('li', {}, '모두 움직였으면 「턴 종료」. 「취소」(Esc)는 이번 턴의 명령을 하나씩 되돌립니다.'),
             el('li', {}, `${foeName()} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 보입니다. 포병은 진지 위의 적을 칠 때마다 방어를 1 깎습니다.`),
             el('li', {}, '부대를 고르지 않은 채 빈 칸을 누르면 그 땅의 방어·이동이 보입니다.'));
+        // The board is built anew on each press; a board scrolled sideways
+        // stays where the player left it while the battle lasts.
+        const was = box.querySelector('.cw-grid-scroll');
+        const scrolled = was && gridScroll.b === b ? [was.scrollLeft, was.scrollTop] : null;
+        gridScroll.b = b;
         box.replaceChildren(
             el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             el('details', { class: 'cw-battle-brief' }, el('summary', {}, '작전 지시', el('span', {}, ` · ${def.summary}`)), ...def.brief.map(p => el('p', {}, p))),
@@ -2562,10 +2567,12 @@
                     b.events.length ? el('div', { class: 'cw-battle-events' },
                         el('p', { class: 'games-kicker' }, whiteMoved ? `지난 ${foeName()}의 차례` : '방금 일어난 일'),
                         el('ol', { class: 'cw-battle-log' }, ...eventLines(b).map(t => el('li', {}, t)))) : null)));
+        if (scrolled) box.querySelector('.cw-grid-scroll').scrollTo(...scrolled);
         renderBattleVoice();
         placeMoment();
         placeVerdict();
     }
+    const gridScroll = { b: null };
 
     // The terrain key, folded but for the war's first battle; kept as the
     // player left it while the battle lasts.
@@ -2584,7 +2591,7 @@
     function pickedStrip(b, u) {
         const foeUnit = B.isEnemy(b, u);
         const targets = !foeUnit && !u.acted && featArmed !== u.id ? B.targets(b, u).length : 0;
-        const state = foeUnit ? [u.role ? roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '') : null, '파란 칸: 다음 턴에 칠 수 있는 곳'].filter(Boolean).join(' · ')
+        const state = foeUnit ? (u.role ? roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '') : null)
             : u.acted ? (B.canMove(b, u) ? '쳤다 · 아직 움직일 수 있다' : '행동을 마쳤다')
             : featArmed === u.id ? '판에서 칠 적을 고른다'
                 : targets ? `칠 수 있는 적 ${targets} · 판에서 누른다` : u.moved ? '이동했다' : '밝은 칸을 눌러 옮긴다';
@@ -2592,7 +2599,7 @@
             el('p', {}, el('strong', {}, u.name),
                 el('span', { class: 'cw-info-bar is-' + sideOf(b, u), style: `--hp:${(100 * u.hp / u.maxHp).toFixed(0)}%`, 'aria-hidden': 'true' }),
                 el('span', {}, `병력 ${u.hp}/${u.maxHp} · 공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} · 이동 ${u.mv}`)),
-            el('p', { class: 'cw-act-state' }, state, foeUnit ? null : featPill(b, u, 'feat-bar')));
+            state || !foeUnit ? el('p', { class: 'cw-act-state' }, state, foeUnit ? null : featPill(b, u, 'feat-bar')) : null);
     }
 
     // A tile's ground: its swatch as in the key, its name, what it does to
