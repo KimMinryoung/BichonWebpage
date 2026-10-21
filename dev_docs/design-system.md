@@ -31,6 +31,7 @@
 ## 컴포넌트와 조작
 
 - 공통 UI는 `public/css/ui.css`와 `views/partials/`에서 재사용한다. 도메인 CSS에는 게임판 등 고유한 표현만 둔다. 공통 규칙을 페이지 끝의 덮어쓰기로 복제하지 않는다.
+- 사건 본문의 문헌 리더도 `commulingo-doc-excerpts`를 재사용한다. 본문에 배치한 리더는 절 안의 h3 제목과 기존 본문 여백을 사용하고, 별도의 좌우 padding이나 전체 폭 구분선을 더하지 않는다. 펼치기 동작은 말미 리더와 같다.
 - CSS 계층은 `palette.css`(원본 토큰) → `site-core.css` 및 해당 페이지의 `site-*.css`(사이트 기본·페이지 규칙) → `ui.css`(공통 컴포넌트) → 화면별 CSS 순서다. 독립 `<head>`를 쓰는 공개 화면도 이 순서를 따른다. `style.css`는 원본이며 `scripts/build-site-css.js`가 공통·페이지별 파일을 생성한다. 공통 파일에는 사이트 틀을 두고 페이지 규칙은 `utils/site-stylesheets.js`가 선택한다. 원본 수정 뒤 생성 스크립트를 실행한다. 공통 형태를 바꾸려면 `ui.css`에서 수정하고, 화면 CSS에는 크기·배치 같은 해당 화면의 차이만 둔다.
 - 재사용 구성 요소: `.ui-card`(평평한 테두리 카드), `.btn`과 `.btn-primary`·`.btn-danger`·`.btn-small`·`.btn-block`(이동 또는 동작), `.ui-tabs`/`.ui-tab`(상호 배타적인 페이지 메뉴), `.ui-crumb`와 `ui-crumb-*`(현재 위치), `.ui-action-bar`와 시작·끝 슬롯(상세 화면 하단 이동), `.ui-link-group`(버튼 묶음). EJS의 `library-tabs`, `commulingo-dict-nav`, `games-crumb`, `commulingo-crumb` partial이 메뉴 구조와 활성 상태를 제공한다.
 - 사이트 전체 장애 공지(로그인 장애 등)는 `site-notice` partial(`.site-notice`)을 쓴다. 메뉴 바로 아래 메뉴와 같은 폭으로 놓고, 빨간 왼쪽 선과 「장애 안내」 라벨로 상태를 표시한다. `nav` partial이 자동으로 넣고, 메뉴를 접어 두는 채팅 화면은 메뉴 밖에 직접 넣는다.

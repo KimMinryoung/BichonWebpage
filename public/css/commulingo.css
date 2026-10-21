@@ -4555,6 +4555,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
    scroll past; unfolded, the text reads on the page's one scroll. The head
    row is itself the link to the full reader, so the box's last row stays the
    unfold toggle, the action readers actually use. */
+.commu-doc-excerpt-inline { margin-block: var(--space-5); }
 .commu-doc-excerpt {
     border: 1px solid var(--border);
     background: var(--bg-surface);

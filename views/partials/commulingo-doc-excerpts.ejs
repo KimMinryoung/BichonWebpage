@@ -3,9 +3,15 @@
     term and event panels; idPrefix keeps the headings apart when both panels
     share one page. A book too long to print lends its contents instead
     (anchor 'toc'): each line opens the reader at that chapter. %>
-        <% (excerpts || []).forEach(function(excerpt, i) { %>
-        <section class="commu-person-detail-section commu-doc-excerpt-section" aria-labelledby="<%= idPrefix %>-<%= i %>">
+        <% var isInline = typeof inline !== 'undefined' && inline;
+           (excerpts || []).forEach(function(excerpt, position) {
+               var i = position + (typeof startIndex === 'number' ? startIndex : 0); %>
+        <section class="<%= isInline ? 'commu-doc-excerpt-inline' : 'commu-person-detail-section' %> commu-doc-excerpt-section" aria-labelledby="<%= idPrefix %>-<%= i %>">
+            <% if (isInline) { %>
+            <h3 id="<%= idPrefix %>-<%= i %>"><%= strings.commuLingoViews.termPanel.primaryText %></h3>
+            <% } else { %>
             <h2 id="<%= idPrefix %>-<%= i %>"><%= strings.commuLingoViews.termPanel.primaryText %></h2>
+            <% } %>
             <div class="commu-doc-excerpt">
                 <a class="commu-doc-excerpt-head" href="/commulingo/docs/<%= excerpt.docId %><%= (excerpt.anchor === '*' || excerpt.anchor === 'toc') ? '' : '#' + excerpt.anchor %>" aria-label="<%= excerpt.title %>: <%= strings.commuLingoViews.termPanel.readInLibrary %>">
                     <span class="commu-doc-excerpt-title"><% if (excerpt.docTitle) { %><span><%= excerpt.docTitle %></span><% } %><strong><%= excerpt.title %></strong></span>

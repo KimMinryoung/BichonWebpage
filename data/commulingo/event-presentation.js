@@ -14,6 +14,7 @@ const { timelineCountries, countryFilter, flagsHtml, splitSectionCountries } = r
 const { localize } = require('./localize');
 const { renderMarkdown } = require('../../utils/markdown');
 const { genealogyLinksFor } = require('./genealogy-links');
+const { placeEventDocExcerpts } = require('./event-doc-excerpts');
 
 // Both scans below walk every glossary term; they are pure functions of the
 // terms snapshot, so cache per snapshot instead of re-scanning per request.
@@ -304,11 +305,14 @@ async function buildEventPanel(eventId, lang) {
     } catch (e) {
         console.error('commulingo event related reports:', e);
     }
+    // Documents refresh independently of the event snapshot. Place readers
+    // outside the event memo so edits to their text/visibility take effect too.
+    const excerpts = docExcerptsFor('events', eventId, lang);
     return {
-        event: pure.event,
+        event: { ...pure.event, docExcerptPlacement: placeEventDocExcerpts(pure.event.bodyHtml, excerpts, lang) },
         relatedTerms: await relatedTermsForEvent(eventId, lang),
         relatedDocs: relatedDocsFor('events', eventId, lang),
-        excerpts: docExcerptsFor('events', eventId, lang),
+        excerpts,
         genealogies: genealogyLinksFor('event', eventId, lang),
         relatedReports,
         prevEvent: pure.prevEvent,
