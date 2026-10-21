@@ -529,7 +529,7 @@
 .cw-battle-brief p { margin: 0 0 8px; max-width: 46rem; }
 .cw-battle-layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr); gap: 18px; align-items: start; }
 .cw-grid-wrap { min-width: 0; }
-.cw-grid-scroll { position: relative; }
+.cw-grid-scroll { position: relative; max-width: 680px; }
 .cw-grid { display: block; width: 100%; max-width: 680px; height: auto; overflow: visible; font-family: inherit; outline: 2px solid color-mix(in srgb, var(--text-primary) 65%, transparent); outline-offset: -1px; }
 .cw-tile { stroke: color-mix(in srgb, var(--border) 35%, transparent); stroke-width: 1; }
 .cw-tile.t-steppe { fill: color-mix(in srgb, #c8b77a 30%, var(--bg-surface)); }
@@ -560,7 +560,7 @@
 .cw-tile.t-heights { fill: color-mix(in srgb, #8a6a3c 55%, var(--bg-surface)); }
 .cw-tile.is-goal { stroke: var(--clr-red); stroke-width: 3; }
 /* Tile drawings (civil-war.js tileMarks). */
-.cw-marks { pointer-events: none; }
+.cw-marks, .cw-track { pointer-events: none; }
 .cw-marks path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 .cw-marks .cw-mark-grass { stroke: color-mix(in srgb, #6d7a2e 70%, var(--text-primary)); stroke-opacity: .55; stroke-width: 1.1; }
 .cw-marks .cw-mark-fir { fill: color-mix(in srgb, #1f4a1a 80%, var(--bg-surface)); stroke: #0f220c; stroke-width: .8; }
@@ -663,6 +663,16 @@
 /* The unit picked: corner brackets in the page's ink; a target in red. */
 .cw-unit-pick { fill: none; stroke: var(--text-primary); stroke-width: 3; stroke-linecap: square; pointer-events: none; }
 .cw-unit.is-target .cw-unit-pick { stroke: var(--clr-red); }
+.cw-tile-pick { fill: none; stroke: var(--cw-gold, #e0b13a); stroke-width: 3; stroke-linecap: square; pointer-events: none; }
+/* A pressed tile's ground, on the board's top right corner. */
+.cw-tile-info { position: absolute; top: 6px; right: 6px; z-index: 3; max-width: 260px; display: grid; gap: 2px; padding: 6px 8px; border: 1px solid var(--border); background: color-mix(in srgb, var(--bg-surface) 94%, transparent); font-size: .78rem; line-height: 1.4; box-shadow: 0 2px 8px rgba(0, 0, 0, .35); }
+.cw-tile-info p, .cw-act-tile p { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; }
+.cw-tile-info .cw-act-state { color: var(--text-secondary); }
+/* It keeps to the corner away from the tile it is about. */
+.cw-tile-info.is-left { right: auto; left: 6px; }
+.cw-tile-info.is-bottom { top: auto; bottom: 6px; }
+.games-shell .cw-tile-close { min-height: 0; margin-left: auto; padding: 0 4px; border: 0; background: none; color: var(--text-secondary); font-size: 1rem; line-height: 1; }
+.cw-swatch.cw-terrain-key { display: inline-flex; margin: 0; }
 .cw-unit:focus, .cw-unit:focus-visible { outline: none; }
 .cw-unit:focus-visible > rect:first-child { stroke: var(--text-primary); stroke-width: 2.5; }
 .cw-badge { pointer-events: none; }
@@ -890,6 +900,7 @@
     .games-shell .cw-act-unit .cw-feat-pill { min-height: 30px; padding: 2px 8px; font-size: .78rem; }
 }
 @media (min-width: 721px) { .cw-act-unit { display: none; } }
+@media (max-width: 720px) { .cw-tile-info { display: none; } }
 @media (prefers-reduced-motion: no-preference) {
     .cw-option, .cw-front { transition: background-color .15s ease, border-color .15s ease; }
 }

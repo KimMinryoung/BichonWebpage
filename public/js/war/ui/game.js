@@ -26,6 +26,7 @@
     let historyMap = false;         // the map shows history's control layer
     let selected = null;            // battle: the selected Red unit id
     let inspected = null;           // battle: the White unit whose reach is shown
+    let tilePicked = null;          // battle: the tile whose ground is shown ({ r, c }), with no unit picked
     let featArmed = null;           // battle: the unit whose aimed feat is switched on (screen state; spent only when it strikes)
     let menaceAll = false;          // battle: every White unit's reach shown at once
     let endArmed = false;           // battle: 「턴 종료」 pressed once with units still to act
@@ -2346,7 +2347,15 @@
             defs.append(m);
         }
         board.append(defs);
-        const deselect = () => { if (selected || inspected) { selected = null; inspected = null; renderBattle(); } };
+        // A tile pressed with a unit picked lets the unit go; with none, it
+        // shows what the ground is (pressed again, it hides).
+        if (selected || inspected || battleEnded) tilePicked = null;
+        const pickTile = (r, c) => {
+            if (selected || inspected) { selected = null; inspected = null; tilePicked = null; return renderBattle(); }
+            if (battleEnded) return;
+            tilePicked = tilePicked && tilePicked.r === r && tilePicked.c === c ? null : { r, c };
+            renderBattle();
+        };
         // A tile's name gives way to a unit standing there.
         const held = (r, c) => Boolean(B.unitAt(b, r, c));
         for (let r = 0; r < rows; r++) {
@@ -2358,7 +2367,7 @@
                 const goal = def.goals.find(g => g.at[0] === r && g.at[1] === c);
                 if (goal) cls.push('is-goal');
                 const tile = svg('rect', { x: c * CELL, y: r * CELL, width: CELL, height: CELL, class: cls.join(' ') });
-                tile.addEventListener('click', deselect);
+                tile.addEventListener('click', () => pickTile(r, c));
                 board.append(tile);
                 const mark = tileMarks(ground.cls, r, c, flooded);
                 if (mark) board.append(mark);
@@ -2374,6 +2383,7 @@
             }
         }
         board.append(trackOf(def));
+        if (tilePicked) board.append(svg('path', { d: corners(tilePicked.c * CELL, tilePicked.r * CELL), class: 'cw-tile-pick' }));
         const open = Object.keys(def.lines).filter(id => !b.turned[id]);
         for (const id of open) board.append(rearOutline(b, id));
         for (const [text, r, c] of def.places.filter(([, r, c]) => !held(r, c))) board.append(svg('text', { x: c * CELL + 4, y: r * CELL + 12, class: 'cw-place' }, text));
@@ -2519,7 +2529,7 @@
                     ? `${g.name}에 서면 승리 · ${josa(holder.name, '이', '가')} 지킴 (${holder.hp}/${holder.maxHp})`
                     : `${g.name}에 서면 승리 · ${josa(foeName(), '이', '가')} 없음`, 'is-goal');
             }),
-            def.protect ? row('지킬 곳', `${def.protect.name}${def.outlast ? ` · ${def.turnLimit}턴 끝까지 지키면 승리` : ''} · ${josa(foeName(), '이', '가')} 들어서면 패배${postAt ? '' : ' · 지금 비었음'}`, postAt ? null : 'is-alarm') : null,
+            def.protect ? row('지킬 곳', `${def.protect.name}${def.outlast ? ` · ${def.turnLimit}턴 끝까지 지키면 승리` : ''} · ${josa(foeName(), '이', '가')} 들어서면 패배${postAt || battleEnded ? '' : ' · 지금 비었음'}`, postAt || battleEnded ? null : 'is-alarm') : null,
             def.windTurns ? row('여울', B.fordOpen(b) ? `${def.ford} 열림 · ${def.windTurns - b.turn + 1}턴 남음` : `${def.ford} 물에 잠김`) : null,
             ...Object.values(def.lines).map((l, i) => row('우회', b.turned[Object.keys(def.lines)[i]] ? `${l.name} 끊음 · 진지 방어가 +1로 줄었다` : `${l.name} · 점선 구역에 서면 수비대의 뒤가 끊긴다`)),
             !Object.keys(def.sectors).length ? null : row('예비대', b.reserve ? `${foeName()} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶임` : `${foeName()} 예비대는 아직 그대로`),
@@ -2529,18 +2539,19 @@
             el('li', {}, `${josa(U.playerUnits, '을', '를')} 누르면 갈 수 있는 밝은 칸과 칠 수 있는 적이 보입니다.`),
             el('li', {}, '칸을 눌러 옮기고, 적을 눌러 칩니다. 부대마다 한 턴에 한 번씩입니다.'),
             el('li', {}, '모두 움직였으면 「턴 종료」. 「취소」(Esc)는 이번 턴의 명령을 하나씩 되돌립니다.'),
-            el('li', {}, `${foeName()} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 보입니다. 포병은 진지 위의 적을 칠 때마다 방어를 1 깎습니다.`));
+            el('li', {}, `${foeName()} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 보입니다. 포병은 진지 위의 적을 칠 때마다 방어를 1 깎습니다.`),
+            el('li', {}, '부대를 고르지 않은 채 빈 칸을 누르면 그 땅의 방어·이동이 보입니다.'));
         box.replaceChildren(
             el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             el('details', { class: 'cw-battle-brief' }, el('summary', {}, '작전 지시', el('span', {}, ` · ${def.summary}`)), ...def.brief.map(p => el('p', {}, p))),
             el('div', { class: 'cw-battle-layout' },
-                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', onscroll: keepVoiceInView }, board, moment, verdict), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
+                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', onscroll: keepVoiceInView }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('dl', { class: 'cw-battle-status' }, ...status.map(x => el('div', { class: x.tone || null }, el('dt', {}, x.label), el('dd', {}, x.text)))),
                     unit || foe || hint ? el('div', { id: 'cwUnitInfo', class: 'cw-unit-info' }, unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint) : null,
                     battleEnded ? battleClose(b) : el('div', { class: 'cw-battle-actions' },
-                        unit ? pickedStrip(b, unit) : null,
+                        unit || foe ? pickedStrip(b, unit || foe) : tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-act-unit cw-act-tile') : null,
                         postOpen(b) ? el('p', { class: 'cw-post-alarm' }, `${josa(def.protect.name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 다음 턴에 들어오면 이 전투에서 진다.`) : null,
                         G.canTakeBack(s) ? el('button', { type: 'button', 'data-key': 'undo', title: 'Esc · 우클릭', onclick: takeBackOrder }, '취소') : null,
                         unit && !unit.acted ? el('button', { type: 'button', 'data-key': 'wait', onclick: () => { if (act('b:wait', unit.id)) afterBattleAct(`${unit.name} 대기`); } }, '이 부대 대기') : null,
@@ -2571,15 +2582,48 @@
     // what it can do now, and its feat (hidden on a wide screen, where the
     // unit's card beside the board says all of it).
     function pickedStrip(b, u) {
-        const targets = !u.acted && featArmed !== u.id ? B.targets(b, u).length : 0;
-        const state = u.acted ? (B.canMove(b, u) ? '쳤다 · 아직 움직일 수 있다' : '행동을 마쳤다')
+        const foeUnit = B.isEnemy(b, u);
+        const targets = !foeUnit && !u.acted && featArmed !== u.id ? B.targets(b, u).length : 0;
+        const state = foeUnit ? [u.role ? roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '') : null, '파란 칸: 다음 턴에 칠 수 있는 곳'].filter(Boolean).join(' · ')
+            : u.acted ? (B.canMove(b, u) ? '쳤다 · 아직 움직일 수 있다' : '행동을 마쳤다')
             : featArmed === u.id ? '판에서 칠 적을 고른다'
                 : targets ? `칠 수 있는 적 ${targets} · 판에서 누른다` : u.moved ? '이동했다' : '밝은 칸을 눌러 옮긴다';
         return el('div', { class: 'cw-act-unit' },
             el('p', {}, el('strong', {}, u.name),
                 el('span', { class: 'cw-info-bar is-' + sideOf(b, u), style: `--hp:${(100 * u.hp / u.maxHp).toFixed(0)}%`, 'aria-hidden': 'true' }),
                 el('span', {}, `병력 ${u.hp}/${u.maxHp} · 공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} · 이동 ${u.mv}`)),
-            el('p', { class: 'cw-act-state' }, state, featPill(b, u, 'feat-bar')));
+            el('p', { class: 'cw-act-state' }, state, foeUnit ? null : featPill(b, u, 'feat-bar')));
+    }
+
+    // A tile's ground: its swatch as in the key, its name, what it does to
+    // defence and movement, and what the battle makes of it (a goal, the
+    // post, a flank's rear, the railway). On a wide screen a card on the
+    // board's corner; on a phone the strip over the pinned actions.
+    function tileCard(b, r, c, cls) {
+        const def = b.def;
+        const t = B.terrain(b, r, c);
+        const ground = B.groundOf(b, r, c);
+        const place = (def.places || []).find(([, pr, pc]) => pr === r && pc === c);
+        const facts = [];
+        if (t.water && !t.span) facts.push('보병은 걸어서 건널 수 없음');
+        else if (t.cost >= 99) facts.push('건널 수 없음');
+        else if (t.ford && !B.fordOpen(b)) facts.push('물에 잠겨 건널 수 없음');
+        else {
+            facts.push(t.fort && ground !== t.def ? `방어 ${fortText(b, r, c)}` : `방어 ${signed(ground)}`);
+            facts.push(`이동 ${t.cost}`);
+        }
+        if (t.fort && t.def) facts.push('포격으로 깎임');
+        if (B.onRail(b, r, c)) facts.push('철길');
+        const marks = [];
+        const goal = def.goals.find(g => g.at[0] === r && g.at[1] === c);
+        if (goal) marks.push(`목표: ${josa(U.playerUnits, '이', '가')} 서면 승리`);
+        if (def.protect && def.protect.at[0] === r && def.protect.at[1] === c) marks.push(`지킬 곳: ${josa(foeName(), '이', '가')} 들어서면 패배`);
+        for (const [id, l] of Object.entries(def.lines)) if (!b.turned[id] && B.behind(b, id, r, c)) marks.push(`우회 구역: 서면 ${l.name} 수비대의 뒤가 끊김`);
+        return el('div', { class: cls },
+            el('p', {}, el('span', { class: 'cw-terrain-key cw-swatch', 'aria-hidden': 'true' }, el('i', { class: 'k-' + (t.ford && !B.fordOpen(b) ? 'river' : t.cls) })),
+                el('strong', {}, place && place[0] !== t.name ? `${place[0]} · ${t.name}` : t.name), el('span', {}, facts.join(' · ')),
+                cls.includes('cw-tile-info') ? el('button', { type: 'button', class: 'cw-tile-close', 'aria-label': '지형 정보 닫기', onclick: () => { tilePicked = null; renderBattle(); } }, '×') : null),
+            ...marks.map(m => el('p', { class: 'cw-act-state' }, m)));
     }
 
     // The ended battle's verdict stamped across its board once the last
