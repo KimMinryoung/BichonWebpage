@@ -1540,10 +1540,16 @@
    tab's parts (data-pane) show. A wider screen has no tabs. */
 .cw-tabs { display: none; }
 @media (max-width: 720px) {
-    .cw-command { flex-wrap: wrap; row-gap: 6px; }
-    .cw-tabs { display: flex; flex: 1 0 100%; order: -1; margin-top: -4px; border-bottom: 1px solid var(--border); }
-    .games-shell .cw-tabs button { flex: 1 1 0; min-height: 40px; padding: 4px 6px; border: 0; border-bottom: 3px solid transparent; background: none; color: var(--text-secondary); font-weight: 700; }
+    /* The season's tabs take the to-do chips' place, beside the order;
+       a tab with a step left carries a red dot. */
+    .cw-command { flex-wrap: wrap; row-gap: 6px; column-gap: 8px; }
+    .cw-command .cw-todo { display: none; }
+    .cw-tabs { display: flex; flex: 1 0 100%; border-bottom: 1px solid var(--border); }
+    .cw-command .cw-tabs { flex: 1 1 auto; min-width: 0; border-bottom: 0; }
+    .games-shell .cw-tabs button { position: relative; flex: 1 1 0; min-width: 0; min-height: 40px; padding: 4px 6px; border: 0; border-bottom: 3px solid transparent; background: none; color: var(--text-secondary); font-weight: 700; white-space: nowrap; }
     .games-shell .cw-tabs button[aria-pressed="true"] { color: var(--text-primary); border-bottom-color: var(--cw-red); }
+    .cw-tabs button.is-undone::after { content: ''; position: absolute; top: 7px; right: calc(50% - 1.6em); width: 7px; height: 7px; border-radius: 50%; background: var(--cw-red); }
+    .cw-battle-actions .cw-tabs { order: -1; margin-top: -4px; }
     .cw-campaign[data-tab="state"] [data-pane]:not([data-pane="state"]),
     .cw-campaign[data-tab="ops"] [data-pane]:not([data-pane="ops"]),
     .cw-campaign[data-tab="cards"] [data-pane]:not([data-pane="cards"]),

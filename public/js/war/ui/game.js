@@ -2062,6 +2062,12 @@
             { done: G.allocated(s) > 0, label: `${U.unit} ${G.allocated(s)}/${s.plan.divisions}`, target: 'cwFronts', guide: `필요한 만큼 ${josa(U.unit, '을', '를')} 보낸다 (남기면 예비)` },
         ].filter(Boolean);
         const next = steps.find(x => !x.done);
+        // On a phone the tabs stand in for the chips: one with a step left is marked.
+        const left = new Set(steps.filter(x => !x.done).map(x => $(x.target).closest('[data-pane]').dataset.pane));
+        $('cwTabs').querySelectorAll('button').forEach(b => {
+            b.classList.toggle('is-undone', left.has(b.dataset.tab));
+            if (left.has(b.dataset.tab)) b.setAttribute('aria-label', `${b.textContent}, 할 일 남음`); else b.removeAttribute('aria-label');
+        });
         $('cwTodo').replaceChildren(...steps.map(x => el('button', {
             type: 'button', class: 'cw-todo-item' + (x.done ? ' is-done' : x === next ? ' is-next' : ''), onclick: () => go(x.target),
         }, x.done ? '✓ ' : '', x.label)));
