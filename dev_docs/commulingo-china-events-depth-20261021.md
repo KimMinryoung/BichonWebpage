@@ -8,7 +8,7 @@
 - 적용 파일: `scripts/content/china-events-depth-20261021-wave{1,2}-{events,people,terms,relations,links,collections}.json`, 국가·지점 수정 `…-fix-countries-locations.json`.
 - 백업: `scripts/migrations/data/china-events-depth-20261021-{wave1,wave2,fix-cl}-before.json`. 데이터 SQL `scripts/migrations/data/china-events-depth-20261021-collections.sql`. 링크 승인 `scripts/reviews/commulingo-links-20261021-china-events-wave{1,2}.json`.
 
-## 반영 (2026-10-21, 12편)
+## 반영 (2026-10-21, 13편)
 
 | 사건 | 한국어 문단 합(이전 본문) | 절/문단 | 출처 | 연표 |
 | --- | --- | --- | --- | --- |
@@ -24,6 +24,7 @@
 | great-leap-forward | 12,950 (4,277) | 10/34 | 45 | 26 |
 | cultural-revolution | 16,394 (5,187) | 10/41 | 74 | 30 |
 | reform-and-opening | 11,442 (5,441) | 10/30 | 64 | 29 |
+| sino-vietnamese-war-1979 | 12,905 (5,069) | 10/33 | 34 | 27 |
 
 - 인물 97명 새 카드(`scripts/commulingo-people-upsert`), 용어 69개(`apply-history-terms.js`), 사건–인물 관계 239건(`apply-event-person-links.js`), 링크 승인 418건(자동 344·검색 전용 74), 입장 모음 73명, 사건별 term_links 3건(5·4의 「신청년」→new-youth-magazine, 문혁·개혁개방의 「역사결의」→resolution-on-party-history-1981).
 - 적용 순서: 인물 → 사건 칸 → 용어 → 관계 → 링크 승인 → 데이터 SQL. 용어·관계는 새 카드를 참조하므로 인물이 먼저다.
@@ -32,7 +33,8 @@
 
 ## 남은 일
 
-- `sino-vietnamese-war-1979`·`tiananmen-1989`(에이전트 G): 미반영. 같은 디렉터리의 모듈을 `node build.js <id> --write --tag=wave3`로 빌드해 같은 순서로 적용. 다른 배치 카드(yao-yilin·chen-zaidao 등 F)를 재사용한다.
+- `sino-vietnamese-war-1979`: 본문·연표·출처·지점과 기존 카드 관계 17건은 반영(wave3, 우의관 지점은 퉁당과 겹쳐 제거). 새 카드·용어는 못 만들었다: 레쫑떤·레득아인·응우옌반린·도므어이·똔득탕·이엥 사리·장즈슈·우슈취안·왕비청 카드와 관계, 용어 후보 소련-베트남 우호협력조약 (1978)(6조 인용)·화교 추방 (1978~1979)·라오산 전투 (1984)·적과초 해전 (1988)·청두 회담 (1990). 원문은 `sources/G/`. 기존 관계 van-tien-dung 「총참모장」은 틀림(1979 총참모장은 레쫑떤, 반띠엔중은 총사령관·1980 국방장관).
+- `tiananmen-1989`: 시작하지 않았다. BRIEF의 G 지시대로 새로 만들고 F의 카드(yao-yilin·chen-zaidao)를 재사용한다.
 - P1은 10명 반영(chen-duxiu bo-gu-qin-bangxian li-lisan ren-bishi zhang-wentian zhang-guotao wang-ming qu-qiubai he-long liu-bocheng; `enrich-people-P1.dryrun.json`). 남은 P1 10명: li-dazhao lu-xun ding-ling wang-shiwei song-qingling sun-yat-sen zhou-enlai zhu-de liu-shaoqi mao-zedong(원문은 `sources/P1/`에 있음).
 - P2는 12명 반영(deng-hua chen-yi li-xiannian lin-biao nie-rongzhen xu-xiangqian ye-jianying peng-dehuai yang-dezhi xu-shiyou wei-guoqing chen-boda; `sources/P2/dryrun.json`, 1949년 이전 군 복무는 china-pla, 1924~28 국민혁명군·황푸는 state-china-roc 행 추가). 남은 P2 13명: chen-yonggui deng-tuo gao-gang jiang-qing kang-sheng luo-ruiqing peng-zhen rao-shushi wang-dongxing wang-hongwen wu-han yao-wenyuan zhang-chunqiao(원문 `sources/P2/`; kang-sheng·peng-zhen·rao-shushi·wang-hongwen 당원 행 없음, peng-zhen 경력 줄표, jiang-qing·zhang-chunqiao 경력 화살표, wu-han 부시장 china-prc 누락). 이어 할 때 적용 직전 카드 현재값을 다시 읽는다(PATCH는 activities·career를 통째로 교체). P3(구체제·개혁기 21명)·P4(외국인 24명)는 시작하지 않았다. 보강 메모는 `handoff-notes.txt`의 Enrichment notes, 배정은 `BRIEF.md`.
 - 발견한 기존 오류: 용어 `anti-rightist-campaign`이 마인추를 우파로 적음(우파 지정 아님, 1960년 베이징대 총장 해임); 관계 메모 fang-lizhi(노동 1957.12–1958.8, 1959 제명)·kim-san(「1925~1927년 광저우 봉기」→1927년 12월); yuan-shikai `moment_ko` 「국보전쟁」→호국전쟁; 카탈로그 `party-chinese-tongmenghui`에 `termIds: ["tongmenghui"]`; jiangxi 사건에 xiang-ying·yang-hucheng 관계 추가.
