@@ -716,6 +716,8 @@
 .cw-unit-info h3 { font-size: 1rem; }
 .cw-unit-info small { color: var(--text-secondary); font-weight: 400; }
 .cw-unit-info p { margin: 4px 0 0; font-size: .88rem; line-height: var(--leading-normal); }
+.cw-unit-info h3 small:not(:first-child)::before { content: ' '; }
+.cw-info-more { display: none; }
 .cw-info-hp { display: flex; align-items: center; gap: 8px; }
 .cw-info-bar { flex: 1 1 auto; max-width: 160px; height: 7px; background: linear-gradient(90deg, var(--bar) var(--hp), color-mix(in srgb, var(--text-primary) 15%, transparent) var(--hp)); }
 .cw-info-bar.is-red { --bar: var(--text-primary); }
@@ -900,6 +902,12 @@
     .games-shell .cw-act-unit .cw-feat-pill { min-height: 30px; padding: 2px 8px; font-size: .78rem; }
 }
 @media (min-width: 721px) { .cw-act-unit { display: none; } }
+/* The strip already says it: the card under the board keeps the rest. */
+@media (max-width: 720px) {
+    .cw-unit-info .cw-info-dup { display: none; }
+    .cw-unit-info .cw-info-more { display: block; }
+    .cw-unit-info h3 small { font-size: .88rem; }
+}
 @media (max-width: 720px) { .cw-tile-info { display: none; } }
 @media (prefers-reduced-motion: no-preference) {
     .cw-option, .cw-front { transition: background-color .15s ease, border-color .15s ease; }

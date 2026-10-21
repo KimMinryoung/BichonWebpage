@@ -2773,6 +2773,7 @@
         return `진지 +${t.def}→${Math.max(0, now - more)}`;
     }
 
+    const UNIT_KIND = { inf: '보병', cav: '기병', art: '포병', rail: '장갑열차' };
     function unitInfo(u) {
         const b = s.battle;
         const t = B.terrain(b, u.r, u.c);
@@ -2787,10 +2788,15 @@
         // A Red unit ready to strike lists who it can hit and what it would do.
         // With its aimed feat switched on, the plain blows step aside.
         const targets = B.isPlayer(b, u) && !u.acted && !battleEnded && featArmed !== u.id ? B.targets(b, u) : [];
+        // On a phone the strip over the actions already gives the name,
+        // strength, plain numbers and what the unit does now: the card keeps
+        // only what the strip leaves out (marked 'cw-info-dup' there).
+        const more = [parts.length > 1 ? `방어 ${B.defenseOf(b, u)} (${parts.join(', ')})` : null, u.rail ? '철길로만 이동' : null, u.range > 1 ? `사거리 ${u.range}` : null].filter(Boolean);
         return el('div', {},
-            el('h3', {}, u.name, u.sub ? el('small', {}, ` ${u.sub}`) : null),
-            el('p', { class: 'cw-info-hp' }, el('strong', {}, `병력 ${u.hp}/${u.maxHp}`), el('span', { class: 'cw-info-bar is-' + sideOf(b, u), style: `--hp:${(100 * u.hp / u.maxHp).toFixed(0)}%`, 'aria-hidden': 'true' })),
-            el('p', {}, `공격 ${u.atk} · 방어 ${B.defenseOf(b, u)}${parts.length > 1 ? ` (${parts.join(', ')})` : ''} · 이동 ${u.mv}${u.rail ? ' (철길로만)' : ''}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
+            el('h3', {}, el('span', { class: 'cw-info-dup' }, u.name), el('small', {}, [UNIT_KIND[u.rail ? 'rail' : u.kind], u.sub].filter(Boolean).join(' · '))),
+            el('p', { class: 'cw-info-hp cw-info-dup' }, el('strong', {}, `병력 ${u.hp}/${u.maxHp}`), el('span', { class: 'cw-info-bar is-' + sideOf(b, u), style: `--hp:${(100 * u.hp / u.maxHp).toFixed(0)}%`, 'aria-hidden': 'true' })),
+            el('p', { class: 'cw-info-dup' }, `공격 ${u.atk} · 방어 ${B.defenseOf(b, u)}${parts.length > 1 ? ` (${parts.join(', ')})` : ''} · 이동 ${u.mv}${u.rail ? ' (철길로만)' : ''}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
+            more.length ? el('p', { class: 'cw-info-more' }, more.join(' · ')) : null,
             targets.length ? el('ul', { class: 'cw-info-targets', 'aria-label': '칠 수 있는 적' }, ...targets.map(d => {
                 const p = B.preview(b, u, d);
                 return el('li', {}, el('button', { type: 'button', onclick: () => { if (act('b:attack', u.id, d.id)) afterBattleAct(`${josa(u.name, '이', '가')} ${josa(d.name, '을', '를')} 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : '')); } },
@@ -2802,8 +2808,8 @@
             u.flank ? el('p', { class: 'cw-note' }, `측면 타격: 곁에 같은 편 부대가 없는 부대를 칠 때 피해 +${u.flank}.`) : null,
             u.yielded ? el('p', { class: 'cw-note' }, `투항해 ${josa(U.player, '으로', '로')} 넘어온 부대다.`) : null,
             u.person ? el('p', {}, '지휘: ', person(u.person)) : null,
-            B.isPlayer(b, u) ? el('p', { class: 'cw-note' }, u.acted ? (B.canMove(b, u) ? '쳤다. 아직 움직일 수 있다.' : '이번 턴의 행동을 마쳤다.') : u.moved ? '이동했다. 공격하거나 대기할 수 있다.' : '이동하거나 공격할 수 있다.') : null,
-            B.isEnemy(b, u) && u.role ? el('p', { class: 'cw-note' }, roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '')) : null);
+            B.isPlayer(b, u) ? el('p', { class: 'cw-note cw-info-dup' }, u.acted ? (B.canMove(b, u) ? '쳤다. 아직 움직일 수 있다.' : '이번 턴의 행동을 마쳤다.') : u.moved ? '이동했다. 공격하거나 대기할 수 있다.' : '이동하거나 공격할 수 있다.') : null,
+            B.isEnemy(b, u) && u.role ? el('p', { class: 'cw-note cw-info-dup' }, roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '')) : null);
     }
 
     // A unit's feat: what it does, and its button (or whom it can strike),

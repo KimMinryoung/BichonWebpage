@@ -128,10 +128,10 @@
             spoils: '철도 위의 보급 열차',
         },
         komuch: {
-            name: '코무치 인민군', short: '코무치', kind: 'white', link: T('komuch'),
+            name: '코무치군', short: '코무치', kind: 'white', link: T('komuch'),
             sign: 'charter',
             note: '사마라에 선 사회혁명당 계열 제헌의회 의원 위원회(코무치)의 군대. 9월 옴스크의 전러시아 임시정부로 합쳐졌다가 11월 콜차크의 쿠데타로 밀려났다.',
-            trait: { name: '제헌의회의 깃발', motion: 'march', when: { stat: ['workers', '<', 55] }, by: 2, rule: '노동자 지지가 55 아래면 적의 힘 +2', text: '사회혁명당의 코무치는 「모든 권력을 제헌의회로」를 내걸었다. 1918년 8월 이젭스크·봇킨스크의 무기 공장 노동자가 소비에트에 맞서 일어나 인민군에 합류했다. 노동자가 등을 돌리면 그들이 코무치 편에 선다.' },
+            trait: { name: '제헌의회의 깃발', motion: 'march', when: { stat: ['workers', '<', 55] }, by: 2, rule: '노동자 지지가 55 아래면 적의 힘 +2', text: '사회혁명당의 코무치는 「모든 권력을 제헌의회로」를 내걸었다. 1918년 8월 이젭스크·봇킨스크의 무기 공장 노동자가 소비에트에 맞서 일어나 코무치군에 합류했다. 노동자가 등을 돌리면 그들이 코무치 편에 선다.' },
             cries: { beaten: '사마라를 버린다. 옴스크로!', surging: '볼가는 제헌의회의 것이다!' },
             spoils: '카잔과 사마라의 탄약 창고',
         },
@@ -356,7 +356,7 @@
                 { who: ['이오시프 스탈린', 'stalin'], at: 'volga', text: '우리 군사 「전문가」(구두장이들!)가 잠자고 빈둥거리지 않았다면 철길은 끊기지 않았을 것이다.', src: ['스탈린이 레닌에게 보낸 편지, 차리친, 1918년 7월 7일', ST('letter_lenin1')] },
             ],
             threats: {
-                east: { pressure: 6, foes: ['czech', 'komuch'], text: '체코 군단과 코무치 인민군이 볼가를 거슬러 오른다. 카펠의 부대는 카잔에 보관된 나라의 금을 노린다.', who: ['블라디미르 카펠', 'vladimir-kappel'] },
+                east: { pressure: 6, foes: ['czech', 'komuch'], text: '체코 군단과 코무치군이 볼가를 거슬러 오른다. 카펠의 부대는 카잔에 보관된 나라의 금을 노린다.', who: ['블라디미르 카펠', 'vladimir-kappel'] },
                 volga: { pressure: 2, foes: ['don'], text: '크라스노프의 돈 카자크군이 차리친을 처음으로 공격한다.', who: ['표트르 크라스노프', 'pyotr-krasnov'] },
                 north: { pressure: 1, foes: ['allies'], text: '영국을 앞세운 연합국 함대가 아르한겔스크 앞바다에 나타났다.' },
             },
@@ -488,7 +488,7 @@
                 { by: 'kolchak', who: ['알렉산드르 콜차크', 'alexander-kolchak'], at: 'east', text: '옴스크의 임시정부는 끝났다. 이제 최고 통치자인 내가 명령한다.' },
             ],
             threats: {
-                east: { pressure: 7, foes: ['komuch', 'kolchak'], text: '코무치 인민군이 사마라에서 물러나고, 우랄 앞에서 콜차크가 군대를 모은다.', who: ['알렉산드르 콜차크', 'alexander-kolchak'] },
+                east: { pressure: 7, foes: ['komuch', 'kolchak'], text: '코무치군이 사마라에서 물러나고, 우랄 앞에서 콜차크가 군대를 모은다.', who: ['알렉산드르 콜차크', 'alexander-kolchak'] },
                 volga: { pressure: 5, foes: ['don'], text: '돈 카자크군이 서쪽·남쪽에서 차리친 둘레의 철도까지 밀고 들어왔다.', who: ['표트르 크라스노프', 'pyotr-krasnov'] },
             },
             cards: ['train', 'requisition', 'kombedy', 'cheka'],
@@ -1000,7 +1000,7 @@
         id: 'simbirsk', sides: SIDES, front: 'east', final: false,
         when: { rules: ['>=', 11] },
         title: '심비르스크 공격', date: '1918년 8월 14–17일',
-        settle: '심비르스크로 →', board: '심비르스크 전장', enemyName: '인민군',
+        settle: '심비르스크로 →', board: '심비르스크 전장', enemyName: '코무치군',
         strikeNote: '',
         huntNote: '홀로 떨어진 붉은 부대를 노린다. 곁에 다른 붉은 부대가 가장 적은 부대(같으면 가까운 부대)로 가고, 닿으면 그 부대를 친다. 붉은 부대 곁에서는 멈춘다. 카펠 여단은 2턴이 끝날 때 배에서 내린다.',
         legend: [['steppe', '들판'], ['forest', '숲 (방어 +1, 이동 2)'], ['town', '마을 (방어 +1)'], ['trench', '오호트니치야 진지 (방어 +2)'], ['stream', '스뱌가강 (방어 −1, 이동 3)'], ['bridge', '스뱌가 철교'], ['heights', '베네츠 언덕 (방어 +2, 이동 2)'], ['city', '심비르스크 시가 (방어 +1)'], ['docks', '북쪽 부두'], ['river', '볼가강']],
@@ -1028,7 +1028,7 @@
             { when: 'feat:sabres', unit: 'ssmb', face: 'red-soldier', text: '보병이 없다. 포수들, 칼을 뽑아라!' },
             { when: 'feat:volunteers', unit: ['svol', 'sgai'], face: 'red-soldier', text: '센길레이 시멘트 공장에서 왔다. 우리에게도 총을 다오!' },
             { when: 'goal', unit: ['sgai', 's2r', 'slat', 'sinz', 'spen', 'svol'], face: 'red-soldier', text: '역을 차지했다! 심비르스크다!' },
-            { when: 'surrender', unit: ['sgai', 's2r', 'slat', 'sinz', 'spen'], face: 'red-soldier', text: '인민군 병사들이 손을 든다! 쏘지 마라, 이제 우리 편이다.' },
+            { when: 'surrender', unit: ['sgai', 's2r', 'slat', 'sinz', 'spen'], face: 'red-soldier', text: '코무치군 병사들이 손을 든다! 쏘지 마라, 이제 우리 편이다.' },
         ],
         goals: [{ at: [5, 8], name: '심비르스크 역' }],
         // The Inza line: Okhotnichya, the Sviyaga bridge, the city's station.
@@ -1088,10 +1088,10 @@
             // battalion at the station, the city's garrison and its guns.
             { id: 'wgeo', tag: '장교', look: 'officer', side: 'white', name: '게오르기 장교 대대', sub: '심리 공격', kind: 'inf', at: [2, 4], hp: 10, atk: 6, def: 2, mv: 3, role: 'hunt' },
             { id: 'wcup', tag: '성배', side: 'white', name: '「성배」 의용 중대', sub: '깃발과 사제', kind: 'inf', at: [1, 4], hp: 5, atk: 3, def: 1, mv: 3, role: 'hunt' },
-            { id: 'wotr', tag: '인민군', side: 'white', name: '인민군 중대', sub: '오트라다', kind: 'inf', at: [4, 3], hp: 8, atk: 4, def: 2, mv: 3, role: 'hold' },
-            { id: 'wokh', tag: '인민군', side: 'white', name: '인민군 대대', sub: '오호트니치야 진지', kind: 'inf', at: [6, 3], hp: 9, atk: 4, def: 2, mv: 3, role: 'hold' },
+            { id: 'wotr', tag: '코무치군', side: 'white', name: '코무치군 중대', sub: '오트라다', kind: 'inf', at: [4, 3], hp: 8, atk: 4, def: 2, mv: 3, role: 'hold' },
+            { id: 'wokh', tag: '코무치군', side: 'white', name: '코무치군 대대', sub: '오호트니치야 진지', kind: 'inf', at: [6, 3], hp: 9, atk: 4, def: 2, mv: 3, role: 'hold' },
             { id: 'wcz', tag: '체코', side: 'white', name: '체코슬로바키아 대대', sub: '심비르스크 역', kind: 'inf', at: [5, 8], hp: 12, atk: 4, def: 3, mv: 3, role: 'hold' },
-            { id: 'wgar', tag: '수비대', side: 'white', name: '인민군 수비대', sub: '시가', kind: 'inf', at: [4, 8], hp: 8, atk: 3, def: 2, mv: 3, role: 'hold' },
+            { id: 'wgar', tag: '수비대', side: 'white', name: '코무치군 수비대', sub: '시가', kind: 'inf', at: [4, 8], hp: 8, atk: 3, def: 2, mv: 3, role: 'hold' },
             { id: 'wbat', tag: '포대', side: 'white', name: '베네츠 포대', kind: 'art', at: [3, 10], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'hold' },
             // Kappel's brigade, back from Kazan by steamer on the 14th: it
             // hunts the unit left alone and strikes it 2 harder.
@@ -1102,7 +1102,7 @@
         brief: [
             '7월 22일 카펠의 부대가 심비르스크를 빼앗았다. 투하쳅스키의 제1군은 인자 철도를 따라 서쪽에서 도시로 다가간다. 카펠이 카잔에 가 있는 지금 쳐야 한다.',
             '심비르스크 역에 붉은 군대 부대를 세우면 이긴다. 7턴이 주어진다. 역사에서는 막혔으므로, 지면 역사대로이고 이기면 이 시기 동부전선의 우리 힘이 3 오른다.',
-            '역 앞에는 스뱌가강이 흐른다. 건너는 데 이동 3이 들고 강 위에서는 방어 −1이다. 철도가 지나는 스뱌가 철교로는 쉽게 건넌다. 철교 앞 오호트니치야에는 인민군 진지(방어 +2)가 있다.',
+            '역 앞에는 스뱌가강이 흐른다. 건너는 데 이동 3이 들고 강 위에서는 방어 −1이다. 철도가 지나는 스뱌가 철교로는 쉽게 건넌다. 철교 앞 오호트니치야에는 코무치군 진지(방어 +2)가 있다.',
             '게오르기 장교 대대와 「성배」 의용 중대는 처음부터, 2턴이 끝날 때부터는 카잔에서 배로 돌아온 카펠 여단이 홀로 떨어진 붉은 부대를 노린다. 카펠 여단은 곁에 다른 붉은 부대가 없는 부대를 피해 +2로 친다. 부대를 둘씩 붙여 움직여라.',
             '적과 맞닿은 칸에 들어가면 그 턴의 이동은 끝난다. 한 적을 여럿이 둘러싸고 치면 둘러싼 부대마다 피해가 1씩 늘어난다.',
             '결정적 한 수(★): 사령부의 「집중 명령」은 그 턴 둘러싸고 치는 공격마다 피해 +2. 스몰렌스크 포대의 「칼을 뽑아라」는 다음 차례까지 방어 +2에 반격. 심비르스크 사단의 「센길레이의 의용병」은 곁에 노동자 분견대를 세운다.',
@@ -1147,7 +1147,7 @@
             { when: 'turn:6', unit: ['wk1', 'wk3', 'wk2'], by: 'komuch', text: '버텨라, 사마라에서 원군이 온다!' },
             { when: 'feat:night-raid', unit: 'kfl', who: ['표도르 라스콜니코프', 'fyodor-raskolnikov'], text: '불을 끄고 부두로 들어간다. 포대와 바지선부터 태워라!' },
             { when: 'feat:all-arms', unit: ['ktc', 'ktr'], who: ['레프 트로츠키', 'trotsky'], text: '서기도 취사병도 총을 들어라! 스비야시스크는 내주지 않는다.' },
-            { when: 'surrender', unit: ['k5l', 'k5c', 'ksl', 'k2a'], face: 'red-soldier', text: '인민군 병사들이 손을 든다! 쏘지 마라, 이제 우리 편이다.' },
+            { when: 'surrender', unit: ['k5l', 'k5c', 'ksl', 'k2a'], face: 'red-soldier', text: '코무치군 병사들이 손을 든다! 쏘지 마라, 이제 우리 편이다.' },
         ],
         goals: [{ at: [2, 7], name: '크렘린' }],
         // The Moscow–Kazan line: Sviyazhsk, its bridge over the Volga, Kazan.
@@ -1184,9 +1184,9 @@
                     text: '열차의 승무원과 서기, 전신수, 취사병까지 총을 들고 내린다. 열차 곁에 분견대 하나가 생긴다(이번 턴은 행동하지 않음).',
                     history: '8월 28일 카펠과 사빈코프의 기습대가 스비야시스크 바로 앞 튜를레마 역까지 들어왔다. 트로츠키는 열차의 승무원과 참모, 사령부의 모든 사람을 무장시켜 내보냈고, 기습대는 물러났다.',
                 } },
-            { id: 'wk1', tag: '인민군', side: 'white', name: '코무치 인민군', sub: '크렘린 수비', kind: 'inf', at: [2, 7], hp: 10, atk: 4, def: 2, mv: 3, role: 'hold' },
+            { id: 'wk1', tag: '코무치군', side: 'white', name: '코무치군', sub: '크렘린 수비', kind: 'inf', at: [2, 7], hp: 10, atk: 4, def: 2, mv: 3, role: 'hold' },
             { id: 'wk2', tag: '체코', side: 'white', name: '체코슬로바키아 군단', sub: '철교 북쪽', kind: 'inf', at: [3, 2], hp: 13, atk: 4, def: 3, mv: 3, role: 'hold' },
-            { id: 'wk3', tag: '인민군', side: 'white', name: '코무치 인민군', sub: '시가 동쪽', kind: 'inf', at: [2, 8], hp: 8, atk: 3, def: 2, mv: 3, role: 'hold' },
+            { id: 'wk3', tag: '코무치군', side: 'white', name: '코무치군', sub: '시가 동쪽', kind: 'inf', at: [2, 8], hp: 8, atk: 3, def: 2, mv: 3, role: 'hold' },
             { id: 'wk4', tag: '포대', side: 'white', name: '부두 포대', kind: 'art', at: [3, 7], hp: 8, atk: 4, def: 1, mv: 2, range: 2, role: 'hold' },
             { id: 'wkp', tag: '카펠', side: 'white', name: '카펠 부대', sub: '기동대', kind: 'cav', at: [7, 10], hp: 13, atk: 6, def: 2, mv: 4, role: 'raid', person: ['블라디미르 카펠', 'vladimir-kappel'] },
         ],
@@ -1744,7 +1744,7 @@
         'alexander-kutepov': '의용군 제1군단장',
         'pyotr-krasnov': '돈 카자크 아타만',
         'konstantin-mamontov': '돈 카자크 기병 지휘관',
-        'vladimir-kappel': '코무치 인민군 지휘관',
+        'vladimir-kappel': '코무치군 지휘관',
         'mikhail-hanzhin': '콜차크 서부군 사령관',
         'ivan-barbovich': '백군 기병군단장',
     };
