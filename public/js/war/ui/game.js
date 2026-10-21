@@ -2642,9 +2642,9 @@
                         unit || foe ? pickedStrip(b, unit || foe) : tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-act-unit cw-act-tile') : null,
                         postOpen(b) ? el('p', { class: 'cw-post-alarm' }, `${josa(def.protect.name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 다음 턴에 들어오면 이 전투에서 진다.`) : null,
                         G.canTakeBack(s) ? el('button', { type: 'button', 'data-key': 'undo', title: 'Esc · 우클릭', onclick: takeBackOrder }, '취소') : null,
-                        unit && !unit.acted ? el('button', { type: 'button', 'data-key': 'wait', onclick: () => { if (act('b:wait', unit.id)) afterBattleAct(`${unit.name} 대기`); } }, '이 부대 대기') : null,
-                        ready && !(unit && !unit.acted && ready === 1) ? el('button', { type: 'button', 'data-key': 'next-unit', title: 'N', onclick: nextUnit }, '다음 부대') : null,
-                        el('button', { type: 'button', 'data-key': 'menace', class: 'cw-toggle', 'aria-pressed': String(menaceAll), onclick: () => { menaceAll = !menaceAll; renderBattle(); } }, `${foeName()} 위협`),
+                        unit && !unit.acted ? el('button', { type: 'button', 'data-key': 'wait', onclick: () => { if (act('b:wait', unit.id)) afterBattleAct(`${unit.name} 대기`); } }, el('span', { class: 'cw-wide-only' }, '이 부대 '), '대기') : null,
+                        ready && !(unit && !unit.acted && ready === 1) ? el('button', { type: 'button', class: 'cw-wide-only', 'data-key': 'next-unit', title: 'N', onclick: nextUnit }, '다음 부대') : null,
+                        el('button', { type: 'button', 'data-key': 'menace', class: 'cw-toggle cw-wide-only', 'aria-pressed': String(menaceAll), onclick: () => { menaceAll = !menaceAll; renderBattle(); } }, `${foeName()} 위협`),
                         el('button', { type: 'button', class: 'cw-primary' + (endArmed ? ' is-armed' : ''), 'data-key': 'end', title: 'E', onclick: endTurn },
                             endArmed ? (postOpen(b) ? `${josa(def.protect.name, "을", "를")} 비운 채 턴 종료` : '한 번 더 누르면 턴 종료') : ready ? `턴 종료 (${ready}부대 남음)` : '턴 종료 →')),
                     b.events.length ? el('div', { class: 'cw-battle-events', 'data-pane': 'status' },
@@ -2780,8 +2780,12 @@
 
     // The Red units in a row over the board: who still has to act (full)
     // and who is done (faded); pressing one picks it, wherever it stands.
+    // On a phone it leads with 「다음 부대」, which leaves the pinned actions there.
     function roster(reds) {
-        return el('div', { class: 'cw-roster', 'data-pane': 'field', role: 'group', 'aria-label': `${U.playerUnits}, 행동할 수 있는 부대 ${reds.filter(u => !u.acted).length} / ${reds.length}` },
+        const ready = reds.filter(u => !u.acted).length;
+        const unit = selected && reds.find(u => u.id === selected);
+        return el('div', { class: 'cw-roster', 'data-pane': 'field', role: 'group', 'aria-label': `${U.playerUnits}, 행동할 수 있는 부대 ${ready} / ${reds.length}` },
+            ready && !(unit && !unit.acted && ready === 1) ? el('button', { type: 'button', class: 'cw-roster-next', 'data-key': 'roster-next', onclick: nextUnit }, '다음 부대 ›') : null,
             ...reds.map(u => el('button', {
                 type: 'button', class: 'cw-roster-unit' + (u.acted ? ' is-done' : ''), 'data-key': `roster-${u.id}`, 'aria-pressed': String(u.id === selected),
                 'aria-label': `${u.name}, 병력 ${u.hp}/${u.maxHp}` + (featLeft(s.battle, u) ? `, 결정적 한 수 ${u.feat.name}` : '') + (u.acted ? ', 행동 마침' : ''),

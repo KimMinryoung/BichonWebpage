@@ -1574,6 +1574,20 @@
     /* 「현황」 carries the season's HUD over the battle's state; the other
        tabs leave it out. */
     #cwPlay:has(> #cwBattle[data-tab]:not([data-tab="status"]):not([hidden])) > .cw-hud { display: none; }
+    /* The picked unit and the actions kept tight: one row of buttons
+       (「다음 부대」 leads the roster instead, the threat toggle is left
+       to a wider screen). */
+    .cw-battle .cw-wide-only { display: none; }
+    .cw-battle[data-tab="field"] .cw-unit-info { padding: 6px 10px; }
+    .cw-battle[data-tab="field"] .cw-unit-info p { margin-top: 2px; font-size: .8rem; line-height: 1.4; }
+    .cw-battle[data-tab="field"] .cw-unit-info h3 { font-size: .88rem; margin: 0; }
+    .cw-battle[data-tab="field"] .cw-battle-actions { flex-wrap: wrap; gap: 6px; padding-block: 6px; }
+    .cw-battle[data-tab="field"] .cw-act-unit { gap: 0; padding-bottom: 4px; font-size: .76rem; }
+    .cw-battle[data-tab="field"] .cw-act-unit p { gap: 2px 6px; }
+    .cw-battle[data-tab="field"] .cw-battle-actions > button { flex: 0 0 auto; white-space: nowrap; }
+    .cw-battle[data-tab="field"] .cw-battle-actions > .cw-primary { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 }
+@media (min-width: 721px) { .cw-roster-next { display: none; } }
+.games-shell .cw-roster-next { flex: 0 0 auto; position: sticky; left: 0; z-index: 1; min-height: 30px; padding: 3px 8px; font-size: .78rem; font-weight: 800; background: var(--bg-surface); box-shadow: 6px 0 6px -2px var(--bg-surface); }
 /* A jump to a part of the season stops below the pinned crumb bar. */
 .cw-shell:has(.games-crumb.has-status) .cw-campaign > * { scroll-margin-top: 48px; }
