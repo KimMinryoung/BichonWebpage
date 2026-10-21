@@ -50,6 +50,7 @@
 | CommuLingo 사건 진영(sides) | [중심 주체 없는 사건의 진영 구조·29개 사건 배정](commulingo-event-sides-20260929.md) |
 | CommuLingo 프랑스 사건 후속 등록 큐 | [인물 16·용어 36·추가 번역 22건](commulingo-french-events-registration-queue-20260913.md) |
 | CommuLingo 중국 혁명·중화인민공화국 확장 | [중국 선반·시대 그룹, 사건 12편·인물 48명·용어 15개](commulingo-china-history-20260921.md) |
+| CommuLingo 중국 사건 14편 보강 | [2026-10-21 본문 1만 자 이상·인물 97명·용어 69개·남은 일(중월전쟁·톈안먼·기존 인물 보강)](commulingo-china-events-depth-20261021.md) |
 | CommuLingo 현실 사회주의 국가·사건 보강 | [25개 체제 자료와 3개 계보도](commulingo-socialist-states-20260908.md), [16개 사건 본문 심화](commulingo-event-depth-20260908.md) |
 | CommuLingo 프랑스 혁명 추가 문헌 DeepSeek 추론 ON 번역 | [22건 출판(주르당 법 2026-09-30 직접 전사·번역)·토큰 집계](commulingo-french-translations-20260913/README.md) |
 | CommuLingo 참고문헌 전문 번역·저본·검수 | [DeepSeek Flash 전문 번역 8편과 제외 기록](commulingo-fulltext-20260913/README.md) |
