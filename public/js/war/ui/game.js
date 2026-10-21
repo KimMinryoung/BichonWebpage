@@ -2692,16 +2692,17 @@
     // unit's card beside the board says all of it).
     function pickedStrip(b, u) {
         const foeUnit = B.isEnemy(b, u);
-        const targets = !foeUnit && !u.acted && featArmed !== u.id ? B.targets(b, u).length : 0;
+        // Only what the board does not show: the bright tiles, the marked
+        // targets and the roster's dashed chips say the rest.
         const state = foeUnit ? (u.role ? roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '') : null)
-            : u.acted ? (B.canMove(b, u) ? '쳤다 · 아직 움직일 수 있다' : '행동을 마쳤다')
-            : featArmed === u.id ? '판에서 칠 적을 고른다'
-                : targets ? `칠 수 있는 적 ${targets} · 판에서 누른다` : u.moved ? '이동했다' : '밝은 칸을 눌러 옮긴다';
+            : u.acted ? (B.canMove(b, u) ? '쳤다 · 아직 움직일 수 있다' : null)
+            : featArmed === u.id ? '판에서 칠 적을 고른다' : null;
         return el('div', { class: 'cw-act-unit' },
             el('p', {}, el('strong', {}, u.name),
                 el('span', { class: 'cw-info-bar is-' + sideOf(b, u), style: `--hp:${(100 * u.hp / u.maxHp).toFixed(0)}%`, 'aria-hidden': 'true' }),
-                el('span', {}, `병력 ${u.hp}/${u.maxHp} · 공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} · 이동 ${u.mv}`)),
-            state || !foeUnit ? el('p', { class: 'cw-act-state' }, state, foeUnit ? null : featPill(b, u, 'feat-bar')) : null);
+                el('span', {}, `병력 ${u.hp}/${u.maxHp} · 공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} · 이동 ${u.mv}`),
+                foeUnit ? null : featPill(b, u, 'feat-bar')),
+            state ? el('p', { class: 'cw-act-state' }, state) : null);
     }
 
     // A tile's ground: its swatch as in the key, its name, what it does to
@@ -2892,8 +2893,6 @@
         const lead = u.commissar ? 1 : 0;
         const parts = [`기본 ${u.def - lead}`, lead ? `${U.leader} +${lead}` : null, t.fort && ground !== t.def ? `${t.name} ${fortText(b, u.r, u.c)}(${why.join(', ')})` : ground ? `${t.name} ${signed(ground)}` : null].filter(Boolean);
         // A Red unit ready to strike lists who it can hit and what it would do.
-        // With its aimed feat switched on, the plain blows step aside.
-        const targets = B.isPlayer(b, u) && !u.acted && !battleEnded && featArmed !== u.id ? B.targets(b, u) : [];
         // On a phone the strip over the actions already gives the name,
         // strength, plain numbers and what the unit does now: the card keeps
         // only what the strip leaves out (marked 'cw-info-dup' there).
@@ -2904,12 +2903,6 @@
             el('p', { class: 'cw-info-dup' }, `공격 ${u.atk} · 방어 ${B.defenseOf(b, u)}${parts.length > 1 ? ` (${parts.join(', ')})` : ''} · 이동 ${u.mv}${u.rail ? ' (철길로만)' : ''}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
             more.length ? el('p', { class: 'cw-info-more' }, more.join(' · ')) : null,
             u.person ? el('p', {}, '지휘: ', person(u.person)) : null,
-            targets.length ? el('ul', { class: 'cw-info-targets', 'aria-label': '칠 수 있는 적' }, ...targets.map(d => {
-                const p = B.preview(b, u, d);
-                return el('li', {}, el('button', { type: 'button', onclick: () => { if (act('b:attack', u.id, d.id)) afterBattleAct(`${josa(u.name, '이', '가')} ${josa(d.name, '을', '를')} 공격: 피해 ${p.dmg}` + (p.counter ? `, 반격 ${p.counter}` : '')); } },
-                    el('strong', {}, `${d.name} 공격`),
-                    el('span', {}, `병력 ${d.hp}/${d.maxHp} · 방어 ${B.defenseOf(b, d)} → 피해 ${p.dmg}${p.dmg >= d.hp ? ' (격파)' : p.surrender ? ' (투항)' : ''}${p.counter ? ` · 반격 ${p.counter}` : ''}${p.wears ? ` · ${fortText(b, d.r, d.c, 1)}` : ''}`)));
-            })) : null,
             featInfo(b, u),
             u.skirmish ? el('p', { class: 'cw-note' }, '타찬카(기관총 수레): 움직이기 전에 치면, 친 뒤에도 움직일 수 있다.') : null,
             u.flank ? el('p', { class: 'cw-note' }, `측면 타격: 곁에 같은 편 부대가 없는 부대를 칠 때 피해 +${u.flank}.`) : null,

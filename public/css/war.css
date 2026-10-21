@@ -722,9 +722,6 @@
 .cw-info-bar { flex: 1 1 auto; max-width: 160px; height: 7px; background: linear-gradient(90deg, var(--bar) var(--hp), color-mix(in srgb, var(--text-primary) 15%, transparent) var(--hp)); }
 .cw-info-bar.is-red { --bar: var(--text-primary); }
 .cw-info-bar.is-white { --bar: var(--emap-blue); }
-.cw-info-targets { list-style: none; padding: 0; margin: 8px 0 0; display: grid; gap: 6px; }
-.games-shell .cw-info-targets button { display: grid; gap: 2px; width: 100%; text-align: left; padding: 6px 10px; font-size: .84rem; }
-.cw-info-targets button span { color: var(--text-secondary); font-size: .8rem; }
 /* Feats (civil-war.js featInfo): a unit's decisive moment, once a battle.
    Gold marks it: the star on the counter (faint while it waits), the
    roster chip's star, the buttons that use it. */
@@ -897,7 +894,9 @@
     /* The picked unit over the pinned actions. */
     .cw-act-unit { flex: 1 0 100%; display: grid; gap: 2px; padding-bottom: 6px; border-bottom: 1px solid var(--border); font-size: .8rem; }
     .cw-act-unit p { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
-    .cw-act-unit .cw-info-bar { max-width: 70px; }
+    .cw-act-unit .cw-info-bar { flex: 0 1 70px; min-width: 36px; max-width: 70px; }
+    /* With a feat's button the numbers alone keep the strip to one row. */
+    .cw-act-unit p:has(.cw-feat-pill) .cw-info-bar { display: none; }
     .cw-act-state { color: var(--text-secondary); }
     .games-shell .cw-act-unit .cw-feat-pill { min-height: 30px; padding: 2px 8px; font-size: .78rem; }
 }
@@ -1583,9 +1582,6 @@
     .cw-battle[data-tab="field"] .cw-unit-info h3 { display: inline; font-size: .84rem; margin: 0; }
     .cw-battle[data-tab="field"] .cw-unit-info h3 ~ .cw-info-more { display: inline; margin-left: 2px; }
     .cw-battle[data-tab="field"] .cw-unit-info h3 ~ .cw-info-more::before { content: '· '; }
-    .cw-battle[data-tab="field"] .cw-info-targets { margin-top: 4px; gap: 4px; }
-    .games-shell .cw-battle[data-tab="field"] .cw-info-targets button { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; min-height: 0; padding: 3px 8px; font-size: .78rem; }
-    .cw-battle[data-tab="field"] .cw-info-targets button span { font-size: .74rem; }
     .cw-battle[data-tab="field"] .cw-feat { margin-top: 4px; padding-top: 4px; }
     .cw-battle[data-tab="field"] .cw-feat > p { font-size: .78rem; line-height: 1.4; margin: 0 0 2px; }
     .cw-battle[data-tab="field"] .cw-feat-head { gap: 6px; margin-bottom: 2px !important; }
