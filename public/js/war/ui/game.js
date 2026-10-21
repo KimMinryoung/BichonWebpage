@@ -2040,18 +2040,24 @@
     });
     PHONE.addEventListener('change', () => { if (s) render(); });
 
+    // A jump to where a step of the season is done. The fronts: their row
+    // just under the map pinned on a phone, the open card below it.
+    function go(target) {
+        showPane(target);
+        const card = target === 'cwFronts' && $(target).querySelector('article.cw-front');
+        if (card) return revealCard(card);
+        const box = $(target);
+        if (box) box.scrollIntoView({ block: 'start', behavior: stillMotion() ? 'auto' : 'smooth' });
+    }
+
+    // What must still be chosen before the season can be sent.
+    const missingSteps = () => [G.incidentsOf(s).some(inc => !G.responseOf(s, inc)) ? ['돌발 사건', 'cwIncident'] : null, !s.plan.choice ? ['갈림길', 'cwChoice'] : null].filter(Boolean);
+
     function renderCommand() {
         const kept = G.free(s);
         const saved = kept - Math.ceil(kept * D.economy.food.reserveEats);
-        // What the season still wants, each a jump to where it is done.
-        // The fronts: their row just under the map pinned on a phone, the open card below it.
-        const go = target => {
-            showPane(target);
-            const card = target === 'cwFronts' && $(target).querySelector('article.cw-front');
-            if (card) return revealCard(card);
-            const box = $(target);
-            if (box) box.scrollIntoView({ block: 'start', behavior: stillMotion() ? 'auto' : 'smooth' });
-        };
+        const old = $('cwCommand').querySelector('.cw-settle-alert');
+        if (old) old.remove();
         // The incident and the fork first (they change what the fronts
         // need), then the fronts. The first left undone is marked as the
         // next. The fronts are done once any division is sent: those kept
@@ -2063,7 +2069,9 @@
         ].filter(Boolean);
         const next = steps.find(x => !x.done);
         // On a phone the tabs stand in for the chips: one with a step left is marked.
+        // No card played while one could be: marked too, though the season can go without.
         const left = new Set(steps.filter(x => !x.done).map(x => $(x.target).closest('[data-pane]').dataset.pane));
+        if (!s.plan.cards.length && G.turnData(s).cards.some(id => G.cardOffered(s, id) && s.plan.command >= D.cards[id].cost)) left.add('cards');
         $('cwTabs').querySelectorAll('button').forEach(b => {
             b.classList.toggle('is-undone', left.has(b.dataset.tab));
             if (left.has(b.dataset.tab)) b.setAttribute('aria-label', `${b.textContent}, 할 일 남음`); else b.removeAttribute('aria-label');
@@ -2081,10 +2089,11 @@
             guide.replaceChildren(el('span', {}, '다음 할 일'), next ? next.guide : `준비가 끝났다. 「${(G.battleOf(s) ? G.battleOf(s).settle : '이 시기를 보낸다').replace(/\s*→$/, '')}」를 누른다`);
             guide.onclick = () => next ? go(next.target) : $('cwSettle').focus();
         }
-        const missing = [G.incidentsOf(s).some(inc => !G.responseOf(s, inc)) ? '돌발 사건' : null, !s.plan.choice ? '갈림길' : null].filter(Boolean);
+        const missing = missingSteps().map(([label]) => label);
         $('cwCommandNote').textContent = missing.length ? `${missing.join('과 ')}을 골라야 보낼 수 있다`
             : `${U.food} 소비 ${G.forecast(s).supply.need}` + (saved > 0 ? ` (예비 −${saved})` : '');
-        $('cwSettle').disabled = !G.canSettle(s);
+        // Pressed before the season is ready, it says what is missing and goes there.
+        $('cwSettle').classList.toggle('is-waiting', !G.canSettle(s));
         const battle = G.battleOf(s);
         $('cwSettle').textContent = battle ? battle.settle : '이 시기를 보낸다 →';
     }
@@ -3228,6 +3237,13 @@
     });
 
     $('cwSettle').addEventListener('click', () => {
+        const missing = missingSteps();
+        if (missing.length) {
+            const text = `${missing.map(([label]) => label).join('과 ')}을 골라야 보낼 수 있다`;
+            go(missing[0][1]);
+            $('cwCommand').prepend(el('p', { class: 'cw-settle-alert', role: 'alert' }, text));
+            return;
+        }
         const t = G.turnData(s);
         if (!act('settle')) return;
         if (s.phase === 'battle' && !s.battle.def.final) {

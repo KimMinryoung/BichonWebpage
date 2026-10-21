@@ -1295,7 +1295,10 @@
     background: none; border: 0; color: var(--text-primary); font-size: .85rem; font-weight: 700; line-height: 1.35;
 }
 .cw-guide span { flex: 0 0 auto; padding: 1px 6px; background: var(--cw-red); color: #fff; font-size: .72rem; letter-spacing: .04em; }
-@media (max-width: 560px) { .cw-command p { display: none; } }
+@media (max-width: 560px) { .cw-command p:not(.cw-settle-alert) { display: none; } }
+/* The order pressed too soon: what is missing, over the row, until the next change. */
+.cw-command .cw-settle-alert { flex: 1 0 100%; order: -2; margin: 0; padding: 4px 8px; background: var(--cw-red); color: #fff; font-size: .85rem; font-weight: 700; }
+.games-shell .cw-command .cw-primary.is-waiting { opacity: .55; }
 
 /* The first game's guide: a note over the part of the screen it is about. */
 .cw-coach { margin: 0 0 12px; padding: 10px 14px; border: 2px solid var(--cw-red); border-left-width: 6px; background: var(--bg-surface); font-size: .92rem; line-height: var(--leading-normal); }
@@ -1557,3 +1560,5 @@
     .cw-battle[data-tab="status"] [data-pane]:not([data-pane="status"]),
     .cw-battle[data-tab="guide"] [data-pane]:not([data-pane="guide"]) { display: none; }
 }
+/* A jump to a part of the season stops below the pinned crumb bar. */
+.cw-shell:has(.games-crumb.has-status) .cw-campaign > * { scroll-margin-top: 48px; }
