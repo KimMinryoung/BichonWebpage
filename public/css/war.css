@@ -1560,5 +1560,20 @@
     .cw-battle[data-tab="status"] [data-pane]:not([data-pane="status"]),
     .cw-battle[data-tab="guide"] [data-pane]:not([data-pane="guide"]) { display: none; }
 }
+@media (max-width: 720px) {
+    /* 「전장」 fills the screen and holds still: the roster, the board (it
+       scrolls inside its own frame when taller than the room left), the
+       picked unit and the actions, with the page under it locked. */
+    html:has(#cwBattle[data-tab="field"]:not([hidden])), body:has(#cwBattle[data-tab="field"]:not([hidden])) { overflow: hidden; }
+    .cw-battle[data-tab="field"]:not([hidden]) { position: fixed; inset: 0; z-index: 900; margin: 0; padding-top: 10px; padding-bottom: 0; display: flex; flex-direction: column; height: 100dvh; overflow: hidden; }
+    .cw-battle[data-tab="field"] .cw-battle-layout { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; align-items: stretch; gap: 8px; }
+    .cw-battle[data-tab="field"] .cw-roster { flex: none; }
+    .cw-battle[data-tab="field"] .cw-grid-scroll { flex: 0 1 auto; min-height: 120px; overflow: auto; overscroll-behavior: contain; scrollbar-width: none; }
+    .cw-battle[data-tab="field"] .cw-unit-info { flex: none; max-height: 24dvh; overflow-y: auto; overscroll-behavior: contain; }
+    .cw-battle[data-tab="field"] .cw-battle-actions { flex: none; margin-top: auto; }
+    /* 「현황」 carries the season's HUD over the battle's state; the other
+       tabs leave it out. */
+    #cwPlay:has(> #cwBattle[data-tab]:not([data-tab="status"]):not([hidden])) > .cw-hud { display: none; }
+}
 /* A jump to a part of the season stops below the pinned crumb bar. */
 .cw-shell:has(.games-crumb.has-status) .cw-campaign > * { scroll-margin-top: 48px; }

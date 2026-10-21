@@ -837,8 +837,10 @@
         if (fresh) {
             bVoice.until = now + holdOf(v);
             announce(`${name}: ${v.text}`);
-            // A board wider than the screen slides its speaker into view.
-            if (ax < wrap.scrollLeft + 40 || ax > wrap.scrollLeft + wrap.clientWidth - 40) wrap.scrollTo({ left: ax - wrap.clientWidth / 2 });
+            // A board wider (or, on a phone, taller) than its frame slides its speaker into view.
+            const across = ax < wrap.scrollLeft + 40 || ax > wrap.scrollLeft + wrap.clientWidth - 40;
+            const down = ay < wrap.scrollTop + 40 || ay > wrap.scrollTop + wrap.clientHeight - 40;
+            if (across || down) wrap.scrollTo({ left: across ? ax - wrap.clientWidth / 2 : wrap.scrollLeft, top: down ? ay - wrap.clientHeight / 2 : wrap.scrollTop });
         }
         const width = Math.min(300, wrap.clientWidth - 24);
         const node = bubble({
@@ -2627,7 +2629,7 @@
         const scrolled = was && gridScroll.b === b ? [was.scrollLeft, was.scrollTop] : null;
         gridScroll.b = b;
         box.replaceChildren(
-            el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
+            el('header', { class: 'cw-battle-head', 'data-pane': 'status' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             battleBrief(b),
             el('div', { class: 'cw-battle-layout' },
                 el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
@@ -2656,10 +2658,12 @@
     }
     const gridScroll = { b: null };
 
-    // The battle's tabs on a phone, over its pinned actions.
+    // The battle's tabs on a phone, over its pinned actions. 「전장」 fills
+    // the screen with the board fixed in it; 「현황」 carries the season's
+    // HUD with the battle's state (war.css).
     function battleTabs() {
         return el('div', { class: 'cw-tabs', role: 'group', 'aria-label': '화면 고르기' }, ...[['field', '전장'], ['status', '현황'], ['guide', '지시']].map(([id, label]) =>
-            el('button', { type: 'button', 'data-tab': id, 'aria-pressed': String(id === battleTab), onclick: () => { if (id === battleTab) return; battleTab = id; renderBattle(); toTop($('cwBattle')); } }, label)));
+            el('button', { type: 'button', 'data-tab': id, 'aria-pressed': String(id === battleTab), onclick: () => { if (id === battleTab) return; battleTab = id; renderBattle(); toTop(id === 'status' ? $('cwPlay') : $('cwBattle')); } }, label)));
     }
 
     // The battle's orders: folded over the board on a wide screen, open in
