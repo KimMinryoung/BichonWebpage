@@ -36,6 +36,14 @@
     let frontBoxes = {};            // map: each active front's extent, in map units
     let fitKey = null;              // the season and width the map was last fitted for
     const NARROW = window.matchMedia('(max-width: 900px)');
+    // A phone reads a season and a battle in tabs: the screen's parts are
+    // marked data-pane, the box carries the open one as data-tab (war.css
+    // hides the rest there); a wider screen shows them all.
+    const PHONE = window.matchMedia('(max-width: 720px)');
+    let campTab = 'state';          // plan: 상황 · 작전 · 카드
+    let tabTurn = null;             // the season the tab was set in (a new one opens on 상황)
+    let battleTab = 'field';        // battle: 전장 · 현황 · 지시
+    let tabBattle = null;           // the battle it was set in
     // The map's entrance: the attackers march in when a season opens, and
     // in its review the beaten are trampled and the winners surge on. It
     // plays once per season and phase, from when the map is first seen;
@@ -135,6 +143,19 @@
     function announce(text) {
         $('cwAnnouncement').textContent = '';
         window.setTimeout(() => { $('cwAnnouncement').textContent = text; }, 30);
+    }
+
+    function markTab(box, tab) {
+        if (tab) box.dataset.tab = tab; else delete box.dataset.tab;
+        box.querySelectorAll('.cw-tabs button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.tab === tab)));
+    }
+
+    // A tab opened with the screen scrolled past its top starts from the
+    // top, under the crumb bar when that is pinned.
+    function toTop(box) {
+        const pin = crumb.classList.contains('has-status') ? crumb.getBoundingClientRect().bottom : 0;
+        const top = box.getBoundingClientRect().top;
+        if (top < pin) window.scrollBy({ top: top - pin });
     }
 
     // A developer's rehearsal of one battle (?battle=<id>, engine rehearse):
@@ -267,6 +288,8 @@
         const planning = s.phase === 'plan';
         if (planning) unveiling = false;
         $('cwCampaign').classList.toggle('is-unveiling', unveiling);
+        if (planning && tabTurn !== s.turn) { campTab = 'state'; tabTurn = s.turn; }
+        markTab($('cwCampaign'), planning ? campTab : null);
         renderBrief();
         renderMap();
         renderFronts(planning);
@@ -325,13 +348,18 @@
         const i = steps.findIndex(x => !(x.done || x.ack && coach.ack.has(x.id)));
         const step = steps[i];
         if (!step || !step.at) return;
+        // On a phone a step in another tab waits atop this one, with the way there.
+        const pane = step.at.closest('[data-pane]');
+        const away = PHONE.matches && pane && pane.dataset.pane !== campTab ? pane.dataset.pane : null;
         const box = el('aside', { id: 'cwCoach', class: 'cw-coach', 'aria-label': '처음 안내' },
             el('p', { class: 'cw-coach-step' }, `처음 안내 ${i + 1}/${steps.length}`),
             el('p', {}, step.text),
             el('div', { class: 'cw-coach-actions' },
-                step.ack && !step.done ? el('button', { type: 'button', class: 'cw-primary', onclick: () => { coach.ack.add(step.id); render(); } }, '알겠다') : null,
+                away ? el('button', { type: 'button', class: 'cw-primary', onclick: () => showPane(step.at.id, true) }, `「${$('cwTabs').querySelector(`[data-tab="${away}"]`).textContent}」 탭으로`)
+                    : step.ack && !step.done ? el('button', { type: 'button', class: 'cw-primary', onclick: () => { coach.ack.add(step.id); render(); } }, '알겠다') : null,
                 el('button', { type: 'button', onclick: () => { coachDone(); render(); } }, '안내 끄기')));
-        if (step.inside) step.at.querySelector('header').after(box);
+        if (away) $('cwCampaign').querySelector(`[data-pane="${campTab}"]`).before(box);
+        else if (step.inside) step.at.querySelector('header').after(box);
         else step.at.before(box);
     }
 
@@ -754,6 +782,15 @@
         return { name: v.who ? v.who[0] : u.name, sub: v.via || (v.who ? u.name : null) };
     }
 
+    function boardInView() {
+        const wrap = document.querySelector('#cwBattle .cw-grid-scroll');
+        if (!wrap || $('cwBattle').hidden) return;
+        const bar = document.querySelector('#cwBattle .cw-battle-actions, #cwBattle .cw-battle-close');
+        const r = wrap.getBoundingClientRect();
+        const foot = bar ? Math.min(bar.getBoundingClientRect().top, window.innerHeight) : window.innerHeight;
+        if (r.top < 0 || r.bottom > foot) window.scrollBy({ top: r.top - 8 });
+    }
+
     // The board scrolled sideways: the bubble is placed again inside the view.
     let voiceFrame = 0;
     function keepVoiceInView() {
@@ -784,6 +821,13 @@
         if (bVoice.i >= bVoice.queue.length) return layer.replaceChildren();
         const v = bVoice.queue[bVoice.i];
         const u = speakerOf(b, v);
+        // A new line on a phone opens the board's tab and brings the whole
+        // board into sight over the pinned actions, once the screen has
+        // settled where the caller sends it.
+        if (bVoice.until === null && PHONE.matches) {
+            if (battleTab !== 'field' && !battleEnded) { battleTab = 'field'; markTab($('cwBattle'), 'field'); }
+            window.requestAnimationFrame(boardInView);
+        }
         const board = wrap.querySelector('.cw-grid');
         const scale = board.getBoundingClientRect().width / (b.def.map[0].length * CELL);
         const ax = (u.c * CELL + CELL / 2) * scale, ay = (u.r * CELL + 3) * scale;
@@ -1919,8 +1963,8 @@
                 control = el('button', { type: 'button', 'data-key': `unplay-${id}`, onclick: () => { if (!act('unplay', id)) announce(`이미 전선에 보낸 ${josa(U.unit, '이', '가')} 있어 되돌릴 수 없습니다. 먼저 ${josa(U.unit, '을', '를')} 빼세요.`); render(); } },
                     played.target ? `${D.fronts[played.target].short}에 보냄 · 취소` : '사용함 · 취소');
             } else if (card.target === 'front') {
-                control = el('button', { type: 'button', onclick: () => { const box = $('cwFronts'); box.scrollIntoView({ block: 'start' }); const first = box.querySelector(`[data-key^="${id}-"]`); if (first) first.focus({ preventScroll: true }); } },
-                    '전선 카드에서 보내기 ↑');
+                control = el('button', { type: 'button', onclick: () => { showPane('cwFronts'); const box = $('cwFronts'); box.scrollIntoView({ block: 'start' }); const first = box.querySelector(`[data-key^="${id}-"]`); if (first) first.focus({ preventScroll: true }); } },
+                    PHONE.matches ? '전선 카드에서 보내기' : '전선 카드에서 보내기 ↑');
             } else {
                 const idle = card.needs === 'unrest' && !s.unrest;
                 control = el('button', { type: 'button', 'data-key': `play-${id}`, disabled: !G.canPlay(s, id), title: idle ? card.idle || null : null, onclick: () => { act('play', id); render(); } }, idle ? `${josa(U.unrest, '이', '가')} 없어 못 씀` : `쓰기 (지휘력 ${card.cost})`);
@@ -1977,12 +2021,32 @@
             }, el('strong', {}, o.label), el('span', {}, o.effect))))]));
     }
 
+    // On a phone, the tab that holds a part of the season (a node's id);
+    // opened from a press, it starts from the top.
+    function showPane(id, fromTop) {
+        const pane = $(id) && $(id).closest('[data-pane]');
+        if (!PHONE.matches || !pane || pane.dataset.pane === campTab) return;
+        campTab = pane.dataset.pane;
+        render();
+        if (fromTop) toTop($('cwCampaign'));
+    }
+
+    $('cwTabs').addEventListener('click', e => {
+        const tab = e.target.closest('button');
+        if (!tab || tab.dataset.tab === campTab) return;
+        campTab = tab.dataset.tab;
+        render();
+        toTop($('cwCampaign'));
+    });
+    PHONE.addEventListener('change', () => { if (s) render(); });
+
     function renderCommand() {
         const kept = G.free(s);
         const saved = kept - Math.ceil(kept * D.economy.food.reserveEats);
         // What the season still wants, each a jump to where it is done.
         // The fronts: their row just under the map pinned on a phone, the open card below it.
         const go = target => {
+            showPane(target);
             const card = target === 'cwFronts' && $(target).querySelector('article.cw-front');
             if (card) return revealCard(card);
             const box = $(target);
@@ -2327,6 +2391,7 @@
         const b = s.battle;
         const def = b.def;
         const box = $('cwBattle');
+        if (tabBattle !== b) { battleTab = 'field'; tabBattle = b; }
         const rows = def.map.length, cols = def.map[0].length;
         const board = svg('svg', { viewBox: `0 0 ${cols * CELL} ${rows * CELL}`, class: 'cw-grid' + (battleEnded ? ' is-over' : ''), role: 'group', 'aria-label': def.board });
         const unit = selected && B.byId(b, selected);
@@ -2548,14 +2613,15 @@
         gridScroll.b = b;
         box.replaceChildren(
             el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
-            el('details', { class: 'cw-battle-brief' }, el('summary', {}, '작전 지시', el('span', {}, ` · ${def.summary}`)), ...def.brief.map(p => el('p', {}, p))),
+            battleBrief(b),
             el('div', { class: 'cw-battle-layout' },
-                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', onscroll: keepVoiceInView }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
+                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
-                    el('dl', { class: 'cw-battle-status' }, ...status.map(x => el('div', { class: x.tone || null }, el('dt', {}, x.label), el('dd', {}, x.text)))),
-                    unit || foe || hint ? el('div', { id: 'cwUnitInfo', class: 'cw-unit-info' }, unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint) : null,
+                    el('dl', { class: 'cw-battle-status', 'data-pane': 'status' }, ...status.map(x => el('div', { class: x.tone || null }, el('dt', {}, x.label), el('dd', {}, x.text)))),
+                    unit || foe || hint ? el('div', { id: 'cwUnitInfo', class: 'cw-unit-info', 'data-pane': unit || foe ? 'field' : 'guide' }, unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint) : null,
                     battleEnded ? battleClose(b) : el('div', { class: 'cw-battle-actions' },
+                        battleTabs(),
                         unit || foe ? pickedStrip(b, unit || foe) : tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-act-unit cw-act-tile') : null,
                         postOpen(b) ? el('p', { class: 'cw-post-alarm' }, `${josa(def.protect.name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 다음 턴에 들어오면 이 전투에서 진다.`) : null,
                         G.canTakeBack(s) ? el('button', { type: 'button', 'data-key': 'undo', title: 'Esc · 우클릭', onclick: takeBackOrder }, '취소') : null,
@@ -2564,22 +2630,39 @@
                         el('button', { type: 'button', 'data-key': 'menace', class: 'cw-toggle', 'aria-pressed': String(menaceAll), onclick: () => { menaceAll = !menaceAll; renderBattle(); } }, `${foeName()} 위협`),
                         el('button', { type: 'button', class: 'cw-primary' + (endArmed ? ' is-armed' : ''), 'data-key': 'end', title: 'E', onclick: endTurn },
                             endArmed ? (postOpen(b) ? `${josa(def.protect.name, "을", "를")} 비운 채 턴 종료` : '한 번 더 누르면 턴 종료') : ready ? `턴 종료 (${ready}부대 남음)` : '턴 종료 →')),
-                    b.events.length ? el('div', { class: 'cw-battle-events' },
+                    b.events.length ? el('div', { class: 'cw-battle-events', 'data-pane': 'status' },
                         el('p', { class: 'games-kicker' }, whiteMoved ? `지난 ${foeName()}의 차례` : '방금 일어난 일'),
                         el('ol', { class: 'cw-battle-log' }, ...eventLines(b).map(t => el('li', {}, t)))) : null)));
         if (scrolled) box.querySelector('.cw-grid-scroll').scrollTo(...scrolled);
+        markTab(box, battleEnded ? null : battleTab);
         renderBattleVoice();
         placeMoment();
         placeVerdict();
     }
     const gridScroll = { b: null };
 
+    // The battle's tabs on a phone, over its pinned actions.
+    function battleTabs() {
+        return el('div', { class: 'cw-tabs', role: 'group', 'aria-label': '화면 고르기' }, ...[['field', '전장'], ['status', '현황'], ['guide', '지시']].map(([id, label]) =>
+            el('button', { type: 'button', 'data-tab': id, 'aria-pressed': String(id === battleTab), onclick: () => { if (id === battleTab) return; battleTab = id; renderBattle(); toTop($('cwBattle')); } }, label)));
+    }
+
+    // The battle's orders: folded over the board on a wide screen, open in
+    // the 「지시」 tab on a phone; kept as the player left them.
+    let briefOpen = { b: null, open: false };
+    function battleBrief(b) {
+        if (briefOpen.b !== b) briefOpen = { b, open: PHONE.matches };
+        const fold = el('details', { class: 'cw-battle-brief', 'data-pane': 'guide', open: briefOpen.open }, el('summary', {}, '작전 지시', el('span', {}, ` · ${b.def.summary}`)), ...b.def.brief.map(p => el('p', {}, p)));
+        fold.addEventListener('toggle', () => { briefOpen.open = fold.open; });
+        return fold;
+    }
+
     // The terrain key, folded but for the war's first battle; kept as the
     // player left it while the battle lasts.
     let keyOpen = { b: null, open: false };
     function terrainKey(b, ...items) {
-        if (keyOpen.b !== b) keyOpen = { b, open: !Object.keys(s.battles).length };
-        const fold = el('details', { class: 'cw-terrain-fold', open: keyOpen.open }, el('summary', {}, '지형 범례'), el('p', { class: 'cw-terrain-key' }, ...items));
+        if (keyOpen.b !== b) keyOpen = { b, open: !Object.keys(s.battles).length || PHONE.matches };
+        const fold = el('details', { class: 'cw-terrain-fold', 'data-pane': 'guide', open: keyOpen.open }, el('summary', {}, '지형 범례'), el('p', { class: 'cw-terrain-key' }, ...items));
         fold.addEventListener('toggle', () => { keyOpen.open = fold.open; });
         return fold;
     }
@@ -2679,7 +2762,7 @@
     // The Red units in a row over the board: who still has to act (full)
     // and who is done (faded); pressing one picks it, wherever it stands.
     function roster(reds) {
-        return el('div', { class: 'cw-roster', role: 'group', 'aria-label': `${U.playerUnits}, 행동할 수 있는 부대 ${reds.filter(u => !u.acted).length} / ${reds.length}` },
+        return el('div', { class: 'cw-roster', 'data-pane': 'field', role: 'group', 'aria-label': `${U.playerUnits}, 행동할 수 있는 부대 ${reds.filter(u => !u.acted).length} / ${reds.length}` },
             ...reds.map(u => el('button', {
                 type: 'button', class: 'cw-roster-unit' + (u.acted ? ' is-done' : ''), 'data-key': `roster-${u.id}`, 'aria-pressed': String(u.id === selected),
                 'aria-label': `${u.name}, 병력 ${u.hp}/${u.maxHp}` + (featLeft(s.battle, u) ? `, 결정적 한 수 ${u.feat.name}` : '') + (u.acted ? ', 행동 마침' : ''),
