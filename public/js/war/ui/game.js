@@ -2507,39 +2507,40 @@
         const whiteMoved = b.events.some(e => e.type === 'attack' ? B.isEnemy(b, b.units.find(u => u.id === e.from)) : !['fall', 'turned', 'wear', 'feat', 'surrender', 'raised'].includes(e.type));
         const reds = b.units.filter(u => B.isPlayer(b, u) && u.hp > 0);
         const ready = reds.filter(u => !u.acted).length;
-        // What winning takes, and what stands in the way now.
-        const goalLines = def.goals.map(g => {
-            const holder = B.unitAt(b, ...g.at);
-            return holder && B.isEnemy(b, holder)
-                ? `목표 ${g.name}(붉은 깃발): ${holder.name}(병력 ${holder.hp}/${holder.maxHp})${josa(holder.name, '이', '가').slice(holder.name.length)} 지킨다. 쓰러뜨리거나 몰아낸 뒤 ${josa(U.playerUnits, '을', '를')} 들여보내면 이긴다`
-                : `목표 ${g.name}(붉은 깃발): ${josa(foeName(), '이', '가')} 없다. ${josa(U.playerUnits, '을', '를')} 들여보내면 이긴다`;
-        });
+        // What winning takes, and what stands in the way now: a checklist of
+        // short rows (label, state), the goals marked, an empty post alarmed.
+        const row = (label, text, tone) => ({ label, text, tone });
+        const postAt = def.protect && B.unitAt(b, ...def.protect.at);
         const status = [
-            `${Math.min(b.turn, def.turnLimit)} / ${def.turnLimit} 턴`,
-            ...goalLines,
-            def.windTurns ? (B.fordOpen(b) ? `${def.ford} 여울 열림 (${def.windTurns - b.turn + 1}턴 남음)` : `바람이 바뀌어 ${def.ford}에 물이 찼다`) : null,
-            ...Object.entries(def.lines).map(([id, l]) => b.turned[id] ? `${l.name} 우회됨: 뒤가 끊긴 수비대의 진지 방어가 +1로 줄었다` : `${l.name}: 점선 구역에 부대를 세우면 뒤가 끊겨 수비대의 진지 방어가 약해진다`),
-            !Object.keys(def.sectors).length ? null : b.reserve ? `${foeName()} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶여 있다` : `${foeName()} 예비대는 아직 움직이지 않았다`,
-            def.protect ? `${def.protect.name}: ${def.outlast ? `${def.turnLimit}턴이 끝날 때까지 지키면 이긴다 · ` : ''}${josa(foeName(), '이', '가')} 들어서면 진다${B.unitAt(b, ...def.protect.at) ? '' : ' · 지금 비어 있다'}` : null,
-        ];
+            row('턴', `${Math.min(b.turn, def.turnLimit)} / ${def.turnLimit}`),
+            ...def.goals.map(g => {
+                const holder = B.unitAt(b, ...g.at);
+                return row('목표', holder && B.isEnemy(b, holder)
+                    ? `${g.name}에 서면 승리 · ${josa(holder.name, '이', '가')} 지킴 (${holder.hp}/${holder.maxHp})`
+                    : `${g.name}에 서면 승리 · ${josa(foeName(), '이', '가')} 없음`, 'is-goal');
+            }),
+            def.protect ? row('지킬 곳', `${def.protect.name}${def.outlast ? ` · ${def.turnLimit}턴 끝까지 지키면 승리` : ''} · ${josa(foeName(), '이', '가')} 들어서면 패배${postAt ? '' : ' · 지금 비었음'}`, postAt ? null : 'is-alarm') : null,
+            def.windTurns ? row('여울', B.fordOpen(b) ? `${def.ford} 열림 · ${def.windTurns - b.turn + 1}턴 남음` : `${def.ford} 물에 잠김`) : null,
+            ...Object.values(def.lines).map((l, i) => row('우회', b.turned[Object.keys(def.lines)[i]] ? `${l.name} 끊음 · 진지 방어가 +1로 줄었다` : `${l.name} · 점선 구역에 서면 수비대의 뒤가 끊긴다`)),
+            !Object.keys(def.sectors).length ? null : row('예비대', b.reserve ? `${foeName()} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶임` : `${foeName()} 예비대는 아직 그대로`),
+        ].filter(Boolean);
         // How to play a turn, in the order it is done.
         const hint = foe || battleEnded ? null : el('ol', { class: 'cw-battle-howto' },
             el('li', {}, `${josa(U.playerUnits, '을', '를')} 누르면 갈 수 있는 밝은 칸과 칠 수 있는 적이 보입니다.`),
             el('li', {}, '칸을 눌러 옮기고, 적을 눌러 칩니다. 부대마다 한 턴에 한 번씩입니다.'),
             el('li', {}, '모두 움직였으면 「턴 종료」. 「취소」(Esc)는 이번 턴의 명령을 하나씩 되돌립니다.'),
             el('li', {}, `${foeName()} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 보입니다. 포병은 진지 위의 적을 칠 때마다 방어를 1 깎습니다.`));
-        const goalAt = def.goals.length;
         box.replaceChildren(
             el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             el('details', { class: 'cw-battle-brief' }, el('summary', {}, '작전 지시', el('span', {}, ` · ${def.summary}`)), ...def.brief.map(p => el('p', {}, p))),
             el('div', { class: 'cw-battle-layout' },
-                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', onscroll: keepVoiceInView }, board, moment, verdict), el('p', { class: 'cw-terrain-key' },
-                    ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
+                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', onscroll: keepVoiceInView }, board, moment, verdict), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
-                    el('ul', { class: 'cw-battle-status' }, ...status.filter(Boolean).map((t, i) => el('li', { class: i > 0 && i <= goalAt ? 'is-goal' : null }, t))),
+                    el('dl', { class: 'cw-battle-status' }, ...status.map(x => el('div', { class: x.tone || null }, el('dt', {}, x.label), el('dd', {}, x.text)))),
                     unit || foe || hint ? el('div', { id: 'cwUnitInfo', class: 'cw-unit-info' }, unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint) : null,
                     battleEnded ? battleClose(b) : el('div', { class: 'cw-battle-actions' },
+                        unit ? pickedStrip(b, unit) : null,
                         postOpen(b) ? el('p', { class: 'cw-post-alarm' }, `${josa(def.protect.name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 다음 턴에 들어오면 이 전투에서 진다.`) : null,
                         G.canTakeBack(s) ? el('button', { type: 'button', 'data-key': 'undo', title: 'Esc · 우클릭', onclick: takeBackOrder }, '취소') : null,
                         unit && !unit.acted ? el('button', { type: 'button', 'data-key': 'wait', onclick: () => { if (act('b:wait', unit.id)) afterBattleAct(`${unit.name} 대기`); } }, '이 부대 대기') : null,
@@ -2553,6 +2554,32 @@
         renderBattleVoice();
         placeMoment();
         placeVerdict();
+    }
+
+    // The terrain key, folded but for the war's first battle; kept as the
+    // player left it while the battle lasts.
+    let keyOpen = { b: null, open: false };
+    function terrainKey(b, ...items) {
+        if (keyOpen.b !== b) keyOpen = { b, open: !Object.keys(s.battles).length };
+        const fold = el('details', { class: 'cw-terrain-fold', open: keyOpen.open }, el('summary', {}, '지형 범례'), el('p', { class: 'cw-terrain-key' }, ...items));
+        fold.addEventListener('toggle', () => { keyOpen.open = fold.open; });
+        return fold;
+    }
+
+    // On a phone the picked unit rides over the pinned actions, so what it
+    // is and what it can do show with the board: its strength, its numbers,
+    // what it can do now, and its feat (hidden on a wide screen, where the
+    // unit's card beside the board says all of it).
+    function pickedStrip(b, u) {
+        const targets = !u.acted && featArmed !== u.id ? B.targets(b, u).length : 0;
+        const state = u.acted ? (B.canMove(b, u) ? '쳤다 · 아직 움직일 수 있다' : '행동을 마쳤다')
+            : featArmed === u.id ? '판에서 칠 적을 고른다'
+                : targets ? `칠 수 있는 적 ${targets} · 판에서 누른다` : u.moved ? '이동했다' : '밝은 칸을 눌러 옮긴다';
+        return el('div', { class: 'cw-act-unit' },
+            el('p', {}, el('strong', {}, u.name),
+                el('span', { class: 'cw-info-bar is-' + sideOf(b, u), style: `--hp:${(100 * u.hp / u.maxHp).toFixed(0)}%`, 'aria-hidden': 'true' }),
+                el('span', {}, `병력 ${u.hp}/${u.maxHp} · 공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} · 이동 ${u.mv}`)),
+            el('p', { class: 'cw-act-state' }, state, featPill(b, u, 'feat-bar')));
     }
 
     // The ended battle's verdict stamped across its board once the last
@@ -2734,6 +2761,18 @@
         used: '이 전투에서 이미 썼다.', acted: '이번 턴의 행동을 마쳐 다음 턴에 쓸 수 있다.', moved: '움직이기 전에 써야 한다. 다음 턴에 쓸 수 있다.',
         crowded: '곁에 빈 칸이 없다.', 'no-target': '닿는 적이 없다.',
     };
+    // A feat ready now, as its button: an aimed one switches on and off.
+    function featPill(b, u, key) {
+        if (!featLeft(b, u) || B.featBlock(b, u) || battleEnded) return null;
+        const f = u.feat;
+        const on = featArmed === u.id;
+        return f.kind === 'strike' || f.kind === 'assault' ? el('button', {
+            type: 'button', class: 'cw-feat-pill' + (on ? ' is-on' : ''), 'data-key': key, 'aria-pressed': String(on),
+            onclick: () => { featArmed = on ? null : u.id; renderBattle(); announce(on ? `${f.name} 끔` : `${f.name} 켬: 판에서 칠 적을 고른다`); },
+        }, `★ ${f.name}`, el('small', { class: 'cw-feat-state' }, on ? '켜짐' : '꺼짐'))
+            : el('button', { type: 'button', class: 'cw-feat-pill', 'data-key': key, onclick: () => { if (act('b:feat', u.id)) afterBattleAct(`${u.name}의 ${f.name}`); } }, `★ ${f.name}`);
+    }
+
     function featInfo(b, u) {
         if (!featLeft(b, u) && !(u.feat && b.heroics)) return null;
         const f = u.feat;
@@ -2746,12 +2785,7 @@
         // An aimed feat (a blow) is switched on and off; while on, its
         // targets are picked on the board. Any other is used at a press.
         const on = featArmed === u.id;
-        const name = !ready ? el('span', { class: 'cw-feat-pill' }, `★ ${f.name}`)
-            : aimed ? el('button', {
-                type: 'button', class: 'cw-feat-pill' + (on ? ' is-on' : ''), 'data-key': 'feat', 'aria-pressed': String(on),
-                onclick: () => { featArmed = on ? null : u.id; renderBattle(); announce(on ? `${f.name} 끔` : `${f.name} 켬: 판에서 칠 적을 고른다`); },
-            }, `★ ${f.name}`, el('small', { class: 'cw-feat-state' }, on ? '켜짐' : '꺼짐'))
-                : el('button', { type: 'button', class: 'cw-feat-pill', 'data-key': 'feat', onclick: () => { if (act('b:feat', u.id)) afterBattleAct(`${u.name}의 ${f.name}`); } }, `★ ${f.name}`);
+        const name = ready ? featPill(b, u, 'feat') : el('span', { class: 'cw-feat-pill' }, `★ ${f.name}`);
         const aims = ready && aimed ? [on ? el('strong', {}, ' 판에서 칠 적을 고른다.') : ' 켜면 판에서 칠 적을 고른다. 쓰지 않고 끄면 소진되지 않는다.'] : [];
         return el('div', { class: 'cw-feat' + (b.feats[f.id] ? ' is-used' : '') },
             el('p', { class: 'cw-feat-head' }, el('strong', {}, '결정적 한 수'), name),

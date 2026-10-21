@@ -595,7 +595,9 @@
 .cw-hit:hover { fill-opacity: .4; }
 .cw-place { font-size: 10px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
 .cw-place.is-flank { fill: var(--text-secondary); }
-.cw-terrain-key { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .78rem; color: var(--text-secondary); margin: 8px 0 0; }
+.cw-terrain-fold { margin: 8px 0 0; }
+.cw-terrain-fold summary { cursor: pointer; font-size: .78rem; color: var(--text-secondary); }
+.cw-terrain-key { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .78rem; color: var(--text-secondary); margin: 6px 0 0; }
 .cw-terrain-key span { display: inline-flex; align-items: center; gap: 5px; }
 .cw-terrain-key i { width: 14px; height: 14px; border: 1px solid var(--border); }
 .cw-terrain-key .k-steppe { background: color-mix(in srgb, #c8b77a 30%, var(--bg-surface)); }
@@ -690,8 +692,16 @@
 .cw-head.is-red { fill: var(--cw-red); }
 .cw-trail { stroke: var(--emap-blue); stroke-width: 2; stroke-dasharray: 3 3; fill: none; }
 .cw-battle-side { display: grid; gap: 12px; min-width: 0; }
-.cw-battle-status { list-style: none; padding: 0; margin: 0; display: grid; gap: 4px; font-size: .9rem; }
-.cw-battle-status li:first-child { font-weight: 800; font-size: 1.05rem; }
+.cw-battle-status { margin: 0; display: grid; gap: 4px; font-size: .88rem; line-height: 1.4; }
+/* A checklist: the row's label in a narrow column, its state beside it. */
+.cw-battle-status > div { display: grid; grid-template-columns: 4.2em minmax(0, 1fr); gap: 8px; padding: 3px 0 3px 8px; border-left: 3px solid transparent; }
+.cw-battle-status dt { color: var(--text-secondary); font-size: .78rem; padding-top: 1px; }
+.cw-battle-status dd { margin: 0; }
+.cw-battle-status > div:first-child dd { font-weight: 800; font-size: 1.05rem; }
+.cw-battle-status > div.is-goal { border-left-color: var(--clr-red); }
+.cw-battle-status > div.is-goal dd { font-weight: 700; }
+.cw-battle-status > div.is-alarm { border-left-color: var(--clr-red); background: color-mix(in srgb, var(--clr-red) 14%, transparent); }
+.cw-battle-status > div.is-alarm dd { font-weight: 700; }
 .cw-unit-info { border: 1px solid var(--border); padding: 10px 12px; background: var(--bg-canvas); }
 .cw-unit-info h3 { font-size: 1rem; }
 .cw-unit-info small { color: var(--text-secondary); font-weight: 400; }
@@ -779,7 +789,6 @@
 @keyframes cw-burst { from { scale: 0; } 45% { scale: 1.25; } to { scale: 1; } }
 @keyframes cw-rays { 0%, 100% { stroke-opacity: 1; } 50% { stroke-opacity: .25; } }
 @keyframes cw-cheer { 0%, 100% { translate: 0 0; } 40% { translate: 0 -7px; } }
-.cw-battle-status li.is-goal { border-left: 3px solid var(--clr-red); padding-left: 8px; font-weight: 700; }
 .cw-goal-flag { fill: var(--clr-red); stroke: #1d1d1b; stroke-width: 1; stroke-linejoin: round; pointer-events: none; }
 .cw-battle-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .cw-battle-events .games-kicker { margin: 0 0 4px; }
@@ -860,7 +869,7 @@
     .cw-grid-wrap, .cw-battle-side { display: contents; }
     .cw-grid-scroll { order: -2; }
     .cw-unit-info { order: -1; }
-    .cw-terrain-key { margin: 0; }
+    .cw-terrain-fold { margin: 0; }
 }
 @media (max-width: 720px) {
     .cw-intro { grid-template-columns: 1fr; }
@@ -873,7 +882,14 @@
     /* The battle's orders stay under the thumb below the grid. */
     .cw-battle-actions { position: sticky; bottom: 0; background: var(--bg-surface); border-top: 1px solid var(--border); padding-block: 8px; z-index: 2; }
     .cw-battle-actions .cw-primary { margin-left: auto; }
+    /* The picked unit over the pinned actions. */
+    .cw-act-unit { flex: 1 0 100%; display: grid; gap: 2px; padding-bottom: 6px; border-bottom: 1px solid var(--border); font-size: .8rem; }
+    .cw-act-unit p { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+    .cw-act-unit .cw-info-bar { max-width: 70px; }
+    .cw-act-state { color: var(--text-secondary); }
+    .games-shell .cw-act-unit .cw-feat-pill { min-height: 30px; padding: 2px 8px; font-size: .78rem; }
 }
+@media (min-width: 721px) { .cw-act-unit { display: none; } }
 @media (prefers-reduced-motion: no-preference) {
     .cw-option, .cw-front { transition: background-color .15s ease, border-color .15s ease; }
 }
