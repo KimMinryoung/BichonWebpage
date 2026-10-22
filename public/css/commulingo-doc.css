@@ -95,6 +95,13 @@
   color: var(--text-secondary);
 }
 
+/* A numbered clause list inside a quoted statute keeps its markers inside the
+   quote, clear of the rule, instead of hanging on it. */
+.book blockquote ol,
+.book blockquote ul {
+  padding-left: 1.6em;
+}
+
 /* Statistical tables in archival texts keep their columns intact and scroll
    horizontally on narrow screens. */
 .book .table-scroll {

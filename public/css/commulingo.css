@@ -4641,6 +4641,8 @@ a.commu-dict-chip:hover { text-decoration: none; }
     border-left: 3px solid var(--border-emphasis);
     color: var(--text-secondary);
 }
+.commu-doc-excerpt-body blockquote ol,
+.commu-doc-excerpt-body blockquote ul { padding-left: 1.6em; }
 .commu-doc-excerpt-body .note-ref { font-size: .72em; vertical-align: super; line-height: var(--leading-none); text-decoration: none; }
 .commu-doc-excerpt-body .notes-list { font-size: .85em; color: var(--text-muted); padding-left: 1.6em; }
 .commu-doc-excerpt-body .notes-list .back-link { text-decoration: none; margin-left: .25em; }
