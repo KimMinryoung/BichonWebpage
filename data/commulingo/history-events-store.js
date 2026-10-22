@@ -82,6 +82,10 @@ async function fetchEvents() {
         // periods are; event periods carry no qualifier or label, so the
         // string is the same in both languages.
         period: formatPeriod(periodFromRow(row)),
+        // [year, month, day] with 0 for an unknown part, for chronological
+        // sorting; null when the event is undated.
+        startDate: row.start_year == null ? null : [row.start_year, row.start_month || 0, row.start_day || 0],
+        endDate: row.end_year == null ? null : [row.end_year, row.end_month || 0, row.end_day || 0],
         startYear: row.start_year ?? null,
         endYear: row.end_year ?? row.start_year ?? null,
         title: t(row.title_ko, row.title_en),
@@ -132,11 +136,26 @@ async function loadCommuLingoHistoryEvents(options = {}) {
     return (await store.load(options)).data;
 }
 
+// The dictionary's sort_order is an editorial reading order, not a chronology,
+// so a person's events are listed by date: start, then end, undated last; ties
+// keep the dictionary order (Array#sort is stable). Snapshots written before
+// startDate existed fall back to the year.
+function sortEventsByDate(events) {
+    const key = (date, year) => date || (year == null ? null : [year, 0, 0]);
+    const compare = (a, b) => {
+        if (!a || !b) return (a ? 0 : 1) - (b ? 0 : 1);
+        for (let i = 0; i < 3; i++) if (a[i] !== b[i]) return a[i] - b[i];
+        return 0;
+    };
+    return [...events].sort((x, y) => compare(key(x.startDate, x.startYear), key(y.startDate, y.startYear))
+        || compare(key(x.endDate, x.endYear), key(y.endDate, y.endYear)));
+}
+
 async function loadCommuLingoPersonHistoryEvents(personId, options = {}) {
     const id = typeof personId === 'string' ? personId.trim() : '';
     if (!id) return [];
     const events = await loadCommuLingoHistoryEvents(options);
-    return events.flatMap(event => {
+    return sortEventsByDate(events).flatMap(event => {
         const relation = event.people.find(person => person.id === id);
         return relation ? [{
             id: event.id,
@@ -160,6 +179,7 @@ async function snapshotCommuLingoHistoryEvents() {
 module.exports = {
     loadCommuLingoHistoryEvents,
     loadCommuLingoPersonHistoryEvents,
+    sortEventsByDate,
     snapshotCommuLingoHistoryEvents,
     SNAPSHOT_PATH: store.snapshotPath,
 };
