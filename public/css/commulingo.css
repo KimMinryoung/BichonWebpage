@@ -4263,7 +4263,7 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 .commu-person-event-links a:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
 .commu-person-event-links a:hover span { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
 .commu-person-event-links a:hover em { color: var(--clr-cream, #f8edca); }
-.commu-person-event-links span { color: var(--text-muted); font-weight: 700; white-space: nowrap; }
+.commu-person-event-links span { color: var(--text-muted); font-weight: 700; }
 .commu-person-event-links strong { font-size: 1.05rem; }
 .commu-person-event-links em, .commu-person-event-links small { grid-column: 2; }
 @media (max-width: 560px) { .commu-event-timeline-list li { grid-template-columns: 1fr; gap: .2rem; } .commu-person-event-links a { grid-template-columns: 1fr; } .commu-person-event-links em, .commu-person-event-links small { grid-column: 1; } }
