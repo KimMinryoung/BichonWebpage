@@ -23,7 +23,7 @@
 
 ## 적용 도구와 검증
 
-- `scripts/apply-china-history.js`: 인물·절은 `submitPersonEdit`(create), 용어는 `submitTermEdit` → `reviewTermSuggestion` 승인, 사건은 전체 컬럼 INSERT, 사건–인물 관계 INSERT. 기본은 읽기 전용이며 격리 DB(`commulingo-content-test`/`commulingo_integrity_test`) 또는 `--production`(DB_HOST=leninbot-pg)에서만 실행된다. 쓰기는 `--apply`, 운영 쓰기는 `--backup=<새 파일>`이 필요하다. 같은 id가 이미 있으면 내용이 같을 때만 unchanged로 넘어가고 다르면 거부한다.
+- `scripts/apply-china-history.js`: 인물·절은 `submitPersonEdit`(create), 용어는 `submitTermEdit` → `reviewTermSuggestion` 승인, 사건은 전체 컬럼 INSERT, 사건–인물 관계 INSERT. 기본은 읽기 전용이며 격리 DB(`commulingo-content-test`/`commulingo_integrity_test`) 또는 `--production`(DB_HOST=leninbot-pg)에서만 실행된다. 쓰기는 `--apply`, 운영 쓰기는 `--backup=<새 파일>`이 필요하다. 같은 id가 이미 있으면 내용이 같을 때만 unchanged로 넘어가고 다르면 거부한다. (2026-10-22 삭제: 칼럼이 바뀌어 더는 실행되지 않는 일회성 적재 도구라 테스트와 함께 지웠다. 내용은 git 이력에 있다.)
 - `scripts/test-china-history-db.js`: 격리 사본에서 읽기 전용 무변경, 후반 실패 시 전체 롤백, 생성 후 재실행 무변경, 기존 행 변경 시 거부·보존을 검사한다. 2026-09-21 운영 스키마 + 사전 데이터(학습·사용자 테이블 제외)를 postgres:17-alpine 컨테이너에 복원해 통과했고, 같은 사본에서 인물 감사 4종·사건 위치·사건 인물 종류·한국어 시대 표기 감사를 돌려 배치 항목의 경고가 없음을 확인했다(감사의 기존 경고는 운영과 동일).
 - 운영 반영: 컨테이너 `/tmp`에 스크립트와 정본을 복사해 `APP_ROOT=/app node /tmp/apply-china-history.js /tmp/china-history-20260921.json --production`으로 사전 검사 후 `--apply --backup`으로 적용. 결과 people 48 created, sections 3, events 12, terms 15, relations 173. 이후 인물·사건·용어 스냅샷 강제 갱신, `audit-event-locations` 통과(107개), 신규·변경 URL 111개 Cloudflare 제거, 데스크톱·390px 브라우저 확인.
 - 백업: `/tmp/commulingo-china-20260921/before-182.dump`(migration 182 이전 그룹·인물·역할), `before-china-batch.dump`(배치 이전 사전 테이블), `china-before-20260921.json`(배치가 만난 기존 행 기록). 복구는 전체 덮어쓰기가 아니라 배치 id 목록(정본 JSON)의 행만 대상으로 하되, 이후 편집이 없는지 먼저 확인한다.

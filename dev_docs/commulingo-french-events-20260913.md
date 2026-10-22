@@ -15,7 +15,7 @@ CHNM/ASHP의 Hunt·Censer 편집 프랑스 혁명 자료, 국민의회·국민�
 ## 재현과 검증
 
 - `scripts/content/french-events-20260913.json`: 최종 본문·구조화된 문단·메타데이터·관계의 정본.
-- `scripts/apply-french-events.js`: 기본 읽기 전용. 운영은 `APP_ROOT=/app DB_HOST=leninbot-pg`와 `--production`; 쓰기는 추가로 `--apply --backup=/tmp/<고유파일>.json` 필요. 신규 사건 생성 전용이며, 같은 ID의 후속 편집은 거부한다. 최종값과 같으면 재실행 시 본문·타임스탬프를 바꾸지 않는다. 인물 테이블을 직접 쓰지 않는다.
+- `scripts/apply-french-events.js`: 기본 읽기 전용. 운영은 `APP_ROOT=/app DB_HOST=leninbot-pg`와 `--production`; 쓰기는 추가로 `--apply --backup=/tmp/<고유파일>.json` 필요. 신규 사건 생성 전용이며, 같은 ID의 후속 편집은 거부한다. 최종값과 같으면 재실행 시 본문·타임스탬프를 바꾸지 않는다. 인물 테이블을 직접 쓰지 않는다. (2026-10-22 삭제: 칼럼이 바뀌어 더는 실행되지 않는 일회성 적재 도구라 테스트와 함께 지웠다. 내용은 git 이력에 있다.)
 - `scripts/test-french-events-db.js`: `commulingo-french-events-test`의 `commulingo_integrity_test`에서만 실행. 읽기 전용으로 내보낸 운영 사건 컬럼과 검증 함수를 재현하고 인물 ID fixture를 사용했다. 읽기 전용 무변경·마지막 관계 실패 시 전체 롤백·정상 등록·재실행 무변경·본문/관계 충돌 보존 통과. 임시 DB 컨테이너는 제거했다.
 - 변경 스크립트 ESLint 및 최종 콘텐츠 구조 검증 통과. 운영 사전 검사와 반영 후 최종값 대조 통과. 기존 사건 93개·기존 인물 관계 3,340개는 전체 값이 보존되었다.
 - 공식 `snapshotCommuLingoHistoryEvents()` 갱신, Redis `xmlcache:sitemap:v5` 제거, 직접 영향받는 URL 75개를 Cloudflare에서 30개 이하씩 나누어 제거했다. 프런트엔드 재시작은 없었다.

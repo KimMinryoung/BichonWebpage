@@ -53,7 +53,7 @@
 
 ## 저장과 검증
 
-- 실행 도구: `scripts/apply-socialist-state-content.js`; 자료: `scripts/content/socialist-states-20260908.json`. 인물·절은 `submitPersonEdit` → Admin store 경로만 사용했다. 인물 테이블에 직접 INSERT하지 않았다.
+- 실행 도구: `scripts/apply-socialist-state-content.js`; 자료: `scripts/content/socialist-states-20260908.json`. 인물·절은 `submitPersonEdit` → Admin store 경로만 사용했다. 인물 테이블에 직접 INSERT하지 않았다. (2026-10-22 삭제: 칼럼이 바뀌어 더는 실행되지 않는 일회성 적재 도구라 테스트와 함께 지웠다. 내용은 git 이력에 있다.)
 - 배치는 단일 트랜잭션이다. 기존 용어는 본문·출처만 보완하며 기존 값이 바뀌면 거부한다. 신규 ID가 이미 존재하면 동일 내용인지 확인한다. 관계는 기존 행을 덮어쓰지 않는다.
 - 독립 PostgreSQL 17 컨테이너 `commulingo-content-test`, DB `commulingo_integrity_test`에서 검증했다. 운영 스키마와 사전 데이터만 복사했으며 학습진도와 사용자 테이블 데이터는 제외했다.
 - `scripts/test-socialist-state-content-db.js`: 후반 FK 오류 시 전체 롤백, 재실행 추가 변경 0건, 동시 편집 거부·보존, 기존 인물·사건·절 원문 보존, 25개 국가의 핵심 항목 존재를 검증했다. `COMMULINGO_ISOLATED_TEST=1`, 명시적 테스트 연결, `CONTENT_BASELINE`으로 변경 전 조회 JSON이 필요하다.
