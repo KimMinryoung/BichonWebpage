@@ -19,7 +19,7 @@ let count = 0;
 listCommuLingoDocs().forEach(doc => {
     Object.entries(doc.excerpts || {}).forEach(([kind, byId]) => {
         assert.ok(['people', 'terms', 'events'].includes(kind), `${doc.id}: excerpt kind ${kind}`);
-        Object.entries(byId).forEach(([id, anchor]) => {
+        Object.entries(byId).flatMap(([id, anchors]) => [].concat(anchors).map(anchor => [id, anchor])).forEach(([id, anchor]) => {
             if (anchor === 'toc') {
                 const contents = getCommuLingoDocContents(doc);
                 assert.ok(contents && contents.length, `${doc.id}: contents for ${kind}/${id} are empty`);

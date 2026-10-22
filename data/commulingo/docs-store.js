@@ -352,13 +352,17 @@ function getCommuLingoDocOriginalContent(doc) {
 // The heading id is the piece's title (a collection's h1, as in `redirects`);
 // "*" lends the whole document, for a short text that is the entry's subject;
 // "toc" lends its table of contents, for a book too long to print that is
-// still the entry's subject (getCommuLingoDocContents).
+// still the entry's subject (getCommuLingoDocContents). A list of heading ids
+// lends several pieces, which an event can quote where its narrative needs
+// each one ([[doc-excerpt:<doc id>#<heading id>]], event-doc-excerpts.js).
 function listCommuLingoDocExcerptsFor(kind, id) {
     const out = [];
     listCommuLingoDocs().forEach(doc => {
         const byId = doc.excerpts && doc.excerpts[kind];
-        const anchor = byId && Object.hasOwn(byId, id) ? byId[id] : null;
-        if (typeof anchor === 'string' && /^(\*|[A-Za-z0-9_-]+)$/.test(anchor)) out.push({ doc, anchor });
+        const declared = byId && Object.hasOwn(byId, id) ? byId[id] : null;
+        [].concat(declared ?? []).forEach(anchor => {
+            if (typeof anchor === 'string' && /^(\*|[A-Za-z0-9_-]+)$/.test(anchor)) out.push({ doc, anchor });
+        });
     });
     return out;
 }

@@ -46,5 +46,16 @@ function render(part, inline) {
     assert(!placeEventDocExcerpts('<p>[[doc-excerpt:letter]]</p>', [], 'ko').parts[0].html.includes('[['));
     assert.deepEqual(placeEventDocExcerpts('', excerpts, 'ko').trailing.map(part => part.index), [0, 1, 2]);
     assert.deepEqual(excerpts.map(excerpt => excerpt.docId), ['first', 'letter', 'last'], 'input readers are not mutated');
+
+    // One document lending several pieces: each marker names its heading.
+    const pieces = ['law-1871', 'draft-1927', 'law-1935'].map(anchor => ({ docId: 'code', anchor, title: anchor, docLang: 'ko', html: '<p>Text</p>' }));
+    const split = placeEventDocExcerpts(renderMarkdown('[[doc-excerpt:code#law-1935]]\n\nMiddle.\n\n[[doc-excerpt:code#law-1871]]\n\n[[doc-excerpt:code#law-1935]]\n\n[[doc-excerpt:code#no-such]]'), pieces, 'ko');
+    assert.deepEqual(split.parts.filter(part => part.excerpt).map(part => part.excerpt.anchor), ['law-1935', 'law-1871']);
+    assert.deepEqual(split.trailing.map(part => part.excerpt.anchor), ['draft-1927']);
+    const splitFallbacks = split.parts.filter(part => part.html?.includes('참고 문헌에서 읽기'));
+    assert.equal(splitFallbacks.length, 2);
+    assert.match(splitFallbacks[1].html, /href="\/commulingo\/docs\/code#no-such"/);
+    const bare = placeEventDocExcerpts(renderMarkdown('[[doc-excerpt:code]]\n\n[[doc-excerpt:code]]'), pieces, 'ko');
+    assert.deepEqual(bare.parts.filter(part => part.excerpt).map(part => part.excerpt.anchor), ['law-1871', 'draft-1927'], 'a bare marker takes the next unplaced piece');
     console.log('Event readers: narrative placement, fallback, no duplicates, stable controls and ordinary pages passed');
 })().catch(error => { console.error(error); process.exitCode = 1; });
