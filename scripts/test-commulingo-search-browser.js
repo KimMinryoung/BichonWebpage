@@ -217,6 +217,8 @@ const assert = require('node:assert/strict');
         await page.locator('details[data-facet="function"] > summary').click();
         await page.locator('details[data-facet="function"] .commu-people-chip:not(.is-active)').first().click();
         await page.waitForFunction(() => /function=/.test(location.search) && /q=Lenin/.test(location.search));
+        // Filter options carry no crawlable combination URL.
+        assert.equal(await page.locator('.commu-people-facet a[href*="?"]').count(), 0);
         await page.locator('#commu-people-search-input').fill('Stalin');
         await page.locator('#commu-people-search-input').press('Escape');
         await page.waitForFunction(() => !/q=/.test(location.search));

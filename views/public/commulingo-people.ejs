@@ -13,10 +13,12 @@
     var shelfTitles = { soviet: t.peopleOfTheSoviet, china: t.peopleOfChina, france: t.peopleOfFrance, world: t.peopleBeyondTheSoviet, scholars: t.researchers };
     var href = function(changes) { return explorerHref(state, changes); };
     var findActive = function(rows, id) { return rows.find(function(r) { return r.id === id; }); };
-    // Every option is a link to the resulting URL: the page works without
-    // script, and commulingo-people.js swaps #people-browser in place.
+    // Options are buttons holding only the resulting query, which
+    // commulingo-people.js swaps #people-browser to. As links, every page
+    // offered dozens of new filter combinations, and crawlers walked that
+    // endless space (2026-10 scrapers: 100k+ requests a day).
     function chip(url, label, count, isActive, icon, note) { %>
-        <a class="commu-dict-chip commu-people-chip<%= isActive ? ' is-active' : '' %>" href="<%= url %>"<%- isActive ? ' aria-current="true"' : '' %>><% if (icon) { %><%- roleIconSvg(icon) %><% } %><%= label %><% if (note) { %><small><%= note %></small><% } %><% if (count != null) { %> <span><%= count %></span><% } %></a>
+        <button type="button" class="commu-dict-chip commu-people-chip<%= isActive ? ' is-active' : '' %>" data-query="<%= url.split('?')[1] || '' %>" aria-pressed="<%= isActive ? 'true' : 'false' %>"><% if (icon) { %><%- roleIconSvg(icon) %><% } %><%= label %><% if (note) { %><small><%= note %></small><% } %><% if (count != null) { %> <span><%= count %></span><% } %></button>
     <% }
     // `current` marks a facet that holds a condition; the condition chips
     // below the bar say which.

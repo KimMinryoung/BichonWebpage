@@ -179,7 +179,7 @@
             var status = panel.querySelector('[data-facet-search-status]');
             var groups = Array.prototype.map.call(panel.querySelectorAll('[data-facet-group]'), function(node) {
                 var head = node.querySelector('h4');
-                return { node: node, title: head ? head.textContent : '', chips: Array.prototype.slice.call(node.querySelectorAll('a')) };
+                return { node: node, title: head ? head.textContent : '', chips: Array.prototype.slice.call(node.querySelectorAll('.commu-people-chip')) };
             });
             input.hidden = false;
             input.addEventListener('input', function() {
@@ -283,7 +283,21 @@
             .finally(function() { if (pending === controller) pending = null; });
     }
 
+    // A filter chip carries only its query; modified clicks open it apart
+    // the way a link would.
+    function chipUrl(chip) {
+        var query = chip.getAttribute('data-query');
+        return new URL(location.pathname + (query ? '?' + query : ''), location.href);
+    }
     document.addEventListener('click', function(event) {
+        var chip = event.target.closest('.commu-people-chip[data-query]');
+        if (chip && !event.defaultPrevented) {
+            var chipTarget = chipUrl(chip);
+            if (event.metaKey || event.ctrlKey || event.shiftKey) { window.open(chipTarget.href, '_blank', 'noopener'); return; }
+            if (searchInput) syncSearch(chipTarget.searchParams.get('q') || '');
+            swap(chipTarget.href, { push: true, scrollToResults: false });
+            return;
+        }
         if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         var link = event.target.closest('a[href]');
         var root = browser();
@@ -293,6 +307,11 @@
         event.preventDefault();
         if (searchInput) syncSearch(url.searchParams.get('q') || '');
         swap(url.href, { push: true, scrollToResults: !!link.closest('[data-commu-list-pager]') });
+    });
+
+    document.addEventListener('auxclick', function(event) {
+        var chip = event.button === 1 && event.target.closest('.commu-people-chip[data-query]');
+        if (chip) window.open(chipUrl(chip).href, '_blank', 'noopener');
     });
 
     // A #p-<id> hash change also fires popstate; only a new path or query

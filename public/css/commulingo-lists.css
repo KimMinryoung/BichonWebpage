@@ -2084,7 +2084,8 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-people-facet-status { margin: 0 0 var(--space-3); color: var(--text-secondary); font-size: var(--text-sm); }
 .commu-people-facet-group + .commu-people-facet-group { margin-top: var(--space-3); }
 .commu-people-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
-.commu-dict-chip.commu-people-chip { display: inline-flex; align-items: center; gap: .35rem; min-height: 36px; box-sizing: border-box; }
+.commu-dict-chip.commu-people-chip { display: inline-flex; align-items: center; gap: .35rem; min-height: 36px; box-sizing: border-box; line-height: var(--leading-tight); text-align: start; }
+.commu-people-chip[hidden] { display: none; }
 .commu-dict-facet-value { min-width: 0; overflow: hidden; font-weight: 400; text-overflow: ellipsis; white-space: nowrap; }
 .commu-dict-facet-value:empty { display: none; }
 .commu-dict-facet-value::before { content: '·'; margin-right: var(--space-2); }

@@ -6014,7 +6014,8 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-people-chips { display: flex; flex-wrap: wrap; gap: var(--space-2); }
 /* Two classes so it outranks a.commu-dict-chip's inline-block: the label must
    sit centred in the 36px box, link or button. */
-.commu-dict-chip.commu-people-chip { display: inline-flex; align-items: center; gap: .35rem; min-height: 36px; box-sizing: border-box; }
+.commu-dict-chip.commu-people-chip { display: inline-flex; align-items: center; gap: .35rem; min-height: 36px; box-sizing: border-box; line-height: var(--leading-tight); text-align: start; }
+.commu-people-chip[hidden] { display: none; }
 /* The chosen option, named after the facet title once a dictionary filter is set. */
 .commu-dict-facet-value { min-width: 0; overflow: hidden; font-weight: 400; text-overflow: ellipsis; white-space: nowrap; }
 .commu-dict-facet-value:empty { display: none; }
