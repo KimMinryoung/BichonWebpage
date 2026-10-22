@@ -24,7 +24,7 @@ const SIDED_KINDS = new Set(['leader', 'executor', 'participant', 'target']);
     try {
         const { rows: events } = await db.query(
             `SELECT id, to_jsonb(e)->'focus' AS focus, to_jsonb(e)->'sides' AS sides
-               FROM commulingo_history_events e ORDER BY sort_order, id`);
+               FROM commulingo_history_events e ORDER BY start_year NULLS LAST, start_month NULLS FIRST, start_day NULLS FIRST, end_year NULLS FIRST, end_month NULLS FIRST, end_day NULLS FIRST, id`);
         const { rows: links } = await db.query(
             `SELECT event_id, person_id, relation_kind, to_jsonb(ep)->>'side' AS side
                FROM commulingo_history_event_people ep ORDER BY event_id, sort_order, person_id`);

@@ -33,8 +33,8 @@ const DATASETS = {
     people_groups: 'SELECT * FROM commulingo_people_groups ORDER BY sort_order, id',
     offices: 'SELECT id, sort_order, range_label, title_ko, title_en, blurb_ko, blurb_en FROM commulingo_offices ORDER BY sort_order, id',
     office_rows: 'SELECT * FROM commulingo_office_rows ORDER BY id',
-    events: `SELECT id, sort_order, start_year, start_month, start_day, end_year, end_month, end_day, title_ko, title_en, summary_ko, summary_en, outcome_ko, outcome_en, timeline, locations,
-        to_jsonb(e)->'focus' AS focus, to_jsonb(e)->'sides' AS sides, updated_at FROM commulingo_history_events e ORDER BY sort_order, id`,
+    events: `SELECT id, start_year, start_month, start_day, end_year, end_month, end_day, title_ko, title_en, summary_ko, summary_en, outcome_ko, outcome_en, timeline, locations,
+        to_jsonb(e)->'focus' AS focus, to_jsonb(e)->'sides' AS sides, updated_at FROM commulingo_history_events e ORDER BY start_year NULLS LAST, start_month NULLS FIRST, start_day NULLS FIRST, end_year NULLS FIRST, end_month NULLS FIRST, end_day NULLS FIRST, id`,
     event_people: 'SELECT * FROM commulingo_history_event_people ORDER BY event_id, sort_order, person_id',
     terms: `SELECT id, term_ko, term_en, original, start_year, start_month, start_day, end_year, end_month, end_day, start_qual, end_qual, ongoing, period_label_ko, period_label_en, period_note_ko, period_note_en, definition_ko, definition_en, category, region, parent_id, updated_at
         FROM commulingo_terms ORDER BY sort_order, id`,

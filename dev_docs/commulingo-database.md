@@ -11,6 +11,8 @@
 
 인물의 역할·별칭·경력·절은 인물 ID를 참조한다. 용어는 분류 ID와 선택적 상위 용어를 참조하며, term_people / term_events / term_relations가 인물·사건·다른 용어를 연결한다. 사건의 인물 연결은 history_event_people에 있다. 편집 이력은 people_revisions에 같은 트랜잭션으로 기록된다.
 
+사건의 순서는 시기에서 나온다(2026-10-22, migration 369가 손으로 매기던 commulingo_history_events.sort_order 삭제). 사건 사전 목록, 사건 페이지의 이전/다음, 인물의 관련 사건이 모두 `history-events-store.js`의 sortEventsByDate 한 곳을 따른다: 시작일, 종료일 순(모르는 월·일은 0), 시기 없는 사건은 맨 뒤, 같으면 id. 사건 안의 인물 순서(history_event_people.sort_order)는 별개 칼럼으로 남아 있다.
+
 Migration 175는 역방향으로 겹치는 용어 관계만 정리한다. 두 행 중 term_id가 작은 행을 남기고 최소 sort_order를 보존한다. 단독 역방향 행은 유지한다. LEAST/GREATEST 고유 인덱스는 어느 방향으로 입력해도 중복을 거부한다. 관계 쓰기 도구는 기존 행을 먼저 찾거나 충돌 대상을 지정하지 않은 `ON CONFLICT DO NOTHING`을 사용해야 한다. `(term_id, related_id)`만 대상으로 지정한 upsert는 역방향 충돌을 처리하지 못한다.
 
 용어 category는 분류 FK로 검증하며 ID 변경은 CASCADE, 삭제는 RESTRICT다. 기존 category 인덱스를 재사용하고 term_people.person_id, term_events.event_id, term_relations.related_id에 역방향 인덱스를 추가한다. 인물 등록은 근거 있는 활동(activities)을 필수로 요구한다(2026-09-30, 구 role 필수에서 변경). 등록/upsert 경로는 그대로 유지한다.

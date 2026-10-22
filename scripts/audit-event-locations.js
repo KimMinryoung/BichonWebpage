@@ -34,7 +34,7 @@ const { sectionMarkerCodes } = require('../data/commulingo/event-countries');
         const { rows } = await db.query(
             `SELECT id, COALESCE(summary_ko, '') <> '' AS published, locations, timeline, body_ko, body_en, countries
                FROM commulingo_history_events
-              ORDER BY sort_order, id`
+              ORDER BY start_year NULLS LAST, start_month NULLS FIRST, start_day NULLS FIRST, end_year NULLS FIRST, end_month NULLS FIRST, end_day NULLS FIRST, id`
         );
         const okCoord = (lat, lng) => Number.isFinite(lat) && Number.isFinite(lng)
             && Math.abs(lat) <= 85 && Math.abs(lng) <= 180;

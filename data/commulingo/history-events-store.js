@@ -48,7 +48,7 @@ async function fetchEvents() {
                     to_jsonb(commulingo_history_events)->'term_links' AS term_links
              FROM commulingo_history_events
              WHERE COALESCE(summary_ko, '') <> ''
-             ORDER BY sort_order, id`
+             ORDER BY id`
         ),
         client.query(
             `SELECT ep.event_id, ep.person_id, ep.relation_kind, ep.relation_ko, ep.relation_en, ep.note_ko, ep.note_en,
@@ -75,7 +75,7 @@ async function fetchEvents() {
             note: t(row.note_ko, row.note_en),
         });
     });
-    return events.rows.map(row => ({
+    return sortEventsByDate(events.rows.map(row => ({
         id: row.id,
         linkExpressions: row.link_expressions || [],
         // Year/month/day columns (migration 362), formatted the way career
@@ -115,7 +115,7 @@ async function fetchEvents() {
         sides: Array.isArray(row.sides) ? row.sides : [],
         people: peopleByEvent[row.id] || [],
         updatedAt: row.updated_at ? new Date(row.updated_at).toISOString() : null,
-    }));
+    })));
 }
 
 const store = createDictionarySnapshotStore({
@@ -136,10 +136,11 @@ async function loadCommuLingoHistoryEvents(options = {}) {
     return (await store.load(options)).data;
 }
 
-// The dictionary's sort_order is an editorial reading order, not a chronology,
-// so a person's events are listed by date: start, then end, undated last; ties
-// keep the dictionary order (Array#sort is stable). Snapshots written before
-// startDate existed fall back to the year.
+// Events are listed by date everywhere (the dictionary list, prev/next on an
+// event page, a person's related events): start, then end, undated last, the
+// id breaking ties (rows arrive ordered by id and Array#sort is stable).
+// Migration 369 dropped the hand-kept sort_order that used to set the order.
+// Snapshots written before startDate existed fall back to the year.
 function sortEventsByDate(events) {
     const key = (date, year) => date || (year == null ? null : [year, 0, 0]);
     const compare = (a, b) => {
@@ -155,7 +156,7 @@ async function loadCommuLingoPersonHistoryEvents(personId, options = {}) {
     const id = typeof personId === 'string' ? personId.trim() : '';
     if (!id) return [];
     const events = await loadCommuLingoHistoryEvents(options);
-    return sortEventsByDate(events).flatMap(event => {
+    return events.flatMap(event => {
         const relation = event.people.find(person => person.id === id);
         return relation ? [{
             id: event.id,

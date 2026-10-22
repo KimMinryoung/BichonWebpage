@@ -14,7 +14,7 @@ const { canonicalPeriod } = require(path.join(root, 'data/commulingo/career-peri
 const { normalizeKoreanQuotes, normalizeKoreanTree } = require(path.join(root, 'data/commulingo/korean-quotes'));
 // The period is year/month/day columns (migrations 362/363), as in career entries.
 const periodColumns = ['start_year', 'start_month', 'start_day', 'end_year', 'end_month', 'end_day'];
-const columns = ['title_ko', 'title_en', ...periodColumns, 'sort_order', 'question_ko', 'question_en',
+const columns = ['title_ko', 'title_en', ...periodColumns, 'question_ko', 'question_en',
     'summary_ko', 'summary_en', 'outcome_ko', 'outcome_en', 'body_ko', 'body_en',
     'timeline', 'sources', 'locations', 'countries', 'relations', 'no_auto_link', 'link_expressions', 'focus', 'sides'];
 const jsonColumns = new Set(['timeline', 'sources', 'locations', 'countries', 'relations', 'no_auto_link', 'link_expressions', 'focus', 'sides']);
@@ -37,7 +37,6 @@ function validate(spec) {
         assert.deepEqual(Object.keys(e.fields).filter(c => !(c in OPTIONAL)).sort(), columns.filter(c => !(c in OPTIONAL)).sort());
         assert(Object.keys(e.fields).every(c => columns.includes(c)), 'unknown event field');
         const f = e.fields;
-        assert(Number.isInteger(f.sort_order));
         const period = canonicalPeriod({ start: [f.start_year, f.start_month, f.start_day].filter(v => v != null),
             ...(f.end_year != null ? { end: [f.end_year, f.end_month, f.end_day].filter(v => v != null) } : {}) }, `${e.id}.period`);
         assert(period.start, `${e.id}: period needs a start year`);
