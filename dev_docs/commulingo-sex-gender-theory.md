@@ -4,7 +4,7 @@
 
 | 학습 경로 | 원본 | 구성 |
 | --- | --- | --- |
-| `/commulingo/book/sex-gender-theory-intro` | `data/commulingo/courses/sex-gender-theory-intro.js` | 7편·42문항 짧은 학습(`format: 'short-learning'`, `category: 'history'`, 권 번호 15). 1~3편 2026-10-19 1차, 4~7편 같은 날 2차 |
+| `/commulingo/book/sex-gender-theory-intro` | `data/commulingo/courses/sex-gender-theory-intro.js` | 7편·42문항 짧은 학습(`format: 'short-learning'`, `category: 'theory'`(홈 ‘사상 논쟁’), 권 번호 15). 1~3편 2026-10-19 1차, 4~7편 같은 날 2차 |
 
 1. 여성 억압은 어디서 왔을까? 엥겔스 『가족, 사유재산, 국가의 기원』(1884 서문·제2장, 1891 제4판 증보 구별) / 베벨 『여성과 사회주의』(1879 초판과 1909 제50판 구별).
 2. 사랑과 성은 혁명의 의제인가? 레닌의 아르만트 편지(1915.1.17·24) / 콜론타이 「날개 달린 에로스에게 길을!」(1923)·「테제」(1921) / 체트킨 『레닌 회상』(후대 회고, 「물 한 잔 이론」 대목에 콜론타이 이름 없음).

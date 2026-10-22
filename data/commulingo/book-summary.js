@@ -35,6 +35,7 @@ function summarizeBooks(catalog) {
 function groupBooks(books, strings, lang) {
     const definitions = [
         { label: strings.categoryHistory || (lang === 'en' ? 'History' : '역사'), match: b => b.category === 'history' || /^history-/.test(b.id) },
+        { label: strings.categoryTheory || (lang === 'en' ? 'Debates in theory' : '사상 논쟁'), match: b => b.category === 'theory' },
         { label: strings.authorMarx || '카를 마르크스', match: b => /^capital/.test(b.id) || /^marx-/.test(b.id) },
         { label: strings.authorEngels || '프리드리히 엥겔스', match: b => /^engels/.test(b.id) },
         { label: strings.authorLenin || '블라디미르 레닌', match: b => /^lenin/.test(b.id) },

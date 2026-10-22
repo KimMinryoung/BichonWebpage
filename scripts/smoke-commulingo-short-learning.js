@@ -14,7 +14,7 @@ assert.equal(courses[0].chapters.flatMap(c => c.lessons).flatMap(l => l.question
 assert.deepEqual(courses[0].chapters.map(chapter => chapter.chapterNumber), Array.from({ length: 9 }, (_, i) => i + 1));
 assert.equal(courses[0].title.ko, '프랑스 혁명사');
 assert.equal(courses[1].visibility, undefined);
-assert.equal(courses[1].category, 'history');
+assert.equal(courses[1].category, 'theory');
 assert.deepEqual(courses[1].chapters.map(chapter => chapter.chapterNumber), Array.from({ length: courses[1].chapters.length }, (_, i) => i + 1));
 assert(courses[1].chapters.every(chapter => chapter.lessons[0].questions.length === 6));
 // Each period's narrative and its primary-source reading form one six-question

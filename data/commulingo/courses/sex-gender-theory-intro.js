@@ -3,7 +3,7 @@ module.exports = {
   "id": "sex-gender-theory-intro",
   "volumeNumber": 15,
   "format": "short-learning",
-  "category": "history",
+  "category": "theory",
   "title": {
     "ko": "마르크스주의와 성 이론",
     "en": "Marxism and Theories of Sex and Gender"
