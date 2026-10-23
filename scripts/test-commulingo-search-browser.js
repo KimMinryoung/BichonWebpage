@@ -7,9 +7,12 @@ const assert = require('node:assert/strict');
     const browser = await chromium.launch({ headless: true });
     try {
         const page = await browser.newPage({ viewport: { width: 1280, height: 900 }, locale: 'ko-KR' });
-        const errors = [], requests = [];
+        const errors = [], requests = [], swapFetches = [];
         page.on('pageerror', e => errors.push(e.message));
-        page.on('request', r => requests.push(r.url()));
+        page.on('request', r => {
+            requests.push(r.url());
+            if (r.resourceType() === 'fetch' && /\/commulingo\/people[/?]/.test(r.url())) swapFetches.push(r.headers()['x-commu-swap']);
+        });
         const origin = (process.env.BASE_URL || 'http://127.0.0.1:3001').replace(/\/$/, '');
         const input = page.locator('[data-commu-dict-search-input]');
         async function goto(path) { await page.goto(origin + path, { waitUntil: 'networkidle' }); }
@@ -219,6 +222,8 @@ const assert = require('node:assert/strict');
         await page.locator('details[data-facet="function"] > summary').click();
         await page.locator('details[data-facet="function"] .commu-people-chip:not(.is-active)').first().click();
         await page.waitForFunction(() => /function=/.test(location.search) && /q=Lenin/.test(location.search));
+        // The Cloudflare rule on filter URLs lets the explorer's own fetches through by this header.
+        assert(swapFetches.length > 0 && swapFetches.every(v => v === '1'), 'explorer fetches carry X-Commu-Swap');
         // Filter options carry no crawlable combination URL.
         assert.equal(await page.locator('.commu-people-facet a[href*="?"]').count(), 0);
         // So do the order and view tools, which still swap the results.

@@ -48,13 +48,17 @@
         setTimeout(function() { failed.remove(); }, 4000);
     }
 
+    // Marks the explorer's own requests: a Cloudflare rule challenges filter
+    // URLs fetched without it, which is how scrapers replay the URLs they
+    // collected from rotating addresses (2026-10).
+    var SWAP_HEADERS = { 'X-Commu-Swap': '1' };
     function fetchGroup(id, page) {
         var key = id + ':' + page;
         if (cardPages[key]) return cardPages[key];
         // Under /en/… the fragment comes from /en/… too, so its card links
         // carry the English prefix instead of costing a redirect per click.
         var url = langPrefix + '/commulingo/people/cards?group=' + encodeURIComponent(id) + '&page=' + page;
-        cardPages[key] = fetch(url, { credentials: 'same-origin' })
+        cardPages[key] = fetch(url, { credentials: 'same-origin', headers: SWAP_HEADERS })
             .then(function(res) {
                 if (!res.ok) throw new Error('HTTP ' + res.status);
                 return res.text();
@@ -258,7 +262,7 @@
         if (pending) pending.abort();
         var controller = pending = new AbortController();
         root.setAttribute('aria-busy', 'true');
-        fetch(url, { signal: controller.signal, credentials: 'same-origin' })
+        fetch(url, { signal: controller.signal, credentials: 'same-origin', headers: SWAP_HEADERS })
             .then(function(res) { if (!res.ok) throw new Error(res.status); return res.text(); })
             .then(function(html) {
                 var doc = new window.DOMParser().parseFromString(html, 'text/html');
