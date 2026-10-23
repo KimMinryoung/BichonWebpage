@@ -199,6 +199,9 @@
                 return groupsMeta.filter(function(group) { return group.shelf === shelf; }).length;
             }).concat([1]));
             %>
+            <%# Era cells and the researchers entry are buttons holding only their
+                query, like the filter chips: as links they were crawlers' way
+                into the filter space. %>
             <section class="commu-people-eras is-cols-<%= Math.min(eraColumns, 6) %>" aria-labelledby="commu-people-eras-title">
                 <h2 class="commu-people-eras-title" id="commu-people-eras-title"><%= t.eraTableTitle %></h2>
                 <% regionShelves.forEach(function(shelf) {
@@ -208,11 +211,11 @@
                     <h3 class="commu-people-era-region" title="<%= shelfTitles[shelf] %>"><%= t.shelfShort[shelf] %></h3>
                     <ul class="commu-people-era-cells">
                     <% groups.forEach(function(group) { %>
-                        <li><a class="commu-people-era-cell" href="<%= href({ eraId: group.id, view: 'list' }) %>" title="<%= group.blurb %>">
+                        <li><button type="button" class="commu-people-era-cell" data-query="<%= href({ eraId: group.id, view: 'list' }).split('?')[1] || '' %>" title="<%= group.blurb %>">
                             <span class="commu-people-range"><%= group.range %></span>
                             <strong><%= group.title %></strong>
                             <span class="commu-people-era-count"><%= group.count %><%= t.text %></span>
-                        </a></li>
+                        </button></li>
                     <% }) %>
                     </ul>
                 </div>
@@ -228,11 +231,11 @@
                 </a>
                 <% } %>
                 <% otherGroups.forEach(function(group) { %>
-                <a class="commu-people-entry" href="<%= href({ eraId: group.id, view: 'list' }) %>">
+                <button type="button" class="commu-people-entry" data-query="<%= href({ eraId: group.id, view: 'list' }).split('?')[1] || '' %>">
                     <span class="commu-people-entry-icon" aria-hidden="true"><%- roleIconSvg('book-open') %></span>
                     <span class="commu-people-entry-copy"><strong><%= group.title %> <span class="commu-people-era-count"><%= group.count %><%= t.text %></span></strong><small><%= group.blurb %></small></span>
                     <span class="commu-role-category-arrow" aria-hidden="true">→</span>
-                </a>
+                </button>
                 <% }) %>
             </div>
 

@@ -2565,6 +2565,8 @@ a.commu-office-row:focus-visible .commu-office-main em {
     color: var(--text-primary);
     text-decoration: none;
 }
+button.commu-people-era-cell,
+button.commu-people-entry { width: 100%; font: inherit; text-align: start; cursor: pointer; }
 .commu-people-entry-icon .commu-role-icon { width: 22px; height: 22px; }
 .commu-people-entry-copy { display: flex; flex: 1; flex-direction: column; gap: 2px; min-width: 0; }
 .commu-people-entry-copy small { color: var(--text-secondary); font-size: 0.85rem; }
