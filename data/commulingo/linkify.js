@@ -326,6 +326,7 @@ function createLinker(indexes, options = {}) {
                 const prev = offset > 0 ? source.charAt(offset - 1) : '';
                 if (WORD_CHAR.test(prev)) return match;
             }
+            if (insideTitle(context.text, context.offset + offset, match.length)) return match;
             let entry = index.byAlias[match];
             let expression = entry && index.expressions?.[entry.id + ':' + match];
             if (personContext) {
@@ -398,6 +399,17 @@ function createLinker(indexes, options = {}) {
         found,
         links,
     };
+}
+
+// A word inside 『…』 is part of a title, not a mention: the newspaper
+// 『일 리소르지멘토』 is not the movement, and linking it there also spent the
+// movement's first mention. Only a match that is the whole title links.
+function insideTitle(text, start, length) {
+    const open = start > 0 ? text.lastIndexOf('『', start - 1) : -1;
+    if (open < 0 ||text.lastIndexOf('』', start - 1) > open) return false;
+    const close = text.indexOf('』', open);
+    if (close < 0) return false;
+    return !(start === open + 1 && start + length === close);
 }
 
 // The pass for a reading unit's own word→term mappings: the same replacer as

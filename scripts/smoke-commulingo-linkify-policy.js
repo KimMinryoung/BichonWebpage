@@ -152,6 +152,15 @@ assert.doesNotMatch(paged.html('<p>겨울전쟁이 또 나온다.</p>'), /commu-
 assert.match(linker('person').plain('대숙청이 시작됐다.'), /\/commulingo\/events\/great-terror/);
 assert.doesNotMatch(linker('person').plain('대숙청이 시작됐다.'), /commu-term-link/);
 assert.match(linker('person').plain('『현물세』를 읽었다.'), /commu-doc-link/);
+assert.match(linker('person').plain('앞 문단.\n\n『현물세』를 읽었다.'), /commu-doc-link/);
+
+// A word inside 『…』 is part of a title, not a mention, and does not spend
+// the first mention: the plain word after the title links instead.
+const titled = linker('person').plain('『콜호스 이야기』를 쓴 스탈린, 그리고 콜호스.');
+assert.strictEqual(titled.split('commu-term-link').length - 1, 1, titled);
+assert.match(titled, /그리고 <a class="commu-term-link"[^>]*>콜호스<\/a>/);
+assert.doesNotMatch(linker('person').plain('『스탈린 전집』'), /commu-person-link/);
+assert.match(linker('person').plain('『콜호스』'), /commu-term-link/);
 
 // The family name links on its own, with no alias row to declare it…
 assert.match(linker('person').plain('류시코프의 전보'), /\/commulingo\/people\/lyushkov/);
