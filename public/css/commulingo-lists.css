@@ -911,7 +911,6 @@ a.commu-office-row:focus-visible .commu-office-main em {
     margin-right: 6px;
     padding: 1px 7px;
     border: 1px solid var(--border);
-    border-radius: 4px;
     background: var(--bg-inset);
     color: var(--text-secondary);
     white-space: nowrap;
