@@ -31,4 +31,5 @@
 - 정정: 재판 절의 「사형 선고 가운데 25명 총살」 → 사형 선고 95건 중 23명 처형(프랑스어 위키백과 「Commune de Paris」). 페레·로셀의 1871년 11월 28일 사토리 총살을 덧붙였다.
 - 본문: 바이양의 교육위원회, 프랑스 은행을 접수하지 않은 일(하루 40만 프랑 대출, 엥겔스 1891년 서문 인용), 리고의 인질 법령 집행·쇼데 총살·리고의 죽음, 5월 25일 아르쾨유 도미니코회 수사 처형, 발레스의 망명과 『반란자』, 베벨·리프크네히트의 전쟁 공채 기권·합병 반대·1872년 반역 재판. 첫 문장을 1851년 쿠데타에서 시작해 제2제정 사건으로 잇는다. 출처 45→50개, 한국어 본문 11,661자.
 - 인물: 신규 카드 `jules-valles`(혁명적 사회주의 모음, `scripts/migrations/data/paris-commune-depth-20261023-collections.sql`)를 participant로 연결. 케르젠체프 메모 정정(『1871년 파리 코뮌의 역사』, 1940), 게드는 target→witness·몽펠리에 《인권》 망명으로 고침.
+- 반대편 보강: 신규 카드 `gaston-de-galliffet`(1831–1909, 프랑스어 위키백과 기준)·`joseph-vinoy`(둘 다 반혁명 모음, `scripts/migrations/data/paris-commune-depth-20261023-opponents-collections.sql`)·`georges-darboy`(모음 없음)를 만들고, 갈리페·비누아·파브르·페리·비스마르크를 opponent, 다르부아를 target으로 연결했다(`opponents-people.json`, `opponents-links.json`). 트로쉬는 코뮌 이전 인물이라 넣지 않았다.
 - 진영(sides)은 넣지 않았다: 이 사건은 focus(「파리 코뮌과 그 방어자들」)+opponent 구조이고, focus와 sides는 함께 둘 수 없다(`commulingo-event-sides-20260929.md`의 운영자 결정).
