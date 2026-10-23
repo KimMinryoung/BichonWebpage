@@ -395,6 +395,7 @@ function normalizeCommuLingoPeople(data, options = {}) {
         title: localize(collection.title, lang),
         intro: localize(collection.intro, lang),
         href: `/commulingo/people?position=${encodeURIComponent(collection.id)}`,
+        termIds: collection.termIds || [],
         personIds: (collection.personIds || []).filter(id => peopleById[id]),
     }));
     people.forEach(person => { person.collections = []; });

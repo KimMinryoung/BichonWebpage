@@ -164,6 +164,10 @@
             <% if (activeAffiliation && activeAffiliation.termIds.length) { %>
             <a class="commu-people-term-link" href="/commulingo/terms/<%= encodeURIComponent(activeAffiliation.termIds[0]) %>"><span><%= en ? 'Glossary' : '용어 사전' %></span><strong><%= activeAffiliation.label %></strong><span aria-hidden="true">→</span></a>
             <% } %>
+            <%# The chosen position's glossary entries, one row per current it names. %>
+            <% (positionGlossary || []).forEach(function(g) { %>
+            <a class="commu-people-term-link" href="<%= g.href %>"><span><%= en ? 'Glossary' : '용어 사전' %></span><strong><%= g.term %></strong><span aria-hidden="true">→</span></a>
+            <% }) %>
             <% if (!people.length) { %>
             <p class="commu-people-result-empty"><%= state.q ? (en ? 'No people match this search and these conditions.' : '검색어와 조건에 맞는 인물이 없습니다.') : (en ? 'No people match these conditions.' : '조건에 맞는 인물이 없습니다.') %></p>
             <% } else if (explore.view === 'cards') { %>

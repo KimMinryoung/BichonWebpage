@@ -61,6 +61,8 @@ router.get('/people', async (req, res) => {
         });
         const active = explorer.hasConditions(state);
         const explore = explorer.exploreFor(standardized, state, lang);
+        const activePosition = explore.facets.positions.find(p => p.id === state.positionId);
+        const positionGlossary = activePosition ? await glossaryLinksFor(activePosition.termIds, lang) : [];
         setShortPublicCache(res);
         const resultLabel = explore.conditions.map(c => c.label).join(' · ');
         res.render('public/commulingo-people', {
@@ -68,6 +70,7 @@ router.get('/people', async (req, res) => {
             active,
             explore,
             explorerHref: explorer.explorerHref,
+            positionGlossary,
             offices: standardized.offices,
             bodies: availableBodies(lang),
             groupsMeta: peopleShellFor(standardized).groupsMeta,

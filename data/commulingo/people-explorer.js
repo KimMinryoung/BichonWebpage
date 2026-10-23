@@ -146,7 +146,7 @@ function facetsFor(standardized, state, pool, lang) {
     const positionCounts = new Map();
     for (const p of positionPool) for (const c of p.collections || []) positionCounts.set(c.id, (positionCounts.get(c.id) || 0) + 1);
     const positions = keep((standardized.collections || []).map(c => ({
-        id: c.id, icon: c.icon, label: c.title, intro: c.intro || '', count: positionCounts.get(c.id) || 0,
+        id: c.id, icon: c.icon, label: c.title, intro: c.intro || '', termIds: c.termIds || [], count: positionCounts.get(c.id) || 0,
     })), state.positionId);
 
     // Citizenship and national background are the person's two flags

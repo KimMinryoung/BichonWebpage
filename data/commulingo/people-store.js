@@ -112,7 +112,7 @@ async function fetchRows() {
              ORDER BY entity_type, from_id`
         ),
         client.query(
-            `SELECT id, icon, title_ko, title_en, intro_ko, intro_en, updated_at
+            `SELECT id, icon, title_ko, title_en, intro_ko, intro_en, term_ids, updated_at
              FROM commulingo_person_collections
              ORDER BY sort_order, id`
         ),
@@ -253,6 +253,7 @@ function rowsToPeopleData(rows) {
         icon: row.icon || '',
         title: t(row.title_ko, row.title_en),
         intro: t(row.intro_ko, row.intro_en),
+        termIds: row.term_ids || [],
         personIds: collectionMembers[row.id] || [],
         updatedAt: latestTimestamp(row.updated_at),
     }));

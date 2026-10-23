@@ -691,6 +691,11 @@ Current `/commulingo/people` UX:
 - `/commulingo/activities` 301-redirects here with its query; activity links
   (`activityHref`) point here directly. `/commulingo/roles/<collection>`
   301-redirects to `?position=<collection>`; the separate collection page is gone.
+- A chosen era shows its tag (title + years) and blurb above the results; a chosen
+  affiliation or position shows its glossary rows. Positions name their entries in
+  `commulingo_person_collections.term_ids` (migration 370, one per current for a
+  combined position; missing ids are skipped). Position titles name a current,
+  movement or faction, never a category of people (아나키즘, not 아나키스트; 2026-10-23).
 - The office timeline index (the Soviet office timelines) is collapsed by default and sits after the shelves.
 - Each individual office timeline card inside it is also collapsed by default.
 - Each office timeline card includes a small `기관 페이지 →` / `Office page →`
