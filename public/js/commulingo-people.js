@@ -283,14 +283,15 @@
             .finally(function() { if (pending === controller) pending = null; });
     }
 
-    // A filter chip carries only its query; modified clicks open it apart
-    // the way a link would.
+    // Filter chips and the order/view tools carry only their query;
+    // modified clicks open it apart the way a link would.
+    var QUERY_BUTTON = '.commu-people-chip[data-query], .commu-people-tool[data-query]';
     function chipUrl(chip) {
         var query = chip.getAttribute('data-query');
         return new URL(location.pathname + (query ? '?' + query : ''), location.href);
     }
     document.addEventListener('click', function(event) {
-        var chip = event.target.closest('.commu-people-chip[data-query]');
+        var chip = event.target.closest(QUERY_BUTTON);
         if (chip && !event.defaultPrevented) {
             var chipTarget = chipUrl(chip);
             if (event.metaKey || event.ctrlKey || event.shiftKey) { window.open(chipTarget.href, '_blank', 'noopener'); return; }
@@ -310,7 +311,7 @@
     });
 
     document.addEventListener('auxclick', function(event) {
-        var chip = event.button === 1 && event.target.closest('.commu-people-chip[data-query]');
+        var chip = event.button === 1 && event.target.closest(QUERY_BUTTON);
         if (chip) window.open(chipUrl(chip).href, '_blank', 'noopener');
     });
 

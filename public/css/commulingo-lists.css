@@ -2117,7 +2117,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-people-results-head h2 { margin: 0; font-size: var(--text-lg); }
 .commu-people-results-tools { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 .commu-people-results-tools > span { display: inline-flex; border: 1px solid var(--border); }
-.commu-people-tool { display: inline-flex; align-items: center; gap: var(--space-1); min-height: 32px; padding: 0 var(--space-3); color: var(--text-muted); font-size: var(--text-sm); text-decoration: none; }
+.commu-people-tool { display: inline-flex; align-items: center; gap: var(--space-1); min-height: 32px; padding: 0 var(--space-3); color: var(--text-muted); font-size: var(--text-sm); text-decoration: none; border: 0; background: none; font-family: inherit; cursor: pointer; }
 .commu-people-tool + .commu-people-tool { border-left: 1px solid var(--border); }
 .commu-people-tool:hover { color: var(--text-primary); background: color-mix(in srgb, var(--link) 12%, transparent); text-decoration: none; }
 .commu-people-tool.is-active { color: var(--clr-cream, #f8edca); background: var(--accent); font-weight: 600; }

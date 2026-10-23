@@ -143,12 +143,14 @@
             <% if (active) { %>
             <div class="commu-people-results-head" id="people-results" tabindex="-1">
                 <h2 aria-live="polite"><%= explore.pagination.matched %><%= en ? (explore.pagination.matched === 1 ? ' person' : ' people') : '명' %></h2>
+                <%# Buttons like the filter chips: as links, order and view multiplied
+                    every filter combination crawlers walked (2026-10). %>
                 <div class="commu-people-results-tools">
                     <span role="group" aria-label="<%= en ? 'Order' : '정렬' %>">
-                    <% explore.sorts.forEach(function(s) { %><a class="commu-people-tool<%= s.active ? ' is-active' : '' %>" href="<%= s.href %>"<%- s.active ? ' aria-current="true"' : '' %>><%= { relevance: en ? 'Best match' : '관련도순', chrono: en ? 'By birth' : '연대순', name: en ? 'A–Z' : '가나다순' }[s.id] %></a><% }) %>
+                    <% explore.sorts.forEach(function(s) { %><button type="button" class="commu-people-tool<%= s.active ? ' is-active' : '' %>" data-query="<%= s.href.split('?')[1] || '' %>" aria-pressed="<%= s.active ? 'true' : 'false' %>"><%= { relevance: en ? 'Best match' : '관련도순', chrono: en ? 'By birth' : '연대순', name: en ? 'A–Z' : '가나다순' }[s.id] %></button><% }) %>
                     </span>
                     <span role="group" aria-label="<%= en ? 'View' : '보기' %>">
-                    <% explore.views.forEach(function(v) { %><a class="commu-people-tool<%= v.active ? ' is-active' : '' %>" href="<%= v.href %>"<%- v.active ? ' aria-current="true"' : '' %>><%- roleIconSvg(v.id === 'list' ? 'list' : 'layout-grid') %><%= v.id === 'list' ? (en ? 'List' : '목록') : (en ? 'Cards' : '카드') %></a><% }) %>
+                    <% explore.views.forEach(function(v) { %><button type="button" class="commu-people-tool<%= v.active ? ' is-active' : '' %>" data-query="<%= v.href.split('?')[1] || '' %>" aria-pressed="<%= v.active ? 'true' : 'false' %>"><%- roleIconSvg(v.id === 'list' ? 'list' : 'layout-grid') %><%= v.id === 'list' ? (en ? 'List' : '목록') : (en ? 'Cards' : '카드') %></button><% }) %>
                     </span>
                 </div>
             </div>
