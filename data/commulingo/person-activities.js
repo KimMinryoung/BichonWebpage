@@ -105,7 +105,15 @@ function validateActivities(value, sources = [], { officeIds } = {}) {
         if ((a.affiliationStatus === 'independent') !== (a.relation === 'independent') || (a.affiliationStatus === 'unresolved') !== (a.relation === 'unresolved')) throw badRequest('activity relation contradicts affiliation status');
         if (a.officeId != null) {
             if (typeof a.officeId !== 'string' || (officeIds && !officeIds.has(a.officeId))) throw badRequest('unknown activity officeId');
-            if (!OFFICE_AFFILIATIONS.has(a.affiliationId)) throw badRequest('activity officeId requires a Soviet state, Soviet party or Comintern affiliation');
+            // officeIds maps an office to its country (commulingo_offices.country):
+            // a Soviet office takes a Soviet state, party or Comintern
+            // affiliation, any other one an affiliation of its own country.
+            const country = officeIds instanceof Map ? officeIds.get(a.officeId) : 'soviet';
+            if (country === 'soviet' ? !OFFICE_AFFILIATIONS.has(a.affiliationId) : affiliations.get(a.affiliationId)?.countryCode !== country) {
+                throw badRequest(country === 'soviet'
+                    ? 'activity officeId requires a Soviet state, Soviet party or Comintern affiliation'
+                    : `activity officeId ${a.officeId} requires an affiliation of ${country}`);
+            }
         }
         // The post held (바이에른 총리 겸 외무장관): a display name, never parsed.
         // Offices with their own page are officeId; this names any other post.

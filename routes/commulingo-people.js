@@ -185,7 +185,9 @@ router.get('/offices/:officeId', async (req, res) => {
         // The people link filters by activity affiliation and officeId: use the
         // affiliation that finds the most people (party and Comintern lines are
         // not mostly state-soviet), and drop the link when none finds anyone.
-        const [officeAffiliation] = [...activitiesModel.OFFICE_AFFILIATIONS]
+        const officeAffiliations = new Set(standardized.people.flatMap(person => (person.activities || [])
+            .filter(a => a.officeId === office.id && a.affiliationId).map(a => a.affiliationId)));
+        const [officeAffiliation] = [...officeAffiliations]
             .map(affiliationId => [affiliationId, standardized.people
                 .filter(person => activitiesModel.matchesActivities(person, { affiliationId, officeId: office.id })).length])
             .filter(([, count]) => count > 0)

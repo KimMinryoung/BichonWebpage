@@ -17,9 +17,10 @@ const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-v
 const { personLifeProblems } = require('./person-life-years');
 const { assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, assertFamilyFirstParts, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate, normalizeNameQualifier } = require('./people-admin-validation');
 
+// Office id -> country, for the activity officeId check.
 async function officeIdSet(client) {
-    const { rows } = await client.query('SELECT id FROM commulingo_offices');
-    return new Set(rows.map(row => row.id));
+    const { rows } = await client.query('SELECT id, country FROM commulingo_offices');
+    return new Map(rows.map(row => [row.id, row.country]));
 }
 
 // Person records for the CommuLingo admin API: list/get, create/update/

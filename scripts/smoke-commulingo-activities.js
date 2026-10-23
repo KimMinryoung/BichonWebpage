@@ -95,6 +95,9 @@ const officeActivity = { ...primary, functionId: 'security', affiliationId: 'sta
 assert.deepEqual(validateActivities([officeActivity], sources, { officeIds: new Set(['state-security']) }), [officeActivity]);
 assert.throws(() => validateActivities([officeActivity], sources, { officeIds: new Set(['defence']) }), /unknown activity officeId/);
 assert.throws(() => validateActivities([{ ...officeActivity, affiliationId: 'china-prc', startYear: 1950, endYear: 1960 }], sources), /requires a Soviet/);
+const frenchOffices = new Map([['state-security', 'soviet'], ['france-leadership', 'france']]);
+assert.doesNotThrow(() => validateActivities([{ ...officeActivity, officeId: 'france-leadership', affiliationId: 'french-first-republic', startYear: 1793, endYear: 1794 }], sources, { officeIds: frenchOffices }));
+assert.throws(() => validateActivities([{ ...officeActivity, officeId: 'france-leadership' }], sources, { officeIds: frenchOffices }), /requires an affiliation of france/);
 const legacyOffice = displayActivities([officeActivity], 'ko', { 'state-security': { ko: '국가보안 기관', en: 'State security agencies' } })[0];
 assert.equal(legacyOffice.officeId, 'state-security');
 assert.equal(legacyOffice.officeLabel, '국가보안 기관');

@@ -126,10 +126,15 @@ function facetsFor(standardized, state, pool, lang) {
     const activeAffiliation = affiliations.find(a => a.id === state.affiliationId);
     if (activeAffiliation && !topAffiliations.includes(activeAffiliation)) topAffiliations.push(activeAffiliation);
 
-    // Institution lines only narrow Soviet activities: offered once a Soviet
-    // affiliation is chosen (or when a link arrives with one).
-    const offices = state.officeId || activitiesModel.OFFICE_AFFILIATIONS.has(state.affiliationId)
-        ? keep(standardized.offices.map(o => ({
+    // Institution lines narrow one country's activities: offered once an
+    // affiliation with lineages is chosen (a Soviet state, party or Comintern
+    // one for the Soviet lines, a French one for the French), or when a link
+    // arrives with one.
+    const officeCountry = activitiesModel.OFFICE_AFFILIATIONS.has(state.affiliationId)
+        ? 'soviet' : activitiesModel.affiliations.get(state.affiliationId)?.countryCode;
+    const countryOffices = standardized.offices.filter(o => (officeCountry && o.country === officeCountry) || o.id === state.officeId);
+    const offices = countryOffices.length
+        ? keep(countryOffices.map(o => ({
             id: o.id, label: o.title,
             count: countIn(activityPool, p => activitiesModel.matchesActivities(p, activityFilter(state, { officeId: o.id }))),
         })), state.officeId)

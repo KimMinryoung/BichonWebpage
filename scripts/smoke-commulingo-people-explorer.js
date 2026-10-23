@@ -24,7 +24,7 @@ const standardized = {
         { id: 'scholars', shelf: 'world', title: '연구자', range: '1892–', people: [people[3]] },
     ],
     collections: [{ id: 'marxism-leninism', icon: 'hammer-sickle', title: '마르크스-레닌주의', personIds: ['lenin', 'dzerzhinsky'] }],
-    offices: [{ id: 'state-security', title: '국가보안 기관', rows: [] }],
+    offices: [{ id: 'state-security', country: 'soviet', title: '국가보안 기관', rows: [] }],
 };
 const run = query => explorer.exploreFor(standardized, explorer.parseExplorerQuery(query), 'ko');
 const ids = result => result.matched.map(p => p.id);
@@ -52,7 +52,7 @@ assert.deepEqual(functionCounts, [...functionCounts].sort((a, b) => b - a), 'fun
 assert.equal(count(security.facets.eras, 'mao'), 1);
 assert.equal(count(security.facets.eras, 'scholars'), undefined, 'empty options drop out');
 assert.equal(count(security.facets.citizenships, 'soviet'), 1);
-assert.equal(security.facets.offices.length, 0, 'institution lines wait for a Soviet affiliation');
+assert.equal(security.facets.offices.length, 0, 'institution lines wait for an affiliation of their country');
 assert.equal(run({ affiliation: 'state-soviet' }).facets.offices.length, 1);
 assert.equal(count(run({ affiliation: 'state-soviet' }).facets.affiliations, 'state-soviet'), 1);
 assert.equal(run({}).facets.affiliations.find(a => a.id === 'state-soviet').label, '소련 국가기관');
