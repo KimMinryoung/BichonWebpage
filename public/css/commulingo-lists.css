@@ -2137,7 +2137,6 @@ button.commu-people-condition-reset { background: none; }
 .commu-people-term-link > span:first-child { color: var(--text-muted); font-size: var(--text-sm); }
 .commu-people-term-link > span:last-child { margin-left: auto; color: var(--text-muted); }
 .commu-people-term-link + .commu-people-term-link { margin-top: calc(-1 * var(--space-4) - 1px); }
-.commu-people-term-link + .commu-people-term-link > span:first-child { visibility: hidden; }
 .commu-people-term-link:hover { background: color-mix(in srgb, var(--link) 10%, transparent); color: var(--text-primary); text-decoration: none; }
 .commu-people-rows { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--border); }
 .commu-people-row { border-bottom: 1px solid var(--border); }
