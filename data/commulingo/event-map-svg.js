@@ -28,6 +28,9 @@ const SURROUND_MIN_LON_SPAN = 90;
 const INSET_W = 126;
 const INSET_LAT_TOP = 84;   // world inset crops the empty polar bands
 const INSET_LAT_BOTTOM = -60;
+// A badge farther than this from its marker (the resting offset is ~16px)
+// gets a leader line back to it.
+const LEADER_MIN_PX = 22;
 
 function esc(value) {
     return String(value == null ? '' : value)
@@ -511,7 +514,7 @@ function renderGeometryLayer(geos, lang, frame, projectPt, avoid) {
             parts.push(`<g class="emap-geo" data-geo-num="${num}">`
                 + `<circle class="emap-marker" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="5"/>`
                 + '</g>');
-            badges.push({ num, name: place, x: x + 11, y: y - 11 });
+            badges.push({ num, name: place, x: x + 11, y: y - 11, tx: x, ty: y });
         } else {
             const pts = geo.points.map(projectPt);
             const variant = ARROW_VARIANTS[geo.variant] || 'neutral';
@@ -524,7 +527,7 @@ function renderGeometryLayer(geos, lang, frame, projectPt, avoid) {
             // The highlight label names the mover first: 「독일 제6군 · 칼라치」.
             const actor = localize(geo.actor, lang);
             const name = actor && place ? `${actor} · ${place}` : (actor || place);
-            badges.push({ num, name, x: mid[0] + 12, y: mid[1] - 6 });
+            badges.push({ num, name, x: mid[0] + 12, y: mid[1] - 6, tx: mid[0], ty: mid[1] });
             if (actor) {
                 const key = `${variant}|${actor}`;
                 let row = legendSeen.get(key);
@@ -565,6 +568,19 @@ function renderGeometryLayer(geos, lang, frame, projectPt, avoid) {
         const slot = candidates.find(free);
         if (slot) Object.assign(badge, slot);
         placed.push(badge);
+    }
+    // A badge pushed off its spot by a crowd (nine Paris sites, a world-scale
+    // frame) would otherwise sit unexplained over another country: a thin
+    // leader runs from the marker to the number. Drawn before the badges so
+    // the circles cover its end; it carries data-geo-num to dim with them.
+    for (const badge of badges) {
+        const x = Math.min(frame.width - 12, Math.max(12, badge.x));
+        const y = Math.min(frame.height - 12, Math.max(12, badge.y));
+        const dist = Math.hypot(x - badge.tx, y - badge.ty);
+        if (dist <= LEADER_MIN_PX) continue;
+        const sx = badge.tx + (x - badge.tx) * 6 / dist;
+        const sy = badge.ty + (y - badge.ty) * 6 / dist;
+        parts.push(`<line class="emap-leader" data-geo-num="${badge.num}" x1="${sx.toFixed(1)}" y1="${sy.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}"/>`);
     }
     for (const badge of badges) {
         const x = Math.min(frame.width - 12, Math.max(12, badge.x));
@@ -866,4 +882,4 @@ function renderRegionMapSvg(box, control, label) {
     return { svg: parts.join('\n'), width: frame.width, height: frame.height, project: (lat, lng) => project(lng, lat) };
 }
 
-module.exports = { renderEventMapSvg, renderRegionMapSvg, timelineGeos, numberedGeos, isCityScale };
+module.exports = { renderEventMapSvg, renderRegionMapSvg, timelineGeos, numberedGeos, isCityScale, validGeo };

@@ -33,3 +33,15 @@ assert.equal(numberedGeos(moscow, wider).length, 3);
 assert(!isCityScale(moscow, []), 'no timeline geometry is not city scale');
 console.log('City-scale events draw the city alone and leave the sites to the timeline rows.');
 
+// A crowd pushed off its marker (nine Paris sites on a world-scale frame) gets
+// leader lines back to the markers, ending on the badge they belong to.
+const paris = [{ lat: 48.8566, lng: 2.3522, kind: 'main', label: { ko: '파리', en: 'Paris' } }];
+const crowd = Array.from({ length: 9 }, (_, i) => site(48.80 + i * 0.01, 2.10 + i * 0.03, `Paris ${i}`))
+    .concat(site(-22.27, 166.45, 'Noumea'));
+const crowdSvg = renderEventMapSvg(paris, 'en', 'crowd', crowd, null).svg;
+const leaders = [...crowdSvg.matchAll(/<line class="emap-leader" data-geo-num="(\d+)"[^>]* x2="([\d.]+)" y2="([\d.]+)"/g)];
+assert(leaders.length >= 3, 'displaced badges draw leader lines');
+for (const [, num, x2, y2] of leaders) {
+    assert(crowdSvg.includes(`<g class="emap-badge" data-geo-num="${num}"><circle cx="${x2}" cy="${y2}"`), `leader ${num} ends on its badge`);
+}
+console.log('Displaced map badges draw a leader line to their marker.');

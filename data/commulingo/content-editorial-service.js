@@ -10,6 +10,8 @@ const { badRequest, requireId } = require('./people-admin-fields');
 const offices = require('./people-offices-store');
 const { canonicalPeriod } = require('./career-period');
 const { normalizeKoreanQuotes } = require('./korean-quotes');
+const { validGeo } = require('./event-map-svg');
+const { FLAG_NAMES } = require('./flag-icons');
 
 const TARGETS = ['history_event', 'history_event_section', 'history_event_person', 'office_row'];
 const RELATION_KINDS = ['leader', 'executor', 'participant', 'opponent', 'target', 'witness', 'historian'];
@@ -121,8 +123,22 @@ async function validateEvent(client, id, fields) {
     if (fields.timeline !== undefined && fields.timeline !== null) {
         if (!Array.isArray(fields.timeline) || !fields.timeline.length) throw badRequest('timeline must be a non-empty list');
         fields.timeline.forEach((item, i) => {
-            if (!isLocalized(item) || Object.keys(item).some(key => !['period', 'title', 'body'].includes(key))) {
-                throw badRequest(`timeline[${i}] must be {period, title {ko,en}, body {ko,en}}`);
+            // geo and country ride along: a rewrite that dropped them would
+            // silently erase the row's map number and flags.
+            if (!isLocalized(item) || Object.keys(item).some(key => !['period', 'title', 'body', 'geo', 'country'].includes(key))) {
+                throw badRequest(`timeline[${i}] must be {period, title {ko,en}, body {ko,en}, geo?, country?}`);
+            }
+            if (item.geo !== undefined && (!validGeo(item.geo)
+                || ['label', 'actor'].some(key => item.geo[key] !== undefined && !hasBoth(item.geo[key])))) {
+                throw badRequest(`timeline[${i}].geo must be {kind: point, lat, lng} or {kind: arrow, points: [[lat, lng], ...]}, with label/actor as {ko, en}`);
+            }
+            if (item.country !== undefined) {
+                // Older rows store one code as a bare string; the readers take both.
+                const codes = typeof item.country === 'string' ? [item.country] : item.country;
+                if (!Array.isArray(codes) || !codes.length || codes.some(code => !FLAG_NAMES[code])) {
+                    throw badRequest(`timeline[${i}].country must be a non-empty list of known country codes`);
+                }
+                item.country = codes;
             }
             // The row's date in the career-entry period shape ([year, month, day]);
             // the page formats it, and the map's phases match on it.

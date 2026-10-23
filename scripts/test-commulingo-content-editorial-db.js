@@ -73,6 +73,15 @@ const L = (ko, en) => ({ ko, en });
         await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [{ period: { start: [1917] }, title: L('가', '') , body: L('나', 'B') }] } }, /needs ko and en/);
         await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [{ date: '1917', title: L('가', 'A'), body: L('나', 'B') }] } }, /must be \{period/);
         await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [{ period: '1917.03', title: L('가', 'A'), body: L('나', 'B') }] } }, /is a string/);
+        // geo and country survive a timeline rewrite; malformed ones are refused.
+        const row = extra => ({ period: { start: [1917] }, title: L('가', 'A'), body: L('나', 'B'), ...extra });
+        const geo = { kind: 'point', lat: 48.8, lng: 2.12, label: L('베르사유', 'Versailles') };
+        await submit({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [row({ geo, country: ['france'] })] } });
+        assert.deepEqual((await one("SELECT timeline FROM commulingo_history_events WHERE id = 'ct-event'")).timeline[0].geo, geo);
+        await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [row({ geo: { kind: 'point', lat: 200, lng: 2 } })] } }, /geo must be/);
+        await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [row({ country: ['atlantis'] })] } }, /country must be/);
+        await submit({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [row({ country: 'poland' })] } });
+        assert.deepEqual((await one("SELECT timeline FROM commulingo_history_events WHERE id = 'ct-event'")).timeline[0].country, ['poland']);
 
         // Body sections: insert after an anchor in both languages, rewrite, refusals.
         await submit({ target: 'history_event_section', action: 'create', id: 'ct-event',

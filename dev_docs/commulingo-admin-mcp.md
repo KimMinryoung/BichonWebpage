@@ -43,7 +43,7 @@ leninbot은 CommuLingo 테이블을 SQL로 건드리지 않는다(2026-10-05 W5)
 
 - `read`: `people_search`, `person_get`(편집 상태 전체, `revision` 포함), `person_events`, `term_search`, `term_get`, `event_search`, `event_get`, `offices_list`, `office_get`, `suggestions_list`(`id` 하나 또는 상태별), `id_redirects_list`, `link_reviews_list`, `docs_list`
 - `edit`:
-  - `editorial_store` — Admin 화면과 같은 저장소 직접 호출(submit/review/enrichment/note, 대상 person·person_section·term). 기존 `scripts/commulingo-{person,term}-service.js`와 같다. 대상 history_event·history_event_section·history_event_person·office_row는 `data/commulingo/content-editorial-service.js`(submit/review): 구조 무결성(존재, 진영, 관계 종류, 절 제목 중복·위치, 뼈대 사건의 첫 쓰기)을 검사하고, 즉시 반영(`directApply` 기본)하거나 제안으로 대기시킨다. 반영마다 리비전과 승인 제안 행이 남는다. 작성 분량·용어 같은 큐레이터 정책은 호출자(leninbot `_validate`)가 먼저 검사한다.
+  - `editorial_store` — Admin 화면과 같은 저장소 직접 호출(submit/review/enrichment/note, 대상 person·person_section·term). 기존 `scripts/commulingo-{person,term}-service.js`와 같다. 대상 history_event·history_event_section·history_event_person·office_row는 `data/commulingo/content-editorial-service.js`(submit/review): 구조 무결성(존재, 진영, 관계 종류, 절 제목 중복·위치, 뼈대 사건의 첫 쓰기)을 검사하고, 연표 행의 `geo`(지도 점·진격로)·`country`(국가 코드, 옛 행의 문자열 하나는 배열로 정규화)도 받아 검사한다(2026-10-23 전에는 이 둘이 있는 연표 수정을 거부했다), 즉시 반영(`directApply` 기본)하거나 제안으로 대기시킨다. 반영마다 리비전과 승인 제안 행이 남는다. 작성 분량·용어 같은 큐레이터 정책은 호출자(leninbot `_validate`)가 먼저 검사한다.
   - `editorial_pipeline` — `editorial-pipeline-service.js`의 idempotent 명령(capabilities/validate/submit/review/enrichment/note/publish, 영수증). 기존 `scripts/commulingo-pipeline-service.js`와 같다.
   - `people_upsert` — `data/commulingo/people-upsert.js`(CLI `scripts/commulingo-people-upsert`와 공용) 일괄 등록·수정, 기본 dry-run.
 - `ops`: `service_status`(리비전, 가동 시간, DB·Redis 준비 상태, 메모리)
