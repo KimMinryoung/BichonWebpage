@@ -2608,6 +2608,16 @@ a.commu-office-row:focus-visible .commu-office-main em {
     color: var(--text-muted);
     letter-spacing: 0.06em;
 }
+.commu-people-era-blurb .commu-people-range {
+    display: inline-block;
+    margin-right: 6px;
+    padding: 1px 7px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg-inset);
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
 
 /* Lazy-loaded card grids: transient note while a group's cards download,
    and the script-less fallback list of person links. */

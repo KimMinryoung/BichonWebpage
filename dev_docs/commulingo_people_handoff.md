@@ -502,11 +502,13 @@ hidden, only for `#p-<id>` deep links (the person page's way back):
 
 | shelf | groups |
 | --- | --- |
-| soviet | `old-regime`, `bolshevik`, `stalin-era`, `thaw`, `perestroika` |
+| soviet | `old-regime`, `bolshevik`, `stalin-era`, `thaw`, `perestroika` (마지막 세대 1985–1999, post-Soviet 1990s included) |
 | china | `china-old-regime` (구체제와 국민당), `china-revolution` (혁명 세대 1911–1949), `china-mao-era`, `china-reform` |
-| france | `france-revolution` (대혁명과 나폴레옹 시대 1774–1830) — migrations 188–189; `france-napoleon` 301s to it |
-| world | `world-before-1917` (인터내셔널과 제국의 시대 1820–1917), `world-interwar` (혁명의 물결과 세계대전 1917–1945), `world-cold-war` (냉전과 탈식민 1945–현재) — migration 218 |
+| france | `france-revolution` (대혁명과 나폴레옹 시대 1774–1830) — migrations 188–189; `france-napoleon` 301s to it; `france-commune` (1848년 혁명과 파리 코뮌 1830–1871: July Monarchy, 1848, Second Empire, 1870 war, Commune incl. foreign Communards) — 2026-10-23 data SQL |
+| world | `world-before-1917` (인터내셔널과 제국의 시대 1820–1917), `world-interwar` (전간기와 제2차 세계대전 1917–1945), `world-cold-war` (냉전과 탈식민 1945–현재) — migration 218 |
 | scholars | `scholar` (이 역사를 연구한 사람들) — migration 301 |
+
+Group blurbs describe the period's events and who belongs, without verdicts on the people (2026-10-23 rewrite of 혁명 세대, 스탈린 시대, 해빙, 마지막 세대).
 
 The China shelf follows the Soviet assignment rule: people who made the
 revolution stay in 혁명 세대 even when they ruled afterwards (Mao, Zhou, Liu
