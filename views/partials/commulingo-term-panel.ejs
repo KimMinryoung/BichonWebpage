@@ -18,11 +18,12 @@
             <p><%- p.definitionHtml %></p>
         </header>
         <%# An entry whose subject is a single document (manifest excerpt '*',
-            or 'toc' for a book too long to print) leads with the document; the
-            commentary follows it. Excerpts of a longer text stay below the
-            commentary that introduces them. %>
+            'toc' for a book too long to print, or a piece marked lead — one law
+            of a collection) leads with the document; the commentary follows it.
+            Other excerpts of a longer text stay below the commentary that
+            introduces them. %>
         <% var excerpts = p.excerpts || [];
-           var leads = function(e) { return e.anchor === '*' || e.anchor === 'toc'; };
+           var leads = function(e) { return e.anchor === '*' || e.anchor === 'toc' || e.lead === true; };
            var wholeDocs = excerpts.filter(leads);
            var partialExcerpts = excerpts.filter(function(e) { return !leads(e); }); %>
         <%- include('commulingo-doc-excerpts', { excerpts: wholeDocs, idPrefix: 'term-document' }) %>

@@ -47,7 +47,7 @@ function relatedDocsFor(kind, id, lang) {
 // ids as the translation); a document without one lends nothing in English.
 function docExcerptsFor(kind, id, lang) {
     try {
-        return listCommuLingoDocExcerptsFor(kind, id).filter(({ doc }) => readableIn(doc, lang)).map(({ doc: raw, anchor }) => {
+        return listCommuLingoDocExcerptsFor(kind, id).filter(({ doc }) => readableIn(doc, lang)).map(({ doc: raw, anchor, lead }) => {
             const doc = lang === 'en'
                 ? { ...raw, bodySha256: raw.original.bodySha256, docLang: raw.original.lang }
                 : raw;
@@ -57,7 +57,7 @@ function docExcerptsFor(kind, id, lang) {
                     console.warn(`commulingo docs: ${doc.id} lends its contents to ${kind} "${id}" but has no headings`);
                     return null;
                 }
-                return { docId: doc.id, docTitle: '', docLang: doc.docLang || 'ko', anchor,
+                return { docId: doc.id, docTitle: '', docLang: doc.docLang || 'ko', anchor, lead,
                     title: localize(doc.title, lang), contents };
             }
             const section = getCommuLingoDocSection(doc, anchor);
@@ -71,6 +71,7 @@ function docExcerptsFor(kind, id, lang) {
                 docTitle: anchor === '*' ? '' : localize(doc.title, lang),
                 docLang: doc.docLang || 'ko',
                 anchor,
+                lead,
                 title: section.title,
                 html: section.html,
             };

@@ -7,7 +7,7 @@
 //   node scripts/smoke-commulingo-doc-excerpts.js
 const assert = require('assert');
 const {
-    listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocSection, getCommuLingoDocContents,
+    listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocSection, getCommuLingoDocContents, excerptRef,
 } = require('../data/commulingo/docs-store');
 
 // Real documents come from the DB snapshot; a lone clone has none.
@@ -19,7 +19,9 @@ let count = 0;
 listCommuLingoDocs().forEach(doc => {
     Object.entries(doc.excerpts || {}).forEach(([kind, byId]) => {
         assert.ok(['people', 'terms', 'events'].includes(kind), `${doc.id}: excerpt kind ${kind}`);
-        Object.entries(byId).flatMap(([id, anchors]) => [].concat(anchors).map(anchor => [id, anchor])).forEach(([id, anchor]) => {
+        Object.entries(byId).flatMap(([id, anchors]) => [].concat(anchors).map(entry => [id, excerptRef(entry)])).forEach(([id, ref]) => {
+            assert.ok(ref, `${doc.id}: excerpt for ${kind}/${id} is neither a heading id nor {heading, lead}`);
+            const anchor = ref.anchor;
             if (anchor === 'toc') {
                 const contents = getCommuLingoDocContents(doc);
                 assert.ok(contents && contents.length, `${doc.id}: contents for ${kind}/${id} are empty`);
@@ -54,5 +56,9 @@ assert.strictEqual(getCommuLingoDocSection(doc, 'no-such-heading'), null);
 const whole = getCommuLingoDocSection(doc, '*');
 assert.strictEqual(whole.title, '프랑스 혁명 문헌집: 시민권과 해방');
 assert.ok(whole.html.includes('제17조') && whole.html.includes('노예제 폐지 법령'), 'runs to the end');
+// A piece marked lead prints above a term's commentary; a bare id stays below.
+assert.deepStrictEqual(excerptRef('treaty'), { anchor: 'treaty', lead: false });
+assert.deepStrictEqual(excerptRef({ heading: 'treaty', lead: true }), { anchor: 'treaty', lead: true });
+assert.strictEqual(excerptRef({ lead: true }), null);
 console.log(`ok doc excerpts (${count} declared)`);
 process.exit(0);

@@ -355,13 +355,23 @@ function getCommuLingoDocOriginalContent(doc) {
 // still the entry's subject (getCommuLingoDocContents). A list of heading ids
 // lends several pieces, which an event can quote where its narrative needs
 // each one ([[doc-excerpt:<doc id>#<heading id>]], event-doc-excerpts.js).
+// A term page prints a whole document ("*", "toc") above its commentary and a
+// piece below it; { "heading": "<heading id>", "lead": true } puts a piece
+// above too, when that piece is itself the entry's subject (one law of a
+// collection: 혐의자법 in the Terror's laws).
+function excerptRef(entry) {
+    if (typeof entry === 'string') return { anchor: entry, lead: false };
+    if (entry && typeof entry === 'object' && typeof entry.heading === 'string') return { anchor: entry.heading, lead: entry.lead === true };
+    return null;
+}
+
 function listCommuLingoDocExcerptsFor(kind, id) {
     const out = [];
     listCommuLingoDocs().forEach(doc => {
         const byId = doc.excerpts && doc.excerpts[kind];
         const declared = byId && Object.hasOwn(byId, id) ? byId[id] : null;
-        [].concat(declared ?? []).forEach(anchor => {
-            if (typeof anchor === 'string' && /^(\*|[A-Za-z0-9_-]+)$/.test(anchor)) out.push({ doc, anchor });
+        [].concat(declared ?? []).map(excerptRef).forEach(ref => {
+            if (ref && /^(\*|[A-Za-z0-9_-]+)$/.test(ref.anchor)) out.push({ doc, anchor: ref.anchor, lead: ref.lead });
         });
     });
     return out;
@@ -415,6 +425,6 @@ function getCommuLingoDocContents(doc) {
 module.exports = {
     loadCommuLingoDocs: store.load, refreshCommuLingoDocs: () => store.refresh(),
     listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect,
-    listCommuLingoDocsFor, getCommuLingoDocContent, getCommuLingoDocOriginalContent, getCommuLingoDocAnchorPages, docRefId,
+    listCommuLingoDocsFor, excerptRef, getCommuLingoDocContent, getCommuLingoDocOriginalContent, getCommuLingoDocAnchorPages, docRefId,
     listCommuLingoDocExcerptsFor, getCommuLingoDocSection, getCommuLingoDocContents,
 };
