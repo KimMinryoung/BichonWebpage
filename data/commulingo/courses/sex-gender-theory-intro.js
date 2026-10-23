@@ -17,7 +17,7 @@ module.exports = {
     "en": "12 short lessons"
   },
   "description": {
-    "ko": "엥겔스와 베벨에서 콜론타이와 레닌, 보부아르와 미첼, 파이어스톤, 하트먼과 보걸, 라이히·마르쿠제와 푸코, 버틀러와 프레이저까지 7편으로, 여성 억압의 기원, 성과 사랑의 정치, 경제 변화와 여성 해방, 생물학과 역사, 자본주의와 가부장제, 성 해방과 권력, 성적 억압의 물질성을 두고 사회주의자와 그 비판자들이 어디서 갈렸는지 당사자의 저작으로 비교합니다. 8~12편은 미셸 푸코의 『성의 역사』 제1권 『앎의 의지』(1976)를 부별로 읽습니다. 각 편은 개념 설명과 6문항, 오답 해설로 구성됩니다.",
+    "ko": "엥겔스와 베벨에서 콜론타이와 레닌, 보부아르와 미첼, 파이어스톤, 하트먼과 보걸, 라이히·마르쿠제와 푸코, 버틀러와 프레이저까지 7편으로, 여성 억압의 기원, 성과 사랑의 정치, 경제 변화와 여성 해방, 생물학과 역사, 자본주의와 가부장제, 성 해방과 권력, 성적 억압의 물질성을 두고 사회주의자와 그 비판자들이 어디서 갈렸는지 당사자의 저작으로 비교합니다. 8~12편은 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976)를 부별로 읽습니다. 각 편은 개념 설명과 6문항, 오답 해설로 구성됩니다.",
     "en": "From Engels and Bebel, Kollontai and Lenin, Beauvoir and Mitchell, through Firestone, Hartmann and Vogel, Reich, Marcuse and Foucault, to Butler and Fraser, compare where socialists and their critics divided over the origin of women's oppression, the politics of sex and love, economic change and women's liberation, biology and history, capitalism and patriarchy, sexual liberation and power, and the materiality of sexual oppression, using the participants' own writings, in seven lessons. Lessons 8-12 then read Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976), part by part. Each lesson has a concept brief, six questions, and feedback."
   },
   "editorial": {
@@ -2401,7 +2401,7 @@ module.exports = {
       },
       "sourceUrl": "https://www.marxists.org/reference/archive/marcuse/works/eros-civilisation/index.htm",
       "summary": {
-        "ko": "약 12분 · 빌헬름 라이히의 『파시즘의 대중심리』(1933)와 헤르베르트 마르쿠제의 『에로스와 문명』(1955) 서론·제1장·후기, 1966년 「정치적 서문」을 나란히 읽고, 성 억압과 계급 지배의 관계를 두 사람이 어디서 달리 보았는지 확인합니다. 미셸 푸코가 『성의 역사』 제1권 『앎의 의지』(1976)에서 이 ‘억압 가설’ 전체에 던진 반론도 함께 살펴봅니다.",
+        "ko": "약 12분 · 빌헬름 라이히의 『파시즘의 대중심리』(1933)와 헤르베르트 마르쿠제의 『에로스와 문명』(1955) 서론·제1장·후기, 1966년 「정치적 서문」을 나란히 읽고, 성 억압과 계급 지배의 관계를 두 사람이 어디서 달리 보았는지 확인합니다. 미셸 푸코가 『성의 역사』 제1권 『지식의 의지』(1976)에서 이 ‘억압 가설’ 전체에 던진 반론도 함께 살펴봅니다.",
         "en": "About 12 minutes · Read Wilhelm Reich's The Mass Psychology of Fascism (1933) alongside the introduction, first chapter and epilogue of Herbert Marcuse's Eros and Civilization (1955) and its 1966 Political Preface, and see where the two differed on how sexual repression relates to class rule. Then look at the objection Michel Foucault raised against this whole 'repressive hypothesis' in The History of Sexuality, volume 1, The Will to Knowledge (1976)."
       },
       "learningFocus": {
@@ -2438,7 +2438,7 @@ module.exports = {
           {
             "title": "푸코의 반론: 억압 가설을 의심하다",
             "items": [
-              "미셸 푸코는 『앎의 의지』 제1부 「우리 빅토리아인들」에서 17세기 이후 성이 억압되어 왔다는 통념을 ‘억압 가설’이라 부르고 세 가지를 의심합니다. 성 억압이 역사적 사실인가, 권력은 본질적으로 금지와 검열의 형태로 작동하는가, 억압을 비판하는 담론은 억압과 단절했는가 아니면 같은 역사적 그물에 속하는가입니다. 그는 같은 대목에서 프로이트의 순응주의와 함께 “라이히의 큰 격정 아래 숨은 소심함”을 고발하는 흔한 논조를 예로 듭니다.",
+              "미셸 푸코는 『지식의 의지』 제1부 「우리 빅토리아인들」에서 17세기 이후 성이 억압되어 왔다는 통념을 ‘억압 가설’이라 부르고 세 가지를 의심합니다. 성 억압이 역사적 사실인가, 권력은 본질적으로 금지와 검열의 형태로 작동하는가, 억압을 비판하는 담론은 억압과 단절했는가 아니면 같은 역사적 그물에 속하는가입니다. 그는 같은 대목에서 프로이트의 순응주의와 함께 “라이히의 큰 격정 아래 숨은 소심함”을 고발하는 흔한 논조를 예로 듭니다.",
               "제2부 「억압 가설」에서는 16세기 말 이후 성의 ‘담론화’가 제한되기는커녕 점점 더 부추겨졌고, 권력과 쾌락은 서로를 없애지 않고 맞물려 증식했다고 봅니다. 제4부에서는 권력 관계가 금지만 하는 상부구조가 아니라 직접 생산하는 역할을 한다고 하고, “권력이 있는 곳에 저항이 있다”고 쓰면서도 권력 바깥의 ‘거대한 거부’의 자리는 없다고 합니다.",
               "제4부 끝 「시기 구분」에서 푸코는 양차 대전 사이 “라이히를 중심으로” 성 억압에 대한 역사적·정치적 비판이 형성되었고 그 가치와 실제 효과가 컸다고 인정합니다. 그러나 라이히가 붙인 정치적 조건이 하나도 실현되지 않은 채 성 행동이 크게 바뀐 사실은, 그 ‘반억압 투쟁’이 성 장치 안의 전술적 이동이었음을 보여 준다고 했습니다.",
               "제5부에서 그는 “성에 예라고 말하면 권력에 아니라고 말하는 것”이라 믿지 말라고 하고, 성 장치에 맞서는 반격의 거점은 ‘성-욕망’이 아니라 ‘몸과 쾌락’이어야 한다는 문장으로 결론을 맺습니다. 이 책은 8~12편에서 부별로 자세히 읽습니다."
@@ -2449,7 +2449,7 @@ module.exports = {
             "items": [
               "라이히, 『파시즘의 대중심리』: 제1장 4절 「성 억압의 사회적 기능」. 1933년 독일어 초판(코펜하겐 성정치 출판사, archive.org 스캔 44~52쪽)에서 확인했고, 링크는 MIA 스페인어 서가의 1946년 증보 제3판 번역(로베르토 베인 옮김)입니다. 두 판은 성 억압의 기원과 노동자 여성의 예에서 표현이 다릅니다.",
               "마르쿠제, 『에로스와 문명』(1955, 1966년 비컨판): 「정치적 서문」(1966), 서론, 제1장 「정신분석의 숨은 경향」, 후기 「신프로이트 수정주의 비판」. 영어 원저입니다. 기본 억압·과잉 억압·업적 원칙을 정의한 제2장은 MIA에 없습니다.",
-              "푸코, 『성의 역사』 제1권 『앎의 의지』(갈리마르, 1976): 제1부 12, 18쪽, 제2부 66~67쪽, 제4부 125~126쪽과 172~173쪽, 제5부 208쪽. 프랑스어 원문에서 옮겼습니다."
+              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976): 제1부 12, 18쪽, 제2부 66~67쪽, 제4부 125~126쪽과 172~173쪽, 제5부 208쪽. 프랑스어 원문에서 옮겼습니다."
             ]
           }
         ],
@@ -3367,7 +3367,7 @@ module.exports = {
       },
       "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
       "summary": {
-        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『앎의 의지』(1976) 제1부 「우리 빅토리아인들」(9~22쪽)을 순서대로 읽습니다. 17세기 이후 성이 억압되어 왔다는 통념이 어떤 이야기인지, 그 이야기가 왜 그렇게 설득력 있게 들리는지, 푸코가 여기에 던지는 세 가지 의심과 책 전체의 질문이 무엇인지 확인합니다.",
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976) 제1부 「우리 빅토리아인들」(9~22쪽)을 순서대로 읽습니다. 17세기 이후 성이 억압되어 왔다는 통념이 어떤 이야기인지, 그 이야기가 왜 그렇게 설득력 있게 들리는지, 푸코가 여기에 던지는 세 가지 의심과 책 전체의 질문이 무엇인지 확인합니다.",
         "en": "About 12 minutes · Read part 1 of Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976), 'We Other Victorians' (pp. 9-22), in order. See what story the received view tells about sex being repressed since the seventeenth century, why that story sounds so convincing, and what three doubts and what overall question Foucault sets against it."
       },
       "learningFocus": {
@@ -3406,7 +3406,7 @@ module.exports = {
           {
             "title": "근거 자료",
             "items": [
-              "푸코, 『성의 역사』 제1권 『앎의 의지』(갈리마르, 1976) 제1부 「우리 빅토리아인들」, 9~22쪽. 통념의 요약 9~12쪽, 억압 가설이 매력적인 이유 12~16쪽, 책의 질문 16~17쪽, 세 가지 의심 18~19쪽, 분석 방향 19~22쪽.",
+              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976) 제1부 「우리 빅토리아인들」, 9~22쪽. 통념의 요약 9~12쪽, 억압 가설이 매력적인 이유 12~16쪽, 책의 질문 16~17쪽, 세 가지 의심 18~19쪽, 분석 방향 19~22쪽.",
               "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다."
             ]
           }
@@ -3501,7 +3501,7 @@ module.exports = {
             ]
           },
           "right": {
-            "heading": "푸코, 『앎의 의지』 제1부",
+            "heading": "푸코, 『지식의 의지』 제1부",
             "rows": [
               "시기: 16세기 말 이후 성의 담론화가 오히려 부추겨짐",
               "물을 것: 누가 어디서 어떤 제도로 성을 말하게 되는가",
@@ -3540,7 +3540,7 @@ module.exports = {
           "id": "sex-gender-theory-intro-ch08-basic",
           "level": "basic",
           "title": {
-            "ko": "『앎의 의지』 제1부: 억압 가설을 의심하기",
+            "ko": "『지식의 의지』 제1부: 억압 가설을 의심하기",
             "en": "The Will to Knowledge, part 1: doubting the repressive hypothesis"
           },
           "questions": [
@@ -3549,7 +3549,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코의 『앎의 의지』 제1부 「우리 빅토리아인들」 첫머리에 요약된 성 억압의 통념에서, 매음굴과 정신 요양원은 어떤 자리로 그려질까요?",
+                "ko": "푸코의 『지식의 의지』 제1부 「우리 빅토리아인들」 첫머리에 요약된 성 억압의 통념에서, 매음굴과 정신 요양원은 어떤 자리로 그려질까요?",
                 "en": "In the received view of sexual repression summarised at the opening of part 1 of Foucault's The Will to Knowledge, 'We Other Victorians', what place do the brothel and the mental-health clinic occupy?"
               },
               "choices": {
@@ -3585,7 +3585,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제1부 「우리 빅토리아인들」, 9~11쪽",
+                  "ko": "푸코, 『지식의 의지』 제1부 「우리 빅토리아인들」, 9~11쪽",
                   "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 9-11"
                 }
               }
@@ -3595,7 +3595,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제1부에서 성 억압 담론이 굳건한 이유 하나로 그것이 자본주의와 손쉽게 이어진다는 점을 듭니다. 이 연결을 어떻게 다룰까요?",
+                "ko": "푸코는 『지식의 의지』 제1부에서 성 억압 담론이 굳건한 이유 하나로 그것이 자본주의와 손쉽게 이어진다는 점을 듭니다. 이 연결을 어떻게 다룰까요?",
                 "en": "In part 1 of The Will to Knowledge, Foucault gives as one reason for the strength of the discourse on sexual repression that it links easily to capitalism. How does he treat this link?"
               },
               "choices": {
@@ -3631,7 +3631,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제1부 「우리 빅토리아인들」, 12~13쪽",
+                  "ko": "푸코, 『지식의 의지』 제1부 「우리 빅토리아인들」, 12~13쪽",
                   "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 12-13"
                 }
               }
@@ -3641,7 +3641,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제1부에서 성과 권력의 관계를 억압으로 말하는 것이 우리에게 왜 그토록 만족스러운지를 “말하는 자의 이득”으로 설명합니다. 그 이득은 무엇일까요?",
+                "ko": "푸코는 『지식의 의지』 제1부에서 성과 권력의 관계를 억압으로 말하는 것이 우리에게 왜 그토록 만족스러운지를 “말하는 자의 이득”으로 설명합니다. 그 이득은 무엇일까요?",
                 "en": "In part 1 of The Will to Knowledge, Foucault explains why describing the relation of sex and power as repression is so gratifying to us by 'the speaker's benefit'. What is that benefit?"
               },
               "choices": {
@@ -3677,7 +3677,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제1부 「우리 빅토리아인들」, 13~16쪽",
+                  "ko": "푸코, 『지식의 의지』 제1부 「우리 빅토리아인들」, 13~16쪽",
                   "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 13-16"
                 }
               }
@@ -3687,7 +3687,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제1부에서 이 책이 던지려는 질문을 어떻게 세울까요?",
+                "ko": "푸코는 『지식의 의지』 제1부에서 이 책이 던지려는 질문을 어떻게 세울까요?",
                 "en": "In part 1 of The Will to Knowledge, how does Foucault frame the question the book means to ask?"
               },
               "choices": {
@@ -3723,7 +3723,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제1부 「우리 빅토리아인들」, 16~17쪽",
+                  "ko": "푸코, 『지식의 의지』 제1부 「우리 빅토리아인들」, 16~17쪽",
                   "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 16-17"
                 }
               }
@@ -3733,7 +3733,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제1부에서 억압 가설에 세 가지 의심을 던집니다. 그 세 의심으로 맞는 것은 무엇일까요?",
+                "ko": "푸코는 『지식의 의지』 제1부에서 억압 가설에 세 가지 의심을 던집니다. 그 세 의심으로 맞는 것은 무엇일까요?",
                 "en": "In part 1 of The Will to Knowledge, Foucault raises three doubts about the repressive hypothesis. Which set correctly gives them?"
               },
               "choices": {
@@ -3769,7 +3769,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제1부 「우리 빅토리아인들」, 17~18쪽",
+                  "ko": "푸코, 『지식의 의지』 제1부 「우리 빅토리아인들」, 17~18쪽",
                   "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 17-18"
                 }
               }
@@ -3779,7 +3779,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제1부 끝에서 세 가지 의심으로 무엇을 하려는지 밝힙니다. 그의 설명에 맞는 것은 무엇일까요?",
+                "ko": "푸코는 『지식의 의지』 제1부 끝에서 세 가지 의심으로 무엇을 하려는지 밝힙니다. 그의 설명에 맞는 것은 무엇일까요?",
                 "en": "At the end of part 1 of The Will to Knowledge, Foucault states what he means to do with his three doubts. Which matches his account?"
               },
               "choices": {
@@ -3808,14 +3808,14 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "푸코는 세 의심이 대칭적 반대 가설이 아니라고 못 박습니다. 성이 실제로는 자유로웠다고도, 권력이 더 관용적이 되었다고도 말하지 않습니다. 그는 성이 고전주의 시대 이후 금지되거나 가려지지 않았다고 주장하지 않으며, 금지가 허상이라는 것이 아니라 금지를 근대 성의 역사를 쓰는 기본 요소로 삼는 것이 허상이라고 합니다. 그래서 물을 것은 성에 예냐 아니냐가 아니라 누가 어디서 어떤 제도를 통해 성을 말하게 되는가, 권력이 어떤 경로로 가장 미세한 행동과 쾌락에 이르는가, 그 생산을 떠받치는 앎의 의지가 무엇인가입니다. 목표는 “권력-앎-쾌락 체제”를 밝히는 것이고(19쪽), 첫 개관은 16세기 말 이후 성의 담론화가 오히려 부추겨졌음을 보여 준다고 예고하며 제2부로 넘어갑니다.",
+                "ko": "푸코는 세 의심이 대칭적 반대 가설이 아니라고 못 박습니다. 성이 실제로는 자유로웠다고도, 권력이 더 관용적이 되었다고도 말하지 않습니다. 그는 성이 고전주의 시대 이후 금지되거나 가려지지 않았다고 주장하지 않으며, 금지가 허상이라는 것이 아니라 금지를 근대 성의 역사를 쓰는 기본 요소로 삼는 것이 허상이라고 합니다. 그래서 물을 것은 성에 예냐 아니냐가 아니라 누가 어디서 어떤 제도를 통해 성을 말하게 되는가, 권력이 어떤 경로로 가장 미세한 행동과 쾌락에 이르는가, 그 생산을 떠받치는 지식의 의지가 무엇인가입니다. 목표는 “권력-앎-쾌락 체제”를 밝히는 것이고(19쪽), 첫 개관은 16세기 말 이후 성의 담론화가 오히려 부추겨졌음을 보여 준다고 예고하며 제2부로 넘어갑니다.",
                 "en": "Foucault insists the three doubts are not a symmetrical counter-hypothesis: he says neither that sex was in fact free nor that power has grown more tolerant. He does not claim that sex was not prohibited, masked or misrecognised since the classical age; prohibition is not an illusion, but making it the basic element for writing the modern history of sex is. So the questions are not whether sex is told yes or no, but who comes to speak of sex, where and through which institutions, by what channels power reaches the finest conduct and everyday pleasure, and what will to knowledge sustains this production. The aim is to bring out the 'regime of power-knowledge-pleasure' (p. 19), and he announces that a first survey shows the putting of sex into discourse was incited, not restricted, since the late sixteenth century, which leads into part 2."
               },
               "source": {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제1부 「우리 빅토리아인들」, 19~22쪽",
+                  "ko": "푸코, 『지식의 의지』 제1부 「우리 빅토리아인들」, 19~22쪽",
                   "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 19-22"
                 }
               }
@@ -3834,7 +3834,7 @@ module.exports = {
       },
       "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
       "summary": {
-        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『앎의 의지』(1976) 제2부 1장 「담론의 선동」을 순서대로 읽습니다. 트리엔트 공의회 이후의 고해 지침, 사드와 『나의 비밀 생활』, 18세기의 ‘인구’ 문제, 중학교의 건축과 규칙, 의학·정신의학·형사 사법, 1867년 라프쿠르 사건을 거쳐, 푸코가 왜 근대를 ‘침묵의 시대’가 아니라 성에 관한 말이 끝없이 늘어난 시대로 보는지 확인합니다.",
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976) 제2부 1장 「담론의 선동」을 순서대로 읽습니다. 트리엔트 공의회 이후의 고해 지침, 사드와 『나의 비밀 생활』, 18세기의 ‘인구’ 문제, 중학교의 건축과 규칙, 의학·정신의학·형사 사법, 1867년 라프쿠르 사건을 거쳐, 푸코가 왜 근대를 ‘침묵의 시대’가 아니라 성에 관한 말이 끝없이 늘어난 시대로 보는지 확인합니다.",
         "en": "About 12 minutes · Read part 2, chapter 1 of Michel Foucault's The History of Sexuality, volume 1, La volonté de savoir (1976), 'L'incitation aux discours', in order. Through the confession manuals after the Council of Trent, Sade and My Secret Life, the eighteenth-century problem of 'population', the architecture and rules of secondary schools, medicine, psychiatry and criminal justice, and the 1867 case at Lapcourt, see why Foucault treats the modern age not as an age of silence but as one in which talk about sex multiplied without end."
       },
       "learningFocus": {
@@ -3846,7 +3846,7 @@ module.exports = {
           {
             "title": "출발점: 낱말의 단속과 담론의 증식을 나누다",
             "items": [
-              "푸코는 『앎의 의지』 제1부에서 17세기 이후 성이 억압되어 왔다는 통념을 ‘억압 가설’이라 부르고, 제2부 1장 「담론의 선동」에서 그 첫 번째 의심, 곧 성 억압이 정말 역사적 사실인가를 사례로 따져 봅니다.",
+              "푸코는 『지식의 의지』 제1부에서 17세기 이후 성이 억압되어 왔다는 통념을 ‘억압 가설’이라 부르고, 제2부 1장 「담론의 선동」에서 그 첫 번째 의심, 곧 성 억압이 정말 역사적 사실인가를 사례로 따져 봅니다.",
               "그는 고전주의 시대에 허용되는 어휘가 엄격하게 걸러지고, 언제·어디서·누구 사이에 성을 말할 수 있는지가 좁혀졌다는 점을 부정하지 않습니다. 부모와 자식, 교사와 학생, 주인과 하인 사이에 조심과 침묵의 영역이 생겼고, 그는 이것을 제한하는 경제라고 부릅니다.",
               "그러나 담론의 차원에서는 거의 반대 현상이 일어났다고 합니다. 형식과 대상이 서로 다른 성에 관한 말들이 권력이 행사되는 자리에서 늘어났고, 18세기부터는 그 증식이 더 빨라졌다는 것입니다. 그는 이것을 “담론의 폭발”이라고 부릅니다(25쪽)."
             ]
@@ -3881,7 +3881,7 @@ module.exports = {
           {
             "title": "근거 자료",
             "items": [
-              "푸코, 『성의 역사』 제1권 『앎의 의지』(갈리마르, 1976), 제2부 「억압 가설」 1장 「담론의 선동」, 25~49쪽. 쪽별로는 고해 지침 27~30쪽, 사드와 『나의 비밀 생활』 30~32쪽, 인구와 폴리스 33~37쪽, 아이들의 성과 중학교 38~42쪽, 의학·정신의학·사법 42~43쪽, 라프쿠르 사건 43~45쪽, 결론 45~49쪽입니다.",
+              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976), 제2부 「억압 가설」 1장 「담론의 선동」, 25~49쪽. 쪽별로는 고해 지침 27~30쪽, 사드와 『나의 비밀 생활』 30~32쪽, 인구와 폴리스 33~37쪽, 아이들의 성과 중학교 38~42쪽, 의학·정신의학·사법 42~43쪽, 라프쿠르 사건 43~45쪽, 결론 45~49쪽입니다.",
               "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다.",
               "주이 사건 서술에 대한 비판은 린다 마르틴 알코프의 「위험한 쾌락: 푸코와 소아성애의 정치학」(1996) 등에서 볼 수 있습니다."
             ]
@@ -3986,7 +3986,7 @@ module.exports = {
             ]
           },
           "right": {
-            "heading": "푸코, 『앎의 의지』 제2부 1장",
+            "heading": "푸코, 『지식의 의지』 제2부 1장",
             "rows": [
               "어휘는 걸러졌으나 담론은 18세기부터 더 빨리 증식",
               "고해는 표현을 가리면서 생각과 욕망까지 말하게 함",
@@ -4034,7 +4034,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제2부 1장 「담론의 선동」에서 트리엔트 공의회 이후 가톨릭 고해 지침이 어떻게 바뀌었다고 설명할까요?",
+                "ko": "푸코는 『지식의 의지』 제2부 1장 「담론의 선동」에서 트리엔트 공의회 이후 가톨릭 고해 지침이 어떻게 바뀌었다고 설명할까요?",
                 "en": "In part 2, chapter 1 of La volonté de savoir, 'L'incitation aux discours', how does Foucault say Catholic confession manuals changed after the Council of Trent?"
               },
               "choices": {
@@ -4070,7 +4070,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제2부 1장 「담론의 선동」, 27~30쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 1장 「담론의 선동」, 27~30쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 1, 'L'incitation aux discours', pp. 27-30"
                 }
               }
@@ -4080,7 +4080,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』에서 19세기 말 익명의 영국인이 쓴 『나의 비밀 생활』을 어떻게 자리매김할까요?",
+                "ko": "푸코는 『지식의 의지』에서 19세기 말 익명의 영국인이 쓴 『나의 비밀 생활』을 어떻게 자리매김할까요?",
                 "en": "How does Foucault in La volonté de savoir place My Secret Life, written by an anonymous Englishman at the end of the nineteenth century?"
               },
               "choices": {
@@ -4116,7 +4116,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제2부 1장 「담론의 선동」, 30~33쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 1장 「담론의 선동」, 30~33쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 1, 'L'incitation aux discours', pp. 30-33"
                 }
               }
@@ -4126,7 +4126,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "『앎의 의지』 제2부 1장에서 푸코는 18세기에 성이 ‘인구’ 문제와 묶이면서 무엇이 달라졌다고 볼까요?",
+                "ko": "『지식의 의지』 제2부 1장에서 푸코는 18세기에 성이 ‘인구’ 문제와 묶이면서 무엇이 달라졌다고 볼까요?",
                 "en": "In part 2, chapter 1 of La volonté de savoir, what does Foucault say changed when sex was tied to the problem of 'population' in the eighteenth century?"
               },
               "choices": {
@@ -4162,7 +4162,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제2부 1장 「담론의 선동」, 33~37쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 1장 「담론의 선동」, 33~37쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 1, 'L'incitation aux discours', pp. 33-37"
                 }
               }
@@ -4172,7 +4172,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』에서 18세기 중학교(콜레주)의 건축과 규칙을 무엇의 근거로 삼을까요?",
+                "ko": "푸코는 『지식의 의지』에서 18세기 중학교(콜레주)의 건축과 규칙을 무엇의 근거로 삼을까요?",
                 "en": "In La volonté de savoir, what does Foucault use the architecture and rules of eighteenth-century secondary schools (collèges) to show?"
               },
               "choices": {
@@ -4208,7 +4208,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제2부 1장 「담론의 선동」, 38~42쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 1장 「담론의 선동」, 38~42쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 1, 'L'incitation aux discours', pp. 38-42"
                 }
               }
@@ -4218,7 +4218,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "『앎의 의지』에서 푸코가 1867년 로렌 라프쿠르 마을의 농장 일꾼 주이 사건을 드는 까닭은 무엇일까요?",
+                "ko": "『지식의 의지』에서 푸코가 1867년 로렌 라프쿠르 마을의 농장 일꾼 주이 사건을 드는 까닭은 무엇일까요?",
                 "en": "Why does Foucault in La volonté de savoir cite the 1867 case of Jouy, a farm hand in the Lorraine village of Lapcourt?"
               },
               "choices": {
@@ -4254,7 +4254,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제2부 1장 「담론의 선동」, 42~45쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 1장 「담론의 선동」, 42~45쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 1, 'L'incitation aux discours', pp. 42-45"
                 }
               }
@@ -4264,7 +4264,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제2부 1장 「담론의 선동」 끝에서 근대 사회의 성 담론에 관해 어떤 결론을 내릴까요?",
+                "ko": "푸코는 『지식의 의지』 제2부 1장 「담론의 선동」 끝에서 근대 사회의 성 담론에 관해 어떤 결론을 내릴까요?",
                 "en": "At the end of part 2, chapter 1 of La volonté de savoir, 'L'incitation aux discours', what does Foucault conclude about discourse on sex in modern society?"
               },
               "choices": {
@@ -4300,7 +4300,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제2부 1장 「담론의 선동」, 26쪽, 45~49쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 1장 「담론의 선동」, 26쪽, 45~49쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 1, 'L'incitation aux discours', pp. 26, 45-49"
                 }
               }
@@ -4319,7 +4319,7 @@ module.exports = {
       },
       "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
       "summary": {
-        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『앎의 의지』(1976) 제2부 2장 「도착의 이식」(50~67쪽)을 따라 읽습니다. 결혼을 중심에 둔 옛 규범이 왜 조용해지고 아이·광인·범죄자·동성애자의 성이 왜 캐물어지기 시작했는지, 푸코가 단순한 금지와 구별한 권력의 네 작동 방식이 무엇인지, 그리고 그가 근대 사회를 왜 도착을 만들어 내고 고정한 사회라고 했는지 확인합니다.",
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976) 제2부 2장 「도착의 이식」(50~67쪽)을 따라 읽습니다. 결혼을 중심에 둔 옛 규범이 왜 조용해지고 아이·광인·범죄자·동성애자의 성이 왜 캐물어지기 시작했는지, 푸코가 단순한 금지와 구별한 권력의 네 작동 방식이 무엇인지, 그리고 그가 근대 사회를 왜 도착을 만들어 내고 고정한 사회라고 했는지 확인합니다.",
         "en": "About 12 minutes · Follow part 2, chapter 2, 'L'implantation perverse' (pp. 50-67), of Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976). See why the old marriage-centred norms fell quiet while the sexuality of children, the mad, criminals and homosexuals came under questioning, which four workings of power Foucault distinguished from simple prohibition, and why he called modern society one that produced and fixed perversions."
       },
       "learningFocus": {
@@ -4363,7 +4363,7 @@ module.exports = {
           {
             "title": "근거 자료",
             "items": [
-              "푸코, 『성의 역사』 제1권 『앎의 의지』(갈리마르, 1976) 제2부 「억압 가설」 2장 「도착의 이식」, 50~67쪽. 출발 반론 50~51쪽, 세 법전과 그 변화 51~57쪽, 네 작동 57~64쪽, 결론 64~67쪽.",
+              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976) 제2부 「억압 가설」 2장 「도착의 이식」, 50~67쪽. 출발 반론 50~51쪽, 세 법전과 그 변화 51~57쪽, 네 작동 57~64쪽, 결론 64~67쪽.",
               "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다."
             ]
           }
@@ -4511,7 +4511,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제2부 2장 「도착의 이식」에서 18세기 말까지의 성 규범과 그 뒤의 변화를 어떻게 그렸을까요?",
+                "ko": "푸코는 『지식의 의지』 제2부 2장 「도착의 이식」에서 18세기 말까지의 성 규범과 그 뒤의 변화를 어떻게 그렸을까요?",
                 "en": "In part 2, chapter 2, 'L'implantation perverse', of The Will to Knowledge, how did Foucault describe the sexual norms in force until the late eighteenth century and the change that followed?"
               },
               "choices": {
@@ -4547,7 +4547,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제2부 2장 「도착의 이식」, 51~55쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 2장 「도착의 이식」, 51~55쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 51-55"
                 }
               }
@@ -4557,7 +4557,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 「도착의 이식」에서 19세기에 성 범죄 처벌이 누그러지고 감시는 늘어난 사실을 두고 무엇을 문제의 핵심으로 삼았을까요?",
+                "ko": "푸코는 『지식의 의지』 「도착의 이식」에서 19세기에 성 범죄 처벌이 누그러지고 감시는 늘어난 사실을 두고 무엇을 문제의 핵심으로 삼았을까요?",
                 "en": "In 'L'implantation perverse' in The Will to Knowledge, faced with the fact that punishment of sexual offences eased in the nineteenth century while surveillance grew, what did Foucault treat as the heart of the matter?"
               },
               "choices": {
@@ -4593,7 +4593,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제2부 2장 「도착의 이식」, 56~57쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 2장 「도착의 이식」, 56~57쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 56-57"
                 }
               }
@@ -4603,7 +4603,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 「도착의 이식」에서 아동 자위 단속이 근친혼 금지와 어떻게 다른 권력이라고 봤을까요?",
+                "ko": "푸코는 『지식의 의지』 「도착의 이식」에서 아동 자위 단속이 근친혼 금지와 어떻게 다른 권력이라고 봤을까요?",
                 "en": "In 'L'implantation perverse' in The Will to Knowledge, how did Foucault say the campaign against children's masturbation differed, as a form of power, from the prohibition of incest?"
               },
               "choices": {
@@ -4639,7 +4639,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제2부 2장 「도착의 이식」, 57~58쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 2장 「도착의 이식」, 57~58쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 57-58"
                 }
               }
@@ -4649,7 +4649,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 「도착의 이식」에서 옛 법의 남색과 19세기 정신의학의 동성애자가 어떻게 다르다고 했을까요?",
+                "ko": "푸코는 『지식의 의지』 「도착의 이식」에서 옛 법의 남색과 19세기 정신의학의 동성애자가 어떻게 다르다고 했을까요?",
                 "en": "In 'L'implantation perverse' in The Will to Knowledge, how did Foucault say the sodomy of the old laws differed from the homosexual of nineteenth-century psychiatry?"
               },
               "choices": {
@@ -4685,7 +4685,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제2부 2장 「도착의 이식」, 52, 59~60쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 2장 「도착의 이식」, 52, 59~60쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 52, 59-60"
                 }
               }
@@ -4695,7 +4695,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 「도착의 이식」에서 의사의 진찰, 정신의학의 조사, 부모의 감시 같은 관계 속에서 권력과 쾌락이 어떻게 맞물린다고 했을까요?",
+                "ko": "푸코는 『지식의 의지』 「도착의 이식」에서 의사의 진찰, 정신의학의 조사, 부모의 감시 같은 관계 속에서 권력과 쾌락이 어떻게 맞물린다고 했을까요?",
                 "en": "In 'L'implantation perverse' in The Will to Knowledge, how did Foucault say power and pleasure interlock in relations such as medical examination, psychiatric inquiry and parental watching?"
               },
               "choices": {
@@ -4731,7 +4731,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제2부 2장 「도착의 이식」, 60~62, 66~67쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 2장 「도착의 이식」, 60~62, 66~67쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 60-62, 66-67"
                 }
               }
@@ -4741,7 +4741,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 「도착의 이식」 끝에서 19세기 부르주아 사회에 도착이 넘쳐 난 까닭을 어떻게 설명했을까요?",
+                "ko": "푸코는 『지식의 의지』 「도착의 이식」 끝에서 19세기 부르주아 사회에 도착이 넘쳐 난 까닭을 어떻게 설명했을까요?",
                 "en": "At the end of 'L'implantation perverse' in The Will to Knowledge, how did Foucault explain why nineteenth-century bourgeois society teemed with perversions?"
               },
               "choices": {
@@ -4777,7 +4777,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제2부 2장 「도착의 이식」, 50~51, 62~67쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 2장 「도착의 이식」, 50~51, 62~67쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 50-51, 62-67"
                 }
               }
@@ -4796,7 +4796,7 @@ module.exports = {
       },
       "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
       "summary": {
-        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『앎의 의지』(1976) 제3부 「성의 과학(Scientia sexualis)」(69~98쪽)과 제4부 「섹슈얼리티 장치」의 1장 「쟁점」, 2장 「방법」(99~135쪽)을 순서대로 읽습니다. 서구가 성의 진실을 성애의 기술이 아니라 고백으로 생산해 왔다는 주장이 어떤 단계로 전개되는지, 고백을 과학으로 바꾼 다섯 절차가 무엇인지, 푸코가 왜 법과 금지로 권력을 그리는 표상을 버리고 어떤 권력 명제와 네 규칙을 세우는지 확인합니다.",
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976) 제3부 「성의 과학(Scientia sexualis)」(69~98쪽)과 제4부 「섹슈얼리티 장치」의 1장 「쟁점」, 2장 「방법」(99~135쪽)을 순서대로 읽습니다. 서구가 성의 진실을 성애의 기술이 아니라 고백으로 생산해 왔다는 주장이 어떤 단계로 전개되는지, 고백을 과학으로 바꾼 다섯 절차가 무엇인지, 푸코가 왜 법과 금지로 권력을 그리는 표상을 버리고 어떤 권력 명제와 네 규칙을 세우는지 확인합니다.",
         "en": "About 12 minutes · Read part 3 of Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976), 'Scientia sexualis' (pp. 69-98), and chapters 1 and 2 of part 4, 'The Deployment of Sexuality': 'Objective' and 'Method' (pp. 99-135), in order. See in what steps Foucault argues that the West produced the truth of sex through confession rather than an erotic art, what five procedures turned confession into science, and why he discards the picture of power as law and prohibition in favour of a set of propositions about power and four rules of method."
       },
       "learningFocus": {
@@ -4806,9 +4806,9 @@ module.exports = {
       "conceptBrief": {
         "ko": [
           {
-            "title": "앎의 의지와 두 가지 진실 생산 절차",
+            "title": "지식의 의지와 두 가지 진실 생산 절차",
             "items": [
-              "제3부는 반론을 먼저 세웁니다. 담론이 늘어났다고 해도 그것은 성을 가리려는 방어막이 아니었는가, 19세기 성 의학은 도착과 기벽만 다루고 도덕의 구분을 의학 규범으로 되풀이했으며, 사소한 습관에 대대로 이어질 재앙을 갖다 붙이고 곧 닥칠 국가 인종주의에 진리의 이름을 빌려주지 않았는가. 같은 시기 생식 생리학과 견주면 합리성이 현저히 낮아서, 한쪽은 앎의 의지, 다른 쪽은 알지 않으려는 의지처럼 보인다는 것입니다.",
+              "제3부는 반론을 먼저 세웁니다. 담론이 늘어났다고 해도 그것은 성을 가리려는 방어막이 아니었는가, 19세기 성 의학은 도착과 기벽만 다루고 도덕의 구분을 의학 규범으로 되풀이했으며, 사소한 습관에 대대로 이어질 재앙을 갖다 붙이고 곧 닥칠 국가 인종주의에 진리의 이름을 빌려주지 않았는가. 같은 시기 생식 생리학과 견주면 합리성이 현저히 낮아서, 한쪽은 지식의 의지, 다른 쪽은 알지 않으려는 의지처럼 보인다는 것입니다.",
               "푸코는 맹목과 거부가 있었음을 인정합니다. 다만 그 거부는 바로 스스로 드러내고 말하라고 다그친 것에 대한 거부였고, 오인은 진실과의 근본 관계를 바탕으로만 일어날 수 있다고 봅니다. 샤르코의 살페트리에르는 관찰 장치이자 공개 강의와 미리 준비한 발작 연출로 말을 끌어내는 선동 기계였고, 성 이야기가 너무 드러나면 강의를 끊고 공개 기록에서 지워 버렸습니다. 중요한 것은 성이 참과 거짓의 문제, 진실의 쟁점이 되었다는 점입니다.",
               "성의 진실을 생산하는 절차는 역사적으로 둘입니다. 중국, 일본, 인도, 로마, 아랍·이슬람 사회의 성애의 기술(ars erotica)에서는 진실을 쾌락 자체의 강도, 질, 지속, 몸과 영혼에 남는 울림에서 끌어내고, 그 앎을 다시 실천에 돌려 쾌락을 키웁니다. 이 앎은 부끄러워서가 아니라 퍼지면 효력을 잃기 때문에 비밀이고, 스승이 입문 과정을 통해 제자에게 전합니다.",
               "서구는 언뜻 보아 성애의 기술이 없고, 대신 성의 과학(scientia sexualis)을 실천하는 유일한 문명입니다. 그 중심에는 입문과 스승의 비밀과 정반대인 고백(aveu)이 있습니다. 1215년 라테란 공의회의 고해 규정, 신명재판·결투·선서 같은 판정 절차의 쇠퇴와 심문·조사 방법의 발달, 종교재판소 설치가 고백을 사법·종교 권력의 중심에 놓았습니다. 고백이라는 말도 남이 보증해 주는 신분에서 자기 행위와 생각을 스스로 인정하는 일로 뜻이 바뀌었고, 서구의 인간은 “고백하는 짐승”이 되었다고 푸코는 씁니다(80쪽)."
@@ -4846,7 +4846,7 @@ module.exports = {
           {
             "title": "근거 자료",
             "items": [
-              "푸코, 『성의 역사』 제1권 『앎의 의지』(갈리마르, 1976) 제3부 「성의 과학」, 69~98쪽(반론과 샤르코 71~76쪽, 두 절차 76~78쪽, 고백의 역사와 구조 78~84쪽, 확산과 다섯 절차 84~90쪽, 섹슈얼리티와 일반 가설 90~94쪽, 진실의 쾌락과 결론 94~98쪽), 제4부 서두 101~105쪽, 1장 「쟁점」 107~120쪽, 2장 「방법」 121~135쪽(권력 명제 121~127쪽, 네 규칙 129~135쪽). 쪽수는 초판 본문의 인쇄 쪽수입니다.",
+              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976) 제3부 「성의 과학」, 69~98쪽(반론과 샤르코 71~76쪽, 두 절차 76~78쪽, 고백의 역사와 구조 78~84쪽, 확산과 다섯 절차 84~90쪽, 섹슈얼리티와 일반 가설 90~94쪽, 진실의 쾌락과 결론 94~98쪽), 제4부 서두 101~105쪽, 1장 「쟁점」 107~120쪽, 2장 「방법」 121~135쪽(권력 명제 121~127쪽, 네 규칙 129~135쪽). 쪽수는 초판 본문의 인쇄 쪽수입니다.",
               "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다."
             ]
           }
@@ -4991,7 +4991,7 @@ module.exports = {
           "id": "sex-gender-theory-intro-ch11-basic",
           "level": "basic",
           "title": {
-            "ko": "『앎의 의지』 제3부와 제4부 1~2장: 고백과 권력의 분석학",
+            "ko": "『지식의 의지』 제3부와 제4부 1~2장: 고백과 권력의 분석학",
             "en": "The Will to Knowledge, part 3 and part 4, chapters 1-2: confession and an analytics of power"
           },
           "questions": [
@@ -5000,7 +5000,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제3부 「성의 과학」에서 성애의 기술(ars erotica)을 가진 사회와 서구를 어떻게 구별할까요?",
+                "ko": "푸코는 『지식의 의지』 제3부 「성의 과학」에서 성애의 기술(ars erotica)을 가진 사회와 서구를 어떻게 구별할까요?",
                 "en": "In part 3 of The Will to Knowledge, 'Scientia sexualis', how does Foucault distinguish the societies that have an ars erotica from the West?"
               },
               "choices": {
@@ -5036,7 +5036,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제3부 「성의 과학」, 76~78쪽",
+                  "ko": "푸코, 『지식의 의지』 제3부 「성의 과학」, 76~78쪽",
                   "en": "Foucault, La volonté de savoir, part 3, 'Scientia sexualis', pp. 76-78"
                 }
               }
@@ -5046,7 +5046,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제3부 「성의 과학」에서 고백이라는 의례 안의 지배하는 자리가 어디에 있다고 봤을까요?",
+                "ko": "푸코는 『지식의 의지』 제3부 「성의 과학」에서 고백이라는 의례 안의 지배하는 자리가 어디에 있다고 봤을까요?",
                 "en": "In part 3 of The Will to Knowledge, 'Scientia sexualis', where does Foucault locate the position of domination within the ritual of confession?"
               },
               "choices": {
@@ -5082,7 +5082,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제3부 「성의 과학」, 79~84쪽",
+                  "ko": "푸코, 『지식의 의지』 제3부 「성의 과학」, 79~84쪽",
                   "en": "Foucault, La volonté de savoir, part 3, 'Scientia sexualis', pp. 79-84"
                 }
               }
@@ -5092,7 +5092,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제3부 「성의 과학」에서 19세기가 고백을 과학 담론에 끼워 넣은 다섯 절차를 듭니다. 그 가운데 해석의 방법은 무엇을 바꾸었다고 할까요?",
+                "ko": "푸코는 『지식의 의지』 제3부 「성의 과학」에서 19세기가 고백을 과학 담론에 끼워 넣은 다섯 절차를 듭니다. 그 가운데 해석의 방법은 무엇을 바꾸었다고 할까요?",
                 "en": "In part 3 of The Will to Knowledge, 'Scientia sexualis', Foucault lists five procedures by which the nineteenth century fitted confession into scientific discourse. What does he say the method of interpretation changed?"
               },
               "choices": {
@@ -5128,7 +5128,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제3부 「성의 과학」, 87~91쪽",
+                  "ko": "푸코, 『지식의 의지』 제3부 「성의 과학」, 87~91쪽",
                   "en": "Foucault, La volonté de savoir, part 3, 'Scientia sexualis', pp. 87-91"
                 }
               }
@@ -5138,7 +5138,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제4부 1장 「쟁점」에서, 본능의 억압을 말하는 이론과 법이 욕망을 구성한다고 보는 정신분석 이론 사이에 어떤 공통점이 있다고 했을까요?",
+                "ko": "푸코는 『지식의 의지』 제4부 1장 「쟁점」에서, 본능의 억압을 말하는 이론과 법이 욕망을 구성한다고 보는 정신분석 이론 사이에 어떤 공통점이 있다고 했을까요?",
                 "en": "In part 4, chapter 1 of The Will to Knowledge, 'Objective', what does Foucault say the theory of the repression of instincts and the psychoanalytic theory that the law constitutes desire have in common?"
               },
               "choices": {
@@ -5174,7 +5174,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제4부 1장 「쟁점」, 107~120쪽",
+                  "ko": "푸코, 『지식의 의지』 제4부 1장 「쟁점」, 107~120쪽",
                   "en": "Foucault, La volonté de savoir, part 4, ch. 1, 'L'enjeu', pp. 107-120"
                 }
               }
@@ -5184,7 +5184,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제4부 2장 「방법」에서 권력 관계와 경제 과정, 그리고 거대한 지배의 관계를 어떻게 정리할까요?",
+                "ko": "푸코는 『지식의 의지』 제4부 2장 「방법」에서 권력 관계와 경제 과정, 그리고 거대한 지배의 관계를 어떻게 정리할까요?",
                 "en": "In part 4, chapter 2 of The Will to Knowledge, 'Method', how does Foucault set out the relation of power relations to economic processes and to great dominations?"
               },
               "choices": {
@@ -5220,7 +5220,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제4부 2장 「방법」, 121~127쪽",
+                  "ko": "푸코, 『지식의 의지』 제4부 2장 「방법」, 121~127쪽",
                   "en": "Foucault, La volonté de savoir, part 4, ch. 2, 'Méthode', pp. 121-127"
                 }
               }
@@ -5230,7 +5230,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제4부 2장 「방법」의 네 번째 규칙인 담론의 전술적 다가성을 19세기 동성애 담론의 예로 어떻게 설명할까요?",
+                "ko": "푸코는 『지식의 의지』 제4부 2장 「방법」의 네 번째 규칙인 담론의 전술적 다가성을 19세기 동성애 담론의 예로 어떻게 설명할까요?",
                 "en": "How does Foucault illustrate the fourth rule in part 4, chapter 2 of The Will to Knowledge, 'Method', the tactical polyvalence of discourses, with the example of nineteenth-century discourse on homosexuality?"
               },
               "choices": {
@@ -5266,7 +5266,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제4부 2장 「방법」, 129~135쪽",
+                  "ko": "푸코, 『지식의 의지』 제4부 2장 「방법」, 129~135쪽",
                   "en": "Foucault, La volonté de savoir, part 4, ch. 2, 'Méthode', pp. 129-135"
                 }
               }
@@ -5285,7 +5285,7 @@ module.exports = {
       },
       "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
       "summary": {
-        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『앎의 의지』(1976) 제4부 3장 「영역」, 4장 「시기 구분」(136~173쪽)과 제5부 「죽음의 권리와 삶에 대한 권력」(175~211쪽)을 따라 읽습니다. 섹슈얼리티 장치의 네 전략과 결연 장치의 관계, 그 장치가 노동계급보다 부르주아지에게 먼저 적용되었다는 주장, 그리고 죽이는 권력에서 삶을 관리하는 생명 권력으로의 전환과 자본주의의 관계를 확인합니다.",
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976) 제4부 3장 「영역」, 4장 「시기 구분」(136~173쪽)과 제5부 「죽음의 권리와 삶에 대한 권력」(175~211쪽)을 따라 읽습니다. 섹슈얼리티 장치의 네 전략과 결연 장치의 관계, 그 장치가 노동계급보다 부르주아지에게 먼저 적용되었다는 주장, 그리고 죽이는 권력에서 삶을 관리하는 생명 권력으로의 전환과 자본주의의 관계를 확인합니다.",
         "en": "About 12 minutes · Follow part 4, chapters 3 and 4, 'Domaine' and 'Périodisation' (pp. 136-173), and part 5, 'Droit de mort et pouvoir sur la vie' (pp. 175-211), of Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976). See the four strategies of the deployment of sexuality and its relation to the deployment of alliance, the claim that it was applied to the bourgeoisie before the working class, and the shift from a power that kills to a bio-power that manages life, together with its link to capitalism."
       },
       "learningFocus": {
@@ -5331,7 +5331,7 @@ module.exports = {
           {
             "title": "근거 자료",
             "items": [
-              "푸코, 『성의 역사』 제1권 『앎의 의지』(갈리마르, 1976) 제4부 「섹슈얼리티 장치」 3장 「영역」 136~151쪽, 4장 「시기 구분」 152~173쪽, 제5부 「죽음의 권리와 삶에 대한 권력」 175~211쪽. 네 전략 136~139쪽, 결연과 섹슈얼리티 139~151쪽, 계급과 확산 158~173쪽, 생명 권력과 자본주의 177~191쪽, 성과 피 191~208쪽.",
+              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976) 제4부 「섹슈얼리티 장치」 3장 「영역」 136~151쪽, 4장 「시기 구분」 152~173쪽, 제5부 「죽음의 권리와 삶에 대한 권력」 175~211쪽. 네 전략 136~139쪽, 결연과 섹슈얼리티 139~151쪽, 계급과 확산 158~173쪽, 생명 권력과 자본주의 177~191쪽, 성과 피 191~208쪽.",
               "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다."
             ]
           }
@@ -5481,7 +5481,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제4부 3장 「영역」에서 18세기부터 성을 둘러싸고 형성된 네 전략 집합을 무엇으로 꼽고, 그 전략들이 한 일을 어떻게 규정했을까요?",
+                "ko": "푸코는 『지식의 의지』 제4부 3장 「영역」에서 18세기부터 성을 둘러싸고 형성된 네 전략 집합을 무엇으로 꼽고, 그 전략들이 한 일을 어떻게 규정했을까요?",
                 "en": "In part 4, chapter 3, 'Domaine', of The Will to Knowledge, which four strategic ensembles formed around sex from the eighteenth century did Foucault name, and how did he characterise what they did?"
               },
               "choices": {
@@ -5517,7 +5517,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제4부 3장 「영역」, 136~139쪽",
+                  "ko": "푸코, 『지식의 의지』 제4부 3장 「영역」, 136~139쪽",
                   "en": "Foucault, La volonté de savoir, part 4, ch. 3, 'Domaine', pp. 136-139"
                 }
               }
@@ -5527,7 +5527,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 「영역」에서 결연 장치와 섹슈얼리티 장치의 관계, 그리고 그 사이에서 가족이 맡은 역할을 어떻게 설명했을까요?",
+                "ko": "푸코는 『지식의 의지』 「영역」에서 결연 장치와 섹슈얼리티 장치의 관계, 그리고 그 사이에서 가족이 맡은 역할을 어떻게 설명했을까요?",
                 "en": "In 'Domaine' in The Will to Knowledge, how did Foucault explain the relation between the deployment of alliance and the deployment of sexuality, and the role the family played between them?"
               },
               "choices": {
@@ -5563,7 +5563,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제4부 3장 「영역」, 139~150쪽",
+                  "ko": "푸코, 『지식의 의지』 제4부 3장 「영역」, 139~150쪽",
                   "en": "Foucault, La volonté de savoir, part 4, ch. 3, 'Domaine', pp. 139-150"
                 }
               }
@@ -5573,7 +5573,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제4부 4장 「시기 구분」에서 섹슈얼리티 장치가 어느 계급에 먼저, 어떤 뜻으로 적용되었다고 했을까요?",
+                "ko": "푸코는 『지식의 의지』 제4부 4장 「시기 구분」에서 섹슈얼리티 장치가 어느 계급에 먼저, 어떤 뜻으로 적용되었다고 했을까요?",
                 "en": "In part 4, chapter 4, 'Périodisation', of The Will to Knowledge, to which class did Foucault say the deployment of sexuality was applied first, and in what sense?"
               },
               "choices": {
@@ -5609,7 +5609,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제4부 4장 「시기 구분」, 158~166쪽",
+                  "ko": "푸코, 『지식의 의지』 제4부 4장 「시기 구분」, 158~166쪽",
                   "en": "Foucault, La volonté de savoir, part 4, ch. 4, 'Périodisation', pp. 158-166"
                 }
               }
@@ -5619,7 +5619,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 「시기 구분」에서 섹슈얼리티 장치가 노동계급까지 퍼진 뒤 성 억압 이론이 어떻게 생겨났다고 했을까요?",
+                "ko": "푸코는 『지식의 의지』 「시기 구분」에서 섹슈얼리티 장치가 노동계급까지 퍼진 뒤 성 억압 이론이 어떻게 생겨났다고 했을까요?",
                 "en": "In 'Périodisation' in The Will to Knowledge, how did Foucault say the theory of sexual repression arose after the deployment of sexuality had spread to the working class?"
               },
               "choices": {
@@ -5655,7 +5655,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제4부 4장 「시기 구분」, 160~173쪽",
+                  "ko": "푸코, 『지식의 의지』 제4부 4장 「시기 구분」, 160~173쪽",
                   "en": "Foucault, La volonté de savoir, part 4, ch. 4, 'Périodisation', pp. 160-173"
                 }
               }
@@ -5665,7 +5665,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제5부 「죽음의 권리와 삶에 대한 권력」에서 생명 권력과 자본주의의 관계를 어떻게 설명했을까요?",
+                "ko": "푸코는 『지식의 의지』 제5부 「죽음의 권리와 삶에 대한 권력」에서 생명 권력과 자본주의의 관계를 어떻게 설명했을까요?",
                 "en": "In part 5, 'Droit de mort et pouvoir sur la vie', of The Will to Knowledge, how did Foucault explain the relation between bio-power and capitalism?"
               },
               "choices": {
@@ -5701,7 +5701,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제5부 「죽음의 권리와 삶에 대한 권력」, 177~190쪽",
+                  "ko": "푸코, 『지식의 의지』 제5부 「죽음의 권리와 삶에 대한 권력」, 177~190쪽",
                   "en": "Foucault, La volonté de savoir, part 5, 'Droit de mort et pouvoir sur la vie', pp. 177-190"
                 }
               }
@@ -5711,7 +5711,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『앎의 의지』 제5부에서 성이 왜 근대 권력의 중심 표적이 되었고, 섹슈얼리티 장치에 맞서는 거점은 어디여야 한다고 했을까요?",
+                "ko": "푸코는 『지식의 의지』 제5부에서 성이 왜 근대 권력의 중심 표적이 되었고, 섹슈얼리티 장치에 맞서는 거점은 어디여야 한다고 했을까요?",
                 "en": "In part 5 of The Will to Knowledge, why did Foucault say sex became a central target of modern power, and where did he say the rallying point against the deployment of sexuality should lie?"
               },
               "choices": {
@@ -5747,7 +5747,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『앎의 의지』 제5부 「죽음의 권리와 삶에 대한 권력」, 191~198, 204~208쪽",
+                  "ko": "푸코, 『지식의 의지』 제5부 「죽음의 권리와 삶에 대한 권력」, 191~198, 204~208쪽",
                   "en": "Foucault, La volonté de savoir, part 5, 'Droit de mort et pouvoir sur la vie', pp. 191-198, 204-208"
                 }
               }
