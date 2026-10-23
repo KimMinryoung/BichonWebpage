@@ -20,6 +20,8 @@ const COLLECTION_POSITIONS = [
     ['socialist-bloc-reform-leader', 'reform'],
     ['eurocommunism', 'reform'],
     ['western-marxist', 'western-marxist'],
+    ['feminist', 'feminist'],
+    ['new-left', 'new-left'],
     ['monarchist', 'monarchist'],
     ['conservative', 'conservative'],
     ['liberal-republican', 'liberal-republican'],

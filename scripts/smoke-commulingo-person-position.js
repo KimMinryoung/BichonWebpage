@@ -19,6 +19,10 @@ assert.equal(personPosition(primary('state-hungary', 1919), ['social-democrat'])
 assert.equal(personPosition([...primary('state-hungary', 1919), { primary: false, affiliationId: 'party-hungarian-communist' }], ['social-democrat']), 'red');
 assert.equal(personPosition(primary('russian-narodnaya-volya'), ['narodnik']), 'narodnik');
 assert.equal(personPosition(primary('party-german-communist'), ['western-marxist']), 'western-marxist');
+// A theorist in both keeps the earlier collection's colour (Mitchell: western Marxist, feminist, New Left).
+assert.equal(personPosition([], ['western-marxist', 'feminist', 'new-left']), 'western-marxist');
+assert.equal(personPosition([], ['feminist', 'new-left']), 'feminist');
+assert.equal(personPosition([], ['new-left']), 'new-left');
 assert.equal(personPosition(primary('state-vietnam', 1945), ['national-liberation']), 'red');
 assert.equal(personPosition(primary('party-paigc'), ['national-liberation']), 'national-liberation');
 
