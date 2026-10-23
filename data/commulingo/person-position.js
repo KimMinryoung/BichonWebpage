@@ -12,6 +12,8 @@ const COLLECTION_POSITIONS = [
     ['anarchist', 'anarchist'],
     ['fascist', 'fascist'],
     ['imperial-white', 'white'],
+    // A king who fought the revolution is first a monarchist (Louis XVI).
+    ['monarchist', 'monarchist'],
     ['counterrevolution', 'white'],
     ['left-opposition', 'left-opposition'],
     ['trotskyism', 'trotskyist'],
@@ -22,7 +24,6 @@ const COLLECTION_POSITIONS = [
     ['western-marxist', 'western-marxist'],
     ['feminist', 'feminist'],
     ['new-left', 'new-left'],
-    ['monarchist', 'monarchist'],
     ['conservative', 'conservative'],
     ['liberal-republican', 'liberal-republican'],
     ['agrarian', 'agrarian'],
