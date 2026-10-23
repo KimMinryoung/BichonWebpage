@@ -31,6 +31,7 @@
 | CommuLingo 프랑스 혁명·혁명 전쟁 사건 | [한영 사건 2편·출처·반영 기록](commulingo-french-events-20260913.md) |
 | CommuLingo 1848년 혁명 사건 묶음 | [개요·프랑스·독일·헝가리·이탈리아 5편, 인물 118명·용어 59개·소속 14개·엥겔스 「마자르인의 투쟁」 번역·헝가리·이탈리아 지도](commulingo-revolutions-1848-20261011.md) |
 | CommuLingo 파리 코뮌 사건 | [한영 사건·인물 10명·반영 기록](commulingo-paris-commune-20260929.md) |
+| CommuLingo 제2제정 사건 | [1852–1870 제정과 노동운동·인물 3명·용어 4개·진영 3개·반영 기록](commulingo-second-empire-20261023.md) |
 | CommuLingo 제1인터내셔널 사건 | [창립과 분열 1864–1876·인물 5명·용어 2개·진영 5개·반영 기록](commulingo-first-international-20261023.md) |
 | CommuLingo 독일 11월 혁명 사건 | [한영 사건·인물 10명·반영 기록](commulingo-german-revolution-20260929.md) |
 | CommuLingo 제2인터내셔널의 붕괴 사건 | [한영 사건·인물 7명·문헌 연결·반영 기록](commulingo-second-international-20260929.md) |
