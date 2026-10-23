@@ -906,15 +906,14 @@ a.commu-office-row:focus-visible .commu-office-main em {
     color: var(--text-muted);
     letter-spacing: 0.06em;
 }
-.commu-people-era-blurb .commu-people-range {
+.commu-people-era-tag {
     display: inline-block;
     margin-right: 6px;
     padding: 1px 7px;
     border: 1px solid var(--border);
-    background: var(--bg-inset);
-    color: var(--text-secondary);
-    white-space: nowrap;
+    color: var(--text-primary);
 }
+.commu-people-era-tag .commu-people-range { white-space: nowrap; }
 .commu-people-loading {
     grid-column: 1 / -1;
     margin: 6px 0;

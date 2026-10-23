@@ -158,7 +158,7 @@
             </div>
             <%# The era's own description, which the era table leaves out. %>
             <% if (activeEra && activeEra.blurb) { %>
-            <p class="commu-people-era-blurb"><span class="commu-people-range"><%= activeEra.range %></span> <%= activeEra.blurb %></p>
+            <p class="commu-people-era-blurb"><span class="commu-people-era-tag"><%= activeEra.label %><% if (activeEra.range) { %> <span class="commu-people-range"><%= activeEra.range %></span><% } %></span> <%= activeEra.blurb %></p>
             <% } %>
             <%# The glossary entry for the chosen affiliation, as the row the term page links back from. %>
             <% if (activeAffiliation && activeAffiliation.termIds.length) { %>
