@@ -96,7 +96,7 @@ async function fetchRows() {
              ORDER BY sort_order, id`
         ),
         client.query(
-            `SELECT office_id, track_id, ${PERIOD_COLUMNS.join(', ')}, body_ko, body_en, person_id,
+            `SELECT office_id, track_id, seat, ${PERIOD_COLUMNS.join(', ')}, body_ko, body_en, person_id,
                     name_ko, name_en, note_ko, note_en, updated_at
              FROM commulingo_office_rows
              ORDER BY office_id, sort_order, id`
@@ -215,6 +215,7 @@ function rowsToPeopleData(rows) {
         const period = periodFromRow(row);
         addListItem(officeRowsByOffice, row.office_id, {
             trackId: row.track_id || '',
+            seat: row.seat || '',
             period,
             years: formatBoth(period),
             body: t(row.body_ko, row.body_en),

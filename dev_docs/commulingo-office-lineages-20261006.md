@@ -44,4 +44,4 @@ ru.wikipedia 목록·인물 정보상자, knowbysight.info(Справочник 
 
 ## 나라 칸 · 프랑스 계보 (2026-10-23)
 - `commulingo_offices.country`(마이그레이션 371, 기본값 `soviet`)는 그 직책이 속한 나라의 국기·지리 코드(`country-geography.js`)다. `/commulingo/offices`(제목 「직책 계보」)는 나라별 묶음으로 나뉘는데, 소련이 먼저 오고 나머지는 이름순이다. 소련 묶음 안에서만 중앙위원회 구성표와 분야(`section`) 소제목을 쓴다. 국가 페이지(`/commulingo/countries/<code>`)는 같은 코드의 직책을 「직책 계보」 칸으로 보인다. 직책 페이지 제목은 「<직책> — <나라> 직책 계보」다. **새 나라 직책을 넣을 때 `country`를 지정하고**, `people-standard.js`의 `ROLE_OFFICE_TITLES`·`OFFICE_DISPLAY_ORDER`·`OFFICE_ICON`에도 넣는다(drift 검사).
-- `france-leadership`(프랑스 국가원수 · 정부 수반, 1789–)은 정체마다 묶음 하나를 두고, 묶음 안에서 국가원수 행과 정부 수반 행을 시작일 순으로 섞는다. 계보 파일은 `scripts/content/office-lineages-20261023/france-leadership.json`이다.
+- `france-leadership`(프랑스 국가원수 · 정부 수반, 1789–)은 정체마다 묶음 하나를 둔다. 행의 `seat`(마이그레이션 372, `state|government|NULL`)에 정부 수반 행이 있는 묶음은 두 열로 보인다. 왼쪽 국가원수 옆에 그 재임 중 취임한 정부 수반을 붙이고(같은 날이면 국가원수가 먼저), `seat`가 없는 행(공안위원회·총재 같은 집단 지도)은 그 위에 한 줄 목록으로 둔다. 소련 행은 모두 NULL이라 한 줄 목록 그대로다. 계보 파일은 `scripts/content/office-lineages-20261023/france-leadership.json`이다.

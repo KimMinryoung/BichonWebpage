@@ -39,7 +39,7 @@ async function getOfficeAdmin(officeId, options = {}) {
     );
     if (!officeResult.rows.length) return null;
     const rowsResult = await client.query(
-        `SELECT id, track_id, ${PERIOD_COLUMNS.join(', ')},
+        `SELECT id, track_id, seat, ${PERIOD_COLUMNS.join(', ')},
                 body_ko, body_en, person_id, name_ko, name_en, note_ko, note_en
          FROM commulingo_office_rows
          WHERE office_id = $1
@@ -58,6 +58,7 @@ async function getOfficeAdmin(officeId, options = {}) {
         rows: rowsResult.rows.map(row => ({
             id: row.id,
             trackId: row.track_id || '',
+            seat: row.seat || '',
             period: periodFromRow(row),
             years: formatBoth(periodFromRow(row)),
             body: t(row.body_ko, row.body_en),
@@ -93,6 +94,13 @@ function trackOf(payload, office) {
     return trackId;
 }
 
+// A row's seat: head of state or head of government, or none (one list).
+function seatOf(payload) {
+    const seat = payload.seat == null ? '' : payload.seat;
+    if (!['', 'state', 'government'].includes(seat)) throw badRequest('seat must be state, government or empty');
+    return seat;
+}
+
 async function createOfficeRowAdmin(officeId, payload, options = {}) {
     return withTransaction(options, async client => {
         const id = requireId(officeId, 'office id');
@@ -112,9 +120,9 @@ async function createOfficeRowAdmin(officeId, payload, options = {}) {
         const result = await client.query(
             `INSERT INTO commulingo_office_rows
                 (office_id, sort_order, ${PERIOD_COLUMNS.join(', ')},
-                 body_ko, body_en, person_id, name_ko, name_en, note_ko, note_en, track_id, updated_at)
+                 body_ko, body_en, person_id, name_ko, name_en, note_ko, note_en, track_id, seat, updated_at)
              VALUES ($1, $2, ${periodVals.map((_, i) => '$' + (i + 3)).join(', ')}, ${p(0)}, ${p(1)},
-                     NULLIF(${p(2)}, ''), ${p(3)}, ${p(4)}, ${p(5)}, ${p(6)}, NULLIF(${p(7)}, ''), NOW())
+                     NULLIF(${p(2)}, ''), ${p(3)}, ${p(4)}, ${p(5)}, ${p(6)}, NULLIF(${p(7)}, ''), NULLIF(${p(8)}, ''), NOW())
              RETURNING id`,
             [
                 id,
@@ -128,6 +136,7 @@ async function createOfficeRowAdmin(officeId, payload, options = {}) {
                 contentLocalized(payload.note, 'ko'),
                 localized(payload.note, 'en'),
                 trackOf(payload, before),
+                seatOf(payload),
             ]
         );
         const after = await getOfficeAdmin(id, { client });
@@ -176,6 +185,7 @@ async function updateOfficeRowAdmin(rowId, payload, options = {}) {
             set('note_en', localized(payload.note, 'en'));
         }
         if (payload.trackId !== undefined) set('track_id', trackOf(payload, before) || null);
+        if (payload.seat !== undefined) set('seat', seatOf(payload) || null);
         if (sets.length) {
             set('updated_at', new Date());
             values.push(id);

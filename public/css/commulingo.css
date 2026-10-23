@@ -3815,6 +3815,31 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     border: 1px solid var(--border);
 }
 
+/* Two-seat tracks: heads of state on the left, beside them the heads of
+   government who took office under each. */
+.commu-office-seats {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+}
+.commu-hub-office-rows + .commu-office-seats { margin-top: 12px; }
+.commu-office-seats-head,
+.commu-office-seat-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.commu-office-seats-head span {
+    padding: 8px 14px;
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+}
+.commu-office-seat-group { border-top: 1px solid var(--border); }
+.commu-office-seat-government { border-left: 1px solid var(--border); }
+.commu-office-seats-head span + span { border-left: 1px solid var(--border); }
+.commu-office-seats .commu-office-rows li { display: block; padding: 0; }
+.commu-office-seats .commu-office-row { grid-template-columns: 1fr; gap: 2px; }
+.commu-office-seats .commu-office-years { margin-bottom: 0; }
+.commu-office-seat-state li { position: sticky; top: 82px; background: var(--bg-surface); }
+
 /* book-list group header row: title + people-index CTA */
 .commu-book-group-head {
     display: flex;

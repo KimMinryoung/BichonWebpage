@@ -301,6 +301,7 @@ function normalizeOfficeRow(row, office, peopleById, lang) {
     return {
         officeId: office.id,
         trackId: row.trackId || '',
+        seat: row.seat || '',
         personId: row.personId || '',
         period: row.period || null,
         years: localize(row.years, lang),
@@ -325,17 +326,41 @@ function byStart(a, b) {
     return 0;
 }
 
+// A track with head-of-government rows is laid out in two columns: each head
+// of state with the heads of government who took office during their tenure
+// (the last head of state to start on or before the government's start; on
+// the same day the head of state comes first), and
+// the rows with no seat, if any, in the single list above them.
+function seatColumns(rows) {
+    if (!rows.some(row => row.seat === 'government')) return null;
+    const groups = [];
+    let current = null;
+    const seatOrder = row => (row.seat === 'state' ? 0 : 1);
+    rows.filter(row => row.seat).sort((a, b) => byStart(a, b) || seatOrder(a) - seatOrder(b)).forEach(row => {
+        if (row.seat === 'state' || !current) {
+            current = { state: row.seat === 'state' ? row : null, governments: [] };
+            groups.push(current);
+        }
+        if (row.seat === 'government') current.governments.push(row);
+    });
+    return { groups, loose: rows.filter(row => !row.seat) };
+}
+
 function officeTracks(raw, rows, lang) {
     const listed = Array.isArray(raw && raw.tracks) ? raw.tracks : [];
     const known = new Set(listed.map(track => track.id));
-    const sections = listed.map(track => ({
-        id: track.id,
-        title: localize(track.title, lang),
-        blurb: localize(track.blurb, lang),
-        rows: rows.filter(row => row.trackId === track.id).sort(byStart),
-    })).filter(track => track.rows.length);
+    const sections = listed.map(track => {
+        const own = rows.filter(row => row.trackId === track.id).sort(byStart);
+        return {
+            id: track.id,
+            title: localize(track.title, lang),
+            blurb: localize(track.blurb, lang),
+            rows: own,
+            columns: seatColumns(own),
+        };
+    }).filter(track => track.rows.length);
     const rest = rows.filter(row => !known.has(row.trackId));
-    if (rest.length) sections.push({ id: '', title: '', blurb: '', rows: rest });
+    if (rest.length) sections.push({ id: '', title: '', blurb: '', rows: rest, columns: null });
     return sections;
 }
 

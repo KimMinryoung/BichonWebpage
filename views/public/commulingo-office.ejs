@@ -41,12 +41,7 @@
         </section>
         <% } %>
 
-        <% office.tracks.forEach(function(track, index) { %>
-        <section class="commu-hub-section" aria-labelledby="office-track-<%= index %>">
-            <h2 id="office-track-<%= index %>"><%= track.title || strings.commuLingoViews.office.leadershipTimeline %></h2>
-            <% if (track.blurb) { %><p class="commu-office-track-blurb"><%= track.blurb %></p><% } %>
-            <ol class="commu-office-rows commu-hub-office-rows">
-                <% track.rows.forEach(function(row) { %>
+        <% var officeRow = function(row) { %>
                 <li>
                     <<%= row.personId ? 'a' : 'div' %> class="commu-office-row"<% if (row.personId) { %> href="/commulingo/people/<%= row.personId %>"<% } %>>
                         <span class="commu-office-years"><%= row.years %></span>
@@ -57,8 +52,27 @@
                         </span>
                     </<%= row.personId ? 'a' : 'div' %>>
                 </li>
-                <% }) %>
+        <% }; %>
+        <% office.tracks.forEach(function(track, index) { var columns = track.columns; %>
+        <section class="commu-hub-section" aria-labelledby="office-track-<%= index %>">
+            <h2 id="office-track-<%= index %>"><%= track.title || strings.commuLingoViews.office.leadershipTimeline %></h2>
+            <% if (track.blurb) { %><p class="commu-office-track-blurb"><%= track.blurb %></p><% } %>
+            <% if (!columns || columns.loose.length) { %>
+            <ol class="commu-office-rows commu-hub-office-rows">
+                <% (columns ? columns.loose : track.rows).forEach(officeRow) %>
             </ol>
+            <% } %>
+            <% if (columns) { %>
+            <div class="commu-office-seats">
+                <div class="commu-office-seats-head" aria-hidden="true"><span><%= strings.commuLingoViews.office.seatState %></span><span><%= strings.commuLingoViews.office.seatGovernment %></span></div>
+                <% columns.groups.forEach(function(group) { %>
+                <div class="commu-office-seat-group">
+                    <ol class="commu-office-rows commu-office-seat-state" aria-label="<%= strings.commuLingoViews.office.seatState %>"><% if (group.state) officeRow(group.state) %></ol>
+                    <ol class="commu-office-rows commu-office-seat-government" aria-label="<%= strings.commuLingoViews.office.seatGovernment %>"><% group.governments.forEach(officeRow) %></ol>
+                </div>
+                <% }) %>
+            </div>
+            <% } %>
         </section>
         <% }) %>
 

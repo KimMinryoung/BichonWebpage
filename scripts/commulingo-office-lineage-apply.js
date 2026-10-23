@@ -11,7 +11,8 @@
 // office store (people-offices-store.js), so period and track validation and
 // the revision log are the Admin API's. Spec format: the office lineage files
 // under scripts/content/office-lineages-20261006/ ({officeId, title, blurb,
-// range, lineage[], tracks[], rows[]}).
+// range, lineage[], tracks[], rows[]}; a row's optional `seat` is state or
+// government, for tracks laid out in two columns).
 const fs = require('fs');
 const db = require('../config/database');
 const { personName, nameColumns } = require('../data/commulingo/person-name');
@@ -57,6 +58,7 @@ function validate(spec) {
         bilingual(row.post, `${where} post`);
         if (!row.personId) bilingual(row.name, `${where} name`);
         bilingual(row.note, `${where} note`, true);
+        if (row.seat != null && !['state', 'government'].includes(row.seat)) throw new Error(`${where} seat must be state or government`);
         if (!row.period || !Array.isArray(row.period.start)) throw new Error(`${where} period.start missing`);
     });
 }
@@ -111,6 +113,7 @@ async function main() {
                 name: row.personId ? { ko: '', en: '' } : row.name,
                 note: row.note || { ko: '', en: '' },
                 trackId: row.track,
+                seat: row.seat || '',
             }, { client, changedBy });
         }
     });
