@@ -65,6 +65,29 @@ function assertNoNewLegacyBasis(next, stored = []) {
     }
 }
 
+// Key-order independent identity, so a stored activity sent back untouched
+// (the store re-reads jsonb with its own key order) still counts as kept.
+function canonical(value) {
+    if (Array.isArray(value)) return `[${value.map(canonical).join(',')}]`;
+    if (value && typeof value === 'object') return `{${Object.keys(value).sort().map(k => `${JSON.stringify(k)}:${canonical(value[k])}`).join(',')}}`;
+    return JSON.stringify(value);
+}
+
+// A new or changed activity carries its years (2026-10-23): the career row and
+// the activity filters read them, and 1,472 stored rows had none. Stored rows
+// sent back untouched pass, so an unrelated edit never fails on old data.
+// yearsUnknown: true is the explicit, reviewable exception when the sources
+// give no year at all.
+function assertNewActivitiesDated(next, stored = []) {
+    const kept = new Set((stored || []).map(canonical));
+    for (const a of next || []) {
+        if (!a || a.basis === LEGACY_BASIS || kept.has(canonical(a))) continue;
+        if (a.startYear == null && a.endYear == null && a.yearsUnknown !== true) {
+            throw badRequest('a new or changed activity needs startYear (or endYear); set yearsUnknown: true only when no source gives a year');
+        }
+    }
+}
+
 const TITLE_MAX = { ko: 40, en: 80 };
 
 function validateActivities(value, sources = [], { officeIds } = {}) {
@@ -73,7 +96,7 @@ function validateActivities(value, sources = [], { officeIds } = {}) {
     const seen = new Set();
     for (const a of value) {
         if (!a || typeof a !== 'object' || Array.isArray(a)) throw badRequest('invalid activity');
-        for (const key of Object.keys(a)) if (!['functionId','affiliationId','affiliationStatus','relation','officeId','title','startYear','endYear','primary','evidence','basis'].includes(key)) throw badRequest(`unknown activity field ${key}`);
+        for (const key of Object.keys(a)) if (!['functionId','affiliationId','affiliationStatus','relation','officeId','title','startYear','endYear','yearsUnknown','primary','evidence','basis'].includes(key)) throw badRequest(`unknown activity field ${key}`);
         if (!functions.has(a.functionId)) throw badRequest('unknown activity functionId');
         if (!['confirmed','independent','unresolved'].includes(a.affiliationStatus)) throw badRequest('activity affiliationStatus is required');
         if (a.affiliationStatus === 'confirmed' ? !affiliations.has(a.affiliationId) : a.affiliationId != null) throw badRequest('activity affiliationId must match its confirmation status');
@@ -98,6 +121,9 @@ function validateActivities(value, sources = [], { officeIds } = {}) {
         if (typeof a.primary !== 'boolean') throw badRequest('activity primary must be boolean');
         for (const key of ['startYear','endYear']) if (a[key] != null && (!Number.isInteger(a[key]) || a[key] < -3000 || a[key] > 2200)) throw badRequest('invalid activity year');
         if (a.startYear != null && a.endYear != null && a.endYear < a.startYear) throw badRequest('activity endYear precedes startYear');
+        if (a.yearsUnknown != null && (a.yearsUnknown !== true || a.startYear != null || a.endYear != null)) {
+            throw badRequest('activity yearsUnknown is true, and only on an activity without startYear and endYear');
+        }
         if (a.affiliationId && !periodsOverlap(affiliations.get(a.affiliationId)?.periods, a.startYear, a.endYear)) {
             throw badRequest(`activity years ${a.startYear ?? ''}–${a.endYear ?? ''} fall outside the existence of ${a.affiliationId}`);
         }
@@ -239,6 +265,6 @@ function matchesActivities(person, filter) {
         && (!filter.officeId || a.officeId === filter.officeId));
 }
 
-module.exports = { affiliationByTerm, LEGACY_BASIS, assertNoNewLegacyBasis, isUnresolvedGap, OFFICE_AFFILIATIONS, functions, affiliations, periodsOverlap, validateActivities, displayActivities, chronologicalActivities, activityYears, activityHref, affiliationMatches, matchesActivities };
+module.exports = { affiliationByTerm, LEGACY_BASIS, assertNoNewLegacyBasis, assertNewActivitiesDated, isUnresolvedGap, OFFICE_AFFILIATIONS, functions, affiliations, periodsOverlap, validateActivities, displayActivities, chronologicalActivities, activityYears, activityHref, affiliationMatches, matchesActivities };
 // The whole catalog object; read it through the module (activities.catalog), not by destructuring.
 Object.defineProperty(module.exports, 'catalog', { enumerable: true, get: () => current().source });

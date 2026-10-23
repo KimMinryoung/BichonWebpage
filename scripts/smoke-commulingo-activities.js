@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const { validateActivities, displayActivities, matchesActivities, isUnresolvedGap, catalog } = require('../data/commulingo/person-activities');
+const { validateActivities, assertNewActivitiesDated, displayActivities, matchesActivities, isUnresolvedGap, catalog } = require('../data/commulingo/person-activities');
 const { ICON_PATHS } = require('../data/icons');
 const evidence = [{ source: 'https://example.org/biography', locator: 'Career', claim: 'Service', excerpt: 'Documented service.' }];
 const primary = { functionId: 'security', affiliationId: 'china-ccp', affiliationStatus: 'confirmed', relation: 'membership', primary: true, startYear: 1939, endYear: 1948, evidence };
@@ -9,6 +9,17 @@ for (const invalid of [[], [primary, primary], [{ ...primary, primary: false }],
     assert.throws(() => validateActivities(invalid, sources));
 }
 assert.throws(() => validateActivities([primary], []));
+// New or changed activities carry years; stored undated rows pass untouched,
+// in any key order; yearsUnknown is the explicit exception and excludes years.
+const undated = { ...primary, startYear: null, endYear: null };
+assert.throws(() => assertNewActivitiesDated([undated]), /needs startYear/);
+assertNewActivitiesDated([{ ...undated, endYear: 1948 }]);
+assertNewActivitiesDated([Object.fromEntries(Object.entries(undated).reverse())], [undated]);
+assert.throws(() => assertNewActivitiesDated([{ ...undated, relation: 'service' }], [undated]), /needs startYear/);
+assertNewActivitiesDated([{ ...undated, yearsUnknown: true }]);
+assert.deepEqual(validateActivities([{ ...undated, yearsUnknown: true }], sources).length, 1);
+assert.throws(() => validateActivities([{ ...primary, yearsUnknown: true }], sources), /yearsUnknown/);
+assert.throws(() => validateActivities([{ ...undated, yearsUnknown: false }], sources), /yearsUnknown/);
 const person = { activities: [{ functionId: 'military', affiliationId: 'soviet-party' }, { functionId: 'diplomacy', affiliationId: 'china-ccp' }] };
 assert(!matchesActivities(person, { functionId: 'military', affiliationId: 'china-ccp' }), 'must match the same career, not a cross product');
 assert(matchesActivities(person, { functionId: 'diplomacy', affiliationId: 'china-ccp' }));

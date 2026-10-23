@@ -15,7 +15,7 @@
 
 Migration 175는 역방향으로 겹치는 용어 관계만 정리한다. 두 행 중 term_id가 작은 행을 남기고 최소 sort_order를 보존한다. 단독 역방향 행은 유지한다. LEAST/GREATEST 고유 인덱스는 어느 방향으로 입력해도 중복을 거부한다. 관계 쓰기 도구는 기존 행을 먼저 찾거나 충돌 대상을 지정하지 않은 `ON CONFLICT DO NOTHING`을 사용해야 한다. `(term_id, related_id)`만 대상으로 지정한 upsert는 역방향 충돌을 처리하지 못한다.
 
-용어 category는 분류 FK로 검증하며 ID 변경은 CASCADE, 삭제는 RESTRICT다. 기존 category 인덱스를 재사용하고 term_people.person_id, term_events.event_id, term_relations.related_id에 역방향 인덱스를 추가한다. 인물 등록은 근거 있는 활동(activities)을 필수로 요구한다(2026-09-30, 구 role 필수에서 변경). 등록/upsert 경로는 그대로 유지한다.
+용어 category는 분류 FK로 검증하며 ID 변경은 CASCADE, 삭제는 RESTRICT다. 기존 category 인덱스를 재사용하고 term_people.person_id, term_events.event_id, term_relations.related_id에 역방향 인덱스를 추가한다. 인물 등록은 근거 있는 활동(activities)을 필수로 요구한다(2026-09-30, 구 role 필수에서 변경). 새로 넣거나 바꾼 활동은 시작 연도(최소한 끝 연도)가 있어야 한다(2026-10-23, `assertNewActivitiesDated`). 출처에 연도가 전혀 없을 때만 `yearsUnknown: true`로 예외를 명시한다. 저장된 연도 없는 활동은 그대로 다시 보내면 통과하므로, 다른 칸을 고치는 편집이 옛 데이터 때문에 실패하지 않는다. 당시 연도 없는 활동은 1,472건(인물 1,315명)이었다. 등록/upsert 경로는 그대로 유지한다.
 
 ## 조회와 저장
 
