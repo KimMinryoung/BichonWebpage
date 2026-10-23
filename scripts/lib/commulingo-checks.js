@@ -285,7 +285,7 @@ function checkSource(out, value, qLabel) {
   const sLabel = qLabel + '.source';
   if (!value || typeof value !== 'object') { out.add('source-shape', qLabel, sLabel + ' must be an object'); return; }
   if (value.kind === 'reference') {
-    const allowed = /^(\/commulingo\/docs\/[^\s]+|https:\/\/(www\.marxists\.org|www\.elysee\.fr|www2?\.assemblee-nationale\.fr|(?:www\.)?revolution\.chnm\.org|files\.libcom\.org|heritage\.bnf\.fr|www\.napoleon\.org|newleftreview\.org)\/[^\s]+)$/;
+    const allowed = /^(\/commulingo\/docs\/[^\s]+|https:\/\/(www\.marxists\.org|www\.elysee\.fr|www2?\.assemblee-nationale\.fr|(?:www\.)?revolution\.chnm\.org|files\.libcom\.org|heritage\.bnf\.fr|www\.napoleon\.org|newleftreview\.org|www\.gallimard\.fr)\/[^\s]+)$/;
     if (!allowed.test(str(value.href))) out.add('source-shape', qLabel, sLabel + '.href is not an approved source URL');
     allLocalizedText(out, value.label, sLabel + '.label');
     if (typeof value.quote !== 'undefined') out.add('source-shape', qLabel, sLabel + ' reference must not present a paraphrase as a quotation');

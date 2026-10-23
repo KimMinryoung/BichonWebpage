@@ -13,19 +13,19 @@ module.exports = {
     "en": "Marxism and Theories of Sex and Gender"
   },
   "badge": {
-    "ko": "짧은 학습 · 7편",
-    "en": "7 short lessons"
+    "ko": "짧은 학습 · 12편",
+    "en": "12 short lessons"
   },
   "description": {
-    "ko": "엥겔스와 베벨에서 콜론타이와 레닌, 보부아르와 미첼, 파이어스톤, 하트먼과 보걸, 라이히·마르쿠제와 푸코, 버틀러와 프레이저까지, 여성 억압의 기원, 성과 사랑의 정치, 경제 변화와 여성 해방, 생물학과 역사, 자본주의와 가부장제, 성 해방과 권력, 성적 억압의 물질성을 두고 사회주의자와 그 비판자들이 어디서 갈렸는지 당사자의 저작으로 비교합니다. 각 편은 개념 설명과 6문항, 오답 해설로 구성됩니다.",
-    "en": "From Engels and Bebel, Kollontai and Lenin, Beauvoir and Mitchell, through Firestone, Hartmann and Vogel, Reich, Marcuse and Foucault, to Butler and Fraser, compare where socialists and their critics divided over the origin of women's oppression, the politics of sex and love, economic change and women's liberation, biology and history, capitalism and patriarchy, sexual liberation and power, and the materiality of sexual oppression, using the participants' own writings. Each lesson has a concept brief, six questions, and feedback."
+    "ko": "엥겔스와 베벨에서 콜론타이와 레닌, 보부아르와 미첼, 파이어스톤, 하트먼과 보걸, 라이히·마르쿠제와 푸코, 버틀러와 프레이저까지 7편으로, 여성 억압의 기원, 성과 사랑의 정치, 경제 변화와 여성 해방, 생물학과 역사, 자본주의와 가부장제, 성 해방과 권력, 성적 억압의 물질성을 두고 사회주의자와 그 비판자들이 어디서 갈렸는지 당사자의 저작으로 비교합니다. 8~12편은 미셸 푸코의 『성의 역사』 제1권 『앎의 의지』(1976)를 부별로 읽습니다. 각 편은 개념 설명과 6문항, 오답 해설로 구성됩니다.",
+    "en": "From Engels and Bebel, Kollontai and Lenin, Beauvoir and Mitchell, through Firestone, Hartmann and Vogel, Reich, Marcuse and Foucault, to Butler and Fraser, compare where socialists and their critics divided over the origin of women's oppression, the politics of sex and love, economic change and women's liberation, biology and history, capitalism and patriarchy, sexual liberation and power, and the materiality of sexual oppression, using the participants' own writings, in seven lessons. Lessons 8-12 then read Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976), part by part. Each lesson has a concept brief, six questions, and feedback."
   },
   "editorial": {
     "authoredAt": "2026-10-19",
-    "revision": 2,
+    "revision": 3,
     "interpretation": "Comparisons of the specified writings, not whole-career classifications",
     "method": "Actual historical documents and authored interpretations only; no invented dialogue, documents, or scenarios.",
-    "revisedAt": "2026-10-19"
+    "revisedAt": "2026-10-23"
   },
   "chapters": [
     {
@@ -2441,7 +2441,7 @@ module.exports = {
               "미셸 푸코는 『앎의 의지』 제1부 「우리 빅토리아인들」에서 17세기 이후 성이 억압되어 왔다는 통념을 ‘억압 가설’이라 부르고 세 가지를 의심합니다. 성 억압이 역사적 사실인가, 권력은 본질적으로 금지와 검열의 형태로 작동하는가, 억압을 비판하는 담론은 억압과 단절했는가 아니면 같은 역사적 그물에 속하는가입니다. 그는 같은 대목에서 프로이트의 순응주의와 함께 “라이히의 큰 격정 아래 숨은 소심함”을 고발하는 흔한 논조를 예로 듭니다.",
               "제2부 「억압 가설」에서는 16세기 말 이후 성의 ‘담론화’가 제한되기는커녕 점점 더 부추겨졌고, 권력과 쾌락은 서로를 없애지 않고 맞물려 증식했다고 봅니다. 제4부에서는 권력 관계가 금지만 하는 상부구조가 아니라 직접 생산하는 역할을 한다고 하고, “권력이 있는 곳에 저항이 있다”고 쓰면서도 권력 바깥의 ‘거대한 거부’의 자리는 없다고 합니다.",
               "제4부 끝 「시기 구분」에서 푸코는 양차 대전 사이 “라이히를 중심으로” 성 억압에 대한 역사적·정치적 비판이 형성되었고 그 가치와 실제 효과가 컸다고 인정합니다. 그러나 라이히가 붙인 정치적 조건이 하나도 실현되지 않은 채 성 행동이 크게 바뀐 사실은, 그 ‘반억압 투쟁’이 성 장치 안의 전술적 이동이었음을 보여 준다고 했습니다.",
-              "제5부에서 그는 “성에 예라고 말하면 권력에 아니라고 말하는 것”이라 믿지 말라고 하고, 성 장치에 맞서는 반격의 거점은 ‘성-욕망’이 아니라 ‘몸과 쾌락’이어야 한다는 문장으로 결론을 맺습니다. 이 책은 문항 근거로 쓸 수 있는 공개 판본이 없어 여기서만 소개합니다."
+              "제5부에서 그는 “성에 예라고 말하면 권력에 아니라고 말하는 것”이라 믿지 말라고 하고, 성 장치에 맞서는 반격의 거점은 ‘성-욕망’이 아니라 ‘몸과 쾌락’이어야 한다는 문장으로 결론을 맺습니다. 이 책은 8~12편에서 부별로 자세히 읽습니다."
             ]
           },
           {
@@ -2485,7 +2485,7 @@ module.exports = {
               "In part 1 of The Will to Knowledge, 'We Other Victorians', Michel Foucault calls the received view that sex has been repressed since the seventeenth century the 'repressive hypothesis' and raises three doubts: is the repression of sex a historical fact; does power work essentially through prohibition and censorship; and has the discourse criticising repression broken with it, or does it belong to the same historical network? In the same passage he cites, as a familiar line, the denunciation of Freud's conformism and of 'so much timidity beneath Reich's great outbursts'.",
               "In part 2, 'The Repressive Hypothesis', he argues that since the late sixteenth century the 'putting into discourse' of sex was not restricted but increasingly incited, and that power and pleasure do not cancel each other but interlock and multiply. In part 4 he says relations of power are not a superstructure that merely prohibits but play a directly productive role, and writes that 'where there is power, there is resistance', while denying any single place of 'great Refusal' outside power.",
               "At the end of part 4, 'Periodization', Foucault grants that between the wars a historico-political critique of sexual repression formed 'around Reich', and that its value and real effects were considerable. But the fact that sexual behaviour changed so much without any of the political conditions Reich attached being realised shows, he says, that this 'anti-repressive' struggle was a tactical shift within the deployment of sexuality.",
-              "In part 5 he warns against believing that saying yes to sex means saying no to power, and concludes that the rallying point for the counter-attack against the deployment of sexuality ought to be not sex-desire but bodies and pleasures. No open edition of the book is available to cite for the questions, so it is presented here only."
+              "In part 5 he warns against believing that saying yes to sex means saying no to power, and concludes that the rallying point for the counter-attack against the deployment of sexuality ought to be not sex-desire but bodies and pleasures. Lessons 8-12 read the book part by part."
             ]
           },
           {
@@ -3350,6 +3350,2405 @@ module.exports = {
                 "label": {
                   "ko": "프레이저, 「이성애주의, 무시, 자본주의: 주디스 버틀러에 대한 답변」 (《뉴레프트리뷰》 I/228, 1998)",
                   "en": "Fraser, 'Heterosexism, Misrecognition and Capitalism: A Response to Judith Butler' (NLR I/228, 1998)"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sex-gender-theory-intro-ch08",
+      "volumeNumber": 15,
+      "chapterNumber": 8,
+      "title": {
+        "ko": "우리는 왜 성이 억압당했다고 그토록 말하는가?",
+        "en": "Why do we keep saying that sex is repressed?"
+      },
+      "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+      "summary": {
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『앎의 의지』(1976) 제1부 「우리 빅토리아인들」(9~22쪽)을 순서대로 읽습니다. 17세기 이후 성이 억압되어 왔다는 통념이 어떤 이야기인지, 그 이야기가 왜 그렇게 설득력 있게 들리는지, 푸코가 여기에 던지는 세 가지 의심과 책 전체의 질문이 무엇인지 확인합니다.",
+        "en": "About 12 minutes · Read part 1 of Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976), 'We Other Victorians' (pp. 9-22), in order. See what story the received view tells about sex being repressed since the seventeenth century, why that story sounds so convincing, and what three doubts and what overall question Foucault sets against it."
+      },
+      "learningFocus": {
+        "ko": "제1부는 흔히 ‘푸코는 성 억압이 없었다고 했다’로 요약되지만, 푸코는 금지와 검열이 있었다는 사실을 부정하지 않습니다. 그가 문제 삼는 것은 금지를 근대 성의 역사를 쓰는 기본 원리로 삼는 일, 그리고 억압을 고발하는 말이 왜 그토록 매력적인가입니다. 억압 가설은 자본주의의 노동력 착취와 손쉽게 이어지고, 말하는 사람을 권력 바깥의 예언자처럼 세워 줍니다. 제1부는 결론이 아니라 질문을 세우는 서론입니다. 우리는 왜 억압당했다고 그토록 말하는가, 성에 관해 말하게 하는 권력과 앎과 쾌락의 체제는 어떻게 움직이는가를 묻습니다.",
+        "en": "Part 1 is often summed up as 'Foucault said there was no sexual repression', yet Foucault does not deny that prohibitions and censorship existed. What he questions is making prohibition the basic principle for writing the modern history of sex, and why the discourse that denounces repression is so attractive. The repressive hypothesis links easily to the capitalist exploitation of labour power, and it casts the speaker as a prophet standing outside power. Part 1 is an introduction that sets up questions rather than conclusions: why do we say so insistently that we are repressed, and how does the regime of power, knowledge and pleasure that makes us speak about sex actually work?"
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "통념: 빅토리아 체제의 이야기",
+            "items": [
+              "푸코는 제1부를 남들이 흔히 하는 이야기를 요약하는 데서 시작합니다. 17세기 초까지는 몸짓과 말이 비교적 거리낌 없었고 아이들도 어른들의 웃음 속에서 자유로웠지만, 그 뒤 빠르게 어둠이 내려 빅토리아 시대 부르주아의 단조로운 밤에 이르렀다는 것입니다.",
+              "이 이야기에서 성은 부부 가족 안으로 갇혀 생식이라는 진지한 기능에 흡수됩니다. 합법적이고 자식을 낳는 부부가 규범이 되고, 사회 전체에서 인정받는 성의 자리는 부모의 침실 하나뿐입니다. 생식에 닿지 않는 것은 비정상이 되어 그 대가를 치릅니다.",
+              "푸코는 이 통념이 그리는 억압을 형법의 단순한 금지와 구별합니다. 억압은 사라지라는 선고이면서 동시에 침묵하라는 명령이고, 그런 것은 없다는 단언, 그러니 말할 것도 볼 것도 알 것도 없다는 확인이라는 것입니다. 아이에게는 성이 없다고 하면서 바로 그 이유로 금지하는 식입니다.",
+              "그래도 부르주아 사회는 양보를 합니다. 정당하지 않은 성은 이윤의 회로에 다시 넣을 수 있는 곳, 곧 매음굴과 정신 요양원으로 밀려나 거기서만 값을 치르고 거래됩니다. 그 밖의 모든 곳에서는 근대 청교도주의가 금지, 비존재, 침묵이라는 세 겹의 명령을 내렸다는 것이 통념의 그림입니다."
+            ]
+          },
+          {
+            "title": "억압 가설은 왜 끌리는가",
+            "items": [
+              "통념에 따르면 프로이트도 조심스럽게만 풀어 주었고, 진짜 해방에는 법의 위반과 금지의 해제, 권력 메커니즘의 새로운 경제까지 필요합니다. 그래서 프로이트의 순응주의, 정신분석의 규범화 기능, 라이히의 소심함을 고발하는 논조가 생깁니다.",
+              "푸코는 이 담론이 굳건한 첫째 이유를 역사적·정치적 보증에서 찾습니다. 억압의 시작을 17세기에 두면 자본주의의 발전과 겹치고, 노동력을 체계적으로 착취하는 시대에 그 힘이 재생산에 필요한 최소한을 넘어 쾌락으로 흩어지는 것을 허용할 수 없었다는 설명이 쉽게 나옵니다. 이렇게 성의 문제는 정치적 대의와 미래에 묶입니다.",
+              "둘째 이유로 푸코는 “말하는 자의 이득”을 듭니다(13쪽). 성이 억압되어 있다면 성과 그 억압을 말하는 것만으로 의도적 위반처럼 보이고, 말하는 사람은 어느 정도 권력 바깥에 서서 미래의 자유를 앞당기는 사람이 됩니다. 19세기의 인구학자와 정신의학자는 이런 천한 주제로 독자를 붙잡아 미안하다고 했지만, 지금 우리는 전복적이라는 자세를 취하며 성을 말합니다.",
+              "이 담론은 혁명과 행복, 혁명과 쾌락을 함께 말하게 해 주고, 예언과 설교라는 오래된 형식을 되살립니다. 푸코는 혁명 기획에 붙어 있던 서정성과 종교성이 산업화된 서구 사회에서 상당 부분 성으로 옮겨 간 것이 아닌가 묻고, 억압의 진술과 설교의 형식이 서로를 강화한다고 봅니다. 고백을 들어 주는 사람이 돈을 받는 문명이라는 지적도 여기서 나옵니다."
+            ]
+          },
+          {
+            "title": "세 가지 의심과 책 전체의 질문",
+            "items": [
+              "푸코가 세우는 질문은 우리는 왜 억압당하는가가 아니라, 우리는 왜 가까운 과거와 현재와 우리 자신에게 그토록 열을 내며 억압당했다고 말하는가입니다. 성을 숨긴다고 노골적으로 말하고, 성을 죄로 만들었다는 역사적 죄책감에 스스로를 몰아넣는 사회를 묻는 것입니다.",
+              "그는 이 통념을 억압 가설이라 부르고 세 가지를 의심합니다. 성 억압은 정말 역사적 사실인가(역사적 질문), 권력은 본질적으로 금지·검열·부인의 형태로 작동하는가(역사-이론적 질문), 억압을 비판하는 담론은 억압과 단절한 것인가 아니면 같은 역사적 그물에 속하는가(역사-정치적 질문)입니다.",
+              "이 의심은 대칭적인 반대 가설이 아닙니다. 성이 실제로는 자유로웠다거나 권력이 억압보다 관용적이라고 말하려는 것이 아니고, 억압 가설이 틀렸다고 보이기보다 17세기 이후 성에 관한 담론 전체의 경제 안에 다시 놓으려는 것입니다. 그래서 물어야 할 것은 성에 예라고 하느냐 아니라고 하느냐가 아니라, 누가 어디서 어떤 제도를 통해 성을 말하게 되는가, 곧 성의 담론화(mise en discours)입니다.",
+              "푸코는 금지와 거부와 검열이 실재했음을 인정하면서, 그것들을 하나의 거대한 부정 메커니즘으로 묶지 말고 담론의 생산, 권력의 생산, 앎의 생산 안에서 국지적·전술적 역할을 하는 부품으로 보자고 합니다. 목표는 성에 관한 담론을 떠받치는 “권력-앎-쾌락 체제”를 밝히는 일이고(19쪽), 첫 개관은 16세기 말 이후 성의 담론화가 제한되기는커녕 점점 더 부추겨졌음을 보여 준다고 예고합니다."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "푸코, 『성의 역사』 제1권 『앎의 의지』(갈리마르, 1976) 제1부 「우리 빅토리아인들」, 9~22쪽. 통념의 요약 9~12쪽, 억압 가설이 매력적인 이유 12~16쪽, 책의 질문 16~17쪽, 세 가지 의심 18~19쪽, 분석 방향 19~22쪽.",
+              "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "The received view: the story of a Victorian regime",
+            "items": [
+              "Foucault opens part 1 by summarising a story others commonly tell. Until the early seventeenth century gestures and words were fairly unconstrained and children roamed freely amid adult laughter; then a swift dusk fell, leading to the monotonous nights of the Victorian bourgeoisie.",
+              "In this story sexuality is shut up inside the conjugal family and absorbed into the serious business of reproduction. The legitimate, procreative couple sets the norm, and the one recognised place of sexuality in the whole social space is the parents' bedroom. Whatever does not serve reproduction becomes abnormal and pays the price.",
+              "Foucault distinguishes the repression this view describes from the plain prohibitions of criminal law. Repression is a sentence to disappear, but also an order to be silent, an assertion of non-existence, and so a finding that there is nothing to say, see or know. Children, for instance, are said to have no sex, and that very claim is the reason to forbid it to them.",
+              "Bourgeois society still makes concessions. Illegitimate sexualities are pushed to places where they can be put back into the circuits of profit, the brothel and the mental-health clinic, and there alone they are traded at a high price. Everywhere else, in this picture, modern puritanism imposed a threefold decree of prohibition, non-existence and silence."
+            ]
+          },
+          {
+            "title": "Why the repressive hypothesis appeals",
+            "items": [
+              "On this view even Freud freed us only cautiously, and real liberation would require breaking laws, lifting prohibitions and a whole new economy in the mechanisms of power. Hence the familiar denunciations of Freud's conformism, of psychoanalysis's normalising functions, and of Reich's timidity.",
+              "Foucault finds the first reason the discourse holds so well in its historical and political backing. Date the start of repression to the seventeenth century and it coincides with the development of capitalism; then an easy explanation follows: in an age that systematically exploits labour power, that power could not be allowed to scatter into pleasures beyond the minimum needed to reproduce it. The cause of sex is thus tied to a political cause and to the future.",
+              "As a second reason Foucault names 'the speaker's benefit' (p. 13). If sex is repressed, merely speaking of sex and its repression looks like deliberate transgression, and the speaker stands to some extent outside power, hastening future freedom. Nineteenth-century demographers and psychiatrists apologised for detaining readers with such low subjects; we now speak of sex while striking a subversive pose.",
+              "This discourse lets people speak of revolution together with happiness and pleasure, and it revives the old forms of prophecy and preaching. Foucault asks whether the lyricism and religiosity that long accompanied the revolutionary project have, in industrial Western societies, largely shifted onto sex, and he holds that the statement of oppression and the form of the sermon reinforce each other. Here too he notes that ours is a civilisation in which people are paid to listen to confidences about sex."
+            ]
+          },
+          {
+            "title": "Three doubts and the question of the whole book",
+            "items": [
+              "The question Foucault poses is not why we are repressed, but why we say with such passion, against our recent past, our present and ourselves, that we are repressed. He is asking about a society that loudly says it hides sex, and that burdens itself with historical guilt for once having made sex a sin.",
+              "He calls the received view the repressive hypothesis and raises three doubts. Is the repression of sex really a historical fact (a historical question)? Does power work essentially through prohibition, censorship and denial (a historico-theoretical question)? Has the critical discourse against repression broken with it, or does it belong to the same historical network (a historico-political question)?",
+              "These doubts are not a symmetrical counter-hypothesis. Foucault is not saying that sexuality was in fact free, or that power is more tolerant than repressive; rather than show that the repressive hypothesis is false, he wants to put it back into the general economy of discourses on sex since the seventeenth century. So the point is not whether sex is told yes or no, but who comes to speak of sex, from where, through which institutions: the putting of sex into discourse (mise en discours).",
+              "Foucault grants that prohibitions, refusals and censorship were real, but asks us not to gather them into one great mechanism of saying no; they are pieces playing a local, tactical role within the production of discourse, of power and of knowledge. The aim is to bring out the 'regime of power-knowledge-pleasure' that sustains discourse on sex (p. 19), and a first survey, he announces, suggests that since the late sixteenth century the putting of sex into discourse was not restricted but increasingly incited."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "Foucault, The History of Sexuality, vol. 1, La volonté de savoir (Gallimard, 1976), part 1, 'Nous autres, victoriens', pp. 9-22: summary of the received view pp. 9-12, why the repressive hypothesis appeals pp. 12-16, the book's question pp. 16-17, the three doubts pp. 18-19, direction of analysis pp. 19-22.",
+              "Translated from the French original. The work is still under copyright, so apart from short quotations everything is paraphrase."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "빅토리아 체제 이야기",
+            "text": "17세기 이후 성은 부부의 침실에 갇히고 나머지는 금지·비존재·침묵의 명령을 받았다는 통념입니다."
+          },
+          {
+            "title": "자본주의와의 손쉬운 연결",
+            "text": "노동력을 착취하는 시대에 쾌락은 허용될 수 없었다는 설명이 억압 가설에 정치적 무게를 줍니다."
+          },
+          {
+            "title": "말하는 자의 이득",
+            "text": "억압을 말하는 사람은 위반자이자 미래를 예고하는 설교자의 자리를 얻습니다."
+          },
+          {
+            "title": "세 가지 의심",
+            "text": "역사적 사실인가, 권력은 금지로만 작동하는가, 억압 비판은 같은 그물에 속하지 않는가를 묻습니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "The Victorian-regime story",
+            "text": "The received view that since the seventeenth century sex was shut in the conjugal bedroom and everything else met a decree of prohibition, non-existence and silence."
+          },
+          {
+            "title": "An easy link to capitalism",
+            "text": "The claim that an age exploiting labour power could not tolerate pleasure gives the repressive hypothesis political weight."
+          },
+          {
+            "title": "The speaker's benefit",
+            "text": "Whoever speaks of repression takes the place of a transgressor and of a preacher announcing the future."
+          },
+          {
+            "title": "Three doubts",
+            "text": "Is repression a historical fact, does power work only by prohibition, and does the critique of repression belong to the same network?"
+          }
+        ]
+      },
+      "diagram": {
+        "kind": "contrast",
+        "ko": {
+          "title": "억압 가설과 푸코가 세우는 질문",
+          "left": {
+            "heading": "통념: 억압 가설",
+            "rows": [
+              "시기: 17세기 초의 솔직함 뒤 빅토리아 부르주아의 침묵",
+              "성의 자리: 부모의 침실, 나머지는 매음굴과 요양원",
+              "권력: 금지·비존재·침묵을 명령하는 부정의 힘",
+              "원인: 노동력을 착취하는 자본주의와 맞지 않는 쾌락",
+              "해방: 억압을 말하고 법을 위반하는 일 자체가 저항"
+            ]
+          },
+          "right": {
+            "heading": "푸코, 『앎의 의지』 제1부",
+            "rows": [
+              "시기: 16세기 말 이후 성의 담론화가 오히려 부추겨짐",
+              "물을 것: 누가 어디서 어떤 제도로 성을 말하게 되는가",
+              "권력: 금지는 생산적 기술 안의 국지적·전술적 부품",
+              "질문: 왜 우리는 억압당했다고 그토록 말하는가",
+              "억압 비판: 같은 역사적 그물에 속하는지부터 의심"
+            ]
+          }
+        },
+        "en": {
+          "title": "The repressive hypothesis and the questions Foucault poses",
+          "left": {
+            "heading": "Received view: the repressive hypothesis",
+            "rows": [
+              "Timing: early 17th-century frankness, then Victorian bourgeois silence",
+              "Place of sex: the parents' bedroom; the rest in brothel and clinic",
+              "Power: a negative force decreeing prohibition, non-existence, silence",
+              "Cause: pleasure clashes with capitalism's exploitation of labour power",
+              "Liberation: speaking of repression and breaking the law is itself resistance"
+            ]
+          },
+          "right": {
+            "heading": "Foucault, The Will to Knowledge, part 1",
+            "rows": [
+              "Timing: since the late 16th century discourse on sex was incited",
+              "What to ask: who comes to speak of sex, where, through what institutions",
+              "Power: prohibition is a local, tactical piece within productive techniques",
+              "Question: why do we say so insistently that we are repressed?",
+              "Critique of repression: first ask whether it belongs to the same network"
+            ]
+          }
+        }
+      },
+      "lessons": [
+        {
+          "id": "sex-gender-theory-intro-ch08-basic",
+          "level": "basic",
+          "title": {
+            "ko": "『앎의 의지』 제1부: 억압 가설을 의심하기",
+            "en": "The Will to Knowledge, part 1: doubting the repressive hypothesis"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코의 『앎의 의지』 제1부 「우리 빅토리아인들」 첫머리에 요약된 성 억압의 통념에서, 매음굴과 정신 요양원은 어떤 자리로 그려질까요?",
+                "en": "In the received view of sexual repression summarised at the opening of part 1 of Foucault's The Will to Knowledge, 'We Other Victorians', what place do the brothel and the mental-health clinic occupy?"
+              },
+              "choices": {
+                "ko": [
+                  "부부의 침실 밖으로 밀려난 정당하지 않은 성이 이윤의 회로에 다시 들어가 값을 치르고 거래되도록 허용된 관용의 장소로 그려집니다.",
+                  "부르주아 사회가 정당하지 않은 성을 완전히 없애기 위해 세운 처벌 시설로, 그곳에서는 성에 관한 어떤 말도 허용되지 않았다고 그려집니다.",
+                  "17세기 초의 솔직하고 거리낌 없던 성 풍속이 빅토리아 시대까지 그대로 살아남은, 억압이 미치지 않은 해방의 공간으로 그려집니다."
+                ],
+                "en": [
+                  "As places of tolerance where illegitimate sexualities pushed out of the conjugal bedroom are put back into the circuits of profit and traded at a price.",
+                  "As punitive institutions that bourgeois society set up to eliminate illegitimate sexuality entirely, where no word about sex was permitted.",
+                  "As spaces of liberation untouched by repression, where the frank sexual manners of the early seventeenth century survived intact into Victorian times."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "통념의 그림에서 부르주아 사회는 이곳들에서만 양보합니다. 정당하지 않은 성은 생산은 아니더라도 이윤의 회로에 다시 들어가고, 말과 몸짓이 비싼 값에 오갑니다(11쪽).",
+                  "통념은 이곳들을 제거의 장소가 아니라 관용의 장소로 그립니다. 거기서는 은밀하고 한정된, 암호화된 말이 허용되었다고 요약됩니다.",
+                  "이곳들의 성도 섬처럼 고립되고 거래로 묶인 형태일 뿐입니다. 17세기 초의 솔직함은 이미 사라진 과거로 그려집니다."
+                ],
+                "en": [
+                  "In the received picture bourgeois society makes concessions only here: illegitimate sexualities re-enter, if not production, then the circuits of profit, and words and gestures change hands at a high price (p. 11).",
+                  "The received view pictures these as places of tolerance, not of elimination; clandestine, circumscribed, coded kinds of discourse are allowed there.",
+                  "Even there sexuality is insular and bound to trade; the frankness of the early seventeenth century is pictured as a past already lost."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 제1부를 남들이 하는 이야기로 시작합니다. 17세기 초의 솔직함 뒤에 빠르게 어둠이 내려 빅토리아 부르주아의 단조로운 밤이 왔고, 성은 부부 가족에 갇혀 생식 기능에 흡수되었으며, 인정받는 성의 자리는 부모의 침실뿐이라는 이야기입니다. 그래도 위선적인 부르주아 사회는 양보를 해서, 정당하지 않은 성을 이윤의 회로에 다시 넣을 수 있는 매음굴과 정신 요양원으로 보냈습니다. 푸코는 스티븐 마커스의 책 제목 『다른 빅토리아인들』을 빌려 매춘부와 손님, 정신의학자와 히스테리 환자를 그렇게 부릅니다. 그 밖의 모든 곳에는 금지·비존재·침묵의 세 겹 명령이 내려졌다는 것이 통념의 결론이고, 푸코는 이 그림 전체를 뒤에서 의심합니다.",
+                "en": "Foucault begins part 1 with a story others tell. After early seventeenth-century frankness a swift dusk fell, leading to the monotonous nights of the Victorian bourgeoisie; sexuality was shut inside the conjugal family and absorbed into reproduction, and the parents' bedroom was its one recognised place. Hypocritical bourgeois society still made concessions, sending illegitimate sexualities to the brothel and the mental-health clinic, where they could be put back into the circuits of profit. Borrowing the title of Steven Marcus's book The Other Victorians, Foucault gives that name to the prostitute and client, the psychiatrist and his hysteric. Everywhere else, the received view concludes, a threefold decree of prohibition, non-existence and silence prevailed; Foucault goes on to doubt this whole picture."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제1부 「우리 빅토리아인들」, 9~11쪽",
+                  "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 9-11"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제1부에서 성 억압 담론이 굳건한 이유 하나로 그것이 자본주의와 손쉽게 이어진다는 점을 듭니다. 이 연결을 어떻게 다룰까요?",
+                "en": "In part 1 of The Will to Knowledge, Foucault gives as one reason for the strength of the discourse on sexual repression that it links easily to capitalism. How does he treat this link?"
+              },
+              "choices": {
+                "ko": [
+                  "억압의 시작을 17세기에 두면 자본주의 발전과 겹쳐, 노동력 착취가 쾌락을 허용할 수 없었다는 설명이 쉽게 나온다고 정리하고, 그 손쉬움 자체를 의심할 거리로 둡니다.",
+                  "억압의 시작이 자본주의 발전과 겹친다는 연결을 자기 분석의 결론으로 내세우고, 노동력 착취야말로 성 억압의 진짜 원인임을 처음으로 입증했다고 주장합니다.",
+                  "성 억압은 자본주의 이전 봉건 귀족과 교회의 금욕 도덕이 남긴 잔재일 뿐이라며, 자본주의와 억압을 잇는 설명은 연대부터 틀렸다고 반박합니다."
+                ],
+                "en": [
+                  "He notes that dating repression to the seventeenth century makes it coincide with capitalism, so an exploitation of labour power that could not tolerate pleasure explains it easily, and he treats that very ease as grounds for suspicion.",
+                  "He puts forward the coincidence of repression with capitalism as the conclusion of his own analysis, claiming to be the first to prove that the exploitation of labour power is the real cause of sexual repression.",
+                  "He argues that sexual repression is merely a leftover of the ascetic morality of the pre-capitalist feudal nobility and the Church, so linking it to capitalism gets even the dates wrong."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 이 설명이 역사적·정치적 보증을 얻어 굳건하다고 하면서, 성의 하찮은 연대기가 생산양식의 장엄한 역사로 옮겨지고 쉽게 분석된다고 꼬집습니다(12~13쪽).",
+                  "푸코는 이 연결을 통념이 기대는 설명으로 소개할 뿐 자기 결론으로 내세우지 않습니다. 오히려 그것이 쉽게 말해진다는 점을 문제 삼습니다.",
+                  "푸코는 연대를 반박하지도, 봉건 잔재설을 내세우지도 않습니다. 통념이 억압을 자본주의·부르주아 질서와 한 몸으로 묶는다는 점을 서술합니다."
+                ],
+                "en": [
+                  "Foucault says this explanation is protected by a weighty historical and political guarantee, and remarks that the petty chronicle of sex is thereby transposed into the ceremonious history of modes of production and becomes easy to analyse (pp. 12-13).",
+                  "Foucault presents the link as the explanation the received view relies on, not as his own conclusion; what he questions is precisely how easily it is said.",
+                  "Foucault neither disputes the dates nor proposes a feudal-leftover thesis; he describes how the received view binds repression to capitalism and the bourgeois order."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코에 따르면 억압 담론은 말하기 쉬워서 굳건합니다. 수백 년의 자유 뒤 17세기에 억압이 시작되었다고 하면 자본주의 발전과 시기가 맞아 부르주아 질서와 한 몸이 되고, 노동력을 체계적으로 착취하는 시대에 그 힘이 재생산에 필요한 최소한 이상의 쾌락으로 흩어지는 것을 용납할 수 없었다는 설명 원리가 저절로 나옵니다. 그러면 성의 자유와 성에 관해 말할 권리는 정치적 대의의 명예와 미래에 묶입니다. 푸코는 의심 많은 사람이라면 성의 역사에 이렇게 무거운 후견인을 붙여야만 말할 수 있다는 것 자체가 옛 수줍음의 흔적이 아니냐고 물을 것이라 덧붙입니다. 이 자본주의 연결을 푸코가 어떻게 다시 쓰는지는 제4부와 제5부에서 이어집니다.",
+                "en": "According to Foucault, the discourse of repression holds because it is easy to hold. If repression began in the seventeenth century after centuries of open air, it coincides with the development of capitalism and becomes one with the bourgeois order; an explanatory principle follows by itself: in an age systematically exploiting labour power, that power could not be allowed to scatter into pleasures beyond the minimum needed to reproduce it. The freedom of sex, and the right to speak of it, are then tied to the honour of a political cause and to the future. Foucault adds that a suspicious mind might ask whether needing such a weighty sponsor before the history of sex can be told is itself a trace of the old prudishness. How Foucault himself rewrites the link to capitalism comes in parts 4 and 5."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제1부 「우리 빅토리아인들」, 12~13쪽",
+                  "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 12-13"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제1부에서 성과 권력의 관계를 억압으로 말하는 것이 우리에게 왜 그토록 만족스러운지를 “말하는 자의 이득”으로 설명합니다. 그 이득은 무엇일까요?",
+                "en": "In part 1 of The Will to Knowledge, Foucault explains why describing the relation of sex and power as repression is so gratifying to us by 'the speaker's benefit'. What is that benefit?"
+              },
+              "choices": {
+                "ko": [
+                  "성이 억압되어 있다면 그것을 말하는 일만으로 의도적 위반처럼 보여, 말하는 사람이 권력 바깥에서 미래의 자유와 쾌락을 예고하는 설교자의 자리에 선다는 것입니다.",
+                  "억압이 실제로 매우 가혹해서 성을 말하는 사람은 체포와 처벌을 무릅써야 했고, 그 위험을 감수한 용기가 사회적 존경으로 돌아온다는 것입니다.",
+                  "성을 말하는 사람은 의학과 과학의 권위를 빌려 말하므로, 그 말이 객관적 진리로 받아들여지고 반박당하지 않는 지위를 얻는다는 것입니다."
+                ],
+                "en": [
+                  "If sex is repressed, merely speaking of it looks like deliberate transgression, so the speaker stands outside power as a preacher announcing future freedom and pleasure.",
+                  "Repression was so harsh that whoever spoke of sex risked arrest and punishment, and the courage of taking that risk is repaid with social respect.",
+                  "Whoever speaks of sex borrows the authority of medicine and science, so the words are accepted as objective truth and gain a position that cannot be challenged."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 억압을 말하는 사람이 어느 정도 권력 바깥에 서고 법을 흔들며 미래의 자유를 조금 앞당긴다고 쓰고, 여기서 예언과 설교의 오래된 기능이 되살아난다고 봅니다(13~15쪽).",
+                  "푸코가 말하는 이득은 실제 처벌 위험이 아니라 위반처럼 ‘보이는’ 효과입니다. 그는 오히려 오늘날 성을 말하는 엄숙한 자세를 꼬집습니다.",
+                  "푸코는 19세기 인구학자와 정신의학자가 이런 주제로 독자를 붙잡아 미안해했다고 대비합니다. 이득은 과학의 권위가 아니라 전복자의 자세입니다."
+                ],
+                "en": [
+                  "Foucault writes that whoever speaks of repression places himself to some extent outside power, upsets the law and anticipates a little of future freedom; the old functions of prophecy and preaching are reactivated (pp. 13-15).",
+                  "The benefit Foucault means is not a real risk of punishment but the effect of looking like transgression; he mocks the solemn pose with which sex is spoken of today.",
+                  "Foucault contrasts us with nineteenth-century demographers and psychiatrists who apologised for such subjects; the benefit is a subversive pose, not scientific authority."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 자본주의와의 연결 말고도 억압이라는 말이 주는 만족을 짚습니다. 성이 금지·비존재·침묵의 운명에 놓여 있다면 그것을 말하는 일 자체가 위반처럼 보이고, 말하는 사람은 기성 질서에 맞서는 전복자가 됩니다. 이 담론은 혁명과 행복, 혁명과 더 새롭고 아름다운 몸, 혁명과 쾌락을 함께 말하게 해 주어, 예언처럼 “내일은 좋은 성”을 약속합니다(14쪽). 푸코는 성이 서구의 오래된 설교 형식을 떠받치게 되었다고 하고, 프란치스코회를 떠올리라며 혁명 기획에 붙어 있던 서정성과 종교성이 상당 부분 성으로 옮겨 간 것이 아닌가 묻습니다. 억압의 진술과 설교의 형식은 서로를 강화하므로, 억압이 아니라고 말하는 것은 이 담론의 이해관계 전체를 거스르는 일이 됩니다.",
+                "en": "Beyond the link to capitalism, Foucault points to the satisfaction the word repression gives. If sex is condemned to prohibition, non-existence and silence, merely speaking of it looks like transgression, and the speaker becomes a subversive defying the established order. The discourse lets people speak of revolution together with happiness, with a newer and more beautiful body, with pleasure, and promises prophetically that good sex is coming tomorrow (p. 14). Foucault says sex now supports the old Western form of preaching; recalling the Franciscans, he asks how the lyricism and religiosity of the revolutionary project came to shift largely onto sex. The statement of oppression and the form of the sermon reinforce each other, so saying that the relation is not repression runs against the whole set of interests behind this discourse."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제1부 「우리 빅토리아인들」, 13~16쪽",
+                  "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 13-16"
+                }
+              }
+            },
+            {
+              "id": "q4",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제1부에서 이 책이 던지려는 질문을 어떻게 세울까요?",
+                "en": "In part 1 of The Will to Knowledge, how does Foucault frame the question the book means to ask?"
+              },
+              "choices": {
+                "ko": [
+                  "우리는 왜 억압당하는가가 아니라, 우리는 왜 가까운 과거와 현재와 우리 자신을 향해 그토록 열을 내며 억압당했다고 말하는가를 묻겠다고 합니다.",
+                  "우리는 왜 억압당하는가를 묻고, 17세기 이후 성을 억압해 온 세력이 누구이며 그들이 어떤 이익을 얻었는지를 밝혀 책임을 묻겠다고 합니다.",
+                  "성 억압이 끝난 지금 성 해방이 어디까지 왔는지를 측정하고, 아직 남은 금지를 없애기 위해 무엇을 해야 하는지를 제안하겠다고 합니다."
+                ],
+                "en": [
+                  "Not why we are repressed, but why we say with such passion, against our recent past, our present and ourselves, that we are repressed.",
+                  "Why we are repressed: he will identify who has repressed sex since the seventeenth century and what they gained, so as to hold them responsible.",
+                  "Now that sexual repression is over, he will measure how far sexual liberation has come and propose what must be done to remove the remaining prohibitions."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 시끄럽게 자기 위선을 질책하고 자기 침묵을 장황하게 말하는 사회를 묻겠다며, 질문을 이렇게 뒤집습니다(16쪽).",
+                  "푸코가 명시적으로 내려놓는 질문입니다. 그는 억압의 가해자를 찾기보다 억압을 말하는 담론과 그것을 이끄는 의지를 살피겠다고 합니다.",
+                  "푸코는 억압이 끝났다고 전제하지도, 해방의 처방을 내놓지도 않습니다. 해방 담론 자체가 그가 분석하려는 대상입니다."
+                ],
+                "en": [
+                  "Foucault says he will examine a society that loudly castigates its own hypocrisy and speaks at length of its own silence, and reverses the question in this way (p. 16).",
+                  "This is the question Foucault explicitly sets aside; rather than find the culprits of repression, he will study the discourses that speak of it and the will behind them.",
+                  "Foucault neither assumes repression is over nor offers a prescription for liberation; the discourse of liberation is itself what he means to analyse."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 이 책이 일련의 역사 분석의 서론이자 첫 개관이라고 밝히고, 그 분석의 자리를 정합니다. 묻고 싶은 것은 백 년 넘게 자기 위선을 시끄럽게 질책하고, 자기 침묵을 장황하게 말하고, 자기가 말하지 않는 것을 꼼꼼히 늘어놓고, 자기가 행사하는 권력을 고발하는 사회입니다. 그는 그런 담론만이 아니라 그것을 떠받치는 의지와 전략적 의도까지 살피겠다고 합니다. 이어서 오랫동안 성과 죄를 묶어 온 이유도 물을 수 있지만, 오늘날 우리가 예전에 성을 죄로 만들었다고 스스로를 그토록 탓하게 된 경로도 물어야 한다고 덧붙입니다. 질문의 대상은 억압 자체가 아니라 억압을 말하는 우리입니다.",
+                "en": "Foucault says the book is the introduction and first survey of a series of historical analyses, and locates that analysis. He wants to examine a society that for over a century has loudly castigated its own hypocrisy, spoken at length of its own silence, detailed what it does not say and denounced the powers it exercises. He means to study not only these discourses but the will that carries them and the strategic intention behind them. One may legitimately ask why sex and sin were linked for so long, he adds, but one must also ask by what paths we have come to blame ourselves so much today for once having made sex a sin. The object of the question is not repression itself but we who speak of it."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제1부 「우리 빅토리아인들」, 16~17쪽",
+                  "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 16-17"
+                }
+              }
+            },
+            {
+              "id": "q5",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제1부에서 억압 가설에 세 가지 의심을 던집니다. 그 세 의심으로 맞는 것은 무엇일까요?",
+                "en": "In part 1 of The Will to Knowledge, Foucault raises three doubts about the repressive hypothesis. Which set correctly gives them?"
+              },
+              "choices": {
+                "ko": [
+                  "성 억압은 정말 역사적 사실인가, 권력은 본질적으로 금지와 검열로 작동하는가, 억압 비판 담론은 억압과 단절했는가 같은 그물에 속하는가.",
+                  "성 억압은 개인에게 심리적으로 해로운가, 성 해방은 윤리적으로 바람직한가, 프로이트의 정신분석은 과학적으로 옳은가.",
+                  "성 억압의 원인은 자본주의인가 종교인가, 억압이 가장 심한 계급은 어디인가, 억압을 끝낼 혁명 주체는 누구인가."
+                ],
+                "en": [
+                  "Is sexual repression really a historical fact; does power work essentially through prohibition and censorship; has the critique of repression broken with it or does it belong to the same network?",
+                  "Is sexual repression psychologically harmful to individuals; is sexual liberation ethically desirable; is Freud's psychoanalysis scientifically correct?",
+                  "Is the cause of sexual repression capitalism or religion; which class is most repressed; who is the revolutionary subject that will end repression?"
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 이 셋을 각각 역사적 질문, 역사-이론적 질문, 역사-정치적 질문이라 부릅니다. 마지막 의심은 억압의 시대와 억압 비판 사이에 정말 역사적 단절이 있는지를 묻습니다(18쪽).",
+                  "푸코의 의심은 억압의 해로움이나 해방의 바람직함 같은 가치 판단이 아니라, 역사적 사실과 권력의 작동 방식을 겨눕니다.",
+                  "이 질문들은 억압을 이미 사실로 전제하고 그 원인과 주체를 찾는 것입니다. 푸코의 첫 의심은 바로 그 전제를 겨눕니다."
+                ],
+                "en": [
+                  "Foucault calls these a historical question, a historico-theoretical question and a historico-political question; the last asks whether there is really a historical break between the age of repression and its critical analysis (p. 18).",
+                  "Foucault's doubts target historical fact and how power works, not value judgements about the harm of repression or the desirability of liberation.",
+                  "These questions already take repression as a fact and look for its cause and agent; Foucault's first doubt targets exactly that premise."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 억압이 역사적으로 뻔하고 뿌리 깊어서 해방이 느릴 수밖에 없으며, 권력은 원래 쓸모없는 에너지와 불규칙한 행동을 억누른다는 예상 반론을 먼저 세웁니다. 그리고 이 통념을 억압 가설이라 이름 붙이고 세 가지를 의심합니다. 첫째, 17세기 이후 억압 체제가 강화되거나 들어섰다는 것이 정말 역사적 사실인가. 둘째, 금지와 검열과 부인이 적어도 우리 사회에서 권력이 행사되는 일반적 형태인가. 셋째, 억압을 비판하는 담론은 그때까지 도전받지 않던 권력 메커니즘을 가로막는 것인가, 아니면 그것이 억압이라 부르며 고발하는 것과 같은 역사적 그물에 속하는가. 이 세 번째 의심이 6편에서 본 라이히식 성 해방 담론을 겨눕니다.",
+                "en": "Foucault first sets up the expected objection: repression is historically obvious and deeply rooted, so liberation must be slow, and power by nature represses useless energies and irregular conduct. He then names this received view the repressive hypothesis and raises three doubts. First, is the strengthening or establishment of a regime of repression since the seventeenth century really a historical fact? Second, are prohibition, censorship and denial the general forms in which power is exercised, at least in our society? Third, does the critical discourse on repression bar the way of a power mechanism that had until then worked unchallenged, or does it belong to the same historical network as what it denounces by calling it repression? This third doubt targets Reich-style sexual-liberation discourse discussed in part 6 of the course."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제1부 「우리 빅토리아인들」, 17~18쪽",
+                  "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 17-18"
+                }
+              }
+            },
+            {
+              "id": "q6",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제1부 끝에서 세 가지 의심으로 무엇을 하려는지 밝힙니다. 그의 설명에 맞는 것은 무엇일까요?",
+                "en": "At the end of part 1 of The Will to Knowledge, Foucault states what he means to do with his three doubts. Which matches his account?"
+              },
+              "choices": {
+                "ko": [
+                  "금지가 없었다는 반대 가설이 아니라, 금지를 담론·권력·앎의 생산 안의 국지적·전술적 부품으로 보고 성을 말하게 하는 권력-앎-쾌락 체제를 밝히려 합니다.",
+                  "근대 부르주아 사회에서 성은 억압되기는커녕 늘 자유로웠다는 것을 사료로 입증해, 억압 가설과 정반대인 대칭적 가설을 세우려 합니다.",
+                  "근대 권력은 억압보다 관용적이 되었고 억압 비판은 금지가 누그러지는 오랜 흐름의 한 단계일 뿐이라는 것을 보여 주려 합니다."
+                ],
+                "en": [
+                  "Not a counter-hypothesis that there was no prohibition, but to treat prohibition as a local, tactical piece within the production of discourse, power and knowledge, and to bring out the regime of power-knowledge-pleasure that makes us speak of sex.",
+                  "To prove from the sources that in modern bourgeois society sex, far from being repressed, was always free, setting up a symmetrical hypothesis opposite to the repressive one.",
+                  "To show that modern power has become more tolerant than repressive, and that the critique of repression is just one stage in a long process of prohibitions growing milder."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 억압 가설이 틀렸다고 보이기보다 그것을 성에 관한 담론의 일반 경제 안에 다시 놓겠다고 하고, 금지는 그 안에서 국지적·전술적 역할을 하는 부품이라고 씁니다(19~21쪽).",
+                  "푸코가 명시적으로 거부하는 독해입니다. 그는 성이 자본주의·부르주아 사회에서 오히려 지속적 자유를 누렸다고 말하려는 것이 아니라고 씁니다.",
+                  "이것도 푸코가 직접 배제하는 반대 가설입니다. 그는 권력이 억압보다 관용적이라고 말하려는 것이 아니라고 분명히 합니다."
+                ],
+                "en": [
+                  "Foucault says he aims less to show the repressive hypothesis is false than to put it back into the general economy of discourses on sex, where prohibitions are pieces with a local, tactical role (pp. 19-21).",
+                  "Foucault explicitly rejects this reading: he says he is not claiming that sexuality in capitalist and bourgeois societies enjoyed a regime of constant freedom.",
+                  "This is another counter-hypothesis Foucault rules out himself: he makes clear he is not saying that power is more tolerant than repressive."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 세 의심이 대칭적 반대 가설이 아니라고 못 박습니다. 성이 실제로는 자유로웠다고도, 권력이 더 관용적이 되었다고도 말하지 않습니다. 그는 성이 고전주의 시대 이후 금지되거나 가려지지 않았다고 주장하지 않으며, 금지가 허상이라는 것이 아니라 금지를 근대 성의 역사를 쓰는 기본 요소로 삼는 것이 허상이라고 합니다. 그래서 물을 것은 성에 예냐 아니냐가 아니라 누가 어디서 어떤 제도를 통해 성을 말하게 되는가, 권력이 어떤 경로로 가장 미세한 행동과 쾌락에 이르는가, 그 생산을 떠받치는 앎의 의지가 무엇인가입니다. 목표는 “권력-앎-쾌락 체제”를 밝히는 것이고(19쪽), 첫 개관은 16세기 말 이후 성의 담론화가 오히려 부추겨졌음을 보여 준다고 예고하며 제2부로 넘어갑니다.",
+                "en": "Foucault insists the three doubts are not a symmetrical counter-hypothesis: he says neither that sex was in fact free nor that power has grown more tolerant. He does not claim that sex was not prohibited, masked or misrecognised since the classical age; prohibition is not an illusion, but making it the basic element for writing the modern history of sex is. So the questions are not whether sex is told yes or no, but who comes to speak of sex, where and through which institutions, by what channels power reaches the finest conduct and everyday pleasure, and what will to knowledge sustains this production. The aim is to bring out the 'regime of power-knowledge-pleasure' (p. 19), and he announces that a first survey shows the putting of sex into discourse was incited, not restricted, since the late sixteenth century, which leads into part 2."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제1부 「우리 빅토리아인들」, 19~22쪽",
+                  "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 19-22"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sex-gender-theory-intro-ch09",
+      "volumeNumber": 15,
+      "chapterNumber": 9,
+      "title": {
+        "ko": "근대는 성에 대해 입을 다물었는가?",
+        "en": "Did the modern age fall silent about sex?"
+      },
+      "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+      "summary": {
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『앎의 의지』(1976) 제2부 1장 「담론의 선동」을 순서대로 읽습니다. 트리엔트 공의회 이후의 고해 지침, 사드와 『나의 비밀 생활』, 18세기의 ‘인구’ 문제, 중학교의 건축과 규칙, 의학·정신의학·형사 사법, 1867년 라프쿠르 사건을 거쳐, 푸코가 왜 근대를 ‘침묵의 시대’가 아니라 성에 관한 말이 끝없이 늘어난 시대로 보는지 확인합니다.",
+        "en": "About 12 minutes · Read part 2, chapter 1 of Michel Foucault's The History of Sexuality, volume 1, La volonté de savoir (1976), 'L'incitation aux discours', in order. Through the confession manuals after the Council of Trent, Sade and My Secret Life, the eighteenth-century problem of 'population', the architecture and rules of secondary schools, medicine, psychiatry and criminal justice, and the 1867 case at Lapcourt, see why Foucault treats the modern age not as an age of silence but as one in which talk about sex multiplied without end."
+      },
+      "learningFocus": {
+        "ko": "‘17세기 이후 성은 침묵당했다’는 억압 가설의 그림에 맞서, 푸코는 낱말을 다듬고 말할 자리를 제한한 일이 실제로 있었다고 인정하면서도 그것이 더 큰 흐름의 부속물이었다고 봅니다. 고해는 행위가 아니라 생각과 욕망까지 말하게 했고, 18세기 국가는 인구를 위해 성을 셈하고 관리했으며, 학교·병원·법정은 저마다 성을 말하게 하는 장치를 갖췄습니다. 푸코는 억압이 전혀 없었다고 하지 않았고, 말이 늘어난 것을 해방으로 보지도 않았습니다. 담론은 권력이 행사되는 바로 그 자리에서 그 수단으로 늘어났다는 것이 이 대목의 결론입니다.",
+        "en": "Against the repressive hypothesis's picture of sex silenced since the seventeenth century, Foucault grants that vocabulary was purged and the places for speaking were restricted, yet treats this as an adjunct to a larger movement. Confession came to demand thoughts and desires, not only acts; the eighteenth-century state counted and managed sex for the sake of population; schools, hospitals and courts each built devices to make sex speak. Foucault does not say there was no repression at all, nor does he read the growth of talk as liberation. His conclusion is that discourse multiplied at the very points where power was exercised, as its instrument."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "출발점: 낱말의 단속과 담론의 증식을 나누다",
+            "items": [
+              "푸코는 『앎의 의지』 제1부에서 17세기 이후 성이 억압되어 왔다는 통념을 ‘억압 가설’이라 부르고, 제2부 1장 「담론의 선동」에서 그 첫 번째 의심, 곧 성 억압이 정말 역사적 사실인가를 사례로 따져 봅니다.",
+              "그는 고전주의 시대에 허용되는 어휘가 엄격하게 걸러지고, 언제·어디서·누구 사이에 성을 말할 수 있는지가 좁혀졌다는 점을 부정하지 않습니다. 부모와 자식, 교사와 학생, 주인과 하인 사이에 조심과 침묵의 영역이 생겼고, 그는 이것을 제한하는 경제라고 부릅니다.",
+              "그러나 담론의 차원에서는 거의 반대 현상이 일어났다고 합니다. 형식과 대상이 서로 다른 성에 관한 말들이 권력이 행사되는 자리에서 늘어났고, 18세기부터는 그 증식이 더 빨라졌다는 것입니다. 그는 이것을 “담론의 폭발”이라고 부릅니다(25쪽)."
+            ]
+          },
+          {
+            "title": "고해에서 ‘모든 것을 말하라’로",
+            "items": [
+              "트리엔트 공의회(1545~1563) 이후의 가톨릭 사목은 중세 고해 지침서의 노골적인 질문들을 점점 가렸습니다. 체위나 몸짓, 쾌락의 순간까지 묻던 산체스나 탐부리니 식의 세부는 피하라고 권했고, 파올로 세녜리와 알폰소 데 리구오리는 이 주제에서 신중함을 거듭 요구했습니다.",
+              "같은 시기에 고백할 범위는 오히려 넓어졌습니다. 반종교개혁은 연례 고해를 더 잦게 만들고 꼼꼼한 자기 성찰 규칙을 세웠으며, 행위보다 생각·욕망·상상·몽상처럼 육체에 닿는 모든 움직임을 자세히 말하게 했습니다. 죄의 중심이 행위 자체에서 알아채기도 말하기도 어려운 욕망으로 옮겨 간 것입니다.",
+              "푸코는 법을 어긴 행위를 고백하는 옛 의무와, 성과 닿는 모든 것을 되도록 자주 자신과 남에게 말해야 하는 거의 끝없는 과제를 구별합니다. 수도원 전통에서 나온 이 과제를 17세기가 모든 신자의 규칙으로 삼았고, 실제로는 소수 엘리트만 따랐더라도 이상으로는 고정되었다는 것입니다. 어휘의 검열은 이 큰 복종을 도덕적으로 받아들일 만하고 기술적으로 쓸모 있게 만드는 이차 장치일 수 있다고 봅니다.",
+              "그는 이 명령이 사드의 문학과 19세기 말 익명의 영국인이 쓴 『나의 비밀 생활』(11권)로 이어진다고 봅니다. 『나의 비밀 생활』의 저자는 빅토리아 시대의 침묵을 깬 탈주자라기보다 몇 세기 묵은 ‘말하라’는 명령의 가장 직접적이고 순진한 대표자이며, 빅토리아식 내숭은 큰 흐름 속의 전술적 굴곡이었다는 것입니다."
+            ]
+          },
+          {
+            "title": "18세기: 인구와 성의 관리",
+            "items": [
+              "18세기에 성을 말하라는 정치·경제·기술적 선동이 새로 생깁니다. 일반 이론보다는 분석·셈·분류·양적 조사의 형태였고, 콩도르세나 의사 타르디외의 글처럼 처음에는 스스로 변명하며 말을 꺼냈습니다. 푸코가 보기에 중요한 것은 그 망설임이 아니라 그것을 넘어서야 한다는 필요가 인정되었다는 점입니다.",
+              "이때 성은 단죄하거나 용인할 대상이 아니라 쓸모의 체계에 넣고 모두를 위해 최적으로 조정할 대상, 곧 옛 의미의 ‘폴리스’ 문제가 됩니다. 이 폴리스는 무질서의 진압이 아니라 국가의 힘을 질서 있게 늘리는 일을 뜻했습니다(유스티, 『일반 폴리스 원리』).",
+              "정부는 신민이나 ‘인민’이 아니라 출생률·사망률·수명·생식력·건강 상태 같은 고유 변수를 지닌 ‘인구’를 상대한다는 것을 깨닫습니다. 그 한가운데 성이 있어 출생률, 결혼 연령, 적출·비적출 출생, 성관계의 빈도, 피임 관행까지 분석해야 했습니다. 푸코는 한 사회가 자신의 미래를 개개인이 성을 쓰는 방식과 꾸준히 연결한 것은 이때가 처음이라고 봅니다.",
+              "중상주의 시대의 일률적인 인구 증가론은 목적에 따라 출산을 장려하거나 억제하는 더 정교한 조절로 바뀌었고, 19~20세기의 인종주의가 여기서 일부 근거를 찾게 된다고 그는 덧붙입니다. 국가와 개인 사이에서 성은 공적 쟁점이 되었습니다."
+            ]
+          },
+          {
+            "title": "학교·의학·사법, 그리고 라프쿠르",
+            "items": [
+              "18세기 중학교(콜레주)는 성에 관해 말하지 않는 듯 보이지만, 교실 배치, 책상 모양, 운동장, 기숙사의 칸막이와 커튼, 취침 감시 규칙은 모두 아이들의 성이 이르고 활발하며 늘 있다는 전제 위에 짜였습니다. 바제도의 필란트로피눔이 1776년 5월 데사우에서 연 공개 행사에서는 교사 볼케가 학생들에게 출생과 생식에 관해 묻고, 웃음을 터뜨린 어른 청중을 꾸짖었습니다. 푸코는 학교가 침묵을 강요한 것이 아니라 말의 형식을 늘리고 내용을 규격화하며 말할 사람의 자격을 정했다고 결론짓습니다.",
+              "그 밖에도 ‘신경병’을 거친 의학, 정신병의 원인을 과잉·자위·불만족·생식 회피에서 찾다가 성도착 전체를 제 영역으로 삼은 정신의학, 19세기 중반부터 사소한 성 비행까지 다루기 시작한 형사 사법, 세기말의 여러 사회 통제가 성에 관한 말을 끌어냈습니다.",
+              "1867년 로렌의 라프쿠르 마을에서 떠돌이 농장 일꾼 샤를조제프 주이가 어린 여자아이와 성적 접촉을 했다는 이유로 신고되었습니다. 부모에서 촌장, 헌병, 판사, 의사 한 명과 다른 전문가 두 명으로 넘어간 끝에 그는 범죄 책임은 면했지만 두개골과 얼굴뼈가 측정되고 생각과 습관을 심문받은 뒤 마레빌 병원에 평생 갇혀 학계에 보고되는 연구 대상이 되었습니다. 푸코가 강조하는 것은 사건의 사소함, 곧 마을의 일상이 처음으로 사법·의학·이론의 대상이 되었다는 점입니다. 피해 아동의 자리를 지운 채 이 사건을 ‘사소한 일’로 그린 서술은 뒤에 페미니스트 비판을 받았습니다.",
+              "결론에서 푸코는 성에 관한 말이 권력 밖이나 권력에 맞서서가 아니라 권력이 행사되는 자리에서 그 수단으로 늘어났다고 봅니다. 중세에 육체와 참회를 중심으로 꽤 하나로 묶여 있던 담론은 인구학·생물학·의학·정신의학·심리학·도덕·교육학·정치 비판으로 흩어졌습니다. 성을 꼭 밝혀야 할 ‘비밀’로 내세우는 일도 말하게 하는 선동의 일부이며, 근대 사회의 특징은 성을 그늘에 둔 것이 아니라 그것을 비밀로 내세우며 끝없이 말해 온 데 있다는 것입니다."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "푸코, 『성의 역사』 제1권 『앎의 의지』(갈리마르, 1976), 제2부 「억압 가설」 1장 「담론의 선동」, 25~49쪽. 쪽별로는 고해 지침 27~30쪽, 사드와 『나의 비밀 생활』 30~32쪽, 인구와 폴리스 33~37쪽, 아이들의 성과 중학교 38~42쪽, 의학·정신의학·사법 42~43쪽, 라프쿠르 사건 43~45쪽, 결론 45~49쪽입니다.",
+              "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다.",
+              "주이 사건 서술에 대한 비판은 린다 마르틴 알코프의 「위험한 쾌락: 푸코와 소아성애의 정치학」(1996) 등에서 볼 수 있습니다."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "Starting point: separating the policing of words from the proliferation of discourse",
+            "items": [
+              "In part 1 of La volonté de savoir Foucault names the received view that sex has been repressed since the seventeenth century the 'repressive hypothesis'. In part 2, chapter 1, 'L'incitation aux discours', he tests the first of his doubts, whether the repression of sex is really a historical fact, against a series of cases.",
+              "He does not deny that in the classical age the permitted vocabulary was strictly filtered and that when, where and between whom one could speak of sex was narrowed. Zones of tact and discretion formed between parents and children, teachers and pupils, masters and servants; he calls this a restrictive economy.",
+              "At the level of discourse, however, he finds almost the reverse. Specific discourses on sex, different in form and object, kept multiplying within the field where power was exercised, and the multiplication sped up from the eighteenth century. He calls this a 'veritable discursive explosion' (p. 25)."
+            ]
+          },
+          {
+            "title": "From confession to 'tell everything'",
+            "items": [
+              "After the Council of Trent (1545-1563) Catholic pastoral practice gradually veiled the blunt questions of medieval confession manuals. Confessors were advised to avoid the kind of detail on positions, gestures and the moment of pleasure that Sanchez or Tamburini had thought necessary, and Paolo Segneri and Alfonso de Liguori urged discretion on the subject again and again.",
+              "In the same period the scope of confession widened. The Counter-Reformation made annual confession more frequent, set rules for meticulous self-examination, and required detailed account of every stirring of the flesh: thoughts, desires, imaginings, reveries. The weight of sin moved from the act itself to desire, which is hard to notice and hard to put into words.",
+              "Foucault distinguishes the old duty of confessing breaches of the law from an almost endless task of telling oneself and another, as often as possible, everything that touches on sex. This task came from the monastic tradition; the seventeenth century made it a rule for all believers, and even if in practice only a small elite followed it, it was fixed as an ideal. Censorship of vocabulary, he suggests, may be a secondary device that makes this great subjection morally acceptable and technically useful.",
+              "He traces the injunction into Sade's writing and into My Secret Life, eleven volumes written by an anonymous Englishman at the end of the nineteenth century. Its author is less a brave escapee from Victorian silence than the most direct and naive representative of a centuries-old command to speak, and Victorian prudery was a tactical twist within the larger process."
+            ]
+          },
+          {
+            "title": "The eighteenth century: population and the management of sex",
+            "items": [
+              "In the eighteenth century a political, economic and technical incitement to speak of sex appears. It took the form less of a general theory than of analysis, accounting, classification and quantitative inquiry, and at first, as in Condorcet or the physician Tardieu, it excused itself for speaking. What matters for Foucault is not the hesitation but the recognised need to overcome it.",
+              "Sex now became something not just to condemn or tolerate but to fit into systems of utility and regulate for the greatest good, a matter of 'police' in the old sense. That police meant not the suppression of disorder but an ordered increase of the state's forces (Justi, Elements of Police).",
+              "Governments realised that they dealt not with subjects or a 'people' but with a 'population' with its own variables: birth rate, mortality, life span, fertility, state of health. Sex lay at the centre of it, so birth rate, age at marriage, legitimate and illegitimate births, frequency of intercourse and contraceptive practices all had to be analysed. Foucault holds that this was the first time a society steadily tied its future to the way each person used their sex.",
+              "The blanket populationism of the mercantilist period gave way to finer regulation that swung between natalist and antinatalist aims, and, he adds, the racisms of the nineteenth and twentieth centuries would find some of their anchoring points here. Between the state and the individual, sex became a public stake."
+            ]
+          },
+          {
+            "title": "Schools, medicine, justice, and Lapcourt",
+            "items": [
+              "Eighteenth-century secondary schools (collèges) seem not to speak of sex at all, yet the layout of classrooms, the shape of desks, the playgrounds, the partitions and curtains of dormitories and the rules for supervising bedtime all assumed that children's sexuality exists, precocious, active and permanent. At a public occasion held by Basedow's Philanthropinum in Dessau in May 1776, the teacher Wolke questioned pupils about birth and procreation and rebuked the adult audience for laughing. Foucault concludes that the school did not impose silence; it multiplied the forms of discourse, codified its content and qualified who could speak.",
+              "Beyond the school, medicine through 'nervous diseases', psychiatry, which sought the causes of mental illness in excess, masturbation, dissatisfaction and 'frauds against procreation' before annexing the whole field of sexual perversions, criminal justice, which from the mid-nineteenth century took up petty sexual offences, and the social controls of the end of the century all drew out discourse on sex.",
+              "In 1867 Charles-Joseph Jouy, an itinerant farm hand in the Lorraine village of Lapcourt, was reported for sexual contact with a little girl. Passed from the parents to the mayor, the gendarmes, a judge, a doctor and two further experts, he was cleared of criminal responsibility, but his skull and facial bones were measured, he was questioned about his thoughts and habits, and he was confined for life in the Maréville hospital as an object of study reported to the learned world. What Foucault stresses is the triviality of the affair: village everyday life became, for the first time, the object of law, medicine and theory. His depiction of the case as trivial, erasing the child's position, later drew feminist criticism.",
+              "In conclusion Foucault holds that discourse on sex multiplied not outside power or against it but where power was exercised and as its means. The fairly unified medieval discourse around the flesh and penance broke up into demography, biology, medicine, psychiatry, psychology, morals, pedagogy and political criticism. Presenting sex as a 'secret' that must be uncovered is itself part of the incitement, and what marks modern societies is not that they kept sex in the shadows but that they talked about it endlessly while holding it up as the secret."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "Foucault, The History of Sexuality, vol. 1, La volonté de savoir (Gallimard, 1976), part 2 'L'hypothèse répressive', ch. 1 'L'incitation aux discours', pp. 25-49. By page: confession manuals pp. 27-30, Sade and My Secret Life pp. 30-32, population and police pp. 33-37, children's sex and schools pp. 38-42, medicine, psychiatry and justice pp. 42-43, the Lapcourt case pp. 43-45, conclusion pp. 45-49.",
+              "Translated from the French original. Because the work is still under copyright, everything except short quotations is paraphrase.",
+              "Criticism of Foucault's account of the Jouy case can be found in, among others, Linda Martín Alcoff, 'Dangerous Pleasures: Foucault and the Politics of Pedophilia' (1996)."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "말의 단속, 담론의 증식",
+            "text": "어휘는 걸러졌지만 성에 관한 담론은 권력이 행사되는 자리에서 오히려 늘어났습니다."
+          },
+          {
+            "title": "행위에서 욕망으로",
+            "text": "트리엔트 이후 고해는 표현을 가리면서도 생각과 욕망까지 모두 말하게 했습니다."
+          },
+          {
+            "title": "인구라는 문제",
+            "text": "18세기 국가는 출생률과 결혼, 피임을 셈하며 성을 공적으로 관리할 대상으로 삼았습니다."
+          },
+          {
+            "title": "흩어진 거점들",
+            "text": "학교, 의학, 정신의학, 사법이 저마다 성을 말하게 하는 장치를 갖췄습니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "Words policed, discourse multiplied",
+            "text": "Vocabulary was filtered, yet discourse on sex grew at the very points where power was exercised."
+          },
+          {
+            "title": "From acts to desire",
+            "text": "After Trent, confession veiled its wording while requiring every thought and desire to be told."
+          },
+          {
+            "title": "The problem of population",
+            "text": "The eighteenth-century state counted births, marriages and contraception and made sex an object of public management."
+          },
+          {
+            "title": "Scattered centres",
+            "text": "Schools, medicine, psychiatry and courts each built devices for making sex speak."
+          }
+        ]
+      },
+      "diagram": {
+        "kind": "contrast",
+        "ko": {
+          "title": "근대의 성: 침묵인가, 말하게 하기인가",
+          "left": {
+            "heading": "억압 가설의 통념",
+            "rows": [
+              "17세기 이후 성을 말하기가 점점 어려워짐",
+              "교회는 성을 입에 올리지 못하게 함",
+              "국가와 법은 금지와 처벌로 성을 다스림",
+              "학교는 아이들의 성을 감추고 침묵시킴",
+              "더 많이 말하는 것이 억압에서 벗어나는 길"
+            ]
+          },
+          "right": {
+            "heading": "푸코, 『앎의 의지』 제2부 1장",
+            "rows": [
+              "어휘는 걸러졌으나 담론은 18세기부터 더 빨리 증식",
+              "고해는 표현을 가리면서 생각과 욕망까지 말하게 함",
+              "18세기 국가는 인구를 위해 성을 셈하고 관리함",
+              "학교 건축과 규칙은 아이의 성을 늘 전제함",
+              "말하게 하기는 권력이 행사되는 자리에서 그 수단으로 늘어남"
+            ]
+          }
+        },
+        "en": {
+          "title": "Modern sex: silence, or being made to speak?",
+          "left": {
+            "heading": "The repressive hypothesis",
+            "rows": [
+              "From the 17th century sex grew harder to name",
+              "The Church kept sex unspoken",
+              "State and law governed sex by prohibition and punishment",
+              "Schools hid and silenced children's sexuality",
+              "Speaking more is the way out of repression"
+            ]
+          },
+          "right": {
+            "heading": "Foucault, La volonté de savoir, part 2, ch. 1",
+            "rows": [
+              "Vocabulary filtered, but discourse multiplied faster from the 18th century",
+              "Confession veiled its wording yet demanded thoughts and desires",
+              "The 18th-century state counted and managed sex for population",
+              "School architecture and rules always assumed children's sexuality",
+              "Incitement to speak grew where power was exercised, as its means"
+            ]
+          }
+        }
+      },
+      "lessons": [
+        {
+          "id": "sex-gender-theory-intro-ch09-basic",
+          "level": "basic",
+          "title": {
+            "ko": "푸코 「담론의 선동」: 침묵이 아니라 말하게 하기",
+            "en": "Foucault's 'L'incitation aux discours': not silence but incitement to speak"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제2부 1장 「담론의 선동」에서 트리엔트 공의회 이후 가톨릭 고해 지침이 어떻게 바뀌었다고 설명할까요?",
+                "en": "In part 2, chapter 1 of La volonté de savoir, 'L'incitation aux discours', how does Foucault say Catholic confession manuals changed after the Council of Trent?"
+              },
+              "choices": {
+                "ko": [
+                  "노골적인 질문은 점점 가려졌지만, 고백할 범위는 행위에서 생각·욕망·몽상으로 넓어져 육체에 닿는 모든 것을 자세히 말해야 하게 되었다고 설명합니다.",
+                  "체위와 몸짓, 쾌락의 순간까지 묻는 세밀한 질문이 이때 처음 생겨, 고해 지침이 중세보다 훨씬 노골적이고 자세해졌다고 설명합니다.",
+                  "교회가 성을 언급하는 것 자체를 위험하게 여겨, 정결에 어긋난 죄는 고해에서 묻지도 말하지도 않도록 침묵을 지시했다고 설명합니다."
+                ],
+                "en": [
+                  "Blunt questions were gradually veiled, but the scope of confession widened from acts to thoughts, desires and reveries, so that everything touching the flesh had to be told in detail.",
+                  "Detailed questions about positions, gestures and the moment of pleasure first appeared then, making the manuals far blunter and more detailed than medieval ones.",
+                  "The Church came to regard any mention of sex as dangerous and ordered that sins against purity be neither asked about nor spoken of in confession."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 표현의 순화와 고백 범위의 확대가 동시에 일어났다고 봅니다. 성은 조심스럽게 불러야 하지만, 그 갈래와 효과는 가장 가는 가지까지 따라가야 했습니다.",
+                  "순서가 거꾸로입니다. 산체스나 탐부리니 식의 체위·몸짓 세부는 이전 지침서에 있었고, 트리엔트 이후 사목은 오히려 그런 세부를 피하라고 권했습니다.",
+                  "말을 조심하라는 권고는 있었지만 침묵의 지시는 아니었습니다. 반종교개혁은 연례 고해를 더 잦게 하고 생각과 욕망까지 고백하게 했습니다."
+                ],
+                "en": [
+                  "Foucault sees the softening of wording and the widening of confession happening together: sex had to be named with care, but its ramifications followed into their finest branches.",
+                  "This reverses the order. The detail on positions and gestures associated with Sanchez or Tamburini belonged to earlier manuals; post-Tridentine pastoral advised avoiding it.",
+                  "There was advice to be careful with words, not an order of silence. The Counter-Reformation made confession more frequent and extended it to thoughts and desires."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코에 따르면 트리엔트 이후 사목은 중세와 17세기 지침서에 남아 있던 적나라한 질문을 차츰 걷어 내고, 정결에 관한 죄는 최대한 신중하게 다루라고 했습니다. 세녜리는 이 주제를 만지면 어떻게든 더럽혀지는 송진에 빗댔고, 리구오리는 특히 아이들에게 돌려서 묻게 했습니다. 그런데 같은 시기 고백의 범위는 넓어졌습니다. 반종교개혁은 연례 고해의 리듬을 앞당기고 자기 성찰 규칙을 세웠으며, 생각·욕망·관능적 상상·몸과 마음이 함께 움직이는 기쁨까지 고해와 영적 지도에 들이게 했습니다. 육체가 모든 죄의 뿌리가 되고, 죄의 중심이 행위에서 욕망의 동요로 옮겨 갔습니다. 푸코는 이것을 법을 어긴 행위를 고백하던 옛 의무와 구별되는, 성에 닿는 모든 것을 말해야 하는 거의 끝없는 과제로 봅니다.",
+                "en": "According to Foucault, post-Tridentine pastoral gradually removed the naked questions still found in medieval and seventeenth-century manuals and asked for the greatest reserve with sins against purity. Segneri likened the matter to pitch that soils however it is handled; Liguori advised roundabout questions, especially with children. Yet in the same period confession widened. The Counter-Reformation quickened the rhythm of annual confession, imposed rules of self-examination, and brought thoughts, desires, voluptuous imaginings and the joint stirrings of body and soul into confession and spiritual direction. The flesh became the root of all sins, and the centre of sin moved from the act to the disturbance of desire. Foucault treats this as distinct from the old duty to confess breaches of the law: an almost endless task of telling everything that touches on sex."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제2부 1장 「담론의 선동」, 27~30쪽",
+                  "en": "Foucault, La volonté de savoir, part 2, ch. 1, 'L'incitation aux discours', pp. 27-30"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』에서 19세기 말 익명의 영국인이 쓴 『나의 비밀 생활』을 어떻게 자리매김할까요?",
+                "en": "How does Foucault in La volonté de savoir place My Secret Life, written by an anonymous Englishman at the end of the nineteenth century?"
+              },
+              "choices": {
+                "ko": [
+                  "빅토리아 시대의 침묵을 깨고 나온 용감한 탈주자라기보다, 성에 관해 모든 것을 말하라는 몇 세기 묵은 명령을 가장 곧이곧대로 따른 대표자로 봅니다.",
+                  "빅토리아 시대의 성 억압에 정면으로 맞서 금기를 깬 저항의 기록으로 보고, 억압 속에서도 진실을 말하려 한 드문 개인의 증언이라고 평가합니다.",
+                  "기독교 사목과는 아무 관계없는 세속 방탕자의 기록으로 보고, 종교의 고백 전통이 끊어진 뒤에 나타난 전혀 새로운 글쓰기라고 봅니다."
+                ],
+                "en": [
+                  "Less as a brave escapee from Victorian silence than as the most literal representative of a centuries-old command to tell everything about sex.",
+                  "As a record of resistance that broke the taboo by confronting Victorian sexual repression head-on, the rare testimony of a person who told the truth under repression.",
+                  "As the record of a secular libertine with no relation to Christian pastoral, an entirely new kind of writing that appeared after the religious tradition of confession had ended."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 이 영국인이 여왕보다 근대 섹슈얼리티의 역사에서 더 중심에 설 인물이며, 빅토리아식 내숭은 말하게 하는 큰 흐름 속의 전술적 굴곡이었다고 봅니다.",
+                  "억압 가설이 내놓을 법한 독해입니다. 푸코는 이 인물을 ‘빅토리아니즘’에서 도망친 용감한 사람으로 보려는 시각을 명시적으로 물리칩니다.",
+                  "푸코는 사목 지침에서 사드를 거쳐 이 책으로 곧게 선을 그을 수 있다고 봅니다. 목적은 달라도 욕망을 말로 옮겨 효과를 내려 한 점은 같다는 것입니다."
+                ],
+                "en": [
+                  "Foucault thinks this Englishman, more than his queen, could be the central figure in a history of modern sexuality, and Victorian prudery a tactical twist within the larger incitement.",
+                  "This is the reading the repressive hypothesis invites. Foucault explicitly sets aside the view of this man as a courageous fugitive from 'Victorianism'.",
+                  "Foucault draws a straight line from pastoral manuals through Sade to this book: their aims differed, but each sought effects on desire by putting it fully into words."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 17세기 사목에서 ‘추문의’ 문학으로 곧장 선을 그을 수 있다고 합니다. 고해 지도자들이 저지른 행위뿐 아니라 시선·말·동의한 생각까지 모두 말하라고 했듯, 사드는 이야기에 아주 사소한 정황까지 빠짐없이 담으라는 요구를 영적 지도서에서 옮겨 온 듯한 말로 되풀이합니다. 『나의 비밀 생활』의 저자는 성생활에 바친 삶을 날마다 낱낱이 기록해 몇 부만 찍은 열한 권으로 남겼고, 비밀 생활에는 빠뜨린 것이 없어야 한다고 썼습니다. 푸코는 그를 억압을 이긴 탈주자가 아니라 두 세기 동안 근대인의 마음에 심어진 ‘다 말하라’는 명령의 가장 순진한 대표자로 보고, 사건처럼 보이는 것은 오히려 빅토리아식 내숭 쪽이라고 합니다. 그는 감각을 키우려고 썼고 사목은 욕망을 다스리고 신에게 돌리려 했다는 차이도 짚지만, 둘 다 욕망을 말로 옮겨 효과를 내려 했다고 봅니다.",
+                "en": "Foucault says one could draw a straight line from seventeenth-century pastoral to 'scandalous' literature. As directors of conscience demanded that penitents tell not only consummated acts but glances, words and consented thoughts, Sade repeats, in terms that seem copied from treatises of spiritual direction, the demand that narratives leave out no circumstance. The author of My Secret Life recorded a life devoted to sex episode by episode, printed in eleven volumes in only a few copies, and wrote that a secret life must contain no omission. Foucault sees him not as an escapee who beat repression but as the most naive representative of an injunction planted in the modern heart for two centuries; if anything is the historical accident, it is Victorian prudery. He notes the difference that this man wrote to heighten his sensations while pastoral sought mastery and a turning towards God, but both sought effects on desire by putting it into discourse."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제2부 1장 「담론의 선동」, 30~33쪽",
+                  "en": "Foucault, La volonté de savoir, part 2, ch. 1, 'L'incitation aux discours', pp. 30-33"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "『앎의 의지』 제2부 1장에서 푸코는 18세기에 성이 ‘인구’ 문제와 묶이면서 무엇이 달라졌다고 볼까요?",
+                "en": "In part 2, chapter 1 of La volonté de savoir, what does Foucault say changed when sex was tied to the problem of 'population' in the eighteenth century?"
+              },
+              "choices": {
+                "ko": [
+                  "정부가 출생률·결혼 연령·피임 관행 같은 변수로 인구를 파악하면서, 성은 심판의 대상을 넘어 국가가 분석하고 조정하는 공적 쟁점이 되었다고 봅니다.",
+                  "국가가 인구를 늘리려고 혼외 성관계와 피임을 금지하는 법을 쏟아 냈으므로, 18세기의 성 정책은 무엇보다 처벌과 금지의 강화였다고 봅니다.",
+                  "18세기까지 성은 여전히 도덕적 죄의 문제로만 다뤄졌고, 출생률 같은 수치로 성을 셈하는 일은 20세기 인구학이 생긴 뒤에야 시작되었다고 봅니다."
+                ],
+                "en": [
+                  "As governments grasped population through variables like birth rate, age at marriage and contraceptive practice, sex became a public stake that the state analysed and regulated, not only judged.",
+                  "The state passed law after law banning extramarital sex and contraception to raise population, so eighteenth-century sexual policy was above all a tightening of punishment and prohibition.",
+                  "Until the eighteenth century sex was still treated only as moral sin, and counting sex through figures such as birth rates began only after twentieth-century demography arose."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 이때 성을 단죄하거나 용인하는 데 그치지 않고 쓸모의 체계에 넣어 최적으로 조정하려 했다고 보며, 그것을 옛 의미의 ‘폴리스’라고 부릅니다.",
+                  "푸코는 18세기의 성의 ‘폴리스’가 금지의 엄격함이 아니라 유용한 공적 담론으로 성을 조정할 필요였다고 분명히 구별합니다. 조절 방향도 장려와 억제를 오갔습니다.",
+                  "푸코는 콩도르세와 18세기 인구론자들을 예로 들며, 혁명 전야의 인구학자들이 농촌의 피임 관행까지 알고 있었다고 씁니다. 셈은 이미 18세기에 시작되었습니다."
+                ],
+                "en": [
+                  "Foucault holds that sex was now not merely condemned or tolerated but inserted into systems of utility and regulated for an optimum, which he calls 'police' in the old sense.",
+                  "Foucault explicitly says the eighteenth-century 'police of sex' was not the rigour of a prohibition but the need to regulate sex through useful public discourse, and regulation swung between natalist and antinatalist aims.",
+                  "Foucault cites Condorcet and eighteenth-century writers on population and notes that demographers on the eve of the Revolution already knew of contraceptive practice in the countryside; the counting began then."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 18세기에 성을 말하라는 정치·경제·기술적 선동이 생겼다고 하면서, 그것이 일반 이론보다 분석·셈·분류의 형태였다고 봅니다. 그는 이때의 태도를 “성은 판단만 하는 게 아니라 관리하는 것”이라는 말로 요약합니다(35쪽). 여기서 ‘폴리스’는 무질서의 진압이 아니라 집단과 개인의 힘을 질서 있게 늘리는 일이었습니다. 정부는 출생률·사망률·수명·생식력·건강·식생활·주거 같은 변수를 지닌 인구를 상대하게 되었고, 그 한가운데서 결혼 연령, 적출·비적출 출생, 성관계의 빈도, 피임 관행을 분석해야 했습니다. 나라가 부강하려면 인구가 많아야 한다는 말은 오래되었지만, 한 사회가 미래를 개개인이 성을 쓰는 방식과 꾸준히 연결한 것은 처음이라고 푸코는 봅니다. 중상주의의 일률적인 인구 증가론은 출산 장려와 억제 사이를 오가는 정교한 조절로 바뀌었습니다.",
+                "en": "Foucault says an eighteenth-century political, economic and technical incitement to speak of sex took the form of analysis, accounting and classification rather than general theory. He sums up the new attitude with the line that sex 'was not only something one judged; it was something one administered' (p. 35). 'Police' here meant not suppressing disorder but an ordered increase of collective and individual forces. Governments came to deal with a population with variables such as birth rate, mortality, life span, fertility, health, diet and housing, and at its heart had to analyse age at marriage, legitimate and illegitimate births, frequency of intercourse and contraceptive practice. The claim that a country must be populous to be rich was old, but Foucault holds that this was the first time a society steadily linked its future to how each person used their sex. Mercantilist populationism gave way to finer regulation swinging between natalist and antinatalist aims."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제2부 1장 「담론의 선동」, 33~37쪽",
+                  "en": "Foucault, La volonté de savoir, part 2, ch. 1, 'L'incitation aux discours', pp. 33-37"
+                }
+              }
+            },
+            {
+              "id": "q4",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』에서 18세기 중학교(콜레주)의 건축과 규칙을 무엇의 근거로 삼을까요?",
+                "en": "In La volonté de savoir, what does Foucault use the architecture and rules of eighteenth-century secondary schools (collèges) to show?"
+              },
+              "choices": {
+                "ko": [
+                  "성을 말하지 않는 듯 보여도 교실 배치·기숙사 칸막이·취침 감시 규칙이 아이들의 성이 이르고 활발하며 늘 있다는 전제 위에 짜였다는 근거로 삼습니다.",
+                  "학교가 아이들의 성을 감추고 입에 올리지 못하게 했다는 근거로 삼아, 아이의 성은 프로이트의 『성 이론에 관한 세 편의 에세이』 이전까지 가려져 있었다고 봅니다.",
+                  "학교가 아이들의 성을 금기에서 풀어 준 근거로 삼아, 바제도의 공개 시험 같은 성교육이 아이들 스스로 성을 자유롭게 말하게 한 해방의 시작이었다고 봅니다."
+                ],
+                "en": [
+                  "Though the schools seem silent on sex, the layout of classrooms, dormitory partitions and bedtime rules were built on the premise that children's sexuality is precocious, active and permanent.",
+                  "That schools hid children's sexuality and kept it unspoken, so that children's sexuality stayed concealed until Freud's Three Essays on the Theory of Sexuality.",
+                  "That schools freed children's sexuality from taboo, so that sex education like Basedow's public examination began a liberation in which children spoke freely about sex."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 건축가와 운영자가 성을 명시적으로 염두에 두었고, 권한을 가진 모든 사람이 늘 경계 상태에 놓였다고 봅니다. 학교는 말의 형식을 늘리고 말할 사람의 자격을 정했습니다.",
+                  "푸코가 반박하려고 먼저 소개하는 통념입니다. 그는 옛날식 거친 말투가 사라진 것은 인정하지만 그것이 침묵이 아니라 새로운 담론 체제였다고 봅니다.",
+                  "푸코는 바제도의 행사를 성교육의 성공을 과시하는 장면으로 들지만, 아이에게 규격화된 ‘올바른’ 담론을 입히는 교정으로 보며 해방으로 읽지 않습니다."
+                ],
+                "en": [
+                  "Foucault says builders and organisers had sex explicitly in mind and everyone holding authority was kept on constant alert; the school multiplied forms of discourse and qualified who could speak.",
+                  "This is the received view Foucault introduces in order to dispute it. He grants that an older free language faded but calls the result a new regime of discourse, not silence.",
+                  "Foucault cites Basedow's occasion as a showcase of sex education's success, but treats it as a kind of corrective fitting the child with a canonical, 'reasonable' discourse, not as liberation."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 고전주의 시대가 아이들의 성을 가려 『성 이론에 관한 세 편의 에세이』나 꼬마 한스 때까지 드러나지 않았다는 흔한 말을 먼저 소개합니다. 에라스뮈스처럼 제자에게 좋은 매춘부 고르는 법을 공개적으로 조언하는 교육자는 사라졌고 아이들의 이른 성을 둘러싼 웃음도 잦아들었다는 점은 인정합니다. 그러나 그것은 말이 줄어든 것이 아니라 다른 사람이 다른 관점에서 다른 효과를 위해 말하게 된 것이며, 침묵도 하나가 아니라 여럿이고 담론 전략의 일부라고 봅니다. 18세기 중학교의 교실, 책상, 운동장, 기숙사 칸막이와 커튼, 취침 감시 규칙(1809년 리세 규칙)이 모두 아이들의 성을 전제했고, 의사·교육자·교사가 이를 두고 끝없이 글을 썼습니다. 1776년 5월 필란트로피눔 행사에서 교사 볼케가 생식에 관해 묻고 웃는 어른들을 꾸짖은 장면이 그 상징입니다. 푸코는 학교가 침묵을 강요했다고 하면 틀리며, 권력의 강화와 담론의 증식이 함께 묶였다고 결론짓습니다.",
+                "en": "Foucault first presents the common claim that the classical age concealed children's sexuality until the Three Essays or little Hans. He grants that no pedagogue would any longer publicly advise a pupil, as Erasmus had, on choosing a good prostitute, and that the laughter around children's precocious sexuality died away. But this was not less speech; other people now spoke from other viewpoints for other effects, and silences are many, part of the strategies of discourse. In eighteenth-century collèges classrooms, desks, playgrounds, dormitory partitions and curtains, and bedtime rules (the 1809 lycée regulations) all presupposed children's sexuality, and doctors, educators and masters wrote about it endlessly. The Philanthropinum's occasion of May 1776, where the teacher Wolke questioned pupils on procreation and rebuked the laughing adults, serves as an emblem. Foucault concludes that it would be wrong to say the school imposed silence: an intensification of power was bound to a multiplication of discourse."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제2부 1장 「담론의 선동」, 38~42쪽",
+                  "en": "Foucault, La volonté de savoir, part 2, ch. 1, 'L'incitation aux discours', pp. 38-42"
+                }
+              }
+            },
+            {
+              "id": "q5",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "『앎의 의지』에서 푸코가 1867년 로렌 라프쿠르 마을의 농장 일꾼 주이 사건을 드는 까닭은 무엇일까요?",
+                "en": "Why does Foucault in La volonté de savoir cite the 1867 case of Jouy, a farm hand in the Lorraine village of Lapcourt?"
+              },
+              "choices": {
+                "ko": [
+                  "마을 일상의 사소한 일이 신고·재판·의사 감정·두개골 측정으로 이어져, 처벌은 면했어도 평생 병원에 갇힌 채 의학과 앎의 대상이 된 과정을 보여 주려는 것입니다.",
+                  "성에 관한 일이 법정에서 엄하게 처벌된 사례로 들어, 19세기 국가가 성 문제를 무엇보다 긴 감옥형으로 다스렸다는 억압의 증거로 삼으려는 것입니다.",
+                  "정신의학이 사법을 완전히 대신한 사례로 들어, 이 사건이 판사를 한 번도 거치지 않고 처음부터 의사들 손에서만 다뤄졌다는 점을 보여 주려는 것입니다."
+                ],
+                "en": [
+                  "To show how a trivial matter of village life led to reports, a judge, medical experts and skull measurements, so that the man, cleared of any offence, became an object of medicine and knowledge, confined to a hospital for life.",
+                  "As a case of sexual conduct punished harshly in court, to prove the repression by which the nineteenth-century state governed sexual matters above all through long prison sentences.",
+                  "As a case in which psychiatry fully replaced the courts, to show that the affair never passed through a judge and was handled from the start by doctors alone."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코가 강조하는 것은 사건의 사소함입니다. 그런 일상이 어느 시점부터 사법 조치, 의학 개입, 임상 검사, 이론적 정리의 대상이 될 수 있었다는 점입니다.",
+                  "푸코는 주이가 범죄 혐의를 벗었다고 씁니다. 그 대신 그는 마레빌 병원에 평생 수용되어 학계에 자세히 보고되는 연구 대상이 되었습니다.",
+                  "사건은 부모에서 촌장, 헌병, 판사로 넘어갔고 판사가 그를 기소한 뒤 의사들에게 맡겼습니다. 사법과 의학이 이어서 작동한 사례입니다."
+                ],
+                "en": [
+                  "What Foucault stresses is the triviality: that such everyday matters could, from a certain moment, become the object of judicial action, medical intervention, clinical examination and theory.",
+                  "Foucault writes that Jouy was cleared of any offence. Instead he was confined for life in the Maréville hospital and described in detail to the learned world.",
+                  "The affair went from the parents to the mayor, the gendarmes and a judge, who charged him and handed him to doctors. Justice and medicine worked in sequence."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 의학이 ‘신경병’을 통해, 정신의학이 정신병의 원인을 찾다 성도착 전체를 제 영역으로 삼으며, 형사 사법이 19세기 중반부터 사소한 성 비행까지 다루며 성에 관한 말을 끌어냈다고 한 뒤 라프쿠르 사건을 듭니다. 1867년 마을을 떠돌던 농장 일꾼 주이가 어린 여자아이와의 성적 접촉으로 신고되자, 부모는 촌장에게, 촌장은 헌병에게, 헌병은 판사에게 넘겼고, 판사는 그를 기소한 뒤 의사 한 명과 전문가 두 명에게 감정을 맡겼습니다. 감정인들은 두개골과 얼굴뼈를 재고 퇴행의 징후를 찾았으며 생각과 습관을 캐물었고, 그를 범죄 책임에서 놓아준 대신 평생 마레빌 병원에 두고 학계에 알릴 연구 대상으로 삼았습니다. 같은 때 마을 교사는 아이들에게 그런 일을 소리 내어 말하지 말라고 가르쳤을 것이라고 푸코는 덧붙이며, 그것이 제도의 엄숙한 담론이 일상을 덮는 조건이었다고 봅니다. 아이의 자리를 지운 이 서술은 뒤에 페미니스트 비판을 받았습니다.",
+                "en": "Foucault notes that medicine through 'nervous diseases', psychiatry as it sought causes of mental illness and then annexed all sexual perversions, and criminal justice as it took up petty sexual offences from the mid-nineteenth century all drew out discourse on sex, and then cites Lapcourt. In 1867 Jouy, an itinerant farm hand, was reported for sexual contact with a little girl; the parents went to the mayor, the mayor to the gendarmes, the gendarmes to a judge, who charged him and submitted him to a doctor and then two experts. They measured his skull and facial bones for signs of degeneration and questioned him on his thoughts and habits; they released him from criminal responsibility but made him an object of medicine, kept in the Maréville hospital for life and described to the learned world. Foucault adds that the village schoolteacher was probably teaching children at the same time not to speak of such things aloud, a condition for the institutions' solemn discourse to cover everyday life. His account, which erases the child's position, later drew feminist criticism."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제2부 1장 「담론의 선동」, 42~45쪽",
+                  "en": "Foucault, La volonté de savoir, part 2, ch. 1, 'L'incitation aux discours', pp. 42-45"
+                }
+              }
+            },
+            {
+              "id": "q6",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제2부 1장 「담론의 선동」 끝에서 근대 사회의 성 담론에 관해 어떤 결론을 내릴까요?",
+                "en": "At the end of part 2, chapter 1 of La volonté de savoir, 'L'incitation aux discours', what does Foucault conclude about discourse on sex in modern society?"
+              },
+              "choices": {
+                "ko": [
+                  "성에 관한 담론은 권력 밖이나 권력에 맞서서가 아니라 권력이 행사되는 자리에서 그 수단으로 늘었고, 성을 ‘비밀’로 내세우는 일 자체도 말하게 하는 장치의 일부라고 봅니다.",
+                  "근대에 성에 관한 낱말 제한이나 예절 규칙은 전혀 없었으며 억압이라는 말은 후대가 지어낸 허구일 뿐이라고 보고, 검열이 있었다는 사실 자체를 부정합니다.",
+                  "성에 관한 담론이 늘어난 만큼 성은 권력의 손아귀에서 조금씩 풀려났으므로, 더 많이 말하는 것이 곧 억압에서 벗어나는 해방의 길이라고 봅니다."
+                ],
+                "en": [
+                  "Discourse on sex grew not outside power or against it but where power was exercised, as its means, and presenting sex as 'the secret' is itself part of the machinery of incitement.",
+                  "There were no restrictions on sexual vocabulary or rules of decency in the modern age at all; repression is a later invention, and the very existence of censorship is denied.",
+                  "As discourse on sex grew, sex was gradually released from power's grip, so speaking more is the path of liberation out of repression."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 중세의 비교적 통일된 담론이 인구학·의학·정신의학·교육학 등 여러 거점으로 흩어졌고, 그 모두가 저마다의 방식으로 성을 말하게 강제했다고 봅니다.",
+                  "푸코는 고전주의 시대에 허용 어휘가 엄격히 걸러지고 말할 자리가 좁혀진 제한의 경제를 인정합니다. 다만 그것을 더 큰 선동의 대가이자 조건으로 봅니다.",
+                  "푸코는 담론이 권력 밖이 아니라 권력의 행사 속에서 늘었다고 봅니다. 성을 꼭 깨뜨려야 할 비밀로 보는 생각 자체가 더 말하게 하는 장치에 속합니다."
+                ],
+                "en": [
+                  "Foucault holds that a relatively unified medieval discourse scattered into many centres, demography, medicine, psychiatry, pedagogy and more, each compelling sex to speak in its own way.",
+                  "Foucault grants a restrictive economy in which permitted vocabulary was strictly filtered and the places for speech narrowed; he treats it as the counterpart and condition of a larger incitement.",
+                  "Foucault says discourse grew within the exercise of power, not outside it. The idea of sex as a secret that must be broken open itself belongs to the machinery that makes it speak further."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 18세기 이후 성이 일반화된 담론적 흥분을 불러일으켰고, 경제·교육·의학·사법이 저마다 성의 담론을 부추기고 끌어내고 제도화했다고 정리합니다. 중세에 육체와 참회를 중심으로 꽤 하나로 묶여 있던 담론은 인구학·생물학·의학·정신의학·심리학·도덕·교육학·정치 비판으로 흩어졌고, 욕망에 관한 도덕 신학과 1인칭 고백의 의무를 잇던 끈도 느슨해져 여러 긴장을 낳았습니다. 그렇다면 그토록 많은 자극이 필요했다는 것은 근본 금기가 있었다는 증거가 아니냐는 반론에, 푸코는 성이 담론 바깥에 있어 장애를 걷어 내야만 닿는다는 주제 자체가 말하게 하는 명령의 일부라고 답합니다. 기독교 사목이 성을 늘 낮은 목소리로 숨어 있는 수수께끼로 그렸듯, 근대 사회의 특징은 성을 그늘에 둔 것이 아니라 그것을 비밀로 내세우며 끝없이 말해 온 데 있다는 것입니다. 그는 낱말의 단속이 있었음을 부정하지 않으며, 말이 늘어난 것을 해방으로 보지도 않습니다.",
+                "en": "Foucault sums up that since the eighteenth century sex has provoked a generalised discursive erethism, and that economy, pedagogy, medicine and justice each incited, extracted and institutionalised discourse on sex. The fairly unified medieval discourse around the flesh and penance scattered into demography, biology, medicine, psychiatry, psychology, morals, pedagogy and political criticism, and the bond between the moral theology of concupiscence and the duty of first-person confession loosened, producing many tensions. To the objection that the need for so much stimulus proves a fundamental prohibition, Foucault replies that the very theme of sex as outside discourse, reachable only by lifting an obstacle, is part of the injunction to speak. Just as Christian pastoral always portrayed sex as a disquieting enigma speaking in a low voice, what marks modern societies is not that they consigned sex to the shadows but that they devoted themselves to speaking of it endlessly while exploiting it as the secret. He does not deny that words were policed, and he does not read the growth of talk as liberation."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제2부 1장 「담론의 선동」, 26쪽, 45~49쪽",
+                  "en": "Foucault, La volonté de savoir, part 2, ch. 1, 'L'incitation aux discours', pp. 26, 45-49"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sex-gender-theory-intro-ch10",
+      "volumeNumber": 15,
+      "chapterNumber": 10,
+      "title": {
+        "ko": "근대 사회는 도착을 억눌렀는가, 만들어 냈는가?",
+        "en": "Did modern society suppress perversions or produce them?"
+      },
+      "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+      "summary": {
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『앎의 의지』(1976) 제2부 2장 「도착의 이식」(50~67쪽)을 따라 읽습니다. 결혼을 중심에 둔 옛 규범이 왜 조용해지고 아이·광인·범죄자·동성애자의 성이 왜 캐물어지기 시작했는지, 푸코가 단순한 금지와 구별한 권력의 네 작동 방식이 무엇인지, 그리고 그가 근대 사회를 왜 도착을 만들어 내고 고정한 사회라고 했는지 확인합니다.",
+        "en": "About 12 minutes · Follow part 2, chapter 2, 'L'implantation perverse' (pp. 50-67), of Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976). See why the old marriage-centred norms fell quiet while the sexuality of children, the mad, criminals and homosexuals came under questioning, which four workings of power Foucault distinguished from simple prohibition, and why he called modern society one that produced and fixed perversions."
+      },
+      "learningFocus": {
+        "ko": "「도착의 이식」은 ‘19세기는 이상한 성을 억눌렀다’거나 반대로 ‘푸코는 억압이 전혀 없었다고 했다’로 줄여 읽기 쉽습니다. 푸코는 형법이 누그러지고 감시가 늘어난 만큼 억압의 양으로는 판단이 애매하다고 인정하고, 중요한 것은 억압의 정도가 아니라 권력의 형태라고 말합니다. 아동 자위 단속, 동성애자를 하나의 종으로 만든 정신의학, 질문과 진찰 속에서 서로를 키우는 권력과 쾌락, 여러 성으로 포화된 가족과 학교라는 네 사례가 그 근거입니다. 도착의 증식은 위선이나 반동이 아니라 이 권력의 직접적 산물이라는 것이 결론입니다.",
+        "en": "'L'implantation perverse' is easily reduced either to 'the nineteenth century suppressed deviant sex' or to 'Foucault said there was no repression at all'. Foucault grants that, judged by the amount of repression, the picture is ambiguous, since penal codes softened while surveillance grew, and says what matters is not the degree of repression but the form of power. His grounds are four cases: the campaign against children's masturbation, the psychiatry that made the homosexual a species, power and pleasure feeding each other in questioning and examination, and the family and school saturated with multiple sexualities. His conclusion is that the multiplication of perversions was neither hypocrisy nor backlash but a direct product of this power."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "출발점: 담론의 증식은 결국 걸러 내기가 아니었나",
+            "items": [
+              "2장은 1장 「담론의 선동」에 대한 예상 반론으로 시작합니다. 성에 관한 말이 늘어난 것은 결국 생식에 쓸모없는 성을 현실에서 몰아내기 위해서가 아니었는가, 곧 인구를 늘리고 노동력을 재생산하며 사회관계의 형태를 이어 가는, 경제적으로 쓸모 있고 정치적으로 보수적인 성을 다듬으려던 것이 아니었는가 하는 물음입니다(50~51쪽).",
+              "푸코는 그것이 최종 목표였는지는 아직 모르겠다고 미뤄 둡니다. 다만 그 목표를 줄이기로 이루려 하지는 않았다고 답합니다. 19세기와 20세기는 성을 축소한 시대가 아니라 흩어지고 다양해진 성들이 늘어나고 도착이 여러 갈래로 자리 잡은 시대였다는 것입니다(51쪽)."
+            ]
+          },
+          {
+            "title": "결혼 중심 규범에서 주변의 성으로",
+            "items": [
+              "18세기 말까지 성 행위를 규율한 것은 교회법, 그리스도교 사목, 민법의 세 법전이었고, 셋 다 혼인 관계에 맞춰져 있었습니다. 부부의 의무, 그 횟수와 시기, 생식을 피하는 방법까지 규정이 빽빽했고, 남색의 지위는 모호했으며 아이의 성에는 무관심했습니다. 혼인 규칙을 어기는 일과 이상한 쾌락을 찾는 일은 같은 불법의 목록에 섞여 있었고, 자연에 반하는 행위도 법을 어기는 일의 극단으로 여겨졌습니다(51~53쪽).",
+              "18~19세기 담론의 폭발은 이 체계를 두 방향으로 바꿉니다. 정당한 부부의 성은 더 엄격할지는 몰라도 더 조용한 규범이 되고, 대신 아이·광인·범죄자의 성, 이성을 사랑하지 않는 이들의 쾌락이 캐물어집니다. 그들은 여전히 단죄되지만 이제 귀 기울여 들어야 할 대상이 됩니다. 동시에 자연에 반하는 것이 혼인법 위반에서 떨어져 나와 독자적 영역이 되고, 돈 후안이라는 형상 속에서 방탕자 밑의 도착자가 드러납니다(53~55쪽).",
+              "조숙한 아이, 수상한 하인과 교사, 이상한 충동의 산책자 같은 작은 사람들이 징계 위원회, 교정원, 법정, 정신병원을 떠돌며 도덕적 광기, 생식기 신경증, 퇴화 같은 이름을 차례로 얻습니다. 형법의 성 범죄 처벌은 19세기에 크게 누그러졌고 사법은 의학에 자리를 내주었지만, 교육과 치료의 감시 장치는 늘었습니다. 그래서 푸코는 억압의 양으로 보면 판단이 애매하다고 하고, 중요한 것은 행사되는 권력의 형태라고 말합니다(55~57쪽)."
+            ]
+          },
+          {
+            "title": "금지와 다른 권력의 네 작동",
+            "items": [
+              "첫째, 아동 자위 단속. 근친혼 금지가 금지 대상을 점점 줄여 가려 한다면, 아동의 성 통제는 자기 권력과 그 대상을 함께 퍼뜨립니다. 부모와 교사에게 모든 아이가 죄가 있다는 의심을 심고 감시 장치와 고백의 덫을 놓으면서, 아이의 악습은 없앨 적이라기보다 권력이 기대는 받침대가 되었습니다(57~58쪽).",
+              "둘째, 이단적 성의 종(種)화. 옛 법의 남색은 금지된 행위의 한 유형이었고 행위자는 법적 주체일 뿐이었지만, 19세기의 동성애자는 과거와 어린 시절, 성격과 생활 형태, 몸의 형태까지 가진 인물이 됩니다. 푸코는 1870년 카를 베스트팔의 ‘반대 성 감각’ 논문을 그 정신의학적 범주의 탄생일로 꼽고, 범주가 성관계의 유형이 아니라 남성성과 여성성을 제 안에서 뒤바꾸는 감수성으로 정의되었다고 봅니다. 그래서 동성애자는 행위의 주체가 아니라 하나의 종으로 분류되었고, 라세그·비네·크라프트에빙 같은 정신의학자들이 노출증, 페티시즘 같은 이름을 붙여 갔습니다(59~60쪽).",
+              "셋째, 끊임없는 근접과 감시. 이 권력은 가까이 다가가 진찰하고 질문해 고백을 얻어 내야 작동하며, 그 과정에서 감시하는 쪽의 쾌락과 피하거나 드러내는 쪽의 쾌락이 서로를 부추깁니다. 부모와 아이, 교사와 학생, 의사와 환자 사이에 놓인 것은 넘지 말아야 할 경계가 아니라 권력과 쾌락이 서로를 키우며 도는 나선이었습니다(60~62쪽).",
+              "넷째, 성적 포화의 장치. 19세기 가족은 일부일처 부부의 단위이면서 동시에 여러 지점에서 쾌락과 권력이 얽힌 그물이었습니다. 부모 방과 아이 방의 분리(서민 주택을 짓기 시작하며 표준이 됨), 남녀 아이의 분리, 수유와 위생 지침, 사춘기와 자위의 위험에 대한 경계, 하인의 존재가 가족을 여러 성으로 포화시켰습니다. 학교와 정신병원도 교실, 기숙사, 진찰 같은 장소에서 부부 바깥의 성을 불러내고 자리 잡게 했습니다(62~64쪽)."
+            ]
+          },
+          {
+            "title": "결론: 도착을 만들어 내고 고정한 사회",
+            "items": [
+              "푸코는 19세기 부르주아 사회, 아마 지금의 사회도 도착이 흩어지고 넘쳐 나는 사회라고 말합니다. 그것은 위선 때문도 아니고, 너무 엄격한 둑을 쌓다가 뜻하지 않게 도착이 터져 나온 반동 때문도 아닙니다. 이 권력은 법의 형태도 금지의 효과도 갖지 않고, 성을 쫓아내는 대신 몸 안에 개인을 분류하는 표지로 새겨 넣습니다. 그래서 근대 사회는 실제로, 그리고 직접 도착적이라고 합니다(64~65쪽).",
+              "그는 노동력과 가족 형태를 재생산하는 성에만 규제 역할을 맡기려다 다른 행동들에 나쁜 이름이 붙었다는 설명을 받아들이지 않습니다. 도착들은 권력의 여러 장치를 통해 실제로 몸에서 끌려 나와 고정되었고, 의학·정신의학·성매매·포르노그래피를 거친 경제적 이윤이 이 연쇄를 이어 주었다는 것입니다. 결론은 근대 산업사회가 성 억압이 커진 시대를 열었다는 가설을 버려야 한다는 것입니다. 다만 그는 이 장치가 국지적으로는 금지 절차에 기대기도 한다고 덧붙입니다(65~67쪽).",
+              "이 장의 사례들은 제4부에서 섹슈얼리티 장치(성 장치)의 네 전략, 곧 아동 성의 교육화와 도착적 쾌락의 정신의학화로 다시 정리됩니다."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "푸코, 『성의 역사』 제1권 『앎의 의지』(갈리마르, 1976) 제2부 「억압 가설」 2장 「도착의 이식」, 50~67쪽. 출발 반론 50~51쪽, 세 법전과 그 변화 51~57쪽, 네 작동 57~64쪽, 결론 64~67쪽.",
+              "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "Starting point: was the multiplication of discourse just a sorting out?",
+            "items": [
+              "Chapter 2 opens with an objection to chapter 1, 'L'incitation aux discours'. Was all this talk about sex not, in the end, meant to drive out of reality every sexuality that does not serve reproduction, that is, to shape a sexuality that is economically useful and politically conservative, one that peoples the land, reproduces labour power and carries on the form of social relations (pp. 50-51)?",
+              "Foucault leaves open whether that was the final aim, but answers that it was not pursued by reduction. The nineteenth and twentieth centuries were not an age that narrowed sex but one of dispersed, multiplied sexualities and of perversions implanted in many forms (p. 51)."
+            ]
+          },
+          {
+            "title": "From marriage-centred rules to peripheral sexualities",
+            "items": [
+              "Until the end of the eighteenth century three explicit codes governed sexual practice: canon law, the Christian pastoral and civil law, all centred on the marriage relation. The conjugal duty, its frequency and timing, even the ways of making it sterile, were thick with rules, while the status of sodomy was uncertain and children's sexuality met with indifference. Breaking the laws of marriage and seeking strange pleasures sat on the same list of offences, and acts against nature were seen as an extreme form of acting against the law (pp. 51-53).",
+              "The discursive explosion of the eighteenth and nineteenth centuries changed this system in two ways. The legitimate couple became a norm that was perhaps stricter but quieter, while questions turned to the sexuality of children, the mad and criminals and to the pleasures of those who do not love the other sex. They were still condemned, but now they were listened to. At the same time the against nature broke away from offences against marriage law and became a domain of its own; in the figure of Don Juan the pervert shows through beneath the libertine (pp. 53-55).",
+              "Precocious children, dubious servants and teachers, strollers with strange impulses drifted through disciplinary boards, reformatories, courts and asylums, picking up labels such as moral insanity, genital neurosis and degeneration. Penal severity toward sexual offences eased a great deal in the nineteenth century and justice often gave way to medicine, yet the surveillance of pedagogy and therapy grew. So Foucault says that, measured by repression, the matter is ambiguous, and that what counts is the form of power exercised (pp. 55-57)."
+            ]
+          },
+          {
+            "title": "Four workings of power unlike prohibition",
+            "items": [
+              "First, the campaign against children's masturbation. Where the ban on incest aims to reduce what it forbids, control of children's sexuality spreads both its own power and its object. By planting in parents and teachers the suspicion that every child was guilty and setting traps for confessions, it made the child's vice less an enemy to eliminate than a support on which power leaned (pp. 57-58).",
+              "Second, heretical sexualities made into species. Sodomy under the old laws was a type of forbidden act whose author was only a legal subject; the nineteenth-century homosexual became a personage with a past, a childhood, a character, a way of life and even a morphology. Foucault takes Carl Westphal's 1870 article on 'contrary sexual feeling' as the birth date of the psychiatric category, defined not by a type of sexual relation but by a sensibility that inverts masculine and feminine within oneself. Hence the homosexual came to be classed as a species rather than the author of an act, and psychiatrists such as Lasègue, Binet and Krafft-Ebing went on naming exhibitionists, fetishists and more (pp. 59-60).",
+              "Third, constant proximity and watching. This power works only by coming close, examining and questioning to extract confessions, and in doing so the pleasure of the one who watches and the pleasure of the one who evades or shows off spur each other on. Between parents and children, teachers and pupils, doctors and patients what was set up were not borders not to be crossed but spirals in which power and pleasure feed each other (pp. 60-62).",
+              "Fourth, devices of sexual saturation. The nineteenth-century family was a monogamous conjugal cell but also a network of pleasures and powers linked at many points. Separating the parents' bedroom from the children's (standard once working-class housing began to be built), separating boys and girls, rules on nursing and hygiene, alarm about puberty and masturbation, and the presence of servants saturated the family with multiple sexualities. Schools and asylums likewise called up and settled non-conjugal sexualities in classrooms, dormitories and consultations (pp. 62-64)."
+            ]
+          },
+          {
+            "title": "Conclusion: a society that produced and fixed perversions",
+            "items": [
+              "Foucault says nineteenth-century bourgeois society, and probably ours, is one of blatant and fragmented perversion. Not because of hypocrisy, nor because an overly rigid barrier against sex unintentionally made perversions burst out. This power has neither the form of law nor the effects of prohibition; instead of expelling sexuality it writes it into the body as a mark that classifies individuals. Modern society is therefore perverse really and directly (pp. 64-65).",
+              "He rejects the account that other behaviours got a bad name when society wished to give a regulating role only to the sexuality that reproduces labour power and the family form. Perversions were really drawn out of bodies and fixed in them by many devices of power, and economic profits passing through medicine, psychiatry, prostitution and pornography kept this chain going. His conclusion is that we should abandon the hypothesis that modern industrial societies opened an age of increased sexual repression, though he adds that this device does rely locally on procedures of prohibition (pp. 65-67).",
+              "These cases return in part 4 among the four strategies of the deployment of sexuality, as the pedagogisation of children's sex and the psychiatrisation of perverse pleasure."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "Foucault, The History of Sexuality, vol. 1, La volonté de savoir (Gallimard, 1976), part 2, 'L'hypothèse répressive', ch. 2, 'L'implantation perverse', pp. 50-67: the opening objection pp. 50-51, the three codes and their change pp. 51-57, the four workings pp. 57-64, the conclusion pp. 64-67.",
+              "Translated from the French original. Because the work is still under copyright, everything except short quotations is paraphrase."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "조용해진 부부",
+            "text": "혼인 관계는 엄격하지만 말없는 규범이 되고, 질문은 아이·광인·범죄자·동성애자의 성으로 옮겨 갔습니다."
+          },
+          {
+            "title": "받침대가 된 악습",
+            "text": "아동 자위 단속은 대상을 없애기보다 감시와 고백을 퍼뜨리며 권력이 기댈 자리를 넓혔습니다."
+          },
+          {
+            "title": "행위에서 종으로",
+            "text": "남색이라는 금지된 행위가 19세기 정신의학에서 과거와 성격을 가진 동성애자라는 종이 되었습니다."
+          },
+          {
+            "title": "만들어진 도착",
+            "text": "도착의 증식은 위선이나 반동이 아니라 몸과 쾌락에 개입한 권력이 직접 낳은 결과였습니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "The couple falls quiet",
+            "text": "Marriage became a strict but silent norm, while questioning moved to the sexuality of children, the mad, criminals and homosexuals."
+          },
+          {
+            "title": "Vice as a support",
+            "text": "The campaign against children's masturbation spread surveillance and confession rather than eliminating its object, widening power's foothold."
+          },
+          {
+            "title": "From act to species",
+            "text": "Sodomy, a forbidden act, became in nineteenth-century psychiatry the homosexual, a species with a past and a character."
+          },
+          {
+            "title": "Produced perversions",
+            "text": "The multiplication of perversions was not hypocrisy or backlash but a direct product of power acting on bodies and pleasures."
+          }
+        ]
+      },
+      "diagram": {
+        "kind": "contrast",
+        "ko": {
+          "title": "19세기의 도착을 읽는 두 방식",
+          "left": {
+            "heading": "통념: 억압 가설",
+            "rows": [
+              "권력의 형태: 경계를 긋고 금지하는 법",
+              "주변의 성: 현실에서 몰아내려 한 대상",
+              "도착의 증식: 지나친 금지가 낳은 반동이나 위선의 뒷면",
+              "가족: 부부 관계로 환원되는 일부일처 단위",
+              "평가 기준: 억압의 정도와 양"
+            ]
+          },
+          "right": {
+            "heading": "푸코, 「도착의 이식」(1976)",
+            "rows": [
+              "권력의 형태: 다가가 진찰하고 질문하는 감시와 고백",
+              "주변의 성: 이름 붙여 몸에 새기고 고정한 대상",
+              "도착의 증식: 권력이 실제로, 직접 낳은 결과",
+              "가족: 여러 성으로 포화된 쾌락과 권력의 그물",
+              "평가 기준: 행사되는 권력의 형태"
+            ]
+          }
+        },
+        "en": {
+          "title": "Two ways of reading nineteenth-century perversions",
+          "left": {
+            "heading": "The received view: the repressive hypothesis",
+            "rows": [
+              "Form of power: law that draws borders and prohibits",
+              "Peripheral sexualities: things to drive out of reality",
+              "More perversions: backlash of excess prohibition or hypocrisy",
+              "The family: a monogamous unit reducible to the couple",
+              "Measure: the degree and amount of repression"
+            ]
+          },
+          "right": {
+            "heading": "Foucault, 'L'implantation perverse' (1976)",
+            "rows": [
+              "Form of power: surveillance, examination and confession",
+              "Peripheral sexualities: named, written into bodies, fixed",
+              "More perversions: a real and direct product of power",
+              "The family: a network of pleasures and powers, saturated",
+              "Measure: the form of power exercised"
+            ]
+          }
+        }
+      },
+      "lessons": [
+        {
+          "id": "sex-gender-theory-intro-ch10-basic",
+          "level": "basic",
+          "title": {
+            "ko": "푸코, 「도착의 이식」: 금지가 아니라 증식",
+            "en": "Foucault, 'L'implantation perverse': multiplication, not prohibition"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제2부 2장 「도착의 이식」에서 18세기 말까지의 성 규범과 그 뒤의 변화를 어떻게 그렸을까요?",
+                "en": "In part 2, chapter 2, 'L'implantation perverse', of The Will to Knowledge, how did Foucault describe the sexual norms in force until the late eighteenth century and the change that followed?"
+              },
+              "choices": {
+                "ko": [
+                  "교회법·사목·민법은 모두 혼인을 중심으로 규칙을 쌓았는데, 그 뒤 부부의 성은 조용한 규범이 되고 아이·광인·범죄자·동성애자의 성이 캐물어졌다고 그렸습니다.",
+                  "옛 규범은 남색과 아이의 성을 가장 자세히 규정했고, 19세기에 들어 비로소 부부의 성이 의학과 사목의 집중적인 감시 대상으로 떠올랐다고 그렸습니다.",
+                  "옛 규범도 혼인법 위반과 자연에 반하는 쾌락을 이미 서로 다른 영역으로 나눴고, 19세기는 그 구분을 처벌 규정으로 옮겨 적었을 뿐이라고 그렸습니다."
+                ],
+                "en": [
+                  "Canon law, the pastoral and civil law all piled their rules around marriage; afterwards the couple's sex became a quiet norm while the sexuality of children, the mad, criminals and homosexuals was questioned.",
+                  "The old codes regulated sodomy and children's sexuality in the most detail, and only in the nineteenth century did the married couple's sex emerge as the focus of intense medical and pastoral scrutiny.",
+                  "The old codes already separated breaches of marriage law from pleasures against nature, and the nineteenth century merely transcribed that division into penal rules."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "세 법전은 부부의 의무와 그 시기·횟수까지 규정했고, 담론의 폭발 뒤 정당한 부부는 더 조용한 규범이 되고 질문은 주변의 성으로 옮겨 갔습니다(51~54쪽).",
+                  "방향이 거꾸로입니다. 푸코는 옛 규범에서 남색의 지위는 모호했고 아이의 성에는 무관심했다고 쓰며, 이후 부부는 오히려 더 많은 침묵을 누리게 되었다고 합니다.",
+                  "푸코는 옛 법전들이 혼인 규칙 위반과 생식기 중심에서 벗어난 쾌락을 뚜렷이 나누지 않았고, 그 분리는 18~19세기에 와서야 생겼다고 봅니다."
+                ],
+                "en": [
+                  "The three codes regulated conjugal duty down to its timing and frequency; after the discursive explosion the legitimate couple became a quieter norm and questions moved to peripheral sexualities (pp. 51-54).",
+                  "This reverses the direction. Foucault writes that under the old codes sodomy's status was uncertain and children's sexuality met with indifference, and that the couple later gained more discretion, not less.",
+                  "Foucault says the old codes drew no clear line between breaking marriage rules and deviating from genital sexuality; that separation appeared only in the eighteenth and nineteenth centuries."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코에 따르면 18세기 말까지 교회법, 그리스도교 사목, 민법이라는 세 법전이 성 행위를 다스렸고, 모두 혼인 관계에 맞춰져 있었습니다. 혼인은 가장 강한 제약이 걸리고 가장 자세히 고백해야 하는 자리였고, 간음·근친상간과 남색이 같은 중죄 목록에 섞여 있었습니다. 18~19세기의 담론 폭발은 부부를 덜 말해지는 규범으로 물러나게 하고, 아이·광인·범죄자의 성과 이성을 사랑하지 않는 이들의 쾌락을 불러내 고백하게 했습니다. 그들은 여전히 단죄되었지만 이제 귀 기울여 들어야 할 대상이 되었고, 자연에 반하는 것이 혼인법 위반에서 떨어져 나와 독자적 영역이 되었습니다.",
+                "en": "According to Foucault, until the late eighteenth century three codes, canon law, the Christian pastoral and civil law, governed sexual practice, all centred on the marriage relation. Marriage bore the heaviest constraints and had to be confessed in the most detail, and adultery, incest and sodomy sat on the same list of grave sins. The discursive explosion of the eighteenth and nineteenth centuries let the couple withdraw into a less-spoken norm and called on the sexuality of children, the mad and criminals and the pleasures of those who do not love the other sex to come forward and confess. They were still condemned but now listened to, and the against nature detached itself from offences against marriage law as a domain of its own."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제2부 2장 「도착의 이식」, 51~55쪽",
+                  "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 51-55"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 「도착의 이식」에서 19세기에 성 범죄 처벌이 누그러지고 감시는 늘어난 사실을 두고 무엇을 문제의 핵심으로 삼았을까요?",
+                "en": "In 'L'implantation perverse' in The Will to Knowledge, faced with the fact that punishment of sexual offences eased in the nineteenth century while surveillance grew, what did Foucault treat as the heart of the matter?"
+              },
+              "choices": {
+                "ko": [
+                  "억압의 양으로 보면 관대함과 엄격함이 섞여 애매하므로, 관대함의 수준이나 억압의 양이 아니라 그때 행사된 권력의 형태를 따져야 한다고 했습니다.",
+                  "형법이 크게 누그러졌으니 19세기는 실제로 성이 해방되어 가던 시기였고, 늘어난 감시는 그 해방을 늦춘 부수적인 잔재에 지나지 않았다고 했습니다.",
+                  "감시 장치가 훨씬 많아졌으니 19세기는 이전 어느 시대보다 억압이 커진 시기였고, 처벌 완화는 그 강화를 가리는 겉모습일 뿐이었다고 했습니다."
+                ],
+                "en": [
+                  "Measured by repression the picture is ambiguous, mixing leniency and severity, so one must examine not the level of leniency or amount of repression but the form of power exercised.",
+                  "Since penal codes softened greatly, the nineteenth century was really a time of sexual liberation, and the growth of surveillance was only a side residue that slowed it down.",
+                  "Since devices of surveillance multiplied, the nineteenth century saw more repression than any earlier age, and the easing of punishment was only a mask hiding this intensification."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 억압의 관점에서는 사정이 애매하다고 인정한 뒤, 중요한 것은 관대함의 수준이나 억압의 양이 아니라 행사되는 권력의 형태일 것이라고 씁니다(56~57쪽).",
+                  "푸코는 형법 완화를 관대함의 증거로 들 수 있다고 인정하지만, 교육과 치료가 세운 통제 장치를 함께 보면 그것만으로 해방이라 할 수 없다고 봅니다.",
+                  "억압 가설의 답을 강화한 것입니다. 푸코는 감시 증가를 엄격함의 또 다른 술책으로 볼 수도 있다고 하면서도, 그 양을 재는 물음 자체를 옆으로 밀어 둡니다."
+                ],
+                "en": [
+                  "Foucault grants that in terms of repression things are ambiguous, then writes that what matters is perhaps not the level of indulgence or the quantity of repression but the form of power exercised (pp. 56-57).",
+                  "Foucault allows that the softened codes can be read as indulgence, but with the controls set up by pedagogy and therapy in view he does not call the period a liberation.",
+                  "This hardens the repressive hypothesis. Foucault allows that the growth of surveillance can look like a further ruse of severity, but he sets aside the question of quantity altogether."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 주변의 성들이 대낮에 드러난 것이 규칙이 느슨해졌다는 뜻인지, 더 엄격한 통제의 표시인지 묻습니다. 19세기에 성 범죄에 대한 법전의 엄격함은 크게 누그러졌고 사법은 자주 의학에 사건을 넘겼습니다. 교회가 부부의 피임에 끼어드는 일도 줄었습니다. 그러나 의학은 불완전한 성 행위에서 생긴다는 병리를 만들어 부부의 쾌락에 들어갔고, 교육과 치료는 감시 장치를 세웠습니다. 그래서 억압의 정도로는 어느 쪽이라고 말하기 어렵고, 물어야 할 것은 행사되는 권력의 형태라고 합니다. 이어서 그는 이 권력이 단순한 금지와 다른 네 가지 작동을 했다고 말합니다.",
+                "en": "Foucault asks whether the appearance of peripheral sexualities in broad daylight means the rules were loosening, or whether the attention paid to them shows a stricter regime. In the nineteenth century the severity of the codes on sexual offences eased considerably and justice often deferred to medicine; the Church's interference in conjugal contraception had also weakened. Yet medicine entered the couple's pleasures, inventing a pathology said to arise from incomplete practices, and pedagogy and therapy built mechanisms of surveillance. Measured by degree of repression, then, no verdict is clear; the question is the form of power at work. He goes on to name four operations of this power quite different from simple prohibition."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제2부 2장 「도착의 이식」, 56~57쪽",
+                  "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 56-57"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 「도착의 이식」에서 아동 자위 단속이 근친혼 금지와 어떻게 다른 권력이라고 봤을까요?",
+                "en": "In 'L'implantation perverse' in The Will to Knowledge, how did Foucault say the campaign against children's masturbation differed, as a form of power, from the prohibition of incest?"
+              },
+              "choices": {
+                "ko": [
+                  "근친혼 금지는 대상을 줄여 가려 하지만, 아동 자위 단속은 감시와 의심을 퍼뜨리며 권력과 그 대상을 함께 늘렸고 아이의 악습을 적이 아니라 받침대로 삼았다고 봤습니다.",
+                  "둘 다 같은 금지의 논리지만 아동 자위 단속은 법 대신 의사가 맡았다는 점만 다르며, 결국 아이들의 자위를 크게 줄이는 데 성공했다고 봤습니다.",
+                  "아동 자위 단속은 부모와 교사의 무관심 탓에 힘을 쓰지 못한 약한 권력이었고, 그래서 법으로 처벌하는 근친혼 금지보다 효과가 훨씬 적었다고 봤습니다."
+                ],
+                "en": [
+                  "The incest ban seeks to shrink its object, but the masturbation campaign spread surveillance and suspicion, growing both power and its object, and used the child's vice as a support rather than an enemy.",
+                  "Both follow the same logic of prohibition, differing only in that doctors rather than the law handled masturbation, and in the end the campaign succeeded in greatly reducing children's masturbation.",
+                  "The masturbation campaign was a weak power that failed through the indifference of parents and teachers, and so was far less effective than the legally punished ban on incest."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 근친혼 금지가 금지 대상을 점근적으로 줄여 가는 반면, 아동 성 통제는 자기 권력과 대상을 동시에 퍼뜨리며 끝없이 함께 커진다고 씁니다(57~58쪽).",
+                  "푸코는 의학 대 법, 훈육 대 처벌의 차이에 더해 전술 자체가 다르다고 합니다. 그리고 실패가 필연이었고 그 집요함이 오히려 대상의 존속을 바란 듯하다고 봅니다.",
+                  "푸코가 그린 것은 무관심이 아니라 어른 세계 전체를 아이의 성 둘레로 불러 모은 백 년의 운동입니다. 부모와 교사는 의심하지 않으면 자신이 죄인이 된다고 겁먹었습니다."
+                ],
+                "en": [
+                  "Foucault writes that the incest ban pursues an asymptotic decrease of what it condemns, while control of children's sexuality diffuses its power and its object at once, both growing without end (pp. 57-58).",
+                  "Foucault says that beyond medicine versus law and training versus penalty, the tactic itself differs; and he sees failure as built in, the stubbornness of the campaign suggesting it wanted its object to persist.",
+                  "Foucault describes not indifference but a century-long campaign that mobilised the adult world around children's sex; parents and teachers were made to fear being guilty themselves if not suspicious enough."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코가 꼽은 첫째 작동입니다. 근친혼 금지나 간통 단죄는 법과 처벌의 장치로, 금지 대상을 점점 줄이는 것을 목표로 합니다. 19세기부터 아이의 혼자 하는 습관을 쫓은 통제는 의학과 훈육의 장치일 뿐 아니라 전술도 다릅니다. 교육자와 의사는 자위를 전염병처럼 퇴치하겠다고 했지만, 실제로는 아이의 작은 쾌락을 비밀로 만들어 숨게 한 뒤 찾아내고, 그 원인과 결과를 추적하고, 감시 장치와 고백의 덫을 놓고, 부모에게 의심을 심었습니다. 막는 둑처럼 보였지만 실제로는 아이 둘레에 끝없이 파고드는 선들을 깔았고, 권력은 그 받침대를 따라 중계점을 늘렸습니다.",
+                "en": "This is the first of Foucault's four operations. The incest ban and the condemnation of adultery are devices of law and penalty, aiming at a gradual reduction of what they forbid. The control of children's solitary habits from the nineteenth century on is a matter of medicine and training, and its tactic differs too. Educators and doctors claimed to fight masturbation like an epidemic, yet in practice they made the child's slight pleasures into secrets, forcing them to hide so as to discover them, traced their causes and effects, set up surveillance and traps for confessions, and sowed suspicion in parents. It looked like a barrier, but it laid lines of indefinite penetration around the child, and power multiplied its relays along that support."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제2부 2장 「도착의 이식」, 57~58쪽",
+                  "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 57-58"
+                }
+              }
+            },
+            {
+              "id": "q4",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 「도착의 이식」에서 옛 법의 남색과 19세기 정신의학의 동성애자가 어떻게 다르다고 했을까요?",
+                "en": "In 'L'implantation perverse' in The Will to Knowledge, how did Foucault say the sodomy of the old laws differed from the homosexual of nineteenth-century psychiatry?"
+              },
+              "choices": {
+                "ko": [
+                  "남색은 금지된 행위의 한 유형이고 행위자는 법적 주체일 뿐이었지만, 동성애자는 성격과 어린 시절까지 가진 하나의 종이 되었고 그 범주는 감수성으로 정의되었다고 했습니다.",
+                  "옛 법은 동성 간 성관계를 전혀 단죄하지 않았고, 19세기 정신의학이 처음으로 그것을 처벌 대상으로 삼으면서 법정에서 동성애자를 가려내기 시작했다고 했습니다.",
+                  "동성애자라는 정체성은 늘 있었고, 정신의학은 그것을 억누르던 종교의 침묵을 걷어 내고 과학의 이름으로 그 진실을 처음 정확히 발견했다고 했습니다."
+                ],
+                "en": [
+                  "Sodomy was a type of forbidden act whose author was only a legal subject; the homosexual became a species with a character and a childhood, a category defined by a sensibility.",
+                  "The old laws never condemned same-sex relations at all, and nineteenth-century psychiatry first made them punishable, so that courts began singling out homosexuals for the first time.",
+                  "Homosexual identity had always existed, and psychiatry lifted the silence of religion that had suppressed it, discovering its truth accurately for the first time in the name of science."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 1870년 베스트팔의 논문을 범주의 탄생일로 꼽으며, 범주가 성관계의 유형이 아니라 남성성과 여성성을 제 안에서 뒤바꾸는 감수성으로 정의되었다고 씁니다(59쪽).",
+                  "푸코는 옛 법정이 부정(不貞)이나 수간과 나란히 동성애도 단죄할 수 있었다고 씁니다(52쪽). 바뀐 것은 처벌의 유무가 아니라 대상이 행위에서 인물로 옮겨 간 것입니다.",
+                  "푸코에게 정신의학은 숨은 진실을 발견한 것이 아니라 이름을 붙여 몸에 새기고 분류 원리로 만든 권력입니다. 숨은 본성을 해방한다는 생각은 억압 가설의 틀입니다."
+                ],
+                "en": [
+                  "Foucault takes Westphal's 1870 article as the category's birth date and writes that it was defined not by a type of sexual relation but by a sensibility inverting masculine and feminine within oneself (p. 59).",
+                  "Foucault writes that the old courts could condemn homosexuality alongside infidelity or bestiality (p. 52). What changed was not whether it was punished but that the target moved from an act to a person.",
+                  "For Foucault psychiatry did not uncover a hidden truth; it named, wrote into bodies and made a principle of classification. The idea of freeing a hidden nature belongs to the repressive hypothesis."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코가 꼽은 둘째 작동은 주변의 성을 몸 안에 들이고 개인을 새로 분류하는 것입니다. 옛 교회법과 민법의 남색은 금지된 행위의 유형이었고, 그것을 저지른 사람은 법적 주체로만 다뤄졌습니다. 19세기의 동성애자는 과거와 어린 시절, 성격과 생활 형태, 해부학적 형태까지 가진 인물이 되어, 그의 모든 것이 성으로 설명되었습니다. 푸코는 1870년 카를 베스트팔의 ‘반대 성 감각’ 논문을 탄생일로 꼽고, 남색이라는 실천이 영혼의 양성성 같은 것으로 옮겨 놓였을 때 동성애가 성의 한 형상이 되었다고 합니다. 그래서 남색자가 되풀이하는 죄인이었다면 “동성애자는 이제 하나의 종”이라고 썼습니다. 이 권력은 이단을 없애기보다 분류해 고정했습니다.",
+                "en": "Foucault's second operation incorporates peripheral sexualities into bodies and specifies individuals anew. Sodomy in the old canon and civil law was a type of forbidden act, and whoever committed it was treated only as a legal subject. The nineteenth-century homosexual became a personage with a past, a childhood, a character, a way of life and even an anatomy, everything about him explained by his sexuality. Foucault takes Carl Westphal's 1870 article on 'contrary sexual feeling' as the birth date, saying homosexuality became a figure of sexuality once the practice of sodomy was shifted onto a kind of interior androgyny, a hermaphroditism of the soul. Where the sodomite had been a relapsing sinner, 'the homosexual was now a species'. This power fixed heresies by classifying them rather than eliminating them."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제2부 2장 「도착의 이식」, 52, 59~60쪽",
+                  "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 52, 59-60"
+                }
+              }
+            },
+            {
+              "id": "q5",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 「도착의 이식」에서 의사의 진찰, 정신의학의 조사, 부모의 감시 같은 관계 속에서 권력과 쾌락이 어떻게 맞물린다고 했을까요?",
+                "en": "In 'L'implantation perverse' in The Will to Knowledge, how did Foucault say power and pleasure interlock in relations such as medical examination, psychiatric inquiry and parental watching?"
+              },
+              "choices": {
+                "ko": [
+                  "묻고 살피는 권력의 쾌락과 그것을 피하거나 드러내는 쪽의 쾌락이 서로를 부추기며, 넘지 말아야 할 경계가 아니라 둘이 함께 커지는 나선이 생겼다고 했습니다.",
+                  "권력은 쾌락을 금지하고 쾌락은 권력을 피해 달아나므로, 둘은 언제나 반대편에 서서 한쪽이 커지면 다른 쪽이 그만큼 줄어드는 관계라고 했습니다.",
+                  "권력이 쾌락을 붙잡아 드러낸 덕분에 사람들이 숨겨 온 욕망을 마침내 말할 수 있게 되었으니, 이 관계는 결국 성을 해방하는 과정이었다고 했습니다."
+                ],
+                "en": [
+                  "The pleasure of the power that questions and probes and the pleasure of those who evade or flaunt it spur each other on, producing not a border never to cross but a spiral in which both grow.",
+                  "Power forbids pleasure and pleasure flees power, so the two always stand on opposite sides, one shrinking exactly as much as the other grows.",
+                  "Because power seized and exposed pleasures, people could at last voice the desires they had hidden, so these relations were ultimately a process of sexual liberation."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 이런 관계들이 쾌락과 권력의 이중 충동으로 작동하며, 성과 몸 둘레에 경계 대신 “권력과 쾌락의 끝없는 나선”을 만들었다고 씁니다(61~62쪽).",
+                  "푸코가 이 장 끝에서 직접 부정하는 그림입니다. 그는 쾌락과 권력이 서로를 없애지도 서로에게 등을 돌리지도 않고, 서로를 쫓고 겹치며 다시 부추긴다고 씁니다(66~67쪽).",
+                  "푸코는 질문과 시선이 오히려 쾌락을 그 사람에게 고유한 것으로 고정하고 권력이 그것을 붙들어 둔다고 봅니다. 고백을 해방으로 보는 것은 그가 의심하는 틀입니다."
+                ],
+                "en": [
+                  "Foucault writes that these relations work as mechanisms with a double impulse, pleasure and power, and set up around sex and bodies not borders but 'perpetual spirals of power and pleasure' (pp. 61-62).",
+                  "Foucault rejects this picture at the end of the chapter: pleasure and power do not cancel each other or turn against each other, but pursue, overlap and reinforce one another (pp. 66-67).",
+                  "Foucault holds that questioning and the gaze fix pleasures as peculiar to the person and that power anchors them; reading confession as liberation is the framework he doubts."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코가 꼽은 셋째 작동입니다. 옛 금지와 달리 이 권력은 늘 곁에 있으면서 호기심 어린 눈으로 살피고, 집요하게 진찰하고 관찰하며, 고백을 끌어내는 질문과 질문을 넘어서는 털어놓음을 주고받아야 작동합니다. 그래서 몸 가까이 다가가는 일이 필요하고, 권력이 효율과 통제 범위를 넓히는 동시에 권력 자체가 감각적인 것이 되어 쾌락의 이득을 얻습니다. 한쪽에는 묻고 엿보고 뒤지는 권력의 쾌락이, 다른 쪽에는 그 권력을 피하고 속이거나 드러내 놓고 스캔들을 일으키는 쾌락이 있습니다. 부모와 아이, 교사와 학생, 의사와 환자, 정신의학자와 그의 히스테리 환자·도착자가 19세기 내내 이 놀이를 벌였다고 합니다.",
+                "en": "This is Foucault's third operation. Unlike the old prohibitions, this power needs constant, attentive and curious presences; it works through insistent examination and observation and an exchange of questions that extort confessions and confidences that overflow the questions. It therefore requires physical closeness, and as it gains efficiency and extends its domain, power itself is sensualised and draws a profit of pleasure. On one side is the pleasure of a power that questions, watches, spies and searches; on the other the pleasure of evading, deceiving or flaunting it and causing scandal. Parents and children, teachers and pupils, doctors and patients, the psychiatrist with his hysteric and his perverts, played this game throughout the nineteenth century, he says."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제2부 2장 「도착의 이식」, 60~62, 66~67쪽",
+                  "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 60-62, 66-67"
+                }
+              }
+            },
+            {
+              "id": "q6",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 「도착의 이식」 끝에서 19세기 부르주아 사회에 도착이 넘쳐 난 까닭을 어떻게 설명했을까요?",
+                "en": "At the end of 'L'implantation perverse' in The Will to Knowledge, how did Foucault explain why nineteenth-century bourgeois society teemed with perversions?"
+              },
+              "choices": {
+                "ko": [
+                  "법도 금지도 아닌 권력이 가족·학교 같은 포화 지점에서 성을 늘리고 몸에 고정했으며, 의학·성매매 등의 이윤이 이를 이었으니 근대 사회는 실제로, 직접 도착적이라고 설명했습니다.",
+                  "성에 너무 엄격하고 넓은 둑을 쌓은 탓에 억눌린 욕망이 뜻하지 않게 터져 나왔고, 겉으로는 정숙한 척한 사회의 위선이 그 뒷면에 도착을 숨겼다고 설명했습니다.",
+                  "노동력과 가족 형태를 재생산하는 성에만 규제 역할을 맡기려 하자, 그전까지 너그럽게 넘기던 다른 성적 행동들에 나쁜 이름이 새로 붙었다고 설명했습니다."
+                ],
+                "en": [
+                  "A power that is neither law nor prohibition multiplied sexualities and fixed them in bodies at sites of saturation like the family and school, with profits from medicine, prostitution and more keeping it going; modern society is really and directly perverse.",
+                  "By building too strict and broad a barrier against sex, society made repressed desires burst out unintentionally, and the hypocrisy of an outwardly prudish society hid perversion behind it.",
+                  "When society sought to give a regulating role only to the sex that reproduces labour power and the family form, other sexual behaviours, tolerated until then, acquired a bad name."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 이 권력이 성을 배제하지 않고 몸 안에 개인을 특정하는 방식으로 포함하며, 근대 사회는 청교도주의에도 불구하고가 아니라 “실제로, 그리고 직접 도착적”이라고 씁니다(64~66쪽).",
+                  "푸코가 명시적으로 물리친 두 설명입니다. 그는 도착의 증식이 위선의 방식으로 생긴 것도, 지나친 둑이 뜻하지 않게 낳은 병리도 아니라고 씁니다(64쪽).",
+                  "억압 가설을 노동력 재생산에 잇는 설명으로, 푸코는 그렇게 상상해서는 안 된다고 씁니다. 도착은 이름만 붙은 것이 아니라 권력 장치를 통해 실제로 몸에 굳어졌다는 것입니다(65쪽)."
+                ],
+                "en": [
+                  "Foucault writes that this power does not exclude sexuality but includes it in the body as a mode of specifying individuals, and that modern society is perverse not despite its puritanism but 'really and directly' (pp. 64-66).",
+                  "Foucault explicitly rejects both accounts: the multiplication of perversions came neither in the mode of hypocrisy nor as a pathology unintentionally produced by too rigid a barrier (p. 64).",
+                  "This ties the repressive hypothesis to the reproduction of labour power, and Foucault says we must not imagine it so; perversions were not just labelled but really solidified in bodies through devices of power (p. 65)."
+                ]
+              },
+              "explanation": {
+                "ko": "결론부에서 푸코는 19세기 부르주아 사회, 아마 지금의 사회도 도착이 넘쳐 나고 흩어진 사회라고 하면서 흔한 두 설명을 물리칩니다. 정숙을 가장한 위선도, 너무 엄격한 금지가 낳은 반동도 아니라는 것입니다. 이 권력은 법의 형태도 금지의 효과도 없이 단일한 성들을 늘리고, 경계를 긋는 대신 끝없이 파고드는 선을 따라 그 형태들을 연장하며, 포화 지점을 만듭니다. 그는 노동력 재생산에 맞는 성만 남기려다 다른 행동에 낙인이 찍혔다는 설명도 받아들이지 않고, 도착들이 실제로 몸에서 끌려 나와 굳어졌다고 봅니다. 장 첫머리에서 그는 그것이 인구와 노동력을 위한 것이었는지는 아직 모르겠다고 했지만, 줄이기로 이루어지지 않았다는 점은 분명히 했습니다. 의학, 정신의학, 성매매, 포르노그래피를 거친 경제적 이윤이 이 연쇄를 이어 주었고, 그래서 근대 산업사회가 억압이 커진 시대를 열었다는 가설은 버려야 한다고 합니다. 다만 이 장치가 국지적으로는 금지 절차에 기댄다는 점도 덧붙입니다.",
+                "en": "In the conclusion Foucault calls nineteenth-century bourgeois society, and probably ours, a society of blatant and fragmented perversion, and dismisses two common accounts: neither prudish hypocrisy nor a backlash from overly strict prohibition explains it. This power, with neither the form of law nor the effects of prohibition, multiplies singular sexualities, extends their forms along lines of indefinite penetration instead of drawing borders, and sets up sites of maximal saturation. He also refuses the account that other behaviours were stigmatised when society wished to keep only the sexuality suited to reproducing labour power, holding that perversions were really drawn out of bodies and solidified in them. At the start of the chapter he left open whether population and labour power were the ultimate aim, but was clear it was not pursued by reduction. Economic profits passing through medicine, psychiatry, prostitution and pornography kept the chain going, so the hypothesis that modern industrial societies opened an age of increased repression must be abandoned, though he notes the device relies locally on procedures of prohibition."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제2부 2장 「도착의 이식」, 50~51, 62~67쪽",
+                  "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 50-51, 62-67"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sex-gender-theory-intro-ch11",
+      "volumeNumber": 15,
+      "chapterNumber": 11,
+      "title": {
+        "ko": "성의 진실은 어떻게 고백으로 생산되며, 권력은 법 없이 어떻게 분석되는가?",
+        "en": "How is the truth of sex produced through confession, and how can power be analysed without the law?"
+      },
+      "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+      "summary": {
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『앎의 의지』(1976) 제3부 「성의 과학(Scientia sexualis)」(69~98쪽)과 제4부 「섹슈얼리티 장치」의 1장 「쟁점」, 2장 「방법」(99~135쪽)을 순서대로 읽습니다. 서구가 성의 진실을 성애의 기술이 아니라 고백으로 생산해 왔다는 주장이 어떤 단계로 전개되는지, 고백을 과학으로 바꾼 다섯 절차가 무엇인지, 푸코가 왜 법과 금지로 권력을 그리는 표상을 버리고 어떤 권력 명제와 네 규칙을 세우는지 확인합니다.",
+        "en": "About 12 minutes · Read part 3 of Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976), 'Scientia sexualis' (pp. 69-98), and chapters 1 and 2 of part 4, 'The Deployment of Sexuality': 'Objective' and 'Method' (pp. 99-135), in order. See in what steps Foucault argues that the West produced the truth of sex through confession rather than an erotic art, what five procedures turned confession into science, and why he discards the picture of power as law and prohibition in favour of a set of propositions about power and four rules of method."
+      },
+      "learningFocus": {
+        "ko": "제3부는 흔히 19세기 성 의학이 편견 탓에 성을 제대로 알지 못했다는 이야기로 읽히지만, 푸코는 오류와 맹목을 인정하면서도 그것들이 성을 진실의 쟁점으로 만든 거대한 진실 생산 장치 위에서 일어났다고 봅니다. 그 장치의 중심은 중세 이래의 고백이고, 19세기는 고백을 다섯 절차로 과학 담론에 맞추어 섹슈얼리티라는 대상을 만들어 냈습니다. 제4부 1~2장은 이 분석을 권력론으로 일반화합니다. 억압 이론과 정신분석의 욕망 이론이 함께 기대는 법률적-담론적 권력 표상을 버리고, 권력을 아래에서 오는 다수의 힘 관계로 읽자고 제안합니다. 권력이 어디에나 있다는 말은 모든 것을 감싼다는 뜻이 아니고, 저항이 무의미하다는 뜻도 아닙니다.",
+        "en": "Part 3 is often read as saying that nineteenth-century sexual medicine failed to know sex because of prejudice; Foucault grants the errors and blindness, but holds that they took place on top of a vast apparatus for producing truth that made sex an issue of truth. At its centre lies confession, practised since the Middle Ages, and the nineteenth century adjusted confession to scientific discourse through five procedures, producing the object called sexuality. Chapters 1 and 2 of part 4 generalise this analysis into an account of power. Foucault asks us to drop the juridico-discursive representation of power shared by the theory of repression and the psychoanalytic theory of desire, and to read power as a multiplicity of force relations coming from below. To say that power is everywhere does not mean that it encompasses everything, nor that resistance is pointless."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "앎의 의지와 두 가지 진실 생산 절차",
+            "items": [
+              "제3부는 반론을 먼저 세웁니다. 담론이 늘어났다고 해도 그것은 성을 가리려는 방어막이 아니었는가, 19세기 성 의학은 도착과 기벽만 다루고 도덕의 구분을 의학 규범으로 되풀이했으며, 사소한 습관에 대대로 이어질 재앙을 갖다 붙이고 곧 닥칠 국가 인종주의에 진리의 이름을 빌려주지 않았는가. 같은 시기 생식 생리학과 견주면 합리성이 현저히 낮아서, 한쪽은 앎의 의지, 다른 쪽은 알지 않으려는 의지처럼 보인다는 것입니다.",
+              "푸코는 맹목과 거부가 있었음을 인정합니다. 다만 그 거부는 바로 스스로 드러내고 말하라고 다그친 것에 대한 거부였고, 오인은 진실과의 근본 관계를 바탕으로만 일어날 수 있다고 봅니다. 샤르코의 살페트리에르는 관찰 장치이자 공개 강의와 미리 준비한 발작 연출로 말을 끌어내는 선동 기계였고, 성 이야기가 너무 드러나면 강의를 끊고 공개 기록에서 지워 버렸습니다. 중요한 것은 성이 참과 거짓의 문제, 진실의 쟁점이 되었다는 점입니다.",
+              "성의 진실을 생산하는 절차는 역사적으로 둘입니다. 중국, 일본, 인도, 로마, 아랍·이슬람 사회의 성애의 기술(ars erotica)에서는 진실을 쾌락 자체의 강도, 질, 지속, 몸과 영혼에 남는 울림에서 끌어내고, 그 앎을 다시 실천에 돌려 쾌락을 키웁니다. 이 앎은 부끄러워서가 아니라 퍼지면 효력을 잃기 때문에 비밀이고, 스승이 입문 과정을 통해 제자에게 전합니다.",
+              "서구는 언뜻 보아 성애의 기술이 없고, 대신 성의 과학(scientia sexualis)을 실천하는 유일한 문명입니다. 그 중심에는 입문과 스승의 비밀과 정반대인 고백(aveu)이 있습니다. 1215년 라테란 공의회의 고해 규정, 신명재판·결투·선서 같은 판정 절차의 쇠퇴와 심문·조사 방법의 발달, 종교재판소 설치가 고백을 사법·종교 권력의 중심에 놓았습니다. 고백이라는 말도 남이 보증해 주는 신분에서 자기 행위와 생각을 스스로 인정하는 일로 뜻이 바뀌었고, 서구의 인간은 “고백하는 짐승”이 되었다고 푸코는 씁니다(80쪽)."
+            ]
+          },
+          {
+            "title": "고백의 권력 구조와 그것을 과학으로 만든 다섯 절차",
+            "items": [
+              "고백의 의무가 너무 깊이 몸에 배어서 우리는 그것을 권력의 효과로 느끼지 않고, 오히려 진실은 본래 드러나고 싶어 하는데 권력이 막고 있다고 느낍니다. 푸코는 진실은 본성상 자유롭지 않으며 그 생산 전체가 권력 관계에 걸쳐 있다고 반박합니다. 서구가 수 세대에 걸쳐 고백을 시킨 일은, 다른 형태의 노동이 자본 축적을 맡는 동안 사람들을 두 의미의 주체(sujet), 곧 주체이자 예속된 자로 만드는 일이었다고 합니다.",
+              "고백 의례에서는 말하는 사람이 곧 진술의 주어이고, 고백을 요구하고 평가하고 심판하고 용서하는 상대가 적어도 잠재적으로 있습니다. 말은 위에서가 아니라 아래에서 강요되어 나오고, 비밀은 귀해서가 아니라 천하고 흔해서 감춰집니다. 지배하는 자리는 말하는 쪽이 아니라 침묵하며 듣고 묻는 쪽에 있고, 진실의 효과는 듣는 사람이 아니라 고백을 빼앗긴 사람에게 나타납니다.",
+              "고백은 프로테스탄트 개혁, 반종교개혁, 18세기 교육학, 19세기 의학을 거치며 고해성사를 벗어나 아이와 부모, 학생과 교사, 환자와 정신과 의사, 범죄자와 감정인 사이로 퍼졌고, 행위뿐 아니라 생각, 강박, 상상, 쾌락의 질까지 캐묻게 되었습니다. 푸코는 이것이 과학이 될 수 있었던 다섯 절차를 듭니다. 말하게 하기의 임상적 코드화(고백과 진찰, 질문지, 최면, 자유연상의 결합), 성이 무엇이든 일으킬 수 있다는 일반적 인과성의 전제, 성은 당사자에게도 숨겨져 있다는 잠재성의 원리, 진실은 듣는 사람의 해독으로 완성된다는 해석의 방법, 죄 대신 정상과 병리의 틀로 옮기는 고백 효과의 의학화입니다.",
+              "섹슈얼리티는 이 담론 실천의 상관물입니다. 병리 과정이 스며드는 영역, 해독할 의미의 장, 숨은 과정의 자리, 끝없는 인과 관계의 중심이라는 섹슈얼리티의 특징은 이데올로기에 흐려진 표상이 아니라 진실을 생산해야 하는 담론의 기능적 요구에서 나왔다고 합니다. 그래서 18세기 이후의 사회는, 부르주아·자본주의·산업 사회 어떤 이름으로 부르든, 성을 알기를 거부한 것이 아니라 성에 관한 참된 담론을 생산하는 장치를 가동했다는 것이 제3부의 일반 가설입니다.",
+              "그렇다고 서구에 성애의 기술이 아주 없는 것은 아닙니다. 그리스도교의 영성 지도와 반종교개혁기의 빙의·황홀경에도 그 흔적이 있고, 19세기 이후의 성의 과학도 쾌락의 진실을 알고 드러내고 털어놓는 데서 오는 새로운 쾌락을 낳았는지 모릅니다. 푸코는 그 자리가 건강한 성이나 완전한 성의 이상, 오르가슴의 서정에 있지 않다고 못 박고, 경제적 이유로 성을 억누르는 권력이라는 가설은 이 모든 증식을 설명하기에 너무 좁다고 결론짓습니다."
+            ]
+          },
+          {
+            "title": "제4부 1장 「쟁점」: 법률적-담론적 권력 표상",
+            "items": [
+              "제4부 「섹슈얼리티 장치(성 장치)」는 디드로의 『입 싼 보석들』에서 성기를 말하게 하는 마법 반지를 빌려, 우리가 왜 그토록 성의 진실을 쫓는지 묻고 쟁점, 방법, 영역, 시기 구분을 차례로 제시합니다. 1장은 정신분석가들이 이미 욕망은 억압되지 않고 법이 욕망을 구성한다고 말했다는 예상 반론에서 출발합니다.",
+              "푸코의 답은 두 이론이 충동의 본성을 달리 볼 뿐 같은 권력 표상, 곧 법률적-담론적 표상을 공유한다는 것입니다. 권력이 바깥에서 욕망을 누른다고 보면 해방을 약속하게 되고, 권력이 욕망을 구성한다고 보면 언제나 이미 갇혀 있다고 말하게 됩니다. 그가 목표로 삼는 것은 권력의 이론이 아니라 권력 관계가 이루는 영역과 그것을 분석할 도구를 정하는 분석학입니다.",
+              "이 표상의 다섯 특징은 부정적 관계(권력은 성에 아니라고만 할 수 있음), 규칙의 심급(허용과 금지의 이분법, 입법자가 말하면 그것이 규칙), 금지의 순환(사라지지 않으려면 스스로 단념하라), 검열의 논리(허용되지 않는다, 말해서는 안 된다, 존재하지 않는다는 세 형태의 연쇄), 장치의 통일성(국가에서 가족까지 같은 법 형식, 그 앞의 주체는 복종하는 자)입니다. 이런 권력은 자원이 빈약하고, 아니라고 말하는 힘밖에 없으며, 모든 지배를 복종으로 환원합니다.",
+              "이 표상이 쉽게 받아들여지는 까닭으로 푸코는 권력은 자기 메커니즘의 큰 부분을 가려야만 견딜 만하다는 점, 그리고 역사적으로 중세 군주정이 봉건적 권력들 위에 조정과 중재의 심급, 평화와 정의의 원리로 들어서며 법을 자기 표현 형식으로 삼았다는 점을 듭니다. 18세기의 군주정 비판도, 법 체계 자체가 소수의 지배를 위한 폭력이라는 19세기의 더 급진적 비판도 권력이 본래 법에 따라 행사되어야 한다는 전제를 공유했습니다. 그래서 정치 사상은 “아직 왕의 목을 자르지 않았다”고 합니다(117쪽).",
+              "그러나 18세기 이후 사람들의 삶과 살아 있는 몸을 떠맡은 새 권력 메커니즘은 법이 아니라 기술, 법률이 아니라 규범화, 처벌이 아니라 통제로 작동하고 국가 기구를 넘어선 층위에서 행사됩니다. 1장은 법 없이 성을, 왕 없이 권력을 동시에 사유하자는 과제로 끝납니다."
+            ]
+          },
+          {
+            "title": "제4부 2장 「방법」: 권력 명제와 네 규칙",
+            "items": [
+              "푸코가 말하는 권력은 국가 기구의 총체도, 규칙 형태의 예속 방식도, 한 집단이 다른 집단에 행사하는 전반적 지배 체계도 아닙니다. 그것들은 출발점이 아니라 최종 형태입니다. 권력은 먼저 어떤 영역에 내재하는 다수의 힘 관계, 그 관계를 바꾸는 끝없는 투쟁, 그것들이 서로 기대거나 어긋나는 방식, 그리고 국가 기구나 법이나 사회적 헤게모니로 굳어지는 전략입니다. 권력이 어디에나 있는 것은 모든 것을 감싸서가 아니라 모든 곳에서 오기 때문이고, 권력은 한 사회의 복잡한 전략적 상황에 붙이는 이름입니다.",
+              "이어지는 명제는 다음과 같습니다. 권력은 소유하거나 나눠 갖는 것이 아니라 무수한 지점에서 행사됩니다. 권력 관계는 경제 과정, 앎의 관계, 성관계 바깥의 상부구조가 아니라 그 안에 내재하며 직접 생산하는 역할을 합니다. “권력은 아래에서 온다”(124쪽). 지배자와 피지배자의 이분법이 위에서 아래로 반복되는 것이 아니라 생산 기구, 가족, 제도 안의 숱한 힘 관계가 사회를 가로지르는 큰 분할선을 떠받치고, 거대한 지배는 그 대결들이 유지하는 헤게모니 효과입니다. 권력 관계는 계산과 목표가 있다는 뜻에서 의도적이지만 그것을 지휘하는 참모부는 없다는 뜻에서 비주체적입니다.",
+              "권력이 있는 곳에 저항이 있고, 저항은 권력 바깥에 있지 않습니다. 그렇다고 저항이 언제나 지는 수동적 반사작용인 것은 아닙니다. 권력에 맞서는 단 하나의 거대한 거부의 자리 대신 흩어지고 움직이는 저항 지점들이 있고, 국가가 권력 관계의 제도적 통합 위에 서듯 혁명은 이 저항 지점들의 전략적 코드화로 가능해진다고 푸코는 씁니다.",
+              "성에 관해 물을 것도 달라집니다. 어떤 국가 구조가 왜 성에 관한 앎을 필요로 했는가, 그 앎이 어떤 전반적 지배에 봉사했는가가 아니라, 아이의 몸, 여성의 성, 출산 제한 같은 특정한 자리에서 어떤 국지적 권력 관계가 작동했는가를 묻습니다. 이를 위한 네 규칙은 내재성(권력이 왜곡하기 전의 순수한 성 과학은 없고 앎의 기술과 권력의 전략은 서로 바깥에 있지 않음), 연속적 변화(누가 권력을 가졌는가가 아니라 변형의 모태, 예컨대 의사가 부모에게 아이를 감시하라던 관계가 끝내 정신과 의사가 아이를 통해 어른의 성을 캐묻는 관계로 뒤집힘), 이중 조건화(국지적 전술과 전체 전략은 서로를 조건 지우며, 아버지는 군주의 대리인이 아님), 담론의 전술적 다가성(같은 담론이 권력의 도구도 저항의 출발점도 될 수 있음)입니다. 법의 모델 대신 전략의 모델을 택하자는 것이 2장의 결론입니다."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "푸코, 『성의 역사』 제1권 『앎의 의지』(갈리마르, 1976) 제3부 「성의 과학」, 69~98쪽(반론과 샤르코 71~76쪽, 두 절차 76~78쪽, 고백의 역사와 구조 78~84쪽, 확산과 다섯 절차 84~90쪽, 섹슈얼리티와 일반 가설 90~94쪽, 진실의 쾌락과 결론 94~98쪽), 제4부 서두 101~105쪽, 1장 「쟁점」 107~120쪽, 2장 「방법」 121~135쪽(권력 명제 121~127쪽, 네 규칙 129~135쪽). 쪽수는 초판 본문의 인쇄 쪽수입니다.",
+              "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "The will to knowledge and two procedures for producing truth",
+            "items": [
+              "Part 3 begins by stating an objection. Even if discourse multiplied, was it not a screen meant to mask sex? Nineteenth-century sexual medicine dealt only with aberrations and oddities, repeated moral divisions in the guise of medical norms, pinned imaginary dynasties of ills on the smallest habits, and lent the name of truth to the state racisms then about to arrive. Compared with the physiology of reproduction of the same period, its rationality was strikingly low, so that one side looks like a will to knowledge and the other like a stubborn will not to know.",
+              "Foucault concedes the blindness and refusals. But the refusal bore on the very thing that was being brought to light and urgently solicited, and misrecognition can only occur against the background of a fundamental relation to truth. Charcot's Salpêtrière was an apparatus of observation and also a machine of incitement, with public presentations and carefully staged crises; when sex became too evident Charcot cut the lesson short, and the published records erased it. What matters is that sex became a matter of true and false, an issue of truth.",
+              "Historically there are two great procedures for producing the truth of sex. In the ars erotica of China, Japan, India, Rome and the Arab-Muslim societies, truth is drawn from pleasure itself, from its intensity, quality, duration and reverberations in body and soul, and that knowledge is fed back into practice to amplify it. The knowledge is secret not because its object is shameful but because it would lose its efficacy if divulged, and a master hands it on through initiation.",
+              "At first glance the West has no ars erotica; it is probably the only civilisation to practise a scientia sexualis, organised around a form of power-knowledge strictly opposed to initiation and the master's secret: confession (aveu). The regulation of penance by the Lateran Council of 1215, the decline of ordeals, duels and oaths in favour of interrogation and inquiry, and the Inquisition placed confession at the centre of civil and religious power. The word aveu itself shifted from a guarantee of status given by another to one's own acknowledgement of one's acts and thoughts, and Western man, Foucault writes, has become \"a confessing animal\" (p. 80)."
+            ]
+          },
+          {
+            "title": "The power structure of confession and the five procedures that made it scientific",
+            "items": [
+              "The obligation to confess is so deeply ingrained that we no longer feel it as the effect of a power; instead we feel that truth wants to come out and that power holds it back. Foucault replies that truth is not free by nature and that its production is traversed throughout by power relations. Making generations confess was, while other forms of labour ensured the accumulation of capital, a way of constituting people as subjects in both senses of the word.",
+              "In the ritual of confession the speaking subject is also the subject of the statement, and there is an at least virtual partner who requires the confession, assesses it, judges, punishes or forgives. The discourse comes from below, as compelled speech, and its secrecy stems not from its preciousness but from its lowliness. Domination lies not with the one who speaks but with the one who listens in silence and questions, and the truth takes effect not in the one who receives it but in the one from whom it is wrested.",
+              "Through Protestantism, the Counter-Reformation, eighteenth-century pedagogy and nineteenth-century medicine, confession left the sacrament of penance and spread to children and parents, pupils and teachers, patients and psychiatrists, delinquents and experts, probing not only acts but thoughts, obsessions, images and the quality of pleasure. Foucault lists five procedures that let it become science: a clinical codification of inducing speech (confession combined with examination, questionnaires, hypnosis, free association); the postulate of a general and diffuse causality of sex; the principle of a latency intrinsic to sexuality, hidden even from the subject; the method of interpretation, by which truth is completed in the listener who deciphers it; and the medicalisation of confession's effects, moving sex from sin to the normal and the pathological.",
+              "Sexuality is the correlate of this discursive practice. Its basic features, a domain open to pathological processes, a field of meanings to decipher, a site of hidden processes, a focus of indefinite causal relations, are not a representation blurred by ideology but correspond to the functional needs of a discourse that must produce its truth. Hence the general hypothesis of part 3: the society that developed from the eighteenth century, call it bourgeois, capitalist or industrial, did not refuse to recognise sex but set to work an apparatus for producing true discourses about it.",
+              "This does not mean that the West lacks all erotic art. Traces appear in Christian spiritual direction and in the possessions and ecstasies of Counter-Reformation Catholicism, and since the nineteenth century scientia sexualis may itself have generated a new pleasure, the pleasure of knowing, exposing and confiding the truth of pleasure. Foucault insists this is not to be found in ideals of healthy or fulfilled sexuality or in the lyricism of orgasm, and concludes that the hypothesis of a power repressing sex for economic reasons is far too narrow to account for all this proliferation."
+            ]
+          },
+          {
+            "title": "Part 4, chapter 1, 'Objective': the juridico-discursive representation of power",
+            "items": [
+              "Part 4, 'The Deployment of Sexuality' (dispositif de sexualité), borrows the magic ring from Diderot's The Indiscreet Jewels, which makes sexes speak, to ask why we hunt so stubbornly for the truth of sex, and then sets out an objective, a method, a domain and a periodisation. Chapter 1 starts from an anticipated objection: psychoanalysts already said that desire is not repressed and that the law constitutes desire.",
+              "Foucault answers that the two theories differ in how they conceive drives, not in how they conceive power: both rely on the same juridico-discursive representation. If power grips desire only from outside, liberation is promised; if power constitutes desire, one must say we are always already trapped. His aim is not a theory of power but an analytics: defining the specific domain formed by power relations and the instruments for analysing it.",
+              "The representation has five traits: the negative relation (power can only say no to sex); the instance of the rule (a binary of licit and illicit, the legislator speaks and that is the rule); the cycle of prohibition (renounce yourself or be suppressed); the logic of censorship (it is not permitted, it must not be said, it does not exist, linked in a chain); and the unity of the apparatus (the same legal form from state to family, facing a subject who obeys). Such a power is poor in resources, has only the force of 'no', and reduces every form of domination to obedience.",
+              "Why is this view so readily accepted? Foucault answers that power is tolerable only on condition of masking a large part of itself, and historically that medieval monarchy rose above tangled feudal powers as an instance of regulation and arbitration, peace and justice, making law its very mode of manifestation. The eighteenth-century critique of monarchy, and even the more radical nineteenth-century critique holding that the legal system is a way of exercising violence for the benefit of a few, still assumed that power ought to be exercised according to a fundamental right. Hence, in political thought, \"we still have not cut off the head of the king\" (p. 117).",
+              "Yet the new mechanisms of power that since the eighteenth century have taken charge of human life and living bodies run on technique rather than right, normalisation rather than law, control rather than punishment, and operate at levels that go beyond the state and its apparatuses. The chapter closes on the task of thinking sex without the law and power without the king."
+            ]
+          },
+          {
+            "title": "Part 4, chapter 2, 'Method': propositions on power and four rules",
+            "items": [
+              "By power Foucault does not mean the set of state institutions, nor a mode of subjection in the form of a rule, nor a general system of domination exerted by one group over another; these are terminal forms, not starting points. Power is first the multiplicity of force relations immanent in a domain, the ceaseless struggles that transform them, the ways they support or isolate one another, and the strategies that crystallise in state apparatuses, law and social hegemonies. Power is everywhere not because it encompasses everything but because it comes from everywhere; it is the name given to a complex strategic situation in a society.",
+              "Propositions follow. Power is not acquired or shared but exercised from innumerable points. Relations of power are not exterior to economic processes, relations of knowledge or sexual relations, nor in a position of superstructure; they are immanent in them and play a directly productive role. \"Power comes from below\" (p. 124): there is no global binary opposition of rulers and ruled repeated from top to bottom; the many force relations in the machinery of production, families and institutions support broad lines of cleavage across society, and great dominations are hegemonic effects sustained by those confrontations. Power relations are intentional, shot through with calculation, yet non-subjective: there is no headquarters directing them.",
+              "Where there is power there is resistance, and resistance is never exterior to power. That does not make it a passive rebound doomed to defeat. Instead of a single locus of great Refusal there are mobile, scattered points of resistance, and just as the state rests on the institutional integration of power relations, Foucault writes, a revolution is made possible by the strategic codification of these points of resistance.",
+              "The questions to ask about sex change accordingly. Not why a given state structure needed knowledge of sex or which overall domination it served, but which local power relations were at work at specific sites, around the child's body, women's sex, birth control. Four rules serve this: immanence (there is no pure science of sexuality that power later distorts; techniques of knowledge and strategies of power are not exterior to each other); continual variations (not who holds power but matrices of transformation, as when the doctor's advice to parents to watch the child ended in the psychiatrist questioning adults' sexuality through the child); double conditioning (local tactics and overall strategy condition each other, and the father is not the sovereign's representative); and the tactical polyvalence of discourses (the same discourse can be an instrument of power and a starting point for resistance). The chapter concludes for a strategic rather than a legal model."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "Foucault, The History of Sexuality, vol. 1, La volonté de savoir (Gallimard, 1976), part 3, 'Scientia sexualis', pp. 69-98 (the objection and Charcot pp. 71-76, the two procedures pp. 76-78, history and structure of confession pp. 78-84, spread of confession and the five procedures pp. 84-90, sexuality and the general hypothesis pp. 90-94, pleasure in truth and conclusion pp. 94-98); part 4 opening pp. 101-105, chapter 1, 'L'enjeu', pp. 107-120; chapter 2, 'Méthode', pp. 121-135 (propositions on power pp. 121-127, four rules pp. 129-135). Page numbers are the printed pages of the first edition.",
+              "Translated from the French original. The work is still under copyright, so apart from short quotations everything is paraphrase."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "성애의 기술과 성의 과학",
+            "text": "쾌락에서 진실을 끌어내 스승이 비밀로 전하는 기술과, 고백을 중심으로 성의 진실을 캐내는 서구의 과학이 대비됩니다."
+          },
+          {
+            "title": "고백의 권력",
+            "text": "지배는 말하는 쪽이 아니라 듣고 묻고 해석하는 쪽에 있고, 다섯 절차가 고백을 과학 담론에 맞추어 섹슈얼리티를 만들었습니다."
+          },
+          {
+            "title": "법률적-담론적 표상",
+            "text": "억압 이론과 욕망을 구성하는 법 이론이 함께 기대는, 권력을 금지·규칙·검열·주권으로만 그리는 군주정 이래의 그림입니다."
+          },
+          {
+            "title": "아래에서 오는 권력",
+            "text": "권력은 내재하는 다수의 힘 관계이고, 저항은 그 바깥이 아닌 안에 있으며, 분석은 네 규칙을 따라 국지적 관계에서 출발합니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "Ars erotica and scientia sexualis",
+            "text": "An art that draws truth from pleasure and hands it on as a master's secret, set against a Western science that extracts the truth of sex through confession."
+          },
+          {
+            "title": "The power of confession",
+            "text": "Domination lies with the one who listens, questions and interprets, not the one who speaks; five procedures fitted confession to science and produced sexuality."
+          },
+          {
+            "title": "The juridico-discursive representation",
+            "text": "A picture of power as prohibition, rule, censorship and sovereignty, inherited from monarchy and shared by the theory of repression and the theory of law as constitutive of desire."
+          },
+          {
+            "title": "Power from below",
+            "text": "Power is a multiplicity of immanent force relations, resistance lies within rather than outside it, and analysis follows four rules starting from local relations."
+          }
+        ]
+      },
+      "diagram": {
+        "kind": "contrast",
+        "ko": {
+          "title": "성의 진실을 생산하는 두 절차",
+          "left": {
+            "heading": "성애의 기술(ars erotica)",
+            "rows": [
+              "진실의 원천: 쾌락 자체의 강도·질·지속·울림",
+              "비밀의 이유: 퍼지면 효력과 덕을 잃기 때문",
+              "말의 방향: 위에서, 스승의 주권적 의지로",
+              "관계: 입문 과정에서 스승이 제자를 이끔",
+              "효과: 몸의 지배, 비할 데 없는 향유, 장수"
+            ]
+          },
+          "right": {
+            "heading": "성의 과학(scientia sexualis)",
+            "rows": [
+              "진실의 원천: 강요된 고백과 그 해독",
+              "비밀의 이유: 천하고 흔한 것이라서",
+              "말의 방향: 아래에서, 요구되고 강제된 말로",
+              "관계: 침묵하며 묻고 해석하는 쪽이 지배",
+              "효과: 정상·병리의 분류와 섹슈얼리티라는 대상"
+            ]
+          }
+        },
+        "en": {
+          "title": "Two procedures for producing the truth of sex",
+          "left": {
+            "heading": "Ars erotica",
+            "rows": [
+              "Source of truth: the intensity, quality, duration and echo of pleasure itself",
+              "Why secret: divulging it would rob it of its efficacy",
+              "Direction of speech: from above, by the master's sovereign will",
+              "Relation: a master guides the disciple through initiation",
+              "Effects: mastery of the body, unique enjoyment, long life"
+            ]
+          },
+          "right": {
+            "heading": "Scientia sexualis",
+            "rows": [
+              "Source of truth: compelled confession and its deciphering",
+              "Why secret: because it is lowly and commonplace",
+              "Direction of speech: from below, as required, compelled speech",
+              "Relation: the silent listener who questions and interprets dominates",
+              "Effects: sorting into normal and pathological, and sexuality as an object"
+            ]
+          }
+        }
+      },
+      "lessons": [
+        {
+          "id": "sex-gender-theory-intro-ch11-basic",
+          "level": "basic",
+          "title": {
+            "ko": "『앎의 의지』 제3부와 제4부 1~2장: 고백과 권력의 분석학",
+            "en": "The Will to Knowledge, part 3 and part 4, chapters 1-2: confession and an analytics of power"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제3부 「성의 과학」에서 성애의 기술(ars erotica)을 가진 사회와 서구를 어떻게 구별할까요?",
+                "en": "In part 3 of The Will to Knowledge, 'Scientia sexualis', how does Foucault distinguish the societies that have an ars erotica from the West?"
+              },
+              "choices": {
+                "ko": [
+                  "성애의 기술은 쾌락 자체에서 진실을 끌어내 스승이 비밀리에 전하지만, 서구는 그와 정반대인 고백의 절차로 성의 진실을 생산해 왔다고 구별합니다.",
+                  "다른 문명은 성을 금기 없이 공개적으로 가르쳤고 서구만 성을 숨기고 침묵시켰으므로, 둘의 차이는 성을 말하느냐 마느냐에 있다고 구별합니다.",
+                  "성애의 기술은 미신에 머문 반면 서구는 생식 생리학이라는 중립적 과학을 세웠으므로, 둘의 차이는 비합리와 합리의 차이라고 구별합니다."
+                ],
+                "en": [
+                  "An ars erotica draws truth from pleasure itself and a master passes it on in secret, whereas the West has produced the truth of sex through confession, the opposite procedure.",
+                  "Other civilisations taught sex openly without taboo while only the West hid and silenced it, so the difference lies in whether sex is spoken of at all.",
+                  "An ars erotica remained superstition while the West built a neutral science, the physiology of reproduction, so the difference is that between irrational and rational."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "성애의 기술에서는 쾌락의 강도·질·지속이 앎의 기준이고, 서구의 성의 과학은 입문과 스승의 비밀과 정반대인 고백을 중심에 둡니다(76~78쪽).",
+                  "성애의 기술의 앎도 비밀입니다. 그리고 서구는 침묵이 아니라 고백을 통해 성을 끝없이 말하게 한 사회로 그려집니다.",
+                  "푸코는 19세기 성 의학이 생식 생리학과 거의 교류가 없었다고 하며, 서구의 성의 과학을 중립적 생물학과 동일시하지 않습니다."
+                ],
+                "en": [
+                  "In an ars erotica the measure of knowledge is the intensity, quality and duration of pleasure; Western scientia sexualis centres on confession, the opposite of initiation and the master's secret (pp. 76-78).",
+                  "The knowledge of an ars erotica is itself secret, and the West is pictured not as silent but as a society that makes sex speak endlessly through confession.",
+                  "Foucault says nineteenth-century sexual medicine had almost no real exchange with the physiology of reproduction; he does not equate scientia sexualis with neutral biology."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 성의 진실을 생산하는 역사적 절차를 둘로 나눕니다. 중국, 일본, 인도, 로마, 아랍·이슬람 사회의 성애의 기술에서는 허용과 금지의 법이나 쓸모가 아니라 쾌락 그 자체가 기준이고, 그 앎은 실천으로 되돌아가 쾌락을 키우며, 퍼지면 효력을 잃기 때문에 스승이 입문 과정으로만 전합니다. 서구는 언뜻 보아 이런 기술이 없고, 대신 성의 과학을 실천하는 아마도 유일한 문명입니다. 그 핵심이 고백이라는 점이 중요합니다. 서구의 차이는 성을 덜 말한 데 있지 않고, 성에 관한 진실을 요구된 고백으로 캐내는 방식에 있습니다.",
+                "en": "Foucault divides the historical procedures for producing the truth of sex into two. In the ars erotica of China, Japan, India, Rome and the Arab-Muslim societies the criterion is pleasure itself, not a law of permitted and forbidden or utility; the knowledge flows back into practice to amplify pleasure, and since divulging it would rob it of its efficacy a master passes it on only through initiation. At first glance the West has no such art and is probably the only civilisation to practise a scientia sexualis, whose core is confession. The West differs not by speaking less about sex but by extracting the truth of sex through required confession."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제3부 「성의 과학」, 76~78쪽",
+                  "en": "Foucault, La volonté de savoir, part 3, 'Scientia sexualis', pp. 76-78"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제3부 「성의 과학」에서 고백이라는 의례 안의 지배하는 자리가 어디에 있다고 봤을까요?",
+                "en": "In part 3 of The Will to Knowledge, 'Scientia sexualis', where does Foucault locate the position of domination within the ritual of confession?"
+              },
+              "choices": {
+                "ko": [
+                  "말하도록 강제되는 쪽이 아니라 침묵하며 듣고 묻는 쪽에 있고, 진실의 효과는 듣는 사람이 아니라 고백을 빼앗긴 사람에게 나타난다고 봤습니다.",
+                  "진실을 털어놓는 사람이 침묵을 강요하던 권력을 깨뜨리므로 고백하는 쪽이 우위에 서고, 고백은 본성상 권력에서 풀려나는 일이라고 봤습니다.",
+                  "비밀을 쥔 스승이 위에서 아래로 소수의 제자에게 앎을 내려 주므로, 지배하는 자리는 앎을 지니고 답을 주는 쪽에 있다고 봤습니다."
+                ],
+                "en": [
+                  "Not with the one compelled to speak but with the one who listens in silence and questions, and the truth takes effect not in the listener but in the one from whom it is wrested.",
+                  "The one who tells the truth breaks a power that imposed silence, so the confessing side has the upper hand, and confession is by nature a release from power.",
+                  "A master holding the secret hands knowledge down to a few disciples, so domination lies with the one who knows and gives the answers."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "고백의 말은 아래에서 강요되어 나오고, 지배의 심급은 답하는 아는 자가 아니라 묻고 판단하는 쪽에 있다고 푸코는 정리합니다(82~84쪽).",
+                  "푸코는 고백이 해방이라는 느낌 자체를 고백의 의무가 너무 깊이 몸에 밴 결과로 보고, 진실은 본성상 자유롭지 않다고 반박합니다(80~81쪽).",
+                  "이것은 성애의 기술의 구조입니다. 푸코는 고백이 바로 이와 정반대로 위가 아니라 아래에서 나오는 말이라고 대비합니다."
+                ],
+                "en": [
+                  "Confessional speech is compelled from below, and the instance of domination lies not with the one who knows and answers but with the one who questions and judges, Foucault sums up (pp. 82-84).",
+                  "Foucault treats the very feeling that confession liberates as a sign of how deeply the duty to confess is ingrained, and replies that truth is not free by nature (pp. 80-81).",
+                  "This is the structure of the ars erotica; Foucault contrasts confession with it precisely as speech that comes from below rather than from above."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코에 따르면 고백은 말하는 사람이 곧 진술의 주어가 되는 담론 의례이며, 고백을 요구하고 평가하고 심판하고 용서하는 상대가 적어도 잠재적으로 있는 권력 관계 안에서 펼쳐집니다. 진실은 넘어야 했던 장애와 저항으로 보증되고, 말하는 행위만으로 말하는 사람이 씻기고 풀려난다고 여겨집니다. 우리가 고백을 권력이 아니라 해방으로 느끼는 것은 그 의무가 사법, 의학, 교육, 가족, 연애 곳곳에서 너무 깊이 내면화되었기 때문이라는 것이 푸코의 진단입니다. 그래서 그는 검열과 침묵의 금지에 근본적 역할을 주는 것은 고백의 술책에 걸려든 생각이라고 봅니다.",
+                "en": "For Foucault, confession is a ritual of discourse in which the speaking subject is also the subject of the statement, unfolding within a power relation with an at least virtual partner who requires, assesses, judges and forgives. The truth is authenticated by the obstacles and resistance it had to overcome, and the mere act of speaking is supposed to cleanse and free the speaker. We feel confession as liberation rather than power, Foucault diagnoses, because the obligation has been internalised so deeply across justice, medicine, pedagogy, family and love. That is why he thinks that giving censorship and the ban on speech a fundamental role means being caught in the inner ruse of confession."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제3부 「성의 과학」, 79~84쪽",
+                  "en": "Foucault, La volonté de savoir, part 3, 'Scientia sexualis', pp. 79-84"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제3부 「성의 과학」에서 19세기가 고백을 과학 담론에 끼워 넣은 다섯 절차를 듭니다. 그 가운데 해석의 방법은 무엇을 바꾸었다고 할까요?",
+                "en": "In part 3 of The Will to Knowledge, 'Scientia sexualis', Foucault lists five procedures by which the nineteenth century fitted confession into scientific discourse. What does he say the method of interpretation changed?"
+              },
+              "choices": {
+                "ko": [
+                  "진실이 말하는 사람에게는 불완전하게 있고 듣는 사람의 해독으로 완성된다고 보아, 고백을 증거가 아니라 기호로 만들고 듣는 이를 진실의 주인으로 세웠습니다.",
+                  "의사가 환자의 말을 믿지 않고 몸의 증상만 관찰하게 하여, 과학이 고백이라는 낡은 종교적 절차를 버리고 순수한 관찰로 넘어가게 했습니다.",
+                  "고백하는 사람이 자기 말의 뜻을 가장 잘 안다는 원칙을 세워, 듣는 이는 판단을 보태지 않고 받아 적기만 하는 중립적 증인이 되게 했습니다."
+                ],
+                "en": [
+                  "By holding that truth is present but incomplete in the speaker and completed by the listener's deciphering, it made confession a sign rather than a proof and the listener the master of truth.",
+                  "By having doctors distrust patients' words and observe only bodily symptoms, it let science abandon confession, an outdated religious procedure, for pure observation.",
+                  "By establishing that the one who confesses best knows the meaning of their own words, it made the listener a neutral witness who only takes them down without adding judgement."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "듣는 사람은 용서하거나 단죄하는 자를 넘어 진실의 주인이 되고, 그 기능은 해석학적이라고 푸코는 씁니다(89~90쪽).",
+                  "푸코는 19세기 이후 성의 과학이 역설적으로 의무적·전면적 고백이라는 의례를 핵심으로 간직했다고 강조합니다(90~91쪽).",
+                  "해석의 방법은 정반대로, 진실은 말하는 사람 안에서 자기 자신에게도 보이지 않으므로 듣는 이가 그 진실의 진실을 말해야 한다는 원리입니다."
+                ],
+                "en": [
+                  "The listener becomes not just the master of forgiveness or the judge who condemns but the master of truth, and his function is hermeneutic, Foucault writes (pp. 89-90).",
+                  "Foucault stresses that scientia sexualis since the nineteenth century has paradoxically kept the ritual of obligatory and exhaustive confession as its core (pp. 90-91).",
+                  "The method of interpretation says the opposite: truth in the speaker is blind to itself, so the listener must tell the truth of that obscure truth."
+                ]
+              },
+              "explanation": {
+                "ko": "다섯 절차는 말하게 하기의 임상적 코드화, 성이 무엇이든 일으킬 수 있다는 일반적·분산적 인과성의 전제, 성은 주체 자신에게도 숨겨져 있다는 잠재성의 원리, 해석의 방법, 고백 효과의 의학화입니다. 해석의 방법에서 진실은 말하는 사람과 듣는 사람 사이에 둘로 나뉘어 있고, 듣는 사람의 해독으로 완성됩니다. 그 덕분에 고백은 증거가 아니라 기호가 되고, 섹슈얼리티는 해석할 대상이 되어 고백 절차가 규칙적인 과학 담론 안에서 작동할 수 있었습니다. 푸코는 이 장치를 통해 비로소 섹슈얼리티라는 것이 성의 진실로 나타났다고 봅니다.",
+                "en": "The five procedures are a clinical codification of inducing speech, the postulate of a general and diffuse causality of sex, the principle of a latency intrinsic to sexuality that hides it even from the subject, the method of interpretation, and the medicalisation of confession's effects. Under the method of interpretation truth is split between speaker and listener and is completed by the listener's deciphering. Confession thus became a sign rather than a proof, and sexuality something to be interpreted, so that confessional procedures could operate within the regular formation of a scientific discourse. Through this apparatus, Foucault holds, something like sexuality could appear as the truth of sex."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제3부 「성의 과학」, 87~91쪽",
+                  "en": "Foucault, La volonté de savoir, part 3, 'Scientia sexualis', pp. 87-91"
+                }
+              }
+            },
+            {
+              "id": "q4",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제4부 1장 「쟁점」에서, 본능의 억압을 말하는 이론과 법이 욕망을 구성한다고 보는 정신분석 이론 사이에 어떤 공통점이 있다고 했을까요?",
+                "en": "In part 4, chapter 1 of The Will to Knowledge, 'Objective', what does Foucault say the theory of the repression of instincts and the psychoanalytic theory that the law constitutes desire have in common?"
+              },
+              "choices": {
+                "ko": [
+                  "충동의 본성을 달리 볼 뿐 권력을 금지·규칙·검열로 그리는 같은 법률적-담론적 표상에 기대며, 그래서 해방의 약속과 언제나 이미 갇혔다는 단언으로 갈린다고 했습니다.",
+                  "정신분석의 욕망 이론은 법이 욕망을 구성한다고 보아 억압 이론의 한계를 이미 넘어섰으므로, 그 이론을 자기 권력 분석의 출발점으로 삼겠다고 했습니다.",
+                  "둘 다 권력을 무언가를 만들어 내는 생산적 기술로 보았고, 억압 이론은 그 원인을 자본주의에, 정신분석은 가족에 돌린다는 점에서만 다르다고 했습니다."
+                ],
+                "en": [
+                  "They differ only on the nature of drives and rely on the same juridico-discursive representation of power as prohibition, rule and censorship, which leads either to a promise of liberation or to the claim that we are always already trapped.",
+                  "The psychoanalytic theory of desire, by holding that the law constitutes desire, has already overcome the limits of the repression theory, so he will take it as the starting point of his own analysis of power.",
+                  "Both see power as a productive technique that creates things, differing only in that the repression theory blames capitalism and psychoanalysis blames the family."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 두 분석을 가르는 것은 충동을 보는 방식이지 권력을 보는 방식이 아니라고 하고, 그 공통 표상에서 벗어나야 권력의 분석학이 가능하다고 합니다(108~109쪽).",
+                  "푸코는 그 이론이 법의 문제에서 정치적으로 가장 무력하게 만드는 결론, 곧 권력을 벗어날 수 없다는 결론을 쥐고 있다고 보고 출발점이 아니라 비판 대상으로 삼습니다.",
+                  "푸코가 보기에 두 이론은 권력을 생산적 기술이 아니라 아니라고만 말하는 법으로 그립니다. 생산성은 푸코가 그 표상에 맞세우는 관점입니다."
+                ],
+                "en": [
+                  "Foucault says what separates the two analyses is how they conceive drives, not power, and only by leaving their shared representation can an analytics of power be built (pp. 108-109).",
+                  "Foucault sees that theory as keeping the most politically sterilising consequence of the law-model, that one cannot escape power, and treats it as an object of critique, not a starting point.",
+                  "In Foucault's view both theories picture power as a law that can only say no, not as a productive technique; productivity is what Foucault sets against that representation."
+                ]
+              },
+              "explanation": {
+                "ko": "1장은 정신분석가들이 이미 성은 억압되지 않았다고 말했다는 반론에서 시작합니다. 푸코는 억압 이론과 욕망을 구성하는 법 이론이 모두 법률적-담론적 권력 표상을 공유한다고 답하고, 그 다섯 특징으로 부정적 관계, 규칙의 심급, 금지의 순환, 검열의 논리, 장치의 통일성을 듭니다. 이 표상은 권력이 제 메커니즘을 가려야 견딜 만하다는 점과, 군주정이 법을 자기 표현 형식으로 삼아 성장한 역사에 뿌리를 둡니다. 그러나 18세기 이후 삶과 몸을 떠맡은 권력은 법이 아니라 기술과 규범화와 통제로 작동하므로, 법 없이 성을, 왕 없이 권력을 사유해야 한다는 것이 1장의 결론입니다.",
+                "en": "Chapter 1 opens with the objection that psychoanalysts already said sex was not repressed. Foucault answers that the theory of repression and the theory of law as constitutive of desire share a juridico-discursive representation of power, whose five traits are the negative relation, the instance of the rule, the cycle of prohibition, the logic of censorship and the unity of the apparatus. This representation is rooted in the fact that power is tolerable only by masking its mechanisms, and in the history of monarchy, which grew by making law its mode of expression. But the power that since the eighteenth century has taken charge of life and bodies works through technique, normalisation and control rather than law, so the chapter concludes that sex must be thought without the law and power without the king."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제4부 1장 「쟁점」, 107~120쪽",
+                  "en": "Foucault, La volonté de savoir, part 4, ch. 1, 'L'enjeu', pp. 107-120"
+                }
+              }
+            },
+            {
+              "id": "q5",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제4부 2장 「방법」에서 권력 관계와 경제 과정, 그리고 거대한 지배의 관계를 어떻게 정리할까요?",
+                "en": "In part 4, chapter 2 of The Will to Knowledge, 'Method', how does Foucault set out the relation of power relations to economic processes and to great dominations?"
+              },
+              "choices": {
+                "ko": [
+                  "권력 관계는 경제 과정 바깥의 상부구조가 아니라 그 안에 내재해 직접 생산하며, 거대한 지배는 아래의 숱한 대결이 떠받치는 헤게모니 효과라고 정리합니다.",
+                  "권력은 지배계급이 소유하고 국가 기구를 통해 아래로 행사하는 것이므로, 성에 관한 담론도 경제적 토대가 결정하는 금지 기능으로 설명해야 한다고 정리합니다.",
+                  "권력은 모든 것을 하나의 무적의 통일성 아래 감싸 안으므로, 저항은 언제나 권력이 만들어 낸 허상이고 끝내 패배할 수밖에 없다고 정리합니다."
+                ],
+                "en": [
+                  "Power relations are not a superstructure outside economic processes but immanent in them and directly productive, and great dominations are hegemonic effects sustained by countless confrontations below.",
+                  "Power is possessed by the ruling class and exercised downward through state apparatuses, so discourse on sex too must be explained as a prohibiting function determined by the economic base.",
+                  "Power wraps everything in a single invincible unity, so resistance is always an illusion produced by power and bound in the end to be defeated."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "권력 관계는 상부구조의 자리에서 금지나 재생산만 하는 것이 아니라 경제 과정, 앎, 성관계 안에서 직접 생산하는 역할을 하고, 권력은 아래에서 온다고 푸코는 씁니다(123~124쪽).",
+                  "푸코는 권력이 획득하거나 나눠 갖는 것이 아니고, 지배자와 피지배자의 전반적 이분법이 권력 관계의 모태가 아니라고 명시적으로 부정합니다(123~124쪽).",
+                  "푸코는 권력의 편재가 모든 것을 감싸서가 아니라 모든 곳에서 오기 때문이라 하고, 저항이 언제나 지는 수동적 반사작용이라는 생각도 거부합니다(122, 125~126쪽)."
+                ],
+                "en": [
+                  "Power relations do not merely prohibit or reproduce from the position of a superstructure; they play a directly productive role within economic processes, knowledge and sexual relations, and power comes from below, Foucault writes (pp. 123-124).",
+                  "Foucault explicitly denies that power is something acquired or shared, and that a global binary of rulers and ruled is the matrix of power relations (pp. 123-124).",
+                  "Foucault says power is omnipresent not because it encompasses everything but because it comes from everywhere, and he rejects the idea that resistance is a passive rebound doomed to defeat (pp. 122, 125-126)."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 권력을 국가 기구의 총체나 한 집단의 전반적 지배 체계로 전제하지 말고, 그것들을 다수의 힘 관계가 굳어진 최종 형태로 보자고 합니다. 이어서 권력은 무수한 지점에서 행사되고, 경제 과정·앎·성관계에 내재하며, 아래에서 오고, 의도적이지만 비주체적이며, 권력이 있는 곳에 저항이 있다는 명제를 세웁니다. 생산 기구, 가족, 제도 안의 힘 관계가 사회 전체를 가로지르는 분할선을 떠받치고, 거대한 지배는 그 결과로 유지되는 헤게모니 효과라는 것입니다. 지배와 착취를 부정하는 것이 아니라 그것을 출발점의 이분법이 아닌 결과로 설명하려 한다는 점에서, 토대·상부구조 도식과 갈라집니다.",
+                "en": "Foucault asks us not to presuppose power as the set of state institutions or as one group's general system of domination, but to see these as terminal forms in which a multiplicity of force relations has crystallised. He then sets out propositions: power is exercised from innumerable points, is immanent in economic processes, knowledge and sexual relations, comes from below, is intentional yet non-subjective, and where there is power there is resistance. Force relations in the machinery of production, families and institutions support lines of cleavage running through society, and great dominations are the hegemonic effects sustained as a result. He does not deny domination or exploitation but tries to explain them as results rather than as an initial binary, and there he parts ways with the base-superstructure scheme."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제4부 2장 「방법」, 121~127쪽",
+                  "en": "Foucault, La volonté de savoir, part 4, ch. 2, 'Méthode', pp. 121-127"
+                }
+              }
+            },
+            {
+              "id": "q6",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제4부 2장 「방법」의 네 번째 규칙인 담론의 전술적 다가성을 19세기 동성애 담론의 예로 어떻게 설명할까요?",
+                "en": "How does Foucault illustrate the fourth rule in part 4, chapter 2 of The Will to Knowledge, 'Method', the tactical polyvalence of discourses, with the example of nineteenth-century discourse on homosexuality?"
+              },
+              "choices": {
+                "ko": [
+                  "정신의학·판례·문학의 동성애 분류는 사회적 통제를 크게 넓혔지만, 동성애가 바로 그 의학 어휘와 범주로 스스로 말하며 정당성을 요구하는 역방향 담론도 가능하게 했다고 설명합니다.",
+                  "의학의 분류는 지배 담론, 동성애자의 자기 변호는 피지배 담론이므로, 둘을 갈라 각 담론이 어떤 이데올로기를 대변하는지부터 밝혀야 한다고 설명합니다.",
+                  "동성애자들이 의학의 낙인 어휘를 모두 거부하고 전혀 다른 자기 언어를 새로 만들어 냈기 때문에 비로소 권력 바깥에서 저항할 수 있었다고 설명합니다."
+                ],
+                "en": [
+                  "The classifications of homosexuality in psychiatry, jurisprudence and literature greatly extended social control, but they also made possible a reverse discourse in which homosexuality spoke for itself and claimed legitimacy in the very medical vocabulary and categories.",
+                  "Medical classification is the dominant discourse and homosexuals' self-defence the dominated one, so one must first separate them and show which ideology each represents.",
+                  "Homosexuals rejected all the stigmatising medical vocabulary and invented an entirely new language of their own, and only so could they resist from outside power."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 동성애가 자신을 의학적으로 깎아내리던 바로 그 어휘와 범주로 정당성과 자연스러움을 요구하기 시작했다고 씁니다(133~134쪽).",
+                  "푸코는 받아들여진 담론과 배제된 담론, 지배 담론과 피지배 담론으로 나뉜 세계를 상상하지 말고 담론이 어떤 이데올로기를 대변하는지부터 묻지 말라고 합니다(133, 135쪽).",
+                  "역방향 담론은 새 언어가 아니라 같은 의학 어휘를 썼다는 점이 요점이고, 저항은 권력 관계의 전략적 장 바깥에 있지 않습니다."
+                ],
+                "en": [
+                  "Foucault writes that homosexuality began to claim its legitimacy and naturalness in the very vocabulary and categories by which it had been medically disqualified (pp. 133-134).",
+                  "Foucault says not to imagine a world of discourse divided between accepted and excluded, dominant and dominated discourse, and not to ask first which ideology a discourse represents (pp. 133, 135).",
+                  "The point of the reverse discourse is that it used the same medical vocabulary rather than a new language, and resistance does not lie outside the strategic field of power relations."
+                ]
+              },
+              "explanation": {
+                "ko": "네 규칙은 내재성, 연속적 변화, 이중 조건화, 담론의 전술적 다가성입니다. 마지막 규칙은 담론을 권력의 단순한 투영면으로 보지 말고, 같은 말이 전략에 따라 권력의 도구도, 장애물이나 저항 지점도 될 수 있는 불연속적 조각들로 보자는 것입니다. 푸코는 남색이 오랫동안 극도의 엄벌(18세기까지의 화형)과 실제로는 넓은 관용을 함께 누렸다는 점을 먼저 들고, 19세기 동성애 분류가 통제를 넓히면서도 역방향 담론을 낳았다고 설명합니다. 그래서 담론에는 어떤 이데올로기를 대변하는가보다 어떤 권력·앎 효과를 내는가, 어떤 국면에서 쓰이는가를 물어야 한다는 것입니다.",
+                "en": "The four rules are immanence, continual variations, double conditioning and the tactical polyvalence of discourses. The last asks us not to treat discourse as a mere surface onto which power is projected, but as discontinuous segments whose tactical function varies, so that the same words can be an instrument of power or an obstacle and point of resistance depending on the strategy. Foucault first notes that sodomy long combined extreme severity, with burning still applied in the eighteenth century, and very broad tolerance in practice, then explains that nineteenth-century classifications of homosexuality extended control while also producing a reverse discourse. So one should ask of a discourse less which ideology it represents than what effects of power and knowledge it secures and in which conjuncture it is used."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제4부 2장 「방법」, 129~135쪽",
+                  "en": "Foucault, La volonté de savoir, part 4, ch. 2, 'Méthode', pp. 129-135"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sex-gender-theory-intro-ch12",
+      "volumeNumber": 15,
+      "chapterNumber": 12,
+      "title": {
+        "ko": "근대 권력은 왜 성을 붙잡았는가?",
+        "en": "Why did modern power take hold of sex?"
+      },
+      "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+      "summary": {
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『앎의 의지』(1976) 제4부 3장 「영역」, 4장 「시기 구분」(136~173쪽)과 제5부 「죽음의 권리와 삶에 대한 권력」(175~211쪽)을 따라 읽습니다. 섹슈얼리티 장치의 네 전략과 결연 장치의 관계, 그 장치가 노동계급보다 부르주아지에게 먼저 적용되었다는 주장, 그리고 죽이는 권력에서 삶을 관리하는 생명 권력으로의 전환과 자본주의의 관계를 확인합니다.",
+        "en": "About 12 minutes · Follow part 4, chapters 3 and 4, 'Domaine' and 'Périodisation' (pp. 136-173), and part 5, 'Droit de mort et pouvoir sur la vie' (pp. 175-211), of Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976). See the four strategies of the deployment of sexuality and its relation to the deployment of alliance, the claim that it was applied to the bourgeoisie before the working class, and the shift from a power that kills to a bio-power that manages life, together with its link to capitalism."
+      },
+      "learningFocus": {
+        "ko": "이 대목은 ‘부르주아 사회가 노동력을 짜내려고 노동자의 성을 억눌렀다’는 억압-착취 도식과 정면으로 부딪힙니다. 푸코는 섹슈얼리티 장치가 먼저 지배계급의 몸에 적용된 자기 긍정이었고, 노동계급에는 19세기에 여러 단계를 거쳐 늦게 퍼졌으며, 억압 이론 자체가 그 확산 뒤에 생긴 계급 구별의 선이었다고 주장합니다. 제5부에서는 생명 권력이 자본주의 발전에 꼭 필요했다고 하면서도, 그것을 힘을 깎는 금지가 아니라 몸과 인구의 힘을 키우며 관리하는 기술로 그립니다. 성은 그 두 축이 만나는 자리여서 권력의 중심 표적이 되었다는 것이 결론입니다.",
+        "en": "These pages run straight against the repression-exploitation scheme in which bourgeois society repressed workers' sexuality to squeeze out labour power. Foucault argues that the deployment of sexuality was first a self-affirmation applied to the ruling class's own body, that it reached the working class late and in stages during the nineteenth century, and that the theory of repression itself arose after that spread as a line of class distinction. In part 5 he says bio-power was indispensable to the development of capitalism, yet he portrays it not as a prohibition that diminishes forces but as a technique that increases and manages the forces of bodies and populations. Sex, where those two axes meet, became a central target of power."
+      },
+      "conceptBrief": {
+        "ko": [
+          {
+            "title": "「영역」: 네 전략과 결연 장치",
+            "items": [
+              "푸코는 섹슈얼리티를 권력에 본래 저항하는 충동으로 그리지 말고, 남녀, 노소, 부모와 자식, 교육자와 학생, 성직자와 평신도, 행정과 인구 사이의 권력 관계가 특히 촘촘하게 지나가는 지점으로 보라고 합니다. 성을 생식, 이성애, 성인, 합법적 결혼으로 좁히려는 하나의 전체 전략이 있었다는 생각은 여러 성별·연령·계급에 걸친 성 정책의 다양한 목표를 설명하지 못한다고 봅니다(136~137쪽).",
+              "그 대신 18세기부터 상대적 자율성을 가진 네 전략 집합을 구별합니다. 여성 신체의 히스테리화, 아동 성의 교육화, 생식 행동의 사회화, 도착적 쾌락의 정신의학화이고, 각각에 대응해 히스테리 여성, 자위하는 아이, 맬서스주의 부부, 도착적 성인이라는 네 형상이 지식의 특권적 대상이 되었습니다. 이 전략들은 성과 싸운 것이 아니라 섹슈얼리티 자체를 생산했고, 섹슈얼리티는 숨은 자연이 아니라 하나의 역사적 장치에 붙일 수 있는 이름이라고 합니다(137~139쪽).",
+              "어느 사회에나 혼인, 친족, 이름과 재산의 전달로 이루어진 결연 장치가 있습니다. 근대 서구는 18세기부터 그 위에 섹슈얼리티 장치(성 장치)를 겹쳐 놓았습니다. 결연 장치는 허용과 금지의 규칙으로 관계를 재생산하고 법과 긴밀하지만, 섹슈얼리티 장치는 유동적인 권력 기술로 몸의 감각과 쾌락의 질을 다루며 재생산이 아니라 증식과 확장이 존재 이유입니다. 경제와의 연결도 결연 장치는 부의 전달을 거치고, 섹슈얼리티 장치는 무엇보다 생산하고 소비하는 몸을 거칩니다(139~141쪽).",
+              "섹슈얼리티 장치가 결연 장치를 대체한 것은 아닙니다. 그것은 고해와 양심 지도라는 결연 중심의 기술에서 태어났고, 둘을 맞물리게 하는 교환기가 가족이었습니다. 그래서 가족은 성을 금하는 힘이 아니라 성화(性化)의 핵심 요인이 되었습니다. 푸코는 이어서 섹슈얼리티의 역사를 노동력 확보를 위한 19세기의 억제와 성을 경제 회로로 흘려보내는 후기 자본주의의 탈승화라는 두 시기로 나누는 설명도, 법과 금지가 아니라 생산이 문제인 이상 버려야 한다고 말합니다(141~151쪽)."
+            ]
+          },
+          {
+            "title": "「시기 구분」: 먼저 부르주아의 몸에",
+            "items": [
+              "억압의 역사는 17세기의 큰 금지와 20세기의 완화라는 두 단절을 전제합니다. 푸코는 기술의 연대기와 확산의 연대기가 이와 맞지 않는다고 봅니다. 기술은 중세 고해와 라테란 공의회의 의무적 고백까지 거슬러 올라가고, 18세기 말에는 교회 바깥에서 교육학, 의학, 인구학을 축으로 성을 국가의 일로 만드는 새 기술이 생겼으며, 19세기 후반에는 도착의 의학과 우생학이 그 두 혁신이 되었습니다(152~158쪽).",
+              "억압이 노동력 활용을 위한 것이었다면 통제는 가난한 계급에 가장 강했어야 합니다. 그러나 가장 엄격한 기술은 경제적으로 특권적이고 정치적으로 지배적인 계급에 먼저 적용되었습니다. 처음 성화된 인물은 한가한 부르주아 여성이었고, 의사들이 걱정한 자위하는 아이는 미래의 노동자가 아니라 하인과 가정교사에 둘러싸인 중학생이었습니다. 푸코는 이를 다른 계급의 예속이 아니라 한 계급의 자기 긍정으로 읽고, 귀족이 피로 신분을 표시했다면 부르주아지는 건강과 후손을 지닌 계급의 몸을 만들었다고 봅니다(158~166쪽).",
+              "서민층은 오랫동안 결연 장치에만 묶여 있었고, 섹슈얼리티 장치는 세 단계로 천천히 들어갔습니다. 18세기 말의 출산 문제, 1830년 무렵 도시 프롤레타리아를 예속시키려는 가족 정비와 가난한 계급의 도덕화 캠페인, 19세기 말 사회와 인종 보호를 내건 도착의 사법·의학적 통제입니다. 그 바탕에는 콜레라와 성병 같은 도시 공간의 갈등, 안정된 노동력이 필요한 중공업의 요구, 학교·주거·공중위생 같은 통제 기술이 있었습니다(160~168쪽).",
+              "장치가 사회 전체로 퍼지자 19세기 말 부르주아지는 성의 성질이 아니라 억압의 강도로 자신을 다시 구별했고, 성 억압 이론은 여기서 비롯되었습니다. 정신분석은 분석을 받을 수 있는 이들의 근친상간 욕망을 말하게 했지만, 같은 시기 서민층의 근친상간은 행정과 사법으로 추적되었습니다. 양차 대전 사이 라이히를 중심으로 생긴 성 억압 비판도 이 장치 안의 전술적 이동이었다는 것이 푸코의 평가입니다(169~173쪽). 6편에서 본 라이히 비판은 바로 이 계보 위에 놓입니다."
+            ]
+          },
+          {
+            "title": "제5부: 죽이는 권력에서 살게 하는 권력으로",
+            "items": [
+              "군주의 생사여탈권은 로마 가부장권에서 나왔고, 고전 이론가에게서는 군주의 방어에 조건 지어진 비대칭적 권리였습니다. 실제로는 죽게 하거나 살게 내버려 두는 권리였고, 칼이 그 상징이었으며, 재화·노동·피를 빼앗는 권력이었습니다. 고전주의 시대 이후 빼앗음은 여러 기능 가운데 하나가 되고, 권력은 힘을 생산하고 키우고 정돈하는 쪽으로 바뀝니다. 전쟁이 더 참혹해지고 사형이 드물어진 것도 같은 이유, 곧 권력이 삶의 관리자가 되었기 때문이라고 합니다(177~182쪽).",
+              "삶에 대한 권력은 두 극으로 발전했습니다. 먼저 17세기부터 몸을 기계로 보고 길들여 쓸모와 순종을 함께 늘리는 규율, 곧 인간 신체의 해부정치가 생겼고, 18세기 중엽에는 출생·사망·건강·수명을 조절하는 인구의 생명정치가 생겼습니다. 푸코는 이 생명 권력이 몸을 생산 장치에 통제된 방식으로 끼워 넣고 인구 현상을 경제 과정에 맞춘다는 점에서 자본주의 발전에 없어서는 안 될 요소였다고 말합니다(182~186쪽).",
+              "그 결과 법보다 규범이 중요해집니다. 법의 마지막 무기는 죽음이지만, 삶을 맡은 권력은 측정하고 평가하고 위계를 매기는 연속적이고 교정적인 장치가 필요합니다. 법은 점점 규범처럼 작동하고 사법은 의료·행정 장치의 연속체에 들어가며, 규범화 사회가 생깁니다. 이에 맞서는 저항도 옛 권리의 회복이 아니라 삶, 몸, 건강, 행복에 대한 권리를 내걸게 되었다고 합니다(188~191쪽)."
+            ]
+          },
+          {
+            "title": "성: 두 축의 교차점, 피에서 섹슈얼리티로",
+            "items": [
+              "성은 몸의 규율과 인구의 조절이라는 두 축의 교차점에 있어 미세한 감시와 통계적 개입을 동시에 낳았습니다. 네 전략도 두 축을 조합한 것입니다. 아동의 성화와 여성의 히스테리화는 종의 건강과 후손이라는 조절의 주제에 기대 규율 효과를 얻었고, 출산 통제와 도착의 정신의학화는 반대로 조절을 위해 개인의 규율에 기댔습니다(191~193쪽).",
+              "결연, 군주, 신분, 기근과 전염병의 사회에서 권력은 피를 통해 말했습니다. 근대 사회는 피의 상징학에서 섹슈얼리티의 분석학으로 넘어갔고, 피가 법·죽음·주권 쪽에 있다면 섹슈얼리티는 규범·지식·삶·규율과 조절 쪽에 있습니다. 그러나 둘은 겹치기도 했습니다. 19세기 후반 피의 주제가 섹슈얼리티 장치를 떠받치며 근대의 국가적·생물학적 인종주의가 생겼고, 나치즘은 피의 환상과 규율 권력의 극단을 결합했습니다. 정신분석은 반대로 성을 법과 결연의 질서에 다시 새기며 파시즘에 맞섰지만, 푸코는 성을 법과 피로 생각하는 것이 결국 역사적 퇴행이라고 봅니다(193~198쪽).",
+              "마지막으로 푸코는 성 자체가 장치 바깥의 실체가 아니라 장치 안에서 형성된 관념이라고 말합니다. 해부학적 요소, 기능, 행동, 감각을 하나로 묶은 이 관념이 권력을 법과 금지로만 생각하게 만들고, 성에 대한 욕망이 우리를 장치에 묶습니다. 그래서 성에 예라고 말하는 것이 권력에 아니라고 말하는 것이 아니며, 반격의 거점은 성-욕망이 아니라 몸과 쾌락이어야 한다고 결론짓습니다(198~211쪽)."
+            ]
+          },
+          {
+            "title": "근거 자료",
+            "items": [
+              "푸코, 『성의 역사』 제1권 『앎의 의지』(갈리마르, 1976) 제4부 「섹슈얼리티 장치」 3장 「영역」 136~151쪽, 4장 「시기 구분」 152~173쪽, 제5부 「죽음의 권리와 삶에 대한 권력」 175~211쪽. 네 전략 136~139쪽, 결연과 섹슈얼리티 139~151쪽, 계급과 확산 158~173쪽, 생명 권력과 자본주의 177~191쪽, 성과 피 191~208쪽.",
+              "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다."
+            ]
+          }
+        ],
+        "en": [
+          {
+            "title": "'Domaine': four strategies and the deployment of alliance",
+            "items": [
+              "Foucault asks us not to picture sexuality as an unruly drive alien to power, but as an especially dense transfer point for relations of power: between men and women, young and old, parents and offspring, teachers and pupils, priests and laity, an administration and a population. The idea of a single overall strategy to reduce sex to reproduction, heterosexuality, adulthood and marriage cannot account for the many aims of sexual policies across sexes, ages and classes (pp. 136-137).",
+              "Instead he distinguishes four strategic ensembles, relatively autonomous, from the eighteenth century on: the hysterisation of women's bodies, the pedagogisation of children's sex, the socialisation of procreative behaviour and the psychiatrisation of perverse pleasure. Each has its figure, privileged object of knowledge: the hysterical woman, the masturbating child, the Malthusian couple and the perverse adult. These strategies did not fight sexuality but produced it; sexuality is not a hidden nature but the name one can give to a historical deployment (pp. 137-139).",
+              "Every society has a deployment of alliance: marriage, kinship, the transmission of names and goods. From the eighteenth century modern Western societies laid a deployment of sexuality on top of it. Alliance reproduces relations through rules of permitted and forbidden and is closely tied to law; sexuality works through mobile techniques of power, concerns bodily sensations and the quality of pleasures, and exists not to reproduce but to proliferate and extend. Alliance links to the economy through the transmission of wealth, sexuality above all through the body that produces and consumes (pp. 139-141).",
+              "Sexuality did not replace alliance. It was born from techniques centred on alliance, penance and spiritual direction, and the family was the exchanger that geared the two together; so the family became not a power of prohibition but a key factor of sexualisation. Foucault then says that the periodisation into a nineteenth-century restraint to secure labour power and a late-capitalist desublimation that channels sex into economic circuits must be abandoned, since the issue is production, not law and prohibition (pp. 141-151)."
+            ]
+          },
+          {
+            "title": "'Périodisation': first on the bourgeois body",
+            "items": [
+              "A history of repression presupposes two breaks, the great prohibitions of the seventeenth century and the loosening of the twentieth. Foucault finds that the chronology of the techniques and that of their diffusion do not fit. The techniques reach back to medieval penance and the compulsory confession of the Lateran Council; at the end of the eighteenth century a new technology outside the Church made sex a matter of state along the axes of pedagogy, medicine and demography; and in the second half of the nineteenth century the medicine of perversions and eugenics were its two innovations (pp. 152-158).",
+              "If repression served the use of labour power, controls should have been harshest on the poor. Yet the most rigorous techniques were applied first to the economically privileged and politically dominant classes. The first figure to be sexualised was the idle bourgeois woman, and the masturbating child who worried doctors was not the future worker but the schoolboy surrounded by servants and tutors. Foucault reads this as a class's self-affirmation rather than the enslavement of another: where the nobility marked its caste by blood, the bourgeoisie built a class body with health and descendants (pp. 158-166).",
+              "The popular classes long remained bound only by alliance, and sexualisation reached them slowly in three stages: the birth-rate problem at the end of the eighteenth century; around 1830, the organisation of the family to subject the urban proletariat, with campaigns to moralise the poor; and at the end of the nineteenth century, judicial and medical control of perversions in the name of protecting society and the race. Behind this lay conflicts over urban space such as cholera and venereal disease, heavy industry's need for a stable workforce, and technologies of control such as schools, housing and public hygiene (pp. 160-168).",
+              "Once the deployment had spread through the whole social body, the late nineteenth-century bourgeoisie distinguished itself anew not by the quality of its sexuality but by the intensity of its repression, and the theory of sexual repression originates there. Psychoanalysis let those who could afford it voice incestuous desire, while incest among the popular classes was hunted by administration and courts. The critique of sexual repression formed around Reich between the wars was, in Foucault's assessment, a tactical shift within this deployment (pp. 169-173). The Reich critique met in chapter 6 belongs to this lineage."
+            ]
+          },
+          {
+            "title": "Part 5: from a power that kills to a power that makes live",
+            "items": [
+              "The sovereign's right of life and death came from Roman paternal power and, for classical theorists, was an asymmetric right conditioned on the sovereign's defence. In practice it was the right to make die or let live, symbolised by the sword, a power of deduction that seized goods, labour and blood. Since the classical age deduction has become one function among others, and power has turned to producing, increasing and ordering forces. Wars grew bloodier and executions rarer for the same reason: power had become the manager of life (pp. 177-182).",
+              "Power over life developed around two poles. First, from the seventeenth century, the disciplines that treat the body as a machine and increase its usefulness and docility together: an anatomo-politics of the human body. Then, from the mid-eighteenth century, a bio-politics of the population regulating births, mortality, health and longevity. Foucault says this bio-power was an indispensable element in the development of capitalism, which required the controlled insertion of bodies into the machinery of production and the adjustment of population phenomena to economic processes (pp. 182-186).",
+              "As a result the norm gains over the law. The law's final weapon is death, but a power in charge of life needs continuous, corrective mechanisms that measure, assess and rank. Law works more and more as a norm, the judiciary joins a continuum of medical and administrative apparatuses, and a normalising society emerges. The forces resisting it, too, no longer claim old rights but a right to life, the body, health and happiness (pp. 188-191)."
+            ]
+          },
+          {
+            "title": "Sex: where the two axes meet, from blood to sexuality",
+            "items": [
+              "Sex sits at the junction of the discipline of bodies and the regulation of populations, so it gave rise both to minute surveillance and to statistical intervention. The four strategies combine the two axes: the sexualisation of children and the hysterisation of women relied on regulatory themes of the species' health and descent to obtain disciplinary effects, while birth control and the psychiatrisation of perversions did the reverse, relying on individual discipline for regulatory ends (pp. 191-193).",
+              "In a society of alliance, sovereigns, orders, famine and epidemics, power spoke through blood. Modern society moved from a symbolics of blood to an analytics of sexuality: blood stands with law, death and sovereignty, sexuality with norm, knowledge, life, discipline and regulation. Yet the two overlapped. In the second half of the nineteenth century the theme of blood came to support power exercised through sexuality, and modern state, biologising racism took shape; Nazism combined fantasies of blood with the paroxysms of disciplinary power. Psychoanalysis, by contrast, reinscribed sex in the order of law and alliance and opposed fascism, but Foucault holds that thinking sex through law and blood is in the end a historical retroversion (pp. 193-198).",
+              "Finally Foucault argues that sex itself is not a reality outside the deployment but an idea formed within it. By grouping anatomical elements, functions, conduct and sensations into one unity, it lets us think of power only as law and prohibition, and the desire for sex binds us to the deployment. So saying yes to sex is not saying no to power, and the rallying point for a counterattack must be not sex-desire but bodies and pleasures (pp. 198-211)."
+            ]
+          },
+          {
+            "title": "Sources",
+            "items": [
+              "Foucault, The History of Sexuality, vol. 1, La volonté de savoir (Gallimard, 1976), part 4, 'Le dispositif de sexualité', ch. 3, 'Domaine', pp. 136-151, ch. 4, 'Périodisation', pp. 152-173, and part 5, 'Droit de mort et pouvoir sur la vie', pp. 175-211: the four strategies pp. 136-139, alliance and sexuality pp. 139-151, class and diffusion pp. 158-173, bio-power and capitalism pp. 177-191, sex and blood pp. 191-208.",
+              "Translated from the French original. Because the work is still under copyright, everything except short quotations is paraphrase."
+            ]
+          }
+        ]
+      },
+      "conceptMap": {
+        "ko": [
+          {
+            "title": "네 전략, 네 형상",
+            "text": "히스테리 여성, 자위하는 아이, 맬서스주의 부부, 도착적 성인은 성을 억누른 결과가 아니라 섹슈얼리티를 생산한 전략의 표적이었습니다."
+          },
+          {
+            "title": "결연 위의 섹슈얼리티",
+            "text": "혼인과 상속의 결연 장치 위에 몸과 쾌락을 다루는 섹슈얼리티 장치가 겹쳐졌고, 가족이 둘을 잇는 교환기가 되었습니다."
+          },
+          {
+            "title": "피에서 성으로",
+            "text": "부르주아지는 귀족의 혈통 대신 건강과 후손을 지닌 계급의 몸으로 자신을 긍정했고, 장치는 나중에야 노동계급으로 퍼졌습니다."
+          },
+          {
+            "title": "살게 하는 권력",
+            "text": "해부정치와 인구의 생명정치가 몸을 생산 장치에 끼워 넣었고, 성은 두 축이 만나는 자리여서 권력의 표적이 되었습니다."
+          }
+        ],
+        "en": [
+          {
+            "title": "Four strategies, four figures",
+            "text": "The hysterical woman, the masturbating child, the Malthusian couple and the perverse adult were targets of strategies that produced sexuality, not results of repressing it."
+          },
+          {
+            "title": "Sexuality over alliance",
+            "text": "A deployment of sexuality dealing with bodies and pleasures was laid over the alliance of marriage and inheritance, with the family as the exchanger between them."
+          },
+          {
+            "title": "From blood to sex",
+            "text": "The bourgeoisie affirmed itself through a class body of health and descendants instead of noble blood; the deployment reached the working class only later."
+          },
+          {
+            "title": "A power that makes live",
+            "text": "Anatomo-politics and the bio-politics of the population inserted bodies into production, and sex, where the two axes meet, became power's target."
+          }
+        ]
+      },
+      "diagram": {
+        "kind": "contrast",
+        "ko": {
+          "title": "피의 사회와 섹슈얼리티의 사회",
+          "left": {
+            "heading": "주권 권력과 피의 상징학",
+            "rows": [
+              "권력의 형식: 죽게 하거나 살게 내버려 두는 칼",
+              "성을 묶는 장치: 혼인·친족·상속의 결연 장치",
+              "경제와의 고리: 부와 재산의 전달",
+              "작동 방식: 허용과 금지를 가르는 법",
+              "지배 계급의 표지: 귀족의 피와 혈통"
+            ]
+          },
+          "right": {
+            "heading": "생명 권력과 섹슈얼리티의 분석학",
+            "rows": [
+              "권력의 형식: 살게 하거나 죽음 속으로 내던지는 관리",
+              "성을 묶는 장치: 감각과 쾌락을 다루는 섹슈얼리티 장치",
+              "경제와의 고리: 생산하고 소비하는 몸",
+              "작동 방식: 규율과 조절, 규범",
+              "지배 계급의 표지: 부르주아의 건강한 몸과 후손"
+            ]
+          }
+        },
+        "en": {
+          "title": "The society of blood and the society of sexuality",
+          "left": {
+            "heading": "Sovereign power and the symbolics of blood",
+            "rows": [
+              "Form of power: the sword that makes die or lets live",
+              "What binds sex: alliance of marriage, kinship, inheritance",
+              "Link to the economy: transmission of wealth and property",
+              "Mode of operation: law dividing permitted from forbidden",
+              "Mark of the ruling class: noble blood and lineage"
+            ]
+          },
+          "right": {
+            "heading": "Bio-power and the analytics of sexuality",
+            "rows": [
+              "Form of power: managing, making live or casting into death",
+              "What binds sex: a deployment of sensations and pleasures",
+              "Link to the economy: the body that produces and consumes",
+              "Mode of operation: discipline, regulation and the norm",
+              "Mark of the ruling class: the healthy bourgeois body and heirs"
+            ]
+          }
+        }
+      },
+      "lessons": [
+        {
+          "id": "sex-gender-theory-intro-ch12-basic",
+          "level": "basic",
+          "title": {
+            "ko": "푸코, 섹슈얼리티 장치와 생명 권력",
+            "en": "Foucault on the deployment of sexuality and bio-power"
+          },
+          "questions": [
+            {
+              "id": "q1",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제4부 3장 「영역」에서 18세기부터 성을 둘러싸고 형성된 네 전략 집합을 무엇으로 꼽고, 그 전략들이 한 일을 어떻게 규정했을까요?",
+                "en": "In part 4, chapter 3, 'Domaine', of The Will to Knowledge, which four strategic ensembles formed around sex from the eighteenth century did Foucault name, and how did he characterise what they did?"
+              },
+              "choices": {
+                "ko": [
+                  "여성 신체의 히스테리화, 아동 성의 교육화, 생식 행동의 사회화, 도착적 쾌락의 정신의학화를 꼽고, 이들이 성과 싸운 것이 아니라 섹슈얼리티 자체를 생산했다고 규정했습니다.",
+                  "성을 생식, 이성애, 성인, 합법적 결혼으로 좁히려는 하나의 전체 전략이 네 영역으로 나뉘어 나타난 것으로 보고, 결국 성을 억누르는 일을 했다고 규정했습니다.",
+                  "여성, 아이, 부부, 도착자에게 숨어 있던 자연스러운 성을 의학과 교육이 조금씩 밝혀낸 과정으로 보고, 감춰진 진실을 처음 발견하는 일을 했다고 규정했습니다."
+                ],
+                "en": [
+                  "The hysterisation of women's bodies, the pedagogisation of children's sex, the socialisation of procreative behaviour and the psychiatrisation of perverse pleasure; they did not fight sexuality but produced it.",
+                  "They were one overall strategy, reducing sex to reproduction, heterosexuality, adulthood and lawful marriage, appearing in four domains; in the end their work was to repress sex.",
+                  "They were the process by which medicine and education gradually brought to light the natural sexuality hidden in women, children, couples and perverts, discovering a concealed truth for the first time."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 네 전략에 히스테리 여성, 자위하는 아이, 맬서스주의 부부, 도착적 성인이라는 네 형상을 대응시키고, 문제는 섹슈얼리티의 생산 자체였다고 씁니다(137~139쪽).",
+                  "푸코가 네 전략을 내놓기 직전에 물리친 생각입니다. 그런 단일 전략으로는 여러 성별·연령·계급을 겨냥한 성 정책의 다양한 목표와 수단을 설명하지 못한다고 합니다(136~137쪽).",
+                  "푸코는 섹슈얼리티를 지식이 차츰 벗겨 내는 어두운 영역이나 자연의 소여로 보지 말라고 하고, 그것을 하나의 역사적 장치에 붙인 이름으로 봅니다(139쪽)."
+                ],
+                "en": [
+                  "Foucault pairs the four strategies with four figures, the hysterical woman, the masturbating child, the Malthusian couple and the perverse adult, and says what was at stake was the very production of sexuality (pp. 137-139).",
+                  "This is the idea Foucault dismisses just before listing the strategies: such a single strategy cannot account for the many aims and means of sexual policies aimed at both sexes, all ages and different classes (pp. 136-137).",
+                  "Foucault warns against treating sexuality as an obscure domain that knowledge gradually unveils or as a natural given; for him it is the name of a historical deployment (p. 139)."
+                ]
+              },
+              "explanation": {
+                "ko": "「영역」 첫머리에서 푸코는 섹슈얼리티를 권력 관계가 특히 촘촘하게 지나가는 지점, 가장 다양한 전략의 받침이 될 수 있는 요소로 봅니다. 그 위에서 18세기부터 일관성을 얻은 네 전략을 구별합니다. 여성의 몸은 성으로 가득 찬 몸으로 분석되어 의학 안으로 들어갔고 사회체의 출산, 가족, 아이의 생명과 이어졌으며, 어머니와 그 음화인 신경질적 여성이 그 형상입니다. 아이는 성의 문턱에 선 존재로 규정되어 거의 두 세기에 걸친 자위와의 전쟁을 겪었습니다. 부부의 출산은 세제와 사회 정책, 사회 전체에 대한 책임, 피임이 병을 낳는다는 의학적 주장을 통해 사회화되었습니다. 성 본능은 독립된 생물학적·심리적 본능으로 분리되어 이상(異常)의 임상 분석과 교정 기술의 대상이 되었습니다. 푸코는 이것을 성과의 싸움이나 통제 시도가 아니라 섹슈얼리티의 생산으로 보고, 섹슈얼리티를 몸의 자극, 쾌락의 강화, 담론의 선동, 지식의 형성, 통제와 저항이 서로 이어지는 거대한 표면 그물이라고 부릅니다.",
+                "en": "At the start of 'Domaine' Foucault treats sexuality as an especially dense transfer point for relations of power, an element usable in the widest range of strategies. On that basis he distinguishes four strategies that took on coherence from the eighteenth century. Women's bodies were analysed as saturated with sex, brought into medicine and linked to the social body's fertility, the family and the life of children; the Mother and her negative image, the nervous woman, are its figures. Children were defined as beings on the threshold of sex and subjected to a war on masturbation lasting nearly two centuries. Couples' fertility was socialised through fiscal and social measures, responsibility toward the whole social body, and the medical claim that birth control is pathogenic. The sexual instinct was isolated as an autonomous biological and psychic instinct, its anomalies clinically analysed and a corrective technology sought. Foucault sees all this not as a fight against or attempt to control sexuality but as its production, and calls sexuality a great surface network in which stimulation of bodies, intensification of pleasures, incitement to discourse, formation of knowledge and reinforcement of controls and resistances link up."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제4부 3장 「영역」, 136~139쪽",
+                  "en": "Foucault, La volonté de savoir, part 4, ch. 3, 'Domaine', pp. 136-139"
+                }
+              }
+            },
+            {
+              "id": "q2",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 「영역」에서 결연 장치와 섹슈얼리티 장치의 관계, 그리고 그 사이에서 가족이 맡은 역할을 어떻게 설명했을까요?",
+                "en": "In 'Domaine' in The Will to Knowledge, how did Foucault explain the relation between the deployment of alliance and the deployment of sexuality, and the role the family played between them?"
+              },
+              "choices": {
+                "ko": [
+                  "혼인·친족·상속의 결연 장치 위에 18세기부터 섹슈얼리티 장치가 겹쳐졌고, 가족이 둘을 잇는 교환기여서 성을 금하는 힘이 아니라 성화의 핵심 요인이 되었다고 했습니다.",
+                  "섹슈얼리티 장치가 18세기에 결연 장치를 완전히 대체했고, 가족은 혼인과 상속의 법적 틀만 남긴 채 성 문제에서 물러나 의사와 교육자에게 자리를 넘겼다고 했습니다.",
+                  "두 장치는 같은 것을 시대에 따라 달리 부른 이름일 뿐이고, 둘 다 허용과 금지를 가르는 규칙으로 생식을 보장하며 가족은 그 금지를 집행하는 기관이었다고 했습니다."
+                ],
+                "en": [
+                  "From the eighteenth century a deployment of sexuality was laid over the alliance of marriage, kinship and inheritance; the family, the exchanger between them, became not a power of prohibition but a key factor of sexualisation.",
+                  "In the eighteenth century the deployment of sexuality completely replaced that of alliance, and the family, keeping only the legal frame of marriage and inheritance, withdrew from sexual matters and handed them to doctors and educators.",
+                  "The two deployments are merely different period names for the same thing; both secure reproduction through rules dividing permitted from forbidden, and the family was the body that enforced the prohibition."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 섹슈얼리티 장치가 결연 장치를 대체했다고 하면 정확하지 않다고 하고, 가족을 섹슈얼리티와 결연의 교환기, 성화의 핵심 요인이라고 부릅니다(141~143, 150쪽).",
+                  "대체가 아니라 겹침입니다. 푸코는 가족이 섹슈얼리티를 붙들어 두는 상시 받침대가 되었고 부모와 배우자가 그 장치의 주된 행위자가 되었다고 씁니다(143, 145쪽).",
+                  "푸코는 두 장치를 하나하나 대조합니다. 결연은 허용과 금지의 규칙으로 움직이지만 섹슈얼리티는 유동적인 권력 기술로 움직이며, 재생산이 아니라 증식이 존재 이유라고 합니다(140~141쪽)."
+                ],
+                "en": [
+                  "Foucault says it would be inexact to claim that sexuality replaced alliance, and calls the family the exchanger of sexuality and alliance and a capital factor of sexualisation (pp. 141-143, 150).",
+                  "Not replacement but superimposition. Foucault writes that the family became the permanent support anchoring sexuality, and that parents and spouses became the main agents of the deployment (pp. 143, 145).",
+                  "Foucault contrasts the two point by point: alliance works by rules of permitted and forbidden, sexuality by mobile techniques of power, and its reason for being is to proliferate, not to reproduce (pp. 140-141)."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코에 따르면 어느 사회에나 혼인, 친족 관계의 고정, 이름과 재산의 전달로 이루어진 결연 장치가 있습니다. 경제 과정과 정치 구조가 그것을 충분한 도구로 삼지 못하게 되면서 그 중요성이 줄었고, 근대 서구는 18세기부터 새 장치를 그 위에 겹쳐 놓았습니다. 결연 장치는 지위가 정해진 상대 사이의 유대를 다루고 부의 전달로 경제와 이어지며 재생산을 중심에 두지만, 섹슈얼리티 장치는 몸의 감각과 쾌락의 질을 다루고 생산하고 소비하는 몸으로 경제와 이어지며 통제의 영역을 끝없이 넓힙니다. 그래도 섹슈얼리티는 고해와 양심 지도라는 결연 중심의 기술에서 태어났고, 지금도 결연에 기대어 작동합니다. 가족은 법을 섹슈얼리티로, 쾌락의 경제를 결연으로 옮기는 교환기여서 18세기 이후 애정의 의무적 자리가 되었고, 섹슈얼리티는 근친상간적으로 태어났습니다. 푸코는 근친상간 금지를 보편적 규칙으로 내세운 이론이 법을 모르는 이 장치를 결연의 법 안에 붙잡아 두려는 방어였을 수 있다고 보고, 정신분석도 섹슈얼리티 한가운데서 결연의 법을 다시 찾아 둘을 이어 붙였다고 말합니다.",
+                "en": "According to Foucault every society has a deployment of alliance: marriage, the fixing of kinship and the transmission of names and goods. It lost importance as economic processes and political structures could no longer find in it an adequate instrument, and from the eighteenth century modern Western societies laid a new deployment over it. Alliance concerns the bond between partners of defined status, links to the economy through the transmission of wealth and centres on reproduction; sexuality concerns bodily sensations and the quality of pleasures, links to the economy through the body that produces and consumes, and endlessly extends its domains of control. Yet sexuality was born from techniques centred on alliance, penance and spiritual direction, and still works by leaning on alliance. The family is the exchanger that carries law into sexuality and the economy of pleasure into alliance; hence it became an obligatory place of affection from the eighteenth century, and sexuality was born incestuous. Foucault suggests that theories making the incest ban a universal rule may have been a defence that kept this law-ignoring deployment within the law of alliance, and that psychoanalysis likewise rediscovered the law of alliance at the heart of sexuality, pinning the two together."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제4부 3장 「영역」, 139~150쪽",
+                  "en": "Foucault, La volonté de savoir, part 4, ch. 3, 'Domaine', pp. 139-150"
+                }
+              }
+            },
+            {
+              "id": "q3",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제4부 4장 「시기 구분」에서 섹슈얼리티 장치가 어느 계급에 먼저, 어떤 뜻으로 적용되었다고 했을까요?",
+                "en": "In part 4, chapter 4, 'Périodisation', of The Will to Knowledge, to which class did Foucault say the deployment of sexuality was applied first, and in what sense?"
+              },
+              "choices": {
+                "ko": [
+                  "경제적으로 특권적이고 정치적으로 지배적인 계급이 먼저 자기 몸에 적용했으며, 다른 계급의 예속이 아니라 건강과 후손을 지닌 계급의 몸을 만드는 자기 긍정이었다고 했습니다.",
+                  "힘만 가진 젊은 성인 노동자에게 먼저 집중되었으며, 쓸모없는 쾌락에 흩어지는 에너지를 의무 노동으로 돌리려는 노동력 착취의 장치였다고 했습니다.",
+                  "부르주아지가 먼저 적용했지만 그것은 쾌락을 포기하는 금욕이었으며, 자기 성을 상징적으로 거세해 다른 계급이 성을 누릴 권리를 빼앗으려는 것이었다고 했습니다."
+                ],
+                "en": [
+                  "The economically privileged and politically dominant class applied it first to its own body, not to subjugate another class but as a self-affirmation building a class body with health and descendants.",
+                  "It was concentrated first on young adult workers who had only their strength, a device of labour exploitation that redirected energy wasted on useless pleasure into compulsory work.",
+                  "The bourgeoisie applied it first, but as an asceticism renouncing pleasure, symbolically castrating its own sex in order to deny other classes the right to enjoy theirs."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 가장 엄격한 기술이 먼저 지배 계급에 가장 강하게 적용되었고, 그것을 다른 계급의 예속보다 한 계급의 자기 긍정으로 보아야 한다고 씁니다(159, 162~164쪽).",
+                  "푸코가 억압을 노동력 활용과 이을 때 나와야 할 예상으로 소개한 뒤 사실은 그렇지 않았다고 반박하는 그림입니다. 자위로 걱정된 아이도 미래의 노동자가 아니라 중학생이었습니다(158~160쪽).",
+                  "푸코는 이것이 쾌락의 포기나 육체의 경시가 아니라 몸의 강화이자 삶을 최대화하는 기술이었고, 부르주아지가 자신을 상징적으로 거세했다고 상상하지 말라고 씁니다(162, 164쪽)."
+                ],
+                "en": [
+                  "Foucault writes that the most rigorous techniques were applied first and most intensely to the ruling classes, and that we should see a class's self-affirmation rather than the enslavement of another (pp. 159, 162-164).",
+                  "This is the picture Foucault presents as what linking repression to the use of labour power would predict, and then refutes; even the child feared for masturbation was not the future worker but the schoolboy (pp. 158-160).",
+                  "Foucault writes that this was not a renunciation of pleasure or a disqualification of the flesh but an intensification of the body and a technique to maximise life, and he tells us not to imagine the bourgeoisie symbolically castrating itself (pp. 162, 164)."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 억압을 노동력 활용과 잇는다면 성 통제는 가난한 계급, 특히 힘밖에 가진 것이 없는 젊은 성인 남성에게 가장 강했어야 한다고 먼저 정리합니다. 그러나 양심 지도와 자기 성찰 같은 정교한 기술은 소수 집단만 쓸 수 있었고, 아이의 성이 처음 문제 되고 여성의 성이 의료화된 곳은 부르주아·귀족 가족이었습니다. 처음 성화된 인물은 한가한 여성이었고, 자위하는 아이는 하인과 가정교사에 둘러싸인 중학생이었습니다. 그는 이를 남의 쾌락을 제한하는 원리가 아니라 지배 계급이 자신에게 먼저 시험한 것, 한 계급의 자기 긍정으로 읽습니다. 귀족은 혈통의 오래됨과 혼인의 가치, 곧 피로 신분을 표시했지만 부르주아지는 후손과 몸의 건강을 바라보았고, 그래서 “부르주아지의 피는 그 성이었다”고 씁니다(164쪽). 몸의 가치는 노동력의 상품 가치 때문이 아니라 부르주아 헤게모니에 정치적·경제적·역사적으로 중요했기 때문이라고 하고, 부르주아지를 몸의 소거와 성 억압으로, 계급투쟁을 그 억압을 걷어 내는 싸움으로 보는 이들에게 양해를 구한다는 말로 그 도식과 거리를 둡니다. 계급의식의 원초적 형태 하나가 몸의 긍정이었다는 것입니다.",
+                "en": "Foucault first spells out that if repression were tied to the use of labour power, sexual controls should have been harshest on the poor, above all young adult men with nothing but their strength. Yet refined techniques like spiritual direction and self-examination were accessible only to small groups, and it was in the bourgeois or aristocratic family that children's sexuality was first problematised and women's sexuality medicalised. The first figure sexualised was the idle woman; the masturbating child was the schoolboy surrounded by servants and tutors. He reads this not as a principle for limiting others' pleasure but as something the ruling classes first tried on themselves, a class's self-affirmation. The nobility marked its caste by the antiquity of its lineage and the value of its alliances, that is, by blood; the bourgeoisie looked instead to its descendants and the health of its organism, so that 'the blood of the bourgeoisie was its sex' (p. 164). The body was valued not because of the market value of labour power but because it mattered politically, economically and historically to bourgeois hegemony, and he distances himself from the scheme by asking pardon of those for whom bourgeoisie means the elision of the body and class struggle a fight to lift that repression. One primordial form of class consciousness, he says, was the affirmation of the body."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제4부 4장 「시기 구분」, 158~166쪽",
+                  "en": "Foucault, La volonté de savoir, part 4, ch. 4, 'Périodisation', pp. 158-166"
+                }
+              }
+            },
+            {
+              "id": "q4",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 「시기 구분」에서 섹슈얼리티 장치가 노동계급까지 퍼진 뒤 성 억압 이론이 어떻게 생겨났다고 했을까요?",
+                "en": "In 'Périodisation' in The Will to Knowledge, how did Foucault say the theory of sexual repression arose after the deployment of sexuality had spread to the working class?"
+              },
+              "choices": {
+                "ko": [
+                  "장치가 사회 전체로 퍼지자 부르주아지는 금지의 강도로 자신을 다시 구별했고, 억압 이론은 거기서 비롯되었으며 라이히의 비판도 그 장치 안의 전술적 이동이었다고 했습니다.",
+                  "노동계급이 성을 누리기 시작하자 위협을 느낀 국가가 새 금지 법률을 만들었고, 억압 이론은 이 실제 억압을 처음으로 정확히 밝혀낸 과학적 발견이었다고 했습니다.",
+                  "노동계급이 부르주아 도덕을 받아들여 제 성을 스스로 부정하는 위선에 빠졌고, 억압 이론은 두 계급의 이 대칭적 위선을 함께 폭로하려고 생겨났다고 했습니다."
+                ],
+                "en": [
+                  "Once the deployment had spread through society, the bourgeoisie distinguished itself anew by the intensity of prohibition; the theory of repression originates there, and Reich's critique was a tactical shift within the deployment.",
+                  "When the working class began to enjoy sex, a threatened state passed new prohibitive laws, and the theory of repression was the scientific discovery that first exposed this real repression accurately.",
+                  "The working class adopted bourgeois morality and fell into the hypocrisy of denying its own sex, and the theory of repression arose to expose this symmetrical hypocrisy of both classes together."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 19세기 말 부르주아지가 몸의 성적 성질이 아니라 억압의 강도로 사회적 차이를 표시하게 되었고, 억압 이론의 출발점이 거기 있다고 씁니다(169~170, 173쪽).",
+                  "푸코에 따르면 억압 이론은 숨은 실제의 발견이 아니라 섹슈얼리티 장치가 일반화된 뒤 생긴 계급 구별의 새 선이며, 그 확산과 역사적으로 묶여 있습니다(169쪽).",
+                  "푸코는 두 대칭적 위선을 함께 고발하는 시각을 과정을 잘못 이해한 것이라고 합니다. 노동계급은 예속의 목적으로 뒤늦게 강요된 섹슈얼리티를 오래 거부했다는 것입니다(168쪽)."
+                ],
+                "en": [
+                  "Foucault writes that at the end of the nineteenth century the bourgeoisie came to mark social difference not by the sexual quality of the body but by the intensity of its repression, and that the theory of repression originates there (pp. 169-170, 173).",
+                  "For Foucault the theory of repression was not the discovery of a hidden reality but a new line of class distinction that appeared once the deployment was generalised, historically bound up with its spread (p. 169).",
+                  "Foucault calls the denunciation of two symmetrical hypocrisies a misunderstanding of the process: the working class long refused a sexuality imposed on it later for purposes of subjection (p. 168)."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코에 따르면 장치는 세 단계로 서민층에 스며들었습니다. 18세기 말 농민도 자연을 속이는 법을 안다는 출산 문제의 발견, 1830년 무렵 도시 프롤레타리아를 예속시키려는 정규 가족 조직과 가난한 계급의 도덕화 캠페인, 19세기 말 사회와 인종 보호를 내건 도착의 사법·의학적 통제입니다. 19세기 전반 노동자의 생활 조건은 그 몸과 성에 대한 무관심을 보여 주었고(푸코는 여기서 마르크스 『자본』 제1권을 각주로 듭니다), 노동계급이 몸과 성을 인정받기까지 1832년 콜레라 같은 도시 공간의 갈등, 중공업의 안정된 노동력 수요, 학교·주거 정책·공중위생 같은 통제 기술이 필요했습니다. 그래서 노동계급은 이 섹슈얼리티를 부르주아의 일로 여기며 오래 거부했습니다. 장치가 일반화되자 19세기 말 부르주아지는 성의 성질이 아니라 억압의 강도로 자신을 구별했고, 억압 이론은 여기서 출발했습니다. 정신분석은 분석을 받을 수 있는 이들에게 근친상간 욕망을 말하게 했지만, 같은 시기 시골과 도시 서민층의 근친상간은 행정·사법으로 추적되었고 프랑스는 1889년과 1898년 법으로 친권 박탈을 조직했습니다. 이 위에서 양차 대전 사이 라이히를 중심으로 성 억압 비판이 생겼고, 푸코는 그 가치와 실제 효과를 인정하면서도 그것이 장치 바깥이 아니라 안에서 펼쳐진 전술적 이동이었다고 봅니다.",
+                "en": "According to Foucault the deployment seeped into the popular classes in three stages: the discovery, in the birth-rate debates of the late eighteenth century, that peasants too knew how to cheat nature; the organisation of the canonical family around 1830 to subject the urban proletariat, with campaigns to moralise the poor; and the judicial and medical control of perversions at the end of the nineteenth century in the name of protecting society and the race. The living conditions of workers in the first half of the nineteenth century showed indifference to their bodies and sex (here he footnotes Marx's Capital, vol. 1), and for the working class to be granted a body and a sexuality it took conflicts over urban space such as the cholera of 1832, heavy industry's need for a stable workforce, and technologies of control such as schools, housing policy and public hygiene. Hence the working class long refused this sexuality as a bourgeois affair. Once the deployment was generalised, the late nineteenth-century bourgeoisie distinguished itself not by the quality of its sexuality but by the intensity of its repression, and the theory of repression starts there. Psychoanalysis let those who could afford it voice incestuous desire, while at the same time incest in the countryside and in poor urban milieux was hunted by administration and courts, and France organised the forfeiture of paternal rights by laws of 1889 and 1898. On this ground the critique of sexual repression formed around Reich between the wars; Foucault grants its value and real effects but sees it as a tactical shift deployed inside the deployment, not outside or against it."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제4부 4장 「시기 구분」, 160~173쪽",
+                  "en": "Foucault, La volonté de savoir, part 4, ch. 4, 'Périodisation', pp. 160-173"
+                }
+              }
+            },
+            {
+              "id": "q5",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제5부 「죽음의 권리와 삶에 대한 권력」에서 생명 권력과 자본주의의 관계를 어떻게 설명했을까요?",
+                "en": "In part 5, 'Droit de mort et pouvoir sur la vie', of The Will to Knowledge, how did Foucault explain the relation between bio-power and capitalism?"
+              },
+              "choices": {
+                "ko": [
+                  "몸을 생산 장치에 통제된 방식으로 끼워 넣고 인구 현상을 경제 과정에 맞추는 생명 권력이 자본주의 발전에 꼭 필요했으며, 힘을 꺾지 않고 키우면서도 순종하게 만들었다고 했습니다.",
+                  "생명 권력은 생산관계를 유지하는 국가 장치의 다른 이름이며, 노동자의 성과 쾌락을 억눌러 그 에너지를 노동으로 돌림으로써 자본 축적에 이바지했다고 했습니다.",
+                  "자본주의 형성을 설명하는 열쇠는 육체를 경시한 금욕적 노동 윤리였고, 생명 권력은 자본주의가 자리 잡은 뒤 20세기 복지국가에서야 나타난 부차적 현상이라고 했습니다."
+                ],
+                "en": [
+                  "Bio-power, inserting bodies into the machinery of production in a controlled way and adjusting population phenomena to economic processes, was indispensable to capitalism; it increased forces rather than breaking them while keeping them docile.",
+                  "Bio-power is another name for the state apparatus that maintains relations of production, serving capital accumulation by repressing workers' sex and pleasure and turning that energy into labour.",
+                  "The key to capitalism's formation was an ascetic work ethic that disdained the body, and bio-power was a secondary phenomenon that appeared only in the twentieth-century welfare state, after capitalism was established."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 생명 권력이 자본주의 발전에 없어서는 안 될 요소였고, 자본주의가 힘과 적성과 삶을 키우면서도 예속시키기 어렵게 만들지 않는 권력 방법을 요구했다고 씁니다(185~186쪽).",
+                  "푸코는 국가 장치가 생산관계의 유지를 맡았다면, 해부정치와 생명정치는 가족에서 행정까지 사회체의 모든 수준에서 경제 과정 자체에 작용했다고 둘을 나눕니다. 그 기술은 힘을 억누르지 않고 늘렸습니다(185쪽).",
+                  "푸코는 초기 자본주의에서 금욕적 도덕의 역할이라는 익숙한 물음보다 더 큰 현상으로 생명이 역사에 들어온 일을 들고, 생명 권력의 두 축이 이미 17~18세기에 형성되었다고 씁니다(182~186쪽)."
+                ],
+                "en": [
+                  "Foucault writes that bio-power was an indispensable element in the development of capitalism, which needed methods of power able to increase forces, aptitudes and life in general without making them harder to subjugate (pp. 185-186).",
+                  "Foucault separates the two: if state apparatuses ensured the maintenance of relations of production, anatomo- and bio-politics acted on economic processes themselves at every level of the social body, from the family to administration, and increased forces rather than repressing them (p. 185).",
+                  "Foucault sets against the familiar question of an ascetic morality in early capitalism a larger phenomenon, the entry of life into history, and dates the two poles of bio-power to the seventeenth and eighteenth centuries (pp. 182-186)."
+                ]
+              },
+              "explanation": {
+                "ko": "제5부는 군주의 생사여탈권에서 시작합니다. 그것은 실제로는 죽게 하거나 살게 내버려 두는 비대칭적 권리였고, 재화·노동·피를 빼앗는 권력의 정점이었습니다. 고전주의 시대 이후 빼앗음은 여러 기능 가운데 하나가 되고, 권력은 힘을 생산하고 키우고 정돈하는 쪽으로 바뀌어 “살게 하거나 죽음 속으로 내던지는” 권력이 됩니다(181쪽). 그 권력은 두 극으로 발전했습니다. 17세기부터 몸을 기계로 길들여 쓸모와 순종을 함께 늘리는 규율, 곧 인간 신체의 해부정치가, 18세기 중엽부터는 출생·사망·건강·수명을 조절하는 인구의 생명정치가 생겼습니다. 푸코는 이 생명 권력이 자본주의 발전에 없어서는 안 되었다고 하면서, 그 근거를 몸의 통제된 삽입과 인구 현상의 경제 과정 조정에서 찾습니다. 국가 장치가 생산관계 유지를 맡았다면 해부정치와 생명정치는 여러 제도 속에서 경제 과정 자체에 작용했고, 분리와 위계화로 지배 관계를 보장하며 인간의 축적을 자본의 축적에 맞추었습니다. 억압-착취 도식과 다른 점은 권력이 몸의 힘을 깎아 노동으로 돌린 것이 아니라 키우고 관리했다는 데 있습니다. 그래서 법의 무기인 죽음보다 측정하고 위계를 매기는 규범이 중요해지고 규범화 사회가 생겼다고 합니다.",
+                "en": "Part 5 begins with the sovereign's right of life and death, in practice an asymmetric right to make die or let live, the summit of a power of deduction that seized goods, labour and blood. Since the classical age deduction has become one function among others and power has turned to producing, increasing and ordering forces, becoming a 'power to make live or reject into death' (p. 181). It developed around two poles: from the seventeenth century the disciplines that train the body as a machine to increase its usefulness and docility together, an anatomo-politics of the human body; from the mid-eighteenth century a bio-politics of the population regulating births, mortality, health and longevity. Foucault calls this bio-power indispensable to the development of capitalism, grounding the claim in the controlled insertion of bodies into production and the adjustment of population phenomena to economic processes. If state apparatuses ensured the maintenance of relations of production, anatomo- and bio-politics acted on economic processes themselves through many institutions, secured relations of domination through segregation and hierarchy, and fitted the accumulation of men to the accumulation of capital. Where this differs from the repression-exploitation scheme is that power did not diminish bodily forces to divert them into labour but increased and managed them. Hence the norm, which measures and ranks, gains over the law whose weapon is death, and a normalising society emerges."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제5부 「죽음의 권리와 삶에 대한 권력」, 177~190쪽",
+                  "en": "Foucault, La volonté de savoir, part 5, 'Droit de mort et pouvoir sur la vie', pp. 177-190"
+                }
+              }
+            },
+            {
+              "id": "q6",
+              "type": "multiple_choice",
+              "points": 2,
+              "prompt": {
+                "ko": "푸코는 『앎의 의지』 제5부에서 성이 왜 근대 권력의 중심 표적이 되었고, 섹슈얼리티 장치에 맞서는 거점은 어디여야 한다고 했을까요?",
+                "en": "In part 5 of The Will to Knowledge, why did Foucault say sex became a central target of modern power, and where did he say the rallying point against the deployment of sexuality should lie?"
+              },
+              "choices": {
+                "ko": [
+                  "성은 몸의 규율과 인구의 조절이라는 두 축의 교차점이어서 피의 상징학을 섹슈얼리티의 분석학이 대신했으며, 반격의 거점은 성-욕망이 아니라 몸과 쾌락이어야 한다고 했습니다.",
+                  "성은 권력이 금지하는 인간의 가장 깊은 본성이어서 늘 권력의 표적이 되었으며, 성의 진실을 해방해 성에 예라고 말하는 것이 곧 권력에 아니라고 말하는 길이라고 했습니다.",
+                  "성은 피와 혈통을 지키는 결연의 핵심이어서 근대에도 피의 상징이 권력을 계속 지배했으며, 그 법과 금지를 깨뜨리는 위반이 저항의 거점이 되어야 한다고 했습니다."
+                ],
+                "en": [
+                  "Sex lies at the junction of the discipline of bodies and the regulation of populations, so an analytics of sexuality replaced the symbolics of blood; the rallying point for a counterattack must be bodies and pleasures, not sex-desire.",
+                  "Sex is the deepest human nature that power forbids, so it was always power's target; freeing the truth of sex and saying yes to it is the way to say no to power.",
+                  "Sex is the core of alliance guarding blood and lineage, so the symbolics of blood still ruled power in modern times, and transgression breaking its law and prohibitions must be the rallying point of resistance."
+                ]
+              },
+              "answer": 0,
+              "choiceFeedback": {
+                "ko": [
+                  "푸코는 성이 몸의 삶과 종의 삶에 동시에 닿는 통로여서 규율의 모체이자 조절의 원리로 쓰였다고 하고, 반격의 거점을 성-욕망이 아닌 몸과 쾌락에 둡니다(191~195, 208쪽).",
+                  "푸코는 성에 예라고 하면 권력에 아니라고 하는 것이라고 믿지 말라고 하며, 그렇게 하는 것은 오히려 섹슈얼리티 장치의 흐름을 따르는 것이라고 씁니다(207~208쪽).",
+                  "푸코는 근대 사회가 피의 상징학에서 섹슈얼리티의 분석학으로 넘어갔다고 하고, 성의 질서를 법·죽음·피·주권으로 생각하는 것은 사드나 바타유를 끌어와도 역사적 퇴행이라고 봅니다(195, 198쪽)."
+                ],
+                "en": [
+                  "Foucault says sex gives access both to the life of the body and to the life of the species, so it served as matrix of the disciplines and principle of regulations, and he places the counterattack in bodies and pleasures, not sex-desire (pp. 191-195, 208).",
+                  "Foucault warns us not to think that saying yes to sex means saying no to power; doing so, he writes, follows the thread of the general deployment of sexuality (pp. 207-208).",
+                  "Foucault says modern society passed from a symbolics of blood to an analytics of sexuality, and that thinking sexual order through law, death, blood and sovereignty, whatever appeal to Sade or Bataille, is a historical retroversion (pp. 195, 198)."
+                ]
+              },
+              "explanation": {
+                "ko": "푸코는 성이 생명에 대한 정치 기술 전체가 전개된 두 축의 경첩에 있다고 봅니다. 한쪽으로는 길들이기와 힘의 강화·분배라는 몸의 규율에, 다른 쪽으로는 전체 효과를 다루는 인구 조절에 속하므로, 미세한 감시와 끝없는 진찰을 낳는 동시에 통계적 추산과 사회체 전체에 대한 개입도 낳습니다. 그래서 19세기에 섹슈얼리티는 개인을 풀이하는 암호가 되는 한편, 출산 장려와 억제, 도덕화 캠페인의 주제가 되었습니다. 결연, 군주, 신분, 기근과 전염병의 사회에서 권력은 피를 통해 말했지만, 근대 사회에서 성은 표시나 상징이 아니라 대상이자 표적입니다. 둘이 겹친 곳에서 19세기 후반 근대의 국가적·생물학적 인종주의가 생겼고, 나치즘은 피의 환상과 규율 권력의 극단을 결합했습니다. 반대편 극에서 정신분석은 성을 결연의 법에 다시 새기며 파시즘과 맞섰지만, 푸코는 그것을 특정 국면의 위치로 한정합니다. 마지막으로 그는 성 자체가 장치 안에서 형성된 관념이고 성에 대한 욕망이 우리를 장치에 묶는다고 말하며, 반격의 거점은 성-욕망이 아니라 “몸과 쾌락”이어야 한다고 결론짓습니다(208쪽).",
+                "en": "Foucault places sex at the hinge of the two axes along which the whole political technology of life developed. It belongs on one side to the discipline of the body, training and the intensification and distribution of forces, and on the other to the regulation of populations through its global effects; so it gives rise both to minute surveillance and endless examinations and to statistical estimates and interventions aimed at the whole social body. In the nineteenth century sexuality thus became the cipher of individuality and at the same time the theme of pronatalist or restrictive measures and campaigns of moralisation. In a society of alliance, sovereigns, orders, famine and epidemics, power spoke through blood; in modern society sex is not a mark or symbol but an object and a target. Where the two overlapped, modern state, biologising racism took shape in the late nineteenth century, and Nazism combined fantasies of blood with the paroxysms of disciplinary power. At the opposite extreme psychoanalysis reinscribed sex in the law of alliance and opposed fascism, but Foucault ties that stance to a particular conjuncture. Finally he argues that sex itself is an idea formed within the deployment and that the desire for sex binds us to it, concluding that the rallying point for a counterattack must be not sex-desire but 'bodies and pleasures' (p. 208)."
+              },
+              "source": {
+                "kind": "reference",
+                "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
+                "label": {
+                  "ko": "푸코, 『앎의 의지』 제5부 「죽음의 권리와 삶에 대한 권력」, 191~198, 204~208쪽",
+                  "en": "Foucault, La volonté de savoir, part 5, 'Droit de mort et pouvoir sur la vie', pp. 191-198, 204-208"
                 }
               }
             }
