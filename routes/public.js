@@ -265,6 +265,7 @@ const BLOCKED_CRAWLERS = ['SemrushBot', 'AhrefsBot', 'MJ12bot', 'DotBot', 'DataF
 // CommuLingo 사전의 쿼리 필터·검색·카드 조각과 필터로 넘기는 옛 주소는 조합이
 // 끝없이 늘어 봇이 같은 항목을 되풀이해 긁는다. 봇에게는 목록 첫 화면과 상세
 // 페이지만 연다(문헌 상세의 ?p= 쪽 넘김은 /commulingo/docs/<id> 아래라 막히지 않음).
+// 이를 무시하는 봇은 nginx/leninbot-frontend.conf의 $robots_disallowed가 같은 범위에서 403을 낸다(목록을 함께 고친다).
 const BLOCKED_FILTER_PATHS = [
     '/commulingo/people?', '/commulingo/people/cards?', '/commulingo/people/list/',
     '/commulingo/people/citizenship/', '/commulingo/people/national-origin/',
