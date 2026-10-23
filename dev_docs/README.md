@@ -17,6 +17,7 @@
 | CommuLingo 2차 세계대전 사건 3편(쿠르스크·미드웨이·북아프리카) | [적용 기록·인물 18명·용어 7개·구조화 기간 적용기](commulingo-wwii-battles-20261013.md) |
 | CommuLingo 문헌 큐(1차 사료 완역 게재) | [2026-10-07 처리 결과: 게재 32편·제외 사유·소유자 결정·후속 후보](commulingo-queue-docs-20261007/PLAN.md) |
 | CommuLingo 공산주의 갈래 계보도·사조 용어 | [계보도 구성·새 용어 6개·공산주의 모음 분할](commulingo-communist-currents-20261008.md) |
+| CommuLingo 정치적 입장 이름·용어 연결 | [입장 이름 규칙·소속 조정·용어 20개·term_ids](commulingo-position-terms-20261023.md) |
 | CommuLingo 직책 계보·정치국/서기국/조직국 명부 | [구조·적용 스크립트·출처 판단](commulingo-office-lineages-20261006.md) |
 | CommuLingo 관리자 MCP·leninbot 연동 경계 | [설계·단계·등록](commulingo-admin-mcp.md) |
 | CommuLingo 보강 파이프라인(frontend 주관·leninbot 일꾼) | [설계·일꾼 API·단계](commulingo-agent-pipeline.md) |
