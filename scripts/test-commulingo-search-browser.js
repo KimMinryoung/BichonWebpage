@@ -220,7 +220,7 @@ const assert = require('node:assert/strict');
         // Filter options carry no crawlable combination URL.
         assert.equal(await page.locator('.commu-people-facet a[href*="?"]').count(), 0);
         // So do the order and view tools, which still swap the results.
-        assert.equal(await page.locator('.commu-people-results-tools a').count(), 0);
+        assert.equal(await page.locator('.commu-people-results-tools a, .commu-people-conditions a').count(), 0);
         await page.locator('.commu-people-results-tools .commu-people-tool[data-query*="sort=name"]').click();
         await page.waitForFunction(() => /sort=name/.test(location.search) && /function=/.test(location.search));
         assert.equal(await page.locator('.commu-people-tool[data-query*="sort=name"]').getAttribute('aria-pressed'), 'true');

@@ -132,11 +132,13 @@
             </div>
 
             <% if (explore.conditions.length) { %>
+            <%# Buttons too: a removal link carried the order and view along, so
+                crawlers still fanned each known combination out into its parents. %>
             <div class="commu-people-conditions">
                 <% explore.conditions.forEach(function(c) { %>
-                <a class="commu-people-condition" href="<%= c.href %>" aria-label="<%= (en ? 'Remove ' : '조건 해제: ') + c.label %>"><%= c.label %><%- roleIconSvg('x') %></a>
+                <button type="button" class="commu-people-condition" data-query="<%= c.href.split('?')[1] || '' %>" aria-label="<%= (en ? 'Remove ' : '조건 해제: ') + c.label %>"><%= c.label %><%- roleIconSvg('x') %></button>
                 <% }) %>
-                <% if (explore.conditions.length > 1) { %><a class="commu-people-condition-reset" href="/commulingo/people"><%= en ? 'Clear all' : '모두 해제' %></a><% } %>
+                <% if (explore.conditions.length > 1) { %><button type="button" class="commu-people-condition-reset" data-query=""><%= en ? 'Clear all' : '모두 해제' %></button><% } %>
             </div>
             <% } %>
 
