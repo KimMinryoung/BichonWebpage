@@ -520,6 +520,7 @@ const ko = {
             backgroundPeople: '이 나라를 출신 배경으로 둔 인물',
             relatedEvents: '직접 연루된 역사 사건',
             lineage: '국가 변천',
+            offices: '직책 계보',
             lineageMore: '{n}건 더 보기',
             lineageLess: '접기',
             // {x} is where the counterpart flags go; keys are kind.role, role
@@ -550,8 +551,8 @@ const ko = {
         },
         office: {
             people: '인물 사전',
-            lineages: '소련 직책 계보',
-            lineagesEntry: '당·국가 직책의 역대 재임자와 중앙위원회 구성표',
+            lineages: '직책 계보',
+            lineagesEntry: '소련 당·국가 직책과 중앙위원회 구성표, 각국 지도자의 역대 재임자',
             sections: {
                 rosters: '중앙위원회 구성표',
                 party: '당 지도부와 이념',
@@ -559,7 +560,7 @@ const ko = {
                 economy: '경제 · 과학',
                 international: '대외 관계',
             },
-            lineagesIntro: '소련 당·국가의 정식 직책을 누가 언제 맡았는지 정리한 계보.',
+            lineagesIntro: '소련과 각국의 당·국가 정식 직책을 누가 언제 맡았는지 정리한 계보.',
             rosters: '구성원 명부',
             organizationalLineage: '조직 변천',
             leadershipTimeline: '역대 재임자',
@@ -1209,6 +1210,7 @@ const en = {
             backgroundPeople: 'People by national background',
             relatedEvents: 'Directly involved historical events',
             lineage: 'State changes',
+            offices: 'Office lineages',
             lineageMore: 'Show {n} more',
             lineageLess: 'Show less',
             lineageEvents: {
@@ -1236,8 +1238,8 @@ const en = {
         },
         office: {
             people: 'People',
-            lineages: 'Soviet offices',
-            lineagesEntry: 'Who held the party and state posts, and the Central Committee rosters',
+            lineages: 'Office lineages',
+            lineagesEntry: 'Soviet party and state posts, the Central Committee rosters, and who led other countries',
             sections: {
                 rosters: 'Central Committee rosters',
                 party: 'Party leadership and ideology',
@@ -1245,7 +1247,7 @@ const en = {
                 economy: 'Economy and science',
                 international: 'Foreign relations',
             },
-            lineagesIntro: 'Who held the formal posts of the Soviet party and state, and when.',
+            lineagesIntro: 'Who held the formal party and state posts of the Soviet Union and other countries, and when.',
             rosters: 'Membership rosters',
             organizationalLineage: 'Organizational Lineage',
             leadershipTimeline: 'Office holders',

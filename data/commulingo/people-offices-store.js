@@ -14,12 +14,13 @@ const { withTransaction, writeRevision } = require('./admin-tx');
 
 async function listOfficesAdmin() {
     const { rows } = await db.query(
-        `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon
+        `SELECT id, country, range_label, title_ko, title_en, blurb_ko, blurb_en, icon
          FROM commulingo_offices
          ORDER BY sort_order, id`
     );
     return rows.map(row => ({
         id: row.id,
+        country: row.country,
         range: row.range_label || '',
         title: t(row.title_ko, row.title_en),
         blurb: t(row.blurb_ko, row.blurb_en),
@@ -31,7 +32,7 @@ async function getOfficeAdmin(officeId, options = {}) {
     const id = requireId(officeId, 'office id');
     const client = options.client || db;
     const officeResult = await client.query(
-        `SELECT id, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, tracks
+        `SELECT id, country, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, tracks
          FROM commulingo_offices
          WHERE id = $1`,
         [id]
@@ -48,6 +49,7 @@ async function getOfficeAdmin(officeId, options = {}) {
     const officeRow = officeResult.rows[0];
     return {
         id: officeRow.id,
+        country: officeRow.country,
         range: officeRow.range_label || '',
         title: t(officeRow.title_ko, officeRow.title_en),
         blurb: t(officeRow.blurb_ko, officeRow.blurb_en),

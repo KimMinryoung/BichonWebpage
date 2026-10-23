@@ -41,3 +41,7 @@ ru.wikipedia 목록·인물 정보상자, knowbysight.info(Справочник 
 - 용어 페이지는 그 용어를 가리키는 명부·직책을 「직책 계보 · 명부」로 거꾸로 모아 보인다. 명부 3종과 당 최고 지도자·서기국·이념 직책이 모두 `central-committee-of-the-cpsu`를 가리키므로, 직책 계보에 따로 '중앙위원회' 페이지를 두지 않고 중앙위원회 용어 페이지를 허브로 쓴다. `/commulingo/offices`의 「중앙위원회 구성표」 아래에도 이 용어 칩을 둔다.
 - 연결 고치기: `UPDATE commulingo_offices SET term_ids = ARRAY[...]`(배포 불필요, 인물 스냅샷 갱신 ~60초). 존재하지 않는 용어 id는 `check-commulingo-code-db-drift.js`가 잡는다.
 - 서기국·조직국·서기장 용어(`secretariat-of-the-cpsu-central-committee`, `orgburo-of-the-cpsu-central-committee`, `general-secretary-of-the-cpsu`)는 같은 날 등록했다(`scripts/content/cc-bodies-20261009-terms.json`, 링크 승인 `scripts/reviews/commulingo-links-20261009-cc-bodies.json`).
+
+## 나라 칸 · 프랑스 계보 (2026-10-23)
+- `commulingo_offices.country`(마이그레이션 371, 기본값 `soviet`)는 그 직책이 속한 나라의 국기·지리 코드(`country-geography.js`)다. `/commulingo/offices`(제목 「직책 계보」)는 나라별 묶음으로 나뉘는데, 소련이 먼저 오고 나머지는 이름순이다. 소련 묶음 안에서만 중앙위원회 구성표와 분야(`section`) 소제목을 쓴다. 국가 페이지(`/commulingo/countries/<code>`)는 같은 코드의 직책을 「직책 계보」 칸으로 보인다. 직책 페이지 제목은 「<직책> — <나라> 직책 계보」다. **새 나라 직책을 넣을 때 `country`를 지정하고**, `people-standard.js`의 `ROLE_OFFICE_TITLES`·`OFFICE_DISPLAY_ORDER`·`OFFICE_ICON`에도 넣는다(drift 검사).
+- `france-leadership`(프랑스 국가원수 · 정부 수반, 1789–)은 정체마다 묶음 하나를 두고, 묶음 안에서 국가원수 행과 정부 수반 행을 시작일 순으로 섞는다. 계보 파일은 `scripts/content/office-lineages-20261023/france-leadership.json`이다.

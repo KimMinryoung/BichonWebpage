@@ -45,6 +45,24 @@
         </section>
         <% } %>
 
+        <% if (country.offices.length) { %>
+        <section class="commu-hub-section commu-office-index" aria-labelledby="country-offices">
+            <h2 id="country-offices" class="commu-country-section-head"><span><%= copy.offices %></span></h2>
+            <div class="commu-office-grid">
+            <% country.offices.forEach(function(office) { %>
+                <a class="commu-office-card commu-office-entry" href="/commulingo/offices/<%= encodeURIComponent(office.id) %>">
+                    <span class="commu-office-entry-copy">
+                        <span class="commu-office-range"><%= office.range %></span>
+                        <h3><%= office.title %></h3>
+                        <span class="commu-office-entry-description"><%= office.blurb %></span>
+                    </span>
+                    <span class="commu-office-entry-arrow" aria-hidden="true">→</span>
+                </a>
+            <% }) %>
+            </div>
+        </section>
+        <% } %>
+
         <nav class="commu-country-sections" aria-label="<%= copy.sectionNav %>">
             <a href="#country-events"><span><%= copy.events %></span><strong><%= country.eventCount %></strong></a>
             <a href="#country-organizations"><span><%= copy.organizations %></span><strong><%= orgCount %></strong></a>

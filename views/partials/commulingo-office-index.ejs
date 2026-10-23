@@ -1,16 +1,24 @@
-<%# The office index: the Central Committee rosters, then the lineage pages
-    grouped by commulingo_offices.section in the order of `sections`.
+<%# The office index, one block per country (commulingo_offices.country,
+    Soviet first): the Soviet block holds the Central Committee rosters, then
+    its lineage pages grouped by commulingo_offices.section in the order of
+    `sections`; any other country lists its lineages in one grid.
     Locals: bodies (availableBodies), offices (standardized offices, in
-    sort_order), sectionTitles (strings.commuLingoViews.office.sections),
-    rosterGlossary (glossary links under the rosters heading, optional).
+    sort_order), countries ([{code, label}] in display order), sectionTitles
+    (strings.commuLingoViews.office.sections), rosterGlossary (glossary links
+    under the rosters heading, optional).
     Without sectionTitles (an office page's own rosters) the grid stands alone. %>
 <% var sectionTitles = locals.sectionTitles;
    var sections = ['party', 'state', 'economy', 'international'];
+   var heading = 'h3';
+   function officeCard(office) {
+        card('/commulingo/offices/' + office.id, office.title, office.range,
+            office.tracks.filter(function(track) { return track.title; }).map(function(track) { return track.title; }).join(' · ') || office.blurb);
+   }
    function card(href, title, range, text) { %>
         <a class="commu-office-card commu-office-entry" href="<%= href %>">
             <span class="commu-office-entry-copy">
                 <span class="commu-office-range"><%= range %></span>
-                <h3><%= title %></h3>
+                <<%= heading %>><%= title %></<%= heading %>>
                 <% if (text) { %><span class="commu-office-entry-description"><%= text %></span><% } %>
             </span>
             <span class="commu-office-entry-arrow" aria-hidden="true">→</span>
@@ -21,9 +29,19 @@
 <% bodies.forEach(function(body) { card(body.href, body.title, body.range, body.description); }) %>
 </div>
 <% } else { %>
+<% countries.forEach(function(country) {
+    var own = offices.filter(function(office) { return office.country === country.code; });
+    var soviet = country.code === 'soviet';
+    if (!own.length && !(soviet && bodies.length)) return;
+    heading = soviet ? 'h4' : 'h3'; %>
+<section class="commu-office-country" aria-labelledby="office-country-<%= country.code %>">
+    <h2 id="office-country-<%= country.code %>" class="commu-office-country-head"><%- flagImg(country.code, country.label) %><span><%= country.label %></span></h2>
+<% if (!soviet) { %>
+    <div class="commu-office-grid"><% own.forEach(officeCard) %></div>
+<% } else { %>
 <% if (bodies.length) { %>
 <section class="commu-office-section" aria-labelledby="office-section-rosters">
-    <h2 id="office-section-rosters"><%= sectionTitles.rosters %></h2>
+    <h3 id="office-section-rosters"><%= sectionTitles.rosters %></h3>
     <%- include('commulingo-glossary-chips', { links: locals.rosterGlossary || [], className: 'commu-office-section-glossary' }) %>
     <div class="commu-office-grid">
     <% bodies.forEach(function(body) { card(body.href, body.title, body.range, ''); }) %>
@@ -31,18 +49,16 @@
 </section>
 <% } %>
 <% sections.concat(['other']).forEach(function(section) {
-    var items = offices.filter(function(office) {
+    var items = own.filter(function(office) {
         return section === 'other' ? sections.indexOf(office.section) === -1 : office.section === section;
     });
     if (!items.length) return; %>
 <section class="commu-office-section" aria-labelledby="office-section-<%= section %>">
-    <h2 id="office-section-<%= section %>"><%= sectionTitles[section] || '' %></h2>
-    <div class="commu-office-grid">
-    <% items.forEach(function(office) {
-        card('/commulingo/offices/' + office.id, office.title, office.range,
-            office.tracks.filter(function(track) { return track.title; }).map(function(track) { return track.title; }).join(' · ') || office.blurb);
-    }) %>
-    </div>
+    <h3 id="office-section-<%= section %>"><%= sectionTitles[section] || '' %></h3>
+    <div class="commu-office-grid"><% items.forEach(officeCard) %></div>
+</section>
+<% }) %>
+<% } %>
 </section>
 <% }) %>
 <% } %>

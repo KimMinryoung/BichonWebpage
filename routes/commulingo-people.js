@@ -15,7 +15,7 @@ const { bodyCareersFor, availableBodies } = require('../data/commulingo/politbur
 const { glossaryLinksFor } = require('../data/commulingo/office-term-links');
 const { CENTRAL_COMMITTEE_TERM_ID } = require('../data/commulingo/party-bodies');
 const { otherNames } = require('../data/commulingo/person-other-names');
-const { hasFlag } = require('../data/commulingo/flag-icons');
+const { hasFlag, flagLabel } = require('../data/commulingo/flag-icons');
 const { getReportsForPerson, getReportsForTopic } = require('../services/report-mentions');
 const { loadStandardizedPeople, peopleShellFor } = require('../data/commulingo/people-view');
 
@@ -135,17 +135,23 @@ router.get('/people/list/:groupId', async (req, res) => {
     }
 });
 
-// The office index: Central Committee rosters, then the office lineage pages
-// in commulingo_offices.sort_order (chronological), not the person-list order.
+// The office index: one block per country, Soviet first (Central Committee
+// rosters, then its lineage pages), the rest by name; inside a country the
+// lineages keep commulingo_offices.sort_order (chronological), not the
+// person-list order.
 router.get('/offices', async (req, res) => {
     try {
         const { lang, standardized } = await loadStandardizedPeople(res.locals.lang);
         const order = new Map(standardized.officeOrder.map((id, index) => [id, index]));
         const offices = [...standardized.offices].sort((a, b) => (order.get(a.id) ?? 999) - (order.get(b.id) ?? 999));
-        const title = lang === 'en' ? 'Soviet offices' : '소련 직책 계보';
+        const countries = [...new Set(['soviet', ...offices.map(office => office.country)])]
+            .map(code => ({ code, label: flagLabel(code, lang) || code }))
+            .sort((a, b) => (a.code === 'soviet' ? -1 : b.code === 'soviet' ? 1 : a.label.localeCompare(b.label, lang)));
+        const title = res.locals.strings.commuLingoViews.office.lineages;
         setShortPublicCache(res);
         res.render('public/commulingo-offices', {
             offices,
+            countries,
             bodies: availableBodies(lang),
             rosterGlossary: await glossaryLinksFor([CENTRAL_COMMITTEE_TERM_ID], lang),
             roleIconSvg,
@@ -156,7 +162,7 @@ router.get('/offices', async (req, res) => {
         });
     } catch (err) {
         console.error('commulingo office index:', err);
-        commuLingoLoadError(res, { message: { ko: '소련 직책 계보를 불러올 수 없습니다.', en: 'Failed to load the office index.' } });
+        commuLingoLoadError(res, { message: { ko: '직책 계보를 불러올 수 없습니다.', en: 'Failed to load the office index.' } });
     }
 });
 
@@ -192,11 +198,13 @@ router.get('/offices/:officeId', async (req, res) => {
             rosters: availableBodies(lang).filter(body => body.officeId === office.id),
             relatedReports,
             roleIconSvg,
-            pageTitle: lang === 'en' ? `${office.title} — Soviet offices` : `${office.title} — 소련 직책 계보`,
+            pageTitle: lang === 'en'
+                ? `${office.title} — ${flagLabel(office.country, lang)} offices`
+                : `${office.title} — ${flagLabel(office.country, lang)} 직책 계보`,
             pageDescription: office.blurb,
             pagePath: `/commulingo/offices/${office.id}`,
             jsonLd: commuLingoBreadcrumb(lang, [
-                { name: lang === 'en' ? 'Soviet offices' : '소련 직책 계보', href: '/commulingo/offices' },
+                { name: res.locals.strings.commuLingoViews.office.lineages, href: '/commulingo/offices' },
                 { name: office.title, href: `/commulingo/offices/${office.id}` },
             ]),
         });

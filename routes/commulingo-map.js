@@ -92,6 +92,7 @@ router.get('/countries/:code', async (req, res) => {
             originPreview: people.origin.slice(0, PREVIEW_LIMIT),
             events: relatedEvents,
             lineage: lineageFor(code, lang),
+            offices: standardized.offices.filter(office => office.country === code),
             affiliations: affiliationsFor(standardized.people, code, lang),
         };
         setShortPublicCache(res);

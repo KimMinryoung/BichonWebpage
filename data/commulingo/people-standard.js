@@ -39,6 +39,7 @@ const OFFICE_DISPLAY_ORDER = [
     'agriculture',
     'science-nuclear-space',
     'comintern',
+    'france-leadership',
 ];
 
 // FALLBACK ONLY — the office title a card shows comes from commulingo_offices
@@ -65,6 +66,7 @@ const ROLE_OFFICE_TITLES = {
     agriculture: { ko: '농업', en: 'Agriculture' },
     'science-nuclear-space': { ko: '과학 · 원자력 · 우주 개발', en: 'Science, nuclear and space development' },
     comintern: { ko: '코민테른', en: 'Comintern' },
+    'france-leadership': { ko: '프랑스 국가원수 · 정부 수반', en: 'Heads of state and government of France' },
 };
 
 // OFFICE_ICON seeds commulingo_offices.icon and is the last-resort icon
@@ -90,6 +92,7 @@ const OFFICE_ICON = {
     'central-planning': 'chart',
     'economic-management': 'coins',
     comintern: 'globe',
+    'france-leadership': 'landmark',
 };
 
 function composePersonName(name, patronymic) {
@@ -352,6 +355,7 @@ function normalizeCommuLingoPeople(data, options = {}) {
         schemaVersion: SCHEMA_VERSION,
         id: office.id,
         section: office.section || 'state',
+        country: office.country || 'soviet',
         icon: office.icon || OFFICE_ICON[office.id] || 'circle-help',
         title: localize(office.title, lang),
         titleI18n: office.title || {},
