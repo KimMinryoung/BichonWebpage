@@ -2438,10 +2438,10 @@ module.exports = {
           {
             "title": "푸코의 반론: 억압 가설을 의심하다",
             "items": [
-              "미셸 푸코는 『지식의 의지』 제1부 「우리 빅토리아인들」에서 17세기 이후 성이 억압되어 왔다는 통념을 ‘억압 가설’이라 부르고 세 가지를 의심합니다. 성 억압이 역사적 사실인가, 권력은 본질적으로 금지와 검열의 형태로 작동하는가, 억압을 비판하는 담론은 억압과 단절했는가 아니면 같은 역사적 그물에 속하는가입니다. 그는 같은 대목에서 프로이트의 순응주의와 함께 “라이히의 큰 격정 아래 숨은 소심함”을 고발하는 흔한 논조를 예로 듭니다.",
+              "미셸 푸코는 『지식의 의지』 제1부 「우리, 빅토리아 여왕 시대풍의 사람들」에서 17세기 이후 성이 억압되어 왔다는 통념을 ‘억압 가설’이라 부르고 세 가지를 의심합니다. 성 억압이 역사적 사실인가, 권력은 본질적으로 금지와 검열의 형태로 작동하는가, 억압을 비판하는 담론은 억압과 단절했는가 아니면 같은 역사적 그물에 속하는가입니다. 그는 같은 대목에서 프로이트의 순응주의와 함께 “라이히의 큰 격정 아래 숨은 소심함”을 고발하는 흔한 논조를 예로 듭니다.",
               "제2부 「억압 가설」에서는 16세기 말 이후 성의 ‘담론화’가 제한되기는커녕 점점 더 부추겨졌고, 권력과 쾌락은 서로를 없애지 않고 맞물려 증식했다고 봅니다. 제4부에서는 권력 관계가 금지만 하는 상부구조가 아니라 직접 생산하는 역할을 한다고 하고, “권력이 있는 곳에 저항이 있다”고 쓰면서도 권력 바깥의 ‘거대한 거부’의 자리는 없다고 합니다.",
-              "제4부 끝 「시기 구분」에서 푸코는 양차 대전 사이 “라이히를 중심으로” 성 억압에 대한 역사적·정치적 비판이 형성되었고 그 가치와 실제 효과가 컸다고 인정합니다. 그러나 라이히가 붙인 정치적 조건이 하나도 실현되지 않은 채 성 행동이 크게 바뀐 사실은, 그 ‘반억압 투쟁’이 성 장치 안의 전술적 이동이었음을 보여 준다고 했습니다.",
-              "제5부에서 그는 “성에 예라고 말하면 권력에 아니라고 말하는 것”이라 믿지 말라고 하고, 성 장치에 맞서는 반격의 거점은 ‘성-욕망’이 아니라 ‘몸과 쾌락’이어야 한다는 문장으로 결론을 맺습니다. 이 책은 8~12편에서 부별로 자세히 읽습니다."
+              "제4부 끝 「시대 구분」에서 푸코는 양차 대전 사이 “라이히를 중심으로” 성 억압에 대한 역사적·정치적 비판이 형성되었고 그 가치와 실제 효과가 컸다고 인정합니다. 그러나 라이히가 붙인 정치적 조건이 하나도 실현되지 않은 채 성 행동이 크게 바뀐 사실은, 그 ‘반억압 투쟁’이 성생활의 장치 안의 전술적 이동이었음을 보여 준다고 했습니다.",
+              "제5부에서 그는 “성에 예라고 말하면 권력에 아니라고 말하는 것”이라 믿지 말라고 하고, 성생활의 장치에 맞서는 반격의 거점은 ‘성-욕망’이 아니라 ‘육체와 쾌락’이어야 한다는 문장으로 결론을 맺습니다. 이 책은 8~12편에서 부별로 자세히 읽습니다."
             ]
           },
           {
@@ -2514,7 +2514,7 @@ module.exports = {
           },
           {
             "title": "억압 가설 비판",
-            "text": "푸코는 억압을 고발하는 담론 자체가 성 장치 안에서 움직인다고 봤습니다."
+            "text": "푸코는 억압을 고발하는 담론 자체가 성생활의 장치 안에서 움직인다고 봤습니다."
           }
         ],
         "en": [
@@ -3157,7 +3157,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "버틀러는 성의 사회적 규제를 비판하고 바꾸려는 운동이 왜 정치경제의 작동에 중심적이지 않다고 여겨지느냐고 묻습니다. 그리고 그것이 유물론 기획의 중심이라는 점은 1970~80년대 사회주의 페미니스트들과 마르크스주의·정신분석의 결합을 꾀한 사람들이 날카롭게 지적했고, 생산양식이 사회적 결합 형태를 포함해야 한다고 본 마르크스와 엥겔스에게서 이미 시작되었다고 씁니다. 엥겔스 서문의 ‘직접적 생활의 생산과 재생산은 두 가지’라는 대목이 그 근거입니다. 버틀러에 따르면 그 시기 페미니즘은 가족을 생산양식의 일부로 보았을 뿐 아니라, 젠더의 생산 자체가 이성애 규범적 가족을 재생산하는 규범에 따른 ‘인간 자신의 생산’임을 보이려 했습니다. 엥겔스 자신은 이 구분으로 혈연이 지배하는 사회에서 국가로 가는 과정을 설명했는데, 버틀러도 각주에서 이 이어지는 서술을 짚고 푸코의 ‘결연 장치’와 ‘섹슈얼리티 장치’ 논의와 견줍니다.",
+                "ko": "버틀러는 성의 사회적 규제를 비판하고 바꾸려는 운동이 왜 정치경제의 작동에 중심적이지 않다고 여겨지느냐고 묻습니다. 그리고 그것이 유물론 기획의 중심이라는 점은 1970~80년대 사회주의 페미니스트들과 마르크스주의·정신분석의 결합을 꾀한 사람들이 날카롭게 지적했고, 생산양식이 사회적 결합 형태를 포함해야 한다고 본 마르크스와 엥겔스에게서 이미 시작되었다고 씁니다. 엥겔스 서문의 ‘직접적 생활의 생산과 재생산은 두 가지’라는 대목이 그 근거입니다. 버틀러에 따르면 그 시기 페미니즘은 가족을 생산양식의 일부로 보았을 뿐 아니라, 젠더의 생산 자체가 이성애 규범적 가족을 재생산하는 규범에 따른 ‘인간 자신의 생산’임을 보이려 했습니다. 엥겔스 자신은 이 구분으로 혈연이 지배하는 사회에서 국가로 가는 과정을 설명했는데, 버틀러도 각주에서 이 이어지는 서술을 짚고 푸코의 ‘혼인관계의 장치’와 ‘성생활의 장치’ 논의와 견줍니다.",
                 "en": "Butler asks why a movement to criticize and transform the social regulation of sexuality should not be understood as central to the functioning of political economy. That this is central to the materialist project, Butler writes, was the trenchant point of socialist feminists and of those seeking to join Marxism and psychoanalysis in the 1970s and 1980s, and it was inaugurated by Marx and Engels's insistence that the 'mode of production' include forms of social association. Engels's preface, with its twofold production and reproduction of immediate life, is the warrant. Feminists of that period, Butler says, sought not only to identify the family as part of the mode of production but to show that the very production of gender was part of the 'production of human beings themselves', according to norms that reproduced the heterosexually normative family. Engels himself used the distinction to explain the passage from kinship-dominated societies to the state, a continuation Butler notes in a footnote and compares with Foucault's 'system of alliance' and 'sexuality'."
               },
               "source": {
@@ -3367,11 +3367,11 @@ module.exports = {
       },
       "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
       "summary": {
-        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976) 제1부 「우리 빅토리아인들」(9~22쪽)을 순서대로 읽습니다. 17세기 이후 성이 억압되어 왔다는 통념이 어떤 이야기인지, 그 이야기가 왜 그렇게 설득력 있게 들리는지, 푸코가 여기에 던지는 세 가지 의심과 책 전체의 질문이 무엇인지 확인합니다.",
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976) 제1부 「우리, 빅토리아 여왕 시대풍의 사람들」(9~22쪽)을 순서대로 읽습니다. 17세기 이후 성이 억압되어 왔다는 통념이 어떤 이야기인지, 그 이야기가 왜 그렇게 설득력 있게 들리는지, 푸코가 여기에 던지는 세 가지 의심과 책 전체의 질문이 무엇인지 확인합니다.",
         "en": "About 12 minutes · Read part 1 of Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976), 'We Other Victorians' (pp. 9-22), in order. See what story the received view tells about sex being repressed since the seventeenth century, why that story sounds so convincing, and what three doubts and what overall question Foucault sets against it."
       },
       "learningFocus": {
-        "ko": "제1부는 흔히 ‘푸코는 성 억압이 없었다고 했다’로 요약되지만, 푸코는 금지와 검열이 있었다는 사실을 부정하지 않습니다. 그가 문제 삼는 것은 금지를 근대 성의 역사를 쓰는 기본 원리로 삼는 일, 그리고 억압을 고발하는 말이 왜 그토록 매력적인가입니다. 억압 가설은 자본주의의 노동력 착취와 손쉽게 이어지고, 말하는 사람을 권력 바깥의 예언자처럼 세워 줍니다. 제1부는 결론이 아니라 질문을 세우는 서론입니다. 우리는 왜 억압당했다고 그토록 말하는가, 성에 관해 말하게 하는 권력과 앎과 쾌락의 체제는 어떻게 움직이는가를 묻습니다.",
+        "ko": "제1부는 흔히 ‘푸코는 성 억압이 없었다고 했다’로 요약되지만, 푸코는 금지와 검열이 있었다는 사실을 부정하지 않습니다. 그가 문제 삼는 것은 금지를 근대 성의 역사를 쓰는 기본 원리로 삼는 일, 그리고 억압을 고발하는 말이 왜 그토록 매력적인가입니다. 억압 가설은 자본주의의 노동력 착취와 손쉽게 이어지고, 말하는 사람을 권력 바깥의 예언자처럼 세워 줍니다. 제1부는 결론이 아니라 질문을 세우는 서론입니다. 우리는 왜 억압당했다고 그토록 말하는가, 성에 관해 말하게 하는 권력과 지식과 쾌락의 체제는 어떻게 움직이는가를 묻습니다.",
         "en": "Part 1 is often summed up as 'Foucault said there was no sexual repression', yet Foucault does not deny that prohibitions and censorship existed. What he questions is making prohibition the basic principle for writing the modern history of sex, and why the discourse that denounces repression is so attractive. The repressive hypothesis links easily to the capitalist exploitation of labour power, and it casts the speaker as a prophet standing outside power. Part 1 is an introduction that sets up questions rather than conclusions: why do we say so insistently that we are repressed, and how does the regime of power, knowledge and pleasure that makes us speak about sex actually work?"
       },
       "conceptBrief": {
@@ -3400,13 +3400,13 @@ module.exports = {
               "푸코가 세우는 질문은 우리는 왜 억압당하는가가 아니라, 우리는 왜 가까운 과거와 현재와 우리 자신에게 그토록 열을 내며 억압당했다고 말하는가입니다. 성을 숨긴다고 노골적으로 말하고, 성을 죄로 만들었다는 역사적 죄책감에 스스로를 몰아넣는 사회를 묻는 것입니다.",
               "그는 이 통념을 억압 가설이라 부르고 세 가지를 의심합니다. 성 억압은 정말 역사적 사실인가(역사적 질문), 권력은 본질적으로 금지·검열·부인의 형태로 작동하는가(역사-이론적 질문), 억압을 비판하는 담론은 억압과 단절한 것인가 아니면 같은 역사적 그물에 속하는가(역사-정치적 질문)입니다.",
               "이 의심은 대칭적인 반대 가설이 아닙니다. 성이 실제로는 자유로웠다거나 권력이 억압보다 관용적이라고 말하려는 것이 아니고, 억압 가설이 틀렸다고 보이기보다 17세기 이후 성에 관한 담론 전체의 경제 안에 다시 놓으려는 것입니다. 그래서 물어야 할 것은 성에 예라고 하느냐 아니라고 하느냐가 아니라, 누가 어디서 어떤 제도를 통해 성을 말하게 되는가, 곧 성의 담론화(mise en discours)입니다.",
-              "푸코는 금지와 거부와 검열이 실재했음을 인정하면서, 그것들을 하나의 거대한 부정 메커니즘으로 묶지 말고 담론의 생산, 권력의 생산, 앎의 생산 안에서 국지적·전술적 역할을 하는 부품으로 보자고 합니다. 목표는 성에 관한 담론을 떠받치는 “권력-앎-쾌락 체제”를 밝히는 일이고(19쪽), 첫 개관은 16세기 말 이후 성의 담론화가 제한되기는커녕 점점 더 부추겨졌음을 보여 준다고 예고합니다."
+              "푸코는 금지와 거부와 검열이 실재했음을 인정하면서, 그것들을 하나의 거대한 부정 메커니즘으로 묶지 말고 담론의 생산, 권력의 생산, 지식의 생산 안에서 국지적·전술적 역할을 하는 부품으로 보자고 합니다. 목표는 성에 관한 담론을 떠받치는 “권력-지식-쾌락 체제”를 밝히는 일이고(19쪽), 첫 개관은 16세기 말 이후 성의 담론화가 제한되기는커녕 점점 더 부추겨졌음을 보여 준다고 예고합니다."
             ]
           },
           {
             "title": "근거 자료",
             "items": [
-              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976) 제1부 「우리 빅토리아인들」, 9~22쪽. 통념의 요약 9~12쪽, 억압 가설이 매력적인 이유 12~16쪽, 책의 질문 16~17쪽, 세 가지 의심 18~19쪽, 분석 방향 19~22쪽.",
+              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976) 제1부 「우리, 빅토리아 여왕 시대풍의 사람들」, 9~22쪽. 통념의 요약 9~12쪽, 억압 가설이 매력적인 이유 12~16쪽, 책의 질문 16~17쪽, 세 가지 의심 18~19쪽, 분석 방향 19~22쪽.",
               "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다."
             ]
           }
@@ -3549,7 +3549,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코의 『지식의 의지』 제1부 「우리 빅토리아인들」 첫머리에 요약된 성 억압의 통념에서, 매음굴과 정신 요양원은 어떤 자리로 그려질까요?",
+                "ko": "푸코의 『지식의 의지』 제1부 「우리, 빅토리아 여왕 시대풍의 사람들」 첫머리에 요약된 성 억압의 통념에서, 매음굴과 정신 요양원은 어떤 자리로 그려질까요?",
                 "en": "In the received view of sexual repression summarised at the opening of part 1 of Foucault's The Will to Knowledge, 'We Other Victorians', what place do the brothel and the mental-health clinic occupy?"
               },
               "choices": {
@@ -3585,7 +3585,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제1부 「우리 빅토리아인들」, 9~11쪽",
+                  "ko": "푸코, 『지식의 의지』 제1부 「우리, 빅토리아 여왕 시대풍의 사람들」, 9~11쪽",
                   "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 9-11"
                 }
               }
@@ -3631,7 +3631,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제1부 「우리 빅토리아인들」, 12~13쪽",
+                  "ko": "푸코, 『지식의 의지』 제1부 「우리, 빅토리아 여왕 시대풍의 사람들」, 12~13쪽",
                   "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 12-13"
                 }
               }
@@ -3677,7 +3677,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제1부 「우리 빅토리아인들」, 13~16쪽",
+                  "ko": "푸코, 『지식의 의지』 제1부 「우리, 빅토리아 여왕 시대풍의 사람들」, 13~16쪽",
                   "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 13-16"
                 }
               }
@@ -3723,7 +3723,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제1부 「우리 빅토리아인들」, 16~17쪽",
+                  "ko": "푸코, 『지식의 의지』 제1부 「우리, 빅토리아 여왕 시대풍의 사람들」, 16~17쪽",
                   "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 16-17"
                 }
               }
@@ -3769,7 +3769,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제1부 「우리 빅토리아인들」, 17~18쪽",
+                  "ko": "푸코, 『지식의 의지』 제1부 「우리, 빅토리아 여왕 시대풍의 사람들」, 17~18쪽",
                   "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 17-18"
                 }
               }
@@ -3784,7 +3784,7 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "금지가 없었다는 반대 가설이 아니라, 금지를 담론·권력·앎의 생산 안의 국지적·전술적 부품으로 보고 성을 말하게 하는 권력-앎-쾌락 체제를 밝히려 합니다.",
+                  "금지가 없었다는 반대 가설이 아니라, 금지를 담론·권력·지식의 생산 안의 국지적·전술적 부품으로 보고 성을 말하게 하는 권력-지식-쾌락 체제를 밝히려 합니다.",
                   "근대 부르주아 사회에서 성은 억압되기는커녕 늘 자유로웠다는 것을 사료로 입증해, 억압 가설과 정반대인 대칭적 가설을 세우려 합니다.",
                   "근대 권력은 억압보다 관용적이 되었고 억압 비판은 금지가 누그러지는 오랜 흐름의 한 단계일 뿐이라는 것을 보여 주려 합니다."
                 ],
@@ -3808,14 +3808,14 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "푸코는 세 의심이 대칭적 반대 가설이 아니라고 못 박습니다. 성이 실제로는 자유로웠다고도, 권력이 더 관용적이 되었다고도 말하지 않습니다. 그는 성이 고전주의 시대 이후 금지되거나 가려지지 않았다고 주장하지 않으며, 금지가 허상이라는 것이 아니라 금지를 근대 성의 역사를 쓰는 기본 요소로 삼는 것이 허상이라고 합니다. 그래서 물을 것은 성에 예냐 아니냐가 아니라 누가 어디서 어떤 제도를 통해 성을 말하게 되는가, 권력이 어떤 경로로 가장 미세한 행동과 쾌락에 이르는가, 그 생산을 떠받치는 지식의 의지가 무엇인가입니다. 목표는 “권력-앎-쾌락 체제”를 밝히는 것이고(19쪽), 첫 개관은 16세기 말 이후 성의 담론화가 오히려 부추겨졌음을 보여 준다고 예고하며 제2부로 넘어갑니다.",
+                "ko": "푸코는 세 의심이 대칭적 반대 가설이 아니라고 못 박습니다. 성이 실제로는 자유로웠다고도, 권력이 더 관용적이 되었다고도 말하지 않습니다. 그는 성이 고전주의 시대 이후 금지되거나 가려지지 않았다고 주장하지 않으며, 금지가 허상이라는 것이 아니라 금지를 근대 성의 역사를 쓰는 기본 요소로 삼는 것이 허상이라고 합니다. 그래서 물을 것은 성에 예냐 아니냐가 아니라 누가 어디서 어떤 제도를 통해 성을 말하게 되는가, 권력이 어떤 경로로 가장 미세한 행동과 쾌락에 이르는가, 그 생산을 떠받치는 지식의 의지가 무엇인가입니다. 목표는 “권력-지식-쾌락 체제”를 밝히는 것이고(19쪽), 첫 개관은 16세기 말 이후 성의 담론화가 오히려 부추겨졌음을 보여 준다고 예고하며 제2부로 넘어갑니다.",
                 "en": "Foucault insists the three doubts are not a symmetrical counter-hypothesis: he says neither that sex was in fact free nor that power has grown more tolerant. He does not claim that sex was not prohibited, masked or misrecognised since the classical age; prohibition is not an illusion, but making it the basic element for writing the modern history of sex is. So the questions are not whether sex is told yes or no, but who comes to speak of sex, where and through which institutions, by what channels power reaches the finest conduct and everyday pleasure, and what will to knowledge sustains this production. The aim is to bring out the 'regime of power-knowledge-pleasure' (p. 19), and he announces that a first survey shows the putting of sex into discourse was incited, not restricted, since the late sixteenth century, which leads into part 2."
               },
               "source": {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제1부 「우리 빅토리아인들」, 19~22쪽",
+                  "ko": "푸코, 『지식의 의지』 제1부 「우리, 빅토리아 여왕 시대풍의 사람들」, 19~22쪽",
                   "en": "Foucault, La volonté de savoir, part 1, 'Nous autres, victoriens', pp. 19-22"
                 }
               }
@@ -4223,7 +4223,7 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "마을 일상의 사소한 일이 신고·재판·의사 감정·두개골 측정으로 이어져, 처벌은 면했어도 평생 병원에 갇힌 채 의학과 앎의 대상이 된 과정을 보여 주려는 것입니다.",
+                  "마을 일상의 사소한 일이 신고·재판·의사 감정·두개골 측정으로 이어져, 처벌은 면했어도 평생 병원에 갇힌 채 의학과 지식의 대상이 된 과정을 보여 주려는 것입니다.",
                   "성에 관한 일이 법정에서 엄하게 처벌된 사례로 들어, 19세기 국가가 성 문제를 무엇보다 긴 감옥형으로 다스렸다는 억압의 증거로 삼으려는 것입니다.",
                   "정신의학이 사법을 완전히 대신한 사례로 들어, 이 사건이 판사를 한 번도 거치지 않고 처음부터 의사들 손에서만 다뤄졌다는 점을 보여 주려는 것입니다."
                 ],
@@ -4319,11 +4319,11 @@ module.exports = {
       },
       "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
       "summary": {
-        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976) 제2부 2장 「도착의 이식」(50~67쪽)을 따라 읽습니다. 결혼을 중심에 둔 옛 규범이 왜 조용해지고 아이·광인·범죄자·동성애자의 성이 왜 캐물어지기 시작했는지, 푸코가 단순한 금지와 구별한 권력의 네 작동 방식이 무엇인지, 그리고 그가 근대 사회를 왜 도착을 만들어 내고 고정한 사회라고 했는지 확인합니다.",
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976) 제2부 2장 「성적 도착의 확립」(50~67쪽)을 따라 읽습니다. 결혼을 중심에 둔 옛 규범이 왜 조용해지고 아이·광인·범죄자·동성애자의 성이 왜 캐물어지기 시작했는지, 푸코가 단순한 금지와 구별한 권력의 네 작동 방식이 무엇인지, 그리고 그가 근대 사회를 왜 도착을 만들어 내고 고정한 사회라고 했는지 확인합니다.",
         "en": "About 12 minutes · Follow part 2, chapter 2, 'L'implantation perverse' (pp. 50-67), of Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976). See why the old marriage-centred norms fell quiet while the sexuality of children, the mad, criminals and homosexuals came under questioning, which four workings of power Foucault distinguished from simple prohibition, and why he called modern society one that produced and fixed perversions."
       },
       "learningFocus": {
-        "ko": "「도착의 이식」은 ‘19세기는 이상한 성을 억눌렀다’거나 반대로 ‘푸코는 억압이 전혀 없었다고 했다’로 줄여 읽기 쉽습니다. 푸코는 형법이 누그러지고 감시가 늘어난 만큼 억압의 양으로는 판단이 애매하다고 인정하고, 중요한 것은 억압의 정도가 아니라 권력의 형태라고 말합니다. 아동 자위 단속, 동성애자를 하나의 종으로 만든 정신의학, 질문과 진찰 속에서 서로를 키우는 권력과 쾌락, 여러 성으로 포화된 가족과 학교라는 네 사례가 그 근거입니다. 도착의 증식은 위선이나 반동이 아니라 이 권력의 직접적 산물이라는 것이 결론입니다.",
+        "ko": "「성적 도착의 확립」은 ‘19세기는 이상한 성을 억눌렀다’거나 반대로 ‘푸코는 억압이 전혀 없었다고 했다’로 줄여 읽기 쉽습니다. 푸코는 형법이 누그러지고 감시가 늘어난 만큼 억압의 양으로는 판단이 애매하다고 인정하고, 중요한 것은 억압의 정도가 아니라 권력의 형태라고 말합니다. 아동 자위 단속, 동성애자를 하나의 종으로 만든 정신의학, 질문과 진찰 속에서 서로를 키우는 권력과 쾌락, 여러 성으로 포화된 가족과 학교라는 네 사례가 그 근거입니다. 도착의 증식은 위선이나 반동이 아니라 이 권력의 직접적 산물이라는 것이 결론입니다.",
         "en": "'L'implantation perverse' is easily reduced either to 'the nineteenth century suppressed deviant sex' or to 'Foucault said there was no repression at all'. Foucault grants that, judged by the amount of repression, the picture is ambiguous, since penal codes softened while surveillance grew, and says what matters is not the degree of repression but the form of power. His grounds are four cases: the campaign against children's masturbation, the psychiatry that made the homosexual a species, power and pleasure feeding each other in questioning and examination, and the family and school saturated with multiple sexualities. His conclusion is that the multiplication of perversions was neither hypocrisy nor backlash but a direct product of this power."
       },
       "conceptBrief": {
@@ -4357,13 +4357,13 @@ module.exports = {
             "items": [
               "푸코는 19세기 부르주아 사회, 아마 지금의 사회도 도착이 흩어지고 넘쳐 나는 사회라고 말합니다. 그것은 위선 때문도 아니고, 너무 엄격한 둑을 쌓다가 뜻하지 않게 도착이 터져 나온 반동 때문도 아닙니다. 이 권력은 법의 형태도 금지의 효과도 갖지 않고, 성을 쫓아내는 대신 몸 안에 개인을 분류하는 표지로 새겨 넣습니다. 그래서 근대 사회는 실제로, 그리고 직접 도착적이라고 합니다(64~65쪽).",
               "그는 노동력과 가족 형태를 재생산하는 성에만 규제 역할을 맡기려다 다른 행동들에 나쁜 이름이 붙었다는 설명을 받아들이지 않습니다. 도착들은 권력의 여러 장치를 통해 실제로 몸에서 끌려 나와 고정되었고, 의학·정신의학·성매매·포르노그래피를 거친 경제적 이윤이 이 연쇄를 이어 주었다는 것입니다. 결론은 근대 산업사회가 성 억압이 커진 시대를 열었다는 가설을 버려야 한다는 것입니다. 다만 그는 이 장치가 국지적으로는 금지 절차에 기대기도 한다고 덧붙입니다(65~67쪽).",
-              "이 장의 사례들은 제4부에서 섹슈얼리티 장치(성 장치)의 네 전략, 곧 아동 성의 교육화와 도착적 쾌락의 정신의학화로 다시 정리됩니다."
+              "이 장의 사례들은 제4부에서 성생활의 장치의 네 전략, 곧 아동 성의 교육화와 도착적 쾌락의 정신의학화로 다시 정리됩니다."
             ]
           },
           {
             "title": "근거 자료",
             "items": [
-              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976) 제2부 「억압 가설」 2장 「도착의 이식」, 50~67쪽. 출발 반론 50~51쪽, 세 법전과 그 변화 51~57쪽, 네 작동 57~64쪽, 결론 64~67쪽.",
+              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976) 제2부 「억압 가설」 2장 「성적 도착의 확립」, 50~67쪽. 출발 반론 50~51쪽, 세 법전과 그 변화 51~57쪽, 네 작동 57~64쪽, 결론 64~67쪽.",
               "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다."
             ]
           }
@@ -4426,7 +4426,7 @@ module.exports = {
           },
           {
             "title": "만들어진 도착",
-            "text": "도착의 증식은 위선이나 반동이 아니라 몸과 쾌락에 개입한 권력이 직접 낳은 결과였습니다."
+            "text": "도착의 증식은 위선이나 반동이 아니라 육체와 쾌락에 개입한 권력이 직접 낳은 결과였습니다."
           }
         ],
         "en": [
@@ -4463,7 +4463,7 @@ module.exports = {
             ]
           },
           "right": {
-            "heading": "푸코, 「도착의 이식」(1976)",
+            "heading": "푸코, 「성적 도착의 확립」(1976)",
             "rows": [
               "권력의 형태: 다가가 진찰하고 질문하는 감시와 고백",
               "주변의 성: 이름 붙여 몸에 새기고 고정한 대상",
@@ -4502,7 +4502,7 @@ module.exports = {
           "id": "sex-gender-theory-intro-ch10-basic",
           "level": "basic",
           "title": {
-            "ko": "푸코, 「도착의 이식」: 금지가 아니라 증식",
+            "ko": "푸코, 「성적 도착의 확립」: 금지가 아니라 증식",
             "en": "Foucault, 'L'implantation perverse': multiplication, not prohibition"
           },
           "questions": [
@@ -4511,7 +4511,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 제2부 2장 「도착의 이식」에서 18세기 말까지의 성 규범과 그 뒤의 변화를 어떻게 그렸을까요?",
+                "ko": "푸코는 『지식의 의지』 제2부 2장 「성적 도착의 확립」에서 18세기 말까지의 성 규범과 그 뒤의 변화를 어떻게 그렸을까요?",
                 "en": "In part 2, chapter 2, 'L'implantation perverse', of The Will to Knowledge, how did Foucault describe the sexual norms in force until the late eighteenth century and the change that followed?"
               },
               "choices": {
@@ -4547,7 +4547,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제2부 2장 「도착의 이식」, 51~55쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 2장 「성적 도착의 확립」, 51~55쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 51-55"
                 }
               }
@@ -4557,7 +4557,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 「도착의 이식」에서 19세기에 성 범죄 처벌이 누그러지고 감시는 늘어난 사실을 두고 무엇을 문제의 핵심으로 삼았을까요?",
+                "ko": "푸코는 『지식의 의지』 「성적 도착의 확립」에서 19세기에 성 범죄 처벌이 누그러지고 감시는 늘어난 사실을 두고 무엇을 문제의 핵심으로 삼았을까요?",
                 "en": "In 'L'implantation perverse' in The Will to Knowledge, faced with the fact that punishment of sexual offences eased in the nineteenth century while surveillance grew, what did Foucault treat as the heart of the matter?"
               },
               "choices": {
@@ -4593,7 +4593,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제2부 2장 「도착의 이식」, 56~57쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 2장 「성적 도착의 확립」, 56~57쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 56-57"
                 }
               }
@@ -4603,7 +4603,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 「도착의 이식」에서 아동 자위 단속이 근친혼 금지와 어떻게 다른 권력이라고 봤을까요?",
+                "ko": "푸코는 『지식의 의지』 「성적 도착의 확립」에서 아동 자위 단속이 근친혼 금지와 어떻게 다른 권력이라고 봤을까요?",
                 "en": "In 'L'implantation perverse' in The Will to Knowledge, how did Foucault say the campaign against children's masturbation differed, as a form of power, from the prohibition of incest?"
               },
               "choices": {
@@ -4639,7 +4639,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제2부 2장 「도착의 이식」, 57~58쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 2장 「성적 도착의 확립」, 57~58쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 57-58"
                 }
               }
@@ -4649,7 +4649,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 「도착의 이식」에서 옛 법의 남색과 19세기 정신의학의 동성애자가 어떻게 다르다고 했을까요?",
+                "ko": "푸코는 『지식의 의지』 「성적 도착의 확립」에서 옛 법의 남색과 19세기 정신의학의 동성애자가 어떻게 다르다고 했을까요?",
                 "en": "In 'L'implantation perverse' in The Will to Knowledge, how did Foucault say the sodomy of the old laws differed from the homosexual of nineteenth-century psychiatry?"
               },
               "choices": {
@@ -4685,7 +4685,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제2부 2장 「도착의 이식」, 52, 59~60쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 2장 「성적 도착의 확립」, 52, 59~60쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 52, 59-60"
                 }
               }
@@ -4695,7 +4695,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 「도착의 이식」에서 의사의 진찰, 정신의학의 조사, 부모의 감시 같은 관계 속에서 권력과 쾌락이 어떻게 맞물린다고 했을까요?",
+                "ko": "푸코는 『지식의 의지』 「성적 도착의 확립」에서 의사의 진찰, 정신의학의 조사, 부모의 감시 같은 관계 속에서 권력과 쾌락이 어떻게 맞물린다고 했을까요?",
                 "en": "In 'L'implantation perverse' in The Will to Knowledge, how did Foucault say power and pleasure interlock in relations such as medical examination, psychiatric inquiry and parental watching?"
               },
               "choices": {
@@ -4731,7 +4731,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제2부 2장 「도착의 이식」, 60~62, 66~67쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 2장 「성적 도착의 확립」, 60~62, 66~67쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 60-62, 66-67"
                 }
               }
@@ -4741,7 +4741,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 「도착의 이식」 끝에서 19세기 부르주아 사회에 도착이 넘쳐 난 까닭을 어떻게 설명했을까요?",
+                "ko": "푸코는 『지식의 의지』 「성적 도착의 확립」 끝에서 19세기 부르주아 사회에 도착이 넘쳐 난 까닭을 어떻게 설명했을까요?",
                 "en": "At the end of 'L'implantation perverse' in The Will to Knowledge, how did Foucault explain why nineteenth-century bourgeois society teemed with perversions?"
               },
               "choices": {
@@ -4777,7 +4777,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제2부 2장 「도착의 이식」, 50~51, 62~67쪽",
+                  "ko": "푸코, 『지식의 의지』 제2부 2장 「성적 도착의 확립」, 50~51, 62~67쪽",
                   "en": "Foucault, La volonté de savoir, part 2, ch. 2, 'L'implantation perverse', pp. 50-51, 62-67"
                 }
               }
@@ -4796,7 +4796,7 @@ module.exports = {
       },
       "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
       "summary": {
-        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976) 제3부 「성의 과학(Scientia sexualis)」(69~98쪽)과 제4부 「섹슈얼리티 장치」의 1장 「쟁점」, 2장 「방법」(99~135쪽)을 순서대로 읽습니다. 서구가 성의 진실을 성애의 기술이 아니라 고백으로 생산해 왔다는 주장이 어떤 단계로 전개되는지, 고백을 과학으로 바꾼 다섯 절차가 무엇인지, 푸코가 왜 법과 금지로 권력을 그리는 표상을 버리고 어떤 권력 명제와 네 규칙을 세우는지 확인합니다.",
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976) 제3부 「스키엔티아 섹수알리스(Scientia sexualis)」(69~98쪽)과 제4부 「성생활의 장치」의 1장 「쟁점」, 2장 「방법」(99~135쪽)을 순서대로 읽습니다. 서구가 성의 진실을 아르스 에로티카가 아니라 고백으로 생산해 왔다는 주장이 어떤 단계로 전개되는지, 고백을 과학으로 바꾼 다섯 절차가 무엇인지, 푸코가 왜 법과 금지로 권력을 그리는 표상을 버리고 어떤 권력 명제와 네 규칙을 세우는지 확인합니다.",
         "en": "About 12 minutes · Read part 3 of Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976), 'Scientia sexualis' (pp. 69-98), and chapters 1 and 2 of part 4, 'The Deployment of Sexuality': 'Objective' and 'Method' (pp. 99-135), in order. See in what steps Foucault argues that the West produced the truth of sex through confession rather than an erotic art, what five procedures turned confession into science, and why he discards the picture of power as law and prohibition in favour of a set of propositions about power and four rules of method."
       },
       "learningFocus": {
@@ -4810,8 +4810,8 @@ module.exports = {
             "items": [
               "제3부는 반론을 먼저 세웁니다. 담론이 늘어났다고 해도 그것은 성을 가리려는 방어막이 아니었는가, 19세기 성 의학은 도착과 기벽만 다루고 도덕의 구분을 의학 규범으로 되풀이했으며, 사소한 습관에 대대로 이어질 재앙을 갖다 붙이고 곧 닥칠 국가 인종주의에 진리의 이름을 빌려주지 않았는가. 같은 시기 생식 생리학과 견주면 합리성이 현저히 낮아서, 한쪽은 지식의 의지, 다른 쪽은 알지 않으려는 의지처럼 보인다는 것입니다.",
               "푸코는 맹목과 거부가 있었음을 인정합니다. 다만 그 거부는 바로 스스로 드러내고 말하라고 다그친 것에 대한 거부였고, 오인은 진실과의 근본 관계를 바탕으로만 일어날 수 있다고 봅니다. 샤르코의 살페트리에르는 관찰 장치이자 공개 강의와 미리 준비한 발작 연출로 말을 끌어내는 선동 기계였고, 성 이야기가 너무 드러나면 강의를 끊고 공개 기록에서 지워 버렸습니다. 중요한 것은 성이 참과 거짓의 문제, 진실의 쟁점이 되었다는 점입니다.",
-              "성의 진실을 생산하는 절차는 역사적으로 둘입니다. 중국, 일본, 인도, 로마, 아랍·이슬람 사회의 성애의 기술(ars erotica)에서는 진실을 쾌락 자체의 강도, 질, 지속, 몸과 영혼에 남는 울림에서 끌어내고, 그 앎을 다시 실천에 돌려 쾌락을 키웁니다. 이 앎은 부끄러워서가 아니라 퍼지면 효력을 잃기 때문에 비밀이고, 스승이 입문 과정을 통해 제자에게 전합니다.",
-              "서구는 언뜻 보아 성애의 기술이 없고, 대신 성의 과학(scientia sexualis)을 실천하는 유일한 문명입니다. 그 중심에는 입문과 스승의 비밀과 정반대인 고백(aveu)이 있습니다. 1215년 라테란 공의회의 고해 규정, 신명재판·결투·선서 같은 판정 절차의 쇠퇴와 심문·조사 방법의 발달, 종교재판소 설치가 고백을 사법·종교 권력의 중심에 놓았습니다. 고백이라는 말도 남이 보증해 주는 신분에서 자기 행위와 생각을 스스로 인정하는 일로 뜻이 바뀌었고, 서구의 인간은 “고백하는 짐승”이 되었다고 푸코는 씁니다(80쪽)."
+              "성의 진실을 생산하는 절차는 역사적으로 둘입니다. 중국, 일본, 인도, 로마, 아랍·이슬람 사회의 아르스 에로티카에서는 진실을 쾌락 자체의 강도, 질, 지속, 몸과 영혼에 남는 울림에서 끌어내고, 그 지식을 다시 실천에 돌려 쾌락을 키웁니다. 이 지식은 부끄러워서가 아니라 퍼지면 효력을 잃기 때문에 비밀이고, 스승이 입문 과정을 통해 제자에게 전합니다.",
+              "서구는 언뜻 보아 아르스 에로티카가 없고, 대신 스키엔티아 섹수알리스를 실천하는 유일한 문명입니다. 그 중심에는 입문과 스승의 비밀과 정반대인 고백(aveu)이 있습니다. 1215년 라테란 공의회의 고해 규정, 신명재판·결투·선서 같은 판정 절차의 쇠퇴와 심문·조사 방법의 발달, 종교재판소 설치가 고백을 사법·종교 권력의 중심에 놓았습니다. 고백이라는 말도 남이 보증해 주는 신분에서 자기 행위와 생각을 스스로 인정하는 일로 뜻이 바뀌었고, 서구의 인간은 “고백하는 짐승”이 되었다고 푸코는 씁니다(80쪽)."
             ]
           },
           {
@@ -4821,13 +4821,13 @@ module.exports = {
               "고백 의례에서는 말하는 사람이 곧 진술의 주어이고, 고백을 요구하고 평가하고 심판하고 용서하는 상대가 적어도 잠재적으로 있습니다. 말은 위에서가 아니라 아래에서 강요되어 나오고, 비밀은 귀해서가 아니라 천하고 흔해서 감춰집니다. 지배하는 자리는 말하는 쪽이 아니라 침묵하며 듣고 묻는 쪽에 있고, 진실의 효과는 듣는 사람이 아니라 고백을 빼앗긴 사람에게 나타납니다.",
               "고백은 프로테스탄트 개혁, 반종교개혁, 18세기 교육학, 19세기 의학을 거치며 고해성사를 벗어나 아이와 부모, 학생과 교사, 환자와 정신과 의사, 범죄자와 감정인 사이로 퍼졌고, 행위뿐 아니라 생각, 강박, 상상, 쾌락의 질까지 캐묻게 되었습니다. 푸코는 이것이 과학이 될 수 있었던 다섯 절차를 듭니다. 말하게 하기의 임상적 코드화(고백과 진찰, 질문지, 최면, 자유연상의 결합), 성이 무엇이든 일으킬 수 있다는 일반적 인과성의 전제, 성은 당사자에게도 숨겨져 있다는 잠재성의 원리, 진실은 듣는 사람의 해독으로 완성된다는 해석의 방법, 죄 대신 정상과 병리의 틀로 옮기는 고백 효과의 의학화입니다.",
               "섹슈얼리티는 이 담론 실천의 상관물입니다. 병리 과정이 스며드는 영역, 해독할 의미의 장, 숨은 과정의 자리, 끝없는 인과 관계의 중심이라는 섹슈얼리티의 특징은 이데올로기에 흐려진 표상이 아니라 진실을 생산해야 하는 담론의 기능적 요구에서 나왔다고 합니다. 그래서 18세기 이후의 사회는, 부르주아·자본주의·산업 사회 어떤 이름으로 부르든, 성을 알기를 거부한 것이 아니라 성에 관한 참된 담론을 생산하는 장치를 가동했다는 것이 제3부의 일반 가설입니다.",
-              "그렇다고 서구에 성애의 기술이 아주 없는 것은 아닙니다. 그리스도교의 영성 지도와 반종교개혁기의 빙의·황홀경에도 그 흔적이 있고, 19세기 이후의 성의 과학도 쾌락의 진실을 알고 드러내고 털어놓는 데서 오는 새로운 쾌락을 낳았는지 모릅니다. 푸코는 그 자리가 건강한 성이나 완전한 성의 이상, 오르가슴의 서정에 있지 않다고 못 박고, 경제적 이유로 성을 억누르는 권력이라는 가설은 이 모든 증식을 설명하기에 너무 좁다고 결론짓습니다."
+              "그렇다고 서구에 아르스 에로티카가 아주 없는 것은 아닙니다. 그리스도교의 영성 지도와 반종교개혁기의 빙의·황홀경에도 그 흔적이 있고, 19세기 이후의 스키엔티아 섹수알리스도 쾌락의 진실을 알고 드러내고 털어놓는 데서 오는 새로운 쾌락을 낳았는지 모릅니다. 푸코는 그 자리가 건강한 성이나 완전한 성의 이상, 오르가슴의 서정에 있지 않다고 못 박고, 경제적 이유로 성을 억누르는 권력이라는 가설은 이 모든 증식을 설명하기에 너무 좁다고 결론짓습니다."
             ]
           },
           {
             "title": "제4부 1장 「쟁점」: 법률적-담론적 권력 표상",
             "items": [
-              "제4부 「섹슈얼리티 장치(성 장치)」는 디드로의 『입 싼 보석들』에서 성기를 말하게 하는 마법 반지를 빌려, 우리가 왜 그토록 성의 진실을 쫓는지 묻고 쟁점, 방법, 영역, 시기 구분을 차례로 제시합니다. 1장은 정신분석가들이 이미 욕망은 억압되지 않고 법이 욕망을 구성한다고 말했다는 예상 반론에서 출발합니다.",
+              "제4부 「성생활의 장치」는 디드로의 『입 싼 보석들』에서 성기를 말하게 하는 마법 반지를 빌려, 우리가 왜 그토록 성의 진실을 쫓는지 묻고 쟁점, 방법, 영역, 시대 구분을 차례로 제시합니다. 1장은 정신분석가들이 이미 욕망은 억압되지 않고 법이 욕망을 구성한다고 말했다는 예상 반론에서 출발합니다.",
               "푸코의 답은 두 이론이 충동의 본성을 달리 볼 뿐 같은 권력 표상, 곧 법률적-담론적 표상을 공유한다는 것입니다. 권력이 바깥에서 욕망을 누른다고 보면 해방을 약속하게 되고, 권력이 욕망을 구성한다고 보면 언제나 이미 갇혀 있다고 말하게 됩니다. 그가 목표로 삼는 것은 권력의 이론이 아니라 권력 관계가 이루는 영역과 그것을 분석할 도구를 정하는 분석학입니다.",
               "이 표상의 다섯 특징은 부정적 관계(권력은 성에 아니라고만 할 수 있음), 규칙의 심급(허용과 금지의 이분법, 입법자가 말하면 그것이 규칙), 금지의 순환(사라지지 않으려면 스스로 단념하라), 검열의 논리(허용되지 않는다, 말해서는 안 된다, 존재하지 않는다는 세 형태의 연쇄), 장치의 통일성(국가에서 가족까지 같은 법 형식, 그 앞의 주체는 복종하는 자)입니다. 이런 권력은 자원이 빈약하고, 아니라고 말하는 힘밖에 없으며, 모든 지배를 복종으로 환원합니다.",
               "이 표상이 쉽게 받아들여지는 까닭으로 푸코는 권력은 자기 메커니즘의 큰 부분을 가려야만 견딜 만하다는 점, 그리고 역사적으로 중세 군주정이 봉건적 권력들 위에 조정과 중재의 심급, 평화와 정의의 원리로 들어서며 법을 자기 표현 형식으로 삼았다는 점을 듭니다. 18세기의 군주정 비판도, 법 체계 자체가 소수의 지배를 위한 폭력이라는 19세기의 더 급진적 비판도 권력이 본래 법에 따라 행사되어야 한다는 전제를 공유했습니다. 그래서 정치 사상은 “아직 왕의 목을 자르지 않았다”고 합니다(117쪽).",
@@ -4838,15 +4838,15 @@ module.exports = {
             "title": "제4부 2장 「방법」: 권력 명제와 네 규칙",
             "items": [
               "푸코가 말하는 권력은 국가 기구의 총체도, 규칙 형태의 예속 방식도, 한 집단이 다른 집단에 행사하는 전반적 지배 체계도 아닙니다. 그것들은 출발점이 아니라 최종 형태입니다. 권력은 먼저 어떤 영역에 내재하는 다수의 힘 관계, 그 관계를 바꾸는 끝없는 투쟁, 그것들이 서로 기대거나 어긋나는 방식, 그리고 국가 기구나 법이나 사회적 헤게모니로 굳어지는 전략입니다. 권력이 어디에나 있는 것은 모든 것을 감싸서가 아니라 모든 곳에서 오기 때문이고, 권력은 한 사회의 복잡한 전략적 상황에 붙이는 이름입니다.",
-              "이어지는 명제는 다음과 같습니다. 권력은 소유하거나 나눠 갖는 것이 아니라 무수한 지점에서 행사됩니다. 권력 관계는 경제 과정, 앎의 관계, 성관계 바깥의 상부구조가 아니라 그 안에 내재하며 직접 생산하는 역할을 합니다. “권력은 아래에서 온다”(124쪽). 지배자와 피지배자의 이분법이 위에서 아래로 반복되는 것이 아니라 생산 기구, 가족, 제도 안의 숱한 힘 관계가 사회를 가로지르는 큰 분할선을 떠받치고, 거대한 지배는 그 대결들이 유지하는 헤게모니 효과입니다. 권력 관계는 계산과 목표가 있다는 뜻에서 의도적이지만 그것을 지휘하는 참모부는 없다는 뜻에서 비주체적입니다.",
+              "이어지는 명제는 다음과 같습니다. 권력은 소유하거나 나눠 갖는 것이 아니라 무수한 지점에서 행사됩니다. 권력 관계는 경제 과정, 지식의 관계, 성관계 바깥의 상부구조가 아니라 그 안에 내재하며 직접 생산하는 역할을 합니다. “권력은 아래에서 온다”(124쪽). 지배자와 피지배자의 이분법이 위에서 아래로 반복되는 것이 아니라 생산 기구, 가족, 제도 안의 숱한 힘 관계가 사회를 가로지르는 큰 분할선을 떠받치고, 거대한 지배는 그 대결들이 유지하는 헤게모니 효과입니다. 권력 관계는 계산과 목표가 있다는 뜻에서 의도적이지만 그것을 지휘하는 참모부는 없다는 뜻에서 비주체적입니다.",
               "권력이 있는 곳에 저항이 있고, 저항은 권력 바깥에 있지 않습니다. 그렇다고 저항이 언제나 지는 수동적 반사작용인 것은 아닙니다. 권력에 맞서는 단 하나의 거대한 거부의 자리 대신 흩어지고 움직이는 저항 지점들이 있고, 국가가 권력 관계의 제도적 통합 위에 서듯 혁명은 이 저항 지점들의 전략적 코드화로 가능해진다고 푸코는 씁니다.",
-              "성에 관해 물을 것도 달라집니다. 어떤 국가 구조가 왜 성에 관한 앎을 필요로 했는가, 그 앎이 어떤 전반적 지배에 봉사했는가가 아니라, 아이의 몸, 여성의 성, 출산 제한 같은 특정한 자리에서 어떤 국지적 권력 관계가 작동했는가를 묻습니다. 이를 위한 네 규칙은 내재성(권력이 왜곡하기 전의 순수한 성 과학은 없고 앎의 기술과 권력의 전략은 서로 바깥에 있지 않음), 연속적 변화(누가 권력을 가졌는가가 아니라 변형의 모태, 예컨대 의사가 부모에게 아이를 감시하라던 관계가 끝내 정신과 의사가 아이를 통해 어른의 성을 캐묻는 관계로 뒤집힘), 이중 조건화(국지적 전술과 전체 전략은 서로를 조건 지우며, 아버지는 군주의 대리인이 아님), 담론의 전술적 다가성(같은 담론이 권력의 도구도 저항의 출발점도 될 수 있음)입니다. 법의 모델 대신 전략의 모델을 택하자는 것이 2장의 결론입니다."
+              "성에 관해 물을 것도 달라집니다. 어떤 국가 구조가 왜 성에 관한 지식을 필요로 했는가, 그 지식이 어떤 전반적 지배에 봉사했는가가 아니라, 아이의 몸, 여성의 성, 출산 제한 같은 특정한 자리에서 어떤 국지적 권력 관계가 작동했는가를 묻습니다. 이를 위한 네 규칙은 내재성(권력이 왜곡하기 전의 순수한 성 과학은 없고 지식의 기술과 권력의 전략은 서로 바깥에 있지 않음), 연속적 변화(누가 권력을 가졌는가가 아니라 변형의 모태, 예컨대 의사가 부모에게 아이를 감시하라던 관계가 끝내 정신과 의사가 아이를 통해 어른의 성을 캐묻는 관계로 뒤집힘), 이중 조건화(국지적 전술과 전체 전략은 서로를 조건 지우며, 아버지는 군주의 대리인이 아님), 담론의 전술적 다가성(같은 담론이 권력의 도구도 저항의 출발점도 될 수 있음)입니다. 법의 모델 대신 전략의 모델을 택하자는 것이 2장의 결론입니다."
             ]
           },
           {
             "title": "근거 자료",
             "items": [
-              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976) 제3부 「성의 과학」, 69~98쪽(반론과 샤르코 71~76쪽, 두 절차 76~78쪽, 고백의 역사와 구조 78~84쪽, 확산과 다섯 절차 84~90쪽, 섹슈얼리티와 일반 가설 90~94쪽, 진실의 쾌락과 결론 94~98쪽), 제4부 서두 101~105쪽, 1장 「쟁점」 107~120쪽, 2장 「방법」 121~135쪽(권력 명제 121~127쪽, 네 규칙 129~135쪽). 쪽수는 초판 본문의 인쇄 쪽수입니다.",
+              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976) 제3부 「스키엔티아 섹수알리스」, 69~98쪽(반론과 샤르코 71~76쪽, 두 절차 76~78쪽, 고백의 역사와 구조 78~84쪽, 확산과 다섯 절차 84~90쪽, 섹슈얼리티와 일반 가설 90~94쪽, 진실의 쾌락과 결론 94~98쪽), 제4부 서두 101~105쪽, 1장 「쟁점」 107~120쪽, 2장 「방법」 121~135쪽(권력 명제 121~127쪽, 네 규칙 129~135쪽). 쪽수는 초판 본문의 인쇄 쪽수입니다.",
               "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다."
             ]
           }
@@ -4902,7 +4902,7 @@ module.exports = {
       "conceptMap": {
         "ko": [
           {
-            "title": "성애의 기술과 성의 과학",
+            "title": "아르스 에로티카와 스키엔티아 섹수알리스",
             "text": "쾌락에서 진실을 끌어내 스승이 비밀로 전하는 기술과, 고백을 중심으로 성의 진실을 캐내는 서구의 과학이 대비됩니다."
           },
           {
@@ -4942,7 +4942,7 @@ module.exports = {
         "ko": {
           "title": "성의 진실을 생산하는 두 절차",
           "left": {
-            "heading": "성애의 기술(ars erotica)",
+            "heading": "아르스 에로티카",
             "rows": [
               "진실의 원천: 쾌락 자체의 강도·질·지속·울림",
               "비밀의 이유: 퍼지면 효력과 덕을 잃기 때문",
@@ -4952,7 +4952,7 @@ module.exports = {
             ]
           },
           "right": {
-            "heading": "성의 과학(scientia sexualis)",
+            "heading": "스키엔티아 섹수알리스",
             "rows": [
               "진실의 원천: 강요된 고백과 그 해독",
               "비밀의 이유: 천하고 흔한 것이라서",
@@ -5000,14 +5000,14 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 제3부 「성의 과학」에서 성애의 기술(ars erotica)을 가진 사회와 서구를 어떻게 구별할까요?",
+                "ko": "푸코는 『지식의 의지』 제3부 「스키엔티아 섹수알리스」에서 아르스 에로티카를 가진 사회와 서구를 어떻게 구별할까요?",
                 "en": "In part 3 of The Will to Knowledge, 'Scientia sexualis', how does Foucault distinguish the societies that have an ars erotica from the West?"
               },
               "choices": {
                 "ko": [
-                  "성애의 기술은 쾌락 자체에서 진실을 끌어내 스승이 비밀리에 전하지만, 서구는 그와 정반대인 고백의 절차로 성의 진실을 생산해 왔다고 구별합니다.",
+                  "아르스 에로티카는 쾌락 자체에서 진실을 끌어내 스승이 비밀리에 전하지만, 서구는 그와 정반대인 고백의 절차로 성의 진실을 생산해 왔다고 구별합니다.",
                   "다른 문명은 성을 금기 없이 공개적으로 가르쳤고 서구만 성을 숨기고 침묵시켰으므로, 둘의 차이는 성을 말하느냐 마느냐에 있다고 구별합니다.",
-                  "성애의 기술은 미신에 머문 반면 서구는 생식 생리학이라는 중립적 과학을 세웠으므로, 둘의 차이는 비합리와 합리의 차이라고 구별합니다."
+                  "아르스 에로티카는 미신에 머문 반면 서구는 생식 생리학이라는 중립적 과학을 세웠으므로, 둘의 차이는 비합리와 합리의 차이라고 구별합니다."
                 ],
                 "en": [
                   "An ars erotica draws truth from pleasure itself and a master passes it on in secret, whereas the West has produced the truth of sex through confession, the opposite procedure.",
@@ -5018,9 +5018,9 @@ module.exports = {
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "성애의 기술에서는 쾌락의 강도·질·지속이 앎의 기준이고, 서구의 성의 과학은 입문과 스승의 비밀과 정반대인 고백을 중심에 둡니다(76~78쪽).",
-                  "성애의 기술의 앎도 비밀입니다. 그리고 서구는 침묵이 아니라 고백을 통해 성을 끝없이 말하게 한 사회로 그려집니다.",
-                  "푸코는 19세기 성 의학이 생식 생리학과 거의 교류가 없었다고 하며, 서구의 성의 과학을 중립적 생물학과 동일시하지 않습니다."
+                  "아르스 에로티카에서는 쾌락의 강도·질·지속이 지식의 기준이고, 서구의 스키엔티아 섹수알리스는 입문과 스승의 비밀과 정반대인 고백을 중심에 둡니다(76~78쪽).",
+                  "아르스 에로티카의 지식도 비밀입니다. 그리고 서구는 침묵이 아니라 고백을 통해 성을 끝없이 말하게 한 사회로 그려집니다.",
+                  "푸코는 19세기 성 의학이 생식 생리학과 거의 교류가 없었다고 하며, 서구의 스키엔티아 섹수알리스를 중립적 생물학과 동일시하지 않습니다."
                 ],
                 "en": [
                   "In an ars erotica the measure of knowledge is the intensity, quality and duration of pleasure; Western scientia sexualis centres on confession, the opposite of initiation and the master's secret (pp. 76-78).",
@@ -5029,14 +5029,14 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "푸코는 성의 진실을 생산하는 역사적 절차를 둘로 나눕니다. 중국, 일본, 인도, 로마, 아랍·이슬람 사회의 성애의 기술에서는 허용과 금지의 법이나 쓸모가 아니라 쾌락 그 자체가 기준이고, 그 앎은 실천으로 되돌아가 쾌락을 키우며, 퍼지면 효력을 잃기 때문에 스승이 입문 과정으로만 전합니다. 서구는 언뜻 보아 이런 기술이 없고, 대신 성의 과학을 실천하는 아마도 유일한 문명입니다. 그 핵심이 고백이라는 점이 중요합니다. 서구의 차이는 성을 덜 말한 데 있지 않고, 성에 관한 진실을 요구된 고백으로 캐내는 방식에 있습니다.",
+                "ko": "푸코는 성의 진실을 생산하는 역사적 절차를 둘로 나눕니다. 중국, 일본, 인도, 로마, 아랍·이슬람 사회의 아르스 에로티카에서는 허용과 금지의 법이나 쓸모가 아니라 쾌락 그 자체가 기준이고, 그 지식은 실천으로 되돌아가 쾌락을 키우며, 퍼지면 효력을 잃기 때문에 스승이 입문 과정으로만 전합니다. 서구는 언뜻 보아 이런 기술이 없고, 대신 스키엔티아 섹수알리스를 실천하는 아마도 유일한 문명입니다. 그 핵심이 고백이라는 점이 중요합니다. 서구의 차이는 성을 덜 말한 데 있지 않고, 성에 관한 진실을 요구된 고백으로 캐내는 방식에 있습니다.",
                 "en": "Foucault divides the historical procedures for producing the truth of sex into two. In the ars erotica of China, Japan, India, Rome and the Arab-Muslim societies the criterion is pleasure itself, not a law of permitted and forbidden or utility; the knowledge flows back into practice to amplify pleasure, and since divulging it would rob it of its efficacy a master passes it on only through initiation. At first glance the West has no such art and is probably the only civilisation to practise a scientia sexualis, whose core is confession. The West differs not by speaking less about sex but by extracting the truth of sex through required confession."
               },
               "source": {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제3부 「성의 과학」, 76~78쪽",
+                  "ko": "푸코, 『지식의 의지』 제3부 「스키엔티아 섹수알리스」, 76~78쪽",
                   "en": "Foucault, La volonté de savoir, part 3, 'Scientia sexualis', pp. 76-78"
                 }
               }
@@ -5046,14 +5046,14 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 제3부 「성의 과학」에서 고백이라는 의례 안의 지배하는 자리가 어디에 있다고 봤을까요?",
+                "ko": "푸코는 『지식의 의지』 제3부 「스키엔티아 섹수알리스」에서 고백이라는 의례 안의 지배하는 자리가 어디에 있다고 봤을까요?",
                 "en": "In part 3 of The Will to Knowledge, 'Scientia sexualis', where does Foucault locate the position of domination within the ritual of confession?"
               },
               "choices": {
                 "ko": [
                   "말하도록 강제되는 쪽이 아니라 침묵하며 듣고 묻는 쪽에 있고, 진실의 효과는 듣는 사람이 아니라 고백을 빼앗긴 사람에게 나타난다고 봤습니다.",
                   "진실을 털어놓는 사람이 침묵을 강요하던 권력을 깨뜨리므로 고백하는 쪽이 우위에 서고, 고백은 본성상 권력에서 풀려나는 일이라고 봤습니다.",
-                  "비밀을 쥔 스승이 위에서 아래로 소수의 제자에게 앎을 내려 주므로, 지배하는 자리는 앎을 지니고 답을 주는 쪽에 있다고 봤습니다."
+                  "비밀을 쥔 스승이 위에서 아래로 소수의 제자에게 지식을 내려 주므로, 지배하는 자리는 지식을 지니고 답을 주는 쪽에 있다고 봤습니다."
                 ],
                 "en": [
                   "Not with the one compelled to speak but with the one who listens in silence and questions, and the truth takes effect not in the listener but in the one from whom it is wrested.",
@@ -5066,7 +5066,7 @@ module.exports = {
                 "ko": [
                   "고백의 말은 아래에서 강요되어 나오고, 지배의 심급은 답하는 아는 자가 아니라 묻고 판단하는 쪽에 있다고 푸코는 정리합니다(82~84쪽).",
                   "푸코는 고백이 해방이라는 느낌 자체를 고백의 의무가 너무 깊이 몸에 밴 결과로 보고, 진실은 본성상 자유롭지 않다고 반박합니다(80~81쪽).",
-                  "이것은 성애의 기술의 구조입니다. 푸코는 고백이 바로 이와 정반대로 위가 아니라 아래에서 나오는 말이라고 대비합니다."
+                  "이것은 아르스 에로티카의 구조입니다. 푸코는 고백이 바로 이와 정반대로 위가 아니라 아래에서 나오는 말이라고 대비합니다."
                 ],
                 "en": [
                   "Confessional speech is compelled from below, and the instance of domination lies not with the one who knows and answers but with the one who questions and judges, Foucault sums up (pp. 82-84).",
@@ -5082,7 +5082,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제3부 「성의 과학」, 79~84쪽",
+                  "ko": "푸코, 『지식의 의지』 제3부 「스키엔티아 섹수알리스」, 79~84쪽",
                   "en": "Foucault, La volonté de savoir, part 3, 'Scientia sexualis', pp. 79-84"
                 }
               }
@@ -5092,7 +5092,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 제3부 「성의 과학」에서 19세기가 고백을 과학 담론에 끼워 넣은 다섯 절차를 듭니다. 그 가운데 해석의 방법은 무엇을 바꾸었다고 할까요?",
+                "ko": "푸코는 『지식의 의지』 제3부 「스키엔티아 섹수알리스」에서 19세기가 고백을 과학 담론에 끼워 넣은 다섯 절차를 듭니다. 그 가운데 해석의 방법은 무엇을 바꾸었다고 할까요?",
                 "en": "In part 3 of The Will to Knowledge, 'Scientia sexualis', Foucault lists five procedures by which the nineteenth century fitted confession into scientific discourse. What does he say the method of interpretation changed?"
               },
               "choices": {
@@ -5111,7 +5111,7 @@ module.exports = {
               "choiceFeedback": {
                 "ko": [
                   "듣는 사람은 용서하거나 단죄하는 자를 넘어 진실의 주인이 되고, 그 기능은 해석학적이라고 푸코는 씁니다(89~90쪽).",
-                  "푸코는 19세기 이후 성의 과학이 역설적으로 의무적·전면적 고백이라는 의례를 핵심으로 간직했다고 강조합니다(90~91쪽).",
+                  "푸코는 19세기 이후 스키엔티아 섹수알리스가 역설적으로 의무적·전면적 고백이라는 의례를 핵심으로 간직했다고 강조합니다(90~91쪽).",
                   "해석의 방법은 정반대로, 진실은 말하는 사람 안에서 자기 자신에게도 보이지 않으므로 듣는 이가 그 진실의 진실을 말해야 한다는 원리입니다."
                 ],
                 "en": [
@@ -5128,7 +5128,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제3부 「성의 과학」, 87~91쪽",
+                  "ko": "푸코, 『지식의 의지』 제3부 「스키엔티아 섹수알리스」, 87~91쪽",
                   "en": "Foucault, La volonté de savoir, part 3, 'Scientia sexualis', pp. 87-91"
                 }
               }
@@ -5202,7 +5202,7 @@ module.exports = {
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "권력 관계는 상부구조의 자리에서 금지나 재생산만 하는 것이 아니라 경제 과정, 앎, 성관계 안에서 직접 생산하는 역할을 하고, 권력은 아래에서 온다고 푸코는 씁니다(123~124쪽).",
+                  "권력 관계는 상부구조의 자리에서 금지나 재생산만 하는 것이 아니라 경제 과정, 지식, 성관계 안에서 직접 생산하는 역할을 하고, 권력은 아래에서 온다고 푸코는 씁니다(123~124쪽).",
                   "푸코는 권력이 획득하거나 나눠 갖는 것이 아니고, 지배자와 피지배자의 전반적 이분법이 권력 관계의 모태가 아니라고 명시적으로 부정합니다(123~124쪽).",
                   "푸코는 권력의 편재가 모든 것을 감싸서가 아니라 모든 곳에서 오기 때문이라 하고, 저항이 언제나 지는 수동적 반사작용이라는 생각도 거부합니다(122, 125~126쪽)."
                 ],
@@ -5213,7 +5213,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "푸코는 권력을 국가 기구의 총체나 한 집단의 전반적 지배 체계로 전제하지 말고, 그것들을 다수의 힘 관계가 굳어진 최종 형태로 보자고 합니다. 이어서 권력은 무수한 지점에서 행사되고, 경제 과정·앎·성관계에 내재하며, 아래에서 오고, 의도적이지만 비주체적이며, 권력이 있는 곳에 저항이 있다는 명제를 세웁니다. 생산 기구, 가족, 제도 안의 힘 관계가 사회 전체를 가로지르는 분할선을 떠받치고, 거대한 지배는 그 결과로 유지되는 헤게모니 효과라는 것입니다. 지배와 착취를 부정하는 것이 아니라 그것을 출발점의 이분법이 아닌 결과로 설명하려 한다는 점에서, 토대·상부구조 도식과 갈라집니다.",
+                "ko": "푸코는 권력을 국가 기구의 총체나 한 집단의 전반적 지배 체계로 전제하지 말고, 그것들을 다수의 힘 관계가 굳어진 최종 형태로 보자고 합니다. 이어서 권력은 무수한 지점에서 행사되고, 경제 과정·지식·성관계에 내재하며, 아래에서 오고, 의도적이지만 비주체적이며, 권력이 있는 곳에 저항이 있다는 명제를 세웁니다. 생산 기구, 가족, 제도 안의 힘 관계가 사회 전체를 가로지르는 분할선을 떠받치고, 거대한 지배는 그 결과로 유지되는 헤게모니 효과라는 것입니다. 지배와 착취를 부정하는 것이 아니라 그것을 출발점의 이분법이 아닌 결과로 설명하려 한다는 점에서, 토대·상부구조 도식과 갈라집니다.",
                 "en": "Foucault asks us not to presuppose power as the set of state institutions or as one group's general system of domination, but to see these as terminal forms in which a multiplicity of force relations has crystallised. He then sets out propositions: power is exercised from innumerable points, is immanent in economic processes, knowledge and sexual relations, comes from below, is intentional yet non-subjective, and where there is power there is resistance. Force relations in the machinery of production, families and institutions support lines of cleavage running through society, and great dominations are the hegemonic effects sustained as a result. He does not deny domination or exploitation but tries to explain them as results rather than as an initial binary, and there he parts ways with the base-superstructure scheme."
               },
               "source": {
@@ -5259,7 +5259,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "네 규칙은 내재성, 연속적 변화, 이중 조건화, 담론의 전술적 다가성입니다. 마지막 규칙은 담론을 권력의 단순한 투영면으로 보지 말고, 같은 말이 전략에 따라 권력의 도구도, 장애물이나 저항 지점도 될 수 있는 불연속적 조각들로 보자는 것입니다. 푸코는 남색이 오랫동안 극도의 엄벌(18세기까지의 화형)과 실제로는 넓은 관용을 함께 누렸다는 점을 먼저 들고, 19세기 동성애 분류가 통제를 넓히면서도 역방향 담론을 낳았다고 설명합니다. 그래서 담론에는 어떤 이데올로기를 대변하는가보다 어떤 권력·앎 효과를 내는가, 어떤 국면에서 쓰이는가를 물어야 한다는 것입니다.",
+                "ko": "네 규칙은 내재성, 연속적 변화, 이중 조건화, 담론의 전술적 다가성입니다. 마지막 규칙은 담론을 권력의 단순한 투영면으로 보지 말고, 같은 말이 전략에 따라 권력의 도구도, 장애물이나 저항 지점도 될 수 있는 불연속적 조각들로 보자는 것입니다. 푸코는 남색이 오랫동안 극도의 엄벌(18세기까지의 화형)과 실제로는 넓은 관용을 함께 누렸다는 점을 먼저 들고, 19세기 동성애 분류가 통제를 넓히면서도 역방향 담론을 낳았다고 설명합니다. 그래서 담론에는 어떤 이데올로기를 대변하는가보다 어떤 권력·지식 효과를 내는가, 어떤 국면에서 쓰이는가를 물어야 한다는 것입니다.",
                 "en": "The four rules are immanence, continual variations, double conditioning and the tactical polyvalence of discourses. The last asks us not to treat discourse as a mere surface onto which power is projected, but as discontinuous segments whose tactical function varies, so that the same words can be an instrument of power or an obstacle and point of resistance depending on the strategy. Foucault first notes that sodomy long combined extreme severity, with burning still applied in the eighteenth century, and very broad tolerance in practice, then explains that nineteenth-century classifications of homosexuality extended control while also producing a reverse discourse. So one should ask of a discourse less which ideology it represents than what effects of power and knowledge it secures and in which conjuncture it is used."
               },
               "source": {
@@ -5285,38 +5285,38 @@ module.exports = {
       },
       "sourceUrl": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
       "summary": {
-        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976) 제4부 3장 「영역」, 4장 「시기 구분」(136~173쪽)과 제5부 「죽음의 권리와 삶에 대한 권력」(175~211쪽)을 따라 읽습니다. 섹슈얼리티 장치의 네 전략과 결연 장치의 관계, 그 장치가 노동계급보다 부르주아지에게 먼저 적용되었다는 주장, 그리고 죽이는 권력에서 삶을 관리하는 생명 권력으로의 전환과 자본주의의 관계를 확인합니다.",
+        "ko": "약 12분 · 미셸 푸코의 『성의 역사』 제1권 『지식의 의지』(1976) 제4부 3장 「영역」, 4장 「시대 구분」(136~173쪽)과 제5부 「죽음의 권리와 삶에 대한 권력」(175~211쪽)을 따라 읽습니다. 성생활의 장치의 네 전략과 혼인관계의 장치의 관계, 그 장치가 노동계급보다 부르주아지에게 먼저 적용되었다는 주장, 그리고 죽이는 권력에서 삶을 관리하는 생체권력으로의 전환과 자본주의의 관계를 확인합니다.",
         "en": "About 12 minutes · Follow part 4, chapters 3 and 4, 'Domaine' and 'Périodisation' (pp. 136-173), and part 5, 'Droit de mort et pouvoir sur la vie' (pp. 175-211), of Michel Foucault's The History of Sexuality, volume 1, The Will to Knowledge (1976). See the four strategies of the deployment of sexuality and its relation to the deployment of alliance, the claim that it was applied to the bourgeoisie before the working class, and the shift from a power that kills to a bio-power that manages life, together with its link to capitalism."
       },
       "learningFocus": {
-        "ko": "이 대목은 ‘부르주아 사회가 노동력을 짜내려고 노동자의 성을 억눌렀다’는 억압-착취 도식과 정면으로 부딪힙니다. 푸코는 섹슈얼리티 장치가 먼저 지배계급의 몸에 적용된 자기 긍정이었고, 노동계급에는 19세기에 여러 단계를 거쳐 늦게 퍼졌으며, 억압 이론 자체가 그 확산 뒤에 생긴 계급 구별의 선이었다고 주장합니다. 제5부에서는 생명 권력이 자본주의 발전에 꼭 필요했다고 하면서도, 그것을 힘을 깎는 금지가 아니라 몸과 인구의 힘을 키우며 관리하는 기술로 그립니다. 성은 그 두 축이 만나는 자리여서 권력의 중심 표적이 되었다는 것이 결론입니다.",
+        "ko": "이 대목은 ‘부르주아 사회가 노동력을 짜내려고 노동자의 성을 억눌렀다’는 억압-착취 도식과 정면으로 부딪힙니다. 푸코는 성생활의 장치가 먼저 지배계급의 몸에 적용된 자기 긍정이었고, 노동계급에는 19세기에 여러 단계를 거쳐 늦게 퍼졌으며, 억압 이론 자체가 그 확산 뒤에 생긴 계급 구별의 선이었다고 주장합니다. 제5부에서는 생체권력이 자본주의 발전에 꼭 필요했다고 하면서도, 그것을 힘을 깎는 금지가 아니라 몸과 인구의 힘을 키우며 관리하는 기술로 그립니다. 성은 그 두 축이 만나는 자리여서 권력의 중심 표적이 되었다는 것이 결론입니다.",
         "en": "These pages run straight against the repression-exploitation scheme in which bourgeois society repressed workers' sexuality to squeeze out labour power. Foucault argues that the deployment of sexuality was first a self-affirmation applied to the ruling class's own body, that it reached the working class late and in stages during the nineteenth century, and that the theory of repression itself arose after that spread as a line of class distinction. In part 5 he says bio-power was indispensable to the development of capitalism, yet he portrays it not as a prohibition that diminishes forces but as a technique that increases and manages the forces of bodies and populations. Sex, where those two axes meet, became a central target of power."
       },
       "conceptBrief": {
         "ko": [
           {
-            "title": "「영역」: 네 전략과 결연 장치",
+            "title": "「영역」: 네 전략과 혼인관계의 장치",
             "items": [
               "푸코는 섹슈얼리티를 권력에 본래 저항하는 충동으로 그리지 말고, 남녀, 노소, 부모와 자식, 교육자와 학생, 성직자와 평신도, 행정과 인구 사이의 권력 관계가 특히 촘촘하게 지나가는 지점으로 보라고 합니다. 성을 생식, 이성애, 성인, 합법적 결혼으로 좁히려는 하나의 전체 전략이 있었다는 생각은 여러 성별·연령·계급에 걸친 성 정책의 다양한 목표를 설명하지 못한다고 봅니다(136~137쪽).",
               "그 대신 18세기부터 상대적 자율성을 가진 네 전략 집합을 구별합니다. 여성 신체의 히스테리화, 아동 성의 교육화, 생식 행동의 사회화, 도착적 쾌락의 정신의학화이고, 각각에 대응해 히스테리 여성, 자위하는 아이, 맬서스주의 부부, 도착적 성인이라는 네 형상이 지식의 특권적 대상이 되었습니다. 이 전략들은 성과 싸운 것이 아니라 섹슈얼리티 자체를 생산했고, 섹슈얼리티는 숨은 자연이 아니라 하나의 역사적 장치에 붙일 수 있는 이름이라고 합니다(137~139쪽).",
-              "어느 사회에나 혼인, 친족, 이름과 재산의 전달로 이루어진 결연 장치가 있습니다. 근대 서구는 18세기부터 그 위에 섹슈얼리티 장치(성 장치)를 겹쳐 놓았습니다. 결연 장치는 허용과 금지의 규칙으로 관계를 재생산하고 법과 긴밀하지만, 섹슈얼리티 장치는 유동적인 권력 기술로 몸의 감각과 쾌락의 질을 다루며 재생산이 아니라 증식과 확장이 존재 이유입니다. 경제와의 연결도 결연 장치는 부의 전달을 거치고, 섹슈얼리티 장치는 무엇보다 생산하고 소비하는 몸을 거칩니다(139~141쪽).",
-              "섹슈얼리티 장치가 결연 장치를 대체한 것은 아닙니다. 그것은 고해와 양심 지도라는 결연 중심의 기술에서 태어났고, 둘을 맞물리게 하는 교환기가 가족이었습니다. 그래서 가족은 성을 금하는 힘이 아니라 성화(性化)의 핵심 요인이 되었습니다. 푸코는 이어서 섹슈얼리티의 역사를 노동력 확보를 위한 19세기의 억제와 성을 경제 회로로 흘려보내는 후기 자본주의의 탈승화라는 두 시기로 나누는 설명도, 법과 금지가 아니라 생산이 문제인 이상 버려야 한다고 말합니다(141~151쪽)."
+              "어느 사회에나 혼인, 친족, 이름과 재산의 전달로 이루어진 혼인관계의 장치가 있습니다. 근대 서구는 18세기부터 그 위에 성생활의 장치를 겹쳐 놓았습니다. 혼인관계의 장치는 허용과 금지의 규칙으로 관계를 재생산하고 법과 긴밀하지만, 성생활의 장치는 유동적인 권력 기술로 몸의 감각과 쾌락의 질을 다루며 재생산이 아니라 증식과 확장이 존재 이유입니다. 경제와의 연결도 혼인관계의 장치는 부의 전달을 거치고, 성생활의 장치는 무엇보다 생산하고 소비하는 몸을 거칩니다(139~141쪽).",
+              "성생활의 장치가 혼인관계의 장치를 대체한 것은 아닙니다. 그것은 고해와 양심 지도라는 결연 중심의 기술에서 태어났고, 둘을 맞물리게 하는 교환기가 가족이었습니다. 그래서 가족은 성을 금하는 힘이 아니라 성화(性化)의 핵심 요인이 되었습니다. 푸코는 이어서 섹슈얼리티의 역사를 노동력 확보를 위한 19세기의 억제와 성을 경제 회로로 흘려보내는 후기 자본주의의 탈승화라는 두 시기로 나누는 설명도, 법과 금지가 아니라 생산이 문제인 이상 버려야 한다고 말합니다(141~151쪽)."
             ]
           },
           {
-            "title": "「시기 구분」: 먼저 부르주아의 몸에",
+            "title": "「시대 구분」: 먼저 부르주아의 몸에",
             "items": [
               "억압의 역사는 17세기의 큰 금지와 20세기의 완화라는 두 단절을 전제합니다. 푸코는 기술의 연대기와 확산의 연대기가 이와 맞지 않는다고 봅니다. 기술은 중세 고해와 라테란 공의회의 의무적 고백까지 거슬러 올라가고, 18세기 말에는 교회 바깥에서 교육학, 의학, 인구학을 축으로 성을 국가의 일로 만드는 새 기술이 생겼으며, 19세기 후반에는 도착의 의학과 우생학이 그 두 혁신이 되었습니다(152~158쪽).",
               "억압이 노동력 활용을 위한 것이었다면 통제는 가난한 계급에 가장 강했어야 합니다. 그러나 가장 엄격한 기술은 경제적으로 특권적이고 정치적으로 지배적인 계급에 먼저 적용되었습니다. 처음 성화된 인물은 한가한 부르주아 여성이었고, 의사들이 걱정한 자위하는 아이는 미래의 노동자가 아니라 하인과 가정교사에 둘러싸인 중학생이었습니다. 푸코는 이를 다른 계급의 예속이 아니라 한 계급의 자기 긍정으로 읽고, 귀족이 피로 신분을 표시했다면 부르주아지는 건강과 후손을 지닌 계급의 몸을 만들었다고 봅니다(158~166쪽).",
-              "서민층은 오랫동안 결연 장치에만 묶여 있었고, 섹슈얼리티 장치는 세 단계로 천천히 들어갔습니다. 18세기 말의 출산 문제, 1830년 무렵 도시 프롤레타리아를 예속시키려는 가족 정비와 가난한 계급의 도덕화 캠페인, 19세기 말 사회와 인종 보호를 내건 도착의 사법·의학적 통제입니다. 그 바탕에는 콜레라와 성병 같은 도시 공간의 갈등, 안정된 노동력이 필요한 중공업의 요구, 학교·주거·공중위생 같은 통제 기술이 있었습니다(160~168쪽).",
+              "서민층은 오랫동안 혼인관계의 장치에만 묶여 있었고, 성생활의 장치는 세 단계로 천천히 들어갔습니다. 18세기 말의 출산 문제, 1830년 무렵 도시 프롤레타리아를 예속시키려는 가족 정비와 가난한 계급의 도덕화 캠페인, 19세기 말 사회와 인종 보호를 내건 도착의 사법·의학적 통제입니다. 그 바탕에는 콜레라와 성병 같은 도시 공간의 갈등, 안정된 노동력이 필요한 중공업의 요구, 학교·주거·공중위생 같은 통제 기술이 있었습니다(160~168쪽).",
               "장치가 사회 전체로 퍼지자 19세기 말 부르주아지는 성의 성질이 아니라 억압의 강도로 자신을 다시 구별했고, 성 억압 이론은 여기서 비롯되었습니다. 정신분석은 분석을 받을 수 있는 이들의 근친상간 욕망을 말하게 했지만, 같은 시기 서민층의 근친상간은 행정과 사법으로 추적되었습니다. 양차 대전 사이 라이히를 중심으로 생긴 성 억압 비판도 이 장치 안의 전술적 이동이었다는 것이 푸코의 평가입니다(169~173쪽). 6편에서 본 라이히 비판은 바로 이 계보 위에 놓입니다."
             ]
           },
           {
             "title": "제5부: 죽이는 권력에서 살게 하는 권력으로",
             "items": [
-              "군주의 생사여탈권은 로마 가부장권에서 나왔고, 고전 이론가에게서는 군주의 방어에 조건 지어진 비대칭적 권리였습니다. 실제로는 죽게 하거나 살게 내버려 두는 권리였고, 칼이 그 상징이었으며, 재화·노동·피를 빼앗는 권력이었습니다. 고전주의 시대 이후 빼앗음은 여러 기능 가운데 하나가 되고, 권력은 힘을 생산하고 키우고 정돈하는 쪽으로 바뀝니다. 전쟁이 더 참혹해지고 사형이 드물어진 것도 같은 이유, 곧 권력이 삶의 관리자가 되었기 때문이라고 합니다(177~182쪽).",
-              "삶에 대한 권력은 두 극으로 발전했습니다. 먼저 17세기부터 몸을 기계로 보고 길들여 쓸모와 순종을 함께 늘리는 규율, 곧 인간 신체의 해부정치가 생겼고, 18세기 중엽에는 출생·사망·건강·수명을 조절하는 인구의 생명정치가 생겼습니다. 푸코는 이 생명 권력이 몸을 생산 장치에 통제된 방식으로 끼워 넣고 인구 현상을 경제 과정에 맞춘다는 점에서 자본주의 발전에 없어서는 안 될 요소였다고 말합니다(182~186쪽).",
+              "군주의 생살여탈권은 로마 가부장권에서 나왔고, 고전 이론가에게서는 군주의 방어에 조건 지어진 비대칭적 권리였습니다. 실제로는 죽게 하거나 살게 내버려 두는 권리였고, 칼이 그 상징이었으며, 재화·노동·피를 빼앗는 권력이었습니다. 고전주의 시대 이후 빼앗음은 여러 기능 가운데 하나가 되고, 권력은 힘을 생산하고 키우고 정돈하는 쪽으로 바뀝니다. 전쟁이 더 참혹해지고 사형이 드물어진 것도 같은 이유, 곧 권력이 삶의 관리자가 되었기 때문이라고 합니다(177~182쪽).",
+              "삶에 대한 권력은 두 극으로 발전했습니다. 먼저 17세기부터 몸을 기계로 보고 길들여 쓸모와 순종을 함께 늘리는 규율, 곧 인간 신체의 해부정치가 생겼고, 18세기 중엽에는 출생·사망·건강·수명을 조절하는 인구의 생체정치가 생겼습니다. 푸코는 이 생체권력이 몸을 생산 장치에 통제된 방식으로 끼워 넣고 인구 현상을 경제 과정에 맞춘다는 점에서 자본주의 발전에 없어서는 안 될 요소였다고 말합니다(182~186쪽).",
               "그 결과 법보다 규범이 중요해집니다. 법의 마지막 무기는 죽음이지만, 삶을 맡은 권력은 측정하고 평가하고 위계를 매기는 연속적이고 교정적인 장치가 필요합니다. 법은 점점 규범처럼 작동하고 사법은 의료·행정 장치의 연속체에 들어가며, 규범화 사회가 생깁니다. 이에 맞서는 저항도 옛 권리의 회복이 아니라 삶, 몸, 건강, 행복에 대한 권리를 내걸게 되었다고 합니다(188~191쪽)."
             ]
           },
@@ -5324,14 +5324,14 @@ module.exports = {
             "title": "성: 두 축의 교차점, 피에서 섹슈얼리티로",
             "items": [
               "성은 몸의 규율과 인구의 조절이라는 두 축의 교차점에 있어 미세한 감시와 통계적 개입을 동시에 낳았습니다. 네 전략도 두 축을 조합한 것입니다. 아동의 성화와 여성의 히스테리화는 종의 건강과 후손이라는 조절의 주제에 기대 규율 효과를 얻었고, 출산 통제와 도착의 정신의학화는 반대로 조절을 위해 개인의 규율에 기댔습니다(191~193쪽).",
-              "결연, 군주, 신분, 기근과 전염병의 사회에서 권력은 피를 통해 말했습니다. 근대 사회는 피의 상징학에서 섹슈얼리티의 분석학으로 넘어갔고, 피가 법·죽음·주권 쪽에 있다면 섹슈얼리티는 규범·지식·삶·규율과 조절 쪽에 있습니다. 그러나 둘은 겹치기도 했습니다. 19세기 후반 피의 주제가 섹슈얼리티 장치를 떠받치며 근대의 국가적·생물학적 인종주의가 생겼고, 나치즘은 피의 환상과 규율 권력의 극단을 결합했습니다. 정신분석은 반대로 성을 법과 결연의 질서에 다시 새기며 파시즘에 맞섰지만, 푸코는 성을 법과 피로 생각하는 것이 결국 역사적 퇴행이라고 봅니다(193~198쪽).",
-              "마지막으로 푸코는 성 자체가 장치 바깥의 실체가 아니라 장치 안에서 형성된 관념이라고 말합니다. 해부학적 요소, 기능, 행동, 감각을 하나로 묶은 이 관념이 권력을 법과 금지로만 생각하게 만들고, 성에 대한 욕망이 우리를 장치에 묶습니다. 그래서 성에 예라고 말하는 것이 권력에 아니라고 말하는 것이 아니며, 반격의 거점은 성-욕망이 아니라 몸과 쾌락이어야 한다고 결론짓습니다(198~211쪽)."
+              "결연, 군주, 신분, 기근과 전염병의 사회에서 권력은 피를 통해 말했습니다. 근대 사회는 피의 상징학에서 섹슈얼리티의 분석학으로 넘어갔고, 피가 법·죽음·주권 쪽에 있다면 섹슈얼리티는 규범·지식·삶·규율과 조절 쪽에 있습니다. 그러나 둘은 겹치기도 했습니다. 19세기 후반 피의 주제가 성생활의 장치를 떠받치며 근대의 국가적·생물학적 인종주의가 생겼고, 나치즘은 피의 환상과 규율 권력의 극단을 결합했습니다. 정신분석은 반대로 성을 법과 결연의 질서에 다시 새기며 파시즘에 맞섰지만, 푸코는 성을 법과 피로 생각하는 것이 결국 역사적 퇴행이라고 봅니다(193~198쪽).",
+              "마지막으로 푸코는 성 자체가 장치 바깥의 실체가 아니라 장치 안에서 형성된 관념이라고 말합니다. 해부학적 요소, 기능, 행동, 감각을 하나로 묶은 이 관념이 권력을 법과 금지로만 생각하게 만들고, 성에 대한 욕망이 우리를 장치에 묶습니다. 그래서 성에 예라고 말하는 것이 권력에 아니라고 말하는 것이 아니며, 반격의 거점은 성-욕망이 아니라 육체와 쾌락이어야 한다고 결론짓습니다(198~211쪽)."
             ]
           },
           {
             "title": "근거 자료",
             "items": [
-              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976) 제4부 「섹슈얼리티 장치」 3장 「영역」 136~151쪽, 4장 「시기 구분」 152~173쪽, 제5부 「죽음의 권리와 삶에 대한 권력」 175~211쪽. 네 전략 136~139쪽, 결연과 섹슈얼리티 139~151쪽, 계급과 확산 158~173쪽, 생명 권력과 자본주의 177~191쪽, 성과 피 191~208쪽.",
+              "푸코, 『성의 역사』 제1권 『지식의 의지』(갈리마르, 1976) 제4부 「성생활의 장치」 3장 「영역」 136~151쪽, 4장 「시대 구분」 152~173쪽, 제5부 「죽음의 권리와 삶에 대한 권력」 175~211쪽. 네 전략 136~139쪽, 결연과 섹슈얼리티 139~151쪽, 계급과 확산 158~173쪽, 생체권력과 자본주의 177~191쪽, 성과 피 191~208쪽.",
               "프랑스어 원문에서 옮겼습니다. 저작권이 남아 있어 짧은 인용 외에는 의역입니다."
             ]
           }
@@ -5388,7 +5388,7 @@ module.exports = {
           },
           {
             "title": "결연 위의 섹슈얼리티",
-            "text": "혼인과 상속의 결연 장치 위에 몸과 쾌락을 다루는 섹슈얼리티 장치가 겹쳐졌고, 가족이 둘을 잇는 교환기가 되었습니다."
+            "text": "혼인과 상속의 혼인관계의 장치 위에 육체와 쾌락을 다루는 성생활의 장치가 겹쳐졌고, 가족이 둘을 잇는 교환기가 되었습니다."
           },
           {
             "title": "피에서 성으로",
@@ -5396,7 +5396,7 @@ module.exports = {
           },
           {
             "title": "살게 하는 권력",
-            "text": "해부정치와 인구의 생명정치가 몸을 생산 장치에 끼워 넣었고, 성은 두 축이 만나는 자리여서 권력의 표적이 되었습니다."
+            "text": "해부정치와 인구의 생체정치가 몸을 생산 장치에 끼워 넣었고, 성은 두 축이 만나는 자리여서 권력의 표적이 되었습니다."
           }
         ],
         "en": [
@@ -5426,17 +5426,17 @@ module.exports = {
             "heading": "주권 권력과 피의 상징학",
             "rows": [
               "권력의 형식: 죽게 하거나 살게 내버려 두는 칼",
-              "성을 묶는 장치: 혼인·친족·상속의 결연 장치",
+              "성을 묶는 장치: 혼인·친족·상속의 혼인관계의 장치",
               "경제와의 고리: 부와 재산의 전달",
               "작동 방식: 허용과 금지를 가르는 법",
               "지배 계급의 표지: 귀족의 피와 혈통"
             ]
           },
           "right": {
-            "heading": "생명 권력과 섹슈얼리티의 분석학",
+            "heading": "생체권력과 섹슈얼리티의 분석학",
             "rows": [
               "권력의 형식: 살게 하거나 죽음 속으로 내던지는 관리",
-              "성을 묶는 장치: 감각과 쾌락을 다루는 섹슈얼리티 장치",
+              "성을 묶는 장치: 감각과 쾌락을 다루는 성생활의 장치",
               "경제와의 고리: 생산하고 소비하는 몸",
               "작동 방식: 규율과 조절, 규범",
               "지배 계급의 표지: 부르주아의 건강한 몸과 후손"
@@ -5472,7 +5472,7 @@ module.exports = {
           "id": "sex-gender-theory-intro-ch12-basic",
           "level": "basic",
           "title": {
-            "ko": "푸코, 섹슈얼리티 장치와 생명 권력",
+            "ko": "푸코, 성생활의 장치와 생체권력",
             "en": "Foucault on the deployment of sexuality and bio-power"
           },
           "questions": [
@@ -5527,13 +5527,13 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 「영역」에서 결연 장치와 섹슈얼리티 장치의 관계, 그리고 그 사이에서 가족이 맡은 역할을 어떻게 설명했을까요?",
+                "ko": "푸코는 『지식의 의지』 「영역」에서 혼인관계의 장치와 성생활의 장치의 관계, 그리고 그 사이에서 가족이 맡은 역할을 어떻게 설명했을까요?",
                 "en": "In 'Domaine' in The Will to Knowledge, how did Foucault explain the relation between the deployment of alliance and the deployment of sexuality, and the role the family played between them?"
               },
               "choices": {
                 "ko": [
-                  "혼인·친족·상속의 결연 장치 위에 18세기부터 섹슈얼리티 장치가 겹쳐졌고, 가족이 둘을 잇는 교환기여서 성을 금하는 힘이 아니라 성화의 핵심 요인이 되었다고 했습니다.",
-                  "섹슈얼리티 장치가 18세기에 결연 장치를 완전히 대체했고, 가족은 혼인과 상속의 법적 틀만 남긴 채 성 문제에서 물러나 의사와 교육자에게 자리를 넘겼다고 했습니다.",
+                  "혼인·친족·상속의 혼인관계의 장치 위에 18세기부터 성생활의 장치가 겹쳐졌고, 가족이 둘을 잇는 교환기여서 성을 금하는 힘이 아니라 성화의 핵심 요인이 되었다고 했습니다.",
+                  "성생활의 장치가 18세기에 혼인관계의 장치를 완전히 대체했고, 가족은 혼인과 상속의 법적 틀만 남긴 채 성 문제에서 물러나 의사와 교육자에게 자리를 넘겼다고 했습니다.",
                   "두 장치는 같은 것을 시대에 따라 달리 부른 이름일 뿐이고, 둘 다 허용과 금지를 가르는 규칙으로 생식을 보장하며 가족은 그 금지를 집행하는 기관이었다고 했습니다."
                 ],
                 "en": [
@@ -5545,7 +5545,7 @@ module.exports = {
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "푸코는 섹슈얼리티 장치가 결연 장치를 대체했다고 하면 정확하지 않다고 하고, 가족을 섹슈얼리티와 결연의 교환기, 성화의 핵심 요인이라고 부릅니다(141~143, 150쪽).",
+                  "푸코는 성생활의 장치가 혼인관계의 장치를 대체했다고 하면 정확하지 않다고 하고, 가족을 섹슈얼리티와 결연의 교환기, 성화의 핵심 요인이라고 부릅니다(141~143, 150쪽).",
                   "대체가 아니라 겹침입니다. 푸코는 가족이 섹슈얼리티를 붙들어 두는 상시 받침대가 되었고 부모와 배우자가 그 장치의 주된 행위자가 되었다고 씁니다(143, 145쪽).",
                   "푸코는 두 장치를 하나하나 대조합니다. 결연은 허용과 금지의 규칙으로 움직이지만 섹슈얼리티는 유동적인 권력 기술로 움직이며, 재생산이 아니라 증식이 존재 이유라고 합니다(140~141쪽)."
                 ],
@@ -5556,7 +5556,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "푸코에 따르면 어느 사회에나 혼인, 친족 관계의 고정, 이름과 재산의 전달로 이루어진 결연 장치가 있습니다. 경제 과정과 정치 구조가 그것을 충분한 도구로 삼지 못하게 되면서 그 중요성이 줄었고, 근대 서구는 18세기부터 새 장치를 그 위에 겹쳐 놓았습니다. 결연 장치는 지위가 정해진 상대 사이의 유대를 다루고 부의 전달로 경제와 이어지며 재생산을 중심에 두지만, 섹슈얼리티 장치는 몸의 감각과 쾌락의 질을 다루고 생산하고 소비하는 몸으로 경제와 이어지며 통제의 영역을 끝없이 넓힙니다. 그래도 섹슈얼리티는 고해와 양심 지도라는 결연 중심의 기술에서 태어났고, 지금도 결연에 기대어 작동합니다. 가족은 법을 섹슈얼리티로, 쾌락의 경제를 결연으로 옮기는 교환기여서 18세기 이후 애정의 의무적 자리가 되었고, 섹슈얼리티는 근친상간적으로 태어났습니다. 푸코는 근친상간 금지를 보편적 규칙으로 내세운 이론이 법을 모르는 이 장치를 결연의 법 안에 붙잡아 두려는 방어였을 수 있다고 보고, 정신분석도 섹슈얼리티 한가운데서 결연의 법을 다시 찾아 둘을 이어 붙였다고 말합니다.",
+                "ko": "푸코에 따르면 어느 사회에나 혼인, 친족 관계의 고정, 이름과 재산의 전달로 이루어진 혼인관계의 장치가 있습니다. 경제 과정과 정치 구조가 그것을 충분한 도구로 삼지 못하게 되면서 그 중요성이 줄었고, 근대 서구는 18세기부터 새 장치를 그 위에 겹쳐 놓았습니다. 혼인관계의 장치는 지위가 정해진 상대 사이의 유대를 다루고 부의 전달로 경제와 이어지며 재생산을 중심에 두지만, 성생활의 장치는 몸의 감각과 쾌락의 질을 다루고 생산하고 소비하는 몸으로 경제와 이어지며 통제의 영역을 끝없이 넓힙니다. 그래도 섹슈얼리티는 고해와 양심 지도라는 결연 중심의 기술에서 태어났고, 지금도 결연에 기대어 작동합니다. 가족은 법을 섹슈얼리티로, 쾌락의 경제를 결연으로 옮기는 교환기여서 18세기 이후 애정의 의무적 자리가 되었고, 섹슈얼리티는 근친상간적으로 태어났습니다. 푸코는 근친상간 금지를 보편적 규칙으로 내세운 이론이 법을 모르는 이 장치를 결연의 법 안에 붙잡아 두려는 방어였을 수 있다고 보고, 정신분석도 섹슈얼리티 한가운데서 결연의 법을 다시 찾아 둘을 이어 붙였다고 말합니다.",
                 "en": "According to Foucault every society has a deployment of alliance: marriage, the fixing of kinship and the transmission of names and goods. It lost importance as economic processes and political structures could no longer find in it an adequate instrument, and from the eighteenth century modern Western societies laid a new deployment over it. Alliance concerns the bond between partners of defined status, links to the economy through the transmission of wealth and centres on reproduction; sexuality concerns bodily sensations and the quality of pleasures, links to the economy through the body that produces and consumes, and endlessly extends its domains of control. Yet sexuality was born from techniques centred on alliance, penance and spiritual direction, and still works by leaning on alliance. The family is the exchanger that carries law into sexuality and the economy of pleasure into alliance; hence it became an obligatory place of affection from the eighteenth century, and sexuality was born incestuous. Foucault suggests that theories making the incest ban a universal rule may have been a defence that kept this law-ignoring deployment within the law of alliance, and that psychoanalysis likewise rediscovered the law of alliance at the heart of sexuality, pinning the two together."
               },
               "source": {
@@ -5573,7 +5573,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 제4부 4장 「시기 구분」에서 섹슈얼리티 장치가 어느 계급에 먼저, 어떤 뜻으로 적용되었다고 했을까요?",
+                "ko": "푸코는 『지식의 의지』 제4부 4장 「시대 구분」에서 성생활의 장치가 어느 계급에 먼저, 어떤 뜻으로 적용되었다고 했을까요?",
                 "en": "In part 4, chapter 4, 'Périodisation', of The Will to Knowledge, to which class did Foucault say the deployment of sexuality was applied first, and in what sense?"
               },
               "choices": {
@@ -5609,7 +5609,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제4부 4장 「시기 구분」, 158~166쪽",
+                  "ko": "푸코, 『지식의 의지』 제4부 4장 「시대 구분」, 158~166쪽",
                   "en": "Foucault, La volonté de savoir, part 4, ch. 4, 'Périodisation', pp. 158-166"
                 }
               }
@@ -5619,7 +5619,7 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 「시기 구분」에서 섹슈얼리티 장치가 노동계급까지 퍼진 뒤 성 억압 이론이 어떻게 생겨났다고 했을까요?",
+                "ko": "푸코는 『지식의 의지』 「시대 구분」에서 성생활의 장치가 노동계급까지 퍼진 뒤 성 억압 이론이 어떻게 생겨났다고 했을까요?",
                 "en": "In 'Périodisation' in The Will to Knowledge, how did Foucault say the theory of sexual repression arose after the deployment of sexuality had spread to the working class?"
               },
               "choices": {
@@ -5638,7 +5638,7 @@ module.exports = {
               "choiceFeedback": {
                 "ko": [
                   "푸코는 19세기 말 부르주아지가 몸의 성적 성질이 아니라 억압의 강도로 사회적 차이를 표시하게 되었고, 억압 이론의 출발점이 거기 있다고 씁니다(169~170, 173쪽).",
-                  "푸코에 따르면 억압 이론은 숨은 실제의 발견이 아니라 섹슈얼리티 장치가 일반화된 뒤 생긴 계급 구별의 새 선이며, 그 확산과 역사적으로 묶여 있습니다(169쪽).",
+                  "푸코에 따르면 억압 이론은 숨은 실제의 발견이 아니라 성생활의 장치가 일반화된 뒤 생긴 계급 구별의 새 선이며, 그 확산과 역사적으로 묶여 있습니다(169쪽).",
                   "푸코는 두 대칭적 위선을 함께 고발하는 시각을 과정을 잘못 이해한 것이라고 합니다. 노동계급은 예속의 목적으로 뒤늦게 강요된 섹슈얼리티를 오래 거부했다는 것입니다(168쪽)."
                 ],
                 "en": [
@@ -5655,7 +5655,7 @@ module.exports = {
                 "kind": "reference",
                 "href": "https://www.gallimard.fr/catalogue/la-volonte-de-savoir/9782070295890",
                 "label": {
-                  "ko": "푸코, 『지식의 의지』 제4부 4장 「시기 구분」, 160~173쪽",
+                  "ko": "푸코, 『지식의 의지』 제4부 4장 「시대 구분」, 160~173쪽",
                   "en": "Foucault, La volonté de savoir, part 4, ch. 4, 'Périodisation', pp. 160-173"
                 }
               }
@@ -5665,14 +5665,14 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 제5부 「죽음의 권리와 삶에 대한 권력」에서 생명 권력과 자본주의의 관계를 어떻게 설명했을까요?",
+                "ko": "푸코는 『지식의 의지』 제5부 「죽음의 권리와 삶에 대한 권력」에서 생체권력과 자본주의의 관계를 어떻게 설명했을까요?",
                 "en": "In part 5, 'Droit de mort et pouvoir sur la vie', of The Will to Knowledge, how did Foucault explain the relation between bio-power and capitalism?"
               },
               "choices": {
                 "ko": [
-                  "몸을 생산 장치에 통제된 방식으로 끼워 넣고 인구 현상을 경제 과정에 맞추는 생명 권력이 자본주의 발전에 꼭 필요했으며, 힘을 꺾지 않고 키우면서도 순종하게 만들었다고 했습니다.",
-                  "생명 권력은 생산관계를 유지하는 국가 장치의 다른 이름이며, 노동자의 성과 쾌락을 억눌러 그 에너지를 노동으로 돌림으로써 자본 축적에 이바지했다고 했습니다.",
-                  "자본주의 형성을 설명하는 열쇠는 육체를 경시한 금욕적 노동 윤리였고, 생명 권력은 자본주의가 자리 잡은 뒤 20세기 복지국가에서야 나타난 부차적 현상이라고 했습니다."
+                  "몸을 생산 장치에 통제된 방식으로 끼워 넣고 인구 현상을 경제 과정에 맞추는 생체권력이 자본주의 발전에 꼭 필요했으며, 힘을 꺾지 않고 키우면서도 순종하게 만들었다고 했습니다.",
+                  "생체권력은 생산관계를 유지하는 국가 장치의 다른 이름이며, 노동자의 성과 쾌락을 억눌러 그 에너지를 노동으로 돌림으로써 자본 축적에 이바지했다고 했습니다.",
+                  "자본주의 형성을 설명하는 열쇠는 육체를 경시한 금욕적 노동 윤리였고, 생체권력은 자본주의가 자리 잡은 뒤 20세기 복지국가에서야 나타난 부차적 현상이라고 했습니다."
                 ],
                 "en": [
                   "Bio-power, inserting bodies into the machinery of production in a controlled way and adjusting population phenomena to economic processes, was indispensable to capitalism; it increased forces rather than breaking them while keeping them docile.",
@@ -5683,9 +5683,9 @@ module.exports = {
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "푸코는 생명 권력이 자본주의 발전에 없어서는 안 될 요소였고, 자본주의가 힘과 적성과 삶을 키우면서도 예속시키기 어렵게 만들지 않는 권력 방법을 요구했다고 씁니다(185~186쪽).",
-                  "푸코는 국가 장치가 생산관계의 유지를 맡았다면, 해부정치와 생명정치는 가족에서 행정까지 사회체의 모든 수준에서 경제 과정 자체에 작용했다고 둘을 나눕니다. 그 기술은 힘을 억누르지 않고 늘렸습니다(185쪽).",
-                  "푸코는 초기 자본주의에서 금욕적 도덕의 역할이라는 익숙한 물음보다 더 큰 현상으로 생명이 역사에 들어온 일을 들고, 생명 권력의 두 축이 이미 17~18세기에 형성되었다고 씁니다(182~186쪽)."
+                  "푸코는 생체권력이 자본주의 발전에 없어서는 안 될 요소였고, 자본주의가 힘과 적성과 삶을 키우면서도 예속시키기 어렵게 만들지 않는 권력 방법을 요구했다고 씁니다(185~186쪽).",
+                  "푸코는 국가 장치가 생산관계의 유지를 맡았다면, 해부정치와 생체정치는 가족에서 행정까지 사회체의 모든 수준에서 경제 과정 자체에 작용했다고 둘을 나눕니다. 그 기술은 힘을 억누르지 않고 늘렸습니다(185쪽).",
+                  "푸코는 초기 자본주의에서 금욕적 도덕의 역할이라는 익숙한 물음보다 더 큰 현상으로 생명이 역사에 들어온 일을 들고, 생체권력의 두 축이 이미 17~18세기에 형성되었다고 씁니다(182~186쪽)."
                 ],
                 "en": [
                   "Foucault writes that bio-power was an indispensable element in the development of capitalism, which needed methods of power able to increase forces, aptitudes and life in general without making them harder to subjugate (pp. 185-186).",
@@ -5694,7 +5694,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "제5부는 군주의 생사여탈권에서 시작합니다. 그것은 실제로는 죽게 하거나 살게 내버려 두는 비대칭적 권리였고, 재화·노동·피를 빼앗는 권력의 정점이었습니다. 고전주의 시대 이후 빼앗음은 여러 기능 가운데 하나가 되고, 권력은 힘을 생산하고 키우고 정돈하는 쪽으로 바뀌어 “살게 하거나 죽음 속으로 내던지는” 권력이 됩니다(181쪽). 그 권력은 두 극으로 발전했습니다. 17세기부터 몸을 기계로 길들여 쓸모와 순종을 함께 늘리는 규율, 곧 인간 신체의 해부정치가, 18세기 중엽부터는 출생·사망·건강·수명을 조절하는 인구의 생명정치가 생겼습니다. 푸코는 이 생명 권력이 자본주의 발전에 없어서는 안 되었다고 하면서, 그 근거를 몸의 통제된 삽입과 인구 현상의 경제 과정 조정에서 찾습니다. 국가 장치가 생산관계 유지를 맡았다면 해부정치와 생명정치는 여러 제도 속에서 경제 과정 자체에 작용했고, 분리와 위계화로 지배 관계를 보장하며 인간의 축적을 자본의 축적에 맞추었습니다. 억압-착취 도식과 다른 점은 권력이 몸의 힘을 깎아 노동으로 돌린 것이 아니라 키우고 관리했다는 데 있습니다. 그래서 법의 무기인 죽음보다 측정하고 위계를 매기는 규범이 중요해지고 규범화 사회가 생겼다고 합니다.",
+                "ko": "제5부는 군주의 생살여탈권에서 시작합니다. 그것은 실제로는 죽게 하거나 살게 내버려 두는 비대칭적 권리였고, 재화·노동·피를 빼앗는 권력의 정점이었습니다. 고전주의 시대 이후 빼앗음은 여러 기능 가운데 하나가 되고, 권력은 힘을 생산하고 키우고 정돈하는 쪽으로 바뀌어 “살게 하거나 죽음 속으로 내던지는” 권력이 됩니다(181쪽). 그 권력은 두 극으로 발전했습니다. 17세기부터 몸을 기계로 길들여 쓸모와 순종을 함께 늘리는 규율, 곧 인간 신체의 해부정치가, 18세기 중엽부터는 출생·사망·건강·수명을 조절하는 인구의 생체정치가 생겼습니다. 푸코는 이 생체권력이 자본주의 발전에 없어서는 안 되었다고 하면서, 그 근거를 몸의 통제된 삽입과 인구 현상의 경제 과정 조정에서 찾습니다. 국가 장치가 생산관계 유지를 맡았다면 해부정치와 생체정치는 여러 제도 속에서 경제 과정 자체에 작용했고, 분리와 위계화로 지배 관계를 보장하며 인간의 축적을 자본의 축적에 맞추었습니다. 억압-착취 도식과 다른 점은 권력이 몸의 힘을 깎아 노동으로 돌린 것이 아니라 키우고 관리했다는 데 있습니다. 그래서 법의 무기인 죽음보다 측정하고 위계를 매기는 규범이 중요해지고 규범화 사회가 생겼다고 합니다.",
                 "en": "Part 5 begins with the sovereign's right of life and death, in practice an asymmetric right to make die or let live, the summit of a power of deduction that seized goods, labour and blood. Since the classical age deduction has become one function among others and power has turned to producing, increasing and ordering forces, becoming a 'power to make live or reject into death' (p. 181). It developed around two poles: from the seventeenth century the disciplines that train the body as a machine to increase its usefulness and docility together, an anatomo-politics of the human body; from the mid-eighteenth century a bio-politics of the population regulating births, mortality, health and longevity. Foucault calls this bio-power indispensable to the development of capitalism, grounding the claim in the controlled insertion of bodies into production and the adjustment of population phenomena to economic processes. If state apparatuses ensured the maintenance of relations of production, anatomo- and bio-politics acted on economic processes themselves through many institutions, secured relations of domination through segregation and hierarchy, and fitted the accumulation of men to the accumulation of capital. Where this differs from the repression-exploitation scheme is that power did not diminish bodily forces to divert them into labour but increased and managed them. Hence the norm, which measures and ranks, gains over the law whose weapon is death, and a normalising society emerges."
               },
               "source": {
@@ -5711,12 +5711,12 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 제5부에서 성이 왜 근대 권력의 중심 표적이 되었고, 섹슈얼리티 장치에 맞서는 거점은 어디여야 한다고 했을까요?",
+                "ko": "푸코는 『지식의 의지』 제5부에서 성이 왜 근대 권력의 중심 표적이 되었고, 성생활의 장치에 맞서는 거점은 어디여야 한다고 했을까요?",
                 "en": "In part 5 of The Will to Knowledge, why did Foucault say sex became a central target of modern power, and where did he say the rallying point against the deployment of sexuality should lie?"
               },
               "choices": {
                 "ko": [
-                  "성은 몸의 규율과 인구의 조절이라는 두 축의 교차점이어서 피의 상징학을 섹슈얼리티의 분석학이 대신했으며, 반격의 거점은 성-욕망이 아니라 몸과 쾌락이어야 한다고 했습니다.",
+                  "성은 몸의 규율과 인구의 조절이라는 두 축의 교차점이어서 피의 상징학을 섹슈얼리티의 분석학이 대신했으며, 반격의 거점은 성-욕망이 아니라 육체와 쾌락이어야 한다고 했습니다.",
                   "성은 권력이 금지하는 인간의 가장 깊은 본성이어서 늘 권력의 표적이 되었으며, 성의 진실을 해방해 성에 예라고 말하는 것이 곧 권력에 아니라고 말하는 길이라고 했습니다.",
                   "성은 피와 혈통을 지키는 결연의 핵심이어서 근대에도 피의 상징이 권력을 계속 지배했으며, 그 법과 금지를 깨뜨리는 위반이 저항의 거점이 되어야 한다고 했습니다."
                 ],
@@ -5729,8 +5729,8 @@ module.exports = {
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "푸코는 성이 몸의 삶과 종의 삶에 동시에 닿는 통로여서 규율의 모체이자 조절의 원리로 쓰였다고 하고, 반격의 거점을 성-욕망이 아닌 몸과 쾌락에 둡니다(191~195, 208쪽).",
-                  "푸코는 성에 예라고 하면 권력에 아니라고 하는 것이라고 믿지 말라고 하며, 그렇게 하는 것은 오히려 섹슈얼리티 장치의 흐름을 따르는 것이라고 씁니다(207~208쪽).",
+                  "푸코는 성이 몸의 삶과 종의 삶에 동시에 닿는 통로여서 규율의 모체이자 조절의 원리로 쓰였다고 하고, 반격의 거점을 성-욕망이 아닌 육체와 쾌락에 둡니다(191~195, 208쪽).",
+                  "푸코는 성에 예라고 하면 권력에 아니라고 하는 것이라고 믿지 말라고 하며, 그렇게 하는 것은 오히려 성생활의 장치의 흐름을 따르는 것이라고 씁니다(207~208쪽).",
                   "푸코는 근대 사회가 피의 상징학에서 섹슈얼리티의 분석학으로 넘어갔다고 하고, 성의 질서를 법·죽음·피·주권으로 생각하는 것은 사드나 바타유를 끌어와도 역사적 퇴행이라고 봅니다(195, 198쪽)."
                 ],
                 "en": [
@@ -5740,7 +5740,7 @@ module.exports = {
                 ]
               },
               "explanation": {
-                "ko": "푸코는 성이 생명에 대한 정치 기술 전체가 전개된 두 축의 경첩에 있다고 봅니다. 한쪽으로는 길들이기와 힘의 강화·분배라는 몸의 규율에, 다른 쪽으로는 전체 효과를 다루는 인구 조절에 속하므로, 미세한 감시와 끝없는 진찰을 낳는 동시에 통계적 추산과 사회체 전체에 대한 개입도 낳습니다. 그래서 19세기에 섹슈얼리티는 개인을 풀이하는 암호가 되는 한편, 출산 장려와 억제, 도덕화 캠페인의 주제가 되었습니다. 결연, 군주, 신분, 기근과 전염병의 사회에서 권력은 피를 통해 말했지만, 근대 사회에서 성은 표시나 상징이 아니라 대상이자 표적입니다. 둘이 겹친 곳에서 19세기 후반 근대의 국가적·생물학적 인종주의가 생겼고, 나치즘은 피의 환상과 규율 권력의 극단을 결합했습니다. 반대편 극에서 정신분석은 성을 결연의 법에 다시 새기며 파시즘과 맞섰지만, 푸코는 그것을 특정 국면의 위치로 한정합니다. 마지막으로 그는 성 자체가 장치 안에서 형성된 관념이고 성에 대한 욕망이 우리를 장치에 묶는다고 말하며, 반격의 거점은 성-욕망이 아니라 “몸과 쾌락”이어야 한다고 결론짓습니다(208쪽).",
+                "ko": "푸코는 성이 생명에 대한 정치 기술 전체가 전개된 두 축의 경첩에 있다고 봅니다. 한쪽으로는 길들이기와 힘의 강화·분배라는 몸의 규율에, 다른 쪽으로는 전체 효과를 다루는 인구 조절에 속하므로, 미세한 감시와 끝없는 진찰을 낳는 동시에 통계적 추산과 사회체 전체에 대한 개입도 낳습니다. 그래서 19세기에 섹슈얼리티는 개인을 풀이하는 암호가 되는 한편, 출산 장려와 억제, 도덕화 캠페인의 주제가 되었습니다. 결연, 군주, 신분, 기근과 전염병의 사회에서 권력은 피를 통해 말했지만, 근대 사회에서 성은 표시나 상징이 아니라 대상이자 표적입니다. 둘이 겹친 곳에서 19세기 후반 근대의 국가적·생물학적 인종주의가 생겼고, 나치즘은 피의 환상과 규율 권력의 극단을 결합했습니다. 반대편 극에서 정신분석은 성을 결연의 법에 다시 새기며 파시즘과 맞섰지만, 푸코는 그것을 특정 국면의 위치로 한정합니다. 마지막으로 그는 성 자체가 장치 안에서 형성된 관념이고 성에 대한 욕망이 우리를 장치에 묶는다고 말하며, 반격의 거점은 성-욕망이 아니라 “육체와 쾌락”이어야 한다고 결론짓습니다(208쪽).",
                 "en": "Foucault places sex at the hinge of the two axes along which the whole political technology of life developed. It belongs on one side to the discipline of the body, training and the intensification and distribution of forces, and on the other to the regulation of populations through its global effects; so it gives rise both to minute surveillance and endless examinations and to statistical estimates and interventions aimed at the whole social body. In the nineteenth century sexuality thus became the cipher of individuality and at the same time the theme of pronatalist or restrictive measures and campaigns of moralisation. In a society of alliance, sovereigns, orders, famine and epidemics, power spoke through blood; in modern society sex is not a mark or symbol but an object and a target. Where the two overlapped, modern state, biologising racism took shape in the late nineteenth century, and Nazism combined fantasies of blood with the paroxysms of disciplinary power. At the opposite extreme psychoanalysis reinscribed sex in the law of alliance and opposed fascism, but Foucault ties that stance to a particular conjuncture. Finally he argues that sex itself is an idea formed within the deployment and that the desire for sex binds us to it, concluding that the rallying point for a counterattack must be not sex-desire but 'bodies and pleasures' (p. 208)."
               },
               "source": {
