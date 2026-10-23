@@ -399,7 +399,7 @@ function normalizeCommuLingoPeople(data, options = {}) {
     }));
     people.forEach(person => { person.collections = []; });
     collections.forEach(collection => collection.personIds.forEach(id => {
-        peopleById[id].collections.push({ id: collection.id, icon: collection.icon, title: collection.title, href: collection.href });
+        peopleById[id].collections.push({ id: collection.id, icon: collection.icon, title: collection.title, intro: collection.intro, href: collection.href });
     }));
     // A red read from the activities names no collection; its chip names the
     // person's communist current (maoism, marxism-leninism …) and opens that
@@ -416,8 +416,8 @@ function normalizeCommuLingoPeople(data, options = {}) {
         const collection = collectionId && person.collections.find(c => c.id === collectionId);
         person.position = position;
         person.positionTag = !position ? null
-            : collection ? { label: collection.title, href: collection.href, icon: collection.icon }
-            : { label: fallbackRed.title || localize(RED_LABELS[position], lang), href: fallbackRed.href || '', icon: redIcon };
+            : collection ? { label: collection.title, href: collection.href, icon: collection.icon, intro: collection.intro }
+            : { label: fallbackRed.title || localize(RED_LABELS[position], lang), href: fallbackRed.href || '', icon: redIcon, intro: fallbackRed.intro || '' };
         // The collections the position chip does not name, for the detail head.
         // A red collection under a red chip (the communist collection under
         // Soviet communism) only repeats it.

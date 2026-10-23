@@ -17,8 +17,9 @@
     // commulingo-people.js swaps #people-browser to. As links, every page
     // offered dozens of new filter combinations, and crawlers walked that
     // endless space (2026-10 scrapers: 100k+ requests a day).
-    function chip(url, label, count, isActive, icon, note) { %>
-        <button type="button" class="commu-dict-chip commu-people-chip<%= isActive ? ' is-active' : '' %>" data-query="<%= url.split('?')[1] || '' %>" aria-pressed="<%= isActive ? 'true' : 'false' %>"><% if (icon) { %><%- roleIconSvg(icon) %><% } %><%= label %><% if (note) { %><small><%= note %></small><% } %><% if (count != null) { %> <span><%= count %></span><% } %></button>
+    // `tip` is the hover text, as on auto-links (a position's collection intro).
+    function chip(url, label, count, isActive, icon, note, tip) { %>
+        <button type="button" class="commu-dict-chip commu-people-chip<%= isActive ? ' is-active' : '' %>" data-query="<%= url.split('?')[1] || '' %>" aria-pressed="<%= isActive ? 'true' : 'false' %>"<% if (tip) { %> title="<%= tip %>"<% } %>><% if (icon) { %><%- roleIconSvg(icon) %><% } %><%= label %><% if (note) { %><small><%= note %></small><% } %><% if (count != null) { %> <span><%= count %></span><% } %></button>
     <% }
     // `current` marks a facet that holds a condition; the condition chips
     // below the bar say which.
@@ -99,7 +100,7 @@
                 <% facetOpen('position', en ? 'Position' : '정치적 입장', !!activePosition) %>
                     <div class="commu-people-chips">
                         <% chip(href({ positionId: '' }), en ? 'Any' : '전체', null, !activePosition) %>
-                        <% facets.positions.forEach(function(p) { chip(href({ positionId: p.id }), p.label, p.count, p.id === state.positionId, p.icon) }) %>
+                        <% facets.positions.forEach(function(p) { chip(href({ positionId: p.id }), p.label, p.count, p.id === state.positionId, p.icon, null, p.intro) }) %>
                     </div>
                 </div></details>
                 <% } %>
