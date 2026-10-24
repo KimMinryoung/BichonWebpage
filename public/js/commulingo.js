@@ -39,6 +39,7 @@
         choices: document.getElementById('commuChoices'),
         feedback: document.getElementById('commuFeedback'),
         focus: document.getElementById('commuFocus'),
+        passage: document.getElementById('commuPassage'),
         intro: document.getElementById('commuIntro'),
         introTitle: document.getElementById('commuIntroTitle'),
         introSummary: document.getElementById('commuIntroSummary'),
@@ -256,6 +257,7 @@
                         id: lesson.id,
                         collectionId: collection.id,
                         collectionTitle: text(collection.title),
+                        format: collection.format,
                         chapterId: chapter.id,
                         chapterNumber: chapter.chapterNumber,
                         chapterTitle: text(chapter.title),
@@ -839,12 +841,15 @@
                     pos: 0,
                     score: 0,
                     streak: 0,
-                    intro: true,
+                    // A reading lesson opens on its first passage: the text is
+                    // the introduction, so there is no concept brief to pass.
+                    intro: !isReadingLesson(loadedLesson),
                     missed: [],
                     firstScore: null
                 };
                 if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.begin('lesson', lesson.id, data.version, 'lesson');
-                renderIntro();
+                if (active.intro) renderIntro();
+                else renderQuestion();
             })
             .catch(function() {
                 active = null;
@@ -868,6 +873,7 @@
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(lesson)) + '</span><span class="commu-level-badge ' + lessonLevelClass(lesson) + '">' + escapeHtml(lessonLevel(lesson)) + '</span>';
         if (els.intro) els.intro.classList.add('is-hidden');
         if (els.focus) els.focus.classList.add('is-hidden');
+        hidePassage();
         els.prompt.textContent = lang === 'en' ? 'Loading questions...' : '문제를 불러오는 중입니다...';
         els.prompt.classList.remove('is-hidden');
         els.choices.classList.add('is-hidden');
@@ -882,6 +888,7 @@
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span><span class="commu-level-badge ' + lessonLevelClass(active.lesson) + '">' + escapeHtml(lessonLevel(active.lesson)) + '</span>';
         if (els.intro) els.intro.classList.remove('is-hidden');
         if (els.focus) els.focus.classList.add('is-hidden');
+        hidePassage();
         els.prompt.classList.add('is-hidden');
         els.choices.classList.add('is-hidden');
         els.feedback.className = 'commu-feedback is-hidden';
@@ -975,8 +982,9 @@
             ? '<span class="commu-level-badge is-review">' + escapeHtml(strings.reviewTitle || 'Review') + '</span>'
             : '<span class="commu-level-badge ' + lessonLevelClass(lesson) + '">' + escapeHtml(lessonLevel(lesson)) + (active.mode === 'retry' ? ' · ' + escapeHtml(strings.tryAgain || 'Retry') : '') + '</span>';
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(lesson)) + '</span>' + badge;
+        renderPassage(lesson, question);
         if (els.focus) {
-            var showFocus = active.mode === 'lesson' && lesson.focus;
+            var showFocus = active.mode === 'lesson' && lesson.focus && !isReadingLesson(lesson);
             els.focus.textContent = showFocus ? lesson.focus : '';
             els.focus.classList.toggle('is-hidden', !showFocus);
         }
@@ -1064,9 +1072,42 @@
         if (correct && active && active.streak >= 3) {
             parts.push('<span class="commu-streak-badge">' + escapeHtml(streakLabel(active.streak)) + '</span>');
         }
-        var source = sourceHtml(question);
+        // A reading lesson already showed the passage above the question.
+        var source = isReadingLesson(currentLesson()) ? '' : sourceHtml(question);
         if (source) parts.push(source);
         return parts.join('');
+    }
+
+    function isReadingLesson(lesson) {
+        return Boolean(lesson && lesson.format === 'guided-reading');
+    }
+
+    function hidePassage() {
+        if (!els.passage) return;
+        els.passage.classList.add('is-hidden');
+        els.passage.innerHTML = '';
+        els.quiz.classList.remove('is-reading');
+    }
+
+    // Reading lessons put the passage first: one or two paragraphs of the
+    // text, the sentence placing it, then the question about it. The link
+    // opens the full text at that section in a new tab.
+    function renderPassage(lesson, question) {
+        if (!els.passage) return;
+        var source = question && question.source;
+        var quote = isReadingLesson(lesson) && source && text(source.quote);
+        if (!quote) { hidePassage(); return; }
+        var context = text(question.context);
+        var label = text(source.label);
+        var pieces = quote.split(' … ').map(escapeHtml).join(' <span class="commu-source-gap">…</span> ');
+        els.passage.innerHTML = (context ? '<p class="commu-passage-context">' + escapeHtml(context) + '</p>' : '')
+            + '<blockquote class="commu-passage-text"><p>' + pieces + '</p>'
+            + (source.href && label
+                ? '<a class="commu-source-link" href="' + escapeHtml(source.href) + '" target="_blank" rel="noopener">' + escapeHtml(label) + (lang === 'en' ? ' →' : ' 전문에서 보기 →') + '</a>'
+                : '')
+            + '</blockquote>';
+        els.passage.classList.remove('is-hidden');
+        els.quiz.classList.add('is-reading');
     }
 
     // The passage of the original text the question was drawn from, shown
@@ -1138,6 +1179,7 @@
 
         els.prompt.textContent = strings.allDone || 'Lesson complete';
         if (els.focus) els.focus.classList.add('is-hidden');
+        hidePassage();
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span><span class="commu-level-badge ' + lessonLevelClass(active.lesson) + '">' + escapeHtml(lessonLevel(active.lesson)) + '</span>';
         if (els.intro) els.intro.classList.add('is-hidden');
         els.prompt.classList.remove('is-hidden');
@@ -1225,6 +1267,7 @@
         var perfect = active.score === total;
         els.prompt.textContent = strings.reviewDone || 'Review complete';
         if (els.focus) els.focus.classList.add('is-hidden');
+        hidePassage();
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(strings.reviewTitle || 'Review') + '</span>';
         els.choices.innerHTML = '';
         els.feedback.className = 'commu-feedback' + (perfect ? ' is-perfect' : '');

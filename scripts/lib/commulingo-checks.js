@@ -305,9 +305,15 @@ function checkQuestion(out, question, lesson, index, ctx) {
   if (question.points !== (lesson.level === 'advanced' ? 3 : 2)) out.add('shape', qLabel, qLabel + ' points do not match lesson level');
   allLocalizedText(out, question.prompt, qLabel + '.prompt');
   allLocalizedText(out, question.explanation, qLabel + '.explanation');
-  const choiceCount = ctx && ctx.shortLearning ? 3 : 4;
+  const choiceCount = ctx && (ctx.shortLearning || ctx.reading) ? 3 : 4;
   checkChoiceFeedback(out, question.choiceFeedback, qLabel, choiceCount);
   checkSource(out, question.source, qLabel);
+  // A reading question is asked about the passage shown above it, so the
+  // passage is a verbatim quotation, never a reference, and is required.
+  if (ctx && ctx.reading) {
+    if (!question.source || question.source.kind === 'reference' || !question.source.quote) out.add('source-shape', qLabel, qLabel + ' reading question needs a quoted passage');
+    if (typeof question.context !== 'undefined') allLocalizedText(out, question.context, qLabel + '.context');
+  }
   if (question.answer !== 0) out.add('shape', qLabel, qLabel + ' answer must be 0 with the correct choice first');
 
   const prompt = question.prompt || {};
@@ -384,17 +390,21 @@ function checkChapter(out, chapter, collectionId, ctx) {
   allLocalizedText(out, chapter.title, chapterLabel + '.title');
   allLocalizedText(out, chapter.summary, chapterLabel + '.summary');
   if (chapter.learningFocus) allLocalizedText(out, chapter.learningFocus, chapterLabel + '.learningFocus');
-  checkConceptMap(out, chapter.conceptMap, chapterLabel);
-  checkConceptBrief(out, chapter, chapterLabel);
+  const reading = Boolean(ctx && ctx.reading);
+  // A reading chapter has no concept brief: its passages are the introduction.
+  if (!reading) {
+    checkConceptMap(out, chapter.conceptMap, chapterLabel);
+    checkConceptBrief(out, chapter, chapterLabel);
+  }
   checkDiagram(out, chapter.diagram, chapterLabel);
   checkKoEmDash(out, chapter, chapterLabel);
 
   const lessons = chapter.lessons || [];
-  const shortLearning = Boolean(ctx && ctx.shortLearning);
+  const shortLearning = Boolean(ctx && (ctx.shortLearning || ctx.reading));
   const lessonCount = shortLearning ? 1 : 2;
   // A short lesson is three questions; a chapter that joins two short readings
-  // on one period may carry up to six.
-  const questionCounts = shortLearning ? [3, 4, 5, 6] : [5];
+  // on one period may carry up to six. A reading lesson is five to eight passages.
+  const questionCounts = reading ? [5, 6, 7, 8] : shortLearning ? [3, 4, 5, 6] : [5];
   if (lessons.length !== lessonCount) out.add('shape', label, chapterLabel + ' lesson count ' + lessons.length + ' != ' + lessonCount);
   const levels = lessons.map(function(lesson) { return lesson.level; }).sort().join(',');
   const expectedLevels = shortLearning ? 'basic' : 'advanced,basic';
@@ -412,7 +422,7 @@ function checkChapter(out, chapter, collectionId, ctx) {
 function checkChapters(out, collections) {
   const ctx = { prompts: new Map() };
   collections.forEach(function(collection) {
-    (collection.chapters || []).forEach(function(chapter) { checkChapter(out, chapter, collection.id, { ...ctx, shortLearning: collection.format === 'short-learning' }); });
+    (collection.chapters || []).forEach(function(chapter) { checkChapter(out, chapter, collection.id, { ...ctx, shortLearning: collection.format === 'short-learning', reading: collection.format === 'guided-reading' }); });
   });
 }
 

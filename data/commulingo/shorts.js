@@ -112,6 +112,9 @@ function courseCards() {
     const catalog = loadCommuLingoCatalog();
     const cards = [];
     for (const collection of catalog.collections || []) {
+        // A reading question is asked about the passage shown above it, so
+        // its card carries that passage and is left out when it is too long.
+        const reading = collection.format === 'guided-reading';
         for (const chapter of collection.chapters || []) {
             for (const meta of chapter.lessons || []) {
                 const loaded = loadCommuLingoLesson(meta.id);
@@ -128,11 +131,15 @@ function courseCards() {
                     if (NEEDS_CHOICES.test(question.prompt.ko) || NEEDS_CHOICES.test(question.prompt.en)) return;
                     const correct = { ko: ko[answer], en: en[answer] };
                     if (!fits(correct, LIMITS.answer)) return;
+                    const passage = reading && question.source ? question.source.quote : null;
+                    if (reading && !fits(passage, LIMITS.quote)) return;
                     const cardId = 'c-' + lesson.id + '-' + question.id;
                     cards.push(revealCard({
                         id: cardId,
                         topic: courseTopic(collection, chapter),
                         prompt: question.prompt,
+                        quoteHeading: passage ? question.source.label : null,
+                        quote: passage,
                         answer: correct,
                         explanation: question.explanation,
                         href: '/commulingo/book/' + encodeURIComponent(collection.id) + '#lesson=' + encodeURIComponent(lesson.id),

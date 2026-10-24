@@ -21,6 +21,7 @@ const PUBLIC_CHAPTER_LIMITS = {
     'lenin-state-revolution': 6,
     'marx-wage-labour-capital': 6,
     'marx-wages-and-programme': 8,
+    'marx-civil-war-in-france': 6,
 };
 
 let freshnessCache = null;
@@ -124,6 +125,7 @@ function publicLessonPayload(collection, chapter, lesson) {
         id: lesson.id,
         collectionId: collection.id,
         collectionTitle: collection.title,
+        format: collection.format,
         noAutoLink: collection.noAutoLink,
         chapterNumber: chapter.chapterNumber,
         chapterTitle: chapter.title,

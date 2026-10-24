@@ -41,6 +41,7 @@ const expected = {
   'lenin-state-revolution': { chapters: 6, questions: 60, lessons: 12 },
   'marx-wage-labour-capital': { chapters: 6, questions: 60, lessons: 12 },
   'marx-wages-and-programme': { chapters: 8, questions: 80, lessons: 16 },
+  'marx-civil-war-in-france': { chapters: 6, questions: 41, lessons: 6, format: 'guided-reading' },
 };
 const expectedSpecial = {
   'engels-origin-family': { format: 'concept-graph', nodes: 8, stages: 24 },
