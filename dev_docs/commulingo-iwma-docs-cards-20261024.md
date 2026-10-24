@@ -15,10 +15,14 @@
 - 사건 문구(`apply-event-text-fixes.js`, `scripts/content/iwma-cards-20261024/event-links-20261024.json`): 아이티 혁명 no_auto_link에 「프랑스 은행」, 1848년 혁명 「9월 법」→9월법.
 - 문헌 표기 통일: 명령적 위임, 바양, 루크래프트, 펜더, 코웰; 문헌 people·personLinks에 새 카드 연결(1864 명단의 성만 적힌 이름은 절 범위 identity), 『프랑스 내전』 noAutoLink 「이중 포위」.
 
+## 활동 카탈로그 v52 (같은 날 후속, `scripts/content/catalog-iwma-20261024/`)
+- 새 affiliation 12개: 영국 `british-reform-league`·`british-labour-representation-league`·`british-land-and-labour-league`·`british-chartism`(운동 전체, 기존 용어 chartism)·`british-london-school-board`·`party-british-whig`(1859년 이후는 자유당)·`british-andersonian-institution`, 프랑스 `party-french-ftsf`(용어 possibilists-france, FTSF 별칭 추가)·`party-french-crc`·`party-french-psr-1898`·`party-french-psdf-1902`(게드·바양 쪽, 조레스 쪽 party-french-socialist-1902와 구별)·`french-twenty-arrondissements-committee`.
+- 새 용어 10개(개혁동맹 (영국), 노동대표동맹, 토지노동동맹, 런던 교육위원회, 휘그당 (영국), 앤더슨 연구소 (글래스고), 중앙혁명위원회 (프랑스), 혁명사회당 (프랑스), 프랑스사회당(게드·바양), 20개 구 공화주의 중앙위원회). 링크 승인 `commulingo-links-20261024-catalog-iwma-{british,french}.json`·`…-ftsf-aliases.json`. 맨 「휘그당」「Whigs」는 미국 휘그와 겹쳐 search.
+- 카드 24명에 활동 추가(`*/members.json`, 기존 활동 뒤에 덧붙임): 크리머·하월·루크래프트·모터스헤드·헤일스·폭스·오저·에카리우스·브래들로·베전트·파머스턴·유어·퍼거스 오코너(기존 미확정 대표 활동을 차티스트로 확정), 바양·말롱·뒤발·베슬레·들레클뤼즈·바를랭·외드·상바·게드·라파르그·로슈포르. FTSF는 근거 있는 카드가 없어 활동 없음(브루스·알레만 카드 없음).
+
 ## 검증
 인물 감사 5종 통과. 문헌·새 인물·용어 페이지 200, 사건 네 편에서 새 용어 링크 확인, 아이티 사건 오연결 없음.
 
 ## 남은 일
 - 카드 없는 이름: 존 웨스턴·외젠 뒤퐁(생몰년 출처 없음), 프랑수아 주르드·아돌프 아시·테오필 페레(코뮌), 외젠 루에르, 폴 브루스.
-- 활동 카탈로그에 없는 기관: 개혁동맹·노동대표동맹·토지노동동맹, 런던 교육위원회, FTSF(가능파), 혁명사회당(바양).
 - Laysatine→로파틴 판독과 『프랑스 내전』 초판 서명자 명단은 원본 대조 전.
