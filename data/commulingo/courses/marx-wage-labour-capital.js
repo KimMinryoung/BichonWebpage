@@ -74,7 +74,7 @@ function chapter(ch, sourceFiles, titleKo, titleEn, summaryKo, summaryEn, focusK
     const base = 'https://www.marxists.org/archive/marx/works/1847/wage-labour';
     return {
         id: `wage-labour-ch${String(ch).padStart(2, '0')}`,
-        volumeNumber: 0,
+        volumeNumber: -2,
         chapterNumber: ch,
         title: t(titleKo, titleEn),
         sourceUrl: `${base}/${sourceFiles[0]}`,
@@ -326,7 +326,7 @@ const SOURCES = {
 
 module.exports = {
     id: 'marx-wage-labour-capital',
-    volumeNumber: 0,
+    volumeNumber: -2,
     title: t('마르크스: 임금노동과 자본', 'Marx: Wage-Labour and Capital'),
     bookTitle: t('임금노동과 자본', 'Wage-Labour and Capital'),
     badge: t('추천 입문서', 'Recommended primer'),

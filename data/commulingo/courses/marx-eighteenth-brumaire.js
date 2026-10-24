@@ -53,7 +53,7 @@ function chapter(ch, anchor, titleKo, titleEn, summaryKo, summaryEn, questions) 
     const id = `${BOOK}-ch${String(ch).padStart(2, '0')}`;
     return {
         id,
-        volumeNumber: 16,
+        volumeNumber: -1,
         chapterNumber: ch,
         title: t(titleKo, titleEn),
         sourceUrl: `${DOC}#${anchor}`,
@@ -69,7 +69,7 @@ function chapter(ch, anchor, titleKo, titleEn, summaryKo, summaryEn, questions) 
 
 module.exports = {
     id: BOOK,
-    volumeNumber: 16,
+    volumeNumber: -1,
     format: 'guided-reading',
     title: t('마르크스: 루이 보나파르트의 브뤼메르 18일', 'Marx: The Eighteenth Brumaire of Louis Bonaparte'),
     bookTitle: t('루이 보나파르트의 브뤼메르 18일', 'The Eighteenth Brumaire of Louis Bonaparte'),

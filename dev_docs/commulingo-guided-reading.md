@@ -5,7 +5,7 @@
 | 학습 경로 | 원본 | 구성 |
 | --- | --- | --- |
 | `/commulingo/book/marx-civil-war-in-france` | `data/commulingo/courses/marx-civil-war-in-france.js` | 6편·41발췌, `format: 'guided-reading'`, 권 번호 17(홈의 「카를 마르크스」 묶음, 2026-10-24 『브뤼메르 18일』 뒤로 옮김) |
-| `/commulingo/book/marx-eighteenth-brumaire` | `data/commulingo/courses/marx-eighteenth-brumaire.js` | 7편·49발췌, 같은 형식·권 번호 16 (2026-10-24) |
+| `/commulingo/book/marx-eighteenth-brumaire` | `data/commulingo/courses/marx-eighteenth-brumaire.js` | 7편·49발췌, 같은 형식·권 번호 -1 (2026-10-24) |
 
 ## 왜 이 형식인가 (2026-10-24 판단 근거)
 
@@ -59,3 +59,4 @@
 - 작업물(원문, 갈래별 번역·REPORT·REVIEW, 조립 `assemble.py`, 강좌 편 파일과 `course/check.js`·`build.js`)은 `scripts/content/brumaire-doc-20261024/`. 강좌 모듈은 `node scripts/content/brumaire-doc-20261024/course/build.js data/commulingo/courses/marx-eighteenth-brumaire.js`로 다시 만든다.
 - 공개는 `data/commulingo/shards.js`의 `PUBLIC_CHAPTER_LIMITS`를 읽는 운영 프로세스가 재시작해야 반영된다(위 「등록 때 겪은 일」과 같다).
 - 남은 일: 카드 없는 인물(몰레, 베리에, 바로슈, 풀드, 루에르, 페르시니, 몽탈랑베르, 뒤팽, 레옹 포셰, 라모리시에르, 샹보르 백작 등)과 용어(정통왕조파, 오를레앙파, 룸펜프롤레타리아트, 분할지 농민, 의회 백치증)는 등록하지 않았다. 갈래별 `REPORT.md`에 목록이 있다.
+- 마르크스 묶음의 순서(2026-10-24 사용자 지시): 홈은 `volumeNumber`로만 정렬하므로 첫 저작 연도 순으로 번호를 맞췄다. 『임금노동과 자본』 -2(1849), 『브뤼메르 18일』 -1(1852), 『임금, 가격, 이윤 · 고타강령 비판』 0(1865·1875, 번호는 `course-metadata.js`), 『자본』 1~3(1867~, 권 순서 그대로 붙여 둔다), 『프랑스 내전』 17(1871). 다른 묶음은 번호를 묶음 안 정렬에만 쓴다.
