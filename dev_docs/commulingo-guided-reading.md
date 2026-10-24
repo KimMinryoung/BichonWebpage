@@ -4,7 +4,7 @@
 
 | 학습 경로 | 원본 | 구성 |
 | --- | --- | --- |
-| `/commulingo/book/marx-civil-war-in-france` | `data/commulingo/courses/marx-civil-war-in-france.js` | 6편·41발췌, `format: 'guided-reading'`, 권 번호 16(홈의 「카를 마르크스」 묶음) |
+| `/commulingo/book/marx-civil-war-in-france` | `data/commulingo/courses/marx-civil-war-in-france.js` | 6편·41발췌, `format: 'guided-reading'`, 권 번호 17(홈의 「카를 마르크스」 묶음, 2026-10-24 『브뤼메르 18일』 뒤로 옮김) |
 | `/commulingo/book/marx-eighteenth-brumaire` | `data/commulingo/courses/marx-eighteenth-brumaire.js` | 7편·49발췌, 같은 형식·권 번호 16 (2026-10-24) |
 
 ## 왜 이 형식인가 (2026-10-24 판단 근거)
