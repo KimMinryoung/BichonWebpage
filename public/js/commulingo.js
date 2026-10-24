@@ -14,6 +14,7 @@
     var active = null;
     var answered = false;
     var returnScrollLesson = null;
+    var quizHistory = false;
     // Per-question history and the review schedule built on it, shared with
     // the hub through public/js/commulingo-schedule.js.
     var Schedule = window.CommuLingoSchedule || null;
@@ -830,6 +831,7 @@
         els.list.classList.add('is-hidden');
         els.quiz.classList.remove('is-hidden');
         els.next.removeAttribute('data-finished');
+        enterQuizHistory('#lesson=' + encodeURIComponent(lesson.id));
         renderLoadingLesson(lesson);
         scrollToQuiz();
         loadLessonDetail(lesson)
@@ -906,7 +908,23 @@
         els.next.textContent = lang === 'en' ? 'Start questions' : '문제 풀기';
     }
 
-    function showLessons(scrollTarget) {
+    // An open lesson or review owns one history entry, so the browser's back
+    // button returns to the chapter list instead of leaving the book page.
+    // Moving on to the next lesson replaces that entry rather than stacking.
+    function enterQuizHistory(hash) {
+        if (!window.history || !history.pushState) return;
+        var url = window.location.pathname + window.location.search + hash;
+        if (quizHistory) history.replaceState({ commuQuiz: true }, '', url);
+        else history.pushState({ commuQuiz: true }, '', url);
+        quizHistory = true;
+    }
+
+    function showLessons(scrollTarget, fromHistory) {
+        if (quizHistory) {
+            quizHistory = false;
+            // The popstate this causes finds the quiz already closed.
+            if (!fromHistory) history.back();
+        }
         scrollTarget = scrollTarget || scrollTargetForLesson(active && active.lesson || returnScrollLesson, false);
         active = null;
         answered = false;
@@ -961,10 +979,15 @@
         return next;
     }
 
-    function handleDeepLink() {
+    function handleDeepLink(fromHistory) {
         var match = /(?:^|[#&])lesson=([^&]+)/.exec(window.location.hash || '');
         if (!match) return;
         var lessonId = decodeURIComponent(match[1]);
+        // Opened from a shared link: put the bare book page beneath the
+        // lesson so back lands on the chapter list. Going forward again
+        // reuses the lesson entry that is already there.
+        if (fromHistory) quizHistory = true;
+        else if (window.history && history.replaceState) history.replaceState(null, '', window.location.pathname + window.location.search);
         var target = lessons.filter(function(item) { return item.id === lessonId && !item.locked && lessonQuestionCount(item); })[0];
         if (target) startLesson(target);
     }
@@ -1240,6 +1263,7 @@
         els.list.classList.add('is-hidden');
         els.quiz.classList.remove('is-hidden');
         els.next.removeAttribute('data-finished');
+        enterQuizHistory('#review');
         renderLoadingLesson(lessonById(lessonIds[0]) || lessons[0]);
         scrollToQuiz();
         Promise.all(lessonIds.map(function(id) {
@@ -1326,6 +1350,12 @@
     // the server progress sync only triggers a repaint when it changes something.
     renderLessons();
     handleDeepLink();
+    window.addEventListener('popstate', function() {
+        var quizOpen = !els.quiz.classList.contains('is-hidden');
+        var lessonHash = /(?:^|[#&])(lesson=|review)/.test(window.location.hash || '');
+        if (quizOpen && !lessonHash) showLessons(null, true);
+        else if (!quizOpen && lessonHash) handleDeepLink(true);
+    });
     syncServerProgress().then(function(changed) {
         if (changed) renderLessons();
     });
