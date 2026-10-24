@@ -378,7 +378,23 @@
         });
     }
 
+    // Multi-condition filter links swap in place (common.js); from other
+    // pages they arrive as #filter=<query>, fetched here with the header.
+    window.__commuPeopleSwap = function(href, link) {
+        var root = browser();
+        if (root && root.contains(link) && !link.closest('.commu-person-card, .commu-people-row')) return false;
+        if (searchInput) syncSearch(new URL(href).searchParams.get('q') || '');
+        swap(href, { push: true });
+        return true;
+    };
+
     if (browser()) initBrowser(browser());
+    var handoff = /^#filter=(.+)$/.exec(location.hash);
+    if (handoff && browser()) {
+        var target = location.pathname + '?' + decodeURIComponent(handoff[1]);
+        if (searchInput) syncSearch(new URL(target, location.href).searchParams.get('q') || '');
+        swap(new URL(target, location.href).href, { replace: true });
+    }
     window.addEventListener('hashchange', focusHash);
     focusHash();
 })();

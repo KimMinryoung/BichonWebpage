@@ -7,11 +7,12 @@ const assert = require('node:assert/strict');
     const browser = await chromium.launch({ headless: true });
     try {
         const page = await browser.newPage({ viewport: { width: 1280, height: 900 }, locale: 'ko-KR' });
-        const errors = [], requests = [], swapFetches = [];
+        const errors = [], requests = [], swapFetches = [], comboNavigations = [];
         page.on('pageerror', e => errors.push(e.message));
         page.on('request', r => {
             requests.push(r.url());
             if (r.resourceType() === 'fetch' && /\/commulingo\/people[/?]/.test(r.url())) swapFetches.push(r.headers()['x-commu-swap']);
+            if (r.isNavigationRequest() && /\/commulingo\/people\?[^#]*&/.test(r.url())) comboNavigations.push(r.url());
         });
         const origin = (process.env.BASE_URL || 'http://127.0.0.1:3001').replace(/\/$/, '');
         const input = page.locator('[data-commu-dict-search-input]');
@@ -236,6 +237,24 @@ const assert = require('node:assert/strict');
         await page.waitForFunction(() => !/q=/.test(location.search));
         await page.goBack();
         await page.waitForFunction(() => /q=Lenin/.test(location.search));
+        // Multi-condition links (activity rows, card affiliation badges) never
+        // load directly: the rule would challenge them. They go through the
+        // explorer's marked fetch, from other pages by a #filter= handoff.
+        await goto('/commulingo/people/lenin');
+        const activity = page.locator('.commu-activity-org[href*="&"]').first();
+        const activityHref = await activity.getAttribute('href');
+        await activity.click();
+        await page.waitForURL(url => url.pathname + url.search === activityHref);
+        await page.waitForFunction(() => document.getElementById('people-browser').getAttribute('aria-busy') === 'false');
+        assert(await page.locator('[data-facet="affiliation"].is-set').count() > 0, 'handoff applies the filter');
+        await goto('/commulingo/people?position=marxism-leninism&view=cards');
+        comboNavigations.length = 0; // the test's own direct load above
+        const badge = page.locator('.commu-person-card .commu-person-affiliation[href*="&"]').first();
+        const badgeHref = await badge.getAttribute('href');
+        await badge.click();
+        await page.waitForURL(url => url.pathname + url.search === badgeHref);
+        assert.deepEqual(comboNavigations, [], 'no direct load of a multi-condition filter URL');
+        assert(swapFetches.every(v => v === '1'));
         assert.equal(errors.length, 0, errors.join('\n'));
         console.log('filters, paging, clear, retry, sorting, country scope, English, mobile, map and shared person highlighting passed');
     } finally { await browser.close(); }

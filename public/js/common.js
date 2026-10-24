@@ -50,3 +50,40 @@ document.addEventListener('submit', function(e) {
         setIcon();
     });
 })();
+
+// People filter links with more than one condition (a card's affiliation
+// badge, a person's activity rows): a Cloudflare rule challenges such URLs
+// unless the people explorer's fetch marks them (X-Commu-Swap), so a click
+// goes through that fetch — in place on the explorer, and from other pages
+// by opening the explorer with a #filter= handoff it fetches on load.
+(function() {
+    var PEOPLE = /^(\/en)?\/commulingo\/people\/?$/;
+    function filterUrl(event) {
+        var link = event.target.closest && event.target.closest('a[href]');
+        if (!link || link.target) return null;
+        var url = new URL(link.href, location.href);
+        if (url.origin !== location.origin || !PEOPLE.test(url.pathname) || url.search.indexOf('&') < 0 || url.hash) return null;
+        return url;
+    }
+    function handoff(url) { return url.pathname + '#filter=' + encodeURIComponent(url.search.slice(1)); }
+    document.addEventListener('click', function(event) {
+        if (event.defaultPrevented || event.button !== 0 || event.altKey) return;
+        var url = filterUrl(event);
+        if (!url) return;
+        var modified = event.metaKey || event.ctrlKey || event.shiftKey;
+        // The explorer swaps its own facet and pager links; it takes the rest.
+        if (!modified && window.__commuPeopleSwap) {
+            if (window.__commuPeopleSwap(url.href, event.target.closest('a'))) event.preventDefault();
+            return;
+        }
+        event.preventDefault();
+        if (modified) window.open(handoff(url), '_blank', 'noopener');
+        else location.href = handoff(url);
+    }, true);
+    document.addEventListener('auxclick', function(event) {
+        var url = event.button === 1 && filterUrl(event);
+        if (!url) return;
+        event.preventDefault();
+        window.open(handoff(url), '_blank', 'noopener');
+    }, true);
+})();

@@ -62,6 +62,7 @@
         </form>
 
         <section class="commu-people-browser" id="people-browser" aria-busy="false">
+            <script>if (/^#filter=./.test(location.hash)) document.getElementById('people-browser').setAttribute('aria-busy', 'true');</script>
             <div class="commu-people-filterbar" role="group" aria-label="<%= en ? 'Filter people' : '인물 조건' %>">
                 <% facetOpen('function', en ? 'Activity' : '기능·활동', !!activeFunction) %>
                     <div class="commu-people-chips">
