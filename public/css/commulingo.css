@@ -341,16 +341,33 @@
 
 .commu-quiz-top {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px;
+    align-items: stretch;
     border-bottom: 1px solid var(--border);
-    padding: 12px;
+}
+
+.commu-quiz-back {
+    flex: none;
+    border: 0;
+    border-right: 1px solid var(--border);
+    background: transparent;
+    color: var(--link);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 0 16px;
+}
+
+.commu-quiz-back:hover,
+.commu-quiz-back:focus-visible {
+    background: var(--bg-surface);
 }
 
 .commu-quiz-meter {
     flex: 1;
     max-width: 420px;
+    margin-left: auto;
+    padding: 8px 12px;
     color: var(--text-muted);
     font-size: 0.86rem;
 }
@@ -1036,11 +1053,6 @@
 }
 
 @media (max-width: 700px) {
-    .commu-quiz-top {
-        align-items: stretch;
-        flex-direction: column;
-    }
-
     .commulingo-hero {
         align-items: center;
         flex-direction: row;

@@ -72,8 +72,8 @@ module.exports = {
     bookTitle: t('프랑스 내전', 'The Civil War in France'),
     badge: t('원문 끊어 읽기 · 6편', 'Guided reading · 6 lessons'),
     description: t(
-        '보불전쟁에 관한 두 담화, 파리 코뮌을 다룬 『프랑스 내전』, 엥겔스의 1891년 서문을 원문 그대로 한두 문단씩 끊어 읽습니다. 대목마다 질문 하나를 풀고 해설을 보며, 여섯 편을 마치면 이 저작의 핵심 대목을 직접 읽은 셈이 됩니다.',
-        'Read the two Addresses on the Franco-Prussian War, The Civil War in France on the Paris Commune, and Engels\'s 1891 introduction a paragraph or two at a time, in the text itself. Each passage comes with one question and its explanation; after six lessons you have read the work\'s key passages for yourself.'
+        '보불전쟁에 관한 두 담화, 파리 코뮌을 다룬 『프랑스 내전』, 엥겔스의 1891년 서문을 원문 그대로 한두 문단씩 끊어 읽습니다.',
+        'Read the two Addresses on the Franco-Prussian War, The Civil War in France on the Paris Commune, and Engels\'s 1891 introduction a paragraph or two at a time, in the text itself.'
     ),
     editorial: {
         authoredAt: '2026-10-24',
