@@ -54,12 +54,13 @@
     is pressed), so the click finds the response already there. Only links in
     the page's own language: an /en/ response or a ?lang= link would set the
     language cookie as a side effect. Admin/auth/API links are never fetched,
-    nor the people explorer's query links (its pager): a Cloudflare rule
-    challenges those without the explorer's fetch header. %>
+    nor the people explorer's query links (its pager) or any multi-condition
+    people filter link: a Cloudflare rule challenges those without the
+    explorer's fetch header, and common.js sends their clicks through it. %>
 <script type="speculationrules">
 {"prefetch":[{"where":{"and":[
 <% if (_urlLang === 'en') { %>{"href_matches":"/en/*"},<% } else { %>{"href_matches":"/*"},{"not":{"href_matches":"/en/*"}},{"not":{"href_matches":"/en"}},<% } %>
-{"not":{"selector_matches":"[href*='lang='],[href*='/admin'],[href*='/auth'],[href*='/api/'],[href$='.md'],[href$='.xml'],[download],[target=_blank],[data-no-prefetch],#people-browser a[href*='?']"}}
+{"not":{"selector_matches":"[href*='lang='],[href*='/admin'],[href*='/auth'],[href*='/api/'],[href$='.md'],[href$='.xml'],[download],[target=_blank],[data-no-prefetch],#people-browser a[href*='?'],a[href*='/people?'][href*='&']"}}
 ]},"eagerness":"moderate"}]}
 </script>
 <% if (typeof jsonLd !== 'undefined' && jsonLd) { %>
