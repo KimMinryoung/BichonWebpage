@@ -14,7 +14,7 @@ const DOC = '/commulingo/docs/marx-civil-war-in-france';
 const BOOK = 'marx-civil-war-in-france';
 
 const LABELS = {
-    'engels-introduction-1891': t('엥겔스, 1891년 판 서문', 'Engels, introduction to the 1891 edition'),
+    'engels-introduction-1891': t('엥겔스, 1891년 판 서문', 'Engels, introduction to the 1891 edition (our translation from the German)'),
     'first-address-1870': t('보불전쟁에 관한 첫 번째 담화 (1870년 7월 23일)', 'First Address on the war (23 July 1870)'),
     'second-address-1870': t('보불전쟁에 관한 두 번째 담화 (1870년 9월 9일)', 'Second Address on the war (9 September 1870)'),
     'cwf-1': t('『프랑스 내전』 제1절', 'The Civil War in France, section I'),
