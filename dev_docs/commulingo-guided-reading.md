@@ -1,10 +1,11 @@
-# CommuLingo 원문 끊어 읽기 형식 · 『프랑스 내전』 강좌
+# CommuLingo 원문 끊어 읽기 형식 · 『프랑스 내전』·『브뤼메르 18일』 강좌
 
 2026-10-24 등록. 기존 퀴즈형 강좌가 방문객에게 잘 읽히지 않는다는 사용자 판단에 따라 새 학습 형식을 시험한다. 원문을 먼저 한두 문단 보여 주고 그 대목에 대한 질문 하나를 묻는 방식이다. 첫 강좌는 마르크스의 『프랑스 내전』이다.
 
 | 학습 경로 | 원본 | 구성 |
 | --- | --- | --- |
 | `/commulingo/book/marx-civil-war-in-france` | `data/commulingo/courses/marx-civil-war-in-france.js` | 6편·41발췌, `format: 'guided-reading'`, 권 번호 16(홈의 「카를 마르크스」 묶음) |
+| `/commulingo/book/marx-eighteenth-brumaire` | `data/commulingo/courses/marx-eighteenth-brumaire.js` | 7편·49발췌, 같은 형식·권 번호 16 (2026-10-24) |
 
 ## 왜 이 형식인가 (2026-10-24 판단 근거)
 
@@ -46,3 +47,15 @@
 
 - 2주 뒤 학습 이벤트로 이 강좌와 기존 강좌의 시작 후 첫 답 전 이탈, 완료율을 비교한다. 외부 시작이 적으면 판정을 보류한다.
 - 결과가 좋으면 기존 마르크스·레닌 강좌를 같은 형식으로 옮길지, 기존 퀴즈의 개념 화면을 접는 것으로 그칠지 정한다.
+
+## 『루이 보나파르트의 브뤼메르 18일』 (2026-10-24)
+
+사용자 요청으로 같은 형식의 두 번째 강좌를 만들었다. 사이트에 문헌이 없어서 먼저 완역해 등록했다.
+
+- 문헌 `marx-eighteenth-brumaire` 「마르크스, 『루이 보나파르트의 브뤼메르 18일』」: MEW 8(1869년 제2판 본문)의 독일어 전사본에서 직접 옮겼다. 제2판 서문(1869)·엥겔스 제3판 서문(1885)·I~VII장, 제목 id `preface-1869`·`preface-1885`·`ch1`~`ch7`. 독일어 원문 공개. 사용자 지시로 「한국어 독자에게 쉽게 읽히도록」 긴 문장은 뜻과 순서를 지키며 끊었고, 따라가기 힘든 인유에는 짧은 옮긴이 주(「[옮긴이]」)를 저자 주와 한 번호로 달았다. 다섯 갈래로 옮긴 뒤 갈래마다 원문 대조 교정을 한 번씩 더 했다(오역 37곳 등 270여 곳 수정).
+- 인물 링크: `personLinks`로 「보나파르트」를 나폴레옹 3세에, 부사와 겹치는 「바로」는 잇지 않고(「오딜롱 바로」만), 「라 로슈자클랭」(1850년대 정통왕조파 의원)은 사전의 방데 장군과 달라 null.
+- 링크 승인 `scripts/reviews/commulingo-links-20261024-brumaire-doc.json`: 문헌 별칭 11개 auto, 같은 이름의 용어 `eighteenth-brumaire-of-louis-bonaparte` 표현 9개는 search(문헌 우선). 맨 「브뤼메르 18일」은 1799년 쿠데타 날과 겹쳐 별칭에 넣지 않았다.
+- 강좌 영어 발췌는 『프랑스 내전』의 엥겔스 서문처럼 독일어 원문에서 이 강좌가 직접 옮겼고, 출처 표시에 「(our translation from the German)」을 붙인다.
+- 작업물(원문, 갈래별 번역·REPORT·REVIEW, 조립 `assemble.py`, 강좌 편 파일과 `course/check.js`·`build.js`)은 `scripts/content/brumaire-doc-20261024/`. 강좌 모듈은 `node scripts/content/brumaire-doc-20261024/course/build.js data/commulingo/courses/marx-eighteenth-brumaire.js`로 다시 만든다.
+- 공개는 `data/commulingo/shards.js`의 `PUBLIC_CHAPTER_LIMITS`를 읽는 운영 프로세스가 재시작해야 반영된다(위 「등록 때 겪은 일」과 같다).
+- 남은 일: 카드 없는 인물(몰레, 베리에, 바로슈, 풀드, 루에르, 페르시니, 몽탈랑베르, 뒤팽, 레옹 포셰, 라모리시에르, 샹보르 백작 등)과 용어(정통왕조파, 오를레앙파, 룸펜프롤레타리아트, 분할지 농민, 의회 백치증)는 등록하지 않았다. 갈래별 `REPORT.md`에 목록이 있다.

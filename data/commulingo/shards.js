@@ -22,6 +22,7 @@ const PUBLIC_CHAPTER_LIMITS = {
     'marx-wage-labour-capital': 6,
     'marx-wages-and-programme': 8,
     'marx-civil-war-in-france': 6,
+    'marx-eighteenth-brumaire': 7,
 };
 
 let freshnessCache = null;

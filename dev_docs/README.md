@@ -27,7 +27,7 @@
 | CommuLingo 짧은 학습·이용 측정 설계 | [학습 콘텐츠 개선 제안](commulingo-learning-design.md) |
 | CommuLingo 훈련장 쇼츠(숏폼 카드 피드) | [카드 재료·순서](commulingo-shorts.md) |
 | CommuLingo 혁명사·사회주의 비교 학습 | [학습 강좌와 출처 기준](commulingo-ideology-learning.md), [2026-09-27 미등록 항목 등록](commulingo-history-courses-registration-20260927.md), [초기 1~3편 원고](commulingo-french-revolution-drafts.md) |
-| CommuLingo 원문 끊어 읽기 형식(`guided-reading`)·『프랑스 내전』 강좌 | [형식 근거·플레이어·검증 규칙·사전 항목·샤드 함정](commulingo-guided-reading.md) |
+| CommuLingo 원문 끊어 읽기 형식(`guided-reading`)·『프랑스 내전』·『브뤼메르 18일』 강좌 | [형식 근거·플레이어·검증 규칙·사전 항목·샤드 함정](commulingo-guided-reading.md) |
 | CommuLingo 마르크스주의와 성 이론 강좌 | [3편 구성·원어 대조 기준·인물 카드·다음 후보](commulingo-sex-gender-theory.md) |
 | CommuLingo 프랑스 혁명·혁명 전쟁 사건 | [한영 사건 2편·출처·반영 기록](commulingo-french-events-20260913.md) |
 | CommuLingo 1848년 혁명 사건 묶음 | [개요·프랑스·독일·헝가리·이탈리아 5편, 인물 118명·용어 59개·소속 14개·엥겔스 「마자르인의 투쟁」 번역·헝가리·이탈리아 지도](commulingo-revolutions-1848-20261011.md) |
