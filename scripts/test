@@ -20,9 +20,9 @@ NODE_MAJOR="$(node -p 'process.versions.node.split(".")[0]' 2>/dev/null || echo 
 if [[ "${NODE_MAJOR:-0}" -lt 24 && -z "${TEST_IN_DOCKER:-}" ]]; then
     # Needs git, which the image lacks; plain CommonJS, so the host node runs it.
     node scripts/check-commulingo-question-ids.js || { echo "tests failed"; exit 1; }
-    echo "[test] host node $(node -v 2>/dev/null || echo missing) < 24; running in node:24.21.0-alpine" >&2
+    echo "[test] host node $(node -v 2>/dev/null || echo missing) < 24; running in node:24.22.1-alpine" >&2
     exec docker run --rm -u "$(id -u):$(id -g)" -e TEST_IN_DOCKER=1 -e HOME=/tmp \
-        -v "$PWD:/app:ro" -w /app node:24.21.0-alpine sh scripts/test "$@"
+        -v "$PWD:/app:ro" -w /app node:24.22.1-alpine sh scripts/test "$@"
 fi
 
 # Tests are independent (ephemeral ports, mkdtemp scratch), so they run in

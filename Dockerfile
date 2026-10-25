@@ -4,7 +4,7 @@
 # /node_modules by walking up from /app. The image is rebuilt only when this
 # file, package.json or package-lock.json changes (scripts/deploy tags it by
 # their hash). Pinned so a rebuild is reproducible; bump with the engines field.
-FROM node:24.21.0-alpine
+FROM node:24.22.1-alpine
 WORKDIR /deps
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev && mv node_modules /node_modules && rm -rf /deps /root/.npm
