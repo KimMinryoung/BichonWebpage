@@ -1,5 +1,5 @@
 [Unit]
-Description=Archive CommuLingo work products (scripts/content, reviews, migrations/data) to R2
+Description=Archive CommuLingo work products (scripts/content, reviews, migrations/data, docs sources) to R2
 After=network-online.target
 
 [Service]

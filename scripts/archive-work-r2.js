@@ -3,10 +3,12 @@
 //
 // Batch specs, build scripts and link-review files (scripts/content/,
 // scripts/reviews/) and data-only SQL with its backups (scripts/migrations/data/)
-// are records of DB writes, not code the app runs. New files there are
-// gitignored; this uploads every untracked file under those directories to
-// R2 as commulingo-work/<path below scripts/>. Files already tracked by git stay in
-// git and are skipped.
+// are records of DB writes, not code the app runs. Raw sources in docs/
+// (fetched pages, PDFs, scans, e-books used for translation) are working
+// material the site never serves. New files there are gitignored; this uploads
+// every untracked file under those directories to R2 as
+// commulingo-work/<path below scripts/> or commulingo-work/docs/<path below docs/>.
+// Files already tracked by git stay in git and are skipped.
 //
 // A file whose md5 matches the remote ETag is skipped. When a file changed after
 // it was archived, the previous object is first copied to
@@ -28,13 +30,14 @@ const { execFileSync } = require('child_process');
 const ROOT = path.resolve(__dirname, '..');
 const { createR2Client } = require('../services/r2');
 
-const DIRS = ['scripts/content', 'scripts/reviews', 'scripts/migrations/data'];
+const DIRS = ['scripts/content', 'scripts/reviews', 'scripts/migrations/data', 'docs'];
 const PREFIX = 'commulingo-work/';
 const SKIP = /(^|\/)(__pycache__|node_modules)\/|\.(tmp|pyc|swp)$|(^|\/)\.DS_Store$/;
 const TYPES = {
     '.json': 'application/json', '.jsonl': 'application/x-ndjson', '.js': 'text/javascript',
     '.py': 'text/x-python', '.sql': 'text/plain', '.md': 'text/markdown', '.txt': 'text/plain',
     '.html': 'text/html', '.csv': 'text/csv', '.dump': 'application/octet-stream',
+    '.pdf': 'application/pdf', '.jpg': 'image/jpeg', '.png': 'image/png', '.zip': 'application/zip',
 };
 
 function workFiles() {
@@ -42,7 +45,12 @@ function workFiles() {
     return out.toString('utf8').split('\0').filter(Boolean).filter(f => !SKIP.test(f)).sort();
 }
 
+// scripts/x -> commulingo-work/x, docs/x -> commulingo-work/docs/x (and back).
 const keyFor = rel => PREFIX + rel.replace(/^scripts\//, '');
+const pathFor = key => {
+    const rel = key.slice(PREFIX.length);
+    return path.join(ROOT, rel.startsWith('docs/') ? '' : 'scripts', rel);
+};
 
 async function main() {
     const args = process.argv.slice(2);
@@ -54,7 +62,7 @@ async function main() {
         if (!key) throw new Error('usage: --get <key> [out]');
         const body = await r2.get(key);
         if (!body) throw new Error(`no such object: ${key}`);
-        const dest = args[2] || path.join(ROOT, 'scripts', key.slice(PREFIX.length));
+        const dest = args[2] || pathFor(key);
         fs.mkdirSync(path.dirname(dest), { recursive: true });
         fs.writeFileSync(dest, body);
         console.log(`restored ${key} -> ${path.relative(ROOT, dest)} (${body.length} bytes)`);

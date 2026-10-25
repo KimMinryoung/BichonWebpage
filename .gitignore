@@ -28,8 +28,13 @@ Thumbs.db
 !.claude/skills/
 !.claude/settings.json
 
-# temp files for dev
+# temp files for dev (verification screenshots go in temp_dev/screenshots/)
 temp_dev/
+# Stray captures saved in the repository root
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
 
 # CommuLingo generated artifacts (regenerated from source; not tracked)
 data/commulingo/generated/
@@ -60,6 +65,21 @@ data/commulingo/link-blocklist-snapshot.json.tmp
 # 리포에 넣지 않는다. leninbot 쪽 번역 스펙이 절대 경로로 참조하고 sha256으로
 # 고정하므로, 파일은 디스크에만 있으면 된다.
 docs/*.html
+# Other raw sources kept beside them (PDF, scans, text dumps, e-books, archives)
+# are working material too: the site serves reference documents from the DB.
+# Untracked files in docs/ are archived to R2 (commulingo-work/docs/) by
+# scripts/archive-work-r2.js. Notes (*.md) and the subdirectories stay tracked.
+docs/*.pdf
+docs/*.txt
+docs/*.jpg
+docs/*.jpeg
+docs/*.png
+docs/*.zip
+docs/*.fb2
+docs/*.epub
+docs/*.djvu
+docs/*.doc
+docs/*.docx
 
 # Bulk-translation glossary dump (regenerated from the DB by extract_glossary.py)
 scripts/bulk-translate/glossary-db.json
