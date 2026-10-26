@@ -50,6 +50,9 @@ const merged = displayActivities([membership, office], 'ko');
 assert.equal(merged.length, 1);
 assert.deepEqual([merged[0].years, merged[0].primary, merged[0].posts.map(p => p.years)], ['1930–1960', true, ['1945–1950']]);
 assert.equal(displayActivities([membership, { ...office, affiliationId: 'soviet-party' }], 'ko').length, 2);
+// The office filter still finds a post merged into its membership.
+const officeMerged = displayActivities([membership, { ...office, officeId: 'china-leadership' }], 'ko');
+assert(matchesActivities({ activities: officeMerged }, { officeId: 'china-leadership', affiliationId: officeMerged[0].affiliationId }));
 // An office spanning the whole membership adds no line; a membership that does
 // not overlap the office (rejoining later) stays its own row.
 assert.deepEqual(displayActivities([membership, { ...office, startYear: 1930, endYear: 1960 }], 'ko')[0].posts, []);

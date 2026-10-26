@@ -222,7 +222,7 @@ function displayActivities(raw, lang, officeTitles = {}) {
             posts: (a.posts || []).map(s => {
                 const sf = functions.get(s.functionId), names = office(s);
                 const own = s.functionId !== a.functionId;
-                return { startYear: s.startYear, endYear: s.endYear, years: activityYears(s), ...names,
+                return { functionId: s.functionId, officeId: s.officeId || null, startYear: s.startYear, endYear: s.endYear, years: activityYears(s), ...names,
                     functionLabel: !names.titleLabel && !names.officeLabel ? '' : own ? localize(sf.label, lang) : '',
                     functionIcon: own ? sf.icon : '',
                     nameLabel: names.titleLabel || names.officeLabel ? '' : localize(sf.label, lang) };
@@ -268,9 +268,12 @@ function affiliationMatches(actual, wanted, activity) {
 
 function matchesActivities(person, filter) {
     if (!filter.functionId && !filter.affiliationId && !filter.officeId) return true;
-    return (person.activities || []).some(a => (!filter.functionId || a.functionId === filter.functionId)
+    // A post merged into its party membership (mergeMemberships) still counts:
+    // it keeps its own function and office, under the membership's affiliation.
+    const hit = (a, own) => (!filter.functionId || own.functionId === filter.functionId)
         && (!filter.affiliationId || affiliationMatches(a.affiliationId, filter.affiliationId, a))
-        && (!filter.officeId || a.officeId === filter.officeId));
+        && (!filter.officeId || own.officeId === filter.officeId);
+    return (person.activities || []).some(a => hit(a, a) || (a.posts || []).some(post => hit(a, post)));
 }
 
 module.exports = { affiliationByTerm, LEGACY_BASIS, assertNoNewLegacyBasis, assertNewActivitiesDated, isUnresolvedGap, OFFICE_AFFILIATIONS, functions, affiliations, periodsOverlap, validateActivities, displayActivities, chronologicalActivities, activityYears, activityHref, affiliationMatches, matchesActivities };
