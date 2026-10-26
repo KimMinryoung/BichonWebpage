@@ -144,6 +144,7 @@ const FAMILY_FIRST = {
     'north-korea': { ko: '', en: ' ' },
     'south-korea': { ko: '', en: ' ' },
     china: { ko: '', en: ' ' },
+    taiwan: { ko: '', en: ' ' },
     vietnam: { ko: '', en: ' ' },
     japan: { ko: ' ', en: null },
     hungary: { ko: ' ', en: null },
