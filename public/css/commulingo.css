@@ -3867,24 +3867,30 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     border: 1px solid var(--border);
 }
 
-/* Two-seat tracks: heads of state on the left, beside them the heads of
-   government who took office under each. */
+/* Two-seat tracks: heads of state on the left, heads of government on the
+   right, both on one time axis — each cell spans the grid rows of its tenure
+   (grid-row set inline from seatColumns). */
 .commu-office-seats {
     background: var(--bg-surface);
     border: 1px solid var(--border);
 }
 .commu-hub-office-rows + .commu-office-seats { margin-top: 12px; }
-.commu-office-seats-head,
-.commu-office-seat-group {
+.commu-office-seats-head {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
+.commu-office-seat-grid {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+.commu-office-seat-grid td { padding: 0; vertical-align: top; border-top: 1px solid var(--border); }
 .commu-office-seats-head span {
     padding: 8px 14px;
     color: var(--text-muted);
     font-size: var(--text-sm);
 }
-.commu-office-seat-group { border-top: 1px solid var(--border); }
+.commu-office-seat-grid .commu-office-rows { margin: 0; }
 .commu-office-seat-government { border-left: 1px solid var(--border); }
 .commu-office-seats-head span + span { border-left: 1px solid var(--border); }
 .commu-office-seats .commu-office-rows li { display: block; padding: 0; }

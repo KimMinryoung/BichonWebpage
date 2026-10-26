@@ -65,12 +65,15 @@
             <% if (columns) { %>
             <div class="commu-office-seats">
                 <div class="commu-office-seats-head" aria-hidden="true"><span><%= strings.commuLingoViews.office.seatState %></span><span><%= strings.commuLingoViews.office.seatGovernment %></span></div>
-                <% columns.groups.forEach(function(group) { %>
-                <div class="commu-office-seat-group">
-                    <ol class="commu-office-rows commu-office-seat-state" aria-label="<%= strings.commuLingoViews.office.seatState %>"><% if (group.state) officeRow(group.state) %></ol>
-                    <ol class="commu-office-rows commu-office-seat-government" aria-label="<%= strings.commuLingoViews.office.seatGovernment %>"><% group.governments.forEach(officeRow) %></ol>
-                </div>
-                <% }) %>
+                <table class="commu-office-seat-grid">
+                    <% columns.lines.forEach(function(line) { %>
+                    <tr>
+                        <% ['state', 'government'].forEach(function(seat) { var cell = line[seat]; if (!cell) return; %>
+                        <td class="commu-office-seat-<%= seat %>"<% if (cell.span > 1) { %> rowspan="<%= cell.span %>"<% } %>><% if (cell.rows.length) { %><ol class="commu-office-rows" aria-label="<%= seat === 'state' ? strings.commuLingoViews.office.seatState : strings.commuLingoViews.office.seatGovernment %>"><% cell.rows.forEach(officeRow) %></ol><% } %></td>
+                        <% }) %>
+                    </tr>
+                    <% }) %>
+                </table>
             </div>
             <% } %>
         </section>

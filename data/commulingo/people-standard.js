@@ -329,24 +329,73 @@ function byStart(a, b) {
     return 0;
 }
 
-// A track with head-of-government rows is laid out in two columns: each head
-// of state with the heads of government who took office during their tenure
-// (the last head of state to start on or before the government's start; on
-// the same day the head of state comes first), and
-// the rows with no seat, if any, in the single list above them.
+// A point as a sortable number. A start without month/day sorts at the start
+// of its year; an end without them at the end of it.
+function pointKey(point, end) {
+    if (!Array.isArray(point) || !point[0]) return null;
+    return point[0] * 10000 + (point[1] || (end ? 12 : 0)) * 100 + (point[2] || (end ? 31 : 0));
+}
+
+// One column's rows as cells on the shared time axis. Rows starting the same
+// day share a cell (co-acting heads); a row ends where its own end says, or
+// where the next cell of the column starts, whichever comes first; an ongoing
+// row runs to the bottom.
+function seatCells(rows) {
+    const clusters = [];
+    rows.slice().sort(byStart).forEach(row => {
+        const start = pointKey(row.period && row.period.start, false);
+        const last = clusters[clusters.length - 1];
+        if (last && last.start === start) last.rows.push(row);
+        else clusters.push({ start, rows: [row] });
+    });
+    clusters.forEach((cluster, i) => {
+        const next = clusters[i + 1] ? clusters[i + 1].start : Infinity;
+        const ends = cluster.rows.map(row => (row.period && row.period.ongoing ? Infinity
+            : pointKey(row.period && row.period.end, true) ?? next));
+        cluster.end = Math.min(Math.max(...ends), next);
+    });
+    return clusters.filter(cluster => cluster.start != null);
+}
+
+// A track with head-of-government rows is laid out in two columns on one time
+// axis: each cell spans the grid rows of its tenure, so a head of government
+// who served under several heads of state sits beside all of them (Zhou Enlai
+// beside Mao, Liu Shaoqi and the acting chairs), and a head of state beside
+// every head of government of the tenure. Uncovered spans get empty cells; the
+// rows with no seat, if any, stay in the single list above.
 function seatColumns(rows) {
     if (!rows.some(row => row.seat === 'government')) return null;
-    const groups = [];
-    let current = null;
-    const seatOrder = row => (row.seat === 'state' ? 0 : 1);
-    rows.filter(row => row.seat).sort((a, b) => byStart(a, b) || seatOrder(a) - seatOrder(b)).forEach(row => {
-        if (row.seat === 'state' || !current) {
-            current = { state: row.seat === 'state' ? row : null, governments: [] };
-            groups.push(current);
+    const columns = { state: seatCells(rows.filter(row => row.seat === 'state')), government: seatCells(rows.filter(row => row.seat === 'government')) };
+    const all = [...columns.state, ...columns.government];
+    const marks = [...new Set(all.flatMap(cell => [cell.start, cell.end]).filter(Number.isFinite))].sort((a, b) => a - b);
+    const open = all.some(cell => cell.end === Infinity);
+    const lineOf = key => (key === Infinity ? marks.length + 1 : marks.indexOf(key) + 1);
+    const lastLine = open ? marks.length + 1 : marks.length;
+    // A gap under a month (a death and the successor's oath the next day) is
+    // absorbed by the cell before it; a longer one is a vacant cell.
+    const days = key => Math.floor(key / 10000) * 365 + Math.floor(key / 100 % 100) * 30.5 + key % 100;
+    const shortGap = (from, to) => days(marks[to - 1]) - days(marks[from - 1]) < 31;
+    const cells = [];
+    for (const seat of ['state', 'government']) {
+        let line = 1;
+        let previous = null;
+        for (const cell of columns[seat]) {
+            const from = lineOf(cell.start), to = Math.max(lineOf(cell.end), from + 1);
+            if (from > line) {
+                if (previous && shortGap(line, from)) previous.to = from;
+                else cells.push({ seat, rows: [], from: line, to: from });
+            }
+            previous = { seat, rows: cell.rows, from, to };
+            cells.push(previous);
+            line = Math.max(line, to);
         }
-        if (row.seat === 'government') current.governments.push(row);
-    });
-    return { groups, loose: rows.filter(row => !row.seat) };
+        if (line < lastLine) cells.push({ seat, rows: [], from: line, to: lastLine });
+    }
+    // Table rows for the template: each cell sits in the row where it starts
+    // and spans (rowspan) the rows of its tenure.
+    const lines = Array.from({ length: lastLine - 1 }, () => ({ state: null, government: null }));
+    for (const cell of cells) lines[cell.from - 1][cell.seat] = { rows: cell.rows, span: cell.to - cell.from };
+    return { lines, loose: rows.filter(row => !row.seat) };
 }
 
 function officeTracks(raw, rows, lang) {
