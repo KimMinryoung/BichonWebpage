@@ -40,6 +40,7 @@ const OFFICE_DISPLAY_ORDER = [
     'science-nuclear-space',
     'comintern',
     'france-leadership',
+    'china-leadership',
 ];
 
 // FALLBACK ONLY — the office title a card shows comes from commulingo_offices
@@ -67,6 +68,7 @@ const ROLE_OFFICE_TITLES = {
     'science-nuclear-space': { ko: '과학 · 원자력 · 우주 개발', en: 'Science, nuclear and space development' },
     comintern: { ko: '코민테른', en: 'Comintern' },
     'france-leadership': { ko: '프랑스 국가원수 · 정부 수반', en: 'Heads of state and government of France' },
+    'china-leadership': { ko: '중국 국가원수 · 정부 수반 · 당 지도자', en: 'Heads of state, government and party of China' },
 };
 
 // OFFICE_ICON seeds commulingo_offices.icon and is the last-resort icon
@@ -93,6 +95,7 @@ const OFFICE_ICON = {
     'economic-management': 'coins',
     comintern: 'globe',
     'france-leadership': 'landmark',
+    'china-leadership': 'landmark',
 };
 
 function composePersonName(name, patronymic) {
