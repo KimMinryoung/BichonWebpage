@@ -283,12 +283,14 @@ deploy_admin() {
     docker rm "$ADMIN_NAME" > /dev/null 2>&1 || true
     # MCP tools read big payloads (people batches, link-review manifests,
     # document bodies) from the gitignored work directories by specPath.
+    # The image's healthcheck probes the website port; this process has none.
     docker run -d \
         --name "$ADMIN_NAME" \
         --user "$RUN_AS_UID_GID" \
         --label "$REVISION_LABEL=$LOCAL" \
         --add-host=host.docker.internal:host-gateway \
         -p "127.0.0.1:${MCP_PORT}:${MCP_PORT}" \
+        --health-cmd "wget -qO- http://127.0.0.1:${MCP_PORT}/health > /dev/null || exit 1" \
         -e "MCP_PORT=${MCP_PORT}" \
         -e "GIT_SHA=$LOCAL" \
         -e COMMULINGO_PIPELINE_TICK=1 \
