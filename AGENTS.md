@@ -1,55 +1,42 @@
 # AGENTS.md
 
-This repository runs the production frontend as the `leninbot-frontend` Docker container.
-When operating from the `root` account on the production server (cloud sessions have no `grass` user and run as root; this does not apply there):
+This repository runs the production frontend as the `leninbot-frontend` Docker container (Node.js/Express, EJS, PostgreSQL; public site cyber-lenin.com).
+When operating from the `root` account on the production server (cloud sessions have no `grass` user and run as root; this does not apply there), create and modify files and run every Git command as the `grass` user.
 
-1. Create and modify project files as the `grass` user so that file ownership is assigned to `grass`, not `root`.
-2. Run all Git commands as the `grass` user. Do not perform Git operations as `root`.
+Keep this file limited to enduring constraints and routing links; procedures and completed-work history belong in topic documents. Current user instructions take precedence over past preferences and memory notes.
 
+## Deployment safety
 
-## Deployment Safety
+- Restart production only with `/home/grass/frontend/scripts/deploy --restart` (it applies the labels, host data mount and `leninbot_default` network); never an ad hoc `docker run`. A CSS-only change is published with `scripts/deploy-assets publish`.
+- The dev preview (`leninbot-frontend-dev`) is off by default: `scripts/dev-preview start` when a task needs it, `scripts/dev-preview stop` when done.
+- Host-mounted data (`data/`) is read live by production: write a complete replacement and move it into place in one step.
+- Troubleshooting (503 lists, `/ready` `db:false`, network): [operations reference](dev_docs/frontend-operations.md#장애-점검).
 
-- Do not recreate or restart the production `leninbot-frontend` container with an ad hoc `docker run`.
-- The dev preview (`leninbot-frontend-dev`) is off by default: `scripts/dev-preview start` when a task needs it, `scripts/dev-preview stop` when done (it also stops itself after `DEV_PREVIEW_TTL`, default 4h).
-- CommuLingo reference documents live in the database (`commulingo_docs`), not in git; edit them with `scripts/commulingo-docs` (see `data/commulingo/docs/README.md`). Admin-screen edits are DB writes with their own history; nothing to commit.
-- Use `scripts/deploy --restart` for production restarts so the required labels, host data mount, and the `leninbot_default` network are applied consistently.
-- The frontend connects to the local `leninbot-pg` Postgres container (`DB_HOST=leninbot-pg`) over the `leninbot_default` Docker network — the same network used for Redis. (The DB migrated off Supabase in July 2026; the old `leninbot_ipv6` network is no longer needed.)
-- CommuLingo work products (batch specs and build scripts in `scripts/content/`, link-review files in `scripts/reviews/`, data-only SQL and backups in `scripts/migrations/data/`) are records of DB writes; raw sources in `docs/` (saved pages, PDFs, scans, text dumps, e-books) are working material the site never serves. New files there are gitignored and archived to R2 by the hourly `commulingo-work-archive.timer`; agent sessions have no sudo, so do not run or retry `scripts/archive-work-r2` yourself (without sudo it skips with exit 0). A DB-only data task ends without a commit. `npm test` rejects a new data-only SQL file in `scripts/migrations/`. Details: [operations reference](dev_docs/frontend-operations.md#commulingo-작업물-r2-보관).
-- Read production data with `scripts/query-db "SELECT ..."` (read-only `leninbot_ro` login; details in the operations reference). Do not borrow service credentials for reads.
-- If recent posts, reports, hub curations, or diary entries suddenly show "목록을 불러오지 못했습니다" (503) or `/ready` reports `db:false`, check `docker logs leninbot-frontend` for connection errors to `:5432`, then check that `leninbot-pg` is healthy (`docker ps`) and that both containers share `leninbot_default`:
+## CommuLingo data
 
-```bash
-docker inspect leninbot-frontend --format '{{range $name,$net := .NetworkSettings.Networks}}{{println $name $net.IPAddress}}{{end}}'
-docker network connect leninbot_default leninbot-frontend  # if missing
-```
-
-Then verify `/`, `/posts`, `/reports`, `/hub`, and `/ai-diary` show content again.
+- Read and write CommuLingo data (people, terms, events, offices, reference documents, data documents, link reviews, registries) through the `commulingo` admin MCP: the tools validate, keep revisions and audit every write, and their write tools default to a dry run. Large payloads go in a file under `scripts/content/` or `scripts/reviews/` and are passed as `specPath`. Tool list: [admin MCP](dev_docs/commulingo-admin-mcp.md); rules for content and naming: the `commulingo-data-ops` skill.
+- Never bypass the stores with hand-written INSERT/UPDATE on `commulingo_*` tables. For read-only checks no typed tool covers, use MCP `sql_read` or `scripts/query-db` (read-only `leninbot_ro`); do not borrow service credentials.
+- DB data work is not committed. Its specs and scripts go in `scripts/content/`, link-review files in `scripts/reviews/`, any data-only SQL in `scripts/migrations/data/`, raw sources (PDF, saved pages, e-books) in `docs/`; all are gitignored and the hourly `commulingo-work-archive.timer` uploads them to R2. Agent sessions have no sudo: do not run or retry `scripts/archive-work-r2`. Commit only code, schema migrations and data files still tracked in git (lessons, courses).
 
 ## Verification scope
 
-- Keep verification proportional and do not repeat checks that the deployment script already performs.
-- Before deployment, run the smallest targeted check for the changed area. Do not run `npm test` separately when the same revision will immediately be deployed; `scripts/deploy` runs it.
-- A successful `scripts/deploy` run counts as the full release check: tests, health, route sweep, and built-in consistency audits. Rerun any of those manually only when the deploy reports a failure.
-- After deployment, verify one representative affected production route or response. Use a browser only for CSS, layout, rendered markup, or client-side interaction changes; do not perform both local and production browser passes by default.
-- Add broader route, database, cache, or infrastructure checks only when the change touches those systems or an observed failure points there.
-- Verify a live change through the origin: on the server `http://127.0.0.1:3000<path>`, elsewhere the public URL with a unique query (`?verify=<timestamp>`). The plain public URL may serve Cloudflare's edge copy of anonymous HTML for up to 60 s, and nothing purges it automatically (leninbot's purge is off unless `LENINBOT_CLOUDFLARE_PURGE=1`); refresh that copy with `node scripts/cloudflare-purge.js <paths>` only when it matters.
+- Keep verification proportional and do not repeat checks the deploy script already performs.
+- Committing without deploying: run `npm test` first. Deploying the same revision right away: `scripts/deploy` runs the tests, health, route sweep and consistency audits, and a successful run is the full release check; rerun any of them only when it reports a failure.
+- After deployment, verify one representative affected production route or response. Use a browser only for CSS, layout, rendered markup or client-side interaction changes, once, preferably against production after the deploy; not for metadata, visibility, server-only or documentation changes. Save screenshots under `temp_dev/screenshots/` (gitignored), never in the repository root. Read user-referenced screenshots before diagnosing them.
+- Add broader route, database, cache or infrastructure checks only when the change touches those systems or an observed failure points there.
+- Verify a live change through the origin: on the server `http://127.0.0.1:3000<path>`, elsewhere the public URL with `?verify=<timestamp>` (Cloudflare may serve its copy of anonymous HTML for up to 60 s). After a CommuLingo data write, MCP `stores_refresh` makes the serving process pick it up at once.
 
-## Context and task references
+## Task references
 
-- Stack: Node.js/Express, EJS, PostgreSQL. Public site: cyber-lenin.com.
-- Read only the task-relevant document from [dev_docs/README.md](dev_docs/README.md); do not load every handoff or old project memory.
-- Strike game: [design and implementation](dev_docs/strike-game-handoff.md).
-- Civil-war game: [design and implementation](dev_docs/civil-war-game.md).
+- Read only the task-relevant document from [dev_docs/README.md](dev_docs/README.md).
 - Deploy, preview, data/cache, auth: [operations reference](dev_docs/frontend-operations.md).
-- CommuLingo people must go through the Admin store/upsert tool; do not bypass validation with direct INSERTs. Host-mounted data changes affect production immediately.
-- UI changes must follow the [site design standard](dev_docs/design-system.md): reuse shared tokens/components and align full-width page shells with the site menu.
-- For CSS, layout, or client-side interaction changes, perform one browser check, preferably against production after deployment. Do not require browser checks for metadata, visibility, server-only, or documentation changes. Read user-referenced screenshots before diagnosing them. Save verification screenshots under `temp_dev/screenshots/` (gitignored) or the session scratchpad, never in the repository root.
-- Keep this file limited to enduring constraints and routing links. Put formulas, procedures and completed-work history in topic documents. Current user instructions take precedence over past preferences.
+- UI changes follow the [site design standard](dev_docs/design-system.md): reuse shared tokens/components and align full-width page shells with the site menu.
+- Strike game: [design and implementation](dev_docs/strike-game-handoff.md). Civil-war game: [design and implementation](dev_docs/civil-war-game.md).
 
 ## Cloud sessions and lone clones
 
 This repository works without the production server or the leninbot checkout. In a Claude Code cloud session the SessionStart hook in `.claude/settings.json` runs `scripts/cloud-setup` (only when `CLAUDE_CODE_REMOTE=true`), which installs `node_modules`; elsewhere run it by hand.
 
 - Available: editing, `npm test` (no DB or container; the gitignored `data/commulingo/generated/` shards are built on demand), `npm run lint`.
-- Not available: running the server against data (Postgres, Redis), R2 (`scripts/archive-work-r2` needs the server credstore), `scripts/deploy`, `scripts/dev-preview`, and the scripts that need leninbot (`LENINBOT_DIR`, default `/home/grass/leninbot`): `scripts/{review,translate}-course-fulltext.py`, `scripts/bulk-translate/extract_glossary.py`. Verify those on the server.
-- `data/commulingo/{person-editorial-contract,nationality-policy,activity-schema}.json` are this repository's contracts, and leninbot keeps copies in `config/commulingo_contracts/` so it can test alone. After changing one, run `scripts/sync_commulingo_contracts.py` in leninbot and commit there too; its unit test fails until the copies match. `activity-catalog.json` is the fourth contract leninbot reads, but its source is now the database document `activity-catalog` (`scripts/commulingo-data`); the server writes it to that path (gitignored), which leninbot reads live.
+- Not available: running the server against data (Postgres, Redis), the admin MCP, R2, `scripts/deploy`, `scripts/dev-preview`, and the scripts that need leninbot (`LENINBOT_DIR`, default `/home/grass/leninbot`): `scripts/{review,translate}-course-fulltext.py`, `scripts/bulk-translate/extract_glossary.py`. Verify those on the server.
+- `data/commulingo/{person-editorial-contract,nationality-policy,activity-schema}.json` are this repository's contracts, and leninbot keeps copies in `config/commulingo_contracts/` so it can test alone. After changing one, run `scripts/sync_commulingo_contracts.py` in leninbot and commit there too; its unit test fails until the copies match. leninbot also reads the activity catalog, whose source is the database document `activity-catalog`; the server writes it to `data/commulingo/activity-catalog.json` (gitignored).

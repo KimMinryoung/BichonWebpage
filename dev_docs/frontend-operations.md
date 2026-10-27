@@ -34,6 +34,17 @@ Redis(세션 저장소) 장애 중에는 로그인 기능만 멈춘다. 사이�
 - CommuLingo 데이터 조회·편집과 운영 상태는 관리자 MCP(`127.0.0.1:3100/mcp`, 클라이언트별 토큰·scope)로도 다룬다. 설계와 등록은 [관리자 MCP](commulingo-admin-mcp.md).
 - 운영 DB 조회는 `scripts/query-db "SELECT ..."`. 읽기 전용 계정 `leninbot_ro`(leninbot `scripts/setup_readonly_db_role.sh`가 만든 계정, 비밀번호 `~/.config/leninbot/db_ro_password`, grass만 읽음)로 `127.0.0.1:5434`에 붙고, 문장 하나의 SELECT/WITH/SHOW/EXPLAIN만 받는다. DB 쪽에서도 쓰기를 거부한다. 서비스 비밀번호를 빌리지 않는다.
 
+## 장애 점검
+
+최근 글·보고서·허브 큐레이션·일기 목록이 갑자기 "목록을 불러오지 못했습니다"(503)를 내거나 `/ready`가 `db:false`면 `docker logs leninbot-frontend`에서 `:5432` 연결 오류를 보고, `leninbot-pg`가 healthy인지(`docker ps`), 두 컨테이너가 `leninbot_default`를 공유하는지 확인한다. frontend는 이 네트워크로 `leninbot-pg`(`DB_HOST=leninbot-pg`)와 Redis에 붙는다.
+
+```bash
+docker inspect leninbot-frontend --format '{{range $name,$net := .NetworkSettings.Networks}}{{println $name $net.IPAddress}}{{end}}'
+docker network connect leninbot_default leninbot-frontend  # 빠졌으면
+```
+
+그다음 `/`, `/posts`, `/reports`, `/hub`, `/ai-diary`에 내용이 다시 나오는지 본다.
+
 ## CommuLingo 검색 회귀 검사
 
 - `npm test`는 검색 순위·분류·페이지 처리와 공통 요청 제어의 취소·늦은 응답 무시를 검사한다.
@@ -44,11 +55,11 @@ Redis(세션 저장소) 장애 중에는 로그인 기능만 멈춘다. 사이�
 ## CommuLingo 데이터
 
 - 정확한 경로·캐시·검증은 [데이터 운영 스킬](../.claude/skills/commulingo-data-ops/SKILL.md)을 해당 작업 때 읽는다.
-- Python·Admin·CLI 인물/절 쓰기는 공통 editorial service를 쓴다. 기존 인물 수정에는 expectedRevision, 모든 쓰기에는 sources, 사실 필드에는 evidence가 필요하다. 검토 대기는 HTTP 202이며 내용은 승인 전까지 바뀌지 않는다.
-- 인물 등록은 `scripts/commulingo-people-upsert <spec.json> [--dry-run]`로 Admin store 검증을 거친다. 직접 INSERT로 우회하지 않는다.
-- 수동 SQL이 commulingo_people*에 닿았다면 컨테이너에서 audit-person-card-fields.js, audit-person-native-names.js, audit-person-patronymics.js, audit-person-name-order.js를 실행한다.
+- 데이터 읽기·쓰기는 [관리자 MCP](commulingo-admin-mcp.md)가 기본 경로다: 인물·용어·사건·직책은 `editorial_store`/`editorial_batch`/`people_upsert`, 참고 문헌은 `doc_put`, 데이터 문서는 `data_document_put`, 링크 승인은 `link_reviews_apply`, 입장 모음·차단 목록·일반 별칭·사건별 링크 예외·폐기 id는 `registry_edit`. 쓰기 도구는 기본 dry-run이다. 아래 CLI(`commulingo-people-upsert`, `commulingo-docs`, `commulingo-data`, `review-commulingo-links.js`)는 같은 저장소를 쓰는 대안이다.
+- 기존 인물·용어 수정에는 expectedRevision, 모든 쓰기에는 sources, 사실 필드에는 evidence가 필요하다. 검토 대기는 HTTP 202이며 내용은 승인 전까지 바뀌지 않는다. 손 SQL로 저장소를 우회하지 않는다.
+- 저장소를 비켜 간 SQL이 commulingo_people*에 닿았다면 MCP `audit_run`으로 audit-person-card-fields, audit-person-native-names, audit-person-patronymics, audit-person-name-order를 돌린다.
 - 콘텐츠 값은 데이터 파일/DB가 원본이다. 코드의 FALLBACK/SEED만 바꿔 운영 콘텐츠를 수정하려 하지 않는다. 역할 아이콘·국기 SVG 같은 코드 에셋은 별도 배포 대상이다.
-- 코드의 DB 사본을 수정했다면 `docker exec leninbot-frontend node /app/scripts/check-commulingo-code-db-drift.js`로 일치 여부를 확인한다.
+- 코드의 DB 사본을 수정했다면 배포 뒤 `docker exec leninbot-frontend node /app/scripts/check-commulingo-code-db-drift.js`로 일치 여부를 확인한다.
 - 콘텐츠 규칙은 scripts/lib/commulingo-checks.js에 있다. 코스 구조나 문항을 바꿀 때는 관련 smoke 또는 validator 하나를 실행한다. 단순 공개 여부나 메타데이터 변경에는 해당 공개 결과를 확인하는 표적 검사만 쓴다. `--prune-baseline`은 기존 위반을 실제로 고쳤을 때만, `--no-baseline`은 전체 품질 감사 때만 실행한다.
 - 코스나 lesson을 코드 배포할 때 shard 재생성과 변경 레슨 캐시 제거는 `scripts/deploy`에 맡긴다. 배포 없이 생성 결과만 검사할 때만 `node scripts/build-commulingo-shards.js`를 수동 실행하며, 정상 deploy 전후에 별도 캐시 제거를 중복 실행하지 않는다.
 - 인물·용어·사건·링크 승인과 DB 등록부는 DB가 원본이라 수정에 커밋이 필요 없다. 아래 작업물 보관만 한다.
