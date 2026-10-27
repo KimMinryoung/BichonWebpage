@@ -88,7 +88,10 @@ async function fetchRows() {
         client.query(
             `SELECT person_id, ${PERIOD_COLUMNS.join(', ')}, role_ko, role_en, updated_at
              FROM commulingo_person_career_entries
-             ORDER BY person_id, sort_order, id`
+             ORDER BY person_id,
+                      COALESCE(start_year, end_year), COALESCE(start_month, 0), COALESCE(start_day, 0),
+                      CASE WHEN ongoing THEN 9999 ELSE COALESCE(end_year, start_year) END,
+                      COALESCE(end_month, 0), COALESCE(end_day, 0), sort_order, id`
         ),
         client.query(
             `SELECT id, section, country, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, lineage, tracks, term_ids, updated_at
