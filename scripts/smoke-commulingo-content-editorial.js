@@ -34,7 +34,7 @@ assert.equal(splitBody(spliceSection('', '첫 절', '본문', '', 'create')).len
     await reject({ target: 'person', action: 'update', id: 'x', fields: {} }, /invalid content target/);
     await reject({ target: 'history_event', action: 'create', id: 'x', fields: {} }, /supports update only/);
     await reject({ target: 'history_event_section', action: 'delete', id: 'x', fields: {} }, /create\/update only/);
-    await reject({ target: 'history_event', action: 'update', id: 'x', fields: { title: {} } }, /unknown history_event field/);
+    await reject({ target: 'history_event', action: 'update', id: 'x', fields: { countries: [] } }, /unknown history_event field/);
     await reject({ target: 'history_event_person', action: 'create', id: 'x', fields: [] }, /fields must be an object/);
     await reject({ target: 'office_row', action: 'update', id: 'abc', fields: {} }, /numeric row id/);
     await reject({ target: 'history_event', action: 'update', id: 'Bad Id', fields: {} }, /invalid history_event id/);

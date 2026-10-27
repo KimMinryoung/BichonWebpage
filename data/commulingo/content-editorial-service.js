@@ -16,7 +16,7 @@ const { FLAG_NAMES } = require('./flag-icons');
 const TARGETS = ['history_event', 'history_event_section', 'history_event_person', 'office_row'];
 const RELATION_KINDS = ['leader', 'executor', 'participant', 'opponent', 'target', 'witness', 'historian'];
 const PATCH_KEYS = {
-    history_event: ['question', 'summary', 'outcome', 'timeline', 'sources'],
+    history_event: ['title', 'period', 'question', 'summary', 'outcome', 'timeline', 'sources', 'locations', 'focus', 'sides'],
     history_event_section: ['heading', 'body', 'after'],
     history_event_person: ['personId', 'sortOrder', 'relationKind', 'relation', 'note', 'side'],
     office_row: ['sortOrder', 'period', 'body', 'personId', 'name', 'note', 'trackId'],
@@ -91,7 +91,7 @@ function spliceSection(body, heading, sectionBody, after, action) {
 async function eventRow(client, id, lock = false) {
     const { rows } = await client.query(
         `SELECT id, start_year, start_month, start_day, end_year, end_month, end_day, title_ko, title_en, question_ko, question_en, summary_ko, summary_en,
-                outcome_ko, outcome_en, body_ko, body_en, timeline, sources, to_jsonb(e)->'sides' AS sides
+                outcome_ko, outcome_en, body_ko, body_en, timeline, sources, locations, to_jsonb(e)->'focus' AS focus, to_jsonb(e)->'sides' AS sides
          FROM commulingo_history_events e WHERE id = $1${lock ? ' FOR UPDATE' : ''}`, [id]);
     return rows[0] || null;
 }
@@ -150,7 +150,56 @@ async function validateEvent(client, id, fields) {
         && (!Array.isArray(fields.sources) || !fields.sources.length || fields.sources.some(s => typeof s !== 'string' || !s.trim()))) {
         throw badRequest('sources must be a non-empty list of reference strings (it replaces the stored list)');
     }
+    await validateEventFrame(client, id, event, fields);
     return event;
+}
+
+// Title, period, map markers and focus/sides: the frame a batch script used to
+// write with raw SQL. A retitled event needs its link reviews carried or
+// re-approved (link_reviews_carry), or its title stops linking.
+async function validateEventFrame(client, id, event, fields) {
+    if (fields.title !== undefined) {
+        if (!hasBoth(fields.title)) throw badRequest('title must be {ko, en}, both non-empty');
+        const { rows } = await client.query('SELECT id FROM commulingo_history_events WHERE id <> $1 AND (title_ko = $2 OR lower(title_en) = lower($3))',
+            [id, fields.title.ko.trim(), fields.title.en.trim()]);
+        if (rows.length) throw badRequest(`title already used by event '${rows[0].id}'`);
+    }
+    if (fields.period !== undefined) {
+        fields.period = canonicalPeriod(fields.period, 'period');
+        if (!fields.period || !fields.period.start) throw badRequest('period needs at least a start year');
+        // Events store only the year/month/day columns; a qualifier or label would be dropped.
+        if (Object.keys(fields.period).some(key => !['start', 'end'].includes(key))) throw badRequest('an event period is {start: [y, m?, d?], end?} only');
+    }
+    if (fields.locations !== undefined) {
+        if (!Array.isArray(fields.locations)) throw badRequest('locations must be a list (empty for an event without a map)');
+        fields.locations.forEach((loc, i) => {
+            if (!loc || !Number.isFinite(loc.lat) || !Number.isFinite(loc.lng) || Math.abs(loc.lat) > 85 || Math.abs(loc.lng) > 180) {
+                throw badRequest(`locations[${i}] needs lat (±85) and lng (±180)`);
+            }
+            if (!hasBoth(loc.label)) throw badRequest(`locations[${i}].label needs ko and en`);
+            if (loc.kind !== undefined && !['main', 'place', 'geo'].includes(loc.kind)) throw badRequest(`locations[${i}].kind must be main, place or geo`);
+            if (Object.keys(loc).some(key => !['lat', 'lng', 'label', 'kind'].includes(key))) throw badRequest(`locations[${i}] takes lat, lng, label, kind only`);
+        });
+        const mains = fields.locations.filter(loc => loc.kind === 'main').length;
+        if (fields.locations.length && mains !== 1) throw badRequest(`locations need exactly one kind 'main' marker (found ${mains})`);
+    }
+    const focus = fields.focus !== undefined ? fields.focus : event.focus;
+    const sides = fields.sides !== undefined ? fields.sides : event.sides;
+    if (fields.focus !== undefined && fields.focus !== null && !hasBoth(fields.focus)) throw badRequest('focus must be {ko, en} or null');
+    if (fields.sides !== undefined && fields.sides !== null) {
+        if (!Array.isArray(fields.sides) || fields.sides.length < 2) throw badRequest('sides must list two or more sides, or be null');
+        for (const side of fields.sides) {
+            if (!side || !SIDE_ID.test(side.id || '') || !hasBoth(side.label)) throw badRequest(`bad side: ${JSON.stringify(side)}`);
+        }
+        if (new Set(fields.sides.map(side => side.id)).size !== fields.sides.length) throw badRequest('duplicate side id');
+    }
+    if (focus && Array.isArray(sides) && sides.length) throw badRequest('an event has focus or sides, not both');
+    if (fields.sides !== undefined) {
+        const ids = new Set((fields.sides || []).map(side => side.id));
+        const { rows } = await client.query('SELECT person_id, side FROM commulingo_history_event_people WHERE event_id = $1 AND side IS NOT NULL', [id]);
+        const orphaned = rows.filter(row => !ids.has(row.side));
+        if (orphaned.length) throw badRequest(`people still on removed sides: ${orphaned.map(row => `${row.person_id}(${row.side})`).join(', ')}; move them first`);
+    }
 }
 
 async function validateSection(client, id, action, fields) {
@@ -206,9 +255,26 @@ async function applyEvent(client, id, fields, actor) {
             sets.push(`${key}_ko = $${values.length - 1}`, `${key}_en = $${values.length}`);
         }
     }
-    for (const key of ['timeline', 'sources']) {
+    for (const key of ['timeline', 'sources', 'locations']) {
         if (fields[key] !== undefined && fields[key] !== null) {
             values.push(JSON.stringify(fields[key]));
+            sets.push(`${key} = $${values.length}::jsonb`);
+        }
+    }
+    if (isLocalized(fields.title)) {
+        values.push(normalizeKoreanQuotes(fields.title.ko.trim()), fields.title.en.trim());
+        sets.push(`title_ko = $${values.length - 1}`, `title_en = $${values.length}`);
+    }
+    if (fields.period) {
+        const [sy, sm, sd] = fields.period.start;
+        const [ey, em, ed] = fields.period.end || [];
+        values.push(sy, sm ?? null, sd ?? null, ey ?? null, em ?? null, ed ?? null);
+        sets.push(...['start_year', 'start_month', 'start_day', 'end_year', 'end_month', 'end_day'].map((column, i) => `${column} = $${values.length - 5 + i}`));
+    }
+    // focus and sides are nullable jsonb: null clears them (SQL NULL, never JSON null).
+    for (const key of ['focus', 'sides']) {
+        if (fields[key] !== undefined) {
+            values.push(fields[key] === null ? null : JSON.stringify(key === 'focus' ? koQuotes(fields[key]) : fields[key].map(side => ({ ...side, label: koQuotes(side.label) }))));
             sets.push(`${key} = $${values.length}::jsonb`);
         }
     }

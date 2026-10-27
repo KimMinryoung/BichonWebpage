@@ -21,6 +21,7 @@ Full list and arguments: `dev_docs/commulingo-admin-mcp.md`. Write tools default
 | Find or read | `people_search`, `term_search`, `event_search`, `docs_list`; `person_get`/`term_get`/`event_get`/`event_raw`/`doc_get` with `fields`, `lang`, `maxChars`, `sectionSlugs` for large entries; `aliases_lookup` (who owns a string); `registry_get`; `data_document_get` (JSON Pointer) |
 | People | `people_upsert` (spec format: head comment of `scripts/commulingo-people-upsert.js`) |
 | Person/term/event/office edits | `editorial_store`; several at once in one transaction: `editorial_batch`; a term approved in the same call: `request.directApply: true` |
+| New history events | `history_events_create` (spec format: head comment of `scripts/apply-history-events.js`; `apply: false` preflight first). An existing event's title, period, question/summary/outcome, sources, locations, focus/sides and timeline: `editorial_store` target `history_event` |
 | Reference document | `doc_put` (`entryPatch` for manifest fields, `bodyPath` for HTML), `doc_revisions`/`doc_restore`; new imports `scripts/import-commulingo-doc.js`; authoring rules `data/commulingo/docs/README.md` |
 | Data documents | `data_document_put` (`patches` by JSON Pointer), `data_document_revisions`/`data_document_restore`. Event-map bakes (`scripts/bake-event-control.js`) still publish with `scripts/commulingo-data put scripts/content/event-control/baked` |
 | Link reviews | `link_reviews_apply` (manifest in `scripts/reviews/`), `link_expression_reject`, `link_reviews_carry` |

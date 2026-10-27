@@ -359,6 +359,24 @@ const tools = [
     },
     {
         scope: 'edit',
+        name: 'history_events_create',
+        description: 'Create new history events from a batch spec (scripts/apply-history-events.js format: {id: <topic>-YYYYMMDD, events: [{id, '
+            + 'expected: null, fields: {title_ko, …, timeline, sources, locations, countries, relations, no_auto_link, link_expressions, focus, sides}, '
+            + 'sections, people}]}), with that script\'s checks (body_ko/body_en equal to the rendered sections, ≥10 https sources, ≥12 timeline rows, one main marker, '
+            + '≥6 sections, people exist, no duplicate title). apply: false (default) is a read-only preflight. An id that already exists must match the spec '
+            + 'exactly (reported unchanged) and is never overwritten; change existing events with editorial_store. People cards go first (people_upsert); approve the new titles with link_reviews_apply.',
+        inputSchema: object({ spec: obj('Batch spec'), specPath: specPathArg, apply: bool('Write (default false: preflight)'), changedBy }),
+        audit: ({ specPath, apply, changedBy: actor }, client) => ({ command: apply ? 'apply' : 'preflight', targetType: 'history_event',
+            targetId: specPath || 'inline', actor: actor || `mcp:${client}` }),
+        async handler({ spec, specPath, apply = false }) {
+            const batch = payload(spec, specPath, 'spec');
+            const { applyBatch } = require('../../scripts/apply-history-events');
+            return applyBatch(db(), batch, { apply });
+        },
+        summarize: value => ({ committed: value.committed, events: (value.events || []).map(e => `${e.id}:${e.status}`) }),
+    },
+    {
+        scope: 'edit',
         name: 'registry_edit',
         description: 'Registry rows without an Admin screen, in one transaction (replaces hand SQL under scripts/migrations/data/). ops, in order: '
             + 'collection_upsert {id, fields {title {ko,en}, intro {ko,en}, icon, sortOrder, termIds}} (a new collection needs title, intro, icon); '
