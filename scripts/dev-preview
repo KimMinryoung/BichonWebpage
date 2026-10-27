@@ -61,6 +61,8 @@ start_container() {
 
     stop_container
 
+    # The admin MCP (mcp/main.js) runs beside the site on the container's
+    # unpublished port 3100, without pipeline ticks; reach it with docker exec.
     # The image holds dependencies only, so the working tree is the code. The
     # empty tmpfs hides the host's node_modules (installed by the host's node)
     # and lets Node fall through to the image's /node_modules.
@@ -80,7 +82,7 @@ start_container() {
         -v "$FRONTEND_DIR:/app" \
         --mount type=tmpfs,destination=/app/node_modules \
         "$IMAGE_NAME" \
-        node --watch server.js
+        sh -c 'node --watch mcp/main.js & exec node --watch server.js'
 
     docker network connect "$NETWORK" "$CONTAINER_NAME" >/dev/null 2>&1 || true
     if docker network inspect "$IPV6_NETWORK" >/dev/null 2>&1; then

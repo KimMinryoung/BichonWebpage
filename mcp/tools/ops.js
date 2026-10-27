@@ -25,7 +25,7 @@ module.exports = [
     {
         scope: 'ops',
         name: 'service_status',
-        description: 'Running frontend revision, uptime, Postgres/Redis readiness and memory.',
+        description: 'Revision, uptime, Postgres/Redis readiness and memory of the admin process (mcp/main.js, its own container apart from the website).',
         inputSchema: object({}),
         async handler() {
             const { readiness } = require('../../utils/readiness');
@@ -113,28 +113,19 @@ module.exports = [
     {
         scope: 'ops',
         name: 'stores_refresh',
-        description: 'Reload the CommuLingo stores of the serving process now (people, terms, events, documents, data documents, link reviews, '
-            + 'blocklist) instead of waiting up to a minute for their refresh, so a check right after a write sees it. The public URL can still '
-            + 'serve Cloudflare\'s copy for 60 s; check through 127.0.0.1:3000 or ?verify=<timestamp>.',
+        description: 'Reload the CommuLingo stores now (people, terms, events, documents, data documents, link reviews, blocklist) instead of '
+            + 'waiting up to a minute for their refresh, so a check right after a write sees it: this admin process at once, the website on '
+            + 'the notice this sends (website: true when it went out). The public URL can still serve Cloudflare\'s copy for 60 s; check '
+            + 'through 127.0.0.1:3000 or ?verify=<timestamp>.',
         inputSchema: object({}),
         async handler() {
-            const steps = {
-                people: () => require('../../data/commulingo/people-store').loadCommuLingoPeople({ fresh: true }),
-                terms: () => require('../../data/commulingo/terms-store').loadCommuLingoTerms({ fresh: true }),
-                events: () => require('../../data/commulingo/history-events-store').loadCommuLingoHistoryEvents({ fresh: true }),
-                docs: () => require('../../data/commulingo/docs-store').refreshCommuLingoDocs(),
-                dataDocuments: () => require('../../data/commulingo/data-documents').refreshDataDocuments(),
-                linkReviews: () => require('../../data/commulingo/link-reviews-store').refreshLinkReviews(),
-                blocklist: () => require('../../data/commulingo/link-blocklist').refreshLinkBlocklist(),
-            };
-            const result = {};
-            for (const [label, step] of Object.entries(steps)) {
-                try {
-                    await step();
-                    result[label] = 'ok';
-                } catch (err) {
-                    result[label] = `failed: ${err.message}`;
-                }
+            const { refreshStores, notifyStoreRefresh } = require('../../data/commulingo/store-refresh');
+            const result = await refreshStores();
+            try {
+                await notifyStoreRefresh();
+                result.website = true;
+            } catch (err) {
+                result.website = `notice failed: ${err.message}`;
             }
             return result;
         },

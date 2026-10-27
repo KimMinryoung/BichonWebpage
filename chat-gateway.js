@@ -2,7 +2,7 @@
 // run as its own container so that deploying the rest of the site never cuts
 // a streaming chat answer. nginx sends /api/proxy/, /a2a and the agent card
 // here, with the main app as backup; scripts/deploy restarts this container
-// only when a file it loads changes (scripts/lib/chat-gateway-paths.js).
+// only when a file it loads changes (scripts/lib/require-closure.js).
 // A restart drains: new connections go to the backup while answers already
 // streaming here run to completion (dev_docs/frontend-operations.md).
 const env = require('./config/env');

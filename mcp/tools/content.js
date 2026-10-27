@@ -230,6 +230,25 @@ const tools = [
     },
     {
         scope: 'edit',
+        name: 'doc_delete',
+        description: 'Delete one reference document (its revisions stay, so doc_restore can bring it back). Needs expectedRevision from '
+            + 'doc_get. dryRun defaults to true.',
+        inputSchema: object({ id: str('Document id'), expectedRevision: int('Revision from doc_get', 0, 100000000),
+            dryRun: dryRunArg, note: noteArg, changedBy }, ['id', 'expectedRevision']),
+        audit: ({ id, dryRun, changedBy: actor }, client) => ({ command: dryRun === false ? 'delete' : 'dry-run', targetType: 'doc', targetId: id, actor: actor || `mcp:${client}` }),
+        async handler({ id, expectedRevision, dryRun = true, note, changedBy: given }, { client }) {
+            const { readDocRow, writeDocs } = require('../../data/commulingo/docs-db');
+            const row = await readDocRow(id);
+            if (!row) throw badRequest(`document ${id} not found`, 404);
+            if (Number(row.revision) !== expectedRevision) throw Object.assign(badRequest(`document ${id} is at revision ${row.revision}, not ${expectedRevision}`, 409), { currentRevision: Number(row.revision) });
+            const result = await inTransaction(dryRun, c => writeDocs({ deletes: [id] }, { actor: actorOf(given, client), note: note || 'mcp doc_delete', client: c }));
+            if (!dryRun) await require('../../data/commulingo/docs-store').refreshCommuLingoDocs();
+            return { dryRun, id, title: row.entry.title, ...result };
+        },
+        summarize: value => ({ dryRun: value.dryRun, id: value.id }),
+    },
+    {
+        scope: 'edit',
         name: 'doc_restore',
         description: 'Restore a reference document to a superseded revision from doc_revisions (itself recorded as a new revision).',
         inputSchema: object({ id: str('Document id'), revision: int('Revision to restore', 1, 100000000), note: noteArg, changedBy }, ['id', 'revision']),

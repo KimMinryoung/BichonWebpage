@@ -92,13 +92,9 @@ app.use('/metrics/menu-view', require('./routes/menu-views'));
 app.use('/games/plays', require('./routes/war-plays'));
 
 // CSRF protection (exclude API-key-authenticated routes and cacheable public reads)
-// /commulingo/admin/api/docs is excluded for curl use: it is IP-allowlisted,
-// session-independent, and every write needs a non-simple content type or
-// method (text/html POST, JSON PATCH, DELETE), so a browser cross-site
-// request dies at CORS preflight rather than reaching the handler.
 // tokenPaths: the anonymous forms that embed the token before any session
 // exists; every other page that renders it is behind a login (session cookie).
-const csrfMiddleware = csrfProtection(['/commulingo/admin/api/docs'], {
+const csrfMiddleware = csrfProtection([], {
     tokenPaths: ['/auth/login', '/auth/signup', '/admin/login'],
 });
 app.use((req, res, next) => {
@@ -115,7 +111,6 @@ app.use('/admin/webauthn', requireAdminIp, require('./routes/webauthn'));
 app.get('/private', (req, res) => res.redirect('/reports'));
 app.use('/admin', requireAdminIp, require('./routes/admin'));
 app.use('/ai-diary', require('./routes/ai-diary'));
-app.use('/commulingo/admin/api', require('./routes/commulingo-admin-api'));
 app.use('/commulingo', require('./routes/commulingo'));
 app.use('/reports', require('./routes/reports'));
 app.use('/hub', require('./routes/hub'));
@@ -158,19 +153,9 @@ server.on('error', (err) => {
 server.keepAliveTimeout = 65 * 1000;
 server.headersTimeout = 66 * 1000;
 
-// CommuLingo admin MCP on its own internal port (dev_docs/commulingo-admin-mcp.md).
-// A bad client config must not take the site down with it.
-let mcpServer = null;
-try {
-    mcpServer = require('./mcp').startMcpServer();
-} catch (err) {
-    console.error('[mcp] not started:', err.message);
-}
-
-// CommuLingo enrichment pipeline ticks, on the primary container only
-// (dev_docs/commulingo-agent-pipeline.md); the config file can still switch it off.
-let pipelineScheduler = null;
-if (process.env.COMMULINGO_PIPELINE_TICK === '1') pipelineScheduler = require('./services/commulingo-pipeline/tick').startScheduler();
+// The CommuLingo admin MCP and pipeline ticks run in their own container
+// (mcp/main.js); a stores_refresh there reaches this process as a notice.
+require('./data/commulingo/store-refresh').listenForStoreRefresh();
 
 // Express 4 does not route async handler rejections anywhere; without these,
 // one rejected promise ends the process (Node ≥15 default) and a thrown
@@ -198,8 +183,6 @@ function shutdown(signal) {
     // server.close() only stops accepting; idle keep-alive sockets and the
     // long-lived chat/SSE streams would otherwise hold it open until the
     // force-exit above fired on every deploy.
-    if (mcpServer) mcpServer.close();
-    if (pipelineScheduler) pipelineScheduler.stop();
     server.closeIdleConnections();
     const closeAll = setTimeout(() => server.closeAllConnections(), 2000);
     closeAll.unref();

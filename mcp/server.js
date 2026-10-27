@@ -99,9 +99,12 @@ async function handleMessage(message, client, tools, context) {
     return rpcError(id, -32601, `method not found: ${method}`);
 }
 
-function createMcpApp({ clients, tools, log = console.log, recordAudit = async () => {} }) {
+function createMcpApp({ clients, tools, log = console.log, recordAudit = async () => {}, ready }) {
     const app = express();
     app.disable('x-powered-by');
+    // Process checks for scripts/deploy; they carry no data.
+    app.get('/health', (req, res) => res.status(200).send('ok'));
+    if (ready) app.get('/ready', ready);
     app.use('/mcp', (req, res, next) => {
         const origin = req.get('origin');
         if (origin && !LOCAL_ORIGIN.test(origin)) return res.status(403).json(rpcError(null, -32000, 'origin not allowed'));

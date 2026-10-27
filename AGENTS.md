@@ -8,6 +8,7 @@ Keep this file limited to enduring constraints and routing links; procedures and
 ## Deployment safety
 
 - Restart production only with `/home/grass/frontend/scripts/deploy --restart` (it applies the labels, host data mount and `leninbot_default` network); never an ad hoc `docker run`. A CSS-only change is published with `scripts/deploy-assets publish`.
+- The CommuLingo admin MCP and pipeline ticks run in their own container (`leninbot-frontend-mcp`, `mcp/main.js`). A change confined to the editing code replaces only that container; `scripts/deploy --mcp-only` replaces it alone. The website has no CommuLingo editing screens or API.
 - The dev preview (`leninbot-frontend-dev`) is off by default: `scripts/dev-preview start` when a task needs it, `scripts/dev-preview stop` when done.
 - Host-mounted data (`data/`) is read live by production: write a complete replacement and move it into place in one step.
 - Troubleshooting (503 lists, `/ready` `db:false`, network): [operations reference](dev_docs/frontend-operations.md#장애-점검).
