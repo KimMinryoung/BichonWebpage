@@ -1,6 +1,6 @@
 # 러시아 내전 게임 보강 2: 작전·개념 용어 22개, 인물 27명 — 2026-10-27
 
-게임 「붉은 전선 1918–1920」(설계 [civil-war-game.md](civil-war-game.md))의 각 시기가 다루지만 카드가 없던 작전·사건 용어와 개념 용어를 사용자 요청으로 등록하고, 게임의 시기별 링크·카드·용어 풀이에 이었다. 인물·사건은 만들지 않았다. 첫 보강은 [인물 13명·용어 31개](commulingo-civil-war-game-20261014.md).
+게임 「붉은 전선 1918–1920」(설계 [civil-war-game.md](civil-war-game.md))의 각 시기가 다루지만 카드가 없던 작전·사건 용어와 개념 용어를 사용자 요청으로 등록하고, 게임의 시기별 링크·카드·용어 풀이에 이었다. 사건은 만들지 않았고, 인물은 아래 후속 절에서 등록했다. 첫 보강은 [인물 13명·용어 31개](commulingo-civil-war-game-20261014.md).
 
 정본: `scripts/content/civil-war-game-20261027/`(`BRIEF.md`, 묶음별 `terms-{ops1918,ops1920,concepts}.js`·`links-*.js`·`REPORT-*.md`, `apply-terms.json`, `fixes-existing.json`) → `node build.js`. 링크 승인 `scripts/reviews/commulingo-links-20261027-civil-war-game.json`(179건: auto 153, search 26). DB 데이터라 커밋하지 않는다(R2 보관).
 
