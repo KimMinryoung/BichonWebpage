@@ -169,7 +169,7 @@
             spoils: '탄약 수레와 군량',
         },
         allies: {
-            name: '연합국 간섭군', short: '간섭군', kind: 'interv',
+            name: '연합국 간섭군', short: '간섭군', kind: 'interv', link: T('allied-intervention-russia'),
             sign: 'anchor',
             note: '영국을 중심으로 프랑스·미국 병력이 무르만스크와 아르한겔스크에 상륙해 북부 정부를 세웠다. 영국군은 1919년 가을 철수했다.',
             trait: { name: '지친 원정군', motion: 'sail', when: { leader: true }, by: -1, rule: '정치위원이 있으면 적의 힘 −1', text: '세계대전을 마친 영국·미국·프랑스 병사들은 남의 나라 내전에 머물 생각이 없었다. 볼셰비키의 외국어 전단이 병영에 돌았고, 1919년 봄 반란과 명령 거부가 잇따랐다.' },
@@ -292,6 +292,7 @@
             title: '탈영병 자수 기간', advisor: ['레프 트로츠키', 'trotsky'], cost: 1, divisions: 2, cohesion: -3, escalates: true,
             turns: [4, 5, 6, 7],
             text: '정해진 기간 안에 돌아온 탈영병은 처벌하지 않고 부대로 돌려보낸다. 1919년 한 해 동안 탈영병 수십만 명이 이렇게 돌아왔다.',
+            link: ['중앙 탈영대책위원회', T('desertion-commission-1918')],
         },
         propaganda: {
             title: '간섭군 병사에게 선전', advisor: ['블라디미르 레닌', 'lenin'], cost: 1, calm: { fronts: ['north', 'south'], by: 2 },
@@ -323,6 +324,7 @@
             turns: [9],
             text: '사면받은 미로노프가 이끄는 제2기병군. 10월 크림 북쪽 초원에서 브란겔의 기병을 깨뜨렸다. 크림 방면에만 보낼 수 있고, 보내면 페레코프 전투에 합류한다.',
             note: '1919년 미로노프를 사면했을 때만 나온다.',
+            link: ['붉은 군대 제2기병군', T('second-cavalry-army')],
         },
         // Rules 6: the 1st Cavalry Army turned from Lviv to the Vistula, as
         // the commander-in-chief ordered and the South-Western Front did not.
@@ -396,7 +398,7 @@
                 links: [['군사 반대파', T('military-opposition')], ['정치위원', T('political-commissar')]],
             },
             after: '8월 7일 카펠의 부대가 카잔과 그곳에 보관된 제정 러시아의 금을 빼앗았다. 사마라·심비르스크·우파·예카테린부르크가 이미 넘어갔고, 8월 2일 연합군이 아르한겔스크에 상륙했다. 차리친은 크라스노프의 첫 공격을 막아 냈다.',
-            links: [['체코슬로바키아 군단', T('czechoslovak-legion')], ['코무치', T('komuch')], ['얼음 행군', T('ice-march-1918')], ['러시아 내전', E('civil-war')]],
+            links: [['체코슬로바키아 군단', T('czechoslovak-legion')], ['코무치', T('komuch')], ['얼음 행군', T('ice-march-1918')], ['연합국의 개입', T('allied-intervention-russia')], ['러시아 내전', E('civil-war')]],
         },
         // The autumn of 1918 as one season, the calendar before rules 7
         // (an older save replays it); rules 7 splits it into Kazan
@@ -435,7 +437,7 @@
                 links: [['식량 할당제', T('prodrazvyorstka')], ['전시 공산주의', T('war-communism')]],
             },
             after: '9월 10일 카잔, 12일 심비르스크, 10월 7일 사마라를 되찾았다. 붉은 군대의 첫 승리였다. 12월 31일에는 우파도 탈환했다. 차리친은 세 차례 공격을 모두 버텼고, 독일군이 떠난 자리로 붉은 군대가 들어가 1919년 1월 초 리가와 빌뉴스, 하리코프에 이르렀다.',
-            links: [['카잔 작전', T('kazan-operation-1918')], ['차리친 방어', T('defence-of-tsaritsyn')], ['공화국 혁명군사평의회', T('revvoensovet')], ['적색 테러', T('red-terror')]],
+            links: [['스비야시스크 전투', T('battle-of-sviyazhsk-1918')], ['카잔 작전', T('kazan-operation-1918')], ['차리친 방어', T('defence-of-tsaritsyn')], ['옴스크 쿠데타', T('omsk-coup-1918')], ['공화국 혁명군사평의회', T('revvoensovet')], ['적색 테러', T('red-terror')]],
         },
         {
             id: 'kazan', date: '1918년 9월', end: [1918, 9], title: '스비야시스크에서 카잔까지', when: { rules: ['>=', 7] },
@@ -472,7 +474,7 @@
                 links: [['적색 테러', T('red-terror')], ['체카', T('cheka')], ['펠릭스 제르진스키', P('dzerzhinsky')]],
             },
             after: '9월 10일 카잔, 12일 심비르스크를 되찾았다. 붉은 군대의 첫 승리였다. 9월 17일 남부전선이 서고 차르 군대 장군 출신 시틴이 사령관이 되었다. 차리친의 스탈린·보로실로프·미닌도 그 혁명군사평의회에 들어갔다.',
-            links: [['카잔 작전', T('kazan-operation-1918')], ['공화국 혁명군사평의회', T('revvoensovet')], ['이오아킴 바체티스', P('ioakim-vatsetis')]],
+            links: [['스비야시스크 전투', T('battle-of-sviyazhsk-1918')], ['카잔 작전', T('kazan-operation-1918')], ['볼가 군사 소함대', T('volga-military-flotilla')], ['공화국 혁명군사평의회', T('revvoensovet')], ['이오아킴 바체티스', P('ioakim-vatsetis')]],
         },
         {
             id: 'tsaritsyn', date: '1918년 10–12월', end: [1918, 12], title: '차리친 포위', when: { rules: ['>=', 7] },
@@ -524,7 +526,7 @@
                 links: [['식량 할당제', T('prodrazvyorstka')], ['전시 공산주의', T('war-communism')]],
             },
             after: '10월 15일 즐로바의 「강철 사단」이 북캅카스에서 800킬로미터를 걸어와 돈군의 뒤를 쳤고, 17일 결정적 공격은 쿨리크가 모은 포병에 꺾였다. 25일까지 돈군은 돈강 너머로 물러났다. 동부에서는 10월 7일 사마라, 12월 31일 우파를 되찾았다. 독일군이 떠난 자리로 붉은 군대가 들어가 1919년 1월 초 리가와 빌뉴스, 하리코프에 이르렀다.',
-            links: [['차리친 방어', T('defence-of-tsaritsyn')], ['그리고리 쿨리크', P('grigory-kulik')], ['적색 테러', T('red-terror')]],
+            links: [['차리친 방어', T('defence-of-tsaritsyn')], ['옴스크 쿠데타', T('omsk-coup-1918')], ['페름 작전', T('perm-operation-1918')], ['그리고리 쿨리크', P('grigory-kulik')], ['적색 테러', T('red-terror')]],
         },
         {
             id: 'kolchak', date: '1919년 1–4월', end: [1919, 4], title: '콜차크의 춘계 공세',
@@ -595,7 +597,7 @@
                 links: [['미하일 프룬제', P('frunze')], ['바실리 차파예프', P('vasily-chapayev')]],
             },
             after: '콜차크군은 우파를 빼앗고 볼가 가까이 왔지만 사마라와 카잔에는 닿지 못했다. 4월 오데사의 프랑스 함대에서 수병 반란이 일어나 프랑스가 남부에서 철수했다.',
-            links: [['알렉산드르 콜차크', P('alexander-kolchak')], ['녹색군', T('green-armies')]],
+            links: [['콜차크의 춘계 공세', T('kolchak-spring-offensive-1919')], ['동부전선 반격', T('eastern-front-counteroffensive-1919')], ['알렉산드르 콜차크', P('alexander-kolchak')], ['녹색군', T('green-armies')]],
         },
         {
             id: 'directive', date: '1919년 5–7월', end: [1919, 7], title: '「모스크바 지령」',
@@ -651,7 +653,7 @@
                 links: [['세르게이 카메네프', P('sergey-kamenev')], ['이오아킴 바체티스', P('ioakim-vatsetis')]],
             },
             after: '6월 9일 우파, 7월 14일 예카테린부르크를 되찾았다. 남쪽에서는 하리코프와 차리친이 넘어갔고, 북서에서는 유데니치가 얌부르크를 차지했다.',
-            links: [['모스크바 지령', T('moscow-directive')], ['크라스나야 고르카 반란', T('krasnaya-gorka-mutiny')], ['안톤 데니킨', P('anton-denikin')], ['니콜라이 유데니치', P('nikolai-yudenich')]],
+            links: [['모스크바 지령', T('moscow-directive')], ['우파 작전', T('ufa-operation-1919')], ['첼랴빈스크 작전', T('chelyabinsk-operation-1919')], ['크라스나야 고르카 반란', T('krasnaya-gorka-mutiny')], ['안톤 데니킨', P('anton-denikin')], ['니콜라이 유데니치', P('nikolai-yudenich')]],
         },
         {
             id: 'orel', date: '1919년 8–10월', end: [1919, 10], title: '위기의 정점: 오룔과 페트로그라드',
@@ -722,7 +724,7 @@
                 links: [['제7군', T('seventh-army-red-army')], ['레프 트로츠키', P('trotsky')]],
             },
             after: '10월 13일 오룔이 떨어졌다가 20일 되찾아졌다. 부됸니의 기병이 보로네시에서 백군 기병을 깨뜨렸다. 10월 20일 유데니치는 페트로그라드 외곽 풀코보 고지에 닿았지만 더 나아가지 못했다.',
-            links: [['오룔-크로미 작전', T('orel-kromy-operation')], ['마몬토프 습격', T('mamontov-raid')], ['마흐노 운동', T('makhnovshchina')], ['세묜 부됸니', P('semyon-budyonny')]],
+            links: [['오룔-크로미 작전', T('orel-kromy-operation')], ['페트로그라드 방어', T('defence-of-petrograd-1919')], ['마몬토프 습격', T('mamontov-raid')], ['마흐노 운동', T('makhnovshchina')], ['세묜 부됸니', P('semyon-budyonny')]],
         },
         {
             id: 'counter', date: '1919년 11월–1920년 3월', end: [1920, 3], title: '남쪽으로의 반격',
@@ -759,7 +761,7 @@
                 links: [['신경제정책', T('nep')], ['안토노프 봉기', T('antonovshchina')]],
             },
             after: '1920년 1월 3일 차리친, 8일 로스토프를 되찾았다. 2월 21일 아르한겔스크, 3월 17일 예카테리노다르에 들어갔고, 3월 27일 데니킨군은 노보로시스크에서 배를 타고 크림으로 철수했다. 2월 7일 콜차크는 이르쿠츠크에서 총살되었다.',
-            links: [['대시베리아 빙상 행군', T('great-siberian-ice-march')], ['노보로시스크 철수', T('novorossiysk-evacuation-1920')], ['붉은 군대 제1기병군', T('first-cavalry-army')], ['알렉산드르 콜차크', P('alexander-kolchak')]],
+            links: [['하리코프 작전', T('kharkov-operation-1919')], ['로스토프-노보체르카스크 작전', T('rostov-novocherkassk-operation-1920')], ['쿠반-노보로시스크 작전', T('kuban-novorossiysk-operation-1920')], ['대시베리아 빙상 행군', T('great-siberian-ice-march')], ['노보로시스크 철수', T('novorossiysk-evacuation-1920')], ['붉은 군대 제1기병군', T('first-cavalry-army')], ['알렉산드르 콜차크', P('alexander-kolchak')]],
         },
         {
             id: 'poland', date: '1920년 4–8월', end: [1920, 8], title: '바르샤바로?',
@@ -799,7 +801,7 @@
                 links: [['커즌선', T('curzon-line')], ['바르샤바 전투 (1920)', T('battle-of-warsaw-1920')], ['소비에트-폴란드 전쟁', E('soviet-polish-war')]],
             },
             after: '6월 12일 키예프를 되찾고 7월 11일 민스크에 들어갔지만, 8월 바르샤바 전투에서 졌다. 남쪽에서는 브란겔이 크림에서 나와 멜리토폴과 북타브리아를 차지했다.',
-            links: [['미하일 투하쳅스키', P('tukhachevsky')], ['유제프 피우수트스키', P('jozef-pilsudski')]],
+            links: [['키예프 공세', T('kiev-offensive-1920')], ['바르샤바 전투', T('battle-of-warsaw-1920')], ['미하일 투하쳅스키', P('tukhachevsky')], ['유제프 피우수트스키', P('jozef-pilsudski')]],
         },
         {
             id: 'perekop', date: '1920년 9–11월', end: [1920, 11], title: '페레코프',
@@ -834,7 +836,7 @@
                 links: [['스타로빌스크 협정', T('starobilsk-agreement')], ['세묜 카레트니크', P('semyon-karetnik')], ['네스토르 마흐노', P('nestor-makhno')]],
             },
             after: '11월 8일 밤 프룬제의 부대가 시바시를 건너 브란겔의 페레코프 방어선을 우회했고, 11일 유슌 방어선이 뚫렸다. 브란겔은 11월 13일부터 16일까지 126척의 배에 군인과 민간인 14만 5천 명을 태워 콘스탄티노폴리스로 떠났다.',
-            links: [['페레코프-촌가르 작전', T('perekop-chongar-operation')], ['미하일 프룬제', P('frunze')], ['표트르 브란겔', P('pyotr-wrangel')]],
+            links: [['북타브리아 작전', T('northern-taurida-operation-1920')], ['카호프카 교두보', T('kakhovka-bridgehead')], ['페레코프-촌가르 작전', T('perekop-chongar-operation')], ['크림 철수', T('crimean-evacuation-1920')], ['리가 조약', T('peace-of-riga-1921')], ['미하일 프룬제', P('frunze')], ['표트르 브란겔', P('pyotr-wrangel')]],
         },
     ];
 
@@ -1767,7 +1769,7 @@
         { term: '체카', gloss: '반혁명을 단속한 비밀경찰. 비상위원회의 줄임말.', href: T('cheka') },
         { term: '군사전문가', gloss: '붉은 군대가 다시 불러 쓴 차르 군대의 옛 장교.', href: T('voenspets') },
         { term: '혁명군사평의회', gloss: '모든 전선을 이끈 최고 군사 지휘부. 의장은 트로츠키.', href: T('revvoensovet') },
-        { term: '장갑열차', gloss: '철판을 두르고 대포를 실은 열차. 철도를 따라 싸웠다.', href: null },
+        { term: '장갑열차', gloss: '철판을 두르고 대포를 실은 열차. 철도를 따라 싸웠다.', href: T('armoured-train') },
         { term: '식량 할당제', gloss: '나라가 정한 곡물을 마을마다 매겨 강제로 거둔 제도.', href: T('prodrazvyorstka') },
         { term: '빈농위원회', gloss: '가난한 농민을 묶어 부농의 곡물을 찾게 한 마을 조직.', href: T('kombedy-committees-of-the-poor') },
         { term: '녹색군', gloss: '징발에 맞서 들고일어난, 어느 편도 아닌 농민 반란군.', href: T('green-armies') },
@@ -1811,7 +1813,7 @@
                 title: '프룬제의 측면 반격', who: ['미하일 프룬제', 'frunze'], turn: 'directive', phase: 'plan', flag: 'flank',
                 steps: [
                     {
-                        date: '1919년 3–4월', text: '콜차크의 서부군이 우파에서 볼가 쪽으로 깊이 들어왔다. 4월 10일 부구루슬란이 넘어갔다. 진격로는 길게 늘어졌고, 남쪽 옆구리는 비었다.',
+                        date: '1919년 3–4월', text: '콜차크의 서부군이 우파에서 볼가 쪽으로 깊이 들어왔다. 4월 15일 부구루슬란이 넘어갔다. 진격로는 길게 늘어졌고, 남쪽 옆구리는 비었다.',
                         draw: [{ side: 'white', style: 'strike', path: [[54.74, 55.97], [54.10, 54.12], [53.65, 52.43], [53.40, 51.30]], name: '콜차크 서부군' }],
                     },
                     {
