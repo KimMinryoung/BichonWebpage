@@ -110,7 +110,7 @@ function createMcpApp({ clients, tools, log = console.log, recordAudit = async (
         req.mcpClient = client;
         next();
     });
-    app.post('/mcp', express.json({ limit: '5mb' }), async (req, res) => {
+    app.post('/mcp', express.json({ limit: '25mb' }), async (req, res) => {
         if (Array.isArray(req.body)) return res.status(400).json(rpcError(null, -32600, 'batch requests are not supported'));
         const response = await handleMessage(req.body, req.mcpClient, tools, { log, recordAudit });
         if (!response) return res.status(202).end();

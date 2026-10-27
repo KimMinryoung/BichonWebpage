@@ -1,6 +1,7 @@
 // `read` scope: the same views the Admin screens and editorial services use.
 // Modules are required lazily so loading the tool list needs no DB.
 const { str, int, bool, arr, object } = require('../schema');
+const { viewArgs, VIEW_HINT, project } = require('../view');
 
 const page = {
     limit: int('Max items (default 20)', 1, 100, { default: 20 }),
@@ -65,13 +66,19 @@ const tools = [
     },
     {
         name: 'person_get',
-        description: 'Full editorial state of one person: card, sections, evidence, enrichment, notes and the revision token later edits must pass as expectedRevision.',
-        inputSchema: object({ id: str('Person id') }, ['id']),
-        async handler({ id }) {
+        description: 'Full editorial state of one person: card, sections, evidence, enrichment, notes and the revision token later edits must pass as expectedRevision. '
+            + 'sectionSlugs narrows sections to those slugs ([] drops the bodies and lists slug, heading and length only).' + VIEW_HINT,
+        inputSchema: object({ id: str('Person id'), sectionSlugs: arr('Only these section slugs; [] lists sections without bodies', 100), ...viewArgs }, ['id']),
+        async handler({ id, sectionSlugs, ...view }) {
             const { readPersonEditorial } = require('../../data/commulingo/person-editorial-service');
             const person = await readPersonEditorial(id);
             if (!person) throw notFound('person', id);
-            return { person };
+            if (sectionSlugs) {
+                person.sections = sectionSlugs.length
+                    ? person.sections.filter(section => sectionSlugs.includes(section.slug))
+                    : person.sections.map(({ body, ...section }) => ({ ...section, bodyChars: { ko: (body?.ko || '').length, en: (body?.en || '').length } }));
+            }
+            return { person: project(person, view) };
         },
     },
     {
@@ -103,13 +110,13 @@ const tools = [
     },
     {
         name: 'term_get',
-        description: 'Full editorial state of one term: fields, aliases, linked people/events, evidence, enrichment, notes and revision.',
-        inputSchema: object({ id: str('Term id') }, ['id']),
-        async handler({ id }) {
+        description: 'Full editorial state of one term: fields, aliases, linked people/events, evidence, enrichment, notes and revision.' + VIEW_HINT,
+        inputSchema: object({ id: str('Term id'), ...viewArgs }, ['id']),
+        async handler({ id, ...view }) {
             const { readTermEditorial } = require('../../data/commulingo/term-editorial-service');
             const term = await readTermEditorial(id);
             if (!term) throw notFound('term', id);
-            return { term };
+            return { term: project(term, view) };
         },
     },
     {
@@ -133,13 +140,13 @@ const tools = [
     },
     {
         name: 'event_get',
-        description: 'One history event as published: title, period, summary, body, sides and people.',
-        inputSchema: object({ id: str('Event id') }, ['id']),
-        async handler({ id }) {
+        description: 'One history event as published: title, period, summary, body, sides and people.' + VIEW_HINT,
+        inputSchema: object({ id: str('Event id'), ...viewArgs }, ['id']),
+        async handler({ id, ...view }) {
             const { loadCommuLingoHistoryEvents } = require('../../data/commulingo/history-events-store');
             const event = (await loadCommuLingoHistoryEvents()).find(item => item.id === id);
             if (!event) throw notFound('event', id);
-            return { event };
+            return { event: project(event, view) };
         },
     },
     {
@@ -253,15 +260,17 @@ const tools = [
     {
         name: 'doc_get',
         description: 'One reference document: its manifest entry (title, aliases, linked people/terms/events, excerpts, modifiedAt) '
-            + 'and the stored HTML body as published.',
-        inputSchema: object({ id: str('Document id') }, ['id']),
-        async handler({ id }) {
+            + 'and the stored HTML body as published, with the revision doc_put expects. body: false leaves the HTML out.' + VIEW_HINT,
+        inputSchema: object({ id: str('Document id'), body: bool('Include the HTML body (default true)'), ...viewArgs }, ['id']),
+        async handler({ id, body = true, ...view }) {
             const { getCommuLingoDoc } = require('../../data/commulingo/docs-store');
             const { readDocRow } = require('../../data/commulingo/docs-db');
             const doc = getCommuLingoDoc(id);
             if (!doc) throw notFound('document', id);
             const row = await readDocRow(id);
-            return { doc, html: row ? row.body : null };
+            const html = row && body ? row.body : null;
+            return { doc: project(doc, view), revision: row ? row.revision : null, bodyChars: row ? row.body.length : 0,
+                html: html && view.maxChars ? project(html, { maxChars: view.maxChars }) : html };
         },
     },
     {

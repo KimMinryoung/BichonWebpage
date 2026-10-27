@@ -307,8 +307,12 @@ run_container() {
     # (dev_docs/commulingo-admin-mcp.md); the standby has no MCP port, so MCP
     # calls fail for the few seconds the primary is being replaced.
     # The CommuLingo pipeline scheduler likewise runs on the primary alone.
+    # MCP tools also read big payloads (people batches, link-review manifests,
+    # document bodies) from the gitignored work directories by specPath.
     local mcp_publish=() pipeline_env=()
-    [[ "$name" == "$CONTAINER_NAME" ]] && mcp_publish=(-p "127.0.0.1:${MCP_PORT}:${MCP_PORT}") && pipeline_env=(-e COMMULINGO_PIPELINE_TICK=1)
+    [[ "$name" == "$CONTAINER_NAME" ]] && mcp_publish=(-p "127.0.0.1:${MCP_PORT}:${MCP_PORT}"
+        -v "$FRONTEND_DIR/scripts/content:/work/content:ro" -v "$FRONTEND_DIR/scripts/reviews:/work/reviews:ro"
+        -e COMMULINGO_WORK_DIR=/work) && pipeline_env=(-e COMMULINGO_PIPELINE_TICK=1)
     docker run -d \
         --name "$name" \
         --user "$RUN_AS_UID_GID" \

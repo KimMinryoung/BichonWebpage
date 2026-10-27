@@ -96,6 +96,7 @@ function installLinkBlocklist(rows) {
 
 module.exports = {
     loadLinkBlocklist,
+    refreshLinkBlocklist: () => store.refresh(),
     installLinkBlocklist,
     blocklistRef,
     blockedPhrases,

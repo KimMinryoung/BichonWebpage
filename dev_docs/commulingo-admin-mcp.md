@@ -39,14 +39,23 @@ leninbot은 CommuLingo 테이블을 SQL로 건드리지 않는다(2026-10-05 W5)
 
 ## 도구
 
-구현(`mcp/tools/`):
+구현(`mcp/tools/`). 쓰기 도구는 기본이 dry-run(쓰기를 실제로 실행한 뒤 롤백하므로 실제 실행과 같은 자리에서 실패한다)이고, 모두 `commulingo_mcp_audit`에 남는다.
 
-- `read`: `people_search`, `person_get`(편집 상태 전체, `revision` 포함), `person_events`, `term_search`, `term_get`, `event_search`, `event_get`, `offices_list`, `office_get`, `suggestions_list`(`id` 하나 또는 상태별), `id_redirects_list`, `link_reviews_list`, `docs_list`
+- `read`:
+  - 조회: `people_search`, `person_get`(편집 상태 전체, `revision` 포함), `person_events`, `term_search`, `term_get`, `event_search`, `event_get`, `event_raw`, `offices_list`, `office_get`, `suggestions_list`(`id` 하나 또는 상태별), `id_redirects_list`, `link_reviews_list`, `docs_list`, `doc_get`(`revision`·`bodyChars`, `body: false`면 HTML 생략), `doc_revisions`, `groups_list`, `entries_exist`, `entry_lookup`, `aliases_lookup`(이 문자열을 이미 가진 인물·용어·사건·문헌·차단 목록·일반 별칭), `registry_get`(입장 모음·회원·자동링크 차단·일반 별칭·사건별 링크 예외), `data_documents_list`, `data_document_get`(JSON Pointer 부분 조회, `keysOnly`), `data_document_revisions`, `dataset_rows`, `changes_since`
+  - 큰 항목 투영(`mcp/view.js`): `person_get`·`term_get`·`event_get`·`event_raw`·`doc_get`은 `fields`(최상위 키)·`lang`(ko/en 한쪽)·`maxChars`(긴 문자열 자름, 잘린 값은 편집에 되돌려 보내지 않는다)를 받는다. `person_get`의 `sectionSlugs: []`는 절 본문 없이 목록과 길이만 준다. 인자가 없으면 전체 모양 그대로다(leninbot 읽기가 기대는 형태).
 - `edit`:
-  - `editorial_store` — Admin 화면과 같은 저장소 직접 호출(submit/review/enrichment/note, 대상 person·person_section·term). 기존 `scripts/commulingo-{person,term}-service.js`와 같다. 대상 history_event·history_event_section·history_event_person·office_row는 `data/commulingo/content-editorial-service.js`(submit/review): 구조 무결성(존재, 진영, 관계 종류, 절 제목 중복·위치, 뼈대 사건의 첫 쓰기)을 검사하고, 연표 행의 `geo`(지도 점·진격로)·`country`(국가 코드, 옛 행의 문자열 하나는 배열로 정규화)도 받아 검사한다(2026-10-23 전에는 이 둘이 있는 연표 수정을 거부했다), 즉시 반영(`directApply` 기본)하거나 제안으로 대기시킨다. 반영마다 리비전과 승인 제안 행이 남는다. 작성 분량·용어 같은 큐레이터 정책은 호출자(leninbot `_validate`)가 먼저 검사한다.
-  - `editorial_pipeline` — `editorial-pipeline-service.js`의 idempotent 명령(capabilities/validate/submit/review/enrichment/note/publish, 영수증). 기존 `scripts/commulingo-pipeline-service.js`와 같다.
-  - `people_upsert` — `data/commulingo/people-upsert.js`(CLI `scripts/commulingo-people-upsert`와 공용) 일괄 등록·수정, 기본 dry-run.
-- `ops`: `service_status`(리비전, 가동 시간, DB·Redis 준비 상태, 메모리)
+  - `editorial_store` — Admin 화면과 같은 저장소 직접 호출(submit/review/enrichment/note, 대상 person·person_section·term). 대상 history_event·history_event_section·history_event_person·office_row는 `data/commulingo/content-editorial-service.js`(submit/review): 구조 무결성(존재, 진영, 관계 종류, 절 제목 중복·위치, 뼈대 사건의 첫 쓰기)과 연표 행의 `geo`·`country`를 검사하고 즉시 반영(`directApply` 기본)하거나 제안으로 대기시킨다. 반영마다 리비전과 승인 제안 행이 남는다. 용어는 원래 늘 대기하지만 `request.directApply: true`면 같은 트랜잭션에서 제출·승인한다(새 용어는 `fields.original` 또는 `request.noOriginal: "<이유>"` 필수 — 옛 `apply-history-terms.js`의 규칙). `brief: true`는 `{status, suggestionId, revision}`만 돌려준다. 작성 분량·용어 같은 큐레이터 정책은 호출자(leninbot `_validate`)가 먼저 검사한다.
+  - `editorial_batch` — `editorial_store`의 submit/review 요청 여러 개를 한 트랜잭션에서 순서대로, 전부 아니면 무(사건을 만들고 그 절·인물을 잇는 식). `items` 또는 `specPath`. `apply-history-terms.js`·`apply-event-person-links.js` 같은 일괄 스크립트를 대신한다.
+  - `editorial_validate`, `editorial_pipeline`(idempotent 명령, 영수증), `gap_file`
+  - `people_upsert` — `data/commulingo/people-upsert.js`(CLI `scripts/commulingo-people-upsert`와 공용) 일괄 등록·수정. `people` 또는 `specPath`.
+  - `doc_put`·`doc_restore` — 참고 문헌 한 건(`docs-db.js:writeDocs`, `scripts/commulingo-docs put`과 같은 검증·정화). `entry`(전체) 또는 `entryPatch`(최상위 키, null은 삭제), `body` 또는 `bodyPath`, 기존 문헌은 `expectedRevision` 필수. 인물 링크 감사는 개수와 경고 붙은 연결만(`fullAudit`이면 전부).
+  - `data_document_put`·`data_document_restore` — 데이터 문서(`data-documents.js`): `content` 전체 또는 JSON Pointer `patches`, `expectedRevision` 필수.
+  - `link_reviews_apply` — `scripts/reviews/` 형식 매니페스트(`data/commulingo/link-review-manifest.js`, CLI `review-commulingo-links.js`와 공용). `apply: false`가 사전 점검. `link_expression_reject`(별칭·연결 표현 반려), `link_reviews_carry`(표기만 바뀐 사건·문헌 제목의 승인 이어받기).
+  - `registry_edit` — 화면 없는 등록부(`data/commulingo/registry-edits.js`): 입장 모음과 회원, 자동링크 차단 목록, 일반 별칭 목록, 사건별 `no_auto_link`·`term_links`, `id_redirects`. 변경마다 리비전 행. `scripts/migrations/data/`의 손 SQL을 대신한다.
+- `ops`: `service_status`(리비전, 가동 시간, DB·Redis 준비 상태, 메모리), `sql_read`(읽기 전용 한 문장: 따로 연 연결의 READ ONLY 트랜잭션, 이름 붙인 prepared statement라 여러 문장 불가, 10초·행 상한), `audit_run`(배포된 `scripts/audit-*.js` 실행, 이름 없이 부르면 목록), `stores_refresh`(서비스 프로세스의 CommuLingo 저장소 즉시 갱신 — 쓰기 직후 확인할 때 1분 대기 대신)
+
+`specPath`(`mcp/spec.js`)는 `content/<경로>`(`scripts/content`)나 `reviews/<경로>`(`scripts/reviews`)만 읽는다. `..`·심링크로 밖에 나가는 경로는 거부한다. `scripts/deploy`가 주 컨테이너에 두 폴더를 `/work`로 읽기 전용 마운트하고 `COMMULINGO_WORK_DIR=/work`를 준다. 큰 스펙을 인자로 옮겨 적지 말고 파일에 쓴 뒤 경로를 넘긴다.
 
 ## 단계
 
@@ -57,7 +66,7 @@ leninbot은 CommuLingo 테이블을 SQL로 건드리지 않는다(2026-10-05 W5)
 | 3 | 양쪽 | leninbot 작성기의 사건·사건 절·사건 인물·직책 행 쓰기와 제안 기록을 `content-editorial-service.js`로 옮김. 제안 검토 CLI·사건 연결 백필을 MCP로 전환 | 완료 |
 | 4 | 양쪽 | [보강 파이프라인 이전](commulingo-agent-pipeline.md)(W1~W5)으로 대체: 파이프라인은 frontend, leninbot은 일꾼. leninbot의 남은 읽기(큐레이터 도구·검증·KG 동기화·롤플레이)를 MCP로, 옛 레인·운영 스크립트 삭제 | 완료 |
 | 5 | DB | leninbot을 전용 로그인 `leninbot_app`으로 바꿔 CommuLingo 테이블 권한을 없앴다(leninbot `dev_docs/db_app_role.md`) | 완료(2026-10-05) |
-| 6 | frontend | `ops` 도구: 허용 목록의 audit 스크립트, 최근 오류 로그, 메뉴 방문 집계, 읽기 전용 SQL | |
+| 6 | frontend | `ops` 도구: `audit_run`, `sql_read`, `stores_refresh`. 데이터 작업 도구(일괄 편집, 문헌·데이터 문서·링크 승인·등록부 쓰기, 큰 항목 투영, `specPath`) | 완료(2026-10-27). 최근 오류 로그·메뉴 방문 집계는 남음 |
 
 `scripts/query-db`(사람용 `leninbot_ro` 조회)는 그대로 둔다.
 
@@ -78,4 +87,5 @@ claude mcp add --transport http --scope local commulingo http://127.0.0.1:3100/m
 - `node scripts/smoke-commulingo-content-editorial.js`(npm test 포함): 사건 본문 절 분할·삽입·교체와 요청 검사.
 - `scripts/test-commulingo-content-editorial-db.js`(격리 DB, `dev_docs/commulingo-database.md`의 절차): 사건 카드·절·사건 인물·직책 행의 즉시 반영·대기·검토·거부, 리비전과 제안 행. 한 트랜잭션 안에서 실행하고 롤백한다.
 - leninbot `tests/test_commulingo_mcp_client.py`·`tests/test_commulingo_mcp_writes.py`: 요청 변환, 오류 형식, 작성기·검토 CLI·rename 추종.
-- 운영: 등록한 클라이언트에서 `service_status`와 조회 도구 하나를 호출한다.
+- `node scripts/smoke-commulingo-mcp-helpers.js`(npm test 포함): 투영, JSON Pointer 패치, `specPath` 경계, 새 쓰기 도구의 인자 거부. DB 없이 실행한다.
+- 운영: 등록한 클라이언트에서 `service_status`와 조회 도구 하나를 호출한다. 새 쓰기 도구는 dry-run으로 확인한다(작업 트리를 마운트한 dev-preview 컨테이너 안 `127.0.0.1:3100`으로도 배포 전에 부를 수 있다).

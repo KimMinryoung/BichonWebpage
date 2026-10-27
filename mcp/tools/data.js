@@ -3,6 +3,7 @@
 // consumers that mirror CommuLingo, such as leninbot's knowledge-graph sync;
 // that list is this repository's contract with them.
 const { str, int, arr, object } = require('../schema');
+const { viewArgs, VIEW_HINT, project } = require('../view');
 
 function db() {
     return require('../../config/database');
@@ -85,16 +86,16 @@ const tools = [
     {
         name: 'event_raw',
         description: 'One history event as stored (also unpublished skeletons): card fields, full ko/en bodies, timeline, sources, '
-            + 'focus, sides and linked people with relation, note and side.',
-        inputSchema: object({ id: str('Event id') }, ['id']),
-        async handler({ id }) {
+            + 'focus, sides and linked people with relation, note and side.' + VIEW_HINT,
+        inputSchema: object({ id: str('Event id'), ...viewArgs }, ['id']),
+        async handler({ id, ...view }) {
             const event = (await db().query(`SELECT id, start_year, start_month, start_day, end_year, end_month, end_day, title_ko, title_en, question_ko, question_en, summary_ko, summary_en,
                     outcome_ko, outcome_en, body_ko, body_en, timeline, sources, to_jsonb(e)->'focus' AS focus, to_jsonb(e)->'sides' AS sides
                 FROM commulingo_history_events e WHERE id = $1`, [id])).rows[0];
             if (!event) throw Object.assign(new Error(`event not found: ${id}`), { status: 404 });
             event.people = (await db().query(`SELECT person_id, sort_order, relation_kind, side, relation_ko, relation_en, note_ko, note_en
                 FROM commulingo_history_event_people WHERE event_id = $1 ORDER BY sort_order, person_id`, [id])).rows;
-            return { event };
+            return { event: project(event, view) };
         },
     },
     {
