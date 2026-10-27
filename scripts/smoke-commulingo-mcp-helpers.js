@@ -71,6 +71,7 @@ const { readSpecJson } = require('../mcp/spec');
     const ctx = { client: 'operator' };
     await assert.rejects(tool('editorial_batch').handler({}, ctx), /items or specPath/);
     await assert.rejects(tool('editorial_batch').handler({ items: [], specPath: 'content/batch/spec.json' }, ctx), /not both/);
+    await assert.rejects(tool('editorial_batch').handler({ items: [{ command: 'submit', target: 'person_section', request: { id: 'x', action: 'create', fields: { expectedRevision: '@previous' } } }] }, ctx), /needs an earlier item/);
     await assert.rejects(tool('people_upsert').handler({}, ctx), /people or specPath/);
     await assert.rejects(tool('registry_edit').handler({}, ctx), /ops or specPath/);
     await assert.rejects(tool('link_reviews_apply').handler({}, ctx), /manifest or specPath/);

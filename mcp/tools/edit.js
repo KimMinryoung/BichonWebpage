@@ -57,6 +57,33 @@ function summary(value) {
     return { status, suggestionId, reasons, topic, wouldStage, patchHash, dryRun, ...(revision ? { revision } : {}) };
 }
 
+// In a batch, a later edit of a person or term an earlier item already
+// changed (with its own revision check) may pass expectedRevision
+// '@previous': the revision that entity has after the earlier items.
+const revisionKey = (target, request) => {
+    const kind = target === 'term' ? 'term' : TARGETS.includes(target) ? 'person' : null;
+    return kind && request?.id ? `${kind}:${request.id}` : null;
+};
+
+function checkRevisionChain(list) {
+    const touched = new Set();
+    list.forEach((item, i) => {
+        const key = revisionKey(item?.target || 'person', item?.request);
+        if (item?.request?.fields?.expectedRevision === '@previous' && !touched.has(key)) {
+            throw badRequest(`items[${i}] expectedRevision '@previous' needs an earlier item in this batch that edits the same person or term`);
+        }
+        if (key) touched.add(key);
+    });
+}
+
+async function chainRevision(request, target, client) {
+    if (request.fields?.expectedRevision !== '@previous') return;
+    const current = target === 'term'
+        ? await require('../../data/commulingo/term-editorial-service').readTermEditorial(request.id, { client })
+        : await require('../../data/commulingo/people-admin-store').getPersonAdmin(request.id, { client });
+    request.fields = { ...request.fields, expectedRevision: current?.revision };
+}
+
 // One store command, inside the caller's transaction when client is given.
 // A term submit with directApply: true is staged and approved in the same
 // transaction (terms otherwise always wait for review), as the batch scripts
@@ -122,6 +149,7 @@ const tools = [
             + 'may build on an earlier one: create an event, then its sections and people). Each item is {command: submit|review, target, request} '
             + 'exactly as editorial_store takes them (term items may set request.directApply: true). dryRun (default true) runs every write and rolls '
             + 'back, so it fails where the real run would. Pass items inline or specPath to a JSON file holding {items: [...]} or the list itself. '
+            + 'A later edit of a person or term an earlier item changed passes fields.expectedRevision: \'@previous\'. '
             + 'Returns per item {status, suggestionId, revision}.',
         inputSchema: object({
             items: arr('Edit items', 300),
@@ -134,6 +162,7 @@ const tools = [
         async handler({ items, specPath, dryRun = true, changedBy: given }, { client }) {
             const actor = actorOf(given, client);
             const list = batchItems(items, specPath);
+            checkRevisionChain(list);
             const results = [];
             await withTransaction({}, async own => {
                 for (const [i, item] of list.entries()) {
@@ -143,6 +172,7 @@ const tools = [
                     if (!request || typeof request !== 'object' || Array.isArray(request)) throw badRequest(`items[${i}].request must be an object`);
                     const { dryRun: ignored, ...clean } = request;
                     try {
+                        await chainRevision(clean, target, own);
                         results.push({ index: i, target, id: String(clean.id || clean.suggestionId || ''),
                             ...summary(await storeEdit(command, target, clean, actor, own)) });
                     } catch (err) {
