@@ -31,3 +31,19 @@
 - `scripts/reviews/commulingo-links-20261028-lenin-mec.json`(11건).
   - 책 제목 6개(ko 4, en 2)는 문헌에 auto로 잇는다.
   - 용어 「유물론과 경험비판론」에서 겹치는 표현 5개는 search로 돌렸다(용어·문헌이 충돌하면 문헌 우선).
+- 번역본 수정(revision 3, 원문 revision 2):
+  - 피히테를 「주관적 관념론의 고전적 대표자」로 바로잡았다. leninism.su 원문이 「объективного」로 잘못 찍혀 있어 `parse.py` `SOURCE_FIXES`에 넣었다(영역 『레닌 전집』 14권과 소련 대백과 인용은 「субъективного」).
+  - 블레이를 블라이로 통일했다.
+
+## 학습 코스
+- 사용자 요청: 범위 A(서론 + 제1–6장 + 결론, 8단위)로 학습 콘텐츠를 만든다.
+- `data/commulingo/courses/lenin-materialism-empiriocriticism.js`: 8단위, 레슨 16개, 문항 80개, 모든 문항에 보기별 피드백을 달았다.
+  - 단위 1은 서론이고, 2–7은 원서 제1–6장, 8은 결론과 두 서문이다. 제4장 제1절 보유는 단위 5에 넣었다.
+  - `sourceUrl`은 문헌 앵커라서, 문헌 페이지의 「학습」 줄에 코스가 뜬다.
+  - 근거 인용: 한국어는 사이트 번역본, 영어는 marxists.org 『레닌 전집』 14권에서 가져왔다. `scripts/check-course-source-excerpts.js`를 통과한다.
+- 작성: 하위 에이전트 8개가 단위 하나씩 썼다.
+  - 정본: `scripts/content/lenin-mec-20261028/course/`(`BRIEF.md`, `helpers.js`, `unit-1..8.js`, `check.js`, `assemble-course.js`).
+  - `assemble-course.js`가 단위 파일을 하나의 코스 모듈로 합친다. 고칠 때는 단위 파일을 고치고 다시 합친다.
+- 같은 페이지에 넣는 인용은 한국어 산문 줄표 금지(ko-em-dash)와 글자 그대로 인용 규칙이 부딪힌다. 줄표 자리는 ` … `로 끊는다.
+- 「Correct.」 같은 영어 피드백 머리말은 `audit-commulingo-quality`의 embedded-marker 치명 규칙에 걸리므로 쓰지 않는다.
+- 등록: `shards.js` `PUBLIC_CHAPTER_LIMITS`와 `validate-commulingo.js` `expected`에 8단위를 추가했다.
