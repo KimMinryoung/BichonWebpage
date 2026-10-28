@@ -36,10 +36,19 @@
   - 블레이를 블라이로 통일했다.
 
 ## 학습 코스
+- 2026-10-28 3차(revision 3): 8편, 61발췌. 단위마다 한 편이다.
+  - 사용자 지적:
+    - 「esse is percipi」 문항에서 발췌는 「존재한다는 것은 지각된다는 것이다」 한 줄뿐이라, 라틴어 명제가 그 문장이라는 것을 알 수 없었다. 원어는 질문에서 번역본 한국어로 바꿔 쓰면 된다.
+    - 문항이 너무 많다. 가치 있는 문항이면 남겨도 된다.
+    - 발췌만으로 정답을 고를 수 있을 필요는 없다.
+  - 정의만 알면 풀리는 문항과 다른 문항을 되묻는 문항을 빼고, 편마다 6~8문항을 남겼다(`extras.reading.picks`).
+  - 발췌는 한 문단 길이(공백 빼고 120~520자)로 다시 붙였다. 질문이 쓰는 인용구와 원어는 발췌나 맥락 줄에 같은 꼴로 보이게 했다(`READING=2 node check.js`).
+  - 레슨 id는 `lenin-mec-chNN-basic`이다.
+  - 작업 지침은 `course/READING2.md`·`REVIEW.md`, 단계별 백업은 `course.bak2-`·`course.bak3-20261028/`에 있다.
 - 2026-10-28 같은 날 끊어 읽기로 옮겼다(revision 2).
   - 사용자 판단: 개념 화면 뒤에 정의를 묻는 퀴즈형(「버클리의 esse is percipi는 무엇을 주장하는가」)은 최신 형식([원문 끊어 읽기](commulingo-guided-reading.md))에서 후퇴한 것이다.
   - 사용자 지시로 기존 80문항의 질문·보기 4개·해설·피드백은 그대로 두고, 문항마다 맥락 한 줄(`read()`)과 원문 발췌(`src()`)만 붙였다.
-  - 단위마다 기본·심화를 한 편씩으로 나눠 16편 × 5발췌로 만들었다(`helpers.js` `readingChapters`). 레슨 id는 `lenin-materialism-empiriocriticism-chNN-basic`이다.
+  - (2차) 단위마다 기본·심화를 한 편씩으로 나눠 16편 × 5발췌로 만들었다(`helpers.js` `readingChapters`). 레슨 id는 `lenin-materialism-empiriocriticism-chNN-basic`이다.
   - 끊어 읽기는 3지선다가 기본이지만, 사용자 결정으로 이 강좌는 4지선다다. 검증기(`commulingo-checks.js`)와 품질 감사가 끊어 읽기의 3·4지선다를 모두 받는다.
   - `check-course-source-excerpts.js`의 `REQUIRE_SOURCE`에 넣었다.
   - 맥락·발췌 작업 지침은 `course/READING.md`, 퀴즈형 원본은 `course.bak-20261028/`에 있다.

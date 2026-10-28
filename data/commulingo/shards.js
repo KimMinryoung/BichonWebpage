@@ -19,7 +19,7 @@ const PUBLIC_CHAPTER_LIMITS = {
     'capital-vol3': 52,
     'lenin-imperialism': 10,
     'lenin-state-revolution': 6,
-    'lenin-materialism-empiriocriticism': 16,
+    'lenin-materialism-empiriocriticism': 8,
     'marx-wage-labour-capital': 6,
     'marx-wages-and-programme': 8,
     'marx-civil-war-in-france': 6,
