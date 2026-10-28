@@ -38,3 +38,15 @@
 - leninbot `commulingo/classify.py` TERM_RULES에 철학 규칙이 없다(지금은 라벨로만 분류된다).
 - 스미스의 글래스고 교수직 국가 코드(state-uk)는 에이전트가 판단한 값이다.
 - 다음 후보: 니체 카드와 니체 이후 계보, 철학 강좌 서가.
+
+## 『자본론』→『자본』 제목 통일 (같은 날 후속, 소유자 결정)
+- 용어 `das-kapital`: 표제어를 「자본 (마르크스)」로 바꿨다. 맨 「자본」은 일반 명사라서 표제어로도 별칭으로도 두지 않는다.
+  - 정의에 「원제는 『자본: 정치경제학 비판』이며, 한국에서는 흔히 『자본론』이라고 부른다」를 넣었다.
+  - 한국어 별칭: 『자본』, 자본론, 『자본론』, 자본: 정치경제학 비판. 링크 승인은 `scripts/reviews/commulingo-links-20261028-capital-title.json`(5건 auto)이다.
+- DB 본문의 『자본론』·「자본론」·《자본론》·인용 속 맨 「자본론」을 모두 『자본』으로 고쳤다. 정본은 `scripts/content/capital-title-20261028/`(규칙 `lib.js`)이다.
+  - 용어 26개, 인물 10명(소개·경력·절), 참고 문헌 7건, 계보도 노드 1개.
+  - 출판된 번역서를 서지로 적은 「김수행 역 『자본론』」은 그대로 둔다.
+- git 파일 344곳: `lessons.json`의 문항, `courses/marx-wages-and-programme.js`, 재작업 하네스 프롬프트, `lesson-context.js` 주석.
+  - 강좌 제목은 다른 강좌처럼 겹낫표 없이 「자본 1·2·3권」으로 했다(`config/strings.js` kicker, `views/public/strike.ejs` 버튼 포함).
+  - `config/strings.js`와 `strike.ejs`는 배포해야 반영된다.
+- 같은 날 계보도의 슈티르너–포이어바흐 대립선을 시간순(포이어바흐 → 슈티르너)으로 뒤집었다. `smoke-commulingo-genealogy`가 거꾸로 가는 선을 잡았다.

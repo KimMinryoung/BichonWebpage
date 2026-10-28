@@ -284,7 +284,7 @@ const ko = {
         dictTerms: '용어 사전',
         dictGenealogy: '계보도',
         dictDocs: '참고 문헌',
-        kicker: '자본론 1권',
+        kicker: '자본 1권',
         start: '학습 시작',
         continue: '이어하기',
         review: '복습',
