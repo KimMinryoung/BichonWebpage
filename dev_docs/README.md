@@ -36,6 +36,7 @@
 | CommuLingo 제1인터내셔널 사건 | [창립과 분열 1864–1876·인물 5명·용어 2개·진영 5개·반영 기록](commulingo-first-international-20261023.md) |
 | CommuLingo 인터내셔널 문헌·카드 | [창립 선언·『프랑스 내전』 문헌 2건·인물 35명·용어 22개·반영 기록](commulingo-iwma-docs-cards-20261024.md) |
 | CommuLingo 『브뤼메르 18일』 카드 | [인물 55명·용어 24개·문헌 연결·반영 기록](commulingo-brumaire-cards-20261024.md) |
+| CommuLingo 독일 고전철학 계보도(철학 분류 시작) | [계보도·철학 분류·용어 17개·인물 10명·「포이어바흐에 관한 테제」 번역·MCP 원문 쓰기](commulingo-german-philosophy-20261028.md) |
 | CommuLingo 독일 11월 혁명 사건 | [한영 사건·인물 10명·반영 기록](commulingo-german-revolution-20260929.md) |
 | CommuLingo 제2인터내셔널의 붕괴 사건 | [한영 사건·인물 7명·문헌 연결·반영 기록](commulingo-second-international-20260929.md) |
 | CommuLingo 코민테른의 창설 사건 | [한영 사건·인물 5명·문헌 연결·반영 기록](commulingo-comintern-founding-20260929.md) |
