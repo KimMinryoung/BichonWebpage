@@ -305,7 +305,10 @@ function checkQuestion(out, question, lesson, index, ctx) {
   if (question.points !== (lesson.level === 'advanced' ? 3 : 2)) out.add('shape', qLabel, qLabel + ' points do not match lesson level');
   allLocalizedText(out, question.prompt, qLabel + '.prompt');
   allLocalizedText(out, question.explanation, qLabel + '.explanation');
-  const choiceCount = ctx && (ctx.shortLearning || ctx.reading) ? 3 : 4;
+  // A guided reading may ask with three or four choices (the Lenin course keeps four, 2026-10-28);
+  // ko, en and the feedback must still agree with the Korean choices.
+  const readingChoices = ctx && ctx.reading && question.choices && Array.isArray(question.choices.ko) && question.choices.ko.length === 4 ? 4 : 3;
+  const choiceCount = ctx && ctx.reading ? readingChoices : ctx && ctx.shortLearning ? 3 : 4;
   checkChoiceFeedback(out, question.choiceFeedback, qLabel, choiceCount);
   checkSource(out, question.source, qLabel);
   // A reading question is asked about the passage shown above it, so the

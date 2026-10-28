@@ -36,6 +36,14 @@
   - 블레이를 블라이로 통일했다.
 
 ## 학습 코스
+- 2026-10-28 같은 날 끊어 읽기로 옮겼다(revision 2).
+  - 사용자 판단: 개념 화면 뒤에 정의를 묻는 퀴즈형(「버클리의 esse is percipi는 무엇을 주장하는가」)은 최신 형식([원문 끊어 읽기](commulingo-guided-reading.md))에서 후퇴한 것이다.
+  - 사용자 지시로 기존 80문항의 질문·보기 4개·해설·피드백은 그대로 두고, 문항마다 맥락 한 줄(`read()`)과 원문 발췌(`src()`)만 붙였다.
+  - 단위마다 기본·심화를 한 편씩으로 나눠 16편 × 5발췌로 만들었다(`helpers.js` `readingChapters`). 레슨 id는 `lenin-materialism-empiriocriticism-chNN-basic`이다.
+  - 끊어 읽기는 3지선다가 기본이지만, 사용자 결정으로 이 강좌는 4지선다다. 검증기(`commulingo-checks.js`)와 품질 감사가 끊어 읽기의 3·4지선다를 모두 받는다.
+  - `check-course-source-excerpts.js`의 `REQUIRE_SOURCE`에 넣었다.
+  - 맥락·발췌 작업 지침은 `course/READING.md`, 퀴즈형 원본은 `course.bak-20261028/`에 있다.
+- 아래는 처음(revision 1) 기록이다.
 - 사용자 요청: 범위 A(서론 + 제1–6장 + 결론, 8단위)로 학습 콘텐츠를 만든다.
 - `data/commulingo/courses/lenin-materialism-empiriocriticism.js`: 8단위, 레슨 16개, 문항 80개, 모든 문항에 보기별 피드백을 달았다.
   - 단위 1은 서론이고, 2–7은 원서 제1–6장, 8은 결론과 두 서문이다. 제4장 제1절 보유는 단위 5에 넣었다.

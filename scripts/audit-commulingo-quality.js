@@ -13,6 +13,14 @@ const weakChoice = /(장식품일 뿐|색깔만|게으른가 부지런한가|도
 const issues = [];
 let choiceFeedbackQuestions = 0;
 
+// Short lessons ask with three choices; a guided reading with three or four
+// (the Lenin course keeps four), matched to its Korean choices.
+function expectedFeedbackCount(collection, question) {
+  if (collection.format === 'short-learning') return 3;
+  if (collection.format === 'guided-reading') return question.choices && Array.isArray(question.choices.ko) && question.choices.ko.length === 4 ? 4 : 3;
+  return 4;
+}
+
 function add(kind, label, text) {
   issues.push({ kind, label, text: String(text || '').replace(/\s+/g, ' ').trim() });
 }
@@ -45,7 +53,7 @@ for (const collection of data.collections || []) {
           choiceFeedbackQuestions += 1;
           ['ko', 'en'].forEach(locale => {
             const items = question.choiceFeedback && question.choiceFeedback[locale];
-            if (!Array.isArray(items) || items.length !== (['short-learning', 'guided-reading'].includes(collection.format) ? 3 : 4)) add('choice-feedback-shape', qLabel, locale);
+            if (!Array.isArray(items) || items.length !== expectedFeedbackCount(collection, question)) add('choice-feedback-shape', qLabel, locale);
             (items || []).forEach((item, feedbackIndex) => checkText('choiceFeedback' + feedbackIndex, qLabel, item));
           });
         }

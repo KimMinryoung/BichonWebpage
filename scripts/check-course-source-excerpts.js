@@ -24,7 +24,7 @@ const { loadCommuLingoBundle } = require('../data/commulingo');
 const { getCommuLingoDoc, getCommuLingoDocContent } = require('../data/commulingo/docs-store');
 const text = require('./lib/commulingo-source-text');
 
-const REQUIRE_SOURCE = new Set(['marx-wages-and-programme', 'marx-wage-labour-capital', 'marx-civil-war-in-france', 'marx-eighteenth-brumaire']);
+const REQUIRE_SOURCE = new Set(['marx-wages-and-programme', 'marx-wage-labour-capital', 'marx-civil-war-in-france', 'marx-eighteenth-brumaire', 'lenin-materialism-empiriocriticism']);
 const doFetch = process.argv.includes('--fetch');
 
 const docCache = new Map();
