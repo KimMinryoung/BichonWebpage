@@ -173,7 +173,9 @@ const tools = [
         description: 'Create or change one reference document (the store scripts/commulingo-docs put uses): entry replaces the manifest '
             + 'entry, entryPatch changes top-level entry keys (null removes one), body or bodyPath (an .html under content/) replaces the HTML, '
             + 'which is sanitized like an import. An existing document needs expectedRevision from doc_get. Returns the written revision and '
-            + 'the person-link audit (mentions, warnings) to check before applying. dryRun defaults to true. Authoring rules: data/commulingo/docs/README.md.',
+            + 'the person-link audit (mentions, warnings) to check before applying. original sets the source-language text the translation '
+            + 'was made from (stored beside it, served at /docs/<id>/original only when public); removeOriginal drops it. dryRun defaults to '
+            + 'true. Authoring rules: data/commulingo/docs/README.md.',
         inputSchema: object({
             id: str('Document id'),
             entry: obj('Whole manifest entry (title, byline, aliases, people, terms, events, noAutoLink, …)'),
@@ -182,16 +184,21 @@ const tools = [
             bodyPath: specPathArg,
             expectedRevision: int('Revision from doc_get (required for an existing document)', 0, 100000000),
             sortOrder: int('List position', -1000000, 1000000),
+            original: obj('The original: { lang (2-3 letters), public (needs rights), rights, source, body | bodyPath (content/<path>.html), '
+                + 'expectedRevision (doc_get originalRevision; required when one is stored) }'),
+            removeOriginal: bool('Delete the stored original'),
             fullAudit: bool('Return every person mention of the link audit (default: counts and warned links only)'),
             dryRun: dryRunArg,
             note: noteArg,
             changedBy,
         }, ['id']),
         audit: ({ id, dryRun, changedBy: actor }, client) => ({ command: dryRun === false ? 'apply' : 'dry-run', targetType: 'doc', targetId: id, actor: actor || `mcp:${client}` }),
-        async handler({ id, entry, entryPatch, body, bodyPath, expectedRevision, sortOrder, fullAudit, dryRun = true, note, changedBy: given }, { client }) {
+        async handler({ id, entry, entryPatch, body, bodyPath, expectedRevision, sortOrder, original, removeOriginal, fullAudit, dryRun = true, note, changedBy: given }, { client }) {
             if (entry && entryPatch) throw badRequest('pass entry or entryPatch, not both');
             if (body !== undefined && bodyPath) throw badRequest('pass body or bodyPath, not both');
-            const { readDocRow, writeDocs, storedEntry, sha256 } = require('../../data/commulingo/docs-db');
+            if (original && removeOriginal) throw badRequest('pass original or removeOriginal, not both');
+            if (original && original.body !== undefined && original.bodyPath) throw badRequest('pass original.body or original.bodyPath, not both');
+            const { readDocRow, readOriginalRow, writeDocs, storedEntry, sha256 } = require('../../data/commulingo/docs-db');
             const { canonicalEntry } = require('../../data/commulingo/docs-import');
             const { sanitizeDocHtml } = require('../../data/commulingo/doc-sanitize');
             const row = await readDocRow(id);
@@ -211,8 +218,19 @@ const tools = [
             const upsert = { id, entry: storedEntry(next), expectedRevision: row ? expectedRevision : 0,
                 body: html !== undefined && (!row || sha256(html) !== row.body_sha256) ? sanitizeDocHtml(html) : undefined,
                 sortOrder };
+            // Like scripts/commulingo-docs put: the original is sanitized as the
+            // translation is, and an existing one is guarded by its own revision.
+            const originals = { set: [], remove: removeOriginal ? [id] : [] };
+            if (original) {
+                const stored = await readOriginalRow(id);
+                if (stored && original.expectedRevision === undefined) throw badRequest('original.expectedRevision is required for a stored original (doc_get returns originalRevision)');
+                const originalHtml = original.bodyPath ? readSpecFile(original.bodyPath) : original.body;
+                if (typeof originalHtml !== 'string' || !originalHtml.trim()) throw badRequest('original needs body or bodyPath');
+                originals.set.push({ docId: id, lang: original.lang, body: sanitizeDocHtml(originalHtml), public: original.public === true,
+                    rights: original.rights, source: original.source, expectedRevision: stored ? original.expectedRevision : 0 });
+            }
             const actor = actorOf(given, client);
-            const result = await inTransaction(dryRun, c => writeDocs({ upserts: [upsert] }, { actor, note: note || 'mcp doc_put', client: c }));
+            const result = await inTransaction(dryRun, c => writeDocs({ upserts: [upsert], originals }, { actor, note: note || 'mcp doc_put', client: c }));
             if (!dryRun) await require('../../data/commulingo/docs-store').refreshCommuLingoDocs();
             // The audit lists every person mention (hundreds in a long text);
             // unless fullAudit, keep the counts and the links that carry a warning.
@@ -226,7 +244,7 @@ const tools = [
             });
             return { dryRun, ...result };
         },
-        summarize: value => ({ dryRun: value.dryRun, written: value.written }),
+        summarize: value => ({ dryRun: value.dryRun, written: value.written, originals: value.originals }),
     },
     {
         scope: 'edit',
@@ -403,7 +421,9 @@ const tools = [
             + 'blocklist_add {kind: phrase|alias|term-phrase|term-alias|term-headword, lang, phrase, note} / blocklist_remove {kind, lang, phrase}; '
             + 'generic_alias_add {lang, phrase, note} / generic_alias_remove {lang, phrase}; '
             + 'event_no_auto_link_set {eventId, phrases[]} and event_term_links_set {eventId, termLinks [{lang, text, termId, reason}]} (each replaces the '
-            + 'whole list: read it with registry_get event_link_exceptions first); id_redirect_add {entityType: person|office|role-category, fromId, toId, note}. '
+            + 'whole list: read it with registry_get event_link_exceptions first); id_redirect_add {entityType: person|office|role-category, fromId, toId, note}; '
+            + 'term_category_upsert {id, label {ko,en}, sortOrder} (glossary kind chips; a new one needs both, reorder by upserting each moved row; '
+            + 'current rows: dataset_rows term_categories). '
             + 'Each change leaves a revision row. Pass ops inline or specPath to a file with {ops: [...]} or the list. dryRun defaults to true.',
         inputSchema: object({
             ops: arr('Registry edits', 500),

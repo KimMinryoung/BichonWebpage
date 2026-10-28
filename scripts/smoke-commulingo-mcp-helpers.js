@@ -77,6 +77,8 @@ const { readSpecJson } = require('../mcp/spec');
     await assert.rejects(tool('link_reviews_apply').handler({}, ctx), /manifest or specPath/);
     await assert.rejects(tool('data_document_put').handler({ key: 'k' }, ctx), /content or patches/);
     await assert.rejects(tool('doc_put').handler({ id: 'd', entry: {}, entryPatch: {} }, ctx), /entry or entryPatch/);
+    await assert.rejects(tool('doc_put').handler({ id: 'd', original: { lang: 'de', body: '<p>x</p>' }, removeOriginal: true }, ctx), /original or removeOriginal/);
+    await assert.rejects(tool('doc_put').handler({ id: 'd', original: { lang: 'de', body: '<p>x</p>', bodyPath: 'content/x.html' } }, ctx), /original.body or original.bodyPath/);
     await assert.rejects(tool('editorial_store').handler({ command: 'submit', target: 'term', request: { id: 'x', action: 'create', directApply: true, fields: {} }, changedBy: 'bad actor' }, ctx), /changedBy/);
     await assert.rejects(tool('sql_read').handler({ sql: 'DELETE FROM commulingo_people' }, ctx), /must start with SELECT/);
     await assert.rejects(tool('sql_read').handler({ sql: 'SELECT 1', params: [{}] }, ctx), /scalars/);

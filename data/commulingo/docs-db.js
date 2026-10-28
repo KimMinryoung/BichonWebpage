@@ -215,6 +215,10 @@ async function readDocRow(id, { client = db, forUpdate = false } = {}) {
     return (await client.query(sql, [id])).rows[0] || null;
 }
 
+async function readOriginalRow(id, { client = db } = {}) {
+    return (await client.query('SELECT * FROM commulingo_doc_originals WHERE doc_id = $1', [id])).rows[0] || null;
+}
+
 // Every document as stored, for export and bulk edits.
 async function readAllDocRows({ client = db, withBody = true } = {}) {
     const cols = withBody ? '*' : 'id, sort_order, entry, body_sha256, revision, body_updated_at, updated_at, updated_by';
@@ -252,4 +256,4 @@ async function restoreDocRevision(id, revision, { actor, note } = {}) {
         { actor, note: note || `restore revision ${revision}` });
 }
 
-module.exports = { writeDocs, readDocRow, readAllDocRows, readAllOriginalRows, listDocRevisions, restoreDocRevision, storedEntry, sha256 };
+module.exports = { writeDocs, readDocRow, readOriginalRow, readAllDocRows, readAllOriginalRows, listDocRevisions, restoreDocRevision, storedEntry, sha256 };

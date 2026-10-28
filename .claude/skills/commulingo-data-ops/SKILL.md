@@ -22,10 +22,10 @@ Full list and arguments: `dev_docs/commulingo-admin-mcp.md`. Write tools default
 | People | `people_upsert` (spec format: head comment of `scripts/commulingo-people-upsert.js`) |
 | Person/term/event/office edits | `editorial_store`; several at once in one transaction: `editorial_batch`; a term approved in the same call: `request.directApply: true` |
 | New history events | `history_events_create` (spec format: head comment of `scripts/apply-history-events.js`; `apply: false` preflight first). An existing event's title, period, question/summary/outcome, sources, locations, focus/sides and timeline: `editorial_store` target `history_event` |
-| Reference document | `doc_put` (`entryPatch` for manifest fields, `bodyPath` for HTML), `doc_delete`, `doc_revisions`/`doc_restore`; new imports `scripts/import-commulingo-doc.js`; authoring rules `data/commulingo/docs/README.md` |
+| Reference document | `doc_put` (`entryPatch` for manifest fields, `bodyPath` for HTML, `original` for the source-language text), `doc_delete`, `doc_revisions`/`doc_restore`; new imports `scripts/import-commulingo-doc.js`; authoring rules `data/commulingo/docs/README.md` |
 | Data documents | `data_document_put` (`patches` by JSON Pointer), `data_document_revisions`/`data_document_restore`. Event-map bakes (`scripts/bake-event-control.js`) still publish with `scripts/commulingo-data put scripts/content/event-control/baked` |
 | Link reviews | `link_reviews_apply` (manifest in `scripts/reviews/`), `link_expression_reject`, `link_reviews_carry` |
-| Registries | `registry_edit`: position collections and members, blocklist, generic aliases, event `no_auto_link`/`term_links`, id redirects |
+| Registries | `registry_edit`: position collections and members, blocklist, generic aliases, event `no_auto_link`/`term_links`, id redirects, glossary categories (`term_category_upsert`) |
 | Checks | `audit_run` (e.g. `audit-link-fires` `[ko]`, `audit-person-card-fields`), `sql_read` for one-off read-only queries |
 
 The CLIs `scripts/commulingo-people-upsert`, `scripts/commulingo-docs`, `scripts/commulingo-data` and `scripts/review-commulingo-links.js` use the same stores and remain usable on the host.

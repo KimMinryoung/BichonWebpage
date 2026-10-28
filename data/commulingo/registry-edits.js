@@ -1,7 +1,7 @@
 // CommuLingo registry rows that have no editorial screen: person position
 // collections (정치적 입장 모음) and their members, the auto-link blocklist,
 // the generic-alias guard list, per-event link exceptions (no_auto_link,
-// term_links) and retired-id redirects. Data batches used to write these with
+// term_links), retired-id redirects and the glossary category registry. Data batches used to write these with
 // hand SQL under scripts/migrations/data/; this applies the same rows in one
 // transaction with existence checks and a revision row per change, so the
 // MCP tool (registry_edit) and any script share one path. The stores pick the
@@ -139,6 +139,22 @@ const OPS = {
         await client.query('UPDATE commulingo_history_events SET term_links = $2::jsonb, updated_at = now() WHERE id = $1', [eventId, JSON.stringify(links)]);
         return { entityType: 'history_event', entityId: eventId, note: 'set term_links', snapshot: { before, after: links },
             changed: JSON.stringify(before) !== JSON.stringify(links) };
+    },
+    // Glossary kind categories (first chip row). Reordering means upserting
+    // each moved category with its new sortOrder in the same batch.
+    async term_category_upsert(client, op) {
+        const categoryId = id(op.id, 'id');
+        const current = (await client.query('SELECT * FROM commulingo_term_categories WHERE id = $1 FOR UPDATE', [categoryId])).rows[0];
+        const label = op.label !== undefined ? localized(op.label, 'label', 80) : current ? { ko: current.label_ko, en: current.label_en } : null;
+        const sortOrder = op.sortOrder !== undefined ? op.sortOrder : current ? current.sort_order : null;
+        if (!label || sortOrder === null) throw badRequest('a new category needs label and sortOrder');
+        if (!Number.isInteger(sortOrder)) throw badRequest('sortOrder must be an integer');
+        await client.query(`INSERT INTO commulingo_term_categories (id, sort_order, label_ko, label_en) VALUES ($1, $2, $3, $4)
+            ON CONFLICT (id) DO UPDATE SET sort_order = EXCLUDED.sort_order, label_ko = EXCLUDED.label_ko, label_en = EXCLUDED.label_en, updated_at = now()`,
+        [categoryId, sortOrder, label.ko, label.en]);
+        const changed = !current || current.sort_order !== sortOrder || current.label_ko !== label.ko || current.label_en !== label.en;
+        return { entityType: 'term_category', entityId: categoryId, note: current ? 'update category' : 'create category',
+            snapshot: { before: current || null, after: { sortOrder, label } }, changed };
     },
     async id_redirect_add(client, op) {
         if (!REDIRECT_TYPES.includes(op.entityType)) throw badRequest(`entityType must be one of ${REDIRECT_TYPES.join(', ')}`);
