@@ -337,6 +337,7 @@
             text: '제1기병군은 한 시기에 한 전선에서만 싸운다. 리비우를 치던 기병군을 북쪽으로 돌려 서부전선에 붙이면 바르샤바 남쪽의 빈 옆구리를 막을 수 있다. 그만큼 남서전선과 크림에서는 기병이 빠진다.',
             note: '8월 중순 총사령관 카메네프가 제1기병군을 서부전선으로 넘기라고 명령했지만, 남서전선 혁명군사위원 스탈린은 그 명령에 서명하지 않았다. 기병군은 8월 20일 무렵까지 리비우에 매달려 있었다. 제1기병군을 창설했을 때만 나온다.',
             link: ['붉은 군대 제1기병군', T('first-cavalry-army')],
+            witness: { who: ['이사크 바벨', 'babel'], text: '사단장의 붉은 군모, 그의 우람한 체구, 나팔수들, 아름다움, 새로운 군대, 사단장과 중대는 - 한 몸이다.', src: ['바벨, 『1920년 기병대 일기』, 7월 16일', D_('babel-cavalry-diary-1920') + '#entry-10'] },
         },
     };
 
@@ -345,6 +346,11 @@
     const turns = [
         {
             id: 'czech', date: '1918년 6–8월', end: [1918, 8], title: '체코 군단의 반란',
+            scene: {
+                picture: 'czech',
+                lead: '1918년 여름, 시베리아 철도 위의 체코 군단 4만 명이 들고일어났다. 볼가의 도시들이 하나씩 넘어가는데, 갓 생긴 붉은 군대에는 믿을 부대가 거의 없다.',
+                witness: { as: '전러시아 중앙집행위원회·인민위원회의', text: '곡물을 쥔 자들이 굶주린 빈민에게 휘두르는 폭력에는 부르주아지를 향한 폭력으로 답해야 한다.', src: ['식량인민위원 비상전권에 관한 법령, 1918년 5월 13일', D_('food-dictatorship-decree-1918')] },
+            },
             mobilize: 6, commissars: 1, army: [['latvian', 1], ['guards', 2], ['volunteers', 2], ['internationalists', 1]], phase: 1,
             brief: [
                 '1918년 5월, 시베리아 횡단철도를 따라 가던 체코 군단 약 4만 명이 무장해제를 거부하고 들고일어났다. 철도를 따라 소비에트 권력이 무너졌고, 사마라에는 사회혁명당의 코무치 정부가 섰다.',
@@ -422,7 +428,7 @@
             },
             cards: ['train', 'requisition', 'kombedy', 'cheka'],
             choice: {
-                title: '곡물을 어떻게 거둘 것인가', who: ['블라디미르 레닌', 'lenin'],
+                title: '곡물을 어떻게 거둘 것인가', who: ['블라디미르 레닌', 'lenin'], picture: 'requisition',
                 text: '도시는 굶고 군대는 빵이 모자란다. 나라가 정한 싼값으로는 농민이 곡물을 팔지 않는다.',
                 talk: [
                     { who: ['블라디미르 레닌', 'lenin'], text: '나라에 필요한 곡물을 정해 지방마다 나눠 매기고, 무장한 분견대로 거두자. 빵이 없으면 혁명도 없다.' },
@@ -441,6 +447,11 @@
         },
         {
             id: 'kazan', date: '1918년 9월', end: [1918, 9], title: '스비야시스크에서 카잔까지', when: { rules: ['>=', 7] },
+            scene: {
+                picture: 'kazan',
+                lead: '카잔이 떨어지자 트로츠키가 장갑열차를 타고 강 건너 스비야시스크로 왔다. 무너진 제5군을 다시 세워 카잔을 되찾아야 한다.',
+                witness: { as: '전러시아 중앙집행위원회', text: '소비에트 공화국은 군사 진영으로 바뀐다. … 모든 시민은 직업과 나이를 가리지 않고 소비에트 권력이 지우는 국방의 의무를 이의 없이 이행해야 한다.', src: ['결의 「소비에트 공화국은 군사 진영」, 1918년 9월 2일', D_('civil-war-emergency-decrees-1918-1919')] },
+            },
             mobilize: 7, commissars: 2, army: [['conscripts', 3], ['latvian', 1], ['guards', 1], ['internationalists', 1], ['flotilla', 1]], phase: 1, battle: 'kazan',
             brief: [
                 '트로츠키가 장갑열차로 카잔 건너편에 와서, 도망친 부대의 지휘관을 총살하며 무너진 제5군을 다시 세웠다. 8월 30일에는 모스크바에서 레닌이 총에 맞았다.',
@@ -478,6 +489,10 @@
         },
         {
             id: 'tsaritsyn', date: '1918년 10–12월', end: [1918, 12], title: '차리친 포위', when: { rules: ['>=', 7] },
+            scene: {
+                picture: 'tsaritsyn',
+                lead: '돈 카자크군이 볼가의 도시 차리친을 조여 온다. 남쪽 철도는 끊겼고, 도시는 철길을 오가는 장갑열차와 포병으로 버틴다.',
+            },
             mobilize: 9, commissars: 2, army: [['conscripts', 6], ['guards', 1], ['internationalists', 1], ['flotilla', 1]], phase: 1, battle: 'tsaritsyn',
             brief: [
                 '돈 카자크군의 두 번째 공세가 차리친을 조인다. 10월 중순 남쪽 철도가 끊기고 붉은 농민 연대 둘이 백군으로 넘어갔다. 도시를 지키는 것은 철도를 오가는 장갑열차와 포병뿐이다.',
@@ -511,7 +526,7 @@
                 links: [['차리친 방어', T('defence-of-tsaritsyn')], ['클리멘트 보로실로프', P('voroshilov')], ['파벨 시틴', P('pavel-sytin')], ['겔레르, 「스탈린의 인민위원」', D_('geller-stalinist-commissar-1989')]],
             },
             choice: {
-                title: '곡물을 어떻게 거둘 것인가', who: ['블라디미르 레닌', 'lenin'],
+                title: '곡물을 어떻게 거둘 것인가', who: ['블라디미르 레닌', 'lenin'], picture: 'requisition',
                 text: '도시는 굶고 군대는 빵이 모자란다. 나라가 정한 싼값으로는 농민이 곡물을 팔지 않는다.',
                 talk: [
                     { who: ['블라디미르 레닌', 'lenin'], text: '나라에 필요한 곡물을 정해 지방마다 나눠 매기고, 무장한 분견대로 거두자. 빵이 없으면 혁명도 없다.' },
@@ -530,6 +545,11 @@
         },
         {
             id: 'kolchak', date: '1919년 1–4월', end: [1919, 4], title: '콜차크의 춘계 공세',
+            scene: {
+                picture: 'kolchak',
+                lead: '1919년 봄, 영국제 소총을 든 콜차크군이 우랄을 넘었다. 볼가까지 100킬로미터, 동쪽이 다시 무너진다. 돈에서는 카자크가 붉은 군대의 등 뒤에서 일어섰다.',
+                witness: { as: '러시아 공산당 중앙위원회 조직국', text: '카자크의 모든 상층에 대해 그들을 몰살하는 가장 가차 없는 투쟁만이 유일하게 옳은 길이라고 인정해야 한다.', src: ['회람 「카자크에 대한 태도에 관하여」, 1919년 1월 24일', D_('civil-war-emergency-decrees-1918-1919')] },
+            },
             mobilize: 13, commissars: 2, army: [['conscripts', 10], ['latvian', 1], ['cavalry', 1], ['internationalists', 1]], phase: 2,
             brief: [
                 '3월, 영국제 소총으로 무장한 콜차크군이 우랄을 넘어 우파를 차지했다. 볼가까지 100킬로미터 남았다.',
@@ -601,6 +621,11 @@
         },
         {
             id: 'directive', date: '1919년 5–7월', end: [1919, 7], title: '「모스크바 지령」',
+            scene: {
+                picture: 'directive', poster: 'directive-poster',
+                lead: '동쪽이 살아나자 남쪽이 무너졌다. 하리코프와 차리친을 차지한 데니킨이 「모스크바로」라는 명령을 내렸다.',
+                witness: { who: ['블라디미르 레닌', 'lenin'], text: '기본 문제에서는 노선을 굳게 지키고, 주민에게 익숙한 낡은 관습에서는 다가가고 너그러이 봐주라.', src: ['레닌이 남부전선 혁명군사평의회에 보낸 전보, 1919년 6월 3일', D_('civil-war-emergency-decrees-1918-1919')] },
+            },
             mobilize: 15, commissars: 3, army: [['conscripts', 12], ['latvian', 1], ['cavalry', 2]], phase: 2, battle: 'ufa',
             brief: [
                 '동부에서는 반격이 시작되었지만 남쪽이 무너지고 있다. 데니킨이 6월 하리코프와 차리친을 차지하고, 모스크바로 진격하라는 「모스크바 지령」을 내렸다.',
@@ -657,6 +682,10 @@
         },
         {
             id: 'orel', date: '1919년 8–10월', end: [1919, 10], title: '위기의 정점: 오룔과 페트로그라드',
+            scene: {
+                picture: 'orel',
+                lead: '1919년 가을, 데니킨군이 오룔까지 왔다. 툴라를 넘으면 모스크바다. 같은 때 유데니치는 페트로그라드 문 앞에 섰다.',
+            },
             mobilize: 16, commissars: 3, army: [['conscripts', 12], ['baltic', 2], ['cavalry', 2]], phase: 3, battle: 'orel',
             brief: [
                 '8월 마몬토프의 카자크 기병이 남부전선의 뒤를 휩쓸었고, 9월 20일 쿠르스크가 떨어졌다. 데니킨군의 정예가 오룔과 툴라, 그리고 모스크바로 향한다.',
@@ -728,6 +757,10 @@
         },
         {
             id: 'counter', date: '1919년 11월–1920년 3월', end: [1920, 3], title: '남쪽으로의 반격',
+            scene: {
+                picture: 'counter',
+                lead: '오룔에서 꺾인 데니킨군이 남쪽 바다로 밀려나고, 콜차크는 시베리아 깊이 쫓겨 갔다. 그러나 마을마다 곡물 징발에 맞선 봉기가 번진다.',
+            },
             mobilize: 18, commissars: 3, army: [['conscripts', 14], ['baltic', 1], ['cavalry', 3]], phase: 4,
             brief: [
                 '11월 콜차크의 수도 옴스크가 떨어졌고, 콜차크군은 얼어붙은 시베리아 철도를 따라 멀리 물러난다. 남쪽의 데니킨군도 오룔에서 꺾여 돈으로 물러난다.',
@@ -765,6 +798,11 @@
         },
         {
             id: 'poland', date: '1920년 4–8월', end: [1920, 8], title: '바르샤바로?',
+            scene: {
+                picture: 'poland', poster: 'poland-poster',
+                lead: '1920년 봄, 폴란드군이 키예프를 차지했다. 반격에 나선 붉은 군대가 이제 바르샤바를 바라본다. 남쪽 크림에서는 브란겔이 다시 나왔다.',
+                witness: { who: ['이사크 바벨', 'babel'], text: '부됸니 부대원들이 공산주의를 가져온다, 노파가 운다.', src: ['바벨, 『1920년 기병대 일기』, 7월 14일', D_('babel-cavalry-diary-1920') + '#entry-08'] },
+            },
             mobilize: 19, commissars: 3, army: [['conscripts', 15], ['latvian', 1], ['cavalry', 3]], phase: 5, battle: 'warsaw',
             brief: [
                 '4월 폴란드군이 우크라이나군과 함께 쳐들어와 키예프를 차지했다. 붉은 군대는 6월 키예프를 되찾고, 투하쳅스키의 서부전선이 민스크를 지나 서쪽으로 내달린다.',
@@ -805,6 +843,11 @@
         },
         {
             id: 'perekop', date: '1920년 9–11월', end: [1920, 11], title: '페레코프',
+            scene: {
+                picture: 'perekop',
+                lead: '폴란드와 휴전한 붉은 군대가 남쪽으로 돌아섰다. 브란겔군에게 남은 곳은 크림, 그 입구를 막은 페레코프의 방벽이다.',
+                witness: { who: ['이사크 바벨', 'babel'], text: '러시아 적군 보병 - 맨발, … 퉁퉁 붓고, 이가 들끓고, 키 작고, 굶주린 농사꾼들.', src: ['바벨, 『1920년 기병대 일기』, 9월 12일 (서부의 붉은 군대 보병)', D_('babel-cavalry-diary-1920') + '#entry-63'] },
+            },
             mobilize: 18, commissars: 3, army: [['conscripts', 14], ['latvian', 1], ['cavalry', 3]], phase: 6, battle: 'perekop',
             brief: [
                 '10월 폴란드와 휴전하자 붉은 군대는 남쪽으로 돌아섰다. 프룬제의 남부전선이 브란겔군을 크림으로 몰아넣는다.',
@@ -866,6 +909,7 @@
     };
     const perekop = {
         id: 'perekop', sides: SIDES, front: 'crimea', final: true,
+        scene: { picture: 'battle-perekop' },
         title: '페레코프-촌가르 작전', date: '1920년 11월 7–12일',
         settle: '페레코프로 →', open: '페레코프 전투 지휘하기 →', board: '페레코프 전장',
         ford: '시바시', reserveName: '바르보비치 기병군단',
@@ -978,6 +1022,10 @@
     // The war's afterword: the first text whose condition holds.
     const epilogue = {
         title: '그리고 1921년',
+        scene: {
+            picture: 'epilogue',
+            witness: { as: '크론시타트 수병 총회', text: '현재의 소비에트는 노동자와 농민의 의사를 표현하지 않으므로, 즉시 비밀투표로 소비에트를 다시 선출할 것.', src: ['제1·2전함여단 승조원 집회 결의, 1921년 3월 1일', D_('kronstadt-documents-1921')] },
+        },
         texts: [
             { when: { flag: 'warsawTaken' }, text: '바르샤바를 차지한 붉은 군대 앞에서 폴란드는 강화를 청했다. 그러나 폴란드 노동자가 혁명에 나설지, 독일로 가는 길이 정말 열릴지는 총검이 정할 수 없는 일이었다. 실제 역사에서는 8월 16일 비스와강의 반격으로 서부전선이 무너졌고, 1921년 리가 조약으로 벨라루스와 우크라이나 서부가 폴란드에 넘어갔다.' },
             { when: { stat: ['peasants', '>=', 40] }, text: '징발의 부담을 덜어 둔 덕에 농촌의 원한은 역사보다 얕다. 실제 역사에서는 1921년 탐보프의 안토노프 봉기와 크론시타트 반란이 일어난 뒤에야 징발이 현물세로 바뀌었다.' },
@@ -1121,6 +1169,7 @@
     // k the kremlin, P the wharves.
     const kazan = {
         id: 'kazan', sides: SIDES, front: 'east', final: false,
+        scene: { picture: 'battle-kazan' },
         title: '카잔 탈환', date: '1918년 8월 말–9월 10일',
         settle: '카잔으로 →', board: '카잔 전장',
         strikeNote: '',
@@ -1217,6 +1266,7 @@
     // works, C the city, t a station village, ~ the Volga.
     const tsaritsyn = {
         id: 'tsaritsyn', sides: SIDES, front: 'volga', final: false, outlast: true,
+        scene: { picture: 'battle-tsaritsyn' },
         title: '차리친 방어', date: '1918년 10월 15–25일',
         settle: '차리친으로 →', board: '차리친 전장', enemyName: '돈군',
         strikeNote: '',
@@ -1421,6 +1471,7 @@
     // railway bridge, T the east bank's trenches, t a village, U the city.
     const ufa = {
         id: 'ufa', sides: SIDES, front: 'east', final: false,
+        scene: { picture: 'battle-ufa' },
         title: '우파 도하', date: '1919년 6월 7–9일',
         settle: '우파로 →', board: '우파 전장',
         strikeNote: '',
@@ -1529,6 +1580,7 @@
     // front can bring (need) by turn 5.
     const warsaw = {
         id: 'warsaw', sides: SIDES, front: 'west', final: false,
+        scene: { picture: 'battle-warsaw', witness: { who: ['이사크 바벨', 'babel'], text: '먼지투성이의 뜨거운 길 위의 말 잃은 기병들, 안장을 손에 들고, … 곳곳에서 말들이 썩어 가고, 이야기는 오직 말에 관한 것뿐', src: ['바벨, 『1920년 기병대 일기』, 8월 18일', D_('babel-cavalry-diary-1920') + '#entry-43'] } },
         when: { rules: ['>=', 6], choice: 'warsaw' },
         title: '바르샤바 전투', date: '1920년 8월 13–17일',
         settle: '바르샤바로 →', board: '바르샤바 전장', enemyName: '폴란드군',
@@ -1654,6 +1706,33 @@
     // The portraits (war/art.js): each person's headgear, hair, face, what
     // they wore and what they are drawn with. side colours the square behind
     // them; no two people are drawn alike (scripts/lib/war-scenario-check.js).
+    // The pictures of the seasons, battles and forks: public-domain photos,
+    // posters and paintings from Wikimedia Commons, kept as webp in
+    // public/images/civil-war/ (their sources in CREDITS.md there). `sm`:
+    // an 800px copy for phones.
+    const C = file => 'https://commons.wikimedia.org/wiki/File:' + file;
+    const pictures = {
+        czech: { w: 1600, h: 995, sm: true, caption: '1918년 5월 18일, 첼랴빈스크역과 시내를 차지한 체코 군단', credit: ['사진가 미상', C('Chelyabinsk_-_taking_the_railway_station_and_the_city_by_Czechoslovak_Legion,_18_May_1918.png')] },
+        kazan: { w: 1600, h: 814, sm: true, caption: '두 대의 기관차가 끄는 트로츠키의 열차, 1918년', credit: ['사진가 미상', C('Trotsky-train-with-double-traction.jpg')] },
+        tsaritsyn: { w: 1030, h: 767, sm: true, caption: '차리친 전투 때 장갑열차 안의 병사들', credit: ['사진가 미상', C('Armored_train_during_the_battle_Tsaritsyn_1918-1919.jpg')] },
+        kolchak: { w: 777, h: 600, caption: '붉은 군대의 선서, 1919년', credit: ['야코프 시테인베르크', C('Oath_to_the_Red_Army.jpg')] },
+        directive: { w: 1280, h: 969, sm: true, caption: '하리코프를 차지한 의용군의 열병식, 1919년 6월 28일', credit: ['남러시아군 사진가 미상', C('Деникин_на_Николаевской_площади_Харькова_июнь_1919.jpg')] },
+        'directive-poster': { w: 848, h: 1200, sm: true, poster: true, caption: '빅토르 데니, 「데니킨 일당」, 1919년', credit: ['빅토르 데니', C('Denikinskaya_banda_by_Deni.jpeg')] },
+        orel: { w: 800, h: 594, caption: '유데니치가 다가오던 날, 페트로그라드 거리의 통행증 검사, 1919년', credit: ['야코프 시테인베르크', C("Checking_passes_in_the_streets_of_Petrograd_on_the_days_of_Yudenich's_advance.jpg")] },
+        counter: { w: 750, h: 445, caption: '1920년 3월, 백군이 바다로 떠나는 노보로시스크 항구', credit: ['사진가 미상', C('Новороссийская_эвакуация_порт_1.jpg')] },
+        poland: { w: 1600, h: 1069, sm: true, caption: '1920년 5월 5일 모스크바, 폴란드 전선으로 떠나는 부대 앞에서 연설하는 레닌', credit: ['그리고리 골드시테인', C('Vladimir_Lenin_Speech_in_May_1920.jpg')] },
+        'poland-poster': { w: 801, h: 1200, sm: true, poster: true, caption: '드미트리 모르, 「너는 지원병으로 입대했는가?」, 1920년', credit: ['드미트리 모르', C('Ты_записался_добровольцем_(Д._Моор,_1920).jpg')] },
+        perekop: { w: 742, h: 519, caption: '페레코프에 들어서는 붉은 군대, 1920년', credit: ['사진가 미상', C('Красная_армия_занимает_Перекоп.jpg')] },
+        epilogue: { w: 800, h: 518, caption: '1921년 3월, 핀란드만의 얼음 위로 크론시타트를 치는 붉은 군대', credit: ['사진가 미상', C('192103-kronstadt-2.jpg')] },
+        'battle-kazan': { w: 600, h: 740, caption: '트로츠키의 장갑열차', credit: ['사진가 미상', C("Leon_Trotsky's_Armored_Train.jpg")] },
+        'battle-tsaritsyn': { w: 892, h: 640, sm: true, caption: '차리친의 제10군 지휘관들, 1918년. 맨 왼쪽이 보로실로프', credit: ['사진가 미상', C('Valeriy_Mezhlauk_and_Kliment_Voroshilov_in_Tsaritsyn_(1918).jpg')] },
+        'battle-ufa': { w: 1182, h: 626, sm: true, caption: '우파를 되찾은 뒤 지휘관들과 함께한 차파예프, 1919년 6월', credit: ['사진가 미상', C('После_взятия_Уфы.jpg')] },
+        'battle-warsaw': { w: 1027, h: 780, sm: true, caption: '제1기병군의 기병들', credit: ['사진가 미상', C('1st_Cavalry_Army.jpg')] },
+        'battle-perekop': { w: 708, h: 471, caption: '폐허가 된 페레코프 시가, 1920년', credit: ['사진가 미상', C('Руины_Перкопа.jpg')] },
+        requisition: { w: 1280, h: 923, sm: true, caption: '이반 블라디미로프, 「프스코프 근교의 식량 징발」, 1922년', credit: ['이반 블라디미로프', C('Ivan_Vladimirov_requisitioning.jpg!HD.jpg')] },
+        'red-wedge': { w: 1466, h: 1200, sm: true, poster: true, caption: '엘 리시츠키, 「붉은 쐐기로 백군을 쳐라」, 1919년', credit: ['엘 리시츠키', C('Beat_the_Whites_with_the_Red_Wedge.jpg')] },
+    };
+
     const portraits = {
         trotsky: { side: 'red', hair: 'shock', glasses: 'round', beard: 'goatee', moustache: true, dress: 'greatcoat' },
         lenin: { side: 'red', hair: 'bald', beard: 'short', moustache: true, cap: 'worker', dress: 'suit' },
@@ -2017,7 +2096,7 @@
     };
     const data = {
         id: 'civil-war', title: '붉은 전선 1918–1920', saveVersion: 1, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
-        map, ui, portraits, roles, glossary,
+        map, ui, portraits, pictures, pictureDir: '/images/civil-war/', roles, glossary,
         texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring,
     };
     if (typeof module === 'object' && module.exports) module.exports = data;

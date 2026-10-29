@@ -40,7 +40,9 @@
     // marked data-pane, the box carries the open one as data-tab (war.css
     // hides the rest there); a wider screen shows them all.
     const PHONE = window.matchMedia('(max-width: 720px)');
-    let campTab = 'state';          // plan: 상황 · 작전 · 카드
+    // A season is read in steps at every width: its scene, its decisions,
+    // its operations (a phone splits the cards off them).
+    let campTab = 'scene';          // plan: 장면 · 결정 · 작전 · 카드
     let tabTurn = null;             // the season the tab was set in (a new one opens on 상황)
     let battleTab = 'field';        // battle: 전장 · 현황 · 지시
     let tabBattle = null;           // the battle it was set in
@@ -100,6 +102,31 @@
         let out = null;
         for (const [turn, title] of r) if (D.turns.findIndex(t => t.id === turn) <= at) out = title;
         return out;
+    }
+
+    // A picture of the time (scenario pictures): the photo, poster or
+    // painting with its caption and where it was found; an 800px copy for
+    // phones when the scenario has one.
+    function figure(id, cls) {
+        const p = D.pictures && D.pictures[id];
+        if (!p) return null;
+        const src = `${D.pictureDir}${id}-v1.webp`;
+        const small = p.sm ? Math.round(p.poster ? p.w * 600 / p.h : Math.min(800, p.w)) : 0;
+        return el('figure', { class: 'cw-figure' + (p.poster ? ' is-poster' : '') + (cls ? ' ' + cls : '') },
+            el('img', {
+                src, width: p.w, height: p.h, alt: p.caption, decoding: 'async',
+                srcset: small ? `${D.pictureDir}${id}-v1-sm.webp ${small}w, ${src} ${p.w}w` : null,
+                sizes: small ? (p.poster ? '(max-width: 720px) 45vw, 260px' : '(max-width: 720px) 100vw, 760px') : null,
+            }),
+            el('figcaption', {}, p.caption, ' · ', el('a', Object.assign({ href: p.credit[1] }, NEW_TAB), p.caption.includes(p.credit[0]) ? '위키미디어 공용' : p.credit[0])));
+    }
+
+    // One voice of the time in its own words, with where it was written.
+    function witness(v, seen) {
+        const name = v.who ? el('a', Object.assign({ href: '/commulingo/people/' + v.who[1] }, NEW_TAB), v.who[0]) : v.as;
+        return el('blockquote', { class: 'cw-witness' },
+            el('p', {}, ...glossed(v.text, seen || new Set())),
+            el('footer', {}, el('strong', {}, name), ' · ', link(v.src)));
     }
 
     function speaker(who) {
@@ -288,8 +315,11 @@
         const planning = s.phase === 'plan';
         if (planning) unveiling = false;
         $('cwCampaign').classList.toggle('is-unveiling', unveiling);
-        if (planning && tabTurn !== s.turn) { campTab = 'state'; tabTurn = s.turn; }
+        if (planning && tabTurn !== s.turn) { campTab = G.turnData(s).scene ? 'scene' : 'state'; tabTurn = s.turn; decideOpen = null; }
+        campTab = tabOf(campTab);
         markTab($('cwCampaign'), planning ? campTab : null);
+        $('cwTabs').querySelector('[data-tab="scene"]').hidden = !G.turnData(s).scene;
+        renderScene(planning);
         renderBrief();
         renderMap();
         renderFronts(planning);
@@ -330,7 +360,7 @@
         const decided = G.incidentsOf(s).every(inc => G.responseOf(s, inc)) && Boolean(s.plan.choice);
         const front = $('cwFronts').querySelector('article.cw-front');
         return [
-            { id: 'stats', ack: true, at: $('cwBrief'), text: `위 수치가 공화국의 형편입니다. 농민·노동자 지지와 당 결속이 무너지면 나라가 버티지 못하고, ${U.unit}·지휘력·${U.food}은 이번 시기에 쓸 몫입니다. 아래 상황부터 읽으세요.` },
+            { id: 'stats', ack: true, done: campTab !== 'scene', at: G.turnData(s).scene ? $('cwScene') : $('cwBrief'), text: `위의 세 막대가 공화국의 형편입니다. 농민·노동자 지지와 당 결속이 무너지면 나라가 버티지 못합니다. 맨 위 줄의 ${U.unit}·지휘력·${U.food}은 이번 시기에 쓸 몫입니다. 먼저 이 시기의 장면을 보세요.` },
             { id: 'decide', done: decided, at: G.incidentsOf(s).length && !G.incidentsOf(s).every(inc => G.responseOf(s, inc)) ? $('cwIncident') : $('cwChoice'), text: '지도부가 실제로 부딪친 문제입니다. 누가 무엇을 주장했는지 읽고 하나를 고르세요. 버튼 아래 줄이 그 길의 득실이고, 시기가 끝나면 역사의 선택과 견줍니다. 밑줄 친 말을 누르면 풀이가 나옵니다.' },
             { id: 'fronts', done: G.allocated(s) > 0, at: front, inside: true, text: `−·+로 ${josa(U.unit, '을', '를')} 보냅니다. 막대가 ${W.strength}, 그 아래 칸이 ${W.pressure}입니다. ${josa(W.strength, '이', '가')} ${W.pressure}에 닿으면 역사대로, 넘을수록 도시를 더 지키고, 모자라면 잃습니다. 위의 전선 버튼으로 다른 전선을 엽니다.` },
             { id: 'cards', ack: true, done: s.plan.cards.length > 0, at: $('cwCards'), text: '지휘력으로 조언자의 카드를 씁니다. 남은 지휘력은 다음 시기로 넘어가지 않습니다.' },
@@ -348,9 +378,9 @@
         const i = steps.findIndex(x => !(x.done || x.ack && coach.ack.has(x.id)));
         const step = steps[i];
         if (!step || !step.at) return;
-        // On a phone a step in another tab waits atop this one, with the way there.
+        // A step in another tab waits atop this one, with the way there.
         const pane = step.at.closest('[data-pane]');
-        const away = PHONE.matches && pane && pane.dataset.pane !== campTab ? pane.dataset.pane : null;
+        const away = pane && tabOf(pane.dataset.pane) !== campTab ? tabOf(pane.dataset.pane) : null;
         const box = el('aside', { id: 'cwCoach', class: 'cw-coach', 'aria-label': '처음 안내' },
             el('p', { class: 'cw-coach-step' }, `처음 안내 ${i + 1}/${steps.length}`),
             el('p', {}, step.text),
@@ -442,10 +472,18 @@
         } else {
             items.push(...stat(U.food, String(s.food), '남은 비축'));
         }
+        // The republic's standing as gauges out of 100, each marked where it
+        // starts to hurt.
         for (const h of U.hud) {
             const v = s.stats[h.stat];
             const warn = h.warnBelow !== undefined && v < h.warnBelow;
-            items.push(...stat(h.label, String(v), h.command ? commandNote(v) : warn && h.warnNote ? h.warnNote : h.note || '', warn));
+            const [box] = stat(h.label, String(v), h.command ? commandNote(v) : warn && h.warnNote ? h.warnNote : h.note || '', warn);
+            const gauge = el('i', { class: 'cw-gauge', 'aria-hidden': 'true' }, h.warnBelow !== undefined ? el('b') : null);
+            gauge.style.setProperty('--v', `${Math.max(0, Math.min(100, v))}%`);
+            if (h.warnBelow !== undefined) gauge.style.setProperty('--at', `${h.warnBelow}%`);
+            box.classList.add('has-gauge');
+            box.querySelector('dd').append(gauge);
+            items.push(box);
         }
         $('cwStats').replaceChildren(...items);
         const planning = s.phase === 'plan';
@@ -486,6 +524,31 @@
             }))));
     }
 
+    // A season opens on its scene: a picture of the time (with a poster of
+    // it), a few lines on what happened, one voice of the time, and the way
+    // on to its decisions. The full brief folds under it.
+    function renderScene(planning) {
+        const box = $('cwScene');
+        const t = G.turnData(s);
+        box.hidden = !planning || !t.scene;
+        if (box.hidden) return box.replaceChildren();
+        const sc = t.scene;
+        const seen = new Set();
+        box.replaceChildren(
+            el('div', { class: 'cw-scene-pictures' + (sc.poster ? ' has-poster' : '') }, figure(sc.picture, 'cw-scene-photo'), sc.poster ? figure(sc.poster, 'cw-scene-poster') : null),
+            el('div', { class: 'cw-scene-text' },
+                el('p', { class: 'cw-scene-lead' }, ...glossed(sc.lead, seen)),
+                sc.witness ? witness(sc.witness, seen) : null,
+                el('button', { type: 'button', class: 'cw-primary cw-step-next', 'data-key': 'scene-next', onclick: () => stepTo('state') }, '무엇을 결정할까 →')));
+    }
+
+    // On to a step of the season, from its top.
+    function stepTo(tab) {
+        campTab = tab;
+        render();
+        toTop($('cwCampaign'));
+    }
+
     // On a phone the season's story stands open until the player first acts
     // on a front, then folds (the board kept where it was on the screen);
     // opened again, it stays open for the season.
@@ -498,9 +561,9 @@
         const seen = new Set();
         const story = t.brief.map(p => el('p', {}, ...glossed(p, seen)));
         let body = story;
-        if (NARROW.matches && s.phase === 'plan') {
-            const fold = el('details', { class: 'cw-brief-fold', open: brief.open === null ? !brief.read : brief.open }, el('summary', {}, '이 시기의 상황'), ...story);
-            fold.addEventListener('toggle', () => { if (fold.open !== !brief.read || brief.open !== null) brief.open = fold.open; });
+        if (s.phase === 'plan') {
+            const fold = el('details', { class: 'cw-brief-fold', open: brief.open === null ? !t.scene : brief.open }, el('summary', {}, t.scene ? '이 시기의 상황 자세히' : '이 시기의 상황'), ...story);
+            fold.addEventListener('toggle', () => { brief.open = fold.open; });
             body = [fold];
         }
         const anchor = $('cwFronts').getBoundingClientRect().top;
@@ -1632,10 +1695,11 @@
     }
 
     // The enemy on a front: who comes, what they want, their traits and
-    // where the numbers come from. Open to start; folded, the factions and
-    // what their traits add to the pressure stay on the fold. Kept as the
-    // player left it from one render to the next.
-    let foeOpen = true;
+    // where the numbers come from. Folded to start (2026-10-29: the card
+    // leads with the bar), the factions and what their traits add to the
+    // pressure stay on the fold. Kept as the player left it from one render
+    // to the next.
+    let foeOpen = false;
     function foeFold(id, f, threat) {
         const open = foeOpen;
         const by = (f.traits || []).filter(tr => tr.rule && tr.counted && tr.on).reduce((a, tr) => a + tr.by, 0);
@@ -1975,31 +2039,82 @@
                 el('h4', {}, card.title, ' ', el('small', { class: 'cw-advisor' }, person(card.advisor))),
                 el('p', { class: 'cw-effect' }, effectText(card, id)),
                 el('details', { class: 'cw-card-more' }, el('summary', {}, '설명'),
-                    el('p', {}, card.text), card.note ? el('p', { class: 'cw-note' }, card.note) : null,
+                    el('p', {}, card.text), card.witness ? witness(card.witness) : null, card.note ? el('p', { class: 'cw-note' }, card.note) : null,
                     card.link ? el('p', { class: 'cw-note' }, link(card.link)) : null),
                 control));
         }
         $('cwCards').replaceChildren(...items, grid);
     }
 
-    // How a dilemma came about, then the people who argue over it.
+    // How a dilemma came about, then the people who argue over it: the
+    // first two face each other, the rest fold under them.
     function setting(c) {
         const text = glossed(c.text, new Set());
         if (!c.talk) return [el('p', {}, ...text, ' ', person(c.who))];
-        return [el('p', {}, ...text), el('ul', { class: 'cw-talk' }, ...c.talk.map(v => el('li', {},
-            v.who ? speaker(v.who) : el('strong', { class: 'cw-talk-as' }, v.as), el('q', {}, v.text))))];
+        const line = v => el('li', {}, v.who ? speaker(v.who) : el('strong', { class: 'cw-talk-as' }, v.as), el('q', {}, v.text));
+        const more = c.talk.slice(2);
+        return [el('p', {}, ...text), el('ul', { class: 'cw-talk' }, ...c.talk.slice(0, 2).map(line)),
+            ...(more.length ? [el('details', { class: 'cw-talk-more' }, el('summary', {}, `다른 목소리 ${more.length}`), el('ul', { class: 'cw-talk' }, ...more.map(line)))] : [])];
+    }
+
+    // What a way does at once, as chips: the stats, divisions and grain it
+    // moves (its words below say the rest).
+    function optionChips(o) {
+        const chips = Object.entries(U.cardStats).filter(([k]) => o[k]).map(([k, label]) => [label, o[k]]);
+        if (o.divisions) chips.push([U.unit, o.divisions]);
+        if (o.food) chips.push([U.food, o.food]);
+        return chips.length ? el('span', { class: 'cw-chips' }, ...chips.map(([label, n]) => el('span', { class: 'cw-chip ' + (n < 0 ? 'is-minus' : 'is-plus') }, `${label} ${signed(n)}`))) : null;
+    }
+
+    function optionButton(o, key, pressed, onclick) {
+        return el('button', { type: 'button', class: 'cw-option', 'data-key': key, 'aria-pressed': String(pressed), onclick },
+            el('strong', {}, o.label), optionChips(o), el('span', {}, o.effect));
+    }
+
+    // The season's decisions come one at a time: its incidents, then its
+    // fork. One decided folds to a line that can be opened again; one not
+    // reached yet waits hidden.
+    let decideOpen = null;          // a decided incident (its id) or the fork ('choice') opened again
+    function decideNow() {
+        const list = G.incidentsOf(s).map(inc => [inc.id, Boolean(G.responseOf(s, inc))]).concat([['choice', Boolean(s.plan.choice)]]);
+        if (decideOpen && list.some(([k]) => k === decideOpen)) return decideOpen;
+        const next = list.find(([, done]) => !done);
+        return next ? next[0] : null;
+    }
+
+    function decided(kicker, title, key, label) {
+        return el('div', { class: 'cw-decided' },
+            el('p', { class: 'games-kicker' }, kicker),
+            el('p', {}, el('strong', {}, title), ' · ', label),
+            el('button', { type: 'button', 'data-key': `reopen-${key}`, onclick: () => { decideOpen = key; render(); } }, '다시 고르기'));
+    }
+
+    // Chosen: on to the next decision, from the top of the step.
+    function decidedNow() {
+        decideOpen = null;
+        render();
+        toTop($('cwCampaign'));
     }
 
     function renderChoice() {
         const c = G.turnData(s).choice;
-        $('cwChoice').replaceChildren(
+        const now = decideNow();
+        const chosen = c.options.find(o => o.id === s.plan.choice);
+        const box = $('cwChoice');
+        box.classList.toggle('is-folded', now !== 'choice');
+        if (now !== 'choice') {
+            // replaceChildren writes a null as the text "null".
+            box.replaceChildren(...[chosen ? decided('이 시기의 갈림길', c.title, 'choice', chosen.label) : null,
+                now === null ? el('button', { type: 'button', class: 'cw-primary cw-step-next', 'data-key': 'decide-next', onclick: () => stepTo('ops') }, '작전으로 →') : null].filter(Boolean));
+            return;
+        }
+        box.replaceChildren(
             el('p', { class: 'games-kicker' }, '이 시기의 갈림길 · 반드시 하나를 고릅니다'),
             el('h3', { id: 'cwChoiceTitle' }, c.title),
+            ...(c.picture ? [figure(c.picture, 'cw-choice-picture')] : []),
             ...setting(c),
-            el('div', { class: 'cw-options', role: 'group', 'aria-label': c.title }, ...c.options.map(o => el('button', {
-                type: 'button', class: 'cw-option', 'data-key': `choice-${o.id}`, 'aria-pressed': String(s.plan.choice === o.id),
-                onclick: () => { if (!act('choose', o.id)) announce(tooMany()); render(); },
-            }, el('strong', {}, o.label), el('span', {}, o.effect)))));
+            el('div', { class: 'cw-options', role: 'group', 'aria-label': c.title }, ...c.options.map(o => optionButton(o, `choice-${o.id}`, s.plan.choice === o.id,
+                () => { if (!act('choose', o.id)) { announce(tooMany()); return render(); } decidedNow(); }))));
     }
 
     // The season's incidents: what happened, and the answers to each; a
@@ -2007,28 +2122,38 @@
     function renderIncident() {
         const list = G.incidentsOf(s);
         if (!list.length) return;
-        $('cwIncident').replaceChildren(...list.flatMap((inc, i) => [
-            el('p', { class: 'games-kicker' + (i ? ' cw-incident-next' : '') }, `돌발 사건${list.length > 1 ? ` ${i + 1}/${list.length}` : ''} · 대응을 하나 고릅니다`),
-            el('h3', { id: i ? null : 'cwIncidentTitle' }, inc.title),
-            ...setting(inc),
-            el('div', { class: 'cw-options', role: 'group', 'aria-label': inc.title }, ...inc.options.map(o => el('button', {
-                type: 'button', class: 'cw-option', 'data-key': `respond-${o.id}`, 'aria-pressed': String(s.plan.responses[inc.id] === o.id),
-                onclick: () => {
+        const now = decideNow();
+        $('cwIncident').replaceChildren(...list.flatMap((inc, i) => {
+            const kicker = `돌발 사건${list.length > 1 ? ` ${i + 1}/${list.length}` : ''}`;
+            const answer = G.responseOf(s, inc);
+            if (now !== inc.id) return answer ? [decided(kicker, inc.title, inc.id, answer.label)] : [];
+            return [
+                el('p', { class: 'games-kicker' }, `${kicker} · 대응을 하나 고릅니다`),
+                el('h3', { id: 'cwIncidentTitle' }, inc.title),
+                ...setting(inc),
+                el('div', { class: 'cw-options', role: 'group', 'aria-label': inc.title }, ...inc.options.map(o => optionButton(o, `respond-${o.id}`, s.plan.responses[inc.id] === o.id, () => {
                     if (!act('respond', o.id)) {
                         const card = (o.bars || []).map(id => D.cards[id]).find(Boolean);
                         announce(card && s.plan.cards.some(c => o.bars.includes(c.id)) ? `먼저 「${card.title}」 카드를 거두세요.` : tooMany());
+                        return render();
                     }
-                    render();
-                },
-            }, el('strong', {}, o.label), el('span', {}, o.effect))))]));
+                    decidedNow();
+                })))];
+        }));
     }
 
-    // On a phone, the tab that holds a part of the season (a node's id);
-    // opened from a press, it starts from the top.
+    // The step a part of the season shows in: a wide screen keeps the
+    // cards beside the operations.
+    function tabOf(pane) {
+        return pane === 'cards' && !PHONE.matches ? 'ops' : pane;
+    }
+
+    // The step that holds a part of the season (a node's id); opened from
+    // a press, it starts from the top.
     function showPane(id, fromTop) {
         const pane = $(id) && $(id).closest('[data-pane]');
-        if (!PHONE.matches || !pane || pane.dataset.pane === campTab) return;
-        campTab = pane.dataset.pane;
+        if (!pane || tabOf(pane.dataset.pane) === campTab) return;
+        campTab = tabOf(pane.dataset.pane);
         render();
         if (fromTop) toTop($('cwCampaign'));
     }
@@ -2072,8 +2197,8 @@
         const next = steps.find(x => !x.done);
         // On a phone the tabs stand in for the chips: one with a step left is marked.
         // No card played while one could be: marked too, though the season can go without.
-        const left = new Set(steps.filter(x => !x.done).map(x => $(x.target).closest('[data-pane]').dataset.pane));
-        if (!s.plan.cards.length && G.turnData(s).cards.some(id => G.cardOffered(s, id) && s.plan.command >= D.cards[id].cost)) left.add('cards');
+        const left = new Set(steps.filter(x => !x.done).map(x => tabOf($(x.target).closest('[data-pane]').dataset.pane)));
+        if (!s.plan.cards.length && G.turnData(s).cards.some(id => G.cardOffered(s, id) && s.plan.command >= D.cards[id].cost)) left.add(tabOf('cards'));
         $('cwTabs').querySelectorAll('button').forEach(b => {
             b.classList.toggle('is-undone', left.has(b.dataset.tab));
             if (left.has(b.dataset.tab)) b.setAttribute('aria-label', `${b.textContent}, 할 일 남음`); else b.removeAttribute('aria-label');
@@ -2171,21 +2296,27 @@
             ? el('button', { type: 'button', class: 'cw-primary', onclick: () => { reviewSeen = true; historyMap = false; render(); $('cwBattle').scrollIntoView({ block: 'start' }); } }, s.battle.def.open)
             : el('button', { type: 'button', class: 'cw-primary', onclick: () => { act('next'); historyMap = false; render(); $('cwPlay').scrollIntoView({ block: 'start' }); holdMotion(); announce(`${G.turnData(s).date} ${G.turnData(s).title}`); } }, '다음 시기로 →');
         reviewGlossed = new Set();
+        // The verdict first (2026-10-29): the cities held against history's,
+        // then the gauges; the history behind the choices folds below.
+        const ahead = Object.values(r.fronts).reduce((sum, f) => sum + f.after - f.history, 0);
         $('cwReview').replaceChildren(...[
             el('h3', { id: 'cwReviewTitle' }, `${t.date}의 결산`),
+            el('p', { class: 'cw-season-verdict ' + (ahead > 0 ? 'is-ahead' : ahead < 0 ? 'is-behind' : 'is-even') },
+                ahead ? `역사보다 도시 ${Math.abs(ahead)}개 ${ahead > 0 ? '앞섬' : '뒤처짐'}` : '역사와 같은 전선'),
             ledgerOf(r),
             ...(notes => notes.length ? [el('ul', { class: 'cw-notes' }, ...notes.map(n => el('li', {}, n)))] : [])(r.ledger ? r.notes.filter(n => !inLedger(r).has(n)) : r.notes),
             spoilsOf(r),
             foughtBattle(),
-            ...incidentHistory(t, r),
-            el('div', { class: 'cw-history' },
-                el('p', { class: 'games-kicker' }, '역사에서는'),
-                el('h4', {}, c.title),
-                el('p', {}, el('strong', {}, `당신: ${mine.label}`), ' · ', el('strong', {}, `역사: ${theirs.label}`), same ? ' (같은 선택)' : ''),
-                el('p', {}, ...glossed(c.after, reviewGlossed)),
-                el('p', { class: 'cw-links' }, ...c.links.map(link)),
-                el('p', {}, ...glossed(t.after, reviewGlossed)),
-                el('p', { class: 'cw-links' }, ...t.links.map(link))),
+            el('details', { class: 'cw-history-fold' },
+                el('summary', {}, `역사에서는 · ${same ? '역사와 같은 선택' : '역사와 다른 선택'}`),
+                ...incidentHistory(t, r),
+                el('div', { class: 'cw-history' },
+                    el('h4', {}, c.title),
+                    el('p', {}, el('strong', {}, `당신: ${mine.label}`), ' · ', el('strong', {}, `역사: ${theirs.label}`), same ? ' (같은 선택)' : ''),
+                    el('p', {}, ...glossed(c.after, reviewGlossed)),
+                    el('p', { class: 'cw-links' }, ...c.links.map(link)),
+                    el('p', {}, ...glossed(t.after, reviewGlossed)),
+                    el('p', { class: 'cw-links' }, ...t.links.map(link)))),
             next].filter(Boolean));
     }
 
@@ -2625,6 +2756,7 @@
             el('li', {}, '부대를 고르지 않은 채 빈 칸을 누르면 그 땅의 방어·이동이 보입니다.'));
         // The board is built anew on each press; a board scrolled sideways
         // stays where the player left it while the battle lasts.
+        if (battleScene(b, box)) return;
         const was = box.querySelector('.cw-grid-scroll');
         const scrolled = was && gridScroll.b === b ? [was.scrollLeft, was.scrollTop] : null;
         gridScroll.b = b;
@@ -2657,6 +2789,24 @@
         placeVerdict();
     }
     const gridScroll = { b: null };
+
+    // A battle with a scene opens on it once, before its first order: the
+    // picture, the battle's summary, a voice of it and the way to the board.
+    const scenesShown = new Set();
+    function battleScene(b, box) {
+        const def = b.def;
+        const key = `${s.turn}:${def.id}`;
+        if (!def.scene || scenesShown.has(key) || battleEnded || G.canTakeBack(s) || b.turn > 1) return false;
+        box.replaceChildren(el('div', { class: 'cw-scene cw-battle-scene' },
+            el('header', { class: 'cw-battle-head' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
+            el('div', { class: 'cw-scene-pictures' }, figure(def.scene.picture, 'cw-scene-photo')),
+            el('div', { class: 'cw-scene-text' },
+                el('p', { class: 'cw-scene-lead' }, def.summary),
+                def.scene.witness ? witness(def.scene.witness) : null,
+                el('button', { type: 'button', class: 'cw-primary cw-step-next', 'data-key': 'battle-scene-next', onclick: () => { scenesShown.add(key); renderBattle(); toTop($('cwBattle')); } }, '전투를 지휘한다 →'))));
+        markTab(box, null);
+        return true;
+    }
 
     // The battle's tabs on a phone, over its pinned actions. 「전장」 fills
     // the screen with the board fixed in it; 「현황」 carries the season's
@@ -3120,6 +3270,7 @@
             items.push(el('ul', { class: 'cw-stars' }, ...o.stars.map(st => el('li', { class: st.got ? 'is-got' : '' }, (st.got ? '★ ' : '☆ ') + st.label))));
             items.push(el('p', {}, `시기마다 쥔 도시를 모두 더하면 역사보다 ${signed(o.diff)}`));
             if (o.kind === 'won' || o.kind === 'stalled') items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, '역사에서는'), el('p', {}, ...glossed(s.battle.def.history, endGlossed))));
+            if (D.epilogue.scene) items.push(el('div', { class: 'cw-scene cw-epilogue-scene' }, figure(D.epilogue.scene.picture, 'cw-scene-photo'), D.epilogue.scene.witness ? witness(D.epilogue.scene.witness, endGlossed) : null));
             items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, D.epilogue.title),
                 el('p', {}, ...glossed(D.epilogue.texts.find(x => G.when(s, x.when)).text, endGlossed)),
                 el('p', { class: 'cw-links' }, ...D.epilogue.links.map(link))));

@@ -6,6 +6,8 @@
 const Cond = require('../../public/js/war/cond.js');
 const Battle = require('../../public/js/war/battle.js');
 const Art = require('../../public/js/war/art.js');
+const fs = require('fs');
+const path = require('path');
 
 const VOICE_WHEN = /^(start|goal|flood|reserve|surrender|air|turn:\d+|turned:[\w-]+|feat:[\w-]+)$/;
 const SOURCE = /^https:\/\//;
@@ -294,6 +296,34 @@ function checkScenario(D) {
         }
         for (const id of speakers) need(D.roles[id], `roles: no title for speaker ${id}`);
     }
+    // Scenes: every picture a scene, a fork or a battle names has its
+    // caption, its credit and its file (and the small copy it promises), and
+    // every witness names who spoke and where it is written.
+    const pictures = D.pictures || {};
+    const picture = (id, at) => {
+        const p = pictures[id];
+        need(p, `${at}: picture ${id}`);
+        if (p) {
+            need(p.w > 0 && p.h > 0 && p.caption && p.credit && SOURCE.test(p.credit[1]), `${at}: picture ${id} caption and credit`);
+            const file = n => fs.existsSync(path.join(__dirname, '../../public', D.pictureDir || '', n));
+            need(file(`${id}-v1.webp`), `${at}: picture ${id} file`);
+            if (p.sm) need(file(`${id}-v1-sm.webp`), `${at}: picture ${id} small file`);
+        }
+    };
+    const witness = (v, at) => v && need((v.who || v.as) && v.text && v.src && /^(https:\/\/|\/commulingo\/)/.test(v.src[1]), `${at}: witness ${v.text}`);
+    const scene = (sc, at) => {
+        if (!sc) return;
+        if (sc.picture) picture(sc.picture, at);
+        if (sc.poster) picture(sc.poster, at);
+        witness(sc.witness, at);
+    };
+    for (const t of D.turns || []) {
+        scene(t.scene, `season ${t.id} scene`);
+        for (const c of [t.choice].concat(t.incident || [])) if (c && c.picture) picture(c.picture, `season ${t.id} ${c.title}`);
+    }
+    for (const [id, def] of Object.entries(D.battles || {})) scene(def.scene, `battle ${id} scene`);
+    if (D.epilogue) scene(D.epilogue.scene, 'epilogue scene');
+    for (const [id, c] of Object.entries(cards)) witness(c.witness, `card ${id}`);
     // The glossary: a term, a line on it, and a link inside the site or none.
     for (const g of D.glossary || []) need(g.term && g.gloss && (g.href === null || g.href === undefined || /^\/commulingo\//.test(g.href)), `glossary: ${g.term}`);
     need(new Set((D.glossary || []).map(g => g.term)).size === (D.glossary || []).length, 'glossary: a term twice');

@@ -8,7 +8,9 @@
       </div>
 
       <section id="cwCampaign" class="cw-campaign">
-        <div id="cwBrief" class="cw-brief" data-pane="state"></div>
+        <%# A season opens on its scene: a picture of the time, a few lines, one voice of it; the full brief folds under it. %>
+        <section id="cwScene" class="cw-scene" data-pane="scene" aria-label="장면" hidden></section>
+        <div id="cwBrief" class="cw-brief" data-pane="scene"></div>
         <%# The season's incident and fork come before the fronts: what is chosen changes what the fronts need. %>
         <section id="cwIncident" class="cw-choice cw-incident" data-pane="state" aria-labelledby="cwIncidentTitle" hidden></section>
         <section id="cwChoice" class="cw-choice" data-pane="state" aria-labelledby="cwChoiceTitle"></section>
@@ -22,8 +24,8 @@
         </div>
         <div id="cwUnveil" class="cw-unveil" hidden></div>
         <section id="cwCards" class="cw-cards" data-pane="cards" aria-labelledby="cwCardsTitle"></section>
-        <%# On a phone the season is read in three tabs (game.js campTab); the bar rides over the order. %>
-        <div class="cw-command" id="cwCommand"><div id="cwTabs" class="cw-tabs" role="group" aria-label="화면 고르기"><button type="button" data-tab="state">상황</button><button type="button" data-tab="ops">작전</button><button type="button" data-tab="cards">카드</button></div><div id="cwTodo" class="cw-todo" aria-label="이 시기에 할 일"></div><p id="cwCommandNote" aria-live="polite"></p><button type="button" id="cwSettle" class="cw-primary">이 시기를 보낸다 →</button></div>
+        <%# The season is read in steps (game.js campTab): scene, decisions, operations; a phone splits the cards off the operations. The bar rides over the order. %>
+        <div class="cw-command" id="cwCommand"><div id="cwTabs" class="cw-tabs" role="group" aria-label="화면 고르기"><button type="button" data-tab="scene">장면</button><button type="button" data-tab="state">결정</button><button type="button" data-tab="ops">작전</button><button type="button" data-tab="cards">카드</button></div><div id="cwTodo" class="cw-todo" aria-label="이 시기에 할 일"></div><p id="cwCommandNote" aria-live="polite"></p><button type="button" id="cwSettle" class="cw-primary">이 시기를 보낸다 →</button></div>
         <section id="cwReview" class="cw-review" hidden aria-labelledby="cwReviewTitle"></section>
       </section>
 

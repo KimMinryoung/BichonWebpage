@@ -25,7 +25,11 @@
         <p class="games-note" id="cwSaveNote">한 판 30–40분 · 로그인 없이 · 이 브라우저에 자동 저장 · 처음이면 첫 시기를 한 단계씩 안내합니다</p>
         <p class="games-note">역사 서술은 커뮤링고 사건 문서 <a href="/commulingo/events/civil-war" target="_blank" rel="noopener">「러시아 내전」</a>을 따릅니다. 수치는 게임을 위한 근사치입니다.</p>
       </div>
-      <div class="cw-intro-art" aria-hidden="true"><span class="cw-intro-star">★</span><strong>1918–1920</strong><p>아홉 번의 시기<br>여덟 개의 전선<br>일곱 번의 전투</p></div>
+      <%# El Lissitzky's poster, public domain (public/images/civil-war/CREDITS.md). %>
+      <figure class="cw-intro-art">
+        <img src="/images/civil-war/red-wedge-v1.webp" srcset="/images/civil-war/red-wedge-v1-sm.webp 733w, /images/civil-war/red-wedge-v1.webp 1466w" sizes="(max-width: 720px) 100vw, 40vw" width="1466" height="1200" alt="엘 리시츠키의 포스터 「붉은 쐐기로 백군을 쳐라」. 붉은 쐐기가 흰 원을 뚫고 들어간다.">
+        <figcaption><strong>1918–1920</strong><span>아홉 번의 시기 · 여덟 개의 전선 · 일곱 번의 전투</span><small>엘 리시츠키, 「붉은 쐐기로 백군을 쳐라」, 1919년 · <a href="https://commons.wikimedia.org/wiki/File:Beat_the_Whites_with_the_Red_Wedge.jpg" target="_blank" rel="noopener">위키미디어 공용</a></small></figcaption>
+      </figure>
     </section>
 
     <%- include('war/play', { war }) %>

@@ -38,10 +38,15 @@
 .cw-steps li { counter-increment: step; display: grid; grid-template-columns: 30px 1fr; column-gap: 12px; line-height: var(--leading-normal); }
 .cw-steps li::before { content: counter(step); grid-row: span 2; display: grid; place-items: center; width: 30px; height: 30px; background: var(--cw-red); color: #fff; font-weight: 800; }
 .cw-steps span { color: var(--text-secondary); font-size: .9rem; }
-.cw-intro-art { background: var(--cw-red); color: #faf2da; display: flex; flex-direction: column; justify-content: flex-end; padding: 32px; min-height: 380px; background-image: repeating-linear-gradient(-45deg, transparent, transparent 22px, #00000010 22px, #00000010 44px); }
-.cw-intro-star { font-size: 5rem; line-height: var(--leading-none); }
-.cw-intro-art strong { font-size: clamp(2.2rem, 5vw, 3.4rem); letter-spacing: -.04em; margin: 12px 0; }
-.cw-intro-art p { font-weight: 700; border-top: 1px solid #faf2da60; padding-top: 14px; margin: 0; }
+/* The art is El Lissitzky's poster itself, on its own paper, with the war's
+   span under it. */
+.cw-intro-art { margin: 0; display: flex; flex-direction: column; background: #e9e2cf; color: #14110d; }
+.cw-intro-art img { display: block; width: 100%; height: auto; flex: 1 1 auto; object-fit: contain; min-height: 0; }
+.cw-intro-art figcaption { display: grid; gap: 4px; padding: 14px 20px 16px; background: var(--cw-red); color: #faf2da; }
+.cw-intro-art strong { font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3rem); letter-spacing: -.04em; line-height: 1; }
+.cw-intro-art span { font-weight: 700; }
+.cw-intro-art small { font-size: .78rem; opacity: .85; }
+.cw-intro-art a { color: inherit; }
 
 /* HUD */
 .cw-hud { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; border: 1px solid var(--border); background: var(--bg-surface); padding: 16px var(--content-inset); margin-bottom: 18px; }
@@ -882,7 +887,6 @@
 }
 @media (max-width: 720px) {
     .cw-intro { grid-template-columns: 1fr; }
-    .cw-intro-art { min-height: 200px; }
     .cw-calendar small { display: none; }
     .cw-command { position: sticky; bottom: 0; background: var(--bg-canvas); border-top: 1px solid var(--border); padding-block: 8px; margin-inline: calc(-1 * var(--content-inset) * 0); z-index: 2; }
     /* The board keeps a readable cell and scrolls sideways instead. */
@@ -944,14 +948,20 @@
 .cw-shell.is-playing .cw-stats dd { margin: 0; display: contents; }
 .cw-shell.is-playing .cw-stats small { flex-basis: 100%; }
 .cw-shell.is-playing .cw-stats small { font-size: .7rem; line-height: 1.3; }
-/* On a phone the planning counts live in the pinned crumb bar only; the
-   stats left run in one row, each label and value on one line. */
+/* The planning counts live in the pinned crumb bar only; the three stats
+   left are gauges (2026-10-29: on every width, not just a phone's). */
+.cw-shell.is-playing .cw-stats > .is-crumb { display: none; }
+.cw-shell.is-playing .cw-stats:has(> .is-crumb) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cw-gauge { position: relative; display: block; flex-basis: 100%; order: 2; height: 8px; margin: 4px 0 2px; background: color-mix(in srgb, var(--text-primary) 16%, transparent); }
+.cw-gauge::before { content: ''; position: absolute; inset: 0 auto 0 0; width: var(--v); background: var(--text-primary); }
+.cw-stats .is-warn .cw-gauge::before { background: var(--cw-red); }
+.cw-gauge b { position: absolute; top: -3px; bottom: -3px; left: var(--at); width: 2px; background: var(--cw-red); }
+.cw-shell.is-playing .cw-stats > .has-gauge small { order: 3; }
 @media (max-width: 720px) {
-    .cw-shell.is-playing .cw-stats > .is-crumb { display: none; }
-    .cw-shell.is-playing .cw-stats:has(> .is-crumb) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .cw-shell.is-playing .cw-stats dt { white-space: nowrap; }
     .cw-shell.is-playing .cw-stats > div { flex-wrap: nowrap; }
     .cw-shell.is-playing .cw-stats > .is-warn { flex-wrap: wrap; }
+    .cw-shell.is-playing .cw-stats > .has-gauge { flex-wrap: wrap; }
 }
 .cw-army { padding-top: 6px; }
 .cw-army summary { cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; min-height: 32px; font-size: .85rem; }
@@ -1405,16 +1415,6 @@
 
 /* Intro: the poster's art beside its copy. */
 .cw-intro { border: var(--cw-rule-w) solid var(--text-primary); }
-.cw-intro-art { position: relative; overflow: hidden; isolation: isolate; background-image: none; }
-.cw-intro-art::before { content: ''; position: absolute; z-index: -1; height: 52%; aspect-ratio: 1; top: 6%; right: -8%; border-radius: 50%; background: var(--cw-paper-ink); }
-.cw-intro-art::after { content: ''; position: absolute; z-index: -1; inset: 0; background: #14110d; clip-path: polygon(0 12%, 80% 27%, 0 40%); }
-.cw-intro-art p { border-top: 3px solid var(--cw-paper-ink); }
-/* On a phone the art is a short band: the circle smaller at its edge, the
-   wedge longer to reach it. */
-@media (max-width: 720px) {
-    .cw-intro-art::before { height: 46%; right: -18%; }
-    .cw-intro-art::after { clip-path: polygon(0 12%, 88% 27%, 0 40%); }
-}
 .cw-steps li::before { font-family: var(--font-display); font-size: 1.05rem; box-shadow: 3px 3px 0 var(--text-primary); }
 .cw-steps strong { font-family: var(--font-display); font-weight: 800; }
 
@@ -1537,22 +1537,30 @@
 .cw-foe-tab { fill: #14110d; stroke: #14110d; stroke-width: 1; }
 .cw-foe-tab-num { font-family: var(--font-display); font-size: 11.5px; font-weight: 800; fill: #faf2da; font-variant-numeric: tabular-nums; }
 
-/* A phone reads the season and the battle in tabs (game.js campTab,
-   battleTab): the bar rides on top of the pinned order, and only the open
-   tab's parts (data-pane) show. A wider screen has no tabs. */
+/* A season is read in steps at every width (game.js campTab): 장면 →
+   결정 → 작전, the bar riding on the pinned order and only the open
+   step's parts (data-pane) showing. A wide screen keeps the cards with the
+   operations; a phone gives them a tab of their own and also reads the
+   battle in tabs (battleTab). */
 .cw-tabs { display: none; }
+.cw-command .cw-todo { display: none; }
+.cw-command .cw-tabs { display: flex; flex: 0 1 auto; min-width: 0; }
+.games-shell .cw-tabs button { position: relative; flex: 1 1 0; min-width: 0; min-height: 40px; padding: 4px 14px; border: 0; border-bottom: 3px solid transparent; background: none; color: var(--text-secondary); font-weight: 700; white-space: nowrap; }
+.games-shell .cw-tabs button[aria-pressed="true"] { color: var(--text-primary); border-bottom-color: var(--cw-red); }
+.cw-tabs button.is-undone::after { content: ''; position: absolute; top: 7px; right: 4px; width: 7px; height: 7px; border-radius: 50%; background: var(--cw-red); }
+.cw-campaign[data-tab="scene"] [data-pane]:not([data-pane="scene"]),
+.cw-campaign[data-tab="state"] [data-pane]:not([data-pane="state"]) { display: none; }
+@media (min-width: 721px) {
+    .cw-tabs [data-tab="cards"] { display: none; }
+    .cw-campaign[data-tab="ops"] [data-pane]:not([data-pane="ops"]):not([data-pane="cards"]) { display: none; }
+}
 @media (max-width: 720px) {
-    /* The season's tabs take the to-do chips' place, beside the order;
-       a tab with a step left carries a red dot. */
     .cw-command { flex-wrap: wrap; row-gap: 6px; column-gap: 8px; }
-    .cw-command .cw-todo { display: none; }
     .cw-tabs { display: flex; flex: 1 0 100%; border-bottom: 1px solid var(--border); }
-    .cw-command .cw-tabs { flex: 1 1 auto; min-width: 0; border-bottom: 0; }
-    .games-shell .cw-tabs button { position: relative; flex: 1 1 0; min-width: 0; min-height: 40px; padding: 4px 6px; border: 0; border-bottom: 3px solid transparent; background: none; color: var(--text-secondary); font-weight: 700; white-space: nowrap; }
-    .games-shell .cw-tabs button[aria-pressed="true"] { color: var(--text-primary); border-bottom-color: var(--cw-red); }
-    .cw-tabs button.is-undone::after { content: ''; position: absolute; top: 7px; right: calc(50% - 1.6em); width: 7px; height: 7px; border-radius: 50%; background: var(--cw-red); }
+    .cw-command .cw-tabs { flex: 1 1 auto; border-bottom: 0; }
+    .games-shell .cw-tabs button { padding: 4px 6px; }
+    .cw-tabs button.is-undone::after { right: calc(50% - 1.6em); }
     .cw-battle-actions .cw-tabs { order: -1; margin-top: -4px; }
-    .cw-campaign[data-tab="state"] [data-pane]:not([data-pane="state"]),
     .cw-campaign[data-tab="ops"] [data-pane]:not([data-pane="ops"]),
     .cw-campaign[data-tab="cards"] [data-pane]:not([data-pane="cards"]),
     .cw-battle[data-tab="field"] [data-pane]:not([data-pane="field"]),
@@ -1602,3 +1610,73 @@
 .games-shell .cw-roster-next { flex: 0 0 auto; position: sticky; left: 0; z-index: 1; min-height: 30px; padding: 3px 8px; font-size: .78rem; font-weight: 800; background: var(--bg-surface); box-shadow: 6px 0 6px -2px var(--bg-surface); }
 /* A jump to a part of the season stops below the pinned crumb bar. */
 .cw-shell:has(.games-crumb.has-status) .cw-campaign > * { scroll-margin-top: 48px; }
+
+/* ── Scenes and steps (2026-10-29) ──
+   A season opens on its scene: a picture of the time (a poster beside it
+   when the season has one), a few lines and one voice of the time. Its
+   decisions come one at a time, each way's gains and costs as chips. */
+.cw-scene { display: grid; gap: 16px; margin-bottom: 18px; }
+.cw-scene-pictures { display: grid; gap: 12px; align-items: start; min-width: 0; }
+.cw-scene-pictures.has-poster { grid-template-columns: minmax(0, 1fr) minmax(120px, 30%); }
+.cw-figure { margin: 0; min-width: 0; border: var(--cw-rule-w) solid var(--text-primary); background: #14110d; }
+.cw-figure img { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 62vh; }
+.cw-figure figcaption { padding: 6px 10px; font-size: .8rem; line-height: 1.45; color: var(--text-secondary); background: var(--bg-surface); border-top: var(--cw-rule-w) solid var(--text-primary); }
+.cw-figure figcaption a { color: inherit; }
+.cw-scene-text { display: grid; gap: 14px; justify-items: start; max-width: 46rem; min-width: 0; }
+.cw-scene-lead { margin: 0; font-size: 1.2rem; line-height: 1.7; font-weight: 600; }
+.cw-witness { margin: 0; padding: 10px 16px; border-left: 8px solid var(--cw-red); background: var(--bg-surface); }
+.cw-witness p { margin: 0 0 6px; font-size: 1.05rem; line-height: 1.65; }
+.cw-witness p::before { content: '「'; }
+.cw-witness p::after { content: '」'; }
+.cw-witness footer { font-size: .8rem; line-height: 1.45; color: var(--text-secondary); }
+.cw-witness footer strong { color: var(--text-primary); }
+.cw-step-next { min-height: 44px; padding-inline: 18px; }
+@media (min-width: 1100px) {
+    .cw-scene:not(.cw-epilogue-scene) { grid-template-columns: minmax(0, 1.55fr) minmax(300px, 1fr); align-items: start; }
+    .cw-battle-scene > .cw-battle-head { grid-column: 1 / -1; }
+}
+@media (max-width: 720px) {
+    .cw-scene-pictures.has-poster { grid-template-columns: minmax(0, 1fr) 34%; gap: 8px; }
+    .cw-figure img { max-height: 45vh; }
+    .cw-scene-lead { font-size: 1.05rem; }
+    .cw-witness p { font-size: .98rem; }
+}
+.cw-brief-fold > summary { color: var(--text-secondary); }
+
+/* One decision at a time, so its words can be read at full size. */
+.cw-shell.is-playing .cw-choice h3 { font-size: 1.3rem; margin: 6px 0 8px; }
+.cw-shell.is-playing .cw-choice > p { font-size: 1rem; line-height: 1.65; }
+.cw-shell.is-playing .cw-talk li { font-size: .98rem; }
+.cw-shell.is-playing .cw-options .cw-option { padding: 12px 14px; gap: 6px; font-size: .95rem; }
+.cw-option > strong { font-size: 1.02rem; }
+.cw-option > span:last-child { font-size: .84rem; }
+.cw-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+.cw-option .cw-chip, .cw-chip { padding: 1px 7px; font-size: .82rem; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--bg-canvas); background: var(--text-primary); }
+.cw-option .cw-chip.is-minus, .cw-chip.is-minus { color: #faf2da; background: var(--cw-red); }
+.cw-talk-more { margin-top: 8px; }
+.cw-talk-more > summary { cursor: pointer; font-size: .86rem; font-weight: 700; color: var(--text-secondary); }
+.cw-choice-picture { margin: 4px 0 10px; }
+.cw-choice-picture img { max-height: 38vh; }
+/* Beside the dispute on a wide screen, so the answers stay in sight. */
+@media (min-width: 900px) {
+    .cw-choice-picture { float: right; width: min(42%, 440px); margin: 0 0 12px 18px; }
+    .cw-choice-picture img { width: 100%; max-height: none; }
+    .cw-choice .cw-options { clear: both; }
+}
+.cw-decided { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; }
+.cw-decided + .cw-decided { margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border); }
+.cw-decided .games-kicker { margin: 0; }
+.cw-decided p:not(.games-kicker) { margin: 0; flex: 1 1 16rem; min-width: 0; }
+.cw-choice.is-folded .cw-step-next { margin-top: 12px; }
+.cw-choice.is-folded:not(:has(.cw-decided)) { border: 0; background: none; padding: 0; }
+.cw-epilogue-scene { margin-block: 14px; }
+.cw-witness footer { margin: 0; padding: 0; border: 0; text-align: left; }
+.cw-witness footer::before { content: none; }
+
+/* The settlement's verdict, then the gauges; history's side folds. */
+.cw-season-verdict { display: inline-block; margin: 0 0 12px; padding: 6px 14px; font-size: 1.25rem; font-weight: 800; border: var(--cw-rule-w) solid var(--text-primary); }
+.cw-season-verdict.is-ahead { background: var(--text-primary); color: var(--bg-canvas); }
+.cw-season-verdict.is-behind { background: var(--cw-red); border-color: var(--cw-red); color: var(--cw-paper-ink); }
+.cw-history-fold { margin: 12px 0; border-top: 1px solid var(--border); padding-top: 10px; }
+.cw-history-fold > summary { cursor: pointer; font-weight: 700; }
+.cw-history-fold > .cw-history:first-of-type { border-top: 0; }
