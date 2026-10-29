@@ -38,6 +38,7 @@
 | CommuLingo 『브뤼메르 18일』 카드 | [인물 55명·용어 24개·문헌 연결·반영 기록](commulingo-brumaire-cards-20261024.md) |
 | CommuLingo 독일 고전철학 계보도(철학 분류 시작) | [계보도·철학 분류·용어 17개·인물 10명·「포이어바흐에 관한 테제」 번역·MCP 원문 쓰기](commulingo-german-philosophy-20261028.md) |
 | CommuLingo 『유물론과 경험비판론』 완역 | [러시아어 원문 파싱·DeepSeek 초벌·Opus 교열·문헌 등록·링크·학습 코스 8단위](commulingo-lenin-mec-20261028.md) |
+| CommuLingo 『유물론과 경험비판론』 논쟁 문헌 | [레닌 「열 가지 질문」·고리키 편지, 보그다노프 『믿음과 과학』, 루나차르스키 「무신론」 번역·문헌 등록](commulingo-mec-polemics-20261029.md) |
 | CommuLingo 니체와 그 이후 계보도 | [니체 카드·인물 16명·용어 33개·링크 승인 248건·계보도](commulingo-nietzsche-20261028.md) |
 | CommuLingo 독일 11월 혁명 사건 | [한영 사건·인물 10명·반영 기록](commulingo-german-revolution-20260929.md) |
 | CommuLingo 제2인터내셔널의 붕괴 사건 | [한영 사건·인물 7명·문헌 연결·반영 기록](commulingo-second-international-20260929.md) |
