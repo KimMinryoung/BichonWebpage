@@ -118,7 +118,7 @@ function canonicalEntry(entry) {
         docLang: entry.docLang || 'ko',
         title: langPair(entry.title),
         description: langPair(entry.description),
-        kind: langPair(entry.kind, { ko: '저작·연설', en: 'Writings & speeches' }),
+        kind: langPair(entry.kind, { ko: '이론·논설', en: 'Theory & essays' }),
         source: typeof entry.source === 'string' ? entry.source : '',
     };
     if (entry.summary !== undefined) {

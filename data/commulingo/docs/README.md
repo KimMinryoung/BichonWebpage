@@ -362,16 +362,21 @@ export한 작업 디렉터리에서 만들고 `put`으로 넣는다.
    - `file` — fragment 파일명 (docs/ 안, 하위 경로 불가)
    - `docLang` — 본문 언어 (`ko`/`en`), `<html lang>`에 쓰임
    - `title` / `description` / `kind` — `{ko, en}` 객체. `kind`는 목록의
-     분류 칩이자 카드 라벨이라 **아래 일곱 가지 중 하나를 그대로** 쓴다
+     분류 칩이자 카드 라벨이라 **아래 열한 가지 중 하나를 그대로** 쓴다
      (라벨이 조금만 달라도 칩이 하나 더 생긴다). 문서의 성격으로 가르지,
-     번역 여부로 가르지 않는다. 여러 문서를 묶은 문헌은 앞머리 문서를 따른다.
-     - `저작·연설` / `Writings & speeches` — 개인이 쓴 저작·논설·연설·보고, 개인들이 서명한 선언
+     번역 여부로 가르지 않는다. 여러 문서를 묶은 문헌은 수록 문서의 주된
+     성격을 따르고, 갈리지 않으면 앞머리 문서를 따른다.
+     - `이론·논설` / `Theory & essays` — 개인이 쓴 이론서·논문·소책자·논설, 독서 노트
+     - `연설·보고` / `Speeches & reports` — 연설, 대회·회의 보고, 의회 성명
+     - `편지` / `Letters` — 사신과 공개 서한
+     - `일기·회고록` / `Diaries & memoirs` — 일기, 회고록, 1인칭 증언 수기
+     - `언론 기사` / `Press articles` — 신문·잡지에 실린 기사, 독자 편지, 르포
      - `헌법·법령·명령` / `Constitutions, laws & orders` — 헌법, 법령, 포고, 군령·지령, 규정
      - `조약·협정` / `Treaties & agreements` — 조약, 협정, 휴전·항복 문서, 정상회담 의정서
-     - `정당·정부 문서` / `Party & government documents` — 당·정부 기관의 결정·결의·회의록·강령·각서
+     - `정당·정부 문서` / `Party & government documents` — 당·정부 기관의 결정·결의·회의록·강령·각서, 당내 그룹이 서명한 선언·강령
      - `정보·수사 기록` / `Intelligence & investigation records` — 신문 조서·진술서, 정보 보고, 외교 전문
-     - `연구서` / `Scholarship` — 연구서·평전
-     - `소설` / `Fiction`
+     - `연구서·논문` / `Scholarship` — 연구서·평전·연구 논문
+     - `문학` / `Literature` — 소설·시·희곡
    - `source` — 원전 서지 정보 (문자열, 리더 콜로폰에 표시)
    - `people` / `terms` / `events` — 관련 인물·용어·역사 사건의 **id 배열**
      (`["yezhov"]`). id는 각각 `/commulingo/people/<id>`,

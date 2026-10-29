@@ -43,7 +43,7 @@ for id,description in DESCRIPTIONS.items():
     else:
         assert id=='owen-new-view-society'
         meta={'id':id,'file':id+'.html','docLang':'ko','date':'1813',
-              'kind':{'ko':'저작·연설','en':'Writings & speeches'},
+              'kind':{'ko':'이론·논설','en':'Theory & essays'},
               'people':['robert-owen'],'terms':['utopian-socialism'],'events':[],
               'addedAt':'2026-09-13','noAutoLink':['임시정부','국민의회','중앙위원회']}
     meta.update(title={'ko':spec['title'],'en':spec['bylineNote']},
