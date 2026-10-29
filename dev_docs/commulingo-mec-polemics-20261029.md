@@ -22,3 +22,9 @@
 ## 링크
 - `scripts/reviews/commulingo-links-20261029-mec-polemics.json`(19건). 제목은 auto로 잇는다. 「믿음과 과학」, 「신앙과 과학」, 「Faith and Science」는 일반 구절이라 search로 둔다. 맨 「무신론」은 별칭에 넣지 않았다.
 - 미등록 인물(유시케비치, 발렌티노프, 두브로빈스키, 슈페, 페촐트, 르당텍, 이즈고예프 등)은 personLinks에 `null`로 고정했다.
+
+## 추가: 「종교에 대한 노동자당의 태도」 (같은 날)
+- `lenin-attitude-of-workers-party-to-religion-1909`. 저본은 PSS 17, 415~426쪽(leninism.su 2772)이고, 작업 폴더는 `scripts/content/lenin-religion-20261029/`다.
+- `prep.py`가 전집 주석 번호 160~166을 ⟦1~7⟧로 바꾼다. 편집부의 라틴어 풀이 각주(* … Ред.)는 표시와 함께 뺀다. 번역은 `translate.py`로 했고(8청크, 약 $0.6), 주석 7개는 전집 주석의 사실로 엮은이가 썼다.
+- 링크: `scripts/reviews/commulingo-links-20261029-lenin-religion.json`(6건, 모두 auto).
+- 루나차르스키 약력의 「1909년 전진파 결성으로 분파에서 제명」을 바로잡았다(ko·en). 1909년 6월 지도부가 몰아낸 것은 보그다노프이고, 루나차르스키는 카프리 당 학교에서 가르친 뒤 그해 말 전진파를 꾸렸다. 근거는 PSS 48 주석 16·18이다.
