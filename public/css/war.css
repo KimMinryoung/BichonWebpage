@@ -1724,7 +1724,11 @@
 .cw-rule-gauge > p { margin: 0 0 4px; font-size: .9rem; }
 .cw-rule-gauge > p b { margin-right: 6px; }
 .cw-rule-gauge > small { display: block; margin-top: 4px; font-size: .82rem; color: var(--text-secondary); }
-.cw-rule-bar { display: flex; gap: 2px; min-height: 34px; }
+.cw-rule-bar { display: grid; gap: 2px; min-height: 34px; }
+/* The bars' parts sized as the stat's 0–100 scale cuts them. */
+.cw-rule-bar.is-cohesion { grid-template-columns: 20fr 20fr 30fr 30fr; }
+.cw-rule-bar.is-peasants { grid-template-columns: 20fr 15fr 5fr 60fr; }
+.cw-rule-bar.is-workers { grid-template-columns: 45fr 55fr; }
 .cw-rule-bar span { position: relative; display: flex; align-items: center; min-width: 0; padding: 4px 6px 12px; font-size: .78rem; font-weight: 700; line-height: 1.25; background: color-mix(in srgb, var(--text-primary) 18%, transparent); overflow: hidden; }
 .cw-rule-bar span.is-bad { background: var(--cw-red); color: var(--cw-paper-ink); }
 .cw-rule-bar span.is-warn { background: color-mix(in srgb, var(--cw-red) 45%, transparent); }

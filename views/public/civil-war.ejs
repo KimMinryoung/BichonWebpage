@@ -71,13 +71,13 @@
         <h3>공화국의 문턱</h3>
         <div class="cw-rule-gauges">
           <div class="cw-rule-gauge"><p><b>당 결속</b> 다음 시기 지휘력</p>
-            <div class="cw-rule-bar"><% sc.command.tiers.slice().reverse().forEach(([v, n], i, all) => { const hi = i + 1 < all.length ? all[i + 1][0] : 100; %><span style="flex:<%= hi - v %>">지휘력 <%= n %><small><%= v %>–</small></span><% }) %></div>
+            <div class="cw-rule-bar is-cohesion"><% sc.command.tiers.slice().reverse().forEach(([v, n]) => { %><span>지휘력 <%= n %><small><%= v %>–</small></span><% }) %></div>
             <small>30 아래면 당이 분열해 정치위원 −1. 전선이 역사보다 밀린 시기에는 −3, 앞서도 오르지 않는다.</small></div>
           <div class="cw-rule-gauge"><p><b>농민 지지</b> 녹색군 봉기와 곡물</p>
-            <div class="cw-rule-bar is-peasants"><span class="is-bad" style="flex:20">봉기 · 사단 5 묶임<small>0–</small></span><span class="is-warn" style="flex:15">봉기 · 사단 2<small>20–</small></span><span style="flex:5"><small>35–</small></span><span style="flex:60">종전 때 40 이상이면 ★<small>40–</small></span></div>
+            <div class="cw-rule-bar is-peasants"><span class="is-bad">봉기 · 사단 5 묶임<small>0–</small></span><span class="is-warn">봉기 · 사단 2<small>20–</small></span><span><small>35–</small></span><span>종전 때 40 이상이면 ★<small>40–</small></span></div>
             <small>곡물 수입은 3에 농민 지지 15마다 1. 징발은 곡물을 늘리고 지지를 깎는다.</small></div>
           <div class="cw-rule-gauge"><p><b>노동자 지지</b> 동원되는 사단 수</p>
-            <div class="cw-rule-bar"><span class="is-bad" style="flex:45">당 안에 반대파 · 시기마다 결속 −3<small>0–</small></span><span style="flex:55">동원이 는다<small>45–</small></span></div>
+            <div class="cw-rule-bar is-workers"><span class="is-bad">당 안에 반대파 · 시기마다 결속 −3<small>0–</small></span><span>동원이 는다<small>45–</small></span></div>
             <small>굶주린 도시가 비어 시기마다 −2. 도시를 더 얻은 시기 +1, 더 잃은 시기 −2.</small></div>
         </div>
       </section>
