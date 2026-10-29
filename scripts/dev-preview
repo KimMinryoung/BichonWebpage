@@ -68,6 +68,7 @@ start_container() {
     # and lets Node fall through to the image's /node_modules.
     log "Starting ${CONTAINER_NAME} at http://${TAILSCALE_IP}:${DEV_PORT}"
     docker run -d \
+        --init \
         --name "$CONTAINER_NAME" \
         --user "$(stat -c '%u:%g' "$FRONTEND_DIR/data")" \
         --add-host=host.docker.internal:host-gateway \

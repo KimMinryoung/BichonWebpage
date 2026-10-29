@@ -224,6 +224,7 @@ deploy_chat_gateway() {
         docker rm "$GATEWAY_NAME" > /dev/null 2>&1 || true
     fi
     docker run -d \
+        --init \
         --name "$GATEWAY_NAME" \
         --user "$RUN_AS_UID_GID" \
         --label "$REVISION_LABEL=$LOCAL" \
@@ -285,6 +286,7 @@ deploy_admin() {
     # document bodies) from the gitignored work directories by specPath.
     # The image's healthcheck probes the website port; this process has none.
     docker run -d \
+        --init \
         --name "$ADMIN_NAME" \
         --user "$RUN_AS_UID_GID" \
         --label "$REVISION_LABEL=$LOCAL" \
@@ -404,6 +406,7 @@ ensure_code_release
 run_container() {
     local name="$1" port="$2" restart="$3"
     docker run -d \
+        --init \
         --name "$name" \
         --user "$RUN_AS_UID_GID" \
         --label "$REVISION_LABEL=$LOCAL" \
