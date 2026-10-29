@@ -1871,14 +1871,14 @@ module.exports = {
         chapter(
             5, 'chapter-4',
             '칸트를 오른쪽에서 비판한 사람들: 경험비판론의 동맹자와 계승자', 'Critics of Kant from the Right: The Allies and Successors of Empirio-criticism',
-            '레닌은 경험비판론을 따로 떼어 보지 않고 그 동맹자와 계승자들 속에 놓는다. 마흐와 아베나리우스는 칸트를 흄과 버클리 쪽에서 비판했고, 그들이 가깝다고 인정한 내재론자들과 그들이 추천한 제자들(코르넬리우스, 클라인페터, 케이러스)은 신앙주의로 나아갔다. 보그다노프의 보편적 대체도 같은 흐름의 산물로 다루며, 헬름홀츠의 상징론, 뒤링과 뷔히너, 디츠겐, 체르니솁스키를 통해 유물론자들의 비판이 어느 쪽을 향했는지 대조한다.',
+            '레닌은 경험비판론을 따로 떼어 보지 않고 그 동맹자와 계승자들 속에 놓는다. 마흐와 아베나리우스는 칸트를 흄과 버클리 쪽에서 비판했고, 그들이 가깝다고 인정한 내재론자들과 그들이 추천한 제자들(코르넬리우스, 클라인페터, 케이러스)은 신앙주의로 나아갔다. 보그다노프의 보편적 치환도 같은 흐름의 산물로 다루며, 헬름홀츠의 상징론, 뒤링과 뷔히너, 디츠겐, 체르니솁스키를 통해 유물론자들의 비판이 어느 쪽을 향했는지 대조한다.',
             'Lenin places empirio-criticism among its allies and successors rather than examining it in isolation. Mach and Avenarius criticised Kant from the side of Hume and Berkeley, and the immanentists they acknowledged as kin, along with the disciples they recommended (Cornelius, Kleinpeter, Carus), went on to fideism. Bogdanov’s universal substitution is treated as a product of the same current, and through Helmholtz’s theory of symbols, Dühring and Büchner, Dietzgen and Chernyshevsky, Lenin contrasts the direction in which the materialists aimed their criticism.',
             '같은 대상을 비판해도 방향이 정반대일 수 있다는 점을 잡는다. 누가 칸트, 헬름홀츠, 뒤링을 비판할 때 「너무 유물론적이라서」인지 「충분히 유물론적이지 않아서」인지를 가려내고, 철학자를 스스로 내건 간판이 아니라 누구와 손잡고 제자들에게 무엇을 가르쳤는지로 판단하는 레닌의 방법을 따라간다.',
             'Grasp that criticism of the same target can run in opposite directions. When someone criticises Kant, Helmholtz or Dühring, ask whether it is for being too materialist or not materialist enough, and follow Lenin’s method of judging philosophers not by the labels they adopt but by whom they walk with and what they teach their followers.',
             [
                 ['왼쪽과 오른쪽의 칸트 비판', '칸트는 우리 밖의 물자체를 인정할 때는 유물론자이고, 그것을 알 수 없는 저편의 것이라고 할 때는 관념론자다. 이 타협을 유물론자는 물자체가 인식 가능하다는 쪽에서, 흄주의자와 관념론자는 물자체 자체를 없애는 쪽에서 공격한다. 마흐와 아베나리우스는 슐체와 피히테처럼 뒤쪽, 곧 오른쪽에 섰다.'],
                 ['내재학파와 신앙주의', '슈페, 레클레어, 렘케, 슈베르트졸데른은 「존재는 의식이다」라고 하며 외부 세계를 의식에 속한 것으로 본다. 마흐와 아베나리우스는 이들과 아주 가깝다고 인정했다. 그런데 이들은 인식론 저작을 신, 영혼 불멸, 교회 옹호로 마무리했다. 경험비판론이 자기 고향에서 신앙주의의 하인 노릇을 한다는 증거다.'],
-                ['보편적 대체', '보그다노프는 물리적 자연을 심리적인 「직접적 복합」 밑에 대체해 넣은 파생물로 본다. 자연이 파생물이라면 자연 밖에서 자연을 낳는 무언가가 있어야 하고, 그것은 이름만 바꾼 신이다. 경험을 개인 대신 인류의 「사회적으로 조직된 경험」으로 바꾸어도 관념론은 그대로 남는다.'],
+                ['보편적 치환', '보그다노프는 물리적 자연을 심리적인 「직접적 복합」 밑에 치환해 넣은 파생물로 본다. 자연이 파생물이라면 자연 밖에서 자연을 낳는 무언가가 있어야 하고, 그것은 이름만 바꾼 신이다. 경험을 개인 대신 인류의 「사회적으로 조직된 경험」으로 바꾸어도 관념론은 그대로 남는다.'],
                 ['상과 상징', '상(모상)은 모사되는 사물이 실제로 있다는 것을 반드시 전제한다. 상징이나 상형문자는 지어낸 대상에도 붙일 수 있으므로 감각을 대상과 닮지 않은 표지로 보면 불가지론이 끼어든다. 헬름홀츠와 플레하노프의 오류가 여기에 있고, 유물론자 라우는 이를 왼쪽에서 비판했다.'],
             ],
             [
@@ -2014,7 +2014,7 @@ module.exports = {
                         'Something outside nature must produce nature, so the philosophy ends up admitting God',
                         'Derivative is only a metaphor; it actually summarises the theory of biological evolution',
                     ],
-                    '자연이 파생물이라면 자연보다 앞서, 자연과 독립해 있으면서 자연을 낳는 무언가가 있어야 한다. 레닌은 그것을 러시아어로는 신이라고 부른다고 꼬집는다. 절대 이념, 세계 의지, 심리적인 것을 물리적인 것 밑에 놓는 보편적 대체는 모두 같은 생각의 다른 이름이다. 보그다노프가 개인적으로 무신론자라는 사실은 이 철학의 성격을 바꾸지 못한다. 뒤링도 무신론자였다.',
+                    '자연이 파생물이라면 자연보다 앞서, 자연과 독립해 있으면서 자연을 낳는 무언가가 있어야 한다. 레닌은 그것을 러시아어로는 신이라고 부른다고 꼬집는다. 절대 이념, 세계 의지, 심리적인 것을 물리적인 것 밑에 놓는 보편적 치환은 모두 같은 생각의 다른 이름이다. 보그다노프가 개인적으로 무신론자라는 사실은 이 철학의 성격을 바꾸지 못한다. 뒤링도 무신론자였다.',
                     'If nature is a derivative, something must exist before and independently of nature and produce it. Lenin remarks that in Russian this is called God. The Absolute Idea, the world will, and the universal substitution of the mental beneath the physical are all one idea under different names. That Bogdanov personally rejects religion does not alter this philosophy’s character; Dühring was an atheist too.',
                     [
                         '레닌은 이 순서 매김이 헤겔도 유물론자로 만들 만큼 공허하다고 본다. 출발점이 심리적인 것이다.',
