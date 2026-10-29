@@ -92,6 +92,13 @@
         return who ? el('a', Object.assign({ href: '/commulingo/people/' + who[1], class: 'cw-person' + (side ? ' is-' + side : '') }, NEW_TAB), picture(A.portrait(who[1])), who[0]) : null;
     }
 
+    // A faction as a chip like a person's: its shield (the map's) and its
+    // name, in its side's colour, so an enemy is known at a glance.
+    function factionChip(fid, name) {
+        const f = D.factions[fid];
+        return el('span', { class: 'cw-person cw-faction is-' + f.kind }, picture(A.shield(fid, f)), name || f.short);
+    }
+
 
     // What a speaker was at this season (scenario roles: a title, or
     // [turn id, title] pairs from the season it holds).
@@ -552,8 +559,9 @@
         if (!voices.length) return null;
         const foe = v => Boolean(v.by);
         const line = v => el('li', {},
-            el('p', { class: 'cw-scene-voice-who' }, v.who ? speaker(v.who) : el('strong', { class: 'cw-talk-as' }, speakerName(v)),
-                (where => where ? el('small', {}, where) : null)([v.by && v.who ? foeAs(v.by, v.at).short : null, D.fronts[v.at] ? D.fronts[v.at].short : null].filter(Boolean).join(' · '))),
+            el('p', { class: 'cw-scene-voice-who' }, v.who ? speaker(v.who) : v.by ? factionChip(v.by, speakerName(v)) : el('strong', { class: 'cw-talk-as' }, speakerName(v)),
+                v.by && v.who ? factionChip(v.by, foeAs(v.by, v.at).short) : null,
+                D.fronts[v.at] ? el('small', {}, D.fronts[v.at].short) : null),
             el('q', {}, v.text), sourceOf(v));
         const side = (list, label, cls) => list.length ? el('div', { class: 'cw-scene-side ' + cls }, el('p', { class: 'games-kicker' }, label), el('ul', {}, ...list.map(line))) : null;
         return el('div', { class: 'cw-scene-voices', role: 'group', 'aria-label': '이 시기의 목소리' },
@@ -1658,7 +1666,7 @@
                 type: 'button', class: 'cw-front-tab', 'data-key': `pick-${id}`, 'aria-pressed': String(id === picked), 'aria-controls': 'cwFront-' + id, tabindex: id === picked ? '0' : '-1',
                 onclick: () => { picked = id; render(); showFront(id); },
                 'aria-label': `${D.fronts[id].name} ${s.plan.alloc[id]}${U.unit}` + (d ? `, 예상 역사보다 도시 ${Math.abs(d)}개 ${d < 0 ? '뒤처짐' : '앞섬'}` : ''),
-            }, el('strong', {}, D.fronts[id].short), el('span', {}, `${s.plan.alloc[id]}${U.unit}`), trendMark(d));
+            }, (fid => fid ? picture(A.shield(fid, D.factions[fid])) : null)(((threats[id] || {}).foes || [])[0]), el('strong', {}, D.fronts[id].short), el('span', {}, `${s.plan.alloc[id]}${U.unit}`), trendMark(d));
         })));
         for (const id of active) {
             if (id !== picked) continue;
@@ -1726,9 +1734,10 @@
     function foeFold(id, f, threat) {
         const open = foeOpen;
         const by = (f.traits || []).filter(tr => tr.rule && tr.counted && tr.on).reduce((a, tr) => a + tr.by, 0);
-        const names = (threat.foes || []).map(fid => foeAs(fid, id).short || foeAs(fid, id).name).join('·');
+        // Who attacks shows on the fold's line, shield and name, folded or not.
+        const foes = (threat.foes || []).map(fid => factionChip(fid, foeAs(fid, id).short || foeAs(fid, id).name));
         const fold = el('details', { class: 'cw-foe-fold', open },
-            el('summary', {}, el('strong', {}, '적 정보'), names ? ` · ${names}` : null, by ? el('b', { class: by > 0 ? 'is-bites' : 'is-works' }, `특성 ${W.pressure} ${signed(by)}`) : null),
+            el('summary', {}, el('strong', {}, '적 정보'), ...foes, by ? el('b', { class: by > 0 ? 'is-bites' : 'is-works' }, `특성 ${W.pressure} ${signed(by)}`) : null),
             foeList(threat.foes, f.traits, id),
             el('p', { class: 'cw-threat' }, ...glossed(threat.text, new Set()), ' ', person(threat.who)),
             f.pressureParts.length ? el('p', { class: 'cw-parts' }, `${W.pressure} ${f.pressure} = 기본 ${threat.pressure} + ${f.pressureParts.join(' + ')}`) : null,

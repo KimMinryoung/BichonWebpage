@@ -1744,3 +1744,9 @@
 }
 #cwScene { padding-inline: var(--content-inset); }
 .cw-scene-side .cw-voice-src { justify-self: start; }
+/* A faction's chip: its map shield beside its name (2026-10-29). */
+.cw-faction { cursor: default; }
+.cw-faction:hover { text-decoration: none; }
+.cw-foe-fold > summary .cw-faction { margin-left: 6px; font-size: .84rem; }
+.cw-scene-voice-who .cw-faction + .cw-faction, .cw-scene-voice-who .cw-speaker + .cw-faction { font-size: .8rem; }
+.cw-front-tab .cw-face { width: 1.5em; height: 1.5em; flex: none; }
