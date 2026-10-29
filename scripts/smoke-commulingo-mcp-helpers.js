@@ -88,6 +88,7 @@ const { readSpecJson } = require('../mcp/spec');
     await assert.rejects(tool('audit_run').handler({ name: 'audit-link-fires', args: ['ko; rm -rf /'] }, ctx), /plain tokens/);
     const { applyRegistryEdits, REGISTRY_OPS } = require('../data/commulingo/registry-edits');
     assert.ok(REGISTRY_OPS.includes('collection_member_add'));
+    assert.ok(REGISTRY_OPS.includes('term_category_assign'));
     await assert.rejects(applyRegistryEdits([], { actor: 'x' }), /1–500 edits/);
     await assert.rejects(applyRegistryEdits([{ op: 'x' }]), /needs an actor/);
 

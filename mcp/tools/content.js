@@ -423,7 +423,7 @@ const tools = [
             + 'event_no_auto_link_set {eventId, phrases[]} and event_term_links_set {eventId, termLinks [{lang, text, termId, reason}]} (each replaces the '
             + 'whole list: read it with registry_get event_link_exceptions first); id_redirect_add {entityType: person|office|role-category, fromId, toId, note}; '
             + 'term_category_upsert {id, label {ko,en}, sortOrder} (glossary kind chips; a new one needs both, reorder by upserting each moved row; '
-            + 'current rows: dataset_rows term_categories). '
+            + 'current rows: dataset_rows term_categories); term_category_assign {category, termIds[]} (moves terms into an existing category; only the category column changes). '
             + 'Each change leaves a revision row. Pass ops inline or specPath to a file with {ops: [...]} or the list. dryRun defaults to true.',
         inputSchema: object({
             ops: arr('Registry edits', 500),

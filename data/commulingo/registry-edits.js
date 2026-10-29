@@ -1,7 +1,7 @@
 // CommuLingo registry rows that have no editorial screen: person position
 // collections (정치적 입장 모음) and their members, the auto-link blocklist,
 // the generic-alias guard list, per-event link exceptions (no_auto_link,
-// term_links), retired-id redirects and the glossary category registry. Data batches used to write these with
+// term_links), retired-id redirects, the glossary category registry and term category moves. Data batches used to write these with
 // hand SQL under scripts/migrations/data/; this applies the same rows in one
 // transaction with existence checks and a revision row per change, so the
 // MCP tool (registry_edit) and any script share one path. The stores pick the
@@ -155,6 +155,24 @@ const OPS = {
         const changed = !current || current.sort_order !== sortOrder || current.label_ko !== label.ko || current.label_en !== label.en;
         return { entityType: 'term_category', entityId: categoryId, note: current ? 'update category' : 'create category',
             snapshot: { before: current || null, after: { sortOrder, label } }, changed };
+    },
+    // Moves terms into a category (a split or a misfiled entry). Only the
+    // category column changes, so the terms keep their editorial revision and
+    // enrichment state; the revision row records each term's old category.
+    async term_category_assign(client, op) {
+        const categoryId = id(op.category, 'category');
+        await mustExist(client, 'commulingo_term_categories', categoryId, 'category');
+        if (!Array.isArray(op.termIds) || !op.termIds.length || op.termIds.length > 1000) throw badRequest('termIds must list 1–1000 terms');
+        const termIds = [...new Set(op.termIds.map(termId => id(termId, 'termIds[]')))];
+        const rows = (await client.query('SELECT id, category FROM commulingo_terms WHERE id = ANY($1) FOR UPDATE', [termIds])).rows;
+        const missing = termIds.filter(termId => !rows.some(row => row.id === termId));
+        if (missing.length) throw badRequest(`unknown terms: ${missing.join(', ')}`);
+        const moved = rows.filter(row => row.category !== categoryId);
+        if (moved.length) {
+            await client.query('UPDATE commulingo_terms SET category = $2, updated_at = now() WHERE id = ANY($1)', [moved.map(row => row.id), categoryId]);
+        }
+        return { entityType: 'term_category', entityId: categoryId, note: `assign ${moved.length} terms`,
+            snapshot: { before: Object.fromEntries(moved.map(row => [row.id, row.category])), after: categoryId }, changed: moved.length > 0 };
     },
     async id_redirect_add(client, op) {
         if (!REDIRECT_TYPES.includes(op.entityType)) throw badRequest(`entityType must be one of ${REDIRECT_TYPES.join(', ')}`);
