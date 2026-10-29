@@ -1631,13 +1631,32 @@
 .cw-witness footer { font-size: .8rem; line-height: 1.45; color: var(--text-secondary); }
 .cw-witness footer strong { color: var(--text-primary); }
 .cw-step-next { min-height: 44px; padding-inline: 18px; }
-@media (min-width: 1100px) {
-    .cw-scene:not(.cw-epilogue-scene) { grid-template-columns: minmax(0, 1.55fr) minmax(300px, 1fr); align-items: start; }
+/* The picture is the smaller part: a column beside the story and voices. */
+.cw-scene-text { max-width: none; }
+.cw-scene-story p { margin: 0 0 8px; font-size: .95rem; line-height: 1.7; color: var(--text-secondary); }
+.cw-scene-story p:last-child { margin-bottom: 0; }
+.cw-scene-voices { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 12px; width: 100%; }
+.cw-scene-side { padding: 8px 12px 10px; border-top: 6px solid var(--cw-red); background: var(--bg-surface); min-width: 0; }
+.cw-scene-side.is-theirs { border-top-color: var(--text-primary); }
+.cw-scene-side .games-kicker { margin: 0 0 6px; }
+.cw-scene-side ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.cw-scene-side li { display: grid; gap: 3px; font-size: .9rem; line-height: 1.55; }
+.cw-scene-side li + li { padding-top: 10px; border-top: 1px solid var(--border); }
+.cw-scene-voice-who { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 0; }
+.cw-scene-voice-who > small { font-size: .78rem; color: var(--text-secondary); }
+.cw-scene-side q { quotes: '「' '」'; }
+.cw-scene-side .cw-voice-src { font-size: .76rem; color: var(--text-secondary); }
+@media (min-width: 900px) {
+    .cw-scene:not(.cw-epilogue-scene) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 22px; align-items: start; }
+    .cw-scene:not(.cw-epilogue-scene) > .cw-scene-pictures { position: sticky; top: 56px; }
+    .cw-scene-pictures.has-poster { grid-template-columns: minmax(0, 1fr) 36%; gap: 8px; }
+    .cw-scene .cw-figure img { max-height: 46vh; }
     .cw-battle-scene > .cw-battle-head { grid-column: 1 / -1; }
 }
 @media (max-width: 720px) {
     .cw-scene-pictures.has-poster { grid-template-columns: minmax(0, 1fr) 34%; gap: 8px; }
     .cw-figure img { max-height: 45vh; }
+    .cw-scene .cw-figure img { max-height: 30vh; }
     .cw-scene-lead { font-size: 1.05rem; }
     .cw-witness p { font-size: .98rem; }
 }
@@ -1680,3 +1699,44 @@
 .cw-history-fold { margin: 12px 0; border-top: 1px solid var(--border); padding-top: 10px; }
 .cw-history-fold > summary { cursor: pointer; font-weight: 700; }
 .cw-history-fold > .cw-history:first-of-type { border-top: 0; }
+
+/* The rules as a reference card (2026-10-29). */
+.cw-rules[open] { padding-bottom: 16px; }
+.cw-rule { margin: 6px 0 18px; }
+.cw-rule h3 { margin: 0 0 8px; font-size: 1.02rem; }
+.cw-rule-note { margin: 6px 0 0; font-size: .9rem; color: var(--text-secondary); }
+.cw-rule-flow { list-style: none; counter-reset: flow; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
+.cw-rule-flow li { counter-increment: flow; display: grid; gap: 2px; padding: 8px 10px; background: var(--bg-surface); border-top: 4px solid var(--text-primary); font-size: .84rem; line-height: 1.45; }
+.cw-rule-flow li:nth-child(4) { border-top-color: var(--cw-red); }
+.cw-rule-flow strong { font-size: .95rem; }
+.cw-rule-flow strong::before { content: counter(flow) ' '; color: var(--cw-red); }
+.cw-rule-flow span { color: var(--text-secondary); }
+.cw-rule-formula { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: .92rem; }
+.cw-rule-formula span { padding: 2px 8px; border: 1px solid var(--text-primary); font-weight: 700; }
+.cw-rule-scale { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3px; margin-bottom: 10px; }
+.cw-rule-scale span { display: grid; gap: 2px; padding: 8px 10px; font-size: .82rem; line-height: 1.4; }
+.cw-rule-scale b { font-size: .92rem; }
+.cw-rule-scale .is-worse { background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--cw-red) 30%, transparent) 0 6px, transparent 6px 12px); border: 2px solid var(--cw-red); }
+.cw-rule-scale .is-same { background: color-mix(in srgb, var(--text-primary) 14%, transparent); border: 2px solid var(--border); }
+.cw-rule-scale .is-better { background: color-mix(in srgb, var(--text-primary) 30%, transparent); border: 2px solid var(--text-primary); }
+.cw-rule-list { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; font-size: .9rem; line-height: 1.6; }
+.cw-rule-gauges { display: grid; gap: 14px; }
+.cw-rule-gauge > p { margin: 0 0 4px; font-size: .9rem; }
+.cw-rule-gauge > p b { margin-right: 6px; }
+.cw-rule-gauge > small { display: block; margin-top: 4px; font-size: .82rem; color: var(--text-secondary); }
+.cw-rule-bar { display: flex; gap: 2px; min-height: 34px; }
+.cw-rule-bar span { position: relative; display: flex; align-items: center; min-width: 0; padding: 4px 6px 12px; font-size: .78rem; font-weight: 700; line-height: 1.25; background: color-mix(in srgb, var(--text-primary) 18%, transparent); overflow: hidden; }
+.cw-rule-bar span.is-bad { background: var(--cw-red); color: var(--cw-paper-ink); }
+.cw-rule-bar span.is-warn { background: color-mix(in srgb, var(--cw-red) 45%, transparent); }
+.cw-rule-bar small { position: absolute; left: 6px; bottom: 1px; font-size: .68rem; font-weight: 400; opacity: .8; }
+.cw-rule-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 18px; }
+.cw-rule-stars { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: .92rem; font-weight: 700; }
+.cw-rule-battles { list-style: none; margin: 10px 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.cw-rule-battles li { display: grid; padding: 4px 10px; border-left: 4px solid var(--cw-red); background: var(--bg-surface); font-size: .84rem; }
+.cw-rule-battles span { font-size: .74rem; color: var(--text-secondary); }
+@media (max-width: 720px) {
+    .cw-rule-flow { grid-template-columns: 1fr 1fr; }
+    .cw-rule-scale { grid-template-columns: 1fr; }
+}
+#cwScene { padding-inline: var(--content-inset); }
+.cw-scene-side .cw-voice-src { justify-self: start; }

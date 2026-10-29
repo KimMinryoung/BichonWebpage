@@ -534,12 +534,31 @@
         if (box.hidden) return box.replaceChildren();
         const sc = t.scene;
         const seen = new Set();
+        // The picture beside the words (2026-10-29: the season's story and
+        // its voices stand open beside it, no longer folded below).
         box.replaceChildren(
             el('div', { class: 'cw-scene-pictures' + (sc.poster ? ' has-poster' : '') }, figure(sc.picture, 'cw-scene-photo'), sc.poster ? figure(sc.poster, 'cw-scene-poster') : null),
             el('div', { class: 'cw-scene-text' },
                 el('p', { class: 'cw-scene-lead' }, ...glossed(sc.lead, seen)),
+                el('div', { class: 'cw-scene-story' }, ...t.brief.map(p => el('p', {}, ...glossed(p, seen)))),
                 sc.witness ? witness(sc.witness, seen) : null,
+                sceneVoices(operationsNow().concat(t.voices || [])),
                 el('button', { type: 'button', class: 'cw-primary cw-step-next', 'data-key': 'scene-next', onclick: () => stepTo('state') }, '무엇을 결정할까 →')));
+    }
+
+    // The season's voices face each other: the Reds' on one side, the
+    // enemy's on the other, each with the front it speaks from.
+    function sceneVoices(voices) {
+        if (!voices.length) return null;
+        const foe = v => Boolean(v.by);
+        const line = v => el('li', {},
+            el('p', { class: 'cw-scene-voice-who' }, v.who ? speaker(v.who) : el('strong', { class: 'cw-talk-as' }, speakerName(v)),
+                (where => where ? el('small', {}, where) : null)([v.by && v.who ? foeAs(v.by, v.at).short : null, D.fronts[v.at] ? D.fronts[v.at].short : null].filter(Boolean).join(' · '))),
+            el('q', {}, v.text), sourceOf(v));
+        const side = (list, label, cls) => list.length ? el('div', { class: 'cw-scene-side ' + cls }, el('p', { class: 'games-kicker' }, label), el('ul', {}, ...list.map(line))) : null;
+        return el('div', { class: 'cw-scene-voices', role: 'group', 'aria-label': '이 시기의 목소리' },
+            side(voices.filter(v => !foe(v)), D.ui.player, 'is-ours'),
+            side(voices.filter(foe), D.ui.enemyAll || D.ui.enemy, 'is-theirs'));
     }
 
     // On to a step of the season, from its top.
@@ -558,11 +577,15 @@
         const voices = s.phase === 'plan' ? operationsNow().concat(t.voices || []) : [];
         const open = $('cwBrief').querySelector('.cw-voice-log');
         if (brief.turn !== s.turn) brief = { turn: s.turn, read: false, open: null };
+        // A season with a scene tells its story there.
+        $('cwBrief').hidden = s.phase === 'plan' && Boolean(t.scene);
+        voiceReplay.hidden = !voices.length;
+        if ($('cwBrief').hidden) return $('cwBrief').replaceChildren();
         const seen = new Set();
         const story = t.brief.map(p => el('p', {}, ...glossed(p, seen)));
         let body = story;
         if (s.phase === 'plan') {
-            const fold = el('details', { class: 'cw-brief-fold', open: brief.open === null ? !t.scene : brief.open }, el('summary', {}, t.scene ? '이 시기의 상황 자세히' : '이 시기의 상황'), ...story);
+            const fold = el('details', { class: 'cw-brief-fold', open: brief.open === null ? !t.scene : brief.open }, el('summary', {}, '이 시기의 상황'), ...story);
             fold.addEventListener('toggle', () => { brief.open = fold.open; });
             body = [fold];
         }
@@ -2802,6 +2825,8 @@
             el('div', { class: 'cw-scene-pictures' }, figure(def.scene.picture, 'cw-scene-photo')),
             el('div', { class: 'cw-scene-text' },
                 el('p', { class: 'cw-scene-lead' }, def.summary),
+                // The story and how it is won; the rest stays in the board's 「작전 지시」.
+                el('div', { class: 'cw-scene-story' }, ...def.brief.slice(0, 2).map(p => el('p', {}, p))),
                 def.scene.witness ? witness(def.scene.witness) : null,
                 el('button', { type: 'button', class: 'cw-primary cw-step-next', 'data-key': 'battle-scene-next', onclick: () => { scenesShown.add(key); renderBattle(); toTop($('cwBattle')); } }, '전투를 지휘한다 →'))));
         markTab(box, null);
