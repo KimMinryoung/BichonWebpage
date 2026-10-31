@@ -9,6 +9,11 @@
 //   put-body <id> [--actor who] [--note text]   replace one document's body (stdin)
 //   history <id>                         superseded revisions, newest first
 //   restore <id> <revision> [--actor who]
+//   structure [id ...] [--json]          structure check of the stored bodies (read-only)
+//   freeze-ids [--dry-run] [--actor who] write stored ids into every heading that has none
+//
+// put and put-body refuse a body that adds a structural error the stored
+// version did not have (doc-structure.js); --allow-structure stores it anyway.
 //
 // Bundle: { docs: [{ id, revision, sortOrder, entry, body }], redirects: { from: { id, anchor } },
 //           originals: { <doc id>: { lang, public, rights, source, revision, body } } }
@@ -24,7 +29,8 @@
 console.log = console.info = console.error;
 require('./lib/bootstrap');
 const fs = require('fs');
-const { readAllDocRows, readAllOriginalRows, writeDocs, listDocRevisions, restoreDocRevision, storedEntry, sha256 } = require('../data/commulingo/docs-db');
+const { readAllDocRows, readAllOriginalRows, writeDocs, listDocRevisions, restoreDocRevision, storedEntry, sha256, checkStructure } = require('../data/commulingo/docs-db');
+const { freezeHeadingIds } = require('../data/commulingo/doc-structure');
 const { canonicalEntry } = require('../data/commulingo/docs-import');
 const { sanitizeDocHtml } = require('../data/commulingo/doc-sanitize');
 
@@ -124,19 +130,75 @@ async function put(bundle, args) {
     }
     const actor = option(args, '--actor', `commulingo-docs:${process.env.USER || 'cli'}`);
     const note = option(args, '--note', 'scripts/commulingo-docs put');
+    const allowStructureIssues = args.includes('--allow-structure');
     if (dryRun) {
         // Run the whole write and roll it back, so a dry run fails where the real one would.
         const db = require('../config/database');
         const client = await db.connect();
         try {
             await client.query('BEGIN');
-            return { dryRun: true, ...(await writeDocs({ upserts, deletes, redirects, originals }, { actor, note, client })) };
+            return { dryRun: true, ...(await writeDocs({ upserts, deletes, redirects, originals }, { actor, note, client, allowStructureIssues })) };
         } finally {
             await client.query('ROLLBACK').catch(() => {});
             client.release();
         }
     }
-    return writeDocs({ upserts, deletes, redirects, originals }, { actor, note });
+    return writeDocs({ upserts, deletes, redirects, originals }, { actor, note, allowStructureIssues });
+}
+
+function printStructure(reports) {
+    for (const report of reports || []) {
+        for (const issue of report.introduced || []) console.log(`structure: ${report.label} NEW [${issue.code}] ${issue.message}`);
+        const old = (report.errors || []).length - (report.introduced || []).length;
+        if (old > 0) console.log(`structure: ${report.label} ${old} error(s) already stored (scripts/commulingo-docs structure ${report.id})`);
+        for (const issue of report.warnings || []) console.log(`structure: ${report.label} warning [${issue.code}] ${issue.message}`);
+    }
+}
+
+// Read-only: every stored body (or the named ones) through the same check
+// writes get, for the list of documents still to fix.
+async function structureReport(ids) {
+    const { docs } = await readAllDocRows();
+    const originals = new Map((await readAllOriginalRows()).map(row => [row.doc_id, row]));
+    const wanted = ids.length ? new Set(ids) : null;
+    const reports = [];
+    for (const row of docs) {
+        if (wanted && !wanted.has(row.id)) continue;
+        reports.push(checkStructure(row.id, row.id, { body: row.body, entry: row.entry, role: 'translation' }));
+        const original = originals.get(row.id);
+        if (original) reports.push(checkStructure(row.id, `${row.id} (original)`, { body: original.body, entry: row.entry, role: 'original' }));
+    }
+    return reports.map(({ id, label, errors, warnings }) => ({ id, label, errors, warnings }));
+}
+
+// One pass over the library writing stored ids into idless headings
+// (doc-structure.js freezeHeadingIds). The ids are the ones the reader already
+// serves, so no address changes; afterwards a new heading cannot move them.
+async function freezeIds(args) {
+    const dryRun = args.includes('--dry-run');
+    const { docs } = await readAllDocRows();
+    const upserts = docs.filter(row => freezeHeadingIds(row.body) !== row.body)
+        .map(row => ({ id: row.id, entry: row.entry, body: row.body, expectedRevision: row.revision }));
+    const originals = { set: [], remove: [] };
+    for (const row of await readAllOriginalRows()) {
+        if (freezeHeadingIds(row.body) === row.body) continue;
+        originals.set.push({ docId: row.doc_id, lang: row.lang, body: row.body, public: row.public, rights: row.rights,
+            source: row.source, expectedRevision: row.revision });
+    }
+    const actor = option(args, '--actor', `commulingo-docs:${process.env.USER || 'cli'}`);
+    // Freezing adds ids only; a document already carrying structural errors
+    // must not block it.
+    const opts = { actor, note: 'freeze heading ids', allowStructureIssues: true };
+    if (!dryRun) return writeDocs({ upserts, originals }, opts);
+    const db = require('../config/database');
+    const client = await db.connect();
+    try {
+        await client.query('BEGIN');
+        return { dryRun: true, ...(await writeDocs({ upserts, originals }, { ...opts, client })) };
+    } finally {
+        await client.query('ROLLBACK').catch(() => {});
+        client.release();
+    }
 }
 
 async function main() {
@@ -157,6 +219,7 @@ async function main() {
             for (const mention of audit.mentions) console.log(JSON.stringify(mention));
             for (const warning of audit.warnings) console.log(`chronology warning: ${JSON.stringify(warning)}`);
         }
+        printStructure(result.structure);
         const changed = result.written.filter(w => w.op !== 'unchanged');
         for (const w of changed) console.log(`${result.dryRun ? 'would ' : ''}${w.op} ${w.id} → r${w.revision}`);
         for (const id of result.deleted) console.log(`${result.dryRun ? 'would ' : ''}delete ${id}`);
@@ -171,9 +234,30 @@ async function main() {
         const body = fs.readFileSync(0, 'utf8');
         if (!body.trim()) throw new Error('empty body on stdin');
         const result = await writeDocs({ upserts: [{ id: row.id, entry: row.entry, body: sanitizeDocHtml(body), expectedRevision: row.revision }] },
-            { actor: option(args, '--actor', `commulingo-docs:${process.env.USER || 'cli'}`), note: option(args, '--note', 'put-body') });
+            { actor: option(args, '--actor', `commulingo-docs:${process.env.USER || 'cli'}`), note: option(args, '--note', 'put-body'),
+                allowStructureIssues: args.includes('--allow-structure') });
         console.error('person-link audit: ' + JSON.stringify(result.linkAudits));
+        printStructure(result.structure);
         console.log(JSON.stringify(result.written));
+    } else if (command === 'structure') {
+        const reports = await structureReport(args.filter(a => !a.startsWith('--')));
+        if (args.includes('--json')) {
+            await new Promise(resolve => process.stdout.write(JSON.stringify(reports, null, 2) + '\n', resolve));
+        } else {
+            for (const report of reports) {
+                if (!report.errors.length && !report.warnings.length) continue;
+                for (const issue of report.errors) process.stdout.write(`${report.label}\terror\t${issue.code}\t${issue.message}\n`);
+                for (const issue of report.warnings) process.stdout.write(`${report.label}\twarning\t${issue.code}\t${issue.message}\n`);
+            }
+            const withErrors = reports.filter(report => report.errors.length).length;
+            console.error(`${reports.length} bodies checked, ${withErrors} with errors, ${reports.filter(r => r.warnings.length).length} with warnings`);
+        }
+    } else if (command === 'freeze-ids') {
+        const result = await freezeIds(args);
+        const changed = result.written.filter(w => w.op !== 'unchanged');
+        for (const w of changed) console.log(`${result.dryRun ? 'would freeze' : 'froze'} ${w.id} → r${w.revision}`);
+        for (const o of (result.originals || []).filter(o => o.op !== 'unchanged')) console.log(`${result.dryRun ? 'would freeze' : 'froze'} original ${o.id} → r${o.revision}`);
+        console.log(`${result.dryRun ? 'dry run: ' : ''}${changed.length} document(s), ${(result.originals || []).filter(o => o.op !== 'unchanged').length} original(s)`);
     } else if (command === 'history' && args[0]) {
         for (const r of await listDocRevisions(args[0])) {
             console.log(`r${r.revision}  ${r.superseded_op} ${new Date(r.superseded_at).toISOString()} by ${r.superseded_by}`
@@ -183,7 +267,7 @@ async function main() {
         const result = await restoreDocRevision(args[0], Number(args[1]), { actor: option(args, '--actor', `commulingo-docs:${process.env.USER || 'cli'}`) });
         console.log(JSON.stringify(result.written));
     } else {
-        console.error('usage: commulingo-docs.js export [id ...] | put [--dry-run] [--delete-missing] | put-body <id> | history <id> | restore <id> <revision>');
+        console.error('usage: commulingo-docs.js export [id ...] | put [--dry-run] [--delete-missing] [--allow-structure] | put-body <id> [--allow-structure] | history <id> | restore <id> <revision> | structure [id ...] [--json] | freeze-ids [--dry-run]');
         process.exit(2);
     }
 }

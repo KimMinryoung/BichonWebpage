@@ -175,7 +175,9 @@ const tools = [
             + 'which is sanitized like an import. An existing document needs expectedRevision from doc_get. Returns the written revision and '
             + 'the person-link audit (mentions, warnings) to check before applying. original sets the source-language text the translation '
             + 'was made from (stored beside it, served at /docs/<id>/original only when public); removeOriginal drops it. dryRun defaults to '
-            + 'true. Authoring rules: data/commulingo/docs/README.md.',
+            + 'true. A body (or original) that adds a structural error its stored version did not have (missing byline or 해제 box, '
+            + 'notes list without notes-list, dangling footnote, duplicate id, excerpt naming a missing heading) is refused; the result\'s '
+            + '`structure` lists errors and warnings. Authoring rules: data/commulingo/docs/README.md.',
         inputSchema: object({
             id: str('Document id'),
             entry: obj('Whole manifest entry (title, byline, aliases, people, terms, events, noAutoLink, …)'),
@@ -188,12 +190,13 @@ const tools = [
                 + 'expectedRevision (doc_get originalRevision; required when one is stored) }'),
             removeOriginal: bool('Delete the stored original'),
             fullAudit: bool('Return every person mention of the link audit (default: counts and warned links only)'),
+            allowStructureIssues: bool('Store even when the structure check finds a new error (say why in note)'),
             dryRun: dryRunArg,
             note: noteArg,
             changedBy,
         }, ['id']),
         audit: ({ id, dryRun, changedBy: actor }, client) => ({ command: dryRun === false ? 'apply' : 'dry-run', targetType: 'doc', targetId: id, actor: actor || `mcp:${client}` }),
-        async handler({ id, entry, entryPatch, body, bodyPath, expectedRevision, sortOrder, original, removeOriginal, fullAudit, dryRun = true, note, changedBy: given }, { client }) {
+        async handler({ id, entry, entryPatch, body, bodyPath, expectedRevision, sortOrder, original, removeOriginal, fullAudit, allowStructureIssues, dryRun = true, note, changedBy: given }, { client }) {
             if (entry && entryPatch) throw badRequest('pass entry or entryPatch, not both');
             if (body !== undefined && bodyPath) throw badRequest('pass body or bodyPath, not both');
             if (original && removeOriginal) throw badRequest('pass original or removeOriginal, not both');
@@ -230,7 +233,7 @@ const tools = [
                     rights: original.rights, source: original.source, expectedRevision: stored ? original.expectedRevision : 0 });
             }
             const actor = actorOf(given, client);
-            const result = await inTransaction(dryRun, c => writeDocs({ upserts: [upsert], originals }, { actor, note: note || 'mcp doc_put', client: c }));
+            const result = await inTransaction(dryRun, c => writeDocs({ upserts: [upsert], originals }, { actor, note: note || 'mcp doc_put', client: c, allowStructureIssues: allowStructureIssues === true }));
             if (!dryRun) await require('../../data/commulingo/docs-store').refreshCommuLingoDocs();
             // The audit lists every person mention (hundreds in a long text);
             // unless fullAudit, keep the counts and the links that carry a warning.

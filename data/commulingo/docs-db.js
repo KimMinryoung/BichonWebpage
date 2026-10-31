@@ -5,10 +5,14 @@
 //
 // Validation of entries (headwords, aliases, link expressions) stays in
 // docs-import.js. Every changed document also passes the reader's person-link
-// audit here, covering import, metadata edits, body replacement and restore.
+// audit here, covering import, metadata edits, body replacement and restore,
+// and the structure check (doc-structure.js): a write that adds a structural
+// error the stored version did not have is refused unless the caller passes
+// allowStructureIssues. Bodies get their heading ids frozen on the way in.
 const crypto = require('crypto');
 const db = require('../../config/database');
 const { normalizeKoreanQuotesHtml } = require('./korean-quotes');
+const { freezeHeadingIds, inspectDocStructure, introducedErrors } = require('./doc-structure');
 
 const ID = /^[a-z0-9-]+$/;
 const sha256 = text => crypto.createHash('sha256').update(text, 'utf8').digest('hex');
@@ -26,6 +30,24 @@ function storedEntry(entry) {
     const out = {};
     for (const [key, value] of Object.entries(entry || {})) if (!DERIVED.has(key)) out[key] = value;
     return out;
+}
+
+// Structure of one body against the version it replaces. Both sides are read
+// with their ids frozen, so a body stored before freezing is compared with
+// the same ids the reader serves it under.
+function checkStructure(id, label, { body, entry, role, previousBody, previousEntry }) {
+    const after = inspectDocStructure(freezeHeadingIds(body), { role, entry });
+    const before = previousBody === undefined ? null : inspectDocStructure(freezeHeadingIds(previousBody), { role, entry: previousEntry });
+    return { id, label, errors: after.errors, warnings: after.warnings, introduced: introducedErrors(before, after) };
+}
+
+function refuseStructure(reports) {
+    const bad = reports.filter(report => report.introduced.length);
+    if (!bad.length) return;
+    const lines = bad.flatMap(report => report.introduced.map(issue => `${report.label}: [${issue.code}] ${issue.message}`));
+    const err = badRequest(`structure check refused the write (data/commulingo/docs/README.md; pass allowStructureIssues / --allow-structure to store it anyway):\n  ${lines.join('\n  ')}`, 422);
+    err.structure = bad;
+    throw err;
 }
 
 async function withClient(client, fn) {
@@ -66,7 +88,7 @@ async function supersedeOriginal(client, row, op, actor, note) {
 
 // An original (migration 368): { docId, lang, body, public, rights, source, expectedRevision? }.
 // The body is stored as given (callers sanitize it, as for translations).
-async function writeOriginal(c, item, actor, note) {
+async function writeOriginal(c, item, actor, note, structureReports) {
     if (!item || typeof item.docId !== 'string' || !ID.test(item.docId)) throw badRequest('original: doc id must be lowercase letters, digits, hyphens');
     const { docId } = item;
     if (typeof item.lang !== 'string' || !/^[a-z]{2,3}$/.test(item.lang)) throw badRequest(`${docId}: original lang must be a 2-3 letter code`);
@@ -79,14 +101,20 @@ async function writeOriginal(c, item, actor, note) {
     if (item.expectedRevision !== undefined && (current ? current.revision : 0) !== item.expectedRevision) {
         throw badRequest(`${docId}: original expected revision ${item.expectedRevision}, found ${current ? current.revision : 'none'}`, 409);
     }
-    const bodySha = sha256(item.body);
+    const body = freezeHeadingIds(item.body);
+    const bodySha = sha256(body);
+    if (!current || current.body_sha256 !== bodySha) {
+        const entry = (await c.query('SELECT entry FROM commulingo_docs WHERE id = $1', [docId])).rows[0]?.entry;
+        structureReports.push(checkStructure(docId, `${docId} (original)`, {
+            body, entry, role: 'original', previousBody: current ? current.body : undefined, previousEntry: entry }));
+    }
     if (!current) {
         const revision = (await c.query(
             'SELECT COALESCE(MAX(revision), 0) + 1 AS n FROM commulingo_doc_original_revisions WHERE doc_id = $1', [docId])).rows[0].n;
         await c.query(
             `INSERT INTO commulingo_doc_originals (doc_id, lang, body, body_sha256, public, rights, source, revision, updated_by, created_by)
              VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $9)`,
-            [docId, item.lang, item.body, bodySha, isPublic, rights, source, revision, actor]);
+            [docId, item.lang, body, bodySha, isPublic, rights, source, revision, actor]);
         return { id: docId, revision, op: 'insert' };
     }
     if (current.body_sha256 === bodySha && current.lang === item.lang && current.public === isPublic
@@ -99,7 +127,7 @@ async function writeOriginal(c, item, actor, note) {
             SET lang = $2, body = $3, body_sha256 = $4, public = $5, rights = $6, source = $7,
                 revision = revision + 1, updated_at = NOW(), updated_by = $8
           WHERE doc_id = $1`,
-        [docId, item.lang, item.body, bodySha, isPublic, rights, source, actor]);
+        [docId, item.lang, body, bodySha, isPublic, rights, source, actor]);
     return { id: docId, revision: current.revision + 1, op: 'update' };
 }
 
@@ -120,7 +148,7 @@ async function removeOriginal(c, docId, actor, note) {
 // }
 // Runs in the caller's transaction when `client` is given, else in its own.
 // Returns { written: [{ id, revision, op }], deleted: [id] }.
-async function writeDocs(changes, { actor, note, client } = {}) {
+async function writeDocs(changes, { actor, note, client, allowStructureIssues = false } = {}) {
     if (!actor) throw badRequest('writeDocs needs an actor');
     const upserts = changes.upserts || [];
     const deletes = changes.deletes || [];
@@ -129,12 +157,14 @@ async function writeDocs(changes, { actor, note, client } = {}) {
         await c.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-docs-write'))");
         const written = [];
         const linkAudits = [];
+        const structure = [];
         for (const item of upserts) {
             if (!item || typeof item.id !== 'string' || !ID.test(item.id)) throw badRequest('doc id must be lowercase letters, digits, hyphens');
             const entry = storedEntry(item.entry);
             // Korean documents follow the NIKL quote rules (korean-quotes.js).
-            const body = typeof item.body === 'string' && (entry.docLang || 'ko') === 'ko' ? normalizeKoreanQuotesHtml(item.body) : item.body;
-            if (body !== undefined && (typeof body !== 'string' || !body.trim())) throw badRequest(`${item.id}: body must be non-empty html`);
+            const normalized = typeof item.body === 'string' && (entry.docLang || 'ko') === 'ko' ? normalizeKoreanQuotesHtml(item.body) : item.body;
+            if (normalized !== undefined && (typeof normalized !== 'string' || !normalized.trim())) throw badRequest(`${item.id}: body must be non-empty html`);
+            const body = normalized === undefined ? undefined : freezeHeadingIds(normalized);
             const current = (await c.query('SELECT * FROM commulingo_docs WHERE id = $1 FOR UPDATE', [item.id])).rows[0];
             if (item.expectedRevision !== undefined && (current ? current.revision : 0) !== item.expectedRevision) {
                 throw badRequest(`${item.id}: expected revision ${item.expectedRevision}, found ${current ? current.revision : 'none'}`, 409);
@@ -144,6 +174,11 @@ async function writeDocs(changes, { actor, note, client } = {}) {
             if (changed) {
                 const audit = await require('./doc-person-links').inspectDocPersonLinks(body ?? current?.body, { id: item.id, ...entry });
                 linkAudits.push({ id: item.id, mentions: audit.mentions, warnings: audit.warnings, truncated: audit.truncated });
+                if (body !== undefined || current) {
+                    structure.push(checkStructure(item.id, item.id, {
+                        body: body ?? current.body, entry, role: 'translation',
+                        previousBody: current ? current.body : undefined, previousEntry: current ? current.entry : undefined }));
+                }
             }
             if (!current) {
                 if (body === undefined) throw badRequest(`${item.id}: a new document needs a body`);
@@ -197,11 +232,12 @@ async function writeDocs(changes, { actor, note, client } = {}) {
             await c.query('DELETE FROM commulingo_doc_redirects WHERE from_id = $1', [fromId]);
         }
         const originals = [];
-        for (const item of changes.originals?.set || []) originals.push(await writeOriginal(c, item, actor, note));
+        for (const item of changes.originals?.set || []) originals.push(await writeOriginal(c, item, actor, note, structure));
         for (const docId of changes.originals?.remove || []) {
             if (await removeOriginal(c, docId, actor, note)) originals.push({ id: docId, op: 'delete' });
         }
-        return { written, deleted, linkAudits, originals };
+        if (!allowStructureIssues) refuseStructure(structure);
+        return { written, deleted, linkAudits, originals, structure };
     });
     // Same-process readers see the write at once; other processes within a
     // refresh cycle (docs-store, 60 s).
@@ -252,8 +288,9 @@ async function restoreDocRevision(id, revision, { actor, note } = {}) {
         if (!current) throw badRequest(`${id}: body of revision ${revision} not found`, 404);
         body = current.body;
     }
+    // A restore puts back what was once stored, structure and all.
     return writeDocs({ upserts: [{ id, entry: rows[0].entry, body, expectedRevision: current ? current.revision : 0 }] },
-        { actor, note: note || `restore revision ${revision}` });
+        { actor, note: note || `restore revision ${revision}`, allowStructureIssues: true });
 }
 
-module.exports = { writeDocs, readDocRow, readOriginalRow, readAllDocRows, readAllOriginalRows, listDocRevisions, restoreDocRevision, storedEntry, sha256 };
+module.exports = { checkStructure, writeDocs, readDocRow, readOriginalRow, readAllDocRows, readAllOriginalRows, listDocRevisions, restoreDocRevision, storedEntry, sha256 };

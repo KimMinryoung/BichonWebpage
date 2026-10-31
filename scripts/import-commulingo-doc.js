@@ -22,6 +22,7 @@
  *   --dry-run            Print what would be written without writing
  *   --actor <who>        Recorded as the writer (default: import-commulingo-doc)
  *   --force              Overwrite an existing doc with the same id
+ *   --allow-structure    Store even if the structure check (doc-structure.js) finds errors
  */
 require('./lib/bootstrap');
 const fs = require('fs');
@@ -40,6 +41,7 @@ function parseArgs(argv) {
         const a = argv[i];
         if (a === '--dry-run') args.dryRun = true;
         else if (a === '--force') args.force = true;
+        else if (a === '--allow-structure') args.allowStructureIssues = true;
         else if (a.startsWith('--')) {
             const key = a.slice(2);
             const value = argv[++i];
@@ -73,6 +75,7 @@ async function main() {
             id: args.id,
             dryRun: args.dryRun,
             force: args.force,
+            allowStructureIssues: args.allowStructureIssues,
             overrides: {
                 docLang: args.lang,
                 title: { ko: args.titleKo, en: args.titleEn },
@@ -94,6 +97,10 @@ async function main() {
     toc.slice(0, 12).forEach(t => console.log(`  ${t.level === 1 ? '■' : ' ·'} ${t.text}`));
     if (toc.length > 12) console.log(`  … ${toc.length - 12} more`);
     warnings.forEach(w => console.log(`warning: ${w}`));
+    const { structure } = result;
+    structure.errors.forEach(issue => console.log(`structure error [${issue.code}] ${issue.message}`));
+    structure.warnings.forEach(issue => console.log(`structure warning [${issue.code}] ${issue.message}`));
+    if (structure.introduced.length && args.dryRun) console.log('(a real run is refused until these errors are fixed, or pass --allow-structure)');
     console.log('person-link audit:');
     console.log(JSON.stringify(result.linkAudit, null, 2));
     console.log('manifest entry:');
