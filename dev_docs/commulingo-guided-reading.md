@@ -9,6 +9,9 @@
 | `/commulingo/book/marx-eighteenth-brumaire` | `data/commulingo/courses/marx-eighteenth-brumaire.js` | 7편·49발췌, 같은 형식·권 번호 -1 (2026-10-24) |
 | `/commulingo/book/engels-ludwig-feuerbach` | `data/commulingo/courses/engels-ludwig-feuerbach.js` | 7편·54발췌, 4지선다, 처음부터 끊어 읽기로 작성, 권 번호 1(엥겔스 묶음, 『가족, 사유재산, 국가의 기원』 0 뒤) (2026-10-31, [아래](#루트비히-포이어바흐와-독일-고전철학의-종말-2026-10-31)) |
 | `/commulingo/book/lenin-imperialism` | `data/commulingo/courses/lenin-imperialism.js` | 10편·78발췌, 4지선다, 퀴즈형 20레슨·100문항을 새 번역으로 다시 씀, 권 번호 4 (2026-10-31, [아래](#자본주의의-최고-단계로서의-제국주의-2026-10-31)) |
+| `/commulingo/book/marx-wage-labour-capital` | `data/commulingo/courses/marx-wage-labour-capital.js` | 7편·53발췌, 4지선다, 퀴즈형 강좌를 다시 씀, 권 번호 -2 (2026-10-31, [아래](#마르크스-세-강좌-임금노동과-자본임금-가격-이윤고타-강령-비판-2026-10-31)) |
+| `/commulingo/book/marx-wages-and-programme` | `data/commulingo/courses/marx-wages-and-programme.js` | 7편·54발췌, 『임금, 가격, 이윤』만 남기고 다시 씀, 권 번호 0 (2026-10-31) |
+| `/commulingo/book/marx-gotha-critique` | `data/commulingo/courses/marx-gotha-critique.js` | 7편·48발췌, 새 강좌(옛 『임금 투쟁과 분배』 제2편에서 분리), 권 번호 18 (2026-10-31) |
 
 ## 왜 이 형식인가 (2026-10-24 판단 근거)
 
@@ -90,3 +93,16 @@
 - 검증기의 발췌 존댓말 규칙 때문에 존댓말로 옮긴 인용(6편 세실 로즈의 말, 2편 은행의 편지)은 맥락 줄에 요약하고 발췌는 레닌의 평가 문장으로 잡았다.
 - 정본은 `scripts/content/lenin-imperialism-20261031/course/`(gitignore, R2 보관): `BRIEF.md`, `head.js`, `ch01.js`~`ch10.js`, `check.js`, `build.js`, `show.js`, `text/`. 번역 작업물은 같은 작업 디렉터리의 `work/`.
 - 등록: `validate-commulingo.js` 10편·78문항·10레슨, `check-course-source-excerpts.js` `REQUIRE_SOURCE`. `PUBLIC_CHAPTER_LIMITS`는 10 그대로라 재시작이 필요 없다.
+
+## 마르크스 세 강좌: 『임금노동과 자본』·『임금, 가격, 이윤』·『고타 강령 비판』 (2026-10-31)
+
+사용자 결정: 퀴즈형으로 남아 있던 두 마르크스 강좌를 끊어 읽기로 다시 쓰고, 『임금, 가격, 이윤』과 『고타 강령 비판』을 한데 묶은 『임금 투쟁과 분배』 강좌는 둘로 나눈다.
+
+- `marx-wage-labour-capital`: 참고 문헌 `marx-wage-labour-and-capital`(엥겔스 1891년 머리말 포함), 7편·53발췌. 영어 발췌는 독일어 원문에서 옮김.
+- `marx-wages-and-programme`: 강좌 id는 링크(`views/public/strike.ejs` 등)를 지키려고 그대로 두고 제목만 「마르크스: 임금, 가격, 이윤」으로 바꿨다. 참고 문헌 `marx-value-price-profit`, 7편·54발췌. 원문이 영어라 영어 발췌는 원문 그대로다.
+- `marx-gotha-critique`: 새 강좌, 참고 문헌 `marx-gotha-critique`, 7편·48발췌, 권 번호 18(『프랑스 내전』 17 뒤). 1편은 엥겔스 1891년 서문으로 시작한다. 이에 맞춰 참고 문헌 원문(독일어)에 없던 엥겔스 서문을 《노이에 차이트》 1890/91년 제9년차 제1권 제18호 561~562쪽(archive.org 스캔)에서 옮겨 적어 넣었다(DB, 커밋 없음).
+- 레슨 id는 세 강좌 모두 `<장 id>-reading` 하나다(`wage-labour-chNN-reading`, `wages-programme-chNN-reading`, `gotha-critique-chNN-reading`). 옛 basic/advanced 레슨과 풀이 기록은 이어지지 않는다.
+- 참고 문헌에 접혀 있는 편집자 해설(`details.doc-commentary`)은 저자의 글이 아니므로 발췌로 쓰지 않는다. 각 강좌 `check.js`가 이 상자를 지운 본문에서 발췌를 찾는다.
+- `course-metadata.js`의 출시일 목록(COURSES)은 마지막 항목이던 `marx-wages-and-programme`가 `editorial.authoredAt`을 갖게 되어 비었다.
+- 정본은 `scripts/content/marx-courses-20261031/<문헌 id>/course/`(gitignore, R2 보관). 공통 도구는 `tools/`(`split.py` 문단 나누기, `make-kit.js` 키트 생성, `make-brief.py`).
+- 등록: `PUBLIC_CHAPTER_LIMITS`(세 강좌 7편, 고타 새로 추가)라 재시작(배포)이 필요하다. `validate-commulingo.js`, `check-course-source-excerpts.js` `REQUIRE_SOURCE`.

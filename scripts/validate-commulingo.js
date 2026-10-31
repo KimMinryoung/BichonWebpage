@@ -40,8 +40,9 @@ const expected = {
   'lenin-imperialism': { chapters: 10, questions: 78, lessons: 10, format: 'guided-reading' },
   'lenin-state-revolution': { chapters: 6, questions: 60, lessons: 12 },
   'lenin-materialism-empiriocriticism': { chapters: 8, questions: 61, lessons: 8, format: 'guided-reading' },
-  'marx-wage-labour-capital': { chapters: 6, questions: 60, lessons: 12 },
-  'marx-wages-and-programme': { chapters: 8, questions: 80, lessons: 16 },
+  'marx-wage-labour-capital': { chapters: 7, questions: 53, lessons: 7, format: 'guided-reading' },
+  'marx-wages-and-programme': { chapters: 7, questions: 54, lessons: 7, format: 'guided-reading' },
+  'marx-gotha-critique': { chapters: 7, questions: 48, lessons: 7, format: 'guided-reading' },
   'marx-civil-war-in-france': { chapters: 6, questions: 41, lessons: 6, format: 'guided-reading' },
   'marx-eighteenth-brumaire': { chapters: 7, questions: 49, lessons: 7, format: 'guided-reading' },
   'engels-ludwig-feuerbach': { chapters: 7, questions: 54, lessons: 7, format: 'guided-reading' },
@@ -51,7 +52,7 @@ const expectedSpecial = {
   'history-russian-revolution': { format: 'decision-history', eras: 4, episodes: 14 },
   'history-soviet-union': { format: 'decision-history', eras: 4, episodes: 15 },
 };
-const requiredParts = { 'capital-vol1': 8, 'capital-vol2': 3, 'capital-vol3': 7, 'marx-wages-and-programme': 2, 'french-revolution-intro': 3 };
+const requiredParts = { 'capital-vol1': 8, 'capital-vol2': 3, 'capital-vol3': 7, 'french-revolution-intro': 3 };
 
 const out = checks.createCollector();
 const data = loadCommuLingoBundle().bundle;

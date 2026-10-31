@@ -20,11 +20,12 @@ const PUBLIC_CHAPTER_LIMITS = {
     'lenin-imperialism': 10,
     'lenin-state-revolution': 6,
     'lenin-materialism-empiriocriticism': 8,
-    'marx-wage-labour-capital': 6,
-    'marx-wages-and-programme': 8,
+    'marx-wage-labour-capital': 7,
+    'marx-wages-and-programme': 7,
     'marx-civil-war-in-france': 6,
     'marx-eighteenth-brumaire': 7,
     'engels-ludwig-feuerbach': 7,
+    'marx-gotha-critique': 7,
 };
 
 let freshnessCache = null;
