@@ -8,6 +8,7 @@
 | `/commulingo/book/lenin-materialism-empiriocriticism` | `data/commulingo/courses/lenin-materialism-empiriocriticism.js` | 8편·61발췌, 4지선다, 퀴즈형 문항을 골라 맥락·발췌를 붙여 옮김 (2026-10-28, [기록](commulingo-lenin-mec-20261028.md)) |
 | `/commulingo/book/marx-eighteenth-brumaire` | `data/commulingo/courses/marx-eighteenth-brumaire.js` | 7편·49발췌, 같은 형식·권 번호 -1 (2026-10-24) |
 | `/commulingo/book/engels-ludwig-feuerbach` | `data/commulingo/courses/engels-ludwig-feuerbach.js` | 7편·54발췌, 4지선다, 처음부터 끊어 읽기로 작성, 권 번호 1(엥겔스 묶음, 『가족, 사유재산, 국가의 기원』 0 뒤) (2026-10-31, [아래](#루트비히-포이어바흐와-독일-고전철학의-종말-2026-10-31)) |
+| `/commulingo/book/lenin-imperialism` | `data/commulingo/courses/lenin-imperialism.js` | 10편·78발췌, 4지선다, 퀴즈형 20레슨·100문항을 새 번역으로 다시 씀, 권 번호 4 (2026-10-31, [아래](#자본주의의-최고-단계로서의-제국주의-2026-10-31)) |
 
 ## 왜 이 형식인가 (2026-10-24 판단 근거)
 
@@ -78,3 +79,14 @@
 - 정본은 `scripts/content/engels-ludwig-feuerbach/course/`(gitignore, R2 보관)다: `BRIEF.md`(작성 지침), `head.js`, `ch01.js`~`ch07.js`, `check.js`, `build.js`, `show.js`(학습자 화면 순서로 출력), `text/`(문단 번호를 붙인 한국어·독일어 원문). 고칠 때는 편 파일을 고치고 `node check.js`, `node build.js`를 돌린다.
 - 등록: `shards.js` `PUBLIC_CHAPTER_LIMITS` 7, `validate-commulingo.js` 7편·54문항, `check-course-source-excerpts.js` `REQUIRE_SOURCE`, `smoke-commulingo-updates-kinds`의 최신 강좌. 공개는 운영 프로세스가 재시작해야 반영된다(위 「등록 때 겪은 일」).
 
+## 『자본주의의 최고 단계로서의 제국주의』 (2026-10-31)
+
+사용자 요청: 러시아어 원문에서 새로 옮긴 참고 문헌 `lenin-imperialism-1916`으로 기존 퀴즈형 『제국주의론』 강좌를 엥겔스 강좌의 끊어 읽기 형식으로 다시 쓴다.
+
+- 형식·점검은 엥겔스 강좌와 같다. 편 구성: 1 생산의 집중과 독점(1917년 서문, 머리말, I장), 2 은행과 그 새로운 역할, 3 금융자본과 금융과두제, 4 상품수출에서 자본수출로, 5 자본가 동맹들 사이의 세계분할, 6 이미 나누어진 세계(1920년 서문 둘, VI장), 7 자본주의의 독점 단계, 8 이자 쿠폰을 깎아 사는 나라(1920년 서문, VIII장), 9 「순진한 소망」과 초제국주의(1920년 서문, IX장), 10 이행하는 자본주의, 죽어 가는 자본주의. 1920년 서문은 논점이 맞는 편에 나눠 넣었다.
+- 레슨 id가 바뀌었다: 옛 `imperialism-chNN-basic`·`-advanced`(편당 2레슨)는 없어지고 `imperialism-chNN-reading` 하나다. 문항이 모두 새것이라 옛 풀이 기록이 새 문항에 이어지지 않게 했다(검증기가 문항 id를 `qN`으로 강제하므로 날짜 붙은 문항 id 대신 레슨 id를 바꿈). 장 id·장 주소는 그대로다.
+- 숫자 외우기 문항은 쓰지 않는다. 오답은 카우츠키(초제국주의, 정책으로서의 제국주의), 홉슨, 리프만, 슐체-게퍼니츠, 자유경쟁으로 돌아가자는 소부르주아 비판, 사회배외주의자의 실제 입장이나 발췌로 배제되는 오독으로 짰다. 현대 상황에 원리를 적용하는 문항도 편마다 하나까지 둔다.
+- 영어 발췌는 러시아어 원문에서 이 강좌가 옮겼고 출처 표시에 「(our translation from the Russian)」을 붙인다.
+- 검증기의 발췌 존댓말 규칙 때문에 존댓말로 옮긴 인용(6편 세실 로즈의 말, 2편 은행의 편지)은 맥락 줄에 요약하고 발췌는 레닌의 평가 문장으로 잡았다.
+- 정본은 `scripts/content/lenin-imperialism-20261031/course/`(gitignore, R2 보관): `BRIEF.md`, `head.js`, `ch01.js`~`ch10.js`, `check.js`, `build.js`, `show.js`, `text/`. 번역 작업물은 같은 작업 디렉터리의 `work/`.
+- 등록: `validate-commulingo.js` 10편·78문항·10레슨, `check-course-source-excerpts.js` `REQUIRE_SOURCE`. `PUBLIC_CHAPTER_LIMITS`는 10 그대로라 재시작이 필요 없다.
