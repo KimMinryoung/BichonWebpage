@@ -145,7 +145,7 @@ router.post('/progress', requireUser, async (req, res) => {
 router.post('/progress/answers', requireUser, async (req, res) => {
     const list = Array.isArray(req.body && req.body.answers) ? req.body.answers : [];
     const items = list.slice(0, MAX_ANSWER_BATCH).map(normalizeAnswer)
-        .filter(item => item.lessonId && item.lessonId.length <= 120 && /^q\d{1,3}$/.test(item.questionId) && item.lastAt);
+        .filter(item => item.lessonId && item.lessonId.length <= 120 && /^q\d{1,3}(?:-r\d{8})?$/.test(item.questionId) && item.lastAt);
     if (!items.length) return res.status(400).json({ error: 'no answers' });
 
     let client;

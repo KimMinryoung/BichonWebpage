@@ -269,14 +269,14 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "사유재산이 원래의 공동 소유를 이긴 데 기초해 확실한 친자 상속인을 얻으려는 제도였고, 최초의 계급 대립이 일부일처 결혼의 남녀 적대와 겹친다고 봤습니다.",
+                  "사유재산이 공동 소유를 이긴 데 기초해 확실한 상속인을 얻으려는 제도였고, 최초의 계급 대립이 남녀 적대와 겹친다고 봤습니다.",
                   "개인적 성애가 자라나 남녀가 서로를 고르게 되면서 생긴 화해의 형태였고, 계급 대립은 그보다 훨씬 뒤 노예제에서 처음 나타났다고 봤습니다.",
-                  "남녀의 체력 차이에서 자연스럽게 생긴 분업의 형태였고, 남녀 관계는 계급 대립과 상관없는 자연적 위계라고 봤습니다."
+                  "인류 최초의 가족 형태인 가부장제 가족이 다듬어진 것이었고, 남성 가장의 지배는 어떤 계급 사회보다도 오래된 질서라고 봤습니다."
                 ],
                 "en": [
-                  "On the victory of private property over original common property, to secure heirs of undisputed paternity; and the first class antagonism coincided with the antagonism of man and woman in monogamous marriage.",
+                  "On the victory of private property over common property, to secure undisputed heirs; the first class antagonism coincided with that of man and woman.",
                   "On the growth of individual sex love, as a reconciliation in which man and woman chose each other; class antagonism appeared much later, first with slavery.",
-                  "On a division of labour arising naturally from differences in physical strength; the relation of the sexes was a natural hierarchy unrelated to class antagonism."
+                  "It refined the patriarchal family, the original form of human society, so the rule of the male head was an order older than any class society."
                 ]
               },
               "answer": 0,
@@ -284,12 +284,12 @@ module.exports = {
                 "ko": [
                   "엥겔스는 일부일처제를 자연적 조건이 아니라 경제적 조건, 곧 사유재산의 승리에 기초한 최초의 가족 형태라 부르고 이 문장을 덧붙입니다.",
                   "엥겔스는 일부일처제가 개인적 성애와 “전혀 상관이 없었고” 결혼은 여전히 편의혼이었으며, 화해가 아니라 한 성의 다른 성에 대한 예속으로 등장했다고 씁니다.",
-                  "엥겔스는 일부일처제가 자연적 조건이 아니라 경제적 조건에 기초한 최초의 가족 형태였다고 강조합니다. 자연적 위계라는 설명과 반대입니다."
+                  "바흐오펜 이전에 모세 5경을 따라 가부장제 가족을 가장 오래된 형태로 여기던 통념입니다. 엥겔스는 모건을 따라 그 앞에 군혼과 모권의 단계를 두고, 일부일처제를 사유재산의 승리에 기초한 형태로 봤습니다."
                 ],
                 "en": [
                   "Engels calls monogamy the first family form based not on natural but on economic conditions, the victory of private property, and then adds this sentence.",
                   "Engels writes that monogamy had 'absolutely nothing to do' with individual sex love, marriages remained marriages of convenience, and it appeared not as reconciliation but as the subjugation of one sex by the other.",
-                  "Engels stresses that monogamy was the first family form based on economic, not natural, conditions; a natural hierarchy is the opposite of his account."
+                  "This is the view held before Bachofen, which followed the five books of Moses in taking the patriarchal family as the oldest form. Following Morgan, Engels put group marriage and mother-right before it and based monogamy on the victory of private property."
                 ]
               },
               "explanation": {
@@ -361,14 +361,14 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "여성은 예속에 빠진 최초의 인간으로 노예보다 먼저 노예가 되었고, 모든 사회적 억압은 경제적 종속에 뿌리를 둔다고 했습니다.",
-                  "노동자가 먼저 예속되었고 여성의 종속은 공장제가 가정을 무너뜨린 뒤에 생긴 부수 현상일 뿐이라고 했습니다.",
-                  "여성의 종속은 경제와 상관없는 자연의 질서이므로 노동자 문제와 견줄 수 없는 별개의 문제라고 했습니다."
+                  "여성은 노예가 생기기 전에 노예가 된 최초의 인간이고, 모든 사회적 억압은 경제적 종속에 뿌리를 둔다고 했습니다.",
+                  "노동자가 먼저 예속되었고, 여성의 종속은 공장제가 가정을 무너뜨린 뒤에야 생긴 부수 현상일 뿐이라고 했습니다.",
+                  "여성의 억압은 경제적 종속보다 남성의 성적 지배에 뿌리를 두므로, 노동자 해방과는 다른 길로 풀어야 한다고 했습니다."
                 ],
                 "en": [
-                  "Woman was the first human being to come into bondage, a slave before the slave existed, and all social oppression is rooted in economic dependence.",
-                  "The worker came into bondage first, and woman's subordination is only a side effect of the factory system breaking up the household.",
-                  "Woman's subordination is a natural order unrelated to economics, so it is a separate matter that cannot be compared with the worker's."
+                  "Woman was the first human being in bondage, a slave before the slave existed, and all social oppression is rooted in economic dependence.",
+                  "The worker came into bondage first, and woman's subordination is only a side effect that followed the factory system breaking up the household.",
+                  "Woman's oppression is rooted less in economic dependence than in male sexual domination, so it must be solved apart from the worker's."
                 ]
               },
               "answer": 0,
@@ -376,12 +376,12 @@ module.exports = {
                 "ko": [
                   "베벨은 여성과 노동자에게 닮은 점이 많지만 여성이 “하나를 앞서 있다”며, 노예가 존재하기 전에 여성이 노예가 되었다고 씁니다.",
                   "순서가 반대입니다. 베벨은 노동자보다 여성이 먼저 예속되었다는 점을 여성이 노동자보다 ‘앞선’ 한 가지로 듭니다.",
-                  "베벨은 바로 이어 모든 사회적 종속과 억압이 피억압자의 억압자에 대한 경제적 종속에 뿌리를 둔다고 씁니다."
+                  "베벨이 여성을 사회적 존재이자 성적 존재로서 억압받는다고 본 것은 맞습니다. 그러나 이 절은 바로 이어 모든 사회적 종속과 억압이 피억압자의 억압자에 대한 경제적 종속에 뿌리를 둔다고 씁니다."
                 ],
                 "en": [
                   "Bebel says woman and worker have much in common but woman has 'one thing ahead' of the worker: she became a slave before the slave existed.",
                   "The order is reversed: Bebel names woman's bondage coming before the worker's as the one respect in which she is 'ahead' of him.",
-                  "Bebel adds at once that all social dependence and oppression is rooted in the economic dependence of the oppressed on the oppressor."
+                  "Bebel did see woman oppressed as a sexual being as well as a social one. But this section adds at once that all social dependence and oppression is rooted in the economic dependence of the oppressed on the oppressor."
                 ]
               },
               "explanation": {
@@ -407,14 +407,14 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "남녀 모두에게 있는 자연 충동의 정당한 충족을 여러 원인이 막거나 제한하므로, 그 충족이 정당하지 않은 길로 흘러간다고 설명했습니다.",
+                  "여러 원인이 남녀 모두의 자연 충동이 정당하게 충족되지 못하게 막아, 정당하지 않은 충족으로 흐른다고 설명했습니다.",
                   "일부 여성의 타고난 도덕적 결함 때문이므로, 국가가 이들을 엄격히 단속하고 등록하면 사라질 수 있다고 설명했습니다.",
-                  "성적 충동은 남성에게만 강한 자연 충동이므로, 매춘은 어느 사회에서나 없앨 수 없는 영원한 제도라고 설명했습니다."
+                  "매춘은 정숙한 아내와 딸의 순결을 지켜 주는 필요악이므로, 문명 사회라면 누구나 치를 수밖에 없는 대가라고 설명했습니다."
                 ],
                 "en": [
-                  "Many causes prevent or limit the legitimate satisfaction of a natural impulse present in both sexes, so its satisfaction takes illegitimate paths.",
+                  "Many causes keep a natural impulse in both sexes from legitimate satisfaction, so its satisfaction takes illegitimate paths.",
                   "It stems from the inborn moral defects of some women, so it could disappear if the state strictly policed and registered them.",
-                  "The sexual impulse is a strong natural impulse only in men, so prostitution is an eternal institution that no society can remove."
+                  "Prostitution is a necessary evil that guards the chastity of wives and daughters, a price every civilised society must pay."
                 ]
               },
               "answer": 0,
@@ -422,12 +422,12 @@ module.exports = {
                 "ko": [
                   "베벨은 정당한 충족을 막는 원인이 많아 결과가 정당하지 않은 충족이 되고, 그래서 매춘이 경찰·상비군·교회·자본가 계급처럼 필수 제도가 된다고 씁니다.",
                   "베벨은 원인을 개인의 결함이 아니라 사회 구조에서 찾고, 국가가 매춘을 처벌하면서도 묵인·보호하며 단속은 여성에게만 향하는 모순을 비판합니다.",
-                  "베벨은 자연 충동이 여성에게도 남성처럼 있다고 강조하고, 매춘을 부르주아 사회의 제도로 보아 미래 사회에서는 사라진다고 봤습니다."
+                  "아우구스티누스 이래 교회와 도덕가들이 내세운 ‘필요악’론입니다. 베벨이 ‘필수적’이라 한 것은 부르주아 사회가 그것 없이 버티지 못한다는 고발이고, 그는 매춘이 미래 사회에서 사라진다고 봤습니다."
                 ],
                 "en": [
                   "Bebel writes that many causes prevent legitimate satisfaction, the result is illegitimate satisfaction, and so prostitution becomes a necessary institution like the police, the standing army, the church and the capitalist class.",
                   "Bebel locates the cause in social structure, not individual defects, and criticises a state that punishes prostitution yet tolerates and protects it, policing only the women.",
-                  "Bebel stresses that natural impulses exist in women as in men, and treats prostitution as an institution of bourgeois society that disappears in the future one."
+                  "This is the 'necessary evil' argument put forward by churchmen and moralists since Augustine. When Bebel calls it 'necessary' he is indicting a bourgeois society that cannot do without it, and he expected prostitution to disappear in the future society."
                 ]
               },
               "explanation": {
@@ -752,27 +752,27 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "소시민·인텔리·농민의 저속한 사랑 없는 결혼에 사랑에 기초한 프롤레타리아 민사혼을 대비하고, 개별 사례는 소설에서 다루자고 했습니다.",
-                  "스쳐 가는 관계는 언제나 더럽고 혼인 관계는 언제나 깨끗하다고 고쳐 써서, 혼인 밖의 모든 관계를 소책자에서 단죄하자고 했습니다.",
-                  "부부의 입맞춤과 스쳐 가는 정열을 비교하는 대신 혼인 제도 자체를 없애자는 요구를 소책자의 중심에 놓자고 했습니다."
+                  "소시민·인텔리·농민의 저속한 사랑 없는 결혼에 사랑에 기초한 프롤레타리아 민사혼을 맞세우자고 했습니다.",
+                  "스쳐 가는 정열도 깨끗할 수 있다는 대비는 그대로 살리되, 표현만 노동 여성 독자에게 맞게 다듬자고 했습니다.",
+                  "연애의 자유 가운데 타산과 편견에서 벗어날 자유만 남기고, 혼인 문제는 소책자에서 아예 빼자고 했습니다."
                 ],
                 "en": [
-                  "Contrast the vulgar loveless marriage of philistines, intellectuals and peasants with a proletarian civil marriage based on love, and leave individual cases to the novel.",
-                  "Rewrite it so that fleeting relationships are always dirty and marriages always clean, condemning in the pamphlet every relationship outside marriage.",
-                  "Instead of comparing married kisses with fleeting passion, put the demand to abolish the institution of marriage at the centre of the pamphlet."
+                  "Set the vulgar loveless marriage of philistines, intellectuals and peasants against proletarian civil marriage based on love.",
+                  "Keep the contrast that even a fleeting passion can be clean, and only adjust the wording for working women readers.",
+                  "Keep only freedom from calculation and prejudice within free love, and drop the question of marriage from the pamphlet altogether."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "편지는 이 대비를 제안하고, 깨끗한 스침과 더러운 혼인이라는 ‘사례’는 개인의 사정과 인물의 심리가 핵심이므로 소책자가 아니라 소설에서 다룰 주제라고 씁니다.",
-                  "레닌은 원한다면 스쳐 가는 관계도 더러울 수 있고 깨끗할 수도 있다는 말을 덧붙여도 좋다고 했습니다. 혼인 밖의 관계를 모두 단죄하자는 말은 없습니다.",
-                  "편지에 혼인 폐지 요구는 나오지 않습니다. 그가 대안으로 내놓은 것은 사랑에 기초한 프롤레타리아의 민사혼이었습니다."
+                  "1월 24일 편지가 내놓은 대비입니다. 깨끗한 스침과 더러운 혼인이라는 개별 ‘사례’도 있을 수 있지만, 그것은 소책자가 아니라 인물의 심리를 다루는 소설의 주제라고 덧붙입니다.",
+                  "레닌은 이 대비를 비논리적이라 했습니다. 사랑 없는 입맞춤의 반대편에 놓을 것은 스쳐 가는 정열이 아니라 사랑 있는 결합이고, 그대로 두면 사랑 없는 입맞춤 두 가지를 견주는 꼴이 된다는 것입니다.",
+                  "1월 17일 편지는 ‘연애의 자유 요구’라는 절을 빼라고 권했습니다. 그러나 1월 24일 편지는 혼인 문제를 빼지 않고, 사랑 없는 결혼과 프롤레타리아 민사혼을 맞세우자고 합니다."
                 ],
                 "en": [
-                  "The letter proposes this contrast and says the 'incident' of clean fleeting intimacy and dirty marriage turns on individual circumstances and psychology, a theme for a novel, not a pamphlet.",
-                  "Lenin said she could add, if she insisted, that fleeting intimacy and passion may be dirty or may be clean; he did not ask for every relationship outside marriage to be condemned.",
-                  "The letter contains no demand to abolish marriage; the alternative he offered was a proletarian civil marriage based on love."
+                  "This is the contrast the 24 January letter proposes. It adds that the 'incident' of clean fleeting intimacy and dirty marriage can happen, but turns on individual psychology and is a theme for a novel, not a pamphlet.",
+                  "Lenin called this contrast illogical: what belongs opposite loveless kisses is a union with love, not a fleeting passion, or else two kinds of loveless kisses are being compared.",
+                  "The 17 January letter advised dropping the section on 'the demand for freedom of love'. The 24 January letter does not drop marriage, but sets loveless marriage against proletarian civil marriage."
                 ]
               },
               "explanation": {
@@ -890,27 +890,27 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "관계의 평등, 상대의 마음을 통째로 차지하려는 소유욕 없는 상호 권리 인정, 동지적 세심함이며, 두 사람의 사랑은 집단에 대한 사랑-의무에 따른다고 했습니다.",
-                  "개인적 사랑은 집단의 결속을 해치므로 모두 없애고, 남녀의 감정은 오직 집단 전체를 향하는 동지애로만 표현되어야 한다고 했습니다.",
-                  "서로에게 평생 충실하겠다는 배타적 약속이 프롤레타리아적 신의의 핵심이므로, 질투는 사랑의 진지함을 보여 주는 감정이라고 했습니다."
+                  "상대의 마음을 독차지하려는 소유욕을 버리고, 둘의 사랑을 집단에 대한 사랑-의무 아래 두는 것이었습니다.",
+                  "감정의 얽힘 없이 성적 끌림을 물 한 잔 마시듯 가볍게 채우는 관계를 새 도덕의 기준으로 삼는 것이었습니다.",
+                  "사랑에 기초한 프롤레타리아 민사혼으로 한 쌍이 평생 결합하는 것을 새 가족의 기본 단위로 삼는 것이었습니다."
                 ],
                 "en": [
-                  "Equality in the relationship, mutual recognition of rights without claiming to own the other's heart, and comradely sensitivity, with the couple's love subordinate to a love-duty to the collective.",
-                  "Individual love harms collective unity and should be abolished, so the feelings of men and women should be expressed only as comradeship toward the whole collective.",
-                  "An exclusive promise of lifelong fidelity is the core of proletarian loyalty, so jealousy is a feeling that shows the seriousness of love."
+                  "Giving up the urge to own the other's heart, and placing the couple's love beneath a love-duty to the collective.",
+                  "Making a relationship that satisfies sexual attraction as lightly as drinking a glass of water the standard of the new morality.",
+                  "Making the lifelong union of a couple in a proletarian civil marriage based on love the basic unit of the new family."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "편지는 세 원칙을 번호를 붙여 들고, 사랑하는 사람의 마음을 독차지하려는 요구를 부르주아 문화가 기른 ‘소유의 감정’이라 부릅니다. 이어 집단에 대한 사랑-의무를 더 강한 감정으로 놓습니다.",
-                  "콜론타이는 노동계급의 이념이 날개 달린 에로스를 없애지 않고 오히려 그 가치를 인정할 길을 연다고 했습니다. 과제는 에로스를 몰아내는 것이 아니라 새 화살로 무장시키는 것이라고 씁니다.",
-                  "정반대입니다. 그는 사랑이 상대의 마음을 통째로 소유할 권리를 준다는 생각을 소유 제도에 기댄 문화가 심은 것이라 보고, 배타성을 프롤레타리아의 이상에서 뺐습니다."
+                  "편지는 평등, 소유욕 없는 상호 권리 인정, 동지적 세심함을 세 원칙으로 들고, 상대의 마음을 독차지하려는 요구를 부르주아 문화가 기른 ‘소유의 감정’이라 부릅니다. 이어 집단에 대한 사랑-의무를 더 강한 감정으로 놓습니다.",
+                  "콜론타이는 정신적 결속 없는 성적 끌림을 ‘날개 없는 에로스’라 부르고 부르주아 도덕보다 더 엄하게 배격하겠다고 했습니다. ‘물 한 잔 이론’은 체트킨의 회고 속 레닌이 반사회적이라 부른 견해입니다.",
+                  "사랑에 기초한 프롤레타리아 민사혼은 1915년 레닌이 아르만트에게 제안한 대비입니다. 콜론타이는 관계가 오래가는 결합이든 일시적이든 형식은 상관없고 내용이 문제라고 했습니다."
                 ],
                 "en": [
-                  "The letter numbers the three principles and calls the claim to own the beloved's heart wholly a 'sense of property' fostered by bourgeois culture; it then places love-duty to the collective above them.",
-                  "Kollontai said working-class ideology does not abolish winged Eros but clears the way to recognising its value; the task is not to drive Eros out but to rearm its quiver with new arrows.",
-                  "The reverse: she saw the idea that love gives a right to possess the other's heart wholly as planted by a culture built on property, and excluded exclusivity from the proletarian ideal."
+                  "The letter gives equality, mutual recognition of rights without possessiveness, and comradely sensitivity as the three principles, and calls the claim to own the beloved's heart wholly a 'sense of property' fostered by bourgeois culture; it then places love-duty to the collective above them.",
+                  "Kollontai called sexual attraction without spiritual ties 'wingless Eros' and said she would reject it more sternly than bourgeois morality did. The 'glass of water theory' is the view that Lenin, in Zetkin's recollection, called anti-social.",
+                  "A proletarian civil marriage based on love is the contrast Lenin proposed to Armand in 1915. Kollontai said the form, lasting union or passing relationship, did not matter; the content did."
                 ]
               },
               "explanation": {
@@ -1009,13 +1009,16 @@ module.exports = {
               "보부아르는 역사적 유물론에서 인류가 동물 종이 아니라 역사적 현실이라는 점, 근력의 약함이 청동기·철기와의 관계에서만 구체적 열등이 된다는 점을 받아들입니다. 그러나 공동 소유에서 사유재산으로 넘어간 과정도, 사유재산이 왜 반드시 여성의 예속을 낳았는지도 엥겔스가 설명하지 않았다고 봅니다.",
               "소유에 대한 인간의 관심은 도구만으로는 설명되지 않고 ‘존재론적 하부구조’를 요구한다고 합니다. 인간 의식에 원초적인 ‘타자’ 범주와 타자를 지배하려는 원초적 지향이 없었다면 청동 도구의 발견이 여성 억압을 낳을 수 없었다는 것입니다. 그래서 프로이트의 성적 일원론과 엥겔스의 경제적 일원론을 같은 이유로 거부합니다.",
               "서론에서 그녀는 남성이 주체이자 절대이고 여성은 ‘타자’라고 씁니다. 프롤레타리아는 “우리”라고 말하지만 여성은 남성들 사이에 흩어져 살며 자기 계급의 남성과 더 가깝게 묶여 있다고 봅니다.",
-              "제2권은 “사람은 여자로 태어나지 않는다. 여자가 된다”로 시작합니다. 생물학적·심리적·경제적 운명 가운데 어느 것도 여성의 모습을 정하지 않고 문명 전체가 그것을 빚는다는 뜻입니다. 이 문장을 성(sex)과 젠더의 구별로 읽는 것은 후대의 해석이고, 보부아르는 ‘젠더’라는 말을 쓰지 않았습니다."
+              "제2권은 “사람은 여자로 태어나지 않는다. 여자가 된다”로 시작합니다. 생물학적·심리적·경제적 운명 가운데 어느 것도 여성의 모습을 정하지 않고 문명 전체가 그것을 빚는다는 뜻입니다. 이 문장을 성(sex)과 젠더의 구별로 읽는 것은 후대의 해석이고, 보부아르는 ‘젠더’라는 말을 쓰지 않았습니다.",
+              "같은 장에서 보부아르는 엥겔스가 성의 대립을 계급 갈등으로 환원하려 했지만 그 명제는 지탱될 수 없다고 봅니다. 계급 분할에는 생물학적 기반이 없고 프롤레타리아는 계급으로서 사라지기를 꾀하지만, 여성은 성으로서 사라지기를 바라지 않고 남성과 삶과 이해를 함께한다는 것입니다. 또 여성의 재생산 기능은 생산 능력만큼 중요한데, 엥겔스는 사회주의 공동체가 가족을 폐지하리라는 추상적 해법에 그쳤다고 비판합니다.",
+              "제2권 결론에서 보부아르는 같은 교육과 임금, 자유로운 합의에 바탕한 결혼, 피임과 낙태의 허용처럼 소비에트 혁명이 약속한 평등을 들고, 그것으로 충분한지 묻습니다. 그녀의 답은 경제적 조건이 여성 변화의 근본 요인이었고 지금도 그렇지만, 그것이 도덕적·사회적·문화적 귀결을 낳기 전에는 새로운 여성이 나타날 수 없다는 것입니다. 그 귀결은 소련에서도 아직 실현되지 않았다고 봅니다."
             ]
           },
           {
             "title": "미첼: 네 구조의 ‘중층결정’된 통일",
             "items": [
               "미첼은 고전들이 문제의 중요성은 강조했지만 이론적으로 풀지는 못했다고 봅니다. 엥겔스는 여성 문제를 노동 능력으로 환원했고, 베벨과 레닌은 사회주의와 여성 해방을 미리 같다고 놓았을 뿐 그것이 여성의 처지를 어떻게 바꿀지 보여 주지 않았다는 것입니다.",
+              "미첼은 『제2의 성』을 이 주제에 관한 단일 저작으로는 지금까지 가장 큰 기여라고 부릅니다. 그러나 남성이 다른 의식을 지배하려 한다는 ‘존재론적’ 설명은 몰시간적이어서 사회주의가 왜 그것을 바꿀지 알기 어렵고, 소유 체계를 중심으로 한 제1권의 서술은 진화론적 회고 서사라고 비판합니다.",
               "그녀는 여성의 처지를 생산, 재생산, 섹슈얼리티, 아이의 사회화라는 구조들로 나누고, 이 구조들이 저마다 다른 속도로 움직이며 만드는 복합적 통일이 언제나 ‘중층결정’되어 있다고 썼습니다. 1966년판 각주는 이 생각을 알튀세르의 「모순과 중층결정」에서 빌렸다고 밝힙니다.",
               "결론은 네 구조가 모두 변혁될 때만 해방이 가능하다는 것입니다. 한 구조의 변화는 다른 구조의 강화로 상쇄될 수 있다며, 섹슈얼리티를 먼저 해방하려다 스탈린 시대에 전통 규범이 되살아난 소련과, 생산에 힘을 쏟되 성을 억압한 중국을 그 예로 듭니다.",
               "1966년판은 당시 서구에서 가장 빠르게 움직이는 구조를 섹슈얼리티, 곧 ‘약한 고리’로 꼽으면서도 경제적 요구가 여전히 으뜸이라고 덧붙였습니다. 미첼이 말한 것은 ‘이데올로기’이고, 알튀세르의 ‘이데올로기적 국가장치’ 개념(1970)은 이 글보다 뒤에 나왔습니다."
@@ -1044,13 +1047,16 @@ module.exports = {
               "Beauvoir accepts from historical materialism that humanity is a historical reality rather than an animal species, and that muscular weakness became a concrete inferiority only in relation to bronze and iron tools. But Engels, she says, explained neither how communal ownership gave way to private property nor why private property had to enslave women.",
               "Man's interest in property cannot be explained by the tool alone; it implies an 'ontological infrastructure'. Had human consciousness not contained the original category of the Other and an original aspiration to dominate the Other, the bronze tool could not have brought about women's oppression. So she rejects Freud's sexual monism and Engels's economic monism for the same reason.",
               "In the introduction she writes that man is the Subject and the Absolute, and woman is the Other. Proletarians say 'we', but women live dispersed among men and are bound more closely to the men of their class than to other women.",
-              "The second volume opens: 'One is not born, but becomes, a woman.' No biological, psychological or economic destiny fixes the figure of the human female; civilisation as a whole shapes it. Reading this as a sex/gender distinction is a later interpretation; Beauvoir did not use the word 'gender'."
+              "The second volume opens: 'One is not born, but becomes, a woman.' No biological, psychological or economic destiny fixes the figure of the human female; civilisation as a whole shapes it. Reading this as a sex/gender distinction is a later interpretation; Beauvoir did not use the word 'gender'.",
+              "In the same chapter Beauvoir says Engels tried to reduce the opposition of the sexes to class conflict, and that the thesis is untenable. Class division has no biological basis and the proletariat aims at its own disappearance as a class, but woman does not seek to disappear as a sex, and she shares life and interests with man. Her reproductive function, moreover, is as important as her productive capacity, while Engels offered only the abstract solution that the socialist community would abolish the family.",
+              "In the conclusion of volume two Beauvoir lists the equality the Soviet revolution promised, the same education and wages, marriage based on free agreement, contraception and abortion allowed, and asks whether that is enough. Her answer is that the economic condition has been and remains the basic factor in women's evolution, but until it brings the moral, social and cultural consequences it promises and requires, the new woman cannot appear. Those consequences, she says, have not been realised even in the Soviet Union."
             ]
           },
           {
             "title": "Mitchell: the overdetermined unity of four structures",
             "items": [
               "Mitchell holds that the classics stressed the importance of the problem but did not solve it theoretically. Engels reduced the woman question to the capacity to work; Bebel and Lenin set socialism and women's liberation equal a priori without showing how socialism would transform women's condition.",
+              "Mitchell calls The Second Sex the greatest single contribution on the subject so far. But the 'ontological' account of man seeking to dominate another consciousness is atemporal, so it is hard to see why socialism should change it, and the account in volume one, centred on the property system, is an evolutionist retrospective narrative.",
               "She divides woman's condition into structures (production, reproduction, sexuality and the socialisation of children) moving at different paces, whose complex unity is always 'overdetermined'. A note in the 1966 version credits the idea to Althusser's 'Contradiction and Overdetermination'.",
               "Her conclusion is that liberation can be achieved only if all four structures are transformed, since a change in one can be offset by a reinforcement of another. Her examples are the Soviet Union, where an attempt led by sexual liberation was followed by a Stalinist restoration of traditional norms, and China, where the stress on production came with sexual repression.",
               "The 1966 version named sexuality as the structure then moving fastest in the West, the 'weak link', while adding that economic demands were still primary. Mitchell speaks of 'ideology'; Althusser's concept of 'ideological state apparatuses' (1970) came after this essay."
@@ -1171,13 +1177,13 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "사유재산으로의 이행과 그것이 여성을 예속시킨 까닭을 설명하지 않았고, 의식 속의 ‘타자’ 범주 없이는 청동 도구가 억압을 낳을 수 없었다고 했습니다.",
-                  "도구와 기술은 여성의 처지와 아무 관계가 없는데도 엥겔스가 청동기와 쟁기에 지나친 무게를 두었다고 했습니다.",
+                  "사유재산으로의 이행과 그것이 여성을 예속시킨 까닭을 설명하지 않았고, 의식 속 ‘타자’ 범주를 놓쳤다고 했습니다.",
+                  "경제만 보고 성적 충동과 남근 선망 같은 정신분석의 요인을 빠뜨렸으니, 프로이트로 그 빈자리를 채워야 한다고 했습니다.",
                   "여성의 근력이 약하다는 생물학적 사실 자체가 어떤 사회에서든 남성 지배를 낳는다는 점을 엥겔스가 놓쳤다고 했습니다."
                 ],
                 "en": [
-                  "He explained neither the passage to private property nor why it enslaved women, and without the category of the Other in consciousness the bronze tool could not have caused oppression.",
-                  "Tools and techniques have nothing to do with women's condition, yet Engels gave the bronze age and the plough far too much weight.",
+                  "He explained neither the passage to private property nor why it enslaved women, and missed the category of the Other in consciousness.",
+                  "He looked only at the economy and left out psychoanalytic factors such as the sexual drive and penis envy, a gap Freud's theory should fill.",
                   "Engels missed that the biological fact of women's lesser muscular strength produces male domination in any society whatever."
                 ]
               },
@@ -1185,12 +1191,12 @@ module.exports = {
               "choiceFeedback": {
                 "ko": [
                   "그녀는 엥겔스가 이행 과정을 전혀 밝히지 않았고, 사유재산이 여성 예속을 필연적으로 낳았는지도 분명하지 않다고 씁니다. 타자 지배의 지향이 있어야 청동 도구가 억압으로 이어진다는 것입니다.",
-                  "보부아르는 근력의 약함이 청동·철 도구와의 관계에서만 구체적 열등이 되었다는 점을 엥겔스가 잘 보았다고 인정합니다. 기술의 역할을 부정하지 않습니다.",
+                  "보부아르는 프로이트의 성적 일원론과 엥겔스의 경제적 일원론을 같은 이유로 거부합니다. 정신분석으로 빈자리를 채우자는 것이 아니라 ‘존재론적 하부구조’를 요구했습니다.",
                   "반대입니다. 그녀는 생물학적 사실이 경제적·사회적 맥락에 따라 전혀 다른 값을 가지며, 기술이 근력 차이를 없앨 수도 있다고 썼습니다."
                 ],
                 "en": [
                   "She writes that Engels gives no indication of how the passage came about and that it is not clear private property necessarily enslaved women; only an aim of dominating the Other turns the bronze tool into oppression.",
-                  "Beauvoir grants that Engels saw clearly how muscular weakness became a concrete inferiority only in relation to the bronze and iron tool. She does not deny the role of technique.",
+                  "Beauvoir rejects Freud's sexual monism and Engels's economic monism for the same reason. She did not want psychoanalysis to fill the gap; she asked for an 'ontological substructure'.",
                   "The reverse: she wrote that biological facts take on quite different values according to the economic and social context, and that technique can cancel the muscular difference."
                 ]
               },
@@ -1217,27 +1223,27 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "계급 분할에는 생물학적 기반이 없고 프롤레타리아는 계급으로서 사라지기를 꾀하지만, 여성은 성으로서 사라지기를 바라지 않으며 재생산 기능도 생산 능력만큼 중요하다고 했습니다.",
-                  "여성은 이미 산업 노동에 들어가 남성과 같은 조건에 있으므로 따로 다룰 여성 문제가 남아 있지 않다고 했습니다.",
-                  "가족을 폐지하면 여성은 곧바로 국가에 직접 속하게 되어 남성의 억압에서 벗어나므로 계급 분석이 필요 없다고 했습니다."
+                  "계급 분할에는 생물학적 기반이 없지만, 여성은 성으로서 사라지기를 바라지 않고 재생산 기능도 생산만큼 중요하다고 했습니다.",
+                  "성 계급은 경제 계급보다 더 깊고 먼저 생긴 것이므로, 계급 갈등은 오히려 성의 대립에서 뒤늦게 갈라져 나온 것이라고 했습니다.",
+                  "엥겔스가 가족 폐지를 미룬 탓이므로, 사회주의 공동체가 가족을 폐지하면 성의 대립도 계급처럼 사라진다고 했습니다."
                 ],
                 "en": [
-                  "Class division has no biological basis and the proletariat aims at its own disappearance as a class, while woman does not seek to disappear as a sex, and her reproductive function matters as much as her productive capacity.",
-                  "Women had already entered industrial labour on the same terms as men, so no separate woman question remained to be treated.",
-                  "Abolishing the family would attach women directly to the State and free them at once from male oppression, so class analysis was unnecessary."
+                  "Class division has no biological basis, but woman does not seek to vanish as a sex, and reproduction matters as much as production.",
+                  "Sex class is deeper and older than economic class, so class conflict is rather something that branched off from the opposition of the sexes.",
+                  "It was because Engels put off abolishing the family; once the socialist community abolished it, the sexes' opposition would vanish like classes."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
                   "그녀는 노예가 노동 속에서 주인에 맞서 자기를 의식하고 프롤레타리아가 반란으로 자기 처지를 시험하는 것과 달리, 여성은 남성과 삶과 이해를 함께하며 혁명의 욕구가 없다고 씁니다.",
-                  "보부아르는 여성을 단지 노동자로만 보는 것은 자기기만이라고 했습니다. 여성 문제가 산업 노동으로 해소되었다고 보지 않습니다.",
-                  "정반대입니다. 그녀는 가족 폐지가 곧 여성 해방은 아니며, 스파르타와 나치 체제처럼 국가에 직접 묶여도 남성에게 억압될 수 있다고 했습니다."
+                  "성 계급을 경제 계급보다 깊은 것으로 놓은 것은 4편의 파이어스톤입니다. 보부아르는 둘을 혼동할 수 없다고 했을 뿐, 계급을 성의 대립에서 끌어내지 않았습니다.",
+                  "보부아르는 가족 폐지를 오히려 엥겔스의 추상적 해법이라 비판했습니다. 가족 폐지가 곧 여성 해방은 아니며, 스파르타와 나치 체제처럼 국가에 직접 묶여도 남성에게 억압될 수 있다고 했습니다."
                 ],
                 "en": [
                   "She writes that unlike the slave, who becomes conscious of himself against the master, and the proletariat, which tests its condition in revolt, woman shares life and interests with man and harbours no wish for revolution.",
-                  "Beauvoir said that woman cannot in good faith be regarded simply as a worker; she did not think industrial labour had dissolved the woman question.",
-                  "The reverse: she said abolishing the family does not necessarily free woman, since Sparta and the Nazi regime show she can be attached directly to the State and still be oppressed by men."
+                  "Placing sex class deeper than economic class is Firestone's move, in lesson 4. Beauvoir said only that the two cannot be confused; she did not derive class from the opposition of the sexes.",
+                  "Beauvoir criticised abolishing the family as Engels's abstract solution. Abolishing the family does not necessarily free woman, since Sparta and the Nazi regime show she can be attached directly to the State and still be oppressed by men."
                 ]
               },
               "explanation": {
@@ -1263,14 +1269,14 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "경제적 조건은 여성 변화의 근본 요인이었고 지금도 그렇지만, 그것이 도덕적·사회적·문화적 귀결을 낳기 전에는 새로운 여성이 나타날 수 없다고 했습니다.",
+                  "경제적 조건이 근본 요인이지만, 그것이 도덕적·사회적·문화적 귀결을 낳기 전엔 새로운 여성이 나올 수 없다고 했습니다.",
                   "경제적 조건은 부차적인 요인일 뿐이므로, 여성 각자가 의식을 바꾸고 결단하면 제도와 무관하게 해방될 수 있다고 했습니다.",
-                  "소련에서는 경제적 평등이 이미 그 귀결까지 실현되었으므로, 다른 나라도 같은 경제 개혁만 하면 된다고 했습니다."
+                  "여성이 대규모 사회적 생산에 들어가기만 하면 해방의 조건이 갖추어지므로, 새로운 여성도 저절로 따라 나온다고 했습니다."
                 ],
                 "en": [
-                  "The economic condition has been and remains the basic factor in women's evolution, but until it brings its moral, social and cultural consequences the new woman cannot appear.",
+                  "The economic condition is the basic factor, but until it brings its moral, social and cultural consequences the new woman cannot appear.",
                   "The economic condition is only a secondary factor, so each woman could free herself by changing her consciousness and deciding, whatever the institutions.",
-                  "In the Soviet Union economic equality had already been realised together with its consequences, so other countries needed only the same economic reform."
+                  "Once women entered large-scale social production the conditions of liberation would be in place, and the new woman would follow of herself."
                 ]
               },
               "answer": 0,
@@ -1278,12 +1284,12 @@ module.exports = {
                 "ko": [
                   "그녀는 경제적 조건만 바꾸면 여성이 변한다고 믿어서는 안 되지만 이 요인이 근본적이라고 씁니다. 그 귀결은 아직 어디서도 실현되지 않았다고 덧붙입니다.",
                   "보부아르는 경제적 조건을 ‘근본 요인’이라 불렀고, 여성은 집단적 진화를 통해서만 새 옷을 지을 수 있으며 홀로 선 교육자는 그 일을 못 한다고 했습니다.",
-                  "결론은 그 귀결이 프랑스나 미국에서와 마찬가지로 소련에서도 아직 실현되지 않았다고 말합니다."
+                  "여성의 사회적 생산 참여를 해방의 첫 전제로 본 것은 엥겔스와 베벨의 답입니다. 보부아르는 그 귀결이 소련에서도 아직 실현되지 않았다며, 경제적 조건만 바꾸면 여성이 변한다고 믿어서는 안 된다고 했습니다."
                 ],
                 "en": [
                   "She writes that we must not believe a change in economic condition alone transforms woman, though this factor is basic; she adds that its consequences have so far been realised nowhere.",
                   "Beauvoir called the economic condition the basic factor, and said woman could renew herself only through a collective evolution; no isolated educator could do it.",
-                  "The conclusion says those consequences have been realised nowhere, in the Soviet Union no more than in France or the United States."
+                  "Seeing women's entry into social production as the first condition of liberation was the answer of Engels and Bebel. Beauvoir said its consequences had not been realised even in the Soviet Union, and that we must not believe a change in economic condition alone transforms woman."
                 ]
               },
               "explanation": {
@@ -1309,27 +1315,27 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "문제의 중요성은 강조했지만 이론적으로 풀지 못해, 여성 해방이 사회주의 이론에 구조적으로 통합되지 않은 규범적 이상에 머물렀다고 했습니다.",
-                  "여성의 종속이 중요한 문제라는 점부터 인정하지 않았으므로, 고전들에서 여성 해방론을 찾을 수 없다고 했습니다.",
-                  "경제와 사유재산을 너무 가볍게 다루었으니, 여성 문제를 생산 관계 하나로 더 엄격하게 환원해야 한다고 했습니다."
+                  "중요성은 강조했지만 이론적으로 풀지 못해, 여성 해방이 사회주의 이론에 통합되지 않은 규범적 이상으로 남았다고 했습니다.",
+                  "엥겔스가 기댄 모건의 인류학이 부정확했던 것이 한계이므로, 그 사실 오류만 바로잡으면 고전의 해법은 그대로 쓸 수 있다고 했습니다.",
+                  "여성 문제를 가족과 재생산에서만 찾고 생산을 소홀히 했으므로, 여성의 노동 참여를 더 앞세워야 한다고 했습니다."
                 ],
                 "en": [
-                  "They stressed the problem's importance but did not solve it theoretically, so women's liberation stayed a normative ideal not structurally integrated into socialist theory.",
-                  "They did not even admit that women's subordination was an important problem, so no theory of women's liberation can be found in the classics.",
-                  "They treated the economy and private property too lightly, so the woman question should be reduced more strictly to relations of production alone."
+                  "They stressed the problem's importance but did not solve it in theory, so women's liberation stayed a normative ideal outside socialist theory.",
+                  "The limit was the inaccuracy of Morgan's anthropology, on which Engels relied; correct those factual errors and the classical solution still holds.",
+                  "They looked for the woman question only in the family and reproduction and neglected production, so women's entry into work should come first."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
                   "미첼은 엥겔스가 여성 문제를 노동 능력으로 환원했고, 베벨과 레닌은 사회주의와 여성 해방을 미리 같다고 놓았을 뿐 어떻게 바뀔지 구체적으로 보여 주지 않았다고 씁니다.",
-                  "글의 첫머리는 19세기의 위대한 사회주의 사상가들이 모두 여성 종속과 해방의 필요를 인정했고, 그것이 혁명 운동의 고전적 유산이라고 말합니다.",
-                  "반대입니다. 미첼은 고전들의 해법이 지나치게 경제주의적이라고 비판했습니다. 더 엄격한 환원이 아니라 구조의 분화를 요구합니다."
+                  "미첼은 엥겔스가 모건의 부정확한 인류학에 기댔다고 지적하지만, 한계를 사실 오류에서 찾지 않습니다. 문제는 여성 해방이 이론 안에 구조적으로 자리 잡지 못한 데 있다고 봤습니다.",
+                  "반대입니다. 미첼은 엥겔스가 여성 문제를 노동 능력으로 환원했다고 비판했고, 생산만이 아니라 재생산·섹슈얼리티·아이의 사회화까지 네 구조를 함께 보자고 했습니다."
                 ],
                 "en": [
                   "Mitchell writes that Engels reduced the woman question to the capacity to work, while Bebel and Lenin set socialism and liberation equal a priori without showing concretely how it would come about.",
-                  "The essay opens by saying all the great socialist thinkers of the nineteenth century recognised women's subordination and the need for liberation; it is part of the movement's classical heritage.",
-                  "The reverse: Mitchell criticised the classical solutions as overly economist. She asks for differentiating structures, not a stricter reduction."
+                  "Mitchell does note that Engels relied on Morgan's inaccurate anthropology, but she does not locate the limit in factual errors. The problem was that women's liberation never found a structural place in the theory.",
+                  "The reverse: Mitchell criticised Engels for reducing the woman question to the capacity to work, and asked that reproduction, sexuality and the socialisation of children be considered along with production."
                 ]
               },
               "explanation": {
@@ -1355,12 +1361,12 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "이 주제에 대한 가장 큰 기여로 꼽으면서도, 그 존재론적 설명이 몰역사적이어서 사회주의가 왜 그것을 바꿀지 알기 어렵고 서술은 진화론적이라고 했습니다.",
+                  "가장 큰 기여로 꼽으면서도, 그 존재론적 설명이 몰시간적이라 사회주의가 왜 그것을 바꿀지 알기 어렵다고 했습니다.",
                   "보부아르가 경제를 전혀 다루지 않고 심리만 다루었으므로, 마르크스주의 전통과는 아무 접점이 없는 책이라고 했습니다.",
                   "보부아르가 네 구조를 처음 구별했으나 그 상호관계를 따지지 않았으니, 그 목록을 그대로 잇되 더 채우면 된다고 했습니다."
                 ],
                 "en": [
-                  "She called it the greatest single contribution on the subject, but found its ontological account atemporal, so it is hard to see why socialism would change it, and its narrative evolutionist.",
+                  "She called it the greatest single contribution, but its ontological account is atemporal, so why socialism would change it is unclear.",
                   "Beauvoir dealt only with psychology and not at all with the economy, so the book had no point of contact with the Marxist tradition.",
                   "Beauvoir had first distinguished the four structures but not their interrelations, so her list should simply be continued and filled out."
                 ]
@@ -2121,27 +2127,27 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "계급이나 산업예비군 같은 범주는 자본이 만드는 빈자리를 설명할 뿐, 어떤 사람이 어느 자리를 채우는지, 왜 여성이 남성에게 종속되는지는 말해 주지 못한다는 뜻이었습니다.",
-                  "마르크스와 엥겔스가 여성 문제를 한 번도 다루지 않았으므로, 마르크스주의 전통에서 여성 억압에 관한 논의는 아무것도 찾을 수 없다는 뜻이었습니다.",
-                  "역사적 유물론이라는 방법 자체가 남성 중심적이어서, 페미니즘은 마르크스주의의 방법을 버리고 심리 분석에서 새로 출발해야 한다는 뜻이었습니다."
+                  "계급이나 산업예비군 같은 범주는 자본이 만드는 빈자리를 설명할 뿐, 누가 그 자리를 채우는지는 말해 주지 못한다는 뜻이었습니다.",
+                  "마르크스주의 범주는 가사 노동이 가치를 만든다는 점을 보지 못하므로, 가사 노동에도 임금을 지급하라고 요구해야 한다는 뜻이었습니다.",
+                  "자본은 남녀를 가리지 않고 똑같이 착취하므로, 성차별은 자본주의가 발전하면서 사라질 낡은 편견의 잔재라는 뜻이었습니다."
                 ],
                 "en": [
-                  "Categories such as class and the reserve army explain the empty places capital creates, but not which people fill which places, or why women are subordinate to men.",
-                  "Marx and Engels never discussed women at all, so nothing on women's oppression can be found anywhere in the Marxist tradition.",
-                  "The method of historical materialism is itself male-centred, so feminism must drop Marxist method and start afresh from psychoanalysis."
+                  "Categories such as class and the reserve army explain the empty places capital creates, but not who fills which place.",
+                  "Marxist categories miss that housework creates value, so feminists should demand that housework, too, be paid a wage.",
+                  "Capital exploits men and women alike without distinction, so sexism is a leftover prejudice that capitalist development will sweep away."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
                   "하트먼은 마르크스의 이론이 ‘빈자리’의 발전을 다루는 이론이며, 자본이 그 자리를 채울 개인에게 무관심하듯 범주도 누가 채우는지 알려 주지 않는다고 썼습니다.",
-                  "하트먼은 제1부에서 엥겔스, 자레츠키, 달라 코스타의 여성 문제 분석을 차례로 검토합니다. 문제는 논의가 없다는 것이 아니라 여성과 남성의 관계를 놓친다는 것이었습니다.",
-                  "반대입니다. 하트먼은 역사적 유물론의 방법을 페미니즘의 질문에 쓰자고 했고, 급진 페미니즘은 오히려 역사에 눈멀고 충분히 유물론적이지 않다고 비판했습니다."
+                  "가사 노동이 잉여가치를 만든다고 보고 가사 노동 임금을 요구한 것은 달라 코스타 등의 입장입니다. 하트먼은 이 논의도 여성과 자본의 관계만 묻고 여성과 남성의 관계는 놓친다고 봤습니다.",
+                  "자본주의가 여성을 임금 노동에 끌어들여 가부장제를 무너뜨리리라는 것은 하트먼이 비판한 엥겔스 이래의 낙관입니다. 그녀는 가부장제가 물질적 토대를 지닌 남성들 사이의 관계로서 자본주의와 동반자 관계를 맺는다고 봤습니다."
                 ],
                 "en": [
                   "Hartmann wrote that Marx's theory is a theory of the development of 'empty places'; just as capital is indifferent to who fills them, the categories give no clue who will.",
-                  "In part I Hartmann examines in turn the analyses of Engels, Zaretsky and Dalla Costa. The problem was not absence of discussion but that it missed the relations between women and men.",
-                  "The reverse: Hartmann wanted to put the method of historical materialism to the service of feminist questions, and criticised radical feminism for being blind to history and insufficiently materialist."
+                  "Treating housework as producing surplus value and demanding wages for it was the position of Dalla Costa and others. Hartmann held that this, too, asked only about women and capital and missed the relations between women and men.",
+                  "The expectation that capitalism would draw women into wage labour and break down patriarchy is the optimism, going back to Engels, that Hartmann criticised. She saw patriarchy as a set of relations among men with a material base, in partnership with capitalism."
                 ]
               },
               "explanation": {
@@ -2259,13 +2265,13 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "가족에 별도의 장을 두고 성별 분업을 생물학적 소여로 다루며, 서문의 두 가지 생산이 이원성을 드러내고, 재산 없는 가구의 여성 종속은 설명하지 못한다는 점을 들었습니다.",
-                  "엥겔스가 가족과 여성을 전혀 다루지 않고 계급 투쟁만으로 역사를 설명했기 때문에, 여성 억압이 계급과 무관한 별도의 체계로 남게 되었다는 점을 들었습니다.",
+                  "가족에 별도의 장을 두고 성별 분업을 생물학적 소여로 다루며, 서문의 두 가지 생산이 이원성을 드러낸다는 점을 들었습니다.",
+                  "엥겔스가 여성의 공적 생산 참여와 가사의 공공 산업화를 프롤레타리아 여성 해방의 길로 내세웠다는 점을 들었습니다.",
                   "엥겔스가 여성 억압을 자본 축적의 법칙에서 직접 끌어냈기 때문에, 가족과 성별 분업이 자본과 나란한 두 번째 체계처럼 보이게 되었다는 점을 들었습니다."
                 ],
                 "en": [
-                  "It gives the family a separate chapter, treats the sex-division of labour as a biological given, its preface's twofold production makes the duality explicit, and it cannot explain women's subordination in propertyless households.",
-                  "Engels ignored the family and women entirely and explained history by class struggle alone, leaving women's oppression as a separate system unrelated to class.",
+                  "It gives the family a separate chapter, treats the sex-division of labour as a biological given, and its preface's twofold production makes the duality explicit.",
+                  "Engels put forward women's entry into public production and the turning of housework into a public industry as the road to proletarian women's liberation.",
                   "Engels derived women's oppression directly from the laws of capital accumulation, which made the family and sex-division of labour look like a second system alongside capital."
                 ]
               },
@@ -2273,12 +2279,12 @@ module.exports = {
               "choiceFeedback": {
                 "ko": [
                   "보걸은 『기원』에서 성 갈등과 계급 갈등이 역사적으로 평행할 뿐 이론적 관계가 자율성으로 남는다고 보고, 서문의 ‘인간 자신의 생산’이 별도의 기제를 넌지시 암시한다고 썼습니다.",
-                  "엥겔스는 가족에 책의 한 장을 따로 할애했고, 보걸은 바로 그 구성이 가족을 거의 자율적인 범주로 다룰 수 있다는 함의를 준다고 지적했습니다.",
+                  "보걸은 이 주장을 오히려 『기원』에 들어 있는 사회적 재생산 관점의 흔적으로 봅니다. 이중체계 관점의 근거로 든 것이 아닙니다.",
                   "『기원』은 자본 축적이 아니라 사유재산과 상속, 일부일처제의 역사에서 여성 억압을 설명합니다. 보걸이 『자본』에 더 가깝다고 본 것은 사회적 재생산 관점이었습니다."
                 ],
                 "en": [
                   "Vogel held that in the Origin sex- and class-conflict remain historically parallel, their theoretical relation one of autonomy, and that the preface's 'production of human beings themselves' hints obliquely at a distinct mechanism.",
-                  "Engels devoted a separate chapter of the book to the family, and Vogel pointed to that very arrangement as implying the family could be considered virtually autonomously.",
+                  "Vogel read this argument as the trace of the social-reproduction perspective in the Origin, not as evidence of the dual-systems perspective.",
                   "The Origin explains women's oppression through private property, inheritance and monogamy, not capital accumulation. It was the social-reproduction perspective that Vogel saw as closer to Capital."
                 ]
               },
@@ -2423,7 +2429,8 @@ module.exports = {
             "items": [
               "라이히는 1933년 초판에서 성 억압이 문화 그 자체의 전제조건이 아니라 비교적 늦게, 생산수단의 사유재산과 계급 분열이 시작되면서 형성되었다고 봅니다. 그래서 문제는 문화의 문제가 아니라 사회 질서의 문제라고 했습니다. 1946년 증보판은 이 대목을 ‘권위주의적 가부장제’로 고쳐 써서 마르크스주의 어휘를 덜어 냈습니다.",
               "사회경제 구조와 성 구조의 결합과 그 재생산은 생애 첫 4~5년, 가족 안에서 이루어지고, 교회는 그 기능을 이어 갈 뿐이라고 했습니다. 계급국가에게 가족은 그 구조와 이데올로기를 만드는 공장이 된다는 것입니다(1946년판은 ‘권위주의 국가’).",
-              "아이의 성기 성욕을 도덕적으로 금지하면 아이는 겁 많고 순종적이 되고, 반항하는 힘과 비판 능력이 마비되어 권위주의 질서에 적응한 신민이 된다고 했습니다. 이 분석을 그는 마르크스의 사회학과 프로이트의 심리학에 기댄 ‘사회적 성 경제학’이라 불렀습니다."
+              "아이의 성기 성욕을 도덕적으로 금지하면 아이는 겁 많고 순종적이 되고, 반항하는 힘과 비판 능력이 마비되어 권위주의 질서에 적응한 신민이 된다고 했습니다. 이 분석을 그는 마르크스의 사회학과 프로이트의 심리학에 기댄 ‘사회적 성 경제학’이라 불렀습니다.",
+              "같은 절에서 라이히는 공산주의자 노동자 여성과 똑같이 굶주리면서도 중앙당에, 뒤에는 나치당에 투표하는 그리스도교도 노동자 여성을 예로 듭니다. 경제적 곤궁에 성적 곤궁이 겹치면 처지의 자각이 날카로워진다는 속류 마르크스주의의 가정으로는 이것이 설명되지 않고, 두 여성의 차이는 성 이데올로기에 있다는 것입니다. 1946년 증보판은 두 여성을 ‘보수적’, ‘진보적’ 여성으로 바꿔 썼습니다."
             ]
           },
           {
@@ -2467,7 +2474,8 @@ module.exports = {
             "items": [
               "In the 1933 first edition Reich held that sexual repression is not a precondition of culture as such; it took shape relatively late, with private property in the means of production and the beginning of class division. The problem, he said, is therefore one of the social order, not of culture. The enlarged 1946 edition rewrote this as 'authoritarian patriarchy', thinning out the Marxist vocabulary.",
               "The meshing of socio-economic and sexual structure, and its reproduction, takes place in the first four or five years of life and in the family; the Church only continues that function. For the class state ('the authoritarian state' in 1946), the family becomes the factory of its structure and ideology.",
-              "Moral inhibition of the small child's genital sexuality makes the child fearful, shy and obedient, paralyses rebellious forces and the capacity for criticism, and produces a subject adapted to the authoritarian order. He called this analysis 'social sex-economy', resting on Marx's sociology and Freud's psychology."
+              "Moral inhibition of the small child's genital sexuality makes the child fearful, shy and obedient, paralyses rebellious forces and the capacity for criticism, and produces a subject adapted to the authoritarian order. He called this analysis 'social sex-economy', resting on Marx's sociology and Freud's psychology.",
+              "In the same section Reich takes the example of a Christian working woman who goes as hungry as a communist one yet votes for the Centre Party and later the Nazis. The vulgar Marxist assumption that sexual misery added to economic misery sharpens awareness of one's situation cannot explain this; the difference between the two women lies in their sexual ideology. The enlarged 1946 edition rewrote them as the 'conservative' and the 'progressive' woman."
             ]
           },
           {
@@ -2650,12 +2658,12 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "성을 금하는 도덕적 금제가 그녀가 자기 사회적 처지를 자각하지 못하게 막고, 교회와 ‘성 볼셰비즘’에 대한 두려움에 그녀를 묶어 둔다고 설명했습니다.",
+                  "성을 금하는 도덕적 금제가 그녀의 처지 자각을 막고, 그녀를 교회와 ‘성 볼셰비즘’에 대한 두려움에 묶어 둔다고 설명했습니다.",
                   "경제적 궁핍이 아직 충분히 깊지 않아서이므로, 가난이 더 심해지고 성적 곤궁까지 겹치면 그녀도 자연스럽게 자기 처지를 깨닫게 된다고 설명했습니다.",
                   "그녀는 사실 공산주의자 노동자 여성보다 형편이 나아서 지킬 재산이 있었고, 그 경제적 이해가 그녀를 보수 정당 쪽으로 이끌었다고 설명했습니다."
                 ],
                 "en": [
-                  "Moral anti-sexual inhibition stops her from becoming aware of her social situation and binds her to the Church and to fear of 'sexual Bolshevism'.",
+                  "Moral anti-sexual inhibition blocks awareness of her situation and binds her to the Church and to fear of 'sexual Bolshevism'.",
                   "Her economic hardship was not yet deep enough; if poverty worsened and sexual misery were added to it, she would naturally come to understand her situation.",
                   "She was in fact better off than the communist working woman and had property to defend, and that economic interest drew her towards the conservative parties."
                 ]
@@ -2742,14 +2750,14 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "생존 투쟁을 ‘영원한’ 것으로 보는 문명만큼 오래된 억압의 합리화라고 봤고, 억압은 자연이 아니라 인간이 부과한 역사적 현상이라고 했습니다.",
+                  "생존 투쟁을 ‘영원한’ 것으로 보는 생각은 문명만큼 오래된 억압의 합리화이고, 억압은 인간이 부과한 역사적 현상이라고 했습니다.",
                   "결핍은 인간 본성에 새겨진 생물학적 사실이므로, 억압은 어느 사회에서나 같은 정도로 필요하고 지배의 형태와는 상관이 없다고 했습니다.",
-                  "프로이트의 논거는 순전히 경제적인 것이라 정신분석과는 무관하며, 억압을 이해하려면 본능 이론을 버리고 경제학만 보면 된다고 했습니다."
+                  "본능 이론은 생물학주의에 갇혀 있으므로 그것을 버리고, 억압을 문화와 인간관계의 문제로 다시 써야 한다고 했습니다."
                 ],
                 "en": [
-                  "Treating the struggle for existence as 'eternal' is a rationalization of repression as old as civilization; repression is a historical phenomenon imposed not by nature but by man.",
+                  "Treating the struggle for existence as 'eternal' is a rationalization of repression as old as civilization; repression is imposed by man.",
                   "Scarcity is a biological fact inscribed in human nature, so repression is needed to the same degree in every society and has nothing to do with the form of domination.",
-                  "Freud's argument is purely economic and so unrelated to psychoanalysis; to understand repression one need only drop instinct theory and look at economics."
+                  "Instinct theory is trapped in biologism, so it should be dropped and repression rewritten as a matter of culture and interpersonal relations."
                 ]
               },
               "answer": 0,
@@ -2757,12 +2765,12 @@ module.exports = {
                 "ko": [
                   "제1장은 이 구상이 문명만큼 오래되었고 억압의 가장 효과적인 합리화였으며, 프로이트의 이론도 상당 부분 거기에 가담한다고 씁니다.",
                   "마르쿠제는 억압이 역사적 현상이며 본능을 억압적 통제에 복종시키는 것은 자연이 아니라 인간이라고 씁니다. 지배의 역사와 떼어 놓지 않습니다.",
-                  "마르쿠제는 본능 이론을 버리지 않습니다. 그는 프로이트의 개인 심리학이 본질적으로 사회 심리학이라며, 바로 그 본능 이론에서 숨은 경향을 찾습니다."
+                  "본능 이론을 버리고 문화와 대인관계로 옮겨 간 것은 프롬·호나이 같은 신프로이트 수정주의입니다. 마르쿠제는 후기에서 이들을 비판하고, 바로 프로이트의 본능 이론 안에서 숨은 경향을 찾습니다."
                 ],
                 "en": [
                   "Chapter 1 says this conception is as old as civilization and has always been the most effective rationalization for repression, and that Freud's theory partakes of it to a considerable extent.",
                   "Marcuse writes that repression is a historical phenomenon and that the subjugation of the instincts to repressive controls is imposed not by nature but by man; he ties it to the history of domination.",
-                  "Marcuse does not drop instinct theory: Freud's individual psychology is in its essence social psychology, and the hidden trend is found in that very theory."
+                  "Dropping instinct theory for culture and interpersonal relations was the move of Neo-Freudian revisionists such as Fromm and Horney. Marcuse criticises them in his epilogue and finds the hidden trend in Freud's instinct theory itself."
                 ]
               },
               "explanation": {
@@ -3179,26 +3187,26 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "동성애자가 분업에서 고유한 자리가 없고 착취 계급이 아니라는 이유로 그 투쟁을 문화의 끝에 둔 점을 비판하고, 경제를 사람의 사회적 재생산까지 넓혀야 한다고 했습니다.",
-                  "프레이저가 동성애 운동을 지지하지 않고 동성애 혐오를 정의의 문제로 보지 않는다고 비판하며, 퀴어 운동이 좌파와 갈라서야 한다고 했습니다.",
+                  "동성애자가 착취 계급을 이루지 않는다는 이유로 그 투쟁을 문화의 끝에 둔 점을 비판하고, 경제를 사람의 재생산까지 넓히자고 했습니다.",
+                  "프레이저가 동성애 억압을 인정의 문제로만 다루며 재분배의 정치를 버렸다고 비판하고, 좌파가 계급 정치로 돌아가야 한다고 했습니다.",
                   "동성애자도 임금 노동에서 따로 착취당하는 계급이라는 사실을 보여 주면 충분하다고 하며, 무급 노동과 연결되는 투쟁만 정치경제에 속한다고 했습니다."
                 ],
                 "en": [
-                  "That Fraser placed their struggles at the cultural end because homosexuals hold no distinctive place in the division of labour and are not an exploited class; Butler argues the economic must extend to the social reproduction of persons.",
-                  "That Fraser does not support gay and lesbian movements or treat homophobia as a matter of justice; Butler concludes that queer movements should part ways with the Left.",
+                  "That Fraser put their struggles at the cultural end because homosexuals form no exploited class; the economic must extend to the reproduction of persons.",
+                  "That Fraser treats homophobia only as a matter of recognition and abandons the politics of redistribution; the Left must return to class politics.",
                   "That it suffices to show gay people form a separately exploited class in wage labour; Butler holds that only struggles tied to unpaid labour belong to political economy."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "맞습니다. 버틀러는 성을 둘러싼 투쟁이 무급 노동이나 착취와 직접 연결될 때만 정치경제의 중심이 되는 것이 아니라고 반박합니다.",
-                  "버틀러는 프레이저가 이런 운동이 사회 정의와 깊이 관련된다고 주장하고 동성애 혐오에 반대한다는 점을 분명히 인정합니다. 그 지지의 함의를 충분히 밀고 나가지 않았다는 것이 비판입니다.",
+                  "버틀러는 성을 둘러싼 투쟁이 무급 노동이나 착취와 직접 연결될 때만 정치경제의 중심이 되는 것이 아니라고 반박합니다.",
+                  "새 사회운동이 문화에 매달려 계급 정치를 버렸다는 것은 버틀러가 반박하려던 마르크스주의 쪽의 반발입니다. 버틀러는 오히려 성 정치를 정치경제 안에 되돌려 놓으려 했습니다.",
                   "반대입니다. 버틀러는 성 투쟁이 무급·착취 노동과 직접 연결될 때만 정치경제의 중심이 되는 것은 아니라며 ‘경제’의 영역 자체를 넓히자고 합니다."
                 ],
                 "en": [
                   "Butler argues that struggles over sexuality are central to political economy not only insofar as they can be tied directly to unpaid and exploited labour.",
-                  "Butler expressly grants that Fraser insists these movements have everything to do with social justice and opposes homophobia. The criticism is that Fraser does not pursue the implications of that support radically enough.",
+                  "The charge that new social movements cling to culture and abandon class politics is the Marxist backlash Butler set out to answer. She sought instead to put sexual politics back inside political economy.",
                   "The reverse. Butler argues that sexual struggles do not become central to political economy only when tied to unpaid or exploited labour, and calls for expanding the 'economic' sphere itself."
                 ]
               },
@@ -3738,27 +3746,27 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "성 억압은 정말 역사적 사실인가, 권력은 본질적으로 금지와 검열로 작동하는가, 억압 비판 담론은 억압과 단절했는가 같은 그물에 속하는가.",
-                  "성 억압은 개인에게 심리적으로 해로운가, 성 해방은 윤리적으로 바람직한가, 프로이트의 정신분석은 과학적으로 옳은가.",
-                  "성 억압의 원인은 자본주의인가 종교인가, 억압이 가장 심한 계급은 어디인가, 억압을 끝낼 혁명 주체는 누구인가."
+                  "성 억압은 역사적 사실인가, 권력은 본질적으로 금지로 작동하는가, 억압 비판은 억압과 같은 그물에 속하지 않는가.",
+                  "성은 실제로는 자유로웠던 것이 아닌가, 권력은 억압보다 관용적으로 작동하지 않았는가, 억압을 고발한 담론은 거짓이었는가.",
+                  "성 억압은 자본주의의 노동 규율에서 비롯했는가, 가족은 그 억압을 어떻게 재생산하는가, 성 해방은 혁명과 함께 오는가."
                 ],
                 "en": [
-                  "Is sexual repression really a historical fact; does power work essentially through prohibition and censorship; has the critique of repression broken with it or does it belong to the same network?",
-                  "Is sexual repression psychologically harmful to individuals; is sexual liberation ethically desirable; is Freud's psychoanalysis scientifically correct?",
-                  "Is the cause of sexual repression capitalism or religion; which class is most repressed; who is the revolutionary subject that will end repression?"
+                  "Is sexual repression a historical fact; does power work essentially by prohibition; does the critique of repression share its network?",
+                  "Was sex not in fact free; did power not work more tolerantly than repressively; was the discourse denouncing repression simply false?",
+                  "Did sexual repression come from capitalist labour discipline; how does the family reproduce it; does sexual liberation come with revolution?"
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
                   "푸코는 이 셋을 각각 역사적 질문, 역사-이론적 질문, 역사-정치적 질문이라 부릅니다. 마지막 의심은 억압의 시대와 억압 비판 사이에 정말 역사적 단절이 있는지를 묻습니다(18쪽).",
-                  "푸코의 의심은 억압의 해로움이나 해방의 바람직함 같은 가치 판단이 아니라, 역사적 사실과 권력의 작동 방식을 겨눕니다.",
-                  "이 질문들은 억압을 이미 사실로 전제하고 그 원인과 주체를 찾는 것입니다. 푸코의 첫 의심은 바로 그 전제를 겨눕니다."
+                  "푸코는 자기 의심이 대칭적인 반대 가설이 아니라고 못 박습니다. 성이 자유로웠다거나 권력이 관용적이었다고 말하려는 것이 아니라, 억압 가설을 성에 관한 담론 전체의 경제 안에 다시 놓으려는 것입니다.",
+                  "억압을 이미 사실로 전제하고 그 원인과 해법을 찾는 라이히식 질문입니다. 푸코의 첫 의심은 바로 그 전제를 겨눕니다."
                 ],
                 "en": [
                   "Foucault calls these a historical question, a historico-theoretical question and a historico-political question; the last asks whether there is really a historical break between the age of repression and its critical analysis (p. 18).",
-                  "Foucault's doubts target historical fact and how power works, not value judgements about the harm of repression or the desirability of liberation.",
-                  "These questions already take repression as a fact and look for its cause and agent; Foucault's first doubt targets exactly that premise."
+                  "Foucault insists his doubts are not a symmetrical counter-hypothesis. He does not mean that sex was free or power tolerant, but to put the repressive hypothesis back into the general economy of discourses on sex.",
+                  "These are Reich-style questions that already take repression as a fact and look for its cause and remedy; Foucault's first doubt targets exactly that premise."
                 ]
               },
               "explanation": {
@@ -5481,19 +5489,19 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "푸코는 『지식의 의지』 제4부 3장 「영역」에서 18세기부터 성을 둘러싸고 형성된 네 전략 집합을 무엇으로 꼽고, 그 전략들이 한 일을 어떻게 규정했을까요?",
-                "en": "In part 4, chapter 3, 'Domaine', of The Will to Knowledge, which four strategic ensembles formed around sex from the eighteenth century did Foucault name, and how did he characterise what they did?"
+                "ko": "푸코는 『지식의 의지』 제4부 3장 「영역」에서 18세기부터 성을 둘러싸고 형성된 네 전략 집합, 곧 여성 신체의 히스테리화, 아동 성의 교육화, 생식 행동의 사회화, 도착적 쾌락의 정신의학화가 한 일을 어떻게 규정했을까요?",
+                "en": "In part 4, chapter 3, 'Domaine', of The Will to Knowledge, how did Foucault characterise what the four strategic ensembles formed around sex from the eighteenth century, the hysterisation of women's bodies, the pedagogisation of children's sex, the socialisation of procreative behaviour and the psychiatrisation of perverse pleasure, actually did?"
               },
               "choices": {
                 "ko": [
-                  "여성 신체의 히스테리화, 아동 성의 교육화, 생식 행동의 사회화, 도착적 쾌락의 정신의학화를 꼽고, 이들이 성과 싸운 것이 아니라 성생활 자체를 생산했다고 규정했습니다.",
-                  "성을 생식, 이성애, 성인, 합법적 결혼으로 좁히려는 하나의 전체 전략이 네 영역으로 나뉘어 나타난 것으로 보고, 결국 성을 억누르는 일을 했다고 규정했습니다.",
-                  "여성, 아이, 부부, 도착자에게 숨어 있던 자연스러운 성을 의학과 교육이 조금씩 밝혀낸 과정으로 보고, 감춰진 진실을 처음 발견하는 일을 했다고 규정했습니다."
+                  "성과 싸우거나 통제하려 한 것이 아니라, 네 형상을 지식의 대상으로 세우며 성생활 자체를 생산했다고 규정했습니다.",
+                  "성을 생식·이성애·성인·합법적 결혼으로 좁히려는 하나의 전체 전략이 네 영역에서 나타나, 결국 성을 억눌렀다고 규정했습니다.",
+                  "여성, 아이, 부부, 도착자에게 숨어 있던 자연스러운 성을 의학과 교육이 차츰 밝혀내, 감춰진 진실을 처음 발견했다고 규정했습니다."
                 ],
                 "en": [
-                  "The hysterisation of women's bodies, the pedagogisation of children's sex, the socialisation of procreative behaviour and the psychiatrisation of perverse pleasure; they did not fight sexuality but produced it.",
-                  "They were one overall strategy, reducing sex to reproduction, heterosexuality, adulthood and lawful marriage, appearing in four domains; in the end their work was to repress sex.",
-                  "They were the process by which medicine and education gradually brought to light the natural sexuality hidden in women, children, couples and perverts, discovering a concealed truth for the first time."
+                  "They did not fight or control sex; by making four figures objects of knowledge, they produced sexuality itself.",
+                  "They were one overall strategy, reducing sex to reproduction, heterosexuality, adulthood and lawful marriage, and in the end they repressed sex.",
+                  "Medicine and education gradually brought to light the natural sexuality hidden in women, children, couples and perverts, discovering a concealed truth."
                 ]
               },
               "answer": 0,

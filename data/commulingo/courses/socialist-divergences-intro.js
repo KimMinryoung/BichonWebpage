@@ -275,7 +275,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/owen-new-view-society",
+                "href": "/commulingo/docs/owen-new-view-society#owen-dedications",
                 "label": {
                   "ko": "오언, 『사회에 관한 새로운 견해』 제3론 앞 공장 감독자 대상 서문 (1816년판)",
                   "en": "Owen, A New View of Society, preface to Essay III addressed to superintendents (1816 edition)"
@@ -321,7 +321,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/marx-engels-communist-manifesto",
+                "href": "/commulingo/docs/marx-engels-communist-manifesto#manifesto-ch3",
                 "label": {
                   "ko": "마르크스·엥겔스, 『공산당 선언』 제3장 「비판·공상적 사회주의와 공산주의」",
                   "en": "Marx and Engels, Communist Manifesto, Chapter III, 'Critical-Utopian Socialism and Communism'"
@@ -367,7 +367,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/marx-engels-communist-manifesto",
+                "href": "/commulingo/docs/marx-engels-communist-manifesto#manifesto-ch3",
                 "label": {
                   "ko": "마르크스·엥겔스, 『공산당 선언』 제3장 3절 「비판·공상적 사회주의와 공산주의」",
                   "en": "Marx and Engels, Communist Manifesto, Chapter III, section 3, 'Critical-Utopian Socialism and Communism'"
@@ -379,32 +379,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "『공산당 선언』은 공상적 체계의 창시자와 그 제자들을 어떻게 구별했고, 영국의 오언주의자와 프랑스의 푸리에주의자가 무엇에 반대했다고 적었을까요?",
-                "en": "How did the Communist Manifesto distinguish the founders of the utopian systems from their disciples, and what did it say the English Owenites and French Fourierists opposed?"
+                "ko": "『공산당 선언』은 공상적 체계의 창시자들이 여러 점에서 혁명적이었다고 하면서도, 그 제자들은 반동적 종파가 되었다고 했습니다. 같은 체계를 두고 평가가 갈린 까닭은 무엇이었을까요?",
+                "en": "The Communist Manifesto calls the founders of the utopian systems revolutionary in many respects, yet says their disciples became reactionary sects. Why did the same systems earn opposite verdicts?"
               },
               "choices": {
                 "ko": [
-                  "창시자는 여러 점에서 혁명적이었으나 제자들은 반동적 종파가 되어, 오언주의자는 차티스트에, 푸리에주의자는 『개혁』지 계열에 반대했다고 적었습니다.",
-                  "제자들은 스승의 작은 실험을 버리고 노동자 정당에 합류했고, 영국 오언주의자들은 차티스트 운동에 들어가 보통선거권 요구를 앞장서 이끌었다고 적었습니다.",
-                  "창시자는 처음부터 반동적이었지만 제자들은 계급투쟁을 받아들였고, 푸리에주의자들은 『개혁』지 계열과 손잡고 공화국 수립 운동에 나섰다고 적었습니다."
+                  "계급투쟁이 발전해도 제자들은 낡은 견해를 고집해, 오언주의자는 차티스트에, 푸리에주의자는 『개혁』지 계열에 반대했기 때문입니다.",
+                  "제자들은 스승의 작은 실험을 버리고 차티스트 같은 노동자의 정치 운동에 뛰어들어, 공상적 사회주의의 원래 정신에서 멀어졌기 때문입니다.",
+                  "창시자들은 노동자에게 직접 호소해 그들의 정치 운동을 북돋웠지만, 제자들은 지배계급과 부르주아의 박애에 기대는 쪽으로 돌아섰기 때문입니다."
                 ],
                 "en": [
-                  "The founders were revolutionary in many respects but the disciples became reactionary sects; the Owenites opposed the Chartists and the Fourierists opposed the Réforme group.",
-                  "The disciples dropped their masters' small experiments and joined workers' parties; the English Owenites went into Chartism and led its demand for universal suffrage.",
-                  "The founders were reactionary from the start but the disciples accepted class struggle; the Fourierists joined the Réforme group in campaigning for a republic."
+                  "Though the class struggle had developed, the disciples clung to their masters' old views, so Owenites opposed the Chartists and Fourierists the Réforme group.",
+                  "The disciples dropped their masters' small experiments and threw themselves into workers' political action such as Chartism, straying from the original spirit.",
+                  "The founders appealed directly to the workers and spurred their political action, whereas the disciples turned to the ruling class and bourgeois philanthropy."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "선언은 제자들이 프롤레타리아트의 발전에도 스승의 낡은 견해를 고집하고, 노동자의 정치 운동을 새 복음에 대한 맹목적 불신으로 여겨 반대했다고 씁니다.",
-                  "방향이 반대입니다. 선언에 따르면 제자들은 여전히 팔랑스테르, 국내 이민지, 소이카리아 같은 실험을 꿈꾸며 부르주아의 박애에 호소했습니다.",
-                  "선언의 평가는 거꾸로입니다. 창시자는 여러 점에서 혁명적이었고, 계급투쟁을 무마하고 대립을 화해시키려 애쓴 쪽이 제자들이었습니다."
+                  "선언은 계급투쟁이 뚜렷해질수록 그 위에 서려는 공상적 태도가 실천적 의의를 잃는다고 보고, 제자들이 노동자의 정치 운동을 새 복음에 대한 맹목적 불신으로 여겨 반대했다고 씁니다.",
+                  "방향이 반대입니다. 선언에 따르면 제자들은 여전히 팔랑스테르, 국내 이민지, 소이카리아 같은 실험을 꿈꾸며 노동자의 정치 운동에 반대했습니다.",
+                  "선언은 창시자들도 사회 전체, 주로 지배계급에 호소하고 정치 활동과 혁명 활동을 배격했다고 비판합니다. 갈린 것은 호소의 대상이 아니라, 계급투쟁이 발전한 뒤에도 그 태도를 고집했느냐였습니다."
                 ],
                 "en": [
-                  "The Manifesto says the disciples clung to their masters' views despite the proletariat's development and opposed workers' political action as blind unbelief in their new gospel.",
-                  "It is the reverse: according to the Manifesto the disciples still dreamed of phalansteries, home colonies and little Icarias and appealed to bourgeois philanthropy.",
-                  "The verdict runs the other way: the founders were revolutionary in many respects, and it was the disciples who tried to deaden the class struggle and reconcile antagonisms."
+                  "The Manifesto holds that the fantastic stand above the class struggle loses its practical value as that struggle takes definite shape, and says the disciples opposed workers' political action as blind unbelief in their new gospel.",
+                  "It is the reverse: according to the Manifesto the disciples still dreamed of phalansteries, home colonies and little Icarias and opposed workers' political action.",
+                  "The Manifesto faults the founders too for appealing to society at large, chiefly the ruling class, and for rejecting political and revolutionary action. What divided founders and disciples was clinging to that stance after the class struggle had developed."
                 ]
               },
               "explanation": {
@@ -413,7 +413,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/marx-engels-communist-manifesto",
+                "href": "/commulingo/docs/marx-engels-communist-manifesto#manifesto-ch3",
                 "label": {
                   "ko": "마르크스·엥겔스, 『공산당 선언』 제3장 3절과 엥겔스의 주",
                   "en": "Marx and Engels, Communist Manifesto, Chapter III, section 3, with Engels' notes"
@@ -505,7 +505,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/marx-engels-communist-manifesto",
+                "href": "/commulingo/docs/marx-engels-communist-manifesto#manifesto-preface-1890",
                 "label": {
                   "ko": "엥겔스, 『공산당 선언』 1890년 독일어판 서문",
                   "en": "Engels, preface to the 1890 German edition of the Communist Manifesto"
@@ -958,12 +958,12 @@ module.exports = {
               "choices": {
                 "ko": [
                   "인민 국가에 대한 집착은 어리석다고 하고, 과학적 사회주의는 인민에게 공상을 덧씌우는 공상적 사회주의에 맞선다는 뜻으로만 썼다고 했습니다.",
-                  "인민 국가는 계급이 사라진 뒤에도 남을 정당한 최종 목표라고 옹호하고, 과학적 사회주의는 학식 있는 지도자가 인민을 대신해 통치할 자격을 뜻한다고 인정했습니다.",
+                  "인민 국가는 프롤레타리아 독재의 다른 이름이라며 옹호하고, 과학적 사회주의는 경제 법칙으로 미래 사회의 모습을 미리 그린다는 뜻이라고 했습니다.",
                   "'교양 있는 사회주의'처럼 두 말 모두 자기 쪽에서는 한 번도 쓴 적 없는 바쿠닌의 날조라고만 하고, 그 뜻에 대해서는 아무 설명도 덧붙이지 않았습니다."
                 ],
                 "en": [
                   "He called fixation on the people's state nonsense, and said 'scientific socialism' was used only against utopian socialism, which foists fantasies on the people.",
-                  "He defended the people's state as a legitimate final aim that outlasts classes, and granted that scientific socialism means learned leaders' right to govern for the people.",
+                  "He defended the people's state as another name for the proletarian dictatorship, and said scientific socialism meant drawing the future society's shape in advance from economic laws.",
                   "He dismissed both phrases, like 'learned socialism', as Bakunin's inventions never used on his side, and added no explanation of what they meant."
                 ]
               },
@@ -971,12 +971,12 @@ module.exports = {
               "choiceFeedback": {
                 "ko": [
                   "마르크스는 리프크네히트식 인민 국가 집착을 어리석다고 적고, 과학적 사회주의는 인민 스스로 만든 사회 운동의 인식에 학문을 한정한다는 뜻이라고 풀었습니다.",
-                  "마르크스는 노동자의 계급 지배가 계급적 존재의 경제적 기반이 파괴될 때까지만 존속한다고 했고, 학자 통치라는 말에는 '망상'이라고 적었습니다.",
+                  "마르크스는 리프크네히트식 인민 국가 집착을 어리석다고 했습니다. 과학적 사회주의도 미래 사회를 미리 그리는 일이 아니라, 인민 자신이 만든 사회 운동의 인식에 학문을 한정한다는 뜻이라고 했습니다.",
                   "'교양 있는 사회주의'라는 말이 쓰인 적 없다고 한 것은 맞지만, 과학적 사회주의는 자기 쪽 용어로 인정하고 어떤 뜻으로 썼는지 설명했습니다."
                 ],
                 "en": [
                   "Marx calls Liebknecht-style fixation on the people's state nonsense, and explains scientific socialism as confining science to knowledge of the social movement the people themselves create.",
-                  "Marx wrote that workers' class rule lasts only until the economic basis of class existence is destroyed, and marked the idea of rule by savants as a delusion.",
+                  "Marx called Liebknecht-style fixation on the people's state nonsense. Nor did scientific socialism mean sketching the future society in advance: it meant confining science to knowledge of the social movement the people themselves create.",
                   "He did say 'learned socialism' had never been used, but he owned 'scientific socialism' as his side's term and explained the sense in which it was used."
                 ]
               },
@@ -1431,32 +1431,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "마르크스의 여백 논평은 1875년 고타 대회에 어떤 결과를 낳았고, 세상에는 언제 알려졌을까요?",
-                "en": "What effect did Marx's marginal notes have on the Gotha congress of 1875, and when did they become public?"
+                "ko": "통합을 앞둔 지도부는 마르크스의 여백 논평을 사실상 묵살했고, 엥겔스는 1891년에야 이를 공개했습니다. 16년 동안 묻혀 있던 원고를 그때 공개한 까닭은 무엇이었을까요?",
+                "en": "The leadership, intent on unity, in effect ignored Marx's marginal notes, and Engels made them public only in 1891. Why publish a manuscript buried for sixteen years at that moment?"
               },
               "choices": {
                 "ko": [
-                  "지도부가 사실상 묵살해 강령은 거의 그대로 채택되었고, 1891년 강령 개정 논의가 시작되자 엥겔스가 공개했습니다.",
-                  "대회가 논평을 받아들여 임금철칙과 국가 보조 조항을 지웠고, 그렇게 고친 강령이 1875년 당 신문에 곧바로 실렸습니다.",
-                  "마르크스와 엥겔스가 대회 직후 강령과 무관하다는 성명과 함께 논평 전문을 1875년 여름에 신문에 발표했습니다."
+                  "1891년 강령 개정 논의가 시작되자, 라살레주의 공식이 새 강령에 되살아나지 않게 하려고 엥겔스가 공개했습니다.",
+                  "라살레파가 다시 당 지도부를 장악하자, 그들과 갈라서는 근거로 삼으려고 1875년의 비판을 엥겔스가 증거로 내놓았습니다.",
+                  "마르크스가 죽은 뒤 남긴 원고를 정리하는 작업의 하나로, 강령 논의와 상관없이 다른 유고들과 함께 차례로 펴냈습니다."
                 ],
                 "en": [
-                  "The leadership in effect ignored them and the programme was adopted almost unchanged; Engels published them when programme revision began in 1891.",
-                  "The congress accepted them, struck out the iron law and the state-aid clause, and the amended programme appeared in the party paper in 1875.",
-                  "Right after the congress Marx and Engels published the full notes in a newspaper in the summer of 1875, together with a statement disowning the programme."
+                  "When revision of the programme began in 1891, Engels published it to keep the Gotha programme's Lassallean formulas out of the new one.",
+                  "The Lassalleans had retaken the party leadership, and Engels brought out the 1875 critique as evidence to justify breaking with them.",
+                  "It was part of sorting the manuscripts Marx left at his death, published in turn with his other papers and unrelated to the programme debate."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "통합을 앞둔 지도부는 논평을 돌려 보기만 했고 강령은 거의 그대로 통과되었습니다. 엥겔스는 할레 당대회가 강령 토론을 의제에 올린 뒤 1891년 1월 『노이에 차이트』에 원고를 실었습니다.",
-                  "채택본에도 임금철칙을 깨뜨린다는 목표와 국가 보조 생산협동조합이 그대로 남아 있습니다. 대회는 논평을 반영하지 않았습니다.",
-                  "편지에서 성명을 예고한 것은 맞지만, 논평 원고는 16년 동안 공개되지 않았습니다. 엥겔스는 1891년 서문에서 이 문서를 더 묻어 두면 은폐의 죄라고 썼습니다."
+                  "원고는 할레 당대회가 고타강령 개정을 의제에 올린 뒤 1891년 1월 『노이에 차이트』에 실렸습니다. 그해 채택된 에르푸르트 강령에서 임금철칙과 국가 보조 협동조합은 사라졌습니다.",
+                  "엥겔스는 1891년 서문에서 특정한 라살레파는 이제 외국의 고립된 폐허로만 남았다고 썼습니다. 당을 다시 장악한 라살레파는 없었습니다.",
+                  "공개 시점은 강령 개정 논의와 맞물려 있었습니다. 엥겔스는 서문에서 이 문서를 더 묻어 두면 은폐의 죄가 된다고 쓰며 바로 그 논의를 위해 내놓았습니다."
                 ],
                 "en": [
-                  "The leadership, intent on unity, merely circulated the notes and the programme passed almost unchanged. Engels printed the manuscript in Die Neue Zeit in January 1891, after the Halle congress put the programme on the agenda.",
-                  "The adopted text still contains the aim of destroying the iron law and the state-aided productive associations. The congress did not act on the notes.",
-                  "The letter did announce a statement, but the notes themselves stayed unpublished for sixteen years. In his 1891 foreword Engels wrote that burying them longer would be suppression."
+                  "The manuscript appeared in Die Neue Zeit in January 1891, after the Halle congress put revision of the Gotha programme on the agenda. The iron law and state-aided co-operatives vanished from the Erfurt programme adopted that year.",
+                  "In his 1891 foreword Engels wrote that the specific Lassalleans survived only as isolated ruins abroad. No Lassallean faction had retaken the party.",
+                  "The timing was tied to the programme revision. In his foreword Engels wrote that burying the document any longer would be suppression, and he put it out for that very debate."
                 ]
               },
               "explanation": {
@@ -1823,13 +1823,13 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "세계 교역과 세계시장을 위한 생산이 커지면서 각국 노동자의 처지가 다른 나라 노동자의 처지에 점점 더 의존하게 된다는 근거를 댔습니다.",
-                  "독일 제국이 식민지를 넓혀 가므로, 식민지 노동자까지 독일 노동자와 같은 법으로 보호하려면 인터내셔널 가입이 먼저 필요하다는 근거를 댔습니다.",
+                  "세계 교역과 세계시장을 위한 생산이 커지면서 각국 노동자의 처지가 다른 나라 노동자의 처지에 점점 더 의존한다는 근거를 댔습니다.",
+                  "여러 나라 노동계급 사이의 연대가 모자라 지금까지의 해방 시도가 실패했다는 교훈을 근거로 댔습니다.",
                   "나라마다 노동계급의 이해가 서로 달라 부딪히므로, 국제 대회가 각국 당의 강령과 전술을 하나로 정해 주어야 한다는 근거를 댔습니다."
                 ],
                 "en": [
                   "As world trade and production for the world market grow, the position of each country's workers depends more and more on that of workers elsewhere.",
-                  "As the German Empire expands its colonies, joining the International comes first if colonial workers are to be protected by the same laws as German workers.",
+                  "The lesson that past attempts at emancipation had failed for lack of solidarity between the working classes of different countries.",
                   "Working-class interests differ and clash from country to country, so an international congress must fix one programme and tactic for every national party."
                 ]
               },
@@ -1837,12 +1837,12 @@ module.exports = {
               "choiceFeedback": {
                 "ko": [
                   "강령은 자본주의적 생산양식이 지배하는 모든 나라에서 노동계급의 이해가 같고, 세계시장 때문에 각국 노동자의 처지가 서로 얽힌다고 씁니다.",
-                  "식민지 노동자 보호나 인터내셔널 가입 조건은 강령에 없습니다. 강령은 다른 나라의 계급의식 있는 노동자와 하나임을 '느끼고 선언'할 뿐입니다.",
+                  "그것은 국제노동자협회 일반규약 전문의 근거입니다. 에르푸르트 강령은 과거의 실패가 아니라 세계시장이 만든 상호 의존이라는 경제적 사실을 근거로 들었습니다.",
                   "강령은 반대로 노동계급의 이해가 모든 나라에서 같다고 봅니다. 국제 대회가 각국 전술을 정한다는 조항도 없습니다."
                 ],
                 "en": [
                   "The programme says working-class interests are the same wherever capitalist production rules, and that the world market ties the position of workers in different countries together.",
-                  "The programme says nothing of colonial workers or conditions for joining the International; it only 'feels and declares' its unity with class-conscious workers everywhere.",
+                  "That is the ground given in the preamble to the IWMA General Rules. The Erfurt Programme argued not from past failures but from the economic fact of interdependence created by the world market.",
                   "The programme says the opposite: working-class interests are the same in all countries. Nor does it give an international congress power over national tactics."
                 ]
               },
@@ -2195,7 +2195,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/bernstein-preconditions-socialism-excerpts-1899",
+                "href": "/commulingo/docs/bernstein-preconditions-socialism-excerpts-1899#bernstein-vorwort",
                 "label": {
                   "ko": "베른슈타인, 『사회주의의 전제와 사회민주주의의 과제』 서문의 1898년 슈투트가르트 당대회 서한",
                   "en": "Bernstein, The Preconditions of Socialism, preface: the 1898 letter to the Stuttgart party congress"
@@ -2241,7 +2241,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/bernstein-preconditions-socialism-excerpts-1899",
+                "href": "/commulingo/docs/bernstein-preconditions-socialism-excerpts-1899#bernstein-vorwort",
                 "label": {
                   "ko": "베른슈타인, 『사회주의의 전제와 사회민주주의의 과제』 서문 (1899)",
                   "en": "Bernstein, The Preconditions of Socialism, preface (1899)"
@@ -2259,35 +2259,35 @@ module.exports = {
               "choices": {
                 "ko": [
                   "민주주의는 사회주의를 쟁취하는 수단이자 사회주의를 실현하는 형태라고 했습니다.",
-                  "노동계급이 권력을 잡으면 민주주의는 프롤레타리아 독재로 바꿔야 한다고 했습니다.",
-                  "민주주의가 계급을 이미 사실상 없앴으므로 더 이상의 사회 개혁은 필요 없다고 했습니다."
+                  "민주주의가 원칙적으로 계급 지배의 폐지이므로, 그것을 이루면 사회주의도 이룬 셈이라고 했습니다.",
+                  "민주주의는 권력 장악을 불필요하게 하지 않고, 오히려 그것을 필수적인 일로 만든다고 했습니다."
                 ],
                 "en": [
                   "Democracy is both the means of winning socialism and the form in which socialism is realised.",
-                  "Once the working class took power, democracy should be replaced by the dictatorship of the proletariat.",
-                  "Democracy had already abolished classes in fact, so no further social reform was needed."
+                  "Since democracy is in principle the abolition of class rule, achieving it amounts to achieving socialism.",
+                  "Democracy does not make the seizure of power unnecessary; rather, it makes that seizure necessary."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
                   "베른슈타인은 민주주의가 수단이자 동시에 목적이며, 사회주의를 쟁취하는 수단이자 실현하는 형태라고 썼습니다.",
-                  "그는 의회 활동과 인민 입법 위에 서 있는 당이 '프롤레타리아 독재'라는 문구를 고집하는 것이 무슨 의미가 있느냐고 물었습니다.",
-                  "절반만 옮긴 말입니다. 그는 민주주의가 원칙적으로 계급 지배의 폐지이지만 아직 계급의 사실상 폐지는 아니라고 했습니다."
+                  "절반만 옮긴 말입니다. 그는 민주주의가 원칙적으로 계급 지배의 폐지이지만 아직 계급의 사실상 폐지는 아니라서, 개혁이 계속 필요하다고 덧붙였습니다.",
+                  "룩셈부르크가 『사회개혁이냐 혁명이냐』에서 베른슈타인에 맞서 한 말입니다. 베른슈타인은 오히려 의회 활동과 인민 입법 위에 선 당이 '프롤레타리아 독재'라는 문구를 고집할 까닭이 있느냐고 물었습니다."
                 ],
                 "en": [
                   "Bernstein wrote that democracy is means and end at once: the means of winning socialism and the form of its realisation.",
-                  "He asked what sense it made for a party standing on parliamentary work and popular legislation to cling to the phrase 'dictatorship of the proletariat'.",
-                  "This quotes him by half: he said democracy is in principle the abolition of class rule, but not yet the actual abolition of classes."
+                  "This quotes him by half: he added that democracy is in principle the abolition of class rule but not yet the actual abolition of classes, so reform remains necessary.",
+                  "That is Luxemburg's reply to Bernstein in Social Reform or Revolution. Bernstein instead asked why a party standing on parliamentary work and popular legislation should cling to the phrase 'dictatorship of the proletariat'."
                 ]
               },
               "explanation": {
-                "ko": "베른슈타인에게 민주주의는 노동계급이 자본을 부수는 데 잠시 쓰는 도구가 아닙니다. 그는 민주주의가 수단이자 목적이며, 사회주의를 쟁취하는 수단이자 실현하는 형태라고 썼습니다. 민주주의는 원칙적으로 계급 지배의 폐지이지만 계급 자체가 사실상 사라진 것은 아니므로, 개혁은 계속 필요합니다. 보통선거권은 그 소유자를 잠재적으로 공동체의 참여자로 만들고, 결국 실제 참여로 이어진다고 봤습니다. 이 때문에 그는 당이 실천에서 이미 의회 활동과 인민 입법 위에 서 있으면서 ‘프롤레타리아 독재’라는 문구를 고집하는 것을 의문시했습니다. 그를 단순한 양보론자로 읽으면 민주주의를 사회주의의 형태로까지 본 이 논지를 놓칩니다.",
-                "en": "For Bernstein democracy is not a tool the working class uses briefly to smash capital. He wrote that democracy is means and end at once, the means of winning socialism and the form of its realisation. It is in principle the abolition of class rule, but classes have not actually vanished, so reform remains necessary. Universal suffrage makes its holders potential participants in the community, and that potential participation turns into actual participation. Hence he questioned why a party already standing in practice on parliamentary work and popular legislation should cling to the phrase 'dictatorship of the proletariat'. Reading him as a mere advocate of concessions misses his claim that democracy is the very form of socialism."
+                "ko": "베른슈타인에게 민주주의는 노동계급이 자본을 부수는 데 잠시 쓰는 도구가 아닙니다. 그는 민주주의가 수단이자 목적이며, 사회주의를 쟁취하는 수단이자 실현하는 형태라고 썼습니다. 민주주의는 원칙적으로 계급 지배의 폐지이지만 계급 자체가 사실상 사라진 것은 아니므로, 개혁은 계속 필요합니다. 보통선거권은 그 소유자를 잠재적으로 공동체의 참여자로 만들고, 결국 실제 참여로 이어진다고 봤습니다. 이 때문에 그는 당이 실천에서 이미 의회 활동과 인민 입법 위에 서 있으면서 ‘프롤레타리아 독재’라는 문구를 고집하는 것을 의문시했습니다. 그를 단순한 양보론자로 읽으면 민주주의를 사회주의의 형태로까지 본 이 논지를 놓칩니다. 룩셈부르크는 같은 민주주의를 두고, 권력 장악을 불필요하게 만드는 것이 아니라 필수적이면서 유일하게 가능한 일로 만든다고 맞받았습니다.",
+                "en": "For Bernstein democracy is not a tool the working class uses briefly to smash capital. He wrote that democracy is means and end at once, the means of winning socialism and the form of its realisation. It is in principle the abolition of class rule, but classes have not actually vanished, so reform remains necessary. Universal suffrage makes its holders potential participants in the community, and that potential participation turns into actual participation. Hence he questioned why a party already standing in practice on parliamentary work and popular legislation should cling to the phrase 'dictatorship of the proletariat'. Reading him as a mere advocate of concessions misses his claim that democracy is the very form of socialism. Luxemburg answered that democracy does not make the seizure of power unnecessary but makes it both necessary and the only possible course."
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/bernstein-preconditions-socialism-excerpts-1899",
+                "href": "/commulingo/docs/bernstein-preconditions-socialism-excerpts-1899#bernstein-kap4-c",
                 "label": {
                   "ko": "베른슈타인, 『사회주의의 전제와 사회민주주의의 과제』 제4장 c) 「민주주의와 사회주의」 (1899)",
                   "en": "Bernstein, The Preconditions of Socialism, chapter 4 c) 'Democracy and Socialism' (1899)"
@@ -2333,7 +2333,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/luxemburg-reform-revolution",
+                "href": "/commulingo/docs/luxemburg-reform-revolution#srr-1-1",
                 "label": {
                   "ko": "룩셈부르크, 『사회개혁이냐 혁명이냐』 제1부 1절 「기회주의적 방법」과 2절 「자본주의의 적응」",
                   "en": "Luxemburg, Social Reform or Revolution, part 1, sections 1 'The Opportunist Method' and 2 'The Adaptation of Capitalism'"
@@ -2379,7 +2379,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/luxemburg-reform-revolution",
+                "href": "/commulingo/docs/luxemburg-reform-revolution#srr-vorwort",
                 "label": {
                   "ko": "룩셈부르크, 『사회개혁이냐 혁명이냐』 머리말과 제2부 3절 「정치권력 장악」",
                   "en": "Luxemburg, Social Reform or Revolution, introduction and part 2, section 3 'The Conquest of Political Power'"
@@ -2425,7 +2425,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/luxemburg-reform-revolution",
+                "href": "/commulingo/docs/luxemburg-reform-revolution#srr-1-4",
                 "label": {
                   "ko": "룩셈부르크, 『사회개혁이냐 혁명이냐』 제1부 4절 「관세 정책과 군국주의」",
                   "en": "Luxemburg, Social Reform or Revolution, part 1, section 4 'Customs Policy and Militarism'"
@@ -2698,32 +2698,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "같은 멘셰비키 결의는 권력 장악을 어떤 경우에 예외로 허용했을까요?",
-                "en": "In which cases did the same Menshevik resolution allow an exception to the rule against taking power?"
+                "ko": "같은 멘셰비키 결의는 「극단적 혁명 야당」 원칙에 두 가지 예외를 두었습니다. 이 예외들을 보면, 결의가 권력을 피한 것은 원칙의 문제였을까요, 조건의 문제였을까요?",
+                "en": "The same Menshevik resolution made two exceptions to its rule of \"extreme revolutionary opposition\". Judging by them, was its avoidance of power a matter of principle or of conditions?"
               },
               "choices": {
                 "ko": [
-                  "봉기를 넓히고 정부를 교란하려는 부분적·일시적 권력 장악과 지역의 「혁명 코뮌」, 그리고 혁명이 서유럽 선진국으로 번지는 경우였습니다.",
-                  "제헌의회 선거에서 사회민주당이 다수를 얻어 합법적으로 정부를 구성할 권리를 얻는 경우와, 자유주의자가 참여를 요청하는 경우였습니다.",
-                  "자유주의 반대파가 먼저 정부를 세운 경우에 한해, 개혁을 감시할 장관 몇 자리를 받아 정부 안에서 극단적 야당 역할을 하는 경우였습니다."
+                  "조건의 문제였습니다. 봉기를 넓히는 일시적 권력 장악과, 혁명이 서유럽 선진국으로 번지는 경우에는 권력을 잡으라 했습니다.",
+                  "원칙의 문제였습니다. 마르토프의 말처럼 위로부터의 행동은 어떤 경우에도 거부하고, 오직 아래로부터의 압력만 인정했습니다.",
+                  "조건의 문제였습니다. 제헌의회 선거에서 사회민주당이 다수를 얻으면 그때 합법적으로 정부를 구성하라고 했습니다."
                 ],
                 "en": [
-                  "A partial and episodic seizure of power and local \"revolutionary communes\" to spread the insurrection and disrupt the government, and the case of the revolution spreading to the advanced countries of Western Europe.",
-                  "The case of Social-Democracy winning a majority in the constituent assembly elections and so gaining the lawful right to form a government, and the case of the liberal parties formally inviting it into a coalition cabinet.",
-                  "Only where the liberal opposition had formed a government first, taking a few ministries to supervise reforms and playing the extreme opposition from inside the government."
+                  "Conditions: it allowed brief seizures of power to spread the rising, and taking power if revolution spread to the advanced West.",
+                  "Principle: like Martov, it rejected action from above in every case and accepted nothing but pressure from the masses below.",
+                  "Conditions: it told Social-Democracy to form a government lawfully, as soon as it won a majority in the constituent assembly elections."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "결의는 이 전술이 도시·지역에서의 부분적·일시적 권력 장악과 혁명 코뮌을 배제하지 않는다고 하고, 혁명이 서유럽으로 번질 때만 스스로 권력을 잡아 되도록 오래 쥐라고 했습니다.",
-                  "결의에 선거 다수라는 조건은 없습니다. 예외는 봉기를 돕는 일시적 장악과 서유럽 혁명이라는 국제적 조건 두 가지였습니다.",
-                  "결의가 말한 극단적 혁명 야당은 정부 안이 아니라 밖의 자리입니다. 혁명 중에 들어서는 모든 정부에 대해 야당으로 남는다는 것이 원칙이었습니다."
+                  "결의는 도시·지역에서 봉기를 넓히고 정부를 교란하려는 부분적·일시적 권력 장악과 혁명 코뮌을 배제하지 않았고, 혁명이 서유럽으로 번질 때는 스스로 권력을 잡아 되도록 오래 쥐라고 했습니다. 러시아의 조건만으로는 때가 아니라는 판단이었습니다.",
+                  "레닌은 바로 첫째 예외를 두고, 멘셰비키가 「아래로부터만」이라던 마르토프의 논리를 버리고 위로부터의 행동도 원칙적으로 인정한 셈이라고 지적했습니다.",
+                  "결의에 선거 다수라는 조건은 없습니다. 예외는 봉기를 돕는 일시적 장악과 서유럽 혁명이라는 국제적 조건 두 가지였습니다."
                 ],
                 "en": [
-                  "The resolution said these tactics did not exclude a partial and episodic seizure of power and revolutionary communes in a city or district, and only if the revolution spread to Western Europe should the party seize power and hold it as long as possible.",
-                  "The resolution sets no electoral condition. The exceptions were temporary seizures that helped the insurrection and the international condition of revolution in Western Europe.",
-                  "The extreme revolutionary opposition the resolution meant was a place outside the government, not inside it. The principle was to remain in opposition to every government that came and went during the revolution."
+                  "The resolution did not exclude partial and episodic seizures of power and revolutionary communes in a city or district to spread the insurrection and disrupt the government, and said that if the revolution spread to Western Europe the party should seize power and hold it as long as possible. Its judgement was that Russian conditions alone did not make it the time.",
+                  "It was precisely the first exception that led Lenin to remark that the Mensheviks had abandoned Martov's \"only from below\" and accepted action from above in principle.",
+                  "The resolution sets no electoral condition. The exceptions were temporary seizures that helped the insurrection and the international condition of revolution in Western Europe."
                 ]
               },
               "explanation": {
@@ -3315,32 +3315,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "1917년 10월 26일 토지 법령에 들어간 「농민 위임」은 어디서 나왔고, 토지 이용을 어떻게 정했을까요?",
-                "en": "Where did the \"Peasant Mandate\" incorporated in the Decree on Land of 26 October 1917 come from, and how did it regulate the use of land?"
+                "ko": "1917년 10월 26일 토지 법령은 지방 농민 위임을 엮은 「농민 위임」을 토지 개혁의 지침으로 삼았습니다. 이 위임은 토지 이용을 어떻게 정했을까요?",
+                "en": "The Decree on Land of 26 October 1917 took the \"Peasant Mandate\", compiled from local peasant mandates, as the guide for the land reform. How did the Mandate regulate the use of land?"
               },
               "choices": {
                 "ko": [
-                  "농민 대표 소비에트의 『이즈베스티야』가 지방 농민 위임 242건을 엮은 것으로, 토지 매매·임대를 금지하고 고용 노동 없이 제 노동으로 경작하는 사람에게 균등하게 쓰게 했습니다.",
-                  "볼셰비키 중앙위원회가 준비한 국영 농장 계획으로, 모든 토지를 국가가 직접 경영하고 농민은 국가에 고용된 농업 노동자가 되게 했습니다.",
-                  "임시정부 농업부가 만든 안으로, 지주에게 보상을 약속하고 제헌의회가 열릴 때까지 토지 매매만 잠시 멈추게 했습니다."
+                  "매매·임대를 금지하고, 고용 노동 없이 제 노동으로 경작하는 사람에게 노동·소비 기준으로 균등하게 쓰게 했습니다.",
+                  "토지를 국가가 직접 경영하는 대농장으로 묶고, 농민은 국가에 고용된 농업 노동자로서 임금을 받고 일하게 했습니다.",
+                  "몰수한 지주 토지를 농가마다 나눠 사유지로 등기해 주고, 농민끼리 그 땅을 자유롭게 사고팔거나 빌려줄 수 있게 했습니다."
                 ],
                 "en": [
-                  "The Izvestia of the Peasants' Soviet had compiled it from 242 local peasant mandates; it banned sale and lease of land and gave equal use to those cultivating it by their own labour without hired labour.",
-                  "It was a state-farm plan prepared by the Bolshevik Central Committee: all land would be run directly by the state, and peasants would become agricultural labourers employed by it.",
-                  "It was a draft of the Provisional Government's ministry of agriculture, promising compensation to landlords and merely suspending land sales until the Constituent Assembly met."
+                  "It banned sale and lease and gave equal use, by a labour or subsistence standard, to those tilling by their own labour without hired hands.",
+                  "It merged the land into large estates run directly by the state, with peasants working on them as wage labourers employed by the state.",
+                  "It divided the confiscated estates among households as registered private plots that peasants could freely buy, sell or lease to one another."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "위임은 토지 사적 소유를 영구히 없애고 모든 토지를 보상 없이 전 인민의 재산으로 하며, 노동 기준이나 소비 기준에 따라 균등하게 나누되 가구·농장·공동체·협동조합 같은 이용 형태는 마을마다 정하게 했습니다.",
-                  "법령은 토지를 볼로스치 토지위원회와 군 농민 대표 소비에트의 처분에 맡겼고, 위임은 이용 형태에 제한을 두지 않았습니다. 국영 농장 계획이 아니었습니다.",
-                  "법령 제1조는 지주 토지 소유를 보상 없이 즉시 폐지했습니다. 임시정부가 토지 문제를 미뤘다는 것이 레닌이 보고에서 한 비판이었습니다."
+                  "위임은 토지 사적 소유를 영구히 없애고 매매·구입·임대·저당을 금지했으며, 고용 노동을 허용하지 않고 지역 조건에 따라 노동 기준이나 소비 기준으로 균등하게 쓰게 했습니다.",
+                  "위임은 가구·농장·공동체·협동조합 같은 이용 형태를 마을마다 정하게 했을 뿐 국영 농장을 강제하지 않았습니다. 대토지 국유화를 사회주의적 개조의 전제로 본 것은 룩셈부르크의 비판 쪽입니다.",
+                  "위임은 매매·임대·저당을 금지했습니다. 농민의 토지 분할이 사실상 새 사유재산을 만들었다는 것은 뒤에 룩셈부르크가 『러시아 혁명』에서 한 비판이지, 위임의 규정이 아닙니다."
                 ],
                 "en": [
-                  "The Mandate abolished private ownership of land forever and made all land the property of the whole people without compensation, distributed equally by a labour or subsistence standard, leaving forms of tenure (household, farm, communal, co-operative) to each village.",
-                  "The decree placed the land at the disposal of the volost land committees and uyezd Peasants' Soviets, and the Mandate put no restriction on forms of tenure. It was not a state-farm plan.",
-                  "Article 1 of the decree abolished landed proprietorship forthwith without compensation. Lenin's report attacked the Provisional Government precisely for postponing the land question."
+                  "The Mandate abolished private ownership of land forever, banned its sale, purchase, lease and mortgage, permitted no hired labour, and set equal use by a labour or subsistence standard according to local conditions.",
+                  "The Mandate left forms of tenure (household, farm, communal, co-operative) to each village and imposed no state farms. Seeing nationalisation of the large estates as the precondition of socialist transformation belongs to Luxemburg's critique.",
+                  "The Mandate banned sale, lease and mortgage. That peasant partition in effect created new private property was Luxemburg's later criticism in The Russian Revolution, not a rule of the Mandate."
                 ]
               },
               "explanation": {
@@ -3456,6 +3456,7 @@ module.exports = {
             "items": [
               "두 사람 모두 민족 억압에 반대했고, 노동자 조직을 민족별로 쪼개지 말고 하나로 묶어야 한다고 봤습니다. 갈린 곳은 억압하는 민족의 당 강령에 분리권을 적어야 하는가였습니다. 룩셈부르크는 폴란드 민족주의와의 싸움에서, 레닌은 대러시아 민족주의와의 싸움에서 문제를 봤습니다.",
               "1896년 런던 국제대회 결의를 두고도 읽기가 갈렸습니다. 룩셈부르크는 그것이 폴란드 재건 동의안을 물리친 일반 원칙이며 실천 지침은 노동자에게 국제 사회민주주의의 대오에 들어오라는 둘째 부분에 있다고 했고, 레닌은 자결권 인정과 국제적 통일의 호소라는 두 부분의 결합이 옳은 지침이라고 했습니다.",
+              "1905년 노르웨이의 스웨덴 분리를 두고도 읽기가 갈렸습니다. 룩셈부르크는 노르웨이인이 스웨덴 국왕을 몰아낸 뒤 다른 국왕을 뽑고 공화국 수립안을 국민투표로 물리쳤다며, 분리가 진보성이나 민주주의의 표현이 아니라고 했습니다. 레닌은 그것이 노르웨이 소부르주아의 속물성일 뿐 분리권 문제와는 상관이 없다고 하고, 스웨덴 지주들이 전쟁을 설교할 때 스웨덴 노동자들이 노르웨이의 분리권을 인정해 두 나라 노동자의 연대가 굳어졌다는 점을 들었습니다.",
               "룩셈부르크는 1918년 『러시아 혁명』에서도 볼셰비키의 자결 구호를 비판하며, 계급 사회에서 이 구호가 핀란드와 우크라이나 부르주아지의 계급 지배 도구가 되었다고 썼습니다."
             ]
           },
@@ -3499,6 +3500,7 @@ module.exports = {
             "items": [
               "Both opposed national oppression and wanted workers' organisations united rather than split by nationality. They split over whether an oppressing nation's party should write the right to secede into its programme. Luxemburg saw the problem from the fight against Polish nationalism, Lenin from the fight against Great Russian nationalism.",
               "They also read the 1896 London congress resolution differently. Luxemburg said it was a general principle that rejected the motion for restoring Poland, with the practical guidance in its second part calling workers into the ranks of international social democracy; Lenin said the combination of both parts, recognition of self-determination and the call for international unity, was the correct guide.",
+              "They also read Norway's separation from Sweden in 1905 differently. Luxemburg noted that after ousting the Swedish king the Norwegians elected another king and voted down a republic, so secession was no expression of progress or democracy. Lenin called that the philistinism of the Norwegian petty bourgeoisie, beside the point of the right to secede, and stressed that when Swedish landlords preached war, Swedish workers recognised Norway's right to secede, strengthening the solidarity of the two countries' workers.",
               "In The Russian Revolution (1918) Luxemburg again criticised the Bolshevik slogan of self-determination, writing that in class society it had become a tool of class rule for the Finnish and Ukrainian bourgeoisie."
             ]
           },
@@ -3612,32 +3614,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "룩셈부르크는 러시아 사회민주노동당 강령 제9항의 자결권 공식이 다른 사회주의 정당들의 강령과 견주어 어떤 점에서 두드러진다고 보았을까요?",
-                "en": "How, according to Luxemburg, did the self-determination formula of clause 9 of the RSDLP programme stand out from the programmes of other socialist parties?"
+                "ko": "룩셈부르크는 자결권 공식이 국제 사회주의 정당 가운데 러시아 당 강령에만 있다고 지적하며 오스트리아 당의 예를 함께 들었습니다. 오스트리아 당을 든 것은 무엇을 보이려는 것이었을까요?",
+                "en": "Pointing out that among socialist parties only the Russian programme carried the self-determination formula, Luxemburg also cited the Austrian party. What was the Austrian example meant to show?"
               },
               "choices": {
                 "ko": [
-                  "국제 사회주의 정당 가운데 이 공식을 강령에 넣은 곳은 러시아 당뿐이고, 민족문제가 절박한 오스트리아 당조차 구체적 계획을 택했다고 봤습니다.",
-                  "이 공식은 1899년 브륀 대회에서 채택된 오스트리아 당의 민족 강령을 그대로 옮긴 것이라, 러시아의 사정에는 맞지 않는 남의 나라 수입품이라고 봤습니다.",
-                  "이 공식은 1896년 런던 국제대회가 모든 당에 강령으로 넣으라고 권고한 실천 지침이어서, 러시아 당은 그 권고를 따랐을 뿐이라고 봤습니다."
+                  "민족문제가 절박한 오스트리아 당조차 공허한 권리 대신 민족체들의 민주주의적 연방국가라는 구체적 계획을 택했다는 것입니다.",
+                  "오스트리아 당이 자결권을 강령에 내걸었다가 민족별로 쪼개졌으니, 같은 공식을 쓰면 러시아 당도 그렇게 갈라지리라는 것입니다.",
+                  "오스트리아와 달리 러시아에서는 대러시아인이 다른 민족을 억압하는 민족이므로, 분리권을 강령에 따로 적어야 한다는 것입니다."
                 ],
                 "en": [
-                  "The Russian party alone among socialist parties had put it in its programme; even the Austrian party, for which the question was pressing, chose a concrete plan.",
-                  "It was copied from the Austrian party's national programme adopted at Brünn in 1899, an import that did not fit Russian conditions.",
-                  "It was practical guidance that the 1896 London congress had told all parties to put in their programmes, and the Russian party had simply complied."
+                  "Even the Austrian party, for which the question was pressing, chose a concrete plan, a democratic federal state of nationalities, rather than an empty right.",
+                  "The Austrian party had put self-determination in its programme and then split along national lines, so the same formula would split the Russian party too.",
+                  "Unlike in Austria, the Great Russians in Russia were an oppressor nation, so the right to secede had to be written into the programme separately."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "룩셈부르크는 러시아 노동자당이 국제 사회주의 대오에서 이 요구를 강령에 담은 유일한 당이며, 그 밖에는 사회혁명당 강령에만 있다고 썼습니다.",
-                  "브륀 강령에는 자결권이 없습니다. 오스트리아 당은 왕령지를 민족적 자치체로 바꾸고 민족체들의 민주주의적 연방국가를 세운다는 구체적 계획을 택했습니다.",
-                  "런던 결의에 자결권 구절은 있지만, 룩셈부르크는 어느 당도 그것을 실천적 해결책으로 받아들여 강령에 넣지 않았다고 지적했습니다."
+                  "룩셈부르크는 러시아 노동자당이 국제 사회주의 대오에서 이 요구를 강령에 담은 유일한 당이라고 하고, 여러 민족이 뒤섞인 오스트리아 당도 1899년 브륀에서 자결권이 아니라 명확한 계획을 택했다는 점을 증거로 들었습니다.",
+                  "브륀 강령에는 자결권이 없습니다. 오스트리아 당은 왕령지를 민족적 자치체로 바꾸고 민족체들의 민주주의적 연방국가를 세운다는 계획을 택했습니다.",
+                  "그것은 레닌이 룩셈부르크에 맞서 편 논리입니다. 레닌은 대러시아 민족주의와의 싸움에서 분리권을 옹호했고, 룩셈부르크는 오스트리아의 예로 오히려 분리권 공식이 필요 없다고 주장했습니다."
                 ],
                 "en": [
-                  "Luxemburg wrote that the Russian workers' party was the only one in the ranks of international socialism to carry this demand, which appeared otherwise only in the Socialist Revolutionaries' programme.",
-                  "The Brünn programme contains no right of self-determination. The Austrian party chose a concrete plan: turn the crown lands into national self-governing units within a democratic federal state of nationalities.",
-                  "The London resolution does contain a self-determination phrase, but Luxemburg pointed out that no party adopted it as a practical solution or put it in its programme."
+                  "Luxemburg wrote that the Russian workers' party was the only one in international socialism to carry the demand, and as evidence noted that the Austrian party, in a state of mixed nationalities, chose a clear plan at Brünn in 1899 rather than self-determination.",
+                  "The Brünn programme contains no right of self-determination. The Austrian party chose to turn the crown lands into national self-governing units within a democratic federal state of nationalities.",
+                  "That is Lenin's argument against Luxemburg. Lenin defended the right to secede in the fight against Great Russian nationalism; Luxemburg used the Austrian case to argue that the formula was unnecessary."
                 ]
               },
               "explanation": {
@@ -3646,7 +3648,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/luxemburg-national-question-autonomy",
+                "href": "/commulingo/docs/luxemburg-national-question-autonomy#article-1",
                 "label": {
                   "ko": "룩셈부르크, 「민족문제와 자치」 제1편 「민족자결권」 (1908)",
                   "en": "Luxemburg, The National Question and Autonomy, essay 1 'The Right of Nations to Self-Determination' (1908)"
@@ -3692,7 +3694,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/luxemburg-national-question-autonomy",
+                "href": "/commulingo/docs/luxemburg-national-question-autonomy#article-1",
                 "label": {
                   "ko": "룩셈부르크, 「민족문제와 자치」 제1편 I·IV·V절 (1908)",
                   "en": "Luxemburg, The National Question and Autonomy, essay 1, parts I, IV and V (1908)"
@@ -3738,7 +3740,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/lenin-self-determination",
+                "href": "/commulingo/docs/lenin-self-determination#self-determination-1",
                 "label": {
                   "ko": "레닌, 「민족자결권에 대하여」 제1절·제5절 (1914)",
                   "en": "Lenin, The Right of Nations to Self-Determination, sections 1 and 5 (1914)"
@@ -3784,7 +3786,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/lenin-self-determination",
+                "href": "/commulingo/docs/lenin-self-determination#self-determination-5",
                 "label": {
                   "ko": "레닌, 「민족자결권에 대하여」 제4·5·6절과 원주 14 (1914)",
                   "en": "Lenin, The Right of Nations to Self-Determination, sections 4 to 6 and note 14 (1914)"
@@ -3830,7 +3832,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/lenin-self-determination",
+                "href": "/commulingo/docs/lenin-self-determination#self-determination-6",
                 "label": {
                   "ko": "레닌, 「민족자결권에 대하여」 제6절 「노르웨이의 스웨덴으로부터의 분리」 (1914)",
                   "en": "Lenin, The Right of Nations to Self-Determination, section 6 'The Secession of Norway from Sweden' (1914)"
@@ -3876,7 +3878,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/luxemburg-russian-revolution",
+                "href": "/commulingo/docs/luxemburg-russian-revolution#russrev-3",
                 "label": {
                   "ko": "룩셈부르크, 『러시아 혁명』 민족자결권 대목 (1918)",
                   "en": "Luxemburg, The Russian Revolution, section on national self-determination (1918)"
@@ -4092,12 +4094,12 @@ module.exports = {
                 "ko": [
                   "세계시장 경쟁과 외국 인민의 예속, 끝없는 군비 경쟁, 지배계급이 체계적으로 기르는 민족적 편견에서 비롯된다고 보았습니다.",
                   "개별 군주와 외교관의 야심이나 오판에서 비롯되므로, 비밀 외교를 공개하고 군주의 개전 권한만 없애면 전쟁이 사라진다고 보았습니다.",
-                  "후진 민족이 일으키는 민족 해방 운동이 강대국을 끌어들이는 데서 비롯되므로, 인터내셔널이 각지의 민족 운동을 억눌러야 한다고 보았습니다."
+                  "관세 장벽이 자유로운 교역을 막는 데서 비롯되므로, 관세를 없애고 자유무역을 넓히면 전쟁이 사라진다고 보았습니다."
                 ],
                 "en": [
                   "In world-market competition and the subjugation of foreign peoples, the endless arms race, and national prejudices systematically cultivated by the ruling classes.",
                   "In the ambitions or misjudgements of individual monarchs and diplomats, so exposing secret diplomacy and removing monarchs' power to declare war would end war.",
-                  "In national liberation movements of backward peoples drawing in the great powers, so the International should hold such national movements in check."
+                  "In tariff walls that block free exchange, so abolishing tariffs and extending free trade would make war disappear."
                 ]
               },
               "answer": 0,
@@ -4105,12 +4107,12 @@ module.exports = {
                 "ko": [
                   "결의는 전쟁이 대체로 세계시장 경쟁의 결과이고, 군국주의의 군비 경쟁과 지배계급이 기르는 민족적 편견이 전쟁을 부추긴다고 씁니다. 그래서 전쟁은 자본주의의 본성에 속한다고 합니다.",
                   "결의는 전쟁을 개인의 결정보다 자본주의의 본성에 속한 것으로 봅니다. 자본주의 체제가 폐지되거나 인민이 그 폐지로 나설 때에야 그친다고 했습니다.",
-                  "결의는 민족적 편견을 전쟁의 원인으로 들지만 그것을 기르는 주체를 지배계급으로 봅니다. 민족 운동을 억누르라는 과제는 결의에 없습니다."
+                  "자유무역이 평화를 가져온다는 것은 코브던 같은 자유주의자의 기대였습니다. 결의는 세계시장 경쟁 자체가 새 시장 정복과 외국 인민의 예속으로 이어진다고 보고, 전쟁이 자본주의의 본성에 속한다고 했습니다."
                 ],
                 "en": [
                   "The resolution says wars are largely the result of world-market competition, fuelled by militarism's arms race and ruling-class national prejudice, so war belongs to the very nature of capitalism.",
                   "The resolution treats war as part of the nature of capitalism, not of individual decisions: it ends only when the capitalist system is abolished or the people rise to abolish it.",
-                  "The resolution names national prejudice as a cause but sees the ruling classes as cultivating it; it gives no task of suppressing national movements."
+                  "That free trade brings peace was the hope of liberals such as Cobden. The resolution held that world-market competition itself drives the conquest of new markets and the subjugation of foreign peoples, so war belongs to the nature of capitalism."
                 ]
               },
               "explanation": {
@@ -4646,7 +4648,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/luxemburg-russian-revolution",
+                "href": "/commulingo/docs/luxemburg-russian-revolution#russrev-3",
                 "label": {
                   "ko": "룩셈부르크, 『러시아 혁명』 제III절의 토지 문제 대목 (1918)",
                   "en": "Luxemburg, The Russian Revolution, section III on the land question (1918)"
@@ -4664,26 +4666,26 @@ module.exports = {
               "choices": {
                 "ko": [
                   "공공 기관이 껍데기만 남고 관료와 소수 당 지도자만 움직여, 계급이 아니라 한 줌 정치인의 독재가 된다고 했습니다.",
-                  "반대파가 사라져 소비에트가 더 단결하므로, 전쟁 중에는 사회주의 건설이 오히려 더 빨라진다고 했습니다.",
-                  "농민이 다수인 소비에트는 반동적이므로 해산된 제헌의회를 그대로 되살려 권력을 넘겨야 한다고 했습니다."
+                  "선거로 뽑힌 기관은 투표일의 대중 분위기만 비추므로, 혁명기에는 소비에트만으로도 대중과 충분히 이어진다고 했습니다.",
+                  "보통선거로 뽑힌 제헌의회만이 정당한 권력이므로, 소비에트는 국가 기관이 아니라 계급 조직으로만 남아야 한다고 했습니다."
                 ],
                 "en": [
                   "Institutions would become hollow, with only bureaucrats and a few party leaders active: a dictatorship of a handful of politicians, not of the class.",
-                  "With the opposition gone the soviets would be more united, so building socialism would actually speed up during the war.",
-                  "Soviets with a peasant majority were reactionary, so the dissolved Constituent Assembly should be restored as it was and given power."
+                  "An elected body only mirrors the masses' mood on polling day, so in a revolution the soviets alone keep close enough contact with the masses.",
+                  "Only a constituent assembly elected by universal suffrage was legitimate power, so the soviets should remain class organisations, not organs of state."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
                   "룩셈부르크는 이 경우 수십 명의 당 지도자가 지휘하고 노동자 엘리트는 박수만 치게 되며, 이는 부르주아적 의미의 독재라고 했습니다.",
-                  "그녀는 정반대로, 볼셰비키가 착수한 거대한 과제야말로 대중의 가장 집중적인 정치적 훈련과 경험의 축적을 필요로 한다고 했습니다.",
-                  "그녀는 옛 제헌의회를 되살리자고 하지 않았습니다. 10월 이전의 상황을 반영한 의회였으니 지체 없이 새 선거를 치렀어야 한다고 했습니다."
+                  "그것은 룩셈부르크가 인용해 반박한 트로츠키의 논리입니다. 그녀는 대중의 생생한 움직임과 끊임없는 압력이 대의 기구를 교정한다고 보고, 민주주의 자체를 없애는 처방은 그것이 막으려는 악폐보다 나쁘다고 했습니다.",
+                  "카우츠키의 견해에 가깝습니다. 룩셈부르크는 소비에트를 버리자고 하지 않았고, 10월 이전의 상황을 반영한 옛 의회를 버렸다면 지체 없이 새 선거를 치렀어야 한다고 했습니다."
                 ],
                 "en": [
                   "Luxemburg said a few dozen party leaders would direct, a worker elite would be called to applaud, and this would be dictatorship in the bourgeois sense.",
-                  "She argued the opposite: the immense task the Bolsheviks undertook required the most intensive political training and accumulation of experience by the masses.",
-                  "She did not call for reviving the old assembly; since it reflected the situation before October, new elections should have been held at once."
+                  "That is Trotsky's argument, which Luxemburg quoted in order to refute it. She held that the living movement and constant pressure of the masses correct representative bodies, and that abolishing democracy itself was a cure worse than the disease.",
+                  "That is closer to Kautsky's view. Luxemburg did not ask to drop the soviets; she said that if the old assembly, reflecting the situation before October, was discarded, new elections should have been held at once."
                 ]
               },
               "explanation": {
@@ -4692,7 +4694,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/luxemburg-russian-revolution",
+                "href": "/commulingo/docs/luxemburg-russian-revolution#russrev-4",
                 "label": {
                   "ko": "룩셈부르크, 『러시아 혁명』 제IV절과 저자의 여백 메모 (1918)",
                   "en": "Luxemburg, The Russian Revolution, section IV and the author's marginal notes (1918)"
@@ -4738,7 +4740,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/luxemburg-russian-revolution",
+                "href": "/commulingo/docs/luxemburg-russian-revolution#russrev-4",
                 "label": {
                   "ko": "룩셈부르크, 『러시아 혁명』 제IV절의 선거권 대목과 여백 메모 (1918)",
                   "en": "Luxemburg, The Russian Revolution, section IV on the franchise, with the author's marginal note (1918)"
@@ -4784,7 +4786,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/luxemburg-russian-revolution",
+                "href": "/commulingo/docs/luxemburg-russian-revolution#russrev-1",
                 "label": {
                   "ko": "룩셈부르크, 『러시아 혁명』 제I절과 제IV절 (1918)",
                   "en": "Luxemburg, The Russian Revolution, sections I and IV (1918)"
@@ -4830,7 +4832,7 @@ module.exports = {
               },
               "source": {
                 "kind": "reference",
-                "href": "/commulingo/docs/luxemburg-russian-revolution",
+                "href": "/commulingo/docs/luxemburg-russian-revolution#russrev-4",
                 "label": {
                   "ko": "룩셈부르크, 『러시아 혁명』 제IV절의 끝맺음 (1918)",
                   "en": "Luxemburg, The Russian Revolution, close of section IV (1918)"
@@ -5054,26 +5056,26 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "제2인터내셔널 출신 정당들이 대중의 압력에 떠밀려 들어와 코민테른이 묽어질 위험이 있고, 아무 의무도 없는 「우체통」이 되어서는 안 된다고 했습니다.",
-                  "가입을 신청한 정당이 아직 너무 적어 세력이 약하므로, 조건을 까다롭게 걸어 두면 가입 신청이 늘어나 조직이 빨리 커진다고 했습니다.",
-                  "각국 당의 자율을 지키려면 집행위원회가 가입한 당에 간섭할 수 없도록, 가입 때 서로의 권한을 문서로 정해 두어야 한다고 했습니다."
+                  "제2인터내셔널 출신 당들이 대중에 떠밀려 들어와 코민테른이 묽어지고, 의무 없는 「우체통」이 될 위험이 있다고 했습니다.",
+                  "창립 때처럼 선전 단체로 남아야 하므로, 대중 정당보다는 검증된 소수 혁명가 집단만 가려 받아들여야 한다고 했습니다.",
+                  "각국 당의 자율을 지키려면 집행위원회가 가입한 당에 간섭할 수 없도록, 서로의 권한을 가입 때 문서로 정해야 한다고 했습니다."
                 ],
                 "en": [
-                  "Parties from the Second International pushed in by the masses threatened to water the International down, and it must not become a 'letter-box' imposing no obligations.",
-                  "Too few parties had applied and its forces were weak, so demanding conditions would attract more applications and make the organisation grow faster.",
-                  "To protect national parties' autonomy, the powers of each side had to be fixed in writing at entry so the Executive could not interfere in member parties."
+                  "Second International parties pushed in by the masses threatened to dilute it into a 'letter-box' imposing no obligations.",
+                  "It had to remain a propaganda society as at its founding, admitting only small groups of tested revolutionaries rather than mass parties.",
+                  "To protect national parties' autonomy, the powers of each side had to be fixed in writing at entry so the Executive could not interfere."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
                   "지노비예프는 창립 때와 달리 이제는 너무 많은 이질적 요소를 받아들일 위험이 있다고 했고, 그림이 말하는 조금 더 크고 붉게 칠한 우체통은 코민테른이 결코 되어서는 안 될 모습이라고 했습니다.",
-                  "사정은 반대였습니다. 제2인터내셔널이 무너진 뒤 코민테른이 유행이 될 위험, 곧 너무 많은 당이 몰려드는 것이 그가 경계한 문제였습니다.",
+                  "지노비예프의 출발점은 반대였습니다. 창립 때의 선전 단체를 넘어 이제는 세계 규모의 투쟁 조직이 되려 한다고 했고, 대중 정당을 막자는 것이 아니라 개량주의 지도부를 그대로 둔 채 들어오는 당을 가려내자고 했습니다.",
                   "이것은 지노비예프가 비판한 쪽의 요구와 비슷합니다. 그는 누구도 얽매이지 않는 가입을 바라는 개량주의자들을 들며, 원하는 대로 계속하려는 사람의 자리는 없다고 했습니다."
                 ],
                 "en": [
                   "Zinoviev said that, unlike at the founding, there was now a danger of taking in too many diverse elements, and that Grimm's idea of a bigger letter-box painted red was what the International must never become.",
-                  "The situation was the reverse. The danger he warned of was the International becoming the fashion after the Second International's collapse, with too many parties flocking in.",
+                  "Zinoviev started from the opposite point: the International was moving beyond the propaganda society of its founding to become a fighting organisation on a world scale. The aim was not to keep out mass parties but to sift out parties that came in with their reformist leaders intact.",
                   "This resembles the demand of those Zinoviev criticised. He cited reformists who wanted to join without being tied down and said there was no room for people who meant to carry on as they pleased."
                 ]
               },
@@ -5279,32 +5281,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "21개 조건은 가입을 원하는 당에 어떤 절차를 밟게 했고, 그 뒤 각국 사회당에서는 무슨 일이 일어났을까요?",
-                "en": "What procedure did the twenty-one conditions impose on parties wishing to join, and what then happened in the socialist parties?"
+                "ko": "21개 조건은 가입을 원하는 당에 4개월 안에 긴급 당대회를 열고, 조건을 원칙적으로 거부하는 당원은 제명하게 했습니다. 이 절차는 각국 사회당에 어떤 결과를 낳았을까요?",
+                "en": "The twenty-one conditions required a party wishing to join to hold an extraordinary congress within four months and to expel members who rejected the conditions in principle. What did this procedure lead to in the socialist parties?"
               },
               "choices": {
                 "ko": [
-                  "4개월 안에 긴급 당대회를 열고 원칙적 반대자를 제명하게 했으며, 1920년 12월 투르 대회에서 프랑스 사회당 다수가 가입해 공산당이 되었습니다.",
-                  "받아들일 조항만 골라 집행위원회에 알리면 되었으므로, 프랑스 사회당은 당명을 그대로 둔 채 분열 없이 당 전체가 통째로 가입했습니다.",
-                  "조건은 새로 세운 공산당에만 적용되어 기존 사회당은 표결할 필요가 없었고, 각국 사회당은 갈라지지 않은 채 제2인터내셔널에 남았습니다."
+                  "찬반 표결과 제명이 당을 가입파와 반대파로 갈라, 투르 대회에서는 프랑스 사회당 다수가 공산당이 되었습니다.",
+                  "당명만 공산당으로 바꾸면 개량주의자도 남을 수 있어, 각국 사회당은 갈라지지 않은 채 통째로 공산당이 되었습니다.",
+                  "조건이 제2인터내셔널 탈퇴만 요구했으므로, 중앙파 지도자들이 그대로 당을 이끌며 제3인터내셔널에 들어갔습니다."
                 ],
                 "en": [
-                  "An extraordinary congress within four months, with opponents in principle expelled; at Tours in December 1920 the French Socialist majority joined and became the Communist Party.",
-                  "Parties could pick the clauses they accepted and notify the Executive, so the French Socialist Party joined as a whole, without a split and keeping its name.",
-                  "The conditions applied only to newly founded Communist parties, so existing socialist parties never voted, and they all stayed undivided in the Second International."
+                  "Votes and expulsions split parties into supporters and opponents; at Tours the French Socialist majority became the Communist Party.",
+                  "Changing the name to Communist was enough for reformists to stay, so the socialist parties became Communist parties whole, without splitting.",
+                  "The conditions only demanded leaving the Second International, so centrist leaders kept leading their parties into the Third."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "제19항은 제2차 대회 뒤 늦어도 4개월 안에 긴급 당대회를 열게 했고, 제21항은 조건을 원칙적으로 거부하는 당원과 대의원의 제명을 정했습니다. 투르에서 다수가 가입을 택했습니다.",
-                  "조건은 골라 받는 목록이 아니었습니다. 제16항은 대회와 집행위원회 결의를 의무로 했고, 제17항은 당명을 공산당으로 바꾸는 것이 형식 문제가 아니라고 했습니다.",
-                  "조건은 바로 기존 사회당을 향한 것이었습니다. 제15항과 제20항은 아직 옛 사회민주주의 강령과 전술을 가진 당들이 무엇을 바꿔야 하는지 따로 정했습니다."
+                  "제19항의 긴급 당대회와 제21항의 제명 규정 때문에 수용 여부는 곧 당의 분열이 되었습니다. 프랑스 사회당은 1920년 12월 투르 대회에서 다수가 가입을 택했고, 같은 무렵 독일과 이탈리아에서도 같은 분열이 일어났습니다.",
+                  "제21항은 조건을 원칙적으로 거부하는 당원을 긴급 당대회 대의원이라도 제명하게 했습니다. 「숙청은 하되 제명은 없다」던 세라티의 바람과 달리, 조건은 당을 통째로 받아들이지 않았습니다.",
+                  "제7항은 투라티, 카우츠키, 힐퍼딩, 롱게, 맥도널드 같은 중앙파와 개량주의 지도자를 이름으로 들며 그들과의 완전한 단절을 요구했습니다. 제2항은 그런 인물을 책임 있는 자리에서 축출하게 했습니다."
                 ],
                 "en": [
-                  "Condition 19 required an extraordinary congress within four months of the Second Congress at the latest, and condition 21 required expelling members and delegates who rejected the conditions in principle. At Tours the majority chose to join.",
-                  "The conditions were not a menu. Condition 16 made congress and Executive decisions binding, and condition 17 said changing the name to Communist Party was no mere formality.",
-                  "The conditions were aimed precisely at existing socialist parties. Conditions 15 and 20 set out what parties still holding old social-democratic programmes and tactics had to change."
+                  "Because of the extraordinary congress of condition 19 and the expulsions of condition 21, accepting the conditions meant splitting the party. At Tours in December 1920 the majority of the French Socialist Party chose to join, and similar splits followed in Germany and Italy.",
+                  "Condition 21 required expelling members who rejected the conditions in principle, even delegates to the extraordinary congress. Contrary to Serrati's hope of a purge without expulsions, the conditions did not take parties in whole.",
+                  "Condition 7 named centrist and reformist leaders such as Turati, Kautsky, Hilferding, Longuet and MacDonald and demanded a complete break with them; condition 2 required removing such people from responsible posts."
                 ]
               },
               "explanation": {

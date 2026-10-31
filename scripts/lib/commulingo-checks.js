@@ -300,7 +300,11 @@ function checkSource(out, value, qLabel) {
 function checkQuestion(out, question, lesson, index, ctx) {
   const expectedId = 'q' + (index + 1);
   const qLabel = lesson.id + '/' + (question.id || expectedId);
-  if (question.id !== expectedId) out.add('shape', qLabel, qLabel + ' id should be ' + expectedId);
+  // A question replaced outright keeps its slot and carries the date (q3-r20261031),
+  // so learners' answers to the old question are not counted for the new one.
+  if (question.id !== expectedId && !new RegExp('^' + expectedId + '-r\\d{8}$').test(String(question.id))) {
+    out.add('shape', qLabel, qLabel + ' id should be ' + expectedId + ' (or ' + expectedId + '-rYYYYMMDD when replaced)');
+  }
   if (question.type !== 'multiple_choice') out.add('shape', qLabel, qLabel + ' type must be multiple_choice');
   if (question.points !== (lesson.level === 'advanced' ? 3 : 2)) out.add('shape', qLabel, qLabel + ' points do not match lesson level');
   allLocalizedText(out, question.prompt, qLabel + '.prompt');

@@ -971,12 +971,12 @@ module.exports = {
                 "ko": [
                   "영국을 견제하려 쓴 전쟁 비용이 채무를 늘렸고, 특권에 막힌 조세로는 메울 수 없어 새 과세 승인을 얻으려 삼부회를 소집했습니다.",
                   "미국 공화정에 공감한 왕정이 참전했고, 전쟁에서 이긴 여세를 몰아 개혁을 추진할 협력 기구로 삼부회를 소집했습니다.",
-                  "참전 비용은 차입으로 해결되어 조세 문제가 없었고, 삼부회는 제3신분이 먼저 대표권을 요구하자 이에 응해 소집됐습니다."
+                  "전쟁 채무를 메우려고 특권 신분이 먼저 면세 특권을 내놓기로 했고, 삼부회는 그 합의를 법으로 확인하려 소집됐습니다."
                 ],
                 "en": [
                   "War spending to check Britain swelled the debt, a tax system blocked by privilege could not cover it, and the Estates-General was called to approve new taxes.",
                   "A monarchy sympathetic to the American republic entered the war and, riding its victory, called the Estates-General as a partner for reform.",
-                  "Borrowing covered the war so there was no tax problem, and the Estates-General was called because the Third Estate first demanded representation."
+                  "To cover the war debt the privileged orders first agreed to give up their tax exemptions, and the Estates-General was called to confirm that deal in law."
                 ]
               },
               "answer": 0,
@@ -984,12 +984,12 @@ module.exports = {
                 "ko": [
                   "참전 비용이 기존 채무와 불공평한 조세 구조에 겹쳐 재정 위기가 깊어졌고, 새 과세 승인이 삼부회 소집의 계기였습니다.",
                   "프랑스의 참전 동기는 공화정에 대한 공감보다 영국과의 경쟁이었고, 삼부회는 승리의 여세가 아니라 재정난 속에 소집됐습니다.",
-                  "대표권 다툼은 삼부회가 열린 뒤 신분별 표결을 둘러싸고 터졌습니다. 소집의 출발점은 전쟁 채무와 과세 문제였습니다."
+                  "특권 신분은 면세 특권을 지키려 했습니다. 1787년 명사회는 새 토지세를 거부하고 삼부회로 미뤘으니, 새 과세 승인 자체가 소집의 쟁점이었습니다."
                 ],
                 "en": [
                   "War costs compounded old debts and an unequal tax system, and approving new taxes was the reason for calling the Estates-General.",
                   "France joined the war mainly out of rivalry with Britain, not republican sympathy, and the Estates-General was called in fiscal distress, not triumph.",
-                  "The fight over representation broke out after the Estates-General met, over voting by order. The starting point was war debt and taxation."
+                  "The privileged orders defended their exemptions. In 1787 the Assembly of Notables rejected a new land tax and referred it to the Estates-General, so approving new taxes was the very issue."
                 ]
               },
               "explanation": {
@@ -1017,12 +1017,12 @@ module.exports = {
                 "ko": [
                   "파리 군중의 무장 행동과 농민의 영주권 문서 공격이 압력이 되어, 국민의회가 봉건적 특권 폐지를 선언하게 했습니다.",
                   "국민의회가 8월 4일 특권 폐지를 먼저 선언하자, 이에 고무된 농민들이 뒤이어 대공포를 일으켜 영주권 문서를 불태웠습니다.",
-                  "바스티유 습격은 파리의 감옥 문제에 그쳤고, 8월 4일 결정은 농촌 소요와 무관하게 의원들의 사상 토론에서 나왔습니다."
+                  "특권 폐지는 귀족 의원들이 스스로 내놓은 제안이었으니, 농촌 소요보다 계몽사상에 대한 확신이 그 결정을 이끌었습니다."
                 ],
                 "en": [
                   "Armed action by the Paris crowd and peasant attacks on seigneurial records put pressure on the National Assembly to declare feudal privilege abolished.",
                   "The Assembly declared privilege abolished on 4 August first, and peasants encouraged by it then launched the Great Fear and burned seigneurial records.",
-                  "The Bastille concerned only a Paris prison, and the 4 August decision came from deputies' debate on ideas, unconnected to rural unrest."
+                  "Noble deputies themselves proposed the abolition of privilege, so conviction in Enlightenment ideas, more than rural unrest, drove the decision."
                 ]
               },
               "answer": 0,
@@ -1030,12 +1030,12 @@ module.exports = {
                 "ko": [
                   "대공포와 영주권 문서 공격은 8월 4일 이전에 일어났고, 국민의회가 봉건적 특권 폐지를 선언하는 배경이 됐습니다.",
                   "순서가 뒤집혔습니다. 농촌의 대공포는 7월 말에 번졌고, 8월 4일 밤의 선언은 그 뒤에 나온 대응이었습니다.",
-                  "바스티유 습격은 군중이 의회와 왕의 대립에 개입한 정치적 사건이었고, 8월 4일 결정은 농촌 소요에 대한 대응이었습니다."
+                  "노아유 자작 같은 자유주의 귀족이 먼저 제안한 것은 맞지만, 그 제안 자체가 대공포로 번진 농촌 봉기를 가라앉히려는 대응이었습니다."
                 ],
                 "en": [
                   "The Great Fear and attacks on records came before 4 August and formed the background to the Assembly's declaration abolishing feudal privilege.",
                   "The order is reversed. The Great Fear spread in late July, and the declaration of the night of 4 August was a response that came after it.",
-                  "The Bastille was a political event in which the crowd entered the conflict between Assembly and king, and 4 August answered rural unrest."
+                  "Liberal nobles such as the Vicomte de Noailles did propose it first, but their proposal was itself a response meant to calm the rural risings of the Great Fear."
                 ]
               },
               "explanation": {
@@ -1098,48 +1098,48 @@ module.exports = {
               }
             },
             {
-              "id": "q4",
+              "id": "q4-r20261031",
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "8월 법령이 폐지한다고 하면서도 대체 재원이 마련될 때까지 종전처럼 걷게 한 부담은 무엇이었을까요?",
-                "en": "Which burden did the August decree declare abolished yet order collected as before until a substitute was found?"
+                "ko": "8월 법령이 조세 특권(제9조)과 지방·도시의 특권(제10조)을 없애고 출신과 관계없이 모든 시민이 공직에 오를 수 있게 한 것(제11조)은 구체제의 어떤 원리를 무너뜨렸을까요?",
+                "en": "In abolishing tax privileges (Art. 9) and provincial and urban privileges (Art. 10), and opening office to every citizen regardless of birth (Art. 11), which principle of the Old Regime did the August decree break?"
               },
               "choices": {
                 "ko": [
-                  "십일조였습니다. 예배 경비와 빈민 구제 등을 다른 방식으로 충당할 방도가 마련될 때까지 계속 걷게 했습니다.",
-                  "사냥과 비둘기장 독점권이었습니다. 영주가 상환금을 받을 때까지 독점을 유지하고 농민의 사냥을 계속 금지했습니다.",
-                  "귀족과 성직자의 조세 특권이었습니다. 새 과세 방식이 정해질 다음 해까지 이들의 면세를 그대로 두었습니다."
+                  "신분과 지역에 따라 세금과 권리가 달랐던 원리를 없애, 모든 시민을 같은 법 아래 두었습니다.",
+                  "토지 소유의 불평등을 문제 삼아, 영주의 땅을 나누어 농민에게 재산의 평등을 보장하려 했습니다.",
+                  "귀족이라는 신분과 칭호 자체를 없애, 귀족과 평민의 구별을 법에서 완전히 지워 버렸습니다."
                 ],
                 "en": [
-                  "The tithe. It was to be collected until worship, poor relief, and similar costs could be funded another way.",
-                  "Exclusive hunting and dovecote rights. Lords kept the monopoly until paid off, and peasants could not hunt meanwhile.",
-                  "The tax exemptions of nobles and clergy. They stayed exempt until a new method of taxation was set the next year."
+                  "Taxes and rights varying by birth and region; every citizen was placed under one law.",
+                  "The inequality of landownership; it divided lords' land to guarantee peasants equality of property.",
+                  "The nobility as an order, titles included, erasing from law every distinction between noble and commoner."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "제5조는 십일조를 폐지하되, 대체 방도가 마련되고 옛 소유자가 그것을 누릴 때까지 종전 방식대로 징수하게 했습니다.",
-                  "제2·3조는 비둘기장과 사냥 독점권을 곧바로 폐지하고, 소유자가 자기 땅에서 사냥감을 잡을 권리를 인정했습니다.",
-                  "제9조는 조세 특권을 영구히 폐지하고, 현재 부과 연도의 마지막 6개월분부터 모든 시민에게 같은 방식으로 걷게 했습니다."
+                  "세 조항은 신분(조세 특권, 공직 취임)과 지역(지방·도시의 특권)에 따라 달리 적용되던 법을 하나로 만들었습니다.",
+                  "법령은 땅을 나누지 않았습니다. 제1조는 오히려 토지에 붙은 영주적 부담을 재산으로 보아 값을 치르고 되사게 했습니다.",
+                  "8월 법령은 귀족의 특권을 없앴지 귀족 신분을 없애지 않았습니다. 세습 귀족과 칭호의 폐지는 1790년 6월 19일 법령의 일입니다."
                 ],
                 "en": [
-                  "Article 5 abolished the tithe but kept it collected as before until a replacement was in place and the former holders enjoyed it.",
-                  "Articles 2 and 3 abolished dovecote and hunting monopolies at once and recognised owners' right to kill game on their own land.",
-                  "Article 9 abolished tax privileges for good and applied equal collection to all citizens even for the last six months of the current tax year."
+                  "The three articles made one law out of rules that had differed by order (tax privilege, access to office) and by region (provincial and urban privileges).",
+                  "The decree divided no land. Article 1 instead treated seigneurial dues on land as property to be bought out.",
+                  "The August decree abolished noble privileges, not the nobility itself. Hereditary nobility and titles were abolished by the decree of 19 June 1790."
                 ]
               },
               "explanation": {
-                "ko": "8월 법령에는 즉시 사라진 특권과 폐지를 선언하고도 당분간 남은 부담이 섞여 있습니다. 영주 재판권(제4조), 사냥·비둘기장 독점권(제2·3조), 조세 특권(제9조)은 곧바로 없앴습니다. 조세 특권은 오히려 현재 부과 연도의 마지막 6개월분부터 모든 시민에게 같은 방식으로 걷게 했습니다. 반면 십일조는 교회의 예배와 빈민 구제, 학교와 병원 운영에 쓰이던 돈이었기 때문에, 제5조는 그 비용을 다른 방식으로 댈 방도가 생길 때까지 계속 걷게 했습니다. 영주 재판소의 관리들도 새 사법 질서가 생길 때까지 직무를 계속했습니다. 선언된 폐지와 실제 부담의 소멸 사이에는 이런 간격이 있었습니다.",
-                "en": "The August decree mixes privileges that vanished at once with burdens declared abolished but kept for a time. Seigneurial justice (Art. 4), hunting and dovecote monopolies (Arts. 2–3), and tax privileges (Art. 9) ended immediately; equal taxation even applied to the last six months of the current tax year. The tithe, however, paid for worship, poor relief, schools, and hospitals, so Article 5 kept it collected until those costs could be met another way. Officers of seigneurial courts likewise stayed in post until a new judicial order existed. There was a gap between declared abolition and the actual end of the burden."
+                "ko": "구체제 프랑스에서는 같은 왕국 안에서도 어느 신분으로 태어났는지, 어느 지방이나 도시에 사는지에 따라 내는 세금과 누리는 권리가 달랐습니다. 귀족과 성직자는 여러 세금을 면제받았고, 지방과 도시는 저마다 특권을 내세웠으며, 높은 공직은 출신으로 가려졌습니다. 8월 법령은 조세 특권(제9조)과 지방·도시의 특권(제10조)을 폐지하고, 출신과 관계없이 모든 시민이 공직에 오를 수 있게 했습니다(제11조). 이것은 법 앞의 평등이지 재산의 평등이 아닙니다. 토지에 붙은 부담은 재산으로 보아 되사게 했고, 귀족 신분과 칭호 자체도 1790년 6월에야 폐지됐습니다.",
+                "en": "In Old Regime France, even within one kingdom, the taxes a person paid and the rights he enjoyed depended on the order he was born into and the province or town he lived in. Nobles and clergy were exempt from many taxes, provinces and towns claimed their own privileges, and high office was sorted by birth. The August decree abolished tax privileges (Art. 9) and provincial and urban privileges (Art. 10) and opened office to every citizen regardless of birth (Art. 11). This was equality before the law, not equality of property: dues attached to land were treated as property to be redeemed, and the nobility and its titles were abolished only in June 1790."
               },
               "source": {
                 "kind": "reference",
                 "href": "/commulingo/docs/france-privileges-property-and-labor-1789-1793#france-august-decrees-1789",
                 "label": {
-                  "ko": "특권 폐지에 관한 8월 법령 제2~5·9조",
-                  "en": "August decree on the abolition of privilege, Articles 2–5 and 9"
+                  "ko": "특권 폐지에 관한 8월 법령 제9~11조",
+                  "en": "August decree on the abolition of privilege, Articles 9–11"
                 }
               }
             },
@@ -1280,7 +1280,7 @@ module.exports = {
           {
             "title": "배제에 맞선 요구와 조건부 해방",
             "items": [
-              "올랭프 드 구주의 1791년 소책자는 1789년 선언의 서문과 17개 조항을 따라가며 여성 시민과 남성 시민을 함께 주어로 넣었습니다. 의회에 법령으로 제정하라고 촉구한 개인의 저술입니다.",
+              "올랭프 드 구주의 1791년 소책자는 1789년 선언의 서문과 17개 조항을 따라가며 여성 시민과 남성 시민을 함께 주어로 넣었습니다. 제3조는 국민을 여성과 남성의 결합으로 규정했고, 제16조는 국민 다수가 작성에 협력하지 않은 헌법은 무효라고 덧붙였습니다. 의회에 법령으로 제정하라고 촉구한 개인의 저술입니다.",
               "생도맹그에서는 1791년 봉기가 일어났고, 1793년 8월 29일 송토나의 포고는 북부 관구의 노예를 자유인이자 시민으로 선언하면서도 경작자를 옛 농장에 묶는 노동 규정을 달았습니다.",
               "1793년 10월 30일 국민공회는 아마르의 보고를 듣고 여성의 클럽과 민중 결사를 금지했고, 1794년 2월 4일에는 모든 식민지의 흑인 노예제를 폐지했습니다."
             ]
@@ -1311,7 +1311,7 @@ module.exports = {
           {
             "title": "Demands against exclusion and conditional emancipation",
             "items": [
-              "Olympe de Gouges's 1791 pamphlet follows the preamble and seventeen articles of the 1789 Declaration, adding women citizens alongside men as subjects. It is a private work urging the Assembly to enact it.",
+              "Olympe de Gouges's 1791 pamphlet follows the preamble and seventeen articles of the 1789 Declaration, adding women citizens alongside men as subjects. Its Article 3 defines the nation as the union of woman and man, and Article 16 adds that a constitution most of the nation did not help draft is void. It is a private work urging the Assembly to enact it.",
               "Saint-Domingue saw an uprising in 1791; Sonthonax's proclamation of 29 August 1793 declared the slaves of the Northern Province free men and citizens, but attached labour rules binding cultivators to their former plantations.",
               "On 30 October 1793 the Convention, after Amar's report, banned women's clubs and popular societies, and on 4 February 1794 it abolished Black slavery in all the colonies."
             ]
@@ -1464,32 +1464,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "1791년 헌법에서 1차 집회에 나가는 능동시민의 자격과, 그 집회가 뽑는 선거인의 자격은 어떻게 달랐을까요?",
-                "en": "Under the 1791 Constitution, how did the qualifications of active citizens, who attended the primary assemblies, differ from those of the electors those assemblies chose?"
+                "ko": "1791년 헌법이 1차 집회에 나가는 능동시민과 그 집회가 뽑는 선거인의 자격을 따로 정한 것은 무엇을 뜻할까요?",
+                "en": "What did it mean that the 1791 Constitution set separate qualifications for active citizens, who attended the primary assemblies, and for the electors those assemblies chose?"
               },
               "choices": {
                 "ko": [
-                  "능동시민은 25세 이상과 3일 치 노동 가치의 직접세 등을 갖추면 됐고, 선거인은 더 높은 재산 소득이나 임차 조건이 필요했습니다.",
-                  "능동시민은 토지를 소유한 가장이어야 했고, 선거인은 토지 소유와 관계없이 능동시민 가운데 추첨으로 공평하게 뽑았습니다.",
-                  "능동시민과 선거인은 납세 조건이 같았고, 둘의 차이는 선거인이 25세가 아니라 30세 이상이어야 한다는 나이 조건뿐이었습니다."
+                  "능동시민의 납세 문턱은 낮았지만, 의원을 뽑는 선거인은 더 높은 재산이나 임차 조건으로 다시 걸렀습니다.",
+                  "직접세 문턱이 낮아 거의 모든 성인 남성이 의원을 직접 뽑았으니, 사실상 보통선거를 연 헌법이었다는 뜻입니다.",
+                  "재산 문턱은 토지 소유자에게만 정치 권리를 주려는 것이어서, 도시의 상인과 장인은 선거인이 될 수 없었다는 뜻입니다."
                 ],
                 "en": [
-                  "Active citizens needed age 25 and direct tax worth three days' labour, among other things; electors also needed higher property income or rental thresholds.",
-                  "Active citizens had to be landowning heads of household, while electors were drawn by lot from among active citizens regardless of landownership.",
-                  "Active citizens and electors had the same tax conditions, and the only difference was that electors had to be 30 rather than 25."
+                  "Active citizens faced a low tax threshold, but the electors who chose deputies were filtered again by property or rent.",
+                  "The direct-tax threshold was so low that nearly every adult man chose deputies directly, so the constitution in effect opened universal suffrage.",
+                  "The property threshold meant to give political rights only to landowners, so town merchants and artisans could not become electors."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "제2조는 능동시민 조건으로 25세, 3일 치 노동 가치의 직접세, 하인이 아닐 것 등을 들고, 제7조는 선거인에게 재산 조건을 더합니다.",
-                  "능동시민 조건에는 토지 소유가 없고 직접세 납부가 들어갑니다. 선거인은 추첨이 아니라 1차 집회가 100명당 1명꼴로 임명했습니다.",
-                  "제7조가 선거인에게 요구한 것은 나이가 아니라 150~200일 치 노동 가치 소득의 재산이나 주택 임차 같은 추가 재산 조건입니다."
+                  "능동시민은 3일 치 노동 가치의 직접세면 됐지만, 선거인에게는 150~200일 치 노동 가치의 소득 같은 재산 조건이 더해졌습니다. 두 번 거르는 구조였습니다.",
+                  "의원을 뽑은 것은 능동시민이 아니라 선거인이었습니다. 게다가 25세 미만, 하인, 직접세를 못 내는 사람, 여성은 능동시민에서도 빠졌습니다.",
+                  "선거인 조건에는 주택을 빌리는 것도 들어 있어 도시 주민도 선거인이 될 수 있었습니다. 문턱은 토지가 아니라 재산 소득 일반이었습니다."
                 ],
                 "en": [
-                  "Article 2 lists age 25, direct tax worth three days' labour, not being a servant, and more; Article 7 adds property conditions for electors.",
-                  "Landownership is not among the active-citizen conditions; direct tax is. Electors were appointed by the primary assembly, about one per hundred, not by lot.",
-                  "What Article 7 required of electors was not a higher age but extra property conditions, such as income worth 150 to 200 days' labour or a rented dwelling."
+                  "Active citizens needed only direct tax worth three days' labour, but electors also needed property such as an income worth 150 to 200 days. It filtered twice.",
+                  "Deputies were chosen by electors, not by active citizens. Those under 25, servants, people who paid no direct tax, and women were excluded even from active citizenship.",
+                  "Renting a dwelling was among the electors' conditions, so townspeople could be electors. The threshold was property income in general, not land."
                 ]
               },
               "explanation": {
@@ -1556,31 +1556,31 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "1791년 봉기 이후 송토나가 1793년 8월 29일 생도맹그 북부에 내린 포고는 해방된 경작자에게 어떤 조건을 두었을까요?",
-                "en": "After the 1791 uprising, what conditions did Sonthonax's proclamation of 29 August 1793 in northern Saint-Domingue place on freed cultivators?"
+                "ko": "1791년 봉기 이후 송토나가 1793년 8월 29일 생도맹그 북부에 내린 포고가 해방된 경작자를 옛 농장에 묶어 둔 것은 무엇을 뜻할까요?",
+                "en": "After the 1791 uprising, what did it mean that Sonthonax's proclamation of 29 August 1793 in northern Saint-Domingue bound freed cultivators to their former plantations?"
               },
               "choices": {
                 "ko": [
-                  "자유인이자 시민으로 선언하면서, 경작자는 옛 농장에 남아 1년 단위로 고용되고 수입의 3분의 1을 나누어 받게 했습니다.",
-                  "노예제를 폐지하면서 옛 주인의 농장을 몰수해, 그 땅을 경작자 가족의 소유지로 나누어 주고 이동을 자유롭게 했습니다.",
-                  "파리 국민공회가 이미 채택한 노예제 폐지 법령을 생도맹그 북부에 공포하고, 그 조항을 현지에서 그대로 집행하라는 명령이었습니다."
+                  "자유인이자 시민으로 선언하면서도 농장 노동과 소유는 그대로 두어, 해방과 노동 규율을 묶었습니다.",
+                  "옛 주인의 농장을 경작자에게 넘겨 줄 준비였으니, 해방된 사람을 자기 땅을 가진 농민으로 세우려 했습니다.",
+                  "파리 국민공회가 이미 채택한 노예제 폐지 법령을 생도맹그 북부에서 그대로 집행하라는 명령이었다는 뜻입니다."
                 ],
                 "en": [
-                  "It declared them free men and citizens, but cultivators stayed on former plantations, hired by the year, sharing one third of the revenue.",
-                  "It abolished slavery, confiscated the former masters' plantations, divided the land among cultivators' families, and let them move freely.",
-                  "It proclaimed in the north a slavery-abolition decree the Convention in Paris had already adopted and ordered its articles carried out as written."
+                  "It declared them free citizens yet left plantation labour and ownership intact, tying freedom to labour discipline.",
+                  "It prepared to hand the former masters' plantations to the cultivators, making the freed into peasants with land of their own.",
+                  "It meant carrying out in the north, as written, a slavery-abolition decree the Convention in Paris had already adopted."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "제2조는 자유인 선언에 다음 조항의 제도를 따르게 했고, 제9·11·12조는 농장 잔류, 1년 고용, 수입 삼등분을 정합니다.",
-                  "포고는 토지를 분배하지 않았습니다. 수입의 3분의 1은 토지 소유자 몫으로 남았고, 경작자는 허가 없이 농장을 옮길 수 없었습니다.",
+                  "제2조는 자유인 선언에 다음 조항의 제도를 따르게 했고, 뒤 조항은 경작자를 옛 농장에 1년 단위로 묶었습니다. 해방과 노동 규율이 한 문서에 있었습니다.",
+                  "포고는 토지를 분배하지 않았습니다. 수입은 소유자·경영비·경작자 몫으로 나뉘었고, 경작자는 허가 없이 농장을 옮길 수 없었습니다.",
                   "국민공회의 노예제 폐지 법령은 이 포고보다 뒤인 1794년 2월 4일에 나왔습니다. 송토나는 민사위원의 권한으로 포고했습니다."
                 ],
                 "en": [
-                  "Article 2 subjected the declaration of freedom to the regime in the following articles; Articles 9, 11, and 12 set residence, yearly hire, and the three-way split.",
-                  "The proclamation distributed no land. One third of revenue stayed with the landowner, and cultivators could not change plantations without permission.",
+                  "Article 2 subjected the declaration of freedom to the regime in the following articles, which bound cultivators to their former plantations by the year. Emancipation and labour discipline stood in one text.",
+                  "The proclamation distributed no land. Revenue was split among owner, operating costs, and cultivators, who could not change plantations without permission.",
                   "The Convention's abolition decree came later, on 4 February 1794. Sonthonax issued his proclamation under his own powers as civil commissioner."
                 ]
               },
@@ -1602,32 +1602,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "1793년 10월 30일 아마르 보고와 국민공회 법령은 여성의 정치 활동을 어디까지 막았을까요?",
-                "en": "How far did Amar's report and the Convention's decree of 30 October 1793 go in restricting women's political activity?"
+                "ko": "1793년 10월 30일 아마르 보고와 국민공회 법령은 여성이 토론을 방청하는 것은 허용하면서 여성의 클럽은 금지했습니다. 이 선은 무엇을 뜻할까요?",
+                "en": "Amar's report and the Convention's decree of 30 October 1793 let women attend debates but banned women's clubs. What did that line mean?"
               },
               "choices": {
                 "ko": [
-                  "여성의 정치적 권리 행사와 결사 심의를 모두 부정하고 여성 클럽과 민중 결사를 금지했지만, 토론 방청은 할 수 있다고 했습니다.",
-                  "시장의 복장 강요 소요만 처벌했을 뿐, 여성이 정치적 권리를 행사할 수 있는가라는 일반 문제는 판단하지 않고 미뤄 두었습니다.",
-                  "여성이 구역 회의와 민중 결사의 토론을 방청하는 것까지 금지하고, 가정 밖에서 여성이 모이는 모든 집회를 예외 없이 불법으로 만들었습니다."
+                  "여성을 정치의 청중으로는 두되, 스스로 결사를 이루어 심의하는 정치의 주체로는 인정하지 않았다는 뜻입니다.",
+                  "시장의 복장 강요 소요를 다스린 치안 조치였을 뿐, 여성의 정치적 권리라는 일반 문제는 미뤄 두었다는 뜻입니다.",
+                  "성별과 상관없이 상퀼로트의 민중 결사 전체를 겨냥한 조치였고, 여성 클럽은 그 일부로 함께 금지됐다는 뜻입니다."
                 ],
                 "en": [
-                  "It denied women both the exercise of political rights and deliberation in societies and banned women's clubs, while saying they could still attend debates.",
-                  "It punished only the market riot over forced dress and left undecided the general question of whether women could exercise political rights.",
-                  "It barred women even from watching section meetings and popular-society debates, and outlawed every gathering of women outside the home."
+                  "Women were kept as an audience of politics but not recognised as political subjects who formed societies and deliberated for themselves.",
+                  "It was a policing measure against the market riot over forced dress, leaving the general question of women's political rights undecided.",
+                  "It targeted the sans-culottes' popular societies as a whole regardless of sex, and women's clubs were banned only as part of them."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "위원회는 두 일반 질문에 모두 부정으로 답했고, 법령 제1조는 여성 클럽을 금지했습니다. 보고는 구역 심의와 결사 토론 참석은 허용했습니다.",
+                  "위원회는 여성이 정치적 권리를 행사할 수 있는가, 결사로 모여 심의할 수 있는가에 모두 부정으로 답했습니다. 듣는 자리만 남긴 셈입니다.",
                   "아마르는 소요를 계기로 삼았지만, 여성이 정치적 권리를 행사할 수 있는가라는 일반 질문을 직접 제기하고 부정으로 결정했다고 보고했습니다.",
-                  "보고는 여성이 구역의 심의와 민중 결사의 토론에 참석할 수 있다고 했습니다. 금지된 것은 여성이 결사를 이루어 적극적으로 심의하는 일이었습니다."
+                  "법령 제1조가 금지한 것은 여성의 클럽과 민중 결사였습니다. 다른 민중 결사는 회합을 공개하는 조건(제2조)으로 남았습니다."
                 ],
                 "en": [
-                  "The committee answered both general questions in the negative and Article 1 banned women's clubs, yet the report allowed attending section and society debates.",
+                  "The committee answered no both to whether women could exercise political rights and to whether they could meet in societies to deliberate, leaving them only the listener's place.",
                   "Amar used the riot as the occasion, but reported that the committee had posed the general question of women's political rights and answered no.",
-                  "The report said women could attend section deliberations and society debates. What was banned was women forming societies and deliberating actively."
+                  "Article 1 banned women's clubs and popular societies. Other popular societies remained, on condition that their meetings be public (Art. 2)."
                 ]
               },
               "explanation": {
@@ -1653,26 +1653,26 @@ module.exports = {
               },
               "choices": {
                 "ko": [
-                  "모든 식민지의 흑인 노예제 폐지와 피부색 구별 없는 시민권을 선언했고, 집행에 필요한 조치는 공안위원회 보고로 넘겼습니다.",
-                  "1789년 선언이 이미 식민지 노예제를 폐지했으므로, 1794년 법령은 그 조항을 식민지 주민에게 다시 알리는 공포 절차였습니다.",
+                  "모든 식민지의 흑인 노예제 폐지를 선언해, 한 관구의 조건부 해방을 공화국 전체의 결정으로 넓혔습니다.",
+                  "옛 주인에게 국고로 배상하고 일정 기간 견습 노동을 거치게 해, 노예제를 단계적으로 없애기로 했습니다.",
                   "송토나 포고처럼 생도맹그 북부에만 적용됐고, 해방된 경작자를 옛 농장에 1년 단위로 묶는 노동 규정을 함께 담았습니다."
                 ],
                 "en": [
-                  "It declared Black slavery abolished in all colonies and citizenship regardless of colour, and referred the measures for carrying it out to the Committee of Public Safety.",
-                  "The 1789 Declaration had already abolished colonial slavery, so the 1794 decree was a formality re-announcing that article to colonial inhabitants.",
+                  "It declared Black slavery abolished in all colonies, widening one province's conditional emancipation into a decision of the whole Republic.",
+                  "It compensated former owners from the treasury and imposed a period of apprenticeship, ending slavery by stages.",
                   "Like Sonthonax's proclamation it applied only to northern Saint-Domingue and included labour rules binding freed cultivators to plantations by the year."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "법령은 모든 식민지를 대상으로 했고, 피부색 구별 없이 식민지 주민이 헌법상 모든 권리를 누린다고 의결한 뒤 집행 조치를 위원회에 회부했습니다.",
-                  "1789년 선언은 권리의 평등을 말했지만 노예제를 폐지하지 않았고, 그 뒤에도 식민지 노예제는 남아 있었습니다. 폐지 선언은 1794년이 처음입니다.",
+                  "송토나 포고는 북부 관구에 한정됐고 노동 규정이 붙었지만, 1794년 법령은 모든 식민지를 대상으로 노예제 폐지를 선언했습니다.",
+                  "소유주 배상과 견습 기간은 1833년 영국 노예제 폐지법의 방식이고, 프랑스도 1848년 다시 폐지할 때 소유주에게 배상했습니다. 1794년 법령에는 배상 조건이 없었습니다.",
                   "1794년 법령은 두 문단의 짧은 결의로 모든 식민지에 적용됐고, 노동 규정은 없습니다. 농장 잔류와 1년 고용은 송토나 포고의 조항입니다."
                 ],
                 "en": [
-                  "The decree covered all colonies and resolved that colonial inhabitants of every colour enjoyed all constitutional rights, then referred execution to the committee.",
-                  "The 1789 Declaration spoke of equal rights but did not abolish slavery, which continued in the colonies. The 1794 decree was the first abolition.",
+                  "Sonthonax's proclamation was limited to the Northern Province and carried labour rules; the 1794 decree declared slavery abolished in all colonies.",
+                  "Owner compensation and apprenticeship were the method of Britain's 1833 abolition act, and France compensated owners when it abolished slavery again in 1848. The 1794 decree set no compensation.",
                   "The 1794 decree was a two-paragraph resolution for all colonies with no labour rules. Staying on plantations and yearly hire came from Sonthonax."
                 ]
               },
@@ -2104,32 +2104,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "1791년 9월 3일 완성된 헌법은 왕이 왕위를 포기한 것으로 간주되는 경우를 어떻게 정했을까요?",
-                "en": "How did the finished Constitution of 3 September 1791 define the cases in which the king was deemed to have abdicated?"
+                "ko": "1791년 9월 3일 완성된 헌법이 왕이 왕위를 포기한 것으로 간주되는 경우를 정한 방식을 바렌 도주와 바르나브의 변론에 비추어 보면 무엇을 알 수 있을까요?",
+                "en": "Read against the flight to Varennes and Barnave's defence, what does the way the finished Constitution of 3 September 1791 defined the king's abdication show?"
               },
               "choices": {
                 "ko": [
-                  "맹세 거부·철회, 국민을 향한 무력 지휘, 출국 뒤 귀국 요청 불응을 미리 열거했고, 포기 뒤에는 시민으로서 재판받게 했습니다.",
-                  "왕이 입법부의 허가 없이 수도를 떠나기만 해도 즉시 포기한 것으로 보고, 입법부가 곧바로 왕을 재판하게 했습니다.",
-                  "포기 사유는 따로 적지 않고, 사태가 생길 때마다 입법부가 국민대표회의를 소집해 왕의 지위를 판단하게 했습니다."
+                  "출국도 귀국 요청과 기한을 넘겨야 포기로 보는 등, 헌법이 미리 정한 경우에만 왕위를 잃게 했습니다.",
+                  "바렌 도주의 교훈을 따라, 왕이 입법부의 허가 없이 수도를 떠나기만 해도 곧바로 왕위를 포기한 것으로 보았습니다.",
+                  "바렌 도주를 사유에 소급해 넣어, 루이 16세는 헌법 공포와 함께 이미 왕위를 포기한 것으로 간주됐습니다."
                 ],
                 "en": [
-                  "It listed in advance refusing or retracting the oath, leading force against the nation, and failing to return from abroad, and after abdication he was tried as a citizen.",
-                  "Merely leaving the capital without the legislature's permission counted at once as abdication, and the legislature then tried the king straight away.",
-                  "It listed no grounds, leaving the legislature to convene a national convention whenever events arose and judge the king's status."
+                  "Even leaving the kingdom counted only after a summons and deadline: the throne was lost only in cases set in advance.",
+                  "Learning from Varennes, it made merely leaving the capital without the legislature's permission count at once as abdication.",
+                  "It applied the flight to Varennes retroactively, so Louis XVI was deemed to have abdicated as soon as the constitution was promulgated."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "제2장 제1절 제5~7조가 세 경우를 열거하고, 제8조는 포기 뒤 왕이 시민이 되어 그 이후의 행위로 재판받을 수 있다고 합니다.",
-                  "제7조는 왕국을 떠난 경우에도 입법부의 요청과 두 달 이상의 기한을 두었습니다. 떠나는 것만으로 즉시 포기가 되지는 않았습니다.",
-                  "사정에 따라 국민대표회의로 판단하는 방식은 바르나브가 영국식이라며 거부한 것입니다. 헌법은 경우를 미리 적었습니다."
+                  "맹세 거부·철회, 국민을 향한 무력 지휘, 귀국 요청 불응을 미리 적은 목록은 바르나브가 요구한 대로 헌법이 미리 정한 박탈 사유였습니다.",
+                  "헌법은 왕국을 떠난 경우에도 입법부의 요청과 기한을 두었습니다. 떠나는 것만으로 즉시 포기가 되지는 않았습니다.",
+                  "헌법은 앞으로의 경우를 정했을 뿐입니다. 루이 16세는 9월 헌법에 맹세하고 왕위에 남았고, 왕정은 1792년 9월 국민공회가 폐지했습니다."
                 ],
                 "en": [
-                  "Chapter II, Section I, Articles 5–7 list the three cases, and Article 8 says that after abdication the king becomes a citizen, triable for later acts.",
-                  "Article 7 required, even when the king left the kingdom, a summons from the legislature and a deadline of at least two months. Leaving alone was not abdication.",
-                  "Judging case by case through a national convention was the English way Barnave rejected. The constitution stated the cases in advance."
+                  "The list set in advance (refusing or retracting the oath, leading force against the nation, ignoring a summons to return) is just what Barnave demanded: grounds the constitution fixed beforehand.",
+                  "Even when the king left the kingdom, the constitution required a summons from the legislature and a deadline. Leaving alone was not abdication.",
+                  "The constitution set grounds for the future only. Louis XVI swore to the September constitution and kept the throne; the Convention abolished the monarchy in September 1792."
                 ]
               },
               "explanation": {
@@ -2492,32 +2492,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "1792년 4월 20일 전쟁은 누구의 발의로, 누구를 상대로 선포되었을까요?",
-                "en": "On whose initiative, and against whom, was war declared on 20 April 1792?"
+                "ko": "1792년 4월 20일 전쟁이 누구의 발의로 선포되었는지를 로베스피에르의 경고와 나란히 놓으면 무엇이 보일까요?",
+                "en": "Set beside Robespierre's warning, what does the initiative behind the declaration of war of 20 April 1792 reveal?"
               },
               "choices": {
                 "ko": [
-                  "입법의회가 왕의 정식 제안을 심의해 헝가리·보헤미아 왕에게 전쟁을 선포했습니다.",
-                  "오스트리아군이 먼저 국경을 넘자 입법의회가 오스트리아 인민 전체에 선포했습니다.",
-                  "왕의 직무를 정지한 국민공회가 공화국의 이름으로 유럽의 모든 군주에게 선포했습니다."
+                  "왕의 정식 제안을 심의해 선포했으니, 그가 경계한 대로 집행부가 개전을 이끈 셈입니다.",
+                  "오스트리아군이 먼저 국경을 넘어 왔으니, 개전 논쟁과 상관없이 프랑스는 방어할 수밖에 없었습니다.",
+                  "왕이 전쟁을 제안했으니 궁정은 혁명 전쟁을 지지한 셈이고, 그의 의심은 근거를 잃었습니다."
                 ],
                 "en": [
-                  "The Legislative Assembly, deliberating on the king's formal proposal, declared it on the king of Hungary and Bohemia.",
-                  "After Austrian troops crossed the frontier first, the Legislative Assembly declared it on the whole Austrian people.",
-                  "The National Convention, having suspended the king, declared it on every monarch in Europe in the Republic's name."
+                  "It was declared on the king's formal proposal: as he had feared, the executive led the way into war.",
+                  "Austrian troops had crossed the frontier first, so France had to defend itself whatever the debate.",
+                  "Since the king proposed the war, the court backed the revolutionary war and his suspicion lost its ground."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "선전포고문은 \"왕의 정식 제안을 심의하면서\"로 시작해 \"헝가리와 보헤미아의 왕에 대한 전쟁을 의결한다\"로 끝납니다.",
+                  "선전포고문은 \"왕의 정식 제안을 심의하면서\"로 시작합니다. 로베스피에르는 궁정과 대신들이 제안하고 이끌 전쟁을 경계했습니다.",
                   "선전포고문이 든 이유는 빈 궁정의 망명자 보호와 적대적 준비, 각서에 대한 거부였지 선제 침공이 아니었습니다. 또한 민족 대 민족의 전쟁이 아니라고 못 박았습니다.",
-                  "국민공회는 1792년 9월에야 모였고 왕의 직무 정지도 8월 10일 뒤의 일입니다. 4월에는 입헌군주정 아래의 입법의회와 왕이 전쟁을 결정했습니다."
+                  "초기 패전과 왕의 거부권 행사는 오히려 왕실이 혁명의 패배를 바란다는 의심을 키웠고, 8월 10일 봉기로 이어졌습니다."
                 ],
                 "en": [
-                  "The declaration opens by \"deliberating on the formal proposal of the king\" and ends by decreeing \"war against the king of Hungary and Bohemia\".",
+                  "The declaration opens by \"deliberating on the formal proposal of the king\". Robespierre had warned against a war proposed and led by the court and ministers.",
                   "The grievances listed were Vienna's protection of émigrés, its hostile preparations and its refusal of French notes, not a prior invasion. The text also insisted this was not a war of nation against nation.",
-                  "The Convention met only in September 1792, and the king was suspended after 10 August. In April the war was decided by the king and the Legislative Assembly under constitutional monarchy."
+                  "Early defeats and the king's vetoes instead deepened suspicion that the court wanted the Revolution beaten, leading to the rising of 10 August."
                 ]
               },
               "explanation": {
@@ -2584,32 +2584,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "8월 10일 봉기에서 9월 21일 국민공회의 결의까지, 왕의 지위는 어떤 순서로 바뀌었을까요?",
-                "en": "Between the rising of 10 August and the Convention's decree of 21 September, in what order did the king's position change?"
+                "ko": "8월 10일 봉기에서 9월 21일 국민공회의 결의까지 왕의 지위가 바뀐 과정은 공화정이 어떻게 태어났음을 보여 줄까요?",
+                "en": "What does the change in the king's position between the rising of 10 August and the Convention's decree of 21 September show about how the republic was born?"
               },
               "choices": {
                 "ko": [
-                  "봉기 뒤 왕의 직무가 먼저 정지됐고, 발미 이튿날 새 국민공회가 왕정 폐지를 만장일치로 의결했습니다.",
-                  "봉기 당일 왕정이 폐지됐고, 발미 이튿날 국민공회는 루이 16세의 처형을 의결해 곧바로 집행했습니다.",
-                  "국민공회는 9월 21일 왕의 직무 정지를 확인했을 뿐이고, 왕정 폐지는 1793년 1월 처형과 함께 선언됐습니다."
+                  "봉기는 왕의 직무를 정지시켰을 뿐이고, 제도로서의 왕정은 새로 선출된 국민공회의 결의로 폐지됐습니다.",
+                  "왕정 폐지는 곧 왕을 처벌하는 결정이어서, 9월 21일 결의에 루이 16세의 재판과 처형이 함께 담겼습니다.",
+                  "발미의 승리가 곧 공화정을 낳았으니, 국민공회의 결의는 전장의 결과를 확인하는 형식에 지나지 않았습니다."
                 ],
                 "en": [
-                  "After the rising the king was suspended, and the day after Valmy the Convention unanimously decreed the abolition of the monarchy.",
-                  "The monarchy was abolished on the day of the rising, and the day after Valmy the Convention voted Louis XVI's execution and carried it out at once.",
-                  "On 21 September the Convention merely confirmed the king's suspension; the monarchy was abolished only with the execution of January 1793."
+                  "The rising only suspended the king; the newly elected Convention abolished the monarchy as an institution.",
+                  "Abolishing the monarchy meant punishing the king, so the decree of 21 September included Louis XVI's trial and execution.",
+                  "Victory at Valmy gave birth to the republic, so the Convention's decree was a mere formality confirming the battlefield."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
                   "왕정 폐지 결의는 \"국민공회는 프랑스에서 왕정이 폐지됨을 만장일치로 의결한다\"는 한 문장이며, 9월 20일 발미에서 침공군이 멈춘 다음 날 나왔습니다.",
-                  "8월 10일 봉기 뒤 이루어진 것은 왕의 직무 정지였습니다. 루이 16세의 재판과 처형은 왕정 폐지 뒤 따로 결정돼 1793년 1월에 집행됐습니다.",
-                  "직무 정지는 8월 10일 봉기 뒤의 조치였고, 9월 21일 결의는 그보다 나아가 왕정 자체를 폐지했습니다. 처형은 그 뒤의 별개 결정입니다."
+                  "결의는 왕정을 폐지하는 한 문장이었습니다. 루이 16세의 재판과 처형은 그 뒤 따로 결정돼 1793년 1월에 집행됐습니다.",
+                  "발미는 침공군의 진격을 멈춘 중요한 맥락이었지만, 왕정을 끝낸 것은 봉기와 새 의회의 결정이라는 국내 정치의 단계였습니다."
                 ],
                 "en": [
                   "The decree is a single sentence, \"the National Convention unanimously decrees that royalty is abolished in France\", and came the day after the invaders were halted at Valmy on 20 September.",
-                  "What followed 10 August was the king's suspension. Louis XVI's trial and execution were decided separately after the monarchy's abolition and carried out in January 1793.",
-                  "Suspension followed the rising of 10 August; the decree of 21 September went further and abolished the monarchy itself. The execution was a later, separate decision."
+                  "The decree was a single sentence abolishing the monarchy. Louis XVI's trial and execution were decided separately afterwards and carried out in January 1793.",
+                  "Valmy, which halted the invaders, was an important context, but what ended the monarchy were domestic steps: a rising and a new assembly's decision."
                 ]
               },
               "explanation": {
@@ -2833,12 +2833,12 @@ module.exports = {
                 "ko": [
                   "자유를 되찾으려는 민족에게 원조를 약속하고, 장군들에게 법령을 여러 언어로 인쇄해 공포하게 했습니다.",
                   "프랑스 병합을 청원한 지역에만 원조를 약속하고, 장군들에게 그 주민에게 프랑스 시민권을 주게 했습니다.",
-                  "외국 인민이 먼저 봉기해 정부를 세운 뒤에만 돕겠다고 하고, 장군들에게 국경을 넘지 말라고 명했습니다."
+                  "모든 민족의 해방을 약속하고, 장군들에게 1차 회의를 소집해 현지에 임시 행정기구를 세우게 했습니다."
                 ],
                 "en": [
                   "It promised aid to peoples seeking to recover their liberty and had the generals print and proclaim it in several languages.",
                   "It promised aid only to regions that petitioned for annexation and told the generals to grant their inhabitants French citizenship.",
-                  "It offered help only after foreign peoples had risen and formed governments, and ordered the generals not to cross the frontier."
+                  "It promised liberation to all peoples and told the generals to convene primary assemblies and set up provisional administrations."
                 ]
               },
               "answer": 0,
@@ -2846,12 +2846,12 @@ module.exports = {
                 "ko": [
                   "법령은 \"자유를 되찾고자 하는 모든 민족\"에게 형제애와 원조를 약속하고, 공화국 군대가 지나가는 모든 지역에서 여러 언어로 인쇄해 공포하게 했습니다.",
                   "형제애 법령에는 병합 청원이나 시민권 부여 조건이 없습니다. 원조 대상은 병합을 원하는 지역이 아니라 자유를 되찾고자 하는 모든 민족이었습니다.",
-                  "법령은 군대가 지나가는 지역에서 공포하라고 명했으므로 국경 밖 작전을 전제했습니다. 원조의 조건은 정부 수립이 아니라 자유를 되찾으려는 의지였습니다."
+                  "1차 회의 소집과 임시 행정기구 구성은 한 달 뒤 12월 15일 점령지 법령 제1·2조의 내용입니다. 11월 법령은 원조의 약속과 공포 명령뿐이었습니다."
                 ],
                 "en": [
                   "The decree promised fraternity and aid to \"all peoples wishing to recover their liberty\" and had it printed in several languages wherever the Republic's armies passed.",
                   "The fraternity decree says nothing about petitions for annexation or grants of citizenship. Its aid was for all peoples wishing to recover their liberty.",
-                  "The decree ordered proclamation wherever the armies passed, which assumed operations beyond the frontier. The condition for aid was a wish to recover liberty, not an established government."
+                  "Convening primary assemblies and forming provisional administrations came a month later, in Articles 1 and 2 of the decree of 15 December. The November decree only promised aid and ordered proclamation."
                 ]
               },
               "explanation": {
@@ -2918,32 +2918,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "점령지 법령은 군주와 교회 단체의 재산, 그리고 프랑스 군대의 주둔 비용을 어떻게 처리하게 했을까요?",
-                "en": "How did the decree on occupied territories have the property of princes and church bodies, and the costs of the French army's presence, handled?"
+                "ko": "점령지 법령이 군주와 교회 단체의 재산, 그리고 프랑스 군대의 주둔 비용을 처리하게 한 방식은 해방 전쟁의 어떤 면을 보여 줄까요?",
+                "en": "What does the way the decree on occupied territories handled the property of princes and church bodies, and the costs of the French army's presence, show about the war of liberation?"
               },
               "choices": {
                 "ko": [
-                  "그 재산은 공화국의 보호 아래 두고 목록을 만들게 했고, 공동 방위 비용은 새 정부와 협정으로 정하게 했습니다.",
-                  "그 재산은 곧바로 경매해 현지 빈민에게 나누게 했고, 군대 비용은 프랑스 국고가 모두 부담하겠다고 했습니다.",
-                  "그 재산은 프랑스로 옮겨 아시냐의 담보로 삼게 했고, 군대 비용은 점령지 주민 모두에게 같은 액수로 물리게 했습니다."
+                  "공동 방위 비용을 새 정부와 협정으로 정산하게 해, 원조받는 쪽이 전쟁 비용의 일부를 함께 지게 했습니다.",
+                  "형제애 법령의 약속대로 프랑스 국고가 비용을 모두 지는 원조였으니, 해방은 점령지에 부담을 주지 않았습니다.",
+                  "군주와 교회 단체의 재산을 곧바로 몰수해 프랑스로 옮기게 했으니, 해방은 약탈의 명분이었습니다."
                 ],
                 "en": [
-                  "The property was placed under the Republic's protection and inventoried, and common defence costs were to be settled by agreement with the new government.",
-                  "The property was to be auctioned at once and shared among local poor, while the French treasury bore all of the army's costs.",
-                  "The property was to be moved to France as security for the assignats, and the army's costs levied equally on every inhabitant."
+                  "Defence costs were settled by agreement with the new government, so those aided shared part of the war's cost.",
+                  "As the fraternity decree promised, the French treasury bore every cost, so liberation laid no burden on occupied lands.",
+                  "The property of princes and church bodies was to be seized and moved to France at once, so liberation was a pretext for plunder."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
                   "제4조는 이 재산을 프랑스 공화국의 보호와 안전조치 아래 두고 상세 목록을 집행위원회에 보내게 했고, 제10조는 비용을 계산에 올려 수립될 정부와 협정하게 했습니다.",
-                  "법령은 재산의 매각이나 분배를 명하지 않았고, 프랑스가 비용을 모두 부담한다고 하지도 않았습니다. 제7·10조는 오히려 군대 비용을 현지와 협의하고 정산하게 했습니다.",
-                  "법령에는 재산을 프랑스로 옮기거나 아시냐의 담보로 삼는 규정이 없습니다. 제5조는 오히려 부과금을 물릴 때 빈곤하고 노동하는 인민이 부담하지 않게 하라고 했습니다."
+                  "형제애 법령에는 비용에 관한 말이 없었고, 점령지 법령은 프랑스가 비용을 모두 진다고 하지 않았습니다. 제10조는 오히려 비용을 계산에 올려 정산하게 했습니다.",
+                  "제4조는 그 재산을 공화국의 보호 아래 두고 목록을 만들게 했을 뿐 프랑스로 옮기라고 하지 않았습니다. 뒷날 점령지의 징발은 따로 따져야 할 문제입니다."
                 ],
                 "en": [
                   "Article 4 placed this property under the protection and safeguard of the French Republic and sent detailed inventories to the Executive Council; Article 10 had costs entered in an account and settled by agreement with the future government.",
-                  "The decree did not order the property sold or distributed, nor did France promise to bear all costs. Articles 7 and 10 instead had the army's costs discussed and settled with the local authorities.",
-                  "The decree contains no provision for moving the property to France or pledging it for the assignats. Article 5 instead required that any levy spare the poor and labouring part of the people."
+                  "The fraternity decree said nothing about costs, and the decree on occupied territories never promised that France would bear them all. Article 10 instead entered the costs in an account to be settled.",
+                  "Article 4 only placed the property under the Republic's protection and had it inventoried; it did not order it moved to France. Later requisitions in occupied lands are a separate question."
                 ]
               },
               "explanation": {
@@ -3056,32 +3056,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "1793년 8월 23일 국민총동원령은 누가 먼저 출발하고, 대신 복무할 사람을 세울 수 있는지를 어떻게 정했을까요?",
-                "en": "How did the levée en masse of 23 August 1793 decide who left first and whether someone could serve in another's place?"
+                "ko": "1793년 8월 23일 국민총동원령이 18~25세 미혼 시민과 자식 없는 홀아비를 먼저 출발시키고 대신 복무할 사람을 세울 수 없게 한 것은 무엇을 뜻할까요?",
+                "en": "What did it mean that the levée en masse of 23 August 1793 sent unmarried citizens of 18 to 25 and childless widowers first and let no one serve in another's place?"
               },
               "choices": {
                 "ko": [
-                  "18~25세 미혼 시민과 자식 없는 홀아비가 먼저 출발하고, 누구도 대리 복무를 시킬 수 없게 했습니다.",
-                  "18~25세 기혼 남자가 먼저 출발하고 미혼자는 무기 제조에 남되, 공직자도 예외 없이 징집했습니다.",
-                  "모든 성인 남성이 제비뽑기로 출발 순서를 정하고, 돈을 내고 대리인을 세우면 복무를 면할 수 있게 했습니다."
+                  "부양할 가족이 적은 젊은이부터 보내되, 돈으로 대리인을 세워 빠지는 길은 막았다는 뜻입니다.",
+                  "징집을 미혼 청년에게 한정해, 나머지 시민은 전쟁과 상관없는 일상으로 돌아갈 수 있게 했다는 뜻입니다.",
+                  "병력 확보를 무엇보다 앞세워, 무기 생산과 수송은 시장에 맡기고 사람만 전선으로 보냈다는 뜻입니다."
                 ],
                 "en": [
-                  "Unmarried citizens aged 18 to 25 and childless widowers left first, and no one could have another serve in his place.",
-                  "Married men aged 18 to 25 left first while the unmarried stayed to make arms, and public officials were drafted without exception.",
-                  "All adult men drew lots for the order of departure, and anyone could escape service by paying for a substitute."
+                  "It sent first the young men with fewest dependants and closed the path of buying a substitute.",
+                  "The levy was limited to young unmarried men, so other citizens could return to a daily life untouched by the war.",
+                  "It put troop numbers above all, leaving arms production and transport to the market and sending only men to the front."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "제8조는 징집을 전면적으로 하되 18~25세 미혼 시민과 자식 없는 홀아비가 먼저 출발한다고 했고, 제7조는 대리 복무를 금지했습니다.",
-                  "제1조에서 기혼 남자에게 맡긴 일은 무기를 벼리고 식량을 운반하는 것이었습니다. 제7조는 공직자가 자기 직위에 남는다고 했습니다.",
-                  "대리 복무를 허용하는 방식은 제7조가 명시적으로 막은 것입니다. 출발 순서는 제비뽑기가 아니라 나이와 혼인 여부로 정해졌습니다."
+                  "제8조는 징집을 전면적으로 하되 가족 부양 부담이 적은 사람을 먼저 보냈고, 제7조의 대리 복무 금지는 돈 있는 사람이 빠지는 길을 막았습니다.",
+                  "제1조는 적이 쫓겨날 때까지 모든 프랑스인을 상시 징발 상태에 두고, 기혼 남자·여자·아이·노인에게도 저마다 일을 맡겼습니다.",
+                  "제5조는 공안위원회에 무기 제조를 위해 시설·물자·노동자를 징발할 권한을 주었습니다. 국가가 생산과 수송까지 조직했습니다."
                 ],
                 "en": [
-                  "Article 8 made the levy general but sent unmarried citizens of 18 to 25 and childless widowers first, and Article 7 forbade substitution.",
-                  "Article 1 assigned married men to forging arms and carrying food. Article 7 kept public officials at their posts.",
-                  "Substitution for payment is exactly what Article 7 forbade. The order of departure was set by age and marital status, not by lot."
+                  "Article 8 made the levy general but sent first those with fewest family burdens, and Article 7's ban on substitution closed the way out for men of means.",
+                  "Article 1 placed all French people in permanent requisition until the enemy was driven out and gave married men, women, children and old men their own tasks.",
+                  "Article 5 gave the Committee of Public Safety power to requisition premises, materials and workers for arms. The state organized production and transport too."
                 ]
               },
               "explanation": {
@@ -3520,36 +3520,36 @@ module.exports = {
               }
             },
             {
-              "id": "q6",
+              "id": "q6-r20261031",
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "1793년 9월 일반 최고가격법은 생필품 가격과 임금의 상한을 각각 어떤 기준으로 정했을까요?",
-                "en": "By what standard did the General Maximum of September 1793 set the ceilings on the prices of necessities and on wages?"
+                "ko": "1793년 9월 일반 최고가격법이 생필품 가격과 함께 임금에도 상한을 두고, 일을 거부하는 노동자를 징발할 수 있게 한 것은 무엇을 뜻할까요?",
+                "en": "What did it mean that the General Maximum of September 1793 capped wages as well as the prices of necessities, and allowed workers who refused work to be requisitioned?"
               },
               "choices": {
                 "ko": [
-                  "가격은 대부분 1790년 값에 3분의 1을, 임금은 1790년 수준에 절반을 더한 값을 넘지 못하게 했습니다.",
-                  "가격은 대부분 1790년 값에 절반을, 임금은 1790년 수준에 3분의 1을 더한 값을 넘지 못하게 했습니다.",
-                  "가격은 1790년 값 그대로 묶었고, 임금에는 상한을 두지 않아 노동자가 자유롭게 올려 받을 수 있게 했습니다."
+                  "물가 상한으로 민중의 생계를 지키되 임금과 노동에도 한도를 두어 거래 전체를 통제했습니다.",
+                  "임금 상한은 노동자를 겨냥한 조치였으니, 이 법은 결국 상인과 고용주의 이익만 지킨 법이었습니다.",
+                  "가격을 묶어 상인의 재산을 사실상 몰수했으니, 이 법은 사적 소유를 폐지하는 첫걸음이었습니다."
                 ],
                 "en": [
-                  "Most prices could not exceed the 1790 price plus a third, and wages the 1790 level plus a half.",
-                  "Most prices could not exceed the 1790 price plus a half, and wages the 1790 level plus a third.",
-                  "Prices were frozen at their 1790 level, while wages had no ceiling so that workers could raise them freely."
+                  "It protected subsistence with price ceilings but limited wages and labour too, controlling exchange as a whole.",
+                  "The wage cap targeted workers, so in the end the law protected only the interests of merchants and employers.",
+                  "By freezing prices it in effect confiscated merchants' property, so the law was a first step toward abolishing private ownership."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "제3조는 제1조의 생필품 대부분을 1790년 가격에 3분의 1을 더한 금액으로, 제8조는 임금을 1790년 요율에 절반을 더한 금액으로 정했습니다. 장작·목탄·석탄은 제2조에 따로 20분의 1이 붙었습니다.",
-                  "두 비율이 뒤바뀌었습니다. 상품에 붙은 것이 3분의 1, 임금에 붙은 것이 절반이었습니다.",
-                  "제8조는 임금에도 분명히 상한을 두었고, 제9조는 정당한 이유 없이 일을 거부하는 노동자를 징발하고 구금할 수 있게 했습니다."
+                  "제3조는 생필품 대부분을 1790년 가격에 3분의 1을 더한 값으로 묶었고, 제8조는 임금도 1790년 수준에 절반을 더한 값으로 묶었습니다. 상품과 노동이 함께 통제됐습니다.",
+                  "법은 생필품 가격부터 묶어 소비자인 민중을 보호했고, 임금 상한도 물가보다 넉넉한 비율이었습니다. 한쪽 편만 든 법이 아닙니다.",
+                  "법은 소유를 폐지하지 않고 거래의 한도를 정했습니다. 로베스피에르도 상업과 합법적 재산은 빼앗지 않고 독점의 약탈만 막겠다고 했습니다."
                 ],
                 "en": [
-                  "Article 3 set most necessities in Article 1 at the 1790 price plus a third, and Article 8 set wages at the 1790 rate plus a half. Firewood, charcoal and coal received a separate one-twentieth in Article 2.",
-                  "The two ratios are reversed: goods received a third, wages a half.",
-                  "Article 8 plainly capped wages too, and Article 9 allowed workers refusing their usual work without good reason to be requisitioned and detained."
+                  "Article 3 capped most necessities at the 1790 price plus a third, and Article 8 capped wages at the 1790 level plus a half. Goods and labour were controlled together.",
+                  "The law capped the prices of necessities first, protecting the people as consumers, and its wage cap was more generous than its price cap. It did not simply take one side.",
+                  "The law did not abolish ownership; it set limits on exchange. Robespierre too had said he would take neither trade nor lawful property, only stop the plunder of monopoly."
                 ]
               },
               "explanation": {
@@ -3858,32 +3858,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "1794년 2월 5일 보고에서 로베스피에르는 덕과 공포의 관계를 어떻게 설명했을까요?",
-                "en": "In the report of 5 February 1794, how did Robespierre explain the relation between virtue and terror?"
+                "ko": "1794년 2월 5일 보고에서 로베스피에르는 덕과 공포의 관계를 어떻게 규정해 공포를 정당화했을까요?",
+                "en": "In the report of 5 February 1794, how did Robespierre define the relation between virtue and terror so as to justify terror?"
               },
               "choices": {
                 "ko": [
-                  "평시의 원동력은 덕이지만 혁명 시에는 덕과 공포 둘 다이며, 덕 없는 공포는 해롭고 공포 없는 덕은 무력하다고 했습니다.",
-                  "공포는 덕과 별개인 특수한 원리로서, 전쟁이 끝날 때까지 덕을 잠시 멈추어 두는 예외 조치라고 했습니다.",
-                  "공포는 전제정의 원동력이므로, 공화국은 공포를 버리고 덕과 교육만으로 적을 다스려야 한다고 했습니다."
+                  "공포를 덕에서 나오는 신속하고 엄격한 정의로 규정해, 강제력을 공화국의 도덕 안에 넣었습니다.",
+                  "공포를 덕과 별개인 비상 원리로 두어, 전쟁이 끝날 때까지 덕을 잠시 멈추는 예외로 삼았습니다.",
+                  "공포가 전제정의 공포와 같다는 것은 인정하되, 공화국의 적에게만 쓰니 해롭지 않다고 했습니다."
                 ],
                 "en": [
-                  "In peace the spring is virtue, but in revolution it is virtue and terror together; terror without virtue is harmful and virtue without terror powerless.",
-                  "Terror was a particular principle separate from virtue, an exception that suspended virtue until the war ended.",
-                  "Since terror is the spring of despotism, the Republic should give it up and rule its enemies by virtue and education alone."
+                  "He defined terror as prompt, severe justice flowing from virtue, putting coercion inside the Republic's morality.",
+                  "He set terror apart from virtue as an emergency principle, an exception suspending virtue until the war ended.",
+                  "He granted that it was the same as despotism's terror, but called it harmless because used only on the Republic's enemies."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "보고의 중심 문장입니다. 그는 이어서 공포를 신속하고 엄격하며 굽히지 않는 정의, 곧 덕의 발현이라고 규정했습니다.",
+                  "그는 혁명 시 민중 정부의 원동력을 덕과 공포 둘 다로 두고, 공포를 신속하고 엄격하며 굽히지 않는 정의, 곧 덕의 발현이라고 규정했습니다.",
                   "그는 반대로 공포가 특수한 원리가 아니라 민주정의 일반 원리에서 나온 결과라고 했습니다. 덕을 멈추는 것이 아니라 덕이 드러나는 방식이라는 것입니다.",
-                  "공포가 전제정의 원동력이라는 말은 그가 반론으로 소개한 뒤, 자유의 칼과 폭정의 칼이 닮았을 뿐이라며 물리친 주장입니다."
+                  "공포가 전제정의 원동력이라는 말은 그가 반론으로 소개한 뒤 물리친 주장입니다. 자유의 칼과 폭정의 칼은 닮았을 뿐 같지 않다고 했습니다."
                 ],
                 "en": [
-                  "That is the report’s central sentence. He went on to define terror as prompt, severe, inflexible justice, an emanation of virtue.",
+                  "He made virtue and terror together the spring of popular government in revolution, and defined terror as prompt, severe, inflexible justice, an emanation of virtue.",
                   "He said the opposite: terror is not a particular principle but a consequence of democracy’s general principle, a way virtue shows itself rather than its suspension.",
-                  "That terror is despotism’s spring is an objection he raised and dismissed, saying the sword of liberty only resembles the sword of tyranny."
+                  "That terror is despotism’s spring is an objection he raised and dismissed: the sword of liberty, he said, only resembles the sword of tyranny."
                 ]
               },
               "explanation": {
@@ -4238,32 +4238,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "1794년 3월과 4월의 두 차례 처형은 혁명 진영에서 누구를 어떤 순서로 제거했을까요?",
-                "en": "Whom did the two rounds of executions in March and April 1794 remove from the revolutionary camp, and in what order?"
+                "ko": "1794년 3월과 4월의 두 차례 처형은 혁명 진영에서 누구를 제거했고, 그것은 숙청의 성격에 대해 무엇을 보여 줄까요?",
+                "en": "Whom did the two rounds of executions in March and April 1794 remove from the revolutionary camp, and what does that show about the purges?"
               },
               "choices": {
                 "ko": [
-                  "3월에는 코르들리에와 코뮌 인맥의 에베르·롱생·뱅상·모모로를, 4월에는 억압 완화를 요구한 당통·데물랭을 처형했습니다.",
-                  "3월에는 억압 완화를 요구한 당통·데물랭을, 4월에는 코르들리에와 코뮌 인맥의 에베르·롱생·뱅상·모모로를 처형했습니다.",
-                  "3월에는 식량 통제를 요구한 앙라제의 자크 루·바를레를, 4월에는 그 요구를 이어받은 에베르와 그 동료들을 처형했습니다."
+                  "대중운동 쪽 에베르파와 억압 완화를 요구한 당통파, 곧 혁명 진영 안의 양쪽을 처형으로 제거했습니다.",
+                  "에베르파와 당통파는 모두 왕정 복고를 꾀한 반혁명 세력이었으니, 공포정치가 바깥의 적을 향했음을 보여 줍니다.",
+                  "에베르파와 당통파는 앙라제의 요구를 함께 이은 한 파벌이었으니, 같은 세력을 두 번에 나누어 제거한 것입니다."
                 ],
                 "en": [
-                  "In March Hébert, Ronsin, Vincent, and Momoro of the Cordeliers and Commune networks; in April Danton and Desmoulins, who demanded less repression.",
-                  "In March Danton and Desmoulins, who demanded less repression; in April Hébert, Ronsin, Vincent, and Momoro of the Cordeliers and Commune networks.",
-                  "In March the Enragés Jacques Roux and Varlet, who demanded food controls; in April Hébert and his associates, who took up those demands."
+                  "Both sides within the revolutionary camp: the popular-movement Hébertists and the Dantonists who sought less repression.",
+                  "Hébertists and Dantonists alike were counter-revolutionaries seeking to restore the monarchy, so the Terror was aimed at enemies outside.",
+                  "Hébertists and Dantonists were one faction carrying on the Enragés' demands, so a single force was removed in two stages."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "에베르파는 3월 24일, 당통파는 4월 5일 처형됐습니다. 대중운동 쪽 경쟁자를 먼저, 의회 내부의 완화 요구를 다음에 제거한 순서입니다.",
-                  "순서가 뒤바뀌었습니다. 에베르파가 먼저 3월 24일에, 당통과 데물랭이 뒤이어 4월 5일에 처형됐습니다.",
-                  "앙라제는 에베르파보다 먼저 몰락했고 에베르파가 그 요구 일부를 흡수했습니다. 두 이름을 한 흐름으로 합치면 1794년 봄의 숙청 순서가 사라집니다."
+                  "에베르파는 코르들리에·코뮌 인맥에 기반한 대중운동 쪽 경쟁자였고, 당통파는 억압 완화를 요구했습니다. 양쪽이 연달아 사라졌습니다.",
+                  "두 집단 모두 혁명 진영 안에 있었고, 당통파는 혁명정부 형성에도 참여했습니다. 비상통치의 강도를 둘러싼 내부 대립이었습니다.",
+                  "앙라제의 요구 일부를 흡수한 것은 에베르파였고, 당통파는 반대로 억압 완화를 요구했습니다. 둘을 한 음모로 묶은 것은 로베스피에르의 묘사였습니다."
                 ],
                 "en": [
-                  "The Hébertists died on 24 March and the Dantonists on 5 April: first rivals on the popular-movement side, then the demand for moderation within the Convention.",
-                  "The order is reversed. The Hébertists were executed first on 24 March, Danton and Desmoulins after them on 5 April.",
-                  "The Enragés fell before the Hébertists, who absorbed some of their demands. Merging the two erases the sequence of the spring 1794 purges."
+                  "The Hébertists were rivals on the popular-movement side, based in the Cordeliers and Commune; the Dantonists demanded moderation. Both sides vanished in turn.",
+                  "Both groups stood inside the revolutionary camp, and the Dantonists had helped build revolutionary government. This was an internal conflict over how hard emergency rule should be.",
+                  "It was the Hébertists who absorbed some Enragé demands; the Dantonists asked for the opposite, less repression. Binding them into one plot was Robespierre's portrayal."
                 ]
               },
               "explanation": {
@@ -4376,32 +4376,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "5월 7일 법령은 최고존재를 인정하면서 기존 예배와 예배를 둘러싼 소요를 어떻게 다루었을까요?",
-                "en": "While recognising the Supreme Being, how did the decree of 7 May treat existing worship and disturbances over worship?"
+                "ko": "5월 7일 법령이 최고존재를 인정하면서 기존 예배와 예배를 둘러싼 소요를 다룬 방식은 어떤 입장을 보여 줄까요?",
+                "en": "What stance does the way the decree of 7 May, while recognising the Supreme Being, treated existing worship and disturbances over worship reveal?"
               },
               "choices": {
                 "ko": [
-                  "제11조로 예배의 자유를 유지하고, 제13조로 광신적 설교로 소요를 선동한 자와 부당한 폭력으로 유발한 자를 똑같이 처벌하게 했습니다.",
-                  "제1조로 최고존재 숭배를 유일한 국가 예배로 정하고, 제11조로 가톨릭 예배를 금지하며 옛 사제들에게 새 국민 축제의 집전을 맡겼습니다.",
-                  "제13조로 예배를 둘러싼 소요에서는 광신적 설교자만 처벌하고, 예배를 막으려고 폭력을 쓴 탈기독교화 활동가는 처벌 대상에서 뺐습니다."
+                  "기존 신앙을 대체하지 않고, 광신적 설교와 폭력적 탈기독교화 양쪽과 거리를 두었습니다.",
+                  "최고존재 숭배를 유일한 국가 예배로 세워, 가톨릭을 대신할 혁명의 새 국교를 만들려 했습니다.",
+                  "폭력적 탈기독교화를 계속 밀고 나가되, 그 과정에서 생긴 소요만 질서 있게 정리하려 했습니다."
                 ],
                 "en": [
-                  "Article 11 kept freedom of worship, and Article 13 punished alike those who stirred up disturbances by fanatical preaching and those who provoked them by unjust violence.",
-                  "Article 1 made the Supreme Being the sole state worship, and Article 11 banned Catholic worship and gave priests the new festivals to conduct.",
-                  "Article 13 punished only fanatical preachers in disturbances over worship and exempted dechristianisers who used violence to stop it."
+                  "It kept existing faith and distanced itself from both fanatical preaching and violent dechristianisation.",
+                  "It set up the Supreme Being as the sole state worship, a new revolutionary religion to replace Catholicism.",
+                  "It pressed on with violent dechristianisation and only tidied up the disturbances that this caused along the way."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "제11조는 프리메르 18일 법령에 따라 예배의 자유가 유지된다고, 제13조는 두 쪽을 「마찬가지로」 처벌한다고 씁니다.",
+                  "제11조는 예배의 자유를 유지했고, 제13조는 광신적 설교로 선동한 자와 부당한 폭력으로 유발한 자를 똑같이 처벌했습니다.",
                   "제1조는 인정을 선언했을 뿐 다른 예배를 금지하지 않았고, 제11조는 오히려 예배의 자유를 유지했습니다. 축제는 혁명의 사건과 덕목을 기리는 국민 축제였습니다.",
-                  "제13조는 부당하고 까닭 없는 폭력으로 소요를 유발한 자도 똑같이 처벌합니다. 폭력적 탈기독교화에도 제동을 건 조항입니다."
+                  "로베스피에르는 폭력으로 모든 신앙을 공격한 탈기독교화를 음모로 규정했고, 제13조는 폭력으로 소요를 유발한 자도 처벌했습니다."
                 ],
                 "en": [
-                  "Article 11 says freedom of worship is maintained under the decree of 18 Frimaire, and Article 13 punishes both sides alike.",
+                  "Article 11 kept freedom of worship, and Article 13 punished alike those who incited disturbances by fanatical preaching and those who provoked them by unjust violence.",
                   "Article 1 declared recognition without banning other worship, and Article 11 kept freedom of worship; the festivals honoured events and virtues of the Revolution.",
-                  "Article 13 equally punishes those who provoke disturbances by unjust and gratuitous violence, a brake on violent dechristianisation too."
+                  "Robespierre called the dechristianisation that attacked all faith by violence a conspiracy, and Article 13 punished those who provoked disturbances by violence."
                 ]
               },
               "explanation": {
@@ -4712,32 +4712,32 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "1795년 헌법에서 기초의회의 투표권과 선거인 자격은 각각 어떤 조건에 묶였을까요?",
-                "en": "In the 1795 Constitution, what conditions governed voting in the primary assemblies and eligibility as an elector?"
+                "ko": "1795년 헌법이 기초의회의 투표권과 선거인 자격을 각각 다른 조건에 묶은 것은 테르미도르 뒤의 어떤 방향을 보여 줄까요?",
+                "en": "What direction after Thermidor does the 1795 Constitution show by tying voting in the primary assemblies and eligibility as an elector to different conditions?"
               },
               "choices": {
                 "ko": [
-                  "직접세를 내면 기초의회에서 투표할 수 있었지만, 선거인이 되려면 노동 100~200일 치 수익의 재산을 소유하거나 임차해야 했습니다.",
-                  "선거인에게는 재산 조건이 없었지만, 기초의회에서 투표하려면 노동 200일 치 수익을 내는 토지를 소유해야 했습니다.",
-                  "납세나 재산 조건 없이 21세 이상 주민 모두가 기초의회에서 입법부 의원을 직접 선출하도록 했습니다."
+                  "투표는 직접세 납부자에게 열되, 재산 있는 선거인단을 얹어 재산 가진 시민의 영향력을 지키려 했습니다.",
+                  "재산 문턱을 기초의회 투표 자체에 붙여, 1791년보다 투표할 수 있는 시민의 수를 크게 줄이려 했습니다.",
+                  "투표를 넓게 연 점에서 1793년 헌법의 민주적 원칙을 그대로 이었고, 선거인 조건은 부차적인 절차였습니다."
                 ],
                 "en": [
-                  "Paying a direct tax let one vote in a primary assembly, but an elector had to own or rent property yielding 100–200 days’ labour.",
-                  "Electors faced no property condition, but voting in a primary assembly required owning land yielding 200 days’ labour.",
-                  "All residents aged 21 elected deputies directly in the primary assemblies, with no tax or property condition."
+                  "Direct taxpayers could vote, but a propertied body of electors on top secured the influence of propertied citizens.",
+                  "It attached the property threshold to primary voting, sharply cutting the number of voting citizens compared with 1791.",
+                  "By opening the vote widely it carried on the democratic principle of 1793, and the electors' condition was a secondary formality."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "제8조는 직접세 납부를 시민의 조건으로, 제35조는 코뮌 규모에 따라 100~200일 치 노동 가치의 재산을 선거인의 조건으로 정했습니다.",
-                  "두 조건이 뒤바뀌었습니다. 재산 문턱은 기초의회 투표가 아니라 입법부 의원을 뽑는 선거인 단계에 있었습니다.",
-                  "기초의회는 선거인을 뽑았고(제33조), 입법부 의원은 선거의회가 선출했습니다(제41조). 직접세 조건도 있었습니다."
+                  "제8조는 직접세 납부를 시민의 조건으로, 제35조는 100~200일 치 노동 가치의 재산을 선거인의 조건으로 정했습니다. 의무 선언 제8조는 사회 질서를 소유의 유지에 걸었습니다.",
+                  "재산 문턱은 기초의회 투표가 아니라 입법부 의원을 뽑는 선거인 단계에 있었습니다. 투표 자체는 직접세를 내는 21세 이상 주민에게 열렸습니다.",
+                  "의원은 선거인이 뽑았으므로 선거인 조건은 부차적이지 않았습니다. 1795년에는 1793년 헌법을 시행하는 대신 새 헌법을 만들었습니다."
                 ],
                 "en": [
-                  "Article 8 made paying a direct tax a condition of citizenship; Article 35 set property worth 100–200 days’ labour, by commune size, for electors.",
-                  "The two conditions are swapped. The property threshold sat at the level of electors choosing deputies, not primary voting.",
-                  "Primary assemblies chose electors (Article 33), and electoral assemblies chose deputies (Article 41); there was also a direct-tax condition."
+                  "Article 8 made paying a direct tax a condition of citizenship, and Article 35 set property worth 100–200 days’ labour for electors. Article 8 of the declaration of duties rested social order on maintaining property.",
+                  "The property threshold sat at the level of electors choosing deputies, not primary voting, which was open to residents of 21 who paid a direct tax.",
+                  "Electors chose the deputies, so their condition was not secondary. In 1795 a new constitution was made instead of putting the 1793 one into effect."
                 ]
               },
               "explanation": {
@@ -4850,31 +4850,31 @@ module.exports = {
               "type": "multiple_choice",
               "points": 2,
               "prompt": {
-                "ko": "「평등파 선언」은 1791년·1793년·1795년의 헌법을 어떻게 비교했고, 봉기 지도부는 선언의 어느 대목에 이견을 보였을까요?",
-                "en": "How did the Manifesto of the Equals compare the constitutions of 1791, 1793, and 1795, and which passage did the revolt’s leaders dispute?"
+                "ko": "「평등파 선언」은 1791년·1793년·1795년의 헌법을 어떻게 비교했고, 그 평가의 잣대는 무엇이었을까요?",
+                "en": "How did the Manifesto of the Equals compare the constitutions of 1791, 1793, and 1795, and by what yardstick?"
               },
               "choices": {
                 "ko": [
-                  "1791·1795년 헌장은 귀족적, 1793년 헌장은 거대한 발걸음이나 미완이라 했고, 지도부 일부는 예술이 파멸해도 좋다는 대목에 반대했습니다.",
-                  "1793년 헌법이 이미 공동의 행복을 온전히 실현했으니 그 시행만 요구하면 된다고 했고, 지도부는 마레샬의 초안을 수정 없이 만장일치로 채택했습니다.",
-                  "권리에 의무를 더한 1795년 헌법이 1793년보다 진전했다고 평가했고, 지도부 일부는 무장 봉기와 폭력을 직접 언급한 대목에만 반대했습니다."
+                  "1791·1795년 헌장은 귀족적, 1793년 헌장은 미완의 발걸음이라 했으니, 사실상의 평등이 잣대였습니다.",
+                  "1793년 헌장이 이미 공동의 행복을 온전히 이루었다고 보아, 그 헌법을 되살리는 것만으로 충분하다고 했습니다.",
+                  "권리에 의무를 더한 1795년 헌장을 1793년보다 진전한 것으로 보고, 소유를 지켜 낸 점을 높이 샀습니다."
                 ],
                 "en": [
-                  "The 1791 and 1795 charters were aristocratic chains, 1793 a giant step but unfinished; some leaders objected to letting the arts perish.",
-                  "The 1793 Constitution had already realised common happiness and needed only to be applied, and the leaders adopted Maréchal’s draft unanimously.",
-                  "The 1795 Constitution, adding duties to rights, was an advance on 1793, and some leaders objected only to passages mentioning revolt and violence."
+                  "1791 and 1795 were aristocratic, 1793 an unfinished step: the yardstick was real equality.",
+                  "The 1793 charter had already fully realised common happiness, so reviving it would be enough.",
+                  "The 1795 charter, adding duties to rights, was an advance on 1793, to be praised for protecting property."
                 ]
               },
               "answer": 0,
               "choiceFeedback": {
                 "ko": [
-                  "선언의 헌법 평가와, 마레샬의 「필요하다면 모든 예술이 파멸해도 좋다」는 문장에 대한 지도부 일부의 반대입니다.",
-                  "선언은 1793년 헌장이 공동의 행복이라는 원칙을 천명했지만 아직 목표에 닿지 못했다고 했고, 선언은 지도부의 만장일치 지지를 받지 못했습니다.",
+                  "선언은 헌법을 사실상의 평등에 얼마나 기반을 두었는지로 재고, 법 앞의 평등만 말하는 헌장을 귀족적이라 했습니다.",
+                  "바뵈프파는 실제로 1793년 헌법의 회복을 구호로 내걸었지만, 선언은 그 헌장이 공동의 행복을 천명했을 뿐 아직 목표에 닿지 못했다고 했습니다.",
                   "선언은 1795년 헌장을 1791년과 함께 족쇄를 단단히 채운 귀족적 헌장으로 묶었습니다. 의무 선언을 진전으로 보지 않았습니다."
                 ],
                 "en": [
-                  "That is the manifesto’s verdict on the constitutions and some leaders’ objection to Maréchal’s line about letting all the arts perish if need be.",
-                  "The manifesto said the 1793 charter proclaimed common happiness but had not reached it, and the manifesto did not win the leaders’ unanimous support.",
+                  "The manifesto measured constitutions by how far they rested on real equality, and called charters that offered only equality before the law aristocratic.",
+                  "The Babouvists did rally to the slogan of restoring the 1793 Constitution, but the manifesto said that charter proclaimed common happiness without yet reaching it.",
                   "The manifesto grouped the 1795 charter with 1791 as aristocratic charters that tightened the chains; it did not see the declaration of duties as progress."
                 ]
               },
