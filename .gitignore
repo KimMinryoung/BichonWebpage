@@ -80,6 +80,9 @@ docs/*.epub
 docs/*.djvu
 docs/*.doc
 docs/*.docx
+# 저작권이 살아 있어 근거 자료로만 쓰는 원문(전문 번역·게시 금지). 리포에 넣지 않고
+# scripts/archive-work-r2.js가 비공개 버킷(commulingo-work/sources-private/)에 올린다.
+sources-private/
 
 # Bulk-translation glossary dump (regenerated from the DB by extract_glossary.py)
 scripts/bulk-translate/glossary-db.json

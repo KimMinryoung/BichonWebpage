@@ -5,9 +5,11 @@
 // scripts/reviews/) and data-only SQL with its backups (scripts/migrations/data/)
 // are records of DB writes, not code the app runs. Raw sources in docs/
 // (fetched pages, PDFs, scans, e-books used for translation) are working
-// material the site never serves. New files there are gitignored; this uploads
-// every untracked file under those directories to R2 as
-// commulingo-work/<path below scripts/> or commulingo-work/docs/<path below docs/>.
+// material the site never serves. sources-private/ holds copyrighted works kept
+// only as research references (never translated in full, never published).
+// New files there are gitignored; this uploads every untracked file under those
+// directories to R2 as commulingo-work/<path below scripts/>,
+// commulingo-work/docs/<path below docs/> or commulingo-work/sources-private/<…>.
 // Files already tracked by git stay in git and are skipped.
 //
 // A file whose md5 matches the remote ETag is skipped. When a file changed after
@@ -30,7 +32,7 @@ const { execFileSync } = require('child_process');
 const ROOT = path.resolve(__dirname, '..');
 const { createR2Client } = require('../services/r2');
 
-const DIRS = ['scripts/content', 'scripts/reviews', 'scripts/migrations/data', 'docs'];
+const DIRS = ['scripts/content', 'scripts/reviews', 'scripts/migrations/data', 'docs', 'sources-private'];
 const PREFIX = 'commulingo-work/';
 const SKIP = /(^|\/)(__pycache__|node_modules)\/|\.(tmp|pyc|swp)$|(^|\/)\.DS_Store$/;
 const TYPES = {
@@ -45,11 +47,12 @@ function workFiles() {
     return out.toString('utf8').split('\0').filter(Boolean).filter(f => !SKIP.test(f)).sort();
 }
 
-// scripts/x -> commulingo-work/x, docs/x -> commulingo-work/docs/x (and back).
+// scripts/x -> commulingo-work/x, docs/x -> commulingo-work/docs/x,
+// sources-private/x -> commulingo-work/sources-private/x (and back).
 const keyFor = rel => PREFIX + rel.replace(/^scripts\//, '');
 const pathFor = key => {
     const rel = key.slice(PREFIX.length);
-    return path.join(ROOT, rel.startsWith('docs/') ? '' : 'scripts', rel);
+    return path.join(ROOT, /^(docs|sources-private)\//.test(rel) ? '' : 'scripts', rel);
 };
 
 async function main() {
