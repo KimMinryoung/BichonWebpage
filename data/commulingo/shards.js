@@ -24,6 +24,7 @@ const PUBLIC_CHAPTER_LIMITS = {
     'marx-wages-and-programme': 8,
     'marx-civil-war-in-france': 6,
     'marx-eighteenth-brumaire': 7,
+    'engels-ludwig-feuerbach': 7,
 };
 
 let freshnessCache = null;

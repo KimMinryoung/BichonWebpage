@@ -5,9 +5,9 @@ const vm = require('node:vm');
 const { getLatestCourseMetadata } = require('../data/commulingo/course-metadata');
 
 // The newest course comes from the course files' own editorial.authoredAt.
-assert.equal(getLatestCourseMetadata().id, 'lenin-materialism-empiriocriticism');
-assert.equal(getLatestCourseMetadata().releasedAt, '2026-10-28');
-assert.equal(getLatestCourseMetadata().title.ko, '레닌: 유물론과 경험비판론');
+assert.equal(getLatestCourseMetadata().id, 'engels-ludwig-feuerbach');
+assert.equal(getLatestCourseMetadata().releasedAt, '2026-10-31');
+assert.equal(getLatestCourseMetadata().title.ko, '엥겔스: 루트비히 포이어바흐와 독일 고전철학의 종말');
 
 function loadService(rows, people = [{
     id: 'person', name: { ko: '인물', en: 'Person' }, epithet: { ko: '소개' },

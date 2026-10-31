@@ -7,6 +7,7 @@
 | `/commulingo/book/marx-civil-war-in-france` | `data/commulingo/courses/marx-civil-war-in-france.js` | 6편·41발췌, `format: 'guided-reading'`, 권 번호 17(홈의 「카를 마르크스」 묶음, 2026-10-24 『브뤼메르 18일』 뒤로 옮김) |
 | `/commulingo/book/lenin-materialism-empiriocriticism` | `data/commulingo/courses/lenin-materialism-empiriocriticism.js` | 8편·61발췌, 4지선다, 퀴즈형 문항을 골라 맥락·발췌를 붙여 옮김 (2026-10-28, [기록](commulingo-lenin-mec-20261028.md)) |
 | `/commulingo/book/marx-eighteenth-brumaire` | `data/commulingo/courses/marx-eighteenth-brumaire.js` | 7편·49발췌, 같은 형식·권 번호 -1 (2026-10-24) |
+| `/commulingo/book/engels-ludwig-feuerbach` | `data/commulingo/courses/engels-ludwig-feuerbach.js` | 7편·54발췌, 4지선다, 처음부터 끊어 읽기로 작성, 권 번호 1(엥겔스 묶음, 『가족, 사유재산, 국가의 기원』 0 뒤) (2026-10-31, [아래](#루트비히-포이어바흐와-독일-고전철학의-종말-2026-10-31)) |
 
 ## 왜 이 형식인가 (2026-10-24 판단 근거)
 
@@ -61,3 +62,19 @@
 - 공개는 `data/commulingo/shards.js`의 `PUBLIC_CHAPTER_LIMITS`를 읽는 운영 프로세스가 재시작해야 반영된다(위 「등록 때 겪은 일」과 같다).
 - 남은 일: 카드 없는 인물(몰레, 베리에, 바로슈, 풀드, 루에르, 페르시니, 몽탈랑베르, 뒤팽, 레옹 포셰, 라모리시에르, 샹보르 백작 등)과 용어(정통왕조파, 오를레앙파, 룸펜프롤레타리아트, 분할지 농민, 의회 백치증)는 등록하지 않았다. 갈래별 `REPORT.md`에 목록이 있다.
 - 마르크스 묶음의 순서(2026-10-24 사용자 지시): 홈은 `volumeNumber`로만 정렬하므로 첫 저작 연도 순으로 번호를 맞췄다. 『임금노동과 자본』 -2(1849), 『브뤼메르 18일』 -1(1852), 『임금, 가격, 이윤 · 고타강령 비판』 0(1865·1875, 번호는 `course-metadata.js`), 『자본』 1~3(1867~, 권 순서 그대로 붙여 둔다), 『프랑스 내전』 17(1871). 다른 묶음은 번호를 묶음 안 정렬에만 쓴다.
+
+## 『루트비히 포이어바흐와 독일 고전철학의 종말』 (2026-10-31)
+
+사용자 요청: 참고 문헌에 실린 엥겔스의 이 책(`engels-ludwig-feuerbach-1886`, 독일어 원문에서 완역)으로 『유물론과 경험비판론』 강좌 형식의 학습 콘텐츠를 만들고, 개선할 점이 있으면 개선한다.
+
+- 형식은 레닌 강좌를 따른다: 편당 6~8발췌, 4지선다, 한 문단 길이(공백 빼고 120~520자) 발췌, 맥락 한 줄, 보기별 피드백.
+- 편 구성: 1 체계와 방법(서문, I장 앞), 2 헤겔학파의 해체와 『기독교의 본질』, 3 무엇이 근원적인가(II장 앞), 4 뒤로는 유물론자, 앞으로는 아니다(II장 뒤, 슈타르케), 5 사랑의 종교와 추상적 인간(III장), 6 머리로 서 있던 변증법을 두 발로(IV장 앞), 7 역사의 추동력은 무엇인가(IV장 뒤).
+- 레닌 강좌와 달라진 점:
+  - 퀴즈형을 끊어 읽기로 옮기며 세 번 고친 레닌 강좌와 달리, 처음부터 끊어 읽기로 썼다. 그때 사용자가 지적한 것(질문의 원어·인용구가 발췌에 없음, 정답 근거가 다른 문항의 발췌에 있음, 정의만 알면 풀리는 문항, 문항 과다)을 작성 지침과 점검기에 미리 넣었다.
+  - 점검기(`course/check.js`)가 더 보는 것: 정답이 가장 긴 보기인 문항은 편당 1/3 이하(눈치로 풀리는 문제, 위 「왜 이 형식인가」 참고), 발췌는 책의 순서대로, 강좌 전체에서 같은 발췌를 두 번 쓰지 않음, 발췌 안의 줄표는 ` … `로 끊음.
+  - 오답은 실제 입장(헤겔 우파, 기계적·속류 유물론, 칸트·흄의 불가지론, 슈타르케, 뒤링의 폭력론 등)이나 발췌로 배제되는 오독으로 짰다.
+  - 영어 발췌는 『브뤼메르 18일』처럼 문헌의 독일어 원문에서 이 강좌가 직접 옮겼고, 출처 표시에 「(our translation from the German)」을 붙인다.
+- 작성: 하위 에이전트 7개가 편 하나씩 썼고, 편마다 학습자 입장에서 다시 읽어 고쳤다. 검토 때 고친 것: 4편의 슈타르케 반박 문항 넷 가운데 같은 꼴(반례로 기준 무너뜨리기)인 디드로 문항을 뺐다. 7편 3번의 발췌로 배제되지 않는 오답을 바꿨다. 5편 해설의 테제 인용을 번역본의 「사회적 관계들의 앙상블」로 맞췄다.
+- 정본은 `scripts/content/engels-ludwig-feuerbach/course/`(gitignore, R2 보관)다: `BRIEF.md`(작성 지침), `head.js`, `ch01.js`~`ch07.js`, `check.js`, `build.js`, `show.js`(학습자 화면 순서로 출력), `text/`(문단 번호를 붙인 한국어·독일어 원문). 고칠 때는 편 파일을 고치고 `node check.js`, `node build.js`를 돌린다.
+- 등록: `shards.js` `PUBLIC_CHAPTER_LIMITS` 7, `validate-commulingo.js` 7편·54문항, `check-course-source-excerpts.js` `REQUIRE_SOURCE`, `smoke-commulingo-updates-kinds`의 최신 강좌. 공개는 운영 프로세스가 재시작해야 반영된다(위 「등록 때 겪은 일」).
+
