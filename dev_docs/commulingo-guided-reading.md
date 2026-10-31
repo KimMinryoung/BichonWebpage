@@ -8,6 +8,7 @@
 | `/commulingo/book/lenin-materialism-empiriocriticism` | `data/commulingo/courses/lenin-materialism-empiriocriticism.js` | 8편·61발췌, 4지선다, 퀴즈형 문항을 골라 맥락·발췌를 붙여 옮김 (2026-10-28, [기록](commulingo-lenin-mec-20261028.md)) |
 | `/commulingo/book/marx-eighteenth-brumaire` | `data/commulingo/courses/marx-eighteenth-brumaire.js` | 7편·49발췌, 같은 형식·권 번호 -1 (2026-10-24) |
 | `/commulingo/book/engels-ludwig-feuerbach` | `data/commulingo/courses/engels-ludwig-feuerbach.js` | 7편·54발췌, 4지선다, 처음부터 끊어 읽기로 작성, 권 번호 1(엥겔스 묶음, 『가족, 사유재산, 국가의 기원』 0 뒤) (2026-10-31, [아래](#루트비히-포이어바흐와-독일-고전철학의-종말-2026-10-31)) |
+| `/commulingo/book/engels-origin-family` | `data/commulingo/courses/engels-origin-family.js` | 8편·64발췌, 4지선다, 옛 개념지도(`concept-graph`)를 끊어 읽기로 다시 씀, 권 번호 0 (2026-10-31, [아래](#가족-사유재산-국가의-기원-2026-10-31)) |
 | `/commulingo/book/lenin-imperialism` | `data/commulingo/courses/lenin-imperialism.js` | 10편·78발췌, 4지선다, 퀴즈형 20레슨·100문항을 새 번역으로 다시 씀, 권 번호 4 (2026-10-31, [아래](#자본주의의-최고-단계로서의-제국주의-2026-10-31)) |
 | `/commulingo/book/marx-wage-labour-capital` | `data/commulingo/courses/marx-wage-labour-capital.js` | 7편·53발췌, 4지선다, 퀴즈형 강좌를 다시 씀, 권 번호 -2 (2026-10-31, [아래](#마르크스-세-강좌-임금노동과-자본임금-가격-이윤고타-강령-비판-2026-10-31)) |
 | `/commulingo/book/marx-wages-and-programme` | `data/commulingo/courses/marx-wages-and-programme.js` | 7편·54발췌, 『임금, 가격, 이윤』만 남기고 다시 씀, 권 번호 0 (2026-10-31) |
@@ -82,6 +83,18 @@
 - 작성: 하위 에이전트 7개가 편 하나씩 썼고, 편마다 학습자 입장에서 다시 읽어 고쳤다. 검토 때 고친 것: 4편의 슈타르케 반박 문항 넷 가운데 같은 꼴(반례로 기준 무너뜨리기)인 디드로 문항을 뺐다. 7편 3번의 발췌로 배제되지 않는 오답을 바꿨다. 5편 해설의 테제 인용을 번역본의 「사회적 관계들의 앙상블」로 맞췄다.
 - 정본은 `scripts/content/engels-ludwig-feuerbach/course/`(gitignore, R2 보관)다: `BRIEF.md`(작성 지침), `head.js`, `ch01.js`~`ch07.js`, `check.js`, `build.js`, `show.js`(학습자 화면 순서로 출력), `text/`(문단 번호를 붙인 한국어·독일어 원문). 고칠 때는 편 파일을 고치고 `node check.js`, `node build.js`를 돌린다.
 - 등록: `shards.js` `PUBLIC_CHAPTER_LIMITS` 7, `validate-commulingo.js` 7편·54문항, `check-course-source-excerpts.js` `REQUIRE_SOURCE`, `smoke-commulingo-updates-kinds`의 최신 강좌. 공개는 운영 프로세스가 재시작해야 반영된다(위 「등록 때 겪은 일」).
+
+
+## 『가족, 사유재산, 국가의 기원』 (2026-10-31)
+
+사용자 요청: 퀴즈가 아닌 학습 콘텐츠(이 책의 개념지도)를 보고 개선점을 제안하라 → 제안 A 「MEW 원문에서 완역해 참고 문헌으로 싣고, 포이어바흐 강좌 형식으로 다시 쓴다」를 골랐다.
+
+- 문헌: `engels-origin-of-the-family-1884`. MEW 21(본문, 1892년 제4판)과 MEW 22(1891년 서문)의 독일어에서 완역했고, 독일어 원문을 `/original`로 함께 싣는다. 장마다 엥겔스의 각주 블록을 두고 원래 번호를 지킨다. 작업물은 `scripts/content/engels-origin-family-20261031/`(gitignore, R2 보관): `parse.py`(MEW HTML → 문단), `split.py`, `style-card.md`(고정 번역어), `check.py`(문단 정렬 점검), `assemble.py`(본문·원문 HTML, 전자 텍스트 오자 `DE_FIXES`), `doc-entry.json`.
+- 옛 개념지도는 원문이 한 줄도 없이 요약만 보여 주었고 「현대적 비판」이 출처 없는 일반론이었다. 개요로 남기지 않고 강좌로 바꿨다(`commulingo-graph.js` 렌더러 코드는 남아 있으나 쓰는 강좌가 없다).
+- 편 구성: 1 가족에도 역사가 있다(두 서문, I장), 2 친족 호칭이라는 화석, 3 여성의 세계사적 패배, 4 문명사회의 세포 형태(이상 II장을 셋으로), 5 계급도 국가도 없는 사회(III장), 6 국가가 발명되었다(IV·V장), 7 로마의 국가, 독일인의 미개(VI~VIII장), 8 물레와 청동 도끼 곁으로(IX장).
+- 포이어바흐 강좌와 달라진 점: 이 책은 19세기 인류학에 기대어 있어, 해설에 오늘날 연구가 받아들이지 않는 가설(보편적 모권 단계, 군혼·푸날루아 단계, 단선적 단계론 등)을 짧게 적는다. 엥겔스의 주장과 오늘의 평가를 섞지 않고, 확실한 이름과 서지만 쓴다(리콕 1972년 영어판 해설, 러너 『가부장제의 창조』 1986, 하트먼 1979, 버딘 2008, 루셀·부리오, 래드클리프브라운 1924). 검토 때 편마다 되풀이되던 같은 평가 문장(모계 우선, 단선적 단계론, 무규율 원시 상태, 친족 호칭 역추론)을 한 곳씩만 남겼다.
+- 정본은 `scripts/content/engels-origin-family-20261031/course/`이고 구조는 포이어바흐와 같다(`BRIEF.md`, `head.js`, `ch01.js`~`ch08.js`, `check.js`, `build.js`, `show.js`, `text/`).
+- 등록: `shards.js` `PUBLIC_CHAPTER_LIMITS` 8, `validate-commulingo.js` 8편·64문항(옛 `expectedSpecial` 개념지도 항목 삭제), `check-course-source-excerpts.js` `REQUIRE_SOURCE`. 최신 강좌는 포이어바흐와 같은 날이라 파일 이름 순서로 포이어바흐가 남는다.
 
 ## 『자본주의의 최고 단계로서의 제국주의』 (2026-10-31)
 

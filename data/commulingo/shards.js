@@ -25,6 +25,7 @@ const PUBLIC_CHAPTER_LIMITS = {
     'marx-civil-war-in-france': 6,
     'marx-eighteenth-brumaire': 7,
     'engels-ludwig-feuerbach': 7,
+    'engels-origin-family': 8,
     'marx-gotha-critique': 7,
 };
 

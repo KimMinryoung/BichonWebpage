@@ -46,9 +46,9 @@ const expected = {
   'marx-civil-war-in-france': { chapters: 6, questions: 41, lessons: 6, format: 'guided-reading' },
   'marx-eighteenth-brumaire': { chapters: 7, questions: 49, lessons: 7, format: 'guided-reading' },
   'engels-ludwig-feuerbach': { chapters: 7, questions: 54, lessons: 7, format: 'guided-reading' },
+  'engels-origin-family': { chapters: 8, questions: 64, lessons: 8, format: 'guided-reading' },
 };
 const expectedSpecial = {
-  'engels-origin-family': { format: 'concept-graph', nodes: 8, stages: 24 },
   'history-russian-revolution': { format: 'decision-history', eras: 4, episodes: 14 },
   'history-soviet-union': { format: 'decision-history', eras: 4, episodes: 15 },
 };
