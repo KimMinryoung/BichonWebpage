@@ -2,6 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../../config/database');
 const { createRegistrySnapshotStore } = require('./snapshot-store');
+const { AUTO_ATTR, removeBlocks, isNotesSection, isEditorial } = require('./doc-structure');
+
+const AUTO_ID_RE = new RegExp(`\\b${AUTO_ATTR}\\b`);
 
 // Reference documents (참고 문헌). The database is the source of truth
 // (commulingo_docs, migration 339; writes go through docs-db.js). This module
@@ -22,7 +25,9 @@ const bodyCache = new Map(); // body sha256 -> { html, toc, paged }; insertion o
 const BODY_CACHE_MAX = 40;
 
 // Harvest h1/h2 headings for the reader's table of contents, assigning
-// sequential ids to headings that lack one (existing ids are kept). The first
+// sequential ids to headings that lack one (existing ids are kept). Bodies
+// saved since 2026-10-31 carry their ids already (freezeHeadingIds); the
+// numbering here covers bodies stored before that. The first
 // h1 is the document title and stays out of the TOC, as is any heading whose
 // text matches one of the manifest entry's `tocExclude` regexes (print-page
 // markers and other conversion artifacts). Returns the id-annotated html plus
@@ -40,7 +45,9 @@ function annotateHeadings(rawHtml, excludePatterns) {
         }
         const existing = attrs.match(/\bid="([^"]+)"/);
         const id = existing ? existing[1] : `sec-${++counter}`;
-        if (!existing) generated.add(id);
+        // Ids frozen into the body at save time (doc-structure.js
+        // freezeHeadingIds) are still numbered, not chosen: same treatment.
+        if (!existing || AUTO_ID_RE.test(attrs)) generated.add(id);
         const text = inner.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
         if (!excludes.some(re => re.test(text))) {
             toc.push({ level: Number(level), id, text });
@@ -324,15 +331,19 @@ function getCommuLingoDocContent(doc) {
 // sits on (1 on a single-scroll document). Ids the reader generated for
 // headings without one (sec-N, annotateHeadings) are left out: they count
 // headings, so the same number names different sections in the two versions.
-// An id written into the document is kept even when it reads sec-N.
+// An id written into the document is kept even when it reads sec-N; one
+// frozen at save time (data-auto-id, sec-N and sub-N alike) is not.
 // Kept on the cached content object.
 function getCommuLingoDocAnchorPages(content) {
     if (content.anchorPages) return content.anchorPages;
     const pages = content.paged ? content.paged.pages.map(page => page.html) : [content.html];
     const out = {};
     pages.forEach((html, i) => {
-        for (const m of html.matchAll(/<h[1-3][^>]*\bid="([^"]+)"/g)) {
-            if (!content.generated.has(m[1]) && !out[m[1]]) out[m[1]] = i + 1;
+        for (const m of html.matchAll(/<h[1-3][^>]*\bid="([^"]+)"[^>]*>/g)) {
+            // Ids frozen at save time carry data-auto-id; h3 sub-N never passes
+            // through annotateHeadings (h1/h2 only), so test the tag itself.
+            if (AUTO_ID_RE.test(m[0]) || content.generated.has(m[1]) || out[m[1]]) continue;
+            out[m[1]] = i + 1;
         }
     });
     content.anchorPages = out;
@@ -392,10 +403,10 @@ function getCommuLingoDocSection(doc, anchor) {
     if (start === -1) return null;
     const level = Number(heads[start][1]);
     const next = anchor === '*' ? null : heads.slice(start + 1).find(head => Number(head[1]) <= level);
-    let body = html.slice(heads[start].index + heads[start][0].length, next ? next.index : html.length)
-        .replace(/<\/article>\s*$/, '')
-        .replace(/<section[^>]*class="notes"[\s\S]*?<\/section>/g, '')
-        .replace(/<aside[^>]*class="doc-editorial"[\s\S]*?<\/aside>/g, '');
+    // Notes and editor's boxes are cut by the parser, so a box holding its
+    // own aside or a notes block holding sub-sections goes out whole.
+    let body = html.slice(heads[start].index + heads[start][0].length, next ? next.index : html.length).replace(/<\/article>\s*$/, '');
+    if (/class="[^"]*\b(?:notes|doc-editorial)\b/.test(body)) body = removeBlocks(body, node => isNotesSection(node) || isEditorial(node));
     const noteIds = [...body.matchAll(/class="note-ref"[^>]*href="#([^"]+)"|href="#([^"]+)"[^>]*class="note-ref"/g)]
         .map(m => m[1] || m[2]);
     const notes = noteIds.map(noteId => {
@@ -427,4 +438,5 @@ module.exports = {
     listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect,
     listCommuLingoDocsFor, excerptRef, getCommuLingoDocContent, getCommuLingoDocOriginalContent, getCommuLingoDocAnchorPages, docRefId,
     listCommuLingoDocExcerptsFor, getCommuLingoDocSection, getCommuLingoDocContents,
+    annotateHeadings, // tests: doc-structure.js freezes the same numbers
 };

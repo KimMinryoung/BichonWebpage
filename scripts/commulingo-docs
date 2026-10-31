@@ -11,9 +11,11 @@
 # the site picks a write up within a minute.
 #
 #   scripts/commulingo-docs export <dir> [id ...]      # all docs, or just these
-#   scripts/commulingo-docs put <dir> [--dry-run] [--delete-missing] [--note text] [--actor who]
+#   scripts/commulingo-docs put <dir> [--dry-run] [--delete-missing] [--allow-structure] [--note text] [--actor who]
 #   scripts/commulingo-docs put-body <id> <file.html> [--note text]   # replace one body
 #   scripts/commulingo-docs history <id>
+#   scripts/commulingo-docs structure [id ...] [--json]   # structure check of stored bodies (read-only)
+#   scripts/commulingo-docs freeze-ids [--dry-run]        # store ids in idless headings (one-time backfill)
 #   scripts/commulingo-docs restore <id> <revision>
 #
 # Keep job directories under scripts/content/ (gitignored, archived to R2).
@@ -110,9 +112,9 @@ json.dump(bundle, sys.stdout, ensure_ascii=False)
         id="${1:?usage: commulingo-docs put-body <id> <file.html> [--note text]}"; file="${2:?usage: commulingo-docs put-body <id> <file.html>}"; shift 2
         run put-body "$id" "$@" < "$file"
         ;;
-    history|restore|audit)
+    history|restore|audit|structure|freeze-ids)
         run "$cmd" "$@"
         ;;
     *)
-        sed -n 2,21p "$0"; exit 2 ;;
+        sed -n 2,23p "$0"; exit 2 ;;
 esac

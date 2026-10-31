@@ -8,7 +8,7 @@ const { assertHeadword, assertAliases, assertStringList } = require('./headword-
 // format rules in data/commulingo/docs/README.md.
 const { docRefId } = require('./docs-store');
 const { sanitizeDocHtml } = require('./doc-sanitize');
-const { writeDocs, readDocRow } = require('./docs-db');
+const { writeDocs, readDocRow, checkStructure } = require('./docs-db');
 const { normalizeKoreanFields } = require('./korean-quotes');
 
 function badRequest(message) {
@@ -162,7 +162,7 @@ function canonicalEntry(entry) {
 
 // Convert raw HTML into a fragment + entry. Writes both unless dryRun.
 // `overrides` may carry any entry fields (title, source, …).
-async function importDoc({ rawHtml, id, dryRun, force, overrides = {}, actor = 'unknown', note }) {
+async function importDoc({ rawHtml, id, dryRun, force, overrides = {}, actor = 'unknown', note, allowStructureIssues = false }) {
     if (typeof id !== 'string' || !/^[a-z0-9-]+$/.test(id)) throw badRequest('id must be lowercase letters, digits, hyphens');
     if (typeof rawHtml !== 'string' || !rawHtml.trim()) throw badRequest('html content is empty');
 
@@ -190,8 +190,11 @@ async function importDoc({ rawHtml, id, dryRun, force, overrides = {}, actor = '
 
     const toc = harvestTocPreview(html);
     const linkAudit = await require('./doc-person-links').inspectDocPersonLinks(html, entry);
-    if (!dryRun) await writeDocs({ upserts: [{ id, entry, body: html }] }, { actor, note: note || 'import' });
-    return { entry, warnings, toc, linkAudit: { mentions: linkAudit.mentions, warnings: linkAudit.warnings, truncated: linkAudit.truncated }, fragmentBytes: Buffer.byteLength(html), overwrote: Boolean(existing) };
+    // A new document meets the full structure check; a dry run reports it.
+    const structure = checkStructure(id, id, { body: html, entry, role: 'translation',
+        previousBody: existing ? existing.body : undefined, previousEntry: existing ? existing.entry : undefined });
+    if (!dryRun) await writeDocs({ upserts: [{ id, entry, body: html }] }, { actor, note: note || 'import', allowStructureIssues });
+    return { entry, warnings, structure, toc, linkAudit: { mentions: linkAudit.mentions, warnings: linkAudit.warnings, truncated: linkAudit.truncated }, fragmentBytes: Buffer.byteLength(html), overwrote: Boolean(existing) };
 }
 
 // Merge metadata into an entry. {ko,en} fields merge per-language;
