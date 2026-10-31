@@ -207,7 +207,7 @@ function badgeActivity(activities, primary) {
         .reduce((best, a) => (!best || year(a) >= year(best) ? a : best), null) || primary;
 }
 
-function normalizePerson(raw, data, lang, sceneIndex, officeTitles) {
+function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeRows) {
     const patronymic = localize((data.patronymics || {})[raw.id], lang);
     const cyrillicPatronymic = (data.cyrillicPatronymics || {})[raw.id] || '';
     const years = parseLifeYears(raw.years);
@@ -232,7 +232,7 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles) {
     // Strictly per language, like the parts: the other language's qualifier
     // would label 오토 브라운 (Prussian premier).
     const qualifier = ((raw.qualifier && raw.qualifier[lang]) || '').trim();
-    const activities = displayActivities(raw.activities, lang, officeTitles);
+    const activities = displayActivities(raw.activities, lang, officeTitles, officeRows);
     const primaryActivity = activities.find(a => a.primary);
     return {
         schemaVersion: SCHEMA_VERSION,
@@ -423,7 +423,16 @@ function normalizeCommuLingoPeople(data, options = {}) {
         index[office.id] = office.title || {};
         return index;
     }, { ...ROLE_OFFICE_TITLES });
-    const people = (data.people || []).map(person => normalizePerson(person, data, lang, sceneIndex, officeTitles));
+    // Each person's posts on the office pages, for the activities section.
+    const officeRowsByPerson = {};
+    (data.offices || []).forEach(office => (office.rows || []).forEach(row => {
+        if (!row.personId) return;
+        (officeRowsByPerson[row.personId] = officeRowsByPerson[row.personId] || []).push({
+            officeId: office.id, title: row.body || {},
+            startYear: row.period?.start?.[0] ?? null, endYear: row.period?.end?.[0] ?? null,
+        });
+    }));
+    const people = (data.people || []).map(person => normalizePerson(person, data, lang, sceneIndex, officeTitles, officeRowsByPerson[person.id]));
     const peopleById = people.reduce((index, person) => {
         index[person.id] = person;
         return index;

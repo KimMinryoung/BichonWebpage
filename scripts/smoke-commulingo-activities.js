@@ -109,6 +109,26 @@ assert(matchesActivities({ activities: [legacyOffice] }, { affiliationId: 'state
 assert(!matchesActivities({ activities: [legacyOffice] }, { officeId: 'defence' }));
 console.log('Activity office lines passed');
 
+// Posts on office pages (commulingo_office_rows) show under the activity of
+// that office (니콜라이 쿠즈네초프: 군사·국방 1919– with two navy posts), in
+// year order, with no repeat of the office link; a post the card already
+// writes out is not repeated; another office's post keeps its own link.
+{
+    const defence = { functionId: 'military', affiliationId: 'state-soviet', affiliationStatus: 'confirmed', relation: 'service', primary: true, officeId: 'defence', startYear: 1919, endYear: null, evidence };
+    const titles = { defence: { ko: '군사 · 국방', en: 'Military and defence' }, 'state-security': { ko: '국가보안 기관', en: 'State security agencies' } };
+    const minister = { officeId: 'defence', title: { ko: '소련 해군장관', en: 'USSR Minister of the Navy' }, startYear: 1951, endYear: 1953 };
+    const commissar = { officeId: 'defence', title: { ko: '소련 해군인민위원', en: "USSR People's Commissar of the Navy" }, startYear: 1939, endYear: 1946 };
+    const [row] = displayActivities([defence], 'ko', titles, [minister, commissar]);
+    assert.deepEqual(row.posts.map(p => [p.titleLabel, p.years, p.officeLabel]), [['소련 해군인민위원', '1939–1946', ''], ['소련 해군장관', '1951–1953', '']]);
+    assert(matchesActivities({ activities: [row] }, { officeId: 'defence' }));
+    const written = { ...defence, primary: false, title: commissar.title, startYear: 1939, endYear: 1946 };
+    assert.deepEqual(displayActivities([defence, written], 'ko', titles, [commissar]).map(a => a.posts.length), [0, 0]);
+    const elsewhere = displayActivities([defence], 'en', titles, [{ ...commissar, officeId: 'state-security' }])[0];
+    assert.deepEqual(elsewhere.posts.map(p => p.officeLabel), ['State security agencies']);
+    assert.deepEqual(displayActivities([{ ...defence, affiliationId: 'china-ccp', officeId: null }], 'ko', titles, [commissar])[0].posts, []);
+    console.log('Office-page posts passed');
+}
+
 // Curated position collections (migration 213) attach to people independently of the role.
 {
     const { normalizeCommuLingoPeople } = require('../data/commulingo/people-standard');

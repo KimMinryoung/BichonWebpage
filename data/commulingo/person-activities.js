@@ -206,12 +206,48 @@ function mergeMemberships(rows) {
     return rows.flatMap(a => merged.has(a) ? [merged.get(a)] : used.has(a) ? [] : [a]);
 }
 
+// The posts a person holds on an office page (commulingo_office_rows) are
+// composed into the activity rows here, so the office page stays the one
+// record (2026-10-31: 611 of 762 rows had no activity naming them, and the
+// person page showed only 군사·국방 1919– for a two-time navy commissar). A
+// row goes under the activity of the same office whose years touch it, else
+// any activity of that office, else a Soviet party-state activity of those
+// years; it shows its own office link only when the host names another one.
+// A post the card already writes out (same office and title, or same office
+// and years) is not repeated.
+function attachOfficeRows(rows, officeRows) {
+    if (!officeRows || !officeRows.length) return rows;
+    // An activity with a start and no end is still running (군사·국방 1919–).
+    const covers = (a, r) => spansTouch(a.startYear != null && a.endYear == null ? { ...a, endYear: Infinity } : a, r);
+    const titleKey = t => ((t && (t.ko || t.en)) || '').trim();
+    const written = rows.flatMap(a => [a, ...(a.posts || [])]).filter(a => a.officeId);
+    const extra = new Map();
+    for (const r of officeRows) {
+        if (written.some(a => a.officeId === r.officeId && ((a.title && titleKey(a.title) === titleKey(r.title))
+            || (a.title && a.startYear === r.startYear && a.endYear === r.endYear)))) continue;
+        const sameOffice = rows.filter(a => a.officeId === r.officeId || (a.posts || []).some(p => p.officeId === r.officeId));
+        const host = sameOffice.find(a => covers(a, r)) || sameOffice[0]
+            || rows.find(a => OFFICE_AFFILIATIONS.has(a.affiliationId) && POST_RELATIONS.has(a.relation) && covers(a, r))
+            || rows.find(a => OFFICE_AFFILIATIONS.has(a.affiliationId) && covers(a, r));
+        if (!host) continue;
+        if (!extra.has(host)) extra.set(host, []);
+        extra.get(host).push({ functionId: host.functionId, officeId: host.officeId === r.officeId ? null : r.officeId,
+            title: r.title, startYear: r.startYear, endYear: r.endYear });
+    }
+    const start = p => p.startYear ?? p.endYear ?? Infinity;
+    return rows.map(a => extra.has(a)
+        ? { ...a, posts: [...(a.posts || []), ...extra.get(a)].map((p, i) => [p, i]).sort(([p, i], [q, j]) => start(p) - start(q) || i - j).map(([p]) => p) }
+        : a);
+}
+
 // officeTitles: { [officeId]: { ko, en } } from commulingo_offices.
-function displayActivities(raw, lang, officeTitles = {}) {
+// officeRows: [{ officeId, title { ko, en }, startYear, endYear }] — the
+// person's rows on office pages (attachOfficeRows).
+function displayActivities(raw, lang, officeTitles = {}, officeRows = []) {
     const office = a => ({ officeLabel: a.officeId ? localize(officeTitles[a.officeId], lang) || '' : '',
         officeHref: a.officeId ? `/commulingo/offices/${a.officeId}` : '',
         titleLabel: a.title ? localize(a.title, lang) : '' });
-    return mergeMemberships((raw || []).filter(a => functions.has(a.functionId))).map(a => {
+    return attachOfficeRows(mergeMemberships((raw || []).filter(a => functions.has(a.functionId))), officeRows).map(a => {
         const f = functions.get(a.functionId), affiliation = affiliations.get(a.affiliationId);
         return { ...a, label: localize(f.label, lang), icon: f.icon,
             affiliationLabel: affiliation ? localize(affiliation.label, lang) : a.affiliationStatus === 'independent' ? (lang === 'en' ? 'Independent activity' : '독립 활동') : '',
