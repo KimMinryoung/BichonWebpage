@@ -12,6 +12,7 @@
 | `/commulingo/book/marx-wage-labour-capital` | `data/commulingo/courses/marx-wage-labour-capital.js` | 7편·53발췌, 4지선다, 퀴즈형 강좌를 다시 씀, 권 번호 -2 (2026-10-31, [아래](#마르크스-세-강좌-임금노동과-자본임금-가격-이윤고타-강령-비판-2026-10-31)) |
 | `/commulingo/book/marx-wages-and-programme` | `data/commulingo/courses/marx-wages-and-programme.js` | 7편·54발췌, 『임금, 가격, 이윤』만 남기고 다시 씀, 권 번호 0 (2026-10-31) |
 | `/commulingo/book/marx-gotha-critique` | `data/commulingo/courses/marx-gotha-critique.js` | 7편·48발췌, 새 강좌(옛 『임금 투쟁과 분배』 제2편에서 분리), 권 번호 18 (2026-10-31) |
+| `/commulingo/book/lenin-state-revolution` | `data/commulingo/courses/lenin-state-revolution.js` | 6편·47발췌, 4지선다, 퀴즈형 12레슨·60문항을 새 번역으로 다시 씀, 권 번호 5 (2026-10-31, [아래](#국가와-혁명-2026-10-31)) |
 
 ## 왜 이 형식인가 (2026-10-24 판단 근거)
 
@@ -106,3 +107,12 @@
 - `course-metadata.js`의 출시일 목록(COURSES)은 마지막 항목이던 `marx-wages-and-programme`가 `editorial.authoredAt`을 갖게 되어 비었다.
 - 정본은 `scripts/content/marx-courses-20261031/<문헌 id>/course/`(gitignore, R2 보관). 공통 도구는 `tools/`(`split.py` 문단 나누기, `make-kit.js` 키트 생성, `make-brief.py`).
 - 등록: `PUBLIC_CHAPTER_LIMITS`(세 강좌 7편, 고타 새로 추가)라 재시작(배포)이 필요하다. `validate-commulingo.js`, `check-course-source-excerpts.js` `REQUIRE_SOURCE`.
+
+## 『국가와 혁명』 (2026-10-31)
+
+사용자 결정: 러시아어 원문에서 새로 옮겨 참고 문헌으로 올린 뒤(`lenin-state-and-revolution-1917`) 퀴즈형 강좌를 끊어 읽기로 다시 쓴다.
+
+- 편 구성: 1 계급사회와 국가(초판 서문, 제1장), 2 1848~1851년의 경험, 3 국가 기계를 분쇄하라: 파리 코뮌의 경험, 4 엥겔스의 보충 설명, 5 국가 사멸의 경제적 기초, 6 기회주의자들의 마르크스주의 속류화(초판 후기). 발췌 anchor는 절 단위(`chapter-iii-2` 등).
+- 레슨 id는 `state-revolution-chNN-reading`. 장 id와 `PUBLIC_CHAPTER_LIMITS`(6)는 그대로라 재시작이 필요 없다.
+- 번역: 위키문헌 판(전집 5판 33권)에서 옮겼다. 전집 편집부 주는 싣지 않았고, 제2판 서문 날짜는 전집대로 1918년 12월 17일로 바로잡았다. 인명은 인물 카드 표기(투간-바라놉스키, 레기엔, 웹)를 따랐다.
+- 정본은 `scripts/content/lenin-state-revolution-20261031/`(gitignore, R2 보관): 번역 `work/`, `parse.py`, `assemble.py`, `heads.json`, `style-card.md`, 강좌 `course/`.

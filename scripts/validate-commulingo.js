@@ -38,7 +38,7 @@ const expected = {
   'capital-vol2': { chapters: 21, questions: 210, lessons: 42 },
   'capital-vol3': { chapters: 52, questions: 520, lessons: 104 },
   'lenin-imperialism': { chapters: 10, questions: 78, lessons: 10, format: 'guided-reading' },
-  'lenin-state-revolution': { chapters: 6, questions: 60, lessons: 12 },
+  'lenin-state-revolution': { chapters: 6, questions: 47, lessons: 6, format: 'guided-reading' },
   'lenin-materialism-empiriocriticism': { chapters: 8, questions: 61, lessons: 8, format: 'guided-reading' },
   'marx-wage-labour-capital': { chapters: 7, questions: 53, lessons: 7, format: 'guided-reading' },
   'marx-wages-and-programme': { chapters: 7, questions: 54, lessons: 7, format: 'guided-reading' },
