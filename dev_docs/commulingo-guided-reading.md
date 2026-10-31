@@ -94,9 +94,9 @@
 - 정본은 `scripts/content/lenin-imperialism-20261031/course/`(gitignore, R2 보관): `BRIEF.md`, `head.js`, `ch01.js`~`ch10.js`, `check.js`, `build.js`, `show.js`, `text/`. 번역 작업물은 같은 작업 디렉터리의 `work/`.
 - 등록: `validate-commulingo.js` 10편·78문항·10레슨, `check-course-source-excerpts.js` `REQUIRE_SOURCE`. `PUBLIC_CHAPTER_LIMITS`는 10 그대로라 재시작이 필요 없다.
 
-## 마르크스 세 강좌: 『임금노동과 자본』·『임금, 가격, 이윤』·『고타 강령 비판』 (2026-10-31)
+## 마르크스 세 강좌: 『임금노동과 자본』·『임금, 가격, 이윤』·『고타강령 비판』 (2026-10-31)
 
-사용자 결정: 퀴즈형으로 남아 있던 두 마르크스 강좌를 끊어 읽기로 다시 쓰고, 『임금, 가격, 이윤』과 『고타 강령 비판』을 한데 묶은 『임금 투쟁과 분배』 강좌는 둘로 나눈다.
+사용자 결정: 퀴즈형으로 남아 있던 두 마르크스 강좌를 끊어 읽기로 다시 쓰고, 『임금, 가격, 이윤』과 『고타강령 비판』을 한데 묶은 『임금 투쟁과 분배』 강좌는 둘로 나눈다.
 
 - `marx-wage-labour-capital`: 참고 문헌 `marx-wage-labour-and-capital`(엥겔스 1891년 머리말 포함), 7편·53발췌. 영어 발췌는 독일어 원문에서 옮김.
 - `marx-wages-and-programme`: 강좌 id는 링크(`views/public/strike.ejs` 등)를 지키려고 그대로 두고 제목만 「마르크스: 임금, 가격, 이윤」으로 바꿨다. 참고 문헌 `marx-value-price-profit`, 7편·54발췌. 원문이 영어라 영어 발췌는 원문 그대로다.

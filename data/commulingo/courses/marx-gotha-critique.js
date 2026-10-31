@@ -14,7 +14,7 @@ function t(ko, en) {
 
 const DOC = '/commulingo/docs/marx-gotha-critique';
 const FROM_ORIGINAL = ' (our translation from the German)';
-const TITLE_KO = '『고타 강령 비판』';
+const TITLE_KO = '『고타강령 비판』';
 const TITLE_EN = 'Critique of the Gotha Programme';
 
 const LABELS = {
@@ -72,8 +72,8 @@ module.exports = {
     id: 'marx-gotha-critique',
     volumeNumber: 18,
     format: 'guided-reading',
-    title: t('마르크스: 고타 강령 비판', 'Marx: Critique of the Gotha Programme'),
-    bookTitle: t('고타 강령 비판', 'Critique of the Gotha Programme'),
+    title: t('마르크스: 고타강령 비판', 'Marx: Critique of the Gotha Programme'),
+    bookTitle: t('고타강령 비판', 'Critique of the Gotha Programme'),
     badge: t('원문 끊어 읽기 · 7편', 'Guided reading · 7 lessons'),
     description: t(
         '「감소되지 않은 노동수익」, 「공정한 분배」, 「자유국가」. 마르크스가 1875년 독일 노동자당 통합 강령 초안에 단 여백 논평을 한 문단씩 끊어 읽으며, 공산주의 사회의 두 단계와 프롤레타리아 혁명적 독재까지 따라갑니다.',
