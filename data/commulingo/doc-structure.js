@@ -204,7 +204,16 @@ function inspectDocStructure(html, { role = 'translation', entry } = {}) {
             }
         });
     });
-    const target = href => (href || '').startsWith('#') ? decodeURIComponent(href.slice(1)) : null;
+    // A malformed escape (href="#100%") must not abort the check: it would
+    // block every later save of the document, the repair included.
+    const target = href => {
+        if (!(href || '').startsWith('#')) return null;
+        try {
+            return decodeURIComponent(href.slice(1));
+        } catch {
+            return href.slice(1);
+        }
+    };
     all.filter(node => node.name === 'a').forEach(a => {
         const id = target(a.attribs.href);
         if (id === null || id === '') return;

@@ -331,15 +331,19 @@ function getCommuLingoDocContent(doc) {
 // sits on (1 on a single-scroll document). Ids the reader generated for
 // headings without one (sec-N, annotateHeadings) are left out: they count
 // headings, so the same number names different sections in the two versions.
-// An id written into the document is kept even when it reads sec-N.
+// An id written into the document is kept even when it reads sec-N; one
+// frozen at save time (data-auto-id, sec-N and sub-N alike) is not.
 // Kept on the cached content object.
 function getCommuLingoDocAnchorPages(content) {
     if (content.anchorPages) return content.anchorPages;
     const pages = content.paged ? content.paged.pages.map(page => page.html) : [content.html];
     const out = {};
     pages.forEach((html, i) => {
-        for (const m of html.matchAll(/<h[1-3][^>]*\bid="([^"]+)"/g)) {
-            if (!content.generated.has(m[1]) && !out[m[1]]) out[m[1]] = i + 1;
+        for (const m of html.matchAll(/<h[1-3][^>]*\bid="([^"]+)"[^>]*>/g)) {
+            // Ids frozen at save time carry data-auto-id; h3 sub-N never passes
+            // through annotateHeadings (h1/h2 only), so test the tag itself.
+            if (AUTO_ID_RE.test(m[0]) || content.generated.has(m[1]) || out[m[1]]) continue;
+            out[m[1]] = i + 1;
         }
     });
     content.anchorPages = out;

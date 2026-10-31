@@ -79,6 +79,13 @@ const codes = result => result.errors.map(issue => issue.code).sort();
     assert.deepEqual(warned.warnings.map(issue => issue.code).sort(), ['edition-missing', 'fragment-link-dangling', 'hr-after-editorial']);
 }
 
+// A malformed percent escape in a fragment link is reported, not thrown.
+{
+    const odd = inspectDocStructure(GOOD.replace('<p>무엇을 다루는지.</p>', '<p>무엇을 <a href="#100%">다루는지</a>.</p>'));
+    assert.deepEqual(odd.errors, []);
+    assert.deepEqual(odd.warnings.map(issue => issue.code), ['fragment-link-dangling']);
+}
+
 // The ratchet: an error already stored does not block a save; a new one does.
 {
     const legacy = inspectDocStructure(GOOD.replace('<ol class="notes-list">', '<ol>'));
@@ -112,6 +119,9 @@ const codes = result => result.errors.map(issue => issue.code).sort();
     const { generated, toc } = annotateHeadings(frozen);
     assert.deepEqual([...generated].sort(), ['sec-1', 'sec-2', 'sec-3']);
     assert.deepEqual(toc.map(item => item.id), ['sec-1', 'x', 'sec-2', 'sec-3']);
+    // Nor does the version switch take a frozen h3 (sub-N) for a shared anchor.
+    const { getCommuLingoDocAnchorPages } = require('../data/commulingo/docs-store');
+    assert.deepEqual(getCommuLingoDocAnchorPages({ html: frozen, generated }), { x: 1 });
 }
 
 // Blocks are cut by the parser, nesting included.
