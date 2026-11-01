@@ -154,20 +154,87 @@ function checkSpecialCourse(lib, out, course) {
     lib.checkLocalizedItems(out, timeline.stances, id + '.decisionTimeline.stances', ['label', 'desc']);
     const eras = timeline.eras || [];
     if (!eras.length) out.add('shape', id, id + '.decisionTimeline has no eras');
-    lib.checkLocalizedItems(out, eras, id + '.decisionTimeline.eras', ['range', 'title', 'intro']);
+    lib.checkLocalizedItems(out, eras, id + '.decisionTimeline.eras', ['title', 'intro']);
+    const stanceIds = new Set((timeline.stances || []).map(stance => stance && stance.id));
     const seen = new Set();
     eras.forEach((era, eraIndex) => {
+        const eraLabel = `${id}.decisionTimeline.eras[${eraIndex}]`;
+        if (!yearsOk(era && era.years)) out.add('shape', id, eraLabel + '.years must be [start year, end year?]');
         const episodes = (era && era.episodes) || [];
-        lib.checkLocalizedItems(out, episodes, `${id}.decisionTimeline.eras[${eraIndex}].episodes`,
-            ['date', 'title', 'role', 'briefing', 'question', 'outcome', 'ripple', 'insight']);
+        lib.checkLocalizedItems(out, episodes, eraLabel + '.episodes',
+            ['title', 'role', 'briefing', 'question', 'outcome', 'ripple', 'insight']);
         episodes.forEach((episode, episodeIndex) => {
-            const label = `${id}.decisionTimeline.eras[${eraIndex}].episodes[${episodeIndex}]`;
-            if (!episode || !String(episode.id || '').trim()) out.add('shape', id, label + '.id is empty');
-            else if (seen.has(episode.id)) out.add('shape', id, `${id} duplicate episode id ${episode.id}`);
+            const label = `${eraLabel}.episodes[${episodeIndex}]`;
+            if (!episode || !String(episode.id || '').trim()) { out.add('shape', id, label + '.id is empty'); return; }
+            if (seen.has(episode.id)) out.add('shape', id, `${id} duplicate episode id ${episode.id}`);
             else seen.add(episode.id);
-            lib.checkLocalizedItems(out, episode && episode.options, label + '.options', ['label', 'note']);
+            decisionEpisodeProblems(episode, stanceIds).forEach(problem => out.add('shape', id, `${label} (${episode.id}) ${problem}`));
+            lib.checkLocalizedItems(out, episode.options, label + '.options', ['label', 'note']);
         });
     });
+    // No em dash in the Korean prose (the house rule for new writing).
+    walkKorean(timeline, '', (value, where) => {
+        if (value.includes('—')) out.add('wording', id, `${id}.decisionTimeline${where} has an em dash (—) in Korean text`);
+    });
+}
+
+// Decision-history episodes keep their facts as data: date
+// { start: [y, m?, d?], end?, calendar? }, 2-4 options whose stance (optional)
+// is one of the book's stances, sources [{ doc, anchor? }] and eventIds.
+const CALENDARS = new Set(['julian', 'gregorian']);
+function dateTupleOk(value) {
+    if (!Array.isArray(value) || value.length < 1 || value.length > 3) return false;
+    const [y, m, d] = value;
+    if (!Number.isInteger(y) || y < 1000 || y > 2100) return false;
+    if (m !== undefined && !(Number.isInteger(m) && m >= 1 && m <= 12)) return false;
+    if (d !== undefined && !(m !== undefined && Number.isInteger(d) && d >= 1 && d <= 31)) return false;
+    return true;
+}
+function yearsOk(value) {
+    return Array.isArray(value) && value.length >= 1 && value.length <= 2
+        && value.every(year => Number.isInteger(year)) && (value.length === 1 || value[1] >= value[0]);
+}
+function decisionEpisodeProblems(episode, stanceIds) {
+    const problems = [];
+    const date = episode.date;
+    if (!date || typeof date !== 'object' || !dateTupleOk(date.start)) problems.push('date.start must be [year, month?, day?]');
+    else {
+        if (date.end !== undefined && !dateTupleOk(date.end)) problems.push('date.end must be [year, month?, day?]');
+        if (date.calendar !== undefined && !CALENDARS.has(date.calendar)) problems.push('date.calendar must be julian or gregorian');
+    }
+    const options = Array.isArray(episode.options) ? episode.options : [];
+    if (options.length < 2 || options.length > 4) problems.push('needs 2 to 4 options');
+    const optionIds = new Set();
+    options.forEach(option => {
+        if (!option || !ID.test(option.id || '')) { problems.push('has an option without a safe id'); return; }
+        if (optionIds.has(option.id)) problems.push(`duplicate option id ${option.id}`);
+        optionIds.add(option.id);
+        if (option.stance !== undefined && option.stance !== null && !stanceIds.has(option.stance)) problems.push(`option ${option.id} has unknown stance ${option.stance}`);
+    });
+    if (!optionIds.has(episode.actualId)) problems.push('actualId is not one of its options');
+    if (episode.historyEventId !== undefined) problems.push('historyEventId is replaced by eventIds');
+    if (episode.eventIds !== undefined && !(Array.isArray(episode.eventIds) && episode.eventIds.every(item => typeof item === 'string' && ID.test(item)))) {
+        problems.push('eventIds must be an array of event ids');
+    }
+    if (episode.sources !== undefined) {
+        if (!Array.isArray(episode.sources)) problems.push('sources must be an array');
+        else episode.sources.forEach((src, index) => {
+            if (!src || typeof src.doc !== 'string' || !ID.test(src.doc)) problems.push(`sources[${index}].doc must be a document id`);
+            if (src && src.anchor !== undefined && !(typeof src.anchor === 'string' && ID.test(src.anchor))) problems.push(`sources[${index}].anchor must be an element id`);
+            const extra = Object.keys(src || {}).filter(k => k !== 'doc' && k !== 'anchor');
+            if (extra.length) problems.push(`sources[${index}] has unknown fields ${extra.join(', ')}`);
+        });
+    }
+    return problems;
+}
+function walkKorean(value, where, visit) {
+    if (Array.isArray(value)) value.forEach((item, index) => walkKorean(item, `${where}[${index}]`, visit));
+    else if (value && typeof value === 'object') {
+        Object.keys(value).forEach(key => {
+            if (key === 'ko' && typeof value.ko === 'string') visit(value.ko, `${where}.ko`);
+            else walkKorean(value[key], `${where}.${key}`, visit);
+        });
+    }
 }
 
 // [{ rule, label, message }] for these courses, checked together (the
@@ -222,6 +289,31 @@ function sourceProblems(course) {
         return docs.get(id);
     };
     const problems = [];
+    const timeline = course.decisionTimeline;
+    if (timeline) {
+        let events = null;
+        const eventIds = () => {
+            if (!events) {
+                try {
+                    const { SNAPSHOT_PATH } = require('./history-events-store');
+                    events = new Set(JSON.parse(fs.readFileSync(SNAPSHOT_PATH, 'utf8')).map(event => event.id));
+                } catch (err) { events = null; }
+            }
+            return events;
+        };
+        for (const episode of (timeline.eras || []).flatMap(era => (era && era.episodes) || [])) {
+            (episode.sources || []).forEach((src, index) => {
+                if (!src || !src.doc) return;
+                const page = siteDoc(src.doc);
+                if (!page) problems.push(`${episode.id}/sources[${index}]: document ${src.doc} not found`);
+                else if (src.anchor && !page.ids.has(src.anchor)) problems.push(`${episode.id}/sources[${index}]: #${src.anchor} not in ${src.doc}`);
+            });
+            const known = (episode.eventIds || []).length ? eventIds() : null;
+            if (known) (episode.eventIds || []).forEach(eventId => {
+                if (!known.has(eventId)) problems.push(`${episode.id}: history event ${eventId} not found`);
+            });
+        }
+    }
     for (const chapter of course.chapters || []) {
         (chapter.readings || []).forEach((reading, index) => {
             if (!reading || !reading.doc) return;

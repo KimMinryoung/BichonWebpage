@@ -114,3 +114,15 @@ readings의 `doc`(사이트 참고 문헌 id)과 `anchor`(읽는 절)는 전문�
 강좌 소개·배지에 「한 문단씩 끊어 읽습니다」, 「원문 끊어 읽기」 같은 진행 방식 문구를 쓰지 않는다(배지는 「원문 읽기 · N편」).
 
 카드 높이는 내용대로 둔다(고정 `min-height` 없음). 레슨이 하나뿐인 장은 기본/심화를 고를 일이 없으므로 「기본」 라벨을 레슨 버튼·학습 화면 배지·다음 학습 안내에서 뺀다(`soleLevel`).
+
+## 2026-11-01 결정사(decision-history) 형식 개편
+
+「러시아 혁명사」·「소련사」 갈림길 책의 사실 정보를 산문 대신 필드로 옮겼다. 내용 보강(새 갈림길) 전에 형식을 먼저 확정한 것이다.
+
+- 갈림길 `date`: `{ start: [y, m?, d?], end?, calendar?: 'julian'|'gregorian' }`. 화면이 「1905년 1월 9일 (구력)」, 「1928~1929년」, 「1906년 2월~4월」로 그린다(`dateLabel`, `public/js/commulingo-decision.js`). 1918년 2월 전 러시아 날짜는 날짜까지 적힌 경우 `julian`.
+- 부(era) `years: [시작, 끝?]`이 `range` 산문을 대신한다.
+- `eventIds: [사건 id]`가 `historyEventId` 하나를 대신한다(여러 사건 가능). `sources: [{ doc, anchor? }]`는 그 갈림길에서 읽을 사이트 문헌이다. 페이지는 서버가 넘기는 `refs`(문헌·사건 제목, `decisionRefs` in `data/commulingo/book-page.js`)로 칩을 그린다.
+- 선택지는 2~4개, `stance`는 선택이다(없으면 성향 집계에서 빠짐). 한 입장에 한 선택지라는 제약을 풀었다. 기존 28편은 그대로 세 선택지다.
+- 판정: 갈림길을 하나라도 결정하면 성향 막대·우세 노선·부별 표를 「갈림길 N개 중 n개 기준」으로 보여 준다. 실제 역사와의 일치는 색 사각형(일치·다름)으로만 표시하고 판정 낱말을 쓰지 않는다.
+- 저장 게이트(`checkSpecialCourse`·`sourceProblems`, `data/commulingo/course-validation.js`)가 날짜·연도 모양, 선택지 수·id 중복, `actualId`, 입장 id, 문헌·앵커·사건의 실재, 한국어 텍스트의 줄표(—)를 검사한다.
+- 기존 두 책의 한국어 줄표(—)를 쉼표·쌍점·문장 나눔으로 바꿨다. 작업본은 `scripts/content/decision-format/`.

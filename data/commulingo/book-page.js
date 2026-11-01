@@ -396,4 +396,30 @@ async function linkifyLessonPayload(lesson) {
     return lesson;
 }
 
-module.exports = { bookPageData, linkifyLessonPayload, courseChaptersFor, courseChaptersForDoc, warmCourseChapters, buildCourseChapterIndex };
+// The titles of the documents and history events a decision book's episodes
+// cite (episode.sources[].doc, episode.eventIds), so the browser only renders
+// the links the course data names. Unknown ids are left out; the write gate
+// refuses them anyway.
+async function decisionRefs(collection) {
+    const timeline = collection && collection.decisionTimeline;
+    const out = { docs: {}, events: {} };
+    if (!timeline) return out;
+    const episodes = (timeline.eras || []).flatMap(era => era.episodes || []);
+    const { getCommuLingoDoc } = require('./docs-store');
+    for (const ep of episodes) {
+        for (const src of ep.sources || []) {
+            const doc = src && getCommuLingoDoc(src.doc);
+            if (doc) out.docs[doc.id] = doc.title;
+        }
+    }
+    const wanted = new Set(episodes.flatMap(ep => ep.eventIds || []));
+    if (wanted.size) {
+        const { loadCommuLingoHistoryEvents } = require('./history-events-store');
+        for (const event of await loadCommuLingoHistoryEvents()) {
+            if (wanted.has(event.id)) out.events[event.id] = event.title;
+        }
+    }
+    return out;
+}
+
+module.exports = { decisionRefs, bookPageData, linkifyLessonPayload, courseChaptersFor, courseChaptersForDoc, warmCourseChapters, buildCourseChapterIndex };

@@ -14,6 +14,9 @@
     }
 
     var timeline = data.timeline || {};
+    // Titles of the documents and events episodes cite, sent by the server so
+    // the page only renders what the course data names.
+    var refs = data.refs || { docs: {}, events: {} };
     var bookId = data.bookId || 'book';
     var storageKey = 'commulingo-decision-' + bookId;
     var en = lang === 'en';
@@ -30,11 +33,52 @@
         progress: en ? 'forks decided' : '갈림길 결정',
         matched: en ? 'You chose the road history took.' : '실제 역사와 같은 길을 골랐습니다.',
         diverged: en ? 'History took a different road here.' : '여기서 역사는 다른 길을 갔습니다.',
-        noScore: en ? 'This scene keeps no score.' : '이 장면에는 점수가 없습니다.',
         remains: en ? 'So what remains? →' : '그래서 무엇이 남는가? →',
         fold: en ? 'Hide' : '접기',
         undecided: en ? 'Undecided' : '미결정',
+        sources: en ? 'Read the sources' : '읽을 문헌',
+        events: en ? 'Connected events' : '연결 사건',
+        basis: en ? 'based on {n} of {total} forks' : '갈림길 {total}개 중 {n}개 기준',
+        byPart: en ? 'By part' : '부별',
+        julian: en ? 'O.S.' : '구력',
     };
+
+    // date: { start: [y, m?, d?], end?: [y, m?, d?], calendar?: 'julian' }.
+    // The label is composed here so dates stay data, not prose.
+    var MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    function dateLabel(date) {
+        if (!date || !Array.isArray(date.start)) return text(date);
+        var a = date.start, b = Array.isArray(date.end) ? date.end : null;
+        var label;
+        if (en) {
+            var one = function(d, withYear) {
+                var parts = [];
+                if (d[1]) parts.push(MONTHS_EN[d[1] - 1] + (d[2] ? ' ' + d[2] : ''));
+                if (withYear) parts.push(String(d[0]));
+                return parts.join(d[2] ? ', ' : ' ');
+            };
+            if (!b) label = one(a, true);
+            else if (a[0] !== b[0]) label = (a[1] ? one(a, true) : a[0]) + '–' + (b[1] ? one(b, true) : b[0]);
+            else if (a[1] && a[1] === b[1] && a[2] && b[2]) label = MONTHS_EN[a[1] - 1] + ' ' + a[2] + '–' + b[2] + ', ' + a[0];
+            else label = one(a, false) + '–' + one(b, false) + ' ' + a[0];
+        } else {
+            var md = function(d) { return (d[1] ? d[1] + '월' : '') + (d[2] ? ' ' + d[2] + '일' : ''); };
+            if (!b) label = a[0] + '년' + (a[1] ? ' ' + md(a) : '');
+            else if (a[0] !== b[0]) label = a[1] ? a[0] + '년 ' + md(a) + '~' + b[0] + '년 ' + md(b) : a[0] + '~' + b[0] + '년';
+            else if (a[1] && a[1] === b[1] && a[2] && b[2]) label = a[0] + '년 ' + a[1] + '월 ' + a[2] + '~' + b[2] + '일';
+            else label = a[0] + '년 ' + md(a) + '~' + md(b);
+        }
+        return date.calendar === 'julian' ? label + ' (' + L.julian + ')' : label;
+    }
+
+    function yearsLabel(years) {
+        if (!Array.isArray(years)) return text(years);
+        return years[1] && years[1] !== years[0] ? years[0] + '–' + years[1] : String(years[0]);
+    }
+
+    function fill(template, values) {
+        return template.replace(/\{(\w+)\}/g, function(_, k) { return values[k] == null ? '' : String(values[k]); });
+    }
 
     function text(value) {
         if (!value) return '';
@@ -236,7 +280,7 @@
         section.className = 'commu-dc-era';
         section.innerHTML = [
             '<header class="commu-dc-era-head">',
-            '<span class="commu-dc-era-range">' + escapeHtml(text(era.range)) + '</span>',
+            '<span class="commu-dc-era-range">' + escapeHtml(yearsLabel(era.years || era.range)) + '</span>',
             '<h2>' + escapeHtml(text(era.title)) + '</h2>',
             era.intro ? '<p>' + rich(era.intro) + '</p>' : '',
             '</header>'
@@ -285,11 +329,11 @@
 
         var status;
         if (!chosenId) status = '<span class="commu-dc-status">' + escapeHtml(L.undecided) + '</span>';
-        else if (chosenId === ep.actualId) status = '<span class="commu-dc-status is-match">●</span>';
-        else status = '<span class="commu-dc-status is-diverge">●</span>';
+        else if (chosenId === ep.actualId) status = '<span class="commu-dc-status is-match" aria-label="' + escapeHtml(L.matched) + '"></span>';
+        else status = '<span class="commu-dc-status is-diverge" aria-label="' + escapeHtml(L.diverged) + '"></span>';
 
         head.innerHTML = [
-            '<span class="commu-dc-date">' + escapeHtml(text(ep.date)) + '</span>',
+            '<span class="commu-dc-date">' + escapeHtml(dateLabel(ep.date)) + '</span>',
             '<span class="commu-dc-title"><strong>' + escapeHtml(text(ep.title)) + '</strong></span>',
             status,
             '<span class="commu-dc-toggle" aria-hidden="true">' + (li.classList.contains('is-open') ? '−' : '+') + '</span>'
@@ -312,6 +356,8 @@
                 var chips = '';
                 if (opt.id === chosenId) chips += '<span class="commu-dc-chip is-chosen">' + escapeHtml(L.yourChoice) + '</span>';
                 if (opt.id === ep.actualId) chips += '<span class="commu-dc-chip is-actual">' + escapeHtml(L.actual) + '</span>';
+                var stance = opt.stance && stanceById(opt.stance);
+                if (stance) chips += '<span class="commu-dc-chip is-stance is-' + escapeHtml(stance.id) + '">' + escapeHtml(text(stance.label)) + '</span>';
                 var cls = 'commu-dc-option is-done';
                 if (opt.id === chosenId) cls += ' is-chosen';
                 if (opt.id === ep.actualId) cls += ' is-actual';
@@ -322,16 +368,17 @@
                     + '</div>';
             }).join('') + '</div>');
 
-            var matchLine;
-            var scored = (ep.options || []).some(function(opt) { return opt.stance; });
-            if (!scored) matchLine = L.noScore;
-            else matchLine = chosenId === ep.actualId ? L.matched : L.diverged;
-            parts.push('<p class="commu-dc-matchline ' + (chosenId === ep.actualId && scored ? 'is-match' : '') + '">' + escapeHtml(matchLine) + '</p>');
-
             parts.push('<div class="commu-dc-block is-outcome"><span class="commu-dc-block-label">' + escapeHtml(L.outcome) + '</span><p>' + rich(ep.outcome) + '</p></div>');
             if (ep.ripple) parts.push('<div class="commu-dc-block is-ripple"><span class="commu-dc-block-label">→ ' + escapeHtml(L.ripple) + '</span><p>' + rich(ep.ripple) + '</p></div>');
             if (ep.insight) parts.push('<div class="commu-dc-block is-insight"><span class="commu-dc-block-label">' + escapeHtml(L.insight) + '</span><p>' + rich(ep.insight) + '</p></div>');
-            if (ep.historyEventId) parts.push('<a class="commu-dc-event-link" href="/commulingo/events/' + encodeURIComponent(ep.historyEventId) + '">' + escapeHtml(en ? 'Read the connected historical event' : '연결된 역사 사건 자세히 보기') + ' →</a>');
+            parts.push(refList(L.sources, (ep.sources || []).map(function(src) {
+                var title = refs.docs && refs.docs[src.doc];
+                return title ? { href: '/commulingo/docs/' + encodeURIComponent(src.doc) + (src.anchor ? '#' + encodeURIComponent(src.anchor) : ''), label: text(title) } : null;
+            })));
+            parts.push(refList(L.events, (ep.eventIds || []).map(function(id) {
+                var title = refs.events && refs.events[id];
+                return title ? { href: '/commulingo/events/' + encodeURIComponent(id), label: text(title) } : null;
+            })));
             parts.push('<button type="button" class="commu-dc-redo">' + escapeHtml(L.redo) + '</button>');
         }
 
@@ -360,11 +407,20 @@
         }
     }
 
-    function tally() {
-        var counts = { radical: 0, cautious: 0, reform: 0 };
+    function refList(label, items) {
+        items = items.filter(Boolean);
+        if (!items.length) return '';
+        return '<div class="commu-dc-refs"><span class="commu-dc-block-label">' + escapeHtml(label) + '</span><ul>'
+            + items.map(function(item) { return '<li><a href="' + escapeHtml(item.href) + '">' + escapeHtml(item.label) + '</a></li>'; }).join('')
+            + '</ul></div>';
+    }
+
+    function tally(list) {
+        var counts = {};
+        (timeline.stances || []).forEach(function(s) { counts[s.id] = 0; });
         var scoredTotal = 0;
         var matches = 0;
-        episodes.forEach(function(ep) {
+        (list || episodes).forEach(function(ep) {
             var chosenId = choices[ep.id];
             if (!chosenId) return;
             if (chosenId === ep.actualId) matches += 1;
@@ -390,26 +446,29 @@
         if (section) paintVerdict(section);
     }
 
+    // Shown from the first decision on: the stance tally so far, each part's
+    // tally, and how often the reader took history's road.
     function paintVerdict(section) {
         var verdict = timeline.verdict || {};
         var done = decidedCount();
         var total = episodes.length;
+        var stances = timeline.stances || [];
 
-        if (done < total) {
+        if (!done) {
             section.innerHTML = [
                 '<h2 class="commu-section-title">' + escapeHtml(text(verdict.title)) + '</h2>',
-                '<p class="commu-section-hint">' + escapeHtml(text(verdict.lockedHint)) + ' (' + done + ' / ' + total + ')</p>'
+                '<p class="commu-section-hint">' + escapeHtml(text(verdict.lockedHint)) + '</p>'
             ].join('');
             return;
         }
 
         var result = tally();
-        var dominant = 'radical';
-        ['cautious', 'reform'].forEach(function(id) {
-            if (result.counts[id] > result.counts[dominant]) dominant = id;
+        var dominant = null;
+        stances.forEach(function(s) {
+            if (result.counts[s.id] && (!dominant || result.counts[s.id] > result.counts[dominant])) dominant = s.id;
         });
 
-        var bars = (timeline.stances || []).map(function(s) {
+        var bars = stances.map(function(s) {
             var count = result.counts[s.id] || 0;
             var pct = Math.round((count / (result.scoredTotal || 1)) * 100);
             return [
@@ -421,13 +480,25 @@
             ].join('');
         }).join('');
 
-        var profile = verdict.profiles ? verdict.profiles[dominant] : null;
+        var parts = (timeline.eras || []).map(function(era) {
+            var list = (era.episodes || []).filter(function(ep) { return choices[ep.id]; });
+            if (!list.length) return '';
+            var counts = tally(list).counts;
+            return '<tr><th scope="row">' + escapeHtml(text(era.title)) + '</th>'
+                + stances.map(function(s) { return '<td>' + (counts[s.id] || 0) + '</td>'; }).join('') + '</tr>';
+        }).join('');
+
+        var profile = dominant && verdict.profiles ? verdict.profiles[dominant] : null;
 
         section.innerHTML = [
             '<h2 class="commu-section-title">' + escapeHtml(text(verdict.title)) + '</h2>',
+            '<p class="commu-section-hint">' + escapeHtml(fill(L.basis, { n: done, total: total })) + '</p>',
             '<div class="commu-dc-bars">' + bars + '</div>',
             profile ? '<p class="commu-dc-profile">' + escapeHtml(text(profile)) + '</p>' : '',
-            '<p class="commu-dc-match">' + escapeHtml(text(verdict.matchLabel)) + ': <strong>' + result.matches + ' / ' + total + '</strong></p>',
+            parts ? '<table class="commu-dc-parts"><thead><tr><th scope="col">' + escapeHtml(L.byPart) + '</th>'
+                + stances.map(function(s) { return '<th scope="col">' + escapeHtml(text(s.label)) + '</th>'; }).join('')
+                + '</tr></thead><tbody>' + parts + '</tbody></table>' : '',
+            '<p class="commu-dc-match">' + escapeHtml(text(verdict.matchLabel)) + ': <strong>' + result.matches + ' / ' + done + '</strong></p>',
             verdict.matchNote ? '<p class="commu-dc-match-note">' + escapeHtml(text(verdict.matchNote)) + '</p>' : '',
             '<button type="button" class="commu-dc-reset">' + escapeHtml(text(verdict.resetLabel) || L.redo) + '</button>'
         ].join('');

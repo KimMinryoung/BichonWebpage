@@ -3,7 +3,7 @@ const { setPublicDataCache, setShortPublicCache, commuLingoBreadcrumb, commuLing
 const { asyncHandler } = require('../utils/async-handler');
 const { loadCommuLingoCatalog } = require('../data/commulingo/shards');
 const { localize } = require('../data/commulingo/localize');
-const { bookPageData } = require('../data/commulingo/book-page');
+const { bookPageData, decisionRefs } = require('../data/commulingo/book-page');
 const { catalogBody, lessonPayload } = require('../data/commulingo/book-response');
 
 // Books, the lesson catalog, and lesson payloads. The page data and the
@@ -42,11 +42,17 @@ router.get('/book/:collectionId', async (req, res) => {
             };
         }
 
+        let refs = { docs: {}, events: {} };
+        if (collection.format === 'decision-history') {
+            try { refs = await decisionRefs(collection); } catch (err) { console.error('commulingo decision refs:', err); }
+        }
+
         const bookTitle = localize(collection.title, res.locals.lang);
         res.render('public/commulingo-book', {
             lessons: { version: catalog.version, collections: [pageData.linked] },
             chapterDictionary: pageData.chapterDictionary,
             decisionLinks: pageData.decisionLinks,
+            decisionRefs: refs,
             bookFormat: collection.format || 'quiz',
             bookTitle,
             bookDescription: localize(collection.description, res.locals.lang),
