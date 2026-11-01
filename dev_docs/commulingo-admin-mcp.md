@@ -82,7 +82,7 @@ claude mcp add --transport http --scope local commulingo http://127.0.0.1:3100/m
     --header "Authorization: Bearer $(cat ~/.config/commulingo-mcp/operator.token)"
 ```
 
-토큰을 바꾸면 `.env` 항목을 교체하고 재시작한 뒤 클라이언트 설정을 다시 등록한다. leninbot은 `leninbot` 토큰(`read,edit`)으로 연결한다: `COMMULINGO_MCP_TOKEN`(credstore 또는 env)이 우선이고, 없으면 `~/.config/commulingo-mcp/leninbot.token`을 읽는다. 주소는 `COMMULINGO_MCP_URL`(기본 `http://127.0.0.1:3100/mcp`).
+토큰을 바꾸면 `.env` 항목을 교체하고 재시작한 뒤 클라이언트 설정을 다시 등록한다. 학습 강좌(`course/<id>` 데이터 문서)는 `edit` scope가 있어도 `COMMULINGO_MCP_COURSE_WRITERS`(기본 `operator`)에 든 클라이언트만 `data_document_put`·`data_document_restore`로 쓸 수 있다(2026-11-01 사용자 결정: leninbot에는 강좌 권한을 주지 않는다). leninbot은 `leninbot` 토큰(`read,edit`)으로 연결한다: `COMMULINGO_MCP_TOKEN`(credstore 또는 env)이 우선이고, 없으면 `~/.config/commulingo-mcp/leninbot.token`을 읽는다. 주소는 `COMMULINGO_MCP_URL`(기본 `http://127.0.0.1:3100/mcp`).
 
 ## 검증
 

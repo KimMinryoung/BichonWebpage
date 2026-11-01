@@ -76,6 +76,9 @@ const { readSpecJson } = require('../mcp/spec');
     await assert.rejects(tool('registry_edit').handler({}, ctx), /ops or specPath/);
     await assert.rejects(tool('link_reviews_apply').handler({}, ctx), /manifest or specPath/);
     await assert.rejects(tool('data_document_put').handler({ key: 'k' }, ctx), /content or patches/);
+    // Courses are operator-only: the leninbot client has edit scope but no course work.
+    await assert.rejects(tool('data_document_put').handler({ key: 'course/capital-vol1', patches: [] }, { client: 'leninbot' }), /may not write learning courses/);
+    await assert.rejects(tool('data_document_restore').handler({ key: 'course/capital-vol1', revision: 1 }, { client: 'leninbot' }), /may not write learning courses/);
     await assert.rejects(tool('doc_put').handler({ id: 'd', entry: {}, entryPatch: {} }, ctx), /entry or entryPatch/);
     await assert.rejects(tool('doc_put').handler({ id: 'd', original: { lang: 'de', body: '<p>x</p>' }, removeOriginal: true }, ctx), /original or removeOriginal/);
     await assert.rejects(tool('doc_put').handler({ id: 'd', original: { lang: 'de', body: '<p>x</p>', bodyPath: 'content/x.html' } }, ctx), /original.body or original.bodyPath/);

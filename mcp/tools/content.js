@@ -15,6 +15,15 @@ function badRequest(message, status = 400) {
     return Object.assign(new Error(message), { status });
 }
 
+// Learning courses (course/<id> data documents) are written only by the
+// clients named in COMMULINGO_MCP_COURSE_WRITERS (default: operator). The
+// leninbot worker has edit scope for its own data but no course work.
+function assertCourseWriter(key, client) {
+    if (!String(key || '').startsWith('course/')) return;
+    const writers = String(process.env.COMMULINGO_MCP_COURSE_WRITERS || 'operator').split(',').map(name => name.trim()).filter(Boolean);
+    if (!writers.includes(client)) throw badRequest(`client ${client} may not write learning courses (${key})`, 403);
+}
+
 function actorOf(given, client) {
     const actor = given || `mcp:${client}`;
     if (!ACTOR.test(actor)) throw badRequest('changedBy must be 1–120 of A-Z a-z 0-9 _ . : @ / -');
@@ -288,7 +297,8 @@ const tools = [
             + '(a JSON object = content, a JSON array = patches). expectedRevision from data_document_get is required for an existing '
             + 'document. An activity-catalog change also bumps its version field. A learning course is course/<id>: the write must pass '
             + 'the course rules (no new rule failure, Korean excerpts verbatim in the site documents, a replaced question gets a new id) '
-            + 'and the result reports what changed; publicChapterLimit sets how many chapters are public. dryRun defaults to true.',
+            + 'and the result reports what changed; publicChapterLimit sets how many chapters are public. Courses are written only by the operator '
+            + 'client (COMMULINGO_MCP_COURSE_WRITERS). dryRun defaults to true.',
         inputSchema: object({
             key: str('Document key'),
             content: obj('Whole document'),
@@ -302,6 +312,7 @@ const tools = [
         audit: ({ key, dryRun, changedBy: actor }, client) => ({ command: dryRun === false ? 'apply' : 'dry-run', targetType: 'data_document', targetId: key, actor: actor || `mcp:${client}` }),
         async handler({ key, content, patches, specPath, expectedRevision, dryRun = true, note, changedBy: given }, { client }) {
             if ([content, patches, specPath].filter(value => value !== undefined).length !== 1) throw badRequest('pass content or patches (or specPath), exactly one');
+            assertCourseWriter(key, client);
             if (specPath) {
                 const spec = readSpecJson(specPath);
                 if (Array.isArray(spec)) patches = spec;
@@ -328,6 +339,7 @@ const tools = [
         inputSchema: object({ key: str('Document key'), revision: int('Revision to restore', 1, 100000000), note: noteArg, changedBy }, ['key', 'revision']),
         audit: ({ key, revision, changedBy: actor }, client) => ({ command: `restore ${revision}`, targetType: 'data_document', targetId: key, actor: actor || `mcp:${client}` }),
         async handler({ key, revision, note, changedBy: given }, { client }) {
+            assertCourseWriter(key, client);
             const { restoreDataDocumentRevision } = require('../../data/commulingo/data-documents');
             return restoreDataDocumentRevision(key, revision, { actor: actorOf(given, client), note });
         },
