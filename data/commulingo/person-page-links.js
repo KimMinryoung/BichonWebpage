@@ -43,8 +43,9 @@ function surnameForm(match, person) {
 }
 
 // A place or institution named after someone: 메드베데프 숲, 바우만 구역,
-// 주콥스키 공군사관학교, Medvedev Forest.
-const PLACE_AFTER = /^(?:\s*(?:숲|광장|거리|대로|구역|공장|광산|수도원|화장터|사관학교|공군사관학교|아카데미|연구소|대학|학교|앙상블|설계국|재단|훈장|크라이|변경지방|지방|주(?=[와과의에로는은이가을를,.·)]|\s|$))|\s+(?:Forest|Square|Street|District|Factory|Works|Mine|Monastery|Academy|Institute|University|School|Ensemble|Bureau|Foundation|Order|Prize|Krai|Oblast|Province|Region)\b)/u;
+// 주콥스키 공군사관학교, Medvedev Forest. The list lives with the name context,
+// which refuses these on every surface (commulingo-name-context.js).
+const PLACE_AFTER = nameContext.NAMED_AFTER;
 const FAMILY_AFTER = /^(?:\s*(?:형제|자매|남매|부부|부자|부녀|모자|가문|일가|가족|집안)|\s+(?:brothers|sisters|family|couple)\b)/iu;
 
 // Capitalised words that stand before a surname without being a given name:

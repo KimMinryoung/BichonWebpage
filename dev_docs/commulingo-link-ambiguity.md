@@ -305,6 +305,41 @@ grass 사용자 감사 타이머를 활성화했고 최초 실행은 성공했�
 기존 전체 표현 차단 없이도 새 이름 판정 자체가 동작하는 독립 합성 사례를 둔다.
 출시 전 실제 렌더링 변경 표본을 검토하고, 코드 배포 후 대표 영향 경로 한 곳을 확인한다.
 
+## 2026-11-01 이름 일부·이름을 딴 명칭 오연결 방지
+
+### 발견
+
+운영 사이트 표본(한영 각 559쪽: 인물 300·사건 160·용어 100, 인물 링크 약 6,400개씩)을 수집해 링크 앞뒤 문맥을 검사했다.
+
+- **더 긴 이름의 앞부분**(한국어 6건): 미하일 롬|니체아누 → 미하일 롬, 판푸|성, 황푸|핑, 천이|쯔, 피델|리스 → 카스트로, 막심 고리키|호. 조사 뒤 경계 검사가 `shorts`(성으로 색인된 표현)에만 걸리고 전체 이름·한 단어 이름·별칭·`identity` 대표 성은 앞 글자만 검사했다. 대표 성(스탈린·미코얀·케네디 등)이 스탈린상·주코프스키 같은 복합어 차단 목록을 계속 필요로 한 이유다.
+- **이름을 딴 장소·기관**(영어 약 29건, 한국어 사건 12건): Frunze Academy, Lenin Prize/Shipyard/Square, Nevsky Prospekt, Vasilevsky Island, Hoover Dam, Henderson Field, Johns Hopkins University, 모스크바 돈스코이 수도원, 키로프 공장, 레닌 훈장, 프레오브라젠스키 연대. `PLACE_AFTER`가 공유 성 해소와 문헌 규칙에만 쓰였다.
+- **성 뒤의 다른 이름**(영어): Clay Blair → 루셔스 클레이, Mikk Titma → 위리 미크, Fraser Harbutt → 낸시 프레이저, Johnson South Reef → 린든 존슨, Caroline Kennedy-Pipe → JFK.
+- **이니셜**: A. S. Popov → Blagoy Simeonov Popov. 바로 앞 이니셜 S만 부칭과 비교했다.
+- **사전에 없는 이름 + 성**(이번 범위 밖): 루이제 카우츠키, 에반·에번 모즐리, 파트리크 베른하르트, 엘리자르 폰 쿠퍼, Gregory Grossman, Joan Malleson. 앞 단어가 사전 인물의 이름일 때만 호환성을 검사하기 때문이다(계획 2).
+
+### 적용
+
+- `public/js/commulingo-name-context.js`의 `standsAlone`을 모든 인물 패스가 거친다(`linkify.js` 치환기, 결정사 책 클라이언트는 `resolve` 안에서). 표현 종류와 화면에 관계없다.
+  - 한국어 꼬리 문법: 기존 조사 목록 + 뿐·만큼·밖에·마다·들 등 + 서술격 조사 활용(이/였/이었 + 어미). 「니·고·자·야」처럼 다른 이름의 끝이 될 수 있는 한 글자 어미는 이/였 뒤에서만 허용한다(마르티니 ≠ 마르티 + 니). 숫자만 붙은 꼬리(각주)는 허용한다.
+  - 한 단어 이름 뒤 장소·기관·상 낱말(`NAMED_AFTER`, 기존 `PLACE_AFTER`를 옮겨 넓힘). 한국어 한 글자 낱말(주·섬·항·상·연대·사단)은 뒤에 조사·공백·문장부호가 올 때만 본다.
+  - 영어 한 단어 이름 뒤 대문자 단어: 그 사람 이름(장음 부호 무시)·직함·국적·월·요일·문장 첫 낱말·그 사람의 행위/정부(Plan, Pact, Offensive, Group, Commission, Government 등)가 아니면 거부한다. post-/pre-/anti-/pro- 뒤(post-Stalin Moscow)는 제외. 하이픈 뒤 대문자 성이 사전에 없으면 거부한다(Molotov-Ribbentrop은 유지).
+- 대표 성·한 단어 별칭(`contextData.guarded`, `people-linkify.js`)도 이름 문맥을 읽는다. 앞의 등록된 이름이 맞지 않거나(에드워드 케네디) 뒤에 이름이 오면(피델 벨라스케스) 거부한다. 다른 사람에게 재할당하지는 않는다.
+- 이니셜은 성 앞의 연속 이니셜 전부가 그 사람의 이니셜에 있어야 한다(A. S. ≠ B. S.).
+- 카드 링크의 확장 문맥(소개+순간+약력)에서 대상 문장을 못 찾으면 그 문장만으로 판정한다(이전에는 위치가 0으로 어긋났다).
+- 문헌 감사(`inspectDocPersonLinks`)는 거부된 언급의 사유를 `place-or-institution` 또는 `not-a-standalone-name`으로 기록한다.
+- 회귀 테스트: `scripts/smoke-commulingo-name-boundaries.js`(차단 목록 없이 위 실제 사례와 정상 사례: 였고·이었던·뿐이었다, 스탈린식, Brusilov Offensive, Suzuki Kantarō, Ulbricht Group, Frunze-Lenin 하이픈).
+- 표본 재판정: 한국어는 오연결 6건만 거부되고 서술격 조사 뒤 정상 링크 16건은 유지된다. 영어는 48건을 거부하며 손실은 제목 속 Title Case 두 건(Lenin Bedridden, The Country Stalin Left Behind) 정도다.
+- 합성 본문(모든 낱말이 이름) 기준 연결 시간 15~25% 증가. 실제 본문은 이름 밀도가 낮다.
+
+### 감사
+
+`scripts/audit-commulingo-rendered-links.js --suspects report.json`이 수집한 인물 링크를 같은 규칙으로 다시 읽어 `part-of-longer-word`, `named-after`, `followed-by-name`(배포 후 0이어야 함, 남으면 규칙을 거치지 않는 경로)과 검토 목록 `preceded-by-name`(영어, 사전에 없는 이름 + 성 후보 — 맞는 표기 변형도 섞인다)을 낸다. 일일 감사가 `temp_dev/commulingo-rendered-links/suspects.txt`로 남긴다. 링크의 `title`(표시 이름)도 수집한다.
+
+### 남은 일
+
+- 계획 2(사전에 없는 이름 + 성): 흔한 이름의 표기 변형 묶음(칼=카를=Karl, 다니엘=대니얼) 사전이 필요하다. 묶음 없이 이름 목록만 넣으면 칼 라데크·다니엘 코왈스키 같은 정상 변형이 끊긴다. 보관 위치(코드 JSON / DB 레지스트리)는 미정.
+- 데이터 후보: 제목의 「Seeds」가 윌리엄 시즈로 연결된다(영어 `alias` 차단 후보). 「도시 루베」(에밀 루베) 같은 앞쪽 장소 낱말은 다루지 않았다.
+
 ## 향후 계획 4: 페이지 공용 등장인물 목록으로 두 언어 판정 묶기 (미적용, 2026-10-11 사용자 지시로 정리)
 
 ### 현재 상태

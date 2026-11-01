@@ -302,8 +302,11 @@ function createLinker(indexes, options = {}) {
     if (pagePass) passes.splice(passes.findIndex(pass => pass.kind === 'term') + 1, 0, pagePass);
 
     function replacerFor({ kind, spec, index }, context, extraContext) {
-        const contextText = extraContext || context.text;
+        // A card's wider context (epithet + moment + bio) only helps when the
+        // text being linked is part of it; otherwise its offsets would point
+        // the name rules at the wrong characters.
         const localOffset = extraContext ? extraContext.indexOf(context.text) : 0;
+        const contextText = extraContext && localOffset >= 0 ? extraContext : context.text;
         if (kind === 'person' && index.context && contextText !== lastPersonText) {
             lastPersonText = contextText;
             lastPersonContext = nameContext.analyze(contextText, index.context);
@@ -327,6 +330,22 @@ function createLinker(indexes, options = {}) {
                 if (WORD_CHAR.test(prev)) return match;
             }
             if (insideTitle(context.text, context.offset + offset, match.length)) return match;
+            // Whatever kind of expression matched — a full name, a one-word
+            // name, a representative surname, a document's own mapping — it
+            // must stand alone: not the front of a longer word (판푸성, 미하일
+            // 롬니체아누, 고리키호) and not a place or institution named after
+            // the person (돈스코이 수도원, Frunze Academy, Clay Blair).
+            // A reference document's guard still sees the refused mention, so
+            // its audit can say why (doc-person-links.js).
+            let alone = true;
+            if (kind === 'person') {
+                const data = index.context || index.contextData || { en: index.en };
+                const at = context.offset + offset;
+                const owner = index.byAlias[match];
+                const ids = [owner && owner.id].concat(data.shorts?.[match] || [], data.namesakes?.[match] || []).filter(Boolean);
+                alone = nameContext.standsAlone(context.text, at, at + match.length, data, ids);
+                if (!alone && !options.personGuard) return match;
+            }
             let entry = index.byAlias[match];
             let expression = entry && index.expressions?.[entry.id + ':' + match];
             if (personContext) {
@@ -345,8 +364,9 @@ function createLinker(indexes, options = {}) {
             }
             if (kind === 'person' && options.personGuard && !options.personGuard({
                 match, entry, expression, start: context.offset + offset, text: context.text, index,
-                alreadyLinked: Boolean(entry && seen.has('person:' + entry.id)),
+                alreadyLinked: Boolean(entry && seen.has('person:' + entry.id)), notAlone: !alone,
             })) return match;
+            if (!alone) return match;
             if (!entry || expression?.policy === 'search') return match;
             if (blockStrings.has(match)) return match;
             if (exclude[kind] && exclude[kind] === entry.id) return match;
