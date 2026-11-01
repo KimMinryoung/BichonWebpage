@@ -42,7 +42,7 @@
                     <% if (String(person.cyrillic || '').replace(/\s/g, '') !== String(person.displayName || person.name || '').replace(/\s/g, '')) { %><span><%= person.cyrillic %></span><% } %>
                 </div>
             </div>
-            <%- include('../partials/commulingo-person-meta', { person: person, showOtherPositions: true }) %>
+            <%- include('../partials/commulingo-person-meta', { person: person, showOtherPositions: true, showLifeDates: true }) %>
             <%# The three header fields carry dictionary links like the card does,
                 and in reading order, so the first mention that links is the first
                 one reached. Each falls back to the escaped plain text. %>

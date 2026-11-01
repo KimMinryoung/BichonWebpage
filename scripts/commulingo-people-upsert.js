@@ -20,6 +20,9 @@
 //   "cyrillic": "Вольдемар Ульмер",                      // native name WITHOUT the patronymic
 //   "patronymic": {"ko": "아우구스토비치", "en": "Avgustovich"}, "cyrillicPatronymic": "Августович",
 //   "years": "1896–1945",
+//   "lifeDates": {"birth": [1896, 3], "death": [1945, 4, 21]},  // optional: only when the source gives the month;
+//                                                        // Gregorian, year = the years year; shown on the person page only
+//                                                        // (evidence field "lifeDates"; null clears, a side left out is kept)
 //   "citizenship": {"code": "soviet"}, "nationalOrigin": {"code": "estonia", "label": {"ko": "에스토니아 (스웨덴계)", "en": "Estonia (Swedish descent)"}},
 //   "epithet": {"ko": "...", "en": "..."}, "bio": {"ko": "...", "en": "..."},
 //   "fate": {"kind": "natural", "label": {"ko": "수용소에서 사망", "en": "Died in a labour camp"}},

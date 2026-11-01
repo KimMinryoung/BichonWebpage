@@ -67,6 +67,8 @@ async function fetchRows() {
                     origin_code, origin_label_ko, origin_label_en, updated_at,
                     to_jsonb(commulingo_people)->'link_expressions' AS link_expressions,
                     COALESCE(to_jsonb(commulingo_people)->'no_auto_link', '[]'::jsonb) AS no_auto_link,
+                    to_jsonb(commulingo_people)->'birth_date' AS birth_date,
+                    to_jsonb(commulingo_people)->'death_date' AS death_date,
                     COALESCE(to_jsonb(commulingo_people)->'activities', '[]'::jsonb) AS activities
              FROM commulingo_people
              ORDER BY sort_order, id`
@@ -299,6 +301,7 @@ function rowsToPeopleData(rows) {
             familyName: t(row.family_name_ko, row.family_name_en),
             qualifier: t(row.name_qualifier_ko, row.name_qualifier_en),
             years: row.years_label || '',
+            lifeDates: { birth: row.birth_date || null, death: row.death_date || null },
             epithet: t(row.epithet_ko, row.epithet_en),
             moment: t(row.moment_ko, row.moment_en),
             bio: t(row.bio_ko, row.bio_en),

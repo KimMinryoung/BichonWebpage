@@ -14,7 +14,8 @@ const { periodColumns, periodFromRow, formatBoth, PERIOD_COLUMNS, periodValues }
 const { t, localized, contentLocalized, badRequest, parseLifeYears, requireId, normalizeLimit, normalizeOffset } = require('./people-admin-fields');
 const { withTransaction, writeRevision } = require('./admin-tx');
 const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
-const { personLifeProblems } = require('./person-life-years');
+const { personLifeProblems, parseLifeYears: parsePersonLifeYearsFull } = require('./person-life-years');
+const { resolveLifeDates } = require('./person-life-dates');
 const { assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, assertFamilyFirstParts, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate, normalizeNameQualifier } = require('./people-admin-validation');
 
 // Office id -> country, for the activity officeId check.
@@ -61,6 +62,7 @@ function rowToPerson(row) {
         years: row.years_label || '',
         birthYear: row.birth_year,
         deathYear: row.death_year,
+        lifeDates: { birth: row.birth_date || null, death: row.death_date || null },
         name: personNames(row),
         givenName: t(row.given_name_ko, row.given_name_en),
         familyName: t(row.family_name_ko, row.family_name_en),
@@ -89,6 +91,8 @@ async function listPeopleAdmin(options = {}) {
                 citizenship_code, citizenship_label_ko, citizenship_label_en,
                 origin_code, origin_label_ko, origin_label_en,
                 to_jsonb(commulingo_people)->'link_expressions' AS link_expressions,
+                to_jsonb(commulingo_people)->'birth_date' AS birth_date,
+                to_jsonb(commulingo_people)->'death_date' AS death_date,
                 COALESCE(to_jsonb(commulingo_people)->'activities', '[]'::jsonb) AS activities
          FROM commulingo_people
          WHERE ($1 = ''
@@ -116,6 +120,8 @@ async function getPersonAdmin(personId, options = {}) {
                 citizenship_code, citizenship_label_ko, citizenship_label_en,
                 origin_code, origin_label_ko, origin_label_en,
                 to_jsonb(commulingo_people)->'link_expressions' AS link_expressions,
+                to_jsonb(commulingo_people)->'birth_date' AS birth_date,
+                to_jsonb(commulingo_people)->'death_date' AS death_date,
                 COALESCE(to_jsonb(commulingo_people)->'activities', '[]'::jsonb) AS activities
          FROM commulingo_people
          WHERE id = $1`,
@@ -392,6 +398,10 @@ async function createPersonAdmin(rawPayload, options = {}) {
         if (payload.linkExpressions !== undefined) {
             await client.query('UPDATE commulingo_people SET link_expressions = $1::jsonb WHERE id = $2', [JSON.stringify(payload.linkExpressions), id]);
         }
+        if (payload.lifeDates) {
+            const dates = resolveLifeDates(payload.lifeDates, null, parsePersonLifeYearsFull(payload.years || ''));
+            await client.query('UPDATE commulingo_people SET birth_date = $2, death_date = $3 WHERE id = $1', [id, dates.birth, dates.death]);
+        }
         await replacePatronymic(client, id, patronymicState);
         await replaceAliases(client, id, payload.aliases || { ko: [], en: [] });
         await replaceScenes(client, id, payload.scenes || []);
@@ -478,6 +488,14 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             set('years_label', payload.years || '');
             set('birth_year', years.birthYear);
             set('death_year', years.deathYear);
+        }
+        if (payload.years !== undefined || payload.lifeDates !== undefined) {
+            // A stored date must keep matching the years: changing a year
+            // without lifeDates is refused when it would orphan the date.
+            const years = parsePersonLifeYearsFull(payload.years !== undefined ? payload.years || '' : before.years);
+            const dates = resolveLifeDates(payload.lifeDates, before.lifeDates, years);
+            set('birth_date', dates.birth);
+            set('death_date', dates.death);
         }
         // Name parts: any of name / givenName / familyName recomputes all six
         // name columns so parts and the derived full name never diverge.

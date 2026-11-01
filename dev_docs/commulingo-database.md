@@ -17,6 +17,8 @@ Migration 175는 역방향으로 겹치는 용어 관계만 정리한다. 두 �
 
 용어 category는 분류 FK로 검증하며 ID 변경은 CASCADE, 삭제는 RESTRICT다. 기존 category 인덱스를 재사용하고 term_people.person_id, term_events.event_id, term_relations.related_id에 역방향 인덱스를 추가한다. 인물 등록은 근거 있는 활동(activities)을 필수로 요구한다(2026-09-30, 구 role 필수에서 변경). 새로 넣거나 바꾼 활동은 시작 연도(최소한 끝 연도)가 있어야 한다(2026-10-23, `assertNewActivitiesDated`). 출처에 연도가 전혀 없을 때만 `yearsUnknown: true`로 예외를 명시한다. 저장된 연도 없는 활동은 그대로 다시 보내면 통과하므로, 다른 칸을 고치는 편집이 옛 데이터 때문에 실패하지 않는다. 당시 연도 없는 활동은 1,472건(인물 1,315명)이었다. 등록/upsert 경로는 그대로 유지한다.
 
+인물 생몰 날짜(migration 373, 2026-11-01): `birth_date`·`death_date`(INTEGER[], `[연, 월]` 또는 `[연, 월, 일]`, 그레고리력)는 출처가 월까지 줄 때만 둔다. 연도는 `years_label`의 정확한 연도(`birth_year`·`death_year`)와 같아야 하고(DB 제약 `commulingo_person_life_dates`, 날짜 범위는 `data/commulingo/person-life-dates.js`), 연도를 바꾸면서 남은 날짜와 어긋나면 저장을 거부한다. 편집 필드는 `lifeDates {birth, death}`(근거 field `lifeDates`, null이면 지움). 카드·목록은 연도만, 인물 상세 페이지 머리만 날짜를 보인다(`lifeDatesLabel`, 날짜 없는 쪽은 연도). 기존 카드는 일괄 보강하지 않는다.
+
 ## 조회와 저장
 
 각 사전의 모든 SELECT는 한 연결에서 `REPEATABLE READ READ ONLY`로 실행한다. 첫 SELECT 이후 커밋된 수정은 다음 스냅샷에서 보인다. 사전 사이의 일관성은 기존처럼 최종적 일관성이다. [PostgreSQL 격리 수준](https://www.postgresql.org/docs/17/transaction-iso.html)을 참고한다.

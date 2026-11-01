@@ -4,6 +4,7 @@ const { hasFlag, flagLabel } = require('./flag-icons');
 const { localize } = require('./localize');
 const { composeFromParts, personLabel } = require('./person-name');
 const { parseLifeYears } = require('./person-life-years');
+const { lifeDatesLabel } = require('./person-life-dates');
 
 const SCHEMA_VERSION = 'commulingo.people.v1';
 
@@ -264,6 +265,8 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeRows) 
         years: years.label,
         yearsData: years,
         yearsLabel: years.label,
+        // The person page only: exact dates where the source gives them.
+        lifeDatesLabel: lifeDatesLabel(years.label, raw.lifeDates, lang),
         name: fullName(lang),
         displayName: fullName(lang),
         qualifier,

@@ -17,7 +17,7 @@ var badge = person.badgeActivity || person.primaryActivity;
             <% if (person.citizenship) { %><%- flagImg(person.citizenship.code, person.citizenship.label, strings.commuLingoViews.personCard.citizenship, personFlagHref('citizenship', person.citizenship.code)) %><% } %>
             <% if (person.origin) { %><%- flagImg(person.origin.code, person.origin.label, strings.commuLingoViews.personCard.nationalBackground, personFlagHref('nationalOrigin', person.origin.code)) %><% } %>
             <% } %>
-            <%= person.years %>
+            <%= (typeof showLifeDates !== 'undefined' && showLifeDates && person.lifeDatesLabel) || person.years %>
         </span>
         <% if (person.fateLabel) { %>
         <span class="commu-fate is-<%= person.fateKind %>"><%= fateIcons[person.fateKind] || '' %> <%= person.fateLabel %></span>
