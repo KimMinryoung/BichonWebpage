@@ -293,6 +293,11 @@
     margin-left: 5px;
 }
 
+.commu-reading-external {
+    color: var(--text-muted);
+    margin-left: 4px;
+}
+
 .commu-chapter-actions {
     display: grid;
     gap: 8px;

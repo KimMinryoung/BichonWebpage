@@ -676,17 +676,22 @@
         return (chapter.readings || []).map(function(reading) {
             var year = reading.year ? String(reading.year) : '';
             if (year && reading.endYear) year += '–' + reading.endYear;
-            var href = reading.doc ? '/commulingo/docs/' + encodeURIComponent(reading.doc) + (reading.anchor ? '#' + encodeURIComponent(reading.anchor) : '') : '';
-            return { author: text(reading.author), title: text(reading.title), year: year, href: href };
+            var href = reading.doc ? '/commulingo/docs/' + encodeURIComponent(reading.doc) + (reading.anchor ? '#' + encodeURIComponent(reading.anchor) : '') : (reading.url || '');
+            return { author: text(reading.author), title: text(reading.title), year: year, href: href, external: !reading.doc && !!reading.url };
         }).filter(function(reading) { return reading.title; });
     }
 
-    // A reading whose full text is in the site library links to it (the
-    // course data names the document; nothing is matched here).
+    // A reading whose full text is in the site library links to it, and one
+    // the library does not host links to its original elsewhere (url) in a new
+    // tab (the course data names both; nothing is matched here).
     function readingChip(reading) {
         var inner = (reading.author ? '<span class="commu-reading-author">' + escapeHtml(reading.author) + '</span>' : '')
             + '<span class="commu-reading-title">' + escapeHtml(reading.title) + '</span>'
             + (reading.year ? '<span class="commu-reading-year">' + escapeHtml(reading.year) + '</span>' : '');
+        if (reading.external) {
+            return '<li><a href="' + escapeHtml(reading.href) + '" target="_blank" rel="noopener noreferrer">' + inner
+                + '<span class="commu-reading-external" aria-hidden="true">↗</span></a></li>';
+        }
         return reading.href
             ? '<li><a href="' + escapeHtml(reading.href) + '">' + inner + '</a></li>'
             : '<li>' + inner + '</li>';

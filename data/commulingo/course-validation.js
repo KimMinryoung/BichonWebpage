@@ -106,7 +106,13 @@ function checkChapterCard(key, chapter) {
         if (reading.anchor !== undefined && !(reading.doc && typeof reading.anchor === 'string' && ID.test(reading.anchor))) {
             throw badRequest(`${at}.anchor needs a doc and must be an element id`);
         }
-        const extra = Object.keys(reading).filter(k => !['author', 'title', 'year', 'endYear', 'doc', 'anchor'].includes(k));
+        // url: the original elsewhere, for works the library does not host
+        // (copyright still running); a reading links to a site doc or a url, not both.
+        if (reading.url !== undefined && !(typeof reading.url === 'string' && /^https?:\/\/[^\s"'<>]+$/.test(reading.url))) {
+            throw badRequest(`${at}.url must be an http(s) address`);
+        }
+        if (reading.url !== undefined && reading.doc !== undefined) throw badRequest(`${at} has both doc and url`);
+        const extra = Object.keys(reading).filter(k => !['author', 'title', 'year', 'endYear', 'doc', 'anchor', 'url'].includes(k));
         if (extra.length) throw badRequest(`${at} has unknown fields ${extra.join(', ')}`);
     });
 }
