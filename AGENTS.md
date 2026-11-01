@@ -38,6 +38,6 @@ Keep this file limited to enduring constraints and routing links; procedures and
 
 This repository works without the production server or the leninbot checkout. In a Claude Code cloud session the SessionStart hook in `.claude/settings.json` runs `scripts/cloud-setup` (only when `CLAUDE_CODE_REMOTE=true`), which installs `node_modules`; elsewhere run it by hand.
 
-- Available: editing, `npm test` (no DB or container; the gitignored `data/commulingo/generated/` shards are built on demand), `npm run lint`.
+- Available: editing, `npm test` (no DB or container; courses come from the frozen seed `scripts/fixtures/commulingo-courses-seed.json`), `npm run lint`.
 - Not available: running the server against data (Postgres, Redis), the admin MCP, R2, `scripts/deploy`, `scripts/dev-preview`, and the scripts that need leninbot (`LENINBOT_DIR`, default `/home/grass/leninbot`): `scripts/{review,translate}-course-fulltext.py`, `scripts/bulk-translate/extract_glossary.py`. Verify those on the server.
 - `data/commulingo/{person-editorial-contract,nationality-policy,activity-schema}.json` are this repository's contracts, and leninbot keeps copies in `config/commulingo_contracts/` so it can test alone. After changing one, run `scripts/sync_commulingo_contracts.py` in leninbot and commit there too; its unit test fails until the copies match. leninbot also reads the activity catalog, whose source is the database document `activity-catalog`; the server writes it to `data/commulingo/activity-catalog.json` (gitignored).

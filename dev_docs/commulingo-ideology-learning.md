@@ -4,8 +4,8 @@
 
 | 학습 경로 | 원본 | 구성 |
 | --- | --- | --- |
-| `/commulingo/book/french-revolution-intro` | `data/commulingo/courses/french-revolution-intro.js` | 10편·30문항: 1789년 구체제 붕괴, 1791년 헌법, 시민권·식민지 해방, 공화정 성립, 연합국 전쟁·방데전쟁·국민총동원, 생존권, 혁명재판, 로베스피에르의 숙청·몰락, 평등파, 테르미도르·총재정부·브뤼메르 |
-| `/commulingo/book/socialist-divergences-intro` | `data/commulingo/courses/socialist-divergences-intro.js` | 4편·12문항: 오언/마르크스, 마르크스/바쿠닌, 베른슈타인/룩셈부르크, 레닌/룩셈부르크 |
+| `/commulingo/book/french-revolution-intro` | `course/french-revolution-intro`(데이터 문서) | 10편·30문항: 1789년 구체제 붕괴, 1791년 헌법, 시민권·식민지 해방, 공화정 성립, 연합국 전쟁·방데전쟁·국민총동원, 생존권, 혁명재판, 로베스피에르의 숙청·몰락, 평등파, 테르미도르·총재정부·브뤼메르 |
+| `/commulingo/book/socialist-divergences-intro` | `course/socialist-divergences-intro`(데이터 문서) | 4편·12문항: 오언/마르크스, 마르크스/바쿠닌, 베른슈타인/룩셈부르크, 레닌/룩셈부르크 |
 
 한국어와 영어로 제공한다. 프랑스 혁명은 홈의 ‘역사’ 카테고리, 사회주의의 분기와 마르크스주의와 성 이론은 ‘사상 논쟁’ 카테고리(`category: 'theory'`, 2026-10-22)에 있다. 주제 분류(`category`)는 학습 형식(`format: 'short-learning'`)과 별개이며 강좌·레슨 ID를 변경하지 않는다. 각 편은 기존 플레이어의 **개념 설명 → 3문항 → 정오·선택지별 해설 → 오답 재도전 → 완료 기록** 흐름을 사용한다. 각 해설은 실제 근거 자료로 연결된다. 첫 문항을 별도 진단용 비채점 문항으로 처리하지 않으며, 세 문항 모두 기존 채점 방식으로 기록된다. 아직 모르겠어요 전용 버튼은 이번 범위에 없다.
 

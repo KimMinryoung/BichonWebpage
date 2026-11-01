@@ -45,9 +45,9 @@ This document records the concept-summary cleanup for CommuLingo Capital chapter
 
 ## Verification checklist
 
-Use this if future edits touch `data/commulingo/lessons.json`:
+Use this if future edits touch the Capital course documents (`course/capital-vol1..3`, until 2026-11-01 `data/commulingo/lessons.json`):
 
-1. Run `node scripts/validate-commulingo.js` (also part of `npm test`). It fails on any of the patterns below; `분석 대상`, `구분할 점`, `다음 연결` and their English forms are banned as card titles only, since they are ordinary Korean in prose.
+1. The course write gate runs these rules on every `data_document_put`; `node scripts/validate-commulingo.js` checks the live courses. It fails on any of the patterns below; `분석 대상`, `구분할 점`, `다음 연결` and their English forms are banned as card titles only, since they are ordinary Korean in prose.
 2. Patterns covered:
    - `피해야 할 오해`
    - `Misconception to avoid`
@@ -58,4 +58,4 @@ Use this if future edits touch `data/commulingo/lessons.json`:
    - `분석 대상` / `구분할 점` / `다음 연결`
    - `Object of analysis` / `Key distinction` / `Next link`
 3. Spot-check one API route per edited group, e.g. `/commulingo/lesson/capital-v3-ch21-basic`.
-4. Keep content edits scoped to `data/commulingo/lessons.json` unless intentionally updating this note.
+4. Keep content edits scoped to the Capital course documents unless intentionally updating this note.

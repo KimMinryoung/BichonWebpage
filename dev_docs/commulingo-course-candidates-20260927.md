@@ -82,6 +82,8 @@
 
 ## 새 short-learning 강좌 추가 절차 (2026-09-27 두 강좌에서 확인)
 
+> 2026-11-01부터 강좌는 데이터 문서 `course/<id>`다. 1·3·5번은 이렇게 바뀐다: 강좌 객체를 JSON으로 만들어 `data_document_put`으로 넣고(쓰기 검사가 규칙·출처를 본다), 공개는 문서의 `publicChapterLimit`, 개수 등록·샤드 빌드·배포는 없다. 절차는 `commulingo-data-ops` 스킬 「Lessons and courses」.
+
 1. **형식:** `data/commulingo/courses/<id>.js`를 `french-revolution-intro.js`·`socialist-divergences-intro.js`와 같은 모양으로 만든다. `format: "short-learning"`, 역사물은 `category: "history"`, 장마다 레슨 하나(`<chapter-id>-basic`, basic), 3문항, 보기 3개, 정답 0번(화면에서 섞음), points 2, 보기별 `choiceFeedback`, `source: {kind: "reference", href, label}`로 구성한다. `conceptMap` 노드는 `text` 필수이고, 본문에 「N장」·"Chapter N"을 쓰면 안 된다.
 2. **출처:** 허용 호스트는 `scripts/lib/commulingo-checks.js`의 `checkSource`에 있다(`/commulingo/docs/…`, marxists.org 등). 외부 URL은 curl로 200을 확인하고, 원문을 읽고 문항을 쓴다. 사이트에 있는 참고 문헌(`data/commulingo/docs/`)을 `sourceUrl`로 쓰면 그 문헌 페이지에 「학습」 링크가 자동으로 붙는다.
 3. **등록:** `data/commulingo/shards.js`의 `PUBLIC_CHAPTER_LIMITS`, `scripts/validate-commulingo.js`의 `expected`(부가 있으면 `requiredParts`), `scripts/smoke-commulingo-short-learning.js`를 갱신한다. 비공개로 작업하려면 `visibility: "private"`를 쓴다.

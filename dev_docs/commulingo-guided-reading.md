@@ -25,7 +25,7 @@
 
 - 편마다 레슨 하나(`basic`), 발췌 5~8개, 발췌마다 3지선다 한 문항과 선택지별 해설.
 - 레슨을 열면 개념 설명 화면 없이 첫 발췌로 바로 들어간다(`public/js/commulingo.js`의 `isReadingLesson`, `renderPassage`). 화면 순서: 맥락 한 줄(`question.context`) → 원문 상자(`question.source.quote`, 「전문에서 보기」 링크) → 질문 → 선택지 → 해설. 답한 뒤 원문 발췌를 다시 붙이지 않는다.
-- 문항의 `source`는 필수이며 인용이어야 한다(`kind: 'reference'` 불가). 한국어 인용은 사이트 문헌과 글자 그대로 같아야 하고 `scripts/check-course-source-excerpts.js`가 확인한다(`REQUIRE_SOURCE`에 등록). `' … '`로 건너뛸 수 있다. 한국어 줄표 금지 규칙 때문에 줄표가 든 문장은 `…`로 끊는다.
+- 문항의 `source`는 필수이며 인용이어야 한다(`kind: 'reference'` 불가). 한국어 인용은 사이트 문헌과 글자 그대로 같아야 하고 강좌 쓰기 검사(`data/commulingo/course-validation.js`)가 저장할 때마다 확인한다(형식이 `guided-reading`이면 모든 문항에 인용 필수. 2026-11-01 전에는 `scripts/check-course-source-excerpts.js`의 `REQUIRE_SOURCE` 목록에 등록했다). `' … '`로 건너뛸 수 있다. 한국어 줄표 금지 규칙 때문에 줄표가 든 문장은 `…`로 끊는다.
 - 영어 인용은 마르크스의 영어 원문(문헌의 원문 본문) 그대로다. 엥겔스 1891년 서문은 독일어 원문이고 MIA 영역본이 경과·조치 부분을 빼고 실었으므로, 그 영어 인용은 문헌의 독일어 원문에서 이 강좌가 직접 옮긴 것이다. 영어 출처 표시에 「(our translation from the German)」을 붙여, 링크가 독일어 원문으로 가는 이유를 밝힌다(2026-10-24 사용자 결정).
 - 오답은 허수아비 대신 실제 역사적 입장이나 그럴듯한 오독(바쿠닌파의 권력 장악 거부, 라살파 국가 보조 협동조합, 1848년 아프르 대주교 사건, 엥겔스의 프랑스 은행 비판처럼 다른 대목의 사실)으로 짠다.
 - 검증 규칙(`scripts/lib/commulingo-checks.js`, `ctx.reading`): 3지선다, 1레슨 `basic`, 문항 5~8개, 인용 필수, 개념 지도·설명 불요구. `audit-commulingo-quality.js`의 선택지 피드백 개수도 3.
@@ -57,6 +57,8 @@
 
 - 2주 뒤 학습 이벤트로 이 강좌와 기존 강좌의 시작 후 첫 답 전 이탈, 완료율을 비교한다. 외부 시작이 적으면 판정을 보류한다.
 - 결과가 좋으면 기존 마르크스·레닌 강좌를 같은 형식으로 옮길지, 기존 퀴즈의 개념 화면을 접는 것으로 그칠지 정한다.
+
+> 아래 강좌별 「등록:」 줄의 `PUBLIC_CHAPTER_LIMITS`·`validate-commulingo.js` 개수·`REQUIRE_SOURCE`·재시작은 2026-11-01 이전 절차다. 지금은 강좌 문서의 `publicChapterLimit`만 정하면 되고 나머지는 쓰기 검사가 맡는다.
 
 ## 『루이 보나파르트의 브뤼메르 18일』 (2026-10-24)
 

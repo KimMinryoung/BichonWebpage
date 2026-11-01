@@ -25,9 +25,8 @@ The service should feel like guided study, not an exam ambush. The learner shoul
 
 ## Current Files
 
-- Base Capital data: `data/commulingo/lessons.json`
-- Additional course modules: `data/commulingo/courses/*.js`
-- Data loader: `data/commulingo/index.js`
+- Course data: database data documents `course/<id>` (Capital is `course/capital-vol1..3`); until 2026-11-01 `data/commulingo/lessons.json` and `data/commulingo/courses/*.js`
+- Data loader: `data/commulingo/index.js`; write checks: `data/commulingo/course-validation.js`
 - Public route and data API: `routes/commulingo.js`
 - Page template: `views/public/commulingo.ejs`
 - Client UI: `public/js/commulingo.js`
@@ -112,9 +111,7 @@ Production verification from the last deployment:
 
 ## Current Data Shape
 
-Runtime data is loaded through `data/commulingo/index.js`. It combines the base Capital collections in `data/commulingo/lessons.json` with additional course modules from `data/commulingo/courses/*.js`.
-
-Capital still keeps questions directly in `data/commulingo/lessons.json`:
+Runtime data is loaded through `data/commulingo/index.js` from the data documents `course/<id>`, one collection object each. Edit them with MCP `data_document_get`/`data_document_put` (or `scripts/commulingo-data`); see the `commulingo-data-ops` skill. A Capital volume looks like this:
 
 ```json
 {
@@ -158,7 +155,7 @@ Each question should preserve the existing fields. For multiple-choice questions
 }
 ```
 
-Additional courses can be authored as CommonJS modules under `data/commulingo/courses/`, exporting one collection object. The Lenin course uses local helpers to keep authoring compact, but the exported shape must match the same collection/chapter/lesson/question schema.
+Newer courses may still be assembled by a script in their job directory under `scripts/content/` (helpers keep authoring compact), but what is stored is the JSON collection with the same collection/chapter/lesson/question schema, plus `publicChapterLimit` (number of public chapters).
 
 Runtime delivery is different from source storage:
 
@@ -405,7 +402,7 @@ Then produce only the replacement questions needed:
 - no obvious joke choices
 - first Basic question must be low-pressure and concrete
 
-Only after the questions pass this rubric, update the relevant source file: `data/commulingo/lessons.json` for Capital, or a module under `data/commulingo/courses/` for newer courses.
+Only after the questions pass this rubric, write the course document (`course/capital-volN` for Capital, `course/<id>` otherwise) through `data_document_put`, dry run first.
 ```
 
 ## Quality Gates (September 5 2026)
@@ -440,13 +437,12 @@ Explanations and per-choice feedback are written for that moment: the prompt's s
 Run these after content or UI changes:
 
 ```bash
-npm test                              # includes validate-commulingo.js and audit-commulingo-quality.js
-node scripts/validate-commulingo.js --no-baseline
+npm test                              # code tests; course rules run over the frozen seed only
+node scripts/validate-commulingo.js --no-baseline   # live courses from the data-document snapshot
 node scripts/check-course-source-excerpts.js
 node --check public/js/commulingo.js
 node --check routes/commulingo.js
 node --check data/commulingo/index.js
-node --check data/commulingo/courses/lenin-imperialism.js
 ```
 
 For local UI smoke testing, run a temporary server on an unused port and check:
@@ -463,7 +459,7 @@ For local UI smoke testing, run a temporary server on an unused port and check:
 
 ## Quality Audit
 
-`scripts/audit-commulingo-quality.js` reads the loaded CommuLingo bundle, including `courses/*.js`, and reports common quality risks:
+`scripts/audit-commulingo-quality.js` reads the loaded CommuLingo bundle (all `course/<id>` documents) and reports common quality risks:
 
 1. Honorific or translationese phrasing.
 2. Embedded "Correct"/"Incorrect" markers.

@@ -4,7 +4,7 @@
 
 | 학습 경로 | 원본 | 구성 |
 | --- | --- | --- |
-| `/commulingo/book/sex-gender-theory-intro` | `data/commulingo/courses/sex-gender-theory-intro.js` | 12편·72문항 짧은 학습(`format: 'short-learning'`, `category: 'theory'`(홈 ‘사상 논쟁’), 권 번호 15). 1~3편 2026-10-19 1차, 4~7편 같은 날 2차, 8~12편(푸코 『지식의 의지』) 2026-10-23 |
+| `/commulingo/book/sex-gender-theory-intro` | `course/sex-gender-theory-intro`(데이터 문서, 2026-11-01까지 `courses/sex-gender-theory-intro.js`) | 12편·72문항 짧은 학습(`format: 'short-learning'`, `category: 'theory'`(홈 ‘사상 논쟁’), 권 번호 15). 1~3편 2026-10-19 1차, 4~7편 같은 날 2차, 8~12편(푸코 『지식의 의지』) 2026-10-23 |
 
 1. 여성 억압은 어디서 왔을까? 엥겔스 『가족, 사유재산, 국가의 기원』(1884 서문·제2장, 1891 제4판 증보 구별) / 베벨 『여성과 사회주의』(1879 초판과 1909 제50판 구별).
 2. 사랑과 성은 혁명의 의제인가? 레닌의 아르만트 편지(1915.1.17·24) / 콜론타이 「날개 달린 에로스에게 길을!」(1923)·「테제」(1921) / 체트킨 『레닌 회상』(후대 회고, 「물 한 잔 이론」 대목에 콜론타이 이름 없음).
@@ -42,6 +42,8 @@
 13개를 `scripts/apply-history-terms.js`로 등록하고 표제어·별칭 74개를 `scripts/reviews/commulingo-links-20261019-gender-terms.json`으로 자동 연결 승인했다(작업물 `scripts/content/gender-terms-20261019/`). 섹스/젠더 체계, 젠더 수행성, 이성애 매트릭스(젠더 수행성의 하위), 억압 가설, 생명 권력, 성 경제학, 과잉 억압, 억압적 탈승화, 이중체계론, 가족 임금, 성 계급, 재분배와 인정, 가사노동 임금 운동. 일반명사 단독 별칭(인정·무시·가부장제·생명정치)은 넣지 않았다. 표기는 마리아로사 달라 코스타, 헤르베르트 마르쿠제(「프로이트-마르크스주의」의 허버트도 고침), 라이무트 라이헤.
 
 ## 등록 때 겪은 일
+
+(2026-11-01 이전 기록. 지금은 강좌가 데이터 문서라 공개 범위는 문서의 `publicChapterLimit`이고 샤드는 메모리에서 만든다. 이 함정은 더 없다.)
 
 `shards.js`의 `PUBLIC_CHAPTER_LIMITS`는 실행 중인 서버가 모듈 캐시로 들고 있다. 그래서 새 강좌 파일을 넣자마자 서버가 옛 한도(0)로 샤드를 다시 만들고, 그 manifest의 `sourceMtimeMs`가 맞아서 재시작 뒤에도 새 강좌가 빠진 채로 남았다. 한도를 바꾼 경우에는 배포(재시작) 뒤 호스트에서 `node scripts/build-commulingo-shards.js`를 한 번 더 돌린다.
 
