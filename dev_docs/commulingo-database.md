@@ -38,7 +38,7 @@ Admin 인물 수정·삭제, 절 저장·삭제는 기존 상태를 읽기 전�
 ```bash
 COMMULINGO_ISOLATED_TEST=1 DB_NAME=commulingo_integrity_test \
 DB_HOST=<isolated-host> DB_USER=<test-user> \
-node scripts/test-commulingo-integrity-db.js
+node tests/db/commulingo-integrity.js
 npm test
 ```
 
@@ -56,7 +56,7 @@ DB 장애라면 먼저 frontend/PG 로그와 leninbot_default 네트워크를 �
 
 ## 인물 편집 보존·복원 회귀 테스트
 
-`node scripts/test-commulingo-person-edit-db.js`는 `COMMULINGO_ISOLATED_TEST=1`,
+`node tests/db/commulingo-person-edit.js`는 `COMMULINGO_ISOLATED_TEST=1`,
 `DB_NAME=commulingo_integrity_test`가 아니면 실행을 거부한다. `.env`를 로드하지
 않는다. 운영 인물 관련 테이블의 스키마와 CommuLingo 검증 함수만 독립 PostgreSQL에
 복원하고 DB_HOST/DB_USER를 명시한다. 운영 인물 데이터 복사는 필요 없다.
@@ -64,7 +64,7 @@ DB 장애라면 먼저 frontend/PG 로그와 leninbot_default 네트워크를 �
 갱신을 호출하지 않는다. 한영 보존·명시적 삭제·이름 순서·절 수정 취소와 삭제 복원·
 묶음 작업 및 이력 롤백을 확인한다. 일반 `npm test`에는 언어 병합 회귀가 포함된다.
 
-`node scripts/test-commulingo-person-conflict-db.js`는 같은 독립 DB 가드를 사용한다.
+`node tests/db/commulingo-person-conflict.js`는 같은 독립 DB 가드를 사용한다.
 두 연결의 실제 인물 행 잠금 대기를 관측하고, 인물/절 수정·삭제의 오래된
 expectedRevision이 409로 거부되는지 검사한다. 부모 타임스탬프를 바꾸지 않은
 외부 경력 수정도 버전을 무효화하는지 확인한다. 테스트 전용 인물을 Admin으로
@@ -82,7 +82,7 @@ Python 인물/절 쓰기와 제안 승인은 JS 서비스를 사용한다. 나�
 Python 코드 반영 및 이를 import하는 API/Telegram 재시작 → 타이머 복귀·조회 검증.
 기존 인물 테이블 소유자와 같은 역할로 생성한다. 운영 권한은 실제 런타임 사용자로 조회해서 확인한다.
 
-편집 회귀/동시성 테스트와 `test-commulingo-editorial-db.js`에는 기존 인물 스키마,
+편집 회귀/동시성 테스트와 `tests/db/commulingo-editorial.js`에는 기존 인물 스키마,
 제안 테이블과 176 스키마가 필요하다. `COMMULINGO_ISOLATED_TEST=1`,
 `DB_NAME=commulingo_integrity_test` 및 명시적인 테스트 DB 연결에서만 실행한다.
 통합 무결성 테스트의 175 적용 전 사본도 176을 별도 적용해야 한다.
@@ -104,7 +104,7 @@ Python RPC 테스트는 `commulingo-python-rpc` 테스트 컨테이너만 허용
 changed_by, job_ref)를 추가한다. 파이프라인 작성기가 한 번에 쓰지 못한 것(뒷받침되는 다음 절, 미해결 상충)을
 같은 항목의 다음 작업에 넘기는 비공개 메모다. `editorial-pipeline-service`의 `note` 명령(idempotencyKey 필수)이
 쓰고, `read`가 인물·용어 결과에 `notes`(최신 20건)로 돌려준다. 공개 페이지에는 렌더링하지 않는다.
-`data/commulingo/editorial-notes.js`가 담당하며 `test-commulingo-pipeline-db.js`가 왕복을 검사한다.
+`data/commulingo/editorial-notes.js`가 담당하며 `tests/db/commulingo-pipeline.js`가 왕복을 검사한다.
 
 ## 관련 보고서 증분 색인
 
@@ -128,4 +128,4 @@ changed_by, job_ref)를 추가한다. 파이프라인 작성기가 한 번에 �
 - 같은 트랜잭션에서 참고 문헌 항목(`commulingo_docs.entry`의 `people`), 명부(`politburo`·`secretariat`·`orgburo`), 계보도 차트(`type: "person"`)의 옛 id를 새 id로 바꾸고 각각 문서 revision을 남긴다(2026-10-08부터 셋 다 DB 문서). 커밋할 파일은 없다.
 - KG 동기화는 redirect를 따라 옛 노드를 새 id로 병합하므로 별도 조치가 없다.
 
-격리 DB 회귀 테스트는 `scripts/test-commulingo-person-rename-db.js`(`COMMULINGO_ISOLATED_TEST=1`, `DB_NAME=commulingo_integrity_test`), 파일 재작성은 `npm test`의 `smoke-commulingo-person-rename.js`가 검사한다.
+격리 DB 회귀 테스트는 `tests/db/commulingo-person-rename.js`(`COMMULINGO_ISOLATED_TEST=1`, `DB_NAME=commulingo_integrity_test`), 파일 재작성은 `npm test`의 `tests/unit/commulingo-person-rename.js`가 검사한다.

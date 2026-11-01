@@ -1,0 +1,84 @@
+#!/usr/bin/env node
+const assert = require('assert');
+const { assertHeadword, assertAliases, assertPersonHeadwords } = require('../../data/commulingo/headword-validation');
+const { canonicalEntry, mergeDocMeta } = require('../../data/commulingo/docs-import');
+const { listCommuLingoDocs } = require('../../data/commulingo/docs-store');
+const { buildTermLinkIndex: rawbuildTermLinkIndex } = require('../../data/commulingo/term-linkify');
+const buildTermLinkIndex = (records, options) => rawbuildTermLinkIndex(records, { ...options, legacyReview: true });
+const { buildDocLinkIndex: rawbuildDocLinkIndex } = require('../../data/commulingo/doc-linkify');
+const buildDocLinkIndex = (records, options) => rawbuildDocLinkIndex(records, { ...options, legacyReview: true });
+const { buildEventLinkIndex: rawbuildEventLinkIndex } = require('../../data/commulingo/event-linkify');
+const buildEventLinkIndex = (records, options) => rawbuildEventLinkIndex(records, { ...options, legacyReview: true });
+const { buildPersonLinkIndex } = require('../../data/commulingo/people-linkify');
+const { createLinker, clientPersonLinkPayload } = require('../../data/commulingo/linkify');
+
+for (const value of [' 이름', '이름 ', '두  이름', '두\t이름', '이\u200b름', '<이름>', 'A &amp; B', '가']) {
+    assert.throws(() => assertHeadword(value, 'name'), { status: 400 });
+}
+assertHeadword('『임금, 가격, 이윤』', 'name');
+assertHeadword('A & B', 'name');
+for (const aliases of [null, [], { fr: [] }, { ko: '레닌' }, { ko: ['레닌', '레닌'] }, { en: [42] }, { ko: ['오'] }]) {
+    assert.throws(() => assertAliases(aliases), { status: 400 });
+}
+assertPersonHeadwords({ familyName: { ko: '김무정', en: 'Kim' }, givenName: { ko: '', en: 'Mu-chong' } });
+assert.throws(() => assertPersonHeadwords({ name: { ko: '김  무정' } }), { status: 400 });
+
+// Same spelling, different entities: no array-order winner, including full
+// person names. A different unambiguous spelling still links to each entry.
+const shared = '공통 이름';
+const fixtures = {
+    term: [buildTermLinkIndex, id => ({ id, term: { ko: id }, aliases: { ko: [shared] } })],
+    doc: [buildDocLinkIndex, id => ({ id, title: { ko: id }, aliases: { ko: [shared, id] } })],
+    event: [buildEventLinkIndex, id => ({ id, title: { ko: shared } })],
+    person: [buildPersonLinkIndex, id => ({ id, displayName: shared, names: { display: shared } })],
+};
+for (const [kind, [build, fixture]] of Object.entries(fixtures)) {
+    for (const ids of [['first', 'second'], ['second', 'first']]) {
+        const index = build(ids.map(fixture));
+        assert.strictEqual(index.byAlias[shared], null, kind);
+        assert.strictEqual(createLinker({ [kind]: index }, { surface: 'learning' }).plain(shared), shared);
+        if (kind === 'person') assert.doesNotThrow(() => clientPersonLinkPayload({ person: index }));
+        if (['term', 'doc'].includes(kind)) {
+            assert.match(createLinker({ [kind]: index }, { surface: 'term' }).plain('first'), /href=/);
+        }
+    }
+}
+const eventIndex = buildEventLinkIndex([
+    { id: 'dated', title: { ko: '실제 사건(1920)' } },
+    { id: 'new-economic-policy', title: { en: 'The New Economic Policy (NEP)' } },
+], { lang: 'en' });
+assert.strictEqual(eventIndex.byAlias['1920'], undefined);
+assert.strictEqual(eventIndex.byAlias.NEP.id, 'new-economic-policy');
+const concepts = buildTermLinkIndex([
+    { id: 'sputnik', term: { ko: '스푸트니크' } }, { id: 'glasnost', term: { ko: '글라스노스트' } },
+]);
+const events = buildEventLinkIndex([
+    { id: 'soviet-space-program', title: { ko: '소련 우주개발' } },
+    { id: 'perestroika', title: { ko: '페레스트로이카' } },
+]);
+const html = createLinker({ event: events, term: concepts }, { surface: 'term' }).plain('스푸트니크와 글라스노스트');
+assert.match(html, /terms\/sputnik/);
+assert.match(html, /terms\/glasnost/);
+
+// Stored entries and PATCH: metadata edits must preserve linking controls.
+// The documents come from the DB snapshot when this checkout has one.
+const docs = listCommuLingoDocs();
+for (const doc of docs) canonicalEntry(doc);
+const original = { id: 'test-doc', title: { ko: '시험 문헌', en: '' }, description: { ko: '', en: '' }, people: [],
+    excerpts: { terms: { 'some-term': 'some-heading' } }, anchors: { x: 'y' }, linkExpressions: [{ text: '등록 표현', lang: 'ko', role: 'related', policy: 'context' }], aliases: { ko: ['『시험 문헌』'], en: [] }, noAutoLink: ['임시정부'], date: '1921' };
+let saved = mergeDocMeta(original, { description: { ko: '수정' } });
+assert.deepStrictEqual(saved.aliases, original.aliases);
+assert.deepStrictEqual(saved.linkExpressions, original.linkExpressions);
+assert.deepStrictEqual(saved.noAutoLink, original.noAutoLink);
+assert.strictEqual(saved.date, '1921');
+assert.deepStrictEqual(saved.excerpts, original.excerpts, 'fields canonicalEntry does not know survive a PATCH');
+assert.deepStrictEqual(saved.anchors, original.anchors);
+assert.deepStrictEqual(Object.keys(saved).slice(0, 3), Object.keys(original).slice(0, 3), 'key order kept');
+saved = mergeDocMeta(saved, { aliases: { ko: ['『새 문헌』'] }, noAutoLink: [] });
+assert.deepStrictEqual(saved.aliases, { ko: ['『새 문헌』'] });
+assert.deepStrictEqual(saved.noAutoLink, []);
+saved = mergeDocMeta(saved, { linkExpressions: [] });
+assert.deepStrictEqual(saved.linkExpressions, []);
+assert.throws(() => mergeDocMeta(original, { linkExpressions: [{ text: 'bad' }] }), { status: 400 });
+assert.throws(() => mergeDocMeta(original, { aliases: { ko: '오류' } }), { status: 400 });
+console.log('OK — alias ambiguity, syntax, semantic alias regressions and document PATCH metadata');

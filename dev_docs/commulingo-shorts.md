@@ -36,5 +36,5 @@
 
 ## 검증
 
-- `scripts/smoke-commulingo-shorts.js`: 문장 자르기, 레슨 맥락 판정, 피드 경로 정책.
+- `tests/unit/commulingo-shorts.js`: 문장 자르기, 레슨 맥락 판정, 피드 경로 정책.
 - 브라우저: 360·390·1280px, 다크·라이트에서 한 화면 맞춤, 넘긴 뒤 카드 정렬, 탭해서 답 열기를 확인한다.

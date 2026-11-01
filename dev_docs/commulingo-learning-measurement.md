@@ -54,8 +54,8 @@ docker exec leninbot-frontend node scripts/commulingo-learning-report.js 7
 
 ## 검증
 
-- `scripts/smoke-commulingo-measurement.js`: 제외 조건, Origin·JSON 보호, 입력 검증. `npm test`에 포함.
-- `scripts/test-commulingo-measurement-db.js`: 실제 DB와 HTTP 라우트를 이용한 제외·중복·콘텐츠 검증. 테스트 기록은 트랜잭션 롤백한다.
-- `scripts/test-commulingo-measurement-browser.js`: 미리보기 브라우저에서 시작 1회·답변·완료, 자동 로딩 무집계, 거부 쿠키, 테스트 모드, 계측 UI 비노출, 모바일·데스크톱 표시를 확인한다. 자동화 계측을 시험할 때는 전송을 가로채고 운영 DB에 테스트 기록을 남기지 않는다.
+- `tests/unit/commulingo-measurement.js`: 제외 조건, Origin·JSON 보호, 입력 검증. `npm test`에 포함.
+- `tests/db/commulingo-measurement.js`: 실제 DB와 HTTP 라우트를 이용한 제외·중복·콘텐츠 검증. 테스트 기록은 트랜잭션 롤백한다.
+- `tests/browser/commulingo-measurement.js`: 미리보기 브라우저에서 시작 1회·답변·완료, 자동 로딩 무집계, 거부 쿠키, 테스트 모드, 계측 UI 비노출, 모바일·데스크톱 표시를 확인한다. 자동화 계측을 시험할 때는 전송을 가로채고 운영 DB에 테스트 기록을 남기지 않는다.
 
 API는 `POST /commulingo/measurement`. 익명 캐시 페이지에 CSRF 세션을 강제로 만들지 않으며, 대신 정확한 HTTPS Origin·JSON·사용자 정의 헤더를 요구한다. 기존 진도 저장 API의 CSRF 정책은 그대로 유지한다. 요청 제한은 IP당 분당 120회이며 IP는 이벤트 데이터에 보관하지 않는다.

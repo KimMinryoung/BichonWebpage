@@ -1,6 +1,6 @@
 // Per-question answer history and the review schedule built on it. Loaded by
 // the book page and the hub before their own scripts; pure functions with a
-// localStorage wrapper so scripts/smoke-commulingo-schedule.js can run it.
+// localStorage wrapper so tests/unit/commulingo-schedule.js can run it.
 //
 // A question enters review the first time it is answered wrong. From then on
 // each correct answer pushes its next due date out (1, 3, 7, 14, 30 days for

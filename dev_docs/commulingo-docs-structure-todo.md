@@ -35,7 +35,7 @@
   `import-commulingo-doc.js`). `restore`는 늘 우회한다(예전 판을 되살리는 것이 목적).
 - 결과의 `structure` 배열에 문서별 `errors`·`warnings`·`introduced`가 실린다. CLI가 출력한다.
 - 읽기 전용 점검: `scripts/commulingo-docs structure [id ...] [--json]`.
-- 테스트: `scripts/smoke-commulingo-doc-structure.js`(DB 없이 `writeDocs` 거부·우회·id 고정까지).
+- 테스트: `tests/unit/commulingo-doc-structure.js`(DB 없이 `writeDocs` 거부·우회·id 고정까지).
 
 ### ③ 제목 id 고정 — `freezeHeadingIds`
 
@@ -65,7 +65,7 @@
    백필 전에 옛 문서 본문에 제목을 끼워 넣어 저장하면, 그 저장에서 매겨지는 번호는 (예전과 마찬가지로)
    뒤로 밀린다. 백필 뒤에는 밀리지 않는다.
 4. [ ] 대표 문서 하나를 리더에서 확인(목차 링크, 페이지 분할 문서의 `?p=N#sec-N`, 원문/번역 전환, 발췌 상자).
-   `scripts/smoke-commulingo-doc-excerpts.js`는 스냅숏이 있는 서버에서만 실제로 돈다.
+   `tests/unit/commulingo-doc-excerpts.js`는 스냅숏이 있는 서버에서만 실제로 돈다.
 5. [ ] 2에서 나온 기존 오류를 문서별로 고친다(`export` → 수정 → `put`). 오류가 0이 된 문서는 래칫상 다시 나빠질 수 없다.
 6. [ ] 기존 오류가 모두 사라지면 `docs-store`나 smoke에 "저장된 문서 전체 오류 0" 검사를 추가해 래칫을 전면 규칙으로 바꾼다.
 

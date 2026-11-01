@@ -86,7 +86,7 @@
   - 영어 발췌는 『브뤼메르 18일』처럼 문헌의 독일어 원문에서 이 강좌가 직접 옮겼고, 출처 표시에 「(our translation from the German)」을 붙인다.
 - 작성: 하위 에이전트 7개가 편 하나씩 썼고, 편마다 학습자 입장에서 다시 읽어 고쳤다. 검토 때 고친 것: 4편의 슈타르케 반박 문항 넷 가운데 같은 꼴(반례로 기준 무너뜨리기)인 디드로 문항을 뺐다. 7편 3번의 발췌로 배제되지 않는 오답을 바꿨다. 5편 해설의 테제 인용을 번역본의 「사회적 관계들의 앙상블」로 맞췄다.
 - 정본은 `scripts/content/engels-ludwig-feuerbach/course/`(gitignore, R2 보관)다: `BRIEF.md`(작성 지침), `head.js`, `ch01.js`~`ch07.js`, `check.js`, `build.js`, `show.js`(학습자 화면 순서로 출력), `text/`(문단 번호를 붙인 한국어·독일어 원문). 고칠 때는 편 파일을 고치고 `node check.js`, `node build.js`를 돌린다.
-- 등록: `shards.js` `PUBLIC_CHAPTER_LIMITS` 7, `validate-commulingo.js` 7편·54문항, `check-course-source-excerpts.js` `REQUIRE_SOURCE`, `smoke-commulingo-updates-kinds`의 최신 강좌. 공개는 운영 프로세스가 재시작해야 반영된다(위 「등록 때 겪은 일」).
+- 등록: `shards.js` `PUBLIC_CHAPTER_LIMITS` 7, `validate-commulingo.js` 7편·54문항, `check-course-source-excerpts.js` `REQUIRE_SOURCE`, `tests/unit/commulingo-updates-kinds.js`의 최신 강좌. 공개는 운영 프로세스가 재시작해야 반영된다(위 「등록 때 겪은 일」).
 
 
 ## 『가족, 사유재산, 국가의 기원』 (2026-10-31)

@@ -26,7 +26,7 @@
 | A12 | 일부 | 세션 이력도 최신 N행을 시간순으로 반환. **남음:** 이전 구간 cursor 페이지(200행 넘는 세션이 0개라 필요할 때). |
 | A13 | 반영 | 목록 page를 1~1000으로 clamp, 숫자가 아닌 상세 ID는 404. |
 | A14 | 반영 | `/p/:slug` 본문을 서버에서 정화해 HTML로 보냄(`services/static-page-render.js`). 브라우저 DOMPurify·CDN 의존 제거. 17개 화면을 기존 DOMPurify 결과와 비교해 본문·요소·높이 동일, 차이는 개선 세 가지(`id="timeline"` 유지, `target="_blank"` 유지, 영어 본문 링크 `/en/` 현지화). JavaScript 없이도 본문·SVG가 보인다. |
-| A15 | 일부 | 검사 추가: 접근 경계(`test-access-boundaries.js`: 관리자 IP, 캐시·엣지 헤더, Redis 장애 시 세션 필요 경로), 학습 기록 계정 소유, 문헌·정적 페이지 정화, 문항 ID 규칙, 메뉴 집계, 측정 제외 IP, leninbot 채팅 조회 규칙. **남음:** 격리 DB로 로그인·진도 API를 끝까지 도는 통합 검사(해당 기능을 손볼 때). |
+| A15 | 일부 | 검사 추가: 접근 경계(`tests/unit/access-boundaries.js`: 관리자 IP, 캐시·엣지 헤더, Redis 장애 시 세션 필요 경로), 학습 기록 계정 소유, 문헌·정적 페이지 정화, 문항 ID 규칙, 메뉴 집계, 측정 제외 IP, leninbot 채팅 조회 규칙. **남음:** 격리 DB로 로그인·진도 API를 끝까지 도는 통합 검사(해당 기능을 손볼 때). |
 | A16 | 일부 | 전체 재조회 주기·cache-policy 설명 정정, 계정 판정(`settleOwner`)을 강좌·홈 공통 파일로. **남음:** `commulingo.js`의 저장·동기화·전송 대기열 모듈 분리(학습 화면을 크게 고칠 때). |
 | F01 | 반영 | 오답 재시도로 다 맞혀도 완료는 유지, 저장 점수는 첫 시도 점수(재수강 시 가장 높은 첫 시도). |
 | F02 | 닫음 | 소유자 판단: 첫 화면 문제 없음. |
@@ -225,7 +225,7 @@ Express 4와 EJS가 HTML을 만들고, 일반 JavaScript가 화면을 보강한�
 
 **근거와 영향.** [scripts/test](../scripts/test#L38)는 템플릿·SEO·게임·CommuLingo 정책·콘텐츠 검사를 실행한다. 그러나 그 진입점에는 일반 계정 로그인과 진도 API의 통합 동작, 개인화 HTML 캐시 정책에 대한 전용 검사가 없다. [check-ui](../scripts/check-ui.js#L21)는 EJS 컴파일과 정적 규칙 검사이며 전체 템플릿이 실제 locals로 렌더링되고 조작되는 것을 보장하지 않는다. 이번에 기존 검사가 통과하면서도 A02·A06·A07을 별도 검사로 재현했다는 점이 이 공백의 근거다.
 
-**권장 작업.** 각 수정과 함께 최소 회귀 검사를 추가한다. 순수 계정 저장·전송 큐·헤더 정책은 DB 없이 실행하고, 진도 API·권한·cursor 검사는 격리 DB로 실행한다. 기존 [계측 DB 검사](../scripts/test-commulingo-measurement-db.js)의 격리 원칙을 참고한다. 통합 검사 fixture는 운영 데이터와 분리하고, 전체 단위 검사를 브라우저로 대체하지 않는다.
+**권장 작업.** 각 수정과 함께 최소 회귀 검사를 추가한다. 순수 계정 저장·전송 큐·헤더 정책은 DB 없이 실행하고, 진도 API·권한·cursor 검사는 격리 DB로 실행한다. 기존 [계측 DB 검사](../tests/db/commulingo-measurement.js)의 격리 원칙을 참고한다. 통합 검사 fixture는 운영 데이터와 분리하고, 전체 단위 검사를 브라우저로 대체하지 않는다.
 
 **완료 기준.** A02의 개인화 캐시, A05의 계정 변경, A06의 늦은 ACK, A07의 저장 예외를 수정 전 실패·수정 후 성공하는 검사로 남긴다. 기본 검사의 DB 없는 실행을 유지한다. 서버 환경에서 추가 통합 검사를 언제 실행하는지 운영 문서에 적고 배포 검사를 중복하지 않는다.
 
@@ -289,11 +289,11 @@ Express 4와 EJS가 HTML을 만들고, 일반 JavaScript가 화면을 보강한�
 
 | 수행한 검사 | 결과와 해석 |
 | --- | --- |
-| `node scripts/smoke-commulingo-schedule.js` | 통과. 현행 복습 일정·최신 시각 병합을 확인했다. 계정 저장 분리나 전송 큐 검사는 아니다. |
-| `node scripts/smoke-commulingo-search-requests.js` | 통과. debounce·취소·늦은 응답 무시·페이지 요청 오류를 확인했다. |
+| `node tests/unit/commulingo-schedule.js` | 통과. 현행 복습 일정·최신 시각 병합을 확인했다. 계정 저장 분리나 전송 큐 검사는 아니다. |
+| `node tests/unit/commulingo-search-requests.js` | 통과. debounce·취소·늦은 응답 무시·페이지 요청 오류를 확인했다. |
 | `node scripts/check-ui.js` | 통과. 88개 EJS 컴파일과 공통 CSS·정적 규칙을 검사했다. 브라우저 렌더링이나 접근성 검사는 아니다. |
-| `node scripts/test-strike.js` | 통과. 캠페인·결정적 복원·저장 마이그레이션 등 현재 규칙을 확인했다. |
-| `node scripts/test-nonogram.js` | 통과. 공개 퍼즐의 유일해와 풀이·모순 검사를 확인했다. |
+| `node tests/unit/strike.js` | 통과. 캠페인·결정적 복원·저장 마이그레이션 등 현재 규칙을 확인했다. |
+| `node tests/unit/nonogram.js` | 통과. 공개 퍼즐의 유일해와 풀이·모순 검사를 확인했다. |
 | 실제 함수의 격리 VM 검사 | A03 IP 허용, A04 위험 HTML 잔존, A06 ACK 경합, A07 강좌/채팅 저장 예외를 재현했다. fs·DB·네트워크 쓰기 없이 함수와 stub을 사용했다. |
 | 실제 캐시 미들웨어와 헬퍼 조합 | A02의 일반 계정·관리자 최종 `public` 헤더를 재현했다. 실제 CDN을 사용한 사용자 간 정보 노출 검사는 아니다. |
 

@@ -49,4 +49,4 @@
 - git 파일 344곳: `lessons.json`의 문항, `courses/marx-wages-and-programme.js`, 재작업 하네스 프롬프트, `lesson-context.js` 주석.
   - 강좌 제목은 다른 강좌처럼 겹낫표 없이 「자본 1·2·3권」으로 했다(`config/strings.js` kicker, `views/public/strike.ejs` 버튼 포함).
   - `config/strings.js`와 `strike.ejs`는 배포해야 반영된다.
-- 같은 날 계보도의 슈티르너–포이어바흐 대립선을 시간순(포이어바흐 → 슈티르너)으로 뒤집었다. `smoke-commulingo-genealogy`가 거꾸로 가는 선을 잡았다.
+- 같은 날 계보도의 슈티르너–포이어바흐 대립선을 시간순(포이어바흐 → 슈티르너)으로 뒤집었다. `tests/unit/commulingo-genealogy.js`가 거꾸로 가는 선을 잡았다.

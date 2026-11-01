@@ -416,8 +416,8 @@ different rule per page and a new entry had to be wired into four places.
   session-free, custom header + rate limit) and swaps in the `chat` surface's
   output, re-sanitized. One linker per answer; history loads go in batches of
   up to 40. Nothing is added to the chat UI beyond the links themselves.
-- Covered by `scripts/smoke-commulingo-linkify-policy.js` (no DB needed) and
-  `scripts/smoke-commulingo-decision-links.js` (runs the client script against a
+- Covered by `tests/unit/commulingo-linkify-policy.js` (no DB needed) and
+  `tests/unit/commulingo-decision-links.js` (runs the client script against a
   stub DOM).
 
 ## AI Agent Editing

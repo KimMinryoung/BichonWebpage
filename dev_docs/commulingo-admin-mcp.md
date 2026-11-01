@@ -18,7 +18,7 @@ leninbot은 CommuLingo 테이블을 SQL로 건드리지 않는다(2026-10-05 W5)
 
 ## 전송과 인증
 
-- **별도 관리 프로세스.** MCP는 웹사이트와 분리된 컨테이너 `leninbot-frontend-mcp`(`mcp/main.js`)에서 돈다. 파이프라인 tick도 이 컨테이너가 맡는다. 웹사이트에는 CommuLingo 편집 화면·API가 없고 편집은 이 MCP로만 한다. 검증·저장 코드(`*-editorial-service.js`, admin store, `registry-edits.js` 등)는 관리 프로세스만 불러오므로, 그 코드만 바뀌면 `scripts/deploy`가 관리 컨테이너만 교체하고 웹사이트는 그대로 둔다(판정: `scripts/lib/require-closure.js`, 테스트 `scripts/test-process-closures.js`). MCP만 다시 띄울 때는 `scripts/deploy --mcp-only`. 웹사이트는 읽기 스토어를 자체 주기로 갱신하고, `stores_refresh`는 관리 프로세스를 갱신한 뒤 `public_cache` 채널에 `commulingo_stores` 알림을 보내 웹사이트도 바로 다시 읽게 한다(`data/commulingo/store-refresh.js`).
+- **별도 관리 프로세스.** MCP는 웹사이트와 분리된 컨테이너 `leninbot-frontend-mcp`(`mcp/main.js`)에서 돈다. 파이프라인 tick도 이 컨테이너가 맡는다. 웹사이트에는 CommuLingo 편집 화면·API가 없고 편집은 이 MCP로만 한다. 검증·저장 코드(`*-editorial-service.js`, admin store, `registry-edits.js` 등)는 관리 프로세스만 불러오므로, 그 코드만 바뀌면 `scripts/deploy`가 관리 컨테이너만 교체하고 웹사이트는 그대로 둔다(판정: `scripts/lib/require-closure.js`, 테스트 `tests/unit/process-closures.js`). MCP만 다시 띄울 때는 `scripts/deploy --mcp-only`. 웹사이트는 읽기 스토어를 자체 주기로 갱신하고, `stores_refresh`는 관리 프로세스를 갱신한 뒤 `public_cache` 채널에 `commulingo_stores` 알림을 보내 웹사이트도 바로 다시 읽게 한다(`data/commulingo/store-refresh.js`).
 - **Streamable HTTP, stateless.** 별도 내부 리스너(`MCP_PORT`, 기본 3100)에서 `POST /mcp`만 받는다(배포 확인용 `/health`·`/ready` 외). 응답은 JSON 한 개이며 SSE 스트림과 세션 ID는 쓰지 않는다. 공개 포트(3000)·nginx·Cloudflare와 경로를 공유하지 않는다.
 - 관리 컨테이너만 `127.0.0.1:3100`에 연결한다. 교체하는 몇 초 동안 MCP 호출은 연결 실패가 난다. 클라이언트는 재시도한다.
 - `Origin` 헤더가 있으면 localhost 계열만 받는다(DNS rebinding 방지).
@@ -86,9 +86,9 @@ claude mcp add --transport http --scope local commulingo http://127.0.0.1:3100/m
 
 ## 검증
 
-- `node scripts/smoke-commulingo-mcp.js`(npm test 포함): 프로토콜, 인증, Origin, scope별 목록, 인자 검증, edit 감사 행. DB 없이 실행한다.
-- `node scripts/smoke-commulingo-content-editorial.js`(npm test 포함): 사건 본문 절 분할·삽입·교체와 요청 검사.
-- `scripts/test-commulingo-content-editorial-db.js`(격리 DB, `dev_docs/commulingo-database.md`의 절차): 사건 카드·절·사건 인물·직책 행의 즉시 반영·대기·검토·거부, 리비전과 제안 행. 한 트랜잭션 안에서 실행하고 롤백한다.
+- `node tests/unit/commulingo-mcp.js`(npm test 포함): 프로토콜, 인증, Origin, scope별 목록, 인자 검증, edit 감사 행. DB 없이 실행한다.
+- `node tests/unit/commulingo-content-editorial.js`(npm test 포함): 사건 본문 절 분할·삽입·교체와 요청 검사.
+- `tests/db/commulingo-content-editorial.js`(격리 DB, `dev_docs/commulingo-database.md`의 절차): 사건 카드·절·사건 인물·직책 행의 즉시 반영·대기·검토·거부, 리비전과 제안 행. 한 트랜잭션 안에서 실행하고 롤백한다.
 - leninbot `tests/test_commulingo_mcp_client.py`·`tests/test_commulingo_mcp_writes.py`: 요청 변환, 오류 형식, 작성기·검토 CLI·rename 추종.
-- `node scripts/smoke-commulingo-mcp-helpers.js`(npm test 포함): 투영, JSON Pointer 패치, `specPath` 경계, 새 쓰기 도구의 인자 거부. DB 없이 실행한다.
+- `node tests/unit/commulingo-mcp-helpers.js`(npm test 포함): 투영, JSON Pointer 패치, `specPath` 경계, 새 쓰기 도구의 인자 거부. DB 없이 실행한다.
 - 운영: 등록한 클라이언트에서 `service_status`와 조회 도구 하나를 호출한다. 새 쓰기 도구는 dry-run으로 확인한다(dev-preview 컨테이너는 작업 트리의 `mcp/main.js`를 웹과 함께 띄우므로, 그 안 `127.0.0.1:3100`으로 배포 전에 부를 수 있다).

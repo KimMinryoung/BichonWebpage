@@ -27,8 +27,8 @@ v4까지는 "피로 낮은 순서로 교대"라는 정답 하나로 모든 판�
 | [strike.css](../public/css/strike.css) | 화면 배치, 모바일 하단 고정 진행 버튼, 지도 연출, 교섭 카드 |
 | [strike.ejs](../views/public/strike.ejs) | 시작 화면, 플레이 영역 골격, `<dialog id="strikeSheet">`, 접힌 규칙 |
 | [games.ejs](../views/public/games.ejs), [games.js](../public/js/games.js) | 게임 목록과 이어하기 표시(`strike-game-v6-save`) |
-| [test-strike.js](../scripts/test-strike.js) | 봇 캠페인 밸런스·결정론·복원·세부 규칙 (`npm test` 포함) |
-| [test-strike-ui.js](../scripts/test-strike-ui.js), [test-games-ui.js](../scripts/test-games-ui.js) | Playwright 브라우저 검증 (`npm test` 미포함) |
+| [tests/unit/strike.js](../tests/unit/strike.js) | 봇 캠페인 밸런스·결정론·복원·세부 규칙 (`npm test` 포함) |
+| [tests/browser/strike-ui.js](../tests/browser/strike-ui.js), [tests/browser/games-ui.js](../tests/browser/games-ui.js) | Playwright 브라우저 검증 (`npm test` 미포함) |
 
 스크립트 순서는 engine → scene → UI다. 장소 이미지는 `{organize,picket,solidarity,rest}-v1.webp`를 계속 쓴다.
 
@@ -138,7 +138,7 @@ v5·v4·v3 저장은 규칙이 달라 이관하지 않는다. 키는 지우지 �
 
 ## 7. 밸런스 기준과 검증
 
-`node scripts/test-strike.js`는 3 시나리오 × 2 난이도 × 16 시드 × 6 봇(576판)을 돌린다. reader는 숨은 수의 후보를 모두 막는다.
+`node tests/unit/strike.js`는 3 시나리오 × 2 난이도 × 16 시드 × 6 봇(576판)을 돌린다. reader는 숨은 수의 후보를 모두 막는다.
 
 | 봇 | 기대 |
 | --- | --- |
@@ -148,7 +148,7 @@ v5·v4·v3 저장은 규칙이 달라 이관하지 않는다. 키는 지우지 �
 
 2026-10-12 v6 시뮬레이션에서 reader는 기본 전승·평균 9일, 어려움 69–94%·평균 10일이었다(v5는 어려움 75–90%). 모든 배치를 따져 보는 탐색 봇은 7–8일에 이긴다. reader 캠페인은 매 단계 결정론·복원·예고와 실제 수의 일치도 검사한다.
 
-UI는 `node scripts/test-strike-ui.js`와 `node scripts/test-games-ui.js`로 검증한다(Playwright, DB 없음). 끌기·터치·키보드, 사측 토큰과 표적, 부상 잠금, 교섭 카드 놓기·거두기·새로고침 유지, 기본·어려움 캠페인 완주, 연출 잠금, 360·390·1280 폭과 다크·라이트, 손상·구버전·차단 저장을 다룬다. 스크린샷은 `/tmp/strike-*.png`에 생긴다.
+UI는 `node tests/browser/strike-ui.js`와 `node tests/browser/games-ui.js`로 검증한다(Playwright, DB 없음). 끌기·터치·키보드, 사측 토큰과 표적, 부상 잠금, 교섭 카드 놓기·거두기·새로고침 유지, 기본·어려움 캠페인 완주, 연출 잠금, 360·390·1280 폭과 다크·라이트, 손상·구버전·차단 저장을 다룬다. 스크린샷은 `/tmp/strike-*.png`에 생긴다.
 
 ## 8. 후속 검토 사항
 

@@ -3,7 +3,7 @@
 // attributes, javascript: URLs and active elements are dropped here before a
 // fragment is written. The list covers what data/commulingo/docs/*.html uses
 // (article structure, tables, footnote anchors, details, figures with inline
-// images) and scripts/smoke-commulingo-doc-sanitize.js checks that every
+// images) and tests/unit/commulingo-doc-sanitize.js checks that every
 // stored document passes through unchanged.
 const sanitizeHtml = require('sanitize-html');
 

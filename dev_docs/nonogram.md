@@ -35,8 +35,8 @@
 
 ## 검증
 
-- `node scripts/test-nonogram.js`: 공개 11문제 단일해, 힌트/정답 일치, 질문 유효성, 새 6문제 논리 완성, 모순·복수해 solver fixture. `npm test`에 포함.
-- `node scripts/test-games-ui.js`: 실제 EJS/정적 파일을 임시 서버에서 제공해 catalog, 되돌리기/다시 하기, 마우스/터치/키보드, 힌트, 완료/복원/구 저장, 요청 경쟁/재시도, 저장 차단, strike 시나리오/복원 검사.
-- `node scripts/test-strike-ui.js`: 기존 파업 지도/조작 회귀 검사.
+- `node tests/unit/nonogram.js`: 공개 11문제 단일해, 힌트/정답 일치, 질문 유효성, 새 6문제 논리 완성, 모순·복수해 solver fixture. `npm test`에 포함.
+- `node tests/browser/games-ui.js`: 실제 EJS/정적 파일을 임시 서버에서 제공해 catalog, 되돌리기/다시 하기, 마우스/터치/키보드, 힌트, 완료/복원/구 저장, 요청 경쟁/재시도, 저장 차단, strike 시나리오/복원 검사.
+- `node tests/browser/strike-ui.js`: 기존 파업 지도/조작 회귀 검사.
 - 360/390/1280px, light/dark, reduced motion 화면을 브라우저로 확인한다. 스크린샷은 `/tmp/games-new-{catalog,nonogram,strike}-{theme}-{width}.png`.
 - 전체 `npm test`는 EJS와 정책/콘텐츠/규칙 검사를 포함한다. 브라우저 두 suite는 별도 실행한다.

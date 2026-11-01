@@ -10,7 +10,7 @@
 //
 // Where no course document exists (a lone clone: no database, no snapshot)
 // the bundle falls back to the frozen seed in
-// scripts/fixtures/commulingo-courses-seed.json, a few representative courses
+// tests/fixtures/commulingo-courses-seed.json, a few representative courses
 // that are not updated when the courses change. scripts/test always uses the
 // seed (COMMULINGO_COURSES_SEED=1) so the tests do not depend on live content;
 // a write is checked against the content rules by course-validation.js.
@@ -19,7 +19,7 @@ const path = require('path');
 const crypto = require('crypto');
 
 const COURSE_PREFIX = 'course/';
-const SEED_PATH = path.join(__dirname, '..', '..', 'scripts', 'fixtures', 'commulingo-courses-seed.json');
+const SEED_PATH = path.join(__dirname, '..', '..', 'tests', 'fixtures', 'commulingo-courses-seed.json');
 
 let seedCache = null;
 let bundleCache = null;

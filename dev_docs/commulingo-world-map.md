@@ -22,7 +22,7 @@
 - 원고: `scripts/content/event-control/<eventId>.js`. 추출 영역, 손으로 그린 다각형, 원(도시), 철도 회랑을 조합하며 좌표는 `[lat, lng]`이다.
 - 색 추출은 `scripts/trace-event-control-maps.js <사건> <지도…>`로 한다. 국공내전·중일전쟁은 퍼블릭 도메인 미국 정부 지도(국무부 1947년 6단 지도, 웨스트포인트 도판 4·5), 스페인 내전은 CC BY-SA 3.0 월별 연작이라 추출 자료도 같은 라이선스이며 화면에 출처를 밝힌다. 기준점 좌표와 방법은 스크립트 머리말에 있다.
 - 굽기: `node scripts/bake-event-control.js <ne_50m_admin_0_map_units.geojson> [eventId …]`(사건 id를 주면 그 사건만). 항목 `{ units: [ADM0] }`는 Natural Earth 단위 전체, `{ provinces: [name], country }`는 admin-1 성 전체를 칠하며 성 항목은 `NE_ADMIN1=<ne_10m_admin_1_states_provinces.geojson>`이 필요하다. 단위·성은 합친 뒤에 단순화해야 이웃 경계에 이음매가 남지 않는다. polygon-clipping(devDependency)으로 세력별 영역을 겹치지 않게 만든다. 결과 JSON은 `data/`에 있어 운영에 바로 마운트되지만 코드가 배포되기 전에는 읽히지 않는다. 굽기 결과는 `scripts/content/event-control/baked/`에 쓰이며 `scripts/commulingo-data put scripts/content/event-control/baked`(먼저 `--dry-run`)로 게시한다. 커밋·배포는 필요 없고 약 1분 안에 반영된다.
-- 경계는 근사치이며 화면에 출처와 함께 밝힌다. 검증은 `scripts/smoke-commulingo-event-control.js`가 담당한다.
+- 경계는 근사치이며 화면에 출처와 함께 밝힌다. 검증은 `tests/unit/commulingo-event-control.js`가 담당한다.
 
 ### 점령 영역 후보
 

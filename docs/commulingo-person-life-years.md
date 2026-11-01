@@ -26,8 +26,8 @@ The shared `person-life-years.js` rules protect API create/PATCH and normalize
 old snapshots when read. Schema migration 167 protects direct SQL writes as
 well, including consistency between the label and numeric year columns.
 `scripts/audit-person-card-fields.js` checks all records and runs after deploy.
-`scripts/smoke-commulingo-person-life-years.js` runs in `npm test`.
-`scripts/test-commulingo-person-life-db.js` rehearses migration 167 and tests
+`tests/unit/commulingo-person-life-years.js` runs in `npm test`.
+`tests/db/commulingo-person-life.js` rehearses migration 167 and tests
 constraints on temporary copies of live metadata, then rolls back.
 
 ## Repair on 2026-09-06

@@ -21,7 +21,7 @@
 - 무단 사본일 수 있는 출처 URL 2개(사르트르 강연 .doc, 데리다 『입장들』 PDF)는 서지 표기로 바꿔 넣었다.
 
 ## 검증
-- 인물 dry-run, 용어 일괄 dry-run을 거쳐 반영했다. `npm test`가 통과했다(`smoke-commulingo-genealogy` 포함).
+- 인물 dry-run, 용어 일괄 dry-run을 거쳐 반영했다. `npm test`가 통과했다(`tests/unit/commulingo-genealogy.js` 포함).
 - 계보도·니체 카드·용어 페이지 200을 확인했고, 계보도는 Playwright 스크린숏으로 화면을 확인했다.
 
 ## 남은 일

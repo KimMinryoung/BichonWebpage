@@ -10,6 +10,6 @@
 
 leninbot은 관리자 MCP로, CLI는 공통 편집 서비스로 같은 검증을 거친다.
 
-회귀 검사: `node scripts/smoke-commulingo-nationality-policy.js` (소속 국가 허용, 출신 배경/별칭 거부, 구체 국가 허용, 혼합 설명 유지).
+회귀 검사: `node tests/unit/commulingo-nationality-policy.js` (소속 국가 허용, 출신 배경/별칭 거부, 구체 국가 허용, 혼합 설명 유지).
 
 국가 코드 차단은 기계적으로 검증하지만, 사료의 신뢰도와 혼합 출신의 대표 국가 선택은 근거 검토가 필요하다.
