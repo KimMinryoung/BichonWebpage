@@ -1,0 +1,31 @@
+<%
+/* The hub's preview of the courses: every course by group, one row per
+   course linking straight to it, and a header row to the full course page
+   (/commulingo/learn) where progress and descriptions live. */
+var cpText = function(value) { return typeof value === 'string' ? value : (value && (value[lang] || value.ko || value.en)) || ''; };
+var cpEn = lang === 'en';
+var cpCount = bookGroups.reduce(function(sum, group) { return sum + group.books.length; }, 0);
+var cpMeta = function(book) {
+    if (book.format === 'decision-history') return cpEn ? (book.episodeCount || 0) + ' turning points' : '갈림길 ' + (book.episodeCount || 0) + '개';
+    if (book.format === 'concept-graph') return cpEn ? (book.nodeCount || 0) + ' nodes' : '노드 ' + (book.nodeCount || 0) + '개';
+    return (book.chapterCount || 0) + (cpEn ? ' chapters' : '챕터');
+};
+%>
+<section class="box commu-course-preview" aria-labelledby="commuCoursePreviewTitle">
+    <a class="commu-course-preview-head" href="/commulingo/learn">
+        <h2 id="commuCoursePreviewTitle"><%= strings.commuLingo.courses %> <span class="commu-course-preview-count"><%= cpCount %></span></h2>
+        <span class="commu-course-preview-all"><%= cpEn ? 'All courses' : '전체 강좌' %> <span aria-hidden="true">→</span></span>
+    </a>
+    <div class="commu-course-preview-groups">
+        <% bookGroups.forEach(function(group) { %>
+        <section class="commu-course-preview-group">
+            <h3 class="commu-course-preview-label"><%= group.label %></h3>
+            <ul class="commu-course-preview-list">
+                <% group.books.forEach(function(book) { %>
+                <li><a href="/commulingo/book/<%= encodeURIComponent(book.id) %>"><span class="commu-course-preview-title"><%= cpText(book.title) %></span><span class="commu-course-preview-meta"><%= cpMeta(book) %></span></a></li>
+                <% }) %>
+            </ul>
+        </section>
+        <% }) %>
+    </div>
+</section>

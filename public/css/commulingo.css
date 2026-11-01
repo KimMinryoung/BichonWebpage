@@ -5926,6 +5926,108 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commulingo-home .commulingo-hero-dict-label {
     padding-inline: 18px;
 }
+/* Hub preview of every course (views/partials/commulingo-course-preview.ejs).
+   The header row and each course row are whole-row links. */
+.commu-course-preview {
+    padding: 0;
+    border-left: 4px solid var(--accent);
+}
+.commu-course-preview-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 18px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+    text-decoration: none;
+}
+.commu-course-preview-head h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+.commu-course-preview-count {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+}
+.commu-course-preview-all {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-weight: var(--weight-emphasis);
+    white-space: nowrap;
+}
+.commu-course-preview-head:hover {
+    background: var(--accent);
+}
+.commu-course-preview-head:hover h2,
+.commu-course-preview-head:hover .commu-course-preview-count,
+.commu-course-preview-head:hover .commu-course-preview-all {
+    color: var(--clr-cream, #f8edca);
+}
+.commu-course-preview-groups {
+    columns: 3 240px;
+    column-gap: 24px;
+    padding: 6px 18px 14px;
+}
+.commu-course-preview-group {
+    break-inside: avoid;
+    padding-top: 12px;
+}
+.commu-course-preview-label {
+    margin: 0 0 4px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: var(--weight-emphasis);
+    letter-spacing: 0.03em;
+}
+.commu-course-preview-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.commu-course-preview-list li {
+    border-top: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
+}
+.commu-course-preview-list a {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 9px 6px;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+.commu-course-preview-title {
+    min-width: 0;
+    font-size: 0.92rem;
+    font-weight: 700;
+    line-height: var(--leading-snug);
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+.commu-course-preview-meta {
+    flex: 0 0 auto;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+.commu-course-preview-list a:hover {
+    background: var(--accent);
+}
+.commu-course-preview-list a:hover .commu-course-preview-title,
+.commu-course-preview-list a:hover .commu-course-preview-meta {
+    color: var(--clr-cream, #f8edca);
+}
+@media (max-width: 560px) {
+    .commu-course-preview-head {
+        padding: 12px;
+    }
+    .commu-course-preview-groups {
+        padding: 4px 12px 12px;
+    }
+}
 /* Tab rows inside the hub hero sit flush against its frame; a row that
    stands on its own (the learning tabs under the crumb) keeps its border. */
 .commulingo-home .commulingo-hero-dict .commu-dict-nav {

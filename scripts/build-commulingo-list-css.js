@@ -12,7 +12,7 @@ function listSelector(selector) {
     const first = selector.match(/\.([\w-]+)/);
     return first && shared.test(first[1]) && !detail.test(first[1]);
 }
-const home = /^(?:commulingo-(?:page|shell|home|hero(?:--home|-main|-dict(?:-label)?)?$|book-groups|books|resume)|commu-(?:book-|resume-|updates|dict-(?:nav|tab)|drill-promo)|is-hidden)/;
+const home = /^(?:commulingo-(?:page|shell|home|hero(?:--home|-main|-dict(?:-label)?)?$|book-groups|books|resume)|commu-(?:book-|resume-|updates|dict-(?:nav|tab)|drill-promo|course-preview)|is-hidden)/;
 function homeSelector(selector) {
     const first = selector.match(/\.([\w-]+)/);
     return first && home.test(first[1]);

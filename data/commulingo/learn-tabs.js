@@ -5,7 +5,7 @@
 // between them; the list lives here so the two renderings cannot drift.
 function learnTabs(en) {
     return [
-        { key: 'courses', href: '/commulingo/learn', icon: 'book-open-text',
+        { key: 'courses', href: '/commulingo/learn', icon: 'graduation-cap',
           label: en ? 'Courses' : '강좌', short: en ? 'Courses' : '강좌' },
         { key: 'drill', href: '/commulingo/drill', icon: 'swords',
           label: en ? 'Training ground' : '훈련장', short: en ? 'Drills' : '훈련장' },

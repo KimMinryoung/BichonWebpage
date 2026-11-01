@@ -37,10 +37,13 @@ router.use((req, res, next) => {
 const { summarizeBooks, groupBooks } = require('../data/commulingo/book-summary');
 const { commuLingoBreadcrumb } = require('../data/commulingo/page-helpers');
 
-// The hub: the learning sections and the dictionaries side by side, with
-// the update notes. The courses themselves live on /commulingo/learn.
+// The hub: the learning sections and the dictionaries side by side, a
+// preview listing every course, and the update notes. The course cards with
+// progress live on /commulingo/learn.
 router.get('/', asyncHandler(async (req, res) => {
+    const collections = summarizeBooks(loadCommuLingoCatalog());
     res.render('public/commulingo-index', {
+        bookGroups: groupBooks(collections, res.locals.strings.commuLingo, res.locals.lang),
         updateGroups: await loadCommuLingoUpdateGroups(res.locals.lang),
         pageTitle: res.locals.strings.commuLingo.name,
         pageDescription: res.locals.strings.commuLingo.description,

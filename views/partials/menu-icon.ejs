@@ -1,13 +1,13 @@
 <%
 /* Shared glyphs for the site menus (top nav + home cards + footer).
    Top-level `icon` keys: 'chat' | 'commulingo' | 'library' | 'game'.
-   Sub-menu keys: 'quiz' | 'people' | 'events' | 'terms' | 'docs' (CommuLingo,
+   Sub-menu keys: 'learn' | 'people' | 'events' | 'terms' | 'docs' (CommuLingo,
    matching the dictionary switcher icons) and 'reports' | 'hub' | 'diary' | 'posts'.
    `iconClass` (optional): CSS class for the svg, defaults to 'nav-icon'.
 
    The drawings are NOT kept here. They come from data/icons.js, the one glyph
-   table, via res.locals.iconPaths, because six of these used to be duplicated
-   by hand under a second name (quiz/circle-help, people/user, events/flag,
+   table, via res.locals.iconPaths, because five of these used to be duplicated
+   by hand under a second name (people/user, events/flag,
    terms/book-open, reports/chart, docs/landmark) and nothing held the copies
    together. */
 var _menuIconClass = typeof iconClass !== 'undefined' ? iconClass : 'nav-icon';
