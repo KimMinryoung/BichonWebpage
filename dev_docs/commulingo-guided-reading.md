@@ -2,18 +2,18 @@
 
 2026-10-24 등록. 기존 퀴즈형 강좌가 방문객에게 잘 읽히지 않는다는 사용자 판단에 따라 새 학습 형식을 시험한다. 원문을 먼저 한두 문단 보여 주고 그 대목에 대한 질문 하나를 묻는 방식이다. 첫 강좌는 마르크스의 『프랑스 내전』이다.
 
-| 학습 경로 | 원본 | 구성 |
+| 학습 경로 | 원본(2026-11-01부터 데이터 문서) | 구성 |
 | --- | --- | --- |
-| `/commulingo/book/marx-civil-war-in-france` | `data/commulingo/courses/marx-civil-war-in-france.js` | 6편·41발췌, `format: 'guided-reading'`, 권 번호 17(홈의 「카를 마르크스」 묶음, 2026-10-24 『브뤼메르 18일』 뒤로 옮김) |
-| `/commulingo/book/lenin-materialism-empiriocriticism` | `data/commulingo/courses/lenin-materialism-empiriocriticism.js` | 8편·61발췌, 4지선다, 퀴즈형 문항을 골라 맥락·발췌를 붙여 옮김 (2026-10-28, [기록](commulingo-lenin-mec-20261028.md)) |
-| `/commulingo/book/marx-eighteenth-brumaire` | `data/commulingo/courses/marx-eighteenth-brumaire.js` | 7편·49발췌, 같은 형식·권 번호 -1 (2026-10-24) |
-| `/commulingo/book/engels-ludwig-feuerbach` | `data/commulingo/courses/engels-ludwig-feuerbach.js` | 7편·54발췌, 4지선다, 처음부터 끊어 읽기로 작성, 권 번호 1(엥겔스 묶음, 『가족, 사유재산, 국가의 기원』 0 뒤) (2026-10-31, [아래](#루트비히-포이어바흐와-독일-고전철학의-종말-2026-10-31)) |
-| `/commulingo/book/engels-origin-family` | `data/commulingo/courses/engels-origin-family.js` | 8편·64발췌, 4지선다, 옛 개념지도(`concept-graph`)를 끊어 읽기로 다시 씀, 권 번호 0 (2026-10-31, [아래](#가족-사유재산-국가의-기원-2026-10-31)) |
-| `/commulingo/book/lenin-imperialism` | `data/commulingo/courses/lenin-imperialism.js` | 10편·78발췌, 4지선다, 퀴즈형 20레슨·100문항을 새 번역으로 다시 씀, 권 번호 4 (2026-10-31, [아래](#자본주의의-최고-단계로서의-제국주의-2026-10-31)) |
-| `/commulingo/book/marx-wage-labour-capital` | `data/commulingo/courses/marx-wage-labour-capital.js` | 7편·53발췌, 4지선다, 퀴즈형 강좌를 다시 씀, 권 번호 -2 (2026-10-31, [아래](#마르크스-세-강좌-임금노동과-자본임금-가격-이윤고타-강령-비판-2026-10-31)) |
-| `/commulingo/book/marx-wages-and-programme` | `data/commulingo/courses/marx-wages-and-programme.js` | 7편·54발췌, 『임금, 가격, 이윤』만 남기고 다시 씀, 권 번호 0 (2026-10-31) |
-| `/commulingo/book/marx-gotha-critique` | `data/commulingo/courses/marx-gotha-critique.js` | 7편·48발췌, 새 강좌(옛 『임금 투쟁과 분배』 제2편에서 분리), 권 번호 18 (2026-10-31) |
-| `/commulingo/book/lenin-state-revolution` | `data/commulingo/courses/lenin-state-revolution.js` | 6편·47발췌, 4지선다, 퀴즈형 12레슨·60문항을 새 번역으로 다시 씀, 권 번호 5 (2026-10-31, [아래](#국가와-혁명-2026-10-31)) |
+| `/commulingo/book/marx-civil-war-in-france` | `course/marx-civil-war-in-france` | 6편·41발췌, `format: 'guided-reading'`, 권 번호 17(홈의 「카를 마르크스」 묶음, 2026-10-24 『브뤼메르 18일』 뒤로 옮김) |
+| `/commulingo/book/lenin-materialism-empiriocriticism` | `course/lenin-materialism-empiriocriticism` | 8편·61발췌, 4지선다, 퀴즈형 문항을 골라 맥락·발췌를 붙여 옮김 (2026-10-28, [기록](commulingo-lenin-mec-20261028.md)) |
+| `/commulingo/book/marx-eighteenth-brumaire` | `course/marx-eighteenth-brumaire` | 7편·49발췌, 같은 형식·권 번호 -1 (2026-10-24) |
+| `/commulingo/book/engels-ludwig-feuerbach` | `course/engels-ludwig-feuerbach` | 7편·54발췌, 4지선다, 처음부터 끊어 읽기로 작성, 권 번호 1(엥겔스 묶음, 『가족, 사유재산, 국가의 기원』 0 뒤) (2026-10-31, [아래](#루트비히-포이어바흐와-독일-고전철학의-종말-2026-10-31)) |
+| `/commulingo/book/engels-origin-family` | `course/engels-origin-family` | 8편·64발췌, 4지선다, 옛 개념지도(`concept-graph`)를 끊어 읽기로 다시 씀, 권 번호 0 (2026-10-31, [아래](#가족-사유재산-국가의-기원-2026-10-31)) |
+| `/commulingo/book/lenin-imperialism` | `course/lenin-imperialism` | 10편·78발췌, 4지선다, 퀴즈형 20레슨·100문항을 새 번역으로 다시 씀, 권 번호 4 (2026-10-31, [아래](#자본주의의-최고-단계로서의-제국주의-2026-10-31)) |
+| `/commulingo/book/marx-wage-labour-capital` | `course/marx-wage-labour-capital` | 7편·53발췌, 4지선다, 퀴즈형 강좌를 다시 씀, 권 번호 -2 (2026-10-31, [아래](#마르크스-세-강좌-임금노동과-자본임금-가격-이윤고타-강령-비판-2026-10-31)) |
+| `/commulingo/book/marx-wages-and-programme` | `course/marx-wages-and-programme` | 7편·54발췌, 『임금, 가격, 이윤』만 남기고 다시 씀, 권 번호 0 (2026-10-31) |
+| `/commulingo/book/marx-gotha-critique` | `course/marx-gotha-critique` | 7편·48발췌, 새 강좌(옛 『임금 투쟁과 분배』 제2편에서 분리), 권 번호 18 (2026-10-31) |
+| `/commulingo/book/lenin-state-revolution` | `course/lenin-state-revolution` | 6편·47발췌, 4지선다, 퀴즈형 12레슨·60문항을 새 번역으로 다시 씀, 권 번호 5 (2026-10-31, [아래](#국가와-혁명-2026-10-31)) |
 
 ## 왜 이 형식인가 (2026-10-24 판단 근거)
 
@@ -49,6 +49,8 @@
 
 ## 등록 때 겪은 일
 
+(2026-11-01 이전 기록. 강좌가 데이터 문서 `course/<id>`로 옮겨 가면서 공개 범위는 문서의 `publicChapterLimit`이 되었고 샤드는 프로세스마다 메모리에서 만들므로, 아래 함정은 더 없다. 새 강좌는 `data_document_put`으로 넣고 `publicChapterLimit`을 정하면 1분 안에 보인다. [git 분리 4단계](commulingo-data-off-git.md#4단계-학습-강좌-2026-11-01))
+
 운영 컨테이너는 호스트의 `data/`를 마운트하므로, 새 강좌 파일을 넣으면 운영 서버가 메모리에 든 옛 `PUBLIC_CHAPTER_LIMITS`로 공유 샤드(`data/commulingo/generated`)를 다시 만든다. 그래서 배포 전에는 새 강좌가 운영에 보이지 않는다(그 상태가 안전하다). 미리보기에서 확인할 때 공유 샤드를 다시 빌드하면 운영도 그 샤드를 받아 옛 플레이어로 새 강좌를 보여 주게 되므로, 미리보기 컨테이너에 별도 `generated` 폴더를 덮어 마운트해 확인했다. 배포(재시작) 뒤 호스트에서 `node scripts/build-commulingo-shards.js`를 한 번 더 돌린다([성 이론 강좌 문서](commulingo-sex-gender-theory.md)와 같은 함정).
 
 ## 다음
@@ -64,7 +66,7 @@
 - 인물 링크: `personLinks`로 「보나파르트」를 나폴레옹 3세에, 부사와 겹치는 「바로」는 잇지 않고(「오딜롱 바로」만), 「라 로슈자클랭」(1850년대 정통왕조파 의원)은 사전의 방데 장군과 달라 null.
 - 링크 승인 `scripts/reviews/commulingo-links-20261024-brumaire-doc.json`: 문헌 별칭 11개 auto, 같은 이름의 용어 `eighteenth-brumaire-of-louis-bonaparte` 표현 9개는 search(문헌 우선). 맨 「브뤼메르 18일」은 1799년 쿠데타 날과 겹쳐 별칭에 넣지 않았다.
 - 강좌 영어 발췌는 『프랑스 내전』의 엥겔스 서문처럼 독일어 원문에서 이 강좌가 직접 옮겼고, 출처 표시에 「(our translation from the German)」을 붙인다.
-- 작업물(원문, 갈래별 번역·REPORT·REVIEW, 조립 `assemble.py`, 강좌 편 파일과 `course/check.js`·`build.js`)은 `scripts/content/brumaire-doc-20261024/`. 강좌 모듈은 `node scripts/content/brumaire-doc-20261024/course/build.js data/commulingo/courses/marx-eighteenth-brumaire.js`로 다시 만든다.
+- 작업물(원문, 갈래별 번역·REPORT·REVIEW, 조립 `assemble.py`, 강좌 편 파일과 `course/check.js`·`build.js`)은 `scripts/content/brumaire-doc-20261024/`. 강좌 모듈은 `node scripts/content/brumaire-doc-20261024/course/build.js <출력.js>`로 다시 만든다(2026-11-01부터는 그 결과를 JSON으로 바꿔 `course/marx-eighteenth-brumaire`에 put한다).
 - 공개는 `data/commulingo/shards.js`의 `PUBLIC_CHAPTER_LIMITS`를 읽는 운영 프로세스가 재시작해야 반영된다(위 「등록 때 겪은 일」과 같다).
 - 남은 일: 카드 없는 인물(몰레, 베리에, 바로슈, 풀드, 루에르, 페르시니, 몽탈랑베르, 뒤팽, 레옹 포셰, 라모리시에르, 샹보르 백작 등)과 용어(정통왕조파, 오를레앙파, 룸펜프롤레타리아트, 분할지 농민, 의회 백치증)는 등록하지 않았다. 갈래별 `REPORT.md`에 목록이 있다.
 - 마르크스 묶음의 순서(2026-10-24 사용자 지시): 홈은 `volumeNumber`로만 정렬하므로 첫 저작 연도 순으로 번호를 맞췄다. 『임금노동과 자본』 -2(1849), 『브뤼메르 18일』 -1(1852), 『임금, 가격, 이윤 · 고타강령 비판』 0(1865·1875, 번호는 `course-metadata.js`), 『자본』 1~3(1867~, 권 순서 그대로 붙여 둔다), 『프랑스 내전』 17(1871). 다른 묶음은 번호를 묶음 안 정렬에만 쓴다.

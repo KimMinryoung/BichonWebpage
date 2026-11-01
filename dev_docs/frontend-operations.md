@@ -62,7 +62,7 @@ docker network connect leninbot_default leninbot-frontend  # 빠졌으면
 - 콘텐츠 값은 데이터 파일/DB가 원본이다. 코드의 FALLBACK/SEED만 바꿔 운영 콘텐츠를 수정하려 하지 않는다. 역할 아이콘·국기 SVG 같은 코드 에셋은 별도 배포 대상이다.
 - 코드의 DB 사본을 수정했다면 배포 뒤 `docker exec leninbot-frontend node /app/scripts/check-commulingo-code-db-drift.js`로 일치 여부를 확인한다.
 - 콘텐츠 규칙은 scripts/lib/commulingo-checks.js에 있다. 코스 구조나 문항을 바꿀 때는 관련 smoke 또는 validator 하나를 실행한다. 단순 공개 여부나 메타데이터 변경에는 해당 공개 결과를 확인하는 표적 검사만 쓴다. `--prune-baseline`은 기존 위반을 실제로 고쳤을 때만, `--no-baseline`은 전체 품질 감사 때만 실행한다.
-- 코스나 lesson을 코드 배포할 때 shard 재생성과 변경 레슨 캐시 제거는 `scripts/deploy`에 맡긴다. 배포 없이 생성 결과만 검사할 때만 `node scripts/build-commulingo-shards.js`를 수동 실행하며, 정상 deploy 전후에 별도 캐시 제거를 중복 실행하지 않는다.
+- 학습 강좌는 데이터 문서 `course/<id>`다(2026-11-01부터). 수정·추가·공개(`publicChapterLimit`)는 `data_document_put`(또는 `scripts/commulingo-data put`) 한 번이고 커밋·배포·캐시 퍼지가 필요 없다. 쓰기 검사와 절차는 [데이터 운영 스킬](../.claude/skills/commulingo-data-ops/SKILL.md#lessons-and-courses), 설계는 [git 분리 4단계](commulingo-data-off-git.md#4단계-학습-강좌-2026-11-01).
 - 인물·용어·사건·링크 승인과 DB 등록부는 DB가 원본이라 수정에 커밋이 필요 없다. 아래 작업물 보관만 한다.
 - DB 스크립트는 scripts/lib/bootstrap으로 저장소 루트 환경을 로드한다. scripts/one-off/는 반복 실행용 도구가 아니다.
 - 인물 필드 설계는 [인물 인수인계](commulingo_people_handoff.md), 변경 순서와 완료 상태는 [인물 편집 체크리스트](commulingo-people-editing-plan.md)를 참고한다.
@@ -78,7 +78,7 @@ DB에 쓰는 작업의 입력과 기록은 git이 아니라 R2(`cyber-lenin-back
 - 자격증명: leninbot 백업 유닛과 같은 systemd credstore 키(`/etc/credstore.encrypted/r2_s3_access_key_id.cred`, `r2_s3_secret_access_key.cred`)를 이 유닛이 `LoadCredentialEncrypted=`로 직접 받는다. `.env`에는 두지 않는다. 래퍼는 `sudo systemd-run`으로 같은 구성의 임시 유닛을 띄운다(터미널이 없으면 `sudo -n`, sudo가 없으면 건너뛰고 타이머가 올린다). 계정 id는 leninbot `.env`의 `R2_CF_ACCOUNT_ID`. 클라이언트는 의존성 없는 `services/r2.js`다. 2026-10-08 이전 데이터 SQL 일부는 `cyber-lenin-backups/commulingo-migrations/`에 있다(옛 `scripts/archive-migrations-r2`, leninbot 자격증명 의존이라 폐기).
 - 참고 문헌은 2026-10-08부터 DB(`commulingo_docs`)에 있다. 편집은 `scripts/commulingo-docs`(export → 수정 → put, `put-body`, `history`/`restore`), 규칙은 `data/commulingo/docs/README.md`. 서버는 `docs-snapshot.json`과 본문 캐시 `docs-cache/<sha256>.html`(둘 다 gitignore)로 서빙한다.
 - 활동 카탈로그·정치국/서기국/조직국 명부·사건 지도 통제 단계·계보도는 2026-10-08부터 DB 문서(`commulingo_data_documents`, 키 `activity-catalog`·`politburo`·`event-control/<id>`·`genealogy/<id>`)다. 편집은 `scripts/commulingo-data`(export → 수정 → put, `history`/`restore`). 서버는 `data-documents-snapshot.json`으로 서빙하고, leninbot이 읽는 `activity-catalog.json`을 같은 경로에 써 둔다(둘 다 gitignore). DB도 스냅샷도 없는 저장소(클라우드 세션 테스트)는 고정 시드 `scripts/fixtures/commulingo-data-documents-seed.json`을 쓴다. 이 시드는 데이터가 바뀌어도 갱신하지 않는다.
-- 아직 git에 있는 데이터 파일(`courses/`, `lessons.json`)은 바꾸면 커밋한다. DB 이전은 4단계다.
+- 학습 강좌(옛 `courses/`, `lessons.json`)도 2026-11-01부터 DB 데이터 문서 `course/<id>`다([4단계](commulingo-data-off-git.md#4단계-학습-강좌-2026-11-01)). git에 남은 CommuLingo 데이터 파일은 계약 JSON(`person-editorial-contract.json` 등)뿐이다.
 
 ## 인증
 

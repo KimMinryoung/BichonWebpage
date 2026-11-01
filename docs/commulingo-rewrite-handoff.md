@@ -19,7 +19,7 @@
 ### 자본론 1권 재작업 (하네스 `scripts/commulingo-rewrite/`)
 - 장마다: 원문 캐시 → 프롬프트(루브릭: 상황→기제→오개념→논증, 오답은 실제 오개념, 길이 단서 금지, 선택지별 피드백, 원문 축어 발췌+자체 번역, 도해, 초심자 브리핑) → 모델 → `gate.js` → 재시도(최대 2회) → 후보 `temp_dev/commulingo-rewrite/candidates/<id>.json`.
 - 검수: `.claude/agents/commulingo-reviewer.md`(Opus 5, gitignore 경로라 레포에는 없음; 새 세션에서 `commulingo-reviewer`로 호출, 이 세션에서는 general-purpose+opus로 같은 지시를 줌). 후보를 직접 고치고 gate를 통과시킨 뒤 `review.jsonl`에 판정을 남긴다. 검수가 실제로 잡은 것: 원문에 없는 수치·비유, 뜻이 뒤집힌 발췌 번역, 국·영문이 딴말인 오답, 장 번호 메타 프롬프트, 농담 오답, 일본어 조사 누출, 용어 표기 이탈.
-- 적용: `node scripts/commulingo-rewrite/apply.js --chapters …` → 원자적 쓰기 → 호스트 shard 재빌드 → validator prune → 발췌 검사 → 원장. 그 뒤 `npm test`, 커밋·푸시(배포 불필요), `node scripts/changed-commulingo-lessons.js HEAD~1 HEAD | node scripts/purge-commulingo.js --old-version <이전 version> --stdin`.
+- 적용: `node scripts/commulingo-rewrite/apply.js --chapters … [--dry-run]` → 바뀐 권을 데이터 문서 `course/capital-volN`으로 `scripts/commulingo-data put`(강좌 쓰기 검사) → validator prune → 원장. 커밋·배포·퍼지 불필요(2026-11-01부터, 그 전에는 `lessons.json`을 고쳐 커밋했다).
 - 모델과 비용: 처음 Claude Sonnet 5(Anthropic API 종량)로 1~21장을 만들었고 90회 호출 약 $27가 나갔다. 사용자 요청으로 기본 모델을 DeepSeek V4 Pro(프록시 `/deepseek`)로 바꿨다(장당 $0.05~0.10). DeepSeek는 프롬프트 구체성은 좋으나 기계 검사에 안 걸리는 오염(가나 누출, 날조 수치, 표기 이탈, 분량 초과, 빠진 중괄호)이 잦아 검수가 필수다. gate에 가나·표기 이탈 검사와 중괄호 복구를 넣었다.
 
 ### 학습 기능 (코드, 배포 대기)
