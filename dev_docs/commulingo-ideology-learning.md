@@ -109,4 +109,8 @@
 
 short-learning 세 강좌(사회주의의 분기·프랑스 혁명·성과 젠더 33장)의 learningFocus를 한 줄로 다시 쓰고 readings를 넣었다. guided-reading 10강좌(73장)도 같은 형식으로 learningFocus를 새로 쓰고, readings에 그 장이 읽는 대목(예: 『루이 보나파르트의 브뤼메르 18일』 제5장)과 직접 읽는 다른 문헌을 넣었다. 『자본』 세 권은 기존 한 줄 learningFocus를 그대로 두고 readings에 권·장을 넣었다. 시간이 적혀 있지 않던 『자본』과 『유물론과 경험비판론』의 minutes는 추정치다: max(문항 수, 한국어 본문 글자 수 / 450). 작업본은 `scripts/content/chapter-card-redesign/`.
 
+readings의 `doc`(사이트 참고 문헌 id)과 `anchor`(읽는 절)는 전문이 사이트 문헌에 있을 때만 넣는다. 매핑은 데이터에만 있고 페이지는 링크를 그릴 뿐이며, 저장 게이트(`sourceProblems`)가 문헌과 앵커가 실제로 있는지 확인한다. guided-reading 강좌의 첫 reading 앵커는 장의 `sourceUrl`과 같다. 『자본』·푸코처럼 사이트에 전문이 없는 문헌은 링크 없는 칩으로 남는다.
+
+강좌 소개·배지에 「한 문단씩 끊어 읽습니다」, 「원문 끊어 읽기」 같은 진행 방식 문구를 쓰지 않는다(배지는 「원문 읽기 · N편」).
+
 카드 높이는 내용대로 둔다(고정 `min-height` 없음). 레슨이 하나뿐인 장은 기본/심화를 고를 일이 없으므로 「기본」 라벨을 레슨 버튼·학습 화면 배지·다음 학습 안내에서 뺀다(`soleLevel`).

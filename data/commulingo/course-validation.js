@@ -73,7 +73,10 @@ function validateCourseShape(key, course) {
 
 // The chapter card's length and readings are fields, not prose to parse: the
 // summary no longer opens with 약 12분 · / About 12 minutes ·, and each
-// reading is { author?, title, year, endYear? } with ko and en text.
+// reading is { author?, title, year, endYear?, doc?, anchor? } with ko and en
+// text. doc names the site reference document holding the full text (anchor:
+// the section read); the page only renders the link, and sourceProblems checks
+// that the document and anchor exist.
 const LENGTH_PREFIX = /^\s*(약\s*\d+\s*분|About\s+\d+\s+minutes?)\s*·/i;
 function checkChapterCard(key, chapter) {
     const where = `${key}: ${chapter.id}`;
@@ -99,7 +102,11 @@ function checkChapterCard(key, chapter) {
         if (reading.endYear !== undefined && !(Number.isInteger(reading.endYear) && reading.endYear > reading.year)) {
             throw badRequest(`${at}.endYear must be an integer after year`);
         }
-        const extra = Object.keys(reading).filter(k => !['author', 'title', 'year', 'endYear'].includes(k));
+        if (reading.doc !== undefined && !(typeof reading.doc === 'string' && ID.test(reading.doc))) throw badRequest(`${at}.doc must be a document id`);
+        if (reading.anchor !== undefined && !(reading.doc && typeof reading.anchor === 'string' && ID.test(reading.anchor))) {
+            throw badRequest(`${at}.anchor needs a doc and must be an element id`);
+        }
+        const extra = Object.keys(reading).filter(k => !['author', 'title', 'year', 'endYear', 'doc', 'anchor'].includes(k));
         if (extra.length) throw badRequest(`${at} has unknown fields ${extra.join(', ')}`);
     });
 }
@@ -216,6 +223,13 @@ function sourceProblems(course) {
     };
     const problems = [];
     for (const chapter of course.chapters || []) {
+        (chapter.readings || []).forEach((reading, index) => {
+            if (!reading || !reading.doc) return;
+            const where = `${chapter.id}/readings[${index}]`;
+            const page = siteDoc(reading.doc);
+            if (!page) problems.push(`${where}: document ${reading.doc} not found`);
+            else if (reading.anchor && !page.ids.has(reading.anchor)) problems.push(`${where}: #${reading.anchor} not in ${reading.doc}`);
+        });
         for (const lesson of chapter.lessons || []) {
             for (const question of lesson.questions || []) {
                 const where = `${lesson.id}/${question.id}`;

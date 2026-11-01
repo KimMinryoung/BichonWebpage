@@ -676,16 +676,20 @@
         return (chapter.readings || []).map(function(reading) {
             var year = reading.year ? String(reading.year) : '';
             if (year && reading.endYear) year += '–' + reading.endYear;
-            return { author: text(reading.author), title: text(reading.title), year: year };
+            var href = reading.doc ? '/commulingo/docs/' + encodeURIComponent(reading.doc) + (reading.anchor ? '#' + encodeURIComponent(reading.anchor) : '') : '';
+            return { author: text(reading.author), title: text(reading.title), year: year, href: href };
         }).filter(function(reading) { return reading.title; });
     }
 
+    // A reading whose full text is in the site library links to it (the
+    // course data names the document; nothing is matched here).
     function readingChip(reading) {
-        return '<li>'
-            + (reading.author ? '<span class="commu-reading-author">' + escapeHtml(reading.author) + '</span>' : '')
+        var inner = (reading.author ? '<span class="commu-reading-author">' + escapeHtml(reading.author) + '</span>' : '')
             + '<span class="commu-reading-title">' + escapeHtml(reading.title) + '</span>'
-            + (reading.year ? '<span class="commu-reading-year">' + escapeHtml(reading.year) + '</span>' : '')
-            + '</li>';
+            + (reading.year ? '<span class="commu-reading-year">' + escapeHtml(reading.year) + '</span>' : '');
+        return reading.href
+            ? '<li><a href="' + escapeHtml(reading.href) + '">' + inner + '</a></li>'
+            : '<li>' + inner + '</li>';
     }
 
     function createLessonAction(lesson) {

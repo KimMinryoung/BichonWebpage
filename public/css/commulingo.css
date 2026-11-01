@@ -256,6 +256,30 @@
     padding: 3px 7px;
 }
 
+.commu-chapter-readings li:has(a) {
+    border-color: var(--link);
+    padding: 0;
+}
+
+.commu-chapter-readings a {
+    color: inherit;
+    display: block;
+    padding: 3px 7px;
+    text-decoration: none;
+}
+
+.commu-chapter-readings a:hover {
+    background: var(--bg-surface-hover);
+}
+
+.commu-chapter-readings a .commu-reading-title {
+    color: var(--link);
+}
+
+.commu-chapter-readings a:hover .commu-reading-title {
+    text-decoration: underline;
+}
+
 .commu-reading-author::after {
     content: ' ';
 }
