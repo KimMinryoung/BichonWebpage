@@ -34,7 +34,7 @@ scripts/test --all --list         # 무엇이 돌고 무엇이 왜 건너뛰어�
 scripts/test name-boundaries war  # 이름에 낱말이 들어간 테스트만
 ```
 
-테스트는 서로 독립이라 CPU 수만큼 병렬로 돈다. 한 테스트가 `TEST_TIMEOUT_S`(기본 300초)를 넘기면 실패로 끊는다.
+테스트는 CPU 수만큼 병렬로 돈다. `tests/db`는 한 DB를 함께 쓰고 전역 개수(제안·리비전)를 비교하므로 그 옆에서 하나씩 차례로 돈다. 한 테스트가 `TEST_TIMEOUT_S`(기본 300초)를 넘기면 실패로 끊는다.
 
 ## 환경에 따른 자동 제외
 

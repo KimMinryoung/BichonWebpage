@@ -11,7 +11,7 @@
 //
 // Each test declares what it needs (`// @requires …`, tests/lib/requirements.js);
 // a test whose needs this machine lacks is skipped with the reason, never failed.
-// Tests are independent and run in parallel, one per CPU.
+// Tests run in parallel, one per CPU; tests/db run one at a time beside them.
 'use strict';
 const fs = require('node:fs');
 const os = require('node:os');
@@ -33,12 +33,16 @@ if (args.includes('-h') || args.includes('--help')) {
 const filters = args.filter(arg => !arg.startsWith('-'));
 const wants = dir => args.includes('--all') || args.includes('--' + dir) || filters.some(word => word.startsWith(dir + '/'));
 
-function testsIn(dir, implied = []) {
+// `serial`: the database tests share one database and compare global counts
+// (suggestions, revisions) that another test's committed writes would move,
+// so they run one after another, beside the parallel rest.
+function testsIn(dir, implied = [], serial = false) {
     const full = path.join(__dirname, dir);
     return fs.readdirSync(full).filter(file => file.endsWith('.js')).sort().map(file => ({
         name: (dir === 'unit' ? '' : dir + '/') + file.slice(0, -3),
         command: [process.execPath, path.join(full, file)],
         requires: [...implied, ...declaredRequirements(path.join(full, file))],
+        serial,
     }));
 }
 
@@ -59,7 +63,7 @@ if (fs.existsSync(path.join(ROOT, 'node_modules/.bin/eslint'))) {
 let tests = [
     ...testsIn('unit'),
     ...(wants('browser') ? testsIn('browser', ['browser']) : []),
-    ...(wants('db') ? testsIn('db') : []),
+    ...(wants('db') ? testsIn('db', [], true) : []),
     ...checks,
 ];
 if (filters.length) tests = tests.filter(test => filters.some(word => test.name.includes(word.replace(/\.js$/, ''))));
@@ -99,15 +103,21 @@ async function main() {
         for (const test of tests) console.log((test.error ? 'FAIL ' : test.skip ? 'skip ' : 'run  ') + test.name + (test.error || test.skip ? '  — ' + (test.error || test.skip) : ''));
         return;
     }
-    const queue = tests.filter(test => !test.skip && !test.error);
+    const runnable = tests.filter(test => !test.skip && !test.error);
+    const parallel = runnable.filter(test => !test.serial);
+    const serial = runnable.filter(test => test.serial);
     let next = 0;
     async function worker() {
-        while (next < queue.length) {
-            const test = queue[next++];
+        while (next < parallel.length) {
+            const test = parallel[next++];
             test.result = await run(test);
         }
     }
-    await Promise.all(Array.from({ length: Math.max(1, os.cpus().length) }, worker));
+    async function inOrder() {
+        for (const test of serial) test.result = await run(test);
+    }
+    const workers = Math.max(1, os.cpus().length - (serial.length ? 1 : 0));
+    await Promise.all([inOrder(), ...Array.from({ length: workers }, worker)]);
 
     let failed = 0, skipped = 0, passed = 0;
     for (const test of tests) {
