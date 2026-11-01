@@ -221,16 +221,12 @@
 .commu-lesson-focus {
     border-left: 3px solid var(--accent);
     color: var(--text-primary);
-    display: -webkit-box;
     font-size: 0.88rem;
     line-height: var(--leading-relaxed);
     text-align: justify;
     word-break: normal;
     margin: 0;
-    overflow: hidden;
     padding-left: 9px;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
 }
 
 .commu-chapter-minutes {
