@@ -11,7 +11,10 @@
     <% var isDecision = (typeof bookFormat !== 'undefined' && bookFormat === 'decision-history'); %>
     <main class="container commulingo-shell" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
-            trail: [{ label: bookTitle }],
+            trail: [
+                { label: strings.commuLingo.courses, href: '/commulingo/learn' },
+                { label: bookTitle }
+            ],
             dictJump: true }) %>
 
         <% if (isDecision) { %>

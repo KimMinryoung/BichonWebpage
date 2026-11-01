@@ -28,6 +28,7 @@ router.get('/', async (req, res) => {
             pageDescription: res.locals.strings.commuLingo.drillDesc,
             pagePath: '/commulingo/drill',
             jsonLd: commuLingoBreadcrumb(lang, [
+                { name: res.locals.strings.commuLingo.learn, href: '/commulingo/learn' },
                 { name: res.locals.strings.commuLingo.drill, href: '/commulingo/drill' },
             ], res.locals.urlLanguage),
         });
@@ -35,7 +36,7 @@ router.get('/', async (req, res) => {
         console.error('commulingo drill index:', err);
         errorPage.serverError(res, {
             message: res.locals.lang === 'en' ? 'Failed to load the training ground.' : '훈련장을 불러올 수 없습니다.',
-            backHref: '/commulingo', backLabel: 'CommuLingo',
+            backHref: '/commulingo/learn', backLabel: res.locals.strings.commuLingo.learn,
         });
     }
 });
@@ -66,11 +67,11 @@ router.get('/shorts', async (req, res) => {
         setShortPublicCache(res);
         res.render('public/commulingo-shorts', {
             shortsMeta: { version: shorts.version, bucketCount: shorts.bucketCount },
-            pageTitle: c.shorts + ' — ' + c.drill,
+            pageTitle: c.shorts + ' — ' + c.name,
             pageDescription: c.shortsDesc,
             pagePath: '/commulingo/drill/shorts',
             jsonLd: commuLingoBreadcrumb(lang, [
-                { name: c.drill, href: '/commulingo/drill' },
+                { name: c.learn, href: '/commulingo/learn' },
                 { name: c.shorts, href: '/commulingo/drill/shorts' },
             ], res.locals.urlLanguage),
         });
@@ -78,7 +79,7 @@ router.get('/shorts', async (req, res) => {
         console.error('commulingo shorts page:', err);
         errorPage.serverError(res, {
             message: res.locals.lang === 'en' ? 'Failed to load Shorts.' : '쇼츠를 불러올 수 없습니다.',
-            backHref: '/commulingo/drill', backLabel: res.locals.strings.commuLingo.drill,
+            backHref: '/commulingo/learn', backLabel: res.locals.strings.commuLingo.learn,
         });
     }
 });

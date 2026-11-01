@@ -489,6 +489,7 @@ async function buildSitemapXml() {
         for (const p of pagesList) xml += url(`/p/${encodeURIComponent(p.slug)}`, p.updated_at || null, '0.6', '', p.has_translation);
         for (const item of hubItems) xml += url(`/hub/${encodeURIComponent(item.slug)}`, item.published_at || null, '0.6', '', item.has_translation);
         xml += url('/commulingo', commuLingoLastmod, '0.8', 'daily');
+        xml += url('/commulingo/learn', commuLingoLastmod, '0.8', 'daily');
         xml += url('/commulingo/people', peopleLastmod, '0.7', 'daily');
         xml += url('/commulingo/terms', termsLastmod, '0.7', 'daily');
         xml += url('/commulingo/events', eventsLastmod, '0.7', 'weekly');

@@ -5926,9 +5926,16 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commulingo-home .commulingo-hero-dict-label {
     padding-inline: 18px;
 }
-.commulingo-home .commu-dict-nav {
+/* Tab rows inside the hub hero sit flush against its frame; a row that
+   stands on its own (the learning tabs under the crumb) keeps its border. */
+.commulingo-home .commulingo-hero-dict .commu-dict-nav {
     border-inline: 0;
     border-bottom: 0;
+}
+/* The home shell's 12px gap needs a deeper pull to join the crumb to the tab
+   row below it than the 8px detail shell does. */
+.commulingo-home .commu-crumb.is-attached {
+    margin-bottom: -13px;
 }
 /* The search box closes the tab row: its top border is the tabs' bottom
    line, and the hero's own frame stands in for its sides. */
@@ -5943,7 +5950,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     border-right: 0;
     border-bottom: 0;
 }
-.commulingo-home .commu-dict-tab {
+.commulingo-home .commulingo-hero-dict .commu-dict-tab {
     min-height: 54px;
 }
 .commulingo-home .commu-updates {
@@ -5996,13 +6003,13 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     .commulingo-home .commulingo-hero-dict-label {
         padding-inline: 12px;
     }
-    .commulingo-home .commu-dict-tab {
+    .commulingo-home .commulingo-hero-dict .commu-dict-tab {
         flex-direction: column;
         gap: 6px;
         padding: 10px 2px;
         min-height: 64px;
     }
-    .commulingo-home .commu-dict-tab .commu-role-icon {
+    .commulingo-home .commulingo-hero-dict .commu-dict-tab .commu-role-icon {
         width: 18px;
         height: 18px;
     }

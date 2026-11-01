@@ -4,6 +4,7 @@ const { loadCommuLingoUpdateGroups } = require('../services/commulingo-updates')
 const { loadCommuLingoCatalog } = require('../data/commulingo/shards');
 const { roleIconSvg } = require('../data/commulingo/role-icons');
 const { dictTabs } = require('../data/commulingo/dict-tabs');
+const { learnTabs } = require('../data/commulingo/learn-tabs');
 const { flagImg } = require('../data/commulingo/flag-icons');
 const { personFlagHref } = require('../data/commulingo/nationality-filter');
 
@@ -22,8 +23,9 @@ router.use((req, res, next) => {
     res.locals.personFlagHref = personFlagHref;
     res.locals.roleIconSvg = roleIconSvg;
     res.locals.dictTabs = dictTabs;
+    res.locals.learnTabs = learnTabs;
     // Lists share a smaller sheet; detail, map and training pages retain all rules.
-    const homePage = /^\/\/?$/.test(req.path);
+    const homePage = /^\/(?:learn\/?)?$/.test(req.path);
     const listPage = /^\/(?:people|events|terms)?\/?$/.test(req.path) || /^\/people\/list\/[^/]+\/?$/.test(req.path);
     res.locals.extraCss = [
         `/css/commulingo-crumb.css?v=${res.locals.assetVersion}`,
@@ -33,19 +35,34 @@ router.use((req, res, next) => {
 });
 
 const { summarizeBooks, groupBooks } = require('../data/commulingo/book-summary');
+const { commuLingoBreadcrumb } = require('../data/commulingo/page-helpers');
 
+// The hub: the learning sections and the dictionaries side by side, with
+// the update notes. The courses themselves live on /commulingo/learn.
 router.get('/', asyncHandler(async (req, res) => {
-    const catalog = loadCommuLingoCatalog();
-    const collections = summarizeBooks(catalog);
     res.render('public/commulingo-index', {
         updateGroups: await loadCommuLingoUpdateGroups(res.locals.lang),
-        books: { version: catalog.version, collections },
-        bookGroups: groupBooks(collections, res.locals.strings.commuLingo, res.locals.lang),
         pageTitle: res.locals.strings.commuLingo.name,
         pageDescription: res.locals.strings.commuLingo.description,
         pagePath: '/commulingo',
     });
 }));
+
+router.get('/learn', (req, res) => {
+    const catalog = loadCommuLingoCatalog();
+    const collections = summarizeBooks(catalog);
+    const c = res.locals.strings.commuLingo;
+    res.render('public/commulingo-learn', {
+        books: { version: catalog.version, collections },
+        bookGroups: groupBooks(collections, c, res.locals.lang),
+        pageTitle: `${c.courses} — ${c.name}`,
+        pageDescription: c.coursesDesc,
+        pagePath: '/commulingo/learn',
+        jsonLd: commuLingoBreadcrumb(res.locals.lang, [
+            { name: c.learn, href: '/commulingo/learn' },
+        ]),
+    });
+});
 
 router.get('/search', require('./search').searchPage('commulingo'));
 router.use(require('./commulingo-map'));

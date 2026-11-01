@@ -16,7 +16,7 @@
 
 확인한 코드:
 
-- `views/public/commulingo-index.ejs`: 전체 진도율, 사전 탐색, 최근 업데이트, 이어하기, 퀴즈 입구, 책 목록.
+- 메뉴 구조(2026-11-01): `/commulingo`는 입구다. '학습'(강좌·훈련장·쇼츠) 탭과 '사전 · 자료실' 탭·검색, 업데이트 노트를 둔다(`views/public/commulingo-index.ejs`). 강좌 진도율, 이어하기, 책 목록은 `/commulingo/learn`(`views/public/commulingo-learn.ejs`)의 강좌 화면에 있다. 강좌·훈련장(`/commulingo/drill`)·쇼츠(`/commulingo/drill/shorts`)는 같은 학습 탭 줄(`data/commulingo/learn-tabs.js`, `commulingo-learn-nav` partial)을 위치 표시 바로 아래에 붙인다. 대문 카드의 '학습' 링크는 `/commulingo/learn`으로 간다.
 - `routes/commulingo-books.js`, `public/js/commulingo.js`: 책·장 중심 목록, 학습 시작 때 문항 로딩, 개념 설명과 도해, 선택지 피드백, 오답 재시도.
 - `public/js/commulingo-schedule.js`: 문항별 로컬 기록과 오답 복습. 한 번도 틀리지 않은 문항은 예약하지 않으며 3연속 정답이면 복습에서 빠진다. 간격 배열에는 1·3·7·14·30일이 있지만 현행 졸업 조건상 실제 정답 후 예약에는 1·3일만 쓰인다.
 - `routes/commulingo-progress.js`: 로그인 계정의 진도·응답 동기화. 비로그인 기록은 브라우저에 남으므로 DB만으로 학습량을 알 수 없다.

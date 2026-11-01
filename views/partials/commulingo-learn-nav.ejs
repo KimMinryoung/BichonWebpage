@@ -1,0 +1,13 @@
+<%
+/* Switcher between the learning sections (강좌 · 훈련장 · 쇼츠). Same tab
+   component as the dictionary switcher (commulingo-dict-nav). `active` marks
+   the page currently open: 'courses' | 'drill' | 'shorts' | null. learnTabs
+   comes from the commulingo router middleware. */
+var learnNavEn = lang === 'en';
+var learnNavActive = typeof active !== 'undefined' ? active : null;
+%>
+<nav class="ui-tabs commu-dict-nav commu-learn-nav" aria-label="<%= learnNavEn ? 'Learn' : '학습' %>">
+    <% learnTabs(learnNavEn).forEach(function(tab) { %>
+    <a class="ui-tab commu-dict-tab<%= learnNavActive === tab.key ? ' is-active' : '' %>" href="<%= tab.href %>"<% if (learnNavActive === tab.key) { %> aria-current="page"<% } %>><%- roleIconSvg(tab.icon) %><span data-short="<%= tab.short %>"><%= tab.label %></span></a>
+    <% }) %>
+</nav>

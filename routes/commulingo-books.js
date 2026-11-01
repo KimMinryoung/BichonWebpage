@@ -22,7 +22,7 @@ router.get('/book/:collectionId', async (req, res) => {
         const catalog = loadCommuLingoCatalog();
         const collection = (catalog.collections || []).find(item => item.id === collectionId);
         if (!collection && MERGED_BOOKS[collectionId]) return res.redirect(301, `/commulingo/book/${MERGED_BOOKS[collectionId]}`);
-        if (!collection) return res.redirect('/commulingo');
+        if (!collection) return res.redirect('/commulingo/learn');
 
         // Linked chapters, chapter dictionary chips, and the decision-link payload are
         // pure functions of (collection, link indexes, lang); the chip list
@@ -54,6 +54,7 @@ router.get('/book/:collectionId', async (req, res) => {
             pageDescription: localize(collection.description, res.locals.lang) || res.locals.strings.commuLingo.description,
             pagePath: `/commulingo/book/${collection.id}`,
             jsonLd: commuLingoBreadcrumb(res.locals.lang, [
+                { name: res.locals.strings.commuLingo.courses, href: '/commulingo/learn' },
                 { name: bookTitle, href: `/commulingo/book/${collection.id}` },
             ]),
         });

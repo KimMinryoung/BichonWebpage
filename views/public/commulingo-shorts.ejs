@@ -10,9 +10,11 @@
         <script id="commulingo-shorts-meta" type="application/json"><%- JSON.stringify(shortsMeta).replace(/</g, '\\u003c') %></script>
         <%- include('../partials/commulingo-crumb', {
             trail: [
-                { label: strings.commuLingo.drill, href: '/commulingo/drill' },
+                { label: strings.commuLingo.learn, href: '/commulingo/learn' },
                 { label: strings.commuLingo.shorts }
-            ] }) %>
+            ],
+            attached: true }) %>
+        <%- include('../partials/commulingo-learn-nav', { active: 'shorts' }) %>
 
         <h1 class="visually-hidden"><%= strings.commuLingo.shorts %></h1>
         <section class="commu-shorts" aria-label="<%= strings.commuLingo.shorts %>">

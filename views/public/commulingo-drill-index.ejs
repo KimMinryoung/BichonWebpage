@@ -8,8 +8,13 @@
 
     <main class="container commulingo-shell" data-lang="<%= lang %>">
         <%- include('../partials/commulingo-crumb', {
-            trail: [{ label: strings.commuLingo.drill }],
-            dictJump: true }) %>
+            trail: [
+                { label: strings.commuLingo.learn, href: '/commulingo/learn' },
+                { label: strings.commuLingo.drill }
+            ],
+            dictJump: true,
+            attached: true }) %>
+        <%- include('../partials/commulingo-learn-nav', { active: 'drill' }) %>
 
         <header class="box commulingo-hero commulingo-hero--graph">
             <div>
@@ -17,14 +22,6 @@
                 <p><%= strings.commuLingo.drillDesc %></p>
             </div>
         </header>
-
-        <section class="box commu-drill-promo" aria-label="<%= strings.commuLingo.shorts %>">
-            <div>
-                <h2><%= strings.commuLingo.shorts %></h2>
-                <p><%= strings.commuLingo.shortsDesc %></p>
-            </div>
-            <a class="btn btn-primary" href="/commulingo/drill/shorts"><%= strings.commuLingo.shortsOpen %></a>
-        </section>
 
         <div id="commuDrillDeckList">
         <% groups.forEach(function(group) { %>

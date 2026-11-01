@@ -2,26 +2,20 @@
 <html lang="<%= lang %>">
 <head>
     <%- include('../partials/head') %>
-    <meta name="csrf-token" content="<%= typeof csrfToken !== 'undefined' ? csrfToken : '' %>">
 </head>
 <body class="commulingo-page">
     <%- include('../partials/nav') %>
 
     <main class="container commulingo-shell commulingo-home" data-lang="<%= lang %>">
-        <script id="commulingo-books" type="application/json"><%- JSON.stringify(books).replace(/</g, '\\u003c') %></script>
-
         <header class="box commulingo-hero commulingo-hero--home">
             <div class="commulingo-hero-main">
                 <h1><%= strings.commuLingo.title %></h1>
-                <div class="commulingo-home-progress">
-                    <div class="commulingo-home-progress-label">
-                        <label for="commuProgressBar"><%= strings.commuLingo.homeProgress %></label>
-                        <span id="commuProgressText">0%</span>
-                    </div>
-                    <progress id="commuProgressBar" max="100" value="0">0%</progress>
-                </div>
             </div>
             <p class="commulingo-home-description"><%= strings.commuLingo.description %></p>
+            <div class="commulingo-hero-dict">
+                <span class="commulingo-hero-dict-label"><%= strings.commuLingo.learn %></span>
+                <%- include('../partials/commulingo-learn-nav', { active: null }) %>
+            </div>
             <div class="commulingo-hero-dict">
                 <span class="commulingo-hero-dict-label"><%= strings.commuLingo.dictSectionTitle %></span>
                 <%- include('../partials/commulingo-dict-nav', { active: null }) %>
@@ -32,27 +26,9 @@
         </header>
 
         <%- include('../partials/commulingo-updates', { updateGroups }) %>
-
-        <a class="commulingo-resume is-hidden" id="commuResume" href="#"></a>
-
-        <section class="box commu-drill-promo" aria-label="<%= strings.commuLingo.drill %>">
-            <div>
-                <h2><%= strings.commuLingo.drill %></h2>
-                <p><%= strings.commuLingo.drillDesc %></p>
-            </div>
-            <a class="btn btn-primary" href="/commulingo/drill"><%= strings.commuLingo.drillOpen %></a>
-        </section>
-
-        <section class="commulingo-book-groups" id="commuBookList" aria-label="<%= strings.commuLingo.chooseBook %>">
-            <%- include('../partials/commulingo-book-groups', { bookGroups }) %>
-        </section>
     </main>
 
     <%- include('../partials/footer') %>
-    <script>
-        window.COMMULINGO_STRINGS = <%- JSON.stringify(strings.commuLingo).replace(/</g, '\\u003c') %>;
-    </script>
-    <script defer src="/js/commulingo-schedule.js?v=<%= assetVersion %>"></script>
     <script defer src="/js/commulingo-index.js?v=<%= assetVersion %>"></script>
 </body>
 </html>
