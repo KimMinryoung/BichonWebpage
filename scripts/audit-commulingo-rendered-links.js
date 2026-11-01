@@ -30,9 +30,10 @@ function decode(text) {
 }
 
 // Block tags end a passage for the linker (data/commulingo/html-fragments.js),
-// so they separate words here too; inline tags do not.
+// so they show as ¶ here — a heading's last name is not followed by the next
+// paragraph's first word; inline tags join words.
 function plain(html) {
-    return decode(html.replace(/<\/?(?:p|div|li|td|th|tr|h[1-6]|blockquote|section|article|br|hr)\b[^>]*>/gi, ' ')
+    return decode(html.replace(/<\/?(?:p|div|li|td|th|tr|h[1-6]|blockquote|section|article|br|hr)\b[^>]*>/gi, ' ¶ ')
         .replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ');
 }
 
@@ -179,7 +180,10 @@ function suspects(file) {
         let kind = '';
         if (!nameContext.boundary(text, start, end, en)) kind = 'part-of-longer-word';
         else if (single && nameContext.namedAfter(text, end)) kind = 'named-after';
-        else if (!nameContext.standsAlone(text, start, end, { en, own }, ['x'])) kind = 'followed-by-name';
+        // The report does not know the dictionary, so a hyphenated second
+        // name (Molotov-Ribbentrop) counts as known here, as the linker
+        // keeps it when the dictionary has that person.
+        else if (!nameContext.standsAlone(text, start, end, { en, own, shortWords: { has: () => true } }, ['x'])) kind = 'followed-by-name';
         else if (en && single) {
             const word = (link.before.match(/(\p{Lu}[\p{L}.'’-]*)\s+$/u) || [])[1] || '';
             if (word && !/(?:['’]s|\.)$/u.test(word) && precededByName(link.before) && !own.x.has(fold(word))) kind = 'preceded-by-name';
