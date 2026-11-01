@@ -107,13 +107,46 @@ function install(rows) {
     return byKey;
 }
 
+// Incremental pull. The store's write-counter gate is per table, so any
+// document write used to re-read every document, ~10 MB since the courses
+// joined (2026-11-01). Every write bumps the row's revision (writeDataDocuments,
+// restores included), so read the key/revision list first and fetch content
+// only for rows that are new or changed. Every FULL_FETCH_EVERY pulls (about
+// a day at the store's hourly forced pull, or sooner after writes) the cache
+// is dropped and everything is read again, against edits that bypassed the
+// revision.
+const FULL_FETCH_EVERY = 24;
+const rowCache = new Map(); // key -> row as installed
+let fetchCount = 0;
+
+function installedRow(row) {
+    return { key: row.key, content: row.content, revision: row.revision, updated_at: row.updated_at && new Date(row.updated_at).toISOString() };
+}
+
+async function fetchDocumentRows() {
+    fetchCount += 1;
+    if (fetchCount % FULL_FETCH_EVERY === 1) rowCache.clear();
+    const heads = (await db.query('SELECT key, revision FROM commulingo_data_documents ORDER BY key')).rows;
+    const stale = heads.filter(head => {
+        const cached = rowCache.get(head.key);
+        return !cached || cached.revision !== head.revision;
+    }).map(head => head.key);
+    if (stale.length) {
+        const { rows } = await db.query(
+            'SELECT key, content, revision, updated_at FROM commulingo_data_documents WHERE key = ANY($1)', [stale]);
+        rows.forEach(row => rowCache.set(row.key, installedRow(row)));
+    }
+    const live = new Set(heads.map(head => head.key));
+    for (const key of rowCache.keys()) if (!live.has(key)) rowCache.delete(key);
+    // A row deleted between the two queries is simply absent.
+    return heads.map(head => rowCache.get(head.key)).filter(Boolean);
+}
+
 const store = createRegistrySnapshotStore({
     label: 'commulingo data documents',
     refreshMs: Number.parseInt(process.env.COMMULINGO_DATA_DOCUMENTS_REFRESH_MS || '60000', 10),
     snapshotPath: SNAPSHOT_PATH,
-    fetchRows: async () => (await db.query(
-        'SELECT key, content, revision, updated_at FROM commulingo_data_documents ORDER BY key')).rows
-        .map(row => ({ ...row, updated_at: row.updated_at && new Date(row.updated_at).toISOString() })),
+    fetchRows: fetchDocumentRows,
     install,
     signatureTables: ['commulingo_data_documents'],
     validateSnapshot: rows => Array.isArray(rows) && rows.some(row => row.key === 'activity-catalog'),
