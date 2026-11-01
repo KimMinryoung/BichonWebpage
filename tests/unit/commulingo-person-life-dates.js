@@ -26,10 +26,10 @@ assert.throws(() => resolveLifeDates({ birth: [1891, 1] }, null, parseLifeYears(
 assert.throws(() => resolveLifeDates({ born: [1891, 1] }, null, model), /unknown lifeDates key/);
 
 // Page label: each dated side shows its date, the other its years part.
-assert.equal(lifeDatesLabel('1891–1945', { birth: [1891, 1, 24], death: [1945, 4, 21] }, 'ko'), '1891년 1월 24일 – 1945년 4월 21일');
-assert.equal(lifeDatesLabel('1891–1945', { birth: null, death: [1945, 4, 21] }, 'en'), '1891 – 21 April 1945');
-assert.equal(lifeDatesLabel('1891–1945?', { birth: [1891, 1], death: null }, 'en'), 'January 1891 – 1945?');
-assert.equal(lifeDatesLabel('1987–', { birth: [1987, 3, 5], death: null }, 'ko'), '1987년 3월 5일 –');
+assert.equal(lifeDatesLabel('1891–1945', { birth: [1891, 1, 24], death: [1945, 4, 21] }, 'ko'), '1891.1.24.–1945.4.21.');
+assert.equal(lifeDatesLabel('1891–1945', { birth: null, death: [1945, 4, 21] }, 'en'), '1891–1945.4.21.');
+assert.equal(lifeDatesLabel('1891–1945?', { birth: [1891, 1], death: null }, 'en'), '1891.1.–1945?');
+assert.equal(lifeDatesLabel('1987–', { birth: [1987, 3, 5], death: null }, 'ko'), '1987.3.5.–');
 assert.equal(lifeDatesLabel('1891–1945', { birth: null, death: null }, 'ko'), '');
 assert.equal(lifeDatesLabel('1891–1945', undefined, 'ko'), '');
 
@@ -43,7 +43,7 @@ validateEditorial({ ...base, lifeDates: null });
 const raw = { id: 'walter-model', years: '1891–1945', lifeDates: { birth: [1891, 1, 24], death: [1945, 4, 21] } };
 const metaPath = require.resolve('../../views/partials/commulingo-person-meta.ejs');
 const meta = fs.readFileSync(metaPath, 'utf8');
-for (const [lang, label] of [['ko', '1891년 1월 24일 – 1945년 4월 21일'], ['en', '24 January 1891 – 21 April 1945']]) {
+for (const [lang, label] of [['ko', '1891.1.24.–1945.4.21.'], ['en', '1891.1.24.–1945.4.21.']]) {
     const person = normalizeCommuLingoPeople({ people: [raw] }, { lang }).peopleById['walter-model'];
     assert.equal(person.years, '1891–1945');
     assert.equal(person.lifeDatesLabel, label);

@@ -10,9 +10,6 @@ function badRequest(message) {
     return err;
 }
 
-const MONTHS_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
-    'August', 'September', 'October', 'November', 'December'];
-
 function daysInMonth(year, month) {
     return new Date(Date.UTC(year, month, 0)).getUTCDate();
 }
@@ -46,21 +43,20 @@ function resolveLifeDates(input, stored, years) {
     return dates;
 }
 
-function dateText(date, lang) {
-    const [year, month, day] = date;
-    if (lang === 'ko') return `${year}년 ${month}월${day ? ` ${day}일` : ''}`;
-    return `${day ? `${day} ` : ''}${MONTHS_EN[month - 1]} ${year}`;
+// Compact numeric form in both languages: 1891.1.24. / 1891.1.
+function dateText(date) {
+    return `${date.join('.')}.`;
 }
 
 // Page label: each side with a date shows it, the other keeps its years part.
 // Empty when neither side has a date, so the page falls back to years.
-function lifeDatesLabel(yearsLabel, dates, lang) {
+function lifeDatesLabel(yearsLabel, dates) {
     if (!dates || (!dates.birth && !dates.death)) return '';
     const parts = String(yearsLabel || '').split(/\s*[–-]\s*/);
     if (parts.length !== 2) return '';
-    const birth = dates.birth ? dateText(dates.birth, lang) : parts[0];
-    const death = dates.death ? dateText(dates.death, lang) : parts[1];
-    return death ? `${birth} – ${death}` : `${birth} –`;
+    const birth = dates.birth ? dateText(dates.birth) : parts[0];
+    const death = dates.death ? dateText(dates.death) : parts[1];
+    return death ? `${birth}–${death}` : `${birth}–`;
 }
 
 module.exports = { normalizeLifeDate, resolveLifeDates, lifeDatesLabel };
