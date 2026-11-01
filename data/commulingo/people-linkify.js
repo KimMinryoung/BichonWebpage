@@ -245,6 +245,22 @@ function buildPersonLinkIndex(people, options = {}) {
     }
     contextData.namesakes = namesakes;
 
+    // One-word names that link by themselves but are not anyone's surname to
+    // the name context: a representative surname (스탈린, 케네디 →
+    // `identity`), a given-name alias (피델) or a bare alias row. They skip the
+    // surname rules that reassign a mention, yet the rules that refuse one —
+    // a given name in front (에드워드 케네디) or after it — must still read
+    // them (commulingo-name-context.js `guarded`).
+    const guarded = Object.create(null);
+    for (const alias of Object.keys(byAlias)) {
+        const entry = byAlias[alias];
+        if (!entry || /\s/.test(alias)) continue;
+        if (!/\s/.test((entry.displayName || entry.names?.display || '').trim())) continue;
+        if ((contextData.shorts[alias] || []).includes(entry.id)) continue;
+        guarded[alias] = [entry.id];
+    }
+    contextData.guarded = guarded;
+
     // BLOCKED tokens join the alternation so they are consumed before the alias
     // inside them; longest-first keeps multi-word names and compounds ahead of
     // their short forms.

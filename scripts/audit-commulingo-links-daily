@@ -16,6 +16,10 @@ mkdir -p "$rendered"
 node scripts/audit-commulingo-rendered-links.js --out "$rendered/latest.tmp.json"
 [[ -f "$rendered/latest.json" ]] && mv "$rendered/latest.json" "$rendered/previous.json"
 mv "$rendered/latest.tmp.json" "$rendered/latest.json"
+# Person links that read like a mislink (a longer word, a named place, a
+# following or preceding unknown name): scripts/audit-commulingo-rendered-links.js --suspects.
+node scripts/audit-commulingo-rendered-links.js --suspects "$rendered/latest.json" > "$rendered/suspects.txt"
+head -1 "$rendered/suspects.txt"
 if [[ -f "$rendered/previous.json" ]]; then
     node scripts/audit-commulingo-rendered-links.js --diff "$rendered/previous.json" "$rendered/latest.json" > "$rendered/daily-diff.txt"
     head -1 "$rendered/daily-diff.txt"

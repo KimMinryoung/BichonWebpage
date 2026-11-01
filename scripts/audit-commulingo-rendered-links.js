@@ -6,6 +6,7 @@
 //   node scripts/audit-commulingo-rendered-links.js [--base URL] [--kinds people,terms,events,docs]
 //        [--lang ko|en|both] [--limit N] [--out file.json]
 //   node scripts/audit-commulingo-rendered-links.js --diff before.json after.json [--json]
+//   node scripts/audit-commulingo-rendered-links.js --suspects report.json [--json]
 //
 // The page list comes from the server's sitemap. Paged reference documents are
 // followed through ?p=. Only the engine's own anchors (class commu-*-link)
@@ -28,8 +29,11 @@ function decode(text) {
         { amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'", '#x27': "'", nbsp: ' ' }[e]));
 }
 
+// Block tags end a passage for the linker (data/commulingo/html-fragments.js),
+// so they separate words here too; inline tags do not.
 function plain(html) {
-    return decode(html.replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ');
+    return decode(html.replace(/<\/?(?:p|div|li|td|th|tr|h[1-6]|blockquote|section|article|br|hr)\b[^>]*>/gi, ' ')
+        .replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ');
 }
 
 // The body column only: navigation, footers and scripts are not prose.
@@ -48,7 +52,8 @@ function extractLinks(page, html) {
         const target = href.replace(/^\/en(?=\/)/, '').replace(/^\/commulingo\//, '');
         const before = plain(body.slice(Math.max(0, m.index - 400), m.index)).slice(-CONTEXT);
         const after = plain(body.slice(m.index + m[0].length, m.index + m[0].length + 400)).slice(0, CONTEXT);
-        out.push({ page, kind: m[2], target, text: plain(m[3]), before, after });
+        const title = decode((m[1].match(/\btitle="([^"]*)"/) || [])[1] || '');
+        out.push({ page, kind: m[2], target, text: plain(m[3]), title, before, after });
     }
     return out;
 }
@@ -151,7 +156,54 @@ function diff(beforeFile, afterFile) {
     console.log('added:'); added.forEach(l => console.log(show(l)));
 }
 
-if (process.argv.includes('--diff')) {
+// Person links that read like a mislink, from a collected report: the shared
+// name rules (public/js/commulingo-name-context.js) refuse the first three on
+// every surface, so any hit there is a regression or a surface that bypasses
+// them. `preceded-by-name` is a review list, not an error: an English given
+// name the dictionary does not know (Gregory Grossman, Joan Malleson) in front
+// of a surname the dictionary links. Correct spelling variants (Lev Trotsky)
+// show up there too.
+function suspects(file) {
+    const nameContext = require('../public/js/commulingo-name-context');
+    const { precededByName } = require('../data/commulingo/person-page-links');
+    const report = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const found = [];
+    for (const link of report.links) {
+        if (link.kind !== 'person') continue;
+        const en = /^\/en\//.test(link.page);
+        const text = link.before + link.text + link.after;
+        const start = link.before.length, end = start + link.text.length;
+        const single = !/\s/.test(link.text.trim());
+        const fold = word => nameContext.normalize(word).normalize('NFD').replace(/\p{M}/gu, '');
+        const own = { x: new Set((link.title || '').split(':')[0].split(/\s+/).map(fold).filter(Boolean)) };
+        let kind = '';
+        if (!nameContext.boundary(text, start, end, en)) kind = 'part-of-longer-word';
+        else if (single && nameContext.namedAfter(text, end)) kind = 'named-after';
+        else if (!nameContext.standsAlone(text, start, end, { en, own }, ['x'])) kind = 'followed-by-name';
+        else if (en && single) {
+            const word = (link.before.match(/(\p{Lu}[\p{L}.'’-]*)\s+$/u) || [])[1] || '';
+            if (word && !/(?:['’]s|\.)$/u.test(word) && precededByName(link.before) && !own.x.has(fold(word))) kind = 'preceded-by-name';
+        }
+        if (kind) found.push({ ...link, suspect: kind });
+    }
+    if (process.argv.includes('--json')) {
+        process.stdout.write(JSON.stringify(found) + '\n');
+        return;
+    }
+    const kinds = ['part-of-longer-word', 'named-after', 'followed-by-name', 'preceded-by-name'];
+    console.log('person links=' + report.links.filter(l => l.kind === 'person').length + ' '
+        + kinds.map(kind => kind + '=' + found.filter(f => f.suspect === kind).length).join(' '));
+    for (const kind of kinds) {
+        const rows = found.filter(f => f.suspect === kind);
+        if (!rows.length) continue;
+        console.log(kind + ':');
+        rows.forEach(l => console.log(`  ${l.page}  [${l.text} → ${l.target}]  …${l.before}⟨${l.text}⟩${l.after}…`));
+    }
+}
+
+if (process.argv.includes('--suspects')) {
+    suspects(process.argv[process.argv.indexOf('--suspects') + 1]);
+} else if (process.argv.includes('--diff')) {
     const i = process.argv.indexOf('--diff');
     diff(process.argv[i + 1], process.argv[i + 2]);
 } else {

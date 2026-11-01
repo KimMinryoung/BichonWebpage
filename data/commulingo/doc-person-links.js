@@ -258,7 +258,7 @@ function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = 
             }
         }
         let lastText, paragraphAnalysis;
-        const guard = ({ match, entry, start, text, alreadyLinked }) => {
+        const guard = ({ match, entry, start, text, alreadyLinked, notAlone }) => {
             const key = normalize(match), mapping = mappings.get(key), candidate = candidates.get(key);
             // A blocked compound is consumed whole and is nobody's mention.
             if (!mapping && !candidate) return false;
@@ -278,7 +278,10 @@ function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = 
             let reason;
             if ((raw.noAutoLink || []).includes(match)) reason = 'document-blocked';
             else if (mapping?.personId === null) reason = 'unregistered-name';
-            else if (place) reason = 'place-or-institution';
+            else if (place || (notAlone && nameContext.namedAfter(text, start + match.length))) reason = 'place-or-institution';
+            // Refused by the shared name rule (linkify.js): the front of a
+            // longer word, or followed by someone else's name.
+            else if (notAlone) reason = 'not-a-standalone-name';
             else if (!entry) reason = 'ambiguous-surname';
             else if (!allowed.has(entry.id)) reason = 'person-not-allowed';
             else if (!full && conflicting.has(entry.id)) reason = 'conflicting-name-in-section';
