@@ -187,6 +187,7 @@
 .commu-book-card:hover .commu-book-desc,
 .commu-book-card:hover .commu-book-meta,
 .commu-book-card:hover .commu-book-progress-label { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
+.commu-book-card:hover .commu-book-progress-track { background: color-mix(in srgb, var(--clr-black, #010409) 45%, var(--accent, #214d2e)); border-color: var(--clr-cream, #f8edca); }
 .commu-book-card:hover .commu-book-progress-track > span { background: var(--clr-cream, #f8edca); }
 
 .commu-book-badge {

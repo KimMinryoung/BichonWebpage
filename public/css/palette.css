@@ -115,7 +115,10 @@
   /* Dark theme, default. */
   --bg-canvas: var(--clr-black);
   --bg-surface: var(--clr-ink);
-  --bg-surface-hover: var(--clr-dark);
+  /* Hover is one clear step up in ground brightness. The old #161b22 on the
+     #0b0d0a surface (and a button hover darker than the button) barely
+     registered (owner, 2026-11-01). */
+  --bg-surface-hover: color-mix(in srgb, var(--clr-cream) 12%, var(--clr-ink));
   --bg-inset: var(--clr-black);
   --border: var(--clr-cream);
   --border-emphasis: var(--clr-white);
@@ -135,7 +138,7 @@
   --accent-green: var(--clr-accent);
   --accent-red: var(--clr-red);
   --btn-bg: var(--clr-dark-raised);
-  --btn-hover: var(--clr-dark);
+  --btn-hover: color-mix(in srgb, var(--clr-cream) 14%, var(--clr-dark-raised));
   --btn-primary: var(--clr-accent);
   /* One luminance step up, not a hue change: flat square buttons react by
      ground brightness (the site-wide hover language), never by lifting. */
@@ -165,7 +168,7 @@
 [data-theme="light"] {
   --bg-canvas: var(--clr-cream-light);
   --bg-surface: var(--clr-cream-light);
-  --bg-surface-hover: color-mix(in srgb, var(--clr-accent) 8%, var(--clr-cream-light));
+  --bg-surface-hover: color-mix(in srgb, var(--clr-accent) 14%, var(--clr-cream-light));
   --bg-inset: color-mix(in srgb, var(--clr-ink) 6%, var(--clr-cream-light));
   --border: var(--clr-ink);
   --border-emphasis: var(--clr-black);
@@ -178,7 +181,7 @@
   --accent-green: var(--clr-accent);
   --accent-red: var(--clr-red);
   --btn-bg: color-mix(in srgb, var(--clr-ink) 10%, var(--clr-cream-light));
-  --btn-hover: color-mix(in srgb, var(--clr-ink) 16%, var(--clr-cream-light));
+  --btn-hover: color-mix(in srgb, var(--clr-ink) 22%, var(--clr-cream-light));
   --btn-primary: var(--clr-accent);
   --btn-primary-hover: color-mix(in srgb, var(--clr-accent) 85%, var(--clr-cream));
   --btn-danger: var(--clr-red);
