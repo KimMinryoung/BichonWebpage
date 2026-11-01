@@ -51,6 +51,18 @@ async function eventLinks(client, eventId) {
     return row;
 }
 
+// table is one of two fixed names, never caller input.
+async function setPageNoAutoLink(client, table, entityType, entityId, input) {
+    if (!Array.isArray(input)) throw badRequest('phrases must be a list');
+    const phrases = [...new Set(input.map(phrase => text(phrase, 'phrases[]')))];
+    const row = (await client.query(`SELECT no_auto_link FROM ${table} WHERE id = $1 FOR UPDATE`, [entityId])).rows[0];
+    if (!row) throw badRequest(`${entityType} not found: ${entityId}`, 404);
+    const before = row.no_auto_link || [];
+    await client.query(`UPDATE ${table} SET no_auto_link = $2::jsonb, updated_at = now() WHERE id = $1`, [entityId, JSON.stringify(phrases)]);
+    return { entityType, entityId, note: 'set no_auto_link', snapshot: { before, after: phrases },
+        changed: JSON.stringify(before) !== JSON.stringify(phrases) };
+}
+
 // Each handler returns { entityType, entityId, note, snapshot, changed }.
 const OPS = {
     async collection_upsert(client, op) {
@@ -125,6 +137,14 @@ const OPS = {
         await client.query('UPDATE commulingo_history_events SET no_auto_link = $2::jsonb, updated_at = now() WHERE id = $1', [eventId, JSON.stringify(phrases)]);
         return { entityType: 'history_event', entityId: eventId, note: 'set no_auto_link', snapshot: { before, after: phrases },
             changed: JSON.stringify(before) !== JSON.stringify(phrases) };
+    },
+    // Same per-page exception on a term or person page: strings that must not
+    // auto-link there (the page's own text names another person or sense).
+    async term_no_auto_link_set(client, op) {
+        return setPageNoAutoLink(client, 'commulingo_terms', 'term', id(op.termId, 'termId'), op.phrases);
+    },
+    async person_no_auto_link_set(client, op) {
+        return setPageNoAutoLink(client, 'commulingo_people', 'person', id(op.personId, 'personId'), op.phrases);
     },
     async event_term_links_set(client, op) {
         const eventId = id(op.eventId, 'eventId');

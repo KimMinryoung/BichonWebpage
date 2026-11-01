@@ -61,7 +61,7 @@ The CLIs `scripts/commulingo-people-upsert`, `scripts/commulingo-docs`, `scripts
 - **일반 별칭 게이트**: DB 트리거가 `commulingo_generic_aliases` 목록과 번호형 일반형(`^제?숫자(조|군|기|범주|공화국|사단|군단)$`)을 용어·인물 별칭에서 거부한다(항목 자신의 표제어와 같으면 통과). 새 일반명사를 막으려면 `registry_edit` `generic_alias_add`.
 - **러시아어 약칭 항목**은 한국어 정의 끝에 글자 이름 읽기를 쓰고(「약칭 NKVD(НКВД)는 러시아어로 '엔카베데'라고 읽는다.」 — г 게, к 카, в 베, д 데, ч 체, п 페, р 에르, с 에스, м 엠, н 엔, х 하) 그 읽기를 별칭에도 넣는다. 영어 GPU처럼 다른 뜻이 흔한 라틴 약칭 별칭은 `context`로만 승인한다.
 - **자동링크 예외** (`registry_edit`): 인물 패스는 `blocklist` `phrase`(별칭을 품은 문자열)·`alias`(성 한 단어를 아예 인덱싱하지 않음), 용어 패스는 `term-phrase`(복합어 차단, 예: 전세계→전세)·`term-alias`(중의적 별칭 제외, 표제어는 남음)·`term-headword`(표제어까지 차단; 영문은 대소문자별로 행 필요).
-- **한 페이지에서만 틀리는 링크**는 페이지 단위로 막는다: 참고 문헌은 entry의 `noAutoLink` (`doc_put` `entryPatch`), 사건은 `event_no_auto_link_set`. 거꾸로 **한 사건에서만 맞는 링크**(내전 사건의 「백군」은 러시아 백군, 핀란드 사건에서는 핀란드 백군)는 `event_term_links_set`으로 그 사건에서만 용어에 잇고 전역 승인은 search로 둔다.
+- **한 페이지에서만 틀리는 링크**는 페이지 단위로 막는다: 참고 문헌은 entry의 `noAutoLink` (`doc_put` `entryPatch`), 사건은 `event_no_auto_link_set`, 용어·인물은 `term_no_auto_link_set`·`person_no_auto_link_set`(모두 `registry_edit`, 목록 전체를 바꾸므로 `registry_get` `event_link_exceptions`·`page_link_exceptions`로 먼저 읽는다). 거꾸로 **한 사건에서만 맞는 링크**(내전 사건의 「백군」은 러시아 백군, 핀란드 사건에서는 핀란드 백군)는 `event_term_links_set`으로 그 사건에서만 용어에 잇고 전역 승인은 search로 둔다.
 - 전역으로 막을지 페이지 단위로 막을지는 `audit_run` `audit-link-fires` `[ko]`로 그 별칭의 전 코퍼스 발화를 세어 정한다: 거의 다 틀리면 전역, 거의 다 맞고 한 페이지만 틀리면 페이지 단위.
 - 용어 종류 범주·주 무대 지역(`commulingo_term_categories`·`commulingo_term_regions`)은 leninbot 큐레이터의 도구 스키마에도 들어간다.
 

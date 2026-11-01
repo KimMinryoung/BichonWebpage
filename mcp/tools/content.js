@@ -79,6 +79,9 @@ const REGISTRY_SQL = {
         WHERE ($1 = '' OR phrase ILIKE '%' || $1 || '%') ORDER BY lang, phrase`,
     event_link_exceptions: `SELECT id, no_auto_link, to_jsonb(e)->'term_links' AS term_links FROM commulingo_history_events e
         WHERE ($1 = '' OR id = $1) AND (no_auto_link <> '[]'::jsonb OR to_jsonb(e)->'term_links' <> '[]'::jsonb) ORDER BY id`,
+    page_link_exceptions: `SELECT * FROM (SELECT 'term' AS kind, id, no_auto_link FROM commulingo_terms
+        UNION ALL SELECT 'person', id, no_auto_link FROM commulingo_people) p
+        WHERE ($1 = '' OR id = $1) AND no_auto_link <> '[]'::jsonb ORDER BY kind, id`,
 };
 
 const tools = [
@@ -111,7 +114,8 @@ const tools = [
         name: 'registry_get',
         description: 'Registry rows without an Admin screen: collections (정치적 입장 모음 with member counts), collection_members '
             + '(q = a collection id or a person id), blocklist (auto-link exceptions; q = substring), generic_aliases (q = substring), '
-            + 'event_link_exceptions (events with no_auto_link or term_links; q = event id). Edit them with registry_edit.',
+            + 'event_link_exceptions (events with no_auto_link or term_links; q = event id), '
+            + 'page_link_exceptions (terms and people with no_auto_link; q = term or person id). Edit them with registry_edit.',
         inputSchema: object({
             table: str('Registry', { enum: Object.keys(REGISTRY_SQL) }),
             q: str('Filter (see description)'),
@@ -447,7 +451,9 @@ const tools = [
             + 'blocklist_add {kind: phrase|alias|term-phrase|term-alias|term-headword, lang, phrase, note} / blocklist_remove {kind, lang, phrase}; '
             + 'generic_alias_add {lang, phrase, note} / generic_alias_remove {lang, phrase}; '
             + 'event_no_auto_link_set {eventId, phrases[]} and event_term_links_set {eventId, termLinks [{lang, text, termId, reason}]} (each replaces the '
-            + 'whole list: read it with registry_get event_link_exceptions first); id_redirect_add {entityType: person|office|role-category, fromId, toId, note}; '
+            + 'whole list: read it with registry_get event_link_exceptions first); term_no_auto_link_set {termId, phrases[]} and '
+            + 'person_no_auto_link_set {personId, phrases[]} (strings that must not auto-link on that term or person page, both languages; '
+            + 'replace the whole list: read it with registry_get page_link_exceptions first); id_redirect_add {entityType: person|office|role-category, fromId, toId, note}; '
             + 'term_category_upsert {id, label {ko,en}, sortOrder} (glossary kind chips; a new one needs both, reorder by upserting each moved row; '
             + 'current rows: dataset_rows term_categories); term_category_assign {category, termIds[]} (moves terms into an existing category; only the category column changes). '
             + 'Each change leaves a revision row. Pass ops inline or specPath to a file with {ops: [...]} or the list. dryRun defaults to true.',
