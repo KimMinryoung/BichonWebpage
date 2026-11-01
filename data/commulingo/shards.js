@@ -83,6 +83,8 @@ function buildPayloads(bundle, version) {
                 summary: chapter.summary,
                 sourceUrl: chapter.sourceUrl,
                 learningFocus: chapter.learningFocus,
+                minutes: chapter.minutes,
+                readings: chapter.readings,
                 lessons: (chapter.lessons || []).map(lesson => {
                     if (lesson && lesson.id) {
                         lessons.push(publicLessonPayload(collection, chapter, lesson));

@@ -98,3 +98,13 @@
 ## 2026-09-27 「사회주의의 분기」 9편·54문항
 
 기존 6편을 편당 6문항으로 늘리고 개념 설명·도표를 당사자의 문장 수준으로 넓혔다. 새 편 세 개를 시기순으로 끼웠다: 라살레파와 『고타강령 비판』(ch07, 표시 3편), 민족문제 룩셈부르크 vs 레닌(ch08, 표시 6편), 코민테른 가입 21개 조건(ch09, 표시 9편). 범위는 1920년까지다. 크론시타트·일국사회주의·네프의 끝은 러시아 혁명사·소련사 강좌의 몫이라 이 강좌에 넣지 않는다(소유자 결정). 그 세 편의 초안은 비공개로 `dev_docs/commulingo-socialist-divergences-unpublished-20260927/`에 보관한다. 제5편의 영어 번역 저본 세 편(에르푸르트·슈투트가르트·바젤)은 저작권 확인이 남아 있다(`commulingo-history-courses-registration-20260927.md`).
+
+## 2026-11-01 장 카드 형식
+
+책 페이지의 장 카드는 제목·소요 시간, 한 줄 핵심(`learningFocus`), 읽는 문헌 칩(`readings`) 순서다. 소요 시간과 문헌은 산문이 아니라 필드다.
+
+- `chapter.minutes`: 정수(분). summary 앞의 `약 12분 · ` / `About 12 minutes · ` 접두는 없앴고, 저장 게이트(`data/commulingo/course-validation.js`)가 다시 넣는 것을 거부한다.
+- `chapter.readings`: `[{ author?: {ko,en}, title: {ko,en}, year, endYear? }]`. 한국어 제목에 『』·「」를 넣어 저장한다. readings가 있는 장은 카드에서 summary를 빼고(같은 문헌을 산문으로 나열할 뿐이라서) 레슨 시작 화면에만 보인다.
+- `learningFocus`는 그 장의 갈림이나 결론을 한 문장으로 쓴다. 「~로 읽기 쉽습니다」 식 오해 정정문은 카드에 두지 않는다. 오독 바로잡기는 문항의 보기별 해설(`choiceFeedback`)이 맡는다.
+
+short-learning 세 강좌(사회주의의 분기·프랑스 혁명·성과 젠더 33장)의 learningFocus를 한 줄로 다시 쓰고 readings를 넣었다. guided-reading 강좌는 접두만 minutes로 옮겼다(한 권을 읽으므로 readings 없음). 작업본은 `scripts/content/chapter-card-redesign/`.

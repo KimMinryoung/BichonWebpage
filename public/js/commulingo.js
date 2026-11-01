@@ -267,6 +267,8 @@
                         title: text(lesson.title),
                         summary: text(chapter.summary),
                         focus: text(chapter.learningFocus),
+                        minutes: chapter.minutes || 0,
+                        readings: chapterReadings(chapter),
                         // Linked by the book route; absent on an older payload,
                         // in which case the renderers escape the plain fields.
                         summaryHtml: text(chapter.summaryHtml),
@@ -288,6 +290,8 @@
                         title: text(chapter.title),
                         summary: text(chapter.summary),
                         focus: text(chapter.learningFocus),
+                        minutes: chapter.minutes || 0,
+                        readings: chapterReadings(chapter),
                         // Linked by the book route; absent on an older payload,
                         // in which case the renderers escape the plain fields.
                         summaryHtml: text(chapter.summaryHtml),
@@ -551,6 +555,8 @@
                 chapterTitle: lesson.chapterTitle,
                 summary: lesson.summary,
                 focus: lesson.focus,
+                minutes: lesson.minutes,
+                readings: lesson.readings,
                 summaryHtml: lesson.summaryHtml,
                 focusHtml: lesson.focusHtml,
                 lessons: []
@@ -642,12 +648,18 @@
         var card = document.createElement('article');
         card.className = 'commu-chapter-card';
         card.setAttribute('data-commu-chapter-key', chapterScrollKey(chapter));
+        // Title and length, the chapter's point in one line, then the texts it
+        // reads. A chapter that lists its readings drops the summary, which
+        // only names the same texts in prose; the lesson intro still shows it.
+        var readings = chapter.readings || [];
         card.innerHTML = [
             '<div class="commu-lesson-title-row">',
             '<h2>' + escapeHtml(chapterTitle(chapter)) + '</h2>',
+            chapter.minutes ? '<span class="commu-chapter-minutes">' + escapeHtml(fill(lang === 'en' ? '{n} min' : '약 {n}분', { n: chapter.minutes })) + '</span>' : '',
             '</div>',
-            '<p class="commu-lesson-summary">' + (chapter.summaryHtml || escapeHtml(lessonSummary(chapter))) + '</p>',
             chapter.focus ? '<p class="commu-lesson-focus">' + (chapter.focusHtml || escapeHtml(chapter.focus)) + '</p>' : '',
+            readings.length ? '' : '<p class="commu-lesson-summary">' + (chapter.summaryHtml || escapeHtml(lessonSummary(chapter))) + '</p>',
+            readings.length ? '<ul class="commu-chapter-readings">' + readings.map(readingChip).join('') + '</ul>' : '',
             '<div class="commu-chapter-actions"></div>'
         ].join('');
         var actions = card.querySelector('.commu-chapter-actions');
@@ -655,6 +667,23 @@
             actions.appendChild(createLessonAction(lesson));
         });
         return card;
+    }
+
+    // chapter.readings: [{ author?, title, year, endYear? }], localized fields.
+    function chapterReadings(chapter) {
+        return (chapter.readings || []).map(function(reading) {
+            var year = reading.year ? String(reading.year) : '';
+            if (year && reading.endYear) year += '–' + reading.endYear;
+            return { author: text(reading.author), title: text(reading.title), year: year };
+        }).filter(function(reading) { return reading.title; });
+    }
+
+    function readingChip(reading) {
+        return '<li>'
+            + (reading.author ? '<span class="commu-reading-author">' + escapeHtml(reading.author) + '</span>' : '')
+            + '<span class="commu-reading-title">' + escapeHtml(reading.title) + '</span>'
+            + (reading.year ? '<span class="commu-reading-year">' + escapeHtml(reading.year) + '</span>' : '')
+            + '</li>';
     }
 
     function createLessonAction(lesson) {

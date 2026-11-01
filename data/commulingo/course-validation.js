@@ -57,6 +57,7 @@ function validateCourseShape(key, course) {
         chapterIds.add(chapter.id);
         if (!Number.isInteger(chapter.chapterNumber)) throw badRequest(`${key}: ${chapter.id} chapterNumber must be an integer`);
         if (!Array.isArray(chapter.lessons)) throw badRequest(`${key}: ${chapter.id} lessons must be an array`);
+        checkChapterCard(key, chapter);
         for (const lesson of chapter.lessons) {
             if (!lesson || !ID.test(lesson.id || '')) throw badRequest(`${key}: ${chapter.id} has a lesson with an unsafe or missing id`);
             if (!Array.isArray(lesson.questions)) throw badRequest(`${key}: ${lesson.id} questions must be an array`);
@@ -68,6 +69,39 @@ function validateCourseShape(key, course) {
             }
         }
     }
+}
+
+// The chapter card's length and readings are fields, not prose to parse: the
+// summary no longer opens with 약 12분 · / About 12 minutes ·, and each
+// reading is { author?, title, year, endYear? } with ko and en text.
+const LENGTH_PREFIX = /^\s*(약\s*\d+\s*분|About\s+\d+\s+minutes?)\s*·/i;
+function checkChapterCard(key, chapter) {
+    const where = `${key}: ${chapter.id}`;
+    if (chapter.minutes !== undefined && !(Number.isInteger(chapter.minutes) && chapter.minutes > 0 && chapter.minutes <= 180)) {
+        throw badRequest(`${where} minutes must be a whole number of minutes`);
+    }
+    const summary = chapter.summary || {};
+    for (const lang of ['ko', 'en']) {
+        if (typeof summary[lang] === 'string' && LENGTH_PREFIX.test(summary[lang])) {
+            throw badRequest(`${where} summary.${lang} starts with the reading time; put it in minutes`);
+        }
+    }
+    if (chapter.readings === undefined) return;
+    if (!Array.isArray(chapter.readings) || !chapter.readings.length) throw badRequest(`${where} readings must be a non-empty array`);
+    const bilingual = value => value && typeof value === 'object'
+        && typeof value.ko === 'string' && value.ko.trim() && typeof value.en === 'string' && value.en.trim();
+    chapter.readings.forEach((reading, index) => {
+        const at = `${where} readings[${index}]`;
+        if (!reading || typeof reading !== 'object') throw badRequest(`${at} must be an object`);
+        if (!bilingual(reading.title)) throw badRequest(`${at}.title needs ko and en`);
+        if (reading.author !== undefined && !bilingual(reading.author)) throw badRequest(`${at}.author needs ko and en`);
+        if (!Number.isInteger(reading.year)) throw badRequest(`${at}.year must be an integer`);
+        if (reading.endYear !== undefined && !(Number.isInteger(reading.endYear) && reading.endYear > reading.year)) {
+            throw badRequest(`${at}.endYear must be an integer after year`);
+        }
+        const extra = Object.keys(reading).filter(k => !['author', 'title', 'year', 'endYear'].includes(k));
+        if (extra.length) throw badRequest(`${at} has unknown fields ${extra.join(', ')}`);
+    });
 }
 
 // Lesson ids must be unique across the whole site (they are URLs and

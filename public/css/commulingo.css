@@ -220,9 +220,9 @@
 
 .commu-lesson-focus {
     border-left: 3px solid var(--accent);
-    color: var(--text-secondary);
+    color: var(--text-primary);
     display: -webkit-box;
-    font-size: 0.84rem;
+    font-size: 0.88rem;
     line-height: var(--leading-relaxed);
     text-align: justify;
     word-break: normal;
@@ -230,7 +230,47 @@
     overflow: hidden;
     padding-left: 9px;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
+}
+
+.commu-chapter-minutes {
+    color: var(--text-muted);
+    flex: 0 0 auto;
+    font-size: 0.8rem;
+    line-height: var(--leading-snug);
+    padding-top: 2px;
+    white-space: nowrap;
+}
+
+.commu-chapter-readings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.commu-chapter-readings li {
+    border: 1px solid var(--border);
+    background: var(--bg-base);
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    line-height: var(--leading-snug);
+    padding: 3px 7px;
+}
+
+.commu-reading-author::after {
+    content: ' ';
+}
+
+.commu-reading-title {
+    color: var(--text-primary);
+}
+
+.commu-reading-year {
+    color: var(--text-muted);
+    margin-left: 5px;
 }
 
 .commu-chapter-actions {
