@@ -181,7 +181,7 @@
   --accent-green: var(--clr-accent);
   --accent-red: var(--clr-red);
   --btn-bg: color-mix(in srgb, var(--clr-ink) 10%, var(--clr-cream-light));
-  --btn-hover: color-mix(in srgb, var(--clr-ink) 22%, var(--clr-cream-light));
+  --btn-hover: color-mix(in srgb, var(--clr-ink) 16%, var(--clr-cream-light));
   --btn-primary: var(--clr-accent);
   --btn-primary-hover: color-mix(in srgb, var(--clr-accent) 85%, var(--clr-cream));
   --btn-danger: var(--clr-red);

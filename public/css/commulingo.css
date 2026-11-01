@@ -260,20 +260,35 @@
     padding: 0;
 }
 
-/* A linked reading is a standard button: button ground, hover by ground
-   brightness, no green text or underline. Unlinked ones stay flat. */
+/* A linked reading sits on the card ground with its border and fills with
+   accent green and cream text on hover (the book-card / crumb hover), never
+   grey and never a green underline (owner, 2026-11-01). */
 .commu-chapter-readings a {
-    background: var(--btn-bg);
     color: inherit;
     display: block;
     padding: 3px 7px;
     text-decoration: none;
 }
 
+.commu-chapter-readings li:has(a:hover),
+.commu-chapter-readings li:has(a:focus-visible) {
+    border-color: var(--btn-primary);
+}
+
 .commu-chapter-readings a:hover,
 .commu-chapter-readings a:focus-visible {
-    background: var(--btn-hover);
+    background: var(--btn-primary);
+    color: var(--clr-cream);
     text-decoration: none;
+}
+
+.commu-chapter-readings a:hover .commu-reading-title,
+.commu-chapter-readings a:hover .commu-reading-year,
+.commu-chapter-readings a:hover .commu-reading-external,
+.commu-chapter-readings a:focus-visible .commu-reading-title,
+.commu-chapter-readings a:focus-visible .commu-reading-year,
+.commu-chapter-readings a:focus-visible .commu-reading-external {
+    color: var(--clr-cream);
 }
 
 .commu-reading-author::after {
