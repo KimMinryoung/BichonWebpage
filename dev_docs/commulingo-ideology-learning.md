@@ -107,4 +107,6 @@
 - `chapter.readings`: `[{ author?: {ko,en}, title: {ko,en}, year, endYear? }]`. 한국어 제목에 『』·「」를 넣어 저장한다. readings가 있는 장은 카드에서 summary를 빼고(같은 문헌을 산문으로 나열할 뿐이라서) 레슨 시작 화면에만 보인다.
 - `learningFocus`는 그 장의 갈림이나 결론을 한 문장으로 쓴다. 「~로 읽기 쉽습니다」 식 오해 정정문은 카드에 두지 않는다. 오독 바로잡기는 문항의 보기별 해설(`choiceFeedback`)이 맡는다.
 
-short-learning 세 강좌(사회주의의 분기·프랑스 혁명·성과 젠더 33장)의 learningFocus를 한 줄로 다시 쓰고 readings를 넣었다. guided-reading 강좌는 접두만 minutes로 옮겼다(한 권을 읽으므로 readings 없음). 작업본은 `scripts/content/chapter-card-redesign/`.
+short-learning 세 강좌(사회주의의 분기·프랑스 혁명·성과 젠더 33장)의 learningFocus를 한 줄로 다시 쓰고 readings를 넣었다. guided-reading 10강좌(73장)도 같은 형식으로 learningFocus를 새로 쓰고, readings에 그 장이 읽는 대목(예: 『루이 보나파르트의 브뤼메르 18일』 제5장)과 직접 읽는 다른 문헌을 넣었다. 『자본』 세 권은 기존 한 줄 learningFocus를 그대로 두고 readings에 권·장을 넣었다. 시간이 적혀 있지 않던 『자본』과 『유물론과 경험비판론』의 minutes는 추정치다: max(문항 수, 한국어 본문 글자 수 / 450). 작업본은 `scripts/content/chapter-card-redesign/`.
+
+카드 높이는 내용대로 둔다(고정 `min-height` 없음). 레슨이 하나뿐인 장은 기본/심화를 고를 일이 없으므로 「기본」 라벨을 레슨 버튼·학습 화면 배지·다음 학습 안내에서 뺀다(`soleLevel`).

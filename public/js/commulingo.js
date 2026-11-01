@@ -274,7 +274,9 @@
                         summaryHtml: text(chapter.summaryHtml),
                         focusHtml: text(chapter.focusHtml),
                         questions: lesson.questions || null,
-                        questionCount: lessonQuestionCount(lesson)
+                        questionCount: lessonQuestionCount(lesson),
+                        // A chapter with one lesson has no 기본/심화 choice to label.
+                        soleLevel: chapter.lessons.length === 1
                     });
                 });
                 if (!(chapter.lessons || []).length) {
@@ -696,17 +698,28 @@
         button.innerHTML = [
             '<span class="commu-lesson-action-body">',
             '<span class="commu-lesson-action-top">',
-            '<strong>' + escapeHtml(lessonActionTitle(lesson)) + '</strong>',
-            '<span>' + lessonQuestionCount(lesson) + ' ' + escapeHtml(strings.questions || 'Questions') + '</span>',
+            lesson.soleLevel
+                ? '<strong>' + lessonQuestionCount(lesson) + ' ' + escapeHtml(strings.questions || 'Questions') + '</strong>'
+                : '<strong>' + escapeHtml(lessonActionTitle(lesson)) + '</strong><span>' + lessonQuestionCount(lesson) + ' ' + escapeHtml(strings.questions || 'Questions') + '</span>',
             '</span>',
             '<span class="commu-progress-track"><span style="width:' + percent + '%"></span></span>',
-            '<span class="commu-lesson-meta"><span>' + escapeHtml(lessonLabel(lesson, item)) + '</span><span>' + escapeHtml(startLessonLabel(lesson)) + '</span></span>',
+            '<span class="commu-lesson-meta"><span>' + escapeHtml(lessonLabel(lesson, item)) + '</span>' + (lesson.soleLevel ? '' : '<span>' + escapeHtml(startLessonLabel(lesson)) + '</span>') + '</span>',
             '</span>'
         ].join('');
         button.addEventListener('click', function() { startLesson(lesson); });
         return button;
     }
 
+
+    // The 기본/심화 badge, or nothing for a chapter's only lesson; a suffix
+    // (재도전) still shows on its own.
+    function levelBadge(lesson, suffix) {
+        var parts = [];
+        if (!lesson.soleLevel) parts.push(lessonLevel(lesson));
+        if (suffix) parts.push(suffix);
+        if (!parts.length) return '';
+        return '<span class="commu-level-badge ' + (lesson.soleLevel ? 'is-plain' : lessonLevelClass(lesson)) + '">' + escapeHtml(parts.join(' · ')) + '</span>';
+    }
 
     function lessonActionTitle(lesson) {
         return lessonLevel(lesson);
@@ -901,7 +914,7 @@
         active = null;
         els.count.textContent = '0 / ' + lessonQuestionCount(lesson);
         els.meter.style.width = '0%';
-        els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(lesson)) + '</span><span class="commu-level-badge ' + lessonLevelClass(lesson) + '">' + escapeHtml(lessonLevel(lesson)) + '</span>';
+        els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(lesson)) + '</span>' + levelBadge(lesson);
         if (els.intro) els.intro.classList.add('is-hidden');
         if (els.focus) els.focus.classList.add('is-hidden');
         hidePassage();
@@ -916,7 +929,7 @@
     function renderIntro() {
         els.count.textContent = '0 / ' + lessonQuestionCount(active.lesson);
         els.meter.style.width = '0%';
-        els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span><span class="commu-level-badge ' + lessonLevelClass(active.lesson) + '">' + escapeHtml(lessonLevel(active.lesson)) + '</span>';
+        els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span>' + levelBadge(active.lesson);
         if (els.intro) els.intro.classList.remove('is-hidden');
         if (els.focus) els.focus.classList.add('is-hidden');
         hidePassage();
@@ -975,7 +988,7 @@
     function showNextLesson(lesson) {
         if (!els.nextLesson || !lesson) return;
         els.nextLesson.commuNextLesson = lesson;
-        els.nextLesson.textContent = (strings.nextLesson || (lang === 'en' ? 'Next lesson' : '다음 학습')) + ' · ' + chapterTitle(lesson) + ' (' + lessonLevel(lesson) + ')';
+        els.nextLesson.textContent = (strings.nextLesson || (lang === 'en' ? 'Next lesson' : '다음 학습')) + ' · ' + chapterTitle(lesson) + (lesson.soleLevel ? '' : ' (' + lessonLevel(lesson) + ')');
         els.nextLesson.classList.remove('is-hidden');
     }
 
@@ -1032,7 +1045,7 @@
         els.meter.style.width = Math.round((active.pos / total) * 100) + '%';
         var badge = active.mode === 'review'
             ? '<span class="commu-level-badge is-review">' + escapeHtml(strings.reviewTitle || 'Review') + '</span>'
-            : '<span class="commu-level-badge ' + lessonLevelClass(lesson) + '">' + escapeHtml(lessonLevel(lesson)) + (active.mode === 'retry' ? ' · ' + escapeHtml(strings.tryAgain || 'Retry') : '') + '</span>';
+            : levelBadge(lesson, active.mode === 'retry' ? (strings.tryAgain || 'Retry') : '');
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(lesson)) + '</span>' + badge;
         renderPassage(lesson, question);
         if (els.focus) {
@@ -1232,7 +1245,7 @@
         els.prompt.textContent = strings.allDone || 'Lesson complete';
         if (els.focus) els.focus.classList.add('is-hidden');
         hidePassage();
-        els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span><span class="commu-level-badge ' + lessonLevelClass(active.lesson) + '">' + escapeHtml(lessonLevel(active.lesson)) + '</span>';
+        els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span>' + levelBadge(active.lesson);
         if (els.intro) els.intro.classList.add('is-hidden');
         els.prompt.classList.remove('is-hidden');
         els.choices.classList.remove('is-hidden');

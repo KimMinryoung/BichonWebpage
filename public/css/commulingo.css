@@ -168,7 +168,6 @@
     background: var(--bg-surface);
     color: var(--text-primary);
     padding: 14px;
-    min-height: 250px;
     display: flex;
     flex-direction: column;
     gap: 10px;
