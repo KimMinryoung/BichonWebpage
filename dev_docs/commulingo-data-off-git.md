@@ -26,7 +26,7 @@
 - 읽기: `data/commulingo/data-documents.js`(레지스트리 스냅샷, 동기 `getDataDocument`·`listDataDocuments`). 활동 카탈로그의 `functions`·`affiliations`·`affiliationByTerm`은 내용만 최신으로 바뀌는 고정 객체라서, 구조 분해로 가져간 모듈도 최신 카탈로그를 본다. `catalog`는 모듈 속성으로 읽는다. 사건 지도 통제 데이터는 예전에 프로세스 재시작 전까지 캐시됐는데, 이제 1분 안에 반영된다.
 - 쓰기: `writeDataDocuments`(키별 형태 검증). `scripts/commulingo-data`(export/put/history/restore), 인물 id 변경(명부·계보도를 같은 트랜잭션에서 바꾼다)이 쓴다. `scripts/bake-event-control.js`는 `scripts/content/event-control/baked/`에 출력하고 put으로 게시한다.
 - leninbot: `ops/paths.py`가 `data/commulingo/activity-catalog.json`을 실시간으로 읽는다. 서버가 카탈로그 문서가 바뀔 때마다 그 경로에 써 두므로(gitignore) leninbot 쪽 변경은 없다. 그쪽 사본 동기화 절차(`sync_commulingo_contracts.py`)도 그대로다.
-- 테스트: 서버에서는 스냅샷을 읽는다. DB도 스냅샷도 없으면 고정 시드 `scripts/fixtures/commulingo-data-documents-seed.json`(2026-10-08 시점)을 읽는다. 데이터가 바뀌어도 시드는 갱신하지 않는다.
+- 테스트: 서버에서는 스냅샷을 읽는다. DB도 스냅샷도 없으면 고정 시드 `tests/fixtures/commulingo-data-documents-seed.json`(2026-10-08 시점)을 읽는다. 데이터가 바뀌어도 시드는 갱신하지 않는다.
 - git에서 뺀 마지막 파일은 `scripts/content/data-documents-git-final-20261008/`(R2 보관)와 git 이력에 있다. 사건 지도 원본(`scripts/content/event-control/*.js`, `.traced.json`)도 추적을 끊었다. 디스크와 R2에 남아 있다.
 
 ## 4단계: 학습 강좌 (2026-11-01)
@@ -35,7 +35,7 @@
 - 저장: 새 표 없이 3단계의 `commulingo_data_documents`에 강좌마다 한 행, 키 `course/<강좌 id>`(18개: 『자본』 1~3권은 옛 `lessons.json`의 세 모음). 내용은 강좌 객체 그대로이고 `publicChapterLimit`(공개 편 수, 없으면 비공개)를 더했다. 키 순서가 옛 번들 순서와 같다. DDL 없음. 리비전·복원·감사·MCP 도구(`data_document_get/put/revisions/restore`, JSON Pointer 패치)는 데이터 문서 것을 그대로 쓴다.
 - 읽기: `data/commulingo/index.js`가 데이터 문서 스냅샷에서 번들을 만들고(버전은 내용 해시), `shards.js`가 카탈로그·레슨 페이로드를 번들 버전마다 메모리에서 만든다(`generated/` 폴더 폐기). 레슨은 JSON 문자열로 들고 호출마다 파싱한다(`linkifyLessonPayload`가 제자리에서 바꾸므로). 버전 없는 `catalog.json`은 30초 캐시로 낮췄고, 배포 때의 레슨 퍼지(`changed-commulingo-lessons.js`)와 `build-commulingo-shards.js`는 지웠다.
 - 쓰기 검사: `data/commulingo/course-validation.js`. 형태 검사(키와 id 일치, 편·레슨·문항 id 고유, 형식) + 쓰기 관문: 그 강좌에 없던 규칙 위반을 새로 만들지 않을 것(기준선 `scripts/commulingo-quality-baseline.json` 허용), 끊어 읽기 강좌의 한국어 발췌가 사이트 문헌과 글자 그대로 같고 앵커가 있을 것, id를 유지한 채 문항을 통째로 바꾸지 않을 것(옛 git 비교 `check-commulingo-question-ids.js`를 `scripts/lib/commulingo-question-ids.js`로 옮김). 결과에 추가·삭제·변경된 레슨·문항을 보고한다. 강좌 하나 쓰기에 약 0.3초.
-- 테스트: `scripts/test`가 `COMMULINGO_COURSES_SEED=1`로 고정 시드 `scripts/fixtures/commulingo-courses-seed.json`(『자본』 1권 1~2장, 『포이어바흐론』, 프랑스 혁명사, 사회주의 갈래, 러시아 혁명 결정사, 1.4MB)만 읽는다. 시드는 갱신하지 않는다. `validate-commulingo.js`의 강좌별 개수 표는 없앴다(개수는 데이터라서). 기준선의 낡은 항목은 경고만 낸다.
+- 테스트: `scripts/test`가 `COMMULINGO_COURSES_SEED=1`로 고정 시드 `tests/fixtures/commulingo-courses-seed.json`(『자본』 1권 1~2장, 『포이어바흐론』, 프랑스 혁명사, 사회주의 갈래, 러시아 혁명 결정사, 1.4MB)만 읽는다. 시드는 갱신하지 않는다. `validate-commulingo.js`의 강좌별 개수 표는 없앴다(개수는 데이터라서). 기준선의 낡은 항목은 경고만 낸다.
 - 이전: `scripts/content/courses-to-db-20261101/`(`export.js` 내보내기·시드, `compare.js` 옛/새 페이로드 비교, `gate-check.js`). 비교 결과 카탈로그 동일, 레슨 318개 중 4개만 달랐다. 『브뤼메르 18일』 발췌 4곳의 곧은 따옴표가 쓰기 때 국립국어원 규칙대로 둥근 따옴표로 바뀐 것이다(발췌 대조는 따옴표를 접어 비교하므로 통과). `scripts/commulingo-data put`으로 18개를 r1로 넣었다.
-- 갱신 비용: 저장소의 변경 감지(`pg_stat_user_tables` 쓰기 횟수)는 표 단위라, 처음에는 어떤 데이터 문서 하나가 바뀌어도 강좌를 포함한 전체(약 10MB)를 다시 읽었다. 2026-11-01에 증분 읽기로 바꿨다: 표가 바뀌면 `key, revision` 목록만 읽고 리비전이 바뀐 행의 내용만 가져온다(`fetchDocumentRows`, `scripts/smoke-commulingo-data-documents-fetch.js`). 리비전을 거치지 않은 수정에 대비해 24번째 읽기마다 전체를 다시 읽는다.
+- 갱신 비용: 저장소의 변경 감지(`pg_stat_user_tables` 쓰기 횟수)는 표 단위라, 처음에는 어떤 데이터 문서 하나가 바뀌어도 강좌를 포함한 전체(약 10MB)를 다시 읽었다. 2026-11-01에 증분 읽기로 바꿨다: 표가 바뀌면 `key, revision` 목록만 읽고 리비전이 바뀐 행의 내용만 가져온다(`fetchDocumentRows`, `tests/unit/commulingo-data-documents-fetch.js`). 리비전을 거치지 않은 수정에 대비해 24번째 읽기마다 전체를 다시 읽는다.
 - 『자본』 재작업 하네스 `apply.js`는 바뀐 권 문서를 `temp_dev/commulingo-rewrite/put/`에 쓰고 `scripts/commulingo-data put`으로 넣는다.

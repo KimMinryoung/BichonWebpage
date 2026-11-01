@@ -106,7 +106,7 @@ Migration 178을 관리자 DB 역할로 적용한 뒤 `node scripts/seed-commuli
 한국어 NFC·영어 대소문자 충돌, 1914/1917년 7월 위기·베트남/아프간 제네바 협정·
 여러 국가의 연립정부·평화/구호 리가 조약과 구체적 이름의 정상 연결 회귀가 포함된다.
 
-`test-commulingo-link-review-db.js`는 DB 이름 `commulingo_integrity_test`,
+`tests/db/commulingo-link-review.js`는 DB 이름 `commulingo_integrity_test`,
 `COMMULINGO_ISOLATED_TEST=1`, 명시적 DB_HOST와 `/tmp/` 검토 스냅샷 경로가 필요하다.
 독립 PostgreSQL 17의 178 테이블과 합성 코퍼스에서 미리보기·저장·토큰 재사용 거부,
 본문 변경 충돌, 두 연결의 동시 승인, 이력 저장 실패 시 정책 롤백을 확인한다.
@@ -173,7 +173,7 @@ grass 사용자 감사 타이머를 활성화했고 최초 실행은 성공했�
 - 지정: 미코얀/Mikoyan → `mikoyan`, 케네디/Kennedy → `john-f-kennedy`(`robert-f-kennedy`에는 「로버트 케네디」/Robert Kennedy). upsert 도구로 넣었다.
 - 같은 날 일반어 오링크도 막았다(데이터 마이그레이션 274·275): 「큰 그림」의 그림(294회 발화) → `alias` 차단, 도시 우한(56회) → `alias` 차단(역사가 우한은 자동 링크 안 됨), 「로렌츠 뤼티」 → `phrase` 차단, 중소 분열 사건의 단독 「뤼티」 → 사건 `no_auto_link`.
 - 2차 지정(같은 날, 코퍼스 전수 조사 `temp_dev/shared-surnames`): 스탈린·흐루쇼프·예브도키모프(NKVD의 예핌)·지노비예프·카메네프(레프)·카가노비치(라자르)·주코프(게오르기)·코시긴·비신스키(안드레이)·플레하노프(게오르기)·즈다노프(안드레이)·너지(임레)·칼리닌(미하일)·사하로프(안드레이)·에이헤·리트비노프·코불로프(보그단)·코시오르(스타니슬라프)·우스티노프·차우셰스쿠·파우케르·체르노프·그리신·페트롭스키, 한영 모두. 그 전까지 단독 「스탈린」이 한국어 3,470회·영어 3,282회 링크 없이 남아 있었다(아들 바실리와 성 공유). 복합어는 데이터 마이그레이션 277로 먼저 차단했다(스탈린상, 흐루쇼프카, 주코프스키, 즈다노프시나, 칼리닌그라드·칼리닌 전선군, 플레하노프 국민경제, Stalin Prize, Kalinin Front 등). 인물이 실제로 섞이는 성(예고로프·미로노프·주콥스키·리프크네히트·덜레스·프리마코프·오를로프·쿠즈네초프 등)은 지정하지 않았다.
-- 군주는 「니콜라이 2세」처럼 이름과 서수를 합친 형태로만 링크한다. `family-name.js`가 단독 서수(2세, II)와 나라가 붙은 서수(II of Greece)를 성으로 색인하지 않으며, `smoke-commulingo-regnal-names.js`가 지킨다.
+- 군주는 「니콜라이 2세」처럼 이름과 서수를 합친 형태로만 링크한다. `family-name.js`가 단독 서수(2세, II)와 나라가 붙은 서수(II of Greece)를 성으로 색인하지 않으며, `tests/unit/commulingo-regnal-names.js`가 지킨다.
 
 ## 2026-10-09 페이지 문맥으로 인물 판정과 전수 렌더링 감사
 
@@ -219,7 +219,7 @@ grass 사용자 감사 타이머를 활성화했고 최초 실행은 성공했�
 
 ## 2026-10-10 표시명 구분어로 가른 동명이인
 
-같은 이름의 두 사람은 위키백과처럼 표시명 끝에 괄호 구분어를 달고 id에 영어 구분어를 붙인다(`otto-braun` 「오토 브라운 (코민테른 고문)」, `otto-braun-prussia` 「오토 브라운 (프로이센 총리)」; 선례 `nikolai-kuznetsov-spy`). 구분어가 붙은 카드는 링크 인덱스에 구분어 붙은 이름만 올라가서, 본문의 맨 「오토 브라운」은 어느 카드에도 걸리지 않게 되었다. 이제 `people-linkify.js`가 구분어를 뗀 이름이 같은 카드들을 `contextData.namesakes`로 묶어 그 맨 이름을 패턴에 남기고(주인 없음), `person-page-links.js`의 페이지 판정이 사건·용어의 인물 관계(인물 페이지는 claimants)에 그중 한 사람만 있을 때 그 사람에게 잇는다. 둘 다 없거나 둘 다 있으면 구분어 없는 주인(쿠즈네초프 해군 제독처럼)이 있을 때만 그에게, 없으면 잇지 않는다. 보고서·일기처럼 페이지 문맥이 없는 화면은 잇지 않는다. 운영 데이터의 해당 묶음은 오토 브라운 한 쌍이다(사용자 결정 「b」, `smoke-commulingo-person-page-links.js`에 사례).
+같은 이름의 두 사람은 위키백과처럼 표시명 끝에 괄호 구분어를 달고 id에 영어 구분어를 붙인다(`otto-braun` 「오토 브라운 (코민테른 고문)」, `otto-braun-prussia` 「오토 브라운 (프로이센 총리)」; 선례 `nikolai-kuznetsov-spy`). 구분어가 붙은 카드는 링크 인덱스에 구분어 붙은 이름만 올라가서, 본문의 맨 「오토 브라운」은 어느 카드에도 걸리지 않게 되었다. 이제 `people-linkify.js`가 구분어를 뗀 이름이 같은 카드들을 `contextData.namesakes`로 묶어 그 맨 이름을 패턴에 남기고(주인 없음), `person-page-links.js`의 페이지 판정이 사건·용어의 인물 관계(인물 페이지는 claimants)에 그중 한 사람만 있을 때 그 사람에게 잇는다. 둘 다 없거나 둘 다 있으면 구분어 없는 주인(쿠즈네초프 해군 제독처럼)이 있을 때만 그에게, 없으면 잇지 않는다. 보고서·일기처럼 페이지 문맥이 없는 화면은 잇지 않는다. 운영 데이터의 해당 묶음은 오토 브라운 한 쌍이다(사용자 결정 「b」, `tests/unit/commulingo-person-page-links.js`에 사례).
 
 ### 전수 렌더링 감사
 
@@ -327,7 +327,7 @@ grass 사용자 감사 타이머를 활성화했고 최초 실행은 성공했�
 - 이니셜은 성 앞의 연속 이니셜 전부가 그 사람의 이니셜에 있어야 한다(A. S. ≠ B. S.).
 - 카드 링크의 확장 문맥(소개+순간+약력)에서 대상 문장을 못 찾으면 그 문장만으로 판정한다(이전에는 위치가 0으로 어긋났다).
 - 문헌 감사(`inspectDocPersonLinks`)는 거부된 언급의 사유를 `place-or-institution` 또는 `not-a-standalone-name`으로 기록한다.
-- 회귀 테스트: `scripts/smoke-commulingo-name-boundaries.js`(차단 목록 없이 위 실제 사례와 정상 사례: 였고·이었던·뿐이었다, 스탈린식, Brusilov Offensive, Suzuki Kantarō, Ulbricht Group, Frunze-Lenin 하이픈).
+- 회귀 테스트: `tests/unit/commulingo-name-boundaries.js`(차단 목록 없이 위 실제 사례와 정상 사례: 였고·이었던·뿐이었다, 스탈린식, Brusilov Offensive, Suzuki Kantarō, Ulbricht Group, Frunze-Lenin 하이픈).
 - 표본 재판정: 한국어는 오연결 6건만 거부되고 서술격 조사 뒤 정상 링크 16건은 유지된다. 영어는 48건을 거부하며 손실은 제목 속 Title Case 두 건(Lenin Bedridden, The Country Stalin Left Behind) 정도다.
 - 합성 본문(모든 낱말이 이름) 기준 연결 시간 15~25% 증가. 실제 본문은 이름 밀도가 낮다.
 

@@ -21,7 +21,7 @@
 
 ## 출처 주소의 괄호
 
-사이트 마크다운은 링크 주소의 첫 「)」에서 링크를 끝내서, 괄호가 든 위키백과 제목(예: `..._(1920)`)은 꼬리가 본문에 「35)」처럼 새어 나온다. 이번 네 사건(자캅카스 포함)은 빌더(`lib.js` event())가 출처 주소의 괄호를 `%28`/`%29`로 인코딩하도록 고치고 출처·본문 12칸을 바꿨다(`scripts/content/source-url-parens-20261004.json`, 백업 `/tmp/cw/parens-before-20261004.json`). 기존 사건 77편도 같은 증상이어서 사용자 지시로 렌더러(`utils/markdown.js` inlineMarkdown)가 링크 주소 안의 괄호 한 겹을 허용하도록 고쳐 배포했다(b2b53fa, 회귀 검사 `smoke-commulingo-section-markdown.js`). 배포 뒤 77편 모두 깨진 출처 0.
+사이트 마크다운은 링크 주소의 첫 「)」에서 링크를 끝내서, 괄호가 든 위키백과 제목(예: `..._(1920)`)은 꼬리가 본문에 「35)」처럼 새어 나온다. 이번 네 사건(자캅카스 포함)은 빌더(`lib.js` event())가 출처 주소의 괄호를 `%28`/`%29`로 인코딩하도록 고치고 출처·본문 12칸을 바꿨다(`scripts/content/source-url-parens-20261004.json`, 백업 `/tmp/cw/parens-before-20261004.json`). 기존 사건 77편도 같은 증상이어서 사용자 지시로 렌더러(`utils/markdown.js` inlineMarkdown)가 링크 주소 안의 괄호 한 겹을 허용하도록 고쳐 배포했다(b2b53fa, 회귀 검사 `tests/unit/commulingo-section-markdown.js`). 배포 뒤 77편 모두 깨진 출처 0.
 
 ## 재현과 반영
 

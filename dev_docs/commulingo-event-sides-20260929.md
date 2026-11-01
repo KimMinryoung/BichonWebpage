@@ -11,7 +11,7 @@
 
 ## 화면
 
-`data/commulingo/event-presentation.js`의 `groupEventPeopleBySide`가 진영 순서대로 블록을 만들고, 블록 안은 기존 역할 순서(KIND_ORDER)로 묶는다. 사람이 없는 진영은 숨기고, 진영이 없거나 목록에 없는 id를 가진 사람은 마지막 「진영 밖」 블록에 모은다. 진영이 없는 사건은 이전과 같은 화면이다. 템플릿은 `views/partials/commulingo-event-panel.ejs`, 스타일은 `.commu-event-people-side*`. 인물 페이지는 관계 설명문을 보여 주므로 바꾸지 않았다. 스모크 테스트 `scripts/smoke-commulingo-event-sides.js`(모듈이 DB 풀을 열어 끝에서 `process.exit(0)`).
+`data/commulingo/event-presentation.js`의 `groupEventPeopleBySide`가 진영 순서대로 블록을 만들고, 블록 안은 기존 역할 순서(KIND_ORDER)로 묶는다. 사람이 없는 진영은 숨기고, 진영이 없거나 목록에 없는 id를 가진 사람은 마지막 「진영 밖」 블록에 모은다. 진영이 없는 사건은 이전과 같은 화면이다. 템플릿은 `views/partials/commulingo-event-panel.ejs`, 스타일은 `.commu-event-people-side*`. 인물 페이지는 관계 설명문을 보여 주므로 바꾸지 않았다. 스모크 테스트 `tests/unit/commulingo-event-sides.js`(모듈이 DB 풀을 열어 끝에서 `process.exit(0)`).
 
 ## 29개 사건 배정
 

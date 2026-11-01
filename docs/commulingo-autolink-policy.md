@@ -88,7 +88,7 @@
 
 인물 API/CLI와 문헌 import/PATCH에서 검사한다. 문헌의 aliases, noAutoLink,
 date, updatedAt는 다른 메타데이터를 수정해도 보존한다. 수동 manifest 수정도
-`scripts/smoke-commulingo-alias-validation.js`가 전체 문헌의 형식을 검사한다.
+`tests/unit/commulingo-alias-validation.js`가 전체 문헌의 형식을 검사한다.
 
 DB 직접 입력은 migration 165의 트리거가 표제어·별칭의 기본 형식을 검사한다.
 신규/변경 값에만 적용하며 과거 데이터의 무관한 수정은 막지 않는다. 별칭의

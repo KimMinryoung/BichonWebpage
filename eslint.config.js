@@ -37,7 +37,7 @@ module.exports = [
         rules,
     },
     {
-        files: ['server.js', 'routes/**/*.js', 'services/**/*.js', 'middleware/**/*.js', 'utils/**/*.js', 'config/**/*.js', 'data/**/*.js', 'scripts/**/*.js', 'eslint.config.js'],
+        files: ['server.js', 'routes/**/*.js', 'services/**/*.js', 'middleware/**/*.js', 'utils/**/*.js', 'config/**/*.js', 'data/**/*.js', 'scripts/**/*.js', 'tests/**/*.js', 'eslint.config.js'],
         languageOptions: { ecmaVersion: 2022, sourceType: 'commonjs', globals: nodeGlobals },
         rules,
     },

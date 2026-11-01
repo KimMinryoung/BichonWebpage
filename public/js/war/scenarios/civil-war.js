@@ -1705,7 +1705,7 @@
 
     // The portraits (war/art.js): each person's headgear, hair, face, what
     // they wore and what they are drawn with. side colours the square behind
-    // them; no two people are drawn alike (scripts/lib/war-scenario-check.js).
+    // them; no two people are drawn alike (tests/lib/war-scenario-check.js).
     // The pictures of the seasons, battles and forks: public-domain photos,
     // posters and paintings from Wikimedia Commons, kept as webp in
     // public/images/civil-war/ (their sources in CREDITS.md there). `sm`:

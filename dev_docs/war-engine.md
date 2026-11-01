@@ -4,7 +4,7 @@
 
 「붉은 전선 1918–1920」의 규칙·전투·화면을 시나리오와 떼어 놓은 공통 엔진이다. 다른 시대의 전쟁은 **시나리오 파일 하나**(+ 지도의 세력 범위 문서, 라우트 한 줄)로 더한다. 편집 GUI는 없다. 이 문서는 시나리오를 쓰는 사람(미래의 Claude)을 위한 레퍼런스다. 「붉은 전선」 고유의 설계·밸런스는 [civil-war-game.md](civil-war-game.md).
 
-수치와 동작의 최종 기준은 코드다. 첫 시나리오 [scenarios/civil-war.js](../public/js/war/scenarios/civil-war.js)가 모든 필드를 실제로 쓰는 예이고, [scripts/fixtures/war-mini.js](../scripts/fixtures/war-mini.js)가 이름을 모두 바꾼 최소 예다.
+수치와 동작의 최종 기준은 코드다. 첫 시나리오 [scenarios/civil-war.js](../public/js/war/scenarios/civil-war.js)가 모든 필드를 실제로 쓰는 예이고, [tests/fixtures/war-mini.js](../tests/fixtures/war-mini.js)가 이름을 모두 바꾼 최소 예다.
 
 ## 1. 모듈
 
@@ -21,9 +21,9 @@
 | [war.css](../public/css/war.css) | 화면. 클래스 접두어는 `cw-` 그대로 |
 | [services/war-map.js](../services/war-map.js) | 서버 지도. `SCENARIOS` 등록표가 곧 공개 시나리오 목록이다. `warMap(id)` |
 | [views/public/war/play.ejs](../views/public/war/play.ejs), [scripts.ejs](../views/public/war/scripts.ejs) | 플레이 골격, 스크립트 순서(시나리오 → cond → battle → engine → art → ui/*) |
-| [scripts/lib/war-scenario-check.js](../scripts/lib/war-scenario-check.js) | 시나리오 검사 `checkScenario(D)` → 문제 목록 |
-| [test-war-scenarios.js](../scripts/test-war-scenarios.js) | 모든 공개 시나리오 검사 + 최소 시나리오를 끝까지 둔다 |
-| [test-war-golden.js](../scripts/test-war-golden.js) | 「붉은 전선」 골든 마스터(6절) |
+| [tests/lib/war-scenario-check.js](../tests/lib/war-scenario-check.js) | 시나리오 검사 `checkScenario(D)` → 문제 목록 |
+| [tests/unit/war-scenarios.js](../tests/unit/war-scenarios.js) | 모든 공개 시나리오 검사 + 최소 시나리오를 끝까지 둔다 |
+| [tests/unit/war-golden.js](../tests/unit/war-golden.js) | 「붉은 전선」 골든 마스터(6절) |
 
 화면 컨트롤러(`ui/game.js`)는 공유 상태가 많아 한 파일로 두었다. 상태 없는 부분만 모듈로 뺐다.
 
@@ -32,8 +32,8 @@
 1. `public/js/war/scenarios/<id>.js`를 쓴다(4절 스키마). `civil-war.js`를 복사해 바꾸는 것이 가장 빠르다.
 2. 지도: 커뮤링고 사건 지도의 세력 범위 문서(`event-control/<id>`)가 있어야 역사의 세력 범위 층이 그려진다. `map.control`에 그 id, `map.box`에 경위도 틀.
 3. `services/war-map.js`의 `SCENARIOS`에 한 줄, `routes/redirects.js`의 `gameLocals`·게임 목록 배열에 `/games/<id>/` 한 줄, `views/public/<id>.ejs`(소개·규칙 + `include('war/play', { war })` + `include('war/scripts', { id: war.id, ui: true })`). 게임 목록(`games.ejs`·`games.js`) 카드는 필요하면.
-4. `node scripts/test-war-scenarios.js`가 검사기를 돌린다. 문제 목록이 빌 때까지 고친다.
-5. 밸런스 테스트 `scripts/test-<id>.js`: 역사 선택 봇이 역사대로 흘러가는지(모든 시기·전선 `after === history`), 전투마다 역사 경로가 이기는지. `test-civil-war.js`의 `plan`·`campaign`·`drive`가 틀이다. `scripts/test`에 등록.
+4. `node tests/unit/war-scenarios.js`가 검사기를 돌린다. 문제 목록이 빌 때까지 고친다.
+5. 밸런스 테스트 `tests/unit/<id>.js`: 역사 선택 봇이 역사대로 흘러가는지(모든 시기·전선 `after === history`), 전투마다 역사 경로가 이기는지. `tests/unit/civil-war.js`의 `plan`·`campaign`·`drive`가 틀이다. 폴더에 두면 `scripts/test`가 자동으로 찾는다.
 6. 브라우저로 직접 확인(데스크톱·390px): 계획, 결과 연출, 전투, 결산, 회고.
 
 ## 3. 조건 언어 (`war/cond.js`)
@@ -164,7 +164,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 ## 7. 골든 마스터
 
-`scripts/test-war-golden.js`는 엔진을 떼어 내기 전의 「붉은 전선」으로 기록한 전쟁 74판(역사·반대·징발·분산·동전·무작위 봇, 규칙 1–3, 모든 갈림길·전투)과 옛 저장 8개를 명령 하나마다 재생해, 규칙이 정하는 모든 것(예상·결산·전투 상태)의 해시를 비교한다. 엔진·전투·시나리오의 리팩터링은 이 해시를 하나도 바꾸지 않아야 한다. 규칙을 일부러 바꿨으면 `node scripts/test-war-golden.js --write`로 다시 기록하고 커밋 메시지에 그 사실을 적는다. 상태 모양만 바꿨으면 기록은 그대로 두고 테스트의 `view`에서 옛 이름으로 옮긴다(지금의 `food→grain`, `stats.*`, `unrest→revolt`, `fallen→petrogradFell`, `responses→response`, 시기 번호는 옛 달력의 몇 번째인지).
+`tests/unit/war-golden.js`는 엔진을 떼어 내기 전의 「붉은 전선」으로 기록한 전쟁 74판(역사·반대·징발·분산·동전·무작위 봇, 규칙 1–3, 모든 갈림길·전투)과 옛 저장 8개를 명령 하나마다 재생해, 규칙이 정하는 모든 것(예상·결산·전투 상태)의 해시를 비교한다. 엔진·전투·시나리오의 리팩터링은 이 해시를 하나도 바꾸지 않아야 한다. 규칙을 일부러 바꿨으면 `node tests/unit/war-golden.js --write`로 다시 기록하고 커밋 메시지에 그 사실을 적는다. 상태 모양만 바꿨으면 기록은 그대로 두고 테스트의 `view`에서 옛 이름으로 옮긴다(지금의 `food→grain`, `stats.*`, `unrest→revolt`, `fallen→petrogradFell`, `responses→response`, 시기 번호는 옛 달력의 몇 번째인지).
 
 ## 8. 남은 한계
 

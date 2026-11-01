@@ -26,7 +26,7 @@ leninbot은 관리자 MCP `editorial_store`(read/submit/review/enrichment)와 `e
 ```bash
 COMMULINGO_ISOLATED_TEST=1 DB_HOST=127.0.0.1 DB_PORT=<isolated-port> \
 DB_NAME=commulingo_integrity_test DB_USER=postgres \
-node scripts/test-commulingo-pipeline-db.js
+node tests/db/commulingo-pipeline.js
 ```
 
 테스트에는 실제 CommuLingo 테이블 정의와 검증 함수가 필요하고 사용자/운영 데이터는 필요 없다.

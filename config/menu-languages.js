@@ -2,7 +2,7 @@
 // Logic that should offer only English content in English (the integrated
 // search, services/site-search.js; the menu entrances via res.locals.menuShown
 // and data/commulingo/dict-tabs.js) reads this. Update it when a menu gains or
-// loses its English version; scripts/test-menu-languages.js keeps the keys in
+// loses its English version; tests/unit/korean-only-menus.js keeps the keys in
 // step with MENUS.
 //
 //   'full'     every item has English (screen and content)

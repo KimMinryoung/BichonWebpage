@@ -35,6 +35,9 @@ const db = require('../../config/database');
 // turns it off.
 const SIGNATURE_ENABLED = process.env.COMMULINGO_SNAPSHOT_SIGNATURE !== '0';
 const FULL_REFRESH_EVERY = 60;
+// How long a synchronous reader waits after a failed background pull before
+// starting another (createRegistrySnapshotStore loadSync).
+const SYNC_RETRY_MS = 30000;
 
 async function readWriteSignature(tables) {
     const { rows } = await db.query(
@@ -346,12 +349,25 @@ function createRegistrySnapshotStore({
 
     // For callers whose accessors are synchronous (docs-store): memory, else
     // the disk snapshot, else an empty install until the background pull lands.
+    //
+    // The background pull is never forced and never retried within
+    // SYNC_RETRY_MS of a failure. With no snapshot and no database (a lone
+    // clone running the tests, a cold start during an outage) every read lands
+    // here; a forced pull per read queued one more pull behind the running
+    // one, and each failure re-queued all of them — thousands of reads grew
+    // that chain until the process ran out of memory.
+    let syncFailedAt = 0;
     function loadSync() {
         ensureRefreshTimer();
         if (memory) return memory;
         const snapshot = readSnapshotFile();
         if (snapshot) memory = install(snapshot);
-        refresh().catch(err => console.error(`[${label}] refresh failed:`, err.message));
+        if (!pendingRefresh && Date.now() - syncFailedAt >= SYNC_RETRY_MS) {
+            refresh({ force: false }).catch(err => {
+                syncFailedAt = Date.now();
+                console.error(`[${label}] refresh failed:`, err.message);
+            });
+        }
         return memory || install([]);
     }
 

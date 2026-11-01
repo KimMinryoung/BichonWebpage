@@ -38,7 +38,7 @@
   - 맨 「의용군」·Volunteer Army → `volunteer-army-white`: `civil-war`, 자캅카스, 베사라비아(발트 사건은 핀란드 의용군·서러시아 의용군이 있어 제외).
   - 맨 「북서군」·Northwestern Army → `north-western-army-white`: `civil-war`, 발트 독립전쟁.
   - 「빙상 행군」·Ice March → `ice-march-1918`: `civil-war`(1918년 쿠반 원정을 가리킴. 시베리아 후퇴는 「대시베리아 빙상 행군」으로 먼저 링크된다).
-- 검사: `scripts/smoke-commulingo-linkify-policy.js`에 pageTerms 단언.
+- 검사: `tests/unit/commulingo-linkify-policy.js`에 pageTerms 단언.
 
 ## 남은 확인거리
 

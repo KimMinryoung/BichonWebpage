@@ -8,7 +8,7 @@
 // Serving is the registry snapshot pattern (memory → disk snapshot → DB,
 // refreshed every minute), so getDataDocument() stays synchronous. A cold
 // start with neither a snapshot nor the database (a lone clone running the
-// tests) falls back to the frozen seed in scripts/fixtures/, which is test
+// tests) falls back to the frozen seed in tests/fixtures/, which is test
 // data and is not updated when the data changes.
 //
 // The activity catalog is also written out to activity-catalog.json beside
@@ -22,7 +22,7 @@ const { normalizeKoreanTree } = require('./korean-quotes');
 const { validateCourseShape, gateCourseWrite } = require('./course-validation');
 
 const SNAPSHOT_PATH = process.env.COMMULINGO_DATA_DOCUMENTS_SNAPSHOT || path.join(__dirname, 'data-documents-snapshot.json');
-const SEED_PATH = path.join(__dirname, '..', '..', 'scripts', 'fixtures', 'commulingo-data-documents-seed.json');
+const SEED_PATH = path.join(__dirname, '..', '..', 'tests', 'fixtures', 'commulingo-data-documents-seed.json');
 const CATALOG_FILE = process.env.COMMULINGO_ACTIVITY_CATALOG_FILE || path.join(__dirname, 'activity-catalog.json');
 const KEY = /^[a-z0-9-]+(\/[a-z0-9-]+)?$/;
 

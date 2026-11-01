@@ -4,7 +4,7 @@
 // DOMPurify from a CDN, so the body was blank without JavaScript or the CDN.
 // The server now cleans it with the same intent: drop scripts, event
 // handlers, script URLs, frames and form controls, keep the structure and the
-// SVG. scripts/smoke-static-page-sanitize.js pins the rules.
+// SVG. tests/unit/static-page-sanitize.js pins the rules.
 const sanitizeHtml = require('sanitize-html');
 
 const SVG_TAGS = ['svg', 'g', 'path', 'rect', 'circle', 'ellipse', 'line', 'polyline', 'polygon',

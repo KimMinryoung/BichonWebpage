@@ -12,7 +12,7 @@
 - 배포 스윕에 `/commulingo/book/capital-vol1`, `/commulingo/lesson/capital-v1-ch01-basic`, `/commulingo/drill`, `/commulingo/drill/event-scenes` 추가.
 
 ### 사전 공백
-- `soviet-foreign-policy.json` 계보도 간선 40개(있던 게 0), `scripts/smoke-commulingo-genealogy.js`(scripts/test 자동 편입).
+- `soviet-foreign-policy.json` 계보도 간선 40개(있던 게 0), `tests/unit/commulingo-genealogy.js`(scripts/test 자동 편입).
 - 문헌↔용어·사건 링크 86건(`scripts/audit-commulingo-doc-links.js` → 손 검토 → manifest), 용어→인물·사건 1,201건(migration 159; 두 글자 성만 걸린 299건 제외), 오연결 별칭 차단 11개(migration 160~162)와 페이지 noAutoLink(헌법 문서의 58조, 바르키자·총통 지령의 제헌의회·최고사령부, 국가사회주의=나치즘인 세 문헌).
 - 용어 body 없음 402건은 `scripts/one-off/commulingo-term-body-backlog.js`가 점수화해 `temp_dev/commulingo-term-body-backlog.json`으로 낸다. leninbot enrich 레인 인입 형식은 미확인(핸드오프).
 
@@ -23,7 +23,7 @@
 - 모델과 비용: 처음 Claude Sonnet 5(Anthropic API 종량)로 1~21장을 만들었고 90회 호출 약 $27가 나갔다. 사용자 요청으로 기본 모델을 DeepSeek V4 Pro(프록시 `/deepseek`)로 바꿨다(장당 $0.05~0.10). DeepSeek는 프롬프트 구체성은 좋으나 기계 검사에 안 걸리는 오염(가나 누출, 날조 수치, 표기 이탈, 분량 초과, 빠진 중괄호)이 잦아 검수가 필수다. gate에 가나·표기 이탈 검사와 중괄호 복구를 넣었다.
 
 ### 학습 기능 (코드, 배포 대기)
-틀린 문항만 다시 풀기, 틀린 문항 간격 복습 큐(1·3·7·14·30일, 3연속 정답 졸업; `public/js/commulingo-schedule.js`, `scripts/smoke-commulingo-schedule.js`), 문항 단위 기록과 계정 동기화(migration 163, `POST /commulingo/progress/answers`), 1~4·Enter 키 답변. dev-preview(http://100.122.248.77:3001/commulingo/book/capital-vol1)에서 헤드리스로 확인했고 프로덕션 배포는 `scripts/deploy`로 하면 된다(시각 변경은 확인 후 배포 규칙).
+틀린 문항만 다시 풀기, 틀린 문항 간격 복습 큐(1·3·7·14·30일, 3연속 정답 졸업; `public/js/commulingo-schedule.js`, `tests/unit/commulingo-schedule.js`), 문항 단위 기록과 계정 동기화(migration 163, `POST /commulingo/progress/answers`), 1~4·Enter 키 답변. dev-preview(http://100.122.248.77:3001/commulingo/book/capital-vol1)에서 헤드리스로 확인했고 프로덕션 배포는 `scripts/deploy`로 하면 된다(시각 변경은 확인 후 배포 규칙).
 
 ### 발견한 장애
 Supabase→leninbot-pg 이전 때 `commulingo_progress` 표가 옮겨지지 않아 로그인 진도 동기화가 조용히 실패하고 있었다. 005·163을 `docker exec -i leninbot-pg psql -U postgres -d leninbot`로 적용하고 frontend 역할에 GRANT했다(frontend는 CREATE 권한이 없다).

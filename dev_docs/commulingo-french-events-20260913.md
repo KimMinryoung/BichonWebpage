@@ -29,5 +29,5 @@ CHNM/ASHP의 Hunt·Censer 편집 프랑스 혁명 자료, 국민의회·국민�
 
 - `scripts/content/french-event-timeline-geo-20260913.json`에 변경 전 연표, 변경 후 연표, 추가 지도 근거를 보관한다. 원래 콘텐츠 정본의 연표도 최종값으로 갱신했다.
 - `scripts/apply-french-event-geo.js`는 기본 읽기 전용이며 `DB_HOST=leninbot-pg APP_ROOT=/app`에서 실행한다. `--apply --backup=/tmp/<고유파일>.json`을 추가하면 두 행을 잠그고 원본 일치를 검사한 뒤 timeline만 트랜잭션으로 바꾼다. 다른 본문·위치·인물 데이터는 보존한다.
-- 기존 지도 렌더러의 하단으로 밀어내는 번호 배치는 파리·베르사유처럼 밀집한 사건에서 하단 번호를 겹치게 했다. 실제 좌표와 경로를 유지하고 번호만 가까운 빈 위치로 배치한다. `scripts/smoke-commulingo-event-map-crowding.js`가 한·영 44개 번호의 누락·경계 이탈·모바일 크기의 겹침을 검사한다.
+- 기존 지도 렌더러의 하단으로 밀어내는 번호 배치는 파리·베르사유처럼 밀집한 사건에서 하단 번호를 겹치게 했다. 실제 좌표와 경로를 유지하고 번호만 가까운 빈 위치로 배치한다. `tests/unit/commulingo-event-map-crowding.js`가 한·영 44개 번호의 누락·경계 이탈·모바일 크기의 겹침을 검사한다.
 - 이번 작업 백업·화면 검증 산출물: `/tmp/commulingo-french-geo-20260913/`.
