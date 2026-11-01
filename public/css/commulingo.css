@@ -329,18 +329,38 @@
     width: 100%;
 }
 
-.commu-lesson-action:hover:not(:disabled) {
-    background: var(--bg-surface-hover);
-    border-color: var(--link);
+/* Hover fills the whole button with accent green and turns its text and
+   progress fill cream, like the reading chips and book cards (owner, 2026-11-01). */
+.commu-lesson-action:hover:not(:disabled),
+.commu-lesson-action:focus-visible:not(:disabled),
+.commu-lesson-action.is-completed:hover:not(:disabled),
+.commu-lesson-action.is-completed:focus-visible:not(:disabled) {
+    background: var(--btn-primary);
+    border-color: var(--btn-primary);
+    color: var(--clr-cream);
+}
+
+.commu-lesson-action:hover:not(:disabled) .commu-lesson-action-top span,
+.commu-lesson-action:hover:not(:disabled) .commu-lesson-meta,
+.commu-lesson-action:focus-visible:not(:disabled) .commu-lesson-action-top span,
+.commu-lesson-action:focus-visible:not(:disabled) .commu-lesson-meta {
+    color: var(--clr-cream);
+}
+
+.commu-lesson-action:hover:not(:disabled) .commu-progress-track,
+.commu-lesson-action:focus-visible:not(:disabled) .commu-progress-track {
+    background: color-mix(in srgb, var(--clr-black, #010409) 45%, var(--btn-primary));
+    border-color: var(--clr-cream);
+}
+
+.commu-lesson-action:hover:not(:disabled) .commu-progress-track > span,
+.commu-lesson-action:focus-visible:not(:disabled) .commu-progress-track > span {
+    background: var(--clr-cream);
 }
 
 .commu-lesson-action.is-completed {
     background: color-mix(in srgb, var(--accent-green) 18%, var(--bg-surface));
     border-color: color-mix(in srgb, var(--accent-green) 58%, var(--border));
-}
-
-.commu-lesson-action.is-completed:hover:not(:disabled) {
-    background: color-mix(in srgb, var(--accent-green) 25%, var(--bg-surface));
 }
 
 .commu-lesson-action.is-completed .commu-progress-track {
