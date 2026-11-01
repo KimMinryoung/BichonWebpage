@@ -60,7 +60,7 @@
             if (!b) label = one(a, true);
             else if (a[0] !== b[0]) label = (a[1] ? one(a, true) : a[0]) + '–' + (b[1] ? one(b, true) : b[0]);
             else if (a[1] && a[1] === b[1] && a[2] && b[2]) label = MONTHS_EN[a[1] - 1] + ' ' + a[2] + '–' + b[2] + ', ' + a[0];
-            else label = one(a, false) + '–' + one(b, false) + ' ' + a[0];
+            else label = one(a, false) + '–' + one(b, false) + (b[2] ? ', ' : ' ') + a[0];
         } else {
             var md = function(d) { return (d[1] ? d[1] + '월' : '') + (d[2] ? ' ' + d[2] + '일' : ''); };
             if (!b) label = a[0] + '년' + (a[1] ? ' ' + md(a) : '');
