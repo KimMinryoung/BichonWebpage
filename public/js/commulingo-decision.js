@@ -73,7 +73,7 @@
 
     function yearsLabel(years) {
         if (!Array.isArray(years)) return text(years);
-        return years[1] && years[1] !== years[0] ? years[0] + '–' + years[1] : String(years[0]);
+        return years[1] && years[1] !== years[0] ? years[0] + (en ? '–' : '~') + years[1] : String(years[0]);
     }
 
     function fill(template, values) {
