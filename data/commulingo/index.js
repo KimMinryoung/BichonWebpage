@@ -1,67 +1,89 @@
+// The CommuLingo course bundle: every learning course ("collection") the site
+// serves, in key order.
+//
+// Since 2026-11-01 each course is one database data document,
+// `course/<collection id>` in commulingo_data_documents (data-documents.js),
+// so a correction or a new course is an MCP write (data_document_put, with
+// validation, revisions and the audit log) and needs neither a commit nor a
+// deploy. Before that they were git files: lessons.json (Capital, volumes
+// 1–3) and courses/<id>.js.
+//
+// Where no course document exists (a lone clone: no database, no snapshot)
+// the bundle falls back to the frozen seed in
+// scripts/fixtures/commulingo-courses-seed.json, a few representative courses
+// that are not updated when the courses change. scripts/test always uses the
+// seed (COMMULINGO_COURSES_SEED=1) so the tests do not depend on live content;
+// a write is checked against the content rules by course-validation.js.
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 
-const LESSONS_PATH = path.join(__dirname, 'lessons.json');
-const COURSES_DIR = path.join(__dirname, 'courses');
+const COURSE_PREFIX = 'course/';
+const SEED_PATH = path.join(__dirname, '..', '..', 'scripts', 'fixtures', 'commulingo-courses-seed.json');
 
+let seedCache = null;
 let bundleCache = null;
 
-function statMtimeMs(filePath) {
-    return fs.statSync(filePath).mtimeMs;
+function seedEntries() {
+    if (!seedCache) {
+        let rows = [];
+        try {
+            rows = JSON.parse(fs.readFileSync(SEED_PATH, 'utf8'));
+        } catch (err) {
+            console.error('[commulingo courses] no course documents and no seed:', err.message);
+        }
+        seedCache = rows.map(row => ({ key: row.key, content: row.content, revision: row.revision || 1, updatedAt: row.updatedAt || null }));
+    }
+    return seedCache;
 }
 
-function courseFiles() {
-    if (!fs.existsSync(COURSES_DIR)) return [];
-    return fs.readdirSync(COURSES_DIR)
-        .filter(name => name.endsWith('.js'))
-        .sort()
-        .map(name => path.join(COURSES_DIR, name));
+function courseEntries() {
+    if (process.env.COMMULINGO_COURSES_SEED === '1') return seedEntries();
+    // Required here, not at the top: the seed (tests) needs no database pool.
+    const entries = require('./data-documents').listDataDocuments(COURSE_PREFIX);
+    return entries.length ? entries : seedEntries();
 }
 
-function sourceDigest(files) {
+function signatureOf(entries) {
+    return entries.map(entry => `${entry.key}:${entry.revision}:${entry.updatedAt || ''}`).join('|');
+}
+
+function contentDigest(entries) {
     const hash = crypto.createHash('sha256');
-    for (const filePath of files) {
-        hash.update(filePath);
+    for (const entry of entries) {
+        hash.update(entry.key);
         hash.update('\0');
-        hash.update(fs.readFileSync(filePath));
+        hash.update(JSON.stringify(entry.content));
         hash.update('\0');
     }
     return hash.digest('hex').slice(0, 16);
 }
 
-function loadCourse(filePath) {
-    delete require.cache[require.resolve(filePath)];
-    const course = require(filePath);
-    if (!course || typeof course !== 'object') {
-        throw new Error(`CommuLingo course module must export an object: ${filePath}`);
-    }
-    return course;
-}
-
+// { version, bundle: { version, collections }, modifiedAt: { [id]: ISO } }.
+// The same object comes back until a course document changes.
 function loadCommuLingoBundle() {
-    const files = [LESSONS_PATH, ...courseFiles()];
-    const mtimeMs = Math.max(...files.map(statMtimeMs));
-    if (bundleCache && bundleCache.mtimeMs === mtimeMs) return bundleCache;
+    const entries = courseEntries();
+    const signature = signatureOf(entries);
+    if (bundleCache && bundleCache.signature === signature) return bundleCache;
 
-    const version = sourceDigest(files);
-    const base = JSON.parse(fs.readFileSync(LESSONS_PATH, 'utf8'));
-    const extraCollections = files.slice(1).map(loadCourse);
-    const collections = [
-        ...(base.collections || []),
-        ...extraCollections,
-    ];
-
+    const version = contentDigest(entries);
+    const modifiedAt = {};
+    const collections = entries.map(entry => {
+        const course = entry.content;
+        if (course && course.id && entry.updatedAt) modifiedAt[course.id] = entry.updatedAt;
+        return course;
+    });
     bundleCache = {
-        mtimeMs,
+        signature,
         version,
-        bundle: {
-            ...base,
-            version,
-            collections,
-        },
+        modifiedAt,
+        bundle: { version, collections },
     };
     return bundleCache;
 }
 
-module.exports = { loadCommuLingoBundle };
+function courseKey(collectionId) {
+    return COURSE_PREFIX + collectionId;
+}
+
+module.exports = { loadCommuLingoBundle, courseKey, COURSE_PREFIX };

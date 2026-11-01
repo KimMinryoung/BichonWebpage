@@ -65,7 +65,10 @@ router.get('/book/:collectionId', async (req, res) => {
 
 router.get('/catalog.json', (req, res) => {
     const catalog = loadCommuLingoCatalog();
-    setPublicDataCache(req, res, catalog.version);
+    // Versioned URLs stay immutable; the bare URL follows course writes
+    // (database documents, no deploy-time purge) within thirty seconds.
+    if (req.query && req.query.v === catalog.version) setPublicDataCache(req, res, catalog.version);
+    else setShortPublicCache(res);
     res.type('application/json').send(catalogBody(catalog));
 });
 

@@ -22,7 +22,6 @@
     "sprite:process": "node tools/sprite-pipeline.js process",
     "sprite:batch": "node tools/sprite-pipeline.js batch",
     "sprite:list": "node tools/sprite-pipeline.js list",
-    "commulingo:build": "node scripts/build-commulingo-shards.js",
     "commulingo:people:snapshot": "node scripts/snapshot-commulingo-people.js"
   },
   "dependencies": {

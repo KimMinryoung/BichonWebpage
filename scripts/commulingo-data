@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # commulingo-data — edit the CommuLingo data documents, which live in the
 # database (commulingo_data_documents): activity-catalog, politburo,
-# secretariat, orgburo, event-control/<event id>, genealogy/<chart id>.
+# secretariat, orgburo, event-control/<event id>, genealogy/<chart id>,
+# course/<course id> (learning courses; a put must pass the course rules).
 # export writes <dir>/<key>.json (event-control/ and genealogy/ as
 # subdirectories); edit with any tool, then put sends back what changed. A
 # document is guarded by the revision it was exported at, so an edit made

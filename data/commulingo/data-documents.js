@@ -1,8 +1,9 @@
 // CommuLingo data kept as whole JSON documents in the database
 // (commulingo_data_documents, migration 341): the activity catalog, the
-// Central Committee body rosters, event-map control phases and genealogy
-// charts. They used to be git-tracked files; now a correction is a DB write
-// with history and needs neither a commit nor a deploy.
+// Central Committee body rosters, event-map control phases, genealogy charts
+// and (since 2026-11-01) the learning courses, course/<id> (index.js,
+// course-validation.js). They used to be git-tracked files; now a correction
+// is a DB write with history and needs neither a commit nor a deploy.
 //
 // Serving is the registry snapshot pattern (memory → disk snapshot → DB,
 // refreshed every minute), so getDataDocument() stays synchronous. A cold
@@ -18,6 +19,7 @@ const path = require('path');
 const db = require('../../config/database');
 const { createRegistrySnapshotStore } = require('./snapshot-store');
 const { normalizeKoreanTree } = require('./korean-quotes');
+const { validateCourseShape, gateCourseWrite } = require('./course-validation');
 
 const SNAPSHOT_PATH = process.env.COMMULINGO_DATA_DOCUMENTS_SNAPSHOT || path.join(__dirname, 'data-documents-snapshot.json');
 const SEED_PATH = path.join(__dirname, '..', '..', 'scripts', 'fixtures', 'commulingo-data-documents-seed.json');
@@ -61,6 +63,8 @@ const VALIDATORS = [
             || !Array.isArray(c.edges) || !Number.isFinite(c.timeStart) || !Number.isFinite(c.timeEnd)
             || c.timeEnd <= c.timeStart) throw badRequest(`${key}: chart is missing columns/nodes/edges or a time range`);
     }],
+    // Learning courses (index.js); the content rules run in writeDataDocuments.
+    [/^course\//, (c, key) => validateCourseShape(key, c)],
 ];
 
 function validateDataDocument(key, content) {
@@ -174,15 +178,26 @@ async function writeDataDocuments(changes, { actor, note, client } = {}) {
     const result = await withClient(client, async c => {
         await c.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-data-documents-write'))");
         const written = [];
+        // Courses written earlier in this batch, for the cross-course checks.
+        const pendingCourses = new Map();
         for (const item of changes.upserts || []) {
             validateDataDocument(item.key, item.content);
             // Korean labels follow the NIKL quote rules (korean-quotes.js).
-            const text = JSON.stringify(normalizeKoreanTree(item.content));
+            const normalized = normalizeKoreanTree(item.content);
+            const text = JSON.stringify(normalized);
             const current = (await c.query(
                 'SELECT key, content::text AS content_text, revision, updated_at, updated_by FROM commulingo_data_documents WHERE key = $1 FOR UPDATE',
                 [item.key])).rows[0];
             if (item.expectedRevision !== undefined && (current ? current.revision : 0) !== item.expectedRevision) {
                 throw badRequest(`${item.key}: expected revision ${item.expectedRevision}, found ${current ? current.revision : 'none'}`, 409);
+            }
+            let course;
+            if (item.key.startsWith('course/')) {
+                const others = new Map(listDataDocuments('course/').map(entry => [entry.key, entry.content]));
+                pendingCourses.forEach((content, key) => others.set(key, content));
+                others.delete(item.key);
+                course = gateCourseWrite({ key: item.key, next: normalized, prev: current ? JSON.parse(current.content_text) : null, others: [...others.values()] });
+                pendingCourses.set(item.key, normalized);
             }
             if (!current) {
                 const revision = (await c.query(
@@ -190,7 +205,7 @@ async function writeDataDocuments(changes, { actor, note, client } = {}) {
                 await c.query(
                     `INSERT INTO commulingo_data_documents (key, content, revision, updated_by, created_by)
                      VALUES ($1, $2::json, $3, $4, $4)`, [item.key, text, revision, actor]);
-                written.push({ key: item.key, revision, op: 'insert' });
+                written.push({ key: item.key, revision, op: 'insert', ...(course && { course }) });
                 continue;
             }
             if (JSON.stringify(JSON.parse(current.content_text)) === text) {
@@ -201,7 +216,7 @@ async function writeDataDocuments(changes, { actor, note, client } = {}) {
             await c.query(
                 `UPDATE commulingo_data_documents SET content = $2::json, revision = revision + 1, updated_at = NOW(), updated_by = $3
                   WHERE key = $1`, [item.key, text, actor]);
-            written.push({ key: item.key, revision: current.revision + 1, op: 'update' });
+            written.push({ key: item.key, revision: current.revision + 1, op: 'update', ...(course && { course }) });
         }
         const deleted = [];
         for (const key of changes.deletes || []) {

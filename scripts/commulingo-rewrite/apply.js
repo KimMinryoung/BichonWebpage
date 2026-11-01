@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Writes accepted chapter candidates into data/commulingo/lessons.json.
+// Writes accepted chapter candidates into the Capital course documents
+// (course/capital-vol1..3, data documents in the database since 2026-11-01).
 //   node scripts/commulingo-rewrite/apply.js --chapters capital-v1-ch01,capital-v1-ch02
 //   node scripts/commulingo-rewrite/apply.js --part v1-p1 [--require-review] [--dry-run]
 //   node scripts/commulingo-rewrite/apply.js --volume 1
@@ -7,19 +8,22 @@
 // recorded it clean in progress.jsonl, or review.jsonl carries an
 // accept/edited verdict for it (with --require-review, flagged chapters need
 // that verdict). Every candidate is re-gated in memory before anything is
-// written; the file is then written whole and renamed into place (the data
-// directory is bind-mounted into production), the shards are rebuilt on the
-// host so the container finds a matching digest, and the validator prunes
-// the baseline. A one-line ledger per chapter goes to
-// docs/commulingo-capital-rewrite-log.md so the record survives temp_dev.
+// written; the changed volumes then go to temp_dev/commulingo-rewrite/put/
+// as whole documents guarded by the revision they were read at, and
+// scripts/commulingo-data put sends them through the course write gate
+// (data/commulingo/course-validation.js; --dry-run stops at its report).
+// Live within a minute, no commit or deploy. A one-line ledger per chapter
+// goes to docs/commulingo-capital-rewrite-log.md so the record survives
+// temp_dev.
 const fs = require('fs');
 const path = require('path');
 const { execFileSync } = require('child_process');
 const cand = require('./candidate');
 const { gate } = require('./gate');
 
+const { listDataDocuments } = require('../../data/commulingo/data-documents');
+
 const ROOT = path.join(__dirname, '..', '..');
-const LESSONS = path.join(ROOT, 'data', 'commulingo', 'lessons.json');
 const WORK = path.join(ROOT, 'temp_dev', 'commulingo-rewrite');
 const LOG = path.join(ROOT, 'docs', 'commulingo-capital-rewrite-log.md');
 
@@ -61,8 +65,10 @@ function selectChapters(data, args) {
 
 function main() {
     const args = parseArgs(process.argv.slice(2));
-    const rawText = fs.readFileSync(LESSONS, 'utf8');
-    const data = JSON.parse(rawText);
+    const stored = listDataDocuments('course/capital-vol');
+    if (!stored.length) { console.error('no course/capital-vol* documents in the data-document snapshot'); process.exit(2); }
+    const data = { collections: stored.map(entry => JSON.parse(JSON.stringify(entry.content))) };
+    const revisions = Object.fromEntries(stored.map(entry => [entry.key, entry.revision]));
     const targets = selectChapters(data, args);
     if (!targets.length) { console.error('no chapters selected'); process.exit(2); }
 
@@ -93,16 +99,24 @@ function main() {
     console.log('applied ' + applied.length + ', skipped ' + skipped.length);
     skipped.forEach(s => console.log('  skip ' + s));
     applied.forEach(a => console.log('  apply ' + a.chapterId + ' (' + a.status + ', review ' + a.verdict + ', ' + a.soft + ' soft flags)'));
-    if (!applied.length || args.dryRun) return;
+    if (!applied.length) return;
 
-    const outText = JSON.stringify(data, null, 2) + '\n';
-    fs.writeFileSync(LESSONS + '.tmp', outText);
-    fs.renameSync(LESSONS + '.tmp', LESSONS);
-    console.log('lessons.json written (' + outText.length + ' bytes)');
-    execFileSync('node', [path.join(ROOT, 'scripts', 'build-commulingo-shards.js')], { stdio: 'inherit' });
+    const changed = new Set(targets.filter(t => applied.some(a => a.chapterId === t.chapter.id)).map(t => t.collection));
+    const putDir = path.join(WORK, 'put');
+    fs.rmSync(putDir, { recursive: true, force: true });
+    fs.mkdirSync(path.join(putDir, 'course'), { recursive: true });
+    const guard = {};
+    for (const collection of changed) {
+        fs.writeFileSync(path.join(putDir, 'course', collection.id + '.json'), JSON.stringify(collection, null, 1) + '\n');
+        guard['course/' + collection.id] = revisions['course/' + collection.id];
+    }
+    fs.writeFileSync(path.join(putDir, '.export.json'), JSON.stringify({ revisions: guard, selectors: Object.keys(guard) }, null, 1) + '\n');
+    const put = [path.join(ROOT, 'scripts', 'commulingo-data'), 'put', putDir, '--note', 'capital rewrite: ' + applied.map(a => a.chapterId).join(',')];
+    if (args.dryRun) put.push('--dry-run');
+    execFileSync(put[0], put.slice(1), { stdio: 'inherit' });
+    if (args.dryRun) return;
     execFileSync('node', [path.join(ROOT, 'scripts', 'validate-commulingo.js'), '--prune-baseline'], { stdio: 'inherit' });
     execFileSync('node', [path.join(ROOT, 'scripts', 'audit-commulingo-quality.js')], { stdio: 'inherit' });
-    execFileSync('node', [path.join(ROOT, 'scripts', 'check-course-source-excerpts.js')], { stdio: 'inherit' });
 
     fs.writeFileSync(path.join(WORK, 'last-applied-lessons.txt'), applied.flatMap(a => [a.chapterId + '-basic', a.chapterId + '-advanced']).join('\n') + '\n');
     const date = new Date().toISOString().slice(0, 10);

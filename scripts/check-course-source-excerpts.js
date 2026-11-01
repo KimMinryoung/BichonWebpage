@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // Verifies the original-text excerpts questions attach as `question.source`
-// (see data/commulingo/courses/marx-wages-and-programme.js for the shape).
+// over the live courses (data-document snapshot). The course write gate
+// (data/commulingo/course-validation.js) checks the site-document excerpts on
+// every write; this script also checks the marxists.org ones (Capital).
 //
 // Site documents (`/commulingo/docs/<id>#anchor`): the Korean quote must
 // appear verbatim in the document on disk and the anchor must exist. The
@@ -18,13 +20,12 @@
 //   node scripts/check-course-source-excerpts.js            # offline, cache only
 //   node scripts/check-course-source-excerpts.js --fetch    # fill the cache as needed
 //
-// Collections in REQUIRE_SOURCE must carry a source on every question; the
-// rest are checked only where a source is present.
+// Guided-reading courses must carry a source on every question; the rest are
+// checked only where a source is present.
 const { loadCommuLingoBundle } = require('../data/commulingo');
 const { getCommuLingoDoc, getCommuLingoDocContent } = require('../data/commulingo/docs-store');
 const text = require('./lib/commulingo-source-text');
 
-const REQUIRE_SOURCE = new Set(['marx-wages-and-programme', 'marx-wage-labour-capital', 'marx-civil-war-in-france', 'marx-eighteenth-brumaire', 'lenin-materialism-empiriocriticism', 'engels-ludwig-feuerbach', 'lenin-imperialism', 'marx-gotha-critique', 'lenin-state-revolution', 'engels-origin-family']);
 const doFetch = process.argv.includes('--fetch');
 
 const docCache = new Map();
@@ -58,7 +59,7 @@ async function main() {
     let checked = 0;
     const bundle = loadCommuLingoBundle().bundle;
     for (const collection of bundle.collections || []) {
-        const required = REQUIRE_SOURCE.has(collection.id);
+        const required = collection.format === 'guided-reading';
         for (const chapter of collection.chapters || []) {
             for (const lesson of chapter.lessons || []) {
                 for (const [index, question] of (lesson.questions || []).entries()) {
@@ -89,6 +90,7 @@ async function main() {
                     }
                     if (anchor && !page.ids.has(anchor)) { console.log(`BAD ANCHOR ${where}: #${anchor} not in ${href.replace(/#.*$/, '')}`); failures += 1; }
                     const quote = source.quote && source.quote[locale];
+                    if (!quote && source.kind === 'reference' && !required) continue;
                     if (!quote) { console.log(`MISSING ${where}: no ${locale} quote`); failures += 1; continue; }
                     for (const piece of text.quotePieces(quote)) {
                         checked += 1;

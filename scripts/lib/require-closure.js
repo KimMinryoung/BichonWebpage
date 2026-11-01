@@ -2,8 +2,8 @@
 // a container only when one of them changes. The closure follows every
 // literal relative require() from the entry, lazy ones inside functions
 // included; package files and the image definition count too. A require of a
-// computed path is not followed (the course loaders in data/commulingo are
-// the only ones, and only the website loads courses).
+// computed path is not followed (the courses are database documents, so no
+// loader needs one).
 //
 // Entries: the chat gateway (chat-gateway.js), the admin process
 // (mcp/main.js; also runs scripts/audit-*.js as child processes) and the
@@ -65,7 +65,7 @@ function changedEntryFiles(name, from, to) {
 function adminOnlyFiles(files) {
     const admin = closure(ENTRIES.admin), web = closure(ENTRIES.web);
     return files.filter(file => file.endsWith('.js') && !web.has(file)
-        && (admin.has(file) || ADMIN_EXTRA.test(file)) && !file.startsWith('data/commulingo/courses/'));
+        && (admin.has(file) || ADMIN_EXTRA.test(file)));
 }
 
 module.exports = { entryFiles, changedEntryFiles, adminOnlyFiles };

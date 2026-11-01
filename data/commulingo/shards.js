@@ -1,110 +1,21 @@
-const fs = require('fs');
-const path = require('path');
+// Public CommuLingo payloads: the catalog (every public course with its
+// chapter and lesson stubs) and one payload per lesson, built from the course
+// bundle (index.js) and kept in memory per bundle version.
+//
+// A course is public up to its `publicChapterLimit` (a field of the course
+// document; 0 or absent keeps it hidden), so publishing a chapter is a data
+// write, not a code change. Until 2026-11-01 the limits were a constant here
+// and the payloads were files under generated/, which the production, MCP and
+// preview processes all rebuilt in one shared directory.
 const crypto = require('crypto');
+const fs = require('fs');
 const { loadCommuLingoBundle } = require('./index');
 
-const LESSONS_PATH = path.join(__dirname, 'lessons.json');
-const COURSES_DIR = path.join(__dirname, 'courses');
-const GENERATED_DIR = path.join(__dirname, 'generated');
-const LESSONS_DIR = path.join(GENERATED_DIR, 'lessons');
-const CATALOG_PATH = path.join(GENERATED_DIR, 'catalog.json');
-const MANIFEST_PATH = path.join(GENERATED_DIR, 'manifest.json');
+// This module shapes the payloads, so its own source is part of the version:
+// a logic change must not reuse URLs cached as immutable under the old shape.
+const CODE_DIGEST = crypto.createHash('sha256').update(fs.readFileSync(__filename)).digest('hex').slice(0, 8);
 
-const PUBLIC_CHAPTER_LIMITS = {
-    'french-revolution-intro': 9,
-    'socialist-divergences-intro': 12,
-    'sex-gender-theory-intro': 12,
-    'capital-vol1': 33,
-    'capital-vol2': 21,
-    'capital-vol3': 52,
-    'lenin-imperialism': 10,
-    'lenin-state-revolution': 6,
-    'lenin-materialism-empiriocriticism': 8,
-    'marx-wage-labour-capital': 7,
-    'marx-wages-and-programme': 7,
-    'marx-civil-war-in-france': 6,
-    'marx-eighteenth-brumaire': 7,
-    'engels-ludwig-feuerbach': 7,
-    'engels-origin-family': 8,
-    'marx-gotha-critique': 7,
-};
-
-let freshnessCache = null;
-
-function statMtimeMs(filePath) {
-    return fs.statSync(filePath).mtimeMs;
-}
-
-function sourceFiles() {
-    // This module shapes the shard payloads, so its own content is part of the
-    // digest: a logic change must invalidate shards built by older code.
-    const files = [__filename, LESSONS_PATH];
-    if (fs.existsSync(COURSES_DIR)) {
-        for (const name of fs.readdirSync(COURSES_DIR).filter(name => name.endsWith('.js')).sort()) {
-            files.push(path.join(COURSES_DIR, name));
-        }
-    }
-    return files;
-}
-
-function sourceMtimeMs(files = sourceFiles()) {
-    return Math.max(...files.map(statMtimeMs));
-}
-
-function sourceDigest(files = sourceFiles()) {
-    const hash = crypto.createHash('sha256');
-    for (const filePath of files) {
-        hash.update(filePath);
-        hash.update('\0');
-        hash.update(fs.readFileSync(filePath));
-        hash.update('\0');
-    }
-    return hash.digest('hex').slice(0, 16);
-}
-
-function collectionModifiedAtMap() {
-    const modifiedAt = {};
-    const baseMtime = new Date(statMtimeMs(LESSONS_PATH)).toISOString();
-    const base = readJson(LESSONS_PATH);
-    (base.collections || []).forEach(collection => {
-        if (collection && collection.id) modifiedAt[collection.id] = baseMtime;
-    });
-    if (fs.existsSync(COURSES_DIR)) {
-        for (const name of fs.readdirSync(COURSES_DIR).filter(item => item.endsWith('.js')).sort()) {
-            const filePath = path.join(COURSES_DIR, name);
-            const collection = require(filePath);
-            if (collection && collection.id) {
-                modifiedAt[collection.id] = new Date(statMtimeMs(filePath)).toISOString();
-            }
-        }
-    }
-    return modifiedAt;
-}
-
-function currentVersion() {
-    return ensureCommuLingoShards().version;
-}
-
-function readJson(filePath) {
-    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
-}
-
-function writeJson(filePath, value) {
-    fs.writeFileSync(filePath, JSON.stringify(value));
-}
-
-function ensureDir() {
-    fs.mkdirSync(LESSONS_DIR, { recursive: true });
-}
-
-function isSafeLessonId(lessonId) {
-    return typeof lessonId === 'string' && /^[A-Za-z0-9_-]+$/.test(lessonId);
-}
-
-function lessonPath(lessonId) {
-    if (!isSafeLessonId(lessonId)) return null;
-    return path.join(LESSONS_DIR, lessonId + '.json');
-}
+let built = null; // { bundleVersion, version, catalog, lessons: Map(id -> JSON text) }
 
 function lessonQuestionCount(lesson) {
     return Array.isArray(lesson.questions) ? lesson.questions.length : 0;
@@ -114,7 +25,7 @@ function publicCollections(bundle) {
     return (bundle.collections || [])
         .filter(collection => collection.visibility !== 'private')
         .map(collection => {
-            const chapterLimit = PUBLIC_CHAPTER_LIMITS[collection.id] || 0;
+            const chapterLimit = Number(collection.publicChapterLimit) || 0;
             return {
                 ...collection,
                 chapters: (collection.chapters || []).filter(chapter => (
@@ -189,122 +100,48 @@ function buildPayloads(bundle, version) {
     return { catalog, lessons };
 }
 
-function removeStaleLessonFiles(activeIds) {
-    if (!fs.existsSync(LESSONS_DIR)) return;
-    for (const name of fs.readdirSync(LESSONS_DIR)) {
-        if (!name.endsWith('.json')) continue;
-        const lessonId = name.slice(0, -5);
-        if (!activeIds.has(lessonId)) fs.unlinkSync(path.join(LESSONS_DIR, name));
-    }
-}
-
-function readManifest() {
-    try {
-        return readJson(MANIFEST_PATH);
-    } catch (err) {
-        return null;
-    }
-}
-
-function generatedFilesExist() {
-    return fs.existsSync(CATALOG_PATH) && fs.existsSync(LESSONS_DIR);
-}
-
-function buildCommuLingoShards() {
-    ensureDir();
-    const files = sourceFiles();
-    const digest = sourceDigest(files);
-    const loaded = loadCommuLingoBundle();
-    const version = digest;
-    const { catalog, lessons } = buildPayloads(loaded.bundle, version);
-    const activeIds = new Set();
-
-    writeJson(CATALOG_PATH, catalog);
-    for (const lesson of lessons) {
-        if (!isSafeLessonId(lesson.id)) {
-            throw new Error('Unsafe CommuLingo lesson id: ' + lesson.id);
-        }
-        activeIds.add(lesson.id);
-        writeJson(lessonPath(lesson.id), { version, lesson });
-    }
-    removeStaleLessonFiles(activeIds);
-    writeJson(MANIFEST_PATH, {
-        version,
-        sourceDigest: digest,
-        sourceMtimeMs: sourceMtimeMs(files),
-        lessonCount: lessons.length,
-        generatedAt: new Date().toISOString(),
-    });
-    freshnessCache = { sourceMtimeMs: sourceMtimeMs(files), version, fresh: true, checkedAt: Date.now() };
-    return { version, lessonCount: lessons.length, catalogPath: CATALOG_PATH, lessonsDir: LESSONS_DIR };
-}
-
-// How long a freshness verdict is trusted before the source files are
-// re-stat'ed. Callers hit this several times per request (catalog + link
-// indexes), so without the debounce every request pays a readdir + ~9 stats.
-const FRESHNESS_RECHECK_MS = 1000;
-
 function ensureCommuLingoShards() {
-    if (freshnessCache && freshnessCache.fresh
-        && Date.now() - (freshnessCache.checkedAt || 0) < FRESHNESS_RECHECK_MS) {
-        return { version: freshnessCache.version };
-    }
-    const files = sourceFiles();
-    const mtimeMs = sourceMtimeMs(files);
-    if (freshnessCache && freshnessCache.fresh && freshnessCache.sourceMtimeMs === mtimeMs) {
-        freshnessCache.checkedAt = Date.now();
-        return { version: freshnessCache.version };
-    }
-
-    const manifest = readManifest();
-    if (manifest && generatedFilesExist()) {
-        if (manifest.sourceMtimeMs === mtimeMs) {
-            freshnessCache = { sourceMtimeMs: mtimeMs, version: manifest.version, fresh: true, checkedAt: Date.now() };
-            return { version: manifest.version };
-        }
-        const digest = sourceDigest(files);
-        if (manifest.sourceDigest === digest) {
-            freshnessCache = { sourceMtimeMs: mtimeMs, version: manifest.version, fresh: true, checkedAt: Date.now() };
-            return { version: manifest.version };
-        }
-    }
-
-    return buildCommuLingoShards();
+    const loaded = loadCommuLingoBundle();
+    if (built && built.bundleVersion === loaded.version) return built;
+    const version = crypto.createHash('sha256').update(`${loaded.version}:${CODE_DIGEST}`).digest('hex').slice(0, 16);
+    const { catalog, lessons } = buildPayloads(loaded.bundle, version);
+    // JSON round trips: callers decorate what they get (linkifyLessonPayload
+    // links a lesson in place), which must never reach the bundle objects.
+    built = {
+        bundleVersion: loaded.version,
+        version,
+        catalog: JSON.parse(JSON.stringify(catalog)),
+        lessons: new Map(lessons.map(lesson => [lesson.id, JSON.stringify({ version, lesson })])),
+    };
+    return built;
 }
 
-// The parsed catalog is cached by file mtime so repeat callers get the SAME
-// object back. Reference identity matters beyond speed: linkify.js memoizes
-// its link indexes (and the 1200-person normalization) against the catalog
-// reference, so returning a fresh parse per call silently rebuilt all of that
-// on every report/person/term request. A regenerated catalog file changes the
-// mtime, which invalidates this cache and those memos together.
-let catalogCache = null; // { mtimeMs, data }
-const CATALOG_FRESHNESS_MS = 500;
-let catalogCheckedAt = 0;
+function currentVersion() {
+    return ensureCommuLingoShards().version;
+}
 
+// The same object until a course changes: linkify.js memoizes its link
+// indexes against this reference.
 function loadCommuLingoCatalog() {
-    if (catalogCache && Date.now() - catalogCheckedAt < CATALOG_FRESHNESS_MS) return catalogCache.data;
-    ensureCommuLingoShards();
-    const mtimeMs = statMtimeMs(CATALOG_PATH);
-    catalogCheckedAt = Date.now();
-    if (!catalogCache || catalogCache.mtimeMs !== mtimeMs) {
-        catalogCache = { mtimeMs, data: readJson(CATALOG_PATH) };
-    }
-    return catalogCache.data;
+    return ensureCommuLingoShards().catalog;
 }
 
+// { version, lesson }, a fresh copy per call; null for an unknown id.
 function loadCommuLingoLesson(lessonId) {
-    ensureCommuLingoShards();
-    const filePath = lessonPath(lessonId);
-    if (!filePath || !fs.existsSync(filePath)) return null;
-    return readJson(filePath);
+    const text = typeof lessonId === 'string' ? ensureCommuLingoShards().lessons.get(lessonId) : undefined;
+    return text ? JSON.parse(text) : null;
+}
+
+// { [collection id]: ISO time } of each course document's last write
+// (sitemap lastmod, book page dates).
+function commuLingoBookModifiedTimes() {
+    return { ...loadCommuLingoBundle().modifiedAt };
 }
 
 module.exports = {
-    buildCommuLingoShards,
     currentVersion,
     ensureCommuLingoShards,
     loadCommuLingoCatalog,
     loadCommuLingoLesson,
-    commuLingoBookModifiedTimes: collectionModifiedAtMap,
+    commuLingoBookModifiedTimes,
 };

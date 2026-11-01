@@ -1,22 +1,18 @@
-const fs = require('fs');
-const path = require('path');
-
-// Release dates for course files without editorial.authoredAt. None left: the
-// last one, marx-wages-and-programme, was rewritten with its own date (2026-10-31).
+// Release dates for the "new course" notice: each public course carries its
+// own editorial.authoredAt. COURSES supplies a date for a course that has
+// none (none left since marx-wages-and-programme was rewritten, 2026-10-31).
 const COURSES = [];
 
 function getCourseMetadata(id) {
     return COURSES.find(course => course.id === id) || null;
 }
 
-// Course files that carry editorial.authoredAt date themselves; COURSES only
-// supplies the date for older files that have none. Loaded on call, not at the
-// top, because course files require this module.
-function courseFileMetadata() {
-    const dir = path.join(__dirname, 'courses');
-    return fs.readdirSync(dir).filter(name => name.endsWith('.js')).sort()
-        .map(name => require(path.join(dir, name)))
+// Loaded on call: index.js reads the data documents, which load lazily.
+function courseDocumentMetadata() {
+    const { loadCommuLingoBundle } = require('./index');
+    return (loadCommuLingoBundle().bundle.collections || [])
         .filter(course => course && course.id && course.visibility !== 'private'
+            && Number(course.publicChapterLimit) > 0
             && course.editorial && course.editorial.authoredAt)
         .map(course => ({
             id: course.id,
@@ -27,8 +23,8 @@ function courseFileMetadata() {
 }
 
 function getLatestCourseMetadata() {
-    const files = courseFileMetadata();
-    return [...files, ...COURSES.filter(course => !files.some(file => file.id === course.id))]
+    const own = courseDocumentMetadata();
+    return [...own, ...COURSES.filter(course => !own.some(item => item.id === course.id))]
         .filter(course => Number.isFinite(Date.parse(`${course.releasedAt}T00:00:00Z`)))
         .sort((a, b) => Date.parse(b.releasedAt) - Date.parse(a.releasedAt))[0] || null;
 }

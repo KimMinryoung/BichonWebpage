@@ -12,12 +12,12 @@
 //        source{ anchor?, label{ko,en}, quote{ko,en} } }
 // The harness fills id, type, points, answer and source.href. A question keeps
 // the id of its `basis` when it is that question edited; a replaced or new
-// question gets a fresh id (scripts/check-commulingo-question-ids.js), so a
+// question gets a fresh id (scripts/lib/commulingo-question-ids.js), so a
 // learner's history of the old question is not counted for it.
 const fs = require('fs');
 const path = require('path');
 const { loadCommuLingoBundle } = require('../../data/commulingo');
-const { isReplacement, replacementId } = require('../check-commulingo-question-ids');
+const { isReplacement, replacementId } = require('../lib/commulingo-question-ids');
 
 const CANDIDATES_DIR = path.join(__dirname, '..', '..', 'temp_dev', 'commulingo-rewrite', 'candidates');
 const MARXISTS_DIR = path.join(__dirname, '..', '..', 'temp_dev', 'commulingo-rewrite', 'marxists');

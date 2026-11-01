@@ -127,9 +127,9 @@ const tools = [
     {
         scope: 'read',
         name: 'data_documents_list',
-        description: 'Data documents (activity-catalog, politburo/secretariat/orgburo rosters, event-control/<event id>, genealogy/<chart id>) '
-            + 'with revision, last writer and size; prefix narrows the keys.',
-        inputSchema: object({ prefix: str('Key prefix, e.g. genealogy/ or event-control/') }),
+        description: 'Data documents (activity-catalog, politburo/secretariat/orgburo rosters, event-control/<event id>, genealogy/<chart id>, '
+            + 'course/<course id> learning courses) with revision, last writer and size; prefix narrows the keys.',
+        inputSchema: object({ prefix: str('Key prefix, e.g. genealogy/, event-control/ or course/') }),
         async handler({ prefix = '' }) {
             const { readDataDocumentRows } = require('../../data/commulingo/data-documents');
             return { documents: (await readDataDocumentRows({ prefix })).map(row => ({ key: row.key, revision: row.revision,
@@ -140,7 +140,8 @@ const tools = [
         scope: 'read',
         name: 'data_document_get',
         description: 'One data document, or the part at a JSON Pointer (RFC 6901, e.g. /affiliations/12), with the revision data_document_put '
-            + 'expects. keysOnly lists an object\'s keys or an array\'s length instead of the value (the activity catalog is large).',
+            + 'expects. keysOnly lists an object\'s keys or an array\'s length instead of the value (the activity catalog and the courses are large: '
+            + 'a course question is /chapters/<i>/lessons/<j>/questions/<k>).',
         inputSchema: object({
             key: str('Document key'),
             pointer: str('JSON Pointer into the document (default whole document)', { maxLength: 400 }),
@@ -283,20 +284,30 @@ const tools = [
         scope: 'edit',
         name: 'data_document_put',
         description: 'Change one data document (validated like scripts/commulingo-data put): content replaces it, or patches '
-            + '[{op: set|remove, path: JSON Pointer, value?}] edit parts ("-" appends to an array). expectedRevision from data_document_get '
-            + 'is required for an existing document. An activity-catalog change also bumps its version field. dryRun defaults to true.',
+            + '[{op: set|remove, path: JSON Pointer, value?}] edit parts ("-" appends to an array); specPath reads either from a file '
+            + '(a JSON object = content, a JSON array = patches). expectedRevision from data_document_get is required for an existing '
+            + 'document. An activity-catalog change also bumps its version field. A learning course is course/<id>: the write must pass '
+            + 'the course rules (no new rule failure, Korean excerpts verbatim in the site documents, a replaced question gets a new id) '
+            + 'and the result reports what changed; publicChapterLimit sets how many chapters are public. dryRun defaults to true.',
         inputSchema: object({
             key: str('Document key'),
             content: obj('Whole document'),
             patches: arr('Pointer patches', 500),
+            specPath: specPathArg,
             expectedRevision: int('Revision from data_document_get', 0, 100000000),
             dryRun: dryRunArg,
             note: noteArg,
             changedBy,
         }, ['key']),
         audit: ({ key, dryRun, changedBy: actor }, client) => ({ command: dryRun === false ? 'apply' : 'dry-run', targetType: 'data_document', targetId: key, actor: actor || `mcp:${client}` }),
-        async handler({ key, content, patches, expectedRevision, dryRun = true, note, changedBy: given }, { client }) {
-            if (!content === !patches) throw badRequest('pass content or patches, not both');
+        async handler({ key, content, patches, specPath, expectedRevision, dryRun = true, note, changedBy: given }, { client }) {
+            if ([content, patches, specPath].filter(value => value !== undefined).length !== 1) throw badRequest('pass content or patches (or specPath), exactly one');
+            if (specPath) {
+                const spec = readSpecJson(specPath);
+                if (Array.isArray(spec)) patches = spec;
+                else if (spec && typeof spec === 'object') content = spec;
+                else throw badRequest('specPath must hold a JSON object (content) or array (patches)');
+            }
             const { readDataDocumentRows, writeDataDocuments, refreshDataDocuments } = require('../../data/commulingo/data-documents');
             const row = (await readDataDocumentRows({ prefix: key })).find(item => item.key === key);
             if (row && expectedRevision === undefined) throw badRequest('expectedRevision is required for an existing document (data_document_get returns it)');

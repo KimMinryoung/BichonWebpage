@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 const assert = require('node:assert/strict');
 const checks = require('./lib/commulingo-checks');
-const courses = [require('../data/commulingo/courses/french-revolution-intro'), require('../data/commulingo/courses/socialist-divergences-intro')];
+// The frozen course seed (scripts/test sets COMMULINGO_COURSES_SEED=1).
+const bundle = require('../data/commulingo').loadCommuLingoBundle().bundle;
+const courses = ['french-revolution-intro', 'socialist-divergences-intro'].map(id => bundle.collections.find(course => course.id === id));
 function issues(collections) {
   const out = checks.createCollector();
   checks.checkChapters(out, collections);

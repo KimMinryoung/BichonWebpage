@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-// The rule behind scripts/check-commulingo-question-ids.js: an edited question
+// The rule behind scripts/lib/commulingo-question-ids.js: an edited question
 // keeps its id, a replaced one does not, and replacement ids never collide.
 const assert = require('assert');
-const { isReplacement, replacementId } = require('./check-commulingo-question-ids');
+const { isReplacement, replacementId } = require('./lib/commulingo-question-ids');
 
 const old = { prompt: '자본가가 100원으로 상품을 사서 110원을 얻으려 한다. 5장의 문제는 무엇인가?', answer: '등가교환만으로는 추가 가치가 어디서 생기는지 설명할 수 없다' };
 assert.strictEqual(isReplacement(old, { ...old, prompt: old.prompt.replace('얻으려 한다', '손에 쥐려 한다') }), false, 'wording fix keeps the id');
