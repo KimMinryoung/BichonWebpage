@@ -3,7 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { DEV_MODE } = require('./env');
-const { validManifest, verifyRelease } = require('../scripts/lib/css-release');
+const { validManifest, verifyRelease, assetId } = require('../scripts/lib/css-release');
 function createCssReleases(root, appRevision) {
     let lastGood = null;
     function snapshot() {
@@ -21,7 +21,7 @@ function createCssReleases(root, appRevision) {
         // or the browser downloads the same file twice.
         return html.replace(/(["'])\/(?:assets\/[a-f0-9]{32}\/)?((?:css\/[\w./-]+\.css)|(?:fonts\/[\w./-]+\.woff2))(?:\?[^"']*)?\1/g,
             (match, quote, file) => manifest.files[file]
-                ? `${quote}/assets/${manifest.release}/${file}${quote}` : match);
+                ? `${quote}/assets/${assetId(manifest, file)}/${file}${quote}` : match);
     }
     return { snapshot, rewrite };
 }

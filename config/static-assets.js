@@ -34,6 +34,8 @@ const staticAssets = express.static(path.join(__dirname, '..', 'public'), {
 });
 
 // Serve only public payloads, never release metadata, staging or pointers.
+// /assets/<id>/<file>: <id> is a file's content ID (content/, schema 2) or,
+// for HTML still naming an older release, a release ID (releases/, schema 1).
 const releaseRoot = process.env.CSS_RELEASE_DIR;
 function releasedAssets(req, res, next) {
     if (!req.path.startsWith('/assets/')) return next();
@@ -42,10 +44,20 @@ function releasedAssets(req, res, next) {
     if (!releaseRoot || !match || !safeFile(match[2])) {
         return res.status(404).end();
     }
-    res.sendFile(match[2], {
-        root: path.join(releaseRoot, 'releases', match[1], 'public'),
-        dotfiles: 'deny',
-        headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
-    }, err => { if (err && !res.headersSent) res.status(err.statusCode || 404).end(); });
+    const roots = [
+        path.join(releaseRoot, 'content', match[1]),
+        path.join(releaseRoot, 'releases', match[1], 'public'),
+    ];
+    (function send(index) {
+        res.sendFile(match[2], {
+            root: roots[index],
+            dotfiles: 'deny',
+            headers: { 'Cache-Control': 'public, max-age=31536000, immutable' }
+        }, err => {
+            if (!err || res.headersSent) return;
+            if ((err.statusCode || err.status) === 404 && index + 1 < roots.length) return send(index + 1);
+            res.status(err.statusCode || 404).end();
+        });
+    })(0);
 }
 module.exports = { staticAssets, releasedAssets };
