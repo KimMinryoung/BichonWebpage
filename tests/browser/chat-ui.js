@@ -7,7 +7,7 @@ const { launchChromium } = require('../lib/browser');
 const { createGameTestServer } = require('../lib/game-test-server');
 const strings = require('../../config/strings');
 const { siteStyleModules } = require('../../utils/site-stylesheets');
-/* global document, window */
+/* global document, window, getComputedStyle, navigator */
 
 const PARA = '스트리밍 시험 문단입니다. 긴 답변이 조금씩 도착하는 동안 화면이 어떻게 움직이는지 확인합니다. ';
 const streams = [];
