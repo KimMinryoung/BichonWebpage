@@ -143,6 +143,21 @@ body {
     overflow-wrap: break-word;
 }
 
+/* Page-to-page navigation cross-fades instead of flashing blank (cross-
+   document View Transitions; browsers without them just navigate). The
+   toolbar and menu are the same pixels on both pages, so only content
+   visibly changes. Off when the visitor asks for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+        navigation: auto;
+    }
+}
+
+::view-transition-group(root) {
+    animation-duration: var(--duration-normal);
+    animation-timing-function: var(--ease-standard);
+}
+
 a {
     color: var(--link);
     text-decoration: none;

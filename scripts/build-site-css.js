@@ -26,7 +26,8 @@ function buildSiteCss() {
             else rule.remove();
         });
         root.walkAtRules(rule => {
-            if (rule.name === 'font-face' && name !== 'core') rule.remove();
+            // Page-wide declarations, not selectors: core (on every page) only.
+            if ((rule.name === 'font-face' || rule.name === 'view-transition') && name !== 'core') rule.remove();
             else if (rule.name === 'keyframes' && name !== 'chat') rule.remove();
         });
         root.walkComments(comment => comment.remove());
