@@ -1611,6 +1611,18 @@ for (const id of Object.keys(A.people)) assert.match(A.portrait(id, id), /role="
     assert.ok(again.lines.south + G.forecast(again).fronts.south.change > D.fronts.south.defeat.at, 'and it can be saved');
 }
 
+// The campaign measure (scripts/war-campaign.js) keeps working, and its
+// baseline holds: its general plan on history's answers reaches the final
+// battle no worse than history, and a chooser that tries each answer to
+// the season's end never loses the war (battles as history won them).
+{
+    const Campaign = require('../../scripts/war-campaign.js');
+    const hist = Campaign.war(Campaign.chooser('history').choose);
+    assert.ok(!hist.lost && hist.reached && hist.versus >= 0, `war-campaign history: ${JSON.stringify(hist)}`);
+    const look = Campaign.war(Campaign.chooser('lookahead').choose);
+    assert.ok(!look.lost && look.reached, `war-campaign lookahead: ${JSON.stringify(look)}`);
+}
+
 // The screen's medal and merits (ui.medal, ui.merits, a battle's par):
 // words for each, and a par inside the turn limit of a battle without a
 // quick reward.
