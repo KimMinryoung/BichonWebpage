@@ -21,6 +21,10 @@ const pool = new Pool({
     // 600 s read timeout; nothing the site runs legitimately takes a minute.
     statement_timeout: intFromEnv('DB_STATEMENT_TIMEOUT_MS', 60000),
     keepAlive: true,
+    // Idle connections do not keep the process alive: the servers stay up on
+    // their listeners, while tests and scripts that load this module exit
+    // when their work ends instead of hanging on the warm pool.
+    allowExitOnIdle: true,
     ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : false
 });
 

@@ -15,7 +15,15 @@ NODE_MAJOR="$(node -p 'process.versions.node.split(".")[0]' 2>/dev/null || echo 
 if [[ "${NODE_MAJOR:-0}" -lt 24 && -z "${TEST_IN_DOCKER:-}" ]]; then
     if timeout 5 docker info >/dev/null 2>&1; then
         echo "[test] host node $(node -v 2>/dev/null || echo missing) < 24; running in node:24.22.1-alpine" >&2
-        exec docker run --rm -u "$(id -u):$(id -g)" -e TEST_IN_DOCKER=1 -e HOME=/tmp \
+        # DB tests reach the database by its container name (DB_HOST in
+        # .env), which resolves only on the compose network.
+        # (Plain sh syntax: the container reruns this file with busybox sh.)
+        NETWORK=--network=bridge
+        if [[ " $* " == *" --db "* || " $* " == *" --all "* ]]; then
+            DB_NETWORK="${TEST_DB_NETWORK:-leninbot_default}"
+            docker network inspect "$DB_NETWORK" >/dev/null 2>&1 && NETWORK="--network=$DB_NETWORK"
+        fi
+        exec docker run --rm -u "$(id -u):$(id -g)" -e TEST_IN_DOCKER=1 -e HOME=/tmp "$NETWORK" \
             -v "$PWD:/app:ro" -w /app node:24.22.1-alpine sh scripts/test "$@"
     fi
     echo "[test] host node $(node -v 2>/dev/null || echo missing) < 24 and no usable docker; running on the host (the app targets Node 24)" >&2

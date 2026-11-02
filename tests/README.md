@@ -26,6 +26,8 @@ scripts/test --browser            # + tests/browser
 scripts/test --db                 # + tests/db
 ```
 
+호스트 node가 24 미만이면 테스트는 `node:24` 컨테이너에서 돈다. `--db`·`--all`이면 그 컨테이너를 DB 컨테이너의 compose 네트워크(`leninbot_default`, `TEST_DB_NETWORK`로 바꿈)에 붙여 `.env`의 `DB_HOST`가 풀리게 한다. DB 풀은 `allowExitOnIdle`이라 DB에 붙은 단위 테스트도 할 일이 끝나면 종료한다.
+
 ```bash
 scripts/test --all --list         # 무엇이 돌고 무엇이 왜 건너뛰어지는지만
 ```
