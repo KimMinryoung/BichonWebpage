@@ -31,16 +31,7 @@
 <link rel="preconnect" href="https://assets.cyber-lenin.com">
 <link rel="icon" href="https://assets.cyber-lenin.com/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="https://assets.cyber-lenin.com/apple-touch-icon.png">
-<script>
-(function(){
-    var t = 'dark';
-    try {
-        t = localStorage.getItem('theme') || t;
-    } catch (e) {}
-    if (t !== 'light' && t !== 'dark') t = 'dark';
-    document.documentElement.setAttribute('data-theme', t);
-})();
-</script>
+<%- include('../partials/theme-init') %>
 <% if (docLang === 'ko') { %><link rel="preload" href="/fonts/pretendard/PretendardVariable.common.woff2" as="font" type="font/woff2" crossorigin><% } %>
 <link rel="stylesheet" href="/css/palette.css?v=<%= assetVersion %>">
 <link rel="stylesheet" href="/css/site-core.css?v=<%= assetVersion %>">
