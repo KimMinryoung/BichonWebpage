@@ -97,4 +97,5 @@
 | 1-4 날짜 서버 출력 | 구현. `utils/local-date.js`(Asia/Seoul, `app.locals`라 조각 렌더에도 쓰임)로 `<time>` 18곳에 글자를 넣고, `common.js`는 보는 사람 시간대의 날짜가 다를 때만 덮어쓴다. 테스트 `local-date` |
 | 3 페이지별 OG 이미지 | 하지 않기로 함(2026-11-02 사용자 결정). 운영에 sharp와 한글 글꼴 파일이 없어 비용 대비 보류 |
 | 3 구조화 데이터 | 구현. `data/commulingo/structured-data.js`: 인물 `Person`(생몰일은 `lifeDates` 정밀도대로, 없으면 연도), 용어 `DefinedTerm`, 사건 `Event`(시작·끝 날짜, 장소 없음), 강좌 `Course`+`LearningResource`를 BreadcrumbList와 한 `@graph`로. URL은 주소 언어(`urlLanguage`). 테스트 `commulingo-structured-data` |
-| 3 검색 즉시 제안, 4~6 | 미착수 |
+| 3 검색 즉시 제안 | 구현. 툴바 돋보기가 검색 대화상자를 열고 입력하는 대로 `/search/suggest`·`/commulingo/search/suggest`의 결과 묶음을 보인다. `/`·Ctrl/⌘+K 단축키, ↓/↑ 이동. 결과 마크업은 검색 화면과 같은 `partials/site-search-results`. [통합 검색](site-search.md). 브라우저 테스트 `site-search-dialog` |
+| 4~6 | 미착수 |

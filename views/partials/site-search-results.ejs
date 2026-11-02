@@ -1,0 +1,43 @@
+<%
+/* The result groups of the integrated search (services/site-search.js): the
+   search page and the toolbar's instant suggestions (routes/search.js
+   suggest) draw the same markup. Args: result, idPrefix (optional; the
+   suggestions use their own so a search page holding both has unique ids). */
+var s = strings.search;
+var idPrefix = typeof idPrefix === 'string' ? idPrefix : 'search-';
+var q = result.query;
+%>
+<% if (result.failed.length) { %>
+<p class="site-search-status" role="status"><%= s.failed.replace('{sections}', result.failed.map(function(key) { return s.sections[key]; }).join(', ')) %></p>
+<% } %>
+<% if (!result.sections.length) { %>
+<p class="site-search-status" role="status"><%= s.empty.replace('{q}', q) %></p>
+<% } %>
+<% result.sections.forEach(function(section) { %>
+<section class="site-search-group" aria-labelledby="<%= idPrefix + section.key %>">
+    <% var head = s.sections[section.key]; %>
+    <% if (section.moreHref) { %>
+    <a class="site-search-head" href="<%= section.moreHref %>">
+        <h2 id="<%= idPrefix + section.key %>"><%= head %></h2>
+        <span class="site-search-more"><%= s.more.replace('{n}', section.total) %></span>
+    </a>
+    <% } else { %>
+    <div class="site-search-head">
+        <h2 id="<%= idPrefix + section.key %>"><%= head %></h2>
+        <span class="site-search-count"><%= s.count.replace('{n}', section.total) %></span>
+    </div>
+    <% } %>
+    <ul class="site-search-list">
+        <% section.items.forEach(function(item) {
+            var meta = item.chapterNumber
+                ? [item.meta, s.chapter.replace('{n}', item.chapterNumber)].join(' · ')
+                : item.meta; %>
+        <li><a class="site-search-row" href="<%= item.href %>">
+            <strong class="site-search-title"><%= item.title %></strong>
+            <% if (meta) { %><span class="site-search-meta"><%= meta %></span><% } %>
+            <% if (item.excerpt) { %><span class="site-search-excerpt"><%= item.excerpt %></span><% } %>
+        </a></li>
+        <% }) %>
+    </ul>
+</section>
+<% }) %>

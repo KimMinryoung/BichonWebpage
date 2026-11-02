@@ -6,7 +6,7 @@
     <a href="/" class="toolbar-logo"><%= strings.siteName %></a>
     <div class="toolbar-right">
         <% var _searchHref = ((typeof pagePath !== 'undefined' && pagePath) || '').indexOf('/commulingo') === 0 ? '/commulingo/search' : '/search'; %>
-        <a href="<%= _searchHref %>" class="toolbar-search-btn" aria-label="<%= strings.search.open %>" title="<%= strings.search.open %>">
+        <a href="<%= _searchHref %>" class="toolbar-search-btn" aria-label="<%= strings.search.open %>" title="<%= strings.search.open %> (/, Ctrl+K)" aria-haspopup="dialog" aria-keyshortcuts="/ Control+K Meta+K">
             <svg class="toolbar-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
         </a>
         <a href="<%= currentUser ? '/auth/account' : (isAuthenticated ? '/admin' : '/auth/login') %>" class="toolbar-account-btn"<% if (currentUser) { %> title="<%= strings.userAuth.accountMenu %>"<% } %>>
@@ -112,3 +112,14 @@ const _navItems = [
 <span class="skip-target" id="main-content" tabindex="-1"></span>
 <% } %>
 <script src="/js/nav.js?v=<%= assetVersion %>" defer></script>
+<%# The toolbar search as a dialog with results as one types
+    (public/js/site-search-suggest.js). Without script the magnifier is a
+    plain link to the search page. %>
+<dialog class="site-search-dialog" id="siteSearchDialog" aria-label="<%= strings.search.title %>">
+    <form class="site-search-form" action="<%= _searchHref %>" method="get" role="search">
+        <%- include('site-search-box', { value: '', placeholder: _searchHref === '/search' ? strings.search.placeholderSite : strings.search.placeholderCommuLingo }) %>
+        <button type="button" class="site-search-dialog-close" data-search-close aria-label="<%= strings.search.close %>"><%= strings.search.closeShort %></button>
+    </form>
+    <div class="site-search-dialog-results" aria-live="polite"></div>
+</dialog>
+<script src="/js/site-search-suggest.js?v=<%= assetVersion %>" defer></script>

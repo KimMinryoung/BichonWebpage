@@ -68,6 +68,7 @@ router.get('/learn', (req, res) => {
 });
 
 router.get('/search', require('./search').searchPage('commulingo'));
+router.get('/search/suggest', require('./search').suggestRoute('commulingo'));
 router.use(require('./commulingo-map'));
 router.use('/events', require('./commulingo-events'));
 router.use('/terms', require('./commulingo-terms'));

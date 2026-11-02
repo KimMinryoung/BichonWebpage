@@ -6,6 +6,7 @@
 
 - `/search`: 사이트 전체. `/commulingo/search`: 공산링고만. 같은 서비스에 범위만 다르고, 결과 화면 위 탭으로 서로 오간다.
 - 입구: 모든 페이지 툴바의 돋보기(공산링고 페이지에서는 `/commulingo/search`, 그 밖은 `/search`), 홈 소개 상자 아래 검색창, 공산링고 첫 화면의 사전 탭 아래 검색창.
+- 툴바 돋보기는 스크립트가 있으면 검색 대화상자를 연다(2026-11-02, `views/partials/nav.ejs`의 `#siteSearchDialog`, `public/js/site-search-suggest.js`). 입력 180ms 뒤 `<범위 경로>/suggest?q=`(JSON `{query, html}`)로 같은 결과 묶음(`partials/site-search-results`)을 받아 그린다. Enter는 전체 검색 화면으로, ↓/↑는 결과 사이를 오가고, Esc·「닫기」·바깥 누르기로 닫는다. 어느 화면에서나 `/`(입력란 밖)와 Ctrl/⌘+K로 연다. 스크립트가 없으면 돋보기는 검색 화면 링크다. 검사: `tests/browser/site-search-dialog.js`.
 - 분야 순서(소유자 결정): 글(보고서·큐레이션·일기장·비숑글, 사이트 전체에서만) → 강좌 → 역사 사건 → 참고 문헌 → 인물 → 용어.
 - 분야마다 5건을 보여 준다. 더 있으면 머리 행 전체가 그 분야 목록(`?q=` 이어받음)으로 가는 링크다. 강좌는 자기 목록이 없어 같은 검색 화면에서 펼친다(`?more=courses`).
 - 검색 결과 페이지는 `noindex, follow`이고 robots.txt에서도 막는다.

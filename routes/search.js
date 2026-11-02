@@ -5,6 +5,10 @@ const express = require('express');
 const { siteSearch } = require('../services/site-search');
 const { setNoStore } = require('../utils/http');
 const errorPage = require('../utils/error-page');
+const { renderAppView } = require('../utils/render-app-view');
+const { localizeHtmlLinks } = require('../utils/seo');
+const { setShortPublicCache } = require('../data/commulingo/page-helpers');
+const strings = require('../config/strings');
 
 const SCOPES = {
     all: { path: '/search' },
@@ -40,7 +44,30 @@ function searchPage(scope) {
     };
 }
 
+// GET <scope path>/suggest?q=: the same result groups as a fragment, for the
+// toolbar search dialog (public/js/site-search-suggest.js) as the reader types.
+function suggestRoute(scope) {
+    return async (req, res) => {
+        const query = req.query.q === undefined ? '' : req.query.q;
+        if (typeof query !== 'string' || query.length > 200) return res.status(400).json({ error: 'Invalid search' });
+        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
+        try {
+            const result = await siteSearch({ query, lang, scope, selfPath: SCOPES[scope].path });
+            const html = result.query
+                ? await renderAppView(req, 'partials/site-search-results', { strings: strings[lang], result, idPrefix: 'suggest-' })
+                : '';
+            if (result.failed.length) setNoStore(res);
+            else setShortPublicCache(res);
+            res.json({ query: result.query, html: localizeHtmlLinks(html, lang) });
+        } catch (err) {
+            console.error('site search suggest:', err);
+            res.status(500).json({ error: 'Failed to search' });
+        }
+    };
+}
+
 const router = express.Router();
 router.get('/search', searchPage('all'));
+router.get('/search/suggest', suggestRoute('all'));
 
-module.exports = { router, searchPage };
+module.exports = { router, searchPage, suggestRoute };
