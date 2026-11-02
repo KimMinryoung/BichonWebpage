@@ -74,6 +74,7 @@
 - 실사용자 성능(RUM) 없음. 기존 `/metrics/menu-view` 비콘에 LCP·INP·CLS를 싣는다. 인물 사전처럼 DOM이 큰 화면의 INP를 본다.
 - 접근성 자동 검사 없음. Playwright 브라우저 테스트(`tests/browser/`)에 `@axe-core/playwright`를 더한다.
 - 브라우저 오류 수집 없음. `error`·`unhandledrejection`을 비콘으로 보낸다.
+- Cloudflare가 넣는 Web Analytics 비콘(`static.cloudflareinsights.com/beacon.min.js`)이 CSP `script-src`에 없어 모든 페이지에서 차단되고 콘솔 오류를 남긴다(2026-11-02 운영 콘솔 확인). 쓸 거면 CSP에 넣고, 아니면 Cloudflare 대시보드에서 자동 삽입을 끈다.
 
 ## 우선순위 6: 장기 구조
 
@@ -84,10 +85,13 @@
 
 ## 진행 상태
 
+2026-11-02 구현은 커밋·푸시까지다. 운영 배포는 서버에서 `scripts/deploy`로 한다(1-1은 배포 뒤 첫 CSS 릴리스부터 적용).
+
 | 항목 | 상태 |
 | --- | --- |
-| 1-1 글꼴·CSS 내용 해시 경로 | 착수(2026-11-02) |
-| 1-2 시스템 테마·theme-color | 착수(2026-11-02) |
-| 2 채팅 중지·스크롤 고정 | 착수(2026-11-02) |
-| 1-3 View Transitions | 착수(2026-11-02) |
-| 나머지 | 미착수 |
+| 1-1 글꼴·CSS 내용 해시 경로 | 구현. 매니페스트 schema 2: 파일마다 `/assets/<내용 ID>/<파일>`, 저장은 `.css-releases/content/`, 릴리스에는 매니페스트만. schema 1 릴리스 제공·롤백 유지. 실제 `public/`으로 앱 리비전만 다른 두 릴리스를 만들어 126개 URL이 모두 같음을 확인. 회귀 테스트 `css-releases` |
+| 1-2 시스템 테마·theme-color | 구현. `partials/theme-init`(문헌 리더도 사용). 운영 페이지에 끼워 시스템 라이트/다크, 실시간 추종, 토글 저장 우선, 새로고침 뒤 유지 확인 |
+| 1-3 View Transitions | 구현. 운영 페이지를 로컬에 복제해 이동 32회 중 31회 전환(기존 CSS 0회), reduced-motion에서 꺼짐 확인. Playwright 요청 가로채기를 쓰면 전환이 불규칙하게 빠지므로 검증은 가로채기 없이 한다 |
+| 2 채팅 중지·스크롤 고정 | 구현. 중지는 연결을 끊고 받은 부분을 남기며 복구 경로를 타지 않는다. 바닥에 있을 때만 따라가고 위로 올리면 「↓ 최신 메시지」. 답변 뒤 피드백 막대가 상자를 줄여 바닥에서 떨어지던 기존 문제도 ResizeObserver로 해결. 브라우저 테스트 `tests/browser/chat-ui.js` |
+| 2 나머지(빈 화면 예시, 복사, 스크린리더, 영어 문구) | 미착수 |
+| 1-4, 3~6 | 미착수 |
