@@ -57,6 +57,20 @@ const L = (ko, en) => ({ ko, en });
         assert.equal((await reviewContentSuggestion(rejected.suggestionId, false, 'no source', options)).status, 'rejected');
         assert.equal((await one("SELECT outcome_ko FROM commulingo_history_events WHERE id = 'ct-event'")).outcome_ko, '결과');
 
+        // Relations: {parent?, related?} of existing ids, stored whole; self, unknown ids and other keys are refused.
+        await submit({ target: 'history_event', action: 'update', id: 'ct-event', fields: { relations: { related: ['ct-skeleton'] } } });
+        assert.deepEqual((await one("SELECT relations FROM commulingo_history_events WHERE id = 'ct-event'")).relations, { related: ['ct-skeleton'] });
+        for (const [relations, pattern] of [
+            [{ related: ['ct-event'] }, /cannot relate to itself/],
+            [{ related: ['no-such-event'] }, /unknown event id/],
+            [{ related: ['ct-skeleton', 'ct-skeleton'] }, /twice/],
+            [{ children: [] }, /parent and related only/],
+        ]) {
+            await client.query('SAVEPOINT r');
+            await assert.rejects(submit({ target: 'history_event', action: 'update', id: 'ct-event', fields: { relations } }), err => pattern.test(err.message));
+            await client.query('ROLLBACK TO SAVEPOINT r');
+        }
+
         // dryRun validates and writes nothing.
         const before = await one('SELECT count(*)::int AS n FROM commulingo_agent_suggestions');
         assert.equal((await submit({ target: 'history_event', action: 'update', id: 'ct-event', dryRun: true, fields: { question: L('가', 'A') } })).status, 'validated');

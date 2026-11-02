@@ -16,7 +16,7 @@ const { FLAG_NAMES } = require('./flag-icons');
 const TARGETS = ['history_event', 'history_event_section', 'history_event_person', 'office_row'];
 const RELATION_KINDS = ['leader', 'executor', 'participant', 'opponent', 'target', 'witness', 'historian'];
 const PATCH_KEYS = {
-    history_event: ['title', 'period', 'question', 'summary', 'outcome', 'timeline', 'sources', 'locations', 'focus', 'sides'],
+    history_event: ['title', 'period', 'question', 'summary', 'outcome', 'timeline', 'sources', 'locations', 'focus', 'sides', 'relations'],
     history_event_section: ['heading', 'body', 'after'],
     history_event_person: ['personId', 'sortOrder', 'relationKind', 'relation', 'note', 'side'],
     office_row: ['sortOrder', 'period', 'body', 'personId', 'name', 'note', 'trackId'],
@@ -91,7 +91,8 @@ function spliceSection(body, heading, sectionBody, after, action) {
 async function eventRow(client, id, lock = false) {
     const { rows } = await client.query(
         `SELECT id, start_year, start_month, start_day, end_year, end_month, end_day, title_ko, title_en, question_ko, question_en, summary_ko, summary_en,
-                outcome_ko, outcome_en, body_ko, body_en, timeline, sources, locations, to_jsonb(e)->'focus' AS focus, to_jsonb(e)->'sides' AS sides
+                outcome_ko, outcome_en, body_ko, body_en, timeline, sources, locations, to_jsonb(e)->'relations' AS relations,
+                to_jsonb(e)->'focus' AS focus, to_jsonb(e)->'sides' AS sides
          FROM commulingo_history_events e WHERE id = $1${lock ? ' FOR UPDATE' : ''}`, [id]);
     return rows[0] || null;
 }
@@ -194,12 +195,38 @@ async function validateEventFrame(client, id, event, fields) {
         if (new Set(fields.sides.map(side => side.id)).size !== fields.sides.length) throw badRequest('duplicate side id');
     }
     if (focus && Array.isArray(sides) && sides.length) throw badRequest('an event has focus or sides, not both');
+    if (fields.relations !== undefined) await validateRelations(client, id, fields.relations);
     if (fields.sides !== undefined) {
         const ids = new Set((fields.sides || []).map(side => side.id));
         const { rows } = await client.query('SELECT person_id, side FROM commulingo_history_event_people WHERE event_id = $1 AND side IS NOT NULL', [id]);
         const orphaned = rows.filter(row => !ids.has(row.side));
         if (orphaned.length) throw badRequest(`people still on removed sides: ${orphaned.map(row => `${row.person_id}(${row.side})`).join(', ')}; move them first`);
     }
+}
+
+// Relations are {parent?: id, related?: [ids]}; the page derives children and
+// siblings from parents, so only these two keys are stored. The whole object
+// is replaced, so send back the ids already there.
+async function validateRelations(client, id, relations) {
+    if (!relations || typeof relations !== 'object' || Array.isArray(relations)) throw badRequest('relations must be {parent?, related?}');
+    const unknown = Object.keys(relations).filter(key => !['parent', 'related'].includes(key));
+    if (unknown.length) throw badRequest(`relations take parent and related only (got ${unknown.join(', ')})`);
+    const ids = [];
+    if (relations.parent !== undefined) {
+        if (typeof relations.parent !== 'string' || !relations.parent.trim()) throw badRequest('relations.parent must be an event id');
+        ids.push(relations.parent);
+    }
+    if (relations.related !== undefined) {
+        if (!Array.isArray(relations.related) || relations.related.some(item => typeof item !== 'string' || !item.trim())) throw badRequest('relations.related must be a list of event ids');
+        if (new Set(relations.related).size !== relations.related.length) throw badRequest('relations.related lists an event twice');
+        ids.push(...relations.related);
+    }
+    if (ids.includes(id)) throw badRequest('an event cannot relate to itself');
+    if (!ids.length) return;
+    const { rows } = await client.query('SELECT id FROM commulingo_history_events WHERE id = ANY($1::text[])', [ids]);
+    const found = new Set(rows.map(row => row.id));
+    const missing = ids.filter(item => !found.has(item));
+    if (missing.length) throw badRequest(`unknown event id(s) in relations: ${missing.join(', ')}`);
 }
 
 async function validateSection(client, id, action, fields) {
@@ -255,7 +282,7 @@ async function applyEvent(client, id, fields, actor) {
             sets.push(`${key}_ko = $${values.length - 1}`, `${key}_en = $${values.length}`);
         }
     }
-    for (const key of ['timeline', 'sources', 'locations']) {
+    for (const key of ['timeline', 'sources', 'locations', 'relations']) {
         if (fields[key] !== undefined && fields[key] !== null) {
             values.push(JSON.stringify(fields[key]));
             sets.push(`${key} = $${values.length}::jsonb`);
