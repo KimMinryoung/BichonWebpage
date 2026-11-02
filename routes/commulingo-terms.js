@@ -3,6 +3,7 @@ const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
 const seo = require('../utils/seo');
+const { termJsonLd } = require('../data/commulingo/structured-data');
 // Retired glossary ids ride the same commulingo_id_redirects table the person
 // pages read, so merging two entries stays a DB-only edit. The people snapshot
 // is where those rows are loaded (it fetches every entity_type, not just its
@@ -147,10 +148,10 @@ router.get('/:termId', async (req, res) => {
             pageTitle: lang === 'en' ? `${term.term} — Glossary` : `${term.term} — 용어 사전`,
             pageDescription: term.definition,
             pagePath: `/commulingo/terms/${term.id}`,
-            jsonLd: commuLingoBreadcrumb(lang, [
+            jsonLd: seo.graphJsonLd(commuLingoBreadcrumb(lang, [
                 { name: lang === 'en' ? 'Glossary' : '용어 사전', href: '/commulingo/terms' },
                 { name: term.term, href: `/commulingo/terms/${term.id}` },
-            ], res.locals.urlLanguage),
+            ], res.locals.urlLanguage), termJsonLd(term, { lang, urlLang: res.locals.urlLanguage })),
         });
     } catch (err) {
         console.error('commulingo term detail:', err);

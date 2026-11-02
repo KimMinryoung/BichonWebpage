@@ -1,4 +1,6 @@
 const express = require('express');
+const seo = require('../utils/seo');
+const { courseJsonLd } = require('../data/commulingo/structured-data');
 const { setPublicDataCache, setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const { asyncHandler } = require('../utils/async-handler');
 const { loadCommuLingoCatalog } = require('../data/commulingo/shards');
@@ -59,10 +61,13 @@ router.get('/book/:collectionId', async (req, res) => {
             pageTitle: `${bookTitle} — ${res.locals.strings.commuLingo.name}`,
             pageDescription: localize(collection.description, res.locals.lang) || res.locals.strings.commuLingo.description,
             pagePath: `/commulingo/book/${collection.id}`,
-            jsonLd: commuLingoBreadcrumb(res.locals.lang, [
+            jsonLd: seo.graphJsonLd(commuLingoBreadcrumb(res.locals.lang, [
                 { name: res.locals.strings.commuLingo.courses, href: '/commulingo/learn' },
                 { name: bookTitle, href: `/commulingo/book/${collection.id}` },
-            ]),
+            ], res.locals.urlLanguage), courseJsonLd(collection, {
+                title: bookTitle, text: localize(collection.description, res.locals.lang),
+                lang: res.locals.lang, urlLang: res.locals.urlLanguage,
+            })),
         });
     } catch (err) {
         console.error('commulingo book:', err);

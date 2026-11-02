@@ -2,6 +2,8 @@ const { dictionarySearchRoute } = require('../utils/dictionary-search-route');
 const { searchDictionary } = require('../utils/dictionary-search');
 const { parseEventPeriodQuery } = require('../utils/event-period-search');
 const express = require('express');
+const seo = require('../utils/seo');
+const { eventJsonLd } = require('../data/commulingo/structured-data');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const { paginateList } = require('../data/commulingo/list-pagination');
 const errorPage = require('../utils/error-page');
@@ -105,10 +107,10 @@ router.get('/:eventId', async (req, res) => {
             pageTitle: lang === 'en' ? `${event.title} — Historical Events` : `${event.title} — 역사 사건`,
             pageDescription: event.summary,
             pagePath: `/commulingo/events/${event.id}`,
-            jsonLd: commuLingoBreadcrumb(lang, [
+            jsonLd: seo.graphJsonLd(commuLingoBreadcrumb(lang, [
                 { name: lang === 'en' ? 'Historical Events' : '역사 사건', href: '/commulingo/events' },
                 { name: event.title, href: `/commulingo/events/${event.id}` },
-            ], res.locals.urlLanguage),
+            ], res.locals.urlLanguage), eventJsonLd(event, { lang, urlLang: res.locals.urlLanguage })),
         });
     } catch (err) {
         console.error('commulingo event detail:', err);

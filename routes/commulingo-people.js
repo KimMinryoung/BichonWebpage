@@ -1,6 +1,8 @@
 const activitiesModel = require('../data/commulingo/person-activities');
 const explorer = require('../data/commulingo/people-explorer');
-const { languagePath } = require('../utils/seo');
+const seo = require('../utils/seo');
+const { languagePath } = seo;
+const { personJsonLd } = require('../data/commulingo/structured-data');
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
@@ -344,10 +346,10 @@ router.get('/people/:personId', async (req, res) => {
             pageTitle: lang === 'en' ? `${person.label || person.displayName} — People` : `${person.label || person.displayName} — 인물 사전`,
             pageDescription: person.bio || person.epithet,
             pagePath: `/commulingo/people/${person.id}`,
-            jsonLd: commuLingoBreadcrumb(lang, [
+            jsonLd: seo.graphJsonLd(commuLingoBreadcrumb(lang, [
                 { name: lang === 'en' ? 'People' : '인물 사전', href: '/commulingo/people' },
                 { name: person.displayName, href: `/commulingo/people/${person.id}` },
-            ]),
+            ], res.locals.urlLanguage), personJsonLd(person, { lang, urlLang: res.locals.urlLanguage })),
         });
     } catch (err) {
         console.error('commulingo person detail:', err);

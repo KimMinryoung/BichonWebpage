@@ -267,6 +267,8 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeRows) 
         yearsLabel: years.label,
         // The person page only: exact dates where the source gives them.
         lifeDatesLabel: lifeDatesLabel(years.label, raw.lifeDates),
+        // {birth, death}: [year, month] or [year, month, day]; for structured data.
+        lifeDates: raw.lifeDates || null,
         name: fullName(lang),
         displayName: fullName(lang),
         qualifier,
