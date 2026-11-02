@@ -1569,10 +1569,56 @@ for (const id of Object.keys(A.people)) assert.match(A.portrait(id, id), /role="
     assert.ok(G.act(s, 'b:end'));
     assert.equal(s.phase, 'done');
     assert.ok(G.canRetryBattle(s));
+    assert.equal(typeof s.battles.orel.lost, 'number', 'a fought battle keeps the units it lost (its merits)');
+    assert.equal(s.battles.orel.lost, B.lost(s.battle));
     const again = G.retryBattle(G.restore(G.serialize(s)));
     assert.equal(again.phase, 'battle');
     assert.equal(again.battle.turn, 1);
     assert.equal(G.serialize(again), atStart);
+}
+
+// A war lost by a season's plan (2026-11-02): the screen sees it coming
+// (the defeat front's forecast reaches its defeat line, so it asks once
+// more before sending), and afterwards plans that season again from the
+// plan as it was left. A war that goes on, or ends in its final battle,
+// offers no such thing.
+{
+    const s = G.start();
+    until(s, 'orel');
+    assert.equal(G.canRetrySeason(s), false);
+    assert.ok(G.act(s, 'choose', historical(G.turnData(s))));
+    answer(s);
+    plan(s);
+    const others = G.activeFronts(s).filter(f => f !== 'south');
+    assert.ok(G.act(s, 'alloc', 'south', 0));
+    assert.ok(G.act(s, 'alloc', others[0], s.plan.alloc[others[0]] + G.free(s)));
+    const f = G.forecast(s).fronts.south;
+    assert.ok(s.lines.south + f.change <= D.fronts.south.defeat.at, 'the plan dooms Tula, as the screen warns');
+    const planned = G.serialize(s);
+    assert.ok(G.act(s, 'settle'));
+    assert.equal(s.phase, 'battle');
+    assert.ok(G.act(s, 'assume'));
+    assert.equal(s.phase, 'done');
+    assert.equal(s.outcome.kind, 'moscow');
+    assert.equal(G.canRetryBattle(s), false, 'not lost in a battle');
+    assert.ok(G.canRetrySeason(s));
+    const again = G.retrySeason(G.restore(G.serialize(s)));
+    assert.equal(again.phase, 'plan');
+    assert.equal(G.turnData(again).id, 'orel');
+    assert.equal(G.serialize(again), planned, 'the plan as it was left');
+    clear(again);
+    assert.ok(G.act(again, 'alloc', 'south', again.plan.divisions));
+    assert.ok(again.lines.south + G.forecast(again).fronts.south.change > D.fronts.south.defeat.at, 'and it can be saved');
+}
+
+// The screen's medal and merits (ui.medal, ui.merits, a battle's par):
+// words for each, and a par inside the turn limit of a battle without a
+// quick reward.
+assert.ok(D.ui.medal && D.ui.medal.name && D.ui.medal.rule, 'ui.medal');
+assert.ok(D.ui.merits && D.ui.merits.whole, 'ui.merits');
+for (const def of Object.values(D.battles)) {
+    const par = (def.reward && def.reward.quick) || def.par;
+    assert.ok(par && par < def.turnLimit, `${def.id}: a quick merit inside ${def.turnLimit} turns`);
 }
 
 // A developer's rehearsal (?battle=<id>) reaches every battle at its first

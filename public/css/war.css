@@ -1750,3 +1750,86 @@
 .cw-foe-fold > summary .cw-faction { margin-left: 6px; font-size: .84rem; }
 .cw-scene-voice-who .cw-faction + .cw-faction, .cw-scene-voice-who .cw-speaker + .cw-faction { font-size: .8rem; }
 .cw-front-tab .cw-face { width: 1.5em; height: 1.5em; flex: none; }
+
+/* The season's plan taken whole (2026-11-02, game.js outlook): on the
+   order bar, the fronts against history and the medal it would earn, or
+   the war lost; on the doomed front's card and tab, the same in words.
+   A warning is the inverse box, never red (red is the Red Army's). */
+.cw-command .cw-outlook { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; padding: 3px 9px; border: var(--cw-rule-w, 2px) solid var(--text-primary); color: var(--text-primary); font-size: .84rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cw-outlook > span:first-child { color: var(--text-secondary); font-weight: 700; }
+.cw-outlook b { font-weight: 800; }
+.cw-command .cw-outlook.is-doom { background: var(--text-primary); color: var(--bg-canvas); font-weight: 800; }
+.cw-medal-chip { display: inline-flex; align-items: center; gap: 3px; margin-left: 2px; padding: 0 6px 0 3px; background: var(--cw-gold); color: var(--cw-gold-rim); font-size: .78rem; font-weight: 800; }
+.cw-medal { width: 1.15em; height: 1.15em; flex: none; vertical-align: -.2em; }
+.cw-medal-star { fill: var(--cw-gold); stroke: var(--cw-gold-rim); stroke-width: 1.2; stroke-linejoin: round; }
+.cw-medal-banner { fill: var(--cw-star); stroke: var(--cw-gold-rim); stroke-width: 1; stroke-linejoin: round; }
+.cw-medal-chip .cw-medal-star { stroke-width: 1.6; }
+@media (max-width: 560px) { .cw-command p.cw-outlook { display: inline-flex; padding: 2px 6px; font-size: .78rem; } }
+.cw-doom { margin: 0 0 8px; padding: 6px 10px; background: var(--text-primary); color: var(--bg-canvas); font-size: .86rem; line-height: 1.45; }
+.cw-doom.is-risk, .cw-doom.is-fall { background: none; color: var(--text-primary); border: var(--cw-rule-w, 2px) dashed var(--text-primary); }
+.games-shell .cw-front-tab.is-doom:not([aria-pressed="true"]) { background: var(--text-primary); color: var(--bg-canvas); }
+.games-shell .cw-front-tab.is-doom:not([aria-pressed="true"]) :is(span, .cw-trend) { color: var(--bg-canvas); }
+.games-shell .cw-command .cw-primary.is-armed { background: var(--text-primary); border-color: var(--text-primary); color: var(--bg-canvas); }
+/* An alert over the order bar takes a row of its own at every width. */
+.cw-command:has(> .cw-settle-alert) { flex-wrap: wrap; row-gap: 6px; }
+.cw-outcome-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 4px 0 18px; }
+
+/* A wide screen gives the board the room it has (2026-11-02): as wide as
+   its column and as tall as the screen under the battle's head allows
+   (its aspect from the board, --cw-board-ar), up to 1000px; it stopped at
+   680px with a third of a 1440px screen left empty. */
+@media (min-width: 721px) {
+    .cw-grid-scroll { max-width: min(100%, 1000px, calc((100dvh - 230px) * var(--cw-board-ar, 1.5))); }
+    .cw-grid { max-width: 100%; }
+}
+@media (min-width: 901px) {
+    .cw-battle-layout { grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr); }
+}
+
+/* A battle's merits (2026-11-02, game.js meritsOf): gold stars won, and
+   while the battle lasts the ones still open (plain) and those missed
+   (struck through, faded). */
+.cw-merits { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 3px 10px; font-size: .84rem; }
+.cw-merits li { display: inline-flex; align-items: baseline; gap: 3px; }
+.cw-merit-star { color: var(--text-secondary); font-weight: 800; }
+.cw-merits li.is-got { font-weight: 700; }
+.cw-merits li.is-got .cw-merit-star, .cw-merit-stars { color: var(--cw-gold); -webkit-text-stroke: .4px var(--cw-gold-rim); }
+.cw-merits li.is-missed { color: var(--text-secondary); text-decoration: line-through; opacity: .7; }
+.cw-merits small { font-size: .76rem; color: var(--text-secondary); }
+.cw-merits.is-review { margin: 4px 0 8px; }
+.cw-merit-stars { font-weight: 800; letter-spacing: .05em; }
+.cw-verdict .cw-verdict-merits { font-size: 1.4rem; letter-spacing: .15em; color: var(--cw-gold); text-shadow: 1px 1px 0 rgba(0, 0, 0, .5); }
+
+/* The season's medal (2026-11-02): grey and outlined on the order bar
+   until the plan earns it, gold then; stamped beside the review's verdict. */
+.cw-medal-chip:not(.is-got) { background: none; color: var(--text-secondary); outline: 1px dashed var(--text-secondary); outline-offset: -1px; }
+.cw-medal-chip:not(.is-got) .cw-medal-star { fill: none; stroke: var(--text-secondary); }
+.cw-medal-chip:not(.is-got) .cw-medal-banner { fill: none; stroke: var(--text-secondary); }
+.cw-season-head { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin: 0 0 12px; }
+.cw-season-head .cw-season-verdict { margin: 0; }
+.cw-medal-award { display: inline-flex; align-items: center; gap: 10px; margin: 0; padding: 6px 14px 6px 8px; background: var(--cw-gold); color: var(--cw-gold-rim); border: var(--cw-rule-w, 2px) solid var(--cw-gold-rim); box-shadow: 4px 4px 0 var(--text-primary); }
+.cw-medal-award > span { display: grid; line-height: 1.2; }
+.cw-medal-award strong { font-size: 1.1rem; font-weight: 900; }
+.cw-medal-award small { font-size: .76rem; font-weight: 700; opacity: .85; }
+.cw-medal.is-big { width: 2.4em; height: 2.4em; }
+@media (prefers-reduced-motion: no-preference) {
+    .cw-medal-award.is-fresh { animation: cw-medal-stamp .7s .4s cubic-bezier(.2, 1.4, .4, 1) both; }
+}
+@keyframes cw-medal-stamp { from { opacity: 0; scale: 2.2; rotate: -10deg; } 60% { opacity: 1; scale: .95; rotate: -2deg; } to { opacity: 1; scale: 1; rotate: -2deg; } }
+.cw-season-value .cw-medal { margin-right: 4px; }
+.cw-medal-tally { display: flex; align-items: center; gap: 6px; font-weight: 800; }
+.cw-medal-tally .cw-medal { width: 1.5em; height: 1.5em; }
+.cw-medal-tally small { font-weight: 400; color: var(--text-secondary); }
+.cw-medal-award .cw-medal-star { fill: var(--cw-star); }
+
+/* The season's dispatches (2026-11-02, game.js dispatchOf): a telegram
+   slip of the fronts in words, before the verdict and the gauges. */
+.cw-dispatch { margin: 0 0 14px; padding: 10px 14px 12px; border: var(--cw-rule-w, 2px) solid var(--text-primary); border-left-width: 8px; background: var(--bg-canvas); }
+.cw-dispatch-kicker { margin: 0; font-size: .72rem; font-weight: 800; letter-spacing: .12em; color: var(--text-secondary); }
+.cw-dispatch-head { margin: 2px 0 8px; font-family: var(--font-display, inherit); font-size: clamp(1.25rem, 3vw, 1.6rem); font-weight: 900; line-height: 1.2; }
+.cw-dispatch ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: .92rem; line-height: 1.5; }
+.cw-dispatch li strong { margin-right: 2px; }
+.cw-dispatch-hist { color: var(--text-secondary); font-size: .86rem; }
+.cw-dispatch li.is-ahead .cw-dispatch-hist, .cw-dispatch li.is-behind .cw-dispatch-hist { color: var(--text-primary); font-weight: 700; }
+.games-shell .cw-muster .cw-step.is-muster { margin: 2px 0 6px; min-height: 32px; padding: 3px 10px; font-size: .8rem; border-style: dashed; }
+.cw-muster-short { margin: 2px 0 6px; font-size: .78rem; color: var(--text-secondary); }

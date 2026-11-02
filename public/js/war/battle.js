@@ -706,6 +706,12 @@
         return true;
     }
 
+    // The player's units fallen so far (those raised on the board too; a
+    // unit that came over by surrender is not the player's own loss).
+    function lost(b) {
+        return b.units.filter(u => u.hp <= 0 && isPlayer(b, u) && !u.yielded).length;
+    }
+
     const ORDERS = { move, undo, attack, wait, end, feat };
     function act(b, name, ...args) {
         const fn = ORDERS[name];
@@ -715,7 +721,7 @@
     const api = {
         start, joins, act, reachable, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
-        canMove, featBlock, featTargets, featMod, yields, YIELD_RING, FEATS, ROLES, KINDS,
+        canMove, featBlock, featTargets, featMod, yields, lost, YIELD_RING, FEATS, ROLES, KINDS,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.WarBattle = api;

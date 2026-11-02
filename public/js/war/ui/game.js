@@ -274,6 +274,11 @@
             $('cwContinue').hidden = false;
             $('cwContinue').textContent = `${saved.battle.def.title} 처음부터 다시`;
             $('cwContinue').onclick = retryBattle.bind(null, saved);
+        } else if (saved && G.canRetrySeason(saved)) {
+            // A war lost by a season's plan: that plan again.
+            $('cwContinue').hidden = false;
+            $('cwContinue').textContent = `${D.turns[saved.turn].date} 다시 계획하기`;
+            $('cwContinue').onclick = retrySeason.bind(null, saved);
         }
         // With a save to go back to, continuing is the main action.
         if (!$('cwContinue').hidden) $('cwStart').classList.remove('cw-primary');
@@ -371,7 +376,8 @@
             { id: 'decide', done: decided, at: G.incidentsOf(s).length && !G.incidentsOf(s).every(inc => G.responseOf(s, inc)) ? $('cwIncident') : $('cwChoice'), text: '지도부가 실제로 부딪친 문제입니다. 누가 무엇을 주장했는지 읽고 하나를 고르세요. 버튼 아래 줄이 그 길의 득실이고, 시기가 끝나면 역사의 선택과 견줍니다. 밑줄 친 말을 누르면 풀이가 나옵니다.' },
             { id: 'fronts', done: G.allocated(s) > 0, at: front, inside: true, text: `−·+로 ${josa(U.unit, '을', '를')} 보냅니다. 막대가 ${W.strength}, 그 아래 칸이 ${W.pressure}입니다. ${josa(W.strength, '이', '가')} ${W.pressure}에 닿으면 역사대로, 넘을수록 도시를 더 지키고, 모자라면 잃습니다. 위의 전선 버튼으로 다른 전선을 엽니다.` },
             { id: 'cards', ack: true, done: s.plan.cards.length > 0, at: $('cwCards'), text: '지휘력으로 조언자의 카드를 씁니다. 남은 지휘력은 다음 시기로 넘어가지 않습니다.' },
-            { id: 'send', at: $('cwCommand'), text: battle ? `준비가 끝나면 「${settle}」를 누르세요. 이번 시기에는 ${josa(battle.title, '을', '를')} 직접 지휘합니다.` : `준비가 끝나면 「${settle}」를 누르세요. 지도에서 결과를 보고 역사와 견줍니다.` },
+            { id: 'send', at: $('cwCommand'), text: (battle ? `준비가 끝나면 「${settle}」를 누르세요. 이번 시기에는 ${josa(battle.title, '을', '를')} 직접 지휘합니다.` : `준비가 끝나면 「${settle}」를 누르세요. 지도에서 결과를 보고 역사와 견줍니다.`)
+                + (U.medal ? ` 버튼 옆 「예상」이 이 계획의 결과를 역사와 견줍니다. ${U.medal.rule} ${josa(U.medal.name, '을', '를')} 받습니다.` : '') },
         ];
     }
 
@@ -420,6 +426,7 @@
             // replaceChildren writes a null as the text "null".
             ...(moved.length ? [el('ul', { class: 'cw-ledger-causes cw-unveil-stats', 'aria-label': '수치 변화' },
                 ...moved.map(([label, n]) => el('li', { class: n > 0 ? 'is-plus' : n < 0 ? 'is-minus' : '' }, label, el('b', {}, signed(n)))))] : []),
+            ...(ready && medalOf(r) ? [el('span', { class: 'cw-medal-chip is-got' }, medalIcon(), U.medal.name)] : []),
             ...(ready ? [el('button', { type: 'button', class: 'cw-primary', 'data-key': 'unveil', onclick: openReview }, '결산 보기 →')] : []));
         if (!ready) unveilTimer = window.setTimeout(renderUnveil, motion.at === null ? 250 : wait - (performance.now() - motion.at) + 30);
         else if (document.activeElement === document.body || !document.activeElement) bar.querySelector('button').focus({ preventScroll: true });
@@ -1645,6 +1652,7 @@
         const fc = G.forecast(s);
         const threats = G.threatsOf(s);
         const active = G.activeFronts(s);
+        const look = outlook();
         // One card at a time, picked on the map or in the row of fronts
         // under it; a season opens on its heaviest pressure.
         if (pickedTurn !== s.turn || !active.includes(picked)) picked = active.reduce((a, b) => fc.fronts[b].pressure > fc.fronts[a].pressure ? b : a, active[0]);
@@ -1662,10 +1670,11 @@
         };
         items.push(el('div', { class: 'cw-front-tabs', role: 'group', 'aria-label': '전선 고르기 (←·→)', onkeydown: step }, ...active.map(id => {
             const d = s.lines[id] + fc.fronts[id].change - D.fronts[id].history[s.turn];
+            const doomed = look.doom === id;
             return el('button', {
-                type: 'button', class: 'cw-front-tab', 'data-key': `pick-${id}`, 'aria-pressed': String(id === picked), 'aria-controls': 'cwFront-' + id, tabindex: id === picked ? '0' : '-1',
+                type: 'button', class: 'cw-front-tab' + (doomed ? ' is-doom' : ''), 'data-key': `pick-${id}`, 'aria-pressed': String(id === picked), 'aria-controls': 'cwFront-' + id, tabindex: id === picked ? '0' : '-1',
                 onclick: () => { picked = id; render(); showFront(id); },
-                'aria-label': `${D.fronts[id].name} ${s.plan.alloc[id]}${U.unit}` + (d ? `, 예상 역사보다 도시 ${Math.abs(d)}개 ${d < 0 ? '뒤처짐' : '앞섬'}` : ''),
+                'aria-label': `${D.fronts[id].name} ${s.plan.alloc[id]}${U.unit}` + (d ? `, 예상 역사보다 도시 ${Math.abs(d)}개 ${d < 0 ? '뒤처짐' : '앞섬'}` : '') + (doomed ? ', 이대로면 패배' : ''),
             }, (fid => fid ? picture(A.shield(fid, D.factions[fid])) : null)(((threats[id] || {}).foes || [])[0]), el('strong', {}, D.fronts[id].short), el('span', {}, `${s.plan.alloc[id]}${U.unit}`), trendMark(d));
         })));
         for (const id of active) {
@@ -1686,6 +1695,7 @@
             // enemy (folded on a phone, its pressure summed on the fold).
             const card = el('article', { class: 'cw-front', id: 'cwFront-' + id, tabindex: '-1' },
                 el('header', {}, el('h4', {}, D.fronts[id].name, trendMark(after - hist)), hint),
+                doomNote(id, look),
                 el('div', { class: 'cw-front-controls' }, stepper, commissarToggle(id), ...frontCards(id), ...stepButtons(id, step)),
                 railRow(f),
                 meter(id, f, line, s.turn, s.plan.choice, '예상', shortNote(step)),
@@ -1777,8 +1787,20 @@
         // many it would take from other fronts.
         let more = null;
         for (let k = 1; k <= s.plan.divisions; k++) if (cmp(tryAt(n + k), now) > 0) { more = k; break; }
+        // On the season's battle front a division spared must not send a
+        // unit home from the board either (2026-11-02: 「결과 그대로」 used
+        // to strip the battle of the units its margin brought).
+        const battle = G.battleOf(s);
+        const units = k => {
+            if (!battle || battle.front !== id) return 0;
+            s.plan.alloc[id] = k;
+            const m = G.musterOf(s);
+            s.plan.alloc[id] = n;
+            return m ? m.units.filter(u => u.joins).length : 0;
+        };
+        const mustered = units(n);
         let spare = 0;
-        while (spare < n && cmp(tryAt(n - spare - 1), now) === 0) spare++;
+        while (spare < n && cmp(tryAt(n - spare - 1), now) === 0 && units(n - spare - 1) === mustered) spare++;
         return { more, spare };
     }
 
@@ -1798,9 +1820,30 @@
         if (!m.def.final) notes.push(m.def.stakes || `예상은 역사처럼 이길 때 · ${m.def.reward.quick}턴 안에 이기면 ${W.strength} +${m.def.reward.quickBy}, 지면 ${signed(m.def.reward.lostBy)}`);
         return el('div', { class: 'cw-muster' },
             el('p', {}, el('strong', {}, `${m.def.title} 편성`), notes.length ? ` · ${notes.join(' · ')}` : null),
+            musterStep(id, m),
             el('ul', {}, ...m.units.map(u => el('li', { class: u.joins ? 'is-in' : 'is-out' },
                 el('span', {}, u.name),
                 u.joins ? null : el('small', {}, u.card ? `${josa(D.cards[u.card].short || D.cards[u.card].title, '을', '를')} 보내면` : `${W.strength} ${u.at}부터`)))));
+    }
+
+    // The next unit the battle waits for on strength, and the divisions it
+    // takes here (2026-11-02): a button when they are free, else how many
+    // short. Tried on the plan itself and put back, as nextStep does; the
+    // board's hardest part is often a unit one division away.
+    function musterStep(id, m) {
+        const wait = m.units.filter(u => !u.joins && !u.card && u.need !== undefined).sort((a, b) => a.need - b.need)[0];
+        if (!wait) return null;
+        const n = s.plan.alloc[id];
+        let more = null;
+        for (let k = 1; k <= s.plan.divisions && more === null; k++) {
+            s.plan.alloc[id] = n + k;
+            const mm = G.musterOf(s);
+            s.plan.alloc[id] = n;
+            if (mm.units.find(u => u.id === wait.id).joins) more = k;
+        }
+        if (more === null) return null;
+        if (more <= G.free(s)) return el('button', { type: 'button', class: 'cw-step is-muster', 'data-key': `muster-${id}`, onclick: () => { act('alloc', id, n + more); render(); } }, `${U.unit} +${more} → ${wait.name} 합류`);
+        return el('p', { class: 'cw-muster-short' }, `${josa(wait.name, '이', '가')} 오려면 ${U.unit} ${more}개 더`);
     }
 
     // The commissar on this front. With a single commissar already sent
@@ -2209,8 +2252,71 @@
         if (box) box.scrollIntoView({ block: 'start', behavior: stillMotion() ? 'auto' : 'smooth' });
     }
 
+    // The season's plan taken whole (2026-11-02): each front against
+    // history, the medal it earns (no front behind history, one ahead:
+    // ui.medal), the front whose fall ends the war (its defeat line) lost
+    // under the plan (doom) or should the season's battle on it be lost
+    // (risk), and a front whose city costs dear when it falls (onLost).
+    function outlook() {
+        const fc = G.forecast(s);
+        const def = G.battleOf(s);
+        const fronts = Object.entries(fc.fronts).map(([id, f]) => ({ id, d: s.lines[id] + f.change - D.fronts[id].history[s.turn] }));
+        const out = { fronts, sum: fronts.reduce((a, x) => a + x.d, 0), doom: null, risk: null, falls: [] };
+        out.medal = Boolean(U.medal) && fronts.length > 0 && fronts.every(x => x.d >= 0) && fronts.some(x => x.d > 0);
+        for (const [id, f] of Object.entries(fc.fronts)) {
+            const front = D.fronts[id];
+            const after = s.lines[id] + f.change;
+            if (front.defeat && after <= front.defeat.at) out.doom = id;
+            else if (front.defeat && def && !def.final && def.front === id && def.reward && def.reward.lostBy && !s.battles[def.id]
+                && s.lines[id] + G.outcomeOf(s, id, f.margin + def.reward.lostBy, f.pressure).change <= front.defeat.at) out.risk = id;
+            if (front.onLost && after <= front.onLost.at && !s.fallen[id]) out.falls.push(id);
+        }
+        return out;
+    }
+    // The city whose fall ends the war, or costs dear, on a front.
+    const lastCity = (id, at) => D.fronts[id].cities[at][0];
+    // The plan as it stood when the send was pressed on a doomed front: a
+    // second press sends it; any change to the plan asks again.
+    let doomArmed = null;
+    const planKey = () => JSON.stringify(s.plan);
+
+    // The doomed front's card, and the battle's that could doom it, say so.
+    function doomNote(id, look) {
+        const front = D.fronts[id];
+        if (look.doom === id) return el('p', { class: 'cw-doom', role: 'note' }, el('strong', {}, `이대로면 ${josa(lastCity(id, front.defeat.at), '이', '가')} 떨어져 전쟁에서 진다`), ` · ${josa(U.unit, '을', '를')} 더 보내거나 다른 전선에서 옮겨 온다`);
+        if (look.risk === id) return el('p', { class: 'cw-doom is-risk', role: 'note' }, el('strong', {}, `${josa(G.battleOf(s).title, '을', '를')} 지면 ${josa(lastCity(id, front.defeat.at), '이', '가')} 떨어져 전쟁에서 진다`));
+        if (look.falls.includes(id)) return el('p', { class: 'cw-doom is-fall', role: 'note' }, el('strong', {}, `이대로면 ${josa(lastCity(id, front.onLost.at), '이', '가')} 떨어진다`), ` · ${front.onLost.label || ''} ${Object.entries(front.onLost.effects || {}).map(([k, v]) => `${U.cardStats[k] || k} ${signed(v)}`).join(' · ')}`);
+        return null;
+    }
+
+    // The season's outlook on the order bar: the doom first, else the
+    // fronts against history and the medal the plan would earn.
+    function outlookChip(look) {
+        const battle = G.battleOf(s);
+        if (look.doom) return el('p', { class: 'cw-outlook is-doom', role: 'status' }, `${josa(lastCity(look.doom, D.fronts[look.doom].defeat.at), '이', '가')} 떨어진다 → 패배`);
+        const sum = look.sum;
+        return el('p', { class: 'cw-outlook' + (sum > 0 ? ' is-ahead' : sum < 0 ? ' is-behind' : ''), role: 'status', title: battle && !battle.final ? '전투가 역사처럼 끝날 때의 예상' : null },
+            el('span', {}, '예상 '), el('b', {}, sum ? `${sum > 0 ? '▲' : '▼'}${Math.abs(sum)}` : '역사대로'),
+            U.medal ? el('span', { class: 'cw-medal-chip' + (look.medal ? ' is-got' : ''), title: `${U.medal.name}: ${U.medal.rule}`, 'aria-label': `${U.medal.name} ${look.medal ? '받음' : `못 받음, ${U.medal.rule} 받는다`}` },
+                medalIcon(), U.medal.short || U.medal.name) : null);
+    }
+
+    // A season's medal, from its record: no front behind history, one ahead.
+    function medalOf(r) {
+        const fronts = Object.values(r.fronts);
+        return Boolean(U.medal) && fronts.length > 0 && fronts.every(f => f.after >= f.history) && fronts.some(f => f.after > f.history);
+    }
+
+    // The medal's badge: a red banner on a gold star.
+    function medalIcon(cls) {
+        const node = svg('svg', { viewBox: '0 0 24 24', class: 'cw-medal' + (cls ? ' ' + cls : ''), 'aria-hidden': 'true' });
+        node.append(svg('path', { d: star(12, 13, 10.5, 4.6), class: 'cw-medal-star' }));
+        node.append(svg('path', { d: 'M8 4h8l-1.6 3.2L16 10.4H8z', class: 'cw-medal-banner' }));
+        return node;
+    }
+
     // What must still be chosen before the season can be sent.
-    const missingSteps = () => [G.incidentsOf(s).some(inc => !G.responseOf(s, inc)) ? ['돌발 사건', 'cwIncident'] : null, !s.plan.choice ? ['갈림길', 'cwChoice'] : null].filter(Boolean);
+    const missingSteps = () =>[G.incidentsOf(s).some(inc => !G.responseOf(s, inc)) ? ['돌발 사건', 'cwIncident'] : null, !s.plan.choice ? ['갈림길', 'cwChoice'] : null].filter(Boolean);
 
     function renderCommand() {
         const kept = G.free(s);
@@ -2251,10 +2357,21 @@
         const missing = missingSteps().map(([label]) => label);
         $('cwCommandNote').textContent = missing.length ? `${missing.join('과 ')}을 골라야 보낼 수 있다`
             : `${U.food} 소비 ${G.forecast(s).supply.need}` + (saved > 0 ? ` (예비 −${saved})` : '');
+        // The plan's outlook beside it: the war lost, or the fronts against history.
+        const look = outlook();
+        const old2 = $('cwOutlook');
+        if (old2) old2.remove();
+        const chip = outlookChip(look);
+        chip.id = 'cwOutlook';
+        $('cwCommandNote').before(chip);
+        if (doomArmed !== null && (doomArmed !== planKey() || !look.doom)) doomArmed = null;
         // Pressed before the season is ready, it says what is missing and goes there.
         $('cwSettle').classList.toggle('is-waiting', !G.canSettle(s));
+        $('cwSettle').classList.toggle('is-armed', doomArmed !== null);
         const battle = G.battleOf(s);
-        $('cwSettle').textContent = battle ? battle.settle : '이 시기를 보낸다 →';
+        $('cwSettle').textContent = doomArmed !== null ? '그래도 보낸다 →' : battle ? battle.settle : '이 시기를 보낸다 →';
+        if (doomArmed !== null) $('cwCommand').prepend(el('p', { class: 'cw-settle-alert', role: 'alert' },
+            `이대로 보내면 ${josa(lastCity(look.doom, D.fronts[look.doom].defeat.at), '이', '가')} 떨어져 전쟁에서 진다. 한 번 더 누르면 보낸다.`));
     }
 
     function reviewFronts() {
@@ -2281,6 +2398,7 @@
         return el('div', { class: 'cw-history' },
             el('p', { class: 'games-kicker' }, def.title),
             el('p', {}, el('strong', {}, result), ...effect, battleFeats(def, r)),
+            meritList(meritsOf(def, s.battle, r), 'is-review'),
             el('p', {}, ...glossed(def.history, reviewGlossed)));
     }
 
@@ -2290,6 +2408,35 @@
         if (r.result !== 'won') return '이기지 못했다';
         return r.held ? `${r.turns}턴을 버텼다` : `${r.turns}턴에 이겼다`;
     }
+
+    // A battle's merits (ui.merits, 2026-11-02): the win, a quick one (its
+    // reward's quick turns, else the board's par, with what the quick win
+    // brings its front), and every one of the player's units brought back.
+    // While the battle lasts each says whether it can still be had (open);
+    // once it is over (r, the fought battle), whether it was (got).
+    function meritsOf(def, b, r) {
+        if (!U.merits || (r && r.assumed)) return [];
+        const par = (def.reward && def.reward.quick) || def.par;
+        const won = Boolean(r) && r.result === 'won';
+        const turn = r ? r.turns : b.turn;
+        const lost = r ? r.lost : B.lost(b);
+        const quickBy = def.reward && def.reward.quick ? def.reward.quickBy : 0;
+        return [
+            { id: 'won', label: '승리', got: won, open: !r },
+            par ? { id: 'quick', label: `${par}턴 안에` + (quickBy ? ` · ${W.strength} +${quickBy}` : ''), got: won && turn <= par, open: !r && turn <= par } : null,
+            lost === undefined ? null : { id: 'whole', label: U.merits.whole, got: won && lost === 0, open: !r && lost === 0, note: lost ? `${lost}부대 잃음` : null },
+        ].filter(Boolean);
+    }
+
+    function meritList(merits, cls) {
+        if (!merits.length) return null;
+        return el('ul', { class: 'cw-merits' + (cls ? ' ' + cls : ''), 'aria-label': `전공 ${merits.filter(m => m.got).length}/${merits.length}` },
+            ...merits.map(m => el('li', { class: m.got ? 'is-got' : m.open ? 'is-open' : 'is-missed' },
+                el('span', { class: 'cw-merit-star', 'aria-hidden': 'true' }, m.got ? '★' : '☆'), m.label,
+                m.note ? el('small', {}, ` · ${m.note}`) : null,
+                el('span', { class: 'cw-sr' }, m.got ? ' 얻음' : m.open ? ' 아직 얻을 수 있음' : ' 놓침'))));
+    }
+    const meritStars = merits => merits.map(m => (m.got ? '★' : '☆')).join('');
 
     // The feats used and the units that surrendered in a fought battle.
     function battleFeats(def, r) {
@@ -2317,6 +2464,39 @@
             s.captured ? el('p', {}, el('strong', {}, `포로 편입: 다음 시기 ${U.unit} +${s.captured}`)) : null);
     }
 
+    // The season told as the fronts' dispatches (2026-11-02): on each front
+    // fought, what changed hands and who took it, then where history stood;
+    // a headline of the cities taken and lost. The map and the meters show
+    // the same in dots; this says it in words, with the enemy by name.
+    function dispatchOf(r) {
+        const threats = G.threatsOf(s);
+        const taken = [], fell = [];
+        const rows = Object.entries(r.fronts).map(([id, f]) => {
+            const front = D.fronts[id];
+            const names = (a, b) => front.cities.slice(a, b).map(c => c[0]).join('·');
+            const fid = ((threats[id] || {}).foes || [])[0];
+            const foe = fid ? foeAs(fid, id).short : U.enemy;
+            let what;
+            // A city the Reds held when the war began is retaken; one past it, taken.
+            const back = f.after <= D.startLines[id];
+            if (f.after > f.before) { what = `${josa(names(f.before, f.after), '을', '를')} ${back ? '되찾았다' : '차지했다'}`; taken.push([names(f.before, f.after), back]); }
+            else if (f.after < f.before) { what = `${josa(foe, '이', '가')} ${josa(names(f.after, f.before), '을', '를')} 빼앗았다`; fell.push(names(f.after, f.before)); }
+            else if (f.after) what = `${front.cities[f.after - 1][0]}에서 버텼다`;
+            else what = `${josa(foe, '이', '가')} 전선을 쥐고 있다`;
+            const d = f.after - f.history;
+            const hist = d > 0 ? `역사에서는 ${names(f.history, f.after)}까지 가지 못했다` : d < 0 ? `역사에서는 ${josa(names(f.after, f.history), '을', '를')} 쥐고 있었다` : '역사와 같다';
+            return el('li', { class: d > 0 ? 'is-ahead' : d < 0 ? 'is-behind' : '' },
+                el('strong', {}, front.name), ' ', what, '. ', el('span', { class: 'cw-dispatch-hist' }, (d > 0 ? '▲ ' : d < 0 ? '▼ ' : '') + hist + '.'));
+        });
+        const head = taken.length || fell.length
+            ? [...taken.map(([n, back]) => `${n} ${back ? '탈환' : '점령'}`), fell.length ? `${fell.join('·')} 함락` : null].filter(Boolean).join(' · ')
+            : '전선은 그대로';
+        return el('div', { class: 'cw-dispatch' },
+            el('p', { class: 'cw-dispatch-kicker' }, `전선 통신 · ${D.turns[r.turn].date}`),
+            el('p', { class: 'cw-dispatch-head' }, head + (taken.length && !fell.length ? '!' : '')),
+            el('ul', {}, ...rows));
+    }
+
     function renderReview() {
         const t = G.turnData(s);
         const r = s.records[s.records.length - 1];
@@ -2331,10 +2511,15 @@
         // The verdict first (2026-10-29): the cities held against history's,
         // then the gauges; the history behind the choices folds below.
         const ahead = Object.values(r.fronts).reduce((sum, f) => sum + f.after - f.history, 0);
-        $('cwReview').replaceChildren(...[
+        const reviewItems = [
             el('h3', { id: 'cwReviewTitle' }, `${t.date}의 결산`),
-            el('p', { class: 'cw-season-verdict ' + (ahead > 0 ? 'is-ahead' : ahead < 0 ? 'is-behind' : 'is-even') },
-                ahead ? `역사보다 도시 ${Math.abs(ahead)}개 ${ahead > 0 ? '앞섬' : '뒤처짐'}` : '역사와 같은 전선'),
+            dispatchOf(r),
+            el('div', { class: 'cw-season-head' },
+                el('p', { class: 'cw-season-verdict ' + (ahead > 0 ? 'is-ahead' : ahead < 0 ? 'is-behind' : 'is-even') },
+                    ahead ? `역사보다 도시 ${Math.abs(ahead)}개 ${ahead > 0 ? '앞섬' : '뒤처짐'}` : '역사와 같은 전선'),
+                medalOf(r) ? el('p', { class: 'cw-medal-award' + (stillMotion() || medalSeen.has(r) ? '' : ' is-fresh') },
+                    medalIcon('is-big'), el('span', {}, el('strong', {}, U.medal.name), el('small', {}, `${U.medal.rule} · ${s.records.filter(medalOf).length}번째`))) : null),
+            medalOf(r) && s.records.filter(medalOf).length === 1 && U.medal.note ? el('p', { class: 'cw-note' }, U.medal.note) : null,
             ledgerOf(r),
             ...(notes => notes.length ? [el('ul', { class: 'cw-notes' }, ...notes.map(n => el('li', {}, n)))] : [])(r.ledger ? r.notes.filter(n => !inLedger(r).has(n)) : r.notes),
             spoilsOf(r),
@@ -2349,8 +2534,11 @@
                     el('p', { class: 'cw-links' }, ...c.links.map(link)),
                     el('p', {}, ...glossed(t.after, reviewGlossed)),
                     el('p', { class: 'cw-links' }, ...t.links.map(link)))),
-            next].filter(Boolean));
+            next].filter(Boolean);
+        medalSeen.add(r);
+        $('cwReview').replaceChildren(...reviewItems);
     }
+    const medalSeen = new WeakSet();
 
     // The season's account: each stat from where it stood to where it is,
     // on a gauge with the lines that matter, what moved it, and what the
@@ -2766,8 +2954,10 @@
         // short rows (label, state), the goals marked, an empty post alarmed.
         const row = (label, text, tone) => ({ label, text, tone });
         const postAt = def.protect && B.unitAt(b, ...def.protect.at);
+        const merits = meritsOf(def, b, battleEnded ? s.battles[def.id] : null);
         const status = [
             row('턴', `${Math.min(b.turn, def.turnLimit)} / ${def.turnLimit}`),
+
             ...def.goals.map(g => {
                 const holder = B.unitAt(b, ...g.at);
                 return row('목표', holder && B.isEnemy(b, holder)
@@ -2775,6 +2965,7 @@
                     : `${g.name}에 서면 승리 · ${josa(foeName(), '이', '가')} 없음`, 'is-goal');
             }),
             def.protect ? row('지킬 곳', `${def.protect.name}${def.outlast ? ` · ${def.turnLimit}턴 끝까지 지키면 승리` : ''} · ${josa(foeName(), '이', '가')} 들어서면 패배${postAt || battleEnded ? '' : ' · 지금 비었음'}`, postAt || battleEnded ? null : 'is-alarm') : null,
+            merits.length ? row('전공', meritList(merits)) : null,
             def.windTurns ? row('여울', B.fordOpen(b) ? `${def.ford} 열림 · ${def.windTurns - b.turn + 1}턴 남음` : `${def.ford} 물에 잠김`) : null,
             ...Object.values(def.lines).map((l, i) => row('우회', b.turned[Object.keys(def.lines)[i]] ? `${l.name} 끊음 · 진지 방어가 +1로 줄었다` : `${l.name} · 점선 구역에 서면 수비대의 뒤가 끊긴다`)),
             !Object.keys(def.sectors).length ? null : row('예비대', b.reserve ? `${foeName()} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶임` : `${foeName()} 예비대는 아직 그대로`),
@@ -2796,7 +2987,7 @@
             el('header', { class: 'cw-battle-head', 'data-pane': 'status' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             battleBrief(b),
             el('div', { class: 'cw-battle-layout' },
-                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
+                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('dl', { class: 'cw-battle-status', 'data-pane': 'status' }, ...status.map(x => el('div', { class: x.tone || null }, el('dt', {}, x.label), el('dd', {}, x.text)))),
@@ -2931,7 +3122,8 @@
             el('div', { class: 'cw-verdict ' + (won ? 'is-won' : 'is-lost'), style: `--since:${Math.round(performance.now() - verdictAt)}ms` },
                 el('span', { class: 'cw-verdict-title' }, b.def.title),
                 el('strong', {}, won ? '승리' : '패배'),
-                el('span', {}, foughtText({ result: b.result, turns: b.turn, held: b.held }))));
+                el('span', {}, foughtText({ result: b.result, turns: b.turn, held: b.held })),
+                won && s.battles[b.def.id] ? el('span', { class: 'cw-verdict-merits' }, meritStars(meritsOf(b.def, b, s.battles[b.def.id]))) : null));
     }
 
     // A won battle's objective (or the post held) bursts in red and gold.
@@ -3296,6 +3488,20 @@
         announce(`${state.battle.def.title}: 처음부터 다시`);
     }
 
+    // The season that lost the war planned again (the save cut back to
+    // before its sending), its plan as it was left.
+    function retrySeason(from) {
+        const state = G.retrySeason(from);
+        if (!state) return;
+        startGame(state, true);
+        campTab = 'ops';
+        tabTurn = state.turn;
+        report.retried();
+        save();
+        render();
+        announce(`${G.turnData(state).date}: 다시 계획`);
+    }
+
     function renderOutcome() {
         const o = s.outcome;
         const endGlossed = new Set();
@@ -3303,15 +3509,24 @@
         if (o.stars) {
             items.push(el('ul', { class: 'cw-stars' }, ...o.stars.map(st => el('li', { class: st.got ? 'is-got' : '' }, (st.got ? '★ ' : '☆ ') + st.label))));
             items.push(el('p', {}, `시기마다 쥔 도시를 모두 더하면 역사보다 ${signed(o.diff)}`));
+            if (U.medal) items.push(el('p', { class: 'cw-medal-tally' }, medalIcon(), `${U.medal.name} ${s.records.filter(medalOf).length}개`, el('small', {}, ` · ${s.records.length}시기 중 · ${U.medal.rule} 받는다`)));
             if (o.kind === 'won' || o.kind === 'stalled') items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, '역사에서는'), el('p', {}, ...glossed(s.battle.def.history, endGlossed))));
             if (D.epilogue.scene) items.push(el('div', { class: 'cw-scene cw-epilogue-scene' }, figure(D.epilogue.scene.picture, 'cw-scene-photo'), D.epilogue.scene.witness ? witness(D.epilogue.scene.witness, endGlossed) : null));
             items.push(el('div', { class: 'cw-history' }, el('p', { class: 'games-kicker' }, D.epilogue.title),
                 el('p', {}, ...glossed(D.epilogue.texts.find(x => G.when(s, x.when)).text, endGlossed)),
                 el('p', { class: 'cw-links' }, ...D.epilogue.links.map(link))));
         }
+        // A war lost on the way offers its battle or its season again,
+        // right under the verdict; a war that reached its end, a new one.
+        const actions = [];
+        if (G.canRetryBattle(s)) actions.push(el('button', { type: 'button', class: 'cw-primary', 'data-key': 'retry', onclick: () => retryBattle(s) }, `${s.battle.def.title} 처음부터 다시`));
+        const replan = G.canRetrySeason(s);
+        if (replan) actions.push(el('button', { type: 'button', class: G.canRetryBattle(s) ? '' : 'cw-primary', 'data-key': 'replan', onclick: () => retrySeason(s) }, `${D.turns[s.turn].date} 다시 계획하기`));
+        actions.push(el('button', { type: 'button', class: G.canRetryBattle(s) || replan ? '' : 'cw-primary', onclick: () => { if (!practice) try { localStorage.removeItem(KEY); } catch (_) { /* ignore */ } startGame(G.start()); report.begin(); save(); } }, '새 게임 시작'));
+        if (replan) items.push(el('p', { class: 'cw-note' }, '그 시기의 계획으로 돌아가 사단·카드·선택을 다시 짤 수 있습니다. 전선 카드가 패배를 미리 알려 줍니다.'));
+        if (!o.stars) items.push(el('div', { class: 'cw-outcome-actions' }, ...actions));
         items.push(...retrospect());
-        if (G.canRetryBattle(s)) items.push(el('button', { type: 'button', class: 'cw-primary', 'data-key': 'retry', onclick: () => retryBattle(s) }, `${s.battle.def.title} 처음부터 다시`));
-        items.push(el('button', { type: 'button', class: G.canRetryBattle(s) ? '' : 'cw-primary', onclick: () => { if (!practice) try { localStorage.removeItem(KEY); } catch (_) { /* ignore */ } startGame(G.start()); report.begin(); save(); } }, '새 게임 시작'));
+        if (o.stars) items.push(...actions);
         $('cwOutcome').replaceChildren(...items);
     }
 
@@ -3332,7 +3547,7 @@
                     el('span', { class: 'cw-season-name' }, t.date, el('small', {}, t.title)),
                     el('span', { class: 'cw-season-bar', 'aria-hidden': 'true' },
                         el('i', { class: tone, style: d < 0 ? `right:50%;width:${width}` : `left:50%;width:${d ? width : '2px'}` })),
-                    el('span', { class: 'cw-season-value ' + tone }, d ? `${signed(d)} 도시` : '역사대로')),
+                    el('span', { class: 'cw-season-value ' + tone }, medalOf(r) ? medalIcon() : null, d ? `${signed(d)} 도시` : '역사대로')),
                 el('div', { class: 'cw-season-fronts' }, ...Object.entries(r.fronts).map(([id, f]) =>
                     el('article', { class: 'cw-front is-result' },
                         el('header', {}, el('h4', {}, D.fronts[id].name, trendMark(f.after - f.history))),
@@ -3358,7 +3573,9 @@
         const battles = Object.values(D.battles).filter(def => s.battles[def.id]).map(def => {
             const r = s.battles[def.id];
             const turned = r.turned.map(id => def.lines[id].name);
-            return el('li', {}, el('strong', {}, def.title), ' · ', foughtText(r),
+            const merits = meritsOf(def, null, r);
+            return el('li', {}, merits.length ? el('span', { class: 'cw-merit-stars', title: merits.map(m => `${m.got ? '★' : '☆'} ${m.label}`).join(' · ') }, meritStars(merits), ' ') : null,
+                el('strong', {}, def.title), ' · ', foughtText(r),
                 turned.length ? ` · 우회한 방어선: ${turned.join(', ')}` : '', battleFeats(def, r));
         });
         const support = U.hud
@@ -3430,6 +3647,15 @@
             $('cwCommand').prepend(el('p', { class: 'cw-settle-alert', role: 'alert' }, text));
             return;
         }
+        // A plan that loses the war asks once more (the battle's turn end does the same).
+        if (outlook().doom && doomArmed !== planKey()) {
+            doomArmed = planKey();
+            picked = outlook().doom;
+            render();
+            go('cwFronts');
+            return;
+        }
+        doomArmed = null;
         const t = G.turnData(s);
         if (!act('settle')) return;
         if (s.phase === 'battle' && !s.battle.def.final) {

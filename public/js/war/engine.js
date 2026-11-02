@@ -888,7 +888,7 @@
             const won = s.battle.result === 'won';
             s.battles[s.battle.def.id] = {
                 result: s.battle.result, turns: s.battle.turn, turned: Object.keys(s.battle.turned).filter(id => s.battle.turned[id]),
-                captured: s.battle.captured || 0, feats: Object.keys(s.battle.feats || {}),
+                captured: s.battle.captured || 0, feats: Object.keys(s.battle.feats || {}), lost: Battle.lost(s.battle),
             };
             if (s.battle.held) s.battles[s.battle.def.id].held = true;
             if (!s.battle.def.final) {
@@ -1014,6 +1014,22 @@
             return state && state.phase === 'battle' ? state : null;
         }
 
+        // A war lost by a season's sending (a front's defeat line, not a
+        // battle) can plan that season again: the log cut back to before its
+        // settlement, the plan as the player left it. A battle fought on the
+        // way is fought again too (its orders come after the settlement).
+        function canRetrySeason(s) {
+            return s.phase === 'done' && Boolean(s.outcome) && !s.outcome.stars && s.log.some(e => e[0] === 'settle');
+        }
+
+        function retrySeason(s) {
+            if (!canRetrySeason(s)) return null;
+            let j = s.log.length - 1;
+            while (j >= 0 && s.log[j][0] !== 'settle') j--;
+            const state = restore({ version: D.saveVersion, rules: s.rules, log: s.log.slice(0, j) });
+            return state && state.phase === 'plan' ? state : null;
+        }
+
         // ── Rehearsal: one battle on its own, for trying its board ──
 
         // A war played as history chose up to the start of the named battle:
@@ -1056,7 +1072,7 @@
         }
 
         return {
-            calendar, prevOf, DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, canRetryBattle, retryBattle, rehearse, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
+            calendar, prevOf, DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, canRetryBattle, retryBattle, canRetrySeason, retrySeason, rehearse, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
             start, act, restore, serialize, forecast, activeFronts, turnData, when,
             free, allocated, threatsOf, traitsOn, traitOf, prizeOf, battleOf, incidentsOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, mobilizeSources, outcomeOf, outcomeBands, capBattle, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
         };

@@ -74,6 +74,10 @@ function oldOutcome(o) {
     return Object.assign(rest, { peasants: st.peasants });
 }
 
+// A fought battle's units lost (2026-11-02) are kept for its merits on
+// the screen only: the recording's shape without them.
+const oldBattles = battles => Object.fromEntries(Object.entries(battles).map(([id, { lost, ...rest }]) => [id, rest]));
+
 function battleView(b) {
     if (!b) return null;
     return {
@@ -91,7 +95,7 @@ function view(s) {
         turn: oldTurn(s.turn), phase: s.phase, rules: s.rules, lines: s.lines, stats: stats(s), flags: oldFlags(s.flags),
         momentum: s.momentum, pursuit: s.pursuit, captured: s.captured, deserted: s.deserted, revolt: s.unrest,
         petrogradFell: Boolean(s.fallen.northwest), used: s.used, lastAlloc: s.lastAlloc,
-        records: s.records.map(oldRecord), battles: s.battles, outcome: oldOutcome(s.outcome), battle: battleView(s.battle),
+        records: s.records.map(oldRecord), battles: oldBattles(s.battles), outcome: oldOutcome(s.outcome), battle: battleView(s.battle),
     };
     if (s.phase === 'plan') {
         const p = s.plan;

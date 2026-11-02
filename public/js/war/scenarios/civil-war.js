@@ -953,6 +953,9 @@
         places: [['터키 방벽', 3, 0.1], ['시바시', 3, 6], ['리톱스키 반도', 6, 5], ['유슌 방어선', 8, 0.1], ['북타브리아', 0, 4], ['촌가르 반도', 2, 9.6], ['촌가르 해협', 6, 9.2], ['크림', 11, 6]],
         windTurns: 4,
         turnLimit: 9,
+        // A battle without a quick reward: the turns its quick merit asks
+        // (ui.merits, shown only), from war-balance.js's strong player.
+        par: 7,
         // A Red unit on dry ground in a line's rear (the outlined area on
         // the board) turns it; its garrison makes for the fallback tile.
         lines: {
@@ -1086,6 +1089,7 @@
         towns: [['테튜시스코예', 2, 2], ['오트라다', 4, 3], ['오호트니치야', 6, 2]],
         places: [['인자 방면', 7.4, 0.6], ['스뱌가강', 8, 6.05], ['볼가강', 8, 11], ['심비르스크', 0.9, 8.5], ['베네츠', 2.1, 10]],
         turnLimit: 7,
+        par: 5,
         lines: {},
         sectors: {},
         terrain: {
@@ -1622,6 +1626,7 @@
         towns: [['라지민', 2, 5], ['가르볼린', 9, 5]],
         places: [['브크라강 방면', 0, 9.4], ['비스와강', 8, 2.05], ['바르샤바', 1.4, 0.1], ['프라가', 2.4, 3.05], ['늪과 숲', 6, 7], ['브레스트 방면', 3, 10.5], ['비에프시강', 10, 9.4]],
         turnLimit: 6,
+        par: 5,
         lines: {},
         sectors: {},
         terrain: {
@@ -1962,6 +1967,16 @@
         // The game's two numbers in plain words (war/ui/game.js).
         words: { strength: '우리 힘', pressure: '적의 힘', perDivision: '사단 하나의 힘' },
         save: 'civil-war-v1-save',
+        // The season's medal (war/ui/game.js outlook): no front behind
+        // history's line, one ahead of it. Shown, never counted by the rules.
+        medal: {
+            name: '붉은 깃발 훈장', short: '훈장',
+            rule: '어느 전선도 역사보다 뒤처지지 않고 한 곳 이상 앞서면',
+            note: '1918년 9월 16일 제정된 소비에트 러시아의 첫 훈장. 1호는 그해 여름 우랄에서 백군의 포위를 뚫고 나온 블류헤르의 부대 지휘에 주어졌다.',
+        },
+        // A battle's merits (war/ui/game.js battleMerits): the win, a quick
+        // one (the reward's quick, else par), every Red unit brought back.
+        merits: { quick: '빠른 승리', whole: '한 부대도 잃지 않음' },
     };
 
     // ── The campaign's rules (war/engine.js; schema in dev_docs/war-engine.md) ──
