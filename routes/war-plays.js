@@ -1,37 +1,19 @@
 const express = require('express');
 const rateLimit = require('express-rate-limit');
 const db = require('../config/database');
-const { clientIp, excludedIp, BOT } = require('../services/commulingo-measurement');
+const { excludedSource, sameOrigin } = require('../services/measurement-exclusion');
 const { normalize, replay } = require('../services/war-plays');
 const router = express.Router();
-
-// Who is not a player: anything off the production host, robots, and this
-// server's own address (agents' browser checks). An operator's own games
-// are kept, marked.
-function excluded(req, env = process.env) {
-    const host = (req.headers.host || '').split(':')[0];
-    return env.NODE_ENV !== 'production' || env.DEV_MODE === '1'
-        || !['cyber-lenin.com', 'www.cyber-lenin.com'].includes(host)
-        || !req.headers['user-agent'] || BOT.test(req.headers['user-agent'])
-        || excludedIp(clientIp(req), env);
-}
-
-// Mounted before the session-token CSRF gate, like the learning
-// measurement: JSON, a custom header and the exact Origin keep other sites'
-// pages from writing here.
-function sameOrigin(req) {
-    return req.is('application/json') && req.headers['x-war-play'] === '1'
-        && req.headers.origin === 'https://' + req.headers.host
-        && (!req.headers['sec-fetch-site'] || req.headers['sec-fetch-site'] === 'same-origin');
-}
 
 router.use((req, res, next) => {
     res.set('Cache-Control', 'private, no-store');
     next();
 });
 router.post('/', rateLimit({ windowMs: 60000, limit: 60, standardHeaders: true, legacyHeaders: false }), async (req, res) => {
-    if (!sameOrigin(req)) return res.status(403).end();
-    if (excluded(req)) return res.status(204).end();
+    if (!sameOrigin(req, 'x-war-play')) return res.status(403).end();
+    // Not a player: off the production host, robots, excluded addresses. An
+    // operator's own games are kept, marked.
+    if (excludedSource(req)) return res.status(204).end();
     const play = normalize(req.body);
     if (!play) return res.status(400).json({ error: 'invalid play' });
     const r = replay(play);

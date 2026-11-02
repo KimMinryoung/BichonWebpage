@@ -1,7 +1,8 @@
 const express = require('express');
 const rateLimit = require('express-rate-limit');
 const db = require('../config/database');
-const { excluded, sameOrigin, normalize } = require('../services/commulingo-measurement');
+const { excluded, sameOrigin } = require('../services/measurement-exclusion');
+const { normalize } = require('../services/commulingo-measurement');
 const { loadCommuLingoCatalog } = require('../data/commulingo/shards');
 const { loadCommuLingoDrills } = require('../data/commulingo/drills');
 const router = express.Router();

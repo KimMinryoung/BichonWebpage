@@ -1,5 +1,6 @@
 const assert = require('node:assert/strict');
-const { excluded, sameOrigin, normalize } = require('../../services/commulingo-measurement');
+const { excluded, excludedSource, sameOrigin } = require('../../services/measurement-exclusion');
+const { normalize } = require('../../services/commulingo-measurement');
 const base = () => ({ headers: { host: 'cyber-lenin.com', origin: 'https://cyber-lenin.com', 'user-agent': 'Mozilla/5.0 Chrome/152', 'x-commulingo-measurement': '1', 'sec-fetch-site': 'same-origin' }, cookies: {}, session: {}, is: type => type === 'application/json' });
 const env = { NODE_ENV: 'production' };
 assert.equal(excluded(base(), env), false);
@@ -13,6 +14,8 @@ for (const ip of ['37.27.33.127', '2a01:4f9:c012:b463::1', '2a01:4f9:c012:b463::
 for (const ip of ['37.27.33.12', '37.27.33.1270', '2a01:4f9:c012:b464::1']) { const req = base(); req.headers['cf-connecting-ip'] = ip; assert.equal(excluded(req, own), false, ip); }
 assert.equal(sameOrigin(base()), true);
 for (const origin of ['', 'https://evil.example', 'null', 'http://cyber-lenin.com']) { const req = base(); req.headers.origin = origin; assert.equal(sameOrigin(req), false); }
+const war = base(); delete war.headers['x-commulingo-measurement']; war.headers['x-war-play'] = '1'; assert.equal(sameOrigin(war, 'x-war-play'), true); assert.equal(sameOrigin(war), false);
+const operator = base(); operator.session.adminUser = true; assert.equal(excludedSource(operator, env), false); assert.equal(excluded(operator, env), true);
 const cross = base(); cross.headers['sec-fetch-site'] = 'cross-site'; assert.equal(sameOrigin(cross), false);
 const id = '12345678-1234-4234-8234-123456789abc';
 const event = { runId: id, eventId: id, kind: 'lesson', contentId: 'capital-v1-ch01-basic', version: 'v1', lang: 'ko', mode: 'lesson', event: 'answered', step: 1, correct: false };

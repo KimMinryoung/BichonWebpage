@@ -5,7 +5,7 @@
 const express = require('express');
 const rateLimit = require('express-rate-limit');
 const db = require('../config/database');
-const { excluded, sameOrigin } = require('../services/commulingo-measurement');
+const { excluded, sameOrigin } = require('../services/measurement-exclusion');
 const { menuForPath } = require('../services/menu-views');
 
 const router = express.Router();
@@ -26,19 +26,17 @@ router.post('/', rateLimit({ windowMs: 60000, limit: 120, standardHeaders: true,
     const seen = req.cookies?.[SEEN] === '1';
     if (!seen) res.cookie(SEEN, '1', { maxAge: SEEN_MAX_AGE, httpOnly: true, secure: true, sameSite: 'lax', path: '/metrics/menu-view' });
     try {
-        await db.query(`INSERT INTO site_menu_views (day, menu, lang, views, first_views)
-                        VALUES ((now() AT TIME ZONE 'Asia/Seoul')::date, $1, $2, $3, $4)
-                        ON CONFLICT (day, menu, lang) DO UPDATE SET views = site_menu_views.views + EXCLUDED.views,
-                            first_views = site_menu_views.first_views + EXCLUDED.first_views`,
-        [hit.menu, hit.lang, seen ? 1 : 0, seen ? 0 : 1]);
-        // Per page only with the cookie: cookie-less scrapers would add a row
-        // for every page they walk.
-        if (seen) {
-            await db.query(`INSERT INTO site_page_views (day, path, lang, views)
-                            VALUES ((now() AT TIME ZONE 'Asia/Seoul')::date, $1, $2, 1)
-                            ON CONFLICT (day, path, lang) DO UPDATE SET views = site_page_views.views + 1`,
-            [hit.path, hit.lang]);
-        }
+        // One statement for both counts. Per page only with the cookie:
+        // cookie-less scrapers would add a row for every page they walk.
+        await db.query(`WITH menu AS (
+                            INSERT INTO site_menu_views (day, menu, lang, views, first_views)
+                            VALUES ((now() AT TIME ZONE 'Asia/Seoul')::date, $1, $2, $3, $4)
+                            ON CONFLICT (day, menu, lang) DO UPDATE SET views = site_menu_views.views + EXCLUDED.views,
+                                first_views = site_menu_views.first_views + EXCLUDED.first_views)
+                        INSERT INTO site_page_views (day, path, lang, views)
+                        SELECT (now() AT TIME ZONE 'Asia/Seoul')::date, $5, $2, 1 WHERE $6::boolean
+                        ON CONFLICT (day, path, lang) DO UPDATE SET views = site_page_views.views + 1`,
+        [hit.menu, hit.lang, seen ? 1 : 0, seen ? 0 : 1, hit.path, seen]);
         res.status(204).end();
     } catch (err) {
         console.error('[menu views]', err.code || 'unavailable');

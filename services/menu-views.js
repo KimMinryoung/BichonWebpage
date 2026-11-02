@@ -5,10 +5,11 @@
 // day's count. The same exclusions as learning measurement apply: operator
 // sessions, test and opt-out cookies, bots, non-production hosts.
 
-// [menu key, path prefixes (exact or followed by "/"), Korean label, English label],
-// matched in order; the first hit wins.
+// [menu key, path prefixes (exact or followed by "/"), Korean label, English label,
+// options], matched in order; the first hit wins. { exact: true } counts only
+// the listed paths themselves, not pages below them.
 const MENUS = [
-    ['home', ['/'], '대문', 'Home'],
+    ['home', ['/'], '대문', 'Home', { exact: true }],
     ['chat', ['/chat'], '채팅', 'Chat'],
     ['commulingo.learn', ['/commulingo/learn', '/commulingo/book'], '공산링고 · 강좌', 'CommuLingo · Courses'],
     ['commulingo.drill', ['/commulingo/drill'], '공산링고 · 훈련장', 'CommuLingo · Drills'],
@@ -19,7 +20,7 @@ const MENUS = [
     ['commulingo.terms', ['/commulingo/terms'], '공산링고 · 용어', 'CommuLingo · Terms'],
     ['commulingo.genealogy', ['/commulingo/genealogy', '/commulingo/politburo'], '공산링고 · 계보도', 'CommuLingo · Genealogy'],
     ['commulingo.docs', ['/commulingo/docs'], '공산링고 · 문헌', 'CommuLingo · References'],
-    ['commulingo.home', ['/commulingo'], '공산링고 · 첫 화면', 'CommuLingo · Home'],
+    ['commulingo.home', ['/commulingo'], '공산링고 · 첫 화면', 'CommuLingo · Home', { exact: true }],
     ['reports', ['/reports', '/p'], '보고서', 'Reports'],
     ['hub', ['/hub'], '큐레이션', 'Curation'],
     ['diary', ['/ai-diary'], '일기장', 'Diary'],
@@ -28,7 +29,6 @@ const MENUS = [
 ];
 
 function matches(path, prefix) {
-    if (prefix === '/') return path === '/';
     return path === prefix || path.startsWith(prefix + '/');
 }
 
@@ -43,13 +43,10 @@ function menuForPath(rawPath) {
         lang = 'en';
         path = path.slice(3) || '/';
     }
-    // "/commulingo" alone is the hub; deeper unknown CommuLingo paths are not counted.
-    for (const [menu, prefixes] of MENUS) {
-        if (menu === 'commulingo.home') {
-            if (path === '/commulingo') return { menu, lang, path };
-            continue;
-        }
-        if (prefixes.some(prefix => matches(path, prefix))) return { menu, lang, path };
+    // "/commulingo" alone is the hub (exact); deeper unknown CommuLingo paths are not counted.
+    for (const [menu, prefixes, , , options] of MENUS) {
+        const hit = options?.exact ? prefixes.includes(path) : prefixes.some(prefix => matches(path, prefix));
+        if (hit) return { menu, lang, path };
     }
     return null;
 }
