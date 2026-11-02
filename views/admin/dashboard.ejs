@@ -60,6 +60,64 @@
             </div>
         <% } %>
 
+        <% if (typeof webVitals !== 'undefined' && webVitals) { %>
+            <div class="box">
+                <h2><%= lang === 'en' ? 'Real-user performance (7 days, p75)' : '실사용 성능 (7일, p75)' %></h2>
+                <p class="ui-muted"><%= lang === 'en' ? 'LCP and INP in ms, CLS in thousandths; good LCP ≤2500, INP ≤200, CLS ≤100. Samples in brackets.' : 'LCP·INP는 ms, CLS는 1/1000. 좋음 기준 LCP ≤2500, INP ≤200, CLS ≤100. 괄호는 표본 수.' %></p>
+                <% if (!webVitals.length) { %>
+                <p class="ui-muted"><%= lang === 'en' ? 'No samples yet.' : '아직 표본이 없습니다.' %></p>
+                <% } else { %>
+                <div class="table-scroll">
+                <table class="posts-table">
+                    <thead>
+                        <tr>
+                            <th><%= lang === 'en' ? 'Menu' : '메뉴' %></th>
+                            <% ['mobile', 'desktop'].forEach(function (device) { ['LCP', 'INP', 'CLS'].forEach(function (metric) { %>
+                            <th><%= device === 'mobile' ? (lang === 'en' ? 'Mobile' : '모바일') : (lang === 'en' ? 'Desktop' : '데스크톱') %> <%= metric %></th>
+                            <% }) }) %>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% webVitals.forEach(function (row) { %>
+                        <tr>
+                            <td><%= row.label %></td>
+                            <% ['mobile', 'desktop'].forEach(function (device) { ['lcp', 'inp', 'cls'].forEach(function (metric) { var v = row[device][metric]; %>
+                            <td class="<%= v.rating ? 'vital-' + v.rating : '' %>"><%= v.samples ? v.p75 + ' (' + v.samples + ')' : '—' %></td>
+                            <% }) }) %>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+                </div>
+                <% } %>
+            </div>
+        <% } %>
+
+        <% if (typeof clientErrors !== 'undefined' && clientErrors) { %>
+            <div class="box">
+                <h2><%= lang === 'en' ? 'Browser errors (7 days)' : '브라우저 오류 (7일)' %></h2>
+                <p class="ui-muted"><%= lang === 'en' ? "Errors thrown by the site's own scripts in visitors' browsers." : '방문자 브라우저에서 사이트 스크립트가 낸 오류.' %></p>
+                <% if (!clientErrors.length) { %>
+                <p class="ui-muted"><%= lang === 'en' ? 'None.' : '없음.' %></p>
+                <% } else { %>
+                <table class="posts-table">
+                    <thead>
+                        <tr>
+                            <th><%= lang === 'en' ? 'Count' : '횟수' %></th>
+                            <th><%= lang === 'en' ? 'Where' : '위치' %></th>
+                            <th><%= lang === 'en' ? 'Message' : '메시지' %></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% clientErrors.forEach(function (row) { %>
+                        <tr><td><%= row.hits %></td><td class="vital-source"><%= row.source %></td><td><%= row.message %></td></tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+                <% } %>
+            </div>
+        <% } %>
+
         <% if (recentPosts && recentPosts.length > 0) { %>
             <div class="box">
                 <h2><%= strings.admin.recentPostsTitle %></h2>

@@ -91,6 +91,7 @@ app.use(staticAssets);
 app.use('/commulingo/measurement', require('./routes/commulingo-measurement'));
 app.use('/commulingo/chat-links', require('./routes/commulingo-chat-links'));
 app.use('/metrics/menu-view', require('./routes/menu-views'));
+app.use('/metrics', require('./routes/site-metrics'));
 app.use('/games/plays', require('./routes/war-plays'));
 
 // CSRF protection (exclude API-key-authenticated routes and cacheable public reads)

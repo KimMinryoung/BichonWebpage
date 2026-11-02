@@ -4,6 +4,7 @@ const db = require('../config/database');
 const { isConnectionError } = require('../config/database');
 const { requireAuth, redirectIfAuthenticated } = require('../middleware/auth');
 const { MENUS, menuLabel } = require('../services/menu-views');
+const webVitals = require('../services/web-vitals');
 const { fetchWithTimeout, clampInteger } = require('../utils/http');
 const { CHAT_API_URL, leninbotAdminHeaders } = require('../config/services');
 const { adminApiLimiter } = require('../middleware/rate-limit');
@@ -49,6 +50,52 @@ async function loadMenuViews(lang) {
     }
 }
 
+// Real-user Core Web Vitals over the last 7 days (services/web-vitals.js):
+// p75 per menu and device, menus in menu order, only those with samples.
+async function loadWebVitals(lang) {
+    try {
+        const { rows } = await db.query(
+            `SELECT menu, device, metric, bucket, SUM(samples)::int AS samples
+               FROM site_web_vitals
+              WHERE day > (now() AT TIME ZONE 'Asia/Seoul')::date - 7
+              GROUP BY menu, device, metric, bucket`
+        );
+        const out = [];
+        for (const [menu] of MENUS) {
+            const mine = rows.filter(row => row.menu === menu);
+            if (!mine.length) continue;
+            const cell = (device, metric) => webVitals.p75(metric, mine.filter(row => row.device === device && row.metric === metric));
+            out.push({
+                label: menuLabel(menu, lang),
+                mobile: { lcp: cell('mobile', 'lcp'), inp: cell('mobile', 'inp'), cls: cell('mobile', 'cls') },
+                desktop: { lcp: cell('desktop', 'lcp'), inp: cell('desktop', 'inp'), cls: cell('desktop', 'cls') },
+            });
+        }
+        return out;
+    } catch (err) {
+        console.error('web vitals:', err.message);
+        return null;
+    }
+}
+
+// The site's own script errors over the last 7 days, most frequent first.
+async function loadClientErrors() {
+    try {
+        const { rows } = await db.query(
+            `SELECT source, message, SUM(hits)::int AS hits, MAX(day) AS last_day
+               FROM site_client_errors
+              WHERE day > (now() AT TIME ZONE 'Asia/Seoul')::date - 7
+              GROUP BY source, message
+              ORDER BY hits DESC, last_day DESC
+              LIMIT 20`
+        );
+        return rows;
+    } catch (err) {
+        console.error('client errors:', err.message);
+        return null;
+    }
+}
+
 // Dashboard
 router.get('/', requireAuth, async (req, res) => {
     try {
@@ -74,6 +121,8 @@ router.get('/', requireAuth, async (req, res) => {
             },
             recentPosts,
             menuViews: await loadMenuViews(res.locals.lang),
+            webVitals: await loadWebVitals(res.locals.lang),
+            clientErrors: await loadClientErrors(),
         });
     } catch (error) {
         console.error('Dashboard error:', error);

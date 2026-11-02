@@ -99,4 +99,6 @@
 | 3 구조화 데이터 | 구현. `data/commulingo/structured-data.js`: 인물 `Person`(생몰일은 `lifeDates` 정밀도대로, 없으면 연도), 용어 `DefinedTerm`, 사건 `Event`(시작·끝 날짜, 장소 없음), 강좌 `Course`+`LearningResource`를 BreadcrumbList와 한 `@graph`로. URL은 주소 언어(`urlLanguage`). 테스트 `commulingo-structured-data` |
 | 3 검색 즉시 제안 | 구현. 툴바 돋보기가 검색 대화상자를 열고 입력하는 대로 `/search/suggest`·`/commulingo/search/suggest`의 결과 묶음을 보인다. `/`·Ctrl/⌘+K 단축키, ↓/↑ 이동. 결과 마크업은 검색 화면과 같은 `partials/site-search-results`. [통합 검색](site-search.md). 브라우저 테스트 `site-search-dialog` |
 | 4 공산링고 PWA | 구현. 범위는 공산링고만, 열어 본 화면·강좌 데이터의 오프라인 재생, 마스코트 아이콘(사용자 결정). Web Push 학습 알림은 하지 않음. [공산링고 PWA](commulingo-pwa.md). 브라우저 테스트 `commulingo-pwa` |
-| 5~6 | 미착수 |
+| 5 실사용 성능·브라우저 오류 | 구현. `site-vitals.js` → `/metrics/vitals`·`/metrics/client-error` → `site_web_vitals`·`site_client_errors`(migration 375, **운영 DB 적용 전**: 배포 전에 `scripts/apply-migration scripts/migrations/375_site_web_vitals_client_errors.sql`). 대시보드에 7일 p75와 오류 목록. [운영 참고](frontend-operations.md) |
+| 5 접근성 자동 검사, Cloudflare 비콘 CSP | 미착수 |
+| 6 | 미착수 |

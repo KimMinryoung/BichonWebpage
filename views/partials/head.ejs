@@ -73,6 +73,8 @@
 <script type="application/ld+json"><%- jsonLdScript(jsonLd) %></script>
 <% } %>
 <%- include('theme-init') %>
+<%# Real-user vitals and script errors (routes/site-metrics.js); first of the deferred scripts. %>
+<script src="/js/site-vitals.js?v=<%= assetVersion %>" defer></script>
 <script>document.documentElement.setAttribute('data-section', <%- JSON.stringify(_section) %>);</script>
 <%# The common Hangul font is one fixed file, so a Korean page can start it
     with the HTML instead of after the CSS; it then usually arrives before the

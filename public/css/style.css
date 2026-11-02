@@ -2993,3 +2993,21 @@ a.site-search-head:focus-visible {
 .site-search-dialog-results .site-search-status {
     margin: var(--space-4) 0;
 }
+
+/* Admin dashboard: real-user vitals (routes/admin.js loadWebVitals). The
+   verdict is the cell's colour. */
+.posts-table .vital-good {
+    background: var(--success-bg);
+    color: var(--success-text);
+}
+
+.posts-table .vital-poor {
+    background: var(--error-bg);
+    color: var(--error-text);
+}
+
+.posts-table .vital-source {
+    font-family: var(--font-mono, monospace);
+    font-size: var(--text-xs);
+    overflow-wrap: anywhere;
+}
