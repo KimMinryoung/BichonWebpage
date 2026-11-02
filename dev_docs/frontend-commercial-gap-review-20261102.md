@@ -101,5 +101,5 @@
 | 4 공산링고 PWA | 구현. 범위는 공산링고만, 열어 본 화면·강좌 데이터의 오프라인 재생, 마스코트 아이콘(사용자 결정). Web Push 학습 알림은 하지 않음. [공산링고 PWA](commulingo-pwa.md). 브라우저 테스트 `commulingo-pwa` |
 | 5 실사용 성능·브라우저 오류 | 구현. `site-vitals.js` → `/metrics/vitals`·`/metrics/client-error` → `site_web_vitals`·`site_client_errors`(migration 375, **운영 DB 적용 전**: 배포 전에 `scripts/apply-migration scripts/migrations/375_site_web_vitals_client_errors.sql`). 대시보드에 7일 p75와 오류 목록. [운영 참고](frontend-operations.md) |
 | 5 접근성 자동 검사 | 구현. `tests/browser/a11y.js`(`@axe-core/playwright`, BASE_URL 필요): 대표 11개 화면 × 두 테마, WCAG 2.1 A/AA의 serious·critical 위반이면 실패. 툴바 워드마크는 로고라 제외. 첫 검사에서 나온 대비 문제 수정: 라이트 테마 인물·사건 관계 표지(1.6:1 → 4.5:1 이상, 어두운 호버 행은 밝은 톤 유지), 큐레이션 출처의 opacity, 다크 테마 대문 문구 빨강(3.6 → 4.8:1) |
-| 5 Cloudflare 비콘 CSP | 미착수(사용자 결정 필요) |
+| 5 Cloudflare 비콘 CSP | 허용으로 결정(2026-11-02). `config/security.js`의 script-src에 `static.cloudflareinsights.com`, connect-src에 `cloudflareinsights.com` |
 | 6 | 미착수 |
