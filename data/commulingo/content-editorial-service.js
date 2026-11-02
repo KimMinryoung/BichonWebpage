@@ -23,7 +23,7 @@ const PATCH_KEYS = {
 };
 const ACTIONS = {
     history_event: ['update'],
-    history_event_section: ['create', 'update'],
+    history_event_section: ['create', 'update', 'delete'],
     history_event_person: ['create', 'update'],
     office_row: ['create', 'update', 'delete'],
 };
@@ -79,7 +79,9 @@ function spliceSection(body, heading, sectionBody, after, action) {
     const parts = splitBody(body);
     const title = String(heading || '').trim();
     const block = `## ${title}\n\n${String(sectionBody || '').trim()}`;
-    if (action === 'update') {
+    if (action === 'delete') {
+        parts.splice(findSection(parts, title), 1);
+    } else if (action === 'update') {
         parts[findSection(parts, title)] = [title, block];
     } else {
         const anchor = after ? findSection(parts, after) : -1;
@@ -232,8 +234,10 @@ async function validateRelations(client, id, relations) {
 async function validateSection(client, id, action, fields) {
     const event = await eventRow(client, id, true);
     if (!event) throw notFound(`history event '${id}' not found`);
-    for (const key of ['heading', 'body']) if (!hasBoth(fields[key])) throw badRequest(`${key} must be {ko, en}, both non-empty`);
-    for (const lang of ['ko', 'en']) {
+    // delete names the section by its heading and takes nothing else.
+    if (action === 'delete' && Object.keys(fields).some(key => key !== 'heading')) throw badRequest('a section delete takes heading only');
+    for (const key of action === 'delete' ? ['heading'] : ['heading', 'body']) if (!hasBoth(fields[key])) throw badRequest(`${key} must be {ko, en}, both non-empty`);
+    for (const lang of action === 'delete' ? [] : ['ko', 'en']) {
         if (/(^|\n)\s*#{1,6} /.test(fields.body[lang])) throw badRequest(`body.${lang} contains a markdown heading line; one call is one section`);
     }
     if (fields.after !== undefined && fields.after !== null && !isLocalized(fields.after)) throw badRequest('after must be {ko, en} headings, or omitted');
@@ -241,7 +245,7 @@ async function validateSection(client, id, action, fields) {
         const parts = splitBody(event[`body_${lang}`]);
         const at = findSection(parts, fields.heading[lang]);
         if (action === 'create' && at >= 0) throw badRequest(`'${id}' already has a ${lang} section '${parts[at][0]}' on this topic; update it`);
-        if (action === 'update' && at < 0) throw badRequest(`'${id}' has no ${lang} section '${fields.heading[lang]}'; create it`);
+        if (action !== 'create' && at < 0) throw badRequest(`'${id}' has no ${lang} section '${fields.heading[lang]}'; create it`);
         const anchor = String((fields.after || {})[lang] || '').trim();
         if (action === 'create' && anchor && findSection(parts, anchor) < 0) throw badRequest(`after.${lang} '${anchor}' is not a heading of the ${lang} body`);
     }
@@ -314,14 +318,14 @@ async function applyEvent(client, id, fields, actor) {
 }
 
 async function applySection(client, id, action, fields, actor) {
-    fields = { ...fields, heading: koQuotes(fields.heading), body: koQuotes(fields.body) };
+    fields = { ...fields, heading: koQuotes(fields.heading), body: action === 'delete' ? {} : koQuotes(fields.body) };
     const row = await eventRow(client, id);
     const after = fields.after || {};
     const body = lang => spliceSection(row[`body_${lang}`], fields.heading[lang], fields.body[lang], after[lang], action);
     await client.query('UPDATE commulingo_history_events SET body_ko = $1, body_en = $2, updated_at = NOW() WHERE id = $3', [body('ko'), body('en'), id]);
     const heading = fields.heading.ko || fields.heading.en;
     await writeRevision(client, 'history_event', id, `${action} body section '${heading}'`, { before: snapshot(row), after: snapshot(await eventRow(client, id)) }, actor);
-    return { summary: `${action === 'create' ? 'added' : 'rewrote'} body section '${heading}' of event '${id}'` };
+    return { summary: `${{ create: 'added', update: 'rewrote', delete: 'removed' }[action]} body section '${heading}' of event '${id}'` };
 }
 
 async function applyEventPerson(client, id, fields, actor) {

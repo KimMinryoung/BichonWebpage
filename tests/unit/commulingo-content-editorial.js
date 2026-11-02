@@ -27,13 +27,14 @@ assert.deepEqual(splitBody(inserted).map(([h]) => h), ['배경', '국제 반응'
 const appended = spliceSection(body, '평가', '마지막.', '', 'create');
 assert.deepEqual(splitBody(appended).map(([h]) => h), ['배경', '전개 과정', '결과', '평가']);
 assert.equal(splitBody(spliceSection('', '첫 절', '본문', '', 'create')).length, 1);
+assert.deepEqual(splitBody(spliceSection(body, '전개 과정', '', '', 'delete')).map(([h]) => h), ['배경', '결과'], 'delete drops the section');
 
 (async () => {
     // Request checks run before any DB access.
     const reject = (request, pattern) => assert.rejects(submitContentEdit(request), pattern);
     await reject({ target: 'person', action: 'update', id: 'x', fields: {} }, /invalid content target/);
     await reject({ target: 'history_event', action: 'create', id: 'x', fields: {} }, /supports update only/);
-    await reject({ target: 'history_event_section', action: 'delete', id: 'x', fields: {} }, /create\/update only/);
+    await reject({ target: 'history_event_person', action: 'delete', id: 'x', fields: {} }, /create\/update only/);
     await reject({ target: 'history_event', action: 'update', id: 'x', fields: { countries: [] } }, /unknown history_event field/);
     await reject({ target: 'history_event_person', action: 'create', id: 'x', fields: [] }, /fields must be an object/);
     await reject({ target: 'office_row', action: 'update', id: 'abc', fields: {} }, /numeric row id/);

@@ -113,6 +113,12 @@ const L = (ko, en) => ({ ko, en });
         await refuse({ target: 'history_event_section', action: 'update', id: 'ct-event', fields: { heading: L('없는 절', 'Missing'), body: L('가', 'A') } }, /has no/);
         await refuse({ target: 'history_event_section', action: 'create', id: 'ct-event', fields: { heading: L('새', 'New'), body: L('## 몰래\n\n가', 'A') } }, /markdown heading/);
         await refuse({ target: 'history_event_section', action: 'create', id: 'ct-event', fields: { heading: L('새', 'New'), body: L('가', 'A'), after: L('없음', 'None') } }, /not a heading/);
+        await refuse({ target: 'history_event_section', action: 'delete', id: 'ct-event', fields: { heading: L('없는 절', 'Missing') } }, /has no/);
+        await refuse({ target: 'history_event_section', action: 'delete', id: 'ct-event', fields: { heading: L('국제 반응', 'International reaction'), body: L('가', 'A') } }, /heading only/);
+        await submit({ target: 'history_event_section', action: 'delete', id: 'ct-event', fields: { heading: L('국제 반응', 'International reaction') } });
+        event = await one("SELECT body_ko, body_en FROM commulingo_history_events WHERE id = 'ct-event'");
+        assert.deepEqual(splitBody(event.body_ko).map(([h]) => h), ['배경', '결과']);
+        assert.deepEqual(splitBody(event.body_en).map(([h]) => h), ['Background', 'Outcome']);
 
         // Event people: sides, opponent refusal, keep side on update, null clears it.
         const link = fields => submit({ target: 'history_event_person', action: 'create', id: 'ct-event',

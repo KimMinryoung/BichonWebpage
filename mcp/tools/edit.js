@@ -123,7 +123,7 @@ const tools = [
             + 'periodNote {ko, en} for a qualifying remark. A history_event update takes title {ko, en} (then carry its link reviews with link_reviews_carry), '
             + 'period {start, end?}, question/summary/outcome {ko, en}, sources, locations [{lat, lng, label {ko, en}, kind: main|place|geo}] (exactly one main), '
             + 'focus {ko, en} or sides [{id, label}] (not both; null clears), relations {parent?: event id, related?: [event ids]} (replaces the stored object; send back the ids already there) and timeline; history_event timeline rows carry period in the same shape, plus optional geo ({kind: point, lat, lng, label {ko, en}} or {kind: arrow, points, actor?, variant?}) and country (country codes); a timeline update replaces the whole list, so send back every row with its geo and country. History events and office rows '
-            + '(history_event update; history_event_section create/update {heading, body, after?}; history_event_person create/update '
+            + '(history_event update; history_event_section create/update {heading, body, after?} / delete {heading}; history_event_person create/update '
             + '{personId, relationKind, relation, note, side?, sortOrder?}; office_row create (id = office id; fields period, body = formal post title, personId or name, note, trackId from the office tracks, seat state|government|empty) / update / delete (id = row id)) '
             + 'apply at once unless directApply is false; they support submit and review only. A term submit with request.directApply: true '
             + 'is approved in the same call (a new term then needs fields.original or request.noOriginal: "<reason>"). brief: true returns '
