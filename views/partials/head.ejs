@@ -39,6 +39,12 @@
 <link rel="preconnect" href="https://assets.cyber-lenin.com">
 <link rel="icon" href="https://assets.cyber-lenin.com/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" href="https://assets.cyber-lenin.com/apple-touch-icon.png">
+<%# CommuLingo installs as an app of its own (routes/commulingo-pwa.js). %>
+<% if (typeof pagePath === 'string' && /^\/commulingo(?:\/|$)/.test(pagePath) && !/^\/commulingo\/admin(?:\/|$)/.test(pagePath)) { %>
+<link rel="manifest" href="/commulingo/manifest.webmanifest">
+<meta name="apple-mobile-web-app-title" content="<%= strings.commuLingo.name %>">
+<script src="/js/commulingo-pwa.js?v=<%= assetVersion %>" defer></script>
+<% } %>
 <link rel="alternate" type="application/rss+xml" title="Cyber-Lenin RSS Feed" href="<%= languageUrl('/rss.xml', _urlLang) %>">
 <link rel="alternate" type="application/atom+xml" title="Cyber-Lenin Atom Feed" href="<%= languageUrl('/atom.xml', _urlLang) %>">
 <meta property="og:type" content="<%= _ogType %>">

@@ -166,7 +166,7 @@ function itemListJsonLd(items = [], lang = 'ko') {
 }
 
 const ENGLISH_LINK_EXCLUSIONS = [
-    '/en', '/assets', '/css', '/js', '/fonts', '/img', '/flags', '/puzzles',
+    '/en', '/assets', '/css', '/js', '/fonts', '/img', '/icons', '/flags', '/puzzles',
     '/api', '/auth', '/admin', '/nonogram', '/favicon.ico',
     '/apple-touch-icon.png', '/apple-touch-icon-precomposed.png',
 ];

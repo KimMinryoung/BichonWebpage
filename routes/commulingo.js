@@ -34,6 +34,8 @@ router.use((req, res, next) => {
     next();
 });
 
+router.use(require('./commulingo-pwa'));
+
 const { summarizeBooks, groupBooks } = require('../data/commulingo/book-summary');
 const { commuLingoBreadcrumb } = require('../data/commulingo/page-helpers');
 

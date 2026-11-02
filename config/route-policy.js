@@ -19,6 +19,7 @@ function isStaticAssetPath(reqPath) {
         || reqPath.startsWith('/js/')
         || reqPath.startsWith('/fonts/')
         || reqPath.startsWith('/img/')
+        || reqPath.startsWith('/icons/')
         || reqPath.startsWith('/flags/')
         || reqPath.startsWith('/puzzles/')
         || reqPath === '/BingSiteAuth.xml';

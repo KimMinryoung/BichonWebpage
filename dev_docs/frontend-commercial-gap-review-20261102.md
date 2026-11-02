@@ -98,4 +98,5 @@
 | 3 페이지별 OG 이미지 | 하지 않기로 함(2026-11-02 사용자 결정). 운영에 sharp와 한글 글꼴 파일이 없어 비용 대비 보류 |
 | 3 구조화 데이터 | 구현. `data/commulingo/structured-data.js`: 인물 `Person`(생몰일은 `lifeDates` 정밀도대로, 없으면 연도), 용어 `DefinedTerm`, 사건 `Event`(시작·끝 날짜, 장소 없음), 강좌 `Course`+`LearningResource`를 BreadcrumbList와 한 `@graph`로. URL은 주소 언어(`urlLanguage`). 테스트 `commulingo-structured-data` |
 | 3 검색 즉시 제안 | 구현. 툴바 돋보기가 검색 대화상자를 열고 입력하는 대로 `/search/suggest`·`/commulingo/search/suggest`의 결과 묶음을 보인다. `/`·Ctrl/⌘+K 단축키, ↓/↑ 이동. 결과 마크업은 검색 화면과 같은 `partials/site-search-results`. [통합 검색](site-search.md). 브라우저 테스트 `site-search-dialog` |
-| 4~6 | 미착수 |
+| 4 공산링고 PWA | 구현. 범위는 공산링고만, 열어 본 화면·강좌 데이터의 오프라인 재생, 마스코트 아이콘(사용자 결정). Web Push 학습 알림은 하지 않음. [공산링고 PWA](commulingo-pwa.md). 브라우저 테스트 `commulingo-pwa` |
+| 5~6 | 미착수 |
