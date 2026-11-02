@@ -16,7 +16,8 @@ const cases = {
     '/hub/x': 'hub', '/ai-diary/3': 'diary', '/posts': 'posts', '/post/39': 'posts', '/games/strike': 'games',
 };
 for (const [path, menu] of Object.entries(cases)) assert.strictEqual((menuForPath(path) || {}).menu, menu, path);
-assert.deepStrictEqual(menuForPath('/en/commulingo/people/stalin'), { menu: 'commulingo.people', lang: 'en' });
+assert.deepStrictEqual(menuForPath('/en/commulingo/people/stalin/'), { menu: 'commulingo.people', lang: 'en', path: '/commulingo/people/stalin' });
+assert.deepStrictEqual(menuForPath('/'), { menu: 'home', lang: 'ko', path: '/' });
 for (const path of ['/auth/login', '/admin', '/commulingo/unknown', '/postsx', '/enx', 'posts', null, '/' + 'a'.repeat(400)]) {
     assert.strictEqual(menuForPath(path), null, String(path));
 }

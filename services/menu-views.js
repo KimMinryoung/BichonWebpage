@@ -32,8 +32,9 @@ function matches(path, prefix) {
     return path === prefix || path.startsWith(prefix + '/');
 }
 
-// '/en/commulingo/people/stalin' → { menu: 'commulingo.people', lang: 'en' };
-// null for paths outside the menus (sign-in, admin, unknown).
+// '/en/commulingo/people/stalin' → { menu: 'commulingo.people', lang: 'en',
+// path: '/commulingo/people/stalin' } (path without /en or a trailing slash,
+// the key of the per-page count); null for paths outside the menus.
 function menuForPath(rawPath) {
     if (typeof rawPath !== 'string' || rawPath.length > 300 || !rawPath.startsWith('/')) return null;
     let path = rawPath.replace(/\/+$/, '') || '/';
@@ -45,10 +46,10 @@ function menuForPath(rawPath) {
     // "/commulingo" alone is the hub; deeper unknown CommuLingo paths are not counted.
     for (const [menu, prefixes] of MENUS) {
         if (menu === 'commulingo.home') {
-            if (path === '/commulingo') return { menu, lang };
+            if (path === '/commulingo') return { menu, lang, path };
             continue;
         }
-        if (prefixes.some(prefix => matches(path, prefix))) return { menu, lang };
+        if (prefixes.some(prefix => matches(path, prefix))) return { menu, lang, path };
     }
     return null;
 }
