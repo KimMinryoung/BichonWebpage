@@ -1,31 +1,17 @@
 (function () {
     var API_URL = document.querySelector('meta[name="api-url"]').content;
 
-    function metaContent(name, fallback) {
-        var el = document.querySelector('meta[name="' + name + '"]');
-        return el ? el.content : fallback;
+    // views/public/chat.ejs writes strings.chat (config/strings.js) here in
+    // the page language.
+    var STRINGS = {};
+    try {
+        STRINGS = JSON.parse(document.getElementById('chatStrings').textContent) || {};
+    } catch (e) {}
+    function fill(template, values) {
+        return String(template || '').replace(/\{(\w+)\}/g, function (m, key) {
+            return Object.prototype.hasOwnProperty.call(values, key) ? values[key] : m;
+        });
     }
-
-    var STRINGS = {
-        thinking: metaContent('str-thinking', '생각 중...'),
-        error: metaContent('str-error', '오류가 발생했습니다.'),
-        notSaved: metaContent('str-not-saved', '답변을 받지 못했습니다. 메시지를 다시 보내주세요.'),
-        retry: metaContent('str-retry', '↻ 다시 보내기'),
-        feedbackSaved: metaContent('str-feedback-saved', '반영됨'),
-        feedbackError: metaContent('str-feedback-error', '피드백 저장 실패'),
-        feedbackNote: metaContent('str-feedback-note', '피드백을 입력하세요'),
-        feedbackSave: metaContent('str-feedback-save', '피드백 저장'),
-        regenerate: metaContent('str-regenerate', '피드백으로 다시 생성'),
-        regenerating: metaContent('str-regenerating', '응답을 다시 생성하는 중...'),
-        deleteLabel: metaContent('str-delete-label', '삭제'),
-        deleteConfirmUser: metaContent('str-delete-confirm-user', '이 질문을 삭제할까요?'),
-        deleteConfirmAssistant: metaContent('str-delete-confirm-assistant', '이 응답을 삭제할까요?'),
-        deleteError: metaContent('str-delete-error', '메시지를 삭제하지 못했습니다.'),
-        inputLimit: metaContent('str-input-limit', '{max}자까지만 보낼 수 있습니다.'),
-        stop: metaContent('str-stop', '중지'),
-        stopLabel: metaContent('str-stop-label', '답변 생성 중지'),
-        stopped: metaContent('str-stopped', '답변 생성을 중지했습니다.')
-    };
 
     var chatBox = document.getElementById('chatBox');
     var chatForm = document.getElementById('chatForm');
@@ -301,7 +287,7 @@
     async function tryRecoverFromHistory(msg, errDiv, logDiv, startedAt) {
         if (recovering) return;
         recovering = true;
-        errDiv.textContent = '연결이 끊겼습니다. 답변을 복구하는 중...';
+        errDiv.textContent = STRINGS.recovering;
 
         // The API owns generation after an SSE drop, so allow enough time for
         // multi-round tool work (notably vector searches) to finish and save.
@@ -324,6 +310,7 @@
                         errDiv.remove();
                         if (logDiv) logDiv.remove();
                         var recoveredAi = appendMessage(history[j].bot_answer, 'chat-message-ai');
+                        decorateCopyable(recoveredAi, history[j].bot_answer);
                         linkCommuLingoMentions(aiBody(recoveredAi));
                         decorateDeletableMessage(recoveredAi, history[j].message_id, 'assistant');
                         var pendingUsers = chatBox.querySelectorAll('.chat-message-user:not(.chat-message-deletable)');
@@ -332,7 +319,7 @@
                         }
                         scrollToLatest();
                         if (document.visibilityState === 'hidden') {
-                            document.title = '💬 답변 도착 — ' + originalTitle;
+                            document.title = fill(STRINGS.answerArrived, { title: originalTitle });
                         }
                         streamDied = false;
                         recoveryContext = null;
@@ -403,16 +390,24 @@
             + (atLimit ? ' · ' + STRINGS.inputLimit.replace('{max}', INPUT_MAX.toLocaleString()) : '');
     }
 
+    var pageLocale = pageLang.indexOf('en') === 0 ? 'en-US' : 'ko-KR';
+    var relativeTime = window.Intl && Intl.RelativeTimeFormat
+        ? new Intl.RelativeTimeFormat(pageLocale, { numeric: 'auto' }) : null;
+
     function formatRelative(iso) {
         if (!iso) return '';
         try {
             var d = new Date(iso);
             var diff = (Date.now() - d.getTime()) / 1000;
-            if (diff < 60) return '방금';
-            if (diff < 3600) return Math.floor(diff / 60) + '분 전';
-            if (diff < 86400) return Math.floor(diff / 3600) + '시간 전';
-            if (diff < 604800) return Math.floor(diff / 86400) + '일 전';
-            return d.toLocaleDateString();
+            if (diff < 60) return STRINGS.justNow;
+            var units = [[3600, 60, 'minute'], [86400, 3600, 'hour'], [604800, 86400, 'day']];
+            for (var i = 0; i < units.length; i++) {
+                if (diff < units[i][0]) {
+                    var n = Math.floor(diff / units[i][1]);
+                    return relativeTime ? relativeTime.format(-n, units[i][2]) : d.toLocaleDateString(pageLocale);
+                }
+            }
+            return d.toLocaleDateString(pageLocale);
         } catch { return ''; }
     }
 
@@ -427,6 +422,7 @@
             }
             if (item.bot_answer_active !== false && item.bot_answer) {
                 var aiMsg = appendMessage(item.bot_answer, 'chat-message-ai');
+                decorateCopyable(aiMsg, item.bot_answer);
                 linkCommuLingoMentions(aiBody(aiMsg));
                 decorateDeletableMessage(aiMsg, item.message_id, 'assistant');
             }
@@ -475,7 +471,7 @@
 
             var sep = document.createElement('div');
             sep.className = 'chat-history-separator';
-            sep.textContent = sessions.length > 0 ? '── 이전 대화 기록 ──' : '── 이전 대화 기록이 없습니다 ──';
+            sep.textContent = sessions.length > 0 ? STRINGS.historyHeading : STRINGS.historyEmpty;
             container.appendChild(sep);
 
             for (var i = 0; i < sessions.length; i++) {
@@ -487,12 +483,12 @@
 
                 var q = document.createElement('div');
                 q.className = 'session-card-query';
-                q.textContent = s.first_query || (isEnglish ? '(Question deleted)' : '(질문이 삭제된 대화)');
+                q.textContent = s.first_query || STRINGS.historyQuestionDeleted;
                 card.appendChild(q);
 
                 var meta = document.createElement('div');
                 meta.className = 'session-card-meta';
-                meta.textContent = formatRelative(s.last_at) + ' · ' + (s.message_count || 0) + '개 메시지';
+                meta.textContent = formatRelative(s.last_at) + ' · ' + fill(STRINGS.historyMessages, { n: (s.message_count || 0).toLocaleString(pageLocale) });
                 card.appendChild(meta);
 
                 card.addEventListener('click', function (sid) {
@@ -510,7 +506,7 @@
             var errorNote = document.createElement('div');
             errorNote.className = 'chat-message chat-message-log chat-message-error';
             errorNote.style.textAlign = 'center';
-            errorNote.textContent = '⚠️ 대화 기록을 불러오지 못했습니다. 잠시 후 다시 시도해주세요.';
+            errorNote.textContent = '⚠️ ' + STRINGS.historyLoadError;
             chatBox.appendChild(errorNote);
             setTimeout(() => errorNote.remove(), 3000);
             return false;
@@ -524,7 +520,7 @@
         setLoading(false);
         scrollToLatest(true);
         historyBtn.classList.remove('btn-primary');
-        historyBtn.textContent = '이전 대화';
+        historyBtn.textContent = historyLabel;
         chatInput.placeholder = originalPlaceholder;
         inHistoryMode = false;
     }
@@ -539,6 +535,7 @@
     }
 
     var historyBtn = document.getElementById('historyBtn');
+    var historyLabel = historyBtn ? historyBtn.textContent.trim() : '';
     if (historyBtn) {
         historyBtn.addEventListener('click', async function () {
             historyBtn.disabled = true;
@@ -547,8 +544,8 @@
                 var success = await loadSessions();
                 if (success) {
                     historyBtn.classList.add('btn-primary');
-                    historyBtn.textContent = '닫기';
-                    chatInput.placeholder = '세션을 클릭해 이어서 대화하거나 "닫기"를 누르세요';
+                    historyBtn.textContent = STRINGS.historyClose;
+                    chatInput.placeholder = STRINGS.historyPlaceholder;
                     inHistoryMode = true;
                 } else {
                     setLoading(false);
@@ -687,6 +684,45 @@
         div.appendChild(button);
     }
 
+    // A finished answer gets a copy button for its markdown source.
+    function copyText(text) {
+        if (navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(text);
+        return new Promise(function (resolve, reject) {
+            var area = document.createElement('textarea');
+            area.value = text;
+            area.setAttribute('readonly', '');
+            area.className = 'visually-hidden';
+            document.body.appendChild(area);
+            area.select();
+            var ok = false;
+            try { ok = document.execCommand('copy'); } catch (e) {}
+            area.remove();
+            if (ok) resolve(); else reject(new Error('copy failed'));
+        });
+    }
+
+    function decorateCopyable(aiDiv, text) {
+        if (!aiDiv || !text || aiDiv.classList.contains('chat-message-error')) return;
+        var button = aiDiv.querySelector('.chat-message-copy');
+        if (!button) {
+            button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'chat-message-copy';
+            button.textContent = STRINGS.copy;
+            button.setAttribute('aria-label', STRINGS.copyLabel);
+            button.addEventListener('click', function () {
+                var reset = function () { button.textContent = STRINGS.copy; };
+                copyText(button._copyText).then(function () {
+                    button.textContent = STRINGS.copied;
+                }, function () {
+                    button.textContent = STRINGS.copyError;
+                }).then(function () { setTimeout(reset, 1500); });
+            });
+            aiDiv.appendChild(button);
+        }
+        button._copyText = text;
+    }
+
     function aiBody(aiDiv) {
         if (!aiDiv) return null;
         var body = aiDiv.querySelector('.chat-message-body');
@@ -742,6 +778,9 @@
 
     function setLoading(on) {
         busy = on;
+        // The log region waits while busy, so a screen reader reads the
+        // finished answer once instead of every streamed chunk.
+        chatBox.setAttribute('aria-busy', on ? 'true' : 'false');
         chatSend.disabled = on;
         chatInput.disabled = on;
         if (personaSelector) personaSelector.disabled = on;
@@ -751,28 +790,10 @@
         if (feedbackRegenerate) feedbackRegenerate.disabled = on;
     }
 
-    var isEnglish = (document.documentElement.lang || '').toLowerCase().indexOf('en') === 0;
-    var TONE_OPTIONS = isEnglish ? [
-        ['', 'Tone'],
-        ['shorter', 'Shorter'],
-        ['longer', 'Longer'],
-        ['warmer', 'Warmer'],
-        ['colder', 'Colder'],
-        ['more_direct', 'More direct'],
-        ['more_in_character', 'In character'],
-        ['less_formal', 'Less formal'],
-        ['more_cited', 'More cited']
-    ] : [
-        ['', '톤'],
-        ['shorter', '짧게'],
-        ['longer', '길게'],
-        ['warmer', '따뜻하게'],
-        ['colder', '차갑게'],
-        ['more_direct', '직설적으로'],
-        ['more_in_character', '캐릭터답게'],
-        ['less_formal', '덜 딱딱하게'],
-        ['more_cited', '근거 강화']
-    ];
+    var TONES = STRINGS.tones || {};
+    var TONE_OPTIONS = [['', STRINGS.toneLabel]].concat(Object.keys(TONES).map(function (key) {
+        return [key, TONES[key]];
+    }));
 
     async function postFeedback(messageId, toneFeedback, note, statusEl) {
         if (!messageId) return false;
@@ -959,14 +980,14 @@
             if (done) {
                 delete activeTools[key];
             } else {
-                activeTools[key] = data.content || ((data.label || '도구') + ' 사용 중');
+                activeTools[key] = data.content || fill(STRINGS.toolActive, { label: data.label || STRINGS.toolDefault });
             }
 
             var active = Object.keys(activeTools).map(function (name) { return activeTools[name]; });
             if (active.length > 0) {
                 setToolStatusText(toolStatusDiv, active.join(' · '), false);
             } else {
-                setToolStatusText(toolStatusDiv, data.content || ((data.label || '도구') + ' 완료'), true);
+                setToolStatusText(toolStatusDiv, data.content || fill(STRINGS.toolDone, { label: data.label || STRINGS.toolDefault }), true);
                 toolStatusRemoveTimer = setTimeout(function () {
                     if (Object.keys(activeTools).length === 0 && toolStatusDiv) {
                         toolStatusDiv.remove();
@@ -1044,7 +1065,7 @@
                             if (logDiv && logDiv.parentNode) logDiv.textContent = accumulatedLog;
                             scrollToLatest();
                         } else if (data.type === 'status' || data.type === 'warning') {
-                            var prefix = data.type === 'warning' ? '주의: ' : '';
+                            var prefix = data.type === 'warning' ? STRINGS.warningPrefix : '';
                             accumulatedLog += prefix + data.content + '\n\n';
                             if (logDiv && logDiv.parentNode) {
                                 logDiv.textContent = accumulatedLog;
@@ -1093,16 +1114,17 @@
                                 scrollToLatest();
                             }
                             linkCommuLingoMentions(aiBody(aiDiv));
+                            decorateCopyable(aiDiv, data.content);
                             if (data.message_id) {
                                 decorateDeletableMessage(aiDiv, data.message_id, 'assistant');
                                 if (userDiv) decorateDeletableMessage(userDiv, data.message_id, 'user');
                                 setFeedbackTarget(data.message_id, message, aiDiv);
                             }
                             if (document.visibilityState === 'hidden') {
-                                document.title = '💬 답변 도착 — ' + originalTitle;
+                                document.title = fill(STRINGS.answerArrived, { title: originalTitle });
                             }
                             if (data.truncated) {
-                                var warn = appendMessage('답변이 모델 출력 한도에서 멈춰 마지막 부분이 미완성일 수 있습니다.', 'chat-message-log');
+                                var warn = appendMessage(STRINGS.truncated, 'chat-message-log');
                                 warn.classList.add('chat-message-warning');
                             }
                         } else if (data.type === 'error') {
@@ -1128,7 +1150,10 @@
                 // Stopped by the reader: keep the partial answer as it stands.
                 clearToolStatus();
                 if (logDiv) { logDiv.remove(); logDiv = null; }
-                if (aiDiv) renderAiMarkdown();
+                if (aiDiv) {
+                    renderAiMarkdown();
+                    decorateCopyable(aiDiv, streamedText);
+                }
                 appendMessage(STRINGS.stopped, 'chat-message-log').classList.add('chat-message-stopped');
                 setLoading(false);
                 chatInput.focus();
@@ -1147,7 +1172,7 @@
                     startedAt: requestStartedAt
                 };
                 if (document.visibilityState !== 'visible') {
-                    errDiv.textContent = '연결이 끊겼습니다. 탭으로 돌아오면 답변을 복구합니다...';
+                    errDiv.textContent = STRINGS.recoverOnReturn;
                 }
                 await tryRecoverFromHistory(message, errDiv, logDiv, requestStartedAt);
             } else {
@@ -1160,6 +1185,14 @@
         setLoading(false);
         chatInput.focus();
     }
+
+    // Starter questions under an empty box send themselves.
+    document.querySelectorAll('#chatStarters .chat-starter').forEach(function (button) {
+        button.addEventListener('click', function () {
+            if (busy) return;
+            sendChat(button.textContent);
+        });
+    });
 
     chatForm.addEventListener('submit', function (e) {
         e.preventDefault();

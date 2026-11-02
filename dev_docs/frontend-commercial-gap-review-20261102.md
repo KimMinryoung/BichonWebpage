@@ -93,6 +93,6 @@
 | 1-2 시스템 테마·theme-color | 구현. `partials/theme-init`(문헌 리더도 사용). 운영 페이지에 끼워 시스템 라이트/다크, 실시간 추종, 토글 저장 우선, 새로고침 뒤 유지 확인 |
 | 1-3 View Transitions | 구현. 운영 페이지를 로컬에 복제해 이동 32회 중 31회 전환(기존 CSS 0회), reduced-motion에서 꺼짐 확인. Playwright 요청 가로채기를 쓰면 전환이 불규칙하게 빠지므로 검증은 가로채기 없이 한다 |
 | 2 채팅 중지·스크롤 고정 | 구현. 중지는 연결을 끊고 받은 부분을 남기며 복구 경로를 타지 않는다. 바닥에 있을 때만 따라가고 위로 올리면 「↓ 최신 메시지」. 답변 뒤 피드백 막대가 상자를 줄여 바닥에서 떨어지던 기존 문제도 ResizeObserver로 해결. 브라우저 테스트 `tests/browser/chat-ui.js` |
-| 2 나머지(빈 화면 예시, 복사, 스크린리더, 영어 문구) | 미착수 |
+| 2 나머지(빈 화면 예시, 복사, 스크린리더, 영어 문구) | 구현. 빈 상자 아래 시작 질문 4줄(누르면 전송, 첫 메시지 뒤 CSS로 숨김), 끝난 답변마다 마크다운 원문 「복사」, `chatBox`에 `role="log"`·`aria-live`와 생성 중 `aria-busy`. 채팅 문구는 `strings.chat` 전체를 JSON 섬(`#chatStrings`)으로 넘기고 `chat.js`의 한국어 직접 기입을 없앴다. 상대 시간은 `Intl.RelativeTimeFormat`. 브라우저 테스트 `chat-ui` 확장 |
 | 1-4 날짜 서버 출력 | 구현. `utils/local-date.js`(Asia/Seoul, `app.locals`라 조각 렌더에도 쓰임)로 `<time>` 18곳에 글자를 넣고, `common.js`는 보는 사람 시간대의 날짜가 다를 때만 덮어쓴다. 테스트 `local-date` |
 | 3~6 | 미착수 |

@@ -71,10 +71,22 @@ async function main() {
             };
         });
 
+        // The empty box offers starter rows; they go with the first message.
+        const starters = () => page.evaluate(() => {
+            const el = document.getElementById('chatStarters');
+            return { shown: getComputedStyle(el).display !== 'none', rows: [...el.querySelectorAll('button')].map(b => b.textContent) };
+        });
+        let st = await starters();
+        assert.ok(st.shown, 'starters show under the empty box');
+        assert.deepEqual(st.rows, ko.starters);
+        assert.equal(await page.getAttribute('#chatBox', 'role'), 'log');
+
         await page.fill('#chatInput', '첫 질문');
         await page.click('#chatSend');
         await page.waitForTimeout(300);
         let s = await state();
+        assert.ok(!(await starters()).shown, 'starters gone once a message is in');
+        assert.equal(await page.getAttribute('#chatBox', 'aria-busy'), 'true', 'busy while streaming');
         assert.equal(s.send, ko.stop);
         assert.equal(s.label, ko.stopLabel);
         assert.ok(!s.disabled && !s.primary && s.inputDisabled, 'streaming: Stop is live, input waits');
@@ -122,8 +134,26 @@ async function main() {
         assert.ok(streams[1].finished && !streams[1].closedEarly, 'second answer completes');
         assert.equal(s.text.split(ko.stopped).length - 1, 1, 'no stopped note for a finished answer');
         assert.ok(s.gap < 48, `at the bottom after the answer (gap ${s.gap})`);
+        assert.equal(await page.getAttribute('#chatBox', 'aria-busy'), 'false', 'not busy after the answer');
+
+        // Each answer (the stopped partial one too) copies its markdown source.
+        assert.equal(await page.locator('.chat-message-ai .chat-message-copy').count(), 2);
+        await context.grantPermissions(['clipboard-read', 'clipboard-write'], { origin });
+        await page.locator('.chat-message-ai .chat-message-copy').last().click();
+        await page.waitForTimeout(100);
+        assert.equal(await page.locator('.chat-message-ai .chat-message-copy').last().textContent(), ko.copied);
+        const copied = await page.evaluate(() => navigator.clipboard.readText());
+        assert.ok(copied.startsWith(PARA.trim().slice(0, 10)) && copied.includes('\n\n'), 'markdown source copied');
+
+        // A new chat empties the box and the starters return; a row sends itself.
+        await page.click('#newChatBtn');
+        st = await starters();
+        assert.ok(st.shown, 'starters return with an empty box');
+        await page.locator('#chatStarters .chat-starter').nth(2).click();
+        await page.waitForTimeout(200);
+        assert.ok((await state()).text.includes(ko.starters[2]), 'a starter row sends its question');
         assert.deepEqual(errors, []);
-        console.log('Chat UI: Stop while streaming, partial answer kept without recovery, scroll follows only at the bottom, jump to latest passed.');
+        console.log('Chat UI: Stop while streaming, partial answer kept without recovery, scroll follows only at the bottom, jump to latest passed; starters, copy, log region and aria-busy passed.');
     } finally {
         if (browser) await browser.close();
         server.close();

@@ -267,7 +267,46 @@ const ko = {
         stop: '중지',
         stopLabel: '답변 생성 중지',
         stopped: '답변 생성을 중지했습니다.',
-        jumpLatest: '↓ 최신 메시지'
+        jumpLatest: '↓ 최신 메시지',
+        // Read by public/js/chat.js from the page's string island.
+        answerArrived: '💬 답변 도착 — {title}',
+        recovering: '연결이 끊겼습니다. 답변을 복구하는 중...',
+        recoverOnReturn: '연결이 끊겼습니다. 탭으로 돌아오면 답변을 복구합니다...',
+        truncated: '답변이 모델 출력 한도에서 멈춰 마지막 부분이 미완성일 수 있습니다.',
+        warningPrefix: '주의: ',
+        toolActive: '{label} 사용 중',
+        toolDone: '{label} 완료',
+        toolDefault: '도구',
+        historyClose: '닫기',
+        historyPlaceholder: '세션을 클릭해 이어서 대화하거나 「닫기」를 누르세요',
+        historyHeading: '── 이전 대화 기록 ──',
+        historyEmpty: '── 이전 대화 기록이 없습니다 ──',
+        historyQuestionDeleted: '(질문이 삭제된 대화)',
+        historyMessages: '메시지 {n}개',
+        historyLoadError: '대화 기록을 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.',
+        justNow: '방금',
+        copy: '복사',
+        copied: '복사됨',
+        copyLabel: '답변 복사',
+        copyError: '복사하지 못했습니다',
+        startersLabel: '이렇게 시작해 보세요',
+        starters: [
+            '자기소개를 해 주세요.',
+            '『자본』은 어디서부터 읽으면 좋을까요?',
+            '10월 혁명은 왜 일어났나요?',
+            '제국주의란 무엇인가요?'
+        ],
+        toneLabel: '톤',
+        tones: {
+            shorter: '짧게',
+            longer: '길게',
+            warmer: '따뜻하게',
+            colder: '차갑게',
+            more_direct: '직설적으로',
+            more_in_character: '캐릭터답게',
+            less_formal: '덜 딱딱하게',
+            more_cited: '근거 강화'
+        }
     },
 
     commuLingo: {
@@ -964,7 +1003,45 @@ const en = {
         stop: 'Stop',
         stopLabel: 'Stop generating',
         stopped: 'Stopped generating.',
-        jumpLatest: '↓ Latest'
+        jumpLatest: '↓ Latest',
+        answerArrived: '💬 Reply arrived — {title}',
+        recovering: 'Connection lost. Recovering the reply...',
+        recoverOnReturn: 'Connection lost. The reply will be recovered when you return to this tab...',
+        truncated: 'The reply stopped at the model output limit; its last part may be incomplete.',
+        warningPrefix: 'Warning: ',
+        toolActive: 'Using {label}',
+        toolDone: '{label} done',
+        toolDefault: 'a tool',
+        historyClose: 'Close',
+        historyPlaceholder: 'Pick a conversation to continue it, or press Close',
+        historyHeading: '── Earlier conversations ──',
+        historyEmpty: '── No earlier conversations ──',
+        historyQuestionDeleted: '(Question deleted)',
+        historyMessages: '{n} messages',
+        historyLoadError: 'Could not load earlier conversations. Please try again shortly.',
+        justNow: 'just now',
+        copy: 'Copy',
+        copied: 'Copied',
+        copyLabel: 'Copy reply',
+        copyError: 'Could not copy',
+        startersLabel: 'Try asking',
+        starters: [
+            'Introduce yourself.',
+            'Where should I start reading Capital?',
+            'Why did the October Revolution happen?',
+            'What is imperialism?'
+        ],
+        toneLabel: 'Tone',
+        tones: {
+            shorter: 'Shorter',
+            longer: 'Longer',
+            warmer: 'Warmer',
+            colder: 'Colder',
+            more_direct: 'More direct',
+            more_in_character: 'In character',
+            less_formal: 'Less formal',
+            more_cited: 'More cited'
+        }
     },
 
     commuLingo: {
