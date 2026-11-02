@@ -1,15 +1,20 @@
-// Date formatting follows the page language instead of always forcing Korean.
+// The server writes each date in Asia/Seoul (utils/local-date.js); this
+// redraws it in the page language and the viewer's own zone, touching the
+// text only when it differs. Rows a search draws later have no text yet
+// (commulingo-dict-search.js calls this on them).
 var documentLocale = document.documentElement.lang === 'en' ? 'en-US' : 'ko-KR';
-// Also run over list rows a search draws later (commulingo-dict-search.js).
 window.formatLocalDates = function(root) {
+    function put(el, text) { if (el.textContent !== text) el.textContent = text; }
     root.querySelectorAll('.local-date').forEach(function(el) {
         var d = new Date(el.getAttribute('datetime'));
+        if (isNaN(d)) return;
         var suffix = el.getAttribute('data-suffix') || '';
-        el.textContent = d.toLocaleDateString(documentLocale, { year: 'numeric', month: 'long', day: 'numeric' }) + suffix;
+        put(el, d.toLocaleDateString(documentLocale, { year: 'numeric', month: 'long', day: 'numeric' }) + suffix);
     });
     root.querySelectorAll('.local-date-short').forEach(function(el) {
         var d = new Date(el.getAttribute('datetime'));
-        el.textContent = d.toLocaleDateString(documentLocale);
+        if (isNaN(d)) return;
+        put(el, d.toLocaleDateString(documentLocale));
     });
 };
 window.formatLocalDates(document);

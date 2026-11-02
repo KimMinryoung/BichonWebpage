@@ -23,7 +23,7 @@
                     <span class="hub-source-date"><%= item.source_published_at %></span>
                 <% } %>
                 <% if (item.published_at) { %>
-                    <time class="local-date" datetime="<%= item.published_at %>" data-suffix="<%= lang === 'ko' ? '에 선정' : ', curated' %>"></time>
+                    <time class="local-date" datetime="<%= item.published_at %>" data-suffix="<%= lang === 'ko' ? '에 선정' : ', curated' %>"><%= localDate(item.published_at, lang, lang === 'ko' ? '에 선정' : ', curated') %></time>
                 <% } %>
             </div>
 

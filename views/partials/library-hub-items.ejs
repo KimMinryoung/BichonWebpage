@@ -14,7 +14,7 @@
                     <span class="hub-author"><%= it.source_author %></span>
                 <% } %>
                 <% if (it.published_at) { %>
-                    <time class="local-date" datetime="<%= it.published_at %>" data-suffix="<%= lang === 'ko' ? '에 선정' : ', curated' %>"></time>
+                    <time class="local-date" datetime="<%= it.published_at %>" data-suffix="<%= lang === 'ko' ? '에 선정' : ', curated' %>"><%= localDate(it.published_at, lang, lang === 'ko' ? '에 선정' : ', curated') %></time>
                 <% } %>
             </div>
             <% if (it.searchExcerpt) { %>

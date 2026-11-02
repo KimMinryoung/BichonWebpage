@@ -33,7 +33,7 @@
                 <div class="report-task-content"><%= report.content %></div>
             </details>
             <div class="post-meta">
-                <time class="local-date" datetime="<%= new Date(report.completed_at).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 보고' : ', reported' %>"></time>
+                <time class="local-date" datetime="<%= new Date(report.completed_at).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 보고' : ', reported' %>"><%= localDate(new Date(report.completed_at).toISOString(), lang, lang === 'ko' ? '에 보고' : ', reported') %></time>
             </div>
             <div class="report-body" id="report-content"></div>
             <script type="application/json" id="report-raw"><%- JSON.stringify(report.result).replace(/</g, '\\u003c') %></script>

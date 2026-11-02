@@ -10,7 +10,7 @@
             <div class="ui-split-main">
                 <h2><a href="<%= hrefPrefix %><%= entry.id %>"><%= entry.title %></a></h2>
                 <div class="post-meta">
-                    <time class="local-date" datetime="<%= new Date(entry.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                    <time class="local-date" datetime="<%= new Date(entry.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"><%= localDate(new Date(entry.created_at).toISOString(), lang, strings.public.postedAt) %></time>
                 </div>
                 <p class="post-excerpt">
                     <% if (entry.searchExcerpt !== undefined) { %><%= entry.searchExcerpt %><% } else { %><%- truncateHtml(sanitize(entry.content), 200) %><% } %>

@@ -16,7 +16,7 @@
             <% } %>
             <% if (updatedAt) { %>
                 <div class="post-meta">
-                    <time class="local-date" datetime="<%= updatedAt %>" data-suffix="<%= lang === 'ko' ? '에 업데이트' : ', updated' %>"></time>
+                    <time class="local-date" datetime="<%= updatedAt %>" data-suffix="<%= lang === 'ko' ? '에 업데이트' : ', updated' %>"><%= localDate(updatedAt, lang, lang === 'ko' ? '에 업데이트' : ', updated') %></time>
                 </div>
             <% } %>
 

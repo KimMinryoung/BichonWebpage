@@ -77,7 +77,7 @@
                             <div class="post-meta">
                                 <span class="commu-update-kind"><%= item.typeLabel %></span>
                                 <span aria-hidden="true"> · </span>
-                                <time class="local-date" datetime="<%= new Date(item.modified).toISOString() %>" data-suffix="<%= strings.home.commuLingoUpdatedAt %>"></time>
+                                <time class="local-date" datetime="<%= new Date(item.modified).toISOString() %>" data-suffix="<%= strings.home.commuLingoUpdatedAt %>"><%= localDate(new Date(item.modified).toISOString(), lang, strings.home.commuLingoUpdatedAt) %></time>
                             </div>
                             <div class="commu-update-preview">
                                 <% if (item.summary) { %>
@@ -103,7 +103,7 @@
                             <h3><a href="<%= item.href %>"><%= item.title %></a></h3>
                             <% if (item.modified) { %>
                                 <div class="post-meta">
-                                    <time class="local-date" datetime="<%= new Date(item.modified).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                                    <time class="local-date" datetime="<%= new Date(item.modified).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"><%= localDate(new Date(item.modified).toISOString(), lang, strings.public.postedAt) %></time>
                                 </div>
                             <% } %>
                             <% if (item.summary) { %>
@@ -127,7 +127,7 @@
                         <li class="post-item">
                             <h3><a href="/ai-diary/<%= diary.id %>"><%= diary.title %></a></h3>
                             <div class="post-meta">
-                                <time class="local-date" datetime="<%= new Date(diary.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                                <time class="local-date" datetime="<%= new Date(diary.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"><%= localDate(new Date(diary.created_at).toISOString(), lang, strings.public.postedAt) %></time>
                             </div>
                             <p class="post-excerpt"><%- diary.excerptHtml %></p>
                         </li>
@@ -152,7 +152,7 @@
                                     <span class="hub-source"><%= it.source_publication %></span>
                                 <% } %>
                                 <% if (it.published_at) { %>
-                                    <time class="local-date" datetime="<%= it.published_at %>" data-suffix="<%= lang === 'ko' ? '에 선정' : ', curated' %>"></time>
+                                    <time class="local-date" datetime="<%= it.published_at %>" data-suffix="<%= lang === 'ko' ? '에 선정' : ', curated' %>"><%= localDate(it.published_at, lang, lang === 'ko' ? '에 선정' : ', curated') %></time>
                                 <% } %>
                             </div>
                             <% if (it.excerpt) { %>
@@ -176,7 +176,7 @@
                         <li class="post-item">
                             <h3><a href="/post/<%= post.id %>"><%= post.title %></a></h3>
                             <div class="post-meta">
-                                <time class="local-date" datetime="<%= new Date(post.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"></time>
+                                <time class="local-date" datetime="<%= new Date(post.created_at).toISOString() %>" data-suffix="<%= strings.public.postedAt %>"><%= localDate(new Date(post.created_at).toISOString(), lang, strings.public.postedAt) %></time>
                             </div>
                             <p class="post-excerpt"><%- post.excerptHtml %></p>
                         </li>

@@ -43,6 +43,8 @@ app.use(stripEnglishPrefix);
 // View engine setup
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+// app.locals, not viewLocals: fragments rendered with app.render need it too.
+Object.assign(app.locals, (({ localDate, localDateShort }) => ({ localDate, localDateShort }))(require('./utils/local-date')));
 if (env.DEV_MODE) {
     app.disable('view cache');
 }

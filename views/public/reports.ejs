@@ -53,7 +53,7 @@
                                 <h2><a href="/reports/<%= report.id %>"><%= _title %></a></h2>
                                 <div class="post-meta">
                                     <span class="report-id">#<%= report.id %></span>
-                                    <time class="local-date" datetime="<%= new Date(report.completed_at).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 보고' : ', reported' %>"></time>
+                                    <time class="local-date" datetime="<%= new Date(report.completed_at).toISOString() %>" data-suffix="<%= lang === 'ko' ? '에 보고' : ', reported' %>"><%= localDate(new Date(report.completed_at).toISOString(), lang, lang === 'ko' ? '에 보고' : ', reported') %></time>
                                 </div>
                                 <% if (report.result) { %>
                                     <p class="post-excerpt"><%= report.result.replace(/[#*_`\-|>]/g, '').replace(/\n+/g, ' ').substring(0, 200) %>...</p>
