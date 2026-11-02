@@ -21,13 +21,58 @@
         deleteConfirmUser: metaContent('str-delete-confirm-user', '이 질문을 삭제할까요?'),
         deleteConfirmAssistant: metaContent('str-delete-confirm-assistant', '이 응답을 삭제할까요?'),
         deleteError: metaContent('str-delete-error', '메시지를 삭제하지 못했습니다.'),
-        inputLimit: metaContent('str-input-limit', '{max}자까지만 보낼 수 있습니다.')
+        inputLimit: metaContent('str-input-limit', '{max}자까지만 보낼 수 있습니다.'),
+        stop: metaContent('str-stop', '중지'),
+        stopLabel: metaContent('str-stop-label', '답변 생성 중지'),
+        stopped: metaContent('str-stopped', '답변 생성을 중지했습니다.')
     };
 
     var chatBox = document.getElementById('chatBox');
     var chatForm = document.getElementById('chatForm');
     var chatInput = document.getElementById('chatInput');
     var chatSend = document.getElementById('chatSend');
+    var chatJump = document.getElementById('chatJump');
+
+    // Follow the newest message only while the reader is at the bottom: one
+    // who scrolls up to reread stays put while an answer streams in, and gets
+    // a button back down. Scripted scrolls only ever move down, so a move up
+    // is the reader's own; content that shrinks clamps the box to its bottom,
+    // which counts as being there.
+    var followLatest = true;
+    var lastScrollTop = 0;
+    function atBottom() {
+        return chatBox.scrollHeight - chatBox.scrollTop - chatBox.clientHeight < 48;
+    }
+    function updateJump() {
+        if (chatJump) chatJump.hidden = followLatest || inHistoryMode || !chatBox.firstChild;
+    }
+    // force: the reader just acted (sent a message, opened a conversation).
+    function scrollToLatest(force) {
+        if (force) followLatest = true;
+        if (followLatest) chatBox.scrollTop = chatBox.scrollHeight;
+        updateJump();
+    }
+    chatBox.addEventListener('scroll', function () {
+        if (atBottom()) followLatest = true;
+        else if (chatBox.scrollTop < lastScrollTop) followLatest = false;
+        lastScrollTop = chatBox.scrollTop;
+        updateJump();
+    }, { passive: true });
+    // The box itself shrinks under a following reader too: the feedback bar
+    // appearing after an answer, a taller input, the mobile keyboard.
+    if (window.ResizeObserver) {
+        new ResizeObserver(function () {
+            if (followLatest) chatBox.scrollTop = chatBox.scrollHeight;
+        }).observe(chatBox);
+    }
+    if (chatJump) {
+        chatJump.addEventListener('click', function () {
+            followLatest = true;
+            var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: still ? 'auto' : 'smooth' });
+            updateJump();
+        });
+    }
     var chatInputCount = document.getElementById('chatInputCount');
     // The API rejects longer messages (422); the textarea's maxlength stops
     // typing and truncates pastes at the same limit.
@@ -42,6 +87,7 @@
     var feedbackStatus = document.getElementById('feedbackStatus');
     var activeFeedbackTarget = null; // { messageId, sourceMessage, aiDiv }
     var busy = false;
+    var activeStop = null; // AbortController of the answer streaming now
     var originalTitle = document.title;
     var hiddenDuringRequest = false;
     var streamDied = false;
@@ -284,7 +330,7 @@
                         if (pendingUsers.length) {
                             decorateDeletableMessage(pendingUsers[pendingUsers.length - 1], history[j].message_id, 'user');
                         }
-                        chatBox.scrollTop = chatBox.scrollHeight;
+                        scrollToLatest();
                         if (document.visibilityState === 'hidden') {
                             document.title = '💬 답변 도착 — ' + originalTitle;
                         }
@@ -310,7 +356,7 @@
             if (busy) hiddenDuringRequest = true;
         } else {
             document.title = originalTitle;
-            chatBox.scrollTop = chatBox.scrollHeight;
+            scrollToLatest();
             // If stream died while we were away, try to recover the answer from history
             if (streamDied && hiddenDuringRequest && recoveryContext) {
                 tryRecoverFromHistory(
@@ -385,7 +431,7 @@
                 decorateDeletableMessage(aiMsg, item.message_id, 'assistant');
             }
         }
-        chatBox.scrollTop = chatBox.scrollHeight;
+        scrollToLatest(true);
     }
 
     async function resumeSession(sid) {
@@ -476,7 +522,7 @@
         var container = document.getElementById('historyContainer');
         if (container) container.remove();
         setLoading(false);
-        chatBox.scrollTop = chatBox.scrollHeight;
+        scrollToLatest(true);
         historyBtn.classList.remove('btn-primary');
         historyBtn.textContent = '이전 대화';
         chatInput.placeholder = originalPlaceholder;
@@ -589,7 +635,8 @@
         }
         div.appendChild(body);
         chatBox.appendChild(div);
-        chatBox.scrollTop = chatBox.scrollHeight;
+        // The reader's own message brings them back to the bottom.
+        scrollToLatest(className === 'chat-message-user');
         return div;
     }
 
@@ -666,7 +713,7 @@
         div.appendChild(text);
 
         chatBox.appendChild(div);
-        chatBox.scrollTop = chatBox.scrollHeight;
+        scrollToLatest();
         return div;
     }
 
@@ -675,7 +722,22 @@
         var label = div.querySelector('.chat-tool-text');
         if (label) label.textContent = text;
         div.classList.toggle('chat-message-tool-done', !!done);
-        chatBox.scrollTop = chatBox.scrollHeight;
+        scrollToLatest();
+    }
+
+    // While an answer streams the send button stops it. Stopping closes the
+    // connection (the proxy then drops its upstream request) and keeps what
+    // has arrived; it never starts the dropped-connection recovery.
+    var sendLabel = chatSend.textContent.trim();
+    function setStoppable(controller) {
+        activeStop = controller || null;
+        var stopping = Boolean(activeStop);
+        chatSend.textContent = stopping ? STRINGS.stop : sendLabel;
+        if (stopping) chatSend.setAttribute('aria-label', STRINGS.stopLabel);
+        else chatSend.removeAttribute('aria-label');
+        chatSend.classList.toggle('btn-primary', !stopping);
+        chatSend.classList.toggle('chat-send-stop', stopping);
+        chatSend.disabled = stopping ? false : busy;
     }
 
     function setLoading(on) {
@@ -857,6 +919,8 @@
         recovering = false;
         recoveryContext = null;
         setLoading(true);
+        var controller = window.AbortController ? new AbortController() : null;
+        setStoppable(controller);
         var requestStartedAt = Date.now();
 
         var logDiv = appendMessage(options.regenerateFromId ? STRINGS.regenerating : STRINGS.thinking, 'chat-message-log');
@@ -924,7 +988,7 @@
             requestAnimationFrame(function () {
                 renderScheduled = false;
                 renderAiMarkdown();
-                chatBox.scrollTop = chatBox.scrollHeight;
+                scrollToLatest();
             });
         }
 
@@ -943,7 +1007,8 @@
             var res = await fetch(API_URL + '/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
+                body: JSON.stringify(payload),
+                signal: controller ? controller.signal : undefined
             });
 
             if (!res.ok) throw new Error(res.statusText);
@@ -977,7 +1042,7 @@
                             if (data.node === 'tool') continue;
                             accumulatedLog += data.content + '\n\n';
                             if (logDiv && logDiv.parentNode) logDiv.textContent = accumulatedLog;
-                            chatBox.scrollTop = chatBox.scrollHeight;
+                            scrollToLatest();
                         } else if (data.type === 'status' || data.type === 'warning') {
                             var prefix = data.type === 'warning' ? '주의: ' : '';
                             accumulatedLog += prefix + data.content + '\n\n';
@@ -989,7 +1054,7 @@
                                 var note = appendMessage(prefix + data.content, 'chat-message-log');
                                 if (data.type === 'warning') note.classList.add('chat-message-warning');
                             }
-                            chatBox.scrollTop = chatBox.scrollHeight;
+                            scrollToLatest();
                         } else if (data.type === 'tool_start') {
                             updateToolStatus(data, false);
                         } else if (data.type === 'tool_done') {
@@ -1016,6 +1081,7 @@
                             if (aiDiv) { aiDiv.remove(); aiDiv = null; }
                         } else if (data.type === 'answer') {
                             terminalEventReceived = true;
+                            setStoppable(null);
                             accumulatedLog = '';
                             if (logDiv) { logDiv.remove(); logDiv = null; }
                             clearToolStatus();
@@ -1024,7 +1090,7 @@
                             } else {
                                 streamedText = data.content;
                                 renderAiMarkdown();
-                                chatBox.scrollTop = chatBox.scrollHeight;
+                                scrollToLatest();
                             }
                             linkCommuLingoMentions(aiBody(aiDiv));
                             if (data.message_id) {
@@ -1041,11 +1107,12 @@
                             }
                         } else if (data.type === 'error') {
                             terminalEventReceived = true;
+                            setStoppable(null);
                             if (logDiv) logDiv.remove();
                             clearToolStatus();
                             var errMsg = appendMessage(data.content, 'chat-message-ai');
                             errMsg.classList.add('chat-message-error');
-                            chatBox.scrollTop = chatBox.scrollHeight;
+                            scrollToLatest();
                         }
                     } catch (err) {
                         throw new Error(STRINGS.error);
@@ -1056,6 +1123,17 @@
                 throw new Error('chat stream ended before a terminal event');
             }
         } catch (err) {
+            setStoppable(null);
+            if (controller && controller.signal.aborted) {
+                // Stopped by the reader: keep the partial answer as it stands.
+                clearToolStatus();
+                if (logDiv) { logDiv.remove(); logDiv = null; }
+                if (aiDiv) renderAiMarkdown();
+                appendMessage(STRINGS.stopped, 'chat-message-log').classList.add('chat-message-stopped');
+                setLoading(false);
+                chatInput.focus();
+                return;
+            }
             console.error('Chat Error:', activeRequestId || 'no-request-id', err);
             streamDied = true;
             clearToolStatus();
@@ -1075,15 +1153,20 @@
             } else {
                 showRetryError(errDiv, STRINGS.error, message);
             }
-            chatBox.scrollTop = chatBox.scrollHeight;
+            scrollToLatest();
         }
 
+        setStoppable(null);
         setLoading(false);
         chatInput.focus();
     }
 
     chatForm.addEventListener('submit', function (e) {
         e.preventDefault();
+        if (activeStop) {
+            activeStop.abort();
+            return;
+        }
         sendChat(chatInput.value);
     });
 

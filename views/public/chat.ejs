@@ -26,6 +26,9 @@
     <meta name="str-delete-confirm-assistant" content="<%= strings.chat.deleteConfirmAssistant %>">
     <meta name="str-delete-error" content="<%= strings.chat.deleteError %>">
     <meta name="str-input-limit" content="<%= strings.chat.inputLimit %>">
+    <meta name="str-stop" content="<%= strings.chat.stop %>">
+    <meta name="str-stop-label" content="<%= strings.chat.stopLabel %>">
+    <meta name="str-stopped" content="<%= strings.chat.stopped %>">
 </head>
 <body>
     <script src="/js/chat-viewport.js?v=<%= assetVersion %>"></script>
@@ -54,6 +57,7 @@
             <div class="chat-box" id="chatBox"
                  data-empty-hint="<%= withPersona(strings.chat.emptyHint, strings.chat.defaultPersonaName) %>"
                  data-empty-hint-template="<%= strings.chat.emptyHint %>"></div>
+            <button type="button" class="chat-jump" id="chatJump" hidden><%= strings.chat.jumpLatest %></button>
 
             <div class="chat-feedback-bar collapsed" id="chatFeedbackBar" hidden>
                 <button

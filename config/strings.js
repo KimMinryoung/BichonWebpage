@@ -262,7 +262,12 @@ const ko = {
         deleteConfirmUser: '이 질문을 삭제할까요? 이후 대화 맥락에서 제외됩니다.',
         deleteConfirmAssistant: '이 응답을 삭제할까요? 이후 대화 맥락에서 제외됩니다.',
         inputLimit: '{max}자까지만 보낼 수 있습니다.',
-        deleteError: '메시지를 삭제하지 못했습니다.'
+        deleteError: '메시지를 삭제하지 못했습니다.',
+        // While an answer streams, the send button stops it instead.
+        stop: '중지',
+        stopLabel: '답변 생성 중지',
+        stopped: '답변 생성을 중지했습니다.',
+        jumpLatest: '↓ 최신 메시지'
     },
 
     commuLingo: {
@@ -955,7 +960,11 @@ const en = {
         deleteConfirmUser: 'Delete this question? It will be excluded from future chat context.',
         deleteConfirmAssistant: 'Delete this response? It will be excluded from future chat context.',
         inputLimit: 'Messages are limited to {max} characters.',
-        deleteError: 'Could not delete the message.'
+        deleteError: 'Could not delete the message.',
+        stop: 'Stop',
+        stopLabel: 'Stop generating',
+        stopped: 'Stopped generating.',
+        jumpLatest: '↓ Latest'
     },
 
     commuLingo: {
