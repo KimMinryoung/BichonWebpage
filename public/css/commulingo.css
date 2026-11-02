@@ -4578,6 +4578,26 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 .commu-event-people-group.is-witness .commu-event-people-group-head { border-left-color: #7a6699; color: #a892cc; }
 .commu-event-people-group.is-historian .commu-event-people-group-head { border-left-color: #4f8a80; color: #7cbfb3; }
 .commu-event-people-group.is-unclassified .commu-event-people-group-head { border-left-color: #5f6b78; color: #93a1b0; }
+/* Light theme: the bright label tones above are for the dark theme; on cream
+   they fell to 1.6:1 (axe, 2026-11-02). Each kind's hue pressed 25% toward
+   black clears 4.5:1 on its own 14% tint and on the page. */
+[data-theme="light"] .commu-event-people-grid > a.is-executor .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-executor span, [data-theme="light"] .commu-person-event-links li.is-executor em, [data-theme="light"] .commu-event-people-group.is-executor .commu-event-people-group-head { color: color-mix(in srgb, #8c7734 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-target .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-target span, [data-theme="light"] .commu-person-event-links li.is-target em, [data-theme="light"] .commu-event-people-group.is-target .commu-event-people-group-head { color: color-mix(in srgb, #a74a42 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-leader .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-leader span, [data-theme="light"] .commu-person-event-links li.is-leader em, [data-theme="light"] .commu-event-people-group.is-leader .commu-event-people-group-head { color: color-mix(in srgb, #b8564f 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-participant .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-participant span, [data-theme="light"] .commu-person-event-links li.is-participant em, [data-theme="light"] .commu-event-people-group.is-participant .commu-event-people-group-head { color: color-mix(in srgb, #4d6f9c 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-opponent .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-opponent span, [data-theme="light"] .commu-person-event-links li.is-opponent em, [data-theme="light"] .commu-event-people-group.is-opponent .commu-event-people-group-head { color: color-mix(in srgb, #6f6f6f 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-witness .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-witness span, [data-theme="light"] .commu-person-event-links li.is-witness em, [data-theme="light"] .commu-event-people-group.is-witness .commu-event-people-group-head { color: color-mix(in srgb, #7a6699 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-historian .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-historian span, [data-theme="light"] .commu-person-event-links li.is-historian em, [data-theme="light"] .commu-event-people-group.is-historian .commu-event-people-group-head { color: color-mix(in srgb, #4f8a80 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-unclassified .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-unclassified span, [data-theme="light"] .commu-person-event-links li.is-unclassified em, [data-theme="light"] .commu-event-people-group.is-unclassified .commu-event-people-group-head { color: color-mix(in srgb, #5f6b78 75%, #000); }
+/* …except on a hovered row, whose fill is dark in both themes. */
+[data-theme="light"] .commu-person-event-links li.is-executor a:hover span, [data-theme="light"] .commu-person-event-links li.is-executor a:hover em { color: #d4bb61; }
+[data-theme="light"] .commu-person-event-links li.is-target a:hover span, [data-theme="light"] .commu-person-event-links li.is-target a:hover em { color: #cf6b5f; }
+[data-theme="light"] .commu-person-event-links li.is-leader a:hover span, [data-theme="light"] .commu-person-event-links li.is-leader a:hover em { color: #de7c74; }
+[data-theme="light"] .commu-person-event-links li.is-participant a:hover span, [data-theme="light"] .commu-person-event-links li.is-participant a:hover em { color: #7ba3d4; }
+[data-theme="light"] .commu-person-event-links li.is-opponent a:hover span, [data-theme="light"] .commu-person-event-links li.is-opponent a:hover em { color: #a8a8a8; }
+[data-theme="light"] .commu-person-event-links li.is-witness a:hover span, [data-theme="light"] .commu-person-event-links li.is-witness a:hover em { color: #a892cc; }
+[data-theme="light"] .commu-person-event-links li.is-historian a:hover span, [data-theme="light"] .commu-person-event-links li.is-historian a:hover em { color: #7cbfb3; }
+[data-theme="light"] .commu-person-event-links li.is-unclassified a:hover span, [data-theme="light"] .commu-person-event-links li.is-unclassified a:hover em { color: #93a1b0; }
 
 /* Prev / next navigation between event pages. One slim bar per direction:
    dir · period · title on a single baseline, the next card mirrored via

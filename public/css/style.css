@@ -820,6 +820,12 @@ header h1 {
     white-space: nowrap;
 }
 
+/* The brand red on the dark canvas is 3.6:1; lifted a fifth toward white it
+   reads at 4.8:1 (axe, 2026-11-02). */
+[data-theme="dark"] .home-hero h1 {
+    color: color-mix(in srgb, var(--accent-red) 80%, #fff);
+}
+
 @media (max-width: 440px) {
     .home-hero-inner {
         grid-template-columns: 1fr;
@@ -2436,7 +2442,6 @@ footer .footer-tagline {
 .hub-author,
 .hub-source-date {
     font-size: 0.85rem;
-    opacity: 0.75;
 }
 .hub-source::before { content: '📰 '; }
 .hub-author::before { content: '✍️  '; }

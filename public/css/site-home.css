@@ -42,6 +42,9 @@
     line-height: var(--leading-tight);
     white-space: nowrap;
 }
+[data-theme="dark"] .home-hero h1 {
+    color: color-mix(in srgb, var(--accent-red) 80%, #fff);
+}
 
 @media (max-width: 440px) {
     .home-hero-inner {

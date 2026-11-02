@@ -312,7 +312,6 @@
 .hub-author,
 .hub-source-date {
     font-size: 0.85rem;
-    opacity: 0.75;
 }
 .hub-source::before { content: '📰 '; }
 .hub-author::before { content: '✍️  '; }
