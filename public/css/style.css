@@ -143,6 +143,21 @@ body {
     overflow-wrap: break-word;
 }
 
+/* Page-to-page navigation cross-fades instead of flashing blank (cross-
+   document View Transitions; browsers without them just navigate). The
+   toolbar and menu are the same pixels on both pages, so only content
+   visibly changes. Off when the visitor asks for reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+    @view-transition {
+        navigation: auto;
+    }
+}
+
+::view-transition-group(root) {
+    animation-duration: var(--duration-normal);
+    animation-timing-function: var(--ease-standard);
+}
+
 a {
     color: var(--link);
     text-decoration: none;
@@ -1776,6 +1791,34 @@ footer .footer-tagline {
     font-size: 0.95rem;
     line-height: var(--leading-relaxed);
     padding: 0 16px;
+}
+
+/* Back to the newest message after the reader scrolled up (chat.js). It
+   overlaps the bottom edge of the chat box: the negative top margin cancels
+   its own height and bottom gap, so showing it moves nothing else. */
+.chat-jump {
+    --chat-jump-height: var(--control-height-sm);
+    position: relative;
+    z-index: 1;
+    align-self: center;
+    box-sizing: border-box;
+    height: var(--chat-jump-height);
+    margin-top: calc(-1 * (var(--chat-jump-height) + var(--space-3)));
+    margin-bottom: var(--space-3);
+    padding: 0 var(--space-3);
+    color: var(--text-primary);
+    background: var(--btn-bg);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    font: inherit;
+    font-size: var(--text-sm);
+    line-height: var(--leading-none);
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.chat-jump:hover {
+    background: var(--btn-hover);
 }
 
 .chat-message {

@@ -6,7 +6,9 @@ const { iconPaths } = require('../../data/icons');
 const { stripEnglishPrefix } = require('../../middleware/language');
 const { menuHasEnglish } = require('../../config/menu-languages');
 
-async function createGameTestServer() {
+// routes(app): extra routes ahead of the static files (the chat test's page
+// and mocked chat API).
+async function createGameTestServer({ routes } = {}) {
     const app = express();
     app.set('view engine', 'ejs');
     app.set('views', path.join(__dirname, '../../views'));
@@ -24,6 +26,7 @@ async function createGameTestServer() {
         next();
     });
     app.use(require('../../routes/redirects'));
+    if (routes) routes(app);
     app.use(express.static(path.join(__dirname, '../../public')));
     const server = app.listen(0, '127.0.0.1');
     await new Promise((resolve, reject) => { server.once('listening', resolve); server.once('error', reject); });

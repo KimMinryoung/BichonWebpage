@@ -66,17 +66,8 @@
 <% if (typeof jsonLd !== 'undefined' && jsonLd) { %>
 <script type="application/ld+json"><%- jsonLdScript(jsonLd) %></script>
 <% } %>
-<script>
-(function(){
-    var t = 'dark';
-    try {
-        t = localStorage.getItem('theme') || t;
-    } catch (e) {}
-    if (t !== 'light' && t !== 'dark') t = 'dark';
-    document.documentElement.setAttribute('data-theme', t);
-    document.documentElement.setAttribute('data-section', <%- JSON.stringify(_section) %>);
-})();
-</script>
+<%- include('theme-init') %>
+<script>document.documentElement.setAttribute('data-section', <%- JSON.stringify(_section) %>);</script>
 <%# The common Hangul font is one fixed file, so a Korean page can start it
     with the HTML instead of after the CSS; it then usually arrives before the
     first layout, which is not done twice (fallback, then Pretendard). %>

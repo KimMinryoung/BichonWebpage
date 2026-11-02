@@ -28,9 +28,18 @@ document.addEventListener('submit', function(e) {
     if (!btn) return;
     var html = document.documentElement;
     var isEnglish = html.lang === 'en';
+    // partials/theme-init sets the first theme (saved choice, else the
+    // system's) and owns saving; a page without it falls back to the attribute.
+    var theme = window.siteTheme || {
+        current: function () { return html.getAttribute('data-theme') === 'light' ? 'light' : 'dark'; },
+        choose: function (t) {
+            html.setAttribute('data-theme', t);
+            try { localStorage.setItem('theme', t); } catch (e) {}
+        }
+    };
 
     function getTheme() {
-        return html.getAttribute('data-theme') || 'dark';
+        return theme.current();
     }
 
     function setIcon() {
@@ -42,11 +51,11 @@ document.addEventListener('submit', function(e) {
             : (isEnglish ? 'Switch to light mode' : '라이트 모드로 전환'));
     }
     setIcon();
+    // The system setting can change the theme while no choice is saved.
+    document.addEventListener('site-themechange', setIcon);
 
     btn.addEventListener('click', function() {
-        var next = getTheme() === 'dark' ? 'light' : 'dark';
-        html.setAttribute('data-theme', next);
-        try { localStorage.setItem('theme', next); } catch (e) {}
+        theme.choose(getTheme() === 'dark' ? 'light' : 'dark');
         setIcon();
     });
 })();

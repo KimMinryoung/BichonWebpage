@@ -1,0 +1,39 @@
+<%# Theme before first paint: the visitor's saved choice, else the system
+    setting, which keeps being followed (live) until a choice is saved with the
+    toolbar toggle (common.js → siteTheme.choose). theme-color tints mobile
+    browser chrome; its values are --bg-canvas of each theme in palette.css. %>
+<meta name="theme-color" content="#010409">
+<script>
+(function(){
+    var root = document.documentElement;
+    var colors = { dark: '#010409', light: '#faf2da' };
+    var system = null;
+    try { system = window.matchMedia('(prefers-color-scheme: light)'); } catch (e) {}
+    function saved() {
+        try {
+            var t = localStorage.getItem('theme');
+            return t === 'light' || t === 'dark' ? t : null;
+        } catch (e) { return null; }
+    }
+    function systemTheme() { return system && system.matches ? 'light' : 'dark'; }
+    function apply(t) {
+        root.setAttribute('data-theme', t);
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', colors[t]);
+        try { document.dispatchEvent(new CustomEvent('site-themechange', { detail: t })); } catch (e) {}
+    }
+    window.siteTheme = {
+        current: function () { return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark'; },
+        choose: function (t) {
+            try { localStorage.setItem('theme', t); } catch (e) {}
+            apply(t);
+        }
+    };
+    apply(saved() || systemTheme());
+    if (system) {
+        var follow = function () { if (!saved()) apply(systemTheme()); };
+        if (system.addEventListener) system.addEventListener('change', follow);
+        else if (system.addListener) system.addListener(follow);
+    }
+})();
+</script>

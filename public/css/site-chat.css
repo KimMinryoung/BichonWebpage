@@ -181,6 +181,30 @@
     line-height: var(--leading-relaxed);
     padding: 0 16px;
 }
+.chat-jump {
+    --chat-jump-height: var(--control-height-sm);
+    position: relative;
+    z-index: 1;
+    align-self: center;
+    box-sizing: border-box;
+    height: var(--chat-jump-height);
+    margin-top: calc(-1 * (var(--chat-jump-height) + var(--space-3)));
+    margin-bottom: var(--space-3);
+    padding: 0 var(--space-3);
+    color: var(--text-primary);
+    background: var(--btn-bg);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    font: inherit;
+    font-size: var(--text-sm);
+    line-height: var(--leading-none);
+    cursor: pointer;
+    transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.chat-jump:hover {
+    background: var(--btn-hover);
+}
 
 .chat-message {
     padding: 10px 14px;
