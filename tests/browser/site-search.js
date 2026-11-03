@@ -8,7 +8,8 @@
 //   dropdown and a press outside does too, focus reopens it from memory;
 // - the search page: its results follow the box with the address and scope
 //   tabs, the shortcuts focus that box instead of opening the dialog, Enter
-//   settles a history entry and Back restores the earlier query.
+//   settles a history entry and Back restores the earlier query; Back to an
+//   expanded section (?more=) loads that page again.
 const assert = require('node:assert/strict');
 const { launchChromium } = require('../lib/browser');
 const { createGameTestServer } = require('../lib/game-test-server');
@@ -38,7 +39,7 @@ function routes(app) {
     app.get('/search', (req, res) => {
         const q = typeof req.query.q === 'string' ? req.query.q.trim() : '';
         const result = { query: q, terms: searchTerms(q), failed: [], sections: q ? [{ key: 'reports', total: 1, moreHref: '',
-            items: [{ title: `${q} 처음`, href: '/first' }] }] : [] };
+            items: [{ title: req.query.more ? `${q} 펼침` : `${q} 처음`, href: req.query.more ? '/expanded' : '/first' }] }] : [] };
         res.render('public/search', {
             scope: 'all', scopes: { all: { path: '/search' }, commulingo: { path: '/commulingo/search' } },
             result, searchValue: q, highlightTerms, pageTitle: q ? `${q} — 검색` : '검색', pagePath: '/search',
@@ -152,6 +153,19 @@ async function main() {
         await page.click('.site-search-form--page [data-search-clear]');
         await page.waitForFunction(() => !new URL(location.href).searchParams.has('q'));
         assert.equal((await page.textContent('#site-search-results')).trim(), strings.ko.search.prompt, 'an empty box asks for words');
+
+        // An expanded section: typing leaves it, Back brings it back whole.
+        await page.goto(origin + '/search?q=%EB%A0%88%EB%8B%8C&more=reports#search-reports');
+        await page.waitForSelector('#site-search-results a[href="/expanded"]');
+        await page.fill('.site-search-form--page [data-search-input]', '부하린');
+        await page.waitForSelector('#site-search-results a[href="/a"]');
+        assert.equal(new URL(page.url()).searchParams.has('more'), false, 'typing leaves the expanded section');
+        await page.goBack();
+        await page.waitForSelector('#site-search-results a[href="/expanded"]');
+        assert.equal(new URL(page.url()).hash, '#search-reports', 'Back restores the expanded section and its anchor');
+        await page.fill('.site-search-form--page [data-search-input]', '레닌');
+        await page.waitForSelector('#site-search-results a[href="/a"]');
+        assert.equal(await page.isVisible('#site-search-results a[href="/expanded"]'), false, 'the same words outside the section show the box results');
 
         assert.deepEqual(errors, []);
         console.log('Site search: dialog, home dropdown and live search page passed (shortcuts, debounce, arrows, memory, address).');

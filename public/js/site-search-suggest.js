@@ -114,6 +114,9 @@
         function follow(query, settle) {
             var url = new URL(location.href);
             if (query) url.searchParams.set('q', query); else url.searchParams.delete('q');
+            // An expanded section (?more=) is the server's page: leaving it
+            // asks the box's own results again, even for the same words.
+            if (url.searchParams.has('more')) shown = '';
             url.searchParams.delete('more');
             url.hash = '';
             var next = url.pathname + url.search;
@@ -257,8 +260,8 @@
             // The search page already holds these results: settle the address
             // instead of loading the page again.
             event.preventDefault();
-            show(query);
             follow(query, true);
+            show(query);
         });
 
         if (mode === 'inline') {
@@ -277,7 +280,11 @@
         if (mode === 'page') {
             window.addEventListener('popstate', function () {
                 settled = true;
-                var query = new URL(location.href).searchParams.get('q') || '';
+                var url = new URL(location.href);
+                // An expanded section and its anchor come only from the
+                // server, so such an entry is loaded again.
+                if (url.searchParams.has('more')) { location.reload(); return; }
+                var query = url.searchParams.get('q') || '';
                 input.value = query;
                 if (clear) clear.hidden = !query;
                 show(query.trim());
