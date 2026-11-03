@@ -10,6 +10,7 @@ const { getLinkIndexes, createLinker } = require('./linkify');
 const { createPersonPageResolver, pagePeriod } = require('./person-page-links');
 const { genealogyLinksForEntry } = require('./genealogy-links');
 const { localize } = require('./localize');
+const { expandIndicators, indicatorsRef } = require('./indicators');
 
 function presentTerm(raw, lang) {
     return {
@@ -22,8 +23,9 @@ function presentTerm(raw, lang) {
         term: localize(raw.term, lang),
         termOther: lang === 'en' ? localize(raw.term, 'ko') : localize(raw.term, 'en'),
         period: localize(raw.period, lang),
-        definition: localize(raw.definition, lang),
-        body: localize(raw.body, lang),
+        // {{indicator:…}} tokens become the figure in force (indicators.js).
+        definition: expandIndicators(localize(raw.definition, lang), lang),
+        body: expandIndicators(localize(raw.body, lang), lang),
         people: (raw.people || []).map(person => ({ ...person, name: localize(person.name, lang) })),
         // The paired event is a whole panel of its own on this page.
         events: (raw.events || [])
@@ -216,7 +218,8 @@ async function termListData(lang, sort) {
     // into it come from their own registry: a relabelled category must not wait
     // for the next terms refresh to appear.
     const categoriesRef = termCategoriesRef();
-    if (data && data.categoriesRef !== categoriesRef) data = undefined;
+    const figuresRef = indicatorsRef();
+    if (data && (data.categoriesRef !== categoriesRef || data.figuresRef !== figuresRef)) data = undefined;
     if (!data) {
         const terms = sortTerms(raw.map(term => presentTerm(term, lang)), sort, lang);
         data = {
@@ -226,6 +229,7 @@ async function termListData(lang, sort) {
             categories: termCategoriesWithCounts(terms, lang),
             regions: termRegionsWithCounts(terms, lang),
             categoriesRef,
+            figuresRef,
         };
         byKey.set(key, data);
     }
@@ -268,8 +272,8 @@ async function buildTermPanel(termId, lang) {
     await loadTermCategories();
     const indexes = await getLinkIndexes(lang);
     let memo = termPanelMemo.get(indexes);
-    if (!memo || memo.termsRef !== allTerms || memo.categoriesRef !== termCategoriesRef()) {
-        memo = { termsRef: allTerms, categoriesRef: termCategoriesRef(), byId: new Map() };
+    if (!memo || memo.termsRef !== allTerms || memo.categoriesRef !== termCategoriesRef() || memo.figuresRef !== indicatorsRef()) {
+        memo = { termsRef: allTerms, categoriesRef: termCategoriesRef(), figuresRef: indicatorsRef(), byId: new Map() };
         termPanelMemo.set(indexes, memo);
     }
     let pure = memo.byId.get(termId);

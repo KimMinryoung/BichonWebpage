@@ -65,6 +65,7 @@ The CLIs `scripts/commulingo-people-upsert`, `scripts/commulingo-docs`, `scripts
 - **자동링크 예외** (`registry_edit`): 인물 패스는 `blocklist` `phrase`(별칭을 품은 문자열)·`alias`(성 한 단어를 아예 인덱싱하지 않음), 용어 패스는 `term-phrase`(복합어 차단, 예: 전세계→전세)·`term-alias`(중의적 별칭 제외, 표제어는 남음)·`term-headword`(표제어까지 차단; 영문은 대소문자별로 행 필요).
 - **한 페이지에서만 틀리는 링크**는 페이지 단위로 막는다: 참고 문헌은 entry의 `noAutoLink` (`doc_put` `entryPatch`), 사건은 `event_no_auto_link_set`, 용어·인물은 `term_no_auto_link_set`·`person_no_auto_link_set`(모두 `registry_edit`, 목록 전체를 바꾸므로 `registry_get` `event_link_exceptions`·`page_link_exceptions`로 먼저 읽는다). 거꾸로 **한 사건에서만 맞는 링크**(내전 사건의 「백군」은 러시아 백군, 핀란드 사건에서는 핀란드 백군)는 `event_term_links_set`으로 그 사건에서만 용어에 잇고 전역 승인은 search로 둔다.
 - 전역으로 막을지 페이지 단위로 막을지는 `audit_run` `audit-link-fires` `[ko]`로 그 별칭의 전 코퍼스 발화를 세어 정한다: 거의 다 틀리면 전역, 거의 다 맞고 한 페이지만 틀리면 페이지 단위.
+- **바뀌는 수치는 본문에 숫자로 박지 않는다**: 정책금리처럼 시간이 지나면 바뀌는 값은 데이터 문서 `indicator/<id>`(`data/commulingo/indicators.js` 머리 주석: `{id, title{ko,en}, unit:'percent', decimals?, annual?, source, values:[{from:'YYYY-MM-DD', value, source}]}`, 오래된 순)에 날짜별로 쌓고, 용어 정의·본문과 사건 질문·요약·본문·결과·연표 본문에서는 `{{indicator:<id>}}`(값과 기준일, 예: 「연 3.00%(2026년 8월 27일 기준)」)·`{{indicator:<id>|value}}`·`{{indicator:<id>|date}}`로 부른다. 다른 값에서 계산되는 수치(전월세전환율 상한 = 기준금리 + 2%p, `kr-jeonse-conversion-cap`)는 저장하지 않고 `indicators.js`의 `DERIVED`에 함수로 둔다. 없는 id를 부르는 쓰기는 거부된다. 값이 바뀌면 `data_document_put`으로 `values`에 한 줄 덧붙인다. 현재 지표: `kr-base-rate`(한국은행 기준금리).
 - 용어 종류 범주·주 무대 지역(`commulingo_term_categories`·`commulingo_term_regions`)은 leninbot 큐레이터의 도구 스키마에도 들어간다.
 
 ## Lessons and courses

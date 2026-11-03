@@ -2,7 +2,8 @@
 // (commulingo_data_documents, migration 341): the activity catalog, the
 // Central Committee body rosters, event-map control phases, genealogy charts
 // and (since 2026-11-01) the learning courses, course/<id> (index.js,
-// course-validation.js). They used to be git-tracked files; now a correction
+// course-validation.js), and (since 2026-11-03) dated figures such as policy
+// rates, indicator/<id> (indicators.js). They used to be git-tracked files; now a correction
 // is a DB write with history and needs neither a commit nor a deploy.
 //
 // Serving is the registry snapshot pattern (memory → disk snapshot → DB,
@@ -65,6 +66,9 @@ const VALIDATORS = [
     }],
     // Learning courses (index.js); the content rules run in writeDataDocuments.
     [/^course\//, (c, key) => validateCourseShape(key, c)],
+    // Dated figures named from prose by {{indicator:<id>}} (indicators.js;
+    // required here lazily because indicators.js reads this store).
+    [/^indicator\//, (c, key) => require('./indicators').validateIndicatorDocument(c, key)],
 ];
 
 function validateDataDocument(key, content) {

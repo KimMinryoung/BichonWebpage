@@ -9,6 +9,7 @@ const { listEditorialNotes, saveEditorialNote } = require('./editorial-notes');
 const { carryLinkReviews } = require('./link-review-carry');
 const { periodColumns, periodOrNull, periodValues, PERIOD_COLUMNS } = require('./career-period');
 const { normalizeKoreanQuotes } = require('./korean-quotes');
+const { assertKnownIndicators } = require('./indicators');
 
 const columns = {
     original: 'original', category: 'category', region: 'region', parentId: 'parent_id', sortOrder: 'sort_order',
@@ -56,6 +57,8 @@ function validateFields(fields, current, action, sources) {
             for (const lang of Object.keys(value)) if (/\[P\d+/.test(value[lang])) throw badRequest(`${field}.${lang} contains source markers like [P12]; remove them`);
             // Korean prose quotes follow the NIKL rules (korean-quotes.js); the headword is not prose.
             if (field !== 'term' && typeof value.ko === 'string') value.ko = normalizeKoreanQuotes(value.ko);
+            // {{indicator:<id>}} must name a stored series or a derived figure (indicators.js).
+            assertKnownIndicators(field, value);
             merged[field] = { ...(current?.[field] || {}), ...value };
         }
         const limits = contract.limits[field];

@@ -8,6 +8,7 @@ const { renderEventMapSvg, timelineGeos, numberedGeos, isCityScale } = require('
 const { loadEventControl, phaseIndexForPeriod, presentEventControl } = require('./event-control');
 const { formatPeriod } = require('./career-period');
 const { dataDocumentsRef } = require('./data-documents');
+const { expandIndicators, indicatorsRef } = require('./indicators');
 const { eventRelationsFor } = require('./event-relations');
 const { decode: decodeEntities } = require('./html-fragments');
 const { timelineCountries, countryFilter, flagsHtml, splitSectionCountries } = require('./event-countries');
@@ -146,13 +147,14 @@ function presentEvent(raw, lang) {
         ...raw,
         title: localize(raw.title, lang),
         searchExpressions: (raw.linkExpressions || []).map(item => item.text).join(' '),
-        question: localize(raw.question, lang),
-        summary: localize(raw.summary, lang),
-        body: localize(raw.body, lang),
-        outcome: localize(raw.outcome, lang),
+        // {{indicator:…}} tokens become the figure in force (indicators.js).
+        question: expandIndicators(localize(raw.question, lang), lang),
+        summary: expandIndicators(localize(raw.summary, lang), lang),
+        body: expandIndicators(localize(raw.body, lang), lang),
+        outcome: expandIndicators(localize(raw.outcome, lang), lang),
         timeline: (raw.timeline || []).map(item => ({
             date: formatPeriod(item.period, lang), period: item.period,
-            title: localize(item.title, lang), body: localize(item.body, lang),
+            title: localize(item.title, lang), body: expandIndicators(localize(item.body, lang), lang),
             // Country tags (event-countries.js): flags beside the date, and
             // the chip row when the timeline spans more than one country.
             countries: timelineCountries(item.country),
@@ -323,12 +325,13 @@ async function buildEventPanel(eventId, lang) {
 // The list page's presented events are a pure function of the snapshot and
 // the language (the detail page has eventPanelMemo for the same reason).
 // Pagination reads these records without mutating them.
-const eventListMemo = new WeakMap(); // events snapshot -> Map(lang -> presented[])
+const eventListMemo = new WeakMap(); // events snapshot -> Map(lang -> presented[]), with the figures it used
 
 function presentedEventList(raw, lang) {
     let byLang = eventListMemo.get(raw);
-    if (!byLang) {
+    if (!byLang || byLang.figuresRef !== indicatorsRef()) {
         byLang = new Map();
+        byLang.figuresRef = indicatorsRef();
         eventListMemo.set(raw, byLang);
     }
     let presented = byLang.get(lang);

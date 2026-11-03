@@ -141,7 +141,7 @@ const tools = [
         scope: 'read',
         name: 'data_documents_list',
         description: 'Data documents (activity-catalog, politburo/secretariat/orgburo rosters, event-control/<event id>, genealogy/<chart id>, '
-            + 'course/<course id> learning courses) with revision, last writer and size; prefix narrows the keys.',
+            + 'course/<course id> learning courses, indicator/<id> dated figures such as policy rates) with revision, last writer and size; prefix narrows the keys.',
         inputSchema: object({ prefix: str('Key prefix, e.g. genealogy/, event-control/ or course/') }),
         async handler({ prefix = '' }) {
             const { readDataDocumentRows } = require('../../data/commulingo/data-documents');

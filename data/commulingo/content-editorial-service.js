@@ -12,6 +12,7 @@ const { canonicalPeriod } = require('./career-period');
 const { normalizeKoreanQuotes } = require('./korean-quotes');
 const { validGeo } = require('./event-map-svg');
 const { FLAG_NAMES } = require('./flag-icons');
+const { assertKnownIndicators } = require('./indicators');
 
 const TARGETS = ['history_event', 'history_event_section', 'history_event_person', 'office_row'];
 const RELATION_KINDS = ['leader', 'executor', 'participant', 'opponent', 'target', 'witness', 'historian'];
@@ -122,6 +123,7 @@ async function validateEvent(client, id, fields) {
     }
     for (const key of LOCALIZED_EVENT_KEYS) {
         if (fields[key] !== undefined && fields[key] !== null && !isLocalized(fields[key])) throw badRequest(`${key} must be an object {ko, en}`);
+        assertKnownIndicators(key, fields[key]);
     }
     if (fields.timeline !== undefined && fields.timeline !== null) {
         if (!Array.isArray(fields.timeline) || !fields.timeline.length) throw badRequest('timeline must be a non-empty list');
@@ -147,6 +149,7 @@ async function validateEvent(client, id, fields) {
             // the page formats it, and the map's phases match on it.
             item.period = canonicalPeriod(item.period, `timeline[${i}].period`);
             for (const key of ['title', 'body']) if (!hasBoth(item[key])) throw badRequest(`timeline[${i}].${key} needs ko and en`);
+            assertKnownIndicators(`timeline[${i}].body`, item.body);
         });
     }
     if (fields.sources !== undefined && fields.sources !== null
@@ -240,6 +243,7 @@ async function validateSection(client, id, action, fields) {
     for (const lang of action === 'delete' ? [] : ['ko', 'en']) {
         if (/(^|\n)\s*#{1,6} /.test(fields.body[lang])) throw badRequest(`body.${lang} contains a markdown heading line; one call is one section`);
     }
+    if (action !== 'delete') assertKnownIndicators('body', fields.body);
     if (fields.after !== undefined && fields.after !== null && !isLocalized(fields.after)) throw badRequest('after must be {ko, en} headings, or omitted');
     for (const lang of ['ko', 'en']) {
         const parts = splitBody(event[`body_${lang}`]);
