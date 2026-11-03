@@ -6,7 +6,10 @@
 //     source: {ko, en, url},
 //     values: [{ from: 'YYYY-MM-DD', value: 2.5, source: 'https://…' }, …] }
 //
-// values are the levels in force from each date, oldest first. A figure
+// unit is a key of UNITS. value is a number, or [low, high] for a target range
+// (a percent series only). values are the levels in force from each date,
+// oldest first; a row announced ahead of its date (next year's minimum wage)
+// stays out of prose until that date, in the Asia/Seoul calendar. A figure
 // computed from another one (the legal cap on the jeonse conversion rate is
 // the base rate plus two points) is not stored: DERIVED below computes it from
 // its series, so the two can never disagree.
@@ -30,7 +33,36 @@ const DERIVED = {
         compute: value => value + 2,
         title: { ko: '전월세전환율 법정 상한', en: 'Legal cap on the jeonse-to-monthly-rent conversion rate' },
     },
+    // 최저임금 고시의 월 환산 기준: 주 40시간, 유급 주휴 포함 월 209시간.
+    'kr-minimum-wage-monthly': {
+        from: 'kr-minimum-wage',
+        compute: value => value * 209,
+        unit: 'krw-per-month',
+        title: { ko: '최저임금 월 환산액', en: 'Minimum wage, monthly equivalent' },
+    },
 };
+
+const won = (value, decimals) => value.toLocaleString('en-US', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+const UNITS = {
+    percent: {
+        format(value, decimals, lang, annual) {
+            const number = Array.isArray(value)
+                ? `${value[0].toFixed(decimals)}${lang === 'en' ? '–' : '~'}${value[1].toFixed(decimals)}%`
+                : `${value.toFixed(decimals)}%`;
+            if (!annual) return number;
+            return lang === 'en' ? `${number} a year` : `연 ${number}`;
+        },
+    },
+    'krw-per-hour': {
+        format: (value, decimals, lang) => (lang === 'en' ? `KRW ${won(value, decimals)} an hour` : `시간당 ${won(value, decimals)}원`),
+    },
+    'krw-per-month': {
+        format: (value, decimals, lang) => (lang === 'en' ? `KRW ${won(value, decimals)} a month` : `월 ${won(value, decimals)}원`),
+    },
+};
+
+const seoulDate = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', year: 'numeric', month: '2-digit', day: '2-digit' });
+const today = () => seoulDate.format(new Date(Date.now()));
 
 function badRequest(message) {
     const err = new Error(message);
@@ -45,7 +77,7 @@ function validateIndicatorDocument(content, key) {
     if (DERIVED[id]) throw badRequest(`${key}: ${id} is computed from ${DERIVED[id].from} and is not stored`);
     if (!content.title || typeof content.title.ko !== 'string' || typeof content.title.en !== 'string'
         || !content.title.ko.trim() || !content.title.en.trim()) throw badRequest(`${key}: title needs ko and en`);
-    if (content.unit !== 'percent') throw badRequest(`${key}: unit must be 'percent'`);
+    if (!Object.hasOwn(UNITS, content.unit)) throw badRequest(`${key}: unit must be one of ${Object.keys(UNITS).join(', ')}`);
     if (content.decimals !== undefined && !(Number.isInteger(content.decimals) && content.decimals >= 0 && content.decimals <= 4)) {
         throw badRequest(`${key}: decimals must be an integer 0–4`);
     }
@@ -54,23 +86,27 @@ function validateIndicatorDocument(content, key) {
     content.values.forEach((row, index) => {
         if (!row || !DATE.test(row.from || '') || Number.isNaN(Date.parse(row.from))) throw badRequest(`${key}: values[${index}].from must be YYYY-MM-DD`);
         if (row.from <= previous) throw badRequest(`${key}: values must be in date order without repeats (${row.from})`);
-        if (!Number.isFinite(row.value)) throw badRequest(`${key}: values[${index}].value must be a number`);
+        const isRange = Array.isArray(row.value);
+        if (isRange && content.unit !== 'percent') throw badRequest(`${key}: values[${index}].value: only a percent series takes a range`);
+        if (isRange ? !(row.value.length === 2 && row.value.every(Number.isFinite) && row.value[0] < row.value[1]) : !Number.isFinite(row.value)) {
+            throw badRequest(`${key}: values[${index}].value must be a number or [low, high]`);
+        }
         if (typeof row.source !== 'string' || !/^https:\/\//.test(row.source)) throw badRequest(`${key}: values[${index}].source must be an https URL`);
         previous = row.from;
     });
 }
 
 // { value, from, decimals, annual, unit } in force on `at` (YYYY-MM-DD, default
-// the latest), or null for an unknown id or a date before the series starts.
-function resolveIndicator(id, at) {
+// today in Seoul), or null for an unknown id or a date before the series starts.
+function resolveIndicator(id, at = today()) {
     const derived = DERIVED[id];
     if (derived) {
         const base = resolveIndicator(derived.from, at);
-        return base && { ...base, value: derived.compute(base.value) };
+        return base && { ...base, value: derived.compute(base.value), unit: derived.unit || base.unit };
     }
     const series = getDataDocument(`indicator/${id}`);
     if (!series || !Array.isArray(series.values)) return null;
-    const rows = at ? series.values.filter(row => row.from <= at) : series.values;
+    const rows = series.values.filter(row => row.from <= at);
     const row = rows[rows.length - 1];
     if (!row) return null;
     return {
@@ -92,9 +128,7 @@ function formatDate(from, lang) {
 }
 
 function formatValue(resolved, lang) {
-    const number = `${resolved.value.toFixed(resolved.decimals)}%`;
-    if (!resolved.annual) return number;
-    return lang === 'en' ? `${number} a year` : `연 ${number}`;
+    return UNITS[resolved.unit].format(resolved.value, resolved.decimals, lang, resolved.annual);
 }
 
 function formatIndicator(id, lang, form) {
@@ -138,14 +172,18 @@ function assertKnownIndicators(field, value) {
     }
 }
 
-// A stable object per set of indicator revisions, for render memos: it changes
-// only when an indicator document does, not on every data-document write.
-let refMemo = { docs: null, signature: '', ref: {} };
+// A stable object per set of figures in force, for render memos: it changes when
+// an indicator document does or a dated row comes into force, not on every
+// data-document write or every day.
+let refMemo = { docs: null, day: '', signature: '', ref: {} };
 function indicatorsRef() {
     const docs = dataDocumentsRef();
-    if (refMemo.docs === docs) return refMemo.ref;
-    const signature = listDataDocuments('indicator/').map(entry => `${entry.key}@${entry.revision}`).join(',');
-    refMemo = { docs, signature, ref: signature === refMemo.signature ? refMemo.ref : {} };
+    const day = today();
+    if (refMemo.docs === docs && refMemo.day === day) return refMemo.ref;
+    const signature = listDataDocuments('indicator/')
+        .map(entry => `${entry.key}@${entry.revision}:${resolveIndicator(entry.key.slice('indicator/'.length), day)?.from ?? ''}`)
+        .join(',');
+    refMemo = { docs, day, signature, ref: signature === refMemo.signature ? refMemo.ref : {} };
     return refMemo.ref;
 }
 
