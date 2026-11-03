@@ -16,6 +16,7 @@ const { withTransaction, writeRevision } = require('./admin-tx');
 const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
 const { personLifeProblems, parseLifeYears: parsePersonLifeYearsFull } = require('./person-life-years');
 const { resolveLifeDates } = require('./person-life-dates');
+const { normalizeWikidataId } = require('./person-wikidata');
 const { assertIdKeepsLetters, nationality, normalizeNationality, requireNationalOrigin, requirePatronymicState, assertNativeScript, withNativeNameAliases, collapseSpaces, splitFullName, composeFullName, resolveNameParts, assertSingleName, assertFamilyFirstParts, assertNoPatronymicForNameOrder, assertPatronymicHasGiven, assertPatronymicSeparate, normalizeNameQualifier } = require('./people-admin-validation');
 
 // Office id -> country, for the activity officeId check.
@@ -63,6 +64,7 @@ function rowToPerson(row) {
         birthYear: row.birth_year,
         deathYear: row.death_year,
         lifeDates: { birth: row.birth_date || null, death: row.death_date || null },
+        wikidataId: row.wikidata_id || null,
         name: personNames(row),
         givenName: t(row.given_name_ko, row.given_name_en),
         familyName: t(row.family_name_ko, row.family_name_en),
@@ -93,6 +95,7 @@ async function listPeopleAdmin(options = {}) {
                 to_jsonb(commulingo_people)->'link_expressions' AS link_expressions,
                 to_jsonb(commulingo_people)->'birth_date' AS birth_date,
                 to_jsonb(commulingo_people)->'death_date' AS death_date,
+                to_jsonb(commulingo_people)->>'wikidata_id' AS wikidata_id,
                 COALESCE(to_jsonb(commulingo_people)->'activities', '[]'::jsonb) AS activities
          FROM commulingo_people
          WHERE ($1 = ''
@@ -122,6 +125,7 @@ async function getPersonAdmin(personId, options = {}) {
                 to_jsonb(commulingo_people)->'link_expressions' AS link_expressions,
                 to_jsonb(commulingo_people)->'birth_date' AS birth_date,
                 to_jsonb(commulingo_people)->'death_date' AS death_date,
+                to_jsonb(commulingo_people)->>'wikidata_id' AS wikidata_id,
                 COALESCE(to_jsonb(commulingo_people)->'activities', '[]'::jsonb) AS activities
          FROM commulingo_people
          WHERE id = $1`,
@@ -284,6 +288,16 @@ async function replaceCareer(client, personId, career) {
     }
 }
 
+// One card per Wikidata item: name the card that already holds it instead of
+// surfacing the unique-index error.
+async function uniqueWikidataId(client, value, personId) {
+    const qid = normalizeWikidataId(value);
+    if (!qid) return null;
+    const { rows } = await client.query('SELECT id FROM commulingo_people WHERE wikidata_id = $1 AND id <> $2', [qid, personId]);
+    if (rows.length) throw badRequest(`wikidataId ${qid} already belongs to ${rows[0].id}; compare identities (duplicate card?)`);
+    return qid;
+}
+
 async function createPersonAdmin(rawPayload, options = {}) {
     const payload = withNativeNameAliases(rawPayload || {});
     if (['aliasEdits', 'careerEdits', 'sceneEdits', 'expectedRevision'].some(key => payload[key] !== undefined)) {
@@ -402,6 +416,9 @@ async function createPersonAdmin(rawPayload, options = {}) {
             const dates = resolveLifeDates(payload.lifeDates, null, parsePersonLifeYearsFull(payload.years || ''));
             await client.query('UPDATE commulingo_people SET birth_date = $2, death_date = $3 WHERE id = $1', [id, dates.birth, dates.death]);
         }
+        if (payload.wikidataId !== undefined) {
+            await client.query('UPDATE commulingo_people SET wikidata_id = $2 WHERE id = $1', [id, await uniqueWikidataId(client, payload.wikidataId, id)]);
+        }
         await replacePatronymic(client, id, patronymicState);
         await replaceAliases(client, id, payload.aliases || { ko: [], en: [] });
         await replaceScenes(client, id, payload.scenes || []);
@@ -497,6 +514,7 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
             set('birth_date', dates.birth);
             set('death_date', dates.death);
         }
+        if (payload.wikidataId !== undefined) set('wikidata_id', await uniqueWikidataId(client, payload.wikidataId, id));
         // Name parts: any of name / givenName / familyName recomputes all six
         // name columns so parts and the derived full name never diverge.
         const nameChanged = payload.name !== undefined

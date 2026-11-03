@@ -40,7 +40,8 @@ The CLIs `scripts/commulingo-people-upsert`, `scripts/commulingo-docs`, `scripts
 ## People
 
 - 인물 등록·수정은 Admin 스토어 경로(`people_upsert`, `editorial_store`)로만 한다. 스토어가 제 문자 이름, 이름 분해, 부칭 분리, 국적 코드, 짧은 카드 라벨, 근거 있는 활동을 검사한다. 규칙 본체는 `data/commulingo/person-card-validation.js`. 스토어를 비켜 간 SQL이 인물 표에 닿았다면 `audit_run`으로 `audit-person-card-fields`·`audit-person-native-names`·`audit-person-patronymics`·`audit-person-name-order`를 모두 돌린다.
-- 생몰 날짜: `years`(카드·목록에 보이는 연도)와 별도로, 출처가 월까지 주면 `lifeDates {birth, death}`에 `[연, 월]`·`[연, 월, 일]`(그레고리력)을 넣는다. 연도는 `years`의 연도와 같아야 하고 근거 field는 `lifeDates`. 인물 상세 페이지에만 날짜로 보인다. 일괄 보강은 하지 않고 카드를 만들거나 고칠 때 출처에 있으면 넣는다(2026-11-01).
+- 생몰 날짜: `years`(카드·목록에 보이는 연도)와 별도로, 출처가 월까지 주면 `lifeDates {birth, death}`에 `[연, 월]`·`[연, 월, 일]`(그레고리력)을 넣는다. 연도는 `years`의 연도와 같아야 하고 근거 field는 `lifeDates`. 인물 상세 페이지에만 날짜로 보인다. 카드를 만들거나 고칠 때 출처에 있으면 넣는다. 2026-11-03 위키데이터 일괄 보강(`scripts/content/life-dates-20261103/`): 위키데이터는 구력·신력 혼동이나 다른 사람 항목이 섞이므로 연도가 카드와 다르면 넣지 말고 원문(러시아 인물은 러시아어 위키백과)으로 가린다.
+- 위키데이터 매핑: `wikidataId`(`Q…`)로 카드와 위키데이터 항목을 잇는다(한 항목은 한 카드). 위키백과 문서는 항목의 sitelinks로 찾으므로 주소를 따로 저장하지 않는다. 인물을 찾을 때는 이름 검색보다 `wikidata_id`를 먼저 쓰고, 카드를 만들거나 고칠 때 항목이 확인되면 함께 넣는다.
 - 활동(activities): 새·수정 활동은 startYear(최소 endYear)가 필요하고, 출처에 연도가 없을 때만 `yearsUnknown: true`.
 - 카드 라벨: fate는 `옥사`·`전사`·`수용소에서 사망`처럼 짧게(연도는 `years`에 있으므로 넣지 않는다, ko 24자·en 50자 초과 거부). citizenship/nationalOrigin은 나라·민족 라벨(`에스토니아 (스웨덴계)`)이지 출생지가 아니다. `cyrillic`(제 문자 이름)에는 부칭을 넣지 않는다(`patronymic`/`cyrillicPatronymic`).
 - **정당 활동**: 출처에 본인의 당원 자격이 명시되면 대표 활동과 별도로 `primary:false` 정당 활동을 넣는다. 일당제 국가에서 국가 직책만 맡은 단순 당원도 넣는다. 기능은 단순 당원이면 대표 활동과 같게, 정치국·서기 같은 당 지도부면 `political-leadership`. relation은 `membership`, 비당원이 당 직책을 맡았으면 `service`(푸틴의 통합 러시아 의장). 동조·협력·지지·가족의 당적·청년동맹만으로는 넣지 않는다. 카탈로그에 없는 정당은 카탈로그(`activity-catalog` 데이터 문서)·용어·링크 승인을 함께 등록한다. leninbot 자동 등록·보강도 같은 규칙(`classify_party_activity`)을 돈다.

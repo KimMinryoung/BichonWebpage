@@ -17,7 +17,9 @@ Migration 175는 역방향으로 겹치는 용어 관계만 정리한다. 두 �
 
 용어 category는 분류 FK로 검증하며 ID 변경은 CASCADE, 삭제는 RESTRICT다. 기존 category 인덱스를 재사용하고 term_people.person_id, term_events.event_id, term_relations.related_id에 역방향 인덱스를 추가한다. 인물 등록은 근거 있는 활동(activities)을 필수로 요구한다(2026-09-30, 구 role 필수에서 변경). 새로 넣거나 바꾼 활동은 시작 연도(최소한 끝 연도)가 있어야 한다(2026-10-23, `assertNewActivitiesDated`). 출처에 연도가 전혀 없을 때만 `yearsUnknown: true`로 예외를 명시한다. 저장된 연도 없는 활동은 그대로 다시 보내면 통과하므로, 다른 칸을 고치는 편집이 옛 데이터 때문에 실패하지 않는다. 당시 연도 없는 활동은 1,472건(인물 1,315명)이었다. 등록/upsert 경로는 그대로 유지한다.
 
-인물 생몰 날짜(migration 373, 2026-11-01): `birth_date`·`death_date`(INTEGER[], `[연, 월]` 또는 `[연, 월, 일]`, 그레고리력)는 출처가 월까지 줄 때만 둔다. 연도는 `years_label`의 정확한 연도(`birth_year`·`death_year`)와 같아야 하고(DB 제약 `commulingo_person_life_dates`, 날짜 범위는 `data/commulingo/person-life-dates.js`), 연도를 바꾸면서 남은 날짜와 어긋나면 저장을 거부한다. 편집 필드는 `lifeDates {birth, death}`(근거 field `lifeDates`, null이면 지움). 카드·목록은 연도만, 인물 상세 페이지 머리만 날짜를 보인다(`lifeDatesLabel`, 날짜 없는 쪽은 연도). 기존 카드는 일괄 보강하지 않는다.
+인물 생몰 날짜(migration 373, 2026-11-01): `birth_date`·`death_date`(INTEGER[], `[연, 월]` 또는 `[연, 월, 일]`, 그레고리력)는 출처가 월까지 줄 때만 둔다. 연도는 `years_label`의 정확한 연도(`birth_year`·`death_year`)와 같아야 하고(DB 제약 `commulingo_person_life_dates`, 날짜 범위는 `data/commulingo/person-life-dates.js`), 연도를 바꾸면서 남은 날짜와 어긋나면 저장을 거부한다. 편집 필드는 `lifeDates {birth, death}`(근거 field `lifeDates`, null이면 지움). 카드·목록은 연도만, 인물 상세 페이지 머리만 날짜를 보인다(`lifeDatesLabel`, 날짜 없는 쪽은 연도). 2026-11-03 사용자 요청으로 위키데이터에서 일괄 보강했다(연도가 카드와 같은 쪽만, 작업물 `scripts/content/life-dates-20261103/`).
+
+인물 위키데이터 항목(migration 376, 2026-11-03): `wikidata_id`(`Q…`)는 카드를 위키데이터 항목에 매핑한다. 위키백과 문서 주소는 저장하지 않고 항목의 sitelinks로 찾는다. 한 항목은 한 카드에만(부분 unique 인덱스, 스토어가 먼저 겹치는 카드를 알려 준다). 편집 필드는 `wikidataId`(null이면 지움). 화면에는 쓰지 않고, 이후 데이터 작업이 이름 대신 id로 인물을 찾는 데 쓴다.
 
 ## 조회와 저장
 

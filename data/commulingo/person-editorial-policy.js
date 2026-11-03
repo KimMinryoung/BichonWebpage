@@ -13,7 +13,7 @@ function sourcesFor(payload, options = {}) {
 function validateEditorial(payload, options = {}, section = false) {
     const allowed = new Set(section
         ? ['slug','heading','body','sortOrder','sources','evidence','reviewFlags','expectedRevision','createdAt','updatedAt','revision']
-        : ['id','group','groupId','sortOrder','initial','name','givenName','familyName','nameQualifier','patronymic','cyrillic','cyrillicPatronymic','nativeName','nativePatronymic','nativeScriptOverride','years','lifeDates','epithet','moment','bio','citizenship','nationalOrigin','origin','role','activities','fate','aliases','scenes','career','aliasEdits','careerEdits','sceneEdits','linkExpressions','sources','evidence','reviewFlags','expectedRevision']);
+        : ['id','group','groupId','sortOrder','initial','name','givenName','familyName','nameQualifier','patronymic','cyrillic','cyrillicPatronymic','nativeName','nativePatronymic','nativeScriptOverride','years','lifeDates','wikidataId','epithet','moment','bio','citizenship','nationalOrigin','origin','role','activities','fate','aliases','scenes','career','aliasEdits','careerEdits','sceneEdits','linkExpressions','sources','evidence','reviewFlags','expectedRevision']);
     for (const key of Object.keys(payload)) if (!allowed.has(key)) throw badRequest(`unknown person field ${key}`);
     if (payload.sortOrder !== undefined && !Number.isInteger(payload.sortOrder)) throw badRequest('sortOrder must be an integer');
     const sources = sourcesFor(payload, options);
