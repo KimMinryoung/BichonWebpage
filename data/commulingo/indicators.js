@@ -114,6 +114,13 @@ function expandIndicators(text, lang) {
     return text.replace(TOKEN, (match, id, form) => formatIndicator(id, lang, form) ?? '[?]');
 }
 
+// The same for a stored {ko, en} pair, for readers that keep both languages
+// (the drill decks quote a definition in both).
+function expandIndicatorPair(value) {
+    if (!value || typeof value !== 'object') return value;
+    return { ...value, ko: expandIndicators(value.ko, 'ko'), en: expandIndicators(value.en, 'en') };
+}
+
 // Ids named by tokens in a text that no series or derived figure answers.
 function unknownIndicatorIds(text) {
     if (typeof text !== 'string' || !text.includes('{{indicator:')) return [];
@@ -143,6 +150,6 @@ function indicatorsRef() {
 }
 
 module.exports = {
-    DERIVED, validateIndicatorDocument, resolveIndicator, formatIndicator, expandIndicators,
+    DERIVED, validateIndicatorDocument, resolveIndicator, formatIndicator, expandIndicators, expandIndicatorPair,
     unknownIndicatorIds, assertKnownIndicators, indicatorsRef,
 };

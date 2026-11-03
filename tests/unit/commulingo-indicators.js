@@ -66,6 +66,8 @@ require.cache[dbPath] = { id: dbPath, filename: dbPath, loaded: true, exports: {
     assert.equal(ind.expandIndicators('The cap is {{indicator:kr-jeonse-conversion-cap}}.', 'en'), 'The cap is 4.50% a year (as of 29 May 2025).');
     assert.equal(ind.expandIndicators('{{indicator:gone}}', 'ko'), '[?]');
     assert.equal(ind.expandIndicators('no tokens', 'ko'), 'no tokens');
+    assert.deepEqual(ind.expandIndicatorPair({ ko: '{{indicator:kr-base-rate|value}}', en: '{{indicator:kr-base-rate|value}}' }),
+        { ko: '연 2.50%', en: '2.50% a year' });
 
     // Writes refuse a token that names no figure.
     ind.assertKnownIndicators('body', { ko: '{{indicator:kr-base-rate}}', en: '{{indicator:kr-jeonse-conversion-cap|value}}' });

@@ -5,6 +5,7 @@ const { loadCommuLingoTerms } = require('./terms-store');
 const { loadCommuLingoPeople } = require('./people-store');
 const { loadCommuLingoHistoryEvents } = require('./history-events-store');
 const { loadTermCategories } = require('./term-categories');
+const { expandIndicatorPair } = require('./indicators');
 const { parseLifeYears } = require('./people-standard');
 const { formatBoth } = require('./career-period');
 
@@ -182,7 +183,7 @@ function buildTermQuestion(term, categoryPool, allTerms) {
             ko: '다음 설명이 가리키는 용어는 무엇인가?',
             en: 'Which term does this description define?',
         },
-        quote: term.definition,
+        quote: expandIndicatorPair(term.definition), // {{indicator:…}} → the figure (indicators.js)
         correct: termChoice(term),
         distractors: seededPick('t-' + term.id, candidates, 3).map(termChoice),
         explanation: {

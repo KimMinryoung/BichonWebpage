@@ -1,4 +1,5 @@
 const { createPublicModelCache } = require('../utils/public-model-cache');
+const { expandIndicators } = require('../data/commulingo/indicators');
 const { sanitizeBasic } = require('../utils/sanitize');
 const { truncateHtml } = require('../utils/truncate-html');
 const { onTableChange } = require('../utils/db-change-listener');
@@ -33,7 +34,8 @@ function dictionaryItem(row, lang) {
         type: row.kind,
         typeLabel: TYPE_LABELS[lang][row.kind],
         title: localized(row.title_ko, row.title_en),
-        summary: localized(row.summary_ko, row.summary_en),
+        // {{indicator:…}} tokens in a definition or summary become the figure (indicators.js).
+        summary: expandIndicators(localized(row.summary_ko, row.summary_en), lang),
         moment: row.kind === 'person' ? localized(row.moment_ko, row.moment_en) : '',
         bio: row.kind === 'person' ? localized(row.bio_ko, row.bio_en) : '',
         href: TYPE_PATHS[row.kind] + encodeURIComponent(row.id),
