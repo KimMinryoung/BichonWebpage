@@ -11,8 +11,7 @@
 // untranslated report, page or entry is left out.
 const db = require('../config/database');
 const { menuHasEnglish } = require('../config/menu-languages');
-const hubStore = require('../config/hub-store');
-const { cachedResearchList, cachedPagesList } = require('./public-lists');
+const { cachedResearchList, cachedPagesList, cachedHubCurations } = require('./public-lists');
 const { searchTerms, likePatterns, likeClause, matchSnippet } = require('../utils/text-search');
 const { searchDictionary } = require('../utils/dictionary-search');
 const { searchPeople } = require('../utils/people-search');
@@ -59,7 +58,7 @@ async function reports(lang, terms) {
 }
 
 async function curations(lang, terms) {
-    const items = (await hubStore.listHubCurations({ limit: 200, lang }))
+    const items = (await cachedHubCurations(lang))
         .filter(item => lang !== 'en' || item.has_translation);
     const text = item => [item.source_title, item.source_author, item.source_publication, item.tags.join(' '), item.selection_rationale].join(' ');
     return rankByTitle(items, terms, item => item.title, text).map(item => ({
@@ -119,10 +118,17 @@ async function events(lang, query) {
     }));
 }
 
+// In English only documents with a published original have a page to offer.
+// The filtered list is kept per presented list: searchDictionary keeps its
+// index per list object, so a fresh array every keystroke would rebuild it.
+const englishDocs = new WeakMap();
 async function docs(lang, query) {
-    // In English only documents with a published original have a page to offer.
     const all = presentedDocList(listCommuLingoDocs(), lang, await createDocRefResolver(lang)).docs;
-    const list = lang === 'en' ? all.filter(doc => doc.original) : all;
+    let list = all;
+    if (lang === 'en') {
+        list = englishDocs.get(all);
+        if (!list) englishDocs.set(all, list = all.filter(doc => doc.original));
+    }
     return searchDictionary(list, 'docs', query).map(doc => ({
         title: doc.title, href: `/commulingo/docs/${doc.id}`, meta: doc.kind, excerpt: doc.summary,
     }));
@@ -169,13 +175,14 @@ function sectionsFor(scope, lang) {
 
 // `expand` names the section shown in full; `selfPath` is the search page's
 // own path, for that link.
-// { sections: [{ key, total, items, moreHref }], failed: [key] } — a section
-// that fails is reported, not fatal, so the others still answer.
+// { query, terms, sections: [{ key, total, items, moreHref }], failed: [key] }
+// — a section that fails is reported, not fatal, so the others still answer;
+// `terms` are the words the result view marks.
 async function siteSearch({ query, lang, scope, expand = '', selfPath = '/search' }) {
     const q = typeof query === 'string' ? query.trim().slice(0, 200) : '';
     const t = searchTerms(q);
     const wanted = sectionsFor(scope, lang);
-    if (!t.length) return { query: q, sections: [], failed: [] };
+    if (!t.length) return { query: q, terms: t, sections: [], failed: [] };
     const settled = await Promise.allSettled(wanted.map(section => section.load(lang, q, t)));
     const sections = [];
     const failed = [];
@@ -198,7 +205,7 @@ async function siteSearch({ query, lang, scope, expand = '', selfPath = '/search
             moreHref: value.total > shown ? moreHref : '',
         });
     });
-    return { query: q, sections, failed };
+    return { query: q, terms: t, sections, failed };
 }
 
 module.exports = { siteSearch, sectionsFor };

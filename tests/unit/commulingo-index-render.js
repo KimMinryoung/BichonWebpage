@@ -27,7 +27,9 @@ assert.equal(fs.readFileSync('public/css/commulingo-lists.css', 'utf8'), css);
 assert.match(css, /@keyframes commu-skel-pulse/);
 assert.match(css, /\.commu-person-more/);
 assert.match(css, /\.commu-flag \{/);
-assert.match(css, /\.commu-search-hl/);
+assert.match(css, /\.commu-dict-search-status/);
+// The search field and its marks are the shared ui.css component on every page.
+assert.match(fs.readFileSync('public/css/ui.css', 'utf8'), /\.ui-search-hl \{/);
 assert.ok(css.includes('[class*="pos-"]'));
 assert.match(css, /@media \(max-width: 540px\) \{\s*\.commu-people-grid \{\s*grid-template-columns: minmax\(0, 1fr\)/);
 

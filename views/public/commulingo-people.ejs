@@ -50,15 +50,12 @@
         <%# Outside #people-browser so a swap keeps focus and caret. Without
             script it is a GET form carrying the other conditions. %>
         <form class="commu-people-search" action="/commulingo/people" method="get" role="search" data-people-search>
-            <span class="commu-people-search-icon" aria-hidden="true"><%- roleIconSvg('search') %></span>
-            <input type="search" name="q" value="<%= state.q %>" id="commu-people-search-input" class="commu-people-search-input"
-                placeholder="<%= t.searchByNameAlias %>"
-                autocomplete="off" spellcheck="false" maxlength="200"
-                aria-label="<%= t.searchPeople %>">
+            <%- include('../partials/search-field', { field: {
+                name: 'q', id: 'commu-people-search-input', value: state.q,
+                placeholder: t.searchByNameAlias, label: t.searchPeople, clearLabel: t.clearSearch } }) %>
             <% [['function', 'functionId'], ['affiliation', 'affiliationId'], ['office', 'officeId'], ['era', 'eraId'], ['position', 'positionId'], ['citizenship', 'citizenship'], ['origin', 'origin'], ['view', 'view']].forEach(function(pair) { if (state[pair[1]]) { %>
             <input type="hidden" name="<%= pair[0] %>" value="<%= state[pair[1]] %>">
             <% } }) %>
-            <button type="button" id="commu-people-search-clear" class="commu-people-search-clear" aria-label="<%= t.clearSearch %>"<%= state.q ? '' : ' hidden' %>><%- roleIconSvg('x') %></button>
         </form>
 
         <section class="commu-people-browser" id="people-browser" aria-busy="false">

@@ -33,7 +33,7 @@
 
     // Country links remain ordinary URLs, including without JavaScript.
     // Carry the live event search into a country change; pagination resets.
-    var search = document.querySelector('[data-commu-dict-search-input]');
+    var search = document.querySelector('[data-commu-dict-search] [data-search-input]');
     function updateLinks() {
         root.querySelectorAll('[data-country-link]').forEach(function(link) {
             var url = new URL(link.href);
@@ -43,7 +43,7 @@
         });
     }
     search.addEventListener('input', updateLinks);
-    document.querySelector('[data-commu-dict-search-clear]').addEventListener('click', updateLinks);
+    document.querySelector('[data-commu-dict-search] [data-search-clear]').addEventListener('click', updateLinks);
     search.addEventListener('keydown', function(event) { if (event.key === 'Escape') updateLinks(); });
     updateLinks();
 })();

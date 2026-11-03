@@ -94,10 +94,10 @@ async function request(query, lang = 'ko', route = handler) {
     assert.equal(yearResults.body.total, 4);
     assert.equal(yearResults.body.highlightQuery, '');
     assert(yearResults.body.html.includes('/fr"'));
-    assert.equal((yearResults.body.html.match(/<mark class="commu-search-hl">/g) || []).length, 4);
-    assert(yearResults.body.html.includes('<mark class="commu-search-hl">1789–1799</mark>'));
+    assert.equal((yearResults.body.html.match(/<mark class="ui-search-hl">/g) || []).length, 4);
+    assert(yearResults.body.html.includes('<mark class="ui-search-hl">1789–1799</mark>'));
     const rangeResults = await request({ q: '1798–1799' }, 'ko', eventRoute);
-    assert.equal((rangeResults.body.html.match(/<mark class="commu-search-hl">/g) || []).length, 4);
+    assert.equal((rangeResults.body.html.match(/<mark class="ui-search-hl">/g) || []).length, 4);
     const keywordResults = await request({ q: '프랑스' }, 'ko', eventRoute);
     assert(!keywordResults.body.html.includes('<mark'));
     const unfilteredResults = await request({}, 'ko', eventRoute);
@@ -106,7 +106,7 @@ async function request(query, lang = 'ko', route = handler) {
     assert.equal(englishResults.body.total, 1);
     assert.equal(englishResults.body.highlightQuery, 'French');
     assert(englishResults.body.html.includes('/en/commulingo/events/fr"'));
-    assert(englishResults.body.html.includes('<mark class="commu-search-hl">1789–1799</mark>'));
+    assert(englishResults.body.html.includes('<mark class="ui-search-hl">1789–1799</mark>'));
     const noYears = await request({ q: '1700' }, 'ko', eventRoute);
     assert.equal(noYears.body.total, 0);
     console.log('dictionary search: ranking, aliases, filters, refresh, pagination, English links, validation passed');

@@ -4,10 +4,10 @@
     var en = document.documentElement.lang === 'en';
 
     function initialize(root) {
-        var input = root.querySelector('[data-commu-dict-search-input]');
-        var clear = root.querySelector('[data-commu-dict-search-clear]');
+        var input = root.querySelector('[data-search-input]');
+        var clear = root.querySelector('[data-search-clear]');
         var status = root.querySelector('[data-commu-dict-search-status]');
-        var count = root.querySelector('[data-commu-dict-search-count]');
+        var count = root.querySelector('[data-search-count]');
         var selector = root.getAttribute('data-target');
         var list = document.querySelector(selector);
         if (!list || !input || !clear || !status) return;
@@ -70,10 +70,22 @@
             return { card: card, text: card.getAttribute('data-search').toLocaleLowerCase() };
         });
 
+        // An empty result for typed words offers the integrated search, which
+        // looks in every list (partials/site-search-form) for the same words.
+        var siteSearch = root.getAttribute('data-site-search');
+        var siteSearchLabel = root.getAttribute('data-site-search-label');
         function showCount(total, filtered) {
             var countText = total ? total + (en ? ' ' : '') + root.getAttribute(total === 1 ? 'data-result-one' : 'data-result-many')
                 : root.getAttribute('data-result-empty');
+            var query = input.value.trim();
             status.textContent = countText;
+            if (!total && query && siteSearch && siteSearchLabel) {
+                var elsewhere = document.createElement('a');
+                elsewhere.className = 'commu-dict-search-elsewhere';
+                elsewhere.href = siteSearch + '?q=' + encodeURIComponent(query);
+                elsewhere.textContent = siteSearchLabel.replace('{q}', function() { return query; });
+                status.append(' ', elsewhere);
+            }
             status.classList.toggle('is-empty', total === 0);
             status.hidden = !filtered;
             if (count) { count.textContent = total ? countText : ''; count.hidden = !filtered || !total; }
@@ -168,7 +180,7 @@
                     });
             }, delay || 0);
         }
-        input.addEventListener('input', function() { page = 1; run(180); });
+        input.addEventListener('input', function() { page = 1; run(search.DELAY); });
         function reset() { input.value = ''; page = 1; run(); }
         clear.addEventListener('click', function() { reset(); input.focus(); });
         retry.addEventListener('click', function() { run(); });

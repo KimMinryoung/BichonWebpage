@@ -1,16 +1,21 @@
+<%
+/* The filter box over a dictionary or library list
+   (public/js/commulingo-dict-search.js): the shared search field with a
+   match count, and a status line that names an empty result and offers the
+   integrated search for the same words. Args: target, placeholder, ariaLabel,
+   clearLabel, resultOne, resultMany, emptyLabel, searchValue (optional),
+   siteSearch (optional: '/search' or '/commulingo/search'; the CommuLingo
+   lists default to the latter). */
+var dictSearchValue = typeof searchValue === 'string' ? searchValue : '';
+var dictSiteSearch = typeof siteSearch === 'string' ? siteSearch : '/commulingo/search';
+%>
 <div class="commu-dict-search" data-commu-dict-search data-target="<%= target %>"
     data-result-one="<%= resultOne %>" data-result-many="<%= resultMany %>"
-    data-result-empty="<%= emptyLabel %>">
-    <div class="commu-people-search">
-        <span class="commu-people-search-icon" aria-hidden="true"><%- roleIconSvg('search') %></span>
-        <input type="search" class="commu-people-search-input" data-commu-dict-search-input
-            value="<%= typeof searchValue === 'string' ? searchValue : '' %>"
-            placeholder="<%= placeholder %>" autocomplete="off" spellcheck="false"
-            aria-label="<%= ariaLabel %>">
-        <span class="commu-dict-search-count" data-commu-dict-search-count aria-hidden="true" hidden></span>
-        <button type="button" class="commu-people-search-clear" data-commu-dict-search-clear
-            aria-label="<%= clearLabel %>" hidden><%- roleIconSvg('x') %></button>
-    </div>
+    data-result-empty="<%= emptyLabel %>"
+    data-site-search="<%= typeof languageUrl === 'function' && typeof urlLanguage === 'string' ? languageUrl(dictSiteSearch, urlLanguage) : dictSiteSearch %>"
+    data-site-search-label="<%= strings.search.elsewhere %>">
+    <%- include('search-field', { field: {
+        value: dictSearchValue, placeholder: placeholder, label: ariaLabel, clearLabel: clearLabel, count: true } }) %>
     <p class="commu-dict-search-status" data-commu-dict-search-status
         role="status" aria-live="polite" hidden></p>
 </div>

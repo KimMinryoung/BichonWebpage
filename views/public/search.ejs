@@ -1,11 +1,12 @@
 <%
 /* The integrated search page (routes/search.js): one view for both scopes.
    CommuLingo's scope sits in its shell under the crumb bar; the site scope in
-   the plain container. The form is a plain GET so it works without script. */
+   the plain container. The form is a plain GET so it works without script;
+   with it the results below follow the box as one types (data-site-search
+   "page", public/js/site-search-suggest.js), the scope tabs carrying the query. */
 var s = strings.search;
 var en = lang === 'en';
 var inCommuLingo = scope === 'commulingo';
-var action = scopes[scope].path;
 var q = result.query;
 var scopeHref = function(key) { return scopes[key].path + (q ? '?q=' + encodeURIComponent(q) : ''); };
 %>
@@ -21,18 +22,17 @@ var scopeHref = function(key) { return scopes[key].path + (q ? '?q=' + encodeURI
         <h1 class="visually-hidden"><%= s.title %></h1>
         <nav class="ui-tabs site-search-scopes" aria-label="<%= s.scopeLabel %>">
             <% [['all', s.siteScope], ['commulingo', s.commuLingoScope]].forEach(function(item) { %>
-            <a class="ui-tab<%= scope === item[0] ? ' is-active' : '' %>" href="<%= scopeHref(item[0]) %>"<% if (scope === item[0]) { %> aria-current="page"<% } %>><%= item[1] %></a>
+            <a class="ui-tab<%= scope === item[0] ? ' is-active' : '' %>" href="<%= scopeHref(item[0]) %>" data-site-search-scope<% if (scope === item[0]) { %> aria-current="page"<% } %>><%= item[1] %></a>
             <% }) %>
         </nav>
-        <form class="site-search-form" action="<%= action %>" method="get" role="search">
-            <%- include('../partials/site-search-box', { value: q, placeholder: inCommuLingo ? s.placeholderCommuLingo : s.placeholderSite, autofocus: !q }) %>
-        </form>
-
-        <% if (!q) { %>
-        <p class="site-search-status"><%= s.prompt %></p>
-        <% } else { %>
-            <%- include('../partials/site-search-results', { result: result }) %>
-        <% } %>
+        <%- include('../partials/site-search-form', { searchForm: { scope: scope, mode: 'page', value: q, autofocus: !q } }) %>
+        <div class="site-search-results" id="site-search-results" data-prompt="<%= s.prompt %>" data-title="<%= s.title %> | <%= strings.siteName %>">
+            <% if (!q) { %>
+            <p class="site-search-status"><%= s.prompt %></p>
+            <% } else { %>
+            <%- include('../partials/site-search-results', { result: result, anchors: true }) %>
+            <% } %>
+        </div>
     </main>
     <%- include('../partials/footer') %>
 </body>

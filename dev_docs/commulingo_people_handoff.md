@@ -357,9 +357,10 @@ Two UX features on the dictionary:
   match a higher one). Matched cards are physically moved into the result grids
   and moved back on clear; the browse groups + office index + standalone head
   hide while searching. Matched substrings are wrapped in
-  `<mark class="commu-search-hl">` (unwrapped on clear). Enter jumps to the
-  first result, Esc clears. Purely client-side, no new route. Styles:
-  `.commu-people-search*` / `.commu-people-result*` / `.commu-search-hl` in
+  `<mark class="ui-search-hl">` (unwrapped on clear). Enter jumps to the
+  first result, Esc clears. Purely client-side, no new route. Styles: the
+  field and marks are the shared `.ui-search*` in `public/css/ui.css`
+  (`partials/search-field`, since 2026-11-03), `.commu-people-result*` in
   `public/css/commulingo.css` (square corners, per the site's angular-container
   convention — no rounded search box). The hero `<h1>` (`.commu-people-title`)
   is kept to one line by a small auto-fit script that shrinks its font-size to

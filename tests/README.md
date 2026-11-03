@@ -7,7 +7,7 @@
 | 위치 | 내용 | 실행 |
 |---|---|---|
 | `tests/unit/` | DB·브라우저 없이 도는 정책·렌더링·검증 테스트 | 항상 |
-| `tests/browser/` | Playwright 브라우저 테스트(게임 UI, 채팅, 검색 대화상자, 공산링고 PWA, 실사용 계측, 검색·계측 화면, 접근성 axe) | `--browser` |
+| `tests/browser/` | Playwright 브라우저 테스트(게임 UI, 채팅, 통합 검색창, 공산링고 PWA, 실사용 계측, 검색·계측 화면, 접근성 axe) | `--browser` |
 | `tests/db/` | 격리 DB 또는 실제 DB에 붙는 통합 테스트(쓰기는 롤백) | `--db` |
 | `tests/lib/` | 테스트 전용 헬퍼(요구 조건 판정, Chromium 실행, 게임 서버, 인물 픽스처) | — |
 | `tests/fixtures/` | 고정 시드와 골든 데이터. 앱도 DB·스냅샷이 없을 때 시드를 읽는다 | — |

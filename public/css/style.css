@@ -1113,116 +1113,9 @@ a.home-card:hover::after {
 }
 
 /* ===== Library list search =====
-   The CommuLingo dictionary search box (views/partials/commulingo-dict-search.ejs)
-   over /reports, /hub, /ai-diary and /posts; the rules mirror commulingo-lists.css. */
-.commu-dict-search .commu-role-icon {
-    display: block;
-    fill: none;
-    stroke: currentColor;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 1.9;
-}
-
-.commu-people-search {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.commu-people-search-icon {
-    position: absolute;
-    left: 0.85rem;
-    color: var(--text-muted);
-    pointer-events: none;
-    transition: color 0.15s ease;
-}
-
-.commu-people-search-icon .commu-role-icon {
-    width: 18px;
-    height: 18px;
-}
-
-.commu-people-search:focus-within .commu-people-search-icon {
-    color: var(--link);
-}
-
-.commu-people-search-input {
-    flex: 1 1 auto;
-    width: 100%;
-    padding: 0.72rem 2.4rem 0.72rem 2.5rem;
-    font: inherit;
-    color: var(--text-primary);
-    background: var(--search-bg);
-    border: 1px solid var(--border);
-    border-radius: 0;
-    outline: none;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-
-.commu-people-search-input::placeholder { color: var(--text-muted); opacity: 1; }
-
-.commu-people-search-input:hover {
-    border-color: color-mix(in srgb, var(--text-muted) 55%, var(--border));
-}
-
-.commu-people-search-input:focus {
-    border-color: var(--link);
-    box-shadow: inset 0 -2px 0 0 var(--link);
-}
-
-.commu-people-search-input::-webkit-search-cancel-button { display: none; }
-
-.commu-people-search-clear {
-    position: absolute;
-    right: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.9rem;
-    height: 1.9rem;
-    padding: 0;
-    color: var(--text-muted);
-    background: none;
-    border: none;
-    border-radius: 0;
-    cursor: pointer;
-}
-
-.commu-people-search-clear .commu-role-icon {
-    width: 15px;
-    height: 15px;
-}
-
-.commu-people-search-clear:hover {
-    color: var(--text-primary);
-    background: color-mix(in srgb, var(--link) 16%, transparent);
-}
-
-.commu-people-search-clear[hidden],
-.commu-dict-search-count[hidden] {
-    display: none;
-}
-
-.commu-search-hl {
-    background: color-mix(in srgb, var(--link) 34%, transparent);
-    color: inherit;
-    padding: 0 1px;
-    border-radius: 0;
-}
-
-.commu-dict-search-count {
-    position: absolute;
-    right: 2.6rem;
-    padding-left: 8px;
-    color: var(--text-muted);
-    font-size: 0.82rem;
-    white-space: nowrap;
-    pointer-events: none;
-    background: var(--search-bg);
-}
-
+   The list filter (views/partials/commulingo-dict-search.ejs) over /reports,
+   /hub, /ai-diary and /posts. Its field is the shared ui.css .ui-search; the
+   status rules mirror commulingo-lists.css. */
 .commu-dict-search-status {
     position: absolute;
     width: 1px;
@@ -1244,6 +1137,23 @@ a.home-card:hover::after {
     font-size: 0.95rem;
     border: 1px dashed var(--border);
     border-top: none;
+}
+
+/* The empty result's way out: the integrated search for the same words. */
+.commu-dict-search-elsewhere {
+    display: block;
+    width: fit-content;
+    margin-top: var(--space-2);
+    color: var(--text-primary);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+}
+
+.commu-dict-search-elsewhere:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+    border-bottom-color: var(--text-primary);
 }
 
 /* ===== Post List & Cards ===== */
@@ -2744,50 +2654,22 @@ footer .footer-tagline {
     padding-top: 0;
 }
 
+/* The integrated search form (partials/site-search-form): the shared field
+   (ui.css .ui-search) and a green submit in one row. */
 .site-search-form {
+    position: relative;
     margin: 0;
 }
 
+.site-search-bar,
 .site-search-box {
-    position: relative;
     display: flex;
     align-items: stretch;
-}
-
-.site-search-icon {
-    position: absolute;
-    top: 50%;
-    left: 0.85rem;
-    width: 18px;
-    height: 18px;
-    color: var(--text-muted);
-    transform: translateY(-50%);
-    pointer-events: none;
-}
-
-.site-search-box:focus-within .site-search-icon {
-    color: var(--link);
-}
-
-.site-search-input {
-    flex: 1 1 auto;
     min-width: 0;
-    min-height: var(--control-height);
-    box-sizing: border-box;
-    padding: 0.6rem 0.75rem 0.6rem 2.5rem;
-    font: inherit;
-    color: var(--text-primary);
-    background: var(--search-bg);
-    border: 1px solid var(--border);
-    border-radius: 0;
-    outline: none;
 }
 
-.site-search-input::placeholder { color: var(--text-muted); opacity: 1; }
-
-.site-search-input:focus {
-    border-color: var(--link);
-    box-shadow: inset 0 -2px 0 0 var(--link);
+.site-search-box {
+    flex: 1 1 auto;
 }
 
 .site-search-submit {
@@ -2807,7 +2689,12 @@ footer .footer-tagline {
     border-color: var(--btn-primary-hover);
 }
 
-.site-search-scopes + .site-search-form .site-search-input,
+.site-search-submit:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -5px;
+}
+
+.site-search-scopes + .site-search-form .ui-search-input,
 .site-search-scopes + .site-search-form .site-search-submit {
     border-top: 0;
 }
@@ -2816,6 +2703,12 @@ footer .footer-tagline {
     margin: var(--space-6) 0;
     padding-inline: var(--content-inset);
     color: var(--text-muted);
+}
+
+/* While the search page fetches what one typed, its results fade a step. */
+.site-search-results[aria-busy] {
+    opacity: 0.6;
+    transition: opacity var(--duration-fast) var(--ease-standard);
 }
 
 .site-search-group {
@@ -2892,6 +2785,12 @@ a.site-search-head:focus-visible {
     line-height: var(--leading-snug);
 }
 
+.site-search-sub {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+}
+
 .site-search-meta {
     font-size: var(--text-sm);
     color: var(--text-muted);
@@ -2908,14 +2807,199 @@ a.site-search-head:focus-visible {
     -webkit-line-clamp: 2;
 }
 
-/* The toolbar search dialog (partials/nav, site-search-suggest.js): the
-   search box on top, the result groups scrolling under it. */
+/* Instant results (public/js/site-search-suggest.js): the toolbar dialog and
+   the dropdown under a front page's box share one compact panel. Section
+   names are small labels that stay on top while their rows scroll; a row is
+   its title over one muted line (meta · excerpt); the arrow keys mark the row
+   they reach with the hover background and a link-coloured edge. */
+.site-search-panel {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    color: var(--text-primary);
+    background: var(--bg-surface);
+}
+
+.site-search-panel[hidden] {
+    display: none;
+}
+
+.site-search-panel-results {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.site-search-panel-results[aria-busy] > * {
+    opacity: 0.6;
+}
+
+.site-search-panel .site-search-group {
+    margin: 0;
+    border: 0;
+}
+
+.site-search-panel .site-search-group + .site-search-group {
+    border-top: 1px solid var(--border);
+}
+
+.site-search-panel .site-search-head {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    align-items: center;
+    padding: var(--space-2) var(--space-4);
+    background: var(--bg-canvas);
+    border-bottom: 0;
+}
+
+.site-search-panel .site-search-head h2 {
+    font-size: var(--text-sm);
+    font-weight: var(--weight-heading);
+    color: var(--text-secondary);
+}
+
+.site-search-panel .site-search-more,
+.site-search-panel .site-search-count {
+    font-size: var(--text-xs);
+}
+
+.site-search-panel .site-search-list li + li {
+    border-top: 0;
+}
+
+.site-search-panel .site-search-row {
+    gap: 2px;
+    padding: var(--space-2) var(--space-4);
+}
+
+.site-search-panel .site-search-row:focus-visible {
+    outline: none;
+    background: var(--bg-surface-hover);
+    box-shadow: inset 3px 0 0 var(--link);
+}
+
+.site-search-panel .site-search-title {
+    overflow: hidden;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.site-search-panel .site-search-sub {
+    display: block;
+    overflow: hidden;
+    font-size: var(--text-sm);
+    color: var(--text-muted);
+    line-height: var(--leading-snug);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.site-search-panel .site-search-meta,
+.site-search-panel .site-search-excerpt {
+    display: inline;
+    font-size: inherit;
+    color: inherit;
+    line-height: inherit;
+    -webkit-line-clamp: unset;
+}
+
+.site-search-panel .site-search-meta + .site-search-excerpt::before {
+    content: "· ";
+}
+
+.site-search-panel .site-search-status {
+    margin: 0;
+    padding: var(--space-4);
+}
+
+.site-search-panel-foot {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    background: var(--bg-canvas);
+    border-top: 1px solid var(--border);
+}
+
+.site-search-all {
+    flex: 1 1 auto;
+    min-width: 0;
+    padding: var(--space-3) var(--space-4);
+    overflow: hidden;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--text-primary);
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.site-search-all:hover,
+.site-search-all:focus-visible {
+    color: var(--text-primary);
+    background: var(--bg-surface-hover);
+    text-decoration: none;
+}
+
+.site-search-all:focus-visible {
+    outline: none;
+    box-shadow: inset 3px 0 0 var(--link);
+}
+
+.site-search-keys {
+    flex: 0 0 auto;
+    padding-right: var(--space-4);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.site-search-keys kbd,
+.site-search-esc {
+    display: inline-block;
+    min-width: 1.4em;
+    padding: 0 4px;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    text-align: center;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-bottom-width: 2px;
+    border-radius: 0;
+}
+
+.site-search-keys kbd + kbd {
+    margin-left: 2px;
+}
+
+/* A dropdown under the box (the home and CommuLingo front pages), drawn like
+   the dictionary filter panels. */
+.site-search-form--inline .site-search-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    z-index: 30;
+    max-height: min(70vh, 34rem);
+    border: 1px solid var(--link);
+    box-shadow: 0 12px 24px color-mix(in srgb, #000 35%, transparent);
+}
+
+/* The toolbar dialog: the field across the top with an Esc key to close it,
+   results under it, and the full-results link at the foot. Enter or that
+   link opens the search page, so no submit button. */
 .site-search-dialog {
     position: fixed;
-    inset: var(--space-6) 0 auto;
-    width: min(640px, calc(100vw - 2 * var(--space-4)));
+    inset: calc(var(--bar-height) + var(--space-2)) 0 auto;
+    width: min(720px, calc(100vw - 2 * var(--space-4)));
     max-width: none;
-    max-height: calc(100dvh - 2 * var(--space-6));
+    max-height: calc(100dvh - var(--bar-height) - 2 * var(--space-4));
     margin: 0 auto;
     padding: 0;
     color: var(--text-primary);
@@ -2931,36 +3015,47 @@ a.site-search-head:focus-visible {
 }
 
 .site-search-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.55);
 }
 
 .site-search-dialog .site-search-form {
     display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.site-search-dialog .site-search-bar {
     flex: 0 0 auto;
 }
 
-.site-search-dialog .site-search-box {
-    flex: 1 1 auto;
-    min-width: 0;
+.site-search-dialog .site-search-submit {
+    display: none;
 }
 
-.site-search-dialog .site-search-input,
-.site-search-dialog .site-search-submit {
-    border-top: 0;
-    border-left: 0;
+.site-search-dialog .ui-search-input {
+    min-height: 3.25rem;
+    font-size: var(--text-md);
+    border-width: 0 0 1px;
+}
+
+.site-search-dialog .site-search-panel {
+    flex: 1 1 auto;
 }
 
 .site-search-dialog-close {
+    display: flex;
     flex: 0 0 auto;
+    align-items: center;
     padding: 0 var(--space-4);
+    font: inherit;
+    font-size: var(--text-sm);
     color: var(--text-muted);
-    background: transparent;
+    white-space: nowrap;
+    background: var(--search-bg);
     border: 0;
     border-bottom: 1px solid var(--border);
     border-radius: 0;
-    font: inherit;
-    font-size: var(--text-sm);
-    white-space: nowrap;
     cursor: pointer;
 }
 
@@ -2969,34 +3064,41 @@ a.site-search-head:focus-visible {
     color: var(--text-primary);
 }
 
+.site-search-dialog-close:hover .site-search-esc {
+    color: var(--text-primary);
+    border-color: var(--text-muted);
+}
+
 .site-search-dialog-close:focus-visible {
     outline: 2px solid var(--link);
     outline-offset: -2px;
 }
 
-.site-search-dialog-results {
-    flex: 1 1 auto;
-    min-height: 0;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-}
-
-.site-search-dialog-results:empty {
+.site-search-close-text {
     display: none;
 }
 
-.site-search-dialog-results .site-search-group {
-    margin: 0;
-    border: 0;
-    border-bottom: 1px solid var(--border);
+/* Touch screens have no Escape key or arrows to hint at: the close button
+   says so in words. A narrow screen gives the dialog its full width from the
+   top edge, as tall as its results. */
+@media (hover: none), (max-width: 640px) {
+    .site-search-keys,
+    .site-search-esc {
+        display: none;
+    }
+
+    .site-search-close-text {
+        display: inline;
+    }
 }
 
-.site-search-dialog-results .site-search-group:last-child {
-    border-bottom: 0;
-}
-
-.site-search-dialog-results .site-search-status {
-    margin: var(--space-4) 0;
+@media (max-width: 640px) {
+    .site-search-dialog {
+        inset: 0 0 auto;
+        width: 100%;
+        max-height: 100dvh;
+        border-width: 0 0 1px;
+    }
 }
 
 /* Admin dashboard: real-user vitals (routes/admin.js loadWebVitals). The
