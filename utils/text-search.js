@@ -57,4 +57,21 @@ function matchSnippet(value, terms, length = 200) {
     return `${start > 0 ? '…' : ''}${text.slice(start, end)}${end < text.length ? '…' : ''}`;
 }
 
-module.exports = { searchTerms, likePatterns, likeClause, plainText, matchSnippet };
+const HTML_ESCAPES = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+const escapeHtml = value => value.replace(/[&<>"']/g, char => HTML_ESCAPES[char]);
+
+// Escaped HTML of `value` with each search word marked, the way
+// public/js/commulingo-search-utils.js marks the dictionary lists: longer
+// words first, case-insensitive. `terms` come from searchTerms().
+function highlightTerms(value, terms) {
+    const text = String(value == null ? '' : value);
+    if (!text || !terms || !terms.length) return escapeHtml(text);
+    const words = [...terms].sort((a, b) => b.length - a.length)
+        .map(term => term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    // split() with one capture group puts the matches at the odd indexes.
+    return text.split(new RegExp(`(${words.join('|')})`, 'giu'))
+        .map((part, i) => (i % 2 ? `<mark class="ui-search-hl">${escapeHtml(part)}</mark>` : escapeHtml(part)))
+        .join('');
+}
+
+module.exports = { searchTerms, likePatterns, likeClause, plainText, matchSnippet, highlightTerms };

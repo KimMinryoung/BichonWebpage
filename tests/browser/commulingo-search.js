@@ -16,7 +16,7 @@ const assert = require('node:assert/strict');
             if (r.isNavigationRequest() && /\/commulingo\/people\?[^#]*&/.test(r.url())) comboNavigations.push(r.url());
         });
         const origin = (process.env.BASE_URL || 'http://127.0.0.1:3001').replace(/\/$/, '');
-        const input = page.locator('[data-commu-dict-search-input]');
+        const input = page.locator('[data-commu-dict-search] [data-search-input]');
         async function goto(path) { await page.goto(origin + path, { waitUntil: 'networkidle' }); }
         async function search(kind, query) {
             const pending = page.waitForResponse(r => r.url().includes('/' + kind + '/search?') && r.status() === 200);

@@ -19,9 +19,7 @@
             <div class="commulingo-hero-dict">
                 <span class="commulingo-hero-dict-label"><%= strings.commuLingo.dictSectionTitle %></span>
                 <%- include('../partials/commulingo-dict-nav', { active: null }) %>
-                <form class="site-search-form" action="/commulingo/search" method="get" role="search">
-                    <%- include('../partials/site-search-box', { value: '', placeholder: strings.search.placeholderCommuLingo }) %>
-                </form>
+                <%- include('../partials/site-search-form', { searchForm: { scope: 'commulingo', mode: 'inline' } }) %>
             </div>
         </header>
 

@@ -7,6 +7,7 @@ const { setNoStore } = require('../utils/http');
 const errorPage = require('../utils/error-page');
 const { renderAppView } = require('../utils/render-app-view');
 const { localizeHtmlLinks } = require('../utils/seo');
+const { highlightTerms } = require('../utils/text-search');
 const { setShortPublicCache } = require('../data/commulingo/page-helpers');
 const strings = require('../config/strings');
 
@@ -34,6 +35,7 @@ function searchPage(scope) {
             scopes: SCOPES,
             result,
             searchValue: result.query,
+            highlightTerms,
             pageTitle: result.query
                 ? `${result.query} — ${res.locals.strings.search.title}`
                 : res.locals.strings.search.title,
@@ -44,8 +46,11 @@ function searchPage(scope) {
     };
 }
 
-// GET <scope path>/suggest?q=: the same result groups as a fragment, for the
-// toolbar search dialog (public/js/site-search-suggest.js) as the reader types.
+// GET <scope path>/suggest?q=: the same result groups as a fragment, for every
+// search box as the reader types (public/js/site-search-suggest.js: the toolbar
+// dialog, the front pages' dropdowns, the search page itself). `count` is the
+// sum of the sections' totals, for the screen-reader status; `failed` marks an
+// answer missing a section, which the page does not keep.
 function suggestRoute(scope) {
     return async (req, res) => {
         const query = req.query.q === undefined ? '' : req.query.q;
@@ -54,11 +59,12 @@ function suggestRoute(scope) {
         try {
             const result = await siteSearch({ query, lang, scope, selfPath: SCOPES[scope].path });
             const html = result.query
-                ? await renderAppView(req, 'partials/site-search-results', { strings: strings[lang], result, idPrefix: 'suggest-' })
+                ? await renderAppView(req, 'partials/site-search-results', { strings: strings[lang], result, highlightTerms })
                 : '';
             if (result.failed.length) setNoStore(res);
             else setShortPublicCache(res);
-            res.json({ query: result.query, html: localizeHtmlLinks(html, lang) });
+            const count = result.sections.reduce((sum, section) => sum + section.total, 0);
+            res.json({ query: result.query, count, failed: result.failed.length > 0, html: localizeHtmlLinks(html, lang) });
         } catch (err) {
             console.error('site search suggest:', err);
             res.status(500).json({ error: 'Failed to search' });

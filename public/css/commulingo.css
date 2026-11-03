@@ -2137,114 +2137,14 @@ button.commu-dc-option:hover { border-color: var(--link); }
     display: none !important;
 }
 
-.commu-people-search {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 9px 0 0;
-}
-
-.commu-dict-shell .commu-people-search { margin-top: 0; }
-
-.commu-people-search-icon {
-    position: absolute;
-    left: 0.85rem;
-    color: var(--text-muted);
-    pointer-events: none;
-    transition: color 0.15s ease;
-}
-
-.commu-people-search-icon .commu-role-icon {
-    width: 18px;
-    height: 18px;
-}
-
-/* The magnifier answers the caret: focus anywhere in the field and it takes
-   the link color with the border. */
-.commu-people-search:focus-within .commu-people-search-icon {
-    color: var(--link);
-}
-
-.commu-people-search-input {
-    flex: 1 1 auto;
-    width: 100%;
-    padding: 0.72rem 2.4rem 0.72rem 2.5rem;
-    font: inherit;
-    color: var(--text-primary);
-    background: var(--search-bg);
-    border: 1px solid var(--border);
-    border-radius: 0;
-    outline: none;
-    transition: border-color 0.15s ease, box-shadow 0.15s ease;
-}
-
-.commu-people-search-input::placeholder { color: var(--text-muted); opacity: 1; }
-
-.commu-people-search-input:hover {
-    border-color: color-mix(in srgb, var(--text-muted) 55%, var(--border));
-}
-
-.commu-people-search-input:focus {
-    border-color: var(--link);
-    box-shadow: inset 0 -2px 0 0 var(--link);
-}
-
-.commu-people-search-input::-webkit-search-cancel-button { display: none; }
-
-.commu-people-search-clear {
-    position: absolute;
-    right: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.9rem;
-    height: 1.9rem;
-    padding: 0;
-    color: var(--text-muted);
-    background: none;
-    border: none;
-    border-radius: 0;
-    cursor: pointer;
-}
-
-.commu-people-search-clear .commu-role-icon {
-    width: 15px;
-    height: 15px;
-}
-
-.commu-people-search-clear:hover {
-    color: var(--text-primary);
-    background: color-mix(in srgb, var(--link) 16%, transparent);
-}
-
-/* Matched-term highlight inside result cards */
-.commu-search-hl {
-    background: color-mix(in srgb, var(--link) 34%, transparent);
-    color: inherit;
-    padding: 0 1px;
-    border-radius: 0;
-}
-
+/* The search field itself is the shared ui.css .ui-search
+   (partials/search-field), matched words its .ui-search-hl. */
 .commu-people-result-empty {
     margin: 8px 0 0;
     padding: 18px 12px;
     color: var(--text-muted);
     font-size: 0.95rem;
     border: 1px dashed var(--border);
-}
-
-/* The visible match count sits inside the search box like a browser find
-   bar, left of the clear button. */
-.commu-dict-search-count {
-    position: absolute;
-    right: 2.6rem;
-    padding-left: 8px;
-    color: var(--text-muted);
-    font-size: 0.82rem;
-    white-space: nowrap;
-    pointer-events: none;
-    background: var(--search-bg);
 }
 
 /* Announces matches to screen readers; only the zero-result box is drawn. */
@@ -2269,6 +2169,23 @@ button.commu-dc-option:hover { border-color: var(--link); }
     color: var(--text-muted);
     font-size: 0.95rem;
     border: 1px dashed var(--border);
+}
+
+/* The empty result's way out: the integrated search for the same words. */
+.commu-dict-search-elsewhere {
+    display: block;
+    width: fit-content;
+    margin-top: var(--space-2);
+    color: var(--text-primary);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+}
+
+.commu-dict-search-elsewhere:hover {
+    color: var(--text-primary);
+    text-decoration: none;
+    border-bottom-color: var(--text-primary);
 }
 
 .commu-event-card[hidden] {
@@ -3244,7 +3161,6 @@ a.commu-person-position:focus-visible {
    political borders. Historical states are overlays composed from present
    successor territories and always carry an approximation note. */
 .commu-world-map-page { gap: 0; }
-.commu-world-map-page .commu-people-search { margin-top: 0; }
 .commu-world-map-head { display: flex; align-items: center; gap: 14px; margin-bottom: 0; }
 .commu-world-map-head-icon {
     align-items: center; background: var(--bg-surface); border: 1px solid var(--border);
@@ -6180,7 +6096,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commulingo-home .commulingo-hero-dict .site-search-form {
     margin-top: -10px;
 }
-.commulingo-home .commulingo-hero-dict .site-search-input {
+.commulingo-home .commulingo-hero-dict .ui-search-input {
     border-left: 0;
     border-bottom: 0;
 }

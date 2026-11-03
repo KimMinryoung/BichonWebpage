@@ -6,7 +6,7 @@ window.__commuSearch = (function() {
     }
 
     function clearHighlights(card) {
-        var marks = card.querySelectorAll('mark.commu-search-hl');
+        var marks = card.querySelectorAll('mark.ui-search-hl');
         for (var i = 0; i < marks.length; i++) {
             var mark = marks[i];
             var parent = mark.parentNode;
@@ -20,7 +20,7 @@ window.__commuSearch = (function() {
         var walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT, {
             acceptNode: function(node) {
                 if (!node.nodeValue || !node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
-                if (node.parentElement.closest('mark.commu-search-hl')) return NodeFilter.FILTER_REJECT;
+                if (node.parentElement.closest('mark.ui-search-hl')) return NodeFilter.FILTER_REJECT;
                 return NodeFilter.FILTER_ACCEPT;
             }
         });
@@ -38,7 +38,7 @@ window.__commuSearch = (function() {
             while ((match = re.exec(text))) {
                 if (match.index > last) fragment.appendChild(document.createTextNode(text.slice(last, match.index)));
                 var mark = document.createElement('mark');
-                mark.className = 'commu-search-hl';
+                mark.className = 'ui-search-hl';
                 mark.textContent = match[0];
                 fragment.appendChild(mark);
                 last = match.index + match[0].length;
@@ -65,6 +65,9 @@ window.__commuSearch = (function() {
         var words = terms(query).sort(function(a, b) { return b.length - a.length; });
         return words.length ? new RegExp('(' + words.map(escapeRegExp).join('|') + ')', 'gi') : null;
     }
+    // The pause after a keystroke before a list asks again: the same as the
+    // integrated search boxes (public/js/site-search-suggest.js).
+    var DELAY = 180;
     // One search owns its timer, initial request and any later result pages.
     // Even a response whose transport ignores abort cannot update a new search.
     function createRequests() {
@@ -96,9 +99,9 @@ window.__commuSearch = (function() {
                         });
                 }
             };
-            timer = setTimeout(function() { if (isCurrent()) callback(request); }, delay === undefined ? 180 : delay);
+            timer = setTimeout(function() { if (isCurrent()) callback(request); }, delay === undefined ? DELAY : delay);
         }
         return { cancel: cancel, schedule: schedule };
     }
-    return { createRequests: createRequests, terms: terms, pattern: pattern, highlight: highlight, highlightPerson: highlightPerson, clearHighlights: clearHighlights };
+    return { DELAY: DELAY, createRequests: createRequests, terms: terms, pattern: pattern, highlight: highlight, highlightPerson: highlightPerson, clearHighlights: clearHighlights };
 })();

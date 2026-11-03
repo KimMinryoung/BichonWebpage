@@ -230,7 +230,7 @@
     // ── Search box ──────────────────────────────────────────────────────
     var form = document.querySelector('[data-people-search]');
     var searchInput = form && form.querySelector('input[name="q"]');
-    var clearBtn = form && form.querySelector('.commu-people-search-clear');
+    var clearBtn = form && form.querySelector('[data-search-clear]');
     var typingTimer = null;
 
     function highlight(root) {
@@ -358,7 +358,8 @@
         searchInput.addEventListener('input', function() {
             clearBtn.hidden = !searchInput.value;
             clearTimeout(typingTimer);
-            typingTimer = setTimeout(function() { runSearch({ replace: true, typing: true }); }, 250);
+            typingTimer = setTimeout(function() { runSearch({ replace: true, typing: true }); },
+                (window.__commuSearch && window.__commuSearch.DELAY) || 180);
         });
         searchInput.addEventListener('keydown', function(event) {
             if (event.key === 'Escape' && searchInput.value) {

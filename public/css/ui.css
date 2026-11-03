@@ -452,6 +452,146 @@ svg {
     box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
+/* ===== Search field =====
+   The one field every search box draws (views/partials/search-field.ejs): the
+   integrated search, the dictionary and library list filters and the people
+   explorer. A magnifier that takes the link colour with the caret, the input
+   on --search-bg, an optional match count inside it, and a clear button in
+   place of the browser's own (which differed per browser and theme). */
+.ui-search {
+    position: relative;
+    display: flex;
+    flex: 1 1 auto;
+    align-items: center;
+    min-width: 0;
+}
+
+.ui-search-icon {
+    position: absolute;
+    left: 0.85rem;
+    width: 18px;
+    height: 18px;
+    color: var(--text-muted);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+    transition: color var(--duration-fast) var(--ease-standard);
+}
+
+.ui-search:focus-within .ui-search-icon {
+    color: var(--link);
+}
+
+.ui-search-input {
+    flex: 1 1 auto;
+    width: 100%;
+    min-width: 0;
+    min-height: var(--control-height);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0.6rem 2.5rem;
+    font: inherit;
+    color: var(--text-primary);
+    background: var(--search-bg);
+    border: 1px solid var(--border);
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    transition:
+        border-color var(--duration-fast) var(--ease-standard),
+        box-shadow var(--duration-fast) var(--ease-standard);
+}
+
+.ui-search-input::placeholder {
+    color: var(--text-muted);
+    opacity: 1;
+}
+
+.ui-search-input:hover {
+    border-color: color-mix(in srgb, var(--text-muted) 55%, var(--border));
+}
+
+.ui-search-input:focus {
+    border-color: var(--link);
+    box-shadow: inset 0 -2px 0 0 var(--link);
+}
+
+.ui-search-input::-webkit-search-cancel-button,
+.ui-search-input::-webkit-search-decoration {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.ui-search-clear {
+    position: absolute;
+    right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.9rem;
+    height: 1.9rem;
+    padding: 0;
+    color: var(--text-muted);
+    background: none;
+    border: 0;
+    border-radius: 0;
+    cursor: pointer;
+}
+
+.ui-search-clear svg {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.ui-search-clear:hover,
+.ui-search-clear:focus-visible {
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--link) 16%, transparent);
+}
+
+.ui-search-clear:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: -2px;
+}
+
+/* Like a browser's find bar, the match count sits in the field, left of the
+   clear button. */
+.ui-search-count {
+    position: absolute;
+    right: 2.6rem;
+    padding-left: var(--space-2);
+    color: var(--text-muted);
+    font-size: 0.82rem;
+    white-space: nowrap;
+    pointer-events: none;
+    background: var(--search-bg);
+}
+
+.ui-search-clear[hidden],
+.ui-search-count[hidden] {
+    display: none;
+}
+
+/* A searched word inside a result: the server-drawn integrated search
+   (utils/text-search.js highlightTerms) and the lists the dictionary script
+   marks (public/js/commulingo-search-utils.js). */
+.ui-search-hl {
+    padding: 0 1px;
+    /* Full text colour: inside a muted line the mark keeps AA contrast. */
+    color: var(--text-primary);
+    background: color-mix(in srgb, var(--link) 34%, transparent);
+    border-radius: 0;
+}
+
 /* ===== Feedback ===== */
 .message {
     border-radius: var(--radius-sm);

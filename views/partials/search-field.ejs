@@ -1,0 +1,19 @@
+<%
+/* The one search field every search box draws (dev_docs/design-system.md):
+   magnifier, input, an optional match count inside the field and a clear
+   button. The integrated search (site-search-box), the dictionary and library
+   list filters (commulingo-dict-search) and the people explorer wrap it in
+   their own form or container and find its parts by the data-search-* hooks.
+   Arg: field = { label, placeholder, clearLabel, value, name, id, count,
+   autofocus }. One object so a parent page's locals cannot leak in. */
+var f = field;
+var fieldValue = typeof f.value === 'string' ? f.value : '';
+%>
+<div class="ui-search">
+    <svg class="ui-search-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input type="search" class="ui-search-input" data-search-input<% if (f.name) { %> name="<%= f.name %>"<% } %><% if (f.id) { %> id="<%= f.id %>"<% } %>
+        value="<%= fieldValue %>" maxlength="200" placeholder="<%= f.placeholder %>" aria-label="<%= f.label %>"
+        autocomplete="off" spellcheck="false" enterkeyhint="search"<% if (f.autofocus) { %> autofocus<% } %>>
+    <% if (f.count) { %><span class="ui-search-count" data-search-count aria-hidden="true" hidden></span><% } %>
+    <button type="button" class="ui-search-clear" data-search-clear aria-label="<%= f.clearLabel %>"<%= fieldValue ? '' : ' hidden' %>><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+</div>

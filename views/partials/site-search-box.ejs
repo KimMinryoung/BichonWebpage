@@ -1,13 +1,13 @@
 <%
-/* The integrated search input (routes/search.js), placed inside a GET form
-   that targets /search or /commulingo/search. Args: value, placeholder,
+/* The integrated search box (routes/search.js): the shared search field and
+   the green submit, inside a GET form that targets /search or
+   /commulingo/search (partials/site-search-form). Args: value, placeholder,
    autofocus (optional). */
 var boxValue = typeof value === 'string' ? value : '';
 %>
-<label class="site-search-box">
-    <span class="visually-hidden"><%= strings.search.title %></span>
-    <svg class="site-search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-    <input type="search" name="q" class="site-search-input" value="<%= boxValue %>" maxlength="200"
-        placeholder="<%= placeholder %>" autocomplete="off" spellcheck="false" enterkeyhint="search"<% if (typeof autofocus !== 'undefined' && autofocus) { %> autofocus<% } %>>
+<div class="site-search-box">
+    <%- include('search-field', { field: {
+        name: 'q', value: boxValue, placeholder: placeholder, label: strings.search.title,
+        clearLabel: strings.search.clear, autofocus: typeof autofocus !== 'undefined' && autofocus } }) %>
     <button type="submit" class="site-search-submit"><%= strings.search.submit %></button>
-</label>
+</div>

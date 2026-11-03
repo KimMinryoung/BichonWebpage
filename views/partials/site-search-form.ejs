@@ -1,0 +1,37 @@
+<%
+/* An integrated search form (routes/search.js). Every one is the same GET form
+   and box; public/js/site-search-suggest.js shows results as one types, where
+   `mode` says: "dialog" (the toolbar dialog, partials/nav), "inline" (a
+   dropdown under the box: the home and CommuLingo front pages) or "page" (the
+   search page's own results, #site-search-results). Without script it is a
+   plain form. Arg: searchForm = { scope: 'all' | 'commulingo', mode, value,
+   autofocus, className }. */
+var sf = searchForm;
+var sfStrings = strings.search;
+var sfPath = sf.scope === 'commulingo' ? '/commulingo/search' : '/search';
+var sfAction = typeof languageUrl === 'function' && typeof urlLanguage === 'string' ? languageUrl(sfPath, urlLanguage) : sfPath;
+var sfPanel = sf.mode !== 'page';
+%>
+<form class="site-search-form site-search-form--<%= sf.mode %><%= sf.className ? ' ' + sf.className : '' %>" action="<%= sfAction %>" method="get" role="search"
+    data-site-search="<%= sf.mode %>"<% if (!sfPanel) { %> data-results="#site-search-results"<% } %>
+    data-all-label="<%= sfStrings.all %>" data-count-label="<%= sfStrings.resultCount %>"
+    data-loading-label="<%= sfStrings.loading %>" data-error-label="<%= sfStrings.error %>">
+    <div class="site-search-bar">
+        <%- include('site-search-box', { value: typeof sf.value === 'string' ? sf.value : '',
+            placeholder: sf.scope === 'commulingo' ? sfStrings.placeholderCommuLingo : sfStrings.placeholderSite,
+            autofocus: !!sf.autofocus }) %>
+        <% if (sf.mode === 'dialog') { %>
+        <button type="button" class="site-search-dialog-close" data-search-close aria-label="Esc, <%= sfStrings.close %>"><kbd class="site-search-esc">Esc</kbd><span class="site-search-close-text"><%= sfStrings.closeShort %></span></button>
+        <% } %>
+    </div>
+    <p class="visually-hidden" role="status" data-site-search-status></p>
+    <% if (sfPanel) { %>
+    <div class="site-search-panel" data-site-search-panel hidden>
+        <div class="site-search-panel-results" data-site-search-results></div>
+        <div class="site-search-panel-foot">
+            <a class="site-search-all" data-site-search-all href="<%= sfAction %>"></a>
+            <span class="site-search-keys" aria-hidden="true"><kbd>↑</kbd><kbd>↓</kbd> <%= sfStrings.keys.move %> <kbd>Enter</kbd> <%= sfStrings.keys.open %><% if (sf.mode === 'dialog') { %> <kbd>Esc</kbd> <%= sfStrings.keys.close %><% } %></span>
+        </div>
+    </div>
+    <% } %>
+</form>
