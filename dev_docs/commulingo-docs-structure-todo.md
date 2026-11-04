@@ -12,7 +12,7 @@
 |---|---|---|
 | ① | 저장 시 구조 검증 | 완료. 저장된 문서 오류 0(2026-11-04) → 래칫을 전면 규칙으로 전환(오류가 하나라도 있으면 거부), `tests/unit/commulingo-docs-stored-structure.js`가 서고 전체를 검사 |
 | ③ | 제목 id 저장 시 고정 | 완료(2026-11-04 백필) |
-| ② | 파서 기반 처리·파생 데이터 저장 | 코드 완료(2026-11-04, outline 컬럼) · **마이그레이션 377 적용과 `outline` 백필 필요** |
+| ② | 파서 기반 처리·파생 데이터 저장 | 완료(2026-11-04, outline 컬럼, 마이그레이션 377과 백필 적용) |
 | ④ | 번역·편집 정보 단일 원본화 | 남음 |
 | ⑤ | 서지 메타데이터 구조화·JSON-LD | 남음 |
 | ⑥ | 문단 단위 고유 링크 | 남음 |
@@ -79,7 +79,7 @@
    우회는 그대로 `--allow-structure`/`allowStructureIssues`, `restore`). `tests/unit/commulingo-docs-stored-structure.js`가 서빙되는
    문헌·공개 원문 전체를 검사해 `npm test`(배포)에서 걸린다. 사전에서 지워진 id(`ref-unknown`)도 그 문헌의 다음 저장을 막으므로,
    인물·용어·사건을 지울 때는 문헌 entry부터 고친다.
-8. [ ] **② 배포 뒤**: `scripts/apply-migration`으로 377(`commulingo_docs`·`commulingo_doc_originals`에 `outline jsonb`)을 적용하고
+8. [x] (2026-11-04, 번역 259·원문 255 백필) **② 배포 뒤**: `scripts/apply-migration`으로 377(`commulingo_docs`·`commulingo_doc_originals`에 `outline jsonb`)을 적용하고
    `scripts/commulingo-docs outline --dry-run` → `outline`을 돌린다(리비전 없이 컬럼만 채운다, 259편 수십 초). 그 전까지 리더는
    outline 없는 행을 예전처럼 직접 파싱하므로 순서가 바뀌어도 깨지지 않는다. 뒤에 대표 문헌 하나(분할 문헌)의 목차·쪽·주석·발췌 상자를
    한 번 본다. 그 뒤 새 저장은 모두 outline을 함께 쓴다.
