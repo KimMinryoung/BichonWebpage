@@ -49,7 +49,8 @@
 <body class="commulingo-page">
 <%- include('../partials/nav', { showSkipLink: false }) %>
 <% var en = lang === 'en'; %>
-<main class="book">
+<%# 주석 팝오버와 변형 인물명 팝오버(public/js/commulingo-doc.js)가 읽는 문자열. %>
+<main class="book" data-doc-strings="<%= JSON.stringify({ note: strings.commuLingoViews.doc.note, seeInNotes: strings.commuLingoViews.doc.seeInNotes, historicalFigure: strings.commuLingoViews.doc.historicalFigure }) %>">
 <% if (pagination) { %>
 <script>
 // Anchor arrivals on a paginated document land on whichever page was
@@ -192,6 +193,12 @@ if (showEditorialNotes && editionAt !== -1 && (firstHeading === -1 || editionAt 
 </aside>
 <% } %>
 <%- restHtml %></div>
+<%# 이 쪽이 부르는데 다른 쪽에 있는 주석(docs-store pageNotes). 화면에는 나오지 않고
+    주석 번호 위의 팝오버가 여기서 본문을 가져간다. 한 쪽짜리 문헌은 주석이 같은
+    화면에 있어 비어 있다. %>
+<% if (inlineNotes) { %>
+<template class="doc-notes-inline"><ol class="notes-list"><%- inlineNotes %></ol></template>
+<% } %>
 <% if (pagination) { %>
 <nav class="doc-pager" aria-label="<%= strings.commuLingoViews.doc.pages %>">
     <%
@@ -237,92 +244,8 @@ if (showEditorialNotes && editionAt !== -1 && (firstHeading === -1 || editionAt 
 })();
 </script>
 <% } %>
-<script>
-// 소설 번역 문헌의 변형 인물명(a.fic-name, data-real="실명") 팝오버.
-// 이름은 평문 그대로 두고(밑줄 없음 — 표시 수백 개가 다 밑줄이면 본문이
-// 읽기 어렵다), 마우스를 올리면 실존 인물 팝오버가 바로 뜨고 벗어나면 잠시
-// 뒤 닫힌다. 팝오버로 마우스를 옮기면 유지되어 안의 카드 링크(새 탭)를 누를
-// 수 있다. 탭(클릭)은 팝오버를 고정한다 — 호버가 없는 터치 화면의 경로이고,
-// 다시 누르거나 바깥을 누르거나 Esc면 닫힌다. 이름 자체의 이동은 막는다.
-// fic-name이 없는 문서에서는 위임 리스너만 남는 공짜 코드다.
-(function () {
-    var open = null;
-    var pinned = false;
-    var closeTimer = null;
-    function cancelClose() {
-        if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
-    }
-    function close() {
-        cancelClose();
-        if (open) { open.remove(); open = null; pinned = false; }
-    }
-    function scheduleClose() {
-        if (pinned) return;
-        cancelClose();
-        closeTimer = setTimeout(close, 200);
-    }
-    function show(name) {
-        if (open && open._for === name) return;
-        close();
-        var pop = document.createElement('div');
-        pop.className = 'fic-name-pop';
-        var label = document.createElement('span');
-        label.className = 'fic-name-pop-label';
-        label.textContent = <%- JSON.stringify(strings.commuLingoViews.doc.historicalFigure) %>;
-        pop.appendChild(label);
-        var real = name.getAttribute('data-real') || '';
-        var href = name.getAttribute('href');
-        if (href) {
-            var link = document.createElement('a');
-            link.href = href;
-            link.target = '_blank';
-            link.rel = 'noopener';
-            link.textContent = real + ' →';
-            pop.appendChild(link);
-        } else {
-            pop.appendChild(document.createTextNode(real));
-        }
-        pop.addEventListener('mouseenter', cancelClose);
-        pop.addEventListener('mouseleave', scheduleClose);
-        pop._for = name;
-        document.body.appendChild(pop);
-        var rect = name.getBoundingClientRect();
-        var left = rect.left + window.scrollX;
-        var maxLeft = window.scrollX + document.documentElement.clientWidth - pop.offsetWidth - 12;
-        if (left > maxLeft) left = Math.max(window.scrollX + 12, maxLeft);
-        pop.style.top = (rect.bottom + window.scrollY + 6) + 'px';
-        pop.style.left = left + 'px';
-        open = pop;
-    }
-    document.addEventListener('mouseover', function (event) {
-        var name = event.target.closest('a.fic-name');
-        if (!name) return;
-        cancelClose();
-        show(name);
-    });
-    document.addEventListener('mouseout', function (event) {
-        var name = event.target.closest('a.fic-name');
-        if (name && open && open._for === name) scheduleClose();
-    });
-    document.addEventListener('click', function (event) {
-        var name = event.target.closest('a.fic-name');
-        if (!name) {
-            if (open && !event.target.closest('.fic-name-pop')) close();
-            return;
-        }
-        event.preventDefault();
-        if (open && open._for === name) {
-            if (pinned) { close(); } else { pinned = true; }
-            return;
-        }
-        show(name);
-        pinned = true;
-    });
-    document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape') close();
-    });
-})();
-</script>
+<%# 주석 번호와 변형 인물명(a.fic-name)의 팝오버, 주석의 ↩ 되돌아가기는
+    public/js/commulingo-doc.js에 있다. %>
 <div class="doc-find" data-doc-find hidden>
     <span class="doc-find-query"></span>
     <span class="doc-find-pos"></span>
@@ -376,6 +299,7 @@ if (showEditorialNotes && editionAt !== -1 && (firstHeading === -1 || editionAt 
 })();
 </script>
 <% } %>
+<script src="/js/commulingo-doc.js?v=<%= assetVersion %>" defer></script>
 <script src="/js/commulingo-doc-search.js?v=<%= assetVersion %>" defer></script>
 <%# 테마 토글(#themeToggle) 핸들러는 common.js에 있다. 이 리더는 partials/head를
     쓰지 않고 자체 head를 갖는 탓에 스크립트를 하나도 싣지 않아, nav 파셜이

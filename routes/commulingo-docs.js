@@ -166,6 +166,8 @@ async function renderDoc(req, res, raw, original) {
             doc,
             bodyTopHtml: paged.titleHtml,
             bodyRestHtml: await linkHtml('p' + current, page.html),
+            // Notes this page calls from other pages, for the footnote popover.
+            inlineNotes: original ? '' : page.notes || '',
             toc: nestToc(toc),
             pagination: {
                 current,
@@ -194,6 +196,7 @@ async function renderDoc(req, res, raw, original) {
         doc,
         bodyTopHtml,
         bodyRestHtml: await linkHtml('body', bodyRestHtml),
+        inlineNotes: '',
         toc: nestToc(toc),
         pagination: null,
         idToPage: null,
