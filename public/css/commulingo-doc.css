@@ -224,6 +224,23 @@
   scroll-margin-top: 3rem;
 }
 
+/* 목록의 자동 번호는 1부터 세므로, 참조가 26에서 시작하거나 27a처럼 문자가
+   붙은 문서에서는 맞지 않는다. 그 주석을 부르는 참조의 번호를 대신 찍는다. */
+.notes-list li[data-note] {
+  list-style: none;
+}
+
+/* 짧은 번호는 자동 번호 자리에 걸치고, 긴 번호(236-***)는 그 줄의 본문을 민다. */
+.notes-list li[data-note]::before {
+  content: attr(data-note) ".";
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 1.6em;
+  margin-left: -1.6em;
+  padding-right: 0.4em;
+  text-align: right;
+}
+
 .notes-list .back-link {
   text-decoration: none;
   margin-left: 0.25em;

@@ -229,6 +229,27 @@ function listCommuLingoDocsFor(kind, id) {
     return listCommuLingoDocs().filter(doc => (doc[kind] || []).some(ref => docRefId(ref) === id));
 }
 
+// A notes list numbers itself from 1, which says nothing when a document's
+// references start at 26, carry letters (27a) or skip. Each note gets the label
+// of the reference that calls it, and the stylesheet prints that instead; a
+// note nobody calls falls back on its id. Excerpts bring the attribute along.
+const NOTE_LABEL = /^[\p{L}\p{N}*†‡. -]{1,8}$/u;
+
+function labelNotes(html) {
+    const labels = new Map();
+    for (const [, , attrs, inner] of html.matchAll(/(<a\b([^>]*)>)([^<]{1,16})<\/a>/g)) {
+        if (!/\bclass="[^"]*\bnote-ref\b/.test(attrs)) continue;
+        const target = (attrs.match(/\bhref="#([^"]+)"/) || [])[1];
+        const label = inner.trim().replace(/^[[(](.*)[\])]$/, '$1');
+        if (target && NOTE_LABEL.test(label) && !labels.has(target)) labels.set(target, label);
+    }
+    return html.replace(/<ol\b[^>]*\bnotes-list\b[^>]*>[\s\S]*?<\/ol>/g, list => list.replace(
+        /<li\b([^>]*)\bid="([^"]+)"/g, (full, before, id) => {
+            const label = labels.get(id) || (id.match(/-(\d+[a-z]?)$/) || [])[1];
+            return label ? `<li${before}id="${id}" data-note="${label}"` : full;
+        }));
+}
+
 function getCommuLingoDocContent(doc) {
     const sha = doc.bodySha256;
     const cached = bodyCache.get(sha);
@@ -250,7 +271,9 @@ function getCommuLingoDocContent(doc) {
         unavailable.status = 503;
         throw unavailable;
     }
-    const { html, toc, generated } = annotateHeadings(raw, doc.tocExclude);
+    const annotated = annotateHeadings(raw, doc.tocExclude);
+    const { toc, generated } = annotated;
+    const html = labelNotes(annotated.html);
     const entry = { html, toc, generated, paged: paginateBody(html) };
     while (bodyCache.size >= BODY_CACHE_MAX) bodyCache.delete(bodyCache.keys().next().value);
     bodyCache.set(sha, entry);
@@ -370,4 +393,5 @@ module.exports = {
     listCommuLingoDocsFor, excerptRef, getCommuLingoDocContent, getCommuLingoDocOriginalContent, getCommuLingoDocAnchorPages, docRefId,
     listCommuLingoDocExcerptsFor, getCommuLingoDocSection, getCommuLingoDocContents,
     annotateHeadings, // tests: doc-structure.js freezes the same numbers
+    labelNotes,
 };

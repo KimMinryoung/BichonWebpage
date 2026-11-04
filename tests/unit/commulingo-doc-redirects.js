@@ -39,6 +39,21 @@ try {
         assert.equal(store.getCommuLingoDocRedirect(id), null, id);
     }
     assert.equal(store.getCommuLingoDoc('collection').modifiedAt, '2026-01-01T00:00:00.000Z');
+    // A notes list prints the number of the reference that calls each note.
+    const labelled = store.labelNotes('<p><a class="note-ref" id="ref-26" href="#note-26">[26]</a>'
+        + '<a class="note-ref" id="ref-27a" href="#note-27a">[27a]</a><a href="#note-9">[9]</a>'
+        + '<a class="note-ref" href="#note-t1">(1)</a><a class="note-ref" href="#note-k-t2">[옮긴이 2]</a></p>'
+        + '<ol class="notes-list"><li id="note-26">a</li><li id="note-27a">b</li>'
+        + '<li id="note-d0-3">c</li><li id="note-9">d</li><li id="x">e</li>'
+        + '<li id="note-t1">g</li><li id="note-k-t2">h</li></ol><ul><li id="note-5">f</li></ul>');
+    assert.match(labelled, /<li id="note-t1" data-note="1">/);
+    assert.match(labelled, /<li id="note-k-t2" data-note="옮긴이 2">/);
+    assert.match(labelled, /<li id="note-26" data-note="26">/);
+    assert.match(labelled, /<li id="note-27a" data-note="27a">/);
+    assert.match(labelled, /<li id="note-d0-3" data-note="3">/, 'falls back on the id');
+    assert.match(labelled, /<li id="note-9" data-note="9">/, 'a plain link is not a note reference');
+    assert.match(labelled, /<li id="x">/);
+    assert.match(labelled, /<ul><li id="note-5">/, 'other lists keep their markup');
 } finally {
     fs.rmSync(dir, { recursive: true, force: true });
 }

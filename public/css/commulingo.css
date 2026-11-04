@@ -4804,6 +4804,8 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-doc-excerpt-body .note-ref { font-size: .72em; vertical-align: super; line-height: var(--leading-none); text-decoration: none; }
 .commu-doc-excerpt-body .notes-list { font-size: .85em; color: var(--text-muted); padding-left: 1.6em; }
 .commu-doc-excerpt-body .notes-list .back-link { text-decoration: none; margin-left: .25em; }
+.commu-doc-excerpt-body .notes-list li[data-note] { list-style: none; }
+.commu-doc-excerpt-body .notes-list li[data-note]::before { content: attr(data-note) "."; display: inline-block; box-sizing: border-box; min-width: 1.6em; margin-left: -1.6em; padding-right: .4em; text-align: right; }
 
 /* Entity links inside dictionary prose, on every page that has them rather
    than per page type. These were scoped to .commu-term-page, so the same link
