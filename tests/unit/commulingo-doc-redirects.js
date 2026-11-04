@@ -8,7 +8,8 @@ const path = require('node:path');
 // production documents (docs-store reads both paths from the environment).
 const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'docs-redirects-'));
 const html = '<article><h1>Collection</h1><h1 id="first-text">First text</h1><p>'
-    + 'body '.repeat(21000) + '</p><h1 id="second-text">Second text</h1><p>End.</p></article>';
+    + 'body '.repeat(21000) + '</p><h1 id="second-text">Second text</h1><p>'
+    + 'more '.repeat(4000) + '</p></article>';
 const sha = crypto.createHash('sha256').update(html).digest('hex');
 fs.mkdirSync(path.join(dir, 'cache'));
 fs.writeFileSync(path.join(dir, 'cache', `${sha}.html`), html);

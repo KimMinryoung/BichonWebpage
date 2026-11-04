@@ -140,6 +140,8 @@ async function renderDoc(req, res, raw, original) {
         if (!Number.isFinite(current) || current < 1) current = 1;
         if (current > total) current = total;
         const page = paged.pages[current - 1];
+        const pageLabel = entry => (entry.continued
+            ? `${entry.heading} (${lang === 'en' ? 'continued' : '계속'})` : entry.heading);
         // The title block is left alone: a document should not carry a
         // glossary link inside its own heading.
         return res.render('public/commulingo-doc', {
@@ -150,8 +152,8 @@ async function renderDoc(req, res, raw, original) {
             pagination: {
                 current,
                 total,
-                prevHeading: current > 1 ? paged.pages[current - 2].heading : '',
-                nextHeading: current < total ? paged.pages[current].heading : '',
+                prevHeading: current > 1 ? pageLabel(paged.pages[current - 2]) : '',
+                nextHeading: current < total ? pageLabel(paged.pages[current]) : '',
             },
             idToPage: paged.idToPage,
             pagePath,
