@@ -310,6 +310,23 @@ function getCommuLingoDocContent(doc) {
     return entry;
 }
 
+// For the routes: the content, or, when the body is not in the cache yet (a
+// snapshot naming a body this process has not fetched: right after a write
+// from another process, or a cold start on a snapshot another process wrote),
+// one refresh — which fetches every missing body before installing the rows —
+// and a second try. Still missing after that (the database is down too) is
+// the 503 getCommuLingoDocContent raises.
+async function loadCommuLingoDocContent(doc, { original = false } = {}) {
+    const read = item => (original ? getCommuLingoDocOriginalContent(item) : getCommuLingoDocContent(item));
+    try {
+        return read(doc);
+    } catch (err) {
+        if (err.status !== 503) throw err;
+        await store.refresh();
+        return read(getCommuLingoDoc(doc.id) || doc);
+    }
+}
+
 // Headings a reader can be sent to from the other version (translation <->
 // original): every h1-h3 that carries an id of its own, mapped to the page it
 // sits on (1 on a single-scroll document). Ids the reader generated for
@@ -420,7 +437,7 @@ function getCommuLingoDocContents(doc) {
 module.exports = {
     loadCommuLingoDocs: store.load, refreshCommuLingoDocs: () => store.refresh(),
     listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect,
-    listCommuLingoDocsFor, excerptRef, getCommuLingoDocContent, getCommuLingoDocOriginalContent, getCommuLingoDocAnchorPages, docRefId,
+    listCommuLingoDocsFor, excerptRef, getCommuLingoDocContent, getCommuLingoDocOriginalContent, loadCommuLingoDocContent, getCommuLingoDocAnchorPages, docRefId,
     listCommuLingoDocExcerptsFor, getCommuLingoDocSection, getCommuLingoDocContents,
     annotateHeadings, // tests: doc-structure.js freezes the same numbers
     labelNotes,

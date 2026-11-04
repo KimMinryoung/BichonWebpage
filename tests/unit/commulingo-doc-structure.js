@@ -148,10 +148,10 @@ const ENTRY = { docLang: 'ko', title: { ko: '문헌' }, summary: { ko: '요약' 
     assert.equal(removeBlocks('<p>x</p>', isEditorial), '<p>x</p>');
 }
 
-// writeDocs refuses a write that adds an error, unless told otherwise, and
+// writeDocs refuses a write with any error, unless told otherwise, and
 // stores the body with its ids frozen.
 (async () => {
-    const stored = { id: 'demo', revision: 3, entry: { docLang: 'ko', title: { ko: '문헌' } }, body: GOOD, body_sha256: 'old', sort_order: 1 };
+    const stored = { id: 'demo', revision: 3, entry: { ...ENTRY }, body: GOOD, body_sha256: 'old', sort_order: 1 };
     const writes = [];
     const client = {
         async query(sql, params = []) {
@@ -175,10 +175,16 @@ const ENTRY = { docLang: 'ko', title: { ko: '문헌' }, summary: { ko: '요약' 
         { actor: 't', client, allowStructureIssues: true });
     assert.equal(forced.structure[0].introduced[0].code, 'back-link-dangling');
     const ok = await writeDocs({ upserts: [{ id: 'demo', entry: stored.entry, body: GOOD.replace('첫째', '첫 번째'), expectedRevision: 3 }] }, { actor: 't', client });
-    assert.deepEqual(ok.structure[0].introduced, []);
-    // The stored entry has no date or summary: errors it already had, so a
-    // save that keeps them passes; a new unknown key does not.
-    assert.ok(ok.structure[0].errors.some(issue => issue.code === 'date-invalid'));
+    assert.deepEqual(ok.structure[0].errors, []);
+    // The rule is absolute since the library reached zero errors: an error the
+    // stored version already carries blocks an unrelated edit too, and the
+    // refusal says which errors were already stored.
+    const dateless = stored.entry;
+    stored.entry = { ...ENTRY, date: undefined };
+    await assert.rejects(
+        writeDocs({ upserts: [{ id: 'demo', entry: stored.entry, body: GOOD.replace('첫째', '첫 번째'), expectedRevision: 3 }] }, { actor: 't', client }),
+        err => err.status === 422 && /\[date-invalid\].*\(already stored\)/.test(err.message) && err.structure[0].introduced.length === 0);
+    stored.entry = dateless;
     assert.match(writes.at(-1)[4], /<h3 id="sub-1" data-auto-id>작은 제목<\/h3>/, 'stored with frozen ids');
     const written = JSON.parse(writes.at(-1)[1]);
     assert.deepEqual(Object.keys(written).slice(0, 2), ['docLang', 'title'], 'the entry is stored in its canonical form');
@@ -193,11 +199,11 @@ const ENTRY = { docLang: 'ko', title: { ko: '문헌' }, summary: { ko: '요약' 
     // An entry sent back untouched is no write: jsonb's key order, an empty list
     // canonicalizing drops and a quote it converts are not edits by the caller.
     const storedEntryBefore = stored.entry;
-    stored.entry = { title: { en: '', ko: '문헌' }, description: { en: '', ko: "'분파' 체제" }, docLang: 'ko', events: [], terms: [] };
+    stored.entry = { title: { en: '', ko: '문헌' }, description: { en: '', ko: "'분파' 체제" }, docLang: 'ko', events: [], terms: [], summary: ENTRY.summary, kind: ENTRY.kind, date: ENTRY.date };
     writes.length = 0;
     const metaOnly = entry => writeDocs({ upserts: [{ id: 'demo', entry, expectedRevision: 3 }] }, { actor: 't', client });
     assert.equal((await metaOnly(stored.entry)).written[0].op, 'unchanged', 'the stored form sent back');
-    const reordered = { docLang: 'ko', terms: [], events: [], description: { ko: "'분파' 체제", en: '' }, title: { ko: '문헌', en: '' } };
+    const reordered = { docLang: 'ko', terms: [], events: [], description: { ko: "'분파' 체제", en: '' }, title: { ko: '문헌', en: '' }, date: ENTRY.date, kind: ENTRY.kind, summary: ENTRY.summary };
     assert.equal((await metaOnly(reordered)).written[0].op, 'unchanged', 'the same entry in another key order');
     assert.equal(writes.length, 0, 'neither wrote a revision');
     const edited = await metaOnly({ ...reordered, description: { ko: "'분파' 독재 체제", en: '' } });
@@ -206,9 +212,9 @@ const ENTRY = { docLang: 'ko', title: { ko: '문헌' }, summary: { ko: '요약' 
     stored.entry = storedEntryBefore;
     // A new document must meet every rule, entry included.
     await assert.rejects(
-        writeDocs({ upserts: [{ id: 'fresh', entry: stored.entry, body: '<article><h1>새 문헌</h1><p>본문</p></article>' }] }, { actor: 't', client }),
+        writeDocs({ upserts: [{ id: 'fresh', entry: { docLang: 'ko', title: { ko: '문헌' } }, body: '<article><h1>새 문헌</h1><p>본문</p></article>' }] }, { actor: 't', client }),
         err => /byline-missing/.test(err.message) && /editorial-missing/.test(err.message) && /date-invalid/.test(err.message) && /summary-missing/.test(err.message));
-    const fresh = await writeDocs({ upserts: [{ id: 'fresh', entry: { ...stored.entry, ...ENTRY }, body: GOOD }] }, { actor: 't', client });
+    const fresh = await writeDocs({ upserts: [{ id: 'fresh', entry: { ...ENTRY }, body: GOOD }] }, { actor: 't', client });
     assert.equal(fresh.written[0].op, 'insert');
     assert.deepEqual(fresh.structure[0].errors, []);
     console.log('smoke-commulingo-doc-structure: ok');

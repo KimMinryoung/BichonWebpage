@@ -342,11 +342,16 @@ if (showEditorialNotes && editionAt !== -1 && (firstHeading === -1 || editionAt 
     try { anchors = JSON.parse(link.getAttribute('data-anchors') || '{}'); } catch (e) {}
     link.addEventListener('click', function () {
         var bar = document.querySelector('.doc-toc');
-        var line = (bar ? bar.getBoundingClientRect().bottom : 0) + 8;
         var heads = Array.prototype.filter.call(
             document.querySelectorAll('.book h1[id], .book h2[id], .book h3[id]'),
             function (h) { return anchors[h.id]; });
         if (!heads.length) return;
+        // A heading counts as passed once its top is under the bar — or where
+        // an anchor arrival lands it, just below the bar at its scroll margin
+        // (3rem, the bar being 36px): the section a reader just jumped to is
+        // the one being read, not the one before it (seen 2026-11-04).
+        var margin = parseFloat(getComputedStyle(heads[0]).scrollMarginTop) || 0;
+        var line = Math.max((bar ? bar.getBoundingClientRect().bottom : 0) + 8, margin + 2);
         var current = null;
         heads.forEach(function (h) { if (h.getBoundingClientRect().top <= line) current = h; });
         // Above the first section of page 1 the reader is at the document's

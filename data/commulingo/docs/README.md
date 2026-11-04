@@ -68,9 +68,11 @@
 모르는 키, `date` 누락·형식 오류, `summary.ko` 누락, `ko`/`en`이 아닌 `docLang`, 아래 열한 가지가 아닌 `kind`
 (`doc-kinds.js`의 표), `excerpts`·`anchors`의 형태 오류, 그리고 사전에 없는 `people`/`terms`/`events`·`excerpts`의
 id(`ref-unknown`; 사전을 읽을 수 없으면 이 검사만 건너뛴다)가 오류다.
-**저장된 판보다 오류가 늘면 거부**하고(새 문서는 오류가 하나도 없어야 한다), 기존 오류는 저장을 막지 않는다.
-꼭 필요하면 `--allow-structure`(MCP `allowStructureIssues`)로 저장하고 note에 이유를 적는다. 저장된 문헌
-전체의 현황은 `scripts/commulingo-docs structure`.
+**오류가 하나라도 있으면 저장을 거부한다**(2026-11-04부터. 그 전에는 저장된 판보다 오류가 늘 때만 거부하는 래칫이었고,
+그날 저장된 문헌 전체가 오류 0이 되어 전면 규칙으로 바꿨다). 거부 메시지는 이미 저장돼 있던 오류를 「(already stored)」로
+표시한다. 꼭 필요하면 `--allow-structure`(MCP `allowStructureIssues`)로 저장하고 note에 이유를 적는다. 저장된 문헌
+전체의 현황은 `scripts/commulingo-docs structure`이고, `tests/unit/commulingo-docs-stored-structure.js`가 배포 때 전체를 검사한다.
+인물·용어·사건을 사전에서 지우면 그 id를 가진 문헌은 다음 저장이 막히므로(`ref-unknown`) 문헌 entry부터 고친다.
 
 저장되는 꼴도 한 곳(`docs-db.js` `writeDocs`)에서 만든다: 저장된 것과 다른 본문은 정화(`doc-sanitize.js`)를
 거치고, 항목은 아는 칸을 검증·정규화(따옴표, id 형식)하되 모르는 칸과 칸 순서는 그대로 두며, `addedAt`을
