@@ -90,6 +90,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+:where(ol:not([class]), ul:not([class])) {
+    padding-inline-start: 1.6em;
+}
 h1,
 h2,
 h3 {

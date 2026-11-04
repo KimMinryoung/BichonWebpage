@@ -117,6 +117,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* The reset above also strips the padding list markers hang in, so a numbered
+   list's numbers sat outside the column and off the screen on a phone. Every
+   list without a class of its own gets the room back here. Zero specificity:
+   any rule that styles a list, including a marker-less one, still wins. */
+:where(ol:not([class]), ul:not([class])) {
+    padding-inline-start: 1.6em;
+}
 
 /* ===== Base ===== */
 h1, h2, h3 {
