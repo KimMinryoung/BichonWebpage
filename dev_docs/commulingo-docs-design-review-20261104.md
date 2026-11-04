@@ -24,6 +24,12 @@
   앵커 도착 직후 바로 앞 절로 가는 결함을 찾아 고쳤다(R3의 스크립트 분리는 아직 아니다). 자세한 기록은
   [구조 검사 TO-DO](commulingo-docs-structure-todo.md#운영-서버에서-할-일-다음-담당자-순서대로) 4·6·7.
 
+- 2026-11-04 R1 구현: 주석 팝오버(`public/js/commulingo-doc.js`, 호버 미리보기·탭 고정·Esc·팝오버의 「주석 목록에서 보기」),
+  분할 문헌의 다른 쪽 주석은 `docs-store.pageNotes`가 쪽마다 `<template class="doc-notes-inline">`로 보냄, ↩는 팝오버 링크로
+  간 경우 `history.back()`, `labelNotes`가 DPUB-ARIA 역할을 붙임, 주석 `<li>` 추출은 정규식 대신 파서(`noteBlocks`, 발췌도 사용).
+  변형 인물명 팝오버는 같은 스크립트로 옮겨 하나의 팝오버가 됐다(R3의 나머지 인라인 스크립트 둘은 그대로).
+  테스트: `tests/unit/commulingo-doc-notes.js`, `tests/browser/commulingo-doc-reader.js`(시드 문헌을 실제 라우트로 띄움).
+
 검토 범위: `docs-db.js`, `docs-store.js`, `docs-import.js`, `doc-structure.js`, `doc-pagination.js`, `doc-presentation.js`,
 `doc-linkify.js`, `doc-person-links.js`, `docs-refs.js`, `doc-search.js`, `doc-sanitize.js`, `event-doc-excerpts.js`, `linkify.js`,
 `link-review-*.js`, `routes/commulingo-docs.js`, `views/public/commulingo-doc.ejs`, 발췌 파셜, `public/js/commulingo-doc-*.js`,
@@ -73,7 +79,7 @@
 
 | # | 문제 | 개선 방법 | 우선 |
 |---|---|---|---|
-| R1 | 주석이 이동 링크뿐이다. 페이지 분할 문헌에서는 주석 묶음이 마지막 쪽에 있어 번호 하나 볼 때마다 페이지를 옮기고(`?p=N#note-3`), ↩로 돌아올 때 또 옮긴다. 같은 주석을 두 번 부른 곳의 ↩는 늘 첫 참조로 간다. | (1) 주석 팝오버: 서버가 쪽마다 그 쪽이 부르는 주석의 `<li>`를 숨긴 `<template class="doc-notes-inline">`로 함께 내보내고(②의 notes 오프셋으로 자른다), 화면은 `fic-name` 팝오버와 같은 방식(호버는 미리보기, 탭은 고정, Esc 닫기)으로 띄운다. 팝오버 안의 「주석 목록에서 보기」만 기존 링크다. (2) ↩는 해시로 도착한 경우 `history.back()`을 먼저 쓰고, 아니면 지금처럼 첫 참조로 간다. (3) `labelNotes`가 `role="doc-noteref"`·`role="doc-endnotes"`·`role="doc-backlink"`(DPUB-ARIA)를 붙인다. | P2 |
+| R1 ✅ | 주석이 이동 링크뿐이다. 페이지 분할 문헌에서는 주석 묶음이 마지막 쪽에 있어 번호 하나 볼 때마다 페이지를 옮기고(`?p=N#note-3`), ↩로 돌아올 때 또 옮긴다. 같은 주석을 두 번 부른 곳의 ↩는 늘 첫 참조로 간다. | (1) 주석 팝오버: 서버가 쪽마다 그 쪽이 부르는 주석의 `<li>`를 숨긴 `<template class="doc-notes-inline">`로 함께 내보내고(②의 notes 오프셋으로 자른다), 화면은 `fic-name` 팝오버와 같은 방식(호버는 미리보기, 탭은 고정, Esc 닫기)으로 띄운다. 팝오버 안의 「주석 목록에서 보기」만 기존 링크다. (2) ↩는 해시로 도착한 경우 `history.back()`을 먼저 쓰고, 아니면 지금처럼 첫 참조로 간다. (3) `labelNotes`가 `role="doc-noteref"`·`role="doc-endnotes"`·`role="doc-backlink"`(DPUB-ARIA)를 붙인다. | P2 |
 | R2 | 주석의 종류(저본 편집자 주·옮긴이 주·엮은이 주)가 라벨 글자(「옮긴이 주」) 관행으로만 구분되고 클래스가 없어 스타일·필터·팝오버 라벨에 쓸 수 없다. | `li`에 `data-note-kind="translator|source-editor|site"`를 두는 양식을 README에 더하고, 구조 검사는 경고로 시작. 번역 파이프라인(`"notes": true`)이 내는 양식도 맞춘다. | P3 |
 | R3 | 리더 템플릿에 인라인 스크립트 세 덩이(페이지 도착 이동, 변형 인물명 팝오버, 원문/번역 전환)와 해제 상자 병합 로직이 있다. 캐시되지 않고 테스트도 없다. | `public/js/commulingo-doc.js` 하나로 옮기고 데이터는 `data-*`로 넘긴다. 해제 병합은 ④. R1의 팝오버도 이 파일에 둔다. | P2 |
 | R4 | 긴 문헌에 「이어 읽기」가 없다. 설치형 앱(PWA)까지 있는데 읽던 쪽·절을 잃는다. | `localStorage`에 문헌별 `{page, anchor, at}`을 저장하고(스크롤 중 마지막으로 지난 제목 id), 다음 방문 첫 화면 상단에 「n쪽 「…」부터 이어 읽기」 한 줄을 띄운다. 목록 카드에도 「읽던 문헌」 표시. 계측은 기존 학습 계측과 분리. | P2 |

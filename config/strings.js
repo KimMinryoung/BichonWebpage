@@ -456,6 +456,9 @@ const ko = {
             original: '원문',
             translation: '번역',
             historicalFigure: '실존 인물',
+            // Footnote popover (public/js/commulingo-doc.js): {n} is the note's label.
+            note: '주석 {n}',
+            seeInNotes: '주석 목록에서 보기',
             // Read by public/js/commulingo-doc-search.js; {n}, {total}, {pages}, {page} are filled there.
             searchUi: {
                 label: '검색',
@@ -1200,6 +1203,8 @@ const en = {
             original: 'Original',
             translation: 'Translation',
             historicalFigure: 'Historical figure',
+            note: 'Note {n}',
+            seeInNotes: 'See in the notes',
             searchUi: {
                 label: 'Search',
                 placeholder: 'Find in this document',

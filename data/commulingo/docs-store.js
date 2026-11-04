@@ -3,7 +3,7 @@ const path = require('path');
 const db = require('../../config/database');
 const { createRegistrySnapshotStore } = require('./snapshot-store');
 const { paginateBody, headingText, stripNoteRefs } = require('./doc-pagination');
-const { AUTO_ATTR, removeBlocks, isNotesSection, isEditorial } = require('./doc-structure');
+const { AUTO_ATTR, blockRanges, removeBlocks, isNotesSection, isEditorial } = require('./doc-structure');
 
 const AUTO_ID_RE = new RegExp(`\\b${AUTO_ATTR}\\b`);
 
@@ -263,7 +263,14 @@ function listCommuLingoDocsFor(kind, id) {
 // references start at 26, carry letters (27a) or skip. Each note gets the label
 // of the reference that calls it, and the stylesheet prints that instead; a
 // note nobody calls falls back on its id. Excerpts bring the attribute along.
+// The same pass stamps the DPUB-ARIA roles (doc-noteref, doc-endnotes,
+// doc-backlink) a screen reader announces footnotes by; a role the body
+// already carries is kept.
 const NOTE_LABEL = /^[\p{L}\p{N}*†‡. -]{1,8}$/u;
+
+function withRole(tag, role) {
+    return /\brole="/.test(tag) ? tag : tag.replace(/^<(\w+)/, `<$1 role="${role}"`);
+}
 
 function labelNotes(html) {
     const labels = new Map();
@@ -273,11 +280,51 @@ function labelNotes(html) {
         const label = inner.trim().replace(/^[[(](.*)[\])]$/, '$1');
         if (target && NOTE_LABEL.test(label) && !labels.has(target)) labels.set(target, label);
     }
-    return html.replace(/<ol\b[^>]*\bnotes-list\b[^>]*>[\s\S]*?<\/ol>/g, list => list.replace(
-        /<li\b([^>]*)\bid="([^"]+)"/g, (full, before, id) => {
-            const label = labels.get(id) || (id.match(/-(\d+[a-z]?)$/) || [])[1];
-            return label ? `<li${before}id="${id}" data-note="${label}"` : full;
-        }));
+    return html
+        .replace(/<ol\b[^>]*\bnotes-list\b[^>]*>[\s\S]*?<\/ol>/g, list => list.replace(
+            /<li\b([^>]*)\bid="([^"]+)"/g, (full, before, id) => {
+                const label = labels.get(id) || (id.match(/-(\d+[a-z]?)$/) || [])[1];
+                return label ? `<li${before}id="${id}" data-note="${label}"` : full;
+            }))
+        .replace(/<a\b[^>]*\bclass="[^"]*\b(?:note-ref|back-link)\b[^"]*"[^>]*>/g, tag =>
+            withRole(tag, /\bclass="[^"]*\bnote-ref\b/.test(tag) ? 'doc-noteref' : 'doc-backlink'))
+        .replace(/<section\b[^>]*\bclass="[^"]*\bnotes\b[^"]*"[^>]*>/g, tag => withRole(tag, 'doc-endnotes'));
+}
+
+// The notes of a document by id: each <li id> inside a section.notes, cut by
+// the parser's offsets (a note holding a list of its own is still one note).
+// Cached on the content entry; read by the excerpts and the per-page notes.
+function noteBlocks(content) {
+    if (content.noteBlocks) return content.noteBlocks;
+    const blocks = new Map();
+    const inNotes = node => {
+        for (let up = node.parent; up; up = up.parent) if (up.type === 'tag' && isNotesSection(up)) return true;
+        return false;
+    };
+    for (const [start, end] of blockRanges(content.html, node => node.name === 'li' && node.attribs.id && inNotes(node))) {
+        const block = content.html.slice(start, end);
+        const id = (block.match(/^<li\b[^>]*\bid="([^"]+)"/) || [])[1];
+        if (id && !blocks.has(id)) blocks.set(id, block);
+    }
+    content.noteBlocks = blocks;
+    return blocks;
+}
+
+// The notes a page calls that sit on another page (its references were
+// rewritten to ?p=N#id by paginateBody), as the <li> blocks in the order the
+// page calls them: the reader prints them in a hidden template so the
+// footnote popover (public/js/commulingo-doc.js) can show a note without
+// leaving the page.
+function pageNotes(content, page, index) {
+    const ids = [];
+    for (const [tag] of page.html.matchAll(/<a\b[^>]*>/g)) {
+        if (!/\bclass="[^"]*\bnote-ref\b/.test(tag)) continue;
+        const m = tag.match(/\bhref="\?p=(\d+)#([^"]+)"/);
+        if (m && Number(m[1]) !== index + 1 && !ids.includes(m[2])) ids.push(m[2]);
+    }
+    if (!ids.length) return '';
+    const blocks = noteBlocks(content);
+    return ids.map(id => blocks.get(id) || '').join('');
 }
 
 function getCommuLingoDocContent(doc) {
@@ -305,6 +352,7 @@ function getCommuLingoDocContent(doc) {
     const { toc, generated } = annotated;
     const html = labelNotes(annotated.html);
     const entry = { html, toc, generated, paged: paginateBody(html) };
+    if (entry.paged) entry.paged.pages.forEach((page, i) => { page.notes = pageNotes(entry, page, i); });
     while (bodyCache.size >= BODY_CACHE_MAX) bodyCache.delete(bodyCache.keys().next().value);
     bodyCache.set(sha, entry);
     return entry;
@@ -395,7 +443,8 @@ function listCommuLingoDocExcerptsFor(kind, id) {
 // the entry page's h2, and the notes the piece calls are brought along. A
 // fragment link to anything else in the document goes to the reader instead.
 function getCommuLingoDocSection(doc, anchor) {
-    const { html } = getCommuLingoDocContent(doc);
+    const content = getCommuLingoDocContent(doc);
+    const { html } = content;
     const heads = [...html.matchAll(/<h([1-6])([^>]*)>([\s\S]*?)<\/h\1>/g)];
     // The whole document starts at its title h1 and runs to the end.
     const start = anchor === '*'
@@ -410,10 +459,8 @@ function getCommuLingoDocSection(doc, anchor) {
     if (/class="[^"]*\b(?:notes|doc-editorial)\b/.test(body)) body = removeBlocks(body, node => isNotesSection(node) || isEditorial(node));
     const noteIds = [...body.matchAll(/class="note-ref"[^>]*href="#([^"]+)"|href="#([^"]+)"[^>]*class="note-ref"/g)]
         .map(m => m[1] || m[2]);
-    const notes = noteIds.map(noteId => {
-        const m = html.match(new RegExp(`<li[^>]*\\bid="${noteId.replace(/[^A-Za-z0-9_-]/g, '')}"[\\s\\S]*?</li>`));
-        return m ? m[0] : '';
-    }).filter(Boolean);
+    const blocks = noteIds.length ? noteBlocks(content) : null;
+    const notes = noteIds.map(noteId => blocks.get(noteId) || '').filter(Boolean);
     if (notes.length) body += `<section class="notes"><ol class="notes-list">${notes.join('')}</ol></section>`;
     const ids = new Set([...body.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));
     body = body
@@ -440,5 +487,5 @@ module.exports = {
     listCommuLingoDocsFor, excerptRef, getCommuLingoDocContent, getCommuLingoDocOriginalContent, loadCommuLingoDocContent, getCommuLingoDocAnchorPages, docRefId,
     listCommuLingoDocExcerptsFor, getCommuLingoDocSection, getCommuLingoDocContents,
     annotateHeadings, // tests: doc-structure.js freezes the same numbers
-    labelNotes,
+    labelNotes, noteBlocks, pageNotes,
 };
