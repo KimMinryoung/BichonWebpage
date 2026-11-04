@@ -58,6 +58,8 @@
 
 1. [ ] 배포: `scripts/deploy`(웹), `scripts/deploy --mcp-only`(MCP 컨테이너. `mcp/tools/content.js`의 `doc_put`이 바뀜).
 2. [ ] 현황 점검: `scripts/commulingo-docs structure > scripts/content/docs-structure-20261031.tsv`.
+   2026-11-04부터 manifest 항목 검사(모르는 키·`kind` 표·`date`·`summary.ko`·`excerpts`/`anchors` 형태·사전에 없는 id)도
+   같은 보고에 나온다([설계 검토](commulingo-docs-design-review-20261104.md#진행-상태)).
    문서별 기존 오류 수를 보고, 오탐(규칙이 실제 관행과 다른 경우)이 있으면 `doc-structure.js`의 규칙부터 고친다.
    예상 오탐 후보: byline 없이 시작하는 오래된 문서, 해제 상자 안에 저본 편집자의 해설 aside를 넣은 문서
    (`nested-block`), `ol` 대신 `ul`로 쓴 주석 목록.

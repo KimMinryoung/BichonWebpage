@@ -2,6 +2,7 @@ const { searchableAliases } = require('./link-expressions');
 const { getLinkIndexes } = require('./linkify');
 const { renderDocPersonLinks, docRelatedPeople } = require('./doc-person-links');
 const { localize } = require('./localize');
+const { docKindId } = require('./doc-kinds');
 
 // Dictionary links inside a document body, memoized. A full text is far too big
 // to run the passes over per request (the Yezhov biography is 1.4MB), so the
@@ -157,10 +158,10 @@ function presentDoc(raw, lang, resolveDocRefs) {
 
 // The list page is filtered by the manifest's `kind` (chips, real links so the
 // page works without script) and cut into pages (list-pagination.js). A kind's
-// id is its English label slugged, so adding a kind to the manifest needs no code.
+// id comes from the kinds table (doc-kinds.js); a label outside it keeps the
+// slug the page always derived, under its own chip, until the entry is fixed.
 function kindId(raw) {
-    const label = localize(raw.kind, 'en') || localize(raw.kind, 'ko') || '';
-    return label.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'other';
+    return docKindId(raw.kind);
 }
 
 function kindFacets(docs, lang) {

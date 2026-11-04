@@ -12,8 +12,10 @@
 //   structure [id ...] [--json]          structure check of the stored bodies (read-only)
 //   freeze-ids [--dry-run] [--actor who] write stored ids into every heading that has none
 //
-// put and put-body refuse a body that adds a structural error the stored
-// version did not have (doc-structure.js); --allow-structure stores it anyway.
+// put and put-body refuse a body or entry that adds a structural error the
+// stored version did not have (doc-structure.js, doc-entry.js); --allow-structure
+// stores it anyway. Sanitizing an edited body and canonicalizing the entry
+// happen in writeDocs, the same for every path.
 //
 // Bundle: { docs: [{ id, revision, sortOrder, entry, body }], redirects: { from: { id, anchor } },
 //           originals: { <doc id>: { lang, public, rights, source, revision, body } } }
@@ -29,10 +31,9 @@
 console.log = console.info = console.error;
 require('./lib/bootstrap');
 const fs = require('fs');
-const { readAllDocRows, readAllOriginalRows, writeDocs, listDocRevisions, restoreDocRevision, storedEntry, sha256, checkStructure } = require('../data/commulingo/docs-db');
+const { readAllDocRows, readAllOriginalRows, writeDocs, listDocRevisions, restoreDocRevision, storedEntry, sha256, checkStructure, loadKnownRefs } = require('../data/commulingo/docs-db');
 const { freezeHeadingIds } = require('../data/commulingo/doc-structure');
 const { canonicalEntry } = require('../data/commulingo/docs-import');
-const { sanitizeDocHtml } = require('../data/commulingo/doc-sanitize');
 
 function option(args, name, fallback) {
     const i = args.indexOf(name);
@@ -79,11 +80,10 @@ async function put(bundle, args) {
             problems.push(`${doc.id}: changed in the database since export (exported r${doc.revision}, now r${row.revision}); re-export it`);
             continue;
         }
-        // An edited body goes through the same sanitizer as an import; an
-        // untouched one is not rewritten (the sanitizer reserializes markup).
+        // An edited body is sanitized by writeDocs; an untouched one is left out.
         const bodyChanged = !row || sha256(doc.body) !== row.body_sha256;
         upserts.push({
-            id: doc.id, entry: storedEntry(doc.entry), body: bodyChanged ? sanitizeDocHtml(doc.body) : undefined,
+            id: doc.id, entry: storedEntry(doc.entry), body: bodyChanged ? doc.body : undefined,
             sortOrder: Number.isInteger(doc.sortOrder) ? doc.sortOrder : undefined,
             expectedRevision: row ? row.revision : 0,
         });
@@ -102,7 +102,7 @@ async function put(bundle, args) {
                 continue;
             }
             const bodyChanged = !row || sha256(original.body) !== row.body_sha256;
-            const body = bodyChanged ? sanitizeDocHtml(original.body) : row.body;
+            const body = bodyChanged ? original.body : row.body;
             if (row && !bodyChanged && row.lang === original.lang && row.public === (original.public === true)
                 && row.rights === (original.rights || '').trim() && row.source === (original.source || '').trim()) continue;
             originals.set.push({ docId, lang: original.lang, body, public: original.public === true,
@@ -161,10 +161,12 @@ async function structureReport(ids) {
     const { docs } = await readAllDocRows();
     const originals = new Map((await readAllOriginalRows()).map(row => [row.doc_id, row]));
     const wanted = ids.length ? new Set(ids) : null;
+    const known = await loadKnownRefs();
+    if (!known) console.error('structure: dictionaries unavailable, reference ids unchecked');
     const reports = [];
     for (const row of docs) {
         if (wanted && !wanted.has(row.id)) continue;
-        reports.push(checkStructure(row.id, row.id, { body: row.body, entry: row.entry, role: 'translation' }));
+        reports.push(checkStructure(row.id, row.id, { body: row.body, entry: row.entry, role: 'translation', known }));
         const original = originals.get(row.id);
         if (original) reports.push(checkStructure(row.id, `${row.id} (original)`, { body: original.body, entry: row.entry, role: 'original' }));
     }
@@ -233,7 +235,7 @@ async function main() {
         if (!row) throw new Error(`no document "${args[0]}"; register a new one with import-commulingo-doc.js or the admin API`);
         const body = fs.readFileSync(0, 'utf8');
         if (!body.trim()) throw new Error('empty body on stdin');
-        const result = await writeDocs({ upserts: [{ id: row.id, entry: row.entry, body: sanitizeDocHtml(body), expectedRevision: row.revision }] },
+        const result = await writeDocs({ upserts: [{ id: row.id, entry: row.entry, body, expectedRevision: row.revision }] },
             { actor: option(args, '--actor', `commulingo-docs:${process.env.USER || 'cli'}`), note: option(args, '--note', 'put-body'),
                 allowStructureIssues: args.includes('--allow-structure') });
         console.error('person-link audit: ' + JSON.stringify(result.linkAudits));

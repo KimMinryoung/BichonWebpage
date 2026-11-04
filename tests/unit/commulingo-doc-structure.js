@@ -36,12 +36,29 @@ const GOOD = `<article>
 </section>
 </article>`;
 const codes = result => result.errors.map(issue => issue.code).sort();
+// A complete entry (doc-entry.js); the entry's own checks have their own test.
+const ENTRY = { docLang: 'ko', title: { ko: '문헌' }, summary: { ko: '요약' }, kind: { ko: '편지', en: 'Letters' }, date: '1871' };
 
 // A body laid out as the README asks has nothing to report.
 {
-    const result = inspectDocStructure(GOOD, { entry: { excerpts: { terms: { army: 'part-1' }, events: { e: '*' } } } });
+    const result = inspectDocStructure(GOOD, { entry: { ...ENTRY, excerpts: { terms: { army: 'part-1' }, events: { e: '*' } }, anchors: { 'part-1': { ko: ['첫째 절'] } } } });
     assert.deepEqual(result.errors, []);
     assert.deepEqual(result.warnings, []);
+}
+
+// The entry's issues are the body's issues: same list, same ratchet.
+{
+    const result = inspectDocStructure(GOOD, { entry: { ...ENTRY, date: undefined, kind: { ko: '편지', en: 'Letter' }, extra: 1 } });
+    assert.deepEqual(codes(result), ['date-invalid', 'entry-unknown-key', 'kind-unknown']);
+    // anchors must name an id in the body (an original gets a warning).
+    assert.deepEqual(codes(inspectDocStructure(GOOD, { entry: { ...ENTRY, anchors: { gone: { ko: ['x'] } } } })), ['anchor-target-missing']);
+    assert.ok(inspectDocStructure(GOOD, { role: 'original', entry: { ...ENTRY, anchors: { gone: { ko: ['x'] } } } }).warnings.some(issue => issue.code === 'anchor-target-missing'));
+    // Dictionary ids are checked only when the dictionaries were loaded.
+    const refs = { ...ENTRY, people: ['nobody'] };
+    assert.deepEqual(codes(inspectDocStructure(GOOD, { entry: refs })), []);
+    assert.deepEqual(codes(inspectDocStructure(GOOD, { entry: refs, known: { people: new Set(), terms: new Set(), events: new Set() } })), ['ref-unknown']);
+    // An original shares the entry without being checked for it.
+    assert.deepEqual(codes(inspectDocStructure(GOOD.replace(/<p class="doc-byline">.*<\/p>/, ''), { role: 'original', entry: { extra: 1 } })), []);
 }
 
 // Each error the check exists for.
@@ -62,7 +79,7 @@ const codes = result => result.errors.map(issue => issue.code).sort();
         assert.ok(found.includes(code), `${code}: got ${found.join(', ') || 'nothing'}`);
     }
     // excerpts must name a heading that exists (on the translation an error, on an original a warning).
-    const entry = { excerpts: { terms: { army: ['part-1', { heading: 'gone', lead: true }] } } };
+    const entry = { ...ENTRY, excerpts: { terms: { army: ['part-1', { heading: 'gone', lead: true }] } } };
     assert.deepEqual(codes(inspectDocStructure(GOOD, { entry })), ['excerpt-target-missing']);
     const original = inspectDocStructure(GOOD.replace(/<p class="doc-byline">.*<\/p>/, ''), { role: 'original', entry });
     assert.deepEqual(codes(original), [], 'an original is not held to the byline');
@@ -159,11 +176,27 @@ const codes = result => result.errors.map(issue => issue.code).sort();
     assert.equal(forced.structure[0].introduced[0].code, 'back-link-dangling');
     const ok = await writeDocs({ upserts: [{ id: 'demo', entry: stored.entry, body: GOOD.replace('첫째', '첫 번째'), expectedRevision: 3 }] }, { actor: 't', client });
     assert.deepEqual(ok.structure[0].introduced, []);
+    // The stored entry has no date or summary: errors it already had, so a
+    // save that keeps them passes; a new unknown key does not.
+    assert.ok(ok.structure[0].errors.some(issue => issue.code === 'date-invalid'));
     assert.match(writes.at(-1)[4], /<h3 id="sub-1" data-auto-id>작은 제목<\/h3>/, 'stored with frozen ids');
-    // A new document must meet every rule.
+    const written = JSON.parse(writes.at(-1)[1]);
+    assert.deepEqual(Object.keys(written).slice(0, 2), ['docLang', 'title'], 'the entry is stored in its canonical form');
+    assert.equal(written.addedAt, undefined, 'without inventing a date it was added');
+    await assert.rejects(
+        writeDocs({ upserts: [{ id: 'demo', entry: { ...stored.entry, excerpt: {} }, expectedRevision: 3 }] }, { actor: 't', client }),
+        err => err.status === 422 && /entry-unknown-key/.test(err.message));
+    // A body differing from the stored one is sanitized on the way in.
+    const hostile = await writeDocs({ upserts: [{ id: 'demo', entry: stored.entry, body: GOOD.replace('<p>무엇을 다루는지.</p>', '<p onclick="x()">무엇을 다루는지.</p>'), expectedRevision: 3 }] }, { actor: 't', client });
+    assert.equal(hostile.written[0].op, 'update');
+    assert.ok(!writes.at(-1)[4].includes('onclick'), 'sanitized');
+    // A new document must meet every rule, entry included.
     await assert.rejects(
         writeDocs({ upserts: [{ id: 'fresh', entry: stored.entry, body: '<article><h1>새 문헌</h1><p>본문</p></article>' }] }, { actor: 't', client }),
-        err => /byline-missing/.test(err.message) && /editorial-missing/.test(err.message));
+        err => /byline-missing/.test(err.message) && /editorial-missing/.test(err.message) && /date-invalid/.test(err.message) && /summary-missing/.test(err.message));
+    const fresh = await writeDocs({ upserts: [{ id: 'fresh', entry: { ...stored.entry, ...ENTRY }, body: GOOD }] }, { actor: 't', client });
+    assert.equal(fresh.written[0].op, 'insert');
+    assert.deepEqual(fresh.structure[0].errors, []);
     console.log('smoke-commulingo-doc-structure: ok');
 })().catch(err => {
     console.error(err);

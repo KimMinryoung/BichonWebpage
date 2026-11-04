@@ -17,6 +17,7 @@
 // parser's offsets, nesting included, without reserializing the markup the
 // way a DOM round trip would.
 const { parseDocument, DomUtils } = require('htmlparser2');
+const docEntry = require('./doc-entry');
 
 const AUTO_ATTR = 'data-auto-id';
 
@@ -129,6 +130,9 @@ const ERROR_CODES = {
     'note-ref-dangling': '주석 번호가 없는 주석을 가리킵니다',
     'back-link-dangling': '주석의 ↩가 없는 자리를 가리킵니다',
     'excerpt-target-missing': 'excerpts가 본문에 없는 제목 id를 가리킵니다',
+    'anchor-target-missing': 'anchors(절 별칭)가 본문에 없는 id를 가리킵니다',
+    'ref-unknown': 'entry가 사전에 없는 인물·용어·사건 id를 가리킵니다',
+    ...docEntry.ERROR_CODES,
 };
 const WARNING_CODES = {
     'edition-missing': '서두 해제 상자에 details.doc-edition(번역·편집 정보)이 없습니다',
@@ -153,8 +157,10 @@ function excerptAnchors(entry) {
 
 // role: 'translation' (the document's own body, held to the full 서두 틀) or
 // 'original' (the source-language text: same footnote and id rules, its 해제
-// comes in ko and en). entry: the manifest entry, for its excerpts.
-function inspectDocStructure(html, { role = 'translation', entry } = {}) {
+// comes in ko and en). entry: the manifest entry, for its excerpts and anchors;
+// on the translation the entry itself is checked too (doc-entry.js), and its
+// dictionary ids against `known` when the caller loaded the dictionaries.
+function inspectDocStructure(html, { role = 'translation', entry, known } = {}) {
     const errors = [];
     const warnings = [];
     const add = (list, code, detail) => list.push({ code, message: detail ? `${(ERROR_CODES[code] || WARNING_CODES[code])}: ${detail}` : (ERROR_CODES[code] || WARNING_CODES[code]) });
@@ -217,20 +223,29 @@ function inspectDocStructure(html, { role = 'translation', entry } = {}) {
     all.filter(node => node.name === 'a').forEach(a => {
         const id = target(a.attribs.href);
         if (id === null || id === '') return;
-        const known = idCount.has(id);
+        const exists = idCount.has(id);
         if (hasClass(a, 'note-ref')) {
-            if (!known) add(errors, 'note-ref-dangling', `${textOf(a)} → #${id}`);
+            if (!exists) add(errors, 'note-ref-dangling', `${textOf(a)} → #${id}`);
             if (!a.attribs.id) add(warnings, 'note-ref-without-id', `${textOf(a)} → #${id}`);
         } else if (hasClass(a, 'back-link')) {
-            if (!known) add(errors, 'back-link-dangling', `#${id}`);
-        } else if (!known) {
+            if (!exists) add(errors, 'back-link-dangling', `#${id}`);
+        } else if (!exists) {
             add(warnings, 'fragment-link-dangling', `#${id}`);
         }
     });
 
-    // excerpts name headings by id
+    // excerpts name headings by id; anchors (alias → section) name any id
     for (const anchor of excerptAnchors(entry)) {
         if (!headingIds.has(anchor)) add(role === 'translation' ? errors : warnings, 'excerpt-target-missing', anchor);
+    }
+    const anchors = entry && entry.anchors && typeof entry.anchors === 'object' && !Array.isArray(entry.anchors) ? Object.keys(entry.anchors) : [];
+    for (const anchor of anchors) {
+        if (!idCount.has(anchor)) add(role === 'translation' ? errors : warnings, 'anchor-target-missing', anchor);
+    }
+    // The entry belongs to the translation; an original shares it unchecked.
+    if (role === 'translation' && entry) {
+        errors.push(...docEntry.inspectDocEntry(entry).errors);
+        errors.push(...docEntry.inspectDocRefs(entry, known).errors);
     }
     return { errors, warnings };
 }

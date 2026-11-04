@@ -8,7 +8,7 @@ const { assertHeadword, assertAliases, assertStringList } = require('./headword-
 // format rules in data/commulingo/docs/README.md.
 const { docRefId } = require('./docs-store');
 const { sanitizeDocHtml } = require('./doc-sanitize');
-const { writeDocs, readDocRow, checkStructure } = require('./docs-db');
+const { writeDocs, readDocRow, checkStructure, loadKnownRefs, storedEntry } = require('./docs-db');
 const { normalizeKoreanFields } = require('./korean-quotes');
 
 function badRequest(message) {
@@ -108,11 +108,14 @@ function normalizeRefs(refs, label) {
     });
 }
 
-// Canonical field order for manifest entries, applied on every write.
-const CANONICAL_FIELDS = new Set(['id', 'docLang', 'title', 'description', 'summary', 'editorialNotes', 'kind', 'source', 'linkExpressions',
-    'aliases', 'noAutoLink', 'date', 'updatedAt', 'tocExclude', 'people', 'terms', 'events', 'addedAt', 'personLinks']);
+// Canonical field order for manifest entries, applied on every write
+// (doc-entry.js also lists the fields kept as they are).
+const CANONICAL_FIELDS = new Set(require('./doc-entry').CANONICAL_FIELDS);
 
-function canonicalEntry(entry) {
+// `defaults: false` leaves `addedAt` alone when the entry has none: an entry
+// being re-stored is not being added today, and the updates feed reads that
+// date (services/commulingo-updates.js).
+function canonicalEntry(entry, { defaults = true } = {}) {
     const out = {
         id: entry.id,
         docLang: entry.docLang || 'ko',
@@ -156,7 +159,7 @@ function canonicalEntry(entry) {
     if (terms.length) out.terms = terms;
     const events = normalizeRefs(entry.events, 'events');
     if (events.length) out.events = events;
-    out.addedAt = entry.addedAt || new Date().toISOString().slice(0, 10);
+    if (entry.addedAt || defaults) out.addedAt = entry.addedAt || new Date().toISOString().slice(0, 10);
     return out;
 }
 
@@ -191,7 +194,7 @@ async function importDoc({ rawHtml, id, dryRun, force, overrides = {}, actor = '
     const toc = harvestTocPreview(html);
     const linkAudit = await require('./doc-person-links').inspectDocPersonLinks(html, entry);
     // A new document meets the full structure check; a dry run reports it.
-    const structure = checkStructure(id, id, { body: html, entry, role: 'translation',
+    const structure = checkStructure(id, id, { body: html, entry, role: 'translation', known: await loadKnownRefs(),
         previousBody: existing ? existing.body : undefined, previousEntry: existing ? existing.entry : undefined });
     if (!dryRun) await writeDocs({ upserts: [{ id, entry, body: html }] }, { actor, note: note || 'import', allowStructureIssues });
     return { entry, warnings, structure, toc, linkAudit: { mentions: linkAudit.mentions, warnings: linkAudit.warnings, truncated: linkAudit.truncated }, fragmentBytes: Buffer.byteLength(html), overwrote: Boolean(existing) };
@@ -199,7 +202,7 @@ async function importDoc({ rawHtml, id, dryRun, force, overrides = {}, actor = '
 
 // Merge metadata into an entry. {ko,en} fields merge per-language;
 // people/tocExclude replace wholesale when provided. Pure: callers persist.
-function mergeDocMeta(current, patch = {}) {
+function mergeDocMeta(current, patch = {}, options = {}) {
     const merged = canonicalEntry({
         ...current,
         linkExpressions: patch.linkExpressions !== undefined ? patch.linkExpressions : current.linkExpressions,
@@ -220,7 +223,7 @@ function mergeDocMeta(current, patch = {}) {
         terms: patch.terms !== undefined ? patch.terms : current.terms,
         events: patch.events !== undefined ? patch.events : current.events,
         addedAt: patch.addedAt !== undefined ? patch.addedAt : current.addedAt,
-    });
+    }, options);
     // canonicalEntry rebuilds only the fields it knows. Keep everything else
     // (excerpts, anchors, members, …) and the entry's key order, so a patch
     // changes exactly what it names; a known field it dropped stays dropped.
@@ -231,6 +234,16 @@ function mergeDocMeta(current, patch = {}) {
     }
     for (const key of Object.keys(merged)) if (!Object.hasOwn(entry, key)) entry[key] = merged[key];
     return entry;
+}
+
+// The stored form of an entry whatever path wrote it (docs-db.js writeDocs):
+// known fields validated and normalized (Korean quotes, canonical ids), the
+// others and the key order kept, nothing added that was not there, and the
+// served fields (id, original, revision, …) left out.
+function canonicalizeStoredEntry(id, entry) {
+    const out = mergeDocMeta({ id, ...storedEntry(entry) }, {}, { defaults: false });
+    delete out.id;
+    return out;
 }
 
 // Pass `client` to write inside the caller's transaction (link reviews).
@@ -257,4 +270,4 @@ async function removeDoc(id, { actor = 'unknown', note } = {}) {
     return { id, ...row.entry };
 }
 
-module.exports = { canonicalEntry, extractFragment, harvestTocPreview, importDoc, mergeDocMeta, updateDocMeta, removeDoc };
+module.exports = { canonicalEntry, canonicalizeStoredEntry, extractFragment, harvestTocPreview, importDoc, mergeDocMeta, updateDocMeta, removeDoc };

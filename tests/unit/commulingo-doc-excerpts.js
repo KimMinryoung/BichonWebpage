@@ -10,9 +10,10 @@ const {
     listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocSection, getCommuLingoDocContents, excerptRef,
 } = require('../../data/commulingo/docs-store');
 
-// Real documents come from the DB snapshot; a lone clone has none.
+// Real documents come from the DB snapshot; a lone clone serves the seed
+// (tests/fixtures/commulingo-docs-seed.json, checked in commulingo-doc-seed.js).
 if (!listCommuLingoDocs().length) {
-    console.log('skip doc excerpts: no docs snapshot in this checkout');
+    console.log('skip doc excerpts: no documents in this checkout');
     process.exit(0);
 }
 let count = 0;
@@ -37,7 +38,12 @@ listCommuLingoDocs().forEach(doc => {
 });
 assert.ok(count > 0, 'no excerpts declared');
 
+// The French collection's pieces, on a checkout that serves it.
 const doc = getCommuLingoDoc('france-rights-and-emancipation-1789-1794');
+if (!doc) {
+    console.log(`ok doc excerpts (${count} declared; the French collection is not in this checkout)`);
+    process.exit(0);
+}
 const declaration = getCommuLingoDocSection(doc, 'france-rights-declaration-1789');
 assert.strictEqual(declaration.title, '인간과 시민의 권리 선언 (1789)');
 assert.ok(!/<h[12]\b/.test(declaration.html), 'headings drop below the page h2');

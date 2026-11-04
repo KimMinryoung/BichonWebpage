@@ -63,10 +63,19 @@
 
 모든 저장(import, `put`, `put-body`, MCP `doc_put`, 인물 id 변경)은 `data/commulingo/doc-structure.js`의
 구조 검사를 거친다. 아래 「서두 틀」·「주석 양식」 위반(제목 h1·byline·해제 상자 누락, `notes-list` 누락,
-가리킬 곳 없는 주석 번호·↩, 중복 id, 겹친 해제 상자·주석 묶음, 없는 제목을 가리키는 `excerpts`)은 오류다.
+가리킬 곳 없는 주석 번호·↩, 중복 id, 겹친 해제 상자·주석 묶음, 없는 제목을 가리키는 `excerpts`, 없는 id를
+가리키는 `anchors`)은 오류다. **manifest 항목도 같은 검사를 받는다**(2026-11-04, `doc-entry.js`): 이 README가
+모르는 키, `date` 누락·형식 오류, `summary.ko` 누락, `ko`/`en`이 아닌 `docLang`, 아래 열한 가지가 아닌 `kind`
+(`doc-kinds.js`의 표), `excerpts`·`anchors`의 형태 오류, 그리고 사전에 없는 `people`/`terms`/`events`·`excerpts`의
+id(`ref-unknown`; 사전을 읽을 수 없으면 이 검사만 건너뛴다)가 오류다.
 **저장된 판보다 오류가 늘면 거부**하고(새 문서는 오류가 하나도 없어야 한다), 기존 오류는 저장을 막지 않는다.
 꼭 필요하면 `--allow-structure`(MCP `allowStructureIssues`)로 저장하고 note에 이유를 적는다. 저장된 문헌
 전체의 현황은 `scripts/commulingo-docs structure`.
+
+저장되는 꼴도 한 곳(`docs-db.js` `writeDocs`)에서 만든다: 저장된 것과 다른 본문은 정화(`doc-sanitize.js`)를
+거치고, 항목은 아는 칸을 검증·정규화(따옴표, id 형식)하되 모르는 칸과 칸 순서는 그대로 두며, `addedAt`을
+새로 지어내지 않는다. 서빙용 칸(`id`·`original`·`revision`·`bodySha256`·`modifiedAt`)은 저장하지 않으므로
+`doc_get`이 돌려준 `doc`을 그대로 `entry`로 보내도 된다. `restore`만 예전 항목을 그대로 되살린다.
 
 id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `data-auto-id`와 함께 써 넣어진다.
 처음 고정되는 문서는 리더가 그동안 서빙하던 번호를 그대로 받으므로 기존 링크가 유지되고, 그 뒤 새 제목은
@@ -379,7 +388,7 @@ export한 작업 디렉터리에서 만들고 `put`으로 넣는다.
    - `docLang` — 본문 언어 (`ko`/`en`), `<html lang>`에 쓰임
    - `title` / `description` / `kind` — `{ko, en}` 객체. `kind`는 목록의
      분류 칩이자 카드 라벨이라 **아래 열한 가지 중 하나를 그대로** 쓴다
-     (라벨이 조금만 달라도 칩이 하나 더 생긴다). 문서의 성격으로 가르지,
+     (표는 `data/commulingo/doc-kinds.js`; 다른 라벨은 저장 시 `kind-unknown` 오류다). 문서의 성격으로 가르지,
      번역 여부로 가르지 않는다. 여러 문서를 묶은 문헌은 수록 문서의 주된
      성격을 따르고, 갈리지 않으면 앞머리 문서를 따른다.
      - `이론·논설` / `Theory & essays` — 개인이 쓴 이론서·논문·소책자·논설, 독서 노트

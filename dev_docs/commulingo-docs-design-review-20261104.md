@@ -5,6 +5,19 @@
 저장 구조 전환과 제목 id 고정의 진행 상황은 [구조 검사·제목 id TO-DO](commulingo-docs-structure-todo.md)에 있다.
 그 문서의 ②(파싱 결과 저장)·④(편집 정보 단일 원본)·⑤(서지 구조화)·⑥(문단 링크)은 여기서 되풀이하지 않고 번호로 가리킨다.
 
+## 진행 상태
+
+- 2026-11-04 P1 구현(T3 제외): **S1·S2·S3·S4·A2**는 `data/commulingo/doc-entry.js`·`doc-kinds.js`의 검사가 구조 검사
+  래칫에 합쳐졌다(오류 코드 `entry-unknown-key`·`date-invalid`·`summary-missing`·`doclang-invalid`·`kind-unknown`·
+  `excerpts-invalid`·`anchors-invalid`·`anchor-target-missing`·`ref-unknown`). **A1**은 `writeDocs`가 바뀐 본문의 정화와
+  항목 정규화(`canonicalizeStoredEntry`)를 맡고 CLI·MCP의 중복 호출을 뺐다. **T1**은 `tests/fixtures/commulingo-docs-seed.json`
+  (합성 4편)과 `docs-store.js`의 시드 폴백, `tests/unit/commulingo-doc-seed.js`·`commulingo-doc-entry.js`.
+  S3의 용어·사건 id 변경 경로 갱신은 하지 않았다(그런 경로가 코드에 없다. 생기면 인물 id 변경처럼 문헌 entry를 같은 트랜잭션에서 고친다).
+- **운영 서버에서 할 일**: 배포 뒤 `scripts/commulingo-docs structure`로 새 오류 코드의 현황을 보고(모르는 키·`kind`
+  라벨 불일치·`date`/`summary` 누락·사전에 없는 id가 몇 편인지), 오탐이면 규칙을 고치고, 아니면 문서별로 entry를 고친다.
+  이 작업은 [구조 검사 TO-DO의 서버 작업](commulingo-docs-structure-todo.md#운영-서버에서-할-일-다음-담당자-순서대로) 2번과 함께 한다.
+  주의: `put`이 이제 항목을 정규화해 저장하므로, 저장된 항목이 정규형이 아니던 문헌(`terms: []`, 곧은 따옴표)은 첫 `put`에서 한 번 리비전이 는다.
+
 검토 범위: `docs-db.js`, `docs-store.js`, `docs-import.js`, `doc-structure.js`, `doc-pagination.js`, `doc-presentation.js`,
 `doc-linkify.js`, `doc-person-links.js`, `docs-refs.js`, `doc-search.js`, `doc-sanitize.js`, `event-doc-excerpts.js`, `linkify.js`,
 `link-review-*.js`, `routes/commulingo-docs.js`, `views/public/commulingo-doc.ejs`, 발췌 파셜, `public/js/commulingo-doc-*.js`,
@@ -28,10 +41,10 @@
 
 | # | 문제 | 개선 방법 | 우선 |
 |---|---|---|---|
-| S1 | `entry`(jsonb)에 스키마가 없다. `canonicalEntry`는 아는 칸만 검사하고 `put`·`doc_put`은 "검사만 하고 받은 그대로 저장"한다(`scripts/commulingo-docs.js` put, MCP `storedEntry(next)`). 오타 키(`excerpt`, `alias`)나 `excerpts`·`anchors`·`members`의 형태 오류가 조용히 저장된다. `docLang`도 `ko`/`en` 검사가 없다. | `docs-import.js`에 entry 스키마 하나를 두고(`CANONICAL_FIELDS` + `excerpts`·`anchors`·`members`·`original`의 형태), 모르는 키는 거부, `docLang`은 `ko`/`en`만. `writeDocs`가 이 검사를 직접 부르게 해 세 경로(import API·CLI put·MCP)가 같은 검사를 받는다. 먼저 `scripts/commulingo-docs structure`에 "모르는 키" 보고를 넣어 현황을 본 뒤 거부로 바꾼다(래칫과 같은 순서). | P1 |
-| S2 | `kind`는 `{ko,en}` 자유 문자열이고 README의 열한 가지 라벨은 코드에 없다. 라벨이 조금 다르면 목록 칩이 하나 더 생긴다(README가 스스로 경고). `kindId`는 영어 라벨을 슬러그로 만든다. | `data/commulingo/doc-kinds.js`에 열한 가지 `{id, ko, en}` 표를 두고 `canonicalEntry`가 라벨을 표와 대조해 거부. 목록 칩·카드·`kindId`는 표를 쓴다. 저장 형식을 id로 바꾸는 것은 다음 단계(entry 백필 필요). | P1 |
-| S3 | `people`/`terms`/`events`와 `excerpts`의 키는 id 형식만 검사하고 존재는 렌더 때 `console.warn`으로만 안다(`docs-refs.js`). 용어·사건 id가 바뀌면 문헌 쪽은 아무도 고치지 않는다(인물 id 변경만 같은 트랜잭션에서 처리). | `writeDocs`의 구조 보고에 `ref-unknown`(사전에 없는 id)을 더한다. 새 문서는 오류, 기존 문서는 래칫. 용어·사건 id 변경 경로에 문헌 entry 갱신을 더하거나, 최소한 변경 결과에 "이 문헌들이 옛 id를 가리킨다"를 보고한다. | P1 |
-| S4 | `date`가 정렬의 근거인데 저장 때 검사하지 않는다(`canonicalEntry`가 그대로 복사). 없으면 목록 끝으로 밀리고 콘솔에만 찍힌다. `summary`도 선택인데 카드는 `summary`만 보여 주어 없으면 빈 줄이 된다. | `canonicalEntry`: `date`는 `YYYY[-MM[-DD]]` 형식 검사, 새 문서는 `date`·`summary.ko` 필수(기존 문서는 경고). | P1 |
+| S1 ✅ | `entry`(jsonb)에 스키마가 없다. `canonicalEntry`는 아는 칸만 검사하고 `put`·`doc_put`은 "검사만 하고 받은 그대로 저장"한다(`scripts/commulingo-docs.js` put, MCP `storedEntry(next)`). 오타 키(`excerpt`, `alias`)나 `excerpts`·`anchors`·`members`의 형태 오류가 조용히 저장된다. `docLang`도 `ko`/`en` 검사가 없다. | `docs-import.js`에 entry 스키마 하나를 두고(`CANONICAL_FIELDS` + `excerpts`·`anchors`·`members`·`original`의 형태), 모르는 키는 거부, `docLang`은 `ko`/`en`만. `writeDocs`가 이 검사를 직접 부르게 해 세 경로(import API·CLI put·MCP)가 같은 검사를 받는다. 먼저 `scripts/commulingo-docs structure`에 "모르는 키" 보고를 넣어 현황을 본 뒤 거부로 바꾼다(래칫과 같은 순서). | P1 |
+| S2 ✅ | `kind`는 `{ko,en}` 자유 문자열이고 README의 열한 가지 라벨은 코드에 없다. 라벨이 조금 다르면 목록 칩이 하나 더 생긴다(README가 스스로 경고). `kindId`는 영어 라벨을 슬러그로 만든다. | `data/commulingo/doc-kinds.js`에 열한 가지 `{id, ko, en}` 표를 두고 `canonicalEntry`가 라벨을 표와 대조해 거부. 목록 칩·카드·`kindId`는 표를 쓴다. 저장 형식을 id로 바꾸는 것은 다음 단계(entry 백필 필요). | P1 |
+| S3 ✅ | `people`/`terms`/`events`와 `excerpts`의 키는 id 형식만 검사하고 존재는 렌더 때 `console.warn`으로만 안다(`docs-refs.js`). 용어·사건 id가 바뀌면 문헌 쪽은 아무도 고치지 않는다(인물 id 변경만 같은 트랜잭션에서 처리). | `writeDocs`의 구조 보고에 `ref-unknown`(사전에 없는 id)을 더한다. 새 문서는 오류, 기존 문서는 래칫. 용어·사건 id 변경 경로에 문헌 entry 갱신을 더하거나, 최소한 변경 결과에 "이 문헌들이 옛 id를 가리킨다"를 보고한다. | P1 |
+| S4 ✅ | `date`가 정렬의 근거인데 저장 때 검사하지 않는다(`canonicalEntry`가 그대로 복사). 없으면 목록 끝으로 밀리고 콘솔에만 찍힌다. `summary`도 선택인데 카드는 `summary`만 보여 주어 없으면 빈 줄이 된다. | `canonicalEntry`: `date`는 `YYYY[-MM[-DD]]` 형식 검사, 새 문서는 `date`·`summary.ko` 필수(기존 문서는 경고). | P1 |
 | S5 | `sort_order` 칼럼과 `sortOrder` 인자가 남아 있지만 순서는 `date`로 정한다. 두 질서가 있어 보여 혼란을 준다. | 쓰는 곳이 없음을 확인한 뒤 마이그레이션으로 칼럼을 지우고 `put`·`doc_put`의 `sortOrder`를 뺀다. | P3 |
 | S6 | 원문은 문헌당 하나(`doc_id` PK)이고 제목·날짜가 없다. 저본이 여러 언어인 모음집(각 글의 원문이 다른 언어)은 표현할 수 없다. | 지금 필요한 문헌이 있는지 소유자 판단. 필요하면 `commulingo_doc_originals`를 `(doc_id, lang)` 복합 키로 넓히고 리더 전환 칸을 언어별로 둔다. | P3 |
 | S7 | `commulingo_doc_redirects.anchor`가 NOT NULL·비어 있을 수 없어, id를 바꾼 문헌 전체로 보내는 리디렉트는 둘 수 없다. | `anchor`를 빈 문자열 허용으로 바꾸고 `getCommuLingoDocRedirect`가 빈 anchor면 문헌 머리로 보낸다. | P3 |
@@ -42,8 +55,8 @@
 
 | # | 문제 | 개선 방법 | 우선 |
 |---|---|---|---|
-| A1 | 정화와 정규화가 경로마다 다른 자리에 있다. `sanitizeDocHtml`은 import·MCP·CLI가 각자 부르고 `writeDocs`는 믿고 받는다(복원은 아예 안 거친다). `normalizeKoreanFields`(entry의 따옴표)는 `canonicalEntry` 결과에만 적용되는데 `put`·`doc_put`은 그 결과를 버리고 원래 entry를 저장한다. | `writeDocs`가 본문 정화(멱등)·entry 정규화·칸 순서 정리를 직접 한다. 호출자의 중복 호출은 지운다. `tests/unit/commulingo-doc-sanitize.js`("저장된 문헌이 정화로 바뀌지 않는다")는 그대로 지킨다. | P1 |
-| A2 | `anchors`(산문 별칭 → 절 id)는 본문 제목과 대조하지 않는다. 구조 검사는 `excerpts`만 본다(`excerptAnchors`). 제목 id를 바꾸면 별칭 링크가 문헌 머리로 떨어진다. | `inspectDocStructure`에 `anchor-target-missing`(오류)을 더한다. `excerptAnchors`에 `Object.keys(entry.anchors)`를 합치면 된다. | P1 |
+| A1 ✅ | 정화와 정규화가 경로마다 다른 자리에 있다. `sanitizeDocHtml`은 import·MCP·CLI가 각자 부르고 `writeDocs`는 믿고 받는다(복원은 아예 안 거친다). `normalizeKoreanFields`(entry의 따옴표)는 `canonicalEntry` 결과에만 적용되는데 `put`·`doc_put`은 그 결과를 버리고 원래 entry를 저장한다. | `writeDocs`가 본문 정화(멱등)·entry 정규화·칸 순서 정리를 직접 한다. 호출자의 중복 호출은 지운다. `tests/unit/commulingo-doc-sanitize.js`("저장된 문헌이 정화로 바뀌지 않는다")는 그대로 지킨다. | P1 |
+| A2 ✅ | `anchors`(산문 별칭 → 절 id)는 본문 제목과 대조하지 않는다. 구조 검사는 `excerpts`만 본다(`excerptAnchors`). 제목 id를 바꾸면 별칭 링크가 문헌 머리로 떨어진다. | `inspectDocStructure`에 `anchor-target-missing`(오류)을 더한다. `excerptAnchors`에 `Object.keys(entry.anchors)`를 합치면 된다. | P1 |
 | A3 | 본문 속 다른 문헌으로의 손 링크(`/commulingo/docs/<id>#x`)는 검사하지 않는다(`fragment-link-dangling`은 같은 문서의 `#`만). 병합·개명으로 깨져도 모른다. | 구조 검사에 `doc-link-dangling`(경고): 스냅숏의 문헌 id·리디렉트와 그 문헌의 id 목록으로 대조. 대조할 id 목록은 ②의 outline(ids)을 쓰면 본문을 다시 읽지 않는다. | P2 |
 | A4 | 인물 링크 검수가 바뀐 문서마다 쓰기 트랜잭션 안에서(advisory lock을 쥔 채) 본문 전체를 돈다. 메타데이터 한 칸 수정에도 1.4MB 문헌을 다시 검수한다. | 검수 결과를 `(body_sha256, personLinks·people·events·noAutoLink·date 해시, 인덱스 세대)`로 메모해 같은 입력이면 재사용. 또는 메타데이터만 바뀐 쓰기는 `personLinks`·`people`·`events`·`noAutoLink`가 바뀐 때만 검수. | P2 |
 | A5 | leninbot 번역 조립기는 파일에 쓰고 사람이 `put-body`를 돌린다([데이터 git 분리](commulingo-data-off-git.md)의 남은 일). | 조립기가 MCP `doc_put`(dryRun → apply)을 직접 부르게 한다. leninbot 쪽 결정. | P2 |
@@ -79,7 +92,7 @@
 
 | # | 문제 | 개선 방법 | 우선 |
 |---|---|---|---|
-| T1 | 문헌 fixture가 없어 클라우드 세션에서 `commulingo-doc-excerpts`·분할·리디렉트 테스트가 건너뛴다(데이터 문서는 `tests/fixtures/commulingo-data-documents-seed.json`이 있다). 리더 로직을 고쳐도 서버에서야 확인된다. | `tests/fixtures/commulingo-docs-seed.json`: 합성 문헌 4편(주석 있는 단일 쪽, 분할되는 긴 글, `excerpts`·`anchors`·리디렉트가 있는 모음집, 공개 원문이 있는 번역). `docs-store`가 스냅숏도 DB도 없으면 이 시드를 읽는다(`validateSnapshot`과 같은 꼴). 실데이터 검사는 지금처럼 `@requires live-data`. | P1 |
+| T1 ✅ | 문헌 fixture가 없어 클라우드 세션에서 `commulingo-doc-excerpts`·분할·리디렉트 테스트가 건너뛴다(데이터 문서는 `tests/fixtures/commulingo-data-documents-seed.json`이 있다). 리더 로직을 고쳐도 서버에서야 확인된다. | `tests/fixtures/commulingo-docs-seed.json`: 합성 문헌 4편(주석 있는 단일 쪽, 분할되는 긴 글, `excerpts`·`anchors`·리디렉트가 있는 모음집, 공개 원문이 있는 번역). `docs-store`가 스냅숏도 DB도 없으면 이 시드를 읽는다(`validateSnapshot`과 같은 꼴). 실데이터 검사는 지금처럼 `@requires live-data`. | P1 |
 | T2 | 문헌 전문 검색이 없다. 통합 검색은 제목·요약·별칭만, 문헌 안 검색은 한 편씩이다([검색 범위](site-search.md)). | 소유자 결정 뒤: `commulingo_docs`에 `body_text`(태그 없는 본문, 저장 시 파서로) 칼럼과 `pg_trgm` GIN 인덱스(한국어는 기본 tsvector 설정이 약하다), `/commulingo/docs/search?q=`가 문헌별 일치 수·발췌를 내고 결과는 기존 `?p=&q=&hit=`로 간다. 영어는 공개 원문의 `body_text`. | P3 |
 | T3 | 구조 검사 래칫·id 백필은 아직 운영 서버에서 돌리지 않았다. | [구조 검사 TO-DO의 서버 작업 1~6](commulingo-docs-structure-todo.md#운영-서버에서-할-일-다음-담당자-순서대로)을 먼저 끝낸다. 여기의 S1~S4·A1·A2는 그 래칫에 규칙을 더하는 것이라 같은 순서(현황 보고 → 오탐 확인 → 거부)로 넣는다. | P1 |
 
