@@ -38,6 +38,13 @@ assert.equal(paginateBody(`<article><h1>T</h1>${'<p class="long-class-name-here"
     assert.equal(paged.pages[2].continued, true);
 }
 
+// A page's heading is plain text, for callers that escape it.
+{
+    const paged = paginateBody(`<article><h1>T</h1><h2 id="a">&lt;서문&gt;</h2>${paras(120, 1000)}</article>`);
+    assert.equal(paged.pages[1].heading, '<서문>');
+    assert.equal(paged.pages[1].continued, true);
+}
+
 // Tables, lists, quotations and the notes section are never cut inside, and a
 // note reference reaches its note across pages.
 {

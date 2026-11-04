@@ -13,6 +13,7 @@
 // styling and ids stay right on both sides.
 
 const { Parser } = require('htmlparser2');
+const { decodeEntities } = require('./doc-search');
 
 const PAGE_TARGET_TEXT = 30000;
 // Documents up to this much text stay on a single scroll.
@@ -37,8 +38,9 @@ const WHOLE_CLASS = /(?:^|\s)(?:notes|doc-editorial|doc-edition)(?:\s|$)/;
 const HEADING = /^h([1-6])$/;
 const VOID = new Set(['area', 'br', 'col', 'embed', 'hr', 'img', 'input', 'wbr']);
 
+// Plain text: whoever shows it escapes it, so an entity must not stay encoded.
 function headingText(headingHtml) {
-    return headingHtml.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+    return decodeEntities(headingHtml.replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
 }
 
 // One pass over the HTML. Returns the headings in order, the places a cut may

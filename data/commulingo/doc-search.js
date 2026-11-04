@@ -139,4 +139,4 @@ function searchDocContent(content, rawQuery) {
     return result;
 }
 
-module.exports = { searchDocContent, normalizeQuery, indexPage, MAX_QUERY };
+module.exports = { searchDocContent, normalizeQuery, indexPage, decodeEntities, MAX_QUERY };
