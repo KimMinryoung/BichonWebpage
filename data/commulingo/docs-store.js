@@ -17,6 +17,13 @@ const AUTO_ID_RE = new RegExp(`\\b${AUTO_ATTR}\\b`);
 // both. Authoring rules: data/commulingo/docs/README.md.
 const SNAPSHOT_PATH = process.env.COMMULINGO_DOCS_SNAPSHOT || path.join(__dirname, 'docs-snapshot.json');
 const CACHE_DIR = process.env.COMMULINGO_DOCS_CACHE_DIR || path.join(__dirname, 'docs-cache');
+// A checkout with neither snapshot nor database (the tests in a lone clone, a
+// cloud session) serves four synthetic documents from tests/fixtures, so the
+// reader, excerpts, pagination and search can be exercised there. Never in
+// production, where an empty library is the honest state of an outage.
+const SEED_PATH = path.join(__dirname, '..', '..', 'tests', 'fixtures', 'commulingo-docs-seed.json');
+const SEED_ENABLED = process.env.COMMULINGO_DOCS_SEED !== '0' && !require('../../config/env').IS_PRODUCTION;
+const seedBodies = new Map(); // body sha256 -> html, for seed rows only
 const SHA = /^[0-9a-f]{64}$/;
 const bodyPath = sha => path.join(CACHE_DIR, `${sha}.html`);
 
@@ -189,8 +196,31 @@ const store = createRegistrySnapshotStore({
     validateSnapshot: rows => Array.isArray(rows) && rows.some(row => row.kind === 'doc'),
 });
 
+// Seed rows are snapshot rows carrying their body (`body` on doc and
+// original rows); the sha is computed here so the file cannot drift from it.
+let seeded = null;
+function loadSeed() {
+    if (seeded) return seeded;
+    try {
+        const crypto = require('crypto');
+        const rows = JSON.parse(fs.readFileSync(SEED_PATH, 'utf8')).map(row => {
+            if (typeof row.body !== 'string') return row;
+            const { body, ...rest } = row;
+            const sha = crypto.createHash('sha256').update(body, 'utf8').digest('hex');
+            seedBodies.set(sha, body);
+            return { ...rest, body_sha256: sha };
+        });
+        seeded = install(rows);
+    } catch (err) {
+        console.error('[commulingo docs] no snapshot, no database and no seed:', err.message);
+        seeded = install([]);
+    }
+    return seeded;
+}
+
 function loadManifest() {
-    return store.loadSync();
+    const memory = store.loadSync();
+    return memory.docs.length || !SEED_ENABLED ? memory : loadSeed();
 }
 
 function listCommuLingoDocs() {
@@ -259,9 +289,9 @@ function getCommuLingoDocContent(doc) {
         bodyCache.set(sha, cached);
         return cached;
     }
-    let raw;
+    let raw = seedBodies.get(sha);
     try {
-        raw = fs.readFileSync(bodyPath(sha), 'utf8');
+        if (raw === undefined) raw = fs.readFileSync(bodyPath(sha), 'utf8');
     } catch (err) {
         if (err.code !== 'ENOENT') throw err;
         // Only a cache wiped under a running server gets here; the next

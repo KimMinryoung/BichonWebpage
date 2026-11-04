@@ -185,16 +185,18 @@ const tools = [
         scope: 'edit',
         name: 'doc_put',
         description: 'Create or change one reference document (the store scripts/commulingo-docs put uses): entry replaces the manifest '
-            + 'entry, entryPatch changes top-level entry keys (null removes one), body or bodyPath (an .html under content/) replaces the HTML, '
-            + 'which is sanitized like an import. An existing document needs expectedRevision from doc_get. Returns the written revision and '
+            + 'entry (the stored fields only: title, kind, date, summary, aliases, people, terms, events, excerpts, anchors, noAutoLink, …; '
+            + 'not the served id/original/revision), entryPatch changes top-level entry keys (null removes one), body or bodyPath (an .html '
+            + 'under content/) replaces the HTML, which is sanitized like an import. An existing document needs expectedRevision from doc_get. Returns the written revision and '
             + 'the person-link audit (mentions, warnings) to check before applying. original sets the source-language text the translation '
             + 'was made from (stored beside it, served at /docs/<id>/original only when public); removeOriginal drops it. dryRun defaults to '
-            + 'true. A body (or original) that adds a structural error its stored version did not have (missing byline or 해제 box, '
-            + 'notes list without notes-list, dangling footnote, duplicate id, excerpt naming a missing heading) is refused; the result\'s '
+            + 'true. A body, entry or original that adds a structural error its stored version did not have (missing byline or 해제 box, '
+            + 'notes list without notes-list, dangling footnote, duplicate id, excerpt or anchor naming a missing heading, unknown entry key, '
+            + 'kind outside the README list, missing date or summary.ko, people/terms/events id not in the dictionaries) is refused; the result\'s '
             + '`structure` lists errors and warnings. Authoring rules: data/commulingo/docs/README.md.',
         inputSchema: object({
             id: str('Document id'),
-            entry: obj('Whole manifest entry (title, byline, aliases, people, terms, events, noAutoLink, …)'),
+            entry: obj('Whole manifest entry (title, kind, date, summary, aliases, people, terms, events, noAutoLink, …)'),
             entryPatch: obj('Top-level entry keys to set (null removes the key)'),
             body: str('HTML body', { maxLength: 20000000 }),
             bodyPath: specPathArg,
@@ -217,7 +219,6 @@ const tools = [
             if (original && original.body !== undefined && original.bodyPath) throw badRequest('pass original.body or original.bodyPath, not both');
             const { readDocRow, readOriginalRow, writeDocs, storedEntry, sha256 } = require('../../data/commulingo/docs-db');
             const { canonicalEntry } = require('../../data/commulingo/docs-import');
-            const { sanitizeDocHtml } = require('../../data/commulingo/doc-sanitize');
             const row = await readDocRow(id);
             if (row && expectedRevision === undefined) throw badRequest('expectedRevision is required for an existing document (doc_get returns it)');
             let next = entry || (row ? row.entry : null);
@@ -232,18 +233,19 @@ const tools = [
             canonicalEntry({ id, ...next });
             const html = bodyPath ? readSpecFile(bodyPath) : body;
             if (!row && html === undefined) throw badRequest('a new document needs a body');
+            // writeDocs sanitizes a changed body and canonicalizes the entry.
             const upsert = { id, entry: storedEntry(next), expectedRevision: row ? expectedRevision : 0,
-                body: html !== undefined && (!row || sha256(html) !== row.body_sha256) ? sanitizeDocHtml(html) : undefined,
+                body: html !== undefined && (!row || sha256(html) !== row.body_sha256) ? html : undefined,
                 sortOrder };
-            // Like scripts/commulingo-docs put: the original is sanitized as the
-            // translation is, and an existing one is guarded by its own revision.
+            // Like scripts/commulingo-docs put: an existing original is guarded
+            // by its own revision.
             const originals = { set: [], remove: removeOriginal ? [id] : [] };
             if (original) {
                 const stored = await readOriginalRow(id);
                 if (stored && original.expectedRevision === undefined) throw badRequest('original.expectedRevision is required for a stored original (doc_get returns originalRevision)');
                 const originalHtml = original.bodyPath ? readSpecFile(original.bodyPath) : original.body;
                 if (typeof originalHtml !== 'string' || !originalHtml.trim()) throw badRequest('original needs body or bodyPath');
-                originals.set.push({ docId: id, lang: original.lang, body: sanitizeDocHtml(originalHtml), public: original.public === true,
+                originals.set.push({ docId: id, lang: original.lang, body: originalHtml, public: original.public === true,
                     rights: original.rights, source: original.source, expectedRevision: stored ? original.expectedRevision : 0 });
             }
             const actor = actorOf(given, client);
