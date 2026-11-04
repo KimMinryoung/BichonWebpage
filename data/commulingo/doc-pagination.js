@@ -238,22 +238,21 @@ function paginateBody(html) {
     }
     if (pages.length < 2) return null;
 
+    // Every id, not only headings: links from other documents and excerpts
+    // reach notes and paragraphs too, and the reader uses this map to hop to
+    // the right page on arrival, whatever page number the link carried. The
+    // first of a duplicated id wins, as it does in a browser.
     const idToPage = {};
     pages.forEach((page, i) => {
-        for (const m of page.html.matchAll(/<h[1-3]\b[^>]*\bid="([^"]+)"/g)) idToPage[m[1]] = i + 1;
+        for (const m of page.html.matchAll(/\bid="([^"]+)"/g)) {
+            if (!Object.hasOwn(idToPage, m[1])) idToPage[m[1]] = i + 1;
+        }
     });
-    // Point cross-page fragment links at the page holding their target: a
-    // note ref [3] on page 1 must reach the notes section on the last page,
-    // and the note's ↩ must come back. idToPage stays headings-only (it is
-    // serialized into the reader for anchor arrivals); this map covers every
-    // id, notes included.
-    const anchorPage = {};
+    // A note ref [3] on page 1 must reach the notes section on the last page,
+    // and the note's ↩ must come back.
     pages.forEach((page, i) => {
-        for (const m of page.html.matchAll(/\bid="([^"]+)"/g)) anchorPage[m[1]] = i + 1;
-    });
-    pages.forEach((page, i) => {
-        page.html = page.html.replace(/href="#([^"]+)"/g, (full, id) =>
-            anchorPage[id] && anchorPage[id] !== i + 1 ? `href="?p=${anchorPage[id]}#${id}"` : full);
+        page.html = page.html.replace(/href="#([^"]+)"/g, (full, id) => (
+            Object.hasOwn(idToPage, id) && idToPage[id] !== i + 1 ? `href="?p=${idToPage[id]}#${id}"` : full));
     });
     return { titleHtml, pages, idToPage };
 }

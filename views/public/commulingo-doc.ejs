@@ -56,9 +56,9 @@
 // requested; if the target section lives on another page, hop there before
 // the reader starts scrolling.
 (function () {
-    var map = <%- JSON.stringify(idToPage) %>;
+    var map = <%- JSON.stringify(idToPage).replace(/</g, '\\u003c') %>;
     var hash = window.location.hash.slice(1);
-    if (hash && map[hash] && map[hash] !== <%= pagination.current %>) {
+    if (hash && Object.prototype.hasOwnProperty.call(map, hash) && map[hash] !== <%= pagination.current %>) {
         window.location.replace('?p=' + map[hash] + '#' + hash);
     }
 })();

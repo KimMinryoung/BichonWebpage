@@ -65,6 +65,9 @@ assert.equal(paginateBody(`<article><h1>T</h1>${'<p class="long-class-name-here"
     assert.match(paged.pages[last - 1].html, /<section class="notes"[^>]*><h2 id="notes-heading">/);
     assert.match(paged.pages[0].html, new RegExp(`href="\\?p=${last}#note-1"`));
     assert.match(paged.pages[last - 1].html, /href="\?p=1#ref-1"/);
+    // An arrival from elsewhere can hop to any anchor, not only a heading.
+    assert.equal(paged.idToPage['note-1'], last);
+    assert.equal(paged.idToPage['ref-1'], 1);
 }
 
 // A wrapper open at a cut closes and reopens, keeping its class but not its id.
