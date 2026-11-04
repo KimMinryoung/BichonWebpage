@@ -1636,6 +1636,15 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+.commu-docs-page .commu-event-card .commu-doc-card-reading {
+    display: inline-block;
+    margin-left: .5rem;
+    font-size: .78rem;
+    color: var(--accent, #214d2e);
+}
+.commu-docs-page .commu-event-card:hover .commu-doc-card-reading {
+    color: var(--clr-cream, #f8edca);
+}
 .commu-dict-toolbar { margin: -1px 0; }
 .commu-dict-sort { display: grid; grid-template-columns: 1fr 1fr; border: 0; background: none; }
 .commu-dict-sort a {

@@ -30,6 +30,13 @@
   변형 인물명 팝오버는 같은 스크립트로 옮겨 하나의 팝오버가 됐다(R3의 나머지 인라인 스크립트 둘은 그대로).
   테스트: `tests/unit/commulingo-doc-notes.js`, `tests/browser/commulingo-doc-reader.js`(시드 문헌을 실제 라우트로 띄움).
 
+- 2026-11-04 R3·R4 구현: 리더의 인라인 스크립트(앵커 도착 이동·목차 접기·원문/번역 전환)를 모두 `public/js/commulingo-doc.js`로
+  옮겼다. 이동은 본문이 그려지기 전에 해야 하므로 이 파일을 `main` 머리에서 동기로 싣고, id→쪽 지도는
+  `<script type="application/json" id="doc-page-map">`로 넘긴다. 이어 읽기(R4): 스크롤하면 쪽과 마지막으로 지난 제목을
+  `localStorage`(`commulingo-doc-reading:<경로>`)에 적고, 주소에 쪽·앵커·검색어가 없는 방문에 「n쪽 「…」부터 이어 읽기」 한 줄을
+  띄우며(닫기 가능), 마지막 쪽 끝에 닿으면 지운다. 목록 카드는 `commulingo-docs-list.js`가 「읽던 문헌 · n쪽」을 단다.
+  브라우저 밖으로 나가는 것은 없다. 테스트는 `tests/browser/commulingo-doc-reader.js`에 더했다.
+
 검토 범위: `docs-db.js`, `docs-store.js`, `docs-import.js`, `doc-structure.js`, `doc-pagination.js`, `doc-presentation.js`,
 `doc-linkify.js`, `doc-person-links.js`, `docs-refs.js`, `doc-search.js`, `doc-sanitize.js`, `event-doc-excerpts.js`, `linkify.js`,
 `link-review-*.js`, `routes/commulingo-docs.js`, `views/public/commulingo-doc.ejs`, 발췌 파셜, `public/js/commulingo-doc-*.js`,
@@ -81,8 +88,8 @@
 |---|---|---|---|
 | R1 ✅ | 주석이 이동 링크뿐이다. 페이지 분할 문헌에서는 주석 묶음이 마지막 쪽에 있어 번호 하나 볼 때마다 페이지를 옮기고(`?p=N#note-3`), ↩로 돌아올 때 또 옮긴다. 같은 주석을 두 번 부른 곳의 ↩는 늘 첫 참조로 간다. | (1) 주석 팝오버: 서버가 쪽마다 그 쪽이 부르는 주석의 `<li>`를 숨긴 `<template class="doc-notes-inline">`로 함께 내보내고(②의 notes 오프셋으로 자른다), 화면은 `fic-name` 팝오버와 같은 방식(호버는 미리보기, 탭은 고정, Esc 닫기)으로 띄운다. 팝오버 안의 「주석 목록에서 보기」만 기존 링크다. (2) ↩는 해시로 도착한 경우 `history.back()`을 먼저 쓰고, 아니면 지금처럼 첫 참조로 간다. (3) `labelNotes`가 `role="doc-noteref"`·`role="doc-endnotes"`·`role="doc-backlink"`(DPUB-ARIA)를 붙인다. | P2 |
 | R2 | 주석의 종류(저본 편집자 주·옮긴이 주·엮은이 주)가 라벨 글자(「옮긴이 주」) 관행으로만 구분되고 클래스가 없어 스타일·필터·팝오버 라벨에 쓸 수 없다. | `li`에 `data-note-kind="translator|source-editor|site"`를 두는 양식을 README에 더하고, 구조 검사는 경고로 시작. 번역 파이프라인(`"notes": true`)이 내는 양식도 맞춘다. | P3 |
-| R3 | 리더 템플릿에 인라인 스크립트 세 덩이(페이지 도착 이동, 변형 인물명 팝오버, 원문/번역 전환)와 해제 상자 병합 로직이 있다. 캐시되지 않고 테스트도 없다. | `public/js/commulingo-doc.js` 하나로 옮기고 데이터는 `data-*`로 넘긴다. 해제 병합은 ④. R1의 팝오버도 이 파일에 둔다. | P2 |
-| R4 | 긴 문헌에 「이어 읽기」가 없다. 설치형 앱(PWA)까지 있는데 읽던 쪽·절을 잃는다. | `localStorage`에 문헌별 `{page, anchor, at}`을 저장하고(스크롤 중 마지막으로 지난 제목 id), 다음 방문 첫 화면 상단에 「n쪽 「…」부터 이어 읽기」 한 줄을 띄운다. 목록 카드에도 「읽던 문헌」 표시. 계측은 기존 학습 계측과 분리. | P2 |
+| R3 ✅ | 리더 템플릿에 인라인 스크립트 세 덩이(페이지 도착 이동, 변형 인물명 팝오버, 원문/번역 전환)와 해제 상자 병합 로직이 있다. 캐시되지 않고 테스트도 없다. | `public/js/commulingo-doc.js` 하나로 옮기고 데이터는 `data-*`로 넘긴다. 해제 병합은 ④. R1의 팝오버도 이 파일에 둔다. | P2 |
+| R4 ✅ | 긴 문헌에 「이어 읽기」가 없다. 설치형 앱(PWA)까지 있는데 읽던 쪽·절을 잃는다. | `localStorage`에 문헌별 `{page, anchor, at}`을 저장하고(스크롤 중 마지막으로 지난 제목 id), 다음 방문 첫 화면 상단에 「n쪽 「…」부터 이어 읽기」 한 줄을 띄운다. 목록 카드에도 「읽던 문헌」 표시. 계측은 기존 학습 계측과 분리. | P2 |
 | R5 | 원문/번역 전환 칸을 그리려고 요청마다 반대쪽 판의 본문을 읽어 캐시에 올린다(`getCommuLingoDocAnchorPages(other)`). 원문이 있는 문헌은 캐시 자리를 둘 쓴다. | ②의 outline에 `anchorPages`(편집자가 쓴 h1~h3 id → 쪽)를 넣어 스냅숏에서 읽는다. | ② |
 | R6 | 발췌 상자(용어·사건 페이지)의 본문은 사전 링크를 걸지 않고(`getCommuLingoDocSection` 결과를 그대로 출력), 변형 인물명 팝오버 스크립트도 싣지 않는다. 같은 글이 리더에서는 링크가 걸리고 발췌에서는 안 걸린다. | 소유자 결정: (a) "사료는 그대로"를 발췌의 원칙으로 못 박고 README에 적는다, 또는 (b) `surface: 'doc'` 링커를 발췌에도 돌리되 호스트 항목(`exclude`)은 뺀다. (b)면 발췌도 memo에 넣는다. 어느 쪽이든 `fic-name`이 있는 문헌의 발췌에는 팝오버 스크립트를 싣는다. | P3 |
 | R7 | 한 페이지에 같은 문헌의 발췌가 둘 이상 실리면(사건의 조문·이유서·개정법) 두 발췌가 같은 주석을 가져올 때 `id="note-N"`이 겹친다. 제목 강등은 정규식이다. | 발췌 안 id에 `ex<i>-` 접두사를 붙이고 `href="#…"`도 함께 고친다(이미 `ids` 집합을 만들고 있으니 그 자리에서). ②에서 파서로 옮긴다. | P3 |

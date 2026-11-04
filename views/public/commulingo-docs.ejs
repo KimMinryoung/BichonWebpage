@@ -33,6 +33,7 @@
                 }) }) %>
         </div>
         <section class="commu-event-grid" id="commu-doc-list" data-search-endpoint="/commulingo/docs/search" data-page="<%= pagination.current %>"
+            data-reading-badge="<%= strings.commuLingoViews.docs.readingBadge %>" data-reading-page="<%= strings.commuLingoViews.docs.readingPage %>"
             aria-label="<%= strings.commuLingoViews.docs.referenceDocuments %>">
             <%- include('../partials/commulingo-docs-cards', { docs: pagination.pageItems }) %>
         </section>
@@ -41,5 +42,6 @@
     <%- include('../partials/footer') %>
     <script src="/js/commulingo-search-utils.js?v=<%= assetVersion %>"></script>
     <script src="/js/commulingo-dict-search.js?v=<%= assetVersion %>"></script>
+    <script src="/js/commulingo-docs-list.js?v=<%= assetVersion %>"></script>
 </body>
 </html>
