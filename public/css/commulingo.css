@@ -4626,6 +4626,17 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+/* 읽던 문헌 표시(public/js/commulingo-docs-list.js): 종류 라벨 옆, 같은 크기,
+   강조색. 카드 hover 배경이 강조색이라 그때는 크림색으로 바꾼다. */
+.commu-docs-page .commu-event-card .commu-doc-card-reading {
+    display: inline-block;
+    margin-left: .5rem;
+    font-size: .78rem;
+    color: var(--accent, #214d2e);
+}
+.commu-docs-page .commu-event-card:hover .commu-doc-card-reading {
+    color: var(--clr-cream, #f8edca);
+}
 /* Glossary order: two halves of one row between the crumb and the search
    field, sharing their borders (-1px each side) so the three read as a block.
    The current order takes the ui-tab mark, a red underline. */

@@ -1,11 +1,15 @@
-// The reader's footnote popover (public/js/commulingo-doc.js) on the seed
-// documents (tests/fixtures/commulingo-docs-seed.json), served by the real
-// documents route on a test server: hover previews a note that lives on
-// another page, a tap pins it instead of leaving the page, Esc closes it, the
-// popover's link goes to the notes list and the note's ↩ comes back by
-// history, and the DPUB-ARIA roles are on the page. Also the fictionalized
-// name popover, on a mark injected into the page.
-/* global document, window, sessionStorage */
+// The reader's script (public/js/commulingo-doc.js) on the seed documents
+// (tests/fixtures/commulingo-docs-seed.json), served by the real documents
+// route on a test server: the anchor hop to the page holding the anchor, the
+// footnote popover (hover previews a note that lives on another page, a tap
+// pins it instead of leaving the page, Esc closes it, the popover's link goes
+// to the notes list and the note's ↩ comes back by history), the DPUB-ARIA
+// roles, the fictionalized name popover (on a mark injected into the page),
+// the contents panel closing on a pick, the version switch landing on the
+// section being read, and the reading position: recorded while scrolling,
+// offered on the next plain visit, dismissable, marked on the library list,
+// forgotten at the end of the last page.
+/* global document, window, sessionStorage, localStorage */
 const assert = require('node:assert/strict');
 const { launchChromium } = require('../lib/browser');
 const { createGameTestServer } = require('../lib/game-test-server');
@@ -20,9 +24,11 @@ function routes(app) {
     // The reader's crumb partial reads the role icon helper the site's
     // view-locals middleware provides; the test server sets the rest.
     const { roleIconSvg } = require('../../data/commulingo/role-icons');
+    const { dictTabs } = require('../../data/commulingo/dict-tabs');
     const { siteStyleModules } = require('../../utils/site-stylesheets');
-    app.use((req, res, next) => { Object.assign(res.locals, { roleIconSvg, siteStyleModules }); next(); });
+    app.use((req, res, next) => { Object.assign(res.locals, { roleIconSvg, dictTabs, siteStyleModules }); next(); });
     app.use('/commulingo/docs', require('../../routes/commulingo-docs'));
+    app.post('/metrics/menu-view', (req, res) => res.status(204).end());
 }
 
 async function main() {
@@ -36,6 +42,11 @@ async function main() {
             const errors = [];
             page.on('pageerror', e => errors.push(e.message));
             await page.route('**/*', r => (r.request().url().startsWith(origin) ? r.continue() : r.abort()));
+
+            // An anchor on another page: the hop, before anything renders.
+            await page.goto(origin + '/commulingo/docs/seed-long-treatise?p=1#note-5', { waitUntil: 'load' });
+            await page.waitForFunction(() => /[?&]p=3/.test(window.location.search));
+            assert.ok(await page.$('li#note-5'), 'landed on the page holding the note');
 
             // Page 1 of the paged treatise calls note 1, which sits on page 3.
             await page.goto(origin + '/commulingo/docs/seed-long-treatise?p=1', { waitUntil: 'load' });
@@ -107,10 +118,80 @@ async function main() {
             assert.equal(await page.getAttribute('.doc-pop-name a', 'target'), '_blank');
             assert.match(page.url(), /seed-land-decree-1917$/, 'the name itself does not navigate');
 
+            // Contents panel: picking an entry closes it.
+            await page.goto(origin + '/commulingo/docs/seed-land-decree-1917', { waitUntil: 'load' });
+            await page.click('.doc-toc-nav summary');
+            assert.equal(await page.$eval('.doc-toc-nav details', d => d.open), true);
+            await page.click('.doc-toc-chapters a[href="#art-2"]');
+            assert.equal(await page.$eval('.doc-toc-nav details', d => d.open), false);
+
+            // Version switch: at the head of the document the original opens
+            // at its head; with a heading passed (a short viewport, so the
+            // short document can scroll that far) it opens at that section.
+            await page.goto(origin + '/commulingo/docs/seed-theses-1845', { waitUntil: 'load' });
+            await Promise.all([page.waitForNavigation({ waitUntil: 'load' }), page.click('.doc-version-switch')]);
+            assert.match(page.url(), /\/original$/);
+            assert.equal(await page.getAttribute('html', 'lang'), 'de');
+            // A short viewport, so the short document can scroll the section
+            // under the bar. The link is clicked from the page (a.click()):
+            // Playwright's own click first scrolls the sticky bar's link "into
+            // view", which moves the document and loses the section — a real
+            // click does no such thing.
+            const short = await context.newPage();
+            await short.setViewportSize({ width: viewport.width, height: 240 });
+            const follow = () => Promise.all([short.waitForNavigation({ waitUntil: 'load' }), short.$eval('.doc-version-switch', a => a.click())]);
+            await short.goto(origin + '/commulingo/docs/seed-theses-1845#thesis-2', { waitUntil: 'load' });
+            await short.waitForTimeout(300);
+            assert.equal(await short.evaluate(() => Math.round(document.getElementById('thesis-2').getBoundingClientRect().top)), 48, 'landed at the scroll margin');
+            await follow();
+            assert.match(short.url(), /\/original#thesis-2$/);
+            await short.waitForTimeout(300);
+            await follow();
+            assert.match(short.url(), /seed-theses-1845#thesis-2$/, 'and back');
+            await short.close();
+
+            // Reading position: scrolling page 2 of the treatise past a chapter
+            // records it; a plain visit offers it; the offer goes there.
+            await page.evaluate(() => localStorage.clear());
+            await page.goto(origin + '/commulingo/docs/seed-long-treatise?p=2', { waitUntil: 'load' });
+            assert.equal(await page.$eval('[data-doc-resume]', el => el.hidden), true, 'nothing to resume yet');
+            const chapter = await page.$$eval('.doc-body h2[id]', hs => ({ id: hs[1].id, text: hs[1].textContent.trim() }));
+            await page.evaluate(id => document.getElementById(id).scrollIntoView(), chapter.id);
+            await page.waitForTimeout(300);
+            const stored = await page.evaluate(() => JSON.parse(localStorage.getItem('commulingo-doc-reading:/commulingo/docs/seed-long-treatise')));
+            assert.equal(stored.page, 2);
+            assert.equal(stored.anchor, chapter.id);
+            assert.equal(stored.heading, chapter.text);
+            await page.goto(origin + '/commulingo/docs/seed-long-treatise', { waitUntil: 'load' });
+            assert.equal(await page.$eval('[data-doc-resume]', el => el.hidden), false, 'the offer shows on a plain visit');
+            const offer = await page.$eval('.doc-resume-link', a => ({ text: a.textContent, href: a.getAttribute('href') }));
+            assert.equal(offer.text, `2쪽 「${chapter.text}」부터 이어 읽기`);
+            assert.equal(offer.href, `?p=2#${chapter.id}`);
+            // The library list marks the document.
+            await page.goto(origin + '/commulingo/docs', { waitUntil: 'load' });
+            const badge = await page.$eval('a.commu-event-card[href="/commulingo/docs/seed-long-treatise"] .commu-doc-card-reading', el => el.textContent);
+            assert.equal(badge, '읽던 문헌 · 2쪽');
+            assert.equal(await page.$('a.commu-event-card[href="/commulingo/docs/seed-land-decree-1917"] .commu-doc-card-reading'), null);
+            // Following the offer lands on the chapter; a visit with an address does not nag.
+            await page.goto(origin + '/commulingo/docs/seed-long-treatise', { waitUntil: 'load' });
+            await Promise.all([page.waitForNavigation({ waitUntil: 'load' }), page.click('.doc-resume-link')]);
+            assert.match(page.url(), new RegExp(`\\?p=2#${chapter.id}$`));
+            assert.equal(await page.$eval('[data-doc-resume]', el => el.hidden), true);
+            // Dismissing hides the offer until the position changes.
+            await page.goto(origin + '/commulingo/docs/seed-long-treatise', { waitUntil: 'load' });
+            await page.click('.doc-resume-dismiss');
+            await page.goto(origin + '/commulingo/docs/seed-long-treatise', { waitUntil: 'load' });
+            assert.equal(await page.$eval('[data-doc-resume]', el => el.hidden), true, 'dismissed');
+            // The end of the last page forgets the document.
+            await page.goto(origin + '/commulingo/docs/seed-long-treatise?p=3', { waitUntil: 'load' });
+            await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+            await page.waitForTimeout(300);
+            assert.equal(await page.evaluate(() => localStorage.getItem('commulingo-doc-reading:/commulingo/docs/seed-long-treatise')), null);
+
             assert.deepEqual(errors, [], `page errors at ${viewport.width}px`);
             await context.close();
         }
-        console.log('doc reader: footnote popover (cross-page and same-page), pin/Esc, jump and ↩ back, roles, name popover');
+        console.log('doc reader: hop, footnote popover (cross-page and same-page), pin/Esc, jump and ↩ back, roles, name popover, contents, switch, reading position');
     } finally {
         if (browser) await browser.close();
         server.close();

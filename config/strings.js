@@ -459,6 +459,11 @@ const ko = {
             // Footnote popover (public/js/commulingo-doc.js): {n} is the note's label.
             note: '주석 {n}',
             seeInNotes: '주석 목록에서 보기',
+            // 이어 읽기 (public/js/commulingo-doc.js readingPosition)
+            resume: '{page}쪽 「{heading}」부터 이어 읽기',
+            resumePage: '{page}쪽부터 이어 읽기',
+            resumeHeading: '「{heading}」부터 이어 읽기',
+            resumeDismiss: '이어 읽기 알림 닫기',
             // Read by public/js/commulingo-doc-search.js; {n}, {total}, {pages}, {page} are filled there.
             searchUi: {
                 label: '검색',
@@ -478,6 +483,9 @@ const ko = {
             },
         },
         docs: {
+            // 목록 카드의 읽던 문헌 표시 (public/js/commulingo-docs-list.js)
+            readingBadge: '읽던 문헌',
+            readingPage: '{page}쪽',
             references: '참고 문헌',
             referenceLibrary: '참고 문헌',
             searchByTitleKind: '제목 · 분류 · 설명으로 검색…',
@@ -1205,6 +1213,10 @@ const en = {
             historicalFigure: 'Historical figure',
             note: 'Note {n}',
             seeInNotes: 'See in the notes',
+            resume: 'Continue from page {page}, “{heading}”',
+            resumePage: 'Continue from page {page}',
+            resumeHeading: 'Continue from “{heading}”',
+            resumeDismiss: 'Dismiss',
             searchUi: {
                 label: 'Search',
                 placeholder: 'Find in this document',
@@ -1223,6 +1235,8 @@ const en = {
             },
         },
         docs: {
+            readingBadge: 'Reading',
+            readingPage: 'page {page}',
             references: 'References',
             referenceLibrary: 'Reference Library',
             searchByTitleKind: 'Search by title, kind, or description…',

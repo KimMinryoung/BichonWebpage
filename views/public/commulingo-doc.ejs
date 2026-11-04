@@ -49,22 +49,15 @@
 <body class="commulingo-page">
 <%- include('../partials/nav', { showSkipLink: false }) %>
 <% var en = lang === 'en'; %>
-<%# 주석 팝오버와 변형 인물명 팝오버(public/js/commulingo-doc.js)가 읽는 문자열. %>
-<main class="book" data-doc-strings="<%= JSON.stringify({ note: strings.commuLingoViews.doc.note, seeInNotes: strings.commuLingoViews.doc.seeInNotes, historicalFigure: strings.commuLingoViews.doc.historicalFigure }) %>">
+<%# 리더의 스크립트(public/js/commulingo-doc.js)가 읽는 문자열: 주석·인물명 팝오버, 이어 읽기. %>
+<main class="book" data-doc-strings="<%= JSON.stringify({ note: strings.commuLingoViews.doc.note, seeInNotes: strings.commuLingoViews.doc.seeInNotes, historicalFigure: strings.commuLingoViews.doc.historicalFigure, resume: strings.commuLingoViews.doc.resume, resumePage: strings.commuLingoViews.doc.resumePage, resumeHeading: strings.commuLingoViews.doc.resumeHeading }) %>">
+<%# 분할 문헌의 id → 쪽 지도. 앵커로 도착한 독자를 그 앵커가 있는 쪽으로 보내는 일은
+    본문이 그려지기 전에 해야 하므로, 리더 스크립트는 여기서 동기로 싣는다(defer 없음).
+    팝오버·목차·전환·이어 읽기는 그 스크립트 안에서 DOM이 준비된 뒤 돈다. %>
 <% if (pagination) { %>
-<script>
-// Anchor arrivals on a paginated document land on whichever page was
-// requested; if the target section lives on another page, hop there before
-// the reader starts scrolling.
-(function () {
-    var map = <%- JSON.stringify(idToPage).replace(/</g, '\\u003c') %>;
-    var hash = window.location.hash.slice(1);
-    if (hash && Object.prototype.hasOwnProperty.call(map, hash) && map[hash] !== <%= pagination.current %>) {
-        window.location.replace('?p=' + map[hash] + '#' + hash);
-    }
-})();
-</script>
+<script type="application/json" id="doc-page-map"><%- JSON.stringify(idToPage).replace(/</g, '\\u003c') %></script>
 <% } %>
+<script src="/js/commulingo-doc.js?v=<%= assetVersion %>"></script>
 <%
 // On a paginated document the TOC is the hub: entries link to the page that
 // holds their section (plus the anchor); on a single-scroll document they
@@ -160,6 +153,11 @@ var docCourses = doc.courses || [];
     <% } %>
 </p>
 <% } %>
+<%# 이어 읽기: 읽던 쪽·절이 브라우저에 남아 있으면 스크립트가 채워 보여 준다. %>
+<p class="doc-resume" data-doc-resume data-last-page="<%= pagination ? pagination.total : 1 %>" hidden>
+    <a class="doc-resume-link" href="#"></a>
+    <button type="button" class="doc-resume-dismiss" aria-label="<%= strings.commuLingoViews.doc.resumeDismiss %>">✕</button>
+</p>
 <div class="doc-body"><%
 // Existing editions carry some of these notes in their editorial box already.
 // Keep those in place and show only metadata notes absent from that box.
@@ -227,24 +225,7 @@ if (showEditorialNotes && editionAt !== -1 && (firstHeading === -1 || editionAt 
 </footer>
 <% } %>
 </main>
-<% if (toc.length) { %>
-<script>
-// Collapse the contents panel when a reader picks an entry. The bar it hangs
-// from is sticky, so leaving it open pins a full-height panel over the section
-// just jumped to. Closing it here, synchronously in the click, shrinks the
-// layout before the browser resolves the fragment, so the heading lands where
-// the reader expects it.
-(function () {
-    var details = document.querySelector('.doc-toc details');
-    if (!details) return;
-    details.addEventListener('click', function (event) {
-        var link = event.target.closest('a[href^="#"]');
-        if (link) details.open = false;
-    });
-})();
-</script>
-<% } %>
-<%# 주석 번호와 변형 인물명(a.fic-name)의 팝오버, 주석의 ↩ 되돌아가기는
+<%# 주석·인물명 팝오버, 목차 접기, 원문/번역 전환, 이어 읽기는 main 머리에서 실은
     public/js/commulingo-doc.js에 있다. %>
 <div class="doc-find" data-doc-find hidden>
     <span class="doc-find-query"></span>
@@ -253,53 +234,6 @@ if (showEditorialNotes && editionAt !== -1 && (firstHeading === -1 || editionAt 
     <button type="button" data-find="next" aria-label="<%= strings.commuLingoViews.doc.searchUi.next %>">↓</button>
     <button type="button" data-find="close" aria-label="<%= strings.commuLingoViews.doc.searchUi.close %>">✕</button>
 </div>
-<% if (switchTo) { %>
-<script>
-// 번역↔원문 전환은 지금 읽고 있는 섹션으로 간다: 화면 위쪽을 이미 지난 제목
-// 가운데 마지막 것(없으면 이 페이지의 첫 제목)이 반대쪽 버전에도 있으면 그
-// 페이지·앵커로 보낸다. 두 버전은 같은 섹션에 같은 id를 단다.
-(function () {
-    var link = document.querySelector('.doc-version-switch');
-    if (!link) return;
-    var anchors = {};
-    try { anchors = JSON.parse(link.getAttribute('data-anchors') || '{}'); } catch (e) {}
-    link.addEventListener('click', function () {
-        var bar = document.querySelector('.doc-toc');
-        var heads = Array.prototype.filter.call(
-            document.querySelectorAll('.book h1[id], .book h2[id], .book h3[id]'),
-            function (h) { return anchors[h.id]; });
-        if (!heads.length) return;
-        // A heading counts as passed once its top is under the bar — or where
-        // an anchor arrival lands it, just below the bar at its scroll margin
-        // (3rem, the bar being 36px): the section a reader just jumped to is
-        // the one being read, not the one before it (seen 2026-11-04).
-        var margin = parseFloat(getComputedStyle(heads[0]).scrollMarginTop) || 0;
-        var line = Math.max((bar ? bar.getBoundingClientRect().bottom : 0) + 8, margin + 2);
-        var current = null;
-        heads.forEach(function (h) { if (h.getBoundingClientRect().top <= line) current = h; });
-        // Above the first section of page 1 the reader is at the document's
-        // head: the other version's top is the right place. Further pages
-        // open on their first section.
-        if (!current) {
-            if (!/[?&]p=([2-9]|\d\d)/.test(window.location.search)) {
-                var top = new URL(link.href);
-                top.searchParams.delete('p');
-                top.hash = '';
-                link.href = top.href;
-                return;
-            }
-            current = heads[0];
-        }
-        var target = new URL(link.href);
-        var page = anchors[current.id];
-        if (page > 1) target.searchParams.set('p', page); else target.searchParams.delete('p');
-        target.hash = current.id;
-        link.href = target.href;
-    });
-})();
-</script>
-<% } %>
-<script src="/js/commulingo-doc.js?v=<%= assetVersion %>" defer></script>
 <script src="/js/commulingo-doc-search.js?v=<%= assetVersion %>" defer></script>
 <%# 테마 토글(#themeToggle) 핸들러는 common.js에 있다. 이 리더는 partials/head를
     쓰지 않고 자체 head를 갖는 탓에 스크립트를 하나도 싣지 않아, nav 파셜이
