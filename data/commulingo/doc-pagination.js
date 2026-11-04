@@ -39,8 +39,14 @@ const HEADING = /^h([1-6])$/;
 const VOID = new Set(['area', 'br', 'col', 'embed', 'hr', 'img', 'input', 'wbr']);
 
 // Plain text: whoever shows it escapes it, so an entity must not stay encoded.
+// A note reference inside a heading ("제1장[1]") belongs to the body, not to the
+// heading's name in the contents or on the pager.
+function stripNoteRefs(html) {
+    return html.replace(/<a\b[^>]*\bclass="[^"]*\bnote-ref\b[^"]*"[^>]*>[\s\S]*?<\/a>/g, '');
+}
+
 function headingText(headingHtml) {
-    return decodeEntities(headingHtml.replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
+    return decodeEntities(stripNoteRefs(headingHtml).replace(/<[^>]+>/g, '')).replace(/\s+/g, ' ').trim();
 }
 
 // One pass over the HTML. Returns the headings in order, the places a cut may
@@ -257,4 +263,4 @@ function paginateBody(html) {
     return { titleHtml, pages, idToPage };
 }
 
-module.exports = { paginateBody, headingText, PAGE_TARGET_TEXT, SINGLE_PAGE_TEXT, PAGE_MAX_HTML };
+module.exports = { paginateBody, headingText, stripNoteRefs, PAGE_TARGET_TEXT, SINGLE_PAGE_TEXT, PAGE_MAX_HTML };

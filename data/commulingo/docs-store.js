@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../../config/database');
 const { createRegistrySnapshotStore } = require('./snapshot-store');
-const { paginateBody, headingText } = require('./doc-pagination');
+const { paginateBody, headingText, stripNoteRefs } = require('./doc-pagination');
 const { AUTO_ATTR, removeBlocks, isNotesSection, isEditorial } = require('./doc-structure');
 
 const AUTO_ID_RE = new RegExp(`\\b${AUTO_ATTR}\\b`);
@@ -49,7 +49,7 @@ function annotateHeadings(rawHtml, excludePatterns) {
         // Ids frozen into the body at save time (doc-structure.js
         // freezeHeadingIds) are still numbered, not chosen: same treatment.
         if (!existing || AUTO_ID_RE.test(attrs)) generated.add(id);
-        const text = inner.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+        const text = stripNoteRefs(inner).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
         if (!excludes.some(re => re.test(text))) {
             toc.push({ level: Number(level), id, text });
         }

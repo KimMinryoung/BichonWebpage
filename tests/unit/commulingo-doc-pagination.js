@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const { paginateBody, PAGE_TARGET_TEXT, PAGE_MAX_HTML } = require('../../data/commulingo/doc-pagination');
+const { paginateBody, headingText, PAGE_TARGET_TEXT, PAGE_MAX_HTML } = require('../../data/commulingo/doc-pagination');
 
 const para = (size, word = '가') => `<p>${word.repeat(size)}</p>`;
 const paras = (count, size) => Array.from({ length: count }, () => para(size)).join('\n');
@@ -98,6 +98,13 @@ assert.equal(paginateBody(`<article><h1>T</h1>${'<p class="long-class-name-here"
     const paged = paginateBody(`<article><h1>T</h1>${image.repeat(6)}${para(10)}</article>`);
     assert.ok(paged && paged.pages.length >= 3, 'split by size');
     for (const page of paged.pages) assert.ok(page.html.length <= PAGE_MAX_HTML);
+}
+
+// A note reference in a heading stays out of the heading's name.
+{
+    const ref = '<a class="note-ref" id="ref-1" href="#note-1" aria-label="주석 1">[1]</a>';
+    assert.equal(headingText(`<h2 id="a">제1장 부르주아와 프롤레타리아${ref}</h2>`), '제1장 부르주아와 프롤레타리아');
+    assert.equal(headingText('<h2><a href="#x">링크 제목</a></h2>'), '링크 제목');
 }
 
 console.log('Long documents page at the strongest boundary near the target without cutting blocks.');
