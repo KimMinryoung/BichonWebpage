@@ -99,7 +99,8 @@
   오프셋은 서빙되는 html(저장 본문에 `labelNotes`를 적용한 것) 기준이고, `labelNotes`가 결정적이라 쓰기와 읽기가 같은 문자열을 본다.
 - [x] `writeDocs`/`writeOriginal`이 본문·`tocExclude`가 바뀔 때 outline을 다시 만들어 함께 쓴다. 백필·재생성: `scripts/commulingo-docs outline`.
 - [x] `docs-store.js`: 스냅숏에 outline, `buildContent`가 outline이 맞으면(`outlineFits`: sha·version) 파싱 없이 목차·쪽(`renderPages`)·
-  앵커를 읽고, `noteBlocks`·`sectionFrom`(발췌)도 outline 범위를 쓴다. 맞지 않으면 예전 경로. `tests/unit/commulingo-doc-outline.js`가
+  앵커를 읽고, `noteBlocks`·`sectionFrom`(발췌)도 outline 범위를 쓴다. 맞지 않으면 예전 경로. 원문/번역 전환 칸의 앵커는
+  `getCommuLingoDocVersionAnchors`가 반대쪽 판의 outline에서 바로 읽으므로 그 본문을 캐시에 올리지 않는다(R5). `tests/unit/commulingo-doc-outline.js`가
   두 경로의 결과가 같음을 시드로 확인한다.
 - [x] `paginateBody`를 `planPages`(계획)와 `renderPages`(쪽 만들기)로 나눴다. 쪽 경계 기준은 그대로라 `?p=N`이 바뀌지 않는다.
 - [ ] `routes/commulingo-docs.js` `editorialForLanguage`는 정규식을 유지했다(겹친 상자는 구조 검사가 막으므로 정확하고, 파싱이 아니라
