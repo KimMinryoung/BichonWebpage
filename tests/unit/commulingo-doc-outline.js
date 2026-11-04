@@ -67,6 +67,21 @@ assert.equal(compared, 5, 'four documents and one original');
     assert.ok(doc.outline.cut.length === 2 && doc.outline.editorials.length === 1, 'the editor\'s box and the notes block');
 }
 
+// The version switch's anchors come off the stored outline without reading
+// the other version's body: a document whose body is nowhere still answers.
+{
+    const doc = store.getCommuLingoDoc('seed-theses-1845');
+    const expected = { 'thesis-1': 1, 'thesis-2': 1, 'thesis-3': 1 };
+    assert.deepEqual(store.getCommuLingoDocVersionAnchors(doc), expected);
+    assert.deepEqual(store.getCommuLingoDocVersionAnchors(doc, { original: true }), expected);
+    const bodiless = { ...doc, bodySha256: 'e'.repeat(64), outline: { ...doc.outline, bodySha256: 'e'.repeat(64) },
+        original: { ...doc.original, bodySha256: 'f'.repeat(64), outline: { ...doc.original.outline, bodySha256: 'f'.repeat(64) } } };
+    assert.deepEqual(store.getCommuLingoDocVersionAnchors(bodiless, { original: true }), expected, 'no body needed');
+    assert.throws(() => store.getCommuLingoDocVersionAnchors({ ...bodiless, original: { ...bodiless.original, outline: null } }, { original: true }),
+        err => err.status === 503, 'without an outline the body is read, and is missing here');
+    assert.deepEqual(store.getCommuLingoDocVersionAnchors({ ...doc, original: null }, { original: true }), {});
+}
+
 // A body with an unaddressed h2 (stored before ids were frozen) gets no
 // outline: the reader numbers those headings on the fly.
 assert.equal(buildOutline('<article><h1>T</h1><h2>가</h2><p>x</p></article>'), null);

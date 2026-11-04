@@ -397,6 +397,19 @@ function getCommuLingoDocAnchorPages(content) {
     return out;
 }
 
+// The anchors of one version of a document (the translation, or its
+// published original) for the other version's switch, straight off the
+// stored outline when there is one, so the switch costs no body read: with
+// outlines, a reader of the translation never loads the original's 1.4 MB
+// just to draw the button. Without a fitting outline the content is built.
+function getCommuLingoDocVersionAnchors(doc, { original = false } = {}) {
+    const version = original ? doc.original : doc;
+    if (!version) return {};
+    if (outlineFits(version.outline, version.bodySha256) && version.outline.anchorPages) return version.outline.anchorPages;
+    const content = original ? getCommuLingoDocOriginalContent(doc) : getCommuLingoDocContent(doc);
+    return content ? getCommuLingoDocAnchorPages(content) : {};
+}
+
 // The published original of a translated document (null when there is none
 // or it is not public), read and paginated like the translation.
 function getCommuLingoDocOriginalContent(doc) {
@@ -497,7 +510,7 @@ function getCommuLingoDocContents(doc) {
 module.exports = {
     loadCommuLingoDocs: store.load, refreshCommuLingoDocs: () => store.refresh(),
     listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect,
-    listCommuLingoDocsFor, excerptRef, getCommuLingoDocContent, getCommuLingoDocOriginalContent, loadCommuLingoDocContent, getCommuLingoDocAnchorPages, docRefId,
+    listCommuLingoDocsFor, excerptRef, getCommuLingoDocContent, getCommuLingoDocOriginalContent, loadCommuLingoDocContent, getCommuLingoDocAnchorPages, getCommuLingoDocVersionAnchors, docRefId,
     listCommuLingoDocExcerptsFor, getCommuLingoDocSection, getCommuLingoDocContents,
     annotateHeadings, // tests: doc-structure.js freezes the same numbers
     labelNotes, noteBlocks, pageNotes,

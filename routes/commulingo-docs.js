@@ -2,7 +2,7 @@ const { dictionarySearchRoute } = require('../utils/dictionary-search-route');
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
-const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect, getCommuLingoDocContent, loadCommuLingoDocContent, getCommuLingoDocAnchorPages } = require('../data/commulingo/docs-store');
+const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect, getCommuLingoDocContent, loadCommuLingoDocContent, getCommuLingoDocVersionAnchors } = require('../data/commulingo/docs-store');
 const { createDocRefResolver } = require('../data/commulingo/docs-refs');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { courseChaptersForDoc } = require('../data/commulingo/book-page');
@@ -145,7 +145,9 @@ async function renderDoc(req, res, raw, original) {
         : original ? { href: `/commulingo/docs/${docId}`, original: false }
         : raw.original && !english ? { href: `/commulingo/docs/${docId}/original`, original: true, lang: raw.original.lang } : null;
     if (switchTo) {
-        switchTo.anchors = getCommuLingoDocAnchorPages(await loadCommuLingoDocContent(raw, { original: !original }));
+        // Off the other version's stored outline; its body is read only when
+        // that version has no outline yet.
+        switchTo.anchors = getCommuLingoDocVersionAnchors(raw, { original: !original });
     }
     const jsonLd = commuLingoBreadcrumb(lang, [
         { name: lang === 'en' ? 'Reference Library' : '참고 문헌', href: '/commulingo/docs' },
