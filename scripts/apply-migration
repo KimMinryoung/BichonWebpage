@@ -3,7 +3,6 @@
 # frontend role cannot CREATE) and record it in schema_migrations.
 #
 #   scripts/apply-migration scripts/migrations/196_x.sql [--force]
-#   scripts/apply-migration --status      # files never recorded, or changed since
 #   scripts/apply-migration --baseline    # record every current file without running it
 #
 # A file already recorded with the same hash is skipped; one recorded with a
@@ -17,21 +16,9 @@ psql_pg() { docker exec -i "$PG_CONTAINER" psql -U postgres -d leninbot -v ON_ER
 sql_quote() { printf "'%s'" "${1//\'/\'\'}"; }
 who="${USER:-unknown}"
 
-recorded() { psql_pg -c "SELECT filename || ' ' || sha256 FROM schema_migrations"; }
 files() { ls scripts/migrations/*.sql scripts/migrations/data/*.sql 2>/dev/null | sort; }
 
 case "${1:-}" in
-    --status)
-        declare -A have
-        while read -r name hash; do [ -n "$name" ] && have["$name"]="$hash"; done < <(recorded)
-        missing=0
-        for f in $(files); do
-            h=$(sha256sum "$f" | cut -d' ' -f1)
-            if [ -z "${have[$f]:-}" ]; then echo "not applied: $f"; missing=1
-            elif [ "${have[$f]}" != "$h" ]; then echo "changed since applied: $f"; missing=1; fi
-        done
-        [ $missing -eq 0 ] && echo "all $(files | wc -l) migration files recorded and unchanged"
-        exit $missing ;;
     --baseline)
         n=0
         for f in $(files); do
@@ -46,6 +33,8 @@ esac
 
 file="$1"; force="${2:-}"
 [ -f "$file" ] || { echo "no such file: $file" >&2; exit 2; }
+# Recorded relative to the repository, however the path was written.
+file=$(realpath --relative-to=. "$file")
 hash=$(sha256sum "$file" | cut -d' ' -f1)
 prev=$(psql_pg -c "SELECT sha256 FROM schema_migrations WHERE filename = $(sql_quote "$file")")
 if [ -n "$prev" ] && [ "$prev" = "$hash" ]; then echo "already applied: $file"; exit 0; fi
@@ -57,6 +46,6 @@ psql_pg -c "INSERT INTO schema_migrations (filename, sha256, applied_by) VALUES 
             ON CONFLICT (filename) DO UPDATE SET sha256 = EXCLUDED.sha256, applied_at = now(), applied_by = EXCLUDED.applied_by, note = 'reapplied'" >/dev/null
 echo "applied: $file"
 case "$file" in
-    scripts/migrations/data/*|./scripts/migrations/data/*)
+    scripts/migrations/data/*)
         scripts/archive-work-r2 || echo "warning: R2 archive failed; the hourly commulingo-work-archive.timer will upload it" >&2 ;;
 esac
