@@ -37,6 +37,9 @@
   띄우며(닫기 가능), 마지막 쪽 끝에 닿으면 지운다. 목록 카드는 `commulingo-docs-list.js`가 「읽던 문헌 · n쪽」을 단다.
   브라우저 밖으로 나가는 것은 없다. 테스트는 `tests/browser/commulingo-doc-reader.js`에 더했다.
 
+- 2026-11-04 소유자 결정: **R6**은 (a) 발췌 상자에 링크를 걸지 않는다(README 발췌 절에 적음). **T2** 전문 검색은 필요가
+  느껴질 때 한다(보류). 남은 것: ②(파싱 결과 저장), A3·A4·A5, L1~L5(역방향 색인은 보류), R2·R7·R8, S5~S8, ④⑤⑥.
+
 검토 범위: `docs-db.js`, `docs-store.js`, `docs-import.js`, `doc-structure.js`, `doc-pagination.js`, `doc-presentation.js`,
 `doc-linkify.js`, `doc-person-links.js`, `docs-refs.js`, `doc-search.js`, `doc-sanitize.js`, `event-doc-excerpts.js`, `linkify.js`,
 `link-review-*.js`, `routes/commulingo-docs.js`, `views/public/commulingo-doc.ejs`, 발췌 파셜, `public/js/commulingo-doc-*.js`,
@@ -91,7 +94,7 @@
 | R3 ✅ | 리더 템플릿에 인라인 스크립트 세 덩이(페이지 도착 이동, 변형 인물명 팝오버, 원문/번역 전환)와 해제 상자 병합 로직이 있다. 캐시되지 않고 테스트도 없다. | `public/js/commulingo-doc.js` 하나로 옮기고 데이터는 `data-*`로 넘긴다. 해제 병합은 ④. R1의 팝오버도 이 파일에 둔다. | P2 |
 | R4 ✅ | 긴 문헌에 「이어 읽기」가 없다. 설치형 앱(PWA)까지 있는데 읽던 쪽·절을 잃는다. | `localStorage`에 문헌별 `{page, anchor, at}`을 저장하고(스크롤 중 마지막으로 지난 제목 id), 다음 방문 첫 화면 상단에 「n쪽 「…」부터 이어 읽기」 한 줄을 띄운다. 목록 카드에도 「읽던 문헌」 표시. 계측은 기존 학습 계측과 분리. | P2 |
 | R5 | 원문/번역 전환 칸을 그리려고 요청마다 반대쪽 판의 본문을 읽어 캐시에 올린다(`getCommuLingoDocAnchorPages(other)`). 원문이 있는 문헌은 캐시 자리를 둘 쓴다. | ②의 outline에 `anchorPages`(편집자가 쓴 h1~h3 id → 쪽)를 넣어 스냅숏에서 읽는다. | ② |
-| R6 | 발췌 상자(용어·사건 페이지)의 본문은 사전 링크를 걸지 않고(`getCommuLingoDocSection` 결과를 그대로 출력), 변형 인물명 팝오버 스크립트도 싣지 않는다. 같은 글이 리더에서는 링크가 걸리고 발췌에서는 안 걸린다. | 소유자 결정: (a) "사료는 그대로"를 발췌의 원칙으로 못 박고 README에 적는다, 또는 (b) `surface: 'doc'` 링커를 발췌에도 돌리되 호스트 항목(`exclude`)은 뺀다. (b)면 발췌도 memo에 넣는다. 어느 쪽이든 `fic-name`이 있는 문헌의 발췌에는 팝오버 스크립트를 싣는다. | P3 |
+| R6 ✅(a) | 발췌 상자(용어·사건 페이지)의 본문은 사전 링크를 걸지 않고(`getCommuLingoDocSection` 결과를 그대로 출력), 변형 인물명 팝오버 스크립트도 싣지 않는다. 같은 글이 리더에서는 링크가 걸리고 발췌에서는 안 걸린다. | 소유자 결정: (a) "사료는 그대로"를 발췌의 원칙으로 못 박고 README에 적는다, 또는 (b) `surface: 'doc'` 링커를 발췌에도 돌리되 호스트 항목(`exclude`)은 뺀다. (b)면 발췌도 memo에 넣는다. 어느 쪽이든 `fic-name`이 있는 문헌의 발췌에는 팝오버 스크립트를 싣는다. | P3 |
 | R7 | 한 페이지에 같은 문헌의 발췌가 둘 이상 실리면(사건의 조문·이유서·개정법) 두 발췌가 같은 주석을 가져올 때 `id="note-N"`이 겹친다. 제목 강등은 정규식이다. | 발췌 안 id에 `ex<i>-` 접두사를 붙이고 `href="#…"`도 함께 고친다(이미 `ids` 집합을 만들고 있으니 그 자리에서). ②에서 파서로 옮긴다. | P3 |
 | R8 | 본문 캐시(40개 × 본문+분할본, 큰 문헌은 3MB)·링크 memo의 적중률을 알 길이 없다. | `getCommuLingoDocContent`·`linkDocHtml`에 적중/실패 카운터를 두고 `/ready`나 운영 지표(`site-metrics`)에 노출. 숫자를 본 뒤 `BODY_CACHE_MAX`를 정한다. | P3 |
 | — | 서지 JSON-LD·인용하기, 문단 링크 | 기존 ⑤·⑥. | — |
@@ -112,7 +115,7 @@
 | # | 문제 | 개선 방법 | 우선 |
 |---|---|---|---|
 | T1 ✅ | 문헌 fixture가 없어 클라우드 세션에서 `commulingo-doc-excerpts`·분할·리디렉트 테스트가 건너뛴다(데이터 문서는 `tests/fixtures/commulingo-data-documents-seed.json`이 있다). 리더 로직을 고쳐도 서버에서야 확인된다. | `tests/fixtures/commulingo-docs-seed.json`: 합성 문헌 4편(주석 있는 단일 쪽, 분할되는 긴 글, `excerpts`·`anchors`·리디렉트가 있는 모음집, 공개 원문이 있는 번역). `docs-store`가 스냅숏도 DB도 없으면 이 시드를 읽는다(`validateSnapshot`과 같은 꼴). 실데이터 검사는 지금처럼 `@requires live-data`. | P1 |
-| T2 | 문헌 전문 검색이 없다. 통합 검색은 제목·요약·별칭만, 문헌 안 검색은 한 편씩이다([검색 범위](site-search.md)). | 소유자 결정 뒤: `commulingo_docs`에 `body_text`(태그 없는 본문, 저장 시 파서로) 칼럼과 `pg_trgm` GIN 인덱스(한국어는 기본 tsvector 설정이 약하다), `/commulingo/docs/search?q=`가 문헌별 일치 수·발췌를 내고 결과는 기존 `?p=&q=&hit=`로 간다. 영어는 공개 원문의 `body_text`. | P3 |
+| T2 보류 | 문헌 전문 검색이 없다. 통합 검색은 제목·요약·별칭만, 문헌 안 검색은 한 편씩이다([검색 범위](site-search.md)). | 소유자 결정 뒤: `commulingo_docs`에 `body_text`(태그 없는 본문, 저장 시 파서로) 칼럼과 `pg_trgm` GIN 인덱스(한국어는 기본 tsvector 설정이 약하다), `/commulingo/docs/search?q=`가 문헌별 일치 수·발췌를 내고 결과는 기존 `?p=&q=&hit=`로 간다. 영어는 공개 원문의 `body_text`. | P3 |
 | T3 | 구조 검사 래칫·id 백필은 아직 운영 서버에서 돌리지 않았다. | [구조 검사 TO-DO의 서버 작업 1~6](commulingo-docs-structure-todo.md#운영-서버에서-할-일-다음-담당자-순서대로)을 먼저 끝낸다. 여기의 S1~S4·A1·A2는 그 래칫에 규칙을 더하는 것이라 같은 순서(현황 보고 → 오탐 확인 → 거부)로 넣는다. | P1 |
 
 ## 권장 순서
