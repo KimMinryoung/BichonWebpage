@@ -102,10 +102,15 @@ function incomingBody(html, currentSha) {
     return sanitizeDocHtml(html);
 }
 
+// Since 2026-11-04 every stored document is free of structural errors, so the
+// rule is no longer a ratchet (fewer errors than before) but absolute: a write
+// with any error is refused. The report still says which errors are new
+// (`introduced`), for the reader of the refusal.
 function refuseStructure(reports) {
-    const bad = reports.filter(report => report.introduced.length);
+    const bad = reports.filter(report => report.errors.length);
     if (!bad.length) return;
-    const lines = bad.flatMap(report => report.introduced.map(issue => `${report.label}: [${issue.code}] ${issue.message}`));
+    const lines = bad.flatMap(report => report.errors.map(issue =>
+        `${report.label}: [${issue.code}] ${issue.message}${report.introduced.includes(issue) ? '' : ' (already stored)'}`));
     const err = badRequest(`structure check refused the write (data/commulingo/docs/README.md; pass allowStructureIssues / --allow-structure to store it anyway):\n  ${lines.join('\n  ')}`, 422);
     err.structure = bad;
     throw err;

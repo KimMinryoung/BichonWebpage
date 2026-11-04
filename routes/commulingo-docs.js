@@ -2,7 +2,7 @@ const { dictionarySearchRoute } = require('../utils/dictionary-search-route');
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
-const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect, getCommuLingoDocContent, getCommuLingoDocOriginalContent, getCommuLingoDocAnchorPages } = require('../data/commulingo/docs-store');
+const { listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect, getCommuLingoDocContent, loadCommuLingoDocContent, getCommuLingoDocAnchorPages } = require('../data/commulingo/docs-store');
 const { createDocRefResolver } = require('../data/commulingo/docs-refs');
 const { genealogyLinksFor } = require('../data/commulingo/genealogy-links');
 const { courseChaptersForDoc } = require('../data/commulingo/book-page');
@@ -32,6 +32,22 @@ function editorialForLanguage(html, lang) {
 }
 
 const { linkDocHtml, nestToc, presentDoc, presentedDocList } = require('../data/commulingo/doc-presentation');
+
+// A body the cache does not hold even after a refresh (docs-store
+// loadCommuLingoDocContent) is a passing state, not a broken page: say so
+// with a 503 and a retry hint rather than the 500 page.
+function failed(res, err, label, fallback) {
+    const lang = res.locals.lang;
+    const back = { backHref: '/commulingo/docs', backLabel: lang === 'en' ? 'Reference Library' : '참고 문헌' };
+    if (err && err.status === 503) {
+        console.warn(`${label}: ${err.message}`);
+        res.set('Retry-After', '5');
+        return errorPage.serviceUnavailable(res, {
+            message: lang === 'en' ? 'The document is being prepared; please try again in a moment.' : '문서를 준비하는 중입니다. 잠시 후 다시 열어 주세요.', ...back });
+    }
+    console.error(`${label}:`, err);
+    return errorPage.serverError(res, { message: fallback, ...back });
+}
 
 router.get('/search', dictionarySearchRoute({
     kind: 'docs', view: 'partials/commulingo-docs-cards', target: '#commu-doc-list',
@@ -75,15 +91,17 @@ router.get('/', async (req, res) => {
 
 // Keyword search across every page of one document (doc-search.js); the
 // reader's search panel (public/js/commulingo-doc-search.js) calls it.
-router.get('/:docId/search', (req, res) => {
+router.get('/:docId/search', async (req, res) => {
     try {
         const raw = getCommuLingoDoc(typeof req.params.docId === 'string' ? req.params.docId.trim() : '');
         if (!raw) return res.status(404).json({ error: 'not found' });
         const query = typeof req.query.q === 'string' ? req.query.q : '';
+        const content = await loadCommuLingoDocContent(raw);
         setShortPublicCache(res);
-        res.json(searchDocContent(getCommuLingoDocContent(raw), query));
+        res.json(searchDocContent(content, query));
     } catch (err) {
         console.error('commulingo doc search:', err);
+        if (err.status === 503) res.set('Retry-After', '5');
         res.status(err.status || 500).json({ error: 'search failed' });
     }
 });
@@ -100,7 +118,7 @@ async function renderDoc(req, res, raw, original) {
     // The original-language page (original = { lang }) reads like the
     // translation, through the same reader, without the glossary links that
     // belong to the translation's language.
-    const content = original ? getCommuLingoDocOriginalContent(raw) : getCommuLingoDocContent(raw);
+    const content = await loadCommuLingoDocContent(raw, { original: Boolean(original) });
     const docLang = original ? original.lang : (raw.docLang || 'ko');
     const pagePath = `/commulingo/docs/${docId}` + (original && !english ? '/original' : '');
     const linkHtml = (scope, html) => original ? editorialForLanguage(html, english ? 'en' : 'ko')
@@ -117,7 +135,7 @@ async function renderDoc(req, res, raw, original) {
         : original ? { href: `/commulingo/docs/${docId}`, original: false }
         : raw.original && !english ? { href: `/commulingo/docs/${docId}/original`, original: true, lang: raw.original.lang } : null;
     if (switchTo) {
-        switchTo.anchors = getCommuLingoDocAnchorPages(original ? getCommuLingoDocContent(raw) : getCommuLingoDocOriginalContent(raw));
+        switchTo.anchors = getCommuLingoDocAnchorPages(await loadCommuLingoDocContent(raw, { original: !original }));
     }
     const jsonLd = commuLingoBreadcrumb(lang, [
         { name: lang === 'en' ? 'Reference Library' : '참고 문헌', href: '/commulingo/docs' },
@@ -206,12 +224,7 @@ router.get('/:docId/original', async (req, res) => {
         if (req.urlLanguage === 'en') return res.redirect(301, `/en/commulingo/docs/${raw.id}`);
         await renderDoc(req, res, raw, { lang: raw.original.lang });
     } catch (err) {
-        console.error('commulingo doc original:', err);
-        errorPage.serverError(res, {
-            message: res.locals.lang === 'en' ? 'Failed to load document.' : '문서를 불러올 수 없습니다.',
-            backHref: '/commulingo/docs',
-            backLabel: res.locals.lang === 'en' ? 'Reference Library' : '참고 문헌',
-        });
+        failed(res, err, 'commulingo doc original', res.locals.lang === 'en' ? 'Failed to load document.' : '문서를 불러올 수 없습니다.');
     }
 });
 
@@ -227,7 +240,7 @@ router.get('/:docId', async (req, res) => {
         }
         const merged = getCommuLingoDocRedirect(docId);
         if (merged) {
-            const { paged } = getCommuLingoDocContent(merged.doc);
+            const { paged } = await loadCommuLingoDocContent(merged.doc);
             const page = paged?.idToPage[merged.anchor];
             const prefix = req.urlLanguage === 'en' ? '/en' : '';
             return res.redirect(301, `${prefix}/commulingo/docs/${merged.doc.id}`
@@ -240,12 +253,7 @@ router.get('/:docId', async (req, res) => {
         });
         await renderDoc(req, res, raw, lang === 'en' && raw.original ? { lang: raw.original.lang } : null);
     } catch (err) {
-        console.error('commulingo doc detail:', err);
-        errorPage.serverError(res, {
-            message: res.locals.lang === 'en' ? 'Failed to load document.' : '문서를 불러올 수 없습니다.',
-            backHref: '/commulingo/docs',
-            backLabel: res.locals.lang === 'en' ? 'Reference Library' : '참고 문헌',
-        });
+        failed(res, err, 'commulingo doc detail', res.locals.lang === 'en' ? 'Failed to load document.' : '문서를 불러올 수 없습니다.');
     }
 });
 

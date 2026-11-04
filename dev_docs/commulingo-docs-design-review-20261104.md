@@ -19,6 +19,11 @@
   2026-11-04 완료(결과는 TO-DO 문서). `writeDocs`는 들어온 항목과 저장된 항목을 둘 다 정규화해 키 순서와 무관하게 비교하므로,
   항목을 그대로 돌려보낸 `put`은 리비전을 늘리지 않는다. 정규형이 아니던 항목(`terms: []`, 곧은 따옴표)은 실제로 고쳐 저장할 때 함께 정규화된다.
 
+- 2026-11-04 후속: 구조 검사는 래칫에서 전면 규칙으로 바뀌었고(저장된 문헌 오류 0 달성), 서고 전체 검사 테스트가 `npm test`에
+  들어갔다. 본문 캐시가 비었을 때의 500은 한 번 갱신 뒤 재시도·503으로 바꿨다. 운영 리더 확인(Playwright)에서 원문/번역 전환이
+  앵커 도착 직후 바로 앞 절로 가는 결함을 찾아 고쳤다(R3의 스크립트 분리는 아직 아니다). 자세한 기록은
+  [구조 검사 TO-DO](commulingo-docs-structure-todo.md#운영-서버에서-할-일-다음-담당자-순서대로) 4·6·7.
+
 검토 범위: `docs-db.js`, `docs-store.js`, `docs-import.js`, `doc-structure.js`, `doc-pagination.js`, `doc-presentation.js`,
 `doc-linkify.js`, `doc-person-links.js`, `docs-refs.js`, `doc-search.js`, `doc-sanitize.js`, `event-doc-excerpts.js`, `linkify.js`,
 `link-review-*.js`, `routes/commulingo-docs.js`, `views/public/commulingo-doc.ejs`, 발췌 파셜, `public/js/commulingo-doc-*.js`,
