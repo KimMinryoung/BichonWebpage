@@ -11,6 +11,7 @@
 //   restore <id> <revision> [--actor who]
 //   structure [id ...] [--json]          structure check of the stored bodies (read-only)
 //   freeze-ids [--dry-run] [--actor who] write stored ids into every heading that has none
+//   outline [--dry-run]                  store the outline (contents, pages, notes) of every body lacking a current one
 //
 // put and put-body refuse a body or entry that adds a structural error the
 // stored version did not have (doc-structure.js, doc-entry.js); --allow-structure
@@ -31,7 +32,7 @@
 console.log = console.info = console.error;
 require('./lib/bootstrap');
 const fs = require('fs');
-const { readAllDocRows, readAllOriginalRows, writeDocs, listDocRevisions, restoreDocRevision, storedEntry, sha256, checkStructure, loadKnownRefs } = require('../data/commulingo/docs-db');
+const { readAllDocRows, readAllOriginalRows, writeDocs, listDocRevisions, restoreDocRevision, storedEntry, sha256, checkStructure, loadKnownRefs, refreshDocOutlines } = require('../data/commulingo/docs-db');
 const { freezeHeadingIds } = require('../data/commulingo/doc-structure');
 const { canonicalEntry } = require('../data/commulingo/docs-import');
 
@@ -254,6 +255,11 @@ async function main() {
             const withErrors = reports.filter(report => report.errors.length).length;
             console.error(`${reports.length} bodies checked, ${withErrors} with errors, ${reports.filter(r => r.warnings.length).length} with warnings`);
         }
+    } else if (command === 'outline') {
+        const result = await refreshDocOutlines({ dryRun: args.includes('--dry-run') });
+        for (const id of result.written.docs) console.log(`${result.dryRun ? 'would write' : 'wrote'} outline ${id}`);
+        for (const id of result.written.originals) console.log(`${result.dryRun ? 'would write' : 'wrote'} original outline ${id}`);
+        console.log(`${result.dryRun ? 'dry run: ' : ''}${result.written.docs.length}/${result.checked.docs} documents, ${result.written.originals.length}/${result.checked.originals} originals needed an outline`);
     } else if (command === 'freeze-ids') {
         const result = await freezeIds(args);
         const changed = result.written.filter(w => w.op !== 'unchanged');
@@ -269,7 +275,7 @@ async function main() {
         const result = await restoreDocRevision(args[0], Number(args[1]), { actor: option(args, '--actor', `commulingo-docs:${process.env.USER || 'cli'}`) });
         console.log(JSON.stringify(result.written));
     } else {
-        console.error('usage: commulingo-docs.js export [id ...] | put [--dry-run] [--delete-missing] [--allow-structure] | put-body <id> [--allow-structure] | history <id> | restore <id> <revision> | structure [id ...] [--json] | freeze-ids [--dry-run]');
+        console.error('usage: commulingo-docs.js export [id ...] | put [--dry-run] [--delete-missing] [--allow-structure] | put-body <id> [--allow-structure] | history <id> | restore <id> <revision> | structure [id ...] [--json] | freeze-ids [--dry-run] | outline [--dry-run]');
         process.exit(2);
     }
 }

@@ -24,11 +24,21 @@ function docsForLanguage(lang) {
 
 // An original carries its editor's note once per site language
 // (<aside class="doc-editorial" lang="ko|en">); a note without lang is Korean.
-function editorialForLanguage(html, lang) {
-    return html.replace(/<aside\b[^>]*class="doc-editorial"[^>]*>[\s\S]*?<\/aside>\s*/g, aside => {
-        const noteLang = (aside.match(/^<aside\b[^>]*\blang="([a-z]+)"/) || [])[1] || 'ko';
-        return noteLang === lang ? aside : '';
-    });
+// A box never holds another (doc-structure.js nested-block), so the non-greedy
+// match ends at the right close tag. Memoized per page html and language, as
+// the translation's links are (doc-presentation.js linkDocHtml).
+const editorialMemo = new WeakMap(); // content -> Map(lang\0scope -> html)
+function editorialForLanguage(content, lang, scope, html) {
+    let byKey = editorialMemo.get(content);
+    if (!byKey) editorialMemo.set(content, byKey = new Map());
+    const key = lang + '\0' + scope;
+    if (!byKey.has(key)) {
+        byKey.set(key, html.replace(/<aside\b[^>]*class="doc-editorial"[^>]*>[\s\S]*?<\/aside>\s*/g, aside => {
+            const noteLang = (aside.match(/^<aside\b[^>]*\blang="([a-z]+)"/) || [])[1] || 'ko';
+            return noteLang === lang ? aside : '';
+        }));
+    }
+    return byKey.get(key);
 }
 
 const { linkDocHtml, nestToc, presentDoc, presentedDocList } = require('../data/commulingo/doc-presentation');
@@ -121,7 +131,7 @@ async function renderDoc(req, res, raw, original) {
     const content = await loadCommuLingoDocContent(raw, { original: Boolean(original) });
     const docLang = original ? original.lang : (raw.docLang || 'ko');
     const pagePath = `/commulingo/docs/${docId}` + (original && !english ? '/original' : '');
-    const linkHtml = (scope, html) => original ? editorialForLanguage(html, english ? 'en' : 'ko')
+    const linkHtml = (scope, html) => original ? editorialForLanguage(content, english ? 'en' : 'ko', scope, html)
         : linkDocHtml(getCommuLingoDocContent(raw), raw, lang, scope, html);
     // hreflang: the Korean side of a document is its translation, the English
     // side its original; the Korean reader's /original page has no English twin.

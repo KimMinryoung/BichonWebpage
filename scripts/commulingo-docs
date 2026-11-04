@@ -16,6 +16,7 @@
 #   scripts/commulingo-docs history <id>
 #   scripts/commulingo-docs structure [id ...] [--json]   # structure check of stored bodies (read-only)
 #   scripts/commulingo-docs freeze-ids [--dry-run]        # store ids in idless headings (one-time backfill)
+#   scripts/commulingo-docs outline [--dry-run]           # store the outline of every body lacking a current one
 #   scripts/commulingo-docs restore <id> <revision>
 #
 # Keep job directories under scripts/content/ (gitignored, archived to R2).
@@ -112,7 +113,7 @@ json.dump(bundle, sys.stdout, ensure_ascii=False)
         id="${1:?usage: commulingo-docs put-body <id> <file.html> [--note text]}"; file="${2:?usage: commulingo-docs put-body <id> <file.html>}"; shift 2
         run put-body "$id" "$@" < "$file"
         ;;
-    history|restore|audit|structure|freeze-ids)
+    history|restore|audit|structure|freeze-ids|outline)
         run "$cmd" "$@"
         ;;
     *)

@@ -267,8 +267,9 @@ const tools = [
         async handler({ id, body = true, originalBody = false, ...view }) {
             const { getCommuLingoDoc } = require('../../data/commulingo/docs-store');
             const { readDocRow, readOriginalRow } = require('../../data/commulingo/docs-db');
-            const doc = getCommuLingoDoc(id);
-            if (!doc) throw notFound('document', id);
+            const served = getCommuLingoDoc(id);
+            if (!served) throw notFound('document', id);
+            const { outline, ...doc } = served; // the stored parse (doc-outline.js) is not entry data
             const row = await readDocRow(id);
             const html = row && body ? row.body : null;
             const orig = await readOriginalRow(id);
@@ -288,7 +289,8 @@ const tools = [
             const needle = needleOf(q);
             const docs = listCommuLingoDocs().filter(doc => matches(needle, [doc.id, ...flatStrings(doc.title)]));
             const result = paged(docs, { limit, offset });
-            result.items = result.items.map(({ excerpts, ...doc }) => doc);
+            // The stored outline is the reader's business, not metadata.
+            result.items = result.items.map(({ excerpts, outline, ...doc }) => doc);
             return result;
         },
     },
