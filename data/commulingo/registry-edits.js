@@ -103,6 +103,22 @@ const OPS = {
         if (!rowCount) throw badRequest(`${personId} is not in ${collectionId}`, 404);
         return { entityType: 'person_collection', entityId: collectionId, note: `remove member ${personId}`, snapshot: { personId }, changed: true };
     },
+    // "Reviewed: holds no political position", as against not yet classified.
+    // The two exclude each other: joining a collection clears the mark (DB
+    // trigger), so a member cannot be given it.
+    async person_no_political_position_set(client, op) {
+        const personId = id(op.personId, 'personId');
+        if (typeof op.value !== 'boolean') throw badRequest('value must be true or false');
+        const row = (await client.query('SELECT no_political_position FROM commulingo_people WHERE id = $1 FOR UPDATE', [personId])).rows[0];
+        if (!row) throw badRequest(`person not found: ${personId}`, 404);
+        if (op.value) {
+            const member = await client.query('SELECT collection_id FROM commulingo_person_collection_members WHERE person_id = $1 LIMIT 1', [personId]);
+            if (member.rowCount) throw badRequest(`${personId} is in ${member.rows[0].collection_id}; remove the membership first`, 409);
+        }
+        await client.query('UPDATE commulingo_people SET no_political_position = $2, updated_at = now() WHERE id = $1', [personId, op.value]);
+        return { entityType: 'person', entityId: personId, note: 'set no_political_position',
+            snapshot: { before: row.no_political_position, after: op.value }, changed: row.no_political_position !== op.value };
+    },
     async blocklist_add(client, op) {
         if (!BLOCK_KINDS.includes(op.kind)) throw badRequest(`kind must be one of ${BLOCK_KINDS.join(', ')}`);
         const row = [op.kind, lang(op.lang), text(op.phrase, 'phrase'), String(op.note || '').slice(0, 2000)];
