@@ -10,8 +10,8 @@
 
 | # | 항목 | 상태 |
 |---|---|---|
-| ① | 저장 시 구조 검증(래칫) | 코드 완료 · **배포·서버 점검 필요** |
-| ③ | 제목 id 저장 시 고정 | 코드 완료 · **배포 후 백필 필요** |
+| ① | 저장 시 구조 검증(래칫) | 배포 완료 · 저장된 문서 오류 0(2026-11-04) · 전면 규칙 전환 남음 |
+| ③ | 제목 id 저장 시 고정 | 완료(2026-11-04 백필) |
 | ② | 파서 기반 처리·파생 데이터 저장 | 일부(파서 모듈, 발췌 절단) · 나머지 남음 |
 | ④ | 번역·편집 정보 단일 원본화 | 남음 |
 | ⑤ | 서지 메타데이터 구조화·JSON-LD | 남음 |
@@ -54,21 +54,23 @@
 
 ## 운영 서버에서 할 일 (다음 담당자, 순서대로)
 
-클라우드 세션에서는 DB·컨테이너가 없어 아래를 실행하지 못했다. **실제 문헌 데이터로는 아직 한 번도 돌려 보지 않았다.**
+2026-11-04 운영 서버에서 1·2·3·5를 마쳤다. 오류 72건 중 69건은 본문 38개에서 주석 묶음이 `</article>` 뒤에 있어 난 것으로,
+규칙이 아니라 본문을 고쳤다(`</article>`을 맨 끝으로). 나머지는 `terms`에 잘못 든 사건 id 2건과 빠진 요약 1건이다.
+남은 경고는 5건이다(`editorial-lang-missing` 3, 원문의 `excerpt-target-missing` 2).
 
-1. [ ] 배포: `scripts/deploy`(웹), `scripts/deploy --mcp-only`(MCP 컨테이너. `mcp/tools/content.js`의 `doc_put`이 바뀜).
-2. [ ] 현황 점검: `scripts/commulingo-docs structure > scripts/content/docs-structure-20261031.tsv`.
+1. [x] 배포: `scripts/deploy`(웹), `scripts/deploy --mcp-only`(MCP 컨테이너. `mcp/tools/content.js`의 `doc_put`이 바뀜).
+2. [x] 현황 점검: `scripts/commulingo-docs structure > scripts/content/docs-structure-20261031.tsv`.
    2026-11-04부터 manifest 항목 검사(모르는 키·`kind` 표·`date`·`summary.ko`·`excerpts`/`anchors` 형태·사전에 없는 id)도
    같은 보고에 나온다([설계 검토](commulingo-docs-design-review-20261104.md#진행-상태)).
    문서별 기존 오류 수를 보고, 오탐(규칙이 실제 관행과 다른 경우)이 있으면 `doc-structure.js`의 규칙부터 고친다.
    예상 오탐 후보: byline 없이 시작하는 오래된 문서, 해제 상자 안에 저본 편집자의 해설 aside를 넣은 문서
    (`nested-block`), `ol` 대신 `ul`로 쓴 주석 목록.
-3. [ ] **id 백필을 본문 편집보다 먼저**: `scripts/commulingo-docs freeze-ids --dry-run` → 이상 없으면 실행.
+3. [x] **id 백필을 본문 편집보다 먼저**: `scripts/commulingo-docs freeze-ids --dry-run` → 이상 없으면 실행.
    백필 전에 옛 문서 본문에 제목을 끼워 넣어 저장하면, 그 저장에서 매겨지는 번호는 (예전과 마찬가지로)
    뒤로 밀린다. 백필 뒤에는 밀리지 않는다.
 4. [ ] 대표 문서 하나를 리더에서 확인(목차 링크, 페이지 분할 문서의 `?p=N#sec-N`, 원문/번역 전환, 발췌 상자).
    `tests/unit/commulingo-doc-excerpts.js`는 스냅숏이 있는 서버에서만 실제로 돈다.
-5. [ ] 2에서 나온 기존 오류를 문서별로 고친다(`export` → 수정 → `put`). 오류가 0이 된 문서는 래칫상 다시 나빠질 수 없다.
+5. [x] 2에서 나온 기존 오류를 문서별로 고친다(`export` → 수정 → `put`). 오류가 0이 된 문서는 래칫상 다시 나빠질 수 없다.
 6. [ ] 기존 오류가 모두 사라지면 `docs-store`나 smoke에 "저장된 문서 전체 오류 0" 검사를 추가해 래칫을 전면 규칙으로 바꾼다.
 
 ## 남은 작업

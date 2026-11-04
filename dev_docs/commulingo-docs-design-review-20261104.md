@@ -16,7 +16,8 @@
 - **운영 서버에서 할 일**: 배포 뒤 `scripts/commulingo-docs structure`로 새 오류 코드의 현황을 보고(모르는 키·`kind`
   라벨 불일치·`date`/`summary` 누락·사전에 없는 id가 몇 편인지), 오탐이면 규칙을 고치고, 아니면 문서별로 entry를 고친다.
   이 작업은 [구조 검사 TO-DO의 서버 작업](commulingo-docs-structure-todo.md#운영-서버에서-할-일-다음-담당자-순서대로) 2번과 함께 한다.
-  주의: `put`이 이제 항목을 정규화해 저장하므로, 저장된 항목이 정규형이 아니던 문헌(`terms: []`, 곧은 따옴표)은 첫 `put`에서 한 번 리비전이 는다.
+  2026-11-04 완료(결과는 TO-DO 문서). `writeDocs`는 들어온 항목과 저장된 항목을 둘 다 정규화해 키 순서와 무관하게 비교하므로,
+  항목을 그대로 돌려보낸 `put`은 리비전을 늘리지 않는다. 정규형이 아니던 항목(`terms: []`, 곧은 따옴표)은 실제로 고쳐 저장할 때 함께 정규화된다.
 
 검토 범위: `docs-db.js`, `docs-store.js`, `docs-import.js`, `doc-structure.js`, `doc-pagination.js`, `doc-presentation.js`,
 `doc-linkify.js`, `doc-person-links.js`, `docs-refs.js`, `doc-search.js`, `doc-sanitize.js`, `event-doc-excerpts.js`, `linkify.js`,

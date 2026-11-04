@@ -73,6 +73,28 @@ async function loadKnownRefs() {
     }
 }
 
+// JSON text with object keys sorted: jsonb keeps its own key order, so the order
+// an entry comes back in says nothing about whether it changed.
+function stableJson(value) {
+    return JSON.stringify(value, (_key, item) => (item && typeof item === 'object' && !Array.isArray(item)
+        ? Object.fromEntries(Object.keys(item).sort().map(key => [key, item[key]]))
+        : item));
+}
+
+// Does this entry say the same as the stored one? The stored side is canonicalized
+// too, so sending an entry back untouched is no change even when the stored form
+// predates a normalization (an empty list since dropped, a quote since converted).
+// A stored entry today's validation refuses cannot equal one that passed it.
+function sameStoredEntry(id, entry, storedRow, canonicalized) {
+    if (stableJson(entry) === stableJson(storedRow)) return true;
+    if (!canonicalized) return false;
+    try {
+        return stableJson(entry) === stableJson(require('./docs-import').canonicalizeStoredEntry(id, storedEntry(storedRow)));
+    } catch {
+        return false;
+    }
+}
+
 // A body differing from the stored one is sanitized as an import is; an
 // untouched one is not rewritten (the sanitizer reserializes markup).
 function incomingBody(html, currentSha) {
@@ -223,8 +245,8 @@ async function writeDocs(changes, { actor, note, client, allowStructureIssues = 
                 body = freezeHeadingIds(incomingBody(normalized, current?.body_sha256));
                 if (!body.trim()) throw badRequest(`${item.id}: body must be non-empty html`);
             }
-            const changed = !current || (body !== undefined && sha256(body) !== current.body_sha256)
-                || JSON.stringify(entry) !== JSON.stringify(current.entry);
+            const entryChanged = Boolean(current) && !sameStoredEntry(item.id, entry, current.entry, canonicalizeEntries);
+            const changed = !current || (body !== undefined && sha256(body) !== current.body_sha256) || entryChanged;
             if (changed) {
                 const audit = await require('./doc-person-links').inspectDocPersonLinks(body ?? current?.body, { id: item.id, ...entry });
                 linkAudits.push({ id: item.id, mentions: audit.mentions, warnings: audit.warnings, truncated: audit.truncated });
@@ -250,7 +272,6 @@ async function writeDocs(changes, { actor, note, client, allowStructureIssues = 
                 continue;
             }
             const bodyChanged = body !== undefined && sha256(body) !== current.body_sha256;
-            const entryChanged = JSON.stringify(entry) !== JSON.stringify(current.entry);
             const sortChanged = Number.isInteger(item.sortOrder) && item.sortOrder !== current.sort_order;
             if (!bodyChanged && !entryChanged && !sortChanged) {
                 written.push({ id: item.id, revision: current.revision, op: 'unchanged' });

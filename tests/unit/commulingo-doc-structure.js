@@ -190,6 +190,20 @@ const ENTRY = { docLang: 'ko', title: { ko: '문헌' }, summary: { ko: '요약' 
     const hostile = await writeDocs({ upserts: [{ id: 'demo', entry: stored.entry, body: GOOD.replace('<p>무엇을 다루는지.</p>', '<p onclick="x()">무엇을 다루는지.</p>'), expectedRevision: 3 }] }, { actor: 't', client });
     assert.equal(hostile.written[0].op, 'update');
     assert.ok(!writes.at(-1)[4].includes('onclick'), 'sanitized');
+    // An entry sent back untouched is no write: jsonb's key order, an empty list
+    // canonicalizing drops and a quote it converts are not edits by the caller.
+    const storedEntryBefore = stored.entry;
+    stored.entry = { title: { en: '', ko: '문헌' }, description: { en: '', ko: "'분파' 체제" }, docLang: 'ko', events: [], terms: [] };
+    writes.length = 0;
+    const metaOnly = entry => writeDocs({ upserts: [{ id: 'demo', entry, expectedRevision: 3 }] }, { actor: 't', client });
+    assert.equal((await metaOnly(stored.entry)).written[0].op, 'unchanged', 'the stored form sent back');
+    const reordered = { docLang: 'ko', terms: [], events: [], description: { ko: "'분파' 체제", en: '' }, title: { ko: '문헌', en: '' } };
+    assert.equal((await metaOnly(reordered)).written[0].op, 'unchanged', 'the same entry in another key order');
+    assert.equal(writes.length, 0, 'neither wrote a revision');
+    const edited = await metaOnly({ ...reordered, description: { ko: "'분파' 독재 체제", en: '' } });
+    assert.equal(edited.written[0].op, 'update', 'a real edit is still written');
+    assert.equal(writes.length, 1);
+    stored.entry = storedEntryBefore;
     // A new document must meet every rule, entry included.
     await assert.rejects(
         writeDocs({ upserts: [{ id: 'fresh', entry: stored.entry, body: '<article><h1>새 문헌</h1><p>본문</p></article>' }] }, { actor: 't', client }),
