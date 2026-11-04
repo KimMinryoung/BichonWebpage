@@ -12,7 +12,7 @@
 |---|---|---|
 | ① | 저장 시 구조 검증 | 완료. 저장된 문서 오류 0(2026-11-04) → 래칫을 전면 규칙으로 전환(오류가 하나라도 있으면 거부), `tests/unit/commulingo-docs-stored-structure.js`가 서고 전체를 검사 |
 | ③ | 제목 id 저장 시 고정 | 완료(2026-11-04 백필) |
-| ② | 파서 기반 처리·파생 데이터 저장 | 일부(파서 모듈, 발췌 절단) · 나머지 남음 |
+| ② | 파서 기반 처리·파생 데이터 저장 | 코드 완료(2026-11-04, outline 컬럼) · **마이그레이션 377 적용과 `outline` 백필 필요** |
 | ④ | 번역·편집 정보 단일 원본화 | 남음 |
 | ⑤ | 서지 메타데이터 구조화·JSON-LD | 남음 |
 | ⑥ | 문단 단위 고유 링크 | 남음 |
@@ -79,28 +79,34 @@
    우회는 그대로 `--allow-structure`/`allowStructureIssues`, `restore`). `tests/unit/commulingo-docs-stored-structure.js`가 서빙되는
    문헌·공개 원문 전체를 검사해 `npm test`(배포)에서 걸린다. 사전에서 지워진 id(`ref-unknown`)도 그 문헌의 다음 저장을 막으므로,
    인물·용어·사건을 지울 때는 문헌 entry부터 고친다.
+8. [ ] **② 배포 뒤**: `scripts/apply-migration`으로 377(`commulingo_docs`·`commulingo_doc_originals`에 `outline jsonb`)을 적용하고
+   `scripts/commulingo-docs outline --dry-run` → `outline`을 돌린다(리비전 없이 컬럼만 채운다, 259편 수십 초). 그 전까지 리더는
+   outline 없는 행을 예전처럼 직접 파싱하므로 순서가 바뀌어도 깨지지 않는다. 뒤에 대표 문헌 하나(분할 문헌)의 목차·쪽·주석·발췌 상자를
+   한 번 본다. 그 뒤 새 저장은 모두 outline을 함께 쓴다.
 7. [x] 저장 직후 본문 캐시가 비어 500이 나던 문제(2026-11-04): 리더·리디렉트·문헌 안 검색 경로가 `loadCommuLingoDocContent`로
    본문을 읽는다. 캐시에 없으면 스냅숏을 한 번 강제 갱신(빠진 본문을 먼저 받는다)하고 다시 읽으며, 그래도 없으면 500 대신
    `Retry-After: 5`를 단 503 페이지(「문서를 준비하는 중」)다.
 
 ## 남은 작업
 
-### ② 파싱 결과 저장 (다음 우선순위)
+### ② 파싱 결과 저장 (코드 완료 2026-11-04, 서버 작업 8번 남음)
 
 목표: 요청마다 정규식으로 HTML을 다시 자르지 않고, 저장 시 한 번 파싱한 결과를 읽기만 한다.
 
-- [ ] 마이그레이션: `commulingo_docs`(와 `commulingo_doc_originals`)에 `outline jsonb` 컬럼 추가.
-  내용: `toc`(level·id·text), `headings`(h1~h6 id → 위치), `notes`(note id → li 오프셋), 페이지 경계
-  (`paginateBody`의 결과를 오프셋 목록으로), `ids` 목록.
-- [ ] `writeDocs`/`writeOriginal`에서 `freezeHeadingIds` 뒤에 outline을 계산해 함께 저장. `freeze-ids`처럼
-  기존 행을 채우는 백필 명령 추가.
-- [ ] `docs-store.js` 스냅숏에 outline 포함 → `annotateHeadings`·`paginateBody`·`getCommuLingoDocAnchorPages`·
-  `getCommuLingoDocSection`이 outline을 쓰도록 교체(outline 없는 행은 지금 코드로 폴백).
-- [ ] `routes/commulingo-docs.js` `editorialForLanguage`(원문 해제 언어 고르기)를 `removeBlocks`로 교체.
-  원문 페이지는 링크 memo가 없어 요청마다 돌므로, 파싱 비용을 피하려면 outline에 해제 상자 오프셋·lang을 함께 저장한다.
-- [ ] `views/public/commulingo-doc.ejs`의 해제 상자 정규식(173~191행)은 ④에서 함께 정리.
-- 주의: 페이지 경계는 지금 "문자 수(마크업 포함)" 기준이다. 저장으로 옮길 때 기준을 바꾸면 기존 `?p=N` 주소가
-  바뀐다. 바꾸려면 `?p=`를 절 id로 리디렉트하는 경로를 먼저 만든다.
+- [x] 마이그레이션 377: `commulingo_docs`·`commulingo_doc_originals`에 `outline jsonb`. 내용(`doc-outline.js`, version 1):
+  `toc`, `autoIds`, `headings`(h1~h6 위치·텍스트), `cut`(주석 묶음·해제 상자 범위), `editorials`(상자 범위·lang),
+  `notes`(id → li 범위), `pages`(쪽 계획: 범위·다시 여는 래퍼·제목), `anchorPages`, 그리고 `bodySha256`·`version`.
+  오프셋은 서빙되는 html(저장 본문에 `labelNotes`를 적용한 것) 기준이고, `labelNotes`가 결정적이라 쓰기와 읽기가 같은 문자열을 본다.
+- [x] `writeDocs`/`writeOriginal`이 본문·`tocExclude`가 바뀔 때 outline을 다시 만들어 함께 쓴다. 백필·재생성: `scripts/commulingo-docs outline`.
+- [x] `docs-store.js`: 스냅숏에 outline, `buildContent`가 outline이 맞으면(`outlineFits`: sha·version) 파싱 없이 목차·쪽(`renderPages`)·
+  앵커를 읽고, `noteBlocks`·`sectionFrom`(발췌)도 outline 범위를 쓴다. 맞지 않으면 예전 경로. `tests/unit/commulingo-doc-outline.js`가
+  두 경로의 결과가 같음을 시드로 확인한다.
+- [x] `paginateBody`를 `planPages`(계획)와 `renderPages`(쪽 만들기)로 나눴다. 쪽 경계 기준은 그대로라 `?p=N`이 바뀌지 않는다.
+- [ ] `routes/commulingo-docs.js` `editorialForLanguage`는 정규식을 유지했다(겹친 상자는 구조 검사가 막으므로 정확하고, 파싱이 아니라
+  비용이 작다). 대신 쪽·언어별로 memo한다. outline의 `editorials`는 쓰지 않고 두었다.
+- [ ] `views/public/commulingo-doc.ejs`의 해제 상자 병합 정규식은 ④에서 함께 정리.
+- 유의: 리더의 규칙(`labelNotes`·쪽 나누기·목차)을 바꾸면 `doc-outline.js`의 `OUTLINE_VERSION`을 올리고 서버에서 `outline`을 다시 돌린다.
+  올리지 않으면 리더가 옛 outline을 그대로 쓴다.
 
 ### ④ 번역·편집 정보 단일 원본
 

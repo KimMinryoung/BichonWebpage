@@ -2,8 +2,9 @@ const fs = require('fs');
 const path = require('path');
 const db = require('../../config/database');
 const { createRegistrySnapshotStore } = require('./snapshot-store');
-const { paginateBody, headingText, stripNoteRefs } = require('./doc-pagination');
+const { paginateBody, renderPages, headingText, stripNoteRefs } = require('./doc-pagination');
 const { AUTO_ATTR, blockRanges, removeBlocks, isNotesSection, isEditorial } = require('./doc-structure');
+const { labelNotes, buildOutline, outlineFits, withoutRanges } = require('./doc-outline');
 
 const AUTO_ID_RE = new RegExp(`\\b${AUTO_ATTR}\\b`);
 
@@ -113,11 +114,11 @@ function documentModifiedAt(doc, bodyUpdatedAt) {
 }
 
 // Snapshot rows: { kind: 'doc', id, sort_order, entry, body_sha256,
-// body_updated_at, revision }, { kind: 'redirect', from_id, to_id, anchor }
-// and { kind: 'original', doc_id, lang, body_sha256 } for each public original.
+// body_updated_at, revision, outline }, { kind: 'redirect', from_id, to_id, anchor }
+// and { kind: 'original', doc_id, lang, body_sha256, outline } for each public original.
 function install(rows) {
     const originals = new Map(rows.filter(row => row.kind === 'original' && SHA.test(row.body_sha256 || ''))
-        .map(row => [row.doc_id, { lang: row.lang, bodySha256: row.body_sha256 }]));
+        .map(row => [row.doc_id, { lang: row.lang, bodySha256: row.body_sha256, outline: row.outline || null }]));
     const docs = rows.filter(row => row.kind === 'doc' && typeof row.id === 'string' && SHA.test(row.body_sha256 || ''))
         .sort((a, b) => a.sort_order - b.sort_order)
         .map(row => ({
@@ -127,6 +128,9 @@ function install(rows) {
             revision: row.revision,
             modifiedAt: documentModifiedAt(row.entry, row.body_updated_at),
             original: originals.get(row.id) || null,
+            // The stored parse of the body (doc-outline.js); null on a row
+            // written before it, which the reader then parses itself.
+            outline: row.outline || null,
         }));
     const redirects = {};
     rows.filter(row => row.kind === 'redirect').forEach(row => {
@@ -148,11 +152,11 @@ function writeBodyFile(sha, body) {
 // previous snapshot keeps its bodies.
 async function fetchRows() {
     const docs = (await db.query(
-        'SELECT id, sort_order, entry, body_sha256, body_updated_at, revision FROM commulingo_docs ORDER BY sort_order, id')).rows;
+        'SELECT id, sort_order, entry, body_sha256, body_updated_at, revision, outline FROM commulingo_docs ORDER BY sort_order, id')).rows;
     const redirects = (await db.query('SELECT from_id, to_id, anchor FROM commulingo_doc_redirects ORDER BY from_id')).rows;
     // Only published originals ever reach the server's snapshot and cache.
     const originals = (await db.query(
-        'SELECT doc_id, lang, body_sha256 FROM commulingo_doc_originals WHERE public ORDER BY doc_id')).rows;
+        'SELECT doc_id, lang, body_sha256, outline FROM commulingo_doc_originals WHERE public ORDER BY doc_id')).rows;
     const missing = docs.filter(row => !fs.existsSync(bodyPath(row.body_sha256))).map(row => row.body_sha256);
     if (missing.length) {
         const bodies = (await db.query('SELECT body_sha256, body FROM commulingo_docs WHERE body_sha256 = ANY($1)', [missing])).rows;
@@ -203,12 +207,16 @@ function loadSeed() {
     if (seeded) return seeded;
     try {
         const crypto = require('crypto');
-        const rows = JSON.parse(fs.readFileSync(SEED_PATH, 'utf8')).map(row => {
+        const raw = JSON.parse(fs.readFileSync(SEED_PATH, 'utf8'));
+        const entries = new Map(raw.filter(row => row.kind === 'doc').map(row => [row.id, row.entry]));
+        // Outlines as a write would store them (doc-outline.js).
+        const rows = raw.map(row => {
             if (typeof row.body !== 'string') return row;
             const { body, ...rest } = row;
             const sha = crypto.createHash('sha256').update(body, 'utf8').digest('hex');
             seedBodies.set(sha, body);
-            return { ...rest, body_sha256: sha };
+            const entry = entries.get(row.kind === 'original' ? row.doc_id : row.id) || {};
+            return { ...rest, body_sha256: sha, outline: buildOutline(body, { tocExclude: entry.tocExclude, bodySha256: sha }) };
         });
         seeded = install(rows);
     } catch (err) {
@@ -259,44 +267,17 @@ function listCommuLingoDocsFor(kind, id) {
     return listCommuLingoDocs().filter(doc => (doc[kind] || []).some(ref => docRefId(ref) === id));
 }
 
-// A notes list numbers itself from 1, which says nothing when a document's
-// references start at 26, carry letters (27a) or skip. Each note gets the label
-// of the reference that calls it, and the stylesheet prints that instead; a
-// note nobody calls falls back on its id. Excerpts bring the attribute along.
-// The same pass stamps the DPUB-ARIA roles (doc-noteref, doc-endnotes,
-// doc-backlink) a screen reader announces footnotes by; a role the body
-// already carries is kept.
-const NOTE_LABEL = /^[\p{L}\p{N}*†‡. -]{1,8}$/u;
-
-function withRole(tag, role) {
-    return /\brole="/.test(tag) ? tag : tag.replace(/^<(\w+)/, `<$1 role="${role}"`);
-}
-
-function labelNotes(html) {
-    const labels = new Map();
-    for (const [, , attrs, inner] of html.matchAll(/(<a\b([^>]*)>)([^<]{1,16})<\/a>/g)) {
-        if (!/\bclass="[^"]*\bnote-ref\b/.test(attrs)) continue;
-        const target = (attrs.match(/\bhref="#([^"]+)"/) || [])[1];
-        const label = inner.trim().replace(/^[[(](.*)[\])]$/, '$1');
-        if (target && NOTE_LABEL.test(label) && !labels.has(target)) labels.set(target, label);
-    }
-    return html
-        .replace(/<ol\b[^>]*\bnotes-list\b[^>]*>[\s\S]*?<\/ol>/g, list => list.replace(
-            /<li\b([^>]*)\bid="([^"]+)"/g, (full, before, id) => {
-                const label = labels.get(id) || (id.match(/-(\d+[a-z]?)$/) || [])[1];
-                return label ? `<li${before}id="${id}" data-note="${label}"` : full;
-            }))
-        .replace(/<a\b[^>]*\bclass="[^"]*\b(?:note-ref|back-link)\b[^"]*"[^>]*>/g, tag =>
-            withRole(tag, /\bclass="[^"]*\bnote-ref\b/.test(tag) ? 'doc-noteref' : 'doc-backlink'))
-        .replace(/<section\b[^>]*\bclass="[^"]*\bnotes\b[^"]*"[^>]*>/g, tag => withRole(tag, 'doc-endnotes'));
-}
-
 // The notes of a document by id: each <li id> inside a section.notes, cut by
 // the parser's offsets (a note holding a list of its own is still one note).
 // Cached on the content entry; read by the excerpts and the per-page notes.
 function noteBlocks(content) {
     if (content.noteBlocks) return content.noteBlocks;
     const blocks = new Map();
+    if (content.outline) {
+        for (const [id, [start, end]] of Object.entries(content.outline.notes || {})) blocks.set(id, content.html.slice(start, end));
+        content.noteBlocks = blocks;
+        return blocks;
+    }
     const inNotes = node => {
         for (let up = node.parent; up; up = up.parent) if (up.type === 'tag' && isNotesSection(up)) return true;
         return false;
@@ -348,13 +329,30 @@ function getCommuLingoDocContent(doc) {
         unavailable.status = 503;
         throw unavailable;
     }
-    const annotated = annotateHeadings(raw, doc.tocExclude);
-    const { toc, generated } = annotated;
-    const html = labelNotes(annotated.html);
-    const entry = { html, toc, generated, paged: paginateBody(html) };
-    if (entry.paged) entry.paged.pages.forEach((page, i) => { page.notes = pageNotes(entry, page, i); });
+    const entry = buildContent(raw, doc);
     while (bodyCache.size >= BODY_CACHE_MAX) bodyCache.delete(bodyCache.keys().next().value);
     bodyCache.set(sha, entry);
+    return entry;
+}
+
+// The content entry of a stored body: the served html (labelNotes), the
+// contents, the generated heading ids, the pages. With the body's stored
+// outline (doc-outline.js) nothing is parsed here: the contents and the page
+// plan are read off it. Without one (a row written before the outline column,
+// or an outline built for another body or under older rules) the reader
+// derives them itself, as it did before 2026-11-04.
+function buildContent(raw, doc) {
+    const outline = outlineFits(doc.outline, doc.bodySha256) ? doc.outline : null;
+    let entry;
+    if (outline) {
+        const html = labelNotes(raw);
+        entry = { html, toc: outline.toc, generated: new Set(outline.autoIds), paged: renderPages(html, outline.pages), outline, anchorPages: outline.anchorPages };
+    } else {
+        const annotated = annotateHeadings(raw, doc.tocExclude);
+        const html = labelNotes(annotated.html);
+        entry = { html, toc: annotated.toc, generated: annotated.generated, paged: paginateBody(html), outline: null };
+    }
+    if (entry.paged) entry.paged.pages.forEach((page, i) => { page.notes = pageNotes(entry, page, i); });
     return entry;
 }
 
@@ -403,7 +401,7 @@ function getCommuLingoDocAnchorPages(content) {
 // or it is not public), read and paginated like the translation.
 function getCommuLingoDocOriginalContent(doc) {
     if (!doc.original) return null;
-    return getCommuLingoDocContent({ id: doc.id, bodySha256: doc.original.bodySha256, tocExclude: doc.tocExclude });
+    return getCommuLingoDocContent({ id: doc.id, bodySha256: doc.original.bodySha256, tocExclude: doc.tocExclude, outline: doc.original.outline || null });
 }
 
 // Excerpts: a manifest entry may lend one of its pieces to a dictionary entry,
@@ -443,20 +441,35 @@ function listCommuLingoDocExcerptsFor(kind, id) {
 // the entry page's h2, and the notes the piece calls are brought along. A
 // fragment link to anything else in the document goes to the reader instead.
 function getCommuLingoDocSection(doc, anchor) {
-    const content = getCommuLingoDocContent(doc);
-    const { html } = content;
-    const heads = [...html.matchAll(/<h([1-6])([^>]*)>([\s\S]*?)<\/h\1>/g)];
+    return sectionFrom(getCommuLingoDocContent(doc), doc.id, anchor);
+}
+
+// The headings of a content entry as { level, id, start, end, text }: from
+// the outline, else found in the html.
+function headingsOf(content) {
+    if (content.outline) return content.outline.headings;
+    return [...content.html.matchAll(/<h([1-6])([^>]*)>([\s\S]*?)<\/h\1>/g)].map(m => ({
+        level: Number(m[1]), id: (m[2].match(/\bid="([^"]+)"/) || [])[1] || '', start: m.index, end: m.index + m[0].length, text: headingText(m[3]),
+    }));
+}
+
+function sectionFrom(content, docId, anchor) {
+    const { html, outline } = content;
+    const heads = headingsOf(content);
     // The whole document starts at its title h1 and runs to the end.
     const start = anchor === '*'
-        ? (heads.length && heads[0][1] === '1' ? 0 : -1)
-        : heads.findIndex(head => (head[2].match(/\bid="([^"]+)"/) || [])[1] === anchor);
+        ? (heads.length && heads[0].level === 1 ? 0 : -1)
+        : heads.findIndex(head => head.id === anchor);
     if (start === -1) return null;
-    const level = Number(heads[start][1]);
-    const next = anchor === '*' ? null : heads.slice(start + 1).find(head => Number(head[1]) <= level);
-    // Notes and editor's boxes are cut by the parser, so a box holding its
-    // own aside or a notes block holding sub-sections goes out whole.
-    let body = html.slice(heads[start].index + heads[start][0].length, next ? next.index : html.length).replace(/<\/article>\s*$/, '');
-    if (/class="[^"]*\b(?:notes|doc-editorial)\b/.test(body)) body = removeBlocks(body, node => isNotesSection(node) || isEditorial(node));
+    const level = heads[start].level;
+    const next = anchor === '*' ? null : heads.slice(start + 1).find(head => head.level <= level);
+    const from = heads[start].end;
+    const to = next ? next.start : html.length;
+    // Notes and editor's boxes go out whole (a box holding its own aside, a
+    // notes block holding sub-sections): by the outline's ranges, else by the parser.
+    let body = outline ? withoutRanges(html, outline.cut, from, to) : html.slice(from, to);
+    body = body.replace(/<\/article>\s*$/, '');
+    if (!outline && /class="[^"]*\b(?:notes|doc-editorial)\b/.test(body)) body = removeBlocks(body, node => isNotesSection(node) || isEditorial(node));
     const noteIds = [...body.matchAll(/class="note-ref"[^>]*href="#([^"]+)"|href="#([^"]+)"[^>]*class="note-ref"/g)]
         .map(m => m[1] || m[2]);
     const blocks = noteIds.length ? noteBlocks(content) : null;
@@ -465,8 +478,8 @@ function getCommuLingoDocSection(doc, anchor) {
     const ids = new Set([...body.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));
     body = body
         .replace(/<(\/?)h([1-5])\b/g, (m, slash, n) => `<${slash}h${Math.max(3, Number(n) + 1)}`)
-        .replace(/href="#([^"]+)"/g, (full, id) => ids.has(id) ? full : `href="/commulingo/docs/${doc.id}#${id}"`);
-    return { title: headingText(heads[start][3]), html: body.trim() };
+        .replace(/href="#([^"]+)"/g, (full, id) => ids.has(id) ? full : `href="/commulingo/docs/${docId}#${id}"`);
+    return { title: heads[start].text, html: body.trim() };
 }
 
 // A long document's contents for an entry page: the reader's own TOC (h1
@@ -488,4 +501,5 @@ module.exports = {
     listCommuLingoDocExcerptsFor, getCommuLingoDocSection, getCommuLingoDocContents,
     annotateHeadings, // tests: doc-structure.js freezes the same numbers
     labelNotes, noteBlocks, pageNotes,
+    buildContent, sectionFrom, // tests: the outline path against the parsing path
 };

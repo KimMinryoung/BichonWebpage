@@ -40,6 +40,10 @@
 - 2026-11-04 소유자 결정: **R6**은 (a) 발췌 상자에 링크를 걸지 않는다(README 발췌 절에 적음). **T2** 전문 검색은 필요가
   느껴질 때 한다(보류). 남은 것: ②(파싱 결과 저장), A3·A4·A5, L1~L5(역방향 색인은 보류), R2·R7·R8, S5~S8, ④⑤⑥.
 
+- 2026-11-04 ② 구현(A6·R5 포함): 본문의 outline을 저장 시 계산해 `outline` 컬럼에 두고(마이그레이션 377, `doc-outline.js`),
+  리더·발췌·주석·원문 전환이 그것을 읽는다. 세부와 남은 서버 작업(마이그레이션 적용·`outline` 백필)은
+  [구조 검사 TO-DO](commulingo-docs-structure-todo.md) ②와 서버 작업 8번.
+
 검토 범위: `docs-db.js`, `docs-store.js`, `docs-import.js`, `doc-structure.js`, `doc-pagination.js`, `doc-presentation.js`,
 `doc-linkify.js`, `doc-person-links.js`, `docs-refs.js`, `doc-search.js`, `doc-sanitize.js`, `event-doc-excerpts.js`, `linkify.js`,
 `link-review-*.js`, `routes/commulingo-docs.js`, `views/public/commulingo-doc.ejs`, 발췌 파셜, `public/js/commulingo-doc-*.js`,
@@ -82,7 +86,7 @@
 | A3 | 본문 속 다른 문헌으로의 손 링크(`/commulingo/docs/<id>#x`)는 검사하지 않는다(`fragment-link-dangling`은 같은 문서의 `#`만). 병합·개명으로 깨져도 모른다. | 구조 검사에 `doc-link-dangling`(경고): 스냅숏의 문헌 id·리디렉트와 그 문헌의 id 목록으로 대조. 대조할 id 목록은 ②의 outline(ids)을 쓰면 본문을 다시 읽지 않는다. | P2 |
 | A4 | 인물 링크 검수가 바뀐 문서마다 쓰기 트랜잭션 안에서(advisory lock을 쥔 채) 본문 전체를 돈다. 메타데이터 한 칸 수정에도 1.4MB 문헌을 다시 검수한다. | 검수 결과를 `(body_sha256, personLinks·people·events·noAutoLink·date 해시, 인덱스 세대)`로 메모해 같은 입력이면 재사용. 또는 메타데이터만 바뀐 쓰기는 `personLinks`·`people`·`events`·`noAutoLink`가 바뀐 때만 검수. | P2 |
 | A5 | leninbot 번역 조립기는 파일에 쓰고 사람이 `put-body`를 돌린다([데이터 git 분리](commulingo-data-off-git.md)의 남은 일). | 조립기가 MCP `doc_put`(dryRun → apply)을 직접 부르게 한다. leninbot 쪽 결정. | P2 |
-| A6 | HTML을 정규식으로 자르는 곳이 아직 여섯이다: `docs-store.annotateHeadings`·`labelNotes`·`getCommuLingoDocSection`(주석 `<li>` 추출은 중첩 `li`가 있으면 잘린다)·`getCommuLingoDocAnchorPages`, `routes/commulingo-docs.js editorialForLanguage`, `commulingo-doc.ejs`의 해제 상자 병합. | ②(outline 저장)로 대부분 사라진다. ②를 할 때 위 여섯 곳을 체크리스트로 쓴다. `labelNotes`의 ref→note 표와 해제 상자 오프셋·lang도 outline에 넣는다. | ② |
+| A6 ✅ | HTML을 정규식으로 자르는 곳이 아직 여섯이다: `docs-store.annotateHeadings`·`labelNotes`·`getCommuLingoDocSection`(주석 `<li>` 추출은 중첩 `li`가 있으면 잘린다)·`getCommuLingoDocAnchorPages`, `routes/commulingo-docs.js editorialForLanguage`, `commulingo-doc.ejs`의 해제 상자 병합. | ②(outline 저장)로 대부분 사라진다. ②를 할 때 위 여섯 곳을 체크리스트로 쓴다. `labelNotes`의 ref→note 표와 해제 상자 오프셋·lang도 outline에 넣는다. | ② |
 | — | 파싱 결과 저장, 편집 정보 단일 원본 | 기존 ②·④. | — |
 
 ### 3. 화면 렌더링(리더·발췌)
@@ -93,7 +97,7 @@
 | R2 | 주석의 종류(저본 편집자 주·옮긴이 주·엮은이 주)가 라벨 글자(「옮긴이 주」) 관행으로만 구분되고 클래스가 없어 스타일·필터·팝오버 라벨에 쓸 수 없다. | `li`에 `data-note-kind="translator|source-editor|site"`를 두는 양식을 README에 더하고, 구조 검사는 경고로 시작. 번역 파이프라인(`"notes": true`)이 내는 양식도 맞춘다. | P3 |
 | R3 ✅ | 리더 템플릿에 인라인 스크립트 세 덩이(페이지 도착 이동, 변형 인물명 팝오버, 원문/번역 전환)와 해제 상자 병합 로직이 있다. 캐시되지 않고 테스트도 없다. | `public/js/commulingo-doc.js` 하나로 옮기고 데이터는 `data-*`로 넘긴다. 해제 병합은 ④. R1의 팝오버도 이 파일에 둔다. | P2 |
 | R4 ✅ | 긴 문헌에 「이어 읽기」가 없다. 설치형 앱(PWA)까지 있는데 읽던 쪽·절을 잃는다. | `localStorage`에 문헌별 `{page, anchor, at}`을 저장하고(스크롤 중 마지막으로 지난 제목 id), 다음 방문 첫 화면 상단에 「n쪽 「…」부터 이어 읽기」 한 줄을 띄운다. 목록 카드에도 「읽던 문헌」 표시. 계측은 기존 학습 계측과 분리. | P2 |
-| R5 | 원문/번역 전환 칸을 그리려고 요청마다 반대쪽 판의 본문을 읽어 캐시에 올린다(`getCommuLingoDocAnchorPages(other)`). 원문이 있는 문헌은 캐시 자리를 둘 쓴다. | ②의 outline에 `anchorPages`(편집자가 쓴 h1~h3 id → 쪽)를 넣어 스냅숏에서 읽는다. | ② |
+| R5 ✅ | 원문/번역 전환 칸을 그리려고 요청마다 반대쪽 판의 본문을 읽어 캐시에 올린다(`getCommuLingoDocAnchorPages(other)`). 원문이 있는 문헌은 캐시 자리를 둘 쓴다. | ②의 outline에 `anchorPages`(편집자가 쓴 h1~h3 id → 쪽)를 넣어 스냅숏에서 읽는다. | ② |
 | R6 ✅(a) | 발췌 상자(용어·사건 페이지)의 본문은 사전 링크를 걸지 않고(`getCommuLingoDocSection` 결과를 그대로 출력), 변형 인물명 팝오버 스크립트도 싣지 않는다. 같은 글이 리더에서는 링크가 걸리고 발췌에서는 안 걸린다. | 소유자 결정: (a) "사료는 그대로"를 발췌의 원칙으로 못 박고 README에 적는다, 또는 (b) `surface: 'doc'` 링커를 발췌에도 돌리되 호스트 항목(`exclude`)은 뺀다. (b)면 발췌도 memo에 넣는다. 어느 쪽이든 `fic-name`이 있는 문헌의 발췌에는 팝오버 스크립트를 싣는다. | P3 |
 | R7 | 한 페이지에 같은 문헌의 발췌가 둘 이상 실리면(사건의 조문·이유서·개정법) 두 발췌가 같은 주석을 가져올 때 `id="note-N"`이 겹친다. 제목 강등은 정규식이다. | 발췌 안 id에 `ex<i>-` 접두사를 붙이고 `href="#…"`도 함께 고친다(이미 `ids` 집합을 만들고 있으니 그 자리에서). ②에서 파서로 옮긴다. | P3 |
 | R8 | 본문 캐시(40개 × 본문+분할본, 큰 문헌은 3MB)·링크 memo의 적중률을 알 길이 없다. | `getCommuLingoDocContent`·`linkDocHtml`에 적중/실패 카운터를 두고 `/ready`나 운영 지표(`site-metrics`)에 노출. 숫자를 본 뒤 `BODY_CACHE_MAX`를 정한다. | P3 |

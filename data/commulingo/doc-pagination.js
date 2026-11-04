@@ -184,10 +184,13 @@ function bestOf(window, cuts, baseText) {
     return best;
 }
 
-// Returns { titleHtml, pages: [{ html, heading, continued }], idToPage } for a
-// long document, or null when it reads fine as a single page. `continued`
-// marks a page that opens in the middle of `heading`'s section.
-function paginateBody(html) {
+// The plan of a long document's pages, from one parse: where the title ends
+// and, per page, the slice [start, end) of the body, the wrapper tags to
+// reopen before it and close after it, the heading it opens with or continues.
+// null when the document reads fine as a single page. The plan is what the
+// document's stored outline keeps (doc-outline.js), so a reader need not
+// parse the body again: renderPages turns it into the pages.
+function planPages(html) {
     if (html.length <= SINGLE_PAGE_TEXT) return null;
     const { cuts, headings, text } = scan(html);
     if (text <= SINGLE_PAGE_TEXT && html.length <= PAGE_MAX_HTML) return null;
@@ -225,7 +228,6 @@ function paginateBody(html) {
     for (let i = 0; i + 1 < bounds.length; i += 1) {
         const cutHere = i > 0 ? cuts[chosen[i - 1]] : null;
         const cutNext = i + 1 < bounds.length - 1 ? cuts[chosen[i]] : null;
-        const body = html.slice(bounds[i], bounds[i + 1]);
         const head = cutHere ? reopened(cutHere).map(wrapper => wrapper.tag.replace(/\s+id="[^"]*"/, '')).join('') : '';
         const tail = cutNext ? reopened(cutNext).reverse().map(wrapper => `</${wrapper.name}>`).join('') : '';
         const own = headings.find(heading => heading.at >= bounds[i] && heading.at < bounds[i + 1]);
@@ -240,27 +242,42 @@ function paginateBody(html) {
             heading = before ? before.text : '';
             continued = Boolean(before);
         }
-        pages.push({ html: head + body + tail, heading, continued });
+        pages.push({ start: bounds[i], end: bounds[i + 1], head, tail, heading, continued });
     }
     if (pages.length < 2) return null;
+    return { titleEnd, pages };
+}
 
-    // Every id, not only headings: links from other documents and excerpts
-    // reach notes and paragraphs too, and the reader uses this map to hop to
-    // the right page on arrival, whatever page number the link carried. The
-    // first of a duplicated id wins, as it does in a browser.
+// The pages of a plan: { titleHtml, pages: [{ html, heading, continued }],
+// idToPage }. Every id, not only headings, is mapped to its page: links from
+// other documents and excerpts reach notes and paragraphs too, and the reader
+// uses the map to hop to the right page on arrival, whatever page number the
+// link carried. The first of a duplicated id wins, as it does in a browser. A
+// note ref [3] on page 1 must reach the notes section on the last page, and
+// the note's ↩ must come back, so fragment links to another page get its number.
+function renderPages(html, plan) {
+    if (!plan) return null;
+    const pages = plan.pages.map(page => ({
+        html: page.head + html.slice(page.start, page.end) + page.tail, heading: page.heading, continued: page.continued,
+    }));
     const idToPage = {};
     pages.forEach((page, i) => {
         for (const m of page.html.matchAll(/\bid="([^"]+)"/g)) {
             if (!Object.hasOwn(idToPage, m[1])) idToPage[m[1]] = i + 1;
         }
     });
-    // A note ref [3] on page 1 must reach the notes section on the last page,
-    // and the note's ↩ must come back.
     pages.forEach((page, i) => {
         page.html = page.html.replace(/href="#([^"]+)"/g, (full, id) => (
             Object.hasOwn(idToPage, id) && idToPage[id] !== i + 1 ? `href="?p=${idToPage[id]}#${id}"` : full));
     });
-    return { titleHtml, pages, idToPage };
+    return { titleHtml: html.slice(0, plan.titleEnd), pages, idToPage };
 }
 
-module.exports = { paginateBody, headingText, stripNoteRefs, PAGE_TARGET_TEXT, SINGLE_PAGE_TEXT, PAGE_MAX_HTML };
+// Returns { titleHtml, pages: [{ html, heading, continued }], idToPage } for a
+// long document, or null when it reads fine as a single page. `continued`
+// marks a page that opens in the middle of `heading`'s section.
+function paginateBody(html) {
+    return renderPages(html, planPages(html));
+}
+
+module.exports = { paginateBody, planPages, renderPages, headingText, stripNoteRefs, PAGE_TARGET_TEXT, SINGLE_PAGE_TEXT, PAGE_MAX_HTML };

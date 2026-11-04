@@ -18,6 +18,7 @@ const { normalizeKoreanQuotesHtml } = require('./korean-quotes');
 const { sanitizeDocHtml } = require('./doc-sanitize');
 const { freezeHeadingIds, inspectDocStructure, introducedErrors } = require('./doc-structure');
 const { entryRefs } = require('./doc-entry');
+const { buildOutline, outlineFits } = require('./doc-outline');
 
 const ID = /^[a-z0-9-]+$/;
 const sha256 = text => crypto.createHash('sha256').update(text, 'utf8').digest('hex');
@@ -31,7 +32,7 @@ function badRequest(message, status = 400) {
 // The manifest-entry shape callers pass around carries id (the row key) and
 // file/modifiedAt/revision/original (derived when served, docs-store.js
 // install); none of those is stored.
-const DERIVED = new Set(['id', 'file', 'modifiedAt', 'bodySha256', 'revision', 'original']);
+const DERIVED = new Set(['id', 'file', 'modifiedAt', 'bodySha256', 'revision', 'original', 'outline']);
 function storedEntry(entry) {
     const out = {};
     for (const [key, value] of Object.entries(entry || {})) if (!DERIVED.has(key)) out[key] = value;
@@ -169,18 +170,21 @@ async function writeOriginal(c, item, actor, note, structureReports) {
     }
     const body = freezeHeadingIds(incomingBody(item.body, current?.body_sha256));
     const bodySha = sha256(body);
+    const entry = (await c.query('SELECT entry FROM commulingo_docs WHERE id = $1', [docId])).rows[0]?.entry;
     if (!current || current.body_sha256 !== bodySha) {
-        const entry = (await c.query('SELECT entry FROM commulingo_docs WHERE id = $1', [docId])).rows[0]?.entry;
         structureReports.push(checkStructure(docId, `${docId} (original)`, {
             body, entry, role: 'original', previousBody: current ? current.body : undefined, previousEntry: entry }));
     }
+    // The outline follows the body (doc-outline.js); an unchanged body keeps a fitting one.
+    const outline = current && current.body_sha256 === bodySha && outlineFits(current.outline, bodySha)
+        ? current.outline : buildOutline(body, { tocExclude: entry?.tocExclude, bodySha256: bodySha });
     if (!current) {
         const revision = (await c.query(
             'SELECT COALESCE(MAX(revision), 0) + 1 AS n FROM commulingo_doc_original_revisions WHERE doc_id = $1', [docId])).rows[0].n;
         await c.query(
-            `INSERT INTO commulingo_doc_originals (doc_id, lang, body, body_sha256, public, rights, source, revision, updated_by, created_by)
-             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $9)`,
-            [docId, item.lang, body, bodySha, isPublic, rights, source, revision, actor]);
+            `INSERT INTO commulingo_doc_originals (doc_id, lang, body, body_sha256, public, rights, source, revision, updated_by, created_by, outline)
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $9, $10::jsonb)`,
+            [docId, item.lang, body, bodySha, isPublic, rights, source, revision, actor, JSON.stringify(outline)]);
         return { id: docId, revision, op: 'insert' };
     }
     if (current.body_sha256 === bodySha && current.lang === item.lang && current.public === isPublic
@@ -191,9 +195,9 @@ async function writeOriginal(c, item, actor, note, structureReports) {
     await c.query(
         `UPDATE commulingo_doc_originals
             SET lang = $2, body = $3, body_sha256 = $4, public = $5, rights = $6, source = $7,
-                revision = revision + 1, updated_at = NOW(), updated_by = $8
+                revision = revision + 1, updated_at = NOW(), updated_by = $8, outline = $9::jsonb
           WHERE doc_id = $1`,
-        [docId, item.lang, body, bodySha, isPublic, rights, source, actor]);
+        [docId, item.lang, body, bodySha, isPublic, rights, source, actor, JSON.stringify(outline)]);
     return { id: docId, revision: current.revision + 1, op: 'update' };
 }
 
@@ -269,10 +273,11 @@ async function writeDocs(changes, { actor, note, client, allowStructureIssues = 
                 // (unique per doc_id, revision) never collides.
                 const revision = (await c.query(
                     'SELECT COALESCE(MAX(revision), 0) + 1 AS n FROM commulingo_doc_revisions WHERE doc_id = $1', [item.id])).rows[0].n;
+                const outline = buildOutline(body, { tocExclude: entry.tocExclude, bodySha256: sha256(body) });
                 await c.query(
-                    `INSERT INTO commulingo_docs (id, sort_order, entry, body, body_sha256, revision, updated_by, created_by)
-                     VALUES ($1, $2, $3::jsonb, $4, $5, $6, $7, $7)`,
-                    [item.id, sortOrder, JSON.stringify(entry), body, sha256(body), revision, actor]);
+                    `INSERT INTO commulingo_docs (id, sort_order, entry, body, body_sha256, revision, updated_by, created_by, outline)
+                     VALUES ($1, $2, $3::jsonb, $4, $5, $6, $7, $7, $8::jsonb)`,
+                    [item.id, sortOrder, JSON.stringify(entry), body, sha256(body), revision, actor, JSON.stringify(outline)]);
                 written.push({ id: item.id, revision, op: 'insert' });
                 continue;
             }
@@ -283,14 +288,21 @@ async function writeDocs(changes, { actor, note, client, allowStructureIssues = 
                 continue;
             }
             await supersede(c, current, 'update', actor, note, bodyChanged);
+            // The outline follows the body and the contents rules (tocExclude);
+            // a stale or missing one is rebuilt on any write.
+            const nextSha = bodyChanged ? sha256(body) : current.body_sha256;
+            const tocRulesChanged = JSON.stringify(entry.tocExclude || null) !== JSON.stringify(current.entry.tocExclude || null);
+            const outline = !bodyChanged && !tocRulesChanged && outlineFits(current.outline, nextSha)
+                ? current.outline : buildOutline(body ?? current.body, { tocExclude: entry.tocExclude, bodySha256: nextSha });
             await c.query(
                 `UPDATE commulingo_docs
                     SET entry = $2::jsonb, sort_order = $3, revision = revision + 1, updated_at = NOW(), updated_by = $4,
                         body = COALESCE($5, body), body_sha256 = COALESCE($6, body_sha256),
-                        body_updated_at = CASE WHEN $5::text IS NULL THEN body_updated_at ELSE NOW() END
+                        body_updated_at = CASE WHEN $5::text IS NULL THEN body_updated_at ELSE NOW() END,
+                        outline = $7::jsonb
                   WHERE id = $1`,
                 [item.id, JSON.stringify(entry), sortChanged ? item.sortOrder : current.sort_order, actor,
-                    bodyChanged ? body : null, bodyChanged ? sha256(body) : null]);
+                    bodyChanged ? body : null, bodyChanged ? sha256(body) : null, JSON.stringify(outline)]);
             written.push({ id: item.id, revision: current.revision + 1, op: 'update' });
         }
         const deleted = [];
@@ -324,6 +336,33 @@ async function writeDocs(changes, { actor, note, client, allowStructureIssues = 
     if (!client) await require('./docs-store').refreshCommuLingoDocs().catch(err =>
         console.error('[commulingo docs] refresh after write failed:', err.message));
     return result;
+}
+
+// Outlines for every row that has none or a stale one (a body stored before
+// the column, migration 377; rules changed since, OUTLINE_VERSION). Derived
+// data only: no revision, no history, updated_at untouched. Returns the ids
+// written, docs and originals apart.
+async function refreshDocOutlines({ dryRun = false } = {}) {
+    const docs = (await db.query('SELECT id, entry, body, body_sha256, outline FROM commulingo_docs ORDER BY id')).rows;
+    const originals = (await db.query('SELECT doc_id, body, body_sha256, outline FROM commulingo_doc_originals ORDER BY doc_id')).rows;
+    const entries = new Map(docs.map(row => [row.id, row.entry]));
+    const written = { docs: [], originals: [] };
+    for (const row of docs) {
+        if (outlineFits(row.outline, row.body_sha256)) continue;
+        const outline = buildOutline(row.body, { tocExclude: row.entry.tocExclude, bodySha256: row.body_sha256 });
+        if (!dryRun) await db.query('UPDATE commulingo_docs SET outline = $2::jsonb WHERE id = $1 AND body_sha256 = $3', [row.id, JSON.stringify(outline), row.body_sha256]);
+        written.docs.push(row.id + (outline ? '' : ' (no outline: headings without ids)'));
+    }
+    for (const row of originals) {
+        if (outlineFits(row.outline, row.body_sha256)) continue;
+        const outline = buildOutline(row.body, { tocExclude: entries.get(row.doc_id)?.tocExclude, bodySha256: row.body_sha256 });
+        if (!dryRun) await db.query('UPDATE commulingo_doc_originals SET outline = $2::jsonb WHERE doc_id = $1 AND body_sha256 = $3', [row.doc_id, JSON.stringify(outline), row.body_sha256]);
+        written.originals.push(row.doc_id + (outline ? '' : ' (no outline: headings without ids)'));
+    }
+    if (!dryRun && (written.docs.length || written.originals.length)) {
+        await require('./docs-store').refreshCommuLingoDocs().catch(err => console.error('[commulingo docs] refresh after outlines failed:', err.message));
+    }
+    return { dryRun, checked: { docs: docs.length, originals: originals.length }, written };
 }
 
 async function readDocRow(id, { client = db, forUpdate = false } = {}) {
@@ -373,4 +412,4 @@ async function restoreDocRevision(id, revision, { actor, note } = {}) {
         { actor, note: note || `restore revision ${revision}`, allowStructureIssues: true, canonicalizeEntries: false });
 }
 
-module.exports = { checkStructure, loadKnownRefs, writeDocs, readDocRow, readOriginalRow, readAllDocRows, readAllOriginalRows, listDocRevisions, restoreDocRevision, storedEntry, sha256 };
+module.exports = { checkStructure, loadKnownRefs, writeDocs, refreshDocOutlines, readDocRow, readOriginalRow, readAllDocRows, readAllOriginalRows, listDocRevisions, restoreDocRevision, storedEntry, sha256 };
