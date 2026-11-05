@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Appends one memory sample of the leninbot-frontend container to
+# logs/frontend-memory.tsv. Run from cron every minute: the container's peak
+# (2.75 GB on 2026-11-05) has no timestamp, and the samples let a rise be matched
+# against the nginx access log. It reads the host's cgroup files, so it adds no
+# process to the container. memory.peak restarts with the container; the
+# container column shows where that happened.
+set -euo pipefail
+
+LOG="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)/logs/frontend-memory.tsv"
+
+id=$(docker inspect -f '{{.Id}}' leninbot-frontend)
+cgroup="/sys/fs/cgroup/system.slice/docker-$id.scope"
+
+mkdir -p "$(dirname "$LOG")"
+[ -f "$LOG" ] || printf 'ts\tcurrent_mb\tanon_mb\tfile_mb\tpeak_mb\tcontainer\n' > "$LOG"
+
+awk -v ts="$(date -u +%Y-%m-%dT%H:%M:%SZ)" -v container="${id:0:12}" '
+    function mb(bytes) { return int(bytes / 1048576 + 0.5) }
+    FILENAME ~ /memory\.current$/ { current = $1 }
+    FILENAME ~ /memory\.peak$/    { peak = $1 }
+    FILENAME ~ /memory\.stat$/ && $1 == "anon" { anon = $2 }
+    FILENAME ~ /memory\.stat$/ && $1 == "file" { file = $2 }
+    END { printf "%s\t%d\t%d\t%d\t%d\t%s\n", ts, mb(current), mb(anon), mb(file), mb(peak), container }
+' "$cgroup/memory.current" "$cgroup/memory.peak" "$cgroup/memory.stat" >> "$LOG"
