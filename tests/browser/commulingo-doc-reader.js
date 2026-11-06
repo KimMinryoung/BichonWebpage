@@ -5,8 +5,8 @@
 // pins it instead of leaving the page, Esc closes it, the popover's link goes
 // to the notes list and the note's ↩ comes back by history), the DPUB-ARIA
 // roles, the fictionalized name popover (on a mark injected into the page),
-// the contents panel closing on a pick, the version switch landing on the
-// section being read, and the reading position: recorded while scrolling,
+// the contents panel closing on a pick, the page numbers, the version switch
+// landing on the section being read, and the reading position: recorded while scrolling,
 // offered on the next plain visit, dismissable, marked on the library list,
 // forgotten at the end of the last page.
 /* global document, window, sessionStorage, localStorage */
@@ -124,6 +124,27 @@ async function main() {
             assert.equal(await page.$eval('.doc-toc-nav details', d => d.open), true);
             await page.click('.doc-toc-chapters a[href="#art-2"]');
             assert.equal(await page.$eval('.doc-toc-nav details', d => d.open), false);
+
+            // Page numbers: every page below the text and in the contents
+            // panel, the current one a mark rather than a link, any other a
+            // jump straight to its page.
+            await page.goto(origin + '/commulingo/docs/seed-long-treatise?p=2', { waitUntil: 'load' });
+            const pageRow = selector => page.$$eval(`${selector} .doc-page-numbers li`, items => items.map(li => ({
+                text: li.textContent.trim(),
+                href: li.querySelector('a') ? li.querySelector('a').getAttribute('href') : null,
+                current: li.querySelector('[aria-current="page"]') !== null,
+            })));
+            const pagerRow = await pageRow('.doc-pager');
+            assert.ok(pagerRow.length >= 3, 'the seed document runs to at least three pages');
+            pagerRow.forEach((item, i) => assert.deepEqual(item, {
+                text: String(i + 1),
+                href: i === 1 ? null : `?p=${i + 1}`,
+                current: i === 1,
+            }));
+            assert.deepEqual(await pageRow('.doc-toc-panel'), pagerRow);
+            await page.click('.doc-toc-nav summary');
+            await page.click('.doc-toc-panel .doc-page-numbers a[href="?p=3"]');
+            await page.waitForURL(/\?p=3$/);
 
             // Version switch: at the head of the document the original opens
             // at its head; with a heading passed (a short viewport, so the

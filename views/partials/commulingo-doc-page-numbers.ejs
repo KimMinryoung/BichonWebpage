@@ -1,0 +1,7 @@
+<%# 분할 문헌의 쪽 번호 줄: 본문 아래 쪽 이동과 목차 패널이 함께 쓴다. 문헌은 길어도
+    스무 쪽 남짓이라 생략 없이 전부 보이고, 좁은 화면에서는 여러 줄로 접힌다. %>
+<ol class="doc-page-numbers">
+    <% for (var pageNumber = 1; pageNumber <= pagination.total; pageNumber++) { %>
+    <li><% if (pageNumber === pagination.current) { %><span aria-current="page"><%= pageNumber %></span><% } else { %><a href="?p=<%= pageNumber %>"><%= pageNumber %></a><% } %></li>
+    <% } %>
+</ol>

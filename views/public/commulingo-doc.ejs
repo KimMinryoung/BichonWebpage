@@ -80,6 +80,8 @@ var tocHref = function(id) {
 <nav class="doc-toc-nav" aria-label="<%= strings.commuLingoViews.doc.tableOfContents %>">
 <details>
 <summary><%= strings.commuLingoViews.doc.contents %><% if (pagination) { %> <span class="doc-toc-pos"><%= pagination.current %>/<%= pagination.total %></span><% } %></summary>
+<div class="doc-toc-panel">
+<% if (pagination) { %><%- include('../partials/commulingo-doc-page-numbers') %><% } %>
 <ol class="doc-toc-parts">
     <% toc.forEach(function(part) { %>
     <li>
@@ -94,6 +96,7 @@ var tocHref = function(id) {
     </li>
     <% }) %>
 </ol>
+</div>
 </details>
 </nav>
 <% } %>
@@ -210,13 +213,13 @@ if (showEditorialNotes && editionAt !== -1 && (firstHeading === -1 || editionAt 
         <% if (pagination.prevHeading) { %><span class="doc-pager-heading"><%= pagination.prevHeading %></span><% } %>
     </a>
     <% } %>
-    <span class="doc-pager-pos"><%= pagination.current %> / <%= pagination.total %></span>
     <% if (pagination.current < pagination.total) { %>
     <a class="doc-pager-next" href="?p=<%= pagination.current + 1 %>">
         <span class="doc-pager-dir"><%= strings.commuLingoViews.doc.next %> →</span>
         <% if (pagination.nextHeading) { %><span class="doc-pager-heading"><%= pagination.nextHeading %></span><% } %>
     </a>
     <% } %>
+    <%- include('../partials/commulingo-doc-page-numbers') %>
 </nav>
 <% } %>
 <% if (doc.source) { %>
