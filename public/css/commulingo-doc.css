@@ -680,7 +680,10 @@
    맞춘 값이라 지금은 헤딩이 필요 이상으로 내려간다. */
 .book h1,
 .book h2,
-.book h3 {
+.book h3,
+.book h4,
+.book h5,
+.book h6 {
   scroll-margin-top: 3rem;
 }
 
