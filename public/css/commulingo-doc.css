@@ -331,7 +331,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-variant-numeric: tabular-nums;
 }
 
@@ -352,8 +352,8 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  min-width: 2.5rem;
-  height: 2.5rem;
+  min-width: 1.75rem;
+  height: 1.75rem;
   margin: 0;
   padding: 0 0.25rem;
   border: 1px solid var(--border);
