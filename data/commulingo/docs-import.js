@@ -93,6 +93,16 @@ function langPair(value, fallback) {
     };
 }
 
+// A source line is a plain string when one wording serves both languages (a
+// bare citation), or { ko, en } when it carries prose of the edition's own. A
+// patch naming one language keeps the other, and a string being split becomes
+// the Korean wording: that is the language those strings were written in.
+function sourceValue(value, current) {
+    if (typeof value === 'string') return value;
+    if (!value || typeof value !== 'object') return current || '';
+    return langPair(value, typeof current === 'string' ? { ko: current, en: '' } : current);
+}
+
 // People, terms and events are stored as bare dictionary ids. A name sent along
 // with one ({ id, name }) is accepted and dropped: the dictionaries own their
 // headwords and the reader gets them from there (docs-refs.js), so a copy kept
@@ -122,7 +132,7 @@ function canonicalEntry(entry, { defaults = true } = {}) {
         title: langPair(entry.title),
         description: langPair(entry.description),
         kind: langPair(entry.kind, { ko: '이론·논설', en: 'Theory & essays' }),
-        source: typeof entry.source === 'string' ? entry.source : '',
+        source: sourceValue(entry.source),
     };
     if (entry.summary !== undefined) {
         out.summary = langPair(entry.summary);
@@ -217,7 +227,7 @@ function mergeDocMeta(current, patch = {}, options = {}) {
         summary: patch.summary !== undefined ? langPair(patch.summary, current.summary) : current.summary,
         editorialNotes: patch.editorialNotes !== undefined ? langPair(patch.editorialNotes, current.editorialNotes) : current.editorialNotes,
         kind: langPair(patch.kind, current.kind),
-        source: patch.source !== undefined ? patch.source : current.source,
+        source: sourceValue(patch.source, current.source),
         tocExclude: patch.tocExclude !== undefined ? patch.tocExclude : current.tocExclude,
         people: patch.people !== undefined ? patch.people : current.people,
         terms: patch.terms !== undefined ? patch.terms : current.terms,

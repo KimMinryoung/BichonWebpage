@@ -6,7 +6,8 @@
 const assert = require('node:assert/strict');
 const { inspectDocEntry, inspectDocRefs, ENTRY_FIELDS, CANONICAL_FIELDS } = require('../../data/commulingo/doc-entry');
 const { DOC_KINDS, docKind, docKindId } = require('../../data/commulingo/doc-kinds');
-const { canonicalizeStoredEntry, canonicalEntry } = require('../../data/commulingo/docs-import');
+const { canonicalizeStoredEntry, canonicalEntry, mergeDocMeta } = require('../../data/commulingo/docs-import');
+const { presentDoc } = require('../../data/commulingo/doc-presentation');
 
 const codes = result => result.errors.map(issue => issue.code).sort();
 const GOOD = {
@@ -89,4 +90,17 @@ assert.throws(() => canonicalizeStoredEntry('doc', { title: { ko: '  두 칸  ' 
 // An import still dates the entry today.
 assert.match(canonicalEntry({ id: 'x', title: { ko: '새 문헌' } }).addedAt, /^\d{4}-\d{2}-\d{2}$/);
 assert.equal(canonicalEntry({ id: 'x', title: { ko: '새 문헌' } }, { defaults: false }).addedAt, undefined);
-console.log('doc entry: unknown keys, kinds table, date/summary, excerpts/anchors shapes, dictionary ids, stored form');
+// A source line is one string for both languages or a { ko, en } pair, and
+// each page shows only its own language's wording once there is one.
+const titled = { id: 'x', title: { ko: '문헌' } };
+assert.equal(canonicalEntry({ ...titled, source: 'Правда, 1917' }).source, 'Правда, 1917');
+assert.deepEqual(canonicalEntry({ ...titled, source: { ko: '저본', en: 'Source' } }).source, { ko: '저본', en: 'Source' });
+assert.equal(canonicalEntry(titled).source, '');
+assert.deepEqual(mergeDocMeta({ ...titled, source: '저본' }, { source: { en: 'Source' } }).source, { ko: '저본', en: 'Source' }, 'a string being split is the Korean wording');
+assert.deepEqual(mergeDocMeta({ ...titled, source: { ko: '저본', en: 'Source' } }, { source: { en: 'Text' } }).source, { ko: '저본', en: 'Text' });
+assert.equal(mergeDocMeta({ ...titled, source: '저본' }, {}).source, '저본');
+const present = (source, lang) => presentDoc({ ...titled, source }, lang, () => ({})).source;
+assert.equal(present({ ko: '저본', en: 'Source' }, 'en'), 'Source');
+assert.equal(present({ ko: '저본', en: 'Source' }, 'ko'), '저본');
+assert.equal(present('Правда, 1917', 'en'), 'Правда, 1917');
+console.log('doc entry: unknown keys, kinds table, date/summary, excerpts/anchors shapes, dictionary ids, stored form, source by language');

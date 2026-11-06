@@ -419,7 +419,7 @@ export한 작업 디렉터리에서 만들고 `put`으로 넣는다.
      - `정보·수사 기록` / `Intelligence & investigation records` — 신문 조서·진술서, 정보 보고, 외교 전문
      - `연구서·논문` / `Scholarship` — 연구서·평전·연구 논문
      - `문학` / `Literature` — 소설·시·희곡
-   - `source` — 원전 서지 정보 (문자열, 리더 콜로폰에 표시)
+   - `source` — 원전 서지 정보 (리더 콜로폰에 표시). 서지만 있어 두 언어에 같은 문구면 문자열, 번역 경위 같은 한국어 문장이 들어가면 `{ko, en}`. 공개 원문이 있는 문서는 영어 페이지가 열리므로 한글이 든 출처에 `en` 문구를 함께 넣는다.
    - `people` / `terms` / `events` — 관련 인물·용어·역사 사건의 **id 배열**
      (`["yezhov"]`). id는 각각 `/commulingo/people/<id>`,
      `/commulingo/terms/<id>`, `/commulingo/events/<id>` 슬러그.

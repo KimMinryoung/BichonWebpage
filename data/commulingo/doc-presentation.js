@@ -150,6 +150,7 @@ function presentDoc(raw, lang, resolveDocRefs) {
         // reverse) reads as a stray placeholder.
         editorialNotes: typeof raw.editorialNotes === 'string' ? raw.editorialNotes : (raw.editorialNotes?.[lang] || ''),
         kind: localize(raw.kind, lang),
+        source: localize(raw.source, lang),
         searchText: docSearchText(raw, lang),
         searchTitleText: docTitleText(raw),
         ...resolveDocRefs(raw),
