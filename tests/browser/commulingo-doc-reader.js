@@ -129,6 +129,8 @@ async function main() {
             // panel, the current one a mark rather than a link, any other a
             // jump straight to its page.
             await page.goto(origin + '/commulingo/docs/seed-long-treatise?p=2', { waitUntil: 'load' });
+            assert.match(await page.getAttribute('link[rel="canonical"]', 'href'), /\/commulingo\/docs\/seed-long-treatise\?p=2$/,
+                'a later page names itself, or search engines fold it into the first');
             const pageRow = selector => page.$$eval(`${selector} .doc-page-numbers li`, items => items.map(li => ({
                 text: li.textContent.trim(),
                 href: li.querySelector('a') ? li.querySelector('a').getAttribute('href') : null,

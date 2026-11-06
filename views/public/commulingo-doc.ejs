@@ -8,7 +8,8 @@
 <% const seoUrlLang = urlLanguage === 'en' ? 'en' : 'ko'; %>
 <% const koUrl = siteOrigin + languageUrl(pagePath, 'ko'); %>
 <% const enUrl = siteOrigin + languageUrl(pagePath, 'en'); %>
-<% const canonicalUrl = seoUrlLang === 'en' ? enUrl : koUrl; %>
+<%# Each page of a split document is its own address, so it names itself; hreflang stays on the document because the two versions split differently. %>
+<% const canonicalUrl = (seoUrlLang === 'en' ? enUrl : koUrl) + (pagination && pagination.current > 1 ? `?p=${pagination.current}` : ''); %>
 <link rel="canonical" href="<%= canonicalUrl %>">
 <meta name="robots" content="<%= noindex ? 'noindex, follow' : 'index, follow' %>">
 <link rel="alternate" hreflang="ko" href="<%= koUrl %>">
