@@ -7,7 +7,7 @@
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const store = require('../../data/commulingo/docs-store');
-const { buildOutline, outlineFits, withoutRanges, OUTLINE_VERSION } = require('../../data/commulingo/doc-outline');
+const { buildOutline, outlineFits, withoutRanges, readerToc, OUTLINE_VERSION } = require('../../data/commulingo/doc-outline');
 
 const docs = store.listCommuLingoDocs();
 if (!store.getCommuLingoDoc('seed-land-decree-1917')) {
@@ -86,6 +86,27 @@ assert.equal(compared, 5, 'four documents and one original');
 // outline: the reader numbers those headings on the fly.
 assert.equal(buildOutline('<article><h1>T</h1><h2>가</h2><p>x</p></article>'), null);
 assert.ok(buildOutline('<article><h1>T</h1><h2 id="a">가</h2><p>x</p></article>'));
+
+// The reader's contents: a section longer than a page opens one step down, a
+// short one does not; no id, no line; a notes list's heading stays out.
+{
+    const para = size => `<p>${'가'.repeat(size)}</p>`;
+    const body = '<article><h1>T</h1>'
+        + `<h2 id="short">짧은 절</h2><h3 id="s1">안 보임</h3>${para(100)}`
+        + `<h2 id="long">긴 절</h2><h3 id="small">짧은 단계</h3><h4 id="hidden">안 보임</h4>${para(100)}`
+        + `<h3 id="big">긴 단계</h3><h4 id="d1">하나</h4>${para(20000)}<h4>id 없음</h4><h4 id="d2">둘</h4>${para(20000)}`
+        + '<section class="notes"><h3 id="notes">주석</h3><ol class="notes-list"></ol></section></article>';
+    const outline = buildOutline(body, { bodySha256: sha(body) });
+    const html = store.labelNotes(body);
+    assert.deepEqual(outline.toc.map(item => item.id), ['short', 'long'], 'the stored contents stay at h1/h2');
+    assert.deepEqual(readerToc(html, outline).map(item => [item.level, item.id]),
+        [[2, 'short'], [2, 'long'], [3, 'small'], [3, 'big'], [4, 'd1'], [4, 'd2']]);
+    assert.deepEqual(readerToc(html, outline, ['^짧은 단계$']).map(item => item.id), ['short', 'long', 'big', 'd1', 'd2']);
+    const headless = '<article><h1>T</h1><h3 id="a">가</h3>' + para(31000) + '<h3 id="b">나</h3></article>';
+    assert.deepEqual(readerToc(headless, buildOutline(headless)).map(item => item.id), ['a', 'b'], 'long, with no h2 at all');
+    const brief = '<article><h1>T</h1><h3 id="a">가</h3>' + para(100) + '</article>';
+    assert.deepEqual(readerToc(brief, buildOutline(brief)), [], 'short, with no h2: no contents, as before');
+}
 
 // Ranges are clipped to the slice and never overlap.
 assert.equal(withoutRanges('abcdefghij', [[2, 4], [6, 8]]), 'abefij');

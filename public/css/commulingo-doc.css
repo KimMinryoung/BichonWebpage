@@ -542,6 +542,12 @@
   font-weight: 600;
 }
 
+/* Lower headings, in a document whose entry asks for them (tocDepth). */
+.doc-toc-level-3 { padding-left: 1rem; }
+.doc-toc-level-4 { padding-left: 2rem; }
+.doc-toc-level-5 { padding-left: 3rem; }
+.doc-toc-level-6 { padding-left: 4rem; }
+
 .doc-toc-chapters {
   margin-top: 0.3rem;
   padding-left: 1rem;

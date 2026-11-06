@@ -23,7 +23,7 @@
 //   pages:      planPages(html) or null     the page plan (doc-pagination.js)
 //   anchorPages: { id: page }               editor-chosen h1-h3 ids → page (for the version switch)
 const { parseDocument, DomUtils } = require('htmlparser2');
-const { planPages, renderPages, headingText } = require('./doc-pagination');
+const { planPages, renderPages, headingText, PAGE_TARGET_TEXT } = require('./doc-pagination');
 const { AUTO_ATTR, isNotesSection, isEditorial } = require('./doc-structure');
 
 const OUTLINE_VERSION = 1;
@@ -78,6 +78,38 @@ function harvestToc(headings, excludePatterns) {
         if (heading.level === 1 && !seenTitle) { seenTitle = true; continue; }
         if (!excludes.some(re => re.test(heading.text))) toc.push({ level: heading.level, id: heading.id, text: heading.text });
     }
+    return toc;
+}
+
+// The contents the reader prints: every h1/h2 as above, and under a section
+// longer than a page the headings one step below it, and so on down, so a long
+// stretch is never one line while a short section stays one. Worked out from the
+// stored heading positions when a body enters the cache. A lower heading needs an
+// id to link to; those inside a notes list or an editor's box stay out (a
+// chapter's own 「주석」 would repeat down the list).
+function readerToc(html, outline, excludePatterns) {
+    const { headings, cut } = outline;
+    const excludes = (excludePatterns || []).map(pattern => new RegExp(pattern));
+    const readingText = (from, to) => withoutRanges(html, cut, from, to).replace(/<[^>]+>/g, '').length;
+    const inCut = heading => cut.some(([start, end]) => heading.start >= start && heading.end <= end);
+    const toc = [];
+    const open = [{ level: 0, long: readingText(0, html.length) > PAGE_TARGET_TEXT }];
+    let seenTitle = false;
+    headings.forEach((heading, i) => {
+        if (heading.level === 1 && !seenTitle) { seenTitle = true; return; }
+        while (open[open.length - 1].level >= heading.level) open.pop();
+        const parentLong = open[open.length - 1].long;
+        const chapter = heading.level <= 2;
+        if ((chapter || (parentLong && heading.id && !inCut(heading))) && !excludes.some(re => re.test(heading.text))) {
+            toc.push({ level: heading.level, id: heading.id, text: heading.text });
+        }
+        let long = false;
+        if (chapter || parentLong) {
+            const next = headings.slice(i + 1).find(other => other.level <= heading.level);
+            long = readingText(heading.start, next ? next.start : html.length) > PAGE_TARGET_TEXT;
+        }
+        open.push({ level: heading.level, long });
+    });
     return toc;
 }
 
@@ -155,4 +187,4 @@ function withoutRanges(html, ranges, from = 0, to = html.length) {
     return out + html.slice(at, to);
 }
 
-module.exports = { OUTLINE_VERSION, labelNotes, buildOutline, outlineFits, withoutRanges, harvestToc };
+module.exports = { OUTLINE_VERSION, labelNotes, buildOutline, outlineFits, withoutRanges, harvestToc, readerToc };

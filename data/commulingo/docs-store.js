@@ -4,7 +4,7 @@ const db = require('../../config/database');
 const { createRegistrySnapshotStore } = require('./snapshot-store');
 const { paginateBody, renderPages, headingText, stripNoteRefs } = require('./doc-pagination');
 const { AUTO_ATTR, blockRanges, removeBlocks, isNotesSection, isEditorial } = require('./doc-structure');
-const { labelNotes, buildOutline, outlineFits, withoutRanges } = require('./doc-outline');
+const { labelNotes, buildOutline, outlineFits, withoutRanges, readerToc } = require('./doc-outline');
 
 const AUTO_ID_RE = new RegExp(`\\b${AUTO_ATTR}\\b`);
 
@@ -346,7 +346,7 @@ function buildContent(raw, doc) {
     let entry;
     if (outline) {
         const html = labelNotes(raw);
-        entry = { html, toc: outline.toc, generated: new Set(outline.autoIds), paged: renderPages(html, outline.pages), outline, anchorPages: outline.anchorPages };
+        entry = { html, toc: readerToc(html, outline, doc.tocExclude), generated: new Set(outline.autoIds), paged: renderPages(html, outline.pages), outline, anchorPages: outline.anchorPages };
     } else {
         const annotated = annotateHeadings(raw, doc.tocExclude);
         const html = labelNotes(annotated.html);
@@ -501,7 +501,7 @@ function getCommuLingoDocContents(doc) {
     const { toc, paged } = getCommuLingoDocContent(doc);
     if (!toc.length) return null;
     const pageOf = paged ? paged.idToPage : {};
-    return toc.map(({ level, id, text }) => ({
+    return toc.filter(({ level }) => level <= 2).map(({ level, id, text }) => ({
         level, text,
         href: `/commulingo/docs/${doc.id}${pageOf[id] > 1 ? `?p=${pageOf[id]}` : ''}#${id}`,
     }));

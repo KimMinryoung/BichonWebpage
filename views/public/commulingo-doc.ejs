@@ -89,7 +89,7 @@ var tocHref = function(id) {
         <% if (part.chapters.length) { %>
         <ol class="doc-toc-chapters">
             <% part.chapters.forEach(function(chapter) { %>
-            <li><a href="<%= tocHref(chapter.id) %>"><%= chapter.text %></a></li>
+            <li<% if (chapter.level > 2) { %> class="doc-toc-level-<%= chapter.level %>"<% } %>><a href="<%= tocHref(chapter.id) %>"><%= chapter.text %></a></li>
             <% }) %>
         </ol>
         <% } %>
