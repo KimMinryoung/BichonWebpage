@@ -449,6 +449,34 @@
   }
 }
 
+/* 잘린 제목은 누르면 바 바로 아래 띠에 전체가 펼쳐진다(commulingo-doc.js의
+   fullTitle). 목차 패널과 같은 자리·같은 테두리로 붙고, 띠를 눌러도 닫힌다. */
+.doc-toc .commu-crumb-current.is-expandable {
+  cursor: pointer;
+}
+
+.doc-toc .commu-crumb-current.is-expandable:hover,
+.doc-toc .commu-crumb-current[aria-expanded="true"] {
+  background: var(--bg-surface-hover);
+}
+
+.doc-title-full {
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  top: 100%;
+  z-index: 55;
+  padding: 0.5rem 0.75rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
 .doc-toc-nav {
   position: static;
   display: flex;

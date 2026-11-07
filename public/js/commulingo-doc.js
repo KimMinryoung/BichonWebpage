@@ -279,6 +279,55 @@
         });
     }
 
+    // ---- 3b. full title ----
+    // On a phone the bar's title cell keeps only a few characters beside the
+    // home and references links and the contents/search/original buttons.
+    // When the title is cut off, tapping it opens the whole title in a strip
+    // under the bar; tapping it again closes the strip.
+
+    function fullTitle() {
+        var bar = document.querySelector('.doc-toc');
+        var title = bar && bar.querySelector('.commu-crumb-current');
+        if (!title) return;
+        var strip = null;
+        function clipped() { return title.scrollWidth > title.clientWidth + 1; }
+        function sync() {
+            var can = !!strip || clipped();
+            title.classList.toggle('is-expandable', can);
+            if (can) {
+                title.setAttribute('role', 'button');
+                title.setAttribute('tabindex', '0');
+                title.setAttribute('aria-expanded', strip ? 'true' : 'false');
+            } else {
+                title.removeAttribute('role');
+                title.removeAttribute('tabindex');
+                title.removeAttribute('aria-expanded');
+            }
+        }
+        function toggle() {
+            if (strip) {
+                strip.remove();
+                strip = null;
+            } else {
+                if (!clipped()) return;
+                strip = document.createElement('div');
+                strip.className = 'doc-title-full';
+                strip.textContent = title.textContent;
+                strip.addEventListener('click', toggle);
+                bar.appendChild(strip);
+            }
+            sync();
+        }
+        title.addEventListener('click', toggle);
+        title.addEventListener('keydown', function (event) {
+            if (event.key !== 'Enter' && event.key !== ' ') return;
+            event.preventDefault();
+            toggle();
+        });
+        window.addEventListener('resize', sync);
+        sync();
+    }
+
     // ---- 4. version switch ----
 
     function versionSwitch() {
@@ -375,6 +424,7 @@
     function ready() {
         popovers();
         contentsPanel();
+        fullTitle();
         versionSwitch();
         readingPosition();
     }
