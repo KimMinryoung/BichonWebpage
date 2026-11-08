@@ -5083,7 +5083,36 @@ a.commu-dict-chip:hover { text-decoration: none; }
    centred in a 1409px box with dead space above and below. */
 .gen-svg { display: block; font-family: inherit; height: auto; }
 
-.gen-col-header { fill: var(--text-secondary); font-size: 14px; font-weight: 600; }
+/* Column headers: an HTML row above the svg, pinned under the crumb bar while
+   a tall chart scrolls (the page script sets `top` to the crumb's height). Its
+   grid tracks are the svg's own margins and lane width in fr units
+   (MARGIN_LEFT 36, COL_WIDTH 166, MARGIN_RIGHT 8 in genealogy-svg.js), so each
+   label stays over its lane at any scale. */
+.gen-cols {
+    display: grid;
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    padding: .45rem 0;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border);
+    color: var(--text-secondary);
+    font-size: .82rem;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: center;
+}
+.gen-cols[data-columns="1"] { grid-template-columns: 36fr repeat(1, 166fr) 8fr; }
+.gen-cols[data-columns="2"] { grid-template-columns: 36fr repeat(2, 166fr) 8fr; }
+.gen-cols[data-columns="3"] { grid-template-columns: 36fr repeat(3, 166fr) 8fr; }
+.gen-cols[data-columns="4"] { grid-template-columns: 36fr repeat(4, 166fr) 8fr; }
+.gen-cols[data-columns="5"] { grid-template-columns: 36fr repeat(5, 166fr) 8fr; }
+.gen-cols[data-columns="6"] { grid-template-columns: 36fr repeat(6, 166fr) 8fr; }
+.gen-cols[data-columns="7"] { grid-template-columns: 36fr repeat(7, 166fr) 8fr; }
+.gen-cols[data-columns="8"] { grid-template-columns: 36fr repeat(8, 166fr) 8fr; }
+.gen-cols[data-columns="9"] { grid-template-columns: 36fr repeat(9, 166fr) 8fr; }
+.gen-cols span { padding: 0 .2rem; word-break: keep-all; overflow-wrap: anywhere; }
+@media (max-width: 560px) { .gen-cols { font-size: .62rem; padding: .3rem 0; } .gen-cols span { padding: 0 .08rem; } }
 .gen-year { fill: var(--text-muted); font-size: 11px; }
 .gen-gridline { stroke: color-mix(in srgb, var(--border) 18%, transparent); stroke-width: 1; }
 .gen-lane-sep { stroke: color-mix(in srgb, var(--border) 10%, transparent); stroke-width: 1; }
@@ -5117,10 +5146,85 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     stroke-linejoin: round;
 }
 
+/* A selected node keeps its lineage at full strength and dims the rest
+   (public/js/commulingo-genealogy.js). */
+.gen-node, .gen-edge, .gen-edge-label { transition: opacity .15s; }
+.gen-svg.has-selection .gen-node:not(.is-on),
+.gen-svg.has-selection .gen-edge:not(.is-on),
+.gen-svg.has-selection .gen-edge-label:not(.is-on) { opacity: .16; }
+.gen-svg.has-selection .gen-edge.is-on { stroke-width: 2.3; }
+.gen-node.is-selected rect { fill: var(--bg-surface); stroke: var(--text-primary); stroke-width: 2.4; }
+
 .gen-legend { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; align-items: center; margin-top: .6rem; font-size: .82rem; color: var(--text-muted); }
 .gen-legend-item { display: inline-flex; align-items: center; gap: .4rem; }
 .gen-legend-item svg { flex: none; }
 .gen-legend-swatch { fill: var(--bg-surface-hover); stroke: color-mix(in srgb, var(--border) 32%, transparent); stroke-dasharray: 4 3; }
+
+/* The selected node's panel, pinned to the bottom of the window while the
+   chart is on screen and bled to the figure's edges. */
+.gen-panel {
+    position: sticky;
+    bottom: 0;
+    z-index: 40;
+    max-height: 46vh;
+    overflow-y: auto;
+    margin: .75rem -.75rem -.75rem;
+    padding: .75rem;
+    background: var(--bg-surface);
+    border-top: 1px solid var(--border-emphasis);
+}
+.gen-panel[hidden] { display: none; }
+@media (max-width: 560px) { .gen-panel { margin: .3rem -.3rem -.3rem; } }
+.gen-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; }
+.gen-panel-meta { color: var(--text-muted); font-size: .82rem; font-weight: 600; padding-top: .2rem; }
+.gen-panel-close {
+    flex: none;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.gen-panel-close:hover { background: var(--bg-surface-hover); }
+.gen-panel-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .75rem 1.25rem; }
+@media (max-width: 760px) { .gen-panel-body { grid-template-columns: minmax(0, 1fr); } }
+.gen-panel-title { margin: .1rem 0 .4rem; font-size: 1.15rem; }
+.gen-panel-note { margin: 0 0 .6rem; line-height: 1.6; }
+.gen-panel-entry {
+    display: block;
+    padding: .55rem .7rem;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    font-weight: 600;
+    text-decoration: none;
+}
+.gen-panel-entry:hover { background: var(--bg-surface-hover); text-decoration: none; }
+.gen-panel-group[hidden] { display: none; }
+.gen-panel-group + .gen-panel-group { margin-top: .6rem; }
+.gen-panel-group h3 { margin: 0 0 .3rem; color: var(--text-muted); font-size: .82rem; font-weight: 600; }
+.gen-panel-group ul { list-style: none; margin: 0; padding: 0; }
+.gen-panel-group li + li button { border-top: none; }
+.gen-panel-group button {
+    display: grid;
+    grid-template-columns: 6rem minmax(0, 1fr) auto;
+    gap: .6rem;
+    align-items: baseline;
+    width: 100%;
+    padding: .45rem .6rem;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-primary);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+.gen-panel-group button:hover { background: var(--bg-surface-hover); }
+.gen-panel-rel { color: var(--text-muted); font-size: .8rem; }
+.gen-panel-period { color: var(--text-muted); font-size: .8rem; white-space: nowrap; }
 
 /* ---------------------------------------------------------------- 훈련장
    /commulingo/drill — 사전에서 만든 무작위 퀴즈·연표 게임. 퀴즈 화면은

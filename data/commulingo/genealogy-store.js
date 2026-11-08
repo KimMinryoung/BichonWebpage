@@ -44,7 +44,8 @@ function getGenealogyChart(id) {
 // story ('러시아 인민을 위한 축배'), which is not always the headword the entry
 // is filed under, so the node's label comes back as well. Several nodes can
 // share one entry, and then no single label describes where it sits: the label
-// is returned only when exactly one node matches.
+// is returned only when exactly one node matches, and so is the node id the
+// link jumps to.
 function listGenealogyChartsFor(type, id) {
     if (!type || !id) return [];
     const wanted = String(id);
@@ -57,6 +58,8 @@ function listGenealogyChartsFor(type, id) {
             title: chart.title,
             period: `${chart.timeStart}–${chart.timeEnd}`,
             nodeLabel: nodes.length === 1 ? (nodes[0].label || '') : '',
+            // The chart page opens with that node selected (#<node id>).
+            nodeId: nodes.length === 1 ? nodes[0].id : '',
             nodeCount: nodes.length,
         }));
 }

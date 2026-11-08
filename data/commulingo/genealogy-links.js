@@ -21,6 +21,7 @@ function genealogyLinksFor(type, id, lang) {
             title: pick(chart.title, lang),
             period: chart.period,
             nodeLabel: pick(chart.nodeLabel, lang),
+            nodeId: chart.nodeId || '',
         }));
     } catch (err) {
         console.error(`[commulingo genealogy] links for ${type} ${id}:`, err.message);
@@ -39,7 +40,7 @@ function genealogyLinksFor(type, id, lang) {
 // are listed. Where the entry has a node of its own, that node names its place
 // in the chart and keeps the label even if a document sits in the same chart.
 // Where two documents land in one chart and the entry has no node there, no
-// single node describes where it sits and the label is dropped: the same rule
+// single node describes where it sits and the label and node jump are dropped: the same rule
 // listGenealogyChartsFor already applies to an entry with several nodes in one
 // chart.
 function genealogyLinksForEntry(type, id, docs, lang) {
@@ -52,7 +53,10 @@ function genealogyLinksForEntry(type, id, docs, lang) {
     (docs || []).forEach(doc => genealogyLinksFor('doc', doc.id, lang).forEach(chart => {
         const seen = merged.get(chart.id);
         if (!seen) merged.set(chart.id, { ...chart });
-        else if (!own.has(chart.id) && seen.nodeLabel !== chart.nodeLabel) seen.nodeLabel = '';
+        else if (!own.has(chart.id) && seen.nodeId !== chart.nodeId) {
+            seen.nodeLabel = '';
+            seen.nodeId = '';
+        }
     }));
     return [...merged.values()];
 }

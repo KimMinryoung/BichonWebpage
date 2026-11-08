@@ -6,7 +6,8 @@ const { localize } = require('./localize');
 // honest while dense stretches remain readable. All colors come from CSS
 // classes (commulingo.css) so the chart follows the site theme.
 
-const MARGIN_TOP = 84;      // column headers + breathing room
+const MARGIN_TOP = 28;      // breathing room above the first year; the column
+                            // headers are an HTML row above the svg (columns)
 const MARGIN_BOTTOM = 36;
 const MARGIN_LEFT = 36;     // year axis: a four-digit year at 11px measures 28
 const MARGIN_RIGHT = 8;
@@ -119,12 +120,13 @@ function renderGenealogySvg(chart, lang) {
         parts.push(`<text class="gen-year" x="${MARGIN_LEFT - 6}" y="${y + 4}" text-anchor="end">${year}</text>`);
     }
 
-    // ── Column headers and faint lane separators. ──
+    // ── Faint lane separators. The column headers are not drawn here: the
+    // page sets them as an HTML row that stays pinned while a tall chart
+    // scrolls, sized from `columns` below in the same proportions. ──
     columns.forEach((col, i) => {
-        parts.push(`<text class="gen-col-header" x="${laneX(i)}" y="34" text-anchor="middle">${esc(localize(col.label, lang))}</text>`);
         if (i > 0) {
             const x = MARGIN_LEFT + i * COL_WIDTH;
-            parts.push(`<line class="gen-lane-sep" x1="${x}" y1="52" x2="${x}" y2="${height - MARGIN_BOTTOM + 12}"/>`);
+            parts.push(`<line class="gen-lane-sep" x1="${x}" y1="4" x2="${x}" y2="${height - MARGIN_BOTTOM + 12}"/>`);
         }
     });
 
@@ -158,7 +160,9 @@ function renderGenealogySvg(chart, lang) {
             d = `M${x1} ${y1} C${x1} ${y1 + bend} ${x2} ${y2 - bend} ${x2} ${y2 - 2}`;
         }
         const arrow = edge.type === 'opposition' ? '' : ` marker-end="url(#${marker})"`;
-        parts.push(`<path class="gen-edge ${cls}" d="${d}"${arrow}/>`);
+        // data-from/data-to let the page script light up a node's lineage.
+        const ends = `data-from="${esc(edge.from)}" data-to="${esc(edge.to)}"`;
+        parts.push(`<path class="gen-edge ${cls}" ${ends} d="${d}"${arrow}/>`);
         const label = localize(edge.label, lang);
         if (label) {
             // Sit the label two thirds of the way along the curve by default,
@@ -179,7 +183,7 @@ function renderGenealogySvg(chart, lang) {
                 lx = u * u * u * x1 + 3 * u * u * t * x1 + 3 * u * t * t * x2 + t * t * t * x2;
                 ly = u * u * u * y1 + 3 * u * u * t * (y1 + bend) + 3 * u * t * t * (y2 - bend) + t * t * t * y2;
             }
-            parts.push(`<text class="gen-edge-label" x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle">${esc(label)}</text>`);
+            parts.push(`<text class="gen-edge-label" ${ends} x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle">${esc(label)}</text>`);
         }
     }
 
@@ -189,7 +193,8 @@ function renderGenealogySvg(chart, lang) {
         const href = refHref(node.ref);
         const note = localize(node.note, lang);
         const inner = [];
-        inner.push(`<g class="gen-node${href ? ' gen-node-linked' : ''}">`);
+        // The id is the jump target (/commulingo/genealogy/<chart>#<node id>).
+        inner.push(`<g class="gen-node${href ? ' gen-node-linked' : ''}" id="${esc(node.id)}" data-node="${esc(node.id)}">`);
         if (note) inner.push(`<title>${esc(note)}</title>`);
         inner.push(`<rect x="${p.x}" y="${p.y}" width="${NODE_WIDTH}" height="${p.height}" rx="7"/>`);
         lines.forEach((line, i) => {
@@ -211,7 +216,31 @@ function renderGenealogySvg(chart, lang) {
     }
 
     parts.push('</svg>');
-    return { svg: parts.join('\n'), width, height };
+
+    // What the page needs besides the drawing: the column labels and, for the node panel, each node and edge in plain localized form.
+    const columnLabels = new Map(columns.map(col => [col.id, localize(col.label, lang)]));
+    const nodes = [...placed.values()].map(({ node }) => ({
+        id: node.id,
+        label: localize(node.label, lang),
+        period: localize(node.period, lang) || String(node.year),
+        note: localize(node.note, lang) || '',
+        column: columnLabels.get(node.column) || '',
+        href: refHref(node.ref),
+        refType: node.ref && node.ref.type || '',
+    }));
+    const edges = chart.edges
+        .filter(edge => placed.has(edge.from) && placed.has(edge.to))
+        .map(edge => ({ from: edge.from, to: edge.to, type: edge.type, label: localize(edge.label, lang) || '' }));
+    return {
+        svg: parts.join('\n'),
+        width,
+        height,
+        // The header row's grid (commulingo.css .gen-cols) repeats
+        // MARGIN_LEFT, COL_WIDTH and MARGIN_RIGHT as fr units.
+        columns: { labels: columns.map(col => localize(col.label, lang)) },
+        nodes,
+        edges,
+    };
 }
 
 module.exports = { renderGenealogySvg };

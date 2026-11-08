@@ -15,6 +15,12 @@
             <div><h1><%= chart.title %></h1><p><%= chart.description %></p><p class="gen-guide"><%= strings.commuLingoViews.genealogy.guide %></p></div>
         </header>
         <figure class="box gen-figure">
+            <%# Column headers stay pinned while a tall chart scrolls. The
+                svg scales to the box width, so the row is laid out in the
+                same proportions (commulingo.css .gen-cols). %>
+            <div class="gen-cols" aria-hidden="true" data-columns="<%= columns.labels.length %>">
+                <span></span><% columns.labels.forEach(function(label) { %><span><%= label %></span><% }) %><span></span>
+            </div>
             <div class="gen-scroll" tabindex="0" role="group" aria-label="<%= chart.title %>">
                 <%- svg %>
             </div>
@@ -25,8 +31,35 @@
                 <span class="gen-legend-item"><svg viewBox="0 0 34 10" width="34" height="10"><line class="gen-edge gen-edge-end" x1="1" y1="5" x2="33" y2="5"/></svg><%= strings.commuLingoViews.genealogy.suppression %></span>
 <% if (chart.hasUnlinkedNodes) { %><span class="gen-legend-item"><svg viewBox="0 0 34 14" width="34" height="14"><rect class="gen-legend-swatch" x="1" y="1" width="32" height="12"/></svg><%= strings.commuLingoViews.genealogy.noEntryYet %></span><% } %>
             </figcaption>
+            <section class="gen-panel" id="gen-panel" aria-label="<%= strings.commuLingoViews.genealogy.panel %>" aria-live="polite" hidden>
+                <div class="gen-panel-head">
+                    <span class="gen-panel-meta"></span>
+                    <button type="button" class="gen-panel-close" aria-label="<%= strings.commuLingoViews.genealogy.closePanel %>">×</button>
+                </div>
+                <div class="gen-panel-body">
+                    <div class="gen-panel-main">
+                        <h2 class="gen-panel-title"></h2>
+                        <p class="gen-panel-note"></p>
+                        <a class="gen-panel-entry" href="#"></a>
+                    </div>
+                    <div class="gen-panel-links">
+                        <div class="gen-panel-group" data-dir="from"><h3><%= strings.commuLingoViews.genealogy.from %></h3><ul></ul></div>
+                        <div class="gen-panel-group" data-dir="to"><h3><%= strings.commuLingoViews.genealogy.to %></h3><ul></ul></div>
+                    </div>
+                </div>
+            </section>
         </figure>
+        <% var g = strings.commuLingoViews.genealogy; %>
+        <script id="gen-data" type="application/json"><%- JSON.stringify({
+            nodes: panelData.nodes,
+            edges: panelData.edges,
+            text: {
+                open: { term: g.openTerm, person: g.openPerson, event: g.openEvent, doc: g.openDoc },
+                rel: { succession: g.relSuccession, split: g.relSplit, merge: g.relMerge, influence: g.relInfluence, opposition: g.relOpposition, end: g.relEnd },
+            },
+        }).replace(/</g, '\\u003c') %></script>
     </main>
     <%- include('../partials/footer') %>
+    <script src="/js/commulingo-genealogy.js?v=<%= assetVersion %>"></script>
 </body>
 </html>

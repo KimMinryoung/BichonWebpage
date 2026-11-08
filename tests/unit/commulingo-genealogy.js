@@ -28,6 +28,8 @@ for (const doc of docs) {
     bilingual(chart.description, where + '.description');
     assert.ok(Number.isFinite(chart.timeStart) && Number.isFinite(chart.timeEnd) && chart.timeEnd > chart.timeStart, where + ': timeStart/timeEnd');
     assert.ok(Array.isArray(chart.columns) && chart.columns.length, where + ': columns');
+    // The pinned header row has grid rules for 1-9 columns (commulingo.css .gen-cols).
+    assert.ok(chart.columns.length <= 9, where + ': more than 9 columns needs another .gen-cols[data-columns] rule');
     const columns = new Set();
     chart.columns.forEach((col, i) => {
         assert.ok(col && typeof col.id === 'string' && !columns.has(col.id), where + '.columns[' + i + '] id missing or duplicate');

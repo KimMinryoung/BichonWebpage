@@ -54,6 +54,9 @@ router.get('/:chartId', (req, res) => {
             },
             svg: rendered.svg,
             svgWidth: rendered.width,
+            columns: rendered.columns,
+            // Read by public/js/commulingo-genealogy.js for the node panel.
+            panelData: { nodes: rendered.nodes, edges: rendered.edges },
             pageTitle: `${localize(chart.title, lang)} — ${res.locals.strings.commuLingo.name}`,
             pageDescription: localize(chart.description, lang),
             pagePath: `/commulingo/genealogy/${chart.id}`,

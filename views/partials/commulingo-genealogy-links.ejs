@@ -9,7 +9,7 @@
             <h2 id="term-genealogies"><%= strings.commuLingoViews.genealogyLinks.genealogyCharts %></h2>
             <ul class="commu-related-report-list commu-related-genealogy-list">
                 <% charts.forEach(function(chart) { %>
-                <li><a href="/commulingo/genealogy/<%= encodeURIComponent(chart.id) %>"><span><%= chart.period %></span><strong><%= chart.title %></strong><% if (chart.nodeLabel && chart.nodeLabel !== headword) { %><em><%= chart.nodeLabel %></em><% } %></a></li>
+                <li><a href="/commulingo/genealogy/<%= encodeURIComponent(chart.id) %><% if (chart.nodeId) { %>#<%= encodeURIComponent(chart.nodeId) %><% } %>"><span><%= chart.period %></span><strong><%= chart.title %></strong><% if (chart.nodeLabel && chart.nodeLabel !== headword) { %><em><%= chart.nodeLabel %></em><% } %></a></li>
                 <% }) %>
             </ul>
         </section>
