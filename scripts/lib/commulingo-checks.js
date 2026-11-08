@@ -289,12 +289,15 @@ function checkSource(out, value, qLabel) {
     if (!allowed.test(str(value.href))) out.add('source-shape', qLabel, sLabel + '.href is not an approved source URL');
     allLocalizedText(out, value.label, sLabel + '.label');
     if (typeof value.quote !== 'undefined') out.add('source-shape', qLabel, sLabel + ' reference must not present a paraphrase as a quotation');
+    if (typeof value.showFirst !== 'undefined') out.add('source-shape', qLabel, sLabel + '.showFirst needs a quoted passage, not a reference');
     return;
   }
   if (!SOURCE_HREF.test(str(value.href))) out.add('source-shape', qLabel, sLabel + '.href must point at /commulingo/docs/ or https://www.marxists.org/');
   allLocalizedText(out, value.label, sLabel + '.label');
   allLocalizedText(out, value.quote, sLabel + '.quote');
   if (value.quote && HONORIFIC.test(str(value.quote.ko))) out.add('source-shape', qLabel, sLabel + '.quote.ko uses an honorific ending');
+  // showFirst: the passage is shown above the question instead of after the answer.
+  if (typeof value.showFirst !== 'undefined' && value.showFirst !== true) out.add('source-shape', qLabel, sLabel + '.showFirst must be true or absent');
 }
 
 function checkQuestion(out, question, lesson, index, ctx) {
@@ -319,8 +322,9 @@ function checkQuestion(out, question, lesson, index, ctx) {
   // passage is a verbatim quotation, never a reference, and is required.
   if (ctx && ctx.reading) {
     if (!question.source || question.source.kind === 'reference' || !question.source.quote) out.add('source-shape', qLabel, qLabel + ' reading question needs a quoted passage');
-    if (typeof question.context !== 'undefined') allLocalizedText(out, question.context, qLabel + '.context');
   }
+  // context: the sentence placing the passage shown above the question.
+  if (typeof question.context !== 'undefined') allLocalizedText(out, question.context, qLabel + '.context');
   if (question.answer !== 0) out.add('shape', qLabel, qLabel + ' answer must be 0 with the correct choice first');
 
   const prompt = question.prompt || {};

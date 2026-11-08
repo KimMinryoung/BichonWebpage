@@ -1148,14 +1148,23 @@
         if (correct && active && active.streak >= 3) {
             parts.push('<span class="commu-streak-badge">' + escapeHtml(streakLabel(active.streak)) + '</span>');
         }
-        // A reading lesson already showed the passage above the question.
-        var source = isReadingLesson(currentLesson()) ? '' : sourceHtml(question);
+        // The passage was already shown above the question.
+        var source = passageFirst(currentLesson(), question) ? '' : sourceHtml(question);
         if (source) parts.push(source);
         return parts.join('');
     }
 
     function isReadingLesson(lesson) {
         return Boolean(lesson && lesson.format === 'guided-reading');
+    }
+
+    // A reading lesson puts every passage above its question; in other
+    // courses a question opts in with source.showFirst, when reading the
+    // passage is part of solving it.
+    function passageFirst(lesson, question) {
+        var source = question && question.source;
+        if (!source || source.kind === 'reference' || !text(source.quote)) return false;
+        return isReadingLesson(lesson) || source.showFirst === true;
     }
 
     function hidePassage() {
@@ -1165,13 +1174,14 @@
         els.quiz.classList.remove('is-reading');
     }
 
-    // Reading lessons put the passage first: one or two paragraphs of the
-    // text, the sentence placing it, then the question about it. The link
-    // opens the full text at that section in a new tab.
+    // Reading lessons (and questions with source.showFirst) put the passage
+    // first: one or two paragraphs of the text, the sentence placing it, then
+    // the question about it. The link opens the full text at that section in
+    // a new tab.
     function renderPassage(lesson, question) {
         if (!els.passage) return;
         var source = question && question.source;
-        var quote = isReadingLesson(lesson) && source && text(source.quote);
+        var quote = passageFirst(lesson, question) && text(source.quote);
         if (!quote) { hidePassage(); return; }
         var context = text(question.context);
         var label = text(source.label);

@@ -76,4 +76,14 @@ for (const href of ['javascript:alert(1)', 'https://www.marxists.org.evil.exampl
 const out = checks.createCollector();
 checks.checkSource(out, { kind: 'reference', href: '/commulingo/docs/french-revolution-intro', label: { ko: '자료', en: 'Source' }, quote: { ko: '요약', en: 'Paraphrase' } }, 'not-a-quotation');
 assert(out.issues.some(i => i.rule === 'source-shape'));
+// showFirst puts a quoted passage above the question; a reference has none to show.
+{
+  const quoted = { href: '/commulingo/docs/french-revolution-intro#x', label: { ko: '자료', en: 'Source' }, quote: { ko: '인용문이다.', en: 'A quote.' }, showFirst: true };
+  const ok = checks.createCollector(); checks.checkSource(ok, quoted, 'show-first');
+  assert(!ok.issues.length);
+  const bad = checks.createCollector(); checks.checkSource(bad, { ...quoted, showFirst: 'yes' }, 'show-first-bad');
+  assert(bad.issues.some(i => i.rule === 'source-shape'));
+  const ref = checks.createCollector(); checks.checkSource(ref, { kind: 'reference', href: '/commulingo/docs/french-revolution-intro', label: { ko: '자료', en: 'Source' }, showFirst: true }, 'show-first-ref');
+  assert(ref.issues.some(i => i.rule === 'source-shape'));
+}
 console.log('Short learning: 126 sourced historical questions; French Revolution international war, Terror, chronology and source validation preserved');
