@@ -12,8 +12,11 @@
             ],
             dictJump: 'genealogy' }) %>
         <header class="box commulingo-hero">
-            <div><h1><%= chart.title %></h1><p><%= chart.description %></p><p class="gen-guide"><%= strings.commuLingoViews.genealogy.guide %></p></div>
+            <div><h1><%= chart.title %></h1><p><%= chart.description %></p></div>
         </header>
+        <%# How to use the chart is not part of what the chart covers, so it
+            sits in its own box between the introduction and the chart. %>
+        <p class="box gen-guide"><%= strings.commuLingoViews.genealogy.guide %></p>
         <figure class="box gen-figure">
             <%# Column headers stay pinned while a tall chart scrolls. The
                 svg scales to the box width, so the row is laid out in the

@@ -113,7 +113,7 @@ readings의 `doc`(사이트 참고 문헌 id)과 `anchor`(읽는 절)는 전문�
 
 강좌 전체가 한 계보도와 겹치면 강좌 최상위 `genealogy`(차트 id)를 둔다. 책 페이지 소개문 아래에 「계보도 <차트 제목>」 링크로 그려지고, 소개문 산문에서 계보도를 안내하지 않는다(2026-11-08, 「인식론 입문」). 저장 게이트가 차트가 있는지 확인한다.
 
-계보도의 `description`은 차트가 다루는 범위만 쓴다. 「노드를 누르면 … 이동한다」 같은 사용법은 계보도 페이지가 소개문 아래 공통 안내 줄(`strings.commuLingoViews.genealogy.guide`)로 한 번 그리므로 차트마다 넣지 않는다(2026-11-08 차트 9개에서 걷어냄, 작업본 `scripts/content/genealogy-intro-cleanup/`).
+계보도의 `description`은 차트가 다루는 범위만 쓴다. 「노드를 누르면 … 이동한다」 같은 사용법은 계보도 페이지가 소개문 상자와 차트 사이의 별도 안내 상자(`strings.commuLingoViews.genealogy.guide`)로 한 번 그리므로 차트마다 넣지 않는다(2026-11-08 차트 9개에서 걷어냄, 작업본 `scripts/content/genealogy-intro-cleanup/`).
 
 계보도 목록(`/commulingo/genealogy`)은 차트의 `group`(`thought` 사상·철학, `movements` 운동·분파, `soviet-state` 소련 국가, `economies` 사회주의 경제; `GENEALOGY_GROUPS`, 라벨은 `strings.commuLingoViews.genealogies.groups`)으로 묶고 묶음 안은 시작 연도 순이며 쪽을 나누지 않는다. 새 차트는 이 넷 중 하나를 반드시 넣는다(차트 테스트가 확인). 공산링고 통합 검색은 차트 제목·소개문·열 이름을 「계보도」 묶음으로 찾고, 노드는 색인하지 않는다(노드는 각자 사전 항목으로 검색되고 그 항목 페이지가 차트로 돌아온다). 차트 페이지에서 노드를 누르면 이동하지 않고 선택된다: 계승·분화·합류 선으로 이어진 위아래 계보 전체와 영향·대립·소멸로 바로 닿은 노드만 남기고 흐려지며, 아래 고정 칸에 설명(`note`)·사전 링크·직접 연결이 나온다. 선택은 주소 `#<노드 id>`에 남고 사전 항목의 계보도 링크도 이 주소로 노드를 연다. 열 제목은 SVG 밖 HTML 줄로 상단에 고정되며 열은 9개까지다(2026-11-08).
 
