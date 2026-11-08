@@ -112,7 +112,15 @@ function checkChapterCard(key, chapter) {
             throw badRequest(`${at}.url must be an http(s) address`);
         }
         if (reading.url !== undefined && reading.doc !== undefined) throw badRequest(`${at} has both doc and url`);
-        const extra = Object.keys(reading).filter(k => !['author', 'title', 'year', 'endYear', 'doc', 'anchor', 'url'].includes(k));
+        // genealogy: a site genealogy chart (/commulingo/genealogy/<id>) the
+        // chapter is mapped on; one link target per reading.
+        if (reading.genealogy !== undefined && !(typeof reading.genealogy === 'string' && ID.test(reading.genealogy))) {
+            throw badRequest(`${at}.genealogy must be a chart id`);
+        }
+        if (reading.genealogy !== undefined && (reading.doc !== undefined || reading.url !== undefined)) {
+            throw badRequest(`${at} links to a genealogy chart and to a doc or url`);
+        }
+        const extra = Object.keys(reading).filter(k => !['author', 'title', 'year', 'endYear', 'doc', 'anchor', 'url', 'genealogy'].includes(k));
         if (extra.length) throw badRequest(`${at} has unknown fields ${extra.join(', ')}`);
     });
 }
@@ -322,6 +330,11 @@ function sourceProblems(course) {
     }
     for (const chapter of course.chapters || []) {
         (chapter.readings || []).forEach((reading, index) => {
+            if (reading && reading.genealogy) {
+                const { getGenealogyChart } = require('./genealogy-store');
+                if (!getGenealogyChart(reading.genealogy)) problems.push(`${chapter.id}/readings[${index}]: genealogy chart ${reading.genealogy} not found`);
+                return;
+            }
             if (!reading || !reading.doc) return;
             const where = `${chapter.id}/readings[${index}]`;
             const page = siteDoc(reading.doc);

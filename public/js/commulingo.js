@@ -671,13 +671,15 @@
         return card;
     }
 
-    // chapter.readings: [{ author?, title, year, endYear? }], localized fields.
+    // chapter.readings: [{ author?, title, year, endYear?, doc?, anchor?, url?, genealogy? }], localized fields.
     function chapterReadings(chapter) {
         return (chapter.readings || []).map(function(reading) {
             var year = reading.year ? String(reading.year) : '';
             if (year && reading.endYear) year += '–' + reading.endYear;
-            var href = reading.doc ? '/commulingo/docs/' + encodeURIComponent(reading.doc) + (reading.anchor ? '#' + encodeURIComponent(reading.anchor) : '') : (reading.url || '');
-            return { author: text(reading.author), title: text(reading.title), year: year, href: href, external: !reading.doc && !!reading.url };
+            var href = reading.doc ? '/commulingo/docs/' + encodeURIComponent(reading.doc) + (reading.anchor ? '#' + encodeURIComponent(reading.anchor) : '')
+                : reading.genealogy ? '/commulingo/genealogy/' + encodeURIComponent(reading.genealogy)
+                : (reading.url || '');
+            return { author: text(reading.author), title: text(reading.title), year: year, href: href, external: !reading.doc && !reading.genealogy && !!reading.url };
         }).filter(function(reading) { return reading.title; });
     }
 

@@ -51,4 +51,12 @@ const broken = clone(capital);
 broken.chapters[0].lessons[0].questions.splice(1, 2);
 assert.throws(() => gateCourseWrite({ key, next: broken, prev: capital, others: [] }), /question count/);
 
+// A reading may link to a genealogy chart, but not to a chart and a url at once.
+const charted = clone(capital);
+const chartReading = { title: { ko: '계보도', en: 'Chart' }, year: 1770, endYear: 2020, genealogy: 'theories-of-knowledge' };
+charted.chapters[0].readings = [chartReading];
+validateCourseShape(key, charted);
+charted.chapters[0].readings = [{ ...chartReading, url: 'https://www.marxists.org/' }];
+assert.throws(() => validateCourseShape(key, charted), /genealogy chart and to a doc or url/);
+
 console.log(`Course gate: shape, rule, question-id and change report checks passed (${path.basename(__filename)})`);
