@@ -11,6 +11,7 @@ const assert = require('assert');
 const { listDataDocuments } = require('../../data/commulingo/data-documents');
 const EDGE_TYPES = new Set(['succession', 'split', 'merge', 'influence', 'opposition', 'end']);
 const REF_TYPES = new Set(['term', 'person', 'event', 'doc']);
+const { GENEALOGY_GROUPS } = require('../../data/commulingo/genealogy-store');
 
 function bilingual(value, where) {
     assert.ok(value && typeof value === 'object', where + ' must be localized');
@@ -26,6 +27,7 @@ for (const doc of docs) {
     assert.strictEqual('genealogy/' + chart.id, doc.key, where + ': id must match the key');
     bilingual(chart.title, where + '.title');
     bilingual(chart.description, where + '.description');
+    assert.ok(GENEALOGY_GROUPS.includes(chart.group), where + ': group must be one of ' + GENEALOGY_GROUPS.join(', '));
     assert.ok(Number.isFinite(chart.timeStart) && Number.isFinite(chart.timeEnd) && chart.timeEnd > chart.timeStart, where + ': timeStart/timeEnd');
     assert.ok(Array.isArray(chart.columns) && chart.columns.length, where + ': columns');
     // The pinned header row has grid rules for 1-9 columns (commulingo.css .gen-cols).

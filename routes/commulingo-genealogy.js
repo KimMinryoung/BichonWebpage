@@ -1,27 +1,34 @@
 const express = require('express');
 const { setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const errorPage = require('../utils/error-page');
-const { listGenealogyCharts, getGenealogyChart } = require('../data/commulingo/genealogy-store');
+const { listGenealogyCharts, getGenealogyChart, GENEALOGY_GROUPS } = require('../data/commulingo/genealogy-store');
 const { renderGenealogySvg } = require('../data/commulingo/genealogy-svg');
 const { localize } = require('../data/commulingo/localize');
-const { paginateList } = require('../data/commulingo/list-pagination');
 
 const router = express.Router();
 
 router.get('/', (req, res) => {
     try {
         const lang = res.locals.lang;
-        const charts = listGenealogyCharts().map(chart => ({
-            id: chart.id,
-            title: localize(chart.title, lang),
-            description: localize(chart.description, lang),
-            period: `${chart.timeStart}–${chart.timeEnd}`,
-        }));
-        const pagination = paginateList(charts, charts, req.query, '/commulingo/genealogy?page=');
+        const labels = res.locals.strings.commuLingoViews.genealogies.groups;
+        // Grouped by topic, each group in order of its start year. The list
+        // is short enough to set out whole, so it is not paged. A chart whose
+        // group is missing or unknown (the chart test rejects both) still
+        // shows, in a last group without a heading.
+        const groups = GENEALOGY_GROUPS.map(id => ({ id, label: labels[id], charts: [] }));
+        const rest = { id: 'other', label: '', charts: [] };
+        listGenealogyCharts()
+            .slice()
+            .sort((a, b) => a.timeStart - b.timeStart || a.timeEnd - b.timeEnd)
+            .forEach(chart => (groups.find(group => group.id === chart.group) || rest).charts.push({
+                id: chart.id,
+                title: localize(chart.title, lang),
+                description: localize(chart.description, lang),
+                period: `${chart.timeStart}–${chart.timeEnd}`,
+            }));
         setShortPublicCache(res);
         res.render('public/commulingo-genealogies', {
-            charts,
-            pagination,
+            groups: groups.concat(rest).filter(group => group.charts.length),
             pageTitle: lang === 'en' ? 'Genealogy Charts — CommuLingo' : '계보도 — 공산링고',
             pageDescription: lang === 'en'
                 ? 'Diagrams of how currents, doctrines and factions split and merged.'

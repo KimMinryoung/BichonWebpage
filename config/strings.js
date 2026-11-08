@@ -103,6 +103,7 @@ const ko = {
         sections: {
             reports: '보고서', hub: '큐레이션', diary: '일기장', posts: '비숑글',
             courses: '강좌', events: '역사 사건', docs: '참고 문헌', people: '인물 사전', terms: '용어 사전',
+            genealogy: '계보도',
         },
     },
 
@@ -541,6 +542,7 @@ const ko = {
             genealogy: '계보도',
             genealogyCharts: '계보도',
             genealogyCharts2: '계보도 목록',
+            groups: { thought: '사상·철학', movements: '운동·분파', 'soviet-state': '소련 국가', economies: '사회주의 경제' },
         },
         genealogy: {
             genealogy: '계보도',
@@ -823,6 +825,7 @@ const en = {
         sections: {
             reports: 'Reports', hub: 'Curation', diary: 'Diary', posts: "Bichon's Posts",
             courses: 'Courses', events: 'Historical events', docs: 'References', people: 'People', terms: 'Glossary',
+            genealogy: 'Genealogy charts',
         },
     },
     home: {
@@ -1307,6 +1310,7 @@ const en = {
             genealogy: 'Genealogy',
             genealogyCharts: 'Genealogy Charts',
             genealogyCharts2: 'Genealogy charts',
+            groups: { thought: 'Thought and philosophy', movements: 'Movements and factions', 'soviet-state': 'The Soviet state', economies: 'Socialist economies' },
         },
         genealogy: {
             genealogy: 'Genealogy',

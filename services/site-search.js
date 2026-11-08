@@ -24,6 +24,7 @@ const { loadCommuLingoHistoryEvents } = require('../data/commulingo/history-even
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
 const { createDocRefResolver } = require('../data/commulingo/docs-refs');
 const { presentedDocList } = require('../data/commulingo/doc-presentation');
+const { listGenealogyCharts } = require('../data/commulingo/genealogy-store');
 
 const PER_SECTION = 5;
 // A section without a list page of its own (courses) opens in full on the
@@ -153,8 +154,22 @@ async function terms(lang, query) {
     }));
 }
 
+// Genealogy charts: title, introduction and column names. The nodes are left
+// out: each is a dictionary entry of its own, already found under people,
+// terms or events, and its page links back to the chart.
+function genealogy(lang, terms) {
+    const charts = listGenealogyCharts();
+    const text = chart => [localize(chart.description, lang), ...chart.columns.map(col => localize(col.label, lang))].join(' ');
+    return rankByTitle(charts, terms, chart => localize(chart.title, lang), text).map(chart => ({
+        title: localize(chart.title, lang),
+        href: `/commulingo/genealogy/${chart.id}`,
+        meta: `${chart.timeStart}–${chart.timeEnd}`,
+        excerpt: localize(chart.description, lang),
+    }));
+}
+
 // Section order is the owner's (2026-10-11): writings, courses, events,
-// documents, people, terms. `menu` is the config/menu-languages.js key.
+// documents, people, terms; genealogy charts were added last (2026-11-08). `menu` is the config/menu-languages.js key.
 // `load` resolves to a hit list or { total, items }.
 const SECTIONS = [
     { key: 'reports', menu: 'reports', scope: 'all', more: '/reports', load: (lang, q, t) => reports(lang, t) },
@@ -166,6 +181,7 @@ const SECTIONS = [
     { key: 'docs', menu: 'commulingo.docs', scope: 'commulingo', more: '/commulingo/docs', load: (lang, q) => docs(lang, q) },
     { key: 'people', menu: 'commulingo.people', scope: 'commulingo', more: '/commulingo/people', load: (lang, q) => people(lang, q) },
     { key: 'terms', menu: 'commulingo.terms', scope: 'commulingo', more: '/commulingo/terms', load: (lang, q) => terms(lang, q) },
+    { key: 'genealogy', menu: 'commulingo.genealogy', scope: 'commulingo', load: (lang, q, t) => genealogy(lang, t) },
 ];
 
 function sectionsFor(scope, lang) {

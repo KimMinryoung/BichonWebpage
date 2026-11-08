@@ -34,6 +34,11 @@ function listGenealogyCharts() {
     return loadCharts();
 }
 
+// The topic groups the chart list is set out in, in page order. A chart names
+// its own (`group`); the labels are config/strings.js
+// commuLingoViews.genealogies.groups.
+const GENEALOGY_GROUPS = ['thought', 'movements', 'soviet-state', 'economies'];
+
 function getGenealogyChart(id) {
     return loadCharts().find(chart => chart.id === id) || null;
 }
@@ -64,4 +69,4 @@ function listGenealogyChartsFor(type, id) {
         }));
 }
 
-module.exports = { listGenealogyCharts, getGenealogyChart, listGenealogyChartsFor };
+module.exports = { listGenealogyCharts, getGenealogyChart, listGenealogyChartsFor, GENEALOGY_GROUPS };
