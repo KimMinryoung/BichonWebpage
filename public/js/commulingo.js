@@ -691,12 +691,41 @@
             + '<span class="commu-reading-title">' + escapeHtml(reading.title) + '</span>'
             + (reading.year ? '<span class="commu-reading-year">' + escapeHtml(reading.year) + '</span>' : '');
         if (reading.external) {
-            return '<li><a href="' + escapeHtml(reading.href) + '" target="_blank" rel="noopener noreferrer">' + inner
+            return '<li class="is-external"><a href="' + escapeHtml(reading.href) + '" target="_blank" rel="noopener noreferrer">'
+                + linkWhereTag(reading.href) + inner
                 + '<span class="commu-reading-external" aria-hidden="true">↗</span></a></li>';
         }
         return reading.href
-            ? '<li><a href="' + escapeHtml(reading.href) + '">' + inner + '</a></li>'
+            ? '<li class="is-library"><a href="' + escapeHtml(reading.href) + '">' + linkWhereTag(reading.href) + inner + '</a></li>'
             : '<li>' + inner + '</li>';
+    }
+
+    // Where a text link leads, said before its title: a site page (the
+    // CommuLingo library or a genealogy chart) or another site, named by its
+    // host, so the two read apart at a glance and not only by the ↗.
+    function isSiteHref(href) {
+        return /^\/(?!\/)/.test(String(href || ''));
+    }
+
+    function linkHost(href) {
+        try { return new URL(href).hostname.replace(/^www\./, ''); } catch (e) { return ''; }
+    }
+
+    function linkWhereTag(href) {
+        if (isSiteHref(href)) {
+            return '<span class="commu-link-where is-library">' + escapeHtml(lang === 'en' ? 'CommuLingo' : '공산링고') + '</span>';
+        }
+        var host = linkHost(href);
+        return '<span class="commu-link-where is-external">' + escapeHtml(host || (lang === 'en' ? 'external' : '외부')) + '</span>';
+    }
+
+    // The source link under a passage: a site document opens as part of the
+    // library, another site with its host and ↗.
+    function sourceLinkHtml(href, label, suffix) {
+        var site = isSiteHref(href);
+        return '<a class="commu-source-link ' + (site ? 'is-library' : 'is-external') + '" href="' + escapeHtml(href) + '" target="_blank" rel="noopener">'
+            + linkWhereTag(href) + '<span class="commu-source-link-label">' + escapeHtml(label) + (site ? suffix : '') + '</span>'
+            + (site ? '' : '<span class="commu-reading-external" aria-hidden="true">↗</span>') + '</a>';
     }
 
     function createLessonAction(lesson) {
@@ -1188,9 +1217,7 @@
         var pieces = quote.split(' … ').map(escapeHtml).join(' <span class="commu-source-gap">…</span> ');
         els.passage.innerHTML = (context ? '<p class="commu-passage-context">' + escapeHtml(context) + '</p>' : '')
             + '<blockquote class="commu-passage-text"><p>' + pieces + '</p>'
-            + (source.href && label
-                ? '<a class="commu-source-link" href="' + escapeHtml(source.href) + '" target="_blank" rel="noopener">' + escapeHtml(label) + (lang === 'en' ? ' →' : ' 전문에서 보기 →') + '</a>'
-                : '')
+            + (source.href && label ? sourceLinkHtml(source.href, label, lang === 'en' ? ' →' : ' 전문에서 보기 →') : '')
             + '</blockquote>';
         els.passage.classList.remove('is-hidden');
         els.quiz.classList.add('is-reading');
@@ -1207,8 +1234,7 @@
             if (!referenceLabel || !/^(https:\/\/|\/commulingo\/docs\/)/.test(source.href || '')) return '';
             return '<div class="commu-source"><span class="commu-source-label">'
                 + escapeHtml(lang === 'en' ? 'Evidence and sources' : '근거 자료') + '</span>'
-                + '<a class="commu-source-link" href="' + escapeHtml(source.href) + '" target="_blank" rel="noopener">'
-                + escapeHtml(referenceLabel) + ' →</a></div>';
+                + sourceLinkHtml(source.href, referenceLabel, ' →') + '</div>';
         }
         if (!source.quote) return '';
         var quote = text(source.quote);
@@ -1218,9 +1244,7 @@
         return '<blockquote class="commu-source">' +
             '<span class="commu-source-label">' + escapeHtml(lang === 'en' ? 'From the text' : '원전에서') + '</span>' +
             '<p>' + pieces + '</p>' +
-            (source.href && label
-                ? '<a class="commu-source-link" href="' + escapeHtml(source.href) + '" target="_blank" rel="noopener">' + escapeHtml(label) + (lang === 'en' ? ' →' : ' 전문 읽기 →') + '</a>'
-                : '') +
+            (source.href && label ? sourceLinkHtml(source.href, label, lang === 'en' ? ' →' : ' 전문 읽기 →') : '') +
             '</blockquote>';
     }
 

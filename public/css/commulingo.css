@@ -356,6 +356,45 @@
     margin-left: 4px;
 }
 
+/* Where a text link leads (commulingo.js linkWhereTag): a site page carries a
+   solid accent tag and border, another site a dashed border and its host in
+   an outlined tag, so the two kinds read apart before the ↗. */
+.commu-chapter-readings li.is-library {
+    border-color: var(--btn-primary);
+}
+
+.commu-chapter-readings li.is-external {
+    border-style: dashed;
+}
+
+.commu-link-where {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-right: 6px;
+    padding: 0 4px;
+    vertical-align: 1px;
+    white-space: nowrap;
+}
+
+.commu-link-where.is-library {
+    background: var(--btn-primary);
+    border: 1px solid var(--btn-primary);
+    color: var(--clr-cream);
+}
+
+.commu-link-where.is-external {
+    border: 1px dashed var(--text-muted);
+    color: var(--text-muted);
+}
+
+.commu-chapter-readings a:hover .commu-link-where,
+.commu-chapter-readings a:focus-visible .commu-link-where {
+    border-color: var(--clr-cream);
+    color: var(--clr-cream);
+}
+
 .commu-chapter-actions {
     display: grid;
     gap: 8px;
@@ -846,6 +885,16 @@
     justify-self: start;
     color: var(--link);
     font-size: 0.85rem;
+    text-decoration: none;
+}
+
+.commu-source-link .commu-source-link-label {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.commu-source-link.is-external .commu-source-link-label {
+    text-decoration-style: dashed;
 }
 
 /* 원문 끊어 읽기: 문항보다 먼저 보이는 원문 한두 문단. 답한 뒤의 발췌 상자와
