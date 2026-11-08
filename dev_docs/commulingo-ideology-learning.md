@@ -113,7 +113,7 @@ readings의 `doc`(사이트 참고 문헌 id)과 `anchor`(읽는 절)는 전문�
 
 강좌 전체가 한 계보도와 겹치면 강좌 최상위 `genealogy`(차트 id)를 둔다. 책 페이지 소개문 아래에 「계보도 <차트 제목>」 링크로 그려지고, 소개문 산문에서 계보도를 안내하지 않는다(2026-11-08, 「인식론 입문」). 저장 게이트가 차트가 있는지 확인한다.
 
-계보도의 `description`은 차트가 다루는 범위만 쓴다. 「노드를 누르면 … 이동한다」 같은 사용법은 계보도 페이지가 소개문 아래 공통 안내 줄(`strings.commuLingoViews.genealogy.guide`)로 한 번 그리므로 차트마다 넣지 않는다(2026-11-08 12개 차트에서 걷어냄, 작업본 `scripts/content/genealogy-intro-cleanup/`).
+계보도의 `description`은 차트가 다루는 범위만 쓴다. 「노드를 누르면 … 이동한다」 같은 사용법은 계보도 페이지가 소개문 아래 공통 안내 줄(`strings.commuLingoViews.genealogy.guide`)로 한 번 그리므로 차트마다 넣지 않는다(2026-11-08 차트 9개에서 걷어냄, 작업본 `scripts/content/genealogy-intro-cleanup/`).
 
 강좌 소개·배지에 「한 문단씩 끊어 읽습니다」, 「원문 끊어 읽기」 같은 진행 방식 문구를 쓰지 않는다(배지는 「원문 읽기 · N편」).
 
