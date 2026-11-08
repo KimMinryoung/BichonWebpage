@@ -267,6 +267,9 @@ async function writeDocs(changes, { actor, note, client, allowStructureIssues = 
             }
             if (!current) {
                 if (body === undefined) throw badRequest(`${item.id}: a new document needs a body`);
+                // The updates feed lists documents by addedAt (services/commulingo-updates.js):
+                // a new document without one would never appear there.
+                if (!entry.addedAt) entry.addedAt = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul' }).format(new Date());
                 const sortOrder = Number.isInteger(item.sortOrder) ? item.sortOrder
                     : (await c.query('SELECT COALESCE(MAX(sort_order), 0) + 1 AS n FROM commulingo_docs')).rows[0].n;
                 // A re-created id continues its old numbering, so the history
