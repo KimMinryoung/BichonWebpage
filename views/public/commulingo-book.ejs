@@ -51,7 +51,7 @@
                 <h1><%= bookTitle %></h1>
                 <p><%= bookDescription %></p>
                 <% if (typeof bookGenealogy !== 'undefined' && bookGenealogy) { %>
-                <p class="commulingo-hero-genealogy"><%= strings.doc.genealogy %> <a href="<%= bookGenealogy.href %>"><%= bookGenealogy.title %></a></p>
+                <p class="commulingo-hero-genealogy"><%= strings.commuLingoViews.doc.genealogy %> <a href="<%= bookGenealogy.href %>"><%= bookGenealogy.title %></a></p>
                 <% } %>
                 <% if (!isDecision && !isGraph) { %>
                 <%# Due questions of this book (missed before, scheduled by
