@@ -82,10 +82,9 @@
     margin-bottom: 4px;
 }
 
-/* A link or guide line under the description keeps the description styled
-   as the hero's closing prose. */
+/* A guide line under the description keeps the description styled as the
+   hero's closing prose. */
 .commulingo-hero p:last-child,
-.commulingo-hero p:has(+ p.commulingo-hero-genealogy),
 .commulingo-hero p:has(+ p.gen-guide) {
     color: var(--text-secondary);
     line-height: var(--leading-normal);
@@ -100,9 +99,29 @@
     hyphens: auto;
 }
 
-.commulingo-hero p.commulingo-hero-genealogy {
-    margin-top: 6px;
-    text-align: left;
+/* The course's genealogy chart: its own box under the hero, the whole row
+   the link (no underlined link text). */
+.commulingo-genealogy-row {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    padding: 10px 18px;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+.commulingo-genealogy-row:hover,
+.commulingo-genealogy-row:focus-visible {
+    background: var(--bg-surface-hover);
+    color: var(--text-primary);
+    text-decoration: none;
+}
+.commulingo-genealogy-row span {
+    flex: none;
+    color: var(--text-muted);
+    font-size: .82rem;
+}
+.commulingo-genealogy-row strong {
+    font-weight: 600;
 }
 
 /* The genealogy page's shared how-to line, kept out of each chart's

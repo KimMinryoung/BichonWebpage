@@ -26,11 +26,11 @@
             <div>
                 <h1><%= bookTitle %></h1>
                 <p><%= bookDescription %></p>
-                <% if (typeof bookGenealogy !== 'undefined' && bookGenealogy) { %>
-                <p class="commulingo-hero-genealogy"><%= strings.commuLingoViews.doc.genealogy %> <a href="<%= bookGenealogy.href %>"><%= bookGenealogy.title %></a></p>
-                <% } %>
             </div>
         </header>
+        <% if (typeof bookGenealogy !== 'undefined' && bookGenealogy) { %>
+        <a class="box commulingo-genealogy-row" href="<%= bookGenealogy.href %>"><span><%= strings.commuLingoViews.doc.genealogy %></span><strong><%= bookGenealogy.title %></strong></a>
+        <% } %>
 
         <section class="commu-dc" id="commuDecision" aria-label="<%= bookTitle %>"></section>
         <% } else if (isGraph) { %>
@@ -41,11 +41,11 @@
             <div>
                 <h1><%= bookTitle %></h1>
                 <p><%= bookDescription %></p>
-                <% if (typeof bookGenealogy !== 'undefined' && bookGenealogy) { %>
-                <p class="commulingo-hero-genealogy"><%= strings.commuLingoViews.doc.genealogy %> <a href="<%= bookGenealogy.href %>"><%= bookGenealogy.title %></a></p>
-                <% } %>
             </div>
         </header>
+        <% if (typeof bookGenealogy !== 'undefined' && bookGenealogy) { %>
+        <a class="box commulingo-genealogy-row" href="<%= bookGenealogy.href %>"><span><%= strings.commuLingoViews.doc.genealogy %></span><strong><%= bookGenealogy.title %></strong></a>
+        <% } %>
 
         <section class="commu-graph" id="commuGraph" aria-label="<%= bookTitle %>"></section>
         <% } else { %>
@@ -56,9 +56,6 @@
             <div>
                 <h1><%= bookTitle %></h1>
                 <p><%= bookDescription %></p>
-                <% if (typeof bookGenealogy !== 'undefined' && bookGenealogy) { %>
-                <p class="commulingo-hero-genealogy"><%= strings.commuLingoViews.doc.genealogy %> <a href="<%= bookGenealogy.href %>"><%= bookGenealogy.title %></a></p>
-                <% } %>
                 <% if (!isDecision && !isGraph) { %>
                 <%# Due questions of this book (missed before, scheduled by
                     public/js/commulingo-schedule.js); the script fills the count
@@ -74,6 +71,9 @@
                 <small><%= strings.commuLingo.progress %></small>
             </div>
         </header>
+        <% if (typeof bookGenealogy !== 'undefined' && bookGenealogy) { %>
+        <a class="box commulingo-genealogy-row" href="<%= bookGenealogy.href %>"><span><%= strings.commuLingoViews.doc.genealogy %></span><strong><%= bookGenealogy.title %></strong></a>
+        <% } %>
 
         <% var factionGuide = lessons.collections[0].factionGuide; %>
         <% var factionText = function(value) { if (typeof value === 'string') return value; return value && (value[lang] || value.ko || value.en) || ''; }; %>
