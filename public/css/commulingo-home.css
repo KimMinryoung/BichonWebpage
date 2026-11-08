@@ -51,8 +51,9 @@
     font-size: 1.35rem;
     margin-bottom: 4px;
 }
-
-.commulingo-hero p:last-child {
+.commulingo-hero p:last-child,
+.commulingo-hero p:has(+ p.commulingo-hero-genealogy),
+.commulingo-hero p:has(+ p.gen-guide) {
     color: var(--text-secondary);
     line-height: var(--leading-normal);
 }
@@ -60,6 +61,11 @@
 .commulingo-hero p.commulingo-hero-genealogy {
     margin-top: 6px;
     text-align: left;
+}
+.commulingo-hero p.gen-guide {
+    margin-top: 6px;
+    font-size: .82rem;
+    color: var(--text-muted);
 }
 
 .commulingo-resume {

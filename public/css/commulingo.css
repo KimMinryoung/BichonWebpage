@@ -82,7 +82,11 @@
     margin-bottom: 4px;
 }
 
-.commulingo-hero p:last-child {
+/* A link or guide line under the description keeps the description styled
+   as the hero's closing prose. */
+.commulingo-hero p:last-child,
+.commulingo-hero p:has(+ p.commulingo-hero-genealogy),
+.commulingo-hero p:has(+ p.gen-guide) {
     color: var(--text-secondary);
     line-height: var(--leading-normal);
 }
@@ -99,6 +103,14 @@
 .commulingo-hero p.commulingo-hero-genealogy {
     margin-top: 6px;
     text-align: left;
+}
+
+/* The genealogy page's shared how-to line, kept out of each chart's
+   description. */
+.commulingo-hero p.gen-guide {
+    margin-top: 6px;
+    font-size: .82rem;
+    color: var(--text-muted);
 }
 
 .commulingo-total {

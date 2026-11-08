@@ -549,6 +549,7 @@ const ko = {
             antagonism: '대립',
             suppression: '소멸',
             noEntryYet: '아직 사전 항목 없음',
+            guide: '노드를 누르면 연결된 사전 항목·인물 카드·사건·문헌으로 이동합니다.',
         },
         genealogyLinks: {
             genealogyCharts: '계보도',
@@ -1300,6 +1301,7 @@ const en = {
             antagonism: 'antagonism',
             suppression: 'suppression',
             noEntryYet: 'no entry yet',
+            guide: 'Click a node to open its dictionary entry, person card, event or document.',
         },
         genealogyLinks: {
             genealogyCharts: 'Genealogy charts',
