@@ -71,6 +71,11 @@
     line-height: var(--leading-normal);
 }
 
+.commulingo-hero p.commulingo-hero-genealogy {
+    margin-top: 6px;
+    text-align: left;
+}
+
 .commulingo-total {
     flex: 0 0 auto;
     width: 78px;

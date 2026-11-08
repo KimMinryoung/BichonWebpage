@@ -96,7 +96,7 @@
     hyphens: auto;
 }
 
-.commulingo-hero--book > div > p.commulingo-hero-genealogy {
+.commulingo-hero p.commulingo-hero-genealogy {
     margin-top: 6px;
     text-align: left;
 }

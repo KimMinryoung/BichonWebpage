@@ -57,6 +57,11 @@
     line-height: var(--leading-normal);
 }
 
+.commulingo-hero p.commulingo-hero-genealogy {
+    margin-top: 6px;
+    text-align: left;
+}
+
 .commulingo-resume {
     align-items: center;
     border: 1px solid var(--border);

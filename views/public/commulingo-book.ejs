@@ -26,6 +26,9 @@
             <div>
                 <h1><%= bookTitle %></h1>
                 <p><%= bookDescription %></p>
+                <% if (typeof bookGenealogy !== 'undefined' && bookGenealogy) { %>
+                <p class="commulingo-hero-genealogy"><%= strings.commuLingoViews.doc.genealogy %> <a href="<%= bookGenealogy.href %>"><%= bookGenealogy.title %></a></p>
+                <% } %>
             </div>
         </header>
 
@@ -38,6 +41,9 @@
             <div>
                 <h1><%= bookTitle %></h1>
                 <p><%= bookDescription %></p>
+                <% if (typeof bookGenealogy !== 'undefined' && bookGenealogy) { %>
+                <p class="commulingo-hero-genealogy"><%= strings.commuLingoViews.doc.genealogy %> <a href="<%= bookGenealogy.href %>"><%= bookGenealogy.title %></a></p>
+                <% } %>
             </div>
         </header>
 
