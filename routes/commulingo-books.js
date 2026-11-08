@@ -7,6 +7,7 @@ const { loadCommuLingoCatalog } = require('../data/commulingo/shards');
 const { localize } = require('../data/commulingo/localize');
 const { bookPageData, decisionRefs } = require('../data/commulingo/book-page');
 const { catalogBody, lessonPayload } = require('../data/commulingo/book-response');
+const { getGenealogyChart } = require('../data/commulingo/genealogy-store');
 
 // Books, the lesson catalog, and lesson payloads. The page data and the
 // lesson linkifier live in data/commulingo/book-page.js.
@@ -50,6 +51,10 @@ router.get('/book/:collectionId', async (req, res) => {
         }
 
         const bookTitle = localize(collection.title, res.locals.lang);
+        // course.genealogy: the site genealogy chart that maps the same story,
+        // linked under the description.
+        const chart = collection.genealogy ? getGenealogyChart(collection.genealogy) : null;
+        const bookGenealogy = chart ? { href: `/commulingo/genealogy/${chart.id}`, title: localize(chart.title, res.locals.lang) } : null;
         res.render('public/commulingo-book', {
             lessons: { version: catalog.version, collections: [pageData.linked] },
             chapterDictionary: pageData.chapterDictionary,
@@ -58,6 +63,7 @@ router.get('/book/:collectionId', async (req, res) => {
             bookFormat: collection.format || 'quiz',
             bookTitle,
             bookDescription: localize(collection.description, res.locals.lang),
+            bookGenealogy,
             pageTitle: `${bookTitle} — ${res.locals.strings.commuLingo.name}`,
             pageDescription: localize(collection.description, res.locals.lang) || res.locals.strings.commuLingo.description,
             pagePath: `/commulingo/book/${collection.id}`,

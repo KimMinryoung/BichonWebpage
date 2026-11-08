@@ -66,6 +66,7 @@ function buildPayloads(bundle, version) {
             title: collection.title,
             badge: collection.badge,
             description: collection.description,
+            genealogy: collection.genealogy,
             bookTitle: collection.bookTitle,
             format: collection.format,
             category: collection.category,

@@ -50,6 +50,9 @@
             <div>
                 <h1><%= bookTitle %></h1>
                 <p><%= bookDescription %></p>
+                <% if (typeof bookGenealogy !== 'undefined' && bookGenealogy) { %>
+                <p class="commulingo-hero-genealogy"><%= strings.doc.genealogy %> <a href="<%= bookGenealogy.href %>"><%= bookGenealogy.title %></a></p>
+                <% } %>
                 <% if (!isDecision && !isGraph) { %>
                 <%# Due questions of this book (missed before, scheduled by
                     public/js/commulingo-schedule.js); the script fills the count

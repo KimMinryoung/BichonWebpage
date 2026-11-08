@@ -43,6 +43,11 @@ function validateCourseShape(key, course) {
         throw badRequest(`${key}: publicChapterLimit must be a non-negative integer`);
     }
     if (!course.title || typeof course.title !== 'object') throw badRequest(`${key}: title missing`);
+    // genealogy: a site genealogy chart (/commulingo/genealogy/<id>) linked
+    // under the course description; sourceProblems checks that it exists.
+    if (course.genealogy !== undefined && !(typeof course.genealogy === 'string' && ID.test(course.genealogy))) {
+        throw badRequest(`${key}: genealogy must be a chart id`);
+    }
     if (!Array.isArray(course.chapters)) throw badRequest(`${key}: chapters must be an array`);
     if (SPECIAL_FORMATS.has(format)) {
         if (course.chapters.length) throw badRequest(`${key}: a ${format} course has no quiz chapters`);
@@ -327,6 +332,10 @@ function sourceProblems(course) {
                 if (!known.has(eventId)) problems.push(`${episode.id}: history event ${eventId} not found`);
             });
         }
+    }
+    if (course.genealogy) {
+        const { getGenealogyChart } = require('./genealogy-store');
+        if (!getGenealogyChart(course.genealogy)) problems.push(`genealogy chart ${course.genealogy} not found`);
     }
     for (const chapter of course.chapters || []) {
         (chapter.readings || []).forEach((reading, index) => {
