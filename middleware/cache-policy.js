@@ -16,6 +16,8 @@
 // (Korean visitors land on SEA) otherwise pays a ~3 s origin round trip on
 // almost every navigation. Old CSS releases are kept, so stale pages still
 // find their stylesheets.
+// Edited CommuLingo entries leave the edge at once instead
+// (data/commulingo/edge-purge.js).
 const path = require('path');
 const {
     isCacheablePublicTextPath,

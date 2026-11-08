@@ -159,6 +159,8 @@ server.headersTimeout = 66 * 1000;
 // The CommuLingo admin MCP and pipeline ticks run in their own container
 // (mcp/main.js); a stores_refresh there reaches this process as a notice.
 require('./data/commulingo/store-refresh').listenForStoreRefresh();
+// Edited entries' pages leave Cloudflare's edge cache (data/commulingo/edge-purge.js).
+require('./data/commulingo/edge-purge').startEdgePurge();
 
 // Express 4 does not route async handler rejections anywhere; without these,
 // one rejected promise ends the process (Node ≥15 default) and a thrown

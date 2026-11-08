@@ -37,6 +37,8 @@ function listenForStoreRefresh() {
         const result = await refreshStores();
         const failed = Object.entries(result).filter(([, outcome]) => outcome !== 'ok');
         if (failed.length) console.error('[store refresh] failed:', JSON.stringify(Object.fromEntries(failed)));
+        // The stores now serve the edit, so its pages can leave the edge at once.
+        await require('./edge-purge').purgeChanged({ ageFloorMs: 0 });
     });
 }
 
