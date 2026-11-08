@@ -109,6 +109,11 @@
     color: var(--text-primary);
     text-decoration: none;
 }
+/* A separate box 8px below the hero: keep the top border that the site's
+   .box + .box rule drops for stacked boxes. */
+.commulingo-shell > .commulingo-genealogy-row {
+    border-top: var(--border-width) solid var(--border);
+}
 .commulingo-genealogy-row:hover,
 .commulingo-genealogy-row:focus-visible {
     background: var(--bg-surface-hover);

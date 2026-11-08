@@ -56,6 +56,9 @@
     color: var(--text-secondary);
     line-height: var(--leading-normal);
 }
+.commulingo-shell > .commulingo-genealogy-row {
+    border-top: var(--border-width) solid var(--border);
+}
 .commulingo-hero p.gen-guide {
     margin-top: 6px;
     font-size: .82rem;
