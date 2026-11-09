@@ -63,13 +63,14 @@ UNION ALL SELECT 'event', id FROM commulingo_history_events WHERE body_ko LIKE '
 
 용어(`editorial_batch`, 규칙 `data/commulingo/term-editorial-contract.json`·`term-editorial-service.js`):
 - definition·body·period마다 그 field의 evidence가 필요하다(`evidence required for period`). build.js가 미리 잡는다.
+- definition은 한국어 400자, 영어 900자 이하다(`definition.ko exceeds 400`; 계약의 `limits.definition`은 범위가 아니라 [ko, en] 상한). build.js가 GATE로 잡는다.
 - evidence 항목은 field·claim·source·locator가 필요하고, source는 `request.sources`에 있어야 한다(`invalid field evidence`). build.js가 sources를 evidence에서 모은다.
 - cyber-lenin.com(이 사전 자신)은 출처로 인정되지 않는다.
 - 새 용어는 `original`이 필요하다. 없으면 `request.noOriginal: "<이유>"`.
 - 기존 용어를 고칠 때는 `term_get`의 revision을 `expectedRevision`으로 넣는다(`r.action: 'update'`, `r.expectedRevision`).
 
 인물(`people_upsert`, `data/commulingo/person-editorial-contract.json`·`person-activities.js`):
-- 글자 수 범위: epithet 60~140, bio 380~900, moment 140~300, fate 라벨 22/50자 이하(ko/en).
+- 글자 수 상한 [한국어, 영어]: epithet 60/140, bio 380/900, moment 140/300, section body 2600/5800, fate 라벨 22/50자. 계약 `limits`는 범위가 아니라 언어별 상한이다.
 - 카드 evidence에는 `stance`를 넣지 않는다(`unknown activity evidence field`): `kit.evp`를 쓴다.
 - 사실 field(bio, moment, years, citizenship, nationalOrigin, origin, body)마다 evidence가 필요하다. 항목에는 field·claim·source·locator(쪽·절)가 있어야 한다. 카드에 `sources` 목록도 필요하다.
 - activity: startYear(또는 endYear)가 필요하다. 직책명 `title`은 relation이 service·employment일 때만 쓰고, `{ko, en}` 40/80자 이하.

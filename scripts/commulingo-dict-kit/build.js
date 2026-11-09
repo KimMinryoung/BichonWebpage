@@ -23,13 +23,14 @@ module.exports = function build({ kit, dir, job, scope, note, terms = [], extraI
             const present = f === 'period' ? r.period != null : (f === 'definition' ? definition : body);
             if (present && !evidence.some(e => e.field === f)) fail(`${r.id}: evidence required for ${f}`);
         }
-        const [lo, hi] = TERM.limits.definition;
+        // limits.definition is [ko max, en max] in characters (term-editorial-service.js), not a range.
         if (definition) for (const [i, lang] of [[0, 'ko'], [1, 'en']]) {
-            const n = definition[i].length; if (n < lo || n > hi) console.log('LEN', r.id, `definition.${lang}`, n, `(${lo}–${hi})`);
+            const n = [...definition[i]].length, max = TERM.limits.definition[i];
+            if (n > max) fail(`${r.id}: definition.${lang} ${n} exceeds ${max}`);
         }
         for (const e of evidence) if (/cyber-lenin\.com/.test(e.source)) fail(`${r.id}: cite external sources, not this dictionary`);
         const fields = { term: { ko: r.ko, en: r.en }, category: r.category, region: r.region ?? null, original: r.original,
-            period: r.period ?? null, definition: definition && { ko: definition[0], en: definition[1] },
+            period: r.period, definition: definition && { ko: definition[0], en: definition[1] },
             body: body && { ko: body[0], en: body[1] }, aliases: r.aliases || { ko: [], en: [] },
             people: r.people || [], events: r.events || [], evidence };
         if (r.parentId !== undefined) fields.parentId = r.parentId;
