@@ -28,6 +28,8 @@ Full list and arguments: `dev_docs/commulingo-admin-mcp.md`. Write tools default
 | Registries | `registry_edit`: position collections and members, blocklist, generic aliases, event `no_auto_link`/`term_links`, id redirects, glossary categories (`term_category_upsert`) |
 | Checks | `audit_run` (e.g. `audit-link-fires` `[ko]`, `audit-person-card-fields`), `sql_read` for one-off read-only queries |
 
+**Dictionary jobs** (new terms + cards + link reviews in one batch): use `scripts/commulingo-dict-kit/` (README: job layout, evidence helper, term batch + review manifest builder, fetch/kwic tools, `sql_read` schema, the write-gate refusals to pre-empt). Do not study earlier job directories for boilerplate.
+
 The CLIs `scripts/commulingo-people-upsert`, `scripts/commulingo-docs`, `scripts/commulingo-data` and `scripts/review-commulingo-links.js` use the same stores and remain usable on the host.
 
 ## Ids, renames and merges

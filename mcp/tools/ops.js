@@ -8,6 +8,20 @@ const AUDIT_NAME = /^audit-[a-z0-9-]+$/;
 const AUDIT_ARG = /^[A-Za-z0-9_.,:=@/+-]{1,200}$/;
 const READ_SQL = /^\s*(select|with|explain|table|values)\b/i;
 
+// Columns of the commulingo_* tables a failed statement names (or the table list
+// when none matches), appended to "column/relation does not exist" errors.
+async function schemaHint(client, sql) {
+    const named = [...new Set((sql.match(/\bcommulingo_\w+/g) || []))];
+    const { rows } = await client.query(
+        `SELECT table_name, string_agg(column_name, ', ' ORDER BY ordinal_position) AS cols
+           FROM information_schema.columns
+          WHERE table_schema = 'public' AND table_name LIKE 'commulingo%' GROUP BY 1 ORDER BY 1`);
+    const hit = rows.filter(r => named.includes(r.table_name));
+    if (hit.length) return 'Columns: ' + hit.map(r => `${r.table_name}(${r.cols})`).join('; ')
+        + (/name_ko|name_en/.test(sql) ? '. People names are given_name_*/family_name_*; aliases are in commulingo_person_aliases / commulingo_term_aliases' : '');
+    return 'Tables: ' + rows.map(r => r.table_name).join(', ');
+}
+
 function badRequest(message) {
     return Object.assign(new Error(message), { status: 400 });
 }
@@ -52,7 +66,11 @@ module.exports = [
         }, ['sql']),
         async handler({ sql, params = [], limit }) {
             if (!READ_SQL.test(sql)) throw badRequest('sql must start with SELECT, WITH, EXPLAIN, TABLE or VALUES');
-            if (params.some(value => value !== null && typeof value === 'object')) throw badRequest('params must be scalars');
+            // Scalars, or arrays of scalars (for = ANY($1)).
+            const scalar = value => value === null || typeof value !== 'object';
+            if (params.some(value => !(scalar(value) || (Array.isArray(value) && value.every(scalar))))) {
+                throw badRequest('params must be scalars or arrays of scalars');
+            }
             const { Client } = require('pg');
             // A connection of its own, closed afterwards, so nothing the statement
             // leaves behind (a session advisory lock, a setting) reaches the pool.
@@ -70,6 +88,12 @@ module.exports = [
                 return { rowCount: rows.length, truncated: rows.length > limit, fields: (result.fields || []).map(f => f.name), rows: rows.slice(0, limit) };
             } catch (err) {
                 err.status = err.status || 400;
+                // A guessed table or column name is the commonest failure: name the real ones.
+                if (err.code === '42703' || err.code === '42P01') {
+                    await client.query('ROLLBACK').catch(() => {});
+                    const hint = await schemaHint(client, sql).catch(() => '');
+                    if (hint) err.message += `. ${hint}`;
+                }
                 throw err;
             } finally {
                 await client.end().catch(() => {});

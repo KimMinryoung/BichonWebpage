@@ -85,6 +85,7 @@ const { readSpecJson } = require('../../mcp/spec');
     await assert.rejects(tool('editorial_store').handler({ command: 'submit', target: 'term', request: { id: 'x', action: 'create', directApply: true, fields: {} }, changedBy: 'bad actor' }, ctx), /changedBy/);
     await assert.rejects(tool('sql_read').handler({ sql: 'DELETE FROM commulingo_people' }, ctx), /must start with SELECT/);
     await assert.rejects(tool('sql_read').handler({ sql: 'SELECT 1', params: [{}] }, ctx), /scalars/);
+    await assert.rejects(tool('sql_read').handler({ sql: 'SELECT 1', params: [[{}]] }, ctx), /scalars/);
     const audits = await tool('audit_run').handler({}, ctx);
     assert.ok(audits.available.includes('audit-link-fires'), 'audit_run lists the audit scripts');
     await assert.rejects(tool('audit_run').handler({ name: 'deploy' }, ctx), /unknown audit/);
