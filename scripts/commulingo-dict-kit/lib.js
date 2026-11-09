@@ -3,6 +3,7 @@
 // Usage in a job directory (scripts/content/<job>/):
 //   const kit = require('../../commulingo-dict-kit/lib')({ dir: __dirname, sources: require('./sources') });
 //   kit.ev('enX', 'verbatim excerpt', 'claim', 'body')   -> evidence item checked against source/<file>
+//   kit.evp(...)                                         -> the same without stance, for person cards
 //   kit.quote('enX', 'original sentence')                -> the sentence, checked against the source
 //   kit.lint(id, ko, en)                                 -> house-style checks
 //   kit.finish()                                         -> prints the miss count, sets exit code
@@ -28,6 +29,8 @@ module.exports = function kit({ dir, sources = {}, sourceDir = 'source', accesse
         return { ...(field ? { field } : {}), claim, source: s.url, excerpt, stance,
             locator: `${s.loc || 'plain-text extract'} characters ${at}:${at + excerpt.length}; accessed ${accessed}; sha256 ${sha(s.file)}` };
     }
+    // Person cards (people_upsert) refuse the stance key: use evp there.
+    const evp = (...a) => { const { stance, ...e } = ev(...a); return e; };
     // Rows [field, key, excerpt, claim] -> evidence items.
     const evs = rows => rows.map(([field, key, excerpt, claim]) => ev(key, excerpt, claim, field));
     function quote(key, s) {
@@ -49,7 +52,7 @@ module.exports = function kit({ dir, sources = {}, sourceDir = 'source', accesse
     }
     const sourcesOf = evidence => [...new Set(evidence.map(e => e.source))];
     function finish() { console.log('misses', bad); process.exitCode = bad ? 1 : 0; return bad; }
-    return { ev, evs, quote, lint, text, sources, sourcesOf, finish, bad: () => bad, W };
+    return { ev, evp, evs, quote, lint, text, sources, sourcesOf, finish, bad: () => bad, W };
 };
 module.exports.W = W;
 module.exports.wikiUrl = wikiUrl;

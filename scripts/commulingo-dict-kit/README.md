@@ -70,6 +70,7 @@ UNION ALL SELECT 'event', id FROM commulingo_history_events WHERE body_ko LIKE '
 
 인물(`people_upsert`, `data/commulingo/person-editorial-contract.json`·`person-activities.js`):
 - 글자 수 범위: epithet 60~140, bio 380~900, moment 140~300, fate 라벨 22/50자 이하(ko/en).
+- 카드 evidence에는 `stance`를 넣지 않는다(`unknown activity evidence field`): `kit.evp`를 쓴다.
 - 사실 field(bio, moment, years, citizenship, nationalOrigin, origin, body)마다 evidence가 필요하다. 항목에는 field·claim·source·locator(쪽·절)가 있어야 한다. 카드에 `sources` 목록도 필요하다.
 - activity: startYear(또는 endYear)가 필요하다. 직책명 `title`은 relation이 service·employment일 때만 쓰고, `{ko, en}` 40/80자 이하.
 - lifeDates는 `[연, 월]` 또는 `[연, 월, 일]`이다. 연도만 아는 경우는 years에만 넣는다.
