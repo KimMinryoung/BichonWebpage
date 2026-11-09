@@ -205,11 +205,14 @@ function checkConceptBrief(out, chapter, label) {
       const hasText = str(section.text).trim().length > 0;
       const hasItems = Array.isArray(section.items) && section.items.length > 0;
       const hasTable = typeof section.table !== 'undefined';
-      if ((hasText ? 1 : 0) + (hasItems ? 1 : 0) + (hasTable ? 1 : 0) !== 1) out.add('concept-brief', label, secLabel + ' must have exactly one of text, items or table');
-      const pieces = hasItems ? section.items : (hasText ? [section.text] : (hasTable ? tableCells(out, section.table, secLabel + '.table', label) : []));
+      // text or items, not both; a table may stand alone or follow either.
+      if (hasText === hasItems && !(hasTable && !hasText)) out.add('concept-brief', label, secLabel + ' must have text or items (not both), a table, or one of them with a table');
+      const pieces = (hasItems ? section.items : (hasText ? [section.text] : []))
+        .concat(hasTable ? tableCells(out, section.table, secLabel + '.table', label) : []);
       const focusSection = FOCUS_SECTION.test(str(section.title));
       pieces.forEach(function(piece, pIndex) {
-        const pLabel = hasItems ? secLabel + '.items[' + pIndex + ']' : (hasTable ? secLabel + '.table.cell[' + pIndex + ']' : secLabel + '.text');
+        const textCount = hasItems ? section.items.length : (hasText ? 1 : 0);
+        const pLabel = pIndex >= textCount ? secLabel + '.table.cell[' + (pIndex - textCount) + ']' : (hasItems ? secLabel + '.items[' + pIndex + ']' : secLabel + '.text');
         if (!str(piece).trim()) out.add('concept-brief', label, pLabel + ' is empty');
         checkText(out, piece, pLabel, locale);
         if (!focusSection && known.has(norm(piece))) out.add('concept-brief', label, pLabel + ' repeats the summary or learning focus verbatim under a title of its own');
