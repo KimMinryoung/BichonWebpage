@@ -88,8 +88,11 @@ async function handleMessage(message, client, tools, context) {
     }
     if (method === 'ping') return { jsonrpc: '2.0', id, result: {} };
     if (method === 'tools/list') {
+        // readOnlyHint lets a client run the read tools without asking each
+        // time (Claude Code's plan mode asks for any tool not marked so).
         return { jsonrpc: '2.0', id, result: { tools: allowedTools(tools, client).map(tool => ({
             name: tool.name, description: tool.description, inputSchema: tool.inputSchema,
+            ...(tool.scope === 'read' || tool.readOnly ? { annotations: { readOnlyHint: true } } : {}),
         })) } };
     }
     if (method === 'tools/call') {

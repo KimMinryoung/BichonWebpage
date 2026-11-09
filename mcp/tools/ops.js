@@ -38,6 +38,7 @@ function auditScripts() {
 module.exports = [
     {
         scope: 'ops',
+        readOnly: true,
         name: 'service_status',
         description: 'Revision, uptime, Postgres/Redis readiness and memory of the admin process (mcp/main.js, its own container apart from the website).',
         inputSchema: object({}),
@@ -55,6 +56,7 @@ module.exports = [
     },
     {
         scope: 'ops',
+        readOnly: true,
         name: 'sql_read',
         description: 'One read-only SQL statement against the production database (SELECT/WITH/EXPLAIN), for checks no typed read tool '
             + 'covers. Runs as a single prepared statement in a READ ONLY transaction on its own connection, 10 s timeout, rows capped. '

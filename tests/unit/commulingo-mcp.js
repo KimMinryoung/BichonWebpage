@@ -64,6 +64,10 @@ const tools = [
         assert.deepEqual(readerTools, ['echo', 'missing', 'boom']);
         const operatorTools = (await rpc(OPS_TOKEN, 'tools/list')).result.tools.map(t => t.name);
         assert.ok(operatorTools.includes('status') && operatorTools.includes('write'));
+        // Read tools are announced as read-only; the others carry no hint.
+        const listed = (await rpc(OPS_TOKEN, 'tools/list')).result.tools;
+        assert.deepEqual(listed.find(t => t.name === 'echo').annotations, { readOnlyHint: true });
+        assert.equal(listed.find(t => t.name === 'write').annotations, undefined);
         assert.equal((await rpc(READ_TOKEN, 'tools/call', { name: 'status', arguments: {} })).error.code, -32602);
         assert.deepEqual((await rpc(OPS_TOKEN, 'tools/call', { name: 'status', arguments: {} })).result.structuredContent, { ok: true });
 
