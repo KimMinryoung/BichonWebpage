@@ -30,7 +30,7 @@ kit.finish();
 ## 도구
 
 - `python3 -I scripts/commulingo-dict-kit/fetch-wiki.py <job>/source en:Title de:Titel wd:Q123 ...`: 한 번 호출로 여러 문서를 받는다. 위키백과는 평문 추출, 위키데이터는 생몰일·국적·사이트링크 요약 JSON이다. 이미 받은 파일은 건너뛴다.
-- `python3 -I scripts/commulingo-dict-kit/kwic.py '<정규식>' 200 <파일>...`: 문맥 보기. grep에 `.{0,200}` 같은 큰 반복 상한을 쓰면 훅이 막는다. 꼭 grep이 필요하면 `command grep`으로 쓴다.
+- `python3 -I scripts/commulingo-dict-kit/kwic.py '<정규식>' 200 <파일>...`: 문맥 보기. grep에 `.{0,200}` 같은 큰 반복 상한을 써도 된다. 훅이 `command grep`(GNU)으로 바꿔 실행한다.
 
 ## 일하는 방식 (턴 수 줄이기)
 
