@@ -11,7 +11,7 @@ onTableChange(['commulingo_history_events', 'commulingo_terms'],
 
 const db = require('../config/database');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
-const { getLatestCourseMetadata } = require('../data/commulingo/course-metadata');
+const { listCourseUpdates, courseUpdatesVersion } = require('../data/commulingo/course-metadata');
 const { localize } = require('../data/commulingo/localize');
 const { loadCommuLingoPeople } = require('../data/commulingo/people-store');
 
@@ -65,22 +65,18 @@ function recentDocs(lang, limit) {
         .slice(0, limit);
 }
 
-function recentCourse(lang) {
-    const course = getLatestCourseMetadata();
-    if (!course) return [];
-    const modified = Date.parse(`${course.releasedAt}T00:00:00Z`);
-    if (!Number.isFinite(modified)) return [];
-    return [{
+const UPDATES_PER_KIND = 10;
+
+function recentCourses(lang, limit) {
+    return listCourseUpdates().slice(0, limit).map(course => ({
         type: 'course',
         typeLabel: TYPE_LABELS[lang].course,
         title: localize(course.title, lang),
         summary: localize(course.description, lang),
         href: TYPE_PATHS.course + encodeURIComponent(course.id),
-        modified,
-    }];
+        modified: course.updatedAt,
+    })).filter(item => item.title);
 }
-
-const UPDATES_PER_KIND = 10;
 
 function recentPeople(lang, { data, source }) {
     if (source === 'empty') throw new Error('People snapshot unavailable');
@@ -146,11 +142,13 @@ async function loadCommuLingoUpdateGroups(lang = 'ko') {
     const people = await loadCommuLingoPeople().catch(() => ({ data: null, source: 'empty' }));
     let docs = null;
     try { docs = listCommuLingoDocs(); } catch { /* recentDocs reports it */ }
+    let courseVersion = null;
+    try { courseVersion = courseUpdatesVersion(); } catch { /* recentCourses reports it */ }
     const [peopleResult, dictionaryResult, docsResult, courseResult] = await Promise.allSettled([
         cachedItems('person', safeLang, () => recentPeople(safeLang, people), people.data),
         cachedItems('dictionary', safeLang, () => recentDictionaryItems(safeLang)),
         cachedItems('doc', safeLang, () => recentDocs(safeLang, UPDATES_PER_KIND), docs),
-        cachedItems('course', safeLang, () => recentCourse(safeLang)),
+        cachedItems('course', safeLang, () => recentCourses(safeLang, UPDATES_PER_KIND), courseVersion),
     ]);
 
     if (peopleResult.status === 'rejected') {

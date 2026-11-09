@@ -1,32 +1,45 @@
-// Release dates for the "new course" notice: each public course carries its
-// own editorial.authoredAt. COURSES supplies a date for a course that has
-// none (none left since marx-wages-and-programme was rewritten, 2026-10-31).
-const COURSES = [];
+// Dates for the learning group of the CommuLingo update notes and the home
+// card. A course counts as updated whenever its data document is written
+// (chapters added, intros or questions revised), not only on first release:
+// on 2026-11-09 new chapters in two existing courses never showed because
+// only editorial.authoredAt was read and only the newest course was listed.
+// The date is the latest of the document's updatedAt and the editorial
+// authoredAt/revisedAt days.
 
-function getCourseMetadata(id) {
-    return COURSES.find(course => course.id === id) || null;
+function dayTime(value) {
+    if (!value) return NaN;
+    return Date.parse(/^\d{4}-\d{2}-\d{2}$/.test(value) ? `${value}T00:00:00Z` : value);
 }
 
 // Loaded on call: index.js reads the data documents, which load lazily.
-function courseDocumentMetadata() {
+function listCourseUpdates() {
     const { loadCommuLingoBundle } = require('./index');
-    return (loadCommuLingoBundle().bundle.collections || [])
+    const { bundle, modifiedAt } = loadCommuLingoBundle();
+    return (bundle.collections || [])
         .filter(course => course && course.id && course.visibility !== 'private'
-            && Number(course.publicChapterLimit) > 0
-            && course.editorial && course.editorial.authoredAt)
-        .map(course => ({
-            id: course.id,
-            releasedAt: course.editorial.authoredAt,
-            title: course.title,
-            description: course.description,
-        }));
+            && Number(course.publicChapterLimit) > 0)
+        .map(course => {
+            const editorial = course.editorial || {};
+            const times = [modifiedAt[course.id], editorial.authoredAt, editorial.revisedAt]
+                .map(dayTime).filter(Number.isFinite);
+            return {
+                id: course.id,
+                updatedAt: times.length ? Math.max(...times) : NaN,
+                releasedAt: dayTime(editorial.authoredAt),
+                title: course.title,
+                description: course.description,
+            };
+        })
+        .filter(course => Number.isFinite(course.updatedAt))
+        // Same-moment writes (bulk migrations) fall back to the newer release.
+        .sort((a, b) => (b.updatedAt - a.updatedAt)
+            || ((b.releasedAt || 0) - (a.releasedAt || 0)) || a.id.localeCompare(b.id));
 }
 
-function getLatestCourseMetadata() {
-    const own = courseDocumentMetadata();
-    return [...own, ...COURSES.filter(course => !own.some(item => item.id === course.id))]
-        .filter(course => Number.isFinite(Date.parse(`${course.releasedAt}T00:00:00Z`)))
-        .sort((a, b) => Date.parse(b.releasedAt) - Date.parse(a.releasedAt))[0] || null;
+// Changes whenever any course document is written; keys the preview cache.
+function courseUpdatesVersion() {
+    const { loadCommuLingoBundle } = require('./index');
+    return loadCommuLingoBundle().signature;
 }
 
-module.exports = { getCourseMetadata, getLatestCourseMetadata };
+module.exports = { listCourseUpdates, courseUpdatesVersion };

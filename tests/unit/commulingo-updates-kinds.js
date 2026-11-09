@@ -2,12 +2,40 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
-const { getLatestCourseMetadata } = require('../../data/commulingo/course-metadata');
+const Module = require('node:module');
 
-// The newest course comes from the course files' own editorial.authoredAt.
-assert.equal(getLatestCourseMetadata().id, 'engels-ludwig-feuerbach');
-assert.equal(getLatestCourseMetadata().releasedAt, '2026-10-31');
-assert.equal(getLatestCourseMetadata().title.ko, '엥겔스: 루트비히 포이어바흐와 독일 고전철학의 종말');
+// Courses are ordered by their last document write, so new chapters in an
+// existing course surface (2026-11-09: two expanded courses never showed
+// because only the newest editorial.authoredAt was read).
+{
+    const indexPath = require.resolve('../../data/commulingo/index');
+    const metadataPath = require.resolve('../../data/commulingo/course-metadata');
+    const course = (id, authoredAt, extra = {}) => ({ id, title: { ko: id }, publicChapterLimit: 3,
+        editorial: authoredAt ? { authoredAt } : undefined, ...extra });
+    require.cache[indexPath] = Object.assign(new Module(indexPath), { loaded: true, exports: {
+        loadCommuLingoBundle: () => ({ signature: 'sig', modifiedAt: {
+            'old-course-expanded': '2026-11-09T12:55:45Z', 'new-course': '2026-11-01T00:00:00Z',
+            'same-write-a': '2026-10-01T00:00:00Z', 'same-write-b': '2026-10-01T00:00:00Z',
+            'hidden': '2026-11-10T00:00:00Z',
+        }, bundle: { collections: [
+            course('new-course', '2026-11-05'),
+            course('old-course-expanded', '2026-09-01'),
+            course('same-write-a', '2026-09-01'),
+            course('same-write-b', '2026-09-02'),
+            course('hidden', '2026-11-10', { visibility: 'private' }),
+        ] } }),
+    } });
+    delete require.cache[metadataPath];
+    const { listCourseUpdates, courseUpdatesVersion } = require(metadataPath);
+    const list = listCourseUpdates();
+    assert.deepEqual(list.map(item => item.id), ['old-course-expanded', 'new-course', 'same-write-b', 'same-write-a']);
+    assert.equal(list[0].updatedAt, Date.parse('2026-11-09T12:55:45Z'));
+    // A release day later than the document write still counts.
+    assert.equal(list[1].updatedAt, Date.parse('2026-11-05T00:00:00Z'));
+    assert.equal(courseUpdatesVersion(), 'sig');
+    delete require.cache[indexPath];
+    delete require.cache[metadataPath];
+}
 
 function loadService(rows, people = [{
     id: 'person', name: { ko: '인물', en: 'Person' }, epithet: { ko: '소개' },
@@ -32,9 +60,13 @@ function loadService(rows, people = [{
             { id: 'old-doc', title: { ko: '이전 문헌' }, addedAt: '2026-09-01' },
             { id: 'new-doc', title: { ko: '최신 문헌' }, addedAt: '2026-09-05' },
         ] },
-        '../data/commulingo/course-metadata': { getLatestCourseMetadata: () => ({
-            id: 'course', title: { ko: '학습' }, releasedAt: '2026-09-05',
-        }) },
+        '../data/commulingo/course-metadata': {
+            listCourseUpdates: () => [
+                { id: 'course', title: { ko: '학습' }, updatedAt: Date.parse('2026-09-05T00:00:00Z') },
+                { id: 'older-course', title: { ko: '이전 학습' }, updatedAt: Date.parse('2026-09-01T00:00:00Z') },
+            ],
+            courseUpdatesVersion: () => 'v1',
+        },
         '../data/commulingo/localize': require('../../data/commulingo/localize'),
         '../data/commulingo/indicators': { expandIndicators: text => text },
         '../utils/db-change-listener': { onTableChange: () => {} },
@@ -66,6 +98,9 @@ function loadService(rows, people = [{
     assert.equal(items.find(item => item.type === 'doc').title, '최신 문헌');
     assert.equal(items.find(item => item.type === 'event').href, '/commulingo/events/event');
     assert.equal(items.find(item => item.type === 'person').modified, Date.parse('2026-09-06T00:00:00Z'));
+    assert.equal(items.find(item => item.type === 'course').href, '/commulingo/book/course');
+    const courseGroup = Array.from(await loadService(rows).loadCommuLingoUpdateGroups('ko')).find(group => group.type === 'course');
+    assert.deepEqual(Array.from(courseGroup.items, item => item.title), ['학습', '이전 학습']);
     const english = Array.from(await load('en'));
     assert.equal(english.find(item => item.type === 'event').title, 'English event');
 

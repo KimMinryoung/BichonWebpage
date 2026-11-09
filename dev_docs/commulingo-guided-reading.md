@@ -122,7 +122,7 @@
 - `marx-gotha-critique`: 새 강좌, 참고 문헌 `marx-gotha-critique`, 7편·48발췌, 권 번호 18(『프랑스 내전』 17 뒤). 1편은 엥겔스 1891년 서문으로 시작한다. 이에 맞춰 참고 문헌 원문(독일어)에 없던 엥겔스 서문을 《노이에 차이트》 1890/91년 제9년차 제1권 제18호 561~562쪽(archive.org 스캔)에서 옮겨 적어 넣었다(DB, 커밋 없음).
 - 레슨 id는 세 강좌 모두 `<장 id>-reading` 하나다(`wage-labour-chNN-reading`, `wages-programme-chNN-reading`, `gotha-critique-chNN-reading`). 옛 basic/advanced 레슨과 풀이 기록은 이어지지 않는다.
 - 참고 문헌에 접혀 있는 편집자 해설(`details.doc-commentary`)은 저자의 글이 아니므로 발췌로 쓰지 않는다. 각 강좌 `check.js`가 이 상자를 지운 본문에서 발췌를 찾는다.
-- `course-metadata.js`의 출시일 목록(COURSES)은 마지막 항목이던 `marx-wages-and-programme`가 `editorial.authoredAt`을 갖게 되어 비었다.
+- 업데이트 노트·홈의 학습 콘텐츠 항목(`course-metadata.js` `listCourseUpdates`)은 공개 강좌 전체를 강좌 문서의 마지막 쓰기 시각(`updatedAt`)과 `editorial.authoredAt`·`revisedAt` 중 늦은 날짜 순으로 나열한다(최대 10개). 2026-11-09 이전에는 `authoredAt`이 가장 늦은 강좌 하나만 띄워, 기존 강좌에 장을 추가해도 목록에 나오지 않았다. 캐시 키는 강좌 문서 서명이라 쓰기 직후 다시 읽는다.
 - 정본은 `scripts/content/marx-courses-20261031/<문헌 id>/course/`(gitignore, R2 보관). 공통 도구는 `tools/`(`split.py` 문단 나누기, `make-kit.js` 키트 생성, `make-brief.py`).
 - 등록: `PUBLIC_CHAPTER_LIMITS`(세 강좌 7편, 고타 새로 추가)라 재시작(배포)이 필요하다. `validate-commulingo.js`, `check-course-source-excerpts.js` `REQUIRE_SOURCE`.
 
