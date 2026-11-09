@@ -78,7 +78,11 @@
             renderQuestion();
             return;
         }
-        if (!answered) return;
+        if (!answered) {
+            // A workshop activity is checked with this button, then left with it.
+            if (pendingCheck) pendingCheck();
+            return;
+        }
         if (finishedAction === 'retry') {
             els.next.removeAttribute('data-finished');
             startRetry(active.lesson, active.missed, active.firstScore);
@@ -105,7 +109,7 @@
         var tag = target && target.tagName ? target.tagName.toLowerCase() : '';
         if (tag === 'input' || tag === 'textarea' || tag === 'select' || (target && target.isContentEditable)) return;
         if (!active || els.quiz.classList.contains('is-hidden')) return;
-        if (/^[1-4]$/.test(event.key) && !answered && !active.intro && !els.choices.classList.contains('is-hidden')) {
+        if (/^[1-4]$/.test(event.key) && !answered && !active.intro && !els.choices.classList.contains('is-hidden') && !els.choices.classList.contains('is-activity')) {
             var button = els.choices.children[Number(event.key) - 1];
             if (button && !button.disabled) {
                 event.preventDefault();
@@ -342,6 +346,8 @@
                     conceptBrief: loaded.conceptBrief || lesson.conceptBrief,
                     conceptMap: loaded.conceptMap || lesson.conceptMap,
                     diagram: loaded.diagram || lesson.diagram,
+                    format: loaded.format || lesson.format,
+                    takeaway: loaded.takeaway || lesson.takeaway,
                     questions: loaded.questions || [],
                     questionCount: lessonQuestionCount(loaded)
                 });
@@ -947,7 +953,7 @@
                     streak: 0,
                     // A reading lesson opens on its first passage: the text is
                     // the introduction, so there is no concept brief to pass.
-                    intro: !isReadingLesson(loadedLesson),
+                    intro: !skipsIntro(loadedLesson),
                     missed: [],
                     firstScore: null
                 };
@@ -958,7 +964,7 @@
             .catch(function() {
                 active = null;
                 els.lessonTitle.textContent = chapterTitle(lesson);
-                els.prompt.textContent = lang === 'en' ? 'Could not load this lesson. Please try again.' : '문제를 불러오지 못했습니다. 잠시 뒤 다시 시도해 주세요.';
+                setPlainPrompt(lang === 'en' ? 'Could not load this lesson. Please try again.' : '문제를 불러오지 못했습니다. 잠시 뒤 다시 시도해 주세요.');
                 els.prompt.classList.remove('is-hidden');
                 if (els.intro) els.intro.classList.add('is-hidden');
                 if (els.focus) els.focus.classList.add('is-hidden');
@@ -978,7 +984,7 @@
         if (els.intro) els.intro.classList.add('is-hidden');
         if (els.focus) els.focus.classList.add('is-hidden');
         hidePassage();
-        els.prompt.textContent = lang === 'en' ? 'Loading questions...' : '문제를 불러오는 중입니다...';
+        setPlainPrompt(lang === 'en' ? 'Loading questions...' : '문제를 불러오는 중입니다...');
         els.prompt.classList.remove('is-hidden');
         els.choices.classList.add('is-hidden');
         els.feedback.className = 'commu-feedback is-hidden';
@@ -1108,27 +1114,58 @@
             : levelBadge(lesson, active.mode === 'retry' ? (strings.tryAgain || 'Retry') : '');
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(lesson)) + '</span>' + badge;
         renderPassage(lesson, question);
-        if (els.focus) {
-            var showFocus = active.mode === 'lesson' && lesson.focus && !isReadingLesson(lesson);
-            els.focus.textContent = showFocus ? lesson.focus : '';
-            els.focus.classList.toggle('is-hidden', !showFocus);
-        }
-        els.prompt.textContent = text(question.prompt);
+        // The learning focus states the chapter's conclusion, which is often
+        // the answer: it belongs to the concept brief, not above a question.
+        if (els.focus) els.focus.classList.add('is-hidden');
+        setQuestionPrompt(text(question.prompt));
         els.feedback.className = 'commu-feedback is-hidden';
         els.feedback.textContent = '';
         els.quiz.classList.remove('has-answer-reward', 'has-perfect-reward');
         els.next.disabled = true;
-        els.next.textContent = active.pos >= total - 1 ? (strings.finish || 'Finish') : (strings.next || 'Next');
-        renderChoices(question);
+        els.next.textContent = nextLabel();
+        pendingCheck = null;
+        if (isActivity(question)) renderActivity(question);
+        else renderChoices(question);
+    }
+
+    function nextLabel() {
+        return active.pos >= roundLength() - 1 ? (strings.finish || 'Finish') : (strings.next || 'Next');
+    }
+
+    function setPlainPrompt(value) {
+        els.prompt.classList.remove('is-long');
+        els.prompt.textContent = value;
+    }
+
+    // A prompt of several sentences is a setup followed by the question: the
+    // setup is shown in regular weight and the last sentence carries the
+    // weight. Long prompts drop a size (commulingo.css h2.is-long).
+    function setQuestionPrompt(value) {
+        var limit = lang === 'en' ? 150 : 70;
+        els.prompt.classList.toggle('is-long', value.length > limit);
+        var parts = /^([\s\S]*[.!?…]["'”’」』)]?)\s+(\S[\s\S]*)$/.exec(value);
+        var minAsk = lang === 'en' ? 20 : 8;
+        if (!parts || parts[1].length < 20 || parts[2].length < minAsk) {
+            els.prompt.textContent = value;
+            return;
+        }
+        els.prompt.innerHTML = '<span class="commu-prompt-lead">' + escapeHtml(parts[1]) + '</span>'
+            + '<span class="commu-prompt-ask">' + escapeHtml(parts[2]) + '</span>';
+    }
+
+    // Short choices in an even count sit in two columns; sentences stack.
+    function pairChoices(labels) {
+        var limit = lang === 'en' ? 44 : 22;
+        return labels.length % 2 === 0 && labels.every(function(label) { return String(label).length <= limit; });
     }
 
     function renderChoices(question) {
         els.choices.innerHTML = '';
-        var choices = shuffleChoices((question.type === 'true_false'
-            ? [lang === 'en' ? 'True' : '참', lang === 'en' ? 'False' : '거짓']
-            : text(question.choices)).map(function(choice, index) {
-                return { label: choice, originalIndex: index };
-            }));
+        els.choices.classList.remove('is-activity');
+        var choices = shuffleChoices(text(question.choices).map(function(choice, index) {
+            return { label: choice, originalIndex: index };
+        }));
+        els.choices.classList.toggle('is-paired', pairChoices(choices.map(function(choice) { return choice.label; })));
         choices.forEach(function(choice) {
             var button = document.createElement('button');
             button.type = 'button';
@@ -1138,6 +1175,289 @@
             button.addEventListener('click', function() { chooseAnswer(question, choice.originalIndex); });
             els.choices.appendChild(button);
         });
+    }
+
+    // ---------------------------------------------------- workshop activities
+    // order, sort and cloze (format 'workshop'): the learner arranges
+    // something and then checks it with the action button; the whole
+    // arrangement must be right. The markup reuses the drill's order list.
+    var pendingCheck = null;
+
+    function isActivity(question) {
+        return Boolean(question) && (question.type === 'order' || question.type === 'sort' || question.type === 'cloze');
+    }
+
+    function renderActivity(question) {
+        els.choices.classList.remove('is-paired');
+        els.choices.classList.add('is-activity');
+        els.choices.innerHTML = '';
+        els.next.textContent = lang === 'en' ? 'Check' : '확인';
+        if (question.type === 'order') renderOrder(question);
+        else if (question.type === 'sort') renderSort(question);
+        else renderCloze(question);
+    }
+
+    function activityHint(value) {
+        var hint = document.createElement('p');
+        hint.className = 'commu-drill-order-hint';
+        hint.textContent = value;
+        els.choices.appendChild(hint);
+    }
+
+    function settleActivity(question, correct) {
+        pendingCheck = null;
+        settleAnswer(question, correct, null);
+        els.next.textContent = nextLabel();
+    }
+
+    function activityButton(className, label) {
+        var button = document.createElement('button');
+        button.type = 'button';
+        button.className = className;
+        button.textContent = label;
+        return button;
+    }
+
+    function renderOrder(question) {
+        var labels = text(question.items) || [];
+        var notes = (question.itemNotes && text(question.itemNotes)) || [];
+        var items = labels.map(function(label, index) { return { label: label, key: index }; });
+        var inOrder = function(list) { return list.every(function(item, index) { return item.key === index; }); };
+        var display = shuffleChoices(items);
+        for (var guard = 0; display.length > 1 && inOrder(display) && guard < 10; guard += 1) display = shuffleChoices(items);
+        var graded = false;
+        activityHint(lang === 'en' ? 'Move the items into order, then check.' : '▲▼로 순서를 맞춘 뒤 확인을 누르세요.');
+        var list = document.createElement('ol');
+        list.className = 'commu-drill-order';
+        els.choices.appendChild(list);
+
+        function move(index, delta) {
+            var other = display[index + delta];
+            display[index + delta] = display[index];
+            display[index] = other;
+            draw();
+            // Keep the keyboard on the item that moved.
+            var row = list.children[index + delta];
+            var buttons = row ? row.querySelectorAll('button:not(:disabled)') : [];
+            var again = buttons.length === 2 ? buttons[delta < 0 ? 0 : 1] : buttons[0];
+            if (again) again.focus();
+        }
+
+        function draw() {
+            list.innerHTML = '';
+            display.forEach(function(item, index) {
+                var li = document.createElement('li');
+                li.className = 'commu-drill-order-item' + (graded ? (item.key === index ? ' is-correct' : ' is-wrong') : '');
+                var label = document.createElement('span');
+                label.className = 'commu-drill-order-label';
+                label.textContent = item.label;
+                li.appendChild(label);
+                // Once checked, an item in its place shows its note (a date).
+                if (graded && item.key === index && notes[item.key]) {
+                    var reveal = document.createElement('span');
+                    reveal.className = 'commu-drill-order-reveal';
+                    reveal.textContent = notes[item.key];
+                    li.appendChild(reveal);
+                }
+                if (!graded) {
+                    var controls = document.createElement('span');
+                    controls.className = 'commu-drill-order-controls';
+                    [[-1, '▲', strings.drillMoveUp || (lang === 'en' ? 'Move up' : '위로')], [1, '▼', strings.drillMoveDown || (lang === 'en' ? 'Move down' : '아래로')]].forEach(function(spec) {
+                        var button = activityButton('commu-drill-order-move', spec[1]);
+                        button.setAttribute('aria-label', spec[2] + ': ' + item.label);
+                        button.disabled = index + spec[0] < 0 || index + spec[0] >= display.length;
+                        button.addEventListener('click', function() { move(index, spec[0]); });
+                        controls.appendChild(button);
+                    });
+                    li.appendChild(controls);
+                }
+                list.appendChild(li);
+            });
+        }
+
+        pendingCheck = function() {
+            graded = true;
+            var correct = inOrder(display);
+            draw();
+            if (!correct) {
+                var answer = document.createElement('div');
+                answer.className = 'commu-activity-answer';
+                answer.innerHTML = '<span class="commu-source-label">' + escapeHtml(lang === 'en' ? 'The order' : '올바른 순서') + '</span><ol>'
+                    + labels.map(function(label, index) {
+                        return '<li>' + escapeHtml(label) + (notes[index] ? '<small>' + escapeHtml(notes[index]) + '</small>' : '') + '</li>';
+                    }).join('') + '</ol>';
+                els.choices.appendChild(answer);
+            }
+            settleActivity(question, correct);
+        };
+        draw();
+        els.next.disabled = false;
+    }
+
+    function renderSort(question) {
+        var groups = text(question.groups) || [];
+        var items = shuffleChoices((question.items || []).map(function(item, index) {
+            return { id: index, label: text(item), group: item.group, placed: -1 };
+        }));
+        var selected = null;
+        var graded = false;
+        activityHint(lang === 'en' ? 'Pick an item, then the group it belongs to.' : '항목을 누른 다음 들어갈 묶음을 누르세요.');
+        var pool = document.createElement('div');
+        pool.className = 'commu-sort-pool';
+        var board = document.createElement('div');
+        board.className = 'commu-sort-groups';
+        els.choices.appendChild(pool);
+        els.choices.appendChild(board);
+
+        function itemButton(item) {
+            var button = activityButton('commu-sort-item', item.label);
+            if (graded) {
+                button.disabled = true;
+                var right = item.placed === item.group;
+                button.classList.add(right ? 'is-correct' : 'is-wrong');
+                if (!right) {
+                    var fix = document.createElement('small');
+                    fix.textContent = '→ ' + groups[item.group];
+                    button.appendChild(fix);
+                }
+                return button;
+            }
+            if (selected === item.id) button.classList.add('is-selected');
+            button.setAttribute('aria-pressed', selected === item.id ? 'true' : 'false');
+            button.addEventListener('click', function() {
+                // A placed item comes back out, already picked up.
+                if (item.placed !== -1) { item.placed = -1; selected = item.id; }
+                else selected = selected === item.id ? null : item.id;
+                draw();
+            });
+            return button;
+        }
+
+        function draw() {
+            pool.innerHTML = '';
+            board.innerHTML = '';
+            var waiting = items.filter(function(item) { return item.placed === -1; });
+            waiting.forEach(function(item) { pool.appendChild(itemButton(item)); });
+            pool.classList.toggle('is-hidden', !waiting.length);
+            groups.forEach(function(name, groupIndex) {
+                var box = document.createElement('div');
+                box.className = 'commu-sort-group';
+                var target = activityButton('commu-sort-target', name);
+                target.disabled = graded || selected === null;
+                target.addEventListener('click', function() {
+                    if (selected === null) return;
+                    items.forEach(function(item) { if (item.id === selected) item.placed = groupIndex; });
+                    selected = null;
+                    draw();
+                    var nextItem = pool.querySelector('button');
+                    if (nextItem) nextItem.focus();
+                });
+                box.appendChild(target);
+                items.filter(function(item) { return item.placed === groupIndex; }).forEach(function(item) { box.appendChild(itemButton(item)); });
+                board.appendChild(box);
+            });
+            if (!graded) els.next.disabled = waiting.length > 0;
+        }
+
+        pendingCheck = function() {
+            graded = true;
+            selected = null;
+            draw();
+            settleActivity(question, items.every(function(item) { return item.placed === item.group; }));
+        };
+        draw();
+    }
+
+    function renderCloze(question) {
+        var pieces = text(question.text).split(/\[\[([^\[\]]+)\]\]/);
+        var answers = pieces.filter(function(_, index) { return index % 2 === 1; }).map(function(word) { return word.trim(); });
+        var bank = shuffleChoices(answers.concat(text(question.distractors) || []).map(function(word) { return { word: word, blank: -1 }; }));
+        var target = 0;
+        var graded = false;
+        activityHint(lang === 'en' ? 'Fill each blank with a word from the list.' : '아래 낱말을 눌러 빈칸을 채우세요.');
+        var passage = document.createElement('blockquote');
+        passage.className = 'commu-passage-text commu-cloze';
+        var words = document.createElement('div');
+        words.className = 'commu-cloze-bank';
+        els.choices.appendChild(passage);
+        els.choices.appendChild(words);
+
+        function wordIn(blank) {
+            for (var i = 0; i < bank.length; i += 1) if (bank[i].blank === blank) return bank[i];
+            return null;
+        }
+
+        function firstEmpty() {
+            for (var i = 0; i < answers.length; i += 1) if (!wordIn(i)) return i;
+            return -1;
+        }
+
+        function draw() {
+            passage.innerHTML = '';
+            var paragraph = document.createElement('p');
+            pieces.forEach(function(piece, index) {
+                if (index % 2 === 0) {
+                    piece.split(' … ').forEach(function(part, partIndex) {
+                        if (partIndex) {
+                            var gap = document.createElement('span');
+                            gap.className = 'commu-source-gap';
+                            gap.textContent = ' … ';
+                            paragraph.appendChild(gap);
+                        }
+                        paragraph.appendChild(document.createTextNode(part));
+                    });
+                    return;
+                }
+                var blank = (index - 1) / 2;
+                var filled = wordIn(blank);
+                var button = activityButton('commu-cloze-blank', filled ? filled.word : String(blank + 1));
+                button.setAttribute('aria-label', (lang === 'en' ? 'Blank ' : '빈칸 ') + (blank + 1) + (filled ? ': ' + filled.word : ''));
+                if (filled) button.classList.add('is-filled');
+                if (graded) {
+                    button.disabled = true;
+                    var right = Boolean(filled) && filled.word === answers[blank];
+                    button.classList.add(right ? 'is-correct' : 'is-wrong');
+                    if (!right) {
+                        var fix = document.createElement('small');
+                        fix.textContent = '→ ' + answers[blank];
+                        button.appendChild(fix);
+                    }
+                } else {
+                    if (!filled && target === blank) button.classList.add('is-selected');
+                    button.addEventListener('click', function() {
+                        if (filled) filled.blank = -1;
+                        target = blank;
+                        draw();
+                    });
+                }
+                paragraph.appendChild(button);
+            });
+            passage.appendChild(paragraph);
+            words.innerHTML = '';
+            bank.forEach(function(entry) {
+                var button = activityButton('commu-cloze-word', entry.word);
+                button.disabled = graded || entry.blank !== -1;
+                button.addEventListener('click', function() {
+                    var blank = target !== -1 && !wordIn(target) ? target : firstEmpty();
+                    if (blank === -1) return;
+                    entry.blank = blank;
+                    target = firstEmpty();
+                    draw();
+                });
+                words.appendChild(button);
+            });
+            if (!graded) els.next.disabled = firstEmpty() !== -1;
+        }
+
+        pendingCheck = function() {
+            graded = true;
+            draw();
+            settleActivity(question, answers.every(function(answer, blank) {
+                var filled = wordIn(blank);
+                return Boolean(filled) && filled.word === answer;
+            }));
+        };
+        draw();
     }
 
     function shuffleChoices(choices) {
@@ -1153,9 +1473,22 @@
 
     function chooseAnswer(question, index) {
         if (answered) return;
-        answered = true;
-        var correctIndex = question.type === 'true_false' ? (question.answer === true ? 0 : 1) : Number(question.answer);
+        var correctIndex = Number(question.answer);
         var correct = index === correctIndex;
+        Array.prototype.forEach.call(els.choices.children, function(button) {
+            var originalIndex = Number(button.getAttribute('data-original-index'));
+            button.disabled = true;
+            if (originalIndex === correctIndex) button.classList.add('is-correct');
+            if (originalIndex === index && !correct) button.classList.add('is-wrong');
+        });
+        settleAnswer(question, correct, index);
+    }
+
+    // What every kind of question does once it is answered: score, schedule,
+    // measure, explain, and open the way on. `index` is the chosen choice of a
+    // multiple-choice question (null for an activity).
+    function settleAnswer(question, correct, index) {
+        answered = true;
         if (correct) {
             active.score += 1;
             active.streak += 1;
@@ -1166,13 +1499,6 @@
         }
         recordAnswer(currentLesson(), question, correct);
         if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.answer(correct);
-
-        Array.prototype.forEach.call(els.choices.children, function(button) {
-            var originalIndex = Number(button.getAttribute('data-original-index'));
-            button.disabled = true;
-            if (originalIndex === correctIndex) button.classList.add('is-correct');
-            if (originalIndex === index && !correct) button.classList.add('is-wrong');
-        });
 
         els.feedback.className = 'commu-feedback' + (correct ? '' : ' is-wrong');
         els.feedback.innerHTML = feedbackHtml(question, index, correct);
@@ -1187,13 +1513,13 @@
         // which is why it carries dictionary links where the prompt and the
         // choices do not.
         var explanation = text(question.explanationHtml) || escapeHtml(text(question.explanation));
-        var parts = [
-            '<strong class="commu-feedback-marker">' + escapeHtml(correct ? strings.correct : strings.incorrect) + '</strong>',
-            '<span>' + explanation + '</span>'
-        ];
+        // The note on the chosen answer comes first: it is the reply to what
+        // the learner just did; the general explanation follows.
+        var parts = ['<strong class="commu-feedback-marker">' + escapeHtml(correct ? strings.correct : strings.incorrect) + '</strong>'];
         if (selectedFeedback) {
             parts.push('<span class="commu-choice-feedback">' + escapeHtml(selectedFeedback) + '</span>');
         }
+        parts.push('<span>' + explanation + '</span>');
         if (correct && active && active.streak >= 3) {
             parts.push('<span class="commu-streak-badge">' + escapeHtml(streakLabel(active.streak)) + '</span>');
         }
@@ -1205,6 +1531,16 @@
 
     function isReadingLesson(lesson) {
         return Boolean(lesson && lesson.format === 'guided-reading');
+    }
+
+    function isWorkshopLesson(lesson) {
+        return Boolean(lesson && lesson.format === 'workshop');
+    }
+
+    // A reading lesson opens on its first passage and a workshop on its first
+    // activity: neither has a concept brief to pass.
+    function skipsIntro(lesson) {
+        return isReadingLesson(lesson) || isWorkshopLesson(lesson);
     }
 
     // A reading lesson puts every passage above its question; in other
@@ -1231,8 +1567,16 @@
         if (!els.passage) return;
         var source = question && question.source;
         var quote = passageFirst(lesson, question) && text(source.quote);
-        if (!quote) { hidePassage(); return; }
         var context = text(question.context);
+        if (!quote) {
+            // A workshop activity may carry only the line that sets its scene.
+            if (context && isWorkshopLesson(lesson)) {
+                els.passage.innerHTML = '<p class="commu-passage-context">' + escapeHtml(context) + '</p>';
+                els.passage.classList.remove('is-hidden');
+                els.quiz.classList.remove('is-reading');
+            } else hidePassage();
+            return;
+        }
         var label = text(source.label);
         var pieces = quote.split(' … ').map(escapeHtml).join(' <span class="commu-source-gap">…</span> ');
         els.passage.innerHTML = (context ? '<p class="commu-passage-context">' + escapeHtml(context) + '</p>' : '')
@@ -1249,7 +1593,8 @@
     function sourceHtml(question) {
         var source = question && question.source;
         if (!source) return '';
-        if (source.kind === 'reference') {
+        // A reference, or a cloze whose passage was the exercise itself.
+        if (source.kind === 'reference' || !source.quote) {
             var referenceLabel = text(source.label);
             if (!referenceLabel || !/^(https:\/\/|\/commulingo\/docs\/)/.test(source.href || '')) return '';
             return '<div class="commu-source"><span class="commu-source-label">'
@@ -1307,7 +1652,7 @@
         postProgress(active.lesson.id, progress[active.lesson.id], false);
         saveLast(active.lesson);
 
-        els.prompt.textContent = strings.allDone || 'Lesson complete';
+        setPlainPrompt(strings.allDone || 'Lesson complete');
         if (els.focus) els.focus.classList.add('is-hidden');
         hidePassage();
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span>' + levelBadge(active.lesson);
@@ -1316,7 +1661,7 @@
         els.choices.classList.remove('is-hidden');
         els.choices.innerHTML = '';
         els.feedback.className = 'commu-feedback' + (perfect ? ' is-perfect' : '');
-        els.feedback.innerHTML = finishFeedbackHtml(perfect, firstScore, total);
+        els.feedback.innerHTML = finishFeedbackHtml(perfect, firstScore, total) + takeawayHtml(active.lesson);
         els.quiz.classList.toggle('has-perfect-reward', perfect);
         els.next.disabled = false;
         if (!perfect) {
@@ -1396,7 +1741,7 @@
     function finishReview() {
         var total = roundLength();
         var perfect = active.score === total;
-        els.prompt.textContent = strings.reviewDone || 'Review complete';
+        setPlainPrompt(strings.reviewDone || 'Review complete');
         if (els.focus) els.focus.classList.add('is-hidden');
         hidePassage();
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(strings.reviewTitle || 'Review') + '</span>';
@@ -1412,6 +1757,15 @@
         els.next.setAttribute('data-finished', '1');
         hideNextLesson();
         answered = true;
+    }
+
+    // The distinction a workshop chapter was about, shown when it is over.
+    function takeawayHtml(lesson) {
+        var takeaway = lesson && text(lesson.takeaway);
+        if (!takeaway) return '';
+        return '<div class="commu-source"><span class="commu-source-label">'
+            + escapeHtml(lang === 'en' ? 'What this chapter told apart' : '이번 편에서 구별한 것') + '</span>'
+            + '<p>' + escapeHtml(takeaway) + '</p></div>';
     }
 
     function finishFeedbackHtml(perfect, firstScore, total) {

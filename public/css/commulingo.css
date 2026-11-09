@@ -805,38 +805,74 @@
     padding: 10px 12px;
 }
 
+/* The prompt is sized by its length: a one-line question may be large, a
+   scenario of several lines reads as text. A prompt of several sentences
+   shows the setup in regular weight and only the question itself in bold
+   (commulingo.js promptHtml). */
 .commu-question h2 {
-    font-size: 1.35rem;
+    font-size: 1.25rem;
     line-height: var(--leading-snug);
     margin-bottom: 18px;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
 }
 
+.commu-question h2.is-long {
+    font-size: 1.08rem;
+    line-height: var(--leading-relaxed);
+}
+
+.commu-prompt-lead {
+    display: block;
+    font-weight: 400;
+    margin-bottom: 6px;
+}
+
+.commu-prompt-ask {
+    display: block;
+}
+
+/* Two columns only for short choices in pairs (is-paired, set by the
+   player); sentences read down one column in a fixed order. */
 .commu-choices {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 10px;
     margin-bottom: 16px;
+}
+
+.commu-choices.is-paired {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .commu-choice {
     border: 1px solid var(--border);
     background: var(--bg-surface);
     color: var(--text-primary);
-    box-shadow: 0 0 0 0 color-mix(in srgb, var(--accent) 0%, transparent);
     font: inherit;
-    min-height: 56px;
-    padding: 12px;
+    line-height: var(--leading-relaxed);
+    min-height: 52px;
+    padding: 12px 14px;
     text-align: left;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
     cursor: pointer;
-    transform: translateY(0);
-    transition: background-color 140ms ease, border-color 140ms ease, box-shadow 140ms ease, color 140ms ease, transform 140ms ease;
+    transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease;
 }
 
 .commu-choice:hover:not(:disabled) {
     background: color-mix(in srgb, var(--accent) 14%, var(--bg-surface));
     border-color: var(--link);
-    box-shadow: 0 8px 0 color-mix(in srgb, var(--accent) 18%, transparent);
-    transform: translateY(-2px);
+}
+
+/* After the answer the untouched choices step back, so the eye goes to the
+   verdict colours. */
+.commu-choice:disabled {
+    cursor: default;
+}
+
+.commu-choice:disabled:not(.is-correct):not(.is-wrong) {
+    color: var(--text-muted);
 }
 
 .commu-choice:focus-visible {
@@ -848,7 +884,7 @@
     animation: commu-correct-pop 520ms ease;
     background: color-mix(in srgb, var(--accent-green) 28%, var(--bg-surface));
     border-color: var(--link);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-green) 28%, transparent), 0 10px 0 color-mix(in srgb, var(--accent-green) 18%, transparent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-green) 40%, transparent);
     color: var(--text-primary);
 }
 
@@ -856,16 +892,18 @@
     animation: commu-wrong-shake 360ms ease;
     background: color-mix(in srgb, var(--accent-red) 24%, var(--bg-surface));
     border-color: var(--accent-red);
-    box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-red) 24%, transparent);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-red) 36%, transparent);
     color: var(--text-primary);
 }
 
+/* The verdict is carried by the left rule and the marker; the body stays on
+   the plain surface so a long explanation is not read on a tinted block. */
 .commu-feedback {
-    border-left: 4px solid var(--accent);
-    background: color-mix(in srgb, var(--accent-green) 14%, var(--bg-surface));
-    color: var(--text-secondary);
+    border-left: 4px solid var(--accent-green);
+    background: var(--bg-surface);
+    color: var(--text-primary);
     display: grid;
-    gap: 6px;
+    gap: 10px;
     line-height: var(--leading-prose);
     margin-bottom: 16px;
     padding: 12px 14px;
@@ -875,13 +913,16 @@
     word-break: normal;
     hyphens: auto;
     animation: commu-feedback-rise 260ms ease;
-    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-green) 18%, transparent);
 }
 
 .commu-feedback-marker {
     color: var(--text-primary);
-    font-size: 0.88rem;
+    font-size: 1rem;
     font-weight: 700;
+}
+
+.commu-feedback.is-wrong .commu-feedback-marker {
+    color: var(--accent-red);
 }
 
 /* 답한 뒤 피드백 아래에 붙는 원전 발췌. 토막난 문항을 원래 논증으로 되돌려
@@ -964,22 +1005,21 @@
     word-break: normal;
 }
 
+/* Under a passage the question is a line about the text above it. */
 .commu-quiz.is-reading .commu-question h2 {
     font-size: 1.12rem;
 }
 
-.commu-quiz.is-reading .commu-choices {
-    grid-template-columns: minmax(0, 1fr);
+.commu-quiz.is-reading .commu-question h2.is-long {
+    font-size: 1.04rem;
 }
 
+/* What the chosen answer got right or missed: the first thing read after the
+   verdict, in the body's own type, not a box inside the box. */
 .commu-choice-feedback {
-    background: color-mix(in srgb, var(--accent) 8%, var(--bg-surface));
-    border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
     color: var(--text-primary);
     display: block;
-    font-size: 0.92rem;
-    line-height: var(--leading-relaxed);
-    padding: 10px 12px;
+    font-weight: 600;
 }
 
 .commu-streak-badge {
@@ -1010,9 +1050,7 @@
 }
 
 .commu-feedback.is-wrong {
-    background: color-mix(in srgb, var(--accent-red) 12%, var(--bg-surface));
     border-left-color: var(--accent-red);
-    box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-red) 18%, transparent);
 }
 
 @keyframes commu-correct-pop {
@@ -1274,6 +1312,31 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+}
+
+@media (max-width: 700px) {
+    .commu-question {
+        padding: 18px 14px;
+    }
+
+    .commu-question h2 {
+        font-size: 1.14rem;
+    }
+
+    .commu-question h2.is-long,
+    .commu-quiz.is-reading .commu-question h2.is-long {
+        font-size: 1.02rem;
+    }
+
+    .commu-choices.is-paired {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* The action is the last thing on the screen and the whole row. */
+    .commu-quiz-actions .btn {
+        flex: 1 1 100%;
+        min-height: 48px;
+    }
 }
 
 .is-hidden {
@@ -5461,6 +5524,18 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     white-space: nowrap;
 }
 
+@media (max-width: 700px) {
+    .commu-choices.is-activity .commu-drill-order-item {
+        flex-wrap: wrap;
+    }
+
+    .commu-choices.is-activity .commu-drill-order-reveal {
+        flex-basis: 100%;
+        padding-left: calc(1.2em + 10px);
+        white-space: normal;
+    }
+}
+
 .commu-drill-order-controls {
     display: flex;
     gap: 6px;
@@ -5495,6 +5570,193 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-drill-order-item.is-wrong {
     background: color-mix(in srgb, var(--accent-red) 16%, var(--bg-surface));
     border-color: var(--accent-red);
+}
+
+/* Workshop activities in the lesson player (commulingo.js renderActivity):
+   order reuses the drill's list above; sort and cloze follow. Verdicts are
+   the same two colours as the choices. */
+.commu-choices.is-activity {
+    display: block;
+}
+
+.commu-activity-answer {
+    background: var(--bg-inset);
+    border-left: 3px solid var(--btn-primary);
+    display: grid;
+    gap: 6px;
+    margin: 0 0 16px;
+    padding: 10px 14px;
+}
+
+.commu-activity-answer ol {
+    display: grid;
+    gap: 6px;
+    line-height: var(--leading-relaxed);
+    margin: 0;
+    padding-left: 1.4em;
+}
+
+.commu-activity-answer small {
+    color: var(--text-secondary);
+    display: block;
+    font-size: 0.88rem;
+}
+
+.commu-sort-pool {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 12px;
+}
+
+.commu-sort-groups {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 0 0 16px;
+}
+
+.commu-sort-group {
+    align-content: start;
+    border: 1px solid var(--border);
+    display: grid;
+    gap: 8px;
+    min-height: 120px;
+    padding: 0 8px 8px;
+}
+
+/* The group's name is the drop target: the whole head row is the button. */
+.commu-sort-target {
+    background: var(--bg-surface);
+    border: 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-primary);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    margin: 0 -8px;
+    min-height: 48px;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.commu-sort-target:disabled {
+    cursor: default;
+}
+
+.commu-sort-target:not(:disabled) {
+    background: color-mix(in srgb, var(--accent) 14%, var(--bg-surface));
+}
+
+.commu-sort-target:not(:disabled):hover,
+.commu-sort-target:not(:disabled):focus-visible {
+    background: color-mix(in srgb, var(--accent) 28%, var(--bg-surface));
+}
+
+.commu-sort-item,
+.commu-cloze-word {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    cursor: pointer;
+    font: inherit;
+    line-height: var(--leading-snug);
+    min-height: 44px;
+    padding: 8px 12px;
+    text-align: left;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+}
+
+.commu-sort-item:hover:not(:disabled),
+.commu-cloze-word:hover:not(:disabled) {
+    border-color: var(--link);
+}
+
+.commu-sort-item.is-selected {
+    background: color-mix(in srgb, var(--accent) 22%, var(--bg-surface));
+    border-color: var(--link);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.commu-sort-item:disabled,
+.commu-cloze-blank:disabled {
+    cursor: default;
+}
+
+.commu-sort-item small,
+.commu-cloze-blank small {
+    color: var(--text-primary);
+    font-size: 0.86rem;
+    font-weight: 700;
+    margin-left: 8px;
+}
+
+.commu-sort-item.is-correct,
+.commu-cloze-blank.is-correct {
+    background: color-mix(in srgb, var(--accent-green) 28%, var(--bg-surface));
+    border-color: var(--link);
+}
+
+.commu-sort-item.is-wrong,
+.commu-cloze-blank.is-wrong {
+    background: color-mix(in srgb, var(--accent-red) 24%, var(--bg-surface));
+    border-color: var(--accent-red);
+}
+
+.commu-cloze {
+    margin: 0 0 12px;
+}
+
+.commu-cloze p {
+    line-height: 2.3;
+    text-align: left;
+}
+
+.commu-cloze-blank {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-bottom: 2px solid var(--text-primary);
+    color: var(--text-muted);
+    cursor: pointer;
+    font: inherit;
+    line-height: var(--leading-snug);
+    margin: 0 2px;
+    min-height: 36px;
+    min-width: 4.5em;
+    padding: 4px 10px;
+    text-align: center;
+}
+
+.commu-cloze-blank.is-filled {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.commu-cloze-blank.is-selected {
+    border-color: var(--link);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.commu-cloze-bank {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 16px;
+}
+
+.commu-cloze-word:disabled {
+    color: var(--text-muted);
+    cursor: default;
+    opacity: 0.45;
+}
+
+.commu-sort-item:focus-visible,
+.commu-sort-target:focus-visible,
+.commu-cloze-blank:focus-visible,
+.commu-cloze-word:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
 }
 
 @media (max-width: 640px) {

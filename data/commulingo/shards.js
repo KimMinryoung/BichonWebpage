@@ -49,6 +49,7 @@ function publicLessonPayload(collection, chapter, lesson) {
         level: lesson.level,
         summary: chapter.summary,
         focus: chapter.learningFocus,
+        takeaway: chapter.takeaway,
         conceptBrief: chapter.conceptBrief,
         conceptMap: chapter.conceptMap,
         diagram: chapter.diagram,
@@ -146,5 +147,6 @@ module.exports = {
     ensureCommuLingoShards,
     loadCommuLingoCatalog,
     loadCommuLingoLesson,
+    publicLessonPayload,
     commuLingoBookModifiedTimes,
 };

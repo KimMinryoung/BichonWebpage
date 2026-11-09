@@ -1,0 +1,267 @@
+{
+ "id": "workshop-sample",
+ "format": "workshop",
+ "publicChapterLimit": 1,
+ "title": {
+  "ko": "실습 견본: 파리 코뮌",
+  "en": "Workshop sample: the Paris Commune"
+ },
+ "description": {
+  "ko": "실습 형식의 문항 유형을 시험하는 견본 강좌다.",
+  "en": "A sample course exercising the activity types of the workshop format."
+ },
+ "chapters": [
+  {
+   "id": "workshop-sample-ch01",
+   "chapterNumber": 1,
+   "minutes": 6,
+   "title": {
+    "ko": "72일의 경과",
+    "en": "Seventy-two days"
+   },
+   "summary": {
+    "ko": "제정 붕괴에서 피의 주간까지, 파리 코뮌이 어떻게 서고 무너졌는지를 순서와 조치로 따라간다.",
+    "en": "From the fall of the Empire to the Bloody Week: how the Paris Commune rose and fell, followed through its sequence and its measures."
+   },
+   "takeaway": {
+    "ko": "코뮌은 기존 국가기구를 넘겨받은 정부가 아니라, 상비군과 관료 특권을 없애고 새로 짠 권력이었다.",
+    "en": "The Commune was not a government that took over the existing state machinery; it was a power built anew, without the standing army and the privileges of office."
+   },
+   "lessons": [
+    {
+     "id": "workshop-sample-ch01-basic",
+     "level": "basic",
+     "title": {
+      "ko": "72일의 경과",
+      "en": "Seventy-two days"
+     },
+     "questions": [
+      {
+       "id": "q1",
+       "type": "order",
+       "points": 2,
+       "prompt": {
+        "ko": "1870년 9월부터 1871년 5월까지 파리에서 일어난 일을 일어난 순서대로 놓아라.",
+        "en": "Put what happened in Paris between September 1870 and May 1871 in the order it happened."
+       },
+       "items": {
+        "ko": [
+         "제정이 무너지고 공화국이 선포된다",
+         "프로이센과 휴전 협정을 맺는다",
+         "정부군이 몽마르트르의 대포를 빼앗으려다 실패한다",
+         "파리 시민이 코뮌 의원을 선출한다",
+         "베르사유 군대가 파리에 들어와 코뮌을 진압한다"
+        ],
+        "en": [
+         "The Empire falls and the Republic is proclaimed",
+         "An armistice is signed with Prussia",
+         "Government troops try and fail to seize the cannons of Montmartre",
+         "Parisians elect the members of the Commune",
+         "The Versailles army enters Paris and crushes the Commune"
+        ]
+       },
+       "itemNotes": {
+        "ko": [
+         "1870년 9월 4일",
+         "1871년 1월 28일",
+         "1871년 3월 18일",
+         "1871년 3월 26일",
+         "1871년 5월 21~28일, 피의 주간"
+        ],
+        "en": [
+         "4 September 1870",
+         "28 January 1871",
+         "18 March 1871",
+         "26 March 1871",
+         "21 to 28 May 1871, the Bloody Week"
+        ]
+       },
+       "explanation": {
+        "ko": "코뮌은 패전과 휴전 뒤에 섰다. 포위를 견딘 파리의 국민방위대는 무장한 채 남아 있었고, 정부가 그 대포를 빼앗으려다 실패한 3월 18일이 봉기의 시작이 되었다. 선거는 그 여드레 뒤였다.",
+        "en": "The Commune came after defeat and armistice. The National Guard of besieged Paris had kept its arms, and 18 March, when the government failed to take its cannons, became the start of the rising. The election followed eight days later."
+       }
+      },
+      {
+       "id": "q2",
+       "type": "multiple_choice",
+       "points": 2,
+       "answer": 0,
+       "prompt": {
+        "ko": "휴전 뒤에도 파리의 국민방위대는 대포 수백 문을 갖고 있었다. 1871년 3월 18일 티에르 정부가 이 대포를 빼앗으려 한 까닭은 무엇인가?",
+        "en": "After the armistice the National Guard of Paris still held several hundred cannons. Why did the Thiers government try to seize them on 18 March 1871?"
+       },
+       "choices": {
+        "ko": [
+         "무장한 파리 노동자들을 무장 해제하려고",
+         "프로이센군에 배상금 대신 넘겨주기로 약속했기 때문에",
+         "지방 농민 봉기를 진압하는 데 쓸 포가 모자랐기 때문에",
+         "국민방위대가 대포를 왕당파에게 팔려 했기 때문에"
+        ],
+        "en": [
+         "To disarm the armed workers of Paris",
+         "Because it had promised them to the Prussians in place of the indemnity",
+         "Because it lacked guns to put down peasant risings in the provinces",
+         "Because the National Guard meant to sell the cannons to the royalists"
+        ]
+       },
+       "choiceFeedback": {
+        "ko": [
+         "정부에게 문제는 대포가 아니라 그것을 쥔 무장한 파리였다.",
+         "휴전 조건은 배상금과 영토였고 국민방위대의 대포는 넘길 대상이 아니었다.",
+         "당시 정부가 두려워한 것은 지방 농민이 아니라 수도의 무장한 노동자였다.",
+         "대포는 시민 모금으로 만든 것이었고 국민방위대는 이를 지키려 했다."
+        ],
+        "en": [
+         "For the government the problem was not the guns but armed Paris holding them.",
+         "The armistice terms were an indemnity and territory; the Guard's cannons were not part of them.",
+         "What the government feared then was not provincial peasants but the armed workers of the capital.",
+         "The cannons had been paid for by public subscription and the Guard meant to keep them."
+        ]
+       },
+       "explanation": {
+        "ko": "포위 동안 파리 노동자 대부분이 국민방위대에 들어가 무기를 쥐었다. 휴전 뒤 정부는 이 무장한 수도를 그대로 두고는 통치할 수 없다고 보았고, 대포 탈취는 무장 해제의 첫 단계였다.",
+        "en": "During the siege most Paris workers had joined the National Guard and held arms. After the armistice the government judged it could not rule with the capital armed, and taking the cannons was the first step of disarming it."
+       }
+      },
+      {
+       "id": "q3",
+       "type": "sort",
+       "points": 2,
+       "prompt": {
+        "ko": "1871년 봄의 조치 여섯 가지를 누가 했는지에 따라 나누어라.",
+        "en": "Sort six measures of the spring of 1871 by who took them."
+       },
+       "groups": {
+        "ko": [
+         "파리 코뮌",
+         "베르사유 정부"
+        ],
+        "en": [
+         "The Paris Commune",
+         "The Versailles government"
+        ]
+       },
+       "items": [
+        {
+         "ko": "징병제와 상비군을 폐지한다",
+         "en": "Abolishes conscription and the standing army",
+         "group": 0
+        },
+        {
+         "ko": "제빵 노동자의 야간 노동을 금지한다",
+         "en": "Bans night work for bakery workers",
+         "group": 0
+        },
+        {
+         "ko": "교회와 국가를 분리한다",
+         "en": "Separates church and state",
+         "group": 0
+        },
+        {
+         "ko": "주인이 버린 작업장을 노동자 협동조합에 넘긴다",
+         "en": "Hands workshops abandoned by their owners to workers' co-operatives",
+         "group": 0
+        },
+        {
+         "ko": "정부와 의회를 파리 밖으로 옮긴다",
+         "en": "Moves the government and the Assembly out of Paris",
+         "group": 1
+        },
+        {
+         "ko": "독일에서 풀려난 포로로 군대를 다시 짠다",
+         "en": "Rebuilds its army from prisoners released by Germany",
+         "group": 1
+        }
+       ],
+       "explanation": {
+        "ko": "코뮌의 조치는 무장한 인민이 상비군을 대신하고 노동 조건을 직접 고치는 방향이었다. 베르사유 정부는 수도를 떠나, 비스마르크가 풀어 준 포로들로 파리를 칠 군대를 마련했다.",
+        "en": "The Commune's measures replaced the standing army with the armed people and changed working conditions directly. The Versailles government left the capital and, with prisoners released by Bismarck, raised the army that would attack Paris."
+       }
+      },
+      {
+       "id": "q4",
+       "type": "cloze",
+       "points": 2,
+       "context": {
+        "ko": "마르크스가 『프랑스 내전』에서 코뮌의 경험을 요약한 문장이다.",
+        "en": "Marx's summary of the Commune's experience in The Civil War in France."
+       },
+       "prompt": {
+        "ko": "빈칸에 들어갈 말을 골라 마르크스의 문장을 완성하라.",
+        "en": "Complete Marx's sentence with the right words."
+       },
+       "text": {
+        "ko": "노동자계급은 기성의 [[국가기구]]를 단순히 장악하여 자기 목적을 위해 운용할 수는 없다.",
+        "en": "The working class cannot simply lay hold of the ready-made [[state machinery]], and wield it for its own purposes."
+       },
+       "distractors": {
+        "ko": [
+         "의회 다수파",
+         "생산수단"
+        ],
+        "en": [
+         "parliamentary majority",
+         "means of production"
+        ]
+       },
+       "source": {
+        "kind": "reference",
+        "href": "https://www.marxists.org/archive/marx/works/1871/civil-war-france/ch05.htm",
+        "label": {
+         "ko": "마르크스, 『프랑스 내전』 제3절",
+         "en": "Marx, The Civil War in France, section III"
+        }
+       },
+       "explanation": {
+        "ko": "마르크스가 코뮌에서 끌어낸 결론은 권력을 누가 쥐느냐만이 아니라 어떤 기구로 쥐느냐였다. 상비군, 경찰, 관료제로 짜인 기존 국가는 노동자의 목적에 맞게 쓸 수 있는 중립적 도구가 아니라는 것이다.",
+        "en": "The conclusion Marx drew from the Commune concerned not only who holds power but through what apparatus. The existing state, built of standing army, police and bureaucracy, is not a neutral tool the workers can put to their own ends."
+       }
+      },
+      {
+       "id": "q5",
+       "type": "multiple_choice",
+       "points": 2,
+       "answer": 0,
+       "prompt": {
+        "ko": "코뮌은 공직자를 모두 선출하고 언제든 소환할 수 있게 했다. 여기에 더해 공직이 특권이 되지 않게 하려고 정한 것은 무엇인가?",
+        "en": "The Commune made every official elected and recallable at any time. What else did it decide so that office would not become a privilege?"
+       },
+       "choices": {
+        "ko": [
+         "공직자의 보수를 노동자 임금 수준으로 묶었다",
+         "공직은 재산세를 일정액 이상 낸 시민만 맡게 했다",
+         "공직자를 추첨으로 뽑아 한 달씩만 일하게 했다",
+         "공직자의 보수를 없애고 명예직으로만 두었다"
+        ],
+        "en": [
+         "It held officials' pay to the level of workmen's wages",
+         "It reserved office for citizens paying above a set amount of property tax",
+         "It chose officials by lot to serve one month each",
+         "It abolished pay and made every office purely honorary"
+        ]
+       },
+       "choiceFeedback": {
+        "ko": [
+         "코뮌은 공직자 보수의 상한을 숙련 노동자 임금 수준으로 정했다.",
+         "재산 자격은 코뮌이 없애려 한 옛 제한선거의 원리다.",
+         "코뮌 의원은 추첨이 아니라 구별 보통선거로 뽑혔다.",
+         "보수를 없애면 재산 있는 사람만 공직을 맡게 되므로 코뮌은 임금을 주되 낮게 묶었다."
+        ],
+        "en": [
+         "The Commune capped officials' pay at the level of a skilled worker's wage.",
+         "A property qualification is the principle of the old restricted suffrage the Commune set out to end.",
+         "Members of the Commune were elected by universal suffrage in the districts, not drawn by lot.",
+         "Unpaid office is open only to those with property, so the Commune paid a wage but kept it low."
+        ]
+       },
+       "explanation": {
+        "ko": "선출과 소환, 노동자 임금이라는 세 조치는 함께 움직인다. 공직이 높은 보수와 지위를 뜻하지 않게 되면 관료는 인민 위에 선 집단이 아니라 인민이 부리는 일꾼이 된다는 것이 마르크스의 평가였다.",
+        "en": "Election, recall and workmen's wages work together. Once office no longer means high pay and rank, Marx judged, the official stops being a caste above the people and becomes a servant the people can direct."
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

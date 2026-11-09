@@ -310,7 +310,7 @@ function checkChoiceFeedback(out, value, qLabel, choiceCount = 4) {
 // hosts. Quoted passages retain the narrower local-doc or marxists.org policy.
 // The English quote is verbatim from the edition linked; the Korean quote is
 // the site's own translation, so it must read as prose, not as speech.
-function checkSource(out, value, qLabel) {
+function checkSource(out, value, qLabel, quoteOptional) {
   if (typeof value === 'undefined') return;
   const sLabel = qLabel + '.source';
   if (!value || typeof value !== 'object') { out.add('source-shape', qLabel, sLabel + ' must be an object'); return; }
@@ -324,10 +324,108 @@ function checkSource(out, value, qLabel) {
   }
   if (!SOURCE_HREF.test(str(value.href))) out.add('source-shape', qLabel, sLabel + '.href must point at /commulingo/docs/ or https://www.marxists.org/');
   allLocalizedText(out, value.label, sLabel + '.label');
-  allLocalizedText(out, value.quote, sLabel + '.quote');
+  // A cloze shows its passage as the exercise itself (question.text), so its
+  // source may name the place without repeating the passage as a quote.
+  if (!(quoteOptional && typeof value.quote === 'undefined')) allLocalizedText(out, value.quote, sLabel + '.quote');
   if (value.quote && HONORIFIC.test(str(value.quote.ko))) out.add('source-shape', qLabel, sLabel + '.quote.ko uses an honorific ending');
   // showFirst: the passage is shown above the question instead of after the answer.
   if (typeof value.showFirst !== 'undefined' && value.showFirst !== true) out.add('source-shape', qLabel, sLabel + '.showFirst must be true or absent');
+}
+
+// --- workshop activities ----------------------------------------------------
+// A workshop lesson (format 'workshop') mixes multiple choice with three
+// activities that are done, not picked: `order` (put the items in sequence),
+// `sort` (put each item in its group) and `cloze` (fill the blanks of a
+// passage from a word bank). Each is right only when the whole of it is right.
+const ACTIVITY_TYPES = new Set(['order', 'sort', 'cloze']);
+const CLOZE_BLANK = /\[\[([^\[\]]+)\]\]/g;
+
+function clozeAnswers(text) {
+  return Array.from(str(text).matchAll(CLOZE_BLANK), function(match) { return match[1].trim(); });
+}
+
+function clozePlain(text) {
+  return str(text).replace(CLOZE_BLANK, '$1');
+}
+
+function localizedList(out, value, label, qLabel, min, max) {
+  if (!value || !Array.isArray(value.ko) || !Array.isArray(value.en)) { out.add('shape', qLabel, label + ' must have ko/en arrays'); return false; }
+  if (value.ko.length !== value.en.length) out.add('shape', qLabel, label + ' ko/en lengths differ');
+  let ok = value.ko.length === value.en.length;
+  ['ko', 'en'].forEach(function(locale) {
+    const items = value[locale];
+    if (items.length < min || items.length > max) { out.add('shape', qLabel, label + '.' + locale + ' needs ' + min + '-' + max + ' entries'); ok = false; }
+    if (new Set(items.map(norm)).size !== items.length) { out.add('shape', qLabel, label + '.' + locale + ' repeats an entry'); ok = false; }
+    items.forEach(function(item, i) {
+      if (!str(item).trim()) { out.add('shape', qLabel, label + '.' + locale + '[' + i + '] is empty'); ok = false; }
+      checkText(out, item, label + '.' + locale + '[' + i + ']', locale);
+    });
+  });
+  return ok;
+}
+
+// order: items are stored in the correct sequence (the player shuffles them);
+// itemNotes, when given, annotate each item once the order is checked.
+function checkOrder(out, question, qLabel) {
+  const ok = localizedList(out, question.items, qLabel + '.items', qLabel, 3, 6);
+  if (typeof question.itemNotes !== 'undefined') {
+    const notes = localizedList(out, question.itemNotes, qLabel + '.itemNotes', qLabel, 3, 6);
+    if (ok && notes && question.itemNotes.ko.length !== question.items.ko.length) out.add('shape', qLabel, qLabel + '.itemNotes must have one note per item');
+  }
+}
+
+// sort: two or three groups, four to eight items, each item naming its group
+// by index; every group receives at least one item.
+function checkSort(out, question, qLabel) {
+  const groupsOk = localizedList(out, question.groups, qLabel + '.groups', qLabel, 2, 3);
+  const items = question.items;
+  if (!Array.isArray(items) || items.length < 4 || items.length > 8) { out.add('shape', qLabel, qLabel + '.items needs 4-8 entries'); return; }
+  const groupCount = groupsOk ? question.groups.ko.length : 0;
+  const used = new Set();
+  const seen = { ko: new Set(), en: new Set() };
+  items.forEach(function(item, i) {
+    const iLabel = qLabel + '.items[' + i + ']';
+    if (!item || typeof item !== 'object') { out.add('shape', qLabel, iLabel + ' must be an object'); return; }
+    allLocalizedText(out, item, iLabel);
+    ['ko', 'en'].forEach(function(locale) {
+      const key = norm(item[locale]);
+      if (seen[locale].has(key)) out.add('shape', qLabel, iLabel + '.' + locale + ' repeats an item');
+      seen[locale].add(key);
+    });
+    if (!Number.isInteger(item.group) || item.group < 0 || (groupsOk && item.group >= groupCount)) out.add('shape', qLabel, iLabel + '.group must be a group index');
+    else used.add(item.group);
+  });
+  if (groupsOk && used.size !== groupCount) out.add('shape', qLabel, qLabel + ' leaves a group without items');
+}
+
+// cloze: `text` carries the blanks as [[answer]]; the word bank is the answers
+// plus the distractors. A blank is a term, not a clause.
+function checkCloze(out, question, qLabel) {
+  if (!localized(out, question.text, qLabel + '.text')) return;
+  const listOk = localizedList(out, question.distractors, qLabel + '.distractors', qLabel, 2, 4);
+  const counts = {};
+  ['ko', 'en'].forEach(function(locale) {
+    checkText(out, clozePlain(question.text[locale]), qLabel + '.text.' + locale, locale);
+    const answers = clozeAnswers(question.text[locale]);
+    counts[locale] = answers.length;
+    if (answers.length < 1 || answers.length > 3) out.add('shape', qLabel, qLabel + '.text.' + locale + ' needs 1-3 [[blanks]]');
+    if (/\[\[|\]\]/.test(str(question.text[locale]).replace(CLOZE_BLANK, ''))) out.add('shape', qLabel, qLabel + '.text.' + locale + ' has an unclosed [[blank]]');
+    if (new Set(answers.map(norm)).size !== answers.length) out.add('shape', qLabel, qLabel + '.text.' + locale + ' uses the same answer for two blanks');
+    const limit = locale === 'ko' ? 14 : 30;
+    answers.forEach(function(answer) {
+      if (answer.length > limit) out.add('shape', qLabel, qLabel + '.text.' + locale + ' blank "' + answer + '" is longer than ' + limit + ' chars');
+    });
+    if (listOk) {
+      const taken = new Set(answers.map(norm));
+      question.distractors[locale].forEach(function(word) {
+        if (taken.has(norm(word))) out.add('shape', qLabel, qLabel + '.distractors.' + locale + ' repeats an answer: ' + word);
+      });
+    }
+  });
+  if (counts.ko !== counts.en) out.add('shape', qLabel, qLabel + '.text ko/en blank counts differ');
+  if (question.text.ko && HONORIFIC.test(clozePlain(question.text.ko)) && question.source && question.source.kind !== 'reference') {
+    out.add('source-shape', qLabel, qLabel + '.text.ko uses an honorific ending');
+  }
 }
 
 function checkQuestion(out, question, lesson, index, ctx) {
@@ -338,7 +436,10 @@ function checkQuestion(out, question, lesson, index, ctx) {
   if (question.id !== expectedId && !new RegExp('^' + expectedId + '-r\\d{8}$').test(String(question.id))) {
     out.add('shape', qLabel, qLabel + ' id should be ' + expectedId + ' (or ' + expectedId + '-rYYYYMMDD when replaced)');
   }
-  if (question.type !== 'multiple_choice') out.add('shape', qLabel, qLabel + ' type must be multiple_choice');
+  const activity = Boolean(ctx && ctx.workshop) && ACTIVITY_TYPES.has(question.type);
+  if (question.type !== 'multiple_choice' && !activity) {
+    out.add('shape', qLabel, qLabel + (ctx && ctx.workshop ? ' type must be multiple_choice, order, sort or cloze' : ' type must be multiple_choice'));
+  }
   if (question.points !== (lesson.level === 'advanced' ? 3 : 2)) out.add('shape', qLabel, qLabel + ' points do not match lesson level');
   allLocalizedText(out, question.prompt, qLabel + '.prompt');
   allLocalizedText(out, question.explanation, qLabel + '.explanation');
@@ -346,8 +447,8 @@ function checkQuestion(out, question, lesson, index, ctx) {
   // ko, en and the feedback must still agree with the Korean choices.
   const readingChoices = ctx && ctx.reading && question.choices && Array.isArray(question.choices.ko) && question.choices.ko.length === 4 ? 4 : 3;
   const choiceCount = ctx && ctx.reading ? readingChoices : ctx && ctx.shortLearning ? 3 : 4;
-  checkChoiceFeedback(out, question.choiceFeedback, qLabel, choiceCount);
-  checkSource(out, question.source, qLabel);
+  if (!activity) checkChoiceFeedback(out, question.choiceFeedback, qLabel, choiceCount);
+  checkSource(out, question.source, qLabel, question.type === 'cloze');
   // A reading question is asked about the passage shown above it, so the
   // passage is a verbatim quotation, never a reference, and is required.
   if (ctx && ctx.reading) {
@@ -355,7 +456,7 @@ function checkQuestion(out, question, lesson, index, ctx) {
   }
   // context: the sentence placing the passage shown above the question.
   if (typeof question.context !== 'undefined') allLocalizedText(out, question.context, qLabel + '.context');
-  if (question.answer !== 0) out.add('shape', qLabel, qLabel + ' answer must be 0 with the correct choice first');
+  if (!activity && question.answer !== 0) out.add('shape', qLabel, qLabel + ' answer must be 0 with the correct choice first');
 
   const prompt = question.prompt || {};
   ['ko', 'en'].forEach(function(locale) {
@@ -380,6 +481,13 @@ function checkQuestion(out, question, lesson, index, ctx) {
     }
   });
   if (FORMULAIC_OPENER_KO.test(str(explanation.ko).trim())) out.add('formulaic-opener', qLabel, qLabel + '.explanation.ko opens by narrating the question instead of teaching');
+
+  if (activity) {
+    if (question.type === 'order') checkOrder(out, question, qLabel);
+    else if (question.type === 'sort') checkSort(out, question, qLabel);
+    else checkCloze(out, question, qLabel);
+    return;
+  }
 
   if (!question.choices || !Array.isArray(question.choices.ko) || !Array.isArray(question.choices.en)) {
     out.add('shape', qLabel, qLabel + ' choices must have ko/en arrays');
@@ -415,7 +523,7 @@ function walkKo(value, label, visit) {
 // with a comma, a full stop or 「」. Checked across every ko string of the
 // chapter (summary, brief, diagram, questions), never the en side.
 function checkKoEmDash(out, chapter, label) {
-  walkKo({ summary: chapter.summary, learningFocus: chapter.learningFocus, conceptMap: chapter.conceptMap, conceptBrief: chapter.conceptBrief, diagram: chapter.diagram, lessons: chapter.lessons }, label, function(text, where) {
+  walkKo({ summary: chapter.summary, takeaway: chapter.takeaway, learningFocus: chapter.learningFocus, conceptMap: chapter.conceptMap, conceptBrief: chapter.conceptBrief, diagram: chapter.diagram, lessons: chapter.lessons }, label, function(text, where) {
     if (text.includes('—')) out.add('ko-em-dash', label, where + ' contains an em dash in Korean text');
   });
 }
@@ -432,8 +540,12 @@ function checkChapter(out, chapter, collectionId, ctx) {
   allLocalizedText(out, chapter.summary, chapterLabel + '.summary');
   if (chapter.learningFocus) allLocalizedText(out, chapter.learningFocus, chapterLabel + '.learningFocus');
   const reading = Boolean(ctx && ctx.reading);
+  const workshop = Boolean(ctx && ctx.workshop);
   // A reading chapter has no concept brief: its passages are the introduction.
-  if (!reading) {
+  // A workshop chapter has none either: it opens on its first activity and
+  // closes on the takeaway, the distinction the chapter was about.
+  if (workshop) allLocalizedText(out, chapter.takeaway, chapterLabel + '.takeaway');
+  if (!reading && !workshop) {
     checkConceptMap(out, chapter.conceptMap, chapterLabel);
     checkConceptBrief(out, chapter, chapterLabel);
   }
@@ -441,11 +553,11 @@ function checkChapter(out, chapter, collectionId, ctx) {
   checkKoEmDash(out, chapter, chapterLabel);
 
   const lessons = chapter.lessons || [];
-  const shortLearning = Boolean(ctx && (ctx.shortLearning || ctx.reading));
+  const shortLearning = Boolean(ctx && (ctx.shortLearning || ctx.reading || ctx.workshop));
   const lessonCount = shortLearning ? 1 : 2;
   // A short lesson is three questions; a chapter that joins two short readings
   // on one period may carry up to six. A reading lesson is five to eight passages.
-  const questionCounts = reading ? [5, 6, 7, 8] : shortLearning ? [3, 4, 5, 6] : [5];
+  const questionCounts = reading || workshop ? [5, 6, 7, 8] : shortLearning ? [3, 4, 5, 6] : [5];
   if (lessons.length !== lessonCount) out.add('shape', label, chapterLabel + ' lesson count ' + lessons.length + ' != ' + lessonCount);
   const levels = lessons.map(function(lesson) { return lesson.level; }).sort().join(',');
   const expectedLevels = shortLearning ? 'basic' : 'advanced,basic';
@@ -457,13 +569,35 @@ function checkChapter(out, chapter, collectionId, ctx) {
     const questions = lesson.questions || [];
     if (questionCounts.indexOf(questions.length) === -1) out.add('shape', lesson.id, lessonLabel + ' question count ' + questions.length + ' not in ' + questionCounts.join('/'));
     questions.forEach(function(question, index) { checkQuestion(out, question, lesson, index, ctx); });
+    if (workshop) checkActivityMix(out, questions, lesson.id, lessonLabel);
+  });
+}
+
+// A workshop lesson is not a quiz with a few extras: at most half of it is
+// multiple choice and it uses at least two kinds of activity. Among its
+// multiple-choice questions the correct choice may be the longest in at most
+// a third (a correct answer that is always the fullest sentence is found
+// without reading).
+function checkActivityMix(out, questions, label, lessonLabel) {
+  const choice = questions.filter(function(question) { return question && question.type === 'multiple_choice'; });
+  const kinds = new Set(questions.filter(function(question) { return question && ACTIVITY_TYPES.has(question.type); }).map(function(question) { return question.type; }));
+  if (choice.length > Math.floor(questions.length / 2)) out.add('activity-mix', label, lessonLabel + ' has ' + choice.length + ' multiple-choice questions of ' + questions.length + ' (at most half)');
+  if (kinds.size < 2) out.add('activity-mix', label, lessonLabel + ' needs at least two of order, sort and cloze');
+  ['ko', 'en'].forEach(function(locale) {
+    const longest = choice.filter(function(question) {
+      const choices = question.choices && question.choices[locale];
+      if (!Array.isArray(choices) || choices.length < 2) return false;
+      const lengths = choices.map(function(item) { return str(item).trim().length; });
+      return lengths[0] > Math.max(...lengths.slice(1));
+    }).length;
+    if (longest > Math.ceil(choice.length / 3)) out.add('activity-mix', label + '.' + locale, lessonLabel + ' correct choice is the longest in ' + longest + ' of ' + choice.length + ' multiple-choice questions (' + locale + ', at most a third)');
   });
 }
 
 function checkChapters(out, collections) {
   const ctx = { prompts: new Map() };
   collections.forEach(function(collection) {
-    (collection.chapters || []).forEach(function(chapter) { checkChapter(out, chapter, collection.id, { ...ctx, shortLearning: collection.format === 'short-learning', reading: collection.format === 'guided-reading' }); });
+    (collection.chapters || []).forEach(function(chapter) { checkChapter(out, chapter, collection.id, { ...ctx, shortLearning: collection.format === 'short-learning', reading: collection.format === 'guided-reading', workshop: collection.format === 'workshop' }); });
   });
 }
 
@@ -487,6 +621,9 @@ module.exports = {
   checkChoiceFeedback,
   checkSource,
   checkQuestion,
+  ACTIVITY_TYPES,
+  clozeAnswers,
+  clozePlain,
   checkChapter,
   checkChapters,
 };

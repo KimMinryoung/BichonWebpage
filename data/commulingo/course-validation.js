@@ -18,7 +18,7 @@ const path = require('path');
 const SCRIPTS = path.join(__dirname, '..', '..', 'scripts');
 const BASELINE_PATH = path.join(SCRIPTS, 'commulingo-quality-baseline.json');
 const ID = /^[A-Za-z0-9_-]+$/;
-const QUIZ_FORMATS = new Set(['', 'short-learning', 'guided-reading']);
+const QUIZ_FORMATS = new Set(['', 'short-learning', 'guided-reading', 'workshop']);
 const SPECIAL_FORMATS = new Set(['decision-history', 'concept-graph']);
 
 function badRequest(message, status = 400) {
@@ -406,9 +406,17 @@ function sourceProblems(course) {
                 const page = siteDoc(site[1]);
                 if (!page) { problems.push(`${where}: document ${site[1]} not found`); continue; }
                 if (!page.ids.has(site[2])) problems.push(`${where}: #${site[2]} not in ${site[1]}`);
+                // A cloze drawn from a site document is the passage itself: with
+                // its blanks filled in it must be the document's own words.
+                const cloze = question.type === 'cloze' && source.kind !== 'reference' && question.text && question.text.ko;
+                if (cloze) {
+                    for (const piece of text.quotePieces(checks().clozePlain(cloze))) {
+                        if (!text.containsQuote(page.text, piece)) problems.push(`${where}: cloze not verbatim in ${site[1]}: ${piece.slice(0, 40)}…`);
+                    }
+                }
                 const quote = source.quote && source.quote.ko;
                 // A `reference` source points at the passage without quoting it.
-                if (!quote && source.kind === 'reference' && !required) continue;
+                if (!quote && (source.kind === 'reference' || cloze) && !required) continue;
                 if (!quote) { problems.push(`${where}: no Korean quote`); continue; }
                 for (const piece of text.quotePieces(quote)) {
                     if (!text.containsQuote(page.text, piece)) problems.push(`${where}: not verbatim in ${site[1]}: ${piece.slice(0, 40)}…`);
@@ -420,13 +428,22 @@ function sourceProblems(course) {
 }
 
 // ── Question ids ───────────────────────────────────────────────────────────
+// What the question's answer is, as text: the correct choice, or for a
+// workshop activity the sequence, the grouping or the passage with its blanks.
+function answerSignature(q) {
+    if (q.type === 'order') return ((q.items && q.items.ko) || []).join(' / ');
+    if (q.type === 'sort') return (Array.isArray(q.items) ? q.items : []).map(item => `${item && item.ko}=${item && item.group}`).join(' / ');
+    if (q.type === 'cloze') return (q.text && q.text.ko) || '';
+    const choices = (q.choices && q.choices.ko) || [];
+    return choices[q.answer] || '';
+}
+
 function questionMap(course) {
     const out = new Map();
     for (const chapter of (course && course.chapters) || []) {
         for (const lesson of chapter.lessons || []) {
             for (const q of lesson.questions || []) {
-                const choices = (q.choices && q.choices.ko) || [];
-                out.set(`${lesson.id}/${q.id}`, { prompt: (q.prompt && q.prompt.ko) || '', answer: choices[q.answer] || '' });
+                out.set(`${lesson.id}/${q.id}`, { prompt: (q.prompt && q.prompt.ko) || '', answer: answerSignature(q) });
             }
         }
     }
