@@ -833,7 +833,27 @@
                 return '<li>' + item + '</li>';
             }).join('') + '</ul>';
         }
+        if (section.table) html += renderBriefTable(section.table);
         return html + '</section>';
+    }
+
+    // A brief table scrolls sideways inside its own box on a narrow screen;
+    // the first cell of each row is the row's heading.
+    function renderBriefTable(table) {
+        var columns = Array.isArray(table.columns) ? table.columns : [];
+        var rows = Array.isArray(table.rowsHtml) && table.rowsHtml.length
+            ? table.rowsHtml
+            : (Array.isArray(table.rows) ? table.rows.map(function(row) { return (row || []).map(escapeHtml); }) : []);
+        if (!columns.length || !rows.length) return '';
+        return '<div class="commu-brief-table"><table><thead><tr>'
+            + columns.map(function(column) { return '<th scope="col">' + escapeHtml(column) + '</th>'; }).join('')
+            + '</tr></thead><tbody>'
+            + rows.map(function(row) {
+                return '<tr>' + row.map(function(cell, index) {
+                    return index === 0 ? '<th scope="row">' + cell + '</th>' : '<td>' + cell + '</td>';
+                }).join('') + '</tr>';
+            }).join('')
+            + '</tbody></table></div>';
     }
 
     function lessonDiagram(lesson) {

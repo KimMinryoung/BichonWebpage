@@ -151,6 +151,7 @@ function chapterPassages(chapter, lang) {
         ((lesson.conceptBrief && lesson.conceptBrief[lang]) || []).forEach(section => {
             add(section.text);
             (section.items || []).forEach(add);
+            if (section.table) (section.table.rows || []).forEach(row => (row || []).forEach(add));
         });
         ((lesson.conceptMap && lesson.conceptMap[lang]) || []).forEach(node => add(node.text));
         const diagram = lesson.diagram && lesson.diagram[lang];
@@ -373,6 +374,9 @@ async function linkifyLessonPayload(lesson) {
         ((lesson.conceptBrief && lesson.conceptBrief[lang]) || []).forEach(section => {
             if (section.text) section.textHtml = linkBrief(section.text);
             if (Array.isArray(section.items)) section.itemsHtml = section.items.map(linkBrief);
+            if (section.table && Array.isArray(section.table.rows)) {
+                section.table.rowsHtml = section.table.rows.map(row => (row || []).map(linkBrief));
+            }
         });
         ((lesson.conceptMap && lesson.conceptMap[lang]) || []).forEach(node => {
             if (node.text) node.textHtml = linkBrief(node.text);

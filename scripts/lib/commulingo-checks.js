@@ -152,6 +152,32 @@ function checkConceptMap(out, value, label) {
 // any OTHER section that merely repeats the summary or focus verbatim is
 // filler and is flagged.
 const FOCUS_SECTION = /(초점|focus)/i;
+
+// A brief table: { columns: [2-6 headings], rows: [[cells], ...] }, every row
+// as long as the header. The first column labels the row. Cells are prose and
+// get the same text checks. A cell may be empty (the person took no stand on
+// that row); a row needs its label and at least one more filled cell.
+function tableCells(out, table, tLabel, label) {
+  if (!table || typeof table !== 'object' || !Array.isArray(table.columns) || !Array.isArray(table.rows)) {
+    out.add('concept-brief', label, tLabel + ' must have columns and rows');
+    return [];
+  }
+  const width = table.columns.length;
+  if (width < 2 || width > 6) out.add('concept-brief', label, tLabel + ' must have 2-6 columns');
+  if (!table.rows.length) out.add('concept-brief', label, tLabel + ' must have rows');
+  const cells = table.columns.slice();
+  table.rows.forEach(function(row, rIndex) {
+    if (!Array.isArray(row) || row.length !== width) {
+      out.add('concept-brief', label, tLabel + '.rows[' + rIndex + '] must have ' + width + ' cells');
+      return;
+    }
+    if (!str(row[0]).trim() || row.slice(1).every(function(cell) { return !str(cell).trim(); })) {
+      out.add('concept-brief', label, tLabel + '.rows[' + rIndex + '] needs a label and at least one filled cell');
+    }
+    row.forEach(function(cell) { if (str(cell).trim()) cells.push(cell); });
+  });
+  return cells;
+}
 function checkConceptBrief(out, chapter, label) {
   const value = chapter.conceptBrief;
   if (!value || typeof value !== 'object') { out.add('concept-brief', label, label + ' must have conceptBrief'); return; }
@@ -178,11 +204,12 @@ function checkConceptBrief(out, chapter, label) {
       checkTitle(out, section.title, secLabel + '.title');
       const hasText = str(section.text).trim().length > 0;
       const hasItems = Array.isArray(section.items) && section.items.length > 0;
-      if (hasText === hasItems) out.add('concept-brief', label, secLabel + ' must have either text or items');
-      const pieces = hasItems ? section.items : (hasText ? [section.text] : []);
+      const hasTable = typeof section.table !== 'undefined';
+      if ((hasText ? 1 : 0) + (hasItems ? 1 : 0) + (hasTable ? 1 : 0) !== 1) out.add('concept-brief', label, secLabel + ' must have exactly one of text, items or table');
+      const pieces = hasItems ? section.items : (hasText ? [section.text] : (hasTable ? tableCells(out, section.table, secLabel + '.table', label) : []));
       const focusSection = FOCUS_SECTION.test(str(section.title));
       pieces.forEach(function(piece, pIndex) {
-        const pLabel = hasItems ? secLabel + '.items[' + pIndex + ']' : secLabel + '.text';
+        const pLabel = hasItems ? secLabel + '.items[' + pIndex + ']' : (hasTable ? secLabel + '.table.cell[' + pIndex + ']' : secLabel + '.text');
         if (!str(piece).trim()) out.add('concept-brief', label, pLabel + ' is empty');
         checkText(out, piece, pLabel, locale);
         if (!focusSection && known.has(norm(piece))) out.add('concept-brief', label, pLabel + ' repeats the summary or learning focus verbatim under a title of its own');
