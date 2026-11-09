@@ -91,6 +91,8 @@
    text (design-system.md), word-break: normal so Korean breaks between
    characters and the stretched gaps stay tight. */
 .commulingo-hero--book > div > p {
+    line-height: var(--leading-prose);
+    margin-top: 6px;
     text-align: justify;
     word-break: normal;
     hyphens: auto;
@@ -5579,10 +5581,13 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     display: block;
 }
 
-/* Ordering by drag: a mouse drags the row, a finger the grip (so the rest of
-   the row still scrolls the page); the grip also takes the arrow keys. */
+/* Ordering by drag: the whole row is the handle, for mouse and finger alike
+   (touch-action: none, so a touch on a row moves the row, not the page);
+   the grip marks it and takes the arrow keys. */
 .commu-order-drag .commu-drill-order-item {
     cursor: grab;
+    min-height: 56px;
+    touch-action: none;
     user-select: none;
     -webkit-user-select: none;
 }
@@ -5611,7 +5616,6 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     font-size: 1.1rem;
     margin: -10px -12px -10px 0;
     min-width: 48px;
-    touch-action: none;
 }
 
 .commu-order-grip:focus-visible {
@@ -5642,17 +5646,24 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     font-size: 0.88rem;
 }
 
+/* Sorting: items wait in the pool as full-width rows and are dragged (or
+   tapped, then the box tapped) into a group. The whole group box is the
+   target. Groups stay side by side so a drop is never far. */
 .commu-sort-pool {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
     gap: 8px;
     margin: 0 0 12px;
+    min-height: 52px;
+}
+
+.commu-sort-pool.is-empty {
+    border: 1px dashed var(--border);
 }
 
 .commu-sort-groups {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
     margin: 0 0 16px;
 }
 
@@ -5661,11 +5672,23 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     border: 1px solid var(--border);
     display: grid;
     gap: 8px;
-    min-height: 120px;
+    min-height: 150px;
     padding: 0 8px 8px;
 }
 
-/* The group's name is the drop target: the whole head row is the button. */
+.commu-sort-group.is-open {
+    background: color-mix(in srgb, var(--accent) 8%, var(--card-bg));
+    border-color: var(--link);
+    cursor: pointer;
+}
+
+.commu-sort-group.is-over,
+.commu-sort-pool.is-over {
+    background: color-mix(in srgb, var(--accent) 20%, var(--card-bg));
+    border-color: var(--link);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
 .commu-sort-target {
     background: var(--bg-surface);
     border: 0;
@@ -5684,13 +5707,31 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     cursor: default;
 }
 
-.commu-sort-target:not(:disabled) {
-    background: color-mix(in srgb, var(--accent) 14%, var(--bg-surface));
+.commu-sort-group.is-open .commu-sort-target {
+    background: color-mix(in srgb, var(--accent) 18%, var(--bg-surface));
 }
 
-.commu-sort-target:not(:disabled):hover,
-.commu-sort-target:not(:disabled):focus-visible {
-    background: color-mix(in srgb, var(--accent) 28%, var(--bg-surface));
+.commu-sort-item {
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    width: 100%;
+}
+
+.commu-sort-item.is-dragging {
+    opacity: 0.35;
+}
+
+.commu-sort-ghost {
+    border-color: var(--link);
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--text-primary) 25%, transparent);
+    cursor: grabbing;
+    left: 0;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    z-index: 50;
 }
 
 .commu-sort-item,
@@ -5701,8 +5742,8 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     cursor: pointer;
     font: inherit;
     line-height: var(--leading-snug);
-    min-height: 44px;
-    padding: 8px 12px;
+    min-height: 48px;
+    padding: 10px 12px;
     text-align: left;
     word-break: keep-all;
     overflow-wrap: anywhere;

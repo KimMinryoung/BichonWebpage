@@ -1294,9 +1294,8 @@
                     li.appendChild(reveal);
                 }
                 if (!graded) {
-                    // The grip is what a finger drags (the rest of the row
-                    // still scrolls the page) and what the keyboard moves
-                    // with the arrow keys; a mouse may drag the whole row.
+                    // The whole row is dragged, by mouse or finger; the grip
+                    // marks it as movable and takes the arrow keys.
                     var grip = activityButton('commu-order-grip', '↕');
                     grip.setAttribute('aria-label', (lang === 'en' ? 'Move with the arrow keys: ' : '화살표 키로 옮기기: ') + item.label);
                     grip.addEventListener('keydown', function(event) {
@@ -1307,9 +1306,7 @@
                         if (place(li, from + delta)) grip.focus();
                     });
                     li.appendChild(grip);
-                    li.addEventListener('pointerdown', function(event) {
-                        if (event.pointerType === 'mouse' || event.target === grip) startDrag(event, li);
-                    });
+                    li.addEventListener('pointerdown', function(event) { startDrag(event, li); });
                 }
                 list.appendChild(li);
             });
@@ -1342,13 +1339,75 @@
         }));
         var selected = null;
         var graded = false;
-        activityHint(lang === 'en' ? 'Pick an item, then the group it belongs to.' : '항목을 누른 다음 들어갈 묶음을 누르세요.');
+        var drag = null;
+        var dragged = false;
+        activityHint(lang === 'en' ? 'Drag each item into its group, or tap an item and then a group.' : '항목을 묶음으로 끌어다 놓으세요. 항목을 누른 뒤 묶음을 눌러도 됩니다.');
         var pool = document.createElement('div');
         pool.className = 'commu-sort-pool';
+        pool.setAttribute('data-sort-group', '-1');
         var board = document.createElement('div');
         board.className = 'commu-sort-groups';
         els.choices.appendChild(pool);
         els.choices.appendChild(board);
+
+        function byId(id) {
+            for (var i = 0; i < items.length; i += 1) if (items[i].id === id) return items[i];
+            return null;
+        }
+
+        // Where the pointer is: a group box, the pool (-1), or nowhere (null).
+        function zoneAt(x, y) {
+            var under = document.elementFromPoint(x, y);
+            var zone = under && under.closest ? under.closest('[data-sort-group]') : null;
+            return zone && els.choices.contains(zone) ? zone : null;
+        }
+
+        function markZone(zone) {
+            Array.prototype.forEach.call(els.choices.querySelectorAll('[data-sort-group]'), function(box) {
+                box.classList.toggle('is-over', box === zone);
+            });
+        }
+
+        // An item is dragged as a copy that follows the pointer; the boxes
+        // are not redrawn until it is dropped, so the touch that started on
+        // the item keeps its target.
+        function moveDrag(event) {
+            if (!drag || event.pointerId !== drag.id) return;
+            if (!drag.ghost) {
+                if (Math.abs(event.clientX - drag.x) + Math.abs(event.clientY - drag.y) < 8) return;
+                var box = drag.button.getBoundingClientRect();
+                drag.dx = drag.x - box.left;
+                drag.dy = drag.y - box.top;
+                drag.ghost = drag.button.cloneNode(true);
+                drag.ghost.className = 'commu-sort-item commu-sort-ghost';
+                drag.ghost.style.width = box.width + 'px';
+                document.body.appendChild(drag.ghost);
+                drag.button.classList.add('is-dragging');
+            }
+            drag.ghost.style.left = (event.clientX - drag.dx) + 'px';
+            drag.ghost.style.top = (event.clientY - drag.dy) + 'px';
+            markZone(zoneAt(event.clientX, event.clientY));
+        }
+
+        function endDrag(event) {
+            if (!drag || (event && event.pointerId !== drag.id)) return;
+            document.removeEventListener('pointermove', moveDrag);
+            document.removeEventListener('pointerup', endDrag);
+            document.removeEventListener('pointercancel', endDrag);
+            var current = drag;
+            drag = null;
+            if (!current.ghost) return;
+            current.ghost.remove();
+            // The click that follows a drag is not a tap on the item.
+            dragged = true;
+            window.setTimeout(function() { dragged = false; }, 0);
+            var zone = event && event.type === 'pointerup' ? zoneAt(event.clientX, event.clientY) : null;
+            if (zone) {
+                current.item.placed = Number(zone.getAttribute('data-sort-group'));
+                selected = null;
+            }
+            draw();
+        }
 
         function itemButton(item) {
             var button = activityButton('commu-sort-item', item.label);
@@ -1365,13 +1424,40 @@
             }
             if (selected === item.id) button.classList.add('is-selected');
             button.setAttribute('aria-pressed', selected === item.id ? 'true' : 'false');
-            button.addEventListener('click', function() {
-                // A placed item comes back out, already picked up.
-                if (item.placed !== -1) { item.placed = -1; selected = item.id; }
-                else selected = selected === item.id ? null : item.id;
+            button.addEventListener('pointerdown', function(event) {
+                if (drag || (event.pointerType === 'mouse' && event.button !== 0)) return;
+                drag = { id: event.pointerId, item: item, button: button, x: event.clientX, y: event.clientY, ghost: null };
+                document.addEventListener('pointermove', moveDrag);
+                document.addEventListener('pointerup', endDrag);
+                document.addEventListener('pointercancel', endDrag);
+            });
+            button.addEventListener('click', function(event) {
+                event.stopPropagation();
+                if (dragged) return;
+                // With another item picked up, a tap on an item already in
+                // a box is a tap on that box.
+                var held = selected !== null && selected !== item.id ? byId(selected) : null;
+                if (held && item.placed !== -1) {
+                    held.placed = item.placed;
+                    selected = null;
+                } else selected = selected === item.id ? null : item.id;
                 draw();
             });
             return button;
+        }
+
+        // The whole box takes the picked-up item, not only its heading.
+        function dropHere(box, groupIndex) {
+            box.setAttribute('data-sort-group', String(groupIndex));
+            box.addEventListener('click', function() {
+                if (graded || dragged || selected === null) return;
+                var item = byId(selected);
+                if (item) item.placed = groupIndex;
+                selected = null;
+                draw();
+                var nextItem = pool.querySelector('button');
+                if (nextItem) nextItem.focus();
+            });
         }
 
         function draw() {
@@ -1379,30 +1465,38 @@
             board.innerHTML = '';
             var waiting = items.filter(function(item) { return item.placed === -1; });
             waiting.forEach(function(item) { pool.appendChild(itemButton(item)); });
-            pool.classList.toggle('is-hidden', !waiting.length);
+            pool.classList.toggle('is-empty', !waiting.length);
+            pool.classList.toggle('is-hidden', graded && !waiting.length);
+            pool.classList.remove('is-over');
             groups.forEach(function(name, groupIndex) {
                 var box = document.createElement('div');
-                box.className = 'commu-sort-group';
+                box.className = 'commu-sort-group' + (!graded && selected !== null ? ' is-open' : '');
+                // The heading is the keyboard's way in; a pointer may use
+                // any part of the box.
                 var target = activityButton('commu-sort-target', name);
                 target.disabled = graded || selected === null;
-                target.addEventListener('click', function() {
-                    if (selected === null) return;
-                    items.forEach(function(item) { if (item.id === selected) item.placed = groupIndex; });
-                    selected = null;
-                    draw();
-                    var nextItem = pool.querySelector('button');
-                    if (nextItem) nextItem.focus();
-                });
                 box.appendChild(target);
                 items.filter(function(item) { return item.placed === groupIndex; }).forEach(function(item) { box.appendChild(itemButton(item)); });
+                if (!graded) dropHere(box, groupIndex);
                 board.appendChild(box);
             });
             if (!graded) els.next.disabled = waiting.length > 0;
         }
 
+        if (!graded) {
+            pool.addEventListener('click', function() {
+                if (graded || dragged || selected === null) return;
+                var item = byId(selected);
+                if (item) item.placed = -1;
+                selected = null;
+                draw();
+            });
+        }
+
         pendingCheck = function() {
             graded = true;
             selected = null;
+            endDrag();
             draw();
             settleActivity(question, items.every(function(item) { return item.placed === item.group; }));
         };

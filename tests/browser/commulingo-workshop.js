@@ -91,10 +91,26 @@ const LESSON = 'capital-v1-ch01-basic';
             await shot('sort');
             const sortItems = chapter.lessons[0].questions[2].items;
             for (const [index, item] of sortItems.entries()) {
-                await page.locator('.commu-sort-pool .commu-sort-item', { hasText: item.ko }).click();
                 const group = index === 0 ? 1 : item.group;
-                await page.locator('.commu-sort-target').nth(group).click();
+                const waiting = page.locator('.commu-sort-pool .commu-sort-item', { hasText: item.ko });
+                if (index % 2) {
+                    // Dragged into the group box (anywhere in it, not only the heading).
+                    const from = await waiting.boundingBox();
+                    const box = await page.locator('.commu-sort-group').nth(group).boundingBox();
+                    await page.mouse.move(from.x + 20, from.y + from.height / 2);
+                    await page.mouse.down();
+                    await page.mouse.move(box.x + box.width / 2, box.y + box.height - 12, { steps: 8 });
+                    assert.equal(await page.locator('.commu-sort-group.is-over').count(), 1, 'the box under the item is marked');
+                    await page.mouse.up();
+                } else {
+                    // Tapped, then the box tapped.
+                    await waiting.click();
+                    const box = await page.locator('.commu-sort-group').nth(group).boundingBox();
+                    await page.mouse.click(box.x + box.width / 2, box.y + box.height - 12);
+                }
+                assert.equal(await page.locator('.commu-sort-group').nth(group).locator('.commu-sort-item', { hasText: item.ko }).count(), 1, 'item ' + index + ' placed');
             }
+            assert.equal(await page.locator('.commu-sort-ghost').count(), 0);
             await shot('sort-placed');
             await next.click();
             assert.equal(await page.locator('.commu-sort-item.is-wrong').count(), 1);
