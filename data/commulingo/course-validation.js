@@ -117,6 +117,9 @@ function checkChapterCard(key, chapter) {
             throw badRequest(`${at}.url must be an http(s) address`);
         }
         if (reading.url !== undefined && reading.doc !== undefined) throw badRequest(`${at} has both doc and url`);
+        if (reading.offsite !== undefined && !(reading.url && typeof reading.offsite === 'string' && reading.offsite.trim())) {
+            throw badRequest(`${at}.offsite needs a url and says why the site document does not serve`);
+        }
         // genealogy: a site genealogy chart (/commulingo/genealogy/<id>) the
         // chapter is mapped on; one link target per reading.
         if (reading.genealogy !== undefined && !(typeof reading.genealogy === 'string' && ID.test(reading.genealogy))) {
@@ -125,7 +128,7 @@ function checkChapterCard(key, chapter) {
         if (reading.genealogy !== undefined && (reading.doc !== undefined || reading.url !== undefined)) {
             throw badRequest(`${at} links to a genealogy chart and to a doc or url`);
         }
-        const extra = Object.keys(reading).filter(k => !['author', 'title', 'year', 'endYear', 'doc', 'anchor', 'url', 'genealogy'].includes(k));
+        const extra = Object.keys(reading).filter(k => !['author', 'title', 'year', 'endYear', 'doc', 'anchor', 'url', 'genealogy', 'offsite'].includes(k));
         if (extra.length) throw badRequest(`${at} has unknown fields ${extra.join(', ')}`);
     });
 }
@@ -287,6 +290,38 @@ function isTolerated(baseline, issue) {
     return Boolean(list && list.includes(issue.label));
 }
 
+// ── Off-site links to hosted works ─────────────────────────────────────────
+// A reading or question source that names, in 『』 or 「」, a work the library
+// hosts must link the site document, not marxists.org (2026-11-09: Lenin's
+// Imperialism, Hilferding, Engels's Origin of the Family, Kollontai and The
+// State and Revolution were all linked off-site). Titles come from each
+// document's Korean title and aliases. When the site document lacks the part
+// cited (a chapter outside a selection), `offsite: "<why>"` on the source or
+// reading keeps the external link.
+const BRACKETED = /[『「]([^』」]+)[』」]/g;
+const titleKey = value => String(value || '').replace(/[\s·,.:!?()「」『』<>-]/g, '').toLowerCase();
+
+function hostedTitles(docs) {
+    const out = new Map();
+    for (const doc of docs) {
+        const texts = [doc.title && doc.title.ko, ...((doc.aliases && doc.aliases.ko) || [])].filter(Boolean);
+        for (const text of texts) {
+            const keys = [...String(text).matchAll(BRACKETED)].map(m => m[1]);
+            if (!/[『「]/.test(text)) keys.push(text);
+            for (const key of keys.map(titleKey)) if (key.length >= 4 && !out.has(key)) out.set(key, doc.id);
+        }
+    }
+    return out;
+}
+
+function offsiteHostedWork(titles, label) {
+    for (const m of String(label || '').matchAll(BRACKETED)) {
+        const id = titles.get(titleKey(m[1]));
+        if (id) return { title: m[0], id };
+    }
+    return null;
+}
+
 // ── Source excerpts (site documents) ───────────────────────────────────────
 // A guided-reading question must quote the site's own translation verbatim.
 // External sources (marxists.org, for Capital) are only shape-checked here:
@@ -337,8 +372,17 @@ function sourceProblems(course) {
         const { getGenealogyChart } = require('./genealogy-store');
         if (!getGenealogyChart(course.genealogy)) problems.push(`genealogy chart ${course.genealogy} not found`);
     }
+    let titles = null;
+    const hosted = label => {
+        if (!titles) {
+            try { titles = hostedTitles(require('./docs-store').listCommuLingoDocs()); } catch (err) { titles = new Map(); }
+        }
+        return offsiteHostedWork(titles, label);
+    };
     for (const chapter of course.chapters || []) {
         (chapter.readings || []).forEach((reading, index) => {
+            const work = reading && reading.url && !reading.offsite ? hosted(reading.title && reading.title.ko) : null;
+            if (work) problems.push(`${chapter.id}/readings[${index}]: ${work.title} links off-site (${reading.url}) but the library hosts it: use doc ${work.id} (or offsite: "<why>")`);
             if (reading && reading.genealogy) {
                 const { getGenealogyChart } = require('./genealogy-store');
                 if (!getGenealogyChart(reading.genealogy)) problems.push(`${chapter.id}/readings[${index}]: genealogy chart ${reading.genealogy} not found`);
@@ -355,6 +399,8 @@ function sourceProblems(course) {
                 const where = `${lesson.id}/${question.id}`;
                 const source = question.source;
                 if (!source) { if (required) problems.push(`${where}: no source`); continue; }
+                const work = /^https?:/.test(String(source.href || '')) && !source.offsite ? hosted(source.label && source.label.ko) : null;
+                if (work) problems.push(`${where}: ${work.title} links off-site (${source.href}) but the library hosts it: use /commulingo/docs/${work.id} (or offsite: "<why>")`);
                 const site = /^\/commulingo\/docs\/([^#]+)#(.+)$/.exec(String(source.href || ''));
                 if (!site) continue;
                 const page = siteDoc(site[1]);
@@ -438,4 +484,4 @@ function gateCourseWrite({ key, next, prev, others }) {
     return changeSummary(prev, next);
 }
 
-module.exports = { validateCourseShape, courseIssues, readBaseline, isTolerated, sourceProblems, gateCourseWrite, changeSummary };
+module.exports = { hostedTitles, offsiteHostedWork, validateCourseShape, courseIssues, readBaseline, isTolerated, sourceProblems, gateCourseWrite, changeSummary };
