@@ -1226,21 +1226,55 @@
         var display = shuffleChoices(items);
         for (var guard = 0; display.length > 1 && inOrder(display) && guard < 10; guard += 1) display = shuffleChoices(items);
         var graded = false;
-        activityHint(lang === 'en' ? 'Move the items into order, then check.' : '▲▼로 순서를 맞춘 뒤 확인을 누르세요.');
+        var drag = null;
+        activityHint(lang === 'en' ? 'Drag the items into order, then check.' : '항목을 끌어 순서를 맞춘 뒤 확인을 누르세요.');
         var list = document.createElement('ol');
-        list.className = 'commu-drill-order';
+        list.className = 'commu-drill-order commu-order-drag';
         els.choices.appendChild(list);
 
-        function move(index, delta) {
-            var other = display[index + delta];
-            display[index + delta] = display[index];
-            display[index] = other;
-            draw();
-            // Keep the keyboard on the item that moved.
-            var row = list.children[index + delta];
-            var buttons = row ? row.querySelectorAll('button:not(:disabled)') : [];
-            var again = buttons.length === 2 ? buttons[delta < 0 ? 0 : 1] : buttons[0];
-            if (again) again.focus();
+        // The dragged row follows the pointer by changing places with the
+        // row it is over. Its neighbours are moved around it, never the row
+        // itself: re-inserting the row would drop the pointer capture and
+        // end a touch drag after one step.
+        function place(row, to) {
+            var from = Array.prototype.indexOf.call(list.children, row);
+            if (to === from || to < 0 || to >= display.length) return false;
+            var item = display.splice(from, 1)[0];
+            display.splice(to, 0, item);
+            for (; from > to; from -= 1) list.insertBefore(row.previousSibling, row.nextSibling);
+            for (; from < to; from += 1) list.insertBefore(row.nextSibling, row);
+            return true;
+        }
+
+        function rowAt(y) {
+            for (var i = 0; i < list.children.length; i += 1) {
+                var box = list.children[i].getBoundingClientRect();
+                if (y < box.top + box.height / 2) return i;
+            }
+            return list.children.length - 1;
+        }
+
+        function startDrag(event, row) {
+            if (graded || drag || (event.pointerType === 'mouse' && event.button !== 0)) return;
+            drag = { row: row, id: event.pointerId };
+            row.classList.add('is-dragging');
+            document.addEventListener('pointermove', moveDrag);
+            document.addEventListener('pointerup', endDrag);
+            document.addEventListener('pointercancel', endDrag);
+            event.preventDefault();
+        }
+
+        function moveDrag(event) {
+            if (drag && event.pointerId === drag.id) place(drag.row, rowAt(event.clientY));
+        }
+
+        function endDrag(event) {
+            if (!drag || (event && event.pointerId !== drag.id)) return;
+            drag.row.classList.remove('is-dragging');
+            drag = null;
+            document.removeEventListener('pointermove', moveDrag);
+            document.removeEventListener('pointerup', endDrag);
+            document.removeEventListener('pointercancel', endDrag);
         }
 
         function draw() {
@@ -1260,16 +1294,22 @@
                     li.appendChild(reveal);
                 }
                 if (!graded) {
-                    var controls = document.createElement('span');
-                    controls.className = 'commu-drill-order-controls';
-                    [[-1, '▲', strings.drillMoveUp || (lang === 'en' ? 'Move up' : '위로')], [1, '▼', strings.drillMoveDown || (lang === 'en' ? 'Move down' : '아래로')]].forEach(function(spec) {
-                        var button = activityButton('commu-drill-order-move', spec[1]);
-                        button.setAttribute('aria-label', spec[2] + ': ' + item.label);
-                        button.disabled = index + spec[0] < 0 || index + spec[0] >= display.length;
-                        button.addEventListener('click', function() { move(index, spec[0]); });
-                        controls.appendChild(button);
+                    // The grip is what a finger drags (the rest of the row
+                    // still scrolls the page) and what the keyboard moves
+                    // with the arrow keys; a mouse may drag the whole row.
+                    var grip = activityButton('commu-order-grip', '↕');
+                    grip.setAttribute('aria-label', (lang === 'en' ? 'Move with the arrow keys: ' : '화살표 키로 옮기기: ') + item.label);
+                    grip.addEventListener('keydown', function(event) {
+                        var delta = event.key === 'ArrowUp' ? -1 : event.key === 'ArrowDown' ? 1 : 0;
+                        if (!delta) return;
+                        event.preventDefault();
+                        var from = Array.prototype.indexOf.call(list.children, li);
+                        if (place(li, from + delta)) grip.focus();
                     });
-                    li.appendChild(controls);
+                    li.appendChild(grip);
+                    li.addEventListener('pointerdown', function(event) {
+                        if (event.pointerType === 'mouse' || event.target === grip) startDrag(event, li);
+                    });
                 }
                 list.appendChild(li);
             });
@@ -1277,6 +1317,7 @@
 
         pendingCheck = function() {
             graded = true;
+            endDrag();
             var correct = inOrder(display);
             draw();
             if (!correct) {

@@ -5579,6 +5579,46 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     display: block;
 }
 
+/* Ordering by drag: a mouse drags the row, a finger the grip (so the rest of
+   the row still scrolls the page); the grip also takes the arrow keys. */
+.commu-order-drag .commu-drill-order-item {
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.commu-order-drag .commu-drill-order-item.is-correct,
+.commu-order-drag .commu-drill-order-item.is-wrong {
+    cursor: default;
+}
+
+.commu-order-drag .commu-drill-order-item.is-dragging {
+    background: color-mix(in srgb, var(--accent) 22%, var(--bg-surface));
+    border-color: var(--link);
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 40%, transparent);
+    cursor: grabbing;
+}
+
+.commu-order-grip {
+    align-self: stretch;
+    background: var(--card-bg);
+    border: 0;
+    border-left: 1px solid var(--border);
+    color: var(--text-secondary);
+    cursor: grab;
+    flex: none;
+    font: inherit;
+    font-size: 1.1rem;
+    margin: -10px -12px -10px 0;
+    min-width: 48px;
+    touch-action: none;
+}
+
+.commu-order-grip:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: -2px;
+}
+
 .commu-activity-answer {
     background: var(--bg-inset);
     border-left: 3px solid var(--btn-primary);

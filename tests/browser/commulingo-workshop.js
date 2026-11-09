@@ -40,21 +40,42 @@ const LESSON = 'capital-v1-ch01-basic';
             const fits = async () => assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, 'no sideways scroll at ' + width);
 
             await page.goto(`${base}/commulingo/book/${BOOK}#lesson=${LESSON}`, { waitUntil: 'networkidle' });
-            // No concept brief: the lesson opens on the first activity.
-            await page.waitForSelector('#commuChoices.is-activity .commu-drill-order');
+            // No concept brief: the lesson opens on its first question.
+            await page.waitForSelector('#commuChoices:not(.is-activity) .commu-choice');
             assert.equal(await page.locator('#commuIntro:not(.is-hidden)').count(), 0);
 
-            // q1 order: bubble the items into the stored order, then check.
-            const wanted = chapter.lessons[0].questions[0].items.ko;
+            // q1 multiple choice, answered wrong on purpose (retried later).
+            const correctChoice = chapter.lessons[0].questions[0].choices.ko[0];
+            await page.locator('.commu-choice').filter({ hasNotText: correctChoice }).first().click();
+            assert.equal(await page.locator('#commuFeedback.is-wrong').count(), 1);
+            await shot('choice-wrong');
+            await next.click();
+
+            await page.waitForSelector('#commuChoices.is-activity .commu-drill-order');
+            // q2 order: bubble the items into the stored order, then check.
+            const wanted = chapter.lessons[0].questions[1].items.ko;
             assert.equal(await next.textContent(), '확인');
             await shot('order');
-            for (let pass = 0; pass < wanted.length; pass += 1) {
-                for (let target = 0; target < wanted.length; target += 1) {
-                    const labels = await page.locator('.commu-drill-order-label').allTextContents();
-                    const at = labels.indexOf(wanted[target]);
-                    for (let i = at; i > target; i -= 1) await page.locator('.commu-drill-order-item').nth(i).locator('button').first().click();
+            // Each item is dragged by the mouse to its place; the last moves are
+            // made from the keyboard on the grip.
+            const labelsNow = () => page.locator('.commu-drill-order-label').allTextContents();
+            for (let target = 0; target < wanted.length - 1; target += 1) {
+                const at = (await labelsNow()).indexOf(wanted[target]);
+                if (at === target) continue;
+                if (target < wanted.length - 2) {
+                    const from = await page.locator('.commu-drill-order-item').nth(at).locator('.commu-drill-order-label').boundingBox();
+                    const to = await page.locator('.commu-drill-order-item').nth(target).boundingBox();
+                    await page.mouse.move(from.x + 10, from.y + from.height / 2);
+                    await page.mouse.down();
+                    await page.mouse.move(from.x + 10, to.y + 4, { steps: 8 });
+                    await page.mouse.up();
+                } else {
+                    await page.locator('.commu-drill-order-item').nth(at).locator('.commu-order-grip').focus();
+                    for (let i = at; i > target; i -= 1) await page.keyboard.press('ArrowUp');
                 }
+                assert.equal((await labelsNow())[target], wanted[target], 'item moved to place ' + (target + 1));
             }
+            assert.equal(await page.locator('.commu-drill-order-item.is-dragging').count(), 0);
             await next.click();
             assert.equal(await page.locator('.commu-drill-order-item.is-correct').count(), wanted.length);
             assert.equal(await page.locator('#commuFeedback.is-wrong').count(), 0);
@@ -62,14 +83,6 @@ const LESSON = 'capital-v1-ch01-basic';
             assert.equal(await page.locator('.commu-activity-answer').count(), 0, 'no second list when the order is right');
             await shot('order-checked');
             await fits();
-            await next.click();
-
-            // q2 multiple choice, answered wrong on purpose (retried later).
-            await page.waitForSelector('#commuChoices:not(.is-activity) .commu-choice');
-            const correctChoice = chapter.lessons[0].questions[1].choices.ko[0];
-            await page.locator('.commu-choice').filter({ hasNotText: correctChoice }).first().click();
-            assert.equal(await page.locator('#commuFeedback.is-wrong').count(), 1);
-            await shot('choice-wrong');
             await next.click();
 
             // q3 sort: one item goes to the wrong group.

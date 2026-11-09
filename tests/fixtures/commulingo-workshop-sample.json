@@ -38,6 +38,48 @@
      "questions": [
       {
        "id": "q1",
+       "type": "multiple_choice",
+       "points": 2,
+       "answer": 0,
+       "prompt": {
+        "ko": "휴전 뒤에도 파리의 국민방위대는 대포 수백 문을 갖고 있었다. 1871년 3월 18일 티에르 정부가 이 대포를 빼앗으려 한 까닭은 무엇인가?",
+        "en": "After the armistice the National Guard of Paris still held several hundred cannons. Why did the Thiers government try to seize them on 18 March 1871?"
+       },
+       "choices": {
+        "ko": [
+         "무장한 파리 노동자들을 무장 해제하려고",
+         "프로이센군에 배상금 대신 넘겨주기로 약속했기 때문에",
+         "지방 농민 봉기를 진압하는 데 쓸 포가 모자랐기 때문에",
+         "국민방위대가 대포를 왕당파에게 팔려 했기 때문에"
+        ],
+        "en": [
+         "To disarm the armed workers of Paris",
+         "Because it had promised them to the Prussians in place of the indemnity",
+         "Because it lacked guns to put down peasant risings in the provinces",
+         "Because the National Guard meant to sell the cannons to the royalists"
+        ]
+       },
+       "choiceFeedback": {
+        "ko": [
+         "정부에게 문제는 대포가 아니라 그것을 쥔 무장한 파리였다.",
+         "휴전 조건은 배상금과 영토였고 국민방위대의 대포는 넘길 대상이 아니었다.",
+         "당시 정부가 두려워한 것은 지방 농민이 아니라 수도의 무장한 노동자였다.",
+         "대포는 시민 모금으로 만든 것이었고 국민방위대는 이를 지키려 했다."
+        ],
+        "en": [
+         "For the government the problem was not the guns but armed Paris holding them.",
+         "The armistice terms were an indemnity and territory; the Guard's cannons were not part of them.",
+         "What the government feared then was not provincial peasants but the armed workers of the capital.",
+         "The cannons had been paid for by public subscription and the Guard meant to keep them."
+        ]
+       },
+       "explanation": {
+        "ko": "포위 동안 파리 노동자 대부분이 국민방위대에 들어가 무기를 쥐었다. 휴전 뒤 정부는 이 무장한 수도를 그대로 두고는 통치할 수 없다고 보았고, 대포 탈취는 무장 해제의 첫 단계였다.",
+        "en": "During the siege most Paris workers had joined the National Guard and held arms. After the armistice the government judged it could not rule with the capital armed, and taking the cannons was the first step of disarming it."
+       }
+      },
+      {
+       "id": "q2",
        "type": "order",
        "points": 2,
        "prompt": {
@@ -79,48 +121,6 @@
        "explanation": {
         "ko": "코뮌은 패전과 휴전 뒤에 섰다. 포위를 견딘 파리의 국민방위대는 무장한 채 남아 있었고, 정부가 그 대포를 빼앗으려다 실패한 3월 18일이 봉기의 시작이 되었다. 선거는 그 여드레 뒤였다.",
         "en": "The Commune came after defeat and armistice. The National Guard of besieged Paris had kept its arms, and 18 March, when the government failed to take its cannons, became the start of the rising. The election followed eight days later."
-       }
-      },
-      {
-       "id": "q2",
-       "type": "multiple_choice",
-       "points": 2,
-       "answer": 0,
-       "prompt": {
-        "ko": "휴전 뒤에도 파리의 국민방위대는 대포 수백 문을 갖고 있었다. 1871년 3월 18일 티에르 정부가 이 대포를 빼앗으려 한 까닭은 무엇인가?",
-        "en": "After the armistice the National Guard of Paris still held several hundred cannons. Why did the Thiers government try to seize them on 18 March 1871?"
-       },
-       "choices": {
-        "ko": [
-         "무장한 파리 노동자들을 무장 해제하려고",
-         "프로이센군에 배상금 대신 넘겨주기로 약속했기 때문에",
-         "지방 농민 봉기를 진압하는 데 쓸 포가 모자랐기 때문에",
-         "국민방위대가 대포를 왕당파에게 팔려 했기 때문에"
-        ],
-        "en": [
-         "To disarm the armed workers of Paris",
-         "Because it had promised them to the Prussians in place of the indemnity",
-         "Because it lacked guns to put down peasant risings in the provinces",
-         "Because the National Guard meant to sell the cannons to the royalists"
-        ]
-       },
-       "choiceFeedback": {
-        "ko": [
-         "정부에게 문제는 대포가 아니라 그것을 쥔 무장한 파리였다.",
-         "휴전 조건은 배상금과 영토였고 국민방위대의 대포는 넘길 대상이 아니었다.",
-         "당시 정부가 두려워한 것은 지방 농민이 아니라 수도의 무장한 노동자였다.",
-         "대포는 시민 모금으로 만든 것이었고 국민방위대는 이를 지키려 했다."
-        ],
-        "en": [
-         "For the government the problem was not the guns but armed Paris holding them.",
-         "The armistice terms were an indemnity and territory; the Guard's cannons were not part of them.",
-         "What the government feared then was not provincial peasants but the armed workers of the capital.",
-         "The cannons had been paid for by public subscription and the Guard meant to keep them."
-        ]
-       },
-       "explanation": {
-        "ko": "포위 동안 파리 노동자 대부분이 국민방위대에 들어가 무기를 쥐었다. 휴전 뒤 정부는 이 무장한 수도를 그대로 두고는 통치할 수 없다고 보았고, 대포 탈취는 무장 해제의 첫 단계였다.",
-        "en": "During the siege most Paris workers had joined the National Guard and held arms. After the armistice the government judged it could not rule with the capital armed, and taking the cannons was the first step of disarming it."
        }
       },
       {

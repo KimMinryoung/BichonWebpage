@@ -25,9 +25,9 @@ assert.equal(gateCourseWrite({ key, next: sample, prev: null, others: [] }).ques
 assert.equal(gateCourseWrite({ key, next: sample, prev: sample, others: [] }).questionsChanged, 0);
 
 // order
-assert.match(broken(q => { q[0].items.ko.splice(2); q[0].items.en.splice(2); }), /items\.ko needs 3-6/);
-assert.match(broken(q => { q[0].items.en.pop(); }), /items ko\/en lengths differ/);
-assert.match(broken(q => { q[0].itemNotes.ko.pop(); q[0].itemNotes.en.pop(); }), /one note per item/);
+assert.match(broken(q => { q[1].items.ko.splice(2); q[1].items.en.splice(2); }), /items\.ko needs 3-6/);
+assert.match(broken(q => { q[1].items.en.pop(); }), /items ko\/en lengths differ/);
+assert.match(broken(q => { q[1].itemNotes.ko.pop(); q[1].itemNotes.en.pop(); }), /one note per item/);
 // sort
 assert.match(broken(q => { q[2].items.forEach(item => { item.group = 0; }); }), /leaves a group without items/);
 assert.match(broken(q => { q[2].items[0].group = 5; }), /group must be a group index/);
@@ -38,9 +38,11 @@ assert.match(broken(q => { q[3].distractors.ko[0] = '국가기구'; }), /repeats
 assert.match(broken(q => { q[3].text.en = 'The working class cannot lay hold of the [[state machinery.'; }), /unclosed|needs 1-3/);
 // the mix: at most half multiple choice, two kinds of activity, the correct
 // choice rarely the longest
-assert.match(broken(q => { q[0] = { ...clone(q[1]), id: 'q1', prompt: { ko: '다른 물음으로 바꾼 객관식 문항이다. 무엇인가?', en: 'A different multiple-choice question put here. What is it?' } }; }), /at most half/);
-assert.match(broken(q => { q[2] = { ...clone(q[0]), id: 'q3', prompt: { ko: '같은 유형을 한 번 더 넣은 순서 문항이다.', en: 'One more ordering question of the same kind.' } }; q[3] = { ...clone(q[0]), id: 'q4', prompt: { ko: '같은 유형을 또 넣은 순서 문항이다.', en: 'Yet another ordering question of the same kind.' } }; }), /at least two of order, sort and cloze/);
-assert.match(broken(q => { [q[1], q[4]].forEach(item => { item.choices.ko[0] += ' 그리고 이렇게 가장 긴 보기가 된다'; }); }), /correct choice is the longest in 2 of 2/);
+assert.match(broken(q => { q[1] = { ...clone(q[0]), id: 'q2', prompt: { ko: '다른 물음으로 바꾼 객관식 문항이다. 무엇인가?', en: 'A different multiple-choice question put here. What is it?' } }; }), /at most half/);
+assert.match(broken(q => { q[2] = { ...clone(q[1]), id: 'q3', prompt: { ko: '같은 유형을 한 번 더 넣은 순서 문항이다.', en: 'One more ordering question of the same kind.' } }; q[3] = { ...clone(q[1]), id: 'q4', prompt: { ko: '같은 유형을 또 넣은 순서 문항이다.', en: 'Yet another ordering question of the same kind.' } }; }), /at least two of order, sort and cloze/);
+assert.match(broken(q => { [q[0], q[4]].forEach(item => { item.choices.ko[0] += ' 그리고 이렇게 가장 긴 보기가 된다'; }); }), /correct choice is the longest in 2 of 2/);
+// the lesson opens with a question answered in one tap
+assert.match(broken(q => { [q[0], q[1]] = [{ ...q[1], id: 'q1' }, { ...q[0], id: 'q2' }]; }), /must open with a multiple-choice question/);
 // the chapter closes on a takeaway
 assert.match(broken((q, course) => { delete course.chapters[0].takeaway; }), /takeaway must be localized/);
 // activities belong to the workshop format only
@@ -48,8 +50,8 @@ assert.match(broken((q, course) => { course.format = 'short-learning'; }), /type
 
 // A changed order or grouping under the same id is a replaced question.
 const reordered = clone(sample);
-questionsOf(reordered)[0].prompt.ko = '전혀 다른 사건들을 묻는 새 물음으로 바꾸었다.';
-questionsOf(reordered)[0].items.ko = ['가', '나', '다', '라', '마'].map(letter => letter + ' 항목으로 완전히 바꾼 내용');
+questionsOf(reordered)[1].prompt.ko = '전혀 다른 사건들을 묻는 새 물음으로 바꾸었다.';
+questionsOf(reordered)[1].items.ko = ['가', '나', '다', '라', '마'].map(letter => letter + ' 항목으로 완전히 바꾼 내용');
 assert.throws(() => gateCourseWrite({ key, next: reordered, prev: sample, others: [] }), /\[question-id\]/);
 
 // The lesson payload carries the takeaway and the activity fields untouched.
@@ -57,6 +59,6 @@ const chapter = sample.chapters[0];
 const payload = publicLessonPayload(sample, chapter, chapter.lessons[0]);
 assert.equal(payload.format, 'workshop');
 assert.deepEqual(payload.takeaway, chapter.takeaway);
-assert.deepEqual(payload.questions.map(question => question.type), ['order', 'multiple_choice', 'sort', 'cloze', 'multiple_choice']);
+assert.deepEqual(payload.questions.map(question => question.type), ['multiple_choice', 'order', 'sort', 'cloze', 'multiple_choice']);
 
 console.log(`Workshop format: sample, activity shapes, mix and id checks passed (${path.basename(__filename)})`);

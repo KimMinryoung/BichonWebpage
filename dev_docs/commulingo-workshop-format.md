@@ -22,7 +22,7 @@
 | `type` | 필드 | 화면 |
 | --- | --- | --- |
 | `multiple_choice` | 다른 강좌와 같다(4지선다, `answer: 0`, `choiceFeedback`) | 보기 선택 |
-| `order` | `items{ko[],en[]}` 3~6개를 **정답 순서로** 저장. 선택 `itemNotes{ko[],en[]}`(항목마다 하나, 날짜 등) | ▲▼로 옮기고 「확인」. 맞은 자리에 `itemNotes`가 붙고, 틀리면 올바른 순서를 아래에 보인다 |
+| `order` | `items{ko[],en[]}` 3~6개를 **정답 순서로** 저장. 선택 `itemNotes{ko[],en[]}`(항목마다 하나, 날짜 등) | 행을 끌어 옮기고(터치는 오른쪽 손잡이, 키보드는 손잡이에서 ↑↓) 「확인」. 맞은 자리에 `itemNotes`가 붙고, 틀리면 올바른 순서를 아래에 보인다 |
 | `sort` | `groups{ko[],en[]}` 2~3개, `items[{ko,en,group}]` 4~8개(`group`은 묶음 번호, 묶음마다 하나 이상) | 항목을 누르고 묶음 이름을 눌러 넣는다. 다 넣어야 「확인」이 켜진다. 틀린 항목에 「→ 맞는 묶음」 |
 | `cloze` | `text{ko,en}`에 빈칸을 `[[낱말]]`로 표시(언어마다 1~3개, 개수 같게). `distractors{ko[],en[]}` 2~4개 | 낱말 상자에서 골라 채운다. 채운 빈칸을 누르면 비워진다 |
 
@@ -33,19 +33,21 @@
 ### 검증(`scripts/lib/commulingo-checks.js`)
 
 - 새 유형은 `workshop` 강좌에서만 허용된다(`ctx.workshop`). 유형별 검사는 `checkOrder`·`checkSort`·`checkCloze`.
-- 배합(`checkActivityMix`, 규칙 이름 `activity-mix`): 객관식은 레슨 문항의 절반 이하, `order`·`sort`·`cloze` 가운데 두 가지 이상, 객관식 가운데 정답이 가장 긴 보기인 문항은 1/3 이하(언어별).
+- 배합(`checkActivityMix`, 규칙 이름 `activity-mix`): 첫 문항은 객관식(한 번 눌러 답하는 문항으로 연다. 첫 화면이 다섯 항목 순서 맞추기였던 견본은 「풀기 싫어져서 껐다」는 평을 받았다), 객관식은 레슨 문항의 절반 이하, `order`·`sort`·`cloze` 가운데 두 가지 이상, 객관식 가운데 정답이 가장 긴 보기인 문항은 1/3 이하(언어별).
 - 빈칸 낱말은 한국어 14자·영어 30자 이하, 오답 낱말은 정답과 겹치지 않는다.
 - 문항 id 재사용 판정(`course-validation.js` `answerSignature`)은 순서·묶음 배치·빈칸 지문을 답으로 본다.
 - 쇼츠(`data/commulingo/shorts.js`)는 객관식만 카드로 만들므로 활동 문항은 나오지 않는다.
 
 ### 플레이어(`public/js/commulingo.js`)
 
-`renderQuestion`이 유형에 따라 `renderChoices` 또는 `renderActivity`(`renderOrder`·`renderSort`·`renderCloze`)를 부른다. 활동에서는 아래 실행 버튼이 「확인」이 되고(`pendingCheck`), 확인 뒤 「다음」으로 돌아온다. 채점 뒤의 기록·계측·해설은 `settleAnswer` 하나가 맡는다. 순서 목록은 훈련장 연표 덱의 `.commu-drill-order-*` 스타일을 같이 쓴다. 숫자 키 1~4는 객관식에서만 듣는다.
+`renderQuestion`이 유형에 따라 `renderChoices` 또는 `renderActivity`(`renderOrder`·`renderSort`·`renderCloze`)를 부른다. 활동에서는 아래 실행 버튼이 「확인」이 되고(`pendingCheck`), 확인 뒤 「다음」으로 돌아온다. 채점 뒤의 기록·계측·해설은 `settleAnswer` 하나가 맡는다. 순서 목록은 훈련장 연표 덱의 `.commu-drill-order-*` 스타일을 같이 쓰되 ▲▼ 버튼 대신 끌어 놓기(pointer 이벤트)로 옮긴다. 숫자 키 1~4는 객관식에서만 듣는다.
 
 ### 강좌 쓰기
 
 `course/<id>` 데이터 문서로 넣는다(`data_document_put`, dry run 먼저). 견본은 `tests/fixtures/commulingo-workshop-sample.json`(파리 코뮌 한 편, 다섯 문항)이다. 작성 기준:
 
+- 강좌 `description`과 편 `summary`에는 다루는 내용만 쓴다. 「순서 맞추기, 빈칸 채우기로 따라갑니다」 같은 기능·형식 설명을 넣지 않는다.
+- 순서 문항은 항목 네 개 안팎으로, 항목 글은 짧게 쓴다.
 - 문항은 그 문항의 지문·맥락 줄만으로 풀 수 있게 쓴다. 날짜 외우기가 아니라 앞뒤 관계로 순서를 정할 수 있는 사건을 고른다.
 - 분류 항목과 객관식 오답은 실제 역사적 입장·조치로 짠다.
 - 한국어와 영어를 함께 쓴다.

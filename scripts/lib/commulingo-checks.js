@@ -574,7 +574,8 @@ function checkChapter(out, chapter, collectionId, ctx) {
 }
 
 // A workshop lesson is not a quiz with a few extras: at most half of it is
-// multiple choice and it uses at least two kinds of activity. Among its
+// multiple choice and it uses at least two kinds of activity; it opens with
+// a multiple-choice question. Among its
 // multiple-choice questions the correct choice may be the longest in at most
 // a third (a correct answer that is always the fullest sentence is found
 // without reading).
@@ -583,6 +584,9 @@ function checkActivityMix(out, questions, label, lessonLabel) {
   const kinds = new Set(questions.filter(function(question) { return question && ACTIVITY_TYPES.has(question.type); }).map(function(question) { return question.type; }));
   if (choice.length > Math.floor(questions.length / 2)) out.add('activity-mix', label, lessonLabel + ' has ' + choice.length + ' multiple-choice questions of ' + questions.length + ' (at most half)');
   if (kinds.size < 2) out.add('activity-mix', label, lessonLabel + ' needs at least two of order, sort and cloze');
+  // The lesson opens on a question answered with one tap: an arrangement of
+  // several items as the first screen turns learners away (2026-11-09).
+  if (questions[0] && questions[0].type !== 'multiple_choice') out.add('activity-mix', label, lessonLabel + ' must open with a multiple-choice question');
   ['ko', 'en'].forEach(function(locale) {
     const longest = choice.filter(function(question) {
       const choices = question.choices && question.choices[locale];
