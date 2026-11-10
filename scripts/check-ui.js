@@ -63,7 +63,9 @@ for (const file of walk(viewsRoot, '.ejs')) {
 const postcss = require('postcss');
 const houseSheets = ['games.css', 'commulingo.css', 'style.css', 'commulingo-doc.css', 'ui.css', 'report.css', 'commulingo-crumb.css'];
 // The person card and person head are the owner's own design; their sizes stay as written.
-const ownerDesigned = /commu-person-|commu-career-|commu-fate|commu-scene-chip/;
+const ownerDesigned = /commu-person-(card|top|idbox|medal|cyr|epithet|moment|bio|career|scenes|more|alias|detail-(head|top|title|badge)|meta|years|affiliation|position|role-tag)|commu-career-|commu-fate|commu-scene-chip/;
+// The games keep their own display sizes inside the board and its posters.
+const gameDisplay = /strike|civil-war|game-poster/;
 const roundedAllowed = /commu-flag-link|commu-tenure-swatch/;
 for (const sheet of houseSheets) {
     const file = path.join(root, 'public', 'css', sheet);
@@ -77,7 +79,7 @@ for (const sheet of houseSheets) {
             errors.push(`${where}: corners are square (border-radius ${decl.value})`);
         }
         const size = decl.prop === 'font-size' && decl.value.match(/^(\d*\.?\d+)(rem|px)$/);
-        if (size && (size[2] === 'px' ? size[1] / 16 : +size[1]) <= 1.4 && !ownerDesigned.test(selector)) {
+        if (size && !ownerDesigned.test(selector) && !gameDisplay.test(selector)) {
             errors.push(`${where}: use a --text-* step instead of ${decl.value}`);
         }
     });

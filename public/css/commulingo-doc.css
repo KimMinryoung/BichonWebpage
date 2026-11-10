@@ -70,7 +70,7 @@
 /* The document head is the bordered box of the other detail pages: the title,
    and under it, attached, the line of entries the document belongs to. */
 .book article > h1:first-child {
-  font-size: 1.8em;
+  font-size: var(--text-2xl);
   margin: 0.6em 0 1.4rem;
   padding: 14px 16px;
   border: 1px solid var(--border);

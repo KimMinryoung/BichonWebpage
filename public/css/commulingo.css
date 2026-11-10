@@ -3991,7 +3991,7 @@ a.commu-person-role-tag:hover {
 .commu-person-detail-other-names {
     border-top: 1px dashed var(--border);
     color: var(--text-muted);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     line-height: 1.4;
     margin: 12px 0 0;
     padding-top: 10px;
@@ -4025,7 +4025,7 @@ a.commu-person-role-tag:hover {
 .commu-person-detail-section h2,
 .commu-hub-section h2 {
     color: var(--text-primary);
-    font-size: 1.24rem;
+    font-size: var(--text-lg);
     line-height: var(--leading-tight);
     margin: 0 0 12px;
 }
@@ -4040,7 +4040,7 @@ a.commu-person-role-tag:hover {
 
 .commu-person-markdown {
     color: var(--text-secondary);
-    font-size: 0.96rem;
+    font-size: var(--text-base);
     line-height: var(--leading-prose);
 }
 
@@ -4079,7 +4079,7 @@ a.commu-person-role-tag:hover {
 .commu-person-markdown h5,
 .commu-person-markdown h6 {
     color: var(--text-primary);
-    font-size: 1.05rem;
+    font-size: var(--text-md);
     line-height: var(--leading-snug);
     margin: 1.2em 0 0.5em;
 }
@@ -4144,7 +4144,7 @@ a.commu-person-role-tag:hover {
 
 .commu-hub-head h1 {
     color: var(--text-primary);
-    font-size: clamp(1.55rem, 3vw, 2.3rem);
+    font-size: var(--text-2xl);
     letter-spacing: 0;
     line-height: var(--leading-tight);
     margin: 2px 0 7px;
@@ -4166,7 +4166,7 @@ a.commu-person-role-tag:hover {
 }
 .commu-office-head-title { min-width: 0; }
 .commu-office-head-title h1 {
-    margin: 0; color: inherit; font-size: clamp(1.55rem, 3vw, 2.3rem);
+    margin: 0; color: inherit; font-size: var(--text-2xl);
     font-weight: var(--weight-heading); line-height: var(--leading-tight);
 }
 .commu-office-head-link { flex: 0 0 auto; color: var(--text-muted); font-size: var(--text-sm); }
@@ -4592,7 +4592,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
    under the UI text around it. */
 .commu-event-body .commu-person-markdown { line-height: var(--leading-prose); }
 .commu-event-body .commu-person-markdown h2 {
-    font-size: 1.22rem;
+    font-size: var(--text-lg);
     margin: 2em 0 .7em;
     padding-top: .9em;
     border-top: 1px solid var(--border);
@@ -4695,7 +4695,7 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
     line-height: var(--leading-prose);
 }
 .commu-event-people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .8rem; }
-.commu-event-person-relation, .commu-person-event-links em { display: block; color: var(--link); font-style: normal; font-weight: 700; font-size: .9rem; }
+.commu-event-person-relation, .commu-person-event-links em { display: block; color: var(--link); font-style: normal; font-weight: 700; font-size: var(--text-base); }
 .commu-event-people-grid strong, .commu-event-people-grid small { display: block; margin-top: .2rem; }
 /* Participation notes are supporting card copy, below the name and role. */
 .commu-event-people-grid > a > p {
@@ -4717,7 +4717,7 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 .commu-person-event-links a:hover span { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
 .commu-person-event-links a:hover em { color: var(--clr-cream); }
 .commu-person-event-links span { color: var(--text-muted); font-weight: 700; }
-.commu-person-event-links strong { font-size: 1.05rem; }
+.commu-person-event-links strong { font-size: var(--text-md); }
 .commu-person-event-links em, .commu-person-event-links small { grid-column: 2; }
 @media (max-width: 560px) { .commu-event-timeline-list li { grid-template-columns: 1fr; gap: .2rem; } .commu-person-event-links a { grid-template-columns: 1fr; } .commu-person-event-links em, .commu-person-event-links small { grid-column: 1; } }
 
@@ -6615,14 +6615,14 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 
 .commu-person-politburo-stints li {
-    font-size: 0.84rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-snug);
     white-space: nowrap;
 }
 
 .commu-person-politburo-note {
     color: var(--text-muted);
-    font-size: 0.84rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-snug);
     margin: 8px 0 0;
 }
@@ -6804,7 +6804,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 .commulingo-home .commulingo-hero h1 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: var(--text-2xl);
     letter-spacing: var(--tracking-home-title);
 }
 .commulingo-home-description {

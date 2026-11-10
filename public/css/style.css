@@ -130,6 +130,14 @@ h1, h2, h3 {
     font-weight: var(--weight-heading);
 }
 
+/* In-app browsers (X, Facebook, KakaoTalk…) enlarge page text by the phone's
+   system font size, and mobile browsers inflate it in landscape; the layout is
+   sized for the type scale as written. */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 body {
     background-color: var(--bg-canvas);
     color: var(--text-primary);
@@ -448,7 +456,7 @@ header {
 }
 
 header h1 {
-    font-size: 1.8rem;
+    font-size: var(--text-2xl);
     margin-bottom: 10px;
     letter-spacing: var(--tracking-heading);
 }
@@ -1447,7 +1455,7 @@ form {
 .login-box h1 {
     text-align: center;
     margin-bottom: 30px;
-    font-size: 1.5rem;
+    font-size: var(--text-2xl);
 }
 
 .auth-divider {
