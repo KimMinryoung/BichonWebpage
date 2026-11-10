@@ -260,7 +260,7 @@
   align-items: stretch;
   margin-top: clamp(2rem, 5vw, 3rem);
   padding: 0;
-  font-size: 0.9rem;
+  font-size: var(--text-base);
   line-height: var(--leading-normal);
 }
 
@@ -292,7 +292,7 @@
 }
 
 .doc-pager-dir {
-  font-size: 0.82rem;
+  font-size: var(--text-meta);
   color: var(--text-muted);
   white-space: nowrap;
 }
@@ -331,7 +331,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   font-variant-numeric: tabular-nums;
 }
 
@@ -385,7 +385,7 @@
 
 .doc-toc-pos {
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   white-space: nowrap;
 }
 
@@ -393,7 +393,7 @@
   margin-top: clamp(2rem, 5vw, 3rem);
   padding-top: 1rem;
   border-top: 1px solid var(--border);
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   line-height: var(--leading-relaxed);
   color: var(--text-muted);
 }
@@ -470,7 +470,7 @@
   background: var(--bg-surface);
   border: 1px solid var(--border);
   color: var(--text-primary);
-  font-size: 0.9rem;
+  font-size: var(--text-base);
   font-weight: 700;
   line-height: 1.45;
   overflow-wrap: anywhere;
@@ -523,7 +523,7 @@
 .doc-toc summary {
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: var(--text-base);
   color: var(--text-primary);
 }
 
@@ -612,7 +612,7 @@
    빛나면 상단 칩 줄을 자리만 옮겨 되살리는 셈이다. */
 .book .doc-refs {
   margin: -0.2rem 0 1.8rem;
-  font-size: 0.82rem;
+  font-size: var(--text-meta);
   line-height: var(--leading-prose);
   color: var(--text-muted);
   /* 본문 문단은 양쪽 맞춤이지만 이 줄은 아니다: 이름 목록이라 어절이 길고,
@@ -628,7 +628,7 @@
 
 .doc-refs-label {
   margin-right: 0.4rem;
-  font-size: 0.74rem;
+  font-size: var(--text-xs);
   letter-spacing: 0.04em;
   opacity: 0.7;
 }
@@ -643,7 +643,7 @@
   margin: 0 0 1.4rem;
   padding: 0.45rem 0.8rem;
   background: var(--bg-surface);
-  font-size: 0.88rem;
+  font-size: var(--text-sm);
   line-height: var(--leading-snug);
   text-align: left;
 }
@@ -853,7 +853,7 @@
   color: var(--text);
   border: 1px solid var(--border);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   font-weight: 400;
   line-height: var(--leading-snug);
   text-align: start;
@@ -870,7 +870,7 @@
 .doc-pop .doc-pop-label {
   display: block;
   color: var(--text-muted);
-  font-size: 0.72rem;
+  font-size: var(--text-xs);
   letter-spacing: 0.04em;
 }
 
@@ -891,7 +891,7 @@
 
 .doc-pop .doc-pop-jump {
   display: inline-block;
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
 }
 
 /* A number whose popover is up reads as pressed. */
@@ -1087,7 +1087,7 @@
   background: var(--bg-inset);
   color: var(--text-primary);
   font: inherit;
-  font-size: 1rem;
+  font-size: var(--text-md);
 }
 
 .doc-search-form input:focus-visible {
@@ -1116,7 +1116,7 @@
   margin: 0.6rem 0 0;
   white-space: pre-line;
   color: var(--text-muted);
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
 }
 
 .doc-search-status:empty {
@@ -1134,7 +1134,7 @@
   margin: 0 0 0.3rem;
   padding-bottom: 0.25rem;
   border-bottom: 1px solid var(--border);
-  font-size: 0.85rem;
+  font-size: var(--text-sm);
   font-weight: 600;
   color: var(--text-primary);
 }
@@ -1165,7 +1165,7 @@
   margin-inline: -0.5rem;
   padding: 0.35rem 0.5rem;
   color: var(--text-secondary);
-  font-size: 0.88rem;
+  font-size: var(--text-sm);
   line-height: var(--leading-normal);
   text-decoration: none;
 }
@@ -1180,7 +1180,7 @@
 .doc-search-section {
   display: block;
   color: var(--text-muted);
-  font-size: 0.78rem;
+  font-size: var(--text-xs);
 }
 
 .doc-search-snippet mark,
@@ -1209,7 +1209,7 @@
   max-width: calc(100vw - 2rem);
   border: 1px solid var(--border);
   background: var(--bg-surface);
-  font-size: 0.9rem;
+  font-size: var(--text-base);
   box-shadow: 0 4px 16px rgb(0 0 0 / 35%);
 }
 
@@ -1273,7 +1273,7 @@
   padding: 0 1rem;
   border-left: 1px solid var(--border);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: var(--text-base);
   color: var(--text-primary);
   text-decoration: none;
   white-space: nowrap;

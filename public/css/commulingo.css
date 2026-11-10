@@ -62,14 +62,14 @@
 
 .commulingo-hero-dict-label {
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     font-weight: var(--weight-emphasis);
     letter-spacing: 0.03em;
 }
 
 .commulingo-kicker {
     color: var(--link);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     font-weight: 700;
     letter-spacing: 0;
     margin-bottom: 8px;
@@ -77,7 +77,7 @@
 
 .commulingo-hero h1 {
     color: var(--text-primary);
-    font-size: 1.35rem;
+    font-size: var(--text-xl);
     margin-bottom: 4px;
 }
 
@@ -121,7 +121,7 @@
 .commulingo-genealogy-row span {
     flex: none;
     color: var(--text-muted);
-    font-size: .82rem;
+    font-size: var(--text-meta);
 }
 .commulingo-genealogy-row strong {
     font-weight: 600;
@@ -132,7 +132,7 @@
 .gen-guide {
     margin: 0;
     padding: 10px 20px;
-    font-size: .85rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-normal);
     color: var(--text-secondary);
 }
@@ -160,20 +160,20 @@
 .commulingo-total span {
     display: block;
     color: var(--link);
-    font-size: 1.15rem;
+    font-size: var(--text-lg);
     font-weight: var(--weight-emphasis);
 }
 
 .commulingo-total small {
     color: var(--text-muted);
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
 }
 
 .commulingo-status {
     border: 1px solid var(--border);
     background: var(--card-bg);
     color: var(--text-muted);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     padding: 10px 14px;
 }
 
@@ -194,13 +194,13 @@
 
 .commu-part-header h3 {
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: var(--text-md);
     margin: 0 0 4px;
 }
 
 .commu-part-header p {
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     margin: 0;
 }
 
@@ -230,7 +230,7 @@
 }
 
 .commu-chapter-card h2 {
-    font-size: 1.05rem;
+    font-size: var(--text-md);
     line-height: var(--leading-snug);
     margin: 0;
 }
@@ -239,7 +239,7 @@
     border: 1px solid var(--clr-cream-light);
     color: var(--clr-cream-light);
     flex: 0 0 auto;
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     font-weight: var(--weight-emphasis);
     line-height: var(--leading-none);
     padding: 5px 7px;
@@ -256,7 +256,7 @@
 .commu-lesson-summary {
     color: var(--text-secondary);
     display: -webkit-box;
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-relaxed);
     text-align: justify;
     word-break: normal;
@@ -269,7 +269,7 @@
 .commu-lesson-focus {
     border-left: 3px solid var(--accent);
     color: var(--text-primary);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-relaxed);
     text-align: justify;
     word-break: normal;
@@ -280,7 +280,7 @@
 .commu-chapter-minutes {
     color: var(--text-muted);
     flex: 0 0 auto;
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     line-height: var(--leading-snug);
     padding-top: 2px;
     white-space: nowrap;
@@ -299,7 +299,7 @@
     border: 1px solid var(--border);
     background: var(--bg-base);
     color: var(--text-secondary);
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
     line-height: var(--leading-snug);
     padding: 3px 7px;
 }
@@ -370,7 +370,7 @@
 
 .commu-link-where {
     display: inline-block;
-    font-size: 0.7rem;
+    font-size: var(--text-2xs);
     font-weight: 600;
     line-height: 1.3;
     margin-right: 6px;
@@ -482,14 +482,14 @@
 }
 
 .commu-lesson-action-top strong {
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-tight);
 }
 
 .commu-lesson-action-top span,
 .commu-lesson-action .commu-lesson-meta {
     color: var(--text-muted);
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
 }
 
 .commu-lesson-meta {
@@ -497,7 +497,7 @@
     justify-content: space-between;
     gap: 8px;
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
 }
 
 .commu-progress-track,
@@ -536,7 +536,7 @@
     color: var(--link);
     cursor: pointer;
     font: inherit;
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     font-weight: 600;
     padding: 0 16px;
 }
@@ -552,7 +552,7 @@
     margin-left: auto;
     padding: 8px 12px;
     color: var(--text-muted);
-    font-size: 0.86rem;
+    font-size: var(--text-sm);
 }
 
 .commu-question {
@@ -577,7 +577,7 @@
 }
 
 .commu-intro h2 {
-    font-size: 1.18rem;
+    font-size: var(--text-lg);
     margin: 0 0 10px;
 }
 
@@ -626,13 +626,13 @@
 
 .commu-diagram-node strong {
     color: var(--link);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-tight);
 }
 
 .commu-diagram-node small {
     color: var(--text-secondary);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     line-height: var(--leading-snug);
 }
 
@@ -651,7 +651,7 @@
 .commu-flow figcaption,
 .commu-contrast figcaption {
     color: var(--link);
-    font-size: 0.94rem;
+    font-size: var(--text-base);
     font-weight: 700;
     margin-bottom: 10px;
 }
@@ -675,13 +675,13 @@
 
 .commu-flow-step strong {
     color: var(--link);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-tight);
 }
 
 .commu-flow-step small {
     color: var(--text-secondary);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     line-height: var(--leading-snug);
 }
 
@@ -689,7 +689,7 @@
     align-self: center;
     color: var(--text-secondary);
     flex: 0 0 auto;
-    font-size: 1rem;
+    font-size: var(--text-md);
     padding: 0 2px;
 }
 
@@ -714,14 +714,14 @@
 
 .commu-contrast-side strong {
     color: var(--link);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-tight);
 }
 
 .commu-contrast-side ul {
     color: var(--text-secondary);
     display: grid;
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     gap: 6px;
     line-height: var(--leading-snug);
     margin: 0;
@@ -742,14 +742,14 @@
 
 .commu-brief-section h3 {
     color: var(--link);
-    font-size: 0.94rem;
+    font-size: var(--text-base);
     margin: 0;
 }
 
 .commu-brief-section p,
 .commu-brief-section ul {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     line-height: var(--leading-prose);
     margin: 0;
 }
@@ -768,7 +768,7 @@
 .commu-brief-table table {
     border-collapse: collapse;
     color: var(--text-secondary);
-    font-size: 0.86rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-snug);
     min-width: 640px;
     width: 100%;
@@ -811,7 +811,7 @@
    shows the setup in regular weight and only the question itself in bold
    (commulingo.js promptHtml). */
 .commu-question h2 {
-    font-size: 1.25rem;
+    font-size: var(--text-xl);
     line-height: var(--leading-snug);
     margin-bottom: 18px;
     word-break: keep-all;
@@ -819,7 +819,7 @@
 }
 
 .commu-question h2.is-long {
-    font-size: 1.08rem;
+    font-size: var(--text-lg);
     line-height: var(--leading-relaxed);
 }
 
@@ -918,7 +918,7 @@
 
 .commu-feedback-marker {
     color: var(--text-primary);
-    font-size: 1rem;
+    font-size: var(--text-md);
     font-weight: 700;
 }
 
@@ -937,12 +937,12 @@
     color: var(--text-primary);
     display: grid;
     gap: 6px;
-    font-size: 0.92rem;
+    font-size: var(--text-base);
     line-height: var(--leading-prose);
 }
 
 .commu-source-label {
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
     font-weight: 600;
     letter-spacing: 0.04em;
     color: var(--text-muted);
@@ -961,7 +961,7 @@
 .commu-source-link {
     justify-self: start;
     color: var(--link);
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     text-decoration: none;
 }
 
@@ -984,7 +984,7 @@
 
 .commu-passage-context {
     color: var(--text-muted);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-relaxed);
     margin: 0;
 }
@@ -1008,11 +1008,11 @@
 
 /* Under a passage the question is a line about the text above it. */
 .commu-quiz.is-reading .commu-question h2 {
-    font-size: 1.12rem;
+    font-size: var(--text-lg);
 }
 
 .commu-quiz.is-reading .commu-question h2.is-long {
-    font-size: 1.04rem;
+    font-size: var(--text-md);
 }
 
 /* What the chosen answer got right or missed: the first thing read after the
@@ -1030,7 +1030,7 @@
     border: 1px solid color-mix(in srgb, var(--accent-green) 58%, var(--border));
     color: var(--text-primary);
     display: inline-flex;
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     font-weight: var(--weight-emphasis);
     line-height: var(--leading-none);
     padding: 8px 10px;
@@ -1179,13 +1179,13 @@
 
 .commu-resume-label {
     color: var(--link);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     font-weight: var(--weight-emphasis);
 }
 
 .commu-resume-target {
     color: var(--text-secondary);
-    font-size: 0.92rem;
+    font-size: var(--text-base);
 }
 
 .commulingo-book-groups {
@@ -1209,7 +1209,7 @@
 .commu-term-group-head {
     border-left: 4px solid var(--accent);
     color: var(--text-primary);
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     font-weight: var(--weight-emphasis);
     margin: 0 0 12px;
     padding: 2px 0 2px 10px;
@@ -1252,7 +1252,7 @@
 .commu-book-card:hover .commu-book-progress-track > span { background: var(--clr-cream, #f8edca); }
 
 .commu-book-card h3 {
-    font-size: 1rem;
+    font-size: var(--text-md);
     line-height: var(--leading-snug);
     margin: 0;
     overflow-wrap: anywhere;
@@ -1261,7 +1261,7 @@
 
 .commu-book-meta {
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     margin: 0;
     white-space: nowrap;
 }
@@ -1273,7 +1273,7 @@
 
 .commu-book-desc {
     color: var(--text-secondary);
-    font-size: 0.84rem;
+    font-size: var(--text-sm);
     grid-column: 1 / -1;
     margin: 0;
     overflow: hidden;
@@ -1318,7 +1318,7 @@
 .commu-book-jump a {
     border: 1px solid var(--border);
     color: var(--text-primary);
-    font-size: 0.86rem;
+    font-size: var(--text-sm);
     padding: 5px 10px;
     text-decoration: none;
 }
@@ -1331,7 +1331,7 @@
 
 .commu-book-jump a span {
     color: var(--text-muted);
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
 }
 
 .commu-book-jump a:hover span {
@@ -1355,12 +1355,12 @@
     }
 
     .commu-question h2 {
-        font-size: 1.14rem;
+        font-size: var(--text-lg);
     }
 
     .commu-question h2.is-long,
     .commu-quiz.is-reading .commu-question h2.is-long {
-        font-size: 1.02rem;
+        font-size: var(--text-md);
     }
 
     .commu-choices.is-paired {
@@ -1473,7 +1473,7 @@
 
 .commu-graph-kicker {
     color: var(--link);
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -1482,7 +1482,7 @@
 .commu-graph-question {
     margin: 8px 0 10px;
     color: var(--text-primary);
-    font-size: 1.4rem;
+    font-size: var(--text-xl);
     line-height: var(--leading-tight);
 }
 
@@ -1495,7 +1495,7 @@
 .commu-graph-hint {
     margin: 0;
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
 }
 
 .commu-graph-legend {
@@ -1505,7 +1505,7 @@
 }
 
 .commu-graph-legend-item {
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     padding: 3px 10px;
     border: 1px solid var(--border);
@@ -1514,7 +1514,7 @@
 
 .commu-graph-legend-item.is-plain { border-color: var(--link); color: var(--link); }
 .commu-graph-legend-item.is-engels { border-color: var(--accent-red); color: var(--accent-red); }
-.commu-graph-legend-item.is-critique { border-color: var(--accent-green); color: var(--accent-green); }
+.commu-graph-legend-item.is-critique { border-color: var(--accent-green); color: var(--link); }
 
 .commu-graph-chain {
     list-style: none;
@@ -1544,7 +1544,7 @@
     bottom: -26px;
     transform: translateX(-50%);
     color: var(--link);
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     line-height: var(--leading-none);
 }
 
@@ -1573,7 +1573,7 @@
     background: var(--accent);
     color: #fff;
     font-weight: 700;
-    font-size: 0.9rem;
+    font-size: var(--text-base);
 }
 
 .commu-graph-node-text {
@@ -1585,12 +1585,12 @@
 
 .commu-graph-node-text strong {
     color: var(--text-primary);
-    font-size: 1.05rem;
+    font-size: var(--text-md);
 }
 
 .commu-graph-node-text small {
     color: var(--text-muted);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-snug);
 }
 
@@ -1603,7 +1603,7 @@
     border-radius: 50%;
     border: 1px solid var(--border);
     color: var(--text-secondary);
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     line-height: var(--leading-none);
 }
 
@@ -1635,7 +1635,7 @@
 
 .commu-graph-stage-label {
     display: block;
-    font-size: 0.74rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -1645,7 +1645,7 @@
 
 .commu-graph-stage.is-plain .commu-graph-stage-label { color: var(--link); }
 .commu-graph-stage.is-engels .commu-graph-stage-label { color: var(--accent-red); }
-.commu-graph-stage.is-critique .commu-graph-stage-label { color: var(--accent-green); }
+.commu-graph-stage.is-critique .commu-graph-stage-label { color: var(--link); }
 
 .commu-graph-stage p {
     margin: 0;
@@ -1661,13 +1661,13 @@
 .commu-myths-title {
     margin: 0 0 4px;
     color: var(--text-primary);
-    font-size: 1.25rem;
+    font-size: var(--text-xl);
 }
 
 .commu-myths-hint {
     margin: 0 0 14px;
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
 }
 
 .commu-myth-grid {
@@ -1691,7 +1691,7 @@
 .commu-myth-card:hover { border-color: var(--accent-red); }
 
 .commu-myth-tag {
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -1707,7 +1707,7 @@
 
 .commu-myth-verdict {
     align-self: flex-start;
-    font-size: 0.76rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     padding: 2px 10px;
     background: var(--accent-red);
@@ -1725,7 +1725,7 @@
 }
 
 .commu-myth-reveal {
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     color: var(--text-muted);
 }
 
@@ -1740,13 +1740,13 @@
 .commu-section-title {
     margin: 0 0 4px;
     color: var(--text-primary);
-    font-size: 1.25rem;
+    font-size: var(--text-xl);
 }
 
 .commu-section-hint {
     margin: 0 0 14px;
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
 }
 
 .commu-case-grid {
@@ -1770,7 +1770,7 @@
 .commu-case-card:hover { border-color: var(--link); }
 
 .commu-case-label {
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -1800,7 +1800,7 @@
 
 .commu-case-answer-tag {
     display: block;
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     text-transform: uppercase;
     color: var(--link);
@@ -1814,7 +1814,7 @@
 }
 
 .commu-case-reveal {
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     color: var(--text-muted);
 }
 
@@ -1836,7 +1836,7 @@
 }
 
 .commu-debate-topic {
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -1853,7 +1853,7 @@
 
 .commu-debate-who {
     display: block;
-    font-size: 0.74rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 3px;
@@ -1875,7 +1875,7 @@
     background: none;
     color: var(--text-primary);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     cursor: pointer;
 }
 
@@ -1896,7 +1896,7 @@
 }
 
 @media (max-width: 640px) {
-    .commu-graph-question { font-size: 1.2rem; }
+    .commu-graph-question { font-size: var(--text-lg); }
     .commu-graph-node-head { padding: 14px; gap: 10px; }
     .commu-graph-stages { padding: 4px 14px 14px; }
     .commu-myth-grid { grid-template-columns: 1fr; }
@@ -1924,7 +1924,7 @@
 }
 
 .commu-dc-stance {
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     padding: 3px 10px;
     border: 1px solid var(--border);
@@ -1943,7 +1943,7 @@
 }
 
 .commu-dc-progress > span:first-child {
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     font-weight: 700;
     color: var(--text-secondary);
     white-space: nowrap;
@@ -1969,7 +1969,7 @@
 }
 
 .commu-dc-era-range {
-    font-size: 0.74rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     letter-spacing: 0.08em;
     color: var(--link);
@@ -1977,14 +1977,14 @@
 
 .commu-dc-era-head h2 {
     margin: 4px 0 6px;
-    font-size: 1.15rem;
+    font-size: var(--text-lg);
     color: var(--text-primary);
 }
 
 .commu-dc-era-head p {
     margin: 0;
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     line-height: var(--leading-normal);
 }
 
@@ -2023,7 +2023,7 @@
 
 .commu-dc-date {
     flex-shrink: 0;
-    font-size: 0.76rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     color: var(--link);
     min-width: 92px;
@@ -2032,13 +2032,13 @@
 .commu-dc-title { flex: 1; }
 
 .commu-dc-title strong {
-    font-size: 0.98rem;
+    font-size: var(--text-md);
     line-height: var(--leading-snug);
 }
 
 .commu-dc-status {
     flex-shrink: 0;
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
     color: var(--text-muted);
 }
 
@@ -2056,14 +2056,14 @@
 
 .commu-dc-role {
     margin: 0;
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     color: var(--text-secondary);
 }
 
 .commu-dc-role span {
     display: inline-block;
     margin-right: 6px;
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -2078,7 +2078,7 @@
 
 .commu-dc-question {
     margin: 0;
-    font-size: 1.02rem;
+    font-size: var(--text-md);
     font-weight: 700;
     color: var(--text-primary);
 }
@@ -2098,7 +2098,7 @@
     color: var(--text-primary);
     text-align: left;
     cursor: pointer;
-    font-size: 0.92rem;
+    font-size: var(--text-base);
     line-height: var(--leading-snug);
 }
 
@@ -2123,7 +2123,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-dc-mark svg { width: 15px; height: 15px; }
 .commu-dc-mark.is-chosen { background: var(--text-primary); color: var(--bg-surface); }
 .commu-dc-mark.is-actual { border: 2px solid var(--text-primary); color: var(--text-primary); }
-.commu-dc-key { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; color: var(--text-muted); font-size: 0.76rem; }
+.commu-dc-key { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; color: var(--text-muted); font-size: var(--text-xs); }
 .commu-dc-key .commu-dc-mark { width: 18px; height: 18px; }
 .commu-dc-key .commu-dc-mark svg { width: 12px; height: 12px; }
 
@@ -2137,7 +2137,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
 .commu-dc-option-note {
     margin: 8px 0 0;
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     font-weight: 400;
     color: var(--text-secondary);
     line-height: var(--leading-normal);
@@ -2156,7 +2156,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
 .commu-dc-block-label {
     display: block;
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -2181,7 +2181,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     background: none;
     color: var(--text-primary);
     font-weight: 600;
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     cursor: pointer;
 }
 
@@ -2210,7 +2210,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-dc-bar-label {
     flex-shrink: 0;
     width: 110px;
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     font-weight: 700;
 }
 
@@ -2239,7 +2239,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     flex-shrink: 0;
     width: 20px;
     text-align: right;
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     font-weight: 700;
     color: var(--text-secondary);
 }
@@ -2281,7 +2281,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-dc-block[open] summary::after,
 .commu-dc-option-note[open] summary::after { content: ' −'; }
 details.commu-dc-block:not([open]) .commu-dc-block-label { margin-bottom: 0; }
-details.commu-dc-option-note summary { color: var(--text-muted); font-size: 0.76rem; font-weight: 700; }
+details.commu-dc-option-note summary { color: var(--text-muted); font-size: var(--text-xs); font-weight: 700; }
 details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
 
 /* Who stood behind each option: person chips in the person card's position
@@ -2294,7 +2294,7 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
     background: var(--pos, transparent);
     box-shadow: inset 0 0 0 1px var(--pos, var(--border));
     color: var(--pos-ink, var(--text-secondary));
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     line-height: 1.45;
 }
@@ -2329,7 +2329,7 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
     background: none;
     color: var(--text-muted);
     font-family: var(--font-mono);
-    font-size: 0.68rem;
+    font-size: var(--text-2xs);
     cursor: pointer;
 }
 .commu-dc-map-row button.is-match,
@@ -2377,7 +2377,7 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
     border: 1px solid var(--link);
     color: var(--link);
     display: block;
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     line-height: var(--leading-snug);
     padding: 3px 8px;
     text-decoration: none;
@@ -2386,7 +2386,7 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
 
 .commu-dc-parts {
     border-collapse: collapse;
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     margin: 12px 0 0;
     width: 100%;
 }
@@ -2404,13 +2404,13 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
 .commu-dc-match {
     margin: 0;
     color: var(--text-secondary);
-    font-size: 0.92rem;
+    font-size: var(--text-base);
 }
 
 .commu-dc-match-note {
     margin: 0;
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-normal);
 }
 
@@ -2452,7 +2452,7 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
     margin: 8px 0 0;
     padding: 18px 12px;
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     border: 1px dashed var(--border);
 }
 
@@ -2476,7 +2476,7 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
     margin: 16px 0 0;
     padding: 18px 12px;
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     border: 1px dashed var(--border);
 }
 
@@ -2537,7 +2537,7 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
     display: flex; align-items: center; gap: var(--space-2);
     padding-inline: var(--content-inset);
     margin: 0 0 var(--space-3);
-    font-size: 1.3rem;
+    font-size: var(--text-xl);
 }
 .commu-office-country-head .commu-flag { width: 24px; height: auto; }
 .commu-office-section { margin-top: var(--space-5); }
@@ -2545,7 +2545,7 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
 .commu-office-section :is(h2, h3) {
     padding-inline: var(--content-inset);
     color: var(--text-primary);
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     font-weight: var(--weight-heading);
     margin: 0 0 var(--space-3);
 }
@@ -2609,20 +2609,20 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
 }
 
 .commu-role-category-copy h3 {
-    font-size: 1.02rem;
+    font-size: var(--text-md);
     line-height: var(--leading-tight);
     margin: 0 0 5px;
 }
 
 .commu-role-category-copy p {
     color: var(--text-muted);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     margin: 0;
 }
 
 .commu-role-category-arrow {
     color: var(--link);
-    font-size: 1.15rem;
+    font-size: var(--text-lg);
     font-weight: var(--weight-emphasis);
     margin-left: auto;
 }
@@ -2663,7 +2663,7 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
     color: var(--link);
     content: '+';
     display: flex;
-    font-size: 1rem;
+    font-size: var(--text-md);
     font-weight: var(--weight-emphasis);
     height: 24px;
     justify-content: center;
@@ -2685,7 +2685,7 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
 
 .commu-office-track-blurb {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     line-height: 1.6;
     margin: 0 0 12px;
 }
@@ -2694,21 +2694,21 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
     color: var(--text-muted);
     display: block;
     font-family: 'Courier New', monospace;
-    font-size: 0.76rem;
+    font-size: var(--text-xs);
     letter-spacing: 0.05em;
     margin-bottom: 4px;
 }
 
 .commu-office-card-head h3 {
     color: var(--text-primary);
-    font-size: 1.02rem;
+    font-size: var(--text-md);
     line-height: var(--leading-tight);
     margin: 0 0 5px;
 }
 
 .commu-office-card-head p {
     color: var(--text-muted);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     line-height: var(--leading-snug);
     margin: 0;
 }
@@ -2770,7 +2770,7 @@ a.commu-office-row:focus-visible .commu-office-main em {
 .commu-office-years {
     color: var(--text-muted);
     font-family: 'Courier New', monospace;
-    font-size: 0.76rem;
+    font-size: var(--text-xs);
     line-height: var(--leading-snug);
     overflow-wrap: anywhere;
 }
@@ -2812,13 +2812,13 @@ a.commu-office-row:focus-visible .commu-office-main em {
 
 .commu-lineage-node strong {
     color: var(--text-primary);
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     font-weight: var(--weight-emphasis);
 }
 
 .commu-lineage-step p {
     color: var(--text-muted);
-    font-size: 0.84rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-normal);
     margin: 4px 0 0;
 }
@@ -2832,7 +2832,7 @@ a.commu-office-row:focus-visible .commu-office-main em {
 .commu-office-main a,
 .commu-office-main strong {
     color: var(--text-primary);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     font-weight: var(--weight-emphasis);
     line-height: var(--leading-tight);
     text-decoration: none;
@@ -2845,7 +2845,7 @@ a.commu-office-row:focus-visible .commu-office-main em {
 .commu-office-main small,
 .commu-office-main em {
     color: var(--text-secondary);
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
     font-style: normal;
     line-height: var(--leading-snug);
 }
@@ -2858,7 +2858,7 @@ a.commu-office-row:focus-visible .commu-office-main em {
     border-top: 1px solid var(--border);
     color: var(--text-primary);
     display: block;
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     font-weight: var(--weight-emphasis);
     padding: 10px 14px 12px;
     text-decoration: none;
@@ -2894,7 +2894,7 @@ a.commu-office-row:focus-visible .commu-office-main em {
 .commu-people-era-region {
     align-self: center;
     color: var(--text-primary);
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     font-weight: var(--weight-emphasis);
     margin: 0;
 }
@@ -2927,11 +2927,11 @@ a.commu-office-row:focus-visible .commu-office-main em {
     text-decoration: none;
 }
 .commu-people-era-cell:focus-visible { outline: 2px solid color-mix(in srgb, var(--link) 40%, transparent); outline-offset: 2px; }
-.commu-people-era-cell strong { font-size: 0.95rem; line-height: var(--leading-snug); }
+.commu-people-era-cell strong { font-size: var(--text-base); line-height: var(--leading-snug); }
 .commu-people-era-count {
     color: var(--text-muted);
     font-family: 'Courier New', monospace;
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     font-weight: 400;
 }
 
@@ -2964,7 +2964,7 @@ button.commu-people-era-cell,
 button.commu-people-entry { width: 100%; font: inherit; text-align: start; cursor: pointer; }
 .commu-people-entry-icon .commu-role-icon { width: 22px; height: 22px; }
 .commu-people-entry-copy { display: flex; flex: 1; flex-direction: column; gap: 2px; min-width: 0; }
-.commu-people-entry-copy small { color: var(--text-secondary); font-size: 0.85rem; }
+.commu-people-entry-copy small { color: var(--text-secondary); font-size: var(--text-sm); }
 
 /* #p-<id> arrivals open one group's grid below the table; a closed group
    takes no space. */
@@ -2988,7 +2988,7 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
 .commu-people-group { scroll-margin-top: 4.5rem; }
 .commu-people-group > [data-commu-list-pager] .pagination { margin: 12px 0 4px; }
 
-.commu-people-era-blurb { color: var(--text-secondary); font-size: 0.92rem; margin: 0 0 12px; }
+.commu-people-era-blurb { color: var(--text-secondary); font-size: var(--text-base); margin: 0 0 12px; }
 
 @media (max-width: 900px) {
     .commu-people-era-row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
@@ -3001,7 +3001,7 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
 
 .commu-people-range {
     font-family: 'Courier New', monospace;
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     color: var(--text-muted);
     letter-spacing: 0.06em;
 }
@@ -3020,7 +3020,7 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
     grid-column: 1 / -1;
     margin: 6px 0;
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
 }
 
 /* Card-shaped placeholders while a group's grid downloads. display: contents
@@ -3074,7 +3074,7 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
     margin: 6px 0;
     padding-left: 18px;
     columns: 2;
-    font-size: 0.92rem;
+    font-size: var(--text-base);
 }
 
 .commu-people-grid {
@@ -3451,7 +3451,7 @@ a.commu-person-position:focus-visible {
 .commu-nationality-kind {
     display: block;
     color: var(--text-muted);
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
@@ -3512,20 +3512,20 @@ a.commu-person-position:focus-visible {
 }
 .commu-world-map-controls button {
     align-items: center; background: var(--btn-bg); border: 1px solid var(--border);
-    color: var(--text-primary); cursor: pointer; display: flex; font: inherit; font-size: 1.15rem;
+    color: var(--text-primary); cursor: pointer; display: flex; font: inherit; font-size: var(--text-lg);
     font-weight: 700; height: 34px; min-height: 34px; justify-content: center; line-height: var(--leading-none); padding: 0; width: 34px; min-width: 34px; flex: 0 0 34px;
 }
 .commu-world-map-controls button:hover,
 .commu-world-map-controls button:focus-visible { background: var(--btn-hover); }
 .commu-world-map-controls button:disabled { cursor: default; opacity: .42; }
 .commu-world-map-legend { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 10px; }
-.commu-world-map-legend span { align-items: center; color: var(--text-secondary); display: inline-flex; font-size: .8rem; gap: 7px; }
+.commu-world-map-legend span { align-items: center; color: var(--text-secondary); display: inline-flex; font-size: var(--text-meta); gap: 7px; }
 .commu-world-map-legend i { background: color-mix(in srgb, var(--accent) 62%, transparent); border: 1px solid var(--accent); display: inline-block; height: 12px; width: 20px; }
 .commu-world-map-legend i.is-historical { background: repeating-linear-gradient(135deg, transparent 0 4px, color-mix(in srgb, var(--clr-red) 65%, transparent) 4px 6px); border-color: var(--clr-red); border-style: dashed; }
 .commu-world-map-legend i.is-region { background: color-mix(in srgb, var(--link) 25%, transparent); border-color: var(--link); border-style: dotted; }
-.commu-world-map-note { color: var(--text-muted); font-size: .79rem; line-height: var(--leading-normal); margin: 9px 0 0; }
+.commu-world-map-note { color: var(--text-muted); font-size: var(--text-meta); line-height: var(--leading-normal); margin: 9px 0 0; }
 .commu-country-groups { display: grid; gap: 1.2rem; }
-.commu-country-group > h2 { font-size: 1.08rem; margin: 0 0 .55rem; }
+.commu-country-group > h2 { font-size: var(--text-lg); margin: 0 0 .55rem; }
 .commu-country-grid { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
 .commu-country-card {
     align-items: center; background: var(--card-bg); border: 1px solid var(--border);
@@ -3539,7 +3539,7 @@ a.commu-person-position:focus-visible {
 .commu-country-card-icon .commu-role-icon { height: 24px; width: 24px; }
 .commu-country-card span { min-width: 0; }
 .commu-country-card strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.commu-country-card small { color: var(--text-muted); display: block; font-size: .75rem; margin-top: 2px; }
+.commu-country-card small { color: var(--text-muted); display: block; font-size: var(--text-xs); margin-top: 2px; }
 .commu-country-card:hover small,
 .commu-country-card:focus-visible small,
 .commu-country-card.is-map-active small { color: color-mix(in srgb, var(--clr-cream) 75%, var(--accent)); }
@@ -3557,7 +3557,7 @@ a.commu-person-position:focus-visible {
 .commu-country-sections a:hover,
 .commu-country-sections a:focus-visible { background: var(--accent); color: var(--clr-cream); text-decoration: none; }
 .commu-country-sections strong {
-    background: color-mix(in srgb, var(--border) 36%, transparent); font-size: .76rem;
+    background: color-mix(in srgb, var(--border) 36%, transparent); font-size: var(--text-xs);
     min-width: 2em; padding: 2px 6px; text-align: center;
 }
 .commu-country-sections a:hover strong,
@@ -3578,7 +3578,7 @@ a.commu-person-position:focus-visible {
 }
 .commu-country-section-head > a:hover, .commu-country-section-head > a:focus-visible { background: var(--btn-hover); text-decoration: none; }
 .commu-country-section-head small { color: var(--text-muted); font-size: .75em; font-weight: 500; }
-.commu-country-section-action { flex-shrink: 0; font-size: .8rem; font-weight: 500; }
+.commu-country-section-action { flex-shrink: 0; font-size: var(--text-meta); font-weight: 500; }
 .commu-country-event-filter { margin-bottom: 18px; }
 .commu-country-event-filter h2 { margin: 12px 0; }
 .commu-country-event-actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
@@ -3589,7 +3589,7 @@ a.commu-person-position:focus-visible {
 .commu-country-page .commu-hub-section { scroll-margin-top: 82px; }
 .commu-country-empty { color: var(--text-muted); }
 .commu-country-lineage { border: 1px solid var(--border); margin-top: 14px; }
-.commu-country-lineage h2 { border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: .85rem; margin: 0; padding: 8px 12px; }
+.commu-country-lineage h2 { border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: var(--text-sm); margin: 0; padding: 8px 12px; }
 .commu-country-lineage ol { list-style: none; margin: 0; padding: 0; }
 .commu-country-lineage-row { align-items: baseline; display: grid; gap: 8px 14px; grid-template-columns: 3rem minmax(0, 1fr); padding: 10px 12px; }
 .commu-country-lineage-row + .commu-country-lineage-row { border-top: 1px solid var(--border); }
@@ -3598,7 +3598,7 @@ a.commu-person-position:focus-visible {
 .commu-country-lineage-text .is-attached { margin-left: -4px; }
 .commu-country-lineage-more { border-top: 1px solid var(--border); display: flex; flex-direction: column-reverse; }
 .commu-country-lineage-more > ol { border-bottom: 1px solid var(--border); }
-.commu-country-lineage-more summary { color: var(--text-muted); cursor: pointer; font-size: .85rem; list-style: none; padding: 10px 12px; }
+.commu-country-lineage-more summary { color: var(--text-muted); cursor: pointer; font-size: var(--text-sm); list-style: none; padding: 10px 12px; }
 .commu-country-lineage-more summary::-webkit-details-marker { display: none; }
 .commu-country-lineage-more summary:hover, .commu-country-lineage-more summary:focus-visible { background: var(--btn-hover); }
 .commu-country-lineage-more summary .is-open, .commu-country-lineage-more[open] summary .is-closed { display: none; }
@@ -3609,16 +3609,16 @@ a.commu-person-position:focus-visible {
 }
 .commu-country-lineage a:hover, .commu-country-lineage a:focus-visible { background: var(--btn-hover); text-decoration: none; }
 .commu-country-orgs { display: grid; gap: 14px 18px; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
-.commu-country-org-group h3 { border-bottom: 1px solid var(--border); font-size: .95rem; margin: 0 0 4px; padding-bottom: 6px; }
+.commu-country-org-group h3 { border-bottom: 1px solid var(--border); font-size: var(--text-base); margin: 0 0 4px; padding-bottom: 6px; }
 .commu-country-org-group ul { list-style: none; margin: 0; padding: 0; }
 .commu-country-org-group li { border-bottom: 1px solid color-mix(in srgb, var(--border) 45%, transparent); padding: 6px 4px 8px; }
 .commu-country-org-group li.is-child { border-left: 2px solid var(--border); margin-left: 10px; padding-left: 10px; }
 .commu-country-org-head { align-items: baseline; color: inherit; display: flex; gap: 10px; justify-content: space-between; text-decoration: none; }
 .commu-country-org-head > span:first-child { font-weight: 700; }
 .commu-country-org-head:hover, .commu-country-org-head:focus-visible { color: var(--link); text-decoration: none; }
-.commu-country-org-head small { color: var(--text-muted); font-size: .78rem; font-variant-numeric: tabular-nums; font-weight: 500; }
-.commu-country-org-count { color: var(--text-secondary); flex-shrink: 0; font-size: .82rem; }
-.commu-country-org-members { color: var(--text-secondary); font-size: .85rem; line-height: var(--leading-normal); margin: 3px 0 0; }
+.commu-country-org-head small { color: var(--text-muted); font-size: var(--text-xs); font-variant-numeric: tabular-nums; font-weight: 500; }
+.commu-country-org-count { color: var(--text-secondary); flex-shrink: 0; font-size: var(--text-meta); }
+.commu-country-org-members { color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-normal); margin: 3px 0 0; }
 .commu-country-org-members a { color: inherit; }
 .commu-country-org-members span { color: var(--text-muted); }
 .commu-country-timeline { border-top: 1px solid var(--border); list-style: none; margin: var(--space-2) 0 0; padding: 0; }
@@ -3628,10 +3628,10 @@ a.commu-person-position:focus-visible {
     padding: 10px 12px; text-decoration: none;
 }
 .commu-country-timeline a:hover, .commu-country-timeline a:focus-visible { background: var(--btn-hover); text-decoration: none; }
-.commu-country-timeline-period { color: var(--text-muted); font-size: .85rem; font-variant-numeric: tabular-nums; font-weight: 700; padding-top: 2px; }
+.commu-country-timeline-period { color: var(--text-muted); font-size: var(--text-sm); font-variant-numeric: tabular-nums; font-weight: 700; padding-top: 2px; }
 .commu-country-timeline-body { display: grid; gap: 2px; min-width: 0; }
-.commu-country-timeline-body strong { font-size: 1rem; }
-.commu-country-timeline-body span { color: var(--text-secondary); font-size: .86rem; line-height: var(--leading-normal); }
+.commu-country-timeline-body strong { font-size: var(--text-md); }
+.commu-country-timeline-body span { color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-normal); }
 @media (max-width: 700px) {
     .commu-country-timeline a { grid-template-columns: 1fr; padding-inline: 4px; }
     .commu-country-sections { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -3720,7 +3720,7 @@ a.commu-person-role-tag:hover {
 
 .commu-event-people-count {
     font-family: 'Courier New', monospace;
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     font-weight: 400;
     color: var(--text-muted);
 }
@@ -4141,7 +4141,7 @@ a.commu-person-role-tag:hover {
 
 .commu-hub-head p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     line-height: var(--leading-normal);
     margin: 0;
 }
@@ -4286,10 +4286,10 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 /* Narrow phones: swap each label for its data-short form (keeping the
    icons) so all five tabs stay on a single line. */
 @media (max-width: 560px) {
-    .commu-dict-tab { padding: .6rem .15rem; font-size: .85rem; gap: .25rem; }
+    .commu-dict-tab { padding: .6rem .15rem; font-size: var(--text-sm); gap: .25rem; }
     .commu-dict-tab .commu-role-icon { width: 14px; height: 14px; }
     .commu-dict-tab span[data-short] { font-size: 0; }
-    .commu-dict-tab span[data-short]::after { content: attr(data-short); font-size: .85rem; }
+    .commu-dict-tab span[data-short]::after { content: attr(data-short); font-size: var(--text-sm); }
 }
 /* Two wide columns rather than three narrow ones, matching the person cards:
    at the 940px container a third column cuts the definition to about 35
@@ -4309,12 +4309,12 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-event-card:hover .commu-event-period,
 .commu-event-card:hover .commu-event-original { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
 .commu-event-card:hover .commu-event-category { color: var(--clr-cream, #f8edca); background: transparent; border-color: color-mix(in srgb, var(--clr-cream, #f8edca) 45%, var(--accent, #214d2e)); }
-.commu-event-card h2, .commu-event-card h3 { margin: .1rem 0 .15rem; font-size: 1.05rem; }
+.commu-event-card h2, .commu-event-card h3 { margin: .1rem 0 .15rem; font-size: var(--text-md); }
 .commu-event-card p, .commu-event-head > p { line-height: var(--leading-normal); }
 /* Type scale taken from the person card: name 1.05rem, prose .88rem, meta
    .78rem, so the card has a hierarchy to scan rather than one flat block. */
-.commu-event-card p { margin: .45rem 0 0; font-size: .88rem; line-height: var(--leading-normal); }
-.commu-event-card .commu-event-period { font-size: .78rem; }
+.commu-event-card p { margin: .45rem 0 0; font-size: var(--text-sm); line-height: var(--leading-normal); }
+.commu-event-card .commu-event-period { font-size: var(--text-xs); }
 
 /* Meta row above the title: original script, period, category. Mirrors
    .commu-person-meta so the three dictionaries read as one family. */
@@ -4326,10 +4326,10 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-event-original {
     display: block;
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: .82rem; font-style: italic; color: var(--text-muted);
+    font-size: var(--text-meta); font-style: italic; color: var(--text-muted);
 }
 .commu-event-category {
-    padding: 2px 8px; font-size: .74rem; font-weight: 600; letter-spacing: .01em;
+    padding: 2px 8px; font-size: var(--text-xs); font-weight: 600; letter-spacing: .01em;
     color: var(--text-secondary);
     background: color-mix(in srgb, var(--bg-surface) 60%, transparent);
     border: 1px solid var(--border); border-left-width: 3px;
@@ -4341,12 +4341,12 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-event-head { padding: .5rem var(--content-inset) 0; margin: 1.1rem 0 0; }
 .commu-event-head > p:last-child { margin-bottom: 0; }
 .commu-event-head h1 { margin: .25rem 0; }
-.commu-event-question { font-weight: 700; font-size: 1.08rem; }
+.commu-event-question { font-weight: 700; font-size: var(--text-lg); }
 /* The head paragraphs are the 개요, read as prose rather than card text, so
    they take the long-form scale below instead of the 1.65 card leading. The
    question line keeps its headline size. */
-.commu-event-head > p { font-size: .96rem; line-height: var(--leading-relaxed); }
-.commu-event-head > p.commu-event-question { font-size: 1.05rem; line-height: var(--leading-normal); }
+.commu-event-head > p { font-size: var(--text-base); line-height: var(--leading-relaxed); }
+.commu-event-head > p.commu-event-question { font-size: var(--text-md); line-height: var(--leading-normal); }
 /* ── Event location map (event-map-svg.js) ──
    Coastline-only SVG under the event head. Land/sea both derive from the
    theme tokens: mixing a little of --border into the surface makes land
@@ -4408,14 +4408,14 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-event-control-bar[hidden] { display: none; }
 .commu-event-control-play {
     flex-shrink: 0; min-width: 4.2rem; padding: .3rem .8rem; border: 1px solid var(--border);
-    background: transparent; color: var(--text-primary); font: inherit; font-size: .88rem; cursor: pointer;
+    background: transparent; color: var(--text-primary); font: inherit; font-size: var(--text-sm); cursor: pointer;
 }
 .commu-event-control-play:hover { border-color: var(--accent); }
 .commu-event-control-play[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); }
 .commu-event-control-range { flex: 1; min-width: 0; accent-color: var(--accent); }
-.commu-event-control-caption { margin: .45rem 0 0; font-size: .95rem; }
+.commu-event-control-caption { margin: .45rem 0 0; font-size: var(--text-base); }
 .commu-event-control-caption strong { margin-right: .4rem; font-variant-numeric: tabular-nums; }
-.commu-event-control-legend { display: flex; flex-wrap: wrap; gap: .3rem 1rem; margin: .45rem 0 0; padding: 0; list-style: none; font-size: .85rem; color: var(--text-secondary, var(--text-primary)); }
+.commu-event-control-legend { display: flex; flex-wrap: wrap; gap: .3rem 1rem; margin: .45rem 0 0; padding: 0; list-style: none; font-size: var(--text-sm); color: var(--text-secondary, var(--text-primary)); }
 .commu-event-control-legend li { display: inline-flex; align-items: center; gap: .35rem; }
 .commu-event-control-legend i { width: 14px; height: 10px; border: 1px solid; }
 .commu-event-control-legend i.is-blue { background: color-mix(in srgb, var(--emap-blue) 30%, transparent); border-color: var(--emap-blue); }
@@ -4428,16 +4428,16 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-event-control-legend i.is-hatch { background: repeating-linear-gradient(-45deg, var(--hatch) 0 1.6px, transparent 1.6px 3.5px); border-style: dashed; }
 .commu-event-control-legend i.is-hatch.is-green { --hatch: var(--emap-green); }
 .commu-event-control-legend i.is-hatch.is-black { --hatch: var(--emap-black); }
-.commu-event-control-note { margin: .45rem 0 0; font-size: .8rem; line-height: var(--leading-snug); color: var(--text-muted); }
+.commu-event-control-note { margin: .45rem 0 0; font-size: var(--text-meta); line-height: var(--leading-snug); color: var(--text-muted); }
 .commu-event-control-note a { color: inherit; }
 .emap-ref { fill: color-mix(in srgb, var(--text-primary) 65%, transparent); }
-.emap-label.is-ref { fill: var(--text-muted); font-size: 11px; }
+.emap-label.is-ref { fill: var(--text-muted); font-size: var(--text-2xs); }
 /* Physical geography (돈강, 볼가강): a floating italic name, no marker. */
-.emap-label.is-geo { fill: var(--text-muted); font-size: 11px; font-style: italic; letter-spacing: .08em; }
+.emap-label.is-geo { fill: var(--text-muted); font-size: var(--text-2xs); font-style: italic; letter-spacing: .08em; }
 .emap-marker { fill: var(--text-primary); stroke: var(--bg-surface); stroke-width: 1.4; }
 .emap-marker.is-main { fill: var(--clr-red); }
-.emap-label { fill: var(--text-primary); font-size: 12px; paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
-.emap-label.is-main { font-size: 12.5px; font-weight: 700; }
+.emap-label { fill: var(--text-primary); font-size: var(--text-xs); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
+.emap-label.is-main { font-size: var(--text-xs); font-weight: 700; }
 .emap-inset-sea { fill: color-mix(in srgb, var(--bg-surface) 88%, var(--border)); opacity: .92; }
 .emap-inset-land { fill: color-mix(in srgb, var(--border) 34%, var(--bg-surface)); }
 .emap-inset-frame { fill: color-mix(in srgb, var(--clr-red) 30%, transparent); stroke: var(--clr-red); stroke-width: 1; }
@@ -4457,24 +4457,24 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .emap-arrow-tip.is-axis { stroke: var(--text-muted); }
 .emap-arrow-tip.is-neutral { stroke: var(--text-primary); }
 .emap-badge circle { fill: var(--bg-surface); stroke: color-mix(in srgb, var(--border) 65%, transparent); stroke-width: 1; }
-.emap-badge text { fill: var(--text-primary); font-size: 11.5px; font-weight: 700; }
+.emap-badge text { fill: var(--text-primary); font-size: var(--text-xs); font-weight: 700; }
 .emap-leader { stroke: var(--text-primary); stroke-width: 1; stroke-opacity: .55; }
 /* A beat's place name (geo.label): hidden at rest, revealed under the badge
    while its number is highlighted — the rest of the map is dimmed then, so it
    never has to fight for space. */
-.emap-geo-label { display: none; fill: var(--text-primary); font-size: 12.5px; font-weight: 600; paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
+.emap-geo-label { display: none; fill: var(--text-primary); font-size: var(--text-xs); font-weight: 600; paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
 .emap-geo-label.is-active { display: block; }
 /* Actor legend (bottom-left): who each arrow style is — stroke samples reuse
    the .emap-arrow classes, so legend and map can never disagree. The box is
    translucent surface, like the inset, so coastline under it stays hinted. */
 .emap-legend-box { fill: color-mix(in srgb, var(--bg-surface) 90%, transparent); stroke: color-mix(in srgb, var(--border) 55%, transparent); stroke-width: 1; }
-.emap-legend text { fill: var(--text-primary); font-size: 11.5px; }
+.emap-legend text { fill: var(--text-primary); font-size: var(--text-xs); }
 /* Per-row arrow numbers: same-side forces share a stroke style, so the ①②…
    numbers are what actually tell 남부 집단군 from 제6군. They carry
    data-geo-num and behave like the map badges (click = pin + scroll). */
 .emap-legend-num { cursor: pointer; }
 .emap-legend-num circle { fill: var(--bg-surface); stroke: color-mix(in srgb, var(--border) 65%, transparent); stroke-width: 1; }
-.emap-legend-num text { fill: var(--text-primary); font-size: 10px; font-weight: 700; }
+.emap-legend-num text { fill: var(--text-primary); font-size: var(--text-2xs); font-weight: 700; }
 .emap-legend-num.is-active circle { fill: var(--clr-red); stroke: var(--clr-red); }
 .emap-legend-num.is-active text { fill: var(--clr-cream); }
 .emap-svg.has-active [data-geo-num] { opacity: .28; transition: opacity .12s ease; }
@@ -4488,7 +4488,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     width: 1.3rem; height: 1.3rem; margin-right: .45rem; padding: 0;
     box-sizing: border-box; border-radius: 50%;
     border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
-    font-style: normal; font-size: .72rem; line-height: var(--leading-none);
+    font-style: normal; font-size: var(--text-xs); line-height: var(--leading-none);
     color: var(--text-primary);
 }
 .commu-event-timeline-list li[data-geo-num] { cursor: pointer; }
@@ -4502,7 +4502,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-tl-place {
     display: inline-block; margin-left: .5rem; padding: 0 .45rem;
     border: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
-    font-size: .74rem; font-weight: 600; line-height: var(--leading-snug); vertical-align: 1px;
+    font-size: var(--text-xs); font-weight: 600; line-height: var(--leading-snug); vertical-align: 1px;
     color: var(--text-muted);
 }
 .commu-event-timeline-list li.is-place-match { background: color-mix(in srgb, var(--border) 6%, transparent); }
@@ -4512,20 +4512,20 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 /* The SVG scales with the container, so on a phone the 12px labels land near
    6px on glass. Larger in-SVG sizes compensate; markers get the same bump. */
 @media (max-width: 700px) {
-    .emap-label { font-size: 17px; }
-    .emap-label.is-main { font-size: 18px; }
-    .emap-label.is-ref { font-size: 14px; }
-    .emap-label.is-geo { font-size: 14px; }
-    .emap-geo-label { font-size: 17px; }
+    .emap-label { font-size: var(--text-md); }
+    .emap-label.is-main { font-size: var(--text-lg); }
+    .emap-label.is-ref { font-size: var(--text-sm); }
+    .emap-label.is-geo { font-size: var(--text-sm); }
+    .emap-geo-label { font-size: var(--text-md); }
     .emap-marker { r: 6px; }
     .emap-marker.is-main { r: 8px; }
     .emap-arrow { stroke-width: 3.2; }
     .emap-badge circle { r: 12px; }
     .emap-leader { stroke-width: 1.8; }
-    .emap-badge text { font-size: 15px; }
-    .emap-legend text { font-size: 14px; }
+    .emap-badge text { font-size: var(--text-base); }
+    .emap-legend text { font-size: var(--text-sm); }
     .emap-legend-num circle { r: 9px; }
-    .emap-legend-num text { font-size: 12px; }
+    .emap-legend-num text { font-size: var(--text-xs); }
 }
 /* '상위 항목 · 대숙청' on a nested glossary entry, directly under the name. */
 /* '상위 항목 · 대숙청' on a nested glossary entry. A reader who lands on
@@ -4547,7 +4547,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     background: color-mix(in srgb, var(--link) 12%, transparent);
     border: 1px solid color-mix(in srgb, var(--link) 45%, var(--border));
     border-left: 3px solid var(--link);
-    font-size: .92rem;
+    font-size: var(--text-base);
     letter-spacing: .02em;
 }
 .commu-term-parent a:hover {
@@ -4556,7 +4556,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 }
 .commu-term-parent-label {
     color: var(--text-muted);
-    font-size: .84rem;
+    font-size: var(--text-sm);
     font-weight: 700;
     white-space: nowrap;
 }
@@ -4565,7 +4565,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
    Built on the dictionary switcher: same gesture, one level down. */
 .commu-pair-tabs { margin: 1rem 0 0; }
 .commu-pair-tab span { display: flex; flex-direction: column; align-items: center; line-height: var(--leading-tight); }
-.commu-pair-tab small { font-weight: 400; font-size: .74rem; opacity: .7; letter-spacing: .02em; }
+.commu-pair-tab small { font-weight: 400; font-size: var(--text-xs); opacity: .7; letter-spacing: .02em; }
 .commu-pair-panel[hidden] { display: none; }
 /* An event body is the longest article on the site. Its `## ` parts are the
    page's own sections, carrying the same weight as the fixed ones around them
@@ -4598,7 +4598,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     margin: 1.4rem 0 0;
 }
 .commu-event-toc-head {
-    font-size: .82rem;
+    font-size: var(--text-meta);
     letter-spacing: .04em;
     text-transform: uppercase;
     color: var(--text-muted);
@@ -4617,7 +4617,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     min-height: var(--control-height);
     padding: var(--space-3) var(--content-inset);
     color: var(--text-primary);
-    font-size: .94rem;
+    font-size: var(--text-base);
     text-decoration: none;
     overflow-wrap: anywhere;
     transition: background-color var(--duration-fast) var(--ease-standard);
@@ -4626,7 +4626,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     content: counter(event-toc) ".";
     white-space: nowrap;
     color: var(--text-muted);
-    font-size: .8rem;
+    font-size: var(--text-meta);
     font-variant-numeric: tabular-nums;
 }
 .commu-event-toc a:hover,
@@ -4655,7 +4655,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-tl-chip {
     display: inline-flex; align-items: center; gap: .35rem;
     padding: .25rem .7rem; border: 1px solid var(--border, #555); border-radius: 0;
-    background: transparent; color: var(--text-primary); font: inherit; font-size: .84rem; cursor: pointer;
+    background: transparent; color: var(--text-primary); font: inherit; font-size: var(--text-sm); cursor: pointer;
 }
 .commu-tl-chip .commu-flag { height: 13px; width: auto; }
 .commu-tl-chip:hover { border-color: var(--accent); }
@@ -4674,11 +4674,11 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
    the outcome fell to the page default and a timeline entry sat at 1.6. */
 .commu-event-outcome p,
 .commu-event-timeline-list p {
-    font-size: .96rem;
+    font-size: var(--text-base);
     line-height: var(--leading-prose);
 }
 .commu-event-people-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: .8rem; }
-.commu-event-person-relation, .commu-person-event-links em { display: block; color: var(--accent, #b84f4f); font-style: normal; font-weight: 700; font-size: .9rem; }
+.commu-event-person-relation, .commu-person-event-links em { display: block; color: var(--link); font-style: normal; font-weight: 700; font-size: .9rem; }
 .commu-event-people-grid strong, .commu-event-people-grid small { display: block; margin-top: .2rem; }
 /* Participation notes are supporting card copy, below the name and role. */
 .commu-event-people-grid > a > p {
@@ -4688,7 +4688,7 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
     line-height: var(--leading-normal);
     color: var(--text-secondary);
 }
-.commu-event-sources { padding-inline: var(--content-inset); font-size: .88rem; opacity: .8; }
+.commu-event-sources { padding-inline: var(--content-inset); font-size: var(--text-sm); opacity: .8; }
 .commu-event-sources a { margin-left: .45rem; }
 .commu-person-event-links { list-style: none; padding: 0; margin: 0; }
 .commu-person-event-links li + li { margin-top: .6rem; }
@@ -4753,9 +4753,9 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
     margin: 0; padding: .7rem 1rem;
     border-bottom: 1px solid color-mix(in srgb, var(--border) 28%, transparent);
     background: color-mix(in srgb, var(--text-primary) 6%, transparent);
-    font-size: 1.15rem; font-weight: 700; letter-spacing: .01em;
+    font-size: var(--text-lg); font-weight: 700; letter-spacing: .01em;
 }
-.commu-event-people-side-head .commu-event-people-group-count { margin-left: auto; font-size: .85rem; }
+.commu-event-people-side-head .commu-event-people-group-count { margin-left: auto; font-size: var(--text-sm); }
 .commu-event-people-side-body { padding: .2rem 1rem 1.1rem; }
 .commu-event-people-side.is-sideless {
     margin-top: 2.2rem;
@@ -4765,11 +4765,11 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 .commu-event-people-side.is-sideless .commu-event-people-side-head {
     border-bottom-style: dashed;
     background: color-mix(in srgb, var(--text-muted) 24%, transparent);
-    color: var(--text-secondary); font-size: 1rem;
+    color: var(--text-secondary); font-size: var(--text-md);
 }
-.commu-event-people-side h4.commu-event-people-group-head { font-size: .92rem; }
+.commu-event-people-side h4.commu-event-people-group-head { font-size: var(--text-base); }
 @media (max-width: 600px) {
-    .commu-event-people-side-head { padding: .6rem .7rem; font-size: 1.05rem; }
+    .commu-event-people-side-head { padding: .6rem .7rem; font-size: var(--text-md); }
     .commu-event-people-side-body { padding: .1rem .6rem .8rem; }
 }
 .commu-event-people-group { margin-top: 1.5rem; }
@@ -4778,10 +4778,10 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
     display: flex; align-items: baseline; gap: .5rem;
     margin: 0 0 .75rem; padding: .32rem .6rem;
     border-left: 3px solid var(--border);
-    font-size: 1rem; font-weight: 700; letter-spacing: .01em;
+    font-size: var(--text-md); font-weight: 700; letter-spacing: .01em;
 }
 .commu-event-people-group-count {
-    font-family: 'Courier New', monospace; font-size: .8rem;
+    font-family: 'Courier New', monospace; font-size: var(--text-meta);
     font-weight: 400; color: var(--text-muted);
 }
 .commu-event-people-group.is-executor .commu-event-people-group-head { border-left-color: #8c7734; color: #d4bb61; }
@@ -4843,8 +4843,8 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
     color: inherit;
     text-decoration: none;
 }
-.commu-event-nav-dir { font-size: .8rem; font-weight: 700; color: var(--link); letter-spacing: .03em; }
-.commu-event-nav-period { font-family: 'Courier New', monospace; font-size: .78rem; color: var(--text-muted); }
+.commu-event-nav-dir { font-size: var(--text-meta); font-weight: 700; color: var(--link); letter-spacing: .03em; }
+.commu-event-nav-period { font-family: 'Courier New', monospace; font-size: var(--text-xs); color: var(--text-muted); }
 @media (max-width: 560px) {
     .commu-event-nav { grid-template-columns: 1fr; }
     .commu-event-nav-link.is-next { margin-left: 0; margin-top: -1px; }
@@ -4861,7 +4861,7 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 .commu-related-report-list a:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
 .commu-related-report-list a:hover span { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
 .commu-related-report-list span { color: var(--text-muted); font-weight: 700; }
-.commu-related-report-list strong { font-size: 1.02rem; }
+.commu-related-report-list strong { font-size: var(--text-md); }
 @media (max-width: 560px) { .commu-related-report-list a { grid-template-columns: 1fr; } }
 .commu-practice-list a { grid-template-columns: 1fr; }
 /* Reference-document lists reuse the report-list layout, but the label is a
@@ -4871,7 +4871,7 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 /* Genealogy links keep the mono year range, and carry the node's own label
    under the chart title when the chart calls the entry something other than
    its headword ('러시아 인민을 위한 축배' for 맏형 러시아 인민론). */
-.commu-related-genealogy-list em { grid-column: 2; color: var(--text-muted); font-style: normal; font-size: .92rem; }
+.commu-related-genealogy-list em { grid-column: 2; color: var(--text-muted); font-style: normal; font-size: var(--text-base); }
 @media (max-width: 560px) { .commu-related-genealogy-list em { grid-column: 1; } }
 
 /* Glossary term pages (/commulingo/terms) */
@@ -4937,8 +4937,8 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 .commu-docs-page .commu-event-card .commu-doc-card-reading {
     display: inline-block;
     margin-left: .5rem;
-    font-size: .78rem;
-    color: var(--accent, #214d2e);
+    font-size: var(--text-xs);
+    color: var(--link);
 }
 .commu-docs-page .commu-event-card:hover .commu-doc-card-reading {
     color: var(--clr-cream, #f8edca);
@@ -4968,7 +4968,7 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 .commu-dict-chip {
     padding: .3rem .7rem; border: 1px solid var(--border);
     background: transparent; color: var(--text-muted); font: inherit;
-    font-size: .86rem; cursor: pointer;
+    font-size: var(--text-sm); cursor: pointer;
 }
 .commu-dict-chip span { color: var(--text-muted); opacity: .75; margin-left: .15rem; }
 .commu-dict-chip:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); }
@@ -5000,7 +5000,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     min-width: 36px; min-height: 36px; box-sizing: border-box; padding: 0 .45rem;
     border: 1px solid var(--border);
     color: var(--text-muted); text-decoration: none;
-    font-size: .85rem;
+    font-size: var(--text-sm);
 }
 .commu-dict-index a:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
 
@@ -5013,9 +5013,9 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-event-grid.is-ungrouped .commu-term-group-head { display: none; }
 
 .commu-term-sources { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-.commu-term-sources h2 { font-size: 1rem; margin: 0 0 .6rem; }
+.commu-term-sources h2 { font-size: var(--text-md); margin: 0 0 .6rem; }
 .commu-term-sources ol { margin: 0; padding-left: 1.3rem; }
-.commu-term-sources li { margin-bottom: .5rem; font-size: .88rem; line-height: var(--leading-normal); }
+.commu-term-sources li { margin-bottom: .5rem; font-size: var(--text-sm); line-height: var(--leading-normal); }
 .commu-term-sources a { color: var(--link); }
 .commu-term-source-note { display: block; color: var(--text-muted); }
 
@@ -5048,14 +5048,14 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-doc-excerpt-head:hover { background: var(--bg-surface-hover); color: var(--text-primary); text-decoration: none; }
 .commu-doc-excerpt-head:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
 .commu-doc-excerpt-title { display: flex; flex-direction: column; gap: .15rem; flex: 1; min-width: 0; }
-.commu-doc-excerpt-title span { font-size: .78rem; color: var(--text-muted); }
-.commu-doc-excerpt-title strong { font-size: 1.02rem; color: var(--text-primary); }
-.commu-doc-excerpt-go { flex: none; font-size: .82rem; color: var(--text-muted); white-space: nowrap; }
+.commu-doc-excerpt-title span { font-size: var(--text-xs); color: var(--text-muted); }
+.commu-doc-excerpt-title strong { font-size: var(--text-md); color: var(--text-primary); }
+.commu-doc-excerpt-go { flex: none; font-size: var(--text-meta); color: var(--text-muted); white-space: nowrap; }
 .commu-doc-excerpt-head:hover .commu-doc-excerpt-go { color: var(--text-primary); }
 .commu-doc-excerpt-body {
     position: relative;
     padding: .4rem 1rem 1rem;
-    font-size: .95rem;
+    font-size: var(--text-base);
     line-height: var(--leading-prose);
     color: var(--text-primary);
     overflow-wrap: break-word;
@@ -5081,7 +5081,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     background: none;
     color: var(--text-primary);
     font: inherit;
-    font-size: .9rem;
+    font-size: var(--text-base);
     font-weight: 600;
     text-align: center;
     cursor: pointer;
@@ -5097,16 +5097,16 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-doc-toc-l1 { margin-top: .5rem; }
 .commu-doc-toc-l1:first-child { margin-top: 0; }
 .commu-doc-toc-l1 > a { font-weight: 600; }
-.commu-doc-toc-l2 > a { padding: .2rem 0 .2rem 1.1rem; font-size: .9rem; color: var(--text-secondary); }
+.commu-doc-toc-l2 > a { padding: .2rem 0 .2rem 1.1rem; font-size: var(--text-base); color: var(--text-secondary); }
 .commu-doc-excerpt-body h3,
 .commu-doc-excerpt-body h4 {
     margin: 1.1em 0 .3em;
-    font-size: 1rem;
+    font-size: var(--text-md);
     line-height: var(--leading-snug);
     color: var(--text-primary);
     word-break: keep-all;
 }
-.commu-doc-excerpt-body h4 { font-size: .95rem; }
+.commu-doc-excerpt-body h4 { font-size: var(--text-base); }
 .commu-doc-excerpt-body .doc-byline { color: var(--text-secondary); font-size: .9em; text-align: start; }
 .commu-doc-excerpt-body blockquote {
     margin: .8em 0;
@@ -5174,12 +5174,12 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-event-timeline-list a:not([class]):hover { border-bottom-style: solid; }
 
 .commu-term-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
-.commu-term-chip { display: inline-block; padding: .3rem .8rem; border: 1px solid var(--border, #555); border-radius: 0; color: inherit; text-decoration: none; font-size: .95rem; }
+.commu-term-chip { display: inline-block; padding: .3rem .8rem; border: 1px solid var(--border, #555); border-radius: 0; color: inherit; text-decoration: none; font-size: var(--text-base); }
 /* Hover fills the chip with the house emphasis pair (accent ground, cream
    text) instead of the barely-visible border shift it used to get. */
 .commu-term-chip:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
 /* A chip for a nested entry, shown under its parent on the event page. */
-.commu-term-chip.is-child { font-size: .88rem; opacity: .85; border-style: dashed; }
+.commu-term-chip.is-child { font-size: var(--text-sm); opacity: .85; border-style: dashed; }
 
 /* The dictionary entries a book's lessons name, listed under its hero. Two
    chip rows under one heading, so the h3 labels sit tighter than a section
@@ -5193,12 +5193,12 @@ a.commu-dict-chip:hover { text-decoration: none; }
 }
 .commu-chapter-dictionary h3 {
     color: var(--link);
-    font-size: 0.94rem;
+    font-size: var(--text-base);
     margin: 0;
 }
 .commu-chapter-dictionary h4 {
     margin: .75rem 0 .5rem;
-    font-size: .85rem;
+    font-size: var(--text-sm);
     font-weight: 600;
     color: var(--text-muted);
 }
@@ -5313,7 +5313,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     padding: 2px 8px;
     background: var(--pos);
     color: var(--pos-ink);
-    font-size: 0.74rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     text-decoration: none;
 }
@@ -5372,7 +5372,7 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
     padding: 2px 8px;
     background: var(--pos-shown, var(--pos, var(--bg-surface)));
     color: var(--pos-shown-ink, var(--pos-ink, var(--text-primary)));
-    font-size: .74rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     line-height: 1.35;
 }
@@ -5482,7 +5482,7 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
     background: var(--bg-surface);
     border-bottom: 1px solid var(--border);
     color: var(--text-secondary);
-    font-size: .82rem;
+    font-size: var(--text-meta);
     font-weight: 600;
     line-height: 1.3;
     text-align: center;
@@ -5497,8 +5497,8 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
 .gen-cols[data-columns="8"] { grid-template-columns: 36fr repeat(8, 166fr) 8fr; }
 .gen-cols[data-columns="9"] { grid-template-columns: 36fr repeat(9, 166fr) 8fr; }
 .gen-cols span { padding: 0 .2rem; word-break: keep-all; overflow-wrap: anywhere; }
-@media (max-width: 560px) { .gen-cols { font-size: .62rem; padding: .3rem 0; } .gen-cols span { padding: 0 .08rem; } }
-.gen-year { fill: var(--text-muted); font-size: 11px; }
+@media (max-width: 560px) { .gen-cols { font-size: var(--text-2xs); padding: .3rem 0; } .gen-cols span { padding: 0 .08rem; } }
+.gen-year { fill: var(--text-muted); font-size: var(--text-2xs); }
 .gen-gridline { stroke: color-mix(in srgb, var(--border) 18%, transparent); stroke-width: 1; }
 .gen-lane-sep { stroke: color-mix(in srgb, var(--border) 10%, transparent); stroke-width: 1; }
 
@@ -5508,11 +5508,11 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
    this backwards, and on the dark theme that green read dimmer than the plain
    label, so the nodes that were clickable looked like the disabled ones. */
 .gen-node rect { fill: var(--bg-surface-hover); stroke: color-mix(in srgb, var(--border) 55%, transparent); stroke-width: 1; }
-.gen-node-label { fill: var(--text-primary); font-size: 12.5px; font-weight: 600; }
+.gen-node-label { fill: var(--text-primary); font-size: var(--text-xs); font-weight: 600; }
 .gen-node:not(.gen-node-linked) rect { stroke: color-mix(in srgb, var(--border) 32%, transparent); stroke-dasharray: 4 3; }
 .gen-node:not(.gen-node-linked) .gen-node-label { fill: var(--text-muted); font-weight: 500; }
 a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: var(--border-emphasis); stroke-width: 1.4; fill: var(--bg-surface); }
-.gen-node-period { fill: var(--text-muted); font-size: 10.5px; }
+.gen-node-period { fill: var(--text-muted); font-size: var(--text-2xs); }
 
 .gen-edge { fill: none; stroke-width: 1.5; }
 .gen-edge-flow { stroke: color-mix(in srgb, var(--text-secondary) 75%, transparent); }
@@ -5524,7 +5524,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .gen-marker-end path { fill: color-mix(in srgb, var(--accent-red) 55%, var(--clr-muted)); }
 .gen-edge-label {
     fill: var(--text-muted);
-    font-size: 10.5px;
+    font-size: var(--text-2xs);
     paint-order: stroke;
     stroke: var(--bg-surface);
     stroke-width: 3px;
@@ -5540,7 +5540,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .gen-svg.has-selection .gen-edge.is-on { stroke-width: 2.3; }
 .gen-node.is-selected rect { fill: var(--bg-surface); stroke: var(--text-primary); stroke-width: 2.4; }
 
-.gen-legend { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; align-items: center; margin-top: .6rem; font-size: .82rem; color: var(--text-muted); }
+.gen-legend { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; align-items: center; margin-top: .6rem; font-size: var(--text-meta); color: var(--text-muted); }
 .gen-legend-item { display: inline-flex; align-items: center; gap: .4rem; }
 .gen-legend-item svg { flex: none; }
 .gen-legend-swatch { fill: var(--bg-surface-hover); stroke: color-mix(in srgb, var(--border) 32%, transparent); stroke-dasharray: 4 3; }
@@ -5561,7 +5561,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .gen-panel[hidden] { display: none; }
 @media (max-width: 560px) { .gen-panel { margin: .3rem -.3rem -.3rem; } }
 .gen-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; }
-.gen-panel-meta { color: var(--text-muted); font-size: .82rem; font-weight: 600; padding-top: .2rem; }
+.gen-panel-meta { color: var(--text-muted); font-size: var(--text-meta); font-weight: 600; padding-top: .2rem; }
 .gen-panel-close {
     flex: none;
     width: 2rem;
@@ -5570,14 +5570,14 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     border: 1px solid var(--border);
     background: transparent;
     color: var(--text-primary);
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     line-height: 1;
     cursor: pointer;
 }
 .gen-panel-close:hover { background: var(--bg-surface-hover); }
 .gen-panel-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .75rem 1.25rem; }
 @media (max-width: 760px) { .gen-panel-body { grid-template-columns: minmax(0, 1fr); } }
-.gen-panel-title { margin: .1rem 0 .4rem; font-size: 1.15rem; }
+.gen-panel-title { margin: .1rem 0 .4rem; font-size: var(--text-lg); }
 .gen-panel-note { margin: 0 0 .6rem; line-height: 1.6; }
 .gen-panel-entry {
     display: block;
@@ -5590,7 +5590,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .gen-panel-entry:hover { background: var(--bg-surface-hover); text-decoration: none; }
 .gen-panel-group[hidden] { display: none; }
 .gen-panel-group + .gen-panel-group { margin-top: .6rem; }
-.gen-panel-group h3 { margin: 0 0 .3rem; color: var(--text-muted); font-size: .82rem; font-weight: 600; }
+.gen-panel-group h3 { margin: 0 0 .3rem; color: var(--text-muted); font-size: var(--text-meta); font-weight: 600; }
 .gen-panel-group ul { list-style: none; margin: 0; padding: 0; }
 .gen-panel-group li + li button { border-top: none; }
 .gen-panel-group button {
@@ -5608,8 +5608,8 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     cursor: pointer;
 }
 .gen-panel-group button:hover { background: var(--bg-surface-hover); }
-.gen-panel-rel { color: var(--text-muted); font-size: .8rem; }
-.gen-panel-period { color: var(--text-muted); font-size: .8rem; white-space: nowrap; }
+.gen-panel-rel { color: var(--text-muted); font-size: var(--text-meta); }
+.gen-panel-period { color: var(--text-muted); font-size: var(--text-meta); white-space: nowrap; }
 
 /* ---------------------------------------------------------------- 훈련장
    /commulingo/drill — 사전에서 만든 무작위 퀴즈·연표 게임. 퀴즈 화면은
@@ -5626,13 +5626,13 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 
 .commu-drill-promo h2 {
-    font-size: 1.08rem;
+    font-size: var(--text-lg);
     margin: 0 0 6px;
 }
 
 .commu-drill-promo p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     line-height: var(--leading-snug);
     margin: 0;
 }
@@ -5666,14 +5666,14 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-drill-card-desc {
     color: var(--text-secondary);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-snug);
 }
 
 .commu-drill-card-meta {
     color: var(--text-muted);
     display: flex;
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     gap: 8px;
     justify-content: space-between;
     margin-top: auto;
@@ -5697,7 +5697,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-drill-lookup {
     border: 1px solid var(--border);
     color: var(--link);
-    font-size: 0.86rem;
+    font-size: var(--text-sm);
     justify-self: start;
     padding: 6px 10px;
     text-decoration: none;
@@ -5709,7 +5709,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-drill-order-hint {
     color: var(--text-muted);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     margin: 0 0 12px;
 }
 
@@ -5747,7 +5747,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-drill-order-reveal {
     color: var(--text-muted);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     white-space: nowrap;
 }
 
@@ -5838,7 +5838,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     cursor: grab;
     flex: none;
     font: inherit;
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     margin: -10px -12px -10px 0;
     min-width: 48px;
 }
@@ -5868,7 +5868,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-activity-answer small {
     color: var(--text-secondary);
     display: block;
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
 }
 
 /* Sorting: items wait in the pool as full-width rows and are dragged (or
@@ -5993,7 +5993,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-sort-item small,
 .commu-cloze-blank small {
     color: var(--text-primary);
-    font-size: 0.86rem;
+    font-size: var(--text-sm);
     font-weight: 700;
     margin-left: 8px;
 }
@@ -6137,7 +6137,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     gap: 8px;
     margin: 0;
     color: var(--text-muted);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     font-weight: 700;
 }
 
@@ -6149,7 +6149,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-short-prompt {
     margin: 0;
-    font-size: 1.3rem;
+    font-size: var(--text-xl);
     line-height: var(--leading-snug);
 }
 
@@ -6209,7 +6209,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-short-answer-text {
     margin: 0;
     color: var(--text-primary);
-    font-size: 1.08rem;
+    font-size: var(--text-lg);
     font-weight: 700;
     line-height: var(--leading-snug);
 }
@@ -6217,7 +6217,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-short-rest {
     margin: 0;
     color: var(--text-secondary);
-    font-size: 0.92rem;
+    font-size: var(--text-base);
     line-height: var(--leading-normal);
 }
 
@@ -6240,7 +6240,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 /* The era blurbs are context, not the content; the chart and tables are. */
 .commu-politburo-era-intro {
     color: var(--text-muted);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
 }
 
 .commu-politburo-section {
@@ -6250,13 +6250,13 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 
 .commu-politburo-section h2 {
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     margin: 0 0 10px;
 }
 
 .commu-politburo-period {
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     font-weight: 400;
     margin-left: 6px;
 }
@@ -6276,7 +6276,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-tenure-legend {
     color: var(--text-muted);
     display: flex;
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     gap: 14px;
     list-style: none;
     margin: 0 0 10px;
@@ -6303,7 +6303,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 
 .commu-tenure-chart {
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     min-width: 720px;
 }
 
@@ -6365,7 +6365,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-tenure-tick {
     fill: var(--text-muted);
-    font-size: 0.74rem;
+    font-size: var(--text-xs);
     font-variant-numeric: tabular-nums;
 }
 
@@ -6453,14 +6453,14 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-politburo-congress-meta {
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     font-variant-numeric: tabular-nums;
 }
 
 .commu-politburo-preview {
     color: var(--text-muted);
     flex-basis: 100%;
-    font-size: 0.84rem;
+    font-size: var(--text-sm);
 }
 
 .commu-politburo-era[open] .commu-politburo-preview {
@@ -6486,7 +6486,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-politburo-congress-note {
     color: var(--text-primary);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     line-height: var(--leading-normal);
     margin: 0;
     padding: 0 4px 4px;
@@ -6494,7 +6494,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-politburo-congress h3 {
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     letter-spacing: 0.04em;
     margin: 10px 4px 0;
 }
@@ -6506,7 +6506,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-politburo-table {
     border-collapse: collapse;
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     width: 100%;
 }
 
@@ -6556,7 +6556,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-politburo-table th {
     border-bottom-color: color-mix(in srgb, var(--border) 60%, transparent);
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     font-weight: 600;
 }
 
@@ -6566,7 +6566,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 .commu-politburo-sources {
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-normal);
     margin: 0;
 }
@@ -6622,7 +6622,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-resume-review {
     display: block;
     margin-top: 4px;
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     color: var(--link);
 }
 
@@ -6634,7 +6634,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-event-relations { margin: 1.4rem 0 0; background: var(--bg-surface); }
 .commu-event-relations + .commu-event-relations { margin-top: .8rem; }
 .commu-event-relations-head {
-    font-size: .82rem;
+    font-size: var(--text-meta);
     letter-spacing: .04em;
     text-transform: uppercase;
     color: var(--text-muted);
@@ -6661,7 +6661,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 .commu-event-relations-title { flex: 1 1 14rem; min-width: 0; }
 .commu-event-relations-tag {
-    font-size: .72rem;
+    font-size: var(--text-xs);
     font-weight: 700;
     letter-spacing: .05em;
     text-transform: uppercase;
@@ -6669,7 +6669,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 .commu-event-relations-period {
     margin-left: auto;
-    font-size: .85rem;
+    font-size: var(--text-sm);
     white-space: nowrap;
     font-variant-numeric: tabular-nums;
     color: var(--text-muted);
@@ -6701,7 +6701,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     padding: 12px 16px;
     cursor: pointer;
     color: var(--text-secondary);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     font-weight: 700;
 }
 .commu-updates summary:focus-visible {
@@ -6718,7 +6718,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-updates-description {
     margin: 12px 0;
     color: var(--text-muted);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     line-height: var(--leading-normal);
 }
 .commu-updates-group {
@@ -6729,7 +6729,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 .commu-updates time {
     color: var(--text-muted);
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     font-weight: 400;
     white-space: nowrap;
 }
@@ -6751,13 +6751,13 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     margin-bottom: 4px;
 }
 .commu-updates-list a {
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     font-weight: 700;
 }
 .commu-updates-excerpt {
     margin-top: 6px;
     color: var(--text-secondary);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     line-height: var(--leading-normal);
 }
 
@@ -6782,7 +6782,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     padding: 4px 18px 16px;
     margin: 0;
     color: var(--text-secondary);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-normal);
     word-break: keep-all;
     overflow-wrap: anywhere;
@@ -6811,17 +6811,17 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 .commu-course-preview-head h2 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: var(--text-lg);
 }
 .commu-course-preview-count {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     font-weight: 400;
     font-variant-numeric: tabular-nums;
 }
 .commu-course-preview-all {
     color: var(--text-secondary);
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     font-weight: var(--weight-emphasis);
     white-space: nowrap;
 }
@@ -6845,7 +6845,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-course-preview-label {
     margin: 0 0 4px;
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     font-weight: var(--weight-emphasis);
     letter-spacing: 0.03em;
 }
@@ -6868,7 +6868,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 .commu-course-preview-title {
     min-width: 0;
-    font-size: 0.92rem;
+    font-size: var(--text-base);
     font-weight: 700;
     line-height: var(--leading-snug);
     word-break: keep-all;
@@ -6877,7 +6877,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-course-preview-meta {
     flex: 0 0 auto;
     color: var(--text-muted);
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     white-space: nowrap;
 }
 .commu-course-preview-list a:hover {
@@ -6946,7 +6946,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     padding: 0;
 }
 .commulingo-home .commu-book-group-title {
-    font-size: 1.05rem;
+    font-size: var(--text-md);
     line-height: var(--leading-snug);
     margin-bottom: 8px;
 }
@@ -6962,7 +6962,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     }
     .commulingo-home-description {
         padding: 4px 12px 14px;
-        font-size: 0.82rem;
+        font-size: var(--text-meta);
     }
     .commulingo-home .commulingo-hero-dict-label {
         padding-inline: 12px;
@@ -6998,7 +6998,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     text-overflow: ellipsis;
     white-space: nowrap;
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     font-weight: 400;
 }
 
@@ -7018,11 +7018,11 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 .commulingo-home-progress-label label {
     color: var(--text-muted);
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
 }
 .commulingo-home-progress-label span {
     color: var(--text-primary);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     font-weight: 700;
     font-variant-numeric: tabular-nums;
 }
@@ -7193,7 +7193,7 @@ button.commu-people-condition-reset { background: none; }
 .commu-activity-years {
     padding-top: 2px;
     font-family: 'Courier New', monospace;
-    font-size: 0.76rem;
+    font-size: var(--text-xs);
     color: var(--text-muted);
     white-space: nowrap;
 }
@@ -7208,7 +7208,7 @@ button.commu-people-condition-reset { background: none; }
 }
 .commu-activity-main {
     margin: 0;
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     line-height: 1.45;
     color: var(--text-primary);
 }
@@ -7232,7 +7232,7 @@ button.commu-people-condition-reset { background: none; }
 .commu-activity-title { color: var(--text-secondary); }
 .commu-activity-function {
     margin-left: auto;
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
     line-height: 1.45;
     color: var(--text-muted);
     white-space: nowrap;
@@ -7248,13 +7248,13 @@ button.commu-people-condition-reset { background: none; }
 }
 .commu-activity-posts li {
     display: flex; flex-wrap: wrap; gap: 0 .6em;
-    font-size: 0.84rem;
+    font-size: var(--text-sm);
     line-height: 1.45;
     color: var(--text-secondary);
 }
 .commu-activity-post-years {
     font-family: 'Courier New', monospace;
-    font-size: 0.76rem;
+    font-size: var(--text-xs);
     color: var(--text-muted);
     white-space: nowrap;
     padding-top: 1px;
@@ -7272,7 +7272,7 @@ button.commu-people-condition-reset { background: none; }
     padding: 0 7px;
     background: var(--activity-mark);
     color: var(--bg-canvas);
-    font-size: 0.7rem;
+    font-size: var(--text-2xs);
     font-weight: 700;
     line-height: 1.6;
     vertical-align: 1px;

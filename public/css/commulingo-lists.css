@@ -54,14 +54,14 @@
 
 .commulingo-hero-dict-label {
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     font-weight: var(--weight-emphasis);
     letter-spacing: 0.03em;
 }
 
 .commulingo-hero h1 {
     color: var(--text-primary);
-    font-size: 1.35rem;
+    font-size: var(--text-xl);
     margin-bottom: 4px;
 }
 
@@ -93,20 +93,20 @@
 .commulingo-total span {
     display: block;
     color: var(--link);
-    font-size: 1.15rem;
+    font-size: var(--text-lg);
     font-weight: var(--weight-emphasis);
 }
 
 .commulingo-total small {
     color: var(--text-muted);
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
 }
 
 .commulingo-status {
     border: 1px solid var(--border);
     background: var(--card-bg);
     color: var(--text-muted);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     padding: 10px 14px;
 }
 
@@ -133,13 +133,13 @@
 
 .commu-resume-label {
     color: var(--link);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     font-weight: var(--weight-emphasis);
 }
 
 .commu-resume-target {
     color: var(--text-secondary);
-    font-size: 0.92rem;
+    font-size: var(--text-base);
 }
 
 .commulingo-book-groups {
@@ -158,7 +158,7 @@
 .commu-term-group-head {
     border-left: 4px solid var(--accent);
     color: var(--text-primary);
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     font-weight: var(--weight-emphasis);
     margin: 0 0 12px;
     padding: 2px 0 2px 10px;
@@ -195,7 +195,7 @@
 .commu-book-card:hover .commu-book-progress-track > span { background: var(--clr-cream, #f8edca); }
 
 .commu-book-card h3 {
-    font-size: 1rem;
+    font-size: var(--text-md);
     line-height: var(--leading-snug);
     margin: 0;
     overflow-wrap: anywhere;
@@ -204,7 +204,7 @@
 
 .commu-book-meta {
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     margin: 0;
     white-space: nowrap;
 }
@@ -216,7 +216,7 @@
 
 .commu-book-desc {
     color: var(--text-secondary);
-    font-size: 0.84rem;
+    font-size: var(--text-sm);
     grid-column: 1 / -1;
     margin: 0;
     overflow: hidden;
@@ -259,7 +259,7 @@
 .commu-book-jump a {
     border: 1px solid var(--border);
     color: var(--text-primary);
-    font-size: 0.86rem;
+    font-size: var(--text-sm);
     padding: 5px 10px;
     text-decoration: none;
 }
@@ -272,7 +272,7 @@
 
 .commu-book-jump a span {
     color: var(--text-muted);
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
 }
 
 .commu-book-jump a:hover span {
@@ -333,7 +333,7 @@
     margin: 8px 0 0;
     padding: 18px 12px;
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     border: 1px dashed var(--border);
 }
 .commu-dict-search-status {
@@ -355,7 +355,7 @@
     margin: 16px 0 0;
     padding: 18px 12px;
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     border: 1px dashed var(--border);
 }
 .commu-dict-search-elsewhere {
@@ -412,7 +412,7 @@
     display: flex; align-items: center; gap: var(--space-2);
     padding-inline: var(--content-inset);
     margin: 0 0 var(--space-3);
-    font-size: 1.3rem;
+    font-size: var(--text-xl);
 }
 .commu-office-country-head .commu-flag { width: 24px; height: auto; }
 .commu-office-section { margin-top: var(--space-5); }
@@ -420,7 +420,7 @@
 .commu-office-section :is(h2, h3) {
     padding-inline: var(--content-inset);
     color: var(--text-primary);
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     font-weight: var(--weight-heading);
     margin: 0 0 var(--space-3);
 }
@@ -481,20 +481,20 @@
 }
 
 .commu-role-category-copy h3 {
-    font-size: 1.02rem;
+    font-size: var(--text-md);
     line-height: var(--leading-tight);
     margin: 0 0 5px;
 }
 
 .commu-role-category-copy p {
     color: var(--text-muted);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     margin: 0;
 }
 
 .commu-role-category-arrow {
     color: var(--link);
-    font-size: 1.15rem;
+    font-size: var(--text-lg);
     font-weight: var(--weight-emphasis);
     margin-left: auto;
 }
@@ -532,7 +532,7 @@
     color: var(--link);
     content: '+';
     display: flex;
-    font-size: 1rem;
+    font-size: var(--text-md);
     font-weight: var(--weight-emphasis);
     height: 24px;
     justify-content: center;
@@ -554,7 +554,7 @@
 
 .commu-office-track-blurb {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     line-height: 1.6;
     margin: 0 0 12px;
 }
@@ -563,21 +563,21 @@
     color: var(--text-muted);
     display: block;
     font-family: 'Courier New', monospace;
-    font-size: 0.76rem;
+    font-size: var(--text-xs);
     letter-spacing: 0.05em;
     margin-bottom: 4px;
 }
 
 .commu-office-card-head h3 {
     color: var(--text-primary);
-    font-size: 1.02rem;
+    font-size: var(--text-md);
     line-height: var(--leading-tight);
     margin: 0 0 5px;
 }
 
 .commu-office-card-head p {
     color: var(--text-muted);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     line-height: var(--leading-snug);
     margin: 0;
 }
@@ -632,7 +632,7 @@ a.commu-office-row:focus-visible .commu-office-main em {
 .commu-office-years {
     color: var(--text-muted);
     font-family: 'Courier New', monospace;
-    font-size: 0.76rem;
+    font-size: var(--text-xs);
     line-height: var(--leading-snug);
     overflow-wrap: anywhere;
 }
@@ -674,13 +674,13 @@ a.commu-office-row:focus-visible .commu-office-main em {
 
 .commu-lineage-node strong {
     color: var(--text-primary);
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     font-weight: var(--weight-emphasis);
 }
 
 .commu-lineage-step p {
     color: var(--text-muted);
-    font-size: 0.84rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-normal);
     margin: 4px 0 0;
 }
@@ -694,7 +694,7 @@ a.commu-office-row:focus-visible .commu-office-main em {
 .commu-office-main a,
 .commu-office-main strong {
     color: var(--text-primary);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     font-weight: var(--weight-emphasis);
     line-height: var(--leading-tight);
     text-decoration: none;
@@ -707,7 +707,7 @@ a.commu-office-row:focus-visible .commu-office-main em {
 .commu-office-main small,
 .commu-office-main em {
     color: var(--text-secondary);
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
     font-style: normal;
     line-height: var(--leading-snug);
 }
@@ -720,7 +720,7 @@ a.commu-office-row:focus-visible .commu-office-main em {
     border-top: 1px solid var(--border);
     color: var(--text-primary);
     display: block;
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     font-weight: var(--weight-emphasis);
     padding: 10px 14px 12px;
     text-decoration: none;
@@ -753,7 +753,7 @@ a.commu-office-row:focus-visible .commu-office-main em {
 .commu-people-era-region {
     align-self: center;
     color: var(--text-primary);
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     font-weight: var(--weight-emphasis);
     margin: 0;
 }
@@ -786,11 +786,11 @@ a.commu-office-row:focus-visible .commu-office-main em {
     text-decoration: none;
 }
 .commu-people-era-cell:focus-visible { outline: 2px solid color-mix(in srgb, var(--link) 40%, transparent); outline-offset: 2px; }
-.commu-people-era-cell strong { font-size: 0.95rem; line-height: var(--leading-snug); }
+.commu-people-era-cell strong { font-size: var(--text-base); line-height: var(--leading-snug); }
 .commu-people-era-count {
     color: var(--text-muted);
     font-family: 'Courier New', monospace;
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     font-weight: 400;
 }
 .commu-people-entries {
@@ -820,7 +820,7 @@ button.commu-people-era-cell,
 button.commu-people-entry { width: 100%; font: inherit; text-align: start; cursor: pointer; }
 .commu-people-entry-icon .commu-role-icon { width: 22px; height: 22px; }
 .commu-people-entry-copy { display: flex; flex: 1; flex-direction: column; gap: 2px; min-width: 0; }
-.commu-people-entry-copy small { color: var(--text-secondary); font-size: 0.85rem; }
+.commu-people-entry-copy small { color: var(--text-secondary); font-size: var(--text-sm); }
 .commu-people-focus .commu-people-group:not([open]) { display: none; }
 .commu-people-focus .commu-people-group { margin-top: var(--space-5); }
 .commu-people-focus-head {
@@ -841,7 +841,7 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
 .commu-people-group { scroll-margin-top: 4.5rem; }
 .commu-people-group > [data-commu-list-pager] .pagination { margin: 12px 0 4px; }
 
-.commu-people-era-blurb { color: var(--text-secondary); font-size: 0.92rem; margin: 0 0 12px; }
+.commu-people-era-blurb { color: var(--text-secondary); font-size: var(--text-base); margin: 0 0 12px; }
 
 @media (max-width: 900px) {
     .commu-people-era-row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
@@ -854,7 +854,7 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
 
 .commu-people-range {
     font-family: 'Courier New', monospace;
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     color: var(--text-muted);
     letter-spacing: 0.06em;
 }
@@ -870,7 +870,7 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
     grid-column: 1 / -1;
     margin: 6px 0;
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
 }
 .commu-people-skeleton {
     display: contents;
@@ -920,7 +920,7 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
     margin: 6px 0;
     padding-left: 18px;
     columns: 2;
-    font-size: 0.92rem;
+    font-size: var(--text-base);
 }
 
 .commu-people-grid {
@@ -1473,7 +1473,7 @@ a.commu-person-role-tag:hover {
 
 .commu-hub-head p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     line-height: var(--leading-normal);
     margin: 0;
 }
@@ -1577,10 +1577,10 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-dict-tab span { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .commu-dict-tab .commu-role-icon { width: 17px; height: 17px; flex: 0 0 auto; color: inherit; }
 @media (max-width: 560px) {
-    .commu-dict-tab { padding: .6rem .15rem; font-size: .85rem; gap: .25rem; }
+    .commu-dict-tab { padding: .6rem .15rem; font-size: var(--text-sm); gap: .25rem; }
     .commu-dict-tab .commu-role-icon { width: 14px; height: 14px; }
     .commu-dict-tab span[data-short] { font-size: 0; }
-    .commu-dict-tab span[data-short]::after { content: attr(data-short); font-size: .85rem; }
+    .commu-dict-tab span[data-short]::after { content: attr(data-short); font-size: var(--text-sm); }
 }
 .commu-event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 1rem; margin-top: .5rem; }
 .commu-event-card { display: block; border: 1px solid var(--border, #555); border-radius: 0; padding: 1.1rem; color: inherit; text-decoration: none; background: var(--surface, rgba(255,255,255,.03)); }
@@ -1589,10 +1589,10 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-event-card:hover .commu-event-original { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
 .commu-event-card:hover .commu-event-category { color: var(--clr-cream, #f8edca); background: transparent; border-color: color-mix(in srgb, var(--clr-cream, #f8edca) 45%, var(--accent, #214d2e)); }
 .commu-event-card h2,
-.commu-event-card h3 { margin: .1rem 0 .15rem; font-size: 1.05rem; }
+.commu-event-card h3 { margin: .1rem 0 .15rem; font-size: var(--text-md); }
 .commu-event-card p { line-height: var(--leading-normal); }
-.commu-event-card p { margin: .45rem 0 0; font-size: .88rem; line-height: var(--leading-normal); }
-.commu-event-card .commu-event-period { font-size: .78rem; }
+.commu-event-card p { margin: .45rem 0 0; font-size: var(--text-sm); line-height: var(--leading-normal); }
+.commu-event-card .commu-event-period { font-size: var(--text-xs); }
 .commu-event-meta {
     display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px;
     margin-bottom: .1rem;
@@ -1601,10 +1601,10 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-event-original {
     display: block;
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: .82rem; font-style: italic; color: var(--text-muted);
+    font-size: var(--text-meta); font-style: italic; color: var(--text-muted);
 }
 .commu-event-category {
-    padding: 2px 8px; font-size: .74rem; font-weight: 600; letter-spacing: .01em;
+    padding: 2px 8px; font-size: var(--text-xs); font-weight: 600; letter-spacing: .01em;
     color: var(--text-secondary);
     background: color-mix(in srgb, var(--bg-surface) 60%, transparent);
     border: 1px solid var(--border); border-left-width: 3px;
@@ -1664,8 +1664,8 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-docs-page .commu-event-card .commu-doc-card-reading {
     display: inline-block;
     margin-left: .5rem;
-    font-size: .78rem;
-    color: var(--accent, #214d2e);
+    font-size: var(--text-xs);
+    color: var(--link);
 }
 .commu-docs-page .commu-event-card:hover .commu-doc-card-reading {
     color: var(--clr-cream, #f8edca);
@@ -1689,7 +1689,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-dict-chip {
     padding: .3rem .7rem; border: 1px solid var(--border);
     background: transparent; color: var(--text-muted); font: inherit;
-    font-size: .86rem; cursor: pointer;
+    font-size: var(--text-sm); cursor: pointer;
 }
 .commu-dict-chip span { color: var(--text-muted); opacity: .75; margin-left: .15rem; }
 .commu-dict-chip:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); }
@@ -1714,7 +1714,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     min-width: 36px; min-height: 36px; box-sizing: border-box; padding: 0 .45rem;
     border: 1px solid var(--border);
     color: var(--text-muted); text-decoration: none;
-    font-size: .85rem;
+    font-size: var(--text-sm);
 }
 .commu-dict-index a:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
 
@@ -1750,9 +1750,9 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-person-bio a:not([class]):hover { border-bottom-style: solid; }
 
 .commu-term-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
-.commu-term-chip { display: inline-block; padding: .3rem .8rem; border: 1px solid var(--border, #555); border-radius: 0; color: inherit; text-decoration: none; font-size: .95rem; }
+.commu-term-chip { display: inline-block; padding: .3rem .8rem; border: 1px solid var(--border, #555); border-radius: 0; color: inherit; text-decoration: none; font-size: var(--text-base); }
 .commu-term-chip:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
-.commu-term-chip.is-child { font-size: .88rem; opacity: .85; border-style: dashed; }
+.commu-term-chip.is-child { font-size: var(--text-sm); opacity: .85; border-style: dashed; }
 .pos-tone-1 { --pos-shown: color-mix(in srgb, var(--pos) 68%, #000); --pos-shown-ink: #faf2da; }
 .pos-tone-2 { --pos-shown: var(--pos); --pos-shown-ink: var(--pos-ink); }
 .pos-tone-3 { --pos-shown: color-mix(in srgb, var(--pos) 62%, #fff); --pos-shown-ink: #0b0d0a; }
@@ -1769,13 +1769,13 @@ a.commu-dict-chip:hover { text-decoration: none; }
 }
 
 .commu-drill-promo h2 {
-    font-size: 1.08rem;
+    font-size: var(--text-lg);
     margin: 0 0 6px;
 }
 
 .commu-drill-promo p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     line-height: var(--leading-snug);
     margin: 0;
 }
@@ -1806,7 +1806,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-resume-review {
     display: block;
     margin-top: 4px;
-    font-size: 0.85rem;
+    font-size: var(--text-sm);
     color: var(--link);
 }
 .commu-updates {
@@ -1818,7 +1818,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     padding: 12px 16px;
     cursor: pointer;
     color: var(--text-secondary);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     font-weight: 700;
 }
 .commu-updates summary:focus-visible {
@@ -1835,7 +1835,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-updates-description {
     margin: 12px 0;
     color: var(--text-muted);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     line-height: var(--leading-normal);
 }
 .commu-updates-group {
@@ -1846,7 +1846,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
 }
 .commu-updates time {
     color: var(--text-muted);
-    font-size: 0.75rem;
+    font-size: var(--text-xs);
     font-weight: 400;
     white-space: nowrap;
 }
@@ -1868,13 +1868,13 @@ a.commu-dict-chip:hover { text-decoration: none; }
     margin-bottom: 4px;
 }
 .commu-updates-list a {
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     font-weight: 700;
 }
 .commu-updates-excerpt {
     margin-top: 6px;
     color: var(--text-secondary);
-    font-size: 0.82rem;
+    font-size: var(--text-meta);
     line-height: var(--leading-normal);
 }
 .commulingo-home {
@@ -1897,7 +1897,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     padding: 4px 18px 16px;
     margin: 0;
     color: var(--text-secondary);
-    font-size: 0.88rem;
+    font-size: var(--text-sm);
     line-height: var(--leading-normal);
     word-break: keep-all;
     overflow-wrap: anywhere;
@@ -1954,7 +1954,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     padding: 0;
 }
 .commulingo-home .commu-book-group-title {
-    font-size: 1.05rem;
+    font-size: var(--text-md);
     line-height: var(--leading-snug);
     margin-bottom: 8px;
 }
@@ -1970,7 +1970,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     }
     .commulingo-home-description {
         padding: 4px 12px 14px;
-        font-size: 0.82rem;
+        font-size: var(--text-meta);
     }
     .commulingo-home .commulingo-hero-dict-label {
         padding-inline: 12px;
@@ -2006,7 +2006,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     text-overflow: ellipsis;
     white-space: nowrap;
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     font-weight: 400;
 }
 .commulingo-home-progress {
@@ -2023,11 +2023,11 @@ a.commu-dict-chip:hover { text-decoration: none; }
 }
 .commulingo-home-progress-label label {
     color: var(--text-muted);
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
 }
 .commulingo-home-progress-label span {
     color: var(--text-primary);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     font-weight: 700;
     font-variant-numeric: tabular-nums;
 }

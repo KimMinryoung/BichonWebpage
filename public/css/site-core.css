@@ -204,7 +204,7 @@ nav .nav-content {
 }
 
 nav .logo {
-    font-size: 1.4rem;
+    font-size: var(--text-xl);
     font-weight: 700;
     font-family: var(--font-display);
     letter-spacing: 0;
@@ -301,7 +301,7 @@ nav .nav-links a[aria-current="page"] {
 }
 .theme-toggle {
     color: var(--text-secondary) !important;
-    font-size: 1rem !important;
+    font-size: var(--text-md) !important;
     line-height: var(--leading-none);
 }
 
@@ -337,7 +337,7 @@ nav .nav-links a[aria-current="page"] {
     color: var(--text-primary);
     text-decoration: none;
     white-space: nowrap;
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     transition: background-color 0.15s;
 }
 
@@ -354,12 +354,12 @@ nav .nav-links a[aria-current="page"] {
     padding: 8px 16px;
     color: var(--text-muted);
     white-space: nowrap;
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     cursor: default;
 }
 
 .lang-menu-unavailable small {
-    font-size: 0.78rem;
+    font-size: var(--text-xs);
 }
 header {
     margin-bottom: 20px;
@@ -380,7 +380,7 @@ header h1 {
 }
 
 .compact-header h1 {
-    font-size: 1.25rem;
+    font-size: var(--text-xl);
     margin-bottom: 0;
     font-weight: 600;
 }
@@ -440,7 +440,7 @@ header h1 {
     min-height: var(--bar-height);
     font-family: var(--font-display);
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: var(--text-lg);
     letter-spacing: 0;
     color: var(--accent-red);
     padding: 4px 6px;
@@ -466,7 +466,7 @@ header h1 {
     box-sizing: border-box;
     padding: 4px 10px;
     color: var(--text-primary);
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     font-weight: 500;
     text-decoration: none;
     white-space: nowrap;
@@ -495,7 +495,7 @@ header h1 {
 @media (max-width: 480px) {
     .toolbar-account-btn {
         padding: 4px 6px;
-        font-size: 0.85rem;
+        font-size: var(--text-sm);
     }
     .toolbar-account-name {
         max-width: 90px;
@@ -508,7 +508,7 @@ header h1 {
     border: none;
     color: var(--text-secondary);
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     min-height: var(--bar-height);
     box-sizing: border-box;
     padding: 4px 8px;
@@ -551,14 +551,14 @@ form {
 }
 
 .admin-header h1 {
-    font-size: 1.3rem;
+    font-size: var(--text-xl);
 }
 .message {
     padding: 12px 16px;
     margin-bottom: 20px;
     border: 1px solid;
     border-radius: 0;
-    font-size: 0.92rem;
+    font-size: var(--text-base);
 }
 
 .message-success {
@@ -578,7 +578,7 @@ footer {
     border-top: 1px solid var(--border);
     text-align: center;
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     line-height: var(--leading-relaxed);
 }
 
@@ -705,7 +705,7 @@ footer .footer-tagline {
     }
 
     nav .logo {
-        font-size: 1.1rem;
+        font-size: var(--text-lg);
         padding: 8px 10px;
     }
 
@@ -719,7 +719,7 @@ nav .nav-links .theme-toggle,
 nav .nav-links .lang-btn,
 nav .nav-links .nav-logout-btn {
         padding: 4px 10px;
-        font-size: 0.82rem;
+        font-size: var(--text-meta);
     }
 
     .home-toolbar .theme-toggle,
@@ -733,7 +733,7 @@ nav .nav-links .nav-logout-btn {
     }
 
     .compact-header h1 {
-        font-size: 1rem;
+        font-size: var(--text-md);
     }
 
     .admin-header {
@@ -1081,7 +1081,7 @@ a.site-search-head:focus-visible {
     min-width: 1.4em;
     padding: 0 4px;
     font-family: var(--font-mono);
-    font-size: 0.72rem;
+    font-size: var(--text-xs);
     line-height: 1.5;
     color: var(--text-secondary);
     text-align: center;

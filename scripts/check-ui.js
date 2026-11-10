@@ -58,6 +58,31 @@ for (const file of walk(viewsRoot, '.ejs')) {
     }
 }
 
+/* House style of the site stylesheets (dev_docs/design-system.md). The games
+   and the admin screens keep their own sheets and are not checked here. */
+const postcss = require('postcss');
+const houseSheets = ['commulingo.css', 'style.css', 'commulingo-doc.css', 'ui.css', 'report.css', 'commulingo-crumb.css'];
+// The person card and person head are the owner's own design; their sizes stay as written.
+const ownerDesigned = /commu-person-|commu-career-|commu-fate|commu-scene-chip/;
+const roundedAllowed = /commu-flag-link|commu-tenure-swatch/;
+for (const sheet of houseSheets) {
+    const file = path.join(root, 'public', 'css', sheet);
+    postcss.parse(fs.readFileSync(file, 'utf8')).walkDecls((decl) => {
+        const selector = decl.parent.selector || '';
+        const where = `public/css/${sheet}:${decl.source.start.line}`;
+        if (decl.prop === 'color' && /^var\(--accent(-green)?\s*[,)]/.test(decl.value)) {
+            errors.push(`${where}: text takes --link, not --accent (invisible on the dark theme)`);
+        }
+        if (decl.prop === 'border-radius' && !/^(0|50%|inherit|var\(--radius-[a-z]+\))$/.test(decl.value) && !roundedAllowed.test(selector)) {
+            errors.push(`${where}: corners are square (border-radius ${decl.value})`);
+        }
+        const size = decl.prop === 'font-size' && decl.value.match(/^(\d*\.?\d+)(rem|px)$/);
+        if (size && (size[2] === 'px' ? size[1] / 16 : +size[1]) <= 1.4 && !ownerDesigned.test(selector)) {
+            errors.push(`${where}: use a --text-* step instead of ${decl.value}`);
+        }
+    });
+}
+
 if (errors.length) {
     console.error(`UI check failed (${errors.length})\n`);
     errors.forEach((error) => console.error(`- ${error}`));

@@ -866,7 +866,7 @@ const en = {
     },
 
     footer: {
-        copyright: '🄯 {year} Bichon House. All rights reversed.'
+        copyright: '🄯 {year} Cyber-Lenin. All rights reversed.'
     },
 
     public: {

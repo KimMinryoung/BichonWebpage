@@ -35,7 +35,7 @@
 @media (max-width: 768px) {
 
     .posts-table {
-        font-size: 0.9rem;
+        font-size: var(--text-base);
     }
 
     .posts-table .actions {
@@ -44,7 +44,7 @@
     }
 
     .posts-table .actions .btn-small {
-        font-size: 0.75rem;
+        font-size: var(--text-xs);
         padding: 4px 8px;
         white-space: nowrap;
         height: auto;

@@ -3,7 +3,7 @@
     margin-top: 28px;
 }
 .hub-section h2 {
-    font-size: 1.05rem;
+    font-size: var(--text-md);
     margin-bottom: 8px;
     opacity: 0.85;
 }
@@ -20,7 +20,7 @@
     white-space: normal;
     word-break: keep-all;
     overflow-wrap: anywhere;
-    font-size: 1rem;
+    font-size: var(--text-md);
 }
 .hub-source-btn-arrow {
     flex: 0 0 auto;
@@ -32,7 +32,7 @@
     margin-top: 14px;
 }
 .hub-tag {
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     padding: 2px 8px;
     border: 1px solid currentColor;
     border-radius: 0;

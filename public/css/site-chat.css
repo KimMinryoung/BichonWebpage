@@ -17,7 +17,7 @@
     border: 1px solid var(--border);
     padding: 8px 12px;
     border-radius: 0;
-    font-size: 0.9rem;
+    font-size: var(--text-base);
     max-width: 45vw;
 }
 
@@ -28,7 +28,7 @@
 .chat-history-separator {
     text-align: center;
     color: var(--text-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     padding: 8px 0;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -51,7 +51,7 @@
     padding: 12px 14px;
     cursor: pointer;
     font-family: inherit;
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     color: var(--text-primary);
     transition: background 0.15s, border-color 0.15s;
 }
@@ -70,7 +70,7 @@
 }
 
 .session-card-meta {
-    font-size: 0.8rem;
+    font-size: var(--text-meta);
     color: var(--text-muted);
 }
 
@@ -177,7 +177,7 @@
     max-width: 36ch;
     text-align: center;
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     line-height: var(--leading-relaxed);
     padding: 0 16px;
 }
@@ -275,7 +275,7 @@
     background: transparent;
     color: var(--text-muted);
     font: inherit;
-    font-size: 1.2rem;
+    font-size: var(--text-lg);
     line-height: 24px;
     cursor: pointer;
     opacity: 0.55;
@@ -393,7 +393,7 @@
     background: var(--bg-inset);
     color: var(--text-secondary);
     font: inherit;
-    font-size: 13px;
+    font-size: var(--text-meta);
     cursor: pointer;
     white-space: nowrap;
 }
@@ -432,7 +432,7 @@
     background: var(--bg-inset);
     color: var(--text-secondary);
     font: inherit;
-    font-size: 13px;
+    font-size: var(--text-meta);
 }
 
 .chat-feedback-controls button {
@@ -466,7 +466,7 @@
 
 .chat-feedback-status {
     color: var(--text-muted);
-    font-size: 12px;
+    font-size: var(--text-xs);
     min-width: 42px;
 }
 
@@ -577,7 +577,7 @@
     border-radius: 0;
     color: var(--text-primary);
     font: inherit;
-    font-size: 1rem;
+    font-size: var(--text-md);
     line-height: var(--leading-snug);
     resize: none;
     overflow-y: auto;
@@ -630,7 +630,7 @@
 
     .chat-nav-toggle-icon::before {
         content: "\2630";
-        font-size: 1.15rem;
+        font-size: var(--text-lg);
         line-height: var(--leading-none);
     }
 

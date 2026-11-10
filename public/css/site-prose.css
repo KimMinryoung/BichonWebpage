@@ -15,13 +15,13 @@
 
 .post-content h1 {
     margin-bottom: 15px;
-    font-size: 1.3rem;
+    font-size: var(--text-xl);
     letter-spacing: var(--tracking-heading);
 }
 
 .post-content .post-body {
     margin-top: 20px;
-    font-size: 0.95rem;
+    font-size: var(--text-base);
     line-height: var(--leading-prose);
 }
 
@@ -41,7 +41,7 @@
     }
 }
 .post-summary {
-    font-size: 1rem;
+    font-size: var(--text-md);
     opacity: 0.8;
     margin-bottom: 14px;
 }
