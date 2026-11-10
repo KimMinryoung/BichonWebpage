@@ -68,7 +68,7 @@ router.get('/book/:collectionId', async (req, res) => {
 
         let refs = { docs: {}, events: {} };
         if (collection.format === 'decision-history') {
-            try { refs = await decisionRefs(collection); } catch (err) { console.error('commulingo decision refs:', err); }
+            try { refs = await decisionRefs(collection, res.locals.lang); } catch (err) { console.error('commulingo decision refs:', err); }
         }
 
         const bookTitle = localize(collection.title, res.locals.lang);

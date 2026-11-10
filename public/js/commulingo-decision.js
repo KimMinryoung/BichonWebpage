@@ -41,6 +41,11 @@
         basis: en ? 'based on {n} of {total} forks' : '갈림길 {total}개 중 {n}개 기준',
         byPart: en ? 'By part' : '부별',
         julian: en ? 'O.S.' : '구력',
+        note: en ? 'Commentary' : '해설',
+        map: en ? 'Map of the forks' : '갈림길 노선도',
+        mapMatch: en ? 'History’s road' : '실제 역사와 같은 길',
+        mapDiverge: en ? 'A different road' : '다른 길',
+        mapOpen: en ? 'Undecided' : '미결정',
     };
 
     // date: { start: [y, m?, d?], end?: [y, m?, d?], calendar?: 'julian' }.
@@ -159,6 +164,27 @@
         });
     }
 
+    // Prose with blank-line paragraph breaks: one link pass over the whole
+    // passage (first mention links), then one <p> per paragraph.
+    function paras(value) {
+        return rich(value).split(/\n\s*\n/).map(function(part) { return '<p>' + part + '</p>'; }).join('');
+    }
+
+    // options[].actors: [{personId} | {label}] — the people (and groups) the
+    // episode puts behind an option. refs.actors carries each person's short
+    // name, position colour and icon; a group is a plain chip.
+    function actorChips(opt) {
+        var chips = (opt.actors || []).map(function(actor) {
+            var person = actor.personId && refs.actors && refs.actors[actor.personId];
+            if (person) {
+                return '<span class="commu-dc-actor' + (person.position ? ' pos-' + escapeHtml(person.position) : '') + '">'
+                    + (person.iconSvg || '') + escapeHtml(person.name) + '</span>';
+            }
+            return actor.label ? '<span class="commu-dc-actor is-group">' + escapeHtml(text(actor.label)) + '</span>' : '';
+        }).join('');
+        return chips ? '<span class="commu-dc-actors">' + chips + '</span>' : '';
+    }
+
     function loadChoices() {
         try {
             var parsed = JSON.parse(localStorage.getItem(storageKey) || '{}');
@@ -225,6 +251,7 @@
         epNodes = {};
         root.innerHTML = '';
         root.appendChild(renderCentral());
+        root.appendChild(renderMap());
         (timeline.eras || []).forEach(function(era) {
             root.appendChild(renderEra(era));
         });
@@ -266,7 +293,53 @@
         return box;
     }
 
+    // The route map: every fork as a stop on its part's line. A decided stop
+    // takes the stance colour of the option chosen, filled when it matches
+    // history and hollow when it does not; a tap opens that episode.
+    function renderMap() {
+        var nav = document.createElement('nav');
+        nav.className = 'commu-dc-map box';
+        nav.setAttribute('aria-label', L.map);
+        nav.innerHTML = '<h2 class="commu-dc-map-title">' + escapeHtml(L.map) + '</h2>'
+            + (timeline.eras || []).map(function(era) {
+                var label = text(era.title).split(' · ')[0];
+                var lastYear = null;
+                return '<div class="commu-dc-map-row"><span class="commu-dc-map-era">' + escapeHtml(label) + '</span><ol>'
+                    + (era.episodes || []).map(function(ep) {
+                        // A stop names its year; a run of stops in one year names the months after the first.
+                        var start = Array.isArray(ep.date && ep.date.start) ? ep.date.start : [];
+                        var year = start[0] === lastYear && start[1] ? (en ? MONTHS_EN[start[1] - 1].slice(0, 3) : start[1] + '월') : (start[0] || '');
+                        lastYear = start[0];
+                        return '<li><button type="button" data-map-episode="' + escapeHtml(ep.id) + '" title="' + escapeHtml(dateLabel(ep.date) + ' · ' + text(ep.title)) + '">'
+                            + '<span class="commu-dc-stop" aria-hidden="true"></span><span class="commu-dc-map-year">' + escapeHtml(year) + '</span>'
+                            + '<span class="commu-sr-only">' + escapeHtml(text(ep.title)) + '</span></button></li>';
+                    }).join('') + '</ol></div>';
+            }).join('')
+            + '<p class="commu-dc-map-legend"><span><span class="commu-dc-stop is-match" aria-hidden="true"></span>' + escapeHtml(L.mapMatch) + '</span>'
+            + '<span><span class="commu-dc-stop is-diverge" aria-hidden="true"></span>' + escapeHtml(L.mapDiverge) + '</span>'
+            + '<span><span class="commu-dc-stop" aria-hidden="true"></span>' + escapeHtml(L.mapOpen) + '</span>'
+            + (timeline.stances || []).map(function(st) { return '<span class="stance-' + escapeHtml(st.id) + '"><span class="commu-dc-stop is-match" aria-hidden="true"></span>' + escapeHtml(text(st.label)) + '</span>'; }).join('') + '</p>';
+        nav.addEventListener('click', function(event) {
+            var button = event.target.closest('[data-map-episode]');
+            var li = button && epNodes[button.getAttribute('data-map-episode')];
+            if (!li) return;
+            setOpen(li, true);
+            li.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        return nav;
+    }
+
+    function paintMap() {
+        document.querySelectorAll('[data-map-episode]').forEach(function(button) {
+            var ep = episodes[episodeIndex(button.getAttribute('data-map-episode'))];
+            var chosenId = ep && choices[ep.id];
+            var opt = chosenId && (ep.options || []).filter(function(item) { return item.id === chosenId; })[0];
+            button.className = !chosenId ? '' : (chosenId === ep.actualId ? 'is-match' : 'is-diverge') + (opt && opt.stance ? ' stance-' + opt.stance : '');
+        });
+    }
+
     function updateProgress() {
+        paintMap();
         var done = decidedCount();
         var total = episodes.length;
         var textEl = document.getElementById('commuDcProgressText');
@@ -341,7 +414,7 @@
 
         var parts = [
             '<p class="commu-dc-role"><span>' + escapeHtml(L.role) + '</span> ' + rich(ep.role) + '</p>',
-            '<p class="commu-dc-briefing">' + rich(ep.briefing) + '</p>',
+            '<div class="commu-dc-briefing">' + paras(ep.briefing) + '</div>',
             '<p class="commu-dc-question">' + escapeHtml(text(ep.question)) + '</p>'
         ];
 
@@ -349,6 +422,7 @@
             parts.push('<div class="commu-dc-options">' + (ep.options || []).map(function(opt) {
                 return '<button type="button" class="commu-dc-option" data-option="' + escapeHtml(opt.id) + '">'
                     + '<span class="commu-dc-option-label">' + escapeHtml(text(opt.label)) + '</span>'
+                    + actorChips(opt)
                     + '</button>';
             }).join('') + '</div>');
         } else {
@@ -362,15 +436,19 @@
                 if (opt.id === chosenId) cls += ' is-chosen';
                 if (opt.id === ep.actualId) cls += ' is-actual';
                 if (opt.stance) cls += ' stance-' + opt.stance;
+                var note = '';
+                if (opt.note && (opt.id === chosenId || opt.id === ep.actualId)) note = '<div class="commu-dc-option-note">' + paras(opt.note) + '</div>';
+                else if (opt.note) note = '<details class="commu-dc-option-note"><summary>' + escapeHtml(L.note) + '</summary>' + paras(opt.note) + '</details>';
                 return '<div class="' + cls + '">'
                     + '<span class="commu-dc-option-label">' + escapeHtml(text(opt.label)) + (chips ? '<span class="commu-dc-chips">' + chips + '</span>' : '') + '</span>'
-                    + (opt.note ? '<p class="commu-dc-option-note">' + rich(opt.note) + '</p>' : '')
+                    + actorChips(opt)
+                    + note
                     + '</div>';
             }).join('') + '</div>');
 
-            parts.push('<div class="commu-dc-block is-outcome"><span class="commu-dc-block-label">' + escapeHtml(L.outcome) + '</span><p>' + rich(ep.outcome) + '</p></div>');
-            if (ep.ripple) parts.push('<div class="commu-dc-block is-ripple"><span class="commu-dc-block-label">→ ' + escapeHtml(L.ripple) + '</span><p>' + rich(ep.ripple) + '</p></div>');
-            if (ep.insight) parts.push('<div class="commu-dc-block is-insight"><span class="commu-dc-block-label">' + escapeHtml(L.insight) + '</span><p>' + rich(ep.insight) + '</p></div>');
+            parts.push('<div class="commu-dc-block is-outcome"><span class="commu-dc-block-label">' + escapeHtml(L.outcome) + '</span>' + paras(ep.outcome) + '</div>');
+            if (ep.ripple) parts.push('<details class="commu-dc-block is-ripple"><summary class="commu-dc-block-label">→ ' + escapeHtml(L.ripple) + '</summary>' + paras(ep.ripple) + '</details>');
+            if (ep.insight) parts.push('<details class="commu-dc-block is-insight"><summary class="commu-dc-block-label">' + escapeHtml(L.insight) + '</summary>' + paras(ep.insight) + '</details>');
             parts.push(refList(L.sources, (ep.sources || []).map(function(src) {
                 var title = refs.docs && refs.docs[src.doc];
                 return title ? { href: '/commulingo/docs/' + encodeURIComponent(src.doc) + (src.anchor ? '#' + encodeURIComponent(src.anchor) : ''), label: text(title) } : null;

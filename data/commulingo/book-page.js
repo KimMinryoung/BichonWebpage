@@ -1,8 +1,9 @@
 const { loadCommuLingoLesson, loadCommuLingoCatalog } = require('./shards');
 const { localize } = require('./localize');
-const { getLinkIndexes, createLinker, clientPersonLinkPayload } = require('./linkify');
+const { getLinkIndexes, createLinker, clientPersonLinkPayload, standardizedFor } = require('./linkify');
 const { blockedPhrases } = require('./link-blocklist');
 const { WORD_CHAR } = require('./people-linkify');
+const { roleIconSvg } = require('./role-icons');
 const { snapshot, changedNeedles } = require('./link-index-diff');
 
 // Book and lesson page data: the memoized per-book payload (decision-history
@@ -404,9 +405,9 @@ async function linkifyLessonPayload(lesson) {
 // cite (episode.sources[].doc, episode.eventIds), so the browser only renders
 // the links the course data names. Unknown ids are left out; the write gate
 // refuses them anyway.
-async function decisionRefs(collection) {
+async function decisionRefs(collection, lang = 'ko') {
     const timeline = collection && collection.decisionTimeline;
-    const out = { docs: {}, events: {} };
+    const out = { docs: {}, events: {}, actors: {} };
     if (!timeline) return out;
     const episodes = (timeline.eras || []).flatMap(era => era.episodes || []);
     const { getCommuLingoDoc } = require('./docs-store');
@@ -421,6 +422,23 @@ async function decisionRefs(collection) {
         const { loadCommuLingoHistoryEvents } = require('./history-events-store');
         for (const event of await loadCommuLingoHistoryEvents()) {
             if (wanted.has(event.id)) out.events[event.id] = event.title;
+        }
+    }
+    // options[].actors: the people the episode puts behind each option. The
+    // chip carries the person's short name and the colour and icon of the
+    // person card's political position.
+    const actorIds = new Set(episodes.flatMap(ep => (ep.options || []).flatMap(opt => (opt.actors || []).map(actor => actor.personId)).filter(Boolean)));
+    if (actorIds.size) {
+        const { loadCommuLingoPeople } = require('./people-store');
+        const loaded = await loadCommuLingoPeople();
+        const { standardized } = standardizedFor(loaded.data, loadCommuLingoCatalog(), lang);
+        for (const person of standardized.people) {
+            if (!actorIds.has(person.id)) continue;
+            out.actors[person.id] = {
+                name: person.names.shortLabel,
+                position: person.position || '',
+                iconSvg: person.positionTag && person.positionTag.icon ? roleIconSvg(person.positionTag.icon) : '',
+            };
         }
     }
     return out;
