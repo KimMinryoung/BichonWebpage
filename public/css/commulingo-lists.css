@@ -1584,7 +1584,9 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     .commu-dict-tab span[data-short] { font-size: 0; }
     .commu-dict-tab span[data-short]::after { content: attr(data-short); font-size: var(--text-sm); }
 }
-.commu-event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 1rem; margin-top: .5rem; }
+.commu-event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 0; margin-top: .5rem; padding: 1px 0 0 1px; }
+.commu-event-grid > .commu-event-card { margin: -1px 0 0 -1px; }
+.commu-event-grid > .commu-event-card:hover { position: relative; }
 .commu-event-card { display: block; border: 1px solid var(--border); border-radius: 0; padding: 1.1rem; color: inherit; text-decoration: none; background: var(--surface, rgba(255,255,255,.03)); }
 .commu-event-card:hover { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
 .commu-event-card:hover .commu-event-period,
@@ -1613,8 +1615,6 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     white-space: nowrap;
 }
 .commu-event-period { display: block; color: var(--text-muted); font-weight: 700; letter-spacing: .04em; }
-.commu-terms-page .commu-event-grid,
-.commu-events-page .commu-event-grid { align-items: start; }
 .commu-terms-page .commu-event-card p,
 .commu-events-page .commu-event-card p {
     display: -webkit-box;
@@ -1721,7 +1721,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-dict-index a:hover { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
 
 .commu-term-group-head {
-    grid-column: 1 / -1; margin: 1.2rem 0 0;
+    grid-column: 1 / -1; margin: 1.2rem 0 12px;
     scroll-margin-top: 4.5rem;
 }
 .commu-term-group-head:first-child { margin-top: 0; }

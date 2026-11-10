@@ -67,9 +67,21 @@
   padding-bottom: 0.3em;
 }
 
+/* The document head is the bordered box of the other detail pages: the title,
+   and under it, attached, the line of entries the document belongs to. */
 .book article > h1:first-child {
   font-size: 1.8em;
-  margin-top: 0.6em;
+  margin: 0.6em 0 1.4rem;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+}
+.book article > h1:first-child + .doc-refs {
+  margin: -1.4rem 0 1.8rem;
+  padding: 8px 16px;
+  border: 1px solid var(--border);
+  border-top: 0;
+  background: var(--card-bg);
 }
 
 .book h2 {
