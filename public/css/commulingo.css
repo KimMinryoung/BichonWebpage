@@ -2122,31 +2122,35 @@
 
 button.commu-dc-option:hover { border-color: var(--link); }
 
-.commu-dc-option.is-done { cursor: default; }
-.commu-dc-option.is-chosen { border-color: var(--link); }
-.commu-dc-option.is-actual { background: var(--bg-surface); }
+.commu-dc-option.is-done {
+    position: relative;
+    padding-left: 18px;
+    background-image: linear-gradient(90deg, color-mix(in srgb, var(--stance, transparent) 18%, transparent), transparent 75%);
+    box-shadow: inset 4px 0 0 var(--stance, var(--border));
+    cursor: default;
+}
+.commu-dc-option.is-chosen { border: 2px solid var(--text-primary); }
+.commu-dc-option.is-chosen,
+.commu-dc-option.is-actual { padding-right: 70px; }
+
+/* The corner marks: ✓ the reader's choice (filled), the pillared building
+   history's road (outlined); the key line above the options names them. */
+.commu-dc-marks { position: absolute; top: 10px; right: 10px; display: flex; gap: 4px; }
+.commu-dc-mark { display: inline-grid; flex-shrink: 0; width: 24px; height: 24px; place-items: center; box-sizing: border-box; }
+.commu-dc-mark svg { width: 15px; height: 15px; }
+.commu-dc-mark.is-chosen { background: var(--text-primary); color: var(--bg-surface); }
+.commu-dc-mark.is-actual { border: 2px solid var(--text-primary); color: var(--text-primary); }
+.commu-dc-key { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; color: var(--text-muted); font-size: 0.76rem; }
+.commu-dc-key .commu-dc-mark { width: 18px; height: 18px; }
+.commu-dc-key .commu-dc-mark svg { width: 12px; height: 12px; }
 
 .commu-dc-option-label {
     display: block;
     font-weight: 600;
 }
 
-.commu-dc-chips {
-    display: inline-flex;
-    gap: 6px;
-    margin-left: 8px;
-    vertical-align: middle;
-}
 
-.commu-dc-chip {
-    font-size: 0.68rem;
-    font-weight: 700;
-    padding: 2px 8px;
-    white-space: nowrap;
-}
 
-.commu-dc-chip.is-chosen { background: var(--accent); color: #fff; }
-.commu-dc-chip.is-actual { background: var(--accent-red); color: #fff; }
 
 .commu-dc-option-note {
     margin: 8px 0 0;
@@ -2274,15 +2278,6 @@ button.commu-dc-option:hover { border-color: var(--link); }
     width: 9px;
 }
 
-.commu-dc-chip.is-stance {
-    background: transparent;
-    border: 1px solid var(--border);
-    border-left: 3px solid var(--border);
-    color: var(--text-primary);
-}
-.commu-dc-chip.is-stance.is-radical { border-left-color: var(--dc-radical); }
-.commu-dc-chip.is-stance.is-cautious { border-left-color: var(--dc-cautious); }
-.commu-dc-chip.is-stance.is-reform { border-left-color: var(--dc-reform); }
 
 /* Paragraphs inside the episode prose (blank lines in the data). */
 .commu-dc-briefing p,

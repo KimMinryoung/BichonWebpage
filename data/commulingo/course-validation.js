@@ -172,7 +172,8 @@ function checkSpecialCourse(lib, out, course) {
     }
     const timeline = course.decisionTimeline || {};
     lib.allLocalizedText(out, timeline.question, id + '.decisionTimeline.question');
-    lib.allLocalizedText(out, timeline.thesis, id + '.decisionTimeline.thesis');
+    // The thesis under the central question is optional (the course description introduces the book).
+    if (timeline.thesis) lib.allLocalizedText(out, timeline.thesis, id + '.decisionTimeline.thesis');
     lib.checkLocalizedItems(out, timeline.stances, id + '.decisionTimeline.stances', ['label', 'desc']);
     const eras = timeline.eras || [];
     if (!eras.length) out.add('shape', id, id + '.decisionTimeline has no eras');

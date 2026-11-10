@@ -185,6 +185,10 @@
         return chips ? '<span class="commu-dc-actors">' + chips + '</span>' : '';
     }
 
+    var MARK_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">';
+    var MARK_CHOSEN = '<span class="commu-dc-mark is-chosen" title="' + escapeHtml(L.yourChoice) + '">' + MARK_SVG + '<path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>';
+    var MARK_ACTUAL = '<span class="commu-dc-mark is-actual" title="' + escapeHtml(L.actual) + '">' + MARK_SVG.replace('2.4', '2') + '<path d="M3 21h18"/><path d="M5 21V10"/><path d="M19 21V10"/><path d="M12 3 3 8h18l-9-5Z"/><path d="M9 21V10"/><path d="M15 21V10"/></svg></span>';
+
     function loadChoices() {
         try {
             var parsed = JSON.parse(localStorage.getItem(storageKey) || '{}');
@@ -426,21 +430,30 @@
                     + '</button>';
             }).join('') + '</div>');
         } else {
+            // Decided: each option shows its stance as the card's colour (a left
+            // band and wash, as on person cards); the reader's choice and history's
+            // road are marks in the corner, explained once in the key line.
+            parts.push('<p class="commu-dc-key">' + MARK_CHOSEN + escapeHtml(L.yourChoice) + '<span aria-hidden="true">·</span>' + MARK_ACTUAL + escapeHtml(L.actual) + '</p>');
             parts.push('<div class="commu-dc-options is-revealed">' + (ep.options || []).map(function(opt) {
-                var chips = '';
-                if (opt.id === chosenId) chips += '<span class="commu-dc-chip is-chosen">' + escapeHtml(L.yourChoice) + '</span>';
-                if (opt.id === ep.actualId) chips += '<span class="commu-dc-chip is-actual">' + escapeHtml(L.actual) + '</span>';
+                var marks = '';
+                if (opt.id === chosenId) marks += MARK_CHOSEN;
+                if (opt.id === ep.actualId) marks += MARK_ACTUAL;
                 var stance = opt.stance && stanceById(opt.stance);
-                if (stance) chips += '<span class="commu-dc-chip is-stance is-' + escapeHtml(stance.id) + '">' + escapeHtml(text(stance.label)) + '</span>';
                 var cls = 'commu-dc-option is-done';
                 if (opt.id === chosenId) cls += ' is-chosen';
                 if (opt.id === ep.actualId) cls += ' is-actual';
                 if (opt.stance) cls += ' stance-' + opt.stance;
+                var said = [];
+                if (opt.id === chosenId) said.push(L.yourChoice);
+                if (opt.id === ep.actualId) said.push(L.actual);
+                if (stance) said.push(text(stance.label));
                 var note = '';
                 if (opt.note && (opt.id === chosenId || opt.id === ep.actualId)) note = '<div class="commu-dc-option-note">' + paras(opt.note) + '</div>';
                 else if (opt.note) note = '<details class="commu-dc-option-note"><summary>' + escapeHtml(L.note) + '</summary>' + paras(opt.note) + '</details>';
-                return '<div class="' + cls + '">'
-                    + '<span class="commu-dc-option-label">' + escapeHtml(text(opt.label)) + (chips ? '<span class="commu-dc-chips">' + chips + '</span>' : '') + '</span>'
+                return '<div class="' + cls + '"' + (stance ? ' title="' + escapeHtml(text(stance.label)) + '"' : '') + '>'
+                    + (marks ? '<span class="commu-dc-marks">' + marks + '</span>' : '')
+                    + '<span class="commu-dc-option-label">' + escapeHtml(text(opt.label))
+                    + (said.length ? '<span class="commu-sr-only"> (' + escapeHtml(said.join(', ')) + ')</span>' : '') + '</span>'
                     + actorChips(opt)
                     + note
                     + '</div>';
