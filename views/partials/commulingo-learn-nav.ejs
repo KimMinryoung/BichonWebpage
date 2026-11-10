@@ -5,9 +5,15 @@
    comes from the commulingo router middleware. */
 var learnNavEn = lang === 'en';
 var learnNavActive = typeof active !== 'undefined' ? active : null;
+var learnNavTabs = learnTabs(learnNavEn);
+/* With the other sections hidden, a row holding only the open page switches
+   to nothing and is dropped. */
+var learnNavShown = !(learnNavTabs.length === 1 && learnNavTabs[0].key === learnNavActive);
 %>
+<% if (learnNavShown) { %>
 <nav class="ui-tabs commu-dict-nav commu-learn-nav" aria-label="<%= learnNavEn ? 'Learn' : '학습' %>">
-    <% learnTabs(learnNavEn).forEach(function(tab) { %>
+    <% learnNavTabs.forEach(function(tab) { %>
     <a class="ui-tab commu-dict-tab<%= learnNavActive === tab.key ? ' is-active' : '' %>" href="<%= tab.href %>"<% if (learnNavActive === tab.key) { %> aria-current="page"<% } %>><%- roleIconSvg(tab.icon) %><span data-short="<%= tab.short %>"><%= tab.label %></span></a>
     <% }) %>
 </nav>
+<% } %>

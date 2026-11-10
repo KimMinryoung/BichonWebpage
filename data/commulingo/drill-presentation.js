@@ -1,4 +1,5 @@
 const { localize } = require('./localize');
+const { menuHidden } = require('../../config/hidden-menus');
 const { loadCommuLingoDrills, drillDecksForHrefs } = require('./drills');
 
 function localizedMeta(meta, lang) {
@@ -32,7 +33,9 @@ function deckBody(drills, deckId) {
 }
 
 // 사전 상세 페이지의 「퀴즈로 익히기」 목록. 실패해도 그 칸만 비우고 페이지는 산다.
+// A hidden training ground (config/hidden-menus.js) offers no decks.
 async function practiceDecksFor(hrefs, lang) {
+    if (menuHidden('commulingo.drill')) return [];
     try {
         const drills = await loadCommuLingoDrills();
         return drillDecksForHrefs(drills, hrefs).map(meta => ({

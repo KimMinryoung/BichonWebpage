@@ -20,6 +20,7 @@ const { loadCommuLingoDrills } = require('../data/commulingo/drills');
 const { countryCodes: commuLingoCountryCodes } = require('../data/commulingo/country-geography');
 const { listCommuLingoDocs } = require('../data/commulingo/docs-store');
 const { isKoreanOnlyPath } = require('../config/menu-languages');
+const { menuHidden } = require('../config/hidden-menus');
 const { listGenealogyCharts } = require('../data/commulingo/genealogy-store');
 const { loadCommuLingoCatalog, commuLingoBookModifiedTimes } = require('../data/commulingo/shards');
 const { createEntryRoutes, localizedEntry: localizedRecord } = require('./entry-routes');
@@ -430,7 +431,7 @@ async function buildSitemapXml() {
         // The events loader already drops hand-seeded skeleton rows (no summary),
         // so every id here is a page the public routes actually serve.
         const commuEvents = eventsResult.status === 'fulfilled' ? eventsResult.value : [];
-        const commuDrillIds = drillsResult.status === 'fulfilled' ? [...drillsResult.value.byId.keys()] : [];
+        const commuDrillIds = drillsResult.status === 'fulfilled' && !menuHidden('commulingo.drill') ? [...drillsResult.value.byId.keys()] : [];
         const safeList = fn => { try { return fn() || []; } catch (err) { console.warn('[sitemap]', err.message); return []; } };
         const commuDocs = safeList(listCommuLingoDocs);
         const commuCharts = safeList(listGenealogyCharts);

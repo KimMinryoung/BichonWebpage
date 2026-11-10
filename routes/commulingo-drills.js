@@ -7,7 +7,15 @@ const { localize } = require('../data/commulingo/localize');
 const { localizedMeta, deckBody } = require('../data/commulingo/drill-presentation');
 const { loadCommuLingoShorts } = require('../data/commulingo/shorts');
 
+const { menuHidden } = require('../config/hidden-menus');
+
 const router = express.Router();
+
+// A hidden menu still opens by URL but stays out of search engines.
+router.use((req, res, next) => {
+    if (menuHidden('commulingo.drill')) res.locals.robotsMeta = 'noindex, follow';
+    next();
+});
 
 function isSafeDeckId(deckId) {
     return typeof deckId === 'string' && /^[a-z0-9-]+$/.test(deckId);
