@@ -1,30 +1,26 @@
-<% const text = value => typeof value === 'string' ? value : (value && (value[lang] || value.ko || value.en)) || ''; const s = strings.commuLingo; %>
-<% bookGroups.forEach(group => { %>
-<section class="commu-book-group">
-    <div class="commu-book-group-head"><h3 class="commu-book-group-title"><%= group.label %></h3></div>
+<% const text = value => typeof value === 'string' ? value : (value && (value[lang] || value.ko || value.en)) || ''; %>
+<%# One row per course: title, length and progress on the first line, the
+    description cut to one line under it. The progress bar appears once the
+    course is started (public/js/commulingo-index.js adds is-started). %>
+<% bookGroups.forEach((group, groupIndex) => { %>
+<section class="commu-book-group" id="commu-book-group-<%= groupIndex %>">
+    <div class="commu-book-group-head"><h2 class="commu-book-group-title"><%= group.label %></h2></div>
     <div class="commulingo-books">
         <% group.books.forEach(book => {
             let meta = (book.chapterCount || 0) + ' ' + (lang === 'en' ? 'Chapters' : '챕터');
-            let mode = '';
+            const special = book.format === 'decision-history' || book.format === 'concept-graph';
+            // The special formats name what they count; the format itself shows on the course page.
             if (book.format === 'decision-history') {
-                meta = (s.decisionSimLabel || (lang === 'en' ? 'Decision simulation' : '결정 시뮬레이션')) + (lang === 'en' ? ' · ' + (book.episodeCount || 0) + ' turning points' : ' · 갈림길 ' + (book.episodeCount || 0) + '개');
-                mode = s.decideMode || (lang === 'en' ? 'Decide & learn' : '선택하며 학습');
+                meta = lang === 'en' ? (book.episodeCount || 0) + ' turning points' : '갈림길 ' + (book.episodeCount || 0) + '개';
             } else if (book.format === 'concept-graph') {
-                meta = (s.conceptMapLabel || (lang === 'en' ? 'Interactive concept map' : '인터랙티브 개념지도')) + (lang === 'en' ? ' · ' + (book.nodeCount || 0) + ' nodes' : ' · 노드 ' + (book.nodeCount || 0) + '개');
-                mode = s.exploreMode || (lang === 'en' ? 'Tap to explore' : '클릭하며 탐색');
+                meta = lang === 'en' ? (book.nodeCount || 0) + ' nodes' : '노드 ' + (book.nodeCount || 0) + '개';
             }
         %>
         <a class="commu-book-card" data-book-id="<%= book.id %>" href="/commulingo/book/<%= encodeURIComponent(book.id) %>">
-            <div class="commu-book-card-body">
-                <% if (text(book.badge)) { %><span class="commu-book-badge"><%= text(book.badge) %></span><% } %>
-                <h3><%= text(book.title) %></h3>
-                <p class="commu-book-desc"><%= text(book.description) %></p>
-                <p class="commu-book-meta"><%= meta %></p>
-            </div>
-            <div class="commu-book-progress">
-                <span class="commu-book-progress-label"><%= mode || s.bookProgressEmpty || (lang === 'en' ? 'Not started yet' : '아직 시작하지 않음') %></span>
-                <% if (!mode) { %><span class="commu-book-progress-track"><span></span></span><% } %>
-            </div>
+            <h3><%= text(book.title) %></h3>
+            <p class="commu-book-meta"><%= meta %><% if (!special) { %><span class="commu-book-progress-label"></span><% } %></p>
+            <p class="commu-book-desc"><%= text(book.description) %></p>
+            <% if (!special) { %><span class="commu-book-progress-track"><span></span></span><% } %>
         </a>
         <% }) %>
     </div>

@@ -134,9 +134,12 @@
             });
             if (!card) return;
             var stats = bookStats(book);
-            card.querySelector('.commu-book-progress-label').textContent = stats.completed
-                ? (strings.progress || '진도') + ' ' + stats.percent + '% · ' + stats.completed + ' / ' + stats.total
-                : (strings.bookProgressEmpty || (lang === 'en' ? 'Not started yet' : '아직 시작하지 않음'));
+            // The row shows progress only once the course is started.
+            card.classList.toggle('is-started', stats.completed > 0);
+            card.querySelector('.commu-book-progress-label').textContent = stats.completed ? ' · ' + stats.percent + '%' : '';
+            card.setAttribute('aria-label', text(book.title) + (stats.completed
+                ? ', ' + (strings.progress || '진도') + ' ' + stats.percent + '% (' + stats.completed + ' / ' + stats.total + ')'
+                : ''));
             card.querySelector('.commu-book-progress-track > span').style.width = stats.percent + '%';
         });
     }

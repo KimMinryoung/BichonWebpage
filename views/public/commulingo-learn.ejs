@@ -30,6 +30,12 @@
 
         <a class="commulingo-resume is-hidden" id="commuResume" href="#"></a>
 
+        <nav class="commu-book-jump" aria-label="<%= lang === 'en' ? 'Course groups' : '강좌 분류' %>">
+            <% bookGroups.forEach((group, groupIndex) => { %>
+            <a href="#commu-book-group-<%= groupIndex %>"><%= group.label %> <span><%= group.books.length %></span></a>
+            <% }) %>
+        </nav>
+
         <section class="commulingo-book-groups" id="commuBookList" aria-label="<%= strings.commuLingo.chooseBook %>">
             <%- include('../partials/commulingo-book-groups', { bookGroups }) %>
         </section>
