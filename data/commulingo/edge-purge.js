@@ -37,7 +37,8 @@ const SOURCES = [
 function dataDocumentPaths(key) {
     const [kind, id] = String(key).split(/\/(.*)/s);
     if (!id) return [];
-    if (kind === 'course') return [`/book/${id}`, '/learn'];
+    // The hub ('') lists every course too.
+    if (kind === 'course') return [`/book/${id}`, '/learn', ''];
     if (kind === 'genealogy') return [`/genealogy/${id}`, '/genealogy'];
     return [];
 }

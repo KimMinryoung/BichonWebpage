@@ -15,6 +15,9 @@ case "$command" in
         mount="$(docker inspect -f '{{range .Mounts}}{{if eq .Destination "/app/css-releases"}}{{.Source}}{{end}}{{end}}' leninbot-frontend)"
         [[ "$mount" == "$CSS_RELEASE_HOST_DIR" ]] || { echo 'Deploy the app with the CSS release mount first (or set CSS_RELEASE_HOST_DIR to its mount)' >&2; exit 1; }
         node scripts/css-release-cli.js "$command" "$app" "${2:-}"
+        # Pages kept at the edge still reference the previous stylesheets.
+        docker exec leninbot-frontend node /app/scripts/cloudflare-purge.js --everything \
+            || echo 'Edge cache purge failed: old pages may be served once more per page' >&2
         ;;
     *) echo 'Usage: scripts/deploy-assets [publish|status|rollback RELEASE_ID]' >&2; exit 2 ;;
 esac

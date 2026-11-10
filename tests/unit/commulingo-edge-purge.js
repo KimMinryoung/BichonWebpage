@@ -35,7 +35,11 @@ assert.deepEqual(urlsFor('commulingo_terms', 'rapp'), [
     'https://cyber-lenin.com/en/commulingo/terms/rapp',
 ]);
 assert.deepEqual(urlsFor('commulingo_person_sections', 'gyorgy-lukacs').length, 2);
-assert.deepEqual(dataDocumentPaths('course/marxist-aesthetics-intro'), ['/book/marxist-aesthetics-intro', '/learn']);
+assert.deepEqual(dataDocumentPaths('course/marxist-aesthetics-intro'), ['/book/marxist-aesthetics-intro', '/learn', '']);
+assert.deepEqual(urlsFor('commulingo_data_documents', 'course/x').slice(-2), [
+    'https://cyber-lenin.com/commulingo',
+    'https://cyber-lenin.com/en/commulingo',
+]);
 assert.deepEqual(dataDocumentPaths('genealogy/russian-marxism'), ['/genealogy/russian-marxism', '/genealogy']);
 assert.deepEqual(dataDocumentPaths('activity-catalog'), []);
 assert.deepEqual(dataDocumentPaths('indicator/kr-base-rate'), []);

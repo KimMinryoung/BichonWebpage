@@ -68,6 +68,19 @@ warm() {
         warn "Warm-up failed for ${path}"
     fi
 }
+# A release changes every page (script URLs, markup, CSS references), and the
+# edge would otherwise answer the first request for each page with the copy it
+# kept from the old release (stale-while-revalidate, middleware/cache-policy.js):
+# readers saw the update only on the second or third reload. Emptying the edge
+# costs each page one origin round trip instead. The token lives in the
+# website container's environment.
+purge_edge() {
+    if docker exec "$CONTAINER_NAME" node /app/scripts/cloudflare-purge.js --everything > /dev/null 2>&1; then
+        log "Edge cache purged."
+    else
+        warn "Edge cache purge failed — old pages may be served once more per page."
+    fi
+}
 FORCE_RESTART=0
 FORCE_CHAT=0
 FORCE_ADMIN=0
@@ -505,6 +518,8 @@ while (( SECONDS - primary_up < 12 )); do sleep 1; done
 remove_standby
 # The app is replaced; a failure after this point needs no standby recovery.
 swap_started=0
+# Only the new release answers now, so whatever the edge refetches is new.
+purge_edge
 
 # 7. Chat gateway, after the new app is up to serve as its nginx backup while
 #    it drains. A failure is reported at the end; chat stays up meanwhile.

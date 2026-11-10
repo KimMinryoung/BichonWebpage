@@ -10,6 +10,7 @@ function printUsage() {
   node scripts/cloudflare-purge.js /favicon.ico /img/og-image.png
   node scripts/cloudflare-purge.js https://cyber-lenin.com/apple-touch-icon.png
   node scripts/cloudflare-purge.js --dry-run /
+  node scripts/cloudflare-purge.js --everything   (the whole zone; the deploy scripts run this)
 
 Environment:
   CF_CACHE_PURGE_TOKEN   Cloudflare API token with Cache Purge and Zone Read
@@ -22,6 +23,7 @@ function parseArgs(argv) {
         zoneName: process.env.CF_ZONE_NAME || process.env.CLOUDFLARE_ZONE_NAME || DEFAULT_ZONE_NAME,
         zoneId: process.env.CF_ZONE_ID || process.env.CLOUDFLARE_ZONE_ID || '',
         dryRun: false,
+        everything: false,
         urls: [],
     };
 
@@ -36,6 +38,7 @@ function parseArgs(argv) {
         if (arg === '--zone') args.zoneName = next();
         else if (arg === '--zone-id') args.zoneId = next();
         else if (arg === '--dry-run') args.dryRun = true;
+        else if (arg === '--everything') args.everything = true;
         else if (arg === '-h' || arg === '--help') {
             printUsage();
             process.exit(0);
@@ -46,7 +49,8 @@ function parseArgs(argv) {
         }
     }
 
-    if (!args.urls.length) throw new Error('At least one URL or path is required');
+    if (args.everything && args.urls.length) throw new Error('--everything takes no URLs');
+    if (!args.everything && !args.urls.length) throw new Error('At least one URL or path is required');
     return args;
 }
 
@@ -102,6 +106,18 @@ async function purgeUrls(zoneId, urls) {
 
 async function main() {
     const args = parseArgs(process.argv.slice(2));
+    if (args.everything) {
+        if (args.dryRun) {
+            console.log(`Dry run. Everything cached for ${args.zoneName} would be purged.`);
+            return;
+        }
+        await cfRequest(`/zones/${await resolveZoneId(args)}/purge_cache`, {
+            method: 'POST',
+            body: JSON.stringify({ purge_everything: true }),
+        });
+        console.log(`Purged everything cached for ${args.zoneName}.`);
+        return;
+    }
     const urls = unique(args.urls.map((url) => normalizeUrl(url, args.zoneName)));
 
     if (urls.length > 30) {
