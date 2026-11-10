@@ -30,6 +30,7 @@
 | CommuLingo 훈련장 쇼츠(숏폼 카드 피드) | [카드 재료·순서](commulingo-shorts.md) |
 | CommuLingo 혁명사·사회주의 비교 학습 | [학습 강좌와 출처 기준](commulingo-ideology-learning.md), [2026-09-27 미등록 항목 등록](commulingo-history-courses-registration-20260927.md), [초기 1~3편 원고](commulingo-french-revolution-drafts.md) |
 | CommuLingo 원문 끊어 읽기 형식(`guided-reading`)·『프랑스 내전』·『브뤼메르 18일』·『포이어바흐론』·『가족, 사유재산, 국가의 기원』 강좌 | [형식 근거·플레이어·검증 규칙·사전 항목·샤드 함정](commulingo-guided-reading.md) |
+| CommuLingo 기존 강좌 개선(실습 형식 전환·해설 다듬기·설명 화면) 이어받기 | [2026-11-10 인수인계: 기준·한 일·남은 후보 5개·작업 순서·걸렸던 것](commulingo-course-improvement-handoff-20261110.md) |
 | CommuLingo 실습 형식(`workshop`: 순서·분류·빈칸 활동)·레슨 플레이어 문항 화면 | [형식·필드·검증 규칙·화면 변경](commulingo-workshop-format.md) |
 | CommuLingo 마르크스주의와 성 이론 강좌 | [3편 구성·원어 대조 기준·인물 카드·다음 후보](commulingo-sex-gender-theory.md) |
 | CommuLingo 프랑스 혁명·혁명 전쟁 사건 | [한영 사건 2편·출처·반영 기록](commulingo-french-events-20260913.md) |
