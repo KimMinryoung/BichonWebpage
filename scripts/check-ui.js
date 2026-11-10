@@ -61,7 +61,7 @@ for (const file of walk(viewsRoot, '.ejs')) {
 /* House style of the site stylesheets (dev_docs/design-system.md). The games
    and the admin screens keep their own sheets and are not checked here. */
 const postcss = require('postcss');
-const houseSheets = ['commulingo.css', 'style.css', 'commulingo-doc.css', 'ui.css', 'report.css', 'commulingo-crumb.css'];
+const houseSheets = ['games.css', 'commulingo.css', 'style.css', 'commulingo-doc.css', 'ui.css', 'report.css', 'commulingo-crumb.css'];
 // The person card and person head are the owner's own design; their sizes stay as written.
 const ownerDesigned = /commu-person-|commu-career-|commu-fate|commu-scene-chip/;
 const roundedAllowed = /commu-flag-link|commu-tenure-swatch/;

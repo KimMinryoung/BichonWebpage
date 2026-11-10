@@ -436,7 +436,7 @@
 
 .commu-lesson-action:hover:not(:disabled) .commu-progress-track,
 .commu-lesson-action:focus-visible:not(:disabled) .commu-progress-track {
-    background: color-mix(in srgb, var(--clr-black, #010409) 45%, var(--btn-primary));
+    background: color-mix(in srgb, var(--clr-black) 45%, var(--btn-primary));
     border-color: var(--clr-cream);
 }
 
@@ -1169,13 +1169,13 @@
    accent-colored at rest so it must flip to cream or it sinks into the
    ground; the target line takes the 72% cream mix used elsewhere. */
 .commulingo-resume:hover {
-    background: var(--accent, #214d2e);
-    border-color: var(--accent, #214d2e);
-    color: var(--clr-cream, #f8edca);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--clr-cream);
     text-decoration: none;
 }
-.commulingo-resume:hover .commu-resume-label { color: var(--clr-cream, #f8edca); }
-.commulingo-resume:hover .commu-resume-target { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
+.commulingo-resume:hover .commu-resume-label { color: var(--clr-cream); }
+.commulingo-resume:hover .commu-resume-target { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
 
 .commu-resume-label {
     color: var(--link);
@@ -1240,16 +1240,16 @@
 /* Accent ground + cream text. The progress pieces flip to cream so they stay
    visible on the accent ground. */
 .commu-book-card:hover {
-    background: var(--accent, #214d2e);
-    border-color: var(--accent, #214d2e);
-    color: var(--clr-cream, #f8edca);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--clr-cream);
     text-decoration: none;
 }
 .commu-book-card:hover .commu-book-desc,
-.commu-book-card:hover .commu-book-meta { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
-.commu-book-card:hover .commu-book-progress-label { color: var(--clr-cream, #f8edca); }
-.commu-book-card:hover .commu-book-progress-track { background: color-mix(in srgb, var(--clr-black, #010409) 45%, var(--accent, #214d2e)); border-color: var(--clr-cream, #f8edca); }
-.commu-book-card:hover .commu-book-progress-track > span { background: var(--clr-cream, #f8edca); }
+.commu-book-card:hover .commu-book-meta { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
+.commu-book-card:hover .commu-book-progress-label { color: var(--clr-cream); }
+.commu-book-card:hover .commu-book-progress-track { background: color-mix(in srgb, var(--clr-black) 45%, var(--accent)); border-color: var(--clr-cream); }
+.commu-book-card:hover .commu-book-progress-track > span { background: var(--clr-cream); }
 
 .commu-book-card h3 {
     font-size: var(--text-md);
@@ -1324,9 +1324,9 @@
 }
 
 .commu-book-jump a:hover {
-    background: var(--accent, #214d2e);
-    border-color: var(--accent, #214d2e);
-    color: var(--clr-cream, #f8edca);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--clr-cream);
 }
 
 .commu-book-jump a span {
@@ -1424,6 +1424,7 @@
     }
     .commu-volume-grid,
     .commu-choices,
+    .commu-drill-grid,
     .commulingo-books {
         grid-template-columns: 1fr;
     }
@@ -2430,7 +2431,7 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
     text-decoration: none;
     /* Full-strength link green: a low-opacity currentColor dash was invisible
        against the dark canvas. */
-    border-bottom: 2px dashed var(--link, #5d7a5a);
+    border-bottom: 2px dashed var(--link);
 }
 
 .commu-person-link:hover {
@@ -2921,11 +2922,13 @@ a.commu-office-row:focus-visible .commu-office-main em {
 }
 .commu-people-era-cell:hover,
 .commu-people-era-cell:focus-visible {
-    background: var(--bg-surface-hover);
-    border-color: var(--link);
-    color: var(--text-primary);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--clr-cream);
     text-decoration: none;
 }
+.commu-people-era-cell:hover :is(.commu-people-era-count, .commu-people-range),
+.commu-people-era-cell:focus-visible :is(.commu-people-era-count, .commu-people-range) { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
 .commu-people-era-cell:focus-visible { outline: 2px solid color-mix(in srgb, var(--link) 40%, transparent); outline-offset: 2px; }
 .commu-people-era-cell strong { font-size: var(--text-base); line-height: var(--leading-snug); }
 .commu-people-era-count {
@@ -4298,17 +4301,17 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
    container, the same shape as the person grid, and drops to one column below
    that. min() keeps the floor from overflowing a narrower container. */
 .commu-event-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(340px, 100%), 1fr)); gap: 1rem; margin-top: .5rem; }
-.commu-event-card, .commu-event-people-grid > a { display: block; border: 1px solid var(--border, #555); border-radius: 0; padding: 1.1rem; color: inherit; text-decoration: none; background: var(--surface, rgba(255,255,255,.03)); }
-.commu-event-people-grid > a:hover { border-color: var(--accent, #b84f4f); }
+.commu-event-card, .commu-event-people-grid > a { display: block; border: 1px solid var(--border); border-radius: 0; padding: 1.1rem; color: inherit; text-decoration: none; background: var(--surface, rgba(255,255,255,.03)); }
+.commu-event-people-grid > a:hover { border-color: var(--accent); }
 /* Dictionary/list cards (docs·terms·events·genealogy): same hover treatment as
    .commu-term-chip — accent ground, cream text, no underline. Muted meta lines
    take the 72% cream mix used by the related-report list. The event-people
    grid above keeps its border-only hover: its cards are color-coded by kind
    and a solid accent ground would erase that. */
-.commu-event-card:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
+.commu-event-card:hover { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
 .commu-event-card:hover .commu-event-period,
-.commu-event-card:hover .commu-event-original { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
-.commu-event-card:hover .commu-event-category { color: var(--clr-cream, #f8edca); background: transparent; border-color: color-mix(in srgb, var(--clr-cream, #f8edca) 45%, var(--accent, #214d2e)); }
+.commu-event-card:hover .commu-event-original { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
+.commu-event-card:hover .commu-event-category { color: var(--clr-cream); background: transparent; border-color: color-mix(in srgb, var(--clr-cream) 45%, var(--accent)); }
 .commu-event-card h2, .commu-event-card h3 { margin: .1rem 0 .15rem; font-size: var(--text-md); }
 .commu-event-card p, .commu-event-head > p { line-height: var(--leading-normal); }
 /* Type scale taken from the person card: name 1.05rem, prose .88rem, meta
@@ -4578,7 +4581,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     font-size: 1.22rem;
     margin: 2em 0 .7em;
     padding-top: .9em;
-    border-top: 1px solid var(--border, #555);
+    border-top: 1px solid var(--border);
     scroll-margin-top: 1rem;
 }
 .commu-event-body .commu-person-markdown > h2:first-child {
@@ -4638,7 +4641,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-event-toc a:focus-visible { outline: 2px solid var(--text-primary); outline-offset: -2px; }
 
 .commu-event-timeline-list { list-style: none; padding: 0; margin: 0; }
-.commu-event-timeline-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--border, #555); }
+.commu-event-timeline-list li { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: .8rem 0; border-top: 1px solid var(--border); }
 .commu-event-timeline-list li > span { color: var(--text-muted); font-weight: 700; font-size: var(--text-sm, .875rem); font-variant-numeric: tabular-nums; }
 /* The date stays on the badge's line; a range breaks only after its dash. */
 .commu-tl-date > span { white-space: nowrap; }
@@ -4654,7 +4657,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-tl-filter { display: flex; flex-wrap: wrap; gap: .4rem; margin: 0 0 .8rem; }
 .commu-tl-chip {
     display: inline-flex; align-items: center; gap: .35rem;
-    padding: .25rem .7rem; border: 1px solid var(--border, #555); border-radius: 0;
+    padding: .25rem .7rem; border: 1px solid var(--border); border-radius: 0;
     background: transparent; color: var(--text-primary); font: inherit; font-size: var(--text-sm); cursor: pointer;
 }
 .commu-tl-chip .commu-flag { height: 13px; width: auto; }
@@ -4692,35 +4695,35 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 .commu-event-sources a { margin-left: .45rem; }
 .commu-person-event-links { list-style: none; padding: 0; margin: 0; }
 .commu-person-event-links li + li { margin-top: .6rem; }
-.commu-person-event-links a { display: grid; grid-template-columns: 8.5rem 1fr; gap: .2rem .75rem; padding: .8rem; border: 1px solid var(--border, #555); border-radius: 0; color: inherit; text-decoration: none; }
+.commu-person-event-links a { display: grid; grid-template-columns: 8.5rem 1fr; gap: .2rem .75rem; padding: .8rem; border: 1px solid var(--border); border-radius: 0; color: inherit; text-decoration: none; }
 /* Same hover treatment as .commu-term-chip: accent ground, cream text. The
    relation-tinted rows (li.is-* a) outrank these declarations and keep their
    tint, exactly as they kept it before. */
-.commu-person-event-links a:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
-.commu-person-event-links a:hover span { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
-.commu-person-event-links a:hover em { color: var(--clr-cream, #f8edca); }
+.commu-person-event-links a:hover { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
+.commu-person-event-links a:hover span { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
+.commu-person-event-links a:hover em { color: var(--clr-cream); }
 .commu-person-event-links span { color: var(--text-muted); font-weight: 700; }
 .commu-person-event-links strong { font-size: 1.05rem; }
 .commu-person-event-links em, .commu-person-event-links small { grid-column: 2; }
 @media (max-width: 560px) { .commu-event-timeline-list li { grid-template-columns: 1fr; gap: .2rem; } .commu-person-event-links a { grid-template-columns: 1fr; } .commu-person-event-links em, .commu-person-event-links small { grid-column: 1; } }
 
-.commu-event-people-grid > a.is-executor, .commu-person-event-links li.is-executor a { border-color: #8c7734; background: color-mix(in srgb, #8c7734 14%, transparent); }
-.commu-event-people-grid > a.is-executor .commu-event-person-relation, .commu-person-event-links li.is-executor span, .commu-person-event-links li.is-executor em { color: #d4bb61; }
-.commu-event-people-grid > a.is-target, .commu-person-event-links li.is-target a { border-color: #a74a42; background: color-mix(in srgb, #a74a42 14%, transparent); }
-.commu-event-people-grid > a.is-target .commu-event-person-relation, .commu-person-event-links li.is-target span, .commu-person-event-links li.is-target em { color: #cf6b5f; }
-.commu-event-people-grid > a.is-leader, .commu-person-event-links li.is-leader a { border-color: #b8564f; background: color-mix(in srgb, #b8564f 14%, transparent); }
-.commu-event-people-grid > a.is-leader .commu-event-person-relation, .commu-person-event-links li.is-leader span, .commu-person-event-links li.is-leader em { color: #de7c74; }
-.commu-event-people-grid > a.is-participant, .commu-person-event-links li.is-participant a { border-color: #4d6f9c; background: color-mix(in srgb, #4d6f9c 14%, transparent); }
-.commu-event-people-grid > a.is-participant .commu-event-person-relation, .commu-person-event-links li.is-participant span, .commu-person-event-links li.is-participant em { color: #7ba3d4; }
-.commu-event-people-grid > a.is-opponent, .commu-person-event-links li.is-opponent a { border-color: #6f6f6f; background: color-mix(in srgb, #6f6f6f 14%, transparent); }
-.commu-event-people-grid > a.is-opponent .commu-event-person-relation, .commu-person-event-links li.is-opponent span, .commu-person-event-links li.is-opponent em { color: #a8a8a8; }
-.commu-event-people-grid > a.is-witness, .commu-person-event-links li.is-witness a { border-color: #7a6699; background: color-mix(in srgb, #7a6699 14%, transparent); }
-.commu-event-people-grid > a.is-witness .commu-event-person-relation, .commu-person-event-links li.is-witness span, .commu-person-event-links li.is-witness em { color: #a892cc; }
-.commu-event-people-grid > a.is-historian, .commu-person-event-links li.is-historian a { border-color: #4f8a80; background: color-mix(in srgb, #4f8a80 14%, transparent); }
-.commu-event-people-grid > a.is-historian .commu-event-person-relation, .commu-person-event-links li.is-historian span, .commu-person-event-links li.is-historian em { color: #7cbfb3; }
+.commu-event-people-grid > a.is-executor, .commu-person-event-links li.is-executor a { border-color: var(--role-executor); background: color-mix(in srgb, var(--role-executor) 14%, transparent); }
+.commu-event-people-grid > a.is-executor .commu-event-person-relation, .commu-person-event-links li.is-executor span, .commu-person-event-links li.is-executor em { color: var(--role-executor-bright); }
+.commu-event-people-grid > a.is-target, .commu-person-event-links li.is-target a { border-color: var(--role-target); background: color-mix(in srgb, var(--role-target) 14%, transparent); }
+.commu-event-people-grid > a.is-target .commu-event-person-relation, .commu-person-event-links li.is-target span, .commu-person-event-links li.is-target em { color: var(--role-target-bright); }
+.commu-event-people-grid > a.is-leader, .commu-person-event-links li.is-leader a { border-color: var(--role-leader); background: color-mix(in srgb, var(--role-leader) 14%, transparent); }
+.commu-event-people-grid > a.is-leader .commu-event-person-relation, .commu-person-event-links li.is-leader span, .commu-person-event-links li.is-leader em { color: var(--role-leader-bright); }
+.commu-event-people-grid > a.is-participant, .commu-person-event-links li.is-participant a { border-color: var(--role-participant); background: color-mix(in srgb, var(--role-participant) 14%, transparent); }
+.commu-event-people-grid > a.is-participant .commu-event-person-relation, .commu-person-event-links li.is-participant span, .commu-person-event-links li.is-participant em { color: var(--role-participant-bright); }
+.commu-event-people-grid > a.is-opponent, .commu-person-event-links li.is-opponent a { border-color: var(--role-opponent); background: color-mix(in srgb, var(--role-opponent) 14%, transparent); }
+.commu-event-people-grid > a.is-opponent .commu-event-person-relation, .commu-person-event-links li.is-opponent span, .commu-person-event-links li.is-opponent em { color: var(--role-opponent-bright); }
+.commu-event-people-grid > a.is-witness, .commu-person-event-links li.is-witness a { border-color: var(--role-witness); background: color-mix(in srgb, var(--role-witness) 14%, transparent); }
+.commu-event-people-grid > a.is-witness .commu-event-person-relation, .commu-person-event-links li.is-witness span, .commu-person-event-links li.is-witness em { color: var(--role-witness-bright); }
+.commu-event-people-grid > a.is-historian, .commu-person-event-links li.is-historian a { border-color: var(--role-historian); background: color-mix(in srgb, var(--role-historian) 14%, transparent); }
+.commu-event-people-grid > a.is-historian .commu-event-person-relation, .commu-person-event-links li.is-historian span, .commu-person-event-links li.is-historian em { color: var(--role-historian-bright); }
 /* Neutral, provisional look: auto-linked but role not yet classified (see routes/commulingo-events.js). */
-.commu-event-people-grid > a.is-unclassified, .commu-person-event-links li.is-unclassified a { border-color: #5f6b78; border-style: dashed; background: color-mix(in srgb, #5f6b78 10%, transparent); }
-.commu-event-people-grid > a.is-unclassified .commu-event-person-relation, .commu-person-event-links li.is-unclassified span, .commu-person-event-links li.is-unclassified em { color: #93a1b0; }
+.commu-event-people-grid > a.is-unclassified, .commu-person-event-links li.is-unclassified a { border-color: var(--role-unclassified); border-style: dashed; background: color-mix(in srgb, var(--role-unclassified) 10%, transparent); }
+.commu-event-people-grid > a.is-unclassified .commu-event-person-relation, .commu-person-event-links li.is-unclassified span, .commu-person-event-links li.is-unclassified em { color: var(--role-unclassified-bright); }
 
 /* Hover on a relation-tinted event row. The tint rules above outrank the
    generic .commu-person-event-links a:hover for background, but not for the
@@ -4729,14 +4732,14 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
    70% toward ink, dark enough in both themes for the cream title and the
    kind's bright label tone to clear contrast, while the border keeps the
    full hue. */
-.commu-person-event-links li.is-executor a:hover { background: color-mix(in srgb, #8c7734 70%, var(--clr-black, #010409)); border-color: #8c7734; }
-.commu-person-event-links li.is-target a:hover { background: color-mix(in srgb, #a74a42 70%, var(--clr-black, #010409)); border-color: #a74a42; }
-.commu-person-event-links li.is-leader a:hover { background: color-mix(in srgb, #b8564f 70%, var(--clr-black, #010409)); border-color: #b8564f; }
-.commu-person-event-links li.is-participant a:hover { background: color-mix(in srgb, #4d6f9c 70%, var(--clr-black, #010409)); border-color: #4d6f9c; }
-.commu-person-event-links li.is-opponent a:hover { background: color-mix(in srgb, #6f6f6f 70%, var(--clr-black, #010409)); border-color: #6f6f6f; }
-.commu-person-event-links li.is-witness a:hover { background: color-mix(in srgb, #7a6699 70%, var(--clr-black, #010409)); border-color: #7a6699; }
-.commu-person-event-links li.is-historian a:hover { background: color-mix(in srgb, #4f8a80 70%, var(--clr-black, #010409)); border-color: #4f8a80; }
-.commu-person-event-links li.is-unclassified a:hover { background: color-mix(in srgb, #5f6b78 70%, var(--clr-black, #010409)); border-color: #5f6b78; }
+.commu-person-event-links li.is-executor a:hover { background: color-mix(in srgb, var(--role-executor) 70%, var(--clr-black)); border-color: var(--role-executor); }
+.commu-person-event-links li.is-target a:hover { background: color-mix(in srgb, var(--role-target) 70%, var(--clr-black)); border-color: var(--role-target); }
+.commu-person-event-links li.is-leader a:hover { background: color-mix(in srgb, var(--role-leader) 70%, var(--clr-black)); border-color: var(--role-leader); }
+.commu-person-event-links li.is-participant a:hover { background: color-mix(in srgb, var(--role-participant) 70%, var(--clr-black)); border-color: var(--role-participant); }
+.commu-person-event-links li.is-opponent a:hover { background: color-mix(in srgb, var(--role-opponent) 70%, var(--clr-black)); border-color: var(--role-opponent); }
+.commu-person-event-links li.is-witness a:hover { background: color-mix(in srgb, var(--role-witness) 70%, var(--clr-black)); border-color: var(--role-witness); }
+.commu-person-event-links li.is-historian a:hover { background: color-mix(in srgb, var(--role-historian) 70%, var(--clr-black)); border-color: var(--role-historian); }
+.commu-person-event-links li.is-unclassified a:hover { background: color-mix(in srgb, var(--role-unclassified) 70%, var(--clr-black)); border-color: var(--role-unclassified); }
 /* Related-people groups by involvement kind */
 /* Events with named sides (migration 193): each camp is a framed panel with a
    header band, so the camp boundary reads before the kind groups
@@ -4784,34 +4787,34 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
     font-family: 'Courier New', monospace; font-size: var(--text-meta);
     font-weight: 400; color: var(--text-muted);
 }
-.commu-event-people-group.is-executor .commu-event-people-group-head { border-left-color: #8c7734; color: #d4bb61; }
-.commu-event-people-group.is-leader .commu-event-people-group-head { border-left-color: #b8564f; color: #de7c74; }
-.commu-event-people-group.is-participant .commu-event-people-group-head { border-left-color: #4d6f9c; color: #7ba3d4; }
-.commu-event-people-group.is-opponent .commu-event-people-group-head { border-left-color: #6f6f6f; color: #a8a8a8; }
-.commu-event-people-group.is-target .commu-event-people-group-head { border-left-color: #a74a42; color: #cf6b5f; }
-.commu-event-people-group.is-witness .commu-event-people-group-head { border-left-color: #7a6699; color: #a892cc; }
-.commu-event-people-group.is-historian .commu-event-people-group-head { border-left-color: #4f8a80; color: #7cbfb3; }
-.commu-event-people-group.is-unclassified .commu-event-people-group-head { border-left-color: #5f6b78; color: #93a1b0; }
+.commu-event-people-group.is-executor .commu-event-people-group-head { border-left-color: var(--role-executor); color: var(--role-executor-bright); }
+.commu-event-people-group.is-leader .commu-event-people-group-head { border-left-color: var(--role-leader); color: var(--role-leader-bright); }
+.commu-event-people-group.is-participant .commu-event-people-group-head { border-left-color: var(--role-participant); color: var(--role-participant-bright); }
+.commu-event-people-group.is-opponent .commu-event-people-group-head { border-left-color: var(--role-opponent); color: var(--role-opponent-bright); }
+.commu-event-people-group.is-target .commu-event-people-group-head { border-left-color: var(--role-target); color: var(--role-target-bright); }
+.commu-event-people-group.is-witness .commu-event-people-group-head { border-left-color: var(--role-witness); color: var(--role-witness-bright); }
+.commu-event-people-group.is-historian .commu-event-people-group-head { border-left-color: var(--role-historian); color: var(--role-historian-bright); }
+.commu-event-people-group.is-unclassified .commu-event-people-group-head { border-left-color: var(--role-unclassified); color: var(--role-unclassified-bright); }
 /* Light theme: the bright label tones above are for the dark theme; on cream
    they fell to 1.6:1 (axe, 2026-11-02). Each kind's hue pressed 25% toward
    black clears 4.5:1 on its own 14% tint and on the page. */
-[data-theme="light"] .commu-event-people-grid > a.is-executor .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-executor span, [data-theme="light"] .commu-person-event-links li.is-executor em, [data-theme="light"] .commu-event-people-group.is-executor .commu-event-people-group-head { color: color-mix(in srgb, #8c7734 75%, #000); }
-[data-theme="light"] .commu-event-people-grid > a.is-target .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-target span, [data-theme="light"] .commu-person-event-links li.is-target em, [data-theme="light"] .commu-event-people-group.is-target .commu-event-people-group-head { color: color-mix(in srgb, #a74a42 75%, #000); }
-[data-theme="light"] .commu-event-people-grid > a.is-leader .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-leader span, [data-theme="light"] .commu-person-event-links li.is-leader em, [data-theme="light"] .commu-event-people-group.is-leader .commu-event-people-group-head { color: color-mix(in srgb, #b8564f 75%, #000); }
-[data-theme="light"] .commu-event-people-grid > a.is-participant .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-participant span, [data-theme="light"] .commu-person-event-links li.is-participant em, [data-theme="light"] .commu-event-people-group.is-participant .commu-event-people-group-head { color: color-mix(in srgb, #4d6f9c 75%, #000); }
-[data-theme="light"] .commu-event-people-grid > a.is-opponent .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-opponent span, [data-theme="light"] .commu-person-event-links li.is-opponent em, [data-theme="light"] .commu-event-people-group.is-opponent .commu-event-people-group-head { color: color-mix(in srgb, #6f6f6f 75%, #000); }
-[data-theme="light"] .commu-event-people-grid > a.is-witness .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-witness span, [data-theme="light"] .commu-person-event-links li.is-witness em, [data-theme="light"] .commu-event-people-group.is-witness .commu-event-people-group-head { color: color-mix(in srgb, #7a6699 75%, #000); }
-[data-theme="light"] .commu-event-people-grid > a.is-historian .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-historian span, [data-theme="light"] .commu-person-event-links li.is-historian em, [data-theme="light"] .commu-event-people-group.is-historian .commu-event-people-group-head { color: color-mix(in srgb, #4f8a80 75%, #000); }
-[data-theme="light"] .commu-event-people-grid > a.is-unclassified .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-unclassified span, [data-theme="light"] .commu-person-event-links li.is-unclassified em, [data-theme="light"] .commu-event-people-group.is-unclassified .commu-event-people-group-head { color: color-mix(in srgb, #5f6b78 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-executor .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-executor span, [data-theme="light"] .commu-person-event-links li.is-executor em, [data-theme="light"] .commu-event-people-group.is-executor .commu-event-people-group-head { color: color-mix(in srgb, var(--role-executor) 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-target .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-target span, [data-theme="light"] .commu-person-event-links li.is-target em, [data-theme="light"] .commu-event-people-group.is-target .commu-event-people-group-head { color: color-mix(in srgb, var(--role-target) 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-leader .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-leader span, [data-theme="light"] .commu-person-event-links li.is-leader em, [data-theme="light"] .commu-event-people-group.is-leader .commu-event-people-group-head { color: color-mix(in srgb, var(--role-leader) 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-participant .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-participant span, [data-theme="light"] .commu-person-event-links li.is-participant em, [data-theme="light"] .commu-event-people-group.is-participant .commu-event-people-group-head { color: color-mix(in srgb, var(--role-participant) 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-opponent .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-opponent span, [data-theme="light"] .commu-person-event-links li.is-opponent em, [data-theme="light"] .commu-event-people-group.is-opponent .commu-event-people-group-head { color: color-mix(in srgb, var(--role-opponent) 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-witness .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-witness span, [data-theme="light"] .commu-person-event-links li.is-witness em, [data-theme="light"] .commu-event-people-group.is-witness .commu-event-people-group-head { color: color-mix(in srgb, var(--role-witness) 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-historian .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-historian span, [data-theme="light"] .commu-person-event-links li.is-historian em, [data-theme="light"] .commu-event-people-group.is-historian .commu-event-people-group-head { color: color-mix(in srgb, var(--role-historian) 75%, #000); }
+[data-theme="light"] .commu-event-people-grid > a.is-unclassified .commu-event-person-relation, [data-theme="light"] .commu-person-event-links li.is-unclassified span, [data-theme="light"] .commu-person-event-links li.is-unclassified em, [data-theme="light"] .commu-event-people-group.is-unclassified .commu-event-people-group-head { color: color-mix(in srgb, var(--role-unclassified) 75%, #000); }
 /* …except on a hovered row, whose fill is dark in both themes. */
-[data-theme="light"] .commu-person-event-links li.is-executor a:hover span, [data-theme="light"] .commu-person-event-links li.is-executor a:hover em { color: #d4bb61; }
-[data-theme="light"] .commu-person-event-links li.is-target a:hover span, [data-theme="light"] .commu-person-event-links li.is-target a:hover em { color: #cf6b5f; }
-[data-theme="light"] .commu-person-event-links li.is-leader a:hover span, [data-theme="light"] .commu-person-event-links li.is-leader a:hover em { color: #de7c74; }
-[data-theme="light"] .commu-person-event-links li.is-participant a:hover span, [data-theme="light"] .commu-person-event-links li.is-participant a:hover em { color: #7ba3d4; }
-[data-theme="light"] .commu-person-event-links li.is-opponent a:hover span, [data-theme="light"] .commu-person-event-links li.is-opponent a:hover em { color: #a8a8a8; }
-[data-theme="light"] .commu-person-event-links li.is-witness a:hover span, [data-theme="light"] .commu-person-event-links li.is-witness a:hover em { color: #a892cc; }
-[data-theme="light"] .commu-person-event-links li.is-historian a:hover span, [data-theme="light"] .commu-person-event-links li.is-historian a:hover em { color: #7cbfb3; }
-[data-theme="light"] .commu-person-event-links li.is-unclassified a:hover span, [data-theme="light"] .commu-person-event-links li.is-unclassified a:hover em { color: #93a1b0; }
+[data-theme="light"] .commu-person-event-links li.is-executor a:hover span, [data-theme="light"] .commu-person-event-links li.is-executor a:hover em { color: var(--role-executor-bright); }
+[data-theme="light"] .commu-person-event-links li.is-target a:hover span, [data-theme="light"] .commu-person-event-links li.is-target a:hover em { color: var(--role-target-bright); }
+[data-theme="light"] .commu-person-event-links li.is-leader a:hover span, [data-theme="light"] .commu-person-event-links li.is-leader a:hover em { color: var(--role-leader-bright); }
+[data-theme="light"] .commu-person-event-links li.is-participant a:hover span, [data-theme="light"] .commu-person-event-links li.is-participant a:hover em { color: var(--role-participant-bright); }
+[data-theme="light"] .commu-person-event-links li.is-opponent a:hover span, [data-theme="light"] .commu-person-event-links li.is-opponent a:hover em { color: var(--role-opponent-bright); }
+[data-theme="light"] .commu-person-event-links li.is-witness a:hover span, [data-theme="light"] .commu-person-event-links li.is-witness a:hover em { color: var(--role-witness-bright); }
+[data-theme="light"] .commu-person-event-links li.is-historian a:hover span, [data-theme="light"] .commu-person-event-links li.is-historian a:hover em { color: var(--role-historian-bright); }
+[data-theme="light"] .commu-person-event-links li.is-unclassified a:hover span, [data-theme="light"] .commu-person-event-links li.is-unclassified a:hover em { color: var(--role-unclassified-bright); }
 
 /* Prev / next navigation between event pages. One slim bar per direction:
    dir · period · title on a single baseline, the next card mirrored via
@@ -4856,10 +4859,10 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 /* Related research reports on person/event pages (services/report-mentions.js) */
 .commu-related-report-list { list-style: none; padding: 0; margin: 0; }
 .commu-related-report-list li + li { margin-top: .6rem; }
-.commu-related-report-list a { display: grid; grid-template-columns: 6rem 1fr; gap: .2rem .75rem; padding: .8rem; border: 1px solid var(--border, #555); border-radius: 0; color: inherit; text-decoration: none; }
+.commu-related-report-list a { display: grid; grid-template-columns: 6rem 1fr; gap: .2rem .75rem; padding: .8rem; border: 1px solid var(--border); border-radius: 0; color: inherit; text-decoration: none; }
 /* Same hover treatment as .commu-term-chip: accent ground, cream text. */
-.commu-related-report-list a:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
-.commu-related-report-list a:hover span { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
+.commu-related-report-list a:hover { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
+.commu-related-report-list a:hover span { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
 .commu-related-report-list span { color: var(--text-muted); font-weight: 700; }
 .commu-related-report-list strong { font-size: var(--text-md); }
 @media (max-width: 560px) { .commu-related-report-list a { grid-template-columns: 1fr; } }
@@ -4941,7 +4944,7 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
     color: var(--link);
 }
 .commu-docs-page .commu-event-card:hover .commu-doc-card-reading {
-    color: var(--clr-cream, #f8edca);
+    color: var(--clr-cream);
 }
 /* Glossary order: two halves of one row between the crumb and the search
    field, sharing their borders (-1px each side) so the three read as a block.
@@ -4955,7 +4958,7 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
     font-size: var(--text-sm); text-decoration: none;
 }
 .commu-dict-sort a + a { border-left: 0; }
-.commu-dict-sort a:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
+.commu-dict-sort a:hover { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
 .commu-dict-sort a.is-active {
     color: var(--text-primary); font-weight: 700;
     box-shadow: inset 0 -3px 0 var(--accent-red);
@@ -4971,15 +4974,15 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
     font-size: var(--text-sm); cursor: pointer;
 }
 .commu-dict-chip span { color: var(--text-muted); opacity: .75; margin-left: .15rem; }
-.commu-dict-chip:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); }
-.commu-dict-chip:hover span { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
+.commu-dict-chip:hover { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); }
+.commu-dict-chip:hover span { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
 /* Selected: the site's emphasis (accent ground, cream type), square like every
    other box here. */
 .commu-dict-chip.is-active {
-    color: var(--clr-cream, #f8edca); font-weight: 700;
-    background: var(--accent, #214d2e); border-color: var(--accent, #214d2e);
+    color: var(--clr-cream); font-weight: 700;
+    background: var(--accent); border-color: var(--accent);
 }
-.commu-dict-chip.is-active span { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
+.commu-dict-chip.is-active span { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
 /* The reference library's chips are links (script-less fallback to ?kind=…). */
 a.commu-dict-chip { display: inline-block; text-decoration: none; line-height: var(--leading-tight); }
 a.commu-dict-chip:hover { text-decoration: none; }
@@ -5002,7 +5005,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
     color: var(--text-muted); text-decoration: none;
     font-size: var(--text-sm);
 }
-.commu-dict-index a:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
+.commu-dict-index a:hover { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
 
 .commu-term-group-head {
     grid-column: 1 / -1; margin: 1.2rem 0 0;
@@ -5135,14 +5138,14 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-term-link,
 .commu-event-link {
     color: inherit; text-decoration: none;
-    border-bottom: 2px dashed var(--link, #5d7a5a);
+    border-bottom: 2px dashed var(--link);
 }
 .commu-term-link:hover,
 .commu-event-link:hover { border-bottom-style: solid; }
 
 .commu-doc-link {
     color: inherit; text-decoration: none;
-    border-bottom: 2px dotted var(--link, #5d7a5a);
+    border-bottom: 2px dotted var(--link);
 }
 .commu-doc-link:hover { border-bottom-style: solid; }
 
@@ -5151,7 +5154,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
    four kinds here deliberately avoid. */
 .commu-topic-link {
     color: inherit; text-decoration: none;
-    border-bottom: 2px dotted var(--link, #5d7a5a);
+    border-bottom: 2px dotted var(--link);
 }
 .commu-topic-link:hover { border-bottom-style: solid; }
 
@@ -5166,7 +5169,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-event-head > p a:not([class]),
 .commu-event-timeline-list a:not([class]) {
     color: inherit; text-decoration: none;
-    border-bottom: 2px dotted var(--link, #5d7a5a);
+    border-bottom: 2px dotted var(--link);
 }
 .commu-person-bio a:not([class]):hover,
 .commu-person-markdown a:not([class]):hover,
@@ -5174,10 +5177,10 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-event-timeline-list a:not([class]):hover { border-bottom-style: solid; }
 
 .commu-term-chips { display: flex; flex-wrap: wrap; gap: .5rem; }
-.commu-term-chip { display: inline-block; padding: .3rem .8rem; border: 1px solid var(--border, #555); border-radius: 0; color: inherit; text-decoration: none; font-size: var(--text-base); }
+.commu-term-chip { display: inline-block; padding: .3rem .8rem; border: 1px solid var(--border); border-radius: 0; color: inherit; text-decoration: none; font-size: var(--text-base); }
 /* Hover fills the chip with the house emphasis pair (accent ground, cream
    text) instead of the barely-visible border shift it used to get. */
-.commu-term-chip:hover { background: var(--accent, #214d2e); border-color: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); text-decoration: none; }
+.commu-term-chip:hover { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
 /* A chip for a nested entry, shown under its parent on the event page. */
 .commu-term-chip.is-child { font-size: var(--text-sm); opacity: .85; border-style: dashed; }
 
@@ -5641,32 +5644,46 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     margin-bottom: 26px;
 }
 
+/* A deck is the same compact row as a course (.commu-book-card): title and
+   count on the first line, the note under it, accent ground on hover. */
 .commu-drill-grid {
     display: grid;
-    gap: 10px;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 6px 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .commu-drill-card {
+    align-content: start;
+    align-items: baseline;
     background: var(--card-bg);
-    border: 1px solid var(--border);
+    border: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
     color: var(--text-primary);
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    padding: 14px;
+    display: grid;
+    gap: 2px 12px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 9px 12px;
     text-decoration: none;
-    transition: background-color 140ms ease, border-color 140ms ease;
+    transition: background-color 0.15s, border-color 0.15s;
 }
 
 .commu-drill-card:hover {
-    background: var(--bg-surface-hover);
-    border-color: var(--link);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--clr-cream);
+}
+.commu-drill-card:hover .commu-drill-card-desc,
+.commu-drill-card:hover .commu-drill-card-meta { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
+
+.commu-drill-card-title {
+    font-size: var(--text-md);
+    line-height: var(--leading-snug);
 }
 
 .commu-drill-card-desc {
     color: var(--text-secondary);
     font-size: var(--text-sm);
+    grid-column: 1 / -1;
+    grid-row: 2;
     line-height: var(--leading-snug);
 }
 
@@ -5675,8 +5692,9 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     display: flex;
     font-size: var(--text-meta);
     gap: 8px;
-    justify-content: space-between;
-    margin-top: auto;
+    grid-column: 2;
+    grid-row: 1;
+    white-space: nowrap;
 }
 
 .commu-drill-quote {
@@ -6645,7 +6663,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-event-relations-box {
     background: var(--bg-surface);
     border: 0;
-    border-top: 1px solid var(--border, #555);
+    border-top: 1px solid var(--border);
     border-radius: 0;
 }
 .commu-event-relations-parent,
@@ -6674,20 +6692,20 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     font-variant-numeric: tabular-nums;
     color: var(--text-muted);
 }
-.commu-event-relations-parent { background: var(--accent, #214d2e); color: var(--clr-cream, #f8edca); }
-.commu-event-relations-parent .commu-event-relations-tag { flex: 0 0 auto; order: -1; color: color-mix(in srgb, var(--clr-cream, #f8edca) 78%, transparent); }
+.commu-event-relations-parent { background: var(--accent); color: var(--clr-cream); }
+.commu-event-relations-parent .commu-event-relations-tag { flex: 0 0 auto; order: -1; color: color-mix(in srgb, var(--clr-cream) 78%, transparent); }
 .commu-event-relations-parent .commu-event-relations-title { font-weight: 700; }
-.commu-event-relations-parent .commu-event-relations-period { color: color-mix(in srgb, var(--clr-cream, #f8edca) 78%, transparent); }
-.commu-event-relations-parent:hover { color: var(--clr-white, #fff); text-decoration: none; }
+.commu-event-relations-parent .commu-event-relations-period { color: color-mix(in srgb, var(--clr-cream) 78%, transparent); }
+.commu-event-relations-parent:hover { color: var(--clr-white); text-decoration: none; }
 .commu-event-relations-list { list-style: none; margin: 0; padding: 0; }
-.commu-event-relations-list li + li { border-top: 1px solid color-mix(in srgb, var(--border, #555) 35%, transparent); }
+.commu-event-relations-list li + li { border-top: 1px solid color-mix(in srgb, var(--border) 35%, transparent); }
 .commu-event-relations-list a { color: var(--text-primary); }
 .commu-event-relations-list a:hover { color: var(--text-primary); background: var(--bg-surface-hover); text-decoration: none; }
 .commu-event-relations-list .commu-event-relations-tag { color: var(--text-muted); }
 .commu-event-relations-list .is-current {
     color: var(--text-primary);
     font-weight: 700;
-    box-shadow: inset 4px 0 0 var(--accent, #214d2e);
+    box-shadow: inset 4px 0 0 var(--accent);
 }
 .commu-event-relations-list .is-current .commu-event-relations-period { font-weight: 400; }
 
@@ -6831,7 +6849,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-course-preview-head:hover h2,
 .commu-course-preview-head:hover .commu-course-preview-count,
 .commu-course-preview-head:hover .commu-course-preview-all {
-    color: var(--clr-cream, #f8edca);
+    color: var(--clr-cream);
 }
 .commu-course-preview-groups {
     columns: 3 240px;
@@ -6885,7 +6903,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 .commu-course-preview-list a:hover .commu-course-preview-title,
 .commu-course-preview-list a:hover .commu-course-preview-meta {
-    color: var(--clr-cream, #f8edca);
+    color: var(--clr-cream);
 }
 @media (max-width: 560px) {
     .commu-course-preview-head {
@@ -7070,7 +7088,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-people-facet[open] > summary { border-color: var(--link); }
 .commu-people-facet[open] > summary .commu-role-icon { transform: rotate(180deg); }
 .commu-people-facet-title { font-weight: 600; }
-.commu-people-facet.is-set > summary { border-color: var(--accent); background: var(--accent); color: var(--clr-cream, #f8edca); }
+.commu-people-facet.is-set > summary { border-color: var(--accent); background: var(--accent); color: var(--clr-cream); }
 .commu-people-facet.is-set > summary .commu-role-icon { color: inherit; }
 .commu-people-facet-panel {
     position: absolute; z-index: 30; left: 0; right: 0; top: calc(100% + var(--space-1));
@@ -7104,9 +7122,9 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-people-conditions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2); margin-top: var(--space-3); padding-inline: var(--content-inset); }
 .commu-people-condition {
     display: inline-flex; align-items: center; gap: var(--space-1); min-height: 32px; padding: 0 var(--space-2) 0 var(--space-3);
-    background: var(--accent); color: var(--clr-cream, #f8edca); font-size: var(--text-sm); text-decoration: none;
+    background: var(--accent); color: var(--clr-cream); font-size: var(--text-sm); text-decoration: none;
 }
-.commu-people-condition:hover { color: var(--clr-cream, #f8edca); text-decoration: none; background: color-mix(in srgb, var(--accent) 80%, #000); }
+.commu-people-condition:hover { color: var(--clr-cream); text-decoration: none; background: color-mix(in srgb, var(--accent) 80%, #000); }
 .commu-people-condition .commu-role-icon { width: 14px; height: 14px; }
 .commu-people-condition-reset { font-size: var(--text-sm); color: var(--text-muted); text-decoration: none; padding: var(--space-1); }
 .commu-people-condition-reset:hover { color: var(--text-primary); }
@@ -7123,7 +7141,7 @@ button.commu-people-condition-reset { background: none; }
 .commu-people-tool { display: inline-flex; align-items: center; gap: var(--space-1); min-height: 32px; padding: 0 var(--space-3); color: var(--text-muted); font-size: var(--text-sm); text-decoration: none; border: 0; background: none; font-family: inherit; cursor: pointer; }
 .commu-people-tool + .commu-people-tool { border-left: 1px solid var(--border); }
 .commu-people-tool:hover { color: var(--text-primary); background: color-mix(in srgb, var(--link) 12%, transparent); text-decoration: none; }
-.commu-people-tool.is-active { color: var(--clr-cream, #f8edca); background: var(--accent); font-weight: 600; }
+.commu-people-tool.is-active { color: var(--clr-cream); background: var(--accent); font-weight: 600; }
 .commu-people-tool .commu-role-icon { width: 14px; height: 14px; }
 .commu-people-term-link { display: flex; align-items: baseline; gap: var(--space-4); margin-bottom: var(--space-4); padding: var(--space-3) var(--content-inset); border: 1px solid var(--border); color: var(--text-primary); text-decoration: none; }
 .commu-people-term-link > span:first-child { color: var(--text-muted); font-size: var(--text-sm); }

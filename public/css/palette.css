@@ -76,6 +76,25 @@
   --space-10: 2.5rem;
   --space-12: 3rem;
 
+  /* How a person took part in an event: one hue per kind, with the brighter
+     tone used for labels on the dark theme. */
+  --role-executor: #8c7734;
+  --role-executor-bright: #d4bb61;
+  --role-leader: #b8564f;
+  --role-leader-bright: #de7c74;
+  --role-participant: #4d6f9c;
+  --role-participant-bright: #7ba3d4;
+  --role-opponent: #6f6f6f;
+  --role-opponent-bright: #a8a8a8;
+  --role-target: #a74a42;
+  --role-target-bright: #cf6b5f;
+  --role-witness: #7a6699;
+  --role-witness-bright: #a892cc;
+  --role-historian: #4f8a80;
+  --role-historian-bright: #7cbfb3;
+  --role-unclassified: #5f6b78;
+  --role-unclassified-bright: #93a1b0;
+
   /* Cyber-Lenin uses a deliberately square visual language. Keep component
      APIs token-based, but make every global corner treatment sharp. */
   --radius-sm: 0;

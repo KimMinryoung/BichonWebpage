@@ -177,7 +177,7 @@
 .book .notes-list .commu-topic-link {
   color: inherit;
   text-decoration: none;
-  border-bottom: 2px dashed var(--link, #5d7a5a);
+  border-bottom: 2px dashed var(--link);
 }
 
 /* Another full text, or the learning course that covers the same material. */
@@ -187,7 +187,7 @@
 .book .notes-list .commu-book-link {
   color: inherit;
   text-decoration: none;
-  border-bottom: 2px dotted var(--link, #5d7a5a);
+  border-bottom: 2px dotted var(--link);
 }
 
 .book article a:not(.note-ref):hover,

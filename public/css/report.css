@@ -132,7 +132,7 @@
     text-decoration: none;
     /* Full-strength link green: a low-opacity currentColor dash was invisible
        against the dark canvas. */
-    border-bottom: 2px dashed var(--link, #5d7a5a);
+    border-bottom: 2px dashed var(--link);
 }
 
 .report-body .commu-person-link:hover,
@@ -152,11 +152,11 @@
 }
 
 .report-body a:target {
-    background: color-mix(in srgb, var(--link, #5d7a5a) 30%, transparent);
+    background: color-mix(in srgb, var(--link) 30%, transparent);
 }
 
 .report-body .commu-event-link {
-    color: var(--accent-red, #b84f4f);
+    color: var(--accent-red);
     border-bottom-color: color-mix(in srgb, currentColor 80%, transparent);
 }
 
@@ -165,7 +165,7 @@
     margin-top: 2.2em;
     padding: 1.1em 1.2em 1.2em;
     border: 1px solid var(--border);
-    border-left: 3px solid var(--accent-red, #b84f4f);
+    border-left: 3px solid var(--accent-red);
     background: var(--bg-surface);
 }
 
@@ -179,7 +179,7 @@
     font-size: 0.78em;
     font-weight: 700;
     letter-spacing: 0.04em;
-    color: var(--accent-red, #b84f4f);
+    color: var(--accent-red);
 }
 
 .report-related-events {
@@ -197,7 +197,7 @@
 }
 
 .report-related-event:hover {
-    border-color: var(--accent-red, #b84f4f);
+    border-color: var(--accent-red);
 }
 
 .report-related-event strong {
@@ -232,7 +232,7 @@
 }
 
 .report-related-person:hover {
-    border-color: var(--accent-red, #b84f4f);
+    border-color: var(--accent-red);
 }
 
 /* External-text source card (::: 외부문헌 blocks, utils/markdown.js) */
@@ -240,7 +240,7 @@
     margin: 1.2em 0;
     padding: 0.9em 1.1em;
     border: 1px solid var(--border);
-    border-left: 3px solid var(--accent-red, #b84f4f);
+    border-left: 3px solid var(--accent-red);
     background: var(--bg-surface);
 }
 
@@ -249,7 +249,7 @@
     font-size: 0.78em;
     font-weight: 700;
     letter-spacing: 0.04em;
-    color: var(--accent-red, #b84f4f);
+    color: var(--accent-red);
 }
 
 .report-body .report-source-card .report-source-title {

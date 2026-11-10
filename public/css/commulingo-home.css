@@ -76,13 +76,13 @@
     transition: background-color 0.15s;
 }
 .commulingo-resume:hover {
-    background: var(--accent, #214d2e);
-    border-color: var(--accent, #214d2e);
-    color: var(--clr-cream, #f8edca);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--clr-cream);
     text-decoration: none;
 }
-.commulingo-resume:hover .commu-resume-label { color: var(--clr-cream, #f8edca); }
-.commulingo-resume:hover .commu-resume-target { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
+.commulingo-resume:hover .commu-resume-label { color: var(--clr-cream); }
+.commulingo-resume:hover .commu-resume-target { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
 
 .commu-resume-label {
     color: var(--link);
@@ -134,16 +134,16 @@
     transition: background-color 0.15s, border-color 0.15s;
 }
 .commu-book-card:hover {
-    background: var(--accent, #214d2e);
-    border-color: var(--accent, #214d2e);
-    color: var(--clr-cream, #f8edca);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--clr-cream);
     text-decoration: none;
 }
 .commu-book-card:hover .commu-book-desc,
-.commu-book-card:hover .commu-book-meta { color: color-mix(in srgb, var(--clr-cream, #f8edca) 72%, var(--accent, #214d2e)); }
-.commu-book-card:hover .commu-book-progress-label { color: var(--clr-cream, #f8edca); }
-.commu-book-card:hover .commu-book-progress-track { background: color-mix(in srgb, var(--clr-black, #010409) 45%, var(--accent, #214d2e)); border-color: var(--clr-cream, #f8edca); }
-.commu-book-card:hover .commu-book-progress-track > span { background: var(--clr-cream, #f8edca); }
+.commu-book-card:hover .commu-book-meta { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
+.commu-book-card:hover .commu-book-progress-label { color: var(--clr-cream); }
+.commu-book-card:hover .commu-book-progress-track { background: color-mix(in srgb, var(--clr-black) 45%, var(--accent)); border-color: var(--clr-cream); }
+.commu-book-card:hover .commu-book-progress-track > span { background: var(--clr-cream); }
 
 .commu-book-card h3 {
     font-size: var(--text-md);
@@ -216,9 +216,9 @@
 }
 
 .commu-book-jump a:hover {
-    background: var(--accent, #214d2e);
-    border-color: var(--accent, #214d2e);
-    color: var(--clr-cream, #f8edca);
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--clr-cream);
 }
 
 .commu-book-jump a span {
@@ -443,7 +443,7 @@
 .commu-course-preview-head:hover h2,
 .commu-course-preview-head:hover .commu-course-preview-count,
 .commu-course-preview-head:hover .commu-course-preview-all {
-    color: var(--clr-cream, #f8edca);
+    color: var(--clr-cream);
 }
 .commu-course-preview-groups {
     columns: 3 240px;
@@ -497,7 +497,7 @@
 }
 .commu-course-preview-list a:hover .commu-course-preview-title,
 .commu-course-preview-list a:hover .commu-course-preview-meta {
-    color: var(--clr-cream, #f8edca);
+    color: var(--clr-cream);
 }
 @media (max-width: 560px) {
     .commu-course-preview-head {
