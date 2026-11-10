@@ -274,7 +274,12 @@
         var card = document.createElement('article');
         card.className = 'commu-dc-episode is-open';
         card.setAttribute('data-episode', ep.id);
-        card.innerHTML = '<div class="commu-dc-head"></div><div class="commu-dc-body"></div>';
+        var head = document.createElement('div');
+        head.className = 'commu-dc-head';
+        var body = document.createElement('div');
+        body.className = 'commu-dc-body';
+        card.appendChild(head);
+        card.appendChild(body);
         stage.appendChild(card);
         paintEpisode(card, ep);
         stage.appendChild(renderStep());

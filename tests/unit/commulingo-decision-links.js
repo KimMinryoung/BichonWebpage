@@ -139,6 +139,9 @@ vm.createContext(sandbox);
 vm.runInContext(fs.readFileSync(path.join(__dirname, '..', '..', 'public/js/commulingo-name-context.js'), 'utf8'), sandbox);
 sandbox.window.CommuLingoNameContext = sandbox.CommuLingoNameContext;
 vm.runInContext(source, sandbox, { filename: 'commulingo-decision.js' });
+// The book shows one fork at a time; a #episode link opens the second one.
+sandbox.window.location.hash = '#ep-2';
+vm.runInContext(source, sandbox, { filename: 'commulingo-decision.js' });
 
 // Everything the script wrote, wherever it wrote it.
 const html = allNodes.map(item => item.innerHTML).join('\n');
