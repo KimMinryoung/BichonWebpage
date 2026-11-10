@@ -15,7 +15,6 @@
     justify-content: space-between;
     gap: 18px;
     padding: 12px 18px;
-    border-left: 4px solid var(--accent);
 }
 .commulingo-hero--home {
     align-items: stretch;
@@ -67,7 +66,6 @@
 .commulingo-resume {
     align-items: center;
     border: 1px solid var(--border);
-    border-left: 4px solid var(--accent);
     background: var(--card-bg);
     color: var(--text-primary);
     display: flex;
@@ -108,7 +106,6 @@
     background: var(--card-bg);
     padding: 14px;
 }
-
 .commu-book-group-title {
     border-left: 4px solid var(--accent);
     color: var(--text-primary);
@@ -125,7 +122,6 @@
 }
 .commu-book-card {
     border: 1px solid var(--border);
-    border-left: 4px solid var(--accent);
     background: var(--card-bg);
     color: var(--text-primary);
     display: grid;
@@ -414,7 +410,6 @@
 }
 .commu-course-preview {
     padding: 0;
-    border-left: 4px solid var(--accent);
 }
 .commu-course-preview-head {
     display: flex;
@@ -563,7 +558,6 @@
 }
 .commulingo-home .commu-book-card {
     border-color: color-mix(in srgb, var(--border) 45%, transparent);
-    border-left-color: var(--accent);
 }
 .commulingo-home .commu-book-card:hover {
     border-color: var(--accent);

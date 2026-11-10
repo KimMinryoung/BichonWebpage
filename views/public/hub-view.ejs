@@ -14,10 +14,10 @@
 
             <div class="post-meta hub-meta">
                 <% if (item.source_publication) { %>
-                    <span class="hub-source"><%= item.source_publication %></span>
+                    <span class="hub-source"><%- include('../partials/menu-icon', { icon: 'library', iconClass: 'hub-meta-icon' }) %><%= item.source_publication %></span>
                 <% } %>
                 <% if (item.source_author) { %>
-                    <span class="hub-author"><%= item.source_author %></span>
+                    <span class="hub-author"><%- include('../partials/menu-icon', { icon: 'feather', iconClass: 'hub-meta-icon' }) %><%= item.source_author %></span>
                 <% } %>
                 <% if (item.source_published_at) { %>
                     <span class="hub-source-date"><%= item.source_published_at %></span>

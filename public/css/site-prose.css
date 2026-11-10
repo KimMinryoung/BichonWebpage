@@ -119,6 +119,9 @@
 .post-body figcaption {
     text-align: start;
 }
+.post-body :is(h1, h2, h3, h4) {
+    line-height: var(--leading-snug);
+}
 
 .post-body .commu-person-link,
 .post-body .commu-topic-link,

@@ -610,7 +610,7 @@
    흐리게 두어 읽기 시작을 막지 않고, 종류 라벨(인물·용어·사건)이 그보다 더
    흐려서 이름들이 먼저 읽힌다. 링크는 밑줄 없이 흐른다 — 여덟 개가 파랗게
    빛나면 상단 칩 줄을 자리만 옮겨 되살리는 셈이다. */
-.doc-refs {
+.book .doc-refs {
   margin: -0.2rem 0 1.8rem;
   font-size: 0.82rem;
   line-height: var(--leading-prose);
@@ -642,7 +642,6 @@
   gap: 0.6rem;
   margin: 0 0 1.4rem;
   padding: 0.45rem 0.8rem;
-  border-left: 3px solid var(--accent);
   background: var(--bg-surface);
   font-size: 0.88rem;
   line-height: var(--leading-snug);

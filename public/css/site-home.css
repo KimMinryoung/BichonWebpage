@@ -110,7 +110,7 @@ a.home-card:hover {
 }
 
 a.home-card:hover::after {
-    color: var(--accent);
+    color: var(--link);
     transform: translate(4px, -50%);
 }
 
@@ -177,7 +177,7 @@ a.home-card:hover::after {
 }
 
 .home-card-group:has(> h2 a:is(:hover, :active)) h2 a::after {
-    color: var(--accent);
+    color: var(--link);
     transform: translate(4px, -50%);
 }
 .home-card-group h2 a:is(:hover, :active, :focus) {
@@ -328,8 +328,8 @@ a.home-card:hover::after {
     -webkit-tap-highlight-color: transparent;
 }
 .home-page .home-section-header h2 {
-    border-left: 3px solid var(--accent);
-    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
     font-size: 1.18rem;
     font-weight: 700;
     line-height: var(--leading-snug);

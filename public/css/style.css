@@ -897,7 +897,7 @@ a.home-card:hover {
 }
 
 a.home-card:hover::after {
-    color: var(--accent);
+    color: var(--link);
     transform: translate(4px, -50%);
 }
 
@@ -974,7 +974,7 @@ a.home-card:hover::after {
 }
 
 .home-card-group:has(> h2 a:is(:hover, :active)) h2 a::after {
-    color: var(--accent);
+    color: var(--link);
     transform: translate(4px, -50%);
 }
 
@@ -1489,7 +1489,7 @@ footer {
 
 .footer-social-link:hover,
 .footer-social-link:focus-visible {
-    color: var(--accent);
+    color: var(--link);
     border-color: var(--accent);
     background-color: var(--bg-surface-hover);
     outline: none;
@@ -2360,8 +2360,12 @@ footer .footer-tagline {
 .hub-source-date {
     font-size: 0.85rem;
 }
-.hub-source::before { content: '📰 '; }
-.hub-author::before { content: '✍️  '; }
+.hub-meta-icon {
+    width: 1em;
+    height: 1em;
+    margin-right: 0.3em;
+    vertical-align: -0.125em;
+}
 .hub-section {
     margin-top: 28px;
 }
@@ -2522,6 +2526,11 @@ footer .footer-tagline {
     text-align: start;
 }
 
+/* Headings do not take the prose leading of the body. */
+.post-body :is(h1, h2, h3, h4) {
+    line-height: var(--leading-snug);
+}
+
 .post-body .commu-person-link,
 .post-body .commu-topic-link,
 .post-body .commu-term-link,
@@ -2560,8 +2569,8 @@ footer .footer-tagline {
     -webkit-tap-highlight-color: transparent;
 }
 .home-page .home-section-header h2 {
-    border-left: 3px solid var(--accent);
-    padding-left: 12px;
+    border-left: 4px solid var(--accent);
+    padding-left: 10px;
     font-size: 1.18rem;
     font-weight: 700;
     line-height: var(--leading-snug);

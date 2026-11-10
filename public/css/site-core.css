@@ -604,7 +604,7 @@ footer {
 
 .footer-social-link:hover,
 .footer-social-link:focus-visible {
-    color: var(--accent);
+    color: var(--link);
     border-color: var(--accent);
     background-color: var(--bg-surface-hover);
     outline: none;
