@@ -3083,11 +3083,17 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
 .commu-people-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    /* No gap above or below: each card is pulled up one pixel so the cards of
+       a column share their horizontal border. */
+    gap: 0 14px;
+    padding-top: 1px;
     /* Without this the shorter card in each pair stretches to its neighbour's
        height, leaving about 46px of empty space below its content. */
     align-items: start;
 }
+
+.commu-people-grid > .commu-person-card { margin-top: -1px; }
+.commu-people-grid > .commu-person-card:hover { z-index: 1; }
 
 .commu-person-card {
     background: var(--card-bg);
@@ -3529,14 +3535,16 @@ a.commu-person-position:focus-visible {
 .commu-world-map-note { color: var(--text-muted); font-size: var(--text-meta); line-height: var(--leading-normal); margin: 9px 0 0; }
 .commu-country-groups { display: grid; gap: 1.2rem; }
 .commu-country-group > h2 { font-size: var(--text-lg); margin: 0 0 .55rem; }
-.commu-country-grid { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
+/* Country buttons stack with no gap above or below, sharing the border. */
+.commu-country-grid { display: grid; gap: 0 8px; padding-top: 1px; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
 .commu-country-card {
     align-items: center; background: var(--card-bg); border: 1px solid var(--border);
     color: inherit; display: flex; gap: 11px; min-width: 0; padding: 10px 12px; text-decoration: none;
 }
+.commu-country-grid > .commu-country-card { margin-top: -1px; }
 .commu-country-card:hover,
 .commu-country-card:focus-visible,
-.commu-country-card.is-map-active { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
+.commu-country-card.is-map-active { position: relative; background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
 .commu-country-card .commu-flag { flex: 0 0 auto; height: 22px; width: auto; }
 .commu-country-card-icon { display: flex; flex: 0 0 32px; justify-content: center; }
 .commu-country-card-icon .commu-role-icon { height: 24px; width: 24px; }
