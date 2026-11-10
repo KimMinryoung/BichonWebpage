@@ -140,11 +140,26 @@
 
             <section class="commu-faction-timeline" aria-labelledby="faction-timeline-title">
                 <h3 id="faction-timeline-title"><%= factionText(factionGuide.timelineTitle) %></h3>
+                <% var factionGroups = {}; factionGuide.layers.forEach(function(layer) { layer.groups.forEach(function(group) { factionGroups[group.id] = group; }); }); %>
                 <ol>
                     <% factionGuide.timeline.forEach(function(item) { %>
                     <li>
                         <time><%= item.date %></time>
                         <strong><%= factionText(item.title) %></strong>
+                        <% if (item.sides && item.sides.length) { %>
+                        <div class="commu-faction-scene">
+                            <% item.sides.forEach(function(side, sideIndex) { %>
+                            <% if (sideIndex) { %><span class="commu-faction-vs" aria-hidden="true">vs</span><% } %>
+                            <div class="commu-faction-side<%= side.fallen ? ' is-fallen' : '' %>">
+                                <% side.groups.forEach(function(entry, entryIndex) { var group = factionGroups[entry.group] || {}; var pos = factionPositions[group.position]; %>
+                                <% if (entryIndex) { %><span class="commu-faction-plus" aria-hidden="true">+</span><% } %>
+                                <span class="commu-faction-chip<%= pos && pos.position ? ' pos-' + pos.position : '' %>"><% if (side.fallen) { %><span class="commu-faction-fallen" aria-label="<%= lang === 'en' ? 'eliminated:' : '제거됨:' %>">✕</span><% } else if (pos && pos.icon) { %><%- roleIconSvg(pos.icon) %><% } %><%= factionText(entry.label || group.name) %><% if (entry.moved) { %><em><%= lang === 'en' ? 'switches side' : '편 이동' %></em><% } %></span>
+                                <% }) %>
+                                <% if (side.note) { %><small><%= factionText(side.note) %></small><% } %>
+                            </div>
+                            <% }) %>
+                        </div>
+                        <% } %>
                         <span><%= factionText(item.text) %></span>
                     </li>
                     <% }) %>
