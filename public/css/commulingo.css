@@ -5220,12 +5220,12 @@ a.commu-dict-chip:hover { text-decoration: none; }
     left: -1px;
     right: -1px;
     height: 4px;
-    background: var(--pos);
+    background: var(--pos-shown, var(--pos));
 }
 .commu-faction-card.pos-white::before { box-shadow: 0 1px 0 var(--text-muted); }
 .commu-faction-card[class*="pos-"] > header {
     padding-top: calc(var(--space-4) + 4px);
-    background-image: linear-gradient(180deg, color-mix(in srgb, var(--pos) var(--pos-wash, 16%), transparent), transparent 90%);
+    background-image: linear-gradient(180deg, color-mix(in srgb, var(--pos-shown, var(--pos)) var(--pos-wash, 16%), transparent), transparent 90%);
 }
 .commu-faction-position {
     display: inline-flex;
@@ -5244,6 +5244,14 @@ a.commu-faction-position:hover,
 a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration: underline; }
 .commu-faction-guide .commu-role-icon { width: 13px; height: 13px; flex-shrink: 0; margin-right: 4px; }
 .commu-faction-picker { display: none; }
+/* Shades of one position colour (see factionTones in commulingo-book.ejs):
+   1 is the deep end of the layer's axis, 4 the pale end. The position chip
+   inside a card keeps the collection's own colour. */
+.pos-tone-1 { --pos-shown: color-mix(in srgb, var(--pos) 68%, #000); --pos-shown-ink: #faf2da; }
+.pos-tone-2 { --pos-shown: var(--pos); --pos-shown-ink: var(--pos-ink); }
+.pos-tone-3 { --pos-shown: color-mix(in srgb, var(--pos) 62%, #fff); --pos-shown-ink: #0b0d0a; }
+.pos-tone-4 { --pos-shown: color-mix(in srgb, var(--pos) 36%, #fff); --pos-shown-ink: #0b0d0a; }
+.pos-white.pos-tone-1 { --pos-shown: #a9a79f; --pos-shown-ink: #0b0d0a; }
 .commu-faction-card > header { padding: var(--space-4); border-bottom: 1px solid color-mix(in srgb, var(--border) 40%, transparent); }
 .commu-faction-card h4 { margin: 0; font-family: var(--font-display); font-size: var(--text-lg); }
 .commu-faction-card > header p { margin: var(--space-1) 0 0; color: var(--text-muted); font-size: var(--text-xs); }
@@ -5284,8 +5292,8 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
     align-items: center;
     max-width: 100%;
     padding: 2px 8px;
-    background: var(--pos, var(--bg-surface));
-    color: var(--pos-ink, var(--text-primary));
+    background: var(--pos-shown, var(--pos, var(--bg-surface)));
+    color: var(--pos-shown-ink, var(--pos-ink, var(--text-primary)));
     font-size: .74rem;
     font-weight: 700;
     line-height: 1.35;
@@ -5295,7 +5303,7 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
 .commu-faction-chip em::before { content: '→ '; }
 .is-fallen .commu-faction-chip {
     background: transparent;
-    box-shadow: inset 0 0 0 1px var(--pos, var(--border));
+    box-shadow: inset 0 0 0 1px var(--pos-shown, var(--pos, var(--border)));
     color: var(--text-muted);
 }
 .is-fallen .commu-faction-chip.pos-white { box-shadow: inset 0 0 0 1px var(--text-muted); }
@@ -5320,12 +5328,10 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
         align-items: center;
         justify-content: flex-start;
         gap: var(--space-1);
-        padding: calc(var(--space-2) + 4px) var(--space-1) var(--space-2);
+        padding: var(--space-2) var(--space-1);
         border: 1px solid var(--border);
-        background: var(--bg-surface);
-        box-shadow: inset 0 4px 0 var(--pos, var(--border));
-        background-image: linear-gradient(180deg, color-mix(in srgb, var(--pos, transparent) var(--pos-wash, 16%), transparent), transparent);
-        color: var(--text-primary);
+        background: var(--pos-shown, var(--pos, var(--bg-surface)));
+        color: var(--pos-shown-ink, var(--pos-ink, var(--text-primary)));
         font: inherit;
         font-size: var(--text-xs);
         font-weight: 700;
@@ -5335,9 +5341,19 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
         overflow-wrap: anywhere;
         cursor: pointer;
     }
-    .commu-faction-picker button.pos-white { box-shadow: inset 0 4px 0 var(--pos), inset 0 5px 0 var(--text-muted); }
+    .commu-faction-picker button.pos-white { border-color: var(--text-muted); }
     .commu-faction-picker .commu-role-icon { width: 18px; height: 18px; margin: 0; }
-    .commu-faction-picker button[aria-expanded="true"] { background: var(--pos, var(--bg-inset)); color: var(--pos-ink, var(--text-primary)); border-color: var(--text-primary); }
+    /* The open faction: a thick frame and a notch pointing down to its card. */
+    .commu-faction-picker button[aria-expanded="true"] { position: relative; box-shadow: 0 0 0 3px var(--text-primary); }
+    .commu-faction-picker button[aria-expanded="true"]::after {
+        content: '';
+        position: absolute;
+        bottom: -11px;
+        left: 50%;
+        border: 7px solid transparent;
+        border-top-color: var(--text-primary);
+        transform: translateX(-50%);
+    }
     .commu-faction-picker button:focus-visible { outline: 2px solid var(--link); outline-offset: 1px; }
     .commu-faction-grid,
     .commu-faction-layer--counterrevolution .commu-faction-grid,

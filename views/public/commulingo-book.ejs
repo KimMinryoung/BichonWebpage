@@ -86,6 +86,28 @@
             </header>
             <p class="commu-faction-caveat"><%= factionText(factionGuide.caveat) %></p>
 
+            <%
+                // Factions of one layer that share a position colour are told apart by shade: with layer.axis.deep set,
+                // the faction nearest that end of the axis is deepest, the far one palest (pos-tone-1 … pos-tone-4).
+                var factionTones = {};
+                factionGuide.layers.forEach(function(layer) {
+                    if (!layer.axis || !layer.axis.deep) return;
+                    var byPosition = {};
+                    layer.groups.slice().sort(function(a, b) { return (a.order || 0) - (b.order || 0); }).forEach(function(group) {
+                        if (group.position) (byPosition[group.position] = byPosition[group.position] || []).push(group.id);
+                    });
+                    Object.keys(byPosition).forEach(function(position) {
+                        var ids = layer.axis.deep === 'right' ? byPosition[position].slice().reverse() : byPosition[position];
+                        if (ids.length < 2) return;
+                        ids.forEach(function(id, index) { factionTones[id] = Math.round(index / (ids.length - 1) * 3) + 1; });
+                    });
+                });
+                var factionClass = function(group) {
+                    var pos = group && factionPositions[group.position];
+                    if (!pos || !pos.position) return '';
+                    return 'pos-' + pos.position + (factionTones[group.id] ? ' pos-tone-' + factionTones[group.id] : '');
+                };
+            %>
             <div class="commu-faction-layers">
                 <% factionGuide.layers.forEach(function(layer) { %>
                 <section class="commu-faction-layer commu-faction-layer--<%= layer.id %>" aria-labelledby="faction-layer-<%= layer.id %>">
@@ -106,12 +128,12 @@
                     <% var orderedGroups = layer.groups.slice().sort(function(a, b) { return (a.order || 0) - (b.order || 0); }); %>
                     <div class="commu-faction-picker">
                         <% orderedGroups.forEach(function(group) { var pos = factionPositions[group.position]; %>
-                        <button type="button" class="<%= pos && pos.position ? 'pos-' + pos.position : '' %>" aria-expanded="false" aria-controls="faction-card-<%= layer.id %>-<%= group.id %>"><% if (pos && pos.icon) { %><%- roleIconSvg(pos.icon) %><% } %><span><%= factionText(group.name) %></span></button>
+                        <button type="button" class="<%= factionClass(group) %>" aria-expanded="false" aria-controls="faction-card-<%= layer.id %>-<%= group.id %>"><% if (pos && pos.icon) { %><%- roleIconSvg(pos.icon) %><% } %><span><%= factionText(group.name) %></span></button>
                         <% }) %>
                     </div>
                     <div class="commu-faction-grid">
                         <% orderedGroups.forEach(function(group) { var pos = factionPositions[group.position]; %>
-                        <article class="commu-faction-card<%= pos && pos.position ? ' pos-' + pos.position : '' %>" id="faction-card-<%= layer.id %>-<%= group.id %>">
+                        <article class="commu-faction-card <%= factionClass(group) %>" id="faction-card-<%= layer.id %>-<%= group.id %>">
                             <header>
                                 <% if (pos) { %><a class="commu-faction-position" href="<%= pos.href %>"><% if (pos.icon) { %><%- roleIconSvg(pos.icon) %><% } %><%= pos.title %></a><% } %>
                                 <h4><%= factionText(group.name) %></h4>
@@ -153,7 +175,7 @@
                             <div class="commu-faction-side<%= side.fallen ? ' is-fallen' : '' %>">
                                 <% side.groups.forEach(function(entry, entryIndex) { var group = factionGroups[entry.group] || {}; var pos = factionPositions[group.position]; %>
                                 <% if (entryIndex) { %><span class="commu-faction-plus" aria-hidden="true">+</span><% } %>
-                                <span class="commu-faction-chip<%= pos && pos.position ? ' pos-' + pos.position : '' %>"><% if (side.fallen) { %><span class="commu-faction-fallen" aria-label="<%= lang === 'en' ? 'eliminated:' : '제거됨:' %>">✕</span><% } else if (pos && pos.icon) { %><%- roleIconSvg(pos.icon) %><% } %><%= factionText(entry.label || group.name) %><% if (entry.moved) { %><em><%= lang === 'en' ? 'switches side' : '편 이동' %></em><% } %></span>
+                                <span class="commu-faction-chip <%= factionClass(group) %>"><% if (side.fallen) { %><span class="commu-faction-fallen" aria-label="<%= lang === 'en' ? 'eliminated:' : '제거됨:' %>">✕</span><% } else if (pos && pos.icon) { %><%- roleIconSvg(pos.icon) %><% } %><%= factionText(entry.label || group.name) %><% if (entry.moved) { %><em><%= lang === 'en' ? 'switches side' : '편 이동' %></em><% } %></span>
                                 <% }) %>
                                 <% if (side.note) { %><small><%= factionText(side.note) %></small><% } %>
                             </div>
