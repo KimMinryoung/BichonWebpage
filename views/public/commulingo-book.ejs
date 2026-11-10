@@ -103,10 +103,17 @@
                         <span><%= factionText(layer.axis.right) %></span>
                     </div>
                     <% } %>
+                    <% var orderedGroups = layer.groups.slice().sort(function(a, b) { return (a.order || 0) - (b.order || 0); }); %>
+                    <div class="commu-faction-picker">
+                        <% orderedGroups.forEach(function(group) { var pos = factionPositions[group.position]; %>
+                        <button type="button" class="<%= pos && pos.position ? 'pos-' + pos.position : '' %>" aria-expanded="false" aria-controls="faction-card-<%= layer.id %>-<%= group.id %>"><% if (pos && pos.icon) { %><%- roleIconSvg(pos.icon) %><% } %><span><%= factionText(group.name) %></span></button>
+                        <% }) %>
+                    </div>
                     <div class="commu-faction-grid">
-                        <% layer.groups.slice().sort(function(a, b) { return (a.order || 0) - (b.order || 0); }).forEach(function(group) { %>
-                        <article class="commu-faction-card">
+                        <% orderedGroups.forEach(function(group) { var pos = factionPositions[group.position]; %>
+                        <article class="commu-faction-card<%= pos && pos.position ? ' pos-' + pos.position : '' %>" id="faction-card-<%= layer.id %>-<%= group.id %>">
                             <header>
+                                <% if (pos) { %><a class="commu-faction-position" href="<%= pos.href %>"><% if (pos.icon) { %><%- roleIconSvg(pos.icon) %><% } %><%= pos.title %></a><% } %>
                                 <h4><%= factionText(group.name) %></h4>
                                 <p><%= factionText(group.alias) %></p>
                             </header>
@@ -153,6 +160,22 @@
                 </ul>
             </footer>
         </section>
+        <script>
+            // Narrow screens show each layer as one left-to-right row of names; a tap opens that faction's card below the row.
+            document.querySelectorAll('.commu-faction-picker').forEach(function(picker) {
+                var buttons = picker.querySelectorAll('button');
+                picker.addEventListener('click', function(event) {
+                    var button = event.target.closest('button');
+                    if (!button) return;
+                    var opening = button.getAttribute('aria-expanded') !== 'true';
+                    buttons.forEach(function(other) {
+                        var open = opening && other === button;
+                        other.setAttribute('aria-expanded', open ? 'true' : 'false');
+                        document.getElementById(other.getAttribute('aria-controls')).classList.toggle('is-open', open);
+                    });
+                });
+            });
+        </script>
         <% } %>
 
         <section class="commulingo-lessons" id="commuLessonList" aria-label="<%= bookTitle %>"></section>

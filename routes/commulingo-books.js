@@ -8,6 +8,8 @@ const { localize } = require('../data/commulingo/localize');
 const { bookPageData, decisionRefs } = require('../data/commulingo/book-page');
 const { catalogBody, lessonPayload } = require('../data/commulingo/book-response');
 const { getGenealogyChart } = require('../data/commulingo/genealogy-store');
+const { loadCommuLingoPeople } = require('../data/commulingo/people-store');
+const { collectionPosition } = require('../data/commulingo/person-position');
 
 // Books, the lesson catalog, and lesson payloads. The page data and the
 // lesson linkifier live in data/commulingo/book-page.js.
@@ -18,6 +20,25 @@ const router = express.Router();
 const MERGED_BOOKS = {
     'french-revolution-documents': 'french-revolution-intro', // part 4 since 2026-09-27
 };
+
+// A faction-map group names a person position collection (group.position);
+// the map shows that collection's colour, icon and title, as person cards do.
+async function factionPositions(guide, lang) {
+    const wanted = new Set((guide.layers || []).flatMap(layer => (layer.groups || []).map(group => group.position)).filter(Boolean));
+    if (!wanted.size) return {};
+    try {
+        const { data } = await loadCommuLingoPeople();
+        return Object.fromEntries((data.collections || []).filter(c => wanted.has(c.id)).map(c => [c.id, {
+            position: collectionPosition(c.id),
+            icon: c.icon || '',
+            title: localize(c.title, lang),
+            href: `/commulingo/people?position=${encodeURIComponent(c.id)}`,
+        }]));
+    } catch (err) {
+        console.error('commulingo faction positions:', err.message);
+        return {};
+    }
+}
 
 router.get('/book/:collectionId', async (req, res) => {
     try {
@@ -57,6 +78,7 @@ router.get('/book/:collectionId', async (req, res) => {
         const bookGenealogy = chart ? { href: `/commulingo/genealogy/${chart.id}`, title: localize(chart.title, res.locals.lang) } : null;
         res.render('public/commulingo-book', {
             lessons: { version: catalog.version, collections: [pageData.linked] },
+            factionPositions: collection.factionGuide ? await factionPositions(collection.factionGuide, res.locals.lang) : {},
             chapterDictionary: pageData.chapterDictionary,
             decisionLinks: pageData.decisionLinks,
             decisionRefs: refs,
