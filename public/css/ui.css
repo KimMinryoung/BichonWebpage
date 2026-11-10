@@ -162,8 +162,11 @@ svg {
     line-height: var(--leading-snug);
 }
 
+/* The way to the other auth screen: a muted question and a full-width button. */
 .ui-auth-switch {
-    margin-top: var(--space-5);
+    margin: var(--space-5) 0 var(--space-2);
+    color: var(--text-muted);
+    font-size: var(--text-sm);
     text-align: center;
 }
 

@@ -928,12 +928,12 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
 .commu-people-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0 14px;
-    padding-top: 1px;
+    gap: 0;
+    padding: 1px 0 0 1px;
     align-items: start;
 }
 
-.commu-people-grid > .commu-person-card { margin-top: -1px; }
+.commu-people-grid > .commu-person-card { margin: -1px 0 0 -1px; }
 .commu-people-grid > .commu-person-card:hover { z-index: 1; }
 
 .commu-person-card {
