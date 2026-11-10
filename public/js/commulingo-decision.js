@@ -46,6 +46,8 @@
         mapMatch: en ? 'History’s road' : '실제 역사와 같은 길',
         mapDiverge: en ? 'A different road' : '다른 길',
         mapOpen: en ? 'Undecided' : '미결정',
+        prev: en ? 'Previous' : '이전',
+        next: en ? 'Next fork' : '다음 갈림길',
     };
 
     // date: { start: [y, m?, d?], end?: [y, m?, d?], calendar?: 'julian' }.
@@ -211,28 +213,18 @@
     }
 
     var episodes = allEpisodes();
-    var epNodes = {};
+    // One fork at a time: the stage holds the current episode; the route map
+    // above picks any fork and the step bar below moves back and forth.
+    var current = 0;
+    var stage = null;
 
-    function setOpen(li, open) {
-        li.classList.toggle('is-open', open);
-        var head = li.querySelector('.commu-dc-head');
-        if (head) {
-            head.setAttribute('aria-expanded', open ? 'true' : 'false');
-            var toggle = head.querySelector('.commu-dc-toggle');
-            if (toggle) toggle.textContent = open ? '−' : '+';
-        }
+    function eraOf(ep) {
+        return (timeline.eras || []).filter(function(era) { return (era.episodes || []).indexOf(ep) >= 0; })[0] || {};
     }
 
-    // Opens the first undecided episode at (or after) the given index, so the
-    // learner always has the next fork in front of them.
-    function openNextUndecided(fromIndex) {
-        for (var i = fromIndex; i < episodes.length; i++) {
-            var ep = episodes[i];
-            if (choices[ep.id]) continue;
-            var li = epNodes[ep.id];
-            if (li) setOpen(li, true);
-            return;
-        }
+    function firstUndecided() {
+        for (var i = 0; i < episodes.length; i++) if (!choices[episodes[i].id]) return i;
+        return 0;
     }
 
     function episodeIndex(id) {
@@ -252,31 +244,65 @@
     }
 
     function render() {
-        epNodes = {};
         root.innerHTML = '';
         root.appendChild(renderCentral());
         root.appendChild(renderMap());
-        (timeline.eras || []).forEach(function(era) {
-            root.appendChild(renderEra(era));
-        });
+        stage = document.createElement('section');
+        stage.className = 'commu-dc-stage';
+        root.appendChild(stage);
         root.appendChild(renderVerdict());
         var epi = renderEpilogue();
         if (epi) root.appendChild(epi);
+        // Deep links from the people page ("등장 장면" chips) arrive as
+        // /commulingo/book/<id>#<episodeId>: start on that fork.
+        var hashIndex = window.location.hash ? episodeIndex(window.location.hash.slice(1)) : -1;
+        showEpisode(hashIndex >= 0 ? hashIndex : firstUndecided(), hashIndex >= 0);
         updateProgress();
-        openNextUndecided(0);
-        openHashEpisode();
     }
 
-    // Deep links from the people page ("등장 장면" chips) arrive as
-    // /commulingo/book/<id>#<episodeId> — open that scene and scroll to it once.
-    var hashHandled = false;
-    function openHashEpisode() {
-        if (hashHandled) return;
-        var hash = window.location.hash ? window.location.hash.slice(1) : '';
-        if (!hash || !epNodes[hash]) return;
-        hashHandled = true;
-        setOpen(epNodes[hash], true);
-        epNodes[hash].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    function showEpisode(index, scroll) {
+        current = Math.max(0, Math.min(episodes.length - 1, index));
+        var ep = episodes[current];
+        var era = eraOf(ep);
+        stage.innerHTML = [
+            '<header class="commu-dc-era-head">',
+            '<span class="commu-dc-era-range">' + escapeHtml(yearsLabel(era.years || era.range)) + '</span>',
+            '<h2>' + escapeHtml(text(era.title)) + '</h2>',
+            era.intro ? '<p>' + rich(era.intro) + '</p>' : '',
+            '</header>'
+        ].join('');
+        var card = document.createElement('article');
+        card.className = 'commu-dc-episode is-open';
+        card.setAttribute('data-episode', ep.id);
+        card.innerHTML = '<div class="commu-dc-head"></div><div class="commu-dc-body"></div>';
+        stage.appendChild(card);
+        paintEpisode(card, ep);
+        stage.appendChild(renderStep());
+        paintMap();
+        try { history.replaceState(null, '', '#' + ep.id); } catch (err) {}
+        if (scroll) stage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // Previous / position / next. Next is the strong button once the current
+    // fork is decided, so the reader reads the outcome and then moves on.
+    function renderStep() {
+        var bar = document.createElement('nav');
+        bar.className = 'commu-dc-step';
+        bar.setAttribute('aria-label', L.map);
+        var decided = Boolean(choices[episodes[current].id]);
+        bar.innerHTML = '<button type="button" data-step="-1"' + (current === 0 ? ' disabled' : '') + '>← ' + escapeHtml(L.prev) + '</button>'
+            + '<span>' + (current + 1) + ' / ' + episodes.length + '</span>'
+            + '<button type="button" data-step="1" class="' + (decided ? 'is-primary' : '') + '"' + (current === episodes.length - 1 ? ' disabled' : '') + '>' + escapeHtml(L.next) + ' →</button>';
+        bar.addEventListener('click', function(event) {
+            var button = event.target.closest('[data-step]');
+            if (button && !button.disabled) showEpisode(current + Number(button.getAttribute('data-step')), true);
+        });
+        return bar;
+    }
+
+    function refreshStep() {
+        var old = stage && stage.querySelector('.commu-dc-step');
+        if (old) old.replaceWith(renderStep());
     }
 
     function renderCentral() {
@@ -325,10 +351,8 @@
             + (timeline.stances || []).map(function(st) { return '<span class="stance-' + escapeHtml(st.id) + '"><span class="commu-dc-stop is-match" aria-hidden="true"></span>' + escapeHtml(text(st.label)) + '</span>'; }).join('') + '</p>';
         nav.addEventListener('click', function(event) {
             var button = event.target.closest('[data-map-episode]');
-            var li = button && epNodes[button.getAttribute('data-map-episode')];
-            if (!li) return;
-            setOpen(li, true);
-            li.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            var index = button ? episodeIndex(button.getAttribute('data-map-episode')) : -1;
+            if (index >= 0) showEpisode(index, true);
         });
         return nav;
     }
@@ -338,7 +362,9 @@
             var ep = episodes[episodeIndex(button.getAttribute('data-map-episode'))];
             var chosenId = ep && choices[ep.id];
             var opt = chosenId && (ep.options || []).filter(function(item) { return item.id === chosenId; })[0];
-            button.className = !chosenId ? '' : (chosenId === ep.actualId ? 'is-match' : 'is-diverge') + (opt && opt.stance ? ' stance-' + opt.stance : '');
+            button.className = (!chosenId ? '' : (chosenId === ep.actualId ? 'is-match' : 'is-diverge') + (opt && opt.stance ? ' stance-' + opt.stance : ''))
+                + (ep === episodes[current] ? ' is-current' : '');
+            if (ep === episodes[current]) button.setAttribute('aria-current', 'step'); else button.removeAttribute('aria-current');
         });
     }
 
@@ -350,52 +376,6 @@
         var fillEl = document.getElementById('commuDcProgressFill');
         if (textEl) textEl.textContent = done + ' / ' + total + ' ' + L.progress;
         if (fillEl) fillEl.style.width = Math.round((done / (total || 1)) * 100) + '%';
-    }
-
-    function renderEra(era) {
-        var section = document.createElement('section');
-        section.className = 'commu-dc-era';
-        section.innerHTML = [
-            '<header class="commu-dc-era-head">',
-            '<span class="commu-dc-era-range">' + escapeHtml(yearsLabel(era.years || era.range)) + '</span>',
-            '<h2>' + escapeHtml(text(era.title)) + '</h2>',
-            era.intro ? '<p>' + rich(era.intro) + '</p>' : '',
-            '</header>'
-        ].join('');
-        var list = document.createElement('ol');
-        list.className = 'commu-dc-list';
-        (era.episodes || []).forEach(function(ep) {
-            list.appendChild(renderEpisode(ep));
-        });
-        section.appendChild(list);
-        return section;
-    }
-
-    function renderEpisode(ep) {
-        var li = document.createElement('li');
-        li.className = 'commu-dc-episode';
-        li.setAttribute('data-episode', ep.id);
-
-        var head = document.createElement('button');
-        head.type = 'button';
-        head.className = 'commu-dc-head';
-        head.setAttribute('aria-expanded', 'false');
-
-        var body = document.createElement('div');
-        body.className = 'commu-dc-body';
-
-        head.addEventListener('click', function() {
-            var open = li.classList.toggle('is-open');
-            head.setAttribute('aria-expanded', open ? 'true' : 'false');
-            var toggle = head.querySelector('.commu-dc-toggle');
-            if (toggle) toggle.textContent = open ? '−' : '+';
-        });
-
-        li.appendChild(head);
-        li.appendChild(body);
-        epNodes[ep.id] = li;
-        paintEpisode(li, ep);
-        return li;
     }
 
     function paintEpisode(li, ep) {
@@ -412,8 +392,7 @@
         head.innerHTML = [
             '<span class="commu-dc-date">' + escapeHtml(dateLabel(ep.date)) + '</span>',
             '<span class="commu-dc-title"><strong>' + escapeHtml(text(ep.title)) + '</strong></span>',
-            status,
-            '<span class="commu-dc-toggle" aria-hidden="true">' + (li.classList.contains('is-open') ? '−' : '+') + '</span>'
+            status
         ].join('');
 
         var parts = [
@@ -483,7 +462,7 @@
                     paintEpisode(li, ep);
                     refreshVerdict();
                     updateProgress();
-                    openNextUndecided(episodeIndex(ep.id) + 1);
+                    refreshStep();
                 });
             });
         } else {
@@ -494,6 +473,7 @@
                 paintEpisode(li, ep);
                 refreshVerdict();
                 updateProgress();
+                refreshStep();
             });
         }
     }

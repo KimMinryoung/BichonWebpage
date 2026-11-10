@@ -1989,15 +1989,6 @@
     line-height: var(--leading-normal);
 }
 
-.commu-dc-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
 .commu-dc-episode {
     position: relative;
     border: 1px solid var(--border);
@@ -2030,7 +2021,6 @@
     color: var(--text-primary);
 }
 
-.commu-dc-head:hover { background: var(--card-bg); }
 
 .commu-dc-date {
     flex-shrink: 0;
@@ -2055,13 +2045,6 @@
 
 .commu-dc-status.is-match { background: var(--accent-green); border-color: var(--link); }
 .commu-dc-status.is-diverge { background: var(--accent-red); border-color: var(--accent-red); }
-
-.commu-dc-toggle {
-    flex-shrink: 0;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--text-muted);
-}
 
 .commu-dc-body { display: none; }
 
@@ -2360,6 +2343,18 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
 .commu-dc-map-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: var(--space-3) 0 0; color: var(--text-muted); font-size: var(--text-xs); }
 .commu-dc-map-legend > span { display: inline-flex; align-items: center; gap: 6px; }
 .commu-dc-map-legend .commu-dc-stop { margin-top: 0; }
+
+/* One fork at a time: the stage under the route map, a step bar below it. */
+.commu-dc-stage { scroll-margin-top: 64px; }
+.commu-dc-stage .commu-dc-era-head { padding: 0 16px; }
+.commu-dc-stage .commu-dc-head { cursor: default; }
+.commu-dc-step { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); margin: var(--space-3) 0 var(--space-8); color: var(--text-muted); font-family: var(--font-mono); font-size: var(--text-sm); }
+.commu-dc-step button { padding: 10px 16px; border: 1px solid var(--border); background: var(--bg-surface); color: var(--text-primary); font: inherit; font-weight: 700; cursor: pointer; }
+.commu-dc-step button:hover:not(:disabled) { border-color: var(--text-primary); }
+.commu-dc-step button:disabled { visibility: hidden; }
+.commu-dc-step button.is-primary { border-color: var(--text-primary); background: var(--text-primary); color: var(--bg-surface); }
+.commu-dc-map-row button.is-current .commu-dc-stop { outline: 3px solid var(--text-primary); outline-offset: 2px; }
+.commu-dc-map-row button.is-current { color: var(--text-primary); font-weight: 700; }
 
 .commu-dc-refs { margin: 12px 0 0; }
 .commu-dc-refs ul {
