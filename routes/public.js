@@ -73,6 +73,14 @@ async function loadRecentReportItems(lang) {
     return { items, failed: researchResult.status === 'rejected' || pagesResult.status === 'rejected' };
 }
 
+// A homepage preview section whose newest item is older than one month is
+// hidden whole (the menu card above still leads to it). Items come newest
+// first, but the newest date is taken over all of them to not depend on that.
+function freshSection(items, dateField, staleBefore) {
+    const newest = Math.max(0, ...items.map(item => new Date(item[dateField] || 0).getTime() || 0));
+    return newest >= staleBefore.getTime() ? items : [];
+}
+
 // Homepage
 router.get('/', async (req, res) => {
     try {
@@ -102,11 +110,13 @@ router.get('/', async (req, res) => {
             loadRecentCommuLingoItems(lang),
         ]);
 
-        const recentPosts = postsResult.status === 'fulfilled' ? postsResult.value : [];
-        const recentDiaries = diariesResult.status === 'fulfilled' ? diariesResult.value : [];
-        const recentResearch = researchResult.status === 'fulfilled' ? researchResult.value.items : [];
-        const recentHub = hubResult.status === 'fulfilled' ? hubResult.value : [];
-        const recentCommuLingo = commuLingoResult.status === 'fulfilled' ? commuLingoResult.value : [];
+        const staleBefore = new Date();
+        staleBefore.setMonth(staleBefore.getMonth() - 1);
+        const recentPosts = freshSection(postsResult.status === 'fulfilled' ? postsResult.value : [], 'created_at', staleBefore);
+        const recentDiaries = freshSection(diariesResult.status === 'fulfilled' ? diariesResult.value : [], 'created_at', staleBefore);
+        const recentResearch = freshSection(researchResult.status === 'fulfilled' ? researchResult.value.items : [], 'modified', staleBefore);
+        const recentHub = freshSection(hubResult.status === 'fulfilled' ? hubResult.value : [], 'published_at', staleBefore);
+        const recentCommuLingo = freshSection(commuLingoResult.status === 'fulfilled' ? commuLingoResult.value : [], 'modified', staleBefore);
         // A section that failed (with no earlier copy in the model cache) is
         // hidden like an empty one; the page says so and is not cached. The
         // menu cards still work, so the homepage itself stays a 200.
