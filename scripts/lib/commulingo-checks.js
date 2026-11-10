@@ -542,10 +542,12 @@ function checkChapter(out, chapter, collectionId, ctx) {
   const reading = Boolean(ctx && ctx.reading);
   const workshop = Boolean(ctx && ctx.workshop);
   // A reading chapter has no concept brief: its passages are the introduction.
-  // A workshop chapter has none either: it opens on its first activity and
-  // closes on the takeaway, the distinction the chapter was about.
+  // A workshop chapter closes on the takeaway, the distinction the chapter
+  // was about. Its concept brief is optional: with one (brief and map
+  // together) the lesson opens on the explanation, without it on the first
+  // activity.
   if (workshop) allLocalizedText(out, chapter.takeaway, chapterLabel + '.takeaway');
-  if (!reading && !workshop) {
+  if (!reading && (!workshop || chapter.conceptBrief || chapter.conceptMap)) {
     checkConceptMap(out, chapter.conceptMap, chapterLabel);
     checkConceptBrief(out, chapter, chapterLabel);
   }

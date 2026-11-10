@@ -1672,10 +1672,12 @@
         return Boolean(lesson && lesson.format === 'workshop');
     }
 
-    // A reading lesson opens on its first passage and a workshop on its first
-    // activity: neither has a concept brief to pass.
+    // A reading lesson opens on its first passage. A workshop chapter written
+    // with a concept brief shows it first, like any other course; one written
+    // without opens on its first activity.
     function skipsIntro(lesson) {
-        return isReadingLesson(lesson) || isWorkshopLesson(lesson);
+        if (isReadingLesson(lesson)) return true;
+        return isWorkshopLesson(lesson) && !lesson.conceptBrief && !lesson.conceptMap;
     }
 
     // A reading lesson puts every passage above its question; in other

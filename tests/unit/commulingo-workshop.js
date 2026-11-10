@@ -45,6 +45,8 @@ assert.match(broken(q => { [q[0], q[4]].forEach(item => { item.choices.ko[0] += 
 assert.match(broken(q => { [q[0], q[1]] = [{ ...q[1], id: 'q1' }, { ...q[0], id: 'q2' }]; }), /must open with a multiple-choice question/);
 // the chapter closes on a takeaway
 assert.match(broken((q, course) => { delete course.chapters[0].takeaway; }), /takeaway must be localized/);
+// a concept brief is optional, but a chapter that has one has a whole one
+assert.match(broken((q, course) => { course.chapters[0].conceptBrief = { ko: [], en: [] }; }), /conceptBrief/);
 // activities belong to the workshop format only
 assert.match(broken((q, course) => { course.format = 'short-learning'; }), /type must be multiple_choice/);
 
