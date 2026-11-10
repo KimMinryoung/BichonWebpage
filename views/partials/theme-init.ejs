@@ -6,6 +6,17 @@
 <script>
 (function(){
     var root = document.documentElement;
+    // Text zoom of an in-app WebView (X for Android: 130%). A 100px probe comes
+    // back larger than written exactly by that zoom; a visitor's own default
+    // font size or page zoom does not change it. --tz (palette.css) undoes it.
+    try {
+        var probe = document.createElement('div');
+        probe.style.cssText = 'position:absolute;visibility:hidden;font-size:100px';
+        root.appendChild(probe);
+        var zoom = parseFloat(getComputedStyle(probe).fontSize) / 100;
+        root.removeChild(probe);
+        if (zoom > 1.02 || (zoom > 0 && zoom < 0.98)) root.style.setProperty('--tz', (1 / zoom).toFixed(4));
+    } catch (e) {}
     var colors = { dark: '#010409', light: '#faf2da' };
     var system = null;
     try { system = window.matchMedia('(prefers-color-scheme: light)'); } catch (e) {}

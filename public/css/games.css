@@ -14,7 +14,7 @@
 .game-card-copy h2 { font-size: var(--text-xl); margin: 8px 0 14px; }
 .game-card-copy p { line-height: var(--leading-relaxed); }
 .game-poster { min-height: 285px; padding: 28px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; color: #faf2da; }
-.game-poster strong { font-size: clamp(1.8rem, 4vw, 2.65rem); line-height: var(--leading-tight); letter-spacing: -.04em; }
+.game-poster strong { font-size: calc(clamp(1.8rem, 4vw, 2.65rem) * var(--tz)); line-height: var(--leading-tight); letter-spacing: -.04em; }
 .strike-poster { background: #a21e2a; background-image: repeating-linear-gradient(-45deg, transparent, transparent 20px, #00000009 20px, #00000009 40px); }
 .puzzle-poster { background: #214d2e; }
 .poster-label { font-size: var(--text-xs); letter-spacing: .12em; }
@@ -41,7 +41,7 @@
 .strike-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 20px; }
 .strike-stat { padding: 16px; border: 1px solid var(--border); }
 .strike-stat span { display: block; font-size: var(--text-meta); color: var(--text-secondary); margin-bottom: 8px; }
-.strike-stat strong { font-size: 1.65rem; font-variant-numeric: tabular-nums; }
+.strike-stat strong { font-size: calc(1.65rem * var(--tz)); font-variant-numeric: tabular-nums; }
 .strike-stat small { display: block; font-weight: 700; }
 .strike-warning { border-bottom: 3px solid #cf222e; }
 .strike-layout { display: grid; grid-template-columns: minmax(0, 1fr) 275px; gap: 20px; align-items: start; }
@@ -77,7 +77,7 @@
   .strike-stats { grid-template-columns: repeat(3, 1fr); gap: 6px; }
   .strike-stat { padding: 12px; }
   .strike-stat strong { font-size: var(--text-xl); }
-  .strike-hero h1 { font-size: 2.6rem; }
+  .strike-hero h1 { font-size: calc(2.6rem * var(--tz)); }
 }
 
 /* Catalog: two clear choices before the first mobile scroll. */
@@ -93,7 +93,7 @@
 .strike-preview img { height: 100px; width: 112px; object-fit: contain; }
 .puzzle-preview { background: #214d2e; }
 .civil-war-preview { background: #a21e2a; background-image: repeating-linear-gradient(-45deg, transparent, transparent 18px, #00000012 18px, #00000012 36px); }
-.civil-war-preview strong { font-size: 1.6rem; letter-spacing: -.03em; }
+.civil-war-preview strong { font-size: calc(1.6rem * var(--tz)); letter-spacing: -.03em; }
 .mini-puzzle { display: grid; grid-template-columns: repeat(5, 16px); gap: 2px; padding: 5px; border: 1px solid #faf2da; }
 .mini-puzzle i { width: 16px; height: 16px; background: #faf2da; }
 .mini-puzzle .ink { background: #111c16; }

@@ -142,6 +142,7 @@ body {
     background-color: var(--bg-canvas);
     color: var(--text-primary);
     font-family: var(--font-sans);
+    font-size: var(--text-md);
     letter-spacing: var(--tracking-body);
     line-height: var(--leading-normal);
     min-height: 100vh;
@@ -332,7 +333,7 @@ nav .nav-links .nav-logout-btn {
     border: none;
     border-radius: 0;
     border-right: none;
-    font-size: clamp(0.72rem, 1.6cqi, 0.88rem);
+    font-size: calc(clamp(0.72rem, 1.6cqi, 0.88rem) * var(--tz));
     font-weight: 500;
     background: none;
     cursor: pointer;
@@ -488,7 +489,7 @@ header h1 {
     gap: 0.4rem;
     padding: 0.25rem 0.3rem;
     /* Labels must never wrap: nowrap + a viewport-scaled font instead. */
-    font-size: clamp(0.75rem, 2.4vw, 0.9rem);
+    font-size: calc(clamp(0.75rem, 2.4vw, 0.9rem) * var(--tz));
     white-space: nowrap;
 }
 
@@ -826,7 +827,7 @@ header h1 {
 }
 
 .home-hero h1 {
-    font-size: clamp(0.95rem, 2.8vw, 1.2rem);
+    font-size: calc(clamp(0.95rem, 2.8vw, 1.2rem) * var(--tz));
     font-weight: 600;
     color: var(--accent-red);
     margin-bottom: 6px;
@@ -858,7 +859,7 @@ header h1 {
 
 .home-description {
     color: var(--text-secondary);
-    font-size: clamp(0.95rem, 0.88rem + 0.25vw, 1.03rem);
+    font-size: calc(clamp(0.95rem, 0.88rem + 0.25vw, 1.03rem) * var(--tz));
     line-height: var(--leading-normal);
     white-space: pre-line;
 }

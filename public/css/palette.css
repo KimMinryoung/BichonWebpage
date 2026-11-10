@@ -47,15 +47,21 @@
      text and dense lists, base = dense body in cards, md = body and card
      titles, lg = group and section titles, xl = article titles (long, sentence
      length), 2xl = page titles. Nothing in the site chrome is larger. */
-  --text-2xs: 0.6875rem;
-  --text-xs: 0.75rem;
-  --text-meta: 0.8125rem;
-  --text-sm: 0.875rem;
-  --text-base: 0.9375rem;
-  --text-md: 1rem;
-  --text-lg: 1.125rem;
-  --text-xl: 1.35rem;
-  --text-2xl: 1.5rem;
+  /* Every absolute font size on the site is multiplied by --tz. It is 1
+     except inside an app's WebView that enlarges text on its own (X for
+     Android renders all text at 130%, which no CSS property switches off):
+     there partials/theme-init sets it to the inverse of that zoom, so the type
+     comes out at the size written here. Lengths are not zoomed and take no --tz. */
+  --tz: 1;
+  --text-2xs: calc(0.6875rem * var(--tz));
+  --text-xs: calc(0.75rem * var(--tz));
+  --text-meta: calc(0.8125rem * var(--tz));
+  --text-sm: calc(0.875rem * var(--tz));
+  --text-base: calc(0.9375rem * var(--tz));
+  --text-md: calc(1rem * var(--tz));
+  --text-lg: calc(1.125rem * var(--tz));
+  --text-xl: calc(1.35rem * var(--tz));
+  --text-2xl: calc(1.5rem * var(--tz));
   /* Line-height scale. Pick by role, never a raw number:
      none = icons/badges on one line, tight = headings, snug = labels and
      compact lists, normal = UI text and short notes, relaxed = multi-line

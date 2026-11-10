@@ -107,6 +107,7 @@ body {
     background-color: var(--bg-canvas);
     color: var(--text-primary);
     font-family: var(--font-sans);
+    font-size: var(--text-md);
     letter-spacing: var(--tracking-body);
     line-height: var(--leading-normal);
     min-height: 100vh;
@@ -252,7 +253,7 @@ nav .nav-links .nav-logout-btn {
     border: none;
     border-radius: 0;
     border-right: none;
-    font-size: clamp(0.72rem, 1.6cqi, 0.88rem);
+    font-size: calc(clamp(0.72rem, 1.6cqi, 0.88rem) * var(--tz));
     font-weight: 500;
     background: none;
     cursor: pointer;
@@ -396,7 +397,7 @@ header h1 {
 .section-tabs .section-tab {
     gap: 0.4rem;
     padding: 0.25rem 0.3rem;
-    font-size: clamp(0.75rem, 2.4vw, 0.9rem);
+    font-size: calc(clamp(0.75rem, 2.4vw, 0.9rem) * var(--tz));
     white-space: nowrap;
 }
 

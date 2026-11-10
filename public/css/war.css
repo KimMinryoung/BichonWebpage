@@ -21,7 +21,7 @@
 [data-theme="light"] .cw-shell { --cw-gold: #e8b10c; --cw-gold-rim: #3a2a00; --cw-steel-rim: #23261d; }
 .cw-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .cw-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin: 18px 0 20px; border-bottom: 2px solid var(--border); padding: 0 var(--content-inset) 16px; }
-.cw-heading h1 { font-size: clamp(1.35rem, 3.3vw, 2.3rem); letter-spacing: -.045em; margin: 8px 0; }
+.cw-heading h1 { font-size: calc(clamp(1.35rem, 3.3vw, 2.3rem) * var(--tz)); letter-spacing: -.045em; margin: 8px 0; }
 .games-shell .cw-primary { background: var(--cw-red); color: #fff; border-color: var(--cw-red); font-weight: 700; }
 .games-shell .cw-primary:hover:enabled { filter: brightness(1.08); }
 .games-shell .cw-primary:disabled { background: var(--cw-ink); border-color: var(--cw-ink); color: #b5b5ad; opacity: 1; }
@@ -31,28 +31,28 @@
 /* Intro */
 .cw-intro { display: grid; grid-template-columns: 1.4fr 1fr; border: 1px solid var(--border); background: var(--bg-surface); }
 .cw-intro-copy { padding: var(--space-6) var(--content-inset); }
-.cw-intro-copy h2 { font-size: clamp(1.3rem, 3vw, 1.9rem); line-height: var(--leading-tight); margin: 10px 0 22px; }
+.cw-intro-copy h2 { font-size: calc(clamp(1.3rem, 3vw, 1.9rem) * var(--tz)); line-height: var(--leading-tight); margin: 10px 0 22px; }
 .cw-setup-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .cw-setup-actions [hidden] { display: none; }
 .cw-steps { list-style: none; counter-reset: step; padding: 0; margin: 0 0 18px; display: grid; gap: 14px; }
 .cw-steps li { counter-increment: step; display: grid; grid-template-columns: 30px 1fr; column-gap: 12px; line-height: var(--leading-normal); }
 .cw-steps li::before { content: counter(step); grid-row: span 2; display: grid; place-items: center; width: 30px; height: 30px; background: var(--cw-red); color: #fff; font-weight: 800; }
-.cw-steps span { color: var(--text-secondary); font-size: .9rem; }
+.cw-steps span { color: var(--text-secondary); font-size: calc(.9rem * var(--tz)); }
 /* The art is El Lissitzky's poster itself, on its own paper, with the war's
    span under it. */
 .cw-intro-art { margin: 0; display: flex; flex-direction: column; background: #e9e2cf; color: #14110d; }
 .cw-intro-art img { display: block; width: 100%; height: auto; flex: 1 1 auto; object-fit: contain; min-height: 0; }
 .cw-intro-art figcaption { display: grid; gap: 4px; padding: 14px 20px 16px; background: var(--cw-red); color: #faf2da; }
-.cw-intro-art strong { font-family: var(--font-display); font-size: clamp(2rem, 4.5vw, 3rem); letter-spacing: -.04em; line-height: 1; }
+.cw-intro-art strong { font-family: var(--font-display); font-size: calc(clamp(2rem, 4.5vw, 3rem) * var(--tz)); letter-spacing: -.04em; line-height: 1; }
 .cw-intro-art span { font-weight: 700; }
-.cw-intro-art small { font-size: .78rem; opacity: .85; }
+.cw-intro-art small { font-size: calc(.78rem * var(--tz)); opacity: .85; }
 .cw-intro-art a { color: inherit; }
 
 /* HUD */
 .cw-hud { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; border: 1px solid var(--border); background: var(--bg-surface); padding: 16px var(--content-inset); margin-bottom: 18px; }
-.cw-season h2 { font-size: clamp(1.25rem, 3vw, 1.7rem); margin: 4px 0 12px; }
+.cw-season h2 { font-size: calc(clamp(1.25rem, 3vw, 1.7rem) * var(--tz)); margin: 4px 0 12px; }
 .cw-calendar { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(var(--cw-seasons, 8), minmax(0, 1fr)); gap: 4px; }
-.cw-calendar li { font-size: .75rem; color: var(--text-secondary); min-width: 0; }
+.cw-calendar li { font-size: calc(.75rem * var(--tz)); color: var(--text-secondary); min-width: 0; }
 .cw-calendar .cw-cal-year { display: block; font-variant-numeric: tabular-nums; white-space: nowrap; color: var(--text-primary); }
 .cw-calendar .cw-cal-bar { display: block; height: 4px; margin: 2px 0 4px; background: var(--border); }
 .cw-calendar li span { display: block; font-weight: 700; font-variant-numeric: tabular-nums; }
@@ -61,10 +61,10 @@
 .cw-calendar .is-current .cw-cal-bar { background: var(--cw-red); }
 .cw-calendar .is-current { color: var(--text-primary); }
 .cw-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; margin: 0; }
-.cw-stats dt { font-size: .78rem; color: var(--text-secondary); }
+.cw-stats dt { font-size: calc(.78rem * var(--tz)); color: var(--text-secondary); }
 .cw-stats dd { margin: 2px 0 0; }
-.cw-stats strong { font-size: 1.35rem; font-variant-numeric: tabular-nums; }
-.cw-stats small { display: block; font-size: .75rem; color: var(--text-secondary); }
+.cw-stats strong { font-size: calc(1.35rem * var(--tz)); font-variant-numeric: tabular-nums; }
+.cw-stats small { display: block; font-size: calc(.75rem * var(--tz)); color: var(--text-secondary); }
 .cw-stats > div { min-width: 0; }
 /* Red is the Red Army's; what needs attention is drawn inverted instead. */
 .cw-stats .is-warn strong { color: var(--bg-surface); background: var(--text-primary); padding: 0 5px; }
@@ -72,18 +72,18 @@
 
 /* The army panel: the season's troops as pips, then the changes */
 .cw-army { border-top: 1px solid var(--border); padding-top: 12px; }
-.cw-army h3 { font-size: .95rem; margin-bottom: 8px; }
+.cw-army h3 { font-size: calc(.95rem * var(--tz)); margin-bottom: 8px; }
 .cw-troops { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 8px 16px; }
 .cw-troops li { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; align-items: baseline; }
-.cw-troops strong { font-size: .9rem; }
+.cw-troops strong { font-size: calc(.9rem * var(--tz)); }
 .cw-troops strong a { color: inherit; }
-.cw-troops small { grid-column: 1 / -1; font-size: .78rem; color: var(--text-secondary); line-height: var(--leading-normal); }
+.cw-troops small { grid-column: 1 / -1; font-size: calc(.78rem * var(--tz)); color: var(--text-secondary); line-height: var(--leading-normal); }
 .cw-troop-pips { display: inline-flex; flex-wrap: wrap; gap: 2px; max-width: 120px; }
 .cw-troop-pips { gap: 3px; }
 /* A division here is the army's infantry sign (a crossed box), not the
    red unit that counts strength on the fronts. */
 .cw-troop-pips i { width: 13px; height: 9px; box-sizing: border-box; border: 1.5px solid var(--cw-red); background: linear-gradient(to top right, transparent calc(50% - .8px), var(--cw-red) calc(50% - .8px) calc(50% + .8px), transparent calc(50% + .8px)), linear-gradient(to bottom right, transparent calc(50% - .8px), var(--cw-red) calc(50% - .8px) calc(50% + .8px), transparent calc(50% + .8px)); }
-.cw-troop-changes { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 6px; font-size: .8rem; font-weight: 700; }
+.cw-troop-changes { list-style: none; padding: 0; margin: 10px 0 0; display: flex; flex-wrap: wrap; gap: 6px; font-size: calc(.8rem * var(--tz)); font-weight: 700; }
 .cw-troop-changes li { border: 1px solid var(--border); padding: 3px 8px; }
 .cw-troop-changes .is-plus { border-color: var(--btn-primary, #2da44e); }
 .cw-troop-changes .is-minus { border-style: dashed; border-color: var(--text-primary); }
@@ -95,7 +95,7 @@
 /* Board: map and fronts */
 .cw-board { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(300px, 1fr); gap: 18px; align-items: start; margin-bottom: 18px; }
 .cw-map-panel { border: 1px solid var(--border); background: var(--bg-surface); min-width: 0; }
-.cw-map-heading { display: flex; align-items: center; gap: 4px 8px; padding: 2px 3px 2px 12px; border-bottom: 1px solid var(--border); font-size: .82rem; color: var(--text-secondary); }
+.cw-map-heading { display: flex; align-items: center; gap: 4px 8px; padding: 2px 3px 2px 12px; border-bottom: 1px solid var(--border); font-size: calc(.82rem * var(--tz)); color: var(--text-secondary); }
 .cw-map-heading span:first-child { font-weight: 700; color: var(--text-primary); }
 .cw-map-frame > svg { display: block; width: 100%; height: auto; font-family: inherit; }
 .cw-map-frame { position: relative; }
@@ -103,7 +103,7 @@
 /* civil-war.js drawBasemap: the basemap as a CPU-drawn bitmap over its hidden svg. */
 .cw-map-frame .cw-map-bitmap { position: absolute; top: 0; left: 0; max-width: none; pointer-events: none; }
 .cw-map-frame.has-bitmap svg.emap-svg { visibility: hidden; }
-.cw-map-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 8px 12px; font-size: .78rem; color: var(--text-secondary); }
+.cw-map-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; padding: 8px 12px; font-size: calc(.78rem * var(--tz)); color: var(--text-secondary); }
 .cw-map-legend span { display: inline-flex; align-items: center; gap: 6px; }
 .cw-map-legend i { display: inline-block; width: 14px; height: 10px; border: 1px solid var(--border); }
 .cw-map-legend i.is-red { background: color-mix(in srgb, var(--emap-red) 34%, transparent); border-color: var(--emap-red); }
@@ -121,7 +121,7 @@
 .cw-map-legend i.k-national { background: var(--emap-gray); }
 .cw-map-legend i.cw-key-badge { width: 22px; background: var(--cw-white); border: 1px solid var(--cw-ink); }
 .cw-map-heading #cwMapCaption { flex: 1 1 0; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-.games-shell .cw-history-toggle { min-height: 26px; margin-left: auto; padding: 1px 8px; font-size: .78rem; }
+.games-shell .cw-history-toggle { min-height: 26px; margin-left: auto; padding: 1px 8px; font-size: calc(.78rem * var(--tz)); }
 .games-shell .cw-history-toggle[aria-pressed="true"] { border-color: var(--cw-red); color: var(--text-primary); font-weight: 700; }
 
 /* Basemap (event-map-svg.js classes) */
@@ -164,12 +164,12 @@
 .cw-map-frame .cw-railway-bed { fill: none; stroke: color-mix(in srgb, var(--text-primary) 55%, var(--cw-land)); stroke-width: 1.3; stroke-linejoin: round; }
 .cw-map-frame .cw-railway { fill: none; stroke: color-mix(in srgb, var(--text-primary) 55%, var(--cw-land)); stroke-width: 4.5; stroke-dasharray: 1 5; stroke-linejoin: round; }
 /* Places the words name off the fronts (civil-war.js renderMap). */
-.cw-map-place { font-size: 9.5px; fill: var(--text-secondary); paint-order: stroke; stroke: var(--cw-land); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
-.cw-map-place.is-region { font-size: 11px; font-style: italic; letter-spacing: .12em; opacity: .85; }
+.cw-map-place { font-size: calc(9.5px * var(--tz)); fill: var(--text-secondary); paint-order: stroke; stroke: var(--cw-land); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
+.cw-map-place.is-region { font-size: calc(11px * var(--tz)); font-style: italic; letter-spacing: .12em; opacity: .85; }
 .cw-map-place.is-river { font-style: italic; fill: color-mix(in srgb, #3a78b0 70%, var(--text-primary)); }
 .cw-map-place.is-beyond { font-weight: 700; fill: var(--text-primary); }
 .cw-place-dot { fill: var(--text-secondary); pointer-events: none; }
-.cw-railway-label { font-size: 9.5px; font-style: italic; fill: var(--text-secondary); paint-order: stroke; stroke: var(--cw-land); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
+.cw-railway-label { font-size: calc(9.5px * var(--tz)); font-style: italic; fill: var(--text-secondary); paint-order: stroke; stroke: var(--cw-land); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
 .cw-chain.is-moving { stroke-dasharray: 4 3; }
 .cw-ring-under { fill: none; stroke: var(--cw-ink); stroke-width: 3.6; }
 .cw-ring { fill: none; stroke-width: 2; stroke-dasharray: 3 2; }
@@ -187,9 +187,9 @@
 .cw-city.k-interv { fill: var(--emap-blue); }
 .cw-city.k-central { fill: var(--emap-amber); }
 .cw-city.k-national { fill: var(--emap-gray); }
-.cw-city-label { font-size: 11px; fill: var(--text-secondary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
+.cw-city-label { font-size: calc(11px * var(--tz)); fill: var(--text-secondary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
 .cw-city-label.is-active { fill: var(--text-primary); font-weight: 700; }
-.cw-city-label.is-capital { font-size: 13px; font-weight: 800; fill: var(--text-primary); }
+.cw-city-label.is-capital { font-size: calc(13px * var(--tz)); font-weight: 800; fill: var(--text-primary); }
 .cw-moscow { fill: var(--clr-red); stroke: var(--bg-surface); stroke-width: 1.5; }
 .cw-moscow-ring { fill: color-mix(in srgb, var(--bg-surface) 70%, transparent); stroke: var(--clr-red); stroke-width: 1.6; }
 .cw-foe-shadow { fill: #000; fill-opacity: .45; }
@@ -201,10 +201,10 @@
 .cw-foe-marker.k-interv .cw-foe-name { fill: var(--emap-blue); }
 .cw-foe-marker.k-central .cw-foe-name { fill: var(--emap-amber); }
 .cw-foe-marker.k-national .cw-foe-name { fill: var(--emap-gray); }
-.cw-foe-text { font-size: 11px; font-weight: 800; fill: #1d1d1b; }
+.cw-foe-text { font-size: calc(11px * var(--tz)); font-weight: 800; fill: #1d1d1b; }
 .cw-foe-marker.k-interv .cw-foe-text { fill: #fff; }
 .cw-foe-numbers { fill: var(--text-primary); }
-.cw-foe-numbers-text { font-size: 10.5px; font-weight: 700; fill: var(--bg-surface); }
+.cw-foe-numbers-text { font-size: calc(10.5px * var(--tz)); font-weight: 700; fill: var(--bg-surface); }
 .cw-foe-wedge { stroke: #14110d; stroke-width: 1.6; stroke-linejoin: round; }
 .cw-foe-stop { stroke-width: 4; stroke-linecap: round; paint-order: stroke; }
 /* The attacker's arrow in its colour (red is the Red Army's). */
@@ -238,7 +238,7 @@
 .cw-spoils-tag { transform-box: fill-box; }
 /* The enemy broke: what he left behind, gold under his marker. */
 .cw-spoils-tag rect { fill: var(--cw-gold); stroke: var(--cw-gold-rim); stroke-width: 1; }
-.cw-spoils-tag text { font-size: 10px; font-weight: 800; fill: #1d1d1b; }
+.cw-spoils-tag text { font-size: calc(10px * var(--tz)); font-weight: 800; fill: #1d1d1b; }
 .cw-spoils ul { list-style: none; padding: 0; margin: 4px 0; display: grid; gap: 4px; }
 .cw-spoils .cw-face { width: 18px; height: 18px; vertical-align: -4px; margin-right: 5px; }
 .cw-foe-marker.is-beaten .cw-foe-body { rotate: -4deg; scale: .97 .8; fill-opacity: .75; stroke-opacity: .75; }
@@ -354,30 +354,30 @@
 
 /* Fronts */
 .cw-fronts { display: grid; gap: 10px; min-width: 0; }
-.cw-fronts h3 { font-size: 1.05rem; padding: 0 2px; }
+.cw-fronts h3 { font-size: calc(1.05rem * var(--tz)); padding: 0 2px; }
 .cw-front { border: 1px solid var(--border); background: var(--bg-surface); padding: 12px 14px; display: grid; gap: 6px; }
 .cw-front:hover, .cw-front:focus-within { border-color: var(--text-secondary); }
 .cw-front:focus-visible { outline: 3px solid var(--text-primary); outline-offset: 2px; }
 /* A front against history (civil-war.js trendMark): ▼ behind, ▲ ahead. */
 .cw-trend { margin-left: 5px; font-size: .78em; color: var(--text-primary); }
 .cw-front header { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; flex-wrap: wrap; }
-.cw-front header h4 { font-size: 1rem; }
-.cw-front header span { font-size: .78rem; color: var(--text-secondary); }
-.cw-front p { margin: 0; font-size: .9rem; line-height: var(--leading-normal); }
+.cw-front header h4 { font-size: calc(1rem * var(--tz)); }
+.cw-front header span { font-size: calc(.78rem * var(--tz)); color: var(--text-secondary); }
+.cw-front p { margin: 0; font-size: calc(.9rem * var(--tz)); line-height: var(--leading-normal); }
 .cw-front-line { color: var(--text-secondary); }
 .cw-front-controls { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
 .cw-stepper { display: inline-flex; align-items: stretch; }
 .games-shell .cw-stepper button { min-width: 44px; padding: 8px 0; font-weight: 800; }
 .cw-stepper output { display: grid; place-items: center; min-width: 86px; border-block: 1px solid var(--border); font-variant-numeric: tabular-nums; font-weight: 700; }
-.games-shell .cw-toggle { padding: 8px 12px; font-size: .85rem; }
+.games-shell .cw-toggle { padding: 8px 12px; font-size: calc(.85rem * var(--tz)); }
 .games-shell .cw-toggle[aria-pressed="true"] { border-color: var(--cw-red); color: var(--text-primary); }
 /* In use on another front: pressing it moves it here. */
 .games-shell .cw-toggle.is-elsewhere { border-style: dashed; color: var(--text-secondary); }
 .games-shell .cw-toggle[aria-disabled="true"] { opacity: .45; cursor: default; }
-.cw-front header .cw-front-hint { font-size: .76rem; color: var(--text-primary); }
+.cw-front header .cw-front-hint { font-size: calc(.76rem * var(--tz)); color: var(--text-primary); }
 .cw-front header .cw-front-hint:empty { display: none; }
 .cw-meter { display: grid; gap: 4px; margin: 2px 0 10px; }
-.cw-meter-top { display: flex; justify-content: space-between; gap: 8px; font-size: .9rem; font-variant-numeric: tabular-nums; }
+.cw-meter-top { display: flex; justify-content: space-between; gap: 8px; font-size: calc(.9rem * var(--tz)); font-variant-numeric: tabular-nums; }
 .cw-meter-top span { color: var(--text-secondary); }
 /* Bands coloured by their result against history; the black line is the strength. */
 .cw-meter-bar { position: relative; height: 16px; border: 1px solid var(--border); background: var(--bg-canvas); }
@@ -386,15 +386,15 @@
 .cw-meter-band.is-even { background: color-mix(in srgb, var(--text-secondary) 18%, transparent); }
 .cw-meter-band.is-ahead { background: color-mix(in srgb, var(--btn-primary, #2da44e) 35%, transparent); }
 .cw-meter-tick { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--border); }
-.cw-meter-tick small { position: absolute; top: 100%; left: 0; transform: translateX(-50%); padding-top: 1px; font-size: .7rem; font-variant-numeric: tabular-nums; color: var(--text-secondary); }
+.cw-meter-tick small { position: absolute; top: 100%; left: 0; transform: translateX(-50%); padding-top: 1px; font-size: calc(.7rem * var(--tz)); font-variant-numeric: tabular-nums; color: var(--text-secondary); }
 .cw-meter-now { position: absolute; top: -4px; bottom: -4px; width: 3px; margin-left: -1.5px; background: var(--text-primary); transition: left .2s ease; }
 @media (prefers-reduced-motion: reduce) { .cw-meter-now, .cw-seg { transition: none; } }
 .cw-foes { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 6px; }
-.cw-foes-label { font-size: .75rem; font-weight: 700; color: var(--text-secondary); padding-top: 5px; }
+.cw-foes-label { font-size: calc(.75rem * var(--tz)); font-weight: 700; color: var(--text-secondary); padding-top: 5px; }
 .cw-foe { flex: 1 1 100%; border: 1px solid var(--border); background: var(--bg-canvas); }
-.cw-foe summary { cursor: pointer; display: flex; align-items: center; gap: 7px; min-height: 32px; padding: 3px 8px; font-size: .86rem; font-weight: 700; }
+.cw-foe summary { cursor: pointer; display: flex; align-items: center; gap: 7px; min-height: 32px; padding: 3px 8px; font-size: calc(.86rem * var(--tz)); font-weight: 700; }
 .cw-foe summary small { color: var(--text-secondary); font-weight: 700; }
-.cw-foe p { margin: 0; padding: 0 8px 8px; font-size: .82rem !important; color: var(--text-secondary); }
+.cw-foe p { margin: 0; padding: 0 8px 8px; font-size: calc(.82rem * var(--tz)) !important; color: var(--text-secondary); }
 .cw-foe.is-white { border-left: 4px solid var(--cw-white); }
 .cw-foe.is-interv { border-left: 4px solid var(--emap-blue); }
 .cw-foe.is-central { border-left: 4px solid var(--emap-amber); }
@@ -403,27 +403,27 @@
 .cw-foe-dot { width: 12px; height: 12px; flex: 0 0 auto; border-radius: 50%; border: 1.5px solid var(--cw-ink); background: var(--cw-white); }
 .cw-foe.is-national .cw-foe-dot { background: var(--emap-gray); }
 .cw-foe.is-interv .cw-foe-dot { background: var(--emap-blue); }
-.cw-parts { color: var(--text-secondary); font-size: .8rem !important; }
+.cw-parts { color: var(--text-secondary); font-size: calc(.8rem * var(--tz)) !important; }
 /* The battle's order of battle from the plan: units that join solid, units that wait dashed. */
 .cw-muster { display: grid; gap: 4px; margin-bottom: 8px; }
-.cw-muster p { font-size: .82rem !important; color: var(--text-secondary); }
+.cw-muster p { font-size: calc(.82rem * var(--tz)) !important; color: var(--text-secondary); }
 .cw-muster p strong { color: var(--text-primary); }
 .cw-muster ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
-.cw-muster li { display: inline-flex; align-items: baseline; gap: 5px; padding: 3px 7px; font-size: .78rem; border: 1px solid var(--border); }
+.cw-muster li { display: inline-flex; align-items: baseline; gap: 5px; padding: 3px 7px; font-size: calc(.78rem * var(--tz)); border: 1px solid var(--border); }
 .cw-muster li.is-in { border-color: var(--cw-red); background: color-mix(in srgb, var(--cw-red) 14%, transparent); font-weight: 700; }
 .cw-muster li.is-out { border-style: dashed; color: var(--text-secondary); }
-.cw-muster li small { font-size: .72rem; }
-.cw-warn { border-left: 4px solid var(--text-primary); padding: 8px 12px; margin: 0; background: var(--bg-surface); font-size: .9rem; }
+.cw-muster li small { font-size: calc(.72rem * var(--tz)); }
+.cw-warn { border-left: 4px solid var(--text-primary); padding: 8px 12px; margin: 0; background: var(--bg-surface); font-size: calc(.9rem * var(--tz)); }
 
 /* Advisor cards */
 .cw-cards, .cw-choice, .cw-review, .cw-outcome { border: 1px solid var(--border); background: var(--bg-surface); padding: 16px var(--content-inset); margin-bottom: 18px; }
-.cw-cards h3, .cw-review h3 { font-size: 1.05rem; margin-bottom: 12px; }
+.cw-cards h3, .cw-review h3 { font-size: calc(1.05rem * var(--tz)); margin-bottom: 12px; }
 .cw-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 10px; }
 .cw-card { border: 1px solid var(--border); padding: 12px; display: flex; flex-direction: column; gap: 6px; background: var(--bg-canvas); }
 .cw-card.is-played { border-color: var(--cw-red); }
-.cw-card h4 { font-size: .98rem; }
-.cw-card p { margin: 0; font-size: .86rem; line-height: var(--leading-normal); }
-.cw-advisor { font-size: .8rem !important; }
+.cw-card h4 { font-size: calc(.98rem * var(--tz)); }
+.cw-card p { margin: 0; font-size: calc(.86rem * var(--tz)); line-height: var(--leading-normal); }
+.cw-advisor { font-size: calc(.8rem * var(--tz)) !important; }
 /* A person's name with their drawn portrait (art.js) on a chip of their
    side's colour (the portrait's disc), the same in light and dark. */
 .cw-person { display: inline-flex; align-items: center; gap: 5px; vertical-align: middle; padding: 1px 7px 1px 2px; border: 1px solid #1d1d1b; background: var(--cw-chip, #a21e2a); color: var(--cw-chip-ink, #fff); font-weight: 700; text-decoration: none; }
@@ -434,10 +434,10 @@
 .cw-person.is-black { --cw-chip: #2b2b28; --cw-chip-ink: #f1e6cf; border-color: #8d8d86; }
 .cw-person.is-interv { --cw-chip: #2f6fb8; --cw-chip-ink: #fff; }
 .cw-person.is-central { --cw-chip: #c7861c; --cw-chip-ink: #1d1d1b; }
-.cw-note { color: var(--text-secondary); font-size: .8rem !important; }
+.cw-note { color: var(--text-secondary); font-size: calc(.8rem * var(--tz)) !important; }
 .cw-effect { font-weight: 700; margin-top: auto !important; }
 .cw-card-target { display: flex; flex-wrap: wrap; gap: 6px; }
-.games-shell .cw-card button, .games-shell .cw-card select { padding: 8px 10px; font-size: .85rem; }
+.games-shell .cw-card button, .games-shell .cw-card select { padding: 8px 10px; font-size: calc(.85rem * var(--tz)); }
 .cw-card-target select { flex: 1 1 120px; }
 
 /* Dilemma, and the season's incident (a darker rim: something that
@@ -445,11 +445,11 @@
 .cw-choice { border-left: 4px solid var(--cw-red); }
 .cw-incident { border-left-color: var(--cw-ink); }
 .cw-incident .cw-incident-next { margin-top: 18px; padding-top: 14px; border-top: 1px solid var(--border); }
-.cw-choice h3 { font-size: 1.25rem; margin: 6px 0 8px; }
+.cw-choice h3 { font-size: calc(1.25rem * var(--tz)); margin: 6px 0 8px; }
 .cw-talk { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 8px; }
-.cw-talk li { display: grid; grid-template-columns: minmax(0, max-content) 1fr; gap: 10px; align-items: start; font-size: .92rem; line-height: var(--leading-normal); }
+.cw-talk li { display: grid; grid-template-columns: minmax(0, max-content) 1fr; gap: 10px; align-items: start; font-size: calc(.92rem * var(--tz)); line-height: var(--leading-normal); }
 .cw-talk .cw-person { justify-self: start; }
-.cw-talk-as { padding: 2px 7px; border: 1px solid var(--border); font-size: .86rem; color: var(--text-secondary); }
+.cw-talk-as { padding: 2px 7px; border: 1px solid var(--border); font-size: calc(.86rem * var(--tz)); color: var(--text-secondary); }
 .cw-talk q { quotes: '「' '」'; padding-top: 1px; }
 @media (max-width: 600px) { .cw-talk li { grid-template-columns: 1fr; gap: 3px; } }
 .cw-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-top: 12px; }
@@ -466,17 +466,17 @@
 .cw-notes { padding-left: 20px; margin: 0 0 12px; }
 .cw-notes li { line-height: var(--leading-normal); margin-bottom: 4px; }
 .cw-history { border-top: 1px solid var(--border); padding-top: 12px; margin: 12px 0; }
-.cw-history h4 { font-size: 1.05rem; margin: 4px 0 8px; }
+.cw-history h4 { font-size: calc(1.05rem * var(--tz)); margin: 4px 0 8px; }
 /* The season's account: a gauge per stat, its causes as chips, then what
    the next season gets. A rise is green, a fall orange. */
 .cw-ledger { display: grid; gap: 14px; margin: 0 0 14px; padding: 12px 14px 14px; border: 1px solid var(--border); background: color-mix(in srgb, var(--text-primary) 3%, var(--bg-surface)); }
 .cw-ledger .games-kicker { margin: 0; }
 .cw-ledger-row { display: grid; gap: 6px; }
 .cw-ledger-head { display: flex; align-items: baseline; gap: 10px; margin: 0; }
-.cw-ledger-head strong { font-size: 1rem; }
+.cw-ledger-head strong { font-size: calc(1rem * var(--tz)); }
 .cw-ledger-value { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
-.cw-ledger-value b { color: var(--text-primary); font-size: 1.15rem; }
-.cw-ledger-delta { margin-left: auto; min-width: 3.2em; padding: 1px 8px; text-align: center; font-weight: 800; font-size: 1.05rem; font-variant-numeric: tabular-nums; color: var(--text-secondary); border: 1px solid var(--border); }
+.cw-ledger-value b { color: var(--text-primary); font-size: calc(1.15rem * var(--tz)); }
+.cw-ledger-delta { margin-left: auto; min-width: 3.2em; padding: 1px 8px; text-align: center; font-weight: 800; font-size: calc(1.05rem * var(--tz)); font-variant-numeric: tabular-nums; color: var(--text-secondary); border: 1px solid var(--border); }
 .cw-ledger-row.is-up .cw-ledger-delta { background: var(--cw-good); border-color: var(--cw-good); color: var(--cw-good-ink); }
 .cw-ledger-row.is-down .cw-ledger-delta { background: var(--cw-loss); border-color: var(--cw-loss); color: #fff; }
 /* The gauge: what stayed, what changed, and the lines below which
@@ -489,7 +489,7 @@
 .is-down .cw-gauge-change { background: repeating-linear-gradient(-45deg, var(--cw-loss) 0 3px, transparent 3px 6px); outline: 1px solid var(--cw-loss); outline-offset: -1px; }
 .is-down .cw-gauge-change::after { content: ''; position: absolute; inset: 0; background: var(--cw-loss); transform-origin: left; scale: 0 1; }
 .cw-gauge-mark { position: absolute; top: -4px; bottom: -4px; width: 2px; margin-left: -1px; background: var(--text-primary); opacity: .45; }
-.cw-gauge-mark span { position: absolute; left: 50%; translate: -50% 0; white-space: nowrap; font-size: .72rem; font-weight: 700; font-style: normal; line-height: 1; }
+.cw-gauge-mark span { position: absolute; left: 50%; translate: -50% 0; white-space: nowrap; font-size: calc(.72rem * var(--tz)); font-weight: 700; font-style: normal; line-height: 1; }
 .cw-gauge-mark:is(.is-fell, .is-rose, .is-in-force, .is-ahead) { opacity: 1; }
 .cw-gauge-mark:is(.is-fell, .is-rose, .is-in-force) span { bottom: calc(100% + 3px); }
 .cw-gauge-mark.is-ahead { background: var(--text-secondary); }
@@ -503,7 +503,7 @@
 .cw-gauge-mark.is-near-start span { left: 0; translate: 0 0; }
 .cw-gauge-mark.is-near-end span { left: auto; right: 0; translate: 0 0; }
 .cw-ledger-causes { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; }
-.cw-ledger-causes li { display: inline-flex; align-items: baseline; gap: 6px; padding: 3px 8px; font-size: .82rem; border: 1px solid var(--border); background: var(--bg-surface); }
+.cw-ledger-causes li { display: inline-flex; align-items: baseline; gap: 6px; padding: 3px 8px; font-size: calc(.82rem * var(--tz)); border: 1px solid var(--border); background: var(--bg-surface); }
 .cw-ledger-causes li b { font-variant-numeric: tabular-nums; }
 .cw-ledger-causes li.is-plus { border-color: var(--cw-good); }
 .cw-ledger-causes li.is-plus b { color: var(--cw-good); }
@@ -524,11 +524,11 @@
 @keyframes cw-gauge-grow { from { scale: 0 1; } to { scale: 1 1; } }
 @keyframes cw-gauge-drain { from { scale: 1 1; } to { scale: 0 1; } }
 @keyframes cw-mark-pop { from { opacity: 0; scale: .6; } 70% { opacity: 1; scale: 1.12; } to { opacity: 1; scale: 1; } }
-.cw-links { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .9rem; }
+.cw-links { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: calc(.9rem * var(--tz)); }
 
 /* Battle */
 .cw-battle { border: 1px solid var(--border); background: var(--bg-surface); padding: 16px var(--content-inset); margin-bottom: 18px; }
-.cw-battle-head h2 { font-size: clamp(1.25rem, 3vw, 1.7rem); margin: 4px 0 10px; }
+.cw-battle-head h2 { font-size: calc(clamp(1.25rem, 3vw, 1.7rem) * var(--tz)); margin: 4px 0 10px; }
 .cw-battle-brief { margin-bottom: 14px; }
 .cw-battle-brief summary { cursor: pointer; font-weight: 700; min-height: 44px; display: flex; align-items: center; }
 .cw-battle-brief p { margin: 0 0 8px; max-width: 46rem; }
@@ -584,25 +584,25 @@
 .cw-marks .cw-mark-reed { stroke: color-mix(in srgb, #4f6a2a 80%, var(--text-primary)); stroke-width: 1.2; }
 .cw-marks .cw-mark-ridge { stroke: #2e2210; stroke-opacity: .85; stroke-width: 2.4; }
 .cw-marks .cw-mark-smoke { stroke: color-mix(in srgb, var(--text-primary) 45%, transparent); stroke-width: 1.4; fill: none; }
-.cw-wear { font-size: 8px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 2px; pointer-events: none; }
-.cw-tile-label { font-size: 9px; font-weight: 700; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 2.5px; stroke-linejoin: round; pointer-events: none; }
+.cw-wear { font-size: calc(8px * var(--tz)); font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 2px; pointer-events: none; }
+.cw-tile-label { font-size: calc(9px * var(--tz)); font-weight: 700; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 2.5px; stroke-linejoin: round; pointer-events: none; }
 .cw-tile-label.is-goal { fill: var(--clr-red); font-weight: 800; }
 /* The post to hold (civil-war.js postMark): a dashed frame, solid blue when an enemy can march in. */
 .cw-post { pointer-events: none; }
 .cw-post-frame { fill: none; stroke: var(--text-primary); stroke-width: 2.5; stroke-dasharray: 6 3; }
 .cw-post.is-open .cw-post-frame { stroke: var(--emap-blue); stroke-width: 3.5; stroke-dasharray: none; }
-.cw-post-name { font-size: 9px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
+.cw-post-name { font-size: calc(9px * var(--tz)); font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
 .cw-terrain-key .k-post { border: 2px dashed var(--text-primary); }
-.cw-post-alarm { flex-basis: 100%; margin: 0; padding: 6px 10px; border: 2px solid var(--emap-blue); background: color-mix(in srgb, var(--emap-blue) 22%, var(--bg-surface)); font-weight: 800; font-size: .88rem; }
+.cw-post-alarm { flex-basis: 100%; margin: 0; padding: 6px 10px; border: 2px solid var(--emap-blue); background: color-mix(in srgb, var(--emap-blue) 22%, var(--bg-surface)); font-weight: 800; font-size: calc(.88rem * var(--tz)); }
 .cw-flank-zone { fill: none; stroke: var(--text-primary); stroke-opacity: .55; stroke-width: 1.5; stroke-dasharray: 6 4; pointer-events: none; }
 .cw-danger { fill: var(--emap-blue); fill-opacity: .28; stroke: var(--emap-blue); stroke-width: 1.5; pointer-events: none; }
 .cw-hit { fill: var(--text-primary); fill-opacity: .26; stroke: var(--text-primary); stroke-opacity: .65; stroke-width: 1; cursor: pointer; }
 .cw-hit:hover { fill-opacity: .4; }
-.cw-place { font-size: 10px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
+.cw-place { font-size: calc(10px * var(--tz)); font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
 .cw-place.is-flank { fill: var(--text-secondary); }
 .cw-terrain-fold { margin: 8px 0 0; }
-.cw-terrain-fold summary { cursor: pointer; font-size: .78rem; color: var(--text-secondary); }
-.cw-terrain-key { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .78rem; color: var(--text-secondary); margin: 6px 0 0; }
+.cw-terrain-fold summary { cursor: pointer; font-size: calc(.78rem * var(--tz)); color: var(--text-secondary); }
+.cw-terrain-key { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: calc(.78rem * var(--tz)); color: var(--text-secondary); margin: 6px 0 0; }
 .cw-terrain-key span { display: inline-flex; align-items: center; gap: 5px; }
 .cw-terrain-key i { width: 14px; height: 14px; border: 1px solid var(--border); }
 .cw-terrain-key .k-steppe { background: color-mix(in srgb, #c8b77a 30%, var(--bg-surface)); }
@@ -632,8 +632,8 @@
 .cw-unit > rect:first-child { stroke-width: 1.5; }
 .cw-unit.is-red > rect:first-child { fill: var(--cw-red); stroke: #4a0b12; }
 .cw-unit.is-white > rect:first-child { fill: #f4f1e8; stroke: var(--emap-blue); }
-.cw-unit-tag { font-size: 10px; font-weight: 800; letter-spacing: -.03em; pointer-events: none; }
-.cw-unit-hp { font-size: 11px; font-weight: 800; font-variant-numeric: tabular-nums; pointer-events: none; }
+.cw-unit-tag { font-size: calc(10px * var(--tz)); font-weight: 800; letter-spacing: -.03em; pointer-events: none; }
+.cw-unit-hp { font-size: calc(11px * var(--tz)); font-weight: 800; font-variant-numeric: tabular-nums; pointer-events: none; }
 /* The unit's picture (civil-war.js unitPicture) in its side's ink. */
 .cw-pic { pointer-events: none; }
 .cw-pic path, .cw-pic circle { stroke-linecap: round; stroke-linejoin: round; }
@@ -670,23 +670,23 @@
 .cw-unit.is-target .cw-unit-pick { stroke: var(--clr-red); }
 .cw-tile-pick { fill: none; stroke: var(--cw-gold, #e0b13a); stroke-width: 3; stroke-linecap: square; pointer-events: none; }
 /* A pressed tile's ground, on the board's top right corner. */
-.cw-tile-info { position: absolute; top: 6px; right: 6px; z-index: 3; max-width: 260px; display: grid; gap: 2px; padding: 6px 8px; border: 1px solid var(--border); background: color-mix(in srgb, var(--bg-surface) 94%, transparent); font-size: .78rem; line-height: 1.4; box-shadow: 0 2px 8px rgba(0, 0, 0, .35); }
+.cw-tile-info { position: absolute; top: 6px; right: 6px; z-index: 3; max-width: 260px; display: grid; gap: 2px; padding: 6px 8px; border: 1px solid var(--border); background: color-mix(in srgb, var(--bg-surface) 94%, transparent); font-size: calc(.78rem * var(--tz)); line-height: 1.4; box-shadow: 0 2px 8px rgba(0, 0, 0, .35); }
 .cw-tile-info p, .cw-act-tile p { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 2px 6px; }
 .cw-tile-info .cw-act-state { color: var(--text-secondary); }
 /* It keeps to the corner away from the tile it is about. */
 .cw-tile-info.is-left { right: auto; left: 6px; }
 .cw-tile-info.is-bottom { top: auto; bottom: 6px; }
-.games-shell .cw-tile-close { min-height: 0; margin-left: auto; padding: 0 4px; border: 0; background: none; color: var(--text-secondary); font-size: 1rem; line-height: 1; }
+.games-shell .cw-tile-close { min-height: 0; margin-left: auto; padding: 0 4px; border: 0; background: none; color: var(--text-secondary); font-size: calc(1rem * var(--tz)); line-height: 1; }
 .cw-swatch.cw-terrain-key { display: inline-flex; margin: 0; }
 .cw-unit:focus, .cw-unit:focus-visible { outline: none; }
 .cw-unit:focus-visible > rect:first-child { stroke: var(--text-primary); stroke-width: 2.5; }
 .cw-badge { pointer-events: none; }
 .cw-grid-scroll { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
-.cw-badge text { font-size: 10px; font-weight: 800; fill: #fff; }
+.cw-badge text { font-size: calc(10px * var(--tz)); font-weight: 800; fill: #fff; }
 .cw-badge.is-preview rect, .cw-badge.is-red rect { fill: var(--cw-red); stroke: #fff; stroke-width: 1; }
 /* A foretold loss beside a unit's strength: red on the target, orange on
    the attacker; outlined so it reads over the unit's picture. */
-.cw-unit .cw-hp-delta { font-size: 10px; paint-order: stroke; stroke-width: 3px; stroke-linejoin: round; }
+.cw-unit .cw-hp-delta { font-size: calc(10px * var(--tz)); paint-order: stroke; stroke-width: 3px; stroke-linejoin: round; }
 /* The number and its loss lie over the picture's edge: a halo of the
    counter's own colour keeps them clear of it. */
 .cw-unit .cw-unit-hp { paint-order: stroke; stroke-width: 3px; stroke-linejoin: round; }
@@ -697,7 +697,7 @@
 .cw-ground { pointer-events: none; }
 .cw-ground.is-cover { fill: #7a3f14; }
 .cw-ground.is-exposed { fill: #1f4f8a; }
-.cw-ground-text { font-size: 9px; font-weight: 800; fill: #fff; pointer-events: none; }
+.cw-ground-text { font-size: calc(9px * var(--tz)); font-weight: 800; fill: #fff; pointer-events: none; }
 .cw-badge.is-white rect { fill: var(--emap-blue); stroke: #fff; stroke-width: 1; }
 .cw-arrows { pointer-events: none; }
 .cw-blow { stroke-width: 3; fill: none; }
@@ -707,20 +707,20 @@
 .cw-head.is-red { fill: var(--cw-red); }
 .cw-trail { stroke: var(--emap-blue); stroke-width: 2; stroke-dasharray: 3 3; fill: none; }
 .cw-battle-side { display: grid; gap: 12px; min-width: 0; }
-.cw-battle-status { margin: 0; display: grid; gap: 4px; font-size: .88rem; line-height: 1.4; }
+.cw-battle-status { margin: 0; display: grid; gap: 4px; font-size: calc(.88rem * var(--tz)); line-height: 1.4; }
 /* A checklist: the row's label in a narrow column, its state beside it. */
 .cw-battle-status > div { display: grid; grid-template-columns: 4.2em minmax(0, 1fr); gap: 8px; padding: 3px 0 3px 8px; border-left: 3px solid transparent; }
-.cw-battle-status dt { color: var(--text-secondary); font-size: .78rem; padding-top: 1px; }
+.cw-battle-status dt { color: var(--text-secondary); font-size: calc(.78rem * var(--tz)); padding-top: 1px; }
 .cw-battle-status dd { margin: 0; }
-.cw-battle-status > div:first-child dd { font-weight: 800; font-size: 1.05rem; }
+.cw-battle-status > div:first-child dd { font-weight: 800; font-size: calc(1.05rem * var(--tz)); }
 .cw-battle-status > div.is-goal { border-left-color: var(--clr-red); }
 .cw-battle-status > div.is-goal dd { font-weight: 700; }
 .cw-battle-status > div.is-alarm { border-left-color: var(--clr-red); background: color-mix(in srgb, var(--clr-red) 14%, transparent); }
 .cw-battle-status > div.is-alarm dd { font-weight: 700; }
 .cw-unit-info { border: 1px solid var(--border); padding: 10px 12px; background: var(--bg-canvas); }
-.cw-unit-info h3 { font-size: 1rem; }
+.cw-unit-info h3 { font-size: calc(1rem * var(--tz)); }
 .cw-unit-info small { color: var(--text-secondary); font-weight: 400; }
-.cw-unit-info p { margin: 4px 0 0; font-size: .88rem; line-height: var(--leading-normal); }
+.cw-unit-info p { margin: 4px 0 0; font-size: calc(.88rem * var(--tz)); line-height: var(--leading-normal); }
 .cw-unit-info h3 small:not(:first-child)::before { content: ' '; }
 .cw-info-more { display: none; }
 .cw-info-hp { display: flex; align-items: center; gap: 8px; }
@@ -735,7 +735,7 @@
 .cw-roster-feat { color: var(--cw-gold); font-weight: 800; }
 .cw-feat { margin-top: 8px; padding-top: 6px; border-top: 1px dashed var(--border); }
 .cw-feat.is-used { color: var(--text-secondary); }
-.cw-feat details { margin-top: 4px; font-size: .84rem; }
+.cw-feat details { margin-top: 4px; font-size: calc(.84rem * var(--tz)); }
 .cw-feat summary { cursor: pointer; color: var(--text-secondary); }
 .cw-feat > p { line-height: 1.75; margin: 0 0 4px; }
 .cw-feat-head { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 6px !important; }
@@ -760,8 +760,8 @@
     background: var(--cw-red); color: #fff; border: 2px solid var(--cw-gold); box-shadow: 4px 4px 0 rgba(0, 0, 0, .45);
     opacity: 0;
 }
-.cw-moment strong { font-size: 1.35rem; letter-spacing: -.03em; }
-.cw-moment span { font-size: .85rem; }
+.cw-moment strong { font-size: calc(1.35rem * var(--tz)); letter-spacing: -.03em; }
+.cw-moment span { font-size: calc(.85rem * var(--tz)); }
 .cw-moment.is-surrender { background: #f4f1e8; color: #1d2a44; border-color: var(--cw-red); }
 @media (prefers-reduced-motion: no-preference) {
     .cw-moment { animation: cw-moment 2.4s ease-out both; animation-delay: calc(0ms - var(--since, 0ms)); }
@@ -783,9 +783,9 @@
     background: var(--cw-red); color: #fff; border: 3px solid var(--cw-gold); box-shadow: 6px 6px 0 rgba(0, 0, 0, .5);
     rotate: -3deg;
 }
-.cw-verdict strong { font-size: clamp(2rem, 6vw, 3rem); font-weight: 900; letter-spacing: .12em; line-height: 1.05; color: var(--cw-gold); text-shadow: 2px 2px 0 rgba(0, 0, 0, .45); }
-.cw-verdict span { font-size: .9rem; font-weight: 700; }
-.cw-verdict .cw-verdict-title { font-size: .75rem; letter-spacing: .08em; opacity: .85; }
+.cw-verdict strong { font-size: calc(clamp(2rem, 6vw, 3rem) * var(--tz)); font-weight: 900; letter-spacing: .12em; line-height: 1.05; color: var(--cw-gold); text-shadow: 2px 2px 0 rgba(0, 0, 0, .45); }
+.cw-verdict span { font-size: calc(.9rem * var(--tz)); font-weight: 700; }
+.cw-verdict .cw-verdict-title { font-size: calc(.75rem * var(--tz)); letter-spacing: .08em; opacity: .85; }
 .cw-verdict.is-lost { background: #1d2a44; border-color: var(--emap-blue); rotate: 0deg; }
 .cw-verdict.is-lost strong { color: #f4f1e8; }
 .cw-burst-rays { fill: none; stroke: var(--cw-gold); stroke-width: 4; stroke-linecap: square; }
@@ -806,51 +806,51 @@
 .cw-goal-flag { fill: var(--clr-red); stroke: #1d1d1b; stroke-width: 1; stroke-linejoin: round; pointer-events: none; }
 .cw-battle-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .cw-battle-events .games-kicker { margin: 0 0 4px; }
-.cw-battle-log { margin: 0; padding-left: 20px; font-size: .85rem; color: var(--text-secondary); line-height: var(--leading-normal); }
+.cw-battle-log { margin: 0; padding-left: 20px; font-size: calc(.85rem * var(--tz)); color: var(--text-secondary); line-height: var(--leading-normal); }
 
 /* Outcome */
-.cw-outcome h2 { font-size: clamp(1.4rem, 3.5vw, 2rem); margin: 6px 0 10px; }
-.cw-stars { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 6px; font-size: 1.05rem; color: var(--text-secondary); }
+.cw-outcome h2 { font-size: calc(clamp(1.4rem, 3.5vw, 2rem) * var(--tz)); margin: 6px 0 10px; }
+.cw-stars { list-style: none; padding: 0; margin: 12px 0; display: grid; gap: 6px; font-size: calc(1.05rem * var(--tz)); color: var(--text-secondary); }
 .cw-stars .is-got { color: var(--text-primary); font-weight: 700; }
 /* The war looked back on. */
-.cw-retro-title { font-size: 1.05rem; margin: 22px 0 6px; }
+.cw-retro-title { font-size: calc(1.05rem * var(--tz)); margin: 22px 0 6px; }
 .cw-seasons { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 2px; }
 .cw-seasons summary { cursor: pointer; display: grid; grid-template-columns: minmax(8rem, 13rem) 1fr 5.5rem; gap: 10px; align-items: center; min-height: 40px; padding: 4px 6px; }
 .cw-seasons summary:hover { background: var(--bg-canvas); }
-.cw-season-name { display: grid; font-size: .86rem; font-weight: 700; }
-.cw-season-name small { font-weight: 400; color: var(--text-secondary); font-size: .76rem; }
+.cw-season-name { display: grid; font-size: calc(.86rem * var(--tz)); font-weight: 700; }
+.cw-season-name small { font-weight: 400; color: var(--text-secondary); font-size: calc(.76rem * var(--tz)); }
 .cw-season-bar { position: relative; height: 14px; border-left: 0; background: linear-gradient(to right, transparent calc(50% - .5px), var(--border) calc(50% - .5px) calc(50% + .5px), transparent calc(50% + .5px)); }
 .cw-season-bar i { position: absolute; top: 1px; bottom: 1px; }
 .cw-season-bar i.is-behind { background: repeating-linear-gradient(-45deg, color-mix(in srgb, var(--text-primary) 28%, transparent) 0 3px, transparent 3px 6px); box-shadow: inset 0 0 0 1px var(--text-secondary); }
 .cw-season-bar i.is-ahead { background: var(--btn-primary, #2da44e); }
 .cw-season-bar i.is-even { background: var(--text-secondary); margin-left: -1px; }
-.cw-season-value { font-size: .84rem; font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; color: var(--text-secondary); }
+.cw-season-value { font-size: calc(.84rem * var(--tz)); font-weight: 700; font-variant-numeric: tabular-nums; text-align: right; color: var(--text-secondary); }
 .cw-season-value.is-behind { color: var(--text-primary); }
 .cw-season-value.is-behind::before { content: '▼ '; }
 .cw-season-value.is-ahead::before { content: '▲ '; }
 .cw-season-value.is-ahead { color: var(--text-primary); }
 .cw-season-fronts { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 8px; padding: 6px 0 12px; }
 .cw-forks-wrap { overflow-x: auto; }
-.cw-forks { width: 100%; border-collapse: collapse; font-size: .86rem; }
+.cw-forks { width: 100%; border-collapse: collapse; font-size: calc(.86rem * var(--tz)); }
 .cw-forks th, .cw-forks td { text-align: left; vertical-align: top; padding: 8px 8px 8px 0; border-bottom: 1px solid var(--border); }
-.cw-forks thead th { font-size: .76rem; color: var(--text-secondary); }
+.cw-forks thead th { font-size: calc(.76rem * var(--tz)); color: var(--text-secondary); }
 .cw-forks tbody th { font-weight: 700; }
 .cw-forks td strong, .cw-forks td small, .cw-forks tbody th .cw-links { display: block; }
-.cw-forks td small { color: var(--text-secondary); font-size: .76rem; margin-top: 2px; }
-.cw-forks tbody th .cw-links { font-weight: 400; font-size: .76rem; margin-top: 2px; }
+.cw-forks td small { color: var(--text-secondary); font-size: calc(.76rem * var(--tz)); margin-top: 2px; }
+.cw-forks tbody th .cw-links { font-weight: 400; font-size: calc(.76rem * var(--tz)); margin-top: 2px; }
 .cw-forks tbody th .cw-links a { margin-right: 8px; }
 .cw-forks tr:not(.is-same) td:nth-child(3) strong { text-decoration: underline; text-underline-offset: 3px; }
 .cw-same { color: var(--text-secondary); }
-.cw-forks .cw-fork-kind { display: block; font-weight: 400; font-size: .72rem; color: var(--text-secondary); }
-.cw-battle-results { margin: 6px 0 0; padding-left: 1.2rem; font-size: .9rem; display: grid; gap: 4px; }
+.cw-forks .cw-fork-kind { display: block; font-weight: 400; font-size: calc(.72rem * var(--tz)); color: var(--text-secondary); }
+.cw-battle-results { margin: 6px 0 0; padding-left: 1.2rem; font-size: calc(.9rem * var(--tz)); display: grid; gap: 4px; }
 .cw-support { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; margin-bottom: 18px; }
 .cw-support figure { margin: 0; }
-.cw-support figcaption { font-size: .86rem; }
+.cw-support figcaption { font-size: calc(.86rem * var(--tz)); }
 .cw-support figcaption small { color: var(--text-secondary); }
 .cw-spark { width: 100%; max-width: 300px; height: auto; display: block; }
 .cw-spark-grid { stroke: var(--border); stroke-width: 1; }
 .cw-spark-mark { stroke: var(--text-secondary); stroke-width: 1; stroke-dasharray: 3 3; }
-.cw-spark-axis { fill: var(--text-secondary); font-size: 9px; }
+.cw-spark-axis { fill: var(--text-secondary); font-size: calc(9px * var(--tz)); }
 .cw-spark-line { fill: none; stroke: var(--text-primary); stroke-width: 2; stroke-linejoin: round; }
 .cw-spark-dot { fill: var(--text-primary); stroke: var(--bg-surface); stroke-width: 2; }
 .cw-spark-dot.is-low { fill: var(--bg-surface); stroke: var(--text-primary); }
@@ -861,14 +861,14 @@
     .cw-forks, .cw-forks tbody, .cw-forks tr, .cw-forks th, .cw-forks td { display: block; }
     .cw-forks tr { padding: 8px 0; border-bottom: 1px solid var(--border); }
     .cw-forks th, .cw-forks td { border: 0; padding: 2px 0; }
-    .cw-forks td::before { content: attr(data-label); display: block; font-size: .72rem; color: var(--text-secondary); }
+    .cw-forks td::before { content: attr(data-label); display: block; font-size: calc(.72rem * var(--tz)); color: var(--text-secondary); }
 }
 
 .cw-rules { border: 1px solid var(--border); padding: 0 var(--content-inset); margin: 18px 0; }
 .cw-rules summary { cursor: pointer; font-weight: 700; min-height: 44px; display: flex; align-items: center; }
-.cw-rules p { font-size: .92rem; }
+.cw-rules p { font-size: calc(.92rem * var(--tz)); }
 .cw-reading { padding: 0 var(--content-inset); }
-.cw-reading h2 { font-size: 1.1rem; margin-bottom: 10px; }
+.cw-reading h2 { font-size: calc(1.1rem * var(--tz)); margin-bottom: 10px; }
 
 /* Beside the fronts' cards the map stays in view, so the card under the
    pointer can light its front however far down it is. */
@@ -896,20 +896,20 @@
     .cw-battle-actions { position: sticky; bottom: 0; background: var(--bg-surface); border-top: 1px solid var(--border); padding-block: 8px; z-index: 2; }
     .cw-battle-actions .cw-primary { margin-left: auto; }
     /* The picked unit over the pinned actions. */
-    .cw-act-unit { flex: 1 0 100%; display: grid; gap: 2px; padding-bottom: 6px; border-bottom: 1px solid var(--border); font-size: .8rem; }
+    .cw-act-unit { flex: 1 0 100%; display: grid; gap: 2px; padding-bottom: 6px; border-bottom: 1px solid var(--border); font-size: calc(.8rem * var(--tz)); }
     .cw-act-unit p { margin: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
     .cw-act-unit .cw-info-bar { flex: 0 1 70px; min-width: 36px; max-width: 70px; }
     /* With a feat's button the numbers alone keep the strip to one row. */
     .cw-act-unit p:has(.cw-feat-pill) .cw-info-bar { display: none; }
     .cw-act-state { color: var(--text-secondary); }
-    .games-shell .cw-act-unit .cw-feat-pill { min-height: 30px; padding: 2px 8px; font-size: .78rem; }
+    .games-shell .cw-act-unit .cw-feat-pill { min-height: 30px; padding: 2px 8px; font-size: calc(.78rem * var(--tz)); }
 }
 @media (min-width: 721px) { .cw-act-unit { display: none; } }
 /* The strip already says it: the card under the board keeps the rest. */
 @media (max-width: 720px) {
     .cw-unit-info .cw-info-dup { display: none; }
     .cw-unit-info .cw-info-more { display: block; }
-    .cw-unit-info h3 small { font-size: .88rem; }
+    .cw-unit-info h3 small { font-size: calc(.88rem * var(--tz)); }
 }
 @media (max-width: 720px) { .cw-tile-info { display: none; } }
 @media (prefers-reduced-motion: no-preference) {
@@ -920,7 +920,7 @@
    divisions to send, command, commissars, the grain over what the sent
    divisions eat. The jump to the other game gives up its place. */
 .cw-shell .games-crumb.has-status { position: sticky; top: 0; z-index: 50; flex-wrap: nowrap; }
-.cw-crumb-status { display: none; margin: 0 0 0 auto; gap: 14px; font-size: .8rem; white-space: nowrap; }
+.cw-crumb-status { display: none; margin: 0 0 0 auto; gap: 14px; font-size: calc(.8rem * var(--tz)); white-space: nowrap; }
 .games-crumb.has-status .cw-crumb-status { display: flex; }
 .cw-crumb-status div { display: flex; align-items: baseline; gap: 5px; }
 .cw-crumb-status dt { color: var(--text-secondary); }
@@ -928,7 +928,7 @@
 .cw-crumb-status .is-warn dd { color: var(--bg-surface); background: var(--text-primary); padding: 0 4px; }
 @media (max-width: 560px) {
     .cw-shell .games-crumb.has-status .games-crumb-item:last-child { display: none; }
-    .cw-crumb-status { gap: 10px; font-size: .76rem; }
+    .cw-crumb-status { gap: 10px; font-size: calc(.76rem * var(--tz)); }
     .cw-crumb-status div { gap: 3px; }
 }
 
@@ -938,16 +938,16 @@
 .cw-shell.is-playing .cw-hud { gap: 8px; padding: 10px var(--content-inset); margin: 10px 0 12px; }
 .cw-shell.is-playing .cw-season { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: end; column-gap: 16px; }
 .cw-shell.is-playing .cw-season .games-kicker { grid-column: 1; margin: 0; }
-.cw-shell.is-playing .cw-season h2 { grid-column: 1; font-size: 1.15rem; margin: 0; }
+.cw-shell.is-playing .cw-season h2 { grid-column: 1; font-size: calc(1.15rem * var(--tz)); margin: 0; }
 .cw-shell.is-playing .cw-calendar { grid-column: 2; grid-row: 1 / span 2; align-self: center; }
-.cw-shell.is-playing .cw-calendar li { font-size: .7rem; }
+.cw-shell.is-playing .cw-calendar li { font-size: calc(.7rem * var(--tz)); }
 .cw-shell.is-playing .cw-calendar .cw-cal-bar { height: 3px; margin: 1px 0 3px; }
 .cw-shell.is-playing .cw-stats { grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 4px 10px; }
-.cw-shell.is-playing .cw-stats strong { font-size: 1.05rem; }
+.cw-shell.is-playing .cw-stats strong { font-size: calc(1.05rem * var(--tz)); }
 .cw-shell.is-playing .cw-stats > div { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 6px; }
 .cw-shell.is-playing .cw-stats dd { margin: 0; display: contents; }
 .cw-shell.is-playing .cw-stats small { flex-basis: 100%; }
-.cw-shell.is-playing .cw-stats small { font-size: .7rem; line-height: 1.3; }
+.cw-shell.is-playing .cw-stats small { font-size: calc(.7rem * var(--tz)); line-height: 1.3; }
 /* The planning counts live in the pinned crumb bar only; the three stats
    left are gauges (2026-10-29: on every width, not just a phone's). */
 .cw-shell.is-playing .cw-stats > .is-crumb { display: none; }
@@ -964,29 +964,29 @@
     .cw-shell.is-playing .cw-stats > .has-gauge { flex-wrap: wrap; }
 }
 .cw-army { padding-top: 6px; }
-.cw-army summary { cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; min-height: 32px; font-size: .85rem; }
-.cw-army summary strong { font-size: .9rem; }
+.cw-army summary { cursor: pointer; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; min-height: 32px; font-size: calc(.85rem * var(--tz)); }
+.cw-army summary strong { font-size: calc(.9rem * var(--tz)); }
 .cw-army details > summary::before { margin-right: -4px; color: var(--text-primary); }
-.cw-army-line { color: var(--text-secondary); font-size: .8rem; }
-.cw-army-change { font-size: .75rem; font-weight: 700; border: 1px solid var(--border); padding: 1px 6px; }
+.cw-army-line { color: var(--text-secondary); font-size: calc(.8rem * var(--tz)); }
+.cw-army-change { font-size: calc(.75rem * var(--tz)); font-weight: 700; border: 1px solid var(--border); padding: 1px 6px; }
 .cw-army-change.is-plus { border-color: var(--btn-primary, #2da44e); }
 .cw-army-change.is-minus { border-style: dashed; border-color: var(--text-primary); }
 .cw-army details[open] .cw-troops { margin-top: 8px; }
 .cw-shell.is-playing .cw-brief { margin-bottom: 12px; padding-block: 0; }
-.cw-shell.is-playing .cw-brief p { font-size: .95rem; line-height: 1.6; margin-bottom: 6px; }
+.cw-shell.is-playing .cw-brief p { font-size: calc(.95rem * var(--tz)); line-height: 1.6; margin-bottom: 6px; }
 .cw-shell.is-playing .cw-board { gap: 12px; margin-bottom: 12px; }
 
 /* Front cards: one header row, a row of folded foes, one row of controls */
 .cw-fronts { gap: 8px; }
 .cw-front { padding: 8px 10px; gap: 5px; align-content: start; }
 .cw-front header { justify-content: flex-start; align-items: center; gap: 4px 8px; margin: 0; }
-.cw-front header > span { font-size: .75rem; margin-left: auto; color: var(--text-secondary); }
-.cw-front .cw-threat { font-size: .84rem; color: var(--text-secondary); }
+.cw-front header > span { font-size: calc(.75rem * var(--tz)); margin-left: auto; color: var(--text-secondary); }
+.cw-front .cw-threat { font-size: calc(.84rem * var(--tz)); color: var(--text-secondary); }
 .cw-foes { gap: 4px; }
 .cw-foe { flex: 0 1 auto; }
 .cw-foe[open] { flex-basis: 100%; }
-.cw-foe summary { min-height: 28px; padding: 2px 8px; font-size: .8rem; gap: 6px; }
-.cw-foe summary small { font-size: .7rem; font-weight: 700; color: var(--text-secondary); }
+.cw-foe summary { min-height: 28px; padding: 2px 8px; font-size: calc(.8rem * var(--tz)); gap: 6px; }
+.cw-foe summary small { font-size: calc(.7rem * var(--tz)); font-weight: 700; color: var(--text-secondary); }
 .cw-foe summary small::before { content: '· '; }
 .cw-foe .cw-foe-trait { color: var(--text-primary); }
 /* The attackers' traits on this front: a bitten rule in red, a blunted one
@@ -994,8 +994,8 @@
 .cw-foe-entry { flex: 1 1 100%; display: grid; gap: 2px; }
 .cw-foe-entry .cw-foe { justify-self: start; }
 .cw-foe-entry .cw-foe[open] { justify-self: stretch; }
-.cw-trait { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; margin: 0; padding: 2px 6px; border-left: 3px solid var(--border); font-size: .76rem !important; color: var(--text-secondary); }
-.cw-trait b { margin-left: auto; font-size: .7rem; padding: 0 5px; border: 1px solid currentColor; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cw-trait { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; margin: 0; padding: 2px 6px; border-left: 3px solid var(--border); font-size: calc(.76rem * var(--tz)) !important; color: var(--text-secondary); }
+.cw-trait b { margin-left: auto; font-size: calc(.7rem * var(--tz)); padding: 0 5px; border: 1px solid currentColor; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .cw-trait.is-bites { border-left-color: var(--text-primary); }
 .cw-trait.is-bites b { color: var(--bg-surface); background: var(--text-primary); border-color: var(--text-primary); }
 .cw-trait.is-blunted b { color: var(--text-secondary); }
@@ -1003,32 +1003,32 @@
 .cw-trait.is-works b { color: var(--cw-good-ink); background: var(--cw-good); border-color: var(--cw-good); }
 .cw-front-controls { gap: 4px; }
 .games-shell .cw-stepper button { min-width: 36px; min-height: 36px; padding: 4px 0; }
-.cw-stepper output { min-width: 58px; font-size: .9rem; }
-.games-shell .cw-front .cw-toggle { padding: 4px 9px; min-height: 36px; font-size: .8rem; }
+.cw-stepper output { min-width: 58px; font-size: calc(.9rem * var(--tz)); }
+.games-shell .cw-front .cw-toggle { padding: 4px 9px; min-height: 36px; font-size: calc(.8rem * var(--tz)); }
 .cw-meter { gap: 2px; margin: 2px 0 2px; }
-.cw-meter-top { font-size: .84rem; }
+.cw-meter-top { font-size: calc(.84rem * var(--tz)); }
 .cw-meter-bar { height: 12px; }
-.cw-parts { font-size: .74rem !important; }
+.cw-parts { font-size: calc(.74rem * var(--tz)) !important; }
 
 /* Advisor cards: title, effect and button; the story folds */
 .cw-shell.is-playing .cw-cards, .cw-shell.is-playing .cw-choice { padding: 10px var(--content-inset); margin-bottom: 12px; }
 .cw-cards h3 { margin-bottom: 8px; }
 .cw-card-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 6px; }
 .cw-card { padding: 8px 10px; gap: 4px; }
-.cw-card h4 { font-size: .9rem; }
-.cw-card h4 small { font-weight: 400; font-size: .74rem; color: var(--text-secondary); }
-.cw-card .cw-effect { margin-top: 0 !important; font-size: .8rem; }
-.cw-card-more summary { cursor: pointer; font-size: .74rem; color: var(--text-secondary); }
-.cw-card-more p { font-size: .8rem; margin-top: 4px; }
-.games-shell .cw-card button { padding: 5px 8px; font-size: .8rem; margin-top: auto; }
+.cw-card h4 { font-size: calc(.9rem * var(--tz)); }
+.cw-card h4 small { font-weight: 400; font-size: calc(.74rem * var(--tz)); color: var(--text-secondary); }
+.cw-card .cw-effect { margin-top: 0 !important; font-size: calc(.8rem * var(--tz)); }
+.cw-card-more summary { cursor: pointer; font-size: calc(.74rem * var(--tz)); color: var(--text-secondary); }
+.cw-card-more p { font-size: calc(.8rem * var(--tz)); margin-top: 4px; }
+.games-shell .cw-card button { padding: 5px 8px; font-size: calc(.8rem * var(--tz)); margin-top: auto; }
 
 /* The dilemma */
-.cw-choice h3 { font-size: 1.05rem; margin: 2px 0 4px; }
-.cw-choice > p { font-size: .9rem; margin: 0; }
+.cw-choice h3 { font-size: calc(1.05rem * var(--tz)); margin: 2px 0 4px; }
+.cw-choice > p { font-size: calc(.9rem * var(--tz)); margin: 0; }
 .cw-options { gap: 6px; margin-top: 8px; }
-.games-shell .cw-option { padding: 8px 10px; gap: 3px; font-size: .88rem; }
+.games-shell .cw-option { padding: 8px 10px; gap: 3px; font-size: calc(.88rem * var(--tz)); }
 .games-shell .cw-option[aria-pressed="true"] { padding: 7px 9px; }
-.cw-option small { font-size: .74rem; }
+.cw-option small { font-size: calc(.74rem * var(--tz)); }
 
 /* The season's order stays at the bottom of the screen while planning,
    over the map pinned on a phone when the map reaches the screen's foot. */
@@ -1038,10 +1038,10 @@
     .cw-shell.is-playing .cw-calendar { grid-column: 1; grid-row: auto; margin-top: 4px; }
     .cw-shell.is-playing .cw-stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 }
-.cw-map-key summary { cursor: pointer; padding: 6px 12px; font-size: .78rem; color: var(--text-secondary); }
+.cw-map-key summary { cursor: pointer; padding: 6px 12px; font-size: calc(.78rem * var(--tz)); color: var(--text-secondary); }
 .cw-map-key[open] summary { padding-bottom: 0; }
 .cw-command { flex-wrap: nowrap; }
-.cw-command p { font-size: .82rem; min-width: 0; }
+.cw-command p { font-size: calc(.82rem * var(--tz)); min-width: 0; }
 .games-shell .cw-command .cw-primary { flex: 0 0 auto; padding-block: 8px; }
 @media (max-width: 560px) {
     .cw-shell.is-playing .cw-stats > div:not(.is-warn) small { display: none; }
@@ -1054,14 +1054,14 @@
 .games-shell .cw-toggle[aria-pressed="true"] { background: color-mix(in srgb, var(--cw-red) 22%, var(--bg-canvas)); }
 
 /* The cities at stake: a chain of map dots, inner to outer. */
-.cw-stake-head { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: .8rem; }
+.cw-stake-head { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; font-size: calc(.8rem * var(--tz)); }
 .cw-stake-verdict { font-weight: 800; padding-left: 6px; border-left: 3px solid var(--text-secondary); }
 .cw-stake-verdict.is-behind { border-color: var(--text-primary); }
 .cw-stake-verdict.is-behind::before { content: '▼ '; }
 .cw-stake-verdict.is-ahead::before { content: '▲ '; }
 .cw-stake-verdict.is-ahead { border-color: var(--btn-primary, #2da44e); }
 .cw-stake { list-style: none; margin: 2px 0 0; padding: 0; display: flex; flex-wrap: nowrap; align-items: flex-start; row-gap: 4px; }
-.cw-stake li { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 0; flex: 1 1 0; max-width: 92px; padding: 0 2px; overflow-wrap: anywhere; font-size: .72rem; color: var(--text-secondary); text-align: center; line-height: 1.2; }
+.cw-stake li { position: relative; display: flex; flex-direction: column; align-items: center; min-width: 0; flex: 1 1 0; max-width: 92px; padding: 0 2px; overflow-wrap: anywhere; font-size: calc(.72rem * var(--tz)); color: var(--text-secondary); text-align: center; line-height: 1.2; }
 .cw-stake li.is-changing { color: var(--text-primary); font-weight: 700; }
 /* the chain between dots */
 .cw-stake li:not(.cw-stake-hist)::before { content: ''; position: absolute; top: 12px; left: 0; right: 0; height: 1.6px; background: color-mix(in srgb, var(--cw-red) 60%, transparent); z-index: 0; }
@@ -1070,13 +1070,13 @@
 .cw-stake-dot { width: 24px; height: 24px; position: relative; z-index: 1; }
 /* A city's prize this season (Arkhangelsk's stores and men): outlined
    while the plan falls short, filled green once it takes the city. */
-.cw-stake-prize { position: relative; margin-top: 3px; padding: 1px 5px 1px 14px; border: 1px dashed var(--cw-good); color: var(--text-primary); font-size: .66rem; font-weight: 700; line-height: 1.3; text-align: left; }
+.cw-stake-prize { position: relative; margin-top: 3px; padding: 1px 5px 1px 14px; border: 1px dashed var(--cw-good); color: var(--text-primary); font-size: calc(.66rem * var(--tz)); font-weight: 700; line-height: 1.3; text-align: left; }
 .cw-stake-prize span { display: block; white-space: nowrap; }
 .cw-stake-prize::before { content: '★'; position: absolute; left: 3px; top: 1px; color: var(--cw-gold); }
 .cw-stake-prize.is-won { border-style: solid; background: var(--cw-good); color: var(--cw-good-ink); }
 .cw-stake-hist { min-width: 0 !important; flex: 0 0 auto !important; padding: 0 !important; align-self: stretch; }
 .cw-stake-hist::after { content: ''; position: absolute; top: 0; bottom: 14px; left: 50%; border-left: 1.5px dashed var(--text-primary); }
-.cw-stake-hist span { margin-top: auto; font-size: .64rem; font-weight: 800; color: var(--text-primary); background: var(--bg-surface); padding: 0 2px; position: relative; z-index: 1; }
+.cw-stake-hist span { margin-top: auto; font-size: calc(.64rem * var(--tz)); font-weight: 800; color: var(--text-primary); background: var(--bg-surface); padding: 0 2px; position: relative; z-index: 1; }
 
 .cw-mk-star { width: 17px; height: 17px; fill: var(--cw-star); stroke: var(--cw-gold-rim); stroke-width: .8; }
 .cw-mk-train { width: 22px; height: 18px; }
@@ -1102,7 +1102,7 @@
    under the attacker's row. */
 .cw-meter-scale > .cw-meter-tick { pointer-events: auto; background: linear-gradient(var(--border), var(--border)) top / 1px var(--cw-bar-h) no-repeat; }
 .cw-foe-row { position: relative; min-height: 18px; }
-.cw-foe-count { display: flex; flex-wrap: wrap; align-items: baseline; gap: 1px 5px; font-size: .75rem; line-height: 18px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.cw-foe-count { display: flex; flex-wrap: wrap; align-items: baseline; gap: 1px 5px; font-size: calc(.75rem * var(--tz)); line-height: 18px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
 .cw-next { font-weight: 700; padding: 0 4px; line-height: 1.25; }
 .cw-next.is-momentum { color: var(--bg-surface); background: var(--text-primary); }
 .cw-next.is-pursuit { color: var(--cw-good-ink); background: var(--cw-good); }
@@ -1119,7 +1119,7 @@
 .cw-seg.is-div { background: var(--cw-red); border-right: 1.5px solid var(--bg-surface); }
 .cw-seg.is-commissar, .cw-seg.is-train { background: color-mix(in srgb, var(--cw-red) 70%, #000); border-right: 1.5px solid var(--bg-surface); }
 .cw-seg.is-other { background: repeating-linear-gradient(-45deg, var(--cw-red) 0 4px, color-mix(in srgb, var(--cw-red) 70%, #000) 4px 8px); border-right: 1.5px solid var(--bg-surface); }
-.cw-seg small { font-size: .62rem; font-weight: 800; color: #fff; }
+.cw-seg small { font-size: calc(.62rem * var(--tz)); font-weight: 800; color: #fff; }
 .cw-seg.is-minus { background: repeating-linear-gradient(45deg, color-mix(in srgb, var(--text-secondary) 55%, transparent) 0 3px, transparent 3px 6px); }
 .cw-seg.is-minus small { color: var(--text-primary); }
 .cw-seg .cw-mk-star { width: 14px; height: 14px; fill: #faf2da; stroke: none; }
@@ -1132,7 +1132,7 @@
 .cw-campaign.is-unveiling .cw-board { grid-template-columns: minmax(0, 1fr); margin-bottom: 0; }
 .cw-campaign.is-unveiling .cw-map-panel { width: 100%; max-width: min(900px, calc((100vh - 190px) * 1.15)); margin-inline: auto; position: static; }
 .cw-unveil { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px 16px; min-height: 56px; padding: 8px 0 12px; }
-.cw-unveil p { margin: 0; font-size: .92rem; }
+.cw-unveil p { margin: 0; font-size: calc(.92rem * var(--tz)); }
 .cw-unveil p span { color: var(--text-secondary); }
 /* The season's stat changes, filled like the review's next-season chips. */
 .cw-unveil-stats li { font-weight: 700; }
@@ -1161,7 +1161,7 @@
 .cw-wreck-slash { fill: none; stroke-width: 3.5; stroke-linecap: round; stroke-dasharray: 52; }
 .cw-wreck.is-white .cw-wreck-slash { stroke: var(--clr-red); }
 .cw-wreck.is-red .cw-wreck-slash { stroke: var(--emap-blue); }
-.cw-wreck-word { font-size: 12px; font-weight: 900; paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; }
+.cw-wreck-word { font-size: calc(12px * var(--tz)); font-weight: 900; paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; }
 .cw-wreck.is-white .cw-wreck-word { fill: var(--clr-red); }
 .cw-wreck.is-red .cw-wreck-word { fill: var(--emap-blue); }
 @media (prefers-reduced-motion: no-preference) {
@@ -1192,8 +1192,8 @@
 /* One front card at a time (civil-war.js renderFronts): the row of fronts
    picks it, as do the attackers' markers on the map. */
 .cw-front-tabs { display: flex; flex-wrap: wrap; gap: 6px; }
-.games-shell .cw-front-tab { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 4px 10px; line-height: 1.2; font-size: .84rem; font-variant-numeric: tabular-nums; }
-.cw-front-tab span { color: var(--text-secondary); font-size: .78rem; }
+.games-shell .cw-front-tab { display: inline-flex; align-items: center; gap: 6px; min-height: 34px; padding: 4px 10px; line-height: 1.2; font-size: calc(.84rem * var(--tz)); font-variant-numeric: tabular-nums; }
+.cw-front-tab span { color: var(--text-secondary); font-size: calc(.78rem * var(--tz)); }
 
 .cw-front-tab .cw-trend { margin-left: 0; }
 .games-shell .cw-front-tab[aria-pressed="true"] { border-color: var(--cw-red); background: color-mix(in srgb, var(--cw-red) 14%, transparent); }
@@ -1216,7 +1216,7 @@
     .cw-map-frame::-webkit-scrollbar { display: none; }
     .cw-map-frame > svg { max-width: none; }
     .cw-front-tabs { flex-wrap: nowrap; overflow-x: auto; }
-    .games-shell .cw-front-tab { flex: 0 0 auto; gap: 4px; padding: 4px 8px; font-size: .8rem; }
+    .games-shell .cw-front-tab { flex: 0 0 auto; gap: 4px; padding: 4px 8px; font-size: calc(.8rem * var(--tz)); }
 }
 
 /* Voices: who speaks on the map as a season opens or ends (civil-war.js
@@ -1227,7 +1227,7 @@
     position: absolute; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 0 10px; align-items: start;
     translate: -50% calc(-100% - 14px); padding: 9px 30px 10px 9px; cursor: pointer;
     background: var(--bg-surface); color: var(--text-primary); border: 2px solid var(--cw-white); box-shadow: 4px 4px 0 #0000004d;
-    font-size: .86rem; line-height: 1.45; text-align: left;
+    font-size: calc(.86rem * var(--tz)); line-height: 1.45; text-align: left;
 }
 .cw-voice.is-below { translate: -50% 18px; }
 .cw-voice::after {
@@ -1251,18 +1251,18 @@
 [data-theme="light"] .cw-voice.k-white.is-below::after { border-bottom-color: var(--cw-ink); }
 .cw-voice > .cw-face { width: 44px; height: 44px; }
 .cw-voice p { margin: 0; line-height: 1.45; }
-.cw-voice-who { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; font-size: .78rem; color: var(--text-secondary); }
-.cw-voice-who strong { color: var(--text-primary); font-size: .84rem; }
+.cw-voice-who { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 6px; font-size: calc(.78rem * var(--tz)); color: var(--text-secondary); }
+.cw-voice-who strong { color: var(--text-primary); font-size: calc(.84rem * var(--tz)); }
 .cw-voice-text { margin-top: 2px !important; font-weight: 600; }
 .cw-voice-text::before { content: '「'; }
 .cw-voice-text::after { content: '」'; }
-.cw-voice-src { font-size: .72rem; }
+.cw-voice-src { font-size: calc(.72rem * var(--tz)); }
 .cw-voice-src a { color: var(--text-secondary); }
 .cw-voice-src.is-made { padding: 0 4px; border: 1px solid var(--border); color: var(--text-secondary); }
 .cw-voice-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 3px; }
-.games-shell .cw-voice-next { flex: 0 0 auto; min-height: 28px; padding: 2px 9px; font-size: .74rem; font-variant-numeric: tabular-nums; }
+.games-shell .cw-voice-next { flex: 0 0 auto; min-height: 28px; padding: 2px 9px; font-size: calc(.74rem * var(--tz)); font-variant-numeric: tabular-nums; }
 .cw-voice-next span { color: var(--text-secondary); }
-.games-shell .cw-voice-close { position: absolute; top: 2px; right: 2px; min-height: 0; width: 26px; height: 26px; padding: 0; border: 0; background: none; color: var(--text-secondary); font-size: 1.1rem; line-height: 1; }
+.games-shell .cw-voice-close { position: absolute; top: 2px; right: 2px; min-height: 0; width: 26px; height: 26px; padding: 0; border: 0; background: none; color: var(--text-secondary); font-size: calc(1.1rem * var(--tz)); line-height: 1; }
 .cw-voice:focus-visible { outline: 2px solid var(--text-primary); outline-offset: 2px; }
 @media (prefers-reduced-motion: no-preference) {
     .cw-voice.is-new { animation: cw-voice-in .32s cubic-bezier(.2, 1.4, .4, 1) both; }
@@ -1272,17 +1272,17 @@
    place it speaks of still shows. A smaller face and type, the source on one
    line, cut short (its link and full name stay on it). */
 @media (max-width: 900px) {
-    .cw-voice { grid-template-columns: 30px minmax(0, 1fr); gap: 0 8px; padding: 6px 26px 6px 6px; font-size: .8rem; line-height: 1.36; }
+    .cw-voice { grid-template-columns: 30px minmax(0, 1fr); gap: 0 8px; padding: 6px 26px 6px 6px; font-size: calc(.8rem * var(--tz)); line-height: 1.36; }
     .cw-voice > .cw-face { width: 30px; height: 30px; }
     .cw-voice p { line-height: 1.36; }
-    .cw-voice-who { font-size: .72rem; }
-    .cw-voice-who strong { font-size: .78rem; }
+    .cw-voice-who { font-size: calc(.72rem * var(--tz)); }
+    .cw-voice-who strong { font-size: calc(.78rem * var(--tz)); }
     .cw-voice-foot { margin-top: 2px; }
     .cw-voice-foot > p { min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
-    .cw-voice-src { font-size: .68rem; }
-    .games-shell .cw-voice-next { min-height: 24px; padding: 1px 8px; font-size: .7rem; }
+    .cw-voice-src { font-size: calc(.68rem * var(--tz)); }
+    .games-shell .cw-voice-next { min-height: 24px; padding: 1px 8px; font-size: calc(.7rem * var(--tz)); }
 }
-.cw-voice-log { margin: 0 0 10px; font-size: .9rem; }
+.cw-voice-log { margin: 0 0 10px; font-size: calc(.9rem * var(--tz)); }
 .cw-voice-log ul { margin: 8px 0 0; padding-left: 18px; }
 .cw-voice-log li { margin-bottom: 6px; line-height: var(--leading-normal); }
 .cw-voice-log .cw-voice-src { margin-left: 4px; }
@@ -1294,28 +1294,28 @@
 /* overflow-x clips the y axis too: room above and below, or a chip's rim is
    cut when the pinned bar sits on a fractional pixel (a phone's toolbar). */
 .cw-todo { display: flex; gap: 4px; flex: 0 1 auto; min-width: 0; overflow-x: auto; scrollbar-width: none; margin-right: auto; padding-block: 3px; margin-block: -3px; }
-.games-shell .cw-todo-item { flex: 0 0 auto; min-height: 30px; padding: 3px 9px; font-size: .78rem; font-variant-numeric: tabular-nums; background: var(--text-primary); color: var(--bg-canvas); border-color: var(--text-primary); }
+.games-shell .cw-todo-item { flex: 0 0 auto; min-height: 30px; padding: 3px 9px; font-size: calc(.78rem * var(--tz)); font-variant-numeric: tabular-nums; background: var(--text-primary); color: var(--bg-canvas); border-color: var(--text-primary); }
 .games-shell .cw-todo-item.is-done { background: transparent; color: var(--text-secondary); border-color: var(--border); }
 .games-shell .cw-todo-item.is-next { background: var(--cw-red); border-color: var(--cw-red); color: #fff; }
 /* The first season's next step in words, over the row. */
 .cw-command.has-guide { flex-wrap: wrap; row-gap: 6px; }
 .games-shell .cw-guide {
     flex: 1 0 100%; display: flex; align-items: baseline; gap: 8px; min-height: 0; padding: 4px 0; text-align: left;
-    background: none; border: 0; color: var(--text-primary); font-size: .85rem; font-weight: 700; line-height: 1.35;
+    background: none; border: 0; color: var(--text-primary); font-size: calc(.85rem * var(--tz)); font-weight: 700; line-height: 1.35;
 }
-.cw-guide span { flex: 0 0 auto; padding: 1px 6px; background: var(--cw-red); color: #fff; font-size: .72rem; letter-spacing: .04em; }
+.cw-guide span { flex: 0 0 auto; padding: 1px 6px; background: var(--cw-red); color: #fff; font-size: calc(.72rem * var(--tz)); letter-spacing: .04em; }
 @media (max-width: 560px) { .cw-command p:not(.cw-settle-alert) { display: none; } }
 /* The order pressed too soon: what is missing, over the row, until the next change. */
-.cw-command .cw-settle-alert { flex: 1 0 100%; order: -2; margin: 0; padding: 4px 8px; background: var(--cw-red); color: #fff; font-size: .85rem; font-weight: 700; }
+.cw-command .cw-settle-alert { flex: 1 0 100%; order: -2; margin: 0; padding: 4px 8px; background: var(--cw-red); color: #fff; font-size: calc(.85rem * var(--tz)); font-weight: 700; }
 .games-shell .cw-command .cw-primary.is-waiting { opacity: .55; }
 
 /* The first game's guide: a note over the part of the screen it is about. */
-.cw-coach { margin: 0 0 12px; padding: 10px 14px; border: 2px solid var(--cw-red); border-left-width: 6px; background: var(--bg-surface); font-size: .92rem; line-height: var(--leading-normal); }
+.cw-coach { margin: 0 0 12px; padding: 10px 14px; border: 2px solid var(--cw-red); border-left-width: 6px; background: var(--bg-surface); font-size: calc(.92rem * var(--tz)); line-height: var(--leading-normal); }
 .cw-front .cw-coach { margin: 8px 0; }
 .cw-coach p { margin: 0; }
-.cw-coach .cw-coach-step { margin-bottom: 4px; color: var(--cw-red); font-size: .76rem; font-weight: 800; letter-spacing: .04em; }
+.cw-coach .cw-coach-step { margin-bottom: 4px; color: var(--cw-red); font-size: calc(.76rem * var(--tz)); font-weight: 800; letter-spacing: .04em; }
 .cw-coach-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
-.games-shell .cw-coach-actions button { min-height: 30px; padding: 2px 12px; font-size: .84rem; }
+.games-shell .cw-coach-actions button { min-height: 30px; padding: 2px 12px; font-size: calc(.84rem * var(--tz)); }
 
 /* A term of the story: pressed, its line unfolds after it. */
 .games-shell .cw-term { display: inline; min-height: 0; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline dotted; text-underline-offset: 3px; cursor: help; }
@@ -1325,27 +1325,27 @@
 
 /* A speaker and what they were at the time. */
 .cw-speaker { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 2px; justify-self: start; }
-.cw-speaker small { font-size: .74rem; color: var(--text-secondary); white-space: nowrap; }
+.cw-speaker small { font-size: calc(.74rem * var(--tz)); color: var(--text-secondary); white-space: nowrap; }
 .cw-voice-log small { color: var(--text-secondary); }
 
 /* How to play a battle turn, in order. */
-.cw-battle-howto { margin: 0; padding-left: 1.3em; display: grid; gap: 4px; font-size: .88rem; line-height: var(--leading-normal); }
+.cw-battle-howto { margin: 0; padding-left: 1.3em; display: grid; gap: 4px; font-size: calc(.88rem * var(--tz)); line-height: var(--leading-normal); }
 
 /* Where a front's divisions come from; the ones moved by rail inverted. */
-.cw-rail-row { margin: 4px 0 0; font-size: .78rem; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.cw-rail-row { margin: 4px 0 0; font-size: calc(.78rem * var(--tz)); color: var(--text-secondary); font-variant-numeric: tabular-nums; }
 .cw-rail-row strong { color: var(--text-primary); }
 .cw-seg.is-div.is-moved { background: repeating-linear-gradient(-45deg, var(--cw-red) 0 3px, color-mix(in srgb, var(--cw-red) 35%, var(--bg-surface)) 3px 6px); }
 /* The steps beside the stepper: to the next result, and back without
    losing it; the divisions short of the next result as plain words. */
-.games-shell .cw-front .cw-step { min-height: 36px; padding: 4px 9px; font-size: .8rem; font-variant-numeric: tabular-nums; }
+.games-shell .cw-front .cw-step { min-height: 36px; padding: 4px 9px; font-size: calc(.8rem * var(--tz)); font-variant-numeric: tabular-nums; }
 .games-shell .cw-front .cw-step.is-more { border-color: var(--text-primary); font-weight: 700; }
 .cw-meter-strength { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
-.cw-meter-top .cw-step-short { font-size: .76rem; color: var(--text-secondary); }
+.cw-meter-top .cw-step-short { font-size: calc(.76rem * var(--tz)); color: var(--text-secondary); }
 /* The enemy, folded under the meter: who and what their traits add. */
 .cw-foe-fold { display: grid; gap: 5px; border-top: 1px solid var(--border); padding-top: 4px; }
-.cw-foe-fold > summary { display: flex; align-items: center; gap: 6px; min-height: 30px; cursor: pointer; font-size: .82rem; color: var(--text-secondary); }
+.cw-foe-fold > summary { display: flex; align-items: center; gap: 6px; min-height: 30px; cursor: pointer; font-size: calc(.82rem * var(--tz)); color: var(--text-secondary); }
 .cw-foe-fold > summary strong { color: var(--text-primary); }
-.cw-foe-fold > summary b { margin-left: auto; font-size: .72rem; padding: 0 5px; border: 1px solid currentColor; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.cw-foe-fold > summary b { margin-left: auto; font-size: calc(.72rem * var(--tz)); padding: 0 5px; border: 1px solid currentColor; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .cw-foe-fold > summary b.is-bites { color: var(--bg-surface); background: var(--text-primary); border-color: var(--text-primary); }
 .cw-foe-fold > summary b.is-works { color: var(--cw-good-ink); background: var(--cw-good); border-color: var(--cw-good); }
 .cw-foe-fold[open] > summary b { display: none; }
@@ -1358,7 +1358,7 @@
 .cw-battle-brief > summary:hover, .cw-rules > summary:hover { text-decoration: underline; text-underline-offset: 3px; }
 /* The season's story folded on a phone (civil-war.js renderBrief). */
 /* The season's story and its voices fold alike, side by side. */
-.cw-brief-fold > summary, .cw-voice-log > summary { cursor: pointer; font-weight: 700; font-size: .9rem; min-height: 30px; display: flex; align-items: center; }
+.cw-brief-fold > summary, .cw-voice-log > summary { cursor: pointer; font-weight: 700; font-size: calc(.9rem * var(--tz)); min-height: 30px; display: flex; align-items: center; }
 .cw-brief-fold[open] > summary { margin-bottom: 4px; }
 .cw-brief-fold > summary::before, .cw-voice-log > summary::before { color: var(--text-primary); }
 .cw-brief-fold > summary:hover, .cw-voice-log > summary:hover, .cw-army details > summary:hover strong { text-decoration: underline; text-underline-offset: 3px; }
@@ -1367,7 +1367,7 @@
    turn's end armed by a first press. */
 .cw-battle-brief summary span { font-weight: 400; color: var(--text-secondary); }
 .cw-roster { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding-bottom: 6px; }
-.games-shell .cw-roster-unit { flex: 0 0 auto; display: inline-flex; gap: 4px; align-items: baseline; min-height: 30px; padding: 3px 8px; font-size: .78rem; }
+.games-shell .cw-roster-unit { flex: 0 0 auto; display: inline-flex; gap: 4px; align-items: baseline; min-height: 30px; padding: 3px 8px; font-size: calc(.78rem * var(--tz)); }
 .cw-roster-unit small { font-variant-numeric: tabular-nums; color: var(--text-secondary); }
 .games-shell .cw-roster-unit.is-done { border-style: dashed; color: var(--text-secondary); }
 .games-shell .cw-roster-unit[aria-pressed="true"] { border-color: var(--cw-red); background: color-mix(in srgb, var(--cw-red) 18%, transparent); }
@@ -1380,11 +1380,11 @@
 @media (max-width: 560px) {
     /* Only what is still to do takes room in the narrow command bar. */
     .cw-todo-item.is-done { display: none; }
-    .games-shell .cw-battle-actions button { padding: 6px 10px; font-size: .82rem; min-height: 36px; }
+    .games-shell .cw-battle-actions button { padding: 6px 10px; font-size: calc(.82rem * var(--tz)); min-height: 36px; }
 }
 @media (max-width: 560px) {
     .cw-todo { gap: 3px; }
-    .games-shell .cw-todo-item { padding: 3px 6px; font-size: .72rem; }
+    .games-shell .cw-todo-item { padding: 3px 6px; font-size: calc(.72rem * var(--tz)); }
 }
 
 /* The battle board's railway. */
@@ -1410,12 +1410,12 @@
 
 /* The page heading: a heavy title over a red bar and a black one. */
 .cw-heading { border-bottom: 0; box-shadow: 0 8px 0 var(--cw-red), 0 11px 0 var(--text-primary); margin-bottom: 30px; }
-.cw-heading h1 { font-size: clamp(1.7rem, 4.6vw, 3.2rem); letter-spacing: -.04em; }
+.cw-heading h1 { font-size: calc(clamp(1.7rem, 4.6vw, 3.2rem) * var(--tz)); letter-spacing: -.04em; }
 .cw-heading .games-kicker { display: inline-block; padding: 3px 8px; background: var(--text-primary); color: var(--bg-canvas); }
 
 /* Intro: the poster's art beside its copy. */
 .cw-intro { border: var(--cw-rule-w) solid var(--text-primary); }
-.cw-steps li::before { font-family: var(--font-display); font-size: 1.05rem; box-shadow: 3px 3px 0 var(--text-primary); }
+.cw-steps li::before { font-family: var(--font-display); font-size: calc(1.05rem * var(--tz)); box-shadow: 3px 3px 0 var(--text-primary); }
 .cw-steps strong { font-family: var(--font-display); font-weight: 800; }
 
 /* Panels: a thick ink rule all round. */
@@ -1488,7 +1488,7 @@
 .cw-moscow { fill: var(--cw-paper-ink); stroke: none; }
 .cw-city-label, .cw-city-label.is-capital { font-family: var(--font-display); }
 .cw-city-label.is-active { font-weight: 800; fill: var(--text-primary); }
-.cw-front-title { font-family: var(--font-display); font-size: 21px; font-weight: 800; letter-spacing: .14em; fill: var(--cw-red); fill-opacity: .55; pointer-events: none; }
+.cw-front-title { font-family: var(--font-display); font-size: calc(21px * var(--tz)); font-weight: 800; letter-spacing: .14em; fill: var(--cw-red); fill-opacity: .55; pointer-events: none; }
 .cw-foe-shadow { fill: #14110d; fill-opacity: 1; }
 [data-theme="dark"] .cw-foe-shadow { fill: var(--cw-red); }
 .cw-foe-name { stroke: #14110d; stroke-width: 1.5; }
@@ -1505,16 +1505,16 @@
 .cw-pips-shadow { fill: #14110d; }
 [data-theme="dark"] .cw-pips-shadow { fill: var(--cw-red); }
 .cw-pips-tab { fill: var(--cw-red); stroke: #14110d; stroke-width: 1.5; }
-.cw-pips-num { font-family: var(--font-display); font-size: 11.5px; font-weight: 800; fill: #faf2da; font-variant-numeric: tabular-nums; }
+.cw-pips-num { font-family: var(--font-display); font-size: calc(11.5px * var(--tz)); font-weight: 800; fill: #faf2da; font-variant-numeric: tabular-nums; }
 .cw-pips .cw-pip { fill: var(--cw-red); stroke: #14110d; stroke-width: .8; }
 .cw-pips .cw-pip.is-empty { fill: none; stroke: var(--cw-red); stroke-width: 1; }
 .cw-pips .cw-pip-star { fill: var(--cw-red); stroke: #14110d; stroke-width: .8; stroke-linejoin: round; }
 .cw-pip-card { fill: #14110d; }
-.cw-pip-card-text { font-family: var(--font-display); font-size: 9.5px; font-weight: 800; fill: #faf2da; font-variant-numeric: tabular-nums; }
+.cw-pip-card-text { font-family: var(--font-display); font-size: calc(9.5px * var(--tz)); font-weight: 800; fill: #faf2da; font-variant-numeric: tabular-nums; }
 /* The legend's key to that box, in the same inks. */
 .cw-map-legend i.cw-key-pip { width: 9px; height: 9px; background: var(--cw-red); border: 1px solid #14110d; }
 .cw-map-legend .cw-mk-star { fill: var(--cw-red); stroke: #14110d; }
-.cw-map-legend :is(.cw-key-num, .cw-key-card) { padding: 0 4px; font-family: var(--font-display); font-size: .72rem; font-variant-numeric: tabular-nums; color: #faf2da; }
+.cw-map-legend :is(.cw-key-num, .cw-key-card) { padding: 0 4px; font-family: var(--font-display); font-size: calc(.72rem * var(--tz)); font-variant-numeric: tabular-nums; color: #faf2da; }
 .cw-map-legend .cw-key-num { background: var(--cw-red); border: 1px solid #14110d; }
 .cw-map-legend .cw-key-card { background: #14110d; }
 /* A cavalry army on the map: an ink horse in a cream rim, a red rider,
@@ -1535,7 +1535,7 @@
 .cw-seg .cw-mk-cav .cw-cav-rider-under { stroke: none; }
 /* The attacker's pressure in figures, on an ink tab like the Red strength's red one. */
 .cw-foe-tab { fill: #14110d; stroke: #14110d; stroke-width: 1; }
-.cw-foe-tab-num { font-family: var(--font-display); font-size: 11.5px; font-weight: 800; fill: #faf2da; font-variant-numeric: tabular-nums; }
+.cw-foe-tab-num { font-family: var(--font-display); font-size: calc(11.5px * var(--tz)); font-weight: 800; fill: #faf2da; font-variant-numeric: tabular-nums; }
 
 /* A season is read in steps at every width (game.js campTab): 장면 →
    결정 → 작전, the bar riding on the pinned order and only the open
@@ -1586,28 +1586,28 @@
        to a wider screen). */
     .cw-battle .cw-wide-only { display: none; }
     .cw-battle[data-tab="field"] .cw-unit-info { padding: 6px 10px; }
-    .cw-battle[data-tab="field"] .cw-unit-info p { margin-top: 2px; font-size: .8rem; line-height: 1.4; }
-    .cw-battle[data-tab="field"] .cw-unit-info h3 { display: inline; font-size: .84rem; margin: 0; }
+    .cw-battle[data-tab="field"] .cw-unit-info p { margin-top: 2px; font-size: calc(.8rem * var(--tz)); line-height: 1.4; }
+    .cw-battle[data-tab="field"] .cw-unit-info h3 { display: inline; font-size: calc(.84rem * var(--tz)); margin: 0; }
     .cw-battle[data-tab="field"] .cw-unit-info h3 ~ .cw-info-more { display: inline; margin-left: 2px; }
     .cw-battle[data-tab="field"] .cw-unit-info h3 ~ .cw-info-more::before { content: '· '; }
     .cw-battle[data-tab="field"] .cw-feat { margin-top: 4px; padding-top: 4px; }
-    .cw-battle[data-tab="field"] .cw-feat > p { font-size: .78rem; line-height: 1.4; margin: 0 0 2px; }
+    .cw-battle[data-tab="field"] .cw-feat > p { font-size: calc(.78rem * var(--tz)); line-height: 1.4; margin: 0 0 2px; }
     .cw-battle[data-tab="field"] .cw-feat-head { gap: 6px; margin-bottom: 2px !important; }
-    .games-shell .cw-battle[data-tab="field"] .cw-feat-head .cw-feat-pill { min-height: 24px; padding: 0 8px; font-size: .76rem; }
-    .cw-battle[data-tab="field"] .cw-feat details { margin-top: 2px; font-size: .76rem; }
-    .cw-battle[data-tab="field"] .cw-unit-info .cw-person { font-size: .76rem; }
-    .cw-battle[data-tab="field"] .cw-unit-info h3 small { font-size: .8rem; }
+    .games-shell .cw-battle[data-tab="field"] .cw-feat-head .cw-feat-pill { min-height: 24px; padding: 0 8px; font-size: calc(.76rem * var(--tz)); }
+    .cw-battle[data-tab="field"] .cw-feat details { margin-top: 2px; font-size: calc(.76rem * var(--tz)); }
+    .cw-battle[data-tab="field"] .cw-unit-info .cw-person { font-size: calc(.76rem * var(--tz)); }
+    .cw-battle[data-tab="field"] .cw-unit-info h3 small { font-size: calc(.8rem * var(--tz)); }
     .cw-battle[data-tab="field"] .cw-unit-info, .cw-battle[data-tab="field"] .cw-unit-info h3 { line-height: 1.4; }
     /* The strip below already carries the feat's button. */
     .cw-battle[data-tab="field"] .cw-feat-head:has(button) { display: none; }
     .cw-battle[data-tab="field"] .cw-battle-actions { flex-wrap: wrap; gap: 6px; padding-block: 6px; }
-    .cw-battle[data-tab="field"] .cw-act-unit { gap: 0; padding-bottom: 4px; font-size: .76rem; }
+    .cw-battle[data-tab="field"] .cw-act-unit { gap: 0; padding-bottom: 4px; font-size: calc(.76rem * var(--tz)); }
     .cw-battle[data-tab="field"] .cw-act-unit p { gap: 2px 6px; }
     .cw-battle[data-tab="field"] .cw-battle-actions > button { flex: 0 0 auto; white-space: nowrap; }
     .cw-battle[data-tab="field"] .cw-battle-actions > .cw-primary { flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
 }
 @media (min-width: 721px) { .cw-roster-next { display: none; } }
-.games-shell .cw-roster-next { flex: 0 0 auto; position: sticky; left: 0; z-index: 1; min-height: 30px; padding: 3px 8px; font-size: .78rem; font-weight: 800; background: var(--bg-surface); box-shadow: 6px 0 6px -2px var(--bg-surface); }
+.games-shell .cw-roster-next { flex: 0 0 auto; position: sticky; left: 0; z-index: 1; min-height: 30px; padding: 3px 8px; font-size: calc(.78rem * var(--tz)); font-weight: 800; background: var(--bg-surface); box-shadow: 6px 0 6px -2px var(--bg-surface); }
 /* A jump to a part of the season stops below the pinned crumb bar. */
 .cw-shell:has(.games-crumb.has-status) .cw-campaign > * { scroll-margin-top: 48px; }
 
@@ -1620,32 +1620,32 @@
 .cw-scene-pictures.has-poster { grid-template-columns: minmax(0, 1fr) minmax(120px, 30%); }
 .cw-figure { margin: 0; min-width: 0; border: var(--cw-rule-w) solid var(--text-primary); background: #14110d; }
 .cw-figure img { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 62vh; }
-.cw-figure figcaption { padding: 6px 10px; font-size: .8rem; line-height: 1.45; color: var(--text-secondary); background: var(--bg-surface); border-top: var(--cw-rule-w) solid var(--text-primary); }
+.cw-figure figcaption { padding: 6px 10px; font-size: calc(.8rem * var(--tz)); line-height: 1.45; color: var(--text-secondary); background: var(--bg-surface); border-top: var(--cw-rule-w) solid var(--text-primary); }
 .cw-figure figcaption a { color: inherit; }
 .cw-scene-text { display: grid; gap: 14px; justify-items: start; max-width: 46rem; min-width: 0; }
-.cw-scene-lead { margin: 0; font-size: 1.2rem; line-height: 1.7; font-weight: 600; }
+.cw-scene-lead { margin: 0; font-size: calc(1.2rem * var(--tz)); line-height: 1.7; font-weight: 600; }
 .cw-witness { margin: 0; padding: 10px 16px; border-left: 8px solid var(--cw-red); background: var(--bg-surface); }
-.cw-witness p { margin: 0 0 6px; font-size: 1.05rem; line-height: 1.65; }
+.cw-witness p { margin: 0 0 6px; font-size: calc(1.05rem * var(--tz)); line-height: 1.65; }
 .cw-witness p::before { content: '「'; }
 .cw-witness p::after { content: '」'; }
-.cw-witness footer { font-size: .8rem; line-height: 1.45; color: var(--text-secondary); }
+.cw-witness footer { font-size: calc(.8rem * var(--tz)); line-height: 1.45; color: var(--text-secondary); }
 .cw-witness footer strong { color: var(--text-primary); }
 .cw-step-next { min-height: 44px; padding-inline: 18px; }
 /* The picture is the smaller part: a column beside the story and voices. */
 .cw-scene-text { max-width: none; }
-.cw-scene-story p { margin: 0 0 8px; font-size: .95rem; line-height: 1.7; color: var(--text-secondary); }
+.cw-scene-story p { margin: 0 0 8px; font-size: calc(.95rem * var(--tz)); line-height: 1.7; color: var(--text-secondary); }
 .cw-scene-story p:last-child { margin-bottom: 0; }
 .cw-scene-voices { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 12px; width: 100%; }
 .cw-scene-side { padding: 8px 12px 10px; border-top: 6px solid var(--cw-red); background: var(--bg-surface); min-width: 0; }
 .cw-scene-side.is-theirs { border-top-color: var(--text-primary); }
 .cw-scene-side .games-kicker { margin: 0 0 6px; }
 .cw-scene-side ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
-.cw-scene-side li { display: grid; gap: 3px; font-size: .9rem; line-height: 1.55; }
+.cw-scene-side li { display: grid; gap: 3px; font-size: calc(.9rem * var(--tz)); line-height: 1.55; }
 .cw-scene-side li + li { padding-top: 10px; border-top: 1px solid var(--border); }
 .cw-scene-voice-who { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin: 0; }
-.cw-scene-voice-who > small { font-size: .78rem; color: var(--text-secondary); }
+.cw-scene-voice-who > small { font-size: calc(.78rem * var(--tz)); color: var(--text-secondary); }
 .cw-scene-side q { quotes: '「' '」'; }
-.cw-scene-side .cw-voice-src { font-size: .76rem; color: var(--text-secondary); }
+.cw-scene-side .cw-voice-src { font-size: calc(.76rem * var(--tz)); color: var(--text-secondary); }
 @media (min-width: 900px) {
     .cw-scene:not(.cw-epilogue-scene) { grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 22px; align-items: start; }
     .cw-scene:not(.cw-epilogue-scene) > .cw-scene-pictures { position: sticky; top: 56px; }
@@ -1657,23 +1657,23 @@
     .cw-scene-pictures.has-poster { grid-template-columns: minmax(0, 1fr) 34%; gap: 8px; }
     .cw-figure img { max-height: 45vh; }
     .cw-scene .cw-figure img { max-height: 30vh; }
-    .cw-scene-lead { font-size: 1.05rem; }
-    .cw-witness p { font-size: .98rem; }
+    .cw-scene-lead { font-size: calc(1.05rem * var(--tz)); }
+    .cw-witness p { font-size: calc(.98rem * var(--tz)); }
 }
 .cw-brief-fold > summary { color: var(--text-secondary); }
 
 /* One decision at a time, so its words can be read at full size. */
-.cw-shell.is-playing .cw-choice h3 { font-size: 1.3rem; margin: 6px 0 8px; }
-.cw-shell.is-playing .cw-choice > p { font-size: 1rem; line-height: 1.65; }
-.cw-shell.is-playing .cw-talk li { font-size: .98rem; }
-.cw-shell.is-playing .cw-options .cw-option { padding: 12px 14px; gap: 6px; font-size: .95rem; }
-.cw-option > strong { font-size: 1.02rem; }
-.cw-option > span:last-child { font-size: .84rem; }
+.cw-shell.is-playing .cw-choice h3 { font-size: calc(1.3rem * var(--tz)); margin: 6px 0 8px; }
+.cw-shell.is-playing .cw-choice > p { font-size: calc(1rem * var(--tz)); line-height: 1.65; }
+.cw-shell.is-playing .cw-talk li { font-size: calc(.98rem * var(--tz)); }
+.cw-shell.is-playing .cw-options .cw-option { padding: 12px 14px; gap: 6px; font-size: calc(.95rem * var(--tz)); }
+.cw-option > strong { font-size: calc(1.02rem * var(--tz)); }
+.cw-option > span:last-child { font-size: calc(.84rem * var(--tz)); }
 .cw-chips { display: flex; flex-wrap: wrap; gap: 4px; }
-.cw-option .cw-chip, .cw-chip { padding: 1px 7px; font-size: .82rem; font-weight: 800; font-variant-numeric: tabular-nums; color: var(--bg-canvas); background: var(--text-primary); }
+.cw-option .cw-chip, .cw-chip { padding: 1px 7px; font-size: calc(.82rem * var(--tz)); font-weight: 800; font-variant-numeric: tabular-nums; color: var(--bg-canvas); background: var(--text-primary); }
 .cw-option .cw-chip.is-minus, .cw-chip.is-minus { color: #faf2da; background: var(--cw-red); }
 .cw-talk-more { margin-top: 8px; }
-.cw-talk-more > summary { cursor: pointer; font-size: .86rem; font-weight: 700; color: var(--text-secondary); }
+.cw-talk-more > summary { cursor: pointer; font-size: calc(.86rem * var(--tz)); font-weight: 700; color: var(--text-secondary); }
 .cw-choice-picture { margin: 4px 0 10px; }
 .cw-choice-picture img { max-height: 38vh; }
 /* Beside the dispute on a wide screen, so the answers stay in sight. */
@@ -1693,7 +1693,7 @@
 .cw-witness footer::before { content: none; }
 
 /* The settlement's verdict, then the gauges; history's side folds. */
-.cw-season-verdict { display: inline-block; margin: 0 0 12px; padding: 6px 14px; font-size: 1.25rem; font-weight: 800; border: var(--cw-rule-w) solid var(--text-primary); }
+.cw-season-verdict { display: inline-block; margin: 0 0 12px; padding: 6px 14px; font-size: calc(1.25rem * var(--tz)); font-weight: 800; border: var(--cw-rule-w) solid var(--text-primary); }
 .cw-season-verdict.is-ahead { background: var(--text-primary); color: var(--bg-canvas); }
 .cw-season-verdict.is-behind { background: var(--cw-red); border-color: var(--cw-red); color: var(--cw-paper-ink); }
 .cw-history-fold { margin: 12px 0; border-top: 1px solid var(--border); padding-top: 10px; }
@@ -1703,41 +1703,41 @@
 /* The rules as a reference card (2026-10-29). */
 .cw-rules[open] { padding-bottom: 16px; }
 .cw-rule { margin: 6px 0 18px; }
-.cw-rule h3 { margin: 0 0 8px; font-size: 1.02rem; }
-.cw-rule-note { margin: 6px 0 0; font-size: .9rem; color: var(--text-secondary); }
+.cw-rule h3 { margin: 0 0 8px; font-size: calc(1.02rem * var(--tz)); }
+.cw-rule-note { margin: 6px 0 0; font-size: calc(.9rem * var(--tz)); color: var(--text-secondary); }
 .cw-rule-flow { list-style: none; counter-reset: flow; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; }
-.cw-rule-flow li { counter-increment: flow; display: grid; gap: 2px; padding: 8px 10px; background: var(--bg-surface); border-top: 4px solid var(--text-primary); font-size: .84rem; line-height: 1.45; }
+.cw-rule-flow li { counter-increment: flow; display: grid; gap: 2px; padding: 8px 10px; background: var(--bg-surface); border-top: 4px solid var(--text-primary); font-size: calc(.84rem * var(--tz)); line-height: 1.45; }
 .cw-rule-flow li:nth-child(4) { border-top-color: var(--cw-red); }
-.cw-rule-flow strong { font-size: .95rem; }
+.cw-rule-flow strong { font-size: calc(.95rem * var(--tz)); }
 .cw-rule-flow strong::before { content: counter(flow) ' '; color: var(--cw-red); }
 .cw-rule-flow span { color: var(--text-secondary); }
-.cw-rule-formula { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: .92rem; }
+.cw-rule-formula { margin: 0 0 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: calc(.92rem * var(--tz)); }
 .cw-rule-formula span { padding: 2px 8px; border: 1px solid var(--text-primary); font-weight: 700; }
 .cw-rule-scale { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3px; margin-bottom: 10px; }
-.cw-rule-scale span { display: grid; gap: 2px; padding: 8px 10px; font-size: .82rem; line-height: 1.4; }
-.cw-rule-scale b { font-size: .92rem; }
+.cw-rule-scale span { display: grid; gap: 2px; padding: 8px 10px; font-size: calc(.82rem * var(--tz)); line-height: 1.4; }
+.cw-rule-scale b { font-size: calc(.92rem * var(--tz)); }
 .cw-rule-scale .is-worse { background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--cw-red) 30%, transparent) 0 6px, transparent 6px 12px); border: 2px solid var(--cw-red); }
 .cw-rule-scale .is-same { background: color-mix(in srgb, var(--text-primary) 14%, transparent); border: 2px solid var(--border); }
 .cw-rule-scale .is-better { background: color-mix(in srgb, var(--text-primary) 30%, transparent); border: 2px solid var(--text-primary); }
-.cw-rule-list { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; font-size: .9rem; line-height: 1.6; }
+.cw-rule-list { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; font-size: calc(.9rem * var(--tz)); line-height: 1.6; }
 .cw-rule-gauges { display: grid; gap: 14px; }
-.cw-rule-gauge > p { margin: 0 0 4px; font-size: .9rem; }
+.cw-rule-gauge > p { margin: 0 0 4px; font-size: calc(.9rem * var(--tz)); }
 .cw-rule-gauge > p b { margin-right: 6px; }
-.cw-rule-gauge > small { display: block; margin-top: 4px; font-size: .82rem; color: var(--text-secondary); }
+.cw-rule-gauge > small { display: block; margin-top: 4px; font-size: calc(.82rem * var(--tz)); color: var(--text-secondary); }
 .cw-rule-bar { display: grid; gap: 2px; min-height: 34px; }
 /* The bars' parts sized as the stat's 0–100 scale cuts them. */
 .cw-rule-bar.is-cohesion { grid-template-columns: 20fr 20fr 30fr 30fr; }
 .cw-rule-bar.is-peasants { grid-template-columns: 20fr 15fr 5fr 60fr; }
 .cw-rule-bar.is-workers { grid-template-columns: 45fr 55fr; }
-.cw-rule-bar span { position: relative; display: flex; align-items: center; min-width: 0; padding: 4px 6px 12px; font-size: .78rem; font-weight: 700; line-height: 1.25; background: color-mix(in srgb, var(--text-primary) 18%, transparent); overflow: hidden; }
+.cw-rule-bar span { position: relative; display: flex; align-items: center; min-width: 0; padding: 4px 6px 12px; font-size: calc(.78rem * var(--tz)); font-weight: 700; line-height: 1.25; background: color-mix(in srgb, var(--text-primary) 18%, transparent); overflow: hidden; }
 .cw-rule-bar span.is-bad { background: var(--cw-red); color: var(--cw-paper-ink); }
 .cw-rule-bar span.is-warn { background: color-mix(in srgb, var(--cw-red) 45%, transparent); }
-.cw-rule-bar small { position: absolute; left: 6px; bottom: 1px; font-size: .68rem; font-weight: 400; opacity: .8; }
+.cw-rule-bar small { position: absolute; left: 6px; bottom: 1px; font-size: calc(.68rem * var(--tz)); font-weight: 400; opacity: .8; }
 .cw-rule-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 18px; }
-.cw-rule-stars { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: .92rem; font-weight: 700; }
+.cw-rule-stars { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: calc(.92rem * var(--tz)); font-weight: 700; }
 .cw-rule-battles { list-style: none; margin: 10px 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
-.cw-rule-battles li { display: grid; padding: 4px 10px; border-left: 4px solid var(--cw-red); background: var(--bg-surface); font-size: .84rem; }
-.cw-rule-battles span { font-size: .74rem; color: var(--text-secondary); }
+.cw-rule-battles li { display: grid; padding: 4px 10px; border-left: 4px solid var(--cw-red); background: var(--bg-surface); font-size: calc(.84rem * var(--tz)); }
+.cw-rule-battles span { font-size: calc(.74rem * var(--tz)); color: var(--text-secondary); }
 @media (max-width: 720px) {
     .cw-rule-flow { grid-template-columns: 1fr 1fr; }
     .cw-rule-scale { grid-template-columns: 1fr; }
@@ -1747,25 +1747,25 @@
 /* A faction's chip: its map shield beside its name (2026-10-29). */
 .cw-faction { cursor: default; }
 .cw-faction:hover { text-decoration: none; }
-.cw-foe-fold > summary .cw-faction { margin-left: 6px; font-size: .84rem; }
-.cw-scene-voice-who .cw-faction + .cw-faction, .cw-scene-voice-who .cw-speaker + .cw-faction { font-size: .8rem; }
+.cw-foe-fold > summary .cw-faction { margin-left: 6px; font-size: calc(.84rem * var(--tz)); }
+.cw-scene-voice-who .cw-faction + .cw-faction, .cw-scene-voice-who .cw-speaker + .cw-faction { font-size: calc(.8rem * var(--tz)); }
 .cw-front-tab .cw-face { width: 1.5em; height: 1.5em; flex: none; }
 
 /* The season's plan taken whole (2026-11-02, game.js outlook): on the
    order bar, the fronts against history and the medal it would earn, or
    the war lost; on the doomed front's card and tab, the same in words.
    A warning is the inverse box, never red (red is the Red Army's). */
-.cw-command .cw-outlook { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; padding: 3px 9px; border: var(--cw-rule-w, 2px) solid var(--text-primary); color: var(--text-primary); font-size: .84rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.cw-command .cw-outlook { display: inline-flex; align-items: center; gap: 6px; flex: 0 0 auto; padding: 3px 9px; border: var(--cw-rule-w, 2px) solid var(--text-primary); color: var(--text-primary); font-size: calc(.84rem * var(--tz)); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .cw-outlook > span:first-child { color: var(--text-secondary); font-weight: 700; }
 .cw-outlook b { font-weight: 800; }
 .cw-command .cw-outlook.is-doom { background: var(--text-primary); color: var(--bg-canvas); font-weight: 800; }
-.cw-medal-chip { display: inline-flex; align-items: center; gap: 3px; margin-left: 2px; padding: 0 6px 0 3px; background: var(--cw-gold); color: var(--cw-gold-rim); font-size: .78rem; font-weight: 800; }
+.cw-medal-chip { display: inline-flex; align-items: center; gap: 3px; margin-left: 2px; padding: 0 6px 0 3px; background: var(--cw-gold); color: var(--cw-gold-rim); font-size: calc(.78rem * var(--tz)); font-weight: 800; }
 .cw-medal { width: 1.15em; height: 1.15em; flex: none; vertical-align: -.2em; }
 .cw-medal-star { fill: var(--cw-gold); stroke: var(--cw-gold-rim); stroke-width: 1.2; stroke-linejoin: round; }
 .cw-medal-banner { fill: var(--cw-star); stroke: var(--cw-gold-rim); stroke-width: 1; stroke-linejoin: round; }
 .cw-medal-chip .cw-medal-star { stroke-width: 1.6; }
-@media (max-width: 560px) { .cw-command p.cw-outlook { display: inline-flex; padding: 2px 6px; font-size: .78rem; } }
-.cw-doom { margin: 0 0 8px; padding: 6px 10px; background: var(--text-primary); color: var(--bg-canvas); font-size: .86rem; line-height: 1.45; }
+@media (max-width: 560px) { .cw-command p.cw-outlook { display: inline-flex; padding: 2px 6px; font-size: calc(.78rem * var(--tz)); } }
+.cw-doom { margin: 0 0 8px; padding: 6px 10px; background: var(--text-primary); color: var(--bg-canvas); font-size: calc(.86rem * var(--tz)); line-height: 1.45; }
 .cw-doom.is-risk, .cw-doom.is-fall { background: none; color: var(--text-primary); border: var(--cw-rule-w, 2px) dashed var(--text-primary); }
 .games-shell .cw-front-tab.is-doom:not([aria-pressed="true"]) { background: var(--text-primary); color: var(--bg-canvas); }
 .games-shell .cw-front-tab.is-doom:not([aria-pressed="true"]) :is(span, .cw-trend) { color: var(--bg-canvas); }
@@ -1789,16 +1789,16 @@
 /* A battle's merits (2026-11-02, game.js meritsOf): gold stars won, and
    while the battle lasts the ones still open (plain) and those missed
    (struck through, faded). */
-.cw-merits { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 3px 10px; font-size: .84rem; }
+.cw-merits { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 3px 10px; font-size: calc(.84rem * var(--tz)); }
 .cw-merits li { display: inline-flex; align-items: baseline; gap: 3px; }
 .cw-merit-star { color: var(--text-secondary); font-weight: 800; }
 .cw-merits li.is-got { font-weight: 700; }
 .cw-merits li.is-got .cw-merit-star, .cw-merit-stars { color: var(--cw-gold); -webkit-text-stroke: .4px var(--cw-gold-rim); }
 .cw-merits li.is-missed { color: var(--text-secondary); text-decoration: line-through; opacity: .7; }
-.cw-merits small { font-size: .76rem; color: var(--text-secondary); }
+.cw-merits small { font-size: calc(.76rem * var(--tz)); color: var(--text-secondary); }
 .cw-merits.is-review { margin: 4px 0 8px; }
 .cw-merit-stars { font-weight: 800; letter-spacing: .05em; }
-.cw-verdict .cw-verdict-merits { font-size: 1.4rem; letter-spacing: .15em; color: var(--cw-gold); text-shadow: 1px 1px 0 rgba(0, 0, 0, .5); }
+.cw-verdict .cw-verdict-merits { font-size: calc(1.4rem * var(--tz)); letter-spacing: .15em; color: var(--cw-gold); text-shadow: 1px 1px 0 rgba(0, 0, 0, .5); }
 
 /* The season's medal (2026-11-02): grey and outlined on the order bar
    until the plan earns it, gold then; stamped beside the review's verdict. */
@@ -1809,8 +1809,8 @@
 .cw-season-head .cw-season-verdict { margin: 0; }
 .cw-medal-award { display: inline-flex; align-items: center; gap: 10px; margin: 0; padding: 6px 14px 6px 8px; background: var(--cw-gold); color: var(--cw-gold-rim); border: var(--cw-rule-w, 2px) solid var(--cw-gold-rim); box-shadow: 4px 4px 0 var(--text-primary); }
 .cw-medal-award > span { display: grid; line-height: 1.2; }
-.cw-medal-award strong { font-size: 1.1rem; font-weight: 900; }
-.cw-medal-award small { font-size: .76rem; font-weight: 700; opacity: .85; }
+.cw-medal-award strong { font-size: calc(1.1rem * var(--tz)); font-weight: 900; }
+.cw-medal-award small { font-size: calc(.76rem * var(--tz)); font-weight: 700; opacity: .85; }
 .cw-medal.is-big { width: 2.4em; height: 2.4em; }
 @media (prefers-reduced-motion: no-preference) {
     .cw-medal-award.is-fresh { animation: cw-medal-stamp .7s .4s cubic-bezier(.2, 1.4, .4, 1) both; }
@@ -1825,11 +1825,11 @@
 /* The season's dispatches (2026-11-02, game.js dispatchOf): a telegram
    slip of the fronts in words, before the verdict and the gauges. */
 .cw-dispatch { margin: 0 0 14px; padding: 10px 14px 12px; border: var(--cw-rule-w, 2px) solid var(--text-primary); border-left-width: 8px; background: var(--bg-canvas); }
-.cw-dispatch-kicker { margin: 0; font-size: .72rem; font-weight: 800; letter-spacing: .12em; color: var(--text-secondary); }
-.cw-dispatch-head { margin: 2px 0 8px; font-family: var(--font-display, inherit); font-size: clamp(1.25rem, 3vw, 1.6rem); font-weight: 900; line-height: 1.2; }
-.cw-dispatch ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: .92rem; line-height: 1.5; }
+.cw-dispatch-kicker { margin: 0; font-size: calc(.72rem * var(--tz)); font-weight: 800; letter-spacing: .12em; color: var(--text-secondary); }
+.cw-dispatch-head { margin: 2px 0 8px; font-family: var(--font-display, inherit); font-size: calc(clamp(1.25rem, 3vw, 1.6rem) * var(--tz)); font-weight: 900; line-height: 1.2; }
+.cw-dispatch ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: calc(.92rem * var(--tz)); line-height: 1.5; }
 .cw-dispatch li strong { margin-right: 2px; }
-.cw-dispatch-hist { color: var(--text-secondary); font-size: .86rem; }
+.cw-dispatch-hist { color: var(--text-secondary); font-size: calc(.86rem * var(--tz)); }
 .cw-dispatch li.is-ahead .cw-dispatch-hist, .cw-dispatch li.is-behind .cw-dispatch-hist { color: var(--text-primary); font-weight: 700; }
-.games-shell .cw-muster .cw-step.is-muster { margin: 2px 0 6px; min-height: 32px; padding: 3px 10px; font-size: .8rem; border-style: dashed; }
-.cw-muster-short { margin: 2px 0 6px; font-size: .78rem; color: var(--text-secondary); }
+.games-shell .cw-muster .cw-step.is-muster { margin: 2px 0 6px; min-height: 32px; padding: 3px 10px; font-size: calc(.8rem * var(--tz)); border-style: dashed; }
+.cw-muster-short { margin: 2px 0 6px; font-size: calc(.78rem * var(--tz)); color: var(--text-secondary); }

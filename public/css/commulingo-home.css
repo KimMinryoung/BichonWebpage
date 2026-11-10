@@ -271,7 +271,7 @@
 .commu-book-group-head .commu-dict-nav {
     flex: 1 1 100%;
 }
-.commu-dict-tab { min-height: var(--control-height); padding: .7rem .4rem; font-size: clamp(0.82rem, 1.9vw, 1rem); overflow: hidden; }
+.commu-dict-tab { min-height: var(--control-height); padding: .7rem .4rem; font-size: calc(clamp(0.82rem, 1.9vw, 1rem) * var(--tz)); overflow: hidden; }
 .commu-dict-tab span { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .commu-dict-tab .commu-role-icon { width: 17px; height: 17px; flex: 0 0 auto; color: inherit; }
 @media (max-width: 560px) {
