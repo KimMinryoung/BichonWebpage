@@ -77,7 +77,7 @@
 .user-meta,
 .user-counts {
     color: var(--text-secondary);
-    font-size: calc(0.82rem * var(--tz));
+    font-size: 0.82rem;
 }
 
 .user-counts {
@@ -120,7 +120,7 @@
 }
 
 .detail-header h2 {
-    font-size: calc(1.15rem * var(--tz));
+    font-size: 1.15rem;
     line-height: var(--leading-tight);
     overflow-wrap: anywhere;
 }
@@ -128,7 +128,7 @@
 .detail-subtitle,
 .form-note {
     color: var(--text-secondary);
-    font-size: calc(0.86rem * var(--tz));
+    font-size: 0.86rem;
 }
 
 .detail-actions {
@@ -159,12 +159,12 @@
 
 .detail-stat span {
     color: var(--text-secondary);
-    font-size: calc(0.74rem * var(--tz));
+    font-size: 0.74rem;
 }
 
 .detail-stat strong {
     margin-top: 3px;
-    font-size: calc(0.86rem * var(--tz));
+    font-size: 0.86rem;
     line-height: var(--leading-tight);
 }
 
@@ -183,7 +183,7 @@
     display: grid;
     gap: 4px;
     color: var(--text-secondary);
-    font-size: calc(0.82rem * var(--tz));
+    font-size: 0.82rem;
 }
 
 .inline-admin-form.danger {
@@ -196,7 +196,7 @@
 
 .user-detail-panel h3 {
     margin: 16px 0 8px;
-    font-size: calc(0.95rem * var(--tz));
+    font-size: 0.95rem;
 }
 
 .detail-table {
@@ -210,7 +210,7 @@
     padding: 9px 10px;
     border-bottom: 1px solid var(--border);
     align-items: center;
-    font-size: calc(0.86rem * var(--tz));
+    font-size: 0.86rem;
 }
 
 .detail-table-row:last-child {
@@ -229,7 +229,7 @@
 
 .users-page-count {
     color: var(--text-secondary);
-    font-size: calc(0.86rem * var(--tz));
+    font-size: 0.86rem;
     align-self: center;
 }
 
@@ -237,7 +237,7 @@
     border: 1px solid var(--border);
     color: var(--text-secondary);
     padding: 8px 10px;
-    font-size: calc(0.86rem * var(--tz));
+    font-size: 0.86rem;
 }
 
 @media (max-width: 860px) {

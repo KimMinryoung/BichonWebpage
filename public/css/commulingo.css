@@ -3112,7 +3112,7 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
 .commu-person-card::after {
     color: var(--text-muted);
     content: '→';
-    font-size: calc(1rem * var(--tz));
+    font-size: 1rem;
     font-weight: var(--weight-emphasis);
     opacity: 0;
     pointer-events: none;
@@ -3287,7 +3287,7 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
     padding: 2px 8px;
     background: var(--pos);
     color: var(--pos-ink);
-    font-size: calc(0.74rem * var(--tz));
+    font-size: 0.74rem;
     font-weight: 700;
     text-decoration: none;
     white-space: nowrap;
@@ -3340,7 +3340,7 @@ a.commu-person-position:focus-visible {
 
 .commu-person-idbox h3 {
     margin: 0;
-    font-size: calc(1.05rem * var(--tz));
+    font-size: 1.05rem;
     color: var(--text-primary);
     line-height: var(--leading-tight);
     white-space: nowrap;
@@ -3364,7 +3364,7 @@ a.commu-person-position:focus-visible {
 .commu-person-cyr {
     display: block;
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: calc(0.82rem * var(--tz));
+    font-size: 0.82rem;
     color: var(--text-muted);
     font-style: italic;
     transition: color 0.16s ease;
@@ -3384,7 +3384,7 @@ a.commu-person-position:focus-visible {
     border-radius: 0;
     background: var(--bg-surface);
     color: var(--text-primary);
-    font-size: calc(0.76rem * var(--tz));
+    font-size: 0.76rem;
     line-height: var(--leading-none);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -3417,7 +3417,7 @@ a.commu-person-position:focus-visible {
     align-items: center;
     gap: 4px;
     font-family: 'Courier New', monospace;
-    font-size: calc(0.78rem * var(--tz));
+    font-size: 0.78rem;
     color: var(--text-muted);
 }
 
@@ -3660,7 +3660,7 @@ a.commu-person-position:focus-visible {
 
 .commu-fate {
     display: inline-block;
-    font-size: calc(0.74rem * var(--tz));
+    font-size: 0.74rem;
     font-weight: 600;
     line-height: var(--leading-none);
     padding: 4px 8px;
@@ -3699,7 +3699,7 @@ a.commu-person-position:focus-visible {
 
 .commu-person-epithet {
     margin: 0;
-    font-size: calc(0.95rem * var(--tz));
+    font-size: 0.95rem;
     font-weight: 700;
     line-height: var(--leading-snug);
     color: var(--text-primary);
@@ -3711,7 +3711,7 @@ a.commu-person-position:focus-visible {
     max-width: 100%;
     margin: 0;
     padding: 2px 8px;
-    font-size: calc(0.74rem * var(--tz));
+    font-size: 0.74rem;
     font-weight: 600;
     letter-spacing: 0.01em;
     text-decoration: none;
@@ -3739,7 +3739,7 @@ a.commu-person-role-tag:hover {
 .commu-person-moment {
     border-left: 3px solid color-mix(in srgb, var(--link) 72%, var(--border));
     color: color-mix(in srgb, var(--text-secondary) 82%, var(--text-muted));
-    font-size: calc(0.9rem * var(--tz));
+    font-size: 0.9rem;
     font-style: italic;
     line-height: var(--leading-relaxed);
     margin: 0;
@@ -3748,7 +3748,7 @@ a.commu-person-role-tag:hover {
 
 .commu-person-bio {
     margin: 0;
-    font-size: calc(0.88rem * var(--tz));
+    font-size: 0.88rem;
     line-height: var(--leading-relaxed);
     color: var(--text-secondary);
 }
@@ -3780,7 +3780,7 @@ a.commu-person-role-tag:hover {
     min-height: var(--control-height);
     padding: var(--space-3) var(--space-4);
     cursor: pointer;
-    font-size: calc(0.82rem * var(--tz));
+    font-size: 0.82rem;
     font-weight: 600;
     color: var(--link);
     list-style: none;
@@ -3825,14 +3825,14 @@ a.commu-person-role-tag:hover {
     display: flex;
     gap: 10px;
     align-items: baseline;
-    font-size: calc(0.84rem * var(--tz));
+    font-size: 0.84rem;
     line-height: var(--leading-normal);
 }
 
 .commu-career-year {
     flex: 0 0 84px;
     font-family: 'Courier New', monospace;
-    font-size: calc(0.76rem * var(--tz));
+    font-size: 0.76rem;
     color: var(--text-muted);
     white-space: nowrap;
 }
@@ -3851,14 +3851,14 @@ a.commu-person-role-tag:hover {
 }
 
 .commu-person-scenes-label {
-    font-size: calc(0.74rem * var(--tz));
+    font-size: 0.74rem;
     color: var(--text-muted);
     margin-right: 2px;
 }
 
 .commu-scene-chip {
     display: inline-block;
-    font-size: calc(0.76rem * var(--tz));
+    font-size: 0.76rem;
     line-height: var(--leading-none);
     padding: 5px 9px;
     border: 1px solid var(--border);
@@ -3921,7 +3921,7 @@ a.commu-person-role-tag:hover {
     background: none;
     border: 0;
     display: block;
-    font-size: calc(0.74rem * var(--tz));
+    font-size: 0.74rem;
     font-weight: 700;
     letter-spacing: 0.06em;
     line-height: 1.3;
@@ -3963,7 +3963,7 @@ a.commu-person-role-tag:hover {
 
 .commu-person-detail-title h1 {
     color: var(--text-primary);
-    font-size: calc(var(--title-size) * var(--tz));
+    font-size: var(--title-size);
     letter-spacing: 0;
     line-height: 1.2;
     margin: 0;
@@ -3973,7 +3973,7 @@ a.commu-person-role-tag:hover {
     color: var(--text-muted);
     display: block;
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: calc(0.98rem * var(--tz));
+    font-size: 0.98rem;
     font-style: italic;
     line-height: 1.2;
     margin-top: 4px;
@@ -3983,7 +3983,7 @@ a.commu-person-role-tag:hover {
    under the heading, set apart from the italic native name below it. */
 .commu-person-detail-title .commu-person-qualifier {
     font-family: inherit;
-    font-size: calc(0.9rem * var(--tz));
+    font-size: 0.9rem;
     font-style: normal;
     font-weight: 600;
 }
@@ -4291,7 +4291,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
    pages via partials/commulingo-dict-nav.ejs. The open page's tab is painted. */
 /* Labels must never wrap: nowrap plus a viewport-scaled font absorbs the
    in-between widths, and below 560px the data-short labels take over. */
-.commu-dict-tab { min-height: var(--control-height); padding: .7rem .4rem; font-size: calc(clamp(0.82rem, 1.9vw, 1rem) * var(--tz)); overflow: hidden; }
+.commu-dict-tab { min-height: var(--control-height); padding: .7rem .4rem; font-size: clamp(0.82rem, 1.9vw, 1rem); overflow: hidden; }
 .commu-dict-tab span { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .commu-dict-tab .commu-role-icon { width: 17px; height: 17px; flex: 0 0 auto; color: inherit; }
 /* Narrow phones: swap each label for its data-short form (keeping the
@@ -6195,7 +6195,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-short-term {
     margin: 0;
     font-family: var(--font-display);
-    font-size: calc(clamp(1.7rem, 7vw, 2.4rem) * var(--tz));
+    font-size: clamp(1.7rem, 7vw, 2.4rem);
     line-height: var(--leading-tight);
 }
 

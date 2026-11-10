@@ -34,7 +34,7 @@
 }
 
 .home-hero h1 {
-    font-size: calc(clamp(0.95rem, 2.8vw, 1.2rem) * var(--tz));
+    font-size: clamp(0.95rem, 2.8vw, 1.2rem);
     font-weight: 600;
     color: var(--accent-red);
     margin-bottom: 6px;
@@ -63,7 +63,7 @@
 
 .home-description {
     color: var(--text-secondary);
-    font-size: calc(clamp(0.95rem, 0.88rem + 0.25vw, 1.03rem) * var(--tz));
+    font-size: clamp(0.95rem, 0.88rem + 0.25vw, 1.03rem);
     line-height: var(--leading-normal);
     white-space: pre-line;
 }
