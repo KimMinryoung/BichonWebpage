@@ -48,6 +48,7 @@
         mapOpen: en ? 'Undecided' : '미결정',
         prev: en ? 'Previous' : '이전',
         next: en ? 'Next fork' : '다음 갈림길',
+        finale: en ? 'My line' : '나의 노선',
     };
 
     // date: { start: [y, m?, d?], end?: [y, m?, d?], calendar?: 'julian' }.
@@ -250,18 +251,39 @@
         stage = document.createElement('section');
         stage.className = 'commu-dc-stage';
         root.appendChild(stage);
-        root.appendChild(renderVerdict());
-        var epi = renderEpilogue();
-        if (epi) root.appendChild(epi);
         // Deep links from the people page ("등장 장면" chips) arrive as
-        // /commulingo/book/<id>#<episodeId>: start on that fork.
-        var hashIndex = window.location.hash ? episodeIndex(window.location.hash.slice(1)) : -1;
+        // /commulingo/book/<id>#<episodeId>: start on that fork. #verdict opens the closing screen.
+        var hash = window.location.hash ? window.location.hash.slice(1) : '';
+        var hashIndex = hash === FINALE_HASH ? episodes.length : hash ? episodeIndex(hash) : -1;
         showEpisode(hashIndex >= 0 ? hashIndex : firstUndecided(), hashIndex >= 0);
         updateProgress();
     }
 
+    // The closing screen sits after the last fork (index episodes.length): the
+    // reader's line and the historians' epilogue, kept off the fork screens so
+    // they do not break into the scenes.
+    var FINALE_HASH = 'verdict';
+
+    function showFinale(scroll) {
+        stage.innerHTML = '';
+        stage.appendChild(renderVerdict());
+        var epi = renderEpilogue();
+        if (epi) stage.appendChild(epi);
+        stage.appendChild(renderStep());
+        paintMap();
+        try { history.replaceState(null, '', '#' + FINALE_HASH); } catch (err) {}
+        if (scroll) stage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function finaleLabel() {
+        var parts = [text((timeline.verdict || {}).title) || L.finale];
+        if (timeline.epilogue && timeline.epilogue.title) parts.push(text(timeline.epilogue.title).split(' · ')[0]);
+        return parts.join(' · ');
+    }
+
     function showEpisode(index, scroll) {
-        current = Math.max(0, Math.min(episodes.length - 1, index));
+        current = Math.max(0, Math.min(episodes.length, index));
+        if (current === episodes.length) return showFinale(scroll);
         var ep = episodes[current];
         var era = eraOf(ep);
         stage.innerHTML = [
@@ -294,10 +316,12 @@
         var bar = document.createElement('nav');
         bar.className = 'commu-dc-step';
         bar.setAttribute('aria-label', L.map);
-        var decided = Boolean(choices[episodes[current].id]);
+        var atFinale = current === episodes.length;
+        var decided = !atFinale && Boolean(choices[episodes[current].id]);
+        var nextLabel = current === episodes.length - 1 ? text((timeline.verdict || {}).title) || L.finale : L.next;
         bar.innerHTML = '<button type="button" data-step="-1"' + (current === 0 ? ' disabled' : '') + '>← ' + escapeHtml(L.prev) + '</button>'
-            + '<span>' + (current + 1) + ' / ' + episodes.length + '</span>'
-            + '<button type="button" data-step="1" class="' + (decided ? 'is-primary' : '') + '"' + (current === episodes.length - 1 ? ' disabled' : '') + '>' + escapeHtml(L.next) + ' →</button>';
+            + '<span>' + (atFinale ? '' : (current + 1) + ' / ' + episodes.length) + '</span>'
+            + '<button type="button" data-step="1" class="' + (decided ? 'is-primary' : '') + '"' + (atFinale ? ' disabled' : '') + '>' + escapeHtml(nextLabel) + ' →</button>';
         bar.addEventListener('click', function(event) {
             var button = event.target.closest('[data-step]');
             if (button && !button.disabled) showEpisode(current + Number(button.getAttribute('data-step')), true);
@@ -353,8 +377,10 @@
             + '<p class="commu-dc-map-legend"><span><span class="commu-dc-stop is-match" aria-hidden="true"></span>' + escapeHtml(L.mapMatch) + '</span>'
             + '<span><span class="commu-dc-stop is-diverge" aria-hidden="true"></span>' + escapeHtml(L.mapDiverge) + '</span>'
             + '<span><span class="commu-dc-stop" aria-hidden="true"></span>' + escapeHtml(L.mapOpen) + '</span>'
-            + (timeline.stances || []).map(function(st) { return '<span class="stance-' + escapeHtml(st.id) + '"><span class="commu-dc-stop is-match" aria-hidden="true"></span>' + escapeHtml(text(st.label)) + '</span>'; }).join('') + '</p>';
+            + (timeline.stances || []).map(function(st) { return '<span class="stance-' + escapeHtml(st.id) + '"><span class="commu-dc-stop is-match" aria-hidden="true"></span>' + escapeHtml(text(st.label)) + '</span>'; }).join('') + '</p>'
+            + '<button type="button" class="commu-dc-map-finale" data-map-finale="1">' + escapeHtml(finaleLabel()) + ' →</button>';
         nav.addEventListener('click', function(event) {
+            if (event.target.closest('[data-map-finale]')) return showEpisode(episodes.length, true);
             var button = event.target.closest('[data-map-episode]');
             var index = button ? episodeIndex(button.getAttribute('data-map-episode')) : -1;
             if (index >= 0) showEpisode(index, true);

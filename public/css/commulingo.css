@@ -2222,7 +2222,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 .commu-dc-bar-track {
     flex: 1;
     height: 8px;
-    background: var(--border);
+    background: color-mix(in srgb, var(--border) 22%, transparent);
     overflow: hidden;
 }
 
@@ -2343,6 +2343,11 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
 .commu-dc-map-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin: var(--space-3) 0 0; color: var(--text-muted); font-size: var(--text-xs); }
 .commu-dc-map-legend > span { display: inline-flex; align-items: center; gap: 6px; }
 .commu-dc-map-legend .commu-dc-stop { margin-top: 0; }
+.commu-dc-map-finale { display: block; width: 100%; margin-top: var(--space-3); padding: 10px 14px; border: 1px solid var(--border); background: var(--bg-inset); color: var(--text-primary); font: inherit; font-size: var(--text-sm); font-weight: 700; text-align: left; cursor: pointer; }
+.commu-dc-map-finale:hover { border-color: var(--text-primary); }
+.commu-dc-stage > .commu-dc-verdict { margin-top: 0; }
+.commu-dc-stage > .commu-debates > .commu-section-title,
+.commu-dc-stage > .commu-debates > .commu-section-hint { padding: 0 16px; }
 
 /* One fork at a time: the stage under the route map, a step bar below it. */
 .commu-dc-stage { scroll-margin-top: 64px; }
