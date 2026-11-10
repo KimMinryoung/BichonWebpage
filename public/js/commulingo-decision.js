@@ -424,7 +424,7 @@
 
         if (!chosenId) {
             parts.push('<div class="commu-dc-options">' + (ep.options || []).map(function(opt) {
-                return '<button type="button" class="commu-dc-option" data-option="' + escapeHtml(opt.id) + '">'
+                return '<button type="button" class="commu-dc-option' + (opt.stance ? ' stance-' + escapeHtml(opt.stance) : '') + '" data-option="' + escapeHtml(opt.id) + '">'
                     + '<span class="commu-dc-option-label">' + escapeHtml(text(opt.label)) + '</span>'
                     + actorChips(opt)
                     + '</button>';

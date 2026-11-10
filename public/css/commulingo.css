@@ -2122,13 +2122,14 @@
 
 button.commu-dc-option:hover { border-color: var(--link); }
 
-.commu-dc-option.is-done {
-    position: relative;
+/* An option carries its stance as a left band and wash, before and after the
+   decision alike (the stance says nothing of which road history took). */
+.commu-dc-option[class*="stance-"] {
     padding-left: 18px;
-    background-image: linear-gradient(90deg, color-mix(in srgb, var(--stance, transparent) 18%, transparent), transparent 75%);
-    box-shadow: inset 4px 0 0 var(--stance, var(--border));
-    cursor: default;
+    background-image: linear-gradient(90deg, color-mix(in srgb, var(--stance) 18%, transparent), transparent 75%);
+    box-shadow: inset 4px 0 0 var(--stance);
 }
+.commu-dc-option.is-done { position: relative; cursor: default; }
 .commu-dc-option.is-chosen { border: 2px solid var(--text-primary); }
 .commu-dc-option.is-chosen,
 .commu-dc-option.is-actual { padding-right: 70px; }
