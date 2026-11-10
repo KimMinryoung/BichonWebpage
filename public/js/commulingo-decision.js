@@ -244,7 +244,8 @@
         return found || null;
     }
 
-    function render() {
+    // startIndex: the fork to open (the reset passes 0); otherwise the #hash or the first undecided fork.
+    function render(startIndex) {
         root.innerHTML = '';
         root.appendChild(renderCentral());
         root.appendChild(renderMap());
@@ -255,7 +256,8 @@
         // /commulingo/book/<id>#<episodeId>: start on that fork. #verdict opens the closing screen.
         var hash = window.location.hash ? window.location.hash.slice(1) : '';
         var hashIndex = hash === FINALE_HASH ? episodes.length : hash ? episodeIndex(hash) : -1;
-        showEpisode(hashIndex >= 0 ? hashIndex : firstUndecided(), hashIndex >= 0);
+        if (typeof startIndex === 'number') showEpisode(startIndex, true);
+        else showEpisode(hashIndex >= 0 ? hashIndex : firstUndecided(), hashIndex >= 0);
         updateProgress();
     }
 
@@ -548,21 +550,13 @@
         if (section) paintVerdict(section);
     }
 
-    // Shown from the first decision on: the stance tally so far, each part's
+    // The stance tally so far (empty bars before any decision), each part's
     // tally, and how often the reader took history's road.
     function paintVerdict(section) {
         var verdict = timeline.verdict || {};
         var done = decidedCount();
         var total = episodes.length;
         var stances = timeline.stances || [];
-
-        if (!done) {
-            section.innerHTML = [
-                '<h2 class="commu-section-title">' + escapeHtml(text(verdict.title)) + '</h2>',
-                '<p class="commu-section-hint">' + escapeHtml(text(verdict.lockedHint)) + '</p>'
-            ].join('');
-            return;
-        }
 
         var result = tally();
         var dominant = null;
@@ -609,7 +603,7 @@
         if (reset) reset.addEventListener('click', function() {
             choices = {};
             saveChoices();
-            render();
+            render(0);
         });
     }
 
