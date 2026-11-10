@@ -433,7 +433,11 @@ function checkQuestion(out, question, lesson, index, ctx) {
   const qLabel = lesson.id + '/' + (question.id || expectedId);
   // A question replaced outright keeps its slot and carries the date (q3-r20261031),
   // so learners' answers to the old question are not counted for the new one.
-  if (question.id !== expectedId && !new RegExp('^' + expectedId + '-r\\d{8}$').test(String(question.id))) {
+  // A workshop lesson is arranged as a story, and a lesson rebuilt from an
+  // older one keeps the ids its questions had: there the id names the
+  // question, not its place (ids stay unique within the lesson).
+  const free = Boolean(ctx && ctx.workshop) && /^q\d+(-r\d{8})?$/.test(String(question.id));
+  if (!free && question.id !== expectedId && !new RegExp('^' + expectedId + '-r\\d{8}$').test(String(question.id))) {
     out.add('shape', qLabel, qLabel + ' id should be ' + expectedId + ' (or ' + expectedId + '-rYYYYMMDD when replaced)');
   }
   const activity = Boolean(ctx && ctx.workshop) && ACTIVITY_TYPES.has(question.type);
