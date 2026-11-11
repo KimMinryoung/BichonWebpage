@@ -28,7 +28,8 @@ if [[ "${NODE_MAJOR:-0}" -lt 24 && -z "${TEST_IN_DOCKER:-}" ]]; then
         # Browser tests need Chromium, which alpine cannot run: use the
         # Playwright image (tests/browser.Dockerfile), built once per
         # Playwright version.
-        if [[ " $* " == *" --browser "* || " $* " == *" --all "* ]]; then
+        # (A name filter `browser/…` selects browser tests too, tests/run.js.)
+        if [[ " $* " == *" --browser "* || " $* " == *" --all "* || " $* " == *" browser/"* ]]; then
             PW="$(node -p 'require("./package-lock.json").packages["node_modules/playwright"].version' 2>/dev/null)"
             IMAGE="leninbot-frontend-test-browser:pw-$PW" RUN_SHELL=bash
             if ! docker image inspect "$IMAGE" >/dev/null 2>&1; then
