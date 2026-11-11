@@ -1,6 +1,7 @@
 // express.static for public/ with the cache policy per asset type. CSS/JS
-// carry ?v=<asset version> so they can be immutable for a year; the
-// nonogram editor and puzzle JSON are edited in place and never cached.
+// carry ?v=<version> (CSS: the CSS release, JS: config/js-versions.js) so
+// they can be immutable for a year; the nonogram editor and puzzle JSON are
+// edited in place and never cached.
 const path = require('path');
 const express = require('express');
 const { DEV_MODE } = require('./env');

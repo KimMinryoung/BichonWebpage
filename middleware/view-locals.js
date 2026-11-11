@@ -13,6 +13,10 @@ const { normalizeLanguage, resolveLanguage, resolvePublicLanguage } = require('.
 const { ASSET_VERSION } = require('../config/env');
 const { menuHasEnglish, isKoreanOnlyPath } = require('../config/menu-languages');
 const { cssReleases, cssReleaseEnabled } = require('../config/css-releases');
+const { createJsVersions } = require('../config/js-versions');
+const { DEV_MODE } = require('../config/env');
+// Development edits scripts in place; it keeps the per-start version.
+const jsVersions = DEV_MODE ? null : createJsVersions(require('node:path').join(__dirname, '..', 'public'), ASSET_VERSION);
 const {
     isStaticAssetPath,
     isCacheablePublicTextPath,
@@ -23,12 +27,15 @@ const {
 function viewLocals(req, res, next) {
     if ((req.method === 'GET' || req.method === 'HEAD') && isStaticAssetPath(req.path)) return next();
 
-    if (cssReleaseEnabled) {
+    // HTML names released CSS and content-versioned scripts (config/js-versions.js).
+    if (cssReleaseEnabled || jsVersions) {
         const send = res.send.bind(res);
         res.send = body => {
             const type = res.get('Content-Type') || '';
             const html = typeof body === 'string' && (type ? /text\/html/i.test(type) : /^\s*</.test(body));
-            return send(html ? cssReleases.rewrite(body, cssReleases.snapshot()) : body);
+            if (!html) return send(body);
+            if (cssReleaseEnabled) body = cssReleases.rewrite(body, cssReleases.snapshot());
+            return send(jsVersions ? jsVersions.rewrite(body) : body);
         };
     }
     res.locals.siteStyleModules = siteStyleModules;
