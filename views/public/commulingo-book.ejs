@@ -266,7 +266,7 @@
                 <div class="commu-feedback is-hidden" id="commuFeedback"></div>
                 <div class="commu-quiz-actions">
                     <button type="button" class="btn btn-primary" id="commuNextBtn" disabled><%= strings.commuLingo.next %></button>
-                    <button type="button" class="btn btn-secondary is-hidden" id="commuNextLessonBtn"></button>
+                    <button type="button" class="btn btn-secondary is-hidden" id="commuNextLessonBtn"<% if (typeof nextBook !== 'undefined' && nextBook) { %> data-next-book-href="<%= nextBook.href %>" data-next-book-title="<%= nextBook.title %>"<% } %>></button>
                 </div>
             </article>
         </section>

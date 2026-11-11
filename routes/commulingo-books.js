@@ -1,6 +1,7 @@
 const express = require('express');
 const seo = require('../utils/seo');
 const { courseJsonLd } = require('../data/commulingo/structured-data');
+const { summarizeBooks, groupBooks } = require('../data/commulingo/book-summary');
 const { setPublicDataCache, setShortPublicCache, commuLingoBreadcrumb, commuLingoLoadError } = require('../data/commulingo/page-helpers');
 const { asyncHandler } = require('../utils/async-handler');
 const { loadCommuLingoCatalog } = require('../data/commulingo/shards');
@@ -76,7 +77,14 @@ router.get('/book/:collectionId', async (req, res) => {
         // linked under the description.
         const chart = collection.genealogy ? getGenealogyChart(collection.genealogy) : null;
         const bookGenealogy = chart ? { href: `/commulingo/genealogy/${chart.id}`, title: localize(chart.title, res.locals.lang) } : null;
+        // The course after this one in its group on the courses page, offered
+        // on the closing screen of the last chapter.
+        const group = groupBooks(summarizeBooks(catalog), res.locals.strings.commuLingo, res.locals.lang)
+            .find(item => item.books.some(book => book.id === collection.id));
+        const after = group ? group.books[group.books.findIndex(book => book.id === collection.id) + 1] : null;
+        const nextBook = after ? { href: `/commulingo/book/${after.id}`, title: localize(after.title, res.locals.lang) } : null;
         res.render('public/commulingo-book', {
+            nextBook,
             lessons: { version: catalog.version, collections: [pageData.linked] },
             factionPositions: collection.factionGuide ? await factionPositions(collection.factionGuide, res.locals.lang) : {},
             chapterDictionary: pageData.chapterDictionary,

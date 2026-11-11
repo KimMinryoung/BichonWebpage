@@ -61,6 +61,7 @@
         els.nextLesson.addEventListener('click', function() {
             var lesson = els.nextLesson.commuNextLesson;
             if (lesson) startLesson(lesson);
+            else if (els.nextLesson.commuNextBook) window.location.href = els.nextLesson.commuNextBook;
         });
     }
     els.next.addEventListener('click', function() {
@@ -1049,6 +1050,7 @@
         if (!els.nextLesson) return;
         els.nextLesson.classList.add('is-hidden');
         els.nextLesson.commuNextLesson = null;
+        els.nextLesson.commuNextBook = null;
     }
 
     function showNextLesson(lesson) {
@@ -1056,6 +1058,27 @@
         els.nextLesson.commuNextLesson = lesson;
         els.nextLesson.textContent = (strings.nextLesson || (lang === 'en' ? 'Next lesson' : '다음 학습')) + ' · ' + chapterTitle(lesson) + (lesson.soleLevel ? '' : ' (' + lessonLevel(lesson) + ')');
         els.nextLesson.classList.remove('is-hidden');
+    }
+
+    // The last chapter is done: offer the course that follows this one on the
+    // courses page (the server names it on the button).
+    function showNextBook() {
+        var href = els.nextLesson && els.nextLesson.getAttribute('data-next-book-href');
+        if (!href) { hideNextLesson(); return; }
+        els.nextLesson.commuNextLesson = null;
+        els.nextLesson.commuNextBook = href;
+        els.nextLesson.textContent = (strings.nextCourse || (lang === 'en' ? 'Next course' : '다음 강좌')) + ' · ' + els.nextLesson.getAttribute('data-next-book-title');
+        els.nextLesson.classList.remove('is-hidden');
+    }
+
+    // The dictionary entries of the finished chapter, the block the intro
+    // screen shows; a reading lesson has no intro, so this is where it appears.
+    function chapterDictionaryHtml(lesson) {
+        var found = '';
+        Array.prototype.forEach.call(els.chapterDictionaries, function(node) {
+            if (!found && node.getAttribute('data-chapter-id') === lesson.chapterId) found = node.innerHTML;
+        });
+        return found ? '<section class="commu-chapter-dictionary">' + found + '</section>' : '';
     }
 
     function lessonsInChapter(collectionId, chapterNumber) {
@@ -1089,6 +1112,13 @@
 
     function handleDeepLink(fromHistory) {
         var match = /(?:^|[#&])lesson=([^&]+)/.exec(window.location.hash || '');
+        // #review (the review rows of the courses page): the due questions of this book.
+        if (!match && /(?:^|[#&])review(?:&|$)/.test(window.location.hash || '')) {
+            if (fromHistory) quizHistory = true;
+            else if (window.history && history.replaceState) history.replaceState(null, '', window.location.pathname + window.location.search);
+            startReview();
+            return;
+        }
         if (!match) return;
         var lessonId = decodeURIComponent(match[1]);
         // Opened from a shared link: put the bare book page beneath the
@@ -1798,7 +1828,8 @@
         els.choices.classList.remove('is-hidden');
         els.choices.innerHTML = '';
         els.feedback.className = 'commu-feedback' + (perfect ? ' is-perfect' : '');
-        els.feedback.innerHTML = finishFeedbackHtml(perfect, firstScore, total) + takeawayHtml(active.lesson);
+        els.feedback.innerHTML = finishFeedbackHtml(perfect, firstScore, total) + takeawayHtml(active.lesson)
+            + (perfect ? chapterDictionaryHtml(active.lesson) : '');
         els.quiz.classList.toggle('has-perfect-reward', perfect);
         els.next.disabled = false;
         if (!perfect) {
@@ -1811,6 +1842,7 @@
         }
         var recommended = nextLessonFor(active.lesson);
         if (recommended) showNextLesson(recommended);
+        else if (perfect) showNextBook();
         else hideNextLesson();
         answered = true;
     }
