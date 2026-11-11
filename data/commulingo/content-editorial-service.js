@@ -280,7 +280,7 @@ async function validateEventPerson(client, id, fields) {
 
 async function applyEvent(client, id, fields, actor) {
     fields = { ...fields };
-    for (const key of LOCALIZED_EVENT_KEYS) fields[key] = koQuotes(fields[key]);
+    for (const key of LOCALIZED_EVENT_KEYS) if (Object.hasOwn(fields, key)) fields[key] = koQuotes(fields[key]);
     if (Array.isArray(fields.timeline)) fields.timeline = fields.timeline.map(item => ({ ...item, title: koQuotes(item.title), body: koQuotes(item.body) }));
     const before = snapshot(await eventRow(client, id));
     const sets = [], values = [];
@@ -333,7 +333,9 @@ async function applySection(client, id, action, fields, actor) {
 }
 
 async function applyEventPerson(client, id, fields, actor) {
-    fields = { ...fields, relation: koQuotes(fields.relation), note: koQuotes(fields.note) };
+    // Only a note the patch carries is normalized: adding the key would turn
+    // "keep the caption" into "clear it".
+    fields = { ...fields, relation: koQuotes(fields.relation), ...(Object.hasOwn(fields, 'note') ? { note: koQuotes(fields.note) } : {}) };
     const personId = String(fields.personId).trim();
     const { rows } = await client.query(
         `SELECT event_id, person_id, sort_order, relation_kind, relation_ko, relation_en, note_ko, note_en, side
