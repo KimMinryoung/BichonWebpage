@@ -1,5 +1,6 @@
 const crypto = require('crypto');
 const fs = require('fs');
+const { writeFileAtomic } = require('../../utils/atomic-write');
 const path = require('path');
 const { loadCommuLingoTerms } = require('./terms-store');
 const { loadCommuLingoPeople } = require('./people-store');
@@ -662,14 +663,10 @@ function readSaved() {
 }
 
 async function writeSaved(decks, builtAt) {
-    const temporary = CACHE_PATH + '.' + crypto.randomUUID() + '.tmp';
     try {
-        await fs.promises.mkdir(path.dirname(CACHE_PATH), { recursive: true });
-        await fs.promises.writeFile(temporary, JSON.stringify({ codeVersion: CODE_VERSION, builtAt, decks }), { mode: 0o600 });
-        await fs.promises.rename(temporary, CACHE_PATH);
+        await writeFileAtomic(CACHE_PATH, JSON.stringify({ codeVersion: CODE_VERSION, builtAt, decks }), { mode: 0o600 });
     } catch (err) {
         console.error('[drills] save skipped:', err.message);
-        await fs.promises.unlink(temporary).catch(() => {});
     }
 }
 

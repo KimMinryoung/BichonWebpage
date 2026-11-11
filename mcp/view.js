@@ -32,7 +32,7 @@ function shape(value, lang, maxChars) {
 function project(entry, { fields, lang, maxChars } = {}) {
     if (!entry || typeof entry !== 'object') return entry;
     if (fields && !fields.every(field => typeof field === 'string')) {
-        throw Object.assign(new Error('fields must be strings'), { status: 400 });
+        throw require('./common').badRequest('fields must be strings');
     }
     let out = entry;
     if (fields && fields.length) {

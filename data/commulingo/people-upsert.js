@@ -6,13 +6,12 @@ const { getPersonAdmin } = require('./people-admin-store');
 const { submitPersonEdit } = require('./person-editorial-service');
 const { listPersonSectionsAdmin } = require('./people-sections-store');
 const { clearCommuLingoPeopleCache } = require('./people-store');
+const { transaction } = require('../../utils/db-transaction');
 
 async function upsertPeople(people, { dryRun = false, changedBy }) {
     if (!Array.isArray(people) || !people.length) throw Object.assign(new Error('people must be a non-empty array'), { status: 400 });
-    const client = await db.connect();
     const results = [];
-    try {
-        await client.query('BEGIN');
+    await transaction(async client => {
         for (const entry of people) {
             const { sections, ...payload } = entry || {};
             if (!payload.id) throw Object.assign(new Error('every person needs an id'), { status: 400 });
@@ -35,15 +34,9 @@ async function upsertPeople(people, { dryRun = false, changedBy }) {
                 row.sections.push({ slug: section.slug, status: saved.status });
             }
         }
-        await client.query(dryRun ? 'ROLLBACK' : 'COMMIT');
-        if (!dryRun) clearCommuLingoPeopleCache();
-        return { dryRun, results };
-    } catch (err) {
-        await client.query('ROLLBACK').catch(() => {});
-        throw err;
-    } finally {
-        client.release();
-    }
+    }, { dryRun, pool: db });
+    if (!dryRun) clearCommuLingoPeopleCache();
+    return { dryRun, results };
 }
 
 module.exports = { upsertPeople };

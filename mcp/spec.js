@@ -14,9 +14,7 @@ const MAX_BYTES = 20 * 1024 * 1024;
 
 const specPathArg = str('Read the payload from this file instead: content/<path> (scripts/content) or reviews/<path> (scripts/reviews)', { maxLength: 400 });
 
-function badRequest(message) {
-    return Object.assign(new Error(message), { status: 400 });
-}
+const { badRequest } = require('./common');
 
 function readSpecFile(specPath) {
     const parts = String(specPath).split('/');
@@ -28,7 +26,7 @@ function readSpecFile(specPath) {
     try {
         real = fs.realpathSync(path.join(ROOT, ...parts));
     } catch {
-        throw Object.assign(new Error(`specPath not found: ${specPath}`), { status: 404 });
+        throw badRequest(`specPath not found: ${specPath}`, 404);
     }
     if (!real.startsWith(fs.realpathSync(dir) + path.sep)) throw badRequest('specPath leaves its work directory');
     const stat = fs.statSync(real);

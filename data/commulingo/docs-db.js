@@ -14,6 +14,7 @@
 // unless the caller passes allowStructureIssues.
 const crypto = require('crypto');
 const db = require('../../config/database');
+const { transaction } = require('../../utils/db-transaction');
 const { normalizeKoreanQuotesHtml } = require('./korean-quotes');
 const { sanitizeDocHtml } = require('./doc-sanitize');
 const { freezeHeadingIds, inspectDocStructure, introducedErrors } = require('./doc-structure');
@@ -117,20 +118,8 @@ function refuseStructure(reports) {
     throw err;
 }
 
-async function withClient(client, fn) {
-    if (client) return fn(client);
-    const own = await db.connect();
-    try {
-        await own.query('BEGIN');
-        const result = await fn(own);
-        await own.query('COMMIT');
-        return result;
-    } catch (err) {
-        await own.query('ROLLBACK');
-        throw err;
-    } finally {
-        own.release();
-    }
+function withClient(client, fn) {
+    return transaction(fn, { client, pool: db });
 }
 
 async function supersede(client, row, op, actor, note, keepBody) {

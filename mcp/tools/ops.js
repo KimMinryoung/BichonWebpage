@@ -22,9 +22,7 @@ async function schemaHint(client, sql) {
     return 'Tables: ' + rows.map(r => r.table_name).join(', ');
 }
 
-function badRequest(message) {
-    return Object.assign(new Error(message), { status: 400 });
-}
+const { badRequest } = require('../common');
 
 function cut(text, maxChars) {
     return text.length > maxChars ? `${text.slice(0, maxChars)}…[+${text.length - maxChars} chars]` : text;

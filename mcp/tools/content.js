@@ -6,14 +6,9 @@
 const { str, int, bool, obj, arr, object } = require('../schema');
 const { specPathArg, readSpecFile, readSpecJson } = require('../spec');
 
-const ACTOR = /^[A-Za-z0-9_.:@/-]{1,120}$/;
-const changedBy = str('Actor recorded on the edit (default mcp:<client>)', { maxLength: 120 });
+const { badRequest, actorOf, changedBy, db } = require('../common');
 const dryRunArg = bool('Validate and roll back (default true)');
 const noteArg = str('Revision note', { maxLength: 500 });
-
-function badRequest(message, status = 400) {
-    return Object.assign(new Error(message), { status });
-}
 
 // Learning courses (course/<id> data documents) are written only by the
 // clients named in COMMULINGO_MCP_COURSE_WRITERS (default: operator). The
@@ -24,30 +19,9 @@ function assertCourseWriter(key, client) {
     if (!writers.includes(client)) throw badRequest(`client ${client} may not write learning courses (${key})`, 403);
 }
 
-function actorOf(given, client) {
-    const actor = given || `mcp:${client}`;
-    if (!ACTOR.test(actor)) throw badRequest('changedBy must be 1–120 of A-Z a-z 0-9 _ . : @ / -');
-    return actor;
-}
-
-function db() {
-    return require('../../config/database');
-}
-
 // Runs fn(client) in a transaction that commits, or rolls back when dryRun.
-async function inTransaction(dryRun, fn) {
-    const client = await db().connect();
-    try {
-        await client.query('BEGIN');
-        const result = await fn(client);
-        await client.query(dryRun ? 'ROLLBACK' : 'COMMIT');
-        return result;
-    } catch (err) {
-        await client.query('ROLLBACK').catch(() => {});
-        throw err;
-    } finally {
-        client.release();
-    }
+function inTransaction(dryRun, fn) {
+    return require('../../utils/db-transaction').transaction(fn, { dryRun, pool: db() });
 }
 
 function payload(inline, specPath, what) {

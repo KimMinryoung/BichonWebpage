@@ -11,7 +11,10 @@ const { catalogue, personNameRows, validateDecision, builders, expressionSource 
 const { writeRevision } = require('./admin-tx');
 const { updateDocMeta } = require('./docs-import');
 const { key, normalize, reviewMap } = require('./link-review-policy');
+const { transaction } = require('../../utils/db-transaction');
 const previews = new Map();
+// Review writes wait at most 3 s for a lock and serialize on one advisory lock.
+const REVIEW_TX = { pool: db, lockTimeout: '3s', lock: 'commulingo-link-review' };
 const hash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const fail = (message, status = 400) => { const error = new Error(message); error.status = status; throw error; };
 async function loadState(client = db) {
@@ -150,11 +153,7 @@ async function previewLinks(input) {
 async function saveReview(token, actor) {
     const preview = previews.get(token);
     if (!preview || preview.expires < Date.now()) fail('미리보기가 만료됐습니다. 다시 확인하세요.', 409);
-    const client = await db.connect();
-    try {
-        await client.query('BEGIN');
-        await client.query("SET LOCAL lock_timeout = '3s'");
-        await client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-link-review'))");
+    const value = await transaction(async client => {
         const state = await loadState(client);
         if (state.revision !== preview.revision) fail('미리보기 이후 데이터나 연결 정책이 변경됐습니다. 다시 확인하세요.', 409);
         const row = selectRow(state, preview.input);
@@ -162,12 +161,11 @@ async function saveReview(token, actor) {
         const value = reviewValue(row, preview.input, actor);
         const old = state.reviews.get(key(row.kind, row.id, row.lang, row.text)) || null;
         await persistReview(client, row, old, value);
-        await client.query('COMMIT');
-        previews.delete(token);
-        await refreshLinkReviews();
         return value;
-    } catch (error) { await client.query('ROLLBACK'); throw error; }
-    finally { client.release(); }
+    }, REVIEW_TX);
+    previews.delete(token);
+    await refreshLinkReviews();
+    return value;
 }
 async function persistReview(client, row, old, value) {
         await client.query(`INSERT INTO commulingo_link_reviews (kind,entity_id,lang,expression,source_signature,role,policy,note,reviewed_by)
@@ -237,11 +235,7 @@ async function previewReviews(inputs) {
 async function saveReviews(token, actor) {
     const preview = previews.get(token);
     if (!preview?.inputs || preview.expires < Date.now()) fail('일괄 미리보기가 만료됐습니다. 다시 확인하세요.', 409);
-    const client = await db.connect();
-    try {
-        await client.query('BEGIN');
-        await client.query("SET LOCAL lock_timeout = '3s'");
-        await client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-link-review'))");
+    const values = await transaction(async client => {
         const state = await loadState(client);
         if (state.revision !== preview.revision) fail('미리보기 이후 데이터나 연결 정책이 변경됐습니다. 다시 확인하세요.', 409);
         const selected = preview.inputs.map(input => ({ row: selectRow(state, input), input }));
@@ -256,12 +250,11 @@ async function saveReviews(token, actor) {
             await persistReview(client, row, old, value);
             values.push(value);
         }
-        await client.query('COMMIT');
-        previews.delete(token);
-        await refreshLinkReviews();
         return values;
-    } catch (error) { await client.query('ROLLBACK'); throw error; }
-    finally { client.release(); }
+    }, REVIEW_TX);
+    previews.delete(token);
+    await refreshLinkReviews();
+    return values;
 }
 
 // Rejecting an expression removes it from the entry: a wrong or non-standard
@@ -276,13 +269,8 @@ async function rejectExpression(input, actor) {
     if (note.length < 12 || note.length > 2000) fail('반려 근거를 12~2000자로 작성하세요.');
     const keep = list => (list || []).filter(value => value !== text);
     const keepExpressions = list => (list || []).filter(value => !(value.lang === lang && value.text === text));
-    const client = await db.connect();
-    let docPatch = null;
-    try {
-        await client.query('BEGIN');
-        await client.query("SET LOCAL lock_timeout = '3s'");
-        await client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-link-review'))");
-        await client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-editorial-write'))");
+    await transaction(async client => {
+        let docPatch = null;
         if (kind === 'term') {
             const term = (await client.query('SELECT term_ko, term_en, link_expressions FROM commulingo_terms WHERE id=$1 FOR UPDATE', [id])).rows[0];
             if (!term) fail('용어를 찾을 수 없습니다.', 404);
@@ -317,9 +305,7 @@ async function rejectExpression(input, actor) {
         await client.query('INSERT INTO commulingo_link_review_history (kind,entity_id,lang,expression,before_value,after_value) VALUES ($1,$2,$3,$4,$5::jsonb,$6::jsonb)',
             [kind, id, lang, text, JSON.stringify(old), JSON.stringify({ rejected: true, note, reviewed_by: actor })]);
         if (docPatch) await updateDocMeta(id, docPatch, { actor, client, note: `reject link expression ${lang}:${text}` });
-        await client.query('COMMIT');
-    } catch (error) { await client.query('ROLLBACK'); throw error; }
-    finally { client.release(); }
+    }, { ...REVIEW_TX, lock: ['commulingo-link-review', 'commulingo-editorial-write'] });
     if (kind === 'term') await loadCommuLingoTerms({ fresh: true });
     if (kind === 'event') await loadCommuLingoHistoryEvents({ fresh: true });
     if (kind === 'doc') await refreshCommuLingoDocs();

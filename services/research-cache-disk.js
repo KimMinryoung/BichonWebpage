@@ -1,6 +1,7 @@
 const fs = require('node:fs/promises');
 const path = require('node:path');
-const { createHash, randomUUID } = require('node:crypto');
+const { createHash } = require('node:crypto');
+const { writeFileAtomic } = require('../utils/atomic-write');
 const root = path.join(__dirname, '..');
 let versionPromise;
 
@@ -58,16 +59,12 @@ class ResearchCacheDisk {
         this.savedChanges = this.cache.changes;
         // Serialize writes so a slower older snapshot cannot replace a newer one.
         this.writing = (this.writing || Promise.resolve()).then(async () => {
-            const temporary = this.filename + '.' + randomUUID() + '.tmp';
             try {
                 const version = await this.version();
                 const generations = this.cache.export();
-                await fs.mkdir(path.dirname(this.filename), { recursive: true });
-                await fs.writeFile(temporary, JSON.stringify({ version, generations }), { mode: 0o600 });
-                await fs.rename(temporary, this.filename);
+                await writeFileAtomic(this.filename, JSON.stringify({ version, generations }), { mode: 0o600 });
             } catch (error) {
                 console.error('[report cache] save skipped:', error.message);
-                await fs.unlink(temporary).catch(() => {});
             }
         });
         return this.writing;

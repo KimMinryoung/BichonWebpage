@@ -1,9 +1,7 @@
 // JSON Pointer (RFC 6901) reads and small patches for the data documents, so
 // one activity-catalog entry can be read or changed without sending the
 // whole document back and forth.
-function badRequest(message) {
-    return Object.assign(new Error(message), { status: 400 });
-}
+const { badRequest } = require('./common');
 
 function tokens(pointer) {
     if (pointer === '') return [];

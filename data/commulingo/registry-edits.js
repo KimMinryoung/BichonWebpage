@@ -230,11 +230,7 @@ const OPS = {
 async function applyRegistryEdits(ops, { actor, dryRun = true } = {}) {
     if (!Array.isArray(ops) || !ops.length || ops.length > 500) throw badRequest('ops must list 1–500 edits');
     if (!actor) throw badRequest('applyRegistryEdits needs an actor');
-    const client = await require('../../config/database').connect();
-    try {
-        await client.query('BEGIN');
-        await client.query("SET LOCAL lock_timeout = '3s'");
-        await client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-editorial-write'))");
+    return require('../../utils/db-transaction').transaction(async client => {
         const results = [];
         for (const [i, op] of ops.entries()) {
             const handler = op && Object.hasOwn(OPS, op.op) ? OPS[op.op] : null;
@@ -249,14 +245,8 @@ async function applyRegistryEdits(ops, { actor, dryRun = true } = {}) {
             if (done.changed) await writeRevision(client, done.entityType, done.entityId, done.note, done.snapshot, actor);
             results.push({ op: op.op, target: done.entityId, changed: done.changed });
         }
-        await client.query(dryRun ? 'ROLLBACK' : 'COMMIT');
         return { dryRun, changed: results.filter(r => r.changed).length, results };
-    } catch (err) {
-        await client.query('ROLLBACK').catch(() => {});
-        throw err;
-    } finally {
-        client.release();
-    }
+    }, { dryRun, lockTimeout: '3s', lock: 'commulingo-editorial-write' });
 }
 
 module.exports = { applyRegistryEdits, REGISTRY_OPS: Object.keys(OPS), BLOCK_KINDS };

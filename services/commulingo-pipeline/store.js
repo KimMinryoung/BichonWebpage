@@ -4,6 +4,7 @@
 // parks its job (park) instead of holding a lease for minutes.
 const { randomUUID } = require('node:crypto');
 const db = require('../../config/database');
+const { transaction } = require('../../utils/db-transaction');
 const { advance, bundleCandidates, gapIds } = require('./bundles');
 
 class LostLease extends Error {}
@@ -41,19 +42,8 @@ function termPriority(bodyEmpty, mentions) {
     return (bodyEmpty ? 21 : 51) + Math.max(0, 29 - Math.min(Number(mentions) || 0, 29));
 }
 
-async function tx(fn) {
-    const client = await db.connect();
-    try {
-        await client.query('BEGIN');
-        const result = await fn(client);
-        await client.query('COMMIT');
-        return result;
-    } catch (err) {
-        await client.query('ROLLBACK').catch(() => {});
-        throw err;
-    } finally {
-        client.release();
-    }
+function tx(fn) {
+    return transaction(fn, { pool: db });
 }
 
 async function enqueue({ kind, action, target, topic, baseline = '', reason, priority = 50, payload = {}, stage = 'research' }, client = db) {

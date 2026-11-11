@@ -5,13 +5,7 @@
 const { str, int, arr, object } = require('../schema');
 const { viewArgs, VIEW_HINT, project } = require('../view');
 
-function db() {
-    return require('../../config/database');
-}
-
-function badRequest(message) {
-    return Object.assign(new Error(message), { status: 400 });
-}
+const { badRequest, notFound, db } = require('../common');
 
 function idList(ids) {
     if (!ids.every(id => typeof id === 'string' && id.length <= 200)) throw badRequest('ids must be strings');
@@ -92,7 +86,7 @@ const tools = [
             const event = (await db().query(`SELECT id, start_year, start_month, start_day, end_year, end_month, end_day, title_ko, title_en, question_ko, question_en, summary_ko, summary_en,
                     outcome_ko, outcome_en, body_ko, body_en, timeline, sources, to_jsonb(e)->'focus' AS focus, to_jsonb(e)->'sides' AS sides
                 FROM commulingo_history_events e WHERE id = $1`, [id])).rows[0];
-            if (!event) throw Object.assign(new Error(`event not found: ${id}`), { status: 404 });
+            if (!event) throw notFound('event', id);
             event.people = (await db().query(`SELECT person_id, sort_order, relation_kind, side, relation_ko, relation_en, note_ko, note_en
                 FROM commulingo_history_event_people WHERE event_id = $1 ORDER BY sort_order, person_id`, [id])).rows;
             return { event: project(event, view) };

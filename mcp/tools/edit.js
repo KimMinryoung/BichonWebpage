@@ -11,21 +11,10 @@ function withTransaction(options, callback) {
     return require('../../data/commulingo/admin-tx').withTransaction(options, callback);
 }
 
-const ACTOR = /^[A-Za-z0-9_.:@/-]{1,120}$/;
+const { badRequest, actorOf, changedBy } = require('../common');
+
 const TARGETS = ['person', 'person_section', 'term'];
 const CONTENT_TARGETS = ['history_event', 'history_event_section', 'history_event_person', 'office_row'];
-
-function badRequest(message) {
-    return Object.assign(new Error(message), { status: 400 });
-}
-
-function actorOf(changedBy, client) {
-    const actor = changedBy || `mcp:${client}`;
-    if (!ACTOR.test(actor)) throw badRequest('changedBy must be 1–120 of A-Z a-z 0-9 _ . : @ / -');
-    return actor;
-}
-
-const changedBy = str('Actor recorded on the edit (default mcp:<client>)', { maxLength: 120 });
 
 function batchItems(items, specPath) {
     if (!items === !specPath) throw badRequest('pass items or specPath, not both');

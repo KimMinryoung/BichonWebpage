@@ -7,6 +7,7 @@
 // reviews saved through link-review-service. Shared by
 // scripts/review-commulingo-links.js and the MCP tool link_reviews_apply.
 const db = require('../../config/database');
+const { transaction } = require('../../utils/db-transaction');
 const service = require('./link-review-service');
 const { catalogue, validateDecision } = require('./link-review-catalog');
 const { key } = require('./link-review-policy');
@@ -99,11 +100,7 @@ async function runLinkReviewManifest(manifest, { apply = false, actor, hooks = {
     log({ preflight: 'passed', ...summary, negativeRendererCases: NEGATIVE_CASES.length, qualifiedRendererCases: decisions.filter(d => d.added).length });
     if (!apply) return { applied: false, preflight: 'passed', ...summary, samples };
     if (hooks.onBackup) hooks.onBackup({ reviews: [...state.reviews.values()], records: state.records, manifest });
-    const client = await db.connect();
-    try {
-        await client.query('BEGIN');
-        await client.query("SET LOCAL lock_timeout = '3s'");
-        await client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-editorial-write'))");
+    await transaction(async client => {
         for (const id of new Set(decisions.filter(d => d.added).map(recordKey))) {
             const [kind, entityId] = id.split(':');
             const table = kind === 'term' ? 'commulingo_terms' : 'commulingo_history_events';
@@ -113,9 +110,7 @@ async function runLinkReviewManifest(manifest, { apply = false, actor, hooks = {
             const expressions = future.records[kind].find(r => r.id === entityId).linkExpressions;
             await client.query(`UPDATE ${table} SET link_expressions=$2::jsonb, updated_at=NOW() WHERE id=$1`, [entityId, JSON.stringify(expressions)]);
         }
-        await client.query('COMMIT');
-    } catch (error) { await client.query('ROLLBACK'); throw error; }
-    finally { client.release(); }
+    }, { pool: db, lockTimeout: '3s', lock: 'commulingo-editorial-write' });
     const current = await service.loadState();
     const pending = decisions.filter(d => {
         const row = current.rows.find(r => rowKey(r) === rowKey(d));

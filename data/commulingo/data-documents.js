@@ -16,8 +16,10 @@
 // this file whenever it changes: leninbot reads that path directly
 // (ops/paths.py commulingo_data_file).
 const fs = require('fs');
+const { writeFileAtomicSync } = require('../../utils/atomic-write');
 const path = require('path');
 const db = require('../../config/database');
+const { transaction } = require('../../utils/db-transaction');
 const { createRegistrySnapshotStore } = require('./snapshot-store');
 const { normalizeKoreanTree } = require('./korean-quotes');
 const { validateCourseShape, gateCourseWrite } = require('./course-validation');
@@ -85,9 +87,7 @@ function materializeCatalog(entry) {
     const text = `${JSON.stringify(entry.content, null, 2)}\n`;
     try {
         if (fs.existsSync(CATALOG_FILE) && fs.readFileSync(CATALOG_FILE, 'utf8') === text) return;
-        const tmp = `${CATALOG_FILE}.${process.pid}.tmp`;
-        fs.writeFileSync(tmp, text);
-        fs.renameSync(tmp, CATALOG_FILE);
+        writeFileAtomicSync(CATALOG_FILE, text);
     } catch (err) {
         // A read-only checkout (the test container) cannot write it; harmless.
         if (err.code !== 'EROFS' && err.code !== 'EACCES') console.error('[commulingo data] activity-catalog.json write failed:', err.message);
@@ -184,20 +184,8 @@ function listDataDocuments(prefix) {
 }
 
 // ── Write side ─────────────────────────────────────────────────────────────
-async function withClient(client, fn) {
-    if (client) return fn(client);
-    const own = await db.connect();
-    try {
-        await own.query('BEGIN');
-        const result = await fn(own);
-        await own.query('COMMIT');
-        return result;
-    } catch (err) {
-        await own.query('ROLLBACK');
-        throw err;
-    } finally {
-        own.release();
-    }
+function withClient(client, fn) {
+    return transaction(fn, { client, pool: db });
 }
 
 async function supersede(c, row, op, actor, note) {

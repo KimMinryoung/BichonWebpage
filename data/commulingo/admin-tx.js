@@ -1,29 +1,16 @@
-const db = require('../../config/database');
+const { transaction } = require('../../utils/db-transaction');
 const { clearCommuLingoPeopleCache } = require('./people-store');
 
 // Transaction + audit-trail primitives for the CommuLingo admin stores. A
 // committed transaction invalidates the people snapshot so the next refresh
 // picks the change up; every write records a revision row.
 
+// options: { client } joins the caller's transaction; { dryRun } rolls back.
 async function withTransaction(options, callback) {
-    if (options && options.client) {
-        await options.client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-editorial-write'))");
-        return callback(options.client);
-    }
-    const client = await db.connect();
-    try {
-        await client.query('BEGIN');
-        await client.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-editorial-write'))");
-        const result = await callback(client);
-        await client.query('COMMIT');
-        clearCommuLingoPeopleCache();
-        return result;
-    } catch (err) {
-        await client.query('ROLLBACK');
-        throw err;
-    } finally {
-        client.release();
-    }
+    const { client, dryRun = false } = options || {};
+    const result = await transaction(callback, { client, dryRun, lock: 'commulingo-editorial-write' });
+    if (!client && !dryRun) clearCommuLingoPeopleCache();
+    return result;
 }
 
 async function writeRevision(client, entityType, entityId, note, snapshot, changedBy) {

@@ -8,11 +8,7 @@ const page = {
     offset: int('Items to skip', 0, 100000, { default: 0 }),
 };
 
-function notFound(what, id) {
-    const err = new Error(`${what} not found: ${id}`);
-    err.status = 404;
-    return err;
-}
+const { badRequest, notFound } = require('../common');
 
 function matches(needle, values) {
     if (!needle) return true;
@@ -47,7 +43,7 @@ const tools = [
             ...page,
         }),
         async handler({ q = '', groupId = '', functionId = '', affiliationIds = [], limit, offset }) {
-            if (affiliationIds.some(id => typeof id !== 'string')) throw Object.assign(new Error('affiliationIds must be strings'), { status: 400 });
+            if (affiliationIds.some(id => typeof id !== 'string')) throw badRequest('affiliationIds must be strings');
             const db = require('../../config/database');
             const { personName, nameColumns, nameMatchSql } = require('../../data/commulingo/person-name');
             const activity = functionId || affiliationIds.length;
@@ -183,7 +179,7 @@ const tools = [
             ...page,
         }),
         async handler({ id, status, targetType, targetId, includePatch, limit, offset }) {
-            if (id && !/^[0-9]{1,18}$/.test(id)) throw Object.assign(new Error('id must be numeric'), { status: 400 });
+            if (id && !/^[0-9]{1,18}$/.test(id)) throw badRequest('id must be numeric');
             const db = require('../../config/database');
             const { rows } = await db.query(
                 `SELECT id, target_type, target_id, action, confidence, status, suggested_by, reviewer, review_note,
@@ -231,7 +227,7 @@ const tools = [
             ...page,
         }),
         async handler({ entityType, since, limit, offset }) {
-            if (since && Number.isNaN(Date.parse(since))) throw Object.assign(new Error('since must be an ISO timestamp'), { status: 400 });
+            if (since && Number.isNaN(Date.parse(since))) throw badRequest('since must be an ISO timestamp');
             const db = require('../../config/database');
             const { rows } = await db.query(
                 `SELECT entity_type, from_id, to_id, note, created_at, count(*) OVER () AS total

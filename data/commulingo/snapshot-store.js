@@ -18,6 +18,7 @@
 // Before this factory the five stores carried five copies of this file's
 // logic, identical modulo log labels and fetch functions.
 const fs = require('fs');
+const { writeFileAtomicSync } = require('../../utils/atomic-write');
 const crypto = require('crypto');
 const db = require('../../config/database');
 
@@ -71,9 +72,7 @@ function signatureReader(label, tables) {
 
 function writeSnapshotFile(snapshotPath, label, serialized) {
     try {
-        const tmp = snapshotPath + '.tmp';
-        fs.writeFileSync(tmp, serialized);
-        fs.renameSync(tmp, snapshotPath); // atomic swap so readers never see a partial file
+        writeFileAtomicSync(snapshotPath, serialized); // readers never see a partial file
     } catch (err) {
         console.error(`[${label}] snapshot write failed:`, err.message);
     }

@@ -118,17 +118,7 @@ async function renamePersonIds(renames, { client, changedBy = 'commulingo-person
     };
     if (client) return run(client);
     // Loaded here so the file helpers below stay usable without a database.
-    if (!dryRun) return require('./admin-tx').withTransaction({}, run);
-    const db = require('../../config/database');
-    const tx = await db.connect();
-    try {
-        await tx.query('BEGIN');
-        await tx.query("SELECT pg_advisory_xact_lock(hashtext('commulingo-editorial-write'))");
-        return await run(tx);
-    } finally {
-        await tx.query('ROLLBACK').catch(() => {});
-        tx.release();
-    }
+    return require('./admin-tx').withTransaction({ dryRun }, run);
 }
 
 // ── Documents keyed by person id ───────────────────────────────────────────

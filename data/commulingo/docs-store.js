@@ -1,4 +1,5 @@
 const fs = require('fs');
+const { writeFileAtomicSync } = require('../../utils/atomic-write');
 const path = require('path');
 const db = require('../../config/database');
 const { createRegistrySnapshotStore } = require('./snapshot-store');
@@ -140,10 +141,7 @@ function install(rows) {
 }
 
 function writeBodyFile(sha, body) {
-    fs.mkdirSync(CACHE_DIR, { recursive: true });
-    const tmp = `${bodyPath(sha)}.${process.pid}.tmp`;
-    fs.writeFileSync(tmp, body);
-    fs.renameSync(tmp, bodyPath(sha));
+    writeFileAtomicSync(bodyPath(sha), body);
 }
 
 // Bodies first, entries second: a snapshot is only returned (and installed)
