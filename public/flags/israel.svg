@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600">
-<rect fill="#fff" width="900" height="600"/>
-<rect fill="#0038b8" y="93.75" width="900" height="56.25"/>
-<rect fill="#0038b8" y="450" width="900" height="56.25"/>
-<g stroke="#0038b8" stroke-width="18" fill="none">
-<path d="M450,195 359.1,352.5 540.9,352.5z"/>
-<path d="M450,405 359.1,247.5 540.9,247.5z"/>
-</g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600"><path fill="#fff" d="M0 0h900v600H0z"/><path fill="#0038b8" d="M0 93.8h900v56.3H0zM0 450h900v56.3H0z"/><g fill="none" stroke="#0038b8" stroke-width="18"><path d="m450 195-90.9 157.5h181.8z"/><path d="m450 405-90.9-157.5h181.8z"/></g></svg>
