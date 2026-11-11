@@ -37,16 +37,15 @@ Admin 인물 수정·삭제, 절 저장·삭제는 기존 상태를 읽기 전�
 
 ## 검증과 적용
 
-운영에 마운트된 data를 테스트하지 않는다. 작업 사본에 운영 CommuLingo 테이블과 검증 함수만 복원한 독립 PostgreSQL 17 DB를 준비한다. 사용자 테이블을 복사하지 않은 테스트 fixture에서는 progress의 사용자 FK 두 개만 제외한다. 테스트 DB 이름은 `commulingo_integrity_test`여야 한다.
+운영 DB에서 쓰기 테스트를 하지 않는다. `scripts/test-db`가 독립 PostgreSQL 17 컨테이너(`commulingo-activity-test`, compose 네트워크, 포트 공개 없음)에 운영의 전체 스키마와 `commulingo_*` 사전 데이터만 복사한 시드 DB를 만들고, 실행마다 시드에서 새 `commulingo_integrity_test`를 만든다. 이력·감사·파이프라인 작업·학습 기록의 행과 사용자·다른 서비스의 행은 복사하지 않고, 학습 기록의 사용자 FK는 사본에서 뺀다.
 
 ```bash
-COMMULINGO_ISOLATED_TEST=1 DB_NAME=commulingo_integrity_test \
-DB_HOST=<isolated-host> DB_USER=<test-user> \
-node tests/db/commulingo-integrity.js
-npm test
+scripts/test-db build     # 시드 다시 만들기 (운영 스키마가 바뀐 뒤, 약 10초)
+scripts/test-db run db/   # 새 사본에서 tests/db 전부
+scripts/test-db rm        # 컨테이너 제거
 ```
 
-통합 테스트는 사본을 변경한다. Migration 175 적용 전 사본에서 실행한다. 관계 집합·최소 정렬값 보존, 중복/FK 거부·분류 ID 전파, 실제 세 저장소의 동시 스냅샷, 인물 필드 병합·이력·절/삭제 잠금, 답안 중간 실패 전체 롤백과 과거 값 보호를 검사한다. 일반 npm test에는 캐시 강제/후속/주기 갱신, 장애 fallback, 객체 참조와 기존 JSON 호환 회귀 검사가 포함된다.
+통합 테스트는 사본을 변경한다(그래서 실행마다 시드에서 새로 만든다). 관계 쌍 유일성, 중복/FK 거부·분류 ID 전파, 실제 세 저장소의 동시 스냅샷, 인물 필드 병합·이력·절/삭제 잠금, 답안 중간 실패 전체 롤백과 과거 값 보호를 검사한다. 일반 npm test에는 캐시 강제/후속/주기 갱신, 장애 fallback, 객체 참조와 기존 JSON 호환 회귀 검사가 포함된다.
 
 적용 직전에 중복 쌍·미등록 category·역할 없는 인물 수와 pg_constraint/pg_indexes를 확인한다. pg_dump custom 형식으로 terms, term_categories, term_relations, term_people, term_events를 백업한다. 175는 lock_timeout 3초, statement_timeout 30초인 단일 트랜잭션이며 잠금 실패나 검증 오류 시 전체 롤백한다. 이전 마이그레이션은 수정하지 않는다.
 

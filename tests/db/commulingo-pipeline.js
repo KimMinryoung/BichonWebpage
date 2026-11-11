@@ -1,7 +1,6 @@
-// @requires isolated-db env:DB_HOST=127.0.0.1
+// @requires isolated-db
 const assert = require('node:assert/strict');
-if (process.env.COMMULINGO_ISOLATED_TEST!=='1' || process.env.DB_NAME!=='commulingo_integrity_test'
-    || process.env.DB_HOST!=='127.0.0.1') throw new Error('isolated database required');
+if (process.env.COMMULINGO_ISOLATED_TEST!=='1' || process.env.DB_NAME!=='commulingo_integrity_test') throw new Error('isolated database required');
 const db = require('../../config/database');
 const {patchHash} = require('../../data/commulingo/editorial-patch');
 const {execute} = require('../../data/commulingo/editorial-pipeline-service');
@@ -86,7 +85,9 @@ const evidence = field => ({field,claim:`Documented ${field}`,source,locator:'p.
     await db.query("INSERT INTO commulingo_people_groups(id) VALUES ('pipeline-atomic-group') ON CONFLICT DO NOTHING");
     const person = {command:'publish',target:'person',action:'create',id:personId,sources:[source],review:approval,
         fields:{groupId:'pipeline-atomic-group',name:{ko:'원자 검증 인물',en:'Atomic Fixture Person'},
-            years:'1900–1980',bio:{ko:'문헌으로 확인한 인물이다.',en:'A documented person.'},role:{icon:'book-open'},
+            years:'1900–1980',bio:{ko:'문헌으로 확인한 인물이다.',en:'A documented person.'},cyrillic:'Atomic Fixture Person',
+            activities:[{functionId:'scholarship',affiliationId:null,affiliationStatus:'unresolved',relation:'unresolved',primary:true,startYear:1920,
+                evidence:[{source,locator:'p. 1',claim:'Fixture activity',excerpt:'Fixture activity.'}]}],
             citizenship:{code:'france'},nationalOrigin:{code:'france'},
             evidence:['years','bio','citizenship','nationalOrigin'].map(evidence)},idempotencyKey:`test:${id}:person`};
     person.approvedPatchHash=patchHash(person);

@@ -25,7 +25,8 @@ const nodeGlobals = {
 };
 const rules = {
     'no-undef': 'error',
-    'no-unused-vars': ['warn', { args: 'none', caughtErrors: 'none' }],
+    // A key named only to leave it out of a rest copy ({ secret, ...rest }) is used.
+    'no-unused-vars': ['warn', { args: 'none', caughtErrors: 'none', ignoreRestSiblings: true }],
 };
 module.exports = [
     { ignores: ['node_modules/**', 'public/fonts/**', 'public/puzzles/**', 'data/commulingo/docs/**', 'docs/**', 'temp_dev/**', 'tools/**',

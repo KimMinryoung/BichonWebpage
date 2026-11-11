@@ -42,5 +42,11 @@ function fakePool({ failOn } = {}) {
     pool = fakePool();
     await transaction(async c => c.query('W'), { client: pool.client, lock: 'x' });
     assert.deepEqual(pool.log, ['SELECT pg_advisory_xact_lock(hashtext($1)) x', 'W']);
+    // Overlapping queries on the transaction's client run one after another.
+    let running = 0, overlapped = false;
+    const slow = { async query() { running++; overlapped ||= running > 1; await new Promise(r => setTimeout(r, 5)); running--; return { rows: [] }; },
+        release() {} };
+    await transaction(c => Promise.all([c.query('a'), c.query('b'), c.query('c')]), { pool: { connect: async () => slow } });
+    assert.equal(overlapped, false, 'queries are queued');
     console.log('test-db-transaction: ok');
 })().catch(err => { console.error(err); process.exitCode = 1; });

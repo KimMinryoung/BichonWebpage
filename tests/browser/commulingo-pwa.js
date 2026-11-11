@@ -7,7 +7,7 @@ const { launchChromium } = require('../lib/browser');
 const { createGameTestServer } = require('../lib/game-test-server');
 const strings = require('../../config/strings');
 const { siteStyleModules } = require('../../utils/site-stylesheets');
-/* global navigator, document, fetch */
+/* global navigator, fetch */
 
 const page = (title, extra = '') => `<!doctype html><html lang="ko"><head><meta charset="utf-8"><title>${title}</title>
 <link rel="manifest" href="/commulingo/manifest.webmanifest"><script src="/js/commulingo-pwa.js" defer></script></head>

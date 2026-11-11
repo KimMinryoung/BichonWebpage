@@ -13,11 +13,16 @@ function withActivity(payload) {
     if (payload.activities) return payload;
     const ref = Array.isArray(payload.sources) && payload.sources.length ? payload.sources[0] : source;
     return { ...payload, activities: [{ functionId: 'scholarship', affiliationId: null, affiliationStatus: 'unresolved', relation: 'unresolved', primary: true,
-        evidence: [{ source: ref, locator: 'p. 1', claim: 'Fixture activity', excerpt: 'Fixture activity.' }] }] };
+        startYear: 1900, evidence: [{ source: ref, locator: 'p. 1', claim: 'Fixture activity', excerpt: 'Fixture activity.' }] }] };
+}
+// Every card needs its name in its own script; fixtures are French-style Latin names.
+function withNativeName(payload) {
+    if (payload.cyrillic || payload.nativeName || !payload.name) return payload;
+    return { ...payload, cyrillic: payload.name.en || payload.name.ko };
 }
 const admin = {
     ...store,
-    createPersonAdmin: (payload, options) => store.createPersonAdmin(evidence(withActivity(payload)), { sources: [source], requireRevision: false, ...options }),
+    createPersonAdmin: (payload, options) => store.createPersonAdmin(evidence(withActivity(withNativeName(payload))), { sources: [source], requireRevision: false, ...options }),
     updatePersonAdmin: (id, payload, options) => store.updatePersonAdmin(id, evidence(payload), { sources: [source], requireRevision: false, ...options }),
     deletePersonAdmin: (id, options) => store.deletePersonAdmin(id, { reviewed: true, requireRevision: false, ...options }),
 };

@@ -2,8 +2,6 @@
 // Destructive test: ONLY an isolated CommuLingo database copy, never production.
 // DB_HOST/DB_USER/DB_NAME must be provided explicitly; no .env bootstrap.
 const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
 if (process.env.COMMULINGO_ISOLATED_TEST !== '1' || process.env.DB_NAME !== 'commulingo_integrity_test') {
     throw new Error('Requires COMMULINGO_ISOLATED_TEST=1 and DB_NAME=commulingo_integrity_test');
 }
@@ -14,12 +12,11 @@ const terms = require('../../data/commulingo/terms-store');
 const events = require('../../data/commulingo/history-events-store');
 const graphSQL = `SELECT LEAST(term_id, related_id) a, GREATEST(term_id, related_id) b,
     MIN(sort_order) AS sort_order FROM commulingo_term_relations GROUP BY 1, 2 ORDER BY 1, 2`;
-async function migration() {
-    const before = (await db.query(graphSQL)).rows;
-    const count = (await db.query('SELECT count(*)::int n FROM commulingo_term_relations')).rows[0].n;
-    await db.query(fs.readFileSync(path.join(__dirname, '../../scripts/migrations/175_commulingo_integrity.sql'), 'utf8'));
-    assert.deepEqual((await db.query(graphSQL)).rows, before);
-    assert.equal((await db.query('SELECT count(*)::int n FROM commulingo_term_relations')).rows[0].n, before.length);
+// Migration 175 (one-time deduplication) is long applied in production, and
+// the copy carries its result: what is checked is what it guarantees.
+async function constraints() {
+    const edges = (await db.query(graphSQL)).rows;
+    assert.equal((await db.query('SELECT count(*)::int n FROM commulingo_term_relations')).rows[0].n, edges.length, 'one row per unordered pair');
     const edge = (await db.query('SELECT * FROM commulingo_term_relations LIMIT 1')).rows[0];
     await assert.rejects(db.query('INSERT INTO commulingo_term_relations(term_id, related_id) VALUES ($1,$2)', [edge.related_id, edge.term_id]), { code: '23505' });
     await assert.rejects(db.query("UPDATE commulingo_terms SET category='missing-test-category' WHERE id=$1", [edge.term_id]), { code: '23503' });
@@ -31,7 +28,7 @@ async function migration() {
         assert.equal((await c.query('SELECT category FROM commulingo_terms WHERE id=$1', [edge.term_id])).rows[0].category, 'test-renamed-category');
         await assert.rejects(c.query("DELETE FROM commulingo_term_categories WHERE id='test-renamed-category'"), { code: '23503' });
     } finally { await c.query('ROLLBACK'); c.release(); }
-    console.log(`migration: ${count - before.length} duplicates removed, ${before.length} edges and minimum sort orders preserved; constraints passed`);
+    console.log(`constraints: ${edges.length} relation edges unique per pair; category keys cascade and restrict`);
 }
 async function waitBlocked(pid) {
     for (let i = 0; i < 100; i++) {
@@ -73,10 +70,10 @@ async function edits() {
 }
 async function snapshots() {
     // Commit an edit between the first and subsequent SELECTs of each real store.
-    for (const [load, mutate] of [
-        [() => people.loadCommuLingoPeople({ fresh: true }), c => admin.updatePersonAdmin('stalin', { bio: { ko: '검증 본문', en: 'test biography' } }, { client: c })],
-        [() => terms.loadCommuLingoTerms({ fresh: true }), c => c.query("UPDATE commulingo_terms SET definition_en='snapshot test' WHERE id='nep'")],
-        [() => events.loadCommuLingoHistoryEvents({ fresh: true }), c => c.query("UPDATE commulingo_history_events SET summary_en='snapshot test' WHERE id=(SELECT id FROM commulingo_history_events WHERE summary_ko<>'' LIMIT 1)")],
+    for (const [store, load, mutate] of [
+        ['people', () => people.loadCommuLingoPeople({ fresh: true }), c => c.query("UPDATE commulingo_people SET bio_en='snapshot test' WHERE id='stalin'")],
+        ['terms', () => terms.loadCommuLingoTerms({ fresh: true }), c => c.query("UPDATE commulingo_terms SET definition_en='snapshot test' WHERE id='nep'")],
+        ['events', () => events.loadCommuLingoHistoryEvents({ fresh: true }), c => c.query("UPDATE commulingo_history_events SET summary_en='snapshot test' WHERE id=(SELECT id FROM commulingo_history_events WHERE summary_ko<>'' LIMIT 1)")],
     ]) {
         const baseline = await load();
         const original = db.connect.bind(db);
@@ -111,9 +108,9 @@ async function snapshots() {
         try {
             const during = await load();
             assert.ok(committed);
-            assert.deepEqual(during, baseline, 'snapshot must remain at its first SELECT');
+            assert.deepEqual(during, baseline, `${store}: snapshot must remain at its first SELECT`);
         } finally { db.connect = original; }
-        assert.notDeepEqual(await load(), baseline, 'next snapshot sees committed edit');
+        assert.notDeepEqual(await load(), baseline, `${store}: next snapshot sees committed edit`);
     }
     console.log('all three dictionary snapshots remain consistent across concurrent commits');
 }
@@ -143,5 +140,5 @@ async function answers() {
         await new Promise(resolve => server.close(resolve));
     }
 }
-(async () => { await migration(); await snapshots(); await edits(); await answers(); })()
+(async () => { await constraints(); await snapshots(); await edits(); await answers(); })()
     .catch(err => { console.error(err); process.exitCode = 1; }).finally(() => db.end());

@@ -66,10 +66,6 @@ Environment:
   CF_ZONE_NAME            Optional. Defaults to cyber-lenin.com`);
 }
 
-function isoDateOnly(date) {
-    return date.toISOString().slice(0, 10);
-}
-
 function resolveWindow(args) {
     if (args.since || args.until) {
         if (!args.since || !args.until) throw new Error('--since and --until must be provided together');

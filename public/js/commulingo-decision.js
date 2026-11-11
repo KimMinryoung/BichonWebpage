@@ -1,5 +1,4 @@
 (function() {
-    var strings = window.COMMULINGO_STRINGS || {};
     var shell = document.querySelector('.commulingo-shell');
     var lang = shell ? shell.getAttribute('data-lang') : 'ko';
     var raw = document.getElementById('commulingo-decision');

@@ -40,7 +40,14 @@ if [[ "${NODE_MAJOR:-0}" -lt 24 && -z "${TEST_IN_DOCKER:-}" ]]; then
         # The one writable mount: caches that outlive the container (ESLint's).
         CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/leninbot-frontend-test"
         mkdir -p "$CACHE_DIR"
-        exec docker run --rm -u "$(id -u):$(id -g)" -e TEST_IN_DOCKER=1 -e HOME=/tmp -e TEST_CACHE_DIR=/cache "$NETWORK" \
+        # The settings a run is pointed with (an isolated test database:
+        # tests/README.md) cross into the container.
+        PASS=
+        for name in DB_HOST DB_PORT DB_NAME DB_USER DB_PASSWORD COMMULINGO_ISOLATED_TEST COMMULINGO_LINK_REVIEWS_SNAPSHOT TEST_TIMEOUT_S; do
+            if env | grep -q "^$name="; then PASS="$PASS -e $name"; fi
+        done
+        # shellcheck disable=SC2086 # PASS is a list of flags
+        exec docker run --rm -u "$(id -u):$(id -g)" -e TEST_IN_DOCKER=1 -e HOME=/tmp -e TEST_CACHE_DIR=/cache $PASS "$NETWORK" \
             -v "$PWD:/app:ro" -v "$CACHE_DIR:/cache" -w /app "$IMAGE" "$RUN_SHELL" scripts/test "$@"
     fi
     echo "[test] host node $(node -v 2>/dev/null || echo missing) < 24 and no usable docker; running on the host (the app targets Node 24)" >&2

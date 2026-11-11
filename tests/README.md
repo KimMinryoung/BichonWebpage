@@ -24,6 +24,7 @@ scripts/test --browser            # + tests/browser
 
 ```bash
 scripts/test --db                 # + tests/db
+scripts/test-db run db/           # 격리 DB 테스트까지: 운영 사본 DB를 새로 만들어 돌린다
 ```
 
 호스트 node가 24 미만이면 테스트는 `node:24` 컨테이너에서 돈다. `--db`·`--all`이면 그 컨테이너를 DB 컨테이너의 compose 네트워크(`leninbot_default`, `TEST_DB_NETWORK`로 바꿈)에 붙여 `.env`의 `DB_HOST`가 풀리게 한다. DB 풀은 `allowExitOnIdle`이라 DB에 붙은 단위 테스트도 할 일이 끝나면 종료한다.
@@ -59,7 +60,7 @@ lint는 파일 내용 기준 ESLint 캐시(`--cache-strategy content`)를 써서
 |---|---|
 | `live-data` | 실데이터 문서 스냅샷(`data/commulingo/data-documents-snapshot.json`)이 있다. 저장소만 받은 환경은 2026-10-08 고정 시드를 읽는데, 그 뒤에 생긴 데이터 규칙을 전수 검사하면 낡은 시드가 걸린다 |
 | `database` | `.env` 또는 `DB_HOST`로 DB가 설정돼 있다. 실제 DB를 읽고 쓰기를 롤백하는 테스트 |
-| `isolated-db` | `COMMULINGO_ISOLATED_TEST=1`, `DB_NAME=commulingo_integrity_test`. 준비 절차는 [CommuLingo DB](../dev_docs/commulingo-database.md#검증과-적용) |
+| `isolated-db` | `COMMULINGO_ISOLATED_TEST=1`, `DB_NAME=commulingo_integrity_test`. `scripts/test-db run db/`가 사본 DB를 새로 만들어 이 설정으로 돌린다([CommuLingo DB](../dev_docs/commulingo-database.md#검증과-적용)) |
 | `browser` | Playwright가 띄울 Chromium이 있다. `tests/browser/`는 자동으로 이 태그를 가진다 |
 | `env:NAME`, `env:NAME=VALUE` | 환경 변수가 있다 / 정확히 그 값이다 |
 | `server:NAME=URL` | `$NAME`(없으면 URL)의 서버가 3초 안에 응답한다(dev preview 등) |

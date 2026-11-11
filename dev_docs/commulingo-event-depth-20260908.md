@@ -46,7 +46,7 @@
 
 - `scripts/content/socialist-event-depth-20260908.json`: 원문 기대값, 최종 수정 필드, 구조화된 양언어 문단·출처.
 - `scripts/apply-socialist-event-depth.js`: 기본 읽기 전용 사전 검사. `--production` 및 `DB_HOST=leninbot-pg`를 명시해야 운영에 접근하며, `--apply`가 있어야 쓴다. 현재값 충돌 시 전체 중단; 동일한 최종값은 재수정하지 않는다.
-- `tests/db/socialist-event-depth.js`: 빈 일회용 DB에서 사전 검사·트랜잭션 롤백·충돌 거부·메타데이터 보존·재실행을 검증한다.
+- `tests/db/socialist-event-depth.js`: 빈 일회용 DB에서 사전 검사·트랜잭션 롤백·충돌 거부·메타데이터 보존·재실행을 검증했다. (2026-11-11 삭제: 실행 도구가 먼저 지워져 돌 수 없었다. 내용은 git 이력에 있다.)
 
 ## 반영 및 검증
 

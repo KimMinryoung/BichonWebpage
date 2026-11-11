@@ -23,7 +23,9 @@ async function run() {
         await client.query("INSERT INTO commulingo_people_groups(id) VALUES ('editorial-group')");
         const fields = { id, groupId: 'editorial-group', name: { ko: '검증 인물', en: 'Editorial Person' },
             years: '1900–1980', bio: { ko: '원래 소개', en: 'Original biography' },
-            role: { icon: 'book-open' }, citizenship: { code: 'france' }, nationalOrigin: { code: 'france' } };
+            cyrillic: 'Editorial Person', citizenship: { code: 'france' }, nationalOrigin: { code: 'france' },
+            activities: [{ functionId: 'scholarship', affiliationId: null, affiliationStatus: 'unresolved', relation: 'unresolved', primary: true,
+                startYear: 1920, evidence: [{ source, locator: 'p. 12', claim: 'Test activity', excerpt: 'Test activity.' }] }] };
         const created = await service.submitPersonEdit({ target: 'person', action: 'create', id,
             fields: { ...fields, evidence: proof(fields) }, sources: [source] }, opts);
         assert.equal(created.status, 'approved');
@@ -31,7 +33,8 @@ async function run() {
         await assert.rejects(service.submitPersonEdit({ target: 'person', action: 'update', id, fields: { bio: { ko: 'new' } }, sources: [source] }, opts), { status: 428 });
         await assert.rejects(submit({ bio: { ko: 'new' }, evidence: [] }), /evidence/);
         await assert.rejects(submit({ bio: { ko: 'x'.repeat(381) } }), /380/);
-        await assert.rejects(submit({ role: null }), /primary role/);
+        // The card's medal is its primary activity (the role table is gone).
+        await assert.rejects(submit({ activities: [] }), /activit/);
         await assert.rejects(submit({ bio: { ko: 'new' } }, { sources: [] }), /sources/);
         const updated = await submit({ bio: { ko: '수정 소개' } });
         assert.equal(updated.value.bio.en, 'Original biography');

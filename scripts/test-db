@@ -1,0 +1,85 @@
+#!/usr/bin/env bash
+# scripts/test-db — the isolated database the destructive tests in tests/db
+# need (`// @requires isolated-db`): a PostgreSQL 17 container on the compose
+# network, never production.
+#
+#   scripts/test-db build   copy the production schema and the CommuLingo
+#                           dictionary data into a seed database (~10 s)
+#   scripts/test-db reset   a fresh commulingo_integrity_test from the seed
+#   scripts/test-db run …   reset, then scripts/test --db with the settings
+#                           (extra arguments pass through, e.g. db/)
+#   scripts/test-db rm      remove the container
+#
+# Copied: the whole schema (every table, function, trigger) and the rows of
+# the commulingo_* tables, except histories, audits, pipeline work and
+# learners' records — users and other services' rows are never copied (the
+# learners' records' foreign keys to users are dropped). The container
+# publishes no port and trusts connections on the network.
+set -euo pipefail
+cd "$(dirname "$0")/.."
+
+NAME=commulingo-activity-test
+NETWORK="${TEST_DB_NETWORK:-leninbot_default}"
+SOURCE_CONTAINER="${TEST_DB_SOURCE:-leninbot-pg}"
+SOURCE_DB="${TEST_DB_SOURCE_DB:-leninbot}"
+SEED=commulingo_seed
+TARGET=commulingo_integrity_test
+NO_DATA=(commulingo_people_revisions 'commulingo_pipeline_*' commulingo_agent_suggestions commulingo_doc_revisions
+    commulingo_doc_original_revisions commulingo_data_document_revisions commulingo_editorial_receipts commulingo_mcp_audit
+    commulingo_question_progress commulingo_progress commulingo_learning_events commulingo_link_review_history
+    commulingo_person_review_jobs)
+
+psql_in() { docker exec -i "$NAME" psql -v ON_ERROR_STOP=1 -q -U postgres "$@"; }
+
+ensure_container() {
+    if ! docker inspect "$NAME" >/dev/null 2>&1; then
+        docker run -d --name "$NAME" --network "$NETWORK" -e POSTGRES_HOST_AUTH_METHOD=trust \
+            --label purpose=isolated-db-tests pgvector/pgvector:pg17 >/dev/null
+    fi
+    docker start "$NAME" >/dev/null
+    for _ in $(seq 60); do
+        docker exec "$NAME" pg_isready -U postgres >/dev/null 2>&1 && return 0
+        sleep 1
+    done
+    echo "[test-db] $NAME did not start" >&2
+    exit 1
+}
+
+build() {
+    ensure_container
+    psql_in -d postgres -c "DROP DATABASE IF EXISTS $TARGET" -c "DROP DATABASE IF EXISTS $SEED" -c "CREATE DATABASE $SEED"
+    local exclude=()
+    for table in "${NO_DATA[@]}"; do exclude+=("--exclude-table-data=$table"); done
+    echo "[test-db] copying the schema from $SOURCE_CONTAINER/$SOURCE_DB" >&2
+    docker exec "$SOURCE_CONTAINER" pg_dump -U postgres -d "$SOURCE_DB" --no-owner --no-privileges -s | psql_in -d "$SEED" >/dev/null
+    echo "[test-db] copying the CommuLingo dictionary rows" >&2
+    docker exec "$SOURCE_CONTAINER" pg_dump -U postgres -d "$SOURCE_DB" --no-owner --no-privileges -a --disable-triggers \
+        -t 'commulingo_*' "${exclude[@]}" 2>/dev/null | psql_in -d "$SEED" >/dev/null
+    # Users are not copied, so learners' records may name any user id.
+    psql_in -d "$SEED" -c "DO \$\$ DECLARE r record; BEGIN
+        FOR r IN SELECT conrelid::regclass AS t, conname FROM pg_constraint
+                 WHERE contype = 'f' AND confrelid = 'users'::regclass AND conrelid::regclass::text LIKE 'commulingo_%'
+        LOOP EXECUTE format('ALTER TABLE %s DROP CONSTRAINT %I', r.t, r.conname); END LOOP; END \$\$" >/dev/null
+    psql_in -d "$SEED" -Atc "SELECT 'seed: ' || (SELECT count(*) FROM commulingo_people) || ' people, '
+        || (SELECT count(*) FROM commulingo_terms) || ' terms, ' || pg_size_pretty(pg_database_size(current_database()))" >&2
+}
+
+reset() {
+    ensure_container
+    if ! docker exec "$NAME" psql -U postgres -d postgres -Atc "SELECT 1 FROM pg_database WHERE datname = '$SEED'" | grep -q 1; then build; fi
+    psql_in -d postgres -c "DROP DATABASE IF EXISTS $TARGET WITH (FORCE)" -c "CREATE DATABASE $TARGET TEMPLATE $SEED"
+}
+
+case "${1:-}" in
+    build) build ;;
+    reset) reset ;;
+    run)
+        shift
+        reset
+        COMMULINGO_LINK_REVIEWS_SNAPSHOT=/tmp/link-reviews-test-snapshot.json \
+        COMMULINGO_ISOLATED_TEST=1 DB_HOST="$NAME" DB_PORT=5432 DB_NAME="$TARGET" DB_USER=postgres DB_PASSWORD= \
+            TEST_DB_NETWORK="$NETWORK" exec scripts/test --db "$@"
+        ;;
+    rm) docker rm -f "$NAME" >/dev/null && echo "[test-db] removed $NAME" >&2 ;;
+    *) sed -n '2,16p' "$0" | sed 's/^# \{0,1\}//'; exit 2 ;;
+esac
