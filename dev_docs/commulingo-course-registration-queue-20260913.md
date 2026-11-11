@@ -1,6 +1,6 @@
 # 입문 강좌 데이터 신규 등록 큐 — 2026-09-13
 
-운영 `commulingo_curation_gaps`에 42건을 등록하고 각 행의 ID·본문·상태를 재조회했다. 인물 6명, 용어 16개, 원사료 한국어 번역 요청 20건. 큐 ID는 1943~1984이며 최초 접수 시 모두 pending이었다. 후속 실제 등록 결과는 **41건 완료, 오언 번역 1건 대기**다. [등록 결과와 검증](commulingo-registration-20260913/README.md)을 참조한다.
+운영 `commulingo_curation_gaps`에 42건을 등록하고 각 행의 ID·본문·상태를 재조회했다. 인물 6명, 용어 16개, 원사료 한국어 번역 요청 20건. 큐 ID는 1943~1984이며 최초 접수 시 모두 pending이었다. 후속 실제 등록 결과는 **41건 완료, 오언 번역 1건 대기**다. [등록 결과와 검증](../scripts/content/commulingo-registration-20260913/README.md)을 참조한다.
 
 두 강좌: `french-revolution-intro`, `socialist-divergences-intro`. `event_id`는 기존 큐의 출처 문자열 필드이므로 강좌 ID를 저장했다. 실제 역사 사건 레코드를 만든 것은 아니다.
 
@@ -10,7 +10,7 @@
 
 프랑스 혁명 관련 기존 비공개 해설은 재공개하지 않았다. 문헌 후보는 원사료 번역이고 홉스봄의 현대 저서는 번역 요청에 포함하지 않았다. 원어 판본이 아직 확보되지 않은 항목에는 저본 추적을 선행 조건으로 명시했다.
 
-전체 작성 범위·출처·우선순위·중복 점검·큐 ID는 [commulingo-course-registration-queue-20260913.json](commulingo-course-registration-queue-20260913.json)에 보존한다. 출처 링크는 해당 요청의 조사 시작점이며 모든 판본 검증을 완료했다는 뜻이 아니다.
+전체 작성 범위·출처·우선순위·중복 점검·큐 ID는 [commulingo-course-registration-queue-20260913.json](../scripts/content/commulingo-course-registration-queue-20260913.json)에 보존한다. 출처 링크는 해당 요청의 조사 시작점이며 모든 판본 검증을 완료했다는 뜻이 아니다.
 
 | 큐 ID | 유형 | 신규 등록 요청 | 연결 강좌 |
 | --- | --- | --- | --- |

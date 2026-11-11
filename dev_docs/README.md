@@ -17,7 +17,7 @@
 | CSS 독립 배포 구조 개선 | [2026-10-05 인수인계·설계 초안](frontend-static-assets-deployment-handoff-20261005.md) |
 | CommuLingo 큐 사건 4편(아이티 혁명·보불전쟁·방데 전쟁·발칸 전쟁) | [사건 4편 적용 기록·인물 46명·용어 26개·남은 일](commulingo-queue-events-20261007.md) |
 | CommuLingo 2차 세계대전 사건 3편(쿠르스크·미드웨이·북아프리카) | [적용 기록·인물 18명·용어 7개·구조화 기간 적용기](commulingo-wwii-battles-20261013.md) |
-| CommuLingo 문헌 큐(1차 사료 완역 게재) | [2026-10-07 처리 결과: 게재 32편·제외 사유·소유자 결정·후속 후보](commulingo-queue-docs-20261007/PLAN.md) |
+| CommuLingo 문헌 큐(1차 사료 완역 게재) | [2026-10-07 처리 결과: 게재 32편·제외 사유·소유자 결정·후속 후보](../scripts/content/commulingo-queue-docs-20261007/PLAN.md) |
 | CommuLingo 공산주의 갈래 계보도·사조 용어 | [계보도 구성·새 용어 6개·공산주의 모음 분할](commulingo-communist-currents-20261008.md) |
 | CommuLingo 정치적 입장 이름·용어 연결 | [입장 이름 규칙·소속 조정·용어 20개·term_ids](commulingo-position-terms-20261023.md) |
 | CommuLingo 직책 계보·정치국/서기국/조직국 명부 | [구조·적용 스크립트·출처 판단](commulingo-office-lineages-20261006.md) |
@@ -69,9 +69,9 @@
 | CommuLingo 중국 혁명·중화인민공화국 확장 | [중국 선반·시대 그룹, 사건 12편·인물 48명·용어 15개](commulingo-china-history-20260921.md) |
 | CommuLingo 중국 사건 14편 보강 | [2026-10-21 본문 1만 자 이상·인물 97명·용어 69개·남은 일(중월전쟁·톈안먼·기존 인물 보강)](commulingo-china-events-depth-20261021.md) |
 | CommuLingo 현실 사회주의 국가·사건 보강 | [25개 체제 자료와 3개 계보도](commulingo-socialist-states-20260908.md), [16개 사건 본문 심화](commulingo-event-depth-20260908.md) |
-| CommuLingo 프랑스 혁명 추가 문헌 DeepSeek 추론 ON 번역 | [22건 출판(주르당 법 2026-09-30 직접 전사·번역)·토큰 집계](commulingo-french-translations-20260913/README.md) |
-| CommuLingo 참고문헌 전문 번역·저본·검수 | [DeepSeek Flash 전문 번역 8편과 제외 기록](commulingo-fulltext-20260913/README.md) |
-| CommuLingo 프랑스 혁명 문헌집·기존 주소 이동 | [12편을 주제별 4편으로 통합](commulingo-french-reference-collections-20260913/README.md) |
+| CommuLingo 프랑스 혁명 추가 문헌 DeepSeek 추론 ON 번역 | [22건 출판(주르당 법 2026-09-30 직접 전사·번역)·토큰 집계](../scripts/content/commulingo-french-translations-20260913/README.md) |
+| CommuLingo 참고문헌 전문 번역·저본·검수 | [DeepSeek Flash 전문 번역 8편과 제외 기록](../scripts/content/commulingo-fulltext-20260913/README.md) |
+| CommuLingo 프랑스 혁명 문헌집·기존 주소 이동 | [12편을 주제별 4편으로 통합](../scripts/content/commulingo-french-reference-collections-20260913/README.md) |
 | CommuLingo 데이터 git 분리(작업물 R2, 문헌 DB, 데이터 문서, 학습 강좌 DB 이전) | [단계·상태·설계](commulingo-data-off-git.md) |
 | CommuLingo 참고 문헌 구조 검사·제목 id·파싱 개선(TO-DO) | [완료·서버 작업·남은 작업](commulingo-docs-structure-todo.md) |
 | CommuLingo 참고 문헌 설계 검토(저장·조립·렌더링·주석·단어 링크) | [2026-11-04 개선 TO-DO·우선순위](commulingo-docs-design-review-20261104.md) |
