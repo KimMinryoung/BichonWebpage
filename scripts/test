@@ -14,7 +14,7 @@ cd "$(dirname "$0")/.."
 NODE_MAJOR="$(node -p 'process.versions.node.split(".")[0]' 2>/dev/null || echo 0)"
 if [[ "${NODE_MAJOR:-0}" -lt 24 && -z "${TEST_IN_DOCKER:-}" ]]; then
     if timeout 5 docker info >/dev/null 2>&1; then
-        echo "[test] host node $(node -v 2>/dev/null || echo missing) < 24; running in node:24.22.1-alpine" >&2
+        echo "[test] host node $(node -v 2>/dev/null || echo missing) < 24; running in docker" >&2
         # DB tests reach the database by its container name (DB_HOST in
         # .env), which resolves only on the compose network.
         # (Plain sh syntax: the container reruns this file with busybox sh.)
@@ -23,8 +23,20 @@ if [[ "${NODE_MAJOR:-0}" -lt 24 && -z "${TEST_IN_DOCKER:-}" ]]; then
             DB_NETWORK="${TEST_DB_NETWORK:-leninbot_default}"
             docker network inspect "$DB_NETWORK" >/dev/null 2>&1 && NETWORK="--network=$DB_NETWORK"
         fi
+        IMAGE=node:24.22.1-alpine RUN_SHELL=sh
+        # Browser tests need Chromium, which alpine cannot run: use the
+        # Playwright image (tests/browser.Dockerfile), built once per
+        # Playwright version.
+        if [[ " $* " == *" --browser "* || " $* " == *" --all "* ]]; then
+            PW="$(node -p 'require("./package-lock.json").packages["node_modules/playwright"].version' 2>/dev/null)"
+            IMAGE="leninbot-frontend-test-browser:pw-$PW" RUN_SHELL=bash
+            if ! docker image inspect "$IMAGE" >/dev/null 2>&1; then
+                echo "[test] building $IMAGE (once per Playwright version)" >&2
+                docker build -q -t "$IMAGE" --build-arg "PLAYWRIGHT_VERSION=$PW" - < tests/browser.Dockerfile >/dev/null || exit 1
+            fi
+        fi
         exec docker run --rm -u "$(id -u):$(id -g)" -e TEST_IN_DOCKER=1 -e HOME=/tmp "$NETWORK" \
-            -v "$PWD:/app:ro" -w /app node:24.22.1-alpine sh scripts/test "$@"
+            -v "$PWD:/app:ro" -w /app "$IMAGE" "$RUN_SHELL" scripts/test "$@"
     fi
     echo "[test] host node $(node -v 2>/dev/null || echo missing) < 24 and no usable docker; running on the host (the app targets Node 24)" >&2
 fi

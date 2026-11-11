@@ -61,6 +61,7 @@ scripts/test name-boundaries war  # 이름에 낱말이 들어간 테스트만
 환경별로 자동으로 맞추는 것:
 
 - Node 24 미만이면 docker의 `node:24.22.1-alpine`으로 옮겨 돌린다. docker를 쓸 수 없으면(클라우드 세션) 호스트에서 그대로 돌리고 알린다.
+- 그때 `--browser`·`--all`이면 alpine 대신 Playwright Chromium을 넣은 이미지 `leninbot-frontend-test-browser:pw-<버전>`(`tests/browser.Dockerfile`, Node 24 bookworm)을 쓴다. 이미지가 없으면 처음 한 번 만든다(약 1.7GB, package-lock의 Playwright 버전이 바뀌면 새로). dev-preview(3001)가 필요한 테스트는 미리보기를 켜지 않으면 건너뛴다.
 - Chromium은 Playwright 자체 빌드가 없으면 `CHROMIUM_PATH`나 `/opt/pw-browsers/chromium`(클라우드 세션)을 쓴다(`tests/lib/browser.js`의 `launchChromium`). 브라우저 테스트는 `chromium.launch` 대신 이것을 쓴다.
 
 ## 새 테스트
