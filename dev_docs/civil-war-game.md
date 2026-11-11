@@ -74,7 +74,7 @@
 | [war-map.js](../services/war-map.js) | 서버 지도: `renderRegionMapSvg`(event-map-svg.js)로 시나리오의 `map.box`(유럽 러시아, 동경 19–66°, 북위 42–66°) 틀에 해안선·강·세력 범위를 굽고, 도시 화면 좌표를 계산한다. 세력 범위 문서가 바뀔 때만 다시 만든다 |
 | [tests/unit/civil-war.js](../tests/unit/civil-war.js) | 역사 재현·정책 비용·모스크바 함락·명령 검증·저장 재생·전투 (`npm test` 포함). 데이터 검사는 공통 검사기, 엔진 동작은 골든 마스터(`tests/unit/war-golden.js`)도 지킨다 |
 
-게임 목록(`games.ejs`, `games.js`)이 저장(`civil-war-v1-save`)을 읽어 이어하기를 보여 준다.
+게임 목록(`games.ejs`, `games.js`)이 저장(`civil-war-v1-save`)을 읽어 이어하기를 보여 준다. 엔진과 시나리오는 그 저장이 있을 때만 불러오므로 `games.js`가 저장 키를 따로 적어 두고, `tests/unit/war-scenarios.js`가 시나리오의 `ui.save`와 같은지 확인한다.
 
 ## 3. 전략 규칙
 

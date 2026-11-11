@@ -19,9 +19,11 @@ function isStaticAssetPath(reqPath) {
         || reqPath.startsWith('/js/')
         || reqPath.startsWith('/fonts/')
         || reqPath.startsWith('/img/')
+        || reqPath.startsWith('/images/')
         || reqPath.startsWith('/icons/')
         || reqPath.startsWith('/flags/')
         || reqPath.startsWith('/puzzles/')
+        || reqPath === '/nonogram/editor.html'
         || reqPath === '/BingSiteAuth.xml';
 }
 

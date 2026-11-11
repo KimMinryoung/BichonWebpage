@@ -51,15 +51,4 @@ function normalizeSources(sources) {
     return sources;
 }
 
-function normalizeLimit(value, fallback = 100) {
-    const parsed = Number.parseInt(value, 10);
-    if (!Number.isFinite(parsed) || parsed <= 0) return fallback;
-    return Math.min(parsed, 250);
-}
-
-function normalizeOffset(value) {
-    const parsed = Number.parseInt(value, 10);
-    return Number.isFinite(parsed) && parsed > 0 ? parsed : 0;
-}
-
-module.exports = { t, localized, contentLocalized, badRequest, parseLifeYears, requireId, requireSlug, normalizeSources, normalizeLimit, normalizeOffset };
+module.exports = { t, localized, contentLocalized, badRequest, parseLifeYears, requireId, requireSlug, normalizeSources };

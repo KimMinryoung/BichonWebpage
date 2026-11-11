@@ -25,8 +25,9 @@
     <p class="games-note">로그인 없이 플레이할 수 있습니다. <a href="/commulingo">공산링고에서 이론 더 읽기 →</a></p>
   </main>
   <%- include('../partials/footer') %>
-  <script src="/js/strike-engine.js?v=<%= assetVersion %>"></script>
-  <%- include('war/scripts', { id: 'civil-war' }) %>
-  <script src="/js/games.js?v=<%= assetVersion %>"></script>
+  <%# The engines are loaded only when this browser holds a save to describe (games.js). %>
+  <script src="/js/games.js?v=<%= assetVersion %>" defer
+    data-strike="/js/strike-engine.js?v=<%= assetVersion %>"
+    data-war="<%= ['war/scenarios/civil-war', 'war/cond', 'war/battle', 'war/engine'].map(name => `/js/${name}.js?v=${assetVersion}`).join(' ') %>"></script>
 </body>
 </html>

@@ -327,11 +327,29 @@ function offsiteHostedWork(titles, label) {
 // A guided-reading question must quote the site's own translation verbatim.
 // External sources (marxists.org, for Capital) are only shape-checked here:
 // scripts/check-course-source-excerpts.js verifies them against its cache.
-function sourceProblems(course) {
+// shared: lookups reused across calls (the write gate checks the old and the
+// new course), so each cited document is normalized and the event list read once.
+function sourceLookups() {
+    let events;
+    return {
+        docs: new Map(),
+        eventIds() {
+            if (events === undefined) {
+                try {
+                    const { SNAPSHOT_PATH } = require('./history-events-store');
+                    events = new Set(JSON.parse(fs.readFileSync(SNAPSHOT_PATH, 'utf8')).map(event => event.id));
+                } catch { events = null; }
+            }
+            return events;
+        },
+    };
+}
+
+function sourceProblems(course, shared = sourceLookups()) {
     const text = require('../../scripts/lib/commulingo-source-text');
     const { getCommuLingoDoc, getCommuLingoDocContent } = require('./docs-store');
     const required = course.format === 'guided-reading';
-    const docs = new Map();
+    const { docs, eventIds } = shared;
     const siteDoc = id => {
         if (!docs.has(id)) {
             const doc = getCommuLingoDoc(id);
@@ -346,16 +364,6 @@ function sourceProblems(course) {
     const problems = [];
     const timeline = course.decisionTimeline;
     if (timeline) {
-        let events = null;
-        const eventIds = () => {
-            if (!events) {
-                try {
-                    const { SNAPSHOT_PATH } = require('./history-events-store');
-                    events = new Set(JSON.parse(fs.readFileSync(SNAPSHOT_PATH, 'utf8')).map(event => event.id));
-                } catch (err) { events = null; }
-            }
-            return events;
-        };
         for (const episode of (timeline.eras || []).flatMap(era => (era && era.episodes) || [])) {
             (episode.sources || []).forEach((src, index) => {
                 if (!src || !src.doc) return;
@@ -484,8 +492,9 @@ function gateCourseWrite({ key, next, prev, others }) {
         .filter(issue => !before.has(fingerprint(issue)) && !isTolerated(baseline, issue))
         .forEach(issue => failures.push(`[${issue.rule}] ${issue.message}`));
 
-    const oldSources = new Set(prev ? sourceProblems(prev) : []);
-    sourceProblems(next).filter(problem => !oldSources.has(problem))
+    const lookups = sourceLookups();
+    const oldSources = new Set(prev ? sourceProblems(prev, lookups) : []);
+    sourceProblems(next, lookups).filter(problem => !oldSources.has(problem))
         .forEach(problem => failures.push(`[source] ${problem}`));
 
     if (prev) {

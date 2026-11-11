@@ -247,7 +247,7 @@ const tools = [
         description: 'Auto-link expressions and their review state (same listing as the Admin link review screen).',
         inputSchema: object({
             q: str('Substring of expression, label or id'),
-            kind: str('Entry kind', { enum: ['person', 'term', 'event'] }),
+            kind: str('Entry kind', { enum: ['term', 'event', 'doc'] }),
             pending: bool('Only unreviewed rows'),
             risk: bool('Only rows with risks or collisions'),
             ...page,

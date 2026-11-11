@@ -8,9 +8,9 @@ syllables, every other syllable the site's content uses today, the
 compatibility jamo and CJK punctuation, and the symbols the content uses
 that IBM Plex does not draw (arrows, circled numbers, IPA, fullwidth
 punctuation), with the weight axis cut to 400-800 (the weights the CSS asks
-for). pretendard-subset.css declares it as 'Pretendard'; the official slices
-follow as 'Pretendard Extra', the next family in every font stack, so a
-character this file lacks (in practice Hanja) fetches only its slice.
+for). style.css (and site-core.css built from it) declares it as
+'Pretendard'; a character this file lacks (in practice Hanja) falls through
+to the system Korean font ('Pretendard Fallback').
 
 Needs fonttools and brotli. The source is the full variable font that
 ef4631d replaced with the slices:
@@ -30,7 +30,7 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 OUT = os.path.join(ROOT, 'public', 'fonts', 'pretendard', 'PretendardVariable.common.woff2')
 
 
-# The blocks the common face's unicode-range in pretendard-subset.css
+# The blocks the common face's unicode-range in style.css
 # claims besides Hangul: IPA, general punctuation to symbols and dingbats,
 # CJK symbols and compatibility, fullwidth forms. Keep the two in step.
 SYMBOL_BLOCKS = [(0x0250, 0x02FF), (0x2000, 0x2BFF), (0x3000, 0x33FF), (0xFF00, 0xFFEF)]

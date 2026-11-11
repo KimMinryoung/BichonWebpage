@@ -453,8 +453,16 @@ function listCommuLingoDocExcerptsFor(kind, id) {
 // (the box prints its own), the editor's note stays in the reader, the headings inside drop one level to sit under
 // the entry page's h2, and the notes the piece calls are brought along. A
 // fragment link to anything else in the document goes to the reader instead.
+// Term and event pages ask for the same pieces on every view, and a '*'
+// piece runs its regex passes over the whole document, so each is kept on
+// the cached content entry like its note blocks. Callers only read the result.
 function getCommuLingoDocSection(doc, anchor) {
-    return sectionFrom(getCommuLingoDocContent(doc), doc.id, anchor);
+    const content = getCommuLingoDocContent(doc);
+    const sections = content.sections || (content.sections = new Map());
+    // Entries are shared by body hash; the links a piece carries name the doc.
+    const key = `${doc.id}\0${anchor}`;
+    if (!sections.has(key)) sections.set(key, sectionFrom(content, doc.id, anchor));
+    return sections.get(key);
 }
 
 // The headings of a content entry as { level, id, start, end, text }: from

@@ -5,13 +5,22 @@ const path = require('node:path');
 const { DEV_MODE } = require('./env');
 const { validManifest, verifyRelease, assetId } = require('../scripts/lib/css-release');
 function createCssReleases(root, appRevision) {
+    const pointer = path.join(root, 'active', `${appRevision}.json`);
     let lastGood = null;
+    let lastKey = '';
+    // Called for every HTML response, so the pointer is only re-read and its
+    // release re-verified when the file changes (publication renames a new
+    // file into place). A failed read leaves lastKey alone so it is retried.
     function snapshot() {
         try {
-            const manifest = JSON.parse(fs.readFileSync(path.join(root, 'active', `${appRevision}.json`), 'utf8'));
+            const stat = fs.statSync(pointer);
+            const key = `${stat.ino}:${stat.mtimeMs}:${stat.size}`;
+            if (key === lastKey) return lastGood;
+            const manifest = JSON.parse(fs.readFileSync(pointer, 'utf8'));
             if (!validManifest(manifest, appRevision)) throw Error('Invalid CSS manifest');
             if (!lastGood || JSON.stringify(manifest) !== JSON.stringify(lastGood)) verifyRelease(root, manifest);
             lastGood = manifest;
+            lastKey = key;
         } catch { /* Atomic publication failures keep the last known good release. */ }
         return lastGood;
     }

@@ -170,17 +170,9 @@ async function loadCommuLingoPersonHistoryEvents(personId, options = {}) {
     });
 }
 
-// Rebuild the snapshot from the DB now (used after a migration or an edit so the
-// change surfaces without waiting for the timer).
-async function snapshotCommuLingoHistoryEvents() {
-    const data = await store.refresh();
-    return { path: store.snapshotPath, events: data.length };
-}
-
 module.exports = {
     loadCommuLingoHistoryEvents,
     loadCommuLingoPersonHistoryEvents,
     sortEventsByDate,
-    snapshotCommuLingoHistoryEvents,
     SNAPSHOT_PATH: store.snapshotPath,
 };

@@ -545,33 +545,6 @@ function normalizeCommuLingoPeople(data, options = {}) {
     };
 }
 
-function validateCommuLingoPeople(data) {
-    const issues = [];
-    const people = data.people || [];
-    const offices = data.offices || [];
-    const peopleIds = new Set();
-    const officeIds = new Set(offices.map(office => office.id));
-    people.forEach(person => {
-        if (!person.id) issues.push({ level: 'error', code: 'person_missing_id' });
-        if (peopleIds.has(person.id)) issues.push({ level: 'error', code: 'duplicate_person_id', id: person.id });
-        peopleIds.add(person.id);
-        ['ko', 'en'].forEach(lang => {
-            if (!localize(person.name, lang)) issues.push({ level: 'error', code: 'person_missing_name', id: person.id, lang });
-        });
-        if (!person.years) issues.push({ level: 'warn', code: 'person_missing_years', id: person.id });
-        if (!(((data.careers || {})[person.id] || []).length)) issues.push({ level: 'error', code: 'person_missing_career', id: person.id });
-    });
-    offices.forEach(office => {
-        if (!office.id) issues.push({ level: 'error', code: 'office_missing_id' });
-        (office.rows || []).forEach(row => {
-            if (row.personId && !peopleIds.has(row.personId)) {
-                issues.push({ level: 'error', code: 'office_row_unknown_person', officeId: office.id, personId: row.personId });
-            }
-        });
-    });
-    return issues;
-}
-
 module.exports = {
     composeFromParts,
     personLabel,
@@ -585,5 +558,4 @@ module.exports = {
     parsePeriod,
     normalizeFateLabel,
     normalizeCommuLingoPeople,
-    validateCommuLingoPeople,
 };

@@ -269,15 +269,4 @@ async function updateDocMeta(id, patch = {}, { actor = 'unknown', note, client }
     return entry;
 }
 
-async function removeDoc(id, { actor = 'unknown', note } = {}) {
-    const row = await readDocRow(id);
-    if (!row) {
-        const err = new Error(`doc "${id}" not found`);
-        err.status = 404;
-        throw err;
-    }
-    await writeDocs({ deletes: [id] }, { actor, note: note || 'remove' });
-    return { id, ...row.entry };
-}
-
-module.exports = { canonicalEntry, canonicalizeStoredEntry, extractFragment, harvestTocPreview, importDoc, mergeDocMeta, updateDocMeta, removeDoc };
+module.exports = { canonicalEntry, canonicalizeStoredEntry, extractFragment, harvestTocPreview, importDoc, mergeDocMeta, updateDocMeta };

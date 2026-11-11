@@ -207,14 +207,6 @@ async function countUsers() {
     return rows[0].n;
 }
 
-async function countPasskeysForUser(userId) {
-    const { rows } = await db.query(
-        'SELECT COUNT(*)::int AS n FROM user_passkeys WHERE user_id = $1',
-        [userId]
-    );
-    return rows[0].n;
-}
-
 async function findOrCreateBootstrapUser(username) {
     const { rows } = await db.query(
         `INSERT INTO users (username, is_admin)
@@ -287,7 +279,6 @@ module.exports = {
     buildAuthenticationOptions,
     confirmAuthentication,
     countUsers,
-    countPasskeysForUser,
     findOrCreateBootstrapUser,
     createRegularUser,
     findUserByUsername,

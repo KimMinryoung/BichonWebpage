@@ -418,30 +418,6 @@ const ko = {
     // Page copy moved out of the CommuLingo views (was `en ? '…' : '…'`
     // ternaries in the templates); keys are per view.
     commuLingoViews: {
-        adminDocs: {
-            publicPage: '공개 페이지',
-            uploadDocument: '문서 업로드',
-            slugEGYezhov: '슬러그 (예: yezhov-pavlyukov)',
-            preview: '미리보기',
-            upload: '업로드',
-            documents: '문서 목록',
-            edit: '편집',
-            titleKo: '제목 (ko)',
-            titleEn: '제목 (en)',
-            kindKo: '분류 (ko)',
-            kindEn: '분류 (en)',
-            descriptionKo: '설명 (ko)',
-            descriptionEn: '설명 (en)',
-            sourceCitation: '원전 서지',
-            bodyLanguage: '본문 언어',
-            tocExcludeRegexesOne: '목차 제외 정규식 (줄당 하나)',
-            linkedPeople: '연결된 인물',
-            linkedTerms: '연결된 용어',
-            linkedEvents: '연결된 사건',
-            typeToSearchPick: '검색해서 선택하면 추가됩니다',
-            save: '저장',
-            close: '닫기',
-        },
         doc: {
             referenceLibrary: '참고 문헌',
             tableOfContents: '목차',
@@ -682,11 +658,6 @@ const ko = {
             researchers: '연구자',
             viewAsAList: '목록으로 보기 →',
             text: '명',
-        },
-        peopleList: {
-            people: '인물 사전',
-            text: '명',
-            people2: '인물 목록',
         },
         person: {
             contextMarker: '맥락 표식',
@@ -1191,30 +1162,6 @@ const en = {
     // Page copy moved out of the CommuLingo views (was `en ? '…' : '…'`
     // ternaries in the templates); keys are per view.
     commuLingoViews: {
-        adminDocs: {
-            publicPage: 'Public page',
-            uploadDocument: 'Upload document',
-            slugEGYezhov: 'slug (e.g. yezhov-pavlyukov)',
-            preview: 'Preview',
-            upload: 'Upload',
-            documents: 'Documents',
-            edit: 'Edit',
-            titleKo: 'Title (ko)',
-            titleEn: 'Title (en)',
-            kindKo: 'Kind (ko)',
-            kindEn: 'Kind (en)',
-            descriptionKo: 'Description (ko)',
-            descriptionEn: 'Description (en)',
-            sourceCitation: 'Source citation',
-            bodyLanguage: 'Body language',
-            tocExcludeRegexesOne: 'TOC exclude regexes (one per line)',
-            linkedPeople: 'Linked people',
-            linkedTerms: 'Linked terms',
-            linkedEvents: 'Linked events',
-            typeToSearchPick: 'Type to search, pick to add',
-            save: 'Save',
-            close: 'Close',
-        },
         doc: {
             referenceLibrary: 'Reference Library',
             tableOfContents: 'Table of contents',
@@ -1448,11 +1395,6 @@ const en = {
             researchers: 'Researchers',
             viewAsAList: 'View as a list →',
             text: '',
-        },
-        peopleList: {
-            people: 'People',
-            text: '',
-            people2: 'People',
         },
         person: {
             contextMarker: 'Context marker',

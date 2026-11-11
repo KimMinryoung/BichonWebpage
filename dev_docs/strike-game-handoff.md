@@ -26,7 +26,7 @@ v4까지는 "피로 낮은 순서로 교대"라는 정답 하나로 모든 판�
 | [strike.js](../public/js/strike.js) | HUD, 사측의 수 카드(실시간 막기 판정), 배치 예상, 동료 목록, 저녁 결산·교섭 대화상자, 결과, 저장 |
 | [strike.css](../public/css/strike.css) | 화면 배치, 모바일 하단 고정 진행 버튼, 지도 연출, 교섭 카드 |
 | [strike.ejs](../views/public/strike.ejs) | 시작 화면, 플레이 영역 골격, `<dialog id="strikeSheet">`, 접힌 규칙 |
-| [games.ejs](../views/public/games.ejs), [games.js](../public/js/games.js) | 게임 목록과 이어하기 표시(`strike-game-v6-save`) |
+| [games.ejs](../views/public/games.ejs), [games.js](../public/js/games.js) | 게임 목록과 이어하기 표시(`strike-game-v6-save`). 저장이 있을 때만 엔진을 불러온다 |
 | [tests/unit/strike.js](../tests/unit/strike.js) | 봇 캠페인 밸런스·결정론·복원·세부 규칙 (`npm test` 포함) |
 | [tests/browser/strike-ui.js](../tests/browser/strike-ui.js), [tests/browser/games-ui.js](../tests/browser/games-ui.js) | Playwright 브라우저 검증 (`npm test` 미포함) |
 

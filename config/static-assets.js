@@ -1,9 +1,10 @@
 // express.static for public/ with the cache policy per asset type. CSS/JS
 // carry ?v=<asset version> so they can be immutable for a year; the
-// nonogram page and puzzle JSON are edited in place and never cached.
+// nonogram editor and puzzle JSON are edited in place and never cached.
 const path = require('path');
 const express = require('express');
 const { DEV_MODE } = require('./env');
+const { safeFile } = require('../scripts/lib/css-release');
 
 const staticAssets = express.static(path.join(__dirname, '..', 'public'), {
     index: false,
@@ -13,7 +14,7 @@ const staticAssets = express.static(path.join(__dirname, '..', 'public'), {
             res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
             return;
         }
-        const isNonogramPage = normalized.endsWith('/public/nonogram/index.html') || normalized.endsWith('/public/nonogram/editor.html');
+        const isNonogramPage = normalized.endsWith('/public/nonogram/editor.html');
         const isPuzzleJson = normalized.includes('/public/puzzles/') && normalized.endsWith('.json');
         if (isNonogramPage || isPuzzleJson) {
             res.setHeader('Cache-Control', 'no-store, max-age=0');
@@ -40,7 +41,6 @@ const releaseRoot = process.env.CSS_RELEASE_DIR;
 function releasedAssets(req, res, next) {
     if (!req.path.startsWith('/assets/')) return next();
     const match = req.path.match(/^\/assets\/([a-f0-9]{32})\/(.+)$/);
-    const { safeFile } = require('../scripts/lib/css-release');
     if (!releaseRoot || !match || !safeFile(match[2])) {
         return res.status(404).end();
     }

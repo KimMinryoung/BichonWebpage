@@ -9,9 +9,12 @@ const { availableBodies } = require('./politburo-store');
 // written.
 
 // The glossary entries an office or roster page links to.
+const termsById = new WeakMap(); // terms snapshot -> Map(id -> term)
 async function glossaryLinksFor(termIds, lang) {
     if (!termIds || !termIds.length) return [];
-    const byId = new Map((await loadCommuLingoTerms()).map(raw => [raw.id, raw]));
+    const terms = await loadCommuLingoTerms();
+    let byId = termsById.get(terms);
+    if (!byId) termsById.set(terms, byId = new Map(terms.map(raw => [raw.id, raw])));
     return termIds.map(id => byId.get(id)).filter(Boolean).map(raw => ({
         id: raw.id,
         term: localize(raw.term, lang),

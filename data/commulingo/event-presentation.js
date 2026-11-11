@@ -7,7 +7,6 @@ const { createPersonPageResolver, pagePeriod } = require('./person-page-links');
 const { renderEventMapSvg, timelineGeos, numberedGeos, isCityScale } = require('./event-map-svg');
 const { loadEventControl, phaseIndexForPeriod, presentEventControl } = require('./event-control');
 const { formatPeriod } = require('./career-period');
-const { dataDocumentsRef } = require('./data-documents');
 const { expandIndicators, indicatorsRef } = require('./indicators');
 const { eventRelationsFor } = require('./event-relations');
 const { decode: decodeEntities } = require('./html-fragments');
@@ -173,7 +172,7 @@ function presentEvent(raw, lang) {
 // refresh per language — mirroring personBodyMemo in commulingo.js. Related
 // terms/docs/genealogies/reports refresh on their own cadences and stay
 // per-request.
-const eventPanelMemo = new WeakMap(); // indexes -> { eventsRef, termsRef, docsRef, byId: Map }
+const eventPanelMemo = new WeakMap(); // indexes -> { eventsRef, termsRef, figuresRef, byId: Map }
 
 // Everything the event half of a page needs. Exported so the glossary route can
 // render this panel beside its own when the two entries are the same subject:
@@ -183,14 +182,20 @@ async function buildEventPanel(eventId, lang) {
     const events = await loadCommuLingoHistoryEvents();
     const terms = await loadCommuLingoTerms();
     const indexes = await getLinkIndexes(lang);
-    // The map's control phases are data documents (event-control/<id>).
-    const docs = dataDocumentsRef();
+    // Prose expands {{indicator:…}} tokens, so a new figure in force
+    // rebuilds every panel. The map's control phases are the data document
+    // event-control/<id>: an unchanged document keeps its content object, so
+    // each panel checks only its own and other document writes (courses,
+    // genealogy) leave it cached.
+    const figures = indicatorsRef();
     let memo = eventPanelMemo.get(indexes);
-    if (!memo || memo.eventsRef !== events || memo.termsRef !== terms || memo.docsRef !== docs) {
-        memo = { eventsRef: events, termsRef: terms, docsRef: docs, byId: new Map() };
+    if (!memo || memo.eventsRef !== events || memo.termsRef !== terms || memo.figuresRef !== figures) {
+        memo = { eventsRef: events, termsRef: terms, figuresRef: figures, byId: new Map() };
         eventPanelMemo.set(indexes, memo);
     }
+    const control = loadEventControl(eventId);
     let pure = memo.byId.get(eventId);
+    if (pure && pure.control !== control) pure = null;
     if (!pure) {
         const index = events.findIndex(event => event.id === eventId);
         if (index === -1) return null; // unknown ids stay uncached — crawler noise must not grow the map
@@ -231,7 +236,6 @@ async function buildEventPanel(eventId, lang) {
             : []);
         // Territorial-control phases, when the event has them: each row
         // carries the phase in force at its date, so the map can follow it.
-        const control = loadEventControl(eventId);
         event.timeline = event.timeline.map((item, i) => ({
             ...item,
             ...(geoNums.has(i) ? { geoNum: geoNums.get(i) } : {}),
@@ -298,7 +302,7 @@ async function buildEventPanel(eventId, lang) {
             return item ? { id: item.id, period: item.period, title: localize(item.title, lang) } : null;
         };
         event.relatedEvents = eventRelationsFor(events, eventId, lang);
-        pure = { event, prevEvent: neighbor(-1), nextEvent: neighbor(1) };
+        pure = { event, prevEvent: neighbor(-1), nextEvent: neighbor(1), control };
         memo.byId.set(eventId, pure);
     }
     let relatedReports = [];

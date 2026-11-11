@@ -70,8 +70,22 @@ async function listReviews({ q = '', kind = '', pending = false, risk = false, o
     return { total: rows.length, rows: page,
         pending: state.pending };
 }
+// Batches look up hundreds of inputs among ~10k rows: index each row list once.
+const rowIndexes = new WeakMap(); // rows -> Map(key -> row)
+function rowByKey(rows, item) {
+    let index = rowIndexes.get(rows);
+    if (!index) {
+        index = new Map();
+        for (const row of rows) {
+            const rowKey = key(row.kind, row.id, row.lang, row.text);
+            if (!index.has(rowKey)) index.set(rowKey, row); // the first, as find() did
+        }
+        rowIndexes.set(rows, index);
+    }
+    return index.get(key(item.kind, item.id, item.lang, item.text));
+}
 function selectRow(state, input) {
-    const row = state.rows.find(row => key(row.kind, row.id, row.lang, row.text) === key(input.kind, input.id, input.lang, input.text));
+    const row = rowByKey(state.rows, input);
     if (!row) fail('표현이 삭제되거나 변경됐습니다. 목록을 다시 불러오세요.', 409);
     return row;
 }
@@ -174,7 +188,7 @@ async function previewReviews(inputs) {
     const afterReviews = new Map(state.reviews);
     for (const { row, input } of selected) afterReviews.set(key(row.kind, row.id, row.lang, row.text), reviewValue(row, input, 'preview'));
     const finalRows = catalogue(state.records, afterReviews);
-    for (const { row, input } of selected) validateDecision(finalRows.find(r => key(r.kind, r.id, r.lang, r.text) === key(row.kind, row.id, row.lang, row.text)), input, finalRows);
+    for (const { row, input } of selected) validateDecision(rowByKey(finalRows, row), input, finalRows);
     const results = selected.map(({ row }) => ({ row, samples: [], matchedPassages: 0, sampledPassages: 0 }));
     for (const lang of ['ko', 'en']) {
         const candidates = results.filter(result => result.row.lang === lang).map(result => ({ result, needle: normalize(result.row.text, lang) }));
@@ -234,7 +248,7 @@ async function saveReviews(token, actor) {
         const afterReviews = new Map(state.reviews);
         for (const { row, input } of selected) afterReviews.set(key(row.kind, row.id, row.lang, row.text), reviewValue(row, input, actor));
         const finalRows = catalogue(state.records, afterReviews);
-        for (const { row, input } of selected) validateDecision(finalRows.find(r => key(r.kind, r.id, r.lang, r.text) === key(row.kind, row.id, row.lang, row.text)), input, finalRows);
+        for (const { row, input } of selected) validateDecision(rowByKey(finalRows, row), input, finalRows);
         const values = [];
         for (const { row, input } of selected) {
             const value = reviewValue(row, input, actor);

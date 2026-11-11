@@ -170,7 +170,35 @@ function openEntityLinksInNewTab(html) {
 // new reference and invalidates the memo by itself.
 let stdMemo = { dataRef: null, catalogRef: null, blocklistRef: null, byLang: {} };
 
-function standardizedFor(data, catalog, lang) {
+// People only take the episode titles from the course catalog (person.scenes,
+// people-standard.js buildSceneIndex). The catalog is a new object after any
+// course write, so keying on it rebuilt every person and link index and
+// dropped every render memo keyed on them for a change in a question. The
+// catalog is reduced to those titles here and the same object is returned
+// while they are unchanged.
+let sceneMemo = { catalog: null, signature: '', scenes: null };
+function sceneCatalog(catalog) {
+    if (catalog && (catalog === sceneMemo.catalog || catalog === sceneMemo.scenes)) return sceneMemo.scenes;
+    const collections = ((catalog && catalog.collections) || [])
+        .filter(collection => collection.decisionTimeline)
+        .map(collection => ({
+            id: collection.id,
+            title: collection.title,
+            bookTitle: collection.bookTitle,
+            decisionTimeline: {
+                eras: (collection.decisionTimeline.eras || []).map(era => ({
+                    episodes: ((era && era.episodes) || []).map(episode => ({ id: episode.id, title: episode.title })),
+                })),
+            },
+        }));
+    const signature = JSON.stringify(collections);
+    const scenes = signature === sceneMemo.signature ? sceneMemo.scenes : { collections };
+    sceneMemo = { catalog, signature, scenes };
+    return scenes;
+}
+
+function standardizedFor(data, fullCatalog, lang) {
+    const catalog = sceneCatalog(fullCatalog);
     // personIndex is built from the blocklist, so a changed blocklist is a
     // changed index — the same reason the data and catalog references are here.
     const blocklist = blocklistRef();
@@ -203,7 +231,7 @@ let indexMemo = {
 
 async function getLinkIndexes(lang) {
     const safeLang = lang === 'en' ? 'en' : 'ko';
-    const catalog = loadCommuLingoCatalog();
+    const catalog = sceneCatalog(loadCommuLingoCatalog());
     const docs = listCommuLingoDocs();
     const [loaded, terms, events, blocklist, reviews] = await Promise.all([
         loadCommuLingoPeople(),

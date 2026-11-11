@@ -24,12 +24,11 @@ function viewLocals(req, res, next) {
     if ((req.method === 'GET' || req.method === 'HEAD') && isStaticAssetPath(req.path)) return next();
 
     if (cssReleaseEnabled) {
-        const snapshot = cssReleases.snapshot();
         const send = res.send.bind(res);
         res.send = body => {
             const type = res.get('Content-Type') || '';
             const html = typeof body === 'string' && (type ? /text\/html/i.test(type) : /^\s*</.test(body));
-            return send(html ? cssReleases.rewrite(body, snapshot) : body);
+            return send(html ? cssReleases.rewrite(body, cssReleases.snapshot()) : body);
         };
     }
     res.locals.siteStyleModules = siteStyleModules;

@@ -1,17 +1,16 @@
 const express = require('express');
-const { cachedResearchList, cachedPagesList } = require('../services/public-lists');
+const { cachedResearchList, cachedPagesList, cachedHubCurations } = require('../services/public-lists');
 const { asyncHandler } = require('../utils/async-handler');
 const path = require('path');
 const fs = require('fs');
 const router = express.Router();
 const db = require('../config/database');
 const redis = require('../config/redis');
-const hubStore = require('../config/hub-store');
-const researchStore = require('../config/research-store');
 const seo = require('../utils/seo');
 const errorPage = require('../utils/error-page');
 const { setNoStore } = require('../utils/http');
 const { sanitizePost } = require('../utils/sanitize');
+const { escapeHtml } = require('../utils/markdown');
 const { loadRecentCommuLingoItems } = require('../services/commulingo-updates');
 const { loadCommuLingoPeople } = require('../data/commulingo/people-store');
 const { loadCommuLingoTerms } = require('../data/commulingo/terms-store');
@@ -34,11 +33,9 @@ const { truncateHtml } = require('../utils/truncate-html');
 const { onTableChange } = require('../utils/db-change-listener');
 const homepageModels = createPublicModelCache();
 // Keys are `<source>:<lang>`; a write to a source table rereads that source.
-// A null table (listener reconnected) rereads everything.
-const HOMEPAGE_SOURCES = {
-    posts: 'posts', ai_diary: 'diaries', research_documents: 'research',
-    hub_curations: 'hub',
-};
+// A null table (listener reconnected) rereads everything. Reports and the
+// hub come from services/public-lists, which keeps its own cache.
+const HOMEPAGE_SOURCES = { posts: 'posts', ai_diary: 'diaries' };
 onTableChange(Object.keys(HOMEPAGE_SOURCES), async table => {
     const source = table && HOMEPAGE_SOURCES[table];
     homepageModels.invalidate(key => !source || key.startsWith(`${source}:`));
@@ -48,7 +45,7 @@ const excerptHtml = content => truncateHtml(sanitizeBasic(content), 200);
 
 async function loadRecentReportItems(lang) {
     const [researchResult, pagesResult] = await Promise.allSettled([
-        homepageModels.get(`research:${lang}`, () => researchStore.listResearch(lang, { limit: RECENT_LIMIT })),
+        cachedResearchList(lang).then(list => list.slice(0, RECENT_LIMIT)),
         cachedPagesList(lang),
     ]);
     if (researchResult.status === 'rejected' || pagesResult.status === 'rejected') {
@@ -104,7 +101,7 @@ router.get('/', async (req, res) => {
                 });
             }),
             loadRecentReportItems(lang),
-            homepageModels.get(`hub:${lang}`, async () => (await hubStore.listHubCurations({ limit: RECENT_LIMIT, offset: 0, lang })).map(item => ({
+            cachedHubCurations(lang).then(list => list.slice(0, RECENT_LIMIT).map(item => ({
                 slug: item.slug, title: item.title, source_publication: item.source_publication, published_at: item.published_at,
                 excerpt: item.context ? item.context.substring(0, 180) + (item.context.length > 180 ? '…' : '') : '',
             }))),
@@ -213,14 +210,6 @@ router.get('/post/:id', postRoutes.detail);
 // the only discovery path is the owner sharing the link.
 const { WRITER_API_URL } = require('../config/services');
 
-function novelEscapeHtml(text) {
-    return text
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-}
-
 function novelBodyHtml(body) {
     return body
         .replace(/\r\n/g, '\n')
@@ -231,9 +220,9 @@ function novelBodyHtml(body) {
             const heading = /^(#{1,3})\s+(.+)$/.exec(trimmed);
             if (heading) {
                 const level = heading[1].length + 1; // markdown # → h2..h4
-                return `<h${level}>${novelEscapeHtml(heading[2])}</h${level}>`;
+                return `<h${level}>${escapeHtml(heading[2])}</h${level}>`;
             }
-            return `<p>${novelEscapeHtml(trimmed).replace(/\n/g, '<br>')}</p>`;
+            return `<p>${escapeHtml(trimmed).replace(/\n/g, '<br>')}</p>`;
         })
         .filter(Boolean)
         .join('\n');
@@ -298,17 +287,8 @@ router.get('/robots.txt', (req, res) => {
     );
 });
 
-async function getResearchFiles(lang = 'ko') {
-    return (await cachedResearchList(lang)) || [];
-}
-
-async function getPagesList(lang = 'ko') {
-    return (await cachedPagesList(lang)) || [];
-}
-
-async function getHubItems(limit = 200, lang = 'ko') {
-    return hubStore.listHubCurations({ limit, offset: 0, lang });
-}
+// The hub list cache holds the newest 200 curations.
+const newestHubItems = async (limit, lang) => (await cachedHubCurations(lang)).slice(0, limit);
 
 function markdownIndex(title, description, items) {
     const lines = [`# ${title}`, '', description, ''];
@@ -323,8 +303,8 @@ async function getFeedItems(limit = 40, lang = 'ko') {
     const [postsResult, diariesResult, researchResult, hubResult] = await Promise.allSettled([
         db.query('SELECT id, title, content, title_en, content_en, created_at, updated_at FROM posts ORDER BY created_at DESC LIMIT 30'),
         db.query('SELECT id, title, content, title_en, content_en, created_at, updated_at FROM ai_diary ORDER BY created_at DESC LIMIT 30'),
-        getResearchFiles(lang),
-        getHubItems(30, lang),
+        cachedResearchList(lang),
+        newestHubItems(30, lang),
     ]);
     const posts = postsResult.status === 'fulfilled' ? postsResult.value.rows.map(row => {
         const post = localizedRecord(row, lang);
@@ -413,9 +393,9 @@ async function buildSitemapXml() {
             db.query(`SELECT id, created_at, updated_at,
                              (COALESCE(BTRIM(title_en), '') <> '' OR COALESCE(BTRIM(content_en), '') <> '') AS has_translation
                         FROM ai_diary ORDER BY created_at DESC`),
-            getResearchFiles('ko'),
-            getPagesList(),
-            getHubItems(200, 'ko'),
+            cachedResearchList('ko'),
+            cachedPagesList('ko'),
+            newestHubItems(200, 'ko'),
             loadCommuLingoPeople(),
             loadCommuLingoTerms(),
             loadCommuLingoHistoryEvents(),
@@ -572,7 +552,7 @@ router.get('/posts.md', asyncHandler(async (req, res) => {
 
 router.get('/reports.md', asyncHandler(async (req, res) => {
     const lang = res.locals.lang === 'en' ? 'en' : 'ko';
-    const files = await getResearchFiles(lang);
+    const files = await cachedResearchList(lang);
     const items = files.map(file => ({
         title: file.title || file.filename.replace(/\.md$/, '').replace(/_/g, ' '),
         href: `/reports/research/${file.filename.replace(/\.md$/, '')}`,
@@ -594,7 +574,7 @@ router.get('/ai-diary.md', asyncHandler(async (req, res) => {
 }));
 
 router.get('/hub.md', asyncHandler(async (req, res) => {
-    const hubItems = await getHubItems(200, 'ko');
+    const hubItems = await newestHubItems(200, 'ko');
     const items = hubItems.map(item => ({
         title: item.title,
         href: `/hub/${item.slug}`,

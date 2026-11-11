@@ -8,10 +8,10 @@ const { assertLinkExpressions } = require('./link-expressions');
 const { assertAliases, assertPersonHeadwords } = require('./headword-validation');
 const db = require('../../config/database');
 const { normalizeFateLabel } = require('./people-standard');
-const { composeFromParts, personName, personNames, nameMatchSql } = require('./person-name');
+const { composeFromParts, personName, personNames } = require('./person-name');
 const { assertPersonAliases } = require('./person-alias-rules');
 const { periodColumns, periodFromRow, formatBoth, PERIOD_COLUMNS, periodValues } = require('./career-period');
-const { t, localized, contentLocalized, badRequest, parseLifeYears, requireId, normalizeLimit, normalizeOffset } = require('./people-admin-fields');
+const { t, localized, contentLocalized, badRequest, parseLifeYears, requireId } = require('./people-admin-fields');
 const { withTransaction, writeRevision } = require('./admin-tx');
 const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
 const { personLifeProblems, parseLifeYears: parsePersonLifeYearsFull } = require('./person-life-years');
@@ -77,37 +77,6 @@ function rowToPerson(row) {
             label: t(row.fate_label_ko, row.fate_label_en),
         },
     };
-}
-
-async function listPeopleAdmin(options = {}) {
-    const q = typeof options.q === 'string' ? options.q.trim() : '';
-    const groupId = typeof options.groupId === 'string' ? options.groupId.trim() : '';
-    const limit = normalizeLimit(options.limit);
-    const offset = normalizeOffset(options.offset);
-    const { rows } = await db.query(
-        `SELECT id, group_id, initial, cyrillic, years_label, birth_year, death_year,
-                given_name_ko, given_name_en, family_name_ko, family_name_en,
-                name_qualifier_ko, name_qualifier_en,
-                epithet_ko, epithet_en, moment_ko, moment_en, bio_ko, bio_en,
-                fate_kind, fate_label_ko, fate_label_en,
-                citizenship_code, citizenship_label_ko, citizenship_label_en,
-                origin_code, origin_label_ko, origin_label_en,
-                to_jsonb(commulingo_people)->'link_expressions' AS link_expressions,
-                to_jsonb(commulingo_people)->'birth_date' AS birth_date,
-                to_jsonb(commulingo_people)->'death_date' AS death_date,
-                to_jsonb(commulingo_people)->>'wikidata_id' AS wikidata_id,
-                COALESCE(to_jsonb(commulingo_people)->'activities', '[]'::jsonb) AS activities
-         FROM commulingo_people
-         WHERE ($1 = ''
-                OR id ILIKE '%' || $1 || '%'
-                OR ${nameMatchSql('', '$1', 'contains')}
-                OR cyrillic ILIKE '%' || $1 || '%')
-           AND ($2 = '' OR group_id = $2)
-         ORDER BY sort_order, id
-         LIMIT $3 OFFSET $4`,
-        [q, groupId, limit, offset]
-    );
-    return rows.map(rowToPerson);
 }
 
 async function getPersonAdmin(personId, options = {}) {
@@ -666,4 +635,4 @@ async function deletePersonAdmin(personId, options = {}) {
     });
 }
 
-module.exports = { listPeopleAdmin, getPersonAdmin, createPersonAdmin, updatePersonAdmin, deletePersonAdmin };
+module.exports = { getPersonAdmin, createPersonAdmin, updatePersonAdmin, deletePersonAdmin };

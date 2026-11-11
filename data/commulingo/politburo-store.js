@@ -14,10 +14,6 @@ function loadBody(bodyId) {
     return getDataDocument(bodyId);
 }
 
-function loadPolitburo() {
-    return loadBody('politburo');
-}
-
 // ── Shared label tables ──────────────────────────────────────────────────
 // The dataset stores structured spans and end events, not prose; both the
 // roster page and the person-page box render from these.
@@ -63,12 +59,6 @@ function careerFor(bodyId, personId, lang) {
     };
 }
 
-// The person-page box: this person's Politburo career, or null when the
-// dictionary id never sat on the body.
-function politburoCareerFor(personId, lang) {
-    return careerFor('politburo', personId, lang);
-}
-
 // The person-page boxes for every body the person sat on, in BODIES order.
 function bodyCareersFor(personId, lang) {
     return BODY_IDS.map(bodyId => {
@@ -77,7 +67,7 @@ function bodyCareersFor(personId, lang) {
     }).filter(Boolean);
 }
 
-module.exports = { loadBody, loadPolitburo, spanParts, endText, politburoCareerFor, bodyCareersFor };
+module.exports = { loadBody, spanParts, endText, bodyCareersFor };
 
 // The roster cards of the office index: bodies whose file is present.
 function availableBodies(lang) {

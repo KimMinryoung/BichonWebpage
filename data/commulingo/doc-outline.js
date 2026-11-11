@@ -22,7 +22,7 @@
 //   notes:      { id: [start, end] }        each note <li id> inside a section.notes
 //   pages:      planPages(html) or null     the page plan (doc-pagination.js)
 //   anchorPages: { id: page }               editor-chosen h1-h3 ids → page (for the version switch)
-const { parseDocument, DomUtils } = require('htmlparser2');
+const { parseDocument } = require('htmlparser2');
 const { planPages, renderPages, headingText, PAGE_TARGET_TEXT } = require('./doc-pagination');
 const { AUTO_ATTR, isNotesSection, isEditorial } = require('./doc-structure');
 

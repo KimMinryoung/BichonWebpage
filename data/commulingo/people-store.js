@@ -1,5 +1,4 @@
 const { personNames } = require('./person-name');
-const db = require('../../config/database');
 const { periodFromRow, formatBoth, PERIOD_COLUMNS } = require('./career-period');
 const path = require('path');
 const { readSnapshot } = require('./read-snapshot');
@@ -368,25 +367,6 @@ function clearCommuLingoPeopleCache() {
         console.error('[commulingo people] refresh after edit failed:', err.message));
 }
 
-async function loadCommuLingoPersonSections(personId) {
-    const id = typeof personId === 'string' ? personId.trim() : '';
-    if (!id) return [];
-    const { rows } = await db.query(
-        `SELECT slug, sort_order, heading_ko, heading_en, body_ko, body_en, sources
-         FROM commulingo_person_sections
-         WHERE person_id = $1
-         ORDER BY sort_order, id`,
-        [id]
-    );
-    return rows.map(row => ({
-        slug: row.slug || '',
-        sortOrder: row.sort_order || 0,
-        heading: t(row.heading_ko, row.heading_en),
-        body: t(row.body_ko, row.body_en),
-        sources: Array.isArray(row.sources) ? row.sources : [],
-    }));
-}
-
 // Where a retired id should send the request, or '' if it is simply unknown.
 // Takes the loaded data object so callers read the same snapshot they rendered
 // from — and tolerates a snapshot file written before redirects existed.
@@ -399,7 +379,6 @@ function redirectTarget(data, entityType, id) {
 module.exports = {
     loadCommuLingoPeople,
     snapshotCommuLingoPeople,
-    loadCommuLingoPersonSections,
     clearCommuLingoPeopleCache,
     redirectTarget,
     SNAPSHOT_PATH: store.snapshotPath,

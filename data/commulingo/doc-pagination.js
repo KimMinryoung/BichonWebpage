@@ -200,7 +200,6 @@ function planPages(html) {
     const firstHeading = headings.find(heading => heading.level <= 2);
     let titleEnd = 0;
     if (firstHeading) titleEnd = firstHeading.level === 1 ? firstHeading.end : firstHeading.at;
-    const titleHtml = html.slice(0, titleEnd);
 
     const firstIndex = cuts.findIndex(cut => cut.at >= titleEnd);
     if (firstIndex < 0) return null;
