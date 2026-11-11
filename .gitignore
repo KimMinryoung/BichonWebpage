@@ -91,9 +91,9 @@ __pycache__/
 # CommuLingo work products are records of DB writes, not code: data-only SQL
 # (content edits, no DDL) and its backups, batch specs/build scripts and
 # link-review files. They live in R2 (R2_BUCKET under work/, uploaded with
-# scripts/archive-work-r2.js), not in git. Files already tracked here stay
-# tracked (test fixtures, event-control sources); a new file a test or the app
-# needs must be added with `git add -f`. Schema migrations stay tracked in
+# scripts/archive-work-r2.js), not in git. Only the specs tests read stay
+# tracked; a new file a test or the app needs must be added with `git add -f`.
+# Schema migrations stay tracked in
 # scripts/migrations/.
 scripts/migrations/data/
 scripts/content/
@@ -106,8 +106,11 @@ data/commulingo/link-reviews-snapshot.json.tmp
 # Persistent derived report render cache
 data/cache/
 
-# Raw fetched sources for the French translation drafts (PDF/HTML dumps, ~36MB)
-dev_docs/commulingo-french-translations-20260913/sources/
+# Batch work folders under dev_docs/ (sources, drafts, review JSON of a dated
+# data job) are work products like scripts/content/; dev_docs/ tracks only the
+# design and handoff notes at its top level. Older batches remain in git history.
+dev_docs/*/
+dev_docs/*.json
 data/commulingo/docs/.*.tmp
 # CommuLingo reference documents live in the DB (commulingo_docs, migration
 # 339); the server keeps a snapshot and a content-addressed body cache. The
