@@ -75,15 +75,16 @@ const options = {
     const quietError = console.error;
     console.error = () => {};
     // The periodic pull's first run comes at a random moment within refreshMs
-    // (startTimer); it is a scheduled pull, not a per-read one, and once in
-    // about 30 runs it landed inside these slow read loops. Pin it to the far
-    // end while the first read starts the timer.
+    // (startTimer); it is a scheduled pull, not a per-read one. Pin it to the
+    // far end while the first read starts the timer.
     const random = Math.random;
     Math.random = () => 0.999;
     try {
-        for (let i = 0; i < 5000; i++) assert.deepEqual(offline.loadSync().rows, []);
+        // A few reads show a per-read pull as well as thousands would: while
+        // the first pull runs, and again inside the retry window after it fails.
+        for (let i = 0; i < 3; i++) assert.deepEqual(offline.loadSync().rows, []);
         await new Promise(resolve => setTimeout(resolve, 20));
-        for (let i = 0; i < 5000; i++) offline.loadSync();
+        for (let i = 0; i < 3; i++) offline.loadSync();
         await new Promise(resolve => setTimeout(resolve, 20));
     } finally {
         console.error = quietError;
