@@ -74,6 +74,12 @@ const options = {
     });
     const quietError = console.error;
     console.error = () => {};
+    // The periodic pull's first run comes at a random moment within refreshMs
+    // (startTimer); it is a scheduled pull, not a per-read one, and once in
+    // about 30 runs it landed inside these slow read loops. Pin it to the far
+    // end while the first read starts the timer.
+    const random = Math.random;
+    Math.random = () => 0.999;
     try {
         for (let i = 0; i < 5000; i++) assert.deepEqual(offline.loadSync().rows, []);
         await new Promise(resolve => setTimeout(resolve, 20));
@@ -81,6 +87,7 @@ const options = {
         await new Promise(resolve => setTimeout(resolve, 20));
     } finally {
         console.error = quietError;
+        Math.random = random;
     }
     assert.equal(failedPulls, 1, 'a failed sync pull is not repeated per read');
     console.log('snapshot force, queued refresh, identity, outage, disk compatibility, periodic refresh, offline sync reads passed');
