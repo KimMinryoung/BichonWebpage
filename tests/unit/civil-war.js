@@ -3,6 +3,7 @@
 // played as history played it ends where history did, the save replays,
 // policy shortcuts cost what they should, and Perekop falls to the Sivash
 // crossing but not to the Wall alone.
+// @group game
 const assert = require('node:assert/strict');
 const D = require('../../public/js/war/scenarios/civil-war.js');
 const G = require('../../public/js/war/engine.js').create(D);

@@ -8,6 +8,8 @@
 //   scripts/test --all            everything
 //   scripts/test name …           only tests whose name contains a word
 //   scripts/test --list           what would run or be skipped, and why
+//   scripts/test --skip-group=game  leave out the tests tagged `// @group game`
+//                                 (scripts/deploy, when no game file changed)
 //
 // Each test declares what it needs (`// @requires …`, tests/lib/requirements.js);
 // a test whose needs this machine lacks is skipped with the reason, never failed.
@@ -17,7 +19,7 @@ const fs = require('node:fs');
 const os = require('node:os');
 const path = require('node:path');
 const { spawn } = require('node:child_process');
-const { declaredRequirements, unmet } = require('./lib/requirements');
+const { declaredRequirements, declaredGroups, unmet } = require('./lib/requirements');
 
 const ROOT = path.join(__dirname, '..');
 const TIMEOUT_MS = Number(process.env.TEST_TIMEOUT_S || 300) * 1000;
@@ -27,10 +29,11 @@ process.env.COMMULINGO_COURSES_SEED = '1';
 
 const args = process.argv.slice(2);
 if (args.includes('-h') || args.includes('--help')) {
-    process.stdout.write(fs.readFileSync(__filename, 'utf8').split('\n').slice(1, 15).map(line => line.replace(/^\/\/ ?/, '')).join('\n') + '\n');
+    process.stdout.write(fs.readFileSync(__filename, 'utf8').split('\n').slice(1, 17).map(line => line.replace(/^\/\/ ?/, '')).join('\n') + '\n');
     process.exit(0);
 }
 const filters = args.filter(arg => !arg.startsWith('-'));
+const skipGroups = args.filter(arg => arg.startsWith('--skip-group=')).map(arg => arg.slice('--skip-group='.length));
 const wants = dir => args.includes('--all') || args.includes('--' + dir) || filters.some(word => word.startsWith(dir + '/'));
 
 // `serial`: the database tests share one database and compare global counts
@@ -42,6 +45,7 @@ function testsIn(dir, implied = [], serial = false) {
         name: (dir === 'unit' ? '' : dir + '/') + file.slice(0, -3),
         command: [process.execPath, path.join(full, file)],
         requires: [...implied, ...declaredRequirements(path.join(full, file))],
+        groups: declaredGroups(path.join(full, file)),
         serial,
     }));
 }
@@ -57,7 +61,11 @@ const checks = [
 // Lint runs here only when eslint is installed locally (the docker fallback in
 // scripts/lint is too slow for every test run); `npm run lint` always works.
 if (fs.existsSync(path.join(ROOT, 'node_modules/.bin/eslint'))) {
-    checks.push({ name: 'lint', command: [path.join(ROOT, 'node_modules/.bin/eslint'), '.'], requires: [] });
+    // Cached by file content (a checkout changes mtimes): only changed files
+    // are linted again, ~4 s instead of ~16 s. scripts/test mounts the cache
+    // directory when the run is in docker.
+    const cache = path.join(process.env.TEST_CACHE_DIR || path.join(ROOT, 'node_modules/.cache'), 'eslint');
+    checks.push({ name: 'lint', command: [path.join(ROOT, 'node_modules/.bin/eslint'), '--cache', '--cache-strategy', 'content', '--cache-location', cache, '.'], requires: [] });
 }
 
 let tests = [
@@ -66,6 +74,10 @@ let tests = [
     ...(wants('db') ? testsIn('db', [], true) : []),
     ...checks,
 ];
+for (const test of tests) {
+    const group = (test.groups || []).find(name => skipGroups.includes(name));
+    if (group) test.skip = `--skip-group=${group}`;
+}
 if (filters.length) tests = tests.filter(test => filters.some(word => test.name.includes(word.replace(/\.js$/, ''))));
 
 function run(test) {
@@ -89,6 +101,7 @@ function run(test) {
 
 async function main() {
     for (const test of tests) {
+        if (test.skip) continue;
         for (const tag of test.requires) {
             try {
                 const reason = await unmet(tag);
@@ -131,7 +144,7 @@ async function main() {
             console.log(output.trimEnd().split('\n').slice(-20).map(line => '     ' + line).join('\n'));
         } else {
             passed++;
-            console.log('ok   ' + test.name);
+            console.log('ok   ' + test.name + (test.result.seconds >= 3 ? `  (${test.result.seconds.toFixed(1)} s)` : ''));
         }
     }
     console.log(`${passed} passed, ${skipped} skipped, ${failed} failed`);

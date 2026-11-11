@@ -16,6 +16,9 @@
 //   env:NAME       NAME is set; env:NAME=VALUE — set to exactly VALUE
 //   server:NAME=URL  the server at $NAME (default URL) answers within 3 s
 // An unknown tag fails the test: a typo must not quietly skip it.
+//
+// `// @group game` puts a test in a group that `scripts/test --skip-group=game`
+// leaves out (scripts/deploy does when no game file changed).
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -28,6 +31,15 @@ function declaredRequirements(file) {
         if (match) tags.push(...match[1].split(/\s+/));
     }
     return tags;
+}
+
+function declaredGroups(file) {
+    const groups = [];
+    for (const line of fs.readFileSync(file, 'utf8').split('\n', 40)) {
+        const match = line.match(/^\s*\/\/\s*@group\s+(.+?)\s*$/);
+        if (match) groups.push(...match[1].split(/\s+/));
+    }
+    return groups;
 }
 
 const NAMED = {
@@ -70,4 +82,4 @@ async function unmet(tag) {
     throw new Error('unknown @requires tag ' + tag);
 }
 
-module.exports = { declaredRequirements, unmet };
+module.exports = { declaredRequirements, declaredGroups, unmet };

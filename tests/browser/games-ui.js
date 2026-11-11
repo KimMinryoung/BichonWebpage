@@ -1,3 +1,4 @@
+// @group game
 const assert = require('node:assert/strict');
 const { launchChromium } = require('../lib/browser');
 const { createGameTestServer } = require('../lib/game-test-server');

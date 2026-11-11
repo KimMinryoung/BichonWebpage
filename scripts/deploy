@@ -119,10 +119,23 @@ flock -n 9 || { err "Another app/CSS deployment is running."; exit 1; }
 
 # Shared by the app, chat gateway and admin steps; defined before any early exit.
 TESTS_RAN=0
+# What the game tests (`// @group game`) load: their engines, views, styles,
+# play-log service and route policy, fixtures and the runner. When none of it
+# changed since the running revision, the game tests are skipped.
+GAME_PATHS='^(public/js/(war/|strike|games\.js)|public/css/(war|games|strike)\.css|views/public/(games|civil-war|strike|war/)|views/partials/games-|(routes|services)/war-|services/war-map|config/route-policy\.js|scripts/war-|tests/(unit/(strike|civil-war|war-)|browser/(games|strike)-|lib/|fixtures/(war-|civil-war)|run\.js)|package(-lock)?\.json)'
 run_tests_once() {
     (( TESTS_RAN )) && return 0
+    local since changed skip=()
+    since="$(docker inspect -f "{{ index .Config.Labels \"$REVISION_LABEL\" }}" "$CONTAINER_NAME" 2>/dev/null || true)"
+    # Against the working tree (uncommitted and untracked files count); an
+    # unknown revision runs everything.
+    if [[ -n "$since" ]] && changed="$(git diff --name-only "$since" 2>/dev/null && git ls-files --others --exclude-standard)" \
+        && ! grep -qE "$GAME_PATHS" <<< "$changed"; then
+        log "No game file changed since ${since:0:8}; skipping the game tests (// @group game)."
+        skip=(--skip-group=game)
+    fi
     log "Running npm test..."
-    if ! npm test --silent; then
+    if ! npm test --silent -- "${skip[@]}"; then
         err "npm test failed; not deploying."
         return 1
     fi

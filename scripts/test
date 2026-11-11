@@ -6,7 +6,8 @@
 # The app targets Node 24 (package.json engines, Dockerfile) and some deps are
 # ESM-only, which an older host node cannot require(). On an older node the
 # whole run moves into the pinned image the deploy builds from, with the repo
-# mounted read-only (tests never write into it). Without a usable docker (a
+# mounted read-only (tests never write into it) and a cache directory
+# beside it. Without a usable docker (a
 # cloud session) it stays on the host and says so.
 set -u
 cd "$(dirname "$0")/.."
@@ -35,8 +36,11 @@ if [[ "${NODE_MAJOR:-0}" -lt 24 && -z "${TEST_IN_DOCKER:-}" ]]; then
                 docker build -q -t "$IMAGE" --build-arg "PLAYWRIGHT_VERSION=$PW" - < tests/browser.Dockerfile >/dev/null || exit 1
             fi
         fi
-        exec docker run --rm -u "$(id -u):$(id -g)" -e TEST_IN_DOCKER=1 -e HOME=/tmp "$NETWORK" \
-            -v "$PWD:/app:ro" -w /app "$IMAGE" "$RUN_SHELL" scripts/test "$@"
+        # The one writable mount: caches that outlive the container (ESLint's).
+        CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/leninbot-frontend-test"
+        mkdir -p "$CACHE_DIR"
+        exec docker run --rm -u "$(id -u):$(id -g)" -e TEST_IN_DOCKER=1 -e HOME=/tmp -e TEST_CACHE_DIR=/cache "$NETWORK" \
+            -v "$PWD:/app:ro" -v "$CACHE_DIR:/cache" -w /app "$IMAGE" "$RUN_SHELL" scripts/test "$@"
     fi
     echo "[test] host node $(node -v 2>/dev/null || echo missing) < 24 and no usable docker; running on the host (the app targets Node 24)" >&2
 fi

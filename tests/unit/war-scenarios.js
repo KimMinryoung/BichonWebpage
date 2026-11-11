@@ -4,6 +4,7 @@
 // for everything (scripts/fixtures/war-mini.js) plays from its first
 // season through both its battles to the stars, saves and replays the
 // same, and turns its line and calls its reserve from other directions.
+// @group game
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');

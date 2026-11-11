@@ -2,6 +2,7 @@
 // Play logs of the war games (services/war-plays.js): a report is checked,
 // and its log replayed by the game's engine, so the stored turn, phase and
 // outcome are the rules' own; a forged log or a stranger's body is refused.
+// @group game
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const D = require('../../public/js/war/scenarios/civil-war.js');

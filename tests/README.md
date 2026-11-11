@@ -36,6 +36,14 @@ scripts/test --all --list         # 무엇이 돌고 무엇이 왜 건너뛰어�
 scripts/test name-boundaries war  # 이름에 낱말이 들어간 테스트만
 ```
 
+```bash
+scripts/test --skip-group=game    # `// @group game` 테스트를 뺀다
+```
+
+게임 테스트(`strike`, `civil-war`, `war-*`, 브라우저의 `games-ui`·`strike-ui`)는 머리에 `// @group game`을 단다. `scripts/deploy`는 실행 중인 리비전 이후(작업 트리·추적되지 않은 파일 포함) 게임 테스트가 읽는 파일(`GAME_PATHS`: 게임 엔진·뷰·CSS, `war-plays` 서비스·라우트, `config/route-policy.js`, `scripts/war-*`, `tests/lib/`, 게임 픽스처, 러너, package 파일)이 바뀌지 않았으면 `--skip-group=game`으로 돌리고 그렇다고 로그에 남긴다. 게임 테스트가 새 파일을 읽게 되면 `GAME_PATHS`에 더한다.
+
+lint는 파일 내용 기준 ESLint 캐시(`--cache-strategy content`)를 써서 바뀐 파일만 다시 검사한다(약 16초 → 4초). 캐시는 Docker 실행이면 `~/.cache/leninbot-frontend-test/`(컨테이너의 `/cache`, `TEST_CACHE_DIR`), 호스트 실행이면 `node_modules/.cache/`에 있다.
+
 테스트는 CPU 수만큼 병렬로 돈다. `tests/db`는 한 DB를 함께 쓰고 전역 개수(제안·리비전)를 비교하므로 그 옆에서 하나씩 차례로 돈다. 한 테스트가 `TEST_TIMEOUT_S`(기본 300초)를 넘기면 실패로 끊는다.
 
 ## 환경에 따른 자동 제외

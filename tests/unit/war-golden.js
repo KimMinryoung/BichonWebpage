@@ -8,6 +8,7 @@
 //   node scripts/test-war-golden.js           replay and compare
 //   node scripts/test-war-golden.js --write   record anew (only when a rule
 //                                              change is meant; say so in the commit)
+// @group game
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const fs = require('node:fs');

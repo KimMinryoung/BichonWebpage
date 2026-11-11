@@ -1,4 +1,5 @@
 // Browser smoke test against the real game routes/templates, without DB/Redis.
+// @group game
 const assert = require('node:assert/strict');
 const { launchChromium } = require('../lib/browser');
 const { createGameTestServer } = require('../lib/game-test-server');
