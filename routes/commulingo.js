@@ -15,6 +15,8 @@ const router = express.Router();
 // a DB operation and should not need a deploy to keep the old URL alive. The
 // lookup happens on the not-found path only: a live id never pays for it.
 
+const { PAGE_FEATURES } = require('../config/commulingo-page-css');
+
 // Expose the flag and role-icon renderers to every CommuLingo template (and
 // their partials — the dictionary switcher nav and the crumb bar need
 // roleIconSvg and dictTabs everywhere).
@@ -24,13 +26,21 @@ router.use((req, res, next) => {
     res.locals.roleIconSvg = roleIconSvg;
     res.locals.dictTabs = dictTabs;
     res.locals.learnTabs = learnTabs;
-    // Lists share a smaller sheet; detail, map and training pages retain all rules.
+    // Home and lists have their own small sheets. Every other page gets the
+    // shared core sheet plus the feature sheets of the view it renders
+    // (all derived from commulingo.css by scripts/build-commulingo-list-css.js).
     const homePage = /^\/(?:learn\/?)?$/.test(req.path);
     const listPage = /^\/(?:people|events|terms)?\/?$/.test(req.path) || /^\/people\/list\/[^/]+\/?$/.test(req.path);
-    res.locals.extraCss = [
-        `/css/commulingo-crumb.css?v=${res.locals.assetVersion}`,
-        `/css/${homePage ? 'commulingo-home' : listPage ? 'commulingo-lists' : 'commulingo'}.css?v=${res.locals.assetVersion}`,
-    ];
+    const sheet = name => `/css/commulingo-${name}.css?v=${res.locals.assetVersion}`;
+    res.locals.extraCss = [sheet('crumb'), sheet(homePage ? 'home' : listPage ? 'lists' : 'core')];
+    if (!homePage && !listPage) {
+        const render = res.render.bind(res);
+        res.render = (view, ...rest) => {
+            const features = PAGE_FEATURES[view];
+            if (features) res.locals.extraCss = [...res.locals.extraCss, ...features.map(sheet)];
+            return render(view, ...rest);
+        };
+    }
     next();
 });
 

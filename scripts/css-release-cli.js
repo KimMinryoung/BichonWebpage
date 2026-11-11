@@ -12,7 +12,7 @@ function prepare(app, source) {
     if (git('status', '--porcelain', '--untracked-files=no')) throw Error('Commit source changes before publishing CSS');
     const scratch = fs.mkdtempSync(path.join(os.tmpdir(), 'frontend-css-'));
     try {
-        const archive = execFileSync('git', ['archive', source, 'public', 'scripts/build-site-css.js', 'scripts/build-commulingo-list-css.js'], { cwd: repo, maxBuffer: 100 * 1024 * 1024 });
+        const archive = execFileSync('git', ['archive', source, 'public', 'scripts/build-site-css.js', 'scripts/build-commulingo-list-css.js', 'scripts/commulingo-css-features.json'], { cwd: repo, maxBuffer: 100 * 1024 * 1024 });
         execFileSync('tar', ['-x', '-C', scratch], { input: archive });
         fs.symlinkSync(path.join(repo, 'node_modules'), path.join(scratch, 'node_modules'));
         for (const script of ['build-site-css.js', 'build-commulingo-list-css.js']) {
