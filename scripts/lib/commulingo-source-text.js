@@ -57,7 +57,8 @@ function stripTags(html) {
 function normalizeSiteDoc(html) {
     const stripped = String(html || '')
         .replace(/<!--[\s\S]*?-->/g, '')
-        .replace(/<a class="note-ref"[^>]*>[\s\S]*?<\/a>/g, '');
+        // The served body carries role="doc-noteref" before the class (doc-outline.js labelNotes).
+        .replace(/<a\b[^>]*\bclass="[^"]*\bnote-ref\b[^"]*"[^>]*>[\s\S]*?<\/a>/g, '');
     return collapse(foldQuotes(decodeEntities(stripTags(stripped))));
 }
 
