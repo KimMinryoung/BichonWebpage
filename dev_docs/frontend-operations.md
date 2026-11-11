@@ -66,7 +66,7 @@ docker network connect leninbot_default leninbot-frontend  # 빠졌으면
 - 콘텐츠 규칙은 scripts/lib/commulingo-checks.js에 있다. 코스 구조나 문항을 바꿀 때는 관련 smoke 또는 validator 하나를 실행한다. 단순 공개 여부나 메타데이터 변경에는 해당 공개 결과를 확인하는 표적 검사만 쓴다. `--prune-baseline`은 기존 위반을 실제로 고쳤을 때만, `--no-baseline`은 전체 품질 감사 때만 실행한다.
 - 학습 강좌는 데이터 문서 `course/<id>`다(2026-11-01부터). 수정·추가·공개(`publicChapterLimit`)는 `data_document_put`(또는 `scripts/commulingo-data put`) 한 번이고 커밋·배포·캐시 퍼지가 필요 없다. 쓰기 검사와 절차는 [데이터 운영 스킬](../.claude/skills/commulingo-data-ops/SKILL.md#lessons-and-courses), 설계는 [git 분리 4단계](commulingo-data-off-git.md#4단계-학습-강좌-2026-11-01).
 - 인물·용어·사건·링크 승인과 DB 등록부는 DB가 원본이라 수정에 커밋이 필요 없다. 아래 작업물 보관만 한다.
-- DB 스크립트는 scripts/lib/bootstrap으로 저장소 루트 환경을 로드한다. scripts/one-off/는 반복 실행용 도구가 아니다.
+- DB 스크립트는 scripts/lib/bootstrap으로 저장소 루트 환경을 로드한다. 끝난 일회성 스크립트는 저장소에 두지 않는다(기록은 git 이력과 작업 폴더 README).
 - 인물 필드 설계는 [인물 인수인계](commulingo_people_handoff.md), 변경 순서와 완료 상태는 [인물 편집 체크리스트](commulingo-people-editing-plan.md)를 참고한다.
 
 ### CommuLingo 작업물 R2 보관
