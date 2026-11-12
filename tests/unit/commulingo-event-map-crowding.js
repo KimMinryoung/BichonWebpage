@@ -45,3 +45,23 @@ for (const [, num, x2, y2] of leaders) {
     assert(crowdSvg.includes(`<g class="emap-badge" data-geo-num="${num}"><circle cx="${x2}" cy="${y2}"`), `leader ${num} ends on its badge`);
 }
 console.log('Displaced map badges draw a leader line to their marker.');
+
+// The scene-card map (book-page lessonStoryMap) draws no timeline numbers, so
+// timeline places join the event markers as plain places, except near one.
+{
+    const { storyMapPlaces } = require('../../data/commulingo/event-map-svg');
+    const event = {
+        locations: [{ lat: 47.497, lng: 19.05, kind: 'main', label: { ko: '페슈트와 부더', en: 'Pest and Buda' } }],
+        timeline: [
+            { geo: { kind: 'point', lat: 47.53, lng: 19.402, label: { ko: '이서세그', en: 'Isaszeg' } } },
+            { geo: { kind: 'point', lat: 47.496, lng: 19.034, label: { ko: '부더 성', en: 'Buda Castle' } } },
+            { geo: { kind: 'point', lat: 47.53, lng: 19.402, label: { ko: '이서세그', en: 'Isaszeg' } } },
+            { title: { ko: '장소 없음', en: 'No place' } },
+        ],
+    };
+    const places = storyMapPlaces(event);
+    assert.deepEqual(places.map(p => p.label.en), ['Pest and Buda', 'Isaszeg'], 'timeline places join, near and repeated ones do not');
+    const map = renderEventMapSvg(places, 'ko', 'test', []);
+    assert(map.svg.includes('이서세그'), 'the joined place is labelled on the map');
+    console.log('The scene map adds timeline places as plain markers.');
+}

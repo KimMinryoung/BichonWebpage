@@ -2,7 +2,7 @@ const { loadCommuLingoLesson, loadCommuLingoCatalog } = require('./shards');
 const { localize } = require('./localize');
 const { getLinkIndexes, createLinker, clientPersonLinkPayload, standardizedFor } = require('./linkify');
 const { roleIconSvg } = require('./role-icons');
-const { renderEventMapSvg } = require('./event-map-svg');
+const { renderEventMapSvg, storyMapPlaces } = require('./event-map-svg');
 
 // Book and lesson page data: the memoized per-book payload (decision-history
 // links, linked chapter prose, dictionary chips) and the lesson linkifier.
@@ -289,7 +289,7 @@ async function lessonStoryMap(lessonId, lang) {
     if (hit && hit.key[0] === story && hit.key[1] === control && hit.key[2] === events) return hit.value;
     const event = events.find(item => item.id === eventId);
     if (!event) return null;
-    const map = renderEventMapSvg(event.locations, lang, localize(event.title, lang), [], control);
+    const map = renderEventMapSvg(storyMapPlaces(event), lang, localize(event.title, lang), [], control);
     if (!map) return null;
     let phase = 0;
     const cardPhases = story.cards.map(card => {

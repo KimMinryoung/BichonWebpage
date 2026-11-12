@@ -379,6 +379,10 @@ function checkStoryCards(out, value, label) {
       if (Boolean(card && card.tiltNote) !== Boolean(other.tiltNote)) out.add('shape', label, sLabel + '.cards[' + index + '] tiltNote in one language only');
       if (JSON.stringify(card && card.mapDate) !== JSON.stringify(other.mapDate)) out.add('shape', label, sLabel + '.cards[' + index + '] mapDate differs between ko and en');
       if (storyMarkers(card).join(' ') !== storyMarkers(other).join(' ')) out.add('shape', label, sLabel + '.cards[' + index + '] side markers ({{flag:…}}, {{pos:…}}) differ between ko and en');
+      // One marker per force per card, on its first ambiguous mention: icons
+      // on every name broke the reading (owner, 2026-11-12).
+      const markers = storyMarkers(card);
+      if (markers.some(function(marker, m) { return marker === markers[m - 1]; })) out.add('shape', label, sLabel + '.cards[' + index + '] repeats a side marker; mark each force once per card');
     });
   }
 }

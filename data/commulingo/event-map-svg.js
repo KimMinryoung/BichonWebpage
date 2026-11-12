@@ -653,6 +653,22 @@ function renderLegend(rows, frame) {
 // whole numbered campaign is drawn here too, so the map at the top of the
 // page shows the full picture at rest; the frame widens to fit it.
 // control: the event's territorial-control phases (event-control.js), or null.
+// The scene map draws no timeline numbers, so the timeline's places (the
+// battles a card names: Isaszeg, Custoza, Novara) join the event's own
+// markers as plain places, unless one already stands within ~10 km.
+const STORY_PLACE_GAP = 0.1; // degrees
+function storyMapPlaces(event) {
+    const places = (Array.isArray(event.locations) ? event.locations : []).slice();
+    const near = (a, b) => Math.abs(a.lat - b.lat) < STORY_PLACE_GAP && Math.abs(a.lng - b.lng) < STORY_PLACE_GAP;
+    for (const row of Array.isArray(event.timeline) ? event.timeline : []) {
+        const geo = row && row.geo;
+        if (!geo || geo.kind !== 'point' || !Number.isFinite(geo.lat) || !Number.isFinite(geo.lng) || !geo.label) continue;
+        if (places.some(place => place.kind !== 'geo' && near(place, geo))) continue;
+        places.push({ lat: geo.lat, lng: geo.lng, kind: 'place', label: geo.label });
+    }
+    return places;
+}
+
 function renderEventMapSvg(locations, lang, title, timeline, control) {
     const entries = (Array.isArray(locations) ? locations : []).filter(loc =>
         loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)
@@ -882,4 +898,4 @@ function renderRegionMapSvg(box, control, label) {
     return { svg: parts.join('\n'), width: frame.width, height: frame.height, project: (lat, lng) => project(lng, lat) };
 }
 
-module.exports = { renderEventMapSvg, renderRegionMapSvg, timelineGeos, numberedGeos, isCityScale, validGeo };
+module.exports = { renderEventMapSvg, renderRegionMapSvg, timelineGeos, numberedGeos, isCityScale, validGeo, storyMapPlaces };

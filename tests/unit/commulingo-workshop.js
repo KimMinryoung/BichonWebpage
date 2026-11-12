@@ -70,6 +70,7 @@ assert.match(broken((q, course) => { const s = story(); s.ko.cards[1].mapDate = 
 assert.match(broken((q, course) => { const s = story(); s.ko.cards[1].mapDate = s.en.cards[1].mapDate = [1848, 13]; course.chapters[0].storyCards = s; }), /mapDate must be/);
 assert.equal(broken((q, course) => { const s = story(); s.ko.cards[1].lines[0] = '{{flag:prussia}}' + s.ko.cards[1].lines[0]; s.en.cards[1].lines[0] = '{{flag:prussia}}' + s.en.cards[1].lines[0]; course.chapters[0].storyCards = s; }), '', 'matching side markers pass');
 assert.match(broken((q, course) => { const s = story(); s.ko.cards[1].lines[0] = '{{flag:prussia}}' + s.ko.cards[1].lines[0]; course.chapters[0].storyCards = s; }), /side markers/);
+assert.match(broken((q, course) => { const s = story(); for (const l of ['ko', 'en']) s[l].cards[1].lines[0] = '{{flag:prussia}}a {{flag:prussia}}' + s[l].cards[1].lines[0]; course.chapters[0].storyCards = s; }), /repeats a side marker/);
 assert.equal(broken((q, course) => { const s = story(); s.ko.cards[0].cast[0].position = 'monarchist'; s.en.cards[0].cast[0].position = 'monarchist'; course.chapters[0].storyCards = s; }), '', 'a cast position passes');
 assert.match(broken((q, course) => { const s = story(); s.ko.cards[0].cast[0].position = 'monarchist'; course.chapters[0].storyCards = s; }), /cast positions differ/);
 assert.match(broken((q, course) => { const s = story(); s.ko.cards[3].lines = ['혁명이 끝났다 — 완전히.']; course.chapters[0].storyCards = s; }), /em dash/);
