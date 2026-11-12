@@ -20,7 +20,7 @@
 검색 유입은 인물·용어·사건 상세 페이지에 몰린다. 상세 하단 「문제로 익히기」가 학습으로 들어가는 입구다(`views/partials/commulingo-practice-links.ejs`).
 
 1. 강좌 장면: 인물에 지정된 결정의 순간 장면(`person.scenes`).
-2. 강좌 장: 그 항목이 나오는 장의 첫 레슨으로 바로 들어간다(`/commulingo/book/<book>#lesson=<id>`). `book-page.js`의 `courseChaptersFor`가 강좌 편에 손으로 적은 `eventIds`·`personIds`·`termIds`에 그 항목이 있는 편만 보인다(카탈로그 순서, 최대 6개). 2026-11-12까지는 장 본문을 학습 링크 규칙으로 훑어 언급 횟수로 역색인했으나(시작 시 데움, 약 6초/언어), 제목이 본문에 그대로 나오지 않으면 빠지고 계산 비용만 든다는 소유자 판단으로 없앴다. 적지 않은 편은 연결되지 않는다.
+2. 강좌 장: 그 항목이 나오는 장의 첫 레슨으로 바로 들어간다(`/commulingo/book/<book>#lesson=<id>`). `book-page.js`의 `courseChaptersFor`가 강좌 편에 손으로 적은 `eventIds`·`personIds`·`termIds`에 그 항목이 있는 편만 보인다(카탈로그 순서, 개수 제한 없음). 2026-11-12까지는 장 본문을 학습 링크 규칙으로 훑어 언급 횟수로 역색인했으나(시작 시 데움, 약 6초/언어), 제목이 본문에 그대로 나오지 않으면 빠지고 계산 비용만 든다는 소유자 판단으로 없앴다. 적지 않은 편은 연결되지 않는다.
 3. 드릴 덱: 그 항목이 문항으로 든 덱(`drillDecksForHrefs`).
 
 참고 문헌 페이지는 상단 관련 항목 줄의 「학습」이 그 문헌을 `sourceUrl`로 삼은 강좌 장으로 연결한다(`courseChaptersForDoc`).

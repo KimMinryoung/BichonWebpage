@@ -182,7 +182,7 @@ const CHAPTER_ENTRY_FIELDS = { events: 'eventIds', people: 'personIds', terms: '
 // keys are `${kind}:${id}` with kind 'people' | 'terms' | 'events' (a paired
 // term/event page passes both). Catalog order: course by course, chapter by
 // chapter.
-async function courseChaptersFor(keys, lang, limit = 6) {
+async function courseChaptersFor(keys, lang) {
     const wanted = new Set(keys);
     const out = [];
     const seen = new Set();
@@ -204,7 +204,7 @@ async function courseChaptersFor(keys, lang, limit = 6) {
             });
         }
     }
-    return out.slice(0, limit);
+    return out;
 }
 
 // Course chapters built on a reference document: those whose sourceUrl is the
