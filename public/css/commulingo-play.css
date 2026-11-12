@@ -490,7 +490,7 @@
 }
 
 .commu-story-map-source {
-    display: block;
+    display: flex;
     width: 100%;
     margin-top: 8px;
     font-size: var(--text-meta);
