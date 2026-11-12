@@ -32,6 +32,7 @@
         quiz: document.getElementById('commuQuiz'),
         status: document.getElementById('commuSyncStatus'),
         total: document.getElementById('commuProgressText'),
+        totalBar: document.getElementById('commuProgressBar'),
         back: document.getElementById('commuBackBtn'),
         count: document.getElementById('commuQuestionCount'),
         meter: document.getElementById('commuMeterFill'),
@@ -477,7 +478,9 @@
         var completeCount = playable.filter(function(lesson) {
             return progress[lesson.id] && progress[lesson.id].completed;
         }).length;
-        els.total.textContent = Math.round((completeCount / (playable.length || 1)) * 100) + '%';
+        var percent = Math.round((completeCount / (playable.length || 1)) * 100);
+        els.total.textContent = percent + '%';
+        if (els.totalBar) els.totalBar.value = percent;
         els.list.innerHTML = '';
 
         groupLessons().forEach(function(group) {

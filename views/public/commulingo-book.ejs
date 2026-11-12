@@ -52,15 +52,20 @@
         <% var commulingoClientBook = Object.assign({}, lessons.collections[0]); delete commulingoClientBook.factionGuide; %>
         <script id="commulingo-data" type="application/json"><%- JSON.stringify({ version: lessons.version, collections: [commulingoClientBook] }).replace(/</g, '\\u003c') %></script>
 
+        <%# Title and the course progress share the top line, in the same slim
+            bar as /commulingo/learn; the description runs the full width below. %>
         <header class="box commulingo-hero commulingo-hero--book">
-            <div>
+            <div class="commulingo-hero-main">
                 <h1><%= bookTitle %></h1>
-                <p><%= bookDescription %></p>
+                <div class="commulingo-home-progress">
+                    <div class="commulingo-home-progress-label">
+                        <label for="commuProgressBar"><%= strings.commuLingo.progress %></label>
+                        <span id="commuProgressText">0%</span>
+                    </div>
+                    <progress id="commuProgressBar" max="100" value="0">0%</progress>
+                </div>
             </div>
-            <div class="commulingo-total">
-                <span id="commuProgressText">0%</span>
-                <small><%= strings.commuLingo.progress %></small>
-            </div>
+            <p class="commulingo-book-description"><%= bookDescription %></p>
         </header>
         <% if (typeof bookGenealogy !== 'undefined' && bookGenealogy) { %>
         <a class="box commulingo-genealogy-row" href="<%= bookGenealogy.href %>"><span><%= strings.commuLingoViews.doc.genealogy %></span><strong><%= bookGenealogy.title %></strong></a>

@@ -254,6 +254,7 @@
 .commulingo-hero-main > div:first-child {
         min-width: 0;
     }
+
     .commulingo-books {
         grid-template-columns: 1fr;
     }

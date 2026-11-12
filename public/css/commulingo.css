@@ -89,7 +89,21 @@
 /* The book description is reading prose: justified like the site's other long
    text (design-system.md), word-break: normal so Korean breaks between
    characters and the stretched gaps stay tight. */
-.commulingo-hero--book > div > p {
+.commulingo-hero--book {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+}
+
+.commulingo-hero--book .commulingo-hero-main {
+    align-items: flex-start;
+}
+
+.commulingo-hero--book .commulingo-home-progress {
+    margin-top: 4px;
+}
+
+.commulingo-book-description {
     line-height: var(--leading-prose);
     margin-top: 6px;
     text-align: justify;
@@ -144,30 +158,6 @@
     border-top: var(--border-width) solid var(--border);
 }
 
-.commulingo-total {
-    flex: 0 0 auto;
-    width: 78px;
-    height: 78px;
-    border: 1px solid var(--border);
-    background: var(--bg-surface);
-    display: grid;
-    align-content: center;
-    justify-items: center;
-    row-gap: 2px;
-    text-align: center;
-}
-
-.commulingo-total span {
-    display: block;
-    color: var(--link);
-    font-size: var(--text-lg);
-    font-weight: var(--weight-emphasis);
-}
-
-.commulingo-total small {
-    color: var(--text-muted);
-    font-size: var(--text-xs);
-}
 
 .commulingo-status {
     border: 1px solid var(--border);
@@ -1686,9 +1676,14 @@
         gap: 12px;
     }
 
-    .commulingo-hero--home {
+    .commulingo-hero--home,
+    .commulingo-hero--book {
         align-items: stretch;
         flex-direction: column;
+    }
+
+    .commulingo-hero--book {
+        gap: 0;
     }
 
     .commulingo-hero > div:first-child,
@@ -1696,33 +1691,6 @@
         min-width: 0;
     }
 
-    .commulingo-total {
-        background: transparent;
-        border: 0;
-        height: auto;
-        min-height: 0;
-        padding: 0;
-        width: auto;
-    }
-
-    /* A side column for the progress would take its width from every line of
-       the description; on a phone it sits on the title line instead. */
-    .commulingo-hero--book {
-        position: relative;
-    }
-
-    .commulingo-hero--book > .commulingo-total {
-        position: absolute;
-        top: 12px;
-        right: 18px;
-        display: flex;
-        align-items: baseline;
-        gap: 4px;
-    }
-
-    .commulingo-hero--book h1 {
-        padding-right: 76px;
-    }
     .commu-volume-grid,
     .commu-choices,
     .commu-drill-grid,
