@@ -489,10 +489,12 @@
     margin: 6px 0 0;
 }
 
-.commu-story-map-note {
-    color: var(--text-secondary);
+.commu-story-map-source {
+    display: block;
+    width: 100%;
+    margin-top: 8px;
     font-size: var(--text-meta);
-    margin: 6px 0 0;
+    text-align: center;
 }
 
 .commu-story-card {

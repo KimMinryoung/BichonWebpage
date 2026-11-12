@@ -1059,9 +1059,11 @@
                 + '<ul class="commu-event-control-legend">' + (control.sides || []).map(function(side) {
                     return '<li><i class="is-' + escapeHtml(side.tone) + (side.overlay ? ' is-hatch' : '') + '" aria-hidden="true"></i>' + escapeHtml(side.label) + '</li>';
                 }).join('') + '</ul>'
-                + '<p class="commu-story-map-note">' + escapeHtml(control.note || '')
-                + ' <a href="/commulingo/events/' + encodeURIComponent(map.eventId) + (en ? '?lang=en' : '') + '" target="_blank" rel="noopener">'
-                + escapeHtml(en ? 'Sources and the full map' : '출처와 전체 지도') + '</a></p>';
+                // The borders note (sources, approximations) stays on the
+                // event page: a paragraph above the first scene put learners
+                // off (owner, 2026-11-12).
+                + '<a class="btn btn-secondary commu-story-map-source" href="/commulingo/events/' + encodeURIComponent(map.eventId) + (en ? '?lang=en' : '') + '" target="_blank" rel="noopener">'
+                + escapeHtml(en ? 'Sources and the full map' : '출처와 전체 지도') + '</a>';
             slot.setAttribute('data-for', active.lesson.id);
         }
         var index = map.cardPhases[active.story.pos] || 0;
