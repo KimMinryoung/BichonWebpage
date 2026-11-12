@@ -61,6 +61,7 @@ console.log('Displaced map badges draw a leader line to their marker.');
     };
     const places = storyMapPlaces(event);
     assert.deepEqual(places.map(p => p.label.en), ['Pest and Buda', 'Isaszeg'], 'timeline places join, near and repeated ones do not');
+    assert.deepEqual(storyMapPlaces(event, label => label.en !== 'Isaszeg').map(p => p.label.en), ['Pest and Buda'], 'a place no card names stays off');
     const map = renderEventMapSvg(places, 'ko', 'test', []);
     assert(map.svg.includes('이서세그'), 'the joined place is labelled on the map');
     console.log('The scene map adds timeline places as plain markers.');

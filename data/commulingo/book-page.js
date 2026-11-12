@@ -290,15 +290,17 @@ async function lessonStoryMap(lessonId, lang) {
     if (hit && hit.key[0] === story && hit.key[1] === control && hit.key[2] === events) return hit.value;
     const event = events.find(item => item.id === eventId);
     if (!event) return null;
-    const places = storyMapPlaces(event);
+    const cardText = card => stripStoryMarkers([card && card.title]
+        .concat(card && card.lines || [], (card && card.cast || []).map(member => member && member.text), card && card.tiltNote || [])
+        .join('\n'));
+    const storyText = story.cards.map(cardText).join('\n');
+    const places = storyMapPlaces(event, label => placesNamed(storyText, [localize(label, lang)], lang).length > 0);
     const map = renderEventMapSvg(places, lang, localize(event.title, lang), [], control);
     if (!map) return null;
     // The places each card names, marked in red while it shows (in place of
     // the event's one fixed main marker).
     const labels = places.filter(place => place.kind !== 'geo').map(place => localize(place.label, lang)).filter(Boolean);
-    const cardPlaces = story.cards.map(card => placesNamed(stripStoryMarkers([card && card.title]
-        .concat(card && card.lines || [], (card && card.cast || []).map(member => member && member.text), card && card.tiltNote || [])
-        .join('\n')), labels, lang));
+    const cardPlaces = story.cards.map(card => placesNamed(cardText(card), labels, lang));
     let phase = 0;
     const cardPhases = story.cards.map(card => {
         if (card && Array.isArray(card.mapDate)) phase = phaseIndexForPoint(control.phases, card.mapDate);
