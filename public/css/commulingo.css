@@ -748,7 +748,9 @@
     height: 16px;
     justify-content: center;
     margin-right: 4px;
-    vertical-align: -3px;
+    /* An empty inline-flex box sits on the baseline by its bottom edge,
+       which already centres a 16px box on the text; any offset drops it. */
+    vertical-align: baseline;
     width: 16px;
 }
 
