@@ -669,9 +669,9 @@ function storyMapPlaces(event) {
     return places;
 }
 
-// Which of the scene map's places a card names: a label, or a part of one
-// split at 「와」, 「·」, 「,」 or "and" (「페슈트와 부더」 → 페슈트, 부더), found as
-// a whole word. Korean names may take a particle but must not run on into a
+// Which of the scene map's places a card names: a label, a part of one split
+// at 「와」, 「·」, 「,」 or "and" (「페슈트와 부더」 → 페슈트, 부더), or its first
+// word, found as a whole word. Korean names may take a particle but must not run on into a
 // longer name (「빈」 in 빈에서, not in 빈디슈그레츠).
 const KO_PARTICLE = '의에은는이가을를과와도로으만까부';
 function placesNamed(text, labels, lang) {
@@ -691,6 +691,10 @@ function placesNamed(text, labels, lang) {
     return labels.filter(label => {
         const parts = String(label || '').split(lang === 'en' ? /\s*(?:,|\band\b|·)\s*/ : /\s*(?:와\s|·|,)\s*/)
             .map(part => part.trim()).filter(part => part.length >= (lang === 'en' ? 3 : 1));
+        // A site in a city also answers to the city: 「프랑크푸르트 파울 교회」,
+        // 「런던 케닝턴」, 「부더 성」.
+        const city = String(label || '').trim().split(/\s+/);
+        if (city.length > 1 && city[0].length >= (lang === 'en' ? 4 : 2)) parts.push(city[0]);
         return parts.some(found);
     });
 }

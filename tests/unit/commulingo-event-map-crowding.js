@@ -73,6 +73,7 @@ console.log('Displaced map badges draw a leader line to their marker.');
     assert.deepEqual(placesNamed('10월 6일 빈의 시민들이 봉기했고 빈디슈그레츠가 페슈트에 들어왔습니다.', ko, 'ko'), ['빈', '페슈트와 부더']);
     assert.deepEqual(placesNamed('빈디슈그레츠가 이서세그에서 졌습니다.', ko, 'ko'), ['이서세그']);
     assert.deepEqual(placesNamed('킬에서 임시정부가 섰습니다.', ko, 'ko'), ['킬']);
+    assert.deepEqual(placesNamed('프랑크푸르트 봉기가 진압되었습니다.', ['프랑크푸르트 파울 교회'], 'ko'), ['프랑크푸르트 파울 교회']);
     assert.deepEqual(placesNamed('Windischgrätz entered Pest; Vienna rose.', ['Vienna', 'Pest and Buda', 'Kiel'], 'en'), ['Vienna', 'Pest and Buda']);
     const map = renderEventMapSvg([{ lat: 48.2, lng: 16.37, kind: 'place', label: { ko: '빈', en: 'Vienna' } }], 'ko', 't', []);
     assert(map.svg.includes('data-place="빈"'), 'markers carry their label for the scene map');
