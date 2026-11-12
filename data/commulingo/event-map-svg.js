@@ -658,8 +658,12 @@ function renderLegend(rows, frame) {
 // markers as plain places, unless one already stands within ~10 km. The rest
 // stay off: all of them crowded Baden until labels sat by the wrong dots.
 const STORY_PLACE_GAP = 0.1; // degrees
+// The event's own place markers obey the same rule (the main one stays): an
+// unnamed far place (Saint-Domingue on the French Revolution map) would stretch
+// the frame of every chapter that never goes there.
 function storyMapPlaces(event, named) {
-    const places = (Array.isArray(event.locations) ? event.locations : []).slice();
+    const places = (Array.isArray(event.locations) ? event.locations : [])
+        .filter(place => !named || !place || place.kind === 'main' || place.kind === 'geo' || named(place.label));
     const near = (a, b) => Math.abs(a.lat - b.lat) < STORY_PLACE_GAP && Math.abs(a.lng - b.lng) < STORY_PLACE_GAP;
     for (const row of Array.isArray(event.timeline) ? event.timeline : []) {
         const geo = row && row.geo;
@@ -691,8 +695,9 @@ function placesNamed(text, labels, lang) {
         return false;
     };
     return labels.filter(label => {
-        const parts = String(label || '').split(lang === 'en' ? /\s*(?:,|\band\b|·)\s*/ : /\s*(?:와\s|·|,)\s*/)
+        const parts = String(label || '').split(lang === 'en' ? /\s*(?:,|\band\b|·|:)\s*/ : /\s*(?:와\s|·|,|:)\s*/)
             .map(part => part.trim()).filter(part => part.length >= (lang === 'en' ? 3 : 1));
+        // 「지역: 도시」 answers to either part (「생도맹그: 카프프랑세」).
         // A site in a city also answers to the city: 「프랑크푸르트 파울 교회」,
         // 「런던 케닝턴」, 「부더 성」.
         const city = String(label || '').trim().split(/\s+/);

@@ -49,7 +49,7 @@ console.log('Displaced map badges draw a leader line to their marker.');
 // The scene-card map (book-page lessonStoryMap) draws no timeline numbers, so
 // timeline places join the event markers as plain places, except near one.
 {
-    const { storyMapPlaces } = require('../../data/commulingo/event-map-svg');
+    const { storyMapPlaces, placesNamed } = require('../../data/commulingo/event-map-svg');
     const event = {
         locations: [{ lat: 47.497, lng: 19.05, kind: 'main', label: { ko: '페슈트와 부더', en: 'Pest and Buda' } }],
         timeline: [
@@ -62,6 +62,9 @@ console.log('Displaced map badges draw a leader line to their marker.');
     const places = storyMapPlaces(event);
     assert.deepEqual(places.map(p => p.label.en), ['Pest and Buda', 'Isaszeg'], 'timeline places join, near and repeated ones do not');
     assert.deepEqual(storyMapPlaces(event, label => label.en !== 'Isaszeg').map(p => p.label.en), ['Pest and Buda'], 'a place no card names stays off');
+    const far = { locations: [event.locations[0], { lat: 19.76, lng: -72.2, kind: 'place', label: { ko: '생도맹그: 카프프랑세', en: 'Saint-Domingue: Cap-Français' } }], timeline: [] };
+    assert.deepEqual(storyMapPlaces(far, () => false).map(p => p.label.en), ['Pest and Buda'], 'an event place no card names stays off, the main one stays');
+    assert.deepEqual(placesNamed('생도맹그의 노예들이 봉기했습니다.', ['생도맹그: 카프프랑세'], 'ko'), ['생도맹그: 카프프랑세'], 'a region: city label answers to the region');
     const map = renderEventMapSvg(places, 'ko', 'test', []);
     assert(map.svg.includes('이서세그'), 'the joined place is labelled on the map');
     console.log('The scene map adds timeline places as plain markers.');
