@@ -315,6 +315,7 @@ function checkStoryCards(out, value, label) {
   if (typeof value === 'undefined') return;
   const sLabel = label + '.storyCards';
   if (!value || typeof value !== 'object') { out.add('shape', label, sLabel + ' must be an object'); return; }
+  if (typeof value.noMap !== 'undefined' && value.noMap !== true) out.add('shape', label, sLabel + '.noMap must be true when present');
   ['ko', 'en'].forEach(function(locale) {
     const data = value[locale];
     const dLabel = sLabel + '.' + locale;

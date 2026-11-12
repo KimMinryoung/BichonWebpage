@@ -279,7 +279,7 @@ async function lessonStoryMap(lessonId, lang) {
     const lesson = payload && payload.lesson;
     const story = lesson && lesson.storyCards && lesson.storyCards[lang];
     const eventId = lesson && Array.isArray(lesson.eventIds) ? lesson.eventIds[0] : null;
-    if (!story || !Array.isArray(story.cards) || !eventId) return null;
+    if (!story || !Array.isArray(story.cards) || !eventId || lesson.storyCards.noMap === true) return null;
     const { loadEventControl, phaseIndexForPoint, presentEventControl } = require('./event-control');
     const control = loadEventControl(eventId);
     if (!control) return null;

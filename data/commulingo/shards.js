@@ -64,6 +64,9 @@ function publicLessonPayload(collection, chapter, lesson) {
 // positive costs one 404.
 function hasStoryMap(chapter) {
     const story = chapter.storyCards;
+    // noMap: scenes that never leave one city (the Brumaire course) gain
+    // nothing from the event map, so the cards show without it.
+    if (story && story.noMap === true) return false;
     const hasCards = Boolean(story) && ['ko', 'en'].some(lang => story[lang] && Array.isArray(story[lang].cards) && story[lang].cards.length > 0);
     return hasCards && Array.isArray(chapter.eventIds) && chapter.eventIds.length > 0;
 }
