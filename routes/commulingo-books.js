@@ -137,7 +137,9 @@ router.get('/lesson/:lessonId', asyncHandler(async (req, res) => {
 // stays small.
 router.get('/lesson/:lessonId/story-map', asyncHandler(async (req, res) => {
     const lessonId = typeof req.params.lessonId === 'string' ? req.params.lessonId.trim() : '';
-    const lang = req.query && req.query.lang === 'en' ? 'en' : 'ko';
+    // Not ?lang=: the site-wide language middleware takes that, sets the
+    // cookie and redirects without it.
+    const lang = req.query && req.query.language === 'en' ? 'en' : 'ko';
     const map = await lessonStoryMap(lessonId, lang);
     if (!map) return res.status(404).json({ error: 'no story map' });
     setShortPublicCache(res);

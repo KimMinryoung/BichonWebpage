@@ -1036,7 +1036,7 @@
     // its mapDate. A lesson without one, or a failed fetch, has no map.
     function loadStoryMap(session) {
         session.storyMap = null;
-        fetch('/commulingo/lesson/' + encodeURIComponent(session.lesson.id) + '/story-map?lang=' + (lang === 'en' ? 'en' : 'ko'), { credentials: 'same-origin' })
+        fetch('/commulingo/lesson/' + encodeURIComponent(session.lesson.id) + '/story-map?language=' + (lang === 'en' ? 'en' : 'ko'), { credentials: 'same-origin' })
             .then(function(response) { return response.ok ? response.json() : null; })
             .then(function(map) {
                 if (!map || active !== session) return;
