@@ -2179,7 +2179,40 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
     padding: 0;
     overflow: hidden;
 }
-.commu-faction-head { padding: var(--content-inset); border-bottom: 1px solid var(--border); }
+.commu-faction-head {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--content-inset);
+    cursor: pointer;
+    list-style: none;
+}
+.commu-faction-head::-webkit-details-marker { display: none; }
+.commu-faction-head:hover,
+.commu-faction-head:focus-visible { background: var(--btn-hover); }
+.commu-faction-guide[open] > .commu-faction-head { border-bottom: 1px solid var(--border); }
+.commu-faction-head-text { flex: 1; min-width: 0; }
+.commu-faction-eyebrow { display: block; }
+.commu-faction-intro { display: block; }
+.commu-faction-toggle {
+    flex: none;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    background: var(--btn-bg);
+    color: var(--text-primary);
+    font-size: var(--text-sm);
+    font-weight: 600;
+}
+.commu-faction-head:hover .commu-faction-toggle,
+.commu-faction-head:focus-visible .commu-faction-toggle {
+    border-color: var(--btn-primary);
+    background: var(--btn-primary);
+    color: var(--clr-cream);
+}
+.commu-faction-toggle .is-closed::after { content: " ▾"; }
+.commu-faction-toggle .is-open::after { content: " ▴"; }
+.commu-faction-guide:not([open]) .commu-faction-toggle .is-open,
+.commu-faction-guide[open] .commu-faction-toggle .is-closed { display: none; }
 .commu-faction-eyebrow,
 .commu-faction-period {
     margin: 0 0 var(--space-2);

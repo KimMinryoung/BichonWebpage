@@ -69,12 +69,17 @@
         <% var factionGuide = lessons.collections[0].factionGuide; %>
         <% var factionText = function(value) { if (typeof value === 'string') return value; return value && (value[lang] || value.ko || value.en) || ''; }; %>
         <% if (factionGuide) { %>
-        <section class="box commu-faction-guide" id="faction-guide" aria-labelledby="faction-guide-title">
-            <header class="commu-faction-head">
-                <p class="commu-faction-eyebrow"><%= factionText(factionGuide.eyebrow) %></p>
-                <h2 id="faction-guide-title"><%= factionText(factionGuide.title) %></h2>
-                <p class="commu-faction-intro"><%= factionText(factionGuide.intro) %></p>
-            </header>
+        <%# Folded by default: the whole map is long and sat between the hero
+            and the chapter list; the summary row is the button. %>
+        <details class="box commu-faction-guide" id="faction-guide">
+            <summary class="commu-faction-head">
+                <span class="commu-faction-head-text">
+                    <span class="commu-faction-eyebrow"><%= factionText(factionGuide.eyebrow) %></span>
+                    <h2 id="faction-guide-title"><%= factionText(factionGuide.title) %></h2>
+                    <span class="commu-faction-intro"><%= factionText(factionGuide.intro) %></span>
+                </span>
+                <span class="commu-faction-toggle" aria-hidden="true"><span class="is-closed"><%= lang === 'en' ? 'Show' : '펼치기' %></span><span class="is-open"><%= lang === 'en' ? 'Hide' : '접기' %></span></span>
+            </summary>
             <p class="commu-faction-caveat"><%= factionText(factionGuide.caveat) %></p>
 
             <%
@@ -187,7 +192,7 @@
                     <% }) %>
                 </ul>
             </footer>
-        </section>
+        </details>
         <script>
             // Narrow screens show each layer as one left-to-right row of names; a tap opens that faction's card below the row.
             document.querySelectorAll('.commu-faction-picker').forEach(function(picker) {
