@@ -870,6 +870,17 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
     };
     labels.forEach(choose);
     for (let round = 0; round < 3; round++) labels.forEach(choose);
+    // A label pushed off its marker by a crowd (Pest between Isaszeg, Pákozd
+    // and Komárom) gets a leader line back to it, so it cannot be read as
+    // naming the nearer dot. Drawn under the labels.
+    for (const { p, pick } of labels) {
+        const own = gap(pick.b, p.x, p.y);
+        const closer = dots.some(d => d.p !== p && Math.hypot(d.x - p.x, d.y - p.y) > 6 && gap(pick.b, d.x, d.y) < own);
+        if (own <= 8 && !closer) continue;
+        const tx = Math.min(Math.max(p.x, pick.b.x0), pick.b.x1);
+        const ty = Math.min(Math.max(p.y, pick.b.y0), pick.b.y1);
+        parts.push(`<line class="emap-leader is-label" x1="${p.x.toFixed(1)}" y1="${p.y.toFixed(1)}" x2="${tx.toFixed(1)}" y2="${ty.toFixed(1)}"/>`);
+    }
     for (const { p, text, pick } of labels) {
         parts.push(`<text class="emap-label${p.main ? ' is-main' : ''}" x="${pick.lx.toFixed(1)}" y="${pick.ly.toFixed(1)}" text-anchor="${pick.anchor}" data-place="${esc(text)}">${esc(text)}</text>`);
         avoid.push(pick.b);
