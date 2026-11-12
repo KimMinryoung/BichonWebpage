@@ -59,6 +59,15 @@ function publicLessonPayload(collection, chapter, lesson) {
     };
 }
 
+// Mirrors lessonStoryMap's own preconditions (scene cards and a chapter
+// event); the event's control data is checked there, so a rare false
+// positive costs one 404.
+function hasStoryMap(chapter) {
+    const story = chapter.storyCards;
+    const hasCards = Boolean(story) && ['ko', 'en'].some(lang => story[lang] && Array.isArray(story[lang].cards) && story[lang].cards.length > 0);
+    return hasCards && Array.isArray(chapter.eventIds) && chapter.eventIds.length > 0;
+}
+
 function buildPayloads(bundle, version) {
     const lessons = [];
     const catalog = {
@@ -101,6 +110,9 @@ function buildPayloads(bundle, version) {
                         level: lesson.level,
                         title: lesson.title,
                         questionCount: lessonQuestionCount(lesson),
+                        // Scene cards over an event: the page fetches the
+                        // story map alongside the lesson instead of after it.
+                        ...(hasStoryMap(chapter) ? { storyMap: true } : {}),
                     };
                 }),
             })),

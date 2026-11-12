@@ -778,6 +778,9 @@
             '</span>'
         ].join('');
         button.addEventListener('click', function() { startLesson(lesson); });
+        ['pointerenter', 'pointerdown', 'focus'].forEach(function(type) {
+            button.addEventListener(type, function() { prefetchStoryMap(lesson); });
+        });
         return button;
     }
 
@@ -967,6 +970,7 @@
         enterQuizHistory('#lesson=' + encodeURIComponent(lesson.id));
         renderLoadingLesson(lesson);
         scrollToQuiz();
+        prefetchStoryMap(lesson);
         loadLessonDetail(lesson)
             .then(function(loadedLesson) {
                 active = {
@@ -1043,10 +1047,26 @@
     // control phases, fetched once per lesson (some 70 KB of SVG, so not in
     // the lesson payload). Each card shows the phase the server matched to
     // its mapDate. A lesson without one, or a failed fetch, has no map.
+    // One request per lesson, started as soon as the reader reaches for the
+    // lesson (press, hover, click) so it runs alongside the lesson fetch
+    // rather than after it. A failure is dropped so a retry can refetch.
+    var storyMapRequests = {};
+    function requestStoryMap(lessonId) {
+        if (!storyMapRequests[lessonId]) {
+            storyMapRequests[lessonId] = fetch('/commulingo/lesson/' + encodeURIComponent(lessonId) + '/story-map?language=' + (lang === 'en' ? 'en' : 'ko'), { credentials: 'same-origin' })
+                .then(function(response) { return response.ok ? response.json() : null; })
+                .catch(function() { delete storyMapRequests[lessonId]; return null; });
+        }
+        return storyMapRequests[lessonId];
+    }
+
+    function prefetchStoryMap(lesson) {
+        if (lesson && lesson.storyMap === true && !lesson.locked) requestStoryMap(lesson.id);
+    }
+
     function loadStoryMap(session) {
         session.storyMap = null;
-        fetch('/commulingo/lesson/' + encodeURIComponent(session.lesson.id) + '/story-map?language=' + (lang === 'en' ? 'en' : 'ko'), { credentials: 'same-origin' })
-            .then(function(response) { return response.ok ? response.json() : null; })
+        requestStoryMap(session.lesson.id)
             .then(function(map) {
                 if (!map || active !== session) return;
                 session.storyMap = map;
@@ -1260,6 +1280,7 @@
     function showNextLesson(lesson) {
         if (!els.nextLesson || !lesson) return;
         els.nextLesson.commuNextLesson = lesson;
+        prefetchStoryMap(lesson);
         els.nextLesson.textContent = (strings.nextLesson || (lang === 'en' ? 'Next lesson' : '다음 학습')) + ' · ' + chapterTitle(lesson) + (lesson.soleLevel ? '' : ' (' + lessonLevel(lesson) + ')');
         els.nextLesson.classList.remove('is-hidden');
     }
