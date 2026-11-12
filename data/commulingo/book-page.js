@@ -235,7 +235,7 @@ function courseChaptersForDoc(docId, lang) {
 // (cast[].position, a people-index collection id such as monarchist or
 // national-liberation). It gains the chip the person cards wear for that
 // position: the collection's label and glyph, and its colour key. The prose
-// (lines, cast text, tiltNote) may carry side markers, {{flag:code}} and
+// (lines, cast text, tiltNote, note) may carry side markers, {{flag:code}} and
 // {{pos:collection}} (story-markers.js); each gets an *Html twin with the
 // markers drawn, and the client strips the tokens when a twin is missing.
 async function decorateStoryCast(lesson) {
@@ -262,6 +262,7 @@ async function decorateStoryCast(lesson) {
             });
             if (Array.isArray(card.lines)) card.linesHtml = card.lines.map(html);
             if (card.tiltNote) card.tiltNoteHtml = html(card.tiltNote);
+            if (card.note) card.noteHtml = html(card.note);
         });
     }
 }
@@ -291,7 +292,7 @@ async function lessonStoryMap(lessonId, lang) {
     const event = events.find(item => item.id === eventId);
     if (!event) return null;
     const cardText = card => stripStoryMarkers([card && card.title]
-        .concat(card && card.lines || [], (card && card.cast || []).map(member => member && member.text), card && card.tiltNote || [])
+        .concat(card && card.lines || [], (card && card.cast || []).map(member => member && member.text), card && card.tiltNote || [], card && card.note || [])
         .join('\n'));
     const storyText = story.cards.map(cardText).join('\n');
     const places = storyMapPlaces(event, label => placesNamed(storyText, [localize(label, lang)], lang).length > 0);

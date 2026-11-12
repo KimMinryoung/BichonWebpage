@@ -289,7 +289,7 @@ function checkDiagram(out, value, label) {
 // compared whatever the word order.
 function storyMarkers(card) {
   if (!card || typeof card !== 'object') return [];
-  const texts = [].concat(card.lines || [], (card.cast || []).map(function(m) { return m && m.text; }), card.tiltNote || []);
+  const texts = [].concat(card.lines || [], (card.cast || []).map(function(m) { return m && m.text; }), card.tiltNote || [], card.note || []);
   const found = [];
   texts.forEach(function(text) {
     String(text || '').replace(/\{\{(flag|pos):([a-z0-9]+(?:-[a-z0-9]+)*)\}\}/g, function(_, kind, code) { found.push(kind + ':' + code); return ''; });
@@ -365,6 +365,11 @@ function checkStoryCards(out, value, label) {
         if (typeof card.tilt === 'undefined') out.add('shape', label, cLabel + '.tiltNote needs a tilt');
         checkText(out, card.tiltNote, cLabel + '.tiltNote', locale);
       }
+      if (typeof card.note !== 'undefined') {
+        if (!str(card.note).trim()) out.add('shape', label, cLabel + '.note is empty');
+        else checkText(out, card.note, cLabel + '.note', locale);
+        if (card.tiltNote) out.add('shape', label, cLabel + ' has both note and tiltNote');
+      }
     });
   });
   const ko = value.ko && Array.isArray(value.ko.cards) ? value.ko.cards : null;
@@ -378,6 +383,7 @@ function checkStoryCards(out, value, label) {
       else if (card && card.cast && card.cast.some(function(member, m) { return (member && member.position) !== (other.cast[m] && other.cast[m].position); })) out.add('shape', label, sLabel + '.cards[' + index + '] cast positions differ between ko and en');
       if ((card && card.tilt) !== other.tilt) out.add('shape', label, sLabel + '.cards[' + index + '] tilt differs between ko and en');
       if (Boolean(card && card.tiltNote) !== Boolean(other.tiltNote)) out.add('shape', label, sLabel + '.cards[' + index + '] tiltNote in one language only');
+      if (Boolean(card && card.note) !== Boolean(other.note)) out.add('shape', label, sLabel + '.cards[' + index + '] note in one language only');
       if (JSON.stringify(card && card.mapDate) !== JSON.stringify(other.mapDate)) out.add('shape', label, sLabel + '.cards[' + index + '] mapDate differs between ko and en');
       if (storyMarkers(card).join(' ') !== storyMarkers(other).join(' ')) out.add('shape', label, sLabel + '.cards[' + index + '] side markers ({{flag:…}}, {{pos:…}}) differ between ko and en');
       // One marker per force per card, on its first ambiguous mention: icons

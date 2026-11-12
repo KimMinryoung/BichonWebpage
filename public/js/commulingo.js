@@ -1173,6 +1173,9 @@
                 + '</div>';
             if (card.tiltNote) html += '<p class="commu-story-note">' + (card.tiltNoteHtml || storyText(card.tiltNote)) + '</p>';
         }
+        // A plain note: an aside under the lines where no balance bar fits
+        // (a debate rather than a contest for power).
+        if (card.note) html += '<p class="commu-story-note">' + (card.noteHtml || storyText(card.note)) + '</p>';
         return html;
     }
 

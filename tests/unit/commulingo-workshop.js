@@ -67,6 +67,8 @@ assert.match(broken((q, course) => { const s = story(); s.ko.cards[2].lines = []
 assert.match(broken((q, course) => { const s = story(); delete s.ko.tiltLabels; course.chapters[0].storyCards = s; }), /tiltLabels/);
 assert.equal(broken((q, course) => { const s = story(); s.noMap = true; course.chapters[0].storyCards = s; }), '', 'noMap: true passes');
 assert.match(broken((q, course) => { const s = story(); s.noMap = 'yes'; course.chapters[0].storyCards = s; }), /noMap/);
+assert.equal(broken((q, course) => { const s = story(); for (const l of ['ko', 'en']) { delete s[l].tiltLabels; s[l].cards.forEach(c => { if (c.tiltNote) { c.note = c.tiltNote; delete c.tiltNote; } delete c.tilt; }); } course.chapters[0].storyCards = s; }), '', 'a plain note needs no balance bar');
+assert.match(broken((q, course) => { const s = story(); s.ko.cards[1].note = '메모.'; course.chapters[0].storyCards = s; }), /note in one language only|both note and tiltNote/);
 assert.equal(broken((q, course) => { const s = story(); s.ko.cards[1].mapDate = [1848, 3]; s.en.cards[1].mapDate = [1848, 3]; course.chapters[0].storyCards = s; }), '', 'a scene card may name its map date');
 assert.match(broken((q, course) => { const s = story(); s.ko.cards[1].mapDate = [1848, 3]; s.en.cards[1].mapDate = [1848, 4]; course.chapters[0].storyCards = s; }), /mapDate differs/);
 assert.match(broken((q, course) => { const s = story(); s.ko.cards[1].mapDate = s.en.cards[1].mapDate = [1848, 13]; course.chapters[0].storyCards = s; }), /mapDate must be/);
