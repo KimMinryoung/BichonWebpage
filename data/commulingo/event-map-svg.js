@@ -876,7 +876,9 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
     for (const { p, pick } of labels) {
         const own = gap(pick.b, p.x, p.y);
         const closer = dots.some(d => d.p !== p && Math.hypot(d.x - p.x, d.y - p.y) > 6 && gap(pick.b, d.x, d.y) < own);
-        if (own <= 8 && !closer) continue;
+        // The nearest ring spot sits 9 px out; only a label further off, or
+        // nearer another dot, needs the line.
+        if (own <= 12 && !closer) continue;
         const tx = Math.min(Math.max(p.x, pick.b.x0), pick.b.x1);
         const ty = Math.min(Math.max(p.y, pick.b.y0), pick.b.y1);
         parts.push(`<line class="emap-leader is-label" x1="${p.x.toFixed(1)}" y1="${p.y.toFixed(1)}" x2="${tx.toFixed(1)}" y2="${ty.toFixed(1)}"/>`);
