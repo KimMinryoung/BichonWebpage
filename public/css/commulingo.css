@@ -569,6 +569,167 @@
     margin-bottom: 10px;
 }
 
+/* Scene cards: the chapter's story one scene at a time, before the brief. */
+.commu-story {
+    margin-bottom: 18px;
+}
+
+.commu-story-head {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-bottom: 10px;
+}
+
+.commu-story-count {
+    color: var(--text-secondary);
+    font-size: var(--text-meta);
+    font-variant-numeric: tabular-nums;
+}
+
+.commu-story-dots {
+    display: flex;
+    flex: 1 1 auto;
+    gap: 3px;
+}
+
+.commu-story-dots span {
+    background: color-mix(in srgb, var(--border) 25%, transparent);
+    flex: 1 1 0;
+    height: 4px;
+    max-width: 28px;
+}
+
+.commu-story-dots .is-seen {
+    background: color-mix(in srgb, var(--accent-red) 45%, transparent);
+}
+
+.commu-story-dots .is-current {
+    background: var(--accent-red);
+}
+
+.commu-story-prev,
+.commu-story-skip {
+    background: none;
+    border: 0;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font: inherit;
+    font-size: var(--text-meta);
+    padding: 4px 2px;
+}
+
+.commu-story-prev:hover:not(:disabled),
+.commu-story-skip:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+.commu-story-prev:disabled {
+    cursor: default;
+    opacity: 0.4;
+}
+
+.commu-story-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    display: grid;
+    gap: 12px;
+    min-height: 280px;
+    align-content: start;
+    padding: 20px 18px;
+}
+
+.commu-story-when {
+    color: var(--link);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    margin: 0;
+}
+
+.commu-story-title {
+    color: var(--text-primary);
+    font-size: var(--text-lg);
+    line-height: var(--leading-tight);
+    margin: 0;
+}
+
+.commu-story-lines {
+    display: grid;
+    gap: 10px;
+}
+
+.commu-story-lines p {
+    color: var(--text-primary);
+    font-size: var(--text-base);
+    line-height: var(--leading-prose);
+    margin: 0;
+    word-break: keep-all;
+}
+
+.commu-story-cast {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+}
+
+.commu-story-cast div {
+    border-top: 1px solid color-mix(in srgb, var(--border) 35%, transparent);
+    display: grid;
+    gap: 4px;
+    padding-top: 10px;
+}
+
+.commu-story-cast div:first-child {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.commu-story-cast dt {
+    color: var(--link);
+    font-weight: 700;
+}
+
+.commu-story-cast dd {
+    color: var(--text-secondary);
+    line-height: var(--leading-snug);
+    margin: 0;
+    word-break: keep-all;
+}
+
+.commu-story-tilt {
+    align-items: center;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: auto 1fr auto;
+    margin-top: 6px;
+}
+
+.commu-story-tilt-label {
+    color: var(--text-secondary);
+    font-size: var(--text-meta);
+}
+
+.commu-story-tilt-track {
+    background: color-mix(in srgb, var(--border) 30%, transparent);
+    display: block;
+    height: 10px;
+}
+
+.commu-story-tilt-fill {
+    background: var(--accent-red);
+    display: block;
+    height: 100%;
+}
+
+.commu-story-note {
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    line-height: var(--leading-snug);
+    margin: 0;
+}
+
 .commu-intro {
     background: var(--bg-surface);
     border-left: 4px solid var(--accent);

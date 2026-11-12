@@ -42,6 +42,7 @@
         focus: document.getElementById('commuFocus'),
         passage: document.getElementById('commuPassage'),
         intro: document.getElementById('commuIntro'),
+        story: document.getElementById('commuStory'),
         introTitle: document.getElementById('commuIntroTitle'),
         introSummary: document.getElementById('commuIntroSummary'),
         introFocus: document.getElementById('commuIntroFocus'),
@@ -73,6 +74,10 @@
             return;
         }
         if (!active) return;
+        if (active.story) {
+            stepStory(1);
+            return;
+        }
         if (active.intro) {
             active.intro = false;
             answered = false;
@@ -116,6 +121,11 @@
                 event.preventDefault();
                 button.click();
             }
+            return;
+        }
+        if (active.story && (event.key === 'ArrowLeft' || event.key === 'ArrowRight')) {
+            event.preventDefault();
+            stepStory(event.key === 'ArrowLeft' ? -1 : 1);
             return;
         }
         if ((event.key === 'Enter' || event.key === ' ') && !els.next.disabled) {
@@ -347,6 +357,7 @@
                     conceptBrief: loaded.conceptBrief || lesson.conceptBrief,
                     conceptMap: loaded.conceptMap || lesson.conceptMap,
                     diagram: loaded.diagram || lesson.diagram,
+                    storyCards: loaded.storyCards || lesson.storyCards,
                     format: loaded.format || lesson.format,
                     takeaway: loaded.takeaway || lesson.takeaway,
                     questions: loaded.questions || [],
@@ -955,11 +966,13 @@
                     // A reading lesson opens on its first passage: the text is
                     // the introduction, so there is no concept brief to pass.
                     intro: !skipsIntro(loadedLesson),
+                    story: storyCards(loadedLesson).length ? { pos: 0 } : null,
                     missed: [],
                     firstScore: null
                 };
                 if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.begin('lesson', lesson.id, data.version, 'lesson');
-                if (active.intro) renderIntro();
+                if (active.story) renderStory();
+                else if (active.intro) renderIntro();
                 else renderQuestion();
             })
             .catch(function() {
@@ -968,6 +981,7 @@
                 setPlainPrompt(lang === 'en' ? 'Could not load this lesson. Please try again.' : '문제를 불러오지 못했습니다. 잠시 뒤 다시 시도해 주세요.');
                 els.prompt.classList.remove('is-hidden');
                 if (els.intro) els.intro.classList.add('is-hidden');
+                hideStory();
                 if (els.focus) els.focus.classList.add('is-hidden');
                 els.choices.classList.add('is-hidden');
                 els.feedback.className = 'commu-feedback is-hidden';
@@ -983,6 +997,7 @@
         els.meter.style.width = '0%';
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(lesson)) + '</span>' + levelBadge(lesson);
         if (els.intro) els.intro.classList.add('is-hidden');
+        hideStory();
         if (els.focus) els.focus.classList.add('is-hidden');
         hidePassage();
         setPlainPrompt(lang === 'en' ? 'Loading questions...' : '문제를 불러오는 중입니다...');
@@ -991,6 +1006,104 @@
         els.feedback.className = 'commu-feedback is-hidden';
         els.next.disabled = true;
         els.next.textContent = strings.next || 'Next';
+    }
+
+    // Scene cards: the chapter's story told one scene at a time before the
+    // concept brief. The main button steps forward; the last card leads into
+    // the brief, which still follows in full.
+    function storyData(lesson) {
+        var story = lesson && lesson.storyCards;
+        if (!story) return null;
+        var data = story[lang === 'en' ? 'en' : 'ko'] || story.ko || story.en;
+        return data && Array.isArray(data.cards) && data.cards.length ? data : null;
+    }
+
+    function storyCards(lesson) {
+        var data = storyData(lesson);
+        return data ? data.cards : [];
+    }
+
+    function hideStory() {
+        if (els.story) els.story.classList.add('is-hidden');
+    }
+
+    function stepStory(delta) {
+        if (!active || !active.story) return;
+        var cards = storyCards(active.lesson);
+        var pos = active.story.pos + delta;
+        if (pos < 0) return;
+        if (pos >= cards.length) {
+            leaveStory();
+            return;
+        }
+        active.story.pos = pos;
+        renderStory();
+    }
+
+    function leaveStory() {
+        active.story = null;
+        hideStory();
+        renderIntro();
+        scrollToQuiz();
+    }
+
+    function renderStoryCard(card, labels) {
+        var html = '';
+        if (card.when) html += '<p class="commu-story-when">' + escapeHtml(card.when) + '</p>';
+        html += '<h2 class="commu-story-title">' + escapeHtml(card.title) + '</h2>';
+        if (Array.isArray(card.cast) && card.cast.length) {
+            html += '<dl class="commu-story-cast">' + card.cast.map(function(member) {
+                return '<div><dt>' + escapeHtml(member.name) + '</dt><dd>' + escapeHtml(member.text) + '</dd></div>';
+            }).join('') + '</dl>';
+        }
+        if (Array.isArray(card.lines) && card.lines.length) {
+            html += '<div class="commu-story-lines">' + card.lines.map(function(line) {
+                return '<p>' + escapeHtml(line) + '</p>';
+            }).join('') + '</div>';
+        }
+        if (typeof card.tilt === 'number' && labels.length === 2) {
+            var tilt = Math.max(0, Math.min(100, card.tilt));
+            html += '<div class="commu-story-tilt" role="img" aria-label="' + escapeHtml(labels[0] + ' ' + tilt + ' : ' + labels[1] + ' ' + (100 - tilt)) + '">'
+                + '<span class="commu-story-tilt-label">' + escapeHtml(labels[0]) + '</span>'
+                + '<span class="commu-story-tilt-track"><span class="commu-story-tilt-fill" style="width:' + tilt + '%"></span></span>'
+                + '<span class="commu-story-tilt-label">' + escapeHtml(labels[1]) + '</span>'
+                + '</div>';
+            if (card.tiltNote) html += '<p class="commu-story-note">' + escapeHtml(card.tiltNote) + '</p>';
+        }
+        return html;
+    }
+
+    function renderStory() {
+        var data = storyData(active.lesson);
+        var cards = data.cards;
+        var pos = active.story.pos;
+        var en = lang === 'en';
+        els.count.textContent = '0 / ' + lessonQuestionCount(active.lesson);
+        els.meter.style.width = '0%';
+        els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span>' + levelBadge(active.lesson);
+        if (els.intro) els.intro.classList.add('is-hidden');
+        if (els.focus) els.focus.classList.add('is-hidden');
+        hidePassage();
+        els.prompt.classList.add('is-hidden');
+        els.choices.classList.add('is-hidden');
+        els.feedback.className = 'commu-feedback is-hidden';
+        if (!els.story) { leaveStory(); return; }
+        els.story.innerHTML = '<div class="commu-story-head">'
+            + '<span class="commu-story-count">' + escapeHtml((en ? 'Scene ' : '장면 ') + (pos + 1) + ' / ' + cards.length) + '</span>'
+            + '<span class="commu-story-dots" aria-hidden="true">' + cards.map(function(_, index) {
+                return '<span' + (index === pos ? ' class="is-current"' : (index < pos ? ' class="is-seen"' : '')) + '></span>';
+            }).join('') + '</span>'
+            + '<button type="button" class="commu-story-prev"' + (pos === 0 ? ' disabled' : '') + '>' + (en ? '← Back' : '← 이전') + '</button>'
+            + '<button type="button" class="commu-story-skip">' + (en ? 'Skip' : '건너뛰기') + '</button>'
+            + '</div>'
+            + '<div class="commu-story-card">' + renderStoryCard(cards[pos], Array.isArray(data.tiltLabels) ? data.tiltLabels : []) + '</div>';
+        els.story.classList.remove('is-hidden');
+        els.story.querySelector('.commu-story-prev').addEventListener('click', function() { stepStory(-1); });
+        els.story.querySelector('.commu-story-skip').addEventListener('click', leaveStory);
+        els.next.disabled = false;
+        els.next.textContent = pos === cards.length - 1
+            ? (en ? 'Read the concept brief' : '개념 설명 보기')
+            : (en ? 'Next scene' : '다음 장면');
     }
 
     function renderIntro() {
@@ -1132,6 +1245,7 @@
 
     function renderQuestion() {
         if (els.intro) els.intro.classList.add('is-hidden');
+        hideStory();
         els.prompt.classList.remove('is-hidden');
         els.choices.classList.remove('is-hidden');
         var question = currentQuestion();
@@ -1824,6 +1938,7 @@
         hidePassage();
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(active.lesson)) + '</span>' + levelBadge(active.lesson);
         if (els.intro) els.intro.classList.add('is-hidden');
+        hideStory();
         els.prompt.classList.remove('is-hidden');
         els.choices.classList.remove('is-hidden');
         els.choices.innerHTML = '';

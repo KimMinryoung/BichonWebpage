@@ -284,6 +284,75 @@ function checkDiagram(out, value, label) {
   }
 }
 
+// Optional scene cards shown one at a time before the concept brief: 4-14
+// cards, each a cast of 2-6 forces or a scene of 1-3 lines, with an optional
+// tilt (0-100, the share of the first of two labels). Both languages carry
+// the same cards in the same order with the same tilts.
+function checkStoryCards(out, value, label) {
+  if (typeof value === 'undefined') return;
+  const sLabel = label + '.storyCards';
+  if (!value || typeof value !== 'object') { out.add('shape', label, sLabel + ' must be an object'); return; }
+  ['ko', 'en'].forEach(function(locale) {
+    const data = value[locale];
+    const dLabel = sLabel + '.' + locale;
+    if (!data || typeof data !== 'object') { out.add('shape', label, dLabel + ' is missing'); return; }
+    const cards = data.cards;
+    if (!Array.isArray(cards) || cards.length < 4 || cards.length > 14) { out.add('shape', label, dLabel + '.cards must have 4-14 cards'); return; }
+    const tilted = cards.some(function(card) { return card && typeof card.tilt !== 'undefined'; });
+    if (tilted) {
+      if (!Array.isArray(data.tiltLabels) || data.tiltLabels.length !== 2 || data.tiltLabels.some(function(l) { return !str(l).trim(); })) {
+        out.add('shape', label, dLabel + '.tiltLabels must name two sides');
+      } else {
+        data.tiltLabels.forEach(function(l, i) { checkText(out, l, dLabel + '.tiltLabels[' + i + ']', locale); });
+      }
+    }
+    cards.forEach(function(card, index) {
+      const cLabel = dLabel + '.cards[' + index + ']';
+      if (!card || typeof card !== 'object') { out.add('shape', label, cLabel + ' must be an object'); return; }
+      if (!str(card.title).trim()) out.add('shape', label, cLabel + '.title is empty');
+      checkText(out, card.title, cLabel + '.title', locale);
+      if (card.when) checkText(out, card.when, cLabel + '.when', locale);
+      const hasCast = Array.isArray(card.cast);
+      const hasLines = Array.isArray(card.lines);
+      if (hasCast === hasLines) { out.add('shape', label, cLabel + ' must have cast or lines (not both)'); return; }
+      if (hasCast) {
+        if (card.cast.length < 2 || card.cast.length > 6) out.add('shape', label, cLabel + '.cast must have 2-6 entries');
+        card.cast.forEach(function(member, mIndex) {
+          const mLabel = cLabel + '.cast[' + mIndex + ']';
+          if (!member || !str(member.name).trim() || !str(member.text).trim()) { out.add('shape', label, mLabel + ' needs name and text'); return; }
+          checkText(out, member.name, mLabel + '.name', locale);
+          checkText(out, member.text, mLabel + '.text', locale);
+        });
+      } else {
+        if (card.lines.length < 1 || card.lines.length > 3) out.add('shape', label, cLabel + '.lines must have 1-3 lines');
+        card.lines.forEach(function(line, lIndex) {
+          if (!str(line).trim()) out.add('shape', label, cLabel + '.lines[' + lIndex + '] is empty');
+          checkText(out, line, cLabel + '.lines[' + lIndex + ']', locale);
+        });
+      }
+      if (typeof card.tilt !== 'undefined' && !(Number.isInteger(card.tilt) && card.tilt >= 0 && card.tilt <= 100)) {
+        out.add('shape', label, cLabel + '.tilt must be an integer 0-100');
+      }
+      if (card.tiltNote) {
+        if (typeof card.tilt === 'undefined') out.add('shape', label, cLabel + '.tiltNote needs a tilt');
+        checkText(out, card.tiltNote, cLabel + '.tiltNote', locale);
+      }
+    });
+  });
+  const ko = value.ko && Array.isArray(value.ko.cards) ? value.ko.cards : null;
+  const en = value.en && Array.isArray(value.en.cards) ? value.en.cards : null;
+  if (ko && en) {
+    if (ko.length !== en.length) { out.add('shape', label, sLabel + ' card counts differ between ko and en'); return; }
+    ko.forEach(function(card, index) {
+      const other = en[index] || {};
+      if (Boolean(card && card.cast) !== Boolean(other.cast)) out.add('shape', label, sLabel + '.cards[' + index + '] is a cast card in one language only');
+      else if (card && card.cast && card.cast.length !== other.cast.length) out.add('shape', label, sLabel + '.cards[' + index + '] cast sizes differ between ko and en');
+      if ((card && card.tilt) !== other.tilt) out.add('shape', label, sLabel + '.cards[' + index + '] tilt differs between ko and en');
+      if (Boolean(card && card.tiltNote) !== Boolean(other.tiltNote)) out.add('shape', label, sLabel + '.cards[' + index + '] tiltNote in one language only');
+    });
+  }
+}
+
 // --- question-level rules --------------------------------------------------
 
 function checkChoiceFeedback(out, value, qLabel, choiceCount = 4) {
@@ -527,7 +596,7 @@ function walkKo(value, label, visit) {
 // with a comma, a full stop or 「」. Checked across every ko string of the
 // chapter (summary, brief, diagram, questions), never the en side.
 function checkKoEmDash(out, chapter, label) {
-  walkKo({ summary: chapter.summary, takeaway: chapter.takeaway, learningFocus: chapter.learningFocus, conceptMap: chapter.conceptMap, conceptBrief: chapter.conceptBrief, diagram: chapter.diagram, lessons: chapter.lessons }, label, function(text, where) {
+  walkKo({ summary: chapter.summary, takeaway: chapter.takeaway, learningFocus: chapter.learningFocus, conceptMap: chapter.conceptMap, conceptBrief: chapter.conceptBrief, diagram: chapter.diagram, storyCards: chapter.storyCards, lessons: chapter.lessons }, label, function(text, where) {
     if (text.includes('—')) out.add('ko-em-dash', label, where + ' contains an em dash in Korean text');
   });
 }
@@ -556,6 +625,7 @@ function checkChapter(out, chapter, collectionId, ctx) {
     checkConceptBrief(out, chapter, chapterLabel);
   }
   checkDiagram(out, chapter.diagram, chapterLabel);
+  checkStoryCards(out, chapter.storyCards, chapterLabel);
   checkKoEmDash(out, chapter, chapterLabel);
 
   const lessons = chapter.lessons || [];

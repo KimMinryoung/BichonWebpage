@@ -47,6 +47,25 @@ assert.match(broken(q => { [q[0], q[1]] = [{ ...q[1], id: 'q1' }, { ...q[0], id:
 assert.match(broken((q, course) => { delete course.chapters[0].takeaway; }), /takeaway must be localized/);
 // a concept brief is optional, but a chapter that has one has a whole one
 assert.match(broken((q, course) => { course.chapters[0].conceptBrief = { ko: [], en: [] }; }), /conceptBrief/);
+// scene cards are optional; when present both languages tell the same cards
+const story = () => ({
+    ko: { tiltLabels: ['혁명', '반혁명'], cards: [
+        { title: '등장 세력', cast: [{ name: '군주', text: '군대를 쥔 지배층이다.' }, { name: '민주파', text: '공화국을 바랐다.' }] },
+        { when: '1848년 3월', title: '봉기', lines: ['시민들이 봉기했다.'], tilt: 70, tiltNote: '군대는 그대로였다.' },
+        { when: '1848년 가을', title: '반격', lines: ['군대가 돌아왔다.'], tilt: 30 },
+        { when: '그 뒤', title: '결과', lines: ['혁명이 끝났다.'] }] },
+    en: { tiltLabels: ['Revolution', 'Reaction'], cards: [
+        { title: 'The forces', cast: [{ name: 'Monarchs', text: 'Rulers who held the army.' }, { name: 'Democrats', text: 'They wanted a republic.' }] },
+        { when: 'March 1848', title: 'Rising', lines: ['The citizens rose.'], tilt: 70, tiltNote: 'The army stayed intact.' },
+        { when: 'Autumn 1848', title: 'Counterstroke', lines: ['The army returned.'], tilt: 30 },
+        { when: 'Afterwards', title: 'Outcome', lines: ['The revolution ended.'] }] },
+});
+assert.equal(broken((q, course) => { course.chapters[0].storyCards = story(); }), '', 'well-formed scene cards pass');
+assert.match(broken((q, course) => { const s = story(); s.en.cards[1].tilt = 60; course.chapters[0].storyCards = s; }), /tilt differs/);
+assert.match(broken((q, course) => { const s = story(); s.en.cards.pop(); course.chapters[0].storyCards = s; }), /card counts differ|4-14/);
+assert.match(broken((q, course) => { const s = story(); s.ko.cards[2].lines = []; s.ko.cards[2].cast = []; course.chapters[0].storyCards = s; }), /cast or lines/);
+assert.match(broken((q, course) => { const s = story(); delete s.ko.tiltLabels; course.chapters[0].storyCards = s; }), /tiltLabels/);
+assert.match(broken((q, course) => { const s = story(); s.ko.cards[3].lines = ['혁명이 끝났다 — 완전히.']; course.chapters[0].storyCards = s; }), /em dash/);
 // activities belong to the workshop format only
 assert.match(broken((q, course) => { course.format = 'short-learning'; }), /type must be multiple_choice/);
 
@@ -61,6 +80,7 @@ const chapter = sample.chapters[0];
 const payload = publicLessonPayload(sample, chapter, chapter.lessons[0]);
 assert.equal(payload.format, 'workshop');
 assert.deepEqual(payload.takeaway, chapter.takeaway);
+assert.ok('storyCards' in payload, 'the lesson payload carries the scene cards');
 assert.deepEqual(payload.questions.map(question => question.type), ['multiple_choice', 'order', 'sort', 'cloze', 'multiple_choice']);
 
 console.log(`Workshop format: sample, activity shapes, mix and id checks passed (${path.basename(__filename)})`);
