@@ -97,6 +97,15 @@
 .commu-story-map-frame .emap-svg {
     max-height: 46vh;
 }
+.commu-story-map .emap-marker.is-main { fill: var(--text-primary); }
+.commu-story-map .emap-label.is-main { font-weight: 400; }
+.commu-story-map .emap-marker.is-scene { fill: var(--clr-red); r: 6px; }
+.commu-story-map .emap-label.is-scene { font-weight: 700; }
+
+@media (max-width: 700px) {
+    .commu-story-map .emap-marker.is-main { r: 6px; }
+    .commu-story-map .emap-marker.is-scene { r: 8px; }
+}
 .commu-story-flag {
     box-shadow: 0 0 0 1px color-mix(in srgb, var(--border) 60%, transparent);
     height: 14px;

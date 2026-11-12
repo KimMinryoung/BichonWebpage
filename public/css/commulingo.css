@@ -674,6 +674,18 @@
     margin: 6px 0 0;
 }
 
+/* The scene map has no fixed main place: the places the current card names
+   take the red instead (commulingo.js showStoryMap). */
+.commu-story-map .emap-marker.is-main { fill: var(--text-primary); }
+.commu-story-map .emap-label.is-main { font-weight: 400; }
+.commu-story-map .emap-marker.is-scene { fill: var(--clr-red); r: 6px; }
+.commu-story-map .emap-label.is-scene { font-weight: 700; }
+
+@media (max-width: 700px) {
+    .commu-story-map .emap-marker.is-main { r: 6px; }
+    .commu-story-map .emap-marker.is-scene { r: 8px; }
+}
+
 .commu-story-map-source {
     /* Keep .btn's flex centring; display: block dropped the label to the top. */
     display: flex;

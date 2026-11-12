@@ -1079,6 +1079,11 @@
         slot.querySelectorAll('.emap-phase[data-phase]').forEach(function(layer) {
             layer.classList.toggle('is-current', layer.getAttribute('data-phase') === String(index));
         });
+        // The places this card names are marked in red.
+        var named = (map.cardPlaces && map.cardPlaces[active.story.pos]) || [];
+        slot.querySelectorAll('[data-place]').forEach(function(node) {
+            node.classList.toggle('is-scene', named.indexOf(node.getAttribute('data-place')) !== -1);
+        });
         var phase = (map.control && map.control.phases || [])[index];
         var caption = slot.querySelector('.commu-story-map-caption');
         if (caption && phase) {

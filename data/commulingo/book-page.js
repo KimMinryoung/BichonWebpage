@@ -2,7 +2,8 @@ const { loadCommuLingoLesson, loadCommuLingoCatalog } = require('./shards');
 const { localize } = require('./localize');
 const { getLinkIndexes, createLinker, clientPersonLinkPayload, standardizedFor } = require('./linkify');
 const { roleIconSvg } = require('./role-icons');
-const { renderEventMapSvg, storyMapPlaces } = require('./event-map-svg');
+const { renderEventMapSvg, storyMapPlaces, placesNamed } = require('./event-map-svg');
+const { stripStoryMarkers } = require('./story-markers');
 
 // Book and lesson page data: the memoized per-book payload (decision-history
 // links, linked chapter prose, dictionary chips) and the lesson linkifier.
@@ -289,14 +290,21 @@ async function lessonStoryMap(lessonId, lang) {
     if (hit && hit.key[0] === story && hit.key[1] === control && hit.key[2] === events) return hit.value;
     const event = events.find(item => item.id === eventId);
     if (!event) return null;
-    const map = renderEventMapSvg(storyMapPlaces(event), lang, localize(event.title, lang), [], control);
+    const places = storyMapPlaces(event);
+    const map = renderEventMapSvg(places, lang, localize(event.title, lang), [], control);
     if (!map) return null;
+    // The places each card names, marked in red while it shows (in place of
+    // the event's one fixed main marker).
+    const labels = places.filter(place => place.kind !== 'geo').map(place => localize(place.label, lang)).filter(Boolean);
+    const cardPlaces = story.cards.map(card => placesNamed(stripStoryMarkers([card && card.title]
+        .concat(card && card.lines || [], (card && card.cast || []).map(member => member && member.text), card && card.tiltNote || [])
+        .join('\n')), labels, lang));
     let phase = 0;
     const cardPhases = story.cards.map(card => {
         if (card && Array.isArray(card.mapDate)) phase = phaseIndexForPoint(control.phases, card.mapDate);
         return phase;
     });
-    const value = { eventId, svg: map.svg, cardPhases, control: presentEventControl(control, lang) };
+    const value = { eventId, svg: map.svg, cardPhases, cardPlaces, control: presentEventControl(control, lang) };
     storyMapMemo.set(memoKey, { key: [story, control, events], value });
     return value;
 }

@@ -669,6 +669,32 @@ function storyMapPlaces(event) {
     return places;
 }
 
+// Which of the scene map's places a card names: a label, or a part of one
+// split at 「와」, 「·」, 「,」 or "and" (「페슈트와 부더」 → 페슈트, 부더), found as
+// a whole word. Korean names may take a particle but must not run on into a
+// longer name (「빈」 in 빈에서, not in 빈디슈그레츠).
+const KO_PARTICLE = '의에은는이가을를과와도로으만까부';
+function placesNamed(text, labels, lang) {
+    const source = String(text || '');
+    const isHangul = ch => /[가-힣]/.test(ch || '');
+    const found = (part) => {
+        if (lang === 'en') return new RegExp(`(^|[^\\p{L}])${part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}($|[^\\p{L}])`, 'u').test(source);
+        let at = source.indexOf(part);
+        while (at !== -1) {
+            const before = source[at - 1];
+            const after = source[at + part.length];
+            if (!isHangul(before) && (!isHangul(after) || KO_PARTICLE.includes(after))) return true;
+            at = source.indexOf(part, at + 1);
+        }
+        return false;
+    };
+    return labels.filter(label => {
+        const parts = String(label || '').split(lang === 'en' ? /\s*(?:,|\band\b|·)\s*/ : /\s*(?:와\s|·|,)\s*/)
+            .map(part => part.trim()).filter(part => part.length >= (lang === 'en' ? 3 : 1));
+        return parts.some(found);
+    });
+}
+
 function renderEventMapSvg(locations, lang, title, timeline, control) {
     const entries = (Array.isArray(locations) ? locations : []).filter(loc =>
         loc && Number.isFinite(loc.lat) && Number.isFinite(loc.lng)
@@ -780,7 +806,9 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
         return { marker, x, y, main: marker.kind === 'main' };
     }).sort((a, b) => b.main - a.main || a.y - b.y || a.x - b.x);
     for (const p of placed) {
-        parts.push(`<circle class="emap-marker${p.main ? ' is-main' : ''}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${p.main ? 5.5 : 4}"/>`);
+        // data-place: the scene map (commulingo.js showStoryMap) marks the
+        // places a card names by this label.
+        parts.push(`<circle class="emap-marker${p.main ? ' is-main' : ''}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${p.main ? 5.5 : 4}" data-place="${esc(localize(p.marker.label, lang) || '')}"/>`);
     }
     const dots = placed.map(p => ({ x: p.x, y: p.y, p }));
     for (const { geo } of geos) {
@@ -837,7 +865,7 @@ function renderEventMapSvg(locations, lang, title, timeline, control) {
     labels.forEach(choose);
     for (let round = 0; round < 3; round++) labels.forEach(choose);
     for (const { p, text, pick } of labels) {
-        parts.push(`<text class="emap-label${p.main ? ' is-main' : ''}" x="${pick.lx.toFixed(1)}" y="${pick.ly.toFixed(1)}" text-anchor="${pick.anchor}">${esc(text)}</text>`);
+        parts.push(`<text class="emap-label${p.main ? ' is-main' : ''}" x="${pick.lx.toFixed(1)}" y="${pick.ly.toFixed(1)}" text-anchor="${pick.anchor}" data-place="${esc(text)}">${esc(text)}</text>`);
         avoid.push(pick.b);
     }
 
@@ -898,4 +926,4 @@ function renderRegionMapSvg(box, control, label) {
     return { svg: parts.join('\n'), width: frame.width, height: frame.height, project: (lat, lng) => project(lng, lat) };
 }
 
-module.exports = { renderEventMapSvg, renderRegionMapSvg, timelineGeos, numberedGeos, isCityScale, validGeo, storyMapPlaces };
+module.exports = { renderEventMapSvg, renderRegionMapSvg, timelineGeos, numberedGeos, isCityScale, validGeo, storyMapPlaces, placesNamed };
