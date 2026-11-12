@@ -528,12 +528,16 @@
     border-bottom: 1px solid var(--border);
 }
 
+/* Back to the chapter list: a row button on the button ground that fills
+   with accent green and cream type on hover (the card's own ground would
+   not change on hover, 2026-11-12). */
 .commu-quiz-back {
     flex: none;
     border: 0;
     border-right: 1px solid var(--border);
-    background: transparent;
-    color: var(--link);
+    border-radius: 0;
+    background: var(--btn-bg);
+    color: var(--text-primary);
     cursor: pointer;
     font: inherit;
     font-size: var(--text-base);
@@ -541,9 +545,15 @@
     padding: 0 16px;
 }
 
+.commu-quiz-back::before {
+    content: "← ";
+    content: "← " / "";
+}
+
 .commu-quiz-back:hover,
 .commu-quiz-back:focus-visible {
-    background: var(--bg-surface);
+    background: var(--btn-primary);
+    color: var(--clr-cream);
 }
 
 .commu-quiz-meter {
