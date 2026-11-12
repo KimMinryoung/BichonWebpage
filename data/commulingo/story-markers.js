@@ -21,6 +21,20 @@ const STORY_FLAGS = {
     'papal-states': { ko: '교황령', en: 'Papal States', src: '/flags/historical/papal-states.png' },
     'san-marco-1848': { ko: '산마르코 공화국 (베네치아)', en: 'Republic of San Marco (Venice)', src: '/flags/historical/san-marco-1848.png' },
     'croatia-1848': { ko: '크로아티아', en: 'Croatia', src: '/flags/historical/croatia-1848.svg' },
+    // French Revolution (1789-1799): the royal white flag until the monarchy
+    // fell in August 1792 (the republic uses the person-card code france);
+    // the Union flag before the Irish saltire of 1801; Savoy's red-and-white
+    // cross for the Kingdom of Sardinia before its 1848 tricolour.
+    'kingdom-of-france': { ko: '프랑스 왕국', en: 'Kingdom of France', src: '/flags/historical/kingdom-of-france.png' },
+    'habsburg-monarchy': { ko: '합스부르크 군주국', en: 'Habsburg Monarchy', src: '/flags/historical/austrian-empire.svg' },
+    'great-britain-1707': { ko: '그레이트브리튼 왕국', en: 'Kingdom of Great Britain', src: '/flags/historical/great-britain-1707.svg' },
+    'sardinia-savoy': { ko: '사르데냐 왕국 (사보이아)', en: 'Kingdom of Sardinia (Savoy)', src: '/flags/historical/sardinia-savoy.svg' },
+    // Socialist divergences: the Kaiserreich's black-white-red, not today's
+    // Germany; the Weimar republic's black-red-gold; the Second Spanish
+    // Republic's red-yellow-purple, not the monarchy's flag Spain flies now.
+    'german-empire': { ko: '독일 제국', en: 'German Empire', src: '/flags/historical/german-empire.svg' },
+    'weimar-republic': { ko: '독일 공화국 (바이마르)', en: 'German Republic (Weimar)', src: '/flags/germany.svg' },
+    'spanish-republic': { ko: '스페인 제2공화국', en: 'Second Spanish Republic', src: '/flags/historical/spanish-republic.svg' },
     // The Italian tricolour flew over the 1848 revolutionary governments.
     'roman-republic-1849': { ko: '로마 공화국', en: 'Roman Republic', src: '/flags/italy.svg' },
     'milan-1848': { ko: '밀라노 임시정부', en: 'Provisional government of Milan', src: '/flags/italy.svg' },

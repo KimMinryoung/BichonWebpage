@@ -1131,10 +1131,13 @@
         renderStory();
     }
 
+    // A lesson with no concept brief (a reading lesson) goes straight on to
+    // its first question.
     function leaveStory() {
         active.story = null;
         hideStory();
-        renderIntro();
+        if (active.intro) renderIntro();
+        else renderQuestion();
         scrollToQuiz();
     }
 
@@ -1207,7 +1210,8 @@
             + '<div class="commu-story-nav">'
             + '<button type="button" class="btn btn-secondary" data-story-step="-1"' + (pos === 0 ? ' disabled' : '') + '>' + escapeHtml(en ? 'Previous scene' : '이전 장면') + '</button>'
             + '<button type="button" class="btn btn-primary" data-story-step="1">' + escapeHtml(pos === cards.length - 1
-                ? (en ? 'Read the concept brief' : '개념 설명 보기')
+                ? (active.intro ? (en ? 'Read the concept brief' : '개념 설명 보기')
+                    : isReadingLesson(active.lesson) ? (en ? 'Start reading' : '원문 읽기 시작') : (en ? 'Start the questions' : '문제 풀기 시작'))
                 : (en ? 'Next scene' : '다음 장면')) + '</button>'
             + '<button type="button" class="btn btn-secondary commu-story-skip" data-story-skip>' + escapeHtml(en ? 'Skip scenes' : '장면 건너뛰기') + '</button>'
             + '</div>'

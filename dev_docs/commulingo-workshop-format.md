@@ -124,6 +124,25 @@
 - 교열 중 사이트 문헌에서 찾아 고친 것(`scripts/content/doc-fixes-20261110/`): `revolution-1905-power-question`의 «не может быть и речи» 두 곳(「말할 것도 없다」 → 「있을 수 없다」), `france-subsistence-and-equality-1792-1796`의 야간 운송 금지 문장, `marx-engels-communist-manifesto` 1890년 서문의 빠진 「프랑스」, `cominform-resolution-1948`·`lenin-self-determination`의 『프라브다』 → 『프라우다』, `france-privileges-property-and-labor-1789-1793`의 「마모르트」 → 「맹모르트」(강좌도 같이).
 - 운영 확인: 두 강좌에서 편 셋을 360px 브라우저로 설명 화면부터 결과 화면까지 모두 정답으로 눌러 보았다(순서·분류·빈칸·정리 문장, 스크립트 오류와 가로 스크롤 없음). 오답 경로와 넓은 화면은 보지 않았다.
 
+## 장면 카드를 다른 강좌로 넓힘 (2026-11-12)
+
+1848 강좌의 장면 카드를 보고 「다른 강좌도 개선할 거 찾아라」는 소유자 요청에 따라, 서사가 있는 강좌 넷에 같은 묶음(장면 카드 + 장면과 겹치는 개념 설명 서사 덜기 + 사건 연결)을 넣었다. 카드 근거는 그 편의 기존 설명·문항과 사이트 사건 문서뿐이고 새 조사는 하지 않았다. 편마다 하위 에이전트가 썼다(지침은 각 작업 폴더의 `CARDS-BRIEF.md`).
+
+| 강좌 | 편 | 지도 | 작업 폴더 `scripts/content/` |
+| --- | --- | --- | --- |
+| `french-revolution-intro` | 9편 모두, 개념 설명 약 절반 | 새로 그린 `event-control/french-revolution-1789-1799`(17단계, 1789~1799) | `french-revolution-explainer-20261112/` |
+| `socialist-divergences-intro` | 17편 모두 | 없음 | `socialist-divergences-explainer-20261112/` |
+| `socialist-divergences-2` | 10편 모두 | 3편(스페인 내전)만 기존 지도에 `mapDate` | 같은 폴더 |
+| `marx-eighteenth-brumaire` | 1~6편(7편은 분석 장이라 뺌), 설명 화면이 없는 끊어 읽기 강좌 | 1848 강좌의 `event-control/french-revolution-1848` | `brumaire-explainer-20261112/` |
+
+- 논쟁 편(「사회주의의 분기」)의 카드는 「물음을 던진 상황 → 누가 무엇을 주장했나 → 결정적 장면(대회 표결, 분열, 진압) → 그 뒤」로 쓰고, 막대(`tilt`)는 그 장면 끝에서 운동 안에서 우세했던 입장을 보인다(옳고 그름이 아님). 두 입장이 맞서지 않는 편(1부 4편 에르푸르트 강령 읽기)은 막대를 뺐다.
+- 끊어 읽기 강좌의 카드는 원문이 암시하는 사건의 줄거리만 깔고 마르크스의 판정은 미리 말하지 않는다. 마지막 카드는 「그 뒤」가 아니라 「이 편의 원문」이다. 플레이어는 설명 화면이 없는 레슨에서 마지막 카드 버튼을 「원문 읽기 시작」(실습 형식이면 「문제 풀기 시작」)으로 바꾸고 곧장 첫 문항으로 간다(`leaveStory`).
+- `mapDate`는 장면 `when`의 끝 날짜로 넣고, 뒤 카드 날짜보다 늦으면 당겨 지도가 앞뒤로 튀지 않게 했다(`french-revolution-explainer-20261112/mapdate.py`).
+- 사건 연결(`eventIds`): 「사회주의의 분기」 1·2부 27편 가운데 맞는 사건 문서가 있는 22편에 넣었다. 1부 고타·에르푸르트 편, 2부 국가자본주의·그람시·유로코뮤니즘 편은 맞는 사건이 없어 비웠다.
+- 새 시기 국기(`STORY_FLAGS`): `kingdom-of-france`(1792년 8월까지의 왕정), `habsburg-monarchy`, `great-britain-1707`, `sardinia-savoy`, `german-empire`, `weimar-republic`, `spanish-republic`. 공화국 프랑스는 인물 카드 코드 `france`.
+- 같이 고친 데이터: 1848년 혁명 개관 사건의 아라드 처형 인원(「장군 13명」 → 「장군 12명과 대령 1명」, 헝가리 사건 문서와 맞춤), 1848년 프랑스 사건의 모르니(「이복동생」 → 「이부동생」, 인물 카드와 맞춤). 프랑스 혁명사 강좌에서 「제헌의회」·「Constituent Assembly」가 러시아 제헌의회 용어로 링크되던 것은 강좌 `noAutoLink`로 막았다. 용어 `constituent-assembly`의 표제어가 일반형이라 생긴 일로, 표제어를 구체적으로 바꾸는 일은 남았다.
+- 확인이 덜 된 것: 33편 카드 가운데 소유자가 읽은 것은 없다. 메인이 프랑스 혁명사 9편과 「사회주의의 분기」 1부 4·15편, 2부 2·5편의 일부만 읽었다.
+
 ## 남은 일
 
 - 등록 2주 뒤 `commulingo_learning_events`로 첫 답 전 이탈과 완료율을 기존 형식과 비교한다. 시작이 20건 미만이면 판정을 보류한다.

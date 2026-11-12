@@ -41,3 +41,10 @@ rendered 14 px high at 3x to PNG.
 - `papal-states.png`: https://commons.wikimedia.org/wiki/File:Flag_of_the_Papal_States_(1825-1870).svg
 - `san-marco-1848.png`: https://commons.wikimedia.org/wiki/File:Flag_of_the_Republic_of_San_Marco.svg
 - `croatia-1848.svg`: drawn here, the red-white-blue Croatian tricolour of 1848 (no arms).
+- `kingdom-of-france.png`: https://commons.wikimedia.org/wiki/File:Royal_Standard_of_the_King_of_France.svg (French Revolution scene cards, 2026-11-12; 63x42 PNG).
+- `great-britain-1707.svg`: drawn here, the Union flag of 1707-1800 (no St Patrick's saltire).
+- `sardinia-savoy.svg`: drawn here, the red flag with the white cross of Savoy.
+- `habsburg-monarchy` reuses `austrian-empire.svg` under the pre-1804 name.
+- `german-empire.svg`: drawn here, the black-white-red tricolour of the German Empire (1871-1918).
+- `spanish-republic.svg`: drawn here, the red-yellow-purple tricolour of the Second Spanish Republic (no arms).
+- `weimar-republic` uses the person-card `germany.svg` (black-red-gold, as in 1919-1933).
