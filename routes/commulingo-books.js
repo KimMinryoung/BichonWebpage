@@ -6,7 +6,7 @@ const { setPublicDataCache, setShortPublicCache, commuLingoBreadcrumb, commuLing
 const { asyncHandler } = require('../utils/async-handler');
 const { loadCommuLingoCatalog } = require('../data/commulingo/shards');
 const { localize } = require('../data/commulingo/localize');
-const { bookPageData, decisionRefs } = require('../data/commulingo/book-page');
+const { bookPageData, decisionRefs, lessonStoryMap } = require('../data/commulingo/book-page');
 const { catalogBody, lessonPayload } = require('../data/commulingo/book-response');
 const { getGenealogyChart } = require('../data/commulingo/genealogy-store');
 const { loadCommuLingoPeople } = require('../data/commulingo/people-store');
@@ -130,6 +130,18 @@ router.get('/lesson/:lessonId', asyncHandler(async (req, res) => {
     // is what the glossary and people pages already serve.
     setShortPublicCache(res);
     res.json(payload);
+}));
+
+// The scene cards' map (book-page.js lessonStoryMap): an SVG of some 70 KB,
+// fetched only when a lesson with scene cards opens, so the lesson payload
+// stays small.
+router.get('/lesson/:lessonId/story-map', asyncHandler(async (req, res) => {
+    const lessonId = typeof req.params.lessonId === 'string' ? req.params.lessonId.trim() : '';
+    const lang = req.query && req.query.lang === 'en' ? 'en' : 'ko';
+    const map = await lessonStoryMap(lessonId, lang);
+    if (!map) return res.status(404).json({ error: 'no story map' });
+    setShortPublicCache(res);
+    res.json(map);
 }));
 
 module.exports = router;

@@ -24,7 +24,6 @@
 .commu-event-question { font-weight: 700; font-size: var(--text-lg); }
 .commu-event-head > p { font-size: var(--text-base); line-height: var(--leading-relaxed); }
 .commu-event-head > p.commu-event-question { font-size: var(--text-md); line-height: var(--leading-normal); }
-.commu-event-map { margin: 1.1rem 0 0; position: relative; }
 .commu-event-map .emap-svg { display: block; width: 100%; height: auto; font-family: inherit; }
 .commu-event-map-viewport { overflow: auto; }
 .commu-event-map-viewport:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
@@ -42,7 +41,6 @@
 .emap-svg.is-zoomed-far .emap-geo-label.is-active { display: none; }
 .emap-lake { fill: var(--bg-surface); stroke: color-mix(in srgb, var(--border) 30%, transparent); stroke-width: .5; }
 .emap-river { fill: none; stroke: var(--bg-surface); stroke-width: 1.1; stroke-linecap: round; }
-.commu-event-map,
 .commu-event-control {
     --emap-blue: #2f6fb8; --emap-red: var(--clr-red); --emap-amber: #c7861c;
     --emap-purple: #7b5aa6; --emap-gray: #8d8d86; --emap-green: #3f8a4a;
@@ -79,19 +77,6 @@
 .commu-event-control-range { flex: 1; min-width: 0; accent-color: var(--accent); }
 .commu-event-control-caption { margin: .45rem 0 0; font-size: var(--text-base); }
 .commu-event-control-caption strong { margin-right: .4rem; font-variant-numeric: tabular-nums; }
-.commu-event-control-legend { display: flex; flex-wrap: wrap; gap: .3rem 1rem; margin: .45rem 0 0; padding: 0; list-style: none; font-size: var(--text-sm); color: var(--text-secondary, var(--text-primary)); }
-.commu-event-control-legend li { display: inline-flex; align-items: center; gap: .35rem; }
-.commu-event-control-legend i { width: 14px; height: 10px; border: 1px solid; }
-.commu-event-control-legend i.is-blue { background: color-mix(in srgb, var(--emap-blue) 30%, transparent); border-color: var(--emap-blue); }
-.commu-event-control-legend i.is-red { background: color-mix(in srgb, var(--emap-red) 34%, transparent); border-color: var(--emap-red); }
-.commu-event-control-legend i.is-amber { background: color-mix(in srgb, var(--emap-amber) 34%, transparent); border-color: var(--emap-amber); }
-.commu-event-control-legend i.is-purple { background: color-mix(in srgb, var(--emap-purple) 34%, transparent); border-color: var(--emap-purple); }
-.commu-event-control-legend i.is-gray { background: color-mix(in srgb, var(--emap-gray) 34%, transparent); border-color: var(--emap-gray); }
-.commu-event-control-legend i.is-green { background: color-mix(in srgb, var(--emap-green) 34%, transparent); border-color: var(--emap-green); }
-.commu-event-control-legend i.is-black { background: color-mix(in srgb, var(--emap-black) 40%, transparent); border-color: var(--emap-black); }
-.commu-event-control-legend i.is-hatch { background: repeating-linear-gradient(-45deg, var(--hatch) 0 1.6px, transparent 1.6px 3.5px); border-style: dashed; }
-.commu-event-control-legend i.is-hatch.is-green { --hatch: var(--emap-green); }
-.commu-event-control-legend i.is-hatch.is-black { --hatch: var(--emap-black); }
 .commu-event-control-note { margin: .45rem 0 0; font-size: var(--text-meta); line-height: var(--leading-snug); color: var(--text-muted); }
 .commu-event-control-note a { color: inherit; }
 .emap-label.is-ref { fill: var(--text-muted); font-size: var(--text-2xs); }

@@ -975,7 +975,10 @@
                     firstScore: null
                 };
                 if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.begin('lesson', lesson.id, data.version, 'lesson');
-                if (active.story) renderStory();
+                if (active.story) {
+                    loadStoryMap(active);
+                    renderStory();
+                }
                 else if (active.intro) renderIntro();
                 else renderQuestion();
             })
@@ -1027,6 +1030,53 @@
         return data ? data.cards : [];
     }
 
+    // The scene cards' map: the chapter event's map with its territorial-
+    // control phases, fetched once per lesson (some 70 KB of SVG, so not in
+    // the lesson payload). Each card shows the phase the server matched to
+    // its mapDate. A lesson without one, or a failed fetch, has no map.
+    function loadStoryMap(session) {
+        session.storyMap = null;
+        fetch('/commulingo/lesson/' + encodeURIComponent(session.lesson.id) + '/story-map?lang=' + (lang === 'en' ? 'en' : 'ko'), { credentials: 'same-origin' })
+            .then(function(response) { return response.ok ? response.json() : null; })
+            .then(function(map) {
+                if (!map || active !== session) return;
+                session.storyMap = map;
+                if (session.story) showStoryMap();
+            })
+            .catch(function() {});
+    }
+
+    function showStoryMap() {
+        var slot = els.story && els.story.querySelector('.commu-story-map');
+        var map = active && active.storyMap;
+        if (!slot) return;
+        if (!map || !active.story) { slot.hidden = true; return; }
+        var en = lang === 'en';
+        if (slot.getAttribute('data-for') !== active.lesson.id) {
+            var control = map.control || {};
+            slot.innerHTML = '<div class="commu-story-map-frame">' + map.svg + '</div>'
+                + '<p class="commu-story-map-caption" aria-live="polite"><strong></strong> <span></span></p>'
+                + '<ul class="commu-event-control-legend">' + (control.sides || []).map(function(side) {
+                    return '<li><i class="is-' + escapeHtml(side.tone) + (side.overlay ? ' is-hatch' : '') + '" aria-hidden="true"></i>' + escapeHtml(side.label) + '</li>';
+                }).join('') + '</ul>'
+                + '<p class="commu-story-map-note">' + escapeHtml(control.note || '')
+                + ' <a href="/commulingo/events/' + encodeURIComponent(map.eventId) + (en ? '?lang=en' : '') + '" target="_blank" rel="noopener">'
+                + escapeHtml(en ? 'Sources and the full map' : '출처와 전체 지도') + '</a></p>';
+            slot.setAttribute('data-for', active.lesson.id);
+        }
+        var index = map.cardPhases[active.story.pos] || 0;
+        slot.querySelectorAll('.emap-phase[data-phase]').forEach(function(layer) {
+            layer.classList.toggle('is-current', layer.getAttribute('data-phase') === String(index));
+        });
+        var phase = (map.control && map.control.phases || [])[index];
+        var caption = slot.querySelector('.commu-story-map-caption');
+        if (caption && phase) {
+            caption.querySelector('strong').textContent = phase.date;
+            caption.querySelector('span').textContent = phase.label;
+        }
+        slot.hidden = false;
+    }
+
     function hideStory() {
         if (els.story) els.story.classList.add('is-hidden');
         if (els.storyPrev) els.storyPrev.classList.add('is-hidden');
@@ -1053,6 +1103,12 @@
         scrollToQuiz();
     }
 
+    // Side markers ({{flag:…}}, {{pos:…}}) are drawn by the server into the
+    // *Html twins; plain text drops them.
+    function storyText(text) {
+        return escapeHtml(String(text || '').replace(/\{\{(?:flag|pos):[a-z0-9-]+\}\}/g, ''));
+    }
+
     function renderStoryCard(card, labels) {
         var html = '';
         if (card.when) html += '<p class="commu-story-when">' + escapeHtml(card.when) + '</p>';
@@ -1062,12 +1118,12 @@
                 var tag = member.positionTag;
                 var chip = tag ? '<span class="commu-story-position' + (tag.colour ? ' pos-' + escapeHtml(tag.colour) : '') + '">'
                     + (tag.iconSvg || '') + escapeHtml(tag.label) + '</span>' : '';
-                return '<div><dt>' + escapeHtml(member.name) + chip + '</dt><dd>' + escapeHtml(member.text) + '</dd></div>';
+                return '<div><dt>' + escapeHtml(member.name) + chip + '</dt><dd>' + (member.textHtml || storyText(member.text)) + '</dd></div>';
             }).join('') + '</dl>';
         }
         if (Array.isArray(card.lines) && card.lines.length) {
-            html += '<div class="commu-story-lines">' + card.lines.map(function(line) {
-                return '<p>' + escapeHtml(line) + '</p>';
+            html += '<div class="commu-story-lines">' + card.lines.map(function(line, index) {
+                return '<p>' + ((card.linesHtml && card.linesHtml[index]) || storyText(line)) + '</p>';
             }).join('') + '</div>';
         }
         if (typeof card.tilt === 'number' && labels.length === 2) {
@@ -1077,7 +1133,7 @@
                 + '<span class="commu-story-tilt-track"><span class="commu-story-tilt-fill" style="width:' + tilt + '%"></span></span>'
                 + '<span class="commu-story-tilt-label">' + escapeHtml(labels[1]) + '</span>'
                 + '</div>';
-            if (card.tiltNote) html += '<p class="commu-story-note">' + escapeHtml(card.tiltNote) + '</p>';
+            if (card.tiltNote) html += '<p class="commu-story-note">' + (card.tiltNoteHtml || storyText(card.tiltNote)) + '</p>';
         }
         return html;
     }
@@ -1097,7 +1153,12 @@
         els.choices.classList.add('is-hidden');
         els.feedback.className = 'commu-feedback is-hidden';
         if (!els.story) { leaveStory(); return; }
-        els.story.innerHTML = '<div class="commu-story-head">'
+        var body = els.story.querySelector('.commu-story-body');
+        if (!body) {
+            els.story.innerHTML = '<figure class="commu-story-map commu-event-map" hidden></figure><div class="commu-story-body"></div>';
+            body = els.story.querySelector('.commu-story-body');
+        }
+        body.innerHTML = '<div class="commu-story-head">'
             + '<span class="commu-story-count">' + escapeHtml((en ? 'Scene ' : '장면 ') + (pos + 1) + ' / ' + cards.length) + '</span>'
             + '<span class="commu-story-dots" aria-hidden="true">' + cards.map(function(_, index) {
                 return '<span' + (index === pos ? ' class="is-current"' : (index < pos ? ' class="is-seen"' : '')) + '></span>';
@@ -1105,6 +1166,7 @@
             + '</div>'
             + '<div class="commu-story-card">' + renderStoryCard(cards[pos], Array.isArray(data.tiltLabels) ? data.tiltLabels : []) + '</div>';
         els.story.classList.remove('is-hidden');
+        showStoryMap();
         if (els.storyPrev) {
             els.storyPrev.disabled = pos === 0;
             els.storyPrev.classList.remove('is-hidden');

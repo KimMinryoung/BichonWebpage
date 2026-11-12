@@ -54,6 +54,7 @@ function publicLessonPayload(collection, chapter, lesson) {
         conceptMap: chapter.conceptMap,
         diagram: chapter.diagram,
         storyCards: chapter.storyCards,
+        eventIds: chapter.eventIds,
         questions: lesson.questions || [],
     };
 }

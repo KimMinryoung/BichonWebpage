@@ -284,6 +284,29 @@ function checkDiagram(out, value, label) {
   }
 }
 
+// Side markers in a scene card's prose ({{flag:code}}, {{pos:collection}},
+// data/commulingo/story-markers.js), sorted, so the two languages can be
+// compared whatever the word order.
+function storyMarkers(card) {
+  if (!card || typeof card !== 'object') return [];
+  const texts = [].concat(card.lines || [], (card.cast || []).map(function(m) { return m && m.text; }), card.tiltNote || []);
+  const found = [];
+  texts.forEach(function(text) {
+    String(text || '').replace(/\{\{(flag|pos):([a-z0-9]+(?:-[a-z0-9]+)*)\}\}/g, function(_, kind, code) { found.push(kind + ':' + code); return ''; });
+  });
+  return found.sort();
+}
+
+// A scene card's map date: the point the chapter's event map shows while the
+// card is up (the territorial-control phase in force then).
+function validMapDate(value) {
+  if (!Array.isArray(value) || value.length < 1 || value.length > 3) return false;
+  if (!value.every(function(n) { return Number.isInteger(n); })) return false;
+  if (value[0] < 1000 || value[0] > 2100) return false;
+  if (value.length > 1 && (value[1] < 1 || value[1] > 12)) return false;
+  return !(value.length > 2 && (value[2] < 1 || value[2] > 31));
+}
+
 // Optional scene cards shown one at a time before the concept brief: 4-14
 // cards, each a cast of 2-6 forces or a scene of 1-3 lines, with an optional
 // tilt (0-100, the share of the first of two labels). Both languages carry
@@ -334,6 +357,9 @@ function checkStoryCards(out, value, label) {
       if (typeof card.tilt !== 'undefined' && !(Number.isInteger(card.tilt) && card.tilt >= 0 && card.tilt <= 100)) {
         out.add('shape', label, cLabel + '.tilt must be an integer 0-100');
       }
+      if (typeof card.mapDate !== 'undefined' && !validMapDate(card.mapDate)) {
+        out.add('shape', label, cLabel + '.mapDate must be [year, month?, day?]');
+      }
       if (card.tiltNote) {
         if (typeof card.tilt === 'undefined') out.add('shape', label, cLabel + '.tiltNote needs a tilt');
         checkText(out, card.tiltNote, cLabel + '.tiltNote', locale);
@@ -351,6 +377,8 @@ function checkStoryCards(out, value, label) {
       else if (card && card.cast && card.cast.some(function(member, m) { return (member && member.position) !== (other.cast[m] && other.cast[m].position); })) out.add('shape', label, sLabel + '.cards[' + index + '] cast positions differ between ko and en');
       if ((card && card.tilt) !== other.tilt) out.add('shape', label, sLabel + '.cards[' + index + '] tilt differs between ko and en');
       if (Boolean(card && card.tiltNote) !== Boolean(other.tiltNote)) out.add('shape', label, sLabel + '.cards[' + index + '] tiltNote in one language only');
+      if (JSON.stringify(card && card.mapDate) !== JSON.stringify(other.mapDate)) out.add('shape', label, sLabel + '.cards[' + index + '] mapDate differs between ko and en');
+      if (storyMarkers(card).join(' ') !== storyMarkers(other).join(' ')) out.add('shape', label, sLabel + '.cards[' + index + '] side markers ({{flag:…}}, {{pos:…}}) differ between ko and en');
     });
   }
 }

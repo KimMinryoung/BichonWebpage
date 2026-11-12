@@ -609,6 +609,33 @@
     background: var(--accent-red);
 }
 
+/* The chapter event's map above the card, turned to each scene's phase
+   (the .emap-* and legend rules are the event page's). */
+.commu-story-map {
+    border: 1px solid var(--border);
+    margin: 0 0 10px;
+    padding: 8px 10px 10px;
+}
+
+.commu-story-map[hidden] {
+    display: none;
+}
+
+.commu-story-map-frame .emap-svg {
+    max-height: 46vh;
+}
+
+.commu-story-map-caption {
+    font-size: var(--text-sm);
+    margin: 6px 0 0;
+}
+
+.commu-story-map-note {
+    color: var(--text-secondary);
+    font-size: var(--text-meta);
+    margin: 6px 0 0;
+}
+
 .commu-story-card {
     background: var(--bg-surface);
     border: 1px solid var(--border);
@@ -698,6 +725,39 @@
     height: 12px;
     margin-right: 4px;
     width: 12px;
+}
+
+/* Side markers in the scene prose: a period flag, or the position icon of a
+   force without a state (data/commulingo/story-markers.js). */
+.commu-story-flag {
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--border) 60%, transparent);
+    height: 14px;
+    margin-right: 4px;
+    vertical-align: -2px;
+    width: auto;
+}
+
+.commu-story-pos {
+    align-items: center;
+    background: var(--pos, transparent);
+    box-shadow: inset 0 0 0 1px var(--pos, var(--border));
+    color: var(--pos-ink, var(--text-secondary));
+    display: inline-flex;
+    height: 16px;
+    justify-content: center;
+    margin-right: 4px;
+    vertical-align: -3px;
+    width: 16px;
+}
+
+.commu-story-pos.pos-white,
+.commu-story-pos.pos-anarchist {
+    box-shadow: inset 0 0 0 1px var(--text-muted);
+}
+
+.commu-story-pos .commu-role-icon {
+    height: 11px;
+    width: 11px;
 }
 
 .commu-story-cast dd {

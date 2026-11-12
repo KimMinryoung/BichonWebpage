@@ -2,6 +2,7 @@ const { loadCommuLingoLesson, loadCommuLingoCatalog } = require('./shards');
 const { localize } = require('./localize');
 const { getLinkIndexes, createLinker, clientPersonLinkPayload, standardizedFor } = require('./linkify');
 const { roleIconSvg } = require('./role-icons');
+const { renderEventMapSvg } = require('./event-map-svg');
 
 // Book and lesson page data: the memoized per-book payload (decision-history
 // links, linked chapter prose, dictionary chips) and the lesson linkifier.
@@ -232,28 +233,72 @@ function courseChaptersForDoc(docId, lang) {
 // Scene cards: a cast entry may name a political-position collection
 // (cast[].position, a people-index collection id such as monarchist or
 // national-liberation). It gains the chip the person cards wear for that
-// position: the collection's label and glyph, and its colour key.
+// position: the collection's label and glyph, and its colour key. The prose
+// (lines, cast text, tiltNote) may carry side markers, {{flag:code}} and
+// {{pos:collection}} (story-markers.js); each gets an *Html twin with the
+// markers drawn, and the client strips the tokens when a twin is missing.
 async function decorateStoryCast(lesson) {
     const story = lesson.storyCards;
     if (!story) return;
-    const wanted = ['ko', 'en'].flatMap(lang => ((story[lang] && story[lang].cards) || [])
-        .flatMap(card => (card.cast || []).filter(member => member.position)));
-    if (!wanted.length) return;
     const { loadCommuLingoPeople } = require('./people-store');
     const { collectionPosition } = require('./person-position');
+    const { renderStoryMarkers } = require('./story-markers');
     const loaded = await loadCommuLingoPeople();
-    const byId = new Map(((loaded && loaded.data && loaded.data.collections) || []).map(c => [c.id, c]));
+    const collections = (loaded && loaded.data && loaded.data.collections) || [];
+    const byId = new Map(collections.map(c => [c.id, c]));
     for (const lang of ['ko', 'en']) {
-        ((story[lang] && story[lang].cards) || []).forEach(card => (card.cast || []).forEach(member => {
-            const collection = member.position && byId.get(member.position);
-            if (!collection) return;
-            member.positionTag = {
-                label: localize(collection.title, lang),
-                colour: collectionPosition(collection.id),
-                iconSvg: collection.icon ? roleIconSvg(collection.icon) : '',
-            };
-        }));
+        const tags = new Map(collections.map(c => [c.id, {
+            label: localize(c.title, lang),
+            colour: collectionPosition(c.id),
+            iconSvg: c.icon ? roleIconSvg(c.icon) : '',
+        }]));
+        const html = text => renderStoryMarkers(text, lang, tags);
+        ((story[lang] && story[lang].cards) || []).forEach(card => {
+            (card.cast || []).forEach(member => {
+                const collection = member.position && byId.get(member.position);
+                if (collection) member.positionTag = tags.get(collection.id);
+                member.textHtml = html(member.text);
+            });
+            if (Array.isArray(card.lines)) card.linesHtml = card.lines.map(html);
+            if (card.tiltNote) card.tiltNoteHtml = html(card.tiltNote);
+        });
     }
+}
+
+// The scene cards' map: the chapter's first listed event, drawn with its
+// territorial-control phases and no timeline numbers (the cards are the
+// story here). Each card shows the phase in force at its mapDate; a card
+// without one keeps the previous card's, and the leading cards show the
+// first phase. Rendered on request per language and kept while the course
+// version, the event store and the control document stay the same.
+const storyMapMemo = new Map(); // `${lessonId}:${lang}` -> { key: [refs], value }
+
+async function lessonStoryMap(lessonId, lang) {
+    const payload = loadCommuLingoLesson(lessonId);
+    const lesson = payload && payload.lesson;
+    const story = lesson && lesson.storyCards && lesson.storyCards[lang];
+    const eventId = lesson && Array.isArray(lesson.eventIds) ? lesson.eventIds[0] : null;
+    if (!story || !Array.isArray(story.cards) || !eventId) return null;
+    const { loadEventControl, phaseIndexForPoint, presentEventControl } = require('./event-control');
+    const control = loadEventControl(eventId);
+    if (!control) return null;
+    const { loadCommuLingoHistoryEvents } = require('./history-events-store');
+    const events = await loadCommuLingoHistoryEvents();
+    const memoKey = `${lessonId}:${lang}`;
+    const hit = storyMapMemo.get(memoKey);
+    if (hit && hit.key[0] === story && hit.key[1] === control && hit.key[2] === events) return hit.value;
+    const event = events.find(item => item.id === eventId);
+    if (!event) return null;
+    const map = renderEventMapSvg(event.locations, lang, localize(event.title, lang), [], control);
+    if (!map) return null;
+    let phase = 0;
+    const cardPhases = story.cards.map(card => {
+        if (card && Array.isArray(card.mapDate)) phase = phaseIndexForPoint(control.phases, card.mapDate);
+        return phase;
+    });
+    const value = { eventId, svg: map.svg, cardPhases, control: presentEventControl(control, lang) };
+    storyMapMemo.set(memoKey, { key: [story, control, events], value });
+    return value;
 }
 
 async function linkifyLessonPayload(lesson) {
@@ -342,4 +387,4 @@ async function decisionRefs(collection, lang = 'ko') {
     return out;
 }
 
-module.exports = { decisionRefs, bookPageData, linkifyLessonPayload, courseChaptersFor, courseChaptersForDoc };
+module.exports = { decisionRefs, bookPageData, linkifyLessonPayload, lessonStoryMap, courseChaptersFor, courseChaptersForDoc };
