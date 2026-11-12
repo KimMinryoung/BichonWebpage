@@ -322,6 +322,7 @@ function checkStoryCards(out, value, label) {
           if (!member || !str(member.name).trim() || !str(member.text).trim()) { out.add('shape', label, mLabel + ' needs name and text'); return; }
           checkText(out, member.name, mLabel + '.name', locale);
           checkText(out, member.text, mLabel + '.text', locale);
+          if (typeof member.position !== 'undefined' && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(str(member.position))) out.add('shape', label, mLabel + '.position is not a position collection id');
         });
       } else {
         if (card.lines.length < 1 || card.lines.length > 3) out.add('shape', label, cLabel + '.lines must have 1-3 lines');
@@ -347,6 +348,7 @@ function checkStoryCards(out, value, label) {
       const other = en[index] || {};
       if (Boolean(card && card.cast) !== Boolean(other.cast)) out.add('shape', label, sLabel + '.cards[' + index + '] is a cast card in one language only');
       else if (card && card.cast && card.cast.length !== other.cast.length) out.add('shape', label, sLabel + '.cards[' + index + '] cast sizes differ between ko and en');
+      else if (card && card.cast && card.cast.some(function(member, m) { return (member && member.position) !== (other.cast[m] && other.cast[m].position); })) out.add('shape', label, sLabel + '.cards[' + index + '] cast positions differ between ko and en');
       if ((card && card.tilt) !== other.tilt) out.add('shape', label, sLabel + '.cards[' + index + '] tilt differs between ko and en');
       if (Boolean(card && card.tiltNote) !== Boolean(other.tiltNote)) out.add('shape', label, sLabel + '.cards[' + index + '] tiltNote in one language only');
     });

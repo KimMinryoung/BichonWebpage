@@ -669,6 +669,37 @@
     font-weight: 700;
 }
 
+.commu-story-cast dt {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+}
+
+.commu-story-position {
+    align-items: center;
+    background: var(--pos, transparent);
+    box-shadow: inset 0 0 0 1px var(--pos, var(--border));
+    color: var(--pos-ink, var(--text-secondary));
+    display: inline-flex;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    line-height: 1.45;
+    padding: 1px 7px;
+}
+
+.commu-story-position.pos-white,
+.commu-story-position.pos-anarchist {
+    box-shadow: inset 0 0 0 1px var(--text-muted);
+}
+
+.commu-story-position .commu-role-icon {
+    flex-shrink: 0;
+    height: 12px;
+    margin-right: 4px;
+    width: 12px;
+}
+
 .commu-story-cast dd {
     color: var(--text-secondary);
     line-height: var(--leading-snug);

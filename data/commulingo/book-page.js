@@ -229,6 +229,33 @@ function courseChaptersForDoc(docId, lang) {
     return out;
 }
 
+// Scene cards: a cast entry may name a political-position collection
+// (cast[].position, a people-index collection id such as monarchist or
+// national-liberation). It gains the chip the person cards wear for that
+// position: the collection's label and glyph, and its colour key.
+async function decorateStoryCast(lesson) {
+    const story = lesson.storyCards;
+    if (!story) return;
+    const wanted = ['ko', 'en'].flatMap(lang => ((story[lang] && story[lang].cards) || [])
+        .flatMap(card => (card.cast || []).filter(member => member.position)));
+    if (!wanted.length) return;
+    const { loadCommuLingoPeople } = require('./people-store');
+    const { collectionPosition } = require('./person-position');
+    const loaded = await loadCommuLingoPeople();
+    const byId = new Map(((loaded && loaded.data && loaded.data.collections) || []).map(c => [c.id, c]));
+    for (const lang of ['ko', 'en']) {
+        ((story[lang] && story[lang].cards) || []).forEach(card => (card.cast || []).forEach(member => {
+            const collection = member.position && byId.get(member.position);
+            if (!collection) return;
+            member.positionTag = {
+                label: localize(collection.title, lang),
+                colour: collectionPosition(collection.id),
+                iconSvg: collection.icon ? roleIconSvg(collection.icon) : '',
+            };
+        }));
+    }
+}
+
 async function linkifyLessonPayload(lesson) {
     const linkers = await commuLingoLinkers(lesson.noAutoLink);
     // The chapter summary and focus shown above the brief, linked the same way
@@ -268,6 +295,7 @@ async function linkifyLessonPayload(lesson) {
             question.explanationHtml[lang] = linker()(explanation);
         });
     }
+    await decorateStoryCast(lesson);
     return lesson;
 }
 

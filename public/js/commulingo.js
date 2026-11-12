@@ -1059,7 +1059,10 @@
         html += '<h2 class="commu-story-title">' + escapeHtml(card.title) + '</h2>';
         if (Array.isArray(card.cast) && card.cast.length) {
             html += '<dl class="commu-story-cast">' + card.cast.map(function(member) {
-                return '<div><dt>' + escapeHtml(member.name) + '</dt><dd>' + escapeHtml(member.text) + '</dd></div>';
+                var tag = member.positionTag;
+                var chip = tag ? '<span class="commu-story-position' + (tag.colour ? ' pos-' + escapeHtml(tag.colour) : '') + '">'
+                    + (tag.iconSvg || '') + escapeHtml(tag.label) + '</span>' : '';
+                return '<div><dt>' + escapeHtml(member.name) + chip + '</dt><dd>' + escapeHtml(member.text) + '</dd></div>';
             }).join('') + '</dl>';
         }
         if (Array.isArray(card.lines) && card.lines.length) {

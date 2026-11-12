@@ -65,6 +65,8 @@ assert.match(broken((q, course) => { const s = story(); s.en.cards[1].tilt = 60;
 assert.match(broken((q, course) => { const s = story(); s.en.cards.pop(); course.chapters[0].storyCards = s; }), /card counts differ|4-14/);
 assert.match(broken((q, course) => { const s = story(); s.ko.cards[2].lines = []; s.ko.cards[2].cast = []; course.chapters[0].storyCards = s; }), /cast or lines/);
 assert.match(broken((q, course) => { const s = story(); delete s.ko.tiltLabels; course.chapters[0].storyCards = s; }), /tiltLabels/);
+assert.equal(broken((q, course) => { const s = story(); s.ko.cards[0].cast[0].position = 'monarchist'; s.en.cards[0].cast[0].position = 'monarchist'; course.chapters[0].storyCards = s; }), '', 'a cast position passes');
+assert.match(broken((q, course) => { const s = story(); s.ko.cards[0].cast[0].position = 'monarchist'; course.chapters[0].storyCards = s; }), /cast positions differ/);
 assert.match(broken((q, course) => { const s = story(); s.ko.cards[3].lines = ['혁명이 끝났다 — 완전히.']; course.chapters[0].storyCards = s; }), /em dash/);
 // a chapter may name the history events it is about
 assert.equal(broken((q, course) => { course.chapters[0].eventIds = ['german-revolution-1848-1849']; }), '', 'event ids pass');
