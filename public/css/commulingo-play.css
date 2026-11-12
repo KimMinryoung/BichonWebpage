@@ -2981,19 +2981,3 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
         animation: none;
     }
 }
-.commulingo-review {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px 12px;
-    margin-top: 12px;
-}
-
-.commulingo-review small {
-    color: var(--text-muted);
-}
-
-.commu-level-badge.is-review {
-    border-color: var(--link);
-    color: var(--link);
-}

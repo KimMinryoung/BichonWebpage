@@ -15,8 +15,8 @@
     var answered = false;
     var returnScrollLesson = null;
     var quizHistory = false;
-    // Per-question history and the review schedule built on it, shared with
-    // the hub through public/js/commulingo-schedule.js.
+    // Per-question answer history (public/js/commulingo-schedule.js), kept
+    // locally and synced to the account.
     var Schedule = window.CommuLingoSchedule || null;
     var answers = Schedule ? Schedule.load() : {};
     // Unsent answer keys, each mapped to the generation of its latest change:
@@ -49,8 +49,6 @@
         diagram: document.getElementById('commuDiagram'),
         next: document.getElementById('commuNextBtn'),
         nextLesson: document.getElementById('commuNextLessonBtn'),
-        review: document.getElementById('commuReviewBtn'),
-        reviewNote: document.getElementById('commuReviewNote'),
         guide: document.getElementById('faction-guide'),
         chapterDictionaries: document.querySelectorAll('.commu-chapter-dictionary')
     };
@@ -115,9 +113,6 @@
         active.story.pos = target;
         renderStory();
     });
-    if (els.review) {
-        els.review.addEventListener('click', function() { startReview(); });
-    }
 
     // Keys 1-4 pick a choice immediately. Enter (or Space away from a button)
     // advances only after that choice has been answered.
@@ -160,29 +155,21 @@
         });
     }
 
-    // A round is either a lesson (all questions, or the missed ones on a
-    // retry) or a review of due questions drawn from several lessons.
+    // A round is a lesson: all its questions, or the missed ones on a retry.
     function roundLength() {
         if (!active) return 0;
-        return active.mode === 'review' ? active.items.length : active.order.length;
+        return active.order.length;
     }
 
     function currentQuestion() {
-        if (active.mode === 'review') return active.items[active.pos].question;
         return active.lesson.questions[active.order[active.pos]];
     }
 
     function currentLesson() {
-        return active.mode === 'review' ? active.items[active.pos].lesson : active.lesson;
+        return active.lesson;
     }
 
-    function lessonById(lessonId) {
-        return lessons.filter(function(item) { return item.id === lessonId; })[0] || null;
-    }
 
-    function bookLessonIds() {
-        return lessons.filter(function(item) { return !item.locked && lessonQuestionCount(item); }).map(function(item) { return item.id; });
-    }
 
     function recordAnswer(lesson, question, correct) {
         if (!Schedule || !lesson || !question || !question.id) return;
@@ -492,7 +479,6 @@
         }).length;
         els.total.textContent = Math.round((completeCount / (playable.length || 1)) * 100) + '%';
         els.list.innerHTML = '';
-        renderReviewButton();
 
         groupLessons().forEach(function(group) {
             groupPartLessons(group.lessons).forEach(function(part) {
@@ -513,28 +499,6 @@
                 els.list.appendChild(partNode);
             });
         });
-    }
-
-    function renderReviewButton() {
-        if (!els.review || !Schedule) return;
-        var ids = bookLessonIds();
-        var due = Schedule.dueList(answers, ids, Date.now());
-        if (due.length) {
-            els.review.textContent = (strings.reviewButton || 'Review') + ' · ' + due.length;
-            els.review.classList.remove('is-hidden');
-            if (els.reviewNote) els.reviewNote.textContent = fill(strings.reviewDueCount || '{count} due', { count: due.length });
-            return;
-        }
-        els.review.classList.add('is-hidden');
-        if (!els.reviewNote) return;
-        var next = Schedule.nextDue(answers, ids);
-        if (next) {
-            var date = new Date(next);
-            var label = lang === 'en' ? date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) : (date.getMonth() + 1) + '월 ' + date.getDate() + '일';
-            els.reviewNote.textContent = fill(strings.reviewNextDue || 'Next review: {date}', { date: label });
-        } else {
-            els.reviewNote.textContent = '';
-        }
     }
 
     function chapterCountLabel(count) {
@@ -951,7 +915,10 @@
     function lessonLabel(lesson, item) {
         if (lesson.locked) return escapeHtml(strings.locked || 'Coming soon');
         if (item && item.totalQuestions) {
-            return escapeHtml((strings.score || 'Score') + ' ' + item.score + ' / ' + item.totalQuestions);
+            // A scored chapter is unfinished until its missed questions are
+            // retried to all correct, which the score alone does not show.
+            var scored = (strings.score || 'Score') + ' ' + item.score + ' / ' + item.totalQuestions;
+            return escapeHtml(item.completed ? scored : scored + ' · ' + (strings.incomplete || 'Not finished'));
         }
         if (item && item.completed) return escapeHtml(strings.completed || 'Completed');
         if (item) return escapeHtml(strings.continue || 'Continue');
@@ -1248,7 +1215,7 @@
         els.next.textContent = lang === 'en' ? 'Start questions' : '문제 풀기';
     }
 
-    // An open lesson or review owns one history entry, so the browser's back
+    // An open lesson owns one history entry, so the browser's back
     // button returns to the chapter list instead of leaving the book page.
     // Moving on to the next lesson replaces that entry rather than stacking.
     function enterQuizHistory(hash) {
@@ -1344,13 +1311,6 @@
 
     function handleDeepLink(fromHistory) {
         var match = /(?:^|[#&])lesson=([^&]+)/.exec(window.location.hash || '');
-        // #review (the review rows of the courses page): the due questions of this book.
-        if (!match && /(?:^|[#&])review(?:&|$)/.test(window.location.hash || '')) {
-            if (fromHistory) quizHistory = true;
-            else if (window.history && history.replaceState) history.replaceState(null, '', window.location.pathname + window.location.search);
-            startReview();
-            return;
-        }
         if (!match) return;
         var lessonId = decodeURIComponent(match[1]);
         // Opened from a shared link: put the bare book page beneath the
@@ -1372,9 +1332,7 @@
         var total = roundLength();
         els.count.textContent = (active.pos + 1) + ' / ' + total;
         els.meter.style.width = Math.round((active.pos / total) * 100) + '%';
-        var badge = active.mode === 'review'
-            ? '<span class="commu-level-badge is-review">' + escapeHtml(strings.reviewTitle || 'Review') + '</span>'
-            : levelBadge(lesson, active.mode === 'retry' ? (strings.tryAgain || 'Retry') : '');
+        var badge = levelBadge(lesson, active.mode === 'retry' ? (strings.tryAgain || 'Retry') : '');
         els.lessonTitle.innerHTML = '<span>' + escapeHtml(chapterTitle(lesson)) + '</span>' + badge;
         renderPassage(lesson, question);
         // The learning focus states the chapter's conclusion, which is often
@@ -1892,8 +1850,7 @@
             active.streak += 1;
         } else {
             active.streak = 0;
-            if (active.mode === 'review') active.missed.push(active.pos);
-            else active.missed.push(active.order[active.pos]);
+            active.missed.push(active.order[active.pos]);
         }
         recordAnswer(currentLesson(), question, correct);
         if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.answer(correct);
@@ -2033,7 +1990,6 @@
     }
 
     function finishLesson() {
-        if (active.mode === 'review') { finishReview(); return; }
         if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.complete();
         if (active.mode === 'lesson') active.firstScore = active.score;
         var total = lessonQuestionCount(active.lesson);
@@ -2103,65 +2059,6 @@
         renderQuestion();
     }
 
-    // Due questions of this book, drawn from several lessons, shuffled.
-    function startReview() {
-        if (window.CommuLingoMeasurement) window.CommuLingoMeasurement.stop();
-        if (!Schedule) return;
-        var due = Schedule.dueList(answers, bookLessonIds(), Date.now()).slice(0, 20);
-        if (!due.length) { renderReviewButton(); return; }
-        var byLesson = {};
-        due.forEach(function(ref) { (byLesson[ref.lessonId] = byLesson[ref.lessonId] || []).push(ref.questionId); });
-        var lessonIds = Object.keys(byLesson);
-        returnScrollLesson = lessonById(lessonIds[0]);
-        hideNextLesson();
-        setBookContextHidden(true);
-        els.list.classList.add('is-hidden');
-        els.quiz.classList.remove('is-hidden');
-        els.next.removeAttribute('data-finished');
-        enterQuizHistory('#review');
-        renderLoadingLesson(lessonById(lessonIds[0]) || lessons[0]);
-        scrollToQuiz();
-        Promise.all(lessonIds.map(function(id) {
-            var lesson = lessonById(id);
-            return lesson ? loadLessonDetail(lesson).catch(function() { return null; }) : Promise.resolve(null);
-        })).then(function(loaded) {
-            var items = [];
-            loaded.forEach(function(lesson, i) {
-                if (!lesson || !Array.isArray(lesson.questions)) return;
-                byLesson[lessonIds[i]].forEach(function(qid) {
-                    var question = lesson.questions.filter(function(q) { return q.id === qid; })[0];
-                    if (question) items.push({ lesson: lesson, question: question });
-                });
-            });
-            items = shuffleChoices(items);
-            if (!items.length) { showLessons(); return; }
-            active = { mode: 'review', items: items, pos: 0, score: 0, streak: 0, intro: false, missed: [], firstScore: null, lesson: items[0].lesson };
-            answered = false;
-            renderQuestion();
-        });
-    }
-
-    function finishReview() {
-        var total = roundLength();
-        var perfect = active.score === total;
-        setPlainPrompt(strings.reviewDone || 'Review complete');
-        if (els.focus) els.focus.classList.add('is-hidden');
-        hidePassage();
-        els.lessonTitle.innerHTML = '<span>' + escapeHtml(strings.reviewTitle || 'Review') + '</span>';
-        els.choices.innerHTML = '';
-        els.feedback.className = 'commu-feedback' + (perfect ? ' is-perfect' : '');
-        els.feedback.innerHTML = [
-            '<strong class="commu-feedback-marker">' + escapeHtml((strings.score || 'Score') + ': ' + active.score + ' / ' + total) + '</strong>',
-            '<span>' + escapeHtml(fill(perfect ? (strings.reviewResultPerfect || '') : (strings.reviewResult || ''), { score: active.score, total: total })) + '</span>'
-        ].join('');
-        els.quiz.classList.toggle('has-perfect-reward', perfect);
-        els.next.disabled = false;
-        els.next.textContent = strings.backToLessons || 'Lessons';
-        els.next.setAttribute('data-finished', '1');
-        hideNextLesson();
-        answered = true;
-    }
-
     // The distinction a workshop chapter was about, shown when it is over.
     function takeawayHtml(lesson) {
         var takeaway = lesson && text(lesson.takeaway);
@@ -2176,11 +2073,12 @@
         var score = (strings.score || 'Score') + ': ' + (retried ? firstScore : active.score) + ' / ' + total;
         if (!perfect) {
             var left = active.missed.length;
-            var again = retried ? fill(strings.retryAgainNote || '', { left: left }) : '';
+            var again = fill((retried ? strings.retryAgainNote : strings.retryFirstNote) || '', { left: left });
             return '<strong class="commu-feedback-marker">' + escapeHtml(score) + '</strong>'
                 + (again ? '<span class="commu-choice-feedback">' + escapeHtml(again) + '</span>' : '');
         }
-        var label = lang === 'en' ? 'Perfect lesson' : '만점 완료';
+        // After a retry the chapter is complete but the score is not full.
+        var label = retried ? (strings.completed || 'Completed') : (lang === 'en' ? 'Perfect lesson' : '만점 완료');
         var note = retried
             ? fill(strings.retryNote || '', { first: firstScore, now: total, total: total })
             : (lang === 'en' ? 'The full concept path is clear enough to move on.' : '이 장의 기본 개념 흐름을 안정적으로 잡았습니다.');
@@ -2216,7 +2114,7 @@
     handleDeepLink();
     window.addEventListener('popstate', function() {
         var quizOpen = !els.quiz.classList.contains('is-hidden');
-        var lessonHash = /(?:^|[#&])(lesson=|review)/.test(window.location.hash || '');
+        var lessonHash = /(?:^|[#&])lesson=/.test(window.location.hash || '');
         if (quizOpen && !lessonHash) showLessons(null, true);
         else if (!quizOpen && lessonHash) handleDeepLink(true);
     });

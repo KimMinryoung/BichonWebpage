@@ -44,7 +44,7 @@
 
 ## 3. 학습 화면 (d9aab1b7)
 
-- 강좌 목록(`/commulingo/learn`): 틀렸다가 복습 날짜가 된 문항이 있는 강좌마다 「복습하기 · 강좌 · 복습할 문항 N개」 행. 누르면 그 강좌 화면에서 복습이 바로 시작된다(`#review`). 이어하기 행에 붙던 복습 수 표시는 이 행으로 옮겼다. `public/js/commulingo-index.js` `renderReviews`, `public/js/commulingo.js` `handleDeepLink`.
+- (2026-11-12 제거됨, `commulingo-learning-design.md` 참고) 강좌 목록(`/commulingo/learn`): 틀렸다가 복습 날짜가 된 문항이 있는 강좌마다 「복습하기 · 강좌 · 복습할 문항 N개」 행. 누르면 그 강좌 화면에서 복습이 바로 시작된다(`#review`). 이어하기 행에 붙던 복습 수 표시는 이 행으로 옮겼다. `public/js/commulingo-index.js` `renderReviews`, `public/js/commulingo.js` `handleDeepLink`.
 - 완료 화면: 전부 맞히면 그 장의 사전 항목 칩을 보여 준다(끊어 읽기 강좌는 설명 화면이 없어 칩이 나올 자리가 없었다). 마지막 장을 마치면 같은 묶음의 다음 강좌 버튼. `routes/commulingo-books.js` `nextBook`, `chapterDictionaryHtml`, `showNextBook`.
 
 ## 4. 자잘한 미결

@@ -6931,33 +6931,6 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 
 
-/* Review queue (missed questions due again) on the book hero, and the
-   keyboard hint under the quiz actions; both stay out of the way when
-   nothing applies. */
-.commulingo-review {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px 12px;
-    margin-top: 12px;
-}
-
-.commulingo-review small {
-    color: var(--text-muted);
-}
-
-.commu-level-badge.is-review {
-    border-color: var(--link);
-    color: var(--link);
-}
-
-.commu-resume-review {
-    display: block;
-    margin-top: 4px;
-    font-size: var(--text-sm);
-    color: var(--link);
-}
-
 /* Documents from this period: the cluster an event belongs to. The overview
    is one accent bar with cream type; the detail documents are full-width rows
    below it, the current page marked in its own slot. Titles take the text

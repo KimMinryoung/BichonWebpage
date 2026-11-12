@@ -41,7 +41,7 @@
 | CommuLingo 인터내셔널 문헌·카드 | [창립 선언·『프랑스 내전』 문헌 2건·인물 35명·용어 22개·반영 기록](commulingo-iwma-docs-cards-20261024.md) |
 | CommuLingo 『브뤼메르 18일』 카드 | [인물 55명·용어 24개·문헌 연결·반영 기록](commulingo-brumaire-cards-20261024.md) |
 | CommuLingo 마르크스경제학 보강(이론 용어·학계 마르크스주의·문헌·현대 자본주의 입문 코스) | [2026-11-03 용어 33·인물 28·문헌 3·코스·시사 용어 48](commulingo-marxian-economics-20261103.md) |
-| CommuLingo 한국 사회주의·노동운동사 묶음(10편 계획, 1차 3편)·『공산당 선언』 강좌·강좌 목록의 복습 행 | [2026-11-11 사건 3편·용어 36·인물 41·강좌 8편·남은 7편](commulingo-korea-movement-20261111.md) |
+| CommuLingo 한국 사회주의·노동운동사 묶음(10편 계획, 1차 3편)·『공산당 선언』 강좌 | [2026-11-11 사건 3편·용어 36·인물 41·강좌 8편·남은 7편](commulingo-korea-movement-20261111.md) |
 | CommuLingo 독일 고전철학 계보도(철학 분류 시작) | [계보도·철학 분류·용어 17개·인물 10명·「포이어바흐에 관한 테제」 번역·MCP 원문 쓰기](commulingo-german-philosophy-20261028.md) |
 | CommuLingo 『유물론과 경험비판론』 완역 | [러시아어 원문 파싱·DeepSeek 초벌·Opus 교열·문헌 등록·링크·학습 코스 8단위](commulingo-lenin-mec-20261028.md) |
 | CommuLingo 『유물론과 경험비판론』 논쟁 문헌 | [레닌 「열 가지 질문」·고리키 편지, 보그다노프 『믿음과 과학』, 루나차르스키 「무신론」 번역·문헌 등록](commulingo-mec-polemics-20261029.md) |
