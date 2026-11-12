@@ -1,10 +1,7 @@
 const { loadCommuLingoLesson, loadCommuLingoCatalog } = require('./shards');
 const { localize } = require('./localize');
 const { getLinkIndexes, createLinker, clientPersonLinkPayload, standardizedFor } = require('./linkify');
-const { blockedPhrases } = require('./link-blocklist');
-const { WORD_CHAR } = require('./people-linkify');
 const { roleIconSvg } = require('./role-icons');
-const { snapshot, changedNeedles } = require('./link-index-diff');
 
 // Book and lesson page data: the memoized per-book payload (decision-history
 // links, linked chapter prose, dictionary chips) and the lesson linkifier.
@@ -175,162 +172,39 @@ function passageEntries(indexes, collection, passage) {
     return link.found;
 }
 
-// The reverse of chapterDictionaryEntries: which course chapters a
-// dictionary entry is linked from, so its detail page can send a reader into
-// the lesson (/commulingo/book/<book>#lesson=<first lesson>). Chapters where
-// the entry is linked from more passages come first.
-//
-// Walking every lesson shard takes seconds of CPU, so the build yields after
-// each chapter and a detail page never waits for it: until the index for the
-// current link-index generation is ready the section is simply left out.
-const courseIndexMemo = new WeakMap(); // indexes -> { catalogRef, byEntry, building }
+// The course chapters that teach a dictionary entry, for its detail page's
+// practice links: those that list it by hand in chapter.eventIds,
+// chapter.personIds or chapter.termIds. Nothing is inferred from the lesson
+// prose; an unlisted chapter is not offered. Each link opens the chapter's
+// first lesson (/commulingo/book/<book>#lesson=<lesson>).
+const CHAPTER_ENTRY_FIELDS = { events: 'eventIds', people: 'personIds', terms: 'termIds' };
 
-// Glossary and event spellings kept out of automatic linking ('search' policy,
-// e.g. 자코뱅파) still say what a chapter is about. They count only when the
-// chapter uses them at least twice, and never when the phrase is blocklisted.
-const SEARCH_ONLY_MIN_HITS = 2;
-
-function searchOnlyExpressions(indexes, lang) {
-    const blocked = new Set(blockedPhrases(lang));
+// keys are `${kind}:${id}` with kind 'people' | 'terms' | 'events' (a paired
+// term/event page passes both). Catalog order: course by course, chapter by
+// chapter.
+async function courseChaptersFor(keys, lang, limit = 6) {
+    const wanted = new Set(keys);
     const out = [];
-    for (const [indexKind, kind] of [['term', 'terms'], ['event', 'events']]) {
-        const index = indexes[indexKind];
-        Object.entries((index && index.expressions) || {}).forEach(([key, expression]) => {
-            if (expression.policy !== 'search' || [...expression.text].length < 2 || blocked.has(expression.text)) return;
-            out.push({ key: kind + ':' + key.slice(0, key.length - expression.text.length - 1), text: expression.text });
-        });
-    }
-    return out;
-}
-
-function countMentions(text, phrase, lang) {
-    let count = 0;
-    for (let at = text.indexOf(phrase); at !== -1; at = text.indexOf(phrase, at + phrase.length)) {
-        const before = text[at - 1] || '';
-        const after = text[at + phrase.length] || '';
-        // Korean refuses only a match glued to a preceding word (particles
-        // follow); English needs a boundary on both sides.
-        if (WORD_CHAR.test(before)) continue;
-        if (lang === 'en' && WORD_CHAR.test(after)) continue;
-        count += 1;
-    }
-    return count;
-}
-
-// The previous build per language, so a new link-index generation (a
-// dictionary edit) re-links only the passages that contain a needle of what
-// changed (link-index-diff, the same test the report cache uses) and recounts
-// search-only expressions only where that list or the chapter text changed.
-// Passages are keyed by content, so an edited lesson is simply new text.
-const CURATED_EVENT_HITS = 1000;
-const previousCourseBuild = {}; // lang -> { snapshot, passages, chapters, searchKey }
-
-async function buildCourseChapterIndex(indexes, catalog, lang) {
-    const byEntry = new Map(); // `${kind}:${id}` -> [{ ..., hits }]
-    const searchOnly = searchOnlyExpressions(indexes, lang);
-    const searchKey = JSON.stringify(searchOnly);
-    const previous = previousCourseBuild[lang];
-    const current = snapshot(indexes);
-    // null: no previous build or a change that cannot be traced to literals.
-    const needles = previous && current ? changedNeedles(previous.snapshot, current) : null;
-    const passages = new Map(); // block strings + text -> { lower, found }
-    const chapters = new Map(); // chapter text -> [[key, count]]
-    for (const collection of (catalog && catalog.collections) || []) {
-        const blockStrings = collection.noAutoLink || [];
-        const blockKey = JSON.stringify(blockStrings);
+    const seen = new Set();
+    for (const collection of (loadCommuLingoCatalog() || {}).collections || []) {
         for (const chapter of collection.chapters || []) {
             const lesson = (chapter.lessons || [])[0];
-            if (!lesson) continue;
-            await new Promise(resolve => setImmediate(resolve));
-            const hits = new Map();
-            const chapterPassageList = chapterPassages(chapter, lang);
-            const chapterText = chapterPassageList.join('\n');
-            let counts = previous && previous.searchKey === searchKey ? previous.chapters.get(chapterText) : null;
-            if (!counts) {
-                counts = [];
-                searchOnly.forEach(({ key, text }) => {
-                    const count = countMentions(chapterText, text, lang);
-                    if (count >= SEARCH_ONLY_MIN_HITS) counts.push([key, count]);
-                });
-            }
-            chapters.set(chapterText, counts);
-            counts.forEach(([key, count]) => hits.set(key, (hits.get(key) || 0) + count));
-            for (const passage of chapterPassageList) {
-                const passageKey = blockKey + '\u0000' + passage;
-                let linked = passages.get(passageKey) || (previous && previous.passages.get(passageKey));
-                if (linked && (!needles || needles.some(needle => linked.lower.includes(needle)))) linked = null;
-                if (!linked) {
-                    // Yield per passage, not per chapter: one long chapter took
-                    // up to 7 s of uninterrupted CPU and stalled every request.
-                    await new Promise(resolve => setImmediate(resolve));
-                    const found = passageEntries(indexes, collection, passage);
-                    linked = {
-                        lower: passage.normalize('NFC').toLowerCase(),
-                        found: Object.fromEntries(['people', 'terms', 'events'].map(kind => [kind, found[kind].map(entry => entry.id)])),
-                    };
-                }
-                passages.set(passageKey, linked);
-                for (const kind of ['people', 'terms', 'events']) {
-                    linked.found[kind].forEach(id => {
-                        const key = kind + ':' + id;
-                        hits.set(key, (hits.get(key) || 0) + 1);
-                    });
-                }
-            }
-            // The events a chapter names as its subject (chapter.eventIds) come
-            // before any chapter that only mentions them.
-            (Array.isArray(chapter.eventIds) ? chapter.eventIds : []).forEach(id => {
-                const key = 'events:' + id;
-                hits.set(key, (hits.get(key) || 0) + CURATED_EVENT_HITS);
-            });
-            hits.forEach((count, key) => {
-                const list = byEntry.get(key) || byEntry.set(key, []).get(key);
-                list.push({
-                    bookId: collection.id,
-                    bookTitle: localize(collection.title, lang),
-                    chapterNumber: chapter.chapterNumber,
-                    chapterTitle: localize(chapter.title, lang),
-                    lessonId: lesson.id,
-                    hits: count,
-                });
+            if (!lesson || seen.has(lesson.id)) continue;
+            const listed = Object.entries(CHAPTER_ENTRY_FIELDS).some(([kind, field]) => (
+                Array.isArray(chapter[field]) && chapter[field].some(id => wanted.has(kind + ':' + id))
+            ));
+            if (!listed) continue;
+            seen.add(lesson.id);
+            out.push({
+                bookId: collection.id,
+                bookTitle: localize(collection.title, lang),
+                chapterNumber: chapter.chapterNumber,
+                chapterTitle: localize(chapter.title, lang),
+                lessonId: lesson.id,
             });
         }
     }
-    byEntry.forEach(list => list.sort((a, b) => b.hits - a.hits));
-    if (current) previousCourseBuild[lang] = { snapshot: current, passages, chapters, searchKey };
-    return byEntry;
-}
-
-// The ready index, or null while it is (re)building.
-async function courseChapterIndex(lang) {
-    const indexes = await getLinkIndexes(lang);
-    const catalog = loadCommuLingoCatalog();
-    let memo = courseIndexMemo.get(indexes);
-    if (!memo || memo.catalogRef !== catalog) {
-        memo = { catalogRef: catalog, byEntry: null };
-        courseIndexMemo.set(indexes, memo);
-        memo.building = buildCourseChapterIndex(indexes, catalog, lang)
-            .then(byEntry => { memo.byEntry = byEntry; })
-            .catch(err => console.error('commulingo course chapters build:', err));
-    }
-    return memo;
-}
-
-// keys are `${kind}:${id}` with kind 'people' | 'terms' | 'events' (a paired
-// term/event page passes both). Failure only costs the section.
-async function courseChaptersFor(keys, lang, limit = 6) {
-    try {
-        const { byEntry } = await courseChapterIndex(lang === 'en' ? 'en' : 'ko');
-        if (!byEntry) return [];
-        const seen = new Set();
-        return keys.flatMap(key => byEntry.get(key) || [])
-            .sort((a, b) => b.hits - a.hits)
-            .filter(item => !seen.has(item.lessonId) && seen.add(item.lessonId))
-            .slice(0, limit);
-    } catch (err) {
-        console.error('commulingo course chapters:', err);
-        return [];
-    }
+    return out.slice(0, limit);
 }
 
 // Course chapters built on a reference document: those whose sourceUrl is the
@@ -353,17 +227,6 @@ function courseChaptersForDoc(docId, lang) {
         }
     }
     return out;
-}
-
-// Startup warm-up, one language after the other.
-async function warmCourseChapters() {
-    for (const lang of ['ko', 'en']) {
-        try {
-            await (await courseChapterIndex(lang)).building;
-        } catch (err) {
-            console.error('commulingo course chapters warm-up:', err.message);
-        }
-    }
 }
 
 async function linkifyLessonPayload(lesson) {
@@ -451,4 +314,4 @@ async function decisionRefs(collection, lang = 'ko') {
     return out;
 }
 
-module.exports = { decisionRefs, bookPageData, linkifyLessonPayload, courseChaptersFor, courseChaptersForDoc, warmCourseChapters, buildCourseChapterIndex };
+module.exports = { decisionRefs, bookPageData, linkifyLessonPayload, courseChaptersFor, courseChaptersForDoc };

@@ -353,16 +353,20 @@ function checkStoryCards(out, value, label) {
   }
 }
 
-// Optional chapter.eventIds: the history events the chapter is about, so the
-// event page links straight to it. 1-5 event ids, no repeats.
-function checkChapterEventIds(out, value, label) {
-  if (typeof value === 'undefined') return;
-  if (!Array.isArray(value) || value.length < 1 || value.length > 5) { out.add('shape', label, label + '.eventIds must list 1-5 event ids'); return; }
-  const seen = new Set();
-  value.forEach(function(id, index) {
-    if (typeof id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)) out.add('shape', label, label + '.eventIds[' + index + '] is not an event id');
-    else if (seen.has(id)) out.add('shape', label, label + '.eventIds repeats ' + id);
-    seen.add(id);
+// Optional chapter.eventIds / personIds / termIds: the dictionary entries the
+// chapter teaches, listed by hand so their detail pages link straight to it
+// (nothing is inferred from the prose). 1-12 ids each, no repeats.
+function checkChapterEntryIds(out, chapter, label) {
+  ['eventIds', 'personIds', 'termIds'].forEach(function(field) {
+    const value = chapter[field];
+    if (typeof value === 'undefined') return;
+    if (!Array.isArray(value) || value.length < 1 || value.length > 12) { out.add('shape', label, label + '.' + field + ' must list 1-12 ids'); return; }
+    const seen = new Set();
+    value.forEach(function(id, index) {
+      if (typeof id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)) out.add('shape', label, label + '.' + field + '[' + index + '] is not an entry id');
+      else if (seen.has(id)) out.add('shape', label, label + '.' + field + ' repeats ' + id);
+      seen.add(id);
+    });
   });
 }
 
@@ -639,7 +643,7 @@ function checkChapter(out, chapter, collectionId, ctx) {
   }
   checkDiagram(out, chapter.diagram, chapterLabel);
   checkStoryCards(out, chapter.storyCards, chapterLabel);
-  checkChapterEventIds(out, chapter.eventIds, chapterLabel);
+  checkChapterEntryIds(out, chapter, chapterLabel);
   checkKoEmDash(out, chapter, chapterLabel);
 
   const lessons = chapter.lessons || [];

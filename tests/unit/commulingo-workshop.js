@@ -68,7 +68,7 @@ assert.match(broken((q, course) => { const s = story(); delete s.ko.tiltLabels; 
 assert.match(broken((q, course) => { const s = story(); s.ko.cards[3].lines = ['혁명이 끝났다 — 완전히.']; course.chapters[0].storyCards = s; }), /em dash/);
 // a chapter may name the history events it is about
 assert.equal(broken((q, course) => { course.chapters[0].eventIds = ['german-revolution-1848-1849']; }), '', 'event ids pass');
-assert.match(broken((q, course) => { course.chapters[0].eventIds = ['Bad Id']; }), /not an event id/);
+assert.match(broken((q, course) => { course.chapters[0].eventIds = ['Bad Id']; }), /not an entry id/);
 assert.match(broken((q, course) => { course.chapters[0].eventIds = ['a-b', 'a-b']; }), /repeats/);
 // activities belong to the workshop format only
 assert.match(broken((q, course) => { course.format = 'short-learning'; }), /type must be multiple_choice/);

@@ -87,6 +87,8 @@ function buildPayloads(bundle, version) {
                 sourceUrl: chapter.sourceUrl,
                 learningFocus: chapter.learningFocus,
                 eventIds: chapter.eventIds,
+                personIds: chapter.personIds,
+                termIds: chapter.termIds,
                 minutes: chapter.minutes,
                 readings: chapter.readings,
                 lessons: (chapter.lessons || []).map(lesson => {

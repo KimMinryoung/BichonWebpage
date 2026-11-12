@@ -137,9 +137,6 @@ const server = app.listen(env.PORT, () => {
     // Pre-build the report-mentions reverse index so the first CommuLingo
     // person/event page after a restart doesn't pay the cold-start DB query.
     require('./services/report-mentions').warmReportMentions();
-    // Same for the dictionary entry → course chapter index (seconds of CPU,
-    // built in yielding steps).
-    require('./data/commulingo/book-page').warmCourseChapters();
     // Reference documents are served from a DB snapshot; pull it (and any
     // missing bodies) now rather than on the first reader request.
     require('./data/commulingo/docs-store').loadCommuLingoDocs()
