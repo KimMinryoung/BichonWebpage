@@ -43,8 +43,6 @@
         passage: document.getElementById('commuPassage'),
         intro: document.getElementById('commuIntro'),
         story: document.getElementById('commuStory'),
-        storyPrev: document.getElementById('commuStoryPrevBtn'),
-        storySkip: document.getElementById('commuStorySkipBtn'),
         introTitle: document.getElementById('commuIntroTitle'),
         introSummary: document.getElementById('commuIntroSummary'),
         introFocus: document.getElementById('commuIntroFocus'),
@@ -104,8 +102,19 @@
         answered = false;
         renderQuestion();
     });
-    if (els.storyPrev) els.storyPrev.addEventListener('click', function() { stepStory(-1); });
-    if (els.storySkip) els.storySkip.addEventListener('click', function() { if (active && active.story) leaveStory(); });
+    // The scene buttons and the progress segments live in the story body,
+    // right under the scene count, so the map stays in view while stepping.
+    if (els.story) els.story.addEventListener('click', function(event) {
+        if (!active || !active.story) return;
+        var button = event.target.closest('[data-story-step], [data-story-go], [data-story-skip]');
+        if (!button || !els.story.contains(button)) return;
+        if (button.hasAttribute('data-story-skip')) { leaveStory(); return; }
+        if (button.hasAttribute('data-story-step')) { stepStory(Number(button.getAttribute('data-story-step'))); return; }
+        var target = Number(button.getAttribute('data-story-go'));
+        if (target === active.story.pos) return;
+        active.story.pos = target;
+        renderStory();
+    });
     if (els.review) {
         els.review.addEventListener('click', function() { startReview(); });
     }
@@ -1081,8 +1090,7 @@
 
     function hideStory() {
         if (els.story) els.story.classList.add('is-hidden');
-        if (els.storyPrev) els.storyPrev.classList.add('is-hidden');
-        if (els.storySkip) els.storySkip.classList.add('is-hidden');
+        els.next.classList.remove('is-hidden');
     }
 
     function stepStory(delta) {
@@ -1162,22 +1170,26 @@
         }
         body.innerHTML = '<div class="commu-story-head">'
             + '<span class="commu-story-count">' + escapeHtml((en ? 'Scene ' : '장면 ') + (pos + 1) + ' / ' + cards.length) + '</span>'
-            + '<span class="commu-story-dots" aria-hidden="true">' + cards.map(function(_, index) {
-                return '<span' + (index === pos ? ' class="is-current"' : (index < pos ? ' class="is-seen"' : '')) + '></span>';
+            + '<span class="commu-story-dots">' + cards.map(function(card, index) {
+                var name = (en ? 'Scene ' : '장면 ') + (index + 1) + (card.title ? ': ' + card.title : '');
+                return '<button type="button" data-story-go="' + index + '"'
+                    + (index === pos ? ' class="is-current" aria-current="step"' : (index < pos ? ' class="is-seen"' : ''))
+                    + ' aria-label="' + escapeHtml(name) + '" title="' + escapeHtml(name) + '"></button>';
             }).join('') + '</span>'
+            + '</div>'
+            // Next to the right of back; skip set apart at the far right so
+            // it is not hit by mistake.
+            + '<div class="commu-story-nav">'
+            + '<button type="button" class="btn btn-secondary" data-story-step="-1"' + (pos === 0 ? ' disabled' : '') + '>' + escapeHtml(en ? 'Previous scene' : '이전 장면') + '</button>'
+            + '<button type="button" class="btn btn-primary" data-story-step="1">' + escapeHtml(pos === cards.length - 1
+                ? (en ? 'Read the concept brief' : '개념 설명 보기')
+                : (en ? 'Next scene' : '다음 장면')) + '</button>'
+            + '<button type="button" class="btn btn-secondary commu-story-skip" data-story-skip>' + escapeHtml(en ? 'Skip scenes' : '장면 건너뛰기') + '</button>'
             + '</div>'
             + '<div class="commu-story-card">' + renderStoryCard(cards[pos], Array.isArray(data.tiltLabels) ? data.tiltLabels : []) + '</div>';
         els.story.classList.remove('is-hidden');
         showStoryMap();
-        if (els.storyPrev) {
-            els.storyPrev.disabled = pos === 0;
-            els.storyPrev.classList.remove('is-hidden');
-        }
-        if (els.storySkip) els.storySkip.classList.remove('is-hidden');
-        els.next.disabled = false;
-        els.next.textContent = pos === cards.length - 1
-            ? (en ? 'Read the concept brief' : '개념 설명 보기')
-            : (en ? 'Next scene' : '다음 장면');
+        els.next.classList.add('is-hidden');
     }
 
     function renderIntro() {

@@ -460,19 +460,60 @@
     gap: 3px;
 }
 
-.commu-story-dots span {
-    background: color-mix(in srgb, var(--border) 25%, transparent);
+.commu-story-dots button {
+    background: none;
+    border: 0;
+    cursor: pointer;
     flex: 1 1 0;
-    height: 4px;
+    height: 24px;
     max-width: 28px;
+    padding: 0;
+    position: relative;
 }
 
-.commu-story-dots .is-seen {
+.commu-story-dots button::after {
+    background: color-mix(in srgb, var(--border) 25%, transparent);
+    content: "";
+    height: 4px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 10px;
+}
+
+.commu-story-dots button:hover::after {
+    background: color-mix(in srgb, var(--accent-red) 30%, transparent);
+}
+
+.commu-story-dots .is-seen::after {
     background: color-mix(in srgb, var(--accent-red) 45%, transparent);
 }
 
-.commu-story-dots .is-current {
+.commu-story-dots .is-current::after,
+.commu-story-dots .is-current:hover::after {
     background: var(--accent-red);
+}
+
+.commu-story-dots button:focus-visible {
+    outline: 2px solid var(--accent-red);
+    outline-offset: 1px;
+}
+.commu-story-nav {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.commu-story-nav .btn {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.commu-story-nav .commu-story-skip {
+    flex: 0 0 auto;
+    margin-left: 16px;
+    padding-inline: var(--space-3);
+    white-space: nowrap;
 }
 .commu-story-map {
     border: 1px solid var(--border);
@@ -1125,9 +1166,6 @@
     .commu-quiz-actions .btn {
         flex: 1 1 100%;
         min-height: 48px;
-    }
-    .commu-quiz-actions .commu-story-action {
-        flex: 1 1 calc(50% - 5px);
     }
 }
 
