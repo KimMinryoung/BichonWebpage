@@ -353,6 +353,19 @@ function checkStoryCards(out, value, label) {
   }
 }
 
+// Optional chapter.eventIds: the history events the chapter is about, so the
+// event page links straight to it. 1-5 event ids, no repeats.
+function checkChapterEventIds(out, value, label) {
+  if (typeof value === 'undefined') return;
+  if (!Array.isArray(value) || value.length < 1 || value.length > 5) { out.add('shape', label, label + '.eventIds must list 1-5 event ids'); return; }
+  const seen = new Set();
+  value.forEach(function(id, index) {
+    if (typeof id !== 'string' || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)) out.add('shape', label, label + '.eventIds[' + index + '] is not an event id');
+    else if (seen.has(id)) out.add('shape', label, label + '.eventIds repeats ' + id);
+    seen.add(id);
+  });
+}
+
 // --- question-level rules --------------------------------------------------
 
 function checkChoiceFeedback(out, value, qLabel, choiceCount = 4) {
@@ -626,6 +639,7 @@ function checkChapter(out, chapter, collectionId, ctx) {
   }
   checkDiagram(out, chapter.diagram, chapterLabel);
   checkStoryCards(out, chapter.storyCards, chapterLabel);
+  checkChapterEventIds(out, chapter.eventIds, chapterLabel);
   checkKoEmDash(out, chapter, chapterLabel);
 
   const lessons = chapter.lessons || [];

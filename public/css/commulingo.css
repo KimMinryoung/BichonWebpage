@@ -609,28 +609,6 @@
     background: var(--accent-red);
 }
 
-.commu-story-prev,
-.commu-story-skip {
-    background: none;
-    border: 0;
-    color: var(--text-secondary);
-    cursor: pointer;
-    font: inherit;
-    font-size: var(--text-meta);
-    padding: 4px 2px;
-}
-
-.commu-story-prev:hover:not(:disabled),
-.commu-story-skip:hover {
-    color: var(--text-primary);
-    text-decoration: underline;
-}
-
-.commu-story-prev:disabled {
-    cursor: default;
-    opacity: 0.4;
-}
-
 .commu-story-card {
     background: var(--bg-surface);
     border: 1px solid var(--border);
@@ -1532,6 +1510,11 @@
     .commu-quiz-actions .btn {
         flex: 1 1 100%;
         min-height: 48px;
+    }
+
+    /* Back and skip share the row under the scene button. */
+    .commu-quiz-actions .commu-story-action {
+        flex: 1 1 calc(50% - 5px);
     }
 }
 

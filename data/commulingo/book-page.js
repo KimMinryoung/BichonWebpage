@@ -222,6 +222,7 @@ function countMentions(text, phrase, lang) {
 // changed (link-index-diff, the same test the report cache uses) and recounts
 // search-only expressions only where that list or the chapter text changed.
 // Passages are keyed by content, so an edited lesson is simply new text.
+const CURATED_EVENT_HITS = 1000;
 const previousCourseBuild = {}; // lang -> { snapshot, passages, chapters, searchKey }
 
 async function buildCourseChapterIndex(indexes, catalog, lang) {
@@ -276,6 +277,12 @@ async function buildCourseChapterIndex(indexes, catalog, lang) {
                     });
                 }
             }
+            // The events a chapter names as its subject (chapter.eventIds) come
+            // before any chapter that only mentions them.
+            (Array.isArray(chapter.eventIds) ? chapter.eventIds : []).forEach(id => {
+                const key = 'events:' + id;
+                hits.set(key, (hits.get(key) || 0) + CURATED_EVENT_HITS);
+            });
             hits.forEach((count, key) => {
                 const list = byEntry.get(key) || byEntry.set(key, []).get(key);
                 list.push({

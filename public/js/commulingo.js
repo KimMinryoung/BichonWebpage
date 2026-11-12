@@ -43,6 +43,8 @@
         passage: document.getElementById('commuPassage'),
         intro: document.getElementById('commuIntro'),
         story: document.getElementById('commuStory'),
+        storyPrev: document.getElementById('commuStoryPrevBtn'),
+        storySkip: document.getElementById('commuStorySkipBtn'),
         introTitle: document.getElementById('commuIntroTitle'),
         introSummary: document.getElementById('commuIntroSummary'),
         introFocus: document.getElementById('commuIntroFocus'),
@@ -102,6 +104,8 @@
         answered = false;
         renderQuestion();
     });
+    if (els.storyPrev) els.storyPrev.addEventListener('click', function() { stepStory(-1); });
+    if (els.storySkip) els.storySkip.addEventListener('click', function() { if (active && active.story) leaveStory(); });
     if (els.review) {
         els.review.addEventListener('click', function() { startReview(); });
     }
@@ -1025,6 +1029,8 @@
 
     function hideStory() {
         if (els.story) els.story.classList.add('is-hidden');
+        if (els.storyPrev) els.storyPrev.classList.add('is-hidden');
+        if (els.storySkip) els.storySkip.classList.add('is-hidden');
     }
 
     function stepStory(delta) {
@@ -1093,13 +1099,14 @@
             + '<span class="commu-story-dots" aria-hidden="true">' + cards.map(function(_, index) {
                 return '<span' + (index === pos ? ' class="is-current"' : (index < pos ? ' class="is-seen"' : '')) + '></span>';
             }).join('') + '</span>'
-            + '<button type="button" class="commu-story-prev"' + (pos === 0 ? ' disabled' : '') + '>' + (en ? '← Back' : '← 이전') + '</button>'
-            + '<button type="button" class="commu-story-skip">' + (en ? 'Skip' : '건너뛰기') + '</button>'
             + '</div>'
             + '<div class="commu-story-card">' + renderStoryCard(cards[pos], Array.isArray(data.tiltLabels) ? data.tiltLabels : []) + '</div>';
         els.story.classList.remove('is-hidden');
-        els.story.querySelector('.commu-story-prev').addEventListener('click', function() { stepStory(-1); });
-        els.story.querySelector('.commu-story-skip').addEventListener('click', leaveStory);
+        if (els.storyPrev) {
+            els.storyPrev.disabled = pos === 0;
+            els.storyPrev.classList.remove('is-hidden');
+        }
+        if (els.storySkip) els.storySkip.classList.remove('is-hidden');
         els.next.disabled = false;
         els.next.textContent = pos === cards.length - 1
             ? (en ? 'Read the concept brief' : '개념 설명 보기')
