@@ -80,6 +80,11 @@
         if (active.intro) {
             active.intro = false;
             answered = false;
+            showStep();
+            return;
+        }
+        if (active.briefStep) {
+            active.briefStep = false;
             renderQuestion();
             return;
         }
@@ -99,7 +104,7 @@
         }
         active.pos += 1;
         answered = false;
-        renderQuestion();
+        showStep();
     });
     // The scene buttons and the progress segments live in the story body,
     // right under the scene count, so the map stays in view while stepping.
@@ -124,7 +129,7 @@
         var tag = target && target.tagName ? target.tagName.toLowerCase() : '';
         if (tag === 'input' || tag === 'textarea' || tag === 'select' || (target && target.isContentEditable)) return;
         if (!active || els.quiz.classList.contains('is-hidden')) return;
-        if (/^[1-4]$/.test(event.key) && !answered && !active.intro && !els.choices.classList.contains('is-hidden') && !els.choices.classList.contains('is-activity')) {
+        if (/^[1-4]$/.test(event.key) && !answered && !active.intro && !active.briefStep && !els.choices.classList.contains('is-hidden') && !els.choices.classList.contains('is-activity')) {
             var button = els.choices.children[Number(event.key) - 1];
             if (button && !button.disabled) {
                 event.preventDefault();
@@ -356,6 +361,7 @@
                     summaryHtml: text(loaded.summaryHtml) || lesson.summaryHtml,
                     focusHtml: text(loaded.focusHtml) || lesson.focusHtml,
                     conceptBrief: loaded.conceptBrief || lesson.conceptBrief,
+                    briefBefore: loaded.briefBefore || lesson.briefBefore,
                     conceptMap: loaded.conceptMap || lesson.conceptMap,
                     diagram: loaded.diagram || lesson.diagram,
                     storyCards: loaded.storyCards || lesson.storyCards,
@@ -817,6 +823,68 @@
         return Array.isArray(preferred) ? preferred : [];
     }
 
+    // briefBefore names, per brief section, the question it is shown right
+    // before (null: the opening brief screen). A section whose question is
+    // not in this lesson stays on the opening screen.
+    function briefPlacement(lesson) {
+        var sections = conceptBrief(lesson);
+        var placement = lesson.briefBefore;
+        var ids = {};
+        (lesson.questions || []).forEach(function(question) { ids[question.id] = true; });
+        return sections.map(function(_, index) {
+            var id = Array.isArray(placement) && placement.length === sections.length ? placement[index] : null;
+            return typeof id === 'string' && ids[id] ? id : null;
+        });
+    }
+
+    function introBriefSections(lesson) {
+        var placement = briefPlacement(lesson);
+        return conceptBrief(lesson).filter(function(_, index) { return placement[index] === null; });
+    }
+
+    // The first time through a lesson, the brief sections placed before the
+    // current question come first, on a screen of their own. A retry goes
+    // straight to the questions, as it skips the scenes and the opening brief.
+    function showStep() {
+        if (active.mode === 'lesson') {
+            var question = currentQuestion();
+            var placement = briefPlacement(active.lesson);
+            var sections = conceptBrief(active.lesson).filter(function(_, index) {
+                return question && placement[index] === question.id && !active.briefShown[index];
+            });
+            placement.forEach(function(id, index) {
+                if (question && id === question.id) active.briefShown[index] = true;
+            });
+            if (sections.length) {
+                renderBriefStep(sections);
+                return;
+            }
+        }
+        renderQuestion();
+    }
+
+    function renderBriefStep(sections) {
+        active.briefStep = true;
+        var total = roundLength();
+        els.count.textContent = active.pos + ' / ' + total;
+        els.meter.style.width = Math.round((active.pos / total) * 100) + '%';
+        if (els.intro) els.intro.classList.remove('is-hidden');
+        if (els.focus) els.focus.classList.add('is-hidden');
+        hidePassage();
+        els.prompt.classList.add('is-hidden');
+        els.choices.classList.add('is-hidden');
+        els.feedback.className = 'commu-feedback is-hidden';
+        els.quiz.classList.remove('has-answer-reward', 'has-perfect-reward');
+        if (els.introTitle) els.introTitle.classList.add('is-hidden');
+        if (els.introSummary) els.introSummary.classList.add('is-hidden');
+        if (els.introFocus) els.introFocus.classList.add('is-hidden');
+        Array.prototype.forEach.call(els.chapterDictionaries, function(node) { node.classList.add('is-hidden'); });
+        if (els.diagram) els.diagram.innerHTML = '<div class="commu-brief">' + sections.map(renderBriefSection).join('') + '</div>';
+        els.next.disabled = false;
+        els.next.textContent = lang === 'en' ? 'To the questions' : '문제로';
+        scrollToQuiz();
+    }
+
     // textHtml / itemsHtml arrive from /commulingo/lesson already escaped and
     // linked to the people and glossary dictionaries. A payload cached before
     // that route linked anything carries only the plain fields, so both paths
@@ -900,7 +968,7 @@
         var diagram = lessonDiagram(lesson);
         if (diagram && diagram.kind === 'flow') html += renderFlowDiagram(diagram.data);
         else if (diagram && diagram.kind === 'contrast') html += renderContrastDiagram(diagram.data);
-        var sections = conceptBrief(lesson);
+        var sections = introBriefSections(lesson);
         if (sections.length) {
             els.diagram.innerHTML = html + '<div class="commu-brief">' + sections.map(renderBriefSection).join('') + '</div>';
             return;
@@ -954,6 +1022,8 @@
                     // the introduction, so there is no concept brief to pass.
                     intro: !skipsIntro(loadedLesson),
                     story: storyCards(loadedLesson).length ? { pos: 0 } : null,
+                    briefShown: {},
+                    briefStep: false,
                     missed: [],
                     firstScore: null
                 };
@@ -1107,7 +1177,7 @@
         active.story = null;
         hideStory();
         if (active.intro) renderIntro();
-        else renderQuestion();
+        else showStep();
         scrollToQuiz();
     }
 
@@ -1204,7 +1274,12 @@
         els.prompt.classList.add('is-hidden');
         els.choices.classList.add('is-hidden');
         els.feedback.className = 'commu-feedback is-hidden';
-        if (els.introTitle) els.introTitle.textContent = lang === 'en' ? 'Concept brief before the quiz' : '문제를 풀기 전, 개념 먼저 잡기';
+        if (els.introTitle) {
+            els.introTitle.classList.remove('is-hidden');
+            els.introTitle.textContent = lang === 'en' ? 'Concept brief before the quiz' : '문제를 풀기 전, 개념 먼저 잡기';
+        }
+        if (els.introSummary) els.introSummary.classList.remove('is-hidden');
+        if (els.introFocus) els.introFocus.classList.remove('is-hidden');
         if (els.introSummary) els.introSummary.innerHTML = active.lesson.summaryHtml || escapeHtml(lessonSummary(active.lesson));
         if (els.introFocus) {
             els.introFocus.innerHTML = active.lesson.focusHtml
@@ -1215,7 +1290,11 @@
             node.classList.toggle('is-hidden', node.getAttribute('data-chapter-id') !== active.lesson.chapterId);
         });
         els.next.disabled = false;
-        els.next.textContent = lang === 'en' ? 'Start questions' : '문제 풀기';
+        // When a brief section comes before the first question, the button
+        // leads to more reading, not yet to the questions.
+        var first = active.lesson.questions && active.lesson.questions[active.order ? active.order[0] : 0];
+        var readsOn = Boolean(first) && briefPlacement(active.lesson).indexOf(first.id) !== -1;
+        els.next.textContent = readsOn ? (lang === 'en' ? 'Next' : '다음') : (lang === 'en' ? 'Start questions' : '문제 풀기');
     }
 
     // An open lesson owns one history entry, so the browser's back

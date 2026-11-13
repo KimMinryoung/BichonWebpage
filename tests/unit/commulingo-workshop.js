@@ -47,6 +47,20 @@ assert.match(broken(q => { [q[0], q[1]] = [{ ...q[1], id: 'q1' }, { ...q[0], id:
 assert.match(broken((q, course) => { delete course.chapters[0].takeaway; }), /takeaway must be localized/);
 // a concept brief is optional, but a chapter that has one has a whole one
 assert.match(broken((q, course) => { course.chapters[0].conceptBrief = { ko: [], en: [] }; }), /conceptBrief/);
+// briefBefore places each brief section before a question of the chapter
+const brief = course => {
+    course.chapters[0].conceptMap = {
+        ko: [{ title: '국가 기구', text: '노동계급은 기성 국가 기구를 그대로 쓸 수 없습니다.' }, { title: '코뮌', text: '코뮌은 상비군을 무장한 인민으로 바꾸었습니다.' }, { title: '선출과 소환', text: '코뮌의 관리는 선출되었고 언제든 소환될 수 있었습니다.' }],
+        en: [{ title: 'State machinery', text: 'The working class cannot simply use the ready-made state machinery.' }, { title: 'The Commune', text: 'The Commune replaced the standing army with the armed people.' }, { title: 'Election and recall', text: 'Commune officials were elected and could be recalled at any time.' }] };
+    course.chapters[0].conceptBrief = {
+        ko: [{ title: '기성 국가 기구', items: ['마르크스는 노동계급이 기성 국가 기구를 그대로 장악해 쓸 수 없다고 했습니다.'] },
+             { title: '코뮌의 조치', items: ['코뮌은 상비군을 없애고 무장한 인민으로 바꾸었습니다.'] }],
+        en: [{ title: 'The ready-made machinery', items: ['Marx said the working class cannot simply lay hold of the ready-made state machinery.'] },
+             { title: 'What the Commune did', items: ['The Commune suppressed the standing army and replaced it with the armed people.'] }] };
+};
+assert.equal(broken((q, course) => { brief(course); course.chapters[0].briefBefore = [null, 'q3']; }), '', 'a placed brief section passes');
+assert.match(broken((q, course) => { brief(course); course.chapters[0].briefBefore = ['q3']; }), /one entry per concept-brief section/);
+assert.match(broken((q, course) => { brief(course); course.chapters[0].briefBefore = [null, 'q9']; }), /briefBefore\[1\] must be null or a question id/);
 // scene cards are optional; when present both languages tell the same cards
 const story = () => ({
     ko: { tiltLabels: ['혁명', '반혁명'], cards: [
@@ -97,6 +111,7 @@ const payload = publicLessonPayload(sample, chapter, chapter.lessons[0]);
 assert.equal(payload.format, 'workshop');
 assert.deepEqual(payload.takeaway, chapter.takeaway);
 assert.ok('storyCards' in payload, 'the lesson payload carries the scene cards');
+assert.ok('briefBefore' in payload, 'the lesson payload carries the brief placement');
 assert.deepEqual(payload.questions.map(question => question.type), ['multiple_choice', 'order', 'sort', 'cloze', 'multiple_choice']);
 
 console.log(`Workshop format: sample, activity shapes, mix and id checks passed (${path.basename(__filename)})`);

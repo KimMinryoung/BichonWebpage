@@ -221,6 +221,30 @@ function checkConceptBrief(out, chapter, label) {
   });
 }
 
+// Optional briefBefore: one entry per concept-brief section, the id of the
+// question that section is shown right before, or null to keep it on the
+// opening brief screen. A long brief then reaches the learner a section at a
+// time, each next to the questions it grounds.
+function checkBriefBefore(out, chapter, label) {
+  const value = chapter.briefBefore;
+  if (typeof value === 'undefined') return;
+  const bLabel = label + '.briefBefore';
+  const sections = chapter.conceptBrief && chapter.conceptBrief.ko;
+  if (!Array.isArray(value)) { out.add('concept-brief', label, bLabel + ' must be an array'); return; }
+  if (!Array.isArray(sections) || value.length !== sections.length) {
+    out.add('concept-brief', label, bLabel + ' must have one entry per concept-brief section');
+    return;
+  }
+  const ids = new Set();
+  (chapter.lessons || []).forEach(function(lesson) {
+    (lesson.questions || []).forEach(function(question) { ids.add(question.id); });
+  });
+  value.forEach(function(entry, index) {
+    if (entry === null) return;
+    if (typeof entry !== 'string' || !ids.has(entry)) out.add('concept-brief', label, bLabel + '[' + index + '] must be null or a question id of this chapter');
+  });
+}
+
 // Optional typed chapter diagram: a flow of 3-6 steps or a two-column
 // contrast of 2-5 rows. Both languages must carry the same shape so the two
 // renderings stay the same diagram.
@@ -681,6 +705,7 @@ function checkChapter(out, chapter, collectionId, ctx) {
   if (!reading && (!workshop || chapter.conceptBrief || chapter.conceptMap)) {
     checkConceptMap(out, chapter.conceptMap, chapterLabel);
     checkConceptBrief(out, chapter, chapterLabel);
+    checkBriefBefore(out, chapter, chapterLabel);
   }
   checkDiagram(out, chapter.diagram, chapterLabel);
   checkStoryCards(out, chapter.storyCards, chapterLabel);

@@ -51,6 +51,7 @@ function publicLessonPayload(collection, chapter, lesson) {
         focus: chapter.learningFocus,
         takeaway: chapter.takeaway,
         conceptBrief: chapter.conceptBrief,
+        briefBefore: chapter.briefBefore,
         conceptMap: chapter.conceptMap,
         diagram: chapter.diagram,
         storyCards: chapter.storyCards,
