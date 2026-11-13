@@ -12,20 +12,21 @@
 
 ## 2. 한국 사회주의·노동운동사 묶음 (1차 세 편)
 
-계획은 10편이다. 1차로 ①②④를 만들었다.
+계획은 10편이었고 2차에서 남로당 편(⑪)을 더했다. 1차(2026-11-11)에 ①②④, 2차(2026-11-13)에 나머지 여덟 편을 만들었다.
 
 | # | 사건 | 상태 |
 | --- | --- | --- |
 | ① | `korea-march-first-and-early-socialism-1919-1925` 3·1 운동과 조선 사회주의 운동의 출발 | 등록 |
 | ② | `communist-party-of-korea-and-singanhoe-1925-1931` 조선공산당과 신간회 | 등록 |
-| ③ | 적색노조·농조 운동과 원산 총파업, 당 재건 운동 (1929–1941) | 남음 |
+| ③ | `korea-red-unions-and-party-reconstruction-1929-1941` 적색노조·농조 운동과 조선공산당 재건 운동 | 등록 (2차) |
 | ④ | `southern-korea-liberation-1945-1948` 해방 직후의 남조선: 인민위원회에서 단독정부까지 | 등록 |
-| ⑤ | 제주 4·3과 여순 사건 (1947–1954) | 남음 |
-| ⑥ | 진보당 사건과 4월 혁명, 혁신계의 좌절 (1956–1961) | 남음 |
-| ⑦ | 전태일과 1970년대 민주노조 운동 | 남음 |
-| ⑧ | 5·18 광주 민중항쟁 | 남음 |
-| ⑨ | 6월 항쟁과 노동자대투쟁 (1987) | 남음 |
-| ⑩ | 1996~97년 노동법 총파업 | 남음 |
+| ⑤ | `jeju-april-third-and-yeosu-suncheon-1947-1954` 제주 4·3과 여수·순천 10·19 사건 | 등록 (2차) |
+| ⑥ | `progressive-party-and-april-revolution-1956-1961` 진보당 사건과 4월 혁명, 혁신계의 좌절 | 등록 (2차) |
+| ⑦ | `chun-tae-il-and-democratic-unions-1970s` 전태일과 1970년대 민주노조 운동 | 등록 (2차) |
+| ⑧ | `gwangju-uprising-1980` 5·18 광주 민중항쟁 | 등록 (2차) |
+| ⑨ | `june-struggle-and-great-workers-struggle-1987` 6월 항쟁과 노동자대투쟁 | 등록 (2차) |
+| ⑩ | `korean-general-strike-1996-1997` 1996~97년 노동법 개정 반대 총파업 | 등록 (2차) |
+| ⑪ | `workers-party-of-south-korea-underground-and-purge-1946-1955` 남로당의 지하투쟁과 숙청 (소유자 요청으로 추가) | 등록 (2차) |
 
 - 작업 폴더 `scripts/content/korea-movement-20261111/`(gitignore, R2): `BRIEF.md`(공통 지침·소유표), `kit/event-build.js`(사건 입력 `event.js` → `event.json`·`links.json`; 머리 주석이 형식), `e1/`·`e2/`·`e4/`. 편마다 에이전트 하나가 사건·용어·카드·링크 승인을 MCP로 썼다(편당 약 38분, 45만~50만 토큰). 용어·카드는 `scripts/commulingo-dict-kit/`을 썼다.
 - ① 8절·연표 24·출처 52·인물 21. 새 용어 12(`march-first-movement`, `provisional-government-of-the-republic-of-korea`, `korean-communist-party-irkutsk-faction`, `free-city-incident`, `congress-of-the-toilers-of-the-far-east`, `korburo`, `korean-workers-mutual-aid-society`, `korean-federation-of-workers-and-peasants`, `tuesday-society`, `north-wind-society`, `seoul-youth-association`, `cultural-rule-korea`), 새 카드 13(박진순, 김립, 한형권, 김만겸, 안병찬, 남만춘, 김철훈, 홍범도, 김재봉, 김약수, 김사국, 이영, 사이토 마코토). 한인사회당·상하이파 고려공산당은 이미 있어 이었다.
@@ -41,6 +42,23 @@
 - 용어: 신탁통치 파동, 조선정판사 위폐 사건, 민주주의민족전선, 5·10 총선거(④ 12개 상한으로 본문 설명만).
 - 카탈로그에 없어 정당 활동을 넣지 못한 것: 한국독립당(김구), 국민당(안재홍), 남조선신민당·근로인민당(백남운).
 - 카드 없는 인물: 김찬, 윤덕병, 문창범, 김좌진, 손병희, 최린, 한용운, 김병로, 권동진, 이관술, 원세훈, 엔도 류사쿠, 아베 노부유키, 아널드.
+
+## 2-1. 2차 (2026-11-13)
+
+- 소유표는 `BRIEF.md`의 「2차 소유표」(e3, e5~e11). 편당 에이전트 하나, 동시 6개 상한. 편당 약 25~35분, 7만~25만 토큰(1차보다 적다).
+- 앞서 대통령 카드 11장(yun-po-sun, park-chung-hee, choi-kyu-hah, chun-doo-hwan, roh-tae-woo, roh-moo-hyun, lee-myung-bak, park-geun-hye, moon-jae-in, yoon-suk-yeol, lee-jae-myung)을 만들어 직책 계보 `south-korea-presidents` 행에 이었다(권한대행은 카드 없음, 소유자 결정). 정당 카탈로그·용어 8개(민주공화당, 민주정의당, 자유한국당, 국민의힘, 새천년민주당, 열린우리당, 더불어민주당, 민주당(1955)). 작업 폴더 `scripts/content/korea-presidents-cards-20261113/`.
+- 편별 새 용어/카드: ③ 10/9, ⑤ 10/9, ⑥ 11/10, ⑦ 12/11, ⑧ 10/10, ⑨ 10/8, ⑩ 7/4, ⑪ 7/8(+기존 카드 이현상·이강국·이승엽·박헌영·김달삼·이관술 활동 보강). 카탈로그 추가: state-usamgik, party-korean-progressive-1956, party-korean-mass-socialist-1960, korea-cheonggye-garment-union, korea-kctu, korea-fktu, party-korean-pv21, korea-southern-partisans.
+- 사건끼리 이음: 시대순 앞뒤 편과 ④↔③·⑪, ⑦↔⑨.
+- 소유자 결정: 「제주 4·3 사건」 용어 표제어 → 「제주 4·3」(중립 표기, Jeju 4·3), 5·18 사건 제목은 「민중항쟁」 유지. 남로당을 독립 주체로 다룰 것(⑪).
+- 오케스트레이터 정리: 조봉암 카드에 진보당 위원장 활동(1956~1958)을 더하고 창당 연도를 1956년 11월로 고침, 이순금 카드의 배우자는 출처 둘(이재유설·김삼룡설)을 나란히, ⑤ 사건에 박정희·노무현을 잇고, ⑦ 영어 제목을 Jeon Tae-il로.
+- 인물 이름은 링크 승인 대상이 아니다(link_reviews는 term·event·doc만). 1948년 이후 한국인 카드의 origin도 `korea`(스토어가 `south-korea`를 출신으로 받지 않는다).
+
+### 2차에서 남은 것
+
+- 카드 없는 인물: 지창수, 함병선, 미야케 시카노스케, 김종배, 이석규, 이총각, 이기석, 구재수, 김용암, 윤순달, 박갑동, 최순영, 방용석, 정동년.
+- 카탈로그에 없는 정당: 민주국민당(조병옥), 통일민주당, 민주통합당, 신민당, 민정당(1963), 민주노동당(2000).
+- 입장 모음이 비어 있는 카드: 최규하, 윤상원·박관현·박남선·정상용·홍남순, 문익환, 권용목, 박인상, 전태일 등 ⑦ 인물 10명.
+- 단천 농민 봉기 용어(출처가 얇음). 박헌영 처형일(1955.12 / 1956.7)은 출처가 갈린다.
 
 ## 3. 학습 화면 (d9aab1b7)
 
