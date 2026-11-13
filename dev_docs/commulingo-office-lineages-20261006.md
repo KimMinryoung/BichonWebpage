@@ -51,3 +51,9 @@ ru.wikipedia 목록·인물 정보상자, knowbysight.info(Справочник 
 - `china-leadership`(중국 국가원수 · 정부 수반 · 당 지도자, 1912–, `country` china)을 두 번째 비소련 계보로 두었다. 직책 행은 데이터 SQL `scripts/migrations/data/china-leadership-office-20261026.sql`로 만들었고, 계보 파일은 `scripts/content/office-lineages-20261026/china-leadership.json`(160행)이다. 적용은 운영 컨테이너에서 했다: `docker cp <file> leninbot-frontend:/tmp/` 뒤 `docker exec -w /app leninbot-frontend node scripts/commulingo-office-lineage-apply.js /tmp/<file> [--apply]`.
 - 묶음 9개: 난징 임시정부, 베이양 정부, 광저우 정부, 중국공산당 최고 지도자(전부 `seat` 없음 — 한 줄 목록), 국민정부, 중화소비에트공화국, 왕징웨이 정권, 중화민국 헌정 정부(1949년부터 타이완), 중화인민공화국. 국가원수·정부 수반이 있는 묶음은 프랑스처럼 두 열이다. 덩샤오핑(군사위원회 주석)·리리싼·왕밍은 행이 아니라 공산당 묶음 설명에 적었다.
 - 출처는 zh/en 위키백과 목록이다. 어긋난 날짜(리쭝런 대리총통 종료일, 쑨원 1918년 사임일, 1922년 총리 대리 겹침)는 목록을 따랐다. 64행은 기존 카드에 연결되고 96행(74명, 시진핑·후진타오 포함)은 카드 없이 이름만 둔다.
+
+## 한국 계보 (2026-11-13)
+- `south-korea-presidents`(대한민국 대통령, 1948–, `country` south-korea)를 세 번째 비소련 계보로 두었다. 사용자 요청 범위는 대통령 계보뿐이다(임시정부·북한·총리는 넣지 않음). 직책과 묶음 하나(`republic-of-korea`)는 데이터 SQL `scripts/migrations/data/korea-presidents-office-20261113.sql`(gitignore, R2 보관)로 만들었고, 행 26개는 계보 파일 없이 MCP `editorial_store` office_row create로 넣었다.
+- 행은 대통령과 헌법상 권한대행(1960년 허정·곽상훈·백낙준, 1962–63 박정희, 1979 최규하, 1980 박충훈, 2004 고건, 2016–17 황교안, 2024–25 한덕수·최상목·이주호)을 시작일 순으로 한 줄 목록에 둔다(`seat` 없음). 권한대행은 `note`에 「권한대행 (그때의 직위)」, 대통령은 대수와 퇴임 사유를 적었다. 연임은 한 행(이승만 제1~3대, 박정희 제5~9대, 전두환 제11·12대).
+- 출처: 한국어 위키백과 「대한민국의 대통령 목록」(대통령 날짜), 영어 위키백과 List of presidents of South Korea(권한대행 기간), 허정·백낙준 문서(1960년 권한대행). 1960년 날짜는 출처마다 하루 이틀 어긋나 묶음 설명에 적었다.
+- 카드가 있는 사람은 이승만·김영삼·김대중 셋이고 나머지 23행은 이름만 둔다.
