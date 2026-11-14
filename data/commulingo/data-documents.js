@@ -23,6 +23,7 @@ const { transaction } = require('../../utils/db-transaction');
 const { createRegistrySnapshotStore } = require('./snapshot-store');
 const { normalizeKoreanTree } = require('./korean-quotes');
 const { validateCourseShape, gateCourseWrite } = require('./course-validation');
+const { activityCatalogProblems } = require('./activity-catalog-validation');
 
 const SNAPSHOT_PATH = process.env.COMMULINGO_DATA_DOCUMENTS_SNAPSHOT || path.join(__dirname, 'data-documents-snapshot.json');
 const SEED_PATH = path.join(__dirname, '..', '..', 'tests', 'fixtures', 'commulingo-data-documents-seed.json');
@@ -52,6 +53,8 @@ const VALIDATORS = [
         if (!Array.isArray(c.affiliations) || !c.affiliations.length) throw badRequest('activity-catalog: affiliations missing');
         uniqueIds(c.functions, 'activity-catalog functions');
         uniqueIds(c.affiliations, 'activity-catalog affiliations');
+        const problems = activityCatalogProblems(c);
+        if (problems.length) throw badRequest(`activity-catalog: ${problems.join('; ')}`);
     }],
     [/^(politburo|secretariat|orgburo)$/, c => {
         if (!c.members || typeof c.members !== 'object' || Array.isArray(c.members)) throw badRequest('roster: members must be an object');

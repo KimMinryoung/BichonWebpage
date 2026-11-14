@@ -1,6 +1,8 @@
 const assert = require('node:assert/strict');
 const { validateActivities, assertNewActivitiesDated, displayActivities, matchesActivities, isUnresolvedGap, catalog } = require('../../data/commulingo/person-activities');
 const { ICON_PATHS } = require('../../data/icons');
+const { activityCatalogProblems } = require('../../data/commulingo/activity-catalog-validation');
+const { validateDataDocument } = require('../../data/commulingo/data-documents');
 const evidence = [{ source: 'https://example.org/biography', locator: 'Career', claim: 'Service', excerpt: 'Documented service.' }];
 const primary = { functionId: 'security', affiliationId: 'china-ccp', affiliationStatus: 'confirmed', relation: 'membership', primary: true, startYear: 1939, endYear: 1948, evidence };
 const sources = evidence.map(e => e.source);
@@ -86,11 +88,20 @@ const stateActivity = {...primary, affiliationId:'china-prc', relation:'service'
 assert.deepEqual(validateActivities([stateActivity], sources), [stateActivity]);
 assert.throws(() => validateActivities([{...stateActivity, relation:'membership'}], sources), /not party membership/);
 assert.throws(() => validateActivities([{...stateActivity, startYear:1921, endYear:1927}], sources), /outside/);
-for (const party of catalog.affiliations.filter(a => a.governingState)) {
-    const state = catalog.affiliations.find(a => a.id === party.governingState.id);
-    assert.equal(state.kind, 'state');
-    assert(state.socialistSystem);
-    assert(party.criteria.includes('opposition'));
+// The stored catalog passes the whole-catalog rules that also gate every write.
+assert.deepEqual(activityCatalogProblems(catalog), []);
+{
+    const party = catalog.affiliations.find(a => a.governingState);
+    const withParty = changes => ({ ...catalog, affiliations: catalog.affiliations.map(a => a === party ? { ...a, ...changes } : a) });
+    assert.match(activityCatalogProblems(withParty({ criteria: 'Only documented membership.' })).join(), /opposition/);
+    assert.match(activityCatalogProblems(withParty({ governingState: { id: 'state-usa', periods: party.governingState.periods } })).join(), /socialistSystem/);
+    const [from] = party.governingState.periods[0];
+    assert.match(activityCatalogProblems(withParty({ periods: [[from + 1, null]] })).join(), /outside the party's own periods/);
+    const rival = { ...party, id: 'test-rival', periods: [[from, null]], governingState: { id: party.governingState.id, periods: [[from, from + 5]] } };
+    assert.match(activityCatalogProblems({ ...catalog, affiliations: [...catalog.affiliations, rival] }).join(), /handover year/);
+    const handover = { ...rival, periods: [[from - 10, from]], governingState: { id: party.governingState.id, periods: [[from - 5, from]] } };
+    assert.deepEqual(activityCatalogProblems({ ...catalog, affiliations: [...catalog.affiliations, handover] }), []);
+    assert.throws(() => validateDataDocument('activity-catalog', withParty({ criteria: 'Only documented membership.' })), /opposition/);
 }
 
 // Office (institution line) on an activity: Soviet affiliations only, known ids, filterable.
