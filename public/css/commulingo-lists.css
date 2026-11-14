@@ -1110,23 +1110,29 @@ a.commu-person-position:focus-visible {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.commu-person-idbox h3.name-em-14 { --name-em: 14; }
-.commu-person-idbox h3.name-em-15 { --name-em: 15; }
-.commu-person-idbox h3.name-em-16 { --name-em: 16; }
-.commu-person-idbox h3.name-em-17 { --name-em: 17; }
-.commu-person-idbox h3.name-em-18 { --name-em: 18; }
-.commu-person-idbox h3.name-em-19 { --name-em: 19; }
-.commu-person-idbox h3.name-em-20 { --name-em: 20; }
-.commu-person-idbox h3.name-em-21 { --name-em: 21; }
-.commu-person-idbox h3.name-em-22 { --name-em: 22; }
-.commu-person-idbox h3.name-em-23 { --name-em: 23; }
-.commu-person-idbox h3.name-em-24 { --name-em: 24; }
-.commu-person-idbox h3.name-em-25 { --name-em: 25; }
-.commu-person-idbox h3.name-em-26 { --name-em: 26; }
-.commu-person-idbox h3.name-em-27 { --name-em: 27; }
-.commu-person-idbox h3.name-em-28 { --name-em: 28; }
-.commu-person-idbox h3.name-em-29 { --name-em: 29; }
-.commu-person-idbox h3.name-em-30 { --name-em: 30; }
+.commu-person-name-em-8 { --name-em: 8; }
+.commu-person-name-em-9 { --name-em: 9; }
+.commu-person-name-em-10 { --name-em: 10; }
+.commu-person-name-em-11 { --name-em: 11; }
+.commu-person-name-em-12 { --name-em: 12; }
+.commu-person-name-em-13 { --name-em: 13; }
+.commu-person-name-em-14 { --name-em: 14; }
+.commu-person-name-em-15 { --name-em: 15; }
+.commu-person-name-em-16 { --name-em: 16; }
+.commu-person-name-em-17 { --name-em: 17; }
+.commu-person-name-em-18 { --name-em: 18; }
+.commu-person-name-em-19 { --name-em: 19; }
+.commu-person-name-em-20 { --name-em: 20; }
+.commu-person-name-em-21 { --name-em: 21; }
+.commu-person-name-em-22 { --name-em: 22; }
+.commu-person-name-em-23 { --name-em: 23; }
+.commu-person-name-em-24 { --name-em: 24; }
+.commu-person-name-em-25 { --name-em: 25; }
+.commu-person-name-em-26 { --name-em: 26; }
+.commu-person-name-em-27 { --name-em: 27; }
+.commu-person-name-em-28 { --name-em: 28; }
+.commu-person-name-em-29 { --name-em: 29; }
+.commu-person-name-em-30 { --name-em: 30; }
 
 .commu-person-idbox h3 a {
     color: inherit;

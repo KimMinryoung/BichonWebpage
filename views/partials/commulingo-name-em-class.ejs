@@ -1,0 +1,13 @@
+<%
+// A person headline's class="commu-person-name-em-N": the name's width in ems at the
+// headline font (IBM Plex Sans / Pretendard, fitted on all card names), rounded
+// up into the CSS's commu-person-name-em-8…30 steps. The CSS sizes the headline by it to
+// fit its box on one line. Shared by the list card and the person page.
+var nameEm = Array.from(String(name || '')).reduce(function(sum, ch) {
+    if (/[\u3131-\uD7A3\u3040-\u30FF\u4E00-\u9FFF]/.test(ch)) return sum + 0.9;
+    if (ch === ' ') return sum + 0.25;
+    if (/[A-Z]/.test(ch)) return sum + 0.65;
+    if (/[a-z0-9]/.test(ch)) return sum + 0.6;
+    return sum + 0.37;
+}, 0.2);
+%><% if (nameEm > 7) { %> class="commu-person-name-em-<%= Math.min(30, Math.ceil(nameEm)) %>"<% } %>
