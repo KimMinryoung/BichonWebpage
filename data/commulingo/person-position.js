@@ -15,6 +15,9 @@ const COLLECTION_POSITIONS = [
     // A king who fought the revolution is first a monarchist (Louis XVI).
     ['monarchist', 'monarchist'],
     ['counterrevolution', 'white'],
+    // The reaction family shares the counter-revolution tone (2026-11-14).
+    ['militarism-imperialism', 'white'],
+    ['anti-communist-right', 'white'],
     ['left-opposition', 'left-opposition'],
     ['trotskyism', 'trotskyist'],
     ['left-communism', 'left-communist'],
