@@ -17,7 +17,7 @@ const { assertKnownIndicators } = require('./indicators');
 const TARGETS = ['history_event', 'history_event_section', 'history_event_person', 'office_row'];
 const RELATION_KINDS = ['leader', 'executor', 'participant', 'opponent', 'target', 'witness', 'historian'];
 const PATCH_KEYS = {
-    history_event: ['title', 'period', 'question', 'summary', 'outcome', 'timeline', 'sources', 'locations', 'focus', 'sides', 'relations'],
+    history_event: ['title', 'period', 'question', 'summary', 'outcome', 'timeline', 'sources', 'locations', 'countries', 'focus', 'sides', 'relations'],
     history_event_section: ['heading', 'body', 'after'],
     history_event_person: ['personId', 'sortOrder', 'relationKind', 'relation', 'note', 'side'],
     office_row: ['sortOrder', 'period', 'body', 'personId', 'name', 'note', 'trackId'],
@@ -94,7 +94,7 @@ function spliceSection(body, heading, sectionBody, after, action) {
 async function eventRow(client, id, lock = false) {
     const { rows } = await client.query(
         `SELECT id, start_year, start_month, start_day, end_year, end_month, end_day, title_ko, title_en, question_ko, question_en, summary_ko, summary_en,
-                outcome_ko, outcome_en, body_ko, body_en, timeline, sources, locations, to_jsonb(e)->'relations' AS relations,
+                outcome_ko, outcome_en, body_ko, body_en, timeline, sources, locations, countries, to_jsonb(e)->'relations' AS relations,
                 to_jsonb(e)->'focus' AS focus, to_jsonb(e)->'sides' AS sides
          FROM commulingo_history_events e WHERE id = $1${lock ? ' FOR UPDATE' : ''}`, [id]);
     return rows[0] || null;
@@ -155,6 +155,22 @@ async function validateEvent(client, id, fields) {
     if (fields.sources !== undefined && fields.sources !== null
         && (!Array.isArray(fields.sources) || !fields.sources.length || fields.sources.some(s => typeof s !== 'string' || !s.trim()))) {
         throw badRequest('sources must be a non-empty list of reference strings (it replaces the stored list)');
+    }
+    if (fields.countries !== undefined) {
+        const codes = fields.countries;
+        if (!Array.isArray(codes) || !codes.length || codes.some(code => !FLAG_NAMES[code]) || new Set(codes).size !== codes.length) {
+            throw badRequest('countries must be a non-empty list of distinct known country codes (it replaces the stored list)');
+        }
+    }
+    // A timeline row's flags are a subset of the event's countries (the world map
+    // files the event under them), whichever of the two this write changes.
+    if (fields.countries !== undefined || fields.timeline) {
+        const allowed = new Set(fields.countries || event.countries || []);
+        (fields.timeline || event.timeline || []).forEach((item, i) => {
+            const codes = typeof item.country === 'string' ? [item.country] : (item.country || []);
+            const extra = codes.filter(code => !allowed.has(code));
+            if (allowed.size && extra.length) throw badRequest(`timeline[${i}].country ${extra.join(', ')} is not in the event's countries; add it to countries in the same write`);
+        });
     }
     await validateEventFrame(client, id, event, fields);
     return event;
@@ -290,7 +306,7 @@ async function applyEvent(client, id, fields, actor) {
             sets.push(`${key}_ko = $${values.length - 1}`, `${key}_en = $${values.length}`);
         }
     }
-    for (const key of ['timeline', 'sources', 'locations', 'relations']) {
+    for (const key of ['timeline', 'sources', 'locations', 'countries', 'relations']) {
         if (fields[key] !== undefined && fields[key] !== null) {
             values.push(JSON.stringify(fields[key]));
             sets.push(`${key} = $${values.length}::jsonb`);

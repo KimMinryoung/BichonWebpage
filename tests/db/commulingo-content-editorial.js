@@ -97,6 +97,13 @@ const L = (ko, en) => ({ ko, en });
         await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [row({ country: ['atlantis'] })] } }, /country must be/);
         await submit({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [row({ country: 'poland' })] } });
         assert.deepEqual((await one("SELECT timeline FROM commulingo_history_events WHERE id = 'ct-event'")).timeline[0].country, ['poland']);
+        // countries replace the stored list; timeline flags stay a subset of it.
+        await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { countries: ['atlantis'] } }, /countries must be/);
+        await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { countries: ['france'] } }, /timeline\[0\]\.country poland is not in/);
+        await submit({ target: 'history_event', action: 'update', id: 'ct-event', fields: { countries: ['france', 'poland'] } });
+        assert.deepEqual((await one("SELECT countries FROM commulingo_history_events WHERE id = 'ct-event'")).countries, ['france', 'poland']);
+        await refuse({ target: 'history_event', action: 'update', id: 'ct-event', fields: { timeline: [row({ country: ['germany'] })] } }, /not in the event's countries/);
+        await submit({ target: 'history_event', action: 'update', id: 'ct-event', fields: { countries: ['germany'], timeline: [row({ country: ['germany'] })] } });
 
         // Body sections: insert after an anchor in both languages, rewrite, refusals.
         await submit({ target: 'history_event_section', action: 'create', id: 'ct-event',
