@@ -55,6 +55,19 @@ function staleProblems(decisions, rows) {
     return problems;
 }
 
+// Expressions of the entries this manifest touches that stay unreviewed after
+// it: the generated forms of a title (an English event title without "The",
+// a document's quoted and bare aliases) were often left out when the entry was
+// registered, and an unreviewed expression never links (2026-11-14: 32 such
+// rows piled up). Reported, not refused, so a one-alias fix still goes through.
+function unreviewedSiblings(decisions, rows) {
+    const entries = new Set(decisions.map(recordKey));
+    const decided = new Set(decisions.map(rowKey));
+    return rows.filter(r => entries.has(recordKey(r)) && !r.reviewed && !decided.has(rowKey(r)))
+        .map(r => ({ kind: r.kind, id: r.id, lang: r.lang, text: r.text, source: r.source, sourceSignature: r.sourceSignature,
+            collisions: r.collisions.map(c => `${c.kind}:${c.id}`) }));
+}
+
 function failStale(problems) {
     const lines = problems.map(p => `${p.decision}: ${p.reason}${p.current?.length ? `; now: ${p.current.map(c => JSON.stringify(c.text)).join(', ')}` : ''}`);
     fail(`Source changed for ${problems.length} decision(s); rebuild them from the current expressions `
@@ -100,6 +113,11 @@ async function runLinkReviewManifest(manifest, { apply = false, actor, hooks = {
     const state = await service.loadState();
     const future = projected(state, decisions, actor);
     const summary = { total: decisions.length, policies: Object.fromEntries(['auto', 'context', 'search'].map(p => [p, decisions.filter(d => d.policy === p).length])) };
+    const siblings = unreviewedSiblings(decisions, future.rows);
+    if (siblings.length) {
+        summary.unreviewed = siblings;
+        summary.warning = `${siblings.length} other expression(s) of these entries stay unreviewed and will not link; add a decision for each (see unreviewed)`;
+    }
     const { renderLinkedContent } = require('./render-links');
     const { getLinkIndexes } = require('./linkify');
     const indexes = {};

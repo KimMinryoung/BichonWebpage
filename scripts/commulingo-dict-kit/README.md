@@ -79,6 +79,7 @@ UNION ALL SELECT 'event', id FROM commulingo_history_events WHERE body_ko LIKE '
 
 링크 승인(`link_reviews_apply`, `data/commulingo/link-review-catalog.js`):
 - note는 12~2000자. 같은 (kind, id, lang, text)가 두 번 들어가면 거부된다.
+- 결과의 `unreviewed`·`warning`: 같은 항목의 다른 표현(관사 뺀 영어 제목, 낫표 없는 별칭 등)이 아직 미승인이다. 같은 작업에서 결정을 더해 다시 적용한다.
 - `Source changed`: 승인을 만든 뒤 표제어·별칭·문헌 제목이 바뀌었다. 오류의 `problems[].current`(지금 표현과 서명)로 해당 결정만 고쳐 manifest를 다시 만든다.
 
 ## 규칙

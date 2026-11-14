@@ -354,7 +354,9 @@ const tools = [
         description: 'Check and apply a link-review manifest {decisions: [{kind, id, lang, text, role, policy, note, sourceSignature?, added?}]} '
             + '(the scripts/reviews/ format, same checks as scripts/review-commulingo-links.js: projected catalogue, renderer regressions, '
             + 'qualified and context expressions). apply: false (default) is the preflight; true writes added expressions and saves the reviews. '
-            + 'New glossary terms and renamed event titles need this in the same job, or they never auto-link.',
+            + 'New glossary terms and renamed event titles need this in the same job, or they never auto-link. The result lists under '
+            + 'unreviewed (with a warning) every other expression of the same entries still unreviewed after the manifest, such as the '
+            + 'generated forms of a title; decide those in the same job.',
         inputSchema: object({
             manifest: obj('Manifest with decisions'),
             specPath: specPathArg,
@@ -371,7 +373,7 @@ const tools = [
             if (result.samples) result.samples = result.samples.slice(0, 50);
             return result;
         },
-        summarize: value => ({ applied: value.applied, total: value.total, saved: value.saved }),
+        summarize: value => ({ applied: value.applied, total: value.total, saved: value.saved, unreviewed: (value.unreviewed || []).length }),
     },
     {
         scope: 'edit',

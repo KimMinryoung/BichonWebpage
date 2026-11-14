@@ -104,6 +104,11 @@ const service = require('../../data/commulingo/link-review-service');
     assert(logged.filter(entry => entry.phase === 'batch-preview-complete').every(entry => entry.samples === 0));
     const replay = await runLinkReviewManifest(manifest, { apply: true, actor: 'isolated-test' });
     assert.deepStrictEqual([replay.saved, replay.alreadySaved], [0, 1]);
+    // Other unreviewed expressions of the same entry are listed, never the decided one.
+    const fixtureRows = (await service.loadState()).rows.filter(r => r.kind === 'term' && r.id === 'fixture-link' && !r.reviewed);
+    assert.deepStrictEqual((replay.unreviewed || []).map(r => r.text).sort(), fixtureRows.map(r => r.text).sort());
+    assert(!(replay.unreviewed || []).some(r => r.text === 'July Crisis'));
+    assert(fixtureRows.length > 0 && /stay unreviewed/.test(replay.warning));
     await assert.rejects(runLinkReviewManifest({ decisions: [{ ...manifest.decisions[0], text: 'Gone Name' }] }, { apply: false, actor: 'isolated-test' }),
         err => err.status === 409 && err.problems[0].current.some(c => c.text === 'July Crisis'));
     console.log('isolated DB: manifest apply retries a moved corpus, replays, and names current expressions for stale decisions');
