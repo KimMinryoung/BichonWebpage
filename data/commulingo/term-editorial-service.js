@@ -85,14 +85,10 @@ function validateFields(fields, current, action, sources) {
     for (const field of ['people','events']) if (fields[field] !== undefined &&
         (!Array.isArray(fields[field]) || fields[field].some(v => typeof v !== 'string' || !v))) throw badRequest(`invalid ${field}`);
     const evidence = fields.evidence || [];
-    if (!Array.isArray(evidence)) throw badRequest('evidence must be an array');
-    for (const e of evidence) {
-        if (!e || !Object.hasOwn(fields,e.field) || typeof e.claim !== 'string' || !e.claim.trim()
-            || !sources.includes(e.source) || typeof e.locator !== 'string' || !e.locator.trim()
-            || (e.excerpt !== undefined && typeof e.excerpt !== 'string')
-            || !['supports','disputes'].includes(e.stance || 'supports')) throw badRequest('invalid field evidence');
-    }
-    for (const field of contract.factFields) if (Object.hasOwn(fields,field) && !evidence.some(e => e.field===field)) throw badRequest(`evidence required for ${field}`);
+    const edited = Object.keys(fields).filter(key => !['evidence', 'expectedRevision', 'removeSources', 'carryLinkReviews'].includes(key));
+    require('./evidence-check').assertEvidence(evidence, { sources, required: contract.factFields.filter(field => Object.hasOwn(fields, field)),
+        allowed: field => Object.hasOwn(fields, field), allowedLabel: `only the fields this edit sends (${edited.join(', ') || 'none'})` },
+    missing => missing ? `evidence required for ${missing}` : 'invalid field evidence');
     // Sources otherwise only accumulate, so a wrong URL added by mistake (a
     // 404, another subject's page) could never leave the term. removeSources
     // names stored URLs to drop; one this edit cites again, or one still quoted

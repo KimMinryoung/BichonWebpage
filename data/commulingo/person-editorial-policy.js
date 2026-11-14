@@ -1,4 +1,5 @@
 const { badRequest } = require('./people-admin-fields');
+const { assertEvidence } = require('./evidence-check');
 
 const { limits: LIMITS, factFields: FACT_FIELDS, reviewFlags: REVIEW_FLAGS } = require('./person-editorial-contract.json');
 function sourcesFor(payload, options = {}) {
@@ -30,21 +31,13 @@ function validateEditorial(payload, options = {}, section = false) {
         }
     }
     const evidence = payload.evidence ?? [];
-    if (!Array.isArray(evidence)) throw badRequest('evidence must be an array');
-    for (const e of evidence) {
-        if (!e || typeof e !== 'object' || !['supports', 'disputes'].includes(e.stance || 'supports')
-            || !['field', 'claim', 'source', 'locator', 'excerpt', 'stance'].every(k => e[k] === undefined || typeof e[k] === 'string')
-            || !e.field?.trim() || !e.claim?.trim() || !sources.includes(e.source)
-            || !e.locator?.trim()) throw badRequest('each evidence item needs field, claim, cited source and locator (page/section), plus optional excerpt/stance');
-        if (!Object.hasOwn(payload, e.field) && !FACT_FIELDS.includes(e.field)) throw badRequest(`evidence field ${e.field} is not part of this edit`);
-    }
     // Exact dates are a fact like the years (not in the shared contract's list:
     // leninbot does not write them).
-    for (const field of [...FACT_FIELDS, 'lifeDates']) {
-        if (payload[field] !== undefined && !(field === 'lifeDates' && payload[field] === null) && !evidence.some(e => e.field === field)) {
-            throw badRequest(`evidence must identify the claim and page/section supporting ${field}`);
-        }
-    }
+    const required = [...FACT_FIELDS, 'lifeDates'].filter(field => payload[field] !== undefined && !(field === 'lifeDates' && payload[field] === null));
+    const edited = Object.keys(payload).filter(key => !['sources', 'evidence', 'reviewFlags', 'expectedRevision', 'id', 'slug'].includes(key));
+    assertEvidence(evidence, { sources, required, allowed: field => Object.hasOwn(payload, field) || FACT_FIELDS.includes(field),
+        allowedLabel: `the fields this edit sends (${edited.join(', ') || 'none'}) or the facts ${FACT_FIELDS.join(', ')}` },
+    missing => missing ? `evidence must identify the claim and page/section supporting ${missing}` : 'evidence problems');
     const flags = payload.reviewFlags ?? [];
     if (!Array.isArray(flags) || flags.some(f => !REVIEW_FLAGS.includes(f))) throw badRequest('invalid reviewFlags');
     return { sources, evidence, flags };

@@ -25,4 +25,11 @@ assert.throws(() => validateFields({...fields,evidence:{}},current,'update',[sou
 assert.throws(() => validateFields({...fields,evidence:[]},current,'update',[source]),/evidence required/);
 fields.evidence[62].source = 'https://example.org/uncited';
 assert.throws(() => validateFields(fields,current,'update',[source]),/invalid field evidence/);
+// Every evidence problem is named at once, with the fields the edit allows and the item shape.
+assert.throws(() => validateFields({definition:{ko:'새 정의',en:'New definition'},period:{start:[1917]},
+    evidence:[{field:'career',claim:'x',source,locator:'p. 1'},{field:'definition',claim:'',source:'https://example.org/other',locator:'p. 2'}]},current,'update',[source]),
+    err => /^invalid field evidence: /.test(err.message) && /evidence\[0\]: field career is not part of this edit \(evidence can name only the fields this edit sends \(definition, period\)\)/.test(err.message)
+        && /evidence\[1\] \(definition\): missing claim/.test(err.message) && /is not one of this edit's sources/.test(err.message)
+        && /missing evidence for period/.test(err.message) && /each item is \{field, claim, source/.test(err.message));
+assert.throws(() => validateEditorial({bio:{ko:'사실',en:'Fact'},sources:[source],evidence:[]},{},false), /supporting bio: missing evidence for bio/);
 console.log('63 evidence items accepted for people, sections and terms; malformed and unsupported evidence rejected');

@@ -181,9 +181,13 @@ async function persistReview(client, row, old, value) {
 // A batch previews one final policy set and commits against the same corpus revision.
 // Each expression retains the existing twelve-passage coverage; shared passages are
 // rendered only once per language instead of once per overlapping expression.
-async function previewReviews(inputs) {
+// samples: false skips that corpus scan (the MCP tool never shows the samples;
+// it was most of a 27 s apply); validation and the revision token are the same.
+// state: a loadState() result the caller just read (saves one ~4 s load);
+// saveReviews still compares the revision against the state it locks.
+async function previewReviews(inputs, { samples = true, state: given } = {}) {
     if (!Array.isArray(inputs) || !inputs.length || inputs.length > 1000) fail('검토 항목은 1~1000개여야 합니다.');
-    const state = await loadState();
+    const state = given || await loadState();
     const selected = inputs.map(input => ({ row: selectRow(state, input), input }));
     if (new Set(selected.map(({ row }) => key(row.kind, row.id, row.lang, row.text))).size !== selected.length) fail('검토 표현이 중복됐습니다.');
     const afterReviews = new Map(state.reviews);
@@ -191,7 +195,7 @@ async function previewReviews(inputs) {
     const finalRows = catalogue(state.records, afterReviews);
     for (const { row, input } of selected) validateDecision(rowByKey(finalRows, row), input, finalRows);
     const results = selected.map(({ row }) => ({ row, samples: [], matchedPassages: 0, sampledPassages: 0 }));
-    for (const lang of ['ko', 'en']) {
+    for (const lang of samples ? ['ko', 'en'] : []) {
         const candidates = results.filter(result => result.row.lang === lang).map(result => ({ result, needle: normalize(result.row.text, lang) }));
         if (!candidates.length) continue;
         const passages = [];
@@ -235,7 +239,9 @@ async function previewReviews(inputs) {
     previews.set(token, { inputs: cleanInputs, revision: state.revision, expires: Date.now() + 15 * 60000 });
     return { token, results, coverage: '용어·사건·인물·참고 문헌·공개 보고서. 표현별 최대 12개 본문 표본, 학습 콘텐츠 제외.' };
 }
-async function saveReviews(token, actor) {
+// withRows: also return the catalogue rows as saved, so a caller can verify
+// the outcome without loading the whole state again.
+async function saveReviews(token, actor, { withRows = false } = {}) {
     const preview = previews.get(token);
     if (!preview?.inputs || preview.expires < Date.now()) fail('일괄 미리보기가 만료됐습니다. 다시 확인하세요.', 409);
     const values = await transaction(async client => {
@@ -253,7 +259,7 @@ async function saveReviews(token, actor) {
             await persistReview(client, row, old, value);
             values.push(value);
         }
-        return values;
+        return withRows ? { values, rows: finalRows } : values;
     }, REVIEW_TX);
     previews.delete(token);
     await refreshLinkReviews();

@@ -84,6 +84,29 @@ const service = require('../../data/commulingo/link-review-service');
     assert.deepStrictEqual((await db.query("SELECT policy FROM commulingo_link_reviews WHERE expression='공유 별칭' ORDER BY entity_id")).rows.map(r => r.policy), ['search', 'auto']);
     await db.query('DROP TRIGGER reject_history ON commulingo_link_review_history');
     await db.query('DROP FUNCTION reject_link_history()');
+    // The manifest path (MCP link_reviews_apply): no sample scan, preview on the
+    // state just read, one retry when the corpus moved between preview and save,
+    // the final check on the rows saveReviews locked, and a replay saves nothing.
+    const { runLinkReviewManifest } = require('../../data/commulingo/link-review-manifest');
+    const manifest = { decisions: [{ kind: 'term', id: 'fixture-link', lang: 'en', text: 'July Crisis', role: 'short', policy: 'search', note: 'Generic English name; search only, never linked.' }] };
+    const realSave = service.saveReviews;
+    let saveCalls = 0;
+    service.saveReviews = async (...args) => {
+        if (++saveCalls === 1) throw Object.assign(new Error('moved'), { status: 409, code: 'revision_changed' });
+        return realSave(...args);
+    };
+    const logged = [];
+    const applied = await runLinkReviewManifest(manifest, { apply: true, actor: 'isolated-test', hooks: { log: entry => logged.push(entry) } });
+    service.saveReviews = realSave;
+    assert.strictEqual(applied.saved, 1);
+    assert.strictEqual(saveCalls, 2);
+    assert(logged.some(entry => entry.phase === 'retry'));
+    assert(logged.filter(entry => entry.phase === 'batch-preview-complete').every(entry => entry.samples === 0));
+    const replay = await runLinkReviewManifest(manifest, { apply: true, actor: 'isolated-test' });
+    assert.deepStrictEqual([replay.saved, replay.alreadySaved], [0, 1]);
+    await assert.rejects(runLinkReviewManifest({ decisions: [{ ...manifest.decisions[0], text: 'Gone Name' }] }, { apply: false, actor: 'isolated-test' }),
+        err => err.status === 409 && err.problems[0].current.some(c => c.text === 'July Crisis'));
+    console.log('isolated DB: manifest apply retries a moved corpus, replays, and names current expressions for stale decisions');
     console.log('isolated DB: batch final-state collisions, renderer preview, replay, stale corpus and atomic rollback passed');
     console.log('isolated DB: unique collision destination approved only after explicit competitor review');
     console.log('isolated DB: preview, approval, replay, stale prose, concurrent approval and atomic history rollback passed');

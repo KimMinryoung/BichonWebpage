@@ -129,8 +129,9 @@ async function runLinkReviewManifest(manifest, { apply = false, actor, hooks = {
     log({ preflight: 'passed', ...summary, negativeRendererCases: NEGATIVE_CASES.length, qualifiedRendererCases: decisions.filter(d => d.added).length });
     if (!apply) return { applied: false, preflight: 'passed', ...summary, samples };
     if (hooks.onBackup) hooks.onBackup({ reviews: [...state.reviews.values()], records: state.records, manifest });
+    const addedRecords = new Set(decisions.filter(d => d.added).map(recordKey));
     await transaction(async client => {
-        for (const id of new Set(decisions.filter(d => d.added).map(recordKey))) {
+        for (const id of addedRecords) {
             const [kind, entityId] = id.split(':');
             const table = kind === 'term' ? 'commulingo_terms' : 'commulingo_history_events';
             const current = (await client.query(`SELECT link_expressions FROM ${table} WHERE id=$1 FOR UPDATE`, [entityId])).rows[0];
@@ -144,9 +145,12 @@ async function runLinkReviewManifest(manifest, { apply = false, actor, hooks = {
     // corpus revision and saveReviews refuses (2026-11-14: 14 refusals in one
     // day of parallel jobs). saveReviews re-validates every decision against
     // the state it locks, so the preview is simply redone on the new revision.
-    let saved = 0, pendingCount = 0;
+    // Each loadState costs about 4 s, so the state read for the preflight is
+    // reused when this run wrote no expressions, the preview takes the state
+    // just read, and the final check uses the rows saveReviews locked.
+    let saved = 0, pendingCount = 0, savedRows = null;
     for (let attempt = 1; ; attempt++) {
-        const current = await service.loadState();
+        const current = attempt === 1 && !addedRecords.size ? state : await service.loadState();
         const stale = staleProblems(decisions, current.rows);
         if (stale.length) failStale(stale);
         const pending = decisions.filter(d => {
@@ -154,13 +158,15 @@ async function runLinkReviewManifest(manifest, { apply = false, actor, hooks = {
             return row.note !== d.note || row.policy !== d.policy || row.role !== d.role;
         });
         pendingCount = pending.length;
-        if (!pending.length) break;
+        if (!pending.length) { savedRows = current.rows; break; }
         log({ phase: 'batch-preview', pending: pending.length, attempt });
-        const preview = await service.previewReviews(pending);
+        const preview = await service.previewReviews(pending, { samples: Boolean(hooks.onEvidence), state: current });
         if (hooks.onEvidence) hooks.onEvidence(preview);
         log({ phase: 'batch-preview-complete', expressions: preview.results.length, samples: preview.results.reduce((n, r) => n + r.samples.length, 0) });
         try {
-            saved = (await service.saveReviews(preview.token, actor)).length;
+            const result = await service.saveReviews(preview.token, actor, { withRows: true });
+            saved = result.values.length;
+            savedRows = result.rows;
             break;
         } catch (err) {
             if (!service.isRevisionChanged(err) || attempt >= 3) throw err;
@@ -168,9 +174,9 @@ async function runLinkReviewManifest(manifest, { apply = false, actor, hooks = {
         }
     }
     log({ completed: saved, alreadySaved: decisions.length - pendingCount });
-    const final = await service.loadState();
+    const finalRows = savedRows || (await service.loadState()).rows;
     for (const d of decisions) {
-        const r = final.rows.find(r => rowKey(r) === rowKey(d));
+        const r = finalRows.find(r => rowKey(r) === rowKey(d));
         if (!r || !r.reviewed || r.note !== d.note || r.policy !== d.policy || r.role !== d.role) fail('Final state mismatch: ' + rowKey(d), 500);
     }
     return { applied: true, status: 'all-reviewed-and-saved', ...summary, saved, alreadySaved: decisions.length - pendingCount };
