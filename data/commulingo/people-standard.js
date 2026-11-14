@@ -43,6 +43,7 @@ const OFFICE_DISPLAY_ORDER = [
     'france-leadership',
     'china-leadership',
     'south-korea-presidents',
+    'japan-leadership',
 ];
 
 // FALLBACK ONLY — the office title a card shows comes from commulingo_offices
@@ -72,6 +73,7 @@ const ROLE_OFFICE_TITLES = {
     'france-leadership': { ko: '프랑스 국가원수 · 정부 수반', en: 'Heads of state and government of France' },
     'china-leadership': { ko: '중국 국가원수 · 정부 수반 · 당 지도자', en: 'Heads of state, government and party of China' },
     'south-korea-presidents': { ko: '대한민국 대통령', en: 'Presidents of the Republic of Korea' },
+    'japan-leadership': { ko: '일본 국가원수 · 정부 수반 · 공산당 지도자', en: 'Heads of state, government and Communist Party of Japan' },
 };
 
 // OFFICE_ICON seeds commulingo_offices.icon and is the last-resort icon
@@ -100,6 +102,7 @@ const OFFICE_ICON = {
     'france-leadership': 'landmark',
     'china-leadership': 'landmark',
     'south-korea-presidents': 'landmark',
+    'japan-leadership': 'landmark',
 };
 
 function composePersonName(name, patronymic) {

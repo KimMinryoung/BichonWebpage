@@ -20,7 +20,7 @@ const PATCH_KEYS = {
     history_event: ['title', 'period', 'question', 'summary', 'outcome', 'timeline', 'sources', 'locations', 'countries', 'focus', 'sides', 'relations'],
     history_event_section: ['heading', 'body', 'after'],
     history_event_person: ['personId', 'sortOrder', 'relationKind', 'relation', 'note', 'side'],
-    office_row: ['sortOrder', 'period', 'body', 'personId', 'name', 'note', 'trackId'],
+    office_row: ['sortOrder', 'period', 'body', 'personId', 'name', 'note', 'trackId', 'seat'],
 };
 const ACTIONS = {
     history_event: ['update'],
