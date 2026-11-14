@@ -2037,9 +2037,10 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 .commu-person-event-links strong { font-size: var(--text-md); }
 .commu-person-event-links em,
 .commu-person-event-links small { grid-column: 2; }
-.commu-person-history-events .commu-person-event-links a { align-content: start; }
-.commu-person-history-events .commu-person-event-links span { grid-row: span 3; }
-@media (max-width: 560px) { .commu-person-event-links a { grid-template-columns: 1fr; } .commu-person-history-events .commu-person-event-links span { grid-row: auto; } .commu-person-event-links em,
+.commu-person-history-events .commu-person-event-links a { align-content: start; grid-template-columns: 6.6rem minmax(0, 1fr); }
+.commu-person-history-events .commu-person-event-links a > span { grid-row: span 3; }
+.commu-person-event-from { display: block; }
+@media (max-width: 560px) { .commu-person-event-links a { grid-template-columns: 1fr; } .commu-person-history-events .commu-person-event-links a { grid-template-columns: 1fr; } .commu-person-history-events .commu-person-event-links a > span { grid-row: auto; } .commu-person-event-from { display: inline; } .commu-person-event-links em,
 .commu-person-event-links small { grid-column: 1; } }
 
 .commu-person-event-links li.is-executor a { border-color: var(--role-executor); background: color-mix(in srgb, var(--role-executor) 14%, transparent); }

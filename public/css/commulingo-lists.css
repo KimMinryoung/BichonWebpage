@@ -1607,9 +1607,9 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     white-space: nowrap;
 }
 .commu-event-period { display: block; color: var(--text-muted); font-weight: 700; letter-spacing: .04em; }
-.commu-person-history-events .commu-person-event-links a { align-content: start; }
-.commu-person-history-events .commu-person-event-links span { grid-row: span 3; }
-@media (max-width: 560px) { .commu-person-history-events .commu-person-event-links span { grid-row: auto; } }
+.commu-person-history-events .commu-person-event-links a { align-content: start; grid-template-columns: 6.6rem minmax(0, 1fr); }
+.commu-person-history-events .commu-person-event-links a > span { grid-row: span 3; }
+@media (max-width: 560px) { .commu-person-history-events .commu-person-event-links a { grid-template-columns: 1fr; } .commu-person-history-events .commu-person-event-links a > span { grid-row: auto; } }
 .commu-terms-page .commu-event-card p,
 .commu-events-page .commu-event-card p {
     display: -webkit-box;
