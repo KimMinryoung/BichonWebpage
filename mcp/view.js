@@ -30,6 +30,9 @@ function shape(value, lang, maxChars) {
 }
 
 function project(entry, { fields, lang, maxChars } = {}) {
+    // A bare string (doc_get's html) is cut too; until 2026-11-14 it came back
+    // whole, so maxChars 3000 on a document still returned 68k characters.
+    if (typeof entry === 'string') return shape(entry, lang, maxChars);
     if (!entry || typeof entry !== 'object') return entry;
     if (fields && !fields.every(field => typeof field === 'string')) {
         throw require('./common').badRequest('fields must be strings');

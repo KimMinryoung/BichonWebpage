@@ -78,6 +78,11 @@ async function chainRevision(request, target, client) {
 // transaction (terms otherwise always wait for review), as the batch scripts
 // did; a new term then needs its native-script form or a stated reason.
 async function storeEdit(command, target, request, actor, client) {
+    if (command === 'submit' && (request.textEdits !== undefined || request.timelineEdits !== undefined)) {
+        // Read the stored text and write it back in one transaction (mcp/text-edits.js).
+        if (!client) return withTransaction({}, own => storeEdit(command, target, request, actor, own));
+        request = await require('../text-edits').expandTextEdits(target, request, client);
+    }
     const service = editorialServices(target);
     const options = client ? { client, changedBy: actor } : { changedBy: actor };
     if (command === 'review') {
@@ -116,7 +121,12 @@ const tools = [
             + '(history_event update; history_event_section create/update {heading, body, after?} / delete {heading}; history_event_person create/update '
             + '{personId, relationKind, relation, note, side?, sortOrder?}; office_row create (id = office id; fields period, body = formal post title, personId or name, note, trackId from the office tracks, seat state|government|empty) / update / delete (id = row id)) '
             + 'apply at once unless directApply is false; they support submit and review only. A term submit with request.directApply: true '
-            + 'is approved in the same call (a new term then needs fields.original or request.noOriginal: "<reason>"). brief: true returns '
+            + 'is approved in the same call (a new term then needs fields.original or request.noOriginal: "<reason>"). '
+            + 'A small correction need not resend a whole text: an update may carry request.textEdits [{field: "body.ko", find, replace}] '
+            + '(term: term|definition|body|periodNote; person: bio|epithet; person_section: heading|body with fields.slug; history_event: '
+            + 'title|question|summary|outcome; history_event_section: body with fields.heading {ko, en}); each find must occur exactly once in the '
+            + 'stored text, and the stored text is read and written back in one transaction. A history_event update may carry request.timelineEdits '
+            + '[{index, set: {country: [...]}}] (null removes a key) instead of the whole timeline. Evidence and revision rules are unchanged. brief: true returns '
             + 'only {status, suggestionId, revision} instead of the whole stored entry.',
         inputSchema: object({
             command: str('Store command', { enum: ['submit', 'review', 'enrichment', 'note'] }),

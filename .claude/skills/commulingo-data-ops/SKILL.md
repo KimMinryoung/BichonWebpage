@@ -27,6 +27,7 @@ Full list and arguments: `dev_docs/commulingo-admin-mcp.md`. Write tools default
 | Link reviews | `link_reviews_apply` (manifest in `scripts/reviews/`), `link_expression_reject`, `link_reviews_carry` |
 | Registries | `registry_edit`: position collections and members, blocklist, generic aliases, event `no_auto_link`/`term_links`, id redirects, glossary categories (`term_category_upsert`) |
 | Checks | `audit_run` (e.g. `audit-link-fires` `[ko]`, `audit-person-card-fields`), `sql_read` for one-off read-only queries |
+| Save a read to a file / fix one phrase | Read tools take `outPath: "content/<job>/<file>.json"` (result saved as `{mcpExport, value}` instead of returned); build edits from that file, never from text copied out of a result. A one-phrase fix is `request.textEdits: [{field: "body.ko", find, replace}]` on an `editorial_store`/`editorial_batch` update (event timeline: `timelineEdits: [{index, set}]`), not a resent whole body. `doc_get` `headings: true, body: false` lists heading ids |
 
 **Dictionary jobs** (new terms + cards + link reviews in one batch): use `scripts/commulingo-dict-kit/` (README: job layout, evidence helper, term batch + review manifest builder, fetch/kwic tools, `sql_read` schema, the write-gate refusals to pre-empt). Do not study earlier job directories for boilerplate.
 

@@ -68,7 +68,12 @@ function validateDecision(row, decision, rows) {
     if (typeof decision.note !== 'string' || decision.note.trim().length < 12 || decision.note.length > 2000) fail('검토 근거를 12~2000자로 작성하세요.');
     if (decision.policy === 'search') return;
     if ([...row.text].length < 2) fail('한 글자 표현은 검색 전용입니다.');
-    if (row.collisions.some(other => !other.reviewed || other.policy !== 'search')) fail('다른 항목의 미검토 또는 자동 연결 표현과 겹칩니다. 경쟁 표현을 검색 전용으로 검토하거나 이름을 구체화하세요.');
+    const competing = row.collisions.filter(other => !other.reviewed || other.policy !== 'search');
+    if (competing.length) {
+        // Name the rivals: a bare 「겹칩니다」 left the caller searching for them (2026-11-14).
+        const named = competing.slice(0, 5).map(other => `${other.kind}:${other.id} 「${other.text}」 (${other.reviewed ? other.policy : '미검토'})`).join(', ');
+        fail(`${row.lang} 「${row.text}」(${row.kind}:${row.id})이 다른 항목의 미검토 또는 자동 연결 표현과 겹칩니다: ${named}. 경쟁 표현을 검색 전용으로 검토하거나 이름을 구체화하세요.`);
+    }
     if (row.risks.some(reason => reason.startsWith('여러 시대')) && decision.policy === 'auto') fail('일반 표현은 자동 연결할 수 없습니다. 구체적인 이름 또는 문맥 확인을 선택하세요.');
     if (decision.policy === 'context') {
         if (decision.role === 'identity') fail('문맥 확인 표현 자체를 고유 이름으로 사용할 수 없습니다.');

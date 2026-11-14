@@ -304,6 +304,8 @@ deploy_admin() {
     docker rm "$ADMIN_NAME" > /dev/null 2>&1 || true
     # MCP tools read big payloads (people batches, link-review manifests,
     # document bodies) from the gitignored work directories by specPath.
+    # scripts/content is writable so read tools can save results (outPath,
+    # mcp/spec.js writeExport); scripts/reviews stays read-only.
     # The image's healthcheck probes the website port; this process has none.
     docker run -d \
         --init \
@@ -321,7 +323,7 @@ deploy_admin() {
         --env-file "$FRONTEND_DIR/.env" \
         -v "$APP_DIR:/app:ro" \
         -v "$FRONTEND_DATA_DIR:/app/data" \
-        -v "$FRONTEND_DIR/scripts/content:/work/content:ro" \
+        -v "$FRONTEND_DIR/scripts/content:/work/content" \
         -v "$FRONTEND_DIR/scripts/reviews:/work/reviews:ro" \
         "$RUNTIME_IMAGE" node mcp/main.js > /dev/null || { err "Admin process could not start."; return 1; }
     docker network connect "$NETWORK" "$ADMIN_NAME" \

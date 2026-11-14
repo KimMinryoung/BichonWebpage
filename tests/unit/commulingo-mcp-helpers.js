@@ -97,6 +97,53 @@ const { readSpecJson } = require('../../mcp/spec');
     await assert.rejects(applyRegistryEdits([], { actor: 'x' }), /1–500 edits/);
     await assert.rejects(applyRegistryEdits([{ op: 'x' }]), /needs an actor/);
 
+    // project cuts a bare string (doc_get's html), not only object fields.
+    assert.equal(project('가'.repeat(300), { maxChars: 200 }), `${'가'.repeat(200)}…[+100 chars]`);
+
+    // outPath exports: only content/<job>/<file>.json, never over a hand-written file.
+    const { writeExport } = require('../../mcp/spec');
+    const saved = writeExport('content/export-job/event.json', 'event_raw', { event: { id: 'x' } });
+    assert.equal(saved.outPath, 'content/export-job/event.json');
+    const file = JSON.parse(fs.readFileSync(path.join(work, 'content', 'export-job', 'event.json'), 'utf8'));
+    assert.equal(file.mcpExport.tool, 'event_raw');
+    assert.deepEqual(file.value, { event: { id: 'x' } });
+    writeExport('content/export-job/event.json', 'event_raw', { again: true });
+    assert.throws(() => writeExport('content/batch/spec.json', 'event_raw', {}), /not an earlier export/);
+    for (const bad of ['reviews/x.json', 'content/x.json', 'content/job/../x.json', 'content/job/x.txt', 'content/.hidden/x.json']) {
+        assert.throws(() => writeExport(bad, 'sql_read', {}), /outPath must be/, bad);
+    }
+    const allTools = require('../../mcp/index').tools;
+    assert(allTools.find(t => t.name === 'event_raw').inputSchema.properties.outPath);
+    assert(!allTools.find(t => t.name === 'editorial_batch').inputSchema.properties.outPath);
+
+    // textEdits / timelineEdits expand into full-field updates from the stored row.
+    const { expandTextEdits } = require('../../mcp/text-edits');
+    const eventRow = { title_ko: '사건', title_en: 'Event', question_ko: '', question_en: '', summary_ko: '박헌영은 1955년 처형되었다.',
+        summary_en: 'Pak was executed in 1955.', outcome_ko: '', outcome_en: '',
+        body_ko: '## 배경\n\n원래 배경. 원래.\n\n## 결과\n\n결과 문단.', body_en: '## Background\n\nOld background.\n\n## Outcome\n\nOutcome text.',
+        timeline: [{ title: { ko: 'a', en: 'a' }, country: ['ethiopia'], geo: { kind: 'point' } }, { title: { ko: 'b', en: 'b' }, country: ['ethiopia'] }] };
+    const fakeClient = { query: async () => ({ rows: [JSON.parse(JSON.stringify(eventRow))] }) };
+    const expanded = await expandTextEdits('history_event', { action: 'update', id: 'e', fields: { expectedRevision: 'r' },
+        textEdits: [{ field: 'summary.ko', find: '1955년 처형', replace: '1956년 7월 처형' }],
+        timelineEdits: [{ index: 0, set: { country: ['ethiopia', 'somalia'], geo: null } }] }, fakeClient);
+    assert.deepEqual(expanded.fields.summary, { ko: '박헌영은 1956년 7월 처형되었다.', en: 'Pak was executed in 1955.' });
+    assert.deepEqual(expanded.fields.timeline[0], { title: { ko: 'a', en: 'a' }, country: ['ethiopia', 'somalia'] });
+    assert.deepEqual(expanded.fields.timeline[1], eventRow.timeline[1]);
+    assert.equal(expanded.textEdits, undefined);
+    const section = await expandTextEdits('history_event_section', { action: 'update', id: 'e',
+        fields: { heading: { ko: '결과', en: 'Outcome' } }, textEdits: [{ field: 'body.en', find: 'Outcome text', replace: 'New outcome' }] }, fakeClient);
+    assert.deepEqual(section.fields.body, { ko: '결과 문단.', en: 'New outcome.' });
+    await assert.rejects(expandTextEdits('history_event_section', { action: 'update', id: 'e', fields: { heading: { ko: '배경', en: 'Background' } },
+        textEdits: [{ field: 'body.ko', find: '원래', replace: '새' }] }, fakeClient), /occurs 2 times/);
+    await assert.rejects(expandTextEdits('history_event', { action: 'update', id: 'e', textEdits: [{ field: 'body.ko', find: 'x', replace: 'y' }] }, fakeClient), /field must be/);
+    await assert.rejects(expandTextEdits('history_event', { action: 'update', id: 'e', fields: { summary: { ko: 'x', en: 'y' } },
+        textEdits: [{ field: 'summary.ko', find: '1955', replace: '1956' }] }, fakeClient), /also sent/);
+    await assert.rejects(expandTextEdits('history_event', { action: 'update', id: 'e', timelineEdits: [{ index: 5, set: { country: [] } }] }, fakeClient), /index must be/);
+    await assert.rejects(expandTextEdits('term', { action: 'create', id: 't', textEdits: [{ field: 'body.ko', find: 'a', replace: 'b' }] }, fakeClient), /apply to an update/);
+    await assert.rejects(expandTextEdits('person', { action: 'update', id: 'p', timelineEdits: [{ index: 0, set: { a: 1 } }] }, fakeClient), /apply to history_event/);
+    const untouched = { action: 'update', id: 'e', fields: {} };
+    assert.equal(await expandTextEdits('history_event', untouched, fakeClient), untouched);
+
     fs.rmSync(work, { recursive: true, force: true });
     console.log('commulingo mcp helpers ok');
 })().catch(err => { console.error(err); process.exitCode = 1; });

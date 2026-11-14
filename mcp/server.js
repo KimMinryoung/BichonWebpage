@@ -51,7 +51,9 @@ async function callTool(tools, client, params, { log, recordAudit }) {
     let args, outcome, value, problem;
     try {
         args = validateArguments(tool.inputSchema, params.arguments);
-        value = await tool.handler(args, { client: client.name });
+        const { outPath, ...handlerArgs } = args;
+        value = await tool.handler(tool.exportable ? handlerArgs : args, { client: client.name });
+        if (tool.exportable && outPath) value = require('./spec').writeExport(outPath, tool.name, value);
         outcome = 'ok';
     } catch (err) {
         problem = failure(err);

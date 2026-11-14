@@ -257,10 +257,13 @@ const tools = [
         name: 'doc_get',
         description: 'One reference document: its manifest entry (title, aliases, linked people/terms/events, excerpts, modifiedAt) '
             + 'and the stored HTML body as published, with the revision doc_put expects. body: false leaves the HTML out. original describes '
-            + 'the stored original (lang, public, rights, source, originalRevision for doc_put); originalBody: true adds its HTML.' + VIEW_HINT,
+            + 'the stored original (lang, public, rights, source, originalRevision for doc_put); originalBody: true adds its HTML. '
+            + 'headings: true adds every heading [{level, id, text}] (the ids excerpts, anchors and [[doc-excerpt:id#heading]] name); '
+            + 'with body: false that is the cheap way to find one.' + VIEW_HINT,
         inputSchema: object({ id: str('Document id'), body: bool('Include the HTML body (default true)'),
-            originalBody: bool('Include the stored original HTML (default false)'), ...viewArgs }, ['id']),
-        async handler({ id, body = true, originalBody = false, ...view }) {
+            originalBody: bool('Include the stored original HTML (default false)'),
+            headings: bool('Include the heading list [{level, id, text}] (default false)'), ...viewArgs }, ['id']),
+        async handler({ id, body = true, originalBody = false, headings = false, ...view }) {
             const { getCommuLingoDoc } = require('../../data/commulingo/docs-store');
             const { readDocRow, readOriginalRow } = require('../../data/commulingo/docs-db');
             const served = getCommuLingoDoc(id);
@@ -271,7 +274,11 @@ const tools = [
             const orig = await readOriginalRow(id);
             const original = orig ? { lang: orig.lang, public: orig.public, rights: orig.rights, source: orig.source, bodyChars: orig.body.length,
                 ...(originalBody ? { html: view.maxChars ? project(orig.body, { maxChars: view.maxChars }) : orig.body } : {}) } : null;
+            // The stored outline, or a fresh parse for a row written before it existed.
+            const parsed = headings ? (outline?.headings ? outline : (row ? require('../../data/commulingo/doc-outline').buildOutline(row.body) : null)) : null;
+            const headingList = headings ? (parsed?.headings || []).map(({ level, id: headingId, text }) => ({ level, id: headingId, text })) : undefined;
             return { doc: project(doc, view), revision: row ? row.revision : null, bodyChars: row ? row.body.length : 0,
+                ...(headingList ? { headings: headingList } : {}),
                 html: html && view.maxChars ? project(html, { maxChars: view.maxChars }) : html,
                 original, originalRevision: orig ? orig.revision : null };
         },

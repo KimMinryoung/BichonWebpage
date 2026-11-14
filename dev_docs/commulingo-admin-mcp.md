@@ -58,7 +58,14 @@ leninbot은 CommuLingo 테이블을 SQL로 건드리지 않는다(2026-10-05 W5)
   - `registry_edit` — 화면 없는 등록부(`data/commulingo/registry-edits.js`): 입장 모음과 회원, 검토 결과 입장 없음 표시(`person_no_political_position_set`, 2026-11-04), 자동링크 차단 목록, 일반 별칭 목록, 사건별 `no_auto_link`·`term_links`, 용어·인물 페이지별 `no_auto_link`(`term_no_auto_link_set`·`person_no_auto_link_set`, 읽기는 `registry_get` `page_link_exceptions`, 2026-11-01), `id_redirects`, 용어 종류 범주(`term_category_upsert`, 2026-10-28)와 용어의 범주 일괄 이동(`term_category_assign`, 2026-10-29). 변경마다 리비전 행. `scripts/migrations/data/`의 손 SQL을 대신한다.
 - `ops`: `service_status`(리비전, 가동 시간, DB·Redis 준비 상태, 메모리), `sql_read`(읽기 전용 한 문장: 따로 연 연결의 READ ONLY 트랜잭션, 이름 붙인 prepared statement라 여러 문장 불가, 10초·행 상한), `audit_run`(배포된 `scripts/audit-*.js` 실행, 이름 없이 부르면 목록), `stores_refresh`(서비스 프로세스의 CommuLingo 저장소 즉시 갱신 — 쓰기 직후 확인할 때 1분 대기 대신)
 
-`specPath`(`mcp/spec.js`)는 `content/<경로>`(`scripts/content`)나 `reviews/<경로>`(`scripts/reviews`)만 읽는다. `..`·심링크로 밖에 나가는 경로는 거부한다. `scripts/deploy`가 주 컨테이너에 두 폴더를 `/work`로 읽기 전용 마운트하고 `COMMULINGO_WORK_DIR=/work`를 준다. 큰 스펙을 인자로 옮겨 적지 말고 파일에 쓴 뒤 경로를 넘긴다.
+`specPath`(`mcp/spec.js`)는 `content/<경로>`(`scripts/content`)나 `reviews/<경로>`(`scripts/reviews`)만 읽는다. `..`·심링크로 밖에 나가는 경로는 거부한다. `scripts/deploy`가 관리 컨테이너에 두 폴더를 `/work`로 마운트하고(`content`는 쓰기 가능, `reviews`는 읽기 전용) `COMMULINGO_WORK_DIR=/work`를 준다. 큰 스펙을 인자로 옮겨 적지 말고 파일에 쓴 뒤 경로를 넘긴다.
+
+2026-11-14 데이터 작업 경험으로 더한 것:
+
+- **`outPath`(결과를 파일로)**: `person_get`·`person_events`·`term_get`·`event_get`·`event_raw`·`doc_get`·`data_document_get`·`sql_read`·`link_reviews_list`·`dataset_rows`는 `outPath: "content/<작업>/<파일>.json"`을 받으면 결과를 응답 대신 그 파일에 `{mcpExport: {tool, at}, value}`로 저장하고 `{outPath, bytes}`만 돌려준다(`mcp/index.js` `EXPORTABLE`, `mcp/server.js`, `mcp/spec.js` `writeExport`). 손으로 쓴 작업 파일은 덮어쓰지 않고 이전 내보내기만 바꾼다. 긴 본문을 결과에서 옮겨 적어 다시 쓰다 생기는 오탈자를 없애려는 것이다.
+- **`textEdits`·`timelineEdits`(부분 수정)**: `editorial_store`·`editorial_batch`의 submit update에 `request.textEdits: [{field: "body.ko", find, replace}]`를 주면 저장된 글을 같은 트랜잭션에서 읽어 바꾼 뒤 평소의 전체 필드 수정으로 보낸다(`mcp/text-edits.js`). 대상: 용어 term·definition·body·periodNote, 인물 bio·epithet, 인물 절 heading·body(`fields.slug`), 사건 title·question·summary·outcome, 사건 절 body(`fields.heading {ko, en}`). `find`는 저장된 글에 정확히 한 번 나와야 한다. 사건 update의 `request.timelineEdits: [{index, set: {country: [...]}}]`는 연표 한 행의 키만 바꾼다(`null`은 키 삭제). 근거·리비전 규칙은 그대로다.
+- **`doc_get`**: `maxChars`가 본문 HTML에도 적용된다(전에는 문자열 하나인 `html`을 자르지 않아 3000자 요청에 6만 8천 자가 왔다). `headings: true`(+ `body: false`)는 제목 목록 `[{level, id, text}]`만 싸게 준다.
+- **링크 승인 충돌 오류**가 겹친 상대(`kind:id 「표현」 (정책)`)를 이름으로 댄다. 한 manifest의 결정들은 이미 최종 상태 기준으로 함께 검사되므로, 소유를 옮길 때는 내리는 쪽(search)과 올리는 쪽(auto)을 한 manifest에 넣으면 된다(양 언어 모두).
 
 ## 단계
 
@@ -90,5 +97,5 @@ claude mcp add --transport http --scope local commulingo http://127.0.0.1:3100/m
 - `node tests/unit/commulingo-content-editorial.js`(npm test 포함): 사건 본문 절 분할·삽입·교체와 요청 검사.
 - `tests/db/commulingo-content-editorial.js`(격리 DB, `dev_docs/commulingo-database.md`의 절차): 사건 카드·절·사건 인물·직책 행의 즉시 반영·대기·검토·거부, 리비전과 제안 행. 한 트랜잭션 안에서 실행하고 롤백한다.
 - leninbot `tests/test_commulingo_mcp_client.py`·`tests/test_commulingo_mcp_writes.py`: 요청 변환, 오류 형식, 작성기·검토 CLI·rename 추종.
-- `node tests/unit/commulingo-mcp-helpers.js`(npm test 포함): 투영, JSON Pointer 패치, `specPath` 경계, 새 쓰기 도구의 인자 거부. DB 없이 실행한다.
+- `node tests/unit/commulingo-mcp-helpers.js`(npm test 포함): 투영(문자열 자르기 포함), JSON Pointer 패치, `specPath`·`outPath` 경계, `textEdits`·`timelineEdits` 확장, 새 쓰기 도구의 인자 거부. DB 없이 실행한다.
 - 운영: 등록한 클라이언트에서 `service_status`와 조회 도구 하나를 호출한다. 새 쓰기 도구는 dry-run으로 확인한다(dev-preview 컨테이너는 작업 트리의 `mcp/main.js`를 웹과 함께 띄우므로, 그 안 `127.0.0.1:3100`으로 배포 전에 부를 수 있다).
