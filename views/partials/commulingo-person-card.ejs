@@ -3,6 +3,18 @@ var positionClass = person.position ? ' pos-' + person.position : '';
 var personHref = '/commulingo/people/' + person.id;
 var medalHref = typeof roleHubHref === 'function' ? roleHubHref(person.role) : '';
 var medalTitle = person.role && person.role.label ? person.role.label : (strings.commuLingoViews.personCard.contextMarker);
+var cardName = person.label || person.displayName || person.name || '';
+// The name's width in ems at the headline font (IBM Plex Sans / Pretendard,
+// fitted on the whole list), rounded up into the CSS's name-em-14…30 steps;
+// the CSS shrinks the headline by it to fit one line.
+var nameEm = Array.from(cardName).reduce(function(sum, ch) {
+    if (/[\u3131-\uD7A3\u3040-\u30FF\u4E00-\u9FFF]/.test(ch)) return sum + 0.9;
+    if (ch === ' ') return sum + 0.25;
+    if (/[A-Z]/.test(ch)) return sum + 0.65;
+    if (/[a-z0-9]/.test(ch)) return sum + 0.6;
+    return sum + 0.37;
+}, 0.2);
+var nameEmClass = nameEm > 13 ? ' class="name-em-' + Math.min(30, Math.ceil(nameEm)) + '"' : '';
 %>
 <article class="commu-person-card<%= positionClass %>" id="p-<%= person.id %>" data-person-href="<%= personHref %>">
     <div class="commu-person-top">
@@ -12,7 +24,7 @@ var medalTitle = person.role && person.role.label ? person.role.label : (strings
         <span class="commu-person-medal" title="<%= medalTitle %>" aria-hidden="true"><%- roleIconSvg(person.role ? person.role.icon : 'circle-help') %></span>
         <% } %>
         <div class="commu-person-idbox">
-            <h3><a href="<%= personHref %>" title="<%= person.label || person.displayName || person.name %>"><%= person.label || person.displayName || person.name %></a></h3>
+            <h3<%- nameEmClass %>><a href="<%= personHref %>" title="<%= cardName %>"><%= cardName %></a></h3>
             <%# A Korean or Chinese native name repeats the Korean display name; skip it. %>
             <% if (String(person.cyrillic || '').replace(/\s/g, '') !== String(person.displayName || person.name || '').replace(/\s/g, '')) { %><span class="commu-person-cyr"><%= person.cyrillic %></span><% } %>
             <% if (typeof searchAlias !== 'undefined' && searchAlias) { %>

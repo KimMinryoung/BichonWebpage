@@ -3605,17 +3605,39 @@ a.commu-person-position:focus-visible {
 .commu-person-idbox {
     flex: 1 1 auto;
     min-width: 0;
+    container-type: inline-size;
 }
 
+/* A long name shrinks to stay on one line: --name-em (the name-em-N class
+   the card partial sets) is the name's width in ems, so the box width divided by it is the
+   size that fits. Below the floor the ellipsis takes over. */
 .commu-person-idbox h3 {
     margin: 0;
     font-size: 1.05rem;
+    font-size: clamp(0.74rem, 100cqi / var(--name-em, 1), 1.05rem);
     color: var(--text-primary);
     line-height: var(--leading-tight);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.commu-person-idbox h3.name-em-14 { --name-em: 14; }
+.commu-person-idbox h3.name-em-15 { --name-em: 15; }
+.commu-person-idbox h3.name-em-16 { --name-em: 16; }
+.commu-person-idbox h3.name-em-17 { --name-em: 17; }
+.commu-person-idbox h3.name-em-18 { --name-em: 18; }
+.commu-person-idbox h3.name-em-19 { --name-em: 19; }
+.commu-person-idbox h3.name-em-20 { --name-em: 20; }
+.commu-person-idbox h3.name-em-21 { --name-em: 21; }
+.commu-person-idbox h3.name-em-22 { --name-em: 22; }
+.commu-person-idbox h3.name-em-23 { --name-em: 23; }
+.commu-person-idbox h3.name-em-24 { --name-em: 24; }
+.commu-person-idbox h3.name-em-25 { --name-em: 25; }
+.commu-person-idbox h3.name-em-26 { --name-em: 26; }
+.commu-person-idbox h3.name-em-27 { --name-em: 27; }
+.commu-person-idbox h3.name-em-28 { --name-em: 28; }
+.commu-person-idbox h3.name-em-29 { --name-em: 29; }
+.commu-person-idbox h3.name-em-30 { --name-em: 30; }
 
 .commu-person-idbox h3 a {
     color: inherit;
@@ -4545,10 +4567,6 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
         gap: 4px;
     }
 
-    .commu-person-top {
-        flex-wrap: wrap;
-    }
-
     .commu-person-page .commu-person-sidebox {
         width: 100%;
     }
@@ -5000,7 +5018,11 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 .commu-person-event-links span { color: var(--text-muted); font-weight: 700; }
 .commu-person-event-links strong { font-size: var(--text-md); }
 .commu-person-event-links em, .commu-person-event-links small { grid-column: 2; }
-@media (max-width: 560px) { .commu-event-timeline-list li { grid-template-columns: 1fr; gap: .2rem; } .commu-person-event-links a { grid-template-columns: 1fr; } .commu-person-event-links em, .commu-person-event-links small { grid-column: 1; } }
+/* A two-line period stays in the left column across the title, role and
+   note rows instead of making the title's row as tall as itself. */
+.commu-person-history-events .commu-person-event-links a { align-content: start; }
+.commu-person-history-events .commu-person-event-links span { grid-row: span 3; }
+@media (max-width: 560px) { .commu-event-timeline-list li { grid-template-columns: 1fr; gap: .2rem; } .commu-person-event-links a { grid-template-columns: 1fr; } .commu-person-history-events .commu-person-event-links span { grid-row: auto; } .commu-person-event-links em, .commu-person-event-links small { grid-column: 1; } }
 
 .commu-event-people-grid > a.is-executor, .commu-person-event-links li.is-executor a { border-color: var(--role-executor); background: color-mix(in srgb, var(--role-executor) 14%, transparent); }
 .commu-event-people-grid > a.is-executor .commu-event-person-relation, .commu-person-event-links li.is-executor span, .commu-person-event-links li.is-executor em { color: var(--role-executor-bright); }

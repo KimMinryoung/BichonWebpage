@@ -1098,17 +1098,35 @@ a.commu-person-position:focus-visible {
 .commu-person-idbox {
     flex: 1 1 auto;
     min-width: 0;
+    container-type: inline-size;
 }
-
 .commu-person-idbox h3 {
     margin: 0;
     font-size: 1.05rem;
+    font-size: clamp(0.74rem, 100cqi / var(--name-em, 1), 1.05rem);
     color: var(--text-primary);
     line-height: var(--leading-tight);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.commu-person-idbox h3.name-em-14 { --name-em: 14; }
+.commu-person-idbox h3.name-em-15 { --name-em: 15; }
+.commu-person-idbox h3.name-em-16 { --name-em: 16; }
+.commu-person-idbox h3.name-em-17 { --name-em: 17; }
+.commu-person-idbox h3.name-em-18 { --name-em: 18; }
+.commu-person-idbox h3.name-em-19 { --name-em: 19; }
+.commu-person-idbox h3.name-em-20 { --name-em: 20; }
+.commu-person-idbox h3.name-em-21 { --name-em: 21; }
+.commu-person-idbox h3.name-em-22 { --name-em: 22; }
+.commu-person-idbox h3.name-em-23 { --name-em: 23; }
+.commu-person-idbox h3.name-em-24 { --name-em: 24; }
+.commu-person-idbox h3.name-em-25 { --name-em: 25; }
+.commu-person-idbox h3.name-em-26 { --name-em: 26; }
+.commu-person-idbox h3.name-em-27 { --name-em: 27; }
+.commu-person-idbox h3.name-em-28 { --name-em: 28; }
+.commu-person-idbox h3.name-em-29 { --name-em: 29; }
+.commu-person-idbox h3.name-em-30 { --name-em: 30; }
 
 .commu-person-idbox h3 a {
     color: inherit;
@@ -1539,10 +1557,6 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
         gap: 4px;
     }
 
-    .commu-person-top {
-        flex-wrap: wrap;
-    }
-
     .commu-person-page .commu-person-sidebox {
         width: 100%;
     }
@@ -1587,6 +1601,9 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
     white-space: nowrap;
 }
 .commu-event-period { display: block; color: var(--text-muted); font-weight: 700; letter-spacing: .04em; }
+.commu-person-history-events .commu-person-event-links a { align-content: start; }
+.commu-person-history-events .commu-person-event-links span { grid-row: span 3; }
+@media (max-width: 560px) { .commu-person-history-events .commu-person-event-links span { grid-row: auto; } }
 .commu-terms-page .commu-event-card p,
 .commu-events-page .commu-event-card p {
     display: -webkit-box;
