@@ -1309,7 +1309,6 @@ a.commu-person-position:focus-visible {
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 0.82rem;
     color: var(--text-muted);
-    font-style: italic;
     transition: color 0.16s ease;
 }
 .commu-person-alias-hit {
@@ -1694,14 +1693,12 @@ a.commu-person-role-tag:hover {
     display: block;
     font-family: Georgia, 'Times New Roman', serif;
     font-size: 0.98rem;
-    font-style: italic;
     line-height: 1.2;
     margin-top: 4px;
 }
 .commu-person-detail-title .commu-person-qualifier {
     font-family: inherit;
     font-size: 0.9rem;
-    font-style: normal;
     font-weight: 600;
 }
 
@@ -1992,7 +1989,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-event-original {
     display: block;
     font-family: Georgia, 'Times New Roman', serif;
-    font-size: var(--text-meta); font-style: italic; color: var(--text-muted);
+    font-size: var(--text-meta); color: var(--text-muted);
 }
 .commu-event-category {
     padding: 2px 8px; font-size: var(--text-xs); font-weight: 600; letter-spacing: .01em;
@@ -2749,7 +2746,7 @@ button.commu-people-condition-reset { background: none; }
 .commu-people-row-main,
 .commu-people-row-meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .commu-people-row-name { line-height: var(--leading-snug); }
-.commu-people-row-native { color: var(--text-muted); font-size: var(--text-sm); font-style: italic; }
+.commu-people-row-native { color: var(--text-muted); font-size: var(--text-sm); }
 .commu-people-row-alias { color: var(--text-muted); font-size: var(--text-xs, .75rem); }
 .commu-people-row-epithet { overflow: hidden; color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-snug); text-overflow: ellipsis; white-space: nowrap; }
 .commu-people-row-role { color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-snug); }
