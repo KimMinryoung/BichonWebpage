@@ -530,7 +530,7 @@
 .commu-office-range {
     color: var(--text-muted);
     display: block;
-    font-family: 'Courier New', monospace;
+    font-family: var(--font-sans);
     font-size: var(--text-xs);
     letter-spacing: 0.05em;
     margin-bottom: 4px;
@@ -599,7 +599,7 @@ a.commu-office-row:focus-visible .commu-office-main em {
 
 .commu-office-years {
     color: var(--text-muted);
-    font-family: 'Courier New', monospace;
+    font-family: var(--font-sans);
     font-size: var(--text-xs);
     line-height: var(--leading-snug);
     overflow-wrap: anywhere;
@@ -759,7 +759,7 @@ a.commu-office-row:focus-visible .commu-office-main em {
 .commu-people-era-cell strong { font-size: var(--text-base); line-height: var(--leading-snug); }
 .commu-people-era-count {
     color: var(--text-muted);
-    font-family: 'Courier New', monospace;
+    font-family: var(--font-sans);
     font-size: var(--text-meta);
     font-weight: 400;
 }
@@ -823,7 +823,7 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
 }
 
 .commu-people-range {
-    font-family: 'Courier New', monospace;
+    font-family: var(--font-sans);
     font-size: var(--text-meta);
     color: var(--text-muted);
     letter-spacing: 0.06em;
@@ -1195,7 +1195,7 @@ a.commu-person-position:focus-visible {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    font-family: 'Courier New', monospace;
+    font-family: var(--font-sans);
     font-size: 0.78rem;
     color: var(--text-muted);
 }
@@ -1383,7 +1383,7 @@ a.commu-person-role-tag:hover {
 
 .commu-career-year {
     flex: 0 0 84px;
-    font-family: 'Courier New', monospace;
+    font-family: var(--font-sans);
     font-size: 0.76rem;
     color: var(--text-muted);
     white-space: nowrap;
@@ -2134,7 +2134,7 @@ button.commu-people-condition-reset { background: none; }
 .commu-people-row-alias { color: var(--text-muted); font-size: var(--text-xs, .75rem); }
 .commu-people-row-epithet { overflow: hidden; color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-snug); text-overflow: ellipsis; white-space: nowrap; }
 .commu-people-row-role { color: var(--text-secondary); font-size: var(--text-sm); line-height: var(--leading-snug); }
-.commu-people-row-years { display: inline-flex; align-items: center; gap: var(--space-1); color: var(--text-muted); font-family: var(--font-mono); font-size: var(--text-xs, .75rem); }
+.commu-people-row-years { display: inline-flex; align-items: center; gap: var(--space-1); color: var(--text-muted); font-family: var(--font-sans); font-size: var(--text-xs, .75rem); }
 .commu-people-row-years .commu-flag { height: 13px; width: auto; }
 .commu-people-result-divider { margin: var(--space-4) 0 var(--space-2); padding: var(--space-2) var(--content-inset); border-left: 4px solid var(--text-muted); color: var(--text-secondary); font-size: var(--text-sm); font-weight: 600; list-style: none; grid-column: 1 / -1; }
 .commu-people-browser[aria-busy="true"] .commu-people-rows,
