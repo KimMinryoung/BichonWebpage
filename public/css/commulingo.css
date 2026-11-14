@@ -7150,6 +7150,11 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 .commu-course-preview {
     padding: 0;
 }
+/* A separate box below the hero: keep the top border that the site's
+   .box + .box rule drops for stacked boxes. */
+.commulingo-shell > .commu-course-preview {
+    border-top: var(--border-width) solid var(--border);
+}
 .commu-course-preview-head {
     display: flex;
     align-items: baseline;

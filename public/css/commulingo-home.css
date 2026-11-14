@@ -405,6 +405,9 @@
 .commu-course-preview {
     padding: 0;
 }
+.commulingo-shell > .commu-course-preview {
+    border-top: var(--border-width) solid var(--border);
+}
 .commu-course-preview-head {
     display: flex;
     align-items: baseline;

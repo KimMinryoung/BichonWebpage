@@ -1899,6 +1899,9 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commulingo-home .commulingo-hero-dict-label {
     padding-inline: 18px;
 }
+.commulingo-shell > .commu-course-preview {
+    border-top: var(--border-width) solid var(--border);
+}
 .commulingo-home .commulingo-hero-dict .commu-dict-nav {
     border-inline: 0;
     border-bottom: 0;
