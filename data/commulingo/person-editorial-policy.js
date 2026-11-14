@@ -23,8 +23,9 @@ function validateEditorial(payload, options = {}, section = false) {
         const value = typeof input === 'string' ? { ko: input } : input;
         if (typeof value !== 'object' || Array.isArray(value)) throw badRequest(`${field} must be ko/en text`);
         for (const [index, lang] of ['ko', 'en'].entries()) {
-            if (value[lang] !== undefined && (typeof value[lang] !== 'string' || [...value[lang]].length > limits[index])) {
-                throw badRequest(`${field}.${lang} exceeds ${limits[index]} characters or is not text`);
+            if (value[lang] !== undefined && typeof value[lang] !== 'string') throw badRequest(`${field}.${lang} must be text`);
+            if (value[lang] !== undefined && [...value[lang]].length > limits[index]) {
+                throw badRequest(`${field}.${lang} is ${[...value[lang]].length} characters, over the ${limits[index]} limit by ${[...value[lang]].length - limits[index]}`);
             }
         }
     }

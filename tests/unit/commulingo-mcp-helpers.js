@@ -56,6 +56,39 @@ const { readSpecJson } = require('../../mcp/spec');
     assert.throws(() => applyPatches(doc, [{ op: 'move', path: '/version' }]), /set or remove/);
     assert.throws(() => applyPatches(doc, [{ op: 'set', path: '/version' }]), /value is required/);
 
+    // Patches built on an older revision go onto the current one unless a
+    // write since then touched the same path, a parent or a child of it.
+    const { changedPaths, patchConflicts } = require('../../mcp/pointer');
+    const before = { version: 1, affiliations: [{ id: 'x', periods: [[1, 2]] }, { id: 'y' }], functions: [{ id: 'f' }] };
+    const after = { version: 2, affiliations: [{ id: 'x', periods: [[1, 3]] }, { id: 'y' }], functions: [{ id: 'f' }, { id: 'g' }] };
+    const changes = changedPaths(before, after);
+    assert.deepEqual(changes, [{ path: '/version' }, { path: '/affiliations/0/periods/0/1' }, { path: '/functions', resized: true }]);
+    assert.deepEqual(patchConflicts([{ path: '/affiliations/1/name' }, { path: '/functions/-' }], changes), []);
+    assert.deepEqual(patchConflicts([{ path: '/functions/0/x' }, { path: '/affiliations/0' }, { path: '/version' }], changes).map(c => c.patch),
+        ['/functions/0/x', '/affiliations/0', '/version']);
+
+    // Batches report every rejected item at once and still write nothing.
+    const { eachItem } = require('../../data/commulingo/item-problems');
+    const statements = [];
+    const sqlClient = { query: async sql => { statements.push(sql); } };
+    const seenItems = [];
+    await assert.rejects(eachItem(sqlClient, ['a', 'b', 'c'], async item => {
+        seenItems.push(item);
+        if (item !== 'b') throw Object.assign(new Error(`bad ${item}`), { status: 400 });
+    }, item => ({ label: item })), err => err.status === 400 && err.problems.length === 2
+        && /2 of 3 item\(s\) rejected/.test(err.message) && /items\[2\] c: bad c/.test(err.message));
+    assert.deepEqual(seenItems, ['a', 'b', 'c']);
+    assert.equal(statements.filter(sql => sql.startsWith('ROLLBACK TO')).length, 2);
+    await assert.rejects(eachItem(sqlClient, ['a', 'b'], async () => { throw new Error('connection lost'); }, () => ({})), /connection lost/);
+
+    // A history event spec reports all its problems, each naming the event and row.
+    const { validate: validateEventSpec } = require('../../scripts/apply-history-events');
+    assert.throws(() => validateEventSpec({ id: 'x', events: [{ id: 'a', expected: null, fields: { countries: ['de'],
+        timeline: [{ period: { start: [1900] }, title: { ko: '행', en: 'row' }, body: { ko: 'b', en: 'b' }, country: ['fr'] }] }, sections: [], people: [] }] }),
+    err => err.status === 400 && /batch id must look like/.test(err.message)
+        && /a: timeline\[0\] '행' country fr is not in the event's countries \[de\]/.test(err.message)
+        && /a: needs at least 6 sections \(has 0\)/.test(err.message));
+
     // specPath: only content/ and reviews/, no traversal, no symlink out.
     assert.deepEqual(readSpecJson('content/batch/spec.json'), { items: [1] });
     for (const bad of ['secret/key.json', '../secret/key.json', 'content/../secret/key.json', '/etc/passwd', 'content', 'content//x.json']) {

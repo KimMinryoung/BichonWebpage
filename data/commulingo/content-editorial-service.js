@@ -265,9 +265,14 @@ async function validateSection(client, id, action, fields) {
         const parts = splitBody(event[`body_${lang}`]);
         const at = findSection(parts, fields.heading[lang]);
         if (action === 'create' && at >= 0) throw badRequest(`'${id}' already has a ${lang} section '${parts[at][0]}' on this topic; update it`);
-        if (action !== 'create' && at < 0) throw badRequest(`'${id}' has no ${lang} section '${fields.heading[lang]}'; create it`);
+        if (action !== 'create' && at < 0) {
+            const headings = parts.map(part => part[0]).filter(Boolean).map(h => `'${h}'`).join(', ');
+            throw badRequest(`'${id}' has no ${lang} section '${fields.heading[lang]}'; create it, or name one of: ${headings || '(no sections)'}`);
+        }
         const anchor = String((fields.after || {})[lang] || '').trim();
-        if (action === 'create' && anchor && findSection(parts, anchor) < 0) throw badRequest(`after.${lang} '${anchor}' is not a heading of the ${lang} body`);
+        if (action === 'create' && anchor && findSection(parts, anchor) < 0) {
+            throw badRequest(`after.${lang} '${anchor}' is not a heading of the ${lang} body; headings: ${parts.map(part => part[0]).filter(Boolean).map(h => `'${h}'`).join(', ')}`);
+        }
     }
     return event;
 }

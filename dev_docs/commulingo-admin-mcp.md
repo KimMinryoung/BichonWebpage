@@ -56,7 +56,7 @@ leninbot은 CommuLingo 테이블을 SQL로 건드리지 않는다(2026-10-05 W5)
   - `data_document_put`·`data_document_restore` — 데이터 문서(`data-documents.js`): `content` 전체 또는 JSON Pointer `patches`, `expectedRevision` 필수.
   - `link_reviews_apply` — `scripts/reviews/` 형식 매니페스트(`data/commulingo/link-review-manifest.js`, CLI `review-commulingo-links.js`와 공용). `apply: false`가 사전 점검. `link_expression_reject`(별칭·연결 표현 반려), `link_reviews_carry`(표기만 바뀐 사건·문헌 제목의 승인 이어받기).
   - `registry_edit` — 화면 없는 등록부(`data/commulingo/registry-edits.js`): 입장 모음과 회원, 검토 결과 입장 없음 표시(`person_no_political_position_set`, 2026-11-04), 자동링크 차단 목록, 일반 별칭 목록, 사건별 `no_auto_link`·`term_links`, 용어·인물 페이지별 `no_auto_link`(`term_no_auto_link_set`·`person_no_auto_link_set`, 읽기는 `registry_get` `page_link_exceptions`, 2026-11-01), `id_redirects`, 용어 종류 범주(`term_category_upsert`, 2026-10-28)와 용어의 범주 일괄 이동(`term_category_assign`, 2026-10-29). 변경마다 리비전 행. `scripts/migrations/data/`의 손 SQL을 대신한다.
-- `ops`: `service_status`(리비전, 가동 시간, DB·Redis 준비 상태, 메모리), `sql_read`(읽기 전용 한 문장: 따로 연 연결의 READ ONLY 트랜잭션, 이름 붙인 prepared statement라 여러 문장 불가, 10초·행 상한), `audit_run`(배포된 `scripts/audit-*.js` 실행, 이름 없이 부르면 목록), `stores_refresh`(서비스 프로세스의 CommuLingo 저장소 즉시 갱신 — 쓰기 직후 확인할 때 1분 대기 대신)
+- `ops`: `site_activity`(최근 방문·브라우저 오류·MCP 거부 집계), `service_status`(리비전, 가동 시간, DB·Redis 준비 상태, 메모리), `sql_read`(읽기 전용 한 문장: 따로 연 연결의 READ ONLY 트랜잭션, 이름 붙인 prepared statement라 여러 문장 불가, 10초·행 상한), `audit_run`(배포된 `scripts/audit-*.js` 실행, 이름 없이 부르면 목록), `stores_refresh`(서비스 프로세스의 CommuLingo 저장소 즉시 갱신 — 쓰기 직후 확인할 때 1분 대기 대신)
 
 `specPath`(`mcp/spec.js`)는 `content/<경로>`(`scripts/content`)나 `reviews/<경로>`(`scripts/reviews`)만 읽는다. `..`·심링크로 밖에 나가는 경로는 거부한다. `scripts/deploy`가 관리 컨테이너에 두 폴더를 `/work`로 마운트하고(`content`는 쓰기 가능, `reviews`는 읽기 전용) `COMMULINGO_WORK_DIR=/work`를 준다. 큰 스펙을 인자로 옮겨 적지 말고 파일에 쓴 뒤 경로를 넘긴다.
 
@@ -67,6 +67,15 @@ leninbot은 CommuLingo 테이블을 SQL로 건드리지 않는다(2026-10-05 W5)
 - **`doc_get`**: `maxChars`가 본문 HTML에도 적용된다(전에는 문자열 하나인 `html`을 자르지 않아 3000자 요청에 6만 8천 자가 왔다). `headings: true`(+ `body: false`)는 제목 목록 `[{level, id, text}]`만 싸게 준다.
 - **링크 승인 충돌 오류**가 겹친 상대(`kind:id 「표현」 (정책)`)를 이름으로 댄다. 한 manifest의 결정들은 이미 최종 상태 기준으로 함께 검사되므로, 소유를 옮길 때는 내리는 쪽(search)과 올리는 쪽(auto)을 한 manifest에 넣으면 된다(양 언어 모두).
 
+2026-11-14 오류 감사(최근 3주 `commulingo_mcp_audit`: `people_upsert` 762회 중 269회, `editorial_batch` 1269회 중 217회, `link_reviews_apply` 559회 중 86회 거부)로 더한 것:
+
+- **배치는 모든 오류를 한 번에**: `people_upsert`·`editorial_batch`는 항목마다 savepoint(`data/commulingo/item-problems.js`)에서 돌려, 한 항목이 거부돼도 나머지를 계속 검사한 뒤 거부된 항목을 모두 보고한다(`error`에 `items[i] <라벨>: 사유` 줄, `structuredContent.problems`에 `{index, label, error, status}`). 전부 아니면 무는 그대로다. 상태 없는 오류(연결 끊김, 버그)는 바로 멈춘다. 인물 활동 검사(`person-activities.js`)도 활동별 문제를 `activities[i] (기능 @ 소속 연도)`로 모아 한 오류로 낸다.
+- **고칠 단서가 있는 오류 문구**: 글자 수 초과는 현재 길이와 초과분, 소속 존속 기간 밖은 그 소속의 기간, 없는 사건 절은 실제 절 제목 목록, 활동 근거는 빠진 키, 활동 출처는 인물 출처 목록에 없다는 것을 말한다. `history_events_create`(`scripts/apply-history-events.js`)의 맨 `assert`는 사건·행·필드를 짚는 점검으로 바꿔 스펙 전체의 문제를 모아 400으로 돌려준다(DB 단계의 제목 중복·없는 인물·없는 관련 사건·기존 사건과의 차이도 모음).
+- **링크 승인 `Source changed`**: 어긋난 결정을 모두 모아 409로 돌려주고, 표현이 사라진 결정에는 그 항목·언어의 지금 표현(`current: [{text, reviewed, policy, sourceSignature}]`)을, 서명만 바뀐 결정에는 `currentSignature`를 붙인다. 승인을 자동으로 새 서명에 옮기지는 않는다(표기가 바뀌면 승인은 무효, 제목 변경은 `link_reviews_carry`). 중복 결정은 그 키를 댄다.
+- **링크 승인 저장 재시도**: apply의 미리보기~저장(20~50초) 사이에 다른 쓰기가 들어오면 코퍼스 리비전이 바뀌어 `saveReviews`가 거부했다(2026-11-14 하루 14건, 모두 병렬 작업의 쓰기와 겹침). 이 거부(`code: revision_changed`)일 때만 미리보기부터 최대 3번 다시 한다. 저장 트랜잭션이 잠근 상태로 결정을 다시 검사하므로 안전하다.
+- **데이터 문서 patch rebase**: `data_document_put`의 `patches`가 옛 `expectedRevision`을 대면, 그 리비전(`commulingo_data_document_revisions`)과 현재를 비교해 그사이 바뀐 경로가 patch 경로(같은 경로·조상·자손)와 겹치지 않으면 현재 리비전에 적용하고 `rebased {from, to, changedSince}`를 돌려준다(`mcp/pointer.js` `changedPaths`·`patchConflicts`; 길이가 바뀐 배열은 색인 경로와 충돌하고 `-` 덧붙이기와는 충돌하지 않음). 겹치면 겹친 경로를 대고 409. `content` 전체 교체는 예전처럼 리비전이 정확히 맞아야 한다. 도구 설명에 있던 "activity-catalog version 자동 증가"는 코드에 없어 지웠다.
+- **`site_activity`(ops)**: 최근 N일(한국 날짜) 메뉴별 방문(언어별), 많이 본 경로, 사이트 스크립트 브라우저 오류(`site_client_errors`), 거부·실패한 MCP 쓰기 호출(사유별)을 한 번에 준다. 6단계의 남은 일(최근 오류 로그·메뉴 방문 집계)을 이것으로 닫는다.
+
 ## 단계
 
 | 단계 | 저장소 | 내용 | 상태 |
@@ -76,7 +85,7 @@ leninbot은 CommuLingo 테이블을 SQL로 건드리지 않는다(2026-10-05 W5)
 | 3 | 양쪽 | leninbot 작성기의 사건·사건 절·사건 인물·직책 행 쓰기와 제안 기록을 `content-editorial-service.js`로 옮김. 제안 검토 CLI·사건 연결 백필을 MCP로 전환 | 완료 |
 | 4 | 양쪽 | [보강 파이프라인 이전](commulingo-agent-pipeline.md)(W1~W5)으로 대체: 파이프라인은 frontend, leninbot은 일꾼. leninbot의 남은 읽기(큐레이터 도구·검증·KG 동기화·롤플레이)를 MCP로, 옛 레인·운영 스크립트 삭제 | 완료 |
 | 5 | DB | leninbot을 전용 로그인 `leninbot_app`으로 바꿔 CommuLingo 테이블 권한을 없앴다(leninbot `dev_docs/db_app_role.md`) | 완료(2026-10-05) |
-| 6 | frontend | `ops` 도구: `audit_run`, `sql_read`, `stores_refresh`. 데이터 작업 도구(일괄 편집, 문헌·데이터 문서·링크 승인·등록부 쓰기, 큰 항목 투영, `specPath`) | 완료(2026-10-27). 최근 오류 로그·메뉴 방문 집계는 남음 |
+| 6 | frontend | `ops` 도구: `audit_run`, `sql_read`, `stores_refresh`. 데이터 작업 도구(일괄 편집, 문헌·데이터 문서·링크 승인·등록부 쓰기, 큰 항목 투영, `specPath`) | 완료(2026-10-27). 최근 오류·방문 집계는 `site_activity`(2026-11-14) |
 
 `scripts/query-db`(사람용 `leninbot_ro` 조회)는 그대로 둔다.
 
@@ -97,5 +106,5 @@ claude mcp add --transport http --scope local commulingo http://127.0.0.1:3100/m
 - `node tests/unit/commulingo-content-editorial.js`(npm test 포함): 사건 본문 절 분할·삽입·교체와 요청 검사.
 - `tests/db/commulingo-content-editorial.js`(격리 DB, `dev_docs/commulingo-database.md`의 절차): 사건 카드·절·사건 인물·직책 행의 즉시 반영·대기·검토·거부, 리비전과 제안 행. 한 트랜잭션 안에서 실행하고 롤백한다.
 - leninbot `tests/test_commulingo_mcp_client.py`·`tests/test_commulingo_mcp_writes.py`: 요청 변환, 오류 형식, 작성기·검토 CLI·rename 추종.
-- `node tests/unit/commulingo-mcp-helpers.js`(npm test 포함): 투영(문자열 자르기 포함), JSON Pointer 패치, `specPath`·`outPath` 경계, `textEdits`·`timelineEdits` 확장, 새 쓰기 도구의 인자 거부. DB 없이 실행한다.
+- `node tests/unit/commulingo-mcp-helpers.js`(npm test 포함): 투영(문자열 자르기 포함), JSON Pointer 패치, `specPath`·`outPath` 경계, `textEdits`·`timelineEdits` 확장, 새 쓰기 도구의 인자 거부, 배치 오류 모음(`item-problems.js`), patch rebase 충돌 판정, 사건 스펙 오류 모음. DB 없이 실행한다.
 - 운영: 등록한 클라이언트에서 `service_status`와 조회 도구 하나를 호출한다. 새 쓰기 도구는 dry-run으로 확인한다(dev-preview 컨테이너는 작업 트리의 `mcp/main.js`를 웹과 함께 띄우므로, 그 안 `127.0.0.1:3100`으로 배포 전에 부를 수 있다).

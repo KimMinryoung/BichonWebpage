@@ -63,7 +63,8 @@ function validateFields(fields, current, action, sources) {
         }
         const limits = contract.limits[field];
         if (limits) ['ko','en'].forEach((lang,index) => {
-            if ([...(merged[field]?.[lang] || '')].length > limits[index]) throw badRequest(`${field}.${lang} exceeds ${limits[index]}`);
+            const length = [...(merged[field]?.[lang] || '')].length;
+            if (length > limits[index]) throw badRequest(`${field}.${lang} is ${length} characters, over the ${limits[index]} limit by ${length - limits[index]}`);
         });
     }
     for (const field of ['term','definition']) {

@@ -37,6 +37,37 @@ module.exports = [
     {
         scope: 'ops',
         readOnly: true,
+        name: 'site_activity',
+        description: 'Recent site activity over the last `days` Korean days (default 7): views per menu (site_menu_views, both '
+            + 'languages and per language), the most viewed paths (site_page_views), browser errors from the site\'s own scripts '
+            + '(site_client_errors, by source and message) and the MCP edit calls that were rejected or failed (commulingo_mcp_audit, '
+            + 'by tool and message). Use it instead of hand SQL for "what broke lately / what do readers open".',
+        inputSchema: object({
+            days: int('Korean days to cover, today included (default 7)', 1, 90),
+            top: int('Rows per list (default 20)', 1, 200),
+        }),
+        async handler({ days = 7, top = 20 }) {
+            const db = require('../../config/database');
+            const since = `(now() AT TIME ZONE 'Asia/Seoul')::date - ($1::int - 1)`;
+            const [menus, paths, errors, rejected] = await Promise.all([
+                db.query(`SELECT menu, SUM(views)::int AS views,
+                                 SUM(views) FILTER (WHERE lang = 'ko')::int AS ko, SUM(views) FILTER (WHERE lang = 'en')::int AS en
+                            FROM site_menu_views WHERE day >= ${since} GROUP BY menu ORDER BY views DESC`, [days]),
+                db.query(`SELECT path, SUM(views)::int AS views FROM site_page_views WHERE day >= ${since}
+                           GROUP BY path ORDER BY views DESC LIMIT $2`, [days, top]),
+                db.query(`SELECT source, message, SUM(hits)::int AS hits, MIN(day)::text AS first_day, MAX(day)::text AS last_day
+                            FROM site_client_errors WHERE day >= ${since} GROUP BY source, message ORDER BY hits DESC LIMIT $2`, [days, top]),
+                db.query(`SELECT tool, outcome, left(error, 300) AS error, count(*)::int AS calls, max(created_at) AS last_at
+                            FROM commulingo_mcp_audit
+                           WHERE outcome <> 'ok' AND (created_at AT TIME ZONE 'Asia/Seoul')::date >= ${since}
+                           GROUP BY tool, outcome, left(error, 300) ORDER BY calls DESC LIMIT $2`, [days, top]),
+            ]);
+            return { days, menuViews: menus.rows, topPaths: paths.rows, clientErrors: errors.rows, mcpRejections: rejected.rows };
+        },
+    },
+    {
+        scope: 'ops',
+        readOnly: true,
         name: 'service_status',
         description: 'Revision, uptime, Postgres/Redis readiness and memory of the admin process (mcp/main.js, its own container apart from the website).',
         inputSchema: object({}),

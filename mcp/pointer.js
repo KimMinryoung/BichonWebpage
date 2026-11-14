@@ -50,4 +50,44 @@ function applyPatches(doc, patches) {
     return out;
 }
 
-module.exports = { getPointer, applyPatches };
+const escapeToken = token => String(token).replace(/~/g, '~0').replace(/\//g, '~1');
+
+// Paths that differ between two versions of a document. An array whose length
+// changed is reported once as resized (its indexes moved); otherwise arrays
+// and objects are compared member by member down to the differing leaf.
+function changedPaths(a, b, base = '') {
+    if (JSON.stringify(a) === JSON.stringify(b)) return [];
+    if (Array.isArray(a) && Array.isArray(b)) {
+        if (a.length !== b.length) return [{ path: base, resized: true }];
+        return a.flatMap((item, i) => changedPaths(item, b[i], `${base}/${i}`));
+    }
+    const isObject = v => v && typeof v === 'object' && !Array.isArray(v);
+    if (isObject(a) && isObject(b)) {
+        return [...new Set([...Object.keys(a), ...Object.keys(b)])]
+            .flatMap(k => changedPaths(a[k], b[k], `${base}/${escapeToken(k)}`));
+    }
+    return [{ path: base }];
+}
+
+const within = (inner, outer) => inner === outer || inner.startsWith(outer + '/') || outer === '';
+
+// A patch built on an older revision may be applied to the current one when
+// no other write since touched its path: neither the same path, nor a parent
+// or child of it. A resized array only conflicts with patches that address
+// one of its indexes ("-" appends stay safe).
+function patchConflicts(patches, changes) {
+    const conflicts = [];
+    for (const patch of patches) {
+        const hit = changes.find(change => {
+            if (change.resized && within(patch.path, change.path) && patch.path !== change.path) {
+                const next = patch.path.slice(change.path.length + 1).split('/')[0];
+                return next !== '-';
+            }
+            return within(patch.path, change.path) || within(change.path, patch.path);
+        });
+        if (hit) conflicts.push({ patch: patch.path, changed: hit.path });
+    }
+    return conflicts;
+}
+
+module.exports = { getPointer, applyPatches, changedPaths, patchConflicts };

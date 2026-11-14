@@ -80,73 +80,103 @@ function canonical(value) {
 // give no year at all.
 function assertNewActivitiesDated(next, stored = []) {
     const kept = new Set((stored || []).map(canonical));
-    for (const a of next || []) {
-        if (!a || a.basis === LEGACY_BASIS || kept.has(canonical(a))) continue;
-        if (a.startYear == null && a.endYear == null && a.yearsUnknown !== true) {
-            throw badRequest('a new or changed activity needs startYear (or endYear); set yearsUnknown: true only when no source gives a year');
-        }
+    const undated = (next || []).flatMap((a, i) => (!a || a.basis === LEGACY_BASIS || kept.has(canonical(a))
+        || a.startYear != null || a.endYear != null || a.yearsUnknown === true) ? [] : [`activities[${i}] ${activityLabel(a)}`]);
+    if (undated.length) {
+        throw badRequest(`a new or changed activity needs startYear (or endYear); set yearsUnknown: true only when no source gives a year: ${undated.join('; ')}`);
     }
 }
 
 const TITLE_MAX = { ko: 40, en: 80 };
 
+// Names an activity in an error, so a caller with 20 activities sees which one.
+function activityLabel(a) {
+    if (!a || typeof a !== 'object') return '';
+    const years = a.startYear != null || a.endYear != null ? ` ${a.startYear ?? ''}–${a.endYear ?? ''}` : '';
+    return `(${[a.functionId, a.affiliationId].filter(Boolean).join(' @ ')}${years})`;
+}
+
+const formatPeriods = periods => periods.map(([a, b]) => `${a ?? '?'}–${b ?? ''}`).join(', ');
+
+// Every activity is checked and all problems are reported together.
 function validateActivities(value, sources = [], { officeIds } = {}) {
     if (!Array.isArray(value) || !value.length || value.length > 30) throw badRequest('activities must contain 1–30 documented activities');
-    if (value.filter(a => a?.primary === true).length !== 1) throw badRequest('activities requires exactly one primary activity');
+    const primaries = value.filter(a => a?.primary === true).length;
+    const problems = primaries === 1 ? [] : [`activities requires exactly one primary activity (found ${primaries})`];
     const seen = new Set();
-    for (const a of value) {
-        if (!a || typeof a !== 'object' || Array.isArray(a)) throw badRequest('invalid activity');
-        for (const key of Object.keys(a)) if (!['functionId','affiliationId','affiliationStatus','relation','officeId','title','startYear','endYear','yearsUnknown','primary','evidence','basis'].includes(key)) throw badRequest(`unknown activity field ${key}`);
-        if (!functions.has(a.functionId)) throw badRequest('unknown activity functionId');
-        if (!['confirmed','independent','unresolved'].includes(a.affiliationStatus)) throw badRequest('activity affiliationStatus is required');
-        if (a.affiliationStatus === 'confirmed' ? !affiliations.has(a.affiliationId) : a.affiliationId != null) throw badRequest('activity affiliationId must match its confirmation status');
-        if (affiliations.get(a.affiliationId)?.kind === 'state' && a.relation === 'membership') throw badRequest('state affiliation is service or employment, not party membership');
-        if (!['service','membership','employment','independent','unresolved'].includes(a.relation)) throw badRequest('invalid activity relation');
-        if ((a.affiliationStatus === 'independent') !== (a.relation === 'independent') || (a.affiliationStatus === 'unresolved') !== (a.relation === 'unresolved')) throw badRequest('activity relation contradicts affiliation status');
-        if (a.officeId != null) {
-            if (typeof a.officeId !== 'string' || (officeIds && !officeIds.has(a.officeId))) throw badRequest('unknown activity officeId');
-            // officeIds maps an office to its country (commulingo_offices.country):
-            // a Soviet office takes a Soviet state, party or Comintern
-            // affiliation, any other one an affiliation of its own country.
-            const country = officeIds instanceof Map ? officeIds.get(a.officeId) : 'soviet';
-            if (country === 'soviet' ? !OFFICE_AFFILIATIONS.has(a.affiliationId) : affiliations.get(a.affiliationId)?.countryCode !== country) {
-                throw badRequest(country === 'soviet'
-                    ? 'activity officeId requires a Soviet state, Soviet party or Comintern affiliation'
-                    : `activity officeId ${a.officeId} requires an affiliation of ${country}`);
-            }
+    value.forEach((a, i) => {
+        try {
+            checkActivity(a, sources, officeIds, seen);
+        } catch (err) {
+            if (!err.status) throw err;
+            problems.push(`activities[${i}] ${activityLabel(a)}: ${err.message}`);
         }
-        // The post held (바이에른 총리 겸 외무장관): a display name, never parsed.
-        // Offices with their own page are officeId; this names any other post.
-        if (a.title != null) {
-            const t = a.title;
-            if (!['service','employment'].includes(a.relation)) throw badRequest('activity title names a post: only for service or employment');
-            if (!t || typeof t !== 'object' || Array.isArray(t) || Object.keys(t).some(k => !['ko','en'].includes(k))
-                || !['ko','en'].every(k => typeof t[k] === 'string' && t[k].trim() && t[k] === t[k].trim())
-                || [...t.ko].length > TITLE_MAX.ko || [...t.en].length > TITLE_MAX.en) {
-                throw badRequest(`activity title must be {ko, en}, at most ${TITLE_MAX.ko}/${TITLE_MAX.en} characters`);
-            }
-        }
-        if (typeof a.primary !== 'boolean') throw badRequest('activity primary must be boolean');
-        for (const key of ['startYear','endYear']) if (a[key] != null && (!Number.isInteger(a[key]) || a[key] < -3000 || a[key] > 2200)) throw badRequest('invalid activity year');
-        if (a.startYear != null && a.endYear != null && a.endYear < a.startYear) throw badRequest('activity endYear precedes startYear');
-        if (a.yearsUnknown != null && (a.yearsUnknown !== true || a.startYear != null || a.endYear != null)) {
-            throw badRequest('activity yearsUnknown is true, and only on an activity without startYear and endYear');
-        }
-        if (a.affiliationId && !periodsOverlap(affiliations.get(a.affiliationId)?.periods, a.startYear, a.endYear)) {
-            throw badRequest(`activity years ${a.startYear ?? ''}–${a.endYear ?? ''} fall outside the existence of ${a.affiliationId}`);
-        }
-        if (a.basis != null && a.basis !== LEGACY_BASIS) throw badRequest('unknown activity basis');
-        const evidence = a.basis === LEGACY_BASIS && a.evidence == null ? [] : a.evidence;
-        if (!Array.isArray(evidence) || (!evidence.length && a.basis !== LEGACY_BASIS)) throw badRequest('activity requires evidence');
-        for (const e of evidence) {
-            if (!e || typeof e !== 'object' || !['source','locator','claim','excerpt'].every(k => typeof e[k] === 'string' && e[k].trim()) || !sources.includes(e.source)) throw badRequest('activity evidence requires a cited source, locator, claim and excerpt');
-            if (Object.keys(e).some(k => !['source','locator','claim','excerpt'].includes(k))) throw badRequest('unknown activity evidence field');
-        }
-        const key = JSON.stringify([a.functionId,a.affiliationId || null,a.officeId || null,a.startYear ?? null,a.endYear ?? null]);
-        if (seen.has(key)) throw badRequest('duplicate activity');
-        seen.add(key);
-    }
+    });
+    if (problems.length) throw badRequest(problems.join('; '));
     return value;
+}
+
+function checkActivity(a, sources, officeIds, seen) {
+    if (!a || typeof a !== 'object' || Array.isArray(a)) throw badRequest('invalid activity');
+    for (const key of Object.keys(a)) if (!['functionId','affiliationId','affiliationStatus','relation','officeId','title','startYear','endYear','yearsUnknown','primary','evidence','basis'].includes(key)) throw badRequest(`unknown activity field ${key}`);
+    if (!functions.has(a.functionId)) throw badRequest(`unknown activity functionId ${JSON.stringify(a.functionId)}`);
+    if (!['confirmed','independent','unresolved'].includes(a.affiliationStatus)) throw badRequest('activity affiliationStatus is required');
+    if (a.affiliationStatus === 'confirmed' ? !affiliations.has(a.affiliationId) : a.affiliationId != null) {
+        throw badRequest(a.affiliationStatus === 'confirmed'
+            ? `activity affiliationId ${JSON.stringify(a.affiliationId)} is not in the activity catalog (confirmed needs a catalog affiliation)`
+            : `activity affiliationId must be null when affiliationStatus is ${a.affiliationStatus}`);
+    }
+    if (affiliations.get(a.affiliationId)?.kind === 'state' && a.relation === 'membership') throw badRequest('state affiliation is service or employment, not party membership');
+    if (!['service','membership','employment','independent','unresolved'].includes(a.relation)) throw badRequest('invalid activity relation');
+    if ((a.affiliationStatus === 'independent') !== (a.relation === 'independent') || (a.affiliationStatus === 'unresolved') !== (a.relation === 'unresolved')) {
+        throw badRequest(`activity relation ${a.relation} contradicts affiliationStatus ${a.affiliationStatus} (independent and unresolved go with the same relation, confirmed with service, membership or employment)`);
+    }
+    if (a.officeId != null) {
+        if (typeof a.officeId !== 'string' || (officeIds && !officeIds.has(a.officeId))) throw badRequest('unknown activity officeId');
+        // officeIds maps an office to its country (commulingo_offices.country):
+        // a Soviet office takes a Soviet state, party or Comintern
+        // affiliation, any other one an affiliation of its own country.
+        const country = officeIds instanceof Map ? officeIds.get(a.officeId) : 'soviet';
+        if (country === 'soviet' ? !OFFICE_AFFILIATIONS.has(a.affiliationId) : affiliations.get(a.affiliationId)?.countryCode !== country) {
+            throw badRequest(country === 'soviet'
+                ? 'activity officeId requires a Soviet state, Soviet party or Comintern affiliation'
+                : `activity officeId ${a.officeId} requires an affiliation of ${country}`);
+        }
+    }
+    // The post held (바이에른 총리 겸 외무장관): a display name, never parsed.
+    // Offices with their own page are officeId; this names any other post.
+    if (a.title != null) {
+        const t = a.title;
+        if (!['service','employment'].includes(a.relation)) throw badRequest(`activity title names a post: only for service or employment, not ${a.relation}`);
+        if (!t || typeof t !== 'object' || Array.isArray(t) || Object.keys(t).some(k => !['ko','en'].includes(k))
+            || !['ko','en'].every(k => typeof t[k] === 'string' && t[k].trim() && t[k] === t[k].trim())
+            || [...t.ko].length > TITLE_MAX.ko || [...t.en].length > TITLE_MAX.en) {
+            const lengths = t && typeof t === 'object' ? ` (now ${[...String(t.ko ?? '')].length}/${[...String(t.en ?? '')].length})` : '';
+            throw badRequest(`activity title must be trimmed {ko, en}, at most ${TITLE_MAX.ko}/${TITLE_MAX.en} characters${lengths}`);
+        }
+    }
+    if (typeof a.primary !== 'boolean') throw badRequest('activity primary must be boolean');
+    for (const key of ['startYear','endYear']) if (a[key] != null && (!Number.isInteger(a[key]) || a[key] < -3000 || a[key] > 2200)) throw badRequest('invalid activity year');
+    if (a.startYear != null && a.endYear != null && a.endYear < a.startYear) throw badRequest('activity endYear precedes startYear');
+    if (a.yearsUnknown != null && (a.yearsUnknown !== true || a.startYear != null || a.endYear != null)) {
+        throw badRequest('activity yearsUnknown is true, and only on an activity without startYear and endYear');
+    }
+    if (a.affiliationId && !periodsOverlap(affiliations.get(a.affiliationId)?.periods, a.startYear, a.endYear)) {
+        throw badRequest(`activity years ${a.startYear ?? ''}–${a.endYear ?? ''} fall outside the existence of ${a.affiliationId} (${formatPeriods(affiliations.get(a.affiliationId).periods)}, ±1 year); pick the affiliation of that period or correct the years`);
+    }
+    if (a.basis != null && a.basis !== LEGACY_BASIS) throw badRequest('unknown activity basis');
+    const evidence = a.basis === LEGACY_BASIS && a.evidence == null ? [] : a.evidence;
+    if (!Array.isArray(evidence) || (!evidence.length && a.basis !== LEGACY_BASIS)) throw badRequest('activity requires evidence');
+    for (const e of evidence) {
+        if (!e || typeof e !== 'object') throw badRequest('activity evidence must be {source, locator, claim, excerpt}');
+        const missing = ['source','locator','claim','excerpt'].filter(k => !(typeof e[k] === 'string' && e[k].trim()));
+        if (missing.length) throw badRequest(`activity evidence is missing ${missing.join(', ')}`);
+        if (!sources.includes(e.source)) throw badRequest(`activity evidence source ${e.source} is not in the person's sources`);
+        if (Object.keys(e).some(k => !['source','locator','claim','excerpt'].includes(k))) throw badRequest('unknown activity evidence field');
+    }
+    const key = JSON.stringify([a.functionId,a.affiliationId || null,a.officeId || null,a.startYear ?? null,a.endYear ?? null]);
+    if (seen.has(key)) throw badRequest('duplicate activity (same function, affiliation, office and years as an earlier one)');
+    seen.add(key);
 }
 
 function activityHref(a) {

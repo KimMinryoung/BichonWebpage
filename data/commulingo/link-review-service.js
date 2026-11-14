@@ -16,7 +16,10 @@ const previews = new Map();
 // Review writes wait at most 3 s for a lock and serialize on one advisory lock.
 const REVIEW_TX = { pool: db, lockTimeout: '3s', lock: 'commulingo-link-review' };
 const hash = value => createHash('sha256').update(JSON.stringify(value)).digest('hex');
-const fail = (message, status = 400) => { const error = new Error(message); error.status = status; throw error; };
+const fail = (message, status = 400, code) => { const error = new Error(message); error.status = status; if (code) error.code = code; throw error; };
+// The corpus moved between a preview and its save (another write landed).
+const REVISION_CHANGED = '미리보기 이후 데이터나 연결 정책이 변경됐습니다. 다시 확인하세요.';
+const isRevisionChanged = err => err?.code === 'revision_changed';
 async function loadState(client = db) {
     const [term, event] = await Promise.all([
         loadCommuLingoTerms({ fresh: true }), loadCommuLingoHistoryEvents({ fresh: true }),
@@ -155,7 +158,7 @@ async function saveReview(token, actor) {
     if (!preview || preview.expires < Date.now()) fail('미리보기가 만료됐습니다. 다시 확인하세요.', 409);
     const value = await transaction(async client => {
         const state = await loadState(client);
-        if (state.revision !== preview.revision) fail('미리보기 이후 데이터나 연결 정책이 변경됐습니다. 다시 확인하세요.', 409);
+        if (state.revision !== preview.revision) fail(REVISION_CHANGED, 409, 'revision_changed');
         const row = selectRow(state, preview.input);
         validateDecision(row, preview.input, state.rows);
         const value = reviewValue(row, preview.input, actor);
@@ -237,7 +240,7 @@ async function saveReviews(token, actor) {
     if (!preview?.inputs || preview.expires < Date.now()) fail('일괄 미리보기가 만료됐습니다. 다시 확인하세요.', 409);
     const values = await transaction(async client => {
         const state = await loadState(client);
-        if (state.revision !== preview.revision) fail('미리보기 이후 데이터나 연결 정책이 변경됐습니다. 다시 확인하세요.', 409);
+        if (state.revision !== preview.revision) fail(REVISION_CHANGED, 409, 'revision_changed');
         const selected = preview.inputs.map(input => ({ row: selectRow(state, input), input }));
         const afterReviews = new Map(state.reviews);
         for (const { row, input } of selected) afterReviews.set(key(row.kind, row.id, row.lang, row.text), reviewValue(row, input, actor));
@@ -313,4 +316,4 @@ async function rejectExpression(input, actor) {
     return { kind, id, lang, text, removed: true };
 }
 
-module.exports = { loadState, listReviews, rejectExpression, previewLinks, saveReview, previewReviews, saveReviews, buildIndexes };
+module.exports = { isRevisionChanged, loadState, listReviews, rejectExpression, previewLinks, saveReview, previewReviews, saveReviews, buildIndexes };

@@ -55,14 +55,15 @@ const revisionKey = (target, request) => {
 };
 
 function checkRevisionChain(list) {
-    const touched = new Set();
+    const touched = new Set(), wrong = [];
     list.forEach((item, i) => {
         const key = revisionKey(item?.target || 'person', item?.request);
-        if (item?.request?.fields?.expectedRevision === '@previous' && !touched.has(key)) {
-            throw badRequest(`items[${i}] expectedRevision '@previous' needs an earlier item in this batch that edits the same person or term`);
-        }
+        if (item?.request?.fields?.expectedRevision === '@previous' && !touched.has(key)) wrong.push(i);
         if (key) touched.add(key);
     });
+    if (wrong.length) {
+        throw badRequest(`items[${wrong.join(', ')}] expectedRevision '@previous' needs an earlier item in this batch that edits the same person or term`);
+    }
 }
 
 async function chainRevision(request, target, client) {
@@ -164,22 +165,20 @@ const tools = [
             const list = batchItems(items, specPath);
             checkRevisionChain(list);
             const results = [];
+            // Each item runs in its own savepoint, so every rejected item is
+            // reported at once (item-problems.js); any rejection writes nothing.
+            const { eachItem } = require('../../data/commulingo/item-problems');
             await withTransaction({}, async own => {
-                for (const [i, item] of list.entries()) {
+                await eachItem(own, list, async (item, i) => {
                     const { command, target = 'person', request } = item || {};
-                    if (!['submit', 'review'].includes(command)) throw badRequest(`items[${i}].command must be submit or review`);
-                    if (![...TARGETS, ...CONTENT_TARGETS].includes(target)) throw badRequest(`items[${i}].target is not an editorial target`);
-                    if (!request || typeof request !== 'object' || Array.isArray(request)) throw badRequest(`items[${i}].request must be an object`);
+                    if (!['submit', 'review'].includes(command)) throw badRequest('command must be submit or review');
+                    if (![...TARGETS, ...CONTENT_TARGETS].includes(target)) throw badRequest('target is not an editorial target');
+                    if (!request || typeof request !== 'object' || Array.isArray(request)) throw badRequest('request must be an object');
                     const { dryRun: ignored, ...clean } = request;
-                    try {
-                        await chainRevision(clean, target, own);
-                        results.push({ index: i, target, id: String(clean.id || clean.suggestionId || ''),
-                            ...summary(await storeEdit(command, target, clean, actor, own)) });
-                    } catch (err) {
-                        err.message = `items[${i}] ${target} ${clean.id || clean.suggestionId || ''}: ${err.message}`;
-                        throw err;
-                    }
-                }
+                    await chainRevision(clean, target, own);
+                    results.push({ index: i, target, id: String(clean.id || clean.suggestionId || ''),
+                        ...summary(await storeEdit(command, target, clean, actor, own)) });
+                }, item => ({ label: `${item?.target || 'person'} ${item?.request?.id || item?.request?.suggestionId || ''}`.trim() }));
                 if (dryRun) throw Object.assign(new Error('dry run'), { rollback: true });
             }).catch(err => { if (!err.rollback) throw err; });
             return { dryRun, count: results.length, results };

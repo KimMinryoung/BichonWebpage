@@ -41,6 +41,14 @@ assert.throws(() => validateActivities([{ ...primary, functionId: 'government', 
 assert.doesNotThrow(() => validateActivities([{ ...primary, functionId: 'government', affiliationId: 'french-first-republic', relation: 'service', startYear: 1793, endYear: 1794 }], sources));
 assert.doesNotThrow(() => validateActivities([{ ...primary, functionId: 'government', affiliationId: 'french-first-republic', relation: 'service', startYear: null, endYear: null }], sources));
 for (const a of catalog.affiliations) for (const [from, to] of a.periods || []) assert(from == null || to == null || from <= to, a.id);
+// Every bad activity is reported in one error, each named by index, the
+// existence error with the affiliation's own periods.
+assert.throws(() => validateActivities([
+    { ...primary, functionId: 'government', affiliationId: 'french-first-republic', relation: 'service', startYear: 1830, endYear: 1830 },
+    { ...primary, primary: false, functionId: 'no-such-function' },
+], sources), err => /activities\[0\].*outside the existence of french-first-republic \(\d{4}–/.test(err.message)
+    && /activities\[1\].*unknown activity functionId "no-such-function"/.test(err.message));
+assert.throws(() => validateActivities([{ ...primary, primary: false }], sources), /exactly one primary activity \(found 0\)/);
 // An unresolved affiliation is a research-queue item, not something to show readers.
 assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'unresolved' }], 'ko')[0].affiliationLabel, '');
 assert.equal(displayActivities([{ ...primary, affiliationId: null, affiliationStatus: 'independent' }], 'en')[0].affiliationLabel, 'Independent activity');

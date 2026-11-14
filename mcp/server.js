@@ -32,6 +32,8 @@ function failure(err) {
     const out = { error: err.message || 'internal error', status: err.status || (err.code === 'invalid_arguments' ? 400 : 500) };
     if (err.code && err.code !== 'invalid_arguments') out.code = String(err.code);
     if (err.currentRevision) out.currentRevision = err.currentRevision;
+    // A batch reports every rejected item (data/commulingo/item-problems.js).
+    if (Array.isArray(err.problems)) out.problems = err.problems;
     return out;
 }
 

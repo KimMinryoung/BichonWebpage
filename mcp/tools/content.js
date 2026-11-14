@@ -58,6 +58,24 @@ const REGISTRY_SQL = {
         WHERE ($1 = '' OR id = $1) AND no_auto_link <> '[]'::jsonb ORDER BY kind, id`,
 };
 
+// Patches read against revision `from` while other writes moved the document
+// on (a catalog edited twice in a row, or by two jobs): they go onto the
+// current revision when nothing written since touched their paths.
+async function rebasePatches(key, row, from, patches) {
+    if (from > row.revision) throw badRequest(`${key}: expected revision ${from}, found ${row.revision}`, 409);
+    const old = (await db().query('SELECT content::text AS content_text FROM commulingo_data_document_revisions WHERE key = $1 AND revision = $2',
+        [key, from])).rows[0];
+    if (!old) throw badRequest(`${key}: expected revision ${from}, found ${row.revision}, and revision ${from} is not kept; read the document again`, 409);
+    const { changedPaths, patchConflicts } = require('../pointer');
+    const changes = changedPaths(JSON.parse(old.content_text), JSON.parse(row.content_text));
+    const conflicts = patchConflicts(patches.filter(p => p && typeof p.path === 'string'), changes);
+    if (conflicts.length) {
+        throw Object.assign(badRequest(`${key}: expected revision ${from}, found ${row.revision}; writes since then changed paths these patches touch: `
+            + conflicts.map(c => `${c.patch} (changed ${c.changed || '/'})`).join(', ') + '; read the document again', 409), { currentRevision: row.revision });
+    }
+    return { from, to: row.revision, changedSince: changes.map(c => c.path).slice(0, 50) };
+}
+
 const tools = [
     // ── reads ──────────────────────────────────────────────────────────────
     {
@@ -275,7 +293,8 @@ const tools = [
         description: 'Change one data document (validated like scripts/commulingo-data put): content replaces it, or patches '
             + '[{op: set|remove, path: JSON Pointer, value?}] edit parts ("-" appends to an array); specPath reads either from a file '
             + '(a JSON object = content, a JSON array = patches). expectedRevision from data_document_get is required for an existing '
-            + 'document. An activity-catalog change also bumps its version field. A learning course is course/<id>: the write must pass '
+            + 'document. Patches built on an older revision are re-applied to the current one when no write since then touched the '
+            + 'same paths (the result says rebased); otherwise the conflicting paths are named. A learning course is course/<id>: the write must pass '
             + 'the course rules (no new rule failure, Korean excerpts verbatim in the site documents, a replaced question gets a new id) '
             + 'and the result reports what changed; publicChapterLimit sets how many chapters are public. Courses are written only by the operator '
             + 'client (COMMULINGO_MCP_COURSE_WRITERS). dryRun defaults to true.',
@@ -303,12 +322,17 @@ const tools = [
             const row = (await readDataDocumentRows({ prefix: key })).find(item => item.key === key);
             if (row && expectedRevision === undefined) throw badRequest('expectedRevision is required for an existing document (data_document_get returns it)');
             if (patches && !row) throw badRequest(`data document not found: ${key}`, 404);
+            let revision = row ? expectedRevision : 0, rebased;
+            if (patches && row.revision !== expectedRevision) {
+                rebased = await rebasePatches(key, row, expectedRevision, patches);
+                revision = row.revision;
+            }
             const next = patches ? require('../pointer').applyPatches(JSON.parse(row.content_text), patches) : content;
             const actor = actorOf(given, client);
-            const result = await inTransaction(dryRun, c => writeDataDocuments({ upserts: [{ key, content: next, expectedRevision: row ? expectedRevision : 0 }] },
+            const result = await inTransaction(dryRun, c => writeDataDocuments({ upserts: [{ key, content: next, expectedRevision: revision }] },
                 { actor, note: note || 'mcp data_document_put', client: c }));
             if (!dryRun) await refreshDataDocuments();
-            return { dryRun, ...result };
+            return { dryRun, ...(rebased ? { rebased } : {}), ...result };
         },
         summarize: value => ({ dryRun: value.dryRun, written: value.written }),
     },

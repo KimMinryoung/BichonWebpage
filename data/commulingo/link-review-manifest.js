@@ -32,24 +32,51 @@ const NEGATIVE_CASES = [
     ['ko', '중국의 국민혁명과 1848년 프랑스 2월 혁명', 'february-revolution'],
 ];
 
-function fail(message, status = 400) {
-    throw Object.assign(new Error(message), { status });
+function fail(message, status = 400, extra = {}) {
+    throw Object.assign(new Error(message), { status, ...extra });
+}
+
+// A decision whose expression is gone (the title, headword or alias was
+// renamed) or whose source changed since the manifest was built. All of them
+// are reported at once with what the entry offers now, so the manifest can be
+// rebuilt in one pass; a renamed event or document title keeps its approvals
+// through link_reviews_carry instead.
+function staleProblems(decisions, rows) {
+    const problems = [];
+    for (const d of decisions) {
+        const row = rows.find(r => rowKey(r) === rowKey(d));
+        if (row && !(d.sourceSignature && row.sourceSignature !== d.sourceSignature)) continue;
+        const current = rows.filter(r => r.kind === d.kind && r.id === d.id && r.lang === d.lang);
+        problems.push(row
+            ? { decision: rowKey(d), reason: 'source changed since the manifest was built', currentSignature: row.sourceSignature }
+            : { decision: rowKey(d), reason: current.length ? 'no such expression any more' : `no ${d.kind} ${d.id} with ${d.lang} expressions`,
+                current: current.map(r => ({ text: r.text, reviewed: r.reviewed, policy: r.policy, sourceSignature: r.sourceSignature })) });
+    }
+    return problems;
+}
+
+function failStale(problems) {
+    const lines = problems.map(p => `${p.decision}: ${p.reason}${p.current?.length ? `; now: ${p.current.map(c => JSON.stringify(c.text)).join(', ')}` : ''}`);
+    fail(`Source changed for ${problems.length} decision(s); rebuild them from the current expressions `
+        + `(a renamed event or document title: link_reviews_carry)\n${lines.join('\n')}`, 409, { problems });
 }
 
 function projected(state, decisions, actor) {
     const records = JSON.parse(JSON.stringify(state.records));
     for (const d of decisions.filter(d => d.added)) {
         const record = records[d.kind].find(r => r.id === d.id);
-        if (!record || !['term', 'event'].includes(d.kind)) fail('Invalid added expression target: ' + rowKey(d));
+        if (!['term', 'event'].includes(d.kind)) fail(`Invalid added expression target: ${rowKey(d)} (added expressions go on terms and events only)`);
+        if (!record) fail(`Invalid added expression target: ${rowKey(d)} (no such ${d.kind})`);
         record.linkExpressions ||= [];
         if (!record.linkExpressions.some(e => e.lang === d.lang && e.text === d.text)) record.linkExpressions.push({ text: d.text, lang: d.lang, role: 'identity', policy: 'search' });
         assertLinkExpressions(record.linkExpressions);
     }
     const sourceRows = catalogue(records);
     const reviews = new Map(state.reviews);
+    const stale = staleProblems(decisions, sourceRows);
+    if (stale.length) failStale(stale);
     for (const d of decisions) {
         const row = sourceRows.find(r => rowKey(r) === rowKey(d));
-        if (!row || (d.sourceSignature && row.sourceSignature !== d.sourceSignature)) fail('Source changed: ' + rowKey(d), 409);
         reviews.set(rowKey(d), { kind: d.kind, entity_id: d.id, lang: d.lang, expression: d.text, source_signature: row.sourceSignature, role: d.role, policy: d.policy, note: d.note, reviewed_by: actor });
     }
     const rows = catalogue(records, reviews);
@@ -67,7 +94,9 @@ async function runLinkReviewManifest(manifest, { apply = false, actor, hooks = {
         if (!decision || typeof decision.note !== 'string') fail('every decision needs a note');
         return { ...decision, note: decision.note.trim() };
     });
-    if (new Set(decisions.map(rowKey)).size !== decisions.length) fail('Duplicate decision');
+    const keys = decisions.map(rowKey);
+    const duplicates = [...new Set(keys.filter((k, i) => keys.indexOf(k) !== i))];
+    if (duplicates.length) fail(`Duplicate decision(s): ${duplicates.join(', ')}`);
     const state = await service.loadState();
     const future = projected(state, decisions, actor);
     const summary = { total: decisions.length, policies: Object.fromEntries(['auto', 'context', 'search'].map(p => [p, decisions.filter(d => d.policy === p).length])) };
@@ -111,27 +140,40 @@ async function runLinkReviewManifest(manifest, { apply = false, actor, hooks = {
             await client.query(`UPDATE ${table} SET link_expressions=$2::jsonb, updated_at=NOW() WHERE id=$1`, [entityId, JSON.stringify(expressions)]);
         }
     }, { pool: db, lockTimeout: '3s', lock: 'commulingo-editorial-write' });
-    const current = await service.loadState();
-    const pending = decisions.filter(d => {
-        const row = current.rows.find(r => rowKey(r) === rowKey(d));
-        if (!row || (d.sourceSignature && row.sourceSignature !== d.sourceSignature)) fail('Source changed: ' + rowKey(d), 409);
-        return row.note !== d.note || row.policy !== d.policy || row.role !== d.role;
-    });
-    let saved = 0;
-    if (pending.length) {
-        log({ phase: 'batch-preview', pending: pending.length });
+    // Preview and save take 20–50 s; a write elsewhere in that window moves the
+    // corpus revision and saveReviews refuses (2026-11-14: 14 refusals in one
+    // day of parallel jobs). saveReviews re-validates every decision against
+    // the state it locks, so the preview is simply redone on the new revision.
+    let saved = 0, pendingCount = 0;
+    for (let attempt = 1; ; attempt++) {
+        const current = await service.loadState();
+        const stale = staleProblems(decisions, current.rows);
+        if (stale.length) failStale(stale);
+        const pending = decisions.filter(d => {
+            const row = current.rows.find(r => rowKey(r) === rowKey(d));
+            return row.note !== d.note || row.policy !== d.policy || row.role !== d.role;
+        });
+        pendingCount = pending.length;
+        if (!pending.length) break;
+        log({ phase: 'batch-preview', pending: pending.length, attempt });
         const preview = await service.previewReviews(pending);
         if (hooks.onEvidence) hooks.onEvidence(preview);
         log({ phase: 'batch-preview-complete', expressions: preview.results.length, samples: preview.results.reduce((n, r) => n + r.samples.length, 0) });
-        saved = (await service.saveReviews(preview.token, actor)).length;
-        log({ completed: saved, alreadySaved: decisions.length - pending.length });
+        try {
+            saved = (await service.saveReviews(preview.token, actor)).length;
+            break;
+        } catch (err) {
+            if (!service.isRevisionChanged(err) || attempt >= 3) throw err;
+            log({ phase: 'retry', reason: 'corpus changed during preview', attempt });
+        }
     }
+    log({ completed: saved, alreadySaved: decisions.length - pendingCount });
     const final = await service.loadState();
     for (const d of decisions) {
         const r = final.rows.find(r => rowKey(r) === rowKey(d));
         if (!r || !r.reviewed || r.note !== d.note || r.policy !== d.policy || r.role !== d.role) fail('Final state mismatch: ' + rowKey(d), 500);
     }
-    return { applied: true, status: 'all-reviewed-and-saved', ...summary, saved, alreadySaved: decisions.length - pending.length };
+    return { applied: true, status: 'all-reviewed-and-saved', ...summary, saved, alreadySaved: decisions.length - pendingCount };
 }
 
 module.exports = { runLinkReviewManifest };

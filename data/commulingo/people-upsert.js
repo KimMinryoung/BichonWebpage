@@ -7,34 +7,36 @@ const { submitPersonEdit } = require('./person-editorial-service');
 const { listPersonSectionsAdmin } = require('./people-sections-store');
 const { clearCommuLingoPeopleCache } = require('./people-store');
 const { transaction } = require('../../utils/db-transaction');
+const { eachItem } = require('./item-problems');
 
 async function upsertPeople(people, { dryRun = false, changedBy }) {
     if (!Array.isArray(people) || !people.length) throw Object.assign(new Error('people must be a non-empty array'), { status: 400 });
     const results = [];
-    await transaction(async client => {
-        for (const entry of people) {
-            const { sections, ...payload } = entry || {};
-            if (!payload.id) throw Object.assign(new Error('every person needs an id'), { status: 400 });
-            const existing = await getPersonAdmin(payload.id, { client });
-            // An update is checked against the revision just read, as a section is.
-            const fields = existing ? { expectedRevision: existing.revision, ...payload } : payload;
-            const result = await submitPersonEdit({ target: 'person', action: existing ? 'update' : 'create',
-                id: payload.id, fields, sources: payload.sources }, { client, changedBy });
-            const row = { id: payload.id, status: result.status, suggestionId: result.suggestionId, docHolds: result.docHolds || [], sections: [] };
-            results.push(row);
-            if (result.status === 'pending' && sections?.length) {
-                throw Object.assign(new Error(`${payload.id}: review the person edit before adding its sections`), { status: 400 });
-            }
-            for (const section of sections || []) {
-                const current = await getPersonAdmin(payload.id, { client });
-                const exists = (await listPersonSectionsAdmin(payload.id, { client })).some(s => s.slug === section.slug);
-                const saved = await submitPersonEdit({ target: 'person_section', action: exists ? 'update' : 'create',
-                    id: payload.id, fields: { ...section, expectedRevision: section.expectedRevision ?? current.revision },
-                    sources: section.sources || payload.sources }, { client, changedBy });
-                row.sections.push({ slug: section.slug, status: saved.status });
-            }
+    // Each person runs in its own savepoint: every rejected person is reported
+    // at once (item-problems.js), and any rejection still writes nothing.
+    await transaction(client => eachItem(client, people, async entry => {
+        const { sections, ...payload } = entry || {};
+        if (!payload.id) throw Object.assign(new Error('every person needs an id'), { status: 400 });
+        const existing = await getPersonAdmin(payload.id, { client });
+        // An update is checked against the revision just read, as a section is.
+        const fields = existing ? { expectedRevision: existing.revision, ...payload } : payload;
+        const result = await submitPersonEdit({ target: 'person', action: existing ? 'update' : 'create',
+            id: payload.id, fields, sources: payload.sources }, { client, changedBy });
+        const row = { id: payload.id, status: result.status, suggestionId: result.suggestionId, docHolds: result.docHolds || [], sections: [] };
+        if (result.status === 'pending' && sections?.length) {
+            throw Object.assign(new Error('review the person edit before adding its sections'), { status: 400 });
         }
-    }, { dryRun, pool: db });
+        for (const section of sections || []) {
+            const current = await getPersonAdmin(payload.id, { client });
+            const exists = (await listPersonSectionsAdmin(payload.id, { client })).some(s => s.slug === section.slug);
+            const saved = await submitPersonEdit({ target: 'person_section', action: exists ? 'update' : 'create',
+                id: payload.id, fields: { ...section, expectedRevision: section.expectedRevision ?? current.revision },
+                sources: section.sources || payload.sources }, { client, changedBy })
+                .catch(err => { err.message = `section ${section.slug}: ${err.message}`; throw err; });
+            row.sections.push({ slug: section.slug, status: saved.status });
+        }
+        results.push(row);
+    }, entry => ({ label: entry?.id || '(no id)' })), { dryRun, pool: db });
     if (!dryRun) clearCommuLingoPeopleCache();
     return { dryRun, results };
 }
