@@ -35,10 +35,12 @@
 ## 같은 날 함께 한 일
 
 - 사건 진영 정리: 진영이 있는 사건에서 소속이 분명한데 진영 밖에 있던 인물 49명(1차 세계대전 5명 포함)을 제 진영으로. 중재자·제3국 관찰자·나중의 회고자·역사가는 진영 밖에 둔다. 목록 `scripts/content/side-sweep-20261114/build.py`.
-- 코드: `history_event` 수정에 `countries`를 받게 했다(a15877d9). 연표 행의 나라는 사건 countries 안에 있어야 한다. **MCP 컨테이너 배포 전**이라 아직 못 쓴다.
+- 코드: `history_event` 수정에 `countries`를 받게 했다(a15877d9). 연표 행의 나라는 사건 countries 안에 있어야 한다. 같은 날 MCP 배포 뒤 아래 7편에 나라를 더했다(`scripts/content/event-countries-20261114/`). 배포 전 테스트가 활동 카탈로그의 남예멘 NLF 항목(반대 활동 문장 누락)과 예멘 사회당 집권기 겹침으로 막혀 카탈로그를 고쳤다.
 - `mykhailo-omelianovych-pavlenko` 카드: 활동·경력 연표·독소전쟁기 협력 절, 대조국전쟁·추축국 점령 유럽 사건 연결.
 
 ## 남은 일
 
-- MCP 배포(`scripts/deploy --mcp-only`) 뒤 사건 countries 추가: 에티오피아 +somalia(오가덴 연표 행 다시 태깅), 모잠비크 +portugal·zambia·tanzania·south-africa 등, 베트남 통일 +china, 라오스 +vietnam·thailand, 민주캄푸치아 +thailand·china·malaysia, 콩고 +angola·france·soviet 등, 몽골 +china.
-- 소유자 결정 대기: `proposal-concerning-the-general-line-1963` 용어(문헌 `sino-soviet-letters-1963`과 중복) 삭제 여부, 새 표기들(편별 `handoff-notes.txt`), 입장 모음을 비운 카드들, 박헌영 처형 연도(1955 / 1956.7.19).
+- (완료) 사건 countries 추가: 에티오피아 +somalia·cuba, 모잠비크 +portugal·tanzania·zambia·zimbabwe·south-africa·italy, 베트남 통일 +usa·france, 라오스 +vietnam·thailand, 민주캄푸치아 +china·thailand·malaysia, 콩고 +soviet·france·angola, 몽골 +china. 해당 연표 행의 나라도 다시 달았다.
+- 용어 `proposal-concerning-the-general-line-1963`은 지우지 않고(소유자 결정) 문헌 `sino-soviet-letters-1963`의 건의 부분을 용어 페이지 본문 위에 싣는다(`excerpts.terms` lead). 표제어를 문헌 번역 제목 「국제 공산주의 운동 총노선에 관한 건의」로 맞추고, 제목 표현의 자동 링크는 용어가, 문헌의 같은 표현은 search로.
+- 입장 모음을 비운 새 카드는 그대로 둔다(소유자). 민족 출신은 남북 모두 `korea`.
+- 소유자 결정 대기: 새 표기들(편별 `handoff-notes.txt`), 박헌영 처형 연도(1955 / 1956.7.19).
