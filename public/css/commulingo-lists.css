@@ -1149,7 +1149,6 @@ a.commu-person-position:focus-visible {
 
 .commu-person-cyr {
     display: block;
-    font-family: Georgia, 'Times New Roman', serif;
     font-size: 0.82rem;
     color: var(--text-muted);
     transition: color 0.16s ease;
@@ -1595,7 +1594,6 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent); outlin
 .commu-event-meta .commu-event-period { margin: 0; }
 .commu-event-original {
     display: block;
-    font-family: Georgia, 'Times New Roman', serif;
     font-size: var(--text-meta); color: var(--text-muted);
 }
 .commu-event-category {
