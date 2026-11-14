@@ -147,7 +147,10 @@ function checkActivity(a, sources, officeIds, seen) {
     // Offices with their own page are officeId; this names any other post.
     if (a.title != null) {
         const t = a.title;
-        if (!['service','employment'].includes(a.relation)) throw badRequest(`activity title names a post: only for service or employment, not ${a.relation}`);
+        // A party member's own party post (중앙위원회 위원장) goes on the membership
+        // row, as the party-activity rule files it (owner decision 2026-11-14,
+        // after 34 refusals in three weeks); independent and unresolved rows hold no post.
+        if (!['service','employment','membership'].includes(a.relation)) throw badRequest(`activity title names a post: only for service, employment or membership, not ${a.relation}`);
         if (!t || typeof t !== 'object' || Array.isArray(t) || Object.keys(t).some(k => !['ko','en'].includes(k))
             || !['ko','en'].every(k => typeof t[k] === 'string' && t[k].trim() && t[k] === t[k].trim())
             || [...t.ko].length > TITLE_MAX.ko || [...t.en].length > TITLE_MAX.en) {

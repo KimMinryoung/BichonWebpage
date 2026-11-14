@@ -70,7 +70,11 @@ assert.equal(displayActivities([{ ...membership, startYear: 1970, endYear: 1975 
 // A post may carry its name; it shows on the row or, under a membership, on the post line.
 const titled = { ...office, title: { ko: '바이에른 총리', en: 'Minister-President of Bavaria' } };
 assert.doesNotThrow(() => validateActivities([{ ...primary, relation: 'service', title: titled.title }], sources));
-assert.throws(() => validateActivities([{ ...primary, title: titled.title }], sources), /only for service or employment/);
+// A party member's party post sits on the membership row itself; an independent row holds none.
+const partyPost = { ko: '중앙위원회 위원장', en: 'Chairman of the Central Committee' };
+assert.doesNotThrow(() => validateActivities([{ ...primary, title: partyPost }], sources));
+assert.equal(displayActivities([{ ...primary, title: partyPost }], 'ko')[0].titleLabel, '중앙위원회 위원장');
+assert.throws(() => validateActivities([{ ...primary, affiliationId: null, affiliationStatus: 'independent', relation: 'independent', title: partyPost }], sources), /only for service, employment or membership/);
 assert.throws(() => validateActivities([{ ...primary, relation: 'service', title: { ko: '총리' } }], sources), /title must be/);
 assert.equal(displayActivities([titled], 'en')[0].titleLabel, 'Minister-President of Bavaria');
 assert.deepEqual(displayActivities([membership, { ...titled, startYear: 1930, endYear: 1960 }], 'ko')[0].posts.map(p => p.titleLabel), ['바이에른 총리']);
