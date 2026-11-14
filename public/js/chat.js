@@ -558,6 +558,12 @@
     }
 
     function renderMarkdownInto(container, text) {
+        // marked and DOMPurify come from CDNs; a visitor whose network or
+        // blocker drops them still gets the answer, as plain text.
+        if (typeof window.marked === 'undefined' || typeof window.DOMPurify === 'undefined') {
+            container.textContent = text || '';
+            return;
+        }
         var dirtyHTML = marked.parse(text || '');
         var cleanHTML = DOMPurify.sanitize(dirtyHTML, {ADD_ATTR: ['target']});
         container.innerHTML = cleanHTML;
@@ -606,7 +612,7 @@
             return res.ok ? res.json() : null;
         }).then(function(data) {
             var items = data && data.items;
-            if (!Array.isArray(items)) return;
+            if (!Array.isArray(items) || typeof window.DOMPurify === 'undefined') return;
             batch.forEach(function(item, index) {
                 if (typeof items[index] !== 'string' || item.body.innerHTML !== item.html) return;
                 item.body.innerHTML = DOMPurify.sanitize(items[index], {ADD_ATTR: ['target']});

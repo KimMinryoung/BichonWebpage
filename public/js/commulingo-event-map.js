@@ -33,8 +33,12 @@
         var section = figure.closest('.commu-event-timeline');
         var tools = section && section.querySelector('.commu-event-map-tools');
         if (!viewport || !svg || !tools) return;
-        var box = svg.viewBox.baseVal;
-        if (!box.width || !box.height) return;
+        // Read the attribute, not svg.viewBox: some clients (translation
+        // proxies, bot engines) hand the page an element without the SVG DOM,
+        // and svg.viewBox.baseVal threw there (site_client_errors, 2026-11).
+        var vb = (svg.getAttribute('viewBox') || '').split(/[\s,]+/).map(Number);
+        var box = { width: vb[2], height: vb[3] };
+        if (!(box.width > 0) || !(box.height > 0)) return;
         var scale = 1;
         var maxZoom = 12;
         // Zooming in enlarges the whole SVG inside the scroller; zooming out
