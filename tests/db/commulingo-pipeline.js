@@ -105,6 +105,21 @@ const evidence = field => ({field,claim:`Documented ${field}`,source,locator:'p.
     section.approvedPatchHash=patchHash(section);
     assert.equal((await execute(section)).status,'approved');
     assert.equal((await execute({command:'read',target:'person',id:personId})).sections.length,1);
+    // removeSources: a stray URL can leave the term; one backing evidence or unknown cannot.
+    const stray = 'https://example.org/stray-404';
+    const approveTerm = async (fields, sources, key) => {
+        const staged = await execute({command:'submit',target:'term',action:'update',id,sources,idempotencyKey:`test:${id}:${key}`,
+            fields:{expectedRevision:(await readTermEditorial(id)).revision,...fields}});
+        return execute({...approve,suggestionId:staged.suggestionId,idempotencyKey:`test:${id}:${key}-approve`});
+    };
+    await approveTerm({definition:{ko:'출처를 하나 더 단 정의다.'},evidence:[evidence('definition')]},[source,stray],'stray-add');
+    assert.ok((await readTermEditorial(id)).sources.includes(stray));
+    await assert.rejects(execute({command:'submit',target:'term',action:'update',id,sources:[source],idempotencyKey:`test:${id}:remove-unknown`,
+        fields:{expectedRevision:(await readTermEditorial(id)).revision,removeSources:['https://example.org/never-stored']}}),/not a stored source/);
+    await assert.rejects(execute({command:'submit',target:'term',action:'update',id,sources:[stray],idempotencyKey:`test:${id}:remove-evidence`,
+        fields:{expectedRevision:(await readTermEditorial(id)).revision,removeSources:[source]}}),/backs recorded evidence/);
+    await approveTerm({removeSources:[stray]},[source],'stray-remove');
+    assert.deepEqual((await readTermEditorial(id)).sources,[source],'removeSources must drop only the named URL');
     console.log('Atomic publication: patch binding, concurrent replay, full rollback, replacement, notes and stale revision passed');
     console.log('Pipeline store: concurrent receipts, pending isolation, review replay, evidence, bilingual merge, revision conflicts, FK rollback and alias collision passed');
 })().catch(error => {console.error(error);process.exitCode=1;}).finally(async () => {

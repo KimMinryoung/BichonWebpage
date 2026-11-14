@@ -18,7 +18,7 @@ const columns = {
 // the career-period shape, stored as columns (migration 364).
 const localized = { term: 'term', definition: 'definition', body: 'body', periodNote: 'period_note' };
 const allowed = new Set([...Object.keys(columns), ...Object.keys(localized), 'period',
-    'id', 'sources', 'aliases', 'people', 'events', 'evidence', 'expectedRevision', 'carryLinkReviews']);
+    'id', 'sources', 'removeSources', 'aliases', 'people', 'events', 'evidence', 'expectedRevision', 'carryLinkReviews']);
 
 async function readTermEditorial(id, options = {}) {
     if (!options.client) return readSnapshot(client => readTermEditorial(id, { client }));
@@ -92,6 +92,22 @@ function validateFields(fields, current, action, sources) {
             || !['supports','disputes'].includes(e.stance || 'supports')) throw badRequest('invalid field evidence');
     }
     for (const field of contract.factFields) if (Object.hasOwn(fields,field) && !evidence.some(e => e.field===field)) throw badRequest(`evidence required for ${field}`);
+    // Sources otherwise only accumulate, so a wrong URL added by mistake (a
+    // 404, another subject's page) could never leave the term. removeSources
+    // names stored URLs to drop; one this edit cites again, or one still quoted
+    // in the text, stays and refuses the edit instead.
+    if (fields.removeSources !== undefined) {
+        const remove = fields.removeSources;
+        if (action !== 'update') throw badRequest('removeSources applies to updates only');
+        if (!Array.isArray(remove) || !remove.length || remove.some(v => typeof v !== 'string' || !v)) throw badRequest('removeSources must list source URLs');
+        for (const url of remove) {
+            if (!(current?.sources || []).includes(url)) throw badRequest(`removeSources: ${url} is not a stored source`);
+            if (sources.includes(url)) throw badRequest(`removeSources: ${url} is also cited by this edit`);
+            for (const field of ['definition','body']) for (const lang of ['ko','en'])
+                if ((merged[field]?.[lang] || '').includes(url)) throw badRequest(`removeSources: ${url} is still cited in ${field}.${lang}`);
+        }
+        if (!(current.sources || []).some(url => !remove.includes(url)) && !sources.length) throw badRequest('removeSources would leave the term without sources');
+    }
     return merged;
 }
 
@@ -130,7 +146,12 @@ async function save(client, id, fields, current, action, actor, sources) {
         const vals = value.periodColumns ? periodValues(value.periodColumns) : PERIOD_COLUMNS.map(column => (column === 'ongoing' ? false : null));
         PERIOD_COLUMNS.forEach((column, i) => set(column, vals[i]));
     }
-    set('sources',JSON.stringify([...new Set([...(current?.sources || []),...sources])]));
+    if (fields.removeSources !== undefined) {
+        const cited = await client.query('SELECT DISTINCT source FROM commulingo_term_evidence WHERE term_id=$1 AND source=ANY($2)',[id,fields.removeSources]);
+        if (cited.rows.length) throw badRequest(`removeSources: ${cited.rows.map(r => r.source).join(', ')} backs recorded evidence`);
+    }
+    const kept = (current?.sources || []).filter(url => !(fields.removeSources || []).includes(url));
+    set('sources',JSON.stringify([...new Set([...kept,...sources])]));
     await client.query(`UPDATE commulingo_terms SET ${sets.join(',')},updated_at=now() WHERE id=$1`,params);
     if (fields.aliases !== undefined || action==='create') {
         await client.query('DELETE FROM commulingo_term_aliases WHERE term_id=$1',[id]);
