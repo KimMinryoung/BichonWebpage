@@ -30,7 +30,9 @@
     let selected = null;            // battle: the selected Red unit id
     let inspected = null;           // battle: the White unit whose reach is shown
     let tilePicked = null;          // battle: the tile whose ground is shown ({ r, c }), with no unit picked
-    let supplyShown = false;        // battle: the supply roads drawn bold with the tiles that shut them (screen state)
+    let supplyShown = false;
+    let lessonFor = null;           // battle: the board whose lesson (def.lesson) is being shown
+    const lessonAck = new Set();    // battle: the lesson's steps the player has answered        // battle: the supply roads drawn bold with the tiles that shut them (screen state)
     let featArmed = null;           // battle: the unit whose aimed feat is switched on (screen state; spent only when it strikes)
     let menaceAll = false;          // battle: every White unit's reach shown at once
     let endArmed = false;           // battle: 「턴 종료」 pressed once with units still to act
@@ -2805,6 +2807,58 @@
         return g;
     }
 
+    // A pocket: one line round the enemy units cut off from supply
+    // (those standing side by side share it).
+    function pocketMarks(b) {
+        const g = svg('g', { class: 'cw-pockets', 'aria-hidden': 'true' });
+        if (!b.def.supply) return g;
+        const has = new Set(b.units.filter(u => u.hp > 0 && B.isEnemy(b, u) && B.cutOff(b, u)).map(u => u.r + ',' + u.c));
+        let d = '';
+        const o = 1.5;
+        for (const k of has) {
+            const [r, c] = k.split(',').map(Number);
+            const x = c * CELL, y = r * CELL;
+            if (!has.has((r - 1) + ',' + c)) d += `M${x} ${y + o}h${CELL}`;
+            if (!has.has((r + 1) + ',' + c)) d += `M${x} ${y + CELL - o}h${CELL}`;
+            if (!has.has(r + ',' + (c - 1))) d += `M${x + o} ${y}v${CELL}`;
+            if (!has.has(r + ',' + (c + 1))) d += `M${x + CELL - o} ${y}v${CELL}`;
+        }
+        if (d) g.append(svg('path', { d, class: 'cw-pocket-line' }));
+        return g;
+    }
+
+    // A board's lesson (def.lesson: { supply, close, closed }): three
+    // steps over the board, each moving on with what the player does. Shown
+    // once to a browser (kept there, not in the save).
+    const lessonKey = def => `${KEY}-lesson-${def.id}`;
+    function lessonBox(b) {
+        const L = b.def.lesson;
+        if (!L || battleEnded) return null;
+        if (lessonFor !== b) {
+            lessonFor = b; lessonAck.clear();
+            let seen = false;
+            try { seen = Boolean(localStorage.getItem(lessonKey(b.def))); } catch (_) { seen = false; }
+            if (seen) lessonAck.add('off'); else supplyShown = true;
+        }
+        if (lessonAck.has('off')) return null;
+        const done = () => { lessonAck.add('off'); try { localStorage.setItem(lessonKey(b.def), 'done'); } catch (_) { /* shown again next time */ } renderBattle(); };
+        const closed = Boolean(b.pocketed);
+        const steps = [
+            { id: 'supply', text: L.supply, ack: true, done: closed },
+            { id: 'close', text: L.close, done: closed },
+            { id: 'closed', text: L.closed, ack: true, last: true },
+        ];
+        const i = steps.findIndex(x => !(x.done || x.ack && lessonAck.has(x.id)));
+        if (i < 0) { done(); return null; }
+        const step = steps[i];
+        return el('aside', { class: 'cw-coach cw-lesson', 'aria-label': '전투 안내', 'data-pane': 'field' },
+            el('p', { class: 'cw-coach-step' }, `전투 안내 ${i + 1}/${steps.length}`),
+            el('p', {}, step.text),
+            el('div', { class: 'cw-coach-actions' },
+                step.ack ? el('button', { type: 'button', class: 'cw-primary', onclick: () => { if (step.last) return done(); lessonAck.add(step.id); renderBattle(); } }, '알겠다') : null,
+                step.last ? null : el('button', { type: 'button', onclick: done }, '안내 끄기')));
+    }
+
     // Faint by default; the roads stand out, with the tiles that shut them,
     // while 「보급선」 is on (supplyShown), and a picked unit's own road always.
     function supplyMarks(b, picked) {
@@ -2900,6 +2954,7 @@
         const box = $('cwBattle');
         if (tabBattle !== b) { battleTab = 'field'; tabBattle = b; }
         const rows = def.map.length, cols = def.map[0].length;
+        const lesson = lessonBox(b);
         const board = svg('svg', { viewBox: `0 0 ${cols * CELL} ${rows * CELL}`, class: 'cw-grid' + (battleEnded ? ' is-over' : ''), role: 'group', 'aria-label': def.board });
         const unit = selected && B.byId(b, selected);
         const foe = !unit && inspected && B.byId(b, inspected);
@@ -2909,6 +2964,7 @@
         if (featArmed && (!unit || featArmed !== unit.id || B.featBlock(b, unit))) featArmed = null;
         const armed = Boolean(featArmed);
         const moves = unit && !armed && B.canMove(b, unit) ? B.reachable(b, unit) : [];
+        const unitEls = new Map();
         const targets = armed ? B.featTargets(b, unit) : unit && !unit.acted ? B.targets(b, unit) : [];
         // One White unit's reach when it is picked; every one's with 「백군 위협」.
         const danger = foe ? B.menace(b, foe) : menaceAll ? b.units.filter(u => B.isEnemy(b, u) && u.hp > 0).flatMap(u => B.menace(b, u)) : [];
@@ -2983,6 +3039,20 @@
             hit.addEventListener('click', go);
             hit.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
             board.append(hit);
+            // A tile that would shut the enemy's supply says so before the
+            // move: a tag on the tile, and while it is pointed at, a ring
+            // on every unit it would cut off.
+            const doomed = def.supply && def.supply.enemy ? B.wouldCut(b, unit, m.r, m.c) : [];
+            if (doomed.length) {
+                hit.classList.add('is-cutting');
+                hit.setAttribute('aria-label', hit.getAttribute('aria-label') + `: ${foeName()} ${doomed.length}부대의 보급이 끊긴다`);
+                const tag = svg('g', { class: 'cw-cut-tag', 'aria-hidden': 'true' });
+                tag.append(svg('rect', { x: m.c * CELL + 4, y: m.r * CELL + CELL / 2 - 7, width: CELL - 8, height: 14 }), svg('text', { x: m.c * CELL + CELL / 2, y: m.r * CELL + CELL / 2 + 3.5, 'text-anchor': 'middle' }, `포위 ${doomed.length}`));
+                board.append(tag);
+                const show = on => () => { for (const d of doomed) { const g = unitEls.get(d.id); if (g) g.classList.toggle('is-doomed', on); } };
+                for (const on of ['pointerenter', 'pointerdown', 'focus']) hit.addEventListener(on, show(true));
+                for (const off of ['pointerleave', 'pointercancel', 'blur']) hit.addEventListener(off, show(false));
+            }
         }
         // The blow foretold on the strength bars: what a target would lose
         // shows on its own bar; what the attacker would lose to the counter
@@ -3054,8 +3124,10 @@
             // Cut off from supply: a tag across the counter's foot.
             if (B.cutOff(b, u)) {
                 g.append(svg('rect', { x: x + 4, y: y + CELL - 15, width: CELL - 8, height: 11, class: 'cw-cut-band' }));
-                g.append(svg('text', { x: x + CELL / 2, y: y + CELL - 6.5, 'text-anchor': 'middle', class: 'cw-cut-text' }, '포위'));
+                g.append(svg('text', { x: x + CELL / 2, y: y + CELL - 6.5, 'text-anchor': 'middle', class: 'cw-cut-text' }, `포위 −${B.cutRule(b).hurt}`));
             }
+            if (B.isEnemy(b, u)) g.append(svg('rect', { x: x + 1.5, y: y + 1.5, width: CELL - 3, height: CELL - 3, class: 'cw-doom-ring' }));
+            unitEls.set(u.id, g);
             if (featLeft(b, u)) g.append(svg('path', { d: star(x + CELL - 4, y + 4, 6, 2.5), class: 'cw-feat-star' + (B.featBlock(b, u) ? ' is-waiting' : '') }));
             // What the number cannot say: a surrender, a fortification worn.
             const note = p && [p.surrender ? '투항' : null, p.wears ? '포격' : null].filter(Boolean).join(' ');
@@ -3113,6 +3185,7 @@
         }
         board.append(postMark(b));
         board.append(areaMarks(b));
+        board.append(pocketMarks(b));
         board.append(eventArrows(b));
         if (verdict && b.result === 'won') board.append(victoryBursts(b));
         const moment = momentBanner(b);
@@ -3169,6 +3242,7 @@
         box.replaceChildren(
             el('header', { class: 'cw-battle-head', 'data-pane': 'status' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             battleBrief(b),
+            ...(lesson ? [lesson] : []),
             el('div', { class: 'cw-battle-layout' },
                 el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], B.postsOf(def).length ? ['post', `${B.postsOf(def).map(x => x.name).join('·')}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, def.supply ? ['supply', `보급선 (붉은 띠 ${U.player}, 회색 띠 ${foeName()}, 「보급」 표가 보급 기지 · 붉은 빗금은 내 부대가 막은 칸)`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
@@ -3473,6 +3547,7 @@
             armsNote(u),
             u.yielded ? el('p', { class: 'cw-note' }, `투항해 ${josa(U.player, '으로', '로')} 넘어온 부대다.`) : null,
             B.cutOff(b, u) ? el('p', { class: 'cw-note cw-note-cut' }, `포위됨: 보급 기지로 가는 길이 끊겼다. 공격 절반, 방어 −1, 턴마다 병력 −2.${B.isEnemy(b, u) ? ' 한 턴을 넘기고 병력이 절반 아래로 꺾이면 항복한다.' : ''}`) : null,
+            B.isEnemy(b, u) && !B.cutOff(b, u) && b.def.supply && b.def.supply.enemy ? el('p', { class: 'cw-note cw-note-cut' }, `보급을 끊으면: 공격 절반, 방어 ${B.defenseOf(b, u)}→${B.defenseOf(b, u) - B.cutRule(b).bare}, 턴마다 병력 −${B.cutRule(b).hurt}. 한 턴 뒤 병력이 ${Math.ceil(u.maxHp / 2)} 아래면 항복한다.`) : null,
             B.isPlayer(b, u) ? el('p', { class: 'cw-note cw-info-dup' }, u.acted ? (B.canMove(b, u) ? '쳤다. 아직 움직일 수 있다.' : '이번 턴의 행동을 마쳤다.') : u.moved ? '이동했다. 공격하거나 대기할 수 있다.' : '이동하거나 공격할 수 있다.') : null,
             B.isEnemy(b, u) && u.role ? el('p', { class: 'cw-note cw-info-dup' }, roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '')) : null);
     }

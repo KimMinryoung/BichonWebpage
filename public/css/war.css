@@ -706,6 +706,19 @@
 .cw-supply-shut.is-red { stroke: var(--cw-red); }
 .cw-supply-shut.is-white { stroke: var(--cw-foe-accent); }
 .cw-cut-band { fill: var(--text-primary); stroke: none; }
+/* A move that would shut the enemy's supply: the tile tagged, the units it would cut off ringed while it is pointed at. */
+.cw-hit.is-cutting { stroke: var(--cw-red); stroke-opacity: 1; stroke-width: 2.5; }
+.cw-cut-tag { pointer-events: none; }
+.cw-cut-tag rect { fill: var(--cw-red); }
+.cw-cut-tag text { font-size: 9.5px; font-weight: 800; fill: #fff; letter-spacing: .04em; }
+.cw-doom-ring { fill: var(--cw-red); fill-opacity: 0; stroke: var(--cw-red); stroke-width: 3; stroke-opacity: 0; pointer-events: none; }
+.cw-unit.is-doomed .cw-doom-ring { fill-opacity: .28; stroke-opacity: 1; }
+/* A pocket: one heavy line round the units cut off. */
+.cw-pocket-line { fill: none; stroke: var(--cw-red); stroke-width: 3.5; stroke-linecap: square; pointer-events: none; }
+.cw-unit.is-cut .cw-cut-band { animation: cw-cut-pulse 1.6s ease-in-out infinite; }
+@keyframes cw-cut-pulse { 50% { fill: var(--cw-red); } }
+@media (prefers-reduced-motion: reduce) { .cw-unit.is-cut .cw-cut-band { animation: none; } }
+.cw-lesson { margin: 8px 0; }
 .cw-cut-text { font-size: 8.5px; font-weight: 800; fill: var(--bg-surface); letter-spacing: .08em; }
 .cw-unit.is-cut > rect:first-of-type { stroke-dasharray: 4 3; }
 .cw-note-cut { font-weight: 700; }

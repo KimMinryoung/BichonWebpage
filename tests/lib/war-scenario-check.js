@@ -262,6 +262,7 @@ function checkScenario(D) {
         // The open ground's season (war.css .cw-ground-base.is-*; a board with snow is winter).
         need(def.ground === undefined || ['summer', 'spring', 'autumn', 'steppe'].includes(def.ground), `${at}: ground ${def.ground}`);
         // Named ground: tiles of the board, a name.
+        if (def.lesson) need(def.supply && def.supply.enemy && ['supply', 'close', 'closed'].every(k => typeof def.lesson[k] === 'string' && def.lesson[k]), `${at}: lesson needs the enemy's supply and its three steps`);
         for (const area of def.areas || []) need(area.name && area.tiles.length && area.tiles.every(inside), `${at}: area ${area.name}`);
         // Supply: each side's sources are tiles of the board.
         for (const side of ['player', 'enemy']) for (const src of (def.supply && def.supply[side]) || []) need(inside(src), `${at}: supply source ${src}`);

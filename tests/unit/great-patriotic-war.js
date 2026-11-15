@@ -143,6 +143,18 @@ for (const [id, def] of Object.entries(D.battles)) {
     assert.ok(!B.start(def, {}, null).units.some(south));
 }
 
+// ── The first battle teaches the pocket: its lesson, and the move that shuts the neck foretold ──
+{
+    const b = G.rehearse('yelnya').battle;
+    assert.ok(b.def.lesson && b.def.lesson.close);
+    const u = b.units.find(x => x.id === 'y100');
+    const [sr, sc] = b.def.supply.enemy[0];
+    const at = [u.r, u.c];
+    assert.ok(B.wouldCut(b, u, sr, sc).length > 0, 'standing on the enemy\'s base cuts units off');
+    assert.deepEqual([u.r, u.c], at, 'asking moves nothing');
+    assert.equal(B.wouldCut(b, u, u.r, u.c).length, 0);
+}
+
 // ── The data speaks the screen's plain words ──
 {
     const text = JSON.stringify(D);

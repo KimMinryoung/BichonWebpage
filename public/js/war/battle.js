@@ -274,6 +274,18 @@
         return near(false) && !near(true);
     }
     const cutRule = b => Object.assign({}, CUT, b.def.supply);
+    // The units of the other side that a unit would newly cut off by
+    // standing on a tile (the board shows it before the move is made).
+    function wouldCut(b, u, r, c) {
+        if (!b.def.supply) return [];
+        const others = alive(b).filter(o => o.side !== u.side);
+        const was = new Set(others.filter(o => cutOff(b, o)));
+        const r0 = u.r, c0 = u.c;
+        u.r = r; u.c = c;
+        const now = others.filter(o => !was.has(o) && cutOff(b, o));
+        u.r = r0; u.c = c0;
+        return now;
+    }
 
     // Tells the units newly cut off and those relieved since last asked.
     function tellSupply(b) {
@@ -1116,7 +1128,7 @@
     }
 
     const api = {
-        start, joins, act, reachable, cutOff, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
+        start, joins, act, reachable, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, weatherOf, raidsOf, raidTurns, kindOf, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
         canMove, featBlock, featTargets, featMod, featAimed, featPreview, yields, lost, YIELD_RING, FEATS, ROLES, KINDS,
     };
