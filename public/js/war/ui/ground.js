@@ -64,6 +64,35 @@
             return out;
         }
 
+        // ── Open ground: fields as the land lies, not as the squares do ──
+        // Strips of ploughland and meadow at their own angles, cut to the
+        // open ground's outline; on snow, the hollows' shade.
+        for (const [kind, tones, lined] of [['steppe', ['a', 'b', 'c'], true], ['snow', ['s'], false]]) {
+            const set = new Set([kind]);
+            const outline = region((r, c) => cls(r, c) === kind, (r, c) => { const k = cls(r, c); return k === null || k === kind; }, 0, 0);
+            if (!outline) continue;
+            const id = `cwGround-${kind}-${rows}x${cols}`;
+            const clip = svg('clipPath', { id });
+            clip.append(svg('path', { d: outline }));
+            const fields = svg('g', { 'clip-path': `url(#${id})` });
+            const n = Math.round(rows * cols / (lined ? 2.6 : 4));
+            for (let i = 0; i < n; i++) {
+                const cx = rnd(i, 3, 1) * cols * CELL, cy = rnd(i, 5, 2) * rows * CELL;
+                if (!set.has(cls(Math.floor(cy / CELL), Math.floor(cx / CELL)))) continue;
+                const w = 46 + rnd(i, 7, 3) * 64, h = 26 + rnd(i, 9, 4) * 36;
+                const deg = [-28, -12, 6, 18, 34][Math.floor(rnd(i, 11, 5) * 5)];
+                const one = svg('g', { transform: `rotate(${deg} ${f1(cx)} ${f1(cy)})` });
+                one.append(svg('rect', { x: f1(cx - w / 2), y: f1(cy - h / 2), width: f1(w), height: f1(h), class: 'cw-g-field is-' + tones[Math.floor(rnd(i, 13, 6) * tones.length)] }));
+                if (lined && rnd(i, 17, 7) < .6) {
+                    let d = '';
+                    for (let y = cy - h / 2 + 4; y < cy + h / 2 - 2; y += 5) d += `M${f1(cx - w / 2 + 3)} ${f1(y)}h${f1(w - 6)}`;
+                    one.append(svg('path', { d, class: 'cw-g-furrow' }));
+                }
+                fields.append(one);
+            }
+            g.append(clip, fields);
+        }
+
         // ── Washes: the ground's colour under everything ──
         add(regionOf(new Set(['snow']), 0, 0), 'cw-g-snow');
         add(regionOf(new Set(['mud']), 2, 14), 'cw-g-mud');
@@ -132,6 +161,19 @@
             for (let t = .15; t < 1; t += .28) teeth += v ? `M${x1 - 5} ${f1(y1 + (y2 - y1) * t)}h10` : `M${f1(x1 + (x2 - x1) * t)} ${y1 - 5}v10`;
         }
         add(gully, 'cw-g-gully'); add(bank, 'cw-g-bank'); add(brook, 'cw-g-brook'); add(reed, 'cw-g-reed');
+        // A trench's parapet along the sides where the dug ground ends: it
+        // shows round a unit standing in it.
+        let parapet = '';
+        each((r, c, k) => {
+            if (!DUG.has(k)) return;
+            const x = c * CELL, y = r * CELL;
+            const open = DIRS.map(([dr, dc]) => !DUG.has(cls(r + dr, c + dc)));
+            if (open[0]) parapet += wiggle(x + 1, y + 2, x + CELL - 1, y + 2, 2, 4);
+            if (open[2]) parapet += wiggle(x + 1, y + CELL - 2, x + CELL - 1, y + CELL - 2, 2, 4);
+            if (open[3]) parapet += wiggle(x + 2, y + 1, x + 2, y + CELL - 1, 2, 4);
+            if (open[1]) parapet += wiggle(x + CELL - 2, y + 1, x + CELL - 2, y + CELL - 1, 2, 4);
+        });
+        add(parapet, 'cw-g-trench');
         add(wire, 'cw-g-wire'); add(trench, 'cw-g-trench'); add(wall, 'cw-g-wall'); add(teeth, 'cw-g-teeth');
 
         // ── Scattered marks: tufts, snowdrifts, ruts, marsh ──
@@ -206,18 +248,24 @@
         add(block, 'cw-g-block'); add(roof, 'cw-g-roof'); add(ridge, 'cw-g-ridge'); add(shed, 'cw-g-roof'); add(stack, 'cw-g-stack'); add(smoke, 'cw-g-smoke');
         add(pier, 'cw-g-pier'); add(keep, 'cw-g-keep');
 
-        // ── Woods: crowns over the wash, the nearer over the further ──
-        const crowns = [];
+        // ── Woods: firs of many sizes, the nearer over the further ──
+        const firs = [];
         each((r, c, k) => {
             if (k !== 'forest') return;
-            for (let i = 0; i < 7; i++) crowns.push([c * CELL + 4 + rnd(r, c, i) * 40, r * CELL + 5 + rnd(r, c, i + 11) * 38, 5 + rnd(r, c, i + 23) * 3.5]);
+            for (let i = 0; i < 9; i++) firs.push([c * CELL + 3 + rnd(r, c, i) * 42, r * CELL + 13 + rnd(r, c, i + 11) * 34, 11 + rnd(r, c, i + 23) * 8]);
         });
-        crowns.sort((a, b) => a[1] - b[1]);
-        add(crowns.map(([x, y, rad]) => `M${f1(x - rad)} ${f1(y + 2)}a${f1(rad)} ${f1(rad)} 0 1 0 ${f1(rad * 2)} 0a${f1(rad)} ${f1(rad)} 0 1 0 ${f1(-rad * 2)} 0`).join(''), 'cw-g-shade');
-        for (const [x, y, rad] of crowns) {
-            g.append(svg('circle', { cx: f1(x), cy: f1(y), r: f1(rad), class: 'cw-g-crown' }));
-            g.append(svg('path', { d: `M${f1(x - rad * .45)} ${f1(y - rad * .2)}a${f1(rad * .5)} ${f1(rad * .5)} 0 0 1 ${f1(rad * .6)} ${f1(-rad * .45)}`, class: 'cw-g-leaf' }));
+        firs.sort((a, b) => a[1] - b[1]);
+        let shade = '', dark = '', lit = '', trunk = '';
+        for (const [x, y, h] of firs) {
+            const w = h * .5;
+            shade += `M${f1(x - w * .9)} ${f1(y + 1)}a${f1(w * .9)} ${f1(w * .35)} 0 1 0 ${f1(w * 1.8)} 0a${f1(w * .9)} ${f1(w * .35)} 0 1 0 ${f1(-w * 1.8)} 0`;
+            trunk += `M${f1(x)} ${f1(y)}v${f1(-h * .25)}`;
+            // Three tiers narrowing to the tip; the left half in the light.
+            const tier = (top, base, half) => `M${f1(x)} ${f1(y - top)}L${f1(x + half)} ${f1(y - base)}H${f1(x - half)}Z`;
+            dark += tier(h, h * .55, w * .55) + tier(h * .78, h * .3, w * .8) + tier(h * .52, h * .08, w);
+            lit += `M${f1(x)} ${f1(y - h)}L${f1(x - w * .55)} ${f1(y - h * .55)}H${f1(x)}ZM${f1(x)} ${f1(y - h * .78)}L${f1(x - w * .8)} ${f1(y - h * .3)}H${f1(x)}ZM${f1(x)} ${f1(y - h * .52)}L${f1(x - w)} ${f1(y - h * .08)}H${f1(x)}Z`;
         }
+        add(shade, 'cw-g-shade'); add(trunk, 'cw-g-trunk'); add(dark, 'cw-g-fir'); add(lit, 'cw-g-fir-lit');
 
         // ── Crossings over the water ──
         let deck = '', plank = '', boat = '';
@@ -243,10 +291,9 @@
         });
         add(boat, 'cw-g-boat'); add(plank, 'cw-g-plank'); add(deck, 'cw-g-deck');
 
-        // ── The grid, faint: the squares are still counted ──
+        // ── The grid: a small cross where four squares meet, no lines ──
         let grid = '';
-        for (let r = 1; r < rows; r++) grid += `M0 ${r * CELL}H${cols * CELL}`;
-        for (let c = 1; c < cols; c++) grid += `M${c * CELL} 0V${rows * CELL}`;
+        for (let r = 1; r < rows; r++) for (let c = 1; c < cols; c++) grid += `M${c * CELL - 3} ${r * CELL}h6M${c * CELL} ${r * CELL - 3}v6`;
         add(grid, 'cw-g-grid');
         return g;
     }

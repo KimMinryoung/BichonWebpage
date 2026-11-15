@@ -16,7 +16,7 @@
 | [war/art.js](../public/js/war/art.js) | 그린 초상·세력 방패 `WarArt.create(scenario)`. 표지 그림 `SIGNS` |
 | [war/scenarios/*.js](../public/js/war/scenarios/) | 시나리오. 브라우저에서는 `window.WarScenarios[id]`에 스스로 등록, Node에서는 `module.exports` |
 | [war/ui/game.js](../public/js/war/ui/game.js) | 화면 전체(상태를 쥔 컨트롤러). `#cwPlay[data-scenario]`가 고른 시나리오를 띄운다 |
-| [war/ui/ground.js](../public/js/war/ui/ground.js) | 전투판의 땅을 칸마다가 아니라 한 장의 지도로 그린다(2026-11-15): 물은 이어진 띠와 강기슭, 숲은 나무 덩어리, 시가는 블록, 고지는 등고선, 참호·성벽·개울·골짜기는 이어진 선, 다리는 강을 가로지르는 상판, 격자는 옅은 점선. `WarGround.paint(rows, cols, at)`. 땅의 `cls`가 고르는 모습은 그대로이고(새 `marsh`: 늪), 칸 자체는 그 위의 투명한 누름 칸이다. 범례 견본 색은 `war.css`의 `.cw-terrain-key .k-*` |
+| [war/ui/ground.js](../public/js/war/ui/ground.js) | 전투판의 땅을 칸마다가 아니라 한 장의 지도로 그린다(2026-11-15): 물은 이어진 띠와 강기슭, 숲은 크기가 다른 전나무 무리, 들판은 제 각도로 누운 밭뙈기(칸과 무관), 시가는 블록, 고지는 등고선, 참호는 이어진 선과 칸 둘레의 톱니 흙벽(부대가 서도 보임), 성벽·개울·골짜기는 이어진 선, 다리는 강을 가로지르는 상판, 격자는 모서리의 작은 십자. `WarGround.paint(rows, cols, at)`. 땅의 `cls`가 고르는 모습은 그대로이고(새 `marsh`: 늪), 칸 자체는 그 위의 투명한 누름 칸이다. 범례 견본 색은 `war.css`의 `.cw-terrain-key .k-*` |
 | [war/ui/dom.js](../public/js/war/ui/dom.js), [glyphs.js](../public/js/war/ui/glyphs.js), [rail.js](../public/js/war/ui/rail.js), [basemap.js](../public/js/war/ui/basemap.js) | 상태 없는 화면 부품: 요소·조사(`josa`), 별·열차·지형·병종 그림, 철도망 경로, 바탕 지도 비트맵 |
 | [war/ui/report.js](../public/js/war/ui/report.js), [routes/war-plays.js](../routes/war-plays.js), [services/war-plays.js](../services/war-plays.js) | 플레이 로그 수집(6절) |
 | [war.css](../public/css/war.css) | 화면. 클래스 접두어는 `cw-` 그대로 |
@@ -153,7 +153,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 전투 판의 보급·증원·거점(2026-11-15, 모두 선택 필드라 옛 저장과 무관):
 - `supply: { player: [[행, 열]…], enemy: [...], weak?, bare?, hurt? }` — 편마다 보급 기지 칸. 부대는 기지까지 길이 이어져야 한다. 적 부대가 선 칸은 막히고, 적 곁인데 제 편이 그 칸에도 곁에도 없는 칸은 들어갈 수는 있어도 지나가지 못한다(기지 칸 자체는 적이 올라서야 막힌다). 강은 막히고 다리(`span`)와 땅의 `supply: true`(나룻길)는 지나간다. 끊긴 부대(`WarBattle.cutOff`)는 공격 × `weak`(0.5), 방어 − `bare`(1), 적 차례 끝마다 병력 − `hurt`(2, 플레이어 부대는 마지막 병력은 남음). 끊긴 채 한 턴을 넘긴 적 부대는 절반 아래로 꺾이면 둘러싼 부대 수와 상관없이 투항한다. 기지가 없는 편은 늘 보급된다. 사건 `cut`·`relieved`·`starve`, 대사 `when: 'cut'`(적 부대가 처음 포위됨).
-- 보급의 화면(2026-11-15, 「보급선이 어디 있느냐」는 사용자 지적): 부대마다 기지까지의 길(`WarBattle.supplyRoad`)을 점선으로 판에 그린다(플레이어 빨강, 적은 적의 색, 겹치는 구간은 한 번). 평소에는 가늘고 옅게, 고른 부대의 길은 굵게, 「보급선」 단추를 켜면 모두 굵게 그리고 그 편의 보급이 닿았지만 더 지나가지 못하는 칸(`supplyShut`)에 ×를 단다(판이 어지럽다는 지적으로 같은 날 줄임). 기지는 판 가장자리의 세모, 끊긴 부대는 발치에 「포위」 띠. 범례와 현황의 「보급」 줄이 같은 말을 쓴다.
+- 보급의 화면(2026-11-15, 「보급선이 어디 있느냐」·「격자 점선과 헷갈린다」·「가장자리 세모가 뭐냐」는 사용자 지적을 거침): 부대마다 기지까지의 길(`WarBattle.supplyRoad`)을 옅은 띠와 그 위를 기지에서 부대 쪽으로 흐르는 짧은 획으로 그린다(플레이어 빨강, 적은 적의 색). 고른 부대의 길과 「보급선」 단추를 켰을 때는 굵게. 기지는 판 가장자리의 「보급」 표. 플레이어 부대가 적의 보급을 막고 있는 칸(`supplyShut`, 적의 보급이 닿는 곳만)에는 붉은 빗금, 단추를 켜면 양편의 막힌 칸 전부. 끊긴 부대는 발치에 「포위」 띠. 격자는 점선이 아니라 네 칸이 만나는 자리의 작은 십자다.
 - `areas: [{ name, tiles: [[행, 열]…], side? }]` — 브리핑이 말하는 땅(돌출부, 그 목, 교두보)을 판 위에 점선 테두리와 이름표로 보인다(`side: 'player'`면 빨강, 기본은 적의 색). 규칙에는 영향이 없다.
 - 부대가 올라선 목표 칸은 칸 이름이 가려지므로, 목표 이름을 그 칸의 가장자리에 빨간 이름표로 단다(아래 칸이 비었으면 발치, 아니면 머리).
 - `prisoners: true` — 투항한 적이 플레이어 편으로 넘어오지 않고 판을 떠난다(사건 `surrender`의 `gone`). 노획(`captured`)은 그대로 센다.

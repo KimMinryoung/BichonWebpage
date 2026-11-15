@@ -636,12 +636,19 @@
 .cw-g-pier { stroke: #2a2a26 !important; stroke-width: 3; stroke-linecap: butt !important; }
 .cw-g-keep { fill: color-mix(in srgb, #b4652a 62%, var(--bg-surface)) !important; stroke: #2a1406 !important; stroke-width: 1.3; fill-rule: evenodd; }
 .cw-g-shade { fill: #000 !important; fill-opacity: .16; }
-.cw-ground .cw-g-crown { fill: color-mix(in srgb, #3d6b34 88%, var(--bg-surface)); stroke: #1c3a17; stroke-width: .8; }
-.cw-g-leaf { stroke: color-mix(in srgb, #9cc08a 80%, var(--bg-surface)) !important; stroke-width: 1.1; }
+.cw-g-fir { fill: color-mix(in srgb, #23471f 90%, var(--bg-surface)) !important; stroke: #142a11 !important; stroke-width: .6; }
+.cw-g-fir-lit { fill: color-mix(in srgb, #4d7f3f 90%, var(--bg-surface)) !important; }
+.cw-g-trunk { stroke: #3a2614 !important; stroke-width: 1.6; }
+.cw-ground .cw-g-field { stroke: none; }
+.cw-ground .cw-g-field.is-a { fill: color-mix(in srgb, #b7a15a 30%, transparent); }
+.cw-ground .cw-g-field.is-b { fill: color-mix(in srgb, #8a9a4a 26%, transparent); }
+.cw-ground .cw-g-field.is-c { fill: color-mix(in srgb, #d8c88a 34%, transparent); }
+.cw-ground .cw-g-field.is-s { fill: color-mix(in srgb, #9fb2c4 22%, transparent); }
+.cw-g-furrow { stroke: color-mix(in srgb, #6b5a2a 45%, transparent) !important; stroke-width: .7; }
 .cw-g-deck { stroke: #2a2a26 !important; stroke-width: 2.2; stroke-linecap: butt !important; }
 .cw-g-plank { stroke: #2a2a26 !important; stroke-opacity: .75; stroke-width: 1.1; }
 .cw-g-boat { fill: color-mix(in srgb, #cbb894 85%, var(--bg-surface)) !important; stroke: #2a2a26 !important; stroke-width: 1; }
-.cw-g-grid { stroke: color-mix(in srgb, var(--text-primary) 22%, transparent) !important; stroke-width: .8; stroke-dasharray: 1.5 4.5; }
+.cw-g-grid { stroke: color-mix(in srgb, var(--text-primary) 38%, transparent) !important; stroke-width: .9; }
 /* Tile drawings (civil-war.js tileMarks). */
 .cw-marks, .cw-track { pointer-events: none; }
 .cw-marks path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
@@ -668,11 +675,21 @@
 .cw-area-name { fill: #fff; font-size: 9.5px; font-weight: 800; }
 .cw-terrain-key i.k-supply { border: 0; height: 0; border-top: 3px dotted var(--cw-red); width: 22px; align-self: center; }
 .cw-terrain-key i.k-shut, .cw-terrain-key i.k-base { display: none; }
-.cw-supply-road { fill: none; stroke-width: 1.6; stroke-dasharray: 1 5; stroke-linecap: round; stroke-opacity: .55; }
-.cw-supply-road.is-bold { stroke-width: 3.2; stroke-dasharray: 2 5; stroke-opacity: 1; }
+.cw-supply-road { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+/* A supply road: a soft ribbon, and on it short strokes that travel from the base to the units. */
+.cw-supply-bed { stroke-width: 5; stroke-opacity: .2; }
+.cw-supply-flow { stroke-width: 2; stroke-dasharray: 5 9; stroke-opacity: .8; animation: cw-supply-flow 1.4s linear infinite; }
+.cw-supply-road.is-bold.cw-supply-bed { stroke-width: 7; stroke-opacity: .38; }
+.cw-supply-road.is-bold.cw-supply-flow { stroke-width: 2.6; stroke-opacity: 1; }
+@keyframes cw-supply-flow { to { stroke-dashoffset: 14; } }
+@media (prefers-reduced-motion: reduce) { .cw-supply-flow { animation: none; } }
+.cw-supply-base rect { stroke: var(--text-primary); stroke-width: 1; }
+.cw-supply-base.is-red rect { fill: var(--cw-red); }
+.cw-supply-base.is-white rect { fill: var(--cw-foe-accent); }
+.cw-supply-base text { fill: #fff; font-size: 9px; font-weight: 800; }
 .cw-supply-road.is-red { stroke: var(--cw-red); }
 .cw-supply-road.is-white { stroke: var(--cw-foe-accent); }
-.cw-supply-shut { fill: none; stroke-width: 2; stroke-linecap: round; }
+.cw-supply-shut { fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-opacity: .38; }
 .cw-supply-shut.is-red { stroke: var(--cw-red); }
 .cw-supply-shut.is-white { stroke: var(--cw-foe-accent); }
 .cw-cut-band { fill: var(--text-primary); stroke: none; }
@@ -1854,6 +1871,8 @@
 .cw-rule-bar.is-cohesion { grid-template-columns: 20fr 20fr 30fr 30fr; }
 .cw-rule-bar.is-peasants { grid-template-columns: 20fr 15fr 5fr 60fr; }
 .cw-rule-bar.is-workers { grid-template-columns: 45fr 55fr; }
+.cw-rule-bar.is-manpower { grid-template-columns: 25fr 15fr 20fr 40fr; }
+.cw-rule-bar.is-industry { grid-template-columns: 50fr 50fr; }
 .cw-rule-bar span { position: relative; display: flex; align-items: center; min-width: 0; padding: 4px 6px 12px; font-size: .78rem; font-weight: 700; line-height: 1.25; background: color-mix(in srgb, var(--text-primary) 18%, transparent); overflow: hidden; }
 .cw-rule-bar span.is-bad { background: var(--cw-red); color: var(--cw-paper-ink); }
 .cw-rule-bar span.is-warn { background: color-mix(in srgb, var(--cw-red) 45%, transparent); }
@@ -1966,7 +1985,9 @@
 .cw-battle-pick > .games-note { margin: 0 0 14px; }
 .cw-battle-pick-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
 .cw-battle-pick-card { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 14px; align-items: start; padding: 10px; height: 100%; color: inherit; text-decoration: none; border-radius: 0; }
-.cw-battle-pick-card:hover { border-color: var(--cw-red); }
+.cw-battle-pick-card { background: var(--btn-bg); }
+.cw-battle-pick-card:hover, .cw-battle-pick-card:focus-visible { background: var(--btn-hover); border-color: var(--text-primary); text-decoration: none; }
+.cw-battle-pick-card:hover *, .cw-battle-pick-card:focus-visible * { text-decoration: none; }
 .cw-battle-pick-card img { display: block; width: 112px; height: 84px; object-fit: cover; }
 .cw-battle-pick-text { display: grid; gap: 3px; }
 .cw-battle-pick-text small { color: var(--text-secondary); font-size: .78rem; }

@@ -186,7 +186,9 @@
     // The tiles each side can trace supply to: a flood from its sources
     // over open ground. Ground is open to a side where no enemy unit
     // stands, and, to pass on through it, where no enemy unit stands
-    // beside it unless a friend holds it or stands beside it as well. A river is closed unless bridged
+    // beside it unless a friend holds it or stands beside it too: a unit
+    // shuts its own tile and the four beside it, but not those the other
+    // side's units stand beside as well. A river is closed unless bridged
     // (span) or a crossing (terrain supply: true, a ferry). Kept until
     // the board changes.
     function supplyMap(b) {
@@ -215,8 +217,9 @@
                 const [r, c] = queue.shift();
                 const here = at.get(key(r, c));
                 // Supply does not pass on through ground the enemy stands
-                // beside unless a friend stands on it or beside it too; a
-                // source itself gives out until the enemy stands on it.
+                // beside unless a friend stands on it or beside it too (ground
+                // both sides reach is open); a source itself gives out until
+                // the enemy stands on it.
                 if (!(here && here.side === side) && !base.has(key(r, c)) && beside(r, c, false) && !beside(r, c, true)) continue;
                 for (const [dr, dc] of DIRS) {
                     const rr = r + dr, cc = c + dc, k = key(rr, cc);
@@ -251,8 +254,8 @@
         for (let k = key(u.r, u.c), n = 0; back.has(k) && n < 400; n++) { k = back.get(k); out.push([Math.floor(k / 100), k % 100]); }
         return out;
     }
-    // Whether supply of a side passes on through an empty tile: not where
-    // the other side stands beside it with none of its own beside it too.
+    // Whether an empty tile is shut to a side's supply: the other side
+    // stands beside it and none of its own does.
     function supplyShut(b, side, r, c) {
         if (unitAt(b, r, c)) return false;
         const near = mine => DIRS.some(([dr, dc]) => { const o = unitAt(b, r + dr, c + dc); return o && (o.side === side) === mine; });

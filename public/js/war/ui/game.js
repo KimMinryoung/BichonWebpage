@@ -2781,15 +2781,15 @@
             const has = new Set(area.tiles.map(t => t.join()));
             let d = '';
             for (const [r, c] of area.tiles) {
-                const x = c * CELL, y = r * CELL;
-                if (!has.has([r - 1, c].join())) d += `M${x} ${y}h${CELL}`;
-                if (!has.has([r + 1, c].join())) d += `M${x} ${y + CELL}h${CELL}`;
-                if (!has.has([r, c - 1].join())) d += `M${x} ${y}v${CELL}`;
-                if (!has.has([r, c + 1].join())) d += `M${x + CELL} ${y}v${CELL}`;
+                const x = c * CELL, y = r * CELL, o = 4;
+                if (!has.has([r - 1, c].join())) d += `M${x - o} ${y - o}h${CELL + 2 * o}`;
+                if (!has.has([r + 1, c].join())) d += `M${x - o} ${y + CELL + o}h${CELL + 2 * o}`;
+                if (!has.has([r, c - 1].join())) d += `M${x - o} ${y - o}v${CELL + 2 * o}`;
+                if (!has.has([r, c + 1].join())) d += `M${x + CELL + o} ${y - o}v${CELL + 2 * o}`;
             }
             const top = Math.min(...area.tiles.map(t => t[0]));
             const row = area.tiles.filter(t => t[0] === top).map(t => t[1]);
-            const cx = (Math.min(...row) + Math.max(...row) + 1) / 2 * CELL, cy = top * CELL;
+            const cx = (Math.min(...row) + Math.max(...row) + 1) / 2 * CELL, cy = top * CELL - 4;
             const w = area.name.length * 9.5 + 10;
             const one = svg('g', { class: 'cw-area is-' + (area.side === 'player' ? 'red' : 'white') });
             one.append(svg('path', { d, class: 'cw-area-line' }), svg('rect', { x: cx - w / 2, y: cy - 7, width: w, height: 13, class: 'cw-area-tag' }), svg('text', { x: cx, y: cy + 3.5, 'text-anchor': 'middle', class: 'cw-area-name' }, area.name));
@@ -2807,47 +2807,58 @@
         const rows = b.def.map.length, cols = b.def.map[0].length;
         // The roads themselves: every unit's way back to its source, the
         // shared stretches drawn once, the enemy's under the player's.
+        // Each road as a soft ribbon with short strokes travelling along it
+        // from the base to the unit (the path runs unit → base, the strokes
+        // the other way).
+        const ribbon = (d, cls, bold) => {
+            g.append(svg('path', { d, class: `cw-supply-road cw-supply-bed ${cls}${bold ? ' is-bold' : ''}` }), svg('path', { d, class: `cw-supply-road cw-supply-flow ${cls}${bold ? ' is-bold' : ''}` }));
+        };
         for (const [is, cls] of [[B.isEnemy, 'is-white'], [B.isPlayer, 'is-red']]) {
             const seen = new Set();
             let d = '';
             for (const u of b.units.filter(x => x.hp > 0 && is(b, x))) {
                 const road = B.supplyRoad(b, u);
+                let open = false;
                 for (let i = 0; road && i + 1 < road.length; i++) {
                     const k = road[i].join() + '>' + road[i + 1].join();
                     if (seen.has(k)) break;
                     seen.add(k);
                     const [x1, y1] = center(...road[i]), [x2, y2] = center(...road[i + 1]);
-                    d += `M${x1} ${y1}L${x2} ${y2}`;
+                    d += open ? `L${x2} ${y2}` : `M${x1} ${y1}L${x2} ${y2}`;
+                    open = true;
                 }
             }
-            if (d) g.append(svg('path', { d, class: 'cw-supply-road ' + cls + (supplyShown ? ' is-bold' : '') }));
+            if (d) ribbon(d, cls, supplyShown);
         }
         const own = picked && B.supplyRoad(b, picked);
-        if (own && own.length > 1) g.append(svg('path', { d: 'M' + own.map(t => center(...t).join(' ')).join('L'), class: 'cw-supply-road is-bold ' + (B.isPlayer(b, picked) ? 'is-red' : 'is-white') }));
-        // Ground a side's supply cannot pass on through: the enemy's shut
-        // by the player in red, the player's shut by the enemy in the enemy's colour.
-        for (let r = 0; supplyShown && r < rows; r++) {
+        if (own && own.length > 1) ribbon('M' + own.map(t => center(...t).join(' ')).join('L'), B.isPlayer(b, picked) ? 'is-red' : 'is-white', true);
+        // Ground shut to supply: a unit shuts its own tile and the four
+        // beside it. What the player's units shut to the enemy shows always
+        // (the wall being built), what the enemy shuts while 「보급선」 is on.
+        for (let r = 0; r < rows; r++) {
             for (let c = 0; c < cols; c++) {
                 if (B.terrain(b, r, c).cost >= 99) continue;
                 for (const [side, cls] of [[b.sides.enemy, 'is-red'], [b.sides.player, 'is-white']]) {
-                    // Only where that side's supply comes up against it (the
-                    // tile is reached, and goes no further): the ring's edge.
+                    if (cls === 'is-white' && !supplyShown) continue;
+                    if (!sup[side === b.sides.player ? 'player' : 'enemy'] || !B.supplyShut(b, side, r, c)) continue;
+                    // Unless 「보급선」 is on, only where that side's supply comes up against it.
                     const reach = B.supplyMap(b)[side];
-                    if (!reach || !reach.has(r * 100 + c) || !B.supplyShut(b, side, r, c)) continue;
+                    if (!supplyShown && !(reach && reach.has(r * 100 + c))) continue;
                     const x = c * CELL, y = r * CELL;
-                    g.append(svg('path', { d: `M${x + 5} ${y + 5}l8 8M${x + 13} ${y + 5}l-8 8`, class: 'cw-supply-shut ' + cls }));
+                    g.append(svg('path', { d: `M${x + 4} ${y + 16}L${x + 16} ${y + 4}M${x + 4} ${y + 30}L${x + 30} ${y + 4}M${x + 4} ${y + 44}L${x + 44} ${y + 4}M${x + 18} ${y + 44}L${x + 44} ${y + 18}M${x + 32} ${y + 44}L${x + 44} ${y + 32}`, class: 'cw-supply-shut ' + cls }));
                 }
             }
         }
-        // The sources: an arrowhead on the board's edge pointing in, named.
+        // The bases: a tag 「보급」 in the side's colour on the board's edge.
         for (const [side, cls] of [['player', 'is-red'], ['enemy', 'is-white']]) {
             for (const [r, c] of sup[side] || []) {
                 const [cx, cy] = center(r, c);
                 const edge = [[c, -1, 0], [cols - 1 - c, 1, 0], [r, 0, -1], [rows - 1 - r, 0, 1]].sort((a, z) => a[0] - z[0])[0];
                 const [, dx, dy] = edge;
-                const ex = cx + dx * (CELL / 2 - 2), ey = cy + dy * (CELL / 2 - 2);
-                const px = -dy, py = dx;
-                g.append(svg('path', { d: `M${ex - dx * 13} ${ey - dy * 13}L${ex + px * 9} ${ey + py * 9}L${ex - px * 9} ${ey - py * 9}Z`, class: 'cw-supply-mark ' + cls }));
+                const tx = cx + dx * (CELL / 2 - 14), ty = cy + dy * (CELL / 2 - 8);
+                const tag = svg('g', { class: 'cw-supply-base ' + cls });
+                tag.append(svg('rect', { x: tx - 13, y: ty - 6.5, width: 26, height: 13 }), svg('text', { x: tx, y: ty + 3.5, 'text-anchor': 'middle' }, '보급'));
+                g.append(tag);
             }
         }
         return g;
@@ -2973,7 +2984,6 @@
             counterBar.rect.setAttribute('width', counterBar.w * lost / counterBar.max);
             hpText(counterBar.text, counterBar.hp, lost, 'is-counter');
         };
-        board.append(areaMarks(b));
         board.append(supplyMarks(b, unit || foe || null));
         // The verdict in: a won battle's Red units leap, one after another.
         const verdict = verdictBanner(b);
@@ -3088,6 +3098,7 @@
             }
         }
         board.append(postMark(b));
+        board.append(areaMarks(b));
         board.append(eventArrows(b));
         if (verdict && b.result === 'won') board.append(victoryBursts(b));
         const moment = momentBanner(b);
@@ -3145,7 +3156,7 @@
             el('header', { class: 'cw-battle-head', 'data-pane': 'status' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             battleBrief(b),
             el('div', { class: 'cw-battle-layout' },
-                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], B.postsOf(def).length ? ['post', `${B.postsOf(def).map(x => x.name).join('·')}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, def.supply ? ['supply', `보급선 (붉은 점선 ${U.player}, 회색 점선 ${foeName()}, 세모가 보급 기지 · 「보급선」 단추로 굵게, 막힌 칸은 ×)`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
+                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], B.postsOf(def).length ? ['post', `${B.postsOf(def).map(x => x.name).join('·')}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, def.supply ? ['supply', `보급선 (붉은 띠 ${U.player}, 회색 띠 ${foeName()}, 「보급」 표가 보급 기지 · 붉은 빗금은 내 부대가 막은 칸)`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('dl', { class: 'cw-battle-status', 'data-pane': 'status' }, ...status.map(x => el('div', { class: x.tone || null }, el('dt', {}, x.label), el('dd', {}, x.text)))),

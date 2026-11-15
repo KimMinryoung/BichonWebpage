@@ -98,10 +98,10 @@
             <div class="cw-rule-bar is-cohesion"><% sc.command.tiers.slice().reverse().forEach(([v, n]) => { %><span>지휘력 <%= n %><small><%= v %>–</small></span><% }) %></div>
             <small>30 아래면 최고사령관이 장군들을 믿지 않아 스타프카 대표 −1. 전선이 역사보다 밀린 시기에는 −3.</small></div>
           <div class="cw-rule-gauge"><p><b>인력</b> 동원되는 군 수</p>
-            <div class="cw-rule-bar is-peasants"><span class="is-bad">지휘 체계 −3씩<small>0–</small></span><span class="is-warn">동원이 준다<small>25–</small></span><span>종전 때 40 이상이면 ★<small>40–</small></span><span>동원이 는다<small>60–</small></span></div>
-            <small>전쟁은 시기마다 인력 3을 삼킨다. 인력 10마다 군 하나가 늘거나 준다(60이 기준). 무모한 공세를 피하고 제때 물리면 아낀다.</small></div>
+            <div class="cw-rule-bar is-manpower"><span class="is-bad">지휘 체계 −3씩<small>0–</small></span><span class="is-warn">동원이 준다<small>25–</small></span><span>★<small>40–</small></span><span>동원이 는다<small>60–</small></span></div>
+            <small>종전 때 인력이 40 이상이면 별(★) 하나. 전쟁은 시기마다 인력 3을 삼킨다. 인력 10마다 군 하나가 늘거나 준다(60이 기준). 무모한 공세를 피하고 제때 물리면 아낀다.</small></div>
           <div class="cw-rule-gauge"><p><b>생산</b> 보급</p>
-            <div class="cw-rule-bar is-workers"><span class="is-bad">A 집단군의 힘 +2<small>0–</small></span><span>보급이 는다<small>50–</small></span></div>
+            <div class="cw-rule-bar is-industry"><span class="is-bad">A 집단군의 힘 +2<small>0–</small></span><span>보급이 는다<small>50–</small></span></div>
             <small>보급 수입은 6에 생산 10마다 1. 첫 두 시기는 공업 지대를 잃어 −6씩. 공장을 동쪽으로 옮겼다면 1942년부터 되살아난다.</small></div>
         </div>
       </section>
@@ -126,7 +126,7 @@
         <ol class="cw-rule-battles"><% Object.values(sc.battles).forEach(b => { %><li><strong><%= b.title %></strong><span><%= b.date %></span></li><% }) %></ol>
         <ul class="cw-rule-list">
           <li>부대를 누르면 갈 칸과 칠 적이 밝아진다. 한 턴에 한 번 움직이고 한 번 친다. 치기 전이면 이동을 되돌릴 수 있다.</li>
-          <li><b>보급선과 포위.</b> 부대는 제 편의 보급 기지까지, 적이 서 있지도 곁에 있지도 않은 칸으로 이어져야 한다. 끊긴 부대는 공격이 절반, 방어가 1 줄고 턴마다 병력 2를 잃는다. 포위된 채 한 턴을 넘기고 절반 아래로 꺾인 적은 항복한다.</li>
+          <li><b>보급선과 포위.</b> 판 위의 띠가 보급선이고, 판 가장자리의 「보급」 표까지 이어져야 한다. 부대는 제가 선 칸과 바로 옆 네 칸으로 적의 보급을 막는다(적 부대도 닿는 옆 칸은 빼고, 막은 칸은 붉은 빗금). 띠가 끊긴 부대는 공격이 절반, 방어가 1 줄고 턴마다 병력 2를 잃는다. 포위된 채 한 턴을 넘기고 절반 아래로 꺾인 적은 항복한다.</li>
           <li><b>병종.</b> 전차는 적 곁을 멈추지 않고 지나가고 보병에게 강하다. 대전차포는 전차에 강하다. 포병은 반격을 받지 않고 진지의 방어를 깎는다.</li>
           <li>여럿이 둘러싸고 치면 더 아프다. ★ 결정적 한 수는 전투마다 한 번. 키보드는 Tab으로 옮기고 Enter로 고른다.</li>
           <% if (sc.ui.merits) { %><li>전공 별 셋: 승리, 정한 턴 안의 승리, <%= sc.ui.merits.whole %>. 현황 줄이 아직 얻을 수 있는 별을 보여 준다.</li><% } %>
