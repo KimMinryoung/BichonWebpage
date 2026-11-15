@@ -615,9 +615,7 @@
 .cw-g-deep { fill: color-mix(in srgb, #1f4f8a 70%, var(--bg-surface)) !important; }
 .cw-g-ford { fill: color-mix(in srgb, #a9c9e0 80%, var(--bg-surface)) !important; }
 .cw-g-ice { fill: color-mix(in srgb, #d5e4ee 88%, var(--bg-surface)) !important; stroke: color-mix(in srgb, #7fa0b8 70%, var(--bg-surface)) !important; stroke-width: 1.2; }
-.cw-g-wave { stroke: #fff !important; stroke-opacity: .55; stroke-width: 1.2; }
 .cw-g-crack { stroke: color-mix(in srgb, #5f7f98 80%, var(--bg-surface)) !important; stroke-width: 1; }
-.cw-g-shoal { stroke: #fff !important; stroke-opacity: .7; stroke-width: 1.2; }
 .cw-g-contour { stroke: color-mix(in srgb, #4a3214 70%, transparent) !important; stroke-width: 1.1; }
 .cw-g-contour.is-top { fill: color-mix(in srgb, #8a6a3c 36%, transparent) !important; }
 .cw-g-gully { stroke: color-mix(in srgb, #4a3418 80%, var(--bg-surface)) !important; stroke-width: 3; }
@@ -638,8 +636,6 @@
 .cw-g-wire { stroke: #1e160a !important; stroke-opacity: .7; stroke-width: .9; }
 .cw-g-wall { stroke: color-mix(in srgb, #8a4a1e 85%, var(--bg-surface)) !important; stroke-width: 9; stroke-linecap: butt !important; }
 .cw-g-teeth { stroke: #2a1406 !important; stroke-opacity: .7; stroke-width: 1.4; }
-.cw-g-tuft { stroke: #23401a !important; stroke-opacity: .5; stroke-width: 1; }
-.cw-g-drift { stroke: #8a97a6 !important; stroke-opacity: .7; stroke-width: 1.3; }
 .cw-g-rut { stroke: #2e2210 !important; stroke-opacity: .55; stroke-width: 1.8; }
 .cw-g-bog { stroke: color-mix(in srgb, #3a78b0 70%, var(--bg-surface)) !important; stroke-width: 1.5; }
 .cw-g-block { stroke: color-mix(in srgb, #2a1c10 80%, transparent) !important; stroke-width: .8; fill-rule: evenodd; }

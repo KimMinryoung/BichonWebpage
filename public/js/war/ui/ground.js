@@ -79,7 +79,7 @@
         add(region((r, c) => cls(r, c) === 'deep', wet, 7, 16), 'cw-g-deep');
         add(region((r, c) => cls(r, c) === 'ford', wet, 7, 16), 'cw-g-ford');
         add(region((r, c) => cls(r, c) === 'ice', wet, 7, 16), 'cw-g-ice');
-        let waves = '', cracks = '', shoal = '', bar = '';
+        let cracks = '', bar = '';
         each((r, c, k) => {
             if (!WET.has(k)) return;
             const x = c * CELL, y = r * CELL;
@@ -90,15 +90,10 @@
                     const bx = x + 6 + rnd(r, c, i) * 24, by = y + 9 + i * 20 + rnd(r, c, i + 3) * 8, bw = 10 + rnd(r, c, i + 6) * 12;
                     bar += `M${f1(bx)} ${f1(by)}q${f1(bw / 2)} -4 ${f1(bw)} 0q${f1(-bw / 2)} 3.5 ${f1(-bw)} 0z`;
                 }
-                for (let i = 0; i < 4; i++) shoal += `M${f1(x + 5 + rnd(r, c, i + 9) * 30)} ${f1(y + 7 + i * 10 + rnd(r, c, i + 13) * 4)}h${f1(5 + rnd(r, c, i + 17) * 5)}`;
                 return;
             }
-            for (let i = 0; i < 2; i++) {
-                const wx = x + 10 + rnd(r, c, i) * 18, wy = y + 14 + i * 16 + rnd(r, c, i + 5) * 6;
-                waves += `M${f1(wx)} ${f1(wy)}q3 -2.5 6 0t6 0`;
-            }
         });
-        add(bar, 'cw-g-bar'); add(waves, 'cw-g-wave'); add(cracks, 'cw-g-crack'); add(shoal, 'cw-g-shoal');
+        add(bar, 'cw-g-bar'); add(cracks, 'cw-g-crack');
 
         // ── Heights: contours following the hill's edge ──
         const hill = new Set(['heights']);
@@ -180,19 +175,11 @@
         add(parapet, 'cw-g-parapet');
         add(wire, 'cw-g-wire'); add(knot, 'cw-g-knot'); add(trench, 'cw-g-ditch'); add(trench, 'cw-g-trench'); add(wall, 'cw-g-wall'); add(teeth, 'cw-g-teeth');
 
-        // ── Scattered marks: tufts, snowdrifts, ruts, marsh ──
-        let tuft = '', drift = '', rut = '', bog = '', bogTuft = '';
+        // ── Scattered marks: ruts, marsh (open ground and snow carry only their texture) ──
+        let rut = '', bog = '', bogTuft = '';
         each((r, c, k) => {
             const x = c * CELL, y = r * CELL;
-            if (k === 'steppe') {
-                for (let i = 0; i < 2; i++) {
-                    if (rnd(r, c, i) > .55) continue;
-                    const tx = x + 8 + rnd(r, c, i + 2) * 32, ty = y + 12 + rnd(r, c, i + 6) * 30;
-                    tuft += `M${f1(tx - 2.5)} ${f1(ty)}l1.2 -3.5M${f1(tx)} ${f1(ty)}v-4.5M${f1(tx + 2.5)} ${f1(ty)}l-1.2 -3.5`;
-                }
-            } else if (k === 'snow') {
-                if (rnd(r, c, 1) < .6) { const dx = x + 6 + rnd(r, c, 2) * 20, dy = y + 16 + rnd(r, c, 3) * 22; drift += `M${f1(dx)} ${f1(dy)}q5 -4 10 0t10 0`; }
-            } else if (k === 'mud') {
+            if (k === 'mud') {
                 const o = rnd(r, c, 1) * 6;
                 rut += `M${x} ${f1(y + 18 + o)}q12 5 24 0t24 0M${x} ${f1(y + 28 + o)}q12 5 24 0t24 0`;
             } else if (k === 'marsh') {
@@ -203,7 +190,7 @@
                 }
             }
         });
-        add(tuft, 'cw-g-tuft'); add(drift, 'cw-g-drift'); add(rut, 'cw-g-rut'); add(bog, 'cw-g-bog'); add(bogTuft, 'cw-g-reed');
+        add(rut, 'cw-g-rut'); add(bog, 'cw-g-bog'); add(bogTuft, 'cw-g-reed');
 
         // ── Built-up ground: roofs in blocks ──
         let roof = '', roofDark = '', lane = '', ridge = '', shed = '', stack = '', smoke = '', pier = '', keep = '';
