@@ -141,7 +141,9 @@
     // A unit's picture in a 22×13 box at (x, y), its headgear rising a
     // little above: a soldier with his rifle, a rider, Makhno's machine-gun
     // cart, a gun, an anti-tank gun behind its shield, a tank, a boat or the
-    // armoured train. side ('red' or 'white') chooses the headgear a unit
+    // armoured train; a unit's pic names a picture of its own (rocket: a
+    // rocket launcher's lorry, hq: a commander under the staff's flag).
+    // side ('red' or 'white') chooses the headgear a unit
     // without a look wears, from caps (the scenario's ui.caps) if given.
     function unitPicture(u, x, y, side, caps) {
         const g = svg('g', { class: 'cw-pic', 'aria-hidden': 'true' });
@@ -150,7 +152,19 @@
             return g;
         }
         const add = (d, k) => g.append(svg('path', { d, class: k }));
-        if (u.naval) {
+        if (u.pic === 'rocket') {
+            // A rocket launcher: the lorry, its rails slanted up over the cab.
+            add(`M${x + 1.5} ${y + 8.6}h18.4v2.2h-18.4zM${x + 14.4} ${y + 8.6}v-3.6h3.4l2.1 1.9v1.7z`, 'cw-pic-fill');
+            add(`M${x + 1.6} ${y + 7.4}l13.6 -6.6M${x + 1.6} ${y + 5}l11 -5.3`, 'cw-pic-line');
+            for (const cx of [4.6, 9, 17]) g.append(svg('circle', { cx: x + cx, cy: y + 11.6, r: 1.5, class: 'cw-pic-wheel' }));
+        } else if (u.pic === 'hq') {
+            // A headquarters: its commander under the staff's flag.
+            add(`M${x + 16} ${y + 13}v-13.6`, 'cw-pic-line');
+            add(`M${x + 16} ${y - .6}h6l-1.7 2.3 1.7 2.3h-6z`, 'cw-pic-fill');
+            add(`M${x + 1.2} ${y + 13}q.4 -4.4 5.6 -4.8q5.2 .4 5.6 4.8z`, 'cw-pic-fill');
+            g.append(svg('circle', { cx: x + 6.8, cy: y + 5, r: 2.8, class: 'cw-pic-fill' }));
+            g.append(cap(capOf(u, side, caps), x + 6.8, y + 5, 1));
+        } else if (u.naval) {
             add(`M${x + 1} ${y + 8}h20l-3 5h-14z`, 'cw-pic-fill');
             add(`M${x + 10} ${y + 8}v-8M${x + 10} ${y + 1}l6 4h-6M${x + 4} ${y + 6}h4`, 'cw-pic-line');
         } else if (u.look === 'tachanka') {

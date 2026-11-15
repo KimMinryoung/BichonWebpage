@@ -149,7 +149,7 @@
                 return {
                     id: u.id, tag: u.tag || u.name, side: u.side, name: u.name, sub: u.sub || '', kind: u.kind,
                     role: u.role || null, line: u.line || null, wake: u.wake || 0,
-                    person: u.person || null, look: u.look || null, r: u.at[0], c: u.at[1], hp, maxHp: u.hp,
+                    person: u.person || null, look: u.look || null, pic: u.pic || null, r: u.at[0], c: u.at[1], hp, maxHp: u.hp,
                     atk: u.atk, def: u.def + (lead ? 1 : 0), mv: express && u.railMv ? u.railMv : u.mv, range: u.range || 1, commissar: Boolean(lead), naval: Boolean(u.naval), rail: Boolean(u.rail), flank: u.flank || 0,
                     counter: u.counter === undefined ? kind.counter : u.counter, wears: u.wears === undefined ? kind.wears : u.wears,
                     vs: Object.assign({}, kind.vs, u.vs), breaks: u.breaks === undefined ? kind.breaks : u.breaks,

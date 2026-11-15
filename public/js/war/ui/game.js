@@ -3203,25 +3203,27 @@
             g.append(svg('rect', { x: x + 4, y: y + 4, width: CELL - 8, height: CELL - 8 }));
             // A long name is squeezed to the counter's width.
             g.append(svg('text', Object.assign({ x: x + CELL / 2, y: y + 14.5, 'text-anchor': 'middle', class: 'cw-unit-tag' }, u.tag.length > 4 ? { textLength: CELL - 12, lengthAdjust: 'spacingAndGlyphs' } : {}), u.tag));
-            g.append(unitPicture(u, x + 6, y + 19, B.isPlayer(b, u) && !u.yielded ? 'red' : 'white', U.caps));
+            g.append(unitPicture(u, x + 6, y + 17.5, B.isPlayer(b, u) && !u.yielded ? 'red' : 'white', U.caps));
             // Its strength, and beside it what a foretold blow would take.
-            const hpEl = svg('text', { x: x + 38, y: y + 30, 'text-anchor': 'middle', class: 'cw-unit-hp', 'data-cx': x + 38, 'data-rx': x + CELL - 4 });
+            const hpEl = svg('text', { x: x + 37, y: y + 29, 'text-anchor': 'middle', class: 'cw-unit-hp', 'data-cx': x + 37, 'data-rx': x + CELL - 4 });
             hpText(hpEl, u.hp, p ? Math.min(u.hp, p.dmg) : 0, 'is-loss');
             g.append(hpEl);
-            // Ground that shields or exposes the unit, as a chip before its
-            // strength bar (the Wall's +3 drops to +1 once it is turned).
-            const ground = B.defenseOf(b, u) - u.def;
-            const barX = x + (ground ? 22 : 7), barW = x + CELL - 7 - barX;
-            if (ground) {
-                g.append(svg('rect', { x: x + 6, y: y + 32, width: 14, height: 11, class: 'cw-ground ' + (ground > 0 ? 'is-cover' : 'is-exposed') }));
-                g.append(svg('text', { x: x + 13, y: y + 41, 'text-anchor': 'middle', class: 'cw-ground-text' }, (ground > 0 ? '+' : '−') + Math.abs(ground)));
-            }
-            g.append(svg('rect', { x: barX, y: y + 35, width: barW, height: 5, class: 'cw-hp-track' }));
+            // Its attack (a spearhead) and its defence where it stands (a
+            // shield; the number takes the cover's colour on ground that
+            // shields it, the alarm's where it is exposed), then its
+            // strength as a bar along the counter's foot.
+            const guard = B.defenseOf(b, u), ground = guard - u.def;
+            g.append(svg('path', { d: `M${x + 6.5} ${y + 39.5}l3 -7 3 7z`, class: 'cw-stat-mark' }));
+            g.append(svg('text', { x: x + 14, y: y + 39.5, class: 'cw-stat' }, String(u.atk)));
+            g.append(svg('path', { d: `M${x + 24.5} ${y + 32.5}h6.4v3.2q0 2.8 -3.2 3.8q-3.2 -1 -3.2 -3.8z`, class: 'cw-stat-mark' }));
+            g.append(svg('text', { x: x + 32.4, y: y + 39.5, class: 'cw-stat' + (ground > 0 ? ' is-cover' : ground < 0 ? ' is-exposed' : '') }, String(guard)));
+            const barX = x + 6, barW = CELL - 12, barY = y + 41, barH = 3;
+            g.append(svg('rect', { x: barX, y: barY, width: barW, height: barH, class: 'cw-hp-track' }));
             const lost = p ? Math.min(u.hp, p.dmg) : 0;
-            g.append(svg('rect', { x: barX, y: y + 35, width: barW * (u.hp - lost) / u.maxHp, height: 5, class: 'cw-hp' }));
-            if (lost) g.append(svg('rect', { x: barX + barW * (u.hp - lost) / u.maxHp, y: y + 35, width: barW * lost / u.maxHp, height: 5, class: 'cw-hp-loss' }));
+            g.append(svg('rect', { x: barX, y: barY, width: barW * (u.hp - lost) / u.maxHp, height: barH, class: 'cw-hp' }));
+            if (lost) g.append(svg('rect', { x: barX + barW * (u.hp - lost) / u.maxHp, y: barY, width: barW * lost / u.maxHp, height: barH, class: 'cw-hp-loss' }));
             if (unit && u.id === unit.id && targets.length) {
-                const rect = svg('rect', { x: barX + barW * u.hp / u.maxHp, y: y + 35, width: 0, height: 5, class: 'cw-hp-loss is-counter' });
+                const rect = svg('rect', { x: barX + barW * u.hp / u.maxHp, y: barY, width: 0, height: barH, class: 'cw-hp-loss is-counter' });
                 g.append(rect);
                 counterBar = { rect, x: barX, w: barW, hp: u.hp, max: u.maxHp, text: hpEl };
             }
@@ -3230,8 +3232,8 @@
             // A feat still to use: a gold star on the corner, bright when it can be used now.
             // Cut off from supply: a tag across the counter's foot.
             if (B.cutOff(b, u)) {
-                g.append(svg('rect', { x: x + 4, y: y + CELL - 15, width: CELL - 8, height: 11, class: 'cw-cut-band' }));
-                g.append(svg('text', { x: x + CELL / 2, y: y + CELL - 6.5, 'text-anchor': 'middle', class: 'cw-cut-text' }, `포위 −${B.cutRule(b).hurt}`));
+                g.append(svg('rect', { x: x + 4, y: y + CELL - 16.5, width: CELL - 8, height: 9.5, class: 'cw-cut-band' }));
+                g.append(svg('text', { x: x + CELL / 2, y: y + CELL - 9, 'text-anchor': 'middle', class: 'cw-cut-text' }, `포위 −${B.cutRule(b).hurt}`));
             }
             if (B.isEnemy(b, u)) g.append(svg('rect', { x: x + 1.5, y: y + 1.5, width: CELL - 3, height: CELL - 3, class: 'cw-doom-ring' }));
             unitEls.set(u.id, g);
@@ -3416,7 +3418,7 @@
             battleBrief(b),
             ...(lesson ? [lesson] : []),
             el('div', { class: 'cw-battle-layout' },
-                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : fieldBar(b, posts, empty), battleEnded ? null : skyBar(b), battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)};--cw-cols:${cols}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸 (숫자: 이동력)'], ['halt', `${foeName()} 곁: 이동 끝`], B.postsOf(def).length ? ['post', `${B.postsOf(def).map(x => x.name).join('·')}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, def.supply ? ['supply', `보급선 (붉은 띠 ${U.player}, 회색 띠 ${foeName()}, 「보급」 표가 보급 기지 · 붉은 빗금은 내 부대가 막은 칸)`] : null, def.supply && def.supply.enemy ? ['pocket', '「포위 n」: 그 칸에 서면 끊기는 적 부대 수 · 붉은 테두리: 포위된 적'] : null, B.raidsOf(def).some(r => r.against !== 'enemy') ? ['raid', `✈ −n: 이번 턴 끝에 ${foeName()} 공습을 맞을 부대`] : null, Object.keys(def.lines).length ? ['flank', '점선 칸: 부대가 서면 그 방어선의 방어가 +1로 준다'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
+                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : fieldBar(b, posts, empty), battleEnded ? null : skyBar(b), battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)};--cw-cols:${cols}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['counter', '말: ▲ 공격 · 방패 방어(땅 포함) · 큰 숫자 병력'], ['move', '갈 수 있는 칸 (숫자: 이동력)'], ['halt', `${foeName()} 곁: 이동 끝`], B.postsOf(def).length ? ['post', `${B.postsOf(def).map(x => x.name).join('·')}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, def.supply ? ['supply', `보급선 (붉은 띠 ${U.player}, 회색 띠 ${foeName()}, 「보급」 표가 보급 기지 · 붉은 빗금은 내 부대가 막은 칸)`] : null, def.supply && def.supply.enemy ? ['pocket', '「포위 n」: 그 칸에 서면 끊기는 적 부대 수 · 붉은 테두리: 포위된 적'] : null, B.raidsOf(def).some(r => r.against !== 'enemy') ? ['raid', `✈ −n: 이번 턴 끝에 ${foeName()} 공습을 맞을 부대`] : null, Object.keys(def.lines).length ? ['flank', '점선 칸: 부대가 서면 그 방어선의 방어가 +1로 준다'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('dl', { class: 'cw-battle-status', 'data-pane': 'status' }, ...status.map(x => el('div', { class: x.tone || null }, el('dt', {}, x.label), el('dd', {}, x.text)))),
@@ -3569,8 +3571,8 @@
             : featArmed === u.id ? '판에서 칠 적을 고른다' : null;
         return el('div', { class: 'cw-act-unit' },
             el('p', {}, el('strong', {}, u.name),
-                el('span', { class: 'cw-info-bar is-' + sideOf(b, u), style: `--hp:${(100 * u.hp / u.maxHp).toFixed(0)}%`, 'aria-hidden': 'true' }),
-                el('span', {}, `병력 ${u.hp}/${u.maxHp} · 공격 ${u.atk} · 방어 ${B.defenseOf(b, u)} · 이동 ${u.mv}`),
+                // The counter carries its attack and defence; the strip adds what it cannot.
+                el('span', {}, `병력 ${u.hp}/${u.maxHp} · 이동 ${u.mv}${u.range > 1 ? ` · 사거리 ${B.rangeNow ? B.rangeNow(b, u) : u.range}` : ''}`),
                 foeUnit ? null : featPill(b, u, 'feat-bar')),
             state ? el('p', { class: 'cw-act-state' }, state) : null);
     }

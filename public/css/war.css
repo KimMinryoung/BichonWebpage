@@ -2160,3 +2160,17 @@
 }
 .cw-map-legend .cw-key-word { font-weight: 800; color: var(--text-primary); }
 .cw-calendar li, .cw-outlook, .cw-meter-scale { cursor: help; }
+
+/* ── The counter redrawn (2026-11-15): attack and defence on it ──
+   Under the picture a spearhead with the unit's attack and a shield with
+   its defence where it stands; the strength bar along the foot. */
+.cw-stat { font-size: 8.5px; font-weight: 800; font-variant-numeric: tabular-nums; pointer-events: none; }
+.cw-stat-mark { pointer-events: none; }
+.cw-unit.is-red .cw-stat, .cw-unit.is-red .cw-stat-mark { fill: #fff; }
+.cw-unit.is-white .cw-stat, .cw-unit.is-white .cw-stat-mark { fill: var(--cw-foe-ink); }
+.cw-unit .cw-stat.is-cover { fill: #ffd27a; }
+.cw-unit.is-white .cw-stat.is-cover { fill: #7a3f14; }
+.cw-unit .cw-stat.is-exposed { fill: #9fd0ff; }
+.cw-unit.is-white .cw-stat.is-exposed { fill: #1f4f8a; }
+.cw-unit-hp { font-size: 12px; }
+.cw-terrain-key i.k-counter { display: none; }

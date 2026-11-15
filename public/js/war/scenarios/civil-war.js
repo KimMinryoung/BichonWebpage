@@ -1112,7 +1112,7 @@
         units: [
             // Tukhachevsky's field headquarters: no fighting unit, his
             // order is its worth.
-            { id: 'shq', tag: '사령부', side: 'red', name: '제1군 야전 사령부', sub: '투하쳅스키', kind: 'inf', at: [5, 0], hp: 6, atk: 2, def: 2, mv: 3, person: ['미하일 투하쳅스키', 'tukhachevsky'],
+            { id: 'shq', tag: '사령부', pic: 'hq', side: 'red', name: '제1군 야전 사령부', sub: '투하쳅스키', kind: 'inf', at: [5, 0], hp: 6, atk: 2, def: 2, mv: 3, person: ['미하일 투하쳅스키', 'tukhachevsky'],
                 feat: {
                     id: 'order', name: '집중 명령', kind: 'order', plus: 2,
                     text: '이번 턴의 모든 협공에 피해 +2(협공: 치려는 적의 곁에 다른 붉은 부대가 있는 공격). 사령부는 이번 턴 다른 행동을 하지 않는다.',
