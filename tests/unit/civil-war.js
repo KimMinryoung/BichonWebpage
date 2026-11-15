@@ -1681,7 +1681,16 @@ for (const id of Object.keys(D.battles)) {
 // starts without a move to make, and a player who gives no orders loses.
 {
     const N = Engine.create(D);
-    assert.equal(N.RULES, 12);
+    assert.equal(N.RULES, 13);
+    // Rules 13: fog over the Sivash on Perekop's first two turns. A gun strikes only what stands beside it; an older save's battle has none.
+    {
+        const fog = B.start(D.battles.perekop, {}, null, { rules: 13 }), clear = B.start(D.battles.perekop, {}, null, { rules: 12 });
+        const gun = b => b.units.find(u => u.range > 1);
+        assert.ok(B.fogged(fog) && !B.fogged(clear));
+        assert.equal(B.rangeNow(fog, gun(fog)), 1);
+        assert.equal(B.rangeNow(clear, gun(clear)), gun(clear).range);
+        assert.deepEqual(fog.fog, [1, 2]);
+    }
     for (const [id, def] of Object.entries(D.battles)) {
         const s = N.rehearse(id);
         assert.ok(s && s.phase === 'battle' && s.battle.def.id === id, `rules 12 reach ${id}`);

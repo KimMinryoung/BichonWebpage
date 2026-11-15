@@ -170,7 +170,9 @@
             .map(({ raid, i }) => ({ id: 'raid' + i, kind: 'strike', name: raid.name || '', tag: raid.tag || raid.name || '', sub: raid.sub || '', raid: i, hp: raidTurns(raid).length, maxHp: raidTurns(raid).length }));
         if (def.sky && def.skyWing) foeWings.push({ id: 'sky', kind: 'fighter', name: def.skyWing.name, tag: def.skyWing.tag || def.skyWing.name, sub: def.skyWing.sub || '', hp: def.skyWing.hp, maxHp: def.skyWing.hp });
         return {
-            def, sides, turn: 1, units, pending, wings, foeWings, cover: false, result: null, turned, wear: {}, reserve: null,
+            def, sides, turn: 1, units, pending, wings, foeWings, cover: false,
+            // Fog (def.fog: { turns, from }): on its turns a gun strikes only what stands beside it and nothing flies; from: the generation it came with.
+            fog: def.fog && gen >= (def.fog.from || 0) ? def.fog.turns : [], result: null, turned, wear: {}, reserve: null,
             heroics, feats: {}, fortBlows: 0, captured: 0, order: null,
             events: [], report: [],
         };
@@ -395,8 +397,11 @@
         return out;
     }
 
+    // Fog on this turn; and how far a unit strikes now (in fog, only beside it).
+    const fogged = b => (b.fog || []).includes(b.turn);
+    const rangeNow = (b, u) => (fogged(b) ? 1 : u.range);
     function targets(b, u) {
-        return alive(b).filter(o => o.side !== u.side && dist(u, o) >= 1 && dist(u, o) <= u.range);
+        return alive(b).filter(o => o.side !== u.side && dist(u, o) >= 1 && dist(u, o) <= rangeNow(b, u));
     }
 
     function surround(b, attacker, target) {
@@ -733,7 +738,7 @@
     const raidDue = b => raidsOf(b.def).filter(r => r.against !== 'enemy' && raidTurns(r).includes(b.turn))
         .map(raid => ({ raid, units: raid.units.map(id => byId(b, id)).filter(u => u && u.hp > 1 && isPlayer(b, u)) }));
     const wingOf = (b, id) => (b.wings || []).find(w => w.id === id) || null;
-    const grounded = b => (b.def.grounded || []).includes(b.turn);
+    const grounded = b => (b.def.grounded || []).includes(b.turn) || fogged(b);
     function wingBlock(b, w) {
         if (!w) return 'none';
         if (b.result) return 'over';
@@ -878,7 +883,7 @@
                 if (!prey) { stepToward(b, u, post); return; }
                 if (targets(b, u).includes(prey)) return;
                 const spots = dryReach(b, u)
-                    .filter(t => dist(t, post) <= (u.reach || 2) && dist(t, prey) <= u.range)
+                    .filter(t => dist(t, post) <= (u.reach || 2) && dist(t, prey) <= rangeNow(b, u))
                     .sort((a, z) => groundOf(b, z.r, z.c) - groundOf(b, a.r, a.c) || dist(a, post) - dist(z, post) || a.cost - z.cost);
                 if (spots.length) march(b, u, spots[0]);
             },
@@ -930,7 +935,7 @@
     // The player's unit a garrison sallies at: within reach of its post.
     function sallyPrey(b, u) {
         const post = { r: u.post[0], c: u.post[1] };
-        return alive(b).filter(o => isPlayer(b, o) && dist(o, post) <= (u.reach || 2) + u.range - 1)
+        return alive(b).filter(o => isPlayer(b, o) && dist(o, post) <= (u.reach || 2) + rangeNow(b, u) - 1)
             .sort((a, z) => a.hp - z.hp || dist(a, post) - dist(z, post) || (a.id < z.id ? -1 : 1))[0] || null;
     }
 
@@ -1009,10 +1014,10 @@
         const from = [{ r: u.r, c: u.c }].concat(marching(b, u) ? reachable(b, u) : []);
         const out = new Map();
         for (const p of from) {
-            for (let r = p.r - u.range; r <= p.r + u.range; r++) {
-                for (let c = p.c - u.range; c <= p.c + u.range; c++) {
+            for (let r = p.r - rangeNow(b, u); r <= p.r + rangeNow(b, u); r++) {
+                for (let c = p.c - rangeNow(b, u); c <= p.c + rangeNow(b, u); c++) {
                     const d = Math.abs(r - p.r) + Math.abs(c - p.c);
-                    if (d >= 1 && d <= u.range && inside(b, r, c) && terrain(b, r, c).cost < 99) out.set(key(r, c), { r, c });
+                    if (d >= 1 && d <= rangeNow(b, u) && inside(b, r, c) && terrain(b, r, c).cost < 99) out.set(key(r, c), { r, c });
                 }
             }
         }
@@ -1207,7 +1212,7 @@
     }
 
     const api = {
-        start, joins, act, reachable, skyOf, raidDue, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
+        start, joins, act, reachable, fogged, rangeNow, skyOf, raidDue, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, weatherOf, raidsOf, raidTurns, kindOf, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
         canMove, featBlock, featTargets, featMod, featAimed, featPreview, yields, lost, YIELD_RING, FEATS, ROLES, KINDS,
     };

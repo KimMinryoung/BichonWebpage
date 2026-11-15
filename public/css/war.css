@@ -1498,6 +1498,8 @@
 .cw-voice-log small { color: var(--text-secondary); }
 
 /* How to play a battle turn, in order. */
+.cw-howto-fold > summary { cursor: pointer; font-weight: 800; font-size: .88rem; }
+.cw-howto-fold[open] > summary { margin-bottom: 6px; }
 .cw-battle-howto { margin: 0; padding-left: 1.3em; display: grid; gap: 4px; font-size: .88rem; line-height: var(--leading-normal); }
 
 /* Where a front's divisions come from; the ones moved by rail inverted. */

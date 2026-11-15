@@ -3214,7 +3214,7 @@
         board.append(areaMarks(b));
         board.append(pocketMarks(b));
         // Fog (def.grounded): banks of mist drifting over the board; nothing flies.
-        if ((b.wings || []).length && B.grounded(b) && !battleEnded) {
+        if (B.grounded(b) && !battleEnded) {
             const blur = svg('filter', { id: 'cwFogBlur', x: '-20%', y: '-50%', width: '140%', height: '200%' });
             blur.append(svg('feGaussianBlur', { stdDeviation: '14' }));
             defs.append(blur);
@@ -3278,12 +3278,13 @@
             dueText ? row('증원', dueText) : null,
             merits.length ? row('전공', meritList(merits)) : null,
             def.weather ? row('날씨', weatherText(b)) : null,
+            (b.fog || []).length && b.turn <= Math.max(...b.fog) ? row('안개', B.fogged(b) ? `포는 곁의 적만 친다 · ${Math.max(...b.fog)}턴까지` : `${b.fog.filter(t => t > b.turn).join('·')}턴에 다시 낀다`) : null,
             def.windTurns ? row('여울', B.fordOpen(b) ? `${def.ford} 열림 · ${def.windTurns - b.turn + 1}턴 남음` : `${def.ford} 물에 잠김`) : null,
             ...Object.values(def.lines).map((l, i) => row('우회', b.turned[Object.keys(def.lines)[i]] ? `${l.name} 끊음 · 진지 방어가 +1로 줄었다` : `${l.name} · 점선 구역에 서면 수비대의 뒤가 끊긴다`)),
             !Object.keys(def.sectors).length ? null : row('예비대', b.reserve ? `${foeName()} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶임` : `${foeName()} 예비대는 아직 그대로`),
         ].filter(Boolean);
         // How to play a turn, in the order it is done.
-        const hint = foe || battleEnded ? null : el('ol', { class: 'cw-battle-howto' },
+        const howto = foe || battleEnded ? null : el('ol', { class: 'cw-battle-howto' },
             el('li', {}, `${josa(U.playerUnits, '을', '를')} 누르면 갈 수 있는 밝은 칸과 칠 수 있는 적이 보입니다.`),
             el('li', {}, '칸을 눌러 옮기고, 적을 눌러 칩니다. 부대마다 한 턴에 한 번씩입니다.'),
             el('li', {}, '모두 움직였으면 「턴 종료」. 「취소」(Esc)는 이번 턴의 명령을 하나씩 되돌립니다.'),
@@ -3291,6 +3292,11 @@
             el('li', {}, '부대를 고르지 않은 채 빈 칸을 누르면 그 땅의 방어·이동이 보입니다.'),
             def.supply && def.supply.enemy ? el('li', {}, `${foeName()}의 보급 띠를 끊으면 그 뒤의 적이 포위됩니다. 부대를 고르면 끊는 칸에 「포위 n」이 붙습니다.`) : null,
             (b.wings || []).length ? el('li', {}, '판 위 「하늘」 줄의 ✈ 단추가 항공 부대입니다. 전투기는 누르면 그 턴의 하늘을 맡고, 습격기는 누른 뒤 판에서 칠 적을 고릅니다.') : null);
+        // Folded once the player has shut it (kept in the browser): open only for one who has not.
+        let howtoShut = false;
+        try { howtoShut = Boolean(localStorage.getItem(KEY + '-howto')); } catch (_) { howtoShut = false; }
+        const hint = howto ? el('details', { class: 'cw-howto-fold', open: !howtoShut }, el('summary', {}, '하는 법'), howto) : null;
+        if (hint) hint.addEventListener('toggle', () => { try { if (hint.open) localStorage.removeItem(KEY + '-howto'); else localStorage.setItem(KEY + '-howto', 'shut'); } catch (_) { /* opens again next time */ } });
         // The board is built anew on each press; a board scrolled sideways
         // stays where the player left it while the battle lasts.
         if (battleScene(b, box)) return;

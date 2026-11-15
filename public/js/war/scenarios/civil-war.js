@@ -952,6 +952,8 @@
         towns: [['아르먄스크', 5, 1]],
         places: [['터키 방벽', 3, 0.1], ['시바시', 3, 6], ['리톱스키 반도', 6, 5], ['유슌 방어선', 8, 0.1], ['북타브리아', 0, 4], ['촌가르 반도', 2, 9.6], ['촌가르 해협', 6, 9.2], ['크림', 11, 6]],
         windTurns: 4,
+        // The night of 7–8 November: fog over the Sivash (rules 13).
+        fog: { turns: [1, 2], from: 13 },
         turnLimit: 9,
         // A battle without a quick reward: the turns its quick merit asks
         // (ui.merits, shown only), from war-balance.js's strong player.
