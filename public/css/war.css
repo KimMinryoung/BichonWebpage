@@ -590,32 +590,61 @@
 /* Simbirsk: the Sviyaga to wade, the Venets heights over the Volga. */
 .cw-tile.t-stream { fill: color-mix(in srgb, #5f93b8 38%, var(--bg-surface)); }
 .cw-tile.t-heights { fill: color-mix(in srgb, #8a6a3c 55%, var(--bg-surface)); }
+.cw-tile.t-marsh { fill: color-mix(in srgb, #7fa6a0 40%, var(--bg-surface)); }
 .cw-tile.is-goal { stroke: var(--clr-red); stroke-width: 3; }
+/* The board's ground as one map (war/ui/ground.js): the squares above it
+   are clear, the colours here are the legend's (.cw-tile.t-*) thinned. */
+.cw-grid .cw-tile { fill: transparent; stroke: none; }
+.cw-grid .cw-tile.is-goal { stroke: var(--clr-red); stroke-width: 3; }
+.cw-ground-base { fill: color-mix(in srgb, #c8b77a 26%, var(--bg-surface)); }
+.cw-ground-base.is-snow { fill: color-mix(in srgb, #f3f5f7 82%, var(--bg-surface)); }
+.cw-ground { pointer-events: none; }
+.cw-ground path, .cw-ground circle { fill: none; stroke: none; stroke-linecap: round; stroke-linejoin: round; }
+.cw-g-snow { fill: color-mix(in srgb, #f3f5f7 82%, var(--bg-surface)) !important; }
+.cw-g-mud { fill: color-mix(in srgb, #6b5233 34%, var(--bg-surface)) !important; }
+.cw-g-marsh { fill: color-mix(in srgb, #7fa6a0 34%, var(--bg-surface)) !important; }
+.cw-g-wood { fill: color-mix(in srgb, #4f7a3a 30%, var(--bg-surface)) !important; }
+.cw-g-hill { fill: color-mix(in srgb, #a5824e 34%, var(--bg-surface)) !important; stroke: color-mix(in srgb, #6b4a22 70%, var(--bg-surface)) !important; stroke-width: 1.2; }
+.cw-g-dug { fill: color-mix(in srgb, #8c7b55 26%, var(--bg-surface)) !important; }
+.cw-g-built { fill: color-mix(in srgb, #9d8a62 34%, var(--bg-surface)) !important; }
+.cw-g-water { fill: color-mix(in srgb, #5f93c2 72%, var(--bg-surface)) !important; stroke: color-mix(in srgb, #244f78 75%, var(--bg-surface)) !important; stroke-width: 1.6; }
+.cw-g-deep { fill: color-mix(in srgb, #1f4f8a 70%, var(--bg-surface)) !important; }
+.cw-g-ford { fill: color-mix(in srgb, #a9c9e0 80%, var(--bg-surface)) !important; }
+.cw-g-ice { fill: color-mix(in srgb, #d5e4ee 88%, var(--bg-surface)) !important; stroke: color-mix(in srgb, #7fa0b8 70%, var(--bg-surface)) !important; stroke-width: 1.2; }
+.cw-g-wave { stroke: #fff !important; stroke-opacity: .55; stroke-width: 1.2; }
+.cw-g-crack { stroke: color-mix(in srgb, #5f7f98 80%, var(--bg-surface)) !important; stroke-width: 1; }
+.cw-g-shoal { stroke: color-mix(in srgb, #244f78 60%, var(--bg-surface)) !important; stroke-width: 2.2; }
+.cw-g-contour { stroke: color-mix(in srgb, #6b4a22 62%, var(--bg-surface)) !important; stroke-width: 1.1; }
+.cw-g-contour.is-top { fill: color-mix(in srgb, #8a6a3c 30%, var(--bg-surface)) !important; }
+.cw-g-gully { stroke: color-mix(in srgb, #4a3418 80%, var(--bg-surface)) !important; stroke-width: 3; }
+.cw-g-bank { stroke: color-mix(in srgb, #4a3418 70%, var(--bg-surface)) !important; stroke-width: 1.1; }
+.cw-g-brook { stroke: color-mix(in srgb, #3a78b0 75%, var(--bg-surface)) !important; stroke-width: 4.5; }
+.cw-g-reed { stroke: color-mix(in srgb, #4f6a2a 80%, var(--text-primary)) !important; stroke-width: 1.1; }
+.cw-g-trench { stroke: color-mix(in srgb, var(--text-primary) 78%, transparent) !important; stroke-width: 2.2; }
+.cw-g-wire { stroke: color-mix(in srgb, var(--text-primary) 60%, transparent) !important; stroke-width: 1; stroke-dasharray: 1 3.5; }
+.cw-g-wall { stroke: color-mix(in srgb, #8a4a1e 85%, var(--bg-surface)) !important; stroke-width: 9; stroke-linecap: butt !important; }
+.cw-g-teeth { stroke: #2a1406 !important; stroke-opacity: .7; stroke-width: 1.4; }
+.cw-g-tuft { stroke: color-mix(in srgb, #6d7a2e 70%, var(--text-primary)) !important; stroke-opacity: .45; stroke-width: 1; }
+.cw-g-drift { stroke: #8a97a6 !important; stroke-opacity: .7; stroke-width: 1.3; }
+.cw-g-rut { stroke: #2e2210 !important; stroke-opacity: .55; stroke-width: 1.8; }
+.cw-g-bog { stroke: color-mix(in srgb, #3a78b0 70%, var(--bg-surface)) !important; stroke-width: 1.5; }
+.cw-g-block { fill: color-mix(in srgb, #8f7a55 62%, var(--bg-surface)) !important; stroke: color-mix(in srgb, #3a2a18 70%, var(--bg-surface)) !important; stroke-width: .7; fill-rule: evenodd; }
+.cw-g-roof { fill: color-mix(in srgb, #efe3c8 85%, var(--bg-surface)) !important; stroke: #3a2a18 !important; stroke-width: .9; }
+.cw-g-ridge { stroke: #3a2a18 !important; stroke-opacity: .6; stroke-width: .8; }
+.cw-g-stack { fill: color-mix(in srgb, #8a4a1e 70%, var(--bg-surface)) !important; stroke: #2a1406 !important; stroke-width: .9; }
+.cw-g-smoke { stroke: color-mix(in srgb, var(--text-primary) 40%, transparent) !important; stroke-width: 1.6; }
+.cw-g-pier { stroke: #2a2a26 !important; stroke-width: 3; stroke-linecap: butt !important; }
+.cw-g-keep { fill: color-mix(in srgb, #b4652a 62%, var(--bg-surface)) !important; stroke: #2a1406 !important; stroke-width: 1.3; fill-rule: evenodd; }
+.cw-g-shade { fill: #000 !important; fill-opacity: .16; }
+.cw-ground .cw-g-crown { fill: color-mix(in srgb, #3d6b34 88%, var(--bg-surface)); stroke: #1c3a17; stroke-width: .8; }
+.cw-g-leaf { stroke: color-mix(in srgb, #9cc08a 80%, var(--bg-surface)) !important; stroke-width: 1.1; }
+.cw-g-deck { stroke: #2a2a26 !important; stroke-width: 2.2; stroke-linecap: butt !important; }
+.cw-g-plank { stroke: #2a2a26 !important; stroke-opacity: .75; stroke-width: 1.1; }
+.cw-g-boat { fill: color-mix(in srgb, #cbb894 85%, var(--bg-surface)) !important; stroke: #2a2a26 !important; stroke-width: 1; }
+.cw-g-grid { stroke: color-mix(in srgb, var(--text-primary) 22%, transparent) !important; stroke-width: .8; stroke-dasharray: 1.5 4.5; }
 /* Tile drawings (civil-war.js tileMarks). */
 .cw-marks, .cw-track { pointer-events: none; }
 .cw-marks path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-.cw-marks .cw-mark-grass { stroke: color-mix(in srgb, #6d7a2e 70%, var(--text-primary)); stroke-opacity: .55; stroke-width: 1.1; }
-.cw-marks .cw-mark-fir { fill: color-mix(in srgb, #1f4a1a 80%, var(--bg-surface)); stroke: #0f220c; stroke-width: .8; }
-.cw-marks .cw-mark-trunk { stroke: #3a2614; stroke-width: 1.6; }
-.cw-marks .cw-mark-house { fill: color-mix(in srgb, #e7dcc3 80%, var(--bg-surface)); stroke: #3a2a18; stroke-width: 1; }
-.cw-marks .cw-mark-pier { stroke: #2a2a26; stroke-width: 1.6; }
-.cw-marks .cw-mark-fort { fill: color-mix(in srgb, #7a3a16 80%, var(--bg-surface)); stroke: #2a1406; stroke-width: 1.1; }
-.cw-marks .cw-mark-brick { stroke: #2a1406; stroke-opacity: .6; stroke-width: .8; }
-.cw-marks .cw-mark-trench { stroke: color-mix(in srgb, var(--text-primary) 60%, transparent); stroke-width: 1.8; }
-.cw-marks .cw-mark-wire { stroke: color-mix(in srgb, var(--text-primary) 55%, transparent); stroke-width: .8; }
-.cw-marks .cw-mark-truss { stroke: #2a2a26; stroke-width: 2; }
-.cw-marks .cw-mark-water { stroke: #ffffff; stroke-opacity: .45; stroke-width: 1.3; }
-.cw-marks .cw-mark-gully { stroke: #2e2210; stroke-opacity: .85; stroke-width: 3.2; fill: none; }
-.cw-marks .cw-mark-bank { stroke: #2e2210; stroke-opacity: .7; stroke-width: 1.2; }
-.cw-marks .cw-mark-channel { stroke: #2f6fb8; stroke-opacity: .8; stroke-width: 5; }
-.cw-marks .cw-mark-reed { stroke: color-mix(in srgb, #4f6a2a 80%, var(--text-primary)); stroke-width: 1.2; }
-.cw-marks .cw-mark-ridge { stroke: #2e2210; stroke-opacity: .85; stroke-width: 2.4; }
-.cw-marks .cw-mark-crack { stroke: #ffffff; stroke-opacity: .75; stroke-width: 1.1; }
-.cw-marks .cw-mark-drift { stroke: #8a97a6; stroke-opacity: .7; stroke-width: 1.4; }
-.cw-marks .cw-mark-flake { stroke: #6f7d8c; stroke-width: 2.6; }
-.cw-marks .cw-mark-rut { stroke: #2e2210; stroke-opacity: .7; stroke-width: 2.2; }
-.cw-marks .cw-mark-puddle { stroke: #6f8fa8; stroke-opacity: .85; stroke-width: 2.6; }
-.cw-marks .cw-mark-smoke { stroke: color-mix(in srgb, var(--text-primary) 45%, transparent); stroke-width: 1.4; fill: none; }
 .cw-wear { font-size: 8px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 2px; pointer-events: none; }
 .cw-tile-label { font-size: 9px; font-weight: 700; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 2.5px; stroke-linejoin: round; pointer-events: none; }
 .cw-tile-label.is-goal { fill: var(--clr-red); font-weight: 800; }
@@ -639,7 +668,8 @@
 .cw-area-name { fill: #fff; font-size: 9.5px; font-weight: 800; }
 .cw-terrain-key i.k-supply { border: 0; height: 0; border-top: 3px dotted var(--cw-red); width: 22px; align-self: center; }
 .cw-terrain-key i.k-shut, .cw-terrain-key i.k-base { display: none; }
-.cw-supply-road { fill: none; stroke-width: 3; stroke-dasharray: 2 5; stroke-linecap: round; }
+.cw-supply-road { fill: none; stroke-width: 1.6; stroke-dasharray: 1 5; stroke-linecap: round; stroke-opacity: .55; }
+.cw-supply-road.is-bold { stroke-width: 3.2; stroke-dasharray: 2 5; stroke-opacity: 1; }
 .cw-supply-road.is-red { stroke: var(--cw-red); }
 .cw-supply-road.is-white { stroke: var(--cw-foe-accent); }
 .cw-supply-shut { fill: none; stroke-width: 2; stroke-linecap: round; }
@@ -677,6 +707,7 @@
 .cw-terrain-key .k-snow { background: color-mix(in srgb, #eef0f2 72%, var(--bg-surface)); }
 .cw-terrain-key .k-mud { background: color-mix(in srgb, #6b5233 55%, var(--bg-surface)); }
 .cw-terrain-key .k-bridge { background: color-mix(in srgb, #3f6f95 55%, var(--bg-surface)); }
+.cw-terrain-key .k-marsh { background: color-mix(in srgb, #7fa6a0 40%, var(--bg-surface)); }
 .cw-terrain-key .k-forest { background: color-mix(in srgb, #4f7a3a 50%, var(--bg-surface)); }
 .cw-terrain-key .k-city { background: color-mix(in srgb, #9d8a62 70%, var(--bg-surface)); }
 .cw-terrain-key .k-kremlin { background: color-mix(in srgb, #b4652a 70%, var(--bg-surface)); }

@@ -1239,7 +1239,7 @@
         title: '바그라티온: 보브루이스크', date: '1944년 6월 24–29일',
         settle: '보브루이스크로 →', board: '베레지나강', enemyName: '독일군',
         huntNote: '독일 기갑 예비. 곁에 붉은 부대가 가장 적은 붉은 부대를 찾아가 친다. 2턴이 끝날 때까지는 제자리에 있다.',
-        legend: [['steppe', '들판'], ['forest', '숲 (방어 +1, 이동 2)'], ['stream', '늪 (이동 2, 통나무 길)'], ['trench', '참호 (방어 +2, 이동 2, 포격으로 깎임)'], ['river', '베레지나강'], ['bridge', '보브루이스크 다리'], ['city', '보브루이스크 (방어 +2)']],
+        legend: [['steppe', '들판'], ['forest', '숲 (방어 +1, 이동 2)'], ['marsh', '늪 (이동 2, 통나무 길)'], ['trench', '참호 (방어 +2, 이동 2, 포격으로 깎임)'], ['river', '베레지나강'], ['bridge', '보브루이스크 다리'], ['city', '보브루이스크 (방어 +2)']],
         reward: { quick: 4, quickBy: 3, lostBy: -6 },
         supply: { player: [[1, 10], [3, 10], [7, 2]], enemy: [[3, 0]] },
         air: { turns: [2, 4], units: ['b20p', 'b36', 'b134'], dmg: 3, against: 'enemy', name: '제16항공군' },
@@ -1269,7 +1269,7 @@
         terrain: {
             '.': { name: '들판', cost: 1, def: 0, cls: 'steppe' },
             f: { name: '숲', cost: 2, def: 1, cls: 'forest' },
-            m: { name: '늪', cost: 2, def: 0, cls: 'stream' },
+            m: { name: '늪', cost: 2, def: 0, cls: 'marsh' },
             t: { name: '참호', cost: 2, def: 2, fort: 'drut', cls: 'trench' },
             '~': { name: '베레지나강', cost: 99, def: 0, water: true, cls: 'river' },
             B: { name: '보브루이스크 다리', cost: 1, def: 0, span: true, cls: 'bridge' },

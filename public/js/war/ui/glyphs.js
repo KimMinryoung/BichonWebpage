@@ -1,6 +1,6 @@
 /* Drawings of the war games' screen (war/ui/game.js): the star, the
-   armoured train, the battle board's terrain marks and the units'
-   pictures. CELL is a board tile's size. */
+   armoured train, the battle units' pictures (the board's ground is
+   war/ui/ground.js). CELL is a board tile's size. */
 (function (root) {
     'use strict';
 
@@ -42,93 +42,6 @@
         const node = svg('svg', { viewBox: '0 0 12 12', class: 'cw-mk-star', 'aria-hidden': 'true' });
         node.append(svg('path', { d: star(6, 6.4, 5.8, 2.5) }));
         return node;
-    }
-
-    // Terrain marks drawn over a tile's fill, by the terrain's look: the
-    // Wall's battlements, a trench, a bridge's frame, ripples on a ford
-    // (dense once it floods).
-    // Each tile's drawing: grass on the steppe, firs in the wood, roofs in
-    // town, the Kremlin's tower, battlements, trenches with wire, waves,
-    // the bridge's truss. Small variations by position keep a field of
-    // the same ground from reading as wallpaper.
-    function tileMarks(cls, r, c, flooded) {
-        const x = c * CELL, y = r * CELL;
-        const h = (r * 7 + c * 13) % 5;
-        const g = svg('g', { class: 'cw-marks', 'aria-hidden': 'true' });
-        const add = (d, k) => g.append(svg('path', { d, class: k }));
-        if (cls === 'steppe') {
-            const spots = [[10, 14], [30, 10], [20, 30], [38, 34], [8, 40]].filter((_, i) => (i + h) % 5 < 3);
-            add(spots.map(([dx, dy]) => `M${x + dx - 3} ${y + dy}l1.5 -4M${x + dx} ${y + dy}v-5M${x + dx + 3} ${y + dy}l-1.5 -4`).join(''), 'cw-mark-grass');
-        } else if (cls === 'forest') {
-            const firs = [[12, 22], [32, 18], [22, 38], [38, 40]].slice(0, 3 + (h % 2));
-            add(firs.map(([dx, dy]) => `M${x + dx} ${y + dy - 14}l6 9h-3l5 7h-16l5 -7h-3z`).join(''), 'cw-mark-fir');
-            add(firs.map(([dx, dy]) => `M${x + dx} ${y + dy + 2}v3`).join(''), 'cw-mark-trunk');
-        } else if (cls === 'town' || cls === 'city' || cls === 'docks') {
-            const houses = cls === 'city' ? [[6, 26], [20, 22], [32, 28], [12, 38]] : cls === 'docks' ? [[8, 20]] : [[8, 30], [26, 24]];
-            add(houses.map(([dx, dy]) => `M${x + dx} ${y + dy}h10v-7l-5 -5l-5 5z`).join(''), 'cw-mark-house');
-            if (cls === 'docks') add(`M${x + 24} ${y + 40}h20M${x + 24} ${y + 34}h20M${x + 28} ${y + 30}v14M${x + 40} ${y + 30}v14M${x + 34} ${y + 10}v18M${x + 34} ${y + 10}l9 4`, 'cw-mark-pier');
-        } else if (cls === 'kremlin') {
-            add(`M${x} ${y + 34}h6v-6h6v6h6v-6h6v6h6v-6h6v6h6v14h-48z`, 'cw-mark-fort');
-            add(`M${x + 20} ${y + 28}v-12h8v12zM${x + 24} ${y + 6}c4 3 5 6 4 10h-8c-1 -4 0 -7 4 -10z`, 'cw-mark-fort');
-        } else if (cls === 'wall') {
-            add(`M${x} ${y + 36}h6v-8h6v8h6v-8h6v8h6v-8h6v8h6v12h-48z`, 'cw-mark-fort');
-            add(`M${x} ${y + 42}h48M${x + 12} ${y + 36}v6M${x + 30} ${y + 36}v6M${x + 6} ${y + 42}v6M${x + 22} ${y + 42}v6M${x + 40} ${y + 42}v6`, 'cw-mark-brick');
-        } else if (cls === 'yushun' || cls === 'chongar' || cls === 'trench') {
-            add(`M${x} ${y + 30}l6 -6l6 6l6 -6l6 6l6 -6l6 6l6 -6l6 6`, 'cw-mark-trench');
-            // Coiled wire in front of the trench.
-            add([5, 11, 17, 23, 29, 35, 41].map(dx => `M${x + dx - 3} ${y + 13}a3 3 0 1 0 6 0a3 3 0 1 0 -6 0`).join(''), 'cw-mark-wire');
-        } else if (cls === 'strait' || cls === 'bridge') {
-            add(`M${x + 6} ${y + 8}v32M${x + 42} ${y + 8}v32`, 'cw-mark-truss');
-            add(`M${x + 6} ${y + 16}h36M${x + 6} ${y + 32}h36M${x + 6} ${y + 32}l9 -16l9 16l9 -16l9 16`, 'cw-mark-truss');
-            if (cls === 'strait') add(`M${x + 4} ${y + 44}q5 -4 10 0t10 0t10 0t10 0`, 'cw-mark-water');
-        } else if (cls === 'river' || cls === 'deep') {
-            add([12, 26, 40].map((dy, i) => `M${x + 2 + ((h + i) % 3) * 3} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), 'cw-mark-water');
-        } else if (cls === 'crossing') {
-            // Boats and a raft at the Krasny Yar crossing.
-            add(`M${x + 2} ${y + 40}q5 -4 10 0t10 0t10 0t10 0`, 'cw-mark-water');
-            add(`M${x + 6} ${y + 16}h14l-3 5h-8zM${x + 26} ${y + 28}h14l-3 5h-8z`, 'cw-mark-pier');
-            add(`M${x + 8} ${y + 34}h18M${x + 8} ${y + 37}h18`, 'cw-mark-pier');
-        } else if (cls === 'pontoon') {
-            add([12, 40].map(dy => `M${x + 2} ${y + dy}q5 -4 10 0t10 0t10 0t10 0`).join(''), 'cw-mark-water');
-            add(`M${x} ${y + 20}h48M${x} ${y + 28}h48M${x + 8} ${y + 20}v8M${x + 20} ${y + 20}v8M${x + 32} ${y + 20}v8M${x + 44} ${y + 20}v8`, 'cw-mark-truss');
-        } else if (cls === 'blown') {
-            // The bridge's two ends and the gap the charges blew between them.
-            add([12, 40].map(dy => `M${x + 2} ${y + dy}q5 -4 10 0t10 0t10 0t10 0`).join(''), 'cw-mark-water');
-            add(`M${x} ${y + 18}h14l4 10M${x} ${y + 30}h12M${x + 48} ${y + 18}h-14l-4 10M${x + 48} ${y + 30}h-12M${x + 4} ${y + 18}l6 12M${x + 44} ${y + 18}l-6 12`, 'cw-mark-truss');
-        } else if (cls === 'ravine') {
-            // A balka: a gully winding through the steppe, its banks hatched.
-            const k = h % 2 ? 1 : -1;
-            add(`M${x + 2} ${y + 14 + k * 4}q12 ${10 * k} 22 6t22 12`, 'cw-mark-gully');
-            add([8, 18, 28, 38].map(dx => `M${x + dx} ${y + 14 + k * 4 + dx / 4}l2 5`).join(''), 'cw-mark-bank');
-        } else if (cls === 'works') {
-            // The gun works: sheds with saw-tooth roofs and a smoking stack.
-            add(`M${x + 4} ${y + 40}v-10l7 -6v6l7 -6v6l7 -6v16zM${x + 30} ${y + 40}v-28h6v28z`, 'cw-mark-house');
-            add(`M${x + 33} ${y + 10}q4 -5 0 -8`, 'cw-mark-smoke');
-        } else if (cls === 'stream') {
-            // A small river to wade: a winding channel between reeds.
-            add(`M${x + 24 + (h % 2 ? 4 : -4)} ${y}q-10 12 0 24t0 24`, 'cw-mark-channel');
-            add(`M${x + 8} ${y + 14}v-7M${x + 11} ${y + 15}l2 -6M${x + 38} ${y + 38}v-7M${x + 41} ${y + 39}l2 -6`, 'cw-mark-reed');
-        } else if (cls === 'heights') {
-            // The Venets: the crown of the bank, hatched where it falls to the Volga.
-            add(`M${x + 2} ${y + 34}q10 -18 22 -20t22 16`, 'cw-mark-ridge');
-            add([30, 36, 42].map(dx => `M${x + dx} ${y + 20 + (dx - 30) / 2}l4 6`).join(''), 'cw-mark-bank');
-            add(`M${x + 14} ${y + 26}h8v-6l-4 -4l-4 4z`, 'cw-mark-house');
-        } else if (cls === 'ice') {
-            // A frozen river or lake: pale cracks across the ice.
-            add(`M${x + 4} ${y + 14 + h}l12 4l8 -6l10 8l10 -3M${x + 16} ${y + 18 + h}l-3 12M${x + 34} ${y + 20}l4 14l-8 8`, 'cw-mark-crack');
-        } else if (cls === 'snow') {
-            // Snowfields: drifts and a scatter of flakes.
-            add(`M${x + 4} ${y + 36}q8 -6 16 0t16 0M${x + 14} ${y + 22}q6 -4 12 0`, 'cw-mark-drift');
-            add([[8, 12], [30, 8], [40, 28], [20, 42], [6, 26]].filter((_, i) => (i + h) % 5 < 4).map(([dx, dy]) => `M${x + dx} ${y + dy}h.1`).join(''), 'cw-mark-flake');
-        } else if (cls === 'mud') {
-            // The rasputitsa: a road churned into ruts, standing water in them.
-            add(`M${x} ${y + 18 + (h % 2) * 4}q12 6 24 0t24 0M${x} ${y + 30 + (h % 2) * 4}q12 6 24 0t24 0`, 'cw-mark-rut');
-            add(`M${x + 10 + h * 2} ${y + 40}h8M${x + 28} ${y + 10 + h}h6`, 'cw-mark-puddle');
-        } else if (cls === 'ford') {
-            const rows = flooded ? [10, 20, 30, 40] : [16, 32];
-            add(rows.map(dy => `M${x + 6} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), 'cw-mark-water');
-        }
-        return g.childNodes.length ? g : null;
     }
 
     // Headgear over a head at the origin (radius 2.7): the side's own
@@ -293,5 +206,5 @@
     };
     const markOf = card => (card && (card.glyph || (card.onRail ? 'train' : null))) || null;
 
-    root.WarGlyphs = { CELL, star, trainGlyph, trainIcon, starIcon, cavalryGlyph, cavalryIcon, tankGlyph, tankIcon, planeGlyph, planeIcon, tileMarks, unitPicture, MAP_MARKS, markOf, LOOKS, CAPS };
+    root.WarGlyphs = { CELL, star, trainGlyph, trainIcon, starIcon, cavalryGlyph, cavalryIcon, tankGlyph, tankIcon, planeGlyph, planeIcon, unitPicture, MAP_MARKS, markOf, LOOKS, CAPS };
 })(window);

@@ -20,7 +20,7 @@
     const W = Object.assign({ strength: '전투력', pressure: '압력', perDivision: `${U.unit}당` }, U.words);
     const KEY = U.save;
     const { el, svg, link, picture, signed, josa, textWidth, NEW_TAB } = window.WarDom;
-    const { CELL, star, starIcon, planeGlyph, tileMarks, unitPicture, MAP_MARKS, markOf } = window.WarGlyphs;
+    const { CELL, star, starIcon, planeGlyph, unitPicture, MAP_MARKS, markOf } = window.WarGlyphs;
     const FED = D.economy.food.fed;      // a starving division's share of its strength
     const $ = id => document.getElementById(id);
 
@@ -30,6 +30,7 @@
     let selected = null;            // battle: the selected Red unit id
     let inspected = null;           // battle: the White unit whose reach is shown
     let tilePicked = null;          // battle: the tile whose ground is shown ({ r, c }), with no unit picked
+    let supplyShown = false;        // battle: the supply roads drawn bold with the tiles that shut them (screen state)
     let featArmed = null;           // battle: the unit whose aimed feat is switched on (screen state; spent only when it strikes)
     let menaceAll = false;          // battle: every White unit's reach shown at once
     let endArmed = false;           // battle: 「턴 종료」 pressed once with units still to act
@@ -2797,7 +2798,9 @@
         return g;
     }
 
-    function supplyMarks(b) {
+    // Faint by default; the roads stand out, with the tiles that shut them,
+    // while 「보급선」 is on (supplyShown), and a picked unit's own road always.
+    function supplyMarks(b, picked) {
         const g = svg('g', { class: 'cw-supply', 'aria-hidden': 'true' });
         const sup = b.def.supply;
         if (!sup) return g;
@@ -2817,11 +2820,13 @@
                     d += `M${x1} ${y1}L${x2} ${y2}`;
                 }
             }
-            if (d) g.append(svg('path', { d, class: 'cw-supply-road ' + cls }));
+            if (d) g.append(svg('path', { d, class: 'cw-supply-road ' + cls + (supplyShown ? ' is-bold' : '') }));
         }
+        const own = picked && B.supplyRoad(b, picked);
+        if (own && own.length > 1) g.append(svg('path', { d: 'M' + own.map(t => center(...t).join(' ')).join('L'), class: 'cw-supply-road is-bold ' + (B.isPlayer(b, picked) ? 'is-red' : 'is-white') }));
         // Ground a side's supply cannot pass on through: the enemy's shut
         // by the player in red, the player's shut by the enemy in the enemy's colour.
-        for (let r = 0; r < rows; r++) {
+        for (let r = 0; supplyShown && r < rows; r++) {
             for (let c = 0; c < cols; c++) {
                 if (B.terrain(b, r, c).cost >= 99) continue;
                 for (const [side, cls] of [[b.sides.enemy, 'is-red'], [b.sides.player, 'is-white']]) {
@@ -2905,6 +2910,14 @@
             tilePicked = tilePicked && tilePicked.r === r && tilePicked.c === c ? null : { r, c };
             renderBattle();
         };
+        // The ground, drawn as one map under the squares (war/ui/ground.js).
+        // A winter board's bare ground (under its woods and river banks) is snow too.
+        const winter = def.map.some((row, r) => [...row].some((_, c) => B.terrain(b, r, c).cls === 'snow'));
+        board.append(svg('rect', { x: 0, y: 0, width: cols * CELL, height: rows * CELL, class: 'cw-ground-base' + (winter ? ' is-snow' : '') }));
+        board.append(window.WarGround.paint(rows, cols, (r, c) => {
+            const t = B.terrain(b, r, c);
+            return { cls: t.cls, flooded: Boolean(t.ford) && !B.fordOpen(b) };
+        }));
         // A tile's name gives way to a unit standing there.
         const held = (r, c) => Boolean(B.unitAt(b, r, c));
         for (let r = 0; r < rows; r++) {
@@ -2918,8 +2931,6 @@
                 const tile = svg('rect', { x: c * CELL, y: r * CELL, width: CELL, height: CELL, class: cls.join(' ') });
                 tile.addEventListener('click', () => pickTile(r, c));
                 board.append(tile);
-                const mark = tileMarks(ground.cls, r, c, flooded);
-                if (mark) board.append(mark);
                 // A town's name on top; the objective's at the foot, clear of its flag.
                 const post = B.postsOf(def).some(x => x.at[0] === r && x.at[1] === c);
                 const town = goal ? goal.name : post ? null : (def.towns.find(t => t[1] === r && t[2] === c) || [])[0];
@@ -2963,7 +2974,7 @@
             hpText(counterBar.text, counterBar.hp, lost, 'is-counter');
         };
         board.append(areaMarks(b));
-        board.append(supplyMarks(b));
+        board.append(supplyMarks(b, unit || foe || null));
         // The verdict in: a won battle's Red units leap, one after another.
         const verdict = verdictBanner(b);
         const cheer = verdict && b.result === 'won' && !stillMotion() ? Math.round(performance.now() - verdictAt) : null;
@@ -3134,7 +3145,7 @@
             el('header', { class: 'cw-battle-head', 'data-pane': 'status' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             battleBrief(b),
             el('div', { class: 'cw-battle-layout' },
-                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], B.postsOf(def).length ? ['post', `${B.postsOf(def).map(x => x.name).join('·')}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, def.supply ? ['supply', `보급선 (붉은 점선 ${U.player}, 회색 점선 ${foeName()})`] : null, def.supply ? ['shut', '× 보급이 지나가지 못하는 칸'] : null, def.supply ? ['base', '세모: 보급 기지'] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
+                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], B.postsOf(def).length ? ['post', `${B.postsOf(def).map(x => x.name).join('·')}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, def.supply ? ['supply', `보급선 (붉은 점선 ${U.player}, 회색 점선 ${foeName()}, 세모가 보급 기지 · 「보급선」 단추로 굵게, 막힌 칸은 ×)`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('dl', { class: 'cw-battle-status', 'data-pane': 'status' }, ...status.map(x => el('div', { class: x.tone || null }, el('dt', {}, x.label), el('dd', {}, x.text)))),
@@ -3147,6 +3158,7 @@
                         unit && !unit.acted ? el('button', { type: 'button', 'data-key': 'wait', onclick: () => { if (act('b:wait', unit.id)) afterBattleAct(`${unit.name} 대기`); } }, el('span', { class: 'cw-wide-only' }, '이 부대 '), '대기') : null,
                         ready && !(unit && !unit.acted && ready === 1) ? el('button', { type: 'button', class: 'cw-wide-only', 'data-key': 'next-unit', title: 'N', onclick: nextUnit }, '다음 부대') : null,
                         el('button', { type: 'button', 'data-key': 'menace', class: 'cw-toggle cw-wide-only', 'aria-pressed': String(menaceAll), onclick: () => { menaceAll = !menaceAll; renderBattle(); } }, `${foeName()} 위협`),
+                        def.supply ? el('button', { type: 'button', 'data-key': 'supply', class: 'cw-toggle', 'aria-pressed': String(supplyShown), onclick: () => { supplyShown = !supplyShown; renderBattle(); } }, '보급선') : null,
                         el('button', { type: 'button', class: 'cw-primary' + (endArmed ? ' is-armed' : ''), 'data-key': 'end', title: 'E', onclick: endTurn },
                             endArmed ? (postOpen(b) ? `${josa(postOpen(b).name, "을", "를")} 비운 채 턴 종료` : '한 번 더 누르면 턴 종료') : ready ? `턴 종료 (${ready}부대 남음)` : '턴 종료 →')),
                     b.events.length ? el('div', { class: 'cw-battle-events', 'data-pane': 'status' },
