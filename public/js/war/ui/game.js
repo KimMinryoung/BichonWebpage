@@ -3213,6 +3213,26 @@
         board.append(postMark(b));
         board.append(areaMarks(b));
         board.append(pocketMarks(b));
+        // Fog (def.grounded): banks of mist drifting over the board; nothing flies.
+        if ((b.wings || []).length && B.grounded(b) && !battleEnded) {
+            const blur = svg('filter', { id: 'cwFogBlur', x: '-20%', y: '-50%', width: '140%', height: '200%' });
+            blur.append(svg('feGaussianBlur', { stdDeviation: '14' }));
+            defs.append(blur);
+            const fog = svg('g', { class: 'cw-fog', 'aria-hidden': 'true', filter: 'url(#cwFogBlur)' });
+            const W = cols * CELL, H = rows * CELL;
+            for (let i = 0; i < 6; i++) {
+                const bank = svg('ellipse', { cx: (i * 0.37 % 1) * W, cy: (i + 0.5) / 6 * H, rx: W * (0.3 + (i % 3) * 0.08), ry: H / 9, class: 'cw-fog-bank', style: `animation-delay:${-i * 2.3}s;animation-duration:${14 + i * 3}s` });
+                fog.append(bank);
+            }
+            // Under the units (they stay legible), over the ground, kept inside the board.
+            const clip = svg('clipPath', { id: 'cwFogClip' });
+            clip.append(svg('rect', { x: 0, y: 0, width: W, height: H }));
+            defs.append(clip);
+            const veil = svg('g', { 'clip-path': 'url(#cwFogClip)', class: 'cw-fog-veil' });
+            veil.append(svg('rect', { x: 0, y: 0, width: W, height: H, class: 'cw-fog-haze' }), fog);
+            const first = unitEls.values().next().value;
+            if (first) board.insertBefore(veil, first); else board.append(veil);
+        }
         // The fighters covering the turn: a pair of planes patrolling over the board.
         if (b.cover && !battleEnded) {
             const patrol = svg('g', { class: 'cw-patrol', 'aria-hidden': 'true', style: `--cw-patrol:${cols * CELL - 70}px` });
@@ -3492,15 +3512,16 @@
             wingArmed = wingArmed === w.id ? null : w.id;
             renderBattle();
         };
-        return el('div', { class: 'cw-sky' + (b.cover ? ' is-covered' : ''), 'data-pane': 'field', role: 'group', 'aria-label': '하늘' },
+        return el('div', { class: 'cw-sky' + (b.cover ? ' is-covered' : '') + (wings.length && B.grounded(b) ? ' is-fog' : ''), 'data-pane': 'field', role: 'group', 'aria-label': '하늘' },
             el('strong', { class: 'cw-sky-label' }, '하늘'),
             ...wings.map(w => el('button', {
-                type: 'button', class: 'cw-sky-wing' + (B.wingBlock(b, w) ? ' is-done' : '') + (w.flown ? ' is-up' : ''), 'data-key': `wing-${w.id}`, 'aria-pressed': String(w.id === wingArmed),
+                type: 'button', class: 'cw-sky-wing' + (B.wingBlock(b, w) ? ' is-done' : '') + (w.flown ? ' is-up' : '') + (B.wingBlock(b, w) === 'grounded' ? ' is-fogged' : ''), 'data-key': `wing-${w.id}`, 'aria-pressed': String(w.id === wingArmed),
                 'aria-label': `${w.name}, 기체 ${w.hp}/${w.maxHp}, ${wingState(b, w)}`, onclick: () => press(w),
             }, el('span', { 'aria-hidden': 'true' }, '✈'), w.tag,
             el('span', { class: 'cw-sky-pips', 'aria-hidden': 'true' }, ...Array.from({ length: w.maxHp }, (_, i) => el('i', { class: i < w.hp ? 'is-on' : null }))),
-            w.flown ? el('small', {}, w.kind === 'fighter' ? '엄호 중' : '출격함') : null)),
-            wings.length && B.grounded(b) ? chip('안개: 이번 턴은 못 뜬다', 'is-warn') : null,
+            w.flown ? el('small', {}, w.kind === 'fighter' ? '엄호 중' : '출격함') : null,
+            B.wingBlock(b, w) === 'grounded' ? el('span', { class: 'cw-sky-off', 'aria-hidden': 'true' }, '⊘') : null)),
+            wings.length && B.grounded(b) ? el('span', { class: 'cw-sky-fog', title: '안개: 이번 턴에는 아무도 뜨지 못한다' }, el('span', { 'aria-hidden': 'true' }, '☁☁☁'), '안개') : null,
             // The enemy's planes on the right, drawn as the player's are: its
             // fighters (checked while the player's cover the turn) and its
             // bombers with the turns they come on.

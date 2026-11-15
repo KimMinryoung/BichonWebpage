@@ -1582,6 +1582,20 @@
 .cw-sky.is-covered { background: color-mix(in srgb, #5d9ad6 45%, var(--bg-surface)); border-color: var(--cw-red); box-shadow: inset 0 -3px 0 var(--cw-red); }
 .games-shell .cw-sky-wing.is-up { border: 2px solid var(--cw-red); border-style: solid; color: var(--cw-red); background: var(--bg-surface); font-weight: 800; }
 .cw-sky-foe.is-held { background: linear-gradient(to top right, transparent calc(50% - 1.5px), var(--cw-red) calc(50% - 1.5px), var(--cw-red) calc(50% + 1.5px), transparent calc(50% + 1.5px)), var(--cw-foe-paper); opacity: .75; }
+/* Fog: mist drifting over the board, the strip greyed under cloud, every plane on it dim. */
+.cw-fog-veil { pointer-events: none; }
+.cw-fog-haze { fill: #cfd6dc; opacity: .28; }
+.cw-fog-bank { fill: #fff; opacity: .6; animation: cw-fog-drift 16s ease-in-out infinite alternate; }
+@keyframes cw-fog-drift { from { transform: translateX(-40px); } to { transform: translateX(60px); } }
+@media (prefers-reduced-motion: reduce) { .cw-fog-bank { animation: none; } }
+.cw-sky.is-fog { background: repeating-linear-gradient(100deg, #d9dcdf 0 26px, #eceeef 26px 52px); border-color: #9aa1a8; }
+/* A wing kept down by fog stays in its side's red, under a bank of mist, with a no-entry mark: plainly the player's, plainly not to be pressed. */
+.games-shell .cw-sky-wing.is-fogged { position: relative; overflow: hidden; border: 2px solid var(--cw-red); background: var(--cw-red); color: #fff; cursor: not-allowed; }
+.cw-sky-wing.is-fogged::after, .cw-sky.is-fog .cw-sky-foe::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 60% 90% at 25% 60%, rgba(255, 255, 255, .72), transparent 70%), radial-gradient(ellipse 55% 100% at 70% 35%, rgba(255, 255, 255, .66), transparent 72%), rgba(236, 239, 241, .3); pointer-events: none; }
+.cw-sky.is-fog .cw-sky-foe { position: relative; overflow: hidden; }
+.cw-sky-off { position: relative; z-index: 1; font-size: 1.25em; line-height: 1; font-weight: 800; color: var(--text-primary); }
+.cw-sky-fog { flex: 0 0 auto; display: inline-flex; gap: 5px; align-items: center; padding: 2px 8px; font-weight: 800; color: #4c545c; letter-spacing: .04em; }
+.cw-sky-fog > span { font-size: 1.15em; letter-spacing: -.2em; color: #7d858d; }
 .cw-patrol { pointer-events: none; animation: cw-patrol 7s linear infinite alternate; }
 @keyframes cw-patrol { from { transform: translateX(0); } to { transform: translateX(var(--cw-patrol)); } }
 @media (prefers-reduced-motion: reduce) { .cw-patrol { animation: none; } }
