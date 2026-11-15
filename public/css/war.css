@@ -2174,3 +2174,5 @@
 .cw-unit.is-white .cw-stat.is-exposed { fill: #1f4f8a; }
 .cw-unit-hp { font-size: 12px; }
 .cw-terrain-key i.k-counter { display: none; }
+/* The enemy's turn playing back: the orders wait. */
+.cw-battle.is-replaying .cw-battle-actions > button:not(.cw-primary), .cw-battle.is-replaying .cw-roster, .cw-battle.is-replaying .cw-sky { opacity: .45; }

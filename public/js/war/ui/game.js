@@ -3014,7 +3014,77 @@
         return g;
     }
 
+    // The enemy's turn played back (screen only; the rules have already
+    // moved): the board is drawn as it stood when the turn was sent, then
+    // one enemy unit's march and blow at a time, with what the turn's end
+    // brings (raids, hunger, arrivals), until it stands as it truly does.
+    // A press anywhere on the battle skips to the end; reduced motion
+    // plays nothing.
+    let replay = null;
+    function startReplay(b, snap) {
+        const events = b.events.slice();
+        const cuts = [];
+        events.forEach((e, i) => {
+            const next = events[i + 1];
+            if (!next) { cuts.push(i + 1); return; }
+            // A march and the blow it ends in are one step, with what the blow fells.
+            if (e.type === 'move' && next.type === 'attack' && next.from === e.id) return;
+            if (['fall', 'splash', 'wear'].includes(next.type)) return;
+            if (['move', 'attack', 'air', 'arrive', 'fall', 'splash', 'wear', 'starve', 'water'].includes(e.type)) cuts.push(i + 1);
+        });
+        if (cuts.length < 2 || stillMotion()) return;
+        replay = { b, snap, events, cuts, i: 0, ms: Math.max(140, Math.min(420, Math.round(4200 / cuts.length))) };
+        const tick = () => {
+            if (!replay || replay.b !== s.battle || s.phase !== 'battle') { replay = null; return; }
+            replay.i++;
+            if (replay.i >= replay.cuts.length) replay = null;
+            renderBattle();
+            if (replay) replay.timer = window.setTimeout(tick, replay.ms);
+        };
+        replay.timer = window.setTimeout(tick, replay.ms);
+    }
+    function skipReplay() {
+        if (!replay) return false;
+        window.clearTimeout(replay.timer);
+        replay = null;
+        renderBattle();
+        return true;
+    }
+    // Puts the board back to where the playback stands; returns what undoes it.
+    function replayOn() {
+        const b = s.battle;
+        if (!replay || replay.b !== b) { replay = null; return null; }
+        const upto = replay.i ? replay.cuts[replay.i - 1] : 0;
+        const real = b.units.map(u => [u, u.r, u.c, u.hp]);
+        const events = b.events;
+        const at = id => b.units.find(u => u.id === id);
+        for (const u of b.units) {
+            const was = replay.snap.get(u.id);
+            if (was) { u.r = was.r; u.c = was.c; u.hp = was.hp; } else u.hp = 0;
+        }
+        for (const e of replay.events.slice(0, upto)) {
+            const u = at(e.id || e.to);
+            if (e.type === 'move' && u) { u.r = e.to[0]; u.c = e.to[1]; }
+            else if (e.type === 'attack') {
+                const a = at(e.from);
+                if (u) u.hp = Math.max(0, u.hp - e.dmg);
+                if (a && e.counter) a.hp = Math.max(0, a.hp - e.counter);
+            } else if (['air', 'starve', 'water', 'splash'].includes(e.type) && u) u.hp = Math.max(0, u.hp - e.dmg);
+            else if (e.type === 'fall' && u) u.hp = 0;
+            else if (e.type === 'arrive' && u) { const now = real.find(x => x[0] === u); u.r = now[1]; u.c = now[2]; u.hp = now[3]; }
+        }
+        b.events = replay.events.slice(0, upto);
+        return () => { for (const [u, r, c, hp] of real) { u.r = r; u.c = c; u.hp = hp; } b.events = events; };
+    }
+
     function renderBattle() {
+        const undo = replayOn();
+        try { drawBattle(); } finally { if (undo) undo(); }
+        const box = $('cwBattle');
+        box.classList.toggle('is-replaying', Boolean(replay));
+    }
+
+    function drawBattle() {
         const b = s.battle;
         const def = b.def;
         const box = $('cwBattle');
@@ -3401,12 +3471,12 @@
             el('li', {}, `굵은 막대가 그어진 칸은 ${foeName()} 곁: 이동이 거기서 끝납니다. 칸 구석의 숫자는 드는 이동력.`),
             def.supply && def.supply.enemy ? el('li', {}, `${foeName()}의 보급 띠를 끊으면 그 뒤의 적이 포위됩니다. 부대를 고르면 끊는 칸에 「포위 n」이 붙습니다.`) : null,
             (b.wings || []).length ? el('li', {}, '판 위 「하늘」 줄의 ✈ 단추가 항공 부대입니다. 전투기는 누르면 그 턴의 하늘을 맡고, 습격기는 누른 뒤 판에서 칠 적을 고릅니다.') : null);
-        // Folded once the player has shut it (kept in the browser): open only for one who has not.
-        let howtoShut = false;
-        try { howtoShut = Boolean(localStorage.getItem(KEY + '-howto')); } catch (_) { howtoShut = false; }
+        // Folded (the first battle's lesson teaches the board); open for a player who left it open (kept in the browser).
+        let howtoShut = true;
+        try { howtoShut = localStorage.getItem(KEY + '-howto') !== 'open'; } catch (_) { howtoShut = true; }
         const hint = howto ? el('details', { class: 'cw-howto-fold', open: !howtoShut }, el('summary', {}, '하는 법'), howto,
             document.querySelector('details.cw-rules') ? el('p', { class: 'cw-howto-more' }, el('button', { type: 'button', 'data-key': 'rules', onclick: openRules }, '게임 규칙 전체 보기 ↓')) : null) : null;
-        if (hint) hint.addEventListener('toggle', () => { try { if (hint.open) localStorage.removeItem(KEY + '-howto'); else localStorage.setItem(KEY + '-howto', 'shut'); } catch (_) { /* opens again next time */ } });
+        if (hint) hint.addEventListener('toggle', () => { try { localStorage.setItem(KEY + '-howto', hint.open ? 'open' : 'shut'); } catch (_) { /* opens again next time */ } });
         // The board is built anew on each press; a board scrolled sideways
         // stays where the player left it while the battle lasts.
         if (battleScene(b, box)) return;
@@ -3435,7 +3505,7 @@
                         el('button', { type: 'button', 'data-key': 'menace', class: 'cw-toggle', 'aria-pressed': String(menaceAll), 'aria-label': `${foeName()} 위협`, onclick: () => { menaceAll = !menaceAll; renderBattle(); } }, el('span', { class: 'cw-wide-only' }, `${foeName()} `), '위협'),
                         def.supply ? el('button', { type: 'button', 'data-key': 'supply', class: 'cw-toggle', 'aria-pressed': String(supplyShown), onclick: () => { supplyShown = !supplyShown; renderBattle(); } }, '보급선') : null,
                         el('button', { type: 'button', class: 'cw-primary' + (endArmed ? ' is-armed' : ''), 'data-key': 'end', title: 'E', onclick: endTurn },
-                            endArmed ? (postOpen(b) ? `${josa(postOpen(b).name, "을", "를")} 비운 채 턴 종료` : '한 번 더 누르면 턴 종료') : ready || airReady ? `턴 종료 (${[ready ? `${ready}부대` : null, airReady ? `항공 ${airReady}` : null].filter(Boolean).join(' · ')} 남음)` : '턴 종료 →')),
+                            replay ? `${foeName()}의 차례 · 건너뛰기` : endArmed ? (postOpen(b) ? `${josa(postOpen(b).name, "을", "를")} 비운 채 턴 종료` : '한 번 더 누르면 턴 종료') : ready || airReady ? `턴 종료 (${[ready ? `${ready}부대` : null, airReady ? `항공 ${airReady}` : null].filter(Boolean).join(' · ')} 남음)` : '턴 종료 →')),
                     b.events.length ? el('div', { class: 'cw-battle-events', 'data-pane': 'status' },
                         el('p', { class: 'games-kicker' }, whiteMoved ? `지난 ${foeName()}의 차례` : '방금 일어난 일'),
                         ...eventLog(b)) : null)));
@@ -4107,6 +4177,7 @@
     // With units still to act, or the post left open, the first press only
     // arms the button.
     function endTurn() {
+        if (skipReplay()) return;
         const ready = s.battle.units.some(u => B.isPlayer(s.battle, u) && u.hp > 0 && !u.acted);
         const open = postOpen(s.battle);
         if ((ready || open) && !endArmed) {
@@ -4116,10 +4187,13 @@
             return;
         }
         endArmed = false;
+        const fought = s.battle;
+        const snap = new Map(fought.units.map(u => [u.id, { r: u.r, c: u.c, hp: u.hp }]));
         if (!act('b:end')) return;
         selected = null;
         inspected = null;
         if (battleOver()) return;
+        if (s.battle === fought) startReplay(fought, snap);
         renderBattle();
         announce(`${s.battle.turn}턴. ` + eventLines(s.battle).join(' '));
     }
@@ -4282,6 +4356,9 @@
     // long press on a phone sends one, and it must not take an order back.
     let lastPointer = 'mouse';
     $('cwBattle').addEventListener('pointerdown', e => { lastPointer = e.pointerType; }, true);
+    // A press or a key while the enemy's turn plays back skips to its end and does nothing else.
+    $('cwBattle').addEventListener('click', e => { if (replay) { e.stopPropagation(); e.preventDefault(); skipReplay(); } }, true);
+    document.addEventListener('keydown', e => { if (replay && !e.metaKey && !e.ctrlKey && e.key !== 'Tab') { e.stopPropagation(); e.preventDefault(); skipReplay(); } }, true);
     $('cwBattle').addEventListener('contextmenu', e => {
         if (!s || s.phase !== 'battle' || battleEnded || !e.target.closest('.cw-grid-scroll')) return;
         e.preventDefault();
