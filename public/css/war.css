@@ -610,17 +610,19 @@
 .cw-g-mud { fill: color-mix(in srgb, #5a4428 46%, transparent) !important; }
 .cw-g-marsh { fill: color-mix(in srgb, #4f8f96 42%, transparent) !important; }
 .cw-g-wood { fill: color-mix(in srgb, #2a4f22 34%, transparent) !important; }
-.cw-g-hill { fill: color-mix(in srgb, #8a6a3c 46%, transparent) !important; stroke: color-mix(in srgb, #4a3214 80%, transparent) !important; stroke-width: 1.2; }
-.cw-g-built { fill: color-mix(in srgb, #c9bfa8 80%, var(--bg-surface)) !important; stroke: color-mix(in srgb, #3a2a18 45%, transparent) !important; stroke-width: 1; }
-.cw-g-water { fill: color-mix(in srgb, #5f93c2 72%, var(--bg-surface)) !important; stroke: color-mix(in srgb, #244f78 75%, var(--bg-surface)) !important; stroke-width: 1.6; }
+.cw-g-hill { fill: color-mix(in srgb, #8a6a3c 46%, transparent) !important; }
+.cw-g-built { fill: color-mix(in srgb, #c9bfa8 80%, var(--bg-surface)) !important; }
+.cw-g-water { fill: color-mix(in srgb, #5f93c2 72%, var(--bg-surface)) !important; }
+.cw-g-shore { stroke: color-mix(in srgb, #244f78 75%, var(--bg-surface)) !important; stroke-width: 1.6; }
 .cw-g-deep { fill: color-mix(in srgb, #1f4f8a 70%, var(--bg-surface)) !important; }
 .cw-g-ford { fill: color-mix(in srgb, #a9c9e0 80%, var(--bg-surface)) !important; }
-.cw-g-ice { fill: color-mix(in srgb, #d5e4ee 88%, var(--bg-surface)) !important; stroke: color-mix(in srgb, #7fa0b8 70%, var(--bg-surface)) !important; stroke-width: 1.2; }
+.cw-g-ice { fill: color-mix(in srgb, #d5e4ee 88%, var(--bg-surface)) !important; }
 .cw-g-crack { stroke: color-mix(in srgb, #5f7f98 80%, var(--bg-surface)) !important; stroke-width: 1; }
 .cw-g-contour { stroke: color-mix(in srgb, #4a3214 70%, transparent) !important; stroke-width: 1.1; }
-.cw-g-contour.is-top { fill: color-mix(in srgb, #8a6a3c 36%, transparent) !important; }
-.cw-g-gully { stroke: color-mix(in srgb, #4a3418 80%, var(--bg-surface)) !important; stroke-width: 3; }
-.cw-g-bank { stroke: color-mix(in srgb, #4a3418 70%, var(--bg-surface)) !important; stroke-width: 1.1; }
+.cw-g-crest { fill: color-mix(in srgb, #8a6a3c 36%, transparent) !important; }
+.cw-g-gully { fill: color-mix(in srgb, #5a4220 42%, transparent) !important; stroke: color-mix(in srgb, #2a1c0a 85%, transparent) !important; stroke-width: 1.1; }
+.cw-g-gully-bed { stroke: color-mix(in srgb, #2a1c0a 55%, transparent) !important; stroke-width: 1; stroke-dasharray: 3 3; }
+.cw-g-bank { stroke: color-mix(in srgb, #2a1c0a 80%, transparent) !important; stroke-width: .9; }
 .cw-g-quay { stroke: color-mix(in srgb, #3a3a36 85%, var(--bg-surface)) !important; stroke-width: 15; stroke-linecap: butt !important; }
 .cw-g-canal { stroke: color-mix(in srgb, #5f93c2 80%, var(--bg-surface)) !important; stroke-width: 10; stroke-linecap: butt !important; }
 .cw-g-brook { stroke: color-mix(in srgb, #3a78b0 75%, var(--bg-surface)) !important; stroke-width: 4.5; }

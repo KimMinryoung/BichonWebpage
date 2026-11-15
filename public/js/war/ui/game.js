@@ -2663,6 +2663,13 @@
         raid: () => b.def.raidNote,
         push: () => b.def.pushNote,
         hunt: () => b.def.huntNote,
+        guard: () => `제자리 둘레를 지키다가 가까이 온 ${josa(U.playerUnits, '을', '를')} 치러 나온다.`,
+        // A field unit (battle.js fieldPlan): what it will do is told by what it is about.
+        field: () => (b.def.goals.some(g => g.at[0] === u.r && g.at[1] === u.c) ? '목표를 지키며 자리를 뜨지 않는다. 닿는 부대를 친다.'
+            : B.cutOff(b, u) ? '포위되었다. 보급 기지 쪽으로 뚫고 나오려 한다.'
+                : u.hp * 2 < u.maxHp ? '병력이 꺾여 제자리로 물러나 엄폐한다.'
+                    : (u.reach || 3) >= 9 ? '판 어디든 움직인다. 가장 크게 칠 수 있는 자리로 옮겨 치고, 목표를 위협하는 부대에게 다가온다.'
+                        : `제자리에서 ${u.reach === 0 ? 0 : u.reach || 3}칸 안을 움직인다. 가장 크게 칠 수 있는 자리로 옮겨 치고, 칠 상대가 없으면 다가오는 부대를 맞으러 간다.`),
     }[u.role] || (() => ''))();
     const center = (r, c) => [c * CELL + CELL / 2, r * CELL + CELL / 2];
 

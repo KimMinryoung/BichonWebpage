@@ -55,7 +55,9 @@
    (prisoners) sends those who surrender off the board instead of over to
    the player. Units may come late (arrive: the turn they enter on), a
    garrison may sally (role guard: it strikes what comes within reach of
-   its post and goes back), a board may have several posts to hold
+   its post and goes back, role field: it moves each turn to where it
+   strikes best, breaks out of a pocket, falls back when broken and
+   closes with a threat to the goals), a board may have several posts to hold
    (protect as a list, lost when breach of them are entered) and may ask
    for all its goals at once (goalsAll).
 
@@ -787,6 +789,21 @@
                 if (spots.length) march(b, u, spots[0]);
             },
         },
+        // A unit in the field: each turn it weighs every tile it can reach
+        // (never further than reach from its post) for the blow it could
+        // strike from there, the ground, and the company it would keep, and
+        // takes the best; with nothing to strike it breaks out when cut
+        // off, falls back on its post when broken, and otherwise closes
+        // with whoever threatens the board's goals. It never leaves a goal
+        // it stands on.
+        field: {
+            marches: () => true,
+            act(b, u) {
+                const plan = fieldPlan(b, u);
+                u.prey = plan.target ? plan.target.id : null;
+                if (plan.r !== u.r || plan.c !== u.c) march(b, u, plan);
+            },
+        },
         // The reserve rides at the weakest player unit pressing its sector.
         strike: {
             marches: b => Boolean(reserveSector(b)),
@@ -821,6 +838,58 @@
         const post = { r: u.post[0], c: u.post[1] };
         return alive(b).filter(o => isPlayer(b, o) && dist(o, post) <= (u.reach || 2) + u.range - 1)
             .sort((a, z) => a.hp - z.hp || dist(a, post) - dist(z, post) || (a.id < z.id ? -1 : 1))[0] || null;
+    }
+
+    // A field unit's turn (role field): where it goes and whom it strikes.
+    function fieldPlan(b, u) {
+        const here = { r: u.r, c: u.c };
+        const post = { r: u.post[0], c: u.post[1] };
+        const leash = u.reach === 0 ? 0 : u.reach || 3;
+        const isGoal = t => b.def.goals.some(g => g.at[0] === t.r && g.at[1] === t.c);
+        const foes = alive(b).filter(o => isPlayer(b, o));
+        const beside = t => foes.filter(o => dist(o, t) === 1).length;
+        // On a goal it stays; elsewhere, every tile within the leash.
+        const tiles = isGoal(here) ? [here] : [here].concat(dryReach(b, u).filter(t => dist(t, post) <= leash));
+        let best = null;
+        for (const t of tiles) {
+            u.r = t.r; u.c = t.c;
+            let blow = null;
+            for (const o of targets(b, u)) {
+                const p = preview(b, u, o);
+                const v = p.dmg * 2 - p.counter + (p.dmg >= o.hp ? 6 : 0);
+                if (!blow || v > blow.v) blow = { o, v };
+            }
+            if (blow) {
+                const v = blow.v + groundOf(b, t.r, t.c) * 1.5 - (beside(t) - (dist(blow.o, t) === 1 ? 1 : 0)) * 1.2 + (isGoal(t) ? 4 : 0) - dist(t, post) * .3;
+                if (!best || v > best.v) best = { r: t.r, c: t.c, target: blow.o, v };
+            }
+        }
+        u.r = here.r; u.c = here.c;
+        if (best) return best;
+        // Nothing to strike. Where to stand instead:
+        const nearest = (t, list) => Math.min(...list.map(x => dist(t, x)));
+        let want;
+        if (cutOff(b, u) && b.def.supply.enemy) {
+            // Out of the pocket, toward the base.
+            const bases = b.def.supply.enemy.map(([r, c]) => ({ r, c }));
+            want = t => -nearest(t, bases) * 2 + groundOf(b, t.r, t.c);
+        } else if (u.hp * 2 < u.maxHp) {
+            // Broken: back on its post, in what cover there is.
+            want = t => -dist(t, post) * 2 + groundOf(b, t.r, t.c) - beside(t) * 2;
+        } else {
+            // Close with the player's unit nearest the board's goals (or
+            // nearest itself), to within a blow next turn, keeping to cover.
+            const goals = b.def.goals.map(g => ({ r: g.at[0], c: g.at[1] }));
+            const threat = foes.slice().sort((x, z) => (goals.length ? nearest(x, goals) - nearest(z, goals) : dist(x, u) - dist(z, u)) || dist(x, u) - dist(z, u) || (x.id < z.id ? -1 : 1))[0];
+            if (!threat || dist(threat, post) > leash + 3) want = t => -dist(t, post) * 2 + groundOf(b, t.r, t.c);
+            else want = t => -Math.abs(dist(t, threat) - 2) * 2 + groundOf(b, t.r, t.c) * 1.5 - beside(t) * 1.5 - dist(t, post) * .2;
+        }
+        let stand = null;
+        for (const t of tiles) {
+            const v = want(t) + (isGoal(t) ? 4 : 0);
+            if (!stand || v > stand.v + 1e-9) stand = { r: t.r, c: t.c, target: null, v };
+        }
+        return stand;
     }
 
     // The player's unit a hunter goes for: the fewest friends beside it,

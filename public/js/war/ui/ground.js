@@ -49,6 +49,26 @@
             });
             return d;
         }
+        // The same region's edge alone: a line along each side where the
+        // region ends and round its outer corners, nothing between its own
+        // tiles (a filled region stroked tile by tile shows every square).
+        function outline(mine, edge, inset, rad) {
+            let d = '';
+            each((r, c) => {
+                if (!mine(r, c)) return;
+                const open = DIRS.map(([dr, dc]) => !edge(r + dr, c + dc));
+                const x0 = c * CELL + (open[3] ? inset : 0), x1 = (c + 1) * CELL - (open[1] ? inset : 0);
+                const y0 = r * CELL + (open[0] ? inset : 0), y1 = (r + 1) * CELL - (open[2] ? inset : 0);
+                const q = (a, b) => (open[a] && open[b] ? rad : 0);
+                const nw = q(0, 3), ne = q(0, 1), se = q(2, 1), sw = q(2, 3);
+                if (open[0]) d += `M${x0 + nw} ${y0}H${x1 - ne}${ne ? `Q${x1} ${y0} ${x1} ${y0 + ne}` : ''}`;
+                if (open[1]) d += `M${x1} ${y0 + ne}V${y1 - se}${se ? `Q${x1} ${y1} ${x1 - se} ${y1}` : ''}`;
+                if (open[2]) d += `M${x1 - se} ${y1}H${x0 + sw}${sw ? `Q${x0} ${y1} ${x0} ${y1 - sw}` : ''}`;
+                if (open[3]) d += `M${x0} ${y1 - sw}V${y0 + nw}${nw ? `Q${x0} ${y0} ${x0 + nw} ${y0}` : ''}`;
+            });
+            return d;
+        }
+        const outlineOf = (set, inset, rad) => outline((r, c) => set.has(cls(r, c)), inSet(set), inset, rad);
         const regionOf = (set, inset, rad) => region((r, c) => set.has(cls(r, c)), inSet(set), inset, rad);
         // A line through the middles of the tiles of a set: from each
         // tile's middle to the side it shares with a neighbour of the set
@@ -76,6 +96,7 @@
         // ── Water: one band, its banks, then what differs on it ──
         const wet = inSet(WET);
         add(region((r, c) => WET.has(cls(r, c)), wet, 7, 16), 'cw-g-water');
+        add(outline((r, c) => WET.has(cls(r, c)), wet, 7, 16), 'cw-g-shore');
         add(region((r, c) => cls(r, c) === 'deep', wet, 7, 16), 'cw-g-deep');
         add(region((r, c) => cls(r, c) === 'ford', wet, 7, 16), 'cw-g-ford');
         add(region((r, c) => cls(r, c) === 'ice', wet, 7, 16), 'cw-g-ice');
@@ -97,7 +118,8 @@
 
         // ── Heights: contours following the hill's edge ──
         const hill = new Set(['heights']);
-        for (const [inset, k] of [[5, 'cw-g-contour'], [12, 'cw-g-contour'], [19, 'cw-g-contour is-top']]) add(regionOf(hill, inset, Math.max(4, 20 - inset)), k);
+        add(regionOf(hill, 19, 4), 'cw-g-crest');
+        for (const inset of [2, 5, 12, 19]) add(outlineOf(hill, inset, Math.max(4, 20 - inset)), 'cw-g-contour');
 
         let hach = '', hachDark = '';
         each((r, c, k) => {
@@ -126,11 +148,38 @@
             return d;
         };
         let gully = '', bank = '', brook = '', reed = '', trench = '', wire = '', wall = '', teeth = '';
-        for (const [x1, y1, x2, y2, r, c] of runs(new Set(['ravine']), [1, 3])) {
-            gully += wiggle(x1, y1, x2, y2, 3, 8, r * 31 + c);
-            const mx = (x1 + x2) / 2, my = (y1 + y2) / 2, v = x1 === x2;
-            bank += v ? `M${mx - 4} ${my - 3}l-4 2M${mx + 4} ${my + 3}l4 2` : `M${mx - 3} ${my - 4}l2 -4M${mx + 3} ${my + 4}l2 4`;
-        }
+        // A gully (балка): a cut in the steppe, widest in the middle and
+        // pinched at its ends, dark on the shaded bank, its sides hatched.
+        // Through neighbouring gully tiles it runs on; alone, it lies
+        // slantwise across its tile.
+        let gullyLit = '';
+        each((r, c, k) => {
+            if (k !== 'ravine') return;
+            const x = c * CELL, y = r * CELL, cx = x + CELL / 2, cy = y + CELL / 2;
+            const to = DIRS.map(([dr, dc], i) => (cls(r + dr, c + dc) === 'ravine' ? i : -1)).filter(i => i >= 0);
+            const tilt = rnd(r, c, 1) < .5 ? 1 : -1;
+            const ends = to.length >= 2 ? to.slice(0, 2).map(i => [cx + DIRS[i][1] * CELL / 2, cy + DIRS[i][0] * CELL / 2, 1])
+                : to.length === 1 ? [[cx + DIRS[to[0]][1] * CELL / 2, cy + DIRS[to[0]][0] * CELL / 2, 1], [cx - DIRS[to[0]][1] * 16 + 6 * tilt, cy - DIRS[to[0]][0] * 16 + 6, 0]]
+                    : [[x + 2, cy - 11 * tilt, 0], [x + CELL - 2, cy + 11 * tilt, 0]];
+            const [[ax, ay, aw], [zx, zy, zw]] = ends;
+            const len = Math.hypot(zx - ax, zy - ay), nx = -(zy - ay) / len, ny = (zx - ax) / len;
+            const n = 8, up = [], down = [];
+            for (let i = 0; i <= n; i++) {
+                const t = i / n;
+                // The bed wanders; the cut is 5 wide in the middle, a point at a free end.
+                const sway = Math.sin(t * Math.PI * 2 + rnd(r, c, 2) * 6) * 3.2;
+                const px = ax + (zx - ax) * t + nx * sway, py = ay + (zy - ay) * t + ny * sway;
+                const half = .6 + 5.6 * Math.sin(Math.PI * Math.min(1, Math.max(0, t * (1 - aw * .5) + aw * .25 + (zw ? (1 - t) * 0 : 0))));
+                const w = Math.max(aw && t < .5 ? 4 : 0, zw && t > .5 ? 4 : 0, half);
+                up.push([px + nx * w, py + ny * w]); down.push([px - nx * w, py - ny * w]);
+                // Hachures down each bank, toward the bed.
+                if (i > 0 && i < n && w > 2) bank += `M${f1(px + nx * w)} ${f1(py + ny * w)}l${f1(-nx * w * .6)} ${f1(-ny * w * .6)}M${f1(px - nx * w)} ${f1(py - ny * w)}l${f1(nx * w * .6)} ${f1(ny * w * .6)}`;
+            }
+            const line = pts => pts.map(([px, py]) => `${f1(px)} ${f1(py)}`).join('L');
+            gully += `M${line(up)}L${line(down.slice().reverse())}Z`;
+            gullyLit += `M${line(up.map(([px, py], i) => [(px + down[i][0] * 2) / 3, (py + down[i][1] * 2) / 3]))}`;
+        });
+        add(gully, 'cw-g-gully'); add(gullyLit, 'cw-g-gully-bed');
         const brookSet = new Set(['stream']);
         for (const [x1, y1, x2, y2, r, c] of runs(brookSet, [0, 2])) brook += wiggle(x1, y1, x2, y2, 3.5, 9, r * 17 + c);
         each((r, c, k) => {
@@ -159,7 +208,7 @@
         let canal = '';
         for (const [x1, y1, x2, y2] of runs(new Set(['canal']), [1, 3])) canal += `M${x1} ${y1}L${x2} ${y2}`;
         add(canal, 'cw-g-quay'); add(canal, 'cw-g-canal');
-        add(gully, 'cw-g-gully'); add(bank, 'cw-g-bank'); add(brook, 'cw-g-brook'); add(reed, 'cw-g-reed');
+        add(bank, 'cw-g-bank'); add(brook, 'cw-g-brook'); add(reed, 'cw-g-reed');
         // A trench's parapet along the sides where the dug ground ends: it
         // shows round a unit standing in it.
         let parapet = '';
