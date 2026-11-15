@@ -730,12 +730,12 @@
 .cw-goal-name rect { fill: var(--cw-red); stroke: var(--text-primary); stroke-width: 1; }
 .cw-goal-name text { fill: #fff; font-size: 9.5px; font-weight: 800; }
 .cw-post-alarm { flex-basis: 100%; margin: 0; padding: 6px 10px; border: 2px solid var(--cw-foe-accent); background: color-mix(in srgb, var(--cw-foe-accent) 22%, var(--bg-surface)); font-weight: 800; font-size: .88rem; }
-.cw-flank-zone { fill: none; stroke: var(--text-primary); stroke-opacity: .55; stroke-width: 1.5; stroke-dasharray: 6 4; pointer-events: none; }
+.cw-flank-zone { fill: var(--cw-red); fill-opacity: .2; stroke: var(--cw-red); stroke-width: 2.5; stroke-dasharray: 7 4; pointer-events: none; }
 .cw-danger { fill: var(--cw-foe-accent); fill-opacity: .28; stroke: var(--cw-foe-accent); stroke-width: 1.5; pointer-events: none; }
 .cw-hit { fill: var(--text-primary); fill-opacity: .26; stroke: var(--text-primary); stroke-opacity: .65; stroke-width: 1; cursor: pointer; }
 .cw-hit:hover { fill-opacity: .4; }
 .cw-place { font-size: 10px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; pointer-events: none; }
-.cw-place.is-flank { fill: var(--text-secondary); }
+.cw-place.is-flank { fill: var(--cw-red); font-weight: 800; }
 .cw-terrain-fold { margin: 8px 0 0; }
 .cw-terrain-fold summary { cursor: pointer; font-size: .78rem; color: var(--text-secondary); }
 .cw-terrain-key { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .78rem; color: var(--text-secondary); margin: 6px 0 0; }
@@ -1586,6 +1586,14 @@
 .cw-sky-foe.is-held { background: linear-gradient(to top right, transparent calc(50% - 1.5px), var(--cw-red) calc(50% - 1.5px), var(--cw-red) calc(50% + 1.5px), transparent calc(50% + 1.5px)), var(--cw-foe-paper); opacity: .75; }
 /* Fog: mist drifting over the board, the strip greyed under cloud, every plane on it dim. */
 .cw-fog-veil { pointer-events: none; }
+/* In fog a gun's usual reach is shown lost (misted, crossed) and the tiles beside it, where it can still strike, ringed. */
+.cw-fog-lost { fill: #fff; fill-opacity: .55; stroke: #8b939b; stroke-width: 1.5; stroke-dasharray: 4 3; pointer-events: none; }
+.cw-fog-lost-x { fill: none; stroke: #6c747c; stroke-width: 2; stroke-linecap: round; pointer-events: none; }
+.cw-fog-near { fill: none; stroke: var(--cw-red); stroke-width: 2.5; pointer-events: none; }
+.cw-fog-tag { pointer-events: none; }
+.cw-fog-tag rect { fill: #eef1f3; stroke: #6c747c; stroke-width: 1; }
+.cw-fog-tag text { font-size: 8.5px; font-weight: 800; fill: #3d444b; }
+
 .cw-fog-haze { fill: #cfd6dc; opacity: .28; }
 .cw-fog-bank { fill: #fff; opacity: .6; animation: cw-fog-drift 16s ease-in-out infinite alternate; }
 @keyframes cw-fog-drift { from { transform: translateX(-40px); } to { transform: translateX(60px); } }

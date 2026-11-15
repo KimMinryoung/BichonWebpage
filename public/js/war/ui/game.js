@@ -2678,6 +2678,8 @@
 
 
     // The outline of the ground that turns a line, while it holds.
+    // The defence a line's fortification gives while it stands unturned.
+    const fortOf = (def, line) => Math.max(0, ...Object.values(def.terrain).filter(t => t.fort === line).map(t => t.def));
     function rearOutline(b, line) {
         const rows = b.def.map.length, cols = b.def.map[0].length;
         const isRear = (r, c) => r >= 0 && c >= 0 && r < rows && c < cols && B.behind(b, line, r, c);
@@ -3045,7 +3047,7 @@
         for (const [text, r, c] of def.places.filter(([, r, c]) => !held(r, c))) board.append(svg('text', { x: c * CELL + 4, y: r * CELL + 12, class: 'cw-place' }, text));
         for (const id of open) {
             const [r, c] = def.lines[id].label;
-            if (!held(r, c)) board.append(svg('text', { x: c * CELL + 4, y: r * CELL + CELL - 6, class: 'cw-place is-flank' }, def.lines[id].name + ' 우회'));
+            if (!held(r, c)) board.append(svg('text', { x: c * CELL + 4, y: r * CELL + CELL - 6, class: 'cw-place is-flank' }, `여기 서면 ${def.lines[id].name} 방어 +${fortOf(def, id)}→+1`));
         }
         for (const m of moves) {
             const t = B.terrain(b, m.r, m.c);
@@ -3084,6 +3086,22 @@
             hpText(counterBar.text, counterBar.hp, lost, 'is-counter');
         };
         board.append(supplyMarks(b, unit || foe || null));
+        // Fog: the tiles a picked gun would reach on a clear day, lost in the mist (it strikes only beside it now).
+        const gun = unit || foe;
+        if (gun && gun.range > 1 && B.fogged(b)) {
+            for (let r = gun.r - gun.range; r <= gun.r + gun.range; r++) {
+                for (let c = gun.c - gun.range; c <= gun.c + gun.range; c++) {
+                    const d = Math.abs(r - gun.r) + Math.abs(c - gun.c);
+                    if (d < 2 || d > gun.range || r < 0 || c < 0 || r >= rows || c >= cols) continue;
+                    const x = c * CELL, y = r * CELL;
+                    board.append(svg('rect', { x: x + 2, y: y + 2, width: CELL - 4, height: CELL - 4, class: 'cw-fog-lost' }), svg('path', { d: `M${x + 15} ${y + 15}L${x + CELL - 15} ${y + CELL - 15}M${x + CELL - 15} ${y + 15}L${x + 15} ${y + CELL - 15}`, class: 'cw-fog-lost-x' }));
+                }
+            }
+            for (const [dr, dc] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
+                const r = gun.r + dr, c = gun.c + dc;
+                if (r >= 0 && c >= 0 && r < rows && c < cols) board.append(svg('rect', { x: c * CELL + 2, y: r * CELL + 2, width: CELL - 4, height: CELL - 4, class: 'cw-fog-near' }));
+            }
+        }
         // The verdict in: a won battle's Red units leap, one after another.
         const verdict = verdictBanner(b);
         const cheer = verdict && b.result === 'won' && !stillMotion() ? Math.round(performance.now() - verdictAt) : null;
@@ -3143,6 +3161,12 @@
             }
             if (B.isEnemy(b, u)) g.append(svg('rect', { x: x + 1.5, y: y + 1.5, width: CELL - 3, height: CELL - 3, class: 'cw-doom-ring' }));
             unitEls.set(u.id, g);
+            // Fog: a gun's reach cut to the tiles beside it, said on the gun.
+            if (u.range > 1 && B.fogged(b) && !battleEnded) {
+                const tag = svg('g', { class: 'cw-fog-tag', 'aria-hidden': 'true' });
+                tag.append(svg('rect', { x: x - 4, y: y - 7, width: CELL + 8, height: 13 }), svg('text', { x: x + CELL / 2, y: y + 3, 'text-anchor': 'middle' }, `사거리 ${u.range}→1`));
+                g.append(tag);
+            }
             // The enemy's raid at this turn's end comes for this unit (not while the fighters cover the turn).
             if (bombed.has(u.id)) {
                 const plane = planeGlyph(x + 2, y - 9, 20);
@@ -3278,9 +3302,9 @@
             dueText ? row('증원', dueText) : null,
             merits.length ? row('전공', meritList(merits)) : null,
             def.weather ? row('날씨', weatherText(b)) : null,
-            (b.fog || []).length && b.turn <= Math.max(...b.fog) ? row('안개', B.fogged(b) ? `포는 곁의 적만 친다 · ${Math.max(...b.fog)}턴까지` : `${b.fog.filter(t => t > b.turn).join('·')}턴에 다시 낀다`) : null,
+            (b.fog || []).length && b.turn <= Math.max(...b.fog) ? row('안개', B.fogged(b) ? `포 사거리 1 · ${Math.max(...b.fog)}턴까지` : `${b.fog.filter(t => t > b.turn).join('·')}턴에 다시 낀다`) : null,
             def.windTurns ? row('여울', B.fordOpen(b) ? `${def.ford} 열림 · ${def.windTurns - b.turn + 1}턴 남음` : `${def.ford} 물에 잠김`) : null,
-            ...Object.values(def.lines).map((l, i) => row('우회', b.turned[Object.keys(def.lines)[i]] ? `${l.name} 끊음 · 진지 방어가 +1로 줄었다` : `${l.name} · 점선 구역에 서면 수비대의 뒤가 끊긴다`)),
+            ...Object.values(def.lines).map((l, i) => row('우회', b.turned[Object.keys(def.lines)[i]] ? `${l.name} 뒤에 섰다 · 방어 +${fortOf(def, Object.keys(def.lines)[i])}→+1` : `${l.name} 뒤 점선 칸에 서면 그 방어 +${fortOf(def, Object.keys(def.lines)[i])}→+1`)),
             !Object.keys(def.sectors).length ? null : row('예비대', b.reserve ? `${foeName()} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶임` : `${foeName()} 예비대는 아직 그대로`),
         ].filter(Boolean);
         // How to play a turn, in the order it is done.
@@ -3309,7 +3333,7 @@
             battleBrief(b),
             ...(lesson ? [lesson] : []),
             el('div', { class: 'cw-battle-layout' },
-                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : skyBar(b), battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], B.postsOf(def).length ? ['post', `${B.postsOf(def).map(x => x.name).join('·')}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, def.supply ? ['supply', `보급선 (붉은 띠 ${U.player}, 회색 띠 ${foeName()}, 「보급」 표가 보급 기지 · 붉은 빗금은 내 부대가 막은 칸)`] : null, def.supply && def.supply.enemy ? ['pocket', '「포위 n」: 그 칸에 서면 끊기는 적 부대 수 · 붉은 테두리: 포위된 적'] : null, B.raidsOf(def).some(r => r.against !== 'enemy') ? ['raid', `✈ −n: 이번 턴 끝에 ${foeName()} 공습을 맞을 부대`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
+                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : skyBar(b), battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], B.postsOf(def).length ? ['post', `${B.postsOf(def).map(x => x.name).join('·')}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, def.supply ? ['supply', `보급선 (붉은 띠 ${U.player}, 회색 띠 ${foeName()}, 「보급」 표가 보급 기지 · 붉은 빗금은 내 부대가 막은 칸)`] : null, def.supply && def.supply.enemy ? ['pocket', '「포위 n」: 그 칸에 서면 끊기는 적 부대 수 · 붉은 테두리: 포위된 적'] : null, B.raidsOf(def).some(r => r.against !== 'enemy') ? ['raid', `✈ −n: 이번 턴 끝에 ${foeName()} 공습을 맞을 부대`] : null, Object.keys(def.lines).length ? ['flank', '점선 칸: 부대가 서면 그 방어선의 방어가 +1로 준다'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('dl', { class: 'cw-battle-status', 'data-pane': 'status' }, ...status.map(x => el('div', { class: x.tone || null }, el('dt', {}, x.label), el('dd', {}, x.text)))),
@@ -3429,7 +3453,7 @@
         if (B.postsOf(def).some(x => x.at[0] === r && x.at[1] === c)) marks.push(`지킬 곳: ${josa(foeName(), '이', '가')} 들어서면 패배`);
         if (def.supply) for (const [side, name] of [['player', U.player], ['enemy', foeName()]]) if ((def.supply[side] || []).some(x => x[0] === r && x[1] === c)) marks.push(`${name}의 보급 기지`);
         if (t.supply) marks.push('보급이 건너는 길');
-        for (const [id, l] of Object.entries(def.lines)) if (!b.turned[id] && B.behind(b, id, r, c)) marks.push(`우회 구역: 서면 ${l.name} 수비대의 뒤가 끊김`);
+        for (const [id, l] of Object.entries(def.lines)) if (!b.turned[id] && B.behind(b, id, r, c)) marks.push(`${l.name}의 뒤: 부대가 서면 그 방어가 +${fortOf(def, id)}→+1로 줄고, 꺾인 수비대는 물러난다`);
         return el('div', { class: cls },
             el('p', {}, el('span', { class: 'cw-terrain-key cw-swatch', 'aria-hidden': 'true' }, el('i', { class: 'k-' + (t.ford && !B.fordOpen(b) ? 'river' : t.cls) })),
                 el('strong', {}, place && place[0] !== t.name ? `${place[0]} · ${t.name}` : t.name), el('span', {}, facts.join(' · ')),
@@ -3666,11 +3690,11 @@
         // On a phone the strip over the actions already gives the name,
         // strength, plain numbers and what the unit does now: the card keeps
         // only what the strip leaves out (marked 'cw-info-dup' there).
-        const more = [parts.length > 1 ? `방어 ${B.defenseOf(b, u)} (${parts.join(', ')})` : null, u.rail ? '철길로만 이동' : null, u.range > 1 ? `사거리 ${u.range}` : null].filter(Boolean);
+        const more = [parts.length > 1 ? `방어 ${B.defenseOf(b, u)} (${parts.join(', ')})` : null, u.rail ? '철길로만 이동' : null, u.range > 1 ? (B.fogged(b) ? `사거리 ${u.range}→1 (안개)` : `사거리 ${u.range}`) : null].filter(Boolean);
         return el('div', {},
             el('h3', {}, el('span', { class: 'cw-info-dup' }, u.name), el('small', {}, [UNIT_KIND[u.rail ? 'rail' : u.kind], u.sub].filter(Boolean).join(' · '))),
             el('p', { class: 'cw-info-hp cw-info-dup' }, el('strong', {}, `병력 ${u.hp}/${u.maxHp}`), el('span', { class: 'cw-info-bar is-' + sideOf(b, u), style: `--hp:${(100 * u.hp / u.maxHp).toFixed(0)}%`, 'aria-hidden': 'true' })),
-            el('p', { class: 'cw-info-dup' }, `공격 ${u.atk} · 방어 ${B.defenseOf(b, u)}${parts.length > 1 ? ` (${parts.join(', ')})` : ''} · 이동 ${u.mv}${u.rail ? ' (철길로만)' : ''}${u.range > 1 ? ` · 사거리 ${u.range}` : ''}`),
+            el('p', { class: 'cw-info-dup' }, `공격 ${u.atk} · 방어 ${B.defenseOf(b, u)}${parts.length > 1 ? ` (${parts.join(', ')})` : ''} · 이동 ${u.mv}${u.rail ? ' (철길로만)' : ''}${u.range > 1 ? (B.fogged(b) ? ` · 사거리 ${u.range}→1 (안개)` : ` · 사거리 ${u.range}`) : ''}`),
             more.length ? el('p', { class: 'cw-info-more' }, more.join(' · ')) : null,
             u.person ? el('p', {}, '지휘: ', person(u.person)) : null,
             featInfo(b, u),
