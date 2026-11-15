@@ -35,7 +35,7 @@
 
 작업 뒤 본문 평균: 한국 1,466자, 중국 1,176자, 아시아 1,036자.
 
-### 문헌 12건
+### 문헌 12건 (+ 강좌용 번역 12건은 아래 「남은 것」 앞머리)
 
 - 조선어 원문(번역 없음): `pak-hon-yong-august-theses-1945`, `korean-independence-declarations-1919`, `korean-social-movement-programs-1923-1929`, `korea-liberation-declarations-1945`, `april-revolution-declarations-1960`, `wpsk-draft-program-and-north-south-joint-statement-1946-1948`, `korean-democracy-declarations-1960-1980`, `korean-workers-and-farmers-declarations-1977-1995`, `im-hwa-poems-1929-1938`(시집 『현해탄』 전편과 「우리 오빠와 화로」, 1938년판 영인과 전편 대조).
 - 번역(영어 《인프레코르》판에서): `comintern-resolution-korean-question-1928`(12월 테제), `comintern-theses-on-japan-1927`(27년 테제), `far-east-congress-manifesto-and-katayama-report-1922`.
@@ -67,11 +67,17 @@
 - 영어 별칭이 자동 링크되지 않는 조선·한국 카드 143장(`l2/romanization-survey.tsv`): 링크 표현을 일괄로 넣을지, 규칙(`data/commulingo/people-linkify.js`)을 바꿀지.
 - 삼선개헌 반대 선언문(반공 야권 문서)을 민주화운동 모음에 둘지.
 
-**보류한 번역**(BRIEF 「T」 절에 지시가 그대로 있다)
-- T2: 중국공산당 2대 선언, 국민당 1대 선언, 8·1 선언, 「약간의 역사 문제에 관한 결의」
-- T3: 야마카와 「무산계급 운동의 방향 전환」, 수평사 선언, 카라한 선언
-- T4: 마오쩌둥 「후난 농민운동 고찰 보고」, 「신민주주의론」
-- 루쉰 「좌익작가연맹에 대한 의견」, 그 밖의 중·하 후보(리리싼 6·11 결의, 쭌이 결의, 천두슈·리다자오 초기 글, 대만민중당 강령 등)
+**강좌용 번역 (같은 날 밤 완료, 원문에서 직접·원문 함께 공개)**
+- 중국어: `ccp-august-first-declaration-1935`, `ccp-second-congress-manifesto-1922`, `kuomintang-first-congress-declaration-1924`, `ccp-resolution-on-certain-historical-questions-1945`, `mao-on-new-democracy-1940`, `mao-hunan-peasant-movement-report-1927`, `lu-xun-on-league-of-left-wing-writers-1930`, `chen-duxiu-call-to-youth-1915`
+- 일본어: `suiheisha-declaration-1922`, `yamakawa-direction-change-1922`(원문 공개는 소유자 결정)
+- 러시아어: `karakhan-manifesto-1919`, `tasks-of-the-communists-of-japan-1922`(극동민족대회 일본 대표단 강령; 저본은 «ВКП(б), Коминтерн и Япония» 2001, ЭБИД)
+- 저본은 대부분 온라인 전사본(위키문헌, marxists.org)이고 인쇄본과 대조한 것은 카라한 선언·일본 공산주의자의 임무(영인)뿐이다. 마오쩌둥 두 편은 『선집』 수록본(손본 판)이다.
+- L3: 같은 대목을 인용하는 용어·사건·인물 본문을 번역문과 같은 글자로 맞췄다(카라한 선언, 후난 보고, 좌련, 8·1 선언, 신청년, 5·4 사건, 천두슈 섹션, 정우회 선언, 제1차 국공합작 사건). 극동민족대회 용어의 「부하린이 기초한 … 부르주아 민주주의 혁명으로 규정」은 원문과 어긋나 고쳤다.
+
+**미룬 번역**
+- 대만민중당 선언·강령·정책(1927): 위키문헌 글이 일본어 경찰 기록의 전후 중국어 번역으로 보여 중역이 된다. 《臺灣民報》 1927년 7월분이나 『臺灣總督府警察沿革誌』 중권이 필요하다.
+- 32년 테제: ЭБИД의 같은 문서집(node 48085)에 러시아어판이 있다. 편자 주에 일부 문서가 일본어→영어→러시아어 번역이라 하므로 원어 확인이 먼저다. 같은 곳에 가타야마 「일본공산당 강령」(1922.1), 1922년 9월 강령, 부하린의 22년 강령 초안 발췌, 27년 테제 러시아어판도 있다.
+- 중·하 후보: 리리싼 6·11 결의, 쭌이 결의, 리다자오 초기 글, 가타야마 『일본의 노동운동』 등.
 
 **전문을 구하지 못한 문헌**
 - 조선공산당 선언(1926), 신채호 「조선혁명선언」 국한문 원문, 카프 강령, 진보당 강령·선언, 전평 강령, 남로당 강령 채택본, 대한독립선언서, 정우회 선언, 3·1 민주구국선언, 6·10 국민대회 선언, 전노협 창립선언, 임화 「우산 받은 요꼬하마의 부두」(전집 필요)
