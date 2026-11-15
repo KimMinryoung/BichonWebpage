@@ -18,7 +18,7 @@
     // Looks that are water to the eye (a river runs on under its bridge).
     const WET = new Set(['river', 'deep', 'ford', 'ice', 'bridge', 'strait', 'pontoon', 'blown', 'crossing']);
     const DUG = new Set(['trench', 'yushun', 'chongar']);
-    const BUILT = new Set(['town', 'city', 'docks', 'works', 'kremlin']);
+    const BUILT = new Set(['town', 'city', 'ruins', 'docks', 'works', 'kremlin']);
 
     // A steady pseudo-random number in [0, 1) for a tile and a counter.
     const rnd = (r, c, i) => { const v = Math.sin(r * 127.1 + c * 311.7 + i * 74.7) * 43758.5453; return v - Math.floor(v); };
@@ -193,39 +193,50 @@
         add(rut, 'cw-g-rut'); add(bog, 'cw-g-bog'); add(bogTuft, 'cw-g-reed');
 
         // ── Built-up ground: roofs in blocks ──
-        let roof = '', roofDark = '', lane = '', ridge = '', shed = '', stack = '', smoke = '', pier = '', keep = '';
-        const tones = ['', '', ''];
+        let roof = '', ridge = '', shed = '', stack = '', smoke = '', pier = '', keep = '', roofs = '', glass = '', jag = '', rubble = '';
+        const walls = ['', '', ''];
         each((r, c, k) => {
             const x = c * CELL, y = r * CELL;
-            if (k === 'city') {
-                // A dense quarter: two rows of houses wall to wall between
-                // the streets, roofs of three colours, the big ones round a yard.
+            if (k === 'city' || k === 'ruins') {
+                // A town seen as its skyline, like the firs: two rows of
+                // houses of several storeys, the nearer over the further,
+                // windows in rows, gabled or flat roofs. Ruins are the same
+                // houses with their tops broken off and their windows blown out.
+                const ruin = k === 'ruins';
                 for (let i = 0; i < 2; i++) {
-                    const by = y + 3 + i * 22.5, h = 19;
-                    let bx = x + 3;
-                    for (let j = 0; bx < x + CELL - 8; j++) {
-                        const w = Math.min(x + CELL - 3 - bx, 9 + rnd(r, c, i * 7 + j) * 13);
-                        const tone = Math.floor(rnd(r, c, i * 11 + j + 40) * 3);
-                        let d = `M${f1(bx)} ${f1(by)}h${f1(w)}v${h}h${f1(-w)}z`;
-                        if (w > 15) d += `M${f1(bx + 5)} ${f1(by + 5)}v${h - 10}h${f1(w - 10)}v${10 - h}z`;
-                        else ridge += w > 11 ? `M${f1(bx + 2)} ${f1(by + h / 2)}h${f1(w - 4)}` : `M${f1(bx + w / 2)} ${f1(by + 2)}v${h - 4}`;
-                        tones[tone] += d;
-                        bx += w + 1.5;
+                    const base = y + (i ? 45 : 27);
+                    let bx = x + 2 + rnd(r, c, i + 70) * 3;
+                    for (let j = 0; bx < x + CELL - 9; j++) {
+                        const n = i * 9 + j;
+                        const w = Math.min(x + CELL - 2 - bx, 9 + rnd(r, c, n) * 6), h = (i ? 15 : 19) + rnd(r, c, n + 20) * 8 - (ruin ? 4 : 0);
+                        const top = base - h;
+                        walls[Math.floor(rnd(r, c, n + 40) * 3)] += `M${f1(bx)} ${f1(base)}V${f1(top)}H${f1(bx + w)}V${f1(base)}Z`;
+                        if (ruin) {
+                            // A broken top: the wall standing higher at one corner.
+                            const up = rnd(r, c, n + 50) < .5;
+                            jag += `M${f1(bx)} ${f1(top)}l${f1(w * .2)} ${up ? -5 : -2}l${f1(w * .2)} 4l${f1(w * .25)} ${up ? -2 : -6}l${f1(w * .35)} ${up ? 3 : 4}z`;
+                        } else if (rnd(r, c, n + 60) < .6) roofs += `M${f1(bx - 1)} ${f1(top)}L${f1(bx + w / 2)} ${f1(top - 5)}L${f1(bx + w + 1)} ${f1(top)}Z`;
+                        else roofs += `M${f1(bx - .5)} ${f1(top - 1.5)}h${f1(w + 1)}v2h${f1(-w - 1)}z`;
+                        const cols = w > 12 ? 3 : 2, gap = w / (cols + .6);
+                        for (let wy = top + 3.5; wy < base - 3; wy += 4.5) {
+                            for (let q = 0; q < cols; q++) {
+                                if (ruin && rnd(r, c, n + q + Math.round(wy)) < .3) continue;
+                                glass += `M${f1(bx + gap * (q + .45))} ${f1(wy)}h2.2v2.6h-2.2z`;
+                            }
+                        }
+                        bx += w + .6;
                     }
                 }
+                if (ruin) for (let i = 0; i < 6; i++) rubble += `M${f1(x + 4 + rnd(r, c, i + 80) * 40)} ${f1(y + 44 + rnd(r, c, i + 90) * 3)}h${f1(1.5 + rnd(r, c, i + 95) * 2.5)}`;
             } else if (k === 'town') {
-                // A village: a lane, and houses at their own angles beside it, each roof lit on one side.
-                const to = DIRS.map(([dr, dc], i) => (BUILT.has(cls(r + dr, c + dc)) ? i : -1)).filter(i => i >= 0);
-                const cx = x + CELL / 2, cy = y + CELL / 2;
-                for (const i of to.length ? to : [1, 3]) lane += `M${cx} ${cy}L${cx + DIRS[i][1] * CELL / 2} ${cy + DIRS[i][0] * CELL / 2}`;
-                const slots = [[10, 10], [33, 9], [12, 37], [36, 36], [24, 8]].filter((_, i) => rnd(r, c, i) > .25).slice(0, 4);
-                for (const [i, [sx, sy]] of slots.entries()) {
-                    const w = 11 + rnd(r, c, i + 20) * 4, h = 8 + rnd(r, c, i + 30) * 2.5;
-                    const a = (rnd(r, c, i + 40) - .5) * .9, ca = Math.cos(a), sa = Math.sin(a);
-                    const hx = x + sx + rnd(r, c, i + 50) * 3, hy = y + sy + rnd(r, c, i + 60) * 3;
-                    const pt = (u, v) => `${f1(hx + u * ca - v * sa)} ${f1(hy + u * sa + v * ca)}`;
-                    roof += `M${pt(-w / 2, -h / 2)}L${pt(w / 2, -h / 2)}L${pt(w / 2, 0)}L${pt(-w / 2, 0)}Z`;
-                    roofDark += `M${pt(-w / 2, 0)}L${pt(w / 2, 0)}L${pt(w / 2, h / 2)}L${pt(-w / 2, h / 2)}Z`;
+                // A village: three or four cottages, each a wall, a gable and a door.
+                const spots = [[5, 24], [26, 22], [15, 43], [33, 44]].filter((_, i) => rnd(r, c, i) > .2);
+                for (const [i, [sx, sy]] of spots.entries()) {
+                    const w = 11 + rnd(r, c, i + 20) * 3, h = 6 + rnd(r, c, i + 30) * 2;
+                    const hx = x + sx + rnd(r, c, i + 40) * 3, base = y + sy;
+                    walls[2] += `M${f1(hx)} ${f1(base)}v${f1(-h)}h${f1(w)}v${f1(h)}z`;
+                    roofs += `M${f1(hx - 1.5)} ${f1(base - h)}L${f1(hx + w / 2)} ${f1(base - h - 6)}L${f1(hx + w + 1.5)} ${f1(base - h)}Z`;
+                    glass += `M${f1(hx + w * .62)} ${f1(base - h + 1.5)}h2.4v2.4h-2.4zM${f1(hx + w * .2)} ${f1(base - 4.5)}h2.6v4.5h-2.6z`;
                 }
             } else if (k === 'works') {
                 for (const sy of [11, 27]) {
@@ -246,7 +257,7 @@
                 for (const [tx, ty] of [[8, 8], [40, 8], [8, 40], [40, 40]]) keep += `M${x + tx - 4} ${y + ty}a4 4 0 1 0 8 0a4 4 0 1 0 -8 0`;
             }
         });
-        add(lane, 'cw-g-lane'); tones.forEach((d, i) => add(d, 'cw-g-block is-' + i)); add(roofDark, 'cw-g-roof is-dark'); add(roof, 'cw-g-roof'); add(ridge, 'cw-g-ridge'); add(shed, 'cw-g-roof'); add(stack, 'cw-g-stack'); add(smoke, 'cw-g-smoke');
+        walls.forEach((d, i) => add(d, 'cw-g-house is-' + i)); add(jag, 'cw-g-house is-1'); add(roofs, 'cw-g-gable'); add(glass, 'cw-g-glass'); add(rubble, 'cw-g-rubble'); add(roof, 'cw-g-roof'); add(ridge, 'cw-g-ridge'); add(shed, 'cw-g-roof'); add(stack, 'cw-g-stack'); add(smoke, 'cw-g-smoke');
         add(pier, 'cw-g-pier'); add(keep, 'cw-g-keep');
 
         // ── Woods: firs of many sizes, the nearer over the further ──

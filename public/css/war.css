@@ -591,6 +591,7 @@
 .cw-tile.t-stream { fill: color-mix(in srgb, #5f93b8 38%, var(--bg-surface)); }
 .cw-tile.t-heights { fill: color-mix(in srgb, #8a6a3c 55%, var(--bg-surface)); }
 .cw-tile.t-canal { fill: color-mix(in srgb, #5f93b8 45%, var(--bg-surface)); }
+.cw-tile.t-ruins { fill: color-mix(in srgb, #8a8478 60%, var(--bg-surface)); }
 .cw-tile.t-marsh { fill: color-mix(in srgb, #7fa6a0 40%, var(--bg-surface)); }
 .cw-tile.is-goal { stroke: var(--clr-red); stroke-width: 3; }
 /* The board's ground as one map (war/ui/ground.js): the squares above it
@@ -638,12 +639,13 @@
 .cw-g-teeth { stroke: #2a1406 !important; stroke-opacity: .7; stroke-width: 1.4; }
 .cw-g-rut { stroke: #2e2210 !important; stroke-opacity: .55; stroke-width: 1.8; }
 .cw-g-bog { stroke: color-mix(in srgb, #3a78b0 70%, var(--bg-surface)) !important; stroke-width: 1.5; }
-.cw-g-block { stroke: color-mix(in srgb, #2a1c10 80%, transparent) !important; stroke-width: .8; fill-rule: evenodd; }
-.cw-g-block.is-0 { fill: color-mix(in srgb, #9a5a40 85%, var(--bg-surface)) !important; }
-.cw-g-block.is-1 { fill: color-mix(in srgb, #6f6a66 80%, var(--bg-surface)) !important; }
-.cw-g-block.is-2 { fill: color-mix(in srgb, #b08a55 85%, var(--bg-surface)) !important; }
-.cw-g-lane { stroke: color-mix(in srgb, #d8c9a0 85%, var(--bg-surface)) !important; stroke-width: 5; }
-.cw-g-roof.is-dark { fill: color-mix(in srgb, #8a5a3c 85%, var(--bg-surface)) !important; }
+.cw-g-house { stroke: #2a1c10 !important; stroke-width: .8; }
+.cw-g-house.is-0 { fill: color-mix(in srgb, #d9c9a4 92%, var(--bg-surface)) !important; }
+.cw-g-house.is-1 { fill: color-mix(in srgb, #a9a39a 90%, var(--bg-surface)) !important; }
+.cw-g-house.is-2 { fill: color-mix(in srgb, #c7a878 92%, var(--bg-surface)) !important; }
+.cw-g-gable { fill: color-mix(in srgb, #8a3f2a 92%, var(--bg-surface)) !important; stroke: #2a1c10 !important; stroke-width: .8; }
+.cw-g-glass { fill: #2a2a30 !important; }
+.cw-g-rubble { stroke: #3a332a !important; stroke-width: 2; }
 .cw-g-roof { fill: color-mix(in srgb, #efe3c8 85%, var(--bg-surface)) !important; stroke: #3a2a18 !important; stroke-width: .9; }
 .cw-g-ridge { stroke: #3a2a18 !important; stroke-opacity: .6; stroke-width: .8; }
 .cw-g-stack { fill: color-mix(in srgb, #8a4a1e 70%, var(--bg-surface)) !important; stroke: #2a1406 !important; stroke-width: .9; }
@@ -734,6 +736,7 @@
 .cw-terrain-key .k-mud { background: color-mix(in srgb, #6b5233 55%, var(--bg-surface)); }
 .cw-terrain-key .k-bridge { background: color-mix(in srgb, #3f6f95 55%, var(--bg-surface)); }
 .cw-terrain-key .k-canal { background: color-mix(in srgb, #5f93b8 60%, var(--bg-surface)); }
+.cw-terrain-key .k-ruins { background: color-mix(in srgb, #8a8478 60%, var(--bg-surface)); }
 .cw-terrain-key .k-marsh { background: color-mix(in srgb, #7fa6a0 40%, var(--bg-surface)); }
 .cw-terrain-key .k-forest { background: color-mix(in srgb, #4f7a3a 50%, var(--bg-surface)); }
 .cw-terrain-key .k-city { background: color-mix(in srgb, #9d8a62 70%, var(--bg-surface)); }
