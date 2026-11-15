@@ -35,7 +35,8 @@
    struck. 13 and 14 are the civil war's boards marked so (Perekop's fog and
    battery, Tsaritsyn's strengths); 15 an incident's answer may add to our
    own strength on a front (`strength: { front: n }`, as `pressure` adds to
-   the enemy's).
+   the enemy's); 16 the civil war's boards marked so (Warsaw: the Wkra and
+   Sikorski's army to the north-west), a board's own `generations`.
 
    A generation is the engine's: it changes what the code does for every
    scenario. A change to one scenario's own data that would replay an old
@@ -50,7 +51,7 @@
     const Battle = node ? require('./battle.js') : root.WarBattle;
     const Cond = node ? require('./cond.js') : root.WarCond;
 
-    const RULES = 15;
+    const RULES = 16;
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
     const signed = n => (n < 0 ? '−' : '+') + Math.abs(n);

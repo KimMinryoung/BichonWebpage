@@ -467,7 +467,7 @@
             id: 'uranus', date: '1942년 11월–1943년 3월', end: [1943, 3], title: '천왕성',
             scene: {
                 picture: 'uranus',
-                lead: '11월 19일 아침, 돈강의 안개 속에서 포 3,500문이 루마니아군 진지를 덮었다. 나흘 뒤 두 전선군의 전차가 칼라치에서 만난다. 포위망 안에 독일군 30만이 있다.',
+                lead: '11월 19일 아침, 돈강의 안개 속에서 포 3,500문이 루마니아군 진지를 덮었다. 나흘 뒤 두 전선군의 전차가 칼라치 동쪽 소비에츠키에서 만난다. 포위망 안에 독일군 30만이 있다.',
                 witness: { who: ['이오시프 스탈린', 'stalin'], text: '스탈린그라드에서 포위한 적군을 성공적으로 섬멸한 데 대해 당신과 돈강전선 부대에 축하를 보낸다.', src: ['스탈린, 보로노프·로코솝스키에게 보낸 축하, 1943년 2월 2일', ST(34)] },
             },
             mobilize: 13, commissars: 2, army: [['rifle', 7], ['guards', 3], ['shock', 1], ['tank', 2]], battle: 'uranus',
@@ -988,6 +988,24 @@
     // river runs down column 7, the ferry crosses it at the landing.
     const stalingradBattle = {
         id: 'stalingrad', sides: SIDES, ground: 'steppe', front: 'south', final: false, outlast: true, prisoners: true,
+        // Edition 3: the city as it lay along the Volga. The factories stand
+        // on the river's bank in the north, Mamayev Kurgan between them and
+        // the centre a short way from the water, Pavlov's house just north
+        // of the central landing, the grain elevator by the river in the south.
+        editions: { 3: {
+            map: [
+                '..rrWWd~.',
+                '..rrWWd~.',
+                '..rrrHd~.',
+                '..rrrPd~.',
+                '..rSrrLF.',
+                '..rrrr.~.',
+                '..rrr.d~.',
+                '..r..Ed~.',
+                '......d~.',
+            ],
+            places: [['트랙터 공장', 0, 4.5], ['마마이 언덕', 2, 5], ['중앙역', 4, 3], ['파블로프의 집', 3, 5], ['곡물 창고', 7, 5], ['볼가강', 2, 7], ['강 건너', 6, 8]],
+        } },
         scene: { picture: 'order227' },
         title: '스탈린그라드 시가전', date: '1942년 9월 13일–11월 18일',
         settle: '스탈린그라드로 →', board: '스탈린그라드 시가', enemyName: '독일군',
@@ -1036,12 +1054,12 @@
             F: { name: '나룻길', cost: 99, def: 0, water: true, supply: true, cls: 'crossing' },
         },
         units: [
-            { id: 's95', tag: '95', side: 'red', name: '제95소총사단', sub: '마마이 언덕', kind: 'inf', at: [3, 2], hp: 10, atk: 5, def: 3, mv: 3, lead: true },
-            { id: 's284', tag: '284', side: 'red', name: '제284소총사단', sub: '바튜크의 시베리아 사단', kind: 'inf', at: [2, 3], hp: 10, atk: 5, def: 3, mv: 3 },
-            { id: 's308', tag: '308', side: 'red', name: '제308소총사단', sub: '공장 지구', kind: 'inf', at: [1, 3], hp: 9, atk: 5, def: 3, mv: 3, need: 0 },
+            { id: 's95', editions: { 3: { at: [2, 5] } }, tag: '95', side: 'red', name: '제95소총사단', sub: '마마이 언덕', kind: 'inf', at: [3, 2], hp: 10, atk: 5, def: 3, mv: 3, lead: true },
+            { id: 's284', editions: { 3: { at: [2, 4] } }, tag: '284', side: 'red', name: '제284소총사단', sub: '바튜크의 시베리아 사단', kind: 'inf', at: [2, 3], hp: 10, atk: 5, def: 3, mv: 3 },
+            { id: 's308', editions: { 3: { at: [1, 4], arrive: 3 } }, tag: '308', side: 'red', name: '제308소총사단', sub: '공장 지구', kind: 'inf', at: [1, 3], hp: 9, atk: 5, def: 3, mv: 3, need: 0 },
             { id: 's10', tag: '내무', side: 'red', name: '제10내무군 사단', sub: '중앙역', kind: 'inf', at: [4, 3], hp: 8, atk: 4, def: 3, mv: 3 },
-            { id: 's92', tag: '해병', side: 'red', name: '제92해군보병여단', sub: '곡물 창고', kind: 'inf', at: [7, 2], hp: 8, atk: 5, def: 3, mv: 3, look: 'sailor' },
-            { id: 'spv', tag: '파블로프', side: 'red', name: '파블로프의 집 수비대', sub: '제42근위연대', kind: 'inf', at: [5, 4], hp: 6, atk: 4, def: 3, mv: 2,
+            { id: 's92', editions: { 3: { at: [7, 5] } }, tag: '해병', side: 'red', name: '제92해군보병여단', sub: '곡물 창고', kind: 'inf', at: [7, 2], hp: 8, atk: 5, def: 3, mv: 3, look: 'sailor' },
+            { id: 'spv', editions: { 3: { at: [3, 5] } }, tag: '파블로프', side: 'red', name: '파블로프의 집 수비대', sub: '제42근위연대', kind: 'inf', at: [5, 4], hp: 6, atk: 4, def: 3, mv: 2,
                 feat: { id: 'pavlov-house', name: '집을 요새로', kind: 'brace', def: 3, text: '다음 내 차례까지 방어 +3. 맞으면 반드시 되받아친다.', history: '파블로프 하사와 스물네 명이 1월 9일 광장의 4층 아파트를 58일 동안 지켰다. 추이코프는 이 집 앞에서 죽은 독일군이 파리를 차지하며 죽은 독일군보다 많다고 썼다.' } },
             { id: 'shq', tag: '사령부', pic: 'hq', side: 'red', name: '제62군 사령부', sub: '추이코프', kind: 'inf', at: [4, 6], hp: 6, atk: 3, def: 3, mv: 2, person: ['바실리 추이코프', 'chuikov'],
                 feat: { id: 'hugging', name: '포옹 전술', kind: 'order', plus: 2, text: '이번 턴의 모든 협공에 피해 +2(협공: 치려는 적의 곁에 다른 붉은 부대가 있는 공격). 사령부는 이번 턴 다른 행동을 하지 않는다.', history: '추이코프는 작은 돌격조가 적 진지에 바짝 붙어 싸우게 했다. 독일 비행기와 포병은 제 편이 맞을까 봐 쏘지 못했다.' } },
@@ -1049,7 +1067,8 @@
                 feat: { id: 'volga-guns', name: '카추샤 일제 사격', kind: 'barrage', plus: 2, text: '이번 공격 피해 +2, 반격 없음. 맞은 부대 곁의 적도 절반의 피해를 입는다.', history: '제62군의 중포와 로켓포는 강 동쪽 둑에 있었다. 도시 안의 관측병이 부르면 강 너머에서 쏘았다.' } },
             { id: 's13', tag: '13근위', side: 'red', name: '제13근위소총사단', sub: '로딤체프', kind: 'inf', at: [4, 6], hp: 11, atk: 6, def: 3, mv: 3, arrive: 2, person: ['알렉산드르 로딤체프', 'alexander-rodimtsev'], look: 'helmet' },
             { id: 's39', tag: '39근위', side: 'red', name: '제39근위소총사단', sub: '붉은 10월 공장', kind: 'inf', at: [2, 6], hp: 9, atk: 5, def: 3, mv: 3, arrive: 4, need: 3 },
-            { id: 's138', tag: '138', side: 'red', name: '제138소총사단', sub: '류드니코프, 스타프카 예비', kind: 'inf', at: [6, 6], hp: 10, atk: 5, def: 3, mv: 3, arrive: 3, card: 'reserve', editions: { 2: { at: [1, 6] }, 3: { at: [3, 6] } } },
+            { id: 's37', tag: '37근위', side: 'red', name: '제37근위소총사단', sub: '졸루데프, 트랙터 공장', kind: 'inf', at: [0, 6], hp: 10, atk: 5, def: 3, mv: 3, arrive: 3, fromEdition: 3 },
+            { id: 's138', tag: '138', side: 'red', name: '제138소총사단', sub: '류드니코프, 스타프카 예비', kind: 'inf', at: [6, 6], hp: 10, atk: 5, def: 3, mv: 3, arrive: 3, card: 'reserve', editions: { 2: { at: [1, 6] } } },
             { id: 'a71', tag: '71', side: 'axis', name: '제71보병사단', sub: '중앙역으로', kind: 'inf', at: [4, 1], hp: 12, atk: 7, def: 3, mv: 3, role: 'push' },
             { id: 'a295', tag: '295', side: 'axis', name: '제295보병사단', sub: '마마이 언덕으로', kind: 'inf', at: [3, 0], hp: 12, atk: 7, def: 3, mv: 3, role: 'push' },
             { id: 'a94', tag: '94', side: 'axis', name: '제94보병사단', sub: '남쪽', kind: 'inf', at: [6, 1], hp: 12, atk: 7, def: 3, mv: 3, role: 'push' },
@@ -1062,7 +1081,7 @@
             { id: 'a76', tag: '76', side: 'axis', name: '제76보병사단', sub: '첫 물결의 뒤', kind: 'inf', at: [6, 0], hp: 11, atk: 6, def: 3, mv: 3, role: 'push', arrive: 2 },
             { id: 'a16', tag: '16기갑', side: 'axis', name: '제16기갑사단', sub: '공장 지구에서', kind: 'tank', at: [0, 0], hp: 11, atk: 7, def: 3, mv: 3, role: 'push', arrive: 4 },
             { id: 'a29', tag: '29차량', side: 'axis', name: '제29차량화사단', sub: '남쪽 강가로', kind: 'inf', at: [7, 0], hp: 11, atk: 6, def: 3, mv: 4, role: 'push', arrive: 2 },
-            { id: 'a79', tag: '79', side: 'axis', name: '제79보병사단', sub: '공장 지구로', kind: 'inf', at: [1, 0], hp: 12, atk: 7, def: 3, mv: 3, role: 'push', arrive: 3 },
+            { id: 'a79', editions: { 3: { arrive: 5 } }, tag: '79', side: 'axis', name: '제79보병사단', sub: '공장 지구로', kind: 'inf', at: [1, 0], hp: 12, atk: 7, def: 3, mv: 3, role: 'push', arrive: 3 },
             { id: 'a60', tag: '60차량', side: 'axis', name: '제60차량화사단', sub: '북쪽에서', kind: 'inf', at: [0, 1], hp: 11, atk: 6, def: 3, mv: 4, role: 'field', reach: 9, arrive: 4 },
         ],
         summary: '7턴 끝까지 중앙 나루를 지키면 승리 · 나루가 끊기면 도시의 부대가 모두 포위된다',
@@ -1071,7 +1090,7 @@
             '7턴이 끝날 때까지 중앙 나루에 독일군을 들이지 않으면 이긴다. 지면 이 시기 스탈린그라드 방면의 우리 힘이 6 준다.',
             '붉은 군대의 보급은 강 건너에서 나룻길을 지나 나루로 온다. 나루 곁에 독일군이 서고 나루가 비면 보급이 끊겨 도시의 모든 부대가 포위된다. 나루에는 늘 부대를 두어야 한다.',
             '폐허와 공장은 방어 +2다. 독일 전차는 폐허에서 느리다. 2턴에 로딤체프의 제13근위사단이 나루에 내린다. 강 건너 포병은 사거리 5로 도시 안까지 쏜다.',
-            '독일 급강하 폭격기가 6턴까지 턴 끝마다 온다(피해 2). 독일 증원은 2턴부터 4턴까지 턴마다 서쪽에서 온다.',
+            '독일 급강하 폭격기가 6턴까지 턴 끝마다 온다(피해 2). 독일 증원은 2턴부터 5턴까지 서쪽에서 온다.',
             SUPPLY_BRIEF,
         ],
         history: '9월 13일 독일군이 시가로 들어와 14일 중앙역과 강가에 닿았다. 그날 밤 로딤체프의 제13근위사단이 포화 속에 강을 건너 나루를 되찾았다. 마마이 언덕과 중앙역은 주인이 열 번 넘게 바뀌었다. 10월에는 공장 지구에서, 11월에는 강가의 좁은 띠에서 싸움이 이어졌다. 제62군은 11월 19일까지 버텼다.',
@@ -1083,6 +1102,25 @@
     // Army sits east of it, fed from the west over the Kalach bridge.
     const uranusBattle = {
         id: 'uranus', sides: SIDES, front: 'south', final: false, prisoners: true, goalsAll: true,
+        // Edition 3: Kalach stands on the Don's left (east) bank, beyond the
+        // bridge, and Sovetsky a little further east; the 21st Army's 4th
+        // Tank Corps, which closed the ring there, takes the field; the
+        // Stalingrad Front's group attacks a day later (turn 2), as it did.
+        editions: { 3: {
+            map: [
+                '~~~~~~~~.....',
+                '.......~...S.',
+                '.ttttt.~..SS.',
+                '.......~.....',
+                '...f...~.....',
+                '.......BK.V..',
+                '.......~.....',
+                '.......~.tttt',
+                '.......~.....',
+            ],
+            goals: [{ at: [5, 7], name: '칼라치 다리' }, { at: [5, 10], name: '소비에츠키' }],
+            towns: [['칼라치', 5, 8], ['소비에츠키', 5, 10]],
+        } },
         scene: { picture: 'uranus' },
         title: '천왕성 작전', date: '1942년 11월 19–23일',
         settle: '돈강으로 →', board: '돈강과 볼가강 사이', enemyName: '추축군',
@@ -1138,29 +1176,31 @@
             { id: 'w17f', tag: '전투기', name: '제17항공군 전투기', sub: '크라솝스키, La-5', kind: 'fighter', hp: 3 },
         ],
         units: [
-            { id: 'u21a', tag: '21군', side: 'red', name: '제21군 소총사단', sub: '북쪽 집단', kind: 'inf', at: [1, 1], hp: 10, atk: 5, def: 3, mv: 3, lead: true },
+            { id: 'u21a', tag: '21군', side: 'red', name: '제21군 소총사단', sub: '북쪽 집단', kind: 'inf', at: [1, 1], hp: 10, atk: 5, def: 3, mv: 3, lead: true, editions: { 3: { tag: '5전차군', name: '제5전차군 소총사단', sub: '로마넨코' } } },
+            { id: 'u4t', tag: '4전차', side: 'red', name: '제4전차군단', sub: '제21군, 크랍첸코', kind: 'tank', at: [1, 5], hp: 10, atk: 6, def: 3, mv: 4, fromEdition: 3 },
             { id: 'u1t', tag: '1전차', side: 'red', name: '제1전차군단', sub: '제5전차군', kind: 'tank', at: [1, 2], hp: 10, atk: 6, def: 3, mv: 4, flag: 'uranusReady' },
             { id: 'uart', tag: '포병', side: 'red', name: '돌파 포병 사단', sub: '11월 19일 아침', kind: 'art', at: [1, 3], hp: 7, atk: 6, def: 1, mv: 2, range: 2,
                 feat: { id: 'artillery-day', name: '포병의 날', kind: 'barrage', plus: 3, text: '이번 공격 피해 +3, 반격 없음. 맞은 부대 곁의 적도 절반의 피해를 입는다.', history: '11월 19일 07시 30분 포 3,500문이 80분 동안 루마니아 제3군 진지를 쏘았다. 이날은 뒤에 포병의 날이 되었다.' } },
             { id: 'u26', tag: '26전차', side: 'red', name: '제26전차군단', sub: '제5전차군, 로딘', kind: 'tank', at: [1, 4], hp: 10, atk: 6, def: 3, mv: 4, flag: 'uranusReady',
                 feat: { id: 'headlights', name: '전조등을 켜고', kind: 'ride', mv: 3, text: '이번 턴 이동 +3, 적 곁을 멈추지 않고 지나간다. 움직이기 전에 쓴다.', history: '11월 22일 새벽 필리포프 중령의 선견대가 전조등을 켠 채 줄지어 달렸다. 독일 경비대는 노획 전차로 훈련하는 제 편인 줄 알았고, 칼라치의 다리는 폭파되지 않은 채 넘어왔다.' } },
-            { id: 'u65', tag: '65군', side: 'red', name: '제65군 소총사단', sub: '바토프', kind: 'inf', at: [1, 5], hp: 10, atk: 5, def: 3, mv: 3 },
-            { id: 'u3c', tag: '3기병', side: 'red', name: '제3근위기병군단', sub: '플리예프', kind: 'cav', at: [1, 6], hp: 8, atk: 5, def: 2, mv: 5, skirmish: true, need: 2, editions: { 3: { flank: 2 } } },
+            { id: 'u65', tag: '65군', side: 'red', name: '제65군 소총사단', sub: '바토프', kind: 'inf', at: [1, 5], hp: 10, atk: 5, def: 3, mv: 3, editions: { 3: { at: [1, 6] } } },
+            { id: 'u3c', tag: '3기병', side: 'red', name: '제3근위기병군단', sub: '플리예프', kind: 'cav', at: [1, 6], hp: 8, atk: 5, def: 2, mv: 5, skirmish: true, need: 2, editions: { 3: { flank: 2, at: [2, 6], sub: '제21군, 플리예프' } } },
             { id: 'u2g', tag: '예비', side: 'red', name: '스타프카 예비 소총사단', sub: '스타프카 예비군', kind: 'inf', at: [1, 0], hp: 10, atk: 5, def: 3, mv: 3, card: 'reserve' },
-            { id: 'u51', tag: '51군', side: 'red', name: '제51군 소총사단', sub: '남쪽 집단', kind: 'inf', at: [8, 9], hp: 10, atk: 5, def: 3, mv: 3 },
-            { id: 'u4m', tag: '4기계', side: 'red', name: '제4기계화군단', sub: '볼스키', kind: 'tank', at: [8, 10], hp: 10, atk: 6, def: 3, mv: 4 },
-            { id: 'u13', tag: '13전차', side: 'red', name: '제13전차군단', sub: '남쪽 집단', kind: 'tank', at: [8, 11], hp: 8, atk: 5, def: 3, mv: 4, need: 3 },
-            { id: 'u57', tag: '57군', side: 'red', name: '제57군 소총사단', sub: '남쪽 집단', kind: 'inf', at: [8, 12], hp: 9, atk: 5, def: 3, mv: 3 },
-            { id: 'r13', tag: '루13', side: 'axis', name: '루마니아 제13보병사단', sub: '루마니아 제3군', kind: 'inf', at: [2, 1], hp: 9, atk: 4, def: 2, mv: 3, role: 'field', reach: 1 },
+            { id: 'u51', tag: '51군', side: 'red', name: '제51군 소총사단', sub: '남쪽 집단', kind: 'inf', at: [8, 9], hp: 10, atk: 5, def: 3, mv: 3, editions: { 3: { arrive: 2 } } },
+            { id: 'u4m', tag: '4기계', side: 'red', name: '제4기계화군단', sub: '볼스키', kind: 'tank', at: [8, 10], hp: 10, atk: 6, def: 3, mv: 4, editions: { 3: { arrive: 2 } } },
+            { id: 'u13', tag: '13전차', side: 'red', name: '제13전차군단', sub: '남쪽 집단', kind: 'tank', at: [8, 11], hp: 8, atk: 5, def: 3, mv: 4, need: 3, editions: { 3: { arrive: 2 } } },
+            { id: 'u57', tag: '57군', side: 'red', name: '제57군 소총사단', sub: '남쪽 집단', kind: 'inf', at: [8, 12], hp: 9, atk: 5, def: 3, mv: 3, editions: { 3: { arrive: 2 } } },
+            { id: 'r13', tag: '루13', side: 'axis', name: '루마니아 제13보병사단', sub: '루마니아 제3군', kind: 'inf', at: [2, 1], hp: 9, atk: 4, def: 2, mv: 3, role: 'field', reach: 1, editions: { 3: { tag: '루9', name: '루마니아 제9보병사단' } } },
             { id: 'r14', tag: '루14', side: 'axis', name: '루마니아 제14보병사단', sub: '루마니아 제3군', kind: 'inf', at: [2, 2], hp: 9, atk: 4, def: 2, mv: 3, role: 'field', reach: 1 },
             { id: 'r5', tag: '루5', side: 'axis', name: '루마니아 제5보병사단', sub: '루마니아 제3군', kind: 'inf', at: [2, 4], hp: 9, atk: 4, def: 2, mv: 3, role: 'field', reach: 1 },
             { id: 'r6', tag: '루6', side: 'axis', name: '루마니아 제6보병사단', sub: '라스카르 집단', kind: 'inf', at: [2, 5], hp: 10, atk: 4, def: 2, mv: 3, role: 'field', reach: 1 },
             { id: 'r1t', tag: '루전차', side: 'axis', name: '루마니아 제1기갑사단', sub: '체코제 경전차', kind: 'tank', at: [3, 3], hp: 8, atk: 5, def: 2, mv: 3, role: 'field', reach: 3 },
             { id: 'g22', tag: '22기갑', side: 'axis', name: '제22기갑사단', sub: '제48기갑군단', kind: 'tank', at: [5, 2], hp: 12, atk: 7, def: 3, mv: 4, role: 'field', reach: 9, wake: 2 },
-            { id: 'gkl', tag: '칼라치', side: 'axis', name: '칼라치 수비대', sub: '보급 부대와 헌병', kind: 'inf', at: [5, 6], hp: 8, atk: 4, def: 2, mv: 2, role: 'field', reach: 1 },
+            { id: 'gkl', tag: '칼라치', side: 'axis', name: '칼라치 수비대', sub: '보급 부대와 헌병', kind: 'inf', at: [5, 6], hp: 8, atk: 4, def: 2, mv: 2, role: 'field', reach: 1, editions: { 3: { at: [5, 8] } } },
             { id: 'gbr', tag: '경비', side: 'axis', name: '칼라치 다리 경비대', sub: '공병 학교와 대공포', kind: 'inf', at: [5, 7], hp: 8, atk: 4, def: 3, mv: 2, role: 'field', reach: 0 },
-            { id: 'gsv', tag: '후방', side: 'axis', name: '제6군 후방 부대', sub: '소비에츠키의 창고', kind: 'inf', at: [5, 9], hp: 8, atk: 4, def: 2, mv: 2, role: 'field', reach: 0 },
+            { id: 'gsv', tag: '후방', side: 'axis', name: '제6군 후방 부대', sub: '소비에츠키의 창고', kind: 'inf', at: [5, 9], hp: 8, atk: 4, def: 2, mv: 2, role: 'field', reach: 0, editions: { 3: { at: [5, 10] } } },
             { id: 'g16', tag: '16기갑', side: 'axis', name: '제16기갑사단', sub: '제6군, 서쪽으로 돌려 보냄', kind: 'tank', at: [2, 9], hp: 12, atk: 7, def: 3, mv: 4, role: 'field', reach: 9, wake: 3 },
+            { id: 'g14', tag: '14기갑', side: 'axis', name: '제14기갑사단', sub: '제6군, 돈강 서쪽으로', kind: 'tank', at: [3, 6], hp: 11, atk: 7, def: 3, mv: 4, role: 'field', reach: 9, wake: 2, fromEdition: 3 },
             { id: 'g24', tag: '24기갑', side: 'axis', name: '제24기갑사단', sub: '제6군, 시가에서 빼냄', kind: 'tank', at: [3, 10], hp: 11, atk: 7, def: 3, mv: 4, role: 'field', reach: 9, wake: 4 },
             { id: 'g6a', tag: '6군', side: 'axis', name: '제6군 보병', sub: '시가전에 묶임', kind: 'inf', at: [1, 11], hp: 12, atk: 6, def: 3, mv: 3, role: 'field', reach: 2 },
             { id: 'g6b', tag: '6군', side: 'axis', name: '제6군 보병', sub: '시가전에 묶임', kind: 'inf', at: [2, 12], hp: 12, atk: 6, def: 3, mv: 3, role: 'field', reach: 2 },
@@ -1180,7 +1220,7 @@
             AIR_BRIEF,
             ARMS_BRIEF,
         ],
-        history: '11월 19일 남서전선군과 돈 전선군이, 20일 스탈린그라드 전선군이 공세에 나섰다. 루마니아 제3군은 이틀 만에 무너졌고 라스카르 집단 2만 7천 명이 항복했다. 22일 새벽 제26전차군단의 선견대가 칼라치의 다리를 빼앗았고, 23일 오후 4시 소비에츠키에서 제4전차군단과 제4기계화군단이 만났다. 고리 안에 22개 사단, 30만 명 가까이가 갇혔다.',
+        history: '11월 19일 남서전선군과 돈 전선군이, 20일 스탈린그라드 전선군이 공세에 나섰다. 루마니아 제3군은 이틀 만에 무너졌고 라스포핀스카야에 갇힌 루마니아군 약 2만 7천 명이 항복했다. 22일 새벽 제26전차군단의 선견대가 칼라치의 다리를 빼앗았고, 23일 오후 4시 소비에츠키에서 제4전차군단과 제4기계화군단이 만났다. 고리 안에 22개 사단, 30만 명 가까이가 갇혔다.',
     };
 
     // Kursk, the southern face, 5–12 July 1943: Hoth's armour comes north

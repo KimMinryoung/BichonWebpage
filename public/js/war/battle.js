@@ -138,11 +138,15 @@
     // on the battle holds what edition n of the scenario changed in the
     // board's own fields (its weather, its grounded turns, its map), laid
     // over it in order; the units have their own (unitsAsOf).
+    // (`generations: { n: { … } }` says the same for the engine's generation
+    // n, laid first: the civil war's boards change that way.)
     function defAsOf(def, opts) {
-        if (!def.editions) return def;
+        if (!def.editions && !def.generations) return def;
+        const gen = opts && opts.rules ? opts.rules : Infinity;
         const ed = opts && opts.edition ? opts.edition : Infinity;
-        const laid = Object.keys(def.editions).map(Number).filter(n => ed >= n).sort((a, z) => a - z).map(n => def.editions[n]);
-        return laid.length ? Object.assign({}, def, ...laid) : def;
+        const laid = (changes, upTo) => Object.keys(changes || {}).map(Number).filter(n => upTo >= n).sort((a, z) => a - z).map(n => changes[n]);
+        const all = laid(def.generations, gen).concat(laid(def.editions, ed));
+        return all.length ? Object.assign({}, def, ...all) : def;
     }
 
     function start(def, flags, muster, opts) {

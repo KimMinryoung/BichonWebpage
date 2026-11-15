@@ -1593,6 +1593,8 @@
     // front can bring (need) by turn 5.
     const warsaw = {
         id: 'warsaw', sides: SIDES, ground: 'summer', front: 'west', final: false,
+        // Rules 16: the Wkra and Sikorski's 5th Army lie north-west of Warsaw (Modlin), not north-east.
+        generations: { 16: { places: [['브크라강 방면', 0, 3.1], ['비스와강', 8, 2.05], ['바르샤바', 1.4, 0.1], ['프라가', 2.4, 3.05], ['늪과 숲', 6, 7], ['브레스트 방면', 3, 10.5], ['비에프시강', 10, 9.4]] } },
         scene: { picture: 'battle-warsaw', witness: { who: ['이사크 바벨', 'babel'], text: '먼지투성이의 뜨거운 길 위의 말 잃은 기병들, 안장을 손에 들고, … 곳곳에서 말들이 썩어 가고, 이야기는 오직 말에 관한 것뿐', src: ['바벨, 『1920년 기병대 일기』, 8월 18일', D_('babel-cavalry-diary-1920') + '#entry-43'] } },
         when: { rules: ['>=', 6], choice: 'warsaw' },
         title: '바르샤바 전투', date: '1920년 8월 13–17일',
@@ -1670,7 +1672,7 @@
             { id: 'wp2', tag: '1군', side: 'white', name: '제1군', sub: '다리 어귀', kind: 'inf', at: [4, 3], hp: 10, atk: 4, def: 3, mv: 3, role: 'hold' },
             { id: 'wwa', tag: '의용대', side: 'white', name: '바르샤바 의용대', sub: '노동자·학생', kind: 'inf', at: [4, 1], hp: 10, atk: 3, def: 2, mv: 3, role: 'hold' },
             { id: 'wart', tag: '포대', side: 'white', name: '바르샤바 포대', kind: 'art', at: [3, 1], hp: 6, atk: 3, def: 2, mv: 2, range: 2, role: 'hold' },
-            { id: 'w5', tag: '5군', side: 'white', name: '제5군', sub: '시코르스키', kind: 'inf', at: [0, 6], hp: 10, atk: 5, def: 3, mv: 3, role: 'hold' },
+            { id: 'w5', tag: '5군', side: 'white', name: '제5군', sub: '시코르스키', kind: 'inf', at: [0, 6], hp: 10, atk: 5, def: 3, mv: 3, role: 'hold', rules: { 16: { at: [0, 3] } } },
             { id: 'wl1', tag: '21산악', side: 'white', name: '제21산악사단', sub: '타격 집단', kind: 'inf', at: [10, 3], hp: 10, atk: 5, def: 3, mv: 3, role: 'push', wake: 2 },
             { id: 'wl3', tag: '14사단', side: 'white', name: '제14보병사단', sub: '타격 집단', kind: 'inf', at: [10, 7], hp: 8, atk: 4, def: 3, mv: 3, role: 'push', wake: 2 },
             { id: 'wcv', tag: '기병', side: 'white', name: '제4기병여단', sub: '타격 집단', kind: 'cav', at: [10, 4], hp: 8, atk: 5, def: 2, mv: 5, role: 'push', wake: 2 },
