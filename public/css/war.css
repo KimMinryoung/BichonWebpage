@@ -2182,3 +2182,24 @@
 .cw-frontline.is-history { stroke: var(--text-primary); stroke-width: 1.6; stroke-dasharray: 1.5 5; opacity: .85; }
 .cw-map-legend i.cw-key-frontline { height: 0; width: 18px; border: 0; border-top: 4px solid color-mix(in srgb, var(--cw-red) 55%, transparent); }
 @media (max-width: 900px) { .cw-map-frame { touch-action: pan-x pan-y; } }
+
+/* ── A phone's season: the screen to the task (2026-11-15) ──
+   Once past the scene, the head of the screen folds to one line of the
+   three stats (the season's name, calendar and army line stay on 「장면」),
+   and the order bar takes two rows: what to do next with the outlook, then
+   the tabs with the button that sends the season. */
+@media (max-width: 720px) {
+    #cwPlay:has(> #cwCampaign[data-tab]:not([data-tab="scene"]):not([hidden])) > .cw-hud { gap: 0; padding-block: 4px; margin: 6px 0 8px; border-top-width: 3px; }
+    #cwPlay:has(> #cwCampaign[data-tab]:not([data-tab="scene"]):not([hidden])) > .cw-hud :is(.cw-season, .cw-army) { display: none; }
+    #cwPlay:has(> #cwCampaign[data-tab]:not([data-tab="scene"]):not([hidden])) > .cw-hud .cw-stats { display: flex; flex-wrap: wrap; gap: 0 16px; }
+    #cwPlay:has(> #cwCampaign[data-tab]:not([data-tab="scene"]):not([hidden])) > .cw-hud .cw-stats > div { display: flex; align-items: baseline; gap: 5px; }
+    #cwPlay:has(> #cwCampaign[data-tab]:not([data-tab="scene"]):not([hidden])) > .cw-hud .cw-stats dd { margin: 0; }
+    #cwPlay:has(> #cwCampaign[data-tab]:not([data-tab="scene"]):not([hidden])) > .cw-hud .cw-stats strong { font-size: 1rem; }
+    #cwPlay:has(> #cwCampaign[data-tab]:not([data-tab="scene"]):not([hidden])) > .cw-hud .cw-stats :is(small, .cw-gauge) { display: none; }
+    .cw-command::before { content: ''; order: -1; flex: 1 0 100%; height: 0; margin-top: -6px; }
+    .cw-command .cw-guide { order: -3; flex: 1 1 0; min-width: 0; }
+    .cw-command .cw-outlook { order: -2; margin-left: auto; }
+    .cw-command .cw-tabs { order: 0; flex: 1 1 0; }
+    .games-shell .cw-command .cw-tabs button { padding: 4px 2px; }
+    .games-shell .cw-command .cw-primary { order: 1; flex: 0 1 auto; min-width: 0; padding: 8px 10px; font-size: .9rem; }
+}

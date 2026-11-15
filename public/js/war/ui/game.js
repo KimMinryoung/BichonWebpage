@@ -3991,7 +3991,7 @@
             armsNote(u),
             u.yielded ? el('p', { class: 'cw-note' }, `투항해 ${josa(U.player, '으로', '로')} 넘어온 부대다.`) : null,
             B.cutOff(b, u) ? el('p', { class: 'cw-note cw-note-cut' }, `포위됨: 보급 기지로 가는 길이 끊겼다. 공격 절반, 방어 −1, 턴마다 병력 −2.${B.isEnemy(b, u) ? ' 한 턴을 넘기고 병력이 절반 아래로 꺾이면 항복한다.' : ''}`) : null,
-            B.isEnemy(b, u) && !B.cutOff(b, u) && b.def.supply && b.def.supply.enemy ? el('p', { class: 'cw-note cw-note-cut' }, `보급을 끊으면: 공격 절반, 방어 ${B.defenseOf(b, u)}→${B.defenseOf(b, u) - B.cutRule(b).bare}, 턴마다 병력 −${B.cutRule(b).hurt}. 한 턴 뒤 병력이 ${Math.ceil(u.maxHp / 2)} 아래면 항복한다.`) : null,
+            B.isEnemy(b, u) && !B.cutOff(b, u) && b.def.supply && b.def.supply.enemy ? el('p', { class: 'cw-note cw-note-cut' }, `보급을 끊으면 공격 절반 · 방어 ${B.defenseOf(b, u) - B.cutRule(b).bare} · 턴마다 −${B.cutRule(b).hurt} · 병력 ${Math.ceil(u.maxHp / 2)} 아래면 항복`) : null,
             B.isPlayer(b, u) ? el('p', { class: 'cw-note cw-info-dup' }, u.acted ? (B.canMove(b, u) ? '쳤다. 아직 움직일 수 있다.' : '이번 턴의 행동을 마쳤다.') : u.moved ? '이동했다. 공격하거나 대기할 수 있다.' : '이동하거나 공격할 수 있다.') : null,
             B.isEnemy(b, u) && u.role ? el('p', { class: 'cw-note cw-info-dup' }, roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '')) : null);
     }
