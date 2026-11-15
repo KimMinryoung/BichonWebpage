@@ -70,6 +70,9 @@ app.use(compression({
 }));
 
 app.use(express.urlencoded({ extended: true }));
+// A batch of chat answers runs to 80,000 characters (public/js/chat.js), and
+// Korean takes three bytes a character: past the default 100 kB.
+app.use('/commulingo/chat-links', express.json({ limit: '512kb' }));
 app.use(express.json());
 app.use(securityHeaders);
 
@@ -128,6 +131,9 @@ app.use((req, res) => {
 
 // Error handler
 app.use((err, req, res, next) => {
+    // A body the parser refused (malformed JSON, too large) is the client's
+    // error, not a server fault.
+    if (err.expose && err.status >= 400 && err.status < 500) return res.status(err.status).end();
     console.error(err.stack);
     errorPage.serverError(res);
 });
