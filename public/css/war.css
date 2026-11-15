@@ -688,6 +688,8 @@
 .cw-area-name { fill: #fff; font-size: 9.5px; font-weight: 800; }
 .cw-terrain-key i.k-supply { border: 0; height: 0; border-top: 3px dotted var(--cw-red); width: 22px; align-self: center; }
 .cw-terrain-key i.k-shut, .cw-terrain-key i.k-base { display: none; }
+.cw-terrain-key i.k-pocket { border: 2px solid var(--cw-red); background: none; }
+.cw-terrain-key i.k-raid { display: none; }
 .cw-supply-road { fill: none; stroke-linecap: round; stroke-linejoin: round; }
 /* A supply road: a soft ribbon, and on it short strokes that travel from the base to the units. */
 .cw-supply-bed { stroke-width: 5; stroke-opacity: .2; }
@@ -1537,10 +1539,29 @@
 .cw-roster { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding-bottom: 6px; }
 .games-shell .cw-roster-unit { flex: 0 0 auto; display: inline-flex; gap: 4px; align-items: baseline; min-height: 30px; padding: 3px 8px; font-size: .78rem; }
 .cw-roster-unit small { font-variant-numeric: tabular-nums; color: var(--text-secondary); }
-/* The air wings: after the units, off the board. */
-.games-shell .cw-roster-unit.is-wing { border-color: var(--cw-gold); }
-.games-shell .cw-roster-unit.is-wing + .cw-roster-unit:not(.is-wing) { margin-left: 6px; }
-.cw-roster-plane { font-size: .9em; }
+/* The sky: one strip over the board, the wings as buttons, the enemy's planes as chips. */
+.cw-sky { display: flex; flex-wrap: nowrap; gap: 6px; align-items: center; overflow-x: auto; scrollbar-width: none; margin-bottom: 6px; padding: 5px 8px; border: 1px solid var(--cw-steel-rim, var(--border-color)); background: color-mix(in srgb, #8fb3d6 22%, var(--bg-surface)); font-size: .78rem; white-space: nowrap; }
+.cw-sky-label { flex: 0 0 auto; font-size: .76rem; letter-spacing: .06em; }
+.games-shell .cw-sky-wing { flex: 0 0 auto; display: inline-flex; gap: 5px; align-items: center; min-height: 30px; padding: 3px 9px; font-size: .78rem; font-weight: 700; }
+.games-shell .cw-sky-wing.is-done { border-style: dashed; color: var(--text-secondary); }
+.games-shell .cw-sky-wing[aria-pressed="true"] { border-color: var(--cw-red); background: color-mix(in srgb, var(--cw-red) 18%, transparent); }
+.cw-sky-wing small { font-weight: 400; color: var(--text-secondary); }
+.cw-sky-pips { display: inline-flex; gap: 2px; }
+.cw-sky-pips i { width: 6px; height: 10px; border: 1px solid currentColor; }
+.cw-sky-pips i.is-on { background: currentColor; }
+.cw-sky-chip { flex: 0 0 auto; padding: 2px 7px; border: 1px solid var(--border-color); background: var(--bg-surface); }
+.cw-sky-chip.is-warn { border-color: var(--cw-red); color: var(--cw-red); font-weight: 700; }
+.cw-sky-chip.is-ok { border-color: var(--text-primary); font-weight: 700; }
+.cw-sky-raids { flex: 0 0 auto; display: inline-flex; gap: 4px; align-items: center; }
+.cw-sky-raids i { font-style: normal; padding: 2px 6px; border: 1px solid var(--border-color); background: var(--bg-surface); }
+.cw-sky-raids i.is-past { color: var(--text-secondary); text-decoration: line-through; }
+.cw-sky-raids i.is-now { border-color: var(--cw-red); background: var(--cw-red); color: #fff; font-weight: 700; }
+.cw-sky-raids i.is-off { border-color: var(--text-primary); font-weight: 700; }
+.cw-raid-mark { pointer-events: none; }
+.cw-raid-text { font-size: 10px; font-weight: 800; fill: var(--cw-red); stroke: #fff; stroke-width: 2.5; paint-order: stroke; pointer-events: none; }
+.cw-pocket-hint { margin: 0; flex-basis: 100%; font-size: .84rem; font-weight: 700; color: var(--cw-red); }
+.cw-battle-more { margin-top: 4px; font-size: .85rem; color: var(--text-secondary); }
+.cw-battle-more summary { cursor: pointer; }
 .games-shell .cw-roster-unit.is-done { border-style: dashed; color: var(--text-secondary); }
 .games-shell .cw-roster-unit[aria-pressed="true"] { border-color: var(--cw-red); background: color-mix(in srgb, var(--cw-red) 18%, transparent); }
 .games-shell .cw-primary.is-armed { background: var(--text-primary); color: var(--bg-canvas); border-color: var(--text-primary); }
@@ -1548,6 +1569,7 @@
 @media (max-width: 900px) {
     /* The roster stays right over the board when the wrap is unboxed. */
     .cw-roster { order: -3; }
+    .cw-sky { order: -4; }
 }
 @media (max-width: 560px) {
     /* Only what is still to do takes room in the narrow command bar. */
@@ -1747,6 +1769,7 @@
     .cw-battle[data-tab="field"]:not([hidden]) { position: fixed; inset: 0; z-index: 900; margin: 0; padding-top: 10px; padding-bottom: 0; display: flex; flex-direction: column; height: 100dvh; overflow: hidden; }
     .cw-battle[data-tab="field"] .cw-battle-layout { flex: 1 1 auto; min-height: 0; display: flex; flex-direction: column; align-items: stretch; gap: 8px; }
     .cw-battle[data-tab="field"] .cw-roster { flex: none; }
+    .cw-battle[data-tab="field"] .cw-sky { flex: none; }
     .cw-battle[data-tab="field"] .cw-grid-scroll { flex: 0 1 auto; min-height: 120px; overflow: auto; overscroll-behavior: contain; scrollbar-width: none; }
     .cw-battle[data-tab="field"] .cw-unit-info { flex: none; max-height: 24dvh; overflow-y: auto; overscroll-behavior: contain; }
     .cw-battle[data-tab="field"] .cw-battle-actions { flex: none; margin-top: auto; }

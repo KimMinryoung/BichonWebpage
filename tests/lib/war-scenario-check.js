@@ -266,7 +266,8 @@ function checkScenario(D) {
         need(new Set((def.wings || []).map(w => w.id)).size === (def.wings || []).length, `${at}: wings share an id`);
         if (def.sky) need((def.wings || []).some(w => w.kind === 'strike'), `${at}: an enemy sky over no attack wing`);
         for (const t of def.grounded || []) need(t >= 1 && t <= def.turnLimit, `${at}: grounded turn ${t}`);
-        if (def.lesson) need(def.supply && def.supply.enemy && ['supply', 'close', 'closed'].every(k => typeof def.lesson[k] === 'string' && def.lesson[k]), `${at}: lesson needs the enemy's supply and its three steps`);
+        if (def.lesson && !def.lesson.air) need(def.supply && def.supply.enemy && ['supply', 'close', 'closed'].every(k => typeof def.lesson[k] === 'string' && def.lesson[k]), `${at}: lesson needs the enemy's supply and its three steps`);
+        if (def.lesson && def.lesson.air) need((def.wings || []).length && ['sky', 'cover', 'strike', 'flown'].every(k => typeof def.lesson.air[k] === 'string' && def.lesson.air[k]), `${at}: the air lesson needs wings and its four steps`);
         for (const area of def.areas || []) need(area.name && area.tiles.length && area.tiles.every(inside), `${at}: area ${area.name}`);
         // Supply: each side's sources are tiles of the board.
         for (const side of ['player', 'enemy']) for (const src of (def.supply && def.supply[side]) || []) need(inside(src), `${at}: supply source ${src}`);

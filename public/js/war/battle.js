@@ -716,6 +716,9 @@
     // sky (def.sky: the enemy's fighters) the attack wings fly whole;
     // uncovered there they strike sky weaker and lose sky more planes.
     // On a grounded turn (def.grounded: fog) nothing flies.
+    // The enemy's raids due at the end of this turn, with the player's units they come for.
+    const raidDue = b => raidsOf(b.def).filter(r => r.against !== 'enemy' && raidTurns(r).includes(b.turn))
+        .map(raid => ({ raid, units: raid.units.map(id => byId(b, id)).filter(u => u && u.hp > 1 && isPlayer(b, u)) }));
     const wingOf = (b, id) => (b.wings || []).find(w => w.id === id) || null;
     const grounded = b => (b.def.grounded || []).includes(b.turn);
     function wingBlock(b, w) {
@@ -1184,7 +1187,7 @@
     }
 
     const api = {
-        start, joins, act, reachable, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
+        start, joins, act, reachable, raidDue, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, weatherOf, raidsOf, raidTurns, kindOf, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
         canMove, featBlock, featTargets, featMod, featAimed, featPreview, yields, lost, YIELD_RING, FEATS, ROLES, KINDS,
     };
