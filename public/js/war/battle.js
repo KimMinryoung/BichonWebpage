@@ -149,6 +149,17 @@
         return all.length ? Object.assign({}, def, ...all) : def;
     }
 
+    // A unit's short name on its counter. A bare number (「106」 for the
+    // 106th Infantry Division) reads like the strength beside it, so it
+    // takes its arm from the full name: 106보병, 100소총, 29차량, 51사단.
+    function tagOf(u) {
+        const tag = u.tag || u.name;
+        if (!/^[0-9]+$/.test(tag)) return tag;
+        const m = /^제[0-9]+(.*?)(사단|여단|연대|군단|군)$/.exec(u.name || '');
+        if (!m) return tag;
+        return tag + (m[1] ? m[1].slice(0, 2) : m[2]);
+    }
+
     function start(def, flags, muster, opts) {
         def = defAsOf(def, opts);
         const heroics = !(opts && opts.rules < 3);
@@ -169,7 +180,7 @@
                 const lead = own && muster.commissar && u.lead;
                 const kind = kindOf(def, u.kind);
                 return {
-                    id: u.id, tag: u.tag || u.name, side: u.side, name: u.name, sub: u.sub || '', kind: u.kind,
+                    id: u.id, tag: tagOf(u), side: u.side, name: u.name, sub: u.sub || '', kind: u.kind,
                     role: u.role || null, line: u.line || null, wake: u.wake || 0,
                     person: u.person || null, look: u.look || null, pic: u.pic || null, r: u.at[0], c: u.at[1], hp, maxHp: u.hp,
                     atk: u.atk, def: u.def + (lead ? 1 : 0), mv: express && u.railMv ? u.railMv : u.mv, range: u.range || 1, commissar: Boolean(lead), naval: Boolean(u.naval), rail: Boolean(u.rail), flank: u.flank || 0,
@@ -1266,7 +1277,7 @@
     }
 
     const api = {
-        start, unitsAsOf, defAsOf, joins, act, reachable, fogged, rangeNow, skyOf, raidDue, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, hitParts, halts, menace, marching, dangers, reserveSector, behind,
+        start, unitsAsOf, defAsOf, tagOf, joins, act, reachable, fogged, rangeNow, skyOf, raidDue, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, hitParts, halts, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, weatherOf, raidsOf, raidTurns, kindOf, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
         canMove, featBlock, featTargets, featMod, featAimed, featPreview, yields, lost, YIELD_RING, FEATS, ROLES, KINDS,
     };
