@@ -53,7 +53,7 @@ const warLocals = (id, battle = null) => () => {
         pageImage: page ? page.image : null,
     };
 };
-const gameLocals = { '/games/civil-war/': warLocals('civil-war') };
+const gameLocals = { '/games/civil-war/': warLocals('civil-war'), '/games/great-patriotic-war/': warLocals('great-patriotic-war') };
 // One battle on its own (services/war-promos.js): the war before it as
 // history went, nothing saved; the page a CommuLingo card or a shared link
 // opens. An unknown battle is not found.
@@ -71,7 +71,7 @@ router.get('/games/:scenario/battle/:battle', (req, res, next) => {
     res.render('public/' + scenario, Object.assign({ pagePath: path, hasEnglishVersion: false, canonicalUrl: res.locals.siteOrigin + path }, warLocals(scenario, battle)()));
 });
 
-for (const [path, view] of [['/games/', 'games'], ['/games/strike/', 'strike'], ['/games/civil-war/', 'civil-war']]) {
+for (const [path, view] of [['/games/', 'games'], ['/games/strike/', 'strike'], ['/games/civil-war/', 'civil-war'], ['/games/great-patriotic-war/', 'great-patriotic-war']]) {
     router.get(path, (req, res) => {
         setNoStore(res);
         if (!req.path.endsWith('/')) {

@@ -9,6 +9,7 @@ const { loadEventControl, presentEventControl } = require('../data/commulingo/ev
 
 const SCENARIOS = {
     'civil-war': require('../public/js/war/scenarios/civil-war'),
+    'great-patriotic-war': require('../public/js/war/scenarios/great-patriotic-war'),
 };
 const cached = new Map();
 

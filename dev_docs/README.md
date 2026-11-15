@@ -11,6 +11,7 @@
 | 공산링고 설치형 앱(PWA)·오프라인 | [매니페스트·서비스 워커·캐시 규칙](commulingo-pwa.md) |
 | 파업 게임 | [설계·규칙·구현·테스트 인수인계](strike-game-handoff.md) |
 | 러시아 내전 게임 「붉은 전선」 | [설계·규칙·전투·밸런스 기준](civil-war-game.md) |
+| 대조국전쟁 게임 「조국 전선」 | [전선·시기·갈림길·전투·적의 힘 맞추기](great-patriotic-war-game.md) |
 | 전쟁 게임 공통 엔진·새 전쟁 시나리오 | [모듈·시나리오 스키마·조건 언어·저장 세대·골든 마스터](war-engine.md) |
 | 노노그램 | [화면·입력·저장 구현 참고](nonogram.md) |
 | 배포·미리보기·데이터·인증 | [Frontend 운영 참고](frontend-operations.md) |

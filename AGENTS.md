@@ -32,7 +32,7 @@ Keep this file limited to enduring constraints and routing links; procedures and
 - Read only the task-relevant document from [dev_docs/README.md](dev_docs/README.md).
 - Deploy, preview, data/cache, auth: [operations reference](dev_docs/frontend-operations.md).
 - UI changes follow the [site design standard](dev_docs/design-system.md): reuse shared tokens/components and align full-width page shells with the site menu.
-- Strike game: [design and implementation](dev_docs/strike-game-handoff.md). Civil-war game: [design and implementation](dev_docs/civil-war-game.md).
+- Strike game: [design and implementation](dev_docs/strike-game-handoff.md). Civil-war game: [design and implementation](dev_docs/civil-war-game.md). Great-Patriotic-War game: [design](dev_docs/great-patriotic-war-game.md); shared engine: [war-engine.md](dev_docs/war-engine.md).
 
 ## Cloud sessions and lone clones
 

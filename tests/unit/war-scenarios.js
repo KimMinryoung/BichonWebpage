@@ -19,9 +19,8 @@ for (const D of published) assert.deepEqual(checkScenario(D), [], `scenario ${D.
 // The games hub (public/js/games.js) reads the civil war's save key without
 // loading the scenario, so it keeps its own copy.
 {
-    const civilWar = published.find(D => D.id === 'civil-war');
     const hub = fs.readFileSync(path.join(__dirname, '..', '..', 'public', 'js', 'games.js'), 'utf8');
-    assert.ok(hub.includes(`'${civilWar.ui.save}'`), 'games.js names the civil-war save key');
+    for (const D of published) assert.ok(hub.includes(`['${D.id}', '${D.ui.save}'`), `games.js names the ${D.id} save key`);
 }
 
 const M = require('../fixtures/war-mini.js');

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+<head>
+  <%# A battle's own page (/games/great-patriotic-war/battle/<id>/) names the battle; the war's page the war. %>
+  <% const onBattle = war.battle ? warPage : null; %>
+  <% const sc = war.scenario; %>
+  <%- include('../partials/head', onBattle
+      ? { pageTitle: onBattle.title + ' · ' + sc.title, pageDescription: onBattle.pitch + ' 대조국전쟁의 이 전투를 칸 위에서 직접 지휘한다(' + onBattle.turns + '턴).', pagePath: onBattle.url, hasEnglishVersion: false, pageImage: pageImage }
+      : { pageTitle: sc.title, pageDescription: '1941년 6월 22일부터 베를린까지, 대조국전쟁의 열두 시기를 최고사령부의 자리에서 결정하고 모스크바·스탈린그라드·쿠르스크·베를린의 전투를 직접 지휘하는 역사 전략 게임.', pagePath: '/games/great-patriotic-war/', hasEnglishVersion: false, pageImage: pageImage }) %>
+  <link rel="stylesheet" href="/css/games.css?v=<%= assetVersion %>">
+  <link rel="stylesheet" href="/css/war.css?v=<%= assetVersion %>">
+</head>
+<body>
+  <%- include('../partials/nav') %>
+  <main class="ui-page-shell games-shell cw-shell<%= onBattle ? ' is-battle-only' : '' %>">
+    <%- include('../partials/games-crumb', { current: onBattle ? onBattle.title : sc.title }) %>
+    <% if (onBattle) { %>
+    <header class="cw-heading"><div><p class="games-kicker"><%= sc.title %> · 전투 하나</p><h1><%= onBattle.title %></h1></div></header>
+    <% } else { %>
+    <header class="cw-heading"><div><p class="games-kicker">역사 전략 / 대조국전쟁</p><h1><%= sc.title %></h1></div></header>
+    <% } %>
+    <noscript><p>플레이하려면 브라우저에서 JavaScript를 켜 주세요.</p></noscript>
+
+    <section id="cwSetup" class="cw-intro"<%= onBattle ? " hidden" : "" %>>
+      <div class="cw-intro-copy">
+        <h2>잃을 수 있는 것은 땅,<br>잃을 수 없는 것은 시간과 사람.</h2>
+        <ol class="cw-steps">
+          <li><strong>정세를 읽는다</strong><span>1941년 6월 22일, 국경이 무너집니다. 시기마다 무슨 일이 났는지 짧게 알려 줍니다.</span></li>
+          <li><strong>결단한다</strong><span>스탈린과 주코프, 바실렙스키, 로코솝스키가 실제로 다툰 문제에서 한 길을 고릅니다. 끝나면 역사의 선택과 견줍니다.</span></li>
+          <li><strong>군을 보낸다</strong><span>방면마다 우리 힘이 적의 힘에 닿도록 군을 나눠 보냅니다. 모자라면 도시를 더 잃고, 남으면 더 되찾습니다.</span></li>
+          <li><strong>전투를 지휘한다</strong><span>모스크바·스탈린그라드·쿠르스크·베를린의 전투는 칸 위에서 부대를 직접 움직입니다. 보급선을 끊어 포위하는 쪽이 이깁니다.</span></li>
+        </ol>
+        <div class="cw-setup-actions"><button id="cwContinue" type="button" class="cw-primary" hidden>저장된 게임 이어하기</button><button id="cwStart" type="button" class="cw-primary">새 게임 시작</button></div>
+        <p class="games-note" id="cwSaveNote">한 판 50–60분 · 로그인 없이 · 이 브라우저에 자동 저장 · 처음이면 첫 시기를 한 단계씩 안내합니다<% if (!onBattle && war.battles.length) { %> · 짧게는 아래에서 전투 하나만(10분 안팎)<% } %></p>
+        <p class="games-note">역사 서술은 공산링고 사건 문서 <a href="/commulingo/events/great-patriotic-war" target="_blank" rel="noopener">「대조국전쟁」</a>을 따릅니다. 수치는 게임을 위한 근사치입니다.</p>
+      </div>
+      <% const cover = sc.pictures[sc.promo.picture]; %>
+      <% if (cover) { %>
+      <figure class="cw-intro-art">
+        <img src="<%= sc.pictureDir + sc.promo.picture %>-v1.webp"<% if (cover.sm) { %> srcset="<%= sc.pictureDir + sc.promo.picture %>-v1-sm.webp <%= Math.round(cover.w / 2) %>w, <%= sc.pictureDir + sc.promo.picture %>-v1.webp <%= cover.w %>w" sizes="(max-width: 720px) 100vw, 40vw"<% } %> width="<%= cover.w %>" height="<%= cover.h %>" alt="<%= cover.caption %>">
+        <figcaption><strong>1941–1945</strong><span>열두 번의 시기 · 다섯 방면 · 일곱 번의 전투</span><small><%= cover.caption %> · <a href="<%= cover.credit[1] %>" target="_blank" rel="noopener"><%= cover.credit[0] %></a></small></figcaption>
+      </figure>
+      <% } %>
+    </section>
+
+    <% if (!onBattle && war.battles.length) { %>
+    <section class="cw-battle-pick" id="cwBattlePick" aria-labelledby="cwBattlePickTitle">
+      <h2 id="cwBattlePickTitle">전투 하나만 해 보기</h2>
+      <p class="games-note">전쟁 전체 대신 결정적인 전투 하나를 지휘합니다. 앞의 시기는 역사대로 흘러간 것으로 치고, 저장하지 않습니다.</p>
+      <ul class="cw-battle-pick-list">
+        <% war.battles.forEach(function (b) { %>
+        <li><a class="ui-card cw-battle-pick-card" href="<%= b.url %>">
+          <% if (b.picture) { %><img src="<%= b.picture.src %>" alt="" width="<%= b.picture.w %>" height="<%= b.picture.h %>" loading="lazy" decoding="async"><% } %>
+          <span class="cw-battle-pick-text"><small><%= b.date %> · <%= b.turns %>턴</small><strong><%= b.title %></strong><span><%= b.pitch %></span></span>
+        </a></li>
+        <% }) %>
+      </ul>
+    </section>
+    <% } %>
+
+    <%- include('war/play', { war }) %>
+
+    <%# The rules as a reference card. Each battle's own rules come with the battle (its 「작전 지시」). %>
+    <details class="cw-rules"><summary>게임 규칙</summary>
+      <section class="cw-rule">
+        <h3>한 시기</h3>
+        <ol class="cw-rule-flow">
+          <li><strong>장면</strong><span>그때 무슨 일이 났나</span></li>
+          <li><strong>결정</strong><span>돌발 사건과 갈림길에 하나씩 답한다</span></li>
+          <li><strong>작전</strong><span>군·스타프카 대표·카드를 방면에 나눈다</span></li>
+          <li><strong>전투</strong><span>걸린 시기에만, 칸 위에서</span></li>
+          <li><strong>결산</strong><span>역사와 견준다</span></li>
+        </ol>
+        <p class="cw-rule-note">1941년 6월부터 1945년 5월까지 열두 시기. 싸우지 않는 방면은 역사대로 움직인다. 도시 줄은 안쪽(지켜야 할 도시)부터 바깥쪽(적의 수도)까지이고, 붉은 군대가 안쪽부터 몇 개를 쥐었는지가 그 방면의 형편이다.</p>
+      </section>
+
+      <section class="cw-rule">
+        <h3>방면의 셈</h3>
+        <p class="cw-rule-formula"><b>우리 힘</b> = <span>군 수 × <%= sc.quality.base %></span> × <span>보급</span> + <span>스타프카 대표 <%= sc.leaders.strength %></span> + <span>카드</span></p>
+        <div class="cw-rule-scale" role="img" aria-label="우리 힘이 적의 힘보다 1 넘게 모자라면 도시를 더 잃고, 같은 언저리면 역사대로, 3 넘을 때마다 도시 하나를 더 쥔다">
+          <span class="is-worse"><b>1 넘게 모자람</b>3 모자랄 때마다 도시 하나 더 잃음</span>
+          <span class="is-same"><b>적의 힘 언저리</b>역사대로</span>
+          <span class="is-better"><b>3 넘을 때마다</b>도시 하나 더 (한 시기에 하나)</span>
+        </div>
+        <ul class="cw-rule-list">
+          <li>군 하나의 힘은 1941년 <%= sc.quality.base %>에서 시작해, 붉은 군대가 전쟁을 배우면서 1942년·1943년 초·1943년 가을에 0.1씩 는다.</li>
+          <li>다른 방면으로 옮긴 군은 철도 위에서 반 시기를 보내 힘이 절반. 새로 동원한 군과 예비로 남겨 둔 군은 어디로 가든 온전하다.</li>
+          <li>잃을 도시가 없을 만큼 밀리면 다음 싸움의 적의 힘이 오르고(도시 하나당 +2), 크게 이기면 내린다(남는 3마다 −2, 두 번까지).</li>
+          <li>모스크바 방면의 맨 안쪽 힘키까지 잃으면 수도가 무너져 전쟁에서 진다. 레닌그라드·스탈린그라드·그로즈니를 잃으면 생산과 지휘 체계가 크게 떨어진다.</li>
+          <li>이대로 보내면 지는 계획은 보내기 전에 한 번 더 묻는다. 그래도 전쟁에 지면 그 시기의 계획으로 돌아가 다시 짤 수 있다.</li>
+        </ul>
+      </section>
+
+      <section class="cw-rule">
+        <h3>나라의 문턱</h3>
+        <div class="cw-rule-gauges">
+          <div class="cw-rule-gauge"><p><b>지휘 체계</b> 다음 시기 지휘력</p>
+            <div class="cw-rule-bar is-cohesion"><% sc.command.tiers.slice().reverse().forEach(([v, n]) => { %><span>지휘력 <%= n %><small><%= v %>–</small></span><% }) %></div>
+            <small>30 아래면 최고사령관이 장군들을 믿지 않아 스타프카 대표 −1. 전선이 역사보다 밀린 시기에는 −3.</small></div>
+          <div class="cw-rule-gauge"><p><b>인력</b> 동원되는 군 수</p>
+            <div class="cw-rule-bar is-peasants"><span class="is-bad">지휘 체계 −3씩<small>0–</small></span><span class="is-warn">동원이 준다<small>25–</small></span><span>종전 때 40 이상이면 ★<small>40–</small></span><span>동원이 는다<small>60–</small></span></div>
+            <small>전쟁은 시기마다 인력 3을 삼킨다. 인력 10마다 군 하나가 늘거나 준다(60이 기준). 무모한 공세를 피하고 제때 물리면 아낀다.</small></div>
+          <div class="cw-rule-gauge"><p><b>생산</b> 보급</p>
+            <div class="cw-rule-bar is-workers"><span class="is-bad">A 집단군의 힘 +2<small>0–</small></span><span>보급이 는다<small>50–</small></span></div>
+            <small>보급 수입은 6에 생산 10마다 1. 첫 두 시기는 공업 지대를 잃어 −6씩. 공장을 동쪽으로 옮겼다면 1942년부터 되살아난다.</small></div>
+        </div>
+      </section>
+
+      <section class="cw-rule cw-rule-pair">
+        <div><h3>보급</h3>
+          <ul class="cw-rule-list">
+            <li>군 하나가 한 시기에 1을 쓴다. 예비로 남긴 군은 절반.</li>
+            <li>모자라면 우리 힘이 준다(보급이 없으면 절반). 필요의 3/4 아래면 다음 시기에 군이 준다.</li>
+            <li>남은 보급은 다음 시기로 넘어간다.</li>
+          </ul></div>
+        <div><h3>평가</h3>
+          <ul class="cw-rule-stars">
+            <% sc.scoring.stars.forEach(st => { %><li>★ <%= st.label %></li><% }) %>
+          </ul>
+          <% if (sc.ui.medal) { %><p class="cw-rule-note"><b><%= sc.ui.medal.name %></b>: 한 시기에 <%= sc.ui.medal.rule %> 울린다. 작전 화면 아래 「예상」이 지금 계획으로 받을 수 있는지 알려 준다.</p><% } %></div>
+      </section>
+
+      <section class="cw-rule">
+        <h3>전투</h3>
+        <p class="cw-rule-note">전투가 걸린 시기를 보내면 정산에 앞서 칸 위에서 싸운다. 그 방면에 보낸 계획이 나올 부대를 정한다. 승리 조건과 그 판만의 규칙은 전투가 열릴 때 「작전 지시」에 나온다.</p>
+        <ol class="cw-rule-battles"><% Object.values(sc.battles).forEach(b => { %><li><strong><%= b.title %></strong><span><%= b.date %></span></li><% }) %></ol>
+        <ul class="cw-rule-list">
+          <li>부대를 누르면 갈 칸과 칠 적이 밝아진다. 한 턴에 한 번 움직이고 한 번 친다. 치기 전이면 이동을 되돌릴 수 있다.</li>
+          <li><b>보급선과 포위.</b> 부대는 제 편의 보급 기지까지, 적이 서 있지도 곁에 있지도 않은 칸으로 이어져야 한다. 끊긴 부대는 공격이 절반, 방어가 1 줄고 턴마다 병력 2를 잃는다. 포위된 채 한 턴을 넘기고 절반 아래로 꺾인 적은 항복한다.</li>
+          <li><b>병종.</b> 전차는 적 곁을 멈추지 않고 지나가고 보병에게 강하다. 대전차포는 전차에 강하다. 포병은 반격을 받지 않고 진지의 방어를 깎는다.</li>
+          <li>여럿이 둘러싸고 치면 더 아프다. ★ 결정적 한 수는 전투마다 한 번. 키보드는 Tab으로 옮기고 Enter로 고른다.</li>
+          <% if (sc.ui.merits) { %><li>전공 별 셋: 승리, 정한 턴 안의 승리, <%= sc.ui.merits.whole %>. 현황 줄이 아직 얻을 수 있는 별을 보여 준다.</li><% } %>
+        </ul>
+      </section>
+    </details>
+    <section class="cw-reading"><h2>전장에서 다시, 읽기로</h2><div class="ui-link-group"><a class="btn" href="/commulingo/events/great-patriotic-war" target="_blank" rel="noopener">대조국전쟁 ↗</a><a class="btn" href="/commulingo/events/stalingrad" target="_blank" rel="noopener">스탈린그라드 전투 ↗</a><a class="btn" href="/commulingo/events/battle-of-kursk" target="_blank" rel="noopener">쿠르스크 전투 ↗</a><a class="btn" href="/commulingo/events/battle-of-berlin" target="_blank" rel="noopener">베를린 전투 ↗</a><a class="btn" href="/games/civil-war/">앞선 전쟁: 붉은 전선 1918–1920</a></div></section>
+  </main>
+  <%- include('../partials/footer') %>
+  <%- include('war/scripts', { id: war.id, ui: true }) %>
+</body>
+</html>

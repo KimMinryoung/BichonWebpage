@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
 <head>
-  <%- include('../partials/head', { pageTitle: '게임', pageDescription: 'Cyber-Lenin의 노동쟁의 전략 게임, 러시아 내전 역사 전략 게임과 노노그램', pagePath: '/games/', hasEnglishVersion: false }) %>
+  <%- include('../partials/head', { pageTitle: '게임', pageDescription: 'Cyber-Lenin의 노동쟁의 전략 게임, 러시아 내전·대조국전쟁 역사 전략 게임과 노노그램', pagePath: '/games/', hasEnglishVersion: false }) %>
   <link rel="stylesheet" href="/css/games.css?v=<%= assetVersion %>">
 </head>
 <body>
@@ -9,6 +9,10 @@
   <main class="ui-page-shell games-shell games-home">
     <header class="games-hero"><p class="games-kicker">CYBER-LENIN / GAMES</p><h1>배운 것을, 플레이하다.</h1><p>현장에서 함께 선택하고, 한 칸씩 사상을 발견하세요.</p><span class="games-local-note">로그인 없이 · 이 브라우저에 진행 저장</span></header>
     <div class="games-catalog">
+      <article class="ui-card game-card">
+        <div class="game-preview civil-war-preview gpw-preview" aria-hidden="true"><strong>★ 1941–1945</strong><span>열두 번의 시기, 모스크바·스탈린그라드·쿠르스크·베를린</span></div>
+        <div class="game-card-copy"><p class="games-kicker">역사 전략 · 50–60분 · 텍스트 선택 + 전술 전투</p><h2><a href="/games/great-patriotic-war/">조국 전선 1941–1945</a></h2><p>대조국전쟁을 최고사령부의 자리에서 치르세요. 키예프를 내줄 것인가, 예비를 언제 쓸 것인가. 군을 방면에 나누고, 보급선을 끊어 적을 포위하는 전투를 직접 지휘합니다.</p><div class="game-card-actions ui-link-group"><a class="game-cta btn btn-primary" href="/games/great-patriotic-war/">전쟁 시작 →</a><a class="btn" id="gamesGpwResume" href="/games/great-patriotic-war/?resume=1" hidden>이어하기 →</a></div><p id="gamesGpwProgress" class="game-progress" hidden></p></div>
+      </article>
       <article class="ui-card game-card">
         <div class="game-preview civil-war-preview" aria-hidden="true"><strong>★ 1918–1920</strong><span>아홉 번의 시기, 카잔·차리친·오룔·페레코프</span></div>
         <div class="game-card-copy"><p class="games-kicker">역사 전략 · 40–50분 · 텍스트 선택 + 전술 전투</p><h2><a href="/games/civil-war/">붉은 전선 1918–1920</a></h2><p>러시아 내전을 소비에트 정권의 자리에서 치르세요. 시기마다 지도부가 실제로 부딪친 갈림길을 고르고 사단을 전선에 보낸 뒤, 역사가 어떻게 흘러갔는지 비교합니다.</p><div class="game-card-actions ui-link-group"><a class="game-cta btn btn-primary" href="/games/civil-war/">전쟁 시작 →</a><a class="btn" id="gamesCivilWarResume" href="/games/civil-war/?resume=1" hidden>이어하기 →</a></div><p id="gamesCivilWarProgress" class="game-progress" hidden></p></div>
@@ -28,6 +32,7 @@
   <%# The engines are loaded only when this browser holds a save to describe (games.js). %>
   <script src="/js/games.js?v=<%= assetVersion %>" defer
     data-strike="/js/strike-engine.js?v=<%= assetVersion %>"
-    data-war="<%= ['war/scenarios/civil-war', 'war/cond', 'war/battle', 'war/engine'].map(name => `/js/${name}.js?v=${assetVersion}`).join(' ') %>"></script>
+    data-war="<%= ['war/cond', 'war/battle', 'war/engine'].map(name => `/js/${name}.js?v=${assetVersion}`).join(' ') %>"
+    data-war-scenario="/js/war/scenarios/{id}.js?v=<%= assetVersion %>"></script>
 </body>
 </html>

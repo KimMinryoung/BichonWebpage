@@ -1,10 +1,14 @@
 /* Optional progress enhancement. The catalog's links work without JavaScript.
-   A game's engine (strike ~25 KB, civil war ~330 KB) is fetched only when this
+   A game's engine (strike ~25 KB, a war ~330 KB) is fetched only when this
    browser holds a save for it, so a first visit loads none of them. */
 (function () {
     'use strict';
     const STRIKE_SAVE = 'strike-game-v6-save';
-    const WAR_SAVE = 'civil-war-v1-save'; // WarScenarios['civil-war'].ui.save
+    // [scenario id, its ui.save, the resume link, the progress line]
+    const WARS = [
+        ['civil-war', 'civil-war-v1-save', 'gamesCivilWarResume', 'gamesCivilWarProgress'],
+        ['great-patriotic-war', 'great-patriotic-war-v1-save', 'gamesGpwResume', 'gamesGpwProgress'],
+    ];
     const tag = document.currentScript;
     function show(id, text) {
         const el = document.getElementById(id); el.textContent = text; el.hidden = false;
@@ -34,17 +38,23 @@
         }
     }));
 
-    const warSave = stored(WAR_SAVE);
-    if (warSave) load(tag.dataset.war.split(' '), guarded(() => {
-        const civilWar = window.WarScenarios['civil-war'];
-        const war = window.WarEngine.create(civilWar).restore(warSave);
-        if (war && war.phase !== 'done') {
-            const turn = civilWar.turns[war.turn];
-            const days = window.WarEngine.create(civilWar).calendar(war);
-            show('gamesCivilWarResume', `${days.indexOf(war.turn) + 1}/${days.length} 시기 이어하기 →`);
-            show('gamesCivilWarProgress', `${turn.date} ${turn.title} · 이 브라우저에 저장됨`);
-        }
-    }));
+    // The war games: one engine, a scenario each (its file is fetched with
+    // the engine only for a save this browser holds).
+    for (const [id, key, resume, progress] of WARS) {
+        const save = stored(key);
+        if (!save) continue;
+        load([tag.dataset.warScenario.replace('{id}', id)].concat(tag.dataset.war.split(' ')), guarded(() => {
+            const scenario = window.WarScenarios[id];
+            const engine = window.WarEngine.create(scenario);
+            const war = engine.restore(save);
+            if (war && war.phase !== 'done') {
+                const turn = scenario.turns[war.turn];
+                const days = engine.calendar(war);
+                show(resume, `${days.indexOf(war.turn) + 1}/${days.length} 시기 이어하기 →`);
+                show(progress, `${turn.date} ${turn.title} · 이 브라우저에 저장됨`);
+            }
+        }));
+    }
 
     guarded(() => {
         const progress = JSON.parse(stored('nonogram-progress-v2') || '{}');

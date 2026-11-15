@@ -122,7 +122,7 @@ TESTS_RAN=0
 # What the game tests (`// @group game`) load: their engines, views, styles,
 # play-log service and route policy, fixtures and the runner. When none of it
 # changed since the running revision, the game tests are skipped.
-GAME_PATHS='^(public/js/(war/|strike|games\.js)|public/css/(war|games|strike)\.css|views/public/(games|civil-war|strike|war/)|views/partials/games-|(routes|services)/war-|services/war-map|config/route-policy\.js|scripts/war-|tests/(unit/(strike|civil-war|war-)|browser/(games|strike)-|lib/|fixtures/(war-|civil-war)|run\.js)|package(-lock)?\.json)'
+GAME_PATHS='^(public/js/(war/|strike|games\.js)|public/css/(war|games|strike)\.css|views/public/(games|civil-war|great-patriotic-war|strike|war/)|views/partials/games-|(routes|services)/war-|services/war-map|config/route-policy\.js|scripts/war-|tests/(unit/(strike|civil-war|great-patriotic-war|war-)|browser/(games|strike)-|lib/|fixtures/(war-|civil-war)|run\.js)|package(-lock)?\.json)'
 run_tests_once() {
     (( TESTS_RAN )) && return 0
     local since changed skip=()

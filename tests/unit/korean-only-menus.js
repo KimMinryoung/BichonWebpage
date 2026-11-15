@@ -9,7 +9,7 @@ const { stripEnglishPrefix } = require('../../middleware/language');
 const { dictTabs } = require('../../data/commulingo/dict-tabs');
 
 assert.strictEqual(MENU_ENGLISH.games, 'none');
-for (const path of ['/games/', '/games/strike/', '/games/civil-war/', '/nonogram/']) {
+for (const path of ['/games/', '/games/strike/', '/games/civil-war/', '/games/great-patriotic-war/', '/nonogram/']) {
     assert.ok(isKoreanOnlyPath(path), path);
 }
 // Reference documents left 'none' on 2026-10-16: a published original is their English page.

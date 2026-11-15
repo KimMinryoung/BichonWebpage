@@ -1,0 +1,153 @@
+#!/usr/bin/env node
+// 「조국 전선 1941–1945」 (public/js/war/scenarios/great-patriotic-war.js):
+// history's choices under a plain, able plan keep every front on history's
+// line in every season; every battle is reached by the rehearsal and its
+// board brings the units its plan promises; the choices that differ from
+// history move what they say they move; a save replays; and the screen's
+// two numbers keep their plain names in the data.
+// @group game
+const assert = require('node:assert/strict');
+const Engine = require('../../public/js/war/engine.js');
+const B = require('../../public/js/war/battle.js');
+const D = require('../../public/js/war/scenarios/great-patriotic-war.js');
+
+const G = Engine.create(D);
+const R = D.rehearsal;
+
+// The plan of the rehearsal (engine rehearse): the lead card to the
+// heaviest front, a card history placed there, other front cards to the
+// second-heaviest, the rest but those skipped; the Stavka's men with an
+// army each to the heaviest fronts; the armies by need.
+function plan(s, answers = {}) {
+    const t = G.turnData(s);
+    assert.ok(G.act(s, 'choose', answers[t.id] || t.choice.history), `${t.id}: choice`);
+    for (const inc of G.incidentsOf(s)) assert.ok(G.act(s, 'respond', answers[inc.id] || inc.history), `${t.id}: answer`);
+    const threats = G.threatsOf(s);
+    const fronts = G.activeFronts(s).sort((a, b) => threats[b].pressure - threats[a].pressure);
+    for (const c of t.cards) {
+        const card = D.cards[c];
+        if (R.lead.includes(c)) G.act(s, 'play', c, fronts[0]);
+        else if (card.historyAt) { if (card.historyAt[t.id]) G.act(s, 'play', c, card.historyAt[t.id]); }
+        else if (card.target === 'front') G.act(s, 'play', c, fronts[1] || fronts[0]);
+        else if (!R.skip.includes(c) && s.stats[R.guard.stat] + G.cardStat(s, card, c, R.guard.stat) >= R.guard.min) G.act(s, 'play', c);
+    }
+    fronts.forEach(f => G.act(s, 'alloc', f, 0));
+    fronts.slice(0, s.plan.commissars).forEach(f => { if (G.free(s) > 0) G.act(s, 'alloc', f, 1); G.act(s, 'commissar', f, true); });
+    while (G.free(s) > 0) {
+        const fc = G.forecast(s).fronts;
+        const f = fronts.slice().sort((a, b) => fc[a].margin - fc[b].margin)[0];
+        if (!G.act(s, 'alloc', f, s.plan.alloc[f] + 1)) break;
+    }
+}
+
+// A war with the season battles going as history did, up to the last battle.
+function campaign(answers) {
+    const s = G.start();
+    for (let guard = 0; guard < 100; guard++) {
+        if (s.phase === 'battle') { if (s.battle.def.final) return s; assert.ok(G.act(s, 'assume')); }
+        else if (s.phase === 'review') assert.ok(G.act(s, 'next'));
+        else if (s.phase === 'plan') { plan(s, answers); assert.ok(G.act(s, 'settle')); }
+        else return s;
+    }
+    throw new Error('the war does not end');
+}
+
+// ── History's road: every season, every front, as history went ──
+{
+    const s = campaign();
+    assert.equal(s.phase, 'battle', 'history reaches Berlin');
+    assert.equal(s.battle.def.id, 'berlin');
+    assert.equal(s.records.length, D.turns.length);
+    for (const r of s.records) {
+        for (const [id, f] of Object.entries(r.fronts)) assert.equal(f.after, f.history, `${D.turns[r.turn].id} ${id}: ${f.before}→${f.after}, history ${f.history}`);
+    }
+    for (const id of D.frontOrder) assert.equal(s.lines[id], D.fronts[id].cities.length, `${id} ends at its last city`);
+    // The price: history's road ends short of the manpower star, as the war did.
+    assert.ok(s.stats.manpower >= 35 && s.stats.manpower < 55, `manpower ${s.stats.manpower}`);
+    assert.ok(s.stats.staff >= 40, `staff ${s.stats.staff}`);
+    // A save of it replays to the same war.
+    const again = G.restore(G.serialize(s));
+    assert.deepEqual(again.lines, s.lines);
+    assert.deepEqual(again.stats, s.stats);
+}
+
+// ── A front matters: an empty one loses more than history, a full one may gain ──
+{
+    for (let t = 0; t < D.turns.length; t++) {
+        const s = G.start();
+        for (let guard = 0; guard < 100 && !(s.phase === 'plan' && s.turn === t); guard++) {
+            if (s.phase === 'battle') G.act(s, 'assume'); else if (s.phase === 'review') G.act(s, 'next'); else { plan(s); G.act(s, 'settle'); }
+        }
+        assert.equal(s.turn, t);
+        plan(s);
+        for (const id of G.activeFronts(s)) {
+            const kept = Object.assign({}, s.plan.alloc);
+            for (const f of G.activeFronts(s)) G.act(s, 'alloc', f, 0);
+            const none = G.forecast(s).fronts[id].change;
+            G.act(s, 'alloc', id, s.plan.divisions);
+            const all = G.forecast(s).fronts[id].change;
+            assert.ok(all > none, `${D.turns[t].id} ${id}: armies change the result (${none} → ${all})`);
+            for (const f of G.activeFronts(s)) G.act(s, 'alloc', f, 0);
+            for (const [f, n] of Object.entries(kept)) G.act(s, 'alloc', f, n);
+        }
+    }
+}
+
+// ── The other roads move what they say ──
+{
+    // Kiev given up: the armies saved, Typhoon a month sooner.
+    const s = G.start();
+    plan(s, { barbarossa: 'withdraw' });
+    G.act(s, 'settle'); G.act(s, 'assume'); G.act(s, 'next');
+    assert.ok(s.flags.kievSaved);
+    assert.ok(G.mobilizeSources(s).some(x => x.n === 2), 'the South-Western Front\'s armies');
+    assert.ok(G.forecast(s).fronts.west.pressureParts.some(p => p.includes('태풍')), 'Typhoon comes sooner');
+    // The works left where they stood never recover.
+    const kept = campaign({ evacuation: 'trains' });
+    const moved = campaign();
+    assert.ok(kept.stats.industry < moved.stats.industry - 15, `industry ${kept.stats.industry} against ${moved.stats.industry}`);
+    // Kursk attacked first: no battle on the board that season.
+    const pre = G.start();
+    for (let guard = 0; guard < 100 && !(pre.phase === 'plan' && G.turnData(pre).id === 'kursk'); guard++) {
+        if (pre.phase === 'battle') G.act(pre, 'assume'); else if (pre.phase === 'review') G.act(pre, 'next'); else { plan(pre); G.act(pre, 'settle'); }
+    }
+    plan(pre, { kursk: 'preempt' });
+    assert.equal(G.battleOf(pre), null);
+}
+
+// ── Every battle is reached, and its board is what the briefing says ──
+for (const [id, def] of Object.entries(D.battles)) {
+    const s = G.rehearse(id);
+    assert.ok(s && s.phase === 'battle' && s.battle.def.id === id, `rehearsal reaches ${id}`);
+    const b = s.battle;
+    assert.ok(def.supply && def.prisoners, `${id}: supply and prisoners`);
+    // Nobody starts cut off, and the board is not decided before an order.
+    assert.equal(b.result, null);
+    for (const u of b.units) assert.ok(!B.cutOff(b, u), `${id}: ${u.id} starts in supply`);
+    // Doing nothing loses (or, on a board to hold, the post falls).
+    const idle = B.start(def, Object.assign({}, s.flags), null);
+    for (let n = 0; n < def.turnLimit + 1 && !idle.result; n++) B.act(idle, 'end');
+    assert.equal(idle.result, 'lost', `${id}: an idle player loses`);
+}
+// The reserves kept for the counterstroke come on turn 4 at Moscow; spent in the line, they do not.
+{
+    const def = D.battles.moscow;
+    assert.equal(B.start(def, { reservesKept: true }, null).pending.filter(u => u.side === 'red' && u.arrive === 4).length, 3);
+    assert.equal(B.start(def, {}, null).pending.filter(u => u.side === 'red').length, 0);
+}
+// Bagration with one blow has no southern group.
+{
+    const def = D.battles.bagration;
+    const south = u => u.side === 'red' && u.r === 7;
+    assert.ok(B.start(def, { twoBlows: true }, null).units.some(south));
+    assert.ok(!B.start(def, {}, null).units.some(south));
+}
+
+// ── The data speaks the screen's plain words ──
+{
+    const text = JSON.stringify(D);
+    for (const word of ['압력', '전투력']) assert.ok(!text.includes(word), `the data says ${word}`);
+    for (const t of D.turns) assert.equal(t.army.reduce((a, [, n]) => a + n, 0), t.mobilize, `${t.id}: the army adds up`);
+}
+
+console.log('great-patriotic-war: history\'s road, the fronts, the other roads, the battles and the words');
