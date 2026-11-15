@@ -46,6 +46,7 @@
 | CommuLingo 일본 근현대사 묶음(사회주의·노동운동 축 12편) | [2026-11-14 사건 12편·용어 138·카드 약 160·정리 단계 결정](commulingo-japan-modern-20261114.md) |
 | CommuLingo 기존 사건 16편 보강(한국전쟁·중소분열·우크라이나·북조선·아시아·아프리카 사회주의 정권 12편)·사건 진영 정리 | [2026-11-14 편별 수치·event-enrich 빌더·남은 countries 추가](commulingo-events-depth-20261114.md) |
 | CommuLingo 대만 근현대사 묶음·한일 묶음 후속 보강 | [2026-11-14 사건 6편·대만 표기 통일·정당 21개·카드 22장·남은 코드 과제](commulingo-taiwan-modern-20261114.md) |
+| CommuLingo 동아시아 운동사 강좌 기반 작업(한·중·일·대만) | [2026-11-15 용어 168·문헌 12·카드 34·활동 카탈로그 27·보류한 번역·남은 결정](commulingo-east-asia-foundation-20261115.md) |
 | CommuLingo 독일 고전철학 계보도(철학 분류 시작) | [계보도·철학 분류·용어 17개·인물 10명·「포이어바흐에 관한 테제」 번역·MCP 원문 쓰기](commulingo-german-philosophy-20261028.md) |
 | CommuLingo 『유물론과 경험비판론』 완역 | [러시아어 원문 파싱·DeepSeek 초벌·Opus 교열·문헌 등록·링크·학습 코스 8단위](commulingo-lenin-mec-20261028.md) |
 | CommuLingo 『유물론과 경험비판론』 논쟁 문헌 | [레닌 「열 가지 질문」·고리키 편지, 보그다노프 『믿음과 과학』, 루나차르스키 「무신론」 번역·문헌 등록](commulingo-mec-polemics-20261029.md) |
