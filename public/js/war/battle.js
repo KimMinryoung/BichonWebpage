@@ -122,7 +122,17 @@
         const heroics = !(opts && opts.rules < 3);
         const express = !(opts && opts.rules < 5);
         const sides = sidesOf(def);
+        // A unit as the save's generation has it: `rules: { n: { … } }`
+        // holds what generation n changed in it (the latest the save has
+        // wins; a board started without a generation is the newest), and
+        // `from: n` a unit that only exists from generation n on. So a
+        // board's enemy can be given new orders without an older save's
+        // battle replaying differently.
+        const gen = opts && opts.rules ? opts.rules : Infinity;
+        const asOf = u => Object.assign({}, u, ...Object.keys(u.rules || {}).map(Number).filter(n => gen >= n).sort((a, z) => a - z).map(n => u.rules[n]));
         const all = def.units
+            .filter(u => !(u.from > gen))
+            .map(asOf)
             .filter(u => joins(u, flags, muster, def))
             .map(u => {
                 const own = u.side === sides.player && muster;

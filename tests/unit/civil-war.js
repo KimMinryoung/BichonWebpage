@@ -6,8 +6,20 @@
 // @group game
 const assert = require('node:assert/strict');
 const D = require('../../public/js/war/scenarios/civil-war.js');
-const G = require('../../public/js/war/engine.js').create(D);
-const B = require('../../public/js/war/battle.js');
+const Engine = require('../../public/js/war/engine.js');
+const Battle = require('../../public/js/war/battle.js');
+// The boards' scripted battles below were written for the enemy as it
+// stood through rules 11 (garrisons that hold their tiles). From rules 12
+// the defenders take the field (a unit's `rules: { 12: … }`), so this file
+// plays generation 11 unless a check names another, and so keeps watch
+// over what an older save replays; the last block checks generation 12.
+const LEGACY = 11;
+const G = (engine => Object.assign({}, engine, {
+    start: (rules = LEGACY, edition) => engine.start(rules, edition),
+    rehearse: (id, rules = LEGACY) => engine.rehearse(id, rules),
+    RULES: LEGACY,
+}))(Engine.create(D));
+const B = Object.assign({}, Battle, { start: (def, flags, muster, opts) => Battle.start(def, flags, muster, opts || { rules: LEGACY }) });
 const A = require('../../public/js/war/art.js').create(D);
 const { checkScenario } = require('../lib/war-scenario-check');
 
@@ -1662,6 +1674,25 @@ for (const id of Object.keys(D.battles)) {
     assert.ok(!G.cardOffered(seasonOf(t => t.choice.options.some(o => o.id === 'market') ? 'market' : historical(t), 'directive'), 'relief'), 'not with the market');
     const taxed = seasonOf(t => t.choice.options.some(o => o.id === 'tax') ? 'tax' : historical(t), 'poland');
     assert.ok(!G.cardOffered(taxed, 'relief'), 'not after the tax in kind');
+}
+
+// Rules 12: the defenders take the field. Every battle is reached by the
+// newest generation's rehearsal, its enemy has units that move, nobody
+// starts without a move to make, and a player who gives no orders loses.
+{
+    const N = Engine.create(D);
+    assert.equal(N.RULES, 12);
+    for (const [id, def] of Object.entries(D.battles)) {
+        const s = N.rehearse(id);
+        assert.ok(s && s.phase === 'battle' && s.battle.def.id === id, `rules 12 reach ${id}`);
+        // Warsaw alone keeps its garrisons: a bonus battle, hard as it was meant to be.
+        assert.equal(s.battle.units.some(u => u.role === 'field'), id !== 'warsaw', `${id}: defenders in the field`);
+        const old = G.rehearse(id);
+        assert.ok(old && !old.battle.units.some(u => u.role === 'field'), `${id}: rules 11 keep the garrisons`);
+        const idle = Battle.start(def, Object.assign({}, s.flags), null);
+        for (let n = 0; n < def.turnLimit + 1 && !idle.result; n++) Battle.act(idle, 'end');
+        assert.equal(idle.result, 'lost', `${id}: an idle player loses`);
+    }
 }
 
 console.log('civil-war: campaign, policies, save, battle, bar and voice checks passed');

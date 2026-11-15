@@ -281,6 +281,8 @@ function checkScenario(D) {
             need(placed && Battle.enterCost(b, placed, u.at[0], u.at[1]) < Infinity, `${at}: ${u.id} starts on ground it cannot enter`);
             if (u.rail && placed) need(Battle.reachable(b, placed).length > 0, `${at}: ${u.id}'s railway runs somewhere`);
             if (u.role) need(Battle.ROLES[u.role], `${at}: ${u.id} role ${u.role}`);
+            // What a generation changed in the unit (battle.js start): a known role there too.
+            for (const [n, over] of Object.entries(u.rules || {})) need(Number(n) >= 1 && (!over.role || Battle.ROLES[over.role]), `${at}: ${u.id} rules ${n}`);
             // The pictures war/ui/glyphs.js draws for a unit's look.
             if (u.look) need(LOOKS.includes(u.look), `${at}: ${u.id} look ${u.look}`);
             if (u.line) need(def.lines[u.line], `${at}: ${u.id} line ${u.line}`);

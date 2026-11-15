@@ -427,14 +427,16 @@ function measure({ id, margin, cards, flags }) {
     const muster = { margin, fed: 1, commissar: true, cards };
     const b = B.start(def, flags, muster, { rules: G.RULES });
     const t0 = Date.now();
-    const strong = QUICK ? null : strongBattle(b);
+    // The strong player three times over (its drafts are drawn by lot): how often it wins, and its quickest.
+    const strongs = QUICK ? [] : [11, 23, 37].map(n => { seed = n; return strongBattle(b); });
     seed = 7;
     const runs = Array.from({ length: RUNS }, () => ordinaryBattle(b));
     const wins = runs.filter(r => r.result === 'won');
     const avg = wins.length ? (wins.reduce((a, r) => a + r.turns, 0) / wins.length).toFixed(1) : '-';
     const label = `여유 ${String(margin).padStart(4)}${cardsOf(def).length ? (cards.length ? ` · 카드 ${cards.join(',')}` : ' · 카드 없음') : ''}`;
-    const strongText = !strong ? '-' : strong.result === 'won' ? (strong.held ? '버팀' : `${strong.turns}턴 승`) : '패배';
-    return `  ${label.padEnd(36)} 강한 봇 ${strongText.padEnd(6)} · 보통 봇 ${pct(wins.length, RUNS).padStart(4)} 승 (평균 ${avg}턴) · ${((Date.now() - t0) / 1000).toFixed(1)}s`;
+    const sw = strongs.filter(r => r.result === 'won');
+    const strongText = !strongs.length ? '-' : !sw.length ? '0/3 패배' : `${sw.length}/3 · ` + (sw.every(r => r.held) ? '버팀' : `${Math.min(...sw.filter(r => !r.held).map(r => r.turns))}턴 승`);
+    return `  ${label.padEnd(36)} 강한 봇 ${strongText.padEnd(11)} · 보통 봇 ${pct(wins.length, RUNS).padStart(4)} 승 (평균 ${avg}턴) · ${((Date.now() - t0) / 1000).toFixed(1)}s`;
 }
 
 const pct = (n, of) => `${Math.round(100 * n / of)}%`;

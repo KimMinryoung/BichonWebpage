@@ -29,7 +29,10 @@
    (STANDING per city, ±STANDING_MAX); 10 the 1st Cavalry Army is one
    army, sent with its card to one front a season, not +4 on three; 11 the
    data's content marked rules 11 (a battle in the opening season, one
-   history lost: its reward pays a win, wonBy).
+   history lost: its reward pays a win, wonBy); 12 a battle unit's own
+   `rules` (what a generation changed in it: battle.js start) — the civil
+   war's defenders take the field (role field) instead of standing to be
+   struck.
 
    A generation is the engine's: it changes what the code does for every
    scenario. A change to one scenario's own data that would replay an old
@@ -44,7 +47,7 @@
     const Battle = node ? require('./battle.js') : root.WarBattle;
     const Cond = node ? require('./cond.js') : root.WarCond;
 
-    const RULES = 11;
+    const RULES = 12;
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
     const signed = n => (n < 0 ? '−' : '+') + Math.abs(n);
