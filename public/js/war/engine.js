@@ -1060,7 +1060,7 @@
         // How the rehearsal plays the cards (D.rehearsal): lead, cards sent
         // to the heaviest front; skip, cards never played; guard: { stat,
         // min }, a stat the cards may not take below min.
-        const REHEARSAL = Object.assign({ lead: [], skip: [], guard: null }, D.rehearsal);
+        const REHEARSAL = Object.assign({ lead: [], skip: [], guard: null, spread: false }, D.rehearsal);
         function rehearse(id, rules = RULES) {
             const s = start(rules);
             for (let guard = 0; guard < 4 * D.turns.length; guard++) {
@@ -1083,6 +1083,9 @@
                     for (const c of turnData(s).cards) {
                         if (REHEARSAL.lead.includes(c)) act(s, 'play', c, fronts[0]);
                         else if (D.cards[c].historyAt) { if (D.cards[c].historyAt[turnData(s).id]) act(s, 'play', c, D.cards[c].historyAt[turnData(s).id]); }
+                        // spread: a front card history gives no place goes
+                        // to the second-heaviest front (the lead's is the first).
+                        else if (REHEARSAL.spread && D.cards[c].target === 'front') act(s, 'play', c, fronts[1] || fronts[0]);
                         else if (!REHEARSAL.skip.includes(c) && (!REHEARSAL.guard || s.stats[REHEARSAL.guard.stat] + cardStat(s, D.cards[c], c, REHEARSAL.guard.stat) >= REHEARSAL.guard.min)) act(s, 'play', c);
                     }
                     fronts.forEach(f => act(s, 'alloc', f, 0));

@@ -1,6 +1,6 @@
 # 전쟁 게임 엔진 `public/js/war/` — 시나리오 작성 기준
 
-갱신: 2026-11-15 (게임 밖으로 알리기: 시나리오의 `promo`, `services/war-promos.js`, 전투 하나의 자기 페이지 `/games/<id>/battle/<battle>/`, 공유 그림 `scripts/war-og-images.py`, 결과 공유 단추) / 2026-11-15 (2차대전 그림: 세력 `axis`와 방패 문장 `balkenkreuz`·`fasces`·`roundel`, 화면 테마 `ui.theme: 'axis'`, 전투 부대의 기본 모자 `ui.caps`와 모습 `helmet`·`stahlhelm`·`pilotka`·`ushanka`, 전차·대전차포 부대 그림, 지도 표지 `tank`·`plane`, 공습의 비행기, 얼음·눈·진창 칸, 초상의 모자 넷과 옷 `boards`·`feldgrau`) / 2026-11-15 (2차대전 대비 기반 정비: 시나리오별 데이터 판 `edition`, 연습의 카드 운용 `rehearsal`, 카드의 지도 표지 `glyph`와 `MAP_MARKS`, 화면 문구 `ui.coach`·`ui.kinds`·`scoring.*.kicker`, 전투의 병종 상성 `vs`·돌파 `breaks`와 전차·대전차포 `KINDS`, 날씨 `weather`, 여러 번·양편의 공습 `air`, 테스트 `tests/unit/war-arms.js`) / 2026-11-02 (전략 밸런스 측정 도구 `scripts/war-campaign.js`, 시기를 다시 계획하는 `canRetrySeason`·`retrySeason`, 끝난 전투의 `lost`(`WarBattle.lost`), 전투의 `par`, 화면의 `ui.medal`·`ui.merits`) / 2026-10-19 (규칙 11: 역사가 진 시기 전투의 `reward.wonBy`, 적 역할 `hunt`, 부대 `flank`, 한 수 `order`·`brace`, 옛 규칙에 없는 전투의 명령은 재생에서 건너뜀) / 2026-10-18 (전투 밸런스 측정 도구 / 규칙 9: 비례 전진과 위치 압력 / 규칙 8: 위협의 `traits`·`as`, 조건 `alloc`) / 2026-10-17 (규칙 7: 규칙 세대마다의 달력(시기의 `when`), 한 시기의 사건 목록과 사건의 `when`, 지키는 전투 `outlast`) / 2026-10-16 (규칙 6: 전투로 여는 `cap`과 그 보상, 조건 있는 전투·카드, 적 역할 `push`) / 2026-10-15 (「붉은 전선」에서 공통 엔진을 떼어 냄)
+갱신: 2026-11-15 (둘째 시나리오 「조국 전선 1941–1945」와 전투의 보급선·포위 `supply`, 포로 `prisoners`, 늦게 오는 부대 `arrive`, 출격하는 수비대 `guard`, 여러 거점 `protect` 목록·`breach`, 모든 목표 `goalsAll`, 부대의 `aim`, 한 수 `barrage`·`sortie`, 리허설의 `spread`, 밸런스 도구의 `--tune`, 테스트 `tests/unit/war-supply.js`) / 2026-11-15 (게임 밖으로 알리기: 시나리오의 `promo`, `services/war-promos.js`, 전투 하나의 자기 페이지 `/games/<id>/battle/<battle>/`, 공유 그림 `scripts/war-og-images.py`, 결과 공유 단추) / 2026-11-15 (2차대전 그림: 세력 `axis`와 방패 문장 `balkenkreuz`·`fasces`·`roundel`, 화면 테마 `ui.theme: 'axis'`, 전투 부대의 기본 모자 `ui.caps`와 모습 `helmet`·`stahlhelm`·`pilotka`·`ushanka`, 전차·대전차포 부대 그림, 지도 표지 `tank`·`plane`, 공습의 비행기, 얼음·눈·진창 칸, 초상의 모자 넷과 옷 `boards`·`feldgrau`) / 2026-11-15 (2차대전 대비 기반 정비: 시나리오별 데이터 판 `edition`, 연습의 카드 운용 `rehearsal`, 카드의 지도 표지 `glyph`와 `MAP_MARKS`, 화면 문구 `ui.coach`·`ui.kinds`·`scoring.*.kicker`, 전투의 병종 상성 `vs`·돌파 `breaks`와 전차·대전차포 `KINDS`, 날씨 `weather`, 여러 번·양편의 공습 `air`, 테스트 `tests/unit/war-arms.js`) / 2026-11-02 (전략 밸런스 측정 도구 `scripts/war-campaign.js`, 시기를 다시 계획하는 `canRetrySeason`·`retrySeason`, 끝난 전투의 `lost`(`WarBattle.lost`), 전투의 `par`, 화면의 `ui.medal`·`ui.merits`) / 2026-10-19 (규칙 11: 역사가 진 시기 전투의 `reward.wonBy`, 적 역할 `hunt`, 부대 `flank`, 한 수 `order`·`brace`, 옛 규칙에 없는 전투의 명령은 재생에서 건너뜀) / 2026-10-18 (전투 밸런스 측정 도구 / 규칙 9: 비례 전진과 위치 압력 / 규칙 8: 위협의 `traits`·`as`, 조건 `alloc`) / 2026-10-17 (규칙 7: 규칙 세대마다의 달력(시기의 `when`), 한 시기의 사건 목록과 사건의 `when`, 지키는 전투 `outlast`) / 2026-10-16 (규칙 6: 전투로 여는 `cap`과 그 보상, 조건 있는 전투·카드, 적 역할 `push`) / 2026-10-15 (「붉은 전선」에서 공통 엔진을 떼어 냄)
 
 「붉은 전선 1918–1920」의 규칙·전투·화면을 시나리오와 떼어 놓은 공통 엔진이다. 다른 시대의 전쟁은 **시나리오 파일 하나**(+ 지도의 세력 범위 문서, 라우트 한 줄)로 더한다. 편집 GUI는 없다. 이 문서는 시나리오를 쓰는 사람(미래의 Claude)을 위한 레퍼런스다. 「붉은 전선」 고유의 설계·밸런스는 [civil-war-game.md](civil-war-game.md).
 
@@ -24,7 +24,7 @@
 | [tests/lib/war-scenario-check.js](../tests/lib/war-scenario-check.js) | 시나리오 검사 `checkScenario(D)` → 문제 목록 |
 | [tests/unit/war-scenarios.js](../tests/unit/war-scenarios.js) | 모든 공개 시나리오 검사 + 최소 시나리오를 끝까지 둔다 |
 | [tests/unit/war-golden.js](../tests/unit/war-golden.js) | 「붉은 전선」 골든 마스터(6절) |
-| [tests/unit/war-arms.js](../tests/unit/war-arms.js) | 전투의 병종 상성·돌파·날씨·공습을 작은 판으로 |
+| [tests/unit/war-arms.js](../tests/unit/war-arms.js), [war-supply.js](../tests/unit/war-supply.js) | 전투의 병종 상성·돌파·날씨·공습, 보급·포위·증원·출격·여러 거점·새 한 수를 작은 판으로 |
 
 화면 컨트롤러(`ui/game.js`)는 공유 상태가 많아 한 파일로 두었다. 상태 없는 부분만 모듈로 뺐다.
 
@@ -148,7 +148,16 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 ### 4.9 연습의 카드 운용 `rehearsal`
 
-`{ lead: [카드], skip: [카드], guard: { stat, min } }` — 연습(`rehearse`, `?battle=<id>`)이 역사의 선택으로 전투 직전까지 둘 때: `lead` 카드는 가장 무거운 전선에, `historyAt`이 있는 카드는 역사의 전선에, 나머지는 `skip`을 빼고 `guard` 스탯을 `min` 아래로 떨어뜨리지 않을 때만 쓴다. 없으면 `historyAt` 카드와 나머지 모든 카드. 「붉은 전선」: 트로츠키의 열차를 앞에, 징발은 쓰지 않고, 당 결속 40을 지킨다.
+`{ lead: [카드], skip: [카드], guard: { stat, min }, spread? }` — `spread: true`면 `historyAt`이 없는 전선 카드를 둘째로 무거운 전선에 쓴다(「조국 전선」의 항공군). 연습(`rehearse`, `?battle=<id>`)이 역사의 선택으로 전투 직전까지 둘 때: `lead` 카드는 가장 무거운 전선에, `historyAt`이 있는 카드는 역사의 전선에, 나머지는 `skip`을 빼고 `guard` 스탯을 `min` 아래로 떨어뜨리지 않을 때만 쓴다. 없으면 `historyAt` 카드와 나머지 모든 카드. 「붉은 전선」: 트로츠키의 열차를 앞에, 징발은 쓰지 않고, 당 결속 40을 지킨다.
+
+전투 판의 보급·증원·거점(2026-11-15, 모두 선택 필드라 옛 저장과 무관):
+- `supply: { player: [[행, 열]…], enemy: [...], weak?, bare?, hurt? }` — 편마다 보급 기지 칸. 부대는 기지까지 길이 이어져야 한다. 적 부대가 선 칸은 막히고, 적 곁인데 제 편이 그 칸에도 곁에도 없는 칸은 들어갈 수는 있어도 지나가지 못한다(기지 칸 자체는 적이 올라서야 막힌다). 강은 막히고 다리(`span`)와 땅의 `supply: true`(나룻길)는 지나간다. 끊긴 부대(`WarBattle.cutOff`)는 공격 × `weak`(0.5), 방어 − `bare`(1), 적 차례 끝마다 병력 − `hurt`(2, 플레이어 부대는 마지막 병력은 남음). 끊긴 채 한 턴을 넘긴 적 부대는 절반 아래로 꺾이면 둘러싼 부대 수와 상관없이 투항한다. 기지가 없는 편은 늘 보급된다. 사건 `cut`·`relieved`·`starve`, 대사 `when: 'cut'`(적 부대가 처음 포위됨).
+- `prisoners: true` — 투항한 적이 플레이어 편으로 넘어오지 않고 판을 떠난다(사건 `surrender`의 `gone`). 노획(`captured`)은 그대로 센다.
+- 부대의 `arrive: n` — n턴(2 이상)이 시작될 때 제 칸(차 있으면 가장 가까운 빈 칸)에 들어온다. 양편 모두. 그때까지 `b.pending`에 있다. 사건 `arrive`, 대사 `when: 'arrive'`(플레이어 부대가 처음 도착). 화면의 「증원」 줄.
+- 역할 `guard`와 `reach: n`(기본 2) — 제자리에서 `reach` 안에 들어온 플레이어 부대(가장 약한, 가까운)를 치러 나왔다가, 없으면 제자리로 돌아간다. `hold`와 달리 포병으로 멀리서 깎이기만 하지 않는다.
+- `protect`는 거점 하나이거나 목록, `breach: n`(기본 1)곳에 적이 들어서면 진다(`WarBattle.postsOf`). `raid`·`push`는 부대의 `aim: [행, 열]`이 있으면 그리로, 없으면 아직 적이 들지 않은 가장 가까운 거점으로 간다. 거점에 들어선 부대는 거기 머문다.
+- `goalsAll: true` — 모든 목표에 플레이어 부대가 함께 서야 이긴다(두 집게가 만남). `goals: []`인 판은 `outlast`와 거점이 있어야 한다(검사기).
+- 한 수 `barrage`(표적 곁의 적도 절반의 피해, 반격 없음)와 `sortie`(판 위 어느 적이든 `dmg`, 마지막 병력은 남김, `by`는 사건 글의 주어). 겨누는 한 수인지는 `WarBattle.featAimed`, 예상 피해는 `featPreview`.
 
 새 행동이 필요하면 `ROLES`에 `{ marches(b, u), act(b, u, turn) }`, 새 한 수는 `FEATS`에 `{ blow | use, targets, beforeMove, block }`을 더한다. 대사 `when`: `start`·`goal`·`flood`·`reserve`·`surrender`·`air`·`turn:N`·`turned:<line>`·`feat:<id>`.
 
@@ -188,7 +197,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 - **강한 봇:** 한 턴의 명령을 빔 탐색(기본 폭 32)으로 짜고, 가장 좋은 완성된 턴 8개에 엔진의 적 차례를 돌려, 6개 판을 다음 턴으로 넘긴다. 평가는 목표까지 부대들의 길(턴 단위, 강은 비싼 칸), 남은 턴, 양쪽 병력, 쓰러뜨린 적, 우회한 방어선, 지킬 거점(깨어날 반격대까지 엔진의 `reachable`·`menace`로)이다. 증명된 최선은 아니고 「적어도 이만큼은 쉽다」의 기준이다.
 - **보통 봇:** 같은 명령을 부대마다 욕심껏(다섯 번에 한 번은 상위 셋 중 아무거나), 적의 응수를 보지 않고 둔다. 기본 20판.
 - 여유는 합류하는 부대(`need`)를 통해서만 판을 바꾸므로, 기본은 역사의 길 여유 하나이고 `--margins`로 더 준 여유도 같은 부대 구성이면 한 번만 둔다. 조합마다 작업 스레드(코어 − 1)에서 돌린다. 전체 약 5분.
-- 쓰는 법: `node scripts/war-balance.js [전투…] [--margins=…] [--runs=…] [--width=…] [--keep=…] [--jobs=…] [--trace]`(`--trace`는 강한 봇의 턴별 최선 판).
+- 쓰는 법: `node scripts/war-balance.js [전투…] [--margins=…] [--runs=…] [--width=…] [--keep=…] [--jobs=…] [--trace] [--scenario=…] [--tune='{"<전투>|*":{"hp":1.3,"atk":1,"def":0}}']`(`--trace`는 강한 봇의 턴별 최선 판, `--tune`은 적 부대의 병력 배율·공격·방어를 바꿔 보는 가정 측정이고 데이터는 건드리지 않는다).
 
 ## 6.6 전략 밸런스 측정 (`scripts/war-campaign.js`, 2026-11-02)
 
@@ -208,7 +217,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 - 화면 문구는 한국어뿐이다(시나리오의 말만 바뀐다).
 - 지도는 커뮤링고 사건 지도 바탕(해안선·강)과 세력 범위 문서에 기대므로, 새 전쟁에도 그 문서가 있어야 역사 층이 나온다.
 - 한 시기에 전투는 하나다(`turn.battle`). 두 전투가 한 시기에 겹치면 시기를 나눈다(달력, 4.5). 전략 단위 이름은 엔진 안에서 `divisions`·`commissar`로 남아 있다.
-- 전선은 허브에서 뻗은 도시 줄이라, 포위(키예프 1941, 스탈린그라드)는 전략 지도가 아니라 전투판에서 보인다.
+- 전선은 허브에서 뻗은 도시 줄이라, 포위(키예프 1941, 스탈린그라드)는 전략 지도가 아니라 전투판에서 보인다(전투의 `supply`).
 - 지도 등장 방식·세력 색(`kind`: `white`·`interv`·`central`·`national`)·전투 진영 색(`is-red`·`is-white`)은 CSS가 정한 몇 가지다.
 - 그림 어휘: 2차대전의 기본(전차·대전차포·비행기, 철모·약모·방한모, 얼음·눈·진창, 추축국 색과 문장)은 있다. 소련 깃발 문장(붉은 별 방패), 핀란드·루마니아 고유 문장, 박격포·카튜샤·기관총 그림은 없다. 필요해지면 `SIGNS`·`unitPicture`에 더한다.
 - 검사기가 화면의 어휘(지도 표지·모습·모자·테마)를 `glyphs.js`·`war.css` 소스에서 읽으므로, 새 이름은 그 파일에 더하면 검사도 따라온다.

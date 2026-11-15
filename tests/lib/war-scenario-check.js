@@ -25,7 +25,7 @@ const LOOKS = JSON.parse(GLYPHS.match(/const LOOKS = (\[[^\]]*\]);/)[1].replace(
 const THEMES = [...read('css/war.css').matchAll(/\.cw-theme-([\w-]+)/g)].map(m => m[1]);
 // The faction kinds war.css colours (k-*, is-*).
 const FACTION_KINDS = ['white', 'interv', 'central', 'national', 'axis'];
-const VOICE_WHEN = /^(start|goal|flood|reserve|surrender|air|weather|turn:\d+|turned:[\w-]+|feat:[\w-]+)$/;
+const VOICE_WHEN = /^(start|goal|flood|reserve|surrender|air|weather|cut|arrive|turn:\d+|turned:[\w-]+|feat:[\w-]+)$/;
 const SOURCE = /^https:\/\//;
 
 function checkScenario(D) {
@@ -255,7 +255,12 @@ function checkScenario(D) {
         for (const row of def.map) for (const ch of row) need(def.terrain[ch], `${at}: terrain ${ch}`);
         const inside = ([r, c]) => r >= 0 && c >= 0 && r < rows && c < cols;
         for (const g of def.goals) need(inside(g.at), `${at}: goal ${g.name}`);
-        if (def.protect) need(inside(def.protect.at), `${at}: post ${def.protect.name}`);
+        for (const post of Battle.postsOf(def)) need(post.name && inside(post.at), `${at}: post ${post.name}`);
+        if (def.breach !== undefined) need(Number.isInteger(def.breach) && def.breach >= 1 && def.breach <= Battle.postsOf(def).length, `${at}: breach`);
+        // A board is won by a goal, or held (outlast) by its posts.
+        need(def.goals.length || (def.outlast && Battle.postsOf(def).length), `${at}: a goal, or a post to outlast with`);
+        // Supply: each side's sources are tiles of the board.
+        for (const side of ['player', 'enemy']) for (const src of (def.supply && def.supply[side]) || []) need(inside(src), `${at}: supply source ${src}`);
         for (const [lid, l] of Object.entries(def.lines || {})) {
             need(l.rear && inside([l.rear.rows[0], l.rear.cols[0]]) && inside([l.rear.rows[1], l.rear.cols[1]]), `${at}: line ${lid} rear`);
             need(inside(l.fallback), `${at}: line ${lid} fallback`);
@@ -268,7 +273,7 @@ function checkScenario(D) {
             ids.add(u.id);
             need(u.side === def.sides.player || u.side === def.sides.enemy, `${at}: ${u.id} side ${u.side}`);
             need(inside(u.at), `${at}: ${u.id} on the board`);
-            const placed = b.units.find(x => x.id === u.id);
+            const placed = b.units.concat(b.pending).find(x => x.id === u.id);
             need(placed && Battle.enterCost(b, placed, u.at[0], u.at[1]) < Infinity, `${at}: ${u.id} starts on ground it cannot enter`);
             if (u.rail && placed) need(Battle.reachable(b, placed).length > 0, `${at}: ${u.id}'s railway runs somewhere`);
             if (u.role) need(Battle.ROLES[u.role], `${at}: ${u.id} role ${u.role}`);
@@ -277,6 +282,10 @@ function checkScenario(D) {
             if (u.line) need(def.lines[u.line], `${at}: ${u.id} line ${u.line}`);
             if (u.feat) need(Battle.FEATS[u.feat.kind], `${at}: ${u.id} feat kind ${u.feat.kind}`);
             if (u.card) need(cards[u.card], `${at}: ${u.id} card ${u.card}`);
+            // A unit that comes late enters within the battle's turns; a
+            // marching unit's aim is a tile of the board.
+            if (u.arrive !== undefined) need(Number.isInteger(u.arrive) && u.arrive >= 2 && u.arrive <= def.turnLimit, `${at}: ${u.id} arrives on turn ${u.arrive}`);
+            if (u.aim) need(inside(u.aim), `${at}: ${u.id} aim`);
             if (u.person) drawn.add(u.person[1]);
         }
         for (const raid of Battle.raidsOf(def)) {

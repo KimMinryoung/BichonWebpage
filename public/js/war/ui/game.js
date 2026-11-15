@@ -565,6 +565,8 @@
         if (box.hidden) return box.replaceChildren();
         const sc = t.scene;
         const seen = new Set();
+        // A scene without a picture (none fit, or none free to use) is its words alone.
+        box.classList.toggle('is-bare', !(D.pictures && D.pictures[sc.picture]));
         // The picture beside the words (2026-10-29: the season's story and
         // its voices stand open beside it, no longer folded below).
         box.replaceChildren(
@@ -890,6 +892,8 @@
         if (when === 'surrender') return b.captured > 0;
         if (when === 'air') return B.raidsOf(def).some(raid => B.raidTurns(raid).some(t => b.turn > t));
         if (when === 'weather') return Boolean(B.weatherOf(b));
+        if (when === 'cut') return Boolean(b.pocketed);
+        if (when === 'arrive') return Boolean(b.arrived);
         return false;
     }
 
@@ -927,7 +931,7 @@
             bVoice.played.add(k);
             if (!speakerOf(b, v)) return;
             // A feat, a surrender or the planes speak at once, ahead of lines still waiting.
-            if (v.when === 'surrender' || v.when === 'air' || v.when.startsWith('feat:')) { bVoice.queue.splice(urgent++, 0, v); bVoice.until = null; } else bVoice.queue.push(v);
+            if (v.when === 'surrender' || v.when === 'air' || v.when === 'cut' || v.when === 'arrive' || v.when.startsWith('feat:')) { bVoice.queue.splice(urgent++, 0, v); bVoice.until = null; } else bVoice.queue.push(v);
         });
         const wrap = document.querySelector('#cwBattle .cw-grid-scroll');
         if (!wrap) return;
@@ -1827,7 +1831,7 @@
         // A battle before the settlement moves this front's strength: the
         // bar above assumes it goes as history did (its own words, stakes,
         // where history lost it or it opens a front's last cities).
-        if (!m.def.final) notes.push(m.def.stakes || `예상은 역사처럼 이길 때 · ${m.def.reward.quick}턴 안에 이기면 ${W.strength} +${m.def.reward.quickBy}, 지면 ${signed(m.def.reward.lostBy)}`);
+        if (!m.def.final) notes.push(m.def.stakes || `예상은 역사처럼 이길 때 · ${m.def.reward.quick ? `${m.def.reward.quick}턴 안에 이기면 ${W.strength} +${m.def.reward.quickBy}, ` : ''}지면 ${signed(m.def.reward.lostBy)}`);
         return el('div', { class: 'cw-muster' },
             el('p', {}, el('strong', {}, `${m.def.title} 편성`), notes.length ? ` · ${notes.join(' · ')}` : null),
             musterStep(id, m),
@@ -2714,6 +2718,10 @@
                 const k = 14 / len;
                 g.append(svg('path', { d: `M${x1 + (x2 - x1) * k} ${y1 + (y2 - y1) * k}L${x2 - (x2 - x1) * k} ${y2 - (y2 - y1) * k}`, class: `cw-blow is-${sideOf(b, a)}`, 'marker-end': `url(#cwHead-${sideOf(b, a)})` }));
                 g.append(badge((x1 + x2) / 2 + 17, (y1 + y2) / 2 - 8, d.hp <= 0 ? '격파' : `−${e.dmg}`, 'is-' + sideOf(b, a)));
+            } else if (e.type === 'splash' || e.type === 'starve') {
+                // A barrage's fringe, a pocket's hunger: what it took, on the unit.
+                const d = b.units.find(u => u.id === (e.to || e.id));
+                if (d) g.append(badge(d.c * CELL + 40, d.r * CELL - 2, d.hp <= 0 ? '격파' : `−${e.dmg}`, e.type === 'starve' ? 'is-preview' : 'is-red'));
             } else if (e.type === 'air') {
                 // A raid: the plane over the unit it struck, in its side's colours.
                 const d = b.units.find(u => u.id === e.id);
@@ -2732,20 +2740,46 @@
     // neither. Left empty with an enemy able to march in next turn, the
     // frame turns to the alarm's blue.
     // The post left empty with an enemy able to march in next turn.
+    // (def.protect is one post or a list: battle.js postsOf.) Returns the
+    // open post, or null.
     function postOpen(b) {
-        if (!b.def.protect || b.result) return false;
-        const [r, c] = b.def.protect.at;
-        return !B.unitAt(b, r, c) && b.units.some(u => B.isEnemy(b, u) && u.hp > 0 && B.marching(b, u) && B.reachable(b, u).some(t => t.r === r && t.c === c));
+        if (b.result) return null;
+        const foes = b.units.filter(u => B.isEnemy(b, u) && u.hp > 0 && B.marching(b, u)).map(u => B.reachable(b, u));
+        return B.postsOf(b.def).find(({ at: [r, c] }) => !B.unitAt(b, r, c) && foes.some(reach => reach.some(t => t.r === r && t.c === c))) || null;
     }
 
     function postMark(b) {
         const g = svg('g', { class: 'cw-post', 'aria-hidden': 'true' });
-        if (!b.def.protect) return g;
-        const [r, c] = b.def.protect.at;
-        if (postOpen(b)) g.classList.add('is-open');
-        g.append(svg('rect', { x: c * CELL + 1, y: r * CELL + 1, width: CELL - 2, height: CELL - 2, class: 'cw-post-frame' }));
-        // Its name hangs below the frame, unless a unit there would wear it.
-        if (!B.unitAt(b, r, c) && !B.unitAt(b, r + 1, c)) g.append(svg('text', { x: c * CELL + CELL / 2, y: (r + 1) * CELL + 4, 'text-anchor': 'middle', class: 'cw-post-name' }, b.def.protect.name));
+        const open = postOpen(b);
+        for (const post of B.postsOf(b.def)) {
+            const [r, c] = post.at;
+            const one = svg('g', { class: open === post ? 'is-open' : null });
+            one.append(svg('rect', { x: c * CELL + 1, y: r * CELL + 1, width: CELL - 2, height: CELL - 2, class: 'cw-post-frame' }));
+            // Its name hangs below the frame, unless a unit there would wear it.
+            if (!B.unitAt(b, r, c) && !B.unitAt(b, r + 1, c)) one.append(svg('text', { x: c * CELL + CELL / 2, y: (r + 1) * CELL + 4, 'text-anchor': 'middle', class: 'cw-post-name' }, post.name));
+            g.append(one);
+        }
+        return g;
+    }
+
+    // Supply (battle.js): each side's sources as an arrowhead on the board's
+    // edge pointing in, so a pocket's missing road can be read off the board.
+    function supplyMarks(b) {
+        const g = svg('g', { class: 'cw-supply', 'aria-hidden': 'true' });
+        const sup = b.def.supply;
+        if (!sup) return g;
+        const rows = b.def.map.length, cols = b.def.map[0].length;
+        for (const [side, cls] of [['player', 'is-red'], ['enemy', 'is-white']]) {
+            for (const [r, c] of sup[side] || []) {
+                const [cx, cy] = center(r, c);
+                // From the nearest edge inward.
+                const edge = [[c, -1, 0], [cols - 1 - c, 1, 0], [r, 0, -1], [rows - 1 - r, 0, 1]].sort((a, z) => a[0] - z[0])[0];
+                const [, dx, dy] = edge;
+                const ex = cx + dx * (CELL / 2 - 2), ey = cy + dy * (CELL / 2 - 2);
+                const px = -dy, py = dx;
+                g.append(svg('path', { d: `M${ex - dx * 11} ${ey - dy * 11}L${ex + px * 7} ${ey + py * 7}L${ex - px * 7} ${ey - py * 7}Z`, class: 'cw-supply-mark ' + cls }));
+            }
+        }
         return g;
     }
 
@@ -2822,7 +2856,7 @@
                 const mark = tileMarks(ground.cls, r, c, flooded);
                 if (mark) board.append(mark);
                 // A town's name on top; the objective's at the foot, clear of its flag.
-                const post = def.protect && def.protect.at[0] === r && def.protect.at[1] === c;
+                const post = B.postsOf(def).some(x => x.at[0] === r && x.at[1] === c);
                 const town = goal ? goal.name : post ? null : (def.towns.find(t => t[1] === r && t[2] === c) || [])[0];
                 if (town && !held(r, c)) board.append(svg('text', { x: c * CELL + CELL / 2, y: r * CELL + (goal ? CELL - 5 : 14), 'text-anchor': 'middle', class: 'cw-tile-label' + (goal ? ' is-goal' : '') }, town));
                 // Shelling wears a fortification's defence. A unit standing
@@ -2871,7 +2905,7 @@
             const x = u.c * CELL, y = u.r * CELL;
             const leap = cheer !== null && B.isPlayer(b, u) ? cheered++ : null;
             const isTarget = targets.includes(u);
-            const p = isTarget ? B.preview(b, unit, u, armed ? B.featMod(unit) : undefined) : null;
+            const p = isTarget ? (armed ? B.featPreview(b, unit, u) : B.preview(b, unit, u)) : null;
             const done = B.isPlayer(b, u) && u.acted;
             // A unit that has just struck lunges once at its target.
             const blow = b.events.find(e => e.type === 'attack' && e.from === u.id);
@@ -2879,11 +2913,11 @@
             if (blow && !fallAt.has(blow)) fallAt.set(blow, performance.now());
             const lunge = foeHit && performance.now() - fallAt.get(blow) < LUNGE_MS;
             const g = svg('g', {
-                class: `cw-unit is-${sideOf(b, u)} k-${u.kind}${u.yielded ? ' is-yielded' : ''}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done && !B.canMove(b, u) ? ' is-done' : ''}${lunge ? ' is-lunging' : ''}${leap !== null ? ' is-cheering' : ''}`,
+                class: `cw-unit is-${sideOf(b, u)} k-${u.kind}${u.yielded ? ' is-yielded' : ''}${B.cutOff(b, u) ? ' is-cut' : ''}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done && !B.canMove(b, u) ? ' is-done' : ''}${lunge ? ' is-lunging' : ''}${leap !== null ? ' is-cheering' : ''}`,
                 tabindex: '0', role: 'button',
                 style: lunge ? `--lx:${Math.sign(foeHit.c - u.c) * 9}px;--ly:${Math.sign(foeHit.r - u.r) * 9}px;--since:${Math.round(performance.now() - fallAt.get(blow))}ms`
                     : leap !== null ? `--since:${cheer - 300 - leap * 90}ms` : null,
-                'aria-label': `${B.isPlayer(b, u) ? U.player : foeName()} ${u.name}${u.yielded ? '(투항해 넘어옴)' : ''}, 병력 ${u.hp}/${u.maxHp}, 방어 ${B.defenseOf(b, u)}` + (p ? `, 공격 시 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ''}${p.wears ? ', 진지 방어 1 감소' : ''}${p.surrender ? ', 투항시킴' : ''}` : '') + (featLeft(b, u) ? `, 결정적 한 수 ${u.feat.name}` : '') + (done ? ', 행동 마침' : ''),
+                'aria-label': `${B.isPlayer(b, u) ? U.player : foeName()} ${u.name}${u.yielded ? '(투항해 넘어옴)' : ''}, 병력 ${u.hp}/${u.maxHp}, 방어 ${B.defenseOf(b, u)}${B.cutOff(b, u) ? ', 포위됨' : ''}` + (p ? `, 공격 시 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ''}${p.wears ? ', 진지 방어 1 감소' : ''}${p.surrender ? ', 투항시킴' : ''}` : '') + (featLeft(b, u) ? `, 결정적 한 수 ${u.feat.name}` : '') + (done ? ', 행동 마침' : ''),
             });
             // A counter on the board: a flat square of the side's colour,
             // its name, what it is and its strength.
@@ -2915,6 +2949,11 @@
             // The unit picked, or one a blow can reach: brackets on the tile's corners.
             if (u.id === selected || u.id === inspected || isTarget) g.append(svg('path', { d: corners(x, y), class: 'cw-unit-pick' }));
             // A feat still to use: a gold star on the corner, bright when it can be used now.
+            // Cut off from supply: a tag across the counter's foot.
+            if (B.cutOff(b, u)) {
+                g.append(svg('rect', { x: x + 4, y: y + CELL - 15, width: CELL - 8, height: 11, class: 'cw-cut-band' }));
+                g.append(svg('text', { x: x + CELL / 2, y: y + CELL - 6.5, 'text-anchor': 'middle', class: 'cw-cut-text' }, '포위'));
+            }
             if (featLeft(b, u)) g.append(svg('path', { d: star(x + CELL - 4, y + 4, 6, 2.5), class: 'cw-feat-star' + (B.featBlock(b, u) ? ' is-waiting' : '') }));
             // What the number cannot say: a surrender, a fortification worn.
             const note = p && [p.surrender ? '투항' : null, p.wears ? '포격' : null].filter(Boolean).join(' ');
@@ -2959,29 +2998,41 @@
             board.append(svg('path', { d, class: 'cw-goal-flag', 'aria-hidden': 'true' }));
         }
         board.append(postMark(b));
+        board.append(supplyMarks(b));
         board.append(eventArrows(b));
         if (verdict && b.result === 'won') board.append(victoryBursts(b));
         const moment = momentBanner(b);
         // A Red order leaves only its blow, falls and the flank in the
         // events; anything else came from the White turn.
-        const whiteMoved = b.events.some(e => e.type === 'attack' ? B.isEnemy(b, b.units.find(u => u.id === e.from)) : !['fall', 'turned', 'wear', 'feat', 'surrender', 'raised'].includes(e.type));
+        const whiteMoved = b.events.some(e => e.type === 'attack' ? B.isEnemy(b, b.units.find(u => u.id === e.from)) : !['fall', 'turned', 'wear', 'feat', 'surrender', 'raised', 'cut', 'relieved', 'splash'].includes(e.type));
         const reds = b.units.filter(u => B.isPlayer(b, u) && u.hp > 0);
         const ready = reds.filter(u => !u.acted).length;
         // What winning takes, and what stands in the way now: a checklist of
         // short rows (label, state), the goals marked, an empty post alarmed.
         const row = (label, text, tone) => ({ label, text, tone });
-        const postAt = def.protect && B.unitAt(b, ...def.protect.at);
+        const posts = B.postsOf(def);
+        const empty = battleEnded ? [] : posts.filter(x => !B.unitAt(b, ...x.at));
+        // Supply: who is cut off now; arrivals: who comes on which turn.
+        const cutNow = side => b.units.filter(u => u.hp > 0 && side(b, u) && B.cutOff(b, u)).length;
+        const due = side => [...new Set(b.pending.filter(u => side(b, u)).map(u => u.arrive))].sort((a, z) => a - z);
+        const dueText = [
+            due(B.isPlayer).map(t => `${t}턴 ${b.pending.filter(u => B.isPlayer(b, u) && u.arrive === t).map(u => u.tag).join('·')}`).join(', '),
+            due(B.isEnemy).length ? `${foeName()} ${due(B.isEnemy).map(t => `${t}턴`).join('·')}` : '',
+        ].filter(Boolean).join(' · ');
         const merits = meritsOf(def, b, battleEnded ? s.battles[def.id] : null);
         const status = [
             row('턴', `${Math.min(b.turn, def.turnLimit)} / ${def.turnLimit}`),
 
             ...def.goals.map(g => {
                 const holder = B.unitAt(b, ...g.at);
+                const win = def.goalsAll ? `${g.name}에도 서야 승리` : `${g.name}에 서면 승리`;
                 return row('목표', holder && B.isEnemy(b, holder)
-                    ? `${g.name}에 서면 승리 · ${josa(holder.name, '이', '가')} 지킴 (${holder.hp}/${holder.maxHp})`
-                    : `${g.name}에 서면 승리 · ${josa(foeName(), '이', '가')} 없음`, 'is-goal');
+                    ? `${win} · ${josa(holder.name, '이', '가')} 지킴 (${holder.hp}/${holder.maxHp})`
+                    : holder && B.isPlayer(b, holder) ? `${win} · ${josa(holder.name, '이', '가')} 섰다` : `${win} · ${josa(foeName(), '이', '가')} 없음`, 'is-goal');
             }),
-            def.protect ? row('지킬 곳', `${def.protect.name}${def.outlast ? ` · ${def.turnLimit}턴 끝까지 지키면 승리` : ''} · ${josa(foeName(), '이', '가')} 들어서면 패배${postAt || battleEnded ? '' : ' · 지금 비었음'}`, postAt || battleEnded ? null : 'is-alarm') : null,
+            posts.length ? row('지킬 곳', `${posts.map(x => x.name).join('·')}${def.outlast ? ` · ${def.turnLimit}턴 끝까지 지키면 승리` : ''} · ${josa(foeName(), '이', '가')} ${posts.length > 1 ? ((def.breach || 1) > 1 ? `${def.breach}곳에 ` : '한 곳이라도 ') : ''}들어서면 패배${empty.length ? ` · 지금 ${posts.length > 1 ? empty.map(x => x.name).join('·') + ' ' : ''}비었음` : ''}`, empty.length ? 'is-alarm' : null) : null,
+            def.supply ? row('보급', cutNow(B.isPlayer) || cutNow(B.isEnemy) ? [cutNow(B.isEnemy) ? `${foeName()} ${cutNow(B.isEnemy)}부대 포위됨` : null, cutNow(B.isPlayer) ? `${U.playerUnits} ${cutNow(B.isPlayer)}개 포위됨` : null].filter(Boolean).join(' · ') : '끊긴 부대 없음 · 화살표가 보급 기지', cutNow(B.isPlayer) ? 'is-alarm' : null) : null,
+            dueText ? row('증원', dueText) : null,
             merits.length ? row('전공', meritList(merits)) : null,
             def.weather ? row('날씨', weatherText(b)) : null,
             def.windTurns ? row('여울', B.fordOpen(b) ? `${def.ford} 열림 · ${def.windTurns - b.turn + 1}턴 남음` : `${def.ford} 물에 잠김`) : null,
@@ -3013,13 +3064,13 @@
                     battleEnded ? battleClose(b) : el('div', { class: 'cw-battle-actions' },
                         battleTabs(),
                         unit || foe ? pickedStrip(b, unit || foe) : tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-act-unit cw-act-tile') : null,
-                        postOpen(b) ? el('p', { class: 'cw-post-alarm' }, `${josa(def.protect.name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 다음 턴에 들어오면 이 전투에서 진다.`) : null,
+                        postOpen(b) ? el('p', { class: 'cw-post-alarm' }, `${josa(postOpen(b).name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 다음 턴에 들어오면 이 전투에서 진다.`) : null,
                         G.canTakeBack(s) ? el('button', { type: 'button', 'data-key': 'undo', title: 'Esc · 우클릭', onclick: takeBackOrder }, '취소') : null,
                         unit && !unit.acted ? el('button', { type: 'button', 'data-key': 'wait', onclick: () => { if (act('b:wait', unit.id)) afterBattleAct(`${unit.name} 대기`); } }, el('span', { class: 'cw-wide-only' }, '이 부대 '), '대기') : null,
                         ready && !(unit && !unit.acted && ready === 1) ? el('button', { type: 'button', class: 'cw-wide-only', 'data-key': 'next-unit', title: 'N', onclick: nextUnit }, '다음 부대') : null,
                         el('button', { type: 'button', 'data-key': 'menace', class: 'cw-toggle cw-wide-only', 'aria-pressed': String(menaceAll), onclick: () => { menaceAll = !menaceAll; renderBattle(); } }, `${foeName()} 위협`),
                         el('button', { type: 'button', class: 'cw-primary' + (endArmed ? ' is-armed' : ''), 'data-key': 'end', title: 'E', onclick: endTurn },
-                            endArmed ? (postOpen(b) ? `${josa(def.protect.name, "을", "를")} 비운 채 턴 종료` : '한 번 더 누르면 턴 종료') : ready ? `턴 종료 (${ready}부대 남음)` : '턴 종료 →')),
+                            endArmed ? (postOpen(b) ? `${josa(postOpen(b).name, "을", "를")} 비운 채 턴 종료` : '한 번 더 누르면 턴 종료') : ready ? `턴 종료 (${ready}부대 남음)` : '턴 종료 →')),
                     b.events.length ? el('div', { class: 'cw-battle-events', 'data-pane': 'status' },
                         el('p', { class: 'games-kicker' }, whiteMoved ? `지난 ${foeName()}의 차례` : '방금 일어난 일'),
                         el('ol', { class: 'cw-battle-log' }, ...eventLines(b).map(t => el('li', {}, t)))) : null)));
@@ -3120,7 +3171,9 @@
         const marks = [];
         const goal = def.goals.find(g => g.at[0] === r && g.at[1] === c);
         if (goal) marks.push(`목표: ${josa(U.playerUnits, '이', '가')} 서면 승리`);
-        if (def.protect && def.protect.at[0] === r && def.protect.at[1] === c) marks.push(`지킬 곳: ${josa(foeName(), '이', '가')} 들어서면 패배`);
+        if (B.postsOf(def).some(x => x.at[0] === r && x.at[1] === c)) marks.push(`지킬 곳: ${josa(foeName(), '이', '가')} 들어서면 패배`);
+        if (def.supply) for (const [side, name] of [['player', U.player], ['enemy', foeName()]]) if ((def.supply[side] || []).some(x => x[0] === r && x[1] === c)) marks.push(`${name}의 보급 기지`);
+        if (t.supply) marks.push('보급이 건너는 길');
         for (const [id, l] of Object.entries(def.lines)) if (!b.turned[id] && B.behind(b, id, r, c)) marks.push(`우회 구역: 서면 ${l.name} 수비대의 뒤가 끊김`);
         return el('div', { class: cls },
             el('p', {}, el('span', { class: 'cw-terrain-key cw-swatch', 'aria-hidden': 'true' }, el('i', { class: 'k-' + (t.ford && !B.fordOpen(b) ? 'river' : t.cls) })),
@@ -3147,7 +3200,7 @@
     // A won battle's objective (or the post held) bursts in red and gold.
     function victoryBursts(b) {
         const g = svg('g', { class: 'cw-bursts', 'aria-hidden': 'true', style: `--since:${Math.round(performance.now() - verdictAt)}ms` });
-        const at = b.def.goals.length ? b.def.goals.map(x => x.at) : b.def.protect ? [b.def.protect.at] : [];
+        const at = b.def.goals.length ? b.def.goals.map(x => x.at) : B.postsOf(b.def).map(x => x.at);
         for (const [r, c] of at) {
             const [cx, cy] = center(r, c);
             const burst = svg('g', { class: 'cw-burst' });
@@ -3304,6 +3357,7 @@
             u.flank ? el('p', { class: 'cw-note' }, `측면 타격: 곁에 같은 편 부대가 없는 부대를 칠 때 피해 +${u.flank}.`) : null,
             armsNote(u),
             u.yielded ? el('p', { class: 'cw-note' }, `투항해 ${josa(U.player, '으로', '로')} 넘어온 부대다.`) : null,
+            B.cutOff(b, u) ? el('p', { class: 'cw-note cw-note-cut' }, `포위됨: 보급 기지로 가는 길이 끊겼다. 공격 절반, 방어 −1, 턴마다 병력 −2.${B.isEnemy(b, u) ? ' 한 턴을 넘기고 병력이 절반 아래로 꺾이면 항복한다.' : ''}`) : null,
             B.isPlayer(b, u) ? el('p', { class: 'cw-note cw-info-dup' }, u.acted ? (B.canMove(b, u) ? '쳤다. 아직 움직일 수 있다.' : '이번 턴의 행동을 마쳤다.') : u.moved ? '이동했다. 공격하거나 대기할 수 있다.' : '이동하거나 공격할 수 있다.') : null,
             B.isEnemy(b, u) && u.role ? el('p', { class: 'cw-note cw-info-dup' }, roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '')) : null);
     }
@@ -3338,7 +3392,7 @@
         if (!featLeft(b, u) || B.featBlock(b, u) || battleEnded) return null;
         const f = u.feat;
         const on = featArmed === u.id;
-        return f.kind === 'strike' || f.kind === 'assault' ? el('button', {
+        return B.featAimed(u) ? el('button', {
             type: 'button', class: 'cw-feat-pill' + (on ? ' is-on' : ''), 'data-key': key, 'aria-pressed': String(on),
             onclick: () => { featArmed = on ? null : u.id; renderBattle(); announce(on ? `${f.name} 끔` : `${f.name} 켬: 판에서 칠 적을 고른다`); },
         }, `★ ${f.name}`, el('small', { class: 'cw-feat-state' }, on ? '켜짐' : '꺼짐'))
@@ -3353,7 +3407,7 @@
         // The name is the button, inline; a strike names its targets after
         // the sentence, each a chip with the blow it would strike.
         const ready = !why && !battleEnded;
-        const aimed = f.kind === 'strike' || f.kind === 'assault';
+        const aimed = B.featAimed(u);
         // An aimed feat (a blow) is switched on and off; while on, its
         // targets are picked on the board. Any other is used at a press.
         const on = featArmed === u.id;
@@ -3383,7 +3437,12 @@
             if (e.type === 'reserve') return `${b.def.reserveName}이 ${b.def.sectors[e.sector].name} 쪽으로 향한다.`;
             if (e.type === 'tide') return `바람이 바뀌었다. ${b.def.ford}에 물이 다시 차오른다.`;
             if (e.type === 'feat') return `결정적 한 수: ${name(e.id)}의 「${b.units.find(u => u.id === e.id).feat.name}」.`;
-            if (e.type === 'surrender') return `${josa(name(e.id), '이', '가')} 총을 내려놓고 ${josa(U.player, '으로', '로')} 넘어왔다.`;
+            if (e.type === 'surrender') return e.gone ? `${josa(name(e.id), '이', '가')} 총을 내려놓았다. 포로가 뒤로 간다.` : `${josa(name(e.id), '이', '가')} 총을 내려놓고 ${josa(U.player, '으로', '로')} 넘어왔다.`;
+            if (e.type === 'cut') return `${josa(name(e.id), '이', '가')} 포위되었다. 보급이 끊겼다.`;
+            if (e.type === 'relieved') return `${name(e.id)}의 보급선이 다시 이어졌다.`;
+            if (e.type === 'starve') return `${name(e.id)}: 포위 속에서 병력 ${e.dmg}을 잃었다.`;
+            if (e.type === 'splash') return `${name(e.to)}: 곁에 떨어진 포탄에 피해 ${e.dmg}`;
+            if (e.type === 'arrive') return `${josa(name(e.id), '이', '가')} 전장에 도착했다.`;
             if (e.type === 'air') return `${josa(e.by || (e.mine ? `${U.player} 비행기` : `${foeName()} 비행기`), '이', '가')} ${josa(name(e.id), '을', '를')} 덮쳤다: 피해 ${e.dmg}`;
             if (e.type === 'weather') return e.name ? `날씨가 바뀌었다: ${e.name}.` : `${josa(e.was, '이', '가')} 끝났다.`;
             if (e.type === 'raised') return `${josa(name(e.id), '이', '가')} 열차에서 내려 총을 들었다.`;
@@ -3466,10 +3525,11 @@
     // Why a battle was lost: its post taken, its units gone, or its time run out.
     function lostWhy(b) {
         const def = b.def;
-        const post = def.protect && B.unitAt(b, ...def.protect.at);
-        if (post && B.isEnemy(b, post)) return `${josa(foeName(), '이', '가')} ${def.protect.name}에 들어섰다`;
+        const taken = B.postsOf(def).filter(x => { const u = B.unitAt(b, ...x.at); return u && B.isEnemy(b, u); });
+        if (taken.length >= (def.breach || 1)) return `${josa(foeName(), '이', '가')} ${taken.map(x => x.name).join('·')}에 들어섰다`;
         if (!b.units.some(u => u.hp > 0 && B.isPlayer(b, u))) return `${josa(U.playerUnits, '이', '가')} 모두 무너졌다`;
         const names = def.goals.map(g => g.name);
+        if (def.goalsAll) return `${def.turnLimit}턴 안에 ${names.slice(0, -1).map(n => josa(n, '과', '와') + ' ').join('')}${names[names.length - 1]}에 함께 서지 못했다`;
         return `${def.turnLimit}턴 안에 ${names.slice(0, -1).map(n => josa(n, '이나', '나') + ' ').join('')}${names[names.length - 1]}에 서지 못했다`;
     }
 
@@ -3533,7 +3593,7 @@
         if ((ready || open) && !endArmed) {
             endArmed = true;
             renderBattle();
-            announce(open ? `${josa(s.battle.def.protect.name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 들어오면 진다. 한 번 더 누르면 턴을 끝낸다.` : '행동하지 않은 부대가 남았다. 한 번 더 누르면 턴을 끝낸다.');
+            announce(open ? `${josa(open.name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 들어오면 진다. 한 번 더 누르면 턴을 끝낸다.` : '행동하지 않은 부대가 남았다. 한 번 더 누르면 턴을 끝낸다.');
             return;
         }
         endArmed = false;

@@ -46,6 +46,19 @@
    anti-tank gun against armour, the rifle against it. A kind that breaks
    (armour) is not halted by the enemy beside it as it moves.
 
+   A board may give the armies their supply (supply: each side's source
+   tiles): a unit that cannot trace open ground back to one of its side's
+   sources — ground no enemy stands on, nor beside unless a friend
+   stands on it or beside it too — is cut off: it strikes at a share of its power, defends worse,
+   wastes away each turn, and an enemy unit cut off since before the turn
+   and broken below half lays down its arms with no ring about it. A board that takes prisoners
+   (prisoners) sends those who surrender off the board instead of over to
+   the player. Units may come late (arrive: the turn they enter on), a
+   garrison may sally (role guard: it strikes what comes within reach of
+   its post and goes back), a board may have several posts to hold
+   (protect as a list, lost when breach of them are entered) and may ask
+   for all its goals at once (goalsAll).
+
    Under rules 3 (heroics) a battle has its decisive moments: a player unit
    may carry a feat, used once a battle (FEATS: strike, assault, muster,
    ride, ferry, order, brace); a skirmisher may still move after it strikes; and an enemy
@@ -57,6 +70,9 @@
     const SURROUND_CAP = 2;
     const YIELD_RING = 3;           // player units beside a broken enemy unit that make it surrender
     const WATER_DAMAGE = 3;
+    // A unit cut off from supply: its attack's share, the defence it loses,
+    // the men it loses each turn (a board's supply may say otherwise).
+    const CUT = { weak: 0.5, bare: 1, hurt: 2 };
     const TURNED_BONUS = 1;
     const DIRS = [[-1, 0], [1, 0], [0, -1], [0, 1]];
     // What a unit kind does beyond its numbers: counter, whether it strikes
@@ -104,7 +120,7 @@
         const heroics = !(opts && opts.rules < 3);
         const express = !(opts && opts.rules < 5);
         const sides = sidesOf(def);
-        const units = def.units
+        const all = def.units
             .filter(u => joins(u, flags, muster, def))
             .map(u => {
                 const own = u.side === sides.player && muster;
@@ -120,12 +136,18 @@
                     vs: Object.assign({}, kind.vs, u.vs), breaks: u.breaks === undefined ? kind.breaks : u.breaks,
                     feat: heroics && u.feat ? u.feat : null, skirmish: heroics && Boolean(u.skirmish),
                     moved: false, acted: false, prev: null,
+                    // Where a garrison belongs (role guard) and how far it sallies;
+                    // the tile a marching unit makes for instead of the post (aim).
+                    post: [u.at[0], u.at[1]], reach: u.reach || 0, aim: u.aim || null, arrive: u.arrive || 0,
                 };
             });
+        // Units that come late wait off the board (pending) for their turn.
+        const units = all.filter(u => !(u.arrive > 1));
+        const pending = all.filter(u => u.arrive > 1);
         const turned = {};
         for (const id of Object.keys(def.lines || {})) turned[id] = false;
         return {
-            def, sides, turn: 1, units, result: null, turned, wear: {}, reserve: null,
+            def, sides, turn: 1, units, pending, result: null, turned, wear: {}, reserve: null,
             heroics, feats: {}, fortBlows: 0, captured: 0, order: null,
             events: [], report: [],
         };
@@ -155,6 +177,82 @@
     const isEnemy = (b, u) => u.side === b.sides.enemy;
 
     const onRail = (b, r, c) => (b.def.rails || []).some(([rr, cc]) => rr === r && cc === c);
+
+    // The posts a board asks the player to hold: one or a list.
+    const postsOf = def => [].concat(def.protect || []);
+
+    // ── Supply ──
+
+    // The tiles each side can trace supply to: a flood from its sources
+    // over open ground. Ground is open to a side where no enemy unit
+    // stands, and, to pass on through it, where no enemy unit stands
+    // beside it unless a friend holds it or stands beside it as well. A river is closed unless bridged
+    // (span) or a crossing (terrain supply: true, a ferry). Kept until
+    // the board changes.
+    function supplyMap(b) {
+        const sup = b.def.supply;
+        if (!sup) return null;
+        const live = alive(b);
+        const stamp = b.turn + ':' + live.map(u => `${u.side}${u.r},${u.c}`).join('|');
+        if (b.supplyCache && b.supplyCache.stamp === stamp) return b.supplyCache.map;
+        const at = new Map(live.map(u => [key(u.r, u.c), u]));
+        const map = {};
+        for (const side of [b.sides.player, b.sides.enemy]) {
+            const sources = sup[side === b.sides.player ? 'player' : 'enemy'];
+            if (!sources) { map[side] = null; continue; }
+            const beside = (r, c, mine) => DIRS.some(([dr, dc]) => { const o = at.get(key(r + dr, c + dc)); return o && (o.side === side) === mine; });
+            const seen = new Set();
+            const queue = [];
+            const base = new Set();
+            for (const [r, c] of sources) {
+                const o = at.get(key(r, c));
+                if (o && o.side !== side) continue;
+                seen.add(key(r, c)); base.add(key(r, c)); queue.push([r, c]);
+            }
+            while (queue.length) {
+                const [r, c] = queue.shift();
+                const here = at.get(key(r, c));
+                // Supply does not pass on through ground the enemy stands
+                // beside unless a friend stands on it or beside it too; a
+                // source itself gives out until the enemy stands on it.
+                if (!(here && here.side === side) && !base.has(key(r, c)) && beside(r, c, false) && !beside(r, c, true)) continue;
+                for (const [dr, dc] of DIRS) {
+                    const rr = r + dr, cc = c + dc, k = key(rr, cc);
+                    if (!inside(b, rr, cc) || seen.has(k)) continue;
+                    const t = terrain(b, rr, cc);
+                    if (t.cost >= 99 && !t.span && !t.supply) continue;
+                    const o = at.get(k);
+                    if (o && o.side !== side) continue;
+                    seen.add(k); queue.push([rr, cc]);
+                }
+            }
+            map[side] = seen;
+        }
+        b.supplyCache = { stamp, map };
+        return map;
+    }
+
+    // Whether a unit is cut off from its side's supply.
+    function cutOff(b, u) {
+        const map = supplyMap(b);
+        const mine = map && map[u.side];
+        return Boolean(mine) && !mine.has(key(u.r, u.c));
+    }
+    const cutRule = b => Object.assign({}, CUT, b.def.supply);
+
+    // Tells the units newly cut off and those relieved since last asked.
+    function tellSupply(b) {
+        if (!b.def.supply) return;
+        for (const u of alive(b)) {
+            const cut = cutOff(b, u);
+            if (cut === Boolean(u.cut)) continue;
+            u.cut = cut;
+            u.cutSince = cut ? b.turn : null;
+            // A pocket made once is told of (the voices' moment 'cut').
+            if (cut && isEnemy(b, u)) b.pocketed = true;
+            b.events.push({ type: cut ? 'cut' : 'relieved', id: u.id });
+        }
+    }
 
     function terrain(b, r, c) {
         return b.def.terrain[tileAt(b, r, c)] || b.def.terrain['.'];
@@ -192,7 +290,7 @@
     }
 
     function defenseOf(b, u) {
-        return u.def + groundOf(b, u.r, u.c);
+        return u.def + groundOf(b, u.r, u.c) - (cutOff(b, u) ? cutRule(b).bare : 0);
     }
 
     function enemiesAdjacent(b, u, r, c) {
@@ -256,8 +354,8 @@
     // the order of the day (b.order, a feat) makes the blows of its side
     // this turn harder where another of its units is beside the target.
     function hit(b, a, d, mod) {
-        const power = a.atk * (0.6 + 0.4 * a.hp / a.maxHp);
-        const guard = mod && mod.noGround ? d.def : defenseOf(b, d);
+        const power = a.atk * (0.6 + 0.4 * a.hp / a.maxHp) * (cutOff(b, a) ? cutRule(b).weak : 1);
+        const guard = mod && mod.noGround ? d.def - (cutOff(b, d) ? cutRule(b).bare : 0) : defenseOf(b, d);
         const ring = surround(b, a, d);
         const flank = a.flank && alone(b, d) ? a.flank : 0;
         const order = b.order && b.order.turn === b.turn && b.order.side === a.side && ring > 0 ? b.order.plus : 0;
@@ -269,6 +367,9 @@
     // half its strength with YIELD_RING player units beside it.
     function yields(b, d, hp) {
         if (!b.heroics || !isEnemy(b, d) || hp <= 0 || hp * 2 >= d.maxHp) return false;
+        // Cut off since before this turn (the pocket has held through a
+        // turn of the enemy's) and broken, a unit gives up with no ring about it.
+        if (cutOff(b, d) && d.cutSince !== null && d.cutSince !== undefined && d.cutSince < b.turn) return true;
         return alive(b).filter(o => isPlayer(b, o) && dist(o, d) === 1).length >= YIELD_RING;
     }
 
@@ -300,13 +401,32 @@
         }
         if (d.hp <= 0) b.events.push({ type: 'fall', id: d.id });
         if (a.hp <= 0) b.events.push({ type: 'fall', id: a.id });
-        if (surrender) {
-            // The broken unit comes over, done for this turn.
-            d.side = b.sides.player; d.role = null; d.line = null; d.yielded = true;
-            d.moved = true; d.acted = true; d.prev = null;
-            b.captured += 1;
-            b.events.push({ type: 'surrender', id: d.id });
+        if (surrender) giveUp(b, d);
+        // A barrage falls on the target's neighbours too, at half weight.
+        if (mod && mod.splash) {
+            for (const o of alive(b).filter(o => o.side === d.side && o !== d && dist(o, d) === 1)) {
+                const part = Math.min(o.hp, Math.max(1, Math.floor(dmg / 2)));
+                o.hp -= part;
+                b.events.push({ type: 'splash', from: a.id, to: o.id, dmg: part });
+                if (o.hp <= 0) b.events.push({ type: 'fall', id: o.id });
+                else if (isPlayer(b, a) && yields(b, o, o.hp)) giveUp(b, o);
+            }
         }
+    }
+
+    // The broken unit lays down its arms: it comes over to the player, done
+    // for this turn, or on a board that takes prisoners leaves the field.
+    function giveUp(b, d) {
+        d.yielded = true;
+        b.captured += 1;
+        if (b.def.prisoners) {
+            d.gone = d.hp; d.hp = 0;
+            b.events.push({ type: 'surrender', id: d.id, gone: true });
+            return;
+        }
+        d.side = b.sides.player; d.role = null; d.line = null;
+        d.moved = true; d.acted = true; d.prev = null;
+        b.events.push({ type: 'surrender', id: d.id });
     }
 
     function updateTurned(b) {
@@ -321,9 +441,10 @@
 
     function checkResult(b) {
         if (b.result) return;
-        const post = b.def.protect && unitAt(b, b.def.protect.at[0], b.def.protect.at[1]);
-        if (post && isEnemy(b, post)) b.result = 'lost';
-        else if (b.def.goals.some(g => { const u = unitAt(b, g.at[0], g.at[1]); return u && isPlayer(b, u); })) b.result = 'won';
+        const entered = postsOf(b.def).filter(p => { const u = unitAt(b, p.at[0], p.at[1]); return u && isEnemy(b, u); }).length;
+        const held = g => { const u = unitAt(b, g.at[0], g.at[1]); return u && isPlayer(b, u); };
+        if (entered >= (b.def.breach || 1)) b.result = 'lost';
+        else if (b.def.goals.length && (b.def.goalsAll ? b.def.goals.every(held) : b.def.goals.some(held))) b.result = 'won';
         else if (!alive(b).some(u => isPlayer(b, u))) b.result = 'lost';
         else if (!alive(b).some(u => isEnemy(b, u))) b.result = 'won';
     }
@@ -342,6 +463,7 @@
         u.prev = { r: u.r, c: u.c, turned: Object.assign({}, b.turned) };
         u.r = r; u.c = c; u.moved = true;
         updateTurned(b);
+        tellSupply(b);
         checkResult(b);
         return true;
     }
@@ -356,6 +478,7 @@
         u.r = u.prev.r; u.c = u.prev.c; u.moved = false;
         for (const line of Object.keys(b.turned)) if (!u.prev.turned[line]) b.turned[line] = false;
         updateTurned(b);
+        tellSupply(b);
         u.prev = null;
         return true;
     }
@@ -368,6 +491,7 @@
         b.events = [];
         strike(b, u, t);
         settleBlow(u);
+        tellSupply(b);
         checkResult(b);
         return true;
     }
@@ -405,6 +529,21 @@
     // reason it cannot be used now. use: what it does (non-blows).
     const FEATS = {
         strike: { blow: { noCounter: true }, targets: (b, u) => targets(b, u) },
+        // A barrage (the rocket launchers): the blow draws no counter and
+        // falls at half weight on the target's neighbours as well.
+        barrage: { blow: { noCounter: true, splash: true }, targets: (b, u) => targets(b, u) },
+        // A sortie: the unit calls the planes down on any enemy unit on the
+        // board for feat.dmg (planes wound, never finish), and does nothing
+        // else this turn.
+        sortie: {
+            targets: b => alive(b).filter(o => isEnemy(b, o) && o.hp > 1),
+            use(b, u, f, t) {
+                const dmg = Math.min(t.hp - 1, f.dmg || 0);
+                t.hp -= dmg;
+                b.events.push(Object.assign({ type: 'air', id: t.id, dmg, mine: true }, f.by ? { by: f.by } : {}));
+                u.acted = true; u.moved = true; u.prev = null;
+            },
+        },
         assault: {
             blow: { noGround: true },
             targets: (b, u) => targets(b, u).filter(t => terrain(b, t.r, t.c).fort),
@@ -456,7 +595,16 @@
         const f = u.feat;
         const kind = f && FEATS[f.kind];
         if (!kind || !kind.blow) return null;
-        return { id: f.id, plus: f.plus || 0, noCounter: Boolean(kind.blow.noCounter), noGround: Boolean(kind.blow.noGround) };
+        return { id: f.id, plus: f.plus || 0, noCounter: Boolean(kind.blow.noCounter), noGround: Boolean(kind.blow.noGround), splash: Boolean(kind.blow.splash) };
+    }
+
+    // Whether a feat is aimed at a target, and what it would do to one: a
+    // blow's preview, or a sortie's fixed hurt.
+    const featAimed = u => Boolean(u.feat && FEATS[u.feat.kind] && FEATS[u.feat.kind].targets);
+    function featPreview(b, u, t) {
+        const kind = FEATS[u.feat.kind];
+        if (kind.blow) return preview(b, u, t, featMod(u));
+        return { dmg: Math.min(t.hp - 1, u.feat.dmg || 0), counter: 0, wears: false, surrender: false };
     }
 
     // Why a unit's feat cannot be used now, or null when it can.
@@ -469,7 +617,7 @@
         if (kind.beforeMove && u.moved) return 'moved';
         const more = kind.block && kind.block(b, u, f);
         if (more) return more;
-        if (kind.blow && !featTargets(b, u).length) return 'no-target';
+        if (kind.targets && !featTargets(b, u).length) return 'no-target';
         return null;
     }
 
@@ -493,12 +641,16 @@
             strike(b, u, t, featMod(u));
             settleBlow(u);
         } else {
+            // A feat with targets that is no blow (a sortie) names one too.
+            const t = kind.targets ? byId(b, targetId) : null;
+            if (kind.targets && (!t || !featTargets(b, u).includes(t))) return false;
             b.events = [];
             b.feats[f.id] = true;
             b.events.push({ type: 'feat', id: u.id, feat: f.id });
-            kind.use(b, u, f);
+            kind.use(b, u, f, t);
         }
         updateTurned(b);
+        tellSupply(b);
         checkResult(b);
         return true;
     }
@@ -562,8 +714,9 @@
         raid: {
             marches: () => true,
             act(b, u) {
-                if (!b.def.protect) return;
-                const [r, c] = b.def.protect.at;
+                const to = aimOf(b, u);
+                if (!to) return;
+                const [r, c] = to;
                 stepToward(b, u, { r, c });
                 checkResult(b);
                 if (b.result) return 'end';
@@ -575,8 +728,9 @@
         push: {
             marches: () => true,
             act(b, u) {
-                if (!b.def.protect) return;
-                const [r, c] = b.def.protect.at;
+                const to = aimOf(b, u);
+                if (!to) return;
+                const [r, c] = to;
                 stepToward(b, u, { r, c });
                 checkResult(b);
                 if (b.result) return 'end';
@@ -591,6 +745,23 @@
                 const prey = preyOf(b, u);
                 u.prey = prey ? prey.id : null;
                 if (prey && !targets(b, u).includes(prey)) stepToward(b, u, prey);
+            },
+        },
+        // A garrison that sallies: it goes for the player's unit come within
+        // reach of its post (the weakest, then the nearest), never further
+        // than reach from the post, and walks back when none is left.
+        guard: {
+            marches: (b, u) => Boolean(sallyPrey(b, u)) || u.r !== u.post[0] || u.c !== u.post[1],
+            act(b, u) {
+                const post = { r: u.post[0], c: u.post[1] };
+                const prey = sallyPrey(b, u);
+                u.prey = prey ? prey.id : null;
+                if (!prey) { stepToward(b, u, post); return; }
+                if (targets(b, u).includes(prey)) return;
+                const spots = dryReach(b, u)
+                    .filter(t => dist(t, post) <= (u.reach || 2) && dist(t, prey) <= u.range)
+                    .sort((a, z) => groundOf(b, z.r, z.c) - groundOf(b, a.r, a.c) || dist(a, post) - dist(z, post) || a.cost - z.cost);
+                if (spots.length) march(b, u, spots[0]);
             },
         },
         // The reserve rides at the weakest player unit pressing its sector.
@@ -609,6 +780,25 @@
             },
         },
     };
+
+    // Where a marching unit makes for: its own aim, else the nearest post
+    // the enemy has not yet entered.
+    function aimOf(b, u) {
+        if (u.aim) return u.aim;
+        // A unit that has entered a post holds it.
+        const mine = postsOf(b.def).find(p => p.at[0] === u.r && p.at[1] === u.c);
+        if (mine) return mine.at;
+        const open = postsOf(b.def).filter(p => { const o = unitAt(b, p.at[0], p.at[1]); return !(o && isEnemy(b, o)); })
+            .sort((a, z) => (Math.abs(a.at[0] - u.r) + Math.abs(a.at[1] - u.c)) - (Math.abs(z.at[0] - u.r) + Math.abs(z.at[1] - u.c)));
+        return open.length ? open[0].at : null;
+    }
+
+    // The player's unit a garrison sallies at: within reach of its post.
+    function sallyPrey(b, u) {
+        const post = { r: u.post[0], c: u.post[1] };
+        return alive(b).filter(o => isPlayer(b, o) && dist(o, post) <= (u.reach || 2) + u.range - 1)
+            .sort((a, z) => a.hp - z.hp || dist(a, post) - dist(z, post) || (a.id < z.id ? -1 : 1))[0] || null;
+    }
 
     // The player's unit a hunter goes for: the fewest friends beside it,
     // then the nearest, then the weakest.
@@ -725,6 +915,7 @@
         if (b.result) return false;
         b.events = [];
         enemyTurn(b);
+        if (!b.result) starve(b);
         checkResult(b);
         if (b.result) return true;
         // A board to be held (outlast): the post kept through the last turn wins.
@@ -733,6 +924,7 @@
         if (b.def.windTurns && b.turn === b.def.windTurns + 1) b.events.push({ type: 'tide' });
         turnWeather(b);
         if (b.turn > b.def.turnLimit) { b.result = 'lost'; return true; }
+        arrivals(b);
         for (const u of b.units) {
             u.moved = false; u.acted = false; u.prev = null; u.struck = false;
             // A ride lasts the turn it was made; a unit stood to, through
@@ -741,6 +933,56 @@
             if (u.braced) { u.def -= u.braced.def; u.counter = u.braced.counter; u.braced = null; }
         }
         return true;
+    }
+
+    // The turn's end for the units cut off: each loses men (never its
+    // last on the player's side: a pocket holds out), and an enemy unit
+    // so worn below half gives up.
+    function starve(b) {
+        if (!b.def.supply) return;
+        tellSupply(b);
+        const hurt = cutRule(b).hurt;
+        for (const u of alive(b)) {
+            if (!cutOff(b, u)) continue;
+            const dmg = Math.min(isPlayer(b, u) ? u.hp - 1 : u.hp, hurt);
+            if (dmg <= 0) continue;
+            u.hp -= dmg;
+            b.events.push({ type: 'starve', id: u.id, dmg });
+            if (u.hp <= 0) b.events.push({ type: 'fall', id: u.id });
+            else if (yields(b, u, u.hp)) giveUp(b, u);
+        }
+    }
+
+    // The units whose turn has come enter the board: at their tile, or the
+    // nearest free one they can stand on.
+    function arrivals(b) {
+        const due = b.pending.filter(u => u.arrive <= b.turn);
+        if (!due.length) return;
+        b.pending = b.pending.filter(u => u.arrive > b.turn);
+        for (const u of due) {
+            const spot = freeNear(b, u);
+            if (!spot) { u.arrive = b.turn + 1; b.pending.push(u); continue; }
+            u.r = spot.r; u.c = spot.c; u.post = [spot.r, spot.c];
+            b.units.push(u);
+            if (isPlayer(b, u)) b.arrived = true;
+            b.events.push({ type: 'arrive', id: u.id });
+        }
+        tellSupply(b);
+    }
+
+    function freeNear(b, u) {
+        const seen = new Set([key(u.r, u.c)]);
+        const queue = [{ r: u.r, c: u.c }];
+        while (queue.length) {
+            const cur = queue.shift();
+            if (enterCost(b, u, cur.r, cur.c) < Infinity && !unitAt(b, cur.r, cur.c)) return cur;
+            for (const [dr, dc] of DIRS) {
+                const r = cur.r + dr, c = cur.c + dc;
+                if (!inside(b, r, c) || seen.has(key(r, c))) continue;
+                seen.add(key(r, c)); queue.push({ r, c });
+            }
+        }
+        return null;
     }
 
     // A new turn's weather: the change told, and whoever stands where they
@@ -772,9 +1014,9 @@
     }
 
     const api = {
-        start, joins, act, reachable, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
+        start, joins, act, reachable, cutOff, supplyMap, postsOf, aimOf, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, weatherOf, raidsOf, raidTurns, kindOf, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
-        canMove, featBlock, featTargets, featMod, yields, lost, YIELD_RING, FEATS, ROLES, KINDS,
+        canMove, featBlock, featTargets, featMod, featAimed, featPreview, yields, lost, YIELD_RING, FEATS, ROLES, KINDS,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;
     else root.WarBattle = api;

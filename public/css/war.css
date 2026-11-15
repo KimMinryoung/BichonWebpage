@@ -622,7 +622,16 @@
 /* The post to hold (civil-war.js postMark): a dashed frame, solid blue when an enemy can march in. */
 .cw-post { pointer-events: none; }
 .cw-post-frame { fill: none; stroke: var(--text-primary); stroke-width: 2.5; stroke-dasharray: 6 3; }
-.cw-post.is-open .cw-post-frame { stroke: var(--cw-foe-accent); stroke-width: 3.5; stroke-dasharray: none; }
+.cw-post .is-open .cw-post-frame { stroke: var(--cw-foe-accent); stroke-width: 3.5; stroke-dasharray: none; }
+/* Supply (battle.js): a side's sources as arrowheads on the board's edge; a unit cut off wears a band across its foot. */
+.cw-supply { pointer-events: none; }
+.cw-supply-mark { stroke: var(--text-primary); stroke-width: 1.2; stroke-linejoin: round; }
+.cw-supply-mark.is-red { fill: var(--cw-red, #a21e2a); }
+.cw-supply-mark.is-white { fill: var(--cw-foe-accent); }
+.cw-cut-band { fill: var(--text-primary); stroke: none; }
+.cw-cut-text { font-size: 8.5px; font-weight: 800; fill: var(--bg-surface); letter-spacing: .08em; }
+.cw-unit.is-cut > rect:first-of-type { stroke-dasharray: 4 3; }
+.cw-note-cut { font-weight: 700; }
 .cw-post-name { font-size: 9px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
 .cw-terrain-key .k-post { border: 2px dashed var(--text-primary); }
 .cw-post-alarm { flex-basis: 100%; margin: 0; padding: 6px 10px; border: 2px solid var(--cw-foe-accent); background: color-mix(in srgb, var(--cw-foe-accent) 22%, var(--bg-surface)); font-weight: 800; font-size: .88rem; }
@@ -1674,6 +1683,8 @@
    decisions come one at a time, each way's gains and costs as chips. */
 .cw-scene { display: grid; gap: 16px; margin-bottom: 18px; }
 .cw-scene-pictures { display: grid; gap: 12px; align-items: start; min-width: 0; }
+.cw-scene.is-bare { display: block; }
+.cw-scene.is-bare > .cw-scene-pictures { display: none; }
 .cw-scene-pictures.has-poster { grid-template-columns: minmax(0, 1fr) minmax(120px, 30%); }
 .cw-figure { margin: 0; min-width: 0; border: var(--cw-rule-w) solid var(--text-primary); background: #14110d; }
 .cw-figure img { display: block; margin: 0 auto; width: auto; height: auto; max-width: 100%; max-height: 62vh; }

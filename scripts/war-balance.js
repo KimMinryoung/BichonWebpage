@@ -42,6 +42,18 @@ const opt = (name, fallback) => {
 };
 const scenarioId = opt('scenario', 'civil-war');
 const D = require(path.join(__dirname, '..', 'public', 'js', 'war', 'scenarios', `${scenarioId}.js`));
+// --tune='{"<battle>|*":{"hp":1.3,"atk":1,"def":0}}': a what-if on the enemy's
+// units (men scaled, attack and defence added) before measuring; the data
+// file is not changed.
+const TUNE = JSON.parse(opt('tune', '{}'));
+for (const [id, def] of Object.entries(D.battles)) {
+    const t = TUNE[id] || TUNE['*'];
+    if (!t) continue;
+    for (const u of def.units) {
+        if (u.side !== def.sides.enemy) continue;
+        u.hp = Math.round(u.hp * (t.hp || 1)); u.atk += t.atk || 0; u.def += t.def || 0;
+    }
+}
 const G = Engine.create(D);
 const MARGINS = opt('margins', '').split(',').filter(Boolean).map(Number);
 const JOBS = Number(opt('jobs', Math.max(1, os.cpus().length - 1)));
@@ -66,6 +78,8 @@ function clone(b) {
         orders: b.orders ? b.orders.slice() : [],
         units: b.units.map(u => Object.assign({}, u, { prev: u.prev && Object.assign({}, u.prev, { turned: Object.assign({}, u.prev.turned) }) })),
         turned: Object.assign({}, b.turned), wear: Object.assign({}, b.wear), feats: Object.assign({}, b.feats),
+        // Units still to come (battle.js arrive), and no supply map kept over from the original.
+        pending: (b.pending || []).map(u => Object.assign({}, u)), supplyCache: null,
         events: [], report: [],
     });
 }
@@ -124,10 +138,12 @@ function score(b) {
     if (goals.length && !def.outlast) {
         // The nearest two units' roads, in turns, and a little of everyone
         // else's, so no unit idles; a goal held by an enemy counts as further.
-        const roads = own.map(u => {
-            const d = costTo(b, u, goals)[u.r][u.c];
-            return d === Infinity ? 99 : d / Math.max(1, u.mv);
-        }).sort((x, y) => x - y);
+        const road = (u, to) => { const d = costTo(b, u, to)[u.r][u.c]; return d === Infinity ? 99 : d / Math.max(1, u.mv); };
+        // A board that asks for all its goals at once (goalsAll): each
+        // goal's nearest unit, the furthest goal first in the clock.
+        const roads = def.goalsAll
+            ? goals.map(g => Math.min(99, ...own.map(u => road(u, [g])))).sort((x, y) => y - x)
+            : own.map(u => road(u, goals)).sort((x, y) => x - y);
         s -= 60 * (roads[0] ?? 99) + 25 * (roads[1] ?? 99) + 6 * roads.slice(2).reduce((a, r) => a + Math.min(r, 20), 0);
         // The clock: a road longer than the turns left is a battle lost, and
         // the goal's holder matters more the fewer turns remain.
@@ -143,11 +159,13 @@ function score(b) {
     s += 30 * b.units.filter(u => u.hp <= 0 && !B.isPlayer(b, u)).length;
     s += 40 * Object.values(b.turned).filter(Boolean).length;
     s += 20 * b.captured;
-    if (def.protect) {
+    // Supply (battle.js): a pocket made is worth having, one's own unit cut off is not.
+    if (def.supply) s += 25 * them.filter(u => B.cutOff(b, u)).length - 30 * own.filter(u => B.cutOff(b, u)).length;
+    for (const post of B.postsOf(def)) {
         // The post: held is good; an enemy that can march into it next turn
         // (the engine's own reach, waking included) is a battle lost unless
         // a unit stands there, and one that can strike that unit wears it.
-        const [pr, pc] = def.protect.at;
+        const [pr, pc] = post.at;
         const there = B.unitAt(b, pr, pc);
         const held = there && B.isPlayer(b, there);
         if (held) s += 30;
@@ -175,7 +193,7 @@ function options(b, u, wide) {
         for (const t of B.targets(bb, v)) { const x = clone(bb); if (play(x, 'attack', id, t.id)) { out.push(x); any = true; } }
         if (!B.featBlock(bb, v)) {
             const kind = B.FEATS[v.feat.kind];
-            if (kind.blow) for (const t of B.featTargets(bb, v)) { const x = clone(bb); if (play(x, 'feat', id, t.id)) { out.push(x); any = true; } }
+            if (kind.targets) for (const t of B.featTargets(bb, v)) { const x = clone(bb); if (play(x, 'feat', id, t.id)) { out.push(x); any = true; } }
             else if (!kind.beforeMove) { const x = clone(bb); if (play(x, 'feat', id)) { out.push(x); any = true; } }
         }
         const x = clone(bb); play(x, 'wait', id); out.push(x);
@@ -278,7 +296,7 @@ function historyOf(id) {
     if (!s) return null;
     const def = D.battles[id];
     const flags = {};
-    for (const u of def.units) if (u.flag && s.battle.units.some(x => x.id === u.id)) flags[u.flag] = true;
+    for (const u of def.units) if (u.flag && s.battle.units.concat(s.battle.pending || []).some(x => x.id === u.id)) flags[u.flag] = true;
     const m = G.musterOf(s);
     return { flags, margin: m ? Math.round(m.muster.margin * 10) / 10 : null };
 }
