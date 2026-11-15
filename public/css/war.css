@@ -771,6 +771,11 @@
 .cw-terrain-key .k-danger { background: color-mix(in srgb, var(--cw-foe-accent) 35%, transparent); border-color: var(--cw-foe-accent); }
 .cw-hit:focus-visible { outline: none; stroke: var(--text-primary); stroke-width: 3; }
 .cw-unit { cursor: pointer; }
+/* A unit of the player's that can still be ordered stands raised off the board (the cue on a phone) and lifts under the pointer; one that is done lies flat. */
+.cw-grid:not(.is-over) .cw-unit.is-red:not(.is-done):not(.is-lunging):not(.is-cheering) { filter: drop-shadow(2px 3px 0 rgba(0, 0, 0, .45)); transition: transform .08s, filter .08s; }
+.cw-grid:not(.is-over) .cw-unit.is-red:not(.is-done):not(.is-lunging):not(.is-cheering):hover { transform: translate(-1px, -3px); filter: drop-shadow(3px 6px 0 rgba(0, 0, 0, .45)) brightness(1.12); }
+.cw-grid:not(.is-over) .cw-unit.is-red:not(.is-done):not(.is-lunging):not(.is-cheering):active { transform: translate(1px, 1px); filter: drop-shadow(1px 1px 0 rgba(0, 0, 0, .45)); }
+@media (prefers-reduced-motion: reduce) { .cw-grid .cw-unit.is-red { transition: none; } }
 .cw-unit > rect:first-child { stroke-width: 1.5; }
 .cw-unit.is-red > rect:first-child { fill: var(--cw-red); stroke: #4a0b12; }
 .cw-unit.is-white > rect:first-child { fill: var(--cw-foe-paper); stroke: var(--cw-foe-accent); }
@@ -1584,6 +1589,11 @@
 .cw-pocket-hint { margin: 0; flex-basis: 100%; font-size: .84rem; font-weight: 700; color: var(--cw-red); }
 .cw-battle-more { margin-top: 4px; font-size: .85rem; color: var(--text-secondary); }
 .cw-battle-more summary { cursor: pointer; }
+/* The roster's units that can still be ordered: raised buttons that lift under the pointer. */
+.games-shell .cw-roster-unit:not(.is-done) { border: 2px solid var(--cw-red); font-weight: 700; box-shadow: 2px 2px 0 var(--text-primary); margin-bottom: 2px; cursor: pointer; transition: transform .08s, box-shadow .08s; }
+.games-shell .cw-roster-unit:not(.is-done):hover { transform: translate(-1px, -2px); box-shadow: 3px 4px 0 var(--text-primary); background: color-mix(in srgb, var(--cw-red) 14%, var(--bg-surface)); }
+.games-shell .cw-roster-unit:not(.is-done):active { transform: translate(1px, 1px); box-shadow: 1px 1px 0 var(--text-primary); }
+@media (prefers-reduced-motion: reduce) { .games-shell .cw-roster-unit { transition: none; } }
 .games-shell .cw-roster-unit.is-done { border-style: dashed; color: var(--text-secondary); }
 .games-shell .cw-roster-unit[aria-pressed="true"] { border-color: var(--cw-red); background: color-mix(in srgb, var(--cw-red) 18%, transparent); }
 .games-shell .cw-primary.is-armed { background: var(--text-primary); color: var(--bg-canvas); border-color: var(--text-primary); }
