@@ -1491,6 +1491,52 @@
             ['코르순', 49.42, 31.26, 'town', 'below'], ['마이코프', 44.61, 40.10, 'town', 'below'],
         ],
         beyond: [['우랄의 공장', 56.84, 60.6], ['무르만스크', 68.97, 33.08], ['쿠이비셰프', 53.2, 50.15], ['바쿠', 40.41, 49.87], ['엘베강', 51.56, 13.0]],
+        // The decisive operations shown step by step on the map before their seasons.
+        operations: {
+            uranus: {
+                title: '천왕성 작전', who: ['알렉산드르 바실렙스키', 'vasilevsky'], turn: 'uranus', phase: 'plan', flag: 'uranusReady',
+                steps: [
+                    {
+                        date: '1942년 11월 19일', text: '남서전선군과 돈 전선군이 돈강의 교두보에서 루마니아 제3군을 뚫었다.',
+                        draw: [{ gather: [49.58, 42.73], name: '세라피모비치' }, { side: 'red', style: 'strike', path: [[49.58, 42.73], [49.20, 42.95], [48.69, 43.53]], name: '제5전차군' }],
+                    },
+                    {
+                        date: '11월 20일', text: '스탈린그라드 전선군이 도시 남쪽 호수 사이에서 루마니아 제4군을 뚫었다.',
+                        draw: [{ gather: [48.25, 44.55], name: '사르파 호수' }, { side: 'red', style: 'strike', path: [[48.25, 44.55], [48.40, 44.05], [48.63, 43.65]], name: '제4기계화군단' }],
+                    },
+                    {
+                        date: '11월 23일', text: '두 집게가 소비에츠키에서 만났다. 독일 제6군의 22개 사단이 갇혔다.',
+                        draw: [{ clash: [48.66, 43.60], name: '칼라치·소비에츠키' }],
+                    },
+                ],
+            },
+            bagration: {
+                title: '바그라티온 작전', who: ['콘스탄틴 로코솝스키', 'konstantin-rokossovsky'], turn: 'bagration', phase: 'plan', flag: 'belarus',
+                steps: [
+                    {
+                        date: '1944년 6월 23–24일', text: '네 전선군이 비텝스크에서 보브루이스크까지 중부 집단군을 쳤다.',
+                        draw: [
+                            { side: 'red', style: 'strike', path: [[55.55, 31.00], [55.19, 30.20]], name: '비텝스크' },
+                            { side: 'red', style: 'strike', path: [[54.60, 31.40], [54.51, 30.42]], name: '오르샤' },
+                            { side: 'red', style: 'strike', path: [[53.09, 30.05], [53.15, 29.23]], name: '로가초프에서' },
+                            { side: 'red', style: 'strike', path: [[52.50, 29.60], [52.80, 29.42], [53.15, 29.23]], name: '늪지대에서' },
+                        ],
+                    },
+                    {
+                        date: '6월 27–29일', text: '비텝스크와 보브루이스크에서 독일군이 포위되어 무너졌다.',
+                        draw: [{ clash: [55.19, 30.20], name: '비텝스크' }, { clash: [53.15, 29.23], name: '보브루이스크' }],
+                    },
+                    {
+                        date: '7월 3일', text: '남북의 전차군이 민스크에서 만났다. 그 동쪽에 독일 제4군이 갇혔다.',
+                        draw: [
+                            { side: 'red', style: 'strike', path: [[54.51, 30.42], [54.23, 28.50], [53.90, 27.57]] },
+                            { side: 'red', style: 'strike', path: [[53.15, 29.23], [53.45, 28.30], [53.90, 27.57]] },
+                            { clash: [53.90, 27.57], name: '민스크' },
+                        ],
+                    },
+                ],
+            },
+        },
         legend: [['cw-key-held', '붉은 군대'], ['cw-key-lost k-axis', '독일과 추축국']],
         historyLegend: [['is-red', '소련군'], ['is-blue', '독일과 추축국'], ['is-purple', '서방 연합군'], ['is-gray', '휴전 (핀란드)']],
     };
