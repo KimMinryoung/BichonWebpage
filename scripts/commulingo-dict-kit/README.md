@@ -30,6 +30,7 @@ kit.finish();
 ## 도구
 
 - `python3 -I scripts/commulingo-dict-kit/fetch-wiki.py <job>/source en:Title de:Titel wd:Q123 ...`: 한 번 호출로 여러 문서를 받는다. 위키백과는 평문 추출, 위키데이터는 생몰일·국적·사이트링크 요약 JSON이다. 이미 받은 파일은 건너뛴다.
+- `python3 -P scripts/commulingo-dict-kit/pdf2txt.py <file.pdf> [out.txt] [--pages 3-10]`: PDF 본문을 텍스트로 뽑는다(PyMuPDF는 사용자 site-packages에 있어 `-I`가 아니라 `-P`로 돌린다; 이 호스트에 `pdftotext`는 없다). 글자층이 없는 영인본은 `--png <dir>`로 쪽 이미지를 뽑아 읽는다. 논문 PDF를 받고도 「읽을 도구가 없다」고 넘기지 않는다.
 - `python3 -I scripts/commulingo-dict-kit/kwic.py '<정규식>' 200 <파일>...`: 문맥 보기. grep에 `.{0,200}` 같은 큰 반복 상한을 써도 된다. 훅이 `command grep`(GNU)으로 바꿔 실행한다.
 
 ## 일하는 방식 (턴 수 줄이기)
