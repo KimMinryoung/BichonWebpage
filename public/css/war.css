@@ -1408,6 +1408,12 @@
 .cw-meter-strength { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 8px; }
 .cw-meter-top .cw-step-short { font-size: .76rem; color: var(--text-secondary); }
 /* The enemy, folded under the meter: who and what their traits add. */
+/* The attackers' trait rules, open above the fold: what the front asks of the plan. */
+.cw-foe-box { display: grid; gap: 4px; }
+.cw-foe-rules { display: grid; gap: 4px; border-top: 1px solid var(--border); padding-top: 6px; }
+.cw-foe-rule { display: grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 6px; }
+.cw-foe-rule .cw-trait { font-size: .84rem !important; padding: 3px 6px; }
+.cw-foe-box .cw-foe-fold { border-top: 0; padding-top: 0; }
 .cw-foe-fold { display: grid; gap: 5px; border-top: 1px solid var(--border); padding-top: 4px; }
 .cw-foe-fold > summary { display: flex; align-items: center; gap: 6px; min-height: 30px; cursor: pointer; font-size: .82rem; color: var(--text-secondary); }
 .cw-foe-fold > summary strong { color: var(--text-primary); }

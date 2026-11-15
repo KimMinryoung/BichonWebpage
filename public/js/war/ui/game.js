@@ -1760,14 +1760,21 @@
         const by = (f.traits || []).filter(tr => tr.rule && tr.counted && tr.on).reduce((a, tr) => a + tr.by, 0);
         // Who attacks shows on the fold's line, shield and name, folded or not.
         const foes = (threat.foes || []).map(fid => factionChip(fid, foeAs(fid, id).short || foeAs(fid, id).name));
+        // What each attacker's trait asks of this front stands open above the
+        // fold (2026-11-15: the plan is decided on it): the faction, its
+        // rule, and whether it bites now.
+        const rules = (threat.foes || []).map(fid => {
+            const tr = (f.traits || []).find(t => t.foe === fid && t.rule);
+            return tr ? el('div', { class: 'cw-foe-rule' }, factionChip(fid, foeAs(fid, id).short || foeAs(fid, id).name), traitRule(tr)) : null;
+        }).filter(Boolean);
         const fold = el('details', { class: 'cw-foe-fold', open },
-            el('summary', {}, el('strong', {}, '적 정보'), ...foes, by ? el('b', { class: by > 0 ? 'is-bites' : 'is-works' }, `특성 ${W.pressure} ${signed(by)}`) : null),
-            foeList(threat.foes, f.traits, id),
+            el('summary', {}, el('strong', {}, '적 정보'), ...(rules.length ? [] : foes), by && !rules.length ? el('b', { class: by > 0 ? 'is-bites' : 'is-works' }, `특성 ${W.pressure} ${signed(by)}`) : null),
+            foeList(threat.foes, rules.length ? [] : f.traits, id),
             el('p', { class: 'cw-threat' }, ...glossed(threat.text, new Set()), ' ', person(threat.who)),
             f.pressureParts.length ? el('p', { class: 'cw-parts' }, `${W.pressure} ${f.pressure} = 기본 ${threat.pressure} + ${f.pressureParts.join(' + ')}`) : null,
             strengthSum(f));
         fold.addEventListener('toggle', () => { foeOpen = fold.open; });
-        return fold;
+        return rules.length ? el('div', { class: 'cw-foe-box' }, el('div', { class: 'cw-foe-rules' }, ...rules), fold) : fold;
     }
 
     // The strength as a sum, like the pressure: the divisions at their
