@@ -1,6 +1,6 @@
 # 전쟁 게임 엔진 `public/js/war/` — 시나리오 작성 기준
 
-갱신: 2026-11-02 (전략 밸런스 측정 도구 `scripts/war-campaign.js`, 시기를 다시 계획하는 `canRetrySeason`·`retrySeason`, 끝난 전투의 `lost`(`WarBattle.lost`), 전투의 `par`, 화면의 `ui.medal`·`ui.merits`) / 2026-10-19 (규칙 11: 역사가 진 시기 전투의 `reward.wonBy`, 적 역할 `hunt`, 부대 `flank`, 한 수 `order`·`brace`, 옛 규칙에 없는 전투의 명령은 재생에서 건너뜀) / 2026-10-18 (전투 밸런스 측정 도구 / 규칙 9: 비례 전진과 위치 압력 / 규칙 8: 위협의 `traits`·`as`, 조건 `alloc`) / 2026-10-17 (규칙 7: 규칙 세대마다의 달력(시기의 `when`), 한 시기의 사건 목록과 사건의 `when`, 지키는 전투 `outlast`) / 2026-10-16 (규칙 6: 전투로 여는 `cap`과 그 보상, 조건 있는 전투·카드, 적 역할 `push`) / 2026-10-15 (「붉은 전선」에서 공통 엔진을 떼어 냄)
+갱신: 2026-11-15 (2차대전 대비 기반 정비: 시나리오별 데이터 판 `edition`, 연습의 카드 운용 `rehearsal`, 카드의 지도 표지 `glyph`와 `MAP_MARKS`, 화면 문구 `ui.coach`·`ui.kinds`·`scoring.*.kicker`, 전투의 병종 상성 `vs`·돌파 `breaks`와 전차·대전차포 `KINDS`, 날씨 `weather`, 여러 번·양편의 공습 `air`, 테스트 `tests/unit/war-arms.js`) / 2026-11-02 (전략 밸런스 측정 도구 `scripts/war-campaign.js`, 시기를 다시 계획하는 `canRetrySeason`·`retrySeason`, 끝난 전투의 `lost`(`WarBattle.lost`), 전투의 `par`, 화면의 `ui.medal`·`ui.merits`) / 2026-10-19 (규칙 11: 역사가 진 시기 전투의 `reward.wonBy`, 적 역할 `hunt`, 부대 `flank`, 한 수 `order`·`brace`, 옛 규칙에 없는 전투의 명령은 재생에서 건너뜀) / 2026-10-18 (전투 밸런스 측정 도구 / 규칙 9: 비례 전진과 위치 압력 / 규칙 8: 위협의 `traits`·`as`, 조건 `alloc`) / 2026-10-17 (규칙 7: 규칙 세대마다의 달력(시기의 `when`), 한 시기의 사건 목록과 사건의 `when`, 지키는 전투 `outlast`) / 2026-10-16 (규칙 6: 전투로 여는 `cap`과 그 보상, 조건 있는 전투·카드, 적 역할 `push`) / 2026-10-15 (「붉은 전선」에서 공통 엔진을 떼어 냄)
 
 「붉은 전선 1918–1920」의 규칙·전투·화면을 시나리오와 떼어 놓은 공통 엔진이다. 다른 시대의 전쟁은 **시나리오 파일 하나**(+ 지도의 세력 범위 문서, 라우트 한 줄)로 더한다. 편집 GUI는 없다. 이 문서는 시나리오를 쓰는 사람(미래의 Claude)을 위한 레퍼런스다. 「붉은 전선」 고유의 설계·밸런스는 [civil-war-game.md](civil-war-game.md).
 
@@ -24,6 +24,7 @@
 | [tests/lib/war-scenario-check.js](../tests/lib/war-scenario-check.js) | 시나리오 검사 `checkScenario(D)` → 문제 목록 |
 | [tests/unit/war-scenarios.js](../tests/unit/war-scenarios.js) | 모든 공개 시나리오 검사 + 최소 시나리오를 끝까지 둔다 |
 | [tests/unit/war-golden.js](../tests/unit/war-golden.js) | 「붉은 전선」 골든 마스터(6절) |
+| [tests/unit/war-arms.js](../tests/unit/war-arms.js) | 전투의 병종 상성·돌파·날씨·공습을 작은 판으로 |
 
 화면 컨트롤러(`ui/game.js`)는 공유 상태가 많아 한 파일로 두었다. 상태 없는 부분만 모듈로 뺐다.
 
@@ -52,7 +53,8 @@
 | `reserve: [op, n]` | 예비로 남긴 사단 수 |
 | `stat: ['name', op, n]` | 스탯 비교 |
 | `won: true`, `historyDiff: [op, n]` | 평가에서만: 마지막 전투 승리, 시기별 위치 합의 역사 대비 |
-| `rules: [op, n]` | 저장의 규칙 세대. 새 세대에서만 바뀌는 데이터(규칙 5의 정비 비용 등)를 옛 저장과 갈라 둔다 |
+| `rules: [op, n]` | 저장의 규칙 세대(엔진). 「붉은 전선」의 옛 데이터 변경이 쓴다. 새 시나리오의 데이터 변경은 `edition` |
+| `edition: [op, n]` | 저장의 데이터 판(시나리오). 그 시나리오의 데이터만 바뀌는 변경을 옛 저장과 갈라 둔다(5절) |
 | `not`, `all`, `any` | 조합 |
 
 op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사기가 미리 잡는다.
@@ -63,7 +65,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 ### 4.1 맨 위
 
-`id`, `title`, `saveVersion`(저장 형식, 1), `frontOrder`(전선 표시 순서), `startLines`(전선별 시작 위치), `fronts`, `factions`, `troops`, `cards`, `turns`, `battles`, `epilogue`, `portraits`, `map`, `ui`, `texts`, 그리고 규칙 절(4.6).
+`id`, `title`, `saveVersion`(저장 형식, 1), `edition`(선택, 데이터 판, 5절), `rehearsal`(선택, 4.9), `frontOrder`(전선 표시 순서), `startLines`(전선별 시작 위치), `fronts`, `factions`, `troops`, `cards`, `turns`, `battles`, `epilogue`, `portraits`, `map`, `ui`, `texts`, 그리고 규칙 절(4.6).
 
 ### 4.2 전선 `fronts[id]`
 
@@ -81,7 +83,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 ### 4.4 카드 `cards[id]`
 
 `title`, `short`(좁은 자리의 이름), `advisor: [이름, 인물 id]`, `cost`(지휘력), `text`, `note`, `link`, 효과:
-- `target: 'front'` + `bonus`(그 전선 전투력), `fronts`(보낼 수 있는 전선 제한), `onRail: true`(지도에서 철길 위 열차로 그림, 전투의 `rail` 부대와 짝)
+- `target: 'front'` + `bonus`(그 전선 전투력), `fronts`(보낼 수 있는 전선 제한), `onRail: true`(지도에서 철길 위 열차로 그림, 전투의 `rail` 부대와 짝), `glyph`(지도와 힘 막대의 표지: `war/ui/glyphs.js`의 `MAP_MARKS` 이름 `train`·`cavalry`, `onRail`이면 기본 `train`. 한 전선에 둘이면 그 순서로 철길 위에 앞뒤로 선다. 새 표지는 `MAP_MARKS`에 `{ draw(p), icon() }`을 더하고, 검사기가 그 이름을 소스에서 읽는다)
 - 스탯 이름을 키로(`peasants: -4`), `food`, `divisions`(이번 시기 풀), `escalates: true`(쓸 때마다 스탯 효과 배수)
 - `flag`(쓴 뒤 세움, 이미 섰으면 다시 안 나옴), `requires`(그 플래그가 있어야 나옴)
 - `needs: 'unrest'`(봉기가 있어야 쓸 수 있고, 묶인 사단 절반이 돌아옴), `idle`(못 쓸 때 안내)
@@ -127,7 +129,8 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 - `map`: `box: { west, east, south, north }`, `control`(세력 범위 문서 id), `title`, `hub: [이름, 위도, 경도]`, `hubId`(대사 `at`에 쓰는 이름), `railways: [{ id, name, pts: [[위도, 경도]…], label }]`(분기점은 같은 좌표로 적어 한 망이 되게; 검사기가 허브와 이어지는지 본다), `labelAt: { 도시: [dx, dy, anchor] }`, `places: [[이름, 위도, 경도, kind, pos]]`(전선 도시가 아니지만 글에 나오는 곳. kind는 `region`·`river`·`town`, town의 pos는 `below`·`above`로 이름을 점 아래·위에), `beyond: [[이름, 위도, 경도]]`(지도 밖의 곳. 가운데서 그쪽으로 그은 선이 틀을 나가는 자리에 「옴스크 →」처럼), `legend`, `historyLegend`(`[클래스, 글]`), `operations`(아래).
 - `map.operations[id] = { title, who: [이름, 인물 id], turn, phase: 'plan'|'review', flag?, card?, steps: [{ date, text, draw: [...] }] }` — 지도 위에서 단계별로 보여 주는 결정적 작전. 그 시기·단계에, `flag`가 서 있거나(앞 시기 선택의 결과) `card`를 보냈을 때 그 시기의 대사보다 먼저 한 단계씩 재생된다. `draw`는 `{ side: 'red'|세력 kind, style: 'strike'|'beaten'|'next', path: [[위도, 경도]…], name }`(화살표: 진격·꺾인 진격·남은 일), `{ gather: [위도, 경도], name }`(병력이 모인 곳), `{ clash: [위도, 경도], name }`(맞부딪친 곳). 서버(`war-map.js`)가 화면 좌표와 단계별 상자(그때까지 그린 것)를 `points.operations`로 넘긴다. 검사기가 시기·카드·플래그·초상·좌표를 본다.
-- `ui`: `player`, `playerUnits`, `enemy`, `enemyAll`, `unit`, `leader`, `food`, `unrest`(화면의 말), `hud: [{ stat, label, warnBelow, warnNote, note, chart, command, split }]`(스탯 줄과 회고 그래프, `command`인 스탯 하나가 지휘력 안내), `cardStats: { stat: 짧은 이름 }`, `aria`, `save`(localStorage 키), `medal: { name, short, rule, note }`(시기의 훈장: 싸운 전선이 모두 역사 이상이고 하나라도 앞서면. 화면만 세고 규칙은 모름, 없으면 안 보임), `merits: { whole }`(전투의 전공 별: 승리, `reward.quick` 또는 `par` 턴 안의 승리, 붉은 부대를 하나도 잃지 않음. 없으면 안 보임).
+- `ui`: `player`, `playerUnits`, `enemy`, `enemyAll`, `unit`, `leader`, `food`, `unrest`(화면의 말), `hud: [{ stat, label, warnBelow, warnNote, note, chart, command, split }]`(스탯 줄과 회고 그래프, `command`인 스탯 하나가 지휘력 안내), `cardStats: { stat: 짧은 이름 }`, `aria`, `save`(localStorage 키), `medal: { name, short, rule, note }`(시기의 훈장: 싸운 전선이 모두 역사 이상이고 하나라도 앞서면. 화면만 세고 규칙은 모름, 없으면 안 보임), `merits: { whole }`(전투의 전공 별: 승리, `reward.quick` 또는 `par` 턴 안의 승리, 붉은 부대를 하나도 잃지 않음. 없으면 안 보임), `coach: { stats }`(첫 판 안내의 스탯 막대 설명, 없으면 `hud` 이름으로 만든 일반 문장), `kinds: { 병종: 이름 }`(전투 부대 카드의 병종 이름. 기본은 보병·기병·포병·전차·대전차포·열차).
+- `scoring.won`·`scoring.stalled`의 `kicker`: 결말 머리의 작은 글(없으면 「종전」·「끝 전투를 넘지 못함」).
 - 조사는 `josa(word, '이', '가')`로 붙인다(받침 판정). 시나리오 말 뒤에 조사를 박아 쓰지 않는다.
 - `portraits[인물 id] = { side, hair, face, brows, glasses, beard, moustache, grey, cap, dress }`(art.js `FEATURES`의 값, 진영 색을 빼고도 서로 달라야 함). 전투 부대의 `look`(`sailor`·`worker`·`cossack`·`officer`·`tachanka`)은 war/ui/glyphs.js가 그리는 그림을 고른다. 화면에 나오는 모든 인물(조언자·갈림길·위협·대사·부대 `person`·전투 대사 `face`)은 초상이 있어야 한다.
 
@@ -135,13 +138,25 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 `id`, `sides: { player, enemy }`(부대 `side` 값; 화면은 player를 빨간 클래스 `is-red`, enemy를 `is-white`로 칠한다), `front`(그 전선의 계획이 부대를 정함), `final`(마지막 전투면 정산 뒤에 치르고 끝나면 평가), `outlast`(지키는 판: `protect`를 `turnLimit` 턴 끝까지 지키면 이김 `b.held`, 그 전에 `goals`에 서면 일찍 이김), `when`(조건이 설 때만 그 시기에 열림), `reward: { quick, quickBy, lostBy }`(시기 전투. 없으면 전선의 `cap.battle`이고 `stakes`(편성 줄의 글)·`outcome: { won, lost }`(결산의 글)가 있어야 한다. 역사에서 진 전투는 `reward: { wonBy }`: 이기면 그 전선 전투력 +wonBy(`texts.battleWon`), 지면 역사대로, 역사대로 이겼다고 넘긴 `assume`은 0. 편성 줄의 글은 `stakes`), `enemyName`(전투 화면에서 적을 부르는 이름, 없으면 `ui.enemy`), `title`, `date`, `settle`·`open`·`board`(버튼·제목 문구), `map: ['문자열'…]`, `terrain[문자] = { name, cost(99=못 감), def, water, span, ford, fort, cls }`, `legend`, `goals: [{ at: [행, 열], name }]`, `protect`, `rails`, `towns`, `places`, `lines[id] = { name, rear: { rows, cols }, label, fallback }`, `sectors[id] = { name, rows?, cols?, alarm: { axis: 'r'|'c', at, dir } }`, `windTurns`(여울이 닫히는 턴), `air: { turn, units, dmg }`, `turnLimit`, `par`(`reward.quick`이 없는 전투에서 「빠른 승리」 전공이 묻는 턴, 화면만. 검사가 `turnLimit`보다 작은지 본다), `units`, `voices`, `summary`, `brief`, `history`, `strikeNote`·`raidNote`·`pushNote`·`ford`·`reserveName`(화면 문구), `kinds`(병종 성질 덧붙이기).
 
-부대: `id`, `tag`, `side`, `name`, `sub`, `kind`(`inf`·`cav`·`art`… `art`는 반격 없음·진지 마모, `KINDS`), `at`, `hp`, `atk`, `def`, `mv`, `range`, `naval`, `rail`(철길로만, 그림은 열차), `role`(적: `hold`·`wall`·`raid`·`strike`·`push`·`hunt`, `ROLES`. `push`는 지킬 거점으로 가되 습격과 달리 상대 부대 곁에서 멈춘다. `hunt`는 곁에 같은 편이 가장 적은 상대 부대(같으면 가까운, 약한 부대, `preyOf`)로 가서 닿으면 그 부대를 친다. 화면 문구 `huntNote`), `flank`(곁에 같은 편이 없는 부대를 칠 때 피해 +n), `line`, `wake`, `lead`(지휘관이 오면 방어 +1), `need`(여유가 이만큼이면 출전), `card`(그 카드를 보내면 출전), `flag`, `person`, `feat`(`FEATS`: `strike`·`assault`·`muster`·`ride`·`ferry`·`order`·`brace`. `order`는 그 턴 같은 편 다른 부대가 곁에 붙은 대상을 치는 공격마다 피해 +`plus`(`b.order`), `brace`는 그 편의 다음 차례까지 방어 +`def`에 근접 반격(포병도)), `skirmish`, `counter`·`wears`(병종 성질을 부대가 직접).
+전투 판의 날씨·공습:
+- `weather: [{ from, to?, name, note?, tiles: { 문자: 문자 } }]` — `from`~`to` 턴(없으면 끝까지) 동안 지도의 땅 문자를 다른 땅으로 읽는다(강 `~` → 얼음 `=`, 길 → 진창). 구간은 차례대로 겹치지 않게. 날씨가 바뀌는 턴에 갈 수 없게 된 땅에 선 부대는 물 피해(3)를 입고 `weather` 사건이 남는다. 화면은 상태 줄 「날씨」(`def.weatherCalm`이 평소의 이름, 없으면 「평소」)와 대사 `when: 'weather'`. 새 땅 문자는 `terrain`에 있어야 하고, 그 `cls`의 판 색은 `war.css`에 더해야 한다.
+- `air`: 공습 하나 또는 목록. `{ turn | turns: [..], units, dmg, against?, name? }` — 그 턴들의 적 차례 끝에 `units` 가운데 살아 있는 상대 부대를 `dmg`만큼(1은 남김). 기본은 적의 비행기가 플레이어 부대를, `against: 'enemy'`면 플레이어의 비행기가 적 부대를 친다. `name`은 사건 글의 주어(「청군 비행기」).
+
+부대: `id`, `tag`, `side`, `name`, `sub`, `kind`(`inf`·`cav`·`art`·`tank`·`at`…, 병종 성질은 `KINDS`: `art`는 반격 없음·진지 마모, `tank`는 돌파와 상성, `at`은 전차에 강함), `at`, `hp`, `atk`, `def`, `mv`, `range`, `naval`, `rail`(철길로만, 그림은 열차), `role`(적: `hold`·`wall`·`raid`·`strike`·`push`·`hunt`, `ROLES`. `push`는 지킬 거점으로 가되 습격과 달리 상대 부대 곁에서 멈춘다. `hunt`는 곁에 같은 편이 가장 적은 상대 부대(같으면 가까운, 약한 부대, `preyOf`)로 가서 닿으면 그 부대를 친다. 화면 문구 `huntNote`), `flank`(곁에 같은 편이 없는 부대를 칠 때 피해 +n), `line`, `wake`, `lead`(지휘관이 오면 방어 +1), `need`(여유가 이만큼이면 출전), `card`(그 카드를 보내면 출전), `flag`, `person`, `feat`(`FEATS`: `strike`·`assault`·`muster`·`ride`·`ferry`·`order`·`brace`. `order`는 그 턴 같은 편 다른 부대가 곁에 붙은 대상을 치는 공격마다 피해 +`plus`(`b.order`), `brace`는 그 편의 다음 차례까지 방어 +`def`에 근접 반격(포병도)), `skirmish`, `counter`·`wears`·`vs`·`breaks`(병종 성질을 부대가 직접).
+
+병종 상성: 병종의 `vs: { 병종: n }`은 그 병종의 부대를 칠 때(반격 포함) 피해에 n을 더한다(음수면 덜). `breaks: true`는 이동 중 적 곁에서 멈추지 않는다(전차의 돌파). 엔진 기본값(`battle.js` `KINDS`): 보병·기병 → 전차 −2, 전차 → 보병·기병 +1·대전차포 −1, 대전차포 → 전차 +3, 전차는 돌파. 전투의 `kinds`가 병종 성질을 바꾸고(`vs`는 항목마다 합침), 부대의 `vs`·`breaks`가 그 위에 온다. 피해 = 공격 × (0.6 + 0.4 × 병력 비) + 포위 − 방어 + 측면 + 명령 + 상성 + 한 수, 최소 1.
+
+### 4.9 연습의 카드 운용 `rehearsal`
+
+`{ lead: [카드], skip: [카드], guard: { stat, min } }` — 연습(`rehearse`, `?battle=<id>`)이 역사의 선택으로 전투 직전까지 둘 때: `lead` 카드는 가장 무거운 전선에, `historyAt`이 있는 카드는 역사의 전선에, 나머지는 `skip`을 빼고 `guard` 스탯을 `min` 아래로 떨어뜨리지 않을 때만 쓴다. 없으면 `historyAt` 카드와 나머지 모든 카드. 「붉은 전선」: 트로츠키의 열차를 앞에, 징발은 쓰지 않고, 당 결속 40을 지킨다.
 
 새 행동이 필요하면 `ROLES`에 `{ marches(b, u), act(b, u, turn) }`, 새 한 수는 `FEATS`에 `{ blow | use, targets, beforeMove, block }`을 더한다. 대사 `when`: `start`·`goal`·`flood`·`reserve`·`surrender`·`air`·`turn:N`·`turned:<line>`·`feat:<id>`.
 
 ## 5. 저장과 규칙 세대
 
-저장은 `{ version: saveVersion, rules, log }`이고 `restore`가 로그를 재생한다. `rules`는 엔진 규칙의 세대다: 1 기본, 2 철도 수송 비용과 지난 배치 유지, 3 전투의 한 수·투항과 노획, 4 지도자(정치위원)는 사단이 있는 전선에만, 마지막 사단과 함께 돌아옴, 5 시기마다의 정비 비용(`economy.upkeep`), 전선 득실의 스탯 효과는 시기마다 한 번(`frontMoves.net`), 전투에서 철도 부대의 `railMv`, 그 밖에 데이터의 `rules` 조건, 6 전선의 `cap`은 그 전투로만 열리고 보상(`reached.reward`)을 줌(바르샤바 전투와 제1기병군 카드도 데이터의 `rules` 조건), 7 데이터의 `rules` 조건이 고르는 달력·사건(「붉은 전선」: 1918년 가을을 둘로 나누고 차리친 전투와 사건 셋), 8 전선의 `prize`(그 시기에 얻으면 한 번 주는 곡물·사단, 엔진 `prizeOf`)와 위협의 `traits`가 그 전선에서 한 공격 세력의 특성을 바꿈(「붉은 전선」: 데니킨군의 지휘관별 특성, 엔진 `traitOf`)과 그 특성 이름의 `as`, 9 역사가 전진하는 시기의 진 싸움은 그 전진을 전투력/압력만큼만 받고(지금까지의 손실이 더 나쁘면 그쪽), 역사의 선에서 `outcome.standingFrom` 이상 벗어난 전선은 다음 압력이 도시당 `outcome.standing`만큼 오르내림(`outcomeAt`·`outcomeBands`의 `rules`, `standingOf`), 10 「붉은 전선」의 제1기병군은 한 시기에 한 전선, 11 데이터의 `rules` 조건이 여는 전투(「붉은 전선」: 첫 시기의 심비르스크 공격). 새 세대의 저장을 옛 규칙으로 재생하면 그 규칙에 없는 전투의 명령(`b:`)은 건너뛴다. 새 시나리오는 최신 세대로 시작한다(`WarEngine.RULES`). 규칙이 결과를 바꾸는 변경은 세대를 올리고 옛 세대 분기를 남겨, 옛 저장이 두던 대로 재생되게 한다. 재생이 막히면 그 시기 처음으로 돌아간다.
+저장은 `{ version: saveVersion, rules, log }`이고 `restore`가 로그를 재생한다. `rules`는 엔진 규칙의 세대다: 1 기본, 2 철도 수송 비용과 지난 배치 유지, 3 전투의 한 수·투항과 노획, 4 지도자(정치위원)는 사단이 있는 전선에만, 마지막 사단과 함께 돌아옴, 5 시기마다의 정비 비용(`economy.upkeep`), 전선 득실의 스탯 효과는 시기마다 한 번(`frontMoves.net`), 전투에서 철도 부대의 `railMv`, 그 밖에 데이터의 `rules` 조건, 6 전선의 `cap`은 그 전투로만 열리고 보상(`reached.reward`)을 줌(바르샤바 전투와 제1기병군 카드도 데이터의 `rules` 조건), 7 데이터의 `rules` 조건이 고르는 달력·사건(「붉은 전선」: 1918년 가을을 둘로 나누고 차리친 전투와 사건 셋), 8 전선의 `prize`(그 시기에 얻으면 한 번 주는 곡물·사단, 엔진 `prizeOf`)와 위협의 `traits`가 그 전선에서 한 공격 세력의 특성을 바꿈(「붉은 전선」: 데니킨군의 지휘관별 특성, 엔진 `traitOf`)과 그 특성 이름의 `as`, 9 역사가 전진하는 시기의 진 싸움은 그 전진을 전투력/압력만큼만 받고(지금까지의 손실이 더 나쁘면 그쪽), 역사의 선에서 `outcome.standingFrom` 이상 벗어난 전선은 다음 압력이 도시당 `outcome.standing`만큼 오르내림(`outcomeAt`·`outcomeBands`의 `rules`, `standingOf`), 10 「붉은 전선」의 제1기병군은 한 시기에 한 전선, 11 데이터의 `rules` 조건이 여는 전투(「붉은 전선」: 첫 시기의 심비르스크 공격). 새 세대의 저장을 옛 규칙으로 재생하면 그 규칙에 없는 전투의 명령(`b:`)은 건너뛴다. 새 시나리오는 최신 세대로 시작한다(`WarEngine.RULES`). 규칙이 결과를 바꾸는 변경은 세대를 올리고 옛 세대 분기를 남겨, 옛 저장이 두던 대로 재생되게 한다.
+
+**세대와 판(2026-11-15).** 세대(`rules`)는 엔진 코드의 것이라 모든 시나리오에 걸린다. 6·7·10·11세대처럼 한 시나리오의 데이터만 바꾼 변경은 이제 그 시나리오의 **판**(`edition`)으로 한다: 시나리오의 `edition`(최신 판, 1부터)을 올리고 데이터의 조건에 `edition: ['>=', n]`을 단다. 저장은 `{ version, rules, edition, log }`이고 `edition`은 판을 가진 시나리오만 쓴다(「붉은 전선」의 저장 모양은 그대로). 옛 판의 저장은 그 판의 데이터로 재생되고, 앞으로의 판은 거절된다. 플레이 로그 서버는 판을 `stats.edition`에 남긴다(표에 열을 더하지 않음). 옛 저장이 마주칠 수 없는 새 선택 필드(새 병종·날씨·공습)는 세대도 판도 필요 없다. 재생이 막히면 그 시기 처음으로 돌아간다.
 
 다시 하기: `retryBattle(s)`는 전투에서 진 전쟁을 그 전투의 첫 턴으로(로그를 그 전투를 연 결정까지 자름), `retrySeason(s)`는 시기를 보내 진 전쟁(`defeat` 선, 평가 별이 없는 결말)을 그 시기의 `settle` 바로 앞, 남겨 둔 계획 그대로 되돌린다. 그 사이의 전투도 다시 치른다. 끝난 전투 `s.battles[id]`에는 `result`, `turns`, `turned`, `captured`, `feats`, `held`, `lost`(쓰러진 플레이어 부대 수, 투항해 넘어온 부대는 빼고 판 위에서 일으킨 부대는 셈, `WarBattle.lost`)가 남는다. 골든 마스터는 `lost`를 빼고 비교한다.
 
@@ -182,4 +197,6 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 - 화면 문구는 한국어뿐이다(시나리오의 말만 바뀐다).
 - 지도는 커뮤링고 사건 지도 바탕(해안선·강)과 세력 범위 문서에 기대므로, 새 전쟁에도 그 문서가 있어야 역사 층이 나온다.
 - 한 시기에 전투는 하나다(`turn.battle`). 두 전투가 한 시기에 겹치면 시기를 나눈다(달력, 4.5). 전략 단위 이름은 엔진 안에서 `divisions`·`commissar`로 남아 있다.
-- 지도 등장 방식·세력 색(`kind`)·전투 진영 색은 CSS가 정한 몇 가지다.
+- 전선은 허브에서 뻗은 도시 줄이라, 포위(키예프 1941, 스탈린그라드)는 전략 지도가 아니라 전투판에서 보인다.
+- 지도 등장 방식·세력 색(`kind`: `white`·`interv`·`central`·`national`)·전투 진영 색(`is-red`·`is-white`)은 CSS가 정한 몇 가지다.
+- 그림 어휘는 내전의 것이다(3단계 과제): 전투 부대 그림에 전차·대전차포·비행기가 없어(전차·대전차포는 보병 그림으로 나옴), 초상의 모자에 철모·약모가 없고, 새 땅(얼음·진창)의 판 색, 추축국 세력 색과 방패 문장(`SIGNS`)이 없다.

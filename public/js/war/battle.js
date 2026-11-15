@@ -33,10 +33,18 @@
    halted by every player unit it meets. A board to be held (outlast)
    is won by keeping the post through its last turn, and sooner by
    taking its goal. A unit with wake
-   stays put until that turn, and a board's air raid (air) strikes chosen
-   player units at the end of one enemy turn. A hunter (role hunt) goes
+   stays put until that turn, and a board's air raids (air: one raid or a
+   list) strike chosen units at the end of the enemy turns they name. A
+   board's weather (weather) turns its ground into other ground for a span
+   of turns: a river freezes, a road sinks in mud; whoever stands where
+   they could not go when it turns takes the water's hurt. A hunter (role hunt) goes
    for the player's unit standing most alone, and a flanker (flank: n)
    strikes a unit with no friend beside it n harder.
+
+   The arms meet unequally: a kind's vs ({ kind: n }) adds n to its blows
+   on units of that kind (less when negative), counters included: the
+   anti-tank gun against armour, the rifle against it. A kind that breaks
+   (armour) is not halted by the enemy beside it as it moves.
 
    Under rules 3 (heroics) a battle has its decisive moments: a player unit
    may carry a feat, used once a battle (FEATS: strike, assault, muster,
@@ -53,13 +61,24 @@
     const DIRS = [[-1, 0], [1, 0], [0, -1], [0, 1]];
     // What a unit kind does beyond its numbers: counter, whether it strikes
     // back when struck in melee; wears, whether its blows wear a
-    // fortification down. A board may add kinds (def.kinds) and a unit may
-    // say so itself.
-    const KINDS = { art: { counter: false, wears: true } };
-    const PLAIN = { counter: true, wears: false };
+    // fortification down; vs, its blows' bonus on each other kind; breaks,
+    // whether it moves on past the enemy beside it. A board may add kinds
+    // or change these (def.kinds; vs merges entry by entry) and a unit may
+    // say so itself. tank and at are the armour and the anti-tank gun.
+    const KINDS = {
+        art: { counter: false, wears: true },
+        inf: { vs: { tank: -2 } },
+        cav: { vs: { tank: -2 } },
+        tank: { breaks: true, vs: { inf: 1, cav: 1, at: -1 } },
+        at: { vs: { tank: 3 } },
+    };
+    const PLAIN = { counter: true, wears: false, breaks: false };
 
     const sidesOf = def => def.sides || { player: 'player', enemy: 'enemy' };
-    const kindOf = (def, kind) => Object.assign({}, PLAIN, KINDS[kind], def.kinds && def.kinds[kind]);
+    const kindOf = (def, kind) => {
+        const own = def.kinds && def.kinds[kind];
+        return Object.assign({}, PLAIN, KINDS[kind], own, { vs: Object.assign({}, KINDS[kind] && KINDS[kind].vs, own && own.vs) });
+    };
 
     // Whether a unit takes the field. A flag comes from a choice made in
     // the campaign; need and card from the season's plan on the battle's
@@ -98,6 +117,7 @@
                     person: u.person || null, look: u.look || null, r: u.at[0], c: u.at[1], hp, maxHp: u.hp,
                     atk: u.atk, def: u.def + (lead ? 1 : 0), mv: express && u.railMv ? u.railMv : u.mv, range: u.range || 1, commissar: Boolean(lead), naval: Boolean(u.naval), rail: Boolean(u.rail), flank: u.flank || 0,
                     counter: u.counter === undefined ? kind.counter : u.counter, wears: u.wears === undefined ? kind.wears : u.wears,
+                    vs: Object.assign({}, kind.vs, u.vs), breaks: u.breaks === undefined ? kind.breaks : u.breaks,
                     feat: heroics && u.feat ? u.feat : null, skirmish: heroics && Boolean(u.skirmish),
                     moved: false, acted: false, prev: null,
                 };
@@ -112,7 +132,18 @@
     }
 
     const key = (r, c) => r * 100 + c;
-    const tileAt = (b, r, c) => (b.def.map[r] || '')[c];
+    // The board's ground letter, under the weather of the turn.
+    const tileAt = (b, r, c) => {
+        const ch = (b.def.map[r] || '')[c];
+        const w = weatherOf(b);
+        return (w && w.tiles[ch]) || ch;
+    };
+    // The weather of turn n (b's own turn by default): the first span that holds it.
+    const weatherOf = (b, n = b.turn) => (b.def.weather || []).find(w => n >= w.from && n <= (w.to ?? Infinity)) || null;
+    // The air raids of a board: one or a list; a raid comes on its turn
+    // or on each of its turns.
+    const raidsOf = def => [].concat(def.air || []);
+    const raidTurns = raid => [].concat(raid.turns || raid.turn);
     const inside = (b, r, c) => r >= 0 && c >= 0 && r < b.def.map.length && c < b.def.map[0].length;
     const alive = b => b.units.filter(u => u.hp > 0);
     const unitAt = (b, r, c) => b.units.find(u => u.hp > 0 && u.r === r && u.c === c) || null;
@@ -180,7 +211,7 @@
             const cur = queue.shift();
             if (cur.cost > (best.get(key(cur.r, cur.c)) ?? Infinity)) continue;
             // Raiders ride past the enemy; everyone else halts beside him.
-            const stop = u.role !== 'raid' && !u.riding && (cur.r !== u.r || cur.c !== u.c) && enemiesAdjacent(b, u, cur.r, cur.c);
+            const stop = u.role !== 'raid' && !u.riding && !u.breaks && (cur.r !== u.r || cur.c !== u.c) && enemiesAdjacent(b, u, cur.r, cur.c);
             if (stop) continue;
             for (const [dr, dc] of DIRS) {
                 const r = cur.r + dr, c = cur.c + dc;
@@ -230,7 +261,8 @@
         const ring = surround(b, a, d);
         const flank = a.flank && alone(b, d) ? a.flank : 0;
         const order = b.order && b.order.turn === b.turn && b.order.side === a.side && ring > 0 ? b.order.plus : 0;
-        return Math.max(1, Math.round(power + ring - guard + flank + order + ((mod && mod.plus) || 0)));
+        const arms = (a.vs && a.vs[d.kind]) || 0;
+        return Math.max(1, Math.round(power + ring - guard + flank + order + arms + ((mod && mod.plus) || 0)));
     }
 
     // Whether an enemy unit left with hp men would lay down its arms: below
@@ -661,16 +693,20 @@
             const t = prey && isPlayer(b, prey) && targets(b, u).includes(prey) ? prey : bestTarget(b, u);
             if (t) strike(b, u, t);
         }
-        // The air raid: the planes find their targets at the end of one enemy turn.
-        const air = b.def.air;
-        if (air && b.turn === air.turn) {
-            for (const id of air.units) {
+        // The air raids: the planes find their targets at the end of the
+        // enemy turns they come on; the enemy's hit the player's units, a
+        // raid against: 'enemy' (the player's own planes) the enemy's.
+        // Planes wound, never finish a unit.
+        for (const raid of raidsOf(b.def)) {
+            if (!raidTurns(raid).includes(b.turn)) continue;
+            const mine = raid.against === 'enemy';
+            for (const id of raid.units) {
                 const u = byId(b, id);
-                if (!u || !isPlayer(b, u)) continue;
-                const dmg = Math.min(u.hp - 1, air.dmg);
+                if (!u || !(mine ? isEnemy(b, u) : isPlayer(b, u))) continue;
+                const dmg = Math.min(u.hp - 1, raid.dmg);
                 if (dmg <= 0) continue;
                 u.hp -= dmg;
-                b.events.push({ type: 'air', id: u.id, dmg });
+                b.events.push(Object.assign({ type: 'air', id: u.id, dmg }, mine ? { mine: true } : {}, raid.name ? { by: raid.name } : {}));
             }
         }
         // Water: once the wind turns, the ford floods back.
@@ -695,6 +731,7 @@
         if (b.def.outlast && b.turn >= b.def.turnLimit) { b.result = 'won'; b.held = true; return true; }
         b.turn += 1;
         if (b.def.windTurns && b.turn === b.def.windTurns + 1) b.events.push({ type: 'tide' });
+        turnWeather(b);
         if (b.turn > b.def.turnLimit) { b.result = 'lost'; return true; }
         for (const u of b.units) {
             u.moved = false; u.acted = false; u.prev = null; u.struck = false;
@@ -704,6 +741,22 @@
             if (u.braced) { u.def -= u.braced.def; u.counter = u.braced.counter; u.braced = null; }
         }
         return true;
+    }
+
+    // A new turn's weather: the change told, and whoever stands where they
+    // could no longer go (thin ice, a flooded meadow) hurt as by water.
+    function turnWeather(b) {
+        if (!b.def.weather) return;
+        const was = weatherOf(b, b.turn - 1), now = weatherOf(b);
+        if (was === now) return;
+        b.events.push({ type: 'weather', name: now ? now.name : null, was: was ? was.name : null });
+        for (const u of alive(b)) {
+            if (u.naval ? enterCost(b, u, u.r, u.c) < Infinity : terrain(b, u.r, u.c).cost < 99 && !terrain(b, u.r, u.c).water) continue;
+            const dmg = Math.min(u.hp, WATER_DAMAGE);
+            u.hp -= dmg;
+            b.events.push({ type: 'water', id: u.id, dmg });
+            if (u.hp <= 0) b.events.push({ type: 'fall', id: u.id });
+        }
     }
 
     // The player's units fallen so far (those raised on the board too; a
@@ -720,7 +773,7 @@
 
     const api = {
         start, joins, act, reachable, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
-        terrain, groundOf, tileAt, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
+        terrain, groundOf, tileAt, weatherOf, raidsOf, raidTurns, kindOf, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
         canMove, featBlock, featTargets, featMod, yields, lost, YIELD_RING, FEATS, ROLES, KINDS,
     };
     if (typeof module === 'object' && module.exports) module.exports = api;

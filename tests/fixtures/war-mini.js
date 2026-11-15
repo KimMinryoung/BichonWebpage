@@ -34,6 +34,7 @@ const TERRAIN = {
     '~': { name: '강', cost: 99, def: 0, water: true, cls: 'river' },
     T: { name: '보루', cost: 2, def: 2, fort: 'wall', cls: 'trench' },
     v: { name: '마을', cost: 1, def: 1, cls: 'town' },
+    '=': { name: '얼음', cost: 2, def: 0, cls: 'ice' },
 };
 
 // The player comes from the west; the line's rear is east of the fort.
@@ -73,8 +74,13 @@ const siege = {
         '.....',
         '..v..',
         '.....',
+        '~~~~~',
     ],
-    voices: [{ when: 'start', unit: ['s1'], who: ['장군', 'blue-general'], text: '언덕을 친다.' }],
+    // The river freezes for the first two turns (battle.js weather), and
+    // planes come over on both sides (air as a list).
+    weather: [{ from: 1, to: 2, name: '결빙', note: '강을 걸어서 건넌다', tiles: { '~': '=' } }],
+    air: [{ turn: 1, units: ['s1'], dmg: 2 }, { turns: [2, 3], units: ['h1'], dmg: 1, against: 'enemy', name: '청군 비행기' }],
+    voices: [{ when: 'start', unit: ['s1'], who: ['장군', 'blue-general'], text: '언덕을 친다.' }, { when: 'weather', unit: ['s1'], face: 'blue-soldier', text: '얼음이 버틴다.' }],
     goals: [{ at: [1, 2], name: '언덕 마을' }],
     towns: [], places: [], lines: {}, sectors: {},
     turnLimit: 5,
@@ -83,6 +89,9 @@ const siege = {
         { id: 's1', tag: '1', side: 'blue', name: '제1대', kind: 'inf', at: [0, 0], hp: 10, atk: 6, def: 3, mv: 3, person: ['장군', 'blue-general'] },
         { id: 's2', tag: '2', side: 'blue', name: '제2대', kind: 'inf', at: [2, 0], hp: 10, atk: 6, def: 3, mv: 3 },
         { id: 'h1', tag: '부족', side: 'grey', name: '부족 전사', kind: 'inf', at: [1, 4], hp: 6, atk: 3, def: 1, mv: 3, role: 'hold' },
+        // The arms (battle.js KINDS): armour that breaks through, a gun against it.
+        { id: 's3', tag: '전', side: 'blue', name: '전차대', kind: 'tank', at: [1, 0], hp: 8, atk: 5, def: 3, mv: 4 },
+        { id: 'h2', tag: '대', side: 'grey', name: '대전차포', kind: 'at', at: [0, 4], hp: 5, atk: 3, def: 1, mv: 1, role: 'hold' },
     ],
     summary: '언덕 마을에 서면 승리', brief: [], history: '',
 };
@@ -91,6 +100,9 @@ const hub = ['수도', 51, 8];
 
 module.exports = {
     id: 'mini', title: '작은 전쟁', saveVersion: 1,
+    // The data's second edition (engine.js): the hills front gains +1 (modifiers).
+    edition: 2,
+    rehearsal: { lead: ['wagon'], guard: { stat: 'morale', min: 20 } },
     factions, fronts, frontOrder: ['river', 'hills'], startLines: { river: 1, hills: 1 },
     troops: { militia: { name: '민병', note: '' } },
     cards: {
@@ -150,7 +162,10 @@ module.exports = {
     spoils: { food: 1, max: 1 },
     frontMoves: { gained: { trust: 1 }, lost: { trust: -1 } },
     verdict: { behind: { morale: -2, note: '사기가 꺾였다.' }, ahead: { morale: 1 } },
-    modifiers: [{ front: 'river', when: { turn: 'spring', choice: 'march' }, strength: 1, label: '행군' }],
+    modifiers: [
+        { front: 'river', when: { turn: 'spring', choice: 'march' }, strength: 1, label: '행군' },
+        { front: 'hills', when: { edition: ['>=', 2] }, strength: 1, label: '둘째 판' },
+    ],
     extraThreats: [],
     scoring: {
         stars: [{ id: 'won', label: '언덕을 넘음', when: { won: true } }, { id: 'trust', label: '신뢰 50 이상', when: { stat: ['trust', '>=', 50] } }],

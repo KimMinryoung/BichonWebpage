@@ -29,7 +29,14 @@
    (STANDING per city, ±STANDING_MAX); 10 the 1st Cavalry Army is one
    army, sent with its card to one front a season, not +4 on three; 11 the
    data's content marked rules 11 (a battle in the opening season, one
-   history lost: its reward pays a win, wonBy). */
+   history lost: its reward pays a win, wonBy).
+
+   A generation is the engine's: it changes what the code does for every
+   scenario. A change to one scenario's own data that would replay an old
+   save differently is that scenario's edition instead (D.edition, s.edition,
+   kept in the save beside rules; the condition key `edition`), so one war's
+   balance never moves another's generation. A new optional field that no
+   old save could have met needs neither. */
 (function (root) {
     'use strict';
 
@@ -54,6 +61,7 @@
         // The order the season's stat changes land in; 'cities' is where a
         // city's fall or recapture applies its effects (onLost).
         const SETTLE_ORDER = ECON.settleOrder || STATS.concat('cities');
+        const EDITION = D.edition || 1;
 
         function commandOf(value) {
             return D.command.tiers.find(([min]) => value >= min)[1];
@@ -61,11 +69,13 @@
 
         // rules: the save's generation (see above), so its logged orders
         // replay as they were.
-        function start(rules = RULES) {
+        // edition: the save's edition of this scenario's data (D.edition, 1
+        // when the scenario has none).
+        function start(rules = RULES, edition = EDITION) {
             const stats = {};
             for (const id of STATS) stats[id] = ECON.stats[id].start;
             const s = {
-                version: D.saveVersion, rules, turn: 0, phase: 'plan', lastAlloc: {},
+                version: D.saveVersion, rules, edition, turn: 0, phase: 'plan', lastAlloc: {},
                 stats, food: FOOD.start,
                 flags: {}, lines: Object.assign({}, D.startLines),
                 fallen: {}, deserted: 0, unrest: 0, captured: 0, momentum: {}, pursuit: {}, used: {},
@@ -83,7 +93,7 @@
         // two, so s.turn is the season's index in D.turns, not its count.
         const calendars = {};
         function calendar(s) {
-            const key = s.rules;
+            const key = `${s.rules}:${s.edition || 1}`;
             if (!calendars[key]) calendars[key] = D.turns.map((t, i) => i).filter(i => !D.turns[i].when || Cond.holds(s, D.turns[i].when, {}));
             return calendars[key];
         }
@@ -941,8 +951,17 @@
             return ok;
         }
 
+        // A save of the war s with the given log. The edition is written only
+        // by a scenario that has editions, so older saves stay as they were.
+        function saveOf(s, log) {
+            const out = { version: D.saveVersion, rules: s.rules };
+            if (D.edition) out.edition = s.edition || 1;
+            out.log = log;
+            return out;
+        }
+
         function serialize(s) {
-            return JSON.stringify({ version: D.saveVersion, rules: s.rules, log: s.log });
+            return JSON.stringify(saveOf(s, s.log));
         }
 
         function restore(text) {
@@ -950,7 +969,9 @@
                 const saved = typeof text === 'string' ? JSON.parse(text) : text;
                 if (!saved || saved.version !== D.saveVersion || !Array.isArray(saved.log)) return null;
                 const rules = saved.rules || 1;
-                const s = start(rules);
+                const edition = saved.edition || 1;
+                if (!Number.isInteger(edition) || edition < 1 || edition > EDITION) return null;
+                const s = start(rules, edition);
                 let season = 0;     // log entries up to the latest season begun
                 for (const [i, entry] of saved.log.entries()) {
                     if (!Array.isArray(entry)) return null;
@@ -971,7 +992,7 @@
                     if (typeof entry[0] === 'string' && entry[0].startsWith('b:')) continue;
                     // A plan the rules no longer allow (a save from before a rule
                     // change) is planned again from the start of its season.
-                    return season ? restore({ version: D.saveVersion, rules, log: saved.log.slice(0, season) }) : null;
+                    return season ? restore({ version: D.saveVersion, rules, edition, log: saved.log.slice(0, season) }) : null;
                 }
                 return s;
             } catch (_) {
@@ -995,7 +1016,7 @@
             const log = s.log.slice();
             let order = log.pop();
             if (order[0] === 'b:wait' && order[2] === 'auto' && log.length && log[log.length - 1][0] === 'b:move') order = log.pop();
-            const state = restore({ version: D.saveVersion, rules: s.rules, log });
+            const state = restore(saveOf(s, log));
             return state ? { state, order } : null;
         }
 
@@ -1010,7 +1031,7 @@
             if (!canRetryBattle(s)) return null;
             let j = s.log.length - 1;
             while (j >= 0 && s.log[j][0].startsWith('b:')) j--;
-            const state = restore({ version: D.saveVersion, rules: s.rules, log: s.log.slice(0, j + 1) });
+            const state = restore(saveOf(s, s.log.slice(0, j + 1)));
             return state && state.phase === 'battle' ? state : null;
         }
 
@@ -1026,7 +1047,7 @@
             if (!canRetrySeason(s)) return null;
             let j = s.log.length - 1;
             while (j >= 0 && s.log[j][0] !== 'settle') j--;
-            const state = restore({ version: D.saveVersion, rules: s.rules, log: s.log.slice(0, j) });
+            const state = restore(saveOf(s, s.log.slice(0, j)));
             return state && state.phase === 'plan' ? state : null;
         }
 
@@ -1036,6 +1057,10 @@
         // history's choices and answers, each plan's free divisions to the
         // front furthest short, every battle before it assumed won as
         // history went. Null when the battle is not reached.
+        // How the rehearsal plays the cards (D.rehearsal): lead, cards sent
+        // to the heaviest front; skip, cards never played; guard: { stat,
+        // min }, a stat the cards may not take below min.
+        const REHEARSAL = Object.assign({ lead: [], skip: [], guard: null }, D.rehearsal);
         function rehearse(id, rules = RULES) {
             const s = start(rules);
             for (let guard = 0; guard < 4 * D.turns.length; guard++) {
@@ -1047,16 +1072,18 @@
                 } else if (s.phase === 'plan') {
                     act(s, 'choose', turnData(s).choice.history);
                     for (const inc of incidentsOf(s)) if (!responseOf(s, inc)) act(s, 'respond', inc.history);
-                    // The train to the heaviest front, a card history sent
-                    // somewhere (historyAt) there, the cards the party can
-                    // bear, the leaders with a division each to the heaviest
-                    // fronts, the rest by need.
+                    // The scenario's lead cards (rehearsal.lead) to the
+                    // heaviest front, a card history sent somewhere
+                    // (historyAt) there, the other cards but those it
+                    // skips and those that would take its guarded stat
+                    // below the floor, the leaders with a division each to
+                    // the heaviest fronts, the rest by need.
                     const threats = threatsOf(s);
                     const fronts = activeFronts(s).sort((a, b) => threats[b].pressure - threats[a].pressure);
                     for (const c of turnData(s).cards) {
-                        if (c === 'train') act(s, 'play', c, fronts[0]);
+                        if (REHEARSAL.lead.includes(c)) act(s, 'play', c, fronts[0]);
                         else if (D.cards[c].historyAt) { if (D.cards[c].historyAt[turnData(s).id]) act(s, 'play', c, D.cards[c].historyAt[turnData(s).id]); }
-                        else if (c !== 'requisition' && s.stats.cohesion + cardStat(s, D.cards[c], c, 'cohesion') >= 40) act(s, 'play', c);
+                        else if (!REHEARSAL.skip.includes(c) && (!REHEARSAL.guard || s.stats[REHEARSAL.guard.stat] + cardStat(s, D.cards[c], c, REHEARSAL.guard.stat) >= REHEARSAL.guard.min)) act(s, 'play', c);
                     }
                     fronts.forEach(f => act(s, 'alloc', f, 0));
                     fronts.slice(0, s.plan.commissars).forEach(f => { if (free(s) > 0) act(s, 'alloc', f, 1); act(s, 'commissar', f, true); });
@@ -1072,7 +1099,7 @@
         }
 
         return {
-            calendar, prevOf, DATA: D, VERSION: D.saveVersion, canTakeBack, takeBack, canRetryBattle, retryBattle, canRetrySeason, retrySeason, rehearse, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
+            calendar, prevOf, DATA: D, VERSION: D.saveVersion, EDITION, saveOf, canTakeBack, takeBack, canRetryBattle, retryBattle, canRetrySeason, retrySeason, rehearse, RULES, TRANSFER: O.transfer, MOMENTUM: O.momentum, PURSUIT: O.pursuit, SPOILS_FOOD: D.spoils.food, SPOILS_MAX: D.spoils.max,
             start, act, restore, serialize, forecast, activeFronts, turnData, when,
             free, allocated, threatsOf, traitsOn, traitOf, prizeOf, battleOf, incidentsOf, responseOf, barred, musterOf, battleResult, cardDivisions, cardStat, commandOf, mobilizeSources, outcomeOf, outcomeBands, capBattle, commissarsUsed, canPlay, cardOffered, canSettle, quality, foodIncome,
         };

@@ -15,7 +15,9 @@ const engineOf = id => {
 };
 
 // A play report, or null when it is not one: { runId, attempt, seq,
-// scenario, save: { version, rules, log }, narrow }.
+// scenario, save: { version, rules, edition?, log }, narrow }. The
+// scenario's data edition (engine.js) has no column: the replay keeps it in
+// stats.edition.
 function normalize(body) {
     if (!body || typeof body.runId !== 'string' || !UUID.test(body.runId)) return null;
     if (!Number.isInteger(body.attempt) || body.attempt < 0 || body.attempt > 100) return null;
@@ -23,15 +25,17 @@ function normalize(body) {
     if (typeof body.scenario !== 'string' || !Object.hasOwn(SCENARIOS, body.scenario)) return null;
     const save = body.save;
     if (!save || !Number.isInteger(save.version) || !Number.isInteger(save.rules) || !Array.isArray(save.log)) return null;
+    if (save.edition !== undefined && !Number.isInteger(save.edition)) return null;
     if (save.log.length > MAX_DECISIONS || !save.log.every(e => Array.isArray(e) && typeof e[0] === 'string' && e.length <= 8)) return null;
     return { runId: body.runId, attempt: body.attempt, seq: body.seq, scenario: body.scenario,
-        save: { version: save.version, rules: save.rules, log: save.log }, narrow: body.narrow === true };
+        save: Object.assign({ version: save.version, rules: save.rules }, save.edition !== undefined ? { edition: save.edition } : {}, { log: save.log }), narrow: body.narrow === true };
 }
 
 // What the rules make of the log: null when it does not replay at all.
 function replay(play) {
     const G = engineOf(play.scenario);
     if (play.save.rules < 1 || play.save.rules > G.RULES) return null;
+    if (play.save.edition !== undefined && (play.save.edition < 1 || play.save.edition > G.EDITION)) return null;
     const s = G.restore(play.save);
     if (!s) return null;
     const ended = s.phase === 'done';
@@ -39,7 +43,7 @@ function replay(play) {
         replayed: s.log.length, turn: s.turn, phase: s.phase, ended,
         outcome: ended && s.outcome ? s.outcome.kind || null : null,
         stars: ended && s.outcome && Array.isArray(s.outcome.stars) ? s.outcome.stars.filter(x => x.got).length : null,
-        stats: Object.assign({}, s.stats, { food: s.food, lines: s.lines }),
+        stats: Object.assign({}, s.stats, { food: s.food, lines: s.lines }, G.DATA.edition ? { edition: s.edition } : {}),
     };
 }
 

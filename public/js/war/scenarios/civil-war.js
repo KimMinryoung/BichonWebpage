@@ -1977,6 +1977,10 @@
         // A battle's merits (war/ui/game.js battleMerits): the win, a quick
         // one (the reward's quick, else par), every Red unit brought back.
         merits: { quick: '빠른 승리', whole: '한 부대도 잃지 않음' },
+        // The first-game guide's word on the stat bars (war/ui/game.js coachSteps).
+        coach: { stats: '위의 세 막대가 공화국의 형편입니다. 농민·노동자 지지와 당 결속이 무너지면 나라가 버티지 못합니다.' },
+        // Battle units' kinds as the unit card names them (war/ui/game.js unitInfo).
+        kinds: { rail: '장갑열차' },
     };
 
     // ── The campaign's rules (war/engine.js; schema in dev_docs/war-engine.md) ──
@@ -2107,12 +2111,16 @@
             { id: 'peasants', label: '농민 지지 40 이상으로 종전', when: { stat: ['peasants', '>=', 40] } },
         ],
         won: { title: '크림으로 가는 길이 열렸다', text: '유럽 러시아의 백군 저항은 끝났다.' },
-        stalled: { title: '브란겔이 겨울을 넘긴다', text: '페레코프를 넘지 못했다. 역사에서는 11월 11일 유슌 방어선이 뚫렸고, 브란겔은 크림을 떠났다.' },
+        stalled: { kicker: '크림을 넘지 못함', title: '브란겔이 겨울을 넘긴다', text: '페레코프를 넘지 못했다. 역사에서는 11월 11일 유슌 방어선이 뚫렸고, 브란겔은 크림을 떠났다.' },
     };
+    // The rehearsal's cards (engine rehearse, ?battle=<id>): Trotsky's
+    // train to the heaviest front, no requisition, the party's cohesion
+    // kept at 40.
+    const rehearsal = { lead: ['train'], skip: ['requisition'], guard: { stat: 'cohesion', min: 40 } };
     const data = {
         id: 'civil-war', title: '붉은 전선 1918–1920', saveVersion: 1, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
         map, ui, portraits, pictures, pictureDir: '/images/civil-war/', roles, glossary,
-        texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring,
+        texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring, rehearsal,
     };
     if (typeof module === 'object' && module.exports) module.exports = data;
     else (root.WarScenarios = root.WarScenarios || {})[data.id] = data;

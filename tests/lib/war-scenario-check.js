@@ -9,7 +9,14 @@ const Art = require('../../public/js/war/art.js');
 const fs = require('fs');
 const path = require('path');
 
-const VOICE_WHEN = /^(start|goal|flood|reserve|surrender|air|turn:\d+|turned:[\w-]+|feat:[\w-]+)$/;
+// The map marks war/ui/glyphs.js draws: the keys of its MAP_MARKS, read
+// from the source (the file needs a browser to load).
+const MAP_MARKS = (() => {
+    const src = require('node:fs').readFileSync(require('node:path').join(__dirname, '../../public/js/war/ui/glyphs.js'), 'utf8');
+    const block = src.slice(src.indexOf('const MAP_MARKS = {'), src.indexOf('};', src.indexOf('const MAP_MARKS = {')));
+    return [...block.matchAll(/^\s{8}(\w+): \{/gm)].map(m => m[1]);
+})();
+const VOICE_WHEN = /^(start|goal|flood|reserve|surrender|air|weather|turn:\d+|turned:[\w-]+|feat:[\w-]+)$/;
 const SOURCE = /^https:\/\//;
 
 function checkScenario(D) {
@@ -47,6 +54,14 @@ function checkScenario(D) {
     for (const k of D.economy.settleOrder || []) need(k === 'cities' || stats.includes(k), `settleOrder: ${k}`);
     need(stats.includes(D.command.stat), 'command.stat');
     need(D.command.tiers.some(([min]) => min <= 0), 'command.tiers reach 0');
+    // The scenario's own data generation (engine.js), and how the rehearsal plays its cards.
+    need(D.edition === undefined || (Number.isInteger(D.edition) && D.edition >= 1), 'edition is a whole number from 1');
+    if (D.rehearsal) {
+        for (const id of [].concat(D.rehearsal.lead || [], D.rehearsal.skip || [])) need(cards[id], `rehearsal: card ${id}`);
+        if (D.rehearsal.guard) need(stats.includes(D.rehearsal.guard.stat) && typeof D.rehearsal.guard.min === 'number', 'rehearsal.guard names a stat and a floor');
+    }
+    // A card's map mark is one war/ui/glyphs.js draws.
+    for (const [id, c] of Object.entries(cards)) if (c.glyph) need(MAP_MARKS.includes(c.glyph), `card ${id}: glyph ${c.glyph}`);
     for (const f of D.leaders.fewer || []) cond(f.when, 'leaders.fewer');
     for (const m of D.quality.mods || []) cond(m.when, 'quality.mods');
     for (const src of D.mobilize.sources) {
@@ -254,7 +269,23 @@ function checkScenario(D) {
             if (u.card) need(cards[u.card], `${at}: ${u.id} card ${u.card}`);
             if (u.person) drawn.add(u.person[1]);
         }
-        if (def.air) for (const uid of def.air.units) need(ids.has(uid), `${at}: air raid on ${uid}`);
+        for (const raid of Battle.raidsOf(def)) {
+            for (const uid of raid.units) need(ids.has(uid), `${at}: air raid on ${uid}`);
+            need(Battle.raidTurns(raid).every(t => Number.isInteger(t) && t >= 1 && t <= def.turnLimit), `${at}: air raid turns`);
+            need(Number.isInteger(raid.dmg) && raid.dmg > 0, `${at}: air raid dmg`);
+            need(raid.against === undefined || raid.against === 'enemy', `${at}: air raid against ${raid.against}`);
+        }
+        // Weather: spans in order that do not overlap, each turning known
+        // ground into known ground, and a name to tell the change by.
+        let lastTo = 0;
+        for (const w of def.weather || []) {
+            need(Number.isInteger(w.from) && w.from > lastTo && (w.to === undefined || w.to >= w.from), `${at}: weather spans in order (${w.name})`);
+            lastTo = w.to === undefined ? Infinity : w.to;
+            need(typeof w.name === 'string' && w.name, `${at}: weather name`);
+            for (const [from, to] of Object.entries(w.tiles || {})) need(def.terrain[from] && def.terrain[to], `${at}: weather ${w.name} turns ${from} into ${to}`);
+        }
+        // The arms: a vs is a number for each kind it names.
+        for (const u of def.units) for (const [k, n] of Object.entries(Object.assign({}, Battle.kindOf(def, u.kind).vs, u.vs))) need(Number.isInteger(n), `${at}: ${u.id} vs ${k}`);
         const speakers = new Set([...ids].concat(def.units.filter(u => u.feat && u.feat.unit).map(u => u.feat.unit.id)));
         const feats = new Set(def.units.filter(u => u.feat).map(u => u.feat.id));
         for (const v of def.voices || []) {

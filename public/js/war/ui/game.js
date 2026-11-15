@@ -17,7 +17,7 @@
     const W = Object.assign({ strength: '전투력', pressure: '압력', perDivision: `${U.unit}당` }, U.words);
     const KEY = U.save;
     const { el, svg, link, picture, signed, josa, textWidth, NEW_TAB } = window.WarDom;
-    const { CELL, star, trainGlyph, trainIcon, starIcon, cavalryGlyph, cavalryIcon, tileMarks, unitPicture } = window.WarGlyphs;
+    const { CELL, star, starIcon, tileMarks, unitPicture, MAP_MARKS, markOf } = window.WarGlyphs;
     const FED = D.economy.food.fed;      // a starving division's share of its strength
     const $ = id => document.getElementById(id);
 
@@ -372,7 +372,7 @@
         const decided = G.incidentsOf(s).every(inc => G.responseOf(s, inc)) && Boolean(s.plan.choice);
         const front = $('cwFronts').querySelector('article.cw-front');
         return [
-            { id: 'stats', ack: true, done: campTab !== 'scene', at: G.turnData(s).scene ? $('cwScene') : $('cwBrief'), text: `위의 세 막대가 공화국의 형편입니다. 농민·노동자 지지와 당 결속이 무너지면 나라가 버티지 못합니다. 맨 위 줄의 ${U.unit}·지휘력·${U.food}은 이번 시기에 쓸 몫입니다. 먼저 이 시기의 장면을 보세요.` },
+            { id: 'stats', ack: true, done: campTab !== 'scene', at: G.turnData(s).scene ? $('cwScene') : $('cwBrief'), text: `${(U.coach && U.coach.stats) || `위의 막대가 나라의 형편입니다. ${U.hud.map(h => h.label).join('·')}${josa(U.hud[U.hud.length - 1].label, '이', '가')} 무너지면 버티지 못합니다.`} 맨 위 줄의 ${U.unit}·지휘력·${U.food}은 이번 시기에 쓸 몫입니다. 먼저 이 시기의 장면을 보세요.` },
             { id: 'decide', done: decided, at: G.incidentsOf(s).length && !G.incidentsOf(s).every(inc => G.responseOf(s, inc)) ? $('cwIncident') : $('cwChoice'), text: '지도부가 실제로 부딪친 문제입니다. 누가 무엇을 주장했는지 읽고 하나를 고르세요. 버튼 아래 줄이 그 길의 득실이고, 시기가 끝나면 역사의 선택과 견줍니다. 밑줄 친 말을 누르면 풀이가 나옵니다.' },
             { id: 'fronts', done: G.allocated(s) > 0, at: front, inside: true, text: `−·+로 ${josa(U.unit, '을', '를')} 보냅니다. 막대가 ${W.strength}, 그 아래 칸이 ${W.pressure}입니다. ${josa(W.strength, '이', '가')} ${W.pressure}에 닿으면 역사대로, 넘을수록 도시를 더 지키고, 모자라면 잃습니다. 위의 전선 버튼으로 다른 전선을 엽니다.` },
             { id: 'cards', ack: true, done: s.plan.cards.length > 0, at: $('cwCards'), text: '지휘력으로 조언자의 카드를 씁니다. 남은 지휘력은 다음 시기로 넘어가지 않습니다.' },
@@ -871,7 +871,8 @@
         if (when.startsWith('turn:')) return b.turn >= Number(when.slice(5));
         if (when.startsWith('feat:')) return Boolean(b.feats && b.feats[when.slice(5)]);
         if (when === 'surrender') return b.captured > 0;
-        if (when === 'air') return Boolean(b.def.air) && b.turn > b.def.air.turn;
+        if (when === 'air') return B.raidsOf(def).some(raid => B.raidTurns(raid).some(t => b.turn > t));
+        if (when === 'weather') return Boolean(B.weatherOf(b));
         return false;
     }
 
@@ -1120,19 +1121,19 @@
         layer.append(svg('path', { d: star(m.x, m.y, 10, 4.2), class: 'cw-moscow' }));
         layer.append(svg('text', { x: m.x + 11, y: m.y + 4, class: 'cw-city-label is-capital' }, m.name));
         avoid.push({ x0: m.x - 10, x1: m.x + 11 + textWidth(m.name, 13), y0: m.y - 10, y1: m.y + 6 });
-        // A card that runs on rails (Trotsky's train) sits on the railway
-        // where it must: the markers and the strength icons keep clear of it.
-        // A cavalry army sent there rides in behind it on the same line.
-        const trains = {}, horse = {};
+        // A card with a map mark (glyph: Trotsky's train, a cavalry army)
+        // sits on the railway where it must: the markers and the strength
+        // icons keep clear of it. A second mark on the front stands behind
+        // the first on the same line (glyphs.js MAP_MARKS order).
+        const marks = {};
         const sent = (id, test) => s.plan && s.plan.alloc[id] !== undefined && s.plan.cards.some(c => c.target === id && test(D.cards[c.id]));
         for (const id of active) {
-            if (sent(id, card => card.onRail)) {
-                trains[id] = trainOnRail(id);
-                avoid.push(trains[id].box);
-            }
-            if (sent(id, card => card.glyph === 'cavalry')) {
-                horse[id] = trainOnRail(id, trains[id] ? 54 : 24, 'cavalry');
-                avoid.push(horse[id].box);
+            marks[id] = [];
+            for (const glyph of Object.keys(MAP_MARKS)) {
+                if (!sent(id, card => markOf(card) === glyph)) continue;
+                const mark = markOnRail(id, 24 + 30 * marks[id].length, glyph);
+                marks[id].push(mark);
+                avoid.push(mark.box);
             }
         }
         const gliding = new Set();
@@ -1159,15 +1160,10 @@
                         shift(name, u, glide(name, u, route, i * 220 + 500 + k * 45, gliding));
                     });
                 }
-                if (trains[id]) {
-                    trains[id].g.setAttribute('data-front', id);
-                    layer.append(trains[id].g);
-                    if (fc) glide(`train:${id}`, trains[id].g, trains[id].route, i * 220 + 650, gliding);
-                }
-                if (horse[id]) {
-                    horse[id].g.setAttribute('data-front', id);
-                    layer.append(horse[id].g);
-                    if (fc) glide(`cavalry:${id}`, horse[id].g, horse[id].route, i * 220 + 750, gliding);
+                for (const [k, mark] of marks[id].entries()) {
+                    mark.g.setAttribute('data-front', id);
+                    layer.append(mark.g);
+                    if (fc) glide(`${mark.glyph}:${id}`, mark.g, mark.route, i * 220 + 650 + 100 * k, gliding);
                 }
             }
         }
@@ -1559,11 +1555,10 @@
         return g;
     }
 
-    // Trotsky's train on the railway that leads to the front's last held
-    // city, a little short of the city so the city's dot stays clear.
-    // A cavalry army (glyph 'cavalry') stands the same way, further back
-    // when the train is there.
-    function trainOnRail(id, back = 24, glyph = 'train') {
+    // A card's map mark (glyphs.js MAP_MARKS) on the railway that leads to
+    // the front's last held city, back along it from the city so the
+    // city's dot stays clear.
+    function markOnRail(id, back, glyph) {
         const line = s.lines[id];
         const route = routeOf([points.hub, ...points.fronts[id].slice(0, line)]);
         let i = route.length - 1, p = route[i];
@@ -1574,10 +1569,8 @@
             else { back -= len; p = q; i--; }
         }
         const g = svg('g', { class: 'cw-train-on-rail', 'aria-hidden': 'true' });
-        // Wheels (or hooves) on the rail.
-        if (glyph === 'cavalry') g.append(cavalryGlyph(p.x - 15, p.y - 20.5, 30));
-        else g.append(trainGlyph(p.x - 12, p.y - 16, 24));
-        return { g, route: route.slice(0, i).concat([p]), box: { x0: p.x - 15, x1: p.x + 15, y0: p.y - 20, y1: p.y + 5 } };
+        g.append(MAP_MARKS[glyph].draw(p));
+        return { g, glyph, route: route.slice(0, i).concat([p]), box: { x0: p.x - 15, x1: p.x + 15, y0: p.y - 20, y1: p.y + 5 } };
     }
 
 
@@ -2026,10 +2019,9 @@
         }
         const bonuses = f.bonuses || [];
         for (const b of bonuses.filter(b => b.v > 0)) {
-            const rail = Boolean(D.cards[b.kind] && D.cards[b.kind].onRail);
-            const cav = Boolean(D.cards[b.kind] && D.cards[b.kind].glyph === 'cavalry');
-            const icon = b.kind === 'commissar' ? starIcon() : rail ? trainIcon() : cav ? cavalryIcon() : el('small', {}, `+${b.v}`);
-            out.push(el('span', { class: `cw-seg is-${b.kind === 'commissar' ? 'commissar' : rail || cav ? 'train' : 'other'}`, style: span(x, x + b.v), title: `${b.label} +${b.v}` }, icon));
+            const mark = markOf(D.cards[b.kind]);
+            const icon = b.kind === 'commissar' ? starIcon() : mark ? MAP_MARKS[mark].icon() : el('small', {}, `+${b.v}`);
+            out.push(el('span', { class: `cw-seg is-${b.kind === 'commissar' ? 'commissar' : mark ? 'train' : 'other'}`, style: span(x, x + b.v), title: `${b.label} +${b.v}` }, icon));
             x += b.v;
         }
         const minus = bonuses.filter(b => b.v < 0 && b.kind !== 'rail').reduce((a, b) => a - b.v, 0);
@@ -2966,6 +2958,7 @@
             }),
             def.protect ? row('지킬 곳', `${def.protect.name}${def.outlast ? ` · ${def.turnLimit}턴 끝까지 지키면 승리` : ''} · ${josa(foeName(), '이', '가')} 들어서면 패배${postAt || battleEnded ? '' : ' · 지금 비었음'}`, postAt || battleEnded ? null : 'is-alarm') : null,
             merits.length ? row('전공', meritList(merits)) : null,
+            def.weather ? row('날씨', weatherText(b)) : null,
             def.windTurns ? row('여울', B.fordOpen(b) ? `${def.ford} 열림 · ${def.windTurns - b.turn + 1}턴 남음` : `${def.ford} 물에 잠김`) : null,
             ...Object.values(def.lines).map((l, i) => row('우회', b.turned[Object.keys(def.lines)[i]] ? `${l.name} 끊음 · 진지 방어가 +1로 줄었다` : `${l.name} · 점선 구역에 서면 수비대의 뒤가 끊긴다`)),
             !Object.keys(def.sectors).length ? null : row('예비대', b.reserve ? `${foeName()} 예비대가 ${def.sectors[b.reserve].name} 쪽에 묶임` : `${foeName()} 예비대는 아직 그대로`),
@@ -3256,7 +3249,9 @@
         return `진지 +${t.def}→${Math.max(0, now - more)}`;
     }
 
-    const UNIT_KIND = { inf: '보병', cav: '기병', art: '포병', rail: '장갑열차' };
+    // A unit's kind as its card names it: the common arms, and the
+    // scenario's own words (ui.kinds) over them.
+    const UNIT_KIND = Object.assign({ inf: '보병', cav: '기병', art: '포병', tank: '전차', at: '대전차포', rail: '열차' }, U.kinds);
     function unitInfo(u) {
         const b = s.battle;
         const t = B.terrain(b, u.r, u.c);
@@ -3282,9 +3277,29 @@
             featInfo(b, u),
             u.skirmish ? el('p', { class: 'cw-note' }, '타찬카(기관총 수레): 움직이기 전에 치면, 친 뒤에도 움직일 수 있다.') : null,
             u.flank ? el('p', { class: 'cw-note' }, `측면 타격: 곁에 같은 편 부대가 없는 부대를 칠 때 피해 +${u.flank}.`) : null,
+            armsNote(u),
             u.yielded ? el('p', { class: 'cw-note' }, `투항해 ${josa(U.player, '으로', '로')} 넘어온 부대다.`) : null,
             B.isPlayer(b, u) ? el('p', { class: 'cw-note cw-info-dup' }, u.acted ? (B.canMove(b, u) ? '쳤다. 아직 움직일 수 있다.' : '이번 턴의 행동을 마쳤다.') : u.moved ? '이동했다. 공격하거나 대기할 수 있다.' : '이동하거나 공격할 수 있다.') : null,
             B.isEnemy(b, u) && u.role ? el('p', { class: 'cw-note cw-info-dup' }, roleNote(b, u) + (B.marching(b, u) ? ' 다음 턴에 움직인다.' : '')) : null);
+    }
+
+    // The arms a unit meets unequally (battle.js KINDS vs) and its
+    // breakthrough: 「전차에 피해 +3」, 「적 곁에서 멈추지 않고 지나감」.
+    function armsNote(u) {
+        const vs = Object.entries(u.vs || {}).filter(([, n]) => n);
+        const parts = vs.map(([k, n]) => `${UNIT_KIND[k] || k}에 피해 ${signed(n)}`);
+        if (u.breaks) parts.push('적 곁에서 멈추지 않고 지나감');
+        return parts.length ? el('p', { class: 'cw-note' }, `병종: ${parts.join(' · ')}.`) : null;
+    }
+
+    // The board's weather now and its next change (battle.js weather).
+    function weatherText(b) {
+        const def = b.def;
+        const now = B.weatherOf(b);
+        let next = null;
+        for (let t = b.turn + 1; t <= def.turnLimit; t++) if (B.weatherOf(b, t) !== now) { next = t; break; }
+        const then = next ? B.weatherOf(b, next) : null;
+        return [now ? now.name : (def.weatherCalm || '평소'), now && now.note, next ? `${next}턴부터 ${then ? then.name : def.weatherCalm || '평소'}` : null].filter(Boolean).join(' · ');
     }
 
     // A unit's feat: what it does, and its button (or whom it can strike),
@@ -3344,7 +3359,8 @@
             if (e.type === 'tide') return `바람이 바뀌었다. ${b.def.ford}에 물이 다시 차오른다.`;
             if (e.type === 'feat') return `결정적 한 수: ${name(e.id)}의 「${b.units.find(u => u.id === e.id).feat.name}」.`;
             if (e.type === 'surrender') return `${josa(name(e.id), '이', '가')} 총을 내려놓고 ${josa(U.player, '으로', '로')} 넘어왔다.`;
-            if (e.type === 'air') return `${foeName()} 비행기가 ${josa(name(e.id), '을', '를')} 덮쳤다: 피해 ${e.dmg}`;
+            if (e.type === 'air') return `${josa(e.by || (e.mine ? `${U.player} 비행기` : `${foeName()} 비행기`), '이', '가')} ${josa(name(e.id), '을', '를')} 덮쳤다: 피해 ${e.dmg}`;
+            if (e.type === 'weather') return e.name ? `날씨가 바뀌었다: ${e.name}.` : `${josa(e.was, '이', '가')} 끝났다.`;
             if (e.type === 'raised') return `${josa(name(e.id), '이', '가')} 열차에서 내려 총을 들었다.`;
             return '';
         }).filter(Boolean);
@@ -3505,7 +3521,7 @@
     function renderOutcome() {
         const o = s.outcome;
         const endGlossed = new Set();
-        const items = [el('p', { class: 'games-kicker' }, o.kind === 'won' ? '종전' : o.stars ? '크림을 넘지 못함' : '패배'), el('h2', { id: 'cwOutcomeTitle' }, o.title), el('p', {}, o.text)];
+        const items = [el('p', { class: 'games-kicker' }, (D.scoring[o.kind] && D.scoring[o.kind].kicker) || (o.kind === 'won' ? '종전' : o.stars ? '끝 전투를 넘지 못함' : '패배')), el('h2', { id: 'cwOutcomeTitle' }, o.title), el('p', {}, o.text)];
         if (o.stars) {
             items.push(el('ul', { class: 'cw-stars' }, ...o.stars.map(st => el('li', { class: st.got ? 'is-got' : '' }, (st.got ? '★ ' : '☆ ') + st.label))));
             items.push(el('p', {}, `시기마다 쥔 도시를 모두 더하면 역사보다 ${signed(o.diff)}`));
@@ -3523,7 +3539,7 @@
         const replan = G.canRetrySeason(s);
         if (replan) actions.push(el('button', { type: 'button', class: G.canRetryBattle(s) ? '' : 'cw-primary', 'data-key': 'replan', onclick: () => retrySeason(s) }, `${D.turns[s.turn].date} 다시 계획하기`));
         actions.push(el('button', { type: 'button', class: G.canRetryBattle(s) || replan ? '' : 'cw-primary', onclick: () => { if (!practice) try { localStorage.removeItem(KEY); } catch (_) { /* ignore */ } startGame(G.start()); report.begin(); save(); } }, '새 게임 시작'));
-        if (replan) items.push(el('p', { class: 'cw-note' }, '그 시기의 계획으로 돌아가 사단·카드·선택을 다시 짤 수 있습니다. 전선 카드가 패배를 미리 알려 줍니다.'));
+        if (replan) items.push(el('p', { class: 'cw-note' }, `그 시기의 계획으로 돌아가 ${U.unit}·카드·선택을 다시 짤 수 있습니다. 전선 카드가 패배를 미리 알려 줍니다.`));
         if (!o.stars) items.push(el('div', { class: 'cw-outcome-actions' }, ...actions));
         items.push(...retrospect());
         if (o.stars) items.push(...actions);

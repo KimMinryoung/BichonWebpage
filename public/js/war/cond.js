@@ -19,6 +19,8 @@
      won: true | false      the war's final battle was won (scoring)
      historyDiff: [op, n]   the lines, season by season, against history's (scoring)
      rules: [op, n]         the save's rules generation compares to n
+     edition: [op, n]       the save's edition of the scenario's data compares
+                            to n (a data change of one war, engine.js)
      not: cond              the condition does not hold
      all: [cond…]           every one holds
      any: [cond…]           at least one holds
@@ -52,6 +54,7 @@
         won: (s, v, ctx) => Boolean(ctx.won) === v,
         historyDiff: (s, [op, n], ctx) => compare(ctx.historyDiff, op, n),
         rules: (s, [op, n]) => compare(s.rules || 1, op, n),
+        edition: (s, [op, n]) => compare(s.edition || 1, op, n),
         not: (s, v, ctx) => !holds(s, v, ctx),
         all: (s, v, ctx) => v.every(c => holds(s, c, ctx)),
         any: (s, v, ctx) => v.some(c => holds(s, c, ctx)),

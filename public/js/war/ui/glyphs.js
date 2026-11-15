@@ -212,5 +212,15 @@
         return g;
     }
 
-    root.WarGlyphs = { CELL, star, trainGlyph, trainIcon, starIcon, cavalryGlyph, cavalryIcon, tileMarks, unitPicture };
+    // The marks a card leaves on the strategic map (the card's glyph; a card
+    // onRail is a train): draw(p) stands it on the railway at p, icon() is
+    // its sign in the front's strength bar. A front with several stands them
+    // one behind another, in this order. A new mark goes here.
+    const MAP_MARKS = {
+        train: { draw: p => trainGlyph(p.x - 12, p.y - 16, 24), icon: trainIcon },
+        cavalry: { draw: p => cavalryGlyph(p.x - 15, p.y - 20.5, 30), icon: cavalryIcon },
+    };
+    const markOf = card => (card && (card.glyph || (card.onRail ? 'train' : null))) || null;
+
+    root.WarGlyphs = { CELL, star, trainGlyph, trainIcon, starIcon, cavalryGlyph, cavalryIcon, tileMarks, unitPicture, MAP_MARKS, markOf };
 })(window);

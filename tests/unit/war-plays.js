@@ -37,6 +37,9 @@ for (const bad of [
 ]) assert.equal(normalize(bad), null);
 assert.equal(replay(normalize(Object.assign({}, body, { save: Object.assign({}, body.save, { log: [['alloc', 'east', 99]] }) }))), null);
 assert.equal(replay(normalize(Object.assign({}, body, { save: Object.assign({}, body.save, { rules: G.RULES + 1 }) }))), null);
+// An edition of the scenario's data from the future, or not a number.
+assert.equal(replay(normalize(Object.assign({}, body, { save: Object.assign({}, body.save, { edition: G.EDITION + 1 }) }))), null);
+assert.equal(normalize(Object.assign({}, body, { save: Object.assign({}, body.save, { edition: 'x' }) })), null);
 
 // A war played to its end: the server's replay names the outcome.
 const lost = G.start();

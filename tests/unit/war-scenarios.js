@@ -149,4 +149,29 @@ assert.deepEqual(back.records, s.records);
     assert.equal(t.outcome.kind, 'defeat');
 }
 
+// The data's edition (engine.js): a new war is of the latest and says so
+// in its save; a save of an older edition replays under that edition's
+// data (the hills' +1 of edition 2 absent), one from the future is refused.
+{
+    const t = G.start();
+    assert.equal(t.edition, 2);
+    assert.equal(JSON.parse(G.serialize(t)).edition, 2);
+    const has = x => G.forecast(x).fronts.hills.parts.includes('둘째 판 +1');
+    assert.ok(has(t), 'edition 2 data in a new war');
+    const old = G.restore({ version: M.saveVersion, rules: G.RULES, edition: 1, log: [] });
+    assert.ok(old && old.edition === 1 && !has(old), 'an edition-1 save keeps edition 1 data');
+    assert.ok(G.restore({ version: M.saveVersion, rules: G.RULES, log: [] }).edition === 1, 'a save without edition is the first');
+    assert.equal(G.restore({ version: M.saveVersion, rules: G.RULES, edition: 3, log: [] }), null);
+    // A scenario without editions writes none (the civil war's saves stay as they were).
+    const C = Engine.create(published.find(D => D.id === 'civil-war'));
+    assert.ok(!('edition' in JSON.parse(C.serialize(C.start()))));
+}
+
+// The rehearsal plays the scenario's lead card to the heaviest front.
+{
+    const r = G.rehearse('siege');
+    assert.ok(r && r.phase === 'battle' && r.battle.def.id === 'siege');
+    assert.ok(r.log.some(e => e[0] === 'play' && e[1] === 'wagon'), 'the lead card was sent');
+}
+
 console.log(`test-war-scenarios: ${published.length} published scenario(s) and the mini war pass`);
