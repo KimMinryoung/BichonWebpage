@@ -423,14 +423,35 @@
     // ignored), noCounter. A flanker strikes a unit standing alone harder;
     // the order of the day (b.order, a feat) makes the blows of its side
     // this turn harder where another of its units is beside the target.
-    function hit(b, a, d, mod) {
-        const power = a.atk * (0.6 + 0.4 * a.hp / a.maxHp) * (cutOff(b, a) ? cutRule(b).weak : 1);
+    // The blow in its parts, for the screen to show what the number is made
+    // of: the attacker's attack (atk), the share of it his thinned ranks
+    // leave (share) and a pocket leaves (weak), their product (power); the
+    // friends beside the target (ring), the flanker's and the order's and
+    // the arms' and a feat's additions; the defender's own defence (def),
+    // what his ground adds or takes (ground, 0 when a feat ignores it) and
+    // what a pocket takes from him (bare); total is the damage.
+    function hitParts(b, a, d, mod) {
+        const share = 0.6 + 0.4 * a.hp / a.maxHp, weak = cutOff(b, a) ? cutRule(b).weak : 1;
+        const power = a.atk * share * weak;
         const guard = mod && mod.noGround ? d.def - (cutOff(b, d) ? cutRule(b).bare : 0) : defenseOf(b, d);
         const ring = surround(b, a, d);
         const flank = a.flank && alone(b, d) ? a.flank : 0;
         const order = b.order && b.order.turn === b.turn && b.order.side === a.side && ring > 0 ? b.order.plus : 0;
         const arms = (a.vs && a.vs[d.kind]) || 0;
-        return Math.max(1, Math.round(power + ring - guard + flank + order + arms + ((mod && mod.plus) || 0)));
+        const plus = (mod && mod.plus) || 0;
+        const bare = cutOff(b, d) ? cutRule(b).bare : 0;
+        return {
+            atk: a.atk, share, weak, power, ring, flank, order, arms, plus,
+            def: d.def, ground: guard - d.def + bare, bare,
+            total: Math.max(1, Math.round(power + ring - guard + flank + order + arms + plus)),
+        };
+    }
+    const hit = (b, a, d, mod) => hitParts(b, a, d, mod).total;
+
+    // Whether a unit marching onto (r, c) halts there: the tile is beside
+    // an enemy and the unit is none of those that ride on past him.
+    function halts(b, u, r, c) {
+        return u.role !== 'raid' && !u.riding && !u.breaks && enemiesAdjacent(b, u, r, c);
     }
 
     // Whether an enemy unit left with hp men would lay down its arms: below
@@ -447,12 +468,13 @@
     // shells wear the target's fortification, and whether the target
     // surrenders (and so does not strike back).
     function preview(b, a, d, mod) {
-        const dmg = Math.min(d.hp, hit(b, a, d, mod));
+        const parts = hitParts(b, a, d, mod);
+        const dmg = Math.min(d.hp, parts.total);
         const surrender = isPlayer(b, a) && yields(b, d, d.hp - dmg);
         const counters = d.hp > dmg && dist(a, d) === 1 && d.counter && !surrender && !(mod && mod.noCounter);
         const t = terrain(b, d.r, d.c);
         return {
-            dmg, surrender,
+            dmg, surrender, parts,
             counter: counters ? Math.min(a.hp, Math.floor(hit(b, d, a) / 2)) : 0,
             wears: a.wears && Boolean(t.fort) && groundOf(b, d.r, d.c) > 0,
         };
@@ -1219,7 +1241,7 @@
     }
 
     const api = {
-        start, joins, act, reachable, fogged, rangeNow, skyOf, raidDue, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
+        start, joins, act, reachable, fogged, rangeNow, skyOf, raidDue, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, hitParts, halts, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, weatherOf, raidsOf, raidTurns, kindOf, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
         canMove, featBlock, featTargets, featMod, featAimed, featPreview, yields, lost, YIELD_RING, FEATS, ROLES, KINDS,
     };

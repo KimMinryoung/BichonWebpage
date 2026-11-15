@@ -32,10 +32,12 @@
     let tilePicked = null;          // battle: the tile whose ground is shown ({ r, c }), with no unit picked
     let supplyShown = false;
     let lessonFor = null;           // battle: the board whose lesson (def.lesson) is being shown
+    let lessonParts = { own: false, basics: false }; // battle: which lessons that board shows (its own, the basics)
     const lessonAck = new Set();    // battle: the lesson's steps the player has answered        // battle: the supply roads drawn bold with the tiles that shut them (screen state)
     let wingArmed = null;           // battle: the air wing picked (def.wings; screen state)
     let featArmed = null;           // battle: the unit whose aimed feat is switched on (screen state; spent only when it strikes)
     let menaceAll = false;          // battle: every White unit's reach shown at once
+    let aimed = null;               // battle: the enemy whose blow is foretold before it is struck (a phone's first press on a target)
     let endArmed = false;           // battle: 「턴 종료」 pressed once with units still to act
     let lit = null;                 // the front whose card the pointer or focus is on
     let picked = null;              // plan: the front whose card is open
@@ -184,6 +186,24 @@
     function announce(text) {
         $('cwAnnouncement').textContent = '';
         window.setTimeout(() => { $('cwAnnouncement').textContent = text; }, 30);
+    }
+
+    // A notice the player must see as well as hear: why an order was
+    // refused, a warning, a thing done off the screen. It is announced and
+    // shown for a few seconds in a bar pinned over the foot of the screen
+    // (pressing it puts it away).
+    let noticeTimer = null;
+    function notice(text) {
+        announce(text);
+        let bar = $('cwNotice');
+        if (!bar) {
+            bar = el('button', { type: 'button', id: 'cwNotice', class: 'cw-notice', 'aria-hidden': 'true', tabindex: '-1', onclick: () => { bar.hidden = true; } });
+            document.body.append(bar);
+        }
+        bar.textContent = text;
+        bar.hidden = false;
+        window.clearTimeout(noticeTimer);
+        noticeTimer = window.setTimeout(() => { bar.hidden = true; }, 3200);
     }
 
     function markTab(box, tab) {
@@ -490,6 +510,8 @@
             return el('li', {
                 class: i < s.turn ? 'is-past' : i === s.turn ? 'is-current' : '',
                 'aria-current': i === s.turn ? 'step' : null, title: `${turn.date} ${turn.title}`,
+                // A phone has no hover: pressed, the season's date and name are said.
+                onclick: () => notice(`${turn.date} · ${turn.title}`),
             }, el('b', { class: 'cw-cal-year', 'aria-hidden': newYear ? null : 'true' }, newYear ? year : '\u00a0'), el('i', { class: 'cw-cal-bar' }),
             el('span', {}, month ? `${month}월` : ''), el('small', {}, turn.title));
         }));
@@ -1659,6 +1681,14 @@
             key(['cw-key-badge', `공격해 오는 세력 · 칸 하나 = ${W.pressure} 1`]),
             key(['cw-key-ring', '점선 고리: 이번 시기에 잃거나 되찾을 도시(예상)']),
             el('span', {}, el('b', { class: 'cw-key-num' }, '3.5'), `${W.strength} · `, el('i', { class: 'cw-key-pip' }), `${W.strength} 1 · `, starIcon(), ` ${U.leader} ${D.leaders.strength} · `, el('b', { class: 'cw-key-card' }, `+${railCards[0] ? railCards[0].bonus : 3}`), '카드'),
+            // What the map draws without a word of its own: the cards'
+            // marks while planning, the wedges and tags of a season's result.
+            ...(s.phase === 'plan' ? [
+                el('span', {}, '철길 위 표지: 보낸 카드'),
+            ] : [
+                el('span', {}, el('b', { class: 'cw-key-word' }, '긴 쐐기'), '뚫림 · ', el('b', { class: 'cw-key-word' }, '막힌 쐐기'), '막음'),
+                el('span', {}, el('b', { class: 'cw-key-word' }, '▲▼n'), '역사 대비 도시'),
+            ]),
         ]));
     }
 
@@ -1890,7 +1920,7 @@
             'data-hint': why || (from ? `${D.fronts[from].short}에서 이리로` : null),
             'aria-label': from ? `${U.leader}, ${D.fronts[from].short}에서 이리로` : why ? `${U.leader}: ${why}` : null,
             onclick: () => {
-                if (why) { announce(why); return; }
+                if (why) { notice(why); return; }
                 if (from) act('commissar', from, false);
                 act('commissar', id, !on);
                 render();
@@ -1924,7 +1954,7 @@
                 'data-hint': away ? `${away}에서 이리로` : blocked && s.plan.command < card.cost ? '지휘력이 모자랍니다' : null,
                 'aria-label': `${name}, ${W.strength} +${card.bonus}` + (away ? `, ${away}에서 이리로` : ''),
                 onclick: () => {
-                    if (blocked) { if (s.plan.command < card.cost) announce('지휘력이 모자랍니다'); return; }
+                    if (blocked) { if (s.plan.command < card.cost) notice('지휘력이 모자랍니다'); return; }
                     if (played) act('unplay', cid);
                     if (!here) act('play', cid, id);
                     render();
@@ -2026,7 +2056,8 @@
                 el('span', { class: 'cw-sr' }, `, ${W.pressure} ${f.pressure}. ${U.unit} ${f.divisions || 0}개, ${W.perDivision} ${f.perDivision || 0}${(f.bonuses || []).map(b => `, ${b.label} ${signed(b.v)}`).join('')}`)),
             // The strength right under its number, the enemy's pressure under
             // it as thick, on one scale: the two to compare.
-            el('div', { class: 'cw-meter-scale' }, bar, foeRow, ...ticks),
+            // Pressed (a phone has no hover), the ticks are read out: from which strength the result changes.
+            el('div', { class: 'cw-meter-scale', onclick: bands.length > 1 ? () => notice(bands.slice(1).map(b => `${W.strength} ${b.from}부터 ${versus(b.after)}`).join(' · ')) : null }, bar, foeRow, ...ticks),
             el('div', { class: 'cw-stake-head' },
                 now === '예상' ? null : el('span', { class: 'cw-stake-verdict ' + current.tone }, `${now}: ${versus(current.after)}`),
 ),
@@ -2125,14 +2156,20 @@
             const played = s.plan.cards.find(c => c.id === id);
             let control;
             if (played) {
-                control = el('button', { type: 'button', 'data-key': `unplay-${id}`, onclick: () => { if (!act('unplay', id)) announce(`이미 전선에 보낸 ${josa(U.unit, '이', '가')} 있어 되돌릴 수 없습니다. 먼저 ${josa(U.unit, '을', '를')} 빼세요.`); render(); } },
+                control = el('button', { type: 'button', 'data-key': `unplay-${id}`, onclick: () => { if (!act('unplay', id)) notice(`이미 전선에 보낸 ${josa(U.unit, '이', '가')} 있어 되돌릴 수 없습니다. 먼저 ${josa(U.unit, '을', '를')} 빼세요.`); render(); } },
                     played.target ? `${D.fronts[played.target].short}에 보냄 · 취소` : '사용함 · 취소');
             } else if (card.target === 'front') {
                 control = el('button', { type: 'button', onclick: () => { showPane('cwFronts'); const box = $('cwFronts'); box.scrollIntoView({ block: 'start' }); const first = box.querySelector(`[data-key^="${id}-"]`); if (first) first.focus({ preventScroll: true }); } },
                     PHONE.matches ? '전선 카드에서 보내기' : '전선 카드에서 보내기 ↑');
             } else {
                 const idle = card.needs === 'unrest' && !s.unrest;
-                control = el('button', { type: 'button', 'data-key': `play-${id}`, disabled: !G.canPlay(s, id), title: idle ? card.idle || null : null, onclick: () => { act('play', id); render(); } }, idle ? `${josa(U.unrest, '이', '가')} 없어 못 씀` : `쓰기 (지휘력 ${card.cost})`);
+                // Why a card cannot be played is written under its button, not left to a hover.
+                const why = G.canPlay(s, id) ? null
+                    : idle ? card.idle || null
+                    : s.plan.command < card.cost ? `지휘력 ${card.cost}이 필요하다 (남은 지휘력 ${s.plan.command})`
+                    : card.divisions < 0 ? `${U.unit} ${-card.divisions}개가 있어야 한다` : null;
+                const button = el('button', { type: 'button', 'data-key': `play-${id}`, disabled: !G.canPlay(s, id), onclick: () => { act('play', id); render(); } }, idle ? `${josa(U.unrest, '이', '가')} 없어 못 씀` : `쓰기 (지휘력 ${card.cost})`);
+                control = why ? el('div', { class: 'cw-card-blocked' }, button, el('p', { class: 'cw-note' }, why)) : button;
             }
             grid.append(el('article', { class: 'cw-card' + (played ? ' is-played' : '') },
                 el('h4', {}, card.title, ' ', el('small', { class: 'cw-advisor' }, person(card.advisor))),
@@ -2213,7 +2250,7 @@
             ...(c.picture ? [figure(c.picture, 'cw-choice-picture')] : []),
             ...setting(c),
             el('div', { class: 'cw-options', role: 'group', 'aria-label': c.title }, ...c.options.map(o => optionButton(o, `choice-${o.id}`, s.plan.choice === o.id,
-                () => { if (!act('choose', o.id)) { announce(tooMany()); return render(); } decidedNow(); }))));
+                () => { if (!act('choose', o.id)) { notice(tooMany()); return render(); } decidedNow(); }))));
     }
 
     // The season's incidents: what happened, and the answers to each; a
@@ -2233,7 +2270,7 @@
                 el('div', { class: 'cw-options', role: 'group', 'aria-label': inc.title }, ...inc.options.map(o => optionButton(o, `respond-${o.id}`, s.plan.responses[inc.id] === o.id, () => {
                     if (!act('respond', o.id)) {
                         const card = (o.bars || []).map(id => D.cards[id]).find(Boolean);
-                        announce(card && s.plan.cards.some(c => o.bars.includes(c.id)) ? `먼저 「${card.title}」 카드를 거두세요.` : tooMany());
+                        notice(card && s.plan.cards.some(c => o.bars.includes(c.id)) ? `먼저 「${card.title}」 카드를 거두세요.` : tooMany());
                         return render();
                     }
                     decidedNow();
@@ -2319,7 +2356,8 @@
         const battle = G.battleOf(s);
         if (look.doom) return el('p', { class: 'cw-outlook is-doom', role: 'status' }, `${josa(lastCity(look.doom, D.fronts[look.doom].defeat.at), '이', '가')} 떨어진다 → 패배`);
         const sum = look.sum;
-        return el('p', { class: 'cw-outlook' + (sum > 0 ? ' is-ahead' : sum < 0 ? ' is-behind' : ''), role: 'status', title: battle && !battle.final ? '전투가 역사처럼 끝날 때의 예상' : null },
+        const about = [sum ? `이 계획이면 역사보다 도시 ${Math.abs(sum)}곳 ${sum > 0 ? '앞선다' : '뒤진다'}` : '이 계획이면 전선이 역사대로 움직인다', battle && !battle.final ? '전투가 역사처럼 끝날 때의 예상이다' : null, U.medal ? `${U.medal.name}: ${U.medal.rule}` : null].filter(Boolean).join(' · ');
+        return el('p', { class: 'cw-outlook' + (sum > 0 ? ' is-ahead' : sum < 0 ? ' is-behind' : ''), role: 'status', title: battle && !battle.final ? '전투가 역사처럼 끝날 때의 예상' : null, onclick: () => notice(about) },
             el('span', {}, '예상 '), el('b', {}, sum ? `${sum > 0 ? '▲' : '▼'}${Math.abs(sum)}` : '역사대로'),
             U.medal ? el('span', { class: 'cw-medal-chip' + (look.medal ? ' is-got' : ''), title: `${U.medal.name}: ${U.medal.rule}`, 'aria-label': `${U.medal.name} ${look.medal ? '받음' : `못 받음, ${U.medal.rule} 받는다`}` },
                 medalIcon(), U.medal.short || U.medal.name) : null);
@@ -2835,19 +2873,35 @@
     // once to a browser (kept there, not in the save).
     const lessonKey = def => `${KEY}-lesson-${def.id}`;
     function lessonBox(b) {
-        const L = b.def.lesson;
-        if (!L || battleEnded) return null;
+        if (battleEnded) return null;
         if (lessonFor !== b) {
             lessonFor = b; lessonAck.clear();
-            let seen = false;
-            try { seen = Boolean(localStorage.getItem(lessonKey(b.def))); } catch (_) { seen = false; }
-            if (seen) lessonAck.add('off'); else if (L.supply) supplyShown = true;
+            // The board's own lesson (def.lesson) once a browser, and before
+            // it the basics of any board (a march, where it must end, a
+            // blow and its sum, the turn) on the first battle a browser plays.
+            let own = Boolean(b.def.lesson), basics = true;
+            try { own = own && !localStorage.getItem(lessonKey(b.def)); basics = !localStorage.getItem(KEY + '-basics'); } catch (_) { basics = false; }
+            lessonParts = { own, basics };
+            if (!own && !basics) lessonAck.add('off'); else if (own && b.def.lesson.supply) supplyShown = true;
         }
         if (lessonAck.has('off')) return null;
-        const done = () => { lessonAck.add('off'); try { localStorage.setItem(lessonKey(b.def), 'done'); } catch (_) { /* shown again next time */ } renderBattle(); };
+        const L = lessonParts.own ? b.def.lesson : {};
+        const done = () => {
+            lessonAck.add('off');
+            try { if (lessonParts.own) localStorage.setItem(lessonKey(b.def), 'done'); if (lessonParts.basics) localStorage.setItem(KEY + '-basics', 'done'); } catch (_) { /* shown again next time */ }
+            renderBattle();
+        };
         const closed = Boolean(b.pocketed);
         const flew = kind => !(b.wings || []).some(w => w.kind === kind) || (b.wings || []).some(w => w.kind === kind && w.hp < w.maxHp);
+        const marched = b.turn > 1 || b.units.some(u => B.isPlayer(b, u) && (u.moved || u.acted));
+        const struck = b.turn > 1 || b.units.some(u => B.isEnemy(b, u) && u.hp < u.maxHp);
         const steps = [].concat(
+            lessonParts.basics ? [
+                { id: 'b-march', text: `${josa(U.playerUnits, '을', '를')} 누르고 밝은 칸을 눌러 옮긴다. 칸 구석의 숫자는 드는 이동력.`, ack: true, done: marched },
+                { id: 'b-halt', text: `굵은 막대가 그어진 칸은 ${foeName()} 곁이다. 거기서 이동이 끝난다.`, ack: true },
+                { id: 'b-strike', text: (PHONE.matches ? '적을 한 번 누르면 피해와 반격이 뜨고, 다시 누르면 친다.' : '적에 포인터를 올리면 피해와 반격이 뜨고, 누르면 친다.') + ' 그 적 곁에 아군이 있으면 협공 +1(둘까지).', ack: true, done: struck },
+                { id: 'b-turn', text: '★ 부대는 전투마다 한 번 「결정적 한 수」. 다 두면 「턴 종료」.', ack: true },
+            ] : [],
             L.supply ? [
                 { id: 'supply', text: L.supply, ack: true, done: closed },
                 { id: 'close', text: L.close, done: closed },
@@ -2983,6 +3037,9 @@
         const unitEls = new Map();
         const bombed = new Map(battleEnded ? [] : B.raidDue(b).flatMap(x => x.units.map(u => [u.id, Math.min(u.hp - 1, x.raid.dmg)])));
         const targets = wingFlies ? B.wingTargets(b, wing) : armed ? B.featTargets(b, unit) : unit && !unit.acted ? B.targets(b, unit) : [];
+        // A blow foretold on a phone (the first press on a target) is
+        // forgotten once its target is no longer one.
+        if (aimed && !targets.some(t => t.id === aimed)) aimed = null;
         // One White unit's reach when it is picked; every one's with 「백군 위협」.
         const danger = foe ? B.menace(b, foe) : menaceAll ? b.units.filter(u => B.isEnemy(b, u) && u.hp > 0).flatMap(u => B.menace(b, u)) : [];
         const defs = svg('defs');
@@ -3056,6 +3113,15 @@
             hit.addEventListener('click', go);
             hit.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
             board.append(hit);
+            // What the march costs of the unit's movement, in the tile's
+            // corner; a tile beside an enemy, where the march must end
+            // (the zone of control), carries a stop bar at its foot.
+            board.append(svg('text', { x: m.c * CELL + CELL - 6, y: m.r * CELL + 13, 'text-anchor': 'end', class: 'cw-move-cost', 'aria-hidden': 'true' }, String(m.cost)));
+            if (B.halts(b, unit, m.r, m.c)) {
+                hit.classList.add('is-halt');
+                hit.setAttribute('aria-label', hit.getAttribute('aria-label') + `: ${foeName()} 곁이라 여기서 멈춘다`);
+                board.append(svg('rect', { x: m.c * CELL + 8, y: m.r * CELL + CELL - 10, width: CELL - 16, height: 4, class: 'cw-halt-bar', 'aria-hidden': 'true' }));
+            }
             // A tile that would shut the enemy's supply says so before the
             // move: a tag on the tile, and while it is pointed at, a ring
             // on every unit it would cut off.
@@ -3078,6 +3144,14 @@
         // target is pointed at; on a phone while the finger rests on it (the
         // blow goes when it lifts there, and sliding off cancels).
         let counterBar = null;
+        // The blow a phone's first press foretold: it stays on the bars and
+        // in the strip until it is struck or let go.
+        let aimedBlow = null;
+        // The blow's sum beside the board (a wide screen: while a target is pointed at).
+        const showForecast = (p, target) => {
+            const box = $('cwForecast');
+            if (box) box.replaceChildren(...(p ? [forecastLine(b, p, wingFlies ? wing : unit, target)] : []));
+        };
         const showCounter = p => {
             if (!counterBar) return;
             const lost = p ? Math.min(counterBar.hp, p.counter) : 0;
@@ -3118,7 +3192,7 @@
             if (blow && !fallAt.has(blow)) fallAt.set(blow, performance.now());
             const lunge = foeHit && performance.now() - fallAt.get(blow) < LUNGE_MS;
             const g = svg('g', {
-                class: `cw-unit is-${sideOf(b, u)} k-${u.kind}${u.yielded ? ' is-yielded' : ''}${B.cutOff(b, u) ? ' is-cut' : ''}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${done && !B.canMove(b, u) ? ' is-done' : ''}${lunge ? ' is-lunging' : ''}${leap !== null ? ' is-cheering' : ''}`,
+                class: `cw-unit is-${sideOf(b, u)} k-${u.kind}${u.yielded ? ' is-yielded' : ''}${B.cutOff(b, u) ? ' is-cut' : ''}${u.id === selected || u.id === inspected ? ' is-selected' : ''}${isTarget ? ' is-target' : ''}${isTarget && aimed === u.id ? ' is-aimed' : ''}${done && !B.canMove(b, u) ? ' is-done' : ''}${lunge ? ' is-lunging' : ''}${leap !== null ? ' is-cheering' : ''}`,
                 tabindex: '0', role: 'button',
                 style: lunge ? `--lx:${Math.sign(foeHit.c - u.c) * 9}px;--ly:${Math.sign(foeHit.r - u.r) * 9}px;--since:${Math.round(performance.now() - fallAt.get(blow))}ms`
                     : leap !== null ? `--since:${cheer - 300 - leap * 90}ms` : null,
@@ -3181,6 +3255,11 @@
             if (note) g.append(badge(x + CELL + 2, y - 17, note, 'is-preview'));
             const pick = () => {
                 if (battleEnded) return;
+                // On a phone the first press on a target foretells the blow
+                // (what it takes, what comes back, what it is made of) in
+                // the strip over the actions; the second strikes.
+                if (isTarget && PHONE.matches && aimed !== u.id) { aimed = u.id; renderBattle(); return; }
+                aimed = null;
                 if (isTarget && wingFlies) {
                     wingArmed = null;
                     if (act('b:sortie', wing.id, u.id)) afterBattleAct(`${wing.name} 출격: ${u.name}에 피해 ${p.dmg}, 기체 ${p.loss} 잃음`);
@@ -3206,11 +3285,13 @@
             g.addEventListener('click', pick);
             g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(); } });
             if (p) {
-                for (const on of ['pointerenter', 'pointerdown', 'focus']) g.addEventListener(on, () => showCounter(p));
-                for (const off of ['pointerleave', 'pointercancel', 'blur']) g.addEventListener(off, () => showCounter(null));
+                for (const on of ['pointerenter', 'pointerdown', 'focus']) g.addEventListener(on, () => { showCounter(p); showForecast(p, u); });
+                for (const off of ['pointerleave', 'pointercancel', 'blur']) g.addEventListener(off, () => { if (aimedBlow) return; showCounter(null); showForecast(null); });
+                if (aimed === u.id) aimedBlow = { p, target: u };
             }
             board.append(g);
         }
+        if (aimedBlow) showCounter(aimedBlow.p);
         for (const e of b.events.filter(x => x.type === 'fall')) {
             const u = b.units.find(x => x.id === e.id);
             if (u) board.append(wreck(u, e));
@@ -3315,12 +3396,14 @@
             el('li', {}, `${foeName()} 부대를 누르면 다음 턴에 그 부대가 칠 수 있는 칸이 보입니다. 포병은 진지 위의 적을 칠 때마다 방어를 1 깎습니다.`),
             el('li', {}, '부대를 고르지 않은 채 빈 칸을 누르면 그 땅의 방어·이동이 보입니다.'),
             el('li', {}, `말뜻: 「곁」은 상하좌우 네 칸. 「협공」은 치려는 적의 곁에 다른 ${U.playerUnits}가 있는 공격(부대마다 피해 +1, 둘까지). 「포위」는 보급이 끊긴 것.`),
+            el('li', {}, `굵은 막대가 그어진 칸은 ${foeName()} 곁: 이동이 거기서 끝납니다. 칸 구석의 숫자는 드는 이동력.`),
             def.supply && def.supply.enemy ? el('li', {}, `${foeName()}의 보급 띠를 끊으면 그 뒤의 적이 포위됩니다. 부대를 고르면 끊는 칸에 「포위 n」이 붙습니다.`) : null,
             (b.wings || []).length ? el('li', {}, '판 위 「하늘」 줄의 ✈ 단추가 항공 부대입니다. 전투기는 누르면 그 턴의 하늘을 맡고, 습격기는 누른 뒤 판에서 칠 적을 고릅니다.') : null);
         // Folded once the player has shut it (kept in the browser): open only for one who has not.
         let howtoShut = false;
         try { howtoShut = Boolean(localStorage.getItem(KEY + '-howto')); } catch (_) { howtoShut = false; }
-        const hint = howto ? el('details', { class: 'cw-howto-fold', open: !howtoShut }, el('summary', {}, '하는 법'), howto) : null;
+        const hint = howto ? el('details', { class: 'cw-howto-fold', open: !howtoShut }, el('summary', {}, '하는 법'), howto,
+            document.querySelector('details.cw-rules') ? el('p', { class: 'cw-howto-more' }, el('button', { type: 'button', 'data-key': 'rules', onclick: openRules }, '게임 규칙 전체 보기 ↓')) : null) : null;
         if (hint) hint.addEventListener('toggle', () => { try { if (hint.open) localStorage.removeItem(KEY + '-howto'); else localStorage.setItem(KEY + '-howto', 'shut'); } catch (_) { /* opens again next time */ } });
         // The board is built anew on each press; a board scrolled sideways
         // stays where the player left it while the battle lasts.
@@ -3333,20 +3416,21 @@
             battleBrief(b),
             ...(lesson ? [lesson] : []),
             el('div', { class: 'cw-battle-layout' },
-                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : skyBar(b), battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], B.postsOf(def).length ? ['post', `${B.postsOf(def).map(x => x.name).join('·')}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, def.supply ? ['supply', `보급선 (붉은 띠 ${U.player}, 회색 띠 ${foeName()}, 「보급」 표가 보급 기지 · 붉은 빗금은 내 부대가 막은 칸)`] : null, def.supply && def.supply.enemy ? ['pocket', '「포위 n」: 그 칸에 서면 끊기는 적 부대 수 · 붉은 테두리: 포위된 적'] : null, B.raidsOf(def).some(r => r.against !== 'enemy') ? ['raid', `✈ −n: 이번 턴 끝에 ${foeName()} 공습을 맞을 부대`] : null, Object.keys(def.lines).length ? ['flank', '점선 칸: 부대가 서면 그 방어선의 방어가 +1로 준다'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
+                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : fieldBar(b, posts, empty), battleEnded ? null : skyBar(b), battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)};--cw-cols:${cols}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸 (숫자: 이동력)'], ['halt', `${foeName()} 곁: 이동 끝`], B.postsOf(def).length ? ['post', `${B.postsOf(def).map(x => x.name).join('·')}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, def.supply ? ['supply', `보급선 (붉은 띠 ${U.player}, 회색 띠 ${foeName()}, 「보급」 표가 보급 기지 · 붉은 빗금은 내 부대가 막은 칸)`] : null, def.supply && def.supply.enemy ? ['pocket', '「포위 n」: 그 칸에 서면 끊기는 적 부대 수 · 붉은 테두리: 포위된 적'] : null, B.raidsOf(def).some(r => r.against !== 'enemy') ? ['raid', `✈ −n: 이번 턴 끝에 ${foeName()} 공습을 맞을 부대`] : null, Object.keys(def.lines).length ? ['flank', '점선 칸: 부대가 서면 그 방어선의 방어가 +1로 준다'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('dl', { class: 'cw-battle-status', 'data-pane': 'status' }, ...status.map(x => el('div', { class: x.tone || null }, el('dt', {}, x.label), el('dd', {}, x.text)))),
+                    targets.length && !battleEnded ? el('div', { id: 'cwForecast', class: 'cw-forecast-box cw-wide-only', 'aria-hidden': 'true' }) : null,
                     unit || foe || wing || hint ? el('div', { id: 'cwUnitInfo', class: 'cw-unit-info', 'data-pane': unit || foe || wing ? 'field' : 'guide' }, wing ? wingInfo(b, wing) : unit ? unitInfo(unit) : foe ? unitInfo(foe) : hint) : null,
                     battleEnded ? battleClose(b) : el('div', { class: 'cw-battle-actions' },
                         battleTabs(),
-                        unit || foe ? pickedStrip(b, unit || foe) : tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-act-unit cw-act-tile') : null,
+                        aimedBlow ? aimedStrip(b, aimedBlow, wingFlies ? wing : unit) : unit || foe ? pickedStrip(b, unit || foe) : tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-act-unit cw-act-tile') : null,
                         closers.length ? el('p', { class: 'cw-pocket-hint' }, `보급을 끊을 수 있다: ${closers.map(u => u.tag).join('·')} (「포위」 표가 붙은 칸)`) : null,
                         postOpen(b) ? el('p', { class: 'cw-post-alarm' }, `${josa(postOpen(b).name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 다음 턴에 들어오면 이 전투에서 진다.`) : null,
                         G.canTakeBack(s) ? el('button', { type: 'button', 'data-key': 'undo', title: 'Esc · 우클릭', onclick: takeBackOrder }, '취소') : null,
                         unit && !unit.acted ? el('button', { type: 'button', 'data-key': 'wait', onclick: () => { if (act('b:wait', unit.id)) afterBattleAct(`${unit.name} 대기`); } }, el('span', { class: 'cw-wide-only' }, '이 부대 '), '대기') : null,
                         ready && !(unit && !unit.acted && ready === 1) ? el('button', { type: 'button', class: 'cw-wide-only', 'data-key': 'next-unit', title: 'N', onclick: nextUnit }, '다음 부대') : null,
-                        el('button', { type: 'button', 'data-key': 'menace', class: 'cw-toggle cw-wide-only', 'aria-pressed': String(menaceAll), onclick: () => { menaceAll = !menaceAll; renderBattle(); } }, `${foeName()} 위협`),
+                        el('button', { type: 'button', 'data-key': 'menace', class: 'cw-toggle', 'aria-pressed': String(menaceAll), 'aria-label': `${foeName()} 위협`, onclick: () => { menaceAll = !menaceAll; renderBattle(); } }, el('span', { class: 'cw-wide-only' }, `${foeName()} `), '위협'),
                         def.supply ? el('button', { type: 'button', 'data-key': 'supply', class: 'cw-toggle', 'aria-pressed': String(supplyShown), onclick: () => { supplyShown = !supplyShown; renderBattle(); } }, '보급선') : null,
                         el('button', { type: 'button', class: 'cw-primary' + (endArmed ? ' is-armed' : ''), 'data-key': 'end', title: 'E', onclick: endTurn },
                             endArmed ? (postOpen(b) ? `${josa(postOpen(b).name, "을", "를")} 비운 채 턴 종료` : '한 번 더 누르면 턴 종료') : ready || airReady ? `턴 종료 (${[ready ? `${ready}부대` : null, airReady ? `항공 ${airReady}` : null].filter(Boolean).join(' · ')} 남음)` : '턴 종료 →')),
@@ -3381,6 +3465,16 @@
         return true;
     }
 
+    // The page's rules card (folded under the game), opened and brought
+    // into view; from a phone's full-screen 「전장」 by way of 「지시」.
+    function openRules() {
+        const card = document.querySelector('details.cw-rules');
+        if (!card) return;
+        card.open = true;
+        if (s && s.phase === 'battle' && battleTab === 'field' && PHONE.matches) { battleTab = 'guide'; renderBattle(); }
+        card.scrollIntoView({ block: 'start' });
+    }
+
     // The battle's tabs on a phone, over its pinned actions. 「전장」 fills
     // the screen with the board fixed in it; 「현황」 carries the season's
     // HUD with the battle's state (war.css).
@@ -3407,6 +3501,59 @@
         const fold = el('details', { class: 'cw-terrain-fold', 'data-pane': 'guide', open: keyOpen.open }, el('summary', {}, '지형 범례'), el('p', { class: 'cw-terrain-key' }, ...items));
         fold.addEventListener('toggle', () => { keyOpen.open = fold.open; });
         return fold;
+    }
+
+    // The battle's state in one line over the board on a phone, where the
+    // status rows are on another tab: the turn, what wins, what must be held.
+    function fieldBar(b, posts, empty) {
+        const def = b.def;
+        const left = def.turnLimit - b.turn;
+        const goals = def.goals.map(g => {
+            const holder = B.unitAt(b, ...g.at);
+            return el('span', { class: 'cw-field-goal' + (holder && B.isPlayer(b, holder) ? ' is-held' : '') }, g.name);
+        });
+        return el('p', { class: 'cw-field-bar', 'data-pane': 'field' },
+            el('strong', { class: left <= 1 ? 'is-last' : null }, `턴 ${Math.min(b.turn, def.turnLimit)}/${def.turnLimit}`),
+            goals.length ? el('span', {}, def.goalsAll ? '모두 점령: ' : '목표: ', ...goals.flatMap((g, i) => (i ? [def.goalsAll ? ' + ' : ' 또는 ', g] : [g]))) : null,
+            posts.length ? el('span', { class: empty.length ? 'is-alarm' : null }, `${def.outlast ? '끝까지 ' : ''}지킬 곳: ${posts.map(x => x.name + (empty.includes(x) ? '(비었음)' : '')).join('·')}`) : null);
+    }
+
+    // A blow in its parts (battle.js hitParts), as a row of chips that add
+    // up to the damage, then what comes back and what the blow brings
+    // about. a: the attacker (a unit or an air wing), d: the target.
+    function forecastLine(b, p, a, d) {
+        const chip = (text, cls) => el('span', { class: 'cw-sum-chip' + (cls ? ' ' + cls : '') }, text);
+        const k = p.parts;
+        const r1 = v => String(Math.round(v * 10) / 10);
+        const chips = [];
+        if (k) {
+            const thinned = k.share < 1 || k.weak < 1;
+            chips.push(chip(thinned ? `공격 ${k.atk} → ${r1(k.power)}` : `공격 ${k.atk}`));
+            if (k.share < 1) chips.push(chip(`병력 ${a.hp}/${a.maxHp}`, 'is-note'));
+            if (k.weak < 1) chips.push(chip('포위되어 절반', 'is-note'));
+            if (k.ring) chips.push(chip(`협공 +${k.ring}`, 'is-plus'));
+            if (k.flank) chips.push(chip(`측면 +${k.flank}`, 'is-plus'));
+            if (k.order) chips.push(chip(`명령 +${k.order}`, 'is-plus'));
+            if (k.arms) chips.push(chip(`${UNIT_KIND[d.kind] || '병종'} 상대 ${signed(k.arms)}`, k.arms > 0 ? 'is-plus' : 'is-minus'));
+            if (k.plus) chips.push(chip(`${a.feat ? a.feat.name : '한 수'} +${k.plus}`, 'is-plus'));
+            chips.push(chip(`방어 −${k.def}`, 'is-minus'));
+            if (k.ground) chips.push(chip(`${B.terrain(b, d.r, d.c).name} ${signed(-k.ground)}`, k.ground > 0 ? 'is-minus' : 'is-plus'));
+            if (k.bare) chips.push(chip(`포위된 적 +${k.bare}`, 'is-plus'));
+        }
+        const ends = [p.dmg >= d.hp ? '격파' : null, p.surrender ? '투항' : null, p.wears ? '진지 방어 −1' : null].filter(Boolean);
+        return el('p', { class: 'cw-forecast' },
+            el('strong', {}, `${d.tag || d.name} 피해 ${p.dmg}`),
+            p.loss ? el('span', { class: 'cw-forecast-back' }, `기체 −${p.loss}`) : p.counter ? el('span', { class: 'cw-forecast-back' }, `반격 −${p.counter}`) : el('span', { class: 'cw-forecast-safe' }, '반격 없음'),
+            ...ends.map(t => el('span', { class: 'cw-forecast-end' }, t)),
+            k ? el('span', { class: 'cw-sum' }, ...chips) : null);
+    }
+
+    // A phone's first press on a target: the blow foretold over the pinned
+    // actions, with what pressing again does.
+    function aimedStrip(b, blow, a) {
+        return el('div', { class: 'cw-act-unit cw-act-aimed' },
+            forecastLine(b, blow.p, a, blow.target),
+            el('p', { class: 'cw-act-state' }, '한 번 더 누르면 친다'));
     }
 
     // On a phone the picked unit rides over the pinned actions, so what it
@@ -3886,7 +4033,7 @@
         }
         try {
             await navigator.clipboard.writeText(`${text} ${url}`);
-            announce('결과와 링크를 복사했습니다');
+            notice('결과와 링크를 복사했습니다');
         } catch (_) {
             window.prompt('이 글을 복사해 나눠 주세요', `${text} ${url}`);
         }
@@ -3963,7 +4110,7 @@
         if ((ready || open) && !endArmed) {
             endArmed = true;
             renderBattle();
-            announce(open ? `${josa(open.name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 들어오면 진다. 한 번 더 누르면 턴을 끝낸다.` : '행동하지 않은 부대가 남았다. 한 번 더 누르면 턴을 끝낸다.');
+            notice(open ? `${josa(open.name, '이', '가')} 비었다. ${josa(foeName(), '이', '가')} 들어오면 진다. 한 번 더 누르면 턴을 끝낸다.` : '행동하지 않은 부대가 남았다. 한 번 더 누르면 턴을 끝낸다.');
             return;
         }
         endArmed = false;

@@ -130,6 +130,8 @@
         <ol class="cw-rule-battles"><% Object.values(sc.battles).forEach(b => { %><li><strong><%= b.title %></strong><span><%= b.date %></span></li><% }) %></ol>
         <ul class="cw-rule-list">
           <li>부대를 누르면 갈 칸과 칠 적이 밝아진다. 한 턴에 한 번 움직이고 한 번 친다. 치기 전이면 이동을 되돌릴 수 있다.</li>
+          <li><b>적 곁에서 멈춘다.</b> 적 곁(상하좌우)의 칸에 들어서면 이동이 끝난다(굵은 막대가 그어진 칸).</li>
+          <li><b>피해</b> = 공격력(병력이 줄면 준다) + 협공 − 적의 방어 − 땅의 방어, 적어도 1. 곁에서 치면 반격을 받는다.</li>
           <li>협공(치려는 적의 곁에 다른 우리 부대가 있는 공격)은 더 아프다. 꺾인 적은 셋이 곁에 서면 투항한다.</li>
           <li>★ 결정적 한 수는 전투마다 한 번. 키보드는 Tab으로 옮기고 Enter로 고른다.</li>
           <% if (sc.ui.merits) { %><li>전공 별 셋: 승리, 정한 턴 안의 승리, <%= sc.ui.merits.whole %>. 현황 줄이 아직 얻을 수 있는 별을 보여 준다.</li><% } %>
