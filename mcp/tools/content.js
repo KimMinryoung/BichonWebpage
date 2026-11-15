@@ -51,11 +51,14 @@ const REGISTRY_SQL = {
         WHERE ($1 = '' OR phrase ILIKE '%' || $1 || '%') ORDER BY kind, lang, phrase`,
     generic_aliases: `SELECT lang, phrase, note FROM commulingo_generic_aliases
         WHERE ($1 = '' OR phrase ILIKE '%' || $1 || '%') ORDER BY lang, phrase`,
-    event_link_exceptions: `SELECT id, no_auto_link, to_jsonb(e)->'term_links' AS term_links FROM commulingo_history_events e
-        WHERE ($1 = '' OR id = $1) AND (no_auto_link <> '[]'::jsonb OR to_jsonb(e)->'term_links' <> '[]'::jsonb) ORDER BY id`,
-    page_link_exceptions: `SELECT * FROM (SELECT 'term' AS kind, id, no_auto_link FROM commulingo_terms
-        UNION ALL SELECT 'person', id, no_auto_link FROM commulingo_people) p
-        WHERE ($1 = '' OR id = $1) AND no_auto_link <> '[]'::jsonb ORDER BY kind, id`,
+    event_link_exceptions: `SELECT id, no_auto_link, to_jsonb(e)->'term_links' AS term_links,
+            COALESCE(to_jsonb(e)->'person_links', '[]'::jsonb) AS person_links FROM commulingo_history_events e
+        WHERE ($1 = '' OR id = $1) AND (no_auto_link <> '[]'::jsonb OR to_jsonb(e)->'term_links' <> '[]'::jsonb
+            OR COALESCE(to_jsonb(e)->'person_links', '[]'::jsonb) <> '[]'::jsonb) ORDER BY id`,
+    page_link_exceptions: `SELECT * FROM (SELECT 'term' AS kind, id, no_auto_link, COALESCE(to_jsonb(t)->'person_links', '[]'::jsonb) AS person_links
+            FROM commulingo_terms t
+        UNION ALL SELECT 'person', id, no_auto_link, COALESCE(to_jsonb(h)->'person_links', '[]'::jsonb) FROM commulingo_people h) p
+        WHERE ($1 = '' OR id = $1) AND (no_auto_link <> '[]'::jsonb OR person_links <> '[]'::jsonb) ORDER BY kind, id`,
 };
 
 // Patches read against revision `from` while other writes moved the document
@@ -106,8 +109,8 @@ const tools = [
         name: 'registry_get',
         description: 'Registry rows without an Admin screen: collections (정치적 입장 모음 with member counts), collection_members '
             + '(q = a collection id or a person id), blocklist (auto-link exceptions; q = substring), generic_aliases (q = substring), '
-            + 'event_link_exceptions (events with no_auto_link or term_links; q = event id), '
-            + 'page_link_exceptions (terms and people with no_auto_link; q = term or person id). Edit them with registry_edit.',
+            + 'event_link_exceptions (events with no_auto_link, term_links or person_links; q = event id), '
+            + 'page_link_exceptions (terms and people with no_auto_link or person_links; q = term or person id). Edit them with registry_edit.',
         inputSchema: object({
             table: str('Registry', { enum: Object.keys(REGISTRY_SQL) }),
             q: str('Filter (see description)'),
@@ -456,7 +459,11 @@ const tools = [
             + 'event_no_auto_link_set {eventId, phrases[]} and event_term_links_set {eventId, termLinks [{lang, text, termId, reason}]} (each replaces the '
             + 'whole list: read it with registry_get event_link_exceptions first); term_no_auto_link_set {termId, phrases[]} and '
             + 'person_no_auto_link_set {personId, phrases[]} (strings that must not auto-link on that term or person page, both languages; '
-            + 'replace the whole list: read it with registry_get page_link_exceptions first); id_redirect_add {entityType: person|office|role-category, fromId, toId, note}; '
+            + 'replace the whole list: read it with registry_get page_link_exceptions first); '
+            + 'event_person_links_set {eventId, personLinks [{lang, text, personId, reason}]}, term_person_links_set {termId, personLinks} and '
+            + 'person_person_links_set {personId, personLinks} (on that page exactly `text` links to personId ahead of the namesake, shared-surname '
+            + 'and surname-only rules — e.g. a bare name two qualified cards share; the page\'s own no_auto_link still wins and a text listed there is refused; '
+            + 'each replaces the whole list: read it with registry_get event_link_exceptions / page_link_exceptions first); id_redirect_add {entityType: person|office|role-category, fromId, toId, note}; '
             + 'term_category_upsert {id, label {ko,en}, sortOrder} (glossary kind chips; a new one needs both, reorder by upserting each moved row; '
             + 'current rows: dataset_rows term_categories); term_category_assign {category, termIds[]} (moves terms into an existing category; only the category column changes). '
             + 'Each change leaves a revision row. Pass ops inline or specPath to a file with {ops: [...]} or the list. dryRun defaults to true.',

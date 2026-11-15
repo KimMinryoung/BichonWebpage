@@ -2,6 +2,7 @@ const { personNames } = require('./person-name');
 const { periodFromRow, formatBoth, PERIOD_COLUMNS } = require('./career-period');
 const path = require('path');
 const { readSnapshot } = require('./read-snapshot');
+const { personLinksOf } = require('./page-person-links');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
 
 // The people dictionary is served from a pre-normalized in-memory copy (no
@@ -66,6 +67,7 @@ async function fetchRows() {
                     origin_code, origin_label_ko, origin_label_en, updated_at,
                     to_jsonb(commulingo_people)->'link_expressions' AS link_expressions,
                     COALESCE(to_jsonb(commulingo_people)->'no_auto_link', '[]'::jsonb) AS no_auto_link,
+                    to_jsonb(commulingo_people)->'person_links' AS person_links,
                     to_jsonb(commulingo_people)->'birth_date' AS birth_date,
                     to_jsonb(commulingo_people)->'death_date' AS death_date,
                     COALESCE(to_jsonb(commulingo_people)->'activities', '[]'::jsonb) AS activities
@@ -319,6 +321,8 @@ function rowsToPeopleData(rows) {
             linkExpressions: row.link_expressions || [],
             // Strings this page's prose does not auto-link (migration 356).
             noAutoLink: Array.isArray(row.no_auto_link) ? row.no_auto_link : [],
+            // Names this page's prose links to one person card (migration 379).
+            personLinks: personLinksOf(row.person_links),
             aliases: aliasesByPerson[row.id] || { ko: [], en: [] },
             scenes: scenesByPerson[row.id] || [],
             updatedAt: personUpdatedAt[row.id] || latestTimestamp(row.updated_at),

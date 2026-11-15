@@ -1,5 +1,6 @@
 const path = require('path');
 const { readSnapshot } = require('./read-snapshot');
+const { personLinksOf } = require('./page-person-links');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
 const { personLabels, nameColumns } = require('./person-name');
 const { periodFromRow, formatPeriod } = require('./career-period');
@@ -45,7 +46,8 @@ async function fetchEvents() {
                     to_jsonb(commulingo_history_events)->'relations' AS relations,
                     to_jsonb(commulingo_history_events)->'link_expressions' AS link_expressions,
                     to_jsonb(commulingo_history_events)->'sides' AS sides,
-                    to_jsonb(commulingo_history_events)->'term_links' AS term_links
+                    to_jsonb(commulingo_history_events)->'term_links' AS term_links,
+                    to_jsonb(commulingo_history_events)->'person_links' AS person_links
              FROM commulingo_history_events
              WHERE COALESCE(summary_ko, '') <> ''
              ORDER BY id`
@@ -109,6 +111,8 @@ async function fetchEvents() {
         // corpus at large leaves them unlinked (migration 366): bare 백군 is
         // the Russian Whites here and the Finnish Whites elsewhere.
         termLinks: termLinksOf(row.term_links),
+        // Names this event's prose links to one person card (migration 379).
+        personLinks: personLinksOf(row.person_links),
         relations: row.relations && typeof row.relations === 'object' && !Array.isArray(row.relations) ? row.relations : {},
         // Named camps for events with no single focus (migration 193); the
         // page groups people by side, then by relation kind.

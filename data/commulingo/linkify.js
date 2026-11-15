@@ -308,6 +308,15 @@ function topicStrings(topic) {
 // It runs right after the term pass, so a longer phrase the glossary already
 // links (러시아 백군) is linked first and the bare word inside it is skipped.
 //
+// `pagePeople` ([{text, personId}]) is the same for people (migration 379):
+// a bare name two cards share (알렉세이 이사예프) that the page's related
+// people do not settle links on this page to the card it names. The texts
+// join the person pass's own alternation, so a longer name still wins and a
+// mapped text is decided in that pass ahead of the namesake, shared-surname
+// and surname-only rules and the page resolver. It must still stand alone;
+// `blockStrings`, `exclude` (the page's own person) and first mention apply
+// as to any person link, so the page's no_auto_link beats its person_links.
+//
 // `personPage` is the person resolver (person-page-links.js), set per page on
 // the dictionary pages and by the surface on reports and diaries: it may
 // refuse a surname the page's years rule out, or settle a shared surname on
@@ -328,8 +337,14 @@ function createLinker(indexes, options = {}) {
         .filter(pass => pass.index);
     const pagePass = pageTermPass(indexes, options.pageTerms);
     if (pagePass) passes.splice(passes.findIndex(pass => pass.kind === 'term') + 1, 0, pagePass);
+    const pinned = pagePeopleOf(indexes, options.pagePeople);
+    if (pinned) {
+        const personPass = passes.find(pass => pass.kind === 'person');
+        if (personPass) Object.assign(personPass, pinned);
+    }
 
-    function replacerFor({ kind, spec, index }, context, extraContext) {
+    function replacerFor(pass, context, extraContext) {
+        const { kind, spec, index } = pass;
         // A card's wider context (epithet + moment + bio) only helps when the
         // text being linked is part of it; otherwise its offsets would point
         // the name rules at the wrong characters.
@@ -358,6 +373,7 @@ function createLinker(indexes, options = {}) {
                 if (WORD_CHAR.test(prev)) return match;
             }
             if (insideTitle(context.text, context.offset + offset, match.length)) return match;
+            const chosen = pass.byText && Object.hasOwn(pass.byText, match) ? pass.byText[match] : null;
             // Whatever kind of expression matched — a full name, a one-word
             // name, a representative surname, a document's own mapping — it
             // must stand alone: not the front of a longer word (판푸성, 미하일
@@ -370,20 +386,24 @@ function createLinker(indexes, options = {}) {
                 const data = index.context || index.contextData || { en: index.en };
                 const at = context.offset + offset;
                 const owner = index.byAlias[match];
-                const ids = [owner && owner.id].concat(data.shorts?.[match] || [], data.namesakes?.[match] || []).filter(Boolean);
+                const ids = [owner && owner.id, chosen && chosen.id].concat(data.shorts?.[match] || [], data.namesakes?.[match] || []).filter(Boolean);
                 alone = nameContext.standsAlone(context.text, at, at + match.length, data, ids);
                 if (!alone && !options.personGuard) return match;
             }
             let entry = index.byAlias[match];
             let expression = entry && index.expressions?.[entry.id + ':' + match];
-            if (personContext) {
+            if (chosen) {
+                // The page named this text's bearer: no rule reassigns it.
+                entry = chosen;
+                expression = null;
+            } else if (personContext) {
                 const start = Math.max(0, localOffset) + context.offset + offset;
                 const id = nameContext.resolve(match, entry && entry.id, start, contextText,
                     index.context, personContext, expression?.policy);
                 entry = id && index.byId[id];
                 expression = entry && index.expressions?.[entry.id + ':' + match];
             } else if (expression?.policy === 'context' && !identities.has(entry.id)) return match;
-            if (kind === 'person' && personPage) {
+            if (kind === 'person' && personPage && !chosen) {
                 entry = personPage({
                     match, entry, expression, index, context: personContext,
                     start: Math.max(0, localOffset) + context.offset + offset, text: contextText,
@@ -417,7 +437,7 @@ function createLinker(indexes, options = {}) {
     function run(html, textOptions = {}) {
         let out = html;
         passes.forEach(pass => {
-            out = mapLinkableText(out, (text, context) => text.replace(pass.index.pattern,
+            out = mapLinkableText(out, (text, context) => text.replace(pass.pattern || pass.index.pattern,
                 replacerFor(pass, context, textOptions.contextText && escapeHtml(textOptions.contextText))),
             pass.kind === 'person' ? options.personTag : undefined,
             pass.kind === 'person' ? options.personAfterContext : undefined);
@@ -475,6 +495,40 @@ function pageTermPass(indexes, pageTerms) {
     }
     if (!tokens.length) return null;
     return { kind: 'term', spec: KIND_SPECS.term, index: { pattern: buildAliasPattern(tokens, [], terms.en), byAlias, en: terms.en } };
+}
+
+// The person pass's additions for a reading unit's own name→person mappings:
+// the mapped entries by text, and the person pattern with those texts added to
+// its alternation (longest first, as everywhere). Patterns are memoized per
+// index and text set: a page with mappings is rendered once per refresh, but
+// the person alternation is thousands of names long.
+const pagePeoplePatterns = new WeakMap(); // person index -> Map(texts key -> RegExp)
+
+function pagePeopleOf(indexes, pagePeople) {
+    const people = indexes && indexes.person;
+    if (!people || !Array.isArray(pagePeople) || !pagePeople.length) return null;
+    const byText = Object.create(null);
+    for (const { text, personId } of pagePeople) {
+        const entry = people.byId && people.byId[personId];
+        if (!entry || !text || Object.hasOwn(byText, text)) continue;
+        byText[text] = entry;
+    }
+    const texts = Object.keys(byText).sort();
+    if (!texts.length) return null;
+    // An index without its literal list (a hand-built test index) keeps its
+    // own pattern: mapped texts it already matches are still decided here.
+    if (!Array.isArray(people.pattern?.linkTokens)) return { byText };
+    let byKey = pagePeoplePatterns.get(people);
+    if (!byKey) pagePeoplePatterns.set(people, byKey = new Map());
+    const key = texts.join('\0');
+    let pattern = byKey.get(key);
+    if (!pattern) {
+        const current = people.pattern.linkTokens;
+        const known = new Set(current);
+        pattern = buildAliasPattern(texts.filter(text => !known.has(text)), current, people.en);
+        byKey.set(key, pattern);
+    }
+    return { pattern, byText };
 }
 
 // Cards share one seen-set per person, so a name used in the epithet and again

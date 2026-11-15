@@ -225,6 +225,10 @@ grass 사용자 감사 타이머를 활성화했고 최초 실행은 성공했�
 
 `scripts/audit-commulingo-rendered-links.js`는 실행 중인 서버의 사이트맵에서 인물·용어·사건·문헌 페이지(한영, 문헌은 `?p=` 전 페이지)를 받아 엔진이 단 링크(`commu-*-link`)와 앞뒤 40자를 모은다. `--diff a b`는 추가·제거 링크를 비교한다. 순서가 밀린 같은 링크는 제거+추가 한 쌍으로 보일 수 있다. 일일 감사(`scripts/audit-commulingo-links-daily`, 40분 제한)는 이것도 실행해 `temp_dev/commulingo-rendered-links/{latest,previous}.json`과 `daily-diff.txt`를 남긴다. 코드 변경 검증은 운영과 dev-preview를 함께 수집해 비교한다.
 
+### 2026-11-15 페이지별 인물 링크 지정 (`person_links`)
+
+동명이인 카드(`aleksei-isaev` 「알렉세이 이사예프 (로켓 엔진 설계자)」와 `alexei-isaev-historian` 「… (군사사가)」)의 맨 이름은 페이지 관련 인물이 가려 주지 않으면 걸리지 않는다. 사건·용어·인물 행의 `person_links` [{lang, text, personId, reason}] (마이그레이션 379)가 그 페이지에서 정확히 `text`인 문자열을 `personId`에 잇는다. 스토어가 `personLinks`로 읽고 각 페이지의 링커에 `pagePeople`로 넘긴다(`page-person-links.js`). 구현은 `linkify.js`: 지정 문자열을 인물 패스의 교대식에 더해(긴 표현 우선 그대로, 차단 목록 문자열과 같으면 그 자리를 지정이 차지) 인물 패스 안에서 먼저 정한다. 지정된 문자열은 이름 문맥 판정·동명이인·공유 성·성 단독 시대 검사(`personPage`)를 건너뛴다. 단독성 검사(앞뒤에 붙은 글자), 페이지 `no_auto_link`, 자기 자신 제외, 첫 언급만 링크, 기존 링크 안 건드리기는 그대로다. 충돌: 렌더러에서는 같은 페이지의 `no_auto_link`가 이기고, 쓰기(`registry_edit` `*_person_links_set`)는 `no_auto_link`에 있는 문자열을 거부한다. 참고 문헌은 이 열을 쓰지 않고 entry `personLinks.names`(절 단위까지)로 같은 선택을 한다. 사례: `tests/unit/commulingo-page-person-links.js`.
+
 ## 2026-10-11 미등록 이름 앞의 성 오연결과 후속 계획
 
 ### 이번 적용 범위: 확인된 전체 이름 차단

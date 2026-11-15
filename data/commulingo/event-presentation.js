@@ -1,3 +1,4 @@
+const { pagePeopleFor } = require('./page-person-links');
 const { loadCommuLingoHistoryEvents } = require('./history-events-store');
 const { loadCommuLingoTerms } = require('./terms-store');
 const { relatedDocsFor, docExcerptsFor, presentSitePathSource, isSitePathSource } = require('./docs-refs');
@@ -216,6 +217,7 @@ async function buildEventPanel(eventId, lang) {
             exclude: { event: eventId, term: paired ? paired.id : '' },
             blockStrings: events[index].noAutoLink,
             pageTerms: (events[index].termLinks || []).filter(link => link.lang === lang),
+            pagePeople: pagePeopleFor(events[index].personLinks, lang),
             personPage: createPersonPageResolver({
                 period: pagePeriod(events[index].startYear, events[index].endYear),
                 related: events[index].people.map(person => person.id),

@@ -1,3 +1,4 @@
+const { pagePeopleFor } = require('./page-person-links');
 const allStrings = require('../../config/strings');
 const { renderAppView } = require('../../utils/render-app-view');
 const { paginateList } = require('./list-pagination');
@@ -121,6 +122,7 @@ async function personBody(personId, person, loaded, lang) {
             surface: 'person',
             exclude: { person: person.id },
             blockStrings: person.noAutoLink,
+            pagePeople: pagePeopleFor(person.personLinks, lang),
             personPage: createPersonPageResolver({
                 period: life.birth ? pagePeriod(life.birth, life.death ?? 9999) : null,
                 related: [...shared.keys()],

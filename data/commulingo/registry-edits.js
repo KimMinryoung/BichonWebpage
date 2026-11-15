@@ -1,7 +1,8 @@
 // CommuLingo registry rows that have no editorial screen: person position
 // collections (정치적 입장 모음) and their members, the auto-link blocklist,
 // the generic-alias guard list, per-event link exceptions (no_auto_link,
-// term_links), retired-id redirects, the glossary category registry and term category moves. Data batches used to write these with
+// term_links), per-page person links on events, terms and people
+// (person_links), retired-id redirects, the glossary category registry and term category moves. Data batches used to write these with
 // hand SQL under scripts/migrations/data/; this applies the same rows in one
 // transaction with existence checks and a revision row per change, so the
 // MCP tool (registry_edit) and any script share one path. The stores pick the
@@ -61,6 +62,35 @@ async function setPageNoAutoLink(client, table, entityType, entityId, input) {
     await client.query(`UPDATE ${table} SET no_auto_link = $2::jsonb, updated_at = now() WHERE id = $1`, [entityId, JSON.stringify(phrases)]);
     return { entityType, entityId, note: 'set no_auto_link', snapshot: { before, after: phrases },
         changed: JSON.stringify(before) !== JSON.stringify(phrases) };
+}
+
+// table is one of three fixed names, never caller input. Replaces the page's
+// whole person_links list ([{lang, text, personId, reason}], migration 379).
+// A text the same page lists in no_auto_link is refused: the page cannot both
+// keep it plain and link it (the renderer would keep it plain).
+async function setPagePersonLinks(client, table, entityType, entityId, input) {
+    if (!Array.isArray(input)) throw badRequest('personLinks must be a list');
+    const row = (await client.query(`SELECT no_auto_link, to_jsonb(p)->'person_links' AS person_links
+        FROM ${table} p WHERE id = $1 FOR UPDATE`, [entityId])).rows[0];
+    if (!row) throw badRequest(`${entityType} not found: ${entityId}`, 404);
+    const blocked = new Set(row.no_auto_link || []);
+    const links = [];
+    const seen = new Set();
+    for (const [i, link] of input.entries()) {
+        const personId = id(link && link.personId, `personLinks[${i}].personId`);
+        await mustExist(client, 'commulingo_people', personId, 'person');
+        const linkLang = lang(link.lang);
+        const linkText = text(link.text, `personLinks[${i}].text`);
+        if (linkText.length < 2) throw badRequest(`personLinks[${i}].text must be at least 2 characters`);
+        if (seen.has(linkLang + '\0' + linkText)) throw badRequest(`personLinks[${i}]: ${linkLang} 「${linkText}」 is listed twice`);
+        if (blocked.has(linkText)) throw badRequest(`personLinks[${i}]: 「${linkText}」 is in this page's no_auto_link; remove it there first`);
+        seen.add(linkLang + '\0' + linkText);
+        links.push({ lang: linkLang, text: linkText, personId, reason: text(link.reason, `personLinks[${i}].reason`, 2000) });
+    }
+    const before = row.person_links || [];
+    await client.query(`UPDATE ${table} SET person_links = $2::jsonb, updated_at = now() WHERE id = $1`, [entityId, JSON.stringify(links)]);
+    return { entityType, entityId, note: 'set person_links', snapshot: { before, after: links },
+        changed: JSON.stringify(before) !== JSON.stringify(links) };
 }
 
 // Each handler returns { entityType, entityId, note, snapshot, changed }.
@@ -175,6 +205,17 @@ const OPS = {
         await client.query('UPDATE commulingo_history_events SET term_links = $2::jsonb, updated_at = now() WHERE id = $1', [eventId, JSON.stringify(links)]);
         return { entityType: 'history_event', entityId: eventId, note: 'set term_links', snapshot: { before, after: links },
             changed: JSON.stringify(before) !== JSON.stringify(links) };
+    },
+    // Names a page links to one person card though the namesake or
+    // shared-surname rules leave them unlinked there (migration 379).
+    async event_person_links_set(client, op) {
+        return setPagePersonLinks(client, 'commulingo_history_events', 'history_event', id(op.eventId, 'eventId'), op.personLinks);
+    },
+    async term_person_links_set(client, op) {
+        return setPagePersonLinks(client, 'commulingo_terms', 'term', id(op.termId, 'termId'), op.personLinks);
+    },
+    async person_person_links_set(client, op) {
+        return setPagePersonLinks(client, 'commulingo_people', 'person', id(op.personId, 'personId'), op.personLinks);
     },
     // Glossary kind categories (first chip row). Reordering means upserting
     // each moved category with its new sortOrder in the same batch.

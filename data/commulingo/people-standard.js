@@ -293,6 +293,7 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeRows) 
         origin: normalizeFlag(raw.origin, lang),
         linkExpressions: raw.linkExpressions || [],
         noAutoLink: raw.noAutoLink || [],
+        personLinks: raw.personLinks || [],
         aliases: {
             ko: raw.aliases && Array.isArray(raw.aliases.ko) ? raw.aliases.ko : [],
             en: raw.aliases && Array.isArray(raw.aliases.en) ? raw.aliases.en : [],

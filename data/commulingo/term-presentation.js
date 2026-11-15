@@ -1,3 +1,4 @@
+const { pagePeopleFor } = require('./page-person-links');
 const { searchableAliases } = require('./link-expressions');
 const { renderMarkdown } = require('../../utils/markdown');
 const { loadCommuLingoTerms } = require('./terms-store');
@@ -290,6 +291,7 @@ async function buildTermPanel(termId, lang) {
             surface: 'term',
             exclude: { term: term.id, event: term.sameSubjectEvent ? term.sameSubjectEvent.id : '' },
             blockStrings: raw.noAutoLink,
+            pagePeople: pagePeopleFor(raw.personLinks, lang),
             personPage: createPersonPageResolver({
                 period: pagePeriod(raw.startYear, raw.endYear ?? (raw.startYear === null ? null : 9999)),
                 related: (raw.people || []).map(person => person.id),

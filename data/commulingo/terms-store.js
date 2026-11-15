@@ -1,5 +1,6 @@
 const path = require('path');
 const { readSnapshot } = require('./read-snapshot');
+const { personLinksOf } = require('./page-person-links');
 const { createDictionarySnapshotStore } = require('./snapshot-store');
 const { personLabels, nameColumns } = require('./person-name');
 const { periodFromRow, periodOrNull, formatPeriod } = require('./career-period');
@@ -36,7 +37,8 @@ async function fetchTerms() {
             `SELECT id, term_ko, term_en, original, start_year, start_month, start_day, end_year, end_month, end_day, start_qual, end_qual, ongoing, period_label_ko, period_label_en, period_note_ko, period_note_en, category, region,
                     definition_ko, definition_en, body_ko, body_en, sources,
                     parent_id, updated_at, to_jsonb(commulingo_terms)->'link_expressions' AS link_expressions,
-                    COALESCE(to_jsonb(commulingo_terms)->'no_auto_link', '[]'::jsonb) AS no_auto_link
+                    COALESCE(to_jsonb(commulingo_terms)->'no_auto_link', '[]'::jsonb) AS no_auto_link,
+                    to_jsonb(commulingo_terms)->'person_links' AS person_links
              FROM commulingo_terms
              ORDER BY sort_order, id`
         ),
@@ -157,6 +159,8 @@ async function fetchTerms() {
         linkExpressions: row.link_expressions || [],
         // Strings this page's prose does not auto-link (migration 356).
         noAutoLink: Array.isArray(row.no_auto_link) ? row.no_auto_link : [],
+        // Names this page's prose links to one person card (migration 379).
+        personLinks: personLinksOf(row.person_links),
         aliases: aliasesByTerm[row.id] || { ko: [], en: [] },
         people: peopleByTerm[row.id] || [],
         events: eventsByTerm[row.id] || [],
