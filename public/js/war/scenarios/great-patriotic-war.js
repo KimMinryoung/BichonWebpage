@@ -898,13 +898,16 @@
     // Germans) is left, Moscow the right edge.
     const moscowBattle = {
         id: 'moscow', sides: SIDES, front: 'west', final: false, outlast: true, prisoners: true,
+        // Edition 3: the frost of early December (−25° to −35°) from the turn
+        // of the counterstroke: the Germans' guns and engines seize up.
+        editions: { 3: { weatherCalm: '눈', weather: [{ from: 4, name: '혹한', note: '독일군 공격 −1', numb: { side: 'axis', atk: 1 }, tiles: {} }] } },
         scene: { picture: 'moscow-counter' },
         title: '모스크바 방어와 반격', date: '1941년 11월 16일–12월 15일',
         settle: '모스크바 앞으로 →', board: '모스크바 북서쪽', enemyName: '독일군',
         pushNote: '독일 선봉. 힘키로 곧장 온다. 붉은 부대 곁에서는 멈춰 싸운다(전차는 지나친다). 힘키에 독일군이 들어서면 진다.',
         huntNote: '곁에 붉은 부대가 가장 적은 붉은 부대를 찾아가 친다.',
         legend: [['snow', '눈밭'], ['forest', '숲 (방어 +1, 이동 2)'], ['town', '마을 (방어 +1)']],
-        reward: { quick: 7, quickBy: 3, lostBy: -6 },
+        reward: { quick: 7, quickBy: 3, lostBy: -6, carry: { pressure: -2, edition: 3 } },
         supply: { player: [[3, 10], [0, 10], [6, 10]], enemy: [[3, 0], [0, 0]] },
         map: [
             'f..K....f..',
@@ -946,7 +949,7 @@
                 feat: { id: 'stand-fast', name: '한 걸음도 물러서지 않는다', kind: 'brace', def: 3, text: '다음 내 차례까지 방어 +3. 맞으면 반드시 되받아친다.', history: '판필로프의 제316소총사단은 볼로콜람스크 대로에서 한 달을 버텼다. 11월 18일 사단장이 전사한 날 사단은 제8근위사단이 되었다.' } },
             { id: 'mkt', tag: '카투코프', side: 'red', name: '제1근위전차여단', sub: '카투코프', kind: 'tank', at: [2, 6], hp: 8, atk: 6, def: 3, mv: 4, person: ['미하일 카투코프', 'mikhail-katukov'],
                 feat: { id: 'ambush', name: '매복', kind: 'strike', plus: 3, text: '숨어 있다가 옆구리를 쏜다. 이번 공격 피해 +3, 반격 없음.', history: '카투코프의 여단은 10월 므첸스크에서 매복으로 구데리안의 제4기갑사단을 멈춰 세웠고, 11월 볼로콜람스크 대로로 옮겨 왔다.' } },
-            { id: 'mdv', tag: '도바토르', side: 'red', name: '제2근위기병군단', sub: '도바토르', kind: 'cav', at: [1, 8], hp: 8, atk: 5, def: 2, mv: 5, skirmish: true, look: 'ushanka' },
+            { id: 'mdv', tag: '도바토르', side: 'red', name: '제2근위기병군단', sub: '도바토르', kind: 'cav', at: [1, 8], hp: 8, atk: 5, def: 2, mv: 5, skirmish: true, look: 'ushanka', editions: { 3: { flank: 2 } } },
             { id: 'mat', tag: '대전차', side: 'red', name: '대전차 포병 연대', kind: 'at', at: [3, 7], hp: 7, atk: 4, def: 2, mv: 2 },
             { id: 'mcd', tag: '생도', side: 'red', name: '사관생도 연대', sub: '크렘린 군사학교', kind: 'inf', at: [5, 7], hp: 7, atk: 4, def: 3, mv: 3 },
             { id: 'm78', tag: '78', side: 'red', name: '제78소총사단', sub: '극동에서 온 벨로보로도프, 11월 26일 제9근위', kind: 'inf', at: [4, 6], hp: 10, atk: 6, def: 3, mv: 3, need: 0, look: 'ushanka' },
@@ -1046,7 +1049,7 @@
                 feat: { id: 'volga-guns', name: '카추샤 일제 사격', kind: 'barrage', plus: 2, text: '이번 공격 피해 +2, 반격 없음. 맞은 부대 곁의 적도 절반의 피해를 입는다.', history: '제62군의 중포와 로켓포는 강 동쪽 둑에 있었다. 도시 안의 관측병이 부르면 강 너머에서 쏘았다.' } },
             { id: 's13', tag: '13근위', side: 'red', name: '제13근위소총사단', sub: '로딤체프', kind: 'inf', at: [4, 6], hp: 11, atk: 6, def: 3, mv: 3, arrive: 2, person: ['알렉산드르 로딤체프', 'alexander-rodimtsev'], look: 'helmet' },
             { id: 's39', tag: '39근위', side: 'red', name: '제39근위소총사단', sub: '붉은 10월 공장', kind: 'inf', at: [2, 6], hp: 9, atk: 5, def: 3, mv: 3, arrive: 4, need: 3 },
-            { id: 's138', tag: '138', side: 'red', name: '제138소총사단', sub: '류드니코프, 스타프카 예비', kind: 'inf', at: [6, 6], hp: 10, atk: 5, def: 3, mv: 3, arrive: 3, card: 'reserve', editions: { 2: { at: [1, 6] } } },
+            { id: 's138', tag: '138', side: 'red', name: '제138소총사단', sub: '류드니코프, 스타프카 예비', kind: 'inf', at: [6, 6], hp: 10, atk: 5, def: 3, mv: 3, arrive: 3, card: 'reserve', editions: { 2: { at: [1, 6] }, 3: { at: [3, 6] } } },
             { id: 'a71', tag: '71', side: 'axis', name: '제71보병사단', sub: '중앙역으로', kind: 'inf', at: [4, 1], hp: 12, atk: 7, def: 3, mv: 3, role: 'push' },
             { id: 'a295', tag: '295', side: 'axis', name: '제295보병사단', sub: '마마이 언덕으로', kind: 'inf', at: [3, 0], hp: 12, atk: 7, def: 3, mv: 3, role: 'push' },
             { id: 'a94', tag: '94', side: 'axis', name: '제94보병사단', sub: '남쪽', kind: 'inf', at: [6, 1], hp: 12, atk: 7, def: 3, mv: 3, role: 'push' },
@@ -1084,7 +1087,7 @@
         title: '천왕성 작전', date: '1942년 11월 19–23일',
         settle: '돈강으로 →', board: '돈강과 볼가강 사이', enemyName: '추축군',
         legend: [['snow', '눈 덮인 초원'], ['forest', '골짜기 숲 (방어 +1, 이동 2)'], ['trench', '루마니아군 참호 (방어 +2, 이동 2, 포격으로 깎임)'], ['river', '돈강'], ['bridge', '칼라치 다리'], ['town', '마을 (방어 +1)'], ['city', '스탈린그라드 외곽 (방어 +1)']],
-        reward: { quick: 4, quickBy: 3, lostBy: -6 },
+        reward: { quick: 4, quickBy: 3, lostBy: -6, carry: { pressure: -2, edition: 3 } },
         supply: { player: [[1, 0], [8, 12]], enemy: [[4, 0], [5, 0], [6, 0]] },
         map: [
             '~~~~~~~~.....',
@@ -1142,7 +1145,7 @@
             { id: 'u26', tag: '26전차', side: 'red', name: '제26전차군단', sub: '제5전차군, 로딘', kind: 'tank', at: [1, 4], hp: 10, atk: 6, def: 3, mv: 4, flag: 'uranusReady',
                 feat: { id: 'headlights', name: '전조등을 켜고', kind: 'ride', mv: 3, text: '이번 턴 이동 +3, 적 곁을 멈추지 않고 지나간다. 움직이기 전에 쓴다.', history: '11월 22일 새벽 필리포프 중령의 선견대가 전조등을 켠 채 줄지어 달렸다. 독일 경비대는 노획 전차로 훈련하는 제 편인 줄 알았고, 칼라치의 다리는 폭파되지 않은 채 넘어왔다.' } },
             { id: 'u65', tag: '65군', side: 'red', name: '제65군 소총사단', sub: '바토프', kind: 'inf', at: [1, 5], hp: 10, atk: 5, def: 3, mv: 3 },
-            { id: 'u3c', tag: '3기병', side: 'red', name: '제3근위기병군단', sub: '플리예프', kind: 'cav', at: [1, 6], hp: 8, atk: 5, def: 2, mv: 5, skirmish: true, need: 2 },
+            { id: 'u3c', tag: '3기병', side: 'red', name: '제3근위기병군단', sub: '플리예프', kind: 'cav', at: [1, 6], hp: 8, atk: 5, def: 2, mv: 5, skirmish: true, need: 2, editions: { 3: { flank: 2 } } },
             { id: 'u2g', tag: '예비', side: 'red', name: '스타프카 예비 소총사단', sub: '스타프카 예비군', kind: 'inf', at: [1, 0], hp: 10, atk: 5, def: 3, mv: 3, card: 'reserve' },
             { id: 'u51', tag: '51군', side: 'red', name: '제51군 소총사단', sub: '남쪽 집단', kind: 'inf', at: [8, 9], hp: 10, atk: 5, def: 3, mv: 3 },
             { id: 'u4m', tag: '4기계', side: 'red', name: '제4기계화군단', sub: '볼스키', kind: 'tank', at: [8, 10], hp: 10, atk: 6, def: 3, mv: 4 },
@@ -1184,6 +1187,8 @@
     // through the defence belts for Oboyan and Prokhorovka.
     const kurskBattle = {
         id: 'kursk', sides: SIDES, ground: 'summer', front: 'southwest', final: false, outlast: true, prisoners: true, when: { choice: 'defend' },
+        // Edition 3: the thunderstorms of 12 July keep both air forces down on the turn the 5th Guards Tank Army comes.
+        editions: { 3: { grounded: [4], groundedName: '뇌우' } },
         scene: { picture: 'kursk' },
         title: '쿠르스크: 남쪽 면', date: '1943년 7월 5–12일',
         settle: '쿠르스크로 →', board: '오보얀과 프로호롭카 앞', enemyName: '독일군',
@@ -1250,7 +1255,7 @@
             { id: 'p11k', tag: '11기갑', side: 'axis', name: '제11기갑사단', sub: '제48기갑군단', kind: 'tank', at: [6, 3], hp: 11, atk: 6, def: 3, mv: 4, role: 'push', aim: [0, 2] },
             { id: 'i332', tag: '332', side: 'axis', name: '제332보병사단', sub: '서쪽 옆구리', kind: 'inf', at: [6, 1], hp: 9, atk: 5, def: 3, mv: 3, role: 'push', aim: [0, 2], editions: { 2: { at: [5, 0] } } },
             // Edition 2: the 3rd Panzer Division, the 48th Panzer Corps' western wing beside Großdeutschland.
-            { id: 'p3', tag: '3기갑', side: 'axis', name: '제3기갑사단', sub: '제48기갑군단', kind: 'tank', at: [6, 1], hp: 11, atk: 6, def: 3, mv: 4, role: 'push', aim: [0, 2], fromEdition: 2 },
+            { id: 'p3', tag: '3기갑', side: 'axis', name: '제3기갑사단', sub: '제48기갑군단', kind: 'tank', at: [6, 1], hp: 11, atk: 6, def: 3, mv: 4, role: 'push', aim: [0, 2], fromEdition: 2, editions: { 3: { wake: 3 } } },
             { id: 'lah', tag: '친위1', side: 'axis', name: '친위 「아돌프 히틀러 경호대」', sub: '제2친위기갑군단, 티거 중대', kind: 'tank', at: [6, 6], hp: 13, atk: 8, def: 4, mv: 3, role: 'push', aim: [0, 8] },
             { id: 'dr', tag: '친위2', side: 'axis', name: '친위 「다스 라이히」', sub: '제2친위기갑군단', kind: 'tank', at: [6, 7], hp: 12, atk: 7, def: 3, mv: 4, role: 'push', aim: [0, 8] },
             { id: 'tk', tag: '친위3', side: 'axis', name: '친위 「토텐코프」', sub: '제2친위기갑군단', kind: 'tank', at: [6, 8], hp: 12, atk: 7, def: 3, mv: 4, role: 'push', aim: [0, 8] },
@@ -1280,7 +1285,7 @@
         settle: '보브루이스크로 →', board: '베레지나강', enemyName: '독일군',
         huntNote: '독일 기갑 예비. 곁에 붉은 부대가 가장 적은 붉은 부대를 찾아가 친다. 1턴이 끝날 때까지는 제자리에 있다.',
         legend: [['steppe', '들판'], ['forest', '숲 (방어 +1, 이동 2)'], ['marsh', '늪 (이동 2, 통나무 길)'], ['trench', '참호 (방어 +2, 이동 2, 포격으로 깎임)'], ['river', '베레지나강'], ['bridge', '보브루이스크 다리'], ['city', '보브루이스크 (「요새」, 방어 +3)']],
-        reward: { quick: 4, quickBy: 3, lostBy: -6 },
+        reward: { quick: 4, quickBy: 3, lostBy: -6, carry: { pressure: -2, edition: 3 } },
         supply: { player: [[1, 10], [3, 10], [7, 2]], enemy: [[3, 0]] },
         wings: [
             { id: 'w16s', tag: '습격기', name: '제16항공군 습격기', sub: '루덴코, Il-2', kind: 'strike', hp: 4, atk: 4 },
@@ -1328,7 +1333,7 @@
             { id: 'b65', tag: '65군', side: 'red', name: '제65군 소총군단', sub: '바토프, 남쪽 집단', kind: 'inf', at: [7, 2], hp: 10, atk: 6, def: 3, mv: 3, flag: 'twoBlows', look: 'helmet', person: ['파벨 바토프', 'pavel-batov'] },
             { id: 'b1g', tag: '1근위전차', side: 'red', name: '제1근위전차군단', sub: '파노프, 남쪽 집단', kind: 'tank', at: [7, 1], hp: 10, atk: 6, def: 3, mv: 4, flag: 'twoBlows' },
             { id: 'b28', tag: '28군', side: 'red', name: '제28군 소총군단', sub: '남쪽 집단', kind: 'inf', at: [7, 3], hp: 10, atk: 5, def: 3, mv: 3, flag: 'twoBlows', need: 0, look: 'helmet' },
-            { id: 'bkm', tag: '기병기계', side: 'red', name: '플리예프 기병기계화 집단', sub: '남쪽 집단', kind: 'cav', at: [7, 0], hp: 9, atk: 5, def: 2, mv: 5, skirmish: true, flag: 'twoBlows', need: 3 },
+            { id: 'bkm', tag: '기병기계', side: 'red', name: '플리예프 기병기계화 집단', sub: '남쪽 집단', kind: 'cav', at: [7, 0], hp: 9, atk: 5, def: 2, mv: 5, skirmish: true, flag: 'twoBlows', need: 3, editions: { 3: { flank: 2 } } },
             { id: 'b2t', tag: '전차군', side: 'red', name: '제1기계화군단', sub: '전차군 카드', kind: 'tank', at: [0, 10], hp: 9, atk: 6, def: 3, mv: 4, card: 'tankarmy' },
             { id: 'bres', tag: '예비', side: 'red', name: '전선군 예비 소총군단', sub: '스타프카 예비군', kind: 'inf', at: [4, 10], hp: 10, atk: 5, def: 3, mv: 3, card: 'reserve', look: 'helmet' },
             { id: 'b134', tag: '134', side: 'axis', name: '제134보병사단', sub: '제35군단', kind: 'inf', at: [1, 7], hp: 10, atk: 6, def: 3, mv: 3, role: 'field', reach: 1 },
@@ -1839,7 +1844,7 @@
 
     const rehearsal = { lead: ['reserve'], skip: ['militia', 'pause', 'labour'], guard: { stat: 'manpower', min: 30 }, spread: true };
     const data = {
-        id: 'great-patriotic-war', title: '조국 전선 1941–1945', saveVersion: 1, edition: 2, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
+        id: 'great-patriotic-war', title: '조국 전선 1941–1945', saveVersion: 1, edition: 3, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
         map, ui, portraits, pictures, pictureDir: '/images/great-patriotic-war/', roles, glossary,
         texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring, rehearsal, promo,
     };

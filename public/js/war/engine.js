@@ -442,6 +442,15 @@
                 if (s.momentum[id]) { pressure += s.momentum[id]; pressureParts.push(fmt(X.momentumPart, { n: s.momentum[id] })); }
                 const pursuitIn = Math.min(pressure, s.pursuit[id] || 0);
                 if (pursuitIn) { pressure -= pursuitIn; pressureParts.push(fmt(X.pursuitPart, { n: pursuitIn })); }
+                // A battle won quickly the season before on this front
+                // still tells (its reward's carry: { pressure, edition }):
+                // the enemy it broke is that much weaker here.
+                const carried = carryOf(s, id);
+                if (carried && pressure > 0) {
+                    const by = Math.min(pressure, carried.by);
+                    pressure -= by;
+                    pressureParts.push(`${carried.label} −${by}`);
+                }
                 // Rules 9: an enemy who holds more than he did in history is
                 // that much stronger here, one held back that much weaker.
                 const standing = standingOf(s, id);
@@ -650,6 +659,20 @@
             if (wonBy) return r.result === 'won' && !r.assumed ? { label: fmt(X.battleWon, { title: def.title }), v: wonBy } : null;
             if (r.result !== 'won') return { label: fmt(X.battleLost, { title: def.title }), v: lostBy };
             return r.turns !== null && r.turns <= quick ? { label: fmt(X.battleQuick, { title: def.title, quick }), v: quickBy } : null;
+        }
+
+        // What last season's battle on this front carries into this one:
+        // { by, label } when it was fought and won within its quick turns
+        // and its reward has a carry (from the carry's edition on).
+        function carryOf(s, id) {
+            const days = calendar(s);
+            const before = days[days.indexOf(s.turn) - 1];
+            const def = before === undefined ? null : D.battles[D.turns[before].battle];
+            const carry = def && def.front === id && def.reward && def.reward.carry;
+            const r = carry && s.battles[def.id];
+            if (!r || (s.edition || 1) < (carry.edition || 1)) return null;
+            if (r.result !== 'won' || r.assumed || r.turns === null || r.turns > def.reward.quick) return null;
+            return { by: -carry.pressure, label: fmt(X.battleQuick, { title: def.title, quick: def.reward.quick }) };
         }
 
         // A front's prize still to win this season: a city whose taking pays

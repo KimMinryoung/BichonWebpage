@@ -125,4 +125,25 @@ const unit = (id, side, kind, at, extra = {}) => Object.assign({ id, side, name:
     assert.ok(at(undefined, 'late'));
 }
 
+// A board's own fields follow the edition too (defAsOf), and weather may
+// numb one side: its blows are that much lighter while the span lasts.
+{
+    const def = {
+        id: 'test', sides: { player: 'red', enemy: 'grey' }, map: ['......', '......'], terrain: TERRAIN,
+        goals: [{ at: [0, 5], name: '마을' }], lines: {}, sectors: {}, turnLimit: 6,
+        units: [unit('rifle', 'red', 'inf', [0, 0]), unit('foot', 'grey', 'inf', [0, 1])],
+        editions: { 2: { weather: [{ from: 2, name: '혹한', numb: { side: 'grey', atk: 2 }, tiles: {} }], grounded: [1] } },
+    };
+    const old = B.start(def, {}, null, { edition: 1 }), cold = B.start(def, {}, null, { edition: 2 });
+    assert.ok(!old.def.weather && !B.grounded(old) && B.grounded(cold));
+    const blow = b => B.preview(b, B.byId(b, 'foot'), B.byId(b, 'rifle'));
+    const mine = b => B.preview(b, B.byId(b, 'rifle'), B.byId(b, 'foot')).dmg;
+    assert.equal(blow(cold).dmg, blow(old).dmg, 'no frost on turn 1');
+    B.act(old, 'end'); B.act(cold, 'end');
+    assert.equal(B.byId(cold, 'foot').hp, B.byId(old, 'foot').hp);
+    assert.equal(blow(cold).parts.numb, 2);
+    assert.equal(blow(cold).dmg, Math.max(1, blow(old).dmg - 2), 'the numbed side strikes lighter');
+    assert.equal(mine(cold), mine(old), 'the other side as before');
+}
+
 console.log('war arms: armour, the gun against it, breakthrough, weather, raids and editions');

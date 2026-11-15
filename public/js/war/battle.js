@@ -134,7 +134,19 @@
             .map(u => Object.assign({}, u, ...laid(u.rules, gen), ...laid(u.editions, ed)));
     }
 
+    // The board itself as a save's edition has it: `editions: { n: { … } }`
+    // on the battle holds what edition n of the scenario changed in the
+    // board's own fields (its weather, its grounded turns, its map), laid
+    // over it in order; the units have their own (unitsAsOf).
+    function defAsOf(def, opts) {
+        if (!def.editions) return def;
+        const ed = opts && opts.edition ? opts.edition : Infinity;
+        const laid = Object.keys(def.editions).map(Number).filter(n => ed >= n).sort((a, z) => a - z).map(n => def.editions[n]);
+        return laid.length ? Object.assign({}, def, ...laid) : def;
+    }
+
     function start(def, flags, muster, opts) {
+        def = defAsOf(def, opts);
         const heroics = !(opts && opts.rules < 3);
         const express = !(opts && opts.rules < 5);
         const sides = sidesOf(def);
@@ -196,7 +208,7 @@
     const tileAt = (b, r, c) => {
         const ch = (b.def.map[r] || '')[c];
         const w = weatherOf(b);
-        return (w && w.tiles[ch]) || ch;
+        return (w && w.tiles && w.tiles[ch]) || ch;
     };
     // The weather of turn n (b's own turn by default): the first span that holds it.
     const weatherOf = (b, n = b.turn) => (b.def.weather || []).find(w => n >= w.from && n <= (w.to ?? Infinity)) || null;
@@ -438,7 +450,10 @@
     // what a pocket takes from him (bare); total is the damage.
     function hitParts(b, a, d, mod) {
         const share = 0.6 + 0.4 * a.hp / a.maxHp, weak = cutOff(b, a) ? cutRule(b).weak : 1;
-        const power = a.atk * share * weak;
+        // Weather that numbs one side (a span's numb: { side, atk }): its blows are that much lighter.
+        const w = weatherOf(b);
+        const numb = w && w.numb && w.numb.side === a.side ? w.numb.atk : 0;
+        const power = a.atk * share * weak - numb;
         const guard = mod && mod.noGround ? d.def - (cutOff(b, d) ? cutRule(b).bare : 0) : defenseOf(b, d);
         const ring = surround(b, a, d);
         const flank = a.flank && alone(b, d) ? a.flank : 0;
@@ -447,7 +462,7 @@
         const plus = (mod && mod.plus) || 0;
         const bare = cutOff(b, d) ? cutRule(b).bare : 0;
         return {
-            atk: a.atk, share, weak, power, ring, flank, order, arms, plus,
+            atk: a.atk, share, weak, numb, power, ring, flank, order, arms, plus,
             def: d.def, ground: guard - d.def + bare, bare,
             total: Math.max(1, Math.round(power + ring - guard + flank + order + arms + plus)),
         };
@@ -1247,7 +1262,7 @@
     }
 
     const api = {
-        start, unitsAsOf, joins, act, reachable, fogged, rangeNow, skyOf, raidDue, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, hitParts, halts, menace, marching, dangers, reserveSector, behind,
+        start, unitsAsOf, defAsOf, joins, act, reachable, fogged, rangeNow, skyOf, raidDue, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, hitParts, halts, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, weatherOf, raidsOf, raidTurns, kindOf, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
         canMove, featBlock, featTargets, featMod, featAimed, featPreview, yields, lost, YIELD_RING, FEATS, ROLES, KINDS,
     };

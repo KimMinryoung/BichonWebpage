@@ -2550,9 +2550,10 @@
         const turn = r ? r.turns : b.turn;
         const lost = r ? r.lost : B.lost(b);
         const quickBy = def.reward && def.reward.quick ? def.reward.quickBy : 0;
+        const carry = def.reward && def.reward.quick && def.reward.carry && (s.edition || 1) >= (def.reward.carry.edition || 1) ? def.reward.carry : null;
         return [
             { id: 'won', label: '승리', got: won, open: !r },
-            par ? { id: 'quick', label: `${par}턴 안에` + (quickBy ? ` · ${W.strength} +${quickBy}` : ''), got: won && turn <= par, open: !r && turn <= par } : null,
+            par ? { id: 'quick', label: `${par}턴 안에` + (quickBy ? ` · ${W.strength} +${quickBy}` : '') + (carry ? ` · 다음 시기 ${W.pressure} −${-carry.pressure}` : ''), got: won && turn <= par, open: !r && turn <= par } : null,
             lost === undefined ? null : { id: 'whole', label: U.merits.whole, got: won && lost === 0, open: !r && lost === 0, note: lost ? `${lost}부대 잃음` : null },
         ].filter(Boolean);
     }
@@ -3667,9 +3668,10 @@
         const chips = [];
         if (k) {
             const thinned = k.share < 1 || k.weak < 1;
-            chips.push(chip(thinned ? `공격 ${k.atk} → ${r1(k.power)}` : `공격 ${k.atk}`));
+            chips.push(chip(thinned ? `공격 ${k.atk} → ${r1(k.power + (k.numb || 0))}` : `공격 ${k.atk}`));
             if (k.share < 1) chips.push(chip(`병력 ${a.hp}/${a.maxHp}`, 'is-note'));
             if (k.weak < 1) chips.push(chip('포위되어 절반', 'is-note'));
+            if (k.numb) chips.push(chip(`${(B.weatherOf(b) || {}).name || '날씨'} −${k.numb}`, 'is-minus'));
             if (k.ring) chips.push(chip(`협공 +${k.ring}`, 'is-plus'));
             if (k.flank) chips.push(chip(`측면 +${k.flank}`, 'is-plus'));
             if (k.order) chips.push(chip(`명령 +${k.order}`, 'is-plus'));
@@ -3809,7 +3811,7 @@
     // An air wing in words: whether it can fly now, and what the sky is.
     function wingState(b, w) {
         const why = B.wingBlock(b, w);
-        return why === 'spent' ? '기체가 다했다' : why === 'grounded' ? '안개로 뜨지 못한다' : why === 'flown' ? (w.kind === 'fighter' ? '이번 턴의 하늘을 맡고 있다' : '이번 턴에 출격했다') : why === 'no-target' ? '칠 적이 없다' : why ? '뜰 수 없다' : '뜰 수 있다';
+        return why === 'spent' ? '기체가 다했다' : why === 'grounded' ? `${b.def.groundedName || '안개'}로 뜨지 못한다` : why === 'flown' ? (w.kind === 'fighter' ? '이번 턴의 하늘을 맡고 있다' : '이번 턴에 출격했다') : why === 'no-target' ? '칠 적이 없다' : why ? '뜰 수 없다' : '뜰 수 있다';
     }
     // The sky over the board, in one strip: the player's wings (pressed to
     // fly: a fighter goes up at once, an attack wing picks its target on
@@ -3838,7 +3840,7 @@
             el('span', { class: 'cw-sky-pips', 'aria-hidden': 'true' }, ...Array.from({ length: w.maxHp }, (_, i) => el('i', { class: i < w.hp ? 'is-on' : null }))),
             w.flown ? el('small', {}, w.kind === 'fighter' ? '엄호 중' : '출격함') : null,
             B.wingBlock(b, w) === 'grounded' ? el('span', { class: 'cw-sky-off', 'aria-hidden': 'true' }, '⊘') : null)),
-            wings.length && B.grounded(b) ? el('span', { class: 'cw-sky-fog', title: '안개: 이번 턴에는 아무도 뜨지 못한다' }, el('span', { 'aria-hidden': 'true' }, '☁☁☁'), '안개') : null,
+            wings.length && B.grounded(b) ? el('span', { class: 'cw-sky-fog', title: `${b.def.groundedName || '안개'}: 이번 턴에는 아무도 뜨지 못한다` }, el('span', { 'aria-hidden': 'true' }, '☁☁☁'), b.def.groundedName || '안개') : null,
             // The enemy's planes on the right, drawn as the player's are: its
             // fighters (checked while the player's cover the turn) and its
             // bombers with the turns they come on.
