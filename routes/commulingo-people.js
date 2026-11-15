@@ -41,6 +41,7 @@ const { cardTextLinker, peopleGroupCardsHtml, personBody } = require('../data/co
 const { practiceDecksFor } = require('../data/commulingo/drill-presentation');
 const { courseChaptersFor } = require('../data/commulingo/book-page');
 const RETIRED_ROLE_PAGES = require('../data/commulingo/retired-role-pages');
+const { promosForAll } = require('../services/war-promos');
 
 // The people explorer: search + facets over every person, and the era shelves
 // when no condition is set. Every state is a URL; commulingo-people.js swaps
@@ -341,6 +342,7 @@ router.get('/people/:personId', async (req, res) => {
             relatedDocs,
             practiceDecks: await practiceDecksFor([`/commulingo/people/${person.id}`], lang),
             courseChapters: await courseChaptersFor([`people:${person.id}`], lang),
+            gamePromos: promosForAll([['people', person.id]], lang),
             roleIconSvg,
             roleHubHref,
             pageTitle: lang === 'en' ? `${person.label || person.displayName} — People` : `${person.label || person.displayName} — 인물 사전`,

@@ -18,6 +18,7 @@ const { buildEventPanel, pairedTermIdFor, presentedEventList } = require('../dat
 const { buildTermPanel } = require('../data/commulingo/term-presentation');
 const { practiceDecksFor } = require('../data/commulingo/drill-presentation');
 const { courseChaptersFor } = require('../data/commulingo/book-page');
+const { promosForAll } = require('../services/war-promos');
 
 router.get('/search', dictionarySearchRoute({
     kind: 'events', view: 'partials/commulingo-events-cards', target: '#commu-event-list',
@@ -103,6 +104,7 @@ router.get('/:eventId', async (req, res) => {
             practiceDecks: await practiceDecksFor(practiceHrefs, lang),
             courseChapters: await courseChaptersFor(
                 [`events:${event.id}`].concat(pairedTerm ? [`terms:${pairedTerm}`] : []), lang),
+            gamePromos: promosForAll([['events', event.id]].concat(pairedTerm ? [['terms', pairedTerm]] : []), lang),
             activePanel: 'event',
             pageTitle: lang === 'en' ? `${event.title} — Historical Events` : `${event.title} — 역사 사건`,
             pageDescription: event.summary,

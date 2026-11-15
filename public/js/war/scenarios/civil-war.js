@@ -2113,6 +2113,33 @@
         won: { title: '크림으로 가는 길이 열렸다', text: '유럽 러시아의 백군 저항은 끝났다.' },
         stalled: { kicker: '크림을 넘지 못함', title: '브란겔이 겨울을 넘긴다', text: '페레코프를 넘지 못했다. 역사에서는 11월 11일 유슌 방어선이 뚫렸고, 브란겔은 크림을 떠났다.' },
     };
+    // Where the game is offered outside itself (services/war-promos.js):
+    // the CommuLingo pages that carry a card for the whole war or for one
+    // battle, each battle's picture and one-line pitch (its card, its own
+    // page /games/civil-war/battle/<id>/ and that page's share image). The
+    // commanders on a battle's board (units' person) get its card too.
+    const promo = {
+        pitch: '1918년 여름, 사방에서 조여 오는 전선. 소비에트 정권의 자리에서 사단을 나눠 보내고 결정적인 전투를 직접 지휘한다.',
+        picture: 'red-wedge',
+        events: ['civil-war'],
+        battles: {
+            simbirsk: { picture: 'czech', terms: ['czechoslovak-legion'],
+                pitch: '1918년 8월, 투하쳅스키의 제1군이 코무치군에게 빼앗긴 심비르스크로 다가간다. 카펠이 돌아오기 전에 역을 쳐야 한다.' },
+            kazan: { picture: 'battle-kazan', terms: ['kazan-operation-1918', 'battle-of-sviyazhsk-1918', 'trotsky-train'],
+                pitch: '트로츠키의 장갑열차가 선 스비야시스크에서 볼가를 건너, 카펠에게 빼앗긴 카잔과 크렘린을 되찾는다.' },
+            tsaritsyn: { picture: 'battle-tsaritsyn', terms: ['defence-of-tsaritsyn'],
+                pitch: '돈군이 차리친의 순환 철도까지 밀고 들어왔다. 마몬토프의 기병을 막고 여덟 턴 동안 역을 지킨다.' },
+            ufa: { picture: 'battle-ufa', terms: ['ufa-operation-1919'],
+                pitch: '벨라야강의 철교는 폭파되었다. 차파예프의 제25사단이 배와 뗏목으로 강을 건너 우파를 친다.' },
+            orel: { picture: 'orel', terms: ['orel-kromy-operation'],
+                pitch: '쿠테포프가 오룔을 차지하고 툴라로 향한다. 충격군으로 퇴로를 끊고 오룔을 되찾는다.' },
+            warsaw: { picture: 'battle-warsaw', terms: ['battle-of-warsaw-1920'], events: ['soviet-polish-war'],
+                pitch: '비스와강에 다다른 서부전선. 바르샤바로 다리를 건너는 사이, 비어 있는 남쪽 옆구리를 지켜야 한다.' },
+            perekop: { picture: 'battle-perekop', terms: ['perekop-chongar-operation'],
+                pitch: '터키 방벽, 시바시의 여울, 촌가르 해협. 바람이 바뀌기 전에 크림으로 가는 길을 연다.' },
+        },
+    };
+
     // The rehearsal's cards (engine rehearse, ?battle=<id>): Trotsky's
     // train to the heaviest front, no requisition, the party's cohesion
     // kept at 40.
@@ -2120,7 +2147,7 @@
     const data = {
         id: 'civil-war', title: '붉은 전선 1918–1920', saveVersion: 1, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
         map, ui, portraits, pictures, pictureDir: '/images/civil-war/', roles, glossary,
-        texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring, rehearsal,
+        texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring, rehearsal, promo,
     };
     if (typeof module === 'object' && module.exports) module.exports = data;
     else (root.WarScenarios = root.WarScenarios || {})[data.id] = data;

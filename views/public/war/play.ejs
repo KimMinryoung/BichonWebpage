@@ -1,6 +1,6 @@
 <%# The play screen of a war game (public/js/war/ui/game.js fills it).
     Locals: war = { id, map (services/war-map.js), scenario (its data) }. %>
-    <div id="cwPlay" data-scenario="<%= war.id %>" hidden>
+    <div id="cwPlay" data-scenario="<%= war.id %>"<% if (war.battle) { %> data-battle="<%= war.battle %>"<% } %> hidden>
       <div class="cw-hud">
         <div class="cw-season"><p id="cwDate" class="games-kicker"></p><h2 id="cwTitle"></h2><ol id="cwCalendar" class="cw-calendar" aria-label="<%= war.scenario.ui.aria.calendar %>"></ol></div>
         <dl id="cwStats" class="cw-stats" aria-label="<%= war.scenario.ui.aria.stats %>"></dl>

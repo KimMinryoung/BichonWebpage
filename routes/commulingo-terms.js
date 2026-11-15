@@ -48,6 +48,7 @@ async function affiliationMembersFor(termId, lang) {
 }
 const { practiceDecksFor } = require('../data/commulingo/drill-presentation');
 const { courseChaptersFor } = require('../data/commulingo/book-page');
+const { promosForAll } = require('../services/war-promos');
 
 router.get('/search', dictionarySearchRoute({
     kind: 'terms', view: 'partials/commulingo-term-cards', target: '#commu-term-list',
@@ -144,6 +145,7 @@ router.get('/:termId', async (req, res) => {
             practiceDecks: await practiceDecksFor(practiceHrefs, lang),
             courseChapters: await courseChaptersFor(
                 [`terms:${term.id}`].concat(term.sameSubjectEvent ? [`events:${term.sameSubjectEvent.id}`] : []), lang),
+            gamePromos: promosForAll([['terms', term.id]].concat(term.sameSubjectEvent ? [['events', term.sameSubjectEvent.id]] : []), lang),
             activePanel: 'term',
             pageTitle: lang === 'en' ? `${term.term} — Glossary` : `${term.term} — 용어 사전`,
             pageDescription: term.definition,

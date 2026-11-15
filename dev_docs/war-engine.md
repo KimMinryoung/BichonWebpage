@@ -1,6 +1,6 @@
 # 전쟁 게임 엔진 `public/js/war/` — 시나리오 작성 기준
 
-갱신: 2026-11-15 (2차대전 그림: 세력 `axis`와 방패 문장 `balkenkreuz`·`fasces`·`roundel`, 화면 테마 `ui.theme: 'axis'`, 전투 부대의 기본 모자 `ui.caps`와 모습 `helmet`·`stahlhelm`·`pilotka`·`ushanka`, 전차·대전차포 부대 그림, 지도 표지 `tank`·`plane`, 공습의 비행기, 얼음·눈·진창 칸, 초상의 모자 넷과 옷 `boards`·`feldgrau`) / 2026-11-15 (2차대전 대비 기반 정비: 시나리오별 데이터 판 `edition`, 연습의 카드 운용 `rehearsal`, 카드의 지도 표지 `glyph`와 `MAP_MARKS`, 화면 문구 `ui.coach`·`ui.kinds`·`scoring.*.kicker`, 전투의 병종 상성 `vs`·돌파 `breaks`와 전차·대전차포 `KINDS`, 날씨 `weather`, 여러 번·양편의 공습 `air`, 테스트 `tests/unit/war-arms.js`) / 2026-11-02 (전략 밸런스 측정 도구 `scripts/war-campaign.js`, 시기를 다시 계획하는 `canRetrySeason`·`retrySeason`, 끝난 전투의 `lost`(`WarBattle.lost`), 전투의 `par`, 화면의 `ui.medal`·`ui.merits`) / 2026-10-19 (규칙 11: 역사가 진 시기 전투의 `reward.wonBy`, 적 역할 `hunt`, 부대 `flank`, 한 수 `order`·`brace`, 옛 규칙에 없는 전투의 명령은 재생에서 건너뜀) / 2026-10-18 (전투 밸런스 측정 도구 / 규칙 9: 비례 전진과 위치 압력 / 규칙 8: 위협의 `traits`·`as`, 조건 `alloc`) / 2026-10-17 (규칙 7: 규칙 세대마다의 달력(시기의 `when`), 한 시기의 사건 목록과 사건의 `when`, 지키는 전투 `outlast`) / 2026-10-16 (규칙 6: 전투로 여는 `cap`과 그 보상, 조건 있는 전투·카드, 적 역할 `push`) / 2026-10-15 (「붉은 전선」에서 공통 엔진을 떼어 냄)
+갱신: 2026-11-15 (게임 밖으로 알리기: 시나리오의 `promo`, `services/war-promos.js`, 전투 하나의 자기 페이지 `/games/<id>/battle/<battle>/`, 공유 그림 `scripts/war-og-images.py`, 결과 공유 단추) / 2026-11-15 (2차대전 그림: 세력 `axis`와 방패 문장 `balkenkreuz`·`fasces`·`roundel`, 화면 테마 `ui.theme: 'axis'`, 전투 부대의 기본 모자 `ui.caps`와 모습 `helmet`·`stahlhelm`·`pilotka`·`ushanka`, 전차·대전차포 부대 그림, 지도 표지 `tank`·`plane`, 공습의 비행기, 얼음·눈·진창 칸, 초상의 모자 넷과 옷 `boards`·`feldgrau`) / 2026-11-15 (2차대전 대비 기반 정비: 시나리오별 데이터 판 `edition`, 연습의 카드 운용 `rehearsal`, 카드의 지도 표지 `glyph`와 `MAP_MARKS`, 화면 문구 `ui.coach`·`ui.kinds`·`scoring.*.kicker`, 전투의 병종 상성 `vs`·돌파 `breaks`와 전차·대전차포 `KINDS`, 날씨 `weather`, 여러 번·양편의 공습 `air`, 테스트 `tests/unit/war-arms.js`) / 2026-11-02 (전략 밸런스 측정 도구 `scripts/war-campaign.js`, 시기를 다시 계획하는 `canRetrySeason`·`retrySeason`, 끝난 전투의 `lost`(`WarBattle.lost`), 전투의 `par`, 화면의 `ui.medal`·`ui.merits`) / 2026-10-19 (규칙 11: 역사가 진 시기 전투의 `reward.wonBy`, 적 역할 `hunt`, 부대 `flank`, 한 수 `order`·`brace`, 옛 규칙에 없는 전투의 명령은 재생에서 건너뜀) / 2026-10-18 (전투 밸런스 측정 도구 / 규칙 9: 비례 전진과 위치 압력 / 규칙 8: 위협의 `traits`·`as`, 조건 `alloc`) / 2026-10-17 (규칙 7: 규칙 세대마다의 달력(시기의 `when`), 한 시기의 사건 목록과 사건의 `when`, 지키는 전투 `outlast`) / 2026-10-16 (규칙 6: 전투로 여는 `cap`과 그 보상, 조건 있는 전투·카드, 적 역할 `push`) / 2026-10-15 (「붉은 전선」에서 공통 엔진을 떼어 냄)
 
 「붉은 전선 1918–1920」의 규칙·전투·화면을 시나리오와 떼어 놓은 공통 엔진이다. 다른 시대의 전쟁은 **시나리오 파일 하나**(+ 지도의 세력 범위 문서, 라우트 한 줄)로 더한다. 편집 GUI는 없다. 이 문서는 시나리오를 쓰는 사람(미래의 Claude)을 위한 레퍼런스다. 「붉은 전선」 고유의 설계·밸런스는 [civil-war-game.md](civil-war-game.md).
 
@@ -65,7 +65,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 ### 4.1 맨 위
 
-`id`, `title`, `saveVersion`(저장 형식, 1), `edition`(선택, 데이터 판, 5절), `rehearsal`(선택, 4.9), `frontOrder`(전선 표시 순서), `startLines`(전선별 시작 위치), `fronts`, `factions`, `troops`, `cards`, `turns`, `battles`, `epilogue`, `portraits`, `map`, `ui`, `texts`, 그리고 규칙 절(4.6).
+`id`, `title`, `saveVersion`(저장 형식, 1), `edition`(선택, 데이터 판, 5절), `rehearsal`(선택, 4.9), `promo`(선택, 4.10), `frontOrder`(전선 표시 순서), `startLines`(전선별 시작 위치), `fronts`, `factions`, `troops`, `cards`, `turns`, `battles`, `epilogue`, `portraits`, `map`, `ui`, `texts`, 그리고 규칙 절(4.6).
 
 ### 4.2 전선 `fronts[id]`
 
@@ -151,6 +151,15 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 `{ lead: [카드], skip: [카드], guard: { stat, min } }` — 연습(`rehearse`, `?battle=<id>`)이 역사의 선택으로 전투 직전까지 둘 때: `lead` 카드는 가장 무거운 전선에, `historyAt`이 있는 카드는 역사의 전선에, 나머지는 `skip`을 빼고 `guard` 스탯을 `min` 아래로 떨어뜨리지 않을 때만 쓴다. 없으면 `historyAt` 카드와 나머지 모든 카드. 「붉은 전선」: 트로츠키의 열차를 앞에, 징발은 쓰지 않고, 당 결속 40을 지킨다.
 
 새 행동이 필요하면 `ROLES`에 `{ marches(b, u), act(b, u, turn) }`, 새 한 수는 `FEATS`에 `{ blow | use, targets, beforeMove, block }`을 더한다. 대사 `when`: `start`·`goal`·`flood`·`reserve`·`surrender`·`air`·`turn:N`·`turned:<line>`·`feat:<id>`.
+
+### 4.10 게임 밖으로 알리기 `promo`
+
+`{ pitch, picture, events: [사건 id], battles: { [전투 id]: { pitch, picture, terms?: [용어 id], events?: [사건 id] } } }` — 사이트의 다른 곳에서 이 게임으로 들어오는 길. [services/war-promos.js](../services/war-promos.js)가 서버에서 한 번 읽는다.
+
+- **전투 하나의 페이지.** `battles`에 적은 전투마다 `/games/<id>/battle/<battle>/`(routes/redirects.js)가 생긴다. 같은 게임 화면을 그 전투의 제목·설명·공유 그림으로 그리고, `#cwPlay data-battle`이 있으면 화면은 시작 화면 없이 연습(`rehearse`)으로 그 전투를 연다. 저장·보고는 하지 않고 HUD는 숨긴다. 끝나면 「다시 하기·다른 전투·전쟁 전체 하기·결과 공유」. 전쟁 페이지 시작 화면 아래 「전투 하나만 해 보기」가 이 페이지들의 목록이다(`battles` 순서). 개발자 `?battle=<id>`는 그대로 쓴다.
+- **커뮤링고 카드.** 사건 페이지는 `events`에 적힌 사건이면 전쟁 전체 카드, 전투의 `events`·`terms`면 그 전투 카드, 인물 페이지는 그 전투판 부대의 `person[1]`이면 그 전투 카드(「이 인물이 나오는 전투」). 한 페이지에 두 장까지, 영어 페이지에는 없다(게임이 한국어 전용). 사건 페이지는 짝 용어, 용어 페이지는 짝 사건의 카드도 함께 본다(`promosForAll`). 그림 `picture`는 시나리오 `pictures`의 이름(작은 파일이 있으면 그것).
+- **공유 그림.** `og-game.jpg`, `og-<battle>.jpg`(1200×630, `pictureDir` 아래)는 `python3 scripts/war-og-images.py`로 만들어 커밋한다. 제목·날짜·턴·설명이나 그림을 바꾸면 다시 만든다. 사이트 글꼴 파일에는 라틴 글자와 숫자가 없어서 스크립트는 git 기록의 전체 Pretendard를 쓴다. 전투 끝의 「결과 공유」는 휴대폰 공유 시트(`navigator.share`), 없으면 클립보드로 결과 한 줄과 그 전투 페이지 주소를 넘긴다(전투 페이지가 없는 전투는 전쟁 페이지).
+- `tests/unit/war-promos.js`가 전투·그림·공유 그림의 존재와 카드 규칙을 지킨다. 적은 용어·사건·인물 id가 커뮤링고에 있는지는 데이터를 바꿀 때 MCP `entries_exist`로 확인한다.
 
 ## 5. 저장과 규칙 세대
 

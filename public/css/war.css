@@ -1890,3 +1890,29 @@
 .cw-dispatch li.is-ahead .cw-dispatch-hist, .cw-dispatch li.is-behind .cw-dispatch-hist { color: var(--text-primary); font-weight: 700; }
 .games-shell .cw-muster .cw-step.is-muster { margin: 2px 0 6px; min-height: 32px; padding: 3px 10px; font-size: .8rem; border-style: dashed; }
 .cw-muster-short { margin: 2px 0 6px; font-size: .78rem; color: var(--text-secondary); }
+
+/* ── One battle alone (services/war-promos.js) ── */
+/* The battles on the war's page, each its own page: a row is the link. */
+.cw-battle-pick { margin: var(--space-6) 0 0; }
+.cw-battle-pick h2 { font-size: 1.25rem; margin: 0 0 6px; }
+.cw-battle-pick > .games-note { margin: 0 0 14px; }
+.cw-battle-pick-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 10px; }
+.cw-battle-pick-card { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 14px; align-items: start; padding: 10px; height: 100%; color: inherit; text-decoration: none; border-radius: 0; }
+.cw-battle-pick-card:hover { border-color: var(--cw-red); }
+.cw-battle-pick-card img { display: block; width: 112px; height: 84px; object-fit: cover; }
+.cw-battle-pick-text { display: grid; gap: 3px; }
+.cw-battle-pick-text small { color: var(--text-secondary); font-size: .78rem; }
+.cw-battle-pick-text strong { font-size: 1.02rem; }
+.cw-battle-pick-text span { font-size: .86rem; line-height: 1.5; color: var(--text-secondary); }
+.cw-shell.is-playing .cw-battle-pick { display: none; }
+@media (max-width: 520px) {
+    .cw-battle-pick-list { grid-template-columns: 1fr; }
+    .cw-battle-pick-card { grid-template-columns: 84px minmax(0, 1fr); gap: 10px; }
+    .cw-battle-pick-card img { width: 84px; height: 63px; }
+}
+/* A battle alone has no war around it to count. */
+.cw-shell.is-battle-only .cw-hud { display: none; }
+/* The closing row's ways out that leave the page, drawn as its buttons. */
+.games-shell .cw-close-link { display: inline-flex; align-items: center; min-height: 44px; border: 1px solid var(--border); padding: 12px 16px; color: var(--text-primary); background: var(--bg-canvas); text-decoration: none; }
+.games-shell .cw-close-link.cw-primary { color: #fff; }
+@media (max-width: 720px) { .games-shell .cw-battle-actions .cw-close-link { padding: 6px 10px; font-size: .82rem; min-height: 36px; } }

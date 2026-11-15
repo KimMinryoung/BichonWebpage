@@ -1,0 +1,22 @@
+<%# Detail page → the war game that plays this entry (services/war-promos.js):
+    the whole war on its events, a battle on its terms and events and on the
+    people who command on its board. Korean pages only. The row is the link. %>
+<% var promoCards = typeof cards !== 'undefined' && cards ? cards : []; %>
+<% if (promoCards.length) { %>
+<section class="commu-person-detail-section commu-section-wide commu-war-promo" aria-labelledby="war-promo">
+    <h2 id="war-promo"><%= kind === 'people' ? '이 인물이 나오는 전투' : '직접 지휘해 보기' %></h2>
+    <ul class="commu-war-promo-list">
+        <% promoCards.forEach(function(card) { %>
+        <li><a class="commu-war-promo-card" href="<%= card.url %>">
+            <% if (card.picture) { %><img src="<%= card.picture.src %>" alt="" width="<%= card.picture.w %>" height="<%= card.picture.h %>" loading="lazy" decoding="async"><% } %>
+            <span class="commu-war-promo-text">
+                <small>게임 「<%= card.game %>」<% if (card.id) { %> · 전투 하나<% if (card.turns) { %> · <%= card.turns %>턴<% } %><% } else { %> · 전쟁 전체<% } %></small>
+                <strong><%= card.id ? card.title : card.title + ' — 전쟁 전체를 지휘하기' %></strong>
+                <span><%= card.pitch %></span>
+                <em><%= card.id ? '이 전투 지휘하기 →' : '게임 시작하기 →' %></em>
+            </span>
+        </a></li>
+        <% }) %>
+    </ul>
+</section>
+<% } %>

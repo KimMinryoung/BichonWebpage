@@ -195,9 +195,12 @@
         if (top < pin) window.scrollBy({ top: top - pin });
     }
 
-    // A developer's rehearsal of one battle (?battle=<id>, engine rehearse):
-    // the war before it played as history chose, nothing saved or reported.
-    const practice = new URLSearchParams(location.search).has('battle');
+    // One battle alone (engine rehearse): the war before it played as
+    // history chose, nothing saved or reported. A battle's own page
+    // (/games/<id>/battle/<battle>/, #cwPlay data-battle) is a visitor's way
+    // in; ?battle=<id> the developer's, ?battle alone listing them all.
+    const battleOnly = $('cwPlay').dataset.battle || null;
+    const practice = Boolean(battleOnly) || new URLSearchParams(location.search).has('battle');
 
     // The play log goes to the server as the war moves on (war/ui/report.js).
     const report = practice ? { begin() {}, track() {}, leave() {}, retried() {} } : window.WarReport.create(D.id, KEY);
@@ -296,7 +299,7 @@
 
     // ?battle=<id> opens that battle at once; ?battle alone lists them.
     function initPractice() {
-        const id = new URLSearchParams(location.search).get('battle');
+        const id = battleOnly || new URLSearchParams(location.search).get('battle');
         const state = D.battles[id] ? G.rehearse(id) : null;
         if (state) return startGame(state, true);
         $('cwSetup').querySelector('.cw-setup-actions').replaceChildren(...Object.values(D.battles).map(b =>
@@ -3415,9 +3418,38 @@
         const left = closeLeft(b);
         if (left > 0) window.setTimeout(() => { if (battleEnded) renderBattle(); }, left + 30);
         const final = s.phase === 'done';
-        return el('div', { class: 'cw-battle-actions cw-battle-close' },
-            el('p', {}, el('strong', {}, foughtText({ result: b.result, turns: b.turn, held: b.held })), b.result === 'won' ? null : ` · ${lostWhy(b)}`),
-            left > 0 ? null : el('button', { type: 'button', class: 'cw-primary', 'data-key': 'leave', onclick: leaveBattle }, final ? '결과 보기 →' : '전선의 움직임 →'));
+        const said = el('p', {}, el('strong', {}, foughtText({ result: b.result, turns: b.turn, held: b.held })), b.result === 'won' ? null : ` · ${lostWhy(b)}`);
+        if (left > 0) return el('div', { class: 'cw-battle-actions cw-battle-close' }, said);
+        const share = el('button', { type: 'button', 'data-key': 'share', onclick: () => shareBattle(b) }, '결과 공유');
+        // A battle played alone ends here: again, another, the whole war.
+        if (battleOnly) return el('div', { class: 'cw-battle-actions cw-battle-close' }, said,
+            el('button', { type: 'button', class: b.result === 'won' ? '' : 'cw-primary', 'data-key': 'again', onclick: () => { startGame(G.rehearse(battleOnly), true); announce(`${b.def.title}: 처음부터 다시`); } }, '다시 하기'),
+            el('a', { class: 'cw-close-link', href: `/games/${D.id}/#cwBattlePick` }, '다른 전투'),
+            el('a', { class: b.result === 'won' ? 'cw-close-link cw-primary' : 'cw-close-link', href: `/games/${D.id}/` }, '전쟁 전체 하기'),
+            share);
+        return el('div', { class: 'cw-battle-actions cw-battle-close' }, said,
+            el('button', { type: 'button', class: 'cw-primary', 'data-key': 'leave', onclick: leaveBattle }, final ? '결과 보기 →' : '전선의 움직임 →'),
+            share);
+    }
+
+    // The battle's result to pass on: the phone's share sheet where there
+    // is one, the clipboard otherwise. The link is the battle's own page
+    // (its picture in the preview), or the war's for a battle without one.
+    async function shareBattle(b) {
+        const id = b.def.id;
+        const path = D.promo && D.promo.battles[id] ? `/games/${D.id}/battle/${id}/` : `/games/${D.id}/`;
+        const url = location.origin + path;
+        const text = `「${D.title}」 ${b.def.title}: ${b.result === 'won' ? `${b.turn}턴 만에 이겼다` : '졌다'}. 당신이라면?`;
+        if (navigator.share) {
+            try { await navigator.share({ title: b.def.title, text, url }); } catch (_) { /* closed */ }
+            return;
+        }
+        try {
+            await navigator.clipboard.writeText(`${text} ${url}`);
+            announce('결과와 링크를 복사했습니다');
+        } catch (_) {
+            window.prompt('이 글을 복사해 나눠 주세요', `${text} ${url}`);
+        }
     }
 
     // Why a battle was lost: its post taken, its units gone, or its time run out.
