@@ -1543,8 +1543,16 @@
 .cw-sky { display: flex; flex-wrap: nowrap; gap: 6px; align-items: center; overflow-x: auto; scrollbar-width: none; margin-bottom: 6px; padding: 5px 8px; border: 1px solid var(--cw-steel-rim, var(--border-color)); background: color-mix(in srgb, #8fb3d6 22%, var(--bg-surface)); font-size: .78rem; white-space: nowrap; }
 .cw-sky-label { flex: 0 0 auto; font-size: .76rem; letter-spacing: .06em; }
 .games-shell .cw-sky-wing { flex: 0 0 auto; display: inline-flex; gap: 5px; align-items: center; min-height: 30px; padding: 3px 9px; font-size: .78rem; font-weight: 700; }
+/* A wing that can fly now reads as a thing to press: filled, raised, lifting under the pointer; its plane rocks (the cue on a phone, where nothing hovers). */
+.games-shell .cw-sky-wing:not(.is-done) { border: 2px solid var(--cw-red); background: var(--cw-red); color: #fff; box-shadow: 3px 3px 0 var(--text-primary); cursor: pointer; transition: transform .08s, box-shadow .08s; }
+.games-shell .cw-sky-wing:not(.is-done):hover { transform: translate(-1px, -2px); box-shadow: 4px 5px 0 var(--text-primary); filter: brightness(1.12); }
+.games-shell .cw-sky-wing:not(.is-done):active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--text-primary); }
+.games-shell .cw-sky-wing:not(.is-done)[aria-pressed="true"] { background: var(--text-primary); border-color: var(--text-primary); color: var(--bg-surface); }
+.cw-sky-wing:not(.is-done) > span:first-child { display: inline-block; animation: cw-wing-ready 1.8s ease-in-out infinite; }
+@keyframes cw-wing-ready { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-2px) rotate(-10deg); } }
+@media (prefers-reduced-motion: reduce) { .cw-sky-wing:not(.is-done) > span:first-child { animation: none; } .games-shell .cw-sky-wing:not(.is-done) { transition: none; } }
 .games-shell .cw-sky-wing.is-done { border-style: dashed; color: var(--text-secondary); }
-.games-shell .cw-sky-wing[aria-pressed="true"] { border-color: var(--cw-red); background: color-mix(in srgb, var(--cw-red) 18%, transparent); }
+.games-shell .cw-sky-wing.is-done { cursor: default; }
 .cw-sky-wing small { font-weight: 400; color: var(--text-secondary); }
 .cw-sky-pips { display: inline-flex; gap: 2px; }
 .cw-sky-pips i { width: 6px; height: 10px; border: 1px solid currentColor; }
@@ -1552,12 +1560,26 @@
 .cw-sky-chip { flex: 0 0 auto; padding: 2px 7px; border: 1px solid var(--border-color); background: var(--bg-surface); }
 .cw-sky-chip.is-warn { border-color: var(--cw-red); color: var(--cw-red); font-weight: 700; }
 .cw-sky-chip.is-ok { border-color: var(--text-primary); font-weight: 700; }
+.cw-sky-foes { flex: 0 0 auto; display: inline-flex; gap: 6px; align-items: center; margin-left: auto; }
+.cw-sky-foe { display: inline-flex; gap: 5px; align-items: center; min-height: 30px; padding: 3px 9px; border: 1px solid var(--cw-foe-ink); background: var(--cw-foe-paper); color: var(--cw-foe-ink); font-weight: 700; }
+.cw-sky-foe.is-done { border-style: dashed; opacity: .6; }
+.cw-sky-foe.is-held { border-color: var(--text-primary); }
+.cw-sky-foe small { font-weight: 400; }
 .cw-sky-raids { flex: 0 0 auto; display: inline-flex; gap: 4px; align-items: center; }
 .cw-sky-raids i { font-style: normal; padding: 2px 6px; border: 1px solid var(--border-color); background: var(--bg-surface); }
 .cw-sky-raids i.is-past { color: var(--text-secondary); text-decoration: line-through; }
 .cw-sky-raids i.is-now { border-color: var(--cw-red); background: var(--cw-red); color: #fff; font-weight: 700; }
 .cw-sky-raids i.is-off { border-color: var(--text-primary); font-weight: 700; }
 .cw-raid-mark { pointer-events: none; }
+.cw-raid-mark.is-off { opacity: .45; }
+.cw-raid-off { fill: none; stroke: var(--cw-red); stroke-width: 3; stroke-linecap: round; pointer-events: none; }
+/* The fighters covering the turn: the strip brightens, their button stands filled, the enemy's fighters are barred, and a pair of planes patrols over the board. */
+.cw-sky.is-covered { background: color-mix(in srgb, #5d9ad6 45%, var(--bg-surface)); border-color: var(--cw-red); box-shadow: inset 0 -3px 0 var(--cw-red); }
+.games-shell .cw-sky-wing.is-up { border: 2px solid var(--cw-red); border-style: solid; color: var(--cw-red); background: var(--bg-surface); font-weight: 800; }
+.cw-sky-foe.is-held { background: linear-gradient(to top right, transparent calc(50% - 1.5px), var(--cw-red) calc(50% - 1.5px), var(--cw-red) calc(50% + 1.5px), transparent calc(50% + 1.5px)), var(--cw-foe-paper); opacity: .75; }
+.cw-patrol { pointer-events: none; animation: cw-patrol 7s linear infinite alternate; }
+@keyframes cw-patrol { from { transform: translateX(0); } to { transform: translateX(var(--cw-patrol)); } }
+@media (prefers-reduced-motion: reduce) { .cw-patrol { animation: none; } }
 .cw-raid-text { font-size: 10px; font-weight: 800; fill: var(--cw-red); stroke: #fff; stroke-width: 2.5; paint-order: stroke; pointer-events: none; }
 .cw-pocket-hint { margin: 0; flex-basis: 100%; font-size: .84rem; font-weight: 700; color: var(--cw-red); }
 .cw-battle-more { margin-top: 4px; font-size: .85rem; color: var(--text-secondary); }

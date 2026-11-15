@@ -161,8 +161,16 @@
         // The player's air wings (def.wings): off the board, flown once a turn.
         const wings = (def.wings || []).filter(w => joins(Object.assign({ side: sides.player }, w), flags, muster, def))
             .map(w => ({ id: w.id, tag: w.tag || w.name, name: w.name, sub: w.sub || '', kind: w.kind, hp: w.hp, maxHp: w.hp, atk: w.atk || 0, person: w.person || null, flown: false, escorted: false }));
+        // The enemy's planes, shown beside the player's: a wing for each of
+        // its raids (def.air; a plane for each turn it comes) and one for
+        // its fighters (def.sky with def.skyWing: { name, tag, sub, hp }).
+        // The fighters lose a plane each turn the player's cover; with
+        // none left the sky is open. Without skyWing the sky does not wear.
+        const foeWings = raidsOf(def).map((raid, i) => ({ raid, i })).filter(x => x.raid.against !== 'enemy')
+            .map(({ raid, i }) => ({ id: 'raid' + i, kind: 'strike', name: raid.name || '', tag: raid.tag || raid.name || '', sub: raid.sub || '', raid: i, hp: raidTurns(raid).length, maxHp: raidTurns(raid).length }));
+        if (def.sky && def.skyWing) foeWings.push({ id: 'sky', kind: 'fighter', name: def.skyWing.name, tag: def.skyWing.tag || def.skyWing.name, sub: def.skyWing.sub || '', hp: def.skyWing.hp, maxHp: def.skyWing.hp });
         return {
-            def, sides, turn: 1, units, pending, wings, cover: false, result: null, turned, wear: {}, reserve: null,
+            def, sides, turn: 1, units, pending, wings, foeWings, cover: false, result: null, turned, wear: {}, reserve: null,
             heroics, feats: {}, fortBlows: 0, captured: 0, order: null,
             events: [], report: [],
         };
@@ -716,6 +724,11 @@
     // sky (def.sky: the enemy's fighters) the attack wings fly whole;
     // uncovered there they strike sky weaker and lose sky more planes.
     // On a grounded turn (def.grounded: fog) nothing flies.
+    // The enemy's fighters over the field now: def.sky while their wing has planes.
+    function skyOf(b) {
+        const w = (b.foeWings || []).find(x => x.kind === 'fighter');
+        return w && w.hp <= 0 ? 0 : b.def.sky || 0;
+    }
     // The enemy's raids due at the end of this turn, with the player's units they come for.
     const raidDue = b => raidsOf(b.def).filter(r => r.against !== 'enemy' && raidTurns(r).includes(b.turn))
         .map(raid => ({ raid, units: raid.units.map(id => byId(b, id)).filter(u => u && u.hp > 1 && isPlayer(b, u)) }));
@@ -733,9 +746,10 @@
     const wingTargets = (b, w) => (w.kind === 'strike' ? alive(b).filter(o => isEnemy(b, o) && o.hp > 1) : []);
     // What an attack wing would do to a unit now (dmg), and what the flight costs it (loss).
     function wingPreview(b, w, t) {
-        const bare = (b.def.sky || 0) > 0 && !b.cover;
-        const weight = w.atk - Math.max(0, groundOf(b, t.r, t.c)) + (t.kind === 'tank' ? 1 : 0) - (bare ? b.def.sky : 0);
-        return { dmg: Math.min(t.hp - 1, Math.max(1, weight)), counter: 0, wears: false, surrender: false, loss: Math.min(w.hp, 1 + (bare ? b.def.sky : 0)), bare };
+        const sky = skyOf(b);
+        const bare = sky > 0 && !b.cover;
+        const weight = w.atk - Math.max(0, groundOf(b, t.r, t.c)) + (t.kind === 'tank' ? 1 : 0) - (bare ? sky : 0);
+        return { dmg: Math.min(t.hp - 1, Math.max(1, weight)), counter: 0, wears: false, surrender: false, loss: Math.min(w.hp, 1 + (bare ? sky : 0)), bare };
     }
     function sortie(b, id, targetId) {
         const w = wingOf(b, id);
@@ -754,6 +768,9 @@
         b.events = [];
         w.hp -= 1; w.flown = true; b.cover = true;
         b.events.push({ type: 'cover', wing: w.id, by: w.name });
+        // The fighters meet: the enemy's lose a plane too.
+        const foe = (b.foeWings || []).find(x => x.kind === 'fighter' && x.hp > 0);
+        if (foe) { foe.hp -= 1; b.events.push({ type: 'dogfight', foe: foe.name, left: foe.hp }); }
         return true;
     }
 
@@ -1056,9 +1073,12 @@
         // enemy turns they come on; the enemy's hit the player's units, a
         // raid against: 'enemy' (the player's own planes) the enemy's.
         // Planes wound, never finish a unit.
-        for (const raid of raidsOf(b.def)) {
+        for (const [n, raid] of raidsOf(b.def).entries()) {
             if (!raidTurns(raid).includes(b.turn)) continue;
             const mine = raid.against === 'enemy';
+            // The raid flown (or driven off): its wing has one flight fewer left.
+            const wing = mine ? null : (b.foeWings || []).find(w => w.raid === n);
+            if (wing) wing.hp = Math.max(0, wing.hp - 1);
             // The player's fighters over the field: the enemy's raid is driven off.
             if (!mine && b.cover) { b.events.push(Object.assign({ type: 'air-off' }, raid.name ? { by: raid.name } : {})); continue; }
             for (const id of raid.units) {
@@ -1187,7 +1207,7 @@
     }
 
     const api = {
-        start, joins, act, reachable, raidDue, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
+        start, joins, act, reachable, skyOf, raidDue, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, weatherOf, raidsOf, raidTurns, kindOf, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
         canMove, featBlock, featTargets, featMod, featAimed, featPreview, yields, lost, YIELD_RING, FEATS, ROLES, KINDS,
     };

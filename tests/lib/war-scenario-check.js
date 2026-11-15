@@ -265,6 +265,7 @@ function checkScenario(D) {
         for (const w of def.wings || []) need(w.id && w.name && ['strike', 'fighter'].includes(w.kind) && w.hp > 0 && (w.kind === 'fighter' || w.atk > 0), `${at}: wing ${w.id}`);
         need(new Set((def.wings || []).map(w => w.id)).size === (def.wings || []).length, `${at}: wings share an id`);
         if (def.sky) need((def.wings || []).some(w => w.kind === 'strike'), `${at}: an enemy sky over no attack wing`);
+        if (def.skyWing) need(def.sky && def.skyWing.name && def.skyWing.hp > 0, `${at}: the enemy's fighter wing`);
         for (const t of def.grounded || []) need(t >= 1 && t <= def.turnLimit, `${at}: grounded turn ${t}`);
         if (def.lesson && !def.lesson.air) need(def.supply && def.supply.enemy && ['supply', 'close', 'closed'].every(k => typeof def.lesson[k] === 'string' && def.lesson[k]), `${at}: lesson needs the enemy's supply and its three steps`);
         if (def.lesson && def.lesson.air) need((def.wings || []).length && ['sky', 'cover', 'strike', 'flown'].every(k => typeof def.lesson.air[k] === 'string' && def.lesson.air[k]), `${at}: the air lesson needs wings and its four steps`);

@@ -87,6 +87,7 @@ function clone(b) {
         // Units still to come (battle.js arrive), and no supply map kept over from the original.
         pending: (b.pending || []).map(u => Object.assign({}, u)), supplyCache: null,
         wings: (b.wings || []).map(w => Object.assign({}, w)),
+        foeWings: (b.foeWings || []).map(w => Object.assign({}, w)),
         events: [], report: [],
     });
 }
@@ -302,7 +303,7 @@ function ordinaryTurn(b, slip = SLIP) {
     const wings = (b.wings || []).filter(w => !B.wingBlock(b, w));
     const strikers = wings.filter(w => w.kind === 'strike');
     const raid = B.raidsOf(def).some(r => r.against !== 'enemy' && B.raidTurns(r).includes(b.turn));
-    for (const w of wings.filter(w => w.kind === 'fighter')) if (raid || (def.sky && strikers.length)) play(b, 'cover', w.id);
+    for (const w of wings.filter(w => w.kind === 'fighter')) if (raid || (B.skyOf(b) && strikers.length)) play(b, 'cover', w.id);
     for (const w of strikers) {
         const best = B.wingTargets(b, w).map(e => ({ e, v: B.wingPreview(b, w, e).dmg * 3 + (at(goals, e) ? 6 : 0) - (goals.length ? near(e, goals) : 0) * .5 + rand() })).sort((x, y) => y.v - x.v)[0];
         if (best && B.wingPreview(b, w, best.e).dmg >= 2) play(b, 'sortie', w.id, best.e.id);

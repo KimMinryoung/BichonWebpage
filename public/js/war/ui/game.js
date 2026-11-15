@@ -2979,7 +2979,7 @@
         const wingFlies = wing && !B.wingBlock(b, wing);
         const moves = unit && !armed && B.canMove(b, unit) ? B.reachable(b, unit) : [];
         const unitEls = new Map();
-        const bombed = new Map(b.cover || battleEnded ? [] : B.raidDue(b).flatMap(x => x.units.map(u => [u.id, Math.min(u.hp - 1, x.raid.dmg)])));
+        const bombed = new Map(battleEnded ? [] : B.raidDue(b).flatMap(x => x.units.map(u => [u.id, Math.min(u.hp - 1, x.raid.dmg)])));
         const targets = wingFlies ? B.wingTargets(b, wing) : armed ? B.featTargets(b, unit) : unit && !unit.acted ? B.targets(b, unit) : [];
         // One White unit's reach when it is picked; every one's with 「백군 위협」.
         const danger = foe ? B.menace(b, foe) : menaceAll ? b.units.filter(u => B.isEnemy(b, u) && u.hp > 0).flatMap(u => B.menace(b, u)) : [];
@@ -3104,7 +3104,7 @@
                 tabindex: '0', role: 'button',
                 style: lunge ? `--lx:${Math.sign(foeHit.c - u.c) * 9}px;--ly:${Math.sign(foeHit.r - u.r) * 9}px;--since:${Math.round(performance.now() - fallAt.get(blow))}ms`
                     : leap !== null ? `--since:${cheer - 300 - leap * 90}ms` : null,
-                'aria-label': `${B.isPlayer(b, u) ? U.player : foeName()} ${u.name}${u.yielded ? '(투항해 넘어옴)' : ''}, 병력 ${u.hp}/${u.maxHp}, 방어 ${B.defenseOf(b, u)}${B.cutOff(b, u) ? ', 포위됨' : ''}${bombed.has(u.id) ? `, 이번 턴 끝에 폭격당함 피해 ${bombed.get(u.id)}` : ''}` + (p ? `, 공격 시 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ''}${p.wears ? ', 진지 방어 1 감소' : ''}${p.surrender ? ', 투항시킴' : ''}` : '') + (featLeft(b, u) ? `, 결정적 한 수 ${u.feat.name}` : '') + (done ? ', 행동 마침' : ''),
+                'aria-label': `${B.isPlayer(b, u) ? U.player : foeName()} ${u.name}${u.yielded ? '(투항해 넘어옴)' : ''}, 병력 ${u.hp}/${u.maxHp}, 방어 ${B.defenseOf(b, u)}${B.cutOff(b, u) ? ', 포위됨' : ''}${bombed.has(u.id) ? (b.cover ? ', 전투기가 폭격을 막는다' : `, 이번 턴 끝에 폭격당함 피해 ${bombed.get(u.id)}`) : ''}` + (p ? `, 공격 시 피해 ${p.dmg}${p.counter ? `, 반격 ${p.counter}` : ''}${p.wears ? ', 진지 방어 1 감소' : ''}${p.surrender ? ', 투항시킴' : ''}` : '') + (featLeft(b, u) ? `, 결정적 한 수 ${u.feat.name}` : '') + (done ? ', 행동 마침' : ''),
             });
             // A counter on the board: a flat square of the side's colour,
             // its name, what it is and its strength.
@@ -3147,7 +3147,9 @@
             if (bombed.has(u.id)) {
                 const plane = planeGlyph(x + 2, y - 9, 20);
                 plane.classList.add('is-white', 'cw-raid-mark');
-                g.append(plane, svg('text', { x: x + 25, y: y + 3, class: 'cw-raid-text' }, `−${bombed.get(u.id)}`));
+                // Covered by the fighters: the raid's mark struck out.
+                if (b.cover) { plane.classList.add('is-off'); g.append(plane, svg('path', { d: `M${x + 2} ${y - 9}l20 16M${x + 22} ${y - 9}l-20 16`, class: 'cw-raid-off' })); }
+                else g.append(plane, svg('text', { x: x + 25, y: y + 3, class: 'cw-raid-text' }, `−${bombed.get(u.id)}`));
             }
             if (featLeft(b, u)) g.append(svg('path', { d: star(x + CELL - 4, y + 4, 6, 2.5), class: 'cw-feat-star' + (B.featBlock(b, u) ? ' is-waiting' : '') }));
             // What the number cannot say: a surrender, a fortification worn.
@@ -3211,12 +3213,18 @@
         board.append(postMark(b));
         board.append(areaMarks(b));
         board.append(pocketMarks(b));
+        // The fighters covering the turn: a pair of planes patrolling over the board.
+        if (b.cover && !battleEnded) {
+            const patrol = svg('g', { class: 'cw-patrol', 'aria-hidden': 'true', style: `--cw-patrol:${cols * CELL - 70}px` });
+            for (const [dx, dy] of [[0, 0], [-26, 12]]) { const pl = planeGlyph(34 + dx, 6 + dy, 26); pl.classList.add('is-red'); patrol.append(pl); }
+            board.append(patrol);
+        }
         board.append(eventArrows(b));
         if (verdict && b.result === 'won') board.append(victoryBursts(b));
         const moment = momentBanner(b);
         // A Red order leaves only its blow, falls and the flank in the
         // events; anything else came from the White turn.
-        const whiteMoved = b.events.some(e => e.type === 'attack' ? B.isEnemy(b, b.units.find(u => u.id === e.from)) : e.type === 'air' ? !e.wing : !['fall', 'turned', 'wear', 'feat', 'surrender', 'raised', 'cut', 'relieved', 'splash', 'cover'].includes(e.type));
+        const whiteMoved = b.events.some(e => e.type === 'attack' ? B.isEnemy(b, b.units.find(u => u.id === e.from)) : e.type === 'air' ? !e.wing : !['fall', 'turned', 'wear', 'feat', 'surrender', 'raised', 'cut', 'relieved', 'splash', 'cover', 'dogfight'].includes(e.type));
         const reds = b.units.filter(u => B.isPlayer(b, u) && u.hp > 0);
         const ready = reds.filter(u => !u.acted).length;
         const airReady = battleEnded ? 0 : (b.wings || []).filter(w => !B.wingBlock(b, w)).length;
@@ -3473,7 +3481,6 @@
         const wings = b.wings || [];
         const raids = B.raidsOf(b.def).filter(r => r.against !== 'enemy');
         if (!wings.length && !raids.length) return null;
-        const turns = [...new Set(raids.flatMap(r => B.raidTurns(r)))].sort((a, z) => a - z);
         const chip = (text, cls) => el('span', { class: 'cw-sky-chip' + (cls ? ' ' + cls : '') }, text);
         const press = w => {
             selected = null; inspected = null; endArmed = false;
@@ -3485,17 +3492,30 @@
             wingArmed = wingArmed === w.id ? null : w.id;
             renderBattle();
         };
-        return el('div', { class: 'cw-sky', 'data-pane': 'field', role: 'group', 'aria-label': '하늘' },
+        return el('div', { class: 'cw-sky' + (b.cover ? ' is-covered' : ''), 'data-pane': 'field', role: 'group', 'aria-label': '하늘' },
             el('strong', { class: 'cw-sky-label' }, '하늘'),
             ...wings.map(w => el('button', {
-                type: 'button', class: 'cw-sky-wing' + (B.wingBlock(b, w) ? ' is-done' : ''), 'data-key': `wing-${w.id}`, 'aria-pressed': String(w.id === wingArmed),
+                type: 'button', class: 'cw-sky-wing' + (B.wingBlock(b, w) ? ' is-done' : '') + (w.flown ? ' is-up' : ''), 'data-key': `wing-${w.id}`, 'aria-pressed': String(w.id === wingArmed),
                 'aria-label': `${w.name}, 기체 ${w.hp}/${w.maxHp}, ${wingState(b, w)}`, onclick: () => press(w),
             }, el('span', { 'aria-hidden': 'true' }, '✈'), w.tag,
             el('span', { class: 'cw-sky-pips', 'aria-hidden': 'true' }, ...Array.from({ length: w.maxHp }, (_, i) => el('i', { class: i < w.hp ? 'is-on' : null }))),
             w.flown ? el('small', {}, w.kind === 'fighter' ? '엄호 중' : '출격함') : null)),
             wings.length && B.grounded(b) ? chip('안개: 이번 턴은 못 뜬다', 'is-warn') : null,
-            !wings.length ? null : b.def.sky ? chip(b.cover ? `${foeName()} 전투기 · 엄호 중` : `${foeName()} 전투기 있음`, b.cover ? 'is-ok' : 'is-warn') : chip(`${foeName()} 전투기 없음`),
-            turns.length ? el('span', { class: 'cw-sky-raids' }, `${foeName()} 공습`, ...turns.map(t => el('i', { class: t < b.turn ? 'is-past' : t === b.turn ? (b.cover ? 'is-off' : 'is-now') : null }, t === b.turn ? (b.cover ? `${t}턴 쫓아냄` : `${t}턴 끝 (이번)`) : `${t}턴`))) : null);
+            // The enemy's planes on the right, drawn as the player's are: its
+            // fighters (checked while the player's cover the turn) and its
+            // bombers with the turns they come on.
+            (b.foeWings || []).length ? el('span', { class: 'cw-sky-foes', role: 'group', 'aria-label': `${foeName()} 비행기` },
+                ...(b.foeWings || []).map(w => {
+                    const raid = w.kind === 'strike' ? B.raidsOf(b.def)[w.raid] : null;
+                    const held = w.kind === 'fighter' && b.cover && w.hp >= 0;
+                    return el('span', {
+                        class: 'cw-sky-foe' + (w.hp <= 0 ? ' is-done' : '') + (held ? ' is-held' : ''), title: [w.name, w.sub].filter(Boolean).join(' · '),
+                        'aria-label': `${w.name}, 기체 ${w.hp}/${w.maxHp}` + (raid ? `, 공습 ${B.raidTurns(raid).join('·')}턴 끝` : ''),
+                    }, el('span', { 'aria-hidden': 'true' }, '✈'), w.tag,
+                    el('span', { class: 'cw-sky-pips', 'aria-hidden': 'true' }, ...Array.from({ length: w.maxHp }, (_, i) => el('i', { class: i < w.hp ? 'is-on' : null }))),
+                    held ? el('small', {}, '막힘') : null,
+                    raid ? el('span', { class: 'cw-sky-raids' }, ...B.raidTurns(raid).map(t => el('i', { class: t < b.turn ? 'is-past' : t === b.turn ? (b.cover ? 'is-off' : 'is-now') : null }, t === b.turn ? (b.cover ? `${t}턴 쫓아냄` : `${t}턴 끝`) : `${t}턴`))) : null);
+                })) : null);
     }
     // The picked wing's card: what it is, what flying costs, and its order.
     function wingInfo(b, w) {
@@ -3508,8 +3528,8 @@
             el('p', {}, strike
                 ? `판 밖 비행장에서 떠서 판 위의 적 하나를 친다. 무게 ${w.atk}에서 적이 선 땅의 방어를 빼고, 전차에는 +1. 마지막 병력은 남는다. 뜰 때마다 기체 1을 잃는다.`
                 : '이번 턴의 하늘을 맡는다. 턴 끝에 오는 적의 공습을 쫓아내고, 적 전투기가 있는 하늘에서 습격기가 온전히 치게 한다. 뜰 때마다 기체 1을 잃는다.'),
-            strike && b.def.sky && !b.cover && !why ? el('p', { class: 'cw-note cw-note-cut' }, `엄호 없음: ${foeName()} 전투기 아래에서 피해 −${b.def.sky}, 기체 ${b.def.sky} 더 잃음.`) : null,
-            strike && b.def.sky && !b.cover && !why && escort ? el('div', { class: 'cw-coach-actions' }, el('button', { type: 'button', class: 'cw-primary', 'data-key': 'escort', onclick: () => { if (act('b:cover', escort.id)) afterBattleAct(`${escort.name}: 엄호에 나섰다`); } }, '전투기를 먼저 띄운다 (엄호)')) : null,
+            strike && B.skyOf(b) && !b.cover && !why ? el('p', { class: 'cw-note cw-note-cut' }, `엄호 없음: ${foeName()} 전투기 아래에서 피해 −${b.def.sky}, 기체 ${b.def.sky} 더 잃음.`) : null,
+            strike && B.skyOf(b) && !b.cover && !why && escort ? el('div', { class: 'cw-coach-actions' }, el('button', { type: 'button', class: 'cw-primary', 'data-key': 'escort', onclick: () => { if (act('b:cover', escort.id)) afterBattleAct(`${escort.name}: 엄호에 나섰다`); } }, '전투기를 먼저 띄운다 (엄호)')) : null,
             why ? el('p', { class: 'cw-note' }, josa(wingState(b, w), '', '') + '.') : strike ? el('p', { class: 'cw-note' }, '판에서 칠 적을 고른다. 숫자는 이 출격의 피해다.') : null,
             !strike && !why ? el('div', { class: 'cw-coach-actions' }, el('button', { type: 'button', class: 'cw-primary', 'data-key': 'cover', onclick: () => { const id = w.id; wingArmed = null; if (act('b:cover', id)) afterBattleAct(`${w.name}: 이번 턴의 하늘을 맡았다`); } }, '이번 턴의 하늘을 맡는다')) : null);
     }
@@ -3738,6 +3758,7 @@
             if (e.type === 'splash') return `${name(e.to)}: 곁에 떨어진 포탄에 피해 ${e.dmg}`;
             if (e.type === 'arrive') return `${josa(name(e.id), '이', '가')} 전장에 도착했다.`;
             if (e.type === 'cover') return `${josa(e.by, '이', '가')} 하늘을 맡았다. 이번 턴 끝의 공습을 쫓아내고 습격기를 엄호한다.`;
+            if (e.type === 'dogfight') return e.left > 0 ? `${foeName()} ${e.foe}: 기체 1을 잃었다.` : `${foeName()} ${josa(e.foe, '이', '가')} 하늘에서 사라졌다. 습격기가 엄호 없이도 온전히 친다.`;
             if (e.type === 'air-off') return `${foeName()} ${josa(e.by || '비행기', '이', '가')} 우리 전투기에 쫓겨 돌아갔다.`;
             if (e.type === 'air' && e.wing) return `${josa(e.by, '이', '가')} ${josa(name(e.id), '을', '를')} 덮쳤다: 피해 ${e.dmg}, 기체 ${e.loss} 잃음`;
             if (e.type === 'air') return `${josa(e.by || (e.mine ? `${U.player} 비행기` : `${foeName()} 비행기`), '이', '가')} ${josa(name(e.id), '을', '를')} 덮쳤다: 피해 ${e.dmg}`;
