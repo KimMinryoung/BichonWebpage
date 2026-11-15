@@ -8,17 +8,22 @@
 //   node scripts/war-balance.js --margins=-1,0,3,6   more musters' margins than history's road's
 //   node scripts/war-balance.js --runs=40 --width=24 the ordinary player's runs, the strong one's beam
 //   node scripts/war-balance.js --jobs=4             worker threads (default: the cores less one)
+//   node scripts/war-balance.js --quick --runs=40    the ordinary player alone, in seconds
 //
 // Each muster of each battle is one job; the jobs run in worker threads,
 // one per core but one, and the report keeps the battles' order.
 //
 // Two players:
-//   strong    a beam search over each turn's orders (every unit's moves,
-//             blows and feats), the enemy's turn played by the engine, the
-//             best few positions carried from turn to turn. Not provably
-//             best, but at least as good as a careful player.
-//   ordinary  the same orders taken greedily one unit at a time, without
-//             looking at the enemy's reply, now and then not the best one.
+//   strong    the ordinary player with foresight: each turn it drafts
+//             several whole turns, lets the enemy answer, plays each out
+//             to the end of the battle several times, and takes the turn
+//             whose battles ended best. (--beam: the older search of one
+//             turn's orders by a tally of the position.)
+//   ordinary  no search: each unit, the guns first, takes the best of a few
+//             sensible orders (a finishing blow, a blow worth its cost, a
+//             step toward the goal into cover and onto ground that shuts
+//             the enemy's supply, standing fast on a threatened post), a
+//             tenth of the time its second choice (--slip).
 //
 // A muster is the campaign's plan on the battle's front: its margin (which
 // units with `need` join), food (fed 1), a commissar, and every card a unit
@@ -63,6 +68,7 @@ const TURN_KEEP = Number(opt('keep', 6));   // positions carried to the next tur
 const ENDS = Number(opt('ends', 8));        // complete turns whose enemy reply is played
 const ids = args.filter(a => !a.startsWith('--'));
 const TRACE = args.includes('--trace');
+const QUICK = args.includes('--quick');      // the ordinary player alone (seconds, not minutes)
 const battles = ids.length ? ids : Object.keys(D.battles);
 
 // A seeded random source, so a measure can be run again.
@@ -250,7 +256,7 @@ function strongTurn(b) {
     return beam.slice(0, ENDS).map(x => { const nb = x.b.result ? x.b : (() => { const c = clone(x.b); play(c, 'end'); return c; })(); return nb; });
 }
 
-function strongBattle(start) {
+function beamBattle(start) {
     let beam = [start];
     for (let guard = 0; guard < 40; guard++) {
         const won = beam.find(b => b.result === 'won');
@@ -270,19 +276,128 @@ function strongBattle(start) {
     return { result: 'lost' };
 }
 
-// The ordinary player: unit by unit, the order that looks best now (one of
-// the best three a fifth of the time), never weighing the enemy's reply.
+// The ordinary player: someone who plays sensibly without calculating. No
+// search: each unit in a sensible order (the guns first, to soften what
+// the rifles then strike) weighs only a few kinds of order —
+//   1. a blow that finishes an enemy unit (or makes it surrender),
+//   2. a blow that costs less than it deals,
+//   3. a step toward the goal (or, on a board to hold, toward its post),
+//      into cover, out of the reach of too many enemies, onto ground that
+//      shuts the enemy's supply, never out of its own,
+//   4. standing fast on a post the enemy can reach —
+// and takes the best by a plain tally; a feat is used where it plainly
+// pays. A tenth of the time (SLIP) it takes its second choice.
+const SLIP = Number(opt('slip', 0.1));
+
+function ordinaryTurn(b, slip = SLIP) {
+    const def = b.def;
+    const goals = def.goals.map(g => g.at);
+    const posts = B.postsOf(def).map(p => p.at);
+    const at = (list, t) => list.some(([r, c]) => r === t.r && c === t.c);
+    const near = (t, list) => Math.min(...list.map(([r, c]) => Math.abs(r - t.r) + Math.abs(c - t.c)));
+    const order = reds(b).map(u => ({ id: u.id, k: (u.feat && u.feat.kind === 'order' ? 0 : u.range > 1 ? 1 : 2) + rand() * .5 })).sort((x, y) => x.k - y.k).map(x => x.id);
+    for (const id of order) {
+        if (b.result) break;
+        let u = B.byId(b, id);
+        if (!u || u.acted) continue;
+        const them = foes(b);
+        // A feat used before moving (a ride, a ferry) when it brings the goal within reach.
+        if (u.feat && !B.featBlock(b, u) && B.FEATS[u.feat.kind].beforeMove && goals.length) {
+            const x = clone(b);
+            if (play(x, 'feat', id) && B.reachable(x, B.byId(x, id)).some(t => at(goals, t)) && !B.reachable(b, u).some(t => at(goals, t))) { play(b, 'feat', id); u = B.byId(b, id); }
+        }
+        // The order of the day, when two or more units stand beside an enemy.
+        if (u.feat && u.feat.kind === 'order' && !B.featBlock(b, u) && reds(b).filter(o => o.id !== id && them.some(e => Math.abs(e.r - o.r) + Math.abs(e.c - o.c) === 1)).length >= 2) { play(b, 'feat', id); continue; }
+        const danger = new Map();
+        for (const e of them) for (const t of B.menace(b, e)) danger.set(t.r * 100 + t.c, (danger.get(t.r * 100 + t.c) || 0) + 1);
+        const cutBefore = them.filter(e => B.cutOff(b, e)).length;
+        const road = goals.length && !def.outlast ? costTo(b, u, goals) : null;
+        const here = { r: u.r, c: u.c };
+        // 4. A post within the enemy's reach is not left.
+        const pinned = at(posts, here) && danger.has(here.r * 100 + here.c);
+        const tiles = [here].concat(!pinned && B.canMove(b, u) ? B.reachable(b, u) : []);
+        const blowFeat = u.feat && !B.featBlock(b, u) && B.FEATS[u.feat.kind].targets ? u.feat : null;
+        const choices = [];
+        for (const t of tiles) {
+            u.r = t.r; u.c = t.c;
+            // 3. The ground itself.
+            let ground = B.groundOf(b, t.r, t.c) * 3 - (danger.get(t.r * 100 + t.c) || 0) * (u.hp * 2 < u.maxHp ? 7 : 3);
+            if (road) ground -= road[t.r][t.c] / Math.max(1, u.mv) * 14;
+            if (at(goals, t)) ground += 500;
+            if (def.outlast && posts.length) ground -= near(t, posts) * 4;
+            if (at(posts, t)) ground += 25;
+            if (def.supply) ground += (them.filter(e => B.cutOff(b, e)).length - cutBefore) * 30 - (B.cutOff(b, u) ? 60 : 0);
+            choices.push({ t, v: ground, act: null });
+            for (const e of B.targets(b, u)) {
+                const p = B.preview(b, u, e);
+                const prize = (at(goals, e) ? 30 : 0) + (B.cutOff(b, e) ? 6 : 0);
+                // 1. a finishing blow; 2. a blow worth its cost.
+                const v = p.dmg >= e.hp || p.surrender ? 120 + prize + e.maxHp : p.dmg > p.counter ? (p.dmg - p.counter) * 5 + prize + (1 - e.hp / e.maxHp) * 10 : -20;
+                choices.push({ t, v: ground + v, act: ['attack', e.id] });
+            }
+            if (blowFeat) {
+                for (const e of B.featTargets(b, u)) {
+                    const p = B.featPreview(b, u, e), plain = B.targets(b, u).includes(e) ? B.preview(b, u, e) : null;
+                    // The feat where it finishes what a plain blow would not, or on the goal's holder.
+                    const pays = (p.dmg >= e.hp && !(plain && plain.dmg >= e.hp)) || at(goals, e) || p.surrender;
+                    if (pays) choices.push({ t, v: ground + 130 + (at(goals, e) ? 30 : 0) + p.dmg, act: ['feat', e.id] });
+                }
+            }
+        }
+        u.r = here.r; u.c = here.c;
+        choices.sort((x, y) => y.v - x.v);
+        const pick = choices[rand() < slip && choices.length > 1 ? Math.min(choices.length - 1, 1 + Math.floor(rand() * 2)) : 0];
+        if (pick.t.r !== here.r || pick.t.c !== here.c) play(b, 'move', id, pick.t.r, pick.t.c);
+        if (b.result) break;
+        if (pick.act) { if (!play(b, pick.act[0], id, pick.act[1])) play(b, 'wait', id); continue; }
+        u = B.byId(b, id);
+        // No blow: stand to where enemies press, raise a unit where one can be raised, else halt.
+        if (u && u.feat && !B.featBlock(b, u) && ['brace', 'muster'].includes(u.feat.kind) && them.some(e => Math.abs(e.r - u.r) + Math.abs(e.c - u.c) <= 2)) play(b, 'feat', id);
+        else if (u && !u.acted) play(b, 'wait', id);
+    }
+    if (!b.result) play(b, 'end');
+}
+
 function ordinaryBattle(start) {
+    const b = clone(start);
+    for (let guard = 0; guard < 40 && !b.result; guard++) ordinaryTurn(b);
+    return { result: b.result || 'lost', turns: b.turn, held: Boolean(b.held), orders: b.orders };
+}
+
+// The strong player: the ordinary player's judgement, with foresight. Each
+// turn it drafts a number of whole turns the way the ordinary player
+// would (the first as that player plays, the others straying from it more
+// freely), lets the enemy answer each, and plays every one of them out to
+// the battle's end several times as the ordinary player; it then takes
+// the turn whose battles ended best (won, and soonest). So it finds the
+// turn that sets up the rest of the battle, which a search of one turn's
+// orders by a tally of the position (the beam, --beam) does not.
+const DRAFTS = Number(opt('drafts', 14));     // whole turns drafted each turn
+const ROLLS = Number(opt('rolls', 6));        // battles played out from each
+function strongBattle(start) {
+    if (args.includes('--beam')) return beamBattle(start);
     let b = clone(start);
     for (let guard = 0; guard < 40 && !b.result; guard++) {
-        for (const id of reds(b).map(u => u.id).sort(() => rand() - 0.5)) {
-            const u = B.byId(b, id);
-            if (!u || b.result) continue;
-            const ranked = options(b, u, false).map(x => ({ x, v: score(x) })).sort((p, q) => q.v - p.v);
-            const pick = rand() < 0.2 ? ranked[Math.min(ranked.length - 1, Math.floor(rand() * 3))] : ranked[0];
-            b = pick.x;
+        let best = null;
+        for (let i = 0; i < DRAFTS; i++) {
+            const draft = clone(b);
+            ordinaryTurn(draft, i === 0 ? 0 : 0.3);
+            let v;
+            if (draft.result === 'won') v = 1e6 - draft.turn;
+            else if (draft.result === 'lost') v = -1e6;
+            else {
+                v = 0;
+                for (let k = 0; k < ROLLS; k++) {
+                    const end = ordinaryBattle(draft);
+                    v += end.result === 'won' ? 100 - end.turns * 3 : 0;
+                }
+                // Between drafts that fare alike, the better position now.
+                v += score(draft) / 1e4;
+            }
+            if (!best || v > best.v) best = { v, b: draft };
+            if (v >= 1e5) break;
         }
-        if (!b.result) play(b, 'end');
+        b = best.b;
     }
     return { result: b.result || 'lost', turns: b.turn, held: Boolean(b.held), orders: b.orders };
 }
@@ -312,13 +427,13 @@ function measure({ id, margin, cards, flags }) {
     const muster = { margin, fed: 1, commissar: true, cards };
     const b = B.start(def, flags, muster, { rules: G.RULES });
     const t0 = Date.now();
-    const strong = strongBattle(b);
+    const strong = QUICK ? null : strongBattle(b);
     seed = 7;
     const runs = Array.from({ length: RUNS }, () => ordinaryBattle(b));
     const wins = runs.filter(r => r.result === 'won');
     const avg = wins.length ? (wins.reduce((a, r) => a + r.turns, 0) / wins.length).toFixed(1) : '-';
     const label = `여유 ${String(margin).padStart(4)}${cardsOf(def).length ? (cards.length ? ` · 카드 ${cards.join(',')}` : ' · 카드 없음') : ''}`;
-    const strongText = strong.result === 'won' ? (strong.held ? '버팀' : `${strong.turns}턴 승`) : '패배';
+    const strongText = !strong ? '-' : strong.result === 'won' ? (strong.held ? '버팀' : `${strong.turns}턴 승`) : '패배';
     return `  ${label.padEnd(36)} 강한 봇 ${strongText.padEnd(6)} · 보통 봇 ${pct(wins.length, RUNS).padStart(4)} 승 (평균 ${avg}턴) · ${((Date.now() - t0) / 1000).toFixed(1)}s`;
 }
 
