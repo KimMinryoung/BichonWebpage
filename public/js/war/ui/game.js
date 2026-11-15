@@ -13,11 +13,14 @@
     const B = window.WarBattle;
     const A = window.WarArt.create(D);
     const U = D.ui;
+    // The scenario's palette (ui.theme, war.css .cw-theme-*): the enemy's
+    // colours on the board and on the history map.
+    if (U.theme) document.querySelector('.cw-shell').classList.add('cw-theme-' + U.theme);
     // The plain words for the bar's two numbers and a division's share (ui.words).
     const W = Object.assign({ strength: '전투력', pressure: '압력', perDivision: `${U.unit}당` }, U.words);
     const KEY = U.save;
     const { el, svg, link, picture, signed, josa, textWidth, NEW_TAB } = window.WarDom;
-    const { CELL, star, starIcon, tileMarks, unitPicture, MAP_MARKS, markOf } = window.WarGlyphs;
+    const { CELL, star, starIcon, planeGlyph, tileMarks, unitPicture, MAP_MARKS, markOf } = window.WarGlyphs;
     const FED = D.economy.food.fed;      // a starving division's share of its strength
     const $ = id => document.getElementById(id);
 
@@ -2697,6 +2700,14 @@
                 const k = 14 / len;
                 g.append(svg('path', { d: `M${x1 + (x2 - x1) * k} ${y1 + (y2 - y1) * k}L${x2 - (x2 - x1) * k} ${y2 - (y2 - y1) * k}`, class: `cw-blow is-${sideOf(b, a)}`, 'marker-end': `url(#cwHead-${sideOf(b, a)})` }));
                 g.append(badge((x1 + x2) / 2 + 17, (y1 + y2) / 2 - 8, d.hp <= 0 ? '격파' : `−${e.dmg}`, 'is-' + sideOf(b, a)));
+            } else if (e.type === 'air') {
+                // A raid: the plane over the unit it struck, in its side's colours.
+                const d = b.units.find(u => u.id === e.id);
+                if (!d) continue;
+                const side = e.mine ? 'red' : 'white';
+                const plane = planeGlyph(d.c * CELL + 2, d.r * CELL - 14, 30);
+                plane.classList.add('is-' + side);
+                g.append(plane, badge(d.c * CELL + 40, d.r * CELL - 2, `−${e.dmg}`, 'is-' + side));
             }
         }
         return g;
@@ -2865,7 +2876,7 @@
             g.append(svg('rect', { x: x + 4, y: y + 4, width: CELL - 8, height: CELL - 8 }));
             // A long name is squeezed to the counter's width.
             g.append(svg('text', Object.assign({ x: x + CELL / 2, y: y + 14.5, 'text-anchor': 'middle', class: 'cw-unit-tag' }, u.tag.length > 4 ? { textLength: CELL - 12, lengthAdjust: 'spacingAndGlyphs' } : {}), u.tag));
-            g.append(unitPicture(u, x + 6, y + 19, B.isPlayer(b, u) && !u.yielded ? 'red' : 'white'));
+            g.append(unitPicture(u, x + 6, y + 19, B.isPlayer(b, u) && !u.yielded ? 'red' : 'white', U.caps));
             // Its strength, and beside it what a foretold blow would take.
             const hpEl = svg('text', { x: x + 38, y: y + 30, 'text-anchor': 'middle', class: 'cw-unit-hp', 'data-cx': x + 38, 'data-rx': x + CELL - 4 });
             hpText(hpEl, u.hp, p ? Math.min(u.hp, p.dmg) : 0, 'is-loss');

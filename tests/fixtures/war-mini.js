@@ -22,7 +22,7 @@ const fronts = {
 };
 
 const factions = {
-    grey: { name: '회색군', short: '회색', kind: 'white', text: '', sign: 'eagle', cries: { beaten: '물러난다.', surging: '앞으로!' }, spoils: '보급 수레',
+    grey: { name: '회색군', short: '회색', kind: 'axis', text: '', sign: 'balkenkreuz', cries: { beaten: '물러난다.', surging: '앞으로!' }, spoils: '보급 수레',
         trait: { name: '느린 행군', motion: 'march', when: { leader: false }, by: 1, rule: '지휘관이 없으면 압력 +1' } },
     hillmen: { name: '언덕 부족', short: '부족', kind: 'national', text: '', cries: { beaten: '산으로.', surging: '우리 땅이다!' },
         trait: { name: '산사람', motion: 'charge', when: { stat: ['trust', '<', 50] }, by: 2, rule: '신뢰가 50 아래면 압력 +2' } },
@@ -87,7 +87,7 @@ const siege = {
     terrain: TERRAIN,
     units: [
         { id: 's1', tag: '1', side: 'blue', name: '제1대', kind: 'inf', at: [0, 0], hp: 10, atk: 6, def: 3, mv: 3, person: ['장군', 'blue-general'] },
-        { id: 's2', tag: '2', side: 'blue', name: '제2대', kind: 'inf', at: [2, 0], hp: 10, atk: 6, def: 3, mv: 3 },
+        { id: 's2', tag: '2', side: 'blue', name: '제2대', kind: 'inf', at: [2, 0], hp: 10, atk: 6, def: 3, mv: 3, look: 'ushanka' },
         { id: 'h1', tag: '부족', side: 'grey', name: '부족 전사', kind: 'inf', at: [1, 4], hp: 6, atk: 3, def: 1, mv: 3, role: 'hold' },
         // The arms (battle.js KINDS): armour that breaks through, a gun against it.
         { id: 's3', tag: '전', side: 'blue', name: '전차대', kind: 'tank', at: [1, 0], hp: 8, atk: 5, def: 3, mv: 4 },
@@ -106,7 +106,7 @@ module.exports = {
     factions, fronts, frontOrder: ['river', 'hills'], startLines: { river: 1, hills: 1 },
     troops: { militia: { name: '민병', note: '' } },
     cards: {
-        wagon: { title: '수레 행렬', short: '수레', advisor: ['장군', 'blue-general'], cost: 1, target: 'front', bonus: 2, onRail: true, text: '' },
+        wagon: { title: '수레 행렬', short: '수레', advisor: ['장군', 'blue-general'], cost: 1, target: 'front', bonus: 2, onRail: true, glyph: 'tank', text: '' },
         drill: { title: '훈련', advisor: ['장군', 'blue-general'], cost: 1, morale: 5, divisions: 1, text: '' },
     },
     turns: [
@@ -130,7 +130,7 @@ module.exports = {
     ],
     battles: { ford, siege },
     epilogue: { title: '그 뒤', texts: [{ when: { stat: ['trust', '>=', 60] }, text: '사람들이 믿었다.' }, { text: '사람들이 흩어졌다.' }], links: [] },
-    portraits: { 'blue-general': { side: 'red', cap: 'peaked' }, 'blue-soldier': { side: 'red', cap: 'budenovka' } },
+    portraits: { 'blue-general': { side: 'red', cap: 'ushanka', dress: 'boards' }, 'blue-soldier': { side: 'red', cap: 'helmet' } },
     map: {
         box: { west: 5, east: 20, south: 45, north: 58 }, control: 'none', title: '작은 지도', hub, hubId: 'hub',
         railways: [{ id: 'main', name: '본선', pts: [[51, 8], [50, 10], [50, 12]] }],
@@ -142,6 +142,8 @@ module.exports = {
         hud: [{ stat: 'morale', label: '사기', warnBelow: 30, chart: 30, command: true }, { stat: 'trust', label: '신뢰', warnBelow: 40, chart: null }],
         cardStats: { morale: '사기', trust: '신뢰' },
         save: 'war-mini-save',
+        // The Second World War's pictures (war.css .cw-theme-axis, glyphs.js CAPS).
+        theme: 'axis', caps: { red: 'helmet', white: 'stahlhelm' },
     },
     texts: {
         leader: '지휘관', moved: '옮겨 온 대대 {n}', momentumPart: '적의 기세 +{n}', pursuitPart: '추격 −{n}',

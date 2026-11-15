@@ -113,6 +113,17 @@
             add(`M${x + 2} ${y + 34}q10 -18 22 -20t22 16`, 'cw-mark-ridge');
             add([30, 36, 42].map(dx => `M${x + dx} ${y + 20 + (dx - 30) / 2}l4 6`).join(''), 'cw-mark-bank');
             add(`M${x + 14} ${y + 26}h8v-6l-4 -4l-4 4z`, 'cw-mark-house');
+        } else if (cls === 'ice') {
+            // A frozen river or lake: pale cracks across the ice.
+            add(`M${x + 4} ${y + 14 + h}l12 4l8 -6l10 8l10 -3M${x + 16} ${y + 18 + h}l-3 12M${x + 34} ${y + 20}l4 14l-8 8`, 'cw-mark-crack');
+        } else if (cls === 'snow') {
+            // Snowfields: drifts and a scatter of flakes.
+            add(`M${x + 4} ${y + 36}q8 -6 16 0t16 0M${x + 14} ${y + 22}q6 -4 12 0`, 'cw-mark-drift');
+            add([[8, 12], [30, 8], [40, 28], [20, 42], [6, 26]].filter((_, i) => (i + h) % 5 < 4).map(([dx, dy]) => `M${x + dx} ${y + dy}h.1`).join(''), 'cw-mark-flake');
+        } else if (cls === 'mud') {
+            // The rasputitsa: a road churned into ruts, standing water in them.
+            add(`M${x} ${y + 18 + (h % 2) * 4}q12 6 24 0t24 0M${x} ${y + 30 + (h % 2) * 4}q12 6 24 0t24 0`, 'cw-mark-rut');
+            add(`M${x + 10 + h * 2} ${y + 40}h8M${x + 28} ${y + 10 + h}h6`, 'cw-mark-puddle');
         } else if (cls === 'ford') {
             const rows = flooded ? [10, 20, 30, 40] : [16, 32];
             add(rows.map(dy => `M${x + 6} ${y + dy}q5 -4 10 0t10 0t10 0`).join(''), 'cw-mark-water');
@@ -121,19 +132,28 @@
     }
 
     // Headgear over a head at the origin (radius 2.7): the side's own
-    // (the Red Army's pointed budenovka, the peaked cap against it) or the
-    // unit's look (data: look) — a sailor's ribboned cap, a worker's cap, a
-    // Cossack's papakha.
+    // (the Red Army's pointed budenovka, the peaked cap against it; a
+    // scenario's ui.caps names others) or the unit's look (data: look) — a
+    // sailor's ribboned cap, a worker's cap, a Cossack's papakha; for the
+    // Second World War the Soviet SSh-40 helmet, the German Stahlhelm with
+    // its flared skirt, the pilotka side cap and the ushanka with its flaps.
     const CAPS = {
+        helmet: ['M-3.4 -.6C-3.4 -4.6 3.4 -4.6 3.4 -.6Z', 'M-3.9 -.8H3.9L3.5 .1H-3.5Z'],
+        stahlhelm: ['M-3.1 -1.1C-3.1 -5 3.1 -5 3.1 -1.1L4.3 .9H2.7L2.3 -.4H-2.3L-2.7 .9H-4.3Z'],
+        pilotka: ['M-3.1 -.7L-2.5 -3.4L3.1 -2.5V-.7Z'],
+        ushanka: ['M-3.2 -1V-4.5Q0 -5.9 3.2 -4.5V-1Z', 'M-3.7 -1.3H-2.2V2.3H-3.7ZM2.2 -1.3H3.7V2.3H2.2Z'],
         budenovka: ['M-3 -.5C-3 -3.4-1.5 -5.8 0 -8.4C1.5 -5.8 3 -3.4 3 -.5Z'],
         peaked: ['M-4.8 -2.3Q0 -5.8 4.8 -2.3L3.3 -.9H-3.3Z', 'M-2.6 -.9H2.6L1.8 .2H-1.8Z'],
         sailor: ['M-4 -1.5Q0 -3.6 4 -1.5V-.5H-4Z', null, 'M3 -.8L5 3.8M3 -.8L3.8 4.2'],
         worker: ['M-2.8 -.9Q-2.7 -4.3 .4 -4.3Q3 -4.1 3 -.9Z', 'M1 -1.1H4.8L4 -.2H1Z'],
         papakha: ['M-3 -.6V-5.6Q0 -6.6 3 -5.6V-.6Z'],
     };
-    const LOOK_CAP = { sailor: 'sailor', worker: 'worker', cossack: 'papakha', officer: 'peaked' };
-    function capOf(u, side) {
-        return LOOK_CAP[u.look] || (side === 'red' ? 'budenovka' : 'peaked');
+    const LOOK_CAP = { sailor: 'sailor', worker: 'worker', cossack: 'papakha', officer: 'peaked', helmet: 'helmet', stahlhelm: 'stahlhelm', pilotka: 'pilotka', ushanka: 'ushanka' };
+    // The looks a battle unit may have (scenario check reads this list).
+    const LOOKS = ['sailor', 'worker', 'cossack', 'officer', 'tachanka', 'helmet', 'stahlhelm', 'pilotka', 'ushanka'];
+    // caps: the scenario's headgear by side (ui.caps: { red, white }).
+    function capOf(u, side, caps) {
+        return LOOK_CAP[u.look] || (caps && caps[side]) || (side === 'red' ? 'budenovka' : 'peaked');
     }
     function cap(name, cx, cy, k) {
         const g = svg('g', { transform: `translate(${cx} ${cy}) scale(${k})` });
@@ -162,6 +182,43 @@
         return g;
     }
 
+    // A tank side on, w wide, top-left at (x, y) of a 22×13 box: the
+    // tracks on their road wheels, the hull, the turret and its gun. On
+    // the strategic map a tank army stands this way on its railway.
+    function tankGlyph(x, y, w) {
+        const k = w / 22;
+        const g = svg('g', { class: 'cw-tank', transform: `translate(${x} ${y}) scale(${k})` });
+        g.append(
+            svg('path', { d: 'M2.2 9.2h16.6q2 1.6 0 3.2H2.2q-2-1.6 0-3.2z', class: 'cw-tank-track' }),
+            svg('path', { d: 'M1.4 9.2l1.6-3h15.6l2 3z', class: 'cw-tank-body' }),
+            svg('path', { d: 'M6 6.2l1-3h6.4l1.4 3z', class: 'cw-tank-body' }),
+            svg('path', { d: 'M13.6 4.4h7.6', class: 'cw-tank-gun' }),
+            ...[4.2, 8, 11.8, 15.6].map(cx => svg('circle', { cx, cy: 10.8, r: 1.1, class: 'cw-tank-wheel' })));
+        return g;
+    }
+
+    function tankIcon() {
+        const node = svg('svg', { viewBox: '0 0 22 13', class: 'cw-mk-tank', 'aria-hidden': 'true' });
+        node.append(tankGlyph(0, 0, 22));
+        return node;
+    }
+
+    // An aeroplane from above, nose up, w wide, top-left at (x, y) of a
+    // 22×15 box: an air army on the strategic map, a raid on the board.
+    const PLANE = 'M11 .6c.8 0 1.2 1 1.3 3.2l.1 1.6 8.8 1.4v1.8l-8.8.2-.4 4 2.6 1v1.2h-7.2v-1.2l2.6-1-.4-4-8.8-.2V6.8l8.8-1.4.1-1.6C9.8 1.6 10.2.6 11 .6z';
+    function planeGlyph(x, y, w) {
+        const k = w / 22;
+        const g = svg('g', { class: 'cw-plane', transform: `translate(${x} ${y}) scale(${k})` });
+        g.append(svg('path', { d: PLANE, class: 'cw-plane-body' }));
+        return g;
+    }
+
+    function planeIcon() {
+        const node = svg('svg', { viewBox: '0 0 22 16', class: 'cw-mk-plane', 'aria-hidden': 'true' });
+        node.append(planeGlyph(0, 0, 22));
+        return node;
+    }
+
     function cavalryIcon() {
         const node = svg('svg', { viewBox: '0 0 22 15', class: 'cw-mk-cav', 'aria-hidden': 'true' });
         node.append(cavalryGlyph(0, 0, 22));
@@ -170,9 +227,10 @@
 
     // A unit's picture in a 22×13 box at (x, y), its headgear rising a
     // little above: a soldier with his rifle, a rider, Makhno's machine-gun
-    // cart, a gun, a boat or the armoured train. side ('red' or 'white')
-    // chooses the headgear a unit without a look wears.
-    function unitPicture(u, x, y, side) {
+    // cart, a gun, an anti-tank gun behind its shield, a tank, a boat or the
+    // armoured train. side ('red' or 'white') chooses the headgear a unit
+    // without a look wears, from caps (the scenario's ui.caps) if given.
+    function unitPicture(u, x, y, side, caps) {
         const g = svg('g', { class: 'cw-pic', 'aria-hidden': 'true' });
         if (u.rail) {
             g.append(trainGlyph(x + 3, y - 1, 17));
@@ -195,7 +253,18 @@
             // The rider: body, sabre, head and headgear.
             add(`M${x + 10} ${y + 5.4}v-3M${x + 11.4} ${y + 3.6}l6 -2.6`, 'cw-pic-line');
             g.append(svg('circle', { cx: x + 10, cy: y + 1, r: 1.8, class: 'cw-pic-fill' }));
-            g.append(cap(capOf(u, side), x + 10, y + 1, .7));
+            g.append(cap(capOf(u, side, caps), x + 10, y + 1, .7));
+        } else if (u.kind === 'tank') {
+            add(`M${x + 2.2} ${y + 9.2}h16.6q2 1.6 0 3.2h-16.6q-2 -1.6 0 -3.2z`, 'cw-pic-line');
+            add(`M${x + 1.4} ${y + 9.2}l1.6 -3h15.6l2 3zM${x + 6} ${y + 6.2}l1 -3h6.4l1.4 3z`, 'cw-pic-fill');
+            add(`M${x + 13.6} ${y + 4.4}h7.6`, 'cw-pic-line');
+            for (const cx of [4.2, 8, 11.8, 15.6]) g.append(svg('circle', { cx: x + cx, cy: y + 10.8, r: 1, class: 'cw-pic-wheel' }));
+        } else if (u.kind === 'at') {
+            // A low gun: the long barrel over the shield, the split trail behind.
+            add(`M${x + 9} ${y + 6.4}l12 -2.6`, 'cw-pic-line');
+            add(`M${x + 7} ${y + 4.2}l3.4 -1.2v6.8l-3.4 1.2z`, 'cw-pic-fill');
+            add(`M${x + 8.6} ${y + 10}l-7.2 2.4M${x + 8.6} ${y + 10}l-4.8 2.9`, 'cw-pic-line');
+            g.append(svg('circle', { cx: x + 10.4, cy: y + 10, r: 2.4, class: 'cw-pic-wheel' }));
         } else if (u.kind === 'art') {
             add(`M${x + 4} ${y + 8}l15 -7`, 'cw-pic-barrel');
             add(`M${x + 1} ${y + 12}l7 -4`, 'cw-pic-line');
@@ -207,7 +276,7 @@
             add(`M${x + 1.6} ${y + 13}q.4 -4.6 6.4 -5q6 .4 6.4 5z`, 'cw-pic-fill');
             if (u.look === 'officer') add(`M${x + 2.6} ${y + 9.6}l4.2 -1.4.6 1.6 -4.2 1.4zM${x + 13.4} ${y + 9.6}l-4.2 -1.4-.6 1.6 4.2 1.4z`, 'cw-pic-gold');
             g.append(svg('circle', { cx: x + 8, cy: y + 4.6, r: 3, class: 'cw-pic-fill' }));
-            g.append(cap(capOf(u, side), x + 8, y + 4.6, 1.1));
+            g.append(cap(capOf(u, side, caps), x + 8, y + 4.6, 1.1));
         }
         return g;
     }
@@ -219,8 +288,10 @@
     const MAP_MARKS = {
         train: { draw: p => trainGlyph(p.x - 12, p.y - 16, 24), icon: trainIcon },
         cavalry: { draw: p => cavalryGlyph(p.x - 15, p.y - 20.5, 30), icon: cavalryIcon },
+        tank: { draw: p => tankGlyph(p.x - 14, p.y - 17, 28), icon: tankIcon },
+        plane: { draw: p => planeGlyph(p.x - 13, p.y - 24, 26), icon: planeIcon },
     };
     const markOf = card => (card && (card.glyph || (card.onRail ? 'train' : null))) || null;
 
-    root.WarGlyphs = { CELL, star, trainGlyph, trainIcon, starIcon, cavalryGlyph, cavalryIcon, tileMarks, unitPicture, MAP_MARKS, markOf };
+    root.WarGlyphs = { CELL, star, trainGlyph, trainIcon, starIcon, cavalryGlyph, cavalryIcon, tankGlyph, tankIcon, planeGlyph, planeIcon, tileMarks, unitPicture, MAP_MARKS, markOf, LOOKS, CAPS };
 })(window);

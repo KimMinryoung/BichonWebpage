@@ -9,13 +9,22 @@ const Art = require('../../public/js/war/art.js');
 const fs = require('fs');
 const path = require('path');
 
-// The map marks war/ui/glyphs.js draws: the keys of its MAP_MARKS, read
-// from the source (the file needs a browser to load).
-const MAP_MARKS = (() => {
-    const src = require('node:fs').readFileSync(require('node:path').join(__dirname, '../../public/js/war/ui/glyphs.js'), 'utf8');
-    const block = src.slice(src.indexOf('const MAP_MARKS = {'), src.indexOf('};', src.indexOf('const MAP_MARKS = {')));
-    return [...block.matchAll(/^\s{8}(\w+): \{/gm)].map(m => m[1]);
-})();
+// What the screen can draw, read from its sources (war/ui/glyphs.js needs
+// a browser to load): the map marks (MAP_MARKS keys), the battle units'
+// looks (LOOKS) and headgear (CAPS keys), and the palettes war.css has
+// (.cw-theme-*).
+const read = file => require('node:fs').readFileSync(require('node:path').join(__dirname, '../../public', file), 'utf8');
+const GLYPHS = read('js/war/ui/glyphs.js');
+const keysOf = name => {
+    const at = GLYPHS.indexOf(`const ${name} = {`);
+    return [...GLYPHS.slice(at, GLYPHS.indexOf('};', at)).matchAll(/^\s{8}(\w+): [{[]/gm)].map(m => m[1]);
+};
+const MAP_MARKS = keysOf('MAP_MARKS');
+const CAPS = keysOf('CAPS');
+const LOOKS = JSON.parse(GLYPHS.match(/const LOOKS = (\[[^\]]*\]);/)[1].replace(/'/g, '"'));
+const THEMES = [...read('css/war.css').matchAll(/\.cw-theme-([\w-]+)/g)].map(m => m[1]);
+// The faction kinds war.css colours (k-*, is-*).
+const FACTION_KINDS = ['white', 'interv', 'central', 'national', 'axis'];
 const VOICE_WHEN = /^(start|goal|flood|reserve|surrender|air|weather|turn:\d+|turned:[\w-]+|feat:[\w-]+)$/;
 const SOURCE = /^https:\/\//;
 
@@ -127,6 +136,7 @@ function checkScenario(D) {
         need(f.cries && f.cries.beaten && f.cries.surging, `faction ${id}: cries`);
         if (f.trait) cond(f.trait.when, `faction ${id} trait`);
         if (f.sign) need(Art.SIGNS[f.sign], `faction ${id}: sign ${f.sign}`);
+        need(FACTION_KINDS.includes(f.kind), `faction ${id}: kind ${f.kind}`);
         need(/^<svg class="cw-face"/.test(art.shield(id, f)), `faction ${id}: shield`);
     }
     for (const [id, c] of Object.entries(cards)) {
@@ -218,7 +228,7 @@ function checkScenario(D) {
                 for (const d of step.draw) {
                     const pts = d.path || [d.gather || d.clash].filter(Boolean);
                     need(pts.length && pts.every(inside), `${at} step ${i}: a mark outside the map`);
-                    if (d.path) need(d.path.length >= 2 && ['strike', 'beaten', 'next'].includes(d.style) && (d.side === 'red' || ['white', 'interv'].includes(d.side)), `${at} step ${i}: arrow ${JSON.stringify(d.style)}`);
+                    if (d.path) need(d.path.length >= 2 && ['strike', 'beaten', 'next'].includes(d.style) && (d.side === 'red' || ['white', 'interv', 'axis'].includes(d.side)), `${at} step ${i}: arrow ${JSON.stringify(d.style)}`);
                 }
             }
         }
@@ -263,7 +273,7 @@ function checkScenario(D) {
             if (u.rail && placed) need(Battle.reachable(b, placed).length > 0, `${at}: ${u.id}'s railway runs somewhere`);
             if (u.role) need(Battle.ROLES[u.role], `${at}: ${u.id} role ${u.role}`);
             // The pictures war/ui/glyphs.js draws for a unit's look.
-            if (u.look) need(['sailor', 'worker', 'cossack', 'officer', 'tachanka'].includes(u.look), `${at}: ${u.id} look ${u.look}`);
+            if (u.look) need(LOOKS.includes(u.look), `${at}: ${u.id} look ${u.look}`);
             if (u.line) need(def.lines[u.line], `${at}: ${u.id} line ${u.line}`);
             if (u.feat) need(Battle.FEATS[u.feat.kind], `${at}: ${u.id} feat kind ${u.feat.kind}`);
             if (u.card) need(cards[u.card], `${at}: ${u.id} card ${u.card}`);
@@ -308,6 +318,7 @@ function checkScenario(D) {
     const looks = new Map();
     for (const [id, p] of Object.entries(art.people)) {
         for (const [k, v] of Object.entries(p)) if (k !== 'side') need((Art.FEATURES[k] || []).includes(v), `portrait ${id}: ${k} ${v}`);
+        need(Art.SIDE[p.side], `portrait ${id}: side ${p.side}`);
         const look = JSON.stringify(Object.keys(Art.FEATURES).map(k => p[k] || null));
         need(!looks.has(look), `portrait ${id} drawn like ${looks.get(look)}`);
         looks.set(look, id);
@@ -362,6 +373,8 @@ function checkScenario(D) {
     need(D.ui.hud.filter(h => h.command).length === 1, 'ui.hud: one stat sets command');
     for (const k of Object.keys(D.ui.cardStats)) need(stats.includes(k), `ui.cardStats: ${k}`);
     for (const k of ['player', 'playerUnits', 'enemy', 'unit', 'leader', 'food', 'unrest', 'save']) need(D.ui[k], `ui.${k}`);
+    if (D.ui.theme) need(THEMES.includes(D.ui.theme), `ui.theme ${D.ui.theme}`);
+    for (const [side, cap] of Object.entries(D.ui.caps || {})) need(['red', 'white'].includes(side) && CAPS.includes(cap), `ui.caps ${side}: ${cap}`);
     need(D.ui.aria && D.ui.aria.calendar && D.ui.aria.stats && D.ui.aria.army, 'ui.aria');
     need(D.map.legend && D.map.historyLegend, 'map legends');
     return problems;

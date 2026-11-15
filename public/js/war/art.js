@@ -18,7 +18,8 @@
     const RED = '#a21e2a';
     const GOLD = '#c9a227';
     const GREY = '#8f8a7e';
-    const SIDE = { red: RED, white: '#e8e4da', interv: '#2f6fb8', central: '#c7861c', national: '#8d8d86', black: '#2b2b28' };
+    // axis: the Wehrmacht's field grey (the Second World War's enemy).
+    const SIDE = { red: RED, white: '#e8e4da', interv: '#2f6fb8', central: '#c7861c', national: '#8d8d86', black: '#2b2b28', axis: '#7d826c' };
     // A portrait's ground: the side's colour, but the Whites' paper would
     // swallow a paper face, so theirs is slate.
     const GROUND = Object.assign({}, SIDE, { white: '#5f6f82' });
@@ -35,8 +36,8 @@
         beard: ['goatee', 'short', 'pointed', 'full'],
         moustache: [true, 'great', 'curled'],
         grey: [true],
-        cap: ['budenovka', 'peaked', 'naval', 'papakha', 'worker', 'maciejowka'],
-        dress: ['tunic', 'epaulets', 'greatcoat', 'leather', 'suit', 'shirt', 'cherkeska', 'naval', 'blouse', 'field'],
+        cap: ['budenovka', 'peaked', 'naval', 'papakha', 'worker', 'maciejowka', 'helmet', 'stahlhelm', 'pilotka', 'ushanka'],
+        dress: ['tunic', 'epaulets', 'greatcoat', 'leather', 'suit', 'shirt', 'cherkeska', 'naval', 'blouse', 'field', 'boards', 'feldgrau'],
     };
 
     const star5 = (cx, cy, R, r) => Array.from({ length: 10 }, (_, i) => {
@@ -81,6 +82,16 @@
             return body(INK) + `<path d="M16.4 26.8h7.2v4.4h-7.2z" fill="${PAPER}" stroke="${INK}" stroke-width=".5"/><circle cx="20" cy="32.4" r=".9" fill="${GOLD}"/>`;
         case 'field':
             return body('#6a7158') + collar('#585e48') + placket('#4a503b', INK);
+        case 'boards':
+            // The Red Army's tunic from 1943: a standing collar and a
+            // general's gold shoulder boards.
+            return body('#58603f') + collar('#4a5233') + placket('#3c4428', GOLD)
+                + `<path d="M8.4 32.6l5.6-1.9.7 1.8-5.6 1.9zM31.6 32.6l-5.6-1.9-.7 1.8 5.6 1.9z" fill="${GOLD}" stroke="${INK}" stroke-width=".4"/>`;
+        case 'feldgrau':
+            // The Wehrmacht's field tunic: grey, its dark collar with pale
+            // patches (the Litzen), four buttons.
+            return body('#656b5d') + collar('#3a4436') + `<path d="M17 29.6h2.2M17 30.6h2.2M20.8 29.6h2.2M20.8 30.6h2.2" stroke="#d6d6c8" stroke-width=".45"/>`
+                + placket('#4c5246', '#9a9a8c');
         default:    // tunic: the gymnastyorka, its collar tabs in the side's colour
             return body('#56603f') + collar('#47502f', side === 'red' ? RED : null) + placket('#3c4428', '#3c4428');
         }
@@ -129,6 +140,15 @@
         if (p.cap === 'papakha') out.push(`<path d="M11 13.5v-8c3-2 15-2 18 0v8c-4-1.2-14-1.2-18 0z" fill="${INK}"/><path d="M12.5 6.5h15" stroke="${PAPER}" stroke-width=".5" stroke-dasharray="1 1.4"/>`);
         if (p.cap === 'worker') out.push(`<path d="M11 13c0-5 4-7.5 9-7.5s9 2.5 9 7.5z" fill="${INK}"/><path d="M11.5 13h15l2.5 1.7h-15z" fill="${INK}"/>`);
         if (p.cap === 'maciejowka') out.push(`<path d="M11 13l1-6h16l1 6z" fill="#5b6a52"/><path d="M11 13h18l-2.5 2h-13z" fill="${INK}"/><path d="M12 7h16" stroke="${INK}" stroke-width=".6"/>`);
+        // The Second World War: the Red Army's SSh-40 helmet, the German
+        // Stahlhelm with its flared skirt, the pilotka side cap and the
+        // ushanka with its ear flaps (a red star on the Red side's caps).
+        if (p.cap === 'helmet') out.push(`<path d="M10.2 13.6c0-6 4.4-9 9.8-9s9.8 3 9.8 9z" fill="#4b5a3a"/><path d="M9.2 13.6h21.6l-1 1.6h-19.6z" fill="#3c482e"/>`);
+        if (p.cap === 'stahlhelm') out.push(`<path d="M11 13.2c0-5.2 4-8.4 9-8.4s9 3.2 9 8.4l2.6 4h-3.2l-1-2.4h-14.8l-1 2.4h-3.2z" fill="#575e4e"/><path d="M11.2 13.4h17.6" stroke="#3c4236" stroke-width=".7"/>`);
+        if (p.cap === 'pilotka') out.push(`<path d="M11.4 12.6l1.6-5.2 15.2 2.4v2.8z" fill="#5b6343"/>`
+            + (p.side === 'red' ? `<polygon points="${star5(20.6, 10.6, 1.5, .62)}" fill="#d2232f"/>` : ''));
+        if (p.cap === 'ushanka') out.push(`<path d="M11 13v-6.6c3-2.2 15-2.2 18 0V13z" fill="#4a4034"/><path d="M11.6 6.6h16.8v3h-16.8z" fill="#5d5142"/><path d="M9.8 12.2h2.6v6.4h-2.6zM27.6 12.2h2.6v6.4h-2.6z" fill="#4a4034"/>`
+            + (p.side === 'red' ? `<polygon points="${star5(20, 8.1, 1.3, .55)}" fill="#d2232f"/>` : ''));
         return svgOf(out.join(''), label);
     }
 
@@ -143,6 +163,12 @@
         trident: `<path d="M20 11v18M14 13v9c0 3 2.5 5 6 5s6-2 6-5v-9M17 18v5M23 18v5" fill="none" stroke="${INK}" stroke-width="1.6"/>`,
         charter: `<g fill="none" stroke="${INK}" stroke-width="1.4"><path d="M13 14h14v14h-14z"/><path d="M16 18h8M16 21.5h8M16 25h5"/></g>`,
         sabres: `<g fill="none" stroke="${INK}" stroke-width="1.6" stroke-linecap="round"><path d="M13 29l14-16M27 29l-14-16"/><path d="M12 25l3 3M28 25l-3 3"/></g>`,
+        // The Second World War's enemies: the Wehrmacht's straight-armed
+        // cross (Balkenkreuz, outlined in paper), Italy's fasces, a roundel
+        // (an air force's mark: Hungary, Romania, Japan's plain disc).
+        balkenkreuz: `<path d="M17 11h6v7h7v6h-7v7h-6v-7h-7v-6h7z" fill="${INK}"/><path d="M18.6 12.6h2.8v7h7v2.8h-7v7h-2.8v-7h-7v-2.8h7z" fill="none" stroke="${PAPER}" stroke-width=".8"/>`,
+        fasces: `<g fill="none" stroke="${INK}" stroke-width="1.3"><path d="M17.5 13v17M20 12v18M22.5 13v17M16.5 16h7M16.5 26h7"/><path d="M22.5 13.5c3 0 5 1.5 5 4h-5z" fill="${INK}"/></g>`,
+        roundel: `<circle cx="20" cy="21" r="8" fill="none" stroke="${INK}" stroke-width="1.6"/><circle cx="20" cy="21" r="4.4" fill="${INK}"/>`,
     };
     const cross = `<path d="M18.5 12h3v6.5h6.5v3h-6.5v8.5h-3v-8.5h-6.5v-3h6.5z" fill="${INK}"/>`;
 
