@@ -1586,9 +1586,8 @@
 .cw-sky-foe.is-held { background: linear-gradient(to top right, transparent calc(50% - 1.5px), var(--cw-red) calc(50% - 1.5px), var(--cw-red) calc(50% + 1.5px), transparent calc(50% + 1.5px)), var(--cw-foe-paper); opacity: .75; }
 /* Fog: mist drifting over the board, the strip greyed under cloud, every plane on it dim. */
 .cw-fog-veil { pointer-events: none; }
-/* In fog a gun's usual reach is shown lost (misted, crossed) and the tiles beside it, where it can still strike, ringed. */
+/* In fog a gun's usual reach is shown misted over and the tiles beside it, where it can still strike, ringed. */
 .cw-fog-lost { fill: #fff; fill-opacity: .55; stroke: #8b939b; stroke-width: 1.5; stroke-dasharray: 4 3; pointer-events: none; }
-.cw-fog-lost-x { fill: none; stroke: #6c747c; stroke-width: 2; stroke-linecap: round; pointer-events: none; }
 .cw-fog-near { fill: none; stroke: var(--cw-red); stroke-width: 2.5; pointer-events: none; }
 .cw-fog-tag { pointer-events: none; }
 .cw-fog-tag rect { fill: #eef1f3; stroke: #6c747c; stroke-width: 1; }

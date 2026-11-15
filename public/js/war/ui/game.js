@@ -3086,7 +3086,7 @@
             hpText(counterBar.text, counterBar.hp, lost, 'is-counter');
         };
         board.append(supplyMarks(b, unit || foe || null));
-        // Fog: the tiles a picked gun would reach on a clear day, lost in the mist (it strikes only beside it now).
+        // Fog: the tiles a picked gun would reach on a clear day, misted over (it strikes only beside it now).
         const gun = unit || foe;
         if (gun && gun.range > 1 && B.fogged(b)) {
             for (let r = gun.r - gun.range; r <= gun.r + gun.range; r++) {
@@ -3094,7 +3094,7 @@
                     const d = Math.abs(r - gun.r) + Math.abs(c - gun.c);
                     if (d < 2 || d > gun.range || r < 0 || c < 0 || r >= rows || c >= cols) continue;
                     const x = c * CELL, y = r * CELL;
-                    board.append(svg('rect', { x: x + 2, y: y + 2, width: CELL - 4, height: CELL - 4, class: 'cw-fog-lost' }), svg('path', { d: `M${x + 15} ${y + 15}L${x + CELL - 15} ${y + CELL - 15}M${x + CELL - 15} ${y + 15}L${x + 15} ${y + CELL - 15}`, class: 'cw-fog-lost-x' }));
+                    board.append(svg('rect', { x: x + 2, y: y + 2, width: CELL - 4, height: CELL - 4, class: 'cw-fog-lost' }));
                 }
             }
             for (const [dr, dc] of [[1, 0], [-1, 0], [0, 1], [0, -1]]) {
