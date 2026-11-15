@@ -967,6 +967,13 @@
             { id: 'iss', tag: '친위', side: 'axis', name: '친위 「다스 라이히」 사단', sub: '이스트라 쪽', kind: 'inf', at: [4, 3], hp: 13, atk: 7, def: 3, mv: 3, role: 'push' },
             { id: 'i106', tag: '106', side: 'axis', name: '제106보병사단', sub: '북쪽 옆구리', kind: 'inf', at: [0, 2], hp: 10, atk: 5, def: 3, mv: 3, role: 'field', reach: 2 },
             { id: 'i23', tag: '23', side: 'axis', name: '제23보병사단', sub: '클린 수비', kind: 'inf', at: [0, 3], hp: 10, atk: 5, def: 3, mv: 3, role: 'field', reach: 0 },
+            // Edition 4: Klin was the 3rd Panzer Group's road junction and rear,
+            // held by the 14th Motorised and the 6th Panzer; it does not fall to a
+            // raid on the second turn.
+            { id: 'i14m', tag: '14차량', side: 'axis', name: '제14차량화사단', sub: '클린 동쪽', kind: 'inf', at: [0, 4], hp: 11, atk: 6, def: 3, mv: 4, role: 'field', reach: 1, fromEdition: 4 },
+            { id: 'p6', tag: '6기갑', side: 'axis', name: '제6기갑사단', sub: '클린 남쪽', kind: 'tank', at: [1, 3], hp: 11, atk: 7, def: 3, mv: 4, role: 'field', reach: 1, fromEdition: 4 },
+            { id: 'p10', tag: '10기갑', side: 'axis', name: '제10기갑사단', sub: '제4기갑 집단, 둘째 물결', kind: 'tank', at: [4, 0], hp: 12, atk: 7, def: 3, mv: 4, role: 'push', arrive: 2, fromEdition: 4 },
+            { id: 'p5', tag: '5기갑', side: 'axis', name: '제5기갑사단', sub: '제4기갑 집단, 넷째 물결', kind: 'tank', at: [3, 0], hp: 12, atk: 7, def: 3, mv: 4, role: 'push', arrive: 4, fromEdition: 4 },
             { id: 'p11', tag: '11기갑', side: 'axis', name: '제11기갑사단', sub: '둘째 물결', kind: 'tank', at: [2, 0], hp: 12, atk: 7, def: 3, mv: 4, role: 'push', arrive: 2 },
             { id: 'i252', tag: '252', side: 'axis', name: '제252보병사단', sub: '둘째 물결', kind: 'inf', at: [5, 0], hp: 12, atk: 6, def: 3, mv: 3, role: 'field', reach: 9, arrive: 3 },
             { id: 'gart', tag: '포대', side: 'axis', name: '군단 포병', kind: 'art', at: [3, 1], hp: 8, atk: 6, def: 1, mv: 2, range: 2, role: 'field', reach: 1 },
@@ -976,7 +983,7 @@
             '11월 중순 독일군의 마지막 공세가 모스크바 북서쪽으로 온다. 로코솝스키의 제16군이 볼로콜람스크 대로를 지킨다. 판 오른쪽 끝 힘키 뒤가 모스크바다.',
             '8턴이 끝날 때까지 힘키에 독일군을 들이지 않으면 이긴다. 그 전에 클린에 붉은 부대를 세우면 그 자리에서 이긴다. 7턴 안에 이기면 모스크바 방면의 우리 힘이 3 늘고, 지면 6 준다.',
             '독일 선봉은 힘키로 곧장 온다. 보병은 붉은 부대 곁에서 멈추지만 전차는 지나친다. 대전차포와 숲에 숨긴 전차로 전차를 잡고, 힘키로 가는 길을 비우지 말아야 한다.',
-            '예비를 쥐고 있기로 했다면 4턴에 제1충격군과 제20군이 북동쪽에서 온다. 독일 선봉의 뒤(서쪽에서 오는 보급선)를 끊으면 선봉이 포위된다.',
+            '예비를 쥐고 있기로 했다면 4턴에 제1충격군과 제20군이 북동쪽에서 온다. 독일 선봉의 뒤(서쪽에서 오는 보급선)를 끊으면 선봉이 포위된다. 클린은 기갑과 차량화 사단이 둘러 지키니 반격의 군이 온 뒤에야 넘볼 수 있다. 4턴부터는 혹한으로 독일군의 공격이 1 준다.',
             SUPPLY_BRIEF,
             ARMS_BRIEF,
         ],
@@ -1884,7 +1891,7 @@
 
     const rehearsal = { lead: ['reserve'], skip: ['militia', 'pause', 'labour'], guard: { stat: 'manpower', min: 30 }, spread: true };
     const data = {
-        id: 'great-patriotic-war', title: '조국 전선 1941–1945', saveVersion: 1, edition: 3, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
+        id: 'great-patriotic-war', title: '조국 전선 1941–1945', saveVersion: 1, edition: 4, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
         map, ui, portraits, pictures, pictureDir: '/images/great-patriotic-war/', roles, glossary,
         texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring, rehearsal, promo,
     };
