@@ -86,6 +86,7 @@ function clone(b) {
         turned: Object.assign({}, b.turned), wear: Object.assign({}, b.wear), feats: Object.assign({}, b.feats),
         // Units still to come (battle.js arrive), and no supply map kept over from the original.
         pending: (b.pending || []).map(u => Object.assign({}, u)), supplyCache: null,
+        wings: (b.wings || []).map(w => Object.assign({}, w)),
         events: [], report: [],
     });
 }
@@ -295,6 +296,17 @@ function ordinaryTurn(b, slip = SLIP) {
     const posts = B.postsOf(def).map(p => p.at);
     const at = (list, t) => list.some(([r, c]) => r === t.r && c === t.c);
     const near = (t, list) => Math.min(...list.map(([r, c]) => Math.abs(r - t.r) + Math.abs(c - t.c)));
+    // The air first: the fighters up when a raid is due or the attack
+    // wings fly under an enemy sky; each attack wing on the enemy it hurts
+    // most, the goal's holder and the nearest to the goals before others.
+    const wings = (b.wings || []).filter(w => !B.wingBlock(b, w));
+    const strikers = wings.filter(w => w.kind === 'strike');
+    const raid = B.raidsOf(def).some(r => r.against !== 'enemy' && B.raidTurns(r).includes(b.turn));
+    for (const w of wings.filter(w => w.kind === 'fighter')) if (raid || (def.sky && strikers.length)) play(b, 'cover', w.id);
+    for (const w of strikers) {
+        const best = B.wingTargets(b, w).map(e => ({ e, v: B.wingPreview(b, w, e).dmg * 3 + (at(goals, e) ? 6 : 0) - (goals.length ? near(e, goals) : 0) * .5 + rand() })).sort((x, y) => y.v - x.v)[0];
+        if (best && B.wingPreview(b, w, best.e).dmg >= 2) play(b, 'sortie', w.id, best.e.id);
+    }
     const order = reds(b).map(u => ({ id: u.id, k: (u.feat && u.feat.kind === 'order' ? 0 : u.range > 1 ? 1 : 2) + rand() * .5 })).sort((x, y) => x.k - y.k).map(x => x.id);
     for (const id of order) {
         if (b.result) break;

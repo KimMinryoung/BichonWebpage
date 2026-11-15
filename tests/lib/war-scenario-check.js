@@ -262,6 +262,10 @@ function checkScenario(D) {
         // The open ground's season (war.css .cw-ground-base.is-*; a board with snow is winter).
         need(def.ground === undefined || ['summer', 'spring', 'autumn', 'steppe'].includes(def.ground), `${at}: ground ${def.ground}`);
         // Named ground: tiles of the board, a name.
+        for (const w of def.wings || []) need(w.id && w.name && ['strike', 'fighter'].includes(w.kind) && w.hp > 0 && (w.kind === 'fighter' || w.atk > 0), `${at}: wing ${w.id}`);
+        need(new Set((def.wings || []).map(w => w.id)).size === (def.wings || []).length, `${at}: wings share an id`);
+        if (def.sky) need((def.wings || []).some(w => w.kind === 'strike'), `${at}: an enemy sky over no attack wing`);
+        for (const t of def.grounded || []) need(t >= 1 && t <= def.turnLimit, `${at}: grounded turn ${t}`);
         if (def.lesson) need(def.supply && def.supply.enemy && ['supply', 'close', 'closed'].every(k => typeof def.lesson[k] === 'string' && def.lesson[k]), `${at}: lesson needs the enemy's supply and its three steps`);
         for (const area of def.areas || []) need(area.name && area.tiles.length && area.tiles.every(inside), `${at}: area ${area.name}`);
         // Supply: each side's sources are tiles of the board.

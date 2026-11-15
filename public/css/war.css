@@ -1537,6 +1537,10 @@
 .cw-roster { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding-bottom: 6px; }
 .games-shell .cw-roster-unit { flex: 0 0 auto; display: inline-flex; gap: 4px; align-items: baseline; min-height: 30px; padding: 3px 8px; font-size: .78rem; }
 .cw-roster-unit small { font-variant-numeric: tabular-nums; color: var(--text-secondary); }
+/* The air wings: after the units, off the board. */
+.games-shell .cw-roster-unit.is-wing { border-color: var(--cw-gold); }
+.games-shell .cw-roster-unit.is-wing + .cw-roster-unit:not(.is-wing) { margin-left: 6px; }
+.cw-roster-plane { font-size: .9em; }
 .games-shell .cw-roster-unit.is-done { border-style: dashed; color: var(--text-secondary); }
 .games-shell .cw-roster-unit[aria-pressed="true"] { border-color: var(--cw-red); background: color-mix(in srgb, var(--cw-red) 18%, transparent); }
 .games-shell .cw-primary.is-armed { background: var(--text-primary); color: var(--bg-canvas); border-color: var(--text-primary); }

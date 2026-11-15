@@ -155,6 +155,37 @@ for (const [id, def] of Object.entries(D.battles)) {
     assert.equal(B.wouldCut(b, u, u.r, u.c).length, 0);
 }
 
+// ── The air: wings off the board, flown once a turn ──
+{
+    const b = G.rehearse('uranus').battle;
+    const strike = b.wings.find(w => w.kind === 'strike'), fighter = b.wings.find(w => w.kind === 'fighter');
+    const foe = b.units.find(u => B.isEnemy(b, u) && u.kind === 'tank');
+    assert.equal(B.wingBlock(b, strike), 'grounded', 'fog on the first turn');
+    assert.ok(!B.act(b, 'sortie', strike.id, foe.id));
+    B.act(b, 'end');
+    const bare = B.wingPreview(b, strike, foe);
+    assert.ok(bare.bare && bare.loss === 2, 'under the enemy\'s fighters a wing loses more');
+    assert.ok(B.act(b, 'cover', fighter.id) && !B.act(b, 'cover', fighter.id));
+    const whole = B.wingPreview(b, strike, foe);
+    assert.equal(whole.dmg, Math.min(foe.hp - 1, bare.dmg + 1));
+    assert.equal(whole.loss, 1);
+    const hp = foe.hp;
+    assert.ok(B.act(b, 'sortie', strike.id, foe.id));
+    assert.equal(foe.hp, hp - whole.dmg);
+    assert.equal(strike.hp, strike.maxHp - 1);
+    assert.ok(!B.act(b, 'sortie', strike.id, foe.id), 'once a turn');
+    B.act(b, 'end');
+    assert.ok(!b.cover && !strike.flown);
+    // A raid is driven off on a covered turn.
+    const k = G.rehearse('kursk').battle;
+    const raided = () => k.events.filter(e => e.type === 'air' && !e.mine).length;
+    assert.ok(B.act(k, 'cover', k.wings.find(w => w.kind === 'fighter').id));
+    B.act(k, 'end');
+    assert.equal(raided(), 0);
+    assert.ok(k.events.some(e => e.type === 'air-off'));
+    if (!k.result) { B.act(k, 'end'); assert.ok(raided() > 0, 'uncovered, the raid comes'); }
+}
+
 // ── The data speaks the screen's plain words ──
 {
     const text = JSON.stringify(D);
