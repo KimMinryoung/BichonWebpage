@@ -205,9 +205,17 @@
     // The play log goes to the server as the war moves on (war/ui/report.js).
     const report = practice ? { begin() {}, track() {}, leave() {}, retried() {} } : window.WarReport.create(D.id, KEY);
     if (!practice) try { report.resume(localStorage.getItem(KEY)); } catch (_) { /* nothing kept */ }
-    window.addEventListener('pagehide', () => { if (s) report.leave(s, G.serialize(s)); });
+    // A battle on its own page is reported on its own (war_battle_plays);
+    // the developer's ?battle= is not.
+    const battleReport = battleOnly ? window.WarReport.createBattle(D.id, battleOnly, G.serialize) : null;
+    window.addEventListener('pagehide', () => {
+        if (!s) return;
+        if (battleReport) battleReport.leave(s);
+        else report.leave(s, G.serialize(s));
+    });
 
     function save() {
+        if (battleReport) battleReport.track(s);
         if (practice) return;
         const text = G.serialize(s);
         try { localStorage.setItem(KEY, text); } catch (_) { /* play continues unsaved */ }
@@ -301,7 +309,10 @@
     function initPractice() {
         const id = battleOnly || new URLSearchParams(location.search).get('battle');
         const state = D.battles[id] ? G.rehearse(id) : null;
-        if (state) return startGame(state, true);
+        if (state) {
+            if (battleReport) battleReport.begin(state);
+            return startGame(state, true);
+        }
         $('cwSetup').querySelector('.cw-setup-actions').replaceChildren(...Object.values(D.battles).map(b =>
             el('button', { type: 'button', onclick: () => { location.search = '?battle=' + b.id; } }, `${b.title} 연습`)));
     }
@@ -3423,7 +3434,7 @@
         const share = el('button', { type: 'button', 'data-key': 'share', onclick: () => shareBattle(b) }, '결과 공유');
         // A battle played alone ends here: again, another, the whole war.
         if (battleOnly) return el('div', { class: 'cw-battle-actions cw-battle-close' }, said,
-            el('button', { type: 'button', class: b.result === 'won' ? '' : 'cw-primary', 'data-key': 'again', onclick: () => { startGame(G.rehearse(battleOnly), true); announce(`${b.def.title}: 처음부터 다시`); } }, '다시 하기'),
+            el('button', { type: 'button', class: b.result === 'won' ? '' : 'cw-primary', 'data-key': 'again', onclick: () => { const again = G.rehearse(battleOnly); battleReport.begin(again); startGame(again, true); announce(`${b.def.title}: 처음부터 다시`); } }, '다시 하기'),
             el('a', { class: 'cw-close-link', href: `/games/${D.id}/#cwBattlePick` }, '다른 전투'),
             el('a', { class: b.result === 'won' ? 'cw-close-link cw-primary' : 'cw-close-link', href: `/games/${D.id}/` }, '전쟁 전체 하기'),
             share);

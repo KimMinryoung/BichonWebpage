@@ -7,7 +7,7 @@ const assert = require('node:assert/strict');
 const crypto = require('node:crypto');
 const D = require('../../public/js/war/scenarios/civil-war.js');
 const G = require('../../public/js/war/engine.js').create(D);
-const { normalize, replay, MAX_DECISIONS } = require('../../services/war-plays');
+const { normalize, replay, normalizeBattle, replayBattle, MAX_DECISIONS, MAX_MOVES } = require('../../services/war-plays');
 const { requiresSessionStore } = require('../../config/route-policy');
 
 const s = G.start();
@@ -56,6 +56,45 @@ const end = replay(normalize(Object.assign({}, body, { save: JSON.parse(G.serial
 assert.equal(end.ended, true);
 assert.equal(end.outcome, lost.outcome.kind);
 
+// One battle on its own page: its moves replayed on the rehearsal.
+{
+    const b = G.rehearse('kazan');
+    const from = b.log.length;
+    assert.ok(G.act(b, 'b:end'));
+    const half = { runId: crypto.randomUUID(), seq: 1, scenario: 'civil-war', battle: 'kazan', rules: b.rules, moves: b.log.slice(from), narrow: true };
+    const mid = replayBattle(normalizeBattle(half));
+    assert.deepEqual([mid.replayed, mid.turn, mid.ended, mid.result], [1, 2, false, null]);
+    while (b.phase === 'battle') assert.ok(G.act(b, 'b:end'));
+    const done = replayBattle(normalizeBattle(Object.assign({}, half, { seq: 2, moves: b.log.slice(from) })));
+    assert.equal(done.ended, true);
+    assert.equal(done.result, b.battles.kazan.result);
+    assert.equal(done.stats.turns, b.battles.kazan.turns);
+    assert.equal(done.replayed, b.log.length - from);
+    // The final battle ends the war; its result is the battle's.
+    const p = G.rehearse('perekop');
+    const pFrom = p.log.length;
+    while (p.phase === 'battle') assert.ok(G.act(p, 'b:end'));
+    const final = replayBattle(normalizeBattle(Object.assign({}, half, { battle: 'perekop', moves: p.log.slice(pFrom) })));
+    assert.equal(final.result, 'lost');
+    // A move the rules refuse ends the replay there.
+    const wrong = replayBattle(normalizeBattle(Object.assign({}, half, { moves: [['b:end'], ['b:move', 'nobody', 0, 0], ['b:end']] })));
+    assert.equal(wrong.replayed, 1);
+    // Refused: a battle without a page, a plan order among the moves, too
+    // many moves, an unknown rules generation or edition.
+    for (const bad of [
+        Object.assign({}, half, { battle: 'nope' }),
+        Object.assign({}, half, { battle: 'toString' }),
+        Object.assign({}, half, { moves: [['settle']] }),
+        Object.assign({}, half, { moves: Array(MAX_MOVES + 1).fill(['b:end']) }),
+        Object.assign({}, half, { runId: 'x' }),
+        Object.assign({}, half, { edition: 'x' }),
+    ]) assert.equal(normalizeBattle(bad), null);
+    assert.equal(replayBattle(normalizeBattle(Object.assign({}, half, { rules: G.RULES + 1 }))), null);
+    // An edition that is not the scenario's current one (none, for a scenario without editions).
+    assert.equal(replayBattle(normalizeBattle(Object.assign({}, half, { edition: (G.DATA.edition ? G.EDITION : 0) + 1 }))), null);
+}
+
 // The route takes anonymous writes without the session store.
 assert.equal(requiresSessionStore({ method: 'POST', path: '/games/plays' }), false);
+assert.equal(requiresSessionStore({ method: 'POST', path: '/games/plays/battle' }), false);
 console.log('war plays: reports checked and replayed');

@@ -105,5 +105,67 @@
         return { track, begin, retried, leave, resume };
     }
 
-    root.WarReport = { create };
+    // One battle played on its own page (POST /games/plays/battle,
+    // war_battle_plays): only the battle's moves, the log after the
+    // rehearsal that opened it. Each start, and each 「다시 하기」, is a new
+    // run; nothing is kept in the browser. Sent when a battle turn ends and
+    // when it is over (that one tried a few times), and on leaving.
+    // serialize: the engine's (its save carries the edition when the
+    // scenario has editions).
+    function createBattle(scenario, battle, serialize) {
+        let run = null;
+        let from = 0;           // the rehearsal's log length: the moves start here
+        let seq = 0;
+        let mark = null;
+        let sentLength = -1;
+        let retry = 0;
+
+        function post(s, keepalive) {
+            if (!run) return Promise.resolve(true);
+            seq += 1;
+            let save;
+            try { save = JSON.parse(serialize(s)); } catch (_) { return Promise.resolve(true); }
+            const body = JSON.stringify(Object.assign({ runId: run, seq, scenario, battle, rules: s.rules },
+                save.edition !== undefined ? { edition: save.edition } : {},
+                { moves: s.log.slice(from), narrow: root.matchMedia('(max-width: 900px)').matches }));
+            sentLength = s.log.length;
+            try {
+                return root.fetch(URL + '/battle', {
+                    method: 'POST', credentials: 'same-origin', keepalive: keepalive && body.length < 60000,
+                    headers: { 'Content-Type': 'application/json', 'X-War-Play': '1' }, body,
+                }).then(r => r.status < 500 && r.status !== 429, () => false);
+            } catch (_) {
+                return Promise.resolve(false);
+            }
+        }
+
+        // The battle as the rehearsal opened it: a new run from here.
+        function begin(s) { run = uuid(); from = s.log.length; seq = 0; mark = null; sentLength = s.log.length; root.clearTimeout(retry); }
+
+        // After every order: send when a battle turn has passed or it is over.
+        function track(s) {
+            if (!run) return;
+            const over = s.phase !== 'battle';
+            const now = over ? 'over' : String(s.battle.turn);
+            if (now === mark) return;
+            mark = now;
+            if (!over) { post(s); return; }
+            root.clearTimeout(retry);
+            let tries = 0;
+            const attempt = () => post(s).then(ok => {
+                if (!ok && tries < RETRY_MS.length) retry = root.setTimeout(attempt, RETRY_MS[tries++]);
+            });
+            attempt();
+        }
+
+        // Leaving the page mid-turn: what was done since the last send.
+        function leave(s) {
+            if (!run || !s || s.log.length === sentLength || mark === 'over') return;
+            post(s, true);
+        }
+
+        return { begin, track, leave };
+    }
+
+    root.WarReport = { create, createBattle };
 })(typeof window !== 'undefined' ? window : globalThis);

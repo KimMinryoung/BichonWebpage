@@ -169,7 +169,7 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 
 다시 하기: `retryBattle(s)`는 전투에서 진 전쟁을 그 전투의 첫 턴으로(로그를 그 전투를 연 결정까지 자름), `retrySeason(s)`는 시기를 보내 진 전쟁(`defeat` 선, 평가 별이 없는 결말)을 그 시기의 `settle` 바로 앞, 남겨 둔 계획 그대로 되돌린다. 그 사이의 전투도 다시 치른다. 끝난 전투 `s.battles[id]`에는 `result`, `turns`, `turned`, `captured`, `feats`, `held`, `lost`(쓰러진 플레이어 부대 수, 투항해 넘어온 부대는 빼고 판 위에서 일으킨 부대는 셈, `WarBattle.lost`)가 남는다. 골든 마스터는 `lost`를 빼고 비교한다.
 
-전투 연습: `rehearse(id)`는 역사의 선택으로 그 전투 직전까지 둔 상태를 돌려준다(앞의 전투는 `assume`). 화면은 `?battle=<id>`로 열고, 연습은 저장하지도 보고하지도 않는다.
+전투 연습: `rehearse(id)`는 역사의 선택으로 그 전투 직전까지 둔 상태를 돌려준다(앞의 전투는 `assume`). 화면은 `?battle=<id>`로 열고, 연습은 저장하지 않는다. 개발자의 `?battle=`은 보고도 하지 않고, 방문객용 전투 페이지(4.10)의 판은 `war_battle_plays`로 보고한다(6절).
 
 ## 6. 플레이 로그 수집
 
@@ -178,6 +178,8 @@ op: `< <= > >= == !=`. 모르는 키·연산자는 예외를 던지고, 검사�
 - **보내는 쪽** [war/ui/report.js](../public/js/war/ui/report.js): 게임 하나가 run(UUID, 저장 옆 `<save 키>-play`에 둔다)이고, 패배 뒤 전투를 다시 하면 attempt가 하나 는다. 저장할 때마다(`save()`) 전쟁이 움직였으면(결산 수·단계·전투 턴·끝난 전투 수가 바뀜) 저장 전체(`{ version, rules, log }`)를 `POST /games/plays`로 보낸다. 페이지를 떠날 때 그 뒤의 결정이 있으면 `keepalive`로 한 번 더. 실패는 버리고 게임은 그대로 간다. 엔딩(`phase: 'done'`, 승리·툴라 함락 모두)만 2·5·15·30·60초 뒤 다시 보내고, 그래도 안 되면 `pending`으로 남겨 다음 방문 때 또 보낸다. 요청에는 `X-War-Play: 1`과 `seq`(보낼 때마다 +1)를 단다.
 - **받는 쪽** [routes/war-plays.js](../routes/war-plays.js)·[services/war-plays.js](../services/war-plays.js): CSRF 관문 앞에 붙은 익명 쓰기(학습 측정과 같은 JSON·헤더·Origin 검사, IP당 분당 60). 운영 호스트가 아니거나 봇 UA, `MEASUREMENT_EXCLUDED_IPS`(이 서버·운영자 집 IP, `services/measurement-exclusion.js`)면 저장하지 않고 204. 로그를 서버의 엔진으로 재생해 `turn`·`phase`·`ended`·`outcome`(`won`·`stalled`·`moscow`)·`stars`·`stats`(스탯·곡물·전선 위치)를 정한다. 재생이 안 되는 로그는 400. 같은 run·attempt는 `seq`가 더 클 때만 덮어쓴다. 운영자 세션의 판은 `operator`로 표시해 남긴다. IP·쿠키·방문자 id는 저장하지 않는다.
 - **표** `war_game_plays`(migration 367): `(run_id, attempt)` 하나에 마지막 로그. `decisions > replayed`이면 재생이 중간에 멈춘 로그다. 읽기: `scripts/query-db "SELECT run_id, attempt, rules, turn, phase, outcome, stars, decisions, narrow, operator, updated_at FROM war_game_plays ORDER BY updated_at DESC LIMIT 20"`. 한 판을 다시 보려면 `log`를 꺼내 `G.restore({ version, rules, log })`로 재생한다.
+
+- **전투 하나의 판** `war_battle_plays`(migration 378, 2026-11-15): 전투 페이지(4.10)에서 한 판. 전쟁 앞부분은 엔진의 `rehearse`라 전투의 명령(`b:…`, 리허설 로그 뒤)만 `POST /games/plays/battle`로 보낸다(`WarReport.createBattle`). 페이지를 열 때와 「다시 하기」마다 새 run이고 브라우저에는 아무것도 남기지 않는다. 전투 턴이 넘어갈 때·끝났을 때(끝은 몇 번 다시)·페이지를 떠날 때 보낸다. 서버는 `rehearse(battle, rules)`(전투·세대마다 한 번 만들어 둠)에 명령을 재생해 `turn`·`ended`·`result`(`won`·`lost`)·`stats`(끝난 전투의 `s.battles[id]`)를 정한다. 판(`edition`)은 지금 판만 받는다. 거르기·`operator`·`seq` 규칙은 `war_game_plays`와 같다. 읽기: `scripts/query-db "SELECT battle, result, turn, decisions, replayed, narrow, operator, updated_at FROM war_battle_plays ORDER BY updated_at DESC LIMIT 20"`.
 
 ## 6.5 전투 밸런스 측정 (`scripts/war-balance.js`, 2026-10-18)
 
