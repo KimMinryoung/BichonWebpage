@@ -908,7 +908,7 @@
         history: '11월 8일 제51사단은 터키 방벽을 두 번 들이쳤다가 철조망과 기관총 앞에서 물러났다. 9일 새벽 세 번째 돌격에 방벽 위로 올라섰다.',
     };
     const perekop = {
-        id: 'perekop', sides: SIDES, front: 'crimea', final: true,
+        id: 'perekop', sides: SIDES, ground: 'steppe', front: 'crimea', final: true,
         scene: { picture: 'battle-perekop' },
         title: '페레코프-촌가르 작전', date: '1920년 11월 7–12일',
         settle: '페레코프로 →', open: '페레코프 전투 지휘하기 →', board: '페레코프 전장',
@@ -1050,7 +1050,7 @@
     // C the city, H the Venets heights, R the station, P the north wharf,
     // ~ the Volga.
     const simbirsk = {
-        id: 'simbirsk', sides: SIDES, front: 'east', final: false,
+        id: 'simbirsk', sides: SIDES, ground: 'summer', front: 'east', final: false,
         when: { rules: ['>=', 11] },
         title: '심비르스크 공격', date: '1918년 8월 14–17일',
         settle: '심비르스크로 →', board: '심비르스크 전장', enemyName: '코무치군',
@@ -1172,7 +1172,7 @@
     // ~ the Volga, B the Sviyazhsk railway bridge, S Sviyazhsk, K the city,
     // k the kremlin, P the wharves.
     const kazan = {
-        id: 'kazan', sides: SIDES, front: 'east', final: false,
+        id: 'kazan', sides: SIDES, ground: 'summer', front: 'east', final: false,
         scene: { picture: 'battle-kazan' },
         title: '카잔 탈환', date: '1918년 8월 말–9월 10일',
         settle: '카잔으로 →', board: '카잔 전장',
@@ -1269,7 +1269,7 @@
     // Terrain: . steppe, b a balka (gully), T the defence belt, G the gun
     // works, C the city, t a station village, ~ the Volga.
     const tsaritsyn = {
-        id: 'tsaritsyn', sides: SIDES, front: 'volga', final: false, outlast: true,
+        id: 'tsaritsyn', sides: SIDES, ground: 'steppe', front: 'volga', final: false, outlast: true,
         scene: { picture: 'battle-tsaritsyn' },
         title: '차리친 방어', date: '1918년 10월 15–25일',
         settle: '차리친으로 →', board: '차리친 전장', enemyName: '돈군',
@@ -1378,7 +1378,7 @@
     // Terrain: . field, f wood, O the city of Orel (held as a position),
     // K Kromy, M Mtsensk.
     const orel = {
-        id: 'orel', sides: SIDES, front: 'south', final: false,
+        id: 'orel', sides: SIDES, ground: 'autumn', front: 'south', final: false,
         title: '오룔 반격', date: '1919년 10월 11–20일',
         settle: '오룔로 →', board: '오룔 전장',
         strikeNote: '',
@@ -1474,7 +1474,7 @@
     // pontoon bridge, b the blown
     // railway bridge, T the east bank's trenches, t a village, U the city.
     const ufa = {
-        id: 'ufa', sides: SIDES, front: 'east', final: false,
+        id: 'ufa', sides: SIDES, ground: 'summer', front: 'east', final: false,
         scene: { picture: 'battle-ufa' },
         title: '우파 도하', date: '1919년 6월 7–9일',
         settle: '우파로 →', board: '우파 전장',
@@ -1583,7 +1583,7 @@
     // falls at the end of turn 2; and the bridge wants every division the
     // front can bring (need) by turn 5.
     const warsaw = {
-        id: 'warsaw', sides: SIDES, front: 'west', final: false,
+        id: 'warsaw', sides: SIDES, ground: 'summer', front: 'west', final: false,
         scene: { picture: 'battle-warsaw', witness: { who: ['이사크 바벨', 'babel'], text: '먼지투성이의 뜨거운 길 위의 말 잃은 기병들, 안장을 손에 들고, … 곳곳에서 말들이 썩어 가고, 이야기는 오직 말에 관한 것뿐', src: ['바벨, 『1920년 기병대 일기』, 8월 18일', D_('babel-cavalry-diary-1920') + '#entry-43'] } },
         when: { rules: ['>=', 6], choice: 'warsaw' },
         title: '바르샤바 전투', date: '1920년 8월 13–17일',

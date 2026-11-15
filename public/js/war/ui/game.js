@@ -2922,9 +2922,16 @@
             renderBattle();
         };
         // The ground, drawn as one map under the squares (war/ui/ground.js).
-        // A winter board's bare ground (under its woods and river banks) is snow too.
+        // The open ground: the season's colour (def.ground: summer, spring,
+        // autumn, steppe; winter when the board has snow) under a tiling
+        // texture of turf or snow.
         const winter = def.map.some((row, r) => [...row].some((_, c) => B.terrain(b, r, c).cls === 'snow'));
-        board.append(svg('rect', { x: 0, y: 0, width: cols * CELL, height: rows * CELL, class: 'cw-ground-base' + (winter ? ' is-snow' : '') }));
+        const season = winter ? 'winter' : def.ground || 'summer';
+        const turf = svg('pattern', { id: 'cwTurf', width: 384, height: 384, patternUnits: 'userSpaceOnUse' });
+        turf.append(svg('image', { href: `/images/war/${winter ? 'snow' : 'turf'}-v1.webp`, width: 384, height: 384 }));
+        defs.append(turf);
+        board.append(svg('rect', { x: 0, y: 0, width: cols * CELL, height: rows * CELL, class: 'cw-ground-base is-' + season }));
+        board.append(svg('rect', { x: 0, y: 0, width: cols * CELL, height: rows * CELL, fill: 'url(#cwTurf)', class: 'cw-ground-turf' }));
         board.append(window.WarGround.paint(rows, cols, (r, c) => {
             const t = B.terrain(b, r, c);
             return { cls: t.cls, flooded: Boolean(t.ford) && !B.fordOpen(b) };

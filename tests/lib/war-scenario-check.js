@@ -259,6 +259,8 @@ function checkScenario(D) {
         if (def.breach !== undefined) need(Number.isInteger(def.breach) && def.breach >= 1 && def.breach <= Battle.postsOf(def).length, `${at}: breach`);
         // A board is won by a goal, or held (outlast) by its posts.
         need(def.goals.length || (def.outlast && Battle.postsOf(def).length), `${at}: a goal, or a post to outlast with`);
+        // The open ground's season (war.css .cw-ground-base.is-*; a board with snow is winter).
+        need(def.ground === undefined || ['summer', 'spring', 'autumn', 'steppe'].includes(def.ground), `${at}: ground ${def.ground}`);
         // Named ground: tiles of the board, a name.
         for (const area of def.areas || []) need(area.name && area.tiles.length && area.tiles.every(inside), `${at}: area ${area.name}`);
         // Supply: each side's sources are tiles of the board.

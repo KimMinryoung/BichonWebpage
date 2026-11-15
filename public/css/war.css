@@ -590,45 +590,64 @@
 /* Simbirsk: the Sviyaga to wade, the Venets heights over the Volga. */
 .cw-tile.t-stream { fill: color-mix(in srgb, #5f93b8 38%, var(--bg-surface)); }
 .cw-tile.t-heights { fill: color-mix(in srgb, #8a6a3c 55%, var(--bg-surface)); }
+.cw-tile.t-canal { fill: color-mix(in srgb, #5f93b8 45%, var(--bg-surface)); }
 .cw-tile.t-marsh { fill: color-mix(in srgb, #7fa6a0 40%, var(--bg-surface)); }
 .cw-tile.is-goal { stroke: var(--clr-red); stroke-width: 3; }
 /* The board's ground as one map (war/ui/ground.js): the squares above it
    are clear, the colours here are the legend's (.cw-tile.t-*) thinned. */
 .cw-grid .cw-tile { fill: transparent; stroke: none; }
 .cw-grid .cw-tile.is-goal { stroke: var(--clr-red); stroke-width: 3; }
-.cw-ground-base { fill: color-mix(in srgb, #c8b77a 26%, var(--bg-surface)); }
-.cw-ground-base.is-snow { fill: color-mix(in srgb, #f3f5f7 82%, var(--bg-surface)); }
+.cw-ground-base { fill: color-mix(in srgb, #86a45c 62%, var(--bg-surface)); }
+.cw-ground-base.is-spring { fill: color-mix(in srgb, #93b566 62%, var(--bg-surface)); }
+.cw-ground-base.is-autumn { fill: color-mix(in srgb, #a89a55 60%, var(--bg-surface)); }
+.cw-ground-base.is-steppe { fill: color-mix(in srgb, #b8ab6c 62%, var(--bg-surface)); }
+.cw-ground-base.is-winter { fill: color-mix(in srgb, #f1f4f6 86%, var(--bg-surface)); }
+.cw-ground-turf { pointer-events: none; }
 .cw-ground { pointer-events: none; }
 .cw-ground path, .cw-ground circle { fill: none; stroke: none; stroke-linecap: round; stroke-linejoin: round; }
 .cw-g-snow { fill: color-mix(in srgb, #f3f5f7 82%, var(--bg-surface)) !important; }
-.cw-g-mud { fill: color-mix(in srgb, #6b5233 34%, var(--bg-surface)) !important; }
-.cw-g-marsh { fill: color-mix(in srgb, #7fa6a0 34%, var(--bg-surface)) !important; }
-.cw-g-wood { fill: color-mix(in srgb, #4f7a3a 30%, var(--bg-surface)) !important; }
-.cw-g-hill { fill: color-mix(in srgb, #a5824e 34%, var(--bg-surface)) !important; stroke: color-mix(in srgb, #6b4a22 70%, var(--bg-surface)) !important; stroke-width: 1.2; }
-.cw-g-dug { fill: color-mix(in srgb, #8c7b55 26%, var(--bg-surface)) !important; }
-.cw-g-built { fill: color-mix(in srgb, #9d8a62 34%, var(--bg-surface)) !important; }
+.cw-g-mud { fill: color-mix(in srgb, #5a4428 46%, transparent) !important; }
+.cw-g-marsh { fill: color-mix(in srgb, #4f8f96 42%, transparent) !important; }
+.cw-g-wood { fill: color-mix(in srgb, #2a4f22 34%, transparent) !important; }
+.cw-g-hill { fill: color-mix(in srgb, #8a6a3c 46%, transparent) !important; stroke: color-mix(in srgb, #4a3214 80%, transparent) !important; stroke-width: 1.2; }
+.cw-g-built { fill: color-mix(in srgb, #c9bfa8 80%, var(--bg-surface)) !important; stroke: color-mix(in srgb, #3a2a18 45%, transparent) !important; stroke-width: 1; }
 .cw-g-water { fill: color-mix(in srgb, #5f93c2 72%, var(--bg-surface)) !important; stroke: color-mix(in srgb, #244f78 75%, var(--bg-surface)) !important; stroke-width: 1.6; }
 .cw-g-deep { fill: color-mix(in srgb, #1f4f8a 70%, var(--bg-surface)) !important; }
 .cw-g-ford { fill: color-mix(in srgb, #a9c9e0 80%, var(--bg-surface)) !important; }
 .cw-g-ice { fill: color-mix(in srgb, #d5e4ee 88%, var(--bg-surface)) !important; stroke: color-mix(in srgb, #7fa0b8 70%, var(--bg-surface)) !important; stroke-width: 1.2; }
 .cw-g-wave { stroke: #fff !important; stroke-opacity: .55; stroke-width: 1.2; }
 .cw-g-crack { stroke: color-mix(in srgb, #5f7f98 80%, var(--bg-surface)) !important; stroke-width: 1; }
-.cw-g-shoal { stroke: color-mix(in srgb, #244f78 60%, var(--bg-surface)) !important; stroke-width: 2.2; }
-.cw-g-contour { stroke: color-mix(in srgb, #6b4a22 62%, var(--bg-surface)) !important; stroke-width: 1.1; }
-.cw-g-contour.is-top { fill: color-mix(in srgb, #8a6a3c 30%, var(--bg-surface)) !important; }
+.cw-g-shoal { stroke: #fff !important; stroke-opacity: .7; stroke-width: 1.2; }
+.cw-g-contour { stroke: color-mix(in srgb, #4a3214 70%, transparent) !important; stroke-width: 1.1; }
+.cw-g-contour.is-top { fill: color-mix(in srgb, #8a6a3c 36%, transparent) !important; }
 .cw-g-gully { stroke: color-mix(in srgb, #4a3418 80%, var(--bg-surface)) !important; stroke-width: 3; }
 .cw-g-bank { stroke: color-mix(in srgb, #4a3418 70%, var(--bg-surface)) !important; stroke-width: 1.1; }
+.cw-g-quay { stroke: color-mix(in srgb, #3a3a36 85%, var(--bg-surface)) !important; stroke-width: 15; stroke-linecap: butt !important; }
+.cw-g-canal { stroke: color-mix(in srgb, #5f93c2 80%, var(--bg-surface)) !important; stroke-width: 10; stroke-linecap: butt !important; }
 .cw-g-brook { stroke: color-mix(in srgb, #3a78b0 75%, var(--bg-surface)) !important; stroke-width: 4.5; }
 .cw-g-reed { stroke: color-mix(in srgb, #4f6a2a 80%, var(--text-primary)) !important; stroke-width: 1.1; }
-.cw-g-trench { stroke: color-mix(in srgb, var(--text-primary) 78%, transparent) !important; stroke-width: 2.2; }
-.cw-g-wire { stroke: color-mix(in srgb, var(--text-primary) 60%, transparent) !important; stroke-width: 1; stroke-dasharray: 1 3.5; }
+.cw-g-berm { stroke: color-mix(in srgb, #8a6f44 70%, transparent) !important; stroke-width: 17; stroke-linecap: butt !important; }
+.cw-g-ditch { stroke: #1e160a !important; stroke-width: 4.2; }
+.cw-g-trench { stroke: color-mix(in srgb, #c9b07a 90%, var(--bg-surface)) !important; stroke-width: 1.2; }
+.cw-g-parapet { stroke: #1e160a !important; stroke-opacity: .75; stroke-width: 1.5; }
+.cw-g-knot { stroke: #1e160a !important; stroke-opacity: .8; stroke-width: 1; }
+.cw-g-hach { stroke: color-mix(in srgb, #4a3214 55%, transparent) !important; stroke-width: 1; }
+.cw-g-hach.is-shade { stroke: color-mix(in srgb, #2a1a08 80%, transparent) !important; stroke-width: 1.6; }
+.cw-g-bar { fill: color-mix(in srgb, #d9c79a 80%, var(--bg-surface)) !important; fill-opacity: .8; }
+.cw-g-boards { fill: color-mix(in srgb, #b89868 90%, var(--bg-surface)) !important; }
+.cw-g-wire { stroke: #1e160a !important; stroke-opacity: .7; stroke-width: .9; }
 .cw-g-wall { stroke: color-mix(in srgb, #8a4a1e 85%, var(--bg-surface)) !important; stroke-width: 9; stroke-linecap: butt !important; }
 .cw-g-teeth { stroke: #2a1406 !important; stroke-opacity: .7; stroke-width: 1.4; }
-.cw-g-tuft { stroke: color-mix(in srgb, #6d7a2e 70%, var(--text-primary)) !important; stroke-opacity: .45; stroke-width: 1; }
+.cw-g-tuft { stroke: #23401a !important; stroke-opacity: .5; stroke-width: 1; }
 .cw-g-drift { stroke: #8a97a6 !important; stroke-opacity: .7; stroke-width: 1.3; }
 .cw-g-rut { stroke: #2e2210 !important; stroke-opacity: .55; stroke-width: 1.8; }
 .cw-g-bog { stroke: color-mix(in srgb, #3a78b0 70%, var(--bg-surface)) !important; stroke-width: 1.5; }
-.cw-g-block { fill: color-mix(in srgb, #8f7a55 62%, var(--bg-surface)) !important; stroke: color-mix(in srgb, #3a2a18 70%, var(--bg-surface)) !important; stroke-width: .7; fill-rule: evenodd; }
+.cw-g-block { stroke: color-mix(in srgb, #2a1c10 80%, transparent) !important; stroke-width: .8; fill-rule: evenodd; }
+.cw-g-block.is-0 { fill: color-mix(in srgb, #9a5a40 85%, var(--bg-surface)) !important; }
+.cw-g-block.is-1 { fill: color-mix(in srgb, #6f6a66 80%, var(--bg-surface)) !important; }
+.cw-g-block.is-2 { fill: color-mix(in srgb, #b08a55 85%, var(--bg-surface)) !important; }
+.cw-g-lane { stroke: color-mix(in srgb, #d8c9a0 85%, var(--bg-surface)) !important; stroke-width: 5; }
+.cw-g-roof.is-dark { fill: color-mix(in srgb, #8a5a3c 85%, var(--bg-surface)) !important; }
 .cw-g-roof { fill: color-mix(in srgb, #efe3c8 85%, var(--bg-surface)) !important; stroke: #3a2a18 !important; stroke-width: .9; }
 .cw-g-ridge { stroke: #3a2a18 !important; stroke-opacity: .6; stroke-width: .8; }
 .cw-g-stack { fill: color-mix(in srgb, #8a4a1e 70%, var(--bg-surface)) !important; stroke: #2a1406 !important; stroke-width: .9; }
@@ -639,16 +658,10 @@
 .cw-g-fir { fill: color-mix(in srgb, #23471f 90%, var(--bg-surface)) !important; stroke: #142a11 !important; stroke-width: .6; }
 .cw-g-fir-lit { fill: color-mix(in srgb, #4d7f3f 90%, var(--bg-surface)) !important; }
 .cw-g-trunk { stroke: #3a2614 !important; stroke-width: 1.6; }
-.cw-ground .cw-g-field { stroke: none; }
-.cw-ground .cw-g-field.is-a { fill: color-mix(in srgb, #b7a15a 30%, transparent); }
-.cw-ground .cw-g-field.is-b { fill: color-mix(in srgb, #8a9a4a 26%, transparent); }
-.cw-ground .cw-g-field.is-c { fill: color-mix(in srgb, #d8c88a 34%, transparent); }
-.cw-ground .cw-g-field.is-s { fill: color-mix(in srgb, #9fb2c4 22%, transparent); }
-.cw-g-furrow { stroke: color-mix(in srgb, #6b5a2a 45%, transparent) !important; stroke-width: .7; }
 .cw-g-deck { stroke: #2a2a26 !important; stroke-width: 2.2; stroke-linecap: butt !important; }
 .cw-g-plank { stroke: #2a2a26 !important; stroke-opacity: .75; stroke-width: 1.1; }
 .cw-g-boat { fill: color-mix(in srgb, #cbb894 85%, var(--bg-surface)) !important; stroke: #2a2a26 !important; stroke-width: 1; }
-.cw-g-grid { stroke: color-mix(in srgb, var(--text-primary) 38%, transparent) !important; stroke-width: .9; }
+.cw-g-grid { stroke: color-mix(in srgb, var(--text-primary) 55%, transparent) !important; stroke-width: 1; }
 /* Tile drawings (civil-war.js tileMarks). */
 .cw-marks, .cw-track { pointer-events: none; }
 .cw-marks path { fill: none; stroke-linecap: round; stroke-linejoin: round; }
@@ -724,6 +737,7 @@
 .cw-terrain-key .k-snow { background: color-mix(in srgb, #eef0f2 72%, var(--bg-surface)); }
 .cw-terrain-key .k-mud { background: color-mix(in srgb, #6b5233 55%, var(--bg-surface)); }
 .cw-terrain-key .k-bridge { background: color-mix(in srgb, #3f6f95 55%, var(--bg-surface)); }
+.cw-terrain-key .k-canal { background: color-mix(in srgb, #5f93b8 60%, var(--bg-surface)); }
 .cw-terrain-key .k-marsh { background: color-mix(in srgb, #7fa6a0 40%, var(--bg-surface)); }
 .cw-terrain-key .k-forest { background: color-mix(in srgb, #4f7a3a 50%, var(--bg-surface)); }
 .cw-terrain-key .k-city { background: color-mix(in srgb, #9d8a62 70%, var(--bg-surface)); }

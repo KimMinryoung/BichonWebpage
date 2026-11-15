@@ -64,42 +64,12 @@
             return out;
         }
 
-        // ── Open ground: fields as the land lies, not as the squares do ──
-        // Strips of ploughland and meadow at their own angles, cut to the
-        // open ground's outline; on snow, the hollows' shade.
-        for (const [kind, tones, lined] of [['steppe', ['a', 'b', 'c'], true], ['snow', ['s'], false]]) {
-            const set = new Set([kind]);
-            const outline = region((r, c) => cls(r, c) === kind, (r, c) => { const k = cls(r, c); return k === null || k === kind; }, 0, 0);
-            if (!outline) continue;
-            const id = `cwGround-${kind}-${rows}x${cols}`;
-            const clip = svg('clipPath', { id });
-            clip.append(svg('path', { d: outline }));
-            const fields = svg('g', { 'clip-path': `url(#${id})` });
-            const n = Math.round(rows * cols / (lined ? 2.6 : 4));
-            for (let i = 0; i < n; i++) {
-                const cx = rnd(i, 3, 1) * cols * CELL, cy = rnd(i, 5, 2) * rows * CELL;
-                if (!set.has(cls(Math.floor(cy / CELL), Math.floor(cx / CELL)))) continue;
-                const w = 46 + rnd(i, 7, 3) * 64, h = 26 + rnd(i, 9, 4) * 36;
-                const deg = [-28, -12, 6, 18, 34][Math.floor(rnd(i, 11, 5) * 5)];
-                const one = svg('g', { transform: `rotate(${deg} ${f1(cx)} ${f1(cy)})` });
-                one.append(svg('rect', { x: f1(cx - w / 2), y: f1(cy - h / 2), width: f1(w), height: f1(h), class: 'cw-g-field is-' + tones[Math.floor(rnd(i, 13, 6) * tones.length)] }));
-                if (lined && rnd(i, 17, 7) < .6) {
-                    let d = '';
-                    for (let y = cy - h / 2 + 4; y < cy + h / 2 - 2; y += 5) d += `M${f1(cx - w / 2 + 3)} ${f1(y)}h${f1(w - 6)}`;
-                    one.append(svg('path', { d, class: 'cw-g-furrow' }));
-                }
-                fields.append(one);
-            }
-            g.append(clip, fields);
-        }
-
         // ── Washes: the ground's colour under everything ──
         add(regionOf(new Set(['snow']), 0, 0), 'cw-g-snow');
         add(regionOf(new Set(['mud']), 2, 14), 'cw-g-mud');
         add(regionOf(new Set(['marsh']), 3, 16), 'cw-g-marsh');
         add(regionOf(new Set(['forest']), 3, 18), 'cw-g-wood');
         add(regionOf(new Set(['heights']), 2, 20), 'cw-g-hill');
-        add(regionOf(DUG, 4, 10), 'cw-g-dug');
         add(regionOf(BUILT, 3, 8), 'cw-g-built');
         add(regionOf(new Set(['wall']), 3, 6), 'cw-g-built');
 
@@ -109,22 +79,45 @@
         add(region((r, c) => cls(r, c) === 'deep', wet, 7, 16), 'cw-g-deep');
         add(region((r, c) => cls(r, c) === 'ford', wet, 7, 16), 'cw-g-ford');
         add(region((r, c) => cls(r, c) === 'ice', wet, 7, 16), 'cw-g-ice');
-        let waves = '', cracks = '', shoal = '';
+        let waves = '', cracks = '', shoal = '', bar = '';
         each((r, c, k) => {
             if (!WET.has(k)) return;
             const x = c * CELL, y = r * CELL;
             if (k === 'ice') { cracks += `M${x + 8} ${y + 16 + rnd(r, c, 1) * 8}l10 4l7 -6l9 7l8 -3M${x + 18} ${y + 22}l-3 11`; return; }
-            if (k === 'ford') { for (let i = 0; i < 7; i++) shoal += `M${f1(x + 9 + rnd(r, c, i) * 30)} ${f1(y + 9 + rnd(r, c, i + 9) * 30)}h.1`; return; }
+            if (k === 'ford') {
+                // Shallows: sandbars showing through, the water rippling over them.
+                for (let i = 0; i < 2; i++) {
+                    const bx = x + 6 + rnd(r, c, i) * 24, by = y + 9 + i * 20 + rnd(r, c, i + 3) * 8, bw = 10 + rnd(r, c, i + 6) * 12;
+                    bar += `M${f1(bx)} ${f1(by)}q${f1(bw / 2)} -4 ${f1(bw)} 0q${f1(-bw / 2)} 3.5 ${f1(-bw)} 0z`;
+                }
+                for (let i = 0; i < 4; i++) shoal += `M${f1(x + 5 + rnd(r, c, i + 9) * 30)} ${f1(y + 7 + i * 10 + rnd(r, c, i + 13) * 4)}h${f1(5 + rnd(r, c, i + 17) * 5)}`;
+                return;
+            }
             for (let i = 0; i < 2; i++) {
                 const wx = x + 10 + rnd(r, c, i) * 18, wy = y + 14 + i * 16 + rnd(r, c, i + 5) * 6;
                 waves += `M${f1(wx)} ${f1(wy)}q3 -2.5 6 0t6 0`;
             }
         });
-        add(waves, 'cw-g-wave'); add(cracks, 'cw-g-crack'); add(shoal, 'cw-g-shoal');
+        add(bar, 'cw-g-bar'); add(waves, 'cw-g-wave'); add(cracks, 'cw-g-crack'); add(shoal, 'cw-g-shoal');
 
         // ── Heights: contours following the hill's edge ──
         const hill = new Set(['heights']);
         for (const [inset, k] of [[5, 'cw-g-contour'], [12, 'cw-g-contour'], [19, 'cw-g-contour is-top']]) add(regionOf(hill, inset, Math.max(4, 20 - inset)), k);
+
+        let hach = '', hachDark = '';
+        each((r, c, k) => {
+            if (k !== 'heights') return;
+            const x = c * CELL, y = r * CELL;
+            const open = DIRS.map(([dr, dc]) => cls(r + dr, c + dc) !== 'heights' && cls(r + dr, c + dc) !== null);
+            for (let o = 5; o < CELL - 3; o += 5) {
+                const j = rnd(r, c, o) * 2;
+                if (open[0]) hach += `M${f1(x + o)} ${f1(y + 3 + j)}v5`;
+                if (open[3]) hach += `M${f1(x + 3 + j)} ${f1(y + o)}h5`;
+                if (open[2]) hachDark += `M${f1(x + o)} ${f1(y + CELL - 3 - j)}v-7`;
+                if (open[1]) hachDark += `M${f1(x + CELL - 3 - j)} ${f1(y + o)}h-7`;
+            }
+        });
+        add(hach, 'cw-g-hach'); add(hachDark, 'cw-g-hach is-shade');
 
         // ── Lines: gullies, streams, trenches, walls ──
         const wiggle = (x1, y1, x2, y2, amp, step, seed) => {
@@ -149,17 +142,28 @@
             const x = c * CELL, y = r * CELL;
             if (k === 'stream') for (let i = 0; i < 3; i++) { const rx = x + 6 + rnd(r, c, i) * 36, ry = y + 10 + rnd(r, c, i + 4) * 32; reed += `M${f1(rx)} ${f1(ry)}v-6M${f1(rx + 2.5)} ${f1(ry)}l1.5 -5M${f1(rx - 2.5)} ${f1(ry)}l-1.5 -5`; }
         });
+        let berm = '', knot = '';
         for (const [x1, y1, x2, y2] of runs(DUG, [1, 3])) {
+            // Thrown-up earth along the line, the ditch in it, wire on stakes before it.
+            berm += `M${x1} ${y1}L${x2} ${y2}`;
             trench += wiggle(x1, y1, x2, y2, 3.2, 5);
-            // The wire runs beside it.
-            const v = x1 === x2, o = 9;
+            const v = x1 === x2, o = 11;
             wire += v ? `M${x1 + o} ${y1}V${y2}` : `M${x1} ${y1 - o}H${x2}`;
+            for (let t = .15; t < 1; t += .3) {
+                const kx = v ? x1 + o : x1 + (x2 - x1) * t, ky = v ? y1 + (y2 - y1) * t : y1 - o;
+                knot += `M${f1(kx - 2)} ${f1(ky - 2)}l4 4M${f1(kx + 2)} ${f1(ky - 2)}l-4 4`;
+            }
         }
+        add(berm, 'cw-g-berm');
         for (const [x1, y1, x2, y2] of runs(new Set(['wall']), [1, 3])) {
             wall += `M${x1} ${y1}L${x2} ${y2}`;
             const v = x1 === x2;
             for (let t = .15; t < 1; t += .28) teeth += v ? `M${x1 - 5} ${f1(y1 + (y2 - y1) * t)}h10` : `M${f1(x1 + (x2 - x1) * t)} ${y1 - 5}v10`;
         }
+        // A canal: a straight cut between stone banks.
+        let canal = '';
+        for (const [x1, y1, x2, y2] of runs(new Set(['canal']), [1, 3])) canal += `M${x1} ${y1}L${x2} ${y2}`;
+        add(canal, 'cw-g-quay'); add(canal, 'cw-g-canal');
         add(gully, 'cw-g-gully'); add(bank, 'cw-g-bank'); add(brook, 'cw-g-brook'); add(reed, 'cw-g-reed');
         // A trench's parapet along the sides where the dug ground ends: it
         // shows round a unit standing in it.
@@ -173,8 +177,8 @@
             if (open[3]) parapet += wiggle(x + 2, y + 1, x + 2, y + CELL - 1, 2, 4);
             if (open[1]) parapet += wiggle(x + CELL - 2, y + 1, x + CELL - 2, y + CELL - 1, 2, 4);
         });
-        add(parapet, 'cw-g-trench');
-        add(wire, 'cw-g-wire'); add(trench, 'cw-g-trench'); add(wall, 'cw-g-wall'); add(teeth, 'cw-g-teeth');
+        add(parapet, 'cw-g-parapet');
+        add(wire, 'cw-g-wire'); add(knot, 'cw-g-knot'); add(trench, 'cw-g-ditch'); add(trench, 'cw-g-trench'); add(wall, 'cw-g-wall'); add(teeth, 'cw-g-teeth');
 
         // ── Scattered marks: tufts, snowdrifts, ruts, marsh ──
         let tuft = '', drift = '', rut = '', bog = '', bogTuft = '';
@@ -202,29 +206,39 @@
         add(tuft, 'cw-g-tuft'); add(drift, 'cw-g-drift'); add(rut, 'cw-g-rut'); add(bog, 'cw-g-bog'); add(bogTuft, 'cw-g-reed');
 
         // ── Built-up ground: roofs in blocks ──
-        let roof = '', ridge = '', shed = '', stack = '', smoke = '', pier = '', keep = '', block = '';
+        let roof = '', roofDark = '', lane = '', ridge = '', shed = '', stack = '', smoke = '', pier = '', keep = '';
+        const tones = ['', '', ''];
         each((r, c, k) => {
             const x = c * CELL, y = r * CELL;
             if (k === 'city') {
-                // City blocks between streets: four to a tile, each a little
-                // different, some with a yard cut out of them.
+                // A dense quarter: two rows of houses wall to wall between
+                // the streets, roofs of three colours, the big ones round a yard.
                 for (let i = 0; i < 2; i++) {
-                    for (let j = 0; j < 2; j++) {
-                        const n = i * 2 + j;
-                        const w = 17 + rnd(r, c, n) * 3, h = 17 + rnd(r, c, n + 4) * 3;
-                        const bx = x + 3.5 + j * 22 + rnd(r, c, n + 8) * (20 - w), by = y + 3.5 + i * 22 + rnd(r, c, n + 12) * (20 - h);
-                        block += `M${f1(bx)} ${f1(by)}h${f1(w)}v${f1(h)}h${f1(-w)}z`;
-                        if (rnd(r, c, n + 16) < .55) block += `M${f1(bx + 5)} ${f1(by + 5)}v${f1(h - 10)}h${f1(w - 10)}v${f1(10 - h)}z`;
+                    const by = y + 3 + i * 22.5, h = 19;
+                    let bx = x + 3;
+                    for (let j = 0; bx < x + CELL - 8; j++) {
+                        const w = Math.min(x + CELL - 3 - bx, 9 + rnd(r, c, i * 7 + j) * 13);
+                        const tone = Math.floor(rnd(r, c, i * 11 + j + 40) * 3);
+                        let d = `M${f1(bx)} ${f1(by)}h${f1(w)}v${h}h${f1(-w)}z`;
+                        if (w > 15) d += `M${f1(bx + 5)} ${f1(by + 5)}v${h - 10}h${f1(w - 10)}v${10 - h}z`;
+                        else ridge += w > 11 ? `M${f1(bx + 2)} ${f1(by + h / 2)}h${f1(w - 4)}` : `M${f1(bx + w / 2)} ${f1(by + 2)}v${h - 4}`;
+                        tones[tone] += d;
+                        bx += w + 1.5;
                     }
                 }
             } else if (k === 'town') {
-                // A few houses along a lane.
-                const slots = [[6, 8], [26, 6], [15, 22], [30, 28], [7, 33]].filter((_, i) => rnd(r, c, i) > .3).slice(0, 4);
+                // A village: a lane, and houses at their own angles beside it, each roof lit on one side.
+                const to = DIRS.map(([dr, dc], i) => (BUILT.has(cls(r + dr, c + dc)) ? i : -1)).filter(i => i >= 0);
+                const cx = x + CELL / 2, cy = y + CELL / 2;
+                for (const i of to.length ? to : [1, 3]) lane += `M${cx} ${cy}L${cx + DIRS[i][1] * CELL / 2} ${cy + DIRS[i][0] * CELL / 2}`;
+                const slots = [[10, 10], [33, 9], [12, 37], [36, 36], [24, 8]].filter((_, i) => rnd(r, c, i) > .25).slice(0, 4);
                 for (const [i, [sx, sy]] of slots.entries()) {
-                    const w = 10 + rnd(r, c, i + 20) * 4, h = 8 + rnd(r, c, i + 30) * 3;
-                    const hx = x + sx + rnd(r, c, i + 40) * 3, hy = y + sy + rnd(r, c, i + 50) * 3;
-                    roof += `M${f1(hx)} ${f1(hy)}h${f1(w)}v${f1(h)}h${f1(-w)}z`;
-                    ridge += `M${f1(hx + 1.5)} ${f1(hy + h / 2)}h${f1(w - 3)}`;
+                    const w = 11 + rnd(r, c, i + 20) * 4, h = 8 + rnd(r, c, i + 30) * 2.5;
+                    const a = (rnd(r, c, i + 40) - .5) * .9, ca = Math.cos(a), sa = Math.sin(a);
+                    const hx = x + sx + rnd(r, c, i + 50) * 3, hy = y + sy + rnd(r, c, i + 60) * 3;
+                    const pt = (u, v) => `${f1(hx + u * ca - v * sa)} ${f1(hy + u * sa + v * ca)}`;
+                    roof += `M${pt(-w / 2, -h / 2)}L${pt(w / 2, -h / 2)}L${pt(w / 2, 0)}L${pt(-w / 2, 0)}Z`;
+                    roofDark += `M${pt(-w / 2, 0)}L${pt(w / 2, 0)}L${pt(w / 2, h / 2)}L${pt(-w / 2, h / 2)}Z`;
                 }
             } else if (k === 'works') {
                 for (const sy of [11, 27]) {
@@ -245,7 +259,7 @@
                 for (const [tx, ty] of [[8, 8], [40, 8], [8, 40], [40, 40]]) keep += `M${x + tx - 4} ${y + ty}a4 4 0 1 0 8 0a4 4 0 1 0 -8 0`;
             }
         });
-        add(block, 'cw-g-block'); add(roof, 'cw-g-roof'); add(ridge, 'cw-g-ridge'); add(shed, 'cw-g-roof'); add(stack, 'cw-g-stack'); add(smoke, 'cw-g-smoke');
+        add(lane, 'cw-g-lane'); tones.forEach((d, i) => add(d, 'cw-g-block is-' + i)); add(roofDark, 'cw-g-roof is-dark'); add(roof, 'cw-g-roof'); add(ridge, 'cw-g-ridge'); add(shed, 'cw-g-roof'); add(stack, 'cw-g-stack'); add(smoke, 'cw-g-smoke');
         add(pier, 'cw-g-pier'); add(keep, 'cw-g-keep');
 
         // ── Woods: firs of many sizes, the nearer over the further ──
@@ -268,7 +282,7 @@
         add(shade, 'cw-g-shade'); add(trunk, 'cw-g-trunk'); add(dark, 'cw-g-fir'); add(lit, 'cw-g-fir-lit');
 
         // ── Crossings over the water ──
-        let deck = '', plank = '', boat = '';
+        let deck = '', plank = '', boat = '', boards = '';
         each((r, c, k) => {
             if (!['bridge', 'strait', 'pontoon', 'blown', 'crossing'].includes(k)) return;
             const x = c * CELL, y = r * CELL;
@@ -284,12 +298,13 @@
                 deck += across(0, 19) + line(15) + across(33, 19) + line(15) + across(0, 29) + line(15) + across(33, 29) + line(15);
                 plank += across(15, 19) + (ns ? 'l5 8' : 'l8 5') + across(33, 29) + (ns ? 'l-5 -8' : 'l-8 -5');
             } else {
-                deck += across(0, 19) + line(CELL) + across(0, 29) + line(CELL);
-                for (let o = 4; o < CELL; o += 8) plank += across(o, 19) + tick(10);
+                boards += ns ? `M${x} ${y + 18}h${CELL}v12h${-CELL}z` : `M${x + 18} ${y}v${CELL}h12v${-CELL}z`;
+                deck += across(0, 18) + line(CELL) + across(0, 30) + line(CELL);
+                for (let o = 3; o < CELL; o += 6) plank += across(o, 18) + tick(12);
                 if (k === 'pontoon') for (const o of [10, 24, 38]) boat += ns ? `M${x + o - 4} ${y + 13}h8v22h-8z` : `M${x + 13} ${y + o - 4}h22v8h-22z`;
             }
         });
-        add(boat, 'cw-g-boat'); add(plank, 'cw-g-plank'); add(deck, 'cw-g-deck');
+        add(boat, 'cw-g-boat'); add(boards, 'cw-g-boards'); add(plank, 'cw-g-plank'); add(deck, 'cw-g-deck');
 
         // ── The grid: a small cross where four squares meet, no lines ──
         let grid = '';

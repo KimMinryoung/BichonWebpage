@@ -816,7 +816,7 @@
     // Yelnya, 30 August–8 September 1941: the first ground won back. The
     // salient juts east; its neck and the Germans' supply lie west.
     const yelnya = {
-        id: 'yelnya', sides: SIDES, front: 'west', final: false, prisoners: true,
+        id: 'yelnya', sides: SIDES, ground: 'summer', front: 'west', final: false, prisoners: true,
         scene: { picture: 'yelnya', witness: { as: '국방인민위원부', text: '적이 밀어붙여도 이 사단들은 겁에 질리지 않았고, 무기를 버리지 않았고, … 「포위됐다」고 외치지 않고, 질서 있게 적의 타격에 타격으로 맞섰다.', src: ['국방인민위원 명령 제308호(첫 근위사단), 1941년 9월 18일', ML('docs/da/nko_1941-1942/04')] } },
         title: '옐냐 돌출부', date: '1941년 8월 30일–9월 8일',
         settle: '옐냐로 →', board: '옐냐 전장', enemyName: '독일군',
@@ -976,7 +976,7 @@
     // the Volga at its back. West (the steppe, the Germans) is left; the
     // river runs down column 7, the ferry crosses it at the landing.
     const stalingradBattle = {
-        id: 'stalingrad', sides: SIDES, front: 'south', final: false, outlast: true, prisoners: true,
+        id: 'stalingrad', sides: SIDES, ground: 'steppe', front: 'south', final: false, outlast: true, prisoners: true,
         scene: { picture: 'order227' },
         title: '스탈린그라드 시가전', date: '1942년 9월 13일–11월 18일',
         settle: '스탈린그라드로 →', board: '스탈린그라드 시가', enemyName: '독일군',
@@ -1151,7 +1151,7 @@
     // Kursk, the southern face, 5–12 July 1943: Hoth's armour comes north
     // through the defence belts for Oboyan and Prokhorovka.
     const kurskBattle = {
-        id: 'kursk', sides: SIDES, front: 'southwest', final: false, outlast: true, prisoners: true, when: { choice: 'defend' },
+        id: 'kursk', sides: SIDES, ground: 'summer', front: 'southwest', final: false, outlast: true, prisoners: true, when: { choice: 'defend' },
         scene: { picture: 'kursk' },
         title: '쿠르스크: 남쪽 면', date: '1943년 7월 5–12일',
         settle: '쿠르스크로 →', board: '오보얀과 프로호롭카 앞', enemyName: '독일군',
@@ -1234,7 +1234,7 @@
     // Berezina runs down column 4; Bobruisk and the road west lie on its
     // western bank, the German divisions in their trenches east of it.
     const bagrationBattle = {
-        id: 'bagration', sides: SIDES, front: 'west', final: false, prisoners: true,
+        id: 'bagration', sides: SIDES, ground: 'summer', front: 'west', final: false, prisoners: true,
         scene: { picture: 'bagration' },
         title: '바그라티온: 보브루이스크', date: '1944년 6월 24–29일',
         settle: '보브루이스크로 →', board: '베레지나강', enemyName: '독일군',
@@ -1315,12 +1315,12 @@
     // Reichstag. The Oder bridgehead is the right edge; Konev comes from
     // the south-east.
     const berlinBattle = {
-        id: 'berlin', sides: SIDES, front: 'west', final: true, prisoners: true,
+        id: 'berlin', sides: SIDES, ground: 'spring', front: 'west', final: true, prisoners: true,
         scene: { picture: 'berlin' },
         title: '베를린', date: '1945년 4월 16일–5월 2일',
         settle: '베를린으로 →', open: '베를린 작전 →', board: '오데르강에서 제국의회까지', enemyName: '독일군',
         huntNote: '벵크의 제12군. 6턴에 서쪽에서 와서, 곁에 붉은 부대가 가장 적은 붉은 부대를 찾아가 친다.',
-        legend: [['steppe', '들판'], ['forest', '숲 (방어 +1, 이동 2)'], ['heights', '젤로 고지 (방어 +3, 이동 2, 포격으로 깎임)'], ['city', '베를린 시가 (방어 +2, 이동 2)'], ['kremlin', '제국의회 (방어 +3, 이동 2, 포격으로 깎임)'], ['stream', '운하 (이동 2)']],
+        legend: [['steppe', '들판'], ['forest', '숲 (방어 +1, 이동 2)'], ['heights', '젤로 고지 (방어 +3, 이동 2, 포격으로 깎임)'], ['city', '베를린 시가 (방어 +2, 이동 2)'], ['kremlin', '제국의회 (방어 +3, 이동 2, 포격으로 깎임)'], ['canal', '운하 (이동 2)']],
         supply: { player: [[2, 11], [4, 11], [8, 11]], enemy: [[2, 0], [4, 0]] },
         air: { turns: [1, 3, 5, 7], units: ['z9a', 'z9b', 'zpz', 'zfl'], dmg: 2, against: 'enemy', name: '제16항공군' },
         map: [
@@ -1355,7 +1355,7 @@
             h: { name: '젤로 고지', cost: 2, def: 3, fort: 'seelow', cls: 'heights' },
             C: { name: '베를린 시가', cost: 2, def: 2, cls: 'city' },
             R: { name: '제국의회', cost: 2, def: 3, fort: 'reichstag', cls: 'kremlin' },
-            w: { name: '텔토 운하', cost: 2, def: 0, cls: 'stream' },
+            w: { name: '텔토 운하', cost: 2, def: 0, cls: 'canal' },
         },
         units: [
             { id: 'e8g', tag: '8근위', side: 'red', name: '제8근위군', sub: '추이코프, 스탈린그라드의 군', kind: 'inf', at: [2, 10], hp: 11, atk: 6, def: 3, mv: 3, lead: true, look: 'helmet', person: ['바실리 추이코프', 'chuikov'],
