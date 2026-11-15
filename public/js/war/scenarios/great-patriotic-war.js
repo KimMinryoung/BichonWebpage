@@ -312,7 +312,7 @@
                 ],
                 options: [
                     { id: 'hoard', label: '반격의 날까지 쥐고 있는다', flag: 'reservesKept', effect: '역사대로 · 모스크바 전투에서 4턴에 예비 군이 반격에 나선다' },
-                    { id: 'commit', label: '지금 방어선에 넣는다', effect: '이번 시기 모스크바 방면 우리 힘 +3 · 모스크바 전투에 예비 군이 오지 않는다' },
+                    { id: 'commit', label: '지금 방어선에 넣는다', effect: '이번 시기 모스크바 방면 우리 힘 +3 · 모스크바 전투에 예비 군이 오지 않는다 · 다음 시기 반격의 주먹이 준다(모스크바 방면 우리 힘 −4)' },
                 ],
                 history: 'hoard',
                 after: '로코솝스키는 샤포시니코프의 승인까지 받아 이스트라 저수지 뒤로 물러나려 했지만 주코프가 명령을 취소했다. 독일군은 이스트라를 건너 솔네치노고르스크를 차지했다. 예비 군은 11월 말까지 전선 뒤에 숨어 있었다. 12월 5일 칼리닌 전선군, 6일 서부전선군이 반격에 나섰고, 제1충격군과 제20군이 모스크바 북쪽에서, 제10군이 남쪽에서 독일 기갑 집단의 옆구리를 쳤다. 중부 집단군은 100–250킬로미터를 밀려났다. 독일군이 이 전쟁에서 처음으로 크게 진 싸움이었다.',
@@ -1730,6 +1730,11 @@
 
     const modifiers = [
         { front: 'west', when: { turn: 'typhoon', flag: 'kievSaved' }, pressure: 4, label: '한 달 일찍 온 태풍' },
+        // Edition 2: reserves spent in the line in October are not there
+        // for December's counterstroke. (Kiev given up was tried at +5 and
+        // +6 on Typhoon: under the rehearsal's plan one point more loses a
+        // city before Moscow and then the war, so it stays at +4.)
+        { front: 'west', when: { turn: 'general', noFlag: 'reservesKept', edition: ['>=', 2] }, strength: -4, label: '방어선에서 닳은 예비' },
         { front: 'west', when: { turn: 'typhoon', choice: 'commit' }, strength: 3, label: '방어선에 넣은 예비 군' },
         { front: 'west', when: { turn: 'general', choice: 'concentrate' }, strength: 4, label: '모스크바 방면에 모은 힘' },
         { fronts: ['north', 'southwest'], when: { turn: 'general', choice: 'concentrate' }, strength: -2, label: '모스크바 방면으로 간 포탄' },
@@ -1782,7 +1787,7 @@
 
     const rehearsal = { lead: ['reserve'], skip: ['militia', 'pause', 'labour'], guard: { stat: 'manpower', min: 30 }, spread: true };
     const data = {
-        id: 'great-patriotic-war', title: '조국 전선 1941–1945', saveVersion: 1, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
+        id: 'great-patriotic-war', title: '조국 전선 1941–1945', saveVersion: 1, edition: 2, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
         map, ui, portraits, pictures, pictureDir: '/images/great-patriotic-war/', roles, glossary,
         texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring, rehearsal, promo,
     };

@@ -1122,6 +1122,44 @@
             const y = p.y + (p.side === 'south' ? -5 : p.side === 'north' ? 12 : 3);
             layer.append(svg('text', { x, y, 'text-anchor': anchor, class: 'cw-map-place is-beyond' }, p.side === 'west' || p.side === 'north' ? `${ARROW[p.side]} ${p.name}` : `${p.name} ${ARROW[p.side]}`));
         }
+        // The front as one line across the fronts: through the point
+        // between each front's last held city and the next, in the order
+        // the fronts lie around the capital (a ring when they lie all
+        // round it); history's front dotted beside it where it differs.
+        {
+            const hub = points.hub;
+            const edge = (id, n) => {
+                const pts = points.fronts[id];
+                const a = n > 0 ? pts[Math.min(n, pts.length) - 1] : hub;
+                if (n >= pts.length) { const b4 = pts[pts.length - 2] || hub; return { x: a.x + (a.x - b4.x) * .3, y: a.y + (a.y - b4.y) * .3 }; }
+                return { x: (a.x + pts[n].x) / 2, y: (a.y + pts[n].y) / 2 };
+            };
+            const angle = id => { const z = points.fronts[id][points.fronts[id].length - 1]; return Math.atan2(z.y - hub.y, z.x - hub.x); };
+            const ring = D.frontOrder.slice().sort((a, b) => angle(a) - angle(b));
+            let gap = 0, from = 0;
+            ring.forEach((id, i) => {
+                const g = (angle(ring[(i + 1) % ring.length]) - angle(id) + 2 * Math.PI) % (2 * Math.PI) || 2 * Math.PI;
+                if (g > gap) { gap = g; from = (i + 1) % ring.length; }
+            });
+            const order = ring.slice(from).concat(ring.slice(0, from));
+            const closed = gap < Math.PI * 0.8;
+            // A smooth line through the points (quadratic curves through their midpoints).
+            const curve = list => {
+                if (list.length < 2) return '';
+                const mid = (a, b) => ({ x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 });
+                if (closed) {
+                    const n = list.length, m0 = mid(list[n - 1], list[0]);
+                    return `M${m0.x} ${m0.y}` + list.map((p, i) => { const m = mid(p, list[(i + 1) % n]); return `Q${p.x} ${p.y} ${m.x} ${m.y}`; }).join('') + 'Z';
+                }
+                let d = `M${list[0].x} ${list[0].y}`;
+                for (let i = 1; i < list.length - 1; i++) { const m = mid(list[i], list[i + 1]); d += `Q${list[i].x} ${list[i].y} ${m.x} ${m.y}`; }
+                return d + `L${list[list.length - 1].x} ${list[list.length - 1].y}`;
+            };
+            const before = G.prevOf(s.turn);
+            const histAt = id => (s.phase === 'plan' ? (before < 0 ? D.startLines[id] : D.fronts[id].history[before]) : D.fronts[id].history[s.turn]);
+            if (order.some(id => histAt(id) !== s.lines[id])) layer.append(svg('path', { d: curve(order.map(id => edge(id, histAt(id)))), class: 'cw-frontline is-history' }));
+            layer.append(svg('path', { d: curve(order.map(id => edge(id, s.lines[id]))), class: 'cw-frontline' }));
+        }
         for (const id of D.frontOrder) {
             const pts = points.fronts[id];
             const line = s.lines[id];
@@ -1339,6 +1377,34 @@
         mapEl.scrollTo({ left: (box.x0 + box.x1) / 2 * scale - w / 2, top: (box.y0 + box.y1) / 2 * scale - h / 2, behavior: stillMotion() ? 'auto' : 'smooth' });
     }
     window.addEventListener('resize', () => { if (s && !$('cwCampaign').hidden) { fitMap(); paintBasemap(); } });
+    // Two fingers on the map (a narrow screen, where it scrolls in its
+    // frame): it grows and shrinks about the point between them, from the
+    // frame's width up to 2.6 times the drawing; the bitmap under it is
+    // stretched meanwhile and drawn anew when the fingers lift.
+    let pinch = null;
+    const spread = e => Math.hypot(e.touches[0].clientX - e.touches[1].clientX, e.touches[0].clientY - e.touches[1].clientY);
+    mapEl.addEventListener('touchstart', e => {
+        if (e.touches.length !== 2 || !NARROW.matches || opZoom) { pinch = null; return; }
+        const root = mapEl.querySelector('svg');
+        const W = Number(root.getAttribute('viewBox').split(' ')[2]);
+        pinch = { d: spread(e) || 1, W, scale: root.getBoundingClientRect().width / W };
+    }, { passive: true });
+    mapEl.addEventListener('touchmove', e => {
+        if (!pinch || e.touches.length !== 2) return;
+        e.preventDefault();
+        const root = mapEl.querySelector('svg');
+        const now = root.getBoundingClientRect().width / pinch.W;
+        const next = Math.min(Math.max(pinch.scale * spread(e) / pinch.d, mapEl.clientWidth / pinch.W), 2.6);
+        const box = mapEl.getBoundingClientRect();
+        const cx = (e.touches[0].clientX + e.touches[1].clientX) / 2 - box.left, cy = (e.touches[0].clientY + e.touches[1].clientY) / 2 - box.top;
+        const mx = (mapEl.scrollLeft + cx) / now, my = (mapEl.scrollTop + cy) / now;
+        const w = `${Math.round(pinch.W * next)}px`;
+        root.style.width = overlayRoot().style.width = w;
+        const bitmap = mapEl.querySelector('.cw-map-bitmap');
+        if (bitmap) { bitmap.style.width = w; bitmap.style.height = 'auto'; }
+        mapEl.scrollTo(mx * next - cx, my * next - cy);
+    }, { passive: false });
+    for (const end of ['touchend', 'touchcancel']) mapEl.addEventListener(end, () => { if (pinch) { pinch = null; paintBasemap(); } });
 
 
     // The map is in sight: a third of it on screen.
@@ -1679,6 +1745,7 @@
         $('cwMapLegend').replaceChildren(...(historyMap ? D.map.historyLegend.map(key) : [
             ...D.map.legend.map(key),
             key(['cw-key-badge', `공격해 오는 세력 · 칸 하나 = ${W.pressure} 1`]),
+            key(['cw-key-frontline', '전선 · 점선은 역사의 전선']),
             key(['cw-key-ring', '점선 고리: 이번 시기에 잃거나 되찾을 도시(예상)']),
             el('span', {}, el('b', { class: 'cw-key-num' }, '3.5'), `${W.strength} · `, el('i', { class: 'cw-key-pip' }), `${W.strength} 1 · `, starIcon(), ` ${U.leader} ${D.leaders.strength} · `, el('b', { class: 'cw-key-card' }, `+${railCards[0] ? railCards[0].bonus : 3}`), '카드'),
             // What the map draws without a word of its own: the cards'
@@ -4052,6 +4119,34 @@
         announce(said);
     }
 
+    // A browser's best at each battle (its merit stars, then the fewest
+    // turns), kept beside the save and shown on the list of battles.
+    const BEST_KEY = KEY + '-best';
+    function bestOf() {
+        try { return JSON.parse(localStorage.getItem(BEST_KEY)) || {}; } catch (_) { return {}; }
+    }
+    function keepBest(b) {
+        const r = s.battles[b.def.id];
+        if (!r || r.assumed || r.result !== 'won') return;
+        const merits = meritsOf(b.def, b, r);
+        const stars = merits.filter(m => m.got).length;
+        const best = bestOf(), was = best[b.def.id];
+        if (was && (was.stars > stars || (was.stars === stars && was.turns <= r.turns))) return;
+        best[b.def.id] = { stars, of: merits.length, turns: r.turns };
+        try { localStorage.setItem(BEST_KEY, JSON.stringify(best)); } catch (_) { /* not kept */ }
+    }
+    // The list of battles under the game (「전투 하나만 해 보기」): each card's best.
+    function showBest() {
+        const best = bestOf();
+        document.querySelectorAll('.cw-battle-pick-card').forEach(card => {
+            const id = (card.getAttribute('href') || '').split('/').filter(Boolean).pop();
+            const r = best[id];
+            const small = card.querySelector('small');
+            if (!r || !small || small.querySelector('.cw-pick-best')) return;
+            small.append(el('b', { class: 'cw-pick-best', 'aria-label': `내 기록: 전공 ${r.stars}/${r.of}, ${r.turns}턴` }, ` · ${'★'.repeat(r.stars)}${'☆'.repeat(Math.max(0, r.of - r.stars))} ${r.turns}턴`));
+        });
+    }
+
     // A battle just ended: the war's outcome, or the season it was fought
     // in, settled.
     function battleOver() {
@@ -4060,6 +4155,7 @@
         inspected = null;
         battleEnded = true;
         verdictAt = null;
+        keepBest(s.battle);
         render();
         announce(`${s.battle.def.title}: ${s.battle.result === 'won' ? '이겼다' : '졌다'}. ` + eventLines(s.battle).join(' '));
         return true;
@@ -4402,4 +4498,5 @@
     $('cwHistoryToggle').addEventListener('click', () => { historyMap = !historyMap; renderControlPhase(); });
 
     initSetup();
+    showBest();
 })();

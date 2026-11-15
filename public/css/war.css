@@ -2176,3 +2176,9 @@
 .cw-terrain-key i.k-counter { display: none; }
 /* The enemy's turn playing back: the orders wait. */
 .cw-battle.is-replaying .cw-battle-actions > button:not(.cw-primary), .cw-battle.is-replaying .cw-roster, .cw-battle.is-replaying .cw-sky { opacity: .45; }
+.cw-pick-best { color: var(--cw-red); font-weight: 800; }
+/* The front as one line across the fronts; history's dotted beside it. */
+.cw-frontline { fill: none; stroke: var(--cw-red); stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; opacity: .5; pointer-events: none; }
+.cw-frontline.is-history { stroke: var(--text-primary); stroke-width: 1.6; stroke-dasharray: 1.5 5; opacity: .85; }
+.cw-map-legend i.cw-key-frontline { height: 0; width: 18px; border: 0; border-top: 4px solid color-mix(in srgb, var(--cw-red) 55%, transparent); }
+@media (max-width: 900px) { .cw-map-frame { touch-action: pan-x pan-y; } }
