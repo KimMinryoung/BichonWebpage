@@ -282,7 +282,7 @@
             id: 'typhoon', date: '1941년 10월–1942년 1월', end: [1942, 1], title: '태풍',
             scene: {
                 picture: 'moscow-defence',
-                lead: '10월 2일 중부 집단군이 모스크바로 마지막 공세를 열었다. 뱌지마와 브랸스크에서 다섯 개 군이 포위되고, 수도 앞은 비었다.',
+                lead: '10월 2일 중부 집단군이 모스크바로 마지막 공세를 열었다. 뱌지마와 브랸스크에서 일곱 개 군이 포위되고, 수도 앞은 비었다.',
                 witness: { as: '국가방위위원회', text: '1941년 10월 20일부터 모스크바시와 그 주변 지역에 계엄을 선포한다. … 질서를 어지럽히자고 선동하는 도발자, 첩자, 그 밖의 적 첩보원은 그 자리에서 총살한다.', src: ['국가방위위원회 결정 「모스크바 계엄에 관하여」, 1941년 10월 19일', ST(11)] },
             },
             mobilize: 10, commissars: 1, army: [['reserve', 5], ['militia', 2], ['siberian', 3]], battle: 'moscow',
@@ -641,12 +641,12 @@
                     { id: 'refuse', label: '추방을 물리친다', divisions: 1, staff: -4, effect: '내무군과 화차가 전선에 남는다 · 이번 시기 군 +1 · 내무인민위원부와 부딪혀 지휘 체계 −4' },
                 ],
                 history: 'deport',
-                after: '1944년 2월 23일부터 여드레 동안 체첸인과 잉구시인 약 50만 명이 화차에 실려 중앙아시아로 추방되었다. 전선에서 싸우던 병사들도 군에서 내보내져 뒤따랐다. 5월에는 크림 타타르인 19만 명이 같은 길을 갔다. 가는 길과 첫 몇 해에 수만 명이 죽었다. 1956–57년 이들의 명예가 회복되었고, 1989년 소련 최고회의는 추방을 불법이자 범죄로 선언했다.',
+                after: '1944년 2월 23일부터 여드레 동안 체첸인과 잉구시인 약 50만 명이 화차에 실려 중앙아시아로 추방되었다. 전선에서 싸우던 병사들도 군에서 내보내져 뒤따랐다. 5월에는 크림 타타르인 19만 명이 같은 길을 갔다. 가는 길과 첫 몇 해에 수만 명이 죽었다. 체첸인과 잉구시인은 1957년 자치공화국을 되찾았고 크림 타타르인은 1967년에야 혐의를 벗었으며, 1989년 소련 최고회의는 추방을 불법이자 범죄로 선언했다.',
                 links: [['라브렌티 베리야', P('beria')], ['굴라크', T('gulag')]],
             },
             choice: {
                 title: '여름의 주공은 어디로', who: ['알렉세이 안토노프', 'aleksei-antonov'],
-                text: '봄 공세로 붉은 군대는 우크라이나에서 국경을 넘었다. 전차군 여섯 가운데 다섯이 남쪽에 있고, 독일군도 기갑을 남쪽에 모았다. 북쪽에는 모스크바를 아직도 겨눈 「벨로루시 발코니」가 남아 있다.',
+                text: '봄 공세로 붉은 군대는 우크라이나에서 국경을 넘었다. 전차군 여섯이 모두 남쪽에 있고, 독일군도 기갑을 남쪽에 모았다. 북쪽에는 모스크바를 아직도 겨눈 「벨로루시 발코니」가 남아 있다.',
                 talk: [
                     { who: ['알렉세이 안토노프', 'aleksei-antonov'], text: '적은 우리가 남쪽에서 리보프와 루마니아로 계속 간다고 믿습니다. 그 믿음을 그대로 두고, 벨로루시의 중부 집단군을 쳐야 합니다.' },
                     { who: ['이반 코네프', 'ivan-konev'], text: '남쪽에는 전차군과 보급이 이미 와 있다. 리보프를 지나 비스와강으로 가는 길이 가장 짧다.' },
@@ -666,7 +666,7 @@
             id: 'bagration', date: '1944년 6–8월', end: [1944, 8], title: '바그라티온',
             scene: {
                 picture: 'bagration',
-                lead: '침공 3년째 되는 날인 1944년 6월 22일, 네 전선군이 벨로루시의 중부 집단군을 쳤다. 두 주 만에 독일군 스물여덟 개 사단이 사라진다.',
+                lead: '침공 3년째 되는 날 이튿날인 1944년 6월 23일, 네 전선군이 벨로루시의 중부 집단군을 쳤다. 두 주 만에 독일군 스물여덟 개 사단이 사라진다.',
             },
             mobilize: 15, commissars: 3, army: [['rifle', 7], ['guards', 4], ['tank', 3], ['polish', 1]], battle: 'bagration',
             brief: [
@@ -713,7 +713,7 @@
                     { id: 'one', label: '로가초프 한 곳에 모은다', effect: '교범대로 · 이번 시기 모스크바 방면 우리 힘 −2 · 바그라티온 전투에 남쪽 타격 집단이 없다' },
                 ],
                 history: 'two',
-                after: '로코솝스키의 회고에 따르면 스탈린과 그 대리들은 주공을 로가초프 하나로 하라고 고집했고, 그는 두 번이나 옆방에 나가 다시 생각해 보라는 말을 들었다. 그래도 뜻을 굽히지 않자 스탈린은 「전선 사령관이 이렇게 고집하는 걸 보면 공세 준비를 꼼꼼히 생각했다는 것」이라며 받아들였다. 이 장면은 그의 회고에만 있다. 같은 회의를 적은 시테멘코는 다툼을 쓰지 않았고, 주코프는 두 주공이 회의 전에 이미 합의되었다고 썼다. 6월 24일 남쪽 집단은 통나무 길로 늪을 건너 첫날 20킬로미터를 뚫었고, 27일 보브루이스크에서 독일군 4만 명을 가뒀다.',
+                after: '로코솝스키의 회고에 따르면 스탈린과 그 대리들은 주공을 로가초프 하나로 하라고 고집했고, 그는 두 번이나 옆방에 나가 다시 생각해 보라는 말을 들었다. 그래도 뜻을 굽히지 않자 스탈린은 「전선 사령관이 이렇게 고집하는 걸 보면 공세 준비를 꼼꼼히 생각했다는 것」이라며 받아들였다. 이 장면은 그의 회고에만 있다. 같은 회의를 적은 시테멘코는 다툼을 쓰지 않았고, 주코프는 두 주공이 회의 전에 이미 합의되었다고 썼다. 6월 24일 남쪽 집단은 통나무 길로 늪을 건너 첫날 10킬로미터 가까이 뚫었고, 27일 보브루이스크에서 독일군 4만 명을 가뒀다.',
                 links: [['바그라티온 작전', T('operation-bagration')], ['종심작전', T('deep-operation')], ['콘스탄틴 로코솝스키', P('konstantin-rokossovsky')]],
             },
             after: '7월 3일 민스크를 되찾았고, 동쪽 숲에 독일군 10만 명이 갇혔다. 17일 포로 5만 7천 명이 모스크바 거리를 걸었다. 7월 27일 리보프, 28일 브레스트를 되찾았고, 8월 20일 야시–키시뇨프 작전이 시작되자 23일 루마니아가 편을 바꿨다. 8월 31일 붉은 군대가 부쿠레슈티에 들어갔다.',
@@ -842,7 +842,7 @@
         ],
         goals: [{ at: [2, 4], name: '옐냐' }],
         towns: [['옐냐', 2, 4]],
-        places: [['스몰렌스크 쪽', 4, 0.2], ['데스나강 쪽', 5, 8.4]],
+        places: [['스몰렌스크 쪽', 0, 0.2], ['데스나강 쪽', 5, 8.4]],
         areas: [
             { name: '독일군의 돌출부', tiles: [[1, 3], [1, 4], [2, 3], [2, 4], [2, 5], [3, 3], [3, 4]] },
             { name: '돌출부의 목', tiles: [[2, 1], [2, 2]] },
@@ -890,7 +890,7 @@
             '독일 예비대는 목 가까이 오는 부대를 치러 나왔다가 제자리로 돌아간다. 포병은 참호의 방어를 깎는다.',
             '결정적 한 수(★): 전투마다 한 번. 카추샤의 「일제 사격」, 사령부의 「오늘의 명령」.',
         ],
-        history: '8월 30일 제24군이 북쪽과 남쪽에서 공세를 시작했다. 목이 좁아지자 독일군은 9월 5일 밤부터 돌출부를 비웠고, 6일 붉은 군대가 옐냐에 들어갔다. 포위망을 닫을 전차는 없었다. 그래도 이 전쟁에서 독일군이 처음으로 내준 땅이었다. 이 싸움의 네 사단이 9월 18일 첫 근위사단이 되었다.',
+        history: '8월 30일 제24군이 북쪽과 남쪽에서 공세를 시작했다. 목이 좁아지자 독일군은 9월 3일부터 돌출부를 비웠고, 6일 붉은 군대가 옐냐에 들어갔다. 포위망을 닫을 전차는 없었다. 그래도 이 전쟁에서 독일군이 처음으로 내준 땅이었다. 이 싸움의 제100·제127사단이 9월 18일 첫 근위사단에 들었다.',
     };
 
     // Moscow, late November–December 1941: the Volokolamsk highway held,
@@ -920,7 +920,7 @@
             { when: 'start', unit: ['p7', 'p2'], by: 'agc', text: '크렘린의 탑이 쌍안경에 보인다. 마지막 대대까지 밀어 넣어라.' },
             { when: 'start', unit: 'mkt', who: ['미하일 카투코프', 'mikhail-katukov'], text: '전차는 숲 가장자리에 묻는다. 지나가는 놈의 옆구리를 쏜다.' },
             { when: 'turn:4', unit: ['m1s', 'm20', 'm1b', 'mhq'], who: ['게오르기 주코프', 'zhukov'], text: '적은 끝에 다다랐다. 제1충격군과 제20군, 앞으로!' },
-            { when: 'turn:4', unit: ['p7', 'p2', 'i35'], by: 'agc', who: ['하인츠 구데리안', 'heinz-guderian'], text: '영하 삼십 도다. 기관총도 전차도 얼어붙었다.' },
+            { when: 'turn:4', unit: ['p7', 'p2', 'i35'], by: 'agc', text: '영하 삼십 도다. 기관총도 전차도 얼어붙었다.' },
             { when: 'cut', unit: ['m1s', 'm20', 'm8g'], face: 'red-soldier-41', text: '놈들의 뒤가 끊겼다! 전차를 버리고 걸어서 달아난다.' },
             { when: 'goal', unit: ['m1s', 'm20', 'm1b', 'mdv'], face: 'red-soldier-41', text: '클린이다! 독일군이 물러난다!' },
         ],
@@ -949,13 +949,15 @@
             { id: 'mdv', tag: '도바토르', side: 'red', name: '제2근위기병군단', sub: '도바토르', kind: 'cav', at: [1, 8], hp: 8, atk: 5, def: 2, mv: 5, skirmish: true, look: 'ushanka' },
             { id: 'mat', tag: '대전차', side: 'red', name: '대전차 포병 연대', kind: 'at', at: [3, 7], hp: 7, atk: 4, def: 2, mv: 2 },
             { id: 'mcd', tag: '생도', side: 'red', name: '사관생도 연대', sub: '크렘린 군사학교', kind: 'inf', at: [5, 7], hp: 7, atk: 4, def: 3, mv: 3 },
-            { id: 'm78', tag: '78', side: 'red', name: '제78소총사단', sub: '극동에서 온 벨로보로도프', kind: 'inf', at: [4, 6], hp: 10, atk: 6, def: 3, mv: 3, need: 0, look: 'ushanka' },
+            { id: 'm78', tag: '78', side: 'red', name: '제78소총사단', sub: '극동에서 온 벨로보로도프, 11월 26일 제9근위', kind: 'inf', at: [4, 6], hp: 10, atk: 6, def: 3, mv: 3, need: 0, look: 'ushanka' },
             { id: 'mart', tag: '포병', side: 'red', name: '제16군 포병', kind: 'art', at: [3, 9], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
             { id: 'mhq', tag: '사령부', pic: 'hq', side: 'red', name: '서부전선군 예비', sub: '스타프카 예비군', kind: 'inf', at: [4, 9], hp: 10, atk: 5, def: 3, mv: 3, card: 'reserve', look: 'ushanka' },
             { id: 'm5a', tag: '5군', side: 'red', name: '제5군 소총사단', sub: '모자이스크 대로', kind: 'inf', at: [5, 9], hp: 9, atk: 5, def: 3, mv: 3, need: 3 },
             { id: 'm1s', tag: '1충격', side: 'red', name: '제1충격군 스키 여단', sub: '쿠즈네초프', kind: 'inf', at: [0, 9], hp: 10, atk: 6, def: 3, mv: 4, arrive: 4, flag: 'reservesKept', look: 'ushanka' },
             { id: 'm1b', tag: '1충격', side: 'red', name: '제1충격군 소총여단', sub: '쿠즈네초프', kind: 'inf', at: [0, 10], hp: 10, atk: 6, def: 3, mv: 3, arrive: 4, flag: 'reservesKept', look: 'ushanka' },
             { id: 'm20', tag: '20군', side: 'red', name: '제20군', sub: '반격의 예비', kind: 'inf', at: [1, 10], hp: 10, atk: 6, def: 3, mv: 3, arrive: 4, flag: 'reservesKept', look: 'ushanka' },
+            // Edition 2: Lelyushenko's 30th Army, which came down on Klin from the north with the 1st Shock Army.
+            { id: 'm30', tag: '30군', side: 'red', name: '제30군', sub: '렐류셴코, 북쪽에서', kind: 'inf', at: [0, 6], hp: 10, atk: 5, def: 3, mv: 3, arrive: 5, look: 'ushanka', fromEdition: 2 },
             { id: 'p7', tag: '7기갑', side: 'axis', name: '제7기갑사단', sub: '제3기갑 집단', kind: 'tank', at: [1, 4], hp: 12, atk: 7, def: 3, mv: 4, role: 'push' },
             { id: 'p2', tag: '2기갑', side: 'axis', name: '제2기갑사단', sub: '제4기갑 집단', kind: 'tank', at: [2, 3], hp: 12, atk: 7, def: 3, mv: 4, role: 'push' },
             { id: 'i35', tag: '35', side: 'axis', name: '제35보병사단', sub: '대로', kind: 'inf', at: [3, 3], hp: 12, atk: 6, def: 3, mv: 3, role: 'push' },
@@ -975,7 +977,7 @@
             SUPPLY_BRIEF,
             ARMS_BRIEF,
         ],
-        history: '11월 16일 시작된 공세로 독일군은 클린과 솔네치노고르스크, 이스트라를 차지하고 12월 초 크류코보와 운하 건너 야흐로마까지 왔다. 정찰대는 힘키에 닿았다. 12월 5–6일 반격이 시작되어 제1충격군과 제20군, 제16군이 15일 클린을, 20일 볼로콜람스크를 되찾았다.',
+        history: '11월 16일 시작된 공세로 독일군은 클린과 솔네치노고르스크, 이스트라를 차지하고 12월 초 크류코보와 운하 건너 야흐로마까지 왔다. 정찰대는 힘키에 닿았다. 12월 5–6일 반격이 시작되어 제1충격군과 제30군이 15일 클린을, 제20군이 20일 볼로콜람스크를 되찾았다.',
     };
 
     // Stalingrad, September–November 1942: the 62nd Army in the ruins with
@@ -1044,7 +1046,7 @@
                 feat: { id: 'volga-guns', name: '카추샤 일제 사격', kind: 'barrage', plus: 2, text: '이번 공격 피해 +2, 반격 없음. 맞은 부대 곁의 적도 절반의 피해를 입는다.', history: '제62군의 중포와 로켓포는 강 동쪽 둑에 있었다. 도시 안의 관측병이 부르면 강 너머에서 쏘았다.' } },
             { id: 's13', tag: '13근위', side: 'red', name: '제13근위소총사단', sub: '로딤체프', kind: 'inf', at: [4, 6], hp: 11, atk: 6, def: 3, mv: 3, arrive: 2, person: ['알렉산드르 로딤체프', 'alexander-rodimtsev'], look: 'helmet' },
             { id: 's39', tag: '39근위', side: 'red', name: '제39근위소총사단', sub: '붉은 10월 공장', kind: 'inf', at: [2, 6], hp: 9, atk: 5, def: 3, mv: 3, arrive: 4, need: 3 },
-            { id: 's138', tag: '138', side: 'red', name: '제138소총사단', sub: '류드니코프, 스타프카 예비', kind: 'inf', at: [6, 6], hp: 10, atk: 5, def: 3, mv: 3, arrive: 3, card: 'reserve' },
+            { id: 's138', tag: '138', side: 'red', name: '제138소총사단', sub: '류드니코프, 스타프카 예비', kind: 'inf', at: [6, 6], hp: 10, atk: 5, def: 3, mv: 3, arrive: 3, card: 'reserve', editions: { 2: { at: [1, 6] } } },
             { id: 'a71', tag: '71', side: 'axis', name: '제71보병사단', sub: '중앙역으로', kind: 'inf', at: [4, 1], hp: 12, atk: 7, def: 3, mv: 3, role: 'push' },
             { id: 'a295', tag: '295', side: 'axis', name: '제295보병사단', sub: '마마이 언덕으로', kind: 'inf', at: [3, 0], hp: 12, atk: 7, def: 3, mv: 3, role: 'push' },
             { id: 'a94', tag: '94', side: 'axis', name: '제94보병사단', sub: '남쪽', kind: 'inf', at: [6, 1], hp: 12, atk: 7, def: 3, mv: 3, role: 'push' },
@@ -1246,7 +1248,9 @@
             { id: 'k3t', tag: '전차군', side: 'red', name: '제10전차군단', sub: '전차군 카드', kind: 'tank', at: [0, 3], hp: 9, atk: 6, def: 3, mv: 4, arrive: 2, card: 'tankarmy' },
             { id: 'gd', tag: '대독일', side: 'axis', name: '「대독일」 기갑척탄병사단', sub: '제48기갑군단, 판터 여단', kind: 'tank', at: [6, 2], hp: 13, atk: 7, def: 4, mv: 3, role: 'push', aim: [0, 2] },
             { id: 'p11k', tag: '11기갑', side: 'axis', name: '제11기갑사단', sub: '제48기갑군단', kind: 'tank', at: [6, 3], hp: 11, atk: 6, def: 3, mv: 4, role: 'push', aim: [0, 2] },
-            { id: 'i332', tag: '332', side: 'axis', name: '제332보병사단', sub: '서쪽 옆구리', kind: 'inf', at: [6, 1], hp: 9, atk: 5, def: 3, mv: 3, role: 'push', aim: [0, 2] },
+            { id: 'i332', tag: '332', side: 'axis', name: '제332보병사단', sub: '서쪽 옆구리', kind: 'inf', at: [6, 1], hp: 9, atk: 5, def: 3, mv: 3, role: 'push', aim: [0, 2], editions: { 2: { at: [5, 0] } } },
+            // Edition 2: the 3rd Panzer Division, the 48th Panzer Corps' western wing beside Großdeutschland.
+            { id: 'p3', tag: '3기갑', side: 'axis', name: '제3기갑사단', sub: '제48기갑군단', kind: 'tank', at: [6, 1], hp: 11, atk: 6, def: 3, mv: 4, role: 'push', aim: [0, 2], fromEdition: 2 },
             { id: 'lah', tag: '친위1', side: 'axis', name: '친위 「아돌프 히틀러 경호대」', sub: '제2친위기갑군단, 티거 중대', kind: 'tank', at: [6, 6], hp: 13, atk: 8, def: 4, mv: 3, role: 'push', aim: [0, 8] },
             { id: 'dr', tag: '친위2', side: 'axis', name: '친위 「다스 라이히」', sub: '제2친위기갑군단', kind: 'tank', at: [6, 7], hp: 12, atk: 7, def: 3, mv: 4, role: 'push', aim: [0, 8] },
             { id: 'tk', tag: '친위3', side: 'axis', name: '친위 「토텐코프」', sub: '제2친위기갑군단', kind: 'tank', at: [6, 8], hp: 12, atk: 7, def: 3, mv: 4, role: 'push', aim: [0, 8] },
@@ -1350,7 +1354,7 @@
             AIR_BRIEF,
             ARMS_BRIEF,
         ],
-        history: '6월 24일 로코솝스키의 두 집단이 공세에 나섰다. 남쪽 집단은 늪을 건너 첫날 20킬로미터를 뚫었고, 북쪽 로가초프 집단은 이틀을 참호에 막혔다가 바하로프의 전차군단이 돌아 들어가 다리 동쪽 길을 끊었다. 27일 독일군 여섯 개 사단 4만 명이 보브루이스크 남동쪽에 갇혔다. 29일 도시가 떨어졌다. 닷새 뒤 민스크가 해방되었다.',
+        history: '6월 24일 로코솝스키의 두 집단이 공세에 나섰다. 남쪽 집단은 늪을 건너 첫날 10킬로미터 가까이 뚫었고, 북쪽 로가초프 집단은 이틀을 참호에 막혔다가 바하로프의 전차군단이 돌아 들어가 다리 동쪽 길을 끊었다. 27일 독일군 여섯 개 사단 4만 명이 보브루이스크 남동쪽에 갇혔다. 29일 도시가 떨어졌다. 나흘 뒤 민스크가 해방되었다.',
     };
 
     // Berlin, 16 April–2 May 1945: the Seelow Heights, the city, the
@@ -1416,7 +1420,9 @@
                 feat: { id: 'last-salvo', name: '일제 사격', kind: 'barrage', plus: 3, text: '이번 공격 피해 +3, 반격 없음. 맞은 부대 곁의 적도 절반의 피해를 입는다.', history: '베를린 작전에서 붉은 군대는 포와 박격포 4만 2천 문, 로켓포 3천 대를 모았다.' } },
             { id: 'ehq', tag: '사령부', pic: 'hq', side: 'red', name: '제1벨로루시 전선군 사령부', sub: '주코프', kind: 'inf', at: [2, 11], hp: 6, atk: 3, def: 3, mv: 2, person: ['게오르기 주코프', 'zhukov'],
                 feat: { id: 'tank-armies-in', name: '전차군을 넣는다', kind: 'order', plus: 2, text: '이번 턴의 모든 협공에 피해 +2(협공: 치려는 적의 곁에 다른 붉은 부대가 있는 공격). 사령부는 이번 턴 다른 행동을 하지 않는다.', history: '첫날 보병이 고지를 넘지 못하자 주코프는 계획을 바꿔 두 전차군을 고지 앞에 넣었다. 길은 막혔고 손실은 컸지만 사흘째 고지가 넘어갔다.' } },
-            { id: 'epl', tag: '폴란드', side: 'red', name: '폴란드 제1군', sub: '포프와프스키', kind: 'inf', at: [5, 10], hp: 9, atk: 5, def: 3, mv: 3, need: 4 },
+            { id: 'epl', tag: '폴란드', side: 'red', name: '폴란드 제1군', sub: '포프와프스키', kind: 'inf', at: [5, 10], hp: 9, atk: 5, def: 3, mv: 3, need: 4, editions: { 2: { at: [0, 9] } } },
+            // Edition 2: the Poles stood on the northern wing; south of the highway it was Kolpakchi's 69th Army.
+            { id: 'e69', tag: '69군', side: 'red', name: '제69군', sub: '콜팍치', kind: 'inf', at: [5, 10], hp: 10, atk: 5, def: 3, mv: 3, need: 4, look: 'helmet', fromEdition: 2 },
             { id: 'e3t', tag: '3근위전차', side: 'red', name: '제3근위전차군', sub: '리발코, 제1우크라이나 전선군', kind: 'tank', at: [8, 10], hp: 10, atk: 6, def: 3, mv: 4, need: 1, person: ['파벨 리발코', 'pavel-rybalko'] },
             { id: 'e4t', tag: '4근위전차', side: 'red', name: '제4근위전차군', sub: '렐류셴코, 전차군 카드', kind: 'tank', at: [8, 11], hp: 10, atk: 6, def: 3, mv: 4, card: 'tankarmy' },
             { id: 'e28', tag: '28군', side: 'red', name: '제28군', sub: '스타프카 예비군', kind: 'inf', at: [7, 11], hp: 10, atk: 5, def: 3, mv: 3, card: 'reserve', look: 'helmet' },

@@ -886,7 +886,7 @@
                 cards: s.plan.cards.filter(c => c.target === def.front).map(c => c.id),
             };
             const flags = Object.assign({}, s.flags, choiceFlags(s));
-            const units = def.units.filter(u => u.side === def.sides.player && (!u.flag || s.flags[u.flag] || choiceFlags(s)[u.flag])).map(u => ({
+            const units = Battle.unitsAsOf(def, { rules: s.rules, edition: s.edition || 1 }).filter(u => u.side === def.sides.player && (!u.flag || s.flags[u.flag] || choiceFlags(s)[u.flag])).map(u => ({
                 id: u.id, name: u.name, tag: u.tag, kind: u.kind, need: u.need, card: u.card || null,
                 joins: Battle.joins(u, flags, muster, def),
                 at: u.need === undefined ? null : round1(f.pressure + u.need),

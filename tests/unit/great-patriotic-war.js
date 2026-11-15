@@ -146,7 +146,9 @@ for (const [id, def] of Object.entries(D.battles)) {
 {
     const def = D.battles.moscow;
     assert.equal(B.start(def, { reservesKept: true }, null).pending.filter(u => u.side === 'red' && u.arrive === 4).length, 3);
-    assert.equal(B.start(def, {}, null).pending.filter(u => u.side === 'red').length, 0);
+    // Without them only the 30th Army comes down from the north (edition 2), on turn 5.
+    assert.deepEqual(B.start(def, {}, null).pending.filter(u => u.side === 'red').map(u => u.id), ['m30']);
+    assert.equal(B.start(def, {}, null, { edition: 1 }).pending.filter(u => u.side === 'red').length, 0);
 }
 // Bagration with one blow has no southern group.
 {

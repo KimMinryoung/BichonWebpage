@@ -118,6 +118,22 @@
     // commissar) steadies the units marked lead (defence +1). opts.rules
     // under 3 (a save from before) fights without feats and surrenders;
     // under 5 a train keeps its old pace (mv, not railMv).
+    // A board's units as a save's generation and edition have them
+    // (opts.rules, opts.edition; the newest when not given): `rules: { n:
+    // { … } }` holds what generation n changed in a unit (the latest the
+    // save has wins) and `from: n` a unit that only exists from generation
+    // n on; `editions: { n: { … } }` and `fromEdition: n` say the same for
+    // the scenario's own edition, laid over the generation's. So a board
+    // can change without an older save's battle replaying differently.
+    function unitsAsOf(def, opts) {
+        const gen = opts && opts.rules ? opts.rules : Infinity;
+        const ed = opts && opts.edition ? opts.edition : Infinity;
+        const laid = (changes, upTo) => Object.keys(changes || {}).map(Number).filter(n => upTo >= n).sort((a, z) => a - z).map(n => changes[n]);
+        return def.units
+            .filter(u => !(u.from > gen) && !(u.fromEdition > ed))
+            .map(u => Object.assign({}, u, ...laid(u.rules, gen), ...laid(u.editions, ed)));
+    }
+
     function start(def, flags, muster, opts) {
         const heroics = !(opts && opts.rules < 3);
         const express = !(opts && opts.rules < 5);
@@ -129,17 +145,7 @@
         // board's enemy can be given new orders without an older save's
         // battle replaying differently.
         const gen = opts && opts.rules ? opts.rules : Infinity;
-        // The same for the scenario's own edition (opts.edition, a save's;
-        // the newest when none is given): `editions: { n: { … } }` holds
-        // what edition n of the scenario's data changed in the unit, and
-        // `fromEdition: n` a unit that only exists from edition n on.
-        // A generation's changes are laid first, an edition's over them.
-        const ed = opts && opts.edition ? opts.edition : Infinity;
-        const laid = (changes, upTo) => Object.keys(changes || {}).map(Number).filter(n => upTo >= n).sort((a, z) => a - z).map(n => changes[n]);
-        const asOf = u => Object.assign({}, u, ...laid(u.rules, gen), ...laid(u.editions, ed));
-        const all = def.units
-            .filter(u => !(u.from > gen) && !(u.fromEdition > ed))
-            .map(asOf)
+        const all = unitsAsOf(def, opts)
             .filter(u => joins(u, flags, muster, def))
             .map(u => {
                 const own = u.side === sides.player && muster;
@@ -1241,7 +1247,7 @@
     }
 
     const api = {
-        start, joins, act, reachable, fogged, rangeNow, skyOf, raidDue, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, hitParts, halts, menace, marching, dangers, reserveSector, behind,
+        start, unitsAsOf, joins, act, reachable, fogged, rangeNow, skyOf, raidDue, wingOf, wingBlock, wingTargets, wingPreview, grounded, cutOff, wouldCut, cutRule, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, hitParts, halts, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, weatherOf, raidsOf, raidTurns, kindOf, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
         canMove, featBlock, featTargets, featMod, featAimed, featPreview, yields, lost, YIELD_RING, FEATS, ROLES, KINDS,
     };
