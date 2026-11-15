@@ -5,9 +5,9 @@
 // rules decide (and the screen reads) after each one. Any refactoring of
 // the engine, the battle or the scenario must leave every hash as it was.
 //
-//   node scripts/test-war-golden.js           replay and compare
-//   node scripts/test-war-golden.js --write   record anew (only when a rule
-//                                              change is meant; say so in the commit)
+//   node tests/unit/war-golden.js           replay and compare
+//   node tests/unit/war-golden.js --write   record anew (only when a rule
+//                                            change is meant; say so in the commit)
 // @group game
 const assert = require('node:assert/strict');
 const crypto = require('node:crypto');

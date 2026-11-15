@@ -115,6 +115,19 @@ function campaign(answers) {
     assert.equal(G.battleOf(pre), null);
 }
 
+// Warsaw stormed: the strength its answer promises is there (rules 15; a
+// save of an older generation keeps the answer it was given, without it).
+for (const rules of [14, G.RULES]) {
+    const s = G.start(rules);
+    for (let guard = 0; guard < 100 && !(s.phase === 'plan' && G.incidentsOf(s).some(inc => inc.id === 'warsaw')); guard++) {
+        if (s.phase === 'battle') G.act(s, 'assume'); else if (s.phase === 'review') G.act(s, 'next'); else { plan(s); G.act(s, 'settle'); }
+    }
+    plan(s);
+    const halted = G.forecast(s).fronts.west.strength;
+    assert.ok(G.act(s, 'respond', 'storm'));
+    assert.equal(Math.round((G.forecast(s).fronts.west.strength - halted) * 10) / 10, rules >= 15 ? 3 : 0, `rules ${rules}: Warsaw stormed`);
+}
+
 // ── Every battle is reached, and its board is what the briefing says ──
 for (const [id, def] of Object.entries(D.battles)) {
     const s = G.rehearse(id);

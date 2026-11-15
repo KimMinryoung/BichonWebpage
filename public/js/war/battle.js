@@ -129,9 +129,16 @@
         // board's enemy can be given new orders without an older save's
         // battle replaying differently.
         const gen = opts && opts.rules ? opts.rules : Infinity;
-        const asOf = u => Object.assign({}, u, ...Object.keys(u.rules || {}).map(Number).filter(n => gen >= n).sort((a, z) => a - z).map(n => u.rules[n]));
+        // The same for the scenario's own edition (opts.edition, a save's;
+        // the newest when none is given): `editions: { n: { … } }` holds
+        // what edition n of the scenario's data changed in the unit, and
+        // `fromEdition: n` a unit that only exists from edition n on.
+        // A generation's changes are laid first, an edition's over them.
+        const ed = opts && opts.edition ? opts.edition : Infinity;
+        const laid = (changes, upTo) => Object.keys(changes || {}).map(Number).filter(n => upTo >= n).sort((a, z) => a - z).map(n => changes[n]);
+        const asOf = u => Object.assign({}, u, ...laid(u.rules, gen), ...laid(u.editions, ed));
         const all = def.units
-            .filter(u => !(u.from > gen))
+            .filter(u => !(u.from > gen) && !(u.fromEdition > ed))
             .map(asOf)
             .filter(u => joins(u, flags, muster, def))
             .map(u => {

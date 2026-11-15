@@ -32,7 +32,10 @@
    history lost: its reward pays a win, wonBy); 12 a battle unit's own
    `rules` (what a generation changed in it: battle.js start) — the civil
    war's defenders take the field (role field) instead of standing to be
-   struck.
+   struck. 13 and 14 are the civil war's boards marked so (Perekop's fog and
+   battery, Tsaritsyn's strengths); 15 an incident's answer may add to our
+   own strength on a front (`strength: { front: n }`, as `pressure` adds to
+   the enemy's).
 
    A generation is the engine's: it changes what the code does for every
    scenario. A change to one scenario's own data that would replay an old
@@ -47,7 +50,7 @@
     const Battle = node ? require('./battle.js') : root.WarBattle;
     const Cond = node ? require('./cond.js') : root.WarCond;
 
-    const RULES = 14;
+    const RULES = 15;
     const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
     const round1 = v => Math.round(v * 10) / 10;
     const signed = n => (n < 0 ? '−' : '+') + Math.abs(n);
@@ -456,9 +459,12 @@
                 if (battle) add('battle', battle.label, battle.v);
                 modify(true);
                 // The season's incidents, as answered.
+                // (Rules 15: an answer may also add to our own strength.)
                 for (const inc of incidentsOf(s)) {
                     const answer = responseOf(s, inc);
-                    if (!answer || !answer.pressure || !answer.pressure[id]) continue;
+                    if (!answer) continue;
+                    if (s.rules >= 15 && answer.strength && answer.strength[id]) add('other', inc.title, answer.strength[id]);
+                    if (!answer.pressure || !answer.pressure[id]) continue;
                     pressure += answer.pressure[id];
                     pressureParts.push(`${inc.title} ${signed(answer.pressure[id])}`);
                 }
@@ -674,7 +680,7 @@
             if (def && !def.final && !s.battles[def.id]) {
                 const m = musterOf(s);
                 s.phase = 'battle';
-                s.battle = Battle.start(def, Object.assign({}, s.flags, choiceFlags(s)), m ? m.muster : null, { rules: s.rules });
+                s.battle = Battle.start(def, Object.assign({}, s.flags, choiceFlags(s)), m ? m.muster : null, { rules: s.rules, edition: s.edition || 1 });
                 return true;
             }
             const fc = forecast(s);
@@ -852,7 +858,7 @@
                 s.phase = 'done';
             } else if (def && def.final) {
                 s.phase = 'battle';
-                s.battle = Battle.start(def, s.flags, muster, { rules: s.rules });
+                s.battle = Battle.start(def, s.flags, muster, { rules: s.rules, edition: s.edition || 1 });
             } else {
                 s.phase = 'review';
             }

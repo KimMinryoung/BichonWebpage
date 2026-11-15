@@ -100,4 +100,29 @@ const unit = (id, side, kind, at, extra = {}) => Object.assign({ id, side, name:
     assert.equal(B.byId(b, 'rifle').hp, 4, 'not on turn 3');
 }
 
-console.log('war arms: armour, the gun against it, breakthrough, weather and raids');
+// A scenario's edition changes a unit as a generation does: what edition n
+// changed is laid over the unit for a save of edition n or later, and a
+// unit fromEdition n is absent from an older save's board.
+{
+    const def = {
+        id: 'test', sides: { player: 'red', enemy: 'grey' }, map: ['......', '......'], terrain: TERRAIN,
+        goals: [{ at: [0, 5], name: '마을' }], lines: {}, sectors: {}, turnLimit: 6,
+        units: [
+            unit('rifle', 'red', 'inf', [0, 0]),
+            unit('foot', 'grey', 'inf', [0, 3], { rules: { 2: { atk: 7 } }, editions: { 2: { at: [1, 3], atk: 8 }, 3: { hp: 12 } } }),
+            unit('late', 'grey', 'inf', [1, 5], { fromEdition: 2 }),
+        ],
+    };
+    const at = (opts, id) => B.byId(B.start(def, {}, null, opts), id);
+    const first = B.start(def, {}, null, { rules: 2, edition: 1 });
+    assert.deepEqual([B.byId(first, 'foot').r, B.byId(first, 'foot').c, B.byId(first, 'foot').atk, B.byId(first, 'foot').hp], [0, 3, 7, 10]);
+    assert.ok(!first.units.some(u => u.id === 'late'), 'a unit of a later edition is not on an older save\'s board');
+    assert.deepEqual([at({ rules: 2, edition: 2 }, 'foot').r, at({ rules: 2, edition: 2 }, 'foot').atk, at({ rules: 2, edition: 2 }, 'foot').hp], [1, 8, 10], 'the edition laid over the generation');
+    assert.equal(at({ rules: 1, edition: 3 }, 'foot').hp, 12);
+    assert.ok(at({ rules: 2, edition: 2 }, 'late'));
+    // A board started without either is the newest.
+    assert.equal(at(undefined, 'foot').hp, 12);
+    assert.ok(at(undefined, 'late'));
+}
+
+console.log('war arms: armour, the gun against it, breakthrough, weather, raids and editions');
