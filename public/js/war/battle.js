@@ -196,7 +196,7 @@
         const stamp = b.turn + ':' + live.map(u => `${u.side}${u.r},${u.c}`).join('|');
         if (b.supplyCache && b.supplyCache.stamp === stamp) return b.supplyCache.map;
         const at = new Map(live.map(u => [key(u.r, u.c), u]));
-        const map = {};
+        const map = {}, roads = {};
         for (const side of [b.sides.player, b.sides.enemy]) {
             const sources = sup[side === b.sides.player ? 'player' : 'enemy'];
             if (!sources) { map[side] = null; continue; }
@@ -204,6 +204,8 @@
             const seen = new Set();
             const queue = [];
             const base = new Set();
+            // Each reached tile's step back toward its source (the road drawn on the board).
+            const back = new Map();
             for (const [r, c] of sources) {
                 const o = at.get(key(r, c));
                 if (o && o.side !== side) continue;
@@ -223,12 +225,12 @@
                     if (t.cost >= 99 && !t.span && !t.supply) continue;
                     const o = at.get(k);
                     if (o && o.side !== side) continue;
-                    seen.add(k); queue.push([rr, cc]);
+                    seen.add(k); back.set(k, key(r, c)); queue.push([rr, cc]);
                 }
             }
-            map[side] = seen;
+            map[side] = seen; roads[side] = back;
         }
-        b.supplyCache = { stamp, map };
+        b.supplyCache = { stamp, map, roads };
         return map;
     }
 
@@ -237,6 +239,24 @@
         const map = supplyMap(b);
         const mine = map && map[u.side];
         return Boolean(mine) && !mine.has(key(u.r, u.c));
+    }
+    // A unit's supply road: the tiles from where it stands back to its
+    // source ([[r, c]…]), or null when it has none (cut off, or its side
+    // has no sources).
+    function supplyRoad(b, u) {
+        if (!supplyMap(b) || cutOff(b, u)) return null;
+        const back = b.supplyCache.roads[u.side];
+        if (!back) return null;
+        const out = [[u.r, u.c]];
+        for (let k = key(u.r, u.c), n = 0; back.has(k) && n < 400; n++) { k = back.get(k); out.push([Math.floor(k / 100), k % 100]); }
+        return out;
+    }
+    // Whether supply of a side passes on through an empty tile: not where
+    // the other side stands beside it with none of its own beside it too.
+    function supplyShut(b, side, r, c) {
+        if (unitAt(b, r, c)) return false;
+        const near = mine => DIRS.some(([dr, dc]) => { const o = unitAt(b, r + dr, c + dc); return o && (o.side === side) === mine; });
+        return near(false) && !near(true);
     }
     const cutRule = b => Object.assign({}, CUT, b.def.supply);
 
@@ -1014,7 +1034,7 @@
     }
 
     const api = {
-        start, joins, act, reachable, cutOff, supplyMap, postsOf, aimOf, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
+        start, joins, act, reachable, cutOff, supplyMap, supplyRoad, supplyShut, postsOf, aimOf, enterCost, targets, preview, menace, marching, dangers, reserveSector, behind,
         terrain, groundOf, tileAt, weatherOf, raidsOf, raidTurns, kindOf, unitAt, byId, defenseOf, fordOpen, onRail, isPlayer, isEnemy, alone, preyOf,
         canMove, featBlock, featTargets, featMod, featAimed, featPreview, yields, lost, YIELD_RING, FEATS, ROLES, KINDS,
     };

@@ -466,6 +466,7 @@
         {
             id: 'uranus', date: '1942년 11월–1943년 3월', end: [1943, 3], title: '천왕성',
             scene: {
+                picture: 'uranus',
                 lead: '11월 19일 아침, 돈강의 안개 속에서 포 3,500문이 루마니아군 진지를 덮었다. 나흘 뒤 두 전선군의 전차가 칼라치에서 만난다. 포위망 안에 독일군 30만이 있다.',
                 witness: { who: ['이오시프 스탈린', 'stalin'], text: '스탈린그라드에서 포위한 적군을 성공적으로 섬멸한 데 대해 당신과 돈강전선 부대에 축하를 보낸다.', src: ['스탈린, 보로노프·로코솝스키에게 보낸 축하, 1943년 2월 2일', ST(34)] },
             },
@@ -522,6 +523,7 @@
         {
             id: 'kursk', date: '1943년 4–8월', end: [1943, 8], title: '쿠르스크',
             scene: {
+                picture: 'kursk',
                 lead: '쿠르스크 둘레의 돌출부를 두고 두 군대가 석 달을 준비했다. 독일군은 새 전차 티거와 판터를 기다렸고, 붉은 군대는 여덟 겹의 방어선을 팠다.',
             },
             mobilize: 13, commissars: 2, army: [['rifle', 7], ['guards', 4], ['tank', 2]], battle: 'kursk',
@@ -563,6 +565,7 @@
         {
             id: 'dnieper', date: '1943년 9–12월', end: [1943, 12], title: '드네프르강',
             scene: {
+                picture: 'dnieper',
                 lead: '독일군은 드네프르강 뒤로 물러나며 마을과 다리를 태운다. 높은 오른쪽 둑에 「동부 방벽」이 선다. 다섯 전선군이 700킬로미터 너비로 강을 향해 달린다.',
                 witness: { as: '최고사령부', text: '스몰렌스크와 그 아래의 드네프르강처럼, 또는 건너기 어렵기가 드네프르에 맞먹는 강을 건넌 데 대해서는 … 부대 지휘관들을 소련 영웅 칭호에 추천하라.', src: ['최고사령부 지령 제30187호, 1943년 9월 9일', 'https://ru.wikisource.org/wiki/%D0%A1%D0%B1%D0%BE%D1%80%D0%BD%D0%B8%D0%BA_%D0%B1%D0%BE%D0%B5%D0%B2%D1%8B%D1%85_%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%BE%D0%B2/05/09'] },
             },
@@ -604,6 +607,7 @@
         {
             id: 'korsun', date: '1944년 1–5월', end: [1944, 5], title: '봉쇄가 풀리다',
             scene: {
+                picture: 'leningrad',
                 lead: '1944년 1월 27일 레닌그라드에서 축포 스물네 발이 울렸다. 872일의 봉쇄가 끝났다. 남쪽에서는 우크라이나의 진창 속에서 전차군이 국경으로 간다.',
                 witness: { who: ['레오니트 고보로프', 'leonid-govorov'], text: '레닌그라드 시민 여러분! 용감하고 꿋꿋한 레닌그라드 사람들이여! 여러분은 레닌그라드전선 부대와 함께 우리 고향 도시를 지켜 냈습니다.', src: ['레닌그라드 전선군 군사평의회 명령, 1944년 1월 27일(『렌타.ru』 인용)', 'https://lenta.ru/articles/2024/01/27/leningrad1944/'] },
             },
@@ -661,6 +665,7 @@
         {
             id: 'bagration', date: '1944년 6–8월', end: [1944, 8], title: '바그라티온',
             scene: {
+                picture: 'bagration',
                 lead: '침공 3년째 되는 날인 1944년 6월 22일, 네 전선군이 벨로루시의 중부 집단군을 쳤다. 두 주 만에 독일군 스물여덟 개 사단이 사라진다.',
             },
             mobilize: 15, commissars: 3, army: [['rifle', 7], ['guards', 4], ['tank', 3], ['polish', 1]], battle: 'bagration',
@@ -717,6 +722,7 @@
         {
             id: 'vistula', date: '1944년 9월–1945년 1월', end: [1945, 1], title: '비스와강에서 도나우강까지',
             scene: {
+                picture: 'vistula-oder',
                 lead: '가을, 전선은 발트해에서 도나우강까지 뻗었다. 루마니아와 불가리아가 편을 바꾸고, 헝가리 평원에서 부다페스트로 가는 싸움이 시작된다.',
             },
             mobilize: 15, commissars: 3, army: [['rifle', 7], ['guards', 4], ['tank', 3], ['polish', 1]],
@@ -757,6 +763,7 @@
         {
             id: 'berlin', date: '1945년 2–5월', end: [1945, 5], title: '베를린',
             scene: {
+                picture: 'berlin',
                 lead: '오데르강의 교두보에서 베를린까지 70킬로미터. 그 사이에 젤로 고지가 있고, 도시 안에는 히틀러가 있다. 서쪽에서는 미군이 엘베강으로 온다.',
                 witness: { as: '제1벨로루시 전선군 군사평의회', text: '연료 2회분·탄약 2기수까지 채운 뒤, 1945년 2월 15~16일 재빠른 돌진으로 베를린을 차지한다.', src: ['제1벨로루시 전선군 지령, 1945년 2월 4일(추이코프, 『제3제국의 최후』 인용)', ML('memo/russian/chuykov2/05')] },
             },
@@ -803,7 +810,7 @@
     // supply (battle.js): a unit that cannot trace open ground back to its
     // side's source is cut off, and prisoners leave the board.
     const SIDES = { player: 'red', enemy: 'axis' };
-    const SUPPLY_BRIEF = '보급선: 부대는 제 편의 보급 기지(판 가장자리의 화살표)까지 길이 이어져야 한다. 적 부대가 선 칸, 그리고 적 곁인데 아군은 곁에 없는 칸으로는 보급이 지나가지 못한다. 끊긴 부대는 「포위」되어 공격이 절반, 방어가 1 줄고 턴마다 병력 2를 잃는다. 포위된 채 한 턴을 넘기고 병력이 절반 아래로 꺾인 적은 항복한다.';
+    const SUPPLY_BRIEF = '보급선: 판 위의 굵은 점선이 보급선이다(붉은 점선은 붉은 군대, 회색 점선은 적). 부대는 판 가장자리의 세모(보급 기지)까지 이 길이 이어져야 한다. 적 부대가 선 칸, 그리고 적 곁인데 아군은 곁에 없는 칸(×로 표시)으로는 보급이 지나가지 못한다. 길이 끊긴 부대는 「포위」 띠를 달고 공격이 절반, 방어가 1 줄며 턴마다 병력 2를 잃는다. 포위된 채 한 턴을 넘기고 병력이 절반 아래로 꺾인 적은 항복한다.';
     const ARMS_BRIEF = '병종: 전차는 적 곁을 멈추지 않고 지나가고(돌파) 보병에게 강하다. 대전차포는 전차를 칠 때 피해 +3, 보병이 전차를 치면 피해 −2다.';
 
     // Yelnya, 30 August–8 September 1941: the first ground won back. The
@@ -834,7 +841,11 @@
         ],
         goals: [{ at: [2, 4], name: '옐냐' }],
         towns: [['옐냐', 2, 4]],
-        places: [['스몰렌스크 쪽', 2, 0.2], ['데스나강 쪽', 5, 8.4], ['돌출부의 목', 2, 2]],
+        places: [['스몰렌스크 쪽', 4, 0.2], ['데스나강 쪽', 5, 8.4]],
+        areas: [
+            { name: '독일군의 돌출부', tiles: [[1, 3], [1, 4], [2, 3], [2, 4], [2, 5], [3, 3], [3, 4]] },
+            { name: '돌출부의 목', tiles: [[2, 1], [2, 2]] },
+        ],
         turnLimit: 7,
         lines: {}, sectors: {},
         terrain: {
@@ -866,7 +877,7 @@
         ],
         summary: '옐냐에 서면 승리 · 7턴 · 돌출부의 목을 조이면 참호의 적이 포위된다',
         brief: [
-            '스몰렌스크 남동쪽 옐냐에 독일군의 돌출부가 동쪽으로 튀어나와 있다. 모스크바로 가는 발판이다. 주코프의 예비 전선군이 북쪽과 남쪽에서 그 목을 조인다.',
+            '스몰렌스크 남동쪽 옐냐에서 독일군의 전선이 동쪽(판의 오른쪽)으로 불룩 튀어나와 있다. 판 가운데 점선 테두리가 그 돌출부이고, 서쪽으로 이어지는 좁은 자리가 「목」이다. 모스크바로 가는 발판이다. 주코프의 예비 전선군이 북쪽과 남쪽에서 그 목을 조인다.',
             '옐냐에 붉은 부대를 세우면 이긴다. 7턴이 주어진다. 4턴 안에 되찾으면 모스크바 방면의 우리 힘이 3 늘고, 되찾지 못하면 4 준다.',
             SUPPLY_BRIEF,
             '독일군의 보급은 서쪽 끝에서 온다. 북쪽과 남쪽 집단이 목에서 만나면 참호의 사단들이 한꺼번에 포위된다. 참호를 정면에서 치는 것보다 빠르다.',
@@ -1055,7 +1066,7 @@
     // down column 6; the Sixth Army sits in the east.
     const uranusBattle = {
         id: 'uranus', sides: SIDES, front: 'south', final: false, prisoners: true, goalsAll: true,
-        scene: null,
+        scene: { picture: 'uranus' },
         title: '천왕성 작전', date: '1942년 11월 19–23일',
         settle: '돈강으로 →', board: '돈강과 볼가강 사이', enemyName: '추축군',
         huntNote: '독일 기갑 예비. 곁에 붉은 부대가 가장 적은 붉은 부대를 찾아가 친다. 2턴이 끝날 때까지는 제자리에 있다.',
@@ -1141,7 +1152,7 @@
     // through the defence belts for Oboyan and Prokhorovka.
     const kurskBattle = {
         id: 'kursk', sides: SIDES, front: 'southwest', final: false, outlast: true, prisoners: true, when: { choice: 'defend' },
-        scene: null,
+        scene: { picture: 'kursk' },
         title: '쿠르스크: 남쪽 면', date: '1943년 7월 5–12일',
         settle: '쿠르스크로 →', board: '오보얀과 프로호롭카 앞', enemyName: '독일군',
         pushNote: '독일 기갑 쐐기. 오보얀이나 프로호롭카 가운데 가까운 쪽으로 곧장 온다. 전차는 붉은 부대 곁을 지나친다. 두 곳 가운데 하나라도 독일군이 들어서면 진다.',
@@ -1224,7 +1235,7 @@
     // western bank, the German divisions in their trenches east of it.
     const bagrationBattle = {
         id: 'bagration', sides: SIDES, front: 'west', final: false, prisoners: true,
-        scene: null,
+        scene: { picture: 'bagration' },
         title: '바그라티온: 보브루이스크', date: '1944년 6월 24–29일',
         settle: '보브루이스크로 →', board: '베레지나강', enemyName: '독일군',
         huntNote: '독일 기갑 예비. 곁에 붉은 부대가 가장 적은 붉은 부대를 찾아가 친다. 2턴이 끝날 때까지는 제자리에 있다.',
@@ -1305,7 +1316,7 @@
     // the south-east.
     const berlinBattle = {
         id: 'berlin', sides: SIDES, front: 'west', final: true, prisoners: true,
-        scene: { picture: 'cover' },
+        scene: { picture: 'berlin' },
         title: '베를린', date: '1945년 4월 16일–5월 2일',
         settle: '베를린으로 →', open: '베를린 작전 →', board: '오데르강에서 제국의회까지', enemyName: '독일군',
         huntNote: '벵크의 제12군. 6턴에 서쪽에서 와서, 곁에 붉은 부대가 가장 적은 붉은 부대를 찾아가 친다.',
@@ -1452,6 +1463,17 @@
         kharkov1942: { w: 800, h: 600, caption: '테르노바야 역 부근의 전투, 남서전선군, 1942년 5월', credit: ['세묜 알페린', C('Семён_Альперин._Бой_в_районе_станции_Терновая._Юго-Западный_фронт._1942_год.jpg')] },
         blau: { w: 800, h: 523, caption: '스탈린그라드로 진격하는 독일군, 1942년 8월', credit: ['헤르버 · 독일 연방문서고 · CC BY-SA 3.0 de', C('Bundesarchiv_Bild_183-B28114,_Russland,_Kampf_um_Stalingrad,_Vormarsch.jpg')] },
         order227: { w: 671, h: 1024, caption: '스탈린그라드의 폐허에서 싸우는 붉은 군대 병사들, 1942년', credit: ['게오르기 젤마 · RIA 노보스티 · CC BY-SA 3.0', C('RIAN_archive_602770_Battle_of_Stalingrad.jpg')] },
+        uranus: { w: 950, h: 854, sm: true, caption: '소비에츠키에서 만난 두 전선군의 병사들, 1942년 11월', credit: ['사진가 미상', C('Chiusura_della_sacca.jpg')] },
+        paulus: { w: 1196, h: 804, sm: true, caption: '포로가 된 파울루스 원수, 1943년 2월', credit: ['예핌 코피트', C('Паулюс_фото_Копыта.jpg')] },
+        kursk: { w: 1600, h: 905, sm: true, caption: '프로호롭카에서 T-34 전차 뒤를 따라 반격하는 보로네시 전선군, 1943년 7월', credit: ['붉은 군대 사진가 · 러시아 국방부 · CC BY 4.0', C('Soviet_troops_and_T-34_tanks_counterattacking_Kursk_Voronezh_Front_July_1943.jpg')] },
+        dnieper: { w: 1600, h: 958, sm: true, caption: '드네프르강을 건너는 붉은 군대, 로예프 부근, 1943년 10월', credit: ['알렉산드르 디틀로프', C('Форсирование_Днепра_в_районе_г.п._Лоев_Гомельской_области.jpg')] },
+        leningrad: { w: 1024, h: 688, sm: true, caption: '라도가호의 얼음길 「생명의 길」, 1941–1942년', credit: ['예브게니 할데이', C('Фото_"«Дорога_жизни»"_(183932_3).jpg')] },
+        bagration: { w: 1600, h: 1067, sm: true, caption: '1944년 7월 17일, 모스크바 거리를 지나는 독일군 포로를 지켜보는 시민들', credit: ['미하일 트라흐만 · 모스크바시 문서고 · CC BY 4.0', C('Muscovites_on_Parade_of_the_Vanquished.jpg')] },
+        warsaw1944: { w: 1095, h: 1600, sm: true, caption: '봉기 뒤 폐허가 된 바르샤바, 1945년', credit: ['사진가 미상', C('Ruins_of_Warsaw_(1945)_3.jpg')] },
+        'vistula-oder': { w: 1600, h: 1054, sm: true, caption: '부서진 다리 곁에서 오데르강에 부교를 놓는 공병, 1945년 1월', credit: ['세묜 알페린', C('Советские_саперы_наводят_понтонную_переправу_через_реку_Одер_рядом_с_разрушенным_мостом.jpg')] },
+        berlin: { w: 1447, h: 1080, sm: true, caption: '베를린 시가의 전투, 1945년 4월', credit: ['빅토르 툐민 · 러시아 국방부 · CC BY 4.0', C('Темин_Бой_на_улицах_Берлина.jpg')] },
+        reichstag: { w: 800, h: 796, caption: '불탄 제국의회 건물, 1945년 7월', credit: ['영국 육군 사진반', C('Berlin-_the_Capture_and_Aftermath_of_War_1945-1947_BU8922.jpg')] },
+        victory: { w: 1600, h: 1231, sm: true, caption: '1945년 5월 8일 베를린 카를스호르스트, 항복 문서에 서명하는 카이텔 원수', credit: ['미 육군 사진병', C('Field_Marshal_Keitel_signs_German_surrender_terms_in_Berlin_8_May_1945_-_Restoration.jpg')] },
     };
 
     // ── Portraits (art.js FEATURES) ──
@@ -1688,7 +1710,7 @@
     };
     const epilogue = {
         title: '승리의 값',
-        scene: null,
+        scene: { picture: 'victory' },
         texts: [
             { when: { stat: ['manpower', '>=', 55] }, text: '전쟁은 끝났다. 덜 무모한 공세와 제때 물린 군대가 수백만의 목숨을 남겼다. 그래도 서쪽의 마을 일곱만 곳이 재가 되었고, 돌아오지 못한 사람은 헤아릴 수 없다. 살아남은 사람들이 무너진 드네프르 발전소와 스탈린그라드의 공장을 다시 세운다. 승리는 이 나라를 초강대국으로 만들었고, 그 승리를 이끈 체제를 누구도 물을 수 없게 만들었다.' },
             { when: { stat: ['manpower', '>=', 40] }, text: '전쟁은 끝났다. 소련은 2천만이 넘는 사람을 잃었다. 1923년에 태어난 남자 가운데 살아 돌아온 사람은 몇 되지 않는다. 그래도 최악은 피했다. 장군들은 싸우는 법을 배웠고, 최고사령부는 차츰 그들의 말을 들었다. 승리는 이 나라를 초강대국으로 만들었고, 그 승리를 이끈 체제를 누구도 물을 수 없게 만들었다.' },
@@ -1701,12 +1723,14 @@
         pitch: '1941년 6월 22일, 국경이 무너졌다. 최고사령부의 자리에서 군을 나눠 보내고, 모스크바·스탈린그라드·쿠르스크·베를린의 전투를 직접 지휘한다.',
         picture: 'cover',
         events: ['great-patriotic-war'],
-        // 천왕성·쿠르스크·바그라티온은 맞는 그림을 받는 대로 더한다(dev_docs/great-patriotic-war-game.md 7절).
         battles: {
             yelnya: { picture: 'yelnya', pitch: '1941년 9월, 주코프가 옐냐 돌출부의 목을 조인다. 이 전쟁에서 독일군이 처음으로 내준 땅.' },
             moscow: { picture: 'moscow-counter', pitch: '볼로콜람스크 대로에서 버티고, 눈 속에 숨겨 둔 예비 군으로 클린을 되찾는다.' },
             stalingrad: { picture: 'order227', events: ['stalingrad'], terms: ['hugging-the-enemy'], pitch: '볼가강을 등진 폐허. 일곱 턴 동안 중앙 나루를 지켜야 강 건너의 배가 닿는다.' },
-            berlin: { picture: 'cover', events: ['battle-of-berlin'], pitch: '젤로 고지를 넘어 베를린으로. 제국의회에 깃발을 올리면 전쟁이 끝난다.' },
+            uranus: { picture: 'uranus', terms: ['operation-uranus'], pitch: '루마니아군을 지나쳐 달린다. 칼라치의 다리와 소비에츠키에서 두 전선군이 만나면 제6군이 갇힌다.' },
+            kursk: { picture: 'kursk', events: ['battle-of-kursk'], terms: ['operation-citadel', 'battle-of-prokhorovka'], pitch: '티거를 앞세운 기갑 쐐기가 온다. 대전차포와 묻어 둔 전차로 오보얀과 프로호롭카를 지킨다.' },
+            bagration: { picture: 'bagration', terms: ['operation-bagration'], pitch: '로코솝스키의 두 주먹. 늪을 건너 보브루이스크 뒤를 끊고 강 동쪽의 독일군을 가둔다.' },
+            berlin: { picture: 'berlin', events: ['battle-of-berlin'], pitch: '젤로 고지를 넘어 베를린으로. 제국의회에 깃발을 올리면 전쟁이 끝난다.' },
         },
     };
 

@@ -2771,20 +2771,78 @@
 
     // Supply (battle.js): each side's sources as an arrowhead on the board's
     // edge pointing in, so a pocket's missing road can be read off the board.
+    // A board's named ground (def.areas: [{ name, tiles: [[r, c]…], side? }]):
+    // a dashed outline round the tiles and the name on its upper edge, so a
+    // salient, a pocket or a bridgehead the briefing speaks of can be seen.
+    function areaMarks(b) {
+        const g = svg('g', { class: 'cw-areas', 'aria-hidden': 'true' });
+        for (const area of b.def.areas || []) {
+            const has = new Set(area.tiles.map(t => t.join()));
+            let d = '';
+            for (const [r, c] of area.tiles) {
+                const x = c * CELL, y = r * CELL;
+                if (!has.has([r - 1, c].join())) d += `M${x} ${y}h${CELL}`;
+                if (!has.has([r + 1, c].join())) d += `M${x} ${y + CELL}h${CELL}`;
+                if (!has.has([r, c - 1].join())) d += `M${x} ${y}v${CELL}`;
+                if (!has.has([r, c + 1].join())) d += `M${x + CELL} ${y}v${CELL}`;
+            }
+            const top = Math.min(...area.tiles.map(t => t[0]));
+            const row = area.tiles.filter(t => t[0] === top).map(t => t[1]);
+            const cx = (Math.min(...row) + Math.max(...row) + 1) / 2 * CELL, cy = top * CELL;
+            const w = area.name.length * 9.5 + 10;
+            const one = svg('g', { class: 'cw-area is-' + (area.side === 'player' ? 'red' : 'white') });
+            one.append(svg('path', { d, class: 'cw-area-line' }), svg('rect', { x: cx - w / 2, y: cy - 7, width: w, height: 13, class: 'cw-area-tag' }), svg('text', { x: cx, y: cy + 3.5, 'text-anchor': 'middle', class: 'cw-area-name' }, area.name));
+            g.append(one);
+        }
+        return g;
+    }
+
     function supplyMarks(b) {
         const g = svg('g', { class: 'cw-supply', 'aria-hidden': 'true' });
         const sup = b.def.supply;
         if (!sup) return g;
         const rows = b.def.map.length, cols = b.def.map[0].length;
+        // The roads themselves: every unit's way back to its source, the
+        // shared stretches drawn once, the enemy's under the player's.
+        for (const [is, cls] of [[B.isEnemy, 'is-white'], [B.isPlayer, 'is-red']]) {
+            const seen = new Set();
+            let d = '';
+            for (const u of b.units.filter(x => x.hp > 0 && is(b, x))) {
+                const road = B.supplyRoad(b, u);
+                for (let i = 0; road && i + 1 < road.length; i++) {
+                    const k = road[i].join() + '>' + road[i + 1].join();
+                    if (seen.has(k)) break;
+                    seen.add(k);
+                    const [x1, y1] = center(...road[i]), [x2, y2] = center(...road[i + 1]);
+                    d += `M${x1} ${y1}L${x2} ${y2}`;
+                }
+            }
+            if (d) g.append(svg('path', { d, class: 'cw-supply-road ' + cls }));
+        }
+        // Ground a side's supply cannot pass on through: the enemy's shut
+        // by the player in red, the player's shut by the enemy in the enemy's colour.
+        for (let r = 0; r < rows; r++) {
+            for (let c = 0; c < cols; c++) {
+                if (B.terrain(b, r, c).cost >= 99) continue;
+                for (const [side, cls] of [[b.sides.enemy, 'is-red'], [b.sides.player, 'is-white']]) {
+                    // Only where that side's supply comes up against it (the
+                    // tile is reached, and goes no further): the ring's edge.
+                    const reach = B.supplyMap(b)[side];
+                    if (!reach || !reach.has(r * 100 + c) || !B.supplyShut(b, side, r, c)) continue;
+                    const x = c * CELL, y = r * CELL;
+                    g.append(svg('path', { d: `M${x + 5} ${y + 5}l8 8M${x + 13} ${y + 5}l-8 8`, class: 'cw-supply-shut ' + cls }));
+                }
+            }
+        }
+        // The sources: an arrowhead on the board's edge pointing in, named.
         for (const [side, cls] of [['player', 'is-red'], ['enemy', 'is-white']]) {
             for (const [r, c] of sup[side] || []) {
                 const [cx, cy] = center(r, c);
-                // From the nearest edge inward.
                 const edge = [[c, -1, 0], [cols - 1 - c, 1, 0], [r, 0, -1], [rows - 1 - r, 0, 1]].sort((a, z) => a[0] - z[0])[0];
                 const [, dx, dy] = edge;
                 const ex = cx + dx * (CELL / 2 - 2), ey = cy + dy * (CELL / 2 - 2);
                 const px = -dy, py = dx;
-                g.append(svg('path', { d: `M${ex - dx * 11} ${ey - dy * 11}L${ex + px * 7} ${ey + py * 7}L${ex - px * 7} ${ey - py * 7}Z`, class: 'cw-supply-mark ' + cls }));
+                g.append(svg('path', { d: `M${ex - dx * 13} ${ey - dy * 13}L${ex + px * 9} ${ey + py * 9}L${ex - px * 9} ${ey - py * 9}Z`, class: 'cw-supply-mark ' + cls }));
             }
         }
         return g;
@@ -2904,6 +2962,8 @@
             counterBar.rect.setAttribute('width', counterBar.w * lost / counterBar.max);
             hpText(counterBar.text, counterBar.hp, lost, 'is-counter');
         };
+        board.append(areaMarks(b));
+        board.append(supplyMarks(b));
         // The verdict in: a won battle's Red units leap, one after another.
         const verdict = verdictBanner(b);
         const cheer = verdict && b.result === 'won' && !stillMotion() ? Math.round(performance.now() - verdictAt) : null;
@@ -3003,9 +3063,20 @@
             // With a unit on it, a small flag in the gutter, clear of its name.
             const d = held(goal.at[0], goal.at[1]) ? `M${x + 46} ${y + 14}V${y - 3}h9l-2.5 3.5 2.5 3.5h-9` : `M${x + 34} ${y + 24}v-22M${x + 34} ${y + 2}h12l-3.5 4.5 3.5 4.5h-12`;
             board.append(svg('path', { d, class: 'cw-goal-flag', 'aria-hidden': 'true' }));
+            // A unit standing on the goal hides the tile's own name: the name
+            // then hangs at the tile's foot (or over its head when a unit
+            // stands below), so the objective can always be found on the board.
+            if (held(goal.at[0], goal.at[1])) {
+                // On a red banner over the tile's edge: the foot when the
+                // tile below is free, else the head.
+                const foot = !B.unitAt(b, goal.at[0] + 1, goal.at[1]);
+                const w = Math.max(26, goal.name.length * 10 + 8), cy = foot ? y + CELL + 1 : y - 1;
+                const tag = svg('g', { class: 'cw-goal-name', 'aria-hidden': 'true' });
+                tag.append(svg('rect', { x: x + CELL / 2 - w / 2, y: cy - 7, width: w, height: 13 }), svg('text', { x: x + CELL / 2, y: cy + 3.5, 'text-anchor': 'middle' }, goal.name));
+                board.append(tag);
+            }
         }
         board.append(postMark(b));
-        board.append(supplyMarks(b));
         board.append(eventArrows(b));
         if (verdict && b.result === 'won') board.append(victoryBursts(b));
         const moment = momentBanner(b);
@@ -3063,7 +3134,7 @@
             el('header', { class: 'cw-battle-head', 'data-pane': 'status' }, el('p', { class: 'games-kicker' }, def.date), el('h2', { id: 'cwBattleTitle' }, def.title)),
             battleBrief(b),
             el('div', { class: 'cw-battle-layout' },
-                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], def.protect ? ['post', `${def.protect.name}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
+                el('div', { class: 'cw-grid-wrap' }, battleEnded ? null : roster(reds), el('div', { class: 'cw-grid-scroll', 'data-pane': 'field', onscroll: keepVoiceInView, style: `--cw-board-ar:${(cols / rows).toFixed(3)}` }, board, moment, verdict, tilePicked ? tileCard(b, tilePicked.r, tilePicked.c, 'cw-tile-info' + (tilePicked.c >= cols / 2 ? ' is-left' : '') + (tilePicked.r < rows / 2 ? ' is-bottom' : '')) : null), terrainKey(b, ...def.legend.concat([def.rails ? ['track', `철도 (${josa((def.units.find(u => u.rail) || { name: '열차' }).name, '은', '는')} 철길로만)`] : null, ['move', '갈 수 있는 칸'], B.postsOf(def).length ? ['post', `${B.postsOf(def).map(x => x.name).join('·')}: ${josa(foeName(), '이', '가')} 들어서면 패배`] : null, def.supply ? ['supply', `보급선 (붉은 점선 ${U.player}, 회색 점선 ${foeName()})`] : null, def.supply ? ['shut', '× 보급이 지나가지 못하는 칸'] : null, def.supply ? ['base', '세모: 보급 기지'] : null, Object.keys(def.lines).length ? ['flank', '우회 구역: 세우면 수비대의 뒤가 끊김'] : null, ['danger', `${josa(foeName(), '이', '가')} 칠 수 있는 칸`]].filter(Boolean))
                         .map(([k, label]) => el('span', {}, el('i', { class: 'k-' + k }), label)))),
                 el('aside', { class: 'cw-battle-side' },
                     el('dl', { class: 'cw-battle-status', 'data-pane': 'status' }, ...status.map(x => el('div', { class: x.tone || null }, el('dt', {}, x.label), el('dd', {}, x.text)))),

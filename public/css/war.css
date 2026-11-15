@@ -628,12 +628,32 @@
 .cw-supply-mark { stroke: var(--text-primary); stroke-width: 1.2; stroke-linejoin: round; }
 .cw-supply-mark.is-red { fill: var(--cw-red, #a21e2a); }
 .cw-supply-mark.is-white { fill: var(--cw-foe-accent); }
+/* A board's named ground (def.areas): dashed outline and its name. */
+.cw-areas { pointer-events: none; }
+.cw-area-line { fill: none; stroke-width: 3; stroke-dasharray: 9 5; }
+.cw-area.is-white .cw-area-line { stroke: var(--cw-foe-ink); }
+.cw-area.is-red .cw-area-line { stroke: var(--cw-red); }
+.cw-area-tag { stroke: none; }
+.cw-area.is-white .cw-area-tag { fill: var(--cw-foe-ink); }
+.cw-area.is-red .cw-area-tag { fill: var(--cw-red); }
+.cw-area-name { fill: #fff; font-size: 9.5px; font-weight: 800; }
+.cw-terrain-key i.k-supply { border: 0; height: 0; border-top: 3px dotted var(--cw-red); width: 22px; align-self: center; }
+.cw-terrain-key i.k-shut, .cw-terrain-key i.k-base { display: none; }
+.cw-supply-road { fill: none; stroke-width: 3; stroke-dasharray: 2 5; stroke-linecap: round; }
+.cw-supply-road.is-red { stroke: var(--cw-red); }
+.cw-supply-road.is-white { stroke: var(--cw-foe-accent); }
+.cw-supply-shut { fill: none; stroke-width: 2; stroke-linecap: round; }
+.cw-supply-shut.is-red { stroke: var(--cw-red); }
+.cw-supply-shut.is-white { stroke: var(--cw-foe-accent); }
 .cw-cut-band { fill: var(--text-primary); stroke: none; }
 .cw-cut-text { font-size: 8.5px; font-weight: 800; fill: var(--bg-surface); letter-spacing: .08em; }
 .cw-unit.is-cut > rect:first-of-type { stroke-dasharray: 4 3; }
 .cw-note-cut { font-weight: 700; }
 .cw-post-name { font-size: 9px; font-weight: 800; fill: var(--text-primary); paint-order: stroke; stroke: var(--bg-surface); stroke-width: 3px; stroke-linejoin: round; }
 .cw-terrain-key .k-post { border: 2px dashed var(--text-primary); }
+.cw-goal-name { pointer-events: none; }
+.cw-goal-name rect { fill: var(--cw-red); stroke: var(--text-primary); stroke-width: 1; }
+.cw-goal-name text { fill: #fff; font-size: 9.5px; font-weight: 800; }
 .cw-post-alarm { flex-basis: 100%; margin: 0; padding: 6px 10px; border: 2px solid var(--cw-foe-accent); background: color-mix(in srgb, var(--cw-foe-accent) 22%, var(--bg-surface)); font-weight: 800; font-size: .88rem; }
 .cw-flank-zone { fill: none; stroke: var(--text-primary); stroke-opacity: .55; stroke-width: 1.5; stroke-dasharray: 6 4; pointer-events: none; }
 .cw-danger { fill: var(--cw-foe-accent); fill-opacity: .28; stroke: var(--cw-foe-accent); stroke-width: 1.5; pointer-events: none; }

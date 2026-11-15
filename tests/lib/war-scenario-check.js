@@ -259,6 +259,8 @@ function checkScenario(D) {
         if (def.breach !== undefined) need(Number.isInteger(def.breach) && def.breach >= 1 && def.breach <= Battle.postsOf(def).length, `${at}: breach`);
         // A board is won by a goal, or held (outlast) by its posts.
         need(def.goals.length || (def.outlast && Battle.postsOf(def).length), `${at}: a goal, or a post to outlast with`);
+        // Named ground: tiles of the board, a name.
+        for (const area of def.areas || []) need(area.name && area.tiles.length && area.tiles.every(inside), `${at}: area ${area.name}`);
         // Supply: each side's sources are tiles of the board.
         for (const side of ['player', 'enemy']) for (const src of (def.supply && def.supply[side]) || []) need(inside(src), `${at}: supply source ${src}`);
         for (const [lid, l] of Object.entries(def.lines || {})) {

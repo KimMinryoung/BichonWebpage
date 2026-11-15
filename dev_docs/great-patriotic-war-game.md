@@ -97,7 +97,9 @@
 
 ## 7. 남은 일
 
+- 판 위의 보급선 그림은 넓게 퍼지는 탐색의 길이라 구불거린다. 곧은 길을 고르게 다듬을 수 있다.
 - 전략 층의 다른 길(`war-campaign.js`의 `opposite`·`random` 봇)과 전투의 사람 손 밸런스.
 - 쿠르스크·베를린 전투의 재측정.
 - 지도 위 작전 연출(`map.operations`: 천왕성, 바그라티온), 드네프르 도하 전투, 그림 어휘(카추샤·박격포).
+- 그림: 위키미디어 공용에서 고른 27장 가운데 22장을 받아 넣었다(`public/images/great-patriotic-war/CREDITS.md`, 고른 목록과 스크립트는 `scripts/content/gpw-game/pictures/`). 남은 것: `stalingrad-city`(지금 스탈린그라드 시기·전투는 젤마의 사진 `order227`), `victory-parade`, 포스터 셋. 내려받기가 429에 걸리면 기다린다(우회하지 않는다).
 - 공유 그림(`og-*.jpg`)은 `python3 scripts/war-og-images.py`로 만든다.
