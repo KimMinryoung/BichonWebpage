@@ -176,6 +176,35 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
 - 스타일은 `public/css/commulingo-doc.css`의 `.doc-byline`,
   `.doc-editorial`, `.doc-editorial ul`이 준다. 클래스 이름을 바꾸지 말 것.
 
+### 번역·편집 정보는 entry.bibliography에 (2026-11-20부터)
+
+「번역·편집 정보」의 원본은 entry의 `bibliography` 칸이다(소유자 결정 2026-11-20, 설계
+[`dev_docs/commulingo-doc-bibliography.md`](../../../dev_docs/commulingo-doc-bibliography.md)). 리더가 이 칸으로 접힌 상자를 그려 해제 상자 안에 넣고,
+본문에 남은 `details.doc-edition`은 그 자리에서 대체한다. 새 문서는 본문 해제 상자에 해제 문단만 쓰고
+서지는 `bibliography`에 쓴다. 이전이 끝나기 전까지 본문 상자만 있는 문서도 그대로 보인다.
+
+```json
+"bibliography": { "parts": [
+  { "originalTitle": "…",
+    "created":   { "date": [1914, 2], "text": "1914년 2월~5월" },
+    "published": { "date": [1914], "text": "잡지 『프로스베셰니예』 1914년 제4~6호" },
+    "citation": "원문 서지(예전 entry.source)",
+    "sourceText": ["러시아어 원문. … <a href=\"https://…\">러시아어 위키문헌 전자판</a>"],
+    "translation": ["번역 방법(예전 editorialNotes)"],
+    "translatorNotes": ["주석 체계·생략·표기 원칙"],
+    "notes": ["칸에 맞지 않는 문장"] },
+  { "anchor": "decree-2", "adopted": { "label": "공포", "date": [1918, 1, 26], "text": "1918년 1월 26일" } }
+] }
+```
+
+- 칸: `originalTitle` 원제, `alsoKnownAs` 통칭, `author` 지은이, `created` 집필, `adopted` 채택, `published` 최초 발표,
+  `citation` 원문 서지, `sourceText` 번역 저본, `scope` 번역 범위, `translation` 번역, `translatorNotes` 옮긴이 일러두기,
+  `rights` 저작권, `notes` 자유 문장. **번역 저본은 언제나 넣는다.**
+- 값은 글 하나, 또는 `{ text, label }`(문서가 그 줄을 다르게 부를 때, 예: 「공포」「서명」「출전」). 집필·채택·최초 발표는
+  `date: [연, 월?, 일?]`을 함께 둔다. 화면은 날짜를 글에서 읽지 않는다.
+- 글에는 링크와 강조(`a`, `em`, `i`, `strong`, `cite`, `code`, `sup`, `sub`)만 쓴다. 링크는 http(s)·`/`·`#`.
+- 문헌집: `parts[0]`(anchor 없음)이 문헌 전체, 수록 글은 그 글 제목의 id를 `anchor`로. anchor가 본문 제목 id에 없으면 저장이 거부된다.
+
 문서 안에서 절마다 엮은이가 덧붙이는 말(사료 모음에서 개별 문서 앞에 붙이는
 해제)도 같은 `aside.doc-editorial`을 쓰고, 그 문서의 저본·번역 정보는 같은 상자
 안의 `details.doc-edition`에 접어 둔다 — 문헌 모음은 문헌마다 접힌 상자가 하나씩 있다.

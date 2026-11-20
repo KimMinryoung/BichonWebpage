@@ -42,6 +42,7 @@ function editorialForLanguage(content, lang, scope, html) {
 }
 
 const { linkDocHtml, nestToc, presentDoc, presentedDocList } = require('../data/commulingo/doc-presentation');
+const { applyBibliography } = require('../data/commulingo/doc-bibliography');
 
 // A body the cache does not hold even after a refresh (docs-store
 // loadCommuLingoDocContent) is a passing state, not a broken page: say so
@@ -131,6 +132,11 @@ async function renderDoc(req, res, raw, original) {
     const content = await loadCommuLingoDocContent(raw, { original: Boolean(original) });
     const docLang = original ? original.lang : (raw.docLang || 'ko');
     const pagePath = `/commulingo/docs/${docId}` + (original && !english ? '/original' : '');
+    // The 번역·편집 정보 boxes are drawn from entry.bibliography on the
+    // translation (doc-bibliography.js), after linking: a bibliography line
+    // carries no glossary links. An original keeps its own editor's boxes.
+    const withBibliography = (html, opening) => (original ? html
+        : applyBibliography(html, raw.bibliography, { lang, opening }));
     const linkHtml = (scope, html) => original ? editorialForLanguage(content, english ? 'en' : 'ko', scope, html)
         : linkDocHtml(getCommuLingoDocContent(raw), raw, lang, scope, html);
     // hreflang: the Korean side of a document is its translation, the English
@@ -177,7 +183,7 @@ async function renderDoc(req, res, raw, original) {
         return res.render('public/commulingo-doc', {
             doc,
             bodyTopHtml: paged.titleHtml,
-            bodyRestHtml: await linkHtml('p' + current, page.html),
+            bodyRestHtml: withBibliography(await linkHtml('p' + current, page.html), current === 1),
             // Notes this page calls from other pages, for the footnote popover.
             inlineNotes: original ? '' : page.notes || '',
             toc: nestToc(toc),
@@ -207,7 +213,7 @@ async function renderDoc(req, res, raw, original) {
     res.render('public/commulingo-doc', {
         doc,
         bodyTopHtml,
-        bodyRestHtml: await linkHtml('body', bodyRestHtml),
+        bodyRestHtml: withBibliography(await linkHtml('body', bodyRestHtml), true),
         inlineNotes: '',
         toc: nestToc(toc),
         pagination: null,

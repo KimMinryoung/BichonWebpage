@@ -18,6 +18,7 @@
 // way a DOM round trip would.
 const { parseDocument, DomUtils } = require('htmlparser2');
 const docEntry = require('./doc-entry');
+const { documentPart, missingAnchors } = require('./doc-bibliography');
 
 const AUTO_ATTR = 'data-auto-id';
 
@@ -124,6 +125,7 @@ const ERROR_CODES = {
     'title-not-first': '본문이 제목 h1로 시작하지 않습니다',
     'byline-missing': '제목 바로 아래에 p.doc-byline이 없습니다',
     'editorial-missing': '첫 절 제목 전에 aside.doc-editorial(해제)이 없습니다',
+    'bibliography-anchor-missing': 'entry.bibliography의 anchor가 본문 제목 id에 없습니다(그 글의 번역·편집 정보가 화면에 나오지 않습니다)',
     'duplicate-id': '같은 id가 두 번 이상 쓰였습니다',
     'notes-list-missing': 'section.notes 안의 목록에 class="notes-list"가 없습니다',
     'nested-block': '해제 상자나 주석 묶음이 같은 종류 안에 겹쳐 있습니다',
@@ -135,7 +137,7 @@ const ERROR_CODES = {
     ...docEntry.ERROR_CODES,
 };
 const WARNING_CODES = {
-    'edition-missing': '서두 해제 상자에 details.doc-edition(번역·편집 정보)이 없습니다',
+    'edition-missing': '서두 해제 상자에 details.doc-edition(번역·편집 정보)이 없고 entry.bibliography에도 문헌 부분이 없습니다',
     'hr-after-editorial': '해제 상자 바로 뒤에 <hr>이 있습니다(상자가 경계입니다)',
     'fragment-link-dangling': '본문 안 #링크가 없는 id를 가리킵니다',
     'note-ref-without-id': '주석 번호에 id가 없어 ↩가 돌아올 자리가 없습니다',
@@ -187,7 +189,10 @@ function inspectDocStructure(html, { role = 'translation', entry, known } = {}) 
     if (role === 'translation') {
         if (title && title.name === 'h1' && !(top[1] && top[1].name === 'p' && hasClass(top[1], 'doc-byline'))) add(errors, 'byline-missing');
         if (!editorials.length) add(errors, 'editorial-missing');
-        else if (!DomUtils.findOne(node => node.name === 'details' && hasClass(node, 'doc-edition'), editorials[0].children)) add(warnings, 'edition-missing');
+        // The box may come from entry.bibliography instead (doc-bibliography.js).
+        else if (!documentPart(entry?.bibliography) && !DomUtils.findOne(node => node.name === 'details' && hasClass(node, 'doc-edition'), editorials[0].children)) add(warnings, 'edition-missing');
+        const lost = missingAnchors(entry?.bibliography, headingIds);
+        if (lost.length) add(errors, 'bibliography-anchor-missing', lost.join(', '));
     } else {
         const langs = new Set(editorials.map(node => node.attribs.lang || 'ko'));
         if (editorials.length && !(langs.has('ko') && langs.has('en'))) add(warnings, 'editorial-lang-missing', [...langs].join(','));

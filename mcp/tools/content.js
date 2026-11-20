@@ -180,7 +180,7 @@ const tools = [
         scope: 'edit',
         name: 'doc_put',
         description: 'Create or change one reference document (the store scripts/commulingo-docs put uses): entry replaces the manifest '
-            + 'entry (the stored fields only: title, kind, date, summary, aliases, people, terms, events, excerpts, anchors, noAutoLink, …; '
+            + 'entry (the stored fields only: title, kind, date, summary, aliases, people, terms, events, excerpts, anchors, noAutoLink, bibliography (the 번역·편집 정보 as fields, data/commulingo/docs/README.md), …; '
             + 'not the served id/original/revision), entryPatch changes top-level entry keys (null removes one), body or bodyPath (an .html '
             + 'under content/) replaces the HTML, which is sanitized like an import. An existing document needs expectedRevision from doc_get. Returns the written revision and '
             + 'the person-link audit (mentions, warnings) to check before applying. original sets the source-language text the translation '

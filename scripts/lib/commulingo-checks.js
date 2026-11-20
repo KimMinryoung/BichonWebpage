@@ -456,6 +456,30 @@ function checkChoiceFeedback(out, value, qLabel, choiceCount = 4) {
   });
 }
 
+// Hosts a question's reference may point at: institutional, archival and
+// primary-source sites, the authors' own pages, and journals' DOI pages.
+// Widened 2026-11-20 (owner's decision) so the theory courses can cite the
+// works their questions rest on (scripts/content/source-hosts-20261120/).
+const REFERENCE_HOSTS = new Set([
+    'www.marxists.org', 'www.elysee.fr', 'www.assemblee-nationale.fr', 'www2.assemblee-nationale.fr',
+    'revolution.chnm.org', 'www.revolution.chnm.org', 'files.libcom.org', 'libcom.org', 'heritage.bnf.fr',
+    'www.napoleon.org', 'newleftreview.org', 'www.gallimard.fr', 'plato.stanford.edu', 'theanarchistlibrary.org',
+    'chicagounbound.uchicago.edu', 'bnblegal.com',
+    // 2026-11-20
+    'doi.org', 'www.versobooks.com', 'sites.santafe.edu', 'www.federalreservehistory.org', 'escholarship.org',
+    'publishup.uni-potsdam.de', 'repositorio.cepal.org', 'davidharvey.org', 'www.levyinstitute.org',
+    'socialistregister.com', 'peri.umass.edu', 'thenextrecession.wordpress.com', 'www.workers.org',
+    'www.endnotes.org.uk', 'time.com', 'indiankanoon.org', 'www.hrw.org', 'keywords.keywords2.hosting.nyu.edu',
+]);
+
+function referenceHrefAllowed(href) {
+    if (/^\/commulingo\/docs\/\S+$/.test(href)) return true;
+    if (/\s/.test(href)) return false;
+    let url;
+    try { url = new URL(href); } catch { return false; }
+    return url.protocol === 'https:' && REFERENCE_HOSTS.has(url.hostname) && url.pathname.length > 1 && !url.username && !url.port;
+}
+
 // `source` is the passage the question was drawn from. References may use a
 // site document or one of the explicitly reviewed institutional and primary-source
 // hosts. Quoted passages retain the narrower local-doc or marxists.org policy.
@@ -466,8 +490,7 @@ function checkSource(out, value, qLabel, quoteOptional) {
   const sLabel = qLabel + '.source';
   if (!value || typeof value !== 'object') { out.add('source-shape', qLabel, sLabel + ' must be an object'); return; }
   if (value.kind === 'reference') {
-    const allowed = /^(\/commulingo\/docs\/[^\s]+|https:\/\/(www\.marxists\.org|www\.elysee\.fr|www2?\.assemblee-nationale\.fr|(?:www\.)?revolution\.chnm\.org|files\.libcom\.org|heritage\.bnf\.fr|www\.napoleon\.org|newleftreview\.org|www\.gallimard\.fr|plato\.stanford\.edu|theanarchistlibrary\.org|chicagounbound\.uchicago\.edu|bnblegal\.com)\/[^\s]+)$/;
-    if (!allowed.test(str(value.href))) out.add('source-shape', qLabel, sLabel + '.href is not an approved source URL');
+    if (!referenceHrefAllowed(str(value.href))) out.add('source-shape', qLabel, sLabel + '.href is not an approved source URL');
     allLocalizedText(out, value.label, sLabel + '.label');
     if (typeof value.quote !== 'undefined') out.add('source-shape', qLabel, sLabel + ' reference must not present a paraphrase as a quotation');
     if (typeof value.showFirst !== 'undefined') out.add('source-shape', qLabel, sLabel + '.showFirst needs a quoted passage, not a reference');

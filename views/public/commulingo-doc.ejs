@@ -173,7 +173,9 @@ var normalizeEditorial = function(text) {
 editorialText = normalizeEditorial((editorialText || []).join(' '));
 var extraEditorialNotes = (doc.editorialNotes || '').split(/(?<!No\.)(?<=[.!?])\s+/)
     .filter(function(sentence) { return sentence && !editorialText.includes(normalizeEditorial(sentence)); }).join(' ');
-var showEditorialNotes = extraEditorialNotes && !readingOriginal && (!pagination || pagination.current === 1);
+// A document with entry.bibliography has its box drawn from those fields
+// (doc-bibliography.js); the old notes field is not merged into it.
+var showEditorialNotes = extraEditorialNotes && !doc.bibliography && !readingOriginal && (!pagination || pagination.current === 1);
 // The opening 해제 box carries its own folded 번역·편집 정보; the notes join it
 // there instead of opening a second box.
 var restHtml = bodyRestHtml || '';
@@ -223,7 +225,7 @@ if (showEditorialNotes && editionAt !== -1 && (firstHeading === -1 || editionAt 
     <%- include('../partials/commulingo-doc-page-numbers') %>
 </nav>
 <% } %>
-<% if (doc.source) { %>
+<% if (doc.source && !doc.bibliography) { %>
 <footer class="doc-colophon">
     <p><%= strings.commuLingoViews.doc.source %>: <%= doc.source %></p>
 </footer>

@@ -163,6 +163,10 @@ function canonicalEntry(entry, { defaults = true } = {}) {
     for (const field of ['date', 'updatedAt']) {
         if (entry[field] !== undefined) out[field] = entry[field];
     }
+    // 번역·편집 정보 as fields (doc-bibliography.js); null drops it.
+    if (entry.bibliography !== undefined && entry.bibliography !== null) {
+        out.bibliography = require('./doc-bibliography').normalizeBibliography(entry.bibliography);
+    }
     if (Array.isArray(entry.tocExclude) && entry.tocExclude.length) out.tocExclude = entry.tocExclude.map(String);
     out.people = normalizeRefs(entry.people, 'people');
     const terms = normalizeRefs(entry.terms, 'terms');
@@ -229,6 +233,7 @@ function mergeDocMeta(current, patch = {}, options = {}) {
         kind: langPair(patch.kind, current.kind),
         source: sourceValue(patch.source, current.source),
         tocExclude: patch.tocExclude !== undefined ? patch.tocExclude : current.tocExclude,
+        bibliography: patch.bibliography !== undefined ? patch.bibliography : current.bibliography,
         people: patch.people !== undefined ? patch.people : current.people,
         terms: patch.terms !== undefined ? patch.terms : current.terms,
         events: patch.events !== undefined ? patch.events : current.events,

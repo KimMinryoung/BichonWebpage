@@ -8,8 +8,8 @@
 
 | 단계 | 내용 | 상태 |
 | --- | --- | --- |
-| 1 | 칸 정의, 319편 상자 시험 추출(DB 쓰기 없음), 결정 사항 정리 | 진행 중 |
-| 2 | 코드: entry `bibliography` 저장·검증(`docs-import.js` `canonicalEntry`), 리더가 칸으로 상자를 그림(없으면 본문 상자 그대로), MCP `doc_put` | |
+| 1 | 칸 정의, 319편 상자 시험 추출(DB 쓰기 없음), 결정 사항 정리 | 끝(2026-11-20) |
+| 2 | 코드: entry `bibliography` 저장·검증(`docs-import.js` `canonicalEntry`), 리더가 칸으로 상자를 그림(없으면 본문 상자 그대로), MCP `doc_put` | 커밋(2026-11-20), 배포 전 |
 | 3 | 이전: 묶음별로 칸을 쓰고 본문의 `details.doc-edition`을 지움, 화면 대조 | |
 | 4 | JSON-LD `CreativeWork`, 「이 문헌 인용하기」, `editorialNotes` 칸과 리더의 병합 코드 삭제 | |
 
@@ -62,9 +62,17 @@ entry에 `bibliography`를 둔다. 문헌 전체의 서지는 `parts[0]`(anchor 
 
 칸에 못 넣은 항목명은 대부분 문헌집의 조문·수록 문서별 메모다(「제103조」, 「코민포름 결의」 등). 자유 메모로 둔다.
 
-## 결정할 것
+## 결정 (소유자, 2026-11-20)
 
-1. entry `source`(원문 서지 인용)와 새 `sourceText`(번역 저본 설명)의 관계.
-2. entry `date`를 `bibliography`의 날짜에서 만들지, 따로 둘지.
-3. 문단만 있는 상자 63개를 손으로 칸에 나눌지, 메모로 둘지.
-4. 영어 화면: 상자는 한국어로만 쓰여 있다.
+1. entry `source`는 `bibliography.parts[0].citation`(원문 서지)으로 옮기고 지운다. 리더 아래의 「출처:」 줄은 없앤다(서지가 있는 문서는 2단계부터 안 보임).
+2. entry `date`는 목록용 대표 날짜로 따로 둔다.
+3. 문단만 있는 상자 63개는 `notes`로 옮긴다(화면은 같다).
+4. 영어 화면은 항목명만 영어, 내용은 한국어 그대로. (영어 화면은 원문 리더만 열리므로 번역본 상자가 영어로 나올 일은 적다.)
+5. `editorialNotes` 85편은 `translation`(번역) 칸으로 옮기고, 칸과 리더의 병합 코드는 4단계에서 지운다.
+
+## 구현 (2단계)
+
+- `data/commulingo/doc-bibliography.js`: 검증(`normalizeBibliography`), 상자 그리기(`renderPart`), 페이지 html에 넣기(`applyBibliography`: 문헌 부분은 첫 쪽의 첫 해제 상자, 수록 글은 anchor 제목 뒤 첫 해제 상자; 본문에 남은 `details.doc-edition`은 대체).
+- `docs-import.js` `canonicalEntry`·`mergeDocMeta`가 칸을 저장한다(`null`이면 지움). `doc-structure.js`: 서지가 있으면 `edition-missing` 경고를 내지 않고, 본문 제목에 없는 anchor는 오류(`bibliography-anchor-missing`).
+- `routes/commulingo-docs.js`가 링크를 건 뒤 상자를 넣는다(서지 줄에는 사전 링크를 걸지 않는다). 리더는 서지가 있으면 `editorialNotes` 병합과 「출처:」 줄을 건너뛴다.
+- 테스트 `tests/unit/commulingo-doc-bibliography.js`. 작성 규칙 `data/commulingo/docs/README.md` 「번역·편집 정보는 entry.bibliography에」.
