@@ -94,6 +94,10 @@ console.log('commulingo-doc-bibliography: ok');
     const html = '<aside class="doc-editorial"><p>x</p></aside><h2 id="p2">p</h2><aside class="doc-editorial"><p>y</p></aside>';
     const out = B.applyBibliography(html, bib, { citation: 'C & D' });
     assert.equal((out.match(/doc-edition-cite/g) || []).length, 1);
+    // No document part: the first box still carries the citation.
+    const pieces = B.applyBibliography(html, { parts: [{ anchor: 'p2', sourceText: ['B'] }] }, { citation: 'C' });
+    assert.match(pieces, /^<aside class="doc-editorial"><p>x<\/p><details class="doc-edition">[^]*인용<\/th><td>C<\/td>/);
+    assert.equal((pieces.match(/<details/g) || []).length, 2);
     assert.match(out, /<th scope="row">인용<\/th><td>C &amp; D<\/td>/);
     const ld = B.documentJsonLd({ originalTitle: '<i>Kritik</i>', author: 'Karl Marx', created: { date: [1875, 5], text: '1875년 5월' },
         published: { date: [1891], text: '1891' }, rights: '퍼블릭 도메인' },

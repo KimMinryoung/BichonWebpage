@@ -18,7 +18,7 @@
 // way a DOM round trip would.
 const { parseDocument, DomUtils } = require('htmlparser2');
 const docEntry = require('./doc-entry');
-const { documentPart, missingAnchors, applyBibliography } = require('./doc-bibliography');
+const { missingAnchors, applyBibliography } = require('./doc-bibliography');
 
 const AUTO_ATTR = 'data-auto-id';
 
@@ -137,7 +137,7 @@ const ERROR_CODES = {
     ...docEntry.ERROR_CODES,
 };
 const WARNING_CODES = {
-    'edition-missing': '서두 해제 상자에 details.doc-edition(번역·편집 정보)이 없고 entry.bibliography에도 문헌 부분이 없습니다',
+    'edition-missing': '서두 해제 상자에 details.doc-edition(번역·편집 정보)이 없고 entry.bibliography도 없습니다',
     'hr-after-editorial': '해제 상자 바로 뒤에 <hr>이 있습니다(상자가 경계입니다)',
     'fragment-link-dangling': '본문 안 #링크가 없는 id를 가리킵니다',
     'note-ref-without-id': '주석 번호에 id가 없어 ↩가 돌아올 자리가 없습니다',
@@ -194,7 +194,8 @@ function inspectDocStructure(html, { role = 'translation', entry, known } = {}) 
         if (title && title.name === 'h1' && !(top[1] && top[1].name === 'p' && hasClass(top[1], 'doc-byline'))) add(errors, 'byline-missing');
         if (!editorials.length) add(errors, 'editorial-missing');
         // The box may come from entry.bibliography instead (doc-bibliography.js).
-        else if (!documentPart(entry?.bibliography) && !DomUtils.findOne(node => node.name === 'details' && hasClass(node, 'doc-edition'), editorials[0].children)) add(warnings, 'edition-missing');
+        // A bibliography of pieces only still draws the opening box (its 「인용」 line).
+        else if (!entry?.bibliography?.parts?.length && !DomUtils.findOne(node => node.name === 'details' && hasClass(node, 'doc-edition'), editorials[0].children)) add(warnings, 'edition-missing');
         const lost = missingAnchors(entry?.bibliography, headingIds);
         if (lost.length) add(errors, 'bibliography-anchor-missing', lost.join(', '));
     } else {

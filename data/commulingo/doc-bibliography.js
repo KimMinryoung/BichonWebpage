@@ -230,8 +230,11 @@ function placeBox(aside, box) {
 }
 
 function applyBibliography(html, bibliography, { lang = 'ko', opening = true, role = 'translation', citation = '' } = {}) {
-    const parts = bibliography?.parts;
+    let parts = bibliography?.parts;
     if (!parts?.length || typeof html !== 'string') return html;
+    // A collection whose pieces carry all its lines has no document part; the
+    // opening box still gets the 「인용」 line, drawn from an empty part.
+    if (citation && !parts.some(part => !part.anchor)) parts = [{}, ...parts];
     let out = html;
     for (const part of parts) {
         const box = renderPart(part, lang, role, { citation: part.anchor ? '' : citation });
