@@ -35,6 +35,7 @@ if (env.IS_PRODUCTION) {
     app.set('trust proxy', 1);
 }
 
+app.use(require('./middleware/stall-watch').startStallWatch());
 if (process.env.LOG_REQUESTS === '1') app.use(require('./middleware/request-log').requestLog);
 app.use(require('./middleware/visitor-hash').visitorHash(env.SESSION_SECRET));
 app.use(seo.canonicalHostRedirect);
