@@ -193,6 +193,7 @@ const tools = [
             id: str('Document id'),
             entry: obj('Whole manifest entry (title, kind, date, summary, aliases, people, terms, events, noAutoLink, …)'),
             entryPatch: obj('Top-level entry keys to set (null removes the key)'),
+            entryPatchPath: { ...specPathArg, description: 'Read entryPatch from this JSON file instead (content/<path> or reviews/<path>)' },
             body: str('HTML body', { maxLength: 20000000 }),
             bodyPath: specPathArg,
             expectedRevision: int('Revision from doc_get (required for an existing document)', 0, 100000000),
@@ -207,7 +208,9 @@ const tools = [
             changedBy,
         }, ['id']),
         audit: ({ id, dryRun, changedBy: actor }, client) => ({ command: dryRun === false ? 'apply' : 'dry-run', targetType: 'doc', targetId: id, actor: actor || `mcp:${client}` }),
-        async handler({ id, entry, entryPatch, body, bodyPath, expectedRevision, sortOrder, original, removeOriginal, fullAudit, allowStructureIssues, dryRun = true, note, changedBy: given }, { client }) {
+        async handler({ id, entry, entryPatch: givenPatch, entryPatchPath, body, bodyPath, expectedRevision, sortOrder, original, removeOriginal, fullAudit, allowStructureIssues, dryRun = true, note, changedBy: given }, { client }) {
+            if (givenPatch && entryPatchPath) throw badRequest('pass entryPatch or entryPatchPath, not both');
+            const entryPatch = entryPatchPath ? readSpecJson(entryPatchPath) : givenPatch;
             if (entry && entryPatch) throw badRequest('pass entry or entryPatch, not both');
             if (body !== undefined && bodyPath) throw badRequest('pass body or bodyPath, not both');
             if (original && removeOriginal) throw badRequest('pass original or removeOriginal, not both');
