@@ -18,7 +18,7 @@
 // way a DOM round trip would.
 const { parseDocument, DomUtils } = require('htmlparser2');
 const docEntry = require('./doc-entry');
-const { documentPart, missingAnchors } = require('./doc-bibliography');
+const { documentPart, missingAnchors, applyBibliography } = require('./doc-bibliography');
 
 const AUTO_ATTR = 'data-auto-id';
 
@@ -166,6 +166,10 @@ function inspectDocStructure(html, { role = 'translation', entry, known } = {}) 
     const errors = [];
     const warnings = [];
     const add = (list, code, detail) => list.push({ code, message: detail ? `${(ERROR_CODES[code] || WARNING_CODES[code])}: ${detail}` : (ERROR_CODES[code] || WARNING_CODES[code]) });
+    // Inspect the page as the reader draws it: the 번역·편집 정보 boxes come
+    // from entry.bibliography, and their footnote references carry ids the
+    // notes' back-links point at.
+    if (role === 'translation' && entry?.bibliography) html = applyBibliography(html, entry.bibliography, { lang: 'ko', opening: true });
     const dom = parse(html);
     const root = bodyRoot(dom);
     const all = DomUtils.findAll(() => true, dom.children);
