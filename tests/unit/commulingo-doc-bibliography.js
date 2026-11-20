@@ -63,6 +63,10 @@ const typo = normalizeBibliography({ parts: [{ notes: ['x'] }, { anchor: 'decree
 assert.ok(codes(inspectDocStructure(body, { entry: { bibliography: typo } })).includes('bibliography-anchor-missing'));
 assert.deepEqual(missingAnchors(typo, new Set(['decree-2'])), ['decree-9']);
 
+// Consecutive values with one label share a row, a line each.
+const two = applyBibliography(html, normalizeBibliography({ parts: [{ sourceText: ['판본 A', '판본 B'], rights: 'PD' }] }), { lang: 'ko' });
+assert.match(two, /<tr><th scope="row">번역 저본<\/th><td>판본 A<br>판본 B<\/td><\/tr><tr><th scope="row">저작권<\/th>/);
+
 // A footnote reference inside the box keeps its back-link target.
 const withNote = body.replace('<p>본문</p>', '<p>본문</p><section class="notes"><ol class="notes-list"><li id="note-1"><a class="back-link" href="#ref-1">↩</a> 주</li></ol></section>');
 const noted = normalizeBibliography({ parts: [{ notes: ['저본 설명<a class="note-ref" id="ref-1" href="#note-1">[1]</a>'] }] });

@@ -164,16 +164,21 @@ const valueText = value => (typeof value === 'string' ? value : value.text);
 
 function renderPart(part, lang) {
     const en = lang === 'en';
-    const items = [];
+    // Rows of [label, texts]: values in a row with the label of the row
+    // before it join that row, one line each, so a label is not repeated.
+    const rows = [];
     for (const field of FIELDS) {
         const value = part[field.key];
         if (value === undefined) continue;
         for (const item of field.list ? value : [value]) {
             // A document's own wording is Korean; the English page names the field.
             const label = en ? field.en : (typeof item === 'object' && item.label) || field.ko;
-            items.push(`<tr><th scope="row">${escapeText(label)}</th><td>${valueText(item)}</td></tr>`);
+            const last = rows[rows.length - 1];
+            if (last && last[0] === label) last[1].push(valueText(item));
+            else rows.push([label, [valueText(item)]]);
         }
     }
+    const items = rows.map(([label, texts]) => `<tr><th scope="row">${escapeText(label)}</th><td>${texts.join('<br>')}</td></tr>`);
     const notes = (part.notes || []).map(note => `<p>${note}</p>`).join('');
     // A two-column table (label | text) reads better than 「label: text」 lines
     // when the texts run long (owner, 2026-11-20).
