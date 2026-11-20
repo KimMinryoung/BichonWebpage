@@ -254,10 +254,8 @@ function documentPart(bibliography) {
 
 // How a reader cites the page: its title, the site and its address. The
 // title already names the author (「마르크스, 『고타강령 비판』」).
-function citationText({ title, url, lang = 'ko', original = false }) {
-    const en = lang === 'en';
-    const name = original && !en ? `${title} (원문)` : title;
-    return `${name}. CommuLingo ${en ? 'Reference Library' : '참고 문헌'}. ${url}`;
+function citationText({ title, url, lang = 'ko' }) {
+    return `${title}. CommuLingo ${lang === 'en' ? 'Reference Library' : '참고 문헌'}. ${url}`;
 }
 
 function isoDate(date) {

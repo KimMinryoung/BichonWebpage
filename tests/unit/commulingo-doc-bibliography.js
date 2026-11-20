@@ -88,9 +88,8 @@ console.log('commulingo-doc-bibliography: ok');
 // 「이 문헌 인용하기」 ends the document part's box; pieces get none.
 {
     const B = require('../../data/commulingo/doc-bibliography');
-    const cite = B.citationText({ title: '마르크스, 『고타강령 비판』', url: 'https://cyber-lenin.com/commulingo/docs/x/original', original: true });
-    assert.equal(cite, '마르크스, 『고타강령 비판』 (원문). CommuLingo 참고 문헌. https://cyber-lenin.com/commulingo/docs/x/original');
-    assert.equal(B.citationText({ title: 'Marx, Critique', url: 'u', lang: 'en', original: true }), 'Marx, Critique. CommuLingo Reference Library. u');
+    assert.equal(B.citationText({ title: '마르크스, 『고타강령 비판』', url: 'https://cyber-lenin.com/commulingo/docs/x' }),
+        '마르크스, 『고타강령 비판』. CommuLingo 참고 문헌. https://cyber-lenin.com/commulingo/docs/x');
     const bib = { parts: [{ sourceText: ['A'] }, { anchor: 'p2', sourceText: ['B'] }] };
     const html = '<aside class="doc-editorial"><p>x</p></aside><h2 id="p2">p</h2><aside class="doc-editorial"><p>y</p></aside>';
     const out = B.applyBibliography(html, bib, { citation: 'C & D' });

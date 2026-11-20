@@ -184,7 +184,7 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
 [`dev_docs/commulingo-doc-bibliography.md`](../../../dev_docs/commulingo-doc-bibliography.md)). 리더가 이 칸으로 접힌 상자를 그려 해제 상자 안에 넣고,
 본문에 남은 `details.doc-edition`은 그 자리에서 대체한다. 새 문서는 본문 해제 상자에 해제 문단만 쓰고
 서지는 `bibliography`에 쓴다. 이전이 끝나기 전까지 본문 상자만 있는 문서도 그대로 보인다.
-문헌 부분(anchor 없는 part) 상자의 마지막 줄은 리더가 붙이는 「인용」(Cite as)이다: 「제목. CommuLingo 참고 문헌. 주소」(원문 쪽은 제목 뒤 「(원문)」).
+번역본의 문헌 부분(anchor 없는 part) 상자 마지막 줄은 리더가 붙이는 「인용」이다: 「제목. CommuLingo 참고 문헌. 주소」. 원문 페이지에는 없다(원문은 이 사이트가 아니라 원문 저본의 판본으로 인용한다, 2026-11-20).
 같은 칸으로 페이지 JSON-LD `CreativeWork`(원제→`alternateName`, 지은이→`creditText`, 집필·채택→`dateCreated`, 최초 발표→`datePublished`, 저작권→`copyrightNotice`, 번역↔원문은 `translationOfWork`/`workTranslation`)를 만든다.
 
 ```json

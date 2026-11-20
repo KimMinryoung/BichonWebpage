@@ -140,8 +140,10 @@ async function renderDoc(req, res, raw, original) {
     // language of the 해제 box shown (editorialForLanguage keeps one).
     const pageUrl = seo.absoluteUrl(seo.languagePath(pagePath, res.locals.urlLanguage));
     const bibliography = original ? raw.original.bibliography?.[english ? 'en' : 'ko'] : raw.bibliography;
-    // The document part's box ends with 「이 문헌 인용하기」 (doc-bibliography.js).
-    const citation = citationText({ title: doc.title, url: pageUrl, lang, original: Boolean(original) });
+    // The translation's box ends with 「이 문헌 인용하기」 (doc-bibliography.js).
+    // An original is not cited from this site but from its edition, which its
+    // 원문 저본 line names (owner, 2026-11-20).
+    const citation = original ? '' : citationText({ title: doc.title, url: pageUrl, lang });
     const withBibliography = (html, opening) => applyBibliography(html, bibliography,
         { lang, opening, citation, ...(original ? { role: 'original' } : {}) });
     const linkHtml = (scope, html) => original ? editorialForLanguage(content, english ? 'en' : 'ko', scope, html)
