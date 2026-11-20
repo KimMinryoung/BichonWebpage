@@ -188,7 +188,6 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
   { "originalTitle": "…",
     "created":   { "date": [1914, 2], "text": "1914년 2월~5월" },
     "published": { "date": [1914], "text": "잡지 『프로스베셰니예』 1914년 제4~6호" },
-    "citation": "원문 서지(예전 entry.source)",
     "sourceText": ["러시아어 원문. … <a href=\"https://…\">러시아어 위키문헌 전자판</a>"],
     "translation": ["번역 방법(예전 editorialNotes)"],
     "translatorNotes": ["주석 체계·생략·표기 원칙"],
@@ -198,7 +197,7 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
 ```
 
 - 칸: `originalTitle` 원제, `alsoKnownAs` 통칭, `author` 지은이, `created` 집필, `adopted` 채택, `published` 최초 발표,
-  `citation` 원문 서지, `sourceText` 번역 저본, `scope` 번역 범위, `translation` 번역, `translatorNotes` 옮긴이 일러두기,
+  `sourceText` 번역 저본(원문의 판·권·쪽·출판사, 전자본 링크까지 여기 한 곳에), `scope` 번역 범위, `translation` 번역, `translatorNotes` 옮긴이 일러두기,
   `rights` 저작권, `notes` 자유 문장. **번역 저본은 언제나 넣는다.**
 - 값은 글 하나, 또는 `{ text, label }`(문서가 그 줄을 다르게 부를 때, 예: 「공포」「서명」「출전」). 집필·채택·최초 발표는
   `date: [연, 월?, 일?]`을 함께 둔다. 화면은 날짜를 글에서 읽지 않는다.

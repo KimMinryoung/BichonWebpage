@@ -3,7 +3,7 @@
 // a hand-written <details class="doc-edition"> list in the body, worded
 // differently from document to document, beside a free-text
 // entry.editorialNotes the reader merged in and a bare entry.source line in
-// the colophon. The entry now holds it as fields; the reader draws the box
+// the colophon (folded into the 번역 저본 line when the two were merged). The entry now holds it as fields; the reader draws the box
 // from them (applyBibliography) and the body keeps only the 해제 paragraphs.
 // Design and migration: dev_docs/commulingo-doc-bibliography.md.
 //
@@ -11,7 +11,7 @@
 // own; a collection adds one part per piece, `anchor` naming the id of the
 // heading the piece's 해제 box follows.
 //   part = { anchor?, originalTitle?, alsoKnownAs?, author?, created?,
-//            adopted?, published?, citation?, sourceText?, scope?,
+//            adopted?, published?, sourceText?, scope?,
 //            translation?, translatorNotes?, rights?, notes? }
 // A text is inline HTML (links and emphasis only, see INLINE_TAGS). A field
 // takes a text, or { text, label } when the document words the line its own
@@ -27,7 +27,6 @@ const FIELDS = [
     { key: 'created', ko: '집필', en: 'Written', dated: true },
     { key: 'adopted', ko: '채택', en: 'Adopted', dated: true },
     { key: 'published', ko: '최초 발표', en: 'First published', dated: true },
-    { key: 'citation', ko: '원문 서지', en: 'Original edition' },
     { key: 'sourceText', ko: '번역 저본', en: 'Translated from', list: true },
     { key: 'scope', ko: '번역 범위', en: 'Scope', list: true },
     { key: 'translation', ko: '번역', en: 'Translation', list: true },
@@ -215,7 +214,7 @@ function applyBibliography(html, bibliography, { lang = 'ko', opening = true } =
     return out;
 }
 
-// The document part's citation line, for structured data and the colophon.
+// The document's own part (no anchor), for structured data.
 function documentPart(bibliography) {
     return (bibliography?.parts || []).find(part => !part.anchor) || null;
 }

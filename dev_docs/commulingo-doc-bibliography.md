@@ -9,8 +9,8 @@
 | 단계 | 내용 | 상태 |
 | --- | --- | --- |
 | 1 | 칸 정의, 319편 상자 시험 추출(DB 쓰기 없음), 결정 사항 정리 | 끝(2026-11-20) |
-| 2 | 코드: entry `bibliography` 저장·검증(`docs-import.js` `canonicalEntry`), 리더가 칸으로 상자를 그림(없으면 본문 상자 그대로), MCP `doc_put` | 커밋(2026-11-20), 배포 전 |
-| 3 | 이전: 묶음별로 칸을 쓰고 본문의 `details.doc-edition`을 지움, 화면 대조 | |
+| 2 | 코드: entry `bibliography` 저장·검증(`docs-import.js` `canonicalEntry`), 리더가 칸으로 상자를 그림(없으면 본문 상자 그대로), MCP `doc_put` | 배포(2026-11-20) |
+| 3 | 이전: 묶음별로 칸을 쓰고 본문의 `details.doc-edition`을 지움, 화면 대조 | 진행 중(2026-11-20) |
 | 4 | JSON-LD `CreativeWork`, 「이 문헌 인용하기」, `editorialNotes` 칸과 리더의 병합 코드 삭제 | |
 
 ## 현재 상태 (2026-11-20 조회)
@@ -64,7 +64,7 @@ entry에 `bibliography`를 둔다. 문헌 전체의 서지는 `parts[0]`(anchor 
 
 ## 결정 (소유자, 2026-11-20)
 
-1. entry `source`는 `bibliography.parts[0].citation`(원문 서지)으로 옮기고 지운다. 리더 아래의 「출처:」 줄은 없앤다(서지가 있는 문서는 2단계부터 안 보임).
+1. entry `source`는 지우고 리더 아래의 「출처:」 줄을 없앤다. 처음엔 `citation`(원문 서지) 칸으로 옮겼으나 번역 저본과 겹쳐 칸을 없앴다(소유자, 같은 날): 저본 줄에 없는 세부(서문 필자·판·쪽·전사 출처·번역 기록 등)만 저본 줄 안에 녹이고(`citation-merge-*.out.json`), 저본 줄이 없는 문서는 그 글이 저본 줄이 된다.
 2. entry `date`는 목록용 대표 날짜로 따로 둔다.
 3. 문단만 있는 상자 63개는 `notes`로 옮긴다(화면은 같다).
 4. 영어 화면은 항목명만 영어, 내용은 한국어 그대로. (영어 화면은 원문 리더만 열리므로 번역본 상자가 영어로 나올 일은 적다.)
@@ -76,3 +76,11 @@ entry에 `bibliography`를 둔다. 문헌 전체의 서지는 `parts[0]`(anchor 
 - `docs-import.js` `canonicalEntry`·`mergeDocMeta`가 칸을 저장한다(`null`이면 지움). `doc-structure.js`: 서지가 있으면 `edition-missing` 경고를 내지 않고, 본문 제목에 없는 anchor는 오류(`bibliography-anchor-missing`).
 - `routes/commulingo-docs.js`가 링크를 건 뒤 상자를 넣는다(서지 줄에는 사전 링크를 걸지 않는다). 리더는 서지가 있으면 `editorialNotes` 병합과 「출처:」 줄을 건너뛴다.
 - 테스트 `tests/unit/commulingo-doc-bibliography.js`. 작성 규칙 `data/commulingo/docs/README.md` 「번역·편집 정보는 entry.bibliography에」.
+
+## 이전 (3단계)
+
+- `migrate.py`가 `proposed.json`과 DB 본문(`bodies-*.json`)으로 문서마다 `specs/<id>.json`, `patches/<id>.json`(entryPatch), `bodies/<id>.html`(상자를 지운 본문)을 만든다. 수록 글의 anchor는 본문에서 상자 바로 앞의 id 있는 제목으로 정한다.
+- entry `source`: 저본 줄이 없는 문서는 그 글을 저본 줄로, 있는 문서는 저본 줄에 없는 세부만 손으로 녹인다(서브에이전트, `citation-merge-*.json` → `.out.json`). `editorialNotes`는 상자에 없는 문장만 `translation`으로 옮긴다.
+- 처음 48편은 `citation` 칸이 있는 판으로 들어갔다가 서지만 다시 쓴다(`fix.tsv`).
+- `verify.js`: 검증 통과, 상자 자리(같은 해제 상자), 옛 상자의 글이 새 상자에 다 있는지. 319편 문제 0.
+- 적용은 MCP `doc_put`의 `entryPatchPath`·`bodyPath`로 한 편씩(운영 서버라 순차). 결과는 `apply-log-*.tsv`.
