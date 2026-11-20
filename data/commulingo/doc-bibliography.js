@@ -277,8 +277,10 @@ function documentJsonLd(part, { title, description, url, inLanguage, other = nul
     const data = { '@context': 'https://schema.org', '@type': 'CreativeWork', name: title, url, inLanguage };
     if (description) data.description = description;
     if (part) {
-        const originalTitle = plain(part.originalTitle);
-        if (originalTitle && originalTitle !== title) data.alternateName = originalTitle;
+        // The original-language title only: the box glosses it in Korean
+        // (「… (독일 노동자당 강령에 대한 여백 논평)」), which is not a name.
+        const originalTitle = plain(part.originalTitle).replace(/\s*[(（][^()（）]*[\uac00-\ud7a3][^()（）]*[)）]\s*$/, '');
+        if (originalTitle && originalTitle !== title && !/[\uac00-\ud7a3]/.test(originalTitle)) data.alternateName = originalTitle;
         const author = plain(part.author);
         if (author) data.creditText = author;
         const created = isoDate((part.created || part.adopted)?.date);

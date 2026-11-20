@@ -100,6 +100,8 @@ console.log('commulingo-doc-bibliography: ok');
         published: { date: [1891], text: '1891' }, rights: '퍼블릭 도메인' },
         { title: '고타강령 비판', url: 'u', inLanguage: 'ko', other: { url: 'o', inLanguage: 'de' } });
     assert.equal(ld['@type'], 'CreativeWork');
+    assert.equal(B.documentJsonLd({ originalTitle: 'Randglossen (여백 논평)' }, { title: 't' }).alternateName, 'Randglossen');
+    assert.equal(B.documentJsonLd({ originalTitle: '한국어 제목' }, { title: 't' }).alternateName, undefined);
     assert.equal(ld.alternateName, 'Kritik');
     assert.equal(ld.dateCreated, '1875-05');
     assert.equal(ld.datePublished, '1891');
