@@ -108,7 +108,7 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
 ## 원문 (2026-10-16, 마이그레이션 368)
 
 번역 문헌은 번역 저본인 원문을 `commulingo_doc_originals`에 함께 둔다(문헌 하나에 원문 하나,
-`lang`·`body`·`public`·`rights`·`bibliography`(`source` 칸은 2026-11-20부터 비움), 이전 판은 `commulingo_doc_original_revisions`).
+`lang`·`body`·`public`·`rights`·`bibliography`(옛 `source` 칸은 서지의 원문 저본으로 옮기고 마이그레이션 381에서 지움), 이전 판은 `commulingo_doc_original_revisions`).
 원문은 번역 대조용으로 늘 저장하되, **공개는 저작권이 끝났거나(PD) 공문서·자유 라이선스처럼
 게시 근거가 있는 것만** 한다. `public: true`는 `rights`(게시 근거 한 줄, 예: 「저자 1940년 사망,
 퍼블릭 도메인」)가 없으면 DB가 거부한다.
@@ -119,7 +119,7 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
   바 오른쪽 「원문」/「번역」 칸이 둘을 오간다. 비공개 원문은 서버가 읽지 않는다.
 - 원문의 제목 id는 번역과 맞춘다(모음집이면 각 글 h1의 id를 같게) — 같은 자리를 가리키게 하려는 것.
 - 편집: `scripts/commulingo-docs export <dir> <id>`가 원문이 있으면 `<id>.original.html`과
-  `originals.json`(`lang`·`public`·`rights`·`source`)을 함께 쓴다. 새 원문은 `originals.json`에
+  `originals.json`(`lang`·`public`·`rights`·`bibliography`)을 함께 쓴다. 새 원문은 `originals.json`에
   항목을 더하고 파일을 두면 된다. `put`이 바뀐 원문만 쓰고(리비전 확인), export 때 있던 원문의
   항목을 지우면 원문도 지운다.
 

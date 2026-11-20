@@ -19,7 +19,7 @@
 // happen in writeDocs, the same for every path.
 //
 // Bundle: { docs: [{ id, revision, sortOrder, entry, body }], redirects: { from: { id, anchor } },
-//           originals: { <doc id>: { lang, public, rights, source, revision, body } } }
+//           originals: { <doc id>: { lang, public, rights, bibliography, revision, body } } }
 // Originals (migration 368) ride along: put writes the changed ones (guarded by
 // their exported revision) and removes those that were exported but are no
 // longer in the bundle.
@@ -49,7 +49,7 @@ async function exportDocs(ids) {
     const originals = {};
     for (const row of await readAllOriginalRows()) {
         if (wanted && !wanted.has(row.doc_id)) continue;
-        originals[row.doc_id] = { lang: row.lang, public: row.public, rights: row.rights, source: row.source, revision: row.revision, body: row.body };
+        originals[row.doc_id] = { lang: row.lang, public: row.public, rights: row.rights, bibliography: row.bibliography || null, revision: row.revision, body: row.body };
     }
     return {
         originals,
@@ -105,9 +105,10 @@ async function put(bundle, args) {
             const bodyChanged = !row || sha256(original.body) !== row.body_sha256;
             const body = bodyChanged ? original.body : row.body;
             if (row && !bodyChanged && row.lang === original.lang && row.public === (original.public === true)
-                && row.rights === (original.rights || '').trim() && row.source === (original.source || '').trim()) continue;
+                && row.rights === (original.rights || '').trim()
+                && JSON.stringify(row.bibliography || null) === JSON.stringify(original.bibliography || null)) continue;
             originals.set.push({ docId, lang: original.lang, body, public: original.public === true,
-                rights: original.rights, source: original.source, expectedRevision: row ? row.revision : 0 });
+                rights: original.rights, bibliography: original.bibliography ?? null, expectedRevision: row ? row.revision : 0 });
         }
         for (const docId of bundle.exportedOriginals || []) {
             if (!Object.hasOwn(bundle.originals, docId) && stored.has(docId)) originals.remove.push(docId);
@@ -186,7 +187,7 @@ async function freezeIds(args) {
     for (const row of await readAllOriginalRows()) {
         if (freezeHeadingIds(row.body) === row.body) continue;
         originals.set.push({ docId: row.doc_id, lang: row.lang, body: row.body, public: row.public, rights: row.rights,
-            source: row.source, expectedRevision: row.revision });
+            expectedRevision: row.revision });
     }
     const actor = option(args, '--actor', `commulingo-docs:${process.env.USER || 'cli'}`);
     // Freezing adds ids only; a document already carrying structural errors

@@ -3,7 +3,7 @@
 # database (commulingo_docs), as files. export writes a directory shaped like
 # the old data/commulingo/docs/ (manifest.json + <id>.html, and for a document
 # with a stored original <id>.original.html plus its line in originals.json:
-# lang, public, rights, source); edit it with any
+# lang, public, rights, bibliography); edit it with any
 # tool, then put sends back only what changed. Each document is guarded by the
 # revision it was exported at, so an edit made meanwhile (admin screen, another
 # job) is refused rather than overwritten. Every write keeps the replaced
@@ -50,7 +50,7 @@ for doc_id, original in (bundle.get("originals") or {}).items():
     with open(os.path.join(d, name), "w", encoding="utf-8") as f:
         f.write(original["body"])
     originals[doc_id] = {"file": name, "lang": original["lang"], "public": original["public"],
-                         "rights": original["rights"], "source": original["source"]}
+                         "rights": original["rights"], "bibliography": original.get("bibliography")}
 with open(os.path.join(d, "originals.json"), "w", encoding="utf-8") as f:
     json.dump(originals, f, ensure_ascii=False, indent=2); f.write("\n")
 manifest = {"docs": docs}

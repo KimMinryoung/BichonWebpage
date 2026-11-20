@@ -98,7 +98,7 @@ entry에 `bibliography`를 둔다. 문헌 전체의 서지는 `parts[0]`(anchor 
 - 「인용」 줄: 번역본 문헌 부분 상자의 마지막 행(`citationText`). 원문 페이지에는 두지 않는다(소유자: 원문을 이 사이트에서 인용할 까닭이 없다, 원문 저본 줄이 출처).
 - JSON-LD: 빵부스러기와 함께 `CreativeWork`(`documentJsonLd`).
 - entry `source`·`editorialNotes` 은퇴(`doc-entry.js` `RETIRED_FIELDS`): 저장된 값은 다음 쓰기 때 빠지고 패치에 넣으면 거부. 리더의 병합 코드와 「출처:」 줄(`.doc-colophon`) 삭제.
-- 남은 것: 원문 행의 `source` 열은 모두 빈 값이다. 열을 지우려면 MCP·export(`originals.json`)·`docs-db.js`에서 먼저 빼야 한다(급하지 않음).
+- 원문 행의 `source` 열은 비운 뒤 지웠다(마이그레이션 381, 이력 표는 기록으로 남김). MCP `doc_put`은 `original.source`를 거부하고, `scripts/commulingo-docs` export/put은 `originals.json`에 `bibliography`를 싣는다. entry의 빈 `source` 키도 모든 문서에서 지웠다.
 
 ## 메모(notes) 정리 (2026-11-20)
 

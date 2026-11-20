@@ -257,7 +257,7 @@ const tools = [
         name: 'doc_get',
         description: 'One reference document: its manifest entry (title, aliases, linked people/terms/events, excerpts, modifiedAt) '
             + 'and the stored HTML body as published, with the revision doc_put expects. body: false leaves the HTML out. original describes '
-            + 'the stored original (lang, public, rights, source, bibliography, originalRevision for doc_put); originalBody: true adds its HTML. '
+            + 'the stored original (lang, public, rights, bibliography, originalRevision for doc_put); originalBody: true adds its HTML. '
             + 'headings: true adds every heading [{level, id, text}] (the ids excerpts, anchors and [[doc-excerpt:id#heading]] name); '
             + 'with body: false that is the cheap way to find one.' + VIEW_HINT,
         inputSchema: object({ id: str('Document id'), body: bool('Include the HTML body (default true)'),
@@ -272,7 +272,7 @@ const tools = [
             const row = await readDocRow(id);
             const html = row && body ? row.body : null;
             const orig = await readOriginalRow(id);
-            const original = orig ? { lang: orig.lang, public: orig.public, rights: orig.rights, source: orig.source, bibliography: orig.bibliography || null, bodyChars: orig.body.length,
+            const original = orig ? { lang: orig.lang, public: orig.public, rights: orig.rights, bibliography: orig.bibliography || null, bodyChars: orig.body.length,
                 ...(originalBody ? { html: view.maxChars ? project(orig.body, { maxChars: view.maxChars }) : orig.body } : {}) } : null;
             // The stored outline, or a fresh parse for a row written before it existed.
             const parsed = headings ? (outline?.headings ? outline : (row ? require('../../data/commulingo/doc-outline').buildOutline(row.body) : null)) : null;

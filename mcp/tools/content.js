@@ -198,7 +198,7 @@ const tools = [
             bodyPath: specPathArg,
             expectedRevision: int('Revision from doc_get (required for an existing document)', 0, 100000000),
             sortOrder: int('List position', -1000000, 1000000),
-            original: obj('The original: { lang (2-3 letters), public (needs rights), rights | rightsPath (a text file), source, body | bodyPath (content/<path>.html), '
+            original: obj('The original: { lang (2-3 letters), public (needs rights), rights | rightsPath (a text file), body | bodyPath (content/<path>.html), '
                 + 'bibliography | bibliographyPath ({ko, en} bibliographies for the 원문·편집 정보 box; omitted keeps the stored one, null removes it), '
                 + 'expectedRevision (doc_get originalRevision; required when one is stored) }'),
             removeOriginal: bool('Delete the stored original'),
@@ -246,10 +246,11 @@ const tools = [
                 if (typeof originalHtml !== 'string' || !originalHtml.trim()) throw badRequest('original needs body or bodyPath');
                 if (original.bibliography !== undefined && original.bibliographyPath) throw badRequest('pass original.bibliography or original.bibliographyPath, not both');
                 const originalBibliography = original.bibliographyPath ? readSpecJson(original.bibliographyPath) : original.bibliography;
+                if (original.source !== undefined) throw badRequest('original.source is retired: write the source line into original.bibliography (sourceText)');
                 if (original.rights !== undefined && original.rightsPath) throw badRequest('pass original.rights or original.rightsPath, not both');
                 const originalRights = original.rightsPath ? readSpecFile(original.rightsPath) : original.rights;
                 originals.set.push({ docId: id, lang: original.lang, body: originalHtml, public: original.public === true,
-                    rights: originalRights, source: original.source, bibliography: originalBibliography,
+                    rights: originalRights, bibliography: originalBibliography,
                     expectedRevision: stored ? original.expectedRevision : 0 });
             }
             const actor = actorOf(given, client);
