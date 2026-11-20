@@ -171,11 +171,13 @@ function renderPart(part, lang) {
         for (const item of field.list ? value : [value]) {
             // A document's own wording is Korean; the English page names the field.
             const label = en ? field.en : (typeof item === 'object' && item.label) || field.ko;
-            items.push(`<li>${escapeText(label)}: ${valueText(item)}</li>`);
+            items.push(`<tr><th scope="row">${escapeText(label)}</th><td>${valueText(item)}</td></tr>`);
         }
     }
     const notes = (part.notes || []).map(note => `<p>${note}</p>`).join('');
-    const list = items.length ? `<ul>${items.join('')}</ul>` : '';
+    // A two-column table (label | text) reads better than 「label: text」 lines
+    // when the texts run long (owner, 2026-11-20).
+    const list = items.length ? `<table class="doc-edition-fields"><tbody>${items.join('')}</tbody></table>` : '';
     return `<details class="doc-edition"><summary>${en ? 'Translation and editing' : '번역·편집 정보'}</summary>${notes}${list}</details>`;
 }
 

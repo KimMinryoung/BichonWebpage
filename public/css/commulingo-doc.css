@@ -806,6 +806,40 @@
   margin-bottom: 0;
 }
 
+/* 번역·편집 정보 칸 표(doc-bibliography.js): 왼쪽 항목명, 오른쪽 내용.
+   항목명은 줄바꿈 없이 좁게, 내용은 남은 폭에서 줄바꿈한다. */
+.book .doc-editorial .doc-edition-fields {
+  width: 100%;
+  margin: 0.4em 0 0;
+  border-collapse: collapse;
+  font-size: inherit;
+}
+
+.book .doc-editorial .doc-edition-fields th,
+.book .doc-editorial .doc-edition-fields td {
+  padding: 0.4em 0;
+  border-top: 1px solid var(--border);
+  vertical-align: top;
+  text-align: start;
+}
+
+.book .doc-editorial .doc-edition-fields tr:first-child th,
+.book .doc-editorial .doc-edition-fields tr:first-child td {
+  border-top: 0;
+}
+
+.book .doc-editorial .doc-edition-fields th {
+  width: 1%;
+  padding-right: 0.9em;
+  white-space: nowrap;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.book .doc-editorial .doc-edition-fields td {
+  word-break: break-word;
+}
+
 /* 저본 사본의 결락 표시 — 원문이 아니라 엮은이가 끼운 줄이므로 본문 문단과
    다르게 가운데 정렬하고 엮은이 주와 같은 흐린 색으로 둔다. */
 .book .doc-gap {

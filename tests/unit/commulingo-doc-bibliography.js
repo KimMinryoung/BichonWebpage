@@ -35,15 +35,15 @@ const html = '<aside class="doc-editorial"><p>해제</p><details class="doc-edit
 // The document part replaces the body's own box; the piece's box is added.
 const ko = applyBibliography(html, bibliography, { lang: 'ko' });
 assert.ok(!ko.includes('옛 상자'));
-assert.match(ko, /<details class="doc-edition"><summary>번역·편집 정보<\/summary><p>주석 \[1\]~\[15\]는 원문의 각주다<\/p><ul><li>집필: 1914년 2월~5월<\/li><li>최초 발표: 잡지/);
-assert.match(ko, /둘째 해제<\/p><details class="doc-edition">[^]*<li>공포: 1918년 1월<\/li>[^]*<\/details><\/aside><p>본문/);
-assert.equal((ko.match(/doc-edition/g) || []).length, 2);
+assert.match(ko, /<details class="doc-edition"><summary>번역·편집 정보<\/summary><p>주석 \[1\]~\[15\]는 원문의 각주다<\/p><table class="doc-edition-fields"><tbody><tr><th scope="row">집필<\/th><td>1914년 2월~5월<\/td><\/tr><tr><th scope="row">최초 발표<\/th><td>잡지/);
+assert.match(ko, /둘째 해제<\/p><details class="doc-edition">[^]*<th scope="row">공포<\/th><td>1918년 1월<\/td>[^]*<\/details><\/aside><p>본문/);
+assert.equal((ko.match(/class="doc-edition"/g) || []).length, 2);
 
 // A page without the opening leaves the document part for page 1; English
 // names the fields in English.
 const later = applyBibliography(html, bibliography, { lang: 'en', opening: false });
 assert.ok(later.includes('옛 상자'));
-assert.match(later, /<li>Adopted: 1918년 1월<\/li>/);
+assert.match(later, /<th scope="row">Adopted<\/th><td>1918년 1월<\/td>/);
 assert.equal(applyBibliography(html, undefined), html);
 
 // Entry round trip: stored by canonicalEntry, kept by a patch that does not
