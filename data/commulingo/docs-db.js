@@ -90,6 +90,10 @@ function stableJson(value) {
 function sameStoredEntry(id, entry, storedRow, canonicalized) {
     if (stableJson(entry) === stableJson(storedRow)) return true;
     if (!canonicalized) return false;
+    // A retired key (entry source, editorialNotes) the write leaves out is a
+    // change, so a write can clear it although canonicalizing drops it too.
+    const { RETIRED_FIELDS } = require('./doc-entry');
+    if (RETIRED_FIELDS.some(key => Object.hasOwn(storedRow || {}, key) && !Object.hasOwn(entry, key))) return false;
     try {
         return stableJson(entry) === stableJson(require('./docs-import').canonicalizeStoredEntry(id, storedEntry(storedRow)));
     } catch {
