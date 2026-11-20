@@ -17,16 +17,18 @@
 // takes a text, or { text, label } when the document words the line its own
 // way (「공포」 for a decree the default 「채택」 would misname). Dated fields
 // add `date: [year, month?, day?]`, the structured date the text states; the
-// reader never parses dates out of the text. List fields take several.
+// reader never parses dates out of the text. List fields take several: the
+// dated ones one per piece of a document with n pieces (two letters, two
+// dates; owner, 2026-11-20). A single value stored before then still reads.
 const { badRequest } = require('./people-admin-fields');
 
 const FIELDS = [
     { key: 'originalTitle', ko: '원제', en: 'Original title' },
     { key: 'alsoKnownAs', ko: '통칭', en: 'Also known as' },
     { key: 'author', ko: '지은이', en: 'Author' },
-    { key: 'created', ko: '집필', en: 'Written', dated: true },
-    { key: 'adopted', ko: '채택', en: 'Adopted', dated: true },
-    { key: 'published', ko: '최초 발표', en: 'First published', dated: true },
+    { key: 'created', ko: '집필', en: 'Written', dated: true, list: true },
+    { key: 'adopted', ko: '채택', en: 'Adopted', dated: true, list: true },
+    { key: 'published', ko: '최초 발표', en: 'First published', dated: true, list: true },
     { key: 'sourceText', ko: '번역 저본', en: 'Translated from', list: true },
     { key: 'scope', ko: '번역 범위', en: 'Scope', list: true },
     { key: 'translation', ko: '번역', en: 'Translation', list: true },
@@ -189,7 +191,7 @@ function renderPart(part, lang, role = 'translation', { citation = '' } = {}) {
     for (const field of FIELDS) {
         const value = part[field.key];
         if (value === undefined) continue;
-        for (const item of field.list ? value : [value]) {
+        for (const item of Array.isArray(value) ? value : [value]) {
             // A document's own wording is Korean; the English page names the field.
             const names = (role === 'original' && ORIGINAL_LABELS[field.key]) || field;
             // A translation's texts (and own labels) are Korean, so its English
@@ -281,9 +283,10 @@ function documentJsonLd(part, { title, description, url, inLanguage, other = nul
         if (originalTitle && originalTitle !== title && !/[\uac00-\ud7a3]/.test(originalTitle)) data.alternateName = originalTitle;
         const author = plain(part.author);
         if (author) data.creditText = author;
-        const created = isoDate((part.created || part.adopted)?.date);
+        const first = value => (Array.isArray(value) ? value : value ? [value] : []).find(item => item?.date)?.date;
+        const created = isoDate(first(part.created) || first(part.adopted));
         if (created) data.dateCreated = created;
-        const published = isoDate(part.published?.date);
+        const published = isoDate(first(part.published));
         if (published) data.datePublished = published;
         const rights = plain(part.rights);
         if (rights) data.copyrightNotice = rights;

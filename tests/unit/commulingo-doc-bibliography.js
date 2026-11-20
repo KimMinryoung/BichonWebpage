@@ -14,8 +14,8 @@ const bibliography = normalizeBibliography({ parts: [
 ] });
 
 // Stored in the smallest form: a label equal to the field's own is dropped.
-assert.deepEqual(bibliography.parts[0].published, { text: '잡지 『프로스베셰니예』', date: [1914] });
-assert.equal(bibliography.parts[1].adopted.label, '공포');
+assert.deepEqual(bibliography.parts[0].published, [{ text: '잡지 『프로스베셰니예』', date: [1914] }]);
+assert.equal(bibliography.parts[1].adopted[0].label, '공포');
 
 for (const bad of [
     { parts: [] },
@@ -99,6 +99,12 @@ console.log('commulingo-doc-bibliography: ok');
         published: { date: [1891], text: '1891' }, rights: '퍼블릭 도메인' },
         { title: '고타강령 비판', url: 'u', inLanguage: 'ko', other: { url: 'o', inLanguage: 'de' } });
     assert.equal(ld['@type'], 'CreativeWork');
+    // Dated fields take one value per piece; an older single value still reads.
+    const two = B.normalizeBibliography({ parts: [{ created: [{ text: '런던, 1859년 4월 19일', date: [1859, 4, 19] }, { text: '맨체스터, 1859년 5월 18일', date: [1859, 5, 18] }] }] });
+    assert.equal(two.parts[0].created.length, 2);
+    assert.match(B.renderPart(two.parts[0], 'ko'), /<th scope="row">집필<\/th><td>런던, 1859년 4월 19일<br>맨체스터, 1859년 5월 18일<\/td>/);
+    assert.equal(B.documentJsonLd(two.parts[0], { title: 't' }).dateCreated, '1859-04-19');
+    assert.match(B.renderPart({ created: { text: '옛 값', date: [1900] } }, 'ko'), /<td>옛 값<\/td>/);
     assert.equal(B.documentJsonLd({ originalTitle: 'Randglossen (여백 논평)' }, { title: 't' }).alternateName, 'Randglossen');
     assert.equal(B.documentJsonLd({ originalTitle: '한국어 제목' }, { title: 't' }).alternateName, undefined);
     assert.equal(ld.alternateName, 'Kritik');
