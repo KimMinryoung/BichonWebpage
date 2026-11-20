@@ -73,4 +73,14 @@ const noted = normalizeBibliography({ parts: [{ notes: ['저본 설명<a class="
 assert.ok(!codes(inspectDocStructure(withNote, { entry: { bibliography: noted } })).includes('back-link-dangling'));
 assert.ok(codes(inspectDocStructure(withNote, { entry: {} })).includes('back-link-dangling'));
 
+// A published original: one bibliography per language, original labels.
+const { normalizeOriginalBibliography } = require('../../data/commulingo/doc-bibliography');
+const orig = normalizeOriginalBibliography({ ko: { parts: [{ sourceText: ['MEW 19'], editing: ['1891년 맞춤법 유지'] }] }, en: { parts: [{ sourceText: ['MEW 19'], editing: ['1891 spelling kept'] }] } });
+const origKo = applyBibliography('<aside class="doc-editorial" lang="ko"><p>해제</p></aside>', orig.ko, { lang: 'ko', role: 'original' });
+assert.match(origKo, /<summary>원문·편집 정보<\/summary>[^]*<th scope="row">원문 저본<\/th><td>MEW 19<\/td>[^]*<th scope="row">편집<\/th>/);
+const origEn = applyBibliography('<aside class="doc-editorial" lang="en"><p>Intro</p></aside>', orig.en, { lang: 'en', role: 'original' });
+assert.match(origEn, /<summary>Source and editing<\/summary>[^]*<th scope="row">Source text<\/th>[^]*<td>1891 spelling kept<\/td>/);
+assert.throws(() => normalizeOriginalBibliography({ fr: { parts: [{ notes: ['x'] }] } }), { status: 400 });
+assert.equal(normalizeOriginalBibliography(null), null);
+
 console.log('commulingo-doc-bibliography: ok');

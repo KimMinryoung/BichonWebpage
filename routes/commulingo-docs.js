@@ -134,8 +134,11 @@ async function renderDoc(req, res, raw, original) {
     const pagePath = `/commulingo/docs/${docId}` + (original && !english ? '/original' : '');
     // The 번역·편집 정보 boxes are drawn from entry.bibliography on the
     // translation (doc-bibliography.js), after linking: a bibliography line
-    // carries no glossary links. An original keeps its own editor's boxes.
-    const withBibliography = (html, opening) => (original ? html
+    // carries no glossary links.
+    // The original's 원문·편집 정보 comes from its own bibliography, in the
+    // language of the 해제 box shown (editorialForLanguage keeps one).
+    const withBibliography = (html, opening) => (original
+        ? applyBibliography(html, raw.original.bibliography?.[english ? 'en' : 'ko'], { lang, opening, role: 'original' })
         : applyBibliography(html, raw.bibliography, { lang, opening }));
     const linkHtml = (scope, html) => original ? editorialForLanguage(content, english ? 'en' : 'ko', scope, html)
         : linkDocHtml(getCommuLingoDocContent(raw), raw, lang, scope, html);

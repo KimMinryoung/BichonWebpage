@@ -116,10 +116,10 @@ function documentModifiedAt(doc, bodyUpdatedAt) {
 
 // Snapshot rows: { kind: 'doc', id, sort_order, entry, body_sha256,
 // body_updated_at, revision, outline }, { kind: 'redirect', from_id, to_id, anchor }
-// and { kind: 'original', doc_id, lang, body_sha256, outline } for each public original.
+// and { kind: 'original', doc_id, lang, body_sha256, outline, bibliography } for each public original.
 function install(rows) {
     const originals = new Map(rows.filter(row => row.kind === 'original' && SHA.test(row.body_sha256 || ''))
-        .map(row => [row.doc_id, { lang: row.lang, bodySha256: row.body_sha256, outline: row.outline || null }]));
+        .map(row => [row.doc_id, { lang: row.lang, bodySha256: row.body_sha256, outline: row.outline || null, bibliography: row.bibliography || null }]));
     const docs = rows.filter(row => row.kind === 'doc' && typeof row.id === 'string' && SHA.test(row.body_sha256 || ''))
         .sort((a, b) => a.sort_order - b.sort_order)
         .map(row => ({
@@ -154,7 +154,7 @@ async function fetchRows() {
     const redirects = (await db.query('SELECT from_id, to_id, anchor FROM commulingo_doc_redirects ORDER BY from_id')).rows;
     // Only published originals ever reach the server's snapshot and cache.
     const originals = (await db.query(
-        'SELECT doc_id, lang, body_sha256, outline FROM commulingo_doc_originals WHERE public ORDER BY doc_id')).rows;
+        'SELECT doc_id, lang, body_sha256, outline, bibliography FROM commulingo_doc_originals WHERE public ORDER BY doc_id')).rows;
     const missing = docs.filter(row => !fs.existsSync(bodyPath(row.body_sha256))).map(row => row.body_sha256);
     if (missing.length) {
         const bodies = (await db.query('SELECT body_sha256, body FROM commulingo_docs WHERE body_sha256 = ANY($1)', [missing])).rows;

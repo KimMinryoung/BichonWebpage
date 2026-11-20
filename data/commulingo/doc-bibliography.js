@@ -31,9 +31,14 @@ const FIELDS = [
     { key: 'scope', ko: '번역 범위', en: 'Scope', list: true },
     { key: 'translation', ko: '번역', en: 'Translation', list: true },
     { key: 'translatorNotes', ko: '옮긴이 일러두기', en: "Translator's notes", list: true },
+    // An original's own editing (spelling kept, marks, OCR corrections).
+    { key: 'editing', ko: '편집', en: 'Editing', list: true },
     { key: 'rights', ko: '저작권', en: 'Rights' },
 ];
 const FIELD = new Map(FIELDS.map(field => [field.key, field]));
+// On a published original's page the same fields describe the original text.
+const ORIGINAL_LABELS = { sourceText: { ko: '원문 저본', en: 'Source text' }, scope: { ko: '수록 범위', en: 'Scope' } };
+const SUMMARY = { translation: { ko: '번역·편집 정보', en: 'Translation and editing' }, original: { ko: '원문·편집 정보', en: 'Source and editing' } };
 const PART_KEYS = new Set(['anchor', 'notes', ...FIELD.keys()]);
 
 // Tags a bibliography text may carry, with their attributes. Footnote
@@ -153,6 +158,20 @@ function normalizeBibliography(value) {
     return { parts };
 }
 
+// A published original's bibliography: one per site language, each a
+// bibliography as above whose texts are in that language (labels in English
+// are used only where a value has none of its own).
+function normalizeOriginalBibliography(value) {
+    if (value === undefined || value === null) return null;
+    if (!isObject(value) || !Object.keys(value).length) throw badRequest('original bibliography must be { ko: {parts}, en: {parts} }');
+    const out = {};
+    for (const [lang, bib] of Object.entries(value)) {
+        if (!['ko', 'en'].includes(lang)) throw badRequest(`original bibliography: unknown language ${lang}`);
+        out[lang] = normalizeBibliography(bib);
+    }
+    return out;
+}
+
 // Anchors the parts point at that are not heading ids of the body (a typo
 // would silently drop that piece's box). `headingIds` is a Set.
 function missingAnchors(bibliography, headingIds) {
@@ -162,7 +181,7 @@ function missingAnchors(bibliography, headingIds) {
 const escapeText = text => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const valueText = value => (typeof value === 'string' ? value : value.text);
 
-function renderPart(part, lang) {
+function renderPart(part, lang, role = 'translation') {
     const en = lang === 'en';
     // Rows of [label, texts]: values in a row with the label of the row
     // before it join that row, one line each, so a label is not repeated.
@@ -172,7 +191,12 @@ function renderPart(part, lang) {
         if (value === undefined) continue;
         for (const item of field.list ? value : [value]) {
             // A document's own wording is Korean; the English page names the field.
-            const label = en ? field.en : (typeof item === 'object' && item.label) || field.ko;
+            const names = (role === 'original' && ORIGINAL_LABELS[field.key]) || field;
+            // A translation's texts (and own labels) are Korean, so its English
+            // page names the field; an original's bibliography is written per
+            // language, so its own label stands on either page.
+            const own = typeof item === 'object' && item.label && (role === 'original' || !en) ? item.label : null;
+            const label = own || (en ? names.en : names.ko);
             const last = rows[rows.length - 1];
             if (last && last[0] === label) last[1].push(valueText(item));
             else rows.push([label, [valueText(item)]]);
@@ -183,7 +207,7 @@ function renderPart(part, lang) {
     // A two-column table (label | text) reads better than 「label: text」 lines
     // when the texts run long (owner, 2026-11-20).
     const list = items.length ? `<table class="doc-edition-fields"><tbody>${items.join('')}</tbody></table>` : '';
-    return `<details class="doc-edition"><summary>${en ? 'Translation and editing' : '번역·편집 정보'}</summary>${notes}${list}</details>`;
+    return `<details class="doc-edition"><summary>${SUMMARY[role][en ? 'en' : 'ko']}</summary>${notes}${list}</details>`;
 }
 
 // Puts each part's box into the 해제 box it belongs to in this page's html:
@@ -201,12 +225,12 @@ function placeBox(aside, box) {
     return aside.replace(/<\/aside>$/, () => `${box}</aside>`);
 }
 
-function applyBibliography(html, bibliography, { lang = 'ko', opening = true } = {}) {
+function applyBibliography(html, bibliography, { lang = 'ko', opening = true, role = 'translation' } = {}) {
     const parts = bibliography?.parts;
     if (!parts?.length || typeof html !== 'string') return html;
     let out = html;
     for (const part of parts) {
-        const box = renderPart(part, lang);
+        const box = renderPart(part, lang, role);
         let from = 0;
         if (part.anchor) {
             const heading = out.search(new RegExp(`<h[1-6]\\b[^>]*\\bid="${part.anchor}"`));
@@ -226,4 +250,4 @@ function documentPart(bibliography) {
     return (bibliography?.parts || []).find(part => !part.anchor) || null;
 }
 
-module.exports = { FIELDS, normalizeBibliography, missingAnchors, renderPart, applyBibliography, documentPart, assertInline };
+module.exports = { FIELDS, normalizeBibliography, normalizeOriginalBibliography, missingAnchors, renderPart, applyBibliography, documentPart, assertInline };

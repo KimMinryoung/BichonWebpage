@@ -199,6 +199,7 @@ const tools = [
             expectedRevision: int('Revision from doc_get (required for an existing document)', 0, 100000000),
             sortOrder: int('List position', -1000000, 1000000),
             original: obj('The original: { lang (2-3 letters), public (needs rights), rights, source, body | bodyPath (content/<path>.html), '
+                + 'bibliography | bibliographyPath ({ko, en} bibliographies for the 원문·편집 정보 box; omitted keeps the stored one, null removes it), '
                 + 'expectedRevision (doc_get originalRevision; required when one is stored) }'),
             removeOriginal: bool('Delete the stored original'),
             fullAudit: bool('Return every person mention of the link audit (default: counts and warned links only)'),
@@ -243,8 +244,11 @@ const tools = [
                 if (stored && original.expectedRevision === undefined) throw badRequest('original.expectedRevision is required for a stored original (doc_get returns originalRevision)');
                 const originalHtml = original.bodyPath ? readSpecFile(original.bodyPath) : original.body;
                 if (typeof originalHtml !== 'string' || !originalHtml.trim()) throw badRequest('original needs body or bodyPath');
+                if (original.bibliography !== undefined && original.bibliographyPath) throw badRequest('pass original.bibliography or original.bibliographyPath, not both');
+                const originalBibliography = original.bibliographyPath ? readSpecJson(original.bibliographyPath) : original.bibliography;
                 originals.set.push({ docId: id, lang: original.lang, body: originalHtml, public: original.public === true,
-                    rights: original.rights, source: original.source, expectedRevision: stored ? original.expectedRevision : 0 });
+                    rights: original.rights, source: original.source, bibliography: originalBibliography,
+                    expectedRevision: stored ? original.expectedRevision : 0 });
             }
             const actor = actorOf(given, client);
             const result = await inTransaction(dryRun, c => writeDocs({ upserts: [upsert], originals }, { actor, note: note || 'mcp doc_put', client: c, allowStructureIssues: allowStructureIssues === true }));

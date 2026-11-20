@@ -136,13 +136,15 @@ async function supersedeOriginal(client, row, op, actor, note) {
     await client.query(
         `INSERT INTO commulingo_doc_original_revisions
             (doc_id, revision, lang, body, body_sha256, public, rights, source, updated_at, updated_by,
-             superseded_op, superseded_by, note)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)`,
+             superseded_op, superseded_by, note, bibliography)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14::jsonb)`,
         [row.doc_id, row.revision, row.lang, row.body, row.body_sha256, row.public, row.rights, row.source,
-            row.updated_at, row.updated_by, op, actor, note || null]);
+            row.updated_at, row.updated_by, op, actor, note || null, row.bibliography ? JSON.stringify(row.bibliography) : null]);
 }
 
-// An original (migration 368): { docId, lang, body, public, rights, source, expectedRevision? }.
+// An original (migration 368): { docId, lang, body, public, rights, source, bibliography?, expectedRevision? }.
+// bibliography (migration 380): { ko, en } bibliographies the reader draws the
+// 원문·편집 정보 box from; undefined keeps the stored one, null removes it.
 // A changed body is sanitized here, as a translation's is.
 async function writeOriginal(c, item, actor, note, structureReports) {
     if (!item || typeof item.docId !== 'string' || !ID.test(item.docId)) throw badRequest('original: doc id must be lowercase letters, digits, hyphens');
@@ -152,6 +154,8 @@ async function writeOriginal(c, item, actor, note, structureReports) {
     const isPublic = item.public === true;
     const rights = typeof item.rights === 'string' ? item.rights.trim() : '';
     const source = typeof item.source === 'string' ? item.source.trim() : '';
+    const { normalizeOriginalBibliography } = require('./doc-bibliography');
+    const givenBibliography = item.bibliography === undefined ? undefined : normalizeOriginalBibliography(item.bibliography);
     if (isPublic && !rights) throw badRequest(`${docId}: a public original needs rights (why it may be published)`);
     const current = (await c.query('SELECT * FROM commulingo_doc_originals WHERE doc_id = $1 FOR UPDATE', [docId])).rows[0];
     if (item.expectedRevision !== undefined && (current ? current.revision : 0) !== item.expectedRevision) {
@@ -167,26 +171,29 @@ async function writeOriginal(c, item, actor, note, structureReports) {
     // The outline follows the body (doc-outline.js); an unchanged body keeps a fitting one.
     const outline = current && current.body_sha256 === bodySha && outlineFits(current.outline, bodySha)
         ? current.outline : buildOutline(body, { tocExclude: entry?.tocExclude, bodySha256: bodySha });
+    const bibliography = givenBibliography !== undefined ? givenBibliography : (current?.bibliography || null);
+    const bibliographyJson = bibliography ? JSON.stringify(bibliography) : null;
     if (!current) {
         const revision = (await c.query(
             'SELECT COALESCE(MAX(revision), 0) + 1 AS n FROM commulingo_doc_original_revisions WHERE doc_id = $1', [docId])).rows[0].n;
         await c.query(
-            `INSERT INTO commulingo_doc_originals (doc_id, lang, body, body_sha256, public, rights, source, revision, updated_by, created_by, outline)
-             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $9, $10::jsonb)`,
-            [docId, item.lang, body, bodySha, isPublic, rights, source, revision, actor, JSON.stringify(outline)]);
+            `INSERT INTO commulingo_doc_originals (doc_id, lang, body, body_sha256, public, rights, source, revision, updated_by, created_by, outline, bibliography)
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $9, $10::jsonb, $11::jsonb)`,
+            [docId, item.lang, body, bodySha, isPublic, rights, source, revision, actor, JSON.stringify(outline), bibliographyJson]);
         return { id: docId, revision, op: 'insert' };
     }
     if (current.body_sha256 === bodySha && current.lang === item.lang && current.public === isPublic
-        && current.rights === rights && current.source === source) {
+        && current.rights === rights && current.source === source
+        && JSON.stringify(current.bibliography || null) === JSON.stringify(bibliography)) {
         return { id: docId, revision: current.revision, op: 'unchanged' };
     }
     await supersedeOriginal(c, current, 'update', actor, note);
     await c.query(
         `UPDATE commulingo_doc_originals
             SET lang = $2, body = $3, body_sha256 = $4, public = $5, rights = $6, source = $7,
-                revision = revision + 1, updated_at = NOW(), updated_by = $8, outline = $9::jsonb
+                revision = revision + 1, updated_at = NOW(), updated_by = $8, outline = $9::jsonb, bibliography = $10::jsonb
           WHERE doc_id = $1`,
-        [docId, item.lang, body, bodySha, isPublic, rights, source, actor, JSON.stringify(outline)]);
+        [docId, item.lang, body, bodySha, isPublic, rights, source, actor, JSON.stringify(outline), bibliographyJson]);
     return { id: docId, revision: current.revision + 1, op: 'update' };
 }
 
