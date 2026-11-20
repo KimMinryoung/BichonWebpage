@@ -12,13 +12,16 @@
 const { docKind } = require('./doc-kinds');
 
 // Fields canonicalEntry writes.
-const CANONICAL_FIELDS = ['id', 'docLang', 'title', 'description', 'summary', 'editorialNotes', 'kind', 'source', 'linkExpressions',
+const CANONICAL_FIELDS = ['id', 'docLang', 'title', 'description', 'summary', 'kind', 'linkExpressions',
     'aliases', 'noAutoLink', 'date', 'updatedAt', 'tocExclude', 'people', 'terms', 'events', 'addedAt', 'personLinks', 'bibliography'];
 // Fields the README documents that canonicalEntry leaves as they are
 // (mergeDocMeta keeps them across a PATCH): excerpts lent to entry pages,
 // anchored aliases, and a collection's member list.
 const KEPT_FIELDS = ['excerpts', 'anchors', 'members'];
-const ENTRY_FIELDS = new Set([...CANONICAL_FIELDS, ...KEPT_FIELDS]);
+// Fields moved into entry.bibliography (2026-11-20). A stored entry may still
+// carry one until its next write, which drops it; a patch naming one is refused.
+const RETIRED_FIELDS = ['source', 'editorialNotes'];
+const ENTRY_FIELDS = new Set([...CANONICAL_FIELDS, ...KEPT_FIELDS, ...RETIRED_FIELDS]);
 
 const ID = /^[a-z0-9-]+$/;
 const DATE = /^\d{4}(?:-\d{2}(?:-\d{2})?)?$/;
@@ -111,4 +114,4 @@ function inspectDocRefs(entry, known) {
     return { errors, warnings: [] };
 }
 
-module.exports = { CANONICAL_FIELDS, KEPT_FIELDS, ENTRY_FIELDS, ERROR_CODES, inspectDocEntry, inspectDocRefs, entryRefs };
+module.exports = { RETIRED_FIELDS, CANONICAL_FIELDS, KEPT_FIELDS, ENTRY_FIELDS, ERROR_CODES, inspectDocEntry, inspectDocRefs, entryRefs };

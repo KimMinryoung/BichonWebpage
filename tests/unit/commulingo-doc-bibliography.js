@@ -84,3 +84,25 @@ assert.throws(() => normalizeOriginalBibliography({ fr: { parts: [{ notes: ['x']
 assert.equal(normalizeOriginalBibliography(null), null);
 
 console.log('commulingo-doc-bibliography: ok');
+
+// 「이 문헌 인용하기」 ends the document part's box; pieces get none.
+{
+    const B = require('../../data/commulingo/doc-bibliography');
+    const cite = B.citationText({ title: '마르크스, 『고타강령 비판』', url: 'https://cyber-lenin.com/commulingo/docs/x/original', original: true });
+    assert.equal(cite, '마르크스, 『고타강령 비판』 (원문). CommuLingo 참고 문헌. https://cyber-lenin.com/commulingo/docs/x/original');
+    assert.equal(B.citationText({ title: 'Marx, Critique', url: 'u', lang: 'en', original: true }), 'Marx, Critique. CommuLingo Reference Library. u');
+    const bib = { parts: [{ sourceText: ['A'] }, { anchor: 'p2', sourceText: ['B'] }] };
+    const html = '<aside class="doc-editorial"><p>x</p></aside><h2 id="p2">p</h2><aside class="doc-editorial"><p>y</p></aside>';
+    const out = B.applyBibliography(html, bib, { citation: 'C & D' });
+    assert.equal((out.match(/doc-edition-cite/g) || []).length, 1);
+    assert.match(out, /<th scope="row">인용<\/th><td>C &amp; D<\/td>/);
+    const ld = B.documentJsonLd({ originalTitle: '<i>Kritik</i>', author: 'Karl Marx', created: { date: [1875, 5], text: '1875년 5월' },
+        published: { date: [1891], text: '1891' }, rights: '퍼블릭 도메인' },
+        { title: '고타강령 비판', url: 'u', inLanguage: 'ko', other: { url: 'o', inLanguage: 'de' } });
+    assert.equal(ld['@type'], 'CreativeWork');
+    assert.equal(ld.alternateName, 'Kritik');
+    assert.equal(ld.dateCreated, '1875-05');
+    assert.equal(ld.datePublished, '1891');
+    assert.deepEqual(ld.translationOfWork, { '@type': 'CreativeWork', url: 'o', inLanguage: 'de' });
+    assert.equal(B.documentJsonLd(null, { title: 't', url: 'u', inLanguage: 'de', other: { url: 'k' }, isOriginal: true }).workTranslation.url, 'k');
+}

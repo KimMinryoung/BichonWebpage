@@ -10,8 +10,8 @@
 | --- | --- | --- |
 | 1 | 칸 정의, 319편 상자 시험 추출(DB 쓰기 없음), 결정 사항 정리 | 끝(2026-11-20) |
 | 2 | 코드: entry `bibliography` 저장·검증(`docs-import.js` `canonicalEntry`), 리더가 칸으로 상자를 그림(없으면 본문 상자 그대로), MCP `doc_put` | 배포(2026-11-20) |
-| 3 | 이전: 묶음별로 칸을 쓰고 본문의 `details.doc-edition`을 지움, 화면 대조 | 진행 중(2026-11-20) |
-| 4 | JSON-LD `CreativeWork`, 「이 문헌 인용하기」, `editorialNotes` 칸과 리더의 병합 코드 삭제 | |
+| 3 | 이전: 묶음별로 칸을 쓰고 본문의 `details.doc-edition`을 지움, 화면 대조. 공개 원문 309편도 같은 방식(원문 행 `bibliography`) | 끝(2026-11-20) |
+| 4 | JSON-LD `CreativeWork`, 「이 문헌 인용하기」, `editorialNotes`·`source` 칸과 리더의 병합 코드 삭제 | 코드 끝(2026-11-20) |
 
 ## 현재 상태 (2026-11-20 조회)
 
@@ -84,3 +84,18 @@ entry에 `bibliography`를 둔다. 문헌 전체의 서지는 `parts[0]`(anchor 
 - 처음 48편은 `citation` 칸이 있는 판으로 들어갔다가 서지만 다시 쓴다(`fix.tsv`).
 - `verify.js`: 검증 통과, 상자 자리(같은 해제 상자), 옛 상자의 글이 새 상자에 다 있는지. 319편 문제 0.
 - 적용은 MCP `doc_put`의 `entryPatchPath`·`bodyPath`로 한 편씩(운영 서버라 순차). 결과는 `apply-log-*.tsv`.
+
+## 원문 서지 (3단계 이어서, 2026-11-20)
+
+- 소유자 결정: 공개 원문 페이지의 「원문·편집 정보」도 같은 방식으로. 원문 행에 언어별 `bibliography`(`{ko, en}`, 마이그레이션 380), 칸 `sourceText`(원문 저본)·`scope`(수록 범위)·`editing`(편집)·`rights`. 원문 행의 `source` 줄글은 원문 저본 칸에 녹이고 비웠다. `rights` 칸(행)은 공개 판단에 쓰여 남긴다.
+- 서브에이전트 3묶음(`ORIGINAL-BRIEF.md`, `orig-{1,2,3}.out.json`)이 상자 627개와 `source`를 칸으로 나눴다. 적용 `orig-apply-log.tsv`.
+- 사고: 적용 에이전트가 저작권 문구를 손으로 다시 쳐 25편의 드문 음절이 깨졌다(셰→셜 등). `doc_put`에 `original.rightsPath`를 더해(147a15cb) 파일 그대로 다시 썼고, 309편 전부 원본과 일치를 확인했다. 앞으로 비ASCII 글은 늘 파일 경로로 넘긴다.
+- 링크 글자에 이미 사이트 이름이 있으면 괄호 도메인을 뺐다(원문 135·번역 8편).
+- 공개 결정 주체 「소유자」→「비숑」(영어 Bichon) 표기로 바꿨다(소유자 지시, 원문 56·번역 3편, `bichon.py`).
+
+## 4단계 (2026-11-20)
+
+- 「인용」 줄: 문헌 부분 상자의 마지막 행(`citationText`), 원문 쪽은 제목 뒤 「(원문)」.
+- JSON-LD: 빵부스러기와 함께 `CreativeWork`(`documentJsonLd`).
+- entry `source`·`editorialNotes` 은퇴(`doc-entry.js` `RETIRED_FIELDS`): 저장된 값은 다음 쓰기 때 빠지고 패치에 넣으면 거부. 리더의 병합 코드와 「출처:」 줄(`.doc-colophon`) 삭제.
+- 남은 것: 원문 행의 `source` 열은 모두 빈 값이다. 열을 지우려면 MCP·export(`originals.json`)·`docs-db.js`에서 먼저 빼야 한다(급하지 않음).

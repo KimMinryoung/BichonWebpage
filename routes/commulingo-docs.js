@@ -42,7 +42,8 @@ function editorialForLanguage(content, lang, scope, html) {
 }
 
 const { linkDocHtml, nestToc, presentDoc, presentedDocList } = require('../data/commulingo/doc-presentation');
-const { applyBibliography } = require('../data/commulingo/doc-bibliography');
+const { applyBibliography, citationText, documentJsonLd, documentPart } = require('../data/commulingo/doc-bibliography');
+const seo = require('../utils/seo');
 
 // A body the cache does not hold even after a refresh (docs-store
 // loadCommuLingoDocContent) is a passing state, not a broken page: say so
@@ -137,9 +138,12 @@ async function renderDoc(req, res, raw, original) {
     // carries no glossary links.
     // The original's 원문·편집 정보 comes from its own bibliography, in the
     // language of the 해제 box shown (editorialForLanguage keeps one).
-    const withBibliography = (html, opening) => (original
-        ? applyBibliography(html, raw.original.bibliography?.[english ? 'en' : 'ko'], { lang, opening, role: 'original' })
-        : applyBibliography(html, raw.bibliography, { lang, opening }));
+    const pageUrl = seo.absoluteUrl(seo.languagePath(pagePath, res.locals.urlLanguage));
+    const bibliography = original ? raw.original.bibliography?.[english ? 'en' : 'ko'] : raw.bibliography;
+    // The document part's box ends with 「이 문헌 인용하기」 (doc-bibliography.js).
+    const citation = citationText({ title: doc.title, url: pageUrl, lang, original: Boolean(original) });
+    const withBibliography = (html, opening) => applyBibliography(html, bibliography,
+        { lang, opening, citation, ...(original ? { role: 'original' } : {}) });
     const linkHtml = (scope, html) => original ? editorialForLanguage(content, english ? 'en' : 'ko', scope, html)
         : linkDocHtml(getCommuLingoDocContent(raw), raw, lang, scope, html);
     // hreflang: the Korean side of a document is its translation, the English
@@ -158,10 +162,18 @@ async function renderDoc(req, res, raw, original) {
         // that version has no outline yet.
         switchTo.anchors = getCommuLingoDocVersionAnchors(raw, { original: !original });
     }
-    const jsonLd = commuLingoBreadcrumb(lang, [
+    // The other version: the original a translation renders, or the
+    // translation of an original (both addressed by their Korean pages).
+    const otherVersion = original
+        ? { url: seo.absoluteUrl(`/commulingo/docs/${docId}`), inLanguage: raw.docLang || 'ko' }
+        : raw.original ? { url: seo.absoluteUrl(`/commulingo/docs/${docId}/original`), inLanguage: raw.original.lang } : null;
+    const jsonLd = seo.graphJsonLd(commuLingoBreadcrumb(lang, [
         { name: lang === 'en' ? 'Reference Library' : '참고 문헌', href: '/commulingo/docs' },
         { name: doc.title, href: pagePath },
-    ], res.locals.urlLanguage);
+    ], res.locals.urlLanguage), documentJsonLd(documentPart(bibliography), {
+        title: doc.title, description: doc.description, url: pageUrl, inLanguage: docLang,
+        other: otherVersion, isOriginal: Boolean(original), publisherId: `${seo.SITE_ORIGIN}/#organization`,
+    }));
     // The charts that carry this document as a node, so the reader can walk
     // back out to where the text sits in the story. The forward direction
     // (a chart node pointing at a document) is a `doc` ref in the chart JSON.

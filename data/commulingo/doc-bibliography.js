@@ -181,7 +181,7 @@ function missingAnchors(bibliography, headingIds) {
 const escapeText = text => String(text).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const valueText = value => (typeof value === 'string' ? value : value.text);
 
-function renderPart(part, lang, role = 'translation') {
+function renderPart(part, lang, role = 'translation', { citation = '' } = {}) {
     const en = lang === 'en';
     // Rows of [label, texts]: values in a row with the label of the row
     // before it join that row, one line each, so a label is not repeated.
@@ -203,6 +203,8 @@ function renderPart(part, lang, role = 'translation') {
         }
     }
     const items = rows.map(([label, texts]) => `<tr><th scope="row">${escapeText(label)}</th><td>${texts.join('<br>')}</td></tr>`);
+    // 「이 문헌 인용하기」: the page as a reader would cite it, plain text.
+    if (citation) items.push(`<tr class="doc-edition-cite"><th scope="row">${en ? 'Cite as' : '인용'}</th><td>${escapeText(citation)}</td></tr>`);
     const notes = (part.notes || []).map(note => `<p>${note}</p>`).join('');
     // A two-column table (label | text) reads better than 「label: text」 lines
     // when the texts run long (owner, 2026-11-20).
@@ -225,12 +227,12 @@ function placeBox(aside, box) {
     return aside.replace(/<\/aside>$/, () => `${box}</aside>`);
 }
 
-function applyBibliography(html, bibliography, { lang = 'ko', opening = true, role = 'translation' } = {}) {
+function applyBibliography(html, bibliography, { lang = 'ko', opening = true, role = 'translation', citation = '' } = {}) {
     const parts = bibliography?.parts;
     if (!parts?.length || typeof html !== 'string') return html;
     let out = html;
     for (const part of parts) {
-        const box = renderPart(part, lang, role);
+        const box = renderPart(part, lang, role, { citation: part.anchor ? '' : citation });
         let from = 0;
         if (part.anchor) {
             const heading = out.search(new RegExp(`<h[1-6]\\b[^>]*\\bid="${part.anchor}"`));
@@ -250,4 +252,45 @@ function documentPart(bibliography) {
     return (bibliography?.parts || []).find(part => !part.anchor) || null;
 }
 
-module.exports = { FIELDS, normalizeBibliography, normalizeOriginalBibliography, missingAnchors, renderPart, applyBibliography, documentPart, assertInline };
+// How a reader cites the page: its title, the site and its address. The
+// title already names the author (「마르크스, 『고타강령 비판』」).
+function citationText({ title, url, lang = 'ko', original = false }) {
+    const en = lang === 'en';
+    const name = original && !en ? `${title} (원문)` : title;
+    return `${name}. CommuLingo ${en ? 'Reference Library' : '참고 문헌'}. ${url}`;
+}
+
+function isoDate(date) {
+    if (!Array.isArray(date) || !date.length) return undefined;
+    return date.map((n, i) => String(n).padStart(i ? 2 : 4, '0')).join('-');
+}
+
+function plain(text) {
+    const value = typeof text === 'object' && text ? text.text : text;
+    return typeof value === 'string' ? value.replace(/<[^>]*>/g, '').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&').trim() : '';
+}
+
+// schema.org CreativeWork for a reader page, from the document part of the
+// bibliography it shows. `work` is the page's own text; `other` the version it
+// is a translation of (translation page) or that translates it (original page).
+function documentJsonLd(part, { title, description, url, inLanguage, other = null, isOriginal = false, publisherId }) {
+    const data = { '@context': 'https://schema.org', '@type': 'CreativeWork', name: title, url, inLanguage };
+    if (description) data.description = description;
+    if (part) {
+        const originalTitle = plain(part.originalTitle);
+        if (originalTitle && originalTitle !== title) data.alternateName = originalTitle;
+        const author = plain(part.author);
+        if (author) data.creditText = author;
+        const created = isoDate((part.created || part.adopted)?.date);
+        if (created) data.dateCreated = created;
+        const published = isoDate(part.published?.date);
+        if (published) data.datePublished = published;
+        const rights = plain(part.rights);
+        if (rights) data.copyrightNotice = rights;
+    }
+    if (publisherId) data.publisher = { '@id': publisherId };
+    if (other) data[isOriginal ? 'workTranslation' : 'translationOfWork'] = { '@type': 'CreativeWork', url: other.url, inLanguage: other.inLanguage };
+    return data;
+}
+
+module.exports = { citationText, documentJsonLd, FIELDS, normalizeBibliography, normalizeOriginalBibliography, missingAnchors, renderPart, applyBibliography, documentPart, assertInline };

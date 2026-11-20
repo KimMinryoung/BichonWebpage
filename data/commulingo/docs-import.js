@@ -93,16 +93,6 @@ function langPair(value, fallback) {
     };
 }
 
-// A source line is a plain string when one wording serves both languages (a
-// bare citation), or { ko, en } when it carries prose of the edition's own. A
-// patch naming one language keeps the other, and a string being split becomes
-// the Korean wording: that is the language those strings were written in.
-function sourceValue(value, current) {
-    if (typeof value === 'string') return value;
-    if (!value || typeof value !== 'object') return current || '';
-    return langPair(value, typeof current === 'string' ? { ko: current, en: '' } : current);
-}
-
 // People, terms and events are stored as bare dictionary ids. A name sent along
 // with one ({ id, name }) is accepted and dropped: the dictionaries own their
 // headwords and the reader gets them from there (docs-refs.js), so a copy kept
@@ -121,6 +111,7 @@ function normalizeRefs(refs, label) {
 // Canonical field order for manifest entries, applied on every write
 // (doc-entry.js also lists the fields kept as they are).
 const CANONICAL_FIELDS = new Set(require('./doc-entry').CANONICAL_FIELDS);
+const { RETIRED_FIELDS } = require('./doc-entry');
 
 // `defaults: false` leaves `addedAt` alone when the entry has none: an entry
 // being re-stored is not being added today, and the updates feed reads that
@@ -132,7 +123,6 @@ function canonicalEntry(entry, { defaults = true } = {}) {
         title: langPair(entry.title),
         description: langPair(entry.description),
         kind: langPair(entry.kind, { ko: '이론·논설', en: 'Theory & essays' }),
-        source: sourceValue(entry.source),
     };
     if (entry.summary !== undefined) {
         out.summary = langPair(entry.summary);
@@ -141,8 +131,7 @@ function canonicalEntry(entry, { defaults = true } = {}) {
             if ([...out.summary[lang]].length > limit) throw badRequest(`summary.${lang} must be at most ${limit} characters`);
         }
     }
-    if (entry.editorialNotes !== undefined) out.editorialNotes = langPair(entry.editorialNotes);
-    normalizeKoreanFields(out, ['title', 'description', 'summary', 'editorialNotes']);
+    normalizeKoreanFields(out, ['title', 'description', 'summary']);
     for (const lang of ['ko', 'en']) assertHeadword(out.title[lang], `title.${lang}`, { allowEmpty: lang === 'en' });
     if (entry.linkExpressions !== undefined) {
         assertLinkExpressions(entry.linkExpressions);
@@ -217,6 +206,11 @@ async function importDoc({ rawHtml, id, dryRun, force, overrides = {}, actor = '
 // Merge metadata into an entry. {ko,en} fields merge per-language;
 // people/tocExclude replace wholesale when provided. Pure: callers persist.
 function mergeDocMeta(current, patch = {}, options = {}) {
+    // Both moved into entry.bibliography (2026-11-20, doc-bibliography.js):
+    // the source citation into its 번역 저본 line, the notes into 번역.
+    for (const gone of RETIRED_FIELDS) {
+        if (patch[gone] !== undefined) throw badRequest(`entry.${gone} is retired; write it into entry.bibliography`);
+    }
     const merged = canonicalEntry({
         ...current,
         linkExpressions: patch.linkExpressions !== undefined ? patch.linkExpressions : current.linkExpressions,
@@ -229,9 +223,7 @@ function mergeDocMeta(current, patch = {}, options = {}) {
         title: langPair(patch.title, current.title),
         description: langPair(patch.description, current.description),
         summary: patch.summary !== undefined ? langPair(patch.summary, current.summary) : current.summary,
-        editorialNotes: patch.editorialNotes !== undefined ? langPair(patch.editorialNotes, current.editorialNotes) : current.editorialNotes,
         kind: langPair(patch.kind, current.kind),
-        source: sourceValue(patch.source, current.source),
         tocExclude: patch.tocExclude !== undefined ? patch.tocExclude : current.tocExclude,
         bibliography: patch.bibliography !== undefined ? patch.bibliography : current.bibliography,
         people: patch.people !== undefined ? patch.people : current.people,
@@ -245,7 +237,7 @@ function mergeDocMeta(current, patch = {}, options = {}) {
     const entry = {};
     for (const key of Object.keys(current)) {
         if (Object.hasOwn(merged, key)) entry[key] = merged[key];
-        else if (!CANONICAL_FIELDS.has(key) && key !== 'file') entry[key] = current[key];
+        else if (!CANONICAL_FIELDS.has(key) && !RETIRED_FIELDS.includes(key) && key !== 'file') entry[key] = current[key];
     }
     for (const key of Object.keys(merged)) if (!Object.hasOwn(entry, key)) entry[key] = merged[key];
     return entry;

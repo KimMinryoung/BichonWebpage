@@ -401,19 +401,6 @@
   white-space: nowrap;
 }
 
-.doc-colophon {
-  margin-top: clamp(2rem, 5vw, 3rem);
-  padding-top: 1rem;
-  border-top: 1px solid var(--border);
-  font-size: var(--text-sm);
-  line-height: var(--leading-relaxed);
-  color: var(--text-muted);
-}
-
-.doc-colophon p {
-  margin: 0 0 0.35rem;
-}
-
 /* Table of contents (auto-built from h1/h2 by docs-store; slots in after the
    title). Bordered-box idiom shared with the rest of the site. */
 /* This is a <nav>, so it picks up the sticky rule in style.css and pins to the
@@ -596,7 +583,6 @@
 }
 
 @media print {
-  .doc-colophon,
   .doc-toc {
     display: none;
   }

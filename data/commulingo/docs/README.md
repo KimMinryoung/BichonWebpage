@@ -108,10 +108,11 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
 ## 원문 (2026-10-16, 마이그레이션 368)
 
 번역 문헌은 번역 저본인 원문을 `commulingo_doc_originals`에 함께 둔다(문헌 하나에 원문 하나,
-`lang`·`body`·`public`·`rights`·`source`, 이전 판은 `commulingo_doc_original_revisions`).
+`lang`·`body`·`public`·`rights`·`bibliography`(`source` 칸은 2026-11-20부터 비움), 이전 판은 `commulingo_doc_original_revisions`).
 원문은 번역 대조용으로 늘 저장하되, **공개는 저작권이 끝났거나(PD) 공문서·자유 라이선스처럼
 게시 근거가 있는 것만** 한다. `public: true`는 `rights`(게시 근거 한 줄, 예: 「저자 1940년 사망,
-퍼블릭 도메인」)가 없으면 DB가 거부한다. 저작권이 살아 있는 책(현대 연구서·전기)의 원문은
+퍼블릭 도메인」)가 없으면 DB가 거부한다.
+공개 결정을 적을 때 결정한 사람은 「소유자」가 아니라 사이트 운영자의 공식명으로 「비숑 결정(날짜)」, 영어 「Bichon’s decision」이라 쓴다(2026-11-20). 저작권이 살아 있는 책(현대 연구서·전기)의 원문은
 `public: false`로만 저장한다.
 
 - 공개된 원문만 서버 스냅숏에 들어가고 `/commulingo/docs/<id>/original`로 서빙된다. 리더 컨트롤
@@ -122,7 +123,8 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
   항목을 더하고 파일을 두면 된다. `put`이 바뀐 원문만 쓰고(리비전 확인), export 때 있던 원문의
   항목을 지우면 원문도 지운다.
 
-- 영어판(2026-10-16): 공개 원문이 있는 문헌만 영어 목록·검색·사이트맵에 나오고, `/en/commulingo/docs/<id>`가 곧 그 원문이다(한국어 번역으로 가는 버튼 없음). 원문의 해제는 `<aside class="doc-editorial" lang="ko">`(라벨 「해제」)와 `lang="en"`(라벨 「Introduction」) 두 벌을 두고(첫 문장에는 무엇의 원문인지만 쓰고, 출전·전사·교정 설명은 같은 상자 안 `details.doc-edition`의 「원문·편집 정보」/「Source and editing」에 접어 둔다), manifest의 `summary.en`·`description.en`은 번역이 아니라 원문 기준으로 쓴다. 영어 사건·인물·용어 페이지는 원문 없는 문헌을 링크하지 않는다(docs-refs.js·linkify.js).
+- 영어판(2026-10-16): 공개 원문이 있는 문헌만 영어 목록·검색·사이트맵에 나오고, `/en/commulingo/docs/<id>`가 곧 그 원문이다(한국어 번역으로 가는 버튼 없음). 원문의 해제는 `<aside class="doc-editorial" lang="ko">`(라벨 「해제」)와 `lang="en"`(라벨 「Introduction」) 두 벌을 두고(첫 문장에는 무엇의 원문인지만 쓴다), manifest의 `summary.en`·`description.en`은 번역이 아니라 원문 기준으로 쓴다. 영어 사건·인물·용어 페이지는 원문 없는 문헌을 링크하지 않는다(docs-refs.js·linkify.js).
+- 원문 서지(2026-11-20): 「원문·편집 정보」/「Source and editing」 상자는 본문에 쓰지 않고 원문 행의 `bibliography`(`{ko: {parts}, en: {parts}}`, 언어별로 따로 쓴 entry 서지와 같은 모양)에서 리더가 그린다. 칸은 `sourceText`(원문 저본), `scope`(수록 범위), `editing`(편집: 맞춤법 유지·기호·OCR 교정), `rights`(저작권), 그 밖에 `originalTitle`·`created`·`published`·`notes`. `rights` 칸에는 원문 행의 `rights`와 같은 뜻을 언어별로 쓴다(원문 행 `rights`는 공개 판단에 쓰여 따로 남는다). MCP `doc_put`의 `original.bibliography`/`bibliographyPath`, 저작권 문구는 `rightsPath`로 파일에서 읽게 한다(손으로 옮기다 글자가 깨진 일이 있었다).
 - 섹션 연결: 원문의 제목 id가 번역과 같으면 「원문/번역」 버튼이 읽던 섹션으로 간다. 리더가 자동으로 붙인 id만 제외된다.
 - 게시 판단: 공문서, 사후 70년이 지난 저자의 글은 공개. 소유자 결정으로 스탈린 저작·「9평」·「46인 선언」, 안닌 「수하놉카 고문실」(1989)·그네딘 『미궁에서 나오는 길』(1982, 2026-10-16)·비스트롤료토프 「고독의 시험」(1965~1966, 2026-10-17)도 공개(`rights`에 「소유자 결정으로 공개」와 날짜를 적는다). 생존·1956년 이후 사망 저자의 글은 공개하지 않는다.
 
@@ -182,6 +184,8 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
 [`dev_docs/commulingo-doc-bibliography.md`](../../../dev_docs/commulingo-doc-bibliography.md)). 리더가 이 칸으로 접힌 상자를 그려 해제 상자 안에 넣고,
 본문에 남은 `details.doc-edition`은 그 자리에서 대체한다. 새 문서는 본문 해제 상자에 해제 문단만 쓰고
 서지는 `bibliography`에 쓴다. 이전이 끝나기 전까지 본문 상자만 있는 문서도 그대로 보인다.
+문헌 부분(anchor 없는 part) 상자의 마지막 줄은 리더가 붙이는 「인용」(Cite as)이다: 「제목. CommuLingo 참고 문헌. 주소」(원문 쪽은 제목 뒤 「(원문)」).
+같은 칸으로 페이지 JSON-LD `CreativeWork`(원제→`alternateName`, 지은이→`creditText`, 집필·채택→`dateCreated`, 최초 발표→`datePublished`, 저작권→`copyrightNotice`, 번역↔원문은 `translationOfWork`/`workTranslation`)를 만든다.
 
 ```json
 "bibliography": { "parts": [
@@ -337,7 +341,6 @@ curl -sS -X POST -H 'Content-Type: text/html' --data-binary @문서.html \
 # 메타데이터 채우기 ({ko,en}는 언어별 병합, people/tocExclude는 통째로 교체)
 curl -sS -X PATCH -H 'Content-Type: application/json' "$ADMIN/docs/my-doc" -d '{
   "title": {"en": "..."}, "description": {"ko": "...", "en": "..."},
-  "source": "원전 서지",
   "people": ["yezhov"]
 }'
 
@@ -447,7 +450,7 @@ export한 작업 디렉터리에서 만들고 `put`으로 넣는다.
      - `정보·수사 기록` / `Intelligence & investigation records` — 신문 조서·진술서, 정보 보고, 외교 전문
      - `연구서·논문` / `Scholarship` — 연구서·평전·연구 논문
      - `문학` / `Literature` — 소설·시·희곡
-   - `source` — 원전 서지 정보 (리더 콜로폰에 표시). 서지만 있어 두 언어에 같은 문구면 문자열, 번역 경위 같은 한국어 문장이 들어가면 `{ko, en}`. 공개 원문이 있는 문서는 영어 페이지가 열리므로 한글이 든 출처에 `en` 문구를 함께 넣는다.
+   - `source`·`editorialNotes` — 2026-11-20 은퇴. 원전 서지는 `bibliography`의 `sourceText`, 번역 방법은 `translation` 칸에 쓴다. 저장된 값은 다음 쓰기 때 빠지고, 패치에 넣으면 거부된다.
    - `people` / `terms` / `events` — 관련 인물·용어·역사 사건의 **id 배열**
      (`["yezhov"]`). id는 각각 `/commulingo/people/<id>`,
      `/commulingo/terms/<id>`, `/commulingo/events/<id>` 슬러그.
@@ -501,10 +504,6 @@ export한 작업 디렉터리에서 만들고 `put`으로 넣는다.
 완결된 문장으로 문헌의 주제·작성 주체·시기를 설명한다. 저장 도구와 Admin API가
 길이를 검사한다. 카드는 이 필드만 표시하며 제목 2줄·요약 3줄의 고정 공간을 쓴다.
 `description`은 더 긴 개요와 검색·메타데이터용으로 보존한다.
-`entry.editorialNotes`는 `{ko, en}` 번역 저본·수록 범위·교정 정보로,
-리더 첫 페이지에서는 맨 앞 해제 상자의 접힌 「번역·편집 정보」 안에 합쳐 보여 주고
-(그 상자가 없으면 따로 접힌 상자로), Admin의 별도 입력란에서 편집한다
-(본문 해제 상자에 이미 있는 문장은 빼고 보여 준다).
 본문의 `aside.doc-editorial`은 라벨 「해제」로 문헌·절별 해제와 서지를 담당한다.
 이 사이트가 단 상자만 「해제」이고, 저본 편집자의 해설은 그 사람 이름을 붙인 라벨
 (「퍼 해설」 따위), 번역상의 주는 「옮긴이 주」로 구분한다(2026-10-16 사용자 결정).

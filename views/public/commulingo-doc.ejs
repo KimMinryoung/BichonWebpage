@@ -162,41 +162,7 @@ var docCourses = doc.courses || [];
     <a class="doc-resume-link" href="#"></a>
     <button type="button" class="doc-resume-dismiss" aria-label="<%= strings.commuLingoViews.doc.resumeDismiss %>">✕</button>
 </p>
-<div class="doc-body"><%
-// Existing editions carry some of these notes in their editorial box already.
-// Keep those in place and show only metadata notes absent from that box.
-var editorialText = ((bodyTopHtml || '') + (bodyRestHtml || ''))
-    .match(/<aside\b[^>]*class="doc-editorial"[^>]*>[\s\S]*?<\/aside>/g);
-var normalizeEditorial = function(text) {
-    return text.replace(/<[^>]*>/g, '').replace(/[–—~〜]/g, '-').replace(/\s+/g, ' ');
-};
-editorialText = normalizeEditorial((editorialText || []).join(' '));
-var extraEditorialNotes = (doc.editorialNotes || '').split(/(?<!No\.)(?<=[.!?])\s+/)
-    .filter(function(sentence) { return sentence && !editorialText.includes(normalizeEditorial(sentence)); }).join(' ');
-// A document with entry.bibliography has its box drawn from those fields
-// (doc-bibliography.js); the old notes field is not merged into it.
-var showEditorialNotes = extraEditorialNotes && !doc.bibliography && !readingOriginal && (!pagination || pagination.current === 1);
-// The opening 해제 box carries its own folded 번역·편집 정보; the notes join it
-// there instead of opening a second box.
-var restHtml = bodyRestHtml || '';
-var editionAt = restHtml.search(/<details class="doc-edition"><summary>[^<]*<\/summary>/);
-var firstHeading = restHtml.search(/<h[12][\s>]/);
-if (showEditorialNotes && editionAt !== -1 && (firstHeading === -1 || editionAt < firstHeading)) {
-    var summaryEnd = restHtml.indexOf('</summary>', editionAt) + '</summary>'.length;
-    var escaped = extraEditorialNotes.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-    restHtml = restHtml.slice(0, summaryEnd) + '<p>' + escaped + '</p>' + restHtml.slice(summaryEnd);
-    showEditorialNotes = false;
-}
-%>
-<% if (showEditorialNotes) { %>
-<aside class="doc-editorial">
-    <details class="doc-edition">
-        <summary><%= en ? 'Translation and editing' : '번역·편집 정보' %></summary>
-        <p><%= extraEditorialNotes %></p>
-    </details>
-</aside>
-<% } %>
-<%- restHtml %></div>
+<div class="doc-body"><%- bodyRestHtml || '' %></div>
 <%# 이 쪽이 부르는데 다른 쪽에 있는 주석(docs-store pageNotes). 화면에는 나오지 않고
     주석 번호 위의 팝오버가 여기서 본문을 가져간다. 한 쪽짜리 문헌은 주석이 같은
     화면에 있어 비어 있다. %>
@@ -224,11 +190,6 @@ if (showEditorialNotes && editionAt !== -1 && (firstHeading === -1 || editionAt 
     <% } %>
     <%- include('../partials/commulingo-doc-page-numbers') %>
 </nav>
-<% } %>
-<% if (doc.source && !doc.bibliography) { %>
-<footer class="doc-colophon">
-    <p><%= strings.commuLingoViews.doc.source %>: <%= doc.source %></p>
-</footer>
 <% } %>
 </main>
 <%# 주석·인물명 팝오버, 목차 접기, 원문/번역 전환, 이어 읽기는 main 머리에서 실은

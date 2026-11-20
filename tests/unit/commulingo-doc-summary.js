@@ -13,13 +13,15 @@ assert.throws(() => canonicalEntry({ ...current, summary: { en: 'a'.repeat(361) 
 assert.equal(canonicalEntry({ ...current, summary: { ko: '가'.repeat(160), en: 'a'.repeat(360) } }).summary.ko.length, 160);
 const patch = mergeDocMeta(current, { summary: { ko: '새 요약' } });
 assert.deepEqual(patch.summary, { ko: '새 요약', en: 'Short summary' });
-assert.deepEqual(patch.editorialNotes, current.editorialNotes);
+// editorialNotes and source moved into entry.bibliography: a stored one is
+// dropped on the next write, a patch naming one is refused.
+assert.equal(patch.editorialNotes, undefined);
 assert.deepEqual(patch.excerpts, current.excerpts);
-assert.deepEqual(mergeDocMeta(current, { editorialNotes: { ko: '' } }).editorialNotes, { ko: '', en: 'Transcription correction' });
+assert.throws(() => mergeDocMeta(current, { editorialNotes: { ko: '' } }), /retired/);
+assert.throws(() => mergeDocMeta(current, { source: 'x' }), /retired/);
+assert.equal(mergeDocMeta({ ...current, source: '' }, {}).source, undefined);
 const card = presentDoc(current, 'ko', () => ({}));
 assert.equal(card.summary, '짧은 요약');
-assert.equal(card.editorialNotes, '전사 오류 수정');
-assert.equal(presentDoc({ ...current, editorialNotes: { ko: '', en: 'Transcription correction' } }, 'ko', () => ({})).editorialNotes, '');
 assert(card.searchText.includes('짧은 요약'));
 assert(!card.searchText.includes('전사 오류 수정'));
-console.log('doc summaries: bilingual merge, length limits, overview and editorial separation');
+console.log('doc summaries: bilingual merge, length limits, retired fields refused');

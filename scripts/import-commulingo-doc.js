@@ -14,7 +14,6 @@
  *   --title-ko / --title-en    Title (default: <title> tag or first <h1>)
  *   --desc-ko / --desc-en      Description shown on the index card
  *   --kind-ko / --kind-en      Category label, one of docs/README.md's kinds (default: 이론·논설 / Theory & essays)
- *   --source "<citation>"      Original-work citation for the colophon
  *   --lang <ko|en>             Body language (default: ko)
  *   --person <id=이름ko|NameEn>  Related person (repeatable)
  *   --term <id=이름ko|NameEn>    Related glossary term (repeatable)
@@ -81,7 +80,6 @@ async function main() {
                 title: { ko: args.titleKo, en: args.titleEn },
                 description: { ko: args.descKo, en: args.descEn },
                 kind: args.kindKo || args.kindEn ? { ko: args.kindKo, en: args.kindEn } : undefined,
-                source: args.source,
                 people: parseRefs(args.people, 'person'),
                 terms: parseRefs(args.terms, 'term'),
                 events: parseRefs(args.events, 'event'),
@@ -111,7 +109,7 @@ async function main() {
         return;
     }
     console.log('\nwritten. next steps:');
-    console.log('  1. Fill in title.en / description / source via PATCH or scripts/commulingo-docs (and tocExclude if the TOC preview shows junk headings).');
+    console.log('  1. Fill in title.en / description / bibliography via PATCH or scripts/commulingo-docs (and tocExclude if the TOC preview shows junk headings).');
     console.log(`  2. Check /commulingo/docs/${entry.id} (live within a minute; no commit, no deploy).`);
     console.log(`  3. Link it from a person section as /commulingo/docs/${entry.id}`);
 }
