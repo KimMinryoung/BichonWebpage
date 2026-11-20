@@ -8,7 +8,7 @@
 scripts/query-db "SELECT person_id, reason FROM commulingo_person_enrichment WHERE topic='party' AND status='open' ORDER BY 1"
 ```
 
-전체 점검의 규칙과 경과는 [소속 분류 설계 문서](commulingo-role-model-plan.md)의 2026-10-04~05 항목에 있다. 나머지 인물의 상태 분포는 다음과 같다. 1,648명은 정당 활동이 있다(`complete`). 698명은 위키데이터와 위키백과 본문을 확인했으나 당원 자격·당 직책 언급이 없었다(`not_applicable`). 190명은 위키백과 연결이 없어 확인할 본문이 없었다(`sources_unavailable`).
+전체 점검의 규칙과 경과는 [소속 분류 설계 문서](../commulingo-role-model-plan.md)의 2026-10-04~05 항목에 있다. 나머지 인물의 상태 분포는 다음과 같다. 1,648명은 정당 활동이 있다(`complete`). 698명은 위키데이터와 위키백과 본문을 확인했으나 당원 자격·당 직책 언급이 없었다(`not_applicable`). 190명은 위키백과 연결이 없어 확인할 본문이 없었다(`sources_unavailable`).
 
 ## 처리 방법
 

@@ -5,7 +5,7 @@
 | 학습 경로 | 원본(2026-11-01부터 데이터 문서) | 구성 |
 | --- | --- | --- |
 | `/commulingo/book/marx-civil-war-in-france` | `course/marx-civil-war-in-france` | 6편·41발췌, `format: 'guided-reading'`, 권 번호 17(홈의 「카를 마르크스」 묶음, 2026-10-24 『브뤼메르 18일』 뒤로 옮김) |
-| `/commulingo/book/lenin-materialism-empiriocriticism` | `course/lenin-materialism-empiriocriticism` | 8편·61발췌, 4지선다, 퀴즈형 문항을 골라 맥락·발췌를 붙여 옮김 (2026-10-28, [기록](commulingo-lenin-mec-20261028.md)) |
+| `/commulingo/book/lenin-materialism-empiriocriticism` | `course/lenin-materialism-empiriocriticism` | 8편·61발췌, 4지선다, 퀴즈형 문항을 골라 맥락·발췌를 붙여 옮김 (2026-10-28, [기록](archive/commulingo-lenin-mec-20261028.md)) |
 | `/commulingo/book/marx-eighteenth-brumaire` | `course/marx-eighteenth-brumaire` | 7편·49발췌, 같은 형식·권 번호 -1 (2026-10-24) |
 | `/commulingo/book/engels-ludwig-feuerbach` | `course/engels-ludwig-feuerbach` | 7편·54발췌, 4지선다, 처음부터 끊어 읽기로 작성, 권 번호 1(엥겔스 묶음, 『가족, 사유재산, 국가의 기원』 0 뒤) (2026-10-31, [아래](#루트비히-포이어바흐와-독일-고전철학의-종말-2026-10-31)) |
 | `/commulingo/book/engels-origin-family` | `course/engels-origin-family` | 8편·64발췌, 4지선다, 옛 개념지도(`concept-graph`)를 끊어 읽기로 다시 씀, 권 번호 0 (2026-10-31, [아래](#가족-사유재산-국가의-기원-2026-10-31)) |

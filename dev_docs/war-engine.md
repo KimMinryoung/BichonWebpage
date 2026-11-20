@@ -14,7 +14,7 @@
 | [war/battle.js](../public/js/war/battle.js) | 칸 전투 엔진 `WarBattle`. 진영·지형·지역 통제·포위·포격 마모·우회·예비대·습격·한 수·투항. `FEATS`·`ROLES`·`KINDS` 레지스트리 |
 | [war/cond.js](../public/js/war/cond.js) | 조건 언어 `WarCond.holds(s, cond, ctx)` (3절) |
 | [war/art.js](../public/js/war/art.js) | 그린 초상·세력 방패 `WarArt.create(scenario)`. 표지 그림 `SIGNS` |
-| [war/scenarios/*.js](../public/js/war/scenarios/) | 시나리오. 브라우저에서는 `window.WarScenarios[id]`에 스스로 등록, Node에서는 `module.exports` |
+| [war/scenarios/*.js](../public/js/war/scenarios) | 시나리오. 브라우저에서는 `window.WarScenarios[id]`에 스스로 등록, Node에서는 `module.exports` |
 | [war/ui/game.js](../public/js/war/ui/game.js) | 화면 전체(상태를 쥔 컨트롤러). `#cwPlay[data-scenario]`가 고른 시나리오를 띄운다 |
 | [war/ui/ground.js](../public/js/war/ui/ground.js) | 전투판의 땅을 칸마다가 아니라 한 장의 지도로 그린다(2026-11-15, 사용자 검토를 여러 번 거침). 바닥은 계절의 색(전투의 `ground`: `summer`·`spring`·`autumn`·`steppe`, 눈 칸이 있는 판은 겨울) 위에 이어 붙는 풀밭·눈 텍스처(`public/images/war/turf-v1.webp`·`snow-v1.webp`, `python3 -P scripts/war-ground-textures.py`로 만든다). 그 위에 물은 이어진 띠와 강기슭, 여울은 모래톱과 잔물결, 숲은 크기가 다른 전나무 무리, 시가는 전나무처럼 옆에서 본 모습으로 두 줄의 여러 층 건물(창문 줄, 박공·평지붕, 벽 색 셋), 폐허(`ruins`)는 윗부분이 부서지고 창이 빠진 같은 건물, 마을은 박공지붕 오두막 서넛, 고지는 등고선과 비탈의 빗금(남·동쪽은 그늘), 참호는 흙둑·도랑·철조망과 칸 둘레의 톱니 흙벽(부대가 서도 보임), 운하는 돌 둑 사이의 곧은 물길, 다리는 강을 가로지르는 널판, 격자는 모서리의 작은 십자. `WarGround.paint(rows, cols, at)`. 땅의 `cls`가 모습을 고르고(새 모습 `marsh` 늪, `canal` 운하, `ruins` 폐허), 칸 자체는 그 위의 투명한 누름 칸이다. 범례 견본 색은 `war.css`의 `.cw-terrain-key .k-*` |
 | [war/ui/dom.js](../public/js/war/ui/dom.js), [glyphs.js](../public/js/war/ui/glyphs.js), [rail.js](../public/js/war/ui/rail.js), [basemap.js](../public/js/war/ui/basemap.js) | 상태 없는 화면 부품: 요소·조사(`josa`), 별·열차·지형·병종 그림, 철도망 경로, 바탕 지도 비트맵 |

@@ -1,6 +1,6 @@
 # 러시아 내전 게임 보강: 인물 13명·용어 31개 — 2026-10-14
 
-게임 「붉은 전선 1918–1920」(설계 [civil-war-game.md](civil-war-game.md))이 이름을 부르지만 커뮤링고에 카드가 없던 인물과 용어를 사용자 요청으로 등록했다. 사건은 만들지 않았고 기존 사건 본문도 고치지 않았다. DB 데이터 작업이라 커밋하지 않는다(R2 보관).
+게임 「붉은 전선 1918–1920」(설계 [civil-war-game.md](../civil-war-game.md))이 이름을 부르지만 커뮤링고에 카드가 없던 인물과 용어를 사용자 요청으로 등록했다. 사건은 만들지 않았고 기존 사건 본문도 고치지 않았다. DB 데이터 작업이라 커밋하지 않는다(R2 보관).
 
 정본: `scripts/content/civil-war-game-20261014/`(`BRIEF.md`, 묶음별 `people-{pa,pb}.js`·`terms-{org,ev1918,ev1919}.js`·`links-*.js`·`REPORT-*.md`, `lib.js`·`build.js`) → `node build.js [묶음…]` → `../civil-war-game-20261014{-people,-terms,-links,-collections}.json`. 적용한 파일은 `-people-applied.json`, `-terms-a.json`(org+ev1919), `-terms-b.json`(ev1918).
 

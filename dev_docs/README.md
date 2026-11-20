@@ -1,101 +1,66 @@
 # 개발 문서 색인
 
-현재 작업에 해당하는 문서만 읽는다. 실행 규칙은 [AGENTS.md](../AGENTS.md), 주제별 구현의 최종 기준은 해당 코드다.
+현재 작업에 해당하는 문서만 읽는다. 실행 규칙은 [AGENTS.md](../AGENTS.md), 주제별 구현의 최종 기준은 해당 코드다. 계획 문서의 완료 여부와 과거 수치는 현재 코드·DB로 재확인한다.
+
+- 남은 일 모음: [TODO.md](TODO.md) — 문서마다 흩어진 「남은 일」을 한곳에 모았다(2026-11-20).
+- 끝난 작업 기록(사건·카드·용어 묶음, 검토 보고, 지난 계획): [archive/](archive/README.md). 같은 주제를 다시 할 때만 연다.
+
+## 사이트·운영
 
 | 작업 | 문서 |
 | --- | --- |
-| 웹서비스 코드·기능 설계 전체 개선 검토 | [2026-10-04 검토와 최종 반영 현황(보류 4건 포함)](codebase-functional-review-20261004.md) |
-| 프론트엔드 상용 수준 점검(캐시·테마·채팅·PWA·측정) | [2026-11-02 점검·우선순위·진행 상태](frontend-commercial-gap-review-20261102.md) |
+| 배포·미리보기·데이터·인증·장애 점검 | [Frontend 운영 참고](frontend-operations.md) |
 | 사이트 디자인·레이아웃·공통 UI | [디자인 기준](design-system.md) |
 | 통합 검색·메뉴별 영어 지원 | [범위·일치 기준·영어 판정](site-search.md) |
-| 공산링고 설치형 앱(PWA)·오프라인 | [매니페스트·서비스 워커·캐시 규칙](commulingo-pwa.md) |
-| 파업 게임 | [설계·규칙·구현·테스트 인수인계](strike-game-handoff.md) |
+| 모바일 첫 방문·시스템 글꼴·공개 모델 캐시 | [구현과 검증](page-speed.md) |
+| SEO 인덱싱·크롤 관측 | [계획과 2026-09-27 관측](seo-indexing-plan.md) |
+| 한국(KT) 방문자 지연·정적 파일 CDN | [2026-10-12 진단과 도입 계획(미착수)](static-cdn-kt-plan-20261012.md) |
+
+## 게임
+
+| 작업 | 문서 |
+| --- | --- |
+| 파업 게임 | [설계·규칙·구현·테스트](strike-game-handoff.md) |
 | 러시아 내전 게임 「붉은 전선」 | [설계·규칙·전투·밸런스 기준](civil-war-game.md) |
 | 대조국전쟁 게임 「조국 전선」 | [전선·시기·갈림길·전투·적의 힘 맞추기](great-patriotic-war-game.md) |
 | 전쟁 게임 공통 엔진·새 전쟁 시나리오 | [모듈·시나리오 스키마·조건 언어·저장 세대·골든 마스터](war-engine.md) |
-| 노노그램 | [화면·입력·저장 구현 참고](nonogram.md) |
-| 배포·미리보기·데이터·인증 | [Frontend 운영 참고](frontend-operations.md) |
-| CSS 독립 배포 구조 개선 | [2026-10-05 인수인계·설계 초안](frontend-static-assets-deployment-handoff-20261005.md) |
-| CommuLingo 큐 사건 4편(아이티 혁명·보불전쟁·방데 전쟁·발칸 전쟁) | [사건 4편 적용 기록·인물 46명·용어 26개·남은 일](commulingo-queue-events-20261007.md) |
-| CommuLingo 2차 세계대전 사건 3편(쿠르스크·미드웨이·북아프리카) | [적용 기록·인물 18명·용어 7개·구조화 기간 적용기](commulingo-wwii-battles-20261013.md) |
-| CommuLingo 문헌 큐(1차 사료 완역 게재) | [2026-10-07 처리 결과: 게재 32편·제외 사유·소유자 결정·후속 후보](../scripts/content/commulingo-queue-docs-20261007/PLAN.md) |
-| CommuLingo 공산주의 갈래 계보도·사조 용어 | [계보도 구성·새 용어 6개·공산주의 모음 분할](commulingo-communist-currents-20261008.md) |
-| CommuLingo 정치적 입장 이름·용어 연결 | [입장 이름 규칙·소속 조정·용어 20개·term_ids](commulingo-position-terms-20261023.md) |
-| CommuLingo 직책 계보·정치국/서기국/조직국 명부 | [구조·적용 스크립트·출처 판단](commulingo-office-lineages-20261006.md) |
-| CommuLingo 관리자 MCP·leninbot 연동 경계 | [설계·단계·등록](commulingo-admin-mcp.md) |
-| CommuLingo 보강 파이프라인(frontend 주관·leninbot 일꾼) | [설계·일꾼 API·단계](commulingo-agent-pipeline.md) |
-| Redis 사용·캐시·세션·백엔드 공유 | [2026-10-04 설계 검토](redis-design-review-20261004.md) |
-| CommuLingo 학습 활동 계측·테스트 제외·집계 | [운영 계측 참고](commulingo-learning-measurement.md) |
-| CommuLingo 신규 강좌 후보·실제 유입 판정 | [2026-09-27 후보](commulingo-course-candidates-20260927.md) |
-| CommuLingo 짧은 학습·이용 측정 설계 | [학습 콘텐츠 개선 제안](commulingo-learning-design.md) |
-| CommuLingo 훈련장 쇼츠(숏폼 카드 피드) | [카드 재료·순서](commulingo-shorts.md) |
-| CommuLingo 혁명사·사회주의 비교 학습 | [학습 강좌와 출처 기준](commulingo-ideology-learning.md), [2026-09-27 미등록 항목 등록](commulingo-history-courses-registration-20260927.md), [초기 1~3편 원고](commulingo-french-revolution-drafts.md) |
-| CommuLingo 원문 끊어 읽기 형식(`guided-reading`)·『프랑스 내전』·『브뤼메르 18일』·『포이어바흐론』·『가족, 사유재산, 국가의 기원』 강좌 | [형식 근거·플레이어·검증 규칙·사전 항목·샤드 함정](commulingo-guided-reading.md) |
-| CommuLingo 기존 강좌 개선(실습 형식 전환·해설 다듬기·설명 화면) 이어받기 | [2026-11-10 인수인계: 기준·한 일·후보 5개(1·3·4·5 완료, 『자본』 2·3권 남음)·작업 순서·걸렸던 것](commulingo-course-improvement-handoff-20261110.md) |
-| CommuLingo 실습 형식(`workshop`: 순서·분류·빈칸 활동)·레슨 플레이어 문항 화면 | [형식·필드·검증 규칙·화면 변경](commulingo-workshop-format.md) |
-| CommuLingo 마르크스주의와 성 이론 강좌 | [15편 구성·원어 대조 기준·인물 카드·해설·출처](commulingo-sex-gender-theory.md) |
-| CommuLingo 프랑스 혁명·혁명 전쟁 사건 | [한영 사건 2편·출처·반영 기록](commulingo-french-events-20260913.md) |
-| CommuLingo 1848년 혁명 사건 묶음 | [개요·프랑스·독일·헝가리·이탈리아 5편, 인물 118명·용어 59개·소속 14개·엥겔스 「마자르인의 투쟁」 번역·헝가리·이탈리아 지도](commulingo-revolutions-1848-20261011.md) |
-| CommuLingo 파리 코뮌 사건 | [한영 사건·인물 10명·반영 기록](commulingo-paris-commune-20260929.md) |
-| CommuLingo 제2제정 사건 | [1852–1870 제정과 노동운동·인물 3명·용어 4개·진영 3개·반영 기록](commulingo-second-empire-20261023.md) |
-| CommuLingo 제1인터내셔널 사건 | [창립과 분열 1864–1876·인물 5명·용어 2개·진영 5개·반영 기록](commulingo-first-international-20261023.md) |
-| CommuLingo 인터내셔널 문헌·카드 | [창립 선언·『프랑스 내전』 문헌 2건·인물 35명·용어 22개·반영 기록](commulingo-iwma-docs-cards-20261024.md) |
-| CommuLingo 『브뤼메르 18일』 카드 | [인물 55명·용어 24개·문헌 연결·반영 기록](commulingo-brumaire-cards-20261024.md) |
-| CommuLingo 마르크스경제학 보강(이론 용어·학계 마르크스주의·문헌·현대 자본주의 입문 코스) | [2026-11-03 용어 33·인물 28·문헌 3·코스·시사 용어 48](commulingo-marxian-economics-20261103.md) |
-| CommuLingo 한국 사회주의·노동운동사 묶음(10편 계획, 1차 3편)·『공산당 선언』 강좌 | [2026-11-11 사건 3편·용어 36·인물 41·강좌 8편·남은 7편](commulingo-korea-movement-20261111.md) |
-| CommuLingo 일본 근현대사 묶음(사회주의·노동운동 축 12편) | [2026-11-14 사건 12편·용어 138·카드 약 160·정리 단계 결정](commulingo-japan-modern-20261114.md) |
-| CommuLingo 기존 사건 16편 보강(한국전쟁·중소분열·우크라이나·북조선·아시아·아프리카 사회주의 정권 12편)·사건 진영 정리 | [2026-11-14 편별 수치·event-enrich 빌더·남은 countries 추가](commulingo-events-depth-20261114.md) |
-| CommuLingo 대만 근현대사 묶음·한일 묶음 후속 보강 | [2026-11-14 사건 6편·대만 표기 통일·정당 21개·카드 22장·남은 코드 과제](commulingo-taiwan-modern-20261114.md) |
-| CommuLingo 동아시아 운동사 강좌 기반 작업(한·중·일·대만) | [2026-11-15 용어 168·문헌 12·카드 34·활동 카탈로그 27·보류한 번역·남은 결정](commulingo-east-asia-foundation-20261115.md) |
-| CommuLingo 「동아시아 운동사」 강좌 구성안(초안, 승인 전) | [2026-11-15 1부 20편·편별 사건·용어·문헌·필요한 번역과 인물 보강·결정 사항](commulingo-east-asia-course-plan-20261115.md) |
-| CommuLingo 「동아시아 운동사」 2부 준비(몽골·조선 포함, 초안) | [2026-11-17 데이터 진단·16편 초안·필요한 기반 작업·결정 사항](commulingo-east-asia-course-part2-plan-20261117.md) |
-| CommuLingo 독일 고전철학 계보도(철학 분류 시작) | [계보도·철학 분류·용어 17개·인물 10명·「포이어바흐에 관한 테제」 번역·MCP 원문 쓰기](commulingo-german-philosophy-20261028.md) |
-| CommuLingo 『유물론과 경험비판론』 완역 | [러시아어 원문 파싱·DeepSeek 초벌·Opus 교열·문헌 등록·링크·학습 코스 8단위](commulingo-lenin-mec-20261028.md) |
-| CommuLingo 『유물론과 경험비판론』 논쟁 문헌 | [레닌 「열 가지 질문」·고리키 편지, 보그다노프 『믿음과 과학』, 루나차르스키 「무신론」 번역·문헌 등록](commulingo-mec-polemics-20261029.md) |
-| CommuLingo 니체와 그 이후 계보도 | [니체 카드·인물 16명·용어 33개·링크 승인 248건·계보도](commulingo-nietzsche-20261028.md) |
-| CommuLingo 독일 11월 혁명 사건 | [한영 사건·인물 10명·반영 기록](commulingo-german-revolution-20260929.md) |
-| CommuLingo 제2인터내셔널의 붕괴 사건 | [한영 사건·인물 7명·문헌 연결·반영 기록](commulingo-second-international-20260929.md) |
-| CommuLingo 코민테른의 창설 사건 | [한영 사건·인물 5명·문헌 연결·반영 기록](commulingo-comintern-founding-20260929.md) |
-| CommuLingo 코민테른의 인민전선 전환 사건 | [한영 사건·인물 관계 14건·디미트로프 문헌 연결·반영 기록](commulingo-comintern-popular-front-20260929.md) |
-| CommuLingo 헝가리 1919–1945 사건 | [평의회 공화국·호르티 체제·추축국·독일 점령기 4편, 인물·용어·링크 차단·반영 기록](commulingo-hungary-interwar-20261001.md) |
-| CommuLingo 파시즘 계열(자유군단·나치·각국 파시스트) 보강 | [2026-10-10 작업 목록·반영 기록, 10-11 남은 조직 7개 처리](commulingo-fascism-20261010.md) |
-| CommuLingo 발트 3국 1939–1953 사건 | [소련 점령·독일 점령과 홀로코스트·재점령과 숲의 형제 3편, 인물·용어·반영 기록](commulingo-baltic-1940-1953-20261002.md) |
-| CommuLingo 추축국 점령하의 유럽 개요 사건 | [점령·협력·저항 개요와 하위 문서 7편 묶음·반영 순서](commulingo-occupied-europe-20261002.md) |
-| CommuLingo 1차 세계대전·여파, 동독, 1953–1956 위기 사건 | [세 묶음 설계·사건 5편·반영 순서](commulingo-wwi-east-germany-20261002.md), [인물 등록 큐](commulingo-wwi-east-germany-people-queue-20261002.md) |
-| CommuLingo 러시아 내전 하위 사건(중앙아시아·시베리아와 극동·탐보프·핀란드·베사라비아·벨라루스·볼가-우랄과 크림, 몽골 편입·투바) | [사건 7편·인물 35명·용어 44개·출처 주소 괄호·적위대 구분](commulingo-civil-war-theaters-20261004.md) |
-| CommuLingo 러시아 내전 게임 보강(인물·용어) | [인물 13명·용어 31개·링크 승인 259건·고증 반영](commulingo-civil-war-game-20261014.md) |
-| CommuLingo 러시아 내전 게임 보강 2(작전·개념 용어, 인물) | [용어 22개·인물 27명·링크 승인 179건·공유 성 대표·『나의 생애』 인용](commulingo-civil-war-game-20261027.md) |
-| CommuLingo 러시아 내전기 캅카스(자캅카스·북캅카스) 사건 | [사건 1편·인물 8명·용어 7개·반영 기록](commulingo-transcaucasia-1917-1921-20261004.md) |
-| CommuLingo 1905년 혁명의 제국 변경(발트·폴란드·핀란드·캅카스) | [절·연표 추가와 수치 기준](commulingo-revolution-1905-periphery-20261002.md) |
-| CommuLingo 체코슬로바키아 1945–1948 사건 | [인민민주주의 묶음 자식 문서·인물 6명·반영 기록](commulingo-czechoslovakia-1945-1948-20260929.md) |
-| CommuLingo 8월 혁명과 제1차 인도차이나 전쟁 | [한영 사건·인물 7명·반영 기록](commulingo-first-indochina-war-20260929.md) |
-| CommuLingo 제2차 인도차이나 전쟁 | [한영 사건·인물 4명·역방향 연결·반영 기록](commulingo-second-indochina-war-20260929.md) |
-| CommuLingo 중월전쟁 | [한영 사건·인물 4명·반영 기록](commulingo-sino-vietnamese-war-20260929.md) |
-| CommuLingo 사건 진영(sides) | [중심 주체 없는 사건의 진영 구조·29개 사건 배정](commulingo-event-sides-20260929.md) |
-| CommuLingo 프랑스 사건 후속 등록 큐 | [인물 16·용어 36·추가 번역 22건](commulingo-french-events-registration-queue-20260913.md) |
-| CommuLingo 중국 혁명·중화인민공화국 확장 | [중국 선반·시대 그룹, 사건 12편·인물 48명·용어 15개](commulingo-china-history-20260921.md) |
-| CommuLingo 중국 사건 14편 보강 | [2026-10-21 본문 1만 자 이상·인물 97명·용어 69개·남은 일(중월전쟁·톈안먼·기존 인물 보강)](commulingo-china-events-depth-20261021.md) |
-| CommuLingo 현실 사회주의 국가·사건 보강 | [25개 체제 자료와 3개 계보도](commulingo-socialist-states-20260908.md), [16개 사건 본문 심화](commulingo-event-depth-20260908.md) |
-| CommuLingo 프랑스 혁명 추가 문헌 DeepSeek 추론 ON 번역 | [22건 출판(주르당 법 2026-09-30 직접 전사·번역)·토큰 집계](../scripts/content/commulingo-french-translations-20260913/README.md) |
-| CommuLingo 참고문헌 전문 번역·저본·검수 | [DeepSeek Flash 전문 번역 8편과 제외 기록](../scripts/content/commulingo-fulltext-20260913/README.md) |
-| CommuLingo 프랑스 혁명 문헌집·기존 주소 이동 | [12편을 주제별 4편으로 통합](../scripts/content/commulingo-french-reference-collections-20260913/README.md) |
-| CommuLingo 데이터 git 분리(작업물 R2, 문헌 DB, 데이터 문서, 학습 강좌 DB 이전) | [단계·상태·설계](commulingo-data-off-git.md) |
-| CommuLingo 참고 문헌 구조 검사·제목 id·파싱 개선(TO-DO) | [완료·서버 작업·남은 작업](commulingo-docs-structure-todo.md) |
-| CommuLingo 참고 문헌 설계 검토(저장·조립·렌더링·주석·단어 링크) | [2026-11-04 개선 TO-DO·우선순위](commulingo-docs-design-review-20261104.md) |
-| CommuLingo 참고 문헌 안 검색(여러 페이지 문헌) | [구조·서버/화면 정규화 계약](commulingo-doc-search.md) |
-| CommuLingo DB·캐시·동시성·복구 | [저장 구조와 검증](commulingo-database.md) |
-| CommuLingo 자동 링크 중의성 | [데이터 수정·재발 방안](commulingo-link-ambiguity.md) |
-| CommuLingo 인물 별칭 등록 기준 | [별칭 표준과 2026-10-03 일괄 정리](commulingo-alias-standard.md) |
-| CommuLingo DB 후속 개선 후보 | [미구현 검토 목록](commulingo-database-followups.md) |
-| CommuLingo 인물 편집 개선 | [현행 규칙·구현 체크리스트](commulingo-people-editing-plan.md) |
-| CommuLingo 용어 편집·파이프라인 | [근거·revision·검토와 private RPC](commulingo-term-editorial.md) |
-| CommuLingo 기능·활동과 소속 분류 | [설계·구현·전환 상태](commulingo-role-model-plan.md) |
-| CommuLingo 카탈로그 밖 정당 백로그 (처리 완료) | [중요 정당 89개 등록·47명 종결](commulingo-party-backlog-20261005.md) |
-| CommuLingo 인물 모델 | [인물 사전 인수인계](commulingo_people_handoff.md) |
-| CommuLingo 세계지도·국가 허브·사건 지도 세력 범위 | [지도·국가·사건 연결](commulingo-world-map.md) |
-| SEO 인덱싱·크롤 관측 | [계획과 2026-09-27 관측](seo-indexing-plan.md) |
-| 모바일 첫 방문·시스템 글꼴·공개 모델 캐시 | [구현과 검증](page-speed.md) |
-| 한국(KT) 방문자 지연·정적 파일 CDN | [2026-10-12 진단과 Bunny/CloudFront 도입 계획](static-cdn-kt-plan-20261012.md) |
-| 사이트 최적화 | [기존 계획](site-optimization-plan.md) |
+| 노노그램 | [화면·입력·저장](nonogram.md) |
 
-계획 문서의 완료 여부와 과거 수치는 현재 코드로 재확인한다. 새로운 주제는 별도 문서로 추가하고 이 색인에 링크한다. 완료된 작업 이력을 AGENTS.md/CLAUDE.md에 누적하지 않는다.
+## CommuLingo 구조·기준
+
+| 작업 | 문서 |
+| --- | --- |
+| 관리자 MCP·leninbot 연동 경계 | [설계·단계·등록](commulingo-admin-mcp.md) |
+| 보강 파이프라인(frontend 주관·leninbot 일꾼) | [설계·일꾼 API·단계](commulingo-agent-pipeline.md) |
+| DB·캐시·동시성·복구 | [저장 구조와 검증](commulingo-database.md) |
+| 데이터 git 분리(작업물 R2, 문헌·강좌 DB) | [단계·상태·설계](commulingo-data-off-git.md) |
+| 인물 모델 | [인물 사전 인수인계](commulingo_people_handoff.md) |
+| 인물 편집 | [현행 규칙·구현 체크리스트](commulingo-people-editing-plan.md) |
+| 인물 별칭 | [별칭 표준](commulingo-alias-standard.md) |
+| 인물 국가·출신 분류 | [국가 분류 기준](commulingo-registration-nationality.md) |
+| 기능·활동과 소속 분류 | [설계·구현·전환 상태](commulingo-role-model-plan.md) |
+| 정치적 입장 이름·용어 연결 | [입장 이름 규칙·term_ids](commulingo-position-terms-20261023.md) |
+| 직책 계보·정치국/서기국/조직국 명부 | [구조·적용 스크립트·출처 판단](commulingo-office-lineages-20261006.md) |
+| 사건 진영(sides) | [진영 구조·배정 기준](commulingo-event-sides-20260929.md) |
+| 용어 편집·파이프라인 | [근거·revision·검토와 private RPC](commulingo-term-editorial.md) |
+| 자동 링크 중의성 | [데이터 수정·재발 방안](commulingo-link-ambiguity.md) |
+| 세계지도·국가 허브·사건 지도 세력 범위 | [지도·국가·사건 연결](commulingo-world-map.md) |
+| 참고 문헌 안 검색 | [구조·정규화 계약](commulingo-doc-search.md) |
+| 참고 문헌 저장·렌더링 개선(진행 중) | [구조 검사·outline·남은 ④⑤⑥](commulingo-docs-structure-todo.md), [2026-11-04 설계 검토](commulingo-docs-design-review-20261104.md) |
+| 설치형 앱(PWA)·오프라인 | [매니페스트·서비스 워커·캐시 규칙](commulingo-pwa.md) |
+
+## CommuLingo 학습
+
+| 작업 | 문서 |
+| --- | --- |
+| 학습 활동 계측·집계 | [운영 계측 참고](commulingo-learning-measurement.md) |
+| 짧은 학습·이용 측정 설계 | [학습 콘텐츠 개선 제안](commulingo-learning-design.md) |
+| 훈련장 쇼츠 | [카드 재료·순서](commulingo-shorts.md) |
+| 혁명사·사회주의 비교 강좌 | [학습 강좌와 출처 기준](commulingo-ideology-learning.md) |
+| 원문 끊어 읽기 형식(`guided-reading`) | [형식 근거·플레이어·검증 규칙·샤드 함정](commulingo-guided-reading.md) |
+| 실습 형식(`workshop`: 순서·분류·빈칸) | [형식·필드·검증 규칙·화면](commulingo-workshop-format.md) |
+| 기존 강좌 개선 이어받기(『자본』 2·3권 남음) | [2026-11-10 인수인계](commulingo-course-improvement-handoff-20261110.md) |
+| 마르크스주의와 성 이론 강좌 | [구성·원어 대조 기준·출처](commulingo-sex-gender-theory.md) |
+| 「동아시아 운동사」 강좌 | [기반 작업(2026-11-15)](commulingo-east-asia-foundation-20261115.md), [1부 구성안·상태](commulingo-east-asia-course-plan-20261115.md), [2부 구성·결과](commulingo-east-asia-course-part2-plan-20261117.md) |
+
+새로운 주제는 별도 문서로 추가하고 이 색인에 링크한다. 작업이 끝난 날짜형 기록 문서는 `archive/`로 옮기고 남은 일은 [TODO.md](TODO.md)에 옮겨 적는다. 완료된 작업 이력을 AGENTS.md/CLAUDE.md에 누적하지 않는다.

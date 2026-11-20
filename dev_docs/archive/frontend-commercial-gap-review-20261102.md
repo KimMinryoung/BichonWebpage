@@ -18,7 +18,7 @@
 | `/reports` | 792ms / 0 | 384ms / 0 | |
 | `/chat` | 504ms / 0 | 468ms / 0.0002 | |
 
-네트워크·CPU 지연을 걸지 않은 값이다. [모바일 첫 방문 속도](page-speed.md)의 모의 조건 측정과 직접 비교하지 않는다.
+네트워크·CPU 지연을 걸지 않은 값이다. [모바일 첫 방문 속도](../page-speed.md)의 모의 조건 측정과 직접 비교하지 않는다.
 
 ## 우선순위 1: 작고 효과가 큰 것
 
@@ -81,7 +81,7 @@
 - JS: 즉시 실행 함수 + `window` 전역, 큰 파일(`commulingo.js` 1,413줄, `chat.js` 1,105줄). 빌드 없이 `<script type="module">`로 나누고 JSDoc + `// @ts-check` + `tsc --noEmit`으로 타입 검사한다.
 - JS URL은 `?v=<GIT_SHA>`라 배포마다 모든 JS를 다시 받는다. 파일별 내용 해시로 바꿀 수 있다.
 - CSP의 스크립트 `'unsafe-inline'`: 인라인 스크립트가 17개 화면에 21개. 기존 검토 A04의 남은 범위. 모듈화하면서 외부 파일이나 nonce로 옮긴다.
-- CSS: 원본 `style.css`(2,791줄)·`commulingo.css`(6,556줄)를 생성 스크립트로 나눈다. [디자인 기준](design-system.md)의 계층 순서를 `@layer`로 선언하면 순서를 브라우저가 보장하고 `!important` 43곳을 줄일 수 있다. 「좁은 카드에서 이미지와 제목을 위아래로」 규칙은 container queries가 맞다.
+- CSS: 원본 `style.css`(2,791줄)·`commulingo.css`(6,556줄)를 생성 스크립트로 나눈다. [디자인 기준](../design-system.md)의 계층 순서를 `@layer`로 선언하면 순서를 브라우저가 보장하고 `!important` 43곳을 줄일 수 있다. 「좁은 카드에서 이미지와 제목을 위아래로」 규칙은 container queries가 맞다.
 
 ## 진행 상태
 
@@ -97,9 +97,9 @@
 | 1-4 날짜 서버 출력 | 구현. `utils/local-date.js`(Asia/Seoul, `app.locals`라 조각 렌더에도 쓰임)로 `<time>` 18곳에 글자를 넣고, `common.js`는 보는 사람 시간대의 날짜가 다를 때만 덮어쓴다. 테스트 `local-date` |
 | 3 페이지별 OG 이미지 | 하지 않기로 함(2026-11-02 사용자 결정). 운영에 sharp와 한글 글꼴 파일이 없어 비용 대비 보류 |
 | 3 구조화 데이터 | 구현. `data/commulingo/structured-data.js`: 인물 `Person`(생몰일은 `lifeDates` 정밀도대로, 없으면 연도), 용어 `DefinedTerm`, 사건 `Event`(시작·끝 날짜, 장소 없음), 강좌 `Course`+`LearningResource`를 BreadcrumbList와 한 `@graph`로. URL은 주소 언어(`urlLanguage`). 테스트 `commulingo-structured-data` |
-| 3 검색 즉시 제안 | 구현. 툴바 돋보기가 검색 대화상자를 열고 입력하는 대로 `/search/suggest`·`/commulingo/search/suggest`의 결과 묶음을 보인다. `/`·Ctrl/⌘+K 단축키, ↓/↑ 이동. 결과 마크업은 검색 화면과 같은 `partials/site-search-results`. [통합 검색](site-search.md). 브라우저 테스트 `site-search-dialog` |
-| 4 공산링고 PWA | 구현. 범위는 공산링고만, 열어 본 화면·강좌 데이터의 오프라인 재생, 마스코트 아이콘(사용자 결정). Web Push 학습 알림은 하지 않음. [공산링고 PWA](commulingo-pwa.md). 브라우저 테스트 `commulingo-pwa` |
-| 5 실사용 성능·브라우저 오류 | 구현. `site-vitals.js` → `/metrics/vitals`·`/metrics/client-error` → `site_web_vitals`·`site_client_errors`(migration 375, **운영 DB 적용 전**: 배포 전에 `scripts/apply-migration scripts/migrations/375_site_web_vitals_client_errors.sql`). 대시보드에 7일 p75와 오류 목록. [운영 참고](frontend-operations.md) |
+| 3 검색 즉시 제안 | 구현. 툴바 돋보기가 검색 대화상자를 열고 입력하는 대로 `/search/suggest`·`/commulingo/search/suggest`의 결과 묶음을 보인다. `/`·Ctrl/⌘+K 단축키, ↓/↑ 이동. 결과 마크업은 검색 화면과 같은 `partials/site-search-results`. [통합 검색](../site-search.md). 브라우저 테스트 `site-search-dialog` |
+| 4 공산링고 PWA | 구현. 범위는 공산링고만, 열어 본 화면·강좌 데이터의 오프라인 재생, 마스코트 아이콘(사용자 결정). Web Push 학습 알림은 하지 않음. [공산링고 PWA](../commulingo-pwa.md). 브라우저 테스트 `commulingo-pwa` |
+| 5 실사용 성능·브라우저 오류 | 구현. `site-vitals.js` → `/metrics/vitals`·`/metrics/client-error` → `site_web_vitals`·`site_client_errors`(migration 375, **운영 DB 적용 전**: 배포 전에 `scripts/apply-migration scripts/migrations/375_site_web_vitals_client_errors.sql`). 대시보드에 7일 p75와 오류 목록. [운영 참고](../frontend-operations.md) |
 | 5 접근성 자동 검사 | 구현. `tests/browser/a11y.js`(`@axe-core/playwright`, BASE_URL 필요): 대표 11개 화면 × 두 테마, WCAG 2.1 A/AA의 serious·critical 위반이면 실패. 툴바 워드마크는 로고라 제외. 첫 검사에서 나온 대비 문제 수정: 라이트 테마 인물·사건 관계 표지(1.6:1 → 4.5:1 이상, 어두운 호버 행은 밝은 톤 유지), 큐레이션 출처의 opacity, 다크 테마 대문 문구 빨강(3.6 → 4.8:1) |
 | 5 Cloudflare 비콘 CSP | 허용으로 결정(2026-11-02). `config/security.js`의 script-src에 `static.cloudflareinsights.com`, connect-src에 `cloudflareinsights.com` |
 | 6 | 미착수 |

@@ -46,7 +46,7 @@
   - 레슨 id는 `lenin-mec-chNN-basic`이다.
   - 작업 지침은 `course/READING2.md`·`REVIEW.md`, 단계별 백업은 `course.bak2-`·`course.bak3-20261028/`에 있다.
 - 2026-10-28 같은 날 끊어 읽기로 옮겼다(revision 2).
-  - 사용자 판단: 개념 화면 뒤에 정의를 묻는 퀴즈형(「버클리의 esse is percipi는 무엇을 주장하는가」)은 최신 형식([원문 끊어 읽기](commulingo-guided-reading.md))에서 후퇴한 것이다.
+  - 사용자 판단: 개념 화면 뒤에 정의를 묻는 퀴즈형(「버클리의 esse is percipi는 무엇을 주장하는가」)은 최신 형식([원문 끊어 읽기](../commulingo-guided-reading.md))에서 후퇴한 것이다.
   - 사용자 지시로 기존 80문항의 질문·보기 4개·해설·피드백은 그대로 두고, 문항마다 맥락 한 줄(`read()`)과 원문 발췌(`src()`)만 붙였다.
   - (2차) 단위마다 기본·심화를 한 편씩으로 나눠 16편 × 5발췌로 만들었다(`helpers.js` `readingChapters`). 레슨 id는 `lenin-materialism-empiriocriticism-chNN-basic`이다.
   - 끊어 읽기는 3지선다가 기본이지만, 사용자 결정으로 이 강좌는 4지선다다. 검증기(`commulingo-checks.js`)와 품질 감사가 끊어 읽기의 3·4지선다를 모두 받는다.
