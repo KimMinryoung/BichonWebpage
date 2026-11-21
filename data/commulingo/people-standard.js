@@ -505,6 +505,7 @@ function normalizeCommuLingoPeople(data, options = {}) {
         period: parsePeriod(office.range || ''),
         blurb: localize(office.blurb, lang),
         termIds: Array.isArray(office.termIds) ? office.termIds : [],
+        trackDisplay: office.trackDisplay || 'auto',
         lineage: Array.isArray(office.lineage) ? office.lineage.map(step => ({
             period: step.period || '',
             name: localize(step.name, lang),

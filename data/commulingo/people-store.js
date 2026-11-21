@@ -97,7 +97,7 @@ async function fetchRows() {
                       COALESCE(end_month, 0), COALESCE(end_day, 0), sort_order, id`
         ),
         client.query(
-            `SELECT id, section, country, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, lineage, tracks, term_ids, updated_at
+            `SELECT id, section, country, range_label, title_ko, title_en, blurb_ko, blurb_en, icon, lineage, tracks, track_display, term_ids, updated_at
              FROM commulingo_offices
              ORDER BY sort_order, id`
         ),
@@ -284,6 +284,7 @@ function rowsToPeopleData(rows) {
             icon: row.icon || '',
             lineage: Array.isArray(row.lineage) ? row.lineage : [],
             tracks: Array.isArray(row.tracks) ? row.tracks : [],
+            trackDisplay: row.track_display || 'auto',
             termIds: Array.isArray(row.term_ids) ? row.term_ids : [],
             rows: officeRowsByOffice[row.id] || [],
             updatedAt: latestTimestamp(
