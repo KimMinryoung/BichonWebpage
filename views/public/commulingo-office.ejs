@@ -72,7 +72,7 @@
         <% var trackPicker = office.trackDisplay === 'numbered' || (office.trackDisplay === 'picker' && office.tracks.length > 1) || (office.trackDisplay === 'auto' && office.tracks.length > 2); var trackNumbers = office.trackDisplay === 'numbered'; %>
         <% if (trackPicker) { %>
         <% var trackButton = function(track, index, number) { %>
-                <button type="button" class="commu-office-track-option" data-office-track="<%= index %>" aria-pressed="false"><% if (number) { %><span class="commu-office-track-number"><%= number %></span> <% } %><%= track.title || strings.commuLingoViews.office.leadershipTimeline %></button>
+                <button type="button" class="commu-office-track-option" data-office-track="<%= index %>" aria-pressed="false"><% if (number) { %><span class="commu-office-track-number"><%= number %></span><% } %><%= track.title || strings.commuLingoViews.office.leadershipTimeline %></button>
         <% }; %>
         <div class="commu-office-track-picker" role="group" aria-label="<%= strings.commuLingoViews.office.trackPicker %>" hidden>
             <% if (office.tracks.some(function(track) { return track.lead; })) { %>
