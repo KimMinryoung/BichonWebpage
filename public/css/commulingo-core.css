@@ -2999,3 +2999,5 @@ a.commu-person-affiliation:focus-visible {
 .commu-office-track-option.is-active,
 .commu-office-track-lead .commu-office-track-option.is-active { background: var(--accent); color: var(--clr-cream); font-weight: 700; }
 .commu-office-track-option:focus-visible { outline: 2px solid var(--link); outline-offset: -2px; }
+.commu-office-track-number { color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.commu-office-track-option.is-active .commu-office-track-number { color: inherit; }

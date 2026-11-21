@@ -71,8 +71,8 @@
         <% }; %>
         <% var trackPicker = office.tracks.length > 2; %>
         <% if (trackPicker) { %>
-        <% var trackButton = function(track, index) { %>
-                <button type="button" class="commu-office-track-option" data-office-track="<%= index %>" aria-pressed="false"><%= track.title || strings.commuLingoViews.office.leadershipTimeline %></button>
+        <% var trackButton = function(track, index, number) { %>
+                <button type="button" class="commu-office-track-option" data-office-track="<%= index %>" aria-pressed="false"><% if (number) { %><span class="commu-office-track-number"><%= number %></span> <% } %><%= track.title || strings.commuLingoViews.office.leadershipTimeline %></button>
         <% }; %>
         <div class="commu-office-track-picker" role="group" aria-label="<%= strings.commuLingoViews.office.trackPicker %>" hidden>
             <% if (office.tracks.some(function(track) { return track.lead; })) { %>
@@ -81,7 +81,7 @@
             </div>
             <% } %>
             <div class="commu-office-track-row">
-                <% office.tracks.forEach(function(track, index) { if (!track.lead) trackButton(track, index); }) %>
+                <% var trackNumber = 0; office.tracks.forEach(function(track, index) { if (!track.lead) trackButton(track, index, ++trackNumber); }) %>
             </div>
         </div>
         <% } %>
