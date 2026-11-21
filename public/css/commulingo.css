@@ -3148,6 +3148,10 @@ a.commu-office-row:focus-visible .commu-office-main em {
     font-style: normal;
 }
 
+.commu-structure-unit em.commu-structure-vacant {
+    color: var(--text-muted);
+}
+
 a.commu-structure-unit:hover,
 a.commu-structure-unit:focus-visible {
     background: var(--accent);

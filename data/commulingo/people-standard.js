@@ -442,10 +442,11 @@ function holderOn(rows, trackId, date) {
 }
 
 // A lineage node's snapshots of the whole organization at one date: each unit
-// with what it did and who headed it then: its own `head` ({personId} or
-// {name}, optional note) for a unit outside the tracks, else the holder of its
+// with what it did and who headed it then: its own `head` ({personId},
+// {name} or {vacant: true}, optional note) for a unit outside the tracks, else the holder of its
 // track on that date.
 function unitHead(unit, date, rows, peopleById, lang) {
+    if (unit.head && unit.head.vacant) return { vacant: true, name: '', personId: '', note: localize(unit.head.note, lang) };
     if (unit.head) {
         const person = unit.head.personId ? peopleById[unit.head.personId] : null;
         const name = person ? person.names.label : localize(unit.head.name, lang);

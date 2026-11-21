@@ -15,8 +15,8 @@
 // government, for tracks laid out in two columns). A lineage node's optional
 // `structures` [{date [y,m,d], title, source, units [{name, role, trackId? | head?}]}]
 // lists the whole organization at a date; a unit's trackId shows who held that
-// track then, a unit outside the tracks names its head ({personId} or {name},
-// optional note).
+// track then, a unit outside the tracks names its head ({personId}, {name} or
+// {vacant: true}, optional note).
 const fs = require('fs');
 const db = require('../config/database');
 const { personName, nameColumns } = require('../data/commulingo/person-name');
@@ -65,7 +65,7 @@ function validate(spec) {
                 if (unit.trackId && !trackIds.has(unit.trackId)) throw new Error(`${where} units[${u}] track ${unit.trackId} not listed`);
                 if (unit.head) {
                     if (unit.trackId) throw new Error(`${where} units[${u}] has both head and trackId`);
-                    if (!unit.head.personId) bilingual(unit.head.name, `${where} units[${u}] head name`);
+                    if (!unit.head.personId && !unit.head.vacant) bilingual(unit.head.name, `${where} units[${u}] head name`);
                     bilingual(unit.head.note, `${where} units[${u}] head note`, true);
                 }
             }

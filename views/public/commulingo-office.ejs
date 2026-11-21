@@ -37,7 +37,7 @@
                                 <<%= href ? 'a' : 'div' %> class="commu-structure-unit"<% if (href) { %> href="<%= href %>"<% } %>>
                                     <strong><%= unit.name %></strong>
                                     <% if (unit.role) { %><small><%= unit.role %></small><% } %>
-                                    <% if (unit.holder) { %><em><%= unit.holder.name %><% if (unit.holder.note) { %> (<%= unit.holder.note %>)<% } %></em><% } %>
+                                    <% if (unit.holder) { %><em<% if (unit.holder.vacant) { %> class="commu-structure-vacant"<% } %>><%= unit.holder.vacant ? strings.commuLingoViews.office.structureVacant : unit.holder.name %><% if (unit.holder.note) { %> (<%= unit.holder.note %>)<% } %></em><% } %>
                                 </<%= href ? 'a' : 'div' %>>
                             </li>
                             <% }) %>
