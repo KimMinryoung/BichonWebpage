@@ -16,7 +16,8 @@
 // `structures` [{date [y,m,d], title, source, units [{name, role, trackId? | head?}]}]
 // lists the whole organization at a date; a unit's trackId shows who held that
 // track then, a unit outside the tracks names its head ({personId}, {name} or
-// {vacant: true}, optional note).
+// {vacant: true}, optional note). A track's optional `lead: true` puts it in
+// the picker's top row (the office's leading posts).
 const fs = require('fs');
 const db = require('../config/database');
 const { personName, nameColumns } = require('../data/commulingo/person-name');
@@ -51,6 +52,7 @@ function validate(spec) {
         trackIds.add(track.id);
         bilingual(track.title, `track ${track.id} title`);
         bilingual(track.blurb, `track ${track.id} blurb`, true);
+        if (track.lead !== undefined && typeof track.lead !== 'boolean') throw new Error(`track ${track.id} lead must be true or false`);
     }
     for (const node of spec.lineage || []) {
         bilingual(node.name, 'lineage name');
@@ -115,7 +117,7 @@ async function main() {
             name: node.name, period: node.period || '', body: node.body, ...(node.termId ? { termId: node.termId } : {}),
             ...(node.structures && node.structures.length ? { structures: node.structures } : {}),
         }));
-        const tracks = spec.tracks.map(track => ({ id: track.id, title: track.title, ...(track.blurb ? { blurb: track.blurb } : {}) }));
+        const tracks = spec.tracks.map(track => ({ id: track.id, title: track.title, ...(track.blurb ? { blurb: track.blurb } : {}), ...(track.lead ? { lead: true } : {}) }));
         await client.query(
             `UPDATE commulingo_offices SET title_ko = $2, title_en = $3, blurb_ko = $4, blurb_en = $5,
                 range_label = $6, lineage = $7::jsonb, tracks = $8::jsonb, updated_at = NOW() WHERE id = $1`,

@@ -71,11 +71,17 @@
         <% }; %>
         <% var trackPicker = office.tracks.length > 2; %>
         <% if (trackPicker) { %>
+        <% var trackButton = function(track, index) { %>
+                <button type="button" class="commu-office-track-option" data-office-track="<%= index %>" aria-pressed="false"><%= track.title || strings.commuLingoViews.office.leadershipTimeline %></button>
+        <% }; %>
         <nav class="commu-office-track-picker" aria-label="<%= strings.commuLingoViews.office.trackPicker %>" hidden>
-            <div class="commu-people-chips">
-                <% office.tracks.forEach(function(track, index) { %>
-                <button type="button" class="commu-dict-chip commu-people-chip" data-office-track="<%= index %>" aria-pressed="false"><%= track.title || strings.commuLingoViews.office.leadershipTimeline %> <span><%= track.rows.length %></span></button>
-                <% }) %>
+            <% if (office.tracks.some(function(track) { return track.lead; })) { %>
+            <div class="commu-office-track-row commu-office-track-lead">
+                <% office.tracks.forEach(function(track, index) { if (track.lead) trackButton(track, index); }) %>
+            </div>
+            <% } %>
+            <div class="commu-office-track-row">
+                <% office.tracks.forEach(function(track, index) { if (!track.lead) trackButton(track, index); }) %>
             </div>
         </nav>
         <% } %>

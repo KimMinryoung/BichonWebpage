@@ -419,12 +419,13 @@ function officeTracks(raw, rows, lang) {
             id: track.id,
             title: localize(track.title, lang),
             blurb: localize(track.blurb, lang),
+            lead: track.lead === true,
             rows: own,
             columns: seatColumns(own),
         };
     }).filter(track => track.rows.length);
     const rest = rows.filter(row => !known.has(row.trackId));
-    if (rest.length) sections.push({ id: '', title: '', blurb: '', rows: rest, columns: null });
+    if (rest.length) sections.push({ id: '', title: '', blurb: '', lead: false, rows: rest, columns: null });
     return sections;
 }
 
