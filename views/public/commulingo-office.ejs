@@ -74,7 +74,7 @@
         <% var trackButton = function(track, index) { %>
                 <button type="button" class="commu-office-track-option" data-office-track="<%= index %>" aria-pressed="false"><%= track.title || strings.commuLingoViews.office.leadershipTimeline %></button>
         <% }; %>
-        <nav class="commu-office-track-picker" aria-label="<%= strings.commuLingoViews.office.trackPicker %>" hidden>
+        <div class="commu-office-track-picker" role="group" aria-label="<%= strings.commuLingoViews.office.trackPicker %>" hidden>
             <% if (office.tracks.some(function(track) { return track.lead; })) { %>
             <div class="commu-office-track-row commu-office-track-lead">
                 <% office.tracks.forEach(function(track, index) { if (track.lead) trackButton(track, index); }) %>
@@ -83,7 +83,7 @@
             <div class="commu-office-track-row">
                 <% office.tracks.forEach(function(track, index) { if (!track.lead) trackButton(track, index); }) %>
             </div>
-        </nav>
+        </div>
         <% } %>
         <% office.tracks.forEach(function(track, index) { var columns = track.columns; %>
         <section class="commu-hub-section" id="track-<%= track.id || index %>" aria-labelledby="office-track-<%= index %>"<% if (trackPicker) { %> data-office-track-panel="<%= index %>"<% } %>>
