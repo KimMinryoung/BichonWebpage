@@ -69,8 +69,18 @@
                     </<%= row.personId ? 'a' : 'div' %>>
                 </li>
         <% }; %>
+        <% var trackPicker = office.tracks.length > 2; %>
+        <% if (trackPicker) { %>
+        <nav class="commu-office-track-picker" aria-label="<%= strings.commuLingoViews.office.trackPicker %>" hidden>
+            <div class="commu-people-chips">
+                <% office.tracks.forEach(function(track, index) { %>
+                <button type="button" class="commu-dict-chip commu-people-chip" data-office-track="<%= index %>" aria-pressed="false"><%= track.title || strings.commuLingoViews.office.leadershipTimeline %> <span><%= track.rows.length %></span></button>
+                <% }) %>
+            </div>
+        </nav>
+        <% } %>
         <% office.tracks.forEach(function(track, index) { var columns = track.columns; %>
-        <section class="commu-hub-section" aria-labelledby="office-track-<%= index %>">
+        <section class="commu-hub-section" id="track-<%= track.id || index %>" aria-labelledby="office-track-<%= index %>"<% if (trackPicker) { %> data-office-track-panel="<%= index %>"<% } %>>
             <h2 id="office-track-<%= index %>"><%= track.title || strings.commuLingoViews.office.leadershipTimeline %></h2>
             <% if (!columns || columns.loose.length) { %>
             <ol class="commu-office-rows commu-hub-office-rows">
@@ -93,6 +103,29 @@
             <% } %>
         </section>
         <% }) %>
+        <% if (trackPicker) { %>
+        <script>
+        (function () {
+            var picker = document.querySelector('.commu-office-track-picker');
+            var buttons = picker.querySelectorAll('[data-office-track]');
+            var panels = document.querySelectorAll('[data-office-track-panel]');
+            function show(index, scroll) {
+                buttons.forEach(function (b) { var on = b.dataset.officeTrack === index; b.classList.toggle('is-active', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+                panels.forEach(function (p) { p.hidden = p.dataset.officeTrackPanel !== index; });
+                var panel = document.querySelector('[data-office-track-panel="' + index + '"]');
+                if (scroll && panel) history.replaceState(null, '', '#' + panel.id);
+            }
+            var start = '0';
+            if (location.hash) {
+                var target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+                if (target && target.dataset.officeTrackPanel) start = target.dataset.officeTrackPanel;
+            }
+            picker.hidden = false;
+            show(start, false);
+            buttons.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.officeTrack, true); }); });
+        })();
+        </script>
+        <% } %>
 
         <% if (typeof relatedReports !== 'undefined' && relatedReports && relatedReports.length) { %>
         <section class="commu-hub-section commu-related-reports" aria-labelledby="related-reports">
