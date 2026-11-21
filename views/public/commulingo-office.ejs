@@ -69,7 +69,7 @@
                     </<%= row.personId ? 'a' : 'div' %>>
                 </li>
         <% }; %>
-        <% var trackPicker = office.trackDisplay === 'numbered' || (office.trackDisplay !== 'list' && office.tracks.length > 2); var trackNumbers = office.trackDisplay === 'numbered'; %>
+        <% var trackPicker = office.trackDisplay === 'numbered' || (office.trackDisplay === 'picker' && office.tracks.length > 1) || (office.trackDisplay === 'auto' && office.tracks.length > 2); var trackNumbers = office.trackDisplay === 'numbered'; %>
         <% if (trackPicker) { %>
         <% var trackButton = function(track, index, number) { %>
                 <button type="button" class="commu-office-track-option" data-office-track="<%= index %>" aria-pressed="false"><% if (number) { %><span class="commu-office-track-number"><%= number %></span> <% } %><%= track.title || strings.commuLingoViews.office.leadershipTimeline %></button>
