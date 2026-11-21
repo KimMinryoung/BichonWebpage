@@ -12,7 +12,9 @@
 // the revision log are the Admin API's. Spec format: the office lineage files
 // under scripts/content/office-lineages-20261006/ ({officeId, title, blurb,
 // range, lineage[], tracks[], rows[]}; a row's optional `seat` is state or
-// government, for tracks laid out in two columns).
+// government, for tracks laid out in two columns). A lineage node's optional
+// `structures` [{date [y,m,d], title, source, units [{name, role, trackId?}]}]
+// lists the whole organization at a date; a unit's trackId shows who headed it.
 const fs = require('fs');
 const db = require('../config/database');
 const { personName, nameColumns } = require('../data/commulingo/person-name');
@@ -51,6 +53,16 @@ function validate(spec) {
     for (const node of spec.lineage || []) {
         bilingual(node.name, 'lineage name');
         bilingual(node.body, `lineage ${node.name.ko} body`);
+        for (const [k, structure] of (node.structures || []).entries()) {
+            const where = `lineage ${node.name.ko} structures[${k}]`;
+            if (!Array.isArray(structure.date) || !structure.date[0]) throw new Error(`${where} date missing`);
+            bilingual(structure.title, `${where} title`);
+            for (const [u, unit] of (structure.units || []).entries()) {
+                bilingual(unit.name, `${where} units[${u}] name`);
+                bilingual(unit.role, `${where} units[${u}] role`, true);
+                if (unit.trackId && !trackIds.has(unit.trackId)) throw new Error(`${where} units[${u}] track ${unit.trackId} not listed`);
+            }
+        }
     }
     (spec.rows || []).forEach((row, i) => {
         const where = `rows[${i}]`;
@@ -94,6 +106,7 @@ async function main() {
         if (!before) throw new Error(`office ${spec.officeId} not found`);
         const lineage = (spec.lineage || []).map(node => ({
             name: node.name, period: node.period || '', body: node.body, ...(node.termId ? { termId: node.termId } : {}),
+            ...(node.structures && node.structures.length ? { structures: node.structures } : {}),
         }));
         const tracks = spec.tracks.map(track => ({ id: track.id, title: track.title, ...(track.blurb ? { blurb: track.blurb } : {}) }));
         await client.query(

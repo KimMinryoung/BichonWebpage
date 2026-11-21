@@ -28,6 +28,22 @@
                         <span class="commu-office-years"><%= step.period %></span>
                     </div>
                     <p><%= step.body %></p>
+                    <% (step.structures || []).forEach(function(structure) { %>
+                    <details class="commu-lineage-structure">
+                        <summary><span class="commu-office-years"><%= structure.date %></span> <%= structure.title %> · <%= structure.units.length %><%= strings.commuLingoViews.office.structureUnits %></summary>
+                        <ol class="commu-structure-units">
+                            <% structure.units.forEach(function(unit) { var href = unit.holder && unit.holder.personId ? '/commulingo/people/' + unit.holder.personId : ''; %>
+                            <li>
+                                <<%= href ? 'a' : 'div' %> class="commu-structure-unit"<% if (href) { %> href="<%= href %>"<% } %>>
+                                    <strong><%= unit.name %></strong>
+                                    <% if (unit.role) { %><small><%= unit.role %></small><% } %>
+                                    <% if (unit.holder) { %><em><%= unit.holder.name %><% if (unit.holder.note) { %> (<%= unit.holder.note %>)<% } %></em><% } %>
+                                </<%= href ? 'a' : 'div' %>>
+                            </li>
+                            <% }) %>
+                        </ol>
+                    </details>
+                    <% }) %>
                 </li>
                 <% }) %>
             </ol>

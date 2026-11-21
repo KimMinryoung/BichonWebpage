@@ -428,6 +428,38 @@ function officeTracks(raw, rows, lang) {
     return sections;
 }
 
+// Who held a track's post on a date: the covering row that started last (a
+// successor appointed on the day of a reorganization wins over the outgoing
+// head whose term ends that day).
+function holderOn(rows, trackId, date) {
+    const at = pointKey(date, false);
+    if (!trackId || at == null) return null;
+    const covering = rows.filter(row => row.trackId === trackId && row.period
+        && pointKey(row.period.start, false) <= at
+        && (row.period.ongoing || !row.period.end || pointKey(row.period.end, true) >= at));
+    covering.sort(byStart);
+    return covering[covering.length - 1] || null;
+}
+
+// A lineage node's snapshots of the whole organization at one date: each unit
+// with what it did and, when it belongs to a track, who headed it then.
+function lineageStructures(step, rows, lang) {
+    if (!Array.isArray(step.structures)) return [];
+    return step.structures.map(structure => ({
+        date: Array.isArray(structure.date) ? structure.date.map(part => String(part).padStart(2, '0')).join('.') : '',
+        title: localize(structure.title, lang),
+        source: structure.source || '',
+        units: (structure.units || []).map(unit => {
+            const holder = holderOn(rows, unit.trackId, structure.date);
+            return {
+                name: localize(unit.name, lang),
+                role: localize(unit.role, lang),
+                holder: holder ? { name: holder.displayName || holder.name, personId: holder.personId, note: holder.note } : null,
+            };
+        }),
+    }));
+}
+
 function normalizeCommuLingoPeople(data, options = {}) {
     const lang = options.lang || 'ko';
     const sceneIndex = buildSceneIndex(options.catalog, lang);
@@ -466,9 +498,13 @@ function normalizeCommuLingoPeople(data, options = {}) {
             name: localize(step.name, lang),
             body: localize(step.body, lang),
             termHref: step.termId ? `/commulingo/terms/${step.termId}` : '',
+            rawStructures: step.structures,
         })) : [],
         rows: (office.rows || []).map(row => normalizeOfficeRow(row, office, peopleById, lang)),
-    })).map(office => ({ ...office, tracks: officeTracks(data.offices.find(raw => raw.id === office.id), office.rows, lang) })).filter(office => office.rows.length).sort((a, b) => {
+    })).map(office => ({
+        ...office,
+        lineage: office.lineage.map(({ rawStructures, ...step }) => ({ ...step, structures: lineageStructures({ structures: rawStructures }, office.rows, lang) })),
+        tracks:officeTracks(data.offices.find(raw => raw.id === office.id), office.rows, lang) })).filter(office => office.rows.length).sort((a, b) => {
         const aIndex = OFFICE_DISPLAY_ORDER.indexOf(a.id);
         const bIndex = OFFICE_DISPLAY_ORDER.indexOf(b.id);
         return (aIndex === -1 ? 999 : aIndex) - (bIndex === -1 ? 999 : bIndex);

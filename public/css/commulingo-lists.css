@@ -653,6 +653,34 @@ a.commu-office-row:focus-visible .commu-office-main em {
     margin: 4px 0 0;
 }
 
+.commu-lineage-structure {
+    border: 1px solid var(--border);
+    margin-top: 8px;
+}
+
+.commu-lineage-structure > summary {
+    color: var(--link);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    list-style: none;
+    padding: 8px 12px;
+}
+
+.commu-lineage-structure > summary::-webkit-details-marker { display: none; }
+.commu-lineage-structure > summary::before { content: '+ '; }
+.commu-lineage-structure[open] > summary::before { content: '− '; }
+
+.commu-lineage-structure > summary:hover {
+    background: var(--bg-surface-hover);
+}
+
+.commu-lineage-structure > summary:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: -2px;
+}
+
+
 .commu-office-main {
     display: grid;
     gap: 3px;
