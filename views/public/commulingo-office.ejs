@@ -72,7 +72,6 @@
         <% office.tracks.forEach(function(track, index) { var columns = track.columns; %>
         <section class="commu-hub-section" aria-labelledby="office-track-<%= index %>">
             <h2 id="office-track-<%= index %>"><%= track.title || strings.commuLingoViews.office.leadershipTimeline %></h2>
-            <% if (track.blurb) { %><p class="commu-office-track-blurb"><%= track.blurb %></p><% } %>
             <% if (!columns || columns.loose.length) { %>
             <ol class="commu-office-rows commu-hub-office-rows">
                 <% (columns ? columns.loose : track.rows).forEach(officeRow) %>
