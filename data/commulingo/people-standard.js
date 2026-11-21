@@ -442,21 +442,31 @@ function holderOn(rows, trackId, date) {
 }
 
 // A lineage node's snapshots of the whole organization at one date: each unit
-// with what it did and, when it belongs to a track, who headed it then.
-function lineageStructures(step, rows, lang) {
+// with what it did and who headed it then: its own `head` ({personId} or
+// {name}, optional note) for a unit outside the tracks, else the holder of its
+// track on that date.
+function unitHead(unit, date, rows, peopleById, lang) {
+    if (unit.head) {
+        const person = unit.head.personId ? peopleById[unit.head.personId] : null;
+        const name = person ? person.names.label : localize(unit.head.name, lang);
+        if (!name) return null;
+        return { name, personId: person ? person.id : '', note: localize(unit.head.note, lang) };
+    }
+    const holder = holderOn(rows, unit.trackId, date);
+    return holder ? { name: holder.displayName || holder.name, personId: holder.personId, note: holder.note } : null;
+}
+
+function lineageStructures(step, rows, lang, peopleById = {}) {
     if (!Array.isArray(step.structures)) return [];
     return step.structures.map(structure => ({
         date: Array.isArray(structure.date) ? structure.date.map(part => String(part).padStart(2, '0')).join('.') : '',
         title: localize(structure.title, lang),
         source: structure.source || '',
-        units: (structure.units || []).map(unit => {
-            const holder = holderOn(rows, unit.trackId, structure.date);
-            return {
-                name: localize(unit.name, lang),
-                role: localize(unit.role, lang),
-                holder: holder ? { name: holder.displayName || holder.name, personId: holder.personId, note: holder.note } : null,
-            };
-        }),
+        units: (structure.units || []).map(unit => ({
+            name: localize(unit.name, lang),
+            role: localize(unit.role, lang),
+            holder: unitHead(unit, structure.date, rows, peopleById, lang),
+        })),
     }));
 }
 
@@ -503,7 +513,7 @@ function normalizeCommuLingoPeople(data, options = {}) {
         rows: (office.rows || []).map(row => normalizeOfficeRow(row, office, peopleById, lang)),
     })).map(office => ({
         ...office,
-        lineage: office.lineage.map(({ rawStructures, ...step }) => ({ ...step, structures: lineageStructures({ structures: rawStructures }, office.rows, lang) })),
+        lineage: office.lineage.map(({ rawStructures, ...step }) => ({ ...step, structures: lineageStructures({ structures: rawStructures }, office.rows, lang, peopleById) })),
         tracks:officeTracks(data.offices.find(raw => raw.id === office.id), office.rows, lang) })).filter(office => office.rows.length).sort((a, b) => {
         const aIndex = OFFICE_DISPLAY_ORDER.indexOf(a.id);
         const bIndex = OFFICE_DISPLAY_ORDER.indexOf(b.id);
