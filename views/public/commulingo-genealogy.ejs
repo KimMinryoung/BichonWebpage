@@ -21,14 +21,18 @@
             <%# Column headers stay pinned while a tall chart scrolls. The
                 svg scales to the box width, so the row is laid out in the
                 same proportions (commulingo.css .gen-cols). %>
-            <%# Shown by the page script only where the fitted chart is too
-                small to read (a phone): it switches between the whole chart at
-                a glance and the chart at its drawn size, scrolled sideways. %>
-            <button type="button" class="btn gen-zoom" aria-pressed="false" hidden data-zoom-in="<%= strings.commuLingoViews.genealogy.zoomIn %>" data-zoom-out="<%= strings.commuLingoViews.genealogy.zoomOut %>"><%= strings.commuLingoViews.genealogy.zoomIn %></button>
             <div class="gen-cols" aria-hidden="true" data-columns="<%= columns.labels.length %>">
                 <span></span><% columns.labels.forEach(function(label) { %><span><%= label %></span><% }) %><span></span>
             </div>
-            <div class="gen-scroll" tabindex="0" role="group" aria-label="<%= chart.title %>">
+            <%# The same + − ↺ buttons as the world map, pinned under the header
+                row so they stay in reach down a tall chart. The page script
+                shows them; without it the chart is the fitted drawing. %>
+            <div class="gen-zoom-ctl" data-gen-zoom-ctl hidden>
+                <button type="button" data-gen-zoom="in" aria-label="<%= strings.commuLingoViews.genealogy.zoomIn %>" title="<%= strings.commuLingoViews.genealogy.zoomIn %>">+</button>
+                <button type="button" data-gen-zoom="out" aria-label="<%= strings.commuLingoViews.genealogy.zoomOut %>" title="<%= strings.commuLingoViews.genealogy.zoomOut %>">−</button>
+                <button type="button" data-gen-zoom="reset" aria-label="<%= strings.commuLingoViews.genealogy.zoomReset %>" title="<%= strings.commuLingoViews.genealogy.zoomReset %>">↺</button>
+            </div>
+            <div class="gen-scroll" data-drag-scroll="page-y" tabindex="0" role="group" aria-label="<%= chart.title %>">
                 <%- svg %>
             </div>
             <figcaption class="gen-legend">
@@ -41,7 +45,14 @@
             <section class="gen-panel" id="gen-panel" aria-label="<%= strings.commuLingoViews.genealogy.panel %>" aria-live="polite" hidden>
                 <div class="gen-panel-head">
                     <span class="gen-panel-meta"></span>
-                    <button type="button" class="gen-panel-close" aria-label="<%= strings.commuLingoViews.genealogy.closePanel %>">×</button>
+                    <%# The zoom buttons again, in the panel a selected node
+                        pins to the bottom of the window: in reach of the thumb
+                        while reading down the chart. Shown by the page script. %>
+                    <span class="gen-panel-tools">
+                        <button type="button" class="gen-panel-zoom" data-gen-zoom="in" hidden aria-label="<%= strings.commuLingoViews.genealogy.zoomIn %>" title="<%= strings.commuLingoViews.genealogy.zoomIn %>">+</button>
+                        <button type="button" class="gen-panel-zoom" data-gen-zoom="out" hidden aria-label="<%= strings.commuLingoViews.genealogy.zoomOut %>" title="<%= strings.commuLingoViews.genealogy.zoomOut %>">−</button>
+                        <button type="button" class="gen-panel-close" aria-label="<%= strings.commuLingoViews.genealogy.closePanel %>">×</button>
+                    </span>
                 </div>
                 <div class="gen-panel-body">
                     <div class="gen-panel-main">

@@ -224,32 +224,70 @@
     placeHeader();
     window.addEventListener('resize', placeHeader);
 
-    // Fitted to a phone the chart's labels are a few pixels tall. The zoom
-    // button draws it at its own size instead and lets the box scroll
-    // sideways; the pinned header row is moved along with the scroll.
+    // Zoom and pan. The chart opens fitted to the box (all lanes at a
+    // glance), where a phone leaves its labels a few pixels tall. The + − ↺
+    // buttons, the same as the world map's, redraw it wider; the box then
+    // scrolls sideways and the pinned header row is carried along (--gen-x).
+    // With a mouse the chart is also dragged (data-drag-scroll, common.js):
+    // sideways inside the box, up and down with the page, so nobody has to
+    // reach the scrollbar at the bottom of a tall chart.
     var figure = document.querySelector('.gen-figure');
-    var zoom = document.querySelector('.gen-zoom');
+    var controls = document.querySelector('[data-gen-zoom-ctl]');
     var scroller = document.querySelector('.gen-scroll');
     var drawing = scroller && scroller.querySelector('.gen-svg');
-    if (figure && zoom && drawing) {
+    if (figure && controls && drawing) {
         var drawnWidth = Number(drawing.getAttribute('width')) || 0;
-        var offerZoom = function() {
-            if (figure.classList.contains('is-zoomed')) return;
-            zoom.hidden = !(drawnWidth && drawing.getBoundingClientRect().width < drawnWidth * 0.8);
+        var STEP = 1.4;
+        var MAX_SCALE = 1.6;
+        var width = 0; // 0 = fitted
+        var fitWidth = function() { return Math.min(scroller.clientWidth, drawnWidth); };
+        var maxWidth = function() { return Math.max(fitWidth(), drawnWidth * MAX_SCALE); };
+        // The buttons stand twice: over the chart, and in the selected node's panel.
+        var zoomButtons = figure.querySelectorAll('[data-gen-zoom]');
+        var setDisabled = function(action, disabled) {
+            Array.prototype.forEach.call(zoomButtons, function(button) {
+                if (button.getAttribute('data-gen-zoom') === action) button.disabled = disabled;
+            });
         };
         var followScroll = function() { figure.style.setProperty('--gen-x', scroller.scrollLeft + 'px'); };
-        zoom.addEventListener('click', function() {
-            var on = !figure.classList.contains('is-zoomed');
-            figure.style.setProperty('--gen-w', drawnWidth + 'px');
-            figure.classList.toggle('is-zoomed', on);
-            zoom.setAttribute('aria-pressed', on ? 'true' : 'false');
-            zoom.textContent = zoom.getAttribute(on ? 'data-zoom-out' : 'data-zoom-in');
-            if (!on) scroller.scrollLeft = 0;
+        var placeControls = function() {
+            var top = (crumb ? crumb.getBoundingClientRect().height : 0) + (cols ? cols.getBoundingClientRect().height : 0);
+            controls.style.top = top + 'px';
+        };
+        var setWidth = function(next) {
+            var fit = fitWidth();
+            var before = drawing.getBoundingClientRect();
+            // The point of the drawing at the middle of the window stays there.
+            var fx = before.width ? (scroller.scrollLeft + scroller.clientWidth / 2) / before.width : 0.5;
+            var fy = before.height ? (window.innerHeight / 2 - before.top) / before.height : 0;
+            var inView = before.top < window.innerHeight && before.bottom > 0;
+            next = Math.max(fit, Math.min(maxWidth(), next));
+            width = next > fit + 1 ? next : 0;
+            figure.classList.toggle('is-zoomed', Boolean(width));
+            if (width) figure.style.setProperty('--gen-w', Math.round(width) + 'px');
+            var after = drawing.getBoundingClientRect();
+            scroller.scrollLeft = width ? fx * after.width - scroller.clientWidth / 2 : 0;
+            if (inView && fy > 0 && fy < 1) window.scrollBy(0, (after.top + fy * after.height) - window.innerHeight / 2);
             followScroll();
-            offerZoom();
+            setDisabled('in', (width || fit) >= maxWidth() - 1);
+            setDisabled('out', !width);
+            setDisabled('reset', !width);
+            placeControls();
+        };
+        figure.addEventListener('click', function(event) {
+            var button = event.target.closest('[data-gen-zoom]');
+            if (!button) return;
+            var action = button.getAttribute('data-gen-zoom');
+            var current = width || fitWidth();
+            if (action === 'in') setWidth(current * STEP);
+            else if (action === 'out') setWidth(current / STEP);
+            else setWidth(0);
         });
         scroller.addEventListener('scroll', followScroll, { passive: true });
-        window.addEventListener('resize', offerZoom);
-        offerZoom();
+        window.addEventListener('resize', function() { setWidth(width); });
+
+        controls.hidden = false;
+        Array.prototype.forEach.call(zoomButtons, function(button) { button.hidden = false; });
+        setWidth(0);
     }
 })();

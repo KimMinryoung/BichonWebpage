@@ -702,3 +702,9 @@ svg {
         border-color: CanvasText;
     }
 }
+
+/* Drag to scroll with a mouse (common.js): maps, the genealogy chart, the war
+   boards. */
+[data-drag-scroll].is-dragging,
+.cw-grid-scroll.is-dragging { cursor: grabbing; user-select: none; }
+[data-drag-scroll].is-dragging * { cursor: grabbing; }

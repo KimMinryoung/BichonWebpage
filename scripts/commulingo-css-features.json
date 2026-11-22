@@ -475,10 +475,12 @@
   "gen-panel-period",
   "gen-panel-rel",
   "gen-panel-title",
+  "gen-panel-tools",
+  "gen-panel-zoom",
   "gen-scroll",
   "gen-svg",
   "gen-year",
-  "gen-zoom",
+  "gen-zoom-ctl",
   "is-zoomed"
  ],
  "politburo": [

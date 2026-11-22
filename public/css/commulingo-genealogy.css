@@ -14,7 +14,21 @@
 @media (max-width: 560px) { .gen-figure { padding: .3rem; } }
 .gen-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .gen-svg { display: block; font-family: inherit; height: auto; }
-.gen-zoom { width: 100%; margin: 0 0 .3rem; }
+.gen-zoom-ctl { display: flex; gap: 4px; justify-content: flex-end; position: sticky; top: 0; z-index: 39; height: 0; padding-right: 6px; pointer-events: none; }
+.gen-zoom-ctl[hidden] { display: none; }
+.gen-zoom-ctl button {
+    align-items: center; background: var(--btn-bg); border: 1px solid var(--border); color: var(--text-primary);
+    cursor: pointer; display: flex; flex: 0 0 34px; font: inherit; font-size: var(--text-lg); font-weight: 700;
+    height: 34px; min-height: 34px; justify-content: center; line-height: var(--leading-none); margin-top: 6px;
+    padding: 0; pointer-events: auto; width: 34px; min-width: 34px;
+}
+.gen-zoom-ctl button:hover,
+.gen-zoom-ctl button:focus-visible { background: var(--btn-hover); }
+.gen-zoom-ctl button:disabled { cursor: default; opacity: .42; }
+@media (pointer: coarse) { .gen-zoom-ctl button { flex-basis: 40px; height: 40px; min-height: 40px; width: 40px; min-width: 40px; } }
+@media (hover: hover) and (pointer: fine) {
+    .gen-scroll { cursor: grab; }
+}
 .gen-figure.is-zoomed { overflow-x: clip; }
 .gen-figure.is-zoomed .gen-svg { width: var(--gen-w); max-width: none; }
 .gen-figure.is-zoomed .gen-cols { width: var(--gen-w); transform: translateX(calc(-1 * var(--gen-x, 0px))); font-size: var(--text-meta); }
@@ -98,7 +112,8 @@ a:focus-visible .gen-node-linked rect { stroke: var(--border-emphasis); stroke-w
 @media (max-width: 560px) { .gen-panel { margin: .3rem -.3rem -.3rem; } }
 .gen-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; }
 .gen-panel-meta { color: var(--text-muted); font-size: var(--text-meta); font-weight: 600; padding-top: .2rem; }
-.gen-panel-close {
+.gen-panel-close,
+.gen-panel-zoom {
     flex: none;
     width: 2rem;
     height: 2rem;
@@ -110,7 +125,11 @@ a:focus-visible .gen-node-linked rect { stroke: var(--border-emphasis); stroke-w
     line-height: 1;
     cursor: pointer;
 }
-.gen-panel-close:hover { background: var(--bg-surface-hover); }
+.gen-panel-close:hover,
+.gen-panel-zoom:hover:not(:disabled) { background: var(--bg-surface-hover); }
+.gen-panel-tools { display: flex; flex: none; gap: 4px; }
+.gen-panel-zoom[hidden] { display: none; }
+.gen-panel-zoom:disabled { cursor: default; opacity: .42; }
 .gen-panel-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .75rem 1.25rem; }
 @media (max-width: 760px) { .gen-panel-body { grid-template-columns: minmax(0, 1fr); } }
 .gen-panel-title { margin: .1rem 0 .4rem; font-size: var(--text-lg); }

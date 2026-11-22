@@ -19,7 +19,7 @@
 
         <section class="commu-world-map-panel is-country" aria-label="<%= country.label %>">
             <%- include('../partials/commulingo-world-map-controls', { copy: copy }) %>
-            <div class="commu-world-map" data-world-map><%- mapSvg %></div>
+            <div class="commu-world-map" data-world-map data-drag-scroll><%- mapSvg %></div>
             <p class="commu-world-map-note"><%= country.kind === 'modern' ? copy.boundaryNote : copy.historicalNote %></p>
         </section>
 

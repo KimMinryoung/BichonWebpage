@@ -108,3 +108,71 @@ document.addEventListener('submit', function(e) {
     if (!window.matchMedia || !window.matchMedia('(min-width: 721px)').matches) return;
     Array.prototype.forEach.call(document.querySelectorAll('details[data-open-wide]'), function(node) { node.open = true; });
 })();
+
+// Drag to scroll with a mouse: maps, the genealogy chart and the war boards.
+// A touch screen pans these boxes natively; a mouse had only the scrollbars,
+// which sit at the far edge of a tall drawing or are hidden altogether.
+// `data-drag-scroll` marks a box that scrolls; the value "page-y" hands the
+// vertical part of the drag to the page for a box that only scrolls sideways.
+// The battle grid of the war games is rebuilt on every render, so it is named
+// here by class instead. A press that moves less than 5px stays a click.
+(function() {
+    var SELECTOR = '[data-drag-scroll], .cw-grid-scroll';
+    var drag = null;
+    var suppressClick = false;
+    function scrollsOn(box, axis) {
+        var style = window.getComputedStyle(box);
+        var mode = axis === 'x' ? style.overflowX : style.overflowY;
+        if (mode !== 'auto' && mode !== 'scroll') return false;
+        return axis === 'x' ? box.scrollWidth > box.clientWidth + 1 : box.scrollHeight > box.clientHeight + 1;
+    }
+    document.addEventListener('pointerdown', function(event) {
+        suppressClick = false;
+        if (event.pointerType !== 'mouse' || event.button !== 0) return;
+        var target = event.target;
+        if (!target || !target.closest || target.closest('input, textarea, select, [contenteditable]')) return;
+        var box = target.closest(SELECTOR);
+        if (!box) return;
+        var pageY = box.getAttribute('data-drag-scroll') === 'page-y';
+        var x = scrollsOn(box, 'x');
+        var y = scrollsOn(box, 'y');
+        if (!x && !y) return;
+        drag = { box: box, x: event.clientX, y: event.clientY, moved: false, boxY: y, pageY: pageY && !y };
+    }, true);
+    window.addEventListener('pointermove', function(event) {
+        if (!drag) return;
+        var dx = event.clientX - drag.x;
+        var dy = event.clientY - drag.y;
+        if (!drag.moved) {
+            if (Math.abs(dx) + Math.abs(dy) < 5) return;
+            drag.moved = true;
+            drag.box.classList.add('is-dragging');
+            if (window.getSelection) { var selection = window.getSelection(); if (selection && selection.removeAllRanges) selection.removeAllRanges(); }
+        }
+        drag.box.scrollLeft -= dx;
+        if (drag.boxY) drag.box.scrollTop -= dy;
+        else if (drag.pageY) window.scrollBy(0, -dy);
+        drag.x = event.clientX;
+        drag.y = event.clientY;
+        event.preventDefault();
+    });
+    function end() {
+        if (!drag) return;
+        suppressClick = drag.moved;
+        drag.box.classList.remove('is-dragging');
+        drag = null;
+    }
+    window.addEventListener('pointerup', end);
+    window.addEventListener('pointercancel', end);
+    // A link or image under the pointer would otherwise start a native drag.
+    document.addEventListener('dragstart', function(event) {
+        if (drag) event.preventDefault();
+    });
+    // The click that ends a drag must not act on what lies under it.
+    document.addEventListener('click', function(event) {
+        if (!suppressClick) return;
+        suppressClick = false;
+        event.preventDefault();
+        event.stopPropagation();
+    }, true);
+})();

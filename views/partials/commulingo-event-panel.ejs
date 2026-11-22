@@ -100,7 +100,7 @@ var sections = p.event.bodySections || [];
             </div>
             <% if (p.event.mapSvg) { %>
             <figure class="commu-event-map commu-event-timeline-map">
-                <div class="commu-event-map-viewport"><%- p.event.mapSvg %></div>
+                <div class="commu-event-map-viewport" data-drag-scroll><%- p.event.mapSvg %></div>
             </figure>
             <% if (p.event.control) { var ctl = p.event.control, ep = strings.commuLingoViews.eventPanel; %>
             <div class="commu-event-control" data-event-control>

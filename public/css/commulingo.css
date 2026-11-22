@@ -5925,11 +5925,28 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
    height its markup asks for while the width shrank, so the scaled drawing sat
    centred in a 1409px box with dead space above and below. */
 .gen-svg { display: block; font-family: inherit; height: auto; }
-/* The zoom button (shown by the page script where the fitted labels are too
-   small): the chart at its drawn size, scrolled sideways, with the pinned
-   header row carried along by --gen-x. `clip` keeps the wide row inside the
-   box without making the box a scroll container, which would unpin it. */
-.gen-zoom { width: 100%; margin: 0 0 .3rem; }
+/* Zoom buttons, the world map's + − ↺ (.commu-world-map-controls), pinned
+   under the header row at the right edge; the row has no height of its own, so
+   the buttons lie over the chart instead of pushing it down. Zoomed, the chart
+   is drawn --gen-w wide and scrolls sideways, with the pinned header row
+   carried along by --gen-x. `clip` keeps the wide row inside the box without
+   making the box a scroll container, which would unpin it. */
+.gen-zoom-ctl { display: flex; gap: 4px; justify-content: flex-end; position: sticky; top: 0; z-index: 39; height: 0; padding-right: 6px; pointer-events: none; }
+.gen-zoom-ctl[hidden] { display: none; }
+.gen-zoom-ctl button {
+    align-items: center; background: var(--btn-bg); border: 1px solid var(--border); color: var(--text-primary);
+    cursor: pointer; display: flex; flex: 0 0 34px; font: inherit; font-size: var(--text-lg); font-weight: 700;
+    height: 34px; min-height: 34px; justify-content: center; line-height: var(--leading-none); margin-top: 6px;
+    padding: 0; pointer-events: auto; width: 34px; min-width: 34px;
+}
+.gen-zoom-ctl button:hover,
+.gen-zoom-ctl button:focus-visible { background: var(--btn-hover); }
+.gen-zoom-ctl button:disabled { cursor: default; opacity: .42; }
+@media (pointer: coarse) { .gen-zoom-ctl button { flex-basis: 40px; height: 40px; min-height: 40px; width: 40px; min-width: 40px; } }
+/* With a mouse the chart is dragged (data-drag-scroll, common.js). */
+@media (hover: hover) and (pointer: fine) {
+    .gen-scroll { cursor: grab; }
+}
 .gen-figure.is-zoomed { overflow-x: clip; }
 .gen-figure.is-zoomed .gen-svg { width: var(--gen-w); max-width: none; }
 .gen-figure.is-zoomed .gen-cols { width: var(--gen-w); transform: translateX(calc(-1 * var(--gen-x, 0px))); font-size: var(--text-meta); }
@@ -6028,7 +6045,8 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 @media (max-width: 560px) { .gen-panel { margin: .3rem -.3rem -.3rem; } }
 .gen-panel-head { display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; }
 .gen-panel-meta { color: var(--text-muted); font-size: var(--text-meta); font-weight: 600; padding-top: .2rem; }
-.gen-panel-close {
+.gen-panel-close,
+.gen-panel-zoom {
     flex: none;
     width: 2rem;
     height: 2rem;
@@ -6040,7 +6058,11 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     line-height: 1;
     cursor: pointer;
 }
-.gen-panel-close:hover { background: var(--bg-surface-hover); }
+.gen-panel-close:hover,
+.gen-panel-zoom:hover:not(:disabled) { background: var(--bg-surface-hover); }
+.gen-panel-tools { display: flex; flex: none; gap: 4px; }
+.gen-panel-zoom[hidden] { display: none; }
+.gen-panel-zoom:disabled { cursor: default; opacity: .42; }
 .gen-panel-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .75rem 1.25rem; }
 @media (max-width: 760px) { .gen-panel-body { grid-template-columns: minmax(0, 1fr); } }
 .gen-panel-title { margin: .1rem 0 .4rem; font-size: var(--text-lg); }
