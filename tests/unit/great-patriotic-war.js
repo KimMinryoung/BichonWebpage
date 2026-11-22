@@ -178,6 +178,23 @@ for (const [id, def] of Object.entries(D.battles)) {
     assert.ok(!B.start(def, {}, null).units.some(south));
 }
 
+// Bagration's edition 5: two German supply roads, the two divisions about the city gone, and the
+// divisions east of the river leaving their trenches for Bobruisk on turn 3; an edition-4 save keeps its board.
+{
+    const def = D.battles.bagration;
+    const now = B.start(def, { twoBlows: true }, null), old = B.start(def, { twoBlows: true }, null, { edition: 4 });
+    assert.deepEqual(now.def.supply.enemy, [[3, 0], [0, 0]]);
+    assert.deepEqual(old.def.supply.enemy, [[3, 0]]);
+    assert.ok(!now.units.some(u => u.id === 'b383' || u.id === 'b707') && old.units.some(u => u.id === 'b383') && old.units.some(u => u.id === 'b707'));
+    const east = b => b.units.filter(u => u.side === 'axis' && u.c === 7);
+    assert.ok(east(now).length === 5 && east(now).every(u => u.role === 'push' && u.wake === 3 && u.aim[0] === 3 && u.aim[1] === 3));
+    assert.ok(east(old).every(u => u.role === 'field' && !u.wake));
+    // One corps on the western road no longer pockets the whole army.
+    const tank = now.units.find(u => u.id === 'b1g');
+    assert.equal(B.wouldCut(now, tank, 3, 0).length, 0);
+    assert.ok(B.wouldCut(old, old.units.find(u => u.id === 'b1g'), 3, 0).length >= 10);
+}
+
 // ── The first battle teaches the pocket: its lesson, and the move that shuts the neck foretold ──
 {
     const b = G.rehearse('yelnya').battle;

@@ -278,14 +278,17 @@ function checkScenario(D) {
             need(inside(l.fallback), `${at}: line ${lid} fallback`);
         }
         for (const [sid, s] of Object.entries(def.sectors || {})) need(s.alarm && ['r', 'c'].includes(s.alarm.axis), `${at}: sector ${sid} alarm`);
-        const b = Battle.start(def, Object.fromEntries(def.units.filter(u => u.flag).map(u => [u.flag, true])), null);
+        const allFlags = Object.fromEntries(def.units.filter(u => u.flag).map(u => [u.flag, true]));
+        const b = Battle.start(def, allFlags, null);
         const ids = new Set();
         for (const u of def.units) {
             need(!ids.has(u.id), `${at}: unit ${u.id} twice`);
             ids.add(u.id);
             need(u.side === def.sides.player || u.side === def.sides.enemy, `${at}: ${u.id} side ${u.side}`);
             need(inside(u.at), `${at}: ${u.id} on the board`);
-            const placed = b.units.concat(b.pending).find(x => x.id === u.id);
+            // A unit that left the board after an edition (untilEdition) is looked for on that edition's board.
+            const on = u.untilEdition ? Battle.start(def, allFlags, null, { edition: u.untilEdition }) : b;
+            const placed = on.units.concat(on.pending).find(x => x.id === u.id);
             need(placed && Battle.enterCost(b, placed, u.at[0], u.at[1]) < Infinity, `${at}: ${u.id} starts on ground it cannot enter`);
             if (u.rail && placed) need(Battle.reachable(b, placed).length > 0, `${at}: ${u.id}'s railway runs somewhere`);
             if (u.role) need(Battle.ROLES[u.role], `${at}: ${u.id} role ${u.role}`);

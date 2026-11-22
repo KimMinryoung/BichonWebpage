@@ -123,14 +123,15 @@
     // { … } }` holds what generation n changed in a unit (the latest the
     // save has wins) and `from: n` a unit that only exists from generation
     // n on; `editions: { n: { … } }` and `fromEdition: n` say the same for
-    // the scenario's own edition, laid over the generation's. So a board
-    // can change without an older save's battle replaying differently.
+    // the scenario's own edition, laid over the generation's, and
+    // `untilEdition: n` a unit that left the board after edition n. So a
+    // board can change without an older save's battle replaying differently.
     function unitsAsOf(def, opts) {
         const gen = opts && opts.rules ? opts.rules : Infinity;
         const ed = opts && opts.edition ? opts.edition : Infinity;
         const laid = (changes, upTo) => Object.keys(changes || {}).map(Number).filter(n => upTo >= n).sort((a, z) => a - z).map(n => changes[n]);
         return def.units
-            .filter(u => !(u.from > gen) && !(u.fromEdition > ed))
+            .filter(u => !(u.from > gen) && !(u.fromEdition > ed) && !(u.untilEdition < ed))
             .map(u => Object.assign({}, u, ...laid(u.rules, gen), ...laid(u.editions, ed)));
     }
 

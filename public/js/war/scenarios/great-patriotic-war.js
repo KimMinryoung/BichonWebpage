@@ -1334,6 +1334,26 @@
         legend: [['steppe', '들판'], ['forest', '숲 (방어 +1, 이동 2)'], ['marsh', '늪 (이동 2, 통나무 길)'], ['trench', '참호 (방어 +2, 이동 2, 포격으로 깎임)'], ['river', '베레지나강'], ['bridge', '보브루이스크 다리'], ['city', '보브루이스크 (「요새」, 방어 +3)']],
         reward: { quick: 4, quickBy: 3, lostBy: -6, carry: { pressure: -2, edition: 3 } },
         supply: { player: [[1, 10], [3, 10], [7, 2]], enemy: [[3, 0]] },
+        // Edition 5: one supply tile let a single corps standing on it pocket
+        // the whole German army by turn 2, so nine of the ten Soviet units
+        // did not matter (scripts/war-shape.js). Two roads now (west, and
+        // the Minsk road north-west); the divisions east of the river leave
+        // their trenches for Bobruisk on turn 3, so the northern group has
+        // the bridge's eastern end to shut before then.
+        editions: { 5: {
+            supply: { player: [[1, 10], [3, 10], [7, 2]], enemy: [[3, 0], [0, 0]] },
+            pushNote: '강 동쪽의 사단. 2턴까지 참호를 지키다가 3턴부터 다리를 건너 보브루이스크로 물러난다. 붉은 부대 곁에서는 멈춰 싸운다.',
+            summary: '보브루이스크에 서면 승리 · 7턴 · 3턴부터 강 동쪽의 적이 다리를 건너 도시로 물러난다 · 다리 동쪽 끝을 막으면 그 적이 포위된다',
+            brief: [
+                '독일 제9군이 베레지나강 동쪽의 참호에 앉아 있고, 그 뒤 강 서쪽에 보브루이스크가 있다. 강을 건너는 길은 보브루이스크 다리 하나다. 독일군의 보급은 판 서쪽 끝과 북서쪽 끝(민스크 길) 두 곳에서 도시와 다리를 지나 온다.',
+                '보브루이스크에 붉은 부대를 세우면 이긴다. 7턴이 주어진다. 4턴 안에 차지하면 모스크바 방면의 우리 힘이 3 늘고, 차지하지 못하면 6 준다.',
+                '두 곳에서 치기로 했다면 남쪽 집단이 강 서쪽 늪지대에서 올라온다. 강 동쪽의 사단들은 2턴까지 참호를 지키다가 3턴부터 다리를 건너 보브루이스크로 물러난다. 그 전에 북쪽 집단이 다리 동쪽 끝 길을 막으면 그 사단들이 통째로 포위되고, 막지 못하면 도시의 수비가 그만큼 두꺼워진다. 도시 수비대는 서쪽과 북서쪽의 두 길을 모두 막아야 포위된다.',
+                '한 곳에서만 친다면 북쪽 집단은 참호를 뚫거나 돌아 다리를 건너야 한다. 하늘은 붉은 군대의 것이다: 제16항공군의 습격기가 턴마다 뜬다. 독일 기갑 예비는 2턴부터 움직이고, 4턴에 또 하나가 서쪽에서 온다.',
+                SUPPLY_BRIEF,
+                AIR_BRIEF,
+                ARMS_BRIEF,
+            ],
+        } },
         wings: [
             { id: 'w16s', tag: '습격기', name: '제16항공군 습격기', sub: '루덴코, Il-2', kind: 'strike', hp: 4, atk: 4 },
         ],
@@ -1383,18 +1403,18 @@
             { id: 'bkm', tag: '기병기계', side: 'red', name: '플리예프 기병기계화 집단', sub: '남쪽 집단', kind: 'cav', at: [7, 0], hp: 9, atk: 5, def: 2, mv: 5, skirmish: true, flag: 'twoBlows', need: 3, editions: { 3: { flank: 2 } } },
             { id: 'b2t', tag: '전차군', side: 'red', name: '제1기계화군단', sub: '전차군 카드', kind: 'tank', at: [0, 10], hp: 9, atk: 6, def: 3, mv: 4, card: 'tankarmy' },
             { id: 'bres', tag: '예비', side: 'red', name: '전선군 예비 소총군단', sub: '스타프카 예비군', kind: 'inf', at: [4, 10], hp: 10, atk: 5, def: 3, mv: 3, card: 'reserve', look: 'helmet' },
-            { id: 'b134', tag: '134', side: 'axis', name: '제134보병사단', sub: '제35군단', kind: 'inf', at: [1, 7], hp: 10, atk: 6, def: 3, mv: 3, role: 'field', reach: 1 },
-            { id: 'b296', tag: '296', side: 'axis', name: '제296보병사단', sub: '제35군단', kind: 'inf', at: [2, 7], hp: 10, atk: 6, def: 3, mv: 3, role: 'field', reach: 1 },
-            { id: 'b6', tag: '6', side: 'axis', name: '제6보병사단', sub: '제35군단', kind: 'inf', at: [3, 7], hp: 10, atk: 6, def: 3, mv: 3, role: 'field', reach: 1 },
-            { id: 'b36', tag: '36', side: 'axis', name: '제36보병사단', sub: '제41기갑군단', kind: 'inf', at: [4, 7], hp: 10, atk: 6, def: 3, mv: 3, role: 'field', reach: 1 },
+            { id: 'b134', tag: '134', side: 'axis', name: '제134보병사단', sub: '제35군단', kind: 'inf', at: [1, 7], hp: 10, atk: 6, def: 3, mv: 3, role: 'field', reach: 1, editions: { 5: { role: 'push', aim: [3, 3], wake: 3 } } },
+            { id: 'b296', tag: '296', side: 'axis', name: '제296보병사단', sub: '제35군단', kind: 'inf', at: [2, 7], hp: 10, atk: 6, def: 3, mv: 3, role: 'field', reach: 1, editions: { 5: { role: 'push', aim: [3, 3], wake: 3 } } },
+            { id: 'b6', tag: '6', side: 'axis', name: '제6보병사단', sub: '제35군단', kind: 'inf', at: [3, 7], hp: 10, atk: 6, def: 3, mv: 3, role: 'field', reach: 1, editions: { 5: { role: 'push', aim: [3, 3], wake: 3 } } },
+            { id: 'b36', tag: '36', side: 'axis', name: '제36보병사단', sub: '제41기갑군단', kind: 'inf', at: [4, 7], hp: 10, atk: 6, def: 3, mv: 3, role: 'field', reach: 1, editions: { 5: { role: 'push', aim: [3, 3], wake: 3 } } },
             { id: 'b20p', tag: '20기갑', side: 'axis', name: '제20기갑사단', sub: '집단군의 하나뿐인 기갑', kind: 'tank', at: [3, 5], hp: 12, atk: 7, def: 3, mv: 4, role: 'field', reach: 9, wake: 2 },
             { id: 'bgar', tag: '수비대', side: 'axis', name: '보브루이스크 수비대', sub: '「요새」 사령관 하만', kind: 'inf', at: [3, 3], hp: 13, atk: 6, def: 4, mv: 2, role: 'field', reach: 0 },
             { id: 'b35', tag: '35', side: 'axis', name: '제35보병사단', sub: '도시 남쪽', kind: 'inf', at: [4, 3], hp: 9, atk: 6, def: 3, mv: 3, role: 'field', reach: 1 },
-            { id: 'b383', tag: '383', side: 'axis', name: '제383보병사단', sub: '도시 북쪽', kind: 'inf', at: [2, 3], hp: 9, atk: 6, def: 3, mv: 3, role: 'field', reach: 1 },
+            { id: 'b383', tag: '383', side: 'axis', name: '제383보병사단', sub: '도시 북쪽', kind: 'inf', at: [2, 3], hp: 9, atk: 6, def: 3, mv: 3, role: 'field', reach: 1, untilEdition: 4 },
             { id: 'b12p', tag: '12기갑', side: 'axis', name: '제12기갑사단', sub: '북부 집단군에서 급히', kind: 'tank', at: [1, 0], hp: 11, atk: 7, def: 3, mv: 4, role: 'field', reach: 9, arrive: 4 },
-            { id: 'b45', tag: '45', side: 'axis', name: '제45보병사단', sub: '제35군단, 북쪽 끝', kind: 'inf', at: [0, 7], hp: 10, atk: 6, def: 3, mv: 3, role: 'field', reach: 1 },
+            { id: 'b45', tag: '45', side: 'axis', name: '제45보병사단', sub: '제35군단, 북쪽 끝', kind: 'inf', at: [0, 7], hp: 10, atk: 6, def: 3, mv: 3, role: 'field', reach: 1, editions: { 5: { role: 'push', aim: [3, 3], wake: 3 } } },
             { id: 'b129', tag: '129', side: 'axis', name: '제129보병사단', sub: '제41기갑군단, 늪 북쪽', kind: 'inf', at: [4, 1], hp: 9, atk: 6, def: 3, mv: 3, role: 'field', reach: 3 },
-            { id: 'b707', tag: '707', side: 'axis', name: '제707보안사단', sub: '민스크 길의 후방 부대', kind: 'inf', at: [3, 1], hp: 7, atk: 4, def: 2, mv: 3, role: 'field', reach: 2 },
+            { id: 'b707', tag: '707', side: 'axis', name: '제707보안사단', sub: '민스크 길의 후방 부대', kind: 'inf', at: [3, 1], hp: 7, atk: 4, def: 2, mv: 3, role: 'field', reach: 2, untilEdition: 4 },
         ],
         summary: '보브루이스크에 서면 승리 · 7턴 · 도시 서쪽 길을 막으면 수비대가, 다리 동쪽 끝을 막으면 강 동쪽의 적이 포위된다',
         brief: [
@@ -1891,7 +1911,7 @@
 
     const rehearsal = { lead: ['reserve'], skip: ['militia', 'pause', 'labour'], guard: { stat: 'manpower', min: 30 }, spread: true };
     const data = {
-        id: 'great-patriotic-war', title: '조국 전선 1941–1945', saveVersion: 1, edition: 4, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
+        id: 'great-patriotic-war', title: '조국 전선 1941–1945', saveVersion: 1, edition: 5, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
         map, ui, portraits, pictures, pictureDir: '/images/great-patriotic-war/', roles, glossary,
         texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring, rehearsal, promo,
     };
