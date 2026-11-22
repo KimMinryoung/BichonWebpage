@@ -128,8 +128,10 @@ function shapeOf(id) {
     const muster = { margin: hist && hist.margin !== null ? hist.margin : 0, fed: 1, commissar: true, cards };
     const fresh = () => B.start(def, hist ? hist.flags : {}, muster, { rules: G.RULES });
     const start = fresh();
-    const goals = def.goals.map(g => g.at), posts = B.postsOf(def).map(p => p.at);
-    const out = { id, title: def.title, turnLimit: def.turnLimit, outlast: Boolean(def.outlast), goals, posts, size: [def.map.length, def.map[0].length] };
+    // The board as the newest edition has it (its goals, posts and map may be an edition's).
+    const board = start.def;
+    const goals = board.goals.map(g => g.at), posts = B.postsOf(board).map(p => p.at);
+    const out = { id, title: board.title, turnLimit: board.turnLimit, outlast: Boolean(board.outlast), goals, posts, size: [board.map.length, board.map[0].length] };
 
     out.ideas = { sit: oneIdea(start, () => null) };
     if (goals.length) out.ideas.rush = oneIdea(start, () => goals);

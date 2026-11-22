@@ -184,6 +184,25 @@ for (const [id, def] of Object.entries(D.battles)) {
     assert.deepEqual(now.filter(u => u.id === 'm1s' || u.id === 'm1b').map(u => [u.r, u.c]), [[0, 7], [0, 8]]);
     assert.deepEqual(old.filter(u => u.id === 'm1s' || u.id === 'm1b').map(u => [u.r, u.c]), [[0, 9], [0, 10]]);
 }
+// Stalingrad's edition 5: two landings, lost only when both are entered; the Germans start a column
+// nearer and three divisions are gone; an edition-4 save keeps the one landing.
+{
+    const def = D.battles.stalingrad;
+    const now = B.start(def, {}, null), old = B.start(def, {}, null, { edition: 4 });
+    assert.deepEqual(B.postsOf(now.def).map(p => p.at), [[4, 6], [1, 6]]);
+    assert.equal(now.def.breach, 2);
+    assert.deepEqual(B.postsOf(old.def).map(p => p.at), [[4, 6]]);
+    assert.ok(!old.def.breach);
+    const all = b => b.units.concat(b.pending);
+    for (const id of ['a305', 'a16', 'a79']) assert.ok(!all(now).some(u => u.id === id) && all(old).some(u => u.id === id), id);
+    assert.equal(all(now).find(u => u.id === 'a71').c, 2);
+    assert.equal(all(old).find(u => u.id === 'a71').c, 1);
+    // One landing entered is not yet the battle lost.
+    const foe = now.units.find(u => u.id === 'a71'), holder = now.units.find(u => u.r === 4 && u.c === 6 && u.side === 'red');
+    holder.hp = 0; foe.r = 4; foe.c = 6;
+    B.act(now, 'end');
+    assert.notEqual(now.result, 'lost');
+}
 // Bagration with one blow has no southern group.
 {
     const def = D.battles.bagration;
