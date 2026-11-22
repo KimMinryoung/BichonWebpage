@@ -29,7 +29,7 @@
 
 ## 초상
 
-`portraits/<인물 id>-v1.webp`. 위키미디어 공용의 사진에서 얼굴을 잘라 먹색·진영 색·종이색으로 바꾼 것이다(`scripts/war-portraits.js`, 자른 자리와 받은 사진의 기록은 `scripts/content/war-portraits/gpw/`, gitignored). 게임 화면의 「초상 사진 출처」에도 같은 목록이 나온다. CC BY-SA 사진으로 만든 초상은 같은 라이선스를 따른다. 발터 모델은 쓸 만한 공용 사진이 없어 그린 초상이다.
+`portraits/<인물 id>-v1.webp`. 위키미디어 공용의 사진에서 얼굴을 잘라 먹색·진영 색·종이색으로 바꾼 것이다(`scripts/war-portraits.js`, 자른 자리와 받은 사진의 기록은 `scripts/content/war-portraits/gpw/`, gitignored). 게임 화면의 「초상 사진 출처」에도 같은 목록이 나온다. CC BY-SA 사진으로 만든 초상은 같은 라이선스를 따른다.
 
 | 파일 | 저작자 | 출처 | 라이선스 |
 | --- | --- | --- | --- |
@@ -74,6 +74,7 @@
 | `portraits/vasilevsky-v1.webp` | 러시아 국방부 (mil.ru) | [File:Aleksandr Vasilevsky 4.jpg](https://commons.wikimedia.org/wiki/File:Aleksandr_Vasilevsky_4.jpg) | CC BY 4.0 |
 | `portraits/vasily-sokolovsky-v1.webp` | 러시아 국방부 (mil.ru) | [File:Vasily Sokolovsky 2.jpg](https://commons.wikimedia.org/wiki/File:Vasily_Sokolovsky_2.jpg) | CC BY 4.0 |
 | `portraits/voznesensky-v1.webp` | 미상 | [File:Voznesenskiy NA.jpg](https://commons.wikimedia.org/wiki/File:Voznesenskiy_NA.jpg) | Public domain |
+| `portraits/walter-model-v1.webp` | 미상 | [File:Walther Model on the front (b) (cropped).jpg](https://commons.wikimedia.org/wiki/File:Walther_Model_on_the_front_(b)_(cropped).jpg) | Public domain |
 | `portraits/wilhelm-ritter-von-leeb-v1.webp` | 독일 연방기록원 | [File:Bundesarchiv Bild 146-1969-048B-01A, Wilhelm Ritter von Leeb.jpg](https://commons.wikimedia.org/wiki/File:Bundesarchiv_Bild_146-1969-048B-01A,_Wilhelm_Ritter_von_Leeb.jpg) | CC BY-SA 3.0 de |
 | `portraits/winston-churchill-v1.webp` | 미상 | [File:Sir Winston Churchill - 19086236948 (restored).jpg](https://commons.wikimedia.org/wiki/File:Sir_Winston_Churchill_-_19086236948_(restored).jpg) | Public domain |
 | `portraits/zhukov-v1.webp` | Grigory Vayl | [File:Zhukov-LIFE-1944-1945.jpg](https://commons.wikimedia.org/wiki/File:Zhukov-LIFE-1944-1945.jpg) | Public domain |

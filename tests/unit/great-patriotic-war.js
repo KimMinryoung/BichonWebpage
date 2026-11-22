@@ -214,7 +214,7 @@ for (const [id, def] of Object.entries(D.battles)) {
         assert.ok(fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'great-patriotic-war', file)), file);
         assert.ok(A.portrait(id, id).includes(`<image href="/images/great-patriotic-war/${file}"`) && /role="img"/.test(A.portrait(id, id)));
     }
-    assert.ok(!A.portrait('walter-model').includes('<image'), 'a person without a photograph stays drawn');
+    assert.ok(!A.portrait('red-soldier-41').includes('<image'), 'a portrait without a photograph stays drawn');
 }
 // Bagration with one blow has no southern group.
 {

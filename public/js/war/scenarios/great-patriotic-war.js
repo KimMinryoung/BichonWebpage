@@ -1746,7 +1746,7 @@
         'hermann-hoth': { side: 'axis', cap: 'peaked', face: 'long', dress: 'feldgrau', photo: { file: 'Photo of German Colonel General Hermann Hoth.png', by: '미상', licence: 'CC BY 2.5' } },
         'erich-von-manstein': { side: 'axis', cap: 'peaked', face: 'long', brows: 'heavy', dress: 'feldgrau', photo: { file: 'Bundesarchiv Bild 183-H01758, Erich v. Manstein.jpg', by: '독일 연방기록원', licence: 'CC BY-SA 3.0 de' } },
         'friedrich-paulus': { side: 'axis', cap: 'peaked', face: 'long', grey: true, dress: 'greatcoat', photo: { file: 'Bundesarchiv Bild 183-B24575, Friedrich Paulus.jpg', by: '독일 연방기록원 (Mittelstaedt, Heinz)', licence: 'CC BY-SA 3.0 de' } },
-        'walter-model': { side: 'axis', cap: 'peaked', glasses: 'round', dress: 'feldgrau' },
+        'walter-model': { side: 'axis', cap: 'peaked', glasses: 'round', dress: 'feldgrau', photo: { file: 'Walther Model on the front (b) (cropped).jpg', by: '미상', licence: 'Public domain' } },
         'gotthard-heinrici': { side: 'axis', cap: 'peaked', face: 'square', dress: 'feldgrau', photo: { file: 'Gotthard Heinrici.jpg', by: '독일 연방기록원 (Ludwig Knobloch)', licence: 'CC BY-SA 3.0 de' } },
         'helmuth-weidling': { side: 'axis', cap: 'stahlhelm', glasses: 'round', dress: 'feldgrau', photo: { file: 'Bundesarchiv Bild 146-1983-028-05, Helmuth Weidling.jpg', by: '독일 연방기록원', licence: 'CC BY-SA 3.0 de' } },
         'ion-antonescu': { side: 'axis', cap: 'peaked', face: 'square', brows: 'heavy', dress: 'epaulets', photo: { file: 'Ion Antonescu 1941.jpg', by: '미상', licence: 'Public domain' } },
