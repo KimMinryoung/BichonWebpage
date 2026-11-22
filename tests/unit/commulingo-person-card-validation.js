@@ -39,4 +39,14 @@ assert.match(fateLabelProblems({ kind: 'suicide', ko: '자살(이설 있음)', e
 assert.strictEqual(fateDefaultLabel('accident', 'ko'), '사고사');
 assert.strictEqual(fateDefaultLabel('unknown', 'en'), 'Cause unknown');
 
+// Career rows: one post or event per period, a noun phrase (2026-11-22).
+const { careerRoleProblems } = require('../../data/commulingo/person-card-validation');
+const row = (start, end, ko, en) => careerRoleProblems({ period: { start: [start], end: end ? [end] : null }, r: { ko, en } });
+assert.deepStrictEqual(row(1905, 1907, '1905년 혁명 참가', 'Took part in the 1905 Revolution'), []);
+assert.deepStrictEqual(row(1934, null, '부편집장, 문학대학 강사', 'Deputy editor; lecturer'), []);
+assert.match(row(1934, null, 'US스틸 이사, 1938년 이사회 의장', 'Director; chairman from 1938')[0], /names 1938/);
+assert.match(row(1937, null, '작전과장 → 사령관', 'Ops chief → commander')[0], /→/);
+assert.match(row(1934, 1938, '내무인민위원을 지냈다.', "People's Commissar")[0], /sentence/);
+assert.deepStrictEqual(row(1950, null, '이사', 'Director, Ford Motor Co.'), []);
+
 console.log('smoke-commulingo-person-card-validation: ok');

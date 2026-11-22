@@ -13,7 +13,7 @@ const { assertPersonAliases } = require('./person-alias-rules');
 const { periodColumns, periodFromRow, formatBoth, PERIOD_COLUMNS, periodValues } = require('./career-period');
 const { t, localized, contentLocalized, badRequest, parseLifeYears, requireId } = require('./people-admin-fields');
 const { withTransaction, writeRevision } = require('./admin-tx');
-const { fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
+const { careerRoleProblems, fateLabelProblems, nationalityLabelProblems } = require('./person-card-validation');
 const { personLifeProblems, parseLifeYears: parsePersonLifeYearsFull } = require('./person-life-years');
 const { resolveLifeDates } = require('./person-life-dates');
 const { normalizeWikidataId } = require('./person-wikidata');
@@ -243,8 +243,27 @@ async function replacePatronymic(client, personId, state) {
     );
 }
 
-async function replaceCareer(client, personId, career) {
+// A full career list is checked row by row against careerRoleProblems, except
+// rows sent back unchanged from `previous` (the stored list): old rows predate
+// the 2026-11-22 row rules and stay until someone edits them.
+function careerRowKey(entry) {
+    const role = (entry && (entry.r || entry.role)) || {};
+    return JSON.stringify([periodColumns(entry && entry.period), String(role.ko || '').trim(), String(role.en || '').trim()]);
+}
+
+function assertCareerRows(career, previous = []) {
+    const kept = new Set(previous.map(careerRowKey));
+    for (const [index, entry] of (career || []).entries()) {
+        periodColumns(entry && entry.period, `career[${index}].period`);
+        if (kept.has(careerRowKey(entry))) continue;
+        const problems = careerRoleProblems(entry);
+        if (problems.length) throw badRequest(problems.join(' | '));
+    }
+}
+
+async function replaceCareer(client, personId, career, previous) {
     if (!career) return;
+    assertCareerRows(career, previous);
     await client.query('DELETE FROM commulingo_person_career_entries WHERE person_id = $1', [personId]);
     for (const [index, entry] of career.entries()) {
         const cols = periodColumns(entry && entry.period, `career[${index}].period`);
@@ -601,7 +620,7 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
         if (patronymicState.touched) await replacePatronymic(client, id, patronymicState);
         if (payload.aliases !== undefined) await replaceAliases(client, id, payload.aliases);
         if (payload.scenes !== undefined) await replaceScenes(client, id, payload.scenes);
-        if (payload.career !== undefined) await replaceCareer(client, id, payload.career);
+        if (payload.career !== undefined) await replaceCareer(client, id, payload.career, before.career);
         if (payload.activities !== undefined) {
             assertNoNewLegacyBasis(payload.activities, before.activities);
             assertNewActivitiesDated(payload.activities, before.activities);

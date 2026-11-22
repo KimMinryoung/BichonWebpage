@@ -1,5 +1,6 @@
 const { badRequest, contentLocalized, localized } = require('./people-admin-fields');
 const { periodColumns, PERIOD_COLUMNS, periodValues } = require('./career-period');
+const { careerRoleProblems } = require('./person-card-validation');
 const { assertStringList } = require('./headword-validation');
 const { mergeLocalizedPatch } = require('./people-patch');
 
@@ -98,6 +99,8 @@ function planCollectionEdits(before, payload) {
         const r = mergeLocalizedPatch(stored.r, edit.entry.r, 'career entry.r');
         if (!r.ko.trim() || !r.en.trim()) throw badRequest('career entry requires non-empty ko/en roles');
         const entry = { ...stored, period, r };
+        const roleProblems = careerRoleProblems(entry);
+        if (roleProblems.length) throw badRequest(roleProblems.join(' | '));
         if (index < 0) career.push(entry);
         else career[index] = entry;
     }

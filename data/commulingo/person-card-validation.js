@@ -110,8 +110,40 @@ function nationalityLabelProblems(labels) {
     return problems;
 }
 
+// Career rows (2026-11-22 owner decision), checked on rows that are new or
+// changed — the rows already stored are left as they are:
+//   one row is one post or event in one period: a year other than the
+//   period's own start/end year means a second step that needs its own row
+//   (「US스틸 이사, 1938년 이사회 의장」 on a 1934 row → two rows), and so does
+//   an 「A → B」 chain; posts held together in the same period may share a row
+//   with a comma;
+//   a row is a noun phrase, not a sentence (「…를 지냈다.」).
+const ROLE_YEAR = /(?<![\d.])(1[5-9]\d\d|20[0-2]\d)(?!\d)/g;
+const EN_ABBREV_END = /\b(?:Co|Inc|Ltd|Corp|St|Jr|Sr|No|Nos|vs|etc|Bros|Dept|Gen|Col|Lt|Adm|Capt)\.$/;
+
+function careerRoleProblems(entry) {
+    const problems = [];
+    const r = (entry && (entry.r || entry.role)) || {};
+    const ko = String(r.ko || '').trim();
+    const en = String(r.en || '').trim();
+    const period = (entry && entry.period) || {};
+    const own = new Set([period.start, period.end].filter(Array.isArray).map(part => Number(part[0])));
+    const label = `career row «${ko}» / «${en}»`;
+    const others = [...new Set([...`${ko} ${en}`.matchAll(ROLE_YEAR)].map(m => Number(m[1])).filter(y => !own.has(y)))];
+    if (others.length) {
+        problems.push(`${label} names ${others.join(', ')} besides its own period — one row is one post or event; give that step its own row and period`);
+    }
+    if (/→|->/.test(`${ko} ${en}`)) {
+        problems.push(`${label} chains steps with → — give each post its own row and period`);
+    }
+    if (/다\.?$/.test(ko) || (/[.!]$/.test(en) && !EN_ABBREV_END.test(en))) {
+        problems.push(`${label} is a sentence — write a noun phrase (「아제르바이잔 내무인민위원, 대숙청 집행」 / "People's Commissar of Internal Affairs of Azerbaijan; carried out the Great Purge")`);
+    }
+    return problems;
+}
+
 function isLongFateLabel(ko) {
     return typeof ko === 'string' && ko.length > FATE_KO_SOFT;
 }
 
-module.exports = { fateLabelProblems, fateDefaultLabel, FATE_KINDS, nationalityLabelProblems, isLongFateLabel, FATE_KO_MAX, FATE_EN_MAX, FATE_KO_SOFT };
+module.exports = { careerRoleProblems, fateLabelProblems, fateDefaultLabel, FATE_KINDS, nationalityLabelProblems, isLongFateLabel, FATE_KO_MAX, FATE_EN_MAX, FATE_KO_SOFT };
