@@ -1,5 +1,5 @@
 const { validateActivities, assertNoNewLegacyBasis, assertNewActivitiesDated } = require('./person-activities');
-const { validateEditorial, reviewReasons, recordEvidence } = require('./person-editorial-policy');
+const { validateEditorial, reviewReasons, recordEvidence, assertIdentityEvidence } = require('./person-editorial-policy');
 const { planCollectionEdits, applyCareerEdits } = require('./people-collection-edits');
 const { personRevision, assertExpectedRevision } = require('./people-edit-version');
 const { readSnapshot } = require('./read-snapshot');
@@ -333,6 +333,7 @@ async function createPersonAdmin(rawPayload, options = {}) {
         const nameEn = partsEn.full;
         const qualifier = normalizeNameQualifier(payload.nameQualifier === undefined ? null : payload.nameQualifier);
         assertIdKeepsLetters(id, nameEn);
+        assertIdentityEvidence(payload, [partsKo, partsEn]);
         const fold = text => text.normalize('NFKD').replace(/\p{M}/gu, '').toLowerCase().replace(/[^\p{L}\p{N}]/gu, '');
         const { rows: people } = await client.query(`SELECT id, given_name_ko, given_name_en, family_name_ko, family_name_en,
                 citizenship_code, name_qualifier_ko FROM commulingo_people`);
