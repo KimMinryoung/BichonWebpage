@@ -961,16 +961,16 @@
 
 .commu-choice.is-correct {
     animation: commu-correct-pop 520ms ease;
-    background: color-mix(in srgb, var(--accent-green) 28%, var(--bg-surface));
-    border-color: var(--link);
+    background: var(--correct-bg);
+    border-color: var(--correct-border);
     box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-green) 40%, transparent);
     color: var(--text-primary);
 }
 
 .commu-choice.is-wrong {
     animation: commu-wrong-shake 360ms ease;
-    background: color-mix(in srgb, var(--accent-red) 24%, var(--bg-surface));
-    border-color: var(--accent-red);
+    background: var(--wrong-bg);
+    border-color: var(--wrong-border);
     box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-red) 36%, transparent);
     color: var(--text-primary);
 }
@@ -2776,14 +2776,14 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
 
 .commu-sort-item.is-correct,
 .commu-cloze-blank.is-correct {
-    background: color-mix(in srgb, var(--accent-green) 28%, var(--bg-surface));
-    border-color: var(--link);
+    background: var(--correct-bg);
+    border-color: var(--correct-border);
 }
 
 .commu-sort-item.is-wrong,
 .commu-cloze-blank.is-wrong {
-    background: color-mix(in srgb, var(--accent-red) 24%, var(--bg-surface));
-    border-color: var(--accent-red);
+    background: var(--wrong-bg);
+    border-color: var(--wrong-border);
 }
 
 .commu-cloze {

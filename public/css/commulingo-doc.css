@@ -1218,8 +1218,8 @@
 .doc-search-snippet mark,
 .book mark.doc-hit {
   /* 두 테마 모두 같은 형광 노랑: 크림 바탕(라이트)에서도 묻히지 않는다. */
-  background: #f0c94a;
-  color: var(--clr-ink);
+  background: var(--highlight-bg);
+  color: var(--highlight-text);
   padding: 0;
 }
 

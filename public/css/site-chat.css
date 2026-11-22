@@ -484,7 +484,7 @@
 }
 
 .chat-message-warning {
-    border-color: var(--accent-red);
+    border-color: var(--warning-border);
     color: var(--text-secondary);
 }
 

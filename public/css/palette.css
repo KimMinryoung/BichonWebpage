@@ -16,6 +16,11 @@
   --clr-muted: #b0b8c1;
   --clr-red: #cf222e;
   --clr-red-deep: #2d1115;
+  /* Red bright enough to read as text on the dark ground (--clr-red is 3.8:1 there). */
+  --clr-red-bright: #e06a6a;
+  /* Caution amber and marker yellow: warnings and found-text highlights only. */
+  --clr-amber: #c7861c;
+  --clr-yellow: #f0c94a;
   --clr-accent: #214d2e;
 
   /* Additional CommuLingo political-position colour families. */
@@ -126,6 +131,13 @@
   --gutter: clamp(0.75rem, 3vw, 1.25rem);
   --content-inset: clamp(var(--space-4), 3vw, var(--space-6));
 
+  /* Text on a filled green or red control, the same in both themes. */
+  --text-on-fill: #fff;
+  /* A found word in a reading body: one marker yellow on both themes, so it
+     does not sink into the cream ground of the light theme. */
+  --highlight-bg: var(--clr-yellow);
+  --highlight-text: var(--clr-ink);
+
   --duration-fast: 120ms;
   --duration-normal: 200ms;
   --ease-standard: cubic-bezier(0.2, 0, 0, 1);
@@ -188,6 +200,16 @@
   --error-bg: var(--clr-red-deep);
   --error-border: var(--clr-red);
   --error-text: var(--clr-cream);
+  --warning-bg: color-mix(in srgb, var(--clr-amber) 18%, var(--clr-black));
+  --warning-border: var(--clr-amber);
+  --warning-text: var(--clr-cream);
+  /* Red as a text or icon colour (cause-of-death chips, inline danger). */
+  --text-danger: var(--clr-red-bright);
+  /* Answer verdicts in lessons and drills. */
+  --correct-bg: color-mix(in srgb, var(--accent-green) 28%, var(--bg-surface));
+  --correct-border: var(--link);
+  --wrong-bg: color-mix(in srgb, var(--accent-red) 24%, var(--bg-surface));
+  --wrong-border: var(--accent-red);
   --focus-ring: color-mix(in srgb, var(--clr-accent) 35%, transparent);
   color-scheme: dark;
 }
@@ -229,6 +251,14 @@
   --error-bg: color-mix(in srgb, var(--clr-red) 12%, var(--clr-cream-light));
   --error-border: var(--clr-red);
   --error-text: var(--clr-red);
+  --warning-bg: color-mix(in srgb, var(--clr-amber) 16%, var(--clr-cream-light));
+  --warning-border: color-mix(in srgb, var(--clr-amber) 78%, var(--clr-ink));
+  --warning-text: var(--clr-ink);
+  --text-danger: color-mix(in srgb, var(--clr-red) 84%, var(--clr-ink));
+  --correct-bg: color-mix(in srgb, var(--accent-green) 28%, var(--bg-surface));
+  --correct-border: var(--link);
+  --wrong-bg: color-mix(in srgb, var(--accent-red) 24%, var(--bg-surface));
+  --wrong-border: var(--accent-red);
   --focus-ring: color-mix(in srgb, var(--clr-accent) 32%, transparent);
   color-scheme: light;
 }
