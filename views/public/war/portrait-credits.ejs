@@ -1,0 +1,24 @@
+<%# The photographs the portraits were made from (scenario.portraits[id].photo; war/art.js draws them, scripts/war-portraits.js
+    makes them). Names are read from the scenario's own [name, id] pairs. Nothing is shown when no portrait has a photograph. %>
+<%
+  const photos = Object.entries(sc.portraits).filter(([, p]) => p.photo);
+  const names = {};
+  (function walk(v) {
+    if (Array.isArray(v)) {
+      if (v.length === 2 && typeof v[0] === 'string' && typeof v[1] === 'string' && sc.portraits[v[1]] && !names[v[1]]) names[v[1]] = v[0];
+      v.forEach(walk);
+    } else if (v && typeof v === 'object') Object.values(v).forEach(walk);
+  })([sc.turns, sc.battles, sc.cards, sc.map, sc.roles]);
+  const licence = l => (l === 'Public domain' ? '퍼블릭 도메인' : l.replace(/ de$/, ' DE'));
+  const shareAlike = photos.some(([, p]) => /BY-SA/.test(p.photo.licence));
+%>
+<% if (photos.length) { %>
+<details class="cw-rules cw-credits"><summary>초상 사진 출처</summary>
+  <p>초상은 위키미디어 공용의 사진에서 얼굴을 잘라 먹색·진영 색·종이색으로 바꾼 것이다.<% if (shareAlike) { %> CC BY-SA 사진으로 만든 초상은 같은 라이선스로 쓸 수 있다.<% } %></p>
+  <ul class="cw-credit-list">
+    <% for (const [id, p] of photos.sort((a, b) => (names[a[0]] || a[0]).localeCompare(names[b[0]] || b[0], 'ko'))) { %>
+    <li><strong><%= names[id] || id %></strong> · <%= p.photo.by %> · <%= licence(p.photo.licence) %> · <a href="https://commons.wikimedia.org/wiki/File:<%= encodeURIComponent(p.photo.file.replace(/ /g, '_')) %>" target="_blank" rel="noopener">위키미디어 공용</a></li>
+    <% } %>
+  </ul>
+</details>
+<% } %>

@@ -8,7 +8,7 @@
 
    WarArt.create(scenario) draws a scenario's people (scenario.portraits:
    id → { side, hair, face, brows, glasses, beard, moustache, grey, cap,
-   dress }, the values in FEATURES) and factions (scenario.factions[id]: flag stripes or kind, and
+   dress }, the values in FEATURES; photo, a photograph in their place) and factions (scenario.factions[id]: flag stripes or kind, and
    sign, one of SIGNS; the White cross when none). */
 (function (root) {
     'use strict';
@@ -98,9 +98,15 @@
     }
 
     // A head on a 40×40 square. Paper face, ink (or grey) hair and features.
-    function portrait(people, id, label) {
+    // A person with a photograph (photo: { file, by, licence, v }, the
+    // Commons picture it was made from) is shown by it instead: the face cut
+    // from the photograph in the same ink, side colour and paper
+    // (<pictureDir>portraits/<id>-v<v>.webp, scripts/war-portraits.js); the
+    // drawn features stay in the data for the scenario's check.
+    function portrait(people, id, label, dir) {
         const p = people[id] || { side: 'red' };
         const ground = GROUND[p.side] || RED;
+        if (p.photo && dir) return svgOf(`<rect width="40" height="40" fill="${ground}"/><image href="${esc(dir)}portraits/${esc(id)}-v${p.photo.v || 1}.webp" width="40" height="40"/>`, label);
         const hair = p.grey ? GREY : INK;
         const out = [];
         out.push(`<rect width="40" height="40" fill="${ground}"/>`);
@@ -195,10 +201,10 @@
 
     function create(scenario) {
         const people = scenario.portraits || {};
-        return { people, portrait: (id, label) => portrait(people, id, label), shield };
+        return { people, portrait: (id, label) => portrait(people, id, label, scenario.pictureDir), shield };
     }
 
-    const Art = { create, SIGNS, SIDE, FEATURES };
+    const Art = { create, SIGNS, SIDE, GROUND, FEATURES };
     if (typeof module !== 'undefined' && module.exports) module.exports = Art;
     else root.WarArt = Art;
 }(typeof window !== 'undefined' ? window : globalThis));

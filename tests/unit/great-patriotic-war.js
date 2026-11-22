@@ -203,6 +203,19 @@ for (const [id, def] of Object.entries(D.battles)) {
     B.act(now, 'end');
     assert.notEqual(now.result, 'lost');
 }
+// A portrait with a photograph has its picture on disk, and the drawer shows it by that file.
+{
+    const fs = require('node:fs'), path = require('node:path');
+    const A = require('../../public/js/war/art.js').create(D);
+    const photos = Object.entries(D.portraits).filter(([, p]) => p.photo);
+    assert.ok(photos.length >= 40);
+    for (const [id, p] of photos) {
+        const file = `portraits/${id}-v${p.photo.v || 1}.webp`;
+        assert.ok(fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'great-patriotic-war', file)), file);
+        assert.ok(A.portrait(id, id).includes(`<image href="/images/great-patriotic-war/${file}"`) && /role="img"/.test(A.portrait(id, id)));
+    }
+    assert.ok(!A.portrait('walter-model').includes('<image'), 'a person without a photograph stays drawn');
+}
 // Bagration with one blow has no southern group.
 {
     const def = D.battles.bagration;

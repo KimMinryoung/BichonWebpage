@@ -343,7 +343,9 @@ function checkScenario(D) {
     // without their side's colour.
     const looks = new Map();
     for (const [id, p] of Object.entries(art.people)) {
-        for (const [k, v] of Object.entries(p)) if (k !== 'side') need((Art.FEATURES[k] || []).includes(v), `portrait ${id}: ${k} ${v}`);
+        for (const [k, v] of Object.entries(p)) if (k !== 'side' && k !== 'photo') need((Art.FEATURES[k] || []).includes(v), `portrait ${id}: ${k} ${v}`);
+        // A photograph in the drawing's place names the Commons file it came from and its licence.
+        if (p.photo) need(typeof p.photo.file === 'string' && p.photo.file && typeof p.photo.licence === 'string' && p.photo.licence, `portrait ${id}: photo needs its file and licence`);
         need(Art.SIDE[p.side], `portrait ${id}: side ${p.side}`);
         const look = JSON.stringify(Object.keys(Art.FEATURES).map(k => p[k] || null));
         need(!looks.has(look), `portrait ${id} drawn like ${looks.get(look)}`);
