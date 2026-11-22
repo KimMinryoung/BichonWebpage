@@ -763,6 +763,8 @@ function fight(routes, flags = { makhno: true }, muster, def = D.battles.perekop
     for (const o of PEREKOP_WIN) if (won.result || !B.act(won, ...o)) break;
     assert.equal(won.result, 'won', 'the Red Army breaks into Crimea');
     assert.ok(won.turn <= D.battles.perekop.turnLimit);
+    // The battery on Venets left Simbirsk's board with edition 4.
+    assert.ok(!B.unitsAsOf(D.battles.simbirsk).some(u => u.id === 'wbat') && B.unitsAsOf(D.battles.simbirsk, { edition: 3 }).some(u => u.id === 'wbat'));
     // Ten turns from edition 3; an edition-2 save keeps nine, and the texts say which.
     {
         const now = B.defAsOf(D.battles.perekop), old = B.defAsOf(D.battles.perekop, { edition: 2 });

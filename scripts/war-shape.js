@@ -111,7 +111,7 @@ function replay(start, orders) {
             if (e.type === 'attack' || e.type === 'splash') {
                 fought.add(e.from); fought.add(e.to);
                 if (e.type === 'attack') { blows[turn] = (blows[turn] || 0) + 1; if (first === null) first = turn; }
-            } else if (['air', 'surrender', 'cut', 'starve'].includes(e.type) && e.id) fought.add(e.id);
+            } else if (['air', 'surrender', 'cut', 'starve', 'feat'].includes(e.type) && e.id) fought.add(e.id);   // a feat used (an order of the day, a ride) is a part taken too
         }
         stand();
     }

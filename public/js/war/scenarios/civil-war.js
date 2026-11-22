@@ -1159,7 +1159,9 @@
             { id: 'wokh', tag: '코무치군', side: 'white', name: '코무치군 대대', sub: '오호트니치야 진지', kind: 'inf', at: [6, 3], hp: 9, atk: 4, def: 2, mv: 3, role: 'hold', rules: { 12: { hp: 7, role: 'field', reach: 2 } } },
             { id: 'wcz', tag: '체코', side: 'white', name: '체코슬로바키아 대대', sub: '심비르스크 역', kind: 'inf', at: [5, 8], hp: 12, atk: 4, def: 3, mv: 3, role: 'hold', rules: { 12: { hp: 10, role: 'field', reach: 0 } } },
             { id: 'wgar', tag: '수비대', side: 'white', name: '코무치군 수비대', sub: '시가', kind: 'inf', at: [4, 8], hp: 8, atk: 3, def: 2, mv: 3, role: 'hold', rules: { 12: { hp: 6, role: 'field', reach: 2 } } },
-            { id: 'wbat', tag: '포대', side: 'white', name: '베네츠 포대', kind: 'art', at: [3, 10], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'hold', rules: { 12: { hp: 5, role: 'field', reach: 1 } } },
+            // Edition 4: the battery on Venets never had the Reds' road from the west in range (it fired in 9% of battles
+            // and the board played the same without it, scripts/war-shape.js); gone from the board.
+            { id: 'wbat', tag: '포대', side: 'white', name: '베네츠 포대', kind: 'art', at: [3, 10], hp: 6, atk: 4, def: 1, mv: 2, range: 2, role: 'hold', rules: { 12: { hp: 5, role: 'field', reach: 1 } }, untilEdition: 3 },
             // Kappel's brigade, back from Kazan by steamer on the 14th: it
             // hunts the unit left alone and strikes it 2 harder.
             { id: 'wkp', tag: '카펠', side: 'white', name: '카펠 여단', sub: '특수 목적 소총여단', kind: 'inf', at: [0, 9], hp: 14, atk: 6, def: 3, mv: 4, role: 'hunt', wake: 2, flank: 2, person: ['블라디미르 카펠', 'vladimir-kappel'], rules: { 12: { hp: 11, role: 'field', reach: 9 } } },
@@ -2182,7 +2184,7 @@
     // kept at 40.
     const rehearsal = { lead: ['train'], skip: ['requisition'], guard: { stat: 'cohesion', min: 40 } };
     const data = {
-        id: 'civil-war', title: '붉은 전선 1918–1920', saveVersion: 1, edition: 3, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
+        id: 'civil-war', title: '붉은 전선 1918–1920', saveVersion: 1, edition: 4, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
         map, ui, portraits, pictures, pictureDir: '/images/civil-war/', roles, glossary,
         texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring, rehearsal, promo,
     };
