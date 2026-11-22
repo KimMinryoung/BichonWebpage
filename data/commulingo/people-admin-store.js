@@ -67,6 +67,8 @@ function rowToPerson(row) {
         deathYear: row.death_year,
         lifeDates: { birth: row.birth_date || null, death: row.death_date || null },
         wikidataId: row.wikidata_id || null,
+        // Fields researched and found empty (registry person_checked_empty_set).
+        checkedEmpty: row.checked_empty || {},
         name: personNames(row),
         givenName: t(row.given_name_ko, row.given_name_en),
         familyName: t(row.family_name_ko, row.family_name_en),
@@ -97,6 +99,7 @@ async function getPersonAdmin(personId, options = {}) {
                 to_jsonb(commulingo_people)->'birth_date' AS birth_date,
                 to_jsonb(commulingo_people)->'death_date' AS death_date,
                 to_jsonb(commulingo_people)->>'wikidata_id' AS wikidata_id,
+                COALESCE(to_jsonb(commulingo_people)->'checked_empty', '{}'::jsonb) AS checked_empty,
                 COALESCE(to_jsonb(commulingo_people)->'activities', '[]'::jsonb) AS activities
          FROM commulingo_people
          WHERE id = $1`,

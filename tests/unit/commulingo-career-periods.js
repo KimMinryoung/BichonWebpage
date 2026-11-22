@@ -25,3 +25,14 @@ for (const [label, expected] of Object.entries(cases)) {
 }
 assert.deepEqual(parsePeriod('1937/1957').start, null);
 console.log('career periods ok');
+
+// startQual unknown (2026-11-22): the start date could not be found.
+{
+    const cp = require('../../data/commulingo/career-period');
+    const a = require('node:assert/strict');
+    a.deepEqual(cp.formatBoth({ startQual: 'unknown', ongoing: true }), { ko: '?–현재', en: '?–present' });
+    a.equal(cp.formatPeriod({ startQual: 'unknown', end: [1950] }), '?–1950');
+    a.equal(cp.formatPeriod({ end: [1950], endQual: 'until' }), '–1950');
+    a.throws(() => cp.periodColumns({ start: [1950], startQual: 'unknown' }), /takes no start date/);
+    a.throws(() => cp.periodColumns({ startQual: 'until', end: [1950] }), /end only/);
+}

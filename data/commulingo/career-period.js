@@ -19,10 +19,10 @@ const QUALS = {
     summer: 'summer of the year',
     until: 'end only, with no start: up to that date',
     open: 'end only, with no date: continued, end not recorded',
-    unknown: 'end only, with no date: ended at an unknown date',
+    unknown: 'no date on that side: started (?–현재, ?–1950) or ended (1979–?) at a date that could not be found'
 };
 const DECADE_QUALS = new Set(['decade', 'early', 'mid', 'late']);
-const END_ONLY = new Set(['until', 'open', 'unknown']);
+const END_ONLY = new Set(['until', 'open']);
 const NO_DATE = new Set(['open', 'unknown']);
 
 function badRequest(message) {
@@ -80,7 +80,8 @@ function periodColumns(input, where = 'period') {
         label = { ko, en };
     }
     if (startQual && END_ONLY.has(startQual)) throw badRequest(`${where}.startQual ${startQual} applies to the end only`);
-    if (startQual && !start) throw badRequest(`${where}.startQual needs a start`);
+    if (startQual === 'unknown' && start) throw badRequest(`${where}.startQual unknown takes no start date`);
+    if (startQual && startQual !== 'unknown' && !start) throw badRequest(`${where}.startQual needs a start`);
     if (endQual && NO_DATE.has(endQual) && end) throw badRequest(`${where}.endQual ${endQual} takes no end date`);
     if (endQual && !NO_DATE.has(endQual) && !end) throw badRequest(`${where}.endQual ${endQual} needs an end`);
     if (endQual === 'until' && start) throw badRequest(`${where}.endQual until is for a period with no start`);
@@ -90,7 +91,7 @@ function periodColumns(input, where = 'period') {
         }
     }
     if (ongoing && (end || endQual)) throw badRequest(`${where}.ongoing excludes an end`);
-    if (!start && !end && !ongoing && !label && !endQual) throw badRequest(`${where} is empty; ${SHAPE}`);
+    if (!start && !end && !ongoing && !label && !endQual && !startQual) throw badRequest(`${where} is empty; ${SHAPE}`);
     if (start && end) {
         const a = order(start), b = order(end);
         if (b[0] < a[0] || (b[0] === a[0] && (b[1] < a[1] || (b[1] === a[1] && b[2] < a[2])))) {
@@ -143,12 +144,12 @@ function formatPeriod(period, lang = 'ko') {
     const end = toPoint(period.end);
     const sq = period.startQual || null;
     const eq = period.endQual || null;
-    const s = formatPoint(start, sq, lang);
+    const s = sq === 'unknown' ? '?' : formatPoint(start, sq, lang);
     if (period.ongoing) return s ? `${s}–${lang === 'en' ? 'present' : '현재'}` : (lang === 'en' ? 'present' : '현재');
     if (eq === 'open') return `${s}–`;
     if (eq === 'unknown') return `${s}–?`;
     if (!end) return s;
-    if (eq === 'until' || !start) return `–${formatPoint(end, null, lang)}`;
+    if (eq === 'until' || !start) return `${s}–${formatPoint(end, null, lang)}`;
     let e = formatPoint(end, eq, lang);
     if (!sq && !eq && start.month && end.month && start.year === end.year) {
         if (start.month === end.month && start.day && end.day) e = start.day === end.day ? '' : pad(end.day);
@@ -178,7 +179,7 @@ function canonicalPeriod(input, where = 'period') {
 // A period row with no date or label at all → null, else the input shape.
 function periodOrNull(row) {
     const period = periodFromRow(row);
-    return period.start || period.end || period.ongoing || period.label || period.endQual ? period : null;
+    return period.start || period.end || period.ongoing || period.label || period.endQual || period.startQual ? period : null;
 }
 
 function formatBoth(period) {

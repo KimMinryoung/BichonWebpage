@@ -14,6 +14,16 @@ function writeRevision(...args) {
 
 const ID = /^[a-z0-9][a-z0-9-]{0,199}$/;
 const LANGS = ['ko', 'en'];
+// Fields that take a checked_empty mark, each with "does it hold a value".
+const CHECKED_EMPTY_FIELDS = {
+    citizenship: row => Boolean(row.citizenship_code),
+    nationalOrigin: row => Boolean(row.origin_code),
+    wikidataId: row => Boolean(row.wikidata_id),
+    birthDate: row => Boolean(row.birth_date),
+    // A living person has no death date to look for.
+    deathDate: row => Boolean(row.death_date) || row.death_year == null,
+    career: row => row.career_rows > 0,
+};
 const BLOCK_KINDS = ['phrase', 'alias', 'term-phrase', 'term-alias', 'term-headword'];
 const REDIRECT_TYPES = ['person', 'office', 'role-category'];
 
@@ -148,6 +158,31 @@ const OPS = {
         await client.query('UPDATE commulingo_people SET no_political_position = $2, updated_at = now() WHERE id = $1', [personId, op.value]);
         return { entityType: 'person', entityId: personId, note: 'set no_political_position',
             snapshot: { before: row.no_political_position, after: op.value }, changed: row.no_political_position !== op.value };
+    },
+    // "Researched, nothing to record" (2026-11-22): a field with no value of
+    // its own for "unknown" can be marked so it is not researched again.
+    // Only an empty field takes the mark; filling the field drops it (DB
+    // triggers, migration 385). value false removes the mark.
+    async person_checked_empty_set(client, op) {
+        const personId = id(op.personId, 'personId');
+        const field = String(op.field || '');
+        if (!Object.hasOwn(CHECKED_EMPTY_FIELDS, field)) throw badRequest(`field must be one of ${Object.keys(CHECKED_EMPTY_FIELDS).join(', ')}`);
+        if (typeof op.value !== 'boolean') throw badRequest('value must be true or false');
+        const note = String(op.note || '').trim();
+        if (op.value && !note) throw badRequest('note is required: what was searched (sources) and what was missing');
+        if (note.length > 500) throw badRequest('note must be at most 500 characters');
+        const row = (await client.query(`SELECT checked_empty, citizenship_code, origin_code, wikidata_id, birth_date, death_date, death_year,
+            (SELECT count(*)::int FROM commulingo_person_career_entries c WHERE c.person_id = p.id) AS career_rows
+            FROM commulingo_people p WHERE id = $1 FOR UPDATE`, [personId])).rows[0];
+        if (!row) throw badRequest(`person not found: ${personId}`, 404);
+        if (op.value && CHECKED_EMPTY_FIELDS[field](row)) throw badRequest(`${personId} already has ${field} (or, for deathDate, no death year); a mark is only for an empty field`, 409);
+        const before = row.checked_empty || {};
+        const after = { ...before };
+        if (op.value) after[field] = { at: new Date().toISOString().slice(0, 10), note };
+        else delete after[field];
+        await client.query('UPDATE commulingo_people SET checked_empty = $2, updated_at = now() WHERE id = $1', [personId, after]);
+        return { entityType: 'person', entityId: personId, note: `checked_empty ${field} ${op.value ? 'set' : 'cleared'}`,
+            snapshot: { before: before[field] || null, after: after[field] || null }, changed: JSON.stringify(before) !== JSON.stringify(after) };
     },
     async blocklist_add(client, op) {
         if (!BLOCK_KINDS.includes(op.kind)) throw badRequest(`kind must be one of ${BLOCK_KINDS.join(', ')}`);
