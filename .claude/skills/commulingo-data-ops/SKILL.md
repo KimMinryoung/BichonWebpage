@@ -43,6 +43,7 @@ The CLIs `scripts/commulingo-people-upsert`, `scripts/commulingo-docs`, `scripts
 ## People
 
 - 인물 등록·수정은 Admin 스토어 경로(`people_upsert`, `editorial_store`)로만 한다. 스토어가 제 문자 이름, 이름 분해, 부칭 분리, 국적 코드, 짧은 카드 라벨, 근거 있는 활동을 검사한다. 규칙 본체는 `data/commulingo/person-card-validation.js`. 스토어를 비켜 간 SQL이 인물 표에 닿았다면 `audit_run`으로 `audit-person-card-fields`·`audit-person-native-names`·`audit-person-patronymics`·`audit-person-name-order`를 모두 돌린다.
+- 생몰년 `years` 꼴(2026-11-22 비숑 결정, 저장 경로가 검사): `1898–1976`, 생존 `1987–`, 불확실·대략 `1757?–1791`(`c.` 쓰지 않음), 두 설 `1896/1898–1937`(오름차순), 모름 `?`(`1905–?`, `?–?`). 띄어쓰기·`-`·`이후`·`현재`는 거부된다. 마지막으로 확인된 해는 약력이나 경력에 쓴다.
 - 생몰 날짜: `years`(카드·목록에 보이는 연도)와 별도로, 출처가 월까지 주면 `lifeDates {birth, death}`에 `[연, 월]`·`[연, 월, 일]`(그레고리력)을 넣는다. 연도는 `years`의 연도와 같아야 하고 근거 field는 `lifeDates`. 인물 상세 페이지에만 날짜로 보인다. 카드를 만들거나 고칠 때 출처에 있으면 넣는다. 2026-11-03 위키데이터 일괄 보강(`scripts/content/life-dates-20261103/`): 위키데이터는 구력·신력 혼동이나 다른 사람 항목이 섞이므로 연도가 카드와 다르면 넣지 말고 원문(러시아 인물은 러시아어 위키백과)으로 가린다.
 - 위키데이터 매핑: `wikidataId`(`Q…`)로 카드와 위키데이터 항목을 잇는다(한 항목은 한 카드). 위키백과 문서는 항목의 sitelinks로 찾으므로 주소를 따로 저장하지 않는다. 인물을 찾을 때는 이름 검색보다 `wikidata_id`를 먼저 쓰고, 카드를 만들거나 고칠 때 항목이 확인되면 함께 넣는다.
 - 활동(activities): 새·수정 활동은 startYear(최소 endYear)가 필요하고, 출처에 연도가 없을 때만 `yearsUnknown: true`.

@@ -14,17 +14,19 @@ const createPersonAdmin = payload => admin.createPersonAdmin(sourced(payload));
 const updatePersonAdmin = (id, payload, options) => admin.updatePersonAdmin(id, sourced(payload), options);
 
 const fate = { kind: 'natural', label: { ko: '생존', en: 'Living' } };
-for (const years of ['1987–', '1987-', '?–', '1979?–']) {
+for (const years of ['1987–', '?–', '1979?–']) {
     assert.equal(parseLifeYears(years).isLiving, true);
     assert.deepEqual(personLifeProblems(years, null), []);
     assert(personLifeProblems(years, fate).length);
     assert(personLifeProblems(years, { kind: 'natural', label: {} }).length);
     assert(personLifeProblems(years, { kind: '', label: { en: 'Died' } }).length);
 }
-for (const years of ['현재', '현대', '1987–현재', '1987–present', '20세기–현재', 'b. 1987', 1987]) {
+// 2026-11-22 form: – without spaces, ? for uncertain, ascending a/b; no c. or 이후.
+for (const years of ['현재', '현대', '1987–현재', '1987–present', '20세기–현재', 'b. 1987', 1987, '1987-', 'c. 1953–2001', '1879 – 1944 이후', '1879–1944 이후', '1934/1929–2010']) {
     assert(personLifeProblems(years, null).length, String(years));
 }
-for (const years of ['1889–1958?', '?–1938', 'c. 1953–2001', '1856/1857–1882', '1893–1937/1938?', '1879 – 1944 이후', '?–?', '1885–?', '']) {
+assert.equal(parseLifeYears('1987-').isLiving, true); // old snapshots still read
+for (const years of ['1889–1958?', '?–1938', '1953?–2001', '1856/1857–1882', '1893–1937/1938?', '?–?', '1885–?', '']) {
     assert.equal(parseLifeYears(years).isLiving, false, years);
     assert.deepEqual(personLifeProblems(years, { kind: 'executed', label: { ko: '처형', en: 'Executed' } }), []);
 }
