@@ -22,6 +22,9 @@
   --clr-amber: #c7861c;
   --clr-yellow: #f0c94a;
   --clr-accent: #214d2e;
+  /* The same green one step up, for lines on the dark ground (bars, outlines,
+     focus rings): --clr-accent is 2.1:1 there, this is 4.8:1. */
+  --clr-accent-bright: #3f8a4a;
 
   /* Additional CommuLingo political-position colour families. */
   --commu-position-liberal: #365f87;
@@ -86,8 +89,8 @@
      tone used for labels on the dark theme. */
   --role-executor: #8c7734;
   --role-executor-bright: #d4bb61;
-  --role-leader: #b8564f;
-  --role-leader-bright: #de7c74;
+  --role-leader: #b0601f;
+  --role-leader-bright: #e89a5c;
   --role-participant: #4d6f9c;
   --role-participant-bright: #7ba3d4;
   --role-opponent: #6f6f6f;
@@ -175,6 +178,8 @@
   --link-hover: color-mix(in srgb, var(--btn-primary-hover) 34%, var(--clr-white));
   --accent: var(--clr-accent);
   --accent-green: var(--clr-accent);
+  /* Green drawn as a line: group-title bars, quote bars, outlines. */
+  --accent-line: var(--clr-accent-bright);
   --accent-red: var(--clr-red);
   --btn-bg: var(--clr-dark-raised);
   --btn-hover: color-mix(in srgb, var(--clr-cream) 14%, var(--clr-dark-raised));
@@ -192,7 +197,7 @@
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   --code-bg: var(--clr-dark);
   --success-bg: color-mix(in srgb, var(--clr-accent) 28%, var(--clr-black));
-  --success-border: var(--clr-accent);
+  --success-border: var(--accent-line);
   --success-text: var(--clr-cream);
   --info-bg: color-mix(in srgb, #2f81f7 18%, var(--clr-black));
   --info-border: #58a6ff;
@@ -206,11 +211,11 @@
   /* Red as a text or icon colour (cause-of-death chips, inline danger). */
   --text-danger: var(--clr-red-bright);
   /* Answer verdicts in lessons and drills. */
-  --correct-bg: color-mix(in srgb, var(--accent-green) 28%, var(--bg-surface));
+  --correct-bg: color-mix(in srgb, var(--clr-accent-bright) 38%, var(--bg-surface));
   --correct-border: var(--link);
-  --wrong-bg: color-mix(in srgb, var(--accent-red) 24%, var(--bg-surface));
+  --wrong-bg: color-mix(in srgb, var(--accent-red) 38%, var(--bg-surface));
   --wrong-border: var(--accent-red);
-  --focus-ring: color-mix(in srgb, var(--clr-accent) 35%, transparent);
+  --focus-ring: var(--accent-line);
   color-scheme: dark;
 }
 
@@ -228,6 +233,7 @@
   --link-hover: var(--clr-accent);
   --accent: var(--clr-accent);
   --accent-green: var(--clr-accent);
+  --accent-line: var(--clr-accent);
   --accent-red: var(--clr-red);
   --btn-bg: color-mix(in srgb, var(--clr-ink) 10%, var(--clr-cream-light));
   --btn-hover: color-mix(in srgb, var(--clr-ink) 16%, var(--clr-cream-light));
@@ -250,7 +256,7 @@
   --info-text: var(--clr-ink);
   --error-bg: color-mix(in srgb, var(--clr-red) 12%, var(--clr-cream-light));
   --error-border: var(--clr-red);
-  --error-text: var(--clr-red);
+  --error-text: var(--text-danger);
   --warning-bg: color-mix(in srgb, var(--clr-amber) 16%, var(--clr-cream-light));
   --warning-border: color-mix(in srgb, var(--clr-amber) 78%, var(--clr-ink));
   --warning-text: var(--clr-ink);
@@ -259,6 +265,6 @@
   --correct-border: var(--link);
   --wrong-bg: color-mix(in srgb, var(--accent-red) 24%, var(--bg-surface));
   --wrong-border: var(--accent-red);
-  --focus-ring: color-mix(in srgb, var(--clr-accent) 32%, transparent);
+  --focus-ring: var(--accent-line);
   color-scheme: light;
 }

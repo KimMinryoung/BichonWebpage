@@ -107,7 +107,7 @@
     padding: 14px;
 }
 .commu-book-group-title {
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--accent-line);
     color: var(--text-primary);
     font-size: var(--text-lg);
     font-weight: var(--weight-emphasis);
@@ -315,7 +315,7 @@
     font-weight: 700;
 }
 .commu-updates summary:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-line);
     outline-offset: -3px;
 }
 .commu-updates[open] > summary {

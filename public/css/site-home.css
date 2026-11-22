@@ -268,7 +268,7 @@ a.home-card:hover::after {
     border: 1px solid var(--border);
     border-bottom: none;
     border-left-width: 3px;
-    border-left-color: var(--accent);
+    border-left-color: var(--accent-line);
     padding: 14px 20px;
 }
 
@@ -328,7 +328,7 @@ a.home-card:hover::after {
     -webkit-tap-highlight-color: transparent;
 }
 .home-page .home-section-header h2 {
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--accent-line);
     padding-left: 10px;
     font-size: var(--text-lg);
     font-weight: 700;

@@ -29,7 +29,7 @@
 .research-series-nav {
     position: static;
     border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid var(--accent-line);
     margin: 14px 0 20px;
     background: var(--bg-surface);
     padding: 0;

@@ -136,7 +136,7 @@
 }
 
 .commu-lesson-focus {
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid var(--accent-line);
     color: var(--text-primary);
     font-size: var(--text-sm);
     line-height: var(--leading-relaxed);
@@ -318,7 +318,7 @@
 }
 
 .commu-lesson-action.is-basic {
-    box-shadow: inset 4px 0 0 var(--accent-green);
+    box-shadow: inset 4px 0 0 var(--accent-line);
 }
 
 .commu-lesson-action.is-advanced {
@@ -665,7 +665,7 @@
 
 .commu-intro {
     background: var(--bg-surface);
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--accent-line);
     margin-bottom: 18px;
     padding: 16px;
 }
@@ -886,7 +886,7 @@
 
 .commu-question-focus {
     background: var(--bg-surface);
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--accent-line);
     color: var(--text-secondary);
     line-height: var(--leading-relaxed);
     margin: -2px 0 16px;
@@ -955,7 +955,7 @@
 }
 
 .commu-choice:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-line);
     outline-offset: 3px;
 }
 
@@ -975,7 +975,7 @@
     color: var(--text-primary);
 }
 .commu-feedback {
-    border-left: 4px solid var(--accent-green);
+    border-left: 4px solid var(--accent-line);
     background: var(--bg-surface);
     color: var(--text-primary);
     display: grid;
@@ -1126,7 +1126,7 @@
     }
 }
 .commu-drill-group-title {
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--accent-line);
     color: var(--text-primary);
     font-size: var(--text-lg);
     font-weight: var(--weight-emphasis);
@@ -1219,7 +1219,7 @@
 }
 
 .commu-graph-central {
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--accent-line);
 }
 
 .commu-graph-kicker {
@@ -1380,7 +1380,7 @@
 
 .commu-graph-stage.is-plain { border-left-color: var(--link); }
 .commu-graph-stage.is-engels { border-left-color: var(--accent-red); }
-.commu-graph-stage.is-critique { border-left-color: var(--accent-green); }
+.commu-graph-stage.is-critique { border-left-color: var(--accent-line); }
 
 .commu-graph-stage-label {
     display: block;
@@ -1537,7 +1537,7 @@
 
 .commu-case-answer {
     display: none;
-    border-left: 3px solid var(--accent);
+    border-left: 3px solid var(--accent-line);
     padding-left: 12px;
 }
 
@@ -1628,7 +1628,7 @@
 
 .commu-debate-takeaway {
     display: none;
-    border-left: 3px solid var(--accent-green);
+    border-left: 3px solid var(--accent-line);
     padding-left: 12px;
 }
 
@@ -1884,7 +1884,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
 
 .commu-dc-block.is-outcome { border-left-color: var(--accent-red); }
 .commu-dc-block.is-ripple { border-left-color: var(--link); }
-.commu-dc-block.is-insight { border-left-color: var(--accent-green); }
+.commu-dc-block.is-insight { border-left-color: var(--accent-line); }
 
 .commu-dc-block-label {
     display: block;
@@ -1924,7 +1924,7 @@ button.commu-dc-option:hover { border-color: var(--link); }
     display: flex;
     flex-direction: column;
     gap: 12px;
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--accent-line);
 }
 
 .commu-dc-bars {
@@ -2469,7 +2469,7 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
 
 .commu-drill-quote {
     background: var(--bg-surface);
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--accent-line);
     color: var(--text-secondary);
     display: grid;
     gap: 6px;
@@ -2578,12 +2578,12 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
 }
 
 .commu-drill-order-item.is-correct {
-    background: color-mix(in srgb, var(--accent-green) 22%, var(--bg-surface));
+    background: var(--correct-bg);
     border-color: color-mix(in srgb, var(--accent-green) 55%, var(--border));
 }
 
 .commu-drill-order-item.is-wrong {
-    background: color-mix(in srgb, var(--accent-red) 16%, var(--bg-surface));
+    background: var(--wrong-bg);
     border-color: var(--accent-red);
 }
 .commu-choices.is-activity {
@@ -2624,7 +2624,7 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
 }
 
 .commu-order-grip:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-line);
     outline-offset: -2px;
 }
 
@@ -2837,7 +2837,7 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
 .commu-sort-target:focus-visible,
 .commu-cloze-blank:focus-visible,
 .commu-cloze-word:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-line);
     outline-offset: 2px;
 }
 
@@ -2867,7 +2867,7 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
 }
 
 .commu-shorts-feed:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-line);
     outline-offset: 2px;
 }
 
@@ -2955,7 +2955,7 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
 }
 
 .commu-short-reveal:focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--accent-line);
     outline-offset: 3px;
 }
 
@@ -2969,7 +2969,7 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
     gap: 10px;
     margin-bottom: 14px;
     padding: 14px 16px;
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--accent-line);
     background: var(--bg-surface);
     animation: commu-feedback-rise 260ms ease;
 }
