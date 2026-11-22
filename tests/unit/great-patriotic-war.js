@@ -170,6 +170,20 @@ for (const [id, def] of Object.entries(D.battles)) {
     assert.deepEqual(B.start(def, {}, null).pending.filter(u => u.side === 'red').map(u => u.id), ['m30']);
     assert.equal(B.start(def, {}, null, { edition: 1 }).pending.filter(u => u.side === 'red').length, 0);
 }
+// Moscow's edition 5: the corps guns, the 252nd and the 5th Panzer are gone, Klin's mobile divisions
+// march from turn 3, and the 1st Shock Army comes down from the north; an edition-4 save keeps its board.
+{
+    const def = D.battles.moscow;
+    const all = b => b.units.concat(b.pending);
+    const now = all(B.start(def, { reservesKept: true }, null)), old = all(B.start(def, { reservesKept: true }, null, { edition: 4 }));
+    for (const id of ['gart', 'i252', 'p5']) assert.ok(!now.some(u => u.id === id) && old.some(u => u.id === id), id);
+    for (const id of ['i14m', 'p6']) {
+        const u = now.find(x => x.id === id), was = old.find(x => x.id === id);
+        assert.ok(u.role === 'push' && u.wake === 3 && was.role === 'field' && !was.wake, id);
+    }
+    assert.deepEqual(now.filter(u => u.id === 'm1s' || u.id === 'm1b').map(u => [u.r, u.c]), [[0, 7], [0, 8]]);
+    assert.deepEqual(old.filter(u => u.id === 'm1s' || u.id === 'm1b').map(u => [u.r, u.c]), [[0, 9], [0, 10]]);
+}
 // Bagration with one blow has no southern group.
 {
     const def = D.battles.bagration;

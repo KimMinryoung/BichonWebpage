@@ -900,7 +900,23 @@
         id: 'moscow', sides: SIDES, front: 'west', final: false, outlast: true, prisoners: true,
         // Edition 3: the frost of early December (−25° to −35°) from the turn
         // of the counterstroke: the Germans' guns and engines seize up.
-        editions: { 3: { weatherCalm: '눈', weather: [{ from: 4, name: '혹한', note: '독일군 공격 −1', numb: { side: 'axis', atk: 1 }, tiles: {} }] } },
+        // Edition 5: six German units about Klin and in the rear never fought
+        // and the counterstroke on Klin was never played (scripts/war-shape.js).
+        // The corps guns, the 252nd and the 5th Panzer are gone; the 14th
+        // Motorised and the 6th Panzer hold Klin until turn 3 and then follow
+        // the spearhead, so Klin stands thin when the 1st Shock Army comes
+        // down on it from the north.
+        editions: {
+            3: { weatherCalm: '눈', weather: [{ from: 4, name: '혹한', note: '독일군 공격 −1', numb: { side: 'axis', atk: 1 }, tiles: {} }] },
+            5: { brief: [
+                '11월 중순 독일군의 마지막 공세가 모스크바 북서쪽으로 온다. 로코솝스키의 제16군이 볼로콜람스크 대로를 지킨다. 판 오른쪽 끝 힘키 뒤가 모스크바다.',
+                '8턴이 끝날 때까지 힘키에 독일군을 들이지 않으면 이긴다. 그 전에 클린에 붉은 부대를 세우면 그 자리에서 이긴다. 7턴 안에 이기면 모스크바 방면의 우리 힘이 3 늘고, 지면 6 준다.',
+                '독일 선봉은 힘키로 곧장 온다. 보병은 붉은 부대 곁에서 멈추지만 전차는 지나친다. 대전차포와 숲에 숨긴 전차로 전차를 잡고, 힘키로 가는 길을 비우지 말아야 한다.',
+                '예비를 쥐고 있기로 했다면 4턴에 제1충격군이 북쪽에서, 제20군이 북동쪽에서 온다. 클린을 지키던 차량화 사단과 기갑 사단은 3턴부터 선봉을 따라 힘키로 나온다. 그 뒤의 클린은 수비가 얇아서, 북쪽에서 내려오는 군으로 넘볼 수 있다. 독일 선봉의 뒤(서쪽에서 오는 보급선)를 끊으면 선봉이 포위된다. 4턴부터는 혹한으로 독일군의 공격이 1 준다.',
+                SUPPLY_BRIEF,
+                ARMS_BRIEF,
+            ] },
+        },
         scene: { picture: 'moscow-counter' },
         title: '모스크바 방어와 반격', date: '1941년 11월 16일–12월 15일',
         settle: '모스크바 앞으로 →', board: '모스크바 북서쪽', enemyName: '독일군',
@@ -956,8 +972,8 @@
             { id: 'mart', tag: '포병', side: 'red', name: '제16군 포병', kind: 'art', at: [3, 9], hp: 7, atk: 5, def: 1, mv: 2, range: 2 },
             { id: 'mhq', tag: '사령부', pic: 'hq', side: 'red', name: '서부전선군 예비', sub: '스타프카 예비군', kind: 'inf', at: [4, 9], hp: 10, atk: 5, def: 3, mv: 3, card: 'reserve', look: 'ushanka' },
             { id: 'm5a', tag: '5군', side: 'red', name: '제5군 소총사단', sub: '모자이스크 대로', kind: 'inf', at: [5, 9], hp: 9, atk: 5, def: 3, mv: 3, need: 3 },
-            { id: 'm1s', tag: '1충격', side: 'red', name: '제1충격군 스키 여단', sub: '쿠즈네초프', kind: 'inf', at: [0, 9], hp: 10, atk: 6, def: 3, mv: 4, arrive: 4, flag: 'reservesKept', look: 'ushanka' },
-            { id: 'm1b', tag: '1충격', side: 'red', name: '제1충격군 소총여단', sub: '쿠즈네초프', kind: 'inf', at: [0, 10], hp: 10, atk: 6, def: 3, mv: 3, arrive: 4, flag: 'reservesKept', look: 'ushanka' },
+            { id: 'm1s', tag: '1충격', side: 'red', name: '제1충격군 스키 여단', sub: '쿠즈네초프', kind: 'inf', at: [0, 9], hp: 10, atk: 6, def: 3, mv: 4, arrive: 4, flag: 'reservesKept', look: 'ushanka', editions: { 5: { at: [0, 7], sub: '쿠즈네초프, 북쪽에서' } } },
+            { id: 'm1b', tag: '1충격', side: 'red', name: '제1충격군 소총여단', sub: '쿠즈네초프', kind: 'inf', at: [0, 10], hp: 10, atk: 6, def: 3, mv: 3, arrive: 4, flag: 'reservesKept', look: 'ushanka', editions: { 5: { at: [0, 8], sub: '쿠즈네초프, 북쪽에서' } } },
             { id: 'm20', tag: '20군', side: 'red', name: '제20군', sub: '반격의 예비', kind: 'inf', at: [1, 10], hp: 10, atk: 6, def: 3, mv: 3, arrive: 4, flag: 'reservesKept', look: 'ushanka' },
             // Edition 2: Lelyushenko's 30th Army, which came down on Klin from the north with the 1st Shock Army.
             { id: 'm30', tag: '30군', side: 'red', name: '제30군', sub: '렐류셴코, 북쪽에서', kind: 'inf', at: [0, 6], hp: 10, atk: 5, def: 3, mv: 3, arrive: 5, look: 'ushanka', fromEdition: 2 },
@@ -970,13 +986,13 @@
             // Edition 4: Klin was the 3rd Panzer Group's road junction and rear,
             // held by the 14th Motorised and the 6th Panzer; it does not fall to a
             // raid on the second turn.
-            { id: 'i14m', tag: '14차량', side: 'axis', name: '제14차량화사단', sub: '클린 동쪽', kind: 'inf', at: [0, 4], hp: 11, atk: 6, def: 3, mv: 4, role: 'field', reach: 1, fromEdition: 4 },
-            { id: 'p6', tag: '6기갑', side: 'axis', name: '제6기갑사단', sub: '클린 남쪽', kind: 'tank', at: [1, 3], hp: 11, atk: 7, def: 3, mv: 4, role: 'field', reach: 1, fromEdition: 4 },
+            { id: 'i14m', tag: '14차량', side: 'axis', name: '제14차량화사단', sub: '클린 동쪽', kind: 'inf', at: [0, 4], hp: 11, atk: 6, def: 3, mv: 4, role: 'field', reach: 1, fromEdition: 4, editions: { 5: { role: 'push', wake: 3, sub: '클린 동쪽, 3턴부터 힘키로' } } },
+            { id: 'p6', tag: '6기갑', side: 'axis', name: '제6기갑사단', sub: '클린 남쪽', kind: 'tank', at: [1, 3], hp: 11, atk: 7, def: 3, mv: 4, role: 'field', reach: 1, fromEdition: 4, editions: { 5: { role: 'push', wake: 3, sub: '클린 남쪽, 3턴부터 힘키로' } } },
             { id: 'p10', tag: '10기갑', side: 'axis', name: '제10기갑사단', sub: '제4기갑 집단, 둘째 물결', kind: 'tank', at: [4, 0], hp: 12, atk: 7, def: 3, mv: 4, role: 'push', arrive: 2, fromEdition: 4 },
-            { id: 'p5', tag: '5기갑', side: 'axis', name: '제5기갑사단', sub: '제4기갑 집단, 넷째 물결', kind: 'tank', at: [3, 0], hp: 12, atk: 7, def: 3, mv: 4, role: 'push', arrive: 4, fromEdition: 4 },
+            { id: 'p5', tag: '5기갑', side: 'axis', name: '제5기갑사단', sub: '제4기갑 집단, 넷째 물결', kind: 'tank', at: [3, 0], hp: 12, atk: 7, def: 3, mv: 4, role: 'push', arrive: 4, fromEdition: 4, untilEdition: 4 },
             { id: 'p11', tag: '11기갑', side: 'axis', name: '제11기갑사단', sub: '둘째 물결', kind: 'tank', at: [2, 0], hp: 12, atk: 7, def: 3, mv: 4, role: 'push', arrive: 2 },
-            { id: 'i252', tag: '252', side: 'axis', name: '제252보병사단', sub: '둘째 물결', kind: 'inf', at: [5, 0], hp: 12, atk: 6, def: 3, mv: 3, role: 'field', reach: 9, arrive: 3 },
-            { id: 'gart', tag: '포대', side: 'axis', name: '군단 포병', kind: 'art', at: [3, 1], hp: 8, atk: 6, def: 1, mv: 2, range: 2, role: 'field', reach: 1 },
+            { id: 'i252', tag: '252', side: 'axis', name: '제252보병사단', sub: '둘째 물결', kind: 'inf', at: [5, 0], hp: 12, atk: 6, def: 3, mv: 3, role: 'field', reach: 9, arrive: 3, untilEdition: 4 },
+            { id: 'gart', tag: '포대', side: 'axis', name: '군단 포병', kind: 'art', at: [3, 1], hp: 8, atk: 6, def: 1, mv: 2, range: 2, role: 'field', reach: 1, untilEdition: 4 },
         ],
         summary: '8턴 끝까지 힘키를 지키면 승리 · 클린에 서면 그 자리에서 승리',
         brief: [
