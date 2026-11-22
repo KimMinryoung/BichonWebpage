@@ -763,6 +763,13 @@ function fight(routes, flags = { makhno: true }, muster, def = D.battles.perekop
     for (const o of PEREKOP_WIN) if (won.result || !B.act(won, ...o)) break;
     assert.equal(won.result, 'won', 'the Red Army breaks into Crimea');
     assert.ok(won.turn <= D.battles.perekop.turnLimit);
+    // Ten turns from edition 3; an edition-2 save keeps nine, and the texts say which.
+    {
+        const now = B.defAsOf(D.battles.perekop), old = B.defAsOf(D.battles.perekop, { edition: 2 });
+        assert.deepEqual([now.turnLimit, old.turnLimit], [10, 9]);
+        assert.ok(now.summary.includes('10턴') && now.brief[0].includes('10턴이 주어진다') && old.summary.includes('9턴') && old.brief[0].includes('9턴이 주어진다'));
+        assert.equal(now.brief.length, old.brief.length);
+    }
     assert.equal(fight({ 'r30,r30b,r4g': chongar }).result, 'lost', 'the 4th Army alone does not force Chongar against the reserve');
     assert.equal(fight({}).result, 'lost', 'guns alone do not take Crimea');
     assert.equal(fight({ 'r51a,r51b,r51g,r6g': wall }, {}, muster(3)).result, 'lost', 'the Wall wants more than the western group');

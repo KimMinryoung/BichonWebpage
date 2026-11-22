@@ -1025,6 +1025,15 @@
         ],
         history: '11월 7–8일 밤 제15·52사단과 마흐노 부대가 현지 주민의 안내로 시바시를 건너 리톱스키 반도에 올랐다. 8일 낮 제51사단의 방벽 정면 공격은 철조망과 기관총 앞에서 막혔고, 반도의 부대는 바르보비치 기병의 반격을 버텼다. 퇴로를 위협받은 백군은 9일 새벽 방벽을 버렸다. 11일 유슌 방어선이 뚫렸고, 같은 날 밤 제4군의 제30사단이 촌가르 진지를 돌파했다. 붉은 기병이 그 뒤를 따라 크림으로 들어갔다.',
     };
+    // Edition 3 (2026-11-22): ten turns, not nine. The board's three roads all hold up
+    // (scripts/war-shape.js: any one group gone, the strong player still wins by another),
+    // but the ordinary player lost to the clock, not to the Whites: 7% in nine turns, 19% in
+    // ten; from eleven a player who only marches on the goals wins.
+    perekop.editions = { 3: {
+        turnLimit: 10,
+        summary: perekop.summary.replace('9턴', '10턴'),
+        brief: [perekop.brief[0].replace('9턴이 주어진다', '10턴이 주어진다')].concat(perekop.brief.slice(1)),
+    } };
 
     // The war's afterword: the first text whose condition holds.
     const epilogue = {
@@ -2173,7 +2182,7 @@
     // kept at 40.
     const rehearsal = { lead: ['train'], skip: ['requisition'], guard: { stat: 'cohesion', min: 40 } };
     const data = {
-        id: 'civil-war', title: '붉은 전선 1918–1920', saveVersion: 1, edition: 2, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
+        id: 'civil-war', title: '붉은 전선 1918–1920', saveVersion: 1, edition: 3, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
         map, ui, portraits, pictures, pictureDir: '/images/civil-war/', roles, glossary,
         texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring, rehearsal, promo,
     };
