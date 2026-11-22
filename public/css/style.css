@@ -178,8 +178,23 @@ a {
     text-decoration: none;
 }
 
+/* Hover never underlines by itself: rows, cards, icons, chips and map shapes
+   react with ground, border or colour. (Until 2026-11-22 it did, and every
+   component had to switch the line off again; the ones that forgot leaked it.) */
 a:hover {
     color: var(--link-hover);
+}
+
+/* The exception is a link written into running text, where the line is the
+   only mark that tells it from the words around it on hover. Dictionary links
+   in text keep their own dashed-to-solid rule instead. */
+.report-body a:not([class]):hover,
+.post-body a:not([class]):hover,
+.post-excerpt a:hover,
+.post-meta a:hover,
+.games-note a:hover,
+.cw-intro-art a:hover,
+.commu-term-sources a:hover {
     text-decoration: underline;
 }
 

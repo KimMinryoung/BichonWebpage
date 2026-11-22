@@ -135,9 +135,12 @@ a {
     color: var(--link);
     text-decoration: none;
 }
-
 a:hover {
     color: var(--link-hover);
+}
+.games-note a:hover,
+.cw-intro-art a:hover,
+.commu-term-sources a:hover {
     text-decoration: underline;
 }
 a:focus-visible,

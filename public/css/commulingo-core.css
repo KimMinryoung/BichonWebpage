@@ -1322,7 +1322,6 @@ a.commu-person-position.is-secondary:focus-visible {
 a.commu-person-position:hover,
 a.commu-person-position:focus-visible {
     color: var(--pos-ink);
-    text-decoration: underline;
     outline: 2px solid var(--link);
     outline-offset: 1px;
 }
