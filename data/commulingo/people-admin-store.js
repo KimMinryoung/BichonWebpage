@@ -38,8 +38,10 @@ function assertCardLabels({ fateKo, fateEn, citizenship, origin }) {
     const problems = [
         ...fateLabelProblems({ ko: fateKo, en: fateEn }),
         ...nationalityLabelProblems({
+            citizenshipCode: citizenship && citizenship.code,
             citizenshipKo: citizenship && citizenship.ko,
             citizenshipEn: citizenship && citizenship.en,
+            originCode: origin && origin.code,
             originKo: origin && origin.ko,
             originEn: origin && origin.en,
         }),

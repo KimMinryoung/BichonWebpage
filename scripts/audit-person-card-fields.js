@@ -25,8 +25,8 @@ const { fateLabelProblems, nationalityLabelProblems, isLongFateLabel, FATE_KO_SO
     try {
         const { rows } = await db.query(
             `SELECT p.id, p.years_label, p.birth_year, p.death_year, p.fate_kind, p.fate_label_ko, p.fate_label_en,
-                    p.citizenship_label_ko, p.citizenship_label_en,
-                    p.origin_label_ko, p.origin_label_en,
+                    p.citizenship_code, p.citizenship_label_ko, p.citizenship_label_en,
+                    p.origin_code, p.origin_label_ko, p.origin_label_en,
                     COALESCE(to_jsonb(p)->'activities', '[]'::jsonb) AS activities
              FROM commulingo_people p
              ORDER BY p.id`
@@ -40,8 +40,8 @@ const { fateLabelProblems, nationalityLabelProblems, isLongFateLabel, FATE_KO_SO
             if ((row.activities || []).filter(a => a.primary).length !== 1) problems.push(`${row.id}: needs exactly one primary activity`);
             for (const p of fateLabelProblems({ ko: row.fate_label_ko, en: row.fate_label_en })) problems.push(`${row.id}: ${p}`);
             for (const p of nationalityLabelProblems({
-                citizenshipKo: row.citizenship_label_ko, citizenshipEn: row.citizenship_label_en,
-                originKo: row.origin_label_ko, originEn: row.origin_label_en,
+                citizenshipCode: row.citizenship_code, citizenshipKo: row.citizenship_label_ko, citizenshipEn: row.citizenship_label_en,
+                originCode: row.origin_code, originKo: row.origin_label_ko, originEn: row.origin_label_en,
             })) problems.push(`${row.id}: ${p}`);
             if (isLongFateLabel(row.fate_label_ko)) warnings.push(`${row.id}: fate_label_ko ${row.fate_label_ko.length} chars: «${row.fate_label_ko}»`);
         }

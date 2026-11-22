@@ -16,4 +16,17 @@ assert.strictEqual(birthplace.length, 2);
 assert.match(birthplace[0], /nationalOrigin\.label\.ko is a birthplace/);
 assert.match(nationalityLabelProblems({ citizenshipKo: '레발 출생' })[0], /citizenship\.label\.ko is a birthplace/);
 
+// Label form, checked when the codes are given (2026-11-22 rule).
+const form = labels => nationalityLabelProblems(labels);
+assert.deepStrictEqual(form({ citizenshipCode: 'soviet', citizenshipKo: '소련', citizenshipEn: 'Soviet Union',
+    originCode: 'russia', originKo: '러시아 (유대계)', originEn: 'Russia (Jewish)' }), []);
+assert.deepStrictEqual(form({ citizenshipCode: 'russia', citizenshipKo: '러시아 제국', citizenshipEn: 'Russian Empire' }), []);
+assert.match(form({ citizenshipCode: 'soviet', citizenshipKo: '러시아 제국 → 소련', citizenshipEn: 'Soviet Union' })[0], /must name one state/);
+assert.match(form({ citizenshipCode: 'usa', citizenshipKo: '미국 (1943년 귀화)', citizenshipEn: 'United States' })[0], /must name one state/);
+assert.match(form({ citizenshipCode: 'uk', citizenshipKo: '영국인', citizenshipEn: 'United Kingdom' })[0], /write the state/);
+assert.match(form({ originCode: 'russia', originKo: '러시아인', originEn: 'Russia' })[0], /must start with the code's country/);
+assert.match(form({ originCode: 'germany', originKo: '유대계 독일인', originEn: 'Germany (Jewish)' })[0], /must start with the code's country/);
+assert.match(form({ originCode: 'france', originKo: '프랑스 (아버지는 폴란드계)', originEn: 'France (Polish descent)' })[0], /not a family remark/);
+assert.match(form({ originCode: 'russia', originKo: '러시아', originEn: 'Russian' })[0], /nationalOrigin\.label\.en/);
+
 console.log('smoke-commulingo-person-card-validation: ok');
