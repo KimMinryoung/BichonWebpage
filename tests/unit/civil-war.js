@@ -640,7 +640,7 @@ assert.equal(G.restore('{'), null);
     const opened = log.findIndex(e => e[0] === 'next');
     const from = log.findIndex((e, i) => i > opened && e[0].startsWith('b:'));
     const to = log.findIndex((e, i) => i > from && e[0] === 'next');
-    const back = G.restore({ version: G.VERSION, rules: G.RULES, log: log.slice(0, from).concat(log.slice(to)) });
+    const back = G.restore({ version: G.VERSION, rules: G.RULES, edition: G.EDITION, log: log.slice(0, from).concat(log.slice(to)) });
     assert.equal(back.turn, hist.turn, 'the old save keeps its place');
     assert.deepEqual(back.lines, hist.lines);
     assert.equal(back.battles.kazan.assumed, true);
@@ -1120,7 +1120,7 @@ const SIMBIRSK_WIN = [
 {
     // A save from before the incidents replays with history's answers.
     const log = JSON.parse(G.serialize(hist)).log.filter(e => e[0] !== 'respond');
-    const back = G.restore({ version: G.VERSION, rules: G.RULES, log });
+    const back = G.restore({ version: G.VERSION, rules: G.RULES, edition: G.EDITION, log });
     assert.equal(back.turn, hist.turn);
     assert.deepEqual(back.lines, hist.lines);
     assert.equal(back.stats.peasants, hist.stats.peasants);
@@ -1509,7 +1509,9 @@ for (const [rules, warsaw] of [[5, null], [6, null], [6, 'won']]) {
     const quiet = Object.assign({}, def, { units: def.units.filter(u => u.side === 'red' || u.role === 'hold') });
     const b = B.start(quiet, {}, muster(0), { rules: 7 });
     while (!b.result) assert.ok(B.act(b, 'end'));
-    assert.deepEqual([b.result, b.held, b.turn], ['won', true, def.turnLimit]);
+    assert.deepEqual([b.result, b.held, b.turn], ['won', true, b.def.turnLimit]);
+    assert.equal(b.def.turnLimit, 6, 'six turns to hold from edition 2');
+    assert.equal(B.start(def, {}, muster(0), { rules: G.RULES, edition: 1 }).def.turnLimit, 8);
 }
 
 // The Tsaritsyn group backed against the front's commander: the city

@@ -4,6 +4,7 @@
 // of battles to play one at a time, and each battle's own page and share
 // image. Built once from the published scenarios (services/war-map.js).
 const { SCENARIOS } = require('./war-map');
+const Battle = require('../public/js/war/battle.js');
 
 const MAX_CARDS = 2;
 
@@ -23,7 +24,8 @@ const ogImage = (D, id) => `${D.pictureDir}og-${id || 'game'}.jpg`;
 
 // One battle as its card and page show it.
 function battleOf(D, id) {
-    const b = D.battles[id];
+    // The board as the scenario's newest edition has it (its turns may be an edition's).
+    const b = Battle.defAsOf(D.battles[id]);
     const promo = D.promo.battles[id];
     return {
         scenario: D.id, game: D.title, id, title: b.title, date: b.date, turns: b.turnLimit,

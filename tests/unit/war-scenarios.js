@@ -161,9 +161,11 @@ assert.deepEqual(back.records, s.records);
     assert.ok(old && old.edition === 1 && !has(old), 'an edition-1 save keeps edition 1 data');
     assert.ok(G.restore({ version: M.saveVersion, rules: G.RULES, log: [] }).edition === 1, 'a save without edition is the first');
     assert.equal(G.restore({ version: M.saveVersion, rules: G.RULES, edition: 3, log: [] }), null);
-    // A scenario without editions writes none (the civil war's saves stay as they were).
+    // The civil war took its first edition after its saves were in the field (2026-11-22): a save
+    // of it without the field is of edition 1, a new war says its edition.
     const C = Engine.create(published.find(D => D.id === 'civil-war'));
-    assert.ok(!('edition' in JSON.parse(C.serialize(C.start()))));
+    assert.equal(JSON.parse(C.serialize(C.start())).edition, C.EDITION);
+    assert.equal(C.restore({ version: C.VERSION, rules: C.RULES, log: [] }).edition, 1);
 }
 
 // The rehearsal plays the scenario's lead card to the heaviest front.

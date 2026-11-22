@@ -6,6 +6,8 @@
 // the engine, the battle or the scenario must leave every hash as it was.
 //
 //   node tests/unit/war-golden.js           replay and compare
+//   node tests/unit/war-golden.js --add     record wars of the newest generation and edition
+//                                            beside those already recorded
 //   node tests/unit/war-golden.js --write   record anew (only when a rule
 //                                            change is meant; say so in the commit)
 // @group game
@@ -270,7 +272,8 @@ function drive(s, feats) {
     while (s.phase === 'battle' && s.battle === b && !b.result) {
         for (const u of b.units.filter(x => x.side === 'red' && x.hp > 0)) {
             if (b.result || u.hp <= 0) continue;
-            const route = Object.entries(routes).find(([ids]) => ids.split(',').includes(u.id));
+            // A board with no routes written for it (a battle newer than this driver): its units strike what is in reach.
+            const route = Object.entries(routes || {}).find(([ids]) => ids.split(',').includes(u.id));
             let dest = null;
             if (route && route[1]) {
                 const path = route[1].map(([r, c]) => ({ r, c }));
@@ -298,9 +301,11 @@ function drive(s, feats) {
     }
 }
 
-function playWar({ rules, seed, bot }) {
+// A recorded war is of the scenario's first edition unless it says another (the wars recorded
+// before the scenario had editions say none).
+function playWar({ rules, seed, bot, edition = 1 }) {
     const rand = rng(seed);
-    const s = G.start(rules);
+    const s = G.start(rules, edition);
     const history = t => t.history;
     const other = t => (t.options.find(o => o.id !== t.history) || t.options[0]).id;
     const coin = t => (rand() < 0.5 ? t.history : other(t));
@@ -321,7 +326,7 @@ function playWar({ rules, seed, bot }) {
             if (s.phase === 'battle' && !s.battle.result) break;
         } else if (!G.act(s, 'next')) break;
     }
-    return { rules, log: s.log };
+    return edition > 1 ? { rules, edition, log: s.log } : { rules, log: s.log };
 }
 
 function record() {
@@ -374,7 +379,7 @@ function restoreHash(save) {
 
 // Replays a war order by order: the hash after each, and the end state's.
 function replay(w) {
-    const s = G.start(w.rules);
+    const s = G.start(w.rules, w.edition || 1);
     const steps = [];
     for (const entry of w.log) {
         const ok = G.act(s, ...entry);
@@ -386,7 +391,19 @@ function replay(w) {
     return { steps };
 }
 
-if (process.argv.includes('--write')) {
+if (process.argv.includes('--add')) {
+    // Wars of the newest generation and edition, recorded beside those already there (never over them).
+    const fixture = JSON.parse(fs.readFileSync(FIXTURE, 'utf8'));
+    const tag = `r${G.RULES}e${G.EDITION}`;
+    assert.ok(!fixture.wars.some(w => w.name.split(' ').includes(tag)), `wars of ${tag} are already recorded`);
+    const added = [];
+    for (const bot of ['history', 'other', 'harsh', 'spread', 'coin']) added.push(Object.assign(playWar({ rules: G.RULES, edition: G.EDITION, seed: 7, bot }), { name: `${bot} ${tag}` }));
+    for (let i = 1; i <= 12; i++) added.push(Object.assign(playWar({ rules: G.RULES, edition: G.EDITION, seed: 50 + i, bot: 'coin' }), { name: `coin ${tag} #${i}` }));
+    for (let i = 0; i < 12; i++) added.push(Object.assign(playWar({ rules: G.RULES, edition: G.EDITION, seed: 7000 + i, bot: i % 3 ? 'random' : 'coin' }), { name: `random ${tag} #${i}` }));
+    for (const w of added) w.steps = replay(w).steps;
+    fs.writeFileSync(FIXTURE, JSON.stringify({ wars: fixture.wars.concat(added), saves: fixture.saves }) + '\n');
+    console.log(`recorded ${added.length} wars of ${tag} (${fixture.wars.length + added.length} in all)`);
+} else if (process.argv.includes('--write')) {
     const wars = record();
     const saves = oldSaves(wars).map(o => Object.assign(o, { hash: restoreHash(o.save) }));
     fs.mkdirSync(path.dirname(FIXTURE), { recursive: true });

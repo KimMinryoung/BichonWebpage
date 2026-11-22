@@ -463,8 +463,9 @@ if (!isMainThread) {
     // ── Report ──
     const heads = [], jobs = [];
     for (const id of battles) {
-        const def = D.battles[id];
-        if (!def) { heads.push({ id, text: `${id}: no such battle`, keys: [] }); continue; }
+        if (!D.battles[id]) { heads.push({ id, text: `${id}: no such battle`, keys: [] }); continue; }
+        // The board as the newest edition has it (its turns may be an edition's).
+        const def = B.defAsOf(D.battles[id]);
         const hist = historyOf(id);
         const quick = def.reward && def.reward.quick;
         const head = { id, text: `\n${def.title} (${id}) · ${def.turnLimit}턴` + (quick ? ` · 빨리 이김 ${quick}턴 안` : '') + (def.outlast ? ' · 버티기' : '') + (hist && hist.margin !== null ? ` · 역사의 길 여유 ${hist.margin}` : ''), keys: [] };

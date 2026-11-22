@@ -102,7 +102,8 @@ function replay(start, orders) {
     const spots = def.goals.map(g => g.at).concat(B.postsOf(def).map(p => p.at));
     const fought = new Set(), stood = new Set(), blows = {};
     let first = null;
-    const stand = () => { for (const u of reds(b)) if (at(spots, u.r, u.c)) stood.add(u.id); };
+    // Whoever stands on a goal or a post, of either side: an enemy that marches into the post has had its part without a blow.
+    const stand = () => { for (const u of b.units) if (u.hp > 0 && at(spots, u.r, u.c)) stood.add(u.id); };
     for (const order of orders) {
         const turn = b.turn;
         if (!B.act(b, ...order)) continue;

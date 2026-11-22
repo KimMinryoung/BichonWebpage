@@ -1282,6 +1282,23 @@
         pushNote: '돈군 보병과 넘어간 농민 연대. 2턴이 끝날 때까지 제자리에서 모이고, 그 뒤 차리친역으로 곧장 온다. 붉은 부대 곁에서는 멈춰 싸운다. 차리친역에 백군이 들어서면 진다.',
         legend: [['steppe', '초원'], ['ravine', '골짜기(발카) (방어 +1, 이동 2)'], ['trench', '방어 띠 (방어 +2, 이동 2, 포격으로 깎임)'], ['works', '대포 공장 (방어 +1)'], ['city', '차리친 시가 (방어 +1)'], ['town', '역 마을 (방어 +1)'], ['river', '볼가강 (소함대만)']],
         reward: { quick: 5, quickBy: 3, lostBy: -6 },
+        // Edition 2 of the scenario (its first board change that is not an
+        // engine generation): nobody held the station eight turns — the
+        // battle ended at Sarepta on turn 4–5 or with the station lost on
+        // turn 5–7 — and the second wave of Cossack horse never reached the
+        // fight (scripts/war-shape.js). Six turns to hold; that horse is gone.
+        editions: { 2: {
+            turnLimit: 6,
+            summary: '6턴 동안 차리친역을 지키면 승리 · 사렙타를 되찾으면 일찍 승리 · 역을 비우지 말 것',
+            brief: [
+                '10월 중순 돈군이 차리친의 순환 철도까지 밀고 들어왔다. 남쪽의 베케톱카와 사렙타는 이미 넘어갔고, 15일 베케톱카 근처에서 농민연대 둘이 백군에게 넘어갔다.',
+                '차리친역에 백군이 들어서면 진다. 6턴이 끝날 때까지 역을 지키면 역사처럼 차리친을 지켜 낸다. 그 전에 사렙타에 붉은 부대를 세우면 일찍 이기고, 5턴 안이면 이 시기 차리친 방면의 우리 힘이 3 는다. 지면 6 준다.',
+                '마몬토프의 기병은 북쪽에서 역으로 곧장 달려온다. 기병은 붉은 부대 곁을 멈추지 않고 지나치므로 역에 부대 하나를 남겨 두어야 한다. 보로포노보의 돈군 보병과 베케톱카의 농민 연대는 3턴부터 역으로 밀려온다. 방어 띠(방어 +2)에서 맞서라.',
+                '즐로바의 「강철 사단」은 백군의 뒤, 남서쪽 끝에서 시작한다. 장갑열차는 철길로만 다니되 빠르다(이동 6). 볼가 소함대는 강 위로만 다니며 사거리 2로 강가를 친다.',
+                '적의 곁(상하좌우 네 칸)에 들어가면 그 턴의 이동은 끝난다. 협공: 치려는 적의 곁에 다른 붉은 부대가 있으면 그 부대마다 피해 +1(둘까지).',
+                '결정적 한 수(★): 쿨리크 포병의 「포 일제 사격」은 피해 +4에 반격이 없다. 즐로바의 「등 뒤로」는 그 턴 이동 +3에 적 곁을 지나간다. 소함대의 「상륙」은 강가에 연대 하나를, 보로실로프 10군의 「루간스크의 노동자들」은 곁에 노동자 분견대 하나를 세운다.',
+            ],
+        } },
         map: [
             '....b.....~~',
             '..b......G~~',
@@ -1365,7 +1382,7 @@
             // Rules 14: the Don army's numbers as units, not as men heaped on a few (see dev_docs/civil-war-game.md).
             { id: 'wd3', tag: '돈군', look: 'cossack', side: 'white', name: '돈군 보병', sub: '북서쪽', kind: 'inf', at: [1, 5], hp: 12, atk: 6, def: 3, mv: 3, role: 'push', wake: 3, from: 14 },
             { id: 'wd4', tag: '돈군', look: 'cossack', side: 'white', name: '돈군 보병', sub: '남서쪽', kind: 'inf', at: [7, 5], hp: 12, atk: 6, def: 3, mv: 3, role: 'push', wake: 3, from: 14 },
-            { id: 'wm2', tag: '돈 기병', look: 'cossack', side: 'white', name: '돈 카자크 기병', sub: '둘째 물결', kind: 'cav', at: [0, 1], hp: 10, atk: 6, def: 2, mv: 4, role: 'raid', arrive: 4, from: 14 },
+            { id: 'wm2', tag: '돈 기병', look: 'cossack', side: 'white', name: '돈 카자크 기병', sub: '둘째 물결', kind: 'cav', at: [0, 1], hp: 10, atk: 6, def: 2, mv: 4, role: 'raid', arrive: 4, from: 14, untilEdition: 1 },
             { id: 'wd5', tag: '돈군', look: 'cossack', side: 'white', name: '돈군 보병', sub: '둘째 물결', kind: 'inf', at: [4, 0], hp: 12, atk: 6, def: 3, mv: 3, role: 'push', arrive: 4, from: 14 },
         ],
         summary: '8턴 동안 차리친역을 지키면 승리 · 사렙타를 되찾으면 일찍 승리 · 역을 비우지 말 것',
@@ -2156,7 +2173,7 @@
     // kept at 40.
     const rehearsal = { lead: ['train'], skip: ['requisition'], guard: { stat: 'cohesion', min: 40 } };
     const data = {
-        id: 'civil-war', title: '붉은 전선 1918–1920', saveVersion: 1, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
+        id: 'civil-war', title: '붉은 전선 1918–1920', saveVersion: 1, edition: 2, factions, troops, fronts, frontOrder, startLines, cards, turns, battles, epilogue,
         map, ui, portraits, pictures, pictureDir: '/images/civil-war/', roles, glossary,
         texts, economy, command, leaders, quality, mobilize, unrest, outcome, spoils, frontMoves, verdict, modifiers, extraThreats, scoring, rehearsal, promo,
     };
