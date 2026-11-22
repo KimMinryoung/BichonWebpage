@@ -14,6 +14,10 @@
 @media (max-width: 560px) { .gen-figure { padding: .3rem; } }
 .gen-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 .gen-svg { display: block; font-family: inherit; height: auto; }
+.gen-zoom { width: 100%; margin: 0 0 .3rem; }
+.gen-figure.is-zoomed { overflow-x: clip; }
+.gen-figure.is-zoomed .gen-svg { width: var(--gen-w); max-width: none; }
+.gen-figure.is-zoomed .gen-cols { width: var(--gen-w); transform: translateX(calc(-1 * var(--gen-x, 0px))); font-size: var(--text-meta); }
 .gen-cols {
     display: grid;
     position: sticky;

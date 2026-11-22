@@ -101,3 +101,10 @@ document.addEventListener('submit', function(e) {
         window.open(handoff(url), '_blank', 'noopener');
     }, true);
 })();
+
+// <details data-open-wide>: folded on a phone, open on a wide screen (the
+// contents list of an event page).
+(function() {
+    if (!window.matchMedia || !window.matchMedia('(min-width: 721px)').matches) return;
+    Array.prototype.forEach.call(document.querySelectorAll('details[data-open-wide]'), function(node) { node.open = true; });
+})();

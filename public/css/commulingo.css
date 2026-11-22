@@ -457,6 +457,12 @@
     box-shadow: inset 4px 0 0 var(--accent-red);
 }
 
+/* The bar tells the basic level from the advanced one; a chapter with a
+   single level has nothing to tell apart. */
+.commu-lesson-action.is-sole {
+    box-shadow: none;
+}
+
 .commu-lesson-action-body {
     display: grid;
     gap: 6px;
@@ -488,6 +494,13 @@
     gap: 8px;
     color: var(--text-muted);
     font-size: var(--text-meta);
+}
+
+/* 「학습 시작」·「이어하기」 is what the button does, so it reads as text, not as a caption. */
+.commu-lesson-meta > span:first-child {
+    color: var(--text-primary);
+    font-size: var(--text-sm);
+    font-weight: 700;
 }
 
 .commu-progress-track,
@@ -1214,7 +1227,7 @@
 }
 
 .commu-feedback.is-wrong .commu-feedback-marker {
-    color: var(--accent-red);
+    color: var(--text-danger);
 }
 
 /* 답한 뒤 피드백 아래에 붙는 원전 발췌. 토막난 문항을 원래 논증으로 되돌려
@@ -1495,6 +1508,7 @@
    genealogy groups): accent bar on the left, cream heading. The accent bar is
    kept for these titles; hero boxes and row buttons do not carry it. */
 .commu-book-group-title,
+.commu-country-group > h2,
 .commu-people-eras-title,
 .commu-drill-group-title,
 .commu-term-group-head {
@@ -3904,7 +3918,6 @@ a.commu-person-position:focus-visible {
 .commu-world-map-legend i.is-region { background: color-mix(in srgb, var(--link) 25%, transparent); border-color: var(--link); border-style: dotted; }
 .commu-world-map-note { color: var(--text-muted); font-size: var(--text-meta); line-height: var(--leading-normal); margin: 9px 0 0; }
 .commu-country-groups { display: grid; gap: 1.2rem; }
-.commu-country-group > h2 { font-size: var(--text-lg); margin: 0 0 .55rem; }
 /* Country buttons sit against each other with no gap, sharing their borders. */
 .commu-country-grid { display: grid; gap: 0; padding: 1px 0 0 1px; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); }
 .commu-country-card {
@@ -3915,8 +3928,10 @@ a.commu-person-position:focus-visible {
 .commu-country-card:hover,
 .commu-country-card:focus-visible,
 .commu-country-card.is-map-active { position: relative; background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
-.commu-country-card .commu-flag { flex: 0 0 auto; height: 22px; width: auto; }
-.commu-country-card-icon { display: flex; flex: 0 0 32px; justify-content: center; }
+/* One flag column: flags differ in proportion, and the names beside them
+   should start on one line down the list. */
+.commu-country-card .commu-flag { flex: 0 0 36px; height: 22px; width: 36px; object-fit: contain; }
+.commu-country-card-icon { display: flex; flex: 0 0 36px; justify-content: center; }
 .commu-country-card-icon .commu-role-icon { height: 24px; width: 24px; }
 .commu-country-card span { min-width: 0; }
 .commu-country-card strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -3924,8 +3939,8 @@ a.commu-person-position:focus-visible {
 .commu-country-card:hover small,
 .commu-country-card:focus-visible small,
 .commu-country-card.is-map-active small { color: color-mix(in srgb, var(--clr-cream) 75%, var(--accent)); }
-.commu-country-card.is-historical { border-left: 4px dashed var(--clr-red); }
-.commu-country-card.is-region { border-left: 4px dotted var(--link); }
+.commu-country-card.is-historical { border-left: 4px dashed var(--clr-red); padding-left: 9px; }
+.commu-country-card.is-region { border-left: 4px dotted var(--link); padding-left: 9px; }
 .commu-country-sections {
     background: var(--bg-surface); border: 1px solid var(--border); display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 14px;
@@ -4990,6 +5005,14 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent-line); o
     padding: var(--space-3) var(--content-inset);
     border-bottom: 1px solid var(--border);
 }
+.commu-event-toc summary.commu-event-toc-head { cursor: pointer; min-height: var(--control-height); display: flex; align-items: center; gap: var(--space-2); box-sizing: border-box; }
+.commu-event-toc summary.commu-event-toc-head:hover { background: var(--bg-surface-hover); }
+.commu-event-toc details:not([open]) > summary { border-bottom: 0; }
+.commu-event-toc-count { font-weight: 400; }
+.commu-event-toc summary.commu-event-toc-head { list-style: none; }
+.commu-event-toc summary.commu-event-toc-head::-webkit-details-marker { display: none; }
+.commu-event-toc summary.commu-event-toc-head::after { content: '▾'; margin-left: auto; font-size: var(--text-md); line-height: var(--leading-none); }
+.commu-event-toc details[open] > summary.commu-event-toc-head::after { content: '▴'; }
 .commu-event-toc ol { margin: 0; padding: 0; list-style: none; counter-reset: event-toc; }
 .commu-event-toc li { padding: 0; line-height: var(--leading-snug); counter-increment: event-toc; }
 .commu-event-toc li + li { border-top: 1px solid var(--border); }
@@ -5414,7 +5437,7 @@ a.commu-dict-chip:hover { text-decoration: none; }
 .commu-event-grid.is-filtering .commu-term-group-head,
 .commu-event-grid.is-ungrouped .commu-term-group-head { display: none; }
 
-.commu-term-sources { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.commu-term-sources { margin-top: 2rem; padding: 1rem var(--content-inset) 0; border-top: 1px solid var(--border); }
 .commu-term-sources h2 { font-size: var(--text-md); margin: 0 0 .6rem; }
 .commu-term-sources ol { margin: 0; padding-left: 1.3rem; }
 .commu-term-sources li { margin-bottom: .5rem; font-size: var(--text-sm); line-height: var(--leading-normal); }
@@ -5902,6 +5925,14 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
    height its markup asks for while the width shrank, so the scaled drawing sat
    centred in a 1409px box with dead space above and below. */
 .gen-svg { display: block; font-family: inherit; height: auto; }
+/* The zoom button (shown by the page script where the fitted labels are too
+   small): the chart at its drawn size, scrolled sideways, with the pinned
+   header row carried along by --gen-x. `clip` keeps the wide row inside the
+   box without making the box a scroll container, which would unpin it. */
+.gen-zoom { width: 100%; margin: 0 0 .3rem; }
+.gen-figure.is-zoomed { overflow-x: clip; }
+.gen-figure.is-zoomed .gen-svg { width: var(--gen-w); max-width: none; }
+.gen-figure.is-zoomed .gen-cols { width: var(--gen-w); transform: translateX(calc(-1 * var(--gen-x, 0px))); font-size: var(--text-meta); }
 
 /* Column headers: an HTML row above the svg, pinned under the crumb bar while
    a tall chart scrolls (the page script sets `top` to the crumb's height). Its
@@ -7751,3 +7782,16 @@ a.commu-person-affiliation:focus-visible {
 .commu-office-track-option:has(.commu-office-track-number) { display: flex; align-items: center; text-align: left; }
 .commu-office-track-number { flex: 0 0 1.8em; color: var(--text-muted); font-variant-numeric: tabular-nums; }
 .commu-office-track-option.is-active .commu-office-track-number { color: inherit; }
+
+/* Reading measure. The page frame is 60rem, which set at body size runs to
+   about seventy Hangul characters a line; running text in entry bodies stops
+   at a readable width while tables, figures and excerpt boxes keep the frame. */
+.commu-person-markdown > p,
+.commu-person-markdown > ul,
+.commu-person-markdown > ol,
+.commu-person-markdown > blockquote {
+    max-width: 44rem;
+}
+
+/* Jumping to a lesson lands below the pinned crumb bar, not under it. */
+.commu-quiz { scroll-margin-top: calc(var(--crumb-height) + var(--space-2)); }

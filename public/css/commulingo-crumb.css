@@ -141,7 +141,9 @@ body.commulingo-page > .admin-bar {
 
     /* Six jumps plus a path on a 390px screen: narrower cells leave the path
        enough room that it truncates late rather than immediately. */
+    /* Six icons at 38px leave the trail its room on a 360px phone; the bar
+       itself stays 34px high because it follows the reader down the page. */
     .commu-crumb-jump-link {
-        width: 30px;
+        width: 38px;
     }
 }

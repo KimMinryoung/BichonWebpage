@@ -12,10 +12,14 @@
                 <h1><%= strings.commuLingo.title %></h1>
             </div>
             <p class="commulingo-home-description"><%= strings.commuLingo.description %></p>
+            <%# With courses the only learning section, the course list right
+                below is the way in; a one-button row would repeat it. %>
+            <% if (learnTabs(lang === 'en').length > 1) { %>
             <div class="commulingo-hero-dict">
                 <span class="commulingo-hero-dict-label"><%= strings.commuLingo.learn %></span>
                 <%- include('../partials/commulingo-learn-nav', { active: null }) %>
             </div>
+            <% } %>
             <div class="commulingo-hero-dict">
                 <span class="commulingo-hero-dict-label"><%= strings.commuLingo.dictSectionTitle %></span>
                 <%- include('../partials/commulingo-dict-nav', { active: null }) %>

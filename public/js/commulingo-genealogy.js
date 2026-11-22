@@ -223,4 +223,33 @@
     }
     placeHeader();
     window.addEventListener('resize', placeHeader);
+
+    // Fitted to a phone the chart's labels are a few pixels tall. The zoom
+    // button draws it at its own size instead and lets the box scroll
+    // sideways; the pinned header row is moved along with the scroll.
+    var figure = document.querySelector('.gen-figure');
+    var zoom = document.querySelector('.gen-zoom');
+    var scroller = document.querySelector('.gen-scroll');
+    var drawing = scroller && scroller.querySelector('.gen-svg');
+    if (figure && zoom && drawing) {
+        var drawnWidth = Number(drawing.getAttribute('width')) || 0;
+        var offerZoom = function() {
+            if (figure.classList.contains('is-zoomed')) return;
+            zoom.hidden = !(drawnWidth && drawing.getBoundingClientRect().width < drawnWidth * 0.8);
+        };
+        var followScroll = function() { figure.style.setProperty('--gen-x', scroller.scrollLeft + 'px'); };
+        zoom.addEventListener('click', function() {
+            var on = !figure.classList.contains('is-zoomed');
+            figure.style.setProperty('--gen-w', drawnWidth + 'px');
+            figure.classList.toggle('is-zoomed', on);
+            zoom.setAttribute('aria-pressed', on ? 'true' : 'false');
+            zoom.textContent = zoom.getAttribute(on ? 'data-zoom-out' : 'data-zoom-in');
+            if (!on) scroller.scrollLeft = 0;
+            followScroll();
+            offerZoom();
+        });
+        scroller.addEventListener('scroll', followScroll, { passive: true });
+        window.addEventListener('resize', offerZoom);
+        offerZoom();
+    }
 })();

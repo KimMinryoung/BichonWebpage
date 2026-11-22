@@ -77,8 +77,8 @@
 .commu-country-card:hover,
 .commu-country-card:focus-visible,
 .commu-country-card.is-map-active { position: relative; background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
-.commu-country-card .commu-flag { flex: 0 0 auto; height: 22px; width: auto; }
-.commu-country-card-icon { display: flex; flex: 0 0 32px; justify-content: center; }
+.commu-country-card .commu-flag { flex: 0 0 36px; height: 22px; width: 36px; object-fit: contain; }
+.commu-country-card-icon { display: flex; flex: 0 0 36px; justify-content: center; }
 .commu-country-card-icon .commu-role-icon { height: 24px; width: 24px; }
 .commu-country-card span { min-width: 0; }
 .commu-country-card strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
@@ -86,8 +86,8 @@
 .commu-country-card:hover small,
 .commu-country-card:focus-visible small,
 .commu-country-card.is-map-active small { color: color-mix(in srgb, var(--clr-cream) 75%, var(--accent)); }
-.commu-country-card.is-historical { border-left: 4px dashed var(--clr-red); }
-.commu-country-card.is-region { border-left: 4px dotted var(--link); }
+.commu-country-card.is-historical { border-left: 4px dashed var(--clr-red); padding-left: 9px; }
+.commu-country-card.is-region { border-left: 4px dotted var(--link); padding-left: 9px; }
 .commu-country-sections {
     background: var(--bg-surface); border: 1px solid var(--border); display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 14px;

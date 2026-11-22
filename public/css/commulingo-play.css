@@ -324,6 +324,9 @@
 .commu-lesson-action.is-advanced {
     box-shadow: inset 4px 0 0 var(--accent-red);
 }
+.commu-lesson-action.is-sole {
+    box-shadow: none;
+}
 
 .commu-lesson-action-body {
     display: grid;
@@ -356,6 +359,11 @@
     gap: 8px;
     color: var(--text-muted);
     font-size: var(--text-meta);
+}
+.commu-lesson-meta > span:first-child {
+    color: var(--text-primary);
+    font-size: var(--text-sm);
+    font-weight: 700;
 }
 
 .commu-progress-track,
@@ -996,7 +1004,7 @@
 }
 
 .commu-feedback.is-wrong .commu-feedback-marker {
-    color: var(--accent-red);
+    color: var(--text-danger);
 }
 .commu-source {
     margin: 4px 0 0;
@@ -2994,3 +3002,4 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
         animation: none;
     }
 }
+.commu-quiz { scroll-margin-top: calc(var(--crumb-height) + var(--space-2)); }

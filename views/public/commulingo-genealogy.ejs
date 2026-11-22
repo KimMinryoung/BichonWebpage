@@ -21,6 +21,10 @@
             <%# Column headers stay pinned while a tall chart scrolls. The
                 svg scales to the box width, so the row is laid out in the
                 same proportions (commulingo.css .gen-cols). %>
+            <%# Shown by the page script only where the fitted chart is too
+                small to read (a phone): it switches between the whole chart at
+                a glance and the chart at its drawn size, scrolled sideways. %>
+            <button type="button" class="btn gen-zoom" aria-pressed="false" hidden data-zoom-in="<%= strings.commuLingoViews.genealogy.zoomIn %>" data-zoom-out="<%= strings.commuLingoViews.genealogy.zoomOut %>"><%= strings.commuLingoViews.genealogy.zoomIn %></button>
             <div class="gen-cols" aria-hidden="true" data-columns="<%= columns.labels.length %>">
                 <span></span><% columns.labels.forEach(function(label) { %><span><%= label %></span><% }) %><span></span>
             </div>

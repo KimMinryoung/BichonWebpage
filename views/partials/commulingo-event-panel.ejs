@@ -60,7 +60,10 @@ var sections = p.event.bodySections || [];
         <% } %>
         <% if (sections.length >= 3) { %>
         <nav class="commu-event-toc" aria-label="<%= strings.commuLingoViews.eventPanel.contents %>">
-            <h2 class="commu-event-toc-head"><%= strings.commuLingoViews.eventPanel.contents %></h2>
+            <%# Folded on a phone, where twelve rows stood between the summary
+                and the text; common.js opens it on a wide screen. %>
+            <details data-open-wide>
+            <summary class="commu-event-toc-head"><%= strings.commuLingoViews.eventPanel.contents %> <span class="commu-event-toc-count"><%= sections.length + 3 %></span></summary>
             <ol role="list">
                 <% sections.forEach(function(section) { %>
                 <li><a href="#<%= section.id %>"><span class="commu-event-toc-label"><%- section.flagsHtml || '' %><%= section.label %></span></a></li>
@@ -69,6 +72,7 @@ var sections = p.event.bodySections || [];
                 <li><a href="#event-timeline"><span class="commu-event-toc-label"><%= p.event.mapSvg ? (strings.commuLingoViews.eventPanel.timelineMap) : (strings.commuLingoViews.eventPanel.timeline) %></span></a></li>
                 <li><a href="#event-people"><span class="commu-event-toc-label"><%= strings.commuLingoViews.eventPanel.relatedPeople %></span></a></li>
             </ol>
+            </details>
         </nav>
         <% } %>
         <% if (p.event.bodyHtml) { %>

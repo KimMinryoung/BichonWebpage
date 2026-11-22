@@ -51,6 +51,7 @@
         next: document.getElementById('commuNextBtn'),
         nextLesson: document.getElementById('commuNextLessonBtn'),
         guide: document.getElementById('faction-guide'),
+        bookIntro: document.querySelector('.commulingo-book-description'),
         chapterDictionaries: document.querySelectorAll('.commu-chapter-dictionary')
     };
 
@@ -626,6 +627,9 @@
 
     function setBookContextHidden(hidden) {
         if (els.guide) els.guide.classList.toggle('is-hidden', hidden);
+        // The course introduction is for choosing a chapter; during a lesson
+        // it only pushes the question down the phone screen.
+        if (els.bookIntro) els.bookIntro.classList.toggle('is-hidden', hidden);
     }
 
     function scrollToQuiz() {
@@ -737,7 +741,7 @@
         var percent = item && item.totalQuestions ? Math.round((item.score / item.totalQuestions) * 100) : 0;
         var button = document.createElement('button');
         button.type = 'button';
-        button.className = 'commu-lesson-action ' + lessonLevelClass(lesson) + (item && item.completed ? ' is-completed' : '');
+        button.className = 'commu-lesson-action ' + lessonLevelClass(lesson) + (lesson.soleLevel ? ' is-sole' : '') + (item && item.completed ? ' is-completed' : '');
         button.disabled = Boolean(lesson.locked || !lessonQuestionCount(lesson));
         button.innerHTML = [
             '<span class="commu-lesson-action-body">',
@@ -1034,6 +1038,9 @@
                 }
                 else if (active.intro) renderIntro();
                 else renderQuestion();
+                // The first scroll ran while the lesson was still loading and
+                // the page was too short to move; go to the lesson again now.
+                scrollToQuiz();
             })
             .catch(function() {
                 active = null;
