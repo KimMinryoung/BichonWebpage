@@ -34,9 +34,9 @@ async function officeIdSet(client) {
 
 // Card labels are short and never a place: the same rule the audit script
 // checks after hand-run SQL (data/commulingo/person-card-validation.js).
-function assertCardLabels({ fateKo, fateEn, citizenship, origin }) {
+function assertCardLabels({ fateKind, fateKo, fateEn, citizenship, origin }) {
     const problems = [
-        ...fateLabelProblems({ ko: fateKo, en: fateEn }),
+        ...fateLabelProblems({ kind: fateKind, ko: fateKo, en: fateEn }),
         ...nationalityLabelProblems({
             citizenshipCode: citizenship && citizenship.code,
             citizenshipKo: citizenship && citizenship.ko,
@@ -333,7 +333,7 @@ async function createPersonAdmin(rawPayload, options = {}) {
         const years = parseLifeYears(payload.years || '');
         const fateKo = payload.fate ? normalizeFateLabel(contentLocalized(payload.fate.label, 'ko'), years.deathYear) : '';
         const fateEn = payload.fate ? normalizeFateLabel(localized(payload.fate.label, 'en'), years.deathYear) : '';
-        assertCardLabels({ fateKo, fateEn, citizenship, origin });
+        assertCardLabels({ fateKind: payload.fate ? payload.fate.kind || '' : '', fateKo, fateEn, citizenship, origin });
         await client.query(
             `INSERT INTO commulingo_people
                 (id, group_id, sort_order, initial, cyrillic, years_label, birth_year, death_year,
@@ -589,7 +589,7 @@ async function updatePersonAdmin(personId, rawPayload, options = {}) {
         }
         // Only the fields this patch touches are checked (existing rows may
         // carry tolerated legacy labels).
-        assertCardLabels({ fateKo, fateEn, citizenship: citizenshipLabels, origin: originLabels });
+        assertCardLabels({ fateKind: payload.fate === undefined ? undefined : (payload.fate ? payload.fate.kind || '' : ''), fateKo, fateEn, citizenship: citizenshipLabels, origin: originLabels });
         if (sets.length) {
             set('updated_at', new Date());
             values.push(id);

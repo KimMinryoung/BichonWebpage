@@ -1257,22 +1257,11 @@ a.commu-person-position:focus-visible {
 .commu-fate.is-assassinated,
 .commu-fate.is-murdered,
 .commu-fate.is-suicide,
+.commu-fate.is-custody,
 .commu-fate.is-killed {
     border-color: color-mix(in srgb, #d05252 60%, transparent);
     color: #d05252;
     background: color-mix(in srgb, #d05252 10%, transparent);
-}
-
-.commu-fate.is-deposed {
-    border-color: color-mix(in srgb, #d09040 60%, transparent);
-    color: #c07f2d;
-    background: color-mix(in srgb, #d09040 10%, transparent);
-}
-
-.commu-fate.is-exile {
-    border-color: color-mix(in srgb, #9d7bd8 60%, transparent);
-    color: #9d7bd8;
-    background: color-mix(in srgb, #9d7bd8 10%, transparent);
 }
 
 .commu-fate.is-natural {

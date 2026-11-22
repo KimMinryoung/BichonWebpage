@@ -121,6 +121,11 @@ function composePersonName(name, patronymic) {
 // (실각 1964) differ from the death year and are preserved; only the death-year
 // token is stripped, then dangling separators / legacy "d." tails are tidied.
 // See data/commulingo/people.js for the standard this enforces.
+// An empty fate label shows the kind's default (자연사, 처형, 사인 미상…).
+function fateLabelFor(fate, lang) {
+    return localize(fate.label, lang) || require('./person-card-validation').fateDefaultLabel(fate.kind, lang);
+}
+
 function normalizeFateLabel(label, deathYear) {
     const text = typeof label === 'string' ? label.trim() : '';
     if (!text || !deathYear) return text;
@@ -285,10 +290,10 @@ function normalizePerson(raw, data, lang, sceneIndex, officeTitles, officeRows) 
         bio: localize(raw.bio, lang),
         fate: !years.isLiving && raw.fate ? {
             kind: raw.fate.kind || '',
-            label: localize(raw.fate.label, lang),
+            label: fateLabelFor(raw.fate, lang),
         } : { kind: '', label: '' },
         fateKind: !years.isLiving && raw.fate ? raw.fate.kind || '' : '',
-        fateLabel: !years.isLiving && raw.fate ? localize(raw.fate.label, lang) : '',
+        fateLabel: !years.isLiving && raw.fate ? fateLabelFor(raw.fate, lang) : '',
         citizenship: normalizeFlag(raw.citizenship, lang),
         origin: normalizeFlag(raw.origin, lang),
         linkExpressions: raw.linkExpressions || [],

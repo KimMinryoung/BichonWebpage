@@ -40,6 +40,9 @@ function personLifeProblems(years, fate) {
     if (parseLifeYears(years).isLiving && (fate && fate.kind || ko || en)) {
         problems.push('living people must have an empty fate kind and labels (use fate: null to clear them)');
     }
+    if (years !== '' && !parseLifeYears(years).isLiving && !(fate && fate.kind)) {
+        problems.push('a dead person needs fate.kind — unknown when the cause of death is not known');
+    }
     if (STATUS_WORD.test(`${ko} ${en}`) || /^(?:still\s+)?alive\b/i.test(en.trim())) problems.push('fate is not a living/current activity status field');
     return problems;
 }

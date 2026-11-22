@@ -271,44 +271,37 @@ Paul Levi remains searchable by the stored aliases `레비` / `Levi`, but those
 bare surnames are excluded from auto-links and reverse related-report matching;
 only `파울 레비` / `Paul Levi` can establish a report mention.
 
-## Fate label standard — added 2026-07-14
+## Fate standard — revised 2026-11-22 (first added 2026-07-14)
 
-The fate chip (`.commu-fate`) has two parts: **`kind`** drives colour/icon
-(executed·assassinated·murdered·killed·suicide = red ✕, deposed = orange ↓,
-exile = purple →, natural = grey ○) and **`label`** is the localized text. The
-`kind` is a category; the `label` is normalized as follows.
+Fate is **how the person died, nothing else** (비숑 결정 2026-11-22). Falls
+from power, retirement, exile and expulsion are not fates: they live only in
+the career timeline. The kinds and their default labels are the shared
+contract `data/commulingo/person-editorial-contract.json` → `fateKinds`
+(leninbot reads its synced copy through `commulingo/fate.py`):
 
-**Rule: the label is the cause of death ONLY, with no death year** — the year
-already renders from `years` / `deathYear`, so repeating it is noise.
+| kind | default label | icon / colour | use for |
+| --- | --- | --- | --- |
+| natural | 자연사 / Natural causes | ○ grey | illness, old age (a disease name may be the label) |
+| executed | 처형 / Executed | ✕ red | sentence, purge verdict, summary order |
+| assassinated | 암살 / Assassinated | ✕ red | targeted political killing |
+| murdered | 살해 / Murdered | ✕ red | other extrajudicial killing |
+| killed | 전사 / Killed in action | ✕ red | war, battle, armed clash |
+| accident | 사고사 / Accident | △ | crash, traffic, explosion, radiation exposure |
+| custody | 옥사 / Died in custody | ✕ red | prison, camp, exile settlement, not execution |
+| suicide | 자살 / Suicide | ✕ red | |
+| disappeared | 실종 / Disappeared | ? | death never confirmed |
+| unknown | 사인 미상 / Cause unknown | ? | dead, cause not stated or disputed |
 
-| Situation | Standard |
-| --- | --- |
-| Execution | Unified to `처형` / `Executed` (no shot/hanged split) |
-| Natural death, vague (`사망`, `노환 사망`, `재임 중 사망`, `급사`) | `자연사` / `Natural causes` |
-| Natural death, specific illness | Keep the illness word, drop a redundant `사망` suffix: `심장마비`/`Heart attack`, `폐암`/`Lung cancer`, `결핵`/`Tuberculosis`, `병사`/`Illness` |
-| Prison / camp / custody death | `옥사` / `Died in prison` (explicit murder → `옥중 살해` / `Killed in prison`) |
-| Murder / assassination | `살해` / `Murdered`, `암살` / `Assassinated` |
-| War / accident | `전사` / `Killed in action`, `추락사` / `Killed in crash`, `교통사고` / `Car crash` |
-| Suicide | `자살` / `Suicide` |
-| Place of death (symbolic) | Append with ` · `: `암살 · 멕시코` / `Assassinated · Mexico` |
-| Political fate (deposed / exile) | Keep the EVENT year (differs from the death year): `실각 1964`, `퇴임 1985`, `체포 1991`. Canonical EN: 실각=Removed, 해임=Dismissed, 퇴임=Left office, 전보=Transferred, 은퇴=Retired, 체포=Arrested, 추방=Deported, 유형=Internal exile, 당 해체=Party dissolved |
-| Political + cause | `실각 1964 · 자연사` / `Removed 1964 · natural causes` |
-| Still living | Empty fate kind/labels; use an open life-year range such as `1987–` |
-
-Char limits: **22 KO / 50 EN** (fits compound political+cause labels; rejects
-mini-sentences — put burial, prison names, etc. in bio or sections).
-
-**Where it is enforced (keep all three in sync):**
-
-- `data/commulingo/people-standard.js` → `normalizeFateLabel(label, deathYear)`
-  strips the death year (handles `년`, parens, full dates, legacy `d.`) while
-  preserving political-event years. The frontend admin store
-  (`people-admin-store.js`) runs create/update fate labels through it.
-- leninbot `commulingo/people.py` → `_normalize_fate_label` is the
-  compatibility helper; active writes use JS normalization and the shared
-  22/50 write limits. Tool descriptions carry the vocabulary guide.
-- `scripts/one-off/normalize-commulingo-fate-db.js` was the one-off that normalized all
-  535 existing DB rows to this standard (dry-run by default; `--apply` writes).
+- An empty label shows the kind's default (`people-standard.js` `fateLabelFor`).
+  A label only narrows the cause: `총살`, `교수형`, `폐암`, `수용소에서 사망`.
+- The store rejects (`person-card-validation.js` `fateLabelProblems`): a kind
+  outside the contract; digits or `, ; · ( ) /` in a label (no years, places,
+  lists, rehabilitation or dispute notes — those go in bio); labels over
+  24 KO / 50 EN. `person-life-years.js` rejects a dead person without a kind
+  and a living person with any fate.
+- Migration 2026-11-22 (work dir `scripts/content/fate-rules-20261122/`, data
+  only): 4,451 dead people reclassified; the old deposed/exile/other kinds and
+  「사망」-only labels became the cause kind or `unknown`.
 
 ## Serving from a local snapshot — added 2026-07-14
 

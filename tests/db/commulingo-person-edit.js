@@ -70,8 +70,11 @@ async function run() {
         assert.equal(person.bio.en, 'Original biography');
         assert.deepEqual(person.moment, { ko: '새 일화', en: '' });
         assert.deepEqual(person.epithet, { ko: '', en: '' });
-        await update({ fate: null });
-        assert.deepEqual((await get()).fate, { kind: '', label: { ko: '', en: '' } });
+        await assert.rejects(update({ fate: null }), /a dead person needs fate\.kind/);
+        await assert.rejects(update({ fate: { kind: 'deposed', label: { ko: '실각', en: 'Deposed' } } }), /not one of/);
+        await assert.rejects(update({ fate: { kind: 'natural', label: { ko: '1957년 실각', en: 'Deposed 1957' } } }), /names the cause only/);
+        await update({ fate: { kind: 'unknown', label: { ko: '', en: '' } } });
+        assert.deepEqual((await get()).fate, { kind: 'unknown', label: { ko: '', en: '' } });
         // The disambiguator has its own columns; names stay the bare composition.
         await update({ nameQualifier: { ko: '시인', en: 'poet' } });
         person = await get();

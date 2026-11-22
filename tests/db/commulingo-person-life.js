@@ -22,6 +22,10 @@ async function main() {
         ) ON COMMIT DROP`);
         const migration = fs.readFileSync(path.join(__dirname, '../../scripts/migrations/167_commulingo_person_life_years.sql'), 'utf8');
         await client.query(migration.replace(/^BEGIN;$/m, '').replace(/^COMMIT;$/m, ''));
+        // 167 predates the 2026-11-22 rule that a dead person has a fate kind; it
+        // still writes kind '' for vladimir-treml, which the store now stores as unknown.
+        await client.query(`UPDATE commulingo_people SET fate_kind = 'unknown', fate_label_ko = '', fate_label_en = ''
+            WHERE death_year IS NOT NULL AND fate_kind = ''`);
         const { rows } = await client.query('SELECT * FROM commulingo_people');
         for (const row of rows) {
             assert.deepEqual(personLifeProblems(row.years_label, { kind: row.fate_kind, label: { ko: row.fate_label_ko, en: row.fate_label_en } }), [], row.id);

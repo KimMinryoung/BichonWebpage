@@ -12,11 +12,32 @@ const FATE_KO_SOFT = 16;
 const BIRTHPLACE_KO = /출생\s*(\(|$)/;
 const BIRTHPLACE_EN = /^born\b/i;
 
-// fate: { ko, en } labels (already year-stripped). Returns problem strings.
+// Fate is how the person died, nothing else (2026-11-22 owner decision):
+// falls from power, exile and expulsion belong in the career timeline. The
+// kinds and their default labels are the shared contract (leninbot reads it
+// too); an empty label shows the kind's default. A label only narrows the
+// cause — 총살, 교수형, 폐암, 수용소에서 사망 — with no year, list or note.
+const { fateKinds: FATE_KINDS } = require('./person-editorial-contract.json');
+const FATE_NOTE = /[0-9,;·()/]/;
+
+function fateDefaultLabel(kind, lang) {
+    const entry = FATE_KINDS[kind];
+    return entry ? entry[lang === 'en' ? 'en' : 'ko'] : '';
+}
+
+// fate: { kind?, ko, en } (labels already year-stripped). kind is checked
+// when given (undefined skips it; '' is a living person's empty fate).
 function fateLabelProblems(fate) {
     const problems = [];
     const ko = (fate && fate.ko) || '';
     const en = (fate && fate.en) || '';
+    const kind = fate && fate.kind;
+    if (kind !== undefined && kind !== null && kind !== '' && !FATE_KINDS[kind]) {
+        problems.push(`fate.kind «${kind}» is not one of ${Object.keys(FATE_KINDS).join(', ')} — fate is the manner of death; a fall from power or exile goes in the career timeline`);
+    }
+    if (FATE_NOTE.test(ko) || FATE_NOTE.test(en)) {
+        problems.push(`fate.label «${ko}» / «${en}» names the cause only — no years, lists or bracketed notes (disputes and rehabilitation go in the bio)`);
+    }
     if (ko.length > FATE_KO_MAX) {
         problems.push(`fate.label.ko is a sentence (${ko.length} chars): «${ko}» — use a short card label (옥사, 전사, 수용소에서 사망…); the year already lives in years`);
     }
@@ -93,4 +114,4 @@ function isLongFateLabel(ko) {
     return typeof ko === 'string' && ko.length > FATE_KO_SOFT;
 }
 
-module.exports = { fateLabelProblems, nationalityLabelProblems, isLongFateLabel, FATE_KO_MAX, FATE_EN_MAX, FATE_KO_SOFT };
+module.exports = { fateLabelProblems, fateDefaultLabel, FATE_KINDS, nationalityLabelProblems, isLongFateLabel, FATE_KO_MAX, FATE_EN_MAX, FATE_KO_SOFT };

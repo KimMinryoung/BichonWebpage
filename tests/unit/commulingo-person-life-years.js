@@ -33,6 +33,8 @@ assert.deepEqual(adminFields.parseLifeYears('?–1938'), { birthYear: null, deat
 assert.deepEqual(adminFields.parseLifeYears('1889–1958?'), { birthYear: 1889, deathYear: null });
 assert.deepEqual(personLifeProblems('1894–1920', { kind: 'executed', label: { en: 'Burned alive in a locomotive firebox' } }), []);
 assert(personLifeProblems('', { kind: 'natural', label: { en: 'Active scholar' } }).length);
+assert.match(personLifeProblems('1900–1980', { kind: '', label: { ko: '사망' } })[0], /a dead person needs fate\.kind/);
+assert.match(personLifeProblems('1900–1980', null)[0], /a dead person needs fate\.kind/);
 
 // Legacy snapshots must be safe even before the background refresh arrives.
 const cardPath = require.resolve('../../views/partials/commulingo-person-card.ejs');
@@ -54,7 +56,7 @@ for (const lang of ['ko', 'en']) {
 async function main() {
     await assert.rejects(createPersonAdmin({ years: '현재' }), { status: 400 });
     // Registration requires documented activities; a legacy role alone is refused before any write.
-    await assert.rejects(createPersonAdmin({ years: '1900–1950', role: { icon: 'book-open' } }), /activities are required on create/);
+    await assert.rejects(createPersonAdmin({ years: '1900–1950', fate: { kind: 'unknown', label: {} }, role: { icon: 'book-open' } }), /activities are required on create/);
     await assert.rejects(createPersonAdmin({ years: '1987–', fate }), { status: 400 });
     const stored = { id: 'test-person', years_label: '1987–', fate_kind: '', fate_label_ko: '', fate_label_en: '' };
     const client = { query: async sql => {

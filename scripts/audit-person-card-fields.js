@@ -38,7 +38,7 @@ const { fateLabelProblems, nationalityLabelProblems, isLongFateLabel, FATE_KO_SO
             const years = parseLifeYears(row.years_label);
             if (years.birthYear !== row.birth_year || years.deathYear !== row.death_year) problems.push(`${row.id}: birth_year/death_year disagree with years_label`);
             if ((row.activities || []).filter(a => a.primary).length !== 1) problems.push(`${row.id}: needs exactly one primary activity`);
-            for (const p of fateLabelProblems({ ko: row.fate_label_ko, en: row.fate_label_en })) problems.push(`${row.id}: ${p}`);
+            for (const p of fateLabelProblems({ kind: row.fate_kind, ko: row.fate_label_ko, en: row.fate_label_en })) problems.push(`${row.id}: ${p}`);
             for (const p of nationalityLabelProblems({
                 citizenshipCode: row.citizenship_code, citizenshipKo: row.citizenship_label_ko, citizenshipEn: row.citizenship_label_en,
                 originCode: row.origin_code, originKo: row.origin_label_ko, originEn: row.origin_label_en,
