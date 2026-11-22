@@ -48,5 +48,8 @@ assert.match(row(1934, null, 'US스틸 이사, 1938년 이사회 의장', 'Direc
 assert.match(row(1937, null, '작전과장 → 사령관', 'Ops chief → commander')[0], /→/);
 assert.match(row(1934, 1938, '내무인민위원을 지냈다.', "People's Commissar")[0], /sentence/);
 assert.deepStrictEqual(row(1950, null, '이사', 'Director, Ford Motor Co.'), []);
+assert.deepStrictEqual(row(1949, null, '『1984』 출간', 'Published “1984”'), []);
+assert.match(row(1935, null, '1936년 헌법 기초', 'Drafted the 1936 Constitution')[0], /yearInName/);
+assert.deepStrictEqual(careerRoleProblems({ period: { start: [1935] }, r: { ko: '1936년 헌법 기초', en: 'Drafted the 1936 Constitution' }, yearInName: 'the 1936 Constitution is a name' }), []);
 
 console.log('smoke-commulingo-person-card-validation: ok');

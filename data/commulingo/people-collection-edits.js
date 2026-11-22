@@ -90,8 +90,8 @@ function planCollectionEdits(before, payload) {
             career.splice(index, 1);
             continue;
         }
-        object(edit.entry, ['period', 'r'], 'careerEdits.entry');
-        if (!Object.keys(edit.entry).length) throw badRequest('career entry patch must contain period or r');
+        object(edit.entry, ['period', 'r', 'yearInName'], 'careerEdits.entry');
+        if (edit.entry.period === undefined && edit.entry.r === undefined) throw badRequest('career entry patch must contain period or r');
         const stored = index < 0 ? { period: undefined, r: {} } : career[index];
         // A period is replaced whole, never merged: it is one value.
         const period = edit.entry.period === undefined ? stored.period : edit.entry.period;
@@ -99,7 +99,7 @@ function planCollectionEdits(before, payload) {
         const r = mergeLocalizedPatch(stored.r, edit.entry.r, 'career entry.r');
         if (!r.ko.trim() || !r.en.trim()) throw badRequest('career entry requires non-empty ko/en roles');
         const entry = { ...stored, period, r };
-        const roleProblems = careerRoleProblems(entry);
+        const roleProblems = careerRoleProblems({ ...entry, yearInName: edit.entry.yearInName });
         if (roleProblems.length) throw badRequest(roleProblems.join(' | '));
         if (index < 0) career.push(entry);
         else career[index] = entry;

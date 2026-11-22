@@ -118,6 +118,8 @@ function nationalityLabelProblems(labels) {
 //   an 「A → B」 chain; posts held together in the same period may share a row
 //   with a comma;
 //   a row is a noun phrase, not a sentence (「…를 지냈다.」).
+// A year inside a quoted title is not counted; a year that is part of an
+// unquoted name passes with entry.yearInName: "<reason>" (checked, not stored).
 const ROLE_YEAR = /(?<![\d.])(1[5-9]\d\d|20[0-2]\d)(?!\d)/g;
 const EN_ABBREV_END = /\b(?:Co|Inc|Ltd|Corp|St|Jr|Sr|No|Nos|vs|etc|Bros|Dept|Gen|Col|Lt|Adm|Capt)\.$/;
 
@@ -129,9 +131,12 @@ function careerRoleProblems(entry) {
     const period = (entry && entry.period) || {};
     const own = new Set([period.start, period.end].filter(Array.isArray).map(part => Number(part[0])));
     const label = `career row «${ko}» / «${en}»`;
-    const others = [...new Set([...`${ko} ${en}`.matchAll(ROLE_YEAR)].map(m => Number(m[1])).filter(y => !own.has(y)))];
-    if (others.length) {
-        problems.push(`${label} names ${others.join(', ')} besides its own period — one row is one post or event; give that step its own row and period`);
+    // A year inside 『』「」《》〈〉 or "…" is part of a title (『1984』, 「1905년 혁명」).
+    const unquoted = `${ko} ${en}`.replace(/『[^』]*』|「[^」]*」|《[^》]*》|〈[^〉]*〉|“[^”]*”|"[^"]*"/g, ' ');
+    const others = [...new Set([...unquoted.matchAll(ROLE_YEAR)].map(m => Number(m[1])).filter(y => !own.has(y)))];
+    const yearInName = String((entry && entry.yearInName) || '').trim();
+    if (others.length && !yearInName) {
+        problems.push(`${label} names ${others.join(', ')} besides its own period — one row is one post or event; give that step its own row and period. If the year is part of a name (the 1936 Constitution, 1928년 곡물 위기), send yearInName: "<why>" on the entry`);
     }
     if (/→|->/.test(`${ko} ${en}`)) {
         problems.push(`${label} chains steps with → — give each post its own row and period`);
