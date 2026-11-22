@@ -23,6 +23,8 @@ const crops = JSON.parse(fs.readFileSync(path.join(job, 'crops.json'), 'utf8'));
 const outDir = path.join(__dirname, '..', 'public', 'images', scenarioId, 'portraits');
 
 const M = 160;
+// The middle tone of a side whose own colour is as dark as the ink (the anarchists' black): a grey the face can be read in.
+const PHOTO_GROUND = { black: '#56554f' };
 const rgb = hex => [1, 3, 5].map(i => parseInt(hex.slice(i, i + 2), 16));
 const INK = rgb('#1d1d1b'), PAPER = rgb('#f1e6cf');
 const mix = (a, b, t) => a.map((v, i) => Math.round(v + (b[i] - v) * t));
@@ -39,7 +41,7 @@ async function head(id) {
     const size = Math.min(Math.round(width * s), width - left, height - top);
     const g = await sharp(file).extract({ left, top, width: size, height: size }).resize(M, M).greyscale()
         .normalise({ lower: 2, upper: 98 }).clahe({ width: 40, height: 40, maxSlope: 3 }).median(3).raw().toBuffer();
-    const ground = rgb(Art.GROUND[D.portraits[id].side]);
+    const ground = rgb(PHOTO_GROUND[D.portraits[id].side] || Art.GROUND[D.portraits[id].side]);
     const out = Buffer.alloc(M * M * 3);
     for (let i = 0; i < M * M; i++) {
         const v = 0.5 + (g[i] / 255 - 0.5) * oval(i % M, Math.floor(i / M));

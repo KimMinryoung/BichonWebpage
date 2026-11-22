@@ -1573,6 +1573,18 @@ for (const [id, def] of Object.entries(D.battles)) assert.ok(def.voices && def.v
 // Every dilemma and incident is argued out by at least two speakers.
 for (const t of D.turns) for (const x of [t.choice].concat(t.incident || [])) assert.ok(x.talk && x.talk.length >= 2, `${t.id}: ${x.title} debate`);
 for (const id of Object.keys(A.people)) assert.match(A.portrait(id, id), /role="img"/);
+// A portrait with a photograph has its picture on disk and is shown by that file; the others stay drawn.
+{
+    const fs = require('node:fs'), path = require('node:path');
+    const photos = Object.entries(D.portraits).filter(([, p]) => p.photo);
+    assert.ok(photos.length >= 40);
+    for (const [id, p] of photos) {
+        const file = `portraits/${id}-v${p.photo.v || 1}.webp`;
+        assert.ok(fs.existsSync(path.join(__dirname, '..', '..', 'public', 'images', 'civil-war', file)), file);
+        assert.ok(A.portrait(id, id).includes(`<image href="/images/civil-war/${file}"`));
+    }
+    for (const id of ['red-soldier', 'nykyfor-hryhoriv']) assert.ok(!A.portrait(id).includes('<image'), `${id} stays drawn`);
+}
 
 // A war lost in a battle (Mtsensk left to the Kornilov regiment, Tula falls)
 // fights that battle again from its first turn; a battle lost mid-war or a
