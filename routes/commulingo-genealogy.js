@@ -4,6 +4,7 @@ const errorPage = require('../utils/error-page');
 const { listGenealogyCharts, getGenealogyChart, GENEALOGY_GROUPS } = require('../data/commulingo/genealogy-store');
 const { renderGenealogySvg } = require('../data/commulingo/genealogy-svg');
 const { localize } = require('../data/commulingo/localize');
+const { fillMissingNotes } = require('../data/commulingo/genealogy-notes');
 
 const router = express.Router();
 
@@ -41,7 +42,7 @@ router.get('/', (req, res) => {
     }
 });
 
-router.get('/:chartId', (req, res) => {
+router.get('/:chartId', async (req, res) => {
     try {
         const lang = res.locals.lang;
         const chart = getGenealogyChart(String(req.params.chartId || '').trim());
@@ -50,6 +51,8 @@ router.get('/:chartId', (req, res) => {
             backHref: '/commulingo/genealogy', backLabel: lang === 'en' ? 'Genealogy Charts' : '계보도',
         });
         const rendered = renderGenealogySvg(chart, lang);
+        // A node without a note of its own borrows its entry's short description.
+        await fillMissingNotes(rendered.nodes, chart.nodes, lang);
         setShortPublicCache(res);
         res.render('public/commulingo-genealogy', {
             chart: {

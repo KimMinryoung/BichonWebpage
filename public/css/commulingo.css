@@ -6009,7 +6009,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     font-size: var(--text-2xs);
     paint-order: stroke;
     stroke: var(--bg-surface);
-    stroke-width: 3px;
+    stroke-width: 4px;
     stroke-linejoin: round;
 }
 

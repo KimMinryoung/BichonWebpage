@@ -73,29 +73,48 @@ function renderGenealogySvg(chart, lang) {
     const pxPerYear = Number.isFinite(chart.pxPerYear)
         ? Math.min(30, Math.max(6, chart.pxPerYear))
         : PX_PER_YEAR;
-    const yearY = year => MARGIN_TOP + (year - chart.timeStart) * pxPerYear;
-
-    // ── Place nodes, then push same-lane overlaps downward. ──
+    // ── Place nodes on their year's line. Where a lane is too crowded for
+    // that, the time axis itself is stretched from that year on, so a node
+    // never sits beside a year it does not belong to (nudging boxes down a
+    // fixed axis put 1977's constitution beside 1980). The axis is piecewise
+    // linear between the years that carry nodes; gridlines follow it. ──
     const placed = new Map();
     for (const node of chart.nodes) {
         const lane = colIndex.get(node.column);
         if (lane === undefined) continue;
         const lines = wrapLabel(localize(node.label, lang));
         const height = NODE_PAD_Y * 2 + lines.length * LINE_HEIGHT + (node.period ? PERIOD_HEIGHT : 0);
-        placed.set(node.id, {
-            node, lane, lines, height,
-            x: laneX(lane) - NODE_WIDTH / 2,
-            y: yearY(node.year) - 4,
-        });
+        placed.set(node.id, { node, lane, lines, height, x: laneX(lane) - NODE_WIDTH / 2, y: 0 });
     }
-    for (let i = 0; i < columns.length; i++) {
-        const laneNodes = [...placed.values()].filter(p => p.lane === i).sort((a, b) => a.y - b.y);
-        let floor = MARGIN_TOP;
-        for (const p of laneNodes) {
-            if (p.y < floor) p.y = floor;
-            floor = p.y + p.height + NODE_GAP;
+    const NODE_LIFT = 4; // a box starts just above its year line
+    const anchors = [[chart.timeStart, MARGIN_TOP]];
+    const laneFloor = columns.map(() => MARGIN_TOP);
+    const yearOf = p => Math.max(chart.timeStart, Number(p.node.year) || chart.timeStart);
+    const years = [...new Set([...placed.values()].map(yearOf))].sort((a, b) => a - b);
+    for (const year of years) {
+        const [prevYear, prevY] = anchors[anchors.length - 1];
+        const here = [...placed.values()].filter(p => yearOf(p) === year);
+        let lineY = prevY + (year - prevYear) * pxPerYear;
+        for (const p of here) lineY = Math.max(lineY, laneFloor[p.lane] + NODE_LIFT);
+        // Same lane, same year: stacked under each other, in chart order.
+        for (const p of here) {
+            p.y = Math.max(lineY - NODE_LIFT, laneFloor[p.lane]);
+            laneFloor[p.lane] = p.y + p.height + NODE_GAP;
         }
+        if (year === prevYear) anchors[anchors.length - 1][1] = lineY;
+        else anchors.push([year, lineY]);
     }
+    const yearY = year => {
+        let i = 1;
+        while (i < anchors.length && anchors[i][0] < year) i++;
+        if (i >= anchors.length) {
+            const [lastYear, lastY] = anchors[anchors.length - 1];
+            return lastY + (year - lastYear) * pxPerYear;
+        }
+        const [y0, p0] = anchors[i - 1];
+        const [y1, p1] = anchors[i];
+        return y1 === y0 ? p1 : p0 + (p1 - p0) * (year - y0) / (y1 - y0);
+    };
 
     const bottom = Math.max(
         yearY(chart.timeEnd),
@@ -130,7 +149,10 @@ function renderGenealogySvg(chart, lang) {
         }
     });
 
-    // ── Edges under nodes. ──
+    // ── Edges under nodes; their labels after all the lines, so no other
+    // line runs through a label. ──
+    const labelParts = [];
+    const boxes = [...placed.values()];
     for (const edge of chart.edges) {
         const from = placed.get(edge.from);
         const to = placed.get(edge.to);
@@ -164,28 +186,40 @@ function renderGenealogySvg(chart, lang) {
         const ends = `data-from="${esc(edge.from)}" data-to="${esc(edge.to)}"`;
         parts.push(`<path class="gen-edge ${cls}" ${ends} d="${d}"${arrow}/>`);
         const label = localize(edge.label, lang);
-        if (label) {
+        // Between two boxes stacked a few pixels apart there is no room for a
+        // label; it still shows in the node panel.
+        if (label && Math.hypot(x2 - x1, y2 - y1) >= 44) {
             // Sit the label two thirds of the way along the curve by default,
             // where it clears the source node and rarely lands on the target
-            // box; a chart can move it per edge with labelT (0..1).
-            const t = Number.isFinite(edge.labelT) ? Math.min(0.9, Math.max(0.1, edge.labelT)) : 0.68;
-            const u = 1 - t;
-            let lx;
-            let ly;
-            if (bowsOut) {
-                lx = u * u * u * x1 + 3 * u * u * t * bowX + 3 * u * t * t * bowX + t * t * t * x2;
-                ly = u * u * u * y1 + 3 * u * u * t * (y1 + 30) + 3 * u * t * t * (y2 - 30) + t * t * t * y2;
-            } else if (from.lane === to.lane) {
-                lx = x1 + (x2 - x1) * t;
-                ly = y1 + (y2 - y1) * t;
-            } else {
+            // box; a chart can move it per edge with labelT (0..1). Where that
+            // spot lies under a box (the boxes are drawn over the labels),
+            // the label slides to the first clear spot along the line.
+            const pointAt = t => {
+                const u = 1 - t;
+                if (bowsOut) return [
+                    u * u * u * x1 + 3 * u * u * t * bowX + 3 * u * t * t * bowX + t * t * t * x2,
+                    u * u * u * y1 + 3 * u * u * t * (y1 + 30) + 3 * u * t * t * (y2 - 30) + t * t * t * y2,
+                ];
+                if (from.lane === to.lane) return [x1 + (x2 - x1) * t, y1 + (y2 - y1) * t];
                 const bend = Math.min(56, Math.max(24, (y2 - y1) / 2));
-                lx = u * u * u * x1 + 3 * u * u * t * x1 + 3 * u * t * t * x2 + t * t * t * x2;
-                ly = u * u * u * y1 + 3 * u * u * t * (y1 + bend) + 3 * u * t * t * (y2 - bend) + t * t * t * y2;
-            }
-            parts.push(`<text class="gen-edge-label" ${ends} x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle">${esc(label)}</text>`);
+                return [
+                    u * u * u * x1 + 3 * u * u * t * x1 + 3 * u * t * t * x2 + t * t * t * x2,
+                    u * u * u * y1 + 3 * u * u * t * (y1 + bend) + 3 * u * t * t * (y2 - bend) + t * t * t * y2,
+                ];
+            };
+            const halfWidth = label.length * 5 + 4; // 2xs Hangul runs about 10px a character
+            const covered = ([lx, ly]) => boxes.some(b => lx + halfWidth > b.x && lx - halfWidth < b.x + NODE_WIDTH
+                && ly + 3 > b.y && ly - 11 < b.y + b.height);
+            const preferred = Number.isFinite(edge.labelT) ? Math.min(0.9, Math.max(0.1, edge.labelT)) : 0.68;
+            const tries = [preferred, 0.5, 0.82, 0.38, 0.6, 0.28, 0.9, 0.2];
+            const spot = tries.map(pointAt).find(point => !covered(point));
+            if (!spot) continue; // nowhere clear: the panel still names the relation
+            const [lx, ly] = spot;
+            labelParts.push(`<text class="gen-edge-label" ${ends} x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle">${esc(label)}</text>`);
         }
     }
+
+    parts.push(...labelParts);
 
     // ── Nodes on top. ──
     for (const p of placed.values()) {
@@ -196,7 +230,7 @@ function renderGenealogySvg(chart, lang) {
         // The id is the jump target (/commulingo/genealogy/<chart>#<node id>).
         inner.push(`<g class="gen-node${href ? ' gen-node-linked' : ''}" id="${esc(node.id)}" data-node="${esc(node.id)}">`);
         if (note) inner.push(`<title>${esc(note)}</title>`);
-        inner.push(`<rect x="${p.x}" y="${p.y}" width="${NODE_WIDTH}" height="${p.height}" rx="7"/>`);
+        inner.push(`<rect x="${p.x}" y="${p.y}" width="${NODE_WIDTH}" height="${p.height}"/>`);
         lines.forEach((line, i) => {
             const ty = p.y + NODE_PAD_Y + (i + 1) * LINE_HEIGHT - 4;
             inner.push(`<text class="gen-node-label" x="${p.x + NODE_WIDTH / 2}" y="${ty}" text-anchor="middle">${esc(line)}</text>`);

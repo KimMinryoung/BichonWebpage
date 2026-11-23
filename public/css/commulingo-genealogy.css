@@ -81,7 +81,7 @@ a:focus-visible .gen-node-linked rect { stroke: var(--border-emphasis); stroke-w
     font-size: var(--text-2xs);
     paint-order: stroke;
     stroke: var(--bg-surface);
-    stroke-width: 3px;
+    stroke-width: 4px;
     stroke-linejoin: round;
 }
 .gen-node,
