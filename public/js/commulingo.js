@@ -1507,7 +1507,15 @@
         else renderCloze(question);
     }
 
-    function activityHint(value) {
+    // How to work an activity, said once: after a learner has got one kind of
+    // activity right, its hint is no longer shown.
+    var ACTIVITY_KNOWN_KEY = 'commulingo-activity-known-v1';
+    function activityKnown() {
+        try { return JSON.parse(localStorage.getItem(ACTIVITY_KNOWN_KEY) || '{}') || {}; } catch (err) { return {}; }
+    }
+
+    function activityHint(type, value) {
+        if (activityKnown()[type]) return;
         var hint = document.createElement('p');
         hint.className = 'commu-drill-order-hint';
         hint.textContent = value;
@@ -1515,6 +1523,11 @@
     }
 
     function settleActivity(question, correct) {
+        if (correct) {
+            var known = activityKnown();
+            known[question.type] = true;
+            try { localStorage.setItem(ACTIVITY_KNOWN_KEY, JSON.stringify(known)); } catch (err) {}
+        }
         pendingCheck = null;
         settleAnswer(question, correct, null);
         els.next.textContent = nextLabel();
@@ -1537,7 +1550,7 @@
         for (var guard = 0; display.length > 1 && inOrder(display) && guard < 10; guard += 1) display = shuffleChoices(items);
         var graded = false;
         var drag = null;
-        activityHint(lang === 'en' ? 'Drag the items into order, then check.' : '항목을 끌어 순서를 맞춘 뒤 확인을 누르세요.');
+        activityHint('order', lang === 'en' ? 'Drag the items into order, then check.' : '항목을 끌어 순서를 맞춘 뒤 확인을 누르세요.');
         var list = document.createElement('ol');
         list.className = 'commu-drill-order commu-order-drag';
         els.choices.appendChild(list);
@@ -1651,7 +1664,7 @@
         var graded = false;
         var drag = null;
         var dragged = false;
-        activityHint(lang === 'en' ? 'Drag each item into its group, or tap an item and then a group.' : '항목을 묶음으로 끌어다 놓으세요. 항목을 누른 뒤 묶음을 눌러도 됩니다.');
+        activityHint('sort', lang === 'en' ? 'Drag each item into its group, or tap an item and then a group.' : '항목을 묶음으로 끌어다 놓으세요. 항목을 누른 뒤 묶음을 눌러도 됩니다.');
         var pool = document.createElement('div');
         pool.className = 'commu-sort-pool';
         pool.setAttribute('data-sort-group', '-1');
@@ -1819,7 +1832,7 @@
         var bank = shuffleChoices(answers.concat(text(question.distractors) || []).map(function(word) { return { word: word, blank: -1 }; }));
         var target = 0;
         var graded = false;
-        activityHint(lang === 'en' ? 'Fill each blank with a word from the list.' : '아래 낱말을 눌러 빈칸을 채우세요.');
+        activityHint('cloze', lang === 'en' ? 'Fill each blank with a word from the list.' : '아래 낱말을 눌러 빈칸을 채우세요.');
         // A blank line splits the text into passages from different places,
         // each drawn as its own box under its passageLabels caption.
         var passage = document.createElement('div');
