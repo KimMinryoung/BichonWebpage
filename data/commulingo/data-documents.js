@@ -74,6 +74,16 @@ const VALIDATORS = [
     // Dated figures named from prose by {{indicator:<id>}} (indicators.js;
     // required here lazily because indicators.js reads this store).
     [/^indicator\//, (c, key) => require('./indicators').validateIndicatorDocument(c, key)],
+    // Shorts' own short scenes per course (shorts-scenes.js); the lesson ids
+    // must belong to the course of the same name.
+    [/^shorts\//, (c, key) => {
+        const course = getDataDocument('course/' + key.slice('shorts/'.length));
+        if (!course) throw badRequest(`${key}: no course ${key.slice('shorts/'.length)}`);
+        const lessons = new Set();
+        (course.chapters || []).forEach(chapter => (chapter.lessons || []).forEach(lesson => lesson && lessons.add(lesson.id)));
+        const problems = require('./shorts-scenes').shortsScenesProblems(c, key, lessons);
+        if (problems.length) throw badRequest(problems.slice(0, 20).join('\n') + (problems.length > 20 ? `\n… ${problems.length - 20} more` : ''));
+    }],
 ];
 
 function validateDataDocument(key, content) {

@@ -1,15 +1,27 @@
 const assert = require('node:assert/strict');
 const { personCards, todayIndex, sceneCards } = require('../../data/commulingo/shorts');
+const { shortsScenesProblems } = require('../../data/commulingo/shorts-scenes');
 const { needsLessonContext } = require('../../data/commulingo/lesson-context');
 const { isPublicCommuLingoDataPath, isSessionFreeRequest } = require('../../config/route-policy');
 
-// 장면 카드: 두 언어 카드 수가 같아야 하고, 등장 세력 카드(lines 없음)는 빼며, 세력 표식은 지운다.
-const story = {
-    ko: { cards: [{ title: '등장 세력', cast: [] }, { when: '1905년', title: '장면', lines: ['{{flag:russia}}차르가 물러섰다.'] }] },
-    en: { cards: [{ title: 'Cast', cast: [] }, { when: '1905', title: 'Scene', lines: ['{{flag:russia}}The tsar gave way.'] }] },
+// 짧은 장면: 두 언어 카드 수가 같아야 하고, 한 문단(text)이 피드 카드의 한 줄이 된다.
+const short = {
+    ko: [{ when: '1905년', title: '장면', text: '차르가 물러섰다.' }],
+    en: [{ when: '1905', title: 'Scene', text: 'The tsar gave way.' }],
 };
-assert.deepEqual(sceneCards(story), [{ when: { ko: '1905년', en: '1905' }, title: { ko: '장면', en: 'Scene' }, lines: { ko: ['차르가 물러섰다.'], en: ['The tsar gave way.'] } }]);
-assert.deepEqual(sceneCards({ ko: story.ko, en: { cards: [] } }), []);
+assert.deepEqual(sceneCards(short), [{ when: { ko: '1905년', en: '1905' }, title: { ko: '장면', en: 'Scene' }, lines: { ko: ['차르가 물러섰다.'], en: ['The tsar gave way.'] } }]);
+assert.deepEqual(sceneCards({ ko: short.ko, en: [] }), []);
+
+// 데이터 문서 shorts/<강좌>: 2~4장, 한글 110자 이하, 존댓말 금지, 그 강좌의 레슨.
+const card = (text, title = '제목') => ({ when: '1905년', title, text });
+const enCard = { when: '1905', title: 'Title', text: 'Text.' };
+const doc = cards => ({ episodes: { 'l-1': { ko: cards, en: cards.map(() => enCard) } } });
+const lessons = new Set(['l-1']);
+assert.deepEqual(shortsScenesProblems(doc([card('짧다.'), card('물러섰다.')]), 'shorts/x', lessons), []);
+assert.ok(shortsScenesProblems(doc([card('짧다.')]), 'shorts/x', lessons).some(p => p.includes('1 cards')));
+assert.ok(shortsScenesProblems(doc([card('물러섰습니다.'), card('짧다.')]), 'shorts/x', lessons).some(p => p.includes('존댓말')));
+assert.ok(shortsScenesProblems(doc([card('가'.repeat(111)), card('짧다.')]), 'shorts/x', lessons).some(p => p.includes('over 110')));
+assert.ok(shortsScenesProblems(doc([card('짧다.'), card('짧다.')]), 'shorts/x', new Set()).some(p => p.includes('not a lesson')));
 
 // 인물: 결정적 순간이 두 언어로 있고 길이가 한 화면 안(40~260자)인 사람만.
 const person = (id, ko) => ({ id, name: { ko: '이름', en: 'Name' }, years: '1900–1950', moment: { ko, en: 'x' }, citizenship: { code: '' } });
