@@ -12,8 +12,16 @@ const KO_TEXT_MAX = 110;
 const EN_TEXT_MAX = 260;
 const TITLE_MAX = { ko: 30, en: 70 };
 const WHEN_MAX = { ko: 24, en: 40 };
-// 존댓말 금지: 문장 끝의 「~습니다/~입니다/~했어요」.
-const POLITE = /(?:니다|어요|아요|해요|예요|이에요|세요)[.!?」』"”')\]]*(?:\s|$)/;
+// 존댓말 금지: 문장 끝의 「~습니다/~입니다/~했어요」. 「니다」 앞 글자에 받침
+// ㅂ이 있을 때만 존댓말이다(「아니다」는 아니다).
+const POLITE_END = /(?:([가-힣])니다|어요|아요|해요|예요|이에요|세요)[.!?」』"”')\]]*(?=\s|$)/g;
+function polite(text) {
+    for (const match of String(text).matchAll(POLITE_END)) {
+        if (!match[1]) return true;
+        if ((match[1].charCodeAt(0) - 0xAC00) % 28 === 17) return true; // 받침 ㅂ
+    }
+    return false;
+}
 
 function problem(list, where, message) {
     list.push(where + ': ' + message);
@@ -30,7 +38,7 @@ function cardProblems(card, lang, where) {
     if (card.text.length > textMax) problem(out, where, `text is ${card.text.length} characters, over ${textMax}`);
     if (card.title.length > TITLE_MAX[lang]) problem(out, where, `title is ${card.title.length} characters, over ${TITLE_MAX[lang]}`);
     if (card.when.length > WHEN_MAX[lang]) problem(out, where, `when is ${card.when.length} characters, over ${WHEN_MAX[lang]}`);
-    if (lang === 'ko' && (POLITE.test(card.text) || POLITE.test(card.title))) problem(out, where, 'polite ending (존댓말) — write in 했다체');
+    if (lang === 'ko' && (polite(card.text) || polite(card.title))) problem(out, where, 'polite ending (존댓말) — write in 했다체');
     if (/\{\{(?:flag|pos):/.test(card.text + card.title)) problem(out, where, 'story markers are not used in shorts');
     const extra = Object.keys(card).filter(key => !['when', 'title', 'text'].includes(key));
     if (extra.length) problem(out, where, 'unknown field ' + extra.join(', '));

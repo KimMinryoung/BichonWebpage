@@ -20,6 +20,8 @@ const lessons = new Set(['l-1']);
 assert.deepEqual(shortsScenesProblems(doc([card('짧다.'), card('물러섰다.')]), 'shorts/x', lessons), []);
 assert.ok(shortsScenesProblems(doc([card('짧다.')]), 'shorts/x', lessons).some(p => p.includes('1 cards')));
 assert.ok(shortsScenesProblems(doc([card('물러섰습니다.'), card('짧다.')]), 'shorts/x', lessons).some(p => p.includes('존댓말')));
+assert.deepEqual(shortsScenesProblems(doc([card('짧다.', '「우리는 기계가 아니다」'), card('짧다.')]), 'shorts/x', lessons), []);
+assert.ok(shortsScenesProblems(doc([card('물러섰어요.'), card('짧다.')]), 'shorts/x', lessons).some(p => p.includes('존댓말')));
 assert.ok(shortsScenesProblems(doc([card('가'.repeat(111)), card('짧다.')]), 'shorts/x', lessons).some(p => p.includes('over 110')));
 assert.ok(shortsScenesProblems(doc([card('짧다.'), card('짧다.')]), 'shorts/x', new Set()).some(p => p.includes('not a lesson')));
 
