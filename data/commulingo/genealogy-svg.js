@@ -153,6 +153,8 @@ function renderGenealogySvg(chart, lang) {
     // line runs through a label. ──
     const labelParts = [];
     const boxes = [...placed.values()];
+    // Labels already placed, as boxes a later label must also clear.
+    const labelBoxes = [];
     for (const edge of chart.edges) {
         const from = placed.get(edge.from);
         const to = placed.get(edge.to);
@@ -192,8 +194,8 @@ function renderGenealogySvg(chart, lang) {
             // Sit the label two thirds of the way along the curve by default,
             // where it clears the source node and rarely lands on the target
             // box; a chart can move it per edge with labelT (0..1). Where that
-            // spot lies under a box (the boxes are drawn over the labels),
-            // the label slides to the first clear spot along the line.
+            // spot lies under a box (the boxes are drawn over the labels) or
+            // on a label already placed, the label slides to the first clear spot along the line.
             const pointAt = t => {
                 const u = 1 - t;
                 if (bowsOut) return [
@@ -209,12 +211,14 @@ function renderGenealogySvg(chart, lang) {
             };
             const halfWidth = label.length * 5 + 4; // 2xs Hangul runs about 10px a character
             const covered = ([lx, ly]) => boxes.some(b => lx + halfWidth > b.x && lx - halfWidth < b.x + NODE_WIDTH
-                && ly + 3 > b.y && ly - 11 < b.y + b.height);
+                && ly + 3 > b.y && ly - 11 < b.y + b.height)
+                || labelBoxes.some(b => lx + halfWidth > b.x1 && lx - halfWidth < b.x2 && ly + 3 > b.y1 && ly - 11 < b.y2);
             const preferred = Number.isFinite(edge.labelT) ? Math.min(0.9, Math.max(0.1, edge.labelT)) : 0.68;
             const tries = [preferred, 0.5, 0.82, 0.38, 0.6, 0.28, 0.9, 0.2];
             const spot = tries.map(pointAt).find(point => !covered(point));
             if (!spot) continue; // nowhere clear: the panel still names the relation
             const [lx, ly] = spot;
+            labelBoxes.push({ x1: lx - halfWidth, x2: lx + halfWidth, y1: ly - 11, y2: ly + 3 });
             labelParts.push(`<text class="gen-edge-label" ${ends} x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle">${esc(label)}</text>`);
         }
     }

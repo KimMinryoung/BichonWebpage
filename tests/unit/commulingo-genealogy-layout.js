@@ -38,6 +38,25 @@ assert.ok(!/<rect[^>]* rx=/.test(svg), 'node boxes are square');
 // Edge labels come after every line, so no line is drawn across a label.
 assert.ok(svg.lastIndexOf('class="gen-edge ') < svg.indexOf('class="gen-edge-label"') || !svg.includes('gen-edge-label'));
 
+// Two labelled edges leaving one box for neighbouring targets: the labels
+// must not sit on each other (each clears the boxes and the labels before it).
+const fan = renderGenealogySvg({
+    ...chart, id: 'fan-test', pxPerYear: 20, columns: chart.columns.slice(0, 1),
+    nodes: [node('src', 1910), node('t1', 1914), node('t2', 1915)],
+    edges: [
+        { from: 'src', to: 't1', type: 'succession', label: { ko: '외채 상환 부담', en: 'a' } },
+        { from: 'src', to: 't2', type: 'succession', label: { ko: '빚을 갚는 긴축', en: 'b' } },
+    ],
+}, 'ko').svg;
+const labels = [...fan.matchAll(/class="gen-edge-label"[^>]* x="([\d.]+)" y="([\d.]+)"[^>]*>([^<]+)</g)]
+    .map(m => ({ x: Number(m[1]), y: Number(m[2]), half: m[3].length * 5 + 4 }));
+assert.equal(labels.length, 2, 'both labels have room');
+for (let i = 0; i < labels.length; i++) for (let j = i + 1; j < labels.length; j++) {
+    const [a, b] = [labels[i], labels[j]];
+    const apart = Math.abs(a.x - b.x) >= a.half + b.half || Math.abs(a.y - b.y) >= 14;
+    assert.ok(apart, 'edge labels overlap');
+}
+
 assert.equal(clip('짧은 설명.'), '짧은 설명.');
 const long = '첫 문장은 이렇다. '.repeat(30);
 const cut = clip(long);
