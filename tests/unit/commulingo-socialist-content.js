@@ -79,5 +79,5 @@ for (const graphId of graphIds) {
     const nodeIds = new Set(graph.nodes.map(node => node.id));
     for (const edge of graph.edges) assert(nodeIds.has(edge.from) && nodeIds.has(edge.to), 'unknown graph edge endpoint: ' + graphId);
 }
-assert.equal(graphNodeCount, 50, 'socialist economy graphs must contain 50 nodes');
+assert.equal(graphNodeCount, 51, 'socialist economy graphs must contain 51 nodes');
 console.log('socialist state, event-depth and genealogy artifacts passed');
