@@ -419,7 +419,8 @@ function sourceProblems(course, shared = sourceLookups()) {
                 // its blanks filled in it must be the document's own words.
                 const cloze = question.type === 'cloze' && source.kind !== 'reference' && question.text && question.text.ko;
                 if (cloze) {
-                    for (const piece of text.quotePieces(checks().clozePlain(cloze))) {
+                    const passages = checks().clozePassages(checks().clozePlain(cloze));
+                    for (const piece of passages.flatMap(passage => text.quotePieces(passage))) {
                         if (!text.containsQuote(page.text, piece)) problems.push(`${where}: cloze not verbatim in ${site[1]}: ${piece.slice(0, 40)}…`);
                     }
                 }

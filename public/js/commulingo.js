@@ -1820,8 +1820,11 @@
         var target = 0;
         var graded = false;
         activityHint(lang === 'en' ? 'Fill each blank with a word from the list.' : '아래 낱말을 눌러 빈칸을 채우세요.');
-        var passage = document.createElement('blockquote');
-        passage.className = 'commu-passage-text commu-cloze';
+        // A blank line splits the text into passages from different places,
+        // each drawn as its own box under its passageLabels caption.
+        var passage = document.createElement('div');
+        passage.className = 'commu-cloze';
+        var captions = text(question.passageLabels) || [];
         var words = document.createElement('div');
         words.className = 'commu-cloze-bank';
         els.choices.appendChild(passage);
@@ -1839,17 +1842,35 @@
 
         function draw() {
             passage.innerHTML = '';
-            var paragraph = document.createElement('p');
+            var paragraph;
+            function openBox() {
+                var box = document.createElement('blockquote');
+                box.className = 'commu-passage-text';
+                var caption = captions[passage.childNodes.length];
+                if (caption) {
+                    var label = document.createElement('span');
+                    label.className = 'commu-cloze-label';
+                    label.textContent = caption;
+                    box.appendChild(label);
+                }
+                paragraph = document.createElement('p');
+                box.appendChild(paragraph);
+                passage.appendChild(box);
+            }
+            openBox();
             pieces.forEach(function(piece, index) {
                 if (index % 2 === 0) {
-                    piece.split(' … ').forEach(function(part, partIndex) {
-                        if (partIndex) {
-                            var gap = document.createElement('span');
-                            gap.className = 'commu-source-gap';
-                            gap.textContent = ' … ';
-                            paragraph.appendChild(gap);
-                        }
-                        paragraph.appendChild(document.createTextNode(part));
+                    piece.split(/\n{2,}/).forEach(function(block, blockIndex) {
+                        if (blockIndex) openBox();
+                        block.split(' … ').forEach(function(part, partIndex) {
+                            if (partIndex) {
+                                var gap = document.createElement('span');
+                                gap.className = 'commu-source-gap';
+                                gap.textContent = ' … ';
+                                paragraph.appendChild(gap);
+                            }
+                            paragraph.appendChild(document.createTextNode(part));
+                        });
                     });
                     return;
                 }
@@ -1877,7 +1898,6 @@
                 }
                 paragraph.appendChild(button);
             });
-            passage.appendChild(paragraph);
             words.innerHTML = '';
             bank.forEach(function(entry) {
                 var button = activityButton('commu-cloze-word', entry.word);

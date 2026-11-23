@@ -518,6 +518,10 @@ function clozeAnswers(text) {
   return Array.from(str(text).matchAll(CLOZE_BLANK), function(match) { return match[1].trim(); });
 }
 
+function clozePassages(text) {
+  return str(text).split(/\n{2,}/);
+}
+
 function clozePlain(text) {
   return str(text).replace(CLOZE_BLANK, '$1');
 }
@@ -597,6 +601,23 @@ function checkCloze(out, question, qLabel) {
     }
   });
   if (counts.ko !== counts.en) out.add('shape', qLabel, qLabel + '.text ko/en blank counts differ');
+  // Passages from different places are split by a blank line (one box each),
+  // not joined with " … ", which marks a gap inside one passage. Each box may
+  // carry a caption naming where it comes from.
+  const boxes = {};
+  ['ko', 'en'].forEach(function(locale) {
+    const blocks = clozePassages(question.text[locale]);
+    boxes[locale] = blocks.length;
+    if (blocks.length > 3) out.add('shape', qLabel, qLabel + '.text.' + locale + ' has more than 3 passages');
+    if (blocks.some(function(block) { return !block.trim(); })) out.add('shape', qLabel, qLabel + '.text.' + locale + ' has an empty passage');
+  });
+  if (boxes.ko !== boxes.en) out.add('shape', qLabel, qLabel + '.text ko/en passage counts differ');
+  if (typeof question.passageLabels !== 'undefined') {
+    if (boxes.ko < 2) out.add('shape', qLabel, qLabel + '.passageLabels needs a text split into passages by a blank line');
+    else if (localizedList(out, question.passageLabels, qLabel + '.passageLabels', qLabel, 2, 3) && question.passageLabels.ko.length !== boxes.ko) {
+      out.add('shape', qLabel, qLabel + '.passageLabels must have one caption per passage');
+    }
+  }
   if (question.text.ko && HONORIFIC.test(clozePlain(question.text.ko)) && question.source && question.source.kind !== 'reference') {
     out.add('source-shape', qLabel, qLabel + '.text.ko uses an honorific ending');
   }
@@ -810,6 +831,7 @@ module.exports = {
   checkQuestion,
   ACTIVITY_TYPES,
   clozeAnswers,
+  clozePassages,
   clozePlain,
   checkChapter,
   checkChapters,

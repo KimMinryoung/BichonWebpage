@@ -2795,7 +2795,15 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
 }
 
 .commu-cloze {
+    display: grid;
+    gap: 10px;
     margin: 0 0 12px;
+}
+
+.commu-cloze-label {
+    color: var(--text-muted);
+    font-size: var(--text-sm);
+    font-weight: 600;
 }
 
 .commu-cloze p {

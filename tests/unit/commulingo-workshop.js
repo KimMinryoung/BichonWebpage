@@ -36,6 +36,10 @@ assert.match(broken(q => { q[2].items.splice(3); }), /items needs 4-8/);
 assert.match(broken(q => { q[3].text.ko = '빈칸이 없는 문장이다.'; }), /needs 1-3 \[\[blanks\]\]/);
 assert.match(broken(q => { q[3].distractors.ko[0] = '국가기구'; }), /repeats an answer/);
 assert.match(broken(q => { q[3].text.en = 'The working class cannot lay hold of the [[state machinery.'; }), /unclosed|needs 1-3/);
+// passages from different places: one box each, a caption per box
+assert.match(broken(q => { q[3].text.ko += '\n\n둘째 지문이다.'; }), /passage counts differ/);
+assert.match(broken(q => { q[3].passageLabels = { ko: ['갑', '을'], en: ['A', 'B'] }; }), /needs a text split into passages/);
+assert.match(broken(q => { q[3].text.ko += '\n\n둘째 지문이다.'; q[3].text.en += '\n\nA second passage.'; q[3].passageLabels = { ko: ['갑', '을', '병'], en: ['A', 'B', 'C'] }; }), /one caption per passage/);
 // the mix: at most half multiple choice, two kinds of activity, the correct
 // choice rarely the longest
 assert.match(broken(q => { q[1] = { ...clone(q[0]), id: 'q2', prompt: { ko: '다른 물음으로 바꾼 객관식 문항이다. 무엇인가?', en: 'A different multiple-choice question put here. What is it?' } }; }), /at most half/);
