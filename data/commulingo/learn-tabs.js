@@ -12,7 +12,7 @@ function learnTabs(en) {
           label: en ? 'Courses' : '강좌', short: en ? 'Courses' : '강좌' },
         { key: 'drill', menu: 'commulingo.drill', href: '/commulingo/drill', icon: 'swords',
           label: en ? 'Training ground' : '훈련장', short: en ? 'Drills' : '훈련장' },
-        { key: 'shorts', menu: 'commulingo.drill', href: '/commulingo/drill/shorts', icon: 'layout-grid',
+        { key: 'shorts', menu: 'commulingo.shorts', href: '/commulingo/drill/shorts', icon: 'layout-grid',
           label: en ? 'Shorts' : '쇼츠', short: en ? 'Shorts' : '쇼츠' },
     ].filter(tab => !menuHidden(tab.menu));
 }

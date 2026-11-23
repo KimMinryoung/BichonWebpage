@@ -5,8 +5,10 @@
 // the sitemap leave it out, and its pages are served noindex
 // (routes/commulingo-drills.js). Remove the key to bring the menu back.
 //
-// commulingo.drill (훈련장 and 쇼츠, both under /commulingo/drill) hidden
-// 2026-11-10 by the owner as the weakest CommuLingo content.
+// commulingo.drill (훈련장) hidden 2026-11-10 by the owner as the weakest
+// CommuLingo content. 쇼츠 (/commulingo/drill/shorts, its own menu
+// commulingo.shorts) was hidden with it and came back on 2026-11-23 as the
+// read-only story feed.
 const HIDDEN_MENUS = new Set(['commulingo.drill']);
 
 function menuHidden(menu) {

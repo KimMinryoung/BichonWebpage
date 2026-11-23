@@ -25,6 +25,7 @@ const MENU_ENGLISH = {
     'commulingo.home': 'full',
     'commulingo.learn': 'full',
     'commulingo.drill': 'full',
+    'commulingo.shorts': 'full',
     'commulingo.people': 'full',
     'commulingo.events': 'full',
     'commulingo.map': 'full',

@@ -2359,6 +2359,13 @@ a.commu-dict-chip:hover { text-decoration: none; }
     line-height: var(--leading-snug);
     margin: 0;
 }
+
+.commu-story-flag {
+    flex: none;
+    height: 18px;
+    width: auto;
+    border: 1px solid var(--border);
+}
 .commu-politburo-intro {
     line-height: var(--leading-normal);
     margin: 0;

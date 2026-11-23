@@ -56,7 +56,7 @@
 | --- | --- |
 | 학습 활동 계측·집계 | [운영 계측 참고](commulingo-learning-measurement.md) |
 | 짧은 학습·이용 측정 설계 | [학습 콘텐츠 개선 제안](commulingo-learning-design.md) |
-| 훈련장 쇼츠 | [카드 재료·순서](commulingo-shorts.md) |
+| 쇼츠(이야기 카드) | [카드 재료·순서](commulingo-shorts.md) |
 | 혁명사·사회주의 비교 강좌 | [학습 강좌와 출처 기준](commulingo-ideology-learning.md) |
 | 원문 끊어 읽기 형식(`guided-reading`) | [형식 근거·플레이어·검증 규칙·샤드 함정](commulingo-guided-reading.md) |
 | 실습 형식(`workshop`: 순서·분류·빈칸) | [형식·필드·검증 규칙·화면](commulingo-workshop-format.md) |

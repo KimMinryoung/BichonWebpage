@@ -6643,90 +6643,81 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     font-weight: 700;
 }
 
-.commu-short-body {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+/* Story cards: read-only, one per screen (data/commulingo/shorts.js). */
+.commu-story .commu-short-topic {
+    justify-content: space-between;
 }
 
-.commu-short-prompt {
+.commu-story-step {
+    font-weight: 400;
+}
+
+.commu-story-episode {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
+    font-weight: 700;
+}
+
+.commu-story-when {
+    margin: 0;
+    color: var(--link);
+    font-size: var(--text-meta);
+    font-weight: 700;
+}
+
+.commu-story-year {
+    margin: 0;
+    color: var(--text-primary);
+    font-size: var(--text-2xl);
+    font-weight: var(--weight-emphasis);
+    line-height: var(--leading-tight);
+}
+
+.commu-story-title {
     margin: 0;
     font-size: var(--text-xl);
     line-height: var(--leading-snug);
 }
 
-.commu-short-quote {
-    margin: 0;
+.commu-story-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.commu-short-recall {
-    margin: 0;
-    color: var(--text-secondary);
-    font-weight: 700;
+.commu-story-flag {
+    flex: none;
+    height: 18px;
+    width: auto;
+    border: 1px solid var(--border);
 }
 
-.commu-short-term {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: clamp(1.7rem, 7vw, 2.4rem);
-    line-height: var(--leading-tight);
-}
-
-.commu-short-reveal {
-    min-height: 96px;
-    border: 1px dashed var(--border);
-    background: var(--bg-surface);
-    color: var(--text-secondary);
-    font: inherit;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color var(--duration-fast) ease, border-color var(--duration-fast) ease;
-}
-
-.commu-short-reveal:hover {
-    background: var(--bg-surface-hover);
-    border-color: var(--link);
-}
-
-.commu-short-reveal:focus-visible {
-    outline: 2px solid var(--accent-line);
-    outline-offset: 3px;
-}
-
-.commu-short-more {
-    align-self: flex-start;
-}
-
-.commu-short-answer {
+.commu-story-lines {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 14px;
-    padding: 14px 16px;
-    border-left: 4px solid var(--accent-line);
-    background: var(--bg-surface);
-    animation: commu-feedback-rise 260ms ease;
 }
 
-.commu-short-answer-text {
+.commu-story-lines p {
     margin: 0;
     color: var(--text-primary);
-    font-size: var(--text-lg);
-    font-weight: 700;
-    line-height: var(--leading-snug);
-}
-
-.commu-short-rest {
-    margin: 0;
-    color: var(--text-secondary);
-    font-size: var(--text-base);
+    font-size: var(--text-md);
     line-height: var(--leading-normal);
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .commu-short-answer {
-        animation: none;
-    }
+.commu-story-moment {
+    margin: 0;
+    padding: 14px 16px;
+    border-left: 4px solid var(--accent-line);
+    background: var(--bg-surface);
+    color: var(--text-primary);
+    font-size: var(--text-md);
+    line-height: var(--leading-normal);
+}
+
+.commu-story-more {
+    align-self: flex-start;
 }
 
 /* ── Politburo membership page (/commulingo/politburo) ──────────────────

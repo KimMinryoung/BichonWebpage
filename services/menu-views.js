@@ -12,6 +12,7 @@ const MENUS = [
     ['home', ['/'], '대문', 'Home', { exact: true }],
     ['chat', ['/chat'], '채팅', 'Chat'],
     ['commulingo.learn', ['/commulingo/learn', '/commulingo/book'], '공산링고 · 강좌', 'CommuLingo · Courses'],
+    ['commulingo.shorts', ['/commulingo/drill/shorts'], '공산링고 · 쇼츠', 'CommuLingo · Shorts'],
     ['commulingo.drill', ['/commulingo/drill'], '공산링고 · 훈련장', 'CommuLingo · Drills'],
     ['commulingo.people', ['/commulingo/people', '/commulingo/activities', '/commulingo/offices',
         '/commulingo/roles', '/commulingo/internationalist'], '공산링고 · 인물', 'CommuLingo · People'],

@@ -7,7 +7,7 @@ const { MENUS, menuForPath, menuLabel } = require('../../services/menu-views');
 const cases = {
     '/': 'home', '/en/': 'home', '/en': 'home', '/chat': 'chat',
     '/commulingo': 'commulingo.home', '/commulingo/': 'commulingo.home',
-    '/commulingo/book/capital-vol1': 'commulingo.learn', '/commulingo/drill/shorts': 'commulingo.drill',
+    '/commulingo/book/capital-vol1': 'commulingo.learn', '/commulingo/drill/shorts': 'commulingo.shorts',
     '/commulingo/people': 'commulingo.people', '/commulingo/people/stalin': 'commulingo.people',
     '/commulingo/activities': 'commulingo.people', '/commulingo/events/nazi-soviet-pact': 'commulingo.events',
     '/commulingo/countries/soviet': 'commulingo.map', '/commulingo/terms/nep': 'commulingo.terms',

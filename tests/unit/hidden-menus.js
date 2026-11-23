@@ -16,7 +16,7 @@ const { practiceDecksFor } = require('../../data/commulingo/drill-presentation')
         assert.ok(tabs.every(tab => !menuHidden(tab.menu)));
     }
     if (menuHidden('commulingo.drill')) {
-        assert.deepStrictEqual(learnTabs(false).map(tab => tab.key), ['courses']);
+        assert.deepStrictEqual(learnTabs(false).map(tab => tab.key), menuHidden('commulingo.shorts') ? ['courses'] : ['courses', 'shorts']);
         assert.deepStrictEqual(await practiceDecksFor(['/commulingo/people/stalin'], 'ko'), []);
     }
     console.log('hidden menus ok');

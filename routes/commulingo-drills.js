@@ -11,9 +11,11 @@ const { menuHidden } = require('../config/hidden-menus');
 
 const router = express.Router();
 
-// A hidden menu still opens by URL but stays out of search engines.
+// A hidden menu still opens by URL but stays out of search engines. Shorts
+// live under /drill but are their own menu.
 router.use((req, res, next) => {
-    if (menuHidden('commulingo.drill')) res.locals.robotsMeta = 'noindex, follow';
+    const menu = req.path === '/shorts' || req.path.startsWith('/shorts/') ? 'commulingo.shorts' : 'commulingo.drill';
+    if (menuHidden(menu)) res.locals.robotsMeta = 'noindex, follow';
     next();
 });
 
@@ -66,7 +68,7 @@ router.get('/deck/:deckId', async (req, res) => {
     }
 });
 
-// 쇼츠: 한 화면에 한 장씩 넘기는 카드 피드. '/:deckId'보다 먼저 둔다.
+// 쇼츠: 한 화면에 한 장씩 위로 넘기며 읽는 이야기 카드 피드. '/:deckId'보다 먼저 둔다.
 router.get('/shorts', async (req, res) => {
     try {
         const lang = res.locals.lang;
@@ -74,7 +76,11 @@ router.get('/shorts', async (req, res) => {
         const c = res.locals.strings.commuLingo;
         setShortPublicCache(res);
         res.render('public/commulingo-shorts', {
-            shortsMeta: { version: shorts.version, bucketCount: shorts.bucketCount },
+            shortsMeta: {
+                version: shorts.version,
+                episodeCount: shorts.episodeCount,
+                peopleBucketCount: shorts.peopleBucketCount,
+            },
             pageTitle: c.shorts + ' — ' + c.name,
             pageDescription: c.shortsDesc,
             pagePath: '/commulingo/drill/shorts',
@@ -92,11 +98,11 @@ router.get('/shorts', async (req, res) => {
     }
 });
 
-router.get('/shorts/feed/:bucket', async (req, res) => {
+// e<n> 편, p<n> 인물 묶음, d<MM-DD> 오늘의 역사(data/commulingo/shorts.js).
+router.get('/shorts/feed/:key', async (req, res) => {
     try {
-        const index = /^\d{1,4}$/.test(req.params.bucket) ? Number(req.params.bucket) : -1;
         const shorts = await loadCommuLingoShorts();
-        const body = index >= 0 ? shorts.bucketBody(index) : null;
+        const body = shorts.feedBody(req.params.key);
         if (!body) return res.status(404).json({ error: 'unknown bucket' });
         setPublicDataCache(req, res, shorts.version);
         res.type('application/json').send(body);

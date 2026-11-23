@@ -1,7 +1,6 @@
 (function() {
-    // 훈련장 쇼츠: 한 화면에 카드 한 장, 위로 넘기며 본다. 질문만 보이고 탭하면
-    // 답과 해설이 열린다. 보기·채점은 없다. 서버의 카드 묶음을 무작위 순서로
-    // 받아 이어 붙인다.
+    // 쇼츠: 한 화면에 카드 한 장, 위로 넘기며 읽기만 한다. 강좌 한 편의 장면을
+    // 순서대로 보이고, 편과 편 사이에 오늘의 역사와 인물 카드를 끼운다.
     var strings = window.COMMULINGO_STRINGS || {};
     var shell = document.querySelector('.commulingo-shell');
     var lang = shell ? shell.getAttribute('data-lang') : 'ko';
@@ -11,14 +10,20 @@
     var meta = JSON.parse(metaNode.textContent);
     var loadingNode = document.getElementById('shortsLoading');
     var RENDER_AHEAD = 3;
-    var REFILL_BELOW = 10;
-    var bucketOrder = shuffle(range(meta.bucketCount));
-    var bucketPointer = 0;
+    var REFILL_BELOW = 6;
+    var PEOPLE_BETWEEN = 2;
+
+    var episodeOrder = shuffle(range(meta.episodeCount));
+    var episodePointer = 0;
+    var peopleOrder = shuffle(range(meta.peopleBucketCount));
+    var peoplePointer = 0;
+    var people = [];
+    var today = [];
+    var todayKey = seoulDay();
     var fetching = false;
-    var queue = [];          // 아직 화면에 붙이지 않은 카드
-    var rendered = [];       // 붙인 카드 article
+    var queue = [];
+    var rendered = [];
     var currentIndex = 0;
-    var serial = 0;
 
     function text(value) {
         if (!value) return '';
@@ -50,32 +55,71 @@
         return node;
     }
 
+    // 「오늘」은 한국 날짜다(방문 통계와 같은 기준).
+    function seoulDay() {
+        try {
+            var parts = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul', month: '2-digit', day: '2-digit' }).formatToParts(new Date());
+            var month = '';
+            var day = '';
+            parts.forEach(function(part) {
+                if (part.type === 'month') month = part.value;
+                if (part.type === 'day') day = part.value;
+            });
+            if (month && day) return month + '-' + day;
+        } catch (err) { /* 아래 */ }
+        var now = new Date();
+        return String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
+    }
+
+    function getJson(path) {
+        return fetch(path + '?v=' + encodeURIComponent(meta.version), { credentials: 'same-origin' })
+            .then(function(res) {
+                if (!res.ok) throw new Error('feed load failed');
+                return res.json();
+            });
+    }
+
     // ------------------------------------------------------------ 피드 채우기
 
     function sizeFeed() {
         var top = feed.getBoundingClientRect().top + window.scrollY;
-        // 정수로 내린다. 높이가 소수점이면 카드 위치와 스크롤 위치가 1px 미만
-        // 어긋나 윗 카드 가장자리가 비친다.
         var height = Math.max(420, Math.floor(window.innerHeight - top - 12));
         feed.style.setProperty('--shorts-height', height + 'px');
-        // 카드 높이가 바뀌어도 보던 카드에 맞춘다(모바일 주소창이 접힐 때 등).
         var current = rendered[currentIndex];
         if (current) feed.scrollTop = current.offsetTop;
     }
 
-    function fetchBucket() {
-        if (fetching || bucketPointer >= bucketOrder.length) return;
+    function nextPeople() {
+        if (people.length >= PEOPLE_BETWEEN || !meta.peopleBucketCount) return Promise.resolve();
+        var index = peopleOrder[peoplePointer];
+        peoplePointer = (peoplePointer + 1) % peopleOrder.length;
+        return getJson('/commulingo/drill/shorts/feed/p' + index).then(function(payload) {
+            people = people.concat(shuffle(payload.cards || []));
+        });
+    }
+
+    // 편 하나와 그 뒤의 쉬는 카드(오늘의 역사 하나, 인물 둘)를 큐에 붙인다.
+    function fetchEpisode() {
+        if (fetching || !meta.episodeCount) return;
         fetching = true;
-        var index = bucketOrder[bucketPointer];
-        bucketPointer += 1;
-        fetch('/commulingo/drill/shorts/feed/' + index + '?v=' + encodeURIComponent(meta.version), { credentials: 'same-origin' })
-            .then(function(res) {
-                if (!res.ok) throw new Error('feed load failed');
-                return res.json();
-            })
-            .then(function(payload) {
+        var index = episodeOrder[episodePointer];
+        episodePointer += 1;
+        if (episodePointer >= episodeOrder.length) {
+            episodeOrder = shuffle(range(meta.episodeCount));
+            episodePointer = 0;
+        }
+        Promise.all([getJson('/commulingo/drill/shorts/feed/e' + index), nextPeople()])
+            .then(function(results) {
                 fetching = false;
-                queue = queue.concat(shuffle(payload.cards || []));
+                var episode = results[0].episode;
+                var total = episode.scenes.length;
+                episode.scenes.forEach(function(scene, i) {
+                    queue.push({ kind: 'scene', episode: episode, scene: scene, index: i, total: total });
+                });
+                if (today.length) queue.push({ kind: 'today', row: today.shift() });
+                people.splice(0, PEOPLE_BETWEEN).forEach(function(person) {
+                    queue.push({ kind: 'person', person: person });
+                });
                 if (loadingNode && loadingNode.parentNode) loadingNode.parentNode.removeChild(loadingNode);
                 fill();
             })
@@ -83,80 +127,90 @@
                 fetching = false;
                 if (!rendered.length && loadingNode) loadingNode.textContent = strings.drillLoadFail || 'Could not load the cards.';
             });
-        // 전부 돌았으면 순서를 새로 섞어 처음부터.
-        if (bucketPointer >= bucketOrder.length) {
-            bucketOrder = shuffle(range(meta.bucketCount));
-            bucketPointer = 0;
-        }
     }
 
     function fill() {
         while (queue.length && rendered.length - currentIndex <= RENDER_AHEAD) {
             renderCard(queue.shift());
         }
-        if (queue.length < REFILL_BELOW) fetchBucket();
+        if (queue.length < REFILL_BELOW) fetchEpisode();
     }
 
     // ------------------------------------------------------------- 카드 그리기
 
-    function renderCard(card) {
-        serial += 1;
-        var article = el('article', 'commu-short' + (card.kind === 'term' ? ' commu-short--term' : ''));
-        article.setAttribute('aria-roledescription', 'card');
+    function lookupButton(href, label) {
+        var link = el('a', 'commu-drill-lookup commu-story-more', label);
+        link.href = href;
+        return link;
+    }
+
+    function sceneCard(item) {
+        var episode = item.episode;
+        var scene = item.scene;
         var inner = el('div', 'commu-short-inner');
-        inner.appendChild(el('p', 'commu-short-topic', text(card.topic)));
-        var body = el('div', 'commu-short-body');
-        if (card.kind === 'term') {
-            body.appendChild(el('p', 'commu-short-recall', strings.shortsRecall || 'What does it mean?'));
-            body.appendChild(el('h2', 'commu-short-term', text(card.term)));
-        } else {
-            body.appendChild(el('h2', 'commu-short-prompt', text(card.prompt)));
-            if (card.quote) {
-                var quote = el('blockquote', 'commu-drill-quote commu-short-quote');
-                if (card.quoteHeading) quote.appendChild(el('strong', '', text(card.quoteHeading)));
-                quote.appendChild(el('span', '', text(card.quote)));
-                body.appendChild(quote);
-            }
-        }
-        var answerId = 'shortAnswer' + serial;
-        var reveal = el('button', 'commu-short-reveal', strings.shortsReveal || 'Tap to see the answer');
-        reveal.type = 'button';
-        reveal.setAttribute('aria-expanded', 'false');
-        reveal.setAttribute('aria-controls', answerId);
-        body.appendChild(reveal);
-        var after = el('div', 'commu-short-after');
-        after.id = answerId;
-        after.hidden = true;
-        reveal.addEventListener('click', function() {
-            reveal.hidden = true;
-            reveal.setAttribute('aria-expanded', 'true');
-            showAnswer(card, after);
+        var head = el('p', 'commu-short-topic');
+        head.appendChild(el('span', '', text(episode.course)));
+        head.appendChild(el('span', 'commu-story-step', (strings.shortsScene || 'Scene') + ' ' + (item.index + 1) + ' / ' + item.total));
+        inner.appendChild(head);
+        if (item.index === 0) inner.appendChild(el('p', 'commu-story-episode', text(episode.title)));
+        if (scene.when) inner.appendChild(el('p', 'commu-story-when', text(scene.when)));
+        inner.appendChild(el('h2', 'commu-story-title', text(scene.title)));
+        var body = el('div', 'commu-story-lines');
+        (scene.lines[lang] || scene.lines.ko || []).forEach(function(line) {
+            body.appendChild(el('p', '', line));
         });
         inner.appendChild(body);
-        inner.appendChild(after);
+        if (item.index === item.total - 1) inner.appendChild(lookupButton(episode.href, strings.shortsEpisode || 'Open the lesson'));
+        return inner;
+    }
+
+    function todayCard(item) {
+        var row = item.row;
+        var inner = el('div', 'commu-short-inner');
+        var date = row.date;
+        var label = lang === 'en'
+            ? (strings.shortsToday || 'On this day') + ' · ' + new Date(Date.UTC(2000, date[1] - 1, date[2])).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', timeZone: 'UTC' })
+            : (strings.shortsToday || '오늘의 역사') + ' · ' + date[1] + '월 ' + date[2] + '일';
+        inner.appendChild(el('p', 'commu-short-topic', label));
+        inner.appendChild(el('p', 'commu-story-year', lang === 'en' ? String(date[0]) : date[0] + '년'));
+        inner.appendChild(el('h2', 'commu-story-title', text(row.title)));
+        var body = el('div', 'commu-story-lines');
+        body.appendChild(el('p', '', text(row.body)));
+        inner.appendChild(body);
+        inner.appendChild(lookupButton(row.href, text(row.event)));
+        return inner;
+    }
+
+    function personCard(item) {
+        var person = item.person;
+        var inner = el('div', 'commu-short-inner');
+        inner.appendChild(el('p', 'commu-short-topic', strings.shortsPerson || 'People'));
+        var name = el('h2', 'commu-story-title commu-story-name');
+        if (person.flag) {
+            var flag = document.createElement('img');
+            flag.className = 'commu-story-flag';
+            flag.src = person.flag.src;
+            flag.alt = text(person.flag.label);
+            flag.height = 18;
+            name.appendChild(flag);
+        }
+        name.appendChild(document.createTextNode(text(person.name)));
+        inner.appendChild(name);
+        var sub = [person.years, text(person.epithet)].filter(Boolean).join(' · ');
+        if (sub) inner.appendChild(el('p', 'commu-story-when', sub));
+        inner.appendChild(el('blockquote', 'commu-story-moment', text(person.moment)));
+        inner.appendChild(lookupButton(person.href, strings.shortsPersonOpen || 'Open the person'));
+        return inner;
+    }
+
+    function renderCard(item) {
+        var article = el('article', 'commu-short commu-story commu-story--' + item.kind);
+        article.setAttribute('aria-roledescription', 'card');
+        var inner = item.kind === 'scene' ? sceneCard(item) : item.kind === 'today' ? todayCard(item) : personCard(item);
         article.appendChild(inner);
         feed.appendChild(article);
         rendered.push(article);
         observer.observe(article);
-    }
-
-    // 「자세히 보기」는 답 바로 아래에 둔다. 해설이 길어 작은 화면에서 넘쳐도
-    // 링크는 보이게 하기 위해서다. 다음 카드는 위로 밀어 넘긴다.
-    function showAnswer(card, after) {
-        var answer = el('div', 'commu-short-answer');
-        answer.appendChild(el('p', 'commu-short-answer-text', text(card.answer)));
-        if (card.href) {
-            var more = el('a', 'commu-drill-lookup commu-short-more', strings.shortsMore || 'Learn more');
-            more.href = card.href;
-            more.target = '_blank';
-            more.rel = 'noopener';
-            answer.appendChild(more);
-        }
-        if (card.explanation) answer.appendChild(el('p', 'commu-short-rest', text(card.explanation)));
-        after.appendChild(answer);
-        after.hidden = false;
-        // 숨긴 버튼에서 초점이 사라지지 않게 피드로 옮겨 ↑↓로 계속 넘기게 한다.
-        feed.focus({ preventScroll: true });
     }
 
     // --------------------------------------------------------------- 넘기기
@@ -192,5 +246,13 @@
 
     sizeFeed();
     window.addEventListener('resize', sizeFeed);
-    fetchBucket();
+
+    // 첫 카드는 오늘의 역사. 그날 줄이 없거나 받지 못하면 바로 편으로.
+    getJson('/commulingo/drill/shorts/feed/d' + todayKey)
+        .then(function(payload) { today = shuffle(payload.rows || []); })
+        .catch(function() { today = []; })
+        .then(function() {
+            if (today.length) queue.push({ kind: 'today', row: today.shift() });
+            fetchEpisode();
+        });
 })();

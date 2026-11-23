@@ -496,6 +496,7 @@ async function buildSitemapXml() {
         for (const chart of commuCharts) xml += url(`/commulingo/genealogy/${encodeURIComponent(chart.id)}`, chart.modifiedAt, '0.5');
         for (const book of commuBooks) xml += url(`/commulingo/book/${encodeURIComponent(book.id)}`, book.modifiedAt, '0.6');
         // 드릴 덱은 사전에서 만들어지므로 lastmod는 사전의 최신 갱신일을 따른다.
+        if (!menuHidden('commulingo.shorts')) xml += url('/commulingo/drill/shorts', latestDate(peopleLastmod, eventsLastmod), '0.5', 'daily');
         if (commuDrillIds.length) xml += url('/commulingo/drill', latestDate(peopleLastmod, termsLastmod, eventsLastmod), '0.6', 'weekly');
         for (const id of commuDrillIds) xml += url(`/commulingo/drill/${encodeURIComponent(id)}`, latestDate(peopleLastmod, termsLastmod, eventsLastmod), '0.5', 'weekly');
         xml += '</urlset>';
