@@ -87,6 +87,7 @@ id(`ref-unknown`; 사전을 읽을 수 없으면 이 검사만 건너뛴다)가 
 리더가 예전처럼 직접 파싱한다. 규칙이 바뀌어 전부 다시 만들 때는 `scripts/commulingo-docs outline`(리비전 없이 컬럼만 쓴다).
 
 id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `data-auto-id`와 함께 써 넣어진다.
+문단 링크(2026-11-24): id 없는 `p`·`li`·`blockquote`(주석 목록 밖)에는 저장 시 `p-N`이 붙는다. 편집할 때 기존 `p-N`을 지우거나 옮겨 붙이지 않는다 — 밖에 퍼진 `?at=p-N` 링크가 그 문단을 가리킨다. `p-N` 꼴 id를 손으로 쓰지 않는다.
 처음 고정되는 문서는 리더가 그동안 서빙하던 번호를 그대로 받으므로 기존 링크가 유지되고, 그 뒤 새 제목은
 다음 빈 번호를 받아 기존 id가 밀리지 않는다. 이 번호 id는 원문/번역 전환에 쓰이지 않는다(같은 번호가 두 판에서
 같은 절이라는 보장이 없다). 진행 상황과 남은 작업: [dev_docs/commulingo-docs-structure-todo.md](../../../dev_docs/commulingo-docs-structure-todo.md).
