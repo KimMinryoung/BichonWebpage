@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const { personCards, todayIndex, sceneCards } = require('../../data/commulingo/shorts');
+const { personCards, todayIndex, todayPeopleIndex, sceneCards } = require('../../data/commulingo/shorts');
 const { shortsScenesProblems } = require('../../data/commulingo/shorts-scenes');
 const { needsLessonContext } = require('../../data/commulingo/lesson-context');
 const { isPublicCommuLingoDataPath, isSessionFreeRequest } = require('../../config/route-policy');
@@ -28,6 +28,23 @@ assert.ok(shortsScenesProblems(doc([card('짧다.'), card('짧다.')]), 'shorts/
 // 인물: 결정적 순간이 두 언어로 있고 길이가 한 화면 안(40~260자)인 사람만.
 const person = (id, ko) => ({ id, name: { ko: '이름', en: 'Name' }, years: '1900–1950', moment: { ko, en: 'x' }, citizenship: { code: '' } });
 assert.deepEqual(personCards([person('a', '짧다'), person('b', '가'.repeat(80)), person('c', '가'.repeat(300))]).map(p => p.id), ['b']);
+
+// 오늘의 인물: 년·월·일이 다 있는 생일·사망일만 그날에 건다. 같은 날이면 on 둘,
+// 사인 라벨이 비면 kind 기본 라벨.
+const dated = (id, birth, death, fate) => ({ ...person(id, '가'.repeat(80)), lifeDates: { birth, death }, fate });
+const cards = personCards([
+    dated('born', [1870, 4, 22], [1924, 1, 21], { kind: 'natural', label: { ko: '', en: '' } }),
+    dated('died', [1879, 11, 7], [1940, 8, 21], { kind: 'assassinated', label: { ko: '암살', en: 'Assassinated' } }),
+    dated('both', [1900, 4, 22], [1950, 4, 22], { kind: '', label: {} }),
+    dated('month', [1900, 4], null, null),
+]);
+assert.deepEqual(cards[0].fate, { kind: 'natural', label: { ko: '자연사', en: 'Natural causes' } });
+assert.equal(cards[2].fate, null);
+assert.equal(cards[3].birth, null);
+const peopleDays = todayPeopleIndex(cards);
+assert.deepEqual(peopleDays.get('04-22').map(p => [p.id, p.on]), [['born', ['birth']], ['both', ['birth', 'death']]]);
+assert.deepEqual(peopleDays.get('08-21').map(p => [p.id, p.on]), [['died', ['death']]]);
+assert.equal(peopleDays.has('04-00'), false);
 
 // 오늘의 역사: 시작일이 년·월·일까지 있는 줄만, 월-일 키로, 해 순서대로.
 const days = todayIndex([{ id: 'ev', title: { ko: '사건', en: 'Event' }, timeline: [

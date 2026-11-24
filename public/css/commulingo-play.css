@@ -2966,6 +2966,29 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
     align-items: center;
     gap: 10px;
 }
+.commu-story-day {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    color: var(--text-primary);
+    font-size: var(--text-md);
+    font-weight: 700;
+}
+
+.commu-story-day-icon {
+    font-size: 1.25em;
+    line-height: 1;
+}
+
+.commu-story-day.is-executed,
+.commu-story-day.is-assassinated,
+.commu-story-day.is-murdered,
+.commu-story-day.is-suicide,
+.commu-story-day.is-custody,
+.commu-story-day.is-killed {
+    color: var(--text-danger);
+}
 
 .commu-story-lines {
     display: flex;
