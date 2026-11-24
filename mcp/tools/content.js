@@ -273,8 +273,9 @@ const tools = [
     {
         scope: 'edit',
         name: 'doc_entries_patch',
-        description: 'Change top-level manifest entry keys of many reference documents in one transaction (all or none), bodies untouched. '
-            + 'patchesPath is a JSON file { "<docId>": { "revision": <doc_get revision>, "patch": { key: value | null } } }; null removes a key. '
+        description: 'Change top-level manifest entry keys, and/or the published original\'s bibliography, of many reference documents in one transaction (all or none), bodies untouched. '
+            + 'patchesPath is a JSON file { "<docId>": { "revision": <doc_get revision>, "patch": { key: value | null }, '
+            + '"original": { "revision": <doc_get originalRevision>, "bibliography": { ko, en } } } } (patch and original each optional, one needed); null removes a key. '
             + 'Each document passes the same entry validation and structure check as doc_put. dryRun defaults to true. Returns written '
             + 'revisions and, per document, the person-link audit counts (an id added to people can link new mentions in the body).',
         inputSchema: object({
@@ -293,11 +294,24 @@ const tools = [
             if (Object.keys(patches).length > 500) throw badRequest('at most 500 documents per call');
             const { readDocRow, writeDocs, storedEntry } = require('../../data/commulingo/docs-db');
             const { canonicalEntry } = require('../../data/commulingo/docs-import');
+            const { readOriginalRow } = require('../../data/commulingo/docs-db');
             const upserts = [];
+            const originals = { set: [], remove: [] };
             for (const [id, item] of Object.entries(patches)) {
-                if (!item || !Number.isInteger(item.revision) || !item.patch || typeof item.patch !== 'object' || Array.isArray(item.patch)) {
-                    throw badRequest(`${id}: needs { revision: integer, patch: { … } }`);
+                const isPlain = value => value && typeof value === 'object' && !Array.isArray(value);
+                if (!isPlain(item) || (!item.patch && !item.original)) throw badRequest(`${id}: needs patch and/or original`);
+                if (item.original) {
+                    if (!isPlain(item.original) || !Number.isInteger(item.original.revision) || !isPlain(item.original.bibliography)) {
+                        throw badRequest(`${id}: original needs { revision: integer, bibliography: { ko, en } }`);
+                    }
+                    const stored = await readOriginalRow(id);
+                    if (!stored) throw badRequest(`${id}: has no stored original`);
+                    // Same body, language, visibility and rights: only the bibliography changes.
+                    originals.set.push({ docId: id, lang: stored.lang, body: stored.body, public: stored.public, rights: stored.rights,
+                        bibliography: item.original.bibliography, expectedRevision: item.original.revision });
                 }
+                if (!item.patch) continue;
+                if (!Number.isInteger(item.revision) || !isPlain(item.patch)) throw badRequest(`${id}: needs { revision: integer, patch: { … } }`);
                 const row = await readDocRow(id);
                 if (!row) throw badRequest(`${id}: no such document`);
                 const next = { ...row.entry };
@@ -309,14 +323,14 @@ const tools = [
                 upserts.push({ id, entry: storedEntry(next), expectedRevision: item.revision });
             }
             const actor = actorOf(given, client);
-            const result = await inTransaction(dryRun, c => writeDocs({ upserts, originals: { set: [], remove: [] } },
+            const result = await inTransaction(dryRun, c => writeDocs({ upserts, originals },
                 { actor, note: note || 'mcp doc_entries_patch', client: c, allowStructureIssues: allowStructureIssues === true }));
             if (!dryRun) await require('../../data/commulingo/docs-store').refreshCommuLingoDocs();
             result.linkAudits = (result.linkAudits || []).map(audit => ({ id: audit.id, mentions: (audit.mentions || []).length,
                 warnings: (audit.warnings || []).length }));
             return { dryRun, ...result };
         },
-        summarize: value => ({ dryRun: value.dryRun, written: value.written }),
+        summarize: value => ({ dryRun: value.dryRun, written: value.written, originals: value.originals }),
     },
     {
         scope: 'edit',
