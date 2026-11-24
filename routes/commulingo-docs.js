@@ -175,6 +175,8 @@ async function renderDoc(req, res, raw, original) {
     ], res.locals.urlLanguage), documentJsonLd(documentPart(bibliography), {
         title: doc.title, description: doc.description, url: pageUrl, inLanguage: docLang,
         other: otherVersion, isOriginal: Boolean(original), publisherId: `${seo.SITE_ORIGIN}/#organization`,
+        authors: (doc.authors || []).map(person => ({ name: person.name,
+            url: seo.absoluteUrl(seo.languagePath(`/commulingo/people/${person.id}`, res.locals.urlLanguage)) })),
     }));
     // The charts that carry this document as a node, so the reader can walk
     // back out to where the text sits in the story. The forward direction

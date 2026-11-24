@@ -30,10 +30,14 @@ const readableIn = (doc, lang) => lang !== 'en' || Boolean(doc.original);
 
 function relatedDocsFor(kind, id, lang) {
     try {
-        return listCommuLingoDocsFor(kind, id).filter(doc => readableIn(doc, lang)).map(doc => ({
+        // A person's own writings come first (entry.authors), in manifest order.
+        const authored = doc => kind === 'people' && (doc.authors || []).includes(id);
+        const docs = listCommuLingoDocsFor(kind, id).filter(doc => readableIn(doc, lang));
+        return [...docs.filter(authored), ...docs.filter(doc => !authored(doc))].map(doc => ({
             id: doc.id,
             title: localize(doc.title, lang),
             kind: localize(doc.kind, lang),
+            authored: authored(doc),
         }));
     } catch (e) {
         console.error(`commulingo ${kind} related docs:`, e);
@@ -140,14 +144,17 @@ async function createDocRefResolver(lang) {
 
     const resolver = function resolveDocRefs(doc) {
         const out = {};
-        KINDS.forEach(kind => {
+        // authors: the people who wrote the document (a subset of people),
+        // resolved the same way.
+        [...KINDS, 'authors'].forEach(kind => {
+            const labelKind = kind === 'authors' ? 'people' : kind;
             out[kind] = (doc[kind] || []).map(ref => {
                 const declared = docRefId(ref);
-                const id = kind === 'people'
+                const id = labelKind === 'people'
                     ? (labels.people.has(declared) ? declared
                         : redirectTarget(loaded.data, 'person', declared) || declared)
                     : declared;
-                const name = labels[kind].get(id) || '';
+                const name = labels[labelKind].get(id) || '';
                 // An id the dictionary no longer carries would only link to a
                 // 404, so the topbar drops it — loudly, since it means a
                 // manifest entry outlived the entry it points at.

@@ -13,7 +13,7 @@ const { docKind } = require('./doc-kinds');
 
 // Fields canonicalEntry writes.
 const CANONICAL_FIELDS = ['id', 'docLang', 'title', 'description', 'summary', 'kind', 'linkExpressions',
-    'aliases', 'noAutoLink', 'date', 'updatedAt', 'tocExclude', 'people', 'terms', 'events', 'addedAt', 'personLinks', 'bibliography'];
+    'aliases', 'noAutoLink', 'date', 'updatedAt', 'tocExclude', 'authors', 'people', 'terms', 'events', 'addedAt', 'personLinks', 'bibliography'];
 // Fields the README documents that canonicalEntry leaves as they are
 // (mergeDocMeta keeps them across a PATCH): excerpts lent to entry pages,
 // anchored aliases, and a collection's member list.
@@ -98,6 +98,7 @@ function entryRefs(entry) {
         }
         for (const id of Object.keys(isObject(entry?.excerpts?.[kind]) ? entry.excerpts[kind] : {})) out.push({ kind, id, via: `excerpts.${kind}` });
     }
+    for (const id of Array.isArray(entry?.authors) ? entry.authors : []) if (typeof id === 'string') out.push({ kind: 'people', id, via: 'authors' });
     return out;
 }
 

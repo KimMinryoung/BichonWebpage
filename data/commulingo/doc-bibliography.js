@@ -276,9 +276,12 @@ function plain(text) {
 // schema.org CreativeWork for a reader page, from the document part of the
 // bibliography it shows. `work` is the page's own text; `other` the version it
 // is a translation of (translation page) or that translates it (original page).
-function documentJsonLd(part, { title, description, url, inLanguage, other = null, isOriginal = false, publisherId }) {
+// authors: [{ name, url }] from entry.authors (person cards); a work with
+// none keeps the bibliography's free-text author as creditText only.
+function documentJsonLd(part, { title, description, url, inLanguage, other = null, isOriginal = false, publisherId, authors = [] }) {
     const data = { '@context': 'https://schema.org', '@type': 'CreativeWork', name: title, url, inLanguage };
     if (description) data.description = description;
+    if (authors.length) data.author = authors.map(({ name, url: personUrl }) => ({ '@type': 'Person', name, url: personUrl }));
     if (part) {
         // The original-language title only: the box glosses it in Korean
         // (「… (독일 노동자당 강령에 대한 여백 논평)」), which is not a name.

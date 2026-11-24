@@ -106,3 +106,9 @@ entry에 `bibliography`를 둔다. 문헌 전체의 서지는 `parts[0]`(anchor 
 - 2차(비숑 지시): 남은 메모 127개 중 사이트 이력(「2026년 8월에 합쳤다」)과 사이트·문헌집 안내(「각 글 앞에 저본을 적었다」, 「원문 쪽에서 볼 수 있다」)는 지우고, 배경·자료 성격 설명은 본문 해제 상자의 문단으로 옮겼다(95편, `NOTES2-BRIEF.md`). 서지에 남은 메모 0.
 - 앞으로 `notes`에 사이트 안내·작업 이력을 쓰지 않는다. 배경 설명은 해제 문단에 쓴다.
 - 문헌 부분 없이 수록 글 part만 있는 서지도 첫 해제 상자에 「인용」 줄이 나온다(a4448586).
+
+## 지은이를 인물 카드에 (2026-11-24)
+
+- 서지의 `author` 칸은 10편만 채워져 있고 지은이는 본문 byline에 있다. byline은 화면 표기로 두고, 인물 id 목록을 entry `authors`로 따로 둔다(`docs-import.js` `canonicalEntry`: 중복 제거, `people`에 저절로 더함).
+- 쓰는 곳: JSON-LD `CreativeWork.author`(Person, 인물 페이지 주소), 인물 페이지 「참고 문헌」에서 그 사람이 쓴 글을 먼저, 인물 이름 변경·병합(`person-rename.js`), 사전 참조 검사(`doc-entry.js` `entryRefs`, via `authors`).
+- 데이터: `scripts/content/doc-authors-20261124/`(byline 추출 `bylines.json`, 매핑 `authors.json`).

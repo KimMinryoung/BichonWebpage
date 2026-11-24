@@ -33,7 +33,9 @@ assert.equal(politburo.intro, 'lech-wa-sa stays prose');
 const manifest = renameInDocsManifest({ redirects: { x: {} }, docs: [
     { id: 'd1', people: ['lech-wa-sa', { id: 'lech-wa-sa', name: {} }, 'other'], terms: ['lech-wa-sa'] },
     { id: 'd2' },
+    { id: 'd3', authors: ['lech-wa-sa'], people: ['lech-wa-sa'] },
 ] }, map);
+assert.deepEqual(manifest.docs[2].authors, ['lech-walesa'], 'authors follow a rename');
 assert.deepEqual(manifest.docs[0].people, ['lech-walesa', { id: 'lech-walesa', name: {} }, 'other']);
 assert.deepEqual(manifest.docs[0].terms, ['lech-wa-sa'], 'term refs are not person ids');
 assert.deepEqual(manifest.docs[1], { id: 'd2' });

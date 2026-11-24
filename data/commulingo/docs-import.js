@@ -157,7 +157,13 @@ function canonicalEntry(entry, { defaults = true } = {}) {
         out.bibliography = require('./doc-bibliography').normalizeBibliography(entry.bibliography);
     }
     if (Array.isArray(entry.tocExclude) && entry.tocExclude.length) out.tocExclude = entry.tocExclude.map(String);
-    out.people = normalizeRefs(entry.people, 'people');
+    // authors: person ids of who wrote the document, in byline order (the
+    // byline in the body stays the displayed credit). An author is a person
+    // the document belongs with, so people carries every author too.
+    const authors = [...new Set(normalizeRefs(entry.authors, 'authors'))];
+    if (authors.length) out.authors = authors;
+    const people = normalizeRefs(entry.people, 'people');
+    out.people = [...people, ...authors.filter(id => !people.includes(id))];
     const terms = normalizeRefs(entry.terms, 'terms');
     if (terms.length) out.terms = terms;
     const events = normalizeRefs(entry.events, 'events');
@@ -226,6 +232,7 @@ function mergeDocMeta(current, patch = {}, options = {}) {
         kind: langPair(patch.kind, current.kind),
         tocExclude: patch.tocExclude !== undefined ? patch.tocExclude : current.tocExclude,
         bibliography: patch.bibliography !== undefined ? patch.bibliography : current.bibliography,
+        authors: patch.authors !== undefined ? patch.authors : current.authors,
         people: patch.people !== undefined ? patch.people : current.people,
         terms: patch.terms !== undefined ? patch.terms : current.terms,
         events: patch.events !== undefined ? patch.events : current.events,

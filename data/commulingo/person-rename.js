@@ -137,10 +137,11 @@ function renameInPolitburo(data, map) {
 }
 
 function renameInDocsManifest(data, map) {
-    return { ...data, docs: (data.docs || []).map(doc => !Array.isArray(doc.people) ? doc : {
-        ...doc,
-        people: doc.people.map(ref => typeof ref === 'string' ? (map.get(ref) ?? ref)
-            : ref && typeof ref.id === 'string' && map.has(ref.id) ? { ...ref, id: map.get(ref.id) } : ref),
+    const rename = refs => refs.map(ref => typeof ref === 'string' ? (map.get(ref) ?? ref)
+        : ref && typeof ref.id === 'string' && map.has(ref.id) ? { ...ref, id: map.get(ref.id) } : ref);
+    return { ...data, docs: (data.docs || []).map(doc => {
+        const out = Array.isArray(doc.people) ? { ...doc, people: rename(doc.people) } : doc;
+        return Array.isArray(doc.authors) ? { ...out, authors: rename(doc.authors) } : out;
     }) };
 }
 

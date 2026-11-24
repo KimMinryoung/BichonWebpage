@@ -117,3 +117,20 @@ console.log('commulingo-doc-bibliography: ok');
     assert.deepEqual(ld.translationOfWork, { '@type': 'CreativeWork', url: 'o', inLanguage: 'de' });
     assert.equal(B.documentJsonLd(null, { title: 't', url: 'u', inLanguage: 'de', other: { url: 'k' }, isOriginal: true }).workTranslation.url, 'k');
 }
+
+// entry.authors: person ids, deduplicated, always among people; JSON-LD names them.
+{
+    const B = require('../../data/commulingo/doc-bibliography');
+    const entry = canonicalEntry({ id: 'x', title: { ko: '글' }, authors: ['karl-marx', 'karl-marx', 'friedrich-engels'], people: ['lassalle', 'karl-marx'] }, { defaults: false });
+    assert.deepEqual(entry.authors, ['karl-marx', 'friedrich-engels']);
+    assert.deepEqual(entry.people, ['lassalle', 'karl-marx', 'friedrich-engels']);
+    assert.ok(!('authors' in canonicalEntry({ id: 'y', title: { ko: '글' }, authors: [] }, { defaults: false })));
+    assert.throws(() => canonicalEntry({ id: 'z', title: { ko: '글' }, authors: ['Karl Marx'] }), { status: 400 });
+    const merged = mergeDocMeta({ id: 'x', title: { ko: '글' }, people: ['lassalle'] }, { authors: ['karl-marx'] });
+    assert.deepEqual([merged.authors, merged.people], [['karl-marx'], ['lassalle', 'karl-marx']]);
+    const { entryRefs } = require('../../data/commulingo/doc-entry');
+    assert.ok(entryRefs(entry).some(ref => ref.via === 'authors' && ref.id === 'karl-marx' && ref.kind === 'people'));
+    const ld = B.documentJsonLd(null, { title: 't', url: 'u', inLanguage: 'ko', authors: [{ name: '카를 마르크스', url: 'https://x/commulingo/people/karl-marx' }] });
+    assert.deepEqual(ld.author, [{ '@type': 'Person', name: '카를 마르크스', url: 'https://x/commulingo/people/karl-marx' }]);
+    assert.ok(!('author' in B.documentJsonLd(null, { title: 't', url: 'u', inLanguage: 'ko' })));
+}
