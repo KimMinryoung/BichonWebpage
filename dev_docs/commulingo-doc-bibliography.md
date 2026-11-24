@@ -112,3 +112,12 @@ entry에 `bibliography`를 둔다. 문헌 전체의 서지는 `parts[0]`(anchor 
 - 서지의 `author` 칸은 10편만 채워져 있고 지은이는 본문 byline에 있다. byline은 화면 표기로 두고, 인물 id 목록을 entry `authors`로 따로 둔다(`docs-import.js` `canonicalEntry`: 중복 제거, `people`에 저절로 더함).
 - 쓰는 곳: JSON-LD `CreativeWork.author`(Person, 인물 페이지 주소), 인물 페이지 「참고 문헌」에서 그 사람이 쓴 글을 먼저, 인물 이름 변경·병합(`person-rename.js`), 사전 참조 검사(`doc-entry.js` `entryRefs`, via `authors`).
 - 데이터: `scripts/content/doc-authors-20261124/`(byline 추출 `bylines.json`, 매핑 `authors.json`).
+
+## 번역 기록과 저작권 상태 (2026-11-24)
+
+- `translation` 값에 `from`(옮긴 언어)·`via`(중역 언어)·`by`([{name, role: translation|revision, date?}]), `rights` 값에 `status`(publicDomain·notCopyrightable·licensed·permission·ownerDecision)와 `authorDied`·`license`·`decided`. 화면은 문장만 보이고, `license`는 JSON-LD `license`가 된다. 규칙은 `data/commulingo/docs/README.md`.
+- 데이터: 번역 값 223개 중 211개에 `from`, 113개에 `by`, `via`는 0(코민테른 2차 대회·슈투트가르트 대회의 일부 연설만 독일어 의사록 번역을 거침). 저작권 732개(번역본 114, 원문 309편×한·영) 모두 `status`: 퍼블릭 도메인 316, 대상 아님 298, 비숑 결정 109, 라이선스 6, 허락 3.
+- 문장끼리 어긋나는 곳은 문장대로 넣었다: 처칠·루스벨트 1942 전보(번역본 「비숑 결정」, 원문 「보호 기간 만료」), 1985 반알코올 정치국 문서(번역본 「대상 아님」, 원문 「비숑 결정」).
+- 원문 행의 `rights` 열(공개 판단 문장)은 원문 서지 `rights`와 같은 글이다. 공개 검사를 `status`로 바꾸고 열을 없앨지는 남은 일.
+- 여러 편을 한 번에 쓰는 도구: MCP `doc_entries_patch`(entry 키, 원문 서지). 한 번에 40편까지는 시간 안에 끝났다(167편은 시간 초과).
+- 작업물: `scripts/content/doc-translation-20261124/`, `doc-rights-20261124/`, `doc-bib-records-20261124/`.

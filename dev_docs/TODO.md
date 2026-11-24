@@ -15,7 +15,7 @@
 
 | 항목 | 출처 |
 | --- | --- |
-| 참고 문헌: 문단 단위 고유 링크(⑥). 서지 구조화(④⑤)·지은이 인물 연결은 끝남(2026-11-20·11-24) | [문헌 구조 TO-DO](commulingo-docs-structure-todo.md), [서지 설계](commulingo-doc-bibliography.md) |
+| 참고 문헌: 문단 단위 고유 링크(⑥), 원문 공개 검사를 `rights.status`로 바꾸고 원문 행 `rights` 열 정리. 서지 구조화(④⑤)·지은이 인물 연결·번역 기록·저작권 상태는 끝남(2026-11-20·11-24) | [문헌 구조 TO-DO](commulingo-docs-structure-todo.md), [서지 설계](commulingo-doc-bibliography.md) |
 | 용어끼리 관계(`commulingo_term_relations`)를 MCP로 쓰는 경로가 없음 | [archive/대만](archive/commulingo-taiwan-modern-20261114.md), [archive/마르크스경제학](archive/commulingo-marxian-economics-20261103.md) |
 | 「조국 전선」: 보급선 그림 곧게, 전략 층 다른 봇·사람 손 밸런스, 쿠르스크·베를린 재측정, 드네프르 도하 전투, 그림 남은 것(스탈린그라드 시가·승전 퍼레이드·포스터 셋) | [조국 전선 7절](great-patriotic-war-game.md) |
 | 전쟁 엔진: 영어 화면 없음, 박격포·카튜샤·기관총·소련 깃발 문장 그림 없음 | [엔진 8절](war-engine.md) |
