@@ -134,3 +134,18 @@ console.log('commulingo-doc-bibliography: ok');
     assert.deepEqual(ld.author, [{ '@type': 'Person', name: '카를 마르크스', url: 'https://x/commulingo/people/karl-marx' }]);
     assert.ok(!('author' in B.documentJsonLd(null, { title: 't', url: 'u', inLanguage: 'ko' })));
 }
+
+// A translation value carries its record (from, via, by) beside the sentence the box shows.
+{
+    const B = require('../../data/commulingo/doc-bibliography');
+    const stored = B.normalizeBibliography({ parts: [{ translation: [{ text: '러시아어 원문에서 옮겼다.', from: 'ru',
+        by: [{ name: 'DeepSeek Flash', role: 'translation' }, { name: 'Claude Opus 5.5', role: 'revision', date: [2026, 10, 12] }] }] }] });
+    assert.deepEqual(stored.parts[0].translation[0].by[1], { name: 'Claude Opus 5.5', role: 'revision', date: [2026, 10, 12] });
+    assert.match(B.renderPart(stored.parts[0], 'ko'), /러시아어 원문에서 옮겼다\./);
+    for (const bad of [{ text: 'x', from: 'Russian' }, { text: 'x', via: 'en' }, { text: 'x', from: 'ru', via: 'ru' },
+        { text: 'x', by: [] }, { text: 'x', by: [{ name: 'A', role: 'editing' }] }]) {
+        assert.throws(() => B.normalizeBibliography({ parts: [{ translation: [bad] }] }), { status: 400 }, JSON.stringify(bad));
+    }
+    // Only the translation field takes a record.
+    assert.throws(() => B.normalizeBibliography({ parts: [{ scope: [{ text: 'x', from: 'ru' }] }] }), { status: 400 });
+}

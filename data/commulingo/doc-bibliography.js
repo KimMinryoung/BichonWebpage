@@ -31,7 +31,8 @@ const FIELDS = [
     { key: 'published', ko: '최초 발표', en: 'First published', dated: true, list: true },
     { key: 'sourceText', ko: '번역 저본', en: 'Translated from', list: true },
     { key: 'scope', ko: '번역 범위', en: 'Scope', list: true },
-    { key: 'translation', ko: '번역', en: 'Translation', list: true },
+    // A translation value may also state the record as fields (TRANSLATION_KEYS).
+    { key: 'translation', ko: '번역', en: 'Translation', list: true, record: true },
     { key: 'translatorNotes', ko: '옮긴이 일러두기', en: "Translator's notes", list: true },
     // An original's own editing (spelling kept, marks, OCR corrections).
     { key: 'editing', ko: '편집', en: 'Editing', list: true },
@@ -90,14 +91,51 @@ function normalizeDate(date, where) {
     return date;
 }
 
-// One value: a text, or { text, label?, date? }. Stored in the smallest form.
+// The translation record a 번역 value states beside its sentence
+// (2026-11-24): from = the language translated from, via = the language of
+// an intermediate translation it was made from (absent: from the original
+// directly), by = who did what, in order. The sentence stays what the box
+// shows; the fields are what checks and lists read.
+const LANG_CODE = /^[a-z]{2,3}$/;
+const RECORD_ROLES = new Set(['translation', 'revision']);
+const TRANSLATION_KEYS = ['from', 'via', 'by'];
+
+function normalizeRecord(value, where) {
+    const out = {};
+    for (const key of ['from', 'via']) {
+        if (value[key] === undefined) continue;
+        if (typeof value[key] !== 'string' || !LANG_CODE.test(value[key])) throw badRequest(`${where}.${key} must be a language code (ISO 639, e.g. ru, de, zh)`);
+        out[key] = value[key];
+    }
+    if (out.via && !out.from) throw badRequest(`${where}.via needs from`);
+    if (out.via && out.via === out.from) throw badRequest(`${where}.via must differ from from`);
+    if (value.by !== undefined) {
+        if (!Array.isArray(value.by) || !value.by.length) throw badRequest(`${where}.by must be a non-empty list of { name, role, date? }`);
+        out.by = value.by.map((step, i) => {
+            const at = `${where}.by[${i}]`;
+            if (!isObject(step)) throw badRequest(`${at} must be { name, role, date? }`);
+            const unknown = Object.keys(step).filter(key => !['name', 'role', 'date'].includes(key));
+            if (unknown.length) throw badRequest(`${at} has unknown keys: ${unknown.join(', ')}`);
+            if (typeof step.name !== 'string' || !step.name.trim() || [...step.name].length > 60 || /[<>]/.test(step.name)) {
+                throw badRequest(`${at}.name must be plain text of at most 60 characters`);
+            }
+            if (!RECORD_ROLES.has(step.role)) throw badRequest(`${at}.role must be one of ${[...RECORD_ROLES].join(', ')}`);
+            const date = normalizeDate(step.date, at);
+            return { name: step.name.trim(), role: step.role, ...(date ? { date } : {}) };
+        });
+    }
+    return out;
+}
+
+// One value: a text, or { text, label?, date? } (a translation value also
+// from/via/by). Stored in the smallest form.
 function normalizeValue(value, field, where) {
     if (typeof value === 'string') {
         assertInline(value, where);
         return value.trim();
     }
     if (!isObject(value)) throw badRequest(`${where} must be text or { text, label${field.dated ? ', date' : ''} }`);
-    const allowedKeys = new Set(['text', 'label', ...(field.dated ? ['date'] : [])]);
+    const allowedKeys = new Set(['text', 'label', ...(field.dated ? ['date'] : []), ...(field.record ? TRANSLATION_KEYS : [])]);
     const unknown = Object.keys(value).filter(key => !allowedKeys.has(key));
     if (unknown.length) throw badRequest(`${where} has unknown keys: ${unknown.join(', ')}`);
     assertInline(value.text, `${where}.text`);
@@ -110,6 +148,7 @@ function normalizeValue(value, field, where) {
     }
     const date = normalizeDate(value.date, where);
     if (date) out.date = date;
+    if (field.record) Object.assign(out, normalizeRecord(value, where));
     return Object.keys(out).length === 1 ? out.text : out;
 }
 
