@@ -431,8 +431,9 @@
     // ---- 6. sharing ----
     // The bar's 공유 button copies the document's own address (no page, no
     // anchor). The strip that says so under the bar offers 「문단 골라 공유」:
-    // then every paragraph becomes the button, the one tapped is copied as
-    // …/docs/<id>?at=p-N and sharing turns off again. ✕, 공유 again or Esc
+    // then every paragraph and heading (and each contents entry) becomes the
+    // button, the one tapped is copied as …/docs/<id>?at=<its id> and
+    // sharing turns off again. ✕, 공유 again or Esc
     // closes the strip.
 
     function sharing() {
@@ -450,8 +451,18 @@
             if (!article || !start || !article.contains(start) || start.closest('.notes-list, .doc-toc, aside.doc-editorial')) return null;
             for (var el = start; el && el !== article; el = el.parentElement) {
                 if (/^(P|LI|BLOCKQUOTE)$/.test(el.tagName) && PARA.test(el.id)) return el;
+                if (/^H[1-3]$/.test(el.tagName) && el.id) return el;
             }
             return null;
+        }
+        function linkTo(id) {
+            return window.location.origin + window.location.pathname + '?at=' + encodeURIComponent(id);
+        }
+        function picked(id) {
+            copy(linkTo(id), function () {
+                root.classList.remove('doc-sharing');
+                show(strings.paragraphLinkCopied || '링크를 복사했습니다', [], 1600);
+            });
         }
         function button(text, action) {
             var b = document.createElement('button');
@@ -513,10 +524,19 @@
             if (!para) return;
             event.preventDefault();
             event.stopPropagation();
-            copy(window.location.origin + window.location.pathname + '?at=' + para.id, function () {
-                root.classList.remove('doc-sharing');
-                show(strings.paragraphLinkCopied || '문단 링크를 복사했습니다', [], 1600);
-            });
+            picked(para.id);
+        }, true);
+        // A contents entry while picking: its section's link instead of the
+        // jump (capture, before the panel's own click handler).
+        document.addEventListener('click', function (event) {
+            if (!root.classList.contains('doc-sharing')) return;
+            var entry = event.target.closest && event.target.closest('.doc-toc-nav a[href*="#"]');
+            if (!entry) return;
+            event.preventDefault();
+            event.stopPropagation();
+            var details = entry.closest('details');
+            if (details) details.open = false;
+            picked(decodeURIComponent(entry.getAttribute('href').split('#')[1]));
         }, true);
         document.addEventListener('keydown', function (event) { if (event.key === 'Escape' && strip) close(); });
     }

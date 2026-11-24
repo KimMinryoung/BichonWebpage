@@ -1414,11 +1414,15 @@
   color: var(--clr-cream);
 }
 
-.doc-sharing .book article [id^="p-"] {
+.doc-sharing .book article [id^="p-"],
+.doc-sharing .book article :is(h1, h2, h3)[id],
+.doc-sharing .doc-toc-nav a {
   cursor: pointer;
 }
 
-.doc-sharing .book article [id^="p-"]:hover {
+.doc-sharing .book article [id^="p-"]:hover,
+.doc-sharing .book article :is(h1, h2, h3)[id]:hover,
+.doc-sharing .doc-toc-nav a:hover {
   background: var(--bg-surface-hover);
   outline: 1px solid var(--border);
 }
@@ -1434,5 +1438,19 @@
   .doc-share,
   .doc-share-strip {
     display: none;
+  }
+}
+
+/* 좁은 화면의 바: 목차·검색·공유·원문 칸의 좌우 여백을 줄여 크럼의 문헌
+   제목에 폭을 돌려준다(공유 칸이 생긴 뒤 제목이 몇 글자밖에 안 남았다). */
+@media (max-width: 560px) {
+  .doc-toc summary,
+  .doc-share,
+  .doc-version-switch {
+    padding: 0 0.55rem;
+  }
+
+  .doc-toc summary {
+    gap: 0.25rem;
   }
 }
