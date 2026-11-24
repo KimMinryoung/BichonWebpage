@@ -102,13 +102,6 @@ document.addEventListener('submit', function(e) {
     }, true);
 })();
 
-// <details data-open-wide>: folded on a phone, open on a wide screen (the
-// contents list of an event page).
-(function() {
-    if (!window.matchMedia || !window.matchMedia('(min-width: 721px)').matches) return;
-    Array.prototype.forEach.call(document.querySelectorAll('details[data-open-wide]'), function(node) { node.open = true; });
-})();
-
 // Drag to scroll with a mouse: maps, the genealogy chart and the war boards.
 // A touch screen pans these boxes natively; a mouse had only the scrollbars,
 // which sit at the far edge of a tall drawing or are hidden altogether.

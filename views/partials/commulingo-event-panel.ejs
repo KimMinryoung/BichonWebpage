@@ -60,9 +60,7 @@ var sections = p.event.bodySections || [];
         <% } %>
         <% if (sections.length >= 3) { %>
         <nav class="commu-event-toc" aria-label="<%= strings.commuLingoViews.eventPanel.contents %>">
-            <%# Folded on a phone, where twelve rows stood between the summary
-                and the text; common.js opens it on a wide screen. %>
-            <details data-open-wide>
+            <details open>
             <summary class="commu-event-toc-head"><%= strings.commuLingoViews.eventPanel.contents %> <span class="commu-event-toc-count"><%= sections.length + 3 %></span></summary>
             <ol role="list">
                 <% sections.forEach(function(section) { %>
