@@ -149,3 +149,19 @@ console.log('commulingo-doc-bibliography: ok');
     // Only the translation field takes a record.
     assert.throws(() => B.normalizeBibliography({ parts: [{ scope: [{ text: 'x', from: 'ru' }] }] }), { status: 400 });
 }
+
+// A rights value states why the text may be published.
+{
+    const B = require('../../data/commulingo/doc-bibliography');
+    const ok = [{ text: 'PD', status: 'publicDomain', authorDied: 1924 }, { text: '공문서', status: 'notCopyrightable' },
+        { text: 'CC BY-SA', status: 'licensed', license: 'https://creativecommons.org/licenses/by-sa/4.0/' },
+        { text: '비숑 결정', status: 'ownerDecision', decided: [2026, 11, 15] }];
+    for (const rights of ok) assert.deepEqual(B.normalizeBibliography({ parts: [{ rights }] }).parts[0].rights, rights);
+    for (const rights of [{ text: 'x', status: 'free' }, { text: 'x', authorDied: 1900 }, { text: 'x', status: 'licensed' },
+        { text: 'x', status: 'notCopyrightable', authorDied: 1900 }, { text: 'x', status: 'publicDomain', decided: [2026] }]) {
+        assert.throws(() => B.normalizeBibliography({ parts: [{ rights }] }), { status: 400 }, JSON.stringify(rights));
+    }
+    const ld = B.documentJsonLd({ rights: ok[2] }, { title: 't', url: 'u', inLanguage: 'ko' });
+    assert.equal(ld.license, 'https://creativecommons.org/licenses/by-sa/4.0/');
+    assert.equal(ld.copyrightNotice, 'CC BY-SA');
+}

@@ -36,7 +36,8 @@ const FIELDS = [
     { key: 'translatorNotes', ko: '옮긴이 일러두기', en: "Translator's notes", list: true },
     // An original's own editing (spelling kept, marks, OCR corrections).
     { key: 'editing', ko: '편집', en: 'Editing', list: true },
-    { key: 'rights', ko: '저작권', en: 'Rights' },
+    // A rights value may also state its status as fields (RIGHTS_KEYS).
+    { key: 'rights', ko: '저작권', en: 'Rights', rights: true },
 ];
 const FIELD = new Map(FIELDS.map(field => [field.key, field]));
 // On a published original's page the same fields describe the original text.
@@ -127,15 +128,52 @@ function normalizeRecord(value, where) {
     return out;
 }
 
+// The status a 저작권 value states beside its sentence (2026-11-24): why the
+// text may be published. publicDomain = the term ran out (authorDied: the
+// year it counts from, when it is a death); notCopyrightable = a statute,
+// treaty or official document; licensed = an open licence (license: its
+// URL); permission = the holder allowed it; ownerDecision = published on
+// 비숑's decision whatever the term (decided: the day), e.g. party documents,
+// declarations and Mao's writings (2026-11-15) or 1988-89 Soviet articles.
+const RIGHTS_STATUS = new Set(['publicDomain', 'notCopyrightable', 'licensed', 'permission', 'ownerDecision']);
+const RIGHTS_KEYS = ['status', 'authorDied', 'license', 'decided'];
+
+function normalizeRights(value, where) {
+    if (value.status === undefined) {
+        if (RIGHTS_KEYS.some(key => value[key] !== undefined)) throw badRequest(`${where} needs status with ${RIGHTS_KEYS.slice(1).join('/')}`);
+        return {};
+    }
+    if (!RIGHTS_STATUS.has(value.status)) throw badRequest(`${where}.status must be one of ${[...RIGHTS_STATUS].join(', ')}`);
+    const out = { status: value.status };
+    if (value.authorDied !== undefined) {
+        if (value.status !== 'publicDomain' || !Number.isInteger(value.authorDied) || value.authorDied < 1 || value.authorDied > 2100) {
+            throw badRequest(`${where}.authorDied is a year, for publicDomain`);
+        }
+        out.authorDied = value.authorDied;
+    }
+    if (value.license !== undefined) {
+        if (value.status !== 'licensed' || typeof value.license !== 'string' || !/^https?:\/\/\S+$/.test(value.license)) {
+            throw badRequest(`${where}.license is the licence URL, for licensed`);
+        }
+        out.license = value.license;
+    }
+    if (value.status === 'licensed' && !out.license) throw badRequest(`${where}: licensed needs license (its URL)`);
+    if (value.decided !== undefined) {
+        if (value.status !== 'ownerDecision') throw badRequest(`${where}.decided is for ownerDecision`);
+        out.decided = normalizeDate(value.decided, `${where}.decided`.replace(/\.decided$/, ''));
+    }
+    return out;
+}
+
 // One value: a text, or { text, label?, date? } (a translation value also
-// from/via/by). Stored in the smallest form.
+// from/via/by, a rights value status/…). Stored in the smallest form.
 function normalizeValue(value, field, where) {
     if (typeof value === 'string') {
         assertInline(value, where);
         return value.trim();
     }
     if (!isObject(value)) throw badRequest(`${where} must be text or { text, label${field.dated ? ', date' : ''} }`);
-    const allowedKeys = new Set(['text', 'label', ...(field.dated ? ['date'] : []), ...(field.record ? TRANSLATION_KEYS : [])]);
+    const allowedKeys = new Set(['text', 'label', ...(field.dated ? ['date'] : []), ...(field.record ? TRANSLATION_KEYS : []), ...(field.rights ? RIGHTS_KEYS : [])]);
     const unknown = Object.keys(value).filter(key => !allowedKeys.has(key));
     if (unknown.length) throw badRequest(`${where} has unknown keys: ${unknown.join(', ')}`);
     assertInline(value.text, `${where}.text`);
@@ -149,6 +187,7 @@ function normalizeValue(value, field, where) {
     const date = normalizeDate(value.date, where);
     if (date) out.date = date;
     if (field.record) Object.assign(out, normalizeRecord(value, where));
+    if (field.rights) Object.assign(out, normalizeRights(value, where));
     return Object.keys(out).length === 1 ? out.text : out;
 }
 
@@ -335,6 +374,7 @@ function documentJsonLd(part, { title, description, url, inLanguage, other = nul
         if (published) data.datePublished = published;
         const rights = plain(part.rights);
         if (rights) data.copyrightNotice = rights;
+        if (part.rights?.license) data.license = part.rights.license;
     }
     if (publisherId) data.publisher = { '@id': publisherId };
     if (other) data[isOriginal ? 'workTranslation' : 'translationOfWork'] = { '@type': 'CreativeWork', url: other.url, inLanguage: other.inLanguage };
