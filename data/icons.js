@@ -4,7 +4,7 @@
 // for CommuLingo role and tab icons) and views/partials/menu-icon.ejs (for the
 // top nav, home cards and footer). Six were byte-identical under two names:
 // quiz/circle-help, people/user, events/flag, terms/book-open, reports/chart,
-// docs/landmark. Nothing kept them in step, so on 2026-08-02 a 참고 문헌 icon
+// docs/landmark (scroll-text since 2026-11-24). Nothing kept them in step, so on 2026-08-02 a 참고 문헌 icon
 // was drawn fresh for the home card while the CommuLingo tab for the same
 // destination already had one, and the two disagreed in production.
 //
@@ -156,7 +156,7 @@ const MENU_ALIASES = {
     events: 'flag',
     terms: 'book-open',
     reports: 'chart',
-    docs: 'landmark',
+    docs: 'scroll-text',
 };
 
 function iconPaths(name) {

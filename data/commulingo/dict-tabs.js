@@ -18,7 +18,7 @@ function dictTabs(en) {
           label: en ? 'Glossary' : '용어 사전', short: en ? 'Terms' : '용어' },
         { key: 'genealogy', href: '/commulingo/genealogy', icon: 'git-branch',
           label: en ? 'Genealogy' : '계보도', short: en ? 'Charts' : '계보' },
-        { key: 'docs', href: '/commulingo/docs', icon: 'landmark',
+        { key: 'docs', href: '/commulingo/docs', icon: 'scroll-text',
           label: en ? 'References' : '참고 문헌', short: en ? 'Refs' : '문헌', menu: 'commulingo.docs' },
     ];
     return en ? tabs.filter(tab => !tab.menu || menuHasEnglish(tab.menu)) : tabs;
