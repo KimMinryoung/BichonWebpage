@@ -437,6 +437,11 @@
         var shownFor = null;
         var resetTimer = null;
         var label = strings.copyParagraphLink || '이 문단 링크 복사';
+        // A touch screen sends emulated mouse events around a tap (a
+        // mouseleave right after it, say), which would hide the button just
+        // shown: hover only counts for a real mouse.
+        var touch = window.matchMedia && window.matchMedia('(hover: none)').matches;
+        document.addEventListener('pointerdown', function (event) { touch = event.pointerType !== 'mouse'; }, true);
 
         // The innermost block (a quotation's own paragraph, not the
         // quotation); none in the notes, the contents or the 해제 box.
@@ -458,7 +463,7 @@
                 button.type = 'button';
                 button.className = 'doc-para-link';
                 button.addEventListener('click', copy);
-                button.addEventListener('mouseleave', function (event) { if (!paragraphOf(event.relatedTarget)) hide(); });
+                button.addEventListener('mouseleave', function (event) { if (!touch && !paragraphOf(event.relatedTarget)) hide(); });
                 document.body.appendChild(button);
             }
             if (resetTimer) { clearTimeout(resetTimer); resetTimer = null; }
@@ -491,11 +496,12 @@
             }
         }
         article.addEventListener('mouseover', function (event) {
+            if (touch) return;
             var para = paragraphOf(event.target);
             if (para && para !== shownFor) show(para);
         });
         article.addEventListener('mouseleave', function (event) {
-            if (event.relatedTarget !== button) hide();
+            if (!touch && event.relatedTarget !== button) hide();
         });
         // A tap on the text (not on a link, a note number or a selection).
         article.addEventListener('click', function (event) {
