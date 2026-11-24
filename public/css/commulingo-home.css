@@ -381,7 +381,6 @@
     padding: 18px 18px 0;
     gap: 12px;
 }
-/* 제목 오른쪽의 공산링고 아이콘(상단 메뉴와 같은 그림, 2026-11-24). */
 .commulingo-home .commulingo-hero-icon {
     flex: 0 0 auto;
     width: 2.25rem;
