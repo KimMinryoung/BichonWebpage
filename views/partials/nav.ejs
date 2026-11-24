@@ -73,10 +73,13 @@ const _navCur = (prefixes) => {
     return hit ? ' aria-current="page"' : '';
 };
 const _libraryPaths = ['/reports', '/hub', '/ai-diary', '/posts', '/post', '/novels', '/p'];
-// The game stays out of the primary nav on purpose — it lives as a footer icon and as the last home card.
+// 게임 joined the primary nav on 2026-11-24 (before, it was only a footer icon
+// and the last home card, and readers inside the site could not find it).
+// Korean only, as the games are (menuShown, config/menu-languages.js).
 const _navItems = [
     { key: 'chat', href: '/chat', label: strings.nav.chat, cur: _navCur(['/chat']) },
     { key: 'commulingo', href: '/commulingo', label: strings.nav.commuLingo, cur: _navCur(['/commulingo']) },
+    ...(menuShown('games') ? [{ key: 'game', href: '/games/', label: strings.nav.game, cur: _navCur(['/games']) }] : []),
     { key: 'library', href: '/reports', label: strings.nav.library, cur: _navCur(_libraryPaths) },
 ];
 %>
