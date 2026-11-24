@@ -118,6 +118,19 @@ router.get('/:docId/search', async (req, res) => {
     }
 });
 
+// The id → page map the reader page carries for its anchor hop, without the
+// paragraph ids (p-N): a long document has thousands, and a paragraph link
+// arrives through ?at= instead, which the route resolves (renderDoc).
+const readerPageMaps = new WeakMap();
+function pageMapForReader(paged) {
+    let map = readerPageMaps.get(paged);
+    if (!map) {
+        map = Object.fromEntries(Object.entries(paged.idToPage).filter(([id]) => !/^p-\d+$/.test(id)));
+        readerPageMaps.set(paged, map);
+    }
+    return map;
+}
+
 // One reader page: the translation, or its published original (original = { lang }).
 // In English the original is the document's page (/en/commulingo/docs/<id>);
 // a document without a published original still opens there in Korean, kept
@@ -185,6 +198,15 @@ async function renderDoc(req, res, raw, original) {
     // Course chapters that read this document.
     doc.courses = courseChaptersForDoc(docId, lang);
     const { html, toc, paged } = content;
+    // A paragraph link (?at=p-N, the reader's 「문단 링크 복사」) goes to the
+    // page that holds that id now, so the link outlives a repagination. An
+    // id the version does not have lands on its first page.
+    if (typeof req.query.at === 'string') {
+        const at = /^[A-Za-z0-9_-]{1,80}$/.test(req.query.at) ? req.query.at : '';
+        const page = !at ? 0 : paged ? paged.idToPage[at] || 0 : (html.includes(`id="${at}"`) ? 1 : 0);
+        const base = seo.languagePath(pagePath, res.locals.urlLanguage);
+        return res.redirect(302, !page ? base : page > 1 ? `${base}?p=${page}#${at}` : `${base}#${at}`);
+    }
     setShortPublicCache(res);
 
     // Long documents read page by page along the TOC (docs-store decides);
@@ -212,7 +234,7 @@ async function renderDoc(req, res, raw, original) {
                 prevHeading: current > 1 ? pageLabel(paged.pages[current - 2]) : '',
                 nextHeading: current < total ? pageLabel(paged.pages[current]) : '',
             },
-            idToPage: paged.idToPage,
+            idToPage: pageMapForReader(paged),
             pagePath,
             docLang,
             switchTo,

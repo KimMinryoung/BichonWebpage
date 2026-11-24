@@ -116,6 +116,7 @@ const { readSpecJson } = require('../../mcp/spec');
     await assert.rejects(tool('doc_put').handler({ id: 'd', original: { lang: 'de', body: '<p>x</p>' }, removeOriginal: true }, ctx), /original or removeOriginal/);
     await assert.rejects(tool('doc_put').handler({ id: 'd', original: { lang: 'de', body: '<p>x</p>', bodyPath: 'content/x.html' } }, ctx), /original.body or original.bodyPath/);
     await assert.rejects(tool('doc_entries_patch').handler({ patchesPath: 'content/no-such-job/patches.json' }, ctx));
+    assert.ok(tool('docs_freeze_ids'), 'docs_freeze_ids is registered');
     await assert.rejects(tool('editorial_store').handler({ command: 'submit', target: 'term', request: { id: 'x', action: 'create', directApply: true, fields: {} }, changedBy: 'bad actor' }, ctx), /changedBy/);
     await assert.rejects(tool('sql_read').handler({ sql: 'DELETE FROM commulingo_people' }, ctx), /must start with SELECT/);
     await assert.rejects(tool('sql_read').handler({ sql: 'SELECT 1', params: [{}] }, ctx), /scalars/);

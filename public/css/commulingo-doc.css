@@ -1314,3 +1314,38 @@
 .doc-version-switch:hover {
   color: var(--link);
 }
+
+/* Paragraph links (commulingo-doc.js, 6): the button the reader shows beside
+   the paragraph pointed at or tapped, and the landing spot of ?at=p-N below
+   the sticky contents bar, as headings and notes have. */
+.book [id^="p-"] {
+  scroll-margin-top: 3rem;
+}
+
+.doc-para-link {
+  position: absolute;
+  z-index: 20;
+  min-width: 1.75rem;
+  min-height: 1.75rem;
+  padding: 0 0.3rem;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  font: inherit;
+  font-size: var(--text-sm);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.doc-para-link:hover,
+.doc-para-link:focus-visible {
+  background: var(--accent);
+  color: var(--clr-cream);
+}
+
+@media print {
+  .doc-para-link {
+    display: none;
+  }
+}

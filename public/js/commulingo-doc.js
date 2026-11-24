@@ -38,6 +38,12 @@
 //    from there, and reaching the end of the last page forgets it. The
 //    library list marks the documents being read (commulingo-docs-list.js).
 //    Per browser only: nothing is sent anywhere.
+//
+// 6. Paragraph links. Each paragraph, list item and quotation carries a
+//    stored id (p-N, doc-structure.js freezeBlockIds). Pointing at one (or
+//    tapping it, on a touch screen) shows a button beside it that copies
+//    …/docs/<id>?at=p-N; the route sends that address to the page holding
+//    the paragraph, so the link survives a repagination.
 (function () {
     var book = document.querySelector('main.book');
     if (!book) return;
@@ -421,12 +427,97 @@
         window.addEventListener('pagehide', function () { if (scrolled) record(); });
     }
 
+    // ---- 6. paragraph links ----
+
+    function paragraphLinks() {
+        var article = book.querySelector('article');
+        if (!article) return;
+        var PARA = /^p-\d+$/;
+        var button = null;
+        var shownFor = null;
+        var resetTimer = null;
+        var label = strings.copyParagraphLink || '이 문단 링크 복사';
+
+        // The innermost block (a quotation's own paragraph, not the
+        // quotation); none in the notes, the contents or the 해제 box.
+        function paragraphOf(node) {
+            var start = node && node.nodeType === 1 ? node : node && node.parentElement;
+            if (!start || !article.contains(start) || start.closest('.notes-list, .doc-toc, aside.doc-editorial')) return null;
+            for (var el = start; el && el !== article; el = el.parentElement) {
+                if (/^(P|LI|BLOCKQUOTE)$/.test(el.tagName) && PARA.test(el.id)) return el;
+            }
+            return null;
+        }
+        function hide() {
+            if (button) button.hidden = true;
+            shownFor = null;
+        }
+        function show(para) {
+            if (!button) {
+                button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'doc-para-link';
+                button.addEventListener('click', copy);
+                button.addEventListener('mouseleave', function (event) { if (!paragraphOf(event.relatedTarget)) hide(); });
+                document.body.appendChild(button);
+            }
+            if (resetTimer) { clearTimeout(resetTimer); resetTimer = null; }
+            button.textContent = '¶';
+            button.setAttribute('aria-label', label);
+            button.title = label;
+            button.hidden = false;
+            shownFor = para;
+            var rect = para.getBoundingClientRect();
+            var size = button.offsetWidth || 28;
+            // In the margin when there is room, else just above the block's start.
+            var left = rect.left - size - 6;
+            var top = rect.top + window.scrollY;
+            if (left < 2) { left = rect.left; top -= size; }
+            button.style.left = left + window.scrollX + 'px';
+            button.style.top = top + 'px';
+        }
+        function copy() {
+            if (!shownFor) return;
+            var url = window.location.origin + window.location.pathname + '?at=' + shownFor.id;
+            var done = function () {
+                button.textContent = '✓';
+                button.setAttribute('aria-label', strings.paragraphLinkCopied || '링크를 복사했습니다');
+                resetTimer = setTimeout(hide, 1200);
+            };
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(url).then(done, function () { window.prompt(label, url); });
+            } else {
+                window.prompt(label, url);
+            }
+        }
+        article.addEventListener('mouseover', function (event) {
+            var para = paragraphOf(event.target);
+            if (para && para !== shownFor) show(para);
+        });
+        article.addEventListener('mouseleave', function (event) {
+            if (event.relatedTarget !== button) hide();
+        });
+        // A tap on the text (not on a link, a note number or a selection).
+        article.addEventListener('click', function (event) {
+            if (event.target.closest('a, button, summary, input')) return;
+            var selection = window.getSelection && window.getSelection();
+            if (selection && !selection.isCollapsed) return;
+            var para = paragraphOf(event.target);
+            if (para) show(para); else hide();
+        });
+        document.addEventListener('click', function (event) {
+            if (button && !button.hidden && !article.contains(event.target) && event.target !== button) hide();
+        });
+        window.addEventListener('resize', hide);
+    }
+
     function ready() {
         popovers();
         contentsPanel();
         fullTitle();
         versionSwitch();
         readingPosition();
+        paragraphLinks();
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready);
     else ready();

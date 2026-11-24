@@ -334,6 +334,61 @@ const tools = [
     },
     {
         scope: 'edit',
+        name: 'docs_freeze_ids',
+        description: 'Give stored reference documents (translations and their originals) the ids a write now stores — h1-h3 sec-N/sub-N and '
+            + 'paragraph p-N on p, li and blockquote outside footnote lists — by re-saving their bodies unchanged otherwise. Picks up to limit '
+            + 'documents that still lack them (or the given ids), in one transaction. dryRun defaults to true. Returns what was written and how many remain.',
+        inputSchema: object({
+            ids: arr('Document ids to do (default: the next ones that still lack paragraph ids)', 40),
+            limit: int('How many documents per call (default 20)', 1, 40),
+            dryRun: dryRunArg,
+            note: noteArg,
+            changedBy,
+        }, []),
+        audit: ({ dryRun, changedBy: actor }, client) => ({ command: dryRun === false ? 'apply' : 'dry-run', targetType: 'doc', targetId: 'freeze-ids', actor: actor || `mcp:${client}` }),
+        async handler({ ids, limit = 20, dryRun = true, note, changedBy: given }, { client }) {
+            const { writeDocs, storedEntry } = require('../../data/commulingo/docs-db');
+            const { freezeIds } = require('../../data/commulingo/doc-structure');
+            // A body that has no p-N yet; one that has nothing to number stays
+            // a candidate but is skipped below.
+            const lacking = "body !~ 'id=\"p-[0-9]+\"'";
+            const docRows = ids?.length
+                ? (await db.query('SELECT id, entry, body, revision FROM commulingo_docs WHERE id = ANY($1) ORDER BY id', [ids])).rows
+                : (await db.query(`SELECT id, entry, body, revision FROM commulingo_docs WHERE ${lacking} ORDER BY id`)).rows;
+            const originalRows = ids?.length
+                ? (await db.query('SELECT * FROM commulingo_doc_originals WHERE doc_id = ANY($1) ORDER BY doc_id', [ids])).rows
+                : (await db.query(`SELECT * FROM commulingo_doc_originals WHERE ${lacking} ORDER BY doc_id`)).rows;
+            const upserts = [];
+            const originals = { set: [], remove: [] };
+            const take = new Set();
+            for (const row of docRows) {
+                if (take.size >= limit && !take.has(row.id)) continue;
+                if (freezeIds(row.body) === row.body) continue;
+                take.add(row.id);
+                upserts.push({ id: row.id, entry: storedEntry(row.entry), body: row.body, expectedRevision: row.revision });
+            }
+            for (const row of originalRows) {
+                if (take.size >= limit && !take.has(row.doc_id)) continue;
+                if (freezeIds(row.body) === row.body) continue;
+                take.add(row.doc_id);
+                originals.set.push({ docId: row.doc_id, lang: row.lang, body: row.body, public: row.public, rights: row.rights,
+                    bibliography: row.bibliography, expectedRevision: row.revision });
+            }
+            const pending = new Set([...docRows.map(row => row.id), ...originalRows.map(row => row.doc_id)]);
+            if (!upserts.length && !originals.set.length) return { dryRun, written: { docs: [], originals: [] }, remaining: 0 };
+            const actor = actorOf(given, client);
+            const result = await inTransaction(dryRun, c => writeDocs({ upserts, originals },
+                { actor, note: note || 'mcp docs_freeze_ids', client: c }));
+            if (!dryRun) await require('../../data/commulingo/docs-store').refreshCommuLingoDocs();
+            const bytes = upserts.reduce((sum, item) => sum + Buffer.byteLength(freezeIds(item.body)) - Buffer.byteLength(item.body), 0)
+                + originals.set.reduce((sum, item) => sum + Buffer.byteLength(freezeIds(item.body)) - Buffer.byteLength(item.body), 0);
+            const refused = (result.structure || []).filter(report => report.errors?.length);
+            return { dryRun, written: result.written, addedBytes: bytes, refused, remaining: Math.max(0, pending.size - take.size) };
+        },
+        summarize: value => ({ dryRun: value.dryRun, written: value.written, remaining: value.remaining }),
+    },
+    {
+        scope: 'edit',
         name: 'doc_delete',
         description: 'Delete one reference document (its revisions stay, so doc_restore can bring it back). Needs expectedRevision from '
             + 'doc_get. dryRun defaults to true.',

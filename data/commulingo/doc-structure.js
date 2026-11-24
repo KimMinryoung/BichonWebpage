@@ -87,6 +87,41 @@ function freezeHeadingIds(html) {
     });
 }
 
+// Paragraph links (2026-11-24): every p, li and blockquote without an id gets
+// a stored `p-N` at save time, numbered on from the highest p-N the body
+// already has, so a paragraph keeps its number when others are added before
+// it. A link to one is /commulingo/docs/<id>?at=p-N (the route sends it to
+// the page that holds it, whatever the pagination by then).
+function freezeBlockIds(html) {
+    if (typeof html !== 'string' || !html) return html;
+    const used = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));
+    let n = 0;
+    for (const id of used) {
+        const m = id.match(/^p-(\d+)$/);
+        if (m) n = Math.max(n, Number(m[1]));
+    }
+    const give = text => text.replace(/<(p|li|blockquote)(\s[^>]*)?>/g, (tag, name, attrs = '') => {
+        if (/\bid="[^"]*"/.test(attrs)) return tag;
+        do n++; while (used.has(`p-${n}`));
+        used.add(`p-${n}`);
+        return `<${name} id="p-${n}"${attrs}>`;
+    });
+    // Footnote lists are left alone: a note is linked by its own id, and the
+    // reader reads a note's number off its id (labelNotes), so a p-N there
+    // would show as note N.
+    const NOTES = /<ol\b[^>]*\bnotes-list\b[^>]*>[\s\S]*?<\/ol>/g;
+    let out = '';
+    let last = 0;
+    for (const m of html.matchAll(NOTES)) {
+        out += give(html.slice(last, m.index)) + m[0];
+        last = m.index + m[0].length;
+    }
+    return out + give(html.slice(last));
+}
+
+// What a write stores: heading ids, then paragraph ids.
+const freezeIds = html => freezeBlockIds(freezeHeadingIds(html));
+
 // ── cutting blocks ──────────────────────────────────────────────────────────
 
 // [start, end) offsets of the outermost elements matching `predicate`.
@@ -280,6 +315,6 @@ function introducedErrors(before, after) {
 
 module.exports = {
     AUTO_ATTR, ERROR_CODES, WARNING_CODES,
-    freezeHeadingIds, inspectDocStructure, introducedErrors,
+    freezeHeadingIds, freezeBlockIds, freezeIds, inspectDocStructure, introducedErrors,
     blockRanges, removeBlocks, isNotesSection, isEditorial,
 };

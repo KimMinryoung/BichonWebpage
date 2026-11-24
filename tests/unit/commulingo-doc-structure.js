@@ -222,3 +222,21 @@ const ENTRY = { docLang: 'ko', title: { ko: '문헌' }, summary: { ko: '요약' 
     console.error(err);
     process.exit(1);
 });
+
+// Paragraph ids: p, li and blockquote get a stored p-N; a new paragraph takes
+// the next number, nothing moves; footnote lists are left alone.
+{
+    const { freezeBlockIds, freezeIds } = require('../../data/commulingo/doc-structure');
+    const body = '<article><h1>T</h1><p class="doc-byline">A</p><p id="keep">x</p><blockquote><p>q</p></blockquote>'
+        + '<ul><li>a</li></ul><section class="notes"><ol class="notes-list"><li id="note-1">n</li><li>m</li></ol></section></article>';
+    const frozen = freezeBlockIds(body);
+    assert.match(frozen, /<p id="p-1" class="doc-byline">A<\/p><p id="keep">x<\/p><blockquote id="p-2"><p id="p-3">q<\/p><\/blockquote><ul><li id="p-4">a<\/li>/);
+    assert.match(frozen, /<ol class="notes-list"><li id="note-1">n<\/li><li>m<\/li><\/ol>/, 'notes untouched');
+    assert.equal(freezeBlockIds(frozen), frozen, 'freezing twice changes nothing');
+    const edited = freezeBlockIds(frozen.replace('<p id="keep">', '<p>새 문단</p><p id="keep">'));
+    assert.match(edited, /<p id="p-5">새 문단<\/p><p id="keep">/);
+    assert.match(edited, /<blockquote id="p-2">/);
+    assert.match(freezeIds('<article><h1>T</h1><h2>가</h2><p>b</p></article>'), /<h2 id="sec-1" data-auto-id>가<\/h2><p id="p-1">b<\/p>/);
+    const { sanitizeDocHtml } = require('../../data/commulingo/doc-sanitize');
+    assert.equal(sanitizeDocHtml(frozen), frozen, 'the sanitizer keeps paragraph ids');
+}

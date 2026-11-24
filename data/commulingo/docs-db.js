@@ -17,7 +17,7 @@ const db = require('../../config/database');
 const { transaction } = require('../../utils/db-transaction');
 const { normalizeKoreanQuotesHtml } = require('./korean-quotes');
 const { sanitizeDocHtml } = require('./doc-sanitize');
-const { freezeHeadingIds, inspectDocStructure, introducedErrors } = require('./doc-structure');
+const { freezeHeadingIds, freezeIds, inspectDocStructure, introducedErrors } = require('./doc-structure');
 const { entryRefs } = require('./doc-entry');
 const { buildOutline, outlineFits } = require('./doc-outline');
 
@@ -166,7 +166,7 @@ async function writeOriginal(c, item, actor, note, structureReports) {
     if (item.expectedRevision !== undefined && (current ? current.revision : 0) !== item.expectedRevision) {
         throw badRequest(`${docId}: original expected revision ${item.expectedRevision}, found ${current ? current.revision : 'none'}`, 409);
     }
-    const body = freezeHeadingIds(incomingBody(item.body, current?.body_sha256));
+    const body = freezeIds(incomingBody(item.body, current?.body_sha256));
     const bodySha = sha256(body);
     const entry = (await c.query('SELECT entry FROM commulingo_docs WHERE id = $1', [docId])).rows[0]?.entry;
     if (!current || current.body_sha256 !== bodySha) {
@@ -252,7 +252,7 @@ async function writeDocs(changes, { actor, note, client, allowStructureIssues = 
             if (item.body !== undefined) {
                 // Korean documents follow the NIKL quote rules (korean-quotes.js).
                 const normalized = (entry.docLang || 'ko') === 'ko' ? normalizeKoreanQuotesHtml(item.body) : item.body;
-                body = freezeHeadingIds(incomingBody(normalized, current?.body_sha256));
+                body = freezeIds(incomingBody(normalized, current?.body_sha256));
                 if (!body.trim()) throw badRequest(`${item.id}: body must be non-empty html`);
             }
             const entryChanged = Boolean(current) && !sameStoredEntry(item.id, entry, current.entry, canonicalizeEntries);

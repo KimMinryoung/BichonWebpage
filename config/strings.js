@@ -435,6 +435,8 @@ const ko = {
             resume: '{page}쪽 「{heading}」부터 이어 읽기',
             resumePage: '{page}쪽부터 이어 읽기',
             resumeHeading: '「{heading}」부터 이어 읽기',
+            copyParagraphLink: '이 문단 링크 복사',
+            paragraphLinkCopied: '링크를 복사했습니다',
             resumeDismiss: '이어 읽기 알림 닫기',
             // Read by public/js/commulingo-doc-search.js; {n}, {total}, {pages}, {page} are filled there.
             searchUi: {
@@ -1177,6 +1179,8 @@ const en = {
             resume: 'Continue from page {page}, “{heading}”',
             resumePage: 'Continue from page {page}',
             resumeHeading: 'Continue from “{heading}”',
+            copyParagraphLink: 'Copy a link to this paragraph',
+            paragraphLinkCopied: 'Link copied',
             resumeDismiss: 'Dismiss',
             searchUi: {
                 label: 'Search',
