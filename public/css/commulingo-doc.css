@@ -448,6 +448,27 @@
   }
 }
 
+/* 리더 바의 집 아이콘은 바 왼쪽 끝에 붙인다. 크럼 기본값(왼쪽 14~16px)으로는
+   아이콘 하나가 35px를 차지해, 문헌 제목 칸이 그만큼 좁아졌다(2026-11-24). */
+.doc-toc .commu-crumb-home {
+  padding-left: 14px;
+  padding-right: 4px;
+}
+
+@media (max-width: 560px) {
+  .doc-toc .commu-crumb {
+    column-gap: 4px;
+  }
+
+  .doc-toc .commu-crumb-home {
+    padding-left: 8px;
+  }
+
+  .doc-toc .commu-crumb-iconed {
+    padding-inline: 4px;
+  }
+}
+
 /* 잘린 제목은 누르면 바 바로 아래 띠에 전체가 펼쳐진다(commulingo-doc.js의
    fullTitle). 목차 패널과 같은 자리·같은 테두리로 붙고, 띠를 눌러도 닫힌다. */
 .doc-toc .commu-crumb-current.is-expandable {
