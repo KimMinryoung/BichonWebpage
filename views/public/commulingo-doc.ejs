@@ -51,7 +51,7 @@
 <%- include('../partials/nav', { showSkipLink: false }) %>
 <% var en = lang === 'en'; %>
 <%# 리더의 스크립트(public/js/commulingo-doc.js)가 읽는 문자열: 주석·인물명 팝오버, 이어 읽기. %>
-<main class="book" data-doc-strings="<%= JSON.stringify({ note: strings.commuLingoViews.doc.note, seeInNotes: strings.commuLingoViews.doc.seeInNotes, historicalFigure: strings.commuLingoViews.doc.historicalFigure, resume: strings.commuLingoViews.doc.resume, resumePage: strings.commuLingoViews.doc.resumePage, resumeHeading: strings.commuLingoViews.doc.resumeHeading, copyParagraphLink: strings.commuLingoViews.doc.copyParagraphLink, paragraphLinkCopied: strings.commuLingoViews.doc.paragraphLinkCopied }) %>">
+<main class="book" data-doc-strings="<%= JSON.stringify({ note: strings.commuLingoViews.doc.note, seeInNotes: strings.commuLingoViews.doc.seeInNotes, historicalFigure: strings.commuLingoViews.doc.historicalFigure, resume: strings.commuLingoViews.doc.resume, resumePage: strings.commuLingoViews.doc.resumePage, resumeHeading: strings.commuLingoViews.doc.resumeHeading, shareLink: strings.commuLingoViews.doc.shareLink, shareHint: strings.commuLingoViews.doc.shareHint, paragraphLinkCopied: strings.commuLingoViews.doc.paragraphLinkCopied, docLinkCopied: strings.commuLingoViews.doc.docLinkCopied, sharePickParagraph: strings.commuLingoViews.doc.sharePickParagraph, shareClose: strings.commuLingoViews.doc.shareClose }) %>">
 <%# 분할 문헌의 id → 쪽 지도. 앵커로 도착한 독자를 그 앵커가 있는 쪽으로 보내는 일은
     본문이 그려지기 전에 해야 하므로, 리더 스크립트는 여기서 동기로 싣는다(defer 없음).
     팝오버·목차·전환·이어 읽기는 그 스크립트 안에서 DOM이 준비된 뒤 돈다. %>
@@ -127,6 +127,8 @@ var tocHref = function(id) {
 <% } %>
 <%# 번역과 원문 사이를 오가는 칸. 원문이 공개된 문헌에만 있다(commulingo_doc_originals).
     원문 쪽에는 검색 칸이 없다 — 검색은 번역 본문을 뒤진다. %>
+<%# 공유: 문헌 주소를 복사하고, 뜨는 띠에서 문단 하나를 골라 공유할 수도 있다(commulingo-doc.js 6절). %>
+<button type="button" class="doc-share" aria-expanded="false" title="<%= strings.commuLingoViews.doc.shareLabel %>"><svg class="doc-share-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 15V3"></path><path d="m7 8 5-5 5 5"></path><path d="M5 12v9h14v-9"></path></svg><span><%= strings.commuLingoViews.doc.share %></span></button>
 <% if (switchTo) { %>
 <a class="doc-version-switch" href="<%= languageUrl(switchTo.href, urlLanguage === 'en' ? 'en' : 'ko') %>" lang="<%= lang %>" data-anchors="<%= JSON.stringify(switchTo.anchors) %>"><%= switchTo.original ? strings.commuLingoViews.doc.original : strings.commuLingoViews.doc.translation %></a>
 <% } %>

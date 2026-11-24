@@ -1315,37 +1315,124 @@
   color: var(--link);
 }
 
-/* Paragraph links (commulingo-doc.js, 6): the button the reader shows beside
-   the paragraph pointed at or tapped, and the landing spot of ?at=p-N below
-   the sticky contents bar, as headings and notes have. */
+/* Paragraph links (commulingo-doc.js, 6). The 공유 cell in the bar, the
+   hint strip under it while sharing (placed like the full-title strip), and
+   the paragraphs, which become the button only while sharing is on. ?at=p-N
+   lands below the sticky bar, as headings and notes do. */
 .book [id^="p-"] {
   scroll-margin-top: 3rem;
 }
 
-.doc-para-link {
-  position: absolute;
-  z-index: 20;
-  min-width: 1.75rem;
-  min-height: 1.75rem;
-  padding: 0 0.3rem;
-  border: 1px solid var(--border);
+.doc-share {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 1rem;
+  border: 0;
+  border-left: 1px solid var(--border);
   border-radius: 0;
-  background: var(--bg-surface);
-  color: var(--text-muted);
+  background: none;
   font: inherit;
-  font-size: var(--text-sm);
-  line-height: 1;
+  font-weight: 600;
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  white-space: nowrap;
   cursor: pointer;
 }
 
-.doc-para-link:hover,
-.doc-para-link:focus-visible {
+.doc-share:hover {
+  color: var(--link);
+}
+
+.doc-share[aria-expanded="true"] {
   background: var(--accent);
   color: var(--clr-cream);
 }
 
+.doc-share-icon {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 560px) {
+  .doc-share {
+    padding: 0 0.75rem;
+  }
+
+  .doc-share > span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+}
+
+.doc-share-strip {
+  position: absolute;
+  left: -1px;
+  right: -1px;
+  top: 100%;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.4rem 0.4rem 0.4rem 0.75rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  font-size: var(--text-base);
+  font-weight: 600;
+}
+
+.doc-share-strip > span {
+  flex: 1 1 auto;
+}
+
+.doc-share-strip button {
+  min-height: 2.2rem;
+  padding: 0 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  background: none;
+  color: var(--text-primary);
+  font: inherit;
+  cursor: pointer;
+}
+
+.doc-share-strip button:hover,
+.doc-share-strip button:focus-visible {
+  background: var(--accent);
+  color: var(--clr-cream);
+}
+
+.doc-sharing .book article [id^="p-"] {
+  cursor: pointer;
+}
+
+.doc-sharing .book article [id^="p-"]:hover {
+  background: var(--bg-surface-hover);
+  outline: 1px solid var(--border);
+}
+
+.doc-sharing .book article .notes-list [id^="p-"],
+.doc-sharing .book article .doc-editorial [id^="p-"] {
+  cursor: auto;
+  background: none;
+  outline: none;
+}
+
 @media print {
-  .doc-para-link {
+  .doc-share,
+  .doc-share-strip {
     display: none;
   }
 }
