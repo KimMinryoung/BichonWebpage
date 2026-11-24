@@ -272,6 +272,54 @@ const tools = [
     },
     {
         scope: 'edit',
+        name: 'doc_entries_patch',
+        description: 'Change top-level manifest entry keys of many reference documents in one transaction (all or none), bodies untouched. '
+            + 'patchesPath is a JSON file { "<docId>": { "revision": <doc_get revision>, "patch": { key: value | null } } }; null removes a key. '
+            + 'Each document passes the same entry validation and structure check as doc_put. dryRun defaults to true. Returns written '
+            + 'revisions and, per document, the person-link audit counts (an id added to people can link new mentions in the body).',
+        inputSchema: object({
+            patchesPath: { ...specPathArg, description: 'JSON file of { docId: { revision, patch } } (content/<path> or reviews/<path>)' },
+            allowStructureIssues: bool('Store even when the structure check finds a new error (say why in note)'),
+            dryRun: dryRunArg,
+            note: noteArg,
+            changedBy,
+        }, ['patchesPath']),
+        audit: ({ dryRun, changedBy: actor }, client) => ({ command: dryRun === false ? 'apply' : 'dry-run', targetType: 'doc', targetId: 'entries-patch', actor: actor || `mcp:${client}` }),
+        async handler({ patchesPath, allowStructureIssues, dryRun = true, note, changedBy: given }, { client }) {
+            const patches = readSpecJson(patchesPath);
+            if (!patches || typeof patches !== 'object' || Array.isArray(patches) || !Object.keys(patches).length) {
+                throw badRequest('patchesPath must hold { docId: { revision, patch } } with at least one document');
+            }
+            if (Object.keys(patches).length > 500) throw badRequest('at most 500 documents per call');
+            const { readDocRow, writeDocs, storedEntry } = require('../../data/commulingo/docs-db');
+            const { canonicalEntry } = require('../../data/commulingo/docs-import');
+            const upserts = [];
+            for (const [id, item] of Object.entries(patches)) {
+                if (!item || !Number.isInteger(item.revision) || !item.patch || typeof item.patch !== 'object' || Array.isArray(item.patch)) {
+                    throw badRequest(`${id}: needs { revision: integer, patch: { … } }`);
+                }
+                const row = await readDocRow(id);
+                if (!row) throw badRequest(`${id}: no such document`);
+                const next = { ...row.entry };
+                for (const [key, value] of Object.entries(item.patch)) {
+                    if (value === null) delete next[key];
+                    else next[key] = value;
+                }
+                canonicalEntry({ id, ...next });
+                upserts.push({ id, entry: storedEntry(next), expectedRevision: item.revision });
+            }
+            const actor = actorOf(given, client);
+            const result = await inTransaction(dryRun, c => writeDocs({ upserts, originals: { set: [], remove: [] } },
+                { actor, note: note || 'mcp doc_entries_patch', client: c, allowStructureIssues: allowStructureIssues === true }));
+            if (!dryRun) await require('../../data/commulingo/docs-store').refreshCommuLingoDocs();
+            result.linkAudits = (result.linkAudits || []).map(audit => ({ id: audit.id, mentions: (audit.mentions || []).length,
+                warnings: (audit.warnings || []).length }));
+            return { dryRun, ...result };
+        },
+        summarize: value => ({ dryRun: value.dryRun, written: value.written }),
+    },
+    {
+        scope: 'edit',
         name: 'doc_delete',
         description: 'Delete one reference document (its revisions stay, so doc_restore can bring it back). Needs expectedRevision from '
             + 'doc_get. dryRun defaults to true.',
