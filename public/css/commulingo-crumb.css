@@ -51,7 +51,8 @@ body.commulingo-page > .admin-bar {
     padding-left: 16px;
 }
 
-.commu-crumb-home .commu-role-icon {
+.commu-crumb-home .commu-role-icon,
+.commu-crumb-iconed .commu-role-icon {
     color: inherit;
     flex: 0 0 auto;
     height: 15px;
@@ -131,7 +132,8 @@ body.commulingo-page > .admin-bar {
         padding-left: 14px;
     }
 
-    .commu-crumb-home span {
+    .commu-crumb-home span,
+    .commu-crumb-iconed span {
         display: none;
     }
 
