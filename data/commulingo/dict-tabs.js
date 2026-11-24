@@ -10,11 +10,11 @@ function dictTabs(en) {
     const tabs = [
         { key: 'people', href: '/commulingo/people', icon: 'user',
           label: en ? 'People' : '인물 사전', short: en ? 'People' : '인물' },
-        { key: 'events', href: '/commulingo/events', icon: 'flag',
+        { key: 'events', href: '/commulingo/events', icon: 'history',
           label: en ? 'Historical events' : '역사 사건', short: en ? 'Events' : '사건' },
         { key: 'map', href: '/commulingo/map', icon: 'map',
           label: en ? 'World map' : '세계 지도', short: en ? 'Map' : '지도' },
-        { key: 'terms', href: '/commulingo/terms', icon: 'book-open',
+        { key: 'terms', href: '/commulingo/terms', icon: 'book-a',
           label: en ? 'Glossary' : '용어 사전', short: en ? 'Terms' : '용어' },
         { key: 'genealogy', href: '/commulingo/genealogy', icon: 'git-branch',
           label: en ? 'Genealogy' : '계보도', short: en ? 'Charts' : '계보' },

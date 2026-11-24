@@ -24,7 +24,7 @@
 // - town-hall, circle-a (MDI alpha-a-circle-outline): Pictogrammers Material
 // Design Icons (Apache-2.0), https://github.com/Templarian/MaterialDesign/blob/master/svg/
 // - stamp, users, hand-fist, glasses, sprout, chess-king, castle,
-// bell, unlink, vote, mic-off, map-pinned, rose, venus, refresh-cw: Lucide (MIT),
+// bell, unlink, vote, mic-off, map-pinned, rose, venus, refresh-cw, history, book-a: Lucide (MIT),
 // https://github.com/lucide-icons/lucide/blob/main/icons/
 // Everything else is Lucide (MIT) except `hammer-sickle-brush`, `yugoslav-torches` and
 // `fourth-international` (public-domain emblems, see their entries) and custom drawings: `fasces`,
@@ -34,6 +34,10 @@
 // figure matching the site portrait.
 
 const ICON_PATHS = {
+    // 용어 사전(2026-11-24, 펼친 책에서 바꿈).
+    'book-a': '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="m8 13 4-7 4 7"/><path d="M9.1 11h5.7"/>',
+    // 역사 사건(2026-11-24, 깃발에서 바꿈 — 깃발은 정당 지도부 직책 표시와 겹쳤다).
+    history: '<path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/><path d="M12 7v5l4 2"/>',
     eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
     shield: '<path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3v8Z"/>',
     star: '<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3L5.8 21 7 14.2 2 9.3l6.9-1L12 2Z"/>',
@@ -153,8 +157,8 @@ const ICON_PATHS = {
 const MENU_ALIASES = {
     learn: 'graduation-cap',
     people: 'user',
-    events: 'flag',
-    terms: 'book-open',
+    events: 'history',
+    terms: 'book-a',
     reports: 'chart',
     docs: 'scroll-text',
 };
