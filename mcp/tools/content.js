@@ -353,11 +353,11 @@ const tools = [
             // a candidate but is skipped below.
             const lacking = "body !~ 'id=\"p-[0-9]+\"'";
             const docRows = ids?.length
-                ? (await db.query('SELECT id, entry, body, revision FROM commulingo_docs WHERE id = ANY($1) ORDER BY id', [ids])).rows
-                : (await db.query(`SELECT id, entry, body, revision FROM commulingo_docs WHERE ${lacking} ORDER BY id`)).rows;
+                ? (await db().query('SELECT id, entry, body, revision FROM commulingo_docs WHERE id = ANY($1) ORDER BY id', [ids])).rows
+                : (await db().query(`SELECT id, entry, body, revision FROM commulingo_docs WHERE ${lacking} ORDER BY id`)).rows;
             const originalRows = ids?.length
-                ? (await db.query('SELECT * FROM commulingo_doc_originals WHERE doc_id = ANY($1) ORDER BY doc_id', [ids])).rows
-                : (await db.query(`SELECT * FROM commulingo_doc_originals WHERE ${lacking} ORDER BY doc_id`)).rows;
+                ? (await db().query('SELECT * FROM commulingo_doc_originals WHERE doc_id = ANY($1) ORDER BY doc_id', [ids])).rows
+                : (await db().query(`SELECT * FROM commulingo_doc_originals WHERE ${lacking} ORDER BY doc_id`)).rows;
             const upserts = [];
             const originals = { set: [], remove: [] };
             const take = new Set();
