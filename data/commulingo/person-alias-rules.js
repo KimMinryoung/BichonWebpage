@@ -7,6 +7,7 @@
 //     form belongs to `cyrillic`, not to the aliases.
 //   - No parentheses, quotes or labels such as 본명/필명 or "born": the alias is
 //     the name itself.
+//   - Not a Korean headword with its syllables apart (Park Chung-hee).
 //   - Not the headword, the headword with its patronymic, or the bare one-word
 //     family name — the dictionary already searches and links those.
 // Storage syntax (NFC, spaces, length, duplicates) stays in headword-validation.js.
@@ -33,11 +34,19 @@ function aliasProblem(alias, lang, names = {}) {
     const family = /\s/.test(names.family || '') ? '' : familyNameOf({ names: { family: names.family } });
     const own = [names.name, names.full, family].filter(Boolean);
     if (own.includes(value.trim())) return 'the headword and its bare family name are already searched and linked; do not repeat them as aliases';
+    if (lang === 'en' && names.joinedGiven && /[- ]/.test(value)
+        && joined(value) === joined(names.name)) {
+        return 'the headword with its syllables apart (Park Chung-hee) is computed by the linker and search; do not store it';
+    }
     return '';
 }
 
+function joined(value) {
+    return String(value || '').toLowerCase().replace(/[-\s]/g, '');
+}
+
 // names for one language: { name, family, full } where full is the display
-// form with the patronymic.
+// form with the patronymic; joinedGiven marks a Korean name (en only).
 function assertPersonAliases(aliases, namesByLang) {
     for (const lang of ['ko', 'en']) {
         for (const alias of (aliases && aliases[lang]) || []) {

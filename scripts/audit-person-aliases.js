@@ -8,6 +8,7 @@
 
 const { db } = require('./lib/bootstrap');
 const { aliasProblem } = require('../data/commulingo/person-alias-rules');
+const { requiresSurname } = require('../data/commulingo/native-script');
 const { composeFromParts, personName } = require('../data/commulingo/person-name');
 
 (async () => {
@@ -27,7 +28,7 @@ const { composeFromParts, personName } = require('../data/commulingo/person-name
             const family = row[`family_name_${lang}`] || '';
             const patronymic = row[`patronymic_${lang}`] || '';
             const full = composeFromParts(given, patronymic, family, lang, row.citizenship_code || '');
-            const problem = aliasProblem(row.alias, lang, { name: personName(row, lang), family, full });
+            const problem = aliasProblem(row.alias, lang, { name: personName(row, lang), family, full, joinedGiven: requiresSurname(row.citizenship_code || '') });
             if (problem) hits.push({ id: row.person_id, lang, alias: row.alias, problem });
         }
         if (process.argv.includes('--json')) console.log(JSON.stringify(hits));

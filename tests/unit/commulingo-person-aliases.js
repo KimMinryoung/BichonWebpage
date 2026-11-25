@@ -31,3 +31,9 @@ assert.equal(aliasProblem('Douglas Macarthur', 'en', { name: 'Douglas MacArthur'
 assert.equal(aliasProblem('Fayzulla Xoʻjayev', 'en', {}), '');
 for (const bad of ['born Ivashutich', 'Ioffe (birth name)', 'Генрих Эйхе', '山本五十六']) assert(aliasProblem(bad, 'en', {}), bad);
 console.log('ok person alias rules');
+
+// A Korean headword with its syllables apart is computed, not stored.
+const park = { name: 'Park Chunghee', family: 'Park', full: 'Park Chunghee', joinedGiven: true };
+assert.match(aliasProblem('Park Chung-hee', 'en', park), /syllables apart/);
+assert.equal(aliasProblem('Pak Chŏng-hŭi', 'en', park), '');
+assert.equal(aliasProblem('Park Chung-hee', 'en', { ...park, joinedGiven: false }), '');

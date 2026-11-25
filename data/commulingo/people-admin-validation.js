@@ -131,7 +131,13 @@ function familyFirstPartsProblem(partsKo, partsEn, citizenshipCode) {
     if (requiresSurname(citizenshipCode) && !partsKo.given) {
         return `'${citizenshipCode}' names have a surname: "${partsKo.family}" / "${partsEn.family}" has no `
             + 'given part — send givenName and familyName for both languages '
-            + '(허가이: familyName {ko: "허", en: "Ho"}, givenName {ko: "가이", en: "Ka-i"})';
+            + '(허가이: familyName {ko: "허", en: "Ho"}, givenName {ko: "가이", en: "Kai"})';
+    }
+    // Korean given names are written joined in English (owner, 2026-11-25). A
+    // space stays where the Korean name has one too (a baptismal name).
+    if (requiresSurname(citizenshipCode) && /\p{L}[-‐–— ]\p{L}/u.test(partsEn.given) && !/\s/.test(partsKo.given)) {
+        return `givenName.en "${partsEn.given}": Korean given names are written joined, without hyphen or space `
+            + '(Park Chunghee, Kim Ilsung); do not add the separated form as an alias, the linker and search compute it';
     }
     return '';
 }

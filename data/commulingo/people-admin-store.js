@@ -9,6 +9,7 @@ const { assertAliases, assertPersonHeadwords } = require('./headword-validation'
 const db = require('../../config/database');
 const { normalizeFateLabel } = require('./people-standard');
 const { composeFromParts, personName, personNames } = require('./person-name');
+const { requiresSurname } = require('./native-script');
 const { assertPersonAliases } = require('./person-alias-rules');
 const { periodColumns, periodFromRow, formatBoth, PERIOD_COLUMNS, periodValues } = require('./career-period');
 const { t, localized, contentLocalized, badRequest, parseLifeYears, requireId } = require('./people-admin-fields');
@@ -194,7 +195,7 @@ async function ownNames(client, personId) {
         const family = row[`family_name_${lang}`] || '';
         const patronymic = row[`patronymic_${lang}`] || '';
         const full = composeFromParts(given, patronymic, family, lang, row.citizenship_code || '');
-        return [lang, { name: personName(row, lang), family, full }];
+        return [lang, { name: personName(row, lang), family, full, joinedGiven: requiresSurname(row.citizenship_code || '') }];
     }));
 }
 

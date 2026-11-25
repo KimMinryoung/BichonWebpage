@@ -18,7 +18,12 @@ assert.equal(familyFirstPartsProblem(parts('', '푸이'), parts('', 'Puyi'), 'ch
 assert.equal(familyFirstPartsProblem(parts('', '또흐우'), parts('', 'Tố Hữu'), 'vietnam'), '');
 // A Korean name always has a surname to split off.
 assert.match(familyFirstPartsProblem(parts('', '허가이'), parts('', 'Ho Ka-i'), 'north-korea'), /surname/);
-assert.equal(familyFirstPartsProblem(parts('가이', '허'), parts('Ka-i', 'Ho'), 'north-korea'), '');
+assert.equal(familyFirstPartsProblem(parts('가이', '허'), parts('Kai', 'Ho'), 'north-korea'), '');
+// Korean given names are joined in English; Vietnamese and Chinese ones are not touched.
+assert.match(familyFirstPartsProblem(parts('정희', '박'), parts('Chung-hee', 'Park'), 'south-korea'), /joined/);
+assert.match(familyFirstPartsProblem(parts('정희', '박'), parts('Chung Hee', 'Park'), 'south-korea'), /joined/);
+assert.equal(familyFirstPartsProblem(parts('스티븐 수환', '김'), parts('Stephen Souhwan', 'Kim'), 'south-korea'), '');
+assert.equal(familyFirstPartsProblem(parts('반 동', '팜'), parts('Van Dong', 'Pham'), 'vietnam'), '');
 // Other name orders are not this rule's business.
 assert.equal(familyFirstPartsProblem(parts('', '히로히토'), parts('', 'Hirohito'), 'japan'), '');
 assert.equal(familyFirstPartsProblem(parts('', '카모'), parts('', 'Kamo'), 'soviet'), '');
