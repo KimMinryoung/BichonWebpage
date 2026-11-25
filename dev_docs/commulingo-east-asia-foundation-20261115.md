@@ -69,7 +69,7 @@
 
 **강좌용 번역 (같은 날 밤 완료, 원문에서 직접·원문 함께 공개)**
 - 중국어: `ccp-august-first-declaration-1935`, `ccp-second-congress-manifesto-1922`, `kuomintang-first-congress-declaration-1924`, `ccp-resolution-on-certain-historical-questions-1945`, `mao-on-new-democracy-1940`, `mao-hunan-peasant-movement-report-1927`, `lu-xun-on-league-of-left-wing-writers-1930`, `chen-duxiu-call-to-youth-1915`
-- 일본어: `suiheisha-declaration-1922`, `yamakawa-direction-change-1922`(원문 공개는 소유자 결정)
+- 일본어: `suiheisha-declaration-1922`, `yamakawa-direction-change-1922`(원문도 공개, 2026-11-15 소유자 결정)
 - 러시아어: `karakhan-manifesto-1919`, `tasks-of-the-communists-of-japan-1922`(극동민족대회 일본 대표단 강령; 저본은 «ВКП(б), Коминтерн и Япония» 2001, ЭБИД)
 - 저본은 대부분 온라인 전사본(위키문헌, marxists.org)이고 인쇄본과 대조한 것은 카라한 선언·일본 공산주의자의 임무(영인)뿐이다. 마오쩌둥 두 편은 『선집』 수록본(손본 판)이다.
 - L3: 같은 대목을 인용하는 용어·사건·인물 본문을 번역문과 같은 글자로 맞췄다(카라한 선언, 후난 보고, 좌련, 8·1 선언, 신청년, 5·4 사건, 천두슈 섹션, 정우회 선언, 제1차 국공합작 사건). 극동민족대회 용어의 「부하린이 기초한 … 부르주아 민주주의 혁명으로 규정」은 원문과 어긋나 고쳤다.
