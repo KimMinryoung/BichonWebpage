@@ -1,6 +1,6 @@
 # 「동아시아 운동사」 2부 준비: 진단과 구성안 초안 (2026-11-17)
 
-강좌 문서는 아직 만들지 않았다. 1부(`course/east-asia-movements-1`, 17편, 1895~1960)의 기록은 [commulingo-east-asia-course-plan-20261115.md](commulingo-east-asia-course-plan-20261115.md)와 [기반 작업 기록](commulingo-east-asia-foundation-20261115.md).
+상태: 15편 공개(2026-11-18). 아래는 준비 당시의 구성안과 그 뒤 기록이다. 1부(`course/east-asia-movements-1`, 17편, 1895~1960)의 기록은 [commulingo-east-asia-course-plan-20261115.md](commulingo-east-asia-course-plan-20261115.md)와 [기반 작업 기록](archive/commulingo-east-asia-foundation-20261115.md).
 
 **소유자 요청(2026-11-17):** 2부를 만들 준비를 한다. 1부 범위(한국·중국·일본·대만)에 **몽골과 조선(조선민주주의인민공화국)**을 넣는다.
 

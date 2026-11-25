@@ -47,7 +47,7 @@
 | 세계지도·국가 허브·사건 지도 세력 범위 | [지도·국가·사건 연결](commulingo-world-map.md) |
 | 참고 문헌 안 검색 | [구조·정규화 계약](commulingo-doc-search.md) |
 | 참고 문헌 서지 구조화 | [칸 정의·단계·남은 rights 정리](commulingo-doc-bibliography.md) |
-| 참고 문헌 저장·렌더링 개선 | [구조 검사·outline·남은 rights 정리](commulingo-docs-structure-todo.md), [2026-11-04 설계 검토](commulingo-docs-design-review-20261104.md) |
+| 참고 문헌 저장·렌더링 개선 | [구조 검사·outline·남은 rights 정리](commulingo-docs-structure-todo.md) |
 | 설치형 앱(PWA)·오프라인 | [매니페스트·서비스 워커·캐시 규칙](commulingo-pwa.md) |
 
 ## CommuLingo 학습
@@ -62,6 +62,6 @@
 | 실습 형식(`workshop`: 순서·분류·빈칸) | [형식·필드·검증 규칙·화면](commulingo-workshop-format.md) |
 | 기존 강좌 개선 이어받기(『자본』 2·3권 남음) | [2026-11-10 인수인계](commulingo-course-improvement-handoff-20261110.md) |
 | 마르크스주의와 성 이론 강좌 | [구성·원어 대조 기준·출처](commulingo-sex-gender-theory.md) |
-| 「동아시아 운동사」 강좌 | [기반 작업(2026-11-15)](commulingo-east-asia-foundation-20261115.md), [1부 구성안·상태](commulingo-east-asia-course-plan-20261115.md), [2부 구성·결과](commulingo-east-asia-course-part2-plan-20261117.md) |
+| 「동아시아 운동사」 강좌 | [1부 구성안·상태](commulingo-east-asia-course-plan-20261115.md), [2부 구성·결과](commulingo-east-asia-course-part2-plan-20261117.md) |
 
 새로운 주제는 별도 문서로 추가하고 이 색인에 링크한다. 작업이 끝난 날짜형 기록 문서는 `archive/`로 옮기고 남은 일은 [TODO.md](TODO.md)에 옮겨 적는다. 완료된 작업 이력을 AGENTS.md/CLAUDE.md에 누적하지 않는다.

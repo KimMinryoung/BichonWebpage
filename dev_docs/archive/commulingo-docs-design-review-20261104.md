@@ -1,8 +1,8 @@
 # 참고 문헌 설계 검토와 개선 TO-DO (2026-11-04)
 
 참고 문헌(`commulingo_docs`)의 저장(스키마)·조립(쓰기 경로)·화면 렌더링·주석·단어 링크(인물·용어·사건·문헌)를
-코드 기준으로 읽고 정리한 개선 목록이다. 형식 규칙은 [`data/commulingo/docs/README.md`](../data/commulingo/docs/README.md),
-저장 구조 전환과 제목 id 고정의 진행 상황은 [구조 검사·제목 id TO-DO](commulingo-docs-structure-todo.md)에 있다.
+코드 기준으로 읽고 정리한 개선 목록이다. 형식 규칙은 [`data/commulingo/docs/README.md`](../../data/commulingo/docs/README.md),
+저장 구조 전환과 제목 id 고정의 진행 상황은 [구조 검사·제목 id TO-DO](../commulingo-docs-structure-todo.md)에 있다.
 그 문서의 ②(파싱 결과 저장)·④(편집 정보 단일 원본)·⑤(서지 구조화)·⑥(문단 링크)은 여기서 되풀이하지 않고 번호로 가리킨다.
 
 ## 진행 상태
@@ -15,14 +15,14 @@
   S3의 용어·사건 id 변경 경로 갱신은 하지 않았다(그런 경로가 코드에 없다. 생기면 인물 id 변경처럼 문헌 entry를 같은 트랜잭션에서 고친다).
 - **운영 서버에서 할 일**: 배포 뒤 `scripts/commulingo-docs structure`로 새 오류 코드의 현황을 보고(모르는 키·`kind`
   라벨 불일치·`date`/`summary` 누락·사전에 없는 id가 몇 편인지), 오탐이면 규칙을 고치고, 아니면 문서별로 entry를 고친다.
-  이 작업은 [구조 검사 TO-DO의 서버 작업](commulingo-docs-structure-todo.md#운영-서버에서-할-일-다음-담당자-순서대로) 2번과 함께 한다.
+  이 작업은 [구조 검사 TO-DO의 서버 작업](../commulingo-docs-structure-todo.md#운영-서버에서-할-일-다음-담당자-순서대로) 2번과 함께 한다.
   2026-11-04 완료(결과는 TO-DO 문서). `writeDocs`는 들어온 항목과 저장된 항목을 둘 다 정규화해 키 순서와 무관하게 비교하므로,
   항목을 그대로 돌려보낸 `put`은 리비전을 늘리지 않는다. 정규형이 아니던 항목(`terms: []`, 곧은 따옴표)은 실제로 고쳐 저장할 때 함께 정규화된다.
 
 - 2026-11-04 후속: 구조 검사는 래칫에서 전면 규칙으로 바뀌었고(저장된 문헌 오류 0 달성), 서고 전체 검사 테스트가 `npm test`에
   들어갔다. 본문 캐시가 비었을 때의 500은 한 번 갱신 뒤 재시도·503으로 바꿨다. 운영 리더 확인(Playwright)에서 원문/번역 전환이
   앵커 도착 직후 바로 앞 절로 가는 결함을 찾아 고쳤다(R3의 스크립트 분리는 아직 아니다). 자세한 기록은
-  [구조 검사 TO-DO](commulingo-docs-structure-todo.md#운영-서버에서-할-일-다음-담당자-순서대로) 4·6·7.
+  [구조 검사 TO-DO](../commulingo-docs-structure-todo.md#운영-서버에서-할-일-다음-담당자-순서대로) 4·6·7.
 
 - 2026-11-04 R1 구현: 주석 팝오버(`public/js/commulingo-doc.js`, 호버 미리보기·탭 고정·Esc·팝오버의 「주석 목록에서 보기」),
   분할 문헌의 다른 쪽 주석은 `docs-store.pageNotes`가 쪽마다 `<template class="doc-notes-inline">`로 보냄, ↩는 팝오버 링크로
@@ -42,7 +42,7 @@
 
 - 2026-11-04 ② 구현(A6·R5 포함): 본문의 outline을 저장 시 계산해 `outline` 컬럼에 두고(마이그레이션 377, `doc-outline.js`),
   리더·발췌·주석·원문 전환이 그것을 읽는다. 세부와 남은 서버 작업(마이그레이션 적용·`outline` 백필)은
-  [구조 검사 TO-DO](commulingo-docs-structure-todo.md) ②와 서버 작업 8번.
+  [구조 검사 TO-DO](../commulingo-docs-structure-todo.md) ②와 서버 작업 8번.
 
 검토 범위: `docs-db.js`, `docs-store.js`, `docs-import.js`, `doc-structure.js`, `doc-pagination.js`, `doc-presentation.js`,
 `doc-linkify.js`, `doc-person-links.js`, `docs-refs.js`, `doc-search.js`, `doc-sanitize.js`, `event-doc-excerpts.js`, `linkify.js`,
@@ -85,7 +85,7 @@
 | A2 ✅ | `anchors`(산문 별칭 → 절 id)는 본문 제목과 대조하지 않는다. 구조 검사는 `excerpts`만 본다(`excerptAnchors`). 제목 id를 바꾸면 별칭 링크가 문헌 머리로 떨어진다. | `inspectDocStructure`에 `anchor-target-missing`(오류)을 더한다. `excerptAnchors`에 `Object.keys(entry.anchors)`를 합치면 된다. | P1 |
 | A3 | 본문 속 다른 문헌으로의 손 링크(`/commulingo/docs/<id>#x`)는 검사하지 않는다(`fragment-link-dangling`은 같은 문서의 `#`만). 병합·개명으로 깨져도 모른다. | 구조 검사에 `doc-link-dangling`(경고): 스냅숏의 문헌 id·리디렉트와 그 문헌의 id 목록으로 대조. 대조할 id 목록은 ②의 outline(ids)을 쓰면 본문을 다시 읽지 않는다. | P2 |
 | A4 | 인물 링크 검수가 바뀐 문서마다 쓰기 트랜잭션 안에서(advisory lock을 쥔 채) 본문 전체를 돈다. 메타데이터 한 칸 수정에도 1.4MB 문헌을 다시 검수한다. | 검수 결과를 `(body_sha256, personLinks·people·events·noAutoLink·date 해시, 인덱스 세대)`로 메모해 같은 입력이면 재사용. 또는 메타데이터만 바뀐 쓰기는 `personLinks`·`people`·`events`·`noAutoLink`가 바뀐 때만 검수. | P2 |
-| A5 | leninbot 번역 조립기는 파일에 쓰고 사람이 `put-body`를 돌린다([데이터 git 분리](commulingo-data-off-git.md)의 남은 일). | 조립기가 MCP `doc_put`(dryRun → apply)을 직접 부르게 한다. leninbot 쪽 결정. | P2 |
+| A5 | leninbot 번역 조립기는 파일에 쓰고 사람이 `put-body`를 돌린다([데이터 git 분리](../commulingo-data-off-git.md)의 남은 일). | 조립기가 MCP `doc_put`(dryRun → apply)을 직접 부르게 한다. leninbot 쪽 결정. | P2 |
 | A6 ✅ | HTML을 정규식으로 자르는 곳이 아직 여섯이다: `docs-store.annotateHeadings`·`labelNotes`·`getCommuLingoDocSection`(주석 `<li>` 추출은 중첩 `li`가 있으면 잘린다)·`getCommuLingoDocAnchorPages`, `routes/commulingo-docs.js editorialForLanguage`, `commulingo-doc.ejs`의 해제 상자 병합. | ②(outline 저장)로 대부분 사라진다. ②를 할 때 위 여섯 곳을 체크리스트로 쓴다. `labelNotes`의 ref→note 표와 해제 상자 오프셋·lang도 outline에 넣는다. | ② |
 | — | 파싱 결과 저장, 편집 정보 단일 원본 | 기존 ②·④. | — |
 
@@ -112,15 +112,15 @@
 | L3 | 저장 시 검수한 인물 링크가 그 뒤 사전 변경(인물 등록·별칭 추가·차단 목록 변경)으로 바뀌어도 모른다. `docHolds`는 새 인물 등록 하나만 잡는다. | L1이 만든 언급 집합을 저장 시 검수 결과(`linkAudits`의 linked 집합을 리비전과 함께 보관)와 비교해 늘거나 준 링크를 "링크 변동" 보고로 낸다(MCP 읽기 도구 하나, `scripts/commulingo-docs link-drift`). | P2 |
 | L4 | `noAutoLink`는 문자열뿐이라 이유·범위(절)가 없고, 본문에서 사라진 문자열이 남아도 모른다. `personLinks.names`에는 `reason`이 있다. | 문자열 또는 `{text, reason, section?}`를 받고, 구조 검사에 `no-auto-link-unused`(경고). | P3 |
 | L5 | 용어 링크의 `title` 속성 외에 미리보기가 없다. 긴 문헌을 읽다 용어를 새 탭으로 열어야 한다. | 선택 사항. 사이트 공통 미리보기 카드(인물 한 줄·용어 정의 첫 문장)를 `/commulingo/<kind>/<id>.json` 같은 가벼운 응답으로 만들면 문헌·사건·보고서가 함께 쓴다. 디자인 기준 문서와 함께 정한다. | P3 |
-| — | 문헌 별칭 승인·충돌 검사·개명 때 승인 이어받기 | 현행 유지([링크 중의성](commulingo-link-ambiguity.md)). | — |
+| — | 문헌 별칭 승인·충돌 검사·개명 때 승인 이어받기 | 현행 유지([링크 중의성](../commulingo-link-ambiguity.md)). | — |
 
 ### 5. 검색·테스트·운영
 
 | # | 문제 | 개선 방법 | 우선 |
 |---|---|---|---|
 | T1 ✅ | 문헌 fixture가 없어 클라우드 세션에서 `commulingo-doc-excerpts`·분할·리디렉트 테스트가 건너뛴다(데이터 문서는 `tests/fixtures/commulingo-data-documents-seed.json`이 있다). 리더 로직을 고쳐도 서버에서야 확인된다. | `tests/fixtures/commulingo-docs-seed.json`: 합성 문헌 4편(주석 있는 단일 쪽, 분할되는 긴 글, `excerpts`·`anchors`·리디렉트가 있는 모음집, 공개 원문이 있는 번역). `docs-store`가 스냅숏도 DB도 없으면 이 시드를 읽는다(`validateSnapshot`과 같은 꼴). 실데이터 검사는 지금처럼 `@requires live-data`. | P1 |
-| T2 보류 | 문헌 전문 검색이 없다. 통합 검색은 제목·요약·별칭만, 문헌 안 검색은 한 편씩이다([검색 범위](site-search.md)). | 소유자 결정 뒤: `commulingo_docs`에 `body_text`(태그 없는 본문, 저장 시 파서로) 칼럼과 `pg_trgm` GIN 인덱스(한국어는 기본 tsvector 설정이 약하다), `/commulingo/docs/search?q=`가 문헌별 일치 수·발췌를 내고 결과는 기존 `?p=&q=&hit=`로 간다. 영어는 공개 원문의 `body_text`. | P3 |
-| T3 | 구조 검사 래칫·id 백필은 아직 운영 서버에서 돌리지 않았다. | [구조 검사 TO-DO의 서버 작업 1~6](commulingo-docs-structure-todo.md#운영-서버에서-할-일-다음-담당자-순서대로)을 먼저 끝낸다. 여기의 S1~S4·A1·A2는 그 래칫에 규칙을 더하는 것이라 같은 순서(현황 보고 → 오탐 확인 → 거부)로 넣는다. | P1 |
+| T2 보류 | 문헌 전문 검색이 없다. 통합 검색은 제목·요약·별칭만, 문헌 안 검색은 한 편씩이다([검색 범위](../site-search.md)). | 소유자 결정 뒤: `commulingo_docs`에 `body_text`(태그 없는 본문, 저장 시 파서로) 칼럼과 `pg_trgm` GIN 인덱스(한국어는 기본 tsvector 설정이 약하다), `/commulingo/docs/search?q=`가 문헌별 일치 수·발췌를 내고 결과는 기존 `?p=&q=&hit=`로 간다. 영어는 공개 원문의 `body_text`. | P3 |
+| T3 | 구조 검사 래칫·id 백필은 아직 운영 서버에서 돌리지 않았다. | [구조 검사 TO-DO의 서버 작업 1~6](../commulingo-docs-structure-todo.md#운영-서버에서-할-일-다음-담당자-순서대로)을 먼저 끝낸다. 여기의 S1~S4·A1·A2는 그 래칫에 규칙을 더하는 것이라 같은 순서(현황 보고 → 오탐 확인 → 거부)로 넣는다. | P1 |
 
 ## 권장 순서
 
