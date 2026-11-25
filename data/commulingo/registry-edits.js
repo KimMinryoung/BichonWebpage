@@ -126,6 +126,29 @@ const OPS = {
         return { entityType: 'person_collection', entityId: collectionId, note: current ? 'update collection' : 'create collection',
             snapshot: { before: current || null, after: { sortOrder, icon, title, intro, termIds } }, changed: true };
     },
+    // The office page's own text and one line's (track's) text; holder rows are
+    // office_row edits.
+    async office_blurb_set(client, op) {
+        const officeId = id(op.officeId, 'officeId');
+        const blurb = localized(op.blurb, 'blurb', 8000);
+        const row = (await client.query('SELECT blurb_ko, blurb_en, tracks FROM commulingo_offices WHERE id = $1 FOR UPDATE', [officeId])).rows[0];
+        if (!row) throw badRequest(`office not found: ${officeId}`, 404);
+        let before;
+        if (op.trackId !== undefined) {
+            const tracks = row.tracks || [];
+            const track = tracks.find(value => value.id === op.trackId);
+            if (!track) throw badRequest(`track not found in ${officeId}: ${op.trackId}`, 404);
+            before = track.blurb || null;
+            await client.query('UPDATE commulingo_offices SET tracks = $2::jsonb, updated_at = now() WHERE id = $1',
+                [officeId, JSON.stringify(tracks.map(value => value === track ? { ...value, blurb } : value))]);
+        } else {
+            before = { ko: row.blurb_ko, en: row.blurb_en };
+            await client.query('UPDATE commulingo_offices SET blurb_ko = $2, blurb_en = $3, updated_at = now() WHERE id = $1',
+                [officeId, blurb.ko, blurb.en]);
+        }
+        return { entityType: 'office', entityId: officeId, note: op.trackId ? `set blurb of track ${op.trackId}` : 'set blurb',
+            snapshot: { before, after: blurb }, changed: !before || before.ko !== blurb.ko || before.en !== blurb.en };
+    },
     async collection_member_add(client, op) {
         const collectionId = id(op.collectionId, 'collectionId');
         const personId = id(op.personId, 'personId');
