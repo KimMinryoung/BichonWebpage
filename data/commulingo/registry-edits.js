@@ -55,6 +55,13 @@ async function mustExist(client, table, value, what) {
     if (!(await client.query(`SELECT 1 FROM ${table} WHERE id = $1`, [value])).rowCount) throw badRequest(`${what} not found: ${value}`, 404);
 }
 
+async function termPair(client, op) {
+    const pair = [id(op.termId, 'termId'), id(op.relatedId, 'relatedId')];
+    if (pair[0] === pair[1]) throw badRequest('a term cannot be related to itself');
+    for (const termId of pair) await mustExist(client, 'commulingo_terms', termId, 'term');
+    return pair;
+}
+
 async function eventLinks(client, eventId) {
     const row = (await client.query(`SELECT no_auto_link, to_jsonb(e)->'term_links' AS term_links
         FROM commulingo_history_events e WHERE id = $1 FOR UPDATE`, [eventId])).rows[0];
@@ -148,6 +155,20 @@ const OPS = {
         }
         return { entityType: 'office', entityId: officeId, note: op.trackId ? `set blurb of track ${op.trackId}` : 'set blurb',
             snapshot: { before, after: blurb }, changed: !before || before.ko !== blurb.ko || before.en !== blurb.en };
+    },
+    // Term relations are undirected: one row per pair, whichever way round.
+    async term_relation_add(client, op) {
+        const [termId, relatedId] = await termPair(client, op);
+        const { rowCount } = await client.query(`INSERT INTO commulingo_term_relations (term_id, related_id, sort_order)
+            VALUES ($1, $2, (SELECT COALESCE(MAX(sort_order) + 1, 0) FROM commulingo_term_relations WHERE term_id = $1))
+            ON CONFLICT DO NOTHING`, [termId, relatedId]);
+        return { entityType: 'term', entityId: termId, note: `relate to term ${relatedId}`, snapshot: { termId, relatedId }, changed: rowCount > 0 };
+    },
+    async term_relation_remove(client, op) {
+        const [termId, relatedId] = await termPair(client, op);
+        const { rows } = await client.query(`DELETE FROM commulingo_term_relations
+            WHERE (term_id = $1 AND related_id = $2) OR (term_id = $2 AND related_id = $1) RETURNING *`, [termId, relatedId]);
+        return { entityType: 'term', entityId: termId, note: `remove relation to term ${relatedId}`, snapshot: { before: rows[0] || null }, changed: rows.length > 0 };
     },
     async collection_member_add(client, op) {
         const collectionId = id(op.collectionId, 'collectionId');

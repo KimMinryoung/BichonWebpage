@@ -38,6 +38,8 @@ async function readTermEditorial(id, options = {}) {
         result[field] = state[field].map(row => row[column]);
     }
     state.relations = (await client.query('SELECT * FROM commulingo_term_relations WHERE term_id=$1 OR related_id=$1 ORDER BY term_id,related_id', [id])).rows;
+    // Undirected; written with registry_edit term_relation_add/remove.
+    result.related = state.relations.map(row => row.term_id === id ? row.related_id : row.term_id);
     result.revision = `v1-${createHash('sha256').update(JSON.stringify(state)).digest('hex')}`;
     result.evidence = (await client.query('SELECT * FROM commulingo_term_evidence WHERE term_id=$1 ORDER BY id', [id])).rows;
     result.enrichment = (await client.query('SELECT * FROM commulingo_term_enrichment WHERE term_id=$1 ORDER BY topic', [id])).rows;

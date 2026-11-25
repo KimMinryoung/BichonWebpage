@@ -580,6 +580,8 @@ const tools = [
         description: 'Registry rows without an Admin screen, in one transaction (replaces hand SQL under scripts/migrations/data/). ops, in order: '
             + 'collection_upsert {id, fields {title {ko,en}, intro {ko,en}, icon, sortOrder, termIds}} (a new collection needs title, intro, icon); '
             + 'office_blurb_set {officeId, trackId?, blurb {ko,en}} (the text of an office, or of one of its lines); '
+            + 'term_relation_add / term_relation_remove {termId, relatedId} (the related terms shown on both pages; undirected, one row per pair; '
+            + 'read them with term_get related); '
             + 'collection_member_add / collection_member_remove {collectionId, personId}; '
             + 'person_no_political_position_set {personId, value} (true: reviewed, holds no political position; refused while the person is in a collection, '
             + 'and joining one clears it); person_checked_empty_set {personId, field: citizenship|nationalOrigin|wikidataId|birthDate|deathDate|career, value, note} '
