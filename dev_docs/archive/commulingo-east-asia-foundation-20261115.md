@@ -63,9 +63,9 @@
 
 **결정 대기**
 - 입장 모음을 비워 둔 카드: 오성륜, 인정식, 후세 다쓰지. 한덕수(총련 의장)는 주체사상으로 넣었는데 김천해는 마르크스-레닌주의다.
-- 영어 "December Theses", "Korean Youth Federation"을 검색 전용에서 자동 링크로 바꾼 것(L2), 맨 「나카노」·「시다」 인물 링크 차단의 부작용.
-- 영어 별칭이 자동 링크되지 않는 조선·한국 카드 143장(`l2/romanization-survey.tsv`): 링크 표현을 일괄로 넣을지, 규칙(`data/commulingo/people-linkify.js`)을 바꿀지.
-- 삼선개헌 반대 선언문(반공 야권 문서)을 민주화운동 모음에 둘지.
+- 영어 "December Theses", "Korean Youth Federation"을 검색 전용에서 자동 링크로 바꾼 것(L2 — 2026-11-25 검색 전용으로 되돌림), 맨 「나카노」·「시다」 인물 링크 차단의 부작용(점검하지 않기로 함).
+- 영어 별칭이 자동 링크되지 않는 조선·한국 카드 143장(`l2/romanization-survey.tsv`): 링크 표현을 일괄로 넣을지, 규칙(`data/commulingo/people-linkify.js`)을 바꿀지. → 2026-11-25 결정: 붙여 쓰기로 통일, 붙임표 변형은 코드가 계산, 철자가 다른 별칭은 검색 전용.
+- 삼선개헌 반대 선언문(반공 야권 문서)을 민주화운동 모음에 둘지. → 둔다(2026-11-25).
 
 **강좌용 번역 (같은 날 밤 완료, 원문에서 직접·원문 함께 공개)**
 - 중국어: `ccp-august-first-declaration-1935`, `ccp-second-congress-manifesto-1922`, `kuomintang-first-congress-declaration-1924`, `ccp-resolution-on-certain-historical-questions-1945`, `mao-on-new-democracy-1940`, `mao-hunan-peasant-movement-report-1927`, `lu-xun-on-league-of-left-wing-writers-1930`, `chen-duxiu-call-to-youth-1915`

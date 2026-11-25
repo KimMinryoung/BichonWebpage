@@ -6,9 +6,9 @@
 
 없음.
 
-정리됨(2026-11-25): 한국 이름의 영어 표기를 붙여 쓰기로 통일(카드 190장과 본문). 붙임표 변형은 코드가 계산하고, 철자가 다른 별칭은 검색 전용으로 둔다.
+정리됨(2026-11-25): 한국 이름의 영어 표기를 붙여 쓰기로 통일(카드 190장과 본문). 붙임표 변형은 코드가 계산하고, 철자가 다른 별칭은 검색 전용으로 둔다. 규칙은 [별칭 표준](commulingo-alias-standard.md). 영어 “December Theses”·“Korean Youth Federation” 자동 링크는 껐다(연도 붙은 형태는 링크). 김일성 「순간」의 군중이 당황했다는 문장과 조선 수립 사건의 「가짜설」 문장은 뺐다.
 
-정리됨(2026-11-25): 삼선개헌 반대 선언문(1969)은 민주화운동 선언문 모음에 그대로 둔다. 맨 「나카노」·「시다」 차단 등 기반 작업 4절의 링크 부작용은 따로 점검하지 않는다.
+정리됨(2026-11-25): 삼선개헌 반대 선언문(1969)은 민주화운동 선언문 모음에 그대로 둔다. 맨 「나카노」·「시다」 차단의 부작용은 따로 점검하지 않는다.
 
 정리됨(2026-11-20): 동아시아 1부는 소유자가 직접 풀어 보고 이상 없음. 박헌영 처형일은 한국 기준(1956-07-19)으로 결정·반영됨. 전쟁 게임은 이미 게임 메뉴(`/games/`)에 있음. 로그인 진도 저장은 운영 DB로 확인(계정 3개, 레슨 151행·문항 450행). 출처 허용 호스트는 2026-11-20에 확대함(6eaf5595). 동아시아 2부의 옛 「북한」 문단과 우란푸·엘베그도르지 표기는 2026-11-17에 고침(작업 폴더 FOLLOWUPS.md의 NK·MN-N). 표기: garde nationale는 사이트 전체 「국민방위대」, 프랑스 혁명기 ministre는 「장관」, 올랭프 드 구주 제10조 échafaud는 「처형대」로 통일, peuple(민중/인민)은 그대로 둠.
 
@@ -17,10 +17,11 @@
 | 항목 | 출처 |
 | --- | --- |
 | 참고 문헌: 원문 공개 검사를 `rights.status`로 바꾸고 원문 행 `rights` 열 정리. 서지 구조화(④⑤)·지은이 인물 연결·번역 기록·저작권 상태·문단 링크(⑥)는 끝남(2026-11-20·11-24) | [문헌 구조 TO-DO](commulingo-docs-structure-todo.md), [서지 설계](commulingo-doc-bibliography.md) |
+| 한국 이름 영어 표기(붙여 쓰기)의 입구 검사와 leninbot 지침 없음: 저장 경로가 `Chung-hee` 꼴 이름을 막지 않고 leninbot 인물·번역 지침에도 규칙이 없어 새 카드·본문에 다시 섞일 수 있음(2026-11-25 현재 그런 카드 0장) | [별칭 표준](commulingo-alias-standard.md) |
 | 용어끼리 관계(`commulingo_term_relations`)를 MCP로 쓰는 경로가 없음 | [archive/대만](archive/commulingo-taiwan-modern-20261114.md), [archive/마르크스경제학](archive/commulingo-marxian-economics-20261103.md) |
 | 「조국 전선」: 보급선 그림 곧게, 전략 층 다른 봇·사람 손 밸런스, 쿠르스크·베를린 재측정, 드네프르 도하 전투, 그림 남은 것(스탈린그라드 시가·승전 퍼레이드·포스터 셋) | [조국 전선 7절](great-patriotic-war-game.md) |
 | 전쟁 엔진: 영어 화면 없음, 박격포·카튜샤·기관총·소련 깃발 문장 그림 없음 | [엔진 8절](war-engine.md) |
-| SEO: sitemap index 분리, 글마다 대표 이미지, thin page 표본 검사, 저자·편집 원칙 페이지, Search Console canonical 확인(문서상 미체크, 코드 재확인 필요) | [SEO 계획](seo-indexing-plan.md) |
+| SEO: sitemap index 분리, 글마다 대표 이미지, thin page 표본 검사, 저자·편집 원칙 페이지, Search Console canonical 확인(2026-11-25 확인: sitemap은 한 파일, 카드 og:image는 공용 그림, 저자·편집 원칙 페이지 없음 — 앞의 셋은 미착수. 나머지는 확인 안 함) | [SEO 계획](seo-indexing-plan.md) |
 | KT 회선 지연: 정적 파일 CDN 도입(1단계 효과 확인은 소유자가 진행) | [CDN 계획](static-cdn-kt-plan-20261012.md) |
 | 상용 수준 점검 6(장기 구조) 미착수 | [archive/상용 수준 점검](archive/frontend-commercial-gap-review-20261102.md) |
 | leninbot 번역 스펙(`config/archival_translation/`)의 `output`이 아직 `data/commulingo/docs/<id>.html`이라 조립 뒤 `scripts/commulingo-docs put-body`가 필요함. 조립기가 DB에 직접 넣게 할지는 leninbot 쪽 결정 | [데이터 git 분리](commulingo-data-off-git.md) |
