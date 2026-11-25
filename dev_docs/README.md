@@ -46,8 +46,8 @@
 | 자동 링크 중의성 | [데이터 수정·재발 방안](commulingo-link-ambiguity.md) |
 | 세계지도·국가 허브·사건 지도 세력 범위 | [지도·국가·사건 연결](commulingo-world-map.md) |
 | 참고 문헌 안 검색 | [구조·정규화 계약](commulingo-doc-search.md) |
-| 참고 문헌 서지 구조화(진행 중) | [칸 정의·시험 추출·단계](commulingo-doc-bibliography.md) |
-| 참고 문헌 저장·렌더링 개선(진행 중) | [구조 검사·outline·남은 ④⑤⑥](commulingo-docs-structure-todo.md), [2026-11-04 설계 검토](commulingo-docs-design-review-20261104.md) |
+| 참고 문헌 서지 구조화 | [칸 정의·단계·남은 rights 정리](commulingo-doc-bibliography.md) |
+| 참고 문헌 저장·렌더링 개선 | [구조 검사·outline·남은 rights 정리](commulingo-docs-structure-todo.md), [2026-11-04 설계 검토](commulingo-docs-design-review-20261104.md) |
 | 설치형 앱(PWA)·오프라인 | [매니페스트·서비스 워커·캐시 규칙](commulingo-pwa.md) |
 
 ## CommuLingo 학습

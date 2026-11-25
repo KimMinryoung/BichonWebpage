@@ -13,8 +13,8 @@
 | ① | 저장 시 구조 검증 | 완료. 저장된 문서 오류 0(2026-11-04) → 래칫을 전면 규칙으로 전환(오류가 하나라도 있으면 거부), `tests/unit/commulingo-docs-stored-structure.js`가 서고 전체를 검사 |
 | ③ | 제목 id 저장 시 고정 | 완료(2026-11-04 백필) |
 | ② | 파서 기반 처리·파생 데이터 저장 | 완료(2026-11-04, outline 컬럼, 마이그레이션 377과 백필 적용) |
-| ④ | 번역·편집 정보 단일 원본화 | 남음 |
-| ⑤ | 서지 메타데이터 구조화·JSON-LD | 남음 |
+| ④ | 번역·편집 정보 단일 원본화 | 끝(2026-11-20, [서지 구조화](commulingo-doc-bibliography.md)) |
+| ⑤ | 서지 메타데이터 구조화·JSON-LD | 끝(2026-11-20, 지은이·번역 기록·저작권 상태 11-24). 원문 행 `rights` 열 정리만 남음 |
 | ⑥ | 문단 단위 고유 링크 | 끝(2026-11-24) |
 
 ## 완료한 것 (2026-10-31)
@@ -89,7 +89,7 @@
 
 ## 남은 작업
 
-### ② 파싱 결과 저장 (코드 완료 2026-11-04, 서버 작업 8번 남음)
+### ② 파싱 결과 저장 (완료 2026-11-04, 서버 작업 8번 포함)
 
 목표: 요청마다 정규식으로 HTML을 다시 자르지 않고, 저장 시 한 번 파싱한 결과를 읽기만 한다.
 
@@ -105,22 +105,18 @@
 - [x] `paginateBody`를 `planPages`(계획)와 `renderPages`(쪽 만들기)로 나눴다. 쪽 경계 기준은 그대로라 `?p=N`이 바뀌지 않는다.
 - [ ] `routes/commulingo-docs.js` `editorialForLanguage`는 정규식을 유지했다(겹친 상자는 구조 검사가 막으므로 정확하고, 파싱이 아니라
   비용이 작다). 대신 쪽·언어별로 memo한다. outline의 `editorials`는 쓰지 않고 두었다.
-- [ ] `views/public/commulingo-doc.ejs`의 해제 상자 병합 정규식은 ④에서 함께 정리.
+- [x] `views/public/commulingo-doc.ejs`의 해제 상자 병합 정규식은 ④에서 지웠다(2026-11-20).
 - 유의: 리더의 규칙(`labelNotes`·쪽 나누기·목차)을 바꾸면 `doc-outline.js`의 `OUTLINE_VERSION`을 올리고 서버에서 `outline`을 다시 돌린다.
   올리지 않으면 리더가 옛 outline을 그대로 쓴다.
 
 ### ④ 번역·편집 정보 단일 원본
 
-- [ ] 결정 필요(소유자): 본문 `details.doc-edition`과 `entry.editorialNotes` 중 무엇을 원본으로 할지. 제안은
-  서지성 정보를 entry로, 본문엔 해제 문단만.
-- [ ] 결정 전까지라도 `commulingo-doc.ejs`의 문장 쪼개기·중복 제거 로직을 `doc-presentation.js`로 옮기고 테스트 추가.
+- [x] 소유자 결정(2026-11-20): 서지 정보의 원본은 entry의 `bibliography` 칸이고, 본문 해제 상자에는 해제 문단만 둔다. entry `editorialNotes`·`source`와 리더의 병합 코드는 없앴다. 세부는 [서지 구조화](commulingo-doc-bibliography.md).
 
 ### ⑤ 서지 메타데이터 구조화
 
-- [ ] entry 필드 제안: `author`(인물 id 배열), `originalTitle`, `firstPublished`, `translationBase`, `translator`, `rights`.
-  `docs-import.js` `canonicalEntry`·`CANONICAL_FIELDS`에 추가하고 검증.
-- [ ] byline을 entry에서 렌더링(본문 `p.doc-byline`과의 이행 계획 필요), schema.org `CreativeWork`/`Book` JSON-LD 출력
-  (`renderDoc`의 `jsonLd`는 지금 breadcrumb뿐), 「이 문헌 인용하기」.
+- [x] entry `bibliography`·`authors`, JSON-LD `CreativeWork`, 「인용」 줄, 번역 기록·저작권 상태(2026-11-24). byline은 화면 표기로 본문에 둔다.
+- [ ] 원문 공개 검사를 `rights.status`로 바꾸고 원문 행 `rights` 열을 정리한다.
 
 ### ⑥ 문단 단위 고유 링크
 
