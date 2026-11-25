@@ -470,6 +470,8 @@ const REFERENCE_HOSTS = new Set([
     'publishup.uni-potsdam.de', 'repositorio.cepal.org', 'davidharvey.org', 'www.levyinstitute.org',
     'socialistregister.com', 'peri.umass.edu', 'thenextrecession.wordpress.com', 'www.workers.org',
     'www.endnotes.org.uk', 'time.com', 'indiankanoon.org', 'www.hrw.org', 'keywords.keywords2.hosting.nyu.edu',
+    // 2026-11-25 (owner)
+    'encykorea.aks.ac.kr', 'www.trumanlibrary.gov',
 ]);
 
 function referenceHrefAllowed(href) {
