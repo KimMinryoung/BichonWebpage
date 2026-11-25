@@ -1,3 +1,5 @@
+const { koreanNameVariants } = require('../data/commulingo/korean-name-variants');
+
 // Search-only text stays in the server index, not in card HTML.
 function searchFields(person) {
     const nameSearch = [
@@ -8,7 +10,8 @@ function searchFields(person) {
     ].concat(
         (person.aliases && person.aliases.ko) || [],
         (person.aliases && person.aliases.en) || [],
-        (person.linkExpressions || []).filter(function(item) { return item.role !== 'related'; }).map(function(item) { return item.text; })
+        (person.linkExpressions || []).filter(function(item) { return item.role !== 'related'; }).map(function(item) { return item.text; }),
+        koreanNameVariants(person, person.names && person.names.en)
     ).filter(Boolean).join(' ').toLowerCase();
     // Career lines and office titles are text the filters cannot reach, so they
     // are searched with the description. The activity labels are not: the
@@ -88,7 +91,7 @@ function matchedAlias(person, query, lang) {
     const terms = query.trim().toLowerCase().split(/\s+/).filter(Boolean);
     if (!terms.length) return '';
     const n = person.names || {};
-    const primary = [n.ko, n.en, n.display, n.short, n.family, person.displayName, person.cyrillic].filter(Boolean).join(' ').toLowerCase();
+    const primary = [n.ko, n.en, n.display, n.short, n.family, person.displayName, person.cyrillic].concat(koreanNameVariants(person, n.en)).filter(Boolean).join(' ').toLowerCase();
     if (terms.every(term => primary.includes(term))) return '';
     const aliases = person.aliases || {};
     const other = lang === 'en' ? 'ko' : 'en';

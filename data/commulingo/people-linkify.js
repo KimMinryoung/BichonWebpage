@@ -1,6 +1,7 @@
 const { expressionCandidates } = require('./link-expressions');
 const nameContext = require('../../public/js/commulingo-name-context');
 const { registerAlias } = require('./alias-registry');
+const { koreanNameVariants } = require('./korean-name-variants');
 const { createLiteralPattern } = require('./literal-pattern');
 const { familyNameOf, linkableFamilyNameOf } = require('./family-name');
 // The person alias index, plus the HTML-walking and escaping helpers every
@@ -151,8 +152,12 @@ function buildPersonLinkIndex(people, options = {}) {
             const text = expression.text;
             text.split(/\s+/).forEach(value => own.add(nameContext.normalize(value)));
             if (!text.includes(' ')) return;
-            const ids = contextData.names[text] || (contextData.names[text] = []);
-            if (!ids.includes(person.id)) ids.push(person.id);
+            const variants = en ? koreanNameVariants(person, text) : [];
+            variants.forEach(form => form.split(/\s+/).forEach(value => own.add(nameContext.normalize(value))));
+            [text, ...variants].forEach(form => {
+                const ids = contextData.names[form] || (contextData.names[form] = []);
+                if (!ids.includes(person.id)) ids.push(person.id);
+            });
         });
         for (const variant of givenVariants.get(person.names?.givenEnglish?.trim().toLowerCase()) || []) own.add(variant);
         contextData.own[person.id] = [...own];
@@ -160,6 +165,14 @@ function buildPersonLinkIndex(people, options = {}) {
     });
     contextData.given = [...given];
     const tokens = [];
+    const variantForms = [];
+    const variantOwned = new Set();
+    // A Korean name that links by itself also links with its syllables apart.
+    const register = (alias, person, expression) => {
+        registerAlias(byAlias, tokens, alias, person);
+        if (!en || expression.role === 'related') return;
+        koreanNameVariants(person, alias).forEach(form => variantForms.push({ form, person, expression: { ...expression, text: form } }));
+    };
     const neverKo = new Set(neverLinkAliases('ko'));
     const neverEn = new Set(neverLinkAliases('en'));
     list.forEach(person => {
@@ -201,7 +214,7 @@ function buildPersonLinkIndex(people, options = {}) {
             }
             if (expression.policy === 'search') return;
             if (expression.role !== 'legacy') {
-                registerAlias(byAlias, tokens, alias, person);
+                register(alias, person, expression);
                 return;
             }
             // Only link aliases made of this person's own canonical-name words,
@@ -217,8 +230,15 @@ function buildPersonLinkIndex(people, options = {}) {
                     if (owners && (owners.size > 1 || !owners.has(person.id))) return;
                 } else if (!owners || owners.size > 1) return;
             }
-            registerAlias(byAlias, tokens, alias, person);
+            register(alias, person, expression);
         });
+    });
+    // After every stored spelling, which an alias of another card outranks.
+    variantForms.forEach(({ form, person, expression }) => {
+        if (Object.hasOwn(byAlias, form) && byAlias[form] !== null && byAlias[form].id !== person.id && !variantOwned.has(form)) return;
+        variantOwned.add(form);
+        expressions[person.id + ':' + form] = expression;
+        registerAlias(byAlias, tokens, form, person);
     });
 
     // Namesakes told apart only by a qualifier in their display name: 오토 브라운
