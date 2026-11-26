@@ -6518,6 +6518,49 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     border-color: var(--wrong-border);
 }
 
+/* On a phone the items and every group box share one screen: the pool
+   is two columns, the groups one row, and text and padding are smaller. */
+@media (max-width: 640px) {
+    .commu-sort-pool {
+        gap: 6px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin: 0 0 8px;
+        min-height: 44px;
+    }
+
+    .commu-sort-groups {
+        gap: 6px;
+        grid-auto-columns: minmax(0, 1fr);
+        grid-auto-flow: column;
+        grid-template-columns: none;
+        margin: 0 0 12px;
+    }
+
+    .commu-sort-group {
+        gap: 4px;
+        min-height: 80px;
+        padding: 0 4px 4px;
+    }
+
+    .commu-sort-target {
+        font-size: var(--text-sm);
+        line-height: var(--leading-snug);
+        margin: 0 -4px;
+        min-height: 36px;
+        padding: 6px;
+    }
+
+    .commu-sort-item {
+        font-size: var(--text-sm);
+        min-height: 40px;
+        padding: 6px 8px;
+    }
+
+    .commu-sort-group .commu-sort-item {
+        padding: 5px 6px;
+    }
+}
+
 .commu-cloze {
     display: grid;
     gap: 10px;
