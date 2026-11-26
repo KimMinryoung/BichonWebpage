@@ -29,7 +29,6 @@
 
 | 항목 | 출처 |
 | --- | --- |
-| 『자본』 2·3권 강좌 보강(해설 얇음, 출처·발췌 0, 보기별 한마디 부족) — `scripts/commulingo-rewrite/`로 | [강좌 개선 인수인계 3절](commulingo-course-improvement-handoff-20261110.md) |
 | 실습 형식 계측 비교(첫 답 전 이탈·완료율). 2026-11-24 확인: 11-10 뒤 레슨 시작 7건(실습 5·기존 2)이라 보류, 12월 말에 다시(이벤트는 30일만 남는다) | 같은 문서, [실습 형식](commulingo-workshop-format.md) |
 | 실습 형식 네 강좌 영어를 사람이 통독하지 않음 | [실습 형식](commulingo-workshop-format.md) |
 | 동아시아: 1부 17편 7번 문항 출처(51년 강령·6전협 원문을 못 찾음), 4편 몽골 문항 초안 보류분 | [1부 구성안](commulingo-east-asia-course-plan-20261115.md), [2부 7절](commulingo-east-asia-course-part2-plan-20261117.md) |
