@@ -6519,7 +6519,7 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 }
 
 /* On a phone the items and every group box share one screen: the pool
-   is two columns, the groups one row, and text and padding are smaller. */
+   is two columns, the groups one row, and padding is tighter. */
 @media (max-width: 640px) {
     .commu-sort-pool {
         gap: 6px;
@@ -6543,7 +6543,6 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     }
 
     .commu-sort-target {
-        font-size: var(--text-sm);
         line-height: var(--leading-snug);
         margin: 0 -4px;
         min-height: 36px;
@@ -6551,7 +6550,6 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
     }
 
     .commu-sort-item {
-        font-size: var(--text-sm);
         min-height: 40px;
         padding: 6px 8px;
     }

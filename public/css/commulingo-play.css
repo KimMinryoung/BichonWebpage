@@ -2822,7 +2822,6 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
     }
 
     .commu-sort-target {
-        font-size: var(--text-sm);
         line-height: var(--leading-snug);
         margin: 0 -4px;
         min-height: 36px;
@@ -2830,7 +2829,6 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
     }
 
     .commu-sort-item {
-        font-size: var(--text-sm);
         min-height: 40px;
         padding: 6px 8px;
     }
