@@ -128,6 +128,54 @@
                     <% if (openShelf) { %></div><% } %>
                 </div></details>
             </div>
+            <%# A filter handed over from another page (#filter=, see common.js)
+                arrives on the unfiltered page. Before the default listing shows,
+                hide it, name the conditions from the facet chips above and put
+                bars where the results will be; the fetch starts here too, so it
+                need not wait for the page's scripts. %>
+            <script>(function() {
+                var m = /^#filter=(.+)$/.exec(location.hash);
+                if (!m) return;
+                var root = document.getElementById('people-browser');
+                var query = new URLSearchParams(decodeURIComponent(m[1]));
+                var target = location.pathname + '?' + query.toString();
+                window.__commuPeopleHandoff = { url: new URL(target, location.href).href, response: fetch(target, { credentials: 'same-origin', headers: { 'X-Commu-Swap': '1' } }) };
+                root.setAttribute('data-handoff', '');
+                var box = document.createElement('div');
+                box.className = 'commu-people-handoff';
+                var labels = [];
+                root.querySelectorAll('.commu-people-chip[data-query]').forEach(function(chip) {
+                    var own = new URLSearchParams(chip.getAttribute('data-query'));
+                    var keys = Array.from(own.keys());
+                    if (!keys.length || keys.some(function(key) { return query.get(key) !== own.get(key); })) return;
+                    var copy = chip.cloneNode(true);
+                    copy.querySelectorAll('svg, small, span').forEach(function(el) { el.remove(); });
+                    var label = copy.textContent.trim();
+                    if (label && labels.indexOf(label) < 0) labels.push(label);
+                });
+                if (labels.length) {
+                    var conditions = document.createElement('div');
+                    conditions.className = 'commu-people-conditions';
+                    labels.forEach(function(label) {
+                        var tag = document.createElement('span');
+                        tag.className = 'commu-people-condition';
+                        tag.textContent = label;
+                        conditions.appendChild(tag);
+                    });
+                    box.appendChild(conditions);
+                }
+                var status = document.createElement('p');
+                status.className = 'commu-sr-only';
+                status.setAttribute('role', 'status');
+                status.textContent = <%- JSON.stringify(en ? 'Loading results…' : '검색 결과를 불러오는 중…') %>;
+                box.appendChild(status);
+                var bars = document.createElement('div');
+                bars.className = 'commu-people-handoff-bars';
+                bars.setAttribute('aria-hidden', 'true');
+                for (var i = 0; i < 7; i++) bars.appendChild(document.createElement('span'));
+                box.appendChild(bars);
+                root.appendChild(box);
+            })();</script>
 
             <% if (explore.conditions.length) { %>
             <%# Buttons too: a removal link carried the order and view along, so

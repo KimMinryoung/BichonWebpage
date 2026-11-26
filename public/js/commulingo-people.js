@@ -262,7 +262,8 @@
         if (pending) pending.abort();
         var controller = pending = new AbortController();
         root.setAttribute('aria-busy', 'true');
-        fetch(url, { signal: controller.signal, credentials: 'same-origin', headers: SWAP_HEADERS })
+        // A #filter= handoff started its fetch inline in the page.
+        (options.response || fetch(url, { signal: controller.signal, credentials: 'same-origin', headers: SWAP_HEADERS }))
             .then(function(res) { if (!res.ok) throw new Error(res.status); return res.text(); })
             .then(function(html) {
                 var doc = new window.DOMParser().parseFromString(html, 'text/html');
@@ -390,11 +391,11 @@
     };
 
     if (browser()) initBrowser(browser());
-    var handoff = /^#filter=(.+)$/.exec(location.hash);
+    var handoff = window.__commuPeopleHandoff;
     if (handoff && browser()) {
-        var target = location.pathname + '?' + decodeURIComponent(handoff[1]);
-        if (searchInput) syncSearch(new URL(target, location.href).searchParams.get('q') || '');
-        swap(new URL(target, location.href).href, { replace: true });
+        window.__commuPeopleHandoff = null;
+        if (searchInput) syncSearch(new URL(handoff.url).searchParams.get('q') || '');
+        swap(handoff.url, { replace: true, response: handoff.response });
     }
     window.addEventListener('hashchange', focusHash);
     focusHash();

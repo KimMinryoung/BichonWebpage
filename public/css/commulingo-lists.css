@@ -901,9 +901,27 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
     0%, 100% { opacity: 0.45; }
     50% { opacity: 1; }
 }
+.commu-people-browser[data-handoff] > :not(.commu-people-filterbar):not(.commu-people-handoff):not(script) { display: none; }
+.commu-people-handoff-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: var(--space-4);
+    padding-inline: var(--content-inset);
+}
+.commu-people-handoff-bars span {
+    display: block;
+    height: 44px;
+    background: color-mix(in srgb, var(--text-muted) 16%, transparent);
+    animation: commu-skel-pulse 1.4s ease-in-out infinite;
+}
+.commu-people-handoff-bars span:first-child { height: 22px; width: 30%; }
+.commu-people-handoff .commu-people-condition { padding-right: var(--space-3); }
+.commu-people-handoff-bars span:nth-child(odd) { animation-delay: 0.2s; }
 
 @media (prefers-reduced-motion: reduce) {
     .commu-person-skel span { animation: none; opacity: 0.6; }
+    .commu-people-handoff-bars span { animation: none; opacity: 0.6; }
 }
 
 .commu-people-noscript-list {
