@@ -910,7 +910,8 @@
         return html + '</section>';
     }
 
-    // A brief table scrolls sideways inside its own box on a narrow screen;
+    // A brief table fits the column; only one too wide for its content scrolls
+    // sideways inside its own box on a narrow screen;
     // the first cell of each row is the row's heading.
     function renderBriefTable(table) {
         var columns = Array.isArray(table.columns) ? table.columns : [];
