@@ -311,6 +311,7 @@
   "commu-event-control-play",
   "commu-event-control-range",
   "commu-event-head",
+  "commu-event-map-failed",
   "commu-event-map-tools",
   "commu-event-map-viewport",
   "commu-event-nav",
