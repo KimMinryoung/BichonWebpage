@@ -98,7 +98,9 @@ var sections = p.event.bodySections || [];
             </div>
             <% if (p.event.mapSvg) { %>
             <figure class="commu-event-map commu-event-timeline-map">
-                <div class="commu-event-map-viewport" data-drag-scroll><%- p.event.mapSvg %></div>
+                <%# The SVG comes on its own (routes/commulingo-events.js /:id/map),
+                    fetched by commulingo-event-map.js into these bars. %>
+                <div class="commu-event-map-viewport" data-drag-scroll data-map-src="<%= (typeof urlLanguage !== 'undefined' && urlLanguage === 'en' ? '/en' : '') + '/commulingo/events/' + p.event.id + '/map' %>"><%- include('loading-bars', { count: 5, head: true, label: lang === 'en' ? 'Loading the map…' : '지도를 불러오는 중…' }) %></div>
             </figure>
             <% if (p.event.control) { var ctl = p.event.control, ep = strings.commuLingoViews.eventPanel; %>
             <div class="commu-event-control" data-event-control>

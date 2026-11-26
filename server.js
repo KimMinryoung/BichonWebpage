@@ -148,6 +148,9 @@ const server = app.listen(env.PORT, () => {
     // missing bodies) now rather than on the first reader request.
     require('./data/commulingo/docs-store').loadCommuLingoDocs()
         .catch(err => console.error('[commulingo docs] warm-up failed:', err.message));
+    // Auto-link indexes are rebuilt here after each data change, not by the
+    // next reader of a document or event page.
+    require('./data/commulingo/link-index-warm').startLinkIndexWarm();
     // Table-change notifications refresh the in-memory public previews.
     require('./utils/db-change-listener').startDbChangeListener(require('./config/database'));
 });

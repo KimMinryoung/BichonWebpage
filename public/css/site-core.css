@@ -1231,6 +1231,18 @@ a.site-search-head:focus-visible {
 .site-loading.is-compact > span { height: 22px; }
 .site-loading > span.is-head { height: 22px; width: 30%; }
 .site-loading > span.is-short { width: 62%; }
+.site-nav-wait {
+    position: fixed;
+    inset: 0;
+    z-index: 900;
+    background: var(--bg-canvas);
+    overflow: hidden;
+}
+.site-nav-wait > .site-loading {
+    max-width: 960px;
+    margin-inline: auto;
+    padding: var(--space-5) var(--gutter);
+}
 @media (prefers-reduced-motion: reduce) {
     .site-loading > span { animation: none; opacity: 0.6; }
 }

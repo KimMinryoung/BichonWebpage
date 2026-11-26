@@ -28,7 +28,7 @@ const SOURCES = [
     ['commulingo_terms', 'id', id => [`/terms/${id}`]],
     ['commulingo_people', 'id', id => [`/people/${id}`]],
     ['commulingo_person_sections', 'person_id', id => [`/people/${id}`]],
-    ['commulingo_history_events', 'id', id => [`/events/${id}`]],
+    ['commulingo_history_events', 'id', id => [`/events/${id}`, `/events/${id}/map`]],
     ['commulingo_offices', 'id', id => [`/offices/${id}`]],
     ['commulingo_docs', 'id', id => [`/docs/${id}`, `/docs/${id}/original`]],
     ['commulingo_data_documents', 'key', dataDocumentPaths],

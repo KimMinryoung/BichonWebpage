@@ -91,6 +91,55 @@ document.addEventListener('submit', function(e) {
     });
 })();
 
+// Waiting on the next page. Between a click and the next page's first paint
+// the browser keeps showing this one, so a slow page (a reference document
+// read cold, an event page carrying its map) looked like a dead click. After
+// 300 ms the content below the toolbar gives way to the loading bars. Only
+// plain same-site page links count: script-handled clicks (defaultPrevented
+// once the click has run its course), new tabs, downloads, files and links
+// within this page do not. Back to this page from the cache, the bars go.
+(function() {
+    var FILE = /\.(?:pdf|png|jpe?g|gif|webp|svg|zip|gz|csv|json|txt|xml|mp3|mp4|webm|epub|docx?|xlsx?|pptx?)$/i;
+    var timer = null, cover = null, giveUp = null;
+    function clear() {
+        clearTimeout(timer); clearTimeout(giveUp);
+        timer = giveUp = null;
+        if (cover) { cover.remove(); cover = null; }
+    }
+    function show() {
+        clear();
+        var main = document.querySelector('main');
+        var top = main ? Math.max(0, main.getBoundingClientRect().top) : 0;
+        cover = document.createElement('div');
+        cover.className = 'site-nav-wait';
+        cover.style.top = top + 'px';
+        cover.appendChild(window.siteLoading.bars(7, { head: true }));
+        document.body.appendChild(cover);
+        // A stopped or refused navigation leaves this page in place.
+        giveUp = setTimeout(clear, 20000);
+    }
+    function pageLink(event) {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return false;
+        var link = event.target.closest && event.target.closest('a[href]');
+        if (!link || (link.target && link.target !== '_self') || link.hasAttribute('download')) return false;
+        var url = new URL(link.href, location.href);
+        if (url.origin !== location.origin || FILE.test(url.pathname)) return false;
+        // The same page with only a new #fragment scrolls; it does not load.
+        if (url.pathname === location.pathname && url.search === location.search && url.hash) return false;
+        return true;
+    }
+    document.addEventListener('click', function(event) {
+        if (!pageLink(event)) return;
+        setTimeout(function() {
+            if (event.defaultPrevented) return;
+            clearTimeout(timer);
+            timer = setTimeout(show, 300);
+        }, 0);
+    });
+    window.addEventListener('pageshow', clear);
+    window.siteLoading.navigating = function() { clearTimeout(timer); timer = setTimeout(show, 300); };
+})();
+
 // People filter links with more than one condition (a card's affiliation
 // badge, a person's activity rows): a Cloudflare rule challenges such URLs
 // unless the people explorer's fetch marks them (X-Commu-Swap), so a click
@@ -118,7 +167,10 @@ document.addEventListener('submit', function(e) {
         }
         event.preventDefault();
         if (modified) window.open(handoff(url), '_blank', 'noopener');
-        else location.href = handoff(url);
+        else {
+            window.siteLoading.navigating();
+            location.href = handoff(url);
+        }
     }, true);
     document.addEventListener('auxclick', function(event) {
         var url = event.button === 1 && filterUrl(event);

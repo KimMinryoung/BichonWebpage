@@ -82,6 +82,23 @@ router.get('/', async (req, res) => {
     }
 });
 
+// The event map alone. The page leaves it out: the SVG is about half of an
+// event page's bytes, so the text arrives first and commulingo-event-map.js
+// fetches this into the loading bars the page holds in its place.
+router.get('/:eventId/map', async (req, res) => {
+    try {
+        const eventId = typeof req.params.eventId === 'string' ? req.params.eventId.trim() : '';
+        const panel = await buildEventPanel(eventId, res.locals.lang);
+        if (!panel || !panel.event.mapSvg) return res.status(404).end();
+        setShortPublicCache(res);
+        res.set('X-Robots-Tag', 'noindex');
+        res.type('html').send(panel.event.mapSvg);
+    } catch (err) {
+        console.error('commulingo event map:', err);
+        res.status(500).end();
+    }
+});
+
 router.get('/:eventId', async (req, res) => {
     try {
         const lang = res.locals.lang;

@@ -24,241 +24,262 @@
         row.addEventListener('mouseenter', function () { mark(true); });
         row.addEventListener('mouseleave', function () { mark(false); });
     });
-    // Keep the full SVG (including its legend) reachable at every scale.
-    // A fixed viewport uses native scrolling on both axes, including touch
-    // and keyboard navigation, while the controls stay outside the scroller.
-    document.querySelectorAll('.commu-event-map').forEach(function (figure) {
-        var viewport = figure.querySelector('.commu-event-map-viewport');
-        var svg = figure.querySelector('.emap-svg');
-        var section = figure.closest('.commu-event-timeline');
-        var tools = section && section.querySelector('.commu-event-map-tools');
-        if (!viewport || !svg || !tools) return;
-        // Read the attribute, not svg.viewBox: some clients (translation
-        // proxies, bot engines) hand the page an element without the SVG DOM,
-        // and svg.viewBox.baseVal threw there (site_client_errors, 2026-11).
-        var vb = (svg.getAttribute('viewBox') || '').split(/[\s,]+/).map(Number);
-        var box = { width: vb[2], height: vb[3] };
-        if (!(box.width > 0) || !(box.height > 0)) return;
-        var scale = 1;
-        var maxZoom = 12;
-        // Zooming in enlarges the whole SVG inside the scroller; zooming out
-        // widens the nested map's viewBox into the surround the server drew
-        // round the frame (data-surround), so the inset, legend and border
-        // keep their places.
-        var world = svg.querySelector('.emap-world');
-        var surround = (svg.getAttribute('data-surround') || '').split(' ').map(Number);
-        var minZoom = world && surround.length === 4 && surround[2] > 0 && surround[3] > 0
-            ? Math.max(box.width / surround[2], box.height / surround[3]) : 1;
-        var zoomIn = tools.querySelector('[data-map-action="zoom-in"]');
-        var zoomOut = tools.querySelector('[data-map-action="zoom-out"]');
-        viewport.style.aspectRatio = box.width + ' / ' + box.height;
-        viewport.tabIndex = 0;
-        viewport.setAttribute('role', 'region');
-        viewport.setAttribute('aria-label', svg.getAttribute('aria-label') || document.title);
-        tools.hidden = false;
-
-        function clamp(value, low, high) { return Math.max(low, Math.min(high, value)); }
-
-        function setScale(next) {
-            next = clamp(next, minZoom, maxZoom);
-            if (Math.abs(next - 1) < 1e-6) next = 1;
-            var enlarged = Math.max(next, 1);
-            var ratio = enlarged / Math.max(scale, 1);
-            var x = (viewport.scrollLeft + viewport.clientWidth / 2) * ratio - viewport.clientWidth / 2;
-            var y = (viewport.scrollTop + viewport.clientHeight / 2) * ratio - viewport.clientHeight / 2;
-            scale = next;
-            svg.style.width = (enlarged * 100) + '%';
-            svg.style.maxWidth = 'none';
-            if (world) {
-                // Widen round the frame's centre, slid back inside the surround.
-                var w = box.width / Math.min(next, 1);
-                var h = box.height / Math.min(next, 1);
-                var vx = next < 1 ? clamp((box.width - w) / 2, surround[0], surround[0] + surround[2] - w) : 0;
-                var vy = next < 1 ? clamp((box.height - h) / 2, surround[1], surround[1] + surround[3] - h) : 0;
-                world.setAttribute('viewBox', [vx, vy, w, h].join(' '));
-                svg.classList.toggle('is-zoomed-out', next < 1);
-                // Names shrink with the map; past the second step they are
-                // too small to read, so only the markers stay.
-                svg.classList.toggle('is-zoomed-far', next < 0.6);
-            }
-            viewport.scrollLeft = x;
-            viewport.scrollTop = y;
-            zoomIn.disabled = scale >= maxZoom;
-            zoomOut.disabled = scale <= minZoom + 1e-6;
-        }
-
-        tools.addEventListener('click', function (event) {
-            var button = event.target.closest('[data-map-action]');
-            if (!button || button.disabled) return;
-            var action = button.getAttribute('data-map-action');
-            if (action === 'zoom-in') setScale(scale / 0.72);
-            else if (action === 'zoom-out') setScale(scale * 0.72);
-            else if (action === 'reset') setScale(1);
-        });
-        setScale(1);
+    // The page holds loading bars where the map goes and names its URL
+    // (data-map-src); everything below needs the SVG, so it runs once the
+    // map is in. A failed load leaves a note and the timeline as it is.
+    var pendingMaps = Array.prototype.slice.call(document.querySelectorAll('.commu-event-map-viewport[data-map-src]'));
+    Promise.all(pendingMaps.map(function (viewport) {
+        return fetch(viewport.getAttribute('data-map-src'), { credentials: 'same-origin' })
+            .then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.text(); })
+            .then(function (svg) { viewport.innerHTML = svg; viewport.removeAttribute('data-map-src'); })
+            .catch(function () {
+                var failed = document.createElement('p');
+                failed.className = 'commu-event-map-failed';
+                failed.textContent = document.documentElement.lang === 'en' ? 'The map could not be loaded. Reload the page to try again.' : '지도를 불러오지 못했습니다. 새로고침하면 다시 시도합니다.';
+                viewport.replaceChildren(failed);
+            });
+    })).then(function () {
+        initMaps();
+        if (pendingMaps.length) document.dispatchEvent(new Event('commu-event-map-ready'));
     });
 
-    // Territorial-control phases: a slider and a play button step through
-    // the dated <g data-phase> layers; the timeline rows carry the phase in
-    // force at their date, so hovering or pinning a row moves the map too.
-    var setPhase = function () {};
-    var control = document.querySelector('[data-event-control]');
-    if (control) (function () {
-        var layers = Array.prototype.slice.call(document.querySelectorAll('.emap-phase[data-phase]'));
-        var range = control.querySelector('[data-control-range]');
-        var play = control.querySelector('[data-control-play]');
-        var caption = control.querySelector('[data-control-caption]');
-        var data = control.querySelector('[data-control-phases]');
-        var phases = [];
-        try { phases = JSON.parse(data.textContent); } catch (e) { return; }
-        if (!layers.length || !range || !phases.length) return;
-        control.querySelector('.commu-event-control-bar').hidden = false;
-        var current = 0;
-        var timer = null;
+    function initMaps() {
+        // Keep the full SVG (including its legend) reachable at every scale.
+        // A fixed viewport uses native scrolling on both axes, including touch
+        // and keyboard navigation, while the controls stay outside the scroller.
+        document.querySelectorAll('.commu-event-map').forEach(function (figure) {
+            var viewport = figure.querySelector('.commu-event-map-viewport');
+            var svg = figure.querySelector('.emap-svg');
+            var section = figure.closest('.commu-event-timeline');
+            var tools = section && section.querySelector('.commu-event-map-tools');
+            if (!viewport || !svg || !tools) return;
+            // Read the attribute, not svg.viewBox: some clients (translation
+            // proxies, bot engines) hand the page an element without the SVG DOM,
+            // and svg.viewBox.baseVal threw there (site_client_errors, 2026-11).
+            var vb = (svg.getAttribute('viewBox') || '').split(/[\s,]+/).map(Number);
+            var box = { width: vb[2], height: vb[3] };
+            if (!(box.width > 0) || !(box.height > 0)) return;
+            var scale = 1;
+            var maxZoom = 12;
+            // Zooming in enlarges the whole SVG inside the scroller; zooming out
+            // widens the nested map's viewBox into the surround the server drew
+            // round the frame (data-surround), so the inset, legend and border
+            // keep their places.
+            var world = svg.querySelector('.emap-world');
+            var surround = (svg.getAttribute('data-surround') || '').split(' ').map(Number);
+            var minZoom = world && surround.length === 4 && surround[2] > 0 && surround[3] > 0
+                ? Math.max(box.width / surround[2], box.height / surround[3]) : 1;
+            var zoomIn = tools.querySelector('[data-map-action="zoom-in"]');
+            var zoomOut = tools.querySelector('[data-map-action="zoom-out"]');
+            viewport.style.aspectRatio = box.width + ' / ' + box.height;
+            viewport.tabIndex = 0;
+            viewport.setAttribute('role', 'region');
+            viewport.setAttribute('aria-label', svg.getAttribute('aria-label') || document.title);
+            tools.hidden = false;
 
-        setPhase = function (index) {
-            index = Math.max(0, Math.min(phases.length - 1, index));
-            current = index;
-            layers.forEach(function (layer) {
-                layer.classList.toggle('is-current', layer.getAttribute('data-phase') === String(index));
+            function clamp(value, low, high) { return Math.max(low, Math.min(high, value)); }
+
+            function setScale(next) {
+                next = clamp(next, minZoom, maxZoom);
+                if (Math.abs(next - 1) < 1e-6) next = 1;
+                var enlarged = Math.max(next, 1);
+                var ratio = enlarged / Math.max(scale, 1);
+                var x = (viewport.scrollLeft + viewport.clientWidth / 2) * ratio - viewport.clientWidth / 2;
+                var y = (viewport.scrollTop + viewport.clientHeight / 2) * ratio - viewport.clientHeight / 2;
+                scale = next;
+                svg.style.width = (enlarged * 100) + '%';
+                svg.style.maxWidth = 'none';
+                if (world) {
+                    // Widen round the frame's centre, slid back inside the surround.
+                    var w = box.width / Math.min(next, 1);
+                    var h = box.height / Math.min(next, 1);
+                    var vx = next < 1 ? clamp((box.width - w) / 2, surround[0], surround[0] + surround[2] - w) : 0;
+                    var vy = next < 1 ? clamp((box.height - h) / 2, surround[1], surround[1] + surround[3] - h) : 0;
+                    world.setAttribute('viewBox', [vx, vy, w, h].join(' '));
+                    svg.classList.toggle('is-zoomed-out', next < 1);
+                    // Names shrink with the map; past the second step they are
+                    // too small to read, so only the markers stay.
+                    svg.classList.toggle('is-zoomed-far', next < 0.6);
+                }
+                viewport.scrollLeft = x;
+                viewport.scrollTop = y;
+                zoomIn.disabled = scale >= maxZoom;
+                zoomOut.disabled = scale <= minZoom + 1e-6;
+            }
+
+            tools.addEventListener('click', function (event) {
+                var button = event.target.closest('[data-map-action]');
+                if (!button || button.disabled) return;
+                var action = button.getAttribute('data-map-action');
+                if (action === 'zoom-in') setScale(scale / 0.72);
+                else if (action === 'zoom-out') setScale(scale * 0.72);
+                else if (action === 'reset') setScale(1);
             });
-            range.value = String(index);
-            var phase = phases[index];
-            range.setAttribute('aria-valuetext', phase.date + ' ' + phase.label);
-            caption.querySelector('strong').textContent = phase.date;
-            caption.querySelector('span').textContent = phase.label;
-        };
-
-        function stop() {
-            if (timer === null) return;
-            clearInterval(timer);
-            timer = null;
-            play.setAttribute('aria-pressed', 'false');
-            play.textContent = play.getAttribute('data-label-play');
-        }
-
-        range.addEventListener('input', function () {
-            stop();
-            setPhase(parseInt(range.value, 10));
+            setScale(1);
         });
-        play.addEventListener('click', function () {
-            if (timer !== null) { stop(); return; }
-            if (current >= phases.length - 1) setPhase(0);
-            play.setAttribute('aria-pressed', 'true');
-            play.textContent = play.getAttribute('data-label-pause');
-            timer = setInterval(function () {
-                if (current >= phases.length - 1) { stop(); return; }
-                setPhase(current + 1);
-            }, 1600);
-        });
-        // A row without a map number still moves the map to its date.
-        document.querySelectorAll('.commu-event-timeline-list > li[data-control-phase]').forEach(function (row) {
-            if (row.hasAttribute('data-geo-num')) return;
-            row.addEventListener('click', function (event) {
-                if (event.target.closest('a')) return;
+
+        // Territorial-control phases: a slider and a play button step through
+        // the dated <g data-phase> layers; the timeline rows carry the phase in
+        // force at their date, so hovering or pinning a row moves the map too.
+        var setPhase = function () {};
+        var control = document.querySelector('[data-event-control]');
+        if (control) (function () {
+            var layers = Array.prototype.slice.call(document.querySelectorAll('.emap-phase[data-phase]'));
+            var range = control.querySelector('[data-control-range]');
+            var play = control.querySelector('[data-control-play]');
+            var caption = control.querySelector('[data-control-caption]');
+            var data = control.querySelector('[data-control-phases]');
+            var phases = [];
+            try { phases = JSON.parse(data.textContent); } catch (e) { return; }
+            if (!layers.length || !range || !phases.length) return;
+            control.querySelector('.commu-event-control-bar').hidden = false;
+            var current = 0;
+            var timer = null;
+
+            setPhase = function (index) {
+                index = Math.max(0, Math.min(phases.length - 1, index));
+                current = index;
+                layers.forEach(function (layer) {
+                    layer.classList.toggle('is-current', layer.getAttribute('data-phase') === String(index));
+                });
+                range.value = String(index);
+                var phase = phases[index];
+                range.setAttribute('aria-valuetext', phase.date + ' ' + phase.label);
+                caption.querySelector('strong').textContent = phase.date;
+                caption.querySelector('span').textContent = phase.label;
+            };
+
+            function stop() {
+                if (timer === null) return;
+                clearInterval(timer);
+                timer = null;
+                play.setAttribute('aria-pressed', 'false');
+                play.textContent = play.getAttribute('data-label-play');
+            }
+
+            range.addEventListener('input', function () {
                 stop();
-                setPhase(parseInt(row.getAttribute('data-control-phase'), 10));
+                setPhase(parseInt(range.value, 10));
+            });
+            play.addEventListener('click', function () {
+                if (timer !== null) { stop(); return; }
+                if (current >= phases.length - 1) setPhase(0);
+                play.setAttribute('aria-pressed', 'true');
+                play.textContent = play.getAttribute('data-label-pause');
+                timer = setInterval(function () {
+                    if (current >= phases.length - 1) { stop(); return; }
+                    setPhase(current + 1);
+                }, 1600);
+            });
+            // A row without a map number still moves the map to its date.
+            document.querySelectorAll('.commu-event-timeline-list > li[data-control-phase]').forEach(function (row) {
+                if (row.hasAttribute('data-geo-num')) return;
+                row.addEventListener('click', function (event) {
+                    if (event.target.closest('a')) return;
+                    stop();
+                    setPhase(parseInt(row.getAttribute('data-control-phase'), 10));
+                });
+            });
+            setPhase(0);
+            control.stopPlaying = stop;
+        })();
+
+        function followRow(num) {
+            if (!control || num === null) return;
+            var row = document.querySelector('.commu-event-timeline-list > li[data-geo-num="' + num + '"][data-control-phase]');
+            if (!row) return;
+            if (control.stopPlaying) control.stopPlaying();
+            setPhase(parseInt(row.getAttribute('data-control-phase'), 10));
+        }
+
+        // Both maps of the page carry the numbered geometry — the orientation map
+        // at the top and the campaign map in the timeline section — and they
+        // highlight together.
+        var svgs = Array.prototype.slice.call(
+            document.querySelectorAll('.commu-event-map .emap-svg'));
+        var rows = Array.prototype.slice.call(
+            document.querySelectorAll('.commu-event-timeline-list > li[data-geo-num]'));
+        if (!svgs.length || !rows.length) return;
+
+        function shapes(num) {
+            return svgs.reduce(function (all, svg) {
+                return all.concat(Array.prototype.slice.call(
+                    svg.querySelectorAll('[data-geo-num="' + num + '"]')));
+            }, []);
+        }
+        var shown = null;   // number currently lit
+        var pinned = null;  // number held through mouseleave/scroll, or null
+
+        function markPinned() {
+            rows.forEach(function (row) {
+                row.classList.toggle('is-map-pinned',
+                    row.getAttribute('data-geo-num') === String(pinned));
+            });
+        }
+
+        function show(num) {
+            if (shown === num) return;
+            if (shown !== null) {
+                shapes(shown).forEach(function (el) { el.classList.remove('is-active'); });
+                rows.forEach(function (row) { row.classList.remove('is-map-active'); });
+            }
+            shown = num;
+            svgs.forEach(function (svg) { svg.classList.toggle('has-active', num !== null); });
+            if (num === null) return;
+            followRow(num);
+            shapes(num).forEach(function (el) { el.classList.add('is-active'); });
+            rows.forEach(function (row) {
+                if (row.getAttribute('data-geo-num') === String(num)) row.classList.add('is-map-active');
+            });
+        }
+
+        rows.forEach(function (row) {
+            var num = parseInt(row.getAttribute('data-geo-num'), 10);
+            row.addEventListener('mouseenter', function () {
+                if (pinned === null) show(num);
+            });
+            row.addEventListener('mouseleave', function () {
+                if (pinned === null) show(null);
+            });
+            row.addEventListener('click', function (event) {
+                if (event.target.closest('a, button')) return;
+                pinned = pinned === num ? null : num;
+                markPinned();
+                show(pinned);       // a second click clears the row and map immediately
             });
         });
-        setPhase(0);
-        control.stopPlaying = stop;
-    })();
 
-    function followRow(num) {
-        if (!control || num === null) return;
-        var row = document.querySelector('.commu-event-timeline-list > li[data-geo-num="' + num + '"][data-control-phase]');
-        if (!row) return;
-        if (control.stopPlaying) control.stopPlaying();
-        setPhase(parseInt(row.getAttribute('data-control-phase'), 10));
-    }
-
-    // Both maps of the page carry the numbered geometry — the orientation map
-    // at the top and the campaign map in the timeline section — and they
-    // highlight together.
-    var svgs = Array.prototype.slice.call(
-        document.querySelectorAll('.commu-event-map .emap-svg'));
-    var rows = Array.prototype.slice.call(
-        document.querySelectorAll('.commu-event-timeline-list > li[data-geo-num]'));
-    if (!svgs.length || !rows.length) return;
-
-    function shapes(num) {
-        return svgs.reduce(function (all, svg) {
-            return all.concat(Array.prototype.slice.call(
-                svg.querySelectorAll('[data-geo-num="' + num + '"]')));
-        }, []);
-    }
-    var shown = null;   // number currently lit
-    var pinned = null;  // number held through mouseleave/scroll, or null
-
-    function markPinned() {
-        rows.forEach(function (row) {
-            row.classList.toggle('is-map-pinned',
-                row.getAttribute('data-geo-num') === String(pinned));
-        });
-    }
-
-    function show(num) {
-        if (shown === num) return;
-        if (shown !== null) {
-            shapes(shown).forEach(function (el) { el.classList.remove('is-active'); });
-            rows.forEach(function (row) { row.classList.remove('is-map-active'); });
+        function clearPin() {
+            pinned = null;
+            markPinned();
+            show(null);
         }
-        shown = num;
-        svgs.forEach(function (svg) { svg.classList.toggle('has-active', num !== null); });
-        if (num === null) return;
-        followRow(num);
-        shapes(num).forEach(function (el) { el.classList.add('is-active'); });
-        rows.forEach(function (row) {
-            if (row.getAttribute('data-geo-num') === String(num)) row.classList.add('is-map-active');
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && pinned !== null) clearPin();
+        });
+        document.querySelectorAll('.commu-event-timeline-list > li:not([data-geo-num])').forEach(function (row) {
+            row.addEventListener('click', function (event) {
+                if (!event.target.closest('a, button')) clearPin();
+            });
+        });
+
+        svgs.forEach(function (svg) {
+            svg.addEventListener('click', function (event) {
+                var group = event.target.closest('[data-geo-num]');
+                if (!group) {
+                    clearPin();
+                    return;
+                }
+                var num = parseInt(group.getAttribute('data-geo-num'), 10);
+                pinned = num;
+                markPinned();
+                show(num);
+                var row = rows.filter(function (r) {
+                    return r.getAttribute('data-geo-num') === String(num);
+                })[0];
+                if (row) row.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            });
         });
     }
-
-    rows.forEach(function (row) {
-        var num = parseInt(row.getAttribute('data-geo-num'), 10);
-        row.addEventListener('mouseenter', function () {
-            if (pinned === null) show(num);
-        });
-        row.addEventListener('mouseleave', function () {
-            if (pinned === null) show(null);
-        });
-        row.addEventListener('click', function (event) {
-            if (event.target.closest('a, button')) return;
-            pinned = pinned === num ? null : num;
-            markPinned();
-            show(pinned);       // a second click clears the row and map immediately
-        });
-    });
-
-    function clearPin() {
-        pinned = null;
-        markPinned();
-        show(null);
-    }
-
-    document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape' && pinned !== null) clearPin();
-    });
-    document.querySelectorAll('.commu-event-timeline-list > li:not([data-geo-num])').forEach(function (row) {
-        row.addEventListener('click', function (event) {
-            if (!event.target.closest('a, button')) clearPin();
-        });
-    });
-
-    svgs.forEach(function (svg) {
-        svg.addEventListener('click', function (event) {
-            var group = event.target.closest('[data-geo-num]');
-            if (!group) {
-                clearPin();
-                return;
-            }
-            var num = parseInt(group.getAttribute('data-geo-num'), 10);
-            pinned = num;
-            markPinned();
-            show(num);
-            var row = rows.filter(function (r) {
-                return r.getAttribute('data-geo-num') === String(num);
-            })[0];
-            if (row) row.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        });
-    });
 })();

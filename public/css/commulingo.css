@@ -4779,6 +4779,7 @@ a.commu-office-head-row:focus-visible { outline: 2px solid var(--accent-line); o
 .commu-event-map { margin: 1.1rem 0 0; position: relative; }
 .commu-event-map .emap-svg { display: block; width: 100%; height: auto; font-family: inherit; }
 .commu-event-map-viewport { overflow: auto; }
+.commu-event-map-failed { margin: 0; padding: var(--space-4) 0; color: var(--text-muted); }
 .commu-event-map-viewport:focus-visible { outline: 2px solid var(--accent-line); outline-offset: 2px; }
 .commu-event-timeline-header { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-bottom: 1rem; }
 .commu-event-timeline-header h2 { margin: 0; min-width: 0; }

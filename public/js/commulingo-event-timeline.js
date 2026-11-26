@@ -7,15 +7,19 @@
     if (!filter) return;
     var chips = Array.prototype.slice.call(filter.querySelectorAll('.commu-tl-chip'));
     var rows = Array.prototype.slice.call(document.querySelectorAll('.commu-event-timeline-list > li'));
-    var svgs = Array.prototype.slice.call(document.querySelectorAll('.commu-event-map svg'));
+    var current = '';
 
+    // The map arrives after the page (commulingo-event-map.js), so look it up
+    // each time, and dim its badges for a country picked before it came.
     function badges(num) {
+        var svgs = Array.prototype.slice.call(document.querySelectorAll('.commu-event-map svg'));
         return svgs.reduce(function (all, svg) {
             return all.concat(Array.prototype.slice.call(svg.querySelectorAll('[data-geo-num="' + num + '"]')));
         }, []);
     }
 
     function apply(code) {
+        current = code;
         chips.forEach(function (chip) {
             var on = (chip.getAttribute('data-country') || '') === code;
             chip.classList.toggle('is-active', on);
@@ -36,4 +40,5 @@
             apply(chip.classList.contains('is-active') && code ? '' : code);
         });
     });
+    document.addEventListener('commu-event-map-ready', function () { if (current) apply(current); });
 })();
