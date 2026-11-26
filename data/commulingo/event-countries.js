@@ -78,4 +78,16 @@ function sectionMarkerCodes(markdown) {
     return out;
 }
 
-module.exports = { timelineCountries, eventCountries, countryFilter, flagsHtml, splitSectionCountries, sectionMarkerCodes };
+// A heading whose text still holds a brace after its marker is taken off,
+// most often one group per country (`{japan} {usa}`): the marker is one group,
+// `{japan usa}`, and anything else leaks into the heading and contents list.
+function badSectionMarker(heading) {
+    const line = '## ' + String(heading || '').replace(/^#+\s*/, '').trim();
+    const m = line.match(SECTION_MARKER);
+    return /[{}]/.test(m ? m[1] : line);
+}
+function badSectionMarkerHeadings(markdown) {
+    return String(markdown || '').split('\n').filter(line => line.startsWith('## ') && badSectionMarker(line)).map(line => line.slice(3).trim());
+}
+
+module.exports = { timelineCountries, eventCountries, countryFilter, flagsHtml, splitSectionCountries, sectionMarkerCodes, badSectionMarker, badSectionMarkerHeadings };

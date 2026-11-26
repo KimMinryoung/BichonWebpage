@@ -10,6 +10,7 @@ const assert = require('assert/strict');
 const crypto = require('crypto');
 const root = process.env.APP_ROOT || path.resolve(__dirname, '..');
 const { FLAG_NAMES } = require(path.join(root, 'data/commulingo/flag-icons'));
+const { badSectionMarker } = require(path.join(root, 'data/commulingo/event-countries'));
 const { canonicalPeriod } = require(path.join(root, 'data/commulingo/career-period'));
 const { normalizeKoreanQuotes, normalizeKoreanTree } = require(path.join(root, 'data/commulingo/korean-quotes'));
 // The period is year/month/day columns (migrations 362/363), as in career entries.
@@ -103,6 +104,7 @@ function validateEvent(e, at, check) {
         check(body.length > 5000, `${at}: body_${lang} must be over 5000 characters (has ${body.length})`);
         const expected = sections.map((s, si) => {
             check(s.heading?.[lang] && s.paragraphs?.length >= 2, `${at}: sections[${si}] needs heading.${lang} and at least 2 paragraphs`);
+            check(!badSectionMarker(s.heading?.[lang]), `${at}: sections[${si}].heading.${lang}: write the country marker as one group, {japan usa}`);
             return '## ' + s.heading?.[lang] + '\n\n' + (s.paragraphs || []).map((p, pi) => {
                 const where = `${at}: sections[${si}].paragraphs[${pi}]`;
                 check(p[lang], `${where} has no ${lang} text`);

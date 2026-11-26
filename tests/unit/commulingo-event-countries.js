@@ -1,5 +1,5 @@
 const assert = require('node:assert/strict');
-const { timelineCountries, eventCountries, countryFilter, flagsHtml, splitSectionCountries, sectionMarkerCodes } = require('../../data/commulingo/event-countries');
+const { timelineCountries, eventCountries, countryFilter, flagsHtml, splitSectionCountries, sectionMarkerCodes, badSectionMarker, badSectionMarkerHeadings } = require('../../data/commulingo/event-countries');
 assert.deepEqual(timelineCountries('poland'), ['poland']);
 assert.deepEqual(timelineCountries(['poland', 'soviet', 'poland', 'atlantis', 7, null]), ['poland', 'soviet']);
 assert.deepEqual(timelineCountries(undefined), []);
@@ -20,5 +20,10 @@ const split = splitSectionCountries(md);
 assert.deepEqual(split.sections, [['estonia', 'latvia'], [], [], ['uk']]);
 assert.equal(split.markdown, '## Frame\n\ntext {not a heading}\n\n## Plain\n\n## Bad\n## Tail\n', 'markers stripped, prose untouched');
 assert.deepEqual(splitSectionCountries('').sections, []);
+assert.equal(badSectionMarker('Okinawa {japan usa}'), false);
+assert.equal(badSectionMarker('Plain'), false);
+assert.equal(badSectionMarker('Okinawa {japan} {usa}'), true, 'one brace per country');
+assert.equal(badSectionMarker('Crisis {france}{uk}'), true);
+assert.deepEqual(badSectionMarkerHeadings('## A {japan usa}\n## B {japan} {usa}\ntext {x} {y}'), ['B {japan} {usa}']);
 assert.deepEqual(sectionMarkerCodes(md), ['estonia', 'latvia', 'atlantis', 'uk']);
 console.log('event countries: normalization, chip order, one-country no-filter, labels, section markers OK');

@@ -27,7 +27,7 @@
 require('dotenv').config();
 const db = require('../config/database');
 const { hasFlag } = require('../data/commulingo/flag-icons');
-const { sectionMarkerCodes } = require('../data/commulingo/event-countries');
+const { sectionMarkerCodes, badSectionMarkerHeadings } = require('../data/commulingo/event-countries');
 
 (async () => {
     try {
@@ -47,6 +47,9 @@ const { sectionMarkerCodes } = require('../data/commulingo/event-countries');
                 if (!hasFlag(code)) problems.push(`${row.id}.countries: no flag for ${JSON.stringify(code)}`);
             });
             ['body_ko', 'body_en'].forEach(column => {
+                badSectionMarkerHeadings(row[column]).forEach(heading => {
+                    problems.push(`${row.id} ${column} section marker: write one group {a b}, not ${JSON.stringify(heading)}`);
+                });
                 sectionMarkerCodes(row[column]).forEach(code => {
                     if (!hasFlag(code)) problems.push(`${row.id} ${column} section marker: no flag for ${JSON.stringify(code)}`);
                     else if (!direct.includes(code)) problems.push(`${row.id} ${column} section marker: ${code} is absent from event countries`);

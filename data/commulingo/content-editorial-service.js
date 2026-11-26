@@ -12,6 +12,7 @@ const { canonicalPeriod } = require('./career-period');
 const { normalizeKoreanQuotes } = require('./korean-quotes');
 const { validGeo } = require('./event-map-svg');
 const { FLAG_NAMES } = require('./flag-icons');
+const { badSectionMarker } = require('./event-countries');
 const { assertKnownIndicators } = require('./indicators');
 
 const TARGETS = ['history_event', 'history_event_section', 'history_event_person', 'office_row'];
@@ -260,6 +261,9 @@ async function validateSection(client, id, action, fields) {
         if (/(^|\n)\s*#{1,6} /.test(fields.body[lang])) throw badRequest(`body.${lang} contains a markdown heading line; one call is one section`);
     }
     if (action !== 'delete') assertKnownIndicators('body', fields.body);
+    for (const lang of action === 'delete' ? [] : ['ko', 'en']) {
+        if (badSectionMarker(fields.heading[lang])) throw badRequest(`heading.${lang}: the country marker is one group at the end, {japan usa}, not one brace per country`);
+    }
     if (fields.after !== undefined && fields.after !== null && !isLocalized(fields.after)) throw badRequest('after must be {ko, en} headings, or omitted');
     for (const lang of ['ko', 'en']) {
         const parts = splitBody(event[`body_${lang}`]);
