@@ -127,7 +127,12 @@ async function fetchCached(url, options) {
     const clean = String(url).replace(/#.*$/, '');
     const res = await fetch(clean, { headers: { 'user-agent': 'cyber-lenin.com CommuLingo source check' } });
     if (!res.ok) throw new Error('HTTP ' + res.status + ' for ' + clean);
-    const html = await res.text();
+    // Many marxists.org pages are ISO-8859-1 or windows-1252: decoding them as
+    // UTF-8 turns £, ½ and ¾ into U+FFFD for good. Use the declared charset.
+    const bytes = Buffer.from(await res.arrayBuffer());
+    const declared = /charset=["']?([\w-]+)/i.exec(res.headers.get('content-type') || '') || /<meta[^>]+charset=["']?([\w-]+)/i.exec(bytes.toString('latin1'));
+    const charset = declared ? declared[1].toLowerCase() : 'utf-8';
+    const html = new TextDecoder(/^(iso-8859-1|latin-?1|us-ascii)$/.test(charset) ? 'windows-1252' : charset).decode(bytes);
     fs.mkdirSync(path.dirname(file), { recursive: true });
     fs.writeFileSync(file + '.tmp', html);
     fs.renameSync(file + '.tmp', file);
