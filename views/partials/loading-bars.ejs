@@ -1,0 +1,7 @@
+<%# Server-side twin of window.siteLoading.bars() (common.js): the site's
+    loading placeholder. locals: count (default 5), head, compact, label, id. %>
+<% var n = typeof count !== 'undefined' ? count : 5; var isEn = typeof lang !== 'undefined' && lang === 'en'; %>
+<div class="site-loading<%= typeof compact !== 'undefined' && compact ? ' is-compact' : '' %>"<% if (typeof id !== 'undefined' && id) { %> id="<%= id %>"<% } %>>
+    <% for (var i = 0; i < n; i++) { %><span aria-hidden="true"<% if (i === 0 && typeof head !== 'undefined' && head) { %> class="is-head"<% } else if (i === n - 1) { %> class="is-short"<% } %>></span><% } %>
+    <p class="visually-hidden" role="status"><%= typeof label !== 'undefined' && label ? label : (isEn ? 'Loading…' : '불러오는 중…') %></p>
+</div>

@@ -95,6 +95,7 @@
     function showLoadError() {
         var target = els.prompt || els.heading;
         if (target) target.textContent = strings.drillLoadFail || 'Could not load the questions.';
+        if (els.choices) els.choices.replaceChildren();
         if (els.next) els.next.disabled = true;
     }
 

@@ -97,7 +97,7 @@
                 if (panel && !results.childElementCount) {
                     slow = setTimeout(function () {
                         if (results.childElementCount) return;
-                        results.appendChild(message(label('loading', {})));
+                        results.appendChild(window.siteLoading.bars(3, { compact: true, label: label('loading', {}) }));
                         panel.hidden = !inUse();
                     }, 400);
                 }

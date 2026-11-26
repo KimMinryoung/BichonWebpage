@@ -29,7 +29,7 @@
         <div class="users-shell">
             <section class="ui-card users-list-panel" aria-label="<%= strings.admin.users %>">
                 <div id="usersList" class="users-list">
-                    <div class="loading-spinner"><%= strings.admin.chatLogsLoading %></div>
+                    <%- include('../partials/loading-bars', { count: 6, label: strings.admin.chatLogsLoading }) %>
                 </div>
                 <div class="pagination" id="usersPagination"></div>
             </section>
@@ -70,7 +70,8 @@
         };
         window.ADMIN_CSRF_TOKEN = '<%= csrfToken %>';
     </script>
-    <script src="/js/admin-users.js?v=<%= assetVersion %>"></script>
     <%- include('../partials/footer') %>
+    <%# After the footer: common.js there builds the loading bars it shows. %>
+    <script src="/js/admin-users.js?v=<%= assetVersion %>"></script>
 </body>
 </html>

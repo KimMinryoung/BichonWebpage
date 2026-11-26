@@ -169,10 +169,14 @@
                 status.setAttribute('role', 'status');
                 status.textContent = <%- JSON.stringify(en ? 'Loading results…' : '검색 결과를 불러오는 중…') %>;
                 box.appendChild(status);
+                // The site loading bars (style.css .site-loading); common.js,
+                // which builds them elsewhere, loads after this point.
                 var bars = document.createElement('div');
-                bars.className = 'commu-people-handoff-bars';
+                bars.className = 'site-loading';
                 bars.setAttribute('aria-hidden', 'true');
                 for (var i = 0; i < 7; i++) bars.appendChild(document.createElement('span'));
+                bars.firstChild.className = 'is-head';
+                bars.lastChild.className = 'is-short';
                 box.appendChild(bars);
                 root.appendChild(box);
             })();</script>

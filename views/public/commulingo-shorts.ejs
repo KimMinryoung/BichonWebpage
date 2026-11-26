@@ -19,7 +19,7 @@
         <h1 class="visually-hidden"><%= strings.commuLingo.shorts %></h1>
         <section class="commu-shorts" aria-label="<%= strings.commuLingo.shorts %>">
             <div class="commu-shorts-feed" id="shortsFeed" tabindex="0" aria-describedby="shortsDesc">
-                <p class="commu-shorts-loading" id="shortsLoading"><%= strings.commuLingo.shortsLoading %></p>
+                <%- include('../partials/loading-bars', { id: 'shortsLoading', count: 6, head: true, label: strings.commuLingo.shortsLoading }) %>
             </div>
             <p class="visually-hidden" id="shortsDesc"><%= strings.commuLingo.shortsDesc %></p>
         </section>

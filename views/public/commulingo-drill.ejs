@@ -53,7 +53,7 @@
             <article class="commu-question">
                 <h2 id="drillPrompt"></h2>
                 <blockquote class="commu-drill-quote is-hidden" id="drillQuote"></blockquote>
-                <div class="commu-choices" id="drillChoices"></div>
+                <div class="commu-choices" id="drillChoices"><%- include('../partials/loading-bars', { count: 4, head: true }) %></div>
                 <div class="commu-feedback is-hidden" id="drillFeedback"></div>
                 <div class="commu-quiz-actions">
                     <button type="button" class="btn btn-primary" id="drillNextBtn" disabled><%= strings.commuLingo.next %></button>

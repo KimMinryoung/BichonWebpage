@@ -262,6 +262,15 @@
         if (pending) pending.abort();
         var controller = pending = new AbortController();
         root.setAttribute('aria-busy', 'true');
+        // A picked condition, page or Back hides the old results behind the
+        // loading bars, which would only flicker under each typed letter.
+        if (!options.typing && !options.response && !root.hasAttribute('data-handoff')) {
+            root.setAttribute('data-handoff', '');
+            var waiting = document.createElement('div');
+            waiting.className = 'commu-people-handoff';
+            waiting.appendChild(window.siteLoading.bars(7, { head: true }));
+            root.appendChild(waiting);
+        }
         // A #filter= handoff started its fetch inline in the page.
         (options.response || fetch(url, { signal: controller.signal, credentials: 'same-origin', headers: SWAP_HEADERS }))
             .then(function(res) { if (!res.ok) throw new Error(res.status); return res.text(); })
@@ -284,7 +293,10 @@
                     results.focus({ preventScroll: true });
                 }
             })
-            .catch(function(error) { if (error.name !== 'AbortError') location.href = url; })
+            .catch(function(error) {
+                if (error.name === 'AbortError') return;
+                location.href = url;
+            })
             .finally(function() { if (pending === controller) pending = null; });
     }
 

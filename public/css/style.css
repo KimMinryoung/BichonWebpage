@@ -2870,9 +2870,10 @@ a.site-search-head:focus-visible {
     overscroll-behavior: contain;
 }
 
-.site-search-panel-results[aria-busy] > * {
+.site-search-panel-results[aria-busy] > :not(.site-loading) {
     opacity: 0.6;
 }
+.site-search-panel-results > .site-loading { padding: var(--space-3); }
 
 .site-search-panel .site-search-group {
     margin: 0;
@@ -3156,4 +3157,35 @@ a.site-search-head:focus-visible {
     font-family: var(--font-mono, monospace);
     font-size: var(--text-xs);
     overflow-wrap: anywhere;
+}
+
+/* ===== Loading placeholder =====
+   The site's one waiting pattern: long translucent bars that pulse gently
+   where the content will land (a commercial-style skeleton). Plain "loading"
+   text or a dimmed old list read as a stall or as stale results. Built by
+   window.siteLoading.bars() (common.js) or the loading-bars partial; the
+   bars are aria-hidden and a visually hidden status line names the wait. */
+.site-loading {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-block: var(--space-3);
+    grid-column: 1 / -1;
+}
+.site-loading > span {
+    display: block;
+    height: 44px;
+    background: color-mix(in srgb, var(--text-muted) 16%, transparent);
+    animation: site-loading-pulse 1.4s ease-in-out infinite;
+}
+.site-loading > span:nth-child(odd) { animation-delay: 0.2s; }
+.site-loading.is-compact > span { height: 22px; }
+.site-loading > span.is-head { height: 22px; width: 30%; }
+.site-loading > span.is-short { width: 62%; }
+@keyframes site-loading-pulse {
+    0%, 100% { opacity: 0.45; }
+    50% { opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .site-loading > span { animation: none; opacity: 0.6; }
 }

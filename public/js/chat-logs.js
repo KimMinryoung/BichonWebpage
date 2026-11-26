@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function fetchLogs(offset) {
         var limit = getLimit();
         var container = document.getElementById('logsContainer');
-        container.innerHTML = '<div class="loading-spinner">불러오는 중...</div>';
+        container.replaceChildren(window.siteLoading.bars(6));
 
         try {
             var res = await fetch('/admin/api/logs?limit=' + limit + '&offset=' + offset);

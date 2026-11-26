@@ -29,7 +29,7 @@
         </div>
 
         <div id="logsContainer">
-            <div class="loading-spinner"><%= strings.admin.chatLogsLoading %></div>
+            <%- include('../partials/loading-bars', { count: 6, label: strings.admin.chatLogsLoading }) %>
         </div>
 
         <div class="pagination" id="pagination"></div>

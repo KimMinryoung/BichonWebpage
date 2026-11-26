@@ -140,12 +140,13 @@
             list.replaceChildren();
             list.classList.toggle('is-filtering', !!query);
             pager.hidden = true;
-            status.hidden = false;
+            status.hidden = true;
             status.classList.remove('is-empty');
-            status.textContent = en ? 'Loading…' : '불러오는 중…';
+            status.textContent = '';
             if (count) count.hidden = true;
             loading = true;
             list.setAttribute('aria-busy', 'true');
+            list.appendChild(window.siteLoading.bars(6));
             requests.schedule(function(request) {
                 var params = new URLSearchParams({ q: query, page: String(page) });
                 setFacetParams(params);
@@ -175,6 +176,8 @@
                         if (err.name === 'AbortError') return;
                         loading = false;
                         list.removeAttribute('aria-busy');
+                        list.replaceChildren();
+                        status.hidden = false;
                         status.textContent = en ? 'Failed to load results' : '검색 결과를 불러오지 못했습니다';
                         retry.hidden = false;
                     });

@@ -1086,9 +1086,12 @@
         hideStory();
         if (els.focus) els.focus.classList.add('is-hidden');
         hidePassage();
-        setPlainPrompt(lang === 'en' ? 'Loading questions...' : '문제를 불러오는 중입니다...');
+        // The question's place holds the site loading bars until it arrives;
+        // rendering a question empties the choices.
+        setPlainPrompt('');
         els.prompt.classList.remove('is-hidden');
-        els.choices.classList.add('is-hidden');
+        els.choices.replaceChildren(window.siteLoading.bars(4, { head: true, label: lang === 'en' ? 'Loading questions…' : '문제를 불러오는 중…' }));
+        els.choices.classList.remove('is-hidden');
         els.feedback.className = 'commu-feedback is-hidden';
         els.next.disabled = true;
         els.next.textContent = strings.next || 'Next';

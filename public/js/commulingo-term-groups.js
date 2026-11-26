@@ -34,6 +34,8 @@
         if (pending[id]) return pending[id];
         if (failures[id]) { failures[id].remove(); delete failures[id]; }
         head.setAttribute('aria-busy', 'true');
+        var waiting = window.siteLoading.bars(4);
+        head.after(waiting);
         var langPrefix = location.pathname.indexOf('/en/') === 0 ? '/en' : '';
         pending[id] = fetch(langPrefix + '/commulingo/terms/cards?sort=' + encodeURIComponent(sort)
                 + '&group=' + encodeURIComponent(id), { credentials: 'same-origin' })
@@ -42,6 +44,7 @@
                 return res.text();
             })
             .then(function(html) {
+                waiting.remove();
                 if (head.hasAttribute('data-pending')) {
                     head.removeAttribute('data-pending');
                     head.removeAttribute('aria-busy');
@@ -50,6 +53,7 @@
             })
             .catch(function(err) {
                 delete pending[id];
+                waiting.remove();
                 head.removeAttribute('aria-busy');
                 showRetry(head);
                 throw err;

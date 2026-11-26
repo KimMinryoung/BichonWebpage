@@ -66,7 +66,7 @@
     }
 
     async function fetchUsers() {
-        $('usersList').innerHTML = '<div class="loading-spinner">' + escapeHtml(text.loading || 'Loading...') + '</div>';
+        $('usersList').replaceChildren(window.siteLoading.bars(6, { label: text.loading }));
         var params = new URLSearchParams({
             limit: String(state.limit),
             offset: String(state.offset)
@@ -133,7 +133,7 @@
     async function fetchUserDetail(userId) {
         state.selectedId = Number(userId);
         renderUsers();
-        $('userDetail').innerHTML = '<div class="loading-spinner">' + escapeHtml(text.loading || 'Loading...') + '</div>';
+        $('userDetail').replaceChildren(window.siteLoading.bars(5, { head: true, label: text.loading }));
         try {
             var data = await apiFetch('/admin/api/users/' + encodeURIComponent(userId));
             renderDetail(data);

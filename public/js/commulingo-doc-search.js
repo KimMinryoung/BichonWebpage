@@ -292,7 +292,8 @@
             results.textContent = '';
             return Promise.resolve(null);
         }
-        status.textContent = strings.searching;
+        status.textContent = '';
+        results.replaceChildren(window.siteLoading.bars(4, { label: strings.searching }));
         if (pending) pending.abort();
         pending = new AbortController();
         return fetch(endpoint + '?q=' + encodeURIComponent(state.query), { signal: pending.signal })
@@ -306,7 +307,10 @@
                 return result;
             })
             .catch(function (err) {
-                if (err.name !== 'AbortError') status.textContent = strings.failed;
+                if (err.name !== 'AbortError') {
+                    results.textContent = '';
+                    status.textContent = strings.failed;
+                }
                 return null;
             });
     }

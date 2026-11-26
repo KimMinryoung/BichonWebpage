@@ -2956,6 +2956,7 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
     outline-offset: 2px;
 }
 
+.commu-shorts-feed > .site-loading { padding: var(--space-6) var(--content-inset); }
 .commu-shorts-loading {
     margin: 0;
     padding: var(--space-6) var(--content-inset);

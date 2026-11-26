@@ -1,3 +1,29 @@
+// The site's loading placeholder (style.css .site-loading): long translucent
+// bars where the content will land, with a hidden status line for screen
+// readers. `count` bars; `options.head` makes the first a short heading bar,
+// `options.compact` thin bars for small spaces like a search dropdown.
+window.siteLoading = {
+    bars: function(count, options) {
+        options = options || {};
+        var en = document.documentElement.lang === 'en';
+        var box = document.createElement('div');
+        box.className = 'site-loading' + (options.compact ? ' is-compact' : '') + (options.className ? ' ' + options.className : '');
+        var status = document.createElement('p');
+        status.className = 'visually-hidden';
+        status.setAttribute('role', 'status');
+        status.textContent = options.label || (en ? 'Loading…' : '불러오는 중…');
+        for (var i = 0; i < (count || 5); i++) {
+            var bar = document.createElement('span');
+            bar.setAttribute('aria-hidden', 'true');
+            if (i === 0 && options.head) bar.className = 'is-head';
+            else if (i === (count || 5) - 1) bar.className = 'is-short';
+            box.appendChild(bar);
+        }
+        box.appendChild(status);
+        return box;
+    }
+};
+
 // The server writes each date in Asia/Seoul (utils/local-date.js); this
 // redraws it in the page language and the viewer's own zone, touching the
 // text only when it differs. Rows a search draws later have no text yet

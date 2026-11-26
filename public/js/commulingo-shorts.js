@@ -140,6 +140,7 @@
             })
             .catch(function() {
                 fetching = false;
+                if (!rendered.length && loadingNode) loadingNode.className = 'commu-shorts-loading';
                 if (!rendered.length && loadingNode) loadingNode.textContent = strings.drillLoadFail || 'Could not load the cards.';
             });
     }
