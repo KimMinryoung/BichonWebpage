@@ -1064,6 +1064,31 @@
     padding-left: 18px;
 }
 
+/* min-width: a grid item that is not itself the scroll box would grow to
+   the table's width and widen the page. */
+.commu-brief-table-frame {
+    min-width: 0;
+    position: relative;
+}
+
+/* Shades the right edge while the table scrolls on past it. */
+.commu-brief-table-frame::after {
+    background: linear-gradient(to right, transparent, color-mix(in srgb, var(--text-primary) 22%, transparent));
+    bottom: 0;
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 0.15s;
+    width: 28px;
+}
+
+.commu-brief-table-frame.has-more::after {
+    opacity: 1;
+}
+
 .commu-brief-table {
     max-width: 100%;
     overflow-x: auto;
@@ -6520,7 +6545,8 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
 
 /* On a phone the items and every group box share one screen without
    narrow columns: the pool and each group lay items out two to a row,
-   and the groups stack, each only as tall as what it holds. */
+   and the groups stack, each only as tall as what it holds. Two
+   groups stand side by side instead, an item to a row. */
 @media (max-width: 640px) {
     .commu-sort-pool {
         gap: 6px;
@@ -6540,6 +6566,14 @@ a:hover .gen-node-linked rect, a:focus-visible .gen-node-linked rect { stroke: v
         grid-template-columns: repeat(2, minmax(0, 1fr));
         min-height: 72px;
         padding: 0 6px 6px;
+    }
+
+    .commu-sort-groups.is-pair {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .commu-sort-groups.is-pair .commu-sort-group {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .commu-sort-target {

@@ -856,6 +856,26 @@
     gap: 6px;
     padding-left: 18px;
 }
+.commu-brief-table-frame {
+    min-width: 0;
+    position: relative;
+}
+.commu-brief-table-frame::after {
+    background: linear-gradient(to right, transparent, color-mix(in srgb, var(--text-primary) 22%, transparent));
+    bottom: 0;
+    content: "";
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: opacity 0.15s;
+    width: 28px;
+}
+
+.commu-brief-table-frame.has-more::after {
+    opacity: 1;
+}
 
 .commu-brief-table {
     max-width: 100%;
@@ -2818,6 +2838,14 @@ a.commu-faction-position:focus-visible { color: var(--pos-ink); text-decoration:
         grid-template-columns: repeat(2, minmax(0, 1fr));
         min-height: 72px;
         padding: 0 6px 6px;
+    }
+
+    .commu-sort-groups.is-pair {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .commu-sort-groups.is-pair .commu-sort-group {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .commu-sort-target {

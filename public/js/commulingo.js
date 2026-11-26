@@ -883,7 +883,10 @@
         if (els.introSummary) els.introSummary.classList.add('is-hidden');
         if (els.introFocus) els.introFocus.classList.add('is-hidden');
         Array.prototype.forEach.call(els.chapterDictionaries, function(node) { node.classList.add('is-hidden'); });
-        if (els.diagram) els.diagram.innerHTML = '<div class="commu-brief">' + sections.map(renderBriefSection).join('') + '</div>';
+        if (els.diagram) {
+            els.diagram.innerHTML = '<div class="commu-brief">' + sections.map(renderBriefSection).join('') + '</div>';
+            watchBriefTables(els.diagram);
+        }
         els.next.disabled = false;
         els.next.textContent = lang === 'en' ? 'To the questions' : '문제로';
         scrollToQuiz();
@@ -911,15 +914,16 @@
     }
 
     // A brief table fits the column; only one too wide for its content scrolls
-    // sideways inside its own box on a narrow screen;
-    // the first cell of each row is the row's heading.
+    // sideways inside its own box on a narrow screen, and its frame shades
+    // the right edge while more columns lie that way (watchBriefTables).
+    // The first cell of each row is the row's heading.
     function renderBriefTable(table) {
         var columns = Array.isArray(table.columns) ? table.columns : [];
         var rows = Array.isArray(table.rowsHtml) && table.rowsHtml.length
             ? table.rowsHtml
             : (Array.isArray(table.rows) ? table.rows.map(function(row) { return (row || []).map(escapeHtml); }) : []);
         if (!columns.length || !rows.length) return '';
-        return '<div class="commu-brief-table"><table><thead><tr>'
+        return '<div class="commu-brief-table-frame"><div class="commu-brief-table"><table><thead><tr>'
             + columns.map(function(column) { return '<th scope="col">' + escapeHtml(column) + '</th>'; }).join('')
             + '</tr></thead><tbody>'
             + rows.map(function(row) {
@@ -927,7 +931,20 @@
                     return index === 0 ? '<th scope="row">' + cell + '</th>' : '<td>' + cell + '</td>';
                 }).join('') + '</tr>';
             }).join('')
-            + '</tbody></table></div>';
+            + '</tbody></table></div></div>';
+    }
+
+    // A brief may be drawn while its panel is hidden and measures zero, so a
+    // ResizeObserver rechecks once it shows.
+    function watchBriefTables(root) {
+        Array.prototype.forEach.call(root.querySelectorAll('.commu-brief-table'), function(box) {
+            var update = function() {
+                box.parentNode.classList.toggle('has-more', box.scrollWidth - box.clientWidth - box.scrollLeft > 2);
+            };
+            box.addEventListener('scroll', update, { passive: true });
+            if (window.ResizeObserver) new ResizeObserver(update).observe(box);
+            update();
+        });
     }
 
     function lessonDiagram(lesson) {
@@ -976,6 +993,7 @@
         var sections = introBriefSections(lesson);
         if (sections.length) {
             els.diagram.innerHTML = html + '<div class="commu-brief">' + sections.map(renderBriefSection).join('') + '</div>';
+            watchBriefTables(els.diagram);
             return;
         }
         if (html) {
@@ -1670,7 +1688,8 @@
         pool.className = 'commu-sort-pool';
         pool.setAttribute('data-sort-group', '-1');
         var board = document.createElement('div');
-        board.className = 'commu-sort-groups';
+        // Two groups stay side by side even on a phone; more stack.
+        board.className = 'commu-sort-groups' + (groups.length === 2 ? ' is-pair' : '');
         els.choices.appendChild(pool);
         els.choices.appendChild(board);
 
