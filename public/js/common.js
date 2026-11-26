@@ -101,19 +101,132 @@ document.addEventListener('submit', function(e) {
 (function() {
     var FILE = /\.(?:pdf|png|jpe?g|gif|webp|svg|zip|gz|csv|json|txt|xml|mp3|mp4|webm|epub|docx?|xlsx?|pptx?)$/i;
     var timer = null, cover = null, giveUp = null;
+    // The bars take the shape of the page being opened, so the swap reads as
+    // that page filling in: the CommuLingo bar and the hero box of an entry,
+    // the search box, facet buttons and cards of a list, the title box and
+    // abstract of a reference document, the tabs and title of a hub post.
+    // Lines pulse; frames are drawn like the page's own.
+    var SHAPES = [
+        [/^\/commulingo\/people\/?$/, ['bar', 'search', 'facets:6', 'tiles:6']],
+        [/^\/commulingo\/terms\/?$/, ['bar', 'tabs:2', 'search', 'facets:2', 'chips:12', 'cards:4']],
+        [/^\/commulingo\/(?:events|docs)\/?$/, ['bar', 'search', 'facets:1', 'cards:4']],
+        [/^\/commulingo\/people\/[^/]+\/?$/, ['bar', 'hero:icon', 'section:3']],
+        [/^\/commulingo\/events\/[^/]+\/?$/, ['bar', 'hero:8', 'rows:2', 'rows:4']],
+        [/^\/commulingo\/terms\/[^/]+\/?$/, ['bar', 'hero:6', 'section:6']],
+        [/^\/commulingo\/docs\/[^/]+(?:\/original)?\/?$/, ['bar', 'titlebox', 'byline', 'quote', 'text:6'], 'is-doc'],
+        [/^\/(?:hub|posts|reports|ai-diary)\/[^/]+\/?$/, ['tabs:4', 'post'], 'is-post'],
+        [/^\/(?:hub|posts|reports|ai-diary)\/?$/, ['tabs:4', 'search', 'posts:3'], 'is-post'],
+    ];
+    function el(tag, className, parent) {
+        var node = document.createElement(tag);
+        if (className) node.className = className;
+        if (parent) parent.appendChild(node);
+        return node;
+    }
+    function lines(parent, n, last) {
+        for (var i = 0; i < n; i++) el('span', 'sk-line' + (i === n - 1 && last !== false ? ' is-short' : ''), parent);
+    }
+    var BLOCKS = {
+        bar: function(root) { el('span', 'sk-line is-crumb', el('div', 'sk-bar', root)); },
+        tabs: function(root, n) {
+            var row = el('div', 'sk-tabs', root);
+            row.style.gridTemplateColumns = 'repeat(' + n + ', 1fr)';
+            for (var i = 0; i < n; i++) el('span', 'sk-line is-crumb', el('div', '', row));
+        },
+        search: function(root) { el('div', 'sk-search', root); },
+        facets: function(root, n) { var row = el('div', 'sk-facets' + (n < 3 ? ' is-few' : ''), root); for (var i = 0; i < n; i++) el('div', 'sk-facet', row); },
+        chips: function(root, n) { var row = el('div', 'sk-chips', root); for (var i = 0; i < n; i++) el('div', 'sk-chip', row); },
+        rows: function(root, n) {
+            var box = el('div', 'sk-box sk-rows', root);
+            el('span', 'sk-line is-label', el('div', 'sk-row', box));
+            for (var i = 0; i < n; i++) el('span', 'sk-line is-title', el('div', 'sk-row', box));
+        },
+        posts: function(root, n) {
+            for (var i = 0; i < n; i++) {
+                var item = el('div', 'sk-postcard', root);
+                el('span', 'sk-line is-title', item);
+                el('span', 'sk-line is-label', item);
+                lines(item, 3);
+                lines(el('div', 'sk-tags', item), 3, false);
+            }
+        },
+        byline: function(root) { el('span', 'sk-line is-byline', root); },
+        tiles: function(root, n) {
+            var box = el('div', 'sk-box sk-tiles', root);
+            el('span', 'sk-line is-head', box);
+            var grid = el('div', 'sk-tile-grid', box);
+            for (var i = 0; i < n; i++) lines(el('div', 'sk-tile', grid), 3);
+        },
+        cards: function(root, n) {
+            var list = el('div', 'sk-cards', root);
+            for (var i = 0; i < n; i++) {
+                var card = el('div', 'sk-box sk-card', list);
+                el('span', 'sk-line is-label', card);
+                el('span', 'sk-line is-title', card);
+                lines(card, 2);
+            }
+        },
+        hero: function(root, arg) {
+            var box = el('div', 'sk-box sk-hero', root);
+            var head = el('div', 'sk-hero-head', box);
+            if (arg === 'icon') el('div', 'sk-icon', head);
+            var count = typeof arg === 'number' ? arg : 5;
+            var names = el('div', 'sk-hero-names', head);
+            el('span', 'sk-line is-label', names);
+            el('span', 'sk-line is-big', names);
+            el('span', 'sk-line is-sub', names);
+            lines(box, count);
+        },
+        titlebox: function(root) {
+            var box = el('div', 'sk-box sk-titlebox', root);
+            el('span', 'sk-line is-big', el('div', 'sk-titlebox-head', box));
+            lines(el('div', 'sk-titlebox-meta', box), 2);
+        },
+        quote: function(root) { lines(el('div', 'sk-quote', root), 5); },
+        section: function(root, n) { var sec = el('div', 'sk-section', root); el('span', 'sk-line is-head', sec); lines(sec, n); },
+        text: function(root, n) { lines(el('div', 'sk-text', root), n); },
+        post: function(root) {
+            var box = el('div', 'sk-box sk-post', root);
+            el('span', 'sk-line is-big', box);
+            el('span', 'sk-line is-label', box);
+            el('span', 'sk-line is-head', box);
+            lines(box, 6);
+        },
+    };
+    function skeleton(url) {
+        var path = url ? url.pathname.replace(/^\/en(?=\/)/, '') : '';
+        var shape = null;
+        for (var i = 0; i < SHAPES.length && !shape; i++) if (SHAPES[i][0].test(path)) shape = SHAPES[i];
+        if (!shape) {
+            var plain = window.siteLoading.bars(7, { head: true });
+            plain.classList.add('sk-page');
+            return plain;
+        }
+        var root = el('div', 'sk-page' + (shape[2] ? ' ' + shape[2] : ''));
+        root.setAttribute('aria-hidden', 'true');
+        shape[1].forEach(function(spec) {
+            var parts = spec.split(':');
+            BLOCKS[parts[0]](root, /^\d+$/.test(parts[1] || '') ? Number(parts[1]) : parts[1]);
+        });
+        return root;
+    }
+
     function clear() {
         clearTimeout(timer); clearTimeout(giveUp);
         timer = giveUp = null;
         if (cover) { cover.remove(); cover = null; }
     }
-    function show() {
+    function show(url) {
         clear();
         var main = document.querySelector('main');
         var top = main ? Math.max(0, main.getBoundingClientRect().top) : 0;
         cover = document.createElement('div');
         cover.className = 'site-nav-wait';
         cover.style.top = top + 'px';
-        cover.appendChild(window.siteLoading.bars(7, { head: true }));
+        cover.appendChild(skeleton(url));
+        var status = el('p', 'visually-hidden', cover);
+        status.setAttribute('role', 'status');
+        status.textContent = document.documentElement.lang === 'en' ? 'Loading the page…' : '페이지를 불러오는 중…';
         document.body.appendChild(cover);
         // A stopped or refused navigation leaves this page in place.
         giveUp = setTimeout(clear, 20000);
@@ -130,14 +243,19 @@ document.addEventListener('submit', function(e) {
     }
     document.addEventListener('click', function(event) {
         if (!pageLink(event)) return;
+        var url = new URL(event.target.closest('a[href]').href, location.href);
         setTimeout(function() {
             if (event.defaultPrevented) return;
             clearTimeout(timer);
-            timer = setTimeout(show, 300);
+            timer = setTimeout(function() { show(url); }, 300);
         }, 0);
     });
     window.addEventListener('pageshow', clear);
-    window.siteLoading.navigating = function() { clearTimeout(timer); timer = setTimeout(show, 300); };
+    window.siteLoading.navigating = function(href) {
+        var url = href ? new URL(href, location.href) : null;
+        clearTimeout(timer);
+        timer = setTimeout(function() { show(url); }, 300);
+    };
 })();
 
 // People filter links with more than one condition (a card's affiliation
@@ -168,7 +286,7 @@ document.addEventListener('submit', function(e) {
         event.preventDefault();
         if (modified) window.open(handoff(url), '_blank', 'noopener');
         else {
-            window.siteLoading.navigating();
+            window.siteLoading.navigating(url.href);
             location.href = handoff(url);
         }
     }, true);
