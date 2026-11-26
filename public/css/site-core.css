@@ -1238,6 +1238,7 @@ a.site-search-head:focus-visible {
     background: var(--bg-canvas);
     overflow: hidden;
 }
+.site-nav-wait > .is-copy { position: static; }
 .site-nav-wait > .sk-page {
     max-width: 920px;
     margin-inline: auto;
@@ -1245,6 +1246,7 @@ a.site-search-head:focus-visible {
 }
 .site-nav-wait > .site-loading.sk-page { padding-inline: var(--gutter); }
 .sk-page.is-doc { max-width: 980px; }
+.site-nav-wait > .sk-page.is-post { padding-top: 0; }
 .sk-line {
     display: block;
     height: 12px;

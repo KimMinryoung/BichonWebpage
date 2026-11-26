@@ -218,11 +218,20 @@ document.addEventListener('submit', function(e) {
     }
     function show(url) {
         clear();
-        var main = document.querySelector('main');
-        var top = main ? Math.max(0, main.getBoundingClientRect().top) : 0;
+        // The next page opens at its top, under the site header. The cover
+        // draws that header first (a still copy) so the frame lands where the
+        // page will, without scrolling this page (Back returns to its place).
         cover = document.createElement('div');
         cover.className = 'site-nav-wait';
-        cover.style.top = top + 'px';
+        document.querySelectorAll('.home-toolbar, .site-nav').forEach(function(part) {
+            var copy = part.cloneNode(true);
+            copy.removeAttribute('id');
+            copy.querySelectorAll('[id]').forEach(function(node) { node.removeAttribute('id'); });
+            copy.setAttribute('aria-hidden', 'true');
+            copy.setAttribute('inert', '');
+            copy.classList.add('is-copy');
+            cover.appendChild(copy);
+        });
         cover.appendChild(skeleton(url));
         var status = el('p', 'visually-hidden', cover);
         status.setAttribute('role', 'status');
