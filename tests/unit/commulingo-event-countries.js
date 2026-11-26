@@ -20,5 +20,8 @@ const split = splitSectionCountries(md);
 assert.deepEqual(split.sections, [['estonia', 'latvia'], [], [], ['uk']]);
 assert.equal(split.markdown, '## Frame\n\ntext {not a heading}\n\n## Plain\n\n## Bad\n## Tail\n', 'markers stripped, prose untouched');
 assert.deepEqual(splitSectionCountries('').sections, []);
+const groups = splitSectionCountries('## Many? {japan} {south-korea}{north-korea}');
+assert.deepEqual(groups.sections, [['japan', 'south-korea', 'north-korea']], 'several brace groups');
+assert.equal(groups.markdown, '## Many?');
 assert.deepEqual(sectionMarkerCodes(md), ['estonia', 'latvia', 'atlantis', 'uk']);
 console.log('event countries: normalization, chip order, one-country no-filter, labels, section markers OK');

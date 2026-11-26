@@ -49,19 +49,22 @@ function flagsHtml(codes, lang, { linked = false } = {}) {
     }).join('');
 }
 
-// Section tags. A `## ` heading in the body markdown may end in `{code}` or
-// `{code code}`; the marker names the countries the section is about and the
+// Section tags. A `## ` heading in the body markdown may end in `{code}`,
+// `{code code}` or several groups (`{code} {code}`); the marker names the countries the section is about and the
 // panel prints their flags in the heading and the contents list. The marker is
 // stripped here, before markdown rendering, so it never reaches the reader or
 // the auto-linker. `sections[i]` holds the codes of the i-th `## ` heading
 // (an empty list when it carries none), aligned with the h2 pass in the route.
-const SECTION_MARKER = /^(## .*?)\s*\{([a-z][a-z -]*)\}\s*$/;
+const SECTION_MARKER = /^(## .*?)\s*((?:\{[a-z][a-z -]*\}\s*)+)$/;
+function markerCodes(group) {
+    return group.replace(/[{}]/g, ' ').trim().split(/\s+/);
+}
 function splitSectionCountries(markdown) {
     const sections = [];
     const lines = String(markdown || '').split('\n').map(line => {
         if (!line.startsWith('## ')) return line;
         const m = line.match(SECTION_MARKER);
-        sections.push(m ? timelineCountries(m[2].trim().split(/\s+/)) : []);
+        sections.push(m ? timelineCountries(markerCodes(m[2])) : []);
         return m ? m[1] : line;
     });
     return { markdown: lines.join('\n'), sections };
@@ -73,7 +76,7 @@ function sectionMarkerCodes(markdown) {
     const out = [];
     String(markdown || '').split('\n').forEach(line => {
         const m = line.startsWith('## ') && line.match(SECTION_MARKER);
-        if (m) out.push(...m[2].trim().split(/\s+/));
+        if (m) out.push(...markerCodes(m[2]));
     });
     return out;
 }
