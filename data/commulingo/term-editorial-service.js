@@ -10,6 +10,7 @@ const { carryLinkReviews } = require('./link-review-carry');
 const { periodColumns, periodOrNull, periodValues, PERIOD_COLUMNS } = require('./career-period');
 const { normalizeKoreanQuotes } = require('./korean-quotes');
 const { assertKnownIndicators } = require('./indicators');
+const { termPeriodLabelProblems } = require('./term-period-label');
 
 const columns = {
     original: 'original', category: 'category', region: 'region', parentId: 'parent_id', sortOrder: 'sort_order',
@@ -76,7 +77,11 @@ function validateFields(fields, current, action, sources) {
         if (!merged[field]?.ko?.trim() || !merged[field]?.en?.trim()) throw badRequest(`${field} requires both languages`);
     }
     // The period is columns, never text: null for an undated term.
-    if (fields.period !== undefined && fields.period !== null) merged.periodColumns = periodColumns(fields.period, 'period');
+    if (fields.period !== undefined && fields.period !== null) {
+        merged.periodColumns = periodColumns(fields.period, 'period');
+        const labelProblems = fields.period.label ? termPeriodLabelProblems(fields.period.label) : [];
+        if (labelProblems.length) throw badRequest(`period.label replaces only numbers that cannot say the period (several spans, centuries, 개념, 냉전기); these words are a remark, so put the fact in the body and the dates in start/end: ${labelProblems.join(', ')}`);
+    }
     if (merged.sortOrder != null && !Number.isInteger(merged.sortOrder)) throw badRequest('sortOrder must be integer or null');
     if (!merged.category || typeof merged.category !== 'string') throw badRequest('category required');
     if (merged.region != null && (typeof merged.region !== 'string' || !merged.region)) throw badRequest('region must be a region id or null');
