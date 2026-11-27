@@ -5,7 +5,7 @@
 // revision checks and quote normalization behave exactly as before.
 //
 //   request.textEdits: [{ field: 'body.ko', find: '1955년 처형', replace: '1956년 7월 처형' }]
-//     term:                  term | definition | body | periodNote
+//     term:                  term | definition | body
 //     person:                bio | epithet
 //     person_section:        heading | body          (fields.slug names the section)
 //     history_event:         title | question | summary | outcome
@@ -22,7 +22,7 @@
 const { badRequest } = require('./common');
 
 const TEXT_FIELDS = {
-    term: ['term', 'definition', 'body', 'periodNote'],
+    term: ['term', 'definition', 'body'],
     person: ['bio', 'epithet'],
     person_section: ['heading', 'body'],
     history_event: ['title', 'question', 'summary', 'outcome'],

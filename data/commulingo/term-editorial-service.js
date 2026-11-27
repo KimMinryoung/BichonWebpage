@@ -14,9 +14,11 @@ const { assertKnownIndicators } = require('./indicators');
 const columns = {
     original: 'original', category: 'category', region: 'region', parentId: 'parent_id', sortOrder: 'sort_order',
 };
-// periodNote qualifies the period ("1917–1921 (전성기)"); the period itself is
-// the career-period shape, stored as columns (migration 364).
-const localized = { term: 'term', definition: 'definition', body: 'body', periodNote: 'period_note' };
+// The period is the career-period shape, stored as columns (migration 364);
+// a label replaces the numbers only where they cannot say it. The free-text
+// remark beside the years (periodNote) was removed on 2026-11-27 (owner's
+// decision, migration 386): a fact about the dates goes in the body.
+const localized = { term: 'term', definition: 'definition', body: 'body' };
 const allowed = new Set([...Object.keys(columns), ...Object.keys(localized), 'period',
     'id', 'sources', 'removeSources', 'aliases', 'people', 'events', 'evidence', 'expectedRevision', 'carryLinkReviews']);
 
@@ -48,6 +50,7 @@ async function readTermEditorial(id, options = {}) {
 }
 
 function validateFields(fields, current, action, sources) {
+    if (Object.hasOwn(fields, 'periodNote')) throw badRequest('periodNote was removed (2026-11-27): write a fact about the dates in the body; period.label only replaces numbers that cannot say it');
     for (const key of Object.keys(fields)) if (!allowed.has(key)) throw badRequest(`unknown term field ${key}`);
     const merged = { ...(current || {}), ...fields };
     for (const field of contract.localized) {
@@ -72,7 +75,6 @@ function validateFields(fields, current, action, sources) {
     for (const field of ['term','definition']) {
         if (!merged[field]?.ko?.trim() || !merged[field]?.en?.trim()) throw badRequest(`${field} requires both languages`);
     }
-    if (Boolean(merged.periodNote?.ko?.trim()) !== Boolean(merged.periodNote?.en?.trim())) throw badRequest('periodNote requires both languages or neither');
     // The period is columns, never text: null for an undated term.
     if (fields.period !== undefined && fields.period !== null) merged.periodColumns = periodColumns(fields.period, 'period');
     if (merged.sortOrder != null && !Number.isInteger(merged.sortOrder)) throw badRequest('sortOrder must be integer or null');
@@ -138,8 +140,7 @@ async function save(client, id, fields, current, action, actor, sources) {
     const set = (column,v) => { params.push(v); sets.push(`${column}=$${params.length}`); };
     for (const [field,column] of Object.entries(columns)) if (Object.hasOwn(fields,field)) set(column,fields[field]);
     for (const [field,prefix] of Object.entries(localized)) if (Object.hasOwn(fields,field)) {
-        const empty = field === 'periodNote';
-        set(`${prefix}_ko`,(empty && !value[field].ko) ? null : value[field].ko); set(`${prefix}_en`,(empty && !value[field].en) ? null : value[field].en);
+        set(`${prefix}_ko`,value[field].ko); set(`${prefix}_en`,value[field].en);
     }
     if (Object.hasOwn(fields,'period')) {
         const vals = value.periodColumns ? periodValues(value.periodColumns) : PERIOD_COLUMNS.map(column => (column === 'ongoing' ? false : null));

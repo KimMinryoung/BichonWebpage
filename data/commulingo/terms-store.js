@@ -23,18 +23,14 @@ function normalizeHeadword(value) {
 
 function termPeriodText(row) {
     const period = periodOrNull(row);
-    const text = lang => {
-        const base = period ? formatPeriod(period, lang) : '';
-        const note = row[`period_note_${lang}`];
-        return note ? (base ? `${base} (${note})` : note) : base;
-    };
+    const text = lang => (period ? formatPeriod(period, lang) : '');
     return t(text('ko'), text('en'));
 }
 
 async function fetchTerms() {
     const [terms, aliases, people, events, relations] = await readSnapshot(client => Promise.all([
         client.query(
-            `SELECT id, term_ko, term_en, original, start_year, start_month, start_day, end_year, end_month, end_day, start_qual, end_qual, ongoing, period_label_ko, period_label_en, period_note_ko, period_note_en, category, region,
+            `SELECT id, term_ko, term_en, original, start_year, start_month, start_day, end_year, end_month, end_day, start_qual, end_qual, ongoing, period_label_ko, period_label_en, category, region,
                     definition_ko, definition_en, body_ko, body_en, sources,
                     parent_id, updated_at, to_jsonb(commulingo_terms)->'link_expressions' AS link_expressions,
                     COALESCE(to_jsonb(commulingo_terms)->'no_auto_link', '[]'::jsonb) AS no_auto_link,

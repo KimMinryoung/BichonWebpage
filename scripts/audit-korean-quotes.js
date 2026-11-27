@@ -19,7 +19,7 @@ const TEXT = [
     ['commulingo_people', 'id', ['bio_ko', 'epithet_ko', 'moment_ko', 'fate_label_ko']],
     ['commulingo_person_career_entries', 'id', ['role_ko']],
     ['commulingo_person_sections', 'id', ['heading_ko', 'body_ko']],
-    ['commulingo_terms', 'id', ['definition_ko', 'body_ko', 'period_note_ko']],
+    ['commulingo_terms', 'id', ['definition_ko', 'body_ko']],
     ['commulingo_history_events', 'id', ['question_ko', 'summary_ko', 'body_ko', 'outcome_ko']],
     ['commulingo_history_event_people', "event_id || '/' || person_id", ['relation_ko', 'note_ko']],
     ['commulingo_offices', 'id', ['blurb_ko']],
