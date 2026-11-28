@@ -19,6 +19,7 @@
 // https://github.com/Templarian/MaterialDesign/blob/master/svg/corn.svg
 // - hammer-sickle: Pictogrammers Material Design Icons (Apache-2.0):
 // https://github.com/Templarian/MaterialDesign/blob/master/svg/hammer-sickle.svg
+// - hammer-sickle-off: the same glyph with a diagonal bar (custom).
 // - swords: Lucide (MIT), https://github.com/lucide-icons/lucide/blob/main/icons/swords.svg
 // - scroll-text: Lucide (MIT), https://github.com/lucide-icons/lucide/blob/main/icons/scroll-text.svg
 // - town-hall, circle-a (MDI alpha-a-circle-outline): Pictogrammers Material
@@ -33,6 +34,9 @@
 // emblem (open book + filled star), and `posts`, Bichon herself, a bob-haired
 // figure matching the site portrait.
 
+// Shared by `hammer-sickle` and its struck-through form `hammer-sickle-off`.
+const HAMMER_SICKLE = '<path fill="currentColor" stroke="none" d="M22 20.59L20.59 22L17.45 18.86C16.89 19.23 16.3 19.56 15.66 19.78C14 20.36 12.2 20.4 10.53 19.88C9.5 19.58 8.56 19.05 7.75 18.37L4.56 21.56C4 22.15 3.03 22.15 2.44 21.56C1.86 21 1.86 20 2.44 19.44L5.82 16.06L8.47 15.54C9.19 16.45 10.19 17.13 11.28 17.5C12.44 17.85 13.72 17.84 14.87 17.46C15.16 17.37 15.44 17.26 15.7 17.12L7.6 9L5.83 10.78L3 7.95L7.95 3L12.19 4.41L9 7.6L17.31 15.89C17.5 15.71 17.65 15.53 17.8 15.33C19.3 13.36 19.42 10.42 18.09 8C16.78 5.57 14.5 3.55 12 2C13.41 2.5 14.76 3.17 16 4.04C17.24 4.91 18.43 5.93 19.33 7.25C20.23 8.54 20.87 10.12 21 11.79C21.1 13.47 20.66 15.23 19.7 16.65C19.5 17 19.24 17.28 19 17.56L22 20.59Z"/>';
+
 const ICON_PATHS = {
     // 용어 사전(2026-11-24, 펼친 책에서 바꿈).
     'book-a': '<path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/><path d="m8 13 4-7 4 7"/><path d="M9.1 11h5.7"/>',
@@ -41,7 +45,7 @@ const ICON_PATHS = {
     eye: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
     shield: '<path d="M20 13c0 5-3.5 7.5-8 9-4.5-1.5-8-4-8-9V5l8-3 8 3v8Z"/>',
     star: '<path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8-6.2-3.3L5.8 21 7 14.2 2 9.3l6.9-1L12 2Z"/>',
-    'hammer-sickle': '<path fill="currentColor" stroke="none" d="M22 20.59L20.59 22L17.45 18.86C16.89 19.23 16.3 19.56 15.66 19.78C14 20.36 12.2 20.4 10.53 19.88C9.5 19.58 8.56 19.05 7.75 18.37L4.56 21.56C4 22.15 3.03 22.15 2.44 21.56C1.86 21 1.86 20 2.44 19.44L5.82 16.06L8.47 15.54C9.19 16.45 10.19 17.13 11.28 17.5C12.44 17.85 13.72 17.84 14.87 17.46C15.16 17.37 15.44 17.26 15.7 17.12L7.6 9L5.83 10.78L3 7.95L7.95 3L12.19 4.41L9 7.6L17.31 15.89C17.5 15.71 17.65 15.53 17.8 15.33C19.3 13.36 19.42 10.42 18.09 8C16.78 5.57 14.5 3.55 12 2C13.41 2.5 14.76 3.17 16 4.04C17.24 4.91 18.43 5.93 19.33 7.25C20.23 8.54 20.87 10.12 21 11.79C21.1 13.47 20.66 15.23 19.7 16.65C19.5 17 19.24 17.28 19 17.56L22 20.59Z"/>',
+    'hammer-sickle': HAMMER_SICKLE,
     handshake: '<path d="m11 17 2 2a3 3 0 0 0 4.2 0l3.8-3.8a3 3 0 0 0 0-4.2l-4-4a3 3 0 0 0-4.2 0L12 8"/><path d="m13 7-2-2a3 3 0 0 0-4.2 0L3 8.8a3 3 0 0 0 0 4.2l4 4a3 3 0 0 0 4.2 0l.8-.8"/><path d="m8 12 2 2 4-4"/>',
     // A treaty scroll for 외국 정치가. handshake was unavailable (it is the
     // 외무인민위원부 office glyph) and the hand-drawn negotiating table read as
@@ -75,6 +79,9 @@ const ICON_PATHS = {
     // The Workers' Party of Korea symbol (hammer, sickle and writing brush),
     // public domain: https://commons.wikimedia.org/wiki/File:Workers%27_Party_of_Korea_symbol.svg
     // (Juche collection, 2026-10-08).
+    // 반공 우파(2026-11-28, 마이크 금지에서 바꿈): the hammer and sickle above, struck through.
+    // The mask opens a gap along the stroke so the bar reads against the filled emblem.
+    'hammer-sickle-off': '<mask id="icon-hs-off"><rect width="24" height="24" fill="#fff" stroke="none"/><path d="M21.5 2.5 2.5 21.5" stroke="#000" stroke-width="5.5"/></mask><g mask="url(#icon-hs-off)">' + HAMMER_SICKLE + '</g><path d="M21.5 2.5 2.5 21.5"/>',
     'hammer-sickle-brush': '<g fill=\"currentColor\" stroke=\"none\" transform=\"translate(0.721 0) scale(0.60452)\"><g transform=\"translate(-86.396 -128.65)\"><g transform=\"matrix(.91015 0 0 .91015 27.005 27.493)\" ><rect x=\"84.738\" y=\"123.36\" width=\"4.3964\" height=\"31.399\" /><rect transform=\"matrix(.71064 .70355 -.71064 .70355 0 0)\" x=\"159.6\" y=\"21.673\" width=\"4.341\" height=\"31.404\" /><rect transform=\"matrix(.71064 -.70355 .71064 .70355 0 0)\" x=\"-41.608\" y=\"136.58\" width=\"4.445\" height=\"38.751\" /><path d=\"m69.265 133.61 11.006-10.921-1.5045-1.7639-4.5618-0.10823-8.9505 8.922z\" /><path d=\"m98.018 127.54s1.5825 1.1703 2.5398-0.11954c2.5905-3.4903-7.2616-7.5012-7.9729-7.7952 0 0 10.192-0.13742 12.888 4.9955 2.1098 4.0172-0.27245 6.966-4.6065 5.7808-0.92083-0.25183-2.8485-2.8615-2.8485-2.8615z\" /><path d=\"m85.133 123.64c0.56648 1.0244 1.1489 1.5234 1.8154 1.5482 0.6664-0.0249 1.2489-0.52379 1.8154-1.5482 3.2578-5.8915-1.8154-12.497-1.8154-12.497s-5.0731 6.606-1.8154 12.497z\" /></g></g><metadata><rdf:RDF><cc:Work rdf:about=\"\"><dc:date>2026-06-26</dc:date><dc:creator><cc:Agent><dc:title>David Bj\u00f6rkman</dc:title></cc:Agent></dc:creator></cc:Work></rdf:RDF></metadata></g>',
     // The flame and torch heads of the Yugoslav federal emblem (1963-1992),
     // public domain: https://commons.wikimedia.org/wiki/File:Emblem_of_Yugoslavia_(1963%E2%80%931992).svg
