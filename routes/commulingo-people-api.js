@@ -48,6 +48,7 @@ router.get('/api/people/:personId', async (req, res) => {
 // the card's epithet. Event: its summary's first sentence. Term: its
 // definition's first sentence, the original name and years beside the name.
 // Document: its summary's first sentence, the year and kind beside the title.
+// Course: its description, or a chapter's title and summary.
 const firstSentence = (text, max = 200) => {
     const plain = String(text || '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*_`#>]/g, '').replace(/\s+/g, ' ').trim();
     const m = plain.match(/^(.+?[.!?。])(?=\s|$)/);
@@ -83,6 +84,21 @@ router.get('/api/preview/:kind/:id', async (req, res) => {
                 const year = (String(doc.date || '').match(/^-?\d{1,4}/) || [''])[0];
                 preview = { title: doc.title?.[lang] || doc.title?.ko || id, meta: [year, doc.kind?.[lang] || doc.kind?.ko].filter(Boolean).join(' · '),
                     text: firstSentence(doc.summary?.[lang] || doc.summary?.ko) };
+            }
+        } else if (req.params.kind === 'book') {
+            // A course, or one chapter of it when the link names a lesson
+            // (/commulingo/book/<id>#lesson=<lesson>; the script sends the
+            // lesson as ?lesson=, a hash never reaches the server).
+            const { loadCommuLingoCatalog } = require('../data/commulingo/shards');
+            const collection = ((loadCommuLingoCatalog() || {}).collections || []).find(item => item.id === id);
+            if (collection) {
+                const pick = value => (value && (value[lang] || value.ko)) || '';
+                const lesson = typeof req.query.lesson === 'string' ? req.query.lesson : '';
+                const chapter = lesson && (collection.chapters || []).find(item => (item.lessons || []).some(l => l.id === lesson));
+                preview = chapter
+                    ? { title: pick(chapter.title), meta: [pick(collection.title), chapter.chapterNumber ? (lang === 'en' ? 'Ch. ' + chapter.chapterNumber : chapter.chapterNumber + '장') : ''].filter(Boolean).join(' · '),
+                        text: firstSentence(pick(chapter.summary)) }
+                    : { title: pick(collection.title), meta: lang === 'en' ? 'Course' : '강좌', text: firstSentence(pick(collection.description)) };
             }
         }
         if (!preview) return res.status(404).json({ error: 'not found' });

@@ -1,4 +1,4 @@
-// Hover previews for the dictionary and reference-library links in any page's text (loaded by
+// Hover previews for the dictionary, reference-library and course links in any page's text (loaded by
 // partials/head site-wide and by the reference reader, 2026-11-28): with a mouse, resting on a person, event,
 // term or reference-library link shows its name, years and one line in a box under the link —
 // GET /commulingo/api/preview/<person|event|term>/<id>. The link still opens
@@ -19,7 +19,7 @@
     if (!window.fetch) return;
     var hoverable = !!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
 
-    var SELECTOR = 'a.commu-person-link, a.commu-event-link, a.commu-term-link, a.commu-doc-link';
+    var SELECTOR = 'a.commu-person-link, a.commu-event-link, a.commu-term-link, a.commu-doc-link, a.commu-book-link, .doc-refs a';
     var KINDS = { people: 'person', events: 'event', terms: 'term', docs: 'doc' };
     var prefix = /^\/en\//.test(window.location.pathname) ? '/en' : '';
     var previews = {};
@@ -33,11 +33,17 @@
 
     // Only the text linkers stamp these classes (linkify.js,
     // doc-presentation.js, commulingo-decision.js), never a menu, so the
-    // class is the whole test.
+    // class is the whole test. The one addition is the reader's header line
+    // (.doc-refs: people, terms, events, courses — plain links so the line
+    // keeps its own faint underline); a link there with no preview kind
+    // (a genealogy chart) is left alone by keyOf.
     function linkOf(target) {
         return target && target.closest ? target.closest(SELECTOR) : null;
     }
     function keyOf(a) {
+        var href = a.getAttribute('href') || '';
+        var book = href.match(/^(?:https?:\/\/[^/]+)?(?:\/en)?\/commulingo\/book\/([a-z0-9-]+)(?:#lesson=([^&]+))?/);
+        if (book) return 'book/' + book[1] + (book[2] ? '?lesson=' + encodeURIComponent(decodeURIComponent(book[2])) : '');
         var m = (a.getAttribute('href') || '').match(/^(?:https?:\/\/[^/]+)?(?:\/en)?\/commulingo\/(people|events|terms|docs)\/([a-z0-9-]+)/);
         return m ? KINDS[m[1]] + '/' + m[2] : null;
     }

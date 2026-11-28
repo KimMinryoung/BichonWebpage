@@ -64,6 +64,21 @@ const assert = require('node:assert/strict');
         await page.touchscreen.tap(5, 840);
         await page.waitForFunction(() => !document.querySelector('.link-pop'));
 
+        // A course chapter in the reader's header line: the box names the
+        // chapter, and opens the course in a new tab (the reader stays).
+        await page.goto(origin + '/commulingo/docs/marx-theses-on-feuerbach', { waitUntil: 'networkidle' });
+        const course = page.locator('.doc-refs a[href^="/commulingo/book/"]').first();
+        await course.scrollIntoViewIfNeeded();
+        await course.tap();
+        await page.waitForSelector('.link-pop.is-tap');
+        console.log('course box ok:', await page.textContent('.link-pop.is-tap'));
+        const docUrl = page.url();
+        const [lesson] = await Promise.all([context.waitForEvent('page'), page.tap('.link-pop.is-tap')]);
+        await lesson.waitForLoadState();
+        assert.equal(page.url(), docUrl);
+        console.log('course opens:', lesson.url());
+        await lesson.close();
+
         // The reader's fictionalized name: tap shows, a tap outside only
         // closes, the box opens the real person in a new tab.
         await page.goto(origin + '/commulingo/docs/much-of-a-muchness', { waitUntil: 'networkidle' });
