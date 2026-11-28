@@ -52,7 +52,7 @@
 - hover는 배경·테두리·글자색으로 표현한다. 모션은 공통 시간 토큰을 사용하고 reduced-motion을 존중한다.
 - 페이지 이동은 교차 문서 View Transitions의 화면 전체 crossfade(`--duration-normal`)다. `style.css`에서 선언하고 `site-core.css`에만 생성되며, reduced-motion이면 선언 자체가 꺼진다. 상단 도구줄과 메뉴는 두 페이지에서 같은 화소라 고정돼 보인다. 요소에 `view-transition-name`을 붙일 때는 페이지마다 하나뿐인 요소에만 붙인다(중복되면 전환이 취소된다).
 
-- 본문의 인물·사건·용어 링크(`commu-person-link`·`commu-event-link`·`commu-term-link`)는 마우스로 0.3초 머물면 링크 아래 미리보기 상자(`.link-pop`: 이름·연도·한 줄)를 띄운다(2026-11-28). `partials/head`가 `commulingo-link-preview.js`·`.css`를 모든 페이지에 싣고, 상자를 쓰는 동안 링크의 `title` 툴팁은 뺀다. 터치 화면은 아직 아무것도 띄우지 않는다. 새 본문 링크는 이 클래스를 달면 따로 할 일이 없다.
+- 본문의 인물·사건·용어 링크(`commu-person-link`·`commu-event-link`·`commu-term-link`)는 마우스로 0.3초 머물면 링크 아래 미리보기 상자(`.link-pop`: 이름·연도·한 줄)를 띄운다(2026-11-28). `partials/head`가 `commulingo-link-preview.js`·`.css`를 모든 페이지에 싣고, 상자를 쓰는 동안 링크의 `title` 툴팁은 뺀다. 터치 화면은 아직 아무것도 띄우지 않는다. 새 본문 링크는 이 클래스를 달면 따로 할 일이 없다. 이 클래스는 본문 링크에만 단다(메뉴·목록 칩에 달면 그곳에도 상자가 뜬다).
 
 ## 변경 검증
 

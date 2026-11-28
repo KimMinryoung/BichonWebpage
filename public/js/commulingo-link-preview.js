@@ -20,10 +20,11 @@
     var closeTimer = null;
     var open = null; // { el, anchor }
 
+    // Only the text linkers stamp these classes (linkify.js,
+    // doc-presentation.js, commulingo-decision.js), never a menu, so the
+    // class is the whole test.
     function linkOf(target) {
-        var el = target && target.closest ? target.closest(SELECTOR) : null;
-        // Text links anywhere but the site's menus and the box itself.
-        return el && !el.closest('.home-toolbar, .link-pop') ? el : null;
+        return target && target.closest ? target.closest(SELECTOR) : null;
     }
     function keyOf(a) {
         var m = (a.getAttribute('href') || '').match(/^(?:https?:\/\/[^/]+)?(?:\/en)?\/commulingo\/(people|events|terms)\/([a-z0-9-]+)/);
