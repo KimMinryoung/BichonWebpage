@@ -947,27 +947,6 @@
   font-size: var(--text-xs);
 }
 
-/* A person or event link's hover preview: name and years, then one line. */
-.doc-pop-entity {
-  width: max-content;
-}
-
-.doc-pop-entity .doc-pop-head {
-  display: block;
-}
-
-.doc-pop-entity .doc-pop-meta {
-  margin-left: 0.5em;
-  color: var(--text-muted);
-  font-size: var(--text-xs);
-}
-
-.doc-pop-entity .doc-pop-body {
-  display: block;
-  margin-top: 0.2rem;
-  color: var(--text-secondary);
-}
-
 /* A number whose popover is up reads as pressed. */
 .note-ref[aria-expanded="true"] {
   text-decoration: underline;

@@ -189,9 +189,9 @@
         function contentFor(anchor) {
             return anchor.classList.contains('note-ref') ? noteContent(anchor) : nameContent(anchor);
         }
-        function show(anchor, given) {
+        function show(anchor) {
             if (open && open.anchor === anchor) return true;
-            var content = given || contentFor(anchor);
+            var content = contentFor(anchor);
             if (!content) return false;
             close();
             var pop = document.createElement('span');
@@ -200,8 +200,7 @@
             pop.addEventListener('mouseenter', cancelClose);
             pop.addEventListener('mouseleave', scheduleClose);
             anchor.insertAdjacentElement('afterend', pop);
-            // A hover preview of a link is not a control the link opens.
-            if (!given) anchor.setAttribute('aria-expanded', 'true');
+            anchor.setAttribute('aria-expanded', 'true');
             open = { el: pop, anchor: anchor };
             place(pop, anchor);
             return true;
@@ -263,80 +262,6 @@
             }
         });
         window.addEventListener('resize', function () { if (open) place(open.el, open.anchor); });
-
-        // Person and event links: with a mouse, resting on one shows its name,
-        // years and one line (GET /commulingo/api/preview/<kind>/<id>). The link
-        // still opens the page as before; touch screens get nothing yet
-        // (owner, 2026-11-28: the phone behaviour is decided later).
-        var canHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
-        if (canHover) {
-            var previews = {};
-            var hovered = null;
-            var hoverTimer = null;
-            var prefix = /^\/en\//.test(window.location.pathname) ? '/en' : '';
-            var entityOf = function (target) {
-                var el = target.closest && target.closest('a.commu-person-link, a.commu-event-link');
-                return el && book.contains(el) ? el : null;
-            };
-            var previewKey = function (a) {
-                var m = (a.getAttribute('href') || '').match(/^(?:\/en)?\/commulingo\/(people|events)\/([a-z0-9-]+)/);
-                return m ? (m[1] === 'people' ? 'person' : 'event') + '/' + m[2] : null;
-            };
-            var loadPreview = function (key) {
-                if (!previews[key]) {
-                    previews[key] = fetch(prefix + '/commulingo/api/preview/' + key, { headers: { Accept: 'application/json' } })
-                        .then(function (r) { return r.ok ? r.json() : null; })
-                        .catch(function () { return null; });
-                }
-                return previews[key];
-            };
-            var previewContent = function (data) {
-                var frag = document.createDocumentFragment();
-                var head = document.createElement('span');
-                head.className = 'doc-pop-head';
-                var title = document.createElement('strong');
-                title.textContent = data.title || '';
-                head.appendChild(title);
-                if (data.meta) {
-                    var meta = document.createElement('span');
-                    meta.className = 'doc-pop-meta';
-                    meta.textContent = data.meta;
-                    head.appendChild(meta);
-                }
-                frag.appendChild(head);
-                if (data.text) {
-                    var text = document.createElement('span');
-                    text.className = 'doc-pop-body';
-                    text.textContent = data.text;
-                    frag.appendChild(text);
-                }
-                return { nodes: frag, kind: 'entity' };
-            };
-            document.addEventListener('mouseover', function (event) {
-                var a = entityOf(event.target);
-                if (!a || hovered === a) return;
-                hovered = a;
-                if (open && open.anchor === a) { cancelClose(); return; }
-                if (pinned) return;
-                var key = previewKey(a);
-                if (!key) return;
-                clearTimeout(hoverTimer);
-                hoverTimer = setTimeout(function () {
-                    loadPreview(key).then(function (data) {
-                        if (!data || hovered !== a || pinned) return;
-                        cancelClose();
-                        show(a, previewContent(data));
-                    });
-                }, 300);
-            });
-            document.addEventListener('mouseout', function (event) {
-                var a = entityOf(event.target);
-                if (!a || (event.relatedTarget && a.contains(event.relatedTarget))) return;
-                hovered = null;
-                clearTimeout(hoverTimer);
-                if (open && open.anchor === a) scheduleClose();
-            });
-        }
 
         // The note's ↩ after a jump from the popover.
         document.addEventListener('click', function (event) {

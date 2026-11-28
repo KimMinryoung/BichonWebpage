@@ -1,0 +1,31 @@
+/* Hover previews of person, event and term links
+   (public/js/commulingo-link-preview.js): the reader's footnote popover look
+   (.doc-pop in commulingo-doc.css), placed by the script under the link. */
+.link-pop {
+  position: absolute;
+  z-index: 60;
+  box-sizing: border-box;
+  max-width: min(320px, calc(100vw - 24px));
+  width: max-content;
+  padding: 8px 12px;
+  background: var(--bg-surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  line-height: var(--leading-snug);
+  text-align: start;
+  pointer-events: auto;
+}
+
+.link-pop-meta {
+  margin-left: 0.5em;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+}
+
+.link-pop-body {
+  margin-top: 0.2rem;
+  color: var(--text-secondary);
+}

@@ -22,7 +22,7 @@
 | KT 회선 지연: 정적 파일 CDN 도입(1단계 효과 확인은 소유자가 진행) | [CDN 계획](static-cdn-kt-plan-20261012.md) |
 | 상용 수준 점검 6(장기 구조) 미착수 | [archive/상용 수준 점검](archive/frontend-commercial-gap-review-20261102.md) |
 | leninbot 번역 스펙(`config/archival_translation/`)의 `output`이 아직 `data/commulingo/docs/<id>.html`이라 조립 뒤 `scripts/commulingo-docs put-body`가 필요함. 조립기가 DB에 직접 넣게 할지는 leninbot 쪽 결정 | [데이터 git 분리](commulingo-data-off-git.md) |
-| 참고 문헌 설계 검토의 남은 항목(2026-11-28 나머지는 끝): L2 링크 결과 디스크 보관은 관리자 대시보드의 리더 캐시 숫자를 본 뒤, L5 미리보기는 리더 인물·사건 링크의 마우스오버만 했다(2026-11-28): 휴대폰 동작·용어 링크·사건·보고서 본문은 소유자 결정 뒤. 보류: L1 역방향 색인, T2 전문 검색, S6 여러 원문 | [archive/설계 검토](archive/commulingo-docs-design-review-20261104.md) |
+| 참고 문헌 설계 검토의 남은 항목(2026-11-28 나머지는 끝): L2 링크 결과 디스크 보관은 관리자 대시보드의 리더 캐시 숫자를 본 뒤, L5 미리보기는 리더·사건 페이지의 인물·사건·용어 링크 마우스오버만 했다(2026-11-28): 휴대폰 동작과 다른 표면(인물·용어 페이지, 보고서)은 소유자 결정 뒤. 보류: L1 역방향 색인, T2 전문 검색, S6 여러 원문 | [archive/설계 검토](archive/commulingo-docs-design-review-20261104.md) |
 
 ## 3. 강좌·콘텐츠 작업
 

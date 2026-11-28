@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="<%= lang %>">
-<head><%- include('../partials/head') %></head>
+<head><%- include('../partials/head', { extraCss: '/css/commulingo-link-preview.css?v=' + assetVersion }) %></head>
 <body class="commulingo-page">
     <%- include('../partials/nav') %>
     <% var en = lang === 'en'; %>
@@ -45,6 +45,7 @@
         <% } %>
     </main>
     <% if ((excerpts && excerpts.length) || (paired && termPanel.excerpts && termPanel.excerpts.length)) { %><script src="/js/commulingo-doc-excerpts.js?v=<%= assetVersion %>" defer></script><% } %>
+    <script src="/js/commulingo-link-preview.js?v=<%= assetVersion %>" defer></script>
     <% if (paired) { %><script src="/js/commulingo-pair-tabs.js?v=<%= assetVersion %>" defer></script><% } %>
     <% if (event.mapSvg) { %><script src="/js/commulingo-event-map.js?v=<%= assetVersion %>" defer></script><% } %>
     <% if (event.hasCountryFilter) { %><script src="/js/commulingo-event-timeline.js?v=<%= assetVersion %>" defer></script><% } %>

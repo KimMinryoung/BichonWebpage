@@ -43,9 +43,10 @@ router.get('/api/people/:personId', async (req, res) => {
     }
 });
 
-// A hover preview of a person or event a reader's link points at (the
-// reference reader, public/js/commulingo-doc.js): name, years and one line.
-// Person: the card's epithet. Event: the first sentence of its summary.
+// A hover preview of the person, event or term a link points at
+// (public/js/commulingo-link-preview.js): name, years and one line. Person:
+// the card's epithet. Event: its summary's first sentence. Term: its
+// definition's first sentence, the original name and years beside the name.
 const firstSentence = (text, max = 200) => {
     const plain = String(text || '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*_`#>]/g, '').replace(/\s+/g, ' ').trim();
     const m = plain.match(/^(.+?[.!?。])(?=\s|$)/);
@@ -66,6 +67,14 @@ router.get('/api/preview/:kind/:id', async (req, res) => {
             const events = await require('../data/commulingo/history-events-store').loadCommuLingoHistoryEvents();
             const event = events.find(item => item.id === id);
             if (event) preview = { title: event.title[lang] || event.title.ko, meta: event.period || '', text: firstSentence(event.summary[lang] || event.summary.ko) };
+        } else if (req.params.kind === 'term') {
+            const terms = await require('../data/commulingo/terms-store').loadCommuLingoTerms();
+            const term = terms.find(item => item.id === id);
+            if (term) {
+                const period = term.period?.[lang] || term.period?.ko || '';
+                preview = { title: term.term[lang] || term.term.ko, meta: [term.original, period].filter(Boolean).join(' · '),
+                    text: firstSentence(term.definition[lang] || term.definition.ko) };
+            }
         }
         if (!preview) return res.status(404).json({ error: 'not found' });
         setShortPublicCache(res);
