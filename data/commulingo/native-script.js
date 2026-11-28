@@ -106,9 +106,11 @@ const NATION_SCRIPTS = {
     martinique: LATIN,
     china: ['han'],
     japan: ['kana', 'han'],
-    'north-korea': ['hangul', 'han'],
-    'south-korea': ['hangul', 'han'],
-    korea: ['hangul', 'han'],
+    // Korean names are written in Hangul only (2026-11-28 Bichon decision): the
+    // native-name line repeats the Hangul name, never the Hanja spelling.
+    'north-korea': ['hangul'],
+    'south-korea': ['hangul'],
+    korea: ['hangul'],
     india: ['devanagari', 'bengali', 'latin'],
     israel: ['hebrew'],
     afghanistan: ['arabic'],

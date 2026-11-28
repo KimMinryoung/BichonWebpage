@@ -60,7 +60,10 @@ assert.match(
         assert.throws(() => assertNativeScript({ cyrillic, nativeScriptOverride: true }, { citizenship: 'finland' }), /required/);
     }
     assert.doesNotThrow(() => assertNativeScript({ cyrillic: 'Susanne Dahlgren' }, { citizenship: 'finland' }));
-    assert.doesNotThrow(() => assertNativeScript({ cyrillic: '최창익 (崔昌益)' }, { citizenship: 'north-korea' }));
+    // Korean native names are Hangul only (2026-11-28): no Hanja, bare or in parentheses.
+    assert.doesNotThrow(() => assertNativeScript({ cyrillic: '최창익' }, { citizenship: 'north-korea' }));
+    assert.throws(() => assertNativeScript({ cyrillic: '최창익 (崔昌益)' }, { citizenship: 'north-korea' }));
+    assert.throws(() => assertNativeScript({ cyrillic: '朴正熙' }, { citizenship: 'south-korea' }));
 }
 
 console.log('OK — CommuLingo person name validation smoke passed.');
