@@ -6,6 +6,7 @@
         <header class="commu-event-head">
             <span class="commu-event-period"><%= p.event.period %></span>
             <h1><%= p.event.title %></h1>
+            <% if (p.event.blurb) { %><p class="commu-event-question"><%= p.event.blurb %></p><% } %>
             <p><%- p.event.summaryHtml %></p>
         </header>
 <%

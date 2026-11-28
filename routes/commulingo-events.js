@@ -124,7 +124,7 @@ router.get('/:eventId', async (req, res) => {
             gamePromos: promosForAll([['events', event.id]].concat(pairedTerm ? [['terms', pairedTerm]] : []), lang),
             activePanel: 'event',
             pageTitle: lang === 'en' ? `${event.title} — Historical Events` : `${event.title} — 역사 사건`,
-            pageDescription: event.summary,
+            pageDescription: event.blurb || event.summary,
             pagePath: `/commulingo/events/${event.id}`,
             jsonLd: seo.graphJsonLd(commuLingoBreadcrumb(lang, [
                 { name: lang === 'en' ? 'Historical Events' : '역사 사건', href: '/commulingo/events' },

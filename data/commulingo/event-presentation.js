@@ -149,6 +149,7 @@ function presentEvent(raw, lang) {
         searchExpressions: (raw.linkExpressions || []).map(item => item.text).join(' '),
         // {{indicator:…}} tokens become the figure in force (indicators.js).
         question: expandIndicators(localize(raw.question, lang), lang),
+        blurb: expandIndicators(localize(raw.blurb, lang), lang),
         summary: expandIndicators(localize(raw.summary, lang), lang),
         body: expandIndicators(localize(raw.body, lang), lang),
         outcome: expandIndicators(localize(raw.outcome, lang), lang),

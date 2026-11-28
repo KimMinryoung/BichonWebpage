@@ -8,7 +8,7 @@
 //     term:                  term | definition | body
 //     person:                bio | epithet
 //     person_section:        heading | body          (fields.slug names the section)
-//     history_event:         title | question | summary | outcome
+//     history_event:         title | question | blurb | summary | outcome
 //     history_event_section: body                    (fields.heading {ko, en} names the section)
 //   Each find must occur exactly once in the stored text (and in the text as
 //   earlier edits in the list left it).
@@ -25,7 +25,7 @@ const TEXT_FIELDS = {
     term: ['term', 'definition', 'body'],
     person: ['bio', 'epithet'],
     person_section: ['heading', 'body'],
-    history_event: ['title', 'question', 'summary', 'outcome'],
+    history_event: ['title', 'question', 'blurb', 'summary', 'outcome'],
     history_event_section: ['body'],
 };
 
@@ -56,13 +56,13 @@ async function storedTexts(target, request, client) {
         if (!section) throw badRequest(`person ${id} has no section ${slug} (fields.slug names it)`);
         return section;
     }
-    const { rows } = await client.query(`SELECT title_ko, title_en, question_ko, question_en, summary_ko, summary_en, outcome_ko, outcome_en,
+    const { rows } = await client.query(`SELECT title_ko, title_en, question_ko, question_en, blurb_ko, blurb_en, summary_ko, summary_en, outcome_ko, outcome_en,
             body_ko, body_en, timeline FROM commulingo_history_events WHERE id = $1`, [id]);
     if (!rows.length) throw badRequest(`history event ${id} not found`);
     const row = rows[0];
     const pair = name => ({ ko: row[`${name}_ko`] || '', en: row[`${name}_en`] || '' });
     if (target === 'history_event') {
-        return { title: pair('title'), question: pair('question'), summary: pair('summary'), outcome: pair('outcome'), timeline: row.timeline || [] };
+        return { title: pair('title'), question: pair('question'), blurb: pair('blurb'), summary: pair('summary'), outcome: pair('outcome'), timeline: row.timeline || [] };
     }
     const heading = request.fields?.heading;
     if (!heading || typeof heading.ko !== 'string' || typeof heading.en !== 'string') {

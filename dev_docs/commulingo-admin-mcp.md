@@ -63,7 +63,7 @@ leninbot은 CommuLingo 테이블을 SQL로 건드리지 않는다(2026-10-05 W5)
 2026-11-14 데이터 작업 경험으로 더한 것:
 
 - **`outPath`(결과를 파일로)**: `person_get`·`person_events`·`term_get`·`event_get`·`event_raw`·`doc_get`·`data_document_get`·`sql_read`·`link_reviews_list`·`dataset_rows`는 `outPath: "content/<작업>/<파일>.json"`을 받으면 결과를 응답 대신 그 파일에 `{mcpExport: {tool, at}, value}`로 저장하고 `{outPath, bytes}`만 돌려준다(`mcp/index.js` `EXPORTABLE`, `mcp/server.js`, `mcp/spec.js` `writeExport`). 손으로 쓴 작업 파일은 덮어쓰지 않고 이전 내보내기만 바꾼다. 긴 본문을 결과에서 옮겨 적어 다시 쓰다 생기는 오탈자를 없애려는 것이다.
-- **`textEdits`·`timelineEdits`(부분 수정)**: `editorial_store`·`editorial_batch`의 submit update에 `request.textEdits: [{field: "body.ko", find, replace}]`를 주면 저장된 글을 같은 트랜잭션에서 읽어 바꾼 뒤 평소의 전체 필드 수정으로 보낸다(`mcp/text-edits.js`). 대상: 용어 term·definition·body, 인물 bio·epithet, 인물 절 heading·body(`fields.slug`), 사건 title·question·summary·outcome, 사건 절 body(`fields.heading {ko, en}`). `find`는 저장된 글에 정확히 한 번 나와야 한다. 사건 update의 `request.timelineEdits: [{index, set: {country: [...]}}]`는 연표 한 행의 키만 바꾼다(`null`은 키 삭제). 근거·리비전 규칙은 그대로다.
+- **`textEdits`·`timelineEdits`(부분 수정)**: `editorial_store`·`editorial_batch`의 submit update에 `request.textEdits: [{field: "body.ko", find, replace}]`를 주면 저장된 글을 같은 트랜잭션에서 읽어 바꾼 뒤 평소의 전체 필드 수정으로 보낸다(`mcp/text-edits.js`). 대상: 용어 term·definition·body, 인물 bio·epithet, 인물 절 heading·body(`fields.slug`), 사건 title·question·blurb·summary·outcome, 사건 절 body(`fields.heading {ko, en}`). `find`는 저장된 글에 정확히 한 번 나와야 한다. 사건 update의 `request.timelineEdits: [{index, set: {country: [...]}}]`는 연표 한 행의 키만 바꾼다(`null`은 키 삭제). 근거·리비전 규칙은 그대로다.
 - **`doc_get`**: `maxChars`가 본문 HTML에도 적용된다(전에는 문자열 하나인 `html`을 자르지 않아 3000자 요청에 6만 8천 자가 왔다). `headings: true`(+ `body: false`)는 제목 목록 `[{level, id, text}]`만 싸게 준다.
 - **링크 승인 충돌 오류**가 겹친 상대(`kind:id 「표현」 (정책)`)를 이름으로 댄다. 한 manifest의 결정들은 이미 최종 상태 기준으로 함께 검사되므로, 소유를 옮길 때는 내리는 쪽(search)과 올리는 쪽(auto)을 한 manifest에 넣으면 된다(양 언어 모두).
 
@@ -111,3 +111,5 @@ claude mcp add --transport http --scope local commulingo http://127.0.0.1:3100/m
 - leninbot `tests/test_commulingo_mcp_client.py`·`tests/test_commulingo_mcp_writes.py`: 요청 변환, 오류 형식, 작성기·검토 CLI·rename 추종.
 - `node tests/unit/commulingo-mcp-helpers.js`(npm test 포함): 투영(문자열 자르기 포함), JSON Pointer 패치, `specPath`·`outPath` 경계, `textEdits`·`timelineEdits` 확장, 새 쓰기 도구의 인자 거부, 배치 오류 모음(`item-problems.js`), patch rebase 충돌 판정, 사건 스펙 오류 모음. DB 없이 실행한다.
 - 운영: 등록한 클라이언트에서 `service_status`와 조회 도구 하나를 호출한다. 새 쓰기 도구는 dry-run으로 확인한다(dev-preview 컨테이너는 작업 트리의 `mcp/main.js`를 웹과 함께 띄우므로, 그 안 `127.0.0.1:3100`으로 배포 전에 부를 수 있다).
+
+- **사건 한 문장 소개(`blurb`, 마이그레이션 389, 2026-11-28)**: 사건 update의 `fields.blurb {ko, en}`. 언제·누가·무엇을 했고 어떻게 끝났나를 한 문장으로 쓴다(배경·전 단계부터 시작하지 않음). 사건 페이지 제목 아래 굵은 줄, 링크 미리보기, 사건 목록 카드, 페이지 설명(meta)에 쓰이고, 비면 요약으로 대신한다. 저장 검사(`data/commulingo/event-blurb.js`): 한 줄·한 문장·물음 아님, 한국어 100자·영어 220자 이하. 예전 핵심 질문(`question`)은 데이터에만 남고 화면에 나오지 않는다.

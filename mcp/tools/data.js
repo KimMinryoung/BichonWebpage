@@ -83,7 +83,7 @@ const tools = [
             + 'focus, sides and linked people with relation, note and side.' + VIEW_HINT,
         inputSchema: object({ id: str('Event id'), ...viewArgs }, ['id']),
         async handler({ id, ...view }) {
-            const event = (await db().query(`SELECT id, start_year, start_month, start_day, end_year, end_month, end_day, title_ko, title_en, question_ko, question_en, summary_ko, summary_en,
+            const event = (await db().query(`SELECT id, start_year, start_month, start_day, end_year, end_month, end_day, title_ko, title_en, question_ko, question_en, blurb_ko, blurb_en, summary_ko, summary_en,
                     outcome_ko, outcome_en, body_ko, body_en, timeline, sources, to_jsonb(e)->'focus' AS focus, to_jsonb(e)->'sides' AS sides
                 FROM commulingo_history_events e WHERE id = $1`, [id])).rows[0];
             if (!event) throw notFound('event', id);

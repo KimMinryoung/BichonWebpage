@@ -45,7 +45,7 @@ router.get('/api/people/:personId', async (req, res) => {
 
 // A hover preview of the person, event, term or reference document a link points at
 // (public/js/commulingo-link-preview.js): name, years and one line. Person:
-// the card's epithet. Event: its summary's first sentence. Term: its
+// the card's epithet. Event: its one-sentence blurb, else its summary's first sentence. Term: its
 // definition's first sentence, the original name and years beside the name.
 // Document: its summary's first sentence, the year and kind beside the title.
 // Course: its description, or a chapter's title and summary.
@@ -68,7 +68,8 @@ router.get('/api/preview/:kind/:id', async (req, res) => {
         } else if (req.params.kind === 'event') {
             const events = await require('../data/commulingo/history-events-store').loadCommuLingoHistoryEvents();
             const event = events.find(item => item.id === id);
-            if (event) preview = { title: event.title[lang] || event.title.ko, meta: event.period || '', text: firstSentence(event.summary[lang] || event.summary.ko) };
+            if (event) preview = { title: event.title[lang] || event.title.ko, meta: event.period || '',
+                text: (event.blurb && (event.blurb[lang] || event.blurb.ko)) || firstSentence(event.summary[lang] || event.summary.ko) };
         } else if (req.params.kind === 'term') {
             const terms = await require('../data/commulingo/terms-store').loadCommuLingoTerms();
             const term = terms.find(item => item.id === id);

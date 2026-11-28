@@ -39,7 +39,7 @@ async function fetchEvents() {
     const [events, people] = await readSnapshot(client => Promise.all([
         client.query(
             `SELECT id, start_year, start_month, start_day, end_year, end_month, end_day,
-                    title_ko, title_en, question_ko, question_en,
+                    title_ko, title_en, question_ko, question_en, blurb_ko, blurb_en,
                     summary_ko, summary_en, body_ko, body_en, outcome_ko, outcome_en,
                     timeline, sources, locations, no_auto_link, updated_at,
                     to_jsonb(commulingo_history_events)->'countries' AS countries,
@@ -92,6 +92,8 @@ async function fetchEvents() {
         endYear: row.end_year ?? row.start_year ?? null,
         title: t(row.title_ko, row.title_en),
         question: t(row.question_ko, row.question_en),
+        // One-sentence introduction (migration 389); empty until written.
+        blurb: t(row.blurb_ko, row.blurb_en),
         summary: t(row.summary_ko, row.summary_en),
         // Markdown, like a glossary term's body. Empty on most events.
         body: t(row.body_ko, row.body_en),

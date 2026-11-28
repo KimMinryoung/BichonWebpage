@@ -14,11 +14,12 @@ const { validGeo } = require('./event-map-svg');
 const { FLAG_NAMES } = require('./flag-icons');
 const { badSectionMarker } = require('./event-countries');
 const { assertKnownIndicators } = require('./indicators');
+const { blurbProblem } = require('./event-blurb');
 
 const TARGETS = ['history_event', 'history_event_section', 'history_event_person', 'office_row'];
 const RELATION_KINDS = ['leader', 'executor', 'participant', 'opponent', 'target', 'witness', 'historian'];
 const PATCH_KEYS = {
-    history_event: ['title', 'period', 'question', 'summary', 'outcome', 'timeline', 'sources', 'locations', 'countries', 'focus', 'sides', 'relations'],
+    history_event: ['title', 'period', 'question', 'blurb', 'summary', 'outcome', 'timeline', 'sources', 'locations', 'countries', 'focus', 'sides', 'relations'],
     history_event_section: ['heading', 'body', 'after'],
     history_event_person: ['personId', 'sortOrder', 'relationKind', 'relation', 'note', 'side'],
     office_row: ['sortOrder', 'period', 'body', 'personId', 'name', 'note', 'trackId', 'seat'],
@@ -29,7 +30,7 @@ const ACTIONS = {
     history_event_person: ['create', 'update'],
     office_row: ['create', 'update', 'delete'],
 };
-const LOCALIZED_EVENT_KEYS = ['question', 'summary', 'outcome'];
+const LOCALIZED_EVENT_KEYS = ['question', 'blurb', 'summary', 'outcome'];
 const SIDE_ID = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 const HEADING_LINE = /^## +(.+?)[ \t]*$/gm;
 // Korean prose quotes follow the NIKL rules (korean-quotes.js) whoever writes.
@@ -94,7 +95,7 @@ function spliceSection(body, heading, sectionBody, after, action) {
 
 async function eventRow(client, id, lock = false) {
     const { rows } = await client.query(
-        `SELECT id, start_year, start_month, start_day, end_year, end_month, end_day, title_ko, title_en, question_ko, question_en, summary_ko, summary_en,
+        `SELECT id, start_year, start_month, start_day, end_year, end_month, end_day, title_ko, title_en, question_ko, question_en, blurb_ko, blurb_en, summary_ko, summary_en,
                 outcome_ko, outcome_en, body_ko, body_en, timeline, sources, locations, countries, to_jsonb(e)->'relations' AS relations,
                 to_jsonb(e)->'focus' AS focus, to_jsonb(e)->'sides' AS sides
          FROM commulingo_history_events e WHERE id = $1${lock ? ' FOR UPDATE' : ''}`, [id]);
@@ -125,6 +126,12 @@ async function validateEvent(client, id, fields) {
     for (const key of LOCALIZED_EVENT_KEYS) {
         if (fields[key] !== undefined && fields[key] !== null && !isLocalized(fields[key])) throw badRequest(`${key} must be an object {ko, en}`);
         assertKnownIndicators(key, fields[key]);
+    }
+    if (isLocalized(fields.blurb)) {
+        for (const lang of ['ko', 'en']) {
+            const problem = blurbProblem(fields.blurb[lang], lang);
+            if (problem) throw badRequest(`blurb.${lang}: ${problem}`);
+        }
     }
     if (fields.timeline !== undefined && fields.timeline !== null) {
         if (!Array.isArray(fields.timeline) || !fields.timeline.length) throw badRequest('timeline must be a non-empty list');

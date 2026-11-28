@@ -4,6 +4,6 @@
                     <span class="commu-event-period"><% if (typeof highlightEventPeriod !== 'undefined' && highlightEventPeriod) { %><mark class="ui-search-hl"><%= event.period %></mark><% } else { %><%= event.period %><% } %></span>
                 </div>
                 <h2><%= event.title %></h2>
-                <p><%= event.summary %></p>
+                <p><%= event.blurb || event.summary %></p>
             </a>
             <% }) %>
