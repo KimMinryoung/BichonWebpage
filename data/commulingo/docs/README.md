@@ -353,7 +353,7 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
   팝오버는 주석 `<li>`의 내용을 그대로 보여 주므로(↩만 뺀다) 주석 안의 마크업은 짧은 인라인 요소로 둔다.
 - 인물·사건·용어 링크 미리보기(2026-11-28): 마우스가 있는 기기에서 본문의 그 링크에 0.3초 머물면 링크 아래에
   이름·연도·한 줄(인물은 카드의 한 줄 소개, 사건은 요약 첫 문장, 용어는 원어·연도와 정의 첫 문장)이 뜬다
-  (`public/js/commulingo-link-preview.js`, `GET /commulingo/api/preview/<person|event|term>/<id>`). 리더와 사건 페이지가 쓴다.
+  (`public/js/commulingo-link-preview.js`, `GET /commulingo/api/preview/<person|event|term>/<id>`). 사이트 전체(`partials/head`)와 리더가 싣는다(2026-11-28).
   상자를 쓰는 동안 링크의 `title`(브라우저 기본 툴팁)은 뺀다. 누르면 예전처럼 그 페이지가 열린다. 휴대폰 동작은 아직 정하지 않았다.
 - 누가 단 주석인지(2026-11-28): 주석 `<li>`에 `data-note-kind`를 준다 — `author`(저자 원주), `source-editor`(저본
   편집자 주), `translator`(옮긴이 주), `site`(이 사이트가 엮으며 단 주). 팝오버 머리가 「주석 3」 대신 「옮긴이 주 3」처럼

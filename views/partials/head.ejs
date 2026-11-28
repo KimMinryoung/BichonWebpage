@@ -97,6 +97,9 @@
 <link rel="stylesheet" href="/css/site-<%= module %>.css?v=<%= assetVersion %>">
 <% }); %>
 <link rel="stylesheet" href="/css/ui.css?v=<%= assetVersion %>">
+<%# Hover previews of person, event and term links in any page's text (owner, 2026-11-28: site-wide). %>
+<link rel="stylesheet" href="/css/commulingo-link-preview.css?v=<%= assetVersion %>">
+<script src="/js/commulingo-link-preview.js?v=<%= assetVersion %>" defer></script>
 <% const _extraCss = (typeof extraCss === 'undefined' || !extraCss) ? [] : (Array.isArray(extraCss) ? extraCss : [extraCss]); %>
 <% _extraCss.forEach(function(stylesheet) { %>
 <link rel="stylesheet" href="<%= stylesheet %>">

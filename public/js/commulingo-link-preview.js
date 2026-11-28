@@ -1,5 +1,5 @@
-// Hover previews for the dictionary links in a CommuLingo text (the
-// reference reader, event pages): with a mouse, resting on a person, event or
+// Hover previews for the dictionary links in any page's text (loaded by
+// partials/head site-wide and by the reference reader, 2026-11-28): with a mouse, resting on a person, event or
 // term link shows its name, years and one line in a box under the link —
 // GET /commulingo/api/preview/<person|event|term>/<id>. The link still opens
 // its page. Touch screens get nothing yet (owner, 2026-11-28: the phone
@@ -22,7 +22,8 @@
 
     function linkOf(target) {
         var el = target && target.closest ? target.closest(SELECTOR) : null;
-        return el && el.closest('main') ? el : null;
+        // Text links anywhere but the site's menus and the box itself.
+        return el && !el.closest('.home-toolbar, .link-pop') ? el : null;
     }
     function keyOf(a) {
         var m = (a.getAttribute('href') || '').match(/^(?:https?:\/\/[^/]+)?(?:\/en)?\/commulingo\/(people|events|terms)\/([a-z0-9-]+)/);
