@@ -12,6 +12,7 @@ function withTransaction(options, callback) {
 }
 
 const { badRequest, actorOf, changedBy } = require('../common');
+const { BLURB_GUIDE } = require('../../data/commulingo/event-blurb');
 
 const TARGETS = ['person', 'person_section', 'term'];
 const CONTENT_TARGETS = ['history_event', 'history_event_section', 'history_event_person', 'office_row'];
@@ -117,7 +118,7 @@ const tools = [
             + '{start: [year, month?, day?], end?, startQual?, endQual?, ongoing?, label?: {ko, en}} (null when undated; label only for what '
             + 'the numbers cannot say, and a remark about the dates goes in the body); a term update can drop wrongly stored source URLs with fields.removeSources [urls] '
             + '(refused while the text or recorded evidence still cites one). A history_event update takes title {ko, en} (then carry its link reviews with link_reviews_carry), '
-            + 'period {start, end?}, question/summary/outcome {ko, en}, sources, locations [{lat, lng, label {ko, en}, kind: main|place|geo}] (exactly one main), countries [country codes] (replaces the list; timeline row countries must be in it), '
+            + 'period {start, end?}, summary/outcome {ko, en}, ' + BLURB_GUIDE + ' question {ko, en} is no longer shown on the site; sources, locations [{lat, lng, label {ko, en}, kind: main|place|geo}] (exactly one main), countries [country codes] (replaces the list; timeline row countries must be in it), '
             + 'focus {ko, en} or sides [{id, label}] (not both; null clears), relations {parent?: event id, related?: [event ids]} (replaces the stored object; send back the ids already there) and timeline; history_event timeline rows carry period in the same shape, plus optional geo ({kind: point, lat, lng, label {ko, en}} or {kind: arrow, points, actor?, variant?}) and country (country codes); a timeline update replaces the whole list, so send back every row with its geo and country. History events and office rows '
             + '(history_event update; history_event_section create/update {heading, body, after?} / delete {heading}; history_event_person create/update '
             + '{personId, relationKind, relation, note, side?, sortOrder?}; office_row create (id = office id; fields period, body = formal post title, personId or name, note, trackId from the office tracks, seat state|government|empty) / update / delete (id = row id)) '
@@ -125,7 +126,7 @@ const tools = [
             + 'is approved in the same call (a new term then needs fields.original or request.noOriginal: "<reason>"). '
             + 'A small correction need not resend a whole text: an update may carry request.textEdits [{field: "body.ko", find, replace}] '
             + '(term: term|definition|body; person: bio|epithet; person_section: heading|body with fields.slug; history_event: '
-            + 'title|question|summary|outcome; history_event_section: body with fields.heading {ko, en}); each find must occur exactly once in the '
+            + 'title|blurb|question|summary|outcome; history_event_section: body with fields.heading {ko, en}); each find must occur exactly once in the '
             + 'stored text, and the stored text is read and written back in one transaction. A history_event update may carry request.timelineEdits '
             + '[{index, set: {country: [...]}}] (null removes a key) instead of the whole timeline. Evidence and revision rules are unchanged. brief: true returns '
             + 'only {status, suggestionId, revision} instead of the whole stored entry.',

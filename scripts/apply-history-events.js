@@ -13,14 +13,17 @@ const { FLAG_NAMES } = require(path.join(root, 'data/commulingo/flag-icons'));
 const { badSectionMarker } = require(path.join(root, 'data/commulingo/event-countries'));
 const { canonicalPeriod } = require(path.join(root, 'data/commulingo/career-period'));
 const { normalizeKoreanQuotes, normalizeKoreanTree } = require(path.join(root, 'data/commulingo/korean-quotes'));
+const { blurbProblem } = require(path.join(root, 'data/commulingo/event-blurb'));
 // The period is year/month/day columns (migrations 362/363), as in career entries.
 const periodColumns = ['start_year', 'start_month', 'start_day', 'end_year', 'end_month', 'end_day'];
-const columns = ['title_ko', 'title_en', ...periodColumns, 'question_ko', 'question_en',
+const columns = ['title_ko', 'title_en', ...periodColumns, 'question_ko', 'question_en', 'blurb_ko', 'blurb_en',
     'summary_ko', 'summary_en', 'outcome_ko', 'outcome_en', 'body_ko', 'body_en',
     'timeline', 'sources', 'locations', 'countries', 'relations', 'no_auto_link', 'link_expressions', 'focus', 'sides'];
 const jsonColumns = new Set(['timeline', 'sources', 'locations', 'countries', 'relations', 'no_auto_link', 'link_expressions', 'focus', 'sides']);
 // Specs written before migration 193 have no sides / side; both default to null.
-const OPTIONAL = { sides: null };
+// The question line left the page (2026-11-28): optional, '' when left out.
+// blurb_ko/blurb_en (migration 389) are required of a new event (validate).
+const OPTIONAL = { sides: null, question_ko: '', question_en: '' };
 const fieldValue = (f, c) => (c in f ? f[c] : OPTIONAL[c]);
 // jsonb columns get SQL NULL for null, never the JSON value null (193 fixed four rows).
 const sqlValue = (c, v) => (jsonColumns.has(c) ? (v === null || v === undefined ? null : JSON.stringify(v)) : v);
@@ -99,7 +102,9 @@ function validateEvent(e, at, check) {
     check(relations.related === undefined || Array.isArray(relations.related), `${at}: relations.related must be a list`);
     check(relations.parent === undefined || typeof relations.parent === 'string', `${at}: relations.parent must be an event id`);
     for (const lang of ['ko', 'en']) {
-        for (const prefix of ['title', 'question', 'summary', 'outcome', 'body']) check(String(f[`${prefix}_${lang}`] || '').trim(), `${at}: ${prefix}_${lang} is empty`);
+        for (const prefix of ['title', 'blurb', 'summary', 'outcome', 'body']) check(String(f[`${prefix}_${lang}`] || '').trim(), `${at}: ${prefix}_${lang} is empty`);
+        const blurb = blurbProblem(f[`blurb_${lang}`], lang);
+        check(!blurb, `${at}: blurb_${lang}: ${blurb}`);
         const body = String(f[`body_${lang}`] || '');
         check(body.length > 5000, `${at}: body_${lang} must be over 5000 characters (has ${body.length})`);
         const expected = sections.map((s, si) => {
@@ -153,7 +158,7 @@ async function applyBatch(db, spec, { apply = false, backup } = {}) {
     // This script writes with raw SQL, so it applies the Korean quote rules
     // (korean-quotes.js) the editorial services apply to every other write.
     for (const e of spec.events) {
-        for (const c of ['question_ko', 'summary_ko', 'outcome_ko', 'body_ko']) if (typeof e.fields[c] === 'string') e.fields[c] = normalizeKoreanQuotes(e.fields[c]);
+        for (const c of ['question_ko', 'blurb_ko', 'summary_ko', 'outcome_ko', 'body_ko']) if (typeof e.fields[c] === 'string') e.fields[c] = normalizeKoreanQuotes(e.fields[c]);
         for (const c of ['timeline', 'focus', 'sides']) if (e.fields[c]) e.fields[c] = normalizeKoreanTree(e.fields[c]);
         for (const p of e.people) for (const c of ['relation_ko', 'note_ko']) if (typeof p[c] === 'string') p[c] = normalizeKoreanQuotes(p[c]);
     }

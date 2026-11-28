@@ -7,6 +7,7 @@ const { str, int, bool, obj, arr, object } = require('../schema');
 const { specPathArg, readSpecFile, readSpecJson } = require('../spec');
 
 const { badRequest, actorOf, changedBy, db } = require('../common');
+const { BLURB_GUIDE } = require('../../data/commulingo/event-blurb');
 const dryRunArg = bool('Validate and roll back (default true)');
 const noteArg = str('Revision note', { maxLength: 500 });
 
@@ -557,9 +558,9 @@ const tools = [
         scope: 'edit',
         name: 'history_events_create',
         description: 'Create new history events from a batch spec (scripts/apply-history-events.js format: {id: <topic>-YYYYMMDD, events: [{id, '
-            + 'expected: null, fields: {title_ko, …, timeline, sources, locations, countries, relations, no_auto_link, link_expressions, focus, sides}, '
+            + 'expected: null, fields: {title_ko, title_en, start_year…end_day, blurb_ko, blurb_en, summary_*, outcome_*, body_*, timeline, sources, locations, countries, relations, no_auto_link, link_expressions, focus, sides}, '
             + 'sections, people}]}), with that script\'s checks (body_ko/body_en equal to the rendered sections, ≥10 https sources, ≥12 timeline rows, one main marker, '
-            + '≥6 sections, people exist, no duplicate title). apply: false (default) is a read-only preflight. An id that already exists must match the spec '
+            + '≥6 sections, people exist, no duplicate title; question_ko/en optional, blurb_ko/blurb_en required: ' + BLURB_GUIDE + ') apply: false (default) is a read-only preflight. An id that already exists must match the spec '
             + 'exactly (reported unchanged) and is never overwritten; change existing events with editorial_store. People cards go first (people_upsert); approve the new titles with link_reviews_apply.',
         inputSchema: object({ spec: obj('Batch spec'), specPath: specPathArg, apply: bool('Write (default false: preflight)'), changedBy }),
         audit: ({ specPath, apply, changedBy: actor }, client) => ({ command: apply ? 'apply' : 'preflight', targetType: 'history_event',
