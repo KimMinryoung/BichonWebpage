@@ -204,7 +204,7 @@ async function buildEventPanel(eventId, lang) {
         // Dictionary links inside the event's own prose, on the shared policy
         // (linkify.js). One linker for the article, so a term named in the
         // body and again in four timeline entries is a link once, at its
-        // first mention. The question and summary get a linker of their own:
+        // first mention. The summary gets a linker of its own:
         // a person met in the summary and again halfway down the body would
         // otherwise be linked only up top, and a reader who reaches the name
         // mid-article would have to scroll back to find who it is. The event
@@ -257,7 +257,10 @@ async function buildEventPanel(eventId, lang) {
         // the rest keep the template's own handling (URL or plain citation).
         event.sourceItems = event.sources.map(source => (isSitePathSource(source)
             ? presentSitePathSource(String(source).trim(), lang) : { raw: source }));
-        event.questionHtml = ledeLinker.plain(event.question);
+        // The stored question (question_ko/en) is kept but no longer shown
+        // (owner, 2026-11-28): the summary is the event's introduction, and a
+        // question line had grown in places into a list of the body's own
+        // headings. Linking it would spend first mentions the summary needs.
         event.summaryHtml = ledeLinker.plain(event.summary);
         const linkTimeline = () => {
             event.timeline = event.timeline.map(item => ({ ...item, bodyHtml: link(item.body) }));
