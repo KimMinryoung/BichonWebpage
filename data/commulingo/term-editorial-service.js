@@ -187,20 +187,82 @@ async function save(client, id, fields, current, action, actor, sources) {
     return after;
 }
 
+// Where a retired glossary id now points: another term id, `event:<id>` or
+// `person:<id>` (routes/commulingo-terms.js follows all three).
+async function assertRedirectTarget(client, target, id) {
+    const text = String(target || '').trim();
+    const [, kind, toId] = text.match(/^(?:(event|person):)?([a-z0-9][a-z0-9-]*)$/) || [];
+    if (!toId || toId === id) throw badRequest('redirectTo must be a term id, event:<id> or person:<id>, not the deleted term');
+    const table = { event: 'commulingo_history_events', person: 'commulingo_people' }[kind] || 'commulingo_terms';
+    if (!(await client.query(`SELECT 1 FROM ${table} WHERE id=$1`, [toId])).rowCount) throw badRequest(`redirectTo ${text} does not exist`);
+    return text;
+}
+
+// Everything that still names the term and is not removed with its row. A
+// delete is refused while any is left, so a merge moves them first.
+async function termReferences(client, id) {
+    const href = `%/commulingo/terms/${id}"%`;
+    const checks = [
+        ['child term', 'SELECT id FROM commulingo_terms WHERE parent_id=$1', [id]],
+        ['event term_links', "SELECT id FROM commulingo_history_events WHERE term_links::text LIKE '%\"'||$1||'\"%'", [id]],
+        ['office term_ids', 'SELECT id FROM commulingo_offices WHERE $1 = ANY(term_ids)', [id]],
+        ['position collection term_ids', 'SELECT id FROM commulingo_person_collections WHERE $1 = ANY(term_ids)', [id]],
+        ['document entry', "SELECT id FROM commulingo_docs WHERE entry->'terms' ? $1", [id]],
+        ['link in a term', 'SELECT id FROM commulingo_terms WHERE id<>$2 AND (body_ko LIKE $1 OR body_en LIKE $1 OR definition_ko LIKE $1 OR definition_en LIKE $1)', [href, id]],
+        ['link in an event', 'SELECT id FROM commulingo_history_events WHERE body_ko LIKE $1 OR body_en LIKE $1 OR timeline::text LIKE $1', [href]],
+        ['link in a document', 'SELECT id FROM commulingo_docs WHERE body LIKE $1', [href]],
+        ['data document', 'SELECT key AS id FROM commulingo_data_documents WHERE content::text LIKE $1', [`%/commulingo/terms/${id}%`]],
+    ];
+    const found = [];
+    for (const [label, sql, params] of checks) {
+        const rows = (await client.query(sql, params)).rows;
+        if (rows.length) found.push(`${label}: ${rows.map(row => row.id).join(', ')}`);
+    }
+    return found;
+}
+
+// fields {expectedRevision, reason, redirectTo?}. The row's aliases, people,
+// events, relations, evidence and enrichment go with it (ON DELETE CASCADE);
+// its link approvals are dropped (their history stays); redirects that pointed
+// at it follow it to redirectTo.
+async function deleteTerm(client, id, fields, current, actor) {
+    for (const key of Object.keys(fields)) if (!['expectedRevision','reason','redirectTo'].includes(key)) throw badRequest(`a term delete takes expectedRevision, reason and redirectTo only, not ${key}`);
+    const reason = String(fields.reason || '').trim();
+    if (!reason) throw badRequest('a term delete needs fields.reason');
+    const redirectTo = fields.redirectTo ? await assertRedirectTarget(client, fields.redirectTo, id) : '';
+    const references = await termReferences(client, id);
+    if (references.length) throw badRequest(`term ${id} is still referenced; move these first: ${references.join('; ')}`);
+    const inbound = (await client.query("SELECT from_id FROM commulingo_id_redirects WHERE entity_type='term' AND to_id=$1", [id])).rows;
+    if (inbound.length && !redirectTo) throw badRequest(`redirects point at ${id} (${inbound.map(row => row.from_id).join(', ')}); give redirectTo`);
+    await client.query("DELETE FROM commulingo_link_reviews WHERE kind='term' AND entity_id=$1", [id]);
+    await client.query('DELETE FROM commulingo_terms WHERE id=$1', [id]);
+    if (redirectTo) {
+        await client.query("UPDATE commulingo_id_redirects SET to_id=$2 WHERE entity_type='term' AND to_id=$1", [id, redirectTo]);
+        await client.query(`INSERT INTO commulingo_id_redirects (entity_type, from_id, to_id, note) VALUES ('term', $1, $2, $3)
+            ON CONFLICT (entity_type, from_id) DO UPDATE SET to_id = EXCLUDED.to_id, note = EXCLUDED.note`, [id, redirectTo, reason]);
+    }
+    await writeRevision(client,'term',id,`delete term: ${reason}`,{before:current,after:null,redirectTo:redirectTo || null},actor);
+    return {id,deleted:true,redirectTo:redirectTo || null};
+}
+
 async function submitTermEdit(request, options = {}) {
     const id = requireId(request.id,'term id');
-    if (!['create','update'].includes(request.action)) throw badRequest('term action must be create/update');
-    const fields = request.fields || {}, sources = sourcesFor({ sources:request.sources });
+    if (!['create','update','delete'].includes(request.action)) throw badRequest('term action must be create/update/delete');
+    const fields = request.fields || {};
+    // A delete removes text instead of asserting it, so it cites nothing.
+    const sources = request.action==='delete' ? [] : sourcesFor({ sources:request.sources });
     const actor = request.changedBy || options.changedBy || 'commulingo-editorial';
     return withTransaction(options,async client => {
         const current = await readTermEditorial(id,{client});
         if (request.action==='create' && current) throw badRequest('term already exists');
-        if (request.action==='update') {
+        if (request.action!=='create') {
             if (!current) throw badRequest('term not found');
             assertExpectedRevision(fields.expectedRevision,current.revision,true);
         }
         await client.query('SAVEPOINT term_validation');
-        const value = await save(client,id,fields,current,request.action,actor,sources);
+        const value = request.action==='delete'
+            ? await deleteTerm(client,id,fields,current,actor)
+            : await save(client,id,fields,current,request.action,actor,sources);
         const pending = !options.reviewed;
         if (pending || request.dryRun) await client.query('ROLLBACK TO SAVEPOINT term_validation');
         await client.query('RELEASE SAVEPOINT term_validation');

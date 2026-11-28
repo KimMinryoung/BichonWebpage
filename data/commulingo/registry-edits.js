@@ -25,7 +25,7 @@ const CHECKED_EMPTY_FIELDS = {
     career: row => row.career_rows > 0,
 };
 const BLOCK_KINDS = ['phrase', 'alias', 'term-phrase', 'term-alias', 'term-headword'];
-const REDIRECT_TYPES = ['person', 'office', 'role-category'];
+const REDIRECT_TYPES = ['person', 'office', 'role-category', 'term'];
 
 function badRequest(message, status = 400) {
     return Object.assign(new Error(message), { status });
@@ -333,10 +333,18 @@ const OPS = {
     async id_redirect_add(client, op) {
         if (!REDIRECT_TYPES.includes(op.entityType)) throw badRequest(`entityType must be one of ${REDIRECT_TYPES.join(', ')}`);
         const fromId = id(op.fromId, 'fromId');
-        const toId = id(op.toId, 'toId');
+        // A term may point at an event or person card instead (`event:<id>`, `person:<id>`).
+        const toId = op.entityType === 'term' && /^(event|person):/.test(String(op.toId || ''))
+            ? `${op.toId.split(':')[0]}:${id(op.toId.slice(op.toId.indexOf(':') + 1), 'toId')}`
+            : id(op.toId, 'toId');
         if (op.entityType === 'person') {
             if ((await client.query('SELECT 1 FROM commulingo_people WHERE id = $1', [fromId])).rowCount) throw badRequest(`${fromId} is still a live person; merge it first`);
             await mustExist(client, 'commulingo_people', toId, 'person');
+        }
+        if (op.entityType === 'term') {
+            // A term redirect is set by the term delete (editorial_store); here only
+            // to re-point one, so the old id must already be gone.
+            if ((await client.query('SELECT 1 FROM commulingo_terms WHERE id = $1', [fromId])).rowCount) throw badRequest(`${fromId} is still a live term; delete it with editorial_store`);
         }
         const note = text(op.note, 'note', 2000);
         await client.query(`INSERT INTO commulingo_id_redirects (entity_type, from_id, to_id, note) VALUES ($1, $2, $3, $4)

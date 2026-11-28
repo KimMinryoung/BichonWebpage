@@ -123,6 +123,9 @@ router.get('/:termId', async (req, res) => {
             // `person:<id>` retires a glossary entry that was really a person card.
             const person = merged.startsWith('person:') ? merged.slice('person:'.length) : '';
             if (person) return res.redirect(301, seo.languagePath(`/commulingo/people/${encodeURIComponent(person)}`, lang));
+            // `event:<id>` retires an entry whose content moved into a history event.
+            const event = merged.startsWith('event:') ? merged.slice('event:'.length) : '';
+            if (event) return res.redirect(301, seo.languagePath(`/commulingo/events/${encodeURIComponent(event)}`, lang));
             if (merged) return res.redirect(301, seo.languagePath(`/commulingo/terms/${encodeURIComponent(merged)}`, lang));
             return errorPage.notFound(res, {
                 message: lang === 'en' ? 'Term not found.' : '용어를 찾을 수 없습니다.',

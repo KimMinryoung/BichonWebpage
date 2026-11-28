@@ -592,7 +592,7 @@ const tools = [
             + 'event_person_links_set {eventId, personLinks [{lang, text, personId, reason}]}, term_person_links_set {termId, personLinks} and '
             + 'person_person_links_set {personId, personLinks} (on that page exactly `text` links to personId ahead of the namesake, shared-surname '
             + 'and surname-only rules — e.g. a bare name two qualified cards share; the page\'s own no_auto_link still wins and a text listed there is refused; '
-            + 'each replaces the whole list: read it with registry_get event_link_exceptions / page_link_exceptions first); id_redirect_add {entityType: person|office|role-category, fromId, toId, note}; '
+            + 'each replaces the whole list: read it with registry_get event_link_exceptions / page_link_exceptions first); id_redirect_add {entityType: person|office|role-category|term, fromId, toId, note} (a term toId may be event:<id> or person:<id>; a term redirect is normally set by the term delete); '
             + 'term_category_upsert {id, label {ko,en}, sortOrder} (glossary kind chips; a new one needs both, reorder by upserting each moved row; '
             + 'current rows: dataset_rows term_categories); term_category_assign {category, termIds[]} (moves terms into an existing category; only the category column changes). '
             + 'Each change leaves a revision row. Pass ops inline or specPath to a file with {ops: [...]} or the list. dryRun defaults to true.',

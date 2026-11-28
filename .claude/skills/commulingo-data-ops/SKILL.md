@@ -36,6 +36,7 @@ The CLIs `scripts/commulingo-people-upsert`, `scripts/commulingo-docs`, `scripts
 ## Ids, renames and merges
 
 - Renaming a person id: `scripts/commulingo-person-rename <spec.json> [--dry-run]` with `{"renames":[{"from":"lech-wa-sa","to":"lech-walesa"}]}`. One transaction moves the card, loose references, the redirect and the ids inside documents, rosters and genealogy charts. See `dev_docs/commulingo-database.md` (인물 id 변경).
+- 용어를 다른 용어나 사건에 합쳐 지울 때(2026-11-28): 내용·고유 별칭·링크 승인·참조를 먼저 옮기고, `editorial_store` term `action: "delete"` `fields {expectedRevision, reason, redirectTo}`(`redirectTo`는 용어 id·`event:<id>`·`person:<id>`)로 지운다. 하위 용어, 사건 `term_links`, 직책·입장 모음 `term_ids`, 문헌 entry, 본문·데이터 문서의 `/commulingo/terms/<id>` 링크가 남아 있으면 거부된다. 별칭·연결·근거는 행과 함께 지워지고 링크 승인은 삭제되며 옛 주소는 `redirectTo`로 301 된다.
 - Merging a duplicate person: merge the rows, then add the redirect (`registry_edit` `id_redirect_add`). The retired id 301s to its target after the next people-store refresh; chains collapse to one hop, a cycle is dropped and logged.
 - 용어·사건·문헌의 **표제어(제목) 표기만** 고칠 때(같은 대상) 링크 승인을 이어받는다: 용어는 편집 요청 `fields.carryLinkReviews: true`, 사건·문헌은 이름을 바꾼 뒤 `link_reviews_carry`(먼저 `apply` 없이 확인). 빼먹으면 그 언어의 표현 승인이 전부 검색 전용으로 돌아가 본문 링크가 사라진다. 대상이 좁아지거나 바뀌는 개명이면 이어받지 말고 다시 검토한다(`dev_docs/commulingo-link-ambiguity.md`).
 - 새 용어나 새 사건 제목은 같은 작업에서 링크 승인(`link_reviews_apply`)까지 마쳐야 본문에 자동 링크된다.
