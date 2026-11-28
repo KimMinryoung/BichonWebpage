@@ -13,7 +13,8 @@
 // way the link itself would: a new tab where the surface stamped
 // target="_blank" (courses, events, chat — linkify.js SURFACES.newTab, so a
 // lesson or a long event page is not lost), the same tab elsewhere (moving
-// between dictionary pages).
+// between dictionary pages). Button-style lists (data-link-preview) are the
+// exception: their box is for the mouse only, and a tap opens the page.
 (function () {
     'use strict';
     if (!window.fetch) return;
@@ -36,7 +37,7 @@
     // class is the whole test. The one addition is the reader's header line
     // (.doc-refs: people, terms, events, courses — plain links so the line
     // keeps its own faint underline); a link there with no preview kind
-    // (a genealogy chart) is left alone by keyOf. A list whose rows show only
+    // (a genealogy chart) is left alone by keyOf.
     // Button-style link lists (rows and chips: related events, documents,
     // people, terms) opt in with data-link-preview. They show the box to a
     // mouse only; a tap on one opens the page at once (owner 2026-11-28).
@@ -50,7 +51,7 @@
         var href = a.getAttribute('href') || '';
         var book = href.match(/^(?:https?:\/\/[^/]+)?(?:\/en)?\/commulingo\/book\/([a-z0-9-]+)(?:#lesson=([^&]+))?/);
         if (book) return 'book/' + book[1] + (book[2] ? '?lesson=' + encodeURIComponent(decodeURIComponent(book[2])) : '');
-        var m = (a.getAttribute('href') || '').match(/^(?:https?:\/\/[^/]+)?(?:\/en)?\/commulingo\/(people|events|terms|docs)\/([a-z0-9-]+)/);
+        var m = href.match(/^(?:https?:\/\/[^/]+)?(?:\/en)?\/commulingo\/(people|events|terms|docs)\/([a-z0-9-]+)/);
         return m ? KINDS[m[1]] + '/' + m[2] : null;
     }
     function load(key) {

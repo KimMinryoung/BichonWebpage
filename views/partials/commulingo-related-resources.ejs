@@ -1,18 +1,15 @@
 <%# Shared reference documents and reports for dictionary detail pages.
-    A person page (copy.authoredDocuments) splits the person's own writings
-    (doc.authored) from the documents about them, writings first. %>
+    A person's own writings (doc.authored, person pages only) come first under
+    their own heading; the rest keep the plain heading unless writings precede
+    them. %>
         <%
-        var docGroups = [];
-        if (relatedDocs && relatedDocs.length) {
-            if (copy.authoredDocuments) {
-                var ownDocs = relatedDocs.filter(function(doc) { return doc.authored; });
-                var otherDocs = relatedDocs.filter(function(doc) { return !doc.authored; });
-                if (ownDocs.length) docGroups.push({ id: 'authored-docs', heading: copy.authoredDocuments, docs: ownDocs });
-                if (otherDocs.length) docGroups.push({ id: 'related-docs', heading: ownDocs.length ? copy.relatedReferenceDocuments : copy.referenceDocuments, docs: otherDocs });
-            } else {
-                docGroups.push({ id: 'related-docs', heading: copy.referenceDocuments, docs: relatedDocs });
-            }
-        }
+        var docs = relatedDocs || [];
+        var ownDocs = docs.filter(function(doc) { return doc.authored; });
+        var otherDocs = docs.filter(function(doc) { return !doc.authored; });
+        var docGroups = [
+            { id: 'authored-docs', heading: copy.authoredDocuments, docs: ownDocs },
+            { id: 'related-docs', heading: ownDocs.length ? copy.relatedReferenceDocuments : copy.referenceDocuments, docs: otherDocs },
+        ].filter(function(group) { return group.docs.length; });
         %>
         <% docGroups.forEach(function(group) { %>
         <section class="commu-person-detail-section commu-section-wide commu-related-reports" aria-labelledby="<%= group.id %>">

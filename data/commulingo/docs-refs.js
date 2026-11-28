@@ -28,12 +28,12 @@ const KINDS = ['people', 'terms', 'events'];
 // their English page (routes/commulingo-docs.js); the rest are Korean text.
 const readableIn = (doc, lang) => lang !== 'en' || Boolean(doc.original);
 
+// `authored` marks a person's own writings (entry.authors); the person page
+// lists them apart, first (partials/commulingo-related-resources).
 function relatedDocsFor(kind, id, lang) {
     try {
-        // A person's own writings come first (entry.authors), in manifest order.
         const authored = doc => kind === 'people' && (doc.authors || []).includes(id);
-        const docs = listCommuLingoDocsFor(kind, id).filter(doc => readableIn(doc, lang));
-        return [...docs.filter(authored), ...docs.filter(doc => !authored(doc))].map(doc => ({
+        return listCommuLingoDocsFor(kind, id).filter(doc => readableIn(doc, lang)).map(doc => ({
             id: doc.id,
             title: localize(doc.title, lang),
             kind: localize(doc.kind, lang),
