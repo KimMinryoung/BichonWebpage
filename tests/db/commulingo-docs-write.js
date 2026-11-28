@@ -73,6 +73,14 @@ const ORIGINAL = '<article><h1>Test</h1><aside class="doc-editorial" lang="ko"><
         const kept = (await client.query("SELECT revision, body IS NOT NULL AS has_body, rights FROM commulingo_doc_original_revisions WHERE doc_id = 'zz-docs-test' ORDER BY revision")).rows;
         assert.deepEqual(kept.map(r => [r.revision, r.has_body, r.rights]), [[1, false, ''], [2, true, '']]);
 
+        // A link written in the bibliography is checked like one in the body (A3).
+        const linking = { ...ENTRY, bibliography: { parts: [{ sourceText: '<a href="/commulingo/docs/zz-docs-test#part-1">시험 문헌</a>' }] } };
+        const second = await writeDocs({ upserts: [{ id: 'zz-docs-test-2', entry: linking, body: BODY }] }, opts);
+        assert.deepEqual(second.structure[0].warnings.filter(w => w.code === 'doc-link-dangling'), []);
+        const broken = { ...ENTRY, bibliography: { parts: [{ sourceText: '<a href="/commulingo/docs/zz-docs-test#nope">시험 문헌</a>' }] } };
+        const third = await writeDocs({ upserts: [{ id: 'zz-docs-test-3', entry: broken, body: BODY }] }, opts);
+        assert.equal(third.structure[0].warnings.filter(w => w.code === 'doc-link-dangling').length, 1);
+
         // A redirect may send a retired id to the head of the document.
         await writeDocs({ redirects: { set: { 'zz-docs-old': { id: 'zz-docs-test' } } } }, opts);
         assert.equal((await one("SELECT anchor FROM commulingo_doc_redirects WHERE from_id = 'zz-docs-old'")).anchor, '');

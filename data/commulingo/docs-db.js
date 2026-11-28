@@ -51,11 +51,18 @@ function checkStructure(id, label, { body, entry, role, previousBody, previousEn
     return { id, label, errors: after.errors, warnings: after.warnings, introduced: introducedErrors(before, after) };
 }
 
+// Every string inside a value (a bibliography's texts), joined: the
+// structure check reads the page with the bibliography boxes drawn in, so a
+// link written there counts as one in the body.
+const textsOf = value => (typeof value === 'string' ? [value]
+    : value && typeof value === 'object' ? Object.values(value).flatMap(textsOf) : []);
+
 // The documents a body links to (doc-structure.js linkedDocKeys), with their
 // ids, for the doc-link-dangling check (A3). Reads only the linked rows.
+// `bodies` may hold an entry's bibliography too (any value: its texts are read).
 async function loadDocTargets(client, bodies) {
     const keys = new Set();
-    for (const body of bodies) for (const key of linkedDocKeys(body)) keys.add(key);
+    for (const body of bodies) for (const key of linkedDocKeys(textsOf(body).join('\n'))) keys.add(key);
     const targets = new Map();
     if (!keys.size) return targets;
     const ids = [...new Set([...keys].map(key => key.replace(/\/original$/, '')))];
@@ -307,7 +314,7 @@ async function writeDocs(changes, { actor, note, client, allowStructureIssues = 
                 if (body !== undefined || current) {
                     structure.push(checkStructure(item.id, item.id, {
                         body: body ?? current.body, entry, role: 'translation', known: await knownFor(entry),
-                        docTargets: await loadDocTargets(c, [body ?? current.body]),
+                        docTargets: await loadDocTargets(c, [body ?? current.body, entry.bibliography]),
                         previousBody: current ? current.body : undefined, previousEntry: current ? current.entry : undefined }));
                 }
             }
