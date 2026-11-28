@@ -12,9 +12,9 @@
         ].filter(function(group) { return group.docs.length; });
         %>
         <% docGroups.forEach(function(group) { %>
-        <section class="commu-person-detail-section commu-section-wide commu-related-reports" aria-labelledby="<%= group.id %>">
+        <section class="commu-person-detail-section commu-section-wide" aria-labelledby="<%= group.id %>">
             <h2 id="<%= group.id %>"><%= group.heading %></h2>
-            <ul class="commu-related-report-list commu-related-doc-list" data-link-preview>
+            <ul class="commu-link-list commu-related-doc-list" data-link-preview="button">
                 <% group.docs.forEach(function(doc) { %>
                 <li><a href="/commulingo/docs/<%= doc.id %>"><span><%= doc.kind %></span><strong><%= doc.title %></strong></a></li>
                 <% }) %>
@@ -23,9 +23,9 @@
         <% }) %>
 
         <% if (relatedReports && relatedReports.length) { %>
-        <section class="commu-person-detail-section commu-section-wide commu-related-reports" aria-labelledby="related-reports">
+        <section class="commu-person-detail-section commu-section-wide" aria-labelledby="related-reports">
             <h2 id="related-reports"><%= copy.relatedReports %></h2>
-            <ul class="commu-related-report-list">
+            <ul class="commu-link-list">
                 <% relatedReports.forEach(function(report) { %>
                 <li><a href="<%= report.href %>"><span><%= report.dateLabel || (copy.report) %></span><strong><%= report.title %></strong></a></li>
                 <% }) %>

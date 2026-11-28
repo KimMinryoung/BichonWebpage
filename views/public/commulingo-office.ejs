@@ -134,9 +134,9 @@
         <% } %>
 
         <% if (typeof relatedReports !== 'undefined' && relatedReports && relatedReports.length) { %>
-        <section class="commu-hub-section commu-related-reports" aria-labelledby="related-reports">
+        <section class="commu-hub-section" aria-labelledby="related-reports">
             <h2 id="related-reports"><%= strings.commuLingoViews.office.relatedReports %></h2>
-            <ul class="commu-related-report-list">
+            <ul class="commu-link-list">
                 <% relatedReports.forEach(function(report) { %>
                 <li><a href="<%= report.href %>"><span><%= report.dateLabel || (strings.commuLingoViews.office.report) %></span><strong><%= report.title %></strong></a></li>
                 <% }) %>

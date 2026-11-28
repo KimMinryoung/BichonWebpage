@@ -2166,14 +2166,14 @@ h2 .commu-section-flags .commu-flag { height: 15px; width: auto; }
 [data-theme="light"] .commu-person-event-links li.is-historian a:hover em { color: var(--role-historian-bright); }
 [data-theme="light"] .commu-person-event-links li.is-unclassified a:hover span,
 [data-theme="light"] .commu-person-event-links li.is-unclassified a:hover em { color: var(--role-unclassified-bright); }
-.commu-related-report-list { list-style: none; padding: 0; margin: 0; }
-.commu-related-report-list li + li { margin-top: .6rem; }
-.commu-related-report-list a { display: grid; grid-template-columns: 6rem 1fr; gap: .2rem .75rem; padding: .8rem; border: 1px solid var(--border); border-radius: 0; color: inherit; text-decoration: none; }
-.commu-related-report-list a:hover { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
-.commu-related-report-list a:hover span { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
-.commu-related-report-list span { color: var(--text-muted); font-weight: 700; }
-.commu-related-report-list strong { font-size: var(--text-md); }
-@media (max-width: 560px) { .commu-related-report-list a { grid-template-columns: 1fr; } }
+.commu-link-list { list-style: none; padding: 0; margin: 0; }
+.commu-link-list li + li { margin-top: .6rem; }
+.commu-link-list a { display: grid; grid-template-columns: 6rem 1fr; gap: .2rem .75rem; padding: .8rem; border: 1px solid var(--border); border-radius: 0; color: inherit; text-decoration: none; }
+.commu-link-list a:hover { background: var(--accent); border-color: var(--accent); color: var(--clr-cream); text-decoration: none; }
+.commu-link-list a:hover span { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
+.commu-link-list span { color: var(--text-muted); font-weight: 700; }
+.commu-link-list strong { font-size: var(--text-md); }
+@media (max-width: 560px) { .commu-link-list a { grid-template-columns: 1fr; } }
 .commu-practice-list a { grid-template-columns: 1fr; }
 .commu-war-promo-list { list-style: none; padding: 0; margin: 0; }
 .commu-war-promo-list li + li { margin-top: .6rem; }

@@ -13,14 +13,14 @@
 // way the link itself would: a new tab where the surface stamped
 // target="_blank" (courses, events, chat — linkify.js SURFACES.newTab, so a
 // lesson or a long event page is not lost), the same tab elsewhere (moving
-// between dictionary pages). Button-style lists (data-link-preview) are the
-// exception: their box is for the mouse only, and a tap opens the page.
+// between dictionary pages). Button-style lists (data-link-preview="button")
+// are the exception: their box is for the mouse only, and a tap opens the page.
 (function () {
     'use strict';
     if (!window.fetch) return;
     var hoverable = !!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
 
-    var SELECTOR = 'a.commu-person-link, a.commu-event-link, a.commu-term-link, a.commu-doc-link, a.commu-book-link, .doc-refs a, [data-link-preview] a';
+    var SELECTOR = 'a.commu-person-link, a.commu-event-link, a.commu-term-link, a.commu-doc-link, a.commu-book-link, [data-link-preview] a';
     var KINDS = { people: 'person', events: 'event', terms: 'term', docs: 'doc' };
     var prefix = /^\/en\//.test(window.location.pathname) ? '/en' : '';
     var previews = {};
@@ -32,20 +32,21 @@
     var closeTimer = null;
     var open = null; // { el, anchor }
 
-    // Only the text linkers stamp these classes (linkify.js,
-    // doc-presentation.js, commulingo-decision.js), never a menu, so the
-    // class is the whole test. The one addition is the reader's header line
-    // (.doc-refs: people, terms, events, courses — plain links so the line
-    // keeps its own faint underline); a link there with no preview kind
-    // (a genealogy chart) is left alone by keyOf.
-    // Button-style link lists (rows and chips: related events, documents,
-    // people, terms) opt in with data-link-preview. They show the box to a
-    // mouse only; a tap on one opens the page at once (owner 2026-11-28).
+    // Two ways in. Links in running text carry a linker's class (linkify.js,
+    // doc-presentation.js, commulingo-decision.js stamp them, never a menu).
+    // Anything else opts in on its container with data-link-preview:
+    //   "text"   — plain links read like text (the reader's header line,
+    //              which keeps its own faint underline): as the classes.
+    //   "button" — button-style rows and chips (related events, documents,
+    //              people, terms): the box is for the mouse only, and a tap
+    //              opens the page at once (owner 2026-11-28).
+    // A link with no preview kind (a genealogy chart) is left alone by keyOf.
     function linkOf(target) {
         return target && target.closest ? target.closest(SELECTOR) : null;
     }
     function hoverOnly(a) {
-        return !!a.closest('[data-link-preview]');
+        var box = a.closest('[data-link-preview]');
+        return !!box && box.getAttribute('data-link-preview') === 'button';
     }
     function keyOf(a) {
         var href = a.getAttribute('href') || '';

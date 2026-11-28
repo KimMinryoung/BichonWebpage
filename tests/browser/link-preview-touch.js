@@ -4,7 +4,7 @@
 // (public/js/commulingo-link-preview.js): a tap shows the box, a tap outside
 // only closes it, the box opens the page the way the link would — same tab on
 // a dictionary page, a new tab on an event page. A button-style list
-// (data-link-preview) opens at once on a tap and shows the box to a mouse.
+// (data-link-preview="button") opens at once on a tap and shows the box to a mouse.
 const { launchChromium } = require('../lib/browser');
 const assert = require('node:assert/strict');
 (async () => {
@@ -65,9 +65,9 @@ const assert = require('node:assert/strict');
         await page.touchscreen.tap(5, 840);
         await page.waitForFunction(() => !document.querySelector('.link-pop'));
 
-        // A button-style list (data-link-preview) opens at once on a tap.
+        // A button-style list (data-link-preview="button") opens at once on a tap.
         await page.goto(origin + '/commulingo/people/lenin', { waitUntil: 'networkidle' });
-        const button = page.locator('[data-link-preview] a[href^="/commulingo/docs/"]').first();
+        const button = page.locator('[data-link-preview="button"] a[href^="/commulingo/docs/"]').first();
         await button.scrollIntoViewIfNeeded();
         const buttonHref = await button.evaluate(a => a.href);
         await Promise.all([page.waitForURL(buttonHref), button.tap()]);
@@ -78,7 +78,7 @@ const assert = require('node:assert/strict');
         const desk = await browser.newContext({ viewport: { width: 1280, height: 900 }, locale: 'ko-KR' });
         const deskPage = await desk.newPage();
         await deskPage.goto(origin + '/commulingo/people/lenin', { waitUntil: 'networkidle' });
-        const deskButton = deskPage.locator('[data-link-preview] a[href^="/commulingo/docs/"]').first();
+        const deskButton = deskPage.locator('[data-link-preview="button"] a[href^="/commulingo/docs/"]').first();
         await deskButton.scrollIntoViewIfNeeded();
         await deskButton.hover();
         await deskPage.waitForSelector('.link-pop:not(.is-tap)');

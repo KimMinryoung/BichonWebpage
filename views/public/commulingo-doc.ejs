@@ -152,7 +152,7 @@ var refGroups = [
 var docCourses = doc.courses || [];
 %>
 <% if (refGroups.length || docCourses.length) { %>
-<p class="doc-refs">
+<p class="doc-refs" data-link-preview="text">
     <% refGroups.forEach(function(group) { %>
     <span class="doc-refs-group"><span class="doc-refs-label"><%= group.label %></span><% group.items.forEach(function(item, i) { %><a href="/commulingo/<%= group.path %>/<%= item.id %>" target="_blank" rel="noopener"><%= item.name %></a><%= i < group.items.length - 1 ? ', ' : '' %><% }) %></span>
     <% }) %>

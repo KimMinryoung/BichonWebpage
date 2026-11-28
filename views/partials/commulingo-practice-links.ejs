@@ -3,9 +3,9 @@
         <% var practiceChapters = typeof chapters !== 'undefined' && chapters ? chapters : []; %>
         <% var practiceScenes = typeof scenes !== 'undefined' && scenes ? scenes : []; %>
         <% if (practiceChapters.length || practiceScenes.length || (decks && decks.length)) { %>
-        <section class="commu-person-detail-section commu-section-wide commu-related-reports" aria-labelledby="practice-links">
+        <section class="commu-person-detail-section commu-section-wide" aria-labelledby="practice-links">
             <h2 id="practice-links"><%= practiceCopy.heading %></h2>
-            <ul class="commu-related-report-list commu-practice-list">
+            <ul class="commu-link-list commu-practice-list">
                 <% practiceScenes.forEach(function(scene) { %>
                 <li><a href="/commulingo/book/<%= scene.bookId %>#<%= scene.episodeId %>"><span><%= practiceCopy.course %> · <%= scene.bookTitle %></span><strong><%= scene.title %></strong></a></li>
                 <% }) %>
