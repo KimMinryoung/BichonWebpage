@@ -83,6 +83,17 @@ const assert = require('node:assert/strict');
         await deskButton.hover();
         await deskPage.waitForSelector('.link-pop:not(.is-tap)');
         console.log('button hover box ok:', await deskPage.textContent('.link-pop strong'));
+        // The box lets the pointer through: moving down onto the next row
+        // (which the box covers) swaps it for that row's box.
+        const nextButton = deskPage.locator('[data-link-preview="button"] a[href^="/commulingo/docs/"]').nth(1);
+        const nextBox = await nextButton.boundingBox();
+        await deskPage.mouse.move(nextBox.x + 20, nextBox.y + nextBox.height / 2, { steps: 4 });
+        const nextTitle = await nextButton.locator('strong').textContent();
+        await deskPage.waitForFunction(t => {
+            const pop = document.querySelector('.link-pop strong');
+            return pop && pop.textContent.trim() === t.trim();
+        }, nextTitle);
+        console.log('next row box ok:', nextTitle);
         await desk.close();
 
         // A course chapter in the reader's header line: the box names the

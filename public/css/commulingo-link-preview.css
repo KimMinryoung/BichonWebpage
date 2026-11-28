@@ -31,6 +31,9 @@
 }
 
 /* Touch: the tapped box is the button that opens the page. */
+.link-pop.is-passive {
+    pointer-events: none;
+}
 .link-pop.is-tap {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;

@@ -96,9 +96,12 @@
         else window.location.assign(a.href);
     }
 
-    function box(data, tapAnchor) {
+    // A button row's box only describes the row the mouse is on: the pointer
+    // passes through it (to the next row it covers) and it goes the moment
+    // the mouse leaves the row. A text link's box can be entered, as ever.
+    function box(data, tapAnchor, passive) {
         var pop = document.createElement('div');
-        pop.className = 'link-pop' + (tapAnchor ? ' is-tap' : '');
+        pop.className = 'link-pop' + (tapAnchor ? ' is-tap' : '') + (passive ? ' is-passive' : '');
         pop.setAttribute('role', tapAnchor ? 'link' : 'tooltip');
         var head = document.createElement('div');
         head.className = 'link-pop-head';
@@ -128,7 +131,7 @@
                 close();
                 follow(tapAnchor);
             });
-        } else {
+        } else if (!passive) {
             pop.addEventListener('mouseenter', cancelClose);
             pop.addEventListener('mouseleave', scheduleClose);
         }
@@ -151,10 +154,11 @@
     }
     function show(anchor, data, x, y, tap) {
         close();
-        var pop = box(data, tap ? anchor : null);
+        var passive = !tap && hoverOnly(anchor);
+        var pop = box(data, tap ? anchor : null, passive);
         document.body.appendChild(pop);
         place(pop, anchor, x, y);
-        open = { el: pop, anchor: anchor, tap: !!tap };
+        open = { el: pop, anchor: anchor, tap: !!tap, passive: passive };
     }
 
     // ---- touch: tap shows, the box opens ----
@@ -227,7 +231,10 @@
         if (!a || (event.relatedTarget && a.contains(event.relatedTarget))) return;
         hovered = null;
         clearTimeout(hoverTimer);
-        if (open && open.anchor === a) scheduleClose();
+        if (open && open.anchor === a) {
+            if (open.passive) close();
+            else scheduleClose();
+        }
     });
     // A click opens the page (a new tab, mostly): the box goes with it.
     document.addEventListener('click', function () { if (open && !open.tap) close(); });
