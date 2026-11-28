@@ -29,3 +29,16 @@
   margin-top: 0.2rem;
   color: var(--text-secondary);
 }
+
+/* Touch: the tapped box is the button that opens the page. */
+.link-pop.is-tap {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.link-pop-open {
+  margin-top: 0.4rem;
+  color: var(--text-muted);
+  font-size: var(--text-xs);
+  text-align: end;
+}
