@@ -51,8 +51,18 @@ router.get('/api/people/:personId', async (req, res) => {
 // Course: its description, or a chapter's title and summary.
 const firstSentence = (text, max = 200) => {
     const plain = String(text || '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*_`#>]/g, '').replace(/\s+/g, ' ').trim();
-    const m = plain.match(/^(.+?[.!?。])(?=\s|$)/);
-    const one = m && m[1].length >= 12 ? m[1] : plain;
+    // A sentence ends at . ! ? or 。 before a space, but not after a lone
+    // capital initial ("존 F. 케네디", "테오도어 W. 아도르노"). A first sentence
+    // under 25 characters ("알제리의 공산당.") takes the next one with it.
+    const ends = [];
+    const re = /[.!?。](?=\s|$)/g;
+    let hit;
+    while ((hit = re.exec(plain))) {
+        if (hit[0] === '.' && /(^|[\s(‘'“"])[A-Z]$/.test(plain.slice(Math.max(0, hit.index - 2), hit.index))) continue;
+        ends.push(hit.index + 1);
+    }
+    const end = ends.find(i => i >= 25) || ends[ends.length - 1] || plain.length;
+    const one = plain.slice(0, end).trim();
     return [...one].length > max ? [...one].slice(0, max - 1).join('') + '…' : one;
 };
 
