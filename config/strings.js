@@ -678,6 +678,9 @@ const ko = {
             theSovietPolitburo: '소련 정치국',
             relatedHistoricalEvents: '관련 역사 사건',
             referenceDocuments: '참고 문헌',
+            // 인물 페이지는 본인 저작과 관련 문헌을 나눠 보인다
+            authoredDocuments: '저작',
+            relatedReferenceDocuments: '관련 참고 문헌',
             relatedReports: '관련 보고서',
             report: '보고서',
             otherNames: '다른 이름',
@@ -1424,6 +1427,8 @@ const en = {
             theSovietPolitburo: 'The Soviet Politburo',
             relatedHistoricalEvents: 'Related historical events',
             referenceDocuments: 'Reference documents',
+            authoredDocuments: 'Writings',
+            relatedReferenceDocuments: 'Related reference documents',
             relatedReports: 'Related reports',
             report: 'Report',
             otherNames: 'Also known as',

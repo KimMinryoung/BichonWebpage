@@ -1,14 +1,29 @@
-<%# Shared reference documents and reports for dictionary detail pages. %>
-        <% if (relatedDocs && relatedDocs.length) { %>
-        <section class="commu-person-detail-section commu-section-wide commu-related-reports" aria-labelledby="related-docs">
-            <h2 id="related-docs"><%= copy.referenceDocuments %></h2>
+<%# Shared reference documents and reports for dictionary detail pages.
+    A person page (copy.authoredDocuments) splits the person's own writings
+    (doc.authored) from the documents about them, writings first. %>
+        <%
+        var docGroups = [];
+        if (relatedDocs && relatedDocs.length) {
+            if (copy.authoredDocuments) {
+                var ownDocs = relatedDocs.filter(function(doc) { return doc.authored; });
+                var otherDocs = relatedDocs.filter(function(doc) { return !doc.authored; });
+                if (ownDocs.length) docGroups.push({ id: 'authored-docs', heading: copy.authoredDocuments, docs: ownDocs });
+                if (otherDocs.length) docGroups.push({ id: 'related-docs', heading: ownDocs.length ? copy.relatedReferenceDocuments : copy.referenceDocuments, docs: otherDocs });
+            } else {
+                docGroups.push({ id: 'related-docs', heading: copy.referenceDocuments, docs: relatedDocs });
+            }
+        }
+        %>
+        <% docGroups.forEach(function(group) { %>
+        <section class="commu-person-detail-section commu-section-wide commu-related-reports" aria-labelledby="<%= group.id %>">
+            <h2 id="<%= group.id %>"><%= group.heading %></h2>
             <ul class="commu-related-report-list commu-related-doc-list">
-                <% relatedDocs.forEach(function(doc) { %>
+                <% group.docs.forEach(function(doc) { %>
                 <li><a href="/commulingo/docs/<%= doc.id %>"><span><%= doc.kind %></span><strong><%= doc.title %></strong></a></li>
                 <% }) %>
             </ul>
         </section>
-        <% } %>
+        <% }) %>
 
         <% if (relatedReports && relatedReports.length) { %>
         <section class="commu-person-detail-section commu-section-wide commu-related-reports" aria-labelledby="related-reports">
