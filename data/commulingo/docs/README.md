@@ -45,6 +45,8 @@
 분할 페이지를 처리한다. 모음집 본문의 글 제목에 그 anchor를 부여하고,
 개별 주석·제목의 id와 내부 링크에는 원래 문헌 id를 접두사로 붙여 중복을 막는다.
 원문과 개별 서지는 보존한다. 목록·자동 링크·사이트맵에는 모음집만 등록한다.
+문헌을 통째로 다른 id로 옮겼을 때는 `anchor`를 빼거나 빈 문자열로 둔다(2026-11-28, 마이그레이션 387). 옛 주소가 새 문헌의
+머리로 간다.
 
 사전 항목 페이지에 문헌의 한 글을 원문 상자로 실으려면 manifest 항목에
 `"excerpts": {"terms": {"용어-id": "글-제목-id"}}`를 준다(사건은 `"events"`). 그 제목부터 같은
@@ -60,13 +62,17 @@
 목차는 리더가 만드는 것을 그대로 쓰므로 따로 적지 않는다. 용어·사건 페이지가 이를 표시한다. 사건에는 그 사건을 시작하거나
 끝내거나 규정한 문서 하나만 싣는다. `tests/unit/commulingo-doc-excerpts.js`가
 선언된 발췌가 모두 실제 제목을 가리키는지 확인한다.
+발췌 상자 안의 id(주석·제목)와 그 상자 안을 가리키는 `#` 링크에는 `x-<문헌 id>-<제목 id>-` 접두사가 붙는다(2026-11-28).
+사건 하나에 같은 문헌의 조문·이유서·개정법이 함께 실려도 주석 id가 겹치지 않게 하려는 것이다.
 
 ## 저장 시 구조 검사와 제목 id (2026-10-31)
 
 모든 저장(import, `put`, `put-body`, MCP `doc_put`, 인물 id 변경)은 `data/commulingo/doc-structure.js`의
 구조 검사를 거친다. 아래 「서두 틀」·「주석 양식」 위반(제목 h1·byline·해제 상자 누락, `notes-list` 누락,
 가리킬 곳 없는 주석 번호·↩, 중복 id, 겹친 해제 상자·주석 묶음, 없는 제목을 가리키는 `excerpts`, 없는 id를
-가리키는 `anchors`)은 오류다. **manifest 항목도 같은 검사를 받는다**(2026-11-04, `doc-entry.js`): 이 README가
+가리키는 `anchors`)은 오류다. 경고(저장은 된다): 다른 문헌으로 가는 손 링크(`/commulingo/docs/<id>#…`·`?at=`·`/original`)가
+없는 문헌이나 그 문헌에 없는 id를 가리킴(`doc-link-dangling`, 2026-11-28), 주석의 `data-note-kind`가 아래 네 값이 아님,
+`noAutoLink`의 글이 본문에 없음(`no-auto-link-unused`). **manifest 항목도 같은 검사를 받는다**(2026-11-04, `doc-entry.js`): 이 README가
 모르는 키, `date` 누락·형식 오류, `summary.ko` 누락, `ko`/`en`이 아닌 `docLang`, 아래 열한 가지가 아닌 `kind`
 (`doc-kinds.js`의 표), `excerpts`·`anchors`의 형태 오류, 그리고 사전에 없는 `people`/`terms`/`events`·`excerpts`의
 id(`ref-unknown`; 사전을 읽을 수 없으면 이 검사만 건너뛴다)가 오류다.
@@ -109,10 +115,10 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
 ## 원문 (2026-10-16, 마이그레이션 368)
 
 번역 문헌은 번역 저본인 원문을 `commulingo_doc_originals`에 함께 둔다(문헌 하나에 원문 하나,
-`lang`·`body`·`public`·`rights`·`bibliography`(옛 `source` 칸은 서지의 원문 저본으로 옮기고 마이그레이션 381에서 지움), 이전 판은 `commulingo_doc_original_revisions`).
+`lang`·`body`·`public`·`bibliography`(옛 `source` 칸은 서지의 원문 저본으로 옮기고 마이그레이션 381에서, 옛 `rights` 칸은 서지의 `rights`로 옮기고 388에서 지움), 이전 판은 `commulingo_doc_original_revisions`).
 원문은 번역 대조용으로 늘 저장하되, **공개는 저작권이 끝났거나(PD) 공문서·자유 라이선스처럼
-게시 근거가 있는 것만** 한다. `public: true`는 `rights`(게시 근거 한 줄, 예: 「저자 1940년 사망,
-퍼블릭 도메인」)가 없으면 DB가 거부한다.
+게시 근거가 있는 것만** 한다. `public: true`는 서지의 한·영 첫 부분(`anchor` 없는 것) `rights`에
+`status`(아래 서지 절)가 없으면 쓰기 경로가 거부한다(2026-11-28).
 공개 결정을 적을 때 결정한 사람은 「소유자」가 아니라 사이트 운영자의 공식명으로 「비숑 결정(날짜)」, 영어 「Bichon’s decision」이라 쓴다(2026-11-20). 저작권이 살아 있는 책(현대 연구서·전기)의 원문은
 `public: false`로만 저장한다.
 
@@ -120,7 +126,7 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
   바 오른쪽 「원문」/「번역」 칸이 둘을 오간다. 비공개 원문은 서버가 읽지 않는다.
 - 원문의 제목 id는 번역과 맞춘다(모음집이면 각 글 h1의 id를 같게) — 같은 자리를 가리키게 하려는 것.
 - 편집: `scripts/commulingo-docs export <dir> <id>`가 원문이 있으면 `<id>.original.html`과
-  `originals.json`(`lang`·`public`·`rights`·`bibliography`)을 함께 쓴다. 새 원문은 `originals.json`에
+  `originals.json`(`lang`·`public`·`bibliography`)을 함께 쓴다. 새 원문은 `originals.json`에
   항목을 더하고 파일을 두면 된다. `put`이 바뀐 원문만 쓰고(리비전 확인), export 때 있던 원문의
   항목을 지우면 원문도 지운다.
 
@@ -275,6 +281,13 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
 보고서는 연결됨/이미 연결됨/성의 선행 이름 없음/미허용 인물/동명이인/지명/명시적 미등록
 구분을 포함한다. 후보 1,000건을 넘으면 `truncated`를 표시하며, 나머지 본문도 정책 검사를 계속한다.
 
+검수는 본문이 바뀌었거나 검수가 읽는 칸(`date`·`docLang`·`events`·`noAutoLink`·`people`·`personLinks`)이 바뀐
+쓰기에서만 돈다(2026-11-28). 요약·서지만 고친 쓰기는 건너뛴다. 검수가 돌면 그때 본문이 거는 링크 전체(인물·용어·사건·문헌,
+`"person:id"` 꼴)를 `commulingo_docs.link_audit`에 남긴다(마이그레이션 387). 그 뒤 문헌은 그대로인데 사전이 바뀌어
+링크가 늘거나 줄면(인물 등록, 별칭, 차단 목록, 링크 검토) `scripts/commulingo-docs link-drift [id ...]`(MCP `doc_link_drift`,
+한 번에 10편)가 문헌별 `+`·`-`로 보인다. 확인한 뒤 `link-drift --record`가 지금 상태를 새 기준으로 남긴다(리비전 없이 그 칸만).
+문헌 전체를 돌면 몇 분 걸리므로 운영 서버에서는 한 번에 하나만 돌린다.
+
 운영 사례 네 건(보즈네센스키 대로, 경비병 우스티노프, 검사 쿠투조프, 신고자 고르시코프)은
 `tests/unit/commulingo-doc-person-links.js`에서 다른 절·선행/후행 이름·동명이인·한국어/영어·
 인라인 서식·수동 링크·연대 경고와 함께 검사한다. 전역 성 차단은 그대로 유지하며,
@@ -338,6 +351,10 @@ id 없는 h1/h2(첫 h1 제외)에는 저장 시 `sec-N`, h3에는 `sub-N`이 `da
   서버가 그 쪽에 숨긴 `<template class="doc-notes-inline">`로 함께 보낸다(`pageNotes`). 스크립트가 없으면 번호는 그대로
   링크다. 같은 `labelNotes`가 `role="doc-noteref"`·`doc-endnotes`·`doc-backlink`(DPUB-ARIA)를 붙이므로 본문에 적지 않아도 된다.
   팝오버는 주석 `<li>`의 내용을 그대로 보여 주므로(↩만 뺀다) 주석 안의 마크업은 짧은 인라인 요소로 둔다.
+- 누가 단 주석인지(2026-11-28): 주석 `<li>`에 `data-note-kind`를 준다 — `author`(저자 원주), `source-editor`(저본
+  편집자 주), `translator`(옮긴이 주), `site`(이 사이트가 엮으며 단 주). 팝오버 머리가 「주석 3」 대신 「옮긴이 주 3」처럼
+  나온다. 없으면 예전처럼 「주석 n」이다. 새 문헌이나 원주와 옮긴이 주가 섞인 문헌부터 단다. 목록(`ol`)에 한 번 주는
+  꼴은 읽지 않는다(쪽을 넘어 보내는 주석은 `<li>`만 간다).
 - 번역 파이프라인은 스펙에서 주석 문서에 `"notes": true`를 주면 이 양식을
   자동으로 낸다. 본문 문서의 `[N]`도 그때 함께 링크된다.
 
@@ -499,7 +516,9 @@ export한 작업 디렉터리에서 만들고 `put`으로 넣는다.
      아니다. 데이터 전용이라 배포 없이 반영된다. 거의 모든 페이지에서 틀리는
      별칭은 여기 말고 `commulingo_link_blocklist`의 `term-*` kind 행으로 전역
      차단한다(마이그레이션 154). 본문에 `소<!-- -->개`처럼 주석을 끼워 넣던
-     낡은 수법은 이 필드로 대체됐다.
+     낡은 수법은 이 필드로 대체됐다. 항목은 문자열 또는 `{"text": "임시정부", "reason": "프랑스 임시정부"}`
+     (2026-11-28)이다. 이유를 적어 두면 나중에 지워도 되는지 판단할 수 있다. 본문에서 그 글이 사라지면 구조 검사가
+     `no-auto-link-unused`로 알린다.
 3. 자동 링크가 닿지 않는 곳(다른 문헌 본문 등)에서 직접 걸 때는
    `/commulingo/docs/<id>` (확장자 없음)를 쓴다. 구형 `…/docs/<id>.html` URL은
    301로 새 URL에 리다이렉트된다.

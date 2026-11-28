@@ -11,6 +11,10 @@ const { docKindId } = require('./doc-kinds');
 // index set, which is itself a fresh reference on every dictionary refresh.
 // Paginated documents cache per page, so only what is actually read is linked.
 const linkedMemo = new WeakMap(); // content entry -> { indexes, byKey: Map }
+// How often a linked page came from the memo, and how many pages had to be
+// linked (a paged miss links every page before it too). Per process, since
+// start; the admin dashboard shows them (R8).
+const linkStats = { hits: 0, misses: 0, pagesLinked: 0, since: new Date().toISOString() };
 
 // Dictionary links inside a reference document open in a new tab. These are
 // long-form reads — following a name mid-paragraph should not cost the reader
@@ -61,6 +65,7 @@ async function linkDocHtml(content, raw, lang, key, html) {
     }
     const memoKey = lang + '\0' + key;
     let out = entry.byKey.get(memoKey);
+    if (out === undefined) linkStats.misses += 1; else linkStats.hits += 1;
     // A paged document links each entry once in the whole document, so a page
     // depends on the pages before it: render forward from the last page done,
     // in order, up to the one asked for (page 1 costs one page, not the book).
@@ -71,6 +76,7 @@ async function linkDocHtml(content, raw, lang, key, html) {
         while (paging.done < Math.min(target, content.paged.pages.length)) {
             const page = content.paged.pages[paging.done];
             paging.done += 1;
+            linkStats.pagesLinked += 1;
             entry.byKey.set(lang + '\0p' + paging.done, classifyEntityLinks(openEntityLinksInNewTab(renderDocPersonLinks(page.html, raw, indexes,
                 { sourceHtml: content.html || page.html, relatedPeople, state: paging.state }).html)));
         }
@@ -85,6 +91,7 @@ async function linkDocHtml(content, raw, lang, key, html) {
         // context (임시정부 in a French text is not the Russian one). Editing
         // noAutoLink is data-only: the manifest mtime refreshes the doc list,
         // which refreshes the link indexes, which invalidates this memo.
+        linkStats.pagesLinked += 1;
         out = classifyEntityLinks(openEntityLinksInNewTab(renderDocPersonLinks(html, raw, indexes,
             { sourceHtml: content.html || html, relatedPeople: await docRelatedPeople(raw) }).html));
         entry.byKey.set(memoKey, out);
@@ -196,4 +203,4 @@ function presentedDocList(manifest, lang, resolveDocRefs) {
 }
 
 
-module.exports = { linkDocHtml, nestToc, presentDoc, presentedDocList };
+module.exports = { linkStats, linkDocHtml, nestToc, presentDoc, presentedDocList };

@@ -430,6 +430,8 @@ const ko = {
             historicalFigure: '실존 인물',
             // Footnote popover (public/js/commulingo-doc.js): {n} is the note's label.
             note: '주석 {n}',
+            // A note with data-note-kind (doc-entry.js NOTE_KINDS) names who wrote it.
+            noteKinds: { author: '원주 {n}', 'source-editor': '편집자 주 {n}', translator: '옮긴이 주 {n}', site: '엮은이 주 {n}' },
             seeInNotes: '주석 목록에서 보기',
             // 이어 읽기 (public/js/commulingo-doc.js readingPosition)
             resume: '{page}쪽 「{heading}」부터 이어 읽기',
@@ -1181,6 +1183,7 @@ const en = {
             translation: 'Translation',
             historicalFigure: 'Historical figure',
             note: 'Note {n}',
+            noteKinds: { author: "Author's note {n}", 'source-editor': "Editor's note {n}", translator: "Translator's note {n}", site: "Compiler's note {n}" },
             seeInNotes: 'See in the notes',
             resume: 'Continue from page {page}, “{heading}”',
             resumePage: 'Continue from page {page}',

@@ -87,7 +87,7 @@ entry에 `bibliography`를 둔다. 문헌 전체의 서지는 `parts[0]`(anchor 
 
 ## 원문 서지 (3단계 이어서, 2026-11-20)
 
-- 소유자 결정: 공개 원문 페이지의 「원문·편집 정보」도 같은 방식으로. 원문 행에 언어별 `bibliography`(`{ko, en}`, 마이그레이션 380), 칸 `sourceText`(원문 저본)·`scope`(수록 범위)·`editing`(편집)·`rights`. 원문 행의 `source` 줄글은 원문 저본 칸에 녹이고 비웠다. `rights` 칸(행)은 공개 판단에 쓰여 남긴다.
+- 소유자 결정: 공개 원문 페이지의 「원문·편집 정보」도 같은 방식으로. 원문 행에 언어별 `bibliography`(`{ko, en}`, 마이그레이션 380), 칸 `sourceText`(원문 저본)·`scope`(수록 범위)·`editing`(편집)·`rights`. 원문 행의 `source` 줄글은 원문 저본 칸에 녹이고 비웠다. `rights` 칸(행)은 공개 판단에 쓰여 남겼다가 2026-11-28에 지웠다.
 - 서브에이전트 3묶음(`ORIGINAL-BRIEF.md`, `orig-{1,2,3}.out.json`)이 상자 627개와 `source`를 칸으로 나눴다. 적용 `orig-apply-log.tsv`.
 - 사고: 적용 에이전트가 저작권 문구를 손으로 다시 쳐 25편의 드문 음절이 깨졌다(셰→셜 등). `doc_put`에 `original.rightsPath`를 더해(147a15cb) 파일 그대로 다시 썼고, 309편 전부 원본과 일치를 확인했다. 앞으로 비ASCII 글은 늘 파일 경로로 넘긴다.
 - 링크 글자에 이미 사이트 이름이 있으면 괄호 도메인을 뺐다(원문 135·번역 8편).
@@ -118,6 +118,6 @@ entry에 `bibliography`를 둔다. 문헌 전체의 서지는 `parts[0]`(anchor 
 - `translation` 값에 `from`(옮긴 언어)·`via`(중역 언어)·`by`([{name, role: translation|revision, date?}]), `rights` 값에 `status`(publicDomain·notCopyrightable·licensed·permission·ownerDecision)와 `authorDied`·`license`·`decided`. 화면은 문장만 보이고, `license`는 JSON-LD `license`가 된다. 규칙은 `data/commulingo/docs/README.md`.
 - 데이터: 번역 값 223개 중 211개에 `from`, 113개에 `by`, `via`는 0(코민테른 2차 대회·슈투트가르트 대회의 일부 연설만 독일어 의사록 번역을 거침). 저작권 732개(번역본 114, 원문 309편×한·영) 모두 `status`: 퍼블릭 도메인 316, 대상 아님 298, 비숑 결정 109, 라이선스 6, 허락 3.
 - 문장끼리 어긋나는 곳은 문장대로 넣었다: 처칠·루스벨트 1942 전보(번역본 「비숑 결정」, 원문 「보호 기간 만료」), 1985 반알코올 정치국 문서(번역본 「대상 아님」, 원문 「비숑 결정」).
-- 원문 행의 `rights` 열(공개 판단 문장)은 원문 서지 `rights`와 같은 글이다. 공개 검사를 `status`로 바꾸고 열을 없앨지는 남은 일.
+- 원문 행의 `rights` 열(공개 판단 문장)은 원문 서지 `rights`의 옛 사본이었다(16편은 더 짧은 옛 문장). 2026-11-28 공개 검사를 서지의 한·영 `rights.status`로 바꾸고 열과 DB 검사를 지웠다(마이그레이션 387·388, 리비전 표의 열은 기록으로 남김). `doc_put`의 `original.rights`·`rightsPath`는 거부한다.
 - 여러 편을 한 번에 쓰는 도구: MCP `doc_entries_patch`(entry 키, 원문 서지). 한 번에 40편까지는 시간 안에 끝났다(167편은 시간 초과).
 - 작업물: `scripts/content/doc-translation-20261124/`, `doc-rights-20261124/`, `doc-bib-records-20261124/`.

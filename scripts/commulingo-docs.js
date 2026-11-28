@@ -8,6 +8,8 @@
 //   put [--dry-run] [--delete-missing] [--actor who] [--note text]   bundle on stdin
 //   put-body <id> [--actor who] [--note text]   replace one document's body (stdin)
 //   history <id>                         superseded revisions, newest first
+//   history --sizes                      rows, kept bodies and bytes of both history tables
+//   link-drift [id ...] [--record]       links each body makes now against its last audit; --record stores the current set
 //   restore <id> <revision> [--actor who]
 //   structure [id ...] [--json]          structure check of the stored bodies (read-only)
 //   freeze-ids [--dry-run] [--actor who] write stored ids into every heading that has none
@@ -18,8 +20,8 @@
 // stores it anyway. Sanitizing an edited body and canonicalizing the entry
 // happen in writeDocs, the same for every path.
 //
-// Bundle: { docs: [{ id, revision, sortOrder, entry, body }], redirects: { from: { id, anchor } },
-//           originals: { <doc id>: { lang, public, rights, bibliography, revision, body } } }
+// Bundle: { docs: [{ id, revision, entry, body }], redirects: { from: { id, anchor } },
+//           originals: { <doc id>: { lang, public, bibliography, revision, body } } }
 // Originals (migration 368) ride along: put writes the changed ones (guarded by
 // their exported revision) and removes those that were exported but are no
 // longer in the bundle.
@@ -49,12 +51,12 @@ async function exportDocs(ids) {
     const originals = {};
     for (const row of await readAllOriginalRows()) {
         if (wanted && !wanted.has(row.doc_id)) continue;
-        originals[row.doc_id] = { lang: row.lang, public: row.public, rights: row.rights, bibliography: row.bibliography || null, revision: row.revision, body: row.body };
+        originals[row.doc_id] = { lang: row.lang, public: row.public, bibliography: row.bibliography || null, revision: row.revision, body: row.body };
     }
     return {
         originals,
         docs: docs.filter(row => !wanted || wanted.has(row.id)).map(row => ({
-            id: row.id, revision: row.revision, sortOrder: row.sort_order, entry: row.entry, body: row.body,
+            id: row.id, revision: row.revision, entry: row.entry, body: row.body,
         })),
         redirects: wanted ? undefined
             : Object.fromEntries(redirects.map(row => [row.from_id, { id: row.to_id, anchor: row.anchor }])),
@@ -85,7 +87,6 @@ async function put(bundle, args) {
         const bodyChanged = !row || sha256(doc.body) !== row.body_sha256;
         upserts.push({
             id: doc.id, entry: storedEntry(doc.entry), body: bodyChanged ? doc.body : undefined,
-            sortOrder: Number.isInteger(doc.sortOrder) ? doc.sortOrder : undefined,
             expectedRevision: row ? row.revision : 0,
         });
     }
@@ -105,10 +106,9 @@ async function put(bundle, args) {
             const bodyChanged = !row || sha256(original.body) !== row.body_sha256;
             const body = bodyChanged ? original.body : row.body;
             if (row && !bodyChanged && row.lang === original.lang && row.public === (original.public === true)
-                && row.rights === (original.rights || '').trim()
                 && JSON.stringify(row.bibliography || null) === JSON.stringify(original.bibliography || null)) continue;
             originals.set.push({ docId, lang: original.lang, body, public: original.public === true,
-                rights: original.rights, bibliography: original.bibliography ?? null, expectedRevision: row ? row.revision : 0 });
+                bibliography: original.bibliography ?? null, expectedRevision: row ? row.revision : 0 });
         }
         for (const docId of bundle.exportedOriginals || []) {
             if (!Object.hasOwn(bundle.originals, docId) && stored.has(docId)) originals.remove.push(docId);
@@ -165,12 +165,17 @@ async function structureReport(ids) {
     const wanted = ids.length ? new Set(ids) : null;
     const known = await loadKnownRefs();
     if (!known) console.error('structure: dictionaries unavailable, reference ids unchecked');
+    // Every document's ids, for links between documents (A3).
+    const { bodyIds } = require('../data/commulingo/doc-structure');
+    const docTargets = new Map(docs.map(row => [row.id, bodyIds(row.body)]));
+    for (const [docId, row] of originals) if (row.public) docTargets.set(`${docId}/original`, bodyIds(row.body));
+    for (const row of (await readAllDocRows({ withBody: false })).redirects) docTargets.set(row.from_id, { redirect: true });
     const reports = [];
     for (const row of docs) {
         if (wanted && !wanted.has(row.id)) continue;
-        reports.push(checkStructure(row.id, row.id, { body: row.body, entry: row.entry, role: 'translation', known }));
+        reports.push(checkStructure(row.id, row.id, { body: row.body, entry: row.entry, role: 'translation', known, docTargets }));
         const original = originals.get(row.id);
-        if (original) reports.push(checkStructure(row.id, `${row.id} (original)`, { body: original.body, entry: row.entry, role: 'original' }));
+        if (original) reports.push(checkStructure(row.id, `${row.id} (original)`, { body: original.body, entry: row.entry, role: 'original', docTargets }));
     }
     return reports.map(({ id, label, errors, warnings }) => ({ id, label, errors, warnings }));
 }
@@ -186,7 +191,7 @@ async function freezeIds(args) {
     const originals = { set: [], remove: [] };
     for (const row of await readAllOriginalRows()) {
         if (freezeHeadingIds(row.body) === row.body) continue;
-        originals.set.push({ docId: row.doc_id, lang: row.lang, body: row.body, public: row.public, rights: row.rights,
+        originals.set.push({ docId: row.doc_id, lang: row.lang, body: row.body, public: row.public,
             expectedRevision: row.revision });
     }
     const actor = option(args, '--actor', `commulingo-docs:${process.env.USER || 'cli'}`);
@@ -267,16 +272,35 @@ async function main() {
         for (const w of changed) console.log(`${result.dryRun ? 'would freeze' : 'froze'} ${w.id} → r${w.revision}`);
         for (const o of (result.originals || []).filter(o => o.op !== 'unchanged')) console.log(`${result.dryRun ? 'would freeze' : 'froze'} original ${o.id} → r${o.revision}`);
         console.log(`${result.dryRun ? 'dry run: ' : ''}${changed.length} document(s), ${(result.originals || []).filter(o => o.op !== 'unchanged').length} original(s)`);
+    } else if (command === 'link-drift') {
+        const { docLinkDrift } = require('../data/commulingo/docs-db');
+        let moved = 0;
+        let baselines = 0;
+        await docLinkDrift(args.filter(a => !a.startsWith('--')), { record: args.includes('--record'), onDoc: result => {
+            if (result.baseline) { baselines += 1; if (result.recorded) console.log(`${result.id}\tbaseline recorded`); return; }
+            if (!result.added.length && !result.removed.length) return;
+            moved += 1;
+            console.log(`${result.id}\tsince ${result.since}${result.recorded ? ' (recorded)' : ''}`);
+            for (const link of result.added) console.log(`  + ${link}`);
+            for (const link of result.removed) console.log(`  - ${link}`);
+        } });
+        console.error(`${moved} document(s) with moved links, ${baselines} without a recorded audit${args.includes('--record') ? '' : ' (--record stores one)'}`);
+    } else if (command === 'history' && args[0] === '--sizes') {
+        const mb = bytes => `${(bytes / 1048576).toFixed(1)} MB`;
+        const sizes = await require('../data/commulingo/docs-db').revisionSizes();
+        for (const t of sizes.tables) console.log(`${t.name}: ${t.rows} revisions, ${t.bodies} with a body (${mb(t.bodyBytes)}), ${mb(t.tableBytes)} on disk`);
+        console.log(`live documents and originals: ${mb(sizes.liveBytes)} on disk`);
     } else if (command === 'history' && args[0]) {
         for (const r of await listDocRevisions(args[0])) {
             console.log(`r${r.revision}  ${r.superseded_op} ${new Date(r.superseded_at).toISOString()} by ${r.superseded_by}`
-                + `${r.note ? ` (${r.note})` : ''}; written ${new Date(r.updated_at).toISOString()} by ${r.updated_by}${r.has_body ? ', body changed' : ''}`);
+                + `${r.note ? ` (${r.note})` : ''}; written ${new Date(r.updated_at).toISOString()} by ${r.updated_by}`
+                + `${r.has_body ? `, body changed (${Math.round(r.body_bytes / 1024)} KB kept)` : ''}`);
         }
     } else if (command === 'restore' && args[0] && /^\d+$/.test(args[1] || '')) {
         const result = await restoreDocRevision(args[0], Number(args[1]), { actor: option(args, '--actor', `commulingo-docs:${process.env.USER || 'cli'}`) });
         console.log(JSON.stringify(result.written));
     } else {
-        console.error('usage: commulingo-docs.js export [id ...] | put [--dry-run] [--delete-missing] [--allow-structure] | put-body <id> [--allow-structure] | history <id> | restore <id> <revision> | structure [id ...] [--json] | freeze-ids [--dry-run] | outline [--dry-run]');
+        console.error('usage: commulingo-docs.js export [id ...] | put [--dry-run] [--delete-missing] [--allow-structure] | put-body <id> [--allow-structure] | history <id> | history --sizes | link-drift [id ...] [--record] | restore <id> <revision> | structure [id ...] [--json] | freeze-ids [--dry-run] | outline [--dry-run]');
         process.exit(2);
     }
 }

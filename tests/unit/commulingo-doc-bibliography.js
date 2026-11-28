@@ -165,3 +165,14 @@ console.log('commulingo-doc-bibliography: ok');
     assert.equal(ld.license, 'https://creativecommons.org/licenses/by-sa/4.0/');
     assert.equal(ld.copyrightNotice, 'CC BY-SA');
 }
+
+// A public original states its status in every language (no rights column).
+{
+    const B = require('../../data/commulingo/doc-bibliography');
+    const rights = { text: 'PD', status: 'publicDomain', authorDied: 1924 };
+    const both = B.normalizeOriginalBibliography({ ko: { parts: [{ rights }] }, en: { parts: [{ rights }] } });
+    assert.equal(B.publicRightsProblem(both), '');
+    assert.match(B.publicRightsProblem(null), /needs a bibliography/);
+    assert.match(B.publicRightsProblem(B.normalizeOriginalBibliography({ ko: { parts: [{ rights }] }, en: { parts: [{ rights: 'PD' }] } })), /en\.parts\[0\]\.rights\.status/);
+    assert.match(B.publicRightsProblem(B.normalizeOriginalBibliography({ ko: { parts: [{ scope: 'x' }, { anchor: 'a', rights }] } })), /ko\.parts/);
+}

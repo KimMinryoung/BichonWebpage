@@ -38,6 +38,23 @@ listCommuLingoDocs().forEach(doc => {
 });
 assert.ok(count > 0, 'no excerpts declared');
 
+// Two pieces of one document on one page keep their ids apart (R7): every id
+// carries the piece's prefix and the piece's own #links follow it.
+{
+    const { sectionFrom } = require('../../data/commulingo/docs-store');
+    const html = '<article><h1>T</h1><h2 id="a">A</h2><p>x<a class="note-ref" id="ref-1" href="#note-1">[1]</a></p>'
+        + '<h2 id="b">B</h2><p>y<a class="note-ref" id="ref-1b" href="#note-1">[1]</a><a href="#elsewhere">z</a></p>'
+        + '<section class="notes"><ol class="notes-list"><li id="note-1">n <a class="back-link" href="#ref-1">↩</a></li></ol></section></article>';
+    const a = sectionFrom({ html, outline: null }, 'demo', 'a').html;
+    const b = sectionFrom({ html, outline: null }, 'demo', 'b').html;
+    assert.match(a, /id="x-demo-a-note-1"/);
+    assert.match(b, /id="x-demo-b-note-1"/);
+    for (const piece of [a, b]) {
+        for (const [, id] of piece.matchAll(/href="#([^"]+)"/g)) assert.ok(piece.includes(`id="${id}"`), `${id} lands in its piece`);
+    }
+    assert.match(b, /href="\/commulingo\/docs\/demo#elsewhere"/);
+}
+
 // The French collection's pieces, on a checkout that serves it.
 const doc = getCommuLingoDoc('france-rights-and-emancipation-1789-1794');
 if (!doc) {
@@ -53,7 +70,7 @@ assert.ok(!declaration.html.includes('구주'), 'stops at the next piece');
 
 const gouges = getCommuLingoDocSection(doc, 'gouges-rights-of-woman-1791');
 const refs = gouges.html.match(/class="note-ref"/g) || [];
-const notes = gouges.html.match(/<li[^>]*id="gouges-rights-of-woman-1791--note-/g) || [];
+const notes = gouges.html.match(/<li[^>]*id="x-france-rights-and-emancipation-1789-1794-gouges-rights-of-woman-1791-gouges-rights-of-woman-1791--note-/g) || [];
 assert.ok(refs.length > 0 && notes.length === refs.length, 'the notes a piece calls come with it');
 
 assert.strictEqual(getCommuLingoDocSection(doc, 'no-such-heading'), null);

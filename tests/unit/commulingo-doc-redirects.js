@@ -17,6 +17,7 @@ const redirect = (from, to, anchor) => ({ kind: 'redirect', from_id: from, to_id
 fs.writeFileSync(path.join(dir, 'snapshot.json'), JSON.stringify([
     { kind: 'doc', id: 'collection', sort_order: 1, entry: { date: '1791' }, body_sha256: sha, body_updated_at: '2026-01-01T00:00:00Z', revision: 1 },
     redirect('retired', 'collection', 'second-text'),
+    redirect('whole', 'collection', ''),
     redirect('missing', 'absent', 'second-text'),
     redirect('unsafe', '../collection', 'second-text'),
     redirect('fragment', 'collection', 'bad#fragment'),
@@ -35,6 +36,8 @@ try {
     const target = store.getCommuLingoDocRedirect('retired');
     assert.equal(target.doc.id, 'collection');
     assert.equal(store.getCommuLingoDocContent(target.doc).paged.idToPage[target.anchor], 2);
+    assert.deepEqual({ ...store.getCommuLingoDocRedirect('whole'), doc: undefined }, { doc: undefined, anchor: '' });
+    assert.equal(store.getCommuLingoDocRedirect('whole').doc.id, 'collection');
     for (const id of ['missing', 'unsafe', 'fragment', 'collection', 'unknown', '__proto__']) {
         assert.equal(store.getCommuLingoDocRedirect(id), null, id);
     }

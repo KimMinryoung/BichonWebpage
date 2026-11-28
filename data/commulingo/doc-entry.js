@@ -115,4 +115,26 @@ function inspectDocRefs(entry, known) {
     return { errors, warnings: [] };
 }
 
-module.exports = { RETIRED_FIELDS, CANONICAL_FIELDS, KEPT_FIELDS, ENTRY_FIELDS, ERROR_CODES, inspectDocEntry, inspectDocRefs, entryRefs };
+// noAutoLink (L4, 2026-11-28): each item is the blocked string, or
+// { text, reason } saying why the dictionary sense is wrong in this document.
+// Readers and linkers take the strings (noAutoLinkStrings).
+function noAutoLinkStrings(list) {
+    return Array.isArray(list) ? list.map(item => (typeof item === 'string' ? item : item?.text)).filter(text => typeof text === 'string' && text) : [];
+}
+function assertNoAutoLink(list) {
+    const fail = message => { const err = new Error(message); err.status = 400; throw err; };
+    if (!Array.isArray(list)) fail('noAutoLink: array required');
+    list.forEach((item, i) => {
+        if (typeof item === 'string') return;
+        if (!isObject(item) || typeof item.text !== 'string' || typeof item.reason !== 'string' || !item.reason.trim()
+            || Object.keys(item).some(key => key !== 'text' && key !== 'reason')) fail(`noAutoLink[${i}]: a string or { text, reason }`);
+    });
+    require('./headword-validation').assertStringList(noAutoLinkStrings(list), 'noAutoLink');
+}
+
+// Who wrote a footnote (R2, 2026-11-28): <li data-note-kind="…"> in a notes
+// list. The popover names the kind before the number; a list without the
+// attribute reads as before (주석 n).
+const NOTE_KINDS = ['author', 'source-editor', 'translator', 'site'];
+
+module.exports = { noAutoLinkStrings, assertNoAutoLink, NOTE_KINDS, RETIRED_FIELDS, CANONICAL_FIELDS, KEPT_FIELDS, ENTRY_FIELDS, ERROR_CODES, inspectDocEntry, inspectDocRefs, entryRefs };

@@ -4,7 +4,7 @@
 
 | 작업 | 문서 |
 | --- | --- |
-| 참고 문헌 설계 검토 | [2026-11-04 검토·항목별 진행 상태(남은 항목은 TODO 2절)](commulingo-docs-design-review-20261104.md) |
+| 참고 문헌 설계 검토 | [2026-11-04 검토·항목별 진행 상태(2026-11-28 대부분 끝, 남은 L2·L5는 TODO 2절)](commulingo-docs-design-review-20261104.md) |
 | 「동아시아 운동사」 강좌 기반 작업 | [2026-11-15 용어·문헌·카드 보강, 못 구한 문헌](commulingo-east-asia-foundation-20261115.md) |
 | 웹서비스 코드·기능 설계 전체 개선 검토 | [2026-10-04 검토와 최종 반영 현황(보류 4건 포함)](codebase-functional-review-20261004.md) |
 | 프론트엔드 상용 수준 점검(캐시·테마·채팅·PWA·측정) | [2026-11-02 점검·우선순위·진행 상태](frontend-commercial-gap-review-20261102.md) |

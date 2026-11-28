@@ -17,7 +17,7 @@ const db = require('../../config/database');
 const { transaction } = require('../../utils/db-transaction');
 const { normalizeKoreanQuotesHtml } = require('./korean-quotes');
 const { sanitizeDocHtml } = require('./doc-sanitize');
-const { freezeHeadingIds, freezeIds, inspectDocStructure, introducedErrors } = require('./doc-structure');
+const { freezeHeadingIds, freezeIds, inspectDocStructure, introducedErrors, linkedDocKeys, bodyIds } = require('./doc-structure');
 const { entryRefs } = require('./doc-entry');
 const { buildOutline, outlineFits } = require('./doc-outline');
 
@@ -44,10 +44,25 @@ function storedEntry(entry) {
 // with their ids frozen, so a body stored before freezing is compared with
 // the same ids the reader serves it under. `known` (loadKnownRefs) lets the
 // entry's dictionary ids be checked; without it they are not.
-function checkStructure(id, label, { body, entry, role, previousBody, previousEntry, known }) {
-    const after = inspectDocStructure(freezeHeadingIds(body), { role, entry, known });
-    const before = previousBody === undefined ? null : inspectDocStructure(freezeHeadingIds(previousBody), { role, entry: previousEntry, known });
+function checkStructure(id, label, { body, entry, role, previousBody, previousEntry, known, docTargets }) {
+    const selfKey = role === 'original' ? `${id}/original` : id;
+    const after = inspectDocStructure(freezeHeadingIds(body), { role, entry, known, docTargets, selfKey });
+    const before = previousBody === undefined ? null : inspectDocStructure(freezeHeadingIds(previousBody), { role, entry: previousEntry, known, docTargets, selfKey });
     return { id, label, errors: after.errors, warnings: after.warnings, introduced: introducedErrors(before, after) };
+}
+
+// The documents a body links to (doc-structure.js linkedDocKeys), with their
+// ids, for the doc-link-dangling check (A3). Reads only the linked rows.
+async function loadDocTargets(client, bodies) {
+    const keys = new Set();
+    for (const body of bodies) for (const key of linkedDocKeys(body)) keys.add(key);
+    const targets = new Map();
+    if (!keys.size) return targets;
+    const ids = [...new Set([...keys].map(key => key.replace(/\/original$/, '')))];
+    for (const row of (await client.query('SELECT id, body FROM commulingo_docs WHERE id = ANY($1)', [ids])).rows) targets.set(row.id, bodyIds(row.body));
+    for (const row of (await client.query('SELECT doc_id, body FROM commulingo_doc_originals WHERE public AND doc_id = ANY($1)', [ids])).rows) targets.set(`${row.doc_id}/original`, bodyIds(row.body));
+    for (const row of (await client.query('SELECT from_id FROM commulingo_doc_redirects WHERE from_id = ANY($1)', [ids])).rows) targets.set(row.from_id, { redirect: true });
+    return targets;
 }
 
 // The dictionaries' ids, for the entry's people/terms/events and excerpt
@@ -74,6 +89,20 @@ async function loadKnownRefs() {
         return null;
     }
 }
+
+// The entries a linked body points at, as sorted "kind:id" (L3). The audit's
+// html is the reader's linking of the whole body, so every kind is there.
+function linkSet(html) {
+    const out = new Set();
+    for (const [, kind, id] of String(html || '').matchAll(/href="(?:\/en)?\/commulingo\/(people|terms|events|docs)\/([a-z0-9-]+)/g)) {
+        out.add(`${{ people: 'person', terms: 'term', events: 'event', docs: 'doc' }[kind]}:${id}`);
+    }
+    return [...out].sort();
+}
+const linkAuditOf = audit => ({ at: new Date().toISOString(), links: linkSet(audit.html) });
+
+// The entry fields the person-link audit reads (doc-person-links.js).
+const AUDIT_FIELDS = ['date', 'docLang', 'events', 'noAutoLink', 'people', 'personLinks'];
 
 // JSON text with object keys sorted: jsonb keeps its own key order, so the order
 // an entry comes back in says nothing about whether it changed.
@@ -136,17 +165,22 @@ async function supersede(client, row, op, actor, note, keepBody) {
             row.body_updated_at, row.updated_at, row.updated_by, op, actor, note || null]);
 }
 
-async function supersedeOriginal(client, row, op, actor, note) {
+// Like a document's, an original's revision keeps the body only when the
+// write replaces it (or deletes the row); a bibliography-only edit stored a
+// full copy until 2026-11-28 (S8, migration 387 lets body be NULL).
+async function supersedeOriginal(client, row, op, actor, note, keepBody = true) {
     await client.query(
         `INSERT INTO commulingo_doc_original_revisions
-            (doc_id, revision, lang, body, body_sha256, public, rights, updated_at, updated_by,
+            (doc_id, revision, lang, body, body_sha256, public, updated_at, updated_by,
              superseded_op, superseded_by, note, bibliography)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13::jsonb)`,
-        [row.doc_id, row.revision, row.lang, row.body, row.body_sha256, row.public, row.rights,
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12::jsonb)`,
+        [row.doc_id, row.revision, row.lang, keepBody ? row.body : null, row.body_sha256, row.public,
             row.updated_at, row.updated_by, op, actor, note || null, row.bibliography ? JSON.stringify(row.bibliography) : null]);
 }
 
-// An original (migration 368): { docId, lang, body, public, rights, bibliography?, expectedRevision? }.
+// An original (migration 368): { docId, lang, body, public, bibliography?, expectedRevision? }.
+// A public one states why in its bibliography's rights.status (the rights
+// column went in migration 388).
 // Its source line lives in the bibliography's sourceText (the source column went
 // in migration 381).
 // bibliography (migration 380): { ko, en } bibliographies the reader draws the
@@ -158,10 +192,9 @@ async function writeOriginal(c, item, actor, note, structureReports) {
     if (typeof item.lang !== 'string' || !/^[a-z]{2,3}$/.test(item.lang)) throw badRequest(`${docId}: original lang must be a 2-3 letter code`);
     if (typeof item.body !== 'string' || !item.body.trim()) throw badRequest(`${docId}: original body must be non-empty html`);
     const isPublic = item.public === true;
-    const rights = typeof item.rights === 'string' ? item.rights.trim() : '';
-    const { normalizeOriginalBibliography } = require('./doc-bibliography');
+    if (item.rights !== undefined) throw badRequest(`${docId}: original.rights is retired: state it in the bibliography (parts[0].rights { text, status })`);
+    const { normalizeOriginalBibliography, publicRightsProblem } = require('./doc-bibliography');
     const givenBibliography = item.bibliography === undefined ? undefined : normalizeOriginalBibliography(item.bibliography);
-    if (isPublic && !rights) throw badRequest(`${docId}: a public original needs rights (why it may be published)`);
     const current = (await c.query('SELECT * FROM commulingo_doc_originals WHERE doc_id = $1 FOR UPDATE', [docId])).rows[0];
     if (item.expectedRevision !== undefined && (current ? current.revision : 0) !== item.expectedRevision) {
         throw badRequest(`${docId}: original expected revision ${item.expectedRevision}, found ${current ? current.revision : 'none'}`, 409);
@@ -171,34 +204,35 @@ async function writeOriginal(c, item, actor, note, structureReports) {
     const entry = (await c.query('SELECT entry FROM commulingo_docs WHERE id = $1', [docId])).rows[0]?.entry;
     if (!current || current.body_sha256 !== bodySha) {
         structureReports.push(checkStructure(docId, `${docId} (original)`, {
-            body, entry, role: 'original', previousBody: current ? current.body : undefined, previousEntry: entry }));
+            body, entry, role: 'original', docTargets: await loadDocTargets(c, [body]), previousBody: current ? current.body : undefined, previousEntry: entry }));
     }
     // The outline follows the body (doc-outline.js); an unchanged body keeps a fitting one.
     const outline = current && current.body_sha256 === bodySha && outlineFits(current.outline, bodySha)
         ? current.outline : buildOutline(body, { tocExclude: entry?.tocExclude, bodySha256: bodySha });
     const bibliography = givenBibliography !== undefined ? givenBibliography : (current?.bibliography || null);
     const bibliographyJson = bibliography ? JSON.stringify(bibliography) : null;
+    const rightsProblem = isPublic ? publicRightsProblem(bibliography) : '';
+    if (rightsProblem) throw badRequest(`${docId}: ${rightsProblem}`);
     if (!current) {
         const revision = (await c.query(
             'SELECT COALESCE(MAX(revision), 0) + 1 AS n FROM commulingo_doc_original_revisions WHERE doc_id = $1', [docId])).rows[0].n;
         await c.query(
-            `INSERT INTO commulingo_doc_originals (doc_id, lang, body, body_sha256, public, rights, revision, updated_by, created_by, outline, bibliography)
-             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $8, $9::jsonb, $10::jsonb)`,
-            [docId, item.lang, body, bodySha, isPublic, rights, revision, actor, JSON.stringify(outline), bibliographyJson]);
+            `INSERT INTO commulingo_doc_originals (doc_id, lang, body, body_sha256, public, revision, updated_by, created_by, outline, bibliography)
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $7, $8::jsonb, $9::jsonb)`,
+            [docId, item.lang, body, bodySha, isPublic, revision, actor, JSON.stringify(outline), bibliographyJson]);
         return { id: docId, revision, op: 'insert' };
     }
     if (current.body_sha256 === bodySha && current.lang === item.lang && current.public === isPublic
-        && current.rights === rights
         && JSON.stringify(current.bibliography || null) === JSON.stringify(bibliography)) {
         return { id: docId, revision: current.revision, op: 'unchanged' };
     }
-    await supersedeOriginal(c, current, 'update', actor, note);
+    await supersedeOriginal(c, current, 'update', actor, note, current.body_sha256 !== bodySha);
     await c.query(
         `UPDATE commulingo_doc_originals
-            SET lang = $2, body = $3, body_sha256 = $4, public = $5, rights = $6,
-                revision = revision + 1, updated_at = NOW(), updated_by = $7, outline = $8::jsonb, bibliography = $9::jsonb
+            SET lang = $2, body = $3, body_sha256 = $4, public = $5,
+                revision = revision + 1, updated_at = NOW(), updated_by = $6, outline = $7::jsonb, bibliography = $8::jsonb
           WHERE doc_id = $1`,
-        [docId, item.lang, body, bodySha, isPublic, rights, actor, JSON.stringify(outline), bibliographyJson]);
+        [docId, item.lang, body, bodySha, isPublic, actor, JSON.stringify(outline), bibliographyJson]);
     return { id: docId, revision: current.revision + 1, op: 'update' };
 }
 
@@ -211,11 +245,11 @@ async function removeOriginal(c, docId, actor, note) {
 }
 
 // changes: {
-//   upserts: [{ id, entry, body?, expectedRevision?, sortOrder? }]  body omitted = keep;
+//   upserts: [{ id, entry, body?, expectedRevision? }]  (order is the entry's date; sort_order went in migration 388)  body omitted = keep;
 //            a new document needs a body
 //   deletes: [id]
-//   redirects: { set: { fromId: { id, anchor, note? } }, remove: [fromId] }
-//   originals: { set: [{ docId, lang, body, public, rights, bibliography?, expectedRevision? }], remove: [docId] }
+//   redirects: { set: { fromId: { id, anchor?, note? } }, remove: [fromId] }  no anchor = document head
+//   originals: { set: [{ docId, lang, body, public, bibliography?, expectedRevision? }], remove: [docId] }
 // }
 // Runs in the caller's transaction when `client` is given, else in its own.
 // `canonicalizeEntries: false` stores entries as given (restore puts back what
@@ -257,12 +291,23 @@ async function writeDocs(changes, { actor, note, client, allowStructureIssues = 
             }
             const entryChanged = Boolean(current) && !sameStoredEntry(item.id, entry, current.entry, canonicalizeEntries);
             const changed = !current || (body !== undefined && sha256(body) !== current.body_sha256) || entryChanged;
-            if (changed) {
+            // The person-link audit reads the body and these entry fields only
+            // (doc-person-links.js); a write that changes neither (a summary, a
+            // bibliography line) skips it instead of walking up to 1.4 MB under
+            // the write lock (A4).
+            const bodyNew = !current || (body !== undefined && sha256(body) !== current.body_sha256);
+            const auditInputsChanged = bodyNew || AUDIT_FIELDS.some(key => stableJson(entry[key] ?? null) !== stableJson(current.entry?.[key] ?? null));
+            let linkAudit = null; // null keeps the stored one
+            if (changed && auditInputsChanged) {
                 const audit = await require('./doc-person-links').inspectDocPersonLinks(body ?? current?.body, { id: item.id, ...entry });
                 linkAudits.push({ id: item.id, mentions: audit.mentions, warnings: audit.warnings, truncated: audit.truncated });
+                linkAudit = linkAuditOf(audit);
+            }
+            if (changed) {
                 if (body !== undefined || current) {
                     structure.push(checkStructure(item.id, item.id, {
                         body: body ?? current.body, entry, role: 'translation', known: await knownFor(entry),
+                        docTargets: await loadDocTargets(c, [body ?? current.body]),
                         previousBody: current ? current.body : undefined, previousEntry: current ? current.entry : undefined }));
                 }
             }
@@ -271,23 +316,21 @@ async function writeDocs(changes, { actor, note, client, allowStructureIssues = 
                 // The updates feed lists documents by addedAt (services/commulingo-updates.js):
                 // a new document without one would never appear there.
                 if (!entry.addedAt) entry.addedAt = new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Seoul' }).format(new Date());
-                const sortOrder = Number.isInteger(item.sortOrder) ? item.sortOrder
-                    : (await c.query('SELECT COALESCE(MAX(sort_order), 0) + 1 AS n FROM commulingo_docs')).rows[0].n;
                 // A re-created id continues its old numbering, so the history
                 // (unique per doc_id, revision) never collides.
                 const revision = (await c.query(
                     'SELECT COALESCE(MAX(revision), 0) + 1 AS n FROM commulingo_doc_revisions WHERE doc_id = $1', [item.id])).rows[0].n;
                 const outline = buildOutline(body, { tocExclude: entry.tocExclude, bodySha256: sha256(body) });
                 await c.query(
-                    `INSERT INTO commulingo_docs (id, sort_order, entry, body, body_sha256, revision, updated_by, created_by, outline)
-                     VALUES ($1, $2, $3::jsonb, $4, $5, $6, $7, $7, $8::jsonb)`,
-                    [item.id, sortOrder, JSON.stringify(entry), body, sha256(body), revision, actor, JSON.stringify(outline)]);
+                    `INSERT INTO commulingo_docs (id, entry, body, body_sha256, revision, updated_by, created_by, outline, link_audit)
+                     VALUES ($1, $2::jsonb, $3, $4, $5, $6, $6, $7::jsonb, $8::jsonb)`,
+                    [item.id, JSON.stringify(entry), body, sha256(body), revision, actor, JSON.stringify(outline),
+                        linkAudit ? JSON.stringify(linkAudit) : null]);
                 written.push({ id: item.id, revision, op: 'insert' });
                 continue;
             }
             const bodyChanged = body !== undefined && sha256(body) !== current.body_sha256;
-            const sortChanged = Number.isInteger(item.sortOrder) && item.sortOrder !== current.sort_order;
-            if (!bodyChanged && !entryChanged && !sortChanged) {
+            if (!bodyChanged && !entryChanged) {
                 written.push({ id: item.id, revision: current.revision, op: 'unchanged' });
                 continue;
             }
@@ -300,13 +343,14 @@ async function writeDocs(changes, { actor, note, client, allowStructureIssues = 
                 ? current.outline : buildOutline(body ?? current.body, { tocExclude: entry.tocExclude, bodySha256: nextSha });
             await c.query(
                 `UPDATE commulingo_docs
-                    SET entry = $2::jsonb, sort_order = $3, revision = revision + 1, updated_at = NOW(), updated_by = $4,
-                        body = COALESCE($5, body), body_sha256 = COALESCE($6, body_sha256),
-                        body_updated_at = CASE WHEN $5::text IS NULL THEN body_updated_at ELSE NOW() END,
-                        outline = $7::jsonb
+                    SET entry = $2::jsonb, revision = revision + 1, updated_at = NOW(), updated_by = $3,
+                        body = COALESCE($4, body), body_sha256 = COALESCE($5, body_sha256),
+                        body_updated_at = CASE WHEN $4::text IS NULL THEN body_updated_at ELSE NOW() END,
+                        outline = $6::jsonb, link_audit = COALESCE($7::jsonb, link_audit)
                   WHERE id = $1`,
-                [item.id, JSON.stringify(entry), sortChanged ? item.sortOrder : current.sort_order, actor,
-                    bodyChanged ? body : null, bodyChanged ? sha256(body) : null, JSON.stringify(outline)]);
+                [item.id, JSON.stringify(entry), actor,
+                    bodyChanged ? body : null, bodyChanged ? sha256(body) : null, JSON.stringify(outline),
+                    linkAudit ? JSON.stringify(linkAudit) : null]);
             written.push({ id: item.id, revision: current.revision + 1, op: 'update' });
         }
         const deleted = [];
@@ -319,6 +363,10 @@ async function writeDocs(changes, { actor, note, client, allowStructureIssues = 
             deleted.push(id);
         }
         for (const [fromId, target] of Object.entries(redirects.set || {})) {
+            if (!ID.test(fromId) || !target || !ID.test(target.id || '')) throw badRequest(`redirect ${fromId}: ids must be lowercase letters, digits, hyphens`);
+            // '' (or no anchor) sends the old id to the head of the document.
+            target.anchor = target.anchor || '';
+            if (target.anchor && !/^[a-z0-9-]+$/.test(target.anchor)) throw badRequest(`redirect ${fromId}: anchor must be a heading id or empty`);
             await c.query(
                 `INSERT INTO commulingo_doc_redirects (from_id, to_id, anchor, note) VALUES ($1, $2, $3, $4)
                  ON CONFLICT (from_id) DO UPDATE SET to_id = EXCLUDED.to_id, anchor = EXCLUDED.anchor, note = EXCLUDED.note`,
@@ -369,6 +417,36 @@ async function refreshDocOutlines({ dryRun = false } = {}) {
     return { dryRun, checked: { docs: docs.length, originals: originals.length }, written };
 }
 
+// Link drift (L3): the entries each document's body links to now against
+// what its last audit recorded. A dictionary change (a new person, an alias,
+// a blocklist line) moves links without any write to the document; this is
+// where that shows. `record` stores the current set (derived data, no
+// revision), as a baseline or after the changes were checked. One document
+// at a time: up to 1.4 MB each, minutes for the library.
+async function docLinkDrift(ids, { record = false, onDoc } = {}) {
+    const { inspectDocPersonLinks } = require('./doc-person-links');
+    const list = ids?.length ? ids : (await db.query('SELECT id FROM commulingo_docs ORDER BY id')).rows.map(row => row.id);
+    const out = [];
+    for (const id of list) {
+        const row = (await db.query('SELECT id, entry, body, body_sha256, link_audit FROM commulingo_docs WHERE id = $1', [id])).rows[0];
+        if (!row) throw badRequest(`doc "${id}" not found`, 404);
+        const now = linkAuditOf(await inspectDocPersonLinks(row.body, { id: row.id, ...row.entry }));
+        const before = Array.isArray(row.link_audit?.links) ? new Set(row.link_audit.links) : null;
+        const after = new Set(now.links);
+        const result = before
+            ? { id, since: row.link_audit.at, added: now.links.filter(link => !before.has(link)), removed: [...before].filter(link => !after.has(link)) }
+            : { id, since: null, added: [], removed: [], baseline: true };
+        if (record && (before === null || result.added.length || result.removed.length)) {
+            await db.query('UPDATE commulingo_docs SET link_audit = $2::jsonb WHERE id = $1 AND body_sha256 = $3', [id, JSON.stringify(now), row.body_sha256]);
+            result.recorded = true;
+        }
+        out.push(result);
+        if (onDoc) onDoc(result);
+        await new Promise(resolve => setImmediate(resolve));
+    }
+    return out;
+}
+
 async function readDocRow(id, { client = db, forUpdate = false } = {}) {
     const sql = `SELECT * FROM commulingo_docs WHERE id = $1${forUpdate ? ' FOR UPDATE' : ''}`;
     return (await client.query(sql, [id])).rows[0] || null;
@@ -380,8 +458,8 @@ async function readOriginalRow(id, { client = db } = {}) {
 
 // Every document as stored, for export and bulk edits.
 async function readAllDocRows({ client = db, withBody = true } = {}) {
-    const cols = withBody ? '*' : 'id, sort_order, entry, body_sha256, revision, body_updated_at, updated_at, updated_by';
-    const docs = (await client.query(`SELECT ${cols} FROM commulingo_docs ORDER BY sort_order, id`)).rows;
+    const cols = withBody ? '*' : 'id, entry, body_sha256, revision, body_updated_at, updated_at, updated_by';
+    const docs = (await client.query(`SELECT ${cols} FROM commulingo_docs ORDER BY id`)).rows;
     const redirects = (await client.query('SELECT * FROM commulingo_doc_redirects ORDER BY from_id')).rows;
     return { docs, redirects };
 }
@@ -392,10 +470,26 @@ async function readAllOriginalRows({ client = db } = {}) {
     return (await client.query('SELECT * FROM commulingo_doc_originals ORDER BY doc_id')).rows;
 }
 
+// What the history tables hold (S8): no retention policy yet; the sizes say
+// when one is needed. Per table the rows, kept bodies and bytes on disk.
+async function revisionSizes({ client = db } = {}) {
+    const rows = (await client.query(
+        `SELECT t.name, t.rows, t.bodies, t.body_bytes, pg_total_relation_size(t.name::regclass) AS table_bytes
+           FROM (SELECT 'commulingo_doc_revisions' AS name, count(*) AS rows, count(body) AS bodies, COALESCE(sum(octet_length(body)), 0) AS body_bytes
+                   FROM commulingo_doc_revisions
+                 UNION ALL
+                 SELECT 'commulingo_doc_original_revisions', count(*), count(body), COALESCE(sum(octet_length(body)), 0)
+                   FROM commulingo_doc_original_revisions) t`)).rows;
+    const live = (await client.query(
+        `SELECT pg_total_relation_size('commulingo_docs') + pg_total_relation_size('commulingo_doc_originals') AS bytes`)).rows[0].bytes;
+    return { tables: rows.map(row => ({ name: row.name, rows: Number(row.rows), bodies: Number(row.bodies),
+        bodyBytes: Number(row.body_bytes), tableBytes: Number(row.table_bytes) })), liveBytes: Number(live) };
+}
+
 async function listDocRevisions(id, { client = db } = {}) {
     return (await client.query(
         `SELECT id, revision, superseded_op, superseded_at, superseded_by, note, updated_by, updated_at,
-                body_sha256, body IS NOT NULL AS has_body
+                body_sha256, body IS NOT NULL AS has_body, octet_length(body) AS body_bytes
            FROM commulingo_doc_revisions WHERE doc_id = $1 ORDER BY revision DESC`, [id])).rows;
 }
 
@@ -416,4 +510,4 @@ async function restoreDocRevision(id, revision, { actor, note } = {}) {
         { actor, note: note || `restore revision ${revision}`, allowStructureIssues: true, canonicalizeEntries: false });
 }
 
-module.exports = { checkStructure, loadKnownRefs, writeDocs, refreshDocOutlines, readDocRow, readOriginalRow, readAllDocRows, readAllOriginalRows, listDocRevisions, restoreDocRevision, storedEntry, sha256 };
+module.exports = { linkSet, docLinkDrift, checkStructure, loadKnownRefs, loadDocTargets, writeDocs, refreshDocOutlines, readDocRow, readOriginalRow, readAllDocRows, readAllOriginalRows, listDocRevisions, revisionSizes, restoreDocRevision, storedEntry, sha256 };

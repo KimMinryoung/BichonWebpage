@@ -118,6 +118,29 @@
             </div>
         <% } %>
 
+        <% if (typeof docCache !== 'undefined' && docCache) { %>
+            <div class="box">
+                <h2><%= lang === 'en' ? 'Reference reader caches' : '참고 문헌 리더 캐시' %></h2>
+                <p class="ui-muted"><%= lang === 'en' ? 'This process, since ' : '이 프로세스, 시작 ' %><%= docCache.body.since.slice(0, 16).replace('T', ' ') %> UTC<%= lang === 'en' ? '' : ' 이후' %></p>
+                <table class="posts-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th><%= lang === 'en' ? 'Hits' : '적중' %></th>
+                            <th><%= lang === 'en' ? 'Misses' : '실패' %></th>
+                            <th><%= lang === 'en' ? 'Other' : '그 밖' %></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><%= lang === 'en' ? 'Bodies' : '본문' %></td><td><%= docCache.body.hits %></td><td><%= docCache.body.misses %></td>
+                            <td><%= lang === 'en' ? 'evicted' : '밀려남' %> <%= docCache.body.evictions %>, <%= docCache.body.size %>/<%= docCache.body.max %>, <%= (docCache.body.htmlChars / 1e6).toFixed(1) %>M <%= lang === 'en' ? 'chars' : '자' %></td></tr>
+                        <tr><td><%= lang === 'en' ? 'Linked pages' : '링크한 쪽' %></td><td><%= docCache.links.hits %></td><td><%= docCache.links.misses %></td>
+                            <td><%= lang === 'en' ? 'pages linked' : '링크 작업' %> <%= docCache.links.pagesLinked %></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        <% } %>
+
         <% if (recentPosts && recentPosts.length > 0) { %>
             <div class="box">
                 <h2><%= strings.admin.recentPostsTitle %></h2>

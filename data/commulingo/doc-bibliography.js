@@ -252,6 +252,20 @@ function normalizeOriginalBibliography(value) {
     return out;
 }
 
+// Why a published original may be shown (2026-11-28): its own part's rights
+// in every language the bibliography has must state a status (the rights
+// column that once held the same sentence is gone, migration 388). Returns
+// the problem, or '' when it may be public.
+function publicRightsProblem(bibliography) {
+    const langs = bibliography ? Object.keys(bibliography) : [];
+    if (!langs.includes('ko')) return 'a public original needs a bibliography with ko (and en) parts[0].rights { text, status }';
+    for (const lang of langs) {
+        const own = (bibliography[lang].parts || []).find(part => !part.anchor);
+        if (!own?.rights?.status) return `a public original needs bibliography.${lang}.parts[0].rights.status (why it may be published)`;
+    }
+    return '';
+}
+
 // Anchors the parts point at that are not heading ids of the body (a typo
 // would silently drop that piece's box). `headingIds` is a Set.
 function missingAnchors(bibliography, headingIds) {
@@ -381,4 +395,4 @@ function documentJsonLd(part, { title, description, url, inLanguage, other = nul
     return data;
 }
 
-module.exports = { citationText, documentJsonLd, FIELDS, normalizeBibliography, normalizeOriginalBibliography, missingAnchors, renderPart, applyBibliography, documentPart, assertInline };
+module.exports = { citationText, documentJsonLd, FIELDS, normalizeBibliography, normalizeOriginalBibliography, publicRightsProblem, missingAnchors, renderPart, applyBibliography, documentPart, assertInline };

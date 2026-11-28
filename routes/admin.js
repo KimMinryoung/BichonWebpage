@@ -123,6 +123,10 @@ router.get('/', requireAuth, async (req, res) => {
             menuViews: await loadMenuViews(res.locals.lang),
             webVitals: await loadWebVitals(res.locals.lang),
             clientErrors: await loadClientErrors(),
+            docCache: {
+                body: require('../data/commulingo/docs-store').docCacheStats(),
+                links: require('../data/commulingo/doc-presentation').linkStats,
+            },
         });
     } catch (error) {
         console.error('Dashboard error:', error);

@@ -177,7 +177,38 @@ const WARNING_CODES = {
     'fragment-link-dangling': '본문 안 #링크가 없는 id를 가리킵니다',
     'note-ref-without-id': '주석 번호에 id가 없어 ↩가 돌아올 자리가 없습니다',
     'editorial-lang-missing': '원문 해제가 ko·en 두 벌이 아닙니다',
+    'doc-link-dangling': '다른 문헌으로 가는 링크가 없는 문헌이나 그 문헌에 없는 id를 가리킵니다',
+    'note-kind-invalid': '주석의 data-note-kind가 author·source-editor·translator·site가 아닙니다',
+    'no-auto-link-unused': 'entry.noAutoLink의 글이 본문에 없습니다(지운 대목이면 목록에서도 뺍니다)',
 };
+
+// ── links to other documents (A3) ───────────────────────────────────────────
+
+// A hand-written link into another document: /commulingo/docs/<id>, its
+// /original, the English path, an old .html address; the place is the
+// #fragment or a paragraph link's ?at=. Returns { docId, original, anchor } or null.
+const DOC_LINK = /^(?:https?:\/\/(?:www\.)?cyber-lenin\.com)?(?:\/en)?\/commulingo\/docs\/([a-z0-9-]+)(?:\.html)?(\/original)?\/?(?:\?([^#]*))?(?:#(.*))?$/;
+function docLinkTarget(href) {
+    const m = DOC_LINK.exec(href || '');
+    if (!m) return null;
+    let anchor = m[4] || '';
+    if (!anchor && m[3]) anchor = new URLSearchParams(m[3]).get('at') || '';
+    try { anchor = decodeURIComponent(anchor); } catch { /* keep as written */ }
+    return { docId: m[1], original: Boolean(m[2]), anchor };
+}
+
+// The documents a body links to, as the keys docTargets uses (<id>, <id>/original).
+function linkedDocKeys(html) {
+    const keys = new Set();
+    for (const [, href] of String(html || '').matchAll(/<a\b[^>]*\bhref="([^"]+)"/g)) {
+        const target = docLinkTarget(href.replace(/&amp;/g, '&'));
+        if (target) keys.add(target.docId + (target.original ? '/original' : ''));
+    }
+    return keys;
+}
+
+// Every id="…" of a body, for docTargets.
+const bodyIds = html => new Set([...String(html || '').matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));
 
 function excerptAnchors(entry) {
     const out = [];
@@ -197,7 +228,10 @@ function excerptAnchors(entry) {
 // comes in ko and en). entry: the manifest entry, for its excerpts and anchors;
 // on the translation the entry itself is checked too (doc-entry.js), and its
 // dictionary ids against `known` when the caller loaded the dictionaries.
-function inspectDocStructure(html, { role = 'translation', entry, known } = {}) {
+// docTargets (A3): Map of <id> or <id>/original → Set of its ids, or
+// { redirect: true } for a retired id; given, links into other documents are
+// checked against it (selfKey names the body's own key, checked against itself).
+function inspectDocStructure(html, { role = 'translation', entry, known, docTargets, selfKey } = {}) {
     const errors = [];
     const warnings = [];
     const add = (list, code, detail) => list.push({ code, message: detail ? `${(ERROR_CODES[code] || WARNING_CODES[code])}: ${detail}` : (ERROR_CODES[code] || WARNING_CODES[code]) });
@@ -266,6 +300,14 @@ function inspectDocStructure(html, { role = 'translation', entry, known } = {}) 
         }
     };
     all.filter(node => node.name === 'a').forEach(a => {
+        const linked = docTargets ? docLinkTarget(a.attribs.href) : null;
+        if (linked) {
+            const key = linked.docId + (linked.original ? '/original' : '');
+            const ids = key === selfKey ? idCount : docTargets.get(key);
+            if (!ids) add(warnings, 'doc-link-dangling', `${a.attribs.href} (문헌 없음)`);
+            else if (linked.anchor && !ids.redirect && !ids.has(linked.anchor)) add(warnings, 'doc-link-dangling', `${a.attribs.href} (id 없음)`);
+            return;
+        }
         const id = target(a.attribs.href);
         if (id === null || id === '') return;
         const exists = idCount.has(id);
@@ -278,6 +320,19 @@ function inspectDocStructure(html, { role = 'translation', entry, known } = {}) 
             add(warnings, 'fragment-link-dangling', `#${id}`);
         }
     });
+
+    // who wrote each footnote (R2)
+    all.filter(node => node.name === 'li' && node.attribs['data-note-kind'] !== undefined).forEach(li => {
+        if (!docEntry.NOTE_KINDS.includes(li.attribs['data-note-kind'])) add(warnings, 'note-kind-invalid', `${li.attribs.id || ''} ${li.attribs['data-note-kind']}`);
+    });
+
+    // a blocked string the body no longer has (L4)
+    if (role === 'translation' && entry?.noAutoLink) {
+        const text = DomUtils.textContent(dom);
+        for (const blocked of docEntry.noAutoLinkStrings(entry.noAutoLink)) {
+            if (!text.includes(blocked)) add(warnings, 'no-auto-link-unused', blocked);
+        }
+    }
 
     // excerpts name headings by id; anchors (alias → section) name any id
     for (const anchor of excerptAnchors(entry)) {
@@ -316,5 +371,6 @@ function introducedErrors(before, after) {
 module.exports = {
     AUTO_ATTR, ERROR_CODES, WARNING_CODES,
     freezeHeadingIds, freezeBlockIds, freezeIds, inspectDocStructure, introducedErrors,
+    docLinkTarget, linkedDocKeys, bodyIds,
     blockRanges, removeBlocks, isNotesSection, isEditorial,
 };

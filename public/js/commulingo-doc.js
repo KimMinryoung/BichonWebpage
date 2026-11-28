@@ -140,7 +140,9 @@
             var frag = document.createDocumentFragment();
             var label = document.createElement('span');
             label.className = 'doc-pop-label';
-            label.textContent = fill(strings.note || '{n}', { n: li.getAttribute('data-note') || ref.textContent.replace(/^[[(](.*)[\])]$/, '$1').trim() });
+            var kind = li.getAttribute('data-note-kind');
+            var kinds = strings.noteKinds || {};
+            label.textContent = fill((kind && kinds[kind]) || strings.note || '{n}', { n: li.getAttribute('data-note') || ref.textContent.replace(/^[[(](.*)[\])]$/, '$1').trim() });
             frag.appendChild(label);
             var body = document.createElement('span');
             body.className = 'doc-pop-body';

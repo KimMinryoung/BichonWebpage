@@ -5,6 +5,7 @@ const { blockedPhrases } = require('./link-blocklist');
 const { attributes, decode, walk } = require('./html-fragments');
 const { parseLifeYears } = require('./person-life-years');
 const { createLinker } = require('./linkify');
+const { noAutoLinkStrings } = require('./doc-entry');
 const nameContext = require('../../public/js/commulingo-name-context');
 const { ERA_MARGIN, lifeOf, PLACE_AFTER, FAMILY_AFTER, precededByName } = require('./person-page-links');
 
@@ -276,7 +277,7 @@ function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = 
             }
             const place = placeQualifier(text, start + match.length);
             let reason;
-            if ((raw.noAutoLink || []).includes(match)) reason = 'document-blocked';
+            if (noAutoLinkStrings(raw.noAutoLink).includes(match)) reason = 'document-blocked';
             else if (mapping?.personId === null) reason = 'unregistered-name';
             else if (place || (notAlone && nameContext.namedAfter(text, start + match.length))) reason = 'place-or-institution';
             // Refused by the shared name rule (linkify.js): the front of a
@@ -307,7 +308,7 @@ function renderDocPersonLinks(html, raw, indexes, { audit = false, sourceHtml = 
             return reason.startsWith('linked') || reason === 'already-linked';
         };
         return createLinker({ ...indexes, person: personIndex }, { surface: 'doc', exclude: { doc: raw.id }, seen: state.seen,
-            blockStrings: raw.noAutoLink, personGuard: guard, personAfterContext: text => {
+            blockStrings: noAutoLinkStrings(raw.noAutoLink), personGuard: guard, personAfterContext: text => {
                 for (const evidence of nameContext.analyze(text, nameData).evidence) {
                     if (evidence.ids.length !== 1 || placeQualifier(text, evidence.end)) continue;
                     if (allowed.has(evidence.ids[0])) introduced.add(evidence.ids[0]);

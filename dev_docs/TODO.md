@@ -1,4 +1,4 @@
-# 남은 일 모음 (2026-11-25 정리)
+# 남은 일 모음 (2026-11-25 정리, 2026-11-28 문헌 항목 갱신)
 
 각 문서의 「남은 일」「후속 후보」「결정 대기」를 모았다. 출처 문서에 세부가 있다. 착수 전에 현재 코드·DB로 아직 열려 있는지 확인하고, 끝내면 이 목록에서 지운다. 데이터 묶음의 세부 뒷일은 작업 폴더의 `FOLLOWUPS.md`(R2 보관)에 있다.
 
@@ -16,14 +16,13 @@
 
 | 항목 | 출처 |
 | --- | --- |
-| 참고 문헌: 원문 공개 검사를 `rights.status`로 바꾸고 원문 행 `rights` 열 정리. 서지 구조화(④⑤)·지은이 인물 연결·번역 기록·저작권 상태·문단 링크(⑥)는 끝남(2026-11-20·11-24) | [문헌 구조 TO-DO](commulingo-docs-structure-todo.md), [서지 설계](commulingo-doc-bibliography.md) |
 | 「조국 전선」: 보급선 그림 곧게, 전략 층 다른 봇·사람 손 밸런스, 쿠르스크·베를린 재측정, 드네프르 도하 전투, 그림 남은 것(스탈린그라드 시가·승전 퍼레이드·포스터 셋) | [조국 전선 7절](great-patriotic-war-game.md) |
 | 전쟁 엔진: 영어 화면 없음, 박격포·카튜샤·기관총·소련 깃발 문장 그림 없음 | [엔진 8절](war-engine.md) |
 | SEO: sitemap index 분리, 글마다 대표 이미지, thin page 표본 검사, 저자·편집 원칙 페이지, Search Console canonical 확인(2026-11-25 확인: sitemap은 한 파일, 카드 og:image는 공용 그림, 저자·편집 원칙 페이지 없음 — 앞의 셋은 미착수. 나머지는 확인 안 함) | [SEO 계획](seo-indexing-plan.md) |
 | KT 회선 지연: 정적 파일 CDN 도입(1단계 효과 확인은 소유자가 진행) | [CDN 계획](static-cdn-kt-plan-20261012.md) |
 | 상용 수준 점검 6(장기 구조) 미착수 | [archive/상용 수준 점검](archive/frontend-commercial-gap-review-20261102.md) |
 | leninbot 번역 스펙(`config/archival_translation/`)의 `output`이 아직 `data/commulingo/docs/<id>.html`이라 조립 뒤 `scripts/commulingo-docs put-body`가 필요함. 조립기가 DB에 직접 넣게 할지는 leninbot 쪽 결정 | [데이터 git 분리](commulingo-data-off-git.md) |
-| 참고 문헌 설계 검토의 남은 항목: A3 문헌 사이 링크 검사, A4 인물 링크 검수 비용, L2~L4 링크 결과 보관·변동 보고·`noAutoLink` 사유, L5 미리보기, R2 주석 종류, R7 발췌 id 충돌, R8 캐시 지표, S5·S7·S8. 보류: L1 역방향 색인, T2 전문 검색, S6 여러 원문 | [archive/설계 검토](archive/commulingo-docs-design-review-20261104.md) |
+| 참고 문헌 설계 검토의 남은 항목(2026-11-28 나머지는 끝): L2 링크 결과 디스크 보관은 관리자 대시보드의 리더 캐시 숫자를 본 뒤, L5 용어·인물 미리보기 카드는 디자인 결정 뒤. 원문 리비전에 쌓인 본문 사본(약 88MB) 정리는 소유자 결정. 보류: L1 역방향 색인, T2 전문 검색, S6 여러 원문 | [archive/설계 검토](archive/commulingo-docs-design-review-20261104.md) |
 
 ## 3. 강좌·콘텐츠 작업
 

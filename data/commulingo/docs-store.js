@@ -5,6 +5,7 @@ const db = require('../../config/database');
 const { createRegistrySnapshotStore } = require('./snapshot-store');
 const { paginateBody, renderPages, headingText, stripNoteRefs } = require('./doc-pagination');
 const { AUTO_ATTR, blockRanges, removeBlocks, isNotesSection, isEditorial } = require('./doc-structure');
+const { noAutoLinkStrings } = require('./doc-entry');
 const { labelNotes, buildOutline, outlineFits, withoutRanges, readerToc } = require('./doc-outline');
 
 const AUTO_ID_RE = new RegExp(`\\b${AUTO_ATTR}\\b`);
@@ -33,6 +34,14 @@ const bodyCache = new Map(); // body sha256 -> { html, toc, paged }; insertion o
 // The largest fragments run to 1.4 MB and the paged copy doubles that, so the
 // body cache keeps the most recently read documents rather than all of them.
 const BODY_CACHE_MAX = 40;
+// Hits, misses and evictions of bodyCache in this process since start (R8),
+// for the admin dashboard; the numbers say whether BODY_CACHE_MAX fits.
+const bodyCacheStats = { hits: 0, misses: 0, evictions: 0, since: new Date().toISOString() };
+function docCacheStats() {
+    let bytes = 0;
+    for (const entry of bodyCache.values()) bytes += (entry.html || '').length;
+    return { ...bodyCacheStats, size: bodyCache.size, max: BODY_CACHE_MAX, htmlChars: bytes };
+}
 
 // Harvest h1/h2 headings for the reader's table of contents, assigning
 // sequential ids to headings that lack one (existing ids are kept). Bodies
@@ -114,16 +123,17 @@ function documentModifiedAt(doc, bodyUpdatedAt) {
     return latest ? new Date(latest).toISOString() : null;
 }
 
-// Snapshot rows: { kind: 'doc', id, sort_order, entry, body_sha256,
+// Snapshot rows: { kind: 'doc', id, entry, body_sha256,
 // body_updated_at, revision, outline }, { kind: 'redirect', from_id, to_id, anchor }
 // and { kind: 'original', doc_id, lang, body_sha256, outline, bibliography } for each public original.
 function install(rows) {
     const originals = new Map(rows.filter(row => row.kind === 'original' && SHA.test(row.body_sha256 || ''))
         .map(row => [row.doc_id, { lang: row.lang, bodySha256: row.body_sha256, outline: row.outline || null, bibliography: row.bibliography || null }]));
     const docs = rows.filter(row => row.kind === 'doc' && typeof row.id === 'string' && SHA.test(row.body_sha256 || ''))
-        .sort((a, b) => a.sort_order - b.sort_order)
         .map(row => ({
             ...row.entry,
+            // Served as strings; a stored item may carry its reason (doc-entry.js).
+            ...(row.entry.noAutoLink ? { noAutoLink: noAutoLinkStrings(row.entry.noAutoLink) } : {}),
             id: row.id,
             bodySha256: row.body_sha256,
             revision: row.revision,
@@ -150,7 +160,7 @@ function writeBodyFile(sha, body) {
 // previous snapshot keeps its bodies.
 async function fetchRows() {
     const docs = (await db.query(
-        'SELECT id, sort_order, entry, body_sha256, body_updated_at, revision, outline FROM commulingo_docs ORDER BY sort_order, id')).rows;
+        'SELECT id, entry, body_sha256, body_updated_at, revision, outline FROM commulingo_docs ORDER BY id')).rows;
     const redirects = (await db.query('SELECT from_id, to_id, anchor FROM commulingo_doc_redirects ORDER BY from_id')).rows;
     // Only published originals ever reach the server's snapshot and cache.
     const originals = (await db.query(
@@ -243,10 +253,12 @@ function getCommuLingoDocRedirect(docId) {
     const { docs, redirects } = loadManifest();
     if (docs.some(doc => doc.id === docId)) return null;
     const target = Object.hasOwn(redirects, docId) ? redirects[docId] : null;
+    // An empty anchor (migration 387) sends the whole retired id to the head
+    // of the document it became.
     if (!target || !/^[a-z0-9-]+$/.test(target.id)
-        || !/^[a-z0-9-]+$/.test(target.anchor)) return null;
+        || !/^(?:[a-z0-9-]+)?$/.test(target.anchor || '')) return null;
     const doc = docs.find(item => item.id === target.id);
-    return doc ? { doc, anchor: target.anchor } : null;
+    return doc ? { doc, anchor: target.anchor || '' } : null;
 }
 
 // A manifest entry's people/terms/events arrays hold dictionary ids and nothing
@@ -310,6 +322,7 @@ function getCommuLingoDocContent(doc) {
     const sha = doc.bodySha256;
     const cached = bodyCache.get(sha);
     if (cached) {
+        bodyCacheStats.hits += 1;
         // Re-insert so the Map's order tracks recency for the eviction below.
         bodyCache.delete(sha);
         bodyCache.set(sha, cached);
@@ -327,8 +340,12 @@ function getCommuLingoDocContent(doc) {
         unavailable.status = 503;
         throw unavailable;
     }
+    bodyCacheStats.misses += 1;
     const entry = buildContent(raw, doc);
-    while (bodyCache.size >= BODY_CACHE_MAX) bodyCache.delete(bodyCache.keys().next().value);
+    while (bodyCache.size >= BODY_CACHE_MAX) {
+        bodyCache.delete(bodyCache.keys().next().value);
+        bodyCacheStats.evictions += 1;
+    }
     bodyCache.set(sha, entry);
     return entry;
 }
@@ -495,9 +512,14 @@ function sectionFrom(content, docId, anchor) {
     const notes = noteIds.map(noteId => blocks.get(noteId) || '').filter(Boolean);
     if (notes.length) body += `<section class="notes"><ol class="notes-list">${notes.join('')}</ol></section>`;
     const ids = new Set([...body.matchAll(/\bid="([^"]+)"/g)].map(m => m[1]));
+    // A page may print several pieces of one document (an event's articles,
+    // grounds and amendment), each bringing the same note ids: every id in a
+    // piece carries the piece's own prefix, and its #links follow (R7).
+    const prefix = `x-${docId}-${anchor === '*' ? 'all' : anchor}-`;
     body = body
         .replace(/<(\/?)h([1-5])\b/g, (m, slash, n) => `<${slash}h${Math.max(3, Number(n) + 1)}`)
-        .replace(/href="#([^"]+)"/g, (full, id) => ids.has(id) ? full : `href="/commulingo/docs/${docId}#${id}"`);
+        .replace(/(<[a-z][a-z0-9]*\b[^>]*?\s)id="([^"]+)"/g, (full, before, id) => `${before}id="${prefix}${id}"`)
+        .replace(/href="#([^"]+)"/g, (full, id) => ids.has(id) ? `href="#${prefix}${id}"` : `href="/commulingo/docs/${docId}#${id}"`);
     return { title: heads[start].text, html: body.trim() };
 }
 
@@ -517,7 +539,7 @@ module.exports = {
     loadCommuLingoDocs: store.load, refreshCommuLingoDocs: () => store.refresh(),
     listCommuLingoDocs, getCommuLingoDoc, getCommuLingoDocRedirect,
     listCommuLingoDocsFor, excerptRef, getCommuLingoDocContent, getCommuLingoDocOriginalContent, loadCommuLingoDocContent, getCommuLingoDocAnchorPages, getCommuLingoDocVersionAnchors, docRefId,
-    listCommuLingoDocExcerptsFor, getCommuLingoDocSection, getCommuLingoDocContents,
+    listCommuLingoDocExcerptsFor, getCommuLingoDocSection, getCommuLingoDocContents, docCacheStats,
     annotateHeadings, // tests: doc-structure.js freezes the same numbers
     labelNotes, noteBlocks, pageNotes,
     buildContent, sectionFrom, // tests: the outline path against the parsing path

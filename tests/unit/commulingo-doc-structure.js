@@ -151,7 +151,7 @@ const ENTRY = { docLang: 'ko', title: { ko: '문헌' }, summary: { ko: '요약' 
 // writeDocs refuses a write with any error, unless told otherwise, and
 // stores the body with its ids frozen.
 (async () => {
-    const stored = { id: 'demo', revision: 3, entry: { ...ENTRY }, body: GOOD, body_sha256: 'old', sort_order: 1 };
+    const stored = { id: 'demo', revision: 3, entry: { ...ENTRY }, body: GOOD, body_sha256: 'old' };
     const writes = [];
     const client = {
         async query(sql, params = []) {
@@ -185,7 +185,7 @@ const ENTRY = { docLang: 'ko', title: { ko: '문헌' }, summary: { ko: '요약' 
         writeDocs({ upserts: [{ id: 'demo', entry: stored.entry, body: GOOD.replace('첫째', '첫 번째'), expectedRevision: 3 }] }, { actor: 't', client }),
         err => err.status === 422 && /\[date-invalid\].*\(already stored\)/.test(err.message) && err.structure[0].introduced.length === 0);
     stored.entry = dateless;
-    assert.match(writes.at(-1)[4], /<h3 id="sub-1" data-auto-id>작은 제목<\/h3>/, 'stored with frozen ids');
+    assert.match(writes.at(-1)[3], /<h3 id="sub-1" data-auto-id>작은 제목<\/h3>/, 'stored with frozen ids');
     const written = JSON.parse(writes.at(-1)[1]);
     assert.deepEqual(Object.keys(written).slice(0, 2), ['docLang', 'title'], 'the entry is stored in its canonical form');
     assert.equal(written.addedAt, undefined, 'without inventing a date it was added');
@@ -195,7 +195,7 @@ const ENTRY = { docLang: 'ko', title: { ko: '문헌' }, summary: { ko: '요약' 
     // A body differing from the stored one is sanitized on the way in.
     const hostile = await writeDocs({ upserts: [{ id: 'demo', entry: stored.entry, body: GOOD.replace('<p>무엇을 다루는지.</p>', '<p onclick="x()">무엇을 다루는지.</p>'), expectedRevision: 3 }] }, { actor: 't', client });
     assert.equal(hostile.written[0].op, 'update');
-    assert.ok(!writes.at(-1)[4].includes('onclick'), 'sanitized');
+    assert.ok(!writes.at(-1)[3].includes('onclick'), 'sanitized');
     // An entry sent back untouched is no write: jsonb's key order, an empty list
     // canonicalizing drops and a quote it converts are not edits by the caller.
     const storedEntryBefore = stored.entry;
@@ -239,4 +239,29 @@ const ENTRY = { docLang: 'ko', title: { ko: '문헌' }, summary: { ko: '요약' 
     assert.match(freezeIds('<article><h1>T</h1><h2>가</h2><p>b</p></article>'), /<h2 id="sec-1" data-auto-id>가<\/h2><p id="p-1">b<\/p>/);
     const { sanitizeDocHtml } = require('../../data/commulingo/doc-sanitize');
     assert.equal(sanitizeDocHtml(frozen), frozen, 'the sanitizer keeps paragraph ids');
+}
+
+// Links into other documents (A3), footnote kinds (R2), unused noAutoLink (L4).
+{
+    const { inspectDocStructure, docLinkTarget, linkedDocKeys } = require('../../data/commulingo/doc-structure');
+    assert.deepEqual(docLinkTarget('/en/commulingo/docs/abc/original?p=2#sec-3'), { docId: 'abc', original: true, anchor: 'sec-3' });
+    assert.deepEqual(docLinkTarget('/commulingo/docs/abc?at=p-12'), { docId: 'abc', original: false, anchor: 'p-12' });
+    assert.equal(docLinkTarget('/commulingo/docs'), null);
+    const body = '<article><h1>T</h1><p id="me">'
+        + '<a href="/commulingo/docs/other#sec-1">a</a><a href="/commulingo/docs/other#nope">b</a>'
+        + '<a href="/commulingo/docs/gone">c</a><a href="/commulingo/docs/old#x">d</a><a href="/commulingo/docs/self#me">e</a></p>'
+        + '<section class="notes"><ol class="notes-list"><li id="note-1" data-note-kind="translator">n</li><li id="note-2" data-note-kind="footnote">m</li></ol></section></article>';
+    assert.deepEqual([...linkedDocKeys(body)].sort(), ['gone', 'old', 'other', 'self']);
+    const docTargets = new Map([['other', new Set(['sec-1'])], ['old', { redirect: true }]]);
+    const { warnings } = inspectDocStructure(body, { role: 'original', docTargets, selfKey: 'self' });
+    const of = code => warnings.filter(w => w.code === code).map(w => w.message.split(': ')[1]);
+    assert.deepEqual(of('doc-link-dangling'), ['/commulingo/docs/other#nope (id 없음)', '/commulingo/docs/gone (문헌 없음)']);
+    assert.deepEqual(of('note-kind-invalid'), ['note-2 footnote']);
+    assert.equal(inspectDocStructure(body, { role: 'original' }).warnings.filter(w => w.code === 'doc-link-dangling').length, 0, 'unchecked without targets');
+    const entry = { noAutoLink: ['T', { text: '없는 말', reason: '지운 대목' }] };
+    assert.deepEqual(inspectDocStructure(body, { entry }).warnings.filter(w => w.code === 'no-auto-link-unused').map(w => w.message.split(': ')[1]), ['없는 말']);
+    const { assertNoAutoLink, noAutoLinkStrings } = require('../../data/commulingo/doc-entry');
+    assert.deepEqual(noAutoLinkStrings(['임시정부', { text: '공안', reason: '중국 공안이 아니다' }]), ['임시정부', '공안']);
+    assert.throws(() => assertNoAutoLink([{ text: '공안' }]), { status: 400 });
+    assert.throws(() => assertNoAutoLink(['공안', { text: '공안', reason: 'x' }]), /duplicate/);
 }

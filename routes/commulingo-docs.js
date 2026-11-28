@@ -301,6 +301,10 @@ router.get('/:docId', async (req, res) => {
             return res.redirect(301, `${prefix}/commulingo/docs/${docId.slice(0, -'.html'.length)}`);
         }
         const merged = getCommuLingoDocRedirect(docId);
+        if (merged && !merged.anchor) {
+            const prefix = req.urlLanguage === 'en' ? '/en' : '';
+            return res.redirect(301, `${prefix}/commulingo/docs/${merged.doc.id}`);
+        }
         if (merged) {
             const { paged } = await loadCommuLingoDocContent(merged.doc);
             const page = paged?.idToPage[merged.anchor];

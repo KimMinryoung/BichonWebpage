@@ -254,10 +254,22 @@ const tools = [
         },
     },
     {
+        name: 'doc_link_drift',
+        description: 'Reference documents whose body links (people, terms, events, docs) moved since the link audit their last write recorded: '
+            + 'a dictionary change (new person, alias, blocklist line, link review) moves links without touching the document. '
+            + 'Per document { id, since, added: ["person:id", ...], removed: [...] }; baseline: true when none was recorded yet. '
+            + 'Read-only; scripts/commulingo-docs link-drift --record stores the current set after checking. Up to 10 ids a call (each body is re-linked).',
+        inputSchema: object({ ids: { ...arr('Document ids (1-10)', 10), items: { type: 'string' }, minItems: 1 } }, ['ids']),
+        async handler({ ids }) {
+            const { docLinkDrift } = require('../../data/commulingo/docs-db');
+            return { documents: await docLinkDrift(ids) };
+        },
+    },
+    {
         name: 'doc_get',
         description: 'One reference document: its manifest entry (title, aliases, linked people/terms/events, excerpts, modifiedAt) '
             + 'and the stored HTML body as published, with the revision doc_put expects. body: false leaves the HTML out. original describes '
-            + 'the stored original (lang, public, rights, bibliography, originalRevision for doc_put); originalBody: true adds its HTML. '
+            + 'the stored original (lang, public, bibliography (its rights.status says why it may be public), originalRevision for doc_put); originalBody: true adds its HTML. '
             + 'headings: true adds every heading [{level, id, text}] (the ids excerpts, anchors and [[doc-excerpt:id#heading]] name); '
             + 'with body: false that is the cheap way to find one.' + VIEW_HINT,
         inputSchema: object({ id: str('Document id'), body: bool('Include the HTML body (default true)'),
@@ -272,7 +284,7 @@ const tools = [
             const row = await readDocRow(id);
             const html = row && body ? row.body : null;
             const orig = await readOriginalRow(id);
-            const original = orig ? { lang: orig.lang, public: orig.public, rights: orig.rights, bibliography: orig.bibliography || null, bodyChars: orig.body.length,
+            const original = orig ? { lang: orig.lang, public: orig.public, bibliography: orig.bibliography || null, bodyChars: orig.body.length,
                 ...(originalBody ? { html: view.maxChars ? project(orig.body, { maxChars: view.maxChars }) : orig.body } : {}) } : null;
             // The stored outline, or a fresh parse for a row written before it existed.
             const parsed = headings ? (outline?.headings ? outline : (row ? require('../../data/commulingo/doc-outline').buildOutline(row.body) : null)) : null;

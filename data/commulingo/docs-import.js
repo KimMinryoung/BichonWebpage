@@ -1,5 +1,5 @@
 const { assertLinkExpressions } = require('./link-expressions');
-const { assertHeadword, assertAliases, assertStringList } = require('./headword-validation');
+const { assertHeadword, assertAliases } = require('./headword-validation');
 
 // Import/registry mutations for CommuLingo reference documents. Shared by
 // scripts/import-commulingo-doc.js (CLI), scripts/commulingo-docs.js and the
@@ -142,7 +142,7 @@ function canonicalEntry(entry, { defaults = true } = {}) {
         out.aliases = entry.aliases;
     }
     if (entry.noAutoLink !== undefined) {
-        assertStringList(entry.noAutoLink, 'noAutoLink');
+        require('./doc-entry').assertNoAutoLink(entry.noAutoLink);
         out.noAutoLink = entry.noAutoLink;
     }
     if (entry.personLinks !== undefined) {

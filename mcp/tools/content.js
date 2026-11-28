@@ -197,8 +197,7 @@ const tools = [
             body: str('HTML body', { maxLength: 20000000 }),
             bodyPath: specPathArg,
             expectedRevision: int('Revision from doc_get (required for an existing document)', 0, 100000000),
-            sortOrder: int('List position', -1000000, 1000000),
-            original: obj('The original: { lang (2-3 letters), public (needs rights), rights | rightsPath (a text file), body | bodyPath (content/<path>.html), '
+            original: obj('The original: { lang (2-3 letters), public (needs bibliography ko/en parts[0].rights with status), body | bodyPath (content/<path>.html), '
                 + 'bibliography | bibliographyPath ({ko, en} bibliographies for the 원문·편집 정보 box; omitted keeps the stored one, null removes it), '
                 + 'expectedRevision (doc_get originalRevision; required when one is stored) }'),
             removeOriginal: bool('Delete the stored original'),
@@ -209,7 +208,7 @@ const tools = [
             changedBy,
         }, ['id']),
         audit: ({ id, dryRun, changedBy: actor }, client) => ({ command: dryRun === false ? 'apply' : 'dry-run', targetType: 'doc', targetId: id, actor: actor || `mcp:${client}` }),
-        async handler({ id, entry, entryPatch: givenPatch, entryPatchPath, body, bodyPath, expectedRevision, sortOrder, original, removeOriginal, fullAudit, allowStructureIssues, dryRun = true, note, changedBy: given }, { client }) {
+        async handler({ id, entry, entryPatch: givenPatch, entryPatchPath, body, bodyPath, expectedRevision, original, removeOriginal, fullAudit, allowStructureIssues, dryRun = true, note, changedBy: given }, { client }) {
             if (givenPatch && entryPatchPath) throw badRequest('pass entryPatch or entryPatchPath, not both');
             const entryPatch = entryPatchPath ? readSpecJson(entryPatchPath) : givenPatch;
             if (entry && entryPatch) throw badRequest('pass entry or entryPatch, not both');
@@ -234,8 +233,7 @@ const tools = [
             if (!row && html === undefined) throw badRequest('a new document needs a body');
             // writeDocs sanitizes a changed body and canonicalizes the entry.
             const upsert = { id, entry: storedEntry(next), expectedRevision: row ? expectedRevision : 0,
-                body: html !== undefined && (!row || sha256(html) !== row.body_sha256) ? html : undefined,
-                sortOrder };
+                body: html !== undefined && (!row || sha256(html) !== row.body_sha256) ? html : undefined };
             // Like scripts/commulingo-docs put: an existing original is guarded
             // by its own revision.
             const originals = { set: [], remove: removeOriginal ? [id] : [] };
@@ -247,10 +245,9 @@ const tools = [
                 if (original.bibliography !== undefined && original.bibliographyPath) throw badRequest('pass original.bibliography or original.bibliographyPath, not both');
                 const originalBibliography = original.bibliographyPath ? readSpecJson(original.bibliographyPath) : original.bibliography;
                 if (original.source !== undefined) throw badRequest('original.source is retired: write the source line into original.bibliography (sourceText)');
-                if (original.rights !== undefined && original.rightsPath) throw badRequest('pass original.rights or original.rightsPath, not both');
-                const originalRights = original.rightsPath ? readSpecFile(original.rightsPath) : original.rights;
+                if (original.rights !== undefined || original.rightsPath !== undefined) throw badRequest('original.rights is retired: state it in original.bibliography (parts[0].rights { text, status })');
                 originals.set.push({ docId: id, lang: original.lang, body: originalHtml, public: original.public === true,
-                    rights: originalRights, bibliography: originalBibliography,
+                    bibliography: originalBibliography,
                     expectedRevision: stored ? original.expectedRevision : 0 });
             }
             const actor = actorOf(given, client);
@@ -306,8 +303,8 @@ const tools = [
                     }
                     const stored = await readOriginalRow(id);
                     if (!stored) throw badRequest(`${id}: has no stored original`);
-                    // Same body, language, visibility and rights: only the bibliography changes.
-                    originals.set.push({ docId: id, lang: stored.lang, body: stored.body, public: stored.public, rights: stored.rights,
+                    // Same body, language and visibility: only the bibliography changes.
+                    originals.set.push({ docId: id, lang: stored.lang, body: stored.body, public: stored.public,
                         bibliography: item.original.bibliography, expectedRevision: item.original.revision });
                 }
                 if (!item.patch) continue;
@@ -371,7 +368,7 @@ const tools = [
                 if (take.size >= limit && !take.has(row.doc_id)) continue;
                 if (freezeIds(row.body) === row.body) continue;
                 take.add(row.doc_id);
-                originals.set.push({ docId: row.doc_id, lang: row.lang, body: row.body, public: row.public, rights: row.rights,
+                originals.set.push({ docId: row.doc_id, lang: row.lang, body: row.body, public: row.public,
                     bibliography: row.bibliography, expectedRevision: row.revision });
             }
             const pending = new Set([...docRows.map(row => row.id), ...originalRows.map(row => row.doc_id)]);
