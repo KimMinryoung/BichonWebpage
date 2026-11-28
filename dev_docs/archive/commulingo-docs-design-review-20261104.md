@@ -56,7 +56,7 @@
   빈 문헌 0편 확인). **S7** 빈 `anchor` 리디렉트는 문헌 머리로. **S8** `scripts/commulingo-docs history --sizes`. 확인 당시
   리비전 표 146MB·원문 리비전 168MB(살아 있는 표 33MB)였고, 원문 리비전은 서지만 고쳐도 본문을 통째로 복사했다(본문이
   다음 판과 같은 것 570건, 88MB). 이제 본문이 바뀐 때만 남긴다. 쌓인 사본 570건도 소유자 결정으로 지웠다(`scripts/migrations/data/doc-original-revision-body-dedupe-20261128.sql`, 바로 다음 판과 같은 본문만, 168→114MB). VACUUM FULL은 복제 슬롯 `standby_hel1`의 xmin이 UPDATE 뒤로 넘어간 다음에 다시 돌려야 공간이 돌아왔다.
-  미착수: **L2**(링크 결과 디스크 보관)는 R8 숫자를 본 뒤, **L5**(미리보기 카드)는 디자인 결정이 먼저. 보류 그대로: L1·T2·S6.
+  미착수: **L2**(링크 결과 디스크 보관)는 R8 숫자를 본 뒤. **L5**는 같은 날 일부: 리더의 인물·사건 링크에 마우스오버 미리보기(`/commulingo/api/preview/<kind>/<id>`, 주석 팝오버 모양). 휴대폰 동작·용어 링크·다른 표면은 소유자가 나중에 정한다. 보류 그대로: L1·T2·S6.
 
 검토 범위: `docs-db.js`, `docs-store.js`, `docs-import.js`, `doc-structure.js`, `doc-pagination.js`, `doc-presentation.js`,
 `doc-linkify.js`, `doc-person-links.js`, `docs-refs.js`, `doc-search.js`, `doc-sanitize.js`, `event-doc-excerpts.js`, `linkify.js`,

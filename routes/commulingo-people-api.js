@@ -43,6 +43,39 @@ router.get('/api/people/:personId', async (req, res) => {
     }
 });
 
+// A hover preview of a person or event a reader's link points at (the
+// reference reader, public/js/commulingo-doc.js): name, years and one line.
+// Person: the card's epithet. Event: the first sentence of its summary.
+const firstSentence = (text, max = 200) => {
+    const plain = String(text || '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*_`#>]/g, '').replace(/\s+/g, ' ').trim();
+    const m = plain.match(/^(.+?[.!?。])(?=\s|$)/);
+    const one = m && m[1].length >= 12 ? m[1] : plain;
+    return [...one].length > max ? [...one].slice(0, max - 1).join('') + '…' : one;
+};
+
+router.get('/api/preview/:kind/:id', async (req, res) => {
+    try {
+        const id = typeof req.params.id === 'string' ? req.params.id.trim() : '';
+        const lang = res.locals.lang === 'en' ? 'en' : 'ko';
+        let preview = null;
+        if (req.params.kind === 'person') {
+            const { loaded, standardized } = await loadStandardizedPeople(lang);
+            const person = standardized.peopleById[id] || standardized.peopleById[redirectTarget(loaded.data, 'person', id)];
+            if (person) preview = { title: person.displayName, meta: person.yearsLabel || '', text: person.epithet || firstSentence(person.bio) };
+        } else if (req.params.kind === 'event') {
+            const events = await require('../data/commulingo/history-events-store').loadCommuLingoHistoryEvents();
+            const event = events.find(item => item.id === id);
+            if (event) preview = { title: event.title[lang] || event.title.ko, meta: event.period || '', text: firstSentence(event.summary[lang] || event.summary.ko) };
+        }
+        if (!preview) return res.status(404).json({ error: 'not found' });
+        setShortPublicCache(res);
+        res.json(preview);
+    } catch (err) {
+        console.error('commulingo preview api:', err);
+        res.status(500).json({ error: 'failed to load preview' });
+    }
+});
+
 router.get('/api/offices', async (req, res) => {
     try {
         const { loaded, standardized } = await loadStandardizedPeople(res.locals.lang);
