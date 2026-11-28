@@ -1475,3 +1475,9 @@
     gap: 0.25rem;
   }
 }
+
+/* A name's box opens the real person's page: the whole box is the button. */
+.doc-pop.is-link {
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}

@@ -43,10 +43,11 @@ router.get('/api/people/:personId', async (req, res) => {
     }
 });
 
-// A hover preview of the person, event or term a link points at
+// A hover preview of the person, event, term or reference document a link points at
 // (public/js/commulingo-link-preview.js): name, years and one line. Person:
 // the card's epithet. Event: its summary's first sentence. Term: its
 // definition's first sentence, the original name and years beside the name.
+// Document: its summary's first sentence, the year and kind beside the title.
 const firstSentence = (text, max = 200) => {
     const plain = String(text || '').replace(/\[([^\]]+)\]\([^)]*\)/g, '$1').replace(/[*_`#>]/g, '').replace(/\s+/g, ' ').trim();
     const m = plain.match(/^(.+?[.!?。])(?=\s|$)/);
@@ -74,6 +75,14 @@ router.get('/api/preview/:kind/:id', async (req, res) => {
                 const period = term.period?.[lang] || term.period?.ko || '';
                 preview = { title: term.term[lang] || term.term.ko, meta: [term.original, period].filter(Boolean).join(' · '),
                     text: firstSentence(term.definition[lang] || term.definition.ko) };
+            }
+        } else if (req.params.kind === 'doc') {
+            const docs = require('../data/commulingo/docs-store');
+            const doc = docs.getCommuLingoDoc(id) || docs.getCommuLingoDocRedirect(id)?.doc;
+            if (doc) {
+                const year = (String(doc.date || '').match(/^-?\d{1,4}/) || [''])[0];
+                preview = { title: doc.title?.[lang] || doc.title?.ko || id, meta: [year, doc.kind?.[lang] || doc.kind?.ko].filter(Boolean).join(' · '),
+                    text: firstSentence(doc.summary?.[lang] || doc.summary?.ko) };
             }
         }
         if (!preview) return res.status(404).json({ error: 'not found' });

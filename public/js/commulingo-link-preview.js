@@ -1,6 +1,6 @@
-// Hover previews for the dictionary links in any page's text (loaded by
-// partials/head site-wide and by the reference reader, 2026-11-28): with a mouse, resting on a person, event or
-// term link shows its name, years and one line in a box under the link —
+// Hover previews for the dictionary and reference-library links in any page's text (loaded by
+// partials/head site-wide and by the reference reader, 2026-11-28): with a mouse, resting on a person, event,
+// term or reference-library link shows its name, years and one line in a box under the link —
 // GET /commulingo/api/preview/<person|event|term>/<id>. The link still opens
 // its page. While the box is in use the link's title (the browser's own
 // tooltip, 「이름: 소개」) is taken off, so the two never stack; a link with no
@@ -19,8 +19,8 @@
     if (!window.fetch) return;
     var hoverable = !!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
 
-    var SELECTOR = 'a.commu-person-link, a.commu-event-link, a.commu-term-link';
-    var KINDS = { people: 'person', events: 'event', terms: 'term' };
+    var SELECTOR = 'a.commu-person-link, a.commu-event-link, a.commu-term-link, a.commu-doc-link';
+    var KINDS = { people: 'person', events: 'event', terms: 'term', docs: 'doc' };
     var prefix = /^\/en\//.test(window.location.pathname) ? '/en' : '';
     var previews = {};
     var known = {}; // key -> preview data or null, once loaded
@@ -38,7 +38,7 @@
         return target && target.closest ? target.closest(SELECTOR) : null;
     }
     function keyOf(a) {
-        var m = (a.getAttribute('href') || '').match(/^(?:https?:\/\/[^/]+)?(?:\/en)?\/commulingo\/(people|events|terms)\/([a-z0-9-]+)/);
+        var m = (a.getAttribute('href') || '').match(/^(?:https?:\/\/[^/]+)?(?:\/en)?\/commulingo\/(people|events|terms|docs)\/([a-z0-9-]+)/);
         return m ? KINDS[m[1]] + '/' + m[2] : null;
     }
     function load(key) {

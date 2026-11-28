@@ -101,6 +101,19 @@
         var open = null;
         var pinned = false;
         var closeTimer = null;
+        // Touch (owner, 2026-11-28, the same as the dictionary link boxes in
+        // commulingo-link-preview.js): the name's whole box is the button to
+        // the real person's page, and while a box is open a tap outside it
+        // only closes it.
+        var touching = false;
+        if (window.PointerEvent) {
+            document.addEventListener('pointerdown', function (event) {
+                touching = event.pointerType === 'touch' || event.pointerType === 'pen';
+            }, true);
+        } else {
+            document.addEventListener('touchstart', function () { touching = true; }, { capture: true, passive: true });
+            document.addEventListener('mousedown', function () { touching = false; }, true);
+        }
 
         function cancelClose() {
             if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
@@ -180,7 +193,7 @@
             } else {
                 frag.appendChild(document.createTextNode(real));
             }
-            return { nodes: frag, kind: 'name' };
+            return { nodes: frag, kind: 'name', href: href };
         }
         function anchorOf(target) {
             var el = target.closest && target.closest('a.note-ref, a.fic-name');
@@ -199,6 +212,16 @@
             pop.appendChild(content.nodes);
             pop.addEventListener('mouseenter', cancelClose);
             pop.addEventListener('mouseleave', scheduleClose);
+            if (content.href) {
+                var href = content.href;
+                pop.classList.add('is-link');
+                pop.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    close();
+                    window.open(href, '_blank', 'noopener');
+                });
+            }
             anchor.insertAdjacentElement('afterend', pop);
             anchor.setAttribute('aria-expanded', 'true');
             open = { el: pop, anchor: anchor };
@@ -237,6 +260,12 @@
             if (next && (open.el.contains(next) || next === open.anchor)) return;
             scheduleClose();
         });
+        window.addEventListener('click', function (event) {
+            if (!open || !touching || open.el.contains(event.target) || anchorOf(event.target)) return;
+            event.preventDefault();
+            event.stopPropagation();
+            close();
+        }, true);
         document.addEventListener('click', function (event) {
             var anchor = anchorOf(event.target);
             if (!anchor) {

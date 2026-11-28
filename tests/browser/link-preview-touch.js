@@ -14,7 +14,7 @@ const assert = require('node:assert/strict');
         const errors = [];
         page.on('pageerror', e => errors.push(e.message));
         const origin = (process.env.BASE_URL || 'http://127.0.0.1:3001').replace(/\/$/, '');
-        const LINKS = 'a.commu-person-link, a.commu-event-link, a.commu-term-link';
+        const LINKS = 'a.commu-person-link, a.commu-event-link, a.commu-term-link, a.commu-doc-link';
 
         async function firstLink(newTab) {
             const handle = await page.evaluateHandle(([sel, want]) => [...document.querySelectorAll(sel)]
@@ -52,7 +52,35 @@ const assert = require('node:assert/strict');
         await popup.waitForLoadState();
         assert.equal(page.url(), eventUrl, 'event page stays');
         console.log('new tab ok:', popup.url());
-        await page.screenshot({ path: process.env.SHOT || '/dev/null' }).catch(() => {});
+        await popup.close();
+
+        // A reference-library link gets the same box.
+        await page.goto(origin + '/commulingo/people/lenin', { waitUntil: 'networkidle' });
+        const docLink = page.locator('a.commu-doc-link').first();
+        await docLink.scrollIntoViewIfNeeded();
+        await docLink.tap();
+        await page.waitForSelector('.link-pop.is-tap');
+        console.log('doc box ok:', await page.textContent('.link-pop.is-tap strong'));
+        await page.touchscreen.tap(5, 840);
+        await page.waitForFunction(() => !document.querySelector('.link-pop'));
+
+        // The reader's fictionalized name: tap shows, a tap outside only
+        // closes, the box opens the real person in a new tab.
+        await page.goto(origin + '/commulingo/docs/much-of-a-muchness', { waitUntil: 'networkidle' });
+        const name = page.locator('a.fic-name[href]').first();
+        await name.scrollIntoViewIfNeeded();
+        await name.tap();
+        await page.waitForSelector('.doc-pop-name.is-link');
+        const readerUrl = page.url();
+        await page.touchscreen.tap(5, 840);
+        await page.waitForFunction(() => !document.querySelector('.doc-pop'));
+        assert.equal(page.url(), readerUrl);
+        await name.tap();
+        await page.waitForSelector('.doc-pop-name.is-link');
+        const [real] = await Promise.all([context.waitForEvent('page'), page.tap('.doc-pop-name .doc-pop-label')]);
+        await real.waitForLoadState();
+        assert.equal(page.url(), readerUrl, 'reader stays');
+        console.log('name box ok:', real.url());
         assert.deepEqual(errors, []);
         console.log('link-preview-touch: ok');
     } finally {
