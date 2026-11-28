@@ -182,7 +182,9 @@ const assert = require('node:assert/strict');
                     tops: Array.from(document.querySelectorAll('.commu-people-facet > summary'), node => node.getBoundingClientRect().top),
                     overflow: document.documentElement.scrollWidth > innerWidth };
             });
-            assert(Math.abs(layout.crumbGap) < 1 && Math.abs(layout.filterGap) < 1, 'people search gaps at ' + width);
+            // The search field touches the crumb; the filter bar keeps its own
+            // margin below it (.commu-people-filterbar margin-block).
+            assert(Math.abs(layout.crumbGap) < 1 && layout.filterGap >= 0 && layout.filterGap < 16, 'people search gaps at ' + width);
             assert(!layout.overflow, 'people filters overflow at ' + width);
             if (width <= 640) {
                 assert.equal(layout.tops[0], layout.tops[2]);
@@ -203,8 +205,9 @@ const assert = require('node:assert/strict');
         assert.equal(await preview.getAttribute('open'), null);
         assert.equal(await preview.isVisible(), false);
         await page.evaluate(() => window.history.replaceState(null, '', window.location.pathname + window.location.search));
-        assert(await page.locator('.commu-people-entry[href="/commulingo/offices"]').count() === 1, 'office index entry');
-        assert(await page.locator('.commu-people-entry[data-query="era=scholar"]').count() === 1, 'researchers entry');
+        assert(await page.locator('.commu-people-table-all[href="/commulingo/offices"]').count() === 1, 'office index entry');
+        assert(await page.locator('.commu-people-era-cell[href^="/commulingo/offices"]').count() > 1, 'office table cells');
+        assert(await page.locator('.commu-people-era-cell[data-query="era=scholar"]').count() === 1, 'researchers row');
         await eraLink.locator('strong').click();
         await page.waitForURL('**/people?era=china-old-regime');
         assert(await page.locator('[data-facet="era"].is-set').count() > 0);

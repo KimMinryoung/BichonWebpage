@@ -76,6 +76,7 @@ router.get('/people', async (req, res) => {
             positionGlossary,
             offices: standardized.offices,
             bodies: availableBodies(lang),
+            flagLabel,
             groupsMeta: peopleShellFor(standardized).groupsMeta,
             people: active ? explore.pagination.pageItems : [],
             linkifyPersonText: active && explore.view === 'cards' ? await cardTextLinker(res) : null,

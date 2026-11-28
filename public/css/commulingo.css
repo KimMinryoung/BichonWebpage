@@ -2855,6 +2855,7 @@ details.commu-dc-option-note[open] summary { margin-bottom: 6px; }
 }
 .commu-office-country-head .commu-flag { width: 24px; height: auto; }
 .commu-office-section { margin-top: var(--space-5); }
+.commu-office-section :is(h2, h3)[id] { scroll-margin-top: 4.5rem; }
 .commu-office-country-head + .commu-office-section { margin-top: 0; }
 .commu-office-section :is(h2, h3) {
     padding-inline: var(--content-inset);
@@ -3258,106 +3259,90 @@ a.commu-structure-unit:focus-visible em {
     text-decoration: none;
 }
 
-/* The era table: a row per region, a cell per era group. Cells share one
-   column count (is-cols-N, the longest row, at most 6) so the eras line up. */
-.commu-people-eras {
-    background: var(--card-bg);
+/* The landing tables (by region and era, by office): a row per region, its
+   cells filling the row's width. Rows and cells share 1px lines: the table's
+   border colour shows through the 1px gaps. */
+.commu-people-eras { margin-top: var(--space-5); }
+.commu-people-eras + .commu-people-eras { margin-top: var(--space-6); }
+.commu-people-table {
+    background: var(--border);
     border: 1px solid var(--border);
-    margin-top: var(--space-5);
-    padding: 14px;
+    display: grid;
+    gap: 1px;
 }
-.commu-people-eras.is-cols-1 { --era-columns: 1; }
-.commu-people-eras.is-cols-2 { --era-columns: 2; }
-.commu-people-eras.is-cols-3 { --era-columns: 3; }
-.commu-people-eras.is-cols-4 { --era-columns: 4; }
-.commu-people-eras.is-cols-5 { --era-columns: 5; }
-.commu-people-eras.is-cols-6 { --era-columns: 6; }
 .commu-people-era-row {
     display: grid;
-    grid-template-columns: 6.5rem minmax(0, 1fr);
-    gap: 12px;
-    align-items: stretch;
+    grid-template-columns: 8.5rem minmax(0, 1fr);
+    gap: 1px;
 }
-.commu-people-era-row + .commu-people-era-row { margin-top: 10px; }
 .commu-people-era-region {
-    align-self: center;
+    align-items: center;
+    background: var(--card-bg);
     color: var(--text-primary);
+    display: flex;
     font-size: var(--text-base);
     font-weight: var(--weight-emphasis);
+    gap: var(--space-2);
     margin: 0;
+    padding: 8px 12px;
 }
+.commu-people-era-region :is(.commu-flag, .commu-role-icon) { flex: none; width: 20px; }
+.commu-people-era-region .commu-role-icon { height: 20px; }
 .commu-people-era-cells {
     display: grid;
-    grid-template-columns: repeat(var(--era-columns, 4), minmax(0, 1fr));
-    gap: 6px;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    gap: 1px;
     list-style: none;
     margin: 0;
     padding: 0;
 }
 .commu-people-era-cell {
     background: var(--bg-surface);
-    border: 1px solid var(--border);
+    border: 0;
     box-sizing: border-box;
     color: var(--text-primary);
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
     height: 100%;
-    padding: 8px 10px;
+    padding: 10px 12px;
     text-decoration: none;
-    transition: background-color 0.16s ease, border-color 0.16s ease;
+    transition: background-color var(--duration-fast) var(--ease-standard);
 }
+button.commu-people-era-cell { width: 100%; font: inherit; text-align: start; cursor: pointer; }
 .commu-people-era-cell:hover,
 .commu-people-era-cell:focus-visible {
     background: var(--accent);
-    border-color: var(--accent);
     color: var(--clr-cream);
     text-decoration: none;
 }
 .commu-people-era-cell:hover :is(.commu-people-era-count, .commu-people-range),
 .commu-people-era-cell:focus-visible :is(.commu-people-era-count, .commu-people-range) { color: color-mix(in srgb, var(--clr-cream) 72%, var(--accent)); }
-.commu-people-era-cell:focus-visible { outline: 2px solid color-mix(in srgb, var(--link) 40%, transparent); outline-offset: 2px; }
+.commu-people-era-cell:focus-visible,
+.commu-people-table-all:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: -2px; }
+.commu-people-era-meta { align-items: center; display: flex; gap: var(--space-2); justify-content: space-between; min-height: 1.2rem; }
+.commu-people-era-meta .commu-flag { flex: none; }
+.commu-people-era-meta.is-flagged { justify-content: flex-start; }
 .commu-people-era-cell strong { font-size: var(--text-base); line-height: var(--leading-snug); }
 .commu-people-era-count {
     color: var(--text-muted);
     font-family: var(--font-sans);
     font-size: var(--text-meta);
     font-weight: 400;
+    white-space: nowrap;
 }
-
-/* Entries beside the era table: the office index and the groups that are no
-   region's era (the researchers). Each row is the link. */
-.commu-people-entries {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    margin-top: 9px;
-}
-.commu-people-entry {
-    align-items: center;
-    background: var(--bg-surface);
-    border: 1px solid var(--border);
+/* The table's last row, the way to the whole index: the row is the link. */
+.commu-people-table-all {
+    background: var(--card-bg);
     color: var(--text-primary);
-    display: flex;
-    gap: 12px;
-    padding: 12px 14px;
-    text-decoration: none;
-    transition: background-color 0.16s ease, border-color 0.16s ease;
-}
-.commu-people-entry:hover,
-.commu-people-entry:focus-visible {
-    background: var(--bg-surface-hover);
-    border-color: var(--link);
-    color: var(--text-primary);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    padding: 10px 12px;
+    text-align: center;
     text-decoration: none;
 }
-button.commu-people-era-cell,
-button.commu-people-entry { width: 100%; font: inherit; text-align: start; cursor: pointer; }
-.commu-people-entry-icon .commu-role-icon { width: 22px; height: 22px; }
-.commu-people-entry-copy { display: flex; flex: 1; flex-direction: column; gap: 2px; min-width: 0; }
-.commu-people-entry-copy small { color: var(--text-secondary); font-size: var(--text-sm); }
-
-/* #p-<id> arrivals open one group's grid below the table; a closed group
-   takes no space. */
+.commu-people-table-all:hover { background: var(--bg-surface-hover); color: var(--text-primary); text-decoration: none; }
 .commu-people-focus .commu-people-group:not([open]) { display: none; }
 .commu-people-focus .commu-people-group { margin-top: var(--space-5); }
 .commu-people-focus-head {
@@ -3381,12 +3366,17 @@ button.commu-people-entry { width: 100%; font: inherit; text-align: start; curso
 .commu-people-era-blurb { color: var(--text-secondary); font-size: var(--text-base); margin: 0 0 12px; }
 
 @media (max-width: 900px) {
-    .commu-people-era-row { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+    .commu-people-era-row { grid-template-columns: minmax(0, 1fr); }
+    .commu-people-era-region { padding: 6px 12px; }
 }
 @media (max-width: 640px) {
-    .commu-people-eras { border-left: 0; border-right: 0; padding: 14px var(--content-inset, 14px); }
-    .commu-people-era-cells { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .commu-people-entries { grid-template-columns: minmax(0, 1fr); }
+    .commu-people-eras-title { margin-left: var(--content-inset); }
+    .commu-people-table { border-left: 0; border-right: 0; }
+    .commu-people-era-region,
+    .commu-people-era-cell,
+    .commu-people-table-all { padding-inline: var(--content-inset); }
+    .commu-people-era-cells { grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .commu-people-era-cells > li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 }
 
 .commu-people-range {

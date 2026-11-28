@@ -617,7 +617,9 @@ const ko = {
         office: {
             people: '인물 사전',
             lineages: '직책 계보',
-            lineagesEntry: '소련 당·국가 직책과 중앙위원회 구성표, 각국 지도자의 역대 재임자',
+            browseTitle: '직책으로 보기',
+            browseAll: '직책 계보 전체 보기',
+            otherCountries: '그 밖의 나라',
             sections: {
                 rosters: '중앙위원회 구성표',
                 party: '당 지도부와 이념',
@@ -1366,7 +1368,9 @@ const en = {
         office: {
             people: 'People',
             lineages: 'Office lineages',
-            lineagesEntry: 'Soviet party and state posts, the Central Committee rosters, and who led other countries',
+            browseTitle: 'By office',
+            browseAll: 'All office lineages',
+            otherCountries: 'Other countries',
             sections: {
                 rosters: 'Central Committee rosters',
                 party: 'Party leadership and ideology',

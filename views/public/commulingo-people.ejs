@@ -238,56 +238,105 @@
             <%- include('../partials/commulingo-list-pager', { pagination: explore.pagination, en: en, target: '#people-browser' }) %>
             <% } else { %>
             <%
-            // The era table: one row per regional shelf, one cell per era group,
-            // each cell opening that era's people. Groups outside the regional
-            // shelves (the researchers) sit below it as entries beside the
-            // office index.
+            // The landing page is two tables of the same build, one per way of
+            // browsing without a name or a condition in mind. By region and
+            // era: one row per regional shelf, one cell per era group, each
+            // opening that era's people; the groups outside the regional
+            // shelves (the researchers) are its last rows. By office: the
+            // Soviet row has one cell per section of the office index, the
+            // other countries' lineages share the second row.
             var regionShelves = ['soviet', 'china', 'france', 'world'];
             var otherGroups = groupsMeta.filter(function(group) { return regionShelves.indexOf(group.shelf) === -1; });
-            // Every row takes the longest row's column count, so eras line up.
-            var eraColumns = Math.max.apply(null, regionShelves.map(function(shelf) {
-                return groupsMeta.filter(function(group) { return group.shelf === shelf; }).length;
-            }).concat([1]));
-            %>
-            <%# Era cells and the researchers entry are buttons holding only their
-                query, like the filter chips: as links they were crawlers' way
-                into the filter space. %>
-            <section class="commu-people-eras is-cols-<%= Math.min(eraColumns, 6) %>" aria-labelledby="commu-people-eras-title">
+            var officeText = strings.commuLingoViews.office;
+            var officeSections = ['party', 'state', 'economy', 'international'];
+            var sovietOffices = offices.filter(function(office) { return office.country === 'soviet'; });
+            var sovietCells = (bodies.length ? [{ id: 'rosters', count: bodies.length, unit: en ? ' rosters' : '개 구성표' }] : [])
+                .concat(officeSections.map(function(section) {
+                    return { id: section, unit: en ? ' lineages' : '개 계보',
+                        count: sovietOffices.filter(function(office) { return office.section === section; }).length };
+                }).filter(function(cell) { return cell.count; }));
+            // Another country's cell names the country, then the post: the
+            // lineage title without the country's name where it leads (Korean)
+            // or closes (English) the title.
+            var otherOffices = offices.filter(function(office) { return office.country !== 'soviet'; }).map(function(office) {
+                var country = flagLabel(office.country, lang) || '';
+                var post = office.title;
+                if (country && !en && post.indexOf(country + ' ') === 0) post = post.slice(country.length + 1);
+                if (country && en) post = post.replace(new RegExp(' of (the )?' + country.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$'), '');
+                // The cell is a fifth of the table: the one long name takes its short form.
+                var shortName = office.country === 'north-korea' ? (en ? 'DPRK' : '조선') : country;
+                return { id: office.id, code: office.country, country: shortName || office.title, post: post };
+            }).sort(function(x, y) { return x.country.localeCompare(y.country, lang); });
+            // Row heads: the country's flag, or a glyph where the row is no country
+            // (researchers: the scholarship activity's icon, as on person cards).
+            var shelfFlags = { soviet: 'soviet', china: 'china', france: 'france' };
+            function rowMark(shelf) { %><%- shelfFlags[shelf] ? flagImg(shelfFlags[shelf], '') : roleIconSvg(shelf === 'world' ? 'globe' : 'library') %><% }
+            function eraCell(group) { %>
+                        <li><button type="button" class="commu-people-era-cell" data-query="<%= href({ eraId: group.id, view: 'list' }).split('?')[1] || '' %>" title="<%= group.blurb %>">
+                            <span class="commu-people-era-meta"><span class="commu-people-range"><%= group.range %></span><span class="commu-people-era-count"><%= group.count %><%= t.text %></span></span>
+                            <strong><%= group.title %></strong>
+                        </button></li>
+            <% } %>
+            <%# Era cells are buttons holding only their query, like the filter
+                chips: as links they were crawlers' way into the filter space. %>
+            <section class="commu-people-eras" aria-labelledby="commu-people-eras-title">
                 <h2 class="commu-people-eras-title" id="commu-people-eras-title"><%= t.eraTableTitle %></h2>
+                <div class="commu-people-table">
                 <% regionShelves.forEach(function(shelf) {
                     var groups = groupsMeta.filter(function(group) { return group.shelf === shelf; });
                     if (!groups.length) return; %>
                 <div class="commu-people-era-row">
-                    <h3 class="commu-people-era-region" title="<%= shelfTitles[shelf] %>"><%= t.shelfShort[shelf] %></h3>
+                    <h3 class="commu-people-era-region" title="<%= shelfTitles[shelf] %>"><% rowMark(shelf) %><span><%= t.shelfShort[shelf] %></span></h3>
                     <ul class="commu-people-era-cells">
-                    <% groups.forEach(function(group) { %>
-                        <li><button type="button" class="commu-people-era-cell" data-query="<%= href({ eraId: group.id, view: 'list' }).split('?')[1] || '' %>" title="<%= group.blurb %>">
-                            <span class="commu-people-range"><%= group.range %></span>
-                            <strong><%= group.title %></strong>
-                            <span class="commu-people-era-count"><%= group.count %><%= t.text %></span>
-                        </button></li>
-                    <% }) %>
+                    <% groups.forEach(eraCell) %>
                     </ul>
                 </div>
                 <% }) %>
+                <% otherGroups.forEach(function(group) { %>
+                <div class="commu-people-era-row">
+                    <h3 class="commu-people-era-region"><% rowMark(group.shelf) %><span><%= shelfTitles[group.shelf] || group.title %></span></h3>
+                    <ul class="commu-people-era-cells">
+                    <% eraCell(group); %>
+                    </ul>
+                </div>
+                <% }) %>
+                </div>
             </section>
 
-            <div class="commu-people-entries">
-                <% if (offices.length) { %>
-                <a class="commu-people-entry" href="/commulingo/offices">
-                    <span class="commu-people-entry-icon" aria-hidden="true"><%- roleIconSvg('hammer-sickle') %></span>
-                    <span class="commu-people-entry-copy"><strong><%= strings.commuLingoViews.office.lineages %></strong><small><%= strings.commuLingoViews.office.lineagesEntry %></small></span>
-                    <span class="commu-role-category-arrow" aria-hidden="true">→</span>
-                </a>
+            <% if (offices.length) { %>
+            <section class="commu-people-eras" aria-labelledby="commu-people-offices-title">
+                <h2 class="commu-people-eras-title" id="commu-people-offices-title"><%= officeText.browseTitle %></h2>
+                <div class="commu-people-table">
+                <% if (sovietCells.length) { %>
+                <div class="commu-people-era-row">
+                    <h3 class="commu-people-era-region"><% rowMark('soviet') %><span><%= t.shelfShort.soviet %></span></h3>
+                    <ul class="commu-people-era-cells">
+                    <% sovietCells.forEach(function(cell) { %>
+                        <li><a class="commu-people-era-cell" href="/commulingo/offices#office-section-<%= cell.id %>">
+                            <span class="commu-people-era-meta"><span class="commu-people-era-count"><%= cell.count %><%= cell.unit %></span></span>
+                            <strong><%= officeText.sections[cell.id] %></strong>
+                        </a></li>
+                    <% }) %>
+                    </ul>
+                </div>
                 <% } %>
-                <% otherGroups.forEach(function(group) { %>
-                <button type="button" class="commu-people-entry" data-query="<%= href({ eraId: group.id, view: 'list' }).split('?')[1] || '' %>">
-                    <span class="commu-people-entry-icon" aria-hidden="true"><%- roleIconSvg('book-open') %></span>
-                    <span class="commu-people-entry-copy"><strong><%= group.title %> <span class="commu-people-era-count"><%= group.count %><%= t.text %></span></strong><small><%= group.blurb %></small></span>
-                    <span class="commu-role-category-arrow" aria-hidden="true">→</span>
-                </button>
-                <% }) %>
-            </div>
+                <% if (otherOffices.length) { %>
+                <div class="commu-people-era-row">
+                    <h3 class="commu-people-era-region"><% rowMark('world') %><span><%= officeText.otherCountries %></span></h3>
+                    <ul class="commu-people-era-cells">
+                    <% otherOffices.forEach(function(office) { %>
+                        <li><a class="commu-people-era-cell" href="/commulingo/offices/<%= encodeURIComponent(office.id) %>">
+                            <span class="commu-people-era-meta is-flagged"><%- flagImg(office.code, '') %><span class="commu-people-era-count"><%= office.country %></span></span>
+                            <strong><%= office.post %></strong>
+                        </a></li>
+                    <% }) %>
+                    </ul>
+                </div>
+                <% } %>
+                <a class="commu-people-table-all" href="/commulingo/offices"><%= officeText.browseAll %></a>
+                </div>
+            </section>
+            <% } %>
 
             <%# #p-<id> arrivals (the person page's way back to its card): each
                 group's grid stays hidden until commulingo-people.js opens the

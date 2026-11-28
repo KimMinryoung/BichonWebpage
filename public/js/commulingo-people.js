@@ -302,7 +302,7 @@
 
     // Filter chips, era cells, condition removals and the order/view tools
     // carry only their query; modified clicks open it apart the way a link would.
-    var QUERY_BUTTON = '.commu-people-chip[data-query], .commu-people-tool[data-query], .commu-people-condition[data-query], .commu-people-condition-reset[data-query], .commu-people-era-cell[data-query], .commu-people-entry[data-query]';
+    var QUERY_BUTTON = '.commu-people-chip[data-query], .commu-people-tool[data-query], .commu-people-condition[data-query], .commu-people-condition-reset[data-query], .commu-people-era-cell[data-query]';
     function chipUrl(chip) {
         var query = chip.getAttribute('data-query');
         return new URL(location.pathname + (query ? '?' + query : ''), location.href);
