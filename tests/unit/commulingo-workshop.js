@@ -39,6 +39,9 @@ assert.match(broken(q => { q[3].text.en = 'The working class cannot lay hold of 
 // passages from different places: one box each, a caption per box
 assert.match(broken(q => { q[3].text.ko += '\n\n둘째 지문이다.'; }), /passage counts differ/);
 assert.match(broken(q => { q[3].passageLabels = { ko: ['갑', '을'], en: ['A', 'B'] }; }), /needs a text split into passages/);
+// anyOrder: blanks whose words may be swapped
+assert.match(broken(q => { q[3].anyOrder = { ko: [[1]], en: [[1]] }; }), /anyOrder must be/);
+assert.match(broken(q => { q[3].anyOrder = { ko: [[1, 9]], en: [[1, 9]] }; }), /anyOrder must be/);
 assert.match(broken(q => { q[3].text.ko += '\n\n둘째 지문이다.'; q[3].text.en += '\n\nA second passage.'; q[3].passageLabels = { ko: ['갑', '을', '병'], en: ['A', 'B', 'C'] }; }), /one caption per passage/);
 // the mix: at most half multiple choice, two kinds of activity, the correct
 // choice rarely the longest

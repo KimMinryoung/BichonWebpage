@@ -1876,6 +1876,28 @@
             return -1;
         }
 
+        // question.anyOrder groups blanks whose words may be swapped (a list
+        // the passage happens to give in one order). expected[blank] is the
+        // word that blank is graded against: the word the learner put there
+        // when it belongs to the blank's group and no earlier blank used it,
+        // otherwise a word of the group still unused.
+        function expectedWords() {
+            var expected = answers.slice();
+            (text(question.anyOrder) || []).forEach(function(group) {
+                var blanks = group.map(function(n) { return n - 1; }).filter(function(blank) { return blank >= 0 && blank < answers.length; });
+                var left = blanks.map(function(blank) { return answers[blank]; });
+                var open = [];
+                blanks.forEach(function(blank) {
+                    var filled = wordIn(blank);
+                    var at = filled ? left.indexOf(filled.word) : -1;
+                    if (at === -1) { open.push(blank); return; }
+                    expected[blank] = left.splice(at, 1)[0];
+                });
+                open.forEach(function(blank) { expected[blank] = left.shift(); });
+            });
+            return expected;
+        }
+
         function draw() {
             passage.innerHTML = '';
             var paragraph;
@@ -1894,6 +1916,7 @@
                 passage.appendChild(box);
             }
             openBox();
+            var expected = graded ? expectedWords() : answers;
             pieces.forEach(function(piece, index) {
                 if (index % 2 === 0) {
                     piece.split(/\n{2,}/).forEach(function(block, blockIndex) {
@@ -1917,11 +1940,11 @@
                 if (filled) button.classList.add('is-filled');
                 if (graded) {
                     button.disabled = true;
-                    var right = Boolean(filled) && filled.word === answers[blank];
+                    var right = Boolean(filled) && filled.word === expected[blank];
                     button.classList.add(right ? 'is-correct' : 'is-wrong');
                     if (!right) {
                         var fix = document.createElement('small');
-                        fix.textContent = '→ ' + answers[blank];
+                        fix.textContent = '→ ' + expected[blank];
                         button.appendChild(fix);
                     }
                 } else {
@@ -1953,7 +1976,7 @@
         pendingCheck = function() {
             graded = true;
             draw();
-            settleActivity(question, answers.every(function(answer, blank) {
+            settleActivity(question, expectedWords().every(function(answer, blank) {
                 var filled = wordIn(blank);
                 return Boolean(filled) && filled.word === answer;
             }));

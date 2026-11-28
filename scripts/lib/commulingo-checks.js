@@ -620,6 +620,28 @@ function checkCloze(out, question, qLabel) {
       out.add('shape', qLabel, qLabel + '.passageLabels must have one caption per passage');
     }
   }
+  // Blanks whose words may be swapped (the items of a list the passage names
+  // in an order nobody is asked to remember): anyOrder {ko: [[1, 2]], en:
+  // [[1, 2]]}, groups of blank numbers as the learner sees them (from 1), per
+  // language because word order can move the blanks.
+  if (typeof question.anyOrder !== 'undefined') {
+    const groups = question.anyOrder;
+    const shapeOk = groups && ['ko', 'en'].every(function(locale) {
+      const list = groups[locale];
+      const seen = new Set();
+      return Array.isArray(list) && list.length > 0 && list.every(function(group) {
+        return Array.isArray(group) && group.length >= 2 && group.every(function(n) {
+          const ok = Number.isInteger(n) && n >= 1 && n <= counts[locale] && !seen.has(n);
+          seen.add(n);
+          return ok;
+        });
+      });
+    });
+    if (!shapeOk) out.add('shape', qLabel, qLabel + '.anyOrder must be {ko, en} lists of groups of two or more distinct blank numbers (from 1), each blank in one group');
+    else if (groups.ko.map(function(g) { return g.length; }).join() !== groups.en.map(function(g) { return g.length; }).join()) {
+      out.add('shape', qLabel, qLabel + '.anyOrder ko/en groups differ in size');
+    }
+  }
   if (question.text.ko && HONORIFIC.test(clozePlain(question.text.ko)) && question.source && question.source.kind !== 'reference') {
     out.add('source-shape', qLabel, qLabel + '.text.ko uses an honorific ending');
   }
