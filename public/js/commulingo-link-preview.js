@@ -38,7 +38,7 @@
     //   "text"   — plain links read like text (the reader's header line,
     //              which keeps its own faint underline): as the classes.
     //   "button" — button-style rows and chips (related events, documents,
-    //              people, terms): the box is for the mouse only, and a tap
+    //              terms): the box is for the mouse only, and a tap
     //              opens the page at once (owner 2026-11-28).
     // A link with no preview kind (a genealogy chart) is left alone by keyOf.
     function linkOf(target) {
