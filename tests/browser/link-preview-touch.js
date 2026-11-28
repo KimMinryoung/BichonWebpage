@@ -3,7 +3,8 @@
 // Read-only browser regression for the link preview on a phone
 // (public/js/commulingo-link-preview.js): a tap shows the box, a tap outside
 // only closes it, the box opens the page the way the link would — same tab on
-// a dictionary page, a new tab on an event page.
+// a dictionary page, a new tab on an event page. A button-style list
+// (data-link-preview) opens at once on a tap and shows the box to a mouse.
 const { launchChromium } = require('../lib/browser');
 const assert = require('node:assert/strict');
 (async () => {
@@ -63,6 +64,26 @@ const assert = require('node:assert/strict');
         console.log('doc box ok:', await page.textContent('.link-pop.is-tap strong'));
         await page.touchscreen.tap(5, 840);
         await page.waitForFunction(() => !document.querySelector('.link-pop'));
+
+        // A button-style list (data-link-preview) opens at once on a tap.
+        await page.goto(origin + '/commulingo/people/lenin', { waitUntil: 'networkidle' });
+        const button = page.locator('[data-link-preview] a[href^="/commulingo/docs/"]').first();
+        await button.scrollIntoViewIfNeeded();
+        const buttonHref = await button.evaluate(a => a.href);
+        await Promise.all([page.waitForURL(buttonHref), button.tap()]);
+        assert.equal(await page.locator('.link-pop').count(), 0);
+        console.log('button opens at once:', buttonHref);
+
+        // With a mouse the same button shows the box on hover.
+        const desk = await browser.newContext({ viewport: { width: 1280, height: 900 }, locale: 'ko-KR' });
+        const deskPage = await desk.newPage();
+        await deskPage.goto(origin + '/commulingo/people/lenin', { waitUntil: 'networkidle' });
+        const deskButton = deskPage.locator('[data-link-preview] a[href^="/commulingo/docs/"]').first();
+        await deskButton.scrollIntoViewIfNeeded();
+        await deskButton.hover();
+        await deskPage.waitForSelector('.link-pop:not(.is-tap)');
+        console.log('button hover box ok:', await deskPage.textContent('.link-pop strong'));
+        await desk.close();
 
         // A course chapter in the reader's header line: the box names the
         // chapter, and opens the course in a new tab (the reader stays).

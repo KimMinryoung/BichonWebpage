@@ -37,11 +37,14 @@
     // (.doc-refs: people, terms, events, courses — plain links so the line
     // keeps its own faint underline); a link there with no preview kind
     // (a genealogy chart) is left alone by keyOf. A list whose rows show only
-    // a name and years opts in with data-link-preview (the related-event
-    // lists of term and event pages, owner 2026-11-28); lists that already
-    // carry a note per row (a person's events) do not.
+    // Button-style link lists (rows and chips: related events, documents,
+    // people, terms) opt in with data-link-preview. They show the box to a
+    // mouse only; a tap on one opens the page at once (owner 2026-11-28).
     function linkOf(target) {
         return target && target.closest ? target.closest(SELECTOR) : null;
+    }
+    function hoverOnly(a) {
+        return !!a.closest('[data-link-preview]');
     }
     function keyOf(a) {
         var href = a.getAttribute('href') || '';
@@ -166,7 +169,7 @@
         if (!open || !open.tap) return;
         if (open.el.contains(event.target)) return;
         var a = linkOf(event.target);
-        if (a && keyOf(a)) return;
+        if (a && keyOf(a) && !hoverOnly(a)) return;
         event.preventDefault();
         event.stopPropagation();
         close();
@@ -176,7 +179,7 @@
     document.addEventListener('click', function (event) {
         if (!touching || event.defaultPrevented) return;
         var a = linkOf(event.target);
-        if (!a) return;
+        if (!a || hoverOnly(a)) return; // a button opens at once
         var key = keyOf(a);
         if (!key || known[key] === null) return; // no box: the link opens as ever
         event.preventDefault();

@@ -3,7 +3,7 @@
 <% if (links && links.length) { %>
 <div class="commu-glossary-chips<%= locals.className ? ' ' + className : '' %>">
     <span class="commu-glossary-chips-label"><%= lang === 'en' ? 'Glossary' : '용어 사전' %></span>
-    <div class="commu-term-chips">
+    <div class="commu-term-chips" data-link-preview>
         <% links.forEach(function(link) { %><a class="commu-term-chip" href="<%= link.href %>"><%= link.term %></a><% }) %>
     </div>
 </div>

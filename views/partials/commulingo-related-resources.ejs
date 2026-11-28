@@ -17,7 +17,7 @@
         <% docGroups.forEach(function(group) { %>
         <section class="commu-person-detail-section commu-section-wide commu-related-reports" aria-labelledby="<%= group.id %>">
             <h2 id="<%= group.id %>"><%= group.heading %></h2>
-            <ul class="commu-related-report-list commu-related-doc-list">
+            <ul class="commu-related-report-list commu-related-doc-list" data-link-preview>
                 <% group.docs.forEach(function(doc) { %>
                 <li><a href="/commulingo/docs/<%= doc.id %>"><span><%= doc.kind %></span><strong><%= doc.title %></strong></a></li>
                 <% }) %>
