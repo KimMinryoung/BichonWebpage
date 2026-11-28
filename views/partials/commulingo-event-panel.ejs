@@ -26,7 +26,7 @@ var sections = p.event.bodySections || [];
         <% if (relParent || relRows.length) { %>
         <nav class="commu-event-relations" aria-label="<%= relLabel %>">
             <h2 class="commu-event-relations-head"><%= relLabel %></h2>
-            <div class="commu-event-relations-box">
+            <div class="commu-event-relations-box" data-link-preview>
                 <% if (relParent) { %>
                 <a class="commu-event-relations-parent" href="/commulingo/events/<%= encodeURIComponent(relParent.id) %>"><span class="commu-event-relations-tag"><%= en ? 'Overview' : '상위 문서' %></span><strong class="commu-event-relations-title"><%= relParent.title %></strong><span class="commu-event-relations-period"><%= relParent.period %></span></a>
                 <% } %>
@@ -47,7 +47,7 @@ var sections = p.event.bodySections || [];
         <% if (relLinks.length) { %>
         <nav class="commu-event-relations" aria-label="<%= relLinksLabel %>">
             <h2 class="commu-event-relations-head"><%= relLinksLabel %></h2>
-            <div class="commu-event-relations-box">
+            <div class="commu-event-relations-box" data-link-preview>
                 <ul class="commu-event-relations-list">
                     <% relLinks.forEach(function(entry) { %>
                     <li><a href="/commulingo/events/<%= encodeURIComponent(entry.id) %>"><span class="commu-event-relations-title"><%= entry.title %></span><span class="commu-event-relations-period"><%= entry.period %></span></a></li>

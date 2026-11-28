@@ -85,7 +85,7 @@
         <% if (p.term.events.length) { %>
         <section class="commu-person-detail-section" aria-labelledby="term-events">
             <h2 id="term-events"><%= strings.commuLingoViews.termPanel.relatedHistoricalEvents %></h2>
-            <ul class="commu-person-event-links">
+            <ul class="commu-person-event-links" data-link-preview>
                 <% p.term.events.forEach(function(event) { %>
                 <li><a href="/commulingo/events/<%= encodeURIComponent(event.id) %>"><span><%= event.period %></span><strong><%= event.title %></strong></a></li>
                 <% }) %>

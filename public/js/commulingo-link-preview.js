@@ -19,7 +19,7 @@
     if (!window.fetch) return;
     var hoverable = !!(window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches);
 
-    var SELECTOR = 'a.commu-person-link, a.commu-event-link, a.commu-term-link, a.commu-doc-link, a.commu-book-link, .doc-refs a';
+    var SELECTOR = 'a.commu-person-link, a.commu-event-link, a.commu-term-link, a.commu-doc-link, a.commu-book-link, .doc-refs a, [data-link-preview] a';
     var KINDS = { people: 'person', events: 'event', terms: 'term', docs: 'doc' };
     var prefix = /^\/en\//.test(window.location.pathname) ? '/en' : '';
     var previews = {};
@@ -36,7 +36,10 @@
     // class is the whole test. The one addition is the reader's header line
     // (.doc-refs: people, terms, events, courses — plain links so the line
     // keeps its own faint underline); a link there with no preview kind
-    // (a genealogy chart) is left alone by keyOf.
+    // (a genealogy chart) is left alone by keyOf. A list whose rows show only
+    // a name and years opts in with data-link-preview (the related-event
+    // lists of term and event pages, owner 2026-11-28); lists that already
+    // carry a note per row (a person's events) do not.
     function linkOf(target) {
         return target && target.closest ? target.closest(SELECTOR) : null;
     }
